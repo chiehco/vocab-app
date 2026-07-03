@@ -56,9 +56,19 @@ export interface MorphemeRecord {
   status: string;
 }
 
+export interface NoteRecord {
+  noteId: string;
+  word: string;
+  noteType: string; // grammar / usage / mnemonic / culture …
+  title: string | null;
+  content: string;
+  status: string;
+}
+
 export interface ContentMetaRecord {
   key: string; // "current"
   wordsHash: string;
+  contentHash?: string; // 涵蓋所有資料檔的雜湊；比對這個決定是否重灌
   generatedAt: string;
   counts: Record<string, number>;
 }

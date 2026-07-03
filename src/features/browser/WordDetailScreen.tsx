@@ -10,6 +10,14 @@ const STATE_LABEL: Record<string, string> = {
   relearning: "重新學習",
 };
 
+export const NOTE_TYPE_LABEL: Record<string, string> = {
+  grammar: "文法",
+  usage: "用法",
+  phrase: "片語",
+  mnemonic: "記憶法",
+  culture: "文化",
+};
+
 export default function WordDetailScreen() {
   const { wordId } = useParams<{ wordId: string }>();
 
@@ -27,6 +35,10 @@ export default function WordDetailScreen() {
   );
   const morphemes = useLiveQuery(
     () => (word ? contentDb.morphemes.where("word").equals(word.word).toArray() : []),
+    [word?.word],
+  );
+  const notes = useLiveQuery(
+    () => (word ? contentDb.notes.where("word").equals(word.word).toArray() : []),
     [word?.word],
   );
   const cardState = useLiveQuery(
@@ -65,6 +77,23 @@ export default function WordDetailScreen() {
           </p>
         )}
       </div>
+
+      {notes && notes.length > 0 && (
+        <section className="mt-4">
+          <h2 className="mb-2 font-bold">補充說明</h2>
+          {notes.map((n) => (
+            <div key={n.noteId} className="mb-2 rounded-xl bg-white p-4 shadow-sm">
+              <p className="text-sm">
+                <span className="mr-2 rounded bg-purple-100 px-1.5 py-0.5 text-xs font-bold text-purple-700">
+                  {NOTE_TYPE_LABEL[n.noteType] ?? n.noteType}
+                </span>
+                {n.title && <span className="font-semibold">{n.title}</span>}
+              </p>
+              <p className="mt-2 whitespace-pre-wrap text-sm text-slate-700">{n.content}</p>
+            </div>
+          ))}
+        </section>
+      )}
 
       {examples && examples.length > 0 && (
         <section className="mt-4">

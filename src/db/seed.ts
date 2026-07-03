@@ -2,6 +2,7 @@ import { contentDb } from "./contentDb";
 import type {
   ExampleRecord,
   MorphemeRecord,
+  NoteRecord,
   RelationRecord,
   WordRecord,
 } from "./types";
@@ -11,6 +12,7 @@ interface DataMeta {
   generatedAt: string;
   counts: Record<string, number>;
   wordsHash: string;
+  contentHash?: string;
 }
 
 async function fetchJson<T>(name: string): Promise<T> {
@@ -26,34 +28,48 @@ async function fetchJson<T>(name: string): Promise<T> {
 export async function seedContentIfNeeded(): Promise<void> {
   const meta = await fetchJson<DataMeta>("meta.json");
   const current = await contentDb.meta.get("current");
-  if (current && current.wordsHash === meta.wordsHash) return;
+  // contentHash 涵蓋所有資料檔；舊版 meta 沒有此欄位時退回 wordsHash
+  const incoming = meta.contentHash ?? meta.wordsHash;
+  const stored = current?.contentHash ?? current?.wordsHash;
+  if (current && stored === incoming) return;
 
-  const [words, examples, relations, morphemes] = await Promise.all([
+  const [words, examples, relations, morphemes, notes] = await Promise.all([
     fetchJson<WordRecord[]>("words.json"),
     fetchJson<ExampleRecord[]>("examples.json"),
     fetchJson<RelationRecord[]>("relations.json"),
     fetchJson<MorphemeRecord[]>("morphemes.json"),
+    fetchJson<NoteRecord[]>("notes.json").catch(() => [] as NoteRecord[]),
   ]);
 
   await contentDb.transaction(
     "rw",
-    [contentDb.words, contentDb.examples, contentDb.relations, contentDb.morphemes, contentDb.meta],
+    [
+      contentDb.words,
+      contentDb.examples,
+      contentDb.relations,
+      contentDb.morphemes,
+      contentDb.notes,
+      contentDb.meta,
+    ],
     async () => {
       await Promise.all([
         contentDb.words.clear(),
         contentDb.examples.clear(),
         contentDb.relations.clear(),
         contentDb.morphemes.clear(),
+        contentDb.notes.clear(),
       ]);
       await Promise.all([
         contentDb.words.bulkPut(words),
         contentDb.examples.bulkPut(examples),
         contentDb.relations.bulkPut(relations),
         contentDb.morphemes.bulkPut(morphemes),
+        contentDb.notes.bulkPut(notes),
       ]);
       await contentDb.meta.put({
         key: "current",
         wordsHash: meta.wordsHash,
+        contentHash: meta.contentHash,
         generatedAt: meta.generatedAt,
         counts: meta.counts,
       });

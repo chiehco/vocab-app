@@ -30,6 +30,22 @@ Excel 填寫注意：
 - 各 `input_*` 表第 1 列是標題、第 2 列是填表說明，資料從第 3 列開始
 - 例句填空題只會出現在「有填 `blank_sentence` + `answer`」的例句
 
+### 補充說明表（選配）：文法、片語、延伸用法
+
+想加文法說明或片語時，在 Excel 新增一張工作表，名稱必須是 **`input_notes_補充說明`**，欄位如下（第 1 列標題、第 2 列填表說明、第 3 列起資料）：
+
+| note_id | word | note_type | title | content | status |
+|---|---|---|---|---|---|
+| 可空，程式自動產生 | 對應單字 | grammar / usage / phrase / mnemonic / culture | 標題可空 | 說明內容（可換行） | draft |
+
+範例：`remain`｜`grammar`｜`連綴動詞用法`｜`remain + adj.（保持某狀態），不用進行式`。
+內容會顯示在單字詳情頁與複習卡背面。沒有這張表也不影響匯入。
+
+其他內容類型的放法：
+- **衍生字**：`input_relations` 表，relation_type 用 `derivative`
+- **常見搭配**：`input_words` 的 `usage_pattern` 欄
+- **獨立片語**（想像單字一樣複習的）：`input_words` 加一列，pos 填 `phr.`，會自然進入複習與測驗
+
 ## 架構重點
 
 - `scripts/import_data.py` — xlsx → JSON 匯入管線

@@ -3,6 +3,7 @@ import type {
   ContentMetaRecord,
   ExampleRecord,
   MorphemeRecord,
+  NoteRecord,
   RelationRecord,
   WordRecord,
 } from "./types";
@@ -13,6 +14,7 @@ export class VocabContentDB extends Dexie {
   examples!: Table<ExampleRecord, string>;
   relations!: Table<RelationRecord, string>;
   morphemes!: Table<MorphemeRecord, string>;
+  notes!: Table<NoteRecord, string>;
   meta!: Table<ContentMetaRecord, string>;
 
   constructor() {
@@ -23,6 +25,9 @@ export class VocabContentDB extends Dexie {
       relations: "relationId, word, relatedWord, relationType",
       morphemes: "rowId, word, morphemeType",
       meta: "key",
+    });
+    this.version(2).stores({
+      notes: "noteId, word, noteType",
     });
   }
 }

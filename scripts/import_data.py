@@ -26,7 +26,12 @@ SHEETS = {
     "media": "input_media_prompts_圖卡",
 }
 
-ID_PREFIX = {"words": "W", "examples": "E", "relations": "R", "morphemes": "M", "media": "A"}
+# 選配工作表：Excel 裡還沒有也不會報錯，輸出空陣列
+OPTIONAL_SHEETS = {
+    "notes": "input_notes_補充說明",
+}
+
+ID_PREFIX = {"words": "W", "examples": "E", "relations": "R", "morphemes": "M", "media": "A", "notes": "N"}
 
 
 def clean(v):
@@ -196,6 +201,24 @@ def parse_media(ws):
     return out
 
 
+def parse_notes(ws):
+    out = []
+    for r in read_rows(ws):
+        (note_id, word, note_type, title, content, status) = (list(r) + [None] * 6)[:6]
+        if word is None or content is None:
+            continue
+        out.append({
+            "noteId": note_id or gen_id("notes", word, note_type, title or content[:40]),
+            "word": word,
+            "noteType": note_type or "usage",
+            "title": title,
+            "content": content,
+            "status": status or "draft",
+        })
+    out.sort(key=lambda x: x["noteId"])
+    return out
+
+
 def write_json(path, data):
     with open(path, "w", encoding="utf-8", newline="\n") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
@@ -224,6 +247,8 @@ def main():
     relations = parse_relations(wb[SHEETS["relations"]])
     morphemes = parse_morphemes(wb[SHEETS["morphemes"]])
     media = parse_media(wb[SHEETS["media"]])
+    notes_sheet = OPTIONAL_SHEETS["notes"]
+    notes = parse_notes(wb[notes_sheet]) if notes_sheet in wb.sheetnames else []
 
     word_set = {w["word"] for w in words}
     for label, rows, field in [
@@ -231,6 +256,7 @@ def main():
         ("關聯詞", relations, "word"),
         ("字根", morphemes, "word"),
         ("圖卡", media, "targetWord"),
+        ("補充說明", notes, "word"),
     ]:
         missing = sorted({r[field] for r in rows if r[field] not in word_set})
         if missing:
@@ -242,8 +268,14 @@ def main():
     write_json(out_dir / "relations.json", relations)
     write_json(out_dir / "morphemes.json", morphemes)
     write_json(out_dir / "media.json", media)
+    write_json(out_dir / "notes.json", notes)
 
     words_hash = hashlib.sha256((out_dir / "words.json").read_bytes()).hexdigest()
+    # contentHash 涵蓋所有 App 會載入的資料檔：任何一張表變動都會觸發前端重灌
+    h = hashlib.sha256()
+    for name in ["words.json", "examples.json", "relations.json", "morphemes.json", "notes.json"]:
+        h.update((out_dir / name).read_bytes())
+    content_hash = h.hexdigest()
     meta = {
         "schemaVersion": 1,
         "generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -254,8 +286,10 @@ def main():
             "relations": len(relations),
             "morphemes": len(morphemes),
             "media": len(media),
+            "notes": len(notes),
         },
         "wordsHash": words_hash,
+        "contentHash": content_hash,
     }
     write_json(out_dir / "meta.json", meta)
 

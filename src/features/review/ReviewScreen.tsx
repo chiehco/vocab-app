@@ -1,9 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { useLiveQuery } from "dexie-react-hooks";
+import { contentDb } from "../../db/contentDb";
 import type { Grade } from "../../db/types";
 import { buildTodayQueue, type QueueItem } from "../../srs/queue";
 import { gradeFlashcard } from "../../checkin/recordActivity";
 import { GRADE_LABELS } from "../../srs/sm2";
+import { NOTE_TYPE_LABEL } from "../browser/WordDetailScreen";
 
 const GRADE_STYLES: Record<Grade, string> = {
   0: "bg-red-500",
@@ -61,12 +64,11 @@ export default function ReviewScreen() {
   }
 
   const item = queue[index];
-  const w = item.wordRecord;
 
   async function handleGrade(grade: Grade) {
     const isNewSession = !sessionStarted.current;
     sessionStarted.current = true;
-    await gradeFlashcard(w.word, grade, sessionId.current, isNewSession);
+    await gradeFlashcard(item.wordRecord.word, grade, sessionId.current, isNewSession);
     setDoneCount((c) => c + 1);
     setFlipped(false);
     setIndex((i) => i + 1);
@@ -86,6 +88,36 @@ export default function ReviewScreen() {
         </span>
       </div>
 
+      <Flashcard
+        key={item.wordRecord.word}
+        item={item}
+        flipped={flipped}
+        onFlip={() => setFlipped(true)}
+        onGrade={handleGrade}
+      />
+    </div>
+  );
+}
+
+function Flashcard({
+  item,
+  flipped,
+  onFlip,
+  onGrade,
+}: {
+  item: QueueItem;
+  flipped: boolean;
+  onFlip: () => void;
+  onGrade: (grade: Grade) => void;
+}) {
+  const w = item.wordRecord;
+  const notes = useLiveQuery(
+    () => contentDb.notes.where("word").equals(w.word).toArray(),
+    [w.word],
+  );
+
+  return (
+    <>
       <div className="flex flex-1 flex-col justify-center">
         <div className="rounded-2xl bg-white p-6 text-center shadow">
           {item.isNew && (
@@ -107,6 +139,18 @@ export default function ReviewScreen() {
                   用法：{w.usagePattern}
                 </p>
               )}
+              {notes?.map((n) => (
+                <p
+                  key={n.noteId}
+                  className="mt-2 whitespace-pre-wrap rounded-lg bg-purple-50 px-3 py-2 text-sm text-purple-800"
+                >
+                  <span className="font-bold">
+                    {NOTE_TYPE_LABEL[n.noteType] ?? n.noteType}
+                    {n.title ? `｜${n.title}` : ""}：
+                  </span>
+                  {n.content}
+                </p>
+              ))}
             </div>
           )}
         </div>
@@ -115,7 +159,7 @@ export default function ReviewScreen() {
       <div className="mt-4">
         {!flipped ? (
           <button
-            onClick={() => setFlipped(true)}
+            onClick={onFlip}
             className="w-full rounded-xl bg-blue-600 py-4 text-lg font-bold text-white shadow"
           >
             顯示答案
@@ -125,7 +169,7 @@ export default function ReviewScreen() {
             {([0, 1, 2, 3] as Grade[]).map((g) => (
               <button
                 key={g}
-                onClick={() => handleGrade(g)}
+                onClick={() => onGrade(g)}
                 className={`rounded-xl py-3.5 font-bold text-white shadow ${GRADE_STYLES[g]}`}
               >
                 {GRADE_LABELS[g]}
@@ -134,6 +178,6 @@ export default function ReviewScreen() {
           </div>
         )}
       </div>
-    </div>
+    </>
   );
 }
