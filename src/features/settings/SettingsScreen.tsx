@@ -1,12 +1,22 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
 import { contentDb } from "../../db/contentDb";
 import { DEFAULT_SETTINGS, progressDb, setSetting } from "../../db/progressDb";
+import {
+  downloadProgressBackup,
+  exportProgress,
+  importProgress,
+  validateBackup,
+  type ProgressBackup,
+} from "../../backup/backup";
 
 export default function SettingsScreen() {
   const [resetArmed, setResetArmed] = useState(false);
   const [resetDone, setResetDone] = useState(false);
+  const [backupMsg, setBackupMsg] = useState<{ ok: boolean; text: string } | null>(null);
+  const [pendingImport, setPendingImport] = useState<ProgressBackup | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const meta = useLiveQuery(() => contentDb.meta.get("current"), []);
   const cap = useLiveQuery(async () => {
@@ -71,6 +81,94 @@ export default function SettingsScreen() {
           </p>
         ) : (
           <p className="mt-1 text-sm text-slate-400">載入中…</p>
+        )}
+      </div>
+
+      <div className="mt-4 rounded-xl bg-white p-4 shadow-sm">
+        <h2 className="text-sm font-bold text-slate-600">進度備份</h2>
+        <p className="mt-0.5 text-xs text-slate-400">
+          學習進度存在這台裝置上；換手機或清除瀏覽器資料前，請先匯出備份。
+        </p>
+        <div className="mt-3 flex gap-2">
+          <button
+            onClick={async () => {
+              const backup = await exportProgress();
+              downloadProgressBackup(backup);
+              setBackupMsg({
+                ok: true,
+                text: `已匯出 ${backup.data.cardStates.length} 個單字的學習進度、${backup.data.checkIns.length} 天打卡紀錄`,
+              });
+            }}
+            className="flex-1 rounded-lg bg-blue-600 py-2.5 text-sm font-bold text-white"
+          >
+            匯出備份
+          </button>
+          <button
+            onClick={() => fileInputRef.current?.click()}
+            className="flex-1 rounded-lg border border-blue-600 bg-white py-2.5 text-sm font-bold text-blue-600"
+          >
+            匯入備份…
+          </button>
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept="application/json,.json"
+            className="hidden"
+            onChange={async (e) => {
+              const file = e.target.files?.[0];
+              e.target.value = "";
+              if (!file) return;
+              setBackupMsg(null);
+              setPendingImport(null);
+              let parsed: unknown;
+              try {
+                parsed = JSON.parse(await file.text());
+              } catch {
+                setBackupMsg({ ok: false, text: "無法讀取檔案：不是有效的 JSON" });
+                return;
+              }
+              const err = validateBackup(parsed);
+              if (err) {
+                setBackupMsg({ ok: false, text: err });
+                return;
+              }
+              setPendingImport(parsed as ProgressBackup);
+            }}
+          />
+        </div>
+        {pendingImport && (
+          <div className="mt-3 rounded-lg border border-orange-300 bg-orange-50 p-3">
+            <p className="text-sm text-orange-800">
+              備份檔（{pendingImport.exportedAt.slice(0, 10)}）含{" "}
+              {pendingImport.data.cardStates.length} 個單字進度、
+              {pendingImport.data.checkIns.length} 天打卡。
+              <br />
+              匯入會<b>覆蓋</b>這台裝置目前的所有進度，確定嗎？
+            </p>
+            <div className="mt-2 flex gap-2">
+              <button
+                onClick={async () => {
+                  await importProgress(pendingImport);
+                  setPendingImport(null);
+                  setBackupMsg({ ok: true, text: "匯入完成！進度已還原。" });
+                }}
+                className="rounded-lg bg-orange-500 px-4 py-2 text-sm font-bold text-white"
+              >
+                確定匯入
+              </button>
+              <button
+                onClick={() => setPendingImport(null)}
+                className="rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm text-slate-600"
+              >
+                取消
+              </button>
+            </div>
+          </div>
+        )}
+        {backupMsg && (
+          <p className={`mt-3 text-sm font-bold ${backupMsg.ok ? "text-green-600" : "text-red-500"}`}>
+            {backupMsg.text}
+          </p>
         )}
       </div>
 
