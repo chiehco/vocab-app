@@ -40,4 +40,8 @@ Excel 填寫注意：
 
 ## 部署
 
-`dist/` 是純靜態檔案，可放 GitHub Pages、Netlify、Cloudflare Pages 等任何靜態主機（已用 HashRouter 與相對路徑，免 rewrite 設定）。手機瀏覽器開啟後可「加入主畫面」安裝，首次載入後完全離線可用。
+正式網址：**https://chiehco.github.io/vocab-app/**
+
+推送到 `main` 分支即自動部署（GitHub Actions 會跑測試 → 建置 → 發佈到 Pages）。所以資料更新流程的最後一步就是 `git push`，不用手動建置上傳。
+
+手機瀏覽器開啟網址後可「加入主畫面」安裝，首次載入後完全離線可用。
