@@ -1,5 +1,7 @@
 import { useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+
+const LEVEL_CHOICES = ["全部", "LV1", "LV2", "LV3", "LV4", "LV5", "LV6"];
 import { useLiveQuery } from "dexie-react-hooks";
 import { contentDb } from "../../db/contentDb";
 import { progressDb } from "../../db/progressDb";
@@ -27,6 +29,7 @@ export default function QuizScreen() {
   const [answered, setAnswered] = useState<string | null>(null);
   const [fillInput, setFillInput] = useState("");
   const [fillResult, setFillResult] = useState<"correct" | "wrong" | null>(null);
+  const [levelSel, setLevelSel] = useState("全部");
   const sessionId = useRef(crypto.randomUUID());
   const sessionStarted = useRef(false);
 
@@ -45,10 +48,14 @@ export default function QuizScreen() {
     const learned = new Set(
       (await progressDb.cardStates.toCollection().primaryKeys()) as string[],
     );
+    // 本次選定等級優先；「全部」時照學習範圍設定
+    const scoped =
+      levelSel === "全部" ? allWords : allWords.filter((w) => w.level === levelSel);
     const levels = await getSetting<string[]>("learningLevels");
-    const learnedWords = allWords.filter((w) => learned.has(w.word));
-    const inScope = allWords.filter((w) => levels.includes(w.level));
-    const pool = learnedWords.length >= 4 ? learnedWords : inScope.length >= 4 ? inScope : allWords;
+    const learnedWords = scoped.filter((w) => learned.has(w.word));
+    const inScope =
+      levelSel === "全部" ? scoped.filter((w) => levels.includes(w.level)) : scoped;
+    const pool = learnedWords.length >= 4 ? learnedWords : inScope.length >= 4 ? inScope : scoped;
     const subjects = shuffle(pool).slice(0, QUIZ_SIZE);
     setQuestions(
       subjects.map((target) => ({
@@ -81,7 +88,23 @@ export default function QuizScreen() {
   if (mode === null) {
     return (
       <div className="p-4">
-        <h1 className="mb-4 text-xl font-bold">測驗</h1>
+        <h1 className="mb-3 text-xl font-bold">測驗</h1>
+        <p className="mb-1.5 text-xs text-slate-500">出題範圍</p>
+        <div className="mb-4 flex gap-1.5 overflow-x-auto pb-1">
+          {LEVEL_CHOICES.map((lv) => (
+            <button
+              key={lv}
+              onClick={() => setLevelSel(lv)}
+              className={`shrink-0 rounded-full px-3 py-1 text-sm ${
+                levelSel === lv
+                  ? "bg-blue-600 text-white"
+                  : "border border-slate-300 bg-white text-slate-600"
+              }`}
+            >
+              {lv}
+            </button>
+          ))}
+        </div>
         <div className="space-y-3">
           <button
             onClick={() => startMcq("w2m")}
@@ -99,6 +122,15 @@ export default function QuizScreen() {
             <p className="font-bold">看義選字 🇹🇼→🇬🇧</p>
             <p className="mt-1 text-sm text-slate-500">看中文意思，選出正確的英文單字</p>
           </button>
+          <Link
+            to="/placement"
+            className="block w-full rounded-xl border-2 border-dashed border-blue-300 bg-blue-50 p-5 text-left"
+          >
+            <p className="font-bold text-blue-800">程度測試 🧭</p>
+            <p className="mt-1 text-sm text-blue-600">
+              LV1–LV6 各抽 4 題快速測驗，估算目前程度並設定學習範圍
+            </p>
+          </Link>
           {fillPool && fillPool.length > 0 ? (
             <button onClick={startFill} className="w-full rounded-xl bg-white p-5 text-left shadow-sm">
               <p className="font-bold">例句填空 ✍️</p>

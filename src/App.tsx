@@ -4,6 +4,7 @@ import { seedContentIfNeeded } from "./db/seed";
 import DashboardScreen from "./features/dashboard/DashboardScreen";
 import ReviewScreen from "./features/review/ReviewScreen";
 import QuizScreen from "./features/quiz/QuizScreen";
+import PlacementScreen from "./features/quiz/PlacementScreen";
 import WordBrowserScreen from "./features/browser/WordBrowserScreen";
 import WordDetailScreen from "./features/browser/WordDetailScreen";
 import ProgressScreen from "./features/progress/ProgressScreen";
@@ -54,6 +55,7 @@ export default function App() {
             <Route path="/" element={<DashboardScreen />} />
             <Route path="/review" element={<ReviewScreen />} />
             <Route path="/quiz" element={<QuizScreen />} />
+            <Route path="/placement" element={<PlacementScreen />} />
             <Route path="/browse" element={<WordBrowserScreen />} />
             <Route path="/word/:wordId" element={<WordDetailScreen />} />
             <Route path="/progress" element={<ProgressScreen />} />

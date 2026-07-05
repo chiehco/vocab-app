@@ -16,37 +16,75 @@ const GRADE_STYLES: Record<Grade, string> = {
   3: "bg-blue-500",
 };
 
+const LEVEL_CHOICES = ["全部", "LV1", "LV2", "LV3", "LV4", "LV5", "LV6"];
+
 export default function ReviewScreen() {
   const [queue, setQueue] = useState<QueueItem[] | null>(null);
   const [index, setIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [doneCount, setDoneCount] = useState(0);
+  const [levelSel, setLevelSel] = useState("全部");
   const sessionId = useRef(crypto.randomUUID());
   const sessionStarted = useRef(false);
 
   useEffect(() => {
     let cancelled = false;
-    buildTodayQueue().then((q) => {
+    setQueue(null);
+    setIndex(0);
+    setFlipped(false);
+    buildTodayQueue(levelSel === "全部" ? undefined : [levelSel]).then((q) => {
       if (!cancelled) setQueue(q);
     });
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [levelSel]);
+
+  const levelChips = (
+    <div className="mb-3 flex gap-1.5 overflow-x-auto pb-1">
+      {LEVEL_CHOICES.map((lv) => (
+        <button
+          key={lv}
+          onClick={() => setLevelSel(lv)}
+          className={`shrink-0 rounded-full px-3 py-1 text-sm ${
+            levelSel === lv
+              ? "bg-blue-600 text-white"
+              : "border border-slate-300 bg-white text-slate-600"
+          }`}
+        >
+          {lv}
+        </button>
+      ))}
+    </div>
+  );
 
   if (queue === null) {
-    return <p className="p-8 text-center text-slate-400">準備今日隊列中…</p>;
+    return (
+      <div className="p-4">
+        {levelChips}
+        <p className="p-8 text-center text-slate-400">準備今日隊列中…</p>
+      </div>
+    );
   }
 
   if (queue.length === 0) {
     return (
-      <div className="flex flex-col items-center p-8 text-center">
-        <p className="mb-2 text-4xl">🎉</p>
-        <p className="text-lg font-bold">今天沒有待複習的單字</p>
-        <p className="mt-1 text-sm text-slate-500">明天再來，或先去測驗練練手感。</p>
-        <Link to="/" className="mt-6 rounded-xl bg-blue-600 px-6 py-2.5 font-bold text-white">
-          回首頁
-        </Link>
+      <div className="p-4">
+        {levelChips}
+        <div className="flex flex-col items-center p-8 text-center">
+          <p className="mb-2 text-4xl">🎉</p>
+          <p className="text-lg font-bold">
+            {levelSel === "全部" ? "今天沒有待複習的單字" : `${levelSel} 沒有待複習的單字`}
+          </p>
+          <p className="mt-1 text-sm text-slate-500">
+            {levelSel === "全部"
+              ? "明天再來，或先去測驗練練手感。"
+              : "換個等級試試，或回「全部」。"}
+          </p>
+          <Link to="/" className="mt-6 rounded-xl bg-blue-600 px-6 py-2.5 font-bold text-white">
+            回首頁
+          </Link>
+        </div>
       </div>
     );
   }
@@ -77,6 +115,7 @@ export default function ReviewScreen() {
 
   return (
     <div className="flex flex-col p-4" style={{ minHeight: "calc(100vh - 5rem)" }}>
+      {index === 0 && !flipped && levelChips}
       <div className="mb-3 flex items-center gap-3">
         <div className="h-2 flex-1 overflow-hidden rounded-full bg-slate-200">
           <div

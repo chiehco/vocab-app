@@ -23,10 +23,11 @@ export function interleave(due: WordRecord[], fresh: WordRecord[]): QueueItem[] 
 /**
  * 建立今日學習隊列：
  * 1. 所有到期複習卡（不設上限，複習優先）
- * 2. 新字依 wordId 順序（LV1→LV6 課綱進度）補到每日上限，
+ * 2. 新字依 wordId 順序補到每日上限，
  *    以 checkIns.newWordsCount 把關——同一天多次開 App 不會多發新字。
+ * @param sessionLevels 本次限定的等級（不給則複習全收、新字照學習範圍設定）
  */
-export async function buildTodayQueue(): Promise<QueueItem[]> {
+export async function buildTodayQueue(sessionLevels?: string[]): Promise<QueueItem[]> {
   const today = todayStr();
 
   const dueStates = await progressDb.cardStates
@@ -35,7 +36,9 @@ export async function buildTodayQueue(): Promise<QueueItem[]> {
     .toArray();
   const dueWords = (
     await contentDb.words.where("word").anyOf(dueStates.map((c) => c.word)).toArray()
-  ).sort((a, b) => a.wordId.localeCompare(b.wordId));
+  )
+    .filter((w) => !sessionLevels || sessionLevels.includes(w.level))
+    .sort((a, b) => a.wordId.localeCompare(b.wordId));
 
   const cap = await getSetting<number>("dailyNewWordCap");
   const checkIn = await progressDb.checkIns.get(today);
@@ -43,7 +46,10 @@ export async function buildTodayQueue(): Promise<QueueItem[]> {
 
   let freshWords: WordRecord[] = [];
   if (remainingNew > 0) {
-    const levels = await getSetting<string[]>("learningLevels");
+    const settingLevels = await getSetting<string[]>("learningLevels");
+    const levels = sessionLevels
+      ? settingLevels.filter((l) => sessionLevels.includes(l))
+      : settingLevels;
     const known = new Set(await progressDb.cardStates.toCollection().primaryKeys());
     freshWords = await contentDb.words
       .orderBy("wordId")
