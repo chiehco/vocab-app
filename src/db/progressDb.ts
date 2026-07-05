@@ -32,9 +32,12 @@ export class VocabProgressDB extends Dexie {
 
 export const progressDb = new VocabProgressDB();
 
+export const ALL_LEVELS = ["LV1", "LV2", "LV3", "LV4", "LV5", "LV6"];
+
 export const DEFAULT_SETTINGS = {
   dailyNewWordCap: 15,
   reviewSessionSize: 20,
+  learningLevels: ALL_LEVELS,
 } as const;
 
 export async function getSetting<T>(key: keyof typeof DEFAULT_SETTINGS): Promise<T> {

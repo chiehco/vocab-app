@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
 import { contentDb } from "../../db/contentDb";
-import { DEFAULT_SETTINGS, progressDb, setSetting } from "../../db/progressDb";
+import { ALL_LEVELS, DEFAULT_SETTINGS, progressDb, setSetting } from "../../db/progressDb";
 import {
   downloadProgressBackup,
   exportProgress,
@@ -23,6 +23,19 @@ export default function SettingsScreen() {
     const row = await progressDb.settings.get("dailyNewWordCap");
     return (row?.value as number) ?? DEFAULT_SETTINGS.dailyNewWordCap;
   }, []);
+  const levels = useLiveQuery(async () => {
+    const row = await progressDb.settings.get("learningLevels");
+    return (row?.value as string[]) ?? [...DEFAULT_SETTINGS.learningLevels];
+  }, []);
+
+  async function toggleLevel(lv: string) {
+    if (!levels) return;
+    const next = levels.includes(lv)
+      ? levels.filter((l) => l !== lv)
+      : [...levels, lv];
+    if (next.length === 0) return; // 至少保留一級
+    await setSetting("learningLevels", next);
+  }
 
   async function resetProgress() {
     await progressDb.transaction(
@@ -66,6 +79,28 @@ export default function SettingsScreen() {
               }`}
             >
               {n}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-4 rounded-xl bg-white p-4 shadow-sm">
+        <label className="block text-sm font-bold text-slate-600">學習範圍（字彙等級）</label>
+        <p className="mt-0.5 text-xs text-slate-400">
+          新字只會從勾選的等級引入；測驗（還沒學過任何字時）也以此範圍出題。已在學的字不受影響。
+        </p>
+        <div className="mt-2 grid grid-cols-6 gap-1.5">
+          {ALL_LEVELS.map((lv) => (
+            <button
+              key={lv}
+              onClick={() => toggleLevel(lv)}
+              className={`rounded-lg py-2 text-sm font-bold ${
+                levels?.includes(lv)
+                  ? "bg-blue-600 text-white"
+                  : "border border-slate-300 bg-white text-slate-400"
+              }`}
+            >
+              {lv}
             </button>
           ))}
         </div>

@@ -43,10 +43,11 @@ export async function buildTodayQueue(): Promise<QueueItem[]> {
 
   let freshWords: WordRecord[] = [];
   if (remainingNew > 0) {
+    const levels = await getSetting<string[]>("learningLevels");
     const known = new Set(await progressDb.cardStates.toCollection().primaryKeys());
     freshWords = await contentDb.words
       .orderBy("wordId")
-      .filter((w) => !known.has(w.word))
+      .filter((w) => levels.includes(w.level) && !known.has(w.word))
       .limit(remainingNew)
       .toArray();
   }

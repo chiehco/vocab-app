@@ -7,6 +7,7 @@ import { buildTodayQueue, type QueueItem } from "../../srs/queue";
 import { gradeFlashcard } from "../../checkin/recordActivity";
 import { GRADE_LABELS } from "../../srs/sm2";
 import { NOTE_TYPE_LABEL } from "../browser/WordDetailScreen";
+import SpeakerButton from "../../components/SpeakerButton";
 
 const GRADE_STYLES: Record<Grade, string> = {
   0: "bg-red-500",
@@ -125,7 +126,10 @@ function Flashcard({
               新字
             </span>
           )}
-          <p className="text-4xl font-bold">{w.word}</p>
+          <p className="text-4xl font-bold">
+            {w.word}
+            <SpeakerButton text={w.word} className="ml-2 align-middle" />
+          </p>
           <p className="mt-1 text-slate-400">{w.pos}</p>
 
           {flipped && (

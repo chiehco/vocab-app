@@ -17,10 +17,15 @@ export default function DashboardScreen() {
   const todayCheckIn = useLiveQuery(() => progressDb.checkIns.get(today), [today]);
   const newRemaining = useLiveQuery(async () => {
     const cap = await getSetting<number>("dailyNewWordCap");
+    const levels = await getSetting<string[]>("learningLevels");
     const checkIn = await progressDb.checkIns.get(today);
-    const started = await progressDb.cardStates.count();
-    const total = await contentDb.words.count();
-    return Math.min(Math.max(0, cap - (checkIn?.newWordsCount ?? 0)), total - started);
+    const known = new Set(await progressDb.cardStates.toCollection().primaryKeys());
+    const available = await contentDb.words
+      .where("level")
+      .anyOf(levels)
+      .filter((w) => !known.has(w.word))
+      .count();
+    return Math.min(Math.max(0, cap - (checkIn?.newWordsCount ?? 0)), available);
   }, [today]);
 
   return (

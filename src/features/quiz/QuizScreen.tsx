@@ -6,6 +6,8 @@ import { progressDb } from "../../db/progressDb";
 import type { ExampleRecord, WordRecord } from "../../db/types";
 import { pickDistractors, shuffle } from "../../quiz/distractors";
 import { recordQuizAnswer } from "../../checkin/recordActivity";
+import { getSetting } from "../../db/progressDb";
+import SpeakerButton from "../../components/SpeakerButton";
 
 const QUIZ_SIZE = 10;
 
@@ -43,8 +45,10 @@ export default function QuizScreen() {
     const learned = new Set(
       (await progressDb.cardStates.toCollection().primaryKeys()) as string[],
     );
+    const levels = await getSetting<string[]>("learningLevels");
     const learnedWords = allWords.filter((w) => learned.has(w.word));
-    const pool = learnedWords.length >= 4 ? learnedWords : allWords;
+    const inScope = allWords.filter((w) => levels.includes(w.level));
+    const pool = learnedWords.length >= 4 ? learnedWords : inScope.length >= 4 ? inScope : allWords;
     const subjects = shuffle(pool).slice(0, QUIZ_SIZE);
     setQuestions(
       subjects.map((target) => ({
@@ -233,7 +237,10 @@ export default function QuizScreen() {
         {mode === "w2m" ? "看字選義" : "看義選字"} {index + 1}/{total}｜得分 {score}
       </p>
       <div className="rounded-2xl bg-white p-6 text-center shadow">
-        <p className={mode === "w2m" ? "text-3xl font-bold" : "text-xl font-bold"}>{prompt}</p>
+        <p className={mode === "w2m" ? "text-3xl font-bold" : "text-xl font-bold"}>
+          {prompt}
+          {mode === "w2m" && <SpeakerButton text={q.target.word} className="ml-2 align-middle" />}
+        </p>
         <p className="mt-1 text-sm text-slate-400">{promptSub}</p>
       </div>
       <div className="mt-4 space-y-2.5">

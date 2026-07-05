@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
 import { contentDb } from "../../db/contentDb";
 import { progressDb } from "../../db/progressDb";
+import SpeakerButton from "../../components/SpeakerButton";
 
 const STATE_LABEL: Record<string, string> = {
   new: "新字",
@@ -58,6 +59,7 @@ export default function WordDetailScreen() {
       <div className="mt-3 rounded-2xl bg-white p-5 shadow-sm">
         <div className="flex items-baseline gap-2">
           <h1 className="text-3xl font-bold">{word.word}</h1>
+          <SpeakerButton text={word.word} />
           <span className="text-slate-400">{word.pos}</span>
           <span className="ml-auto rounded bg-slate-100 px-2 py-0.5 text-xs text-slate-500">
             {word.level}
