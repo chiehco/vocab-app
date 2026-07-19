@@ -11,6 +11,7 @@ import SpeakerButton from "../../components/SpeakerButton";
 import { getWordBeastAsset, hasWordBeastAsset } from "../wordbeast/wordBeastAssets";
 import ExamTierBadge from "../wordbeast/ExamTierBadge";
 import WordTraitBadges from "../wordbeast/WordTraitBadges";
+import ResilientBeastImage from "../wordbeast/ResilientBeastImage";
 import { buildConfusableWordSet, buildMorphemeWordSet, buildSenseCountByWord } from "../wordbeast/wordTraits";
 import "../realm-pages.css";
 
@@ -189,7 +190,7 @@ export default function QuizScreen() {
         <ExamTierBadge tier={priorityByWord.get(question.target.word)} compact />
         <WordTraitBadges senseCount={senseCountByWord.get(question.target.word)} hasConfusables={confusableWords.has(question.target.word)} hasMorphemes={morphemeWords.has(question.target.word)} compact />
         <p className="trial-question-label">SPEAK THE TRUE ANSWER</p>
-        {mode === "image" && targetAsset ? <img className="trial-wordbeast-clue" src={targetAsset} alt="待辨認的字獸圖卡" /> : <h2 className={mode === "w2m" ? "word-prompt" : "meaning-prompt"}>{prompt}{mode === "w2m" && <SpeakerButton text={question.target.word} className="trial-speaker" />}</h2>}
+        {mode === "image" && targetAsset ? <ResilientBeastImage className="trial-wordbeast-clue" src={targetAsset} word={question.target.word} alt="待辨認的字獸圖卡" /> : <h2 className={mode === "w2m" ? "word-prompt" : "meaning-prompt"}>{prompt}{mode === "w2m" && <SpeakerButton text={question.target.word} className="trial-speaker" />}</h2>}
         <p className="trial-prompt-sub">{mode === "image" ? "看圖選出真名" : promptSub}</p>
         {sealed && (
           <div className="trial-binding" role="status" aria-live="polite">

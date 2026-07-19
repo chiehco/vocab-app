@@ -7,6 +7,7 @@ import SpeakerButton from "../../components/SpeakerButton";
 import { getWordBeastAsset } from "../wordbeast/wordBeastAssets";
 import ExamTierBadge from "../wordbeast/ExamTierBadge";
 import WordTraitBadges from "../wordbeast/WordTraitBadges";
+import ResilientBeastImage from "../wordbeast/ResilientBeastImage";
 import { buildSenseCountByWord } from "../wordbeast/wordTraits";
 import { MORPHEME_TYPE_LABEL, NOTE_TYPE_LABEL, RELATION_TYPE_LABEL, STATE_LABEL } from "./wordLabels";
 import "./word-detail.css";
@@ -95,7 +96,7 @@ export default function WordDetailScreen() {
         <div className="dossier-hero-mark">
           <ExamTierBadge tier={priority?.priorityTier} />
           <span className="dossier-orbit" />
-          {asset ? <img src={asset} alt={`${word.word} 字獸`} /> : <DossierSigil word={word.word} />}
+          {asset ? <ResilientBeastImage src={asset} word={word.word} alt={`${word.word} 字獸`} /> : <DossierSigil word={word.word} />}
           {!asset && <small>圖像待收錄</small>}
         </div>
       </section>

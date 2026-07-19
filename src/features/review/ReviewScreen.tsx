@@ -11,6 +11,7 @@ import SpeakerButton from "../../components/SpeakerButton";
 import { getWordBeastAsset } from "../wordbeast/wordBeastAssets";
 import ExamTierBadge from "../wordbeast/ExamTierBadge";
 import WordTraitBadges from "../wordbeast/WordTraitBadges";
+import ResilientBeastImage from "../wordbeast/ResilientBeastImage";
 import { buildConfusableWordSet, buildSenseCountByWord } from "../wordbeast/wordTraits";
 import "./review.css";
 
@@ -163,7 +164,7 @@ function Flashcard({ item, flipped, onFlip, onGrade, position }: { item: QueueIt
 
         <div className="seal-card-visual">
           <span className="seal-card-orbit" />
-          {beastAsset ? <img src={beastAsset} alt={`${word.word} 字獸`} /> : <WordSigil word={word.word} />}
+          {beastAsset ? <ResilientBeastImage src={beastAsset} word={word.word} alt={`${word.word} 字獸`} /> : <WordSigil word={word.word} />}
           {!beastAsset && <small>圖像待收錄</small>}
         </div>
 
