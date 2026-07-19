@@ -12,15 +12,15 @@ export default defineConfig({
       registerType: "autoUpdate",
       includeAssets: ["favicon.svg", "icons/*.png"],
       manifest: {
-        name: "高中英文單字通",
-        short_name: "單字通",
+        name: "萬詞譜・字獸收服場",
+        short_name: "萬詞譜",
         lang: "zh-TW",
-        description: "高中 7000 單字：記憶曲線複習、每日打卡、測驗練習",
+        description: "用圖像、測驗與間隔複習，把英文單字一隻一隻收服回來。",
         start_url: "./",
         scope: "./",
         display: "standalone",
-        background_color: "#ffffff",
-        theme_color: "#2563eb",
+        background_color: "#f6f0df",
+        theme_color: "#66745a",
         icons: [
           { src: "icons/icon-192.png", sizes: "192x192", type: "image/png" },
           { src: "icons/icon-512.png", sizes: "512x512", type: "image/png" },
@@ -33,10 +33,26 @@ export default defineConfig({
         ],
       },
       workbox: {
-        // json 一併預快取：整套單字資料離線可用
-        globPatterns: ["**/*.{js,css,html,ico,png,svg,json}"],
+        // 核心程式與題庫離線可用；圖卡按需下載，避免首次載入整座圖庫。
+        globPatterns: ["**/*.{js,css,html,ico,svg,json}"],
         maximumFileSizeToCacheInBytes: 8 * 1024 * 1024,
         navigateFallback: "index.html",
+        runtimeCaching: [
+          {
+            urlPattern: /\/wordbeast\/.*\.(?:png|webp)$/i,
+            handler: "StaleWhileRevalidate",
+            options: {
+              cacheName: "wordbeast-images-v1",
+              expiration: {
+                maxEntries: 500,
+                maxAgeSeconds: 30 * 24 * 60 * 60,
+              },
+              cacheableResponse: {
+                statuses: [0, 200],
+              },
+            },
+          },
+        ],
       },
     }),
   ],

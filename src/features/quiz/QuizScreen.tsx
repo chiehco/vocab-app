@@ -1,23 +1,27 @@
 import { useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-
-const LEVEL_CHOICES = ["全部", "LV1", "LV2", "LV3", "LV4", "LV5", "LV6"];
 import { useLiveQuery } from "dexie-react-hooks";
 import { contentDb } from "../../db/contentDb";
-import { progressDb } from "../../db/progressDb";
+import { progressDb, getSetting } from "../../db/progressDb";
 import type { ExampleRecord, WordRecord } from "../../db/types";
 import { pickDistractors, shuffle } from "../../quiz/distractors";
+import { pickExamDistractors } from "../../quiz/examDistractors";
 import { recordQuizAnswer } from "../../checkin/recordActivity";
-import { getSetting } from "../../db/progressDb";
 import SpeakerButton from "../../components/SpeakerButton";
+import { getWordBeastAsset, hasWordBeastAsset } from "../wordbeast/wordBeastAssets";
+import "../realm-pages.css";
 
+const LEVEL_CHOICES = ["S級", "全部", "LV1", "LV2", "LV3", "LV4", "LV5", "LV6"];
 const QUIZ_SIZE = 10;
+type QuizMode = "w2m" | "m2w" | "image" | "fill";
+interface McqQuestion { target: WordRecord; options: WordRecord[]; }
 
-type QuizMode = "w2m" | "m2w" | "fill";
+function TrialHeader({ label = "祭司試煉", progress }: { label?: string; progress?: string }) {
+  return <header className="realm-header trial-header"><div><p>PRIEST'S TRIAL</p><h1>{label}</h1></div>{progress ? <span className="realm-count">{progress}</span> : <span className="trial-seal">試</span>}</header>;
+}
 
-interface McqQuestion {
-  target: WordRecord;
-  options: WordRecord[];
+function TrialLevels({ selected, onChange }: { selected: string; onChange: (level: string) => void }) {
+  return <div className="realm-levels trial-levels">{LEVEL_CHOICES.map((level) => <button key={level} className={selected === level ? "active" : ""} onClick={() => onChange(level)}>{level}</button>)}</div>;
 }
 
 export default function QuizScreen() {
@@ -29,274 +33,163 @@ export default function QuizScreen() {
   const [answered, setAnswered] = useState<string | null>(null);
   const [fillInput, setFillInput] = useState("");
   const [fillResult, setFillResult] = useState<"correct" | "wrong" | null>(null);
-  const [levelSel, setLevelSel] = useState("全部");
+  const [levelSel, setLevelSel] = useState("S級");
   const sessionId = useRef(crypto.randomUUID());
   const sessionStarted = useRef(false);
 
-  const fillPool = useLiveQuery(
-    () =>
-      contentDb.examples
-        .filter((e) => !!e.blankSentence && !!e.answer)
-        .toArray(),
-    [],
-  );
-
+  const allExamples = useLiveQuery(() => contentDb.examples.filter((example) => !!example.blankSentence && !!example.answer).toArray(), []);
   const allWords = useLiveQuery(() => contentDb.words.toArray(), []);
+  const examPriorities = useLiveQuery(() => contentDb.examPriorities.toArray(), []);
+  const examDistractorRelations = useLiveQuery(() => contentDb.relations.where("relationType").equals("exam_distractor").toArray(), []);
+  const sWordSet = useMemo(() => new Set(
+    (examPriorities ?? [])
+      .filter((row) => row.priorityTier === "S" && !row.isFunctionWord)
+      .map((row) => row.word),
+  ), [examPriorities]);
+  const fillPool = useMemo(() => {
+    if (!allExamples || !allWords) return undefined;
+    if (levelSel === "S級") return allExamples.filter((example) => sWordSet.has(example.word));
+    if (levelSel === "全部") return allExamples;
+    const levelWords = new Set(allWords.filter((word) => word.level === levelSel).map((word) => word.word));
+    return allExamples.filter((example) => levelWords.has(example.word));
+  }, [allExamples, allWords, levelSel, sWordSet]);
 
-  async function startMcq(m: QuizMode) {
+  async function startMcq(nextMode: QuizMode) {
     if (!allWords) return;
-    const learned = new Set(
-      (await progressDb.cardStates.toCollection().primaryKeys()) as string[],
-    );
-    // 本次選定等級優先；「全部」時照學習範圍設定
-    const scoped =
-      levelSel === "全部" ? allWords : allWords.filter((w) => w.level === levelSel);
+    const learned = new Set((await progressDb.cardStates.toCollection().primaryKeys()) as string[]);
+    const scoped = levelSel === "S級"
+      ? allWords.filter((word) => sWordSet.has(word.word))
+      : levelSel === "全部"
+        ? allWords
+        : allWords.filter((word) => word.level === levelSel);
     const levels = await getSetting<string[]>("learningLevels");
-    const learnedWords = scoped.filter((w) => learned.has(w.word));
-    const inScope =
-      levelSel === "全部" ? scoped.filter((w) => levels.includes(w.level)) : scoped;
+    const learnedWords = scoped.filter((word) => learned.has(word.word));
+    const inScope = levelSel === "全部" ? scoped.filter((word) => levels.includes(word.level)) : scoped;
     const pool = learnedWords.length >= 4 ? learnedWords : inScope.length >= 4 ? inScope : scoped;
-    const subjects = shuffle(pool).slice(0, QUIZ_SIZE);
-    setQuestions(
-      subjects.map((target) => ({
+    const eligiblePool = nextMode === "image" ? inScope.filter((word) => hasWordBeastAsset(word.wordId, word.word)) : pool;
+    const subjects = shuffle(eligiblePool).slice(0, QUIZ_SIZE);
+    setQuestions(subjects.map((target) => ({
+      target,
+      options: shuffle([
         target,
-        options: shuffle([target, ...pickDistractors(target, allWords)]),
-      })),
-    );
-    setMode(m);
-    setIndex(0);
-    setScore(0);
-    setAnswered(null);
+        ...(examDistractorRelations?.length
+          ? pickExamDistractors(target, allWords, examDistractorRelations)
+          : pickDistractors(target, allWords)),
+      ]),
+    })));
+    setMode(nextMode); setIndex(0); setScore(0); setAnswered(null);
   }
 
   function startFill() {
-    if (!fillPool || fillPool.length === 0) return;
+    if (!fillPool?.length) return;
     setFillQuestions(shuffle(fillPool).slice(0, QUIZ_SIZE));
-    setMode("fill");
-    setIndex(0);
-    setScore(0);
-    setFillInput("");
-    setFillResult(null);
+    setMode("fill"); setIndex(0); setScore(0); setFillInput(""); setFillResult(null);
   }
 
-  const total = useMemo(
-    () => (mode === "fill" ? fillQuestions?.length ?? 0 : questions?.length ?? 0),
-    [mode, questions, fillQuestions],
-  );
+  const total = useMemo(() => mode === "fill" ? fillQuestions?.length ?? 0 : questions?.length ?? 0, [mode, questions, fillQuestions]);
 
-  // ---- 模式選擇畫面 ----
   if (mode === null) {
     return (
-      <div className="p-4">
-        <h1 className="mb-3 text-xl font-bold">測驗</h1>
-        <p className="mb-1.5 text-xs text-slate-500">出題範圍</p>
-        <div className="mb-4 flex gap-1.5 overflow-x-auto pb-1">
-          {LEVEL_CHOICES.map((lv) => (
-            <button
-              key={lv}
-              onClick={() => setLevelSel(lv)}
-              className={`shrink-0 rounded-full px-3 py-1 text-sm ${
-                levelSel === lv
-                  ? "bg-blue-600 text-white"
-                  : "border border-slate-300 bg-white text-slate-600"
-              }`}
-            >
-              {lv}
-            </button>
-          ))}
-        </div>
-        <div className="space-y-3">
-          <button
-            onClick={() => startMcq("w2m")}
-            disabled={!allWords}
-            className="w-full rounded-xl bg-white p-5 text-left shadow-sm"
-          >
-            <p className="font-bold">看字選義 🇬🇧→🇹🇼</p>
-            <p className="mt-1 text-sm text-slate-500">看英文單字，選出正確的中文意思</p>
-          </button>
-          <button
-            onClick={() => startMcq("m2w")}
-            disabled={!allWords}
-            className="w-full rounded-xl bg-white p-5 text-left shadow-sm"
-          >
-            <p className="font-bold">看義選字 🇹🇼→🇬🇧</p>
-            <p className="mt-1 text-sm text-slate-500">看中文意思，選出正確的英文單字</p>
-          </button>
-          <Link
-            to="/placement"
-            className="block w-full rounded-xl border-2 border-dashed border-blue-300 bg-blue-50 p-5 text-left"
-          >
-            <p className="font-bold text-blue-800">程度測試 🧭</p>
-            <p className="mt-1 text-sm text-blue-600">
-              LV1–LV6 各抽 4 題快速測驗，估算目前程度並設定學習範圍
-            </p>
-          </Link>
-          {fillPool && fillPool.length > 0 ? (
-            <button onClick={startFill} className="w-full rounded-xl bg-white p-5 text-left shadow-sm">
-              <p className="font-bold">例句填空 ✍️</p>
-              <p className="mt-1 text-sm text-slate-500">
-                根據例句填入正確單字（目前共 {fillPool.length} 題）
-              </p>
-            </button>
-          ) : (
-            <div className="w-full rounded-xl bg-slate-100 p-5 text-left">
-              <p className="font-bold text-slate-400">例句填空 ✍️</p>
-              <p className="mt-1 text-sm text-slate-400">
-                尚無例句可練習，請先在 Excel 中新增例句後重新匯入。
-              </p>
-            </div>
-          )}
-        </div>
+      <div className="realm-page trial-page">
+        <TrialHeader />
+        <section className="trial-intro">
+          <div><p>選擇今日試煉</p><h2>祭司不問你<br />背了多少，<em>只問你認不認得。</em></h2></div>
+          <div className="trial-eye" aria-hidden="true"><i /><span /></div>
+        </section>
+        <div className="trial-scope"><span>出題範圍</span><TrialLevels selected={levelSel} onChange={setLevelSel} /></div>
+        <section className="trial-modes" aria-label="選擇題型">
+          <button onClick={() => startMcq("w2m")} disabled={!allWords}><b>01</b><div><h3>見名辨義</h3><p>看英文真名，選出正確釋義</p></div><span>→</span></button>
+          <button onClick={() => startMcq("m2w")} disabled={!allWords}><b>02</b><div><h3>循義喚名</h3><p>看中文釋義，找出真正名稱</p></div><span>→</span></button>
+          <button onClick={() => startMcq("image")} disabled={!allWords}><b>03</b><div><h3>看圖喚名</h3><p>只看字獸圖卡，選出真正名稱</p></div><span>→</span></button>
+          <button onClick={startFill} disabled={!fillPool?.length}><b>04</b><div><h3>殘句補名</h3><p>{fillPool?.length ? `從 ${fillPool.length} 道例句中補回遺失真名` : "尚無可使用的例句"}</p></div><span>→</span></button>
+        </section>
       </div>
     );
   }
 
-  // ---- 結算畫面 ----
   if (index >= total) {
+    const perfect = score === total;
     return (
-      <div className="flex flex-col items-center p-8 text-center">
-        <p className="mb-2 text-4xl">{score === total ? "🏆" : "📝"}</p>
-        <p className="text-lg font-bold">
-          答對 {score} / {total} 題
-        </p>
-        <p className="mt-1 text-sm text-slate-500">已計入今日打卡。</p>
-        <div className="mt-6 flex gap-3">
-          <button
-            onClick={() => setMode(null)}
-            className="rounded-xl border-2 border-blue-600 bg-white px-5 py-2.5 font-bold text-blue-600"
-          >
-            再測一次
-          </button>
-          <Link to="/" className="rounded-xl bg-blue-600 px-5 py-2.5 font-bold text-white">
-            回首頁
-          </Link>
-        </div>
+      <div className="realm-page trial-result-page">
+        <TrialHeader label="試煉結果" />
+        <div className={`trial-result-mark ${perfect ? "perfect" : ""}`}><span>{score}</span><small>/ {total}</small></div>
+        <p className="trial-result-kicker">{perfect ? "FLAWLESS BINDING" : "TRIAL COMPLETE"}</p>
+        <h2>{perfect ? "真名無誤" : "判定完成"}</h2>
+        <p>{perfect ? "所有字獸都被準確辨認。" : `本輪辨認 ${score} 枚，錯過 ${total - score} 枚。`}</p>
+        <div className="trial-result-actions"><button onClick={() => setMode(null)}>再試一次</button><Link to="/">返回萬字譜</Link></div>
       </div>
     );
   }
 
-  // ---- 例句填空 ----
   if (mode === "fill" && fillQuestions) {
-    const q = fillQuestions[index];
-
+    const question = fillQuestions[index];
     async function submitFill() {
       if (fillResult !== null) return;
-      const correct =
-        fillInput.trim().toLowerCase() === (q.answer ?? "").trim().toLowerCase();
+      const correct = fillInput.trim().toLowerCase() === (question.answer ?? "").trim().toLowerCase();
       setFillResult(correct ? "correct" : "wrong");
-      if (correct) setScore((s) => s + 1);
-      const isNewSession = !sessionStarted.current;
-      sessionStarted.current = true;
-      await recordQuizAnswer(q.word, correct, "fill-blank", sessionId.current, isNewSession);
+      if (correct) setScore((current) => current + 1);
+      const isNewSession = !sessionStarted.current; sessionStarted.current = true;
+      await recordQuizAnswer(question.word, correct, "fill-blank", sessionId.current, isNewSession);
     }
-
     return (
-      <div className="p-4">
-        <p className="mb-3 text-sm text-slate-500">
-          例句填空 {index + 1}/{total}｜得分 {score}
-        </p>
-        <div className="rounded-2xl bg-white p-5 shadow">
-          <p className="text-lg">{q.blankSentence}</p>
-          {q.sentenceZh && <p className="mt-2 text-sm text-slate-500">{q.sentenceZh}</p>}
-          <input
-            type="text"
-            value={fillInput}
-            onChange={(e) => setFillInput(e.target.value)}
-            onKeyDown={(e) => e.key === "Enter" && submitFill()}
-            disabled={fillResult !== null}
-            placeholder="填入單字…"
-            autoCapitalize="none"
-            autoCorrect="off"
-            className="mt-4 w-full rounded-xl border border-slate-300 px-4 py-2.5 outline-none focus:border-blue-500"
-          />
-          {fillResult === "correct" && (
-            <p className="mt-3 font-bold text-green-600">✅ 答對了！</p>
-          )}
-          {fillResult === "wrong" && (
-            <p className="mt-3 font-bold text-red-500">❌ 正確答案：{q.answer}</p>
-          )}
-        </div>
-        <button
-          onClick={() => {
-            if (fillResult === null) {
-              submitFill();
-            } else {
-              setIndex((i) => i + 1);
-              setFillInput("");
-              setFillResult(null);
-            }
-          }}
-          className="mt-4 w-full rounded-xl bg-blue-600 py-3.5 font-bold text-white shadow"
-        >
-          {fillResult === null ? "送出答案" : "下一題"}
-        </button>
+      <div className="realm-page active-trial-page">
+        <TrialHeader label="殘句補名" progress={`${index + 1} / ${total}`} />
+        <div className="trial-progress"><i style={{ width: `${((index + 1) / total) * 100}%` }} /><span>目前辨認 {score}</span></div>
+        <section className={`trial-question fill-question ${fillResult ?? ""}`}>
+          <p className="trial-question-label">RESTORE THE MISSING NAME</p>
+          <h2>{question.blankSentence}</h2>
+          {question.sentenceZh && <p className="trial-translation">{question.sentenceZh}</p>}
+          <label><span>填入真名</span><input value={fillInput} onChange={(event) => setFillInput(event.target.value)} onKeyDown={(event) => event.key === "Enter" && submitFill()} disabled={fillResult !== null} autoCapitalize="none" autoCorrect="off" /></label>
+          {fillResult && <div className="trial-verdict"><b>{fillResult === "correct" ? "辨名成功" : "真名有誤"}</b><span>{fillResult === "correct" ? question.answer : `正確答案：${question.answer}`}</span></div>}
+        </section>
+        <button className="trial-next" onClick={() => { if (fillResult === null) submitFill(); else { setIndex((current) => current + 1); setFillInput(""); setFillResult(null); } }}>{fillResult === null ? "提交祭司判定" : "下一道試煉"}<span>→</span></button>
       </div>
     );
   }
 
-  // ---- 選擇題 ----
   if (!questions) return null;
-  const q = questions[index];
-  const prompt = mode === "w2m" ? q.target.word : q.target.meaningZh;
-  const promptSub = mode === "w2m" ? q.target.pos : `（${q.target.pos}）`;
+  const question = questions[index];
+  const prompt = mode === "w2m" ? question.target.word : question.target.meaningZh;
+  const promptSub = mode === "w2m" ? question.target.pos : `（${question.target.pos}）`;
+  const targetAsset = getWordBeastAsset(question.target.wordId, question.target.word);
+  const sealed = mode === "image" && answered === question.target.word;
 
   async function pick(option: WordRecord) {
     if (answered !== null) return;
     setAnswered(option.word);
-    const correct = option.word === q.target.word;
-    if (correct) setScore((s) => s + 1);
-    const isNewSession = !sessionStarted.current;
-    sessionStarted.current = true;
-    await recordQuizAnswer(
-      q.target.word,
-      correct,
-      mode === "w2m" ? "quiz-w2m" : "quiz-m2w",
-      sessionId.current,
-      isNewSession,
-    );
+    const correct = option.word === question.target.word;
+    if (correct) setScore((current) => current + 1);
+    const isNewSession = !sessionStarted.current; sessionStarted.current = true;
+    await recordQuizAnswer(question.target.word, correct, mode === "w2m" ? "quiz-w2m" : mode === "image" ? "quiz-image" : "quiz-m2w", sessionId.current, isNewSession);
   }
 
-  function optionClass(option: WordRecord): string {
-    if (answered === null) return "border-slate-200 bg-white";
-    if (option.word === q.target.word) return "border-green-500 bg-green-50";
-    if (option.word === answered) return "border-red-400 bg-red-50";
-    return "border-slate-200 bg-white opacity-50";
+  function optionState(option: WordRecord) {
+    if (answered === null) return "";
+    if (option.word === question.target.word) return "correct";
+    if (option.word === answered) return "wrong";
+    return "muted";
   }
 
   return (
-    <div className="p-4">
-      <p className="mb-3 text-sm text-slate-500">
-        {mode === "w2m" ? "看字選義" : "看義選字"} {index + 1}/{total}｜得分 {score}
-      </p>
-      <div className="rounded-2xl bg-white p-6 text-center shadow">
-        <p className={mode === "w2m" ? "text-3xl font-bold" : "text-xl font-bold"}>
-          {prompt}
-          {mode === "w2m" && <SpeakerButton text={q.target.word} className="ml-2 align-middle" />}
-        </p>
-        <p className="mt-1 text-sm text-slate-400">{promptSub}</p>
+    <div className="realm-page active-trial-page">
+      <TrialHeader label={mode === "w2m" ? "見名辨義" : mode === "image" ? "看圖喚名" : "循義喚名"} progress={`${index + 1} / ${total}`} />
+      <div className="trial-progress"><i style={{ width: `${((index + 1) / total) * 100}%` }} /><span>目前辨認 {score}</span></div>
+      <section className={`trial-question choice-question ${sealed ? "is-sealed" : ""}`}>
+        <p className="trial-question-label">SPEAK THE TRUE ANSWER</p>
+        {mode === "image" && targetAsset ? <img className="trial-wordbeast-clue" src={targetAsset} alt="待辨認的字獸圖卡" /> : <h2 className={mode === "w2m" ? "word-prompt" : "meaning-prompt"}>{prompt}{mode === "w2m" && <SpeakerButton text={question.target.word} className="trial-speaker" />}</h2>}
+        <p className="trial-prompt-sub">{mode === "image" ? "看圖選出真名" : promptSub}</p>
+        {sealed && (
+          <div className="trial-binding" role="status" aria-live="polite">
+            <div className="trial-binding-rings" aria-hidden="true"><i /><i /><i /></div>
+            <div className="trial-binding-mark" aria-hidden="true">封</div>
+            <p><b>真名確認</b><span>封印完成</span></p>
+          </div>
+        )}
+      </section>
+      <div className="trial-options">
+        {question.options.map((option, optionIndex) => <button key={option.word} className={optionState(option)} onClick={() => pick(option)}><b>{String.fromCharCode(65 + optionIndex)}</b><span>{mode === "w2m" ? option.meaningZh : option.word}</span><i /></button>)}
       </div>
-      <div className="mt-4 space-y-2.5">
-        {q.options.map((option) => (
-          <button
-            key={option.word}
-            onClick={() => pick(option)}
-            className={`w-full rounded-xl border-2 px-4 py-3.5 text-left transition-colors ${optionClass(option)}`}
-          >
-            {mode === "w2m" ? option.meaningZh : option.word}
-          </button>
-        ))}
-      </div>
-      {answered !== null && (
-        <button
-          onClick={() => {
-            setIndex((i) => i + 1);
-            setAnswered(null);
-          }}
-          className="mt-4 w-full rounded-xl bg-blue-600 py-3.5 font-bold text-white shadow"
-        >
-          下一題
-        </button>
-      )}
+      {answered !== null && <button className="trial-next" onClick={() => { setIndex((current) => current + 1); setAnswered(null); }}>下一道試煉<span>→</span></button>}
     </div>
   );
 }

@@ -3,6 +3,7 @@
 export interface WordRecord {
   wordId: string;
   word: string;
+  wordVariants?: string[];
   level: string; // LV1–LV6
   pos: string | null;
   posAll: string[];
@@ -41,6 +42,31 @@ export interface RelationRecord {
   note: string | null;
   strength: number | null;
   status: string;
+}
+
+export interface ExamPriorityRecord {
+  wordId: string;
+  word: string;
+  rank: number;
+  level: string;
+  pos: string | null;
+  meaningZh: string | null;
+  priorityTier: "S" | "A" | "B" | "C" | "Z";
+  scoreXuece: number;
+  xtBase: number;
+  xtOption: number;
+  xtCross: number;
+  xtYears: number;
+  xtYearList: string | null;
+  xtOptionCount: number;
+  xtAnswerCount: number;
+  advancedTier: string | null;
+  scoreZhikao: number;
+  zkYears: number;
+  zkYearList: string | null;
+  zkOptionCount: number;
+  zkAnswerCount: number;
+  isFunctionWord: boolean;
 }
 
 export interface MorphemeRecord {
@@ -91,7 +117,7 @@ export interface CardState {
 
 export type Grade = 0 | 1 | 2 | 3; // Again / Hard / Good / Easy
 
-export type ReviewMode = "flashcard" | "quiz-w2m" | "quiz-m2w" | "fill-blank";
+export type ReviewMode = "flashcard" | "quiz-w2m" | "quiz-m2w" | "quiz-image" | "fill-blank" | "slash";
 
 export interface ReviewLogEntry {
   id?: number;

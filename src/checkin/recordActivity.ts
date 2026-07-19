@@ -20,6 +20,7 @@ export async function gradeFlashcard(
   grade: Grade,
   sessionId: string,
   isNewSession: boolean,
+  mode: ReviewMode = "flashcard",
 ): Promise<CardState> {
   const today = todayStr();
   return progressDb.transaction(
@@ -41,7 +42,7 @@ export async function gradeFlashcard(
         intervalAfter: after.intervalDays,
         easeFactorBefore: before.easeFactor,
         easeFactorAfter: after.easeFactor,
-        mode: "flashcard",
+        mode,
       });
       await upsertCheckIn(isNewWord, isNewSession);
       return after;

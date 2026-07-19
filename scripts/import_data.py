@@ -10,6 +10,7 @@ git-diffable JSON bundles consumed by the app at build time.
 import argparse
 import hashlib
 import json
+import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -17,6 +18,9 @@ from pathlib import Path
 import openpyxl
 
 VALID_LEVELS = {"LV1", "LV2", "LV3", "LV4", "LV5", "LV6"}
+VALID_RELATION_TYPES = {"synonym", "antonym", "derivative", "word_form", "confuse", "root_family", "topic", "exam_distractor"}
+VALID_RELATION_DIRECTIONS = {"one_way", "two_way"}
+VALID_PRIORITY_TIERS = {"S", "A", "B", "C", "Z"}
 
 SHEETS = {
     "words": "input_words_單字主表",
@@ -29,6 +33,7 @@ SHEETS = {
 # 選配工作表：Excel 裡還沒有也不會報錯，輸出空陣列
 OPTIONAL_SHEETS = {
     "notes": "input_notes_補充說明",
+    "exam_priority": "exam_priority_學測優先",
 }
 
 ID_PREFIX = {"words": "W", "examples": "E", "relations": "R", "morphemes": "M", "media": "A", "notes": "N"}
@@ -48,7 +53,26 @@ def gen_id(sheet_key, *parts):
     return f"{ID_PREFIX[sheet_key]}X{h}"
 
 
-def read_rows(ws):
+def word_variants(entry):
+    """Expand slash and parenthetical spellings while keeping the source entry intact."""
+    variants = []
+    for raw_part in entry.split("/"):
+        part = raw_part.strip()
+        match = re.fullmatch(r"([A-Za-z-]+)\(([A-Za-z-]+)\)", part)
+        if not match:
+            variants.append(part)
+            continue
+        base, addition = match.groups()
+        common_prefix = 0
+        for left, right in zip(base.casefold(), addition.casefold()):
+            if left != right:
+                break
+            common_prefix += 1
+        variants.extend([base, addition if common_prefix >= 3 else base + addition])
+    return list(dict.fromkeys(v for v in variants if v))
+
+
+def read_rows(ws, validate_instruction=True):
     """Yield cleaned row tuples starting from row 3 (row1=header, row2=instructional sample)."""
     rows = ws.iter_rows(min_row=1, values_only=True)
     header = next(rows, None)
@@ -57,7 +81,7 @@ def read_rows(ws):
         return []
     # Row 2 of every input_* sheet is a 填表說明 row, not data. If the template
     # shape ever changes this assert fails loudly instead of silently dropping a word.
-    if sample is not None and clean(sample[0]) is not None:
+    if validate_instruction and sample is not None and clean(sample[0]) is not None:
         first = str(sample[0])
         if not ("可空" in first or "填" in first or "說明" in first):
             raise SystemExit(
@@ -94,6 +118,7 @@ def parse_words(ws):
         words.append({
             "wordId": word_id or gen_id("words", word),
             "word": word,
+            "wordVariants": word_variants(word),
             "level": level,
             "pos": pos or None,
             "posAll": pos_all,
@@ -138,10 +163,28 @@ def parse_examples(ws):
 
 def parse_relations(ws):
     out = []
-    for r in read_rows(ws):
+    seen = {}
+    for row_number, r in enumerate(read_rows(ws), start=3):
         (rel_id, word, related, rel_type, direction, note, strength, status) = (list(r) + [None] * 8)[:8]
         if word is None or related is None:
             continue
+        if word == related:
+            raise SystemExit(f"錯誤：關聯詞第 {row_number} 列把「{word}」連到自己。")
+        if rel_type not in VALID_RELATION_TYPES:
+            raise SystemExit(f"錯誤：關聯詞第 {row_number} 列的 relation_type「{rel_type}」不合法。")
+        if direction not in VALID_RELATION_DIRECTIONS:
+            raise SystemExit(f"錯誤：關聯詞第 {row_number} 列的 direction「{direction}」不合法。")
+        if not isinstance(strength, (int, float)) or not 1 <= strength <= 5:
+            raise SystemExit(f"錯誤：關聯詞第 {row_number} 列的 strength 必須是 1–5。")
+        key = (word.casefold(), related.casefold(), rel_type)
+        if key in seen:
+            print(
+                f"警告：關聯詞第 {row_number} 列與第 {seen[key]} 列重複："
+                f"{word} → {related}（{rel_type}），已保留第一筆。",
+                file=sys.stderr,
+            )
+            continue
+        seen[key] = row_number
         out.append({
             "relationId": rel_id or gen_id("relations", word, related, rel_type),
             "word": word,
@@ -201,6 +244,44 @@ def parse_media(ws):
     return out
 
 
+def parse_exam_priority(ws):
+    out = []
+    for r in read_rows(ws, validate_instruction=False):
+        values = (list(r) + [None] * 22)[:22]
+        (rank, word_id, word, level, pos, meaning_zh, priority_tier, score_xuece,
+         xt_base, xt_option, xt_cross, xt_years, xt_year_list, xt_n_option,
+         xt_n_answer, adv_tier, score_zhikao, zk_years, zk_year_list,
+         zk_n_option, zk_n_answer, is_function_word) = values
+        if word is None or priority_tier not in VALID_PRIORITY_TIERS:
+            continue
+        out.append({
+            "wordId": word_id,
+            "word": word,
+            "rank": rank,
+            "level": level,
+            "pos": pos,
+            "meaningZh": meaning_zh,
+            "priorityTier": priority_tier,
+            "scoreXuece": score_xuece,
+            "xtBase": xt_base,
+            "xtOption": xt_option,
+            "xtCross": xt_cross,
+            "xtYears": xt_years,
+            "xtYearList": xt_year_list,
+            "xtOptionCount": xt_n_option,
+            "xtAnswerCount": xt_n_answer,
+            "advancedTier": adv_tier,
+            "scoreZhikao": score_zhikao,
+            "zkYears": zk_years,
+            "zkYearList": zk_year_list,
+            "zkOptionCount": zk_n_option,
+            "zkAnswerCount": zk_n_answer,
+            "isFunctionWord": str(is_function_word or "").upper() == "Y",
+        })
+    out.sort(key=lambda row: (row["rank"] if isinstance(row["rank"], (int, float)) else 10**9, row["word"]))
+    return out
+
+
 def parse_notes(ws):
     out = []
     for r in read_rows(ws):
@@ -249,19 +330,43 @@ def main():
     media = parse_media(wb[SHEETS["media"]])
     notes_sheet = OPTIONAL_SHEETS["notes"]
     notes = parse_notes(wb[notes_sheet]) if notes_sheet in wb.sheetnames else []
+    priority_sheet = OPTIONAL_SHEETS["exam_priority"]
+    exam_priority = parse_exam_priority(wb[priority_sheet]) if priority_sheet in wb.sheetnames else []
 
     word_set = {w["word"] for w in words}
+    word_ids = {w["wordId"]: w["word"] for w in words}
+    missing_relation_words = sorted({
+        endpoint
+        for relation in relations
+        for endpoint in (relation["word"], relation["relatedWord"])
+        if endpoint not in word_set
+    })
+    if missing_relation_words:
+        raise SystemExit(
+            f"錯誤：關聯詞表中有 {len(missing_relation_words)} 個端點不存在於單字主表："
+            + ", ".join(missing_relation_words[:10])
+            + ("…" if len(missing_relation_words) > 10 else "")
+        )
     for label, rows, field in [
         ("例句", examples, "word"),
-        ("關聯詞", relations, "word"),
         ("字根", morphemes, "word"),
         ("圖卡", media, "targetWord"),
         ("補充說明", notes, "word"),
+        ("考試優先級", exam_priority, "word"),
     ]:
         missing = sorted({r[field] for r in rows if r[field] not in word_set})
         if missing:
             print(f"警告：{label}表中有 {len(missing)} 個單字不存在於單字主表：{', '.join(missing[:10])}"
                   + ("…" if len(missing) > 10 else ""), file=sys.stderr)
+    mismatched_priority_ids = [
+        row for row in exam_priority
+        if row["wordId"] not in word_ids or word_ids[row["wordId"]] != row["word"]
+    ]
+    if mismatched_priority_ids:
+        sample = mismatched_priority_ids[0]
+        raise SystemExit(
+            f"錯誤：考試優先級的 word_id 與主表不一致：{sample['wordId']} / {sample['word']}"
+        )
 
     write_json(out_dir / "words.json", words)
     write_json(out_dir / "examples.json", examples)
@@ -269,11 +374,12 @@ def main():
     write_json(out_dir / "morphemes.json", morphemes)
     write_json(out_dir / "media.json", media)
     write_json(out_dir / "notes.json", notes)
+    write_json(out_dir / "exam_priority.json", exam_priority)
 
     words_hash = hashlib.sha256((out_dir / "words.json").read_bytes()).hexdigest()
     # contentHash 涵蓋所有 App 會載入的資料檔：任何一張表變動都會觸發前端重灌
     h = hashlib.sha256()
-    for name in ["words.json", "examples.json", "relations.json", "morphemes.json", "notes.json"]:
+    for name in ["words.json", "examples.json", "relations.json", "morphemes.json", "notes.json", "exam_priority.json"]:
         h.update((out_dir / name).read_bytes())
     content_hash = h.hexdigest()
     meta = {
@@ -287,6 +393,7 @@ def main():
             "morphemes": len(morphemes),
             "media": len(media),
             "notes": len(notes),
+            "examPriority": len(exam_priority),
         },
         "wordsHash": words_hash,
         "contentHash": content_hash,

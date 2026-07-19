@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
 import { contentDb } from "../../db/contentDb";
+import "../realm-pages.css";
 
 const LEVELS = ["全部", "LV1", "LV2", "LV3", "LV4", "LV5", "LV6"];
 const PAGE_SIZE = 100;
@@ -10,79 +11,60 @@ export default function WordBrowserScreen() {
   const [search, setSearch] = useState("");
   const [level, setLevel] = useState("全部");
   const [limit, setLimit] = useState(PAGE_SIZE);
-
   const words = useLiveQuery(() => contentDb.words.orderBy("wordId").toArray(), []);
 
   const filtered = useMemo(() => {
     if (!words) return [];
-    const q = search.trim().toLowerCase();
-    return words.filter((w) => {
-      if (level !== "全部" && w.level !== level) return false;
-      if (!q) return true;
-      return w.word.toLowerCase().includes(q) || (w.meaningZh ?? "").includes(q);
+    const query = search.trim().toLowerCase();
+    return words.filter((word) => {
+      if (level !== "全部" && word.level !== level) return false;
+      if (!query) return true;
+      return word.word.toLowerCase().includes(query) || (word.meaningZh ?? "").includes(query);
     });
   }, [words, search, level]);
 
   const shown = filtered.slice(0, limit);
 
   return (
-    <div className="p-4">
-      <h1 className="mb-3 text-xl font-bold">單字瀏覽</h1>
-      <input
-        type="search"
-        value={search}
-        onChange={(e) => {
-          setSearch(e.target.value);
-          setLimit(PAGE_SIZE);
-        }}
-        placeholder="搜尋單字或中文意思…"
-        className="mb-3 w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 outline-none focus:border-blue-500"
-      />
-      <div className="mb-3 flex gap-1.5 overflow-x-auto pb-1">
-        {LEVELS.map((lv) => (
-          <button
-            key={lv}
-            onClick={() => {
-              setLevel(lv);
-              setLimit(PAGE_SIZE);
-            }}
-            className={`shrink-0 rounded-full px-3 py-1 text-sm ${
-              level === lv ? "bg-blue-600 text-white" : "bg-white text-slate-600 border border-slate-300"
-            }`}
-          >
-            {lv}
-          </button>
-        ))}
+    <div className="realm-page archive-page">
+      <header className="realm-header">
+        <div><p>WORD BEAST ARCHIVE</p><h1>萬字譜</h1></div>
+        <span className="realm-count"><b>{words?.length ?? "—"}</b> 總收錄</span>
+      </header>
+
+      <section className="archive-tools" aria-label="搜尋與篩選">
+        <label className="archive-search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m15.5 15.5 5 5" /></svg>
+          <input type="search" value={search} onChange={(event) => { setSearch(event.target.value); setLimit(PAGE_SIZE); }} placeholder="輸入真名或中文釋義" />
+          {search && <button onClick={() => setSearch("")} aria-label="清除搜尋">×</button>}
+        </label>
+        <div className="realm-levels">
+          {LEVELS.map((item) => <button key={item} className={level === item ? "active" : ""} onClick={() => { setLevel(item); setLimit(PAGE_SIZE); }}>{item}</button>)}
+        </div>
+      </section>
+
+      <div className="archive-result-head">
+        <span>{search ? `「${search}」的結果` : level === "全部" ? "全部真名" : `${level} 卷`}</span>
+        <b>{filtered.length} 枚</b>
       </div>
-      {!words ? (
-        <p className="py-8 text-center text-slate-400">載入中…</p>
-      ) : (
+
+      {!words ? <div className="realm-loading"><i /><p>正在展開萬字譜</p></div> : (
         <>
-          <p className="mb-2 text-sm text-slate-500">共 {filtered.length} 個單字</p>
-          <ul className="divide-y divide-slate-100 rounded-xl bg-white shadow-sm">
-            {shown.map((w) => (
-              <li key={w.wordId}>
-                <Link to={`/word/${w.wordId}`} className="flex items-baseline gap-2 px-4 py-3">
-                  <span className="font-semibold">{w.word}</span>
-                  <span className="text-xs text-slate-400">{w.pos}</span>
-                  <span className="ml-auto max-w-[50%] truncate text-sm text-slate-600">
-                    {w.meaningZh}
-                  </span>
-                  <span className="shrink-0 rounded bg-slate-100 px-1.5 py-0.5 text-xs text-slate-500">
-                    {w.level}
-                  </span>
+          <ol className="archive-index">
+            {shown.map((word, index) => (
+              <li key={word.wordId}>
+                <Link to={`/word/${word.wordId}`}>
+                  <span className="archive-number">{String(index + 1).padStart(4, "0")}</span>
+                  <span className="archive-word"><strong>{word.word}</strong><small>{word.pos || "—"}</small></span>
+                  <span className="archive-meaning">{word.meaningZh || "尚無釋義"}</span>
+                  <span className="archive-level">{word.level}</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12M13 7l5 5-5 5" /></svg>
                 </Link>
               </li>
             ))}
-          </ul>
-          {filtered.length > limit && (
-            <button
-              onClick={() => setLimit(limit + PAGE_SIZE)}
-              className="mt-3 w-full rounded-xl border border-slate-300 bg-white py-2.5 text-slate-600"
-            >
-              顯示更多（還有 {filtered.length - limit} 個）
-            </button>
-          )}
+          </ol>
+          {filtered.length > limit && <button className="archive-more" onClick={() => setLimit(limit + PAGE_SIZE)}>再展開 {Math.min(PAGE_SIZE, filtered.length - limit)} 枚 <span>↓</span></button>}
+          {filtered.length === 0 && <div className="archive-empty"><span>無</span><h2>譜中查無此名</h2><p>換一個拼法或等級再找找看。</p></div>}
         </>
       )}
     </div>

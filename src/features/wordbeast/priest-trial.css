@@ -1,0 +1,407 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Noto+Serif+TC:wght@600;800;900&display=swap");
+
+:root {
+  --priest-ink: #24251f;
+  --priest-paper: #eee3c9;
+  --priest-paper-deep: #d7c49d;
+  --priest-moss: #596246;
+  --priest-red: #a8392e;
+  --priest-gold: #b28a43;
+}
+
+body.priest-modal-open { overflow: hidden; }
+
+.priest-page {
+  width: 100vw;
+  min-height: 100vh;
+  margin-left: calc(50% - 50vw);
+  color: var(--priest-ink);
+  background:
+    radial-gradient(circle at 12% 6%, rgba(255,255,255,.45), transparent 24rem),
+    repeating-linear-gradient(92deg, transparent 0 28px, rgba(74,57,27,.018) 29px 30px),
+    #e7dcc2;
+  font-family: "DM Sans", "Noto Sans TC", sans-serif;
+}
+
+.priest-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 600px;
+  padding: 28px max(5vw, 28px) 48px;
+  color: #f3ead5;
+  background:
+    linear-gradient(90deg, rgba(11,17,12,.97), rgba(24,31,23,.92) 58%, rgba(42,43,31,.88)),
+    radial-gradient(circle at 80% 30%, #596246, transparent 38%);
+}
+
+.priest-hero::before,
+.priest-hero::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.priest-hero::before {
+  inset: 0;
+  opacity: .16;
+  background-image: repeating-linear-gradient(0deg, transparent 0 3px, #d5bd86 4px);
+  mix-blend-mode: overlay;
+}
+
+.priest-hero::after {
+  right: -7vw;
+  top: 20px;
+  width: min(48vw, 620px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(213,189,134,.25);
+  border-radius: 50%;
+  box-shadow: 0 0 0 48px rgba(213,189,134,.04), 0 0 0 96px rgba(213,189,134,.025);
+}
+
+.priest-hero nav,
+.priest-hero-grid,
+.priest-legend,
+.priest-main,
+.priest-footer {
+  width: min(1180px, 100%);
+  margin-inline: auto;
+}
+
+.priest-hero nav {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(238,227,201,.22);
+  font-size: 11px;
+  letter-spacing: .17em;
+}
+
+.priest-hero nav a { color: inherit; text-decoration: none; }
+.priest-hero nav a:hover { color: #e5c77f; }
+
+.priest-hero-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(260px, .65fr);
+  align-items: center;
+  gap: 60px;
+  padding-top: 54px;
+}
+
+.priest-eyebrow {
+  margin: 0 0 15px;
+  color: #c9aa65;
+  font: 700 12px/1.4 "DM Sans", sans-serif;
+  letter-spacing: .2em;
+}
+
+.priest-hero h1 {
+  margin: 0;
+  font: 900 clamp(64px, 9vw, 126px)/.84 "Noto Serif TC", serif;
+  letter-spacing: -.07em;
+}
+
+.priest-hero h1 em { color: #c3a25e; font-style: normal; }
+
+.priest-lead {
+  max-width: 660px;
+  margin: 30px 0 0;
+  color: rgba(243,234,213,.72);
+  font: 600 15px/1.9 "Noto Serif TC", serif;
+}
+
+.priest-hero-sigil {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(330px, 80vw);
+  aspect-ratio: 1;
+  justify-self: center;
+  border: 1px solid rgba(212,180,106,.43);
+  border-radius: 50%;
+  box-shadow: inset 0 0 60px rgba(8,12,8,.55);
+}
+
+.priest-hero-sigil::before,
+.priest-hero-sigil::after {
+  content: "";
+  position: absolute;
+  inset: 13%;
+  border: 1px solid rgba(212,180,106,.24);
+  transform: rotate(45deg);
+}
+
+.priest-hero-sigil::after { inset: 27%; transform: rotate(15deg); }
+.priest-hero-sigil span { font: 900 82px/1 "Noto Serif TC", serif; color: #d2b36f; }
+.priest-hero-sigil small { margin-top: -77px; padding-left: 112px; font-size: 9px; letter-spacing: .24em; color: rgba(243,234,213,.55); }
+.priest-hero-sigil i { position: absolute; width: 8px; height: 8px; border-radius: 50%; background: #a8392e; box-shadow: 0 0 12px #a8392e; }
+.priest-hero-sigil i:nth-of-type(1) { top: 8%; left: 48%; }
+.priest-hero-sigil i:nth-of-type(2) { bottom: 18%; left: 10%; }
+.priest-hero-sigil i:nth-of-type(3) { bottom: 23%; right: 12%; }
+
+.priest-legend {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 54px;
+  border-top: 1px solid rgba(238,227,201,.2);
+}
+
+.priest-legend div { padding: 20px 28px 0 0; }
+.priest-legend b { display: block; color: #d6bb7c; font: 800 14px "Noto Serif TC", serif; }
+.priest-legend span { display: block; margin-top: 7px; color: rgba(243,234,213,.52); font-size: 11px; }
+
+.priest-main { padding: 54px 24px 90px; }
+
+.priest-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+  margin-bottom: 33px;
+}
+
+.priest-filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.priest-filters button {
+  border: 1px solid rgba(36,37,31,.24);
+  border-radius: 999px;
+  padding: 8px 16px;
+  color: #505044;
+  background: rgba(255,255,255,.18);
+  font: 700 12px "DM Sans", "Noto Sans TC", sans-serif;
+  cursor: pointer;
+  transition: .18s ease;
+}
+.priest-filters button:hover { transform: translateY(-1px); border-color: #596246; }
+.priest-filters button.active { color: #f3ead5; background: #30382b; border-color: #30382b; }
+.priest-toolbar p { flex: none; margin: 0; color: #706d60; font-size: 12px; letter-spacing: .08em; }
+.priest-toolbar strong { font: 800 24px "Noto Serif TC", serif; color: #30382b; }
+
+.priest-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.priest-card {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 350px;
+  padding: 13px;
+  flex-direction: column;
+  text-align: left;
+  color: var(--priest-ink);
+  background: rgba(247,239,218,.68);
+  border: 1px solid rgba(69,65,50,.28);
+  box-shadow: 0 8px 22px rgba(44,37,24,.07), inset 0 0 0 5px rgba(255,255,255,.16);
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform .22s ease, box-shadow .22s ease, background .22s ease;
+}
+
+.priest-card::after {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border: 1px solid rgba(75,68,48,.15);
+  pointer-events: none;
+}
+
+.priest-card:hover,
+.priest-card:focus-visible {
+  z-index: 2;
+  transform: translateY(-7px) rotate(-.35deg);
+  background: #f4ead0;
+  box-shadow: 0 18px 35px rgba(44,37,24,.18), inset 0 0 0 5px rgba(255,255,255,.25);
+  outline: none;
+}
+
+.priest-card-number { position: relative; z-index: 1; align-self: end; color: #8b8069; font-size: 8px; letter-spacing: .2em; }
+.priest-card-visual { position: relative; display: grid; place-items: center; height: 205px; margin: 3px 0 4px; }
+.priest-card-visual::before { content: ""; position: absolute; width: 74%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(102,106,73,.12), transparent 68%); }
+.priest-card-copy { position: relative; z-index: 1; display: flex; flex-direction: column; padding: 0 8px; }
+.priest-card-word { font: 800 clamp(20px, 2vw, 28px)/1.1 "Noto Serif TC", serif; letter-spacing: -.04em; }
+.priest-card-meaning { min-height: 38px; margin-top: 7px; color: #6b6658; font: 600 11px/1.5 "Noto Serif TC", serif; }
+.priest-card-foot { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding: 12px 8px 6px; border-top: 1px solid rgba(50,49,40,.16); color: #766e5e; font-size: 9px; }
+.priest-level { display: inline-flex; gap: 3px; }
+.priest-level i { width: 5px; height: 5px; border-radius: 50%; border: 1px solid #8c816a; }
+.priest-level i.on { background: var(--priest-red); border-color: var(--priest-red); }
+
+.priest-cue-image { position: relative; z-index: 1; display: block; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 8px 10px rgba(39,35,26,.17)); }
+.priest-cue-svg { position: relative; z-index: 1; display: block; width: min(100%, 430px); height: auto; overflow: visible; fill: none; stroke: #3d4134; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+.priest-cue-svg.compact { width: 93%; max-height: 190px; }
+.priest-cue-svg circle:not(.core):not(.counter), .priest-cue-svg ellipse { fill: #d6c89f; }
+.priest-cue-svg .ink-beast path:first-child { fill: #7e875f; }
+.priest-cue-svg .ink-beast circle { fill: #2f3329; stroke: none; }
+.priest-cue-svg .ghost { opacity: .25; stroke-dasharray: 5 8; }
+.priest-cue-svg .hidden-ink { stroke: #a8392e; stroke-dasharray: 5 8; animation: hidden-message 2.4s ease-in-out infinite; }
+.priest-cue-svg .cue-melt path { fill: #83906f; animation: melting 2.8s ease-in-out infinite; transform-origin: center; }
+.priest-cue-svg .cue-melt ellipse { fill: rgba(89,98,70,.48); }
+.priest-cue-svg .cue-fragile path:first-child { fill: rgba(255,255,255,.28); }
+.priest-cue-svg .crack { stroke: #a8392e; stroke-dasharray: 100; animation: crack 2.5s ease-in-out infinite; }
+.priest-cue-svg .grid { stroke-width: 2; opacity: .23; }
+.priest-cue-svg .cue-transparent .ink-beast { opacity: .38; }
+.priest-cue-svg .cue-vague { filter: blur(2px); animation: vague 3.2s ease-in-out infinite; }
+.priest-cue-svg .cue-vague > g { opacity: .28; }
+.priest-cue-svg .core { fill: #bc4335; stroke: #e2b85c; animation: pulse-core 1.6s ease-out infinite; }
+.priest-cue-svg .counter { fill: #a8392e; stroke: none; }
+.priest-cue-svg .cue-fate path { stroke: #a8392e; stroke-width: 4; stroke-dasharray: 8 6; animation: fate-line 8s linear infinite; }
+.priest-cue-svg .cue-throughout circle { animation: distributed 2.8s ease-in-out infinite; }
+.priest-cue-svg .cue-throughout circle:nth-of-type(2n) { animation-delay: -.8s; }
+.priest-cue-svg .traveller { fill: #a8392e !important; animation: travel-beyond 2.5s ease-in-out infinite; }
+.priest-cue-svg .barely-line { stroke: #a8392e; }
+.priest-cue-svg .hesitant { animation: hesitate 1.4s ease-in-out infinite; transform-origin: 100px 105px; }
+.priest-cue-svg .sliding { animation: slide 2.4s ease-in-out infinite; }
+.priest-cue-svg .cue-spring { animation: spring 1.7s ease-in-out infinite; transform-origin: center bottom; }
+.priest-cue-svg .cue-grow path:nth-child(-n+3) { animation: grow 2.8s ease-in-out infinite; transform-origin: 100px 145px; }
+.priest-cue-svg .cue-jump .ink-beast { animation: jump 1.7s ease-in-out infinite; }
+.priest-cue-svg .cue-now circle { fill: rgba(178,138,67,.26); animation: pulse-core 1.8s ease-out infinite; }
+.priest-cue-svg .cue-electric path:last-child { fill: #d8b457; stroke: #9b7133; animation: electric .7s steps(2) infinite; }
+.priest-cue-svg .cue-burden rect, .priest-cue-svg .cue-bear-weight rect { fill: #555a4a; animation: weight 2s ease-in-out infinite; }
+
+.priest-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 24px 45px;
+  border-top: 1px solid rgba(62,59,47,.18);
+  color: #706d60;
+  font: 600 11px "Noto Serif TC", serif;
+}
+
+.priest-dialog-backdrop {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(13,17,13,.82);
+  backdrop-filter: blur(9px);
+  animation: backdrop-in .2s ease both;
+}
+
+.priest-dialog {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(300px, .92fr) minmax(340px, 1.08fr);
+  width: min(1000px, 100%);
+  max-height: min(760px, calc(100vh - 48px));
+  overflow: auto;
+  background: #eee3c9;
+  box-shadow: 0 30px 100px rgba(0,0,0,.45);
+  animation: dialog-in .28s cubic-bezier(.2,.75,.25,1) both;
+}
+
+.priest-dialog-close {
+  position: absolute;
+  z-index: 3;
+  top: 14px;
+  right: 16px;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(47,51,41,.25);
+  border-radius: 50%;
+  color: #30342a;
+  background: rgba(238,227,201,.7);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.priest-dialog-art {
+  position: relative;
+  min-height: 590px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: 55px;
+  background: #252c22;
+}
+
+.priest-dialog-art::after { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent 0 4px, rgba(255,255,255,.018) 5px); pointer-events: none; }
+.priest-dialog-art .priest-cue-image { max-width: 440px; max-height: 470px; }
+.priest-dialog-art .priest-cue-svg { stroke: #e1d5b9; filter: drop-shadow(0 12px 18px rgba(0,0,0,.28)); }
+.priest-dialog-art .priest-cue-svg .ink-beast path:first-child { fill: #7d8962; }
+.priest-dialog-art .priest-cue-svg circle:not(.core):not(.counter), .priest-dialog-art .priest-cue-svg ellipse { fill: #b9aa81; }
+.priest-orbit { position: absolute; width: 72%; aspect-ratio: 1; border: 1px solid rgba(210,179,109,.22); border-radius: 50%; box-shadow: 0 0 0 45px rgba(210,179,109,.025), 0 0 0 90px rgba(210,179,109,.018); animation: orbit 24s linear infinite; }
+.priest-orbit::before { content: ""; position: absolute; inset: 17%; border: 1px dashed rgba(210,179,109,.2); transform: rotate(45deg); }
+.priest-seal { position: absolute; bottom: 26px; right: 26px; display: grid; place-items: center; width: 44px; height: 54px; color: #d4b467; border: 2px solid #a8392e; font: 900 17px "Noto Serif TC", serif; transform: rotate(4deg); }
+
+.priest-dialog-copy { padding: 58px 54px 46px; }
+.priest-dialog-kicker { display: flex; justify-content: space-between; align-items: center; color: #77705e; font-size: 10px; letter-spacing: .14em; }
+.priest-dialog-copy h2 { margin: 30px 0 0; font: 900 clamp(50px, 7vw, 83px)/.9 "Noto Serif TC", serif; letter-spacing: -.065em; overflow-wrap: anywhere; }
+.priest-dialog-meaning { margin: 17px 0 32px; color: #716a59; font: 800 18px "Noto Serif TC", serif; }
+.priest-senses { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; margin: 0 0 30px; }
+.priest-senses button { min-height: 83px; padding: 10px; border: 1px solid rgba(47,51,41,.2); color: #575548; background: rgba(255,255,255,.18); text-align: left; cursor: pointer; }
+.priest-senses button.active { color: #f3ead5; background: #3d4736; border-color: #3d4736; }
+.priest-senses b, .priest-senses small { display: block; }
+.priest-senses b { font: 800 13px "Noto Serif TC", serif; }
+.priest-senses small { margin-top: 6px; opacity: .66; font-size: 9px; line-height: 1.45; }
+.priest-notes { border-top: 1px solid rgba(47,51,41,.18); }
+.priest-notes > div { display: grid; grid-template-columns: 80px 1fr; gap: 16px; padding: 17px 0; border-bottom: 1px solid rgba(47,51,41,.13); }
+.priest-notes span { padding-top: 2px; color: #9a513f; font-size: 9px; font-weight: 800; letter-spacing: .08em; }
+.priest-notes p { margin: 0; color: #4e4d42; font: 600 12px/1.8 "Noto Serif TC", serif; }
+.priest-utterance { margin: 28px 0 0; padding-left: 18px; border-left: 3px solid #a8392e; color: #6d6655; font: 700 11px/1.7 "Noto Serif TC", serif; }
+
+@keyframes backdrop-in { from { opacity: 0; } }
+@keyframes dialog-in { from { opacity: 0; transform: translateY(18px) scale(.98); } }
+@keyframes orbit { to { transform: rotate(360deg); } }
+@keyframes hidden-message { 50% { opacity: .28; stroke-dashoffset: -20; } }
+@keyframes melting { 50% { transform: scaleY(.9) translateY(7px); } }
+@keyframes crack { 0%,20% { stroke-dashoffset: 100; } 70%,100% { stroke-dashoffset: 0; } }
+@keyframes vague { 50% { filter: blur(5px); transform: translateX(3px); } }
+@keyframes pulse-core { 0% { opacity: 1; transform: scale(.7); transform-origin: center; } 70%,100% { opacity: .35; transform: scale(1.45); transform-origin: center; } }
+@keyframes fate-line { to { stroke-dashoffset: -120; } }
+@keyframes distributed { 50% { opacity: .3; transform: scale(.75); transform-origin: center; } }
+@keyframes travel-beyond { 0% { transform: translateX(0); opacity: .2; } 65%,100% { transform: translateX(85px); opacity: 1; } }
+@keyframes hesitate { 0%,100% { transform: rotate(-4deg) translateX(-4px); } 50% { transform: rotate(4deg) translateX(4px); } }
+@keyframes slide { 0% { transform: translate(-42px, 28px) rotate(-8deg); } 70%,100% { transform: translate(16px, -10px) rotate(12deg); } }
+@keyframes spring { 50% { transform: scaleY(.7) translateY(36px); } }
+@keyframes grow { 0% { transform: scale(.4); } 60%,100% { transform: scale(1); } }
+@keyframes jump { 0%,100% { transform: translateY(14px); } 50% { transform: translateY(-17px); } }
+@keyframes electric { 50% { transform: translateX(3px); } }
+@keyframes weight { 50% { transform: translateY(4px); } }
+
+@media (max-width: 1050px) {
+  .priest-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+@media (max-width: 820px) {
+  .priest-hero { min-height: auto; }
+  .priest-hero-grid { grid-template-columns: 1fr; }
+  .priest-hero-sigil { display: none; }
+  .priest-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .priest-dialog { grid-template-columns: 1fr; }
+  .priest-dialog-art { min-height: 340px; padding: 35px; }
+  .priest-dialog-art .priest-cue-image { max-height: 310px; }
+}
+
+@media (max-width: 620px) {
+  .priest-hero { padding-inline: 20px; }
+  .priest-hero nav span { display: none; }
+  .priest-hero h1 { font-size: 64px; }
+  .priest-legend { grid-template-columns: 1fr; margin-top: 35px; }
+  .priest-legend div { padding-top: 14px; }
+  .priest-main { padding: 32px 14px 65px; }
+  .priest-toolbar { align-items: start; flex-direction: column; }
+  .priest-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .priest-card { min-height: 302px; padding: 10px; }
+  .priest-card-visual { height: 175px; }
+  .priest-card-word { font-size: 22px; }
+  .priest-dialog-backdrop { padding: 0; place-items: stretch; }
+  .priest-dialog { max-height: 100vh; min-height: 100vh; }
+  .priest-dialog-art { min-height: 310px; }
+  .priest-dialog-copy { padding: 38px 24px 50px; }
+  .priest-dialog-copy h2 { font-size: 48px; }
+  .priest-footer { flex-direction: column; gap: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .priest-page *, .priest-page *::before, .priest-page *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+}

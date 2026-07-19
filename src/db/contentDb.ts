@@ -1,6 +1,7 @@
 import Dexie, { type Table } from "dexie";
 import type {
   ContentMetaRecord,
+  ExamPriorityRecord,
   ExampleRecord,
   MorphemeRecord,
   NoteRecord,
@@ -16,6 +17,7 @@ export class VocabContentDB extends Dexie {
   morphemes!: Table<MorphemeRecord, string>;
   notes!: Table<NoteRecord, string>;
   meta!: Table<ContentMetaRecord, string>;
+  examPriorities!: Table<ExamPriorityRecord, string>;
 
   constructor() {
     super("VocabContentDB");
@@ -28,6 +30,9 @@ export class VocabContentDB extends Dexie {
     });
     this.version(2).stores({
       notes: "noteId, word, noteType",
+    });
+    this.version(3).stores({
+      examPriorities: "wordId, word, priorityTier, rank, level, isFunctionWord",
     });
   }
 }

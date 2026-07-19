@@ -1,0 +1,232 @@
+/* 千單斬：全螢幕戰鬥畫面。
+   圖檔路徑由 SlashScreen 以 CSS 變數注入（--slash-bg 等），
+   對齊 vite base 設定，不在這裡寫死 url。 */
+
+.slash-game {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  overflow: hidden;
+  background: #1a1208;
+  font-family: "Noto Serif TC", "Noto Sans TC", serif;
+  color: #fff;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+/* ---- 背景：擂台對峙，靜止場景 ---- */
+.slash-bg {
+  position: absolute;
+  inset: 0;
+  background-image: var(--slash-bg);
+  background-size: cover;
+  background-position: center bottom;
+}
+
+/* ---- 劍客 ---- */
+.slash-swordsman {
+  position: absolute;
+  bottom: max(12px, env(safe-area-inset-bottom));
+  left: 4px;
+  width: clamp(84px, 22vw, 190px);
+  aspect-ratio: 200 / 290;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  z-index: 30;
+  pointer-events: none;
+}
+.slash-swordsman.idle   { background-image: var(--slash-sw-idle); }
+.slash-swordsman.attack { background-image: var(--slash-sw-attack); }
+.slash-swordsman.hit    { background-image: var(--slash-sw-hit); }
+
+/* ---- 敵人卡牌：RPG 遇敵陣型 ----
+   怪物列陣居上、武士居下對峙。動畫套在整張卡（圖、字、倒數條一起動），
+   字框用百分比對齊牌面紅框，卡寬用 clamp 響應式、永不重疊。 */
+.slash-enemies {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-end;
+  gap: 14px 10px;
+  padding: 0 10px calc(clamp(84px, 22vw, 190px) * 1.15);
+  pointer-events: none;
+}
+.slash-card {
+  position: relative;
+  width: clamp(96px, 26vw, 168px);
+  aspect-ratio: 18 / 25;
+  container-type: inline-size;
+  cursor: pointer;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
+}
+/* 陣型錯落：偶數位往下沉一點，有前後排的深度 */
+.slash-card:nth-child(even) { margin-top: 16px; }
+
+/* 對峙浮動：慢而沉的吐息；時限剩三成時切換成蓄力顫抖＋泛紅 */
+.slash-card.running {
+  animation:
+    slash-card-loom 1.7s ease-in-out infinite alternate,
+    slash-card-windup 0.14s linear calc(var(--timer-ms) * 0.7) infinite;
+}
+.slash-card:active { filter: brightness(1.15); }
+
+.slash-card-sprite {
+  position: absolute;
+  inset: 0;
+  background-image: var(--slash-card);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+.slash-card.slashed { animation: none; }
+.slash-card.slashed .slash-card-sprite {
+  background-image: var(--slash-card-slashed);
+}
+.slash-card.slashed .slash-card-inner {
+  animation: slash-out 0.5s ease-out forwards;
+}
+.slash-card-inner { position: absolute; inset: 0; }
+.slash-card.fading {
+  animation: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* 牌面文字：紅框在原圖的 36.4%–64.3% 高度帶，用百分比貼齊 */
+.slash-card-word {
+  position: absolute;
+  top: 36.4%;
+  height: 27.9%;
+  left: 14%;
+  right: 14%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 900;
+  color: #1a1a1a;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* 符咒模式：長字寫在一張比紅框寬的符紙上貼在胸口，可折兩行。
+   符紙是獨立物件，蓋出紅框不算破圖。 */
+.slash-card-word.plaque {
+  left: 2%;
+  right: 2%;
+  top: 35%;
+  height: 31%;
+  background: linear-gradient(175deg, #fdf6e3, #f0e2bd);
+  border: 2px solid #b91c1c;
+  border-radius: 4px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.45);
+  transform: rotate(-1.5deg);
+  hyphens: auto;
+}
+
+.slash-card-timer {
+  position: absolute;
+  bottom: -12px;
+  left: 4%;
+  width: 92%;
+  height: 6px;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.slash-card-timer-bar {
+  height: 100%;
+  width: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #4ade80, #facc15, #ef4444);
+  animation: slash-timer-drain linear forwards;
+  animation-duration: var(--timer-ms);
+}
+
+@keyframes slash-card-loom {
+  0%   { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-5px) scale(1.025); }
+}
+@keyframes slash-card-windup {
+  0%   { transform: translate(-2px, 1px) scale(1.05); filter: drop-shadow(0 0 6px rgba(239, 68, 68, 0.8)) brightness(1.1); }
+  50%  { transform: translate(2px, -1px) scale(1.05); filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.9)) brightness(1.15); }
+  100% { transform: translate(-1px, -2px) scale(1.06); filter: drop-shadow(0 0 6px rgba(239, 68, 68, 0.8)) brightness(1.1); }
+}
+@keyframes slash-out {
+  0%   { transform: scale(1) rotate(0); opacity: 1; }
+  50%  { transform: scale(1.25) rotate(10deg); opacity: 0.75; }
+  100% { transform: scale(0.2) rotate(38deg) translateY(-70px); opacity: 0; }
+}
+@keyframes slash-timer-drain {
+  from { width: 100%; }
+  to   { width: 0%; }
+}
+
+/* ---- HUD 與特效 ---- */
+.slash-flash {
+  position: absolute;
+  inset: 0;
+  z-index: 60;
+  background: rgba(220, 38, 38, 0.35);
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+}
+.slash-flash.on { opacity: 1; }
+
+.slash-float {
+  position: absolute;
+  z-index: 55;
+  font-size: 24px;
+  font-weight: 900;
+  pointer-events: none;
+  text-shadow: 2px 2px 0 #000;
+  animation: slash-float-up 0.8s ease-out forwards;
+}
+.slash-float.ok { color: #ffd700; }
+.slash-float.bad { color: #f87171; }
+@keyframes slash-float-up {
+  from { transform: translateY(0); opacity: 1; }
+  to   { transform: translateY(-56px); opacity: 0; }
+}
+
+.slash-combo-burst {
+  position: absolute;
+  top: 34%;
+  left: 50%;
+  z-index: 55;
+  font-size: clamp(26px, 8vw, 44px);
+  font-weight: 900;
+  color: #ffd700;
+  text-shadow: 0 0 18px rgba(255, 215, 0, 0.8), 3px 3px 0 #000;
+  pointer-events: none;
+  animation: slash-combo-pop 0.65s ease-out forwards;
+}
+@keyframes slash-combo-pop {
+  0%   { transform: translate(-50%, 0) scale(0.4); opacity: 0; }
+  30%  { transform: translate(-50%, -8px) scale(1.15); opacity: 1; }
+  100% { transform: translate(-50%, -28px) scale(1); opacity: 0; }
+}
+
+.slash-title {
+  font-weight: 900;
+  letter-spacing: 0.35em;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 3px 3px 0 #000;
+  animation: slash-title-glow 2.5s ease-in-out infinite;
+}
+@keyframes slash-title-glow {
+  0%, 100% { text-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 3px 3px 0 #000; }
+  50%      { text-shadow: 0 0 40px rgba(255, 215, 0, 1), 3px 3px 0 #000; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slash-card.running { animation: none; }
+}

@@ -6,17 +6,56 @@ import type { Grade } from "../../db/types";
 import { buildTodayQueue, type QueueItem } from "../../srs/queue";
 import { gradeFlashcard } from "../../checkin/recordActivity";
 import { GRADE_LABELS } from "../../srs/sm2";
-import { NOTE_TYPE_LABEL } from "../browser/WordDetailScreen";
+import { NOTE_TYPE_LABEL } from "../browser/wordLabels";
 import SpeakerButton from "../../components/SpeakerButton";
-
-const GRADE_STYLES: Record<Grade, string> = {
-  0: "bg-red-500",
-  1: "bg-orange-400",
-  2: "bg-green-500",
-  3: "bg-blue-500",
-};
+import { getWordBeastAsset } from "../wordbeast/wordBeastAssets";
+import "./review.css";
 
 const LEVEL_CHOICES = ["全部", "LV1", "LV2", "LV3", "LV4", "LV5", "LV6"];
+
+function LevelFilter({ selected, onChange }: { selected: string; onChange: (level: string) => void }) {
+  return (
+    <div className="seal-levels" aria-label="篩選等級">
+      {LEVEL_CHOICES.map((level) => (
+        <button key={level} onClick={() => onChange(level)} className={selected === level ? "active" : ""}>{level}</button>
+      ))}
+    </div>
+  );
+}
+
+function WordSigil({ word }: { word: string }) {
+  const hash = [...word].reduce((sum, char) => sum + char.charCodeAt(0), 0);
+  const turn = hash % 46 - 23;
+  const spokes = 4 + (hash % 4);
+  return (
+    <svg className="word-sigil" viewBox="0 0 220 220" role="img" aria-label={`${word} 的暫定封印符號`}>
+      <circle cx="110" cy="110" r="77" />
+      <circle cx="110" cy="110" r="55" className="sigil-dash" />
+      <g transform={`rotate(${turn} 110 110)`}>
+        {Array.from({ length: spokes }, (_, index) => {
+          const angle = (360 / spokes) * index;
+          return <path key={index} d="M110 33 V62" transform={`rotate(${angle} 110 110)`} />;
+        })}
+        <path d="M73 110 110 65 147 110 110 155Z" />
+        <path d="M65 110 H155 M110 65 V155" />
+      </g>
+      <text x="110" y="124" textAnchor="middle">{word.slice(0, 1).toUpperCase()}</text>
+    </svg>
+  );
+}
+
+function ScreenState({ type, level }: { type: "loading" | "empty"; level: string }) {
+  return (
+    <div className="seal-review seal-state-page">
+      <header className="seal-review-header"><Link to="/">← 萬字譜</Link><span>SEAL CALIBRATION</span></header>
+      <LevelFilter selected={level} onChange={() => undefined} />
+      <div className={`seal-state-mark ${type}`}><i /><i /><i /></div>
+      <h1>{type === "loading" ? "召回封印中" : "封印安穩"}</h1>
+      <p>{type === "loading" ? "正在整理今日需要校準的字獸。" : level === "全部" ? "今天沒有待複習的單字。" : `${level} 今天沒有鬆動的封印。`}</p>
+      {type === "empty" && <Link to="/" className="seal-state-action">返回萬字譜</Link>}
+    </div>
+  );
+}
 
 export default function ReviewScreen() {
   const [queue, setQueue] = useState<QueueItem[] | null>(null);
@@ -32,72 +71,35 @@ export default function ReviewScreen() {
     setQueue(null);
     setIndex(0);
     setFlipped(false);
-    buildTodayQueue(levelSel === "全部" ? undefined : [levelSel]).then((q) => {
-      if (!cancelled) setQueue(q);
+    buildTodayQueue(levelSel === "全部" ? undefined : [levelSel]).then((nextQueue) => {
+      if (!cancelled) setQueue(nextQueue);
     });
-    return () => {
-      cancelled = true;
-    };
+    return () => { cancelled = true; };
   }, [levelSel]);
 
-  const levelChips = (
-    <div className="mb-3 flex gap-1.5 overflow-x-auto pb-1">
-      {LEVEL_CHOICES.map((lv) => (
-        <button
-          key={lv}
-          onClick={() => setLevelSel(lv)}
-          className={`shrink-0 rounded-full px-3 py-1 text-sm ${
-            levelSel === lv
-              ? "bg-blue-600 text-white"
-              : "border border-slate-300 bg-white text-slate-600"
-          }`}
-        >
-          {lv}
-        </button>
-      ))}
-    </div>
-  );
-
-  if (queue === null) {
-    return (
-      <div className="p-4">
-        {levelChips}
-        <p className="p-8 text-center text-slate-400">準備今日隊列中…</p>
-      </div>
-    );
-  }
-
+  if (queue === null) return <ScreenState type="loading" level={levelSel} />;
   if (queue.length === 0) {
     return (
-      <div className="p-4">
-        {levelChips}
-        <div className="flex flex-col items-center p-8 text-center">
-          <p className="mb-2 text-4xl">🎉</p>
-          <p className="text-lg font-bold">
-            {levelSel === "全部" ? "今天沒有待複習的單字" : `${levelSel} 沒有待複習的單字`}
-          </p>
-          <p className="mt-1 text-sm text-slate-500">
-            {levelSel === "全部"
-              ? "明天再來，或先去測驗練練手感。"
-              : "換個等級試試，或回「全部」。"}
-          </p>
-          <Link to="/" className="mt-6 rounded-xl bg-blue-600 px-6 py-2.5 font-bold text-white">
-            回首頁
-          </Link>
-        </div>
+      <div className="seal-review seal-state-page">
+        <header className="seal-review-header"><Link to="/">← 萬字譜</Link><span>SEAL CALIBRATION</span></header>
+        <LevelFilter selected={levelSel} onChange={setLevelSel} />
+        <div className="seal-state-mark empty"><i /><i /><i /></div>
+        <h1>封印安穩</h1>
+        <p>{levelSel === "全部" ? "今天沒有待複習的單字。" : `${levelSel} 今天沒有鬆動的封印。`}</p>
+        <Link to="/" className="seal-state-action">返回萬字譜</Link>
       </div>
     );
   }
 
   if (index >= queue.length) {
     return (
-      <div className="flex flex-col items-center p-8 text-center">
-        <p className="mb-2 text-4xl">✅</p>
-        <p className="text-lg font-bold">完成！今天練了 {doneCount} 張卡</p>
-        <p className="mt-1 text-sm text-slate-500">已自動打卡，明天見！</p>
-        <Link to="/" className="mt-6 rounded-xl bg-blue-600 px-6 py-2.5 font-bold text-white">
-          回首頁
-        </Link>
+      <div className="seal-review seal-state-page complete">
+        <header className="seal-review-header"><Link to="/">← 萬字譜</Link><span>RITE COMPLETE</span></header>
+        <div className="seal-complete-ring"><span>封</span></div>
+        <p className="seal-state-eyebrow">TODAY'S SEALS ARE STABLE</p>
+        <h1>校準完成</h1>
+        <p>已重新加固 {doneCount} 枚封印，今日修行已記錄。</p>
+        <Link to="/" className="seal-state-action">返回萬字譜</Link>
       </div>
     );
   }
@@ -108,25 +110,22 @@ export default function ReviewScreen() {
     const isNewSession = !sessionStarted.current;
     sessionStarted.current = true;
     await gradeFlashcard(item.wordRecord.word, grade, sessionId.current, isNewSession);
-    setDoneCount((c) => c + 1);
+    setDoneCount((count) => count + 1);
     setFlipped(false);
-    setIndex((i) => i + 1);
+    setIndex((current) => current + 1);
   }
 
   return (
-    <div className="flex flex-col p-4" style={{ minHeight: "calc(100vh - 5rem)" }}>
-      {index === 0 && !flipped && levelChips}
-      <div className="mb-3 flex items-center gap-3">
-        <div className="h-2 flex-1 overflow-hidden rounded-full bg-slate-200">
-          <div
-            className="h-full rounded-full bg-blue-600 transition-all"
-            style={{ width: `${(index / queue.length) * 100}%` }}
-          />
-        </div>
-        <span className="text-sm text-slate-500">
-          {index + 1}/{queue.length}
-        </span>
-      </div>
+    <div className={`seal-review ${flipped ? "is-flipped" : ""}`}>
+      <header className="seal-review-header">
+        <Link to="/">← 萬字譜</Link>
+        <span>封印校準</span>
+        <b>{String(index + 1).padStart(2, "0")} / {String(queue.length).padStart(2, "0")}</b>
+      </header>
+
+      {index === 0 && !flipped && <LevelFilter selected={levelSel} onChange={setLevelSel} />}
+
+      <div className="seal-progress"><i style={{ width: `${(index / queue.length) * 100}%` }} /><span>{doneCount} 枚已穩定</span></div>
 
       <Flashcard
         key={item.wordRecord.word}
@@ -134,93 +133,68 @@ export default function ReviewScreen() {
         flipped={flipped}
         onFlip={() => setFlipped(true)}
         onGrade={handleGrade}
+        position={index + 1}
       />
     </div>
   );
 }
 
-function Flashcard({
-  item,
-  flipped,
-  onFlip,
-  onGrade,
-}: {
-  item: QueueItem;
-  flipped: boolean;
-  onFlip: () => void;
-  onGrade: (grade: Grade) => void;
-}) {
-  const w = item.wordRecord;
-  const notes = useLiveQuery(
-    () => contentDb.notes.where("word").equals(w.word).toArray(),
-    [w.word],
-  );
+function Flashcard({ item, flipped, onFlip, onGrade, position }: { item: QueueItem; flipped: boolean; onFlip: () => void; onGrade: (grade: Grade) => void; position: number }) {
+  const word = item.wordRecord;
+  const notes = useLiveQuery(() => contentDb.notes.where("word").equals(word.word).toArray(), [word.word]);
+  const beastAsset = getWordBeastAsset(word.wordId, word.word);
 
   return (
-    <>
-      <div className="flex flex-1 flex-col justify-center">
-        <div className="rounded-2xl bg-white p-6 text-center shadow">
-          {item.isNew && (
-            <span className="mb-2 inline-block rounded-full bg-green-100 px-3 py-0.5 text-xs font-bold text-green-700">
-              新字
-            </span>
-          )}
-          <p className="text-4xl font-bold">
-            {w.word}
-            <SpeakerButton text={w.word} className="ml-2 align-middle" />
-          </p>
-          <p className="mt-1 text-slate-400">{w.pos}</p>
-
-          {flipped && (
-            <div className="mt-5 border-t border-slate-100 pt-5 text-left">
-              <p className="text-center text-xl">{w.meaningZh}</p>
-              {w.meaningEn && (
-                <p className="mt-2 text-center text-sm text-slate-500">{w.meaningEn}</p>
-              )}
-              {w.usagePattern && (
-                <p className="mt-4 rounded-lg bg-blue-50 px-3 py-2 text-sm text-blue-800">
-                  用法：{w.usagePattern}
-                </p>
-              )}
-              {notes?.map((n) => (
-                <p
-                  key={n.noteId}
-                  className="mt-2 whitespace-pre-wrap rounded-lg bg-purple-50 px-3 py-2 text-sm text-purple-800"
-                >
-                  <span className="font-bold">
-                    {NOTE_TYPE_LABEL[n.noteType] ?? n.noteType}
-                    {n.title ? `｜${n.title}` : ""}：
-                  </span>
-                  {n.content}
-                </p>
-              ))}
-            </div>
-          )}
+    <div className="seal-workspace">
+      <article className={`seal-card ${flipped ? "revealed" : "sealed"}`}>
+        <div className="seal-card-border" />
+        <div className="seal-card-meta">
+          <span>{item.isNew ? "未知字獸" : "封印鬆動"}</span>
+          <b>NO. {String(position).padStart(3, "0")}</b>
         </div>
-      </div>
 
-      <div className="mt-4">
+        <div className="seal-card-visual">
+          <span className="seal-card-orbit" />
+          {beastAsset ? <img src={beastAsset} alt={`${word.word} 字獸`} /> : <WordSigil word={word.word} />}
+          {!beastAsset && <small>圖像待收錄</small>}
+        </div>
+
+        <div className="seal-card-identity">
+          <div><h1>{word.word}</h1><SpeakerButton text={word.word} className="seal-speaker" /></div>
+          <p>{word.pos || "詞性未標記"}</p>
+        </div>
+
+        {flipped && (
+          <div className="seal-card-answer">
+            <p className="answer-label">真名釋義</p>
+            <h2>{word.meaningZh || "尚無中文釋義"}</h2>
+            {word.meaningEn && <p className="answer-en">{word.meaningEn}</p>}
+            {word.usagePattern && <div className="answer-note"><span>用法</span><p>{word.usagePattern}</p></div>}
+            {notes?.map((note) => (
+              <div className="answer-note" key={note.noteId}>
+                <span>{NOTE_TYPE_LABEL[note.noteType] ?? note.noteType}{note.title ? ` · ${note.title}` : ""}</span>
+                <p>{note.content}</p>
+              </div>
+            ))}
+          </div>
+        )}
+        <span className="seal-card-stamp">譜</span>
+      </article>
+
+      <div className="seal-controls">
         {!flipped ? (
-          <button
-            onClick={onFlip}
-            className="w-full rounded-xl bg-blue-600 py-4 text-lg font-bold text-white shadow"
-          >
-            顯示答案
-          </button>
+          <button onClick={onFlip} className="seal-reveal"><span>顯示真名釋義</span><i>開封</i></button>
         ) : (
-          <div className="grid grid-cols-4 gap-2">
-            {([0, 1, 2, 3] as Grade[]).map((g) => (
-              <button
-                key={g}
-                onClick={() => onGrade(g)}
-                className={`rounded-xl py-3.5 font-bold text-white shadow ${GRADE_STYLES[g]}`}
-              >
-                {GRADE_LABELS[g]}
+          <div className="seal-grades" aria-label="評估記憶程度">
+            {([0, 1, 2, 3] as Grade[]).map((grade) => (
+              <button key={grade} className={`grade-${grade}`} onClick={() => onGrade(grade)}>
+                <span>{GRADE_LABELS[grade]}</span>
+                <small>{grade === 0 ? "封印破裂" : grade === 1 ? "仍在鬆動" : grade === 2 ? "重新穩定" : "牢不可破"}</small>
               </button>
             ))}
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 }

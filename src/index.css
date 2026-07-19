@@ -5,7 +5,64 @@ html {
 }
 
 body {
-  background-color: var(--color-slate-50);
+  background-color: #eee6d4;
   color: var(--color-slate-900);
   font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
 }
+
+.app-bottom-nav {
+  position: fixed;
+  z-index: 50;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding-bottom: env(safe-area-inset-bottom);
+  border-top: 1px solid rgba(45, 48, 40, 0.14);
+  background: rgba(245, 239, 224, 0.94);
+  backdrop-filter: blur(14px);
+}
+
+.app-bottom-nav-inner {
+  display: flex;
+  max-width: 32rem;
+  height: 64px;
+  margin: 0 auto;
+}
+
+.app-nav-item {
+  position: relative;
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3px;
+  color: #817b6c;
+  text-decoration: none;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+
+.app-nav-item svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.app-nav-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 22px;
+  height: 2px;
+  background: transparent;
+}
+
+.app-nav-item.active { color: #414c3b; }
+.app-nav-item.active::before { background: #a63c31; }

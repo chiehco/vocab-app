@@ -2,145 +2,143 @@ import { Link, useParams } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
 import { contentDb } from "../../db/contentDb";
 import { progressDb } from "../../db/progressDb";
+import type { WordRecord } from "../../db/types";
 import SpeakerButton from "../../components/SpeakerButton";
+import { getWordBeastAsset } from "../wordbeast/wordBeastAssets";
+import { NOTE_TYPE_LABEL, RELATION_TYPE_LABEL, STATE_LABEL } from "./wordLabels";
+import "./word-detail.css";
 
-const STATE_LABEL: Record<string, string> = {
-  new: "新字",
-  learning: "學習中",
-  review: "複習中",
-  relearning: "重新學習",
-};
-
-export const NOTE_TYPE_LABEL: Record<string, string> = {
-  grammar: "文法",
-  usage: "用法",
-  phrase: "片語",
-  mnemonic: "記憶法",
-  culture: "文化",
-};
+function DossierSigil({ word }: { word: string }) {
+  const value = [...word].reduce((sum, character) => sum + character.charCodeAt(0), 0);
+  return (
+    <svg className="dossier-sigil" viewBox="0 0 220 220" aria-hidden="true">
+      <circle cx="110" cy="110" r="81" /><circle className="dash" cx="110" cy="110" r="60" />
+      <g transform={`rotate(${value % 44 - 22} 110 110)`}><path d="M110 29V67M110 153v38M29 110h38M153 110h38" /><path d="M73 110 110 67l37 43-37 43Z" /><path d="m77 77 66 66M143 77l-66 66" /></g>
+      <text x="110" y="126" textAnchor="middle">{word.charAt(0).toUpperCase()}</text>
+    </svg>
+  );
+}
 
 export default function WordDetailScreen() {
   const { wordId } = useParams<{ wordId: string }>();
+  const word = useLiveQuery(() => wordId ? contentDb.words.get(wordId) : undefined, [wordId]);
+  const examples = useLiveQuery(() => word ? contentDb.examples.where("word").equals(word.word).toArray() : [], [word?.word]);
+  const relations = useLiveQuery(async () => {
+    if (!word) return [];
+    const [forward, reverse] = await Promise.all([
+      contentDb.relations.where("word").equals(word.word).toArray(),
+      contentDb.relations.where("relatedWord").equals(word.word).toArray(),
+    ]);
+    return [
+      ...forward
+        .filter((relation) => relation.relationType !== "exam_distractor")
+        .map((relation) => ({ ...relation, targetWord: relation.relatedWord })),
+      ...reverse
+        .filter((relation) => relation.direction === "two_way" && relation.relationType !== "exam_distractor")
+        .map((relation) => ({ ...relation, targetWord: relation.word })),
+    ];
+  }, [word?.word]);
+  const examDistractors = useLiveQuery(
+    () => word
+      ? contentDb.relations
+        .where("word")
+        .equals(word.word)
+        .filter((relation) => relation.relationType === "exam_distractor")
+        .toArray()
+      : [],
+    [word?.word],
+  );
+  const morphemes = useLiveQuery(() => word ? contentDb.morphemes.where("word").equals(word.word).toArray() : [], [word?.word]);
+  const notes = useLiveQuery(() => word ? contentDb.notes.where("word").equals(word.word).toArray() : [], [word?.word]);
+  const cardState = useLiveQuery(() => word ? progressDb.cardStates.get(word.word) : undefined, [word?.word]);
+  const relationTargets = [
+    ...(relations?.map((relation) => relation.targetWord) ?? []),
+    ...(examDistractors?.map((relation) => relation.relatedWord) ?? []),
+  ];
+  const relationKey = relationTargets.slice().sort().join("|");
+  const relatedWords = useLiveQuery(async () => {
+    if (!relationTargets.length) return {} as Record<string, WordRecord>;
+    const records = await contentDb.words.where("word").anyOf(relationTargets).toArray();
+    return Object.fromEntries(records.map((record) => [record.word, record]));
+  }, [relationKey]);
 
-  const word = useLiveQuery(
-    () => (wordId ? contentDb.words.get(wordId) : undefined),
-    [wordId],
-  );
-  const examples = useLiveQuery(
-    () => (word ? contentDb.examples.where("word").equals(word.word).toArray() : []),
-    [word?.word],
-  );
-  const relations = useLiveQuery(
-    () => (word ? contentDb.relations.where("word").equals(word.word).toArray() : []),
-    [word?.word],
-  );
-  const morphemes = useLiveQuery(
-    () => (word ? contentDb.morphemes.where("word").equals(word.word).toArray() : []),
-    [word?.word],
-  );
-  const notes = useLiveQuery(
-    () => (word ? contentDb.notes.where("word").equals(word.word).toArray() : []),
-    [word?.word],
-  );
-  const cardState = useLiveQuery(
-    () => (word ? progressDb.cardStates.get(word.word) : undefined),
-    [word?.word],
-  );
+  if (!word) return <div className="dossier-loading"><i /><p>正在調閱卷宗</p></div>;
 
-  if (!word) {
-    return <p className="p-6 text-center text-slate-400">載入中…</p>;
-  }
+  const asset = getWordBeastAsset(word.wordId, word.word);
+  const sortedMorphemes = morphemes?.slice().sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
 
   return (
-    <div className="p-4">
-      <Link to="/browse" className="text-sm text-blue-600">
-        ← 回單字列表
-      </Link>
-      <div className="mt-3 rounded-2xl bg-white p-5 shadow-sm">
-        <div className="flex items-baseline gap-2">
-          <h1 className="text-3xl font-bold">{word.word}</h1>
-          <SpeakerButton text={word.word} />
-          <span className="text-slate-400">{word.pos}</span>
-          <span className="ml-auto rounded bg-slate-100 px-2 py-0.5 text-xs text-slate-500">
-            {word.level}
-          </span>
+    <div className="word-dossier-page">
+      <header className="word-dossier-nav">
+        <Link to="/browse">← 萬字譜</Link><span>ARCHIVE · {word.wordId}</span><b>{word.level}</b>
+      </header>
+
+      <section className="word-dossier-hero">
+        <div className="dossier-hero-copy">
+          <p>{word.pos || "詞性未標記"} · TRUE NAME</p>
+          <div className="dossier-title-row"><h1>{word.word}</h1><SpeakerButton text={word.word} className="dossier-speaker" /></div>
+          {word.phoneticUs && <span className="dossier-phonetic">/{word.phoneticUs}/</span>}
+          <h2>{word.meaningZh || "尚無中文釋義"}</h2>
+          {word.meaningEn && <p className="dossier-en">{word.meaningEn}</p>}
         </div>
-        {word.phoneticUs && <p className="mt-1 text-sm text-slate-400">/{word.phoneticUs}/</p>}
-        <p className="mt-3 text-lg">{word.meaningZh}</p>
-        {word.meaningEn && <p className="mt-1 text-sm text-slate-500">{word.meaningEn}</p>}
-        {word.usagePattern && (
-          <p className="mt-3 rounded-lg bg-blue-50 px-3 py-2 text-sm text-blue-800">
-            用法：{word.usagePattern}
-          </p>
-        )}
-        {cardState && (
-          <p className="mt-3 text-xs text-slate-400">
-            學習狀態：{STATE_LABEL[cardState.state]}｜下次複習：{cardState.dueDate}
-          </p>
-        )}
-      </div>
+        <div className="dossier-hero-mark">
+          <span className="dossier-orbit" />
+          {asset ? <img src={asset} alt={`${word.word} 字獸`} /> : <DossierSigil word={word.word} />}
+          {!asset && <small>圖像待收錄</small>}
+        </div>
+      </section>
+
+      <section className="dossier-status" aria-label="學習狀態">
+        <div><span>封印狀態</span><b>{cardState ? STATE_LABEL[cardState.state] : "尚未遭遇"}</b></div>
+        <div><span>下次校準</span><b>{cardState?.dueDate ?? "—"}</b></div>
+        <div><span>收錄位階</span><b>{word.level}</b></div>
+      </section>
+
+      {word.usagePattern && <section className="dossier-usage"><span>USAGE PATTERN</span><h2>使用軌跡</h2><p>{word.usagePattern}</p></section>}
 
       {notes && notes.length > 0 && (
-        <section className="mt-4">
-          <h2 className="mb-2 font-bold">補充說明</h2>
-          {notes.map((n) => (
-            <div key={n.noteId} className="mb-2 rounded-xl bg-white p-4 shadow-sm">
-              <p className="text-sm">
-                <span className="mr-2 rounded bg-purple-100 px-1.5 py-0.5 text-xs font-bold text-purple-700">
-                  {NOTE_TYPE_LABEL[n.noteType] ?? n.noteType}
-                </span>
-                {n.title && <span className="font-semibold">{n.title}</span>}
-              </p>
-              <p className="mt-2 whitespace-pre-wrap text-sm text-slate-700">{n.content}</p>
-            </div>
-          ))}
+        <section className="dossier-section">
+          <div className="dossier-section-head"><div><p>FIELD NOTES</p><h2>解讀筆記</h2></div><span>{notes.length} 則</span></div>
+          <div className="dossier-note-list">{notes.map((note) => <article key={note.noteId}><div><span>{NOTE_TYPE_LABEL[note.noteType] ?? note.noteType}</span><b>{note.title || "補充說明"}</b></div><p>{note.content}</p></article>)}</div>
         </section>
       )}
 
       {examples && examples.length > 0 && (
-        <section className="mt-4">
-          <h2 className="mb-2 font-bold">例句</h2>
-          {examples.map((ex) => (
-            <div key={ex.exampleId} className="mb-2 rounded-xl bg-white p-4 shadow-sm">
-              <p>{ex.sentenceEn}</p>
-              {ex.sentenceZh && <p className="mt-1 text-sm text-slate-500">{ex.sentenceZh}</p>}
-            </div>
-          ))}
+        <section className="dossier-section">
+          <div className="dossier-section-head"><div><p>ENCOUNTER LOG</p><h2>遭遇紀錄</h2></div><span>{examples.length} 則</span></div>
+          <ol className="dossier-examples">{examples.map((example, index) => <li key={example.exampleId}><b>{String(index + 1).padStart(2, "0")}</b><div><p>{example.sentenceEn}</p>{example.sentenceZh && <span>{example.sentenceZh}</span>}</div></li>)}</ol>
         </section>
       )}
 
       {relations && relations.length > 0 && (
-        <section className="mt-4">
-          <h2 className="mb-2 font-bold">關聯詞</h2>
-          <div className="rounded-xl bg-white p-4 shadow-sm">
-            {relations.map((r) => (
-              <p key={r.relationId} className="py-1 text-sm">
-                <span className="font-semibold">{r.relatedWord}</span>
-                <span className="ml-2 text-xs text-slate-400">{r.relationType}</span>
-                {r.note && <span className="ml-2 text-slate-500">{r.note}</span>}
-              </p>
-            ))}
-          </div>
+        <section className="dossier-section">
+          <div className="dossier-section-head"><div><p>KIN TRACES</p><h2>同族痕跡</h2></div><span>{relations.length} 枚</span></div>
+          <div className="dossier-relations">{relations.map((relation) => {
+            const related = relatedWords?.[relation.targetWord];
+            return <div key={`${relation.relationId}:${relation.targetWord}`}><span>{related ? <Link to={`/word/${related.wordId}`}><strong>{relation.targetWord}</strong></Link> : <strong>{relation.targetWord}</strong>}<small>{RELATION_TYPE_LABEL[relation.relationType || ""] || relation.relationType || "關聯詞"}</small></span><p><b>{related?.meaningZh || "中文釋義待補"}</b>{relation.note && <span>{relation.note}</span>}</p></div>;
+          })}</div>
         </section>
       )}
 
-      {morphemes && morphemes.length > 0 && (
-        <section className="mt-4">
-          <h2 className="mb-2 font-bold">字根拆解</h2>
-          <div className="rounded-xl bg-white p-4 shadow-sm">
-            {morphemes
-              .slice()
-              .sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
-              .map((m) => (
-                <p key={m.rowId} className="py-1 text-sm">
-                  <span className="font-semibold">{m.morpheme}</span>
-                  <span className="ml-2 text-xs text-slate-400">{m.morphemeType}</span>
-                  <span className="ml-2 text-slate-500">{m.meaningZh}</span>
-                </p>
-              ))}
-          </div>
+      {examDistractors && examDistractors.length > 0 && (
+        <section className="dossier-section misconception-section">
+          <div className="dossier-section-head"><div><p>FALSE FORMS</p><h2>斬妄形</h2></div><span>{examDistractors.length} 枚</span></div>
+          <p className="dossier-section-intro">這些字曾在大考同題現身，形似答案，卻不是這次要召喚的真名。</p>
+          <div className="dossier-relations">{examDistractors.map((relation) => {
+            const related = relatedWords?.[relation.relatedWord];
+            return <div key={relation.relationId}><span>{related ? <Link to={`/word/${related.wordId}`}><strong>{relation.relatedWord}</strong></Link> : <strong>{relation.relatedWord}</strong>}<small>斬妄形</small></span><p><b>{related?.meaningZh || "中文釋義待補"}</b>{relation.note && <span>{relation.note}</span>}</p></div>;
+          })}</div>
         </section>
       )}
+
+      {sortedMorphemes && sortedMorphemes.length > 0 && (
+        <section className="dossier-section morpheme-section">
+          <div className="dossier-section-head"><div><p>NAME ANATOMY</p><h2>真名拆解</h2></div><span>{sortedMorphemes.length} 節</span></div>
+          <div className="dossier-morphemes">{sortedMorphemes.map((morpheme) => <div key={morpheme.rowId}><strong>{morpheme.morpheme}</strong><span>{morpheme.morphemeType || "構詞"}</span><p>{morpheme.meaningZh || morpheme.meaningEn || "—"}</p></div>)}</div>
+        </section>
+      )}
+
+      <p className="dossier-footer">萬字譜 · {word.wordId} · 封存</p>
     </div>
   );
 }
