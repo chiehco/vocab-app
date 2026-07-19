@@ -1,11 +1,17 @@
 import { contentDb } from "../db/contentDb";
 import { getSetting, progressDb } from "../db/progressDb";
-import type { WordRecord } from "../db/types";
+import type { CardState, WordRecord } from "../db/types";
 import { todayStr } from "../lib/dates";
+import { format } from "date-fns";
 
 export interface QueueItem {
   wordRecord: WordRecord;
   isNew: boolean;
+  isRecap?: boolean;
+}
+
+export function wasCardCreatedOn(card: CardState, date: string): boolean {
+  return !!card.lastReviewedAt && format(new Date(card.createdAt), "yyyy-MM-dd") === date;
 }
 
 /** 新字平均穿插進到期複習中，不排在最後。 */
@@ -59,4 +65,22 @@ export async function buildTodayQueue(sessionLevels?: string[]): Promise<QueueIt
   }
 
   return interleave(dueWords, freshWords);
+}
+
+/** 今日沒有到期卡時，提供剛收服字獸的同日回顧；不應用來推進 SRS。 */
+export async function buildTodayRecapQueue(sessionLevels?: string[]): Promise<QueueItem[]> {
+  const today = todayStr();
+  const todayStates = (await progressDb.cardStates.toArray())
+    .filter((card) => wasCardCreatedOn(card, today));
+  if (todayStates.length === 0) return [];
+
+  const words = await contentDb.words
+    .where("word")
+    .anyOf(todayStates.map((card) => card.word))
+    .toArray();
+
+  return words
+    .filter((word) => !sessionLevels || sessionLevels.includes(word.level))
+    .sort((a, b) => a.wordId.localeCompare(b.wordId))
+    .map((wordRecord) => ({ wordRecord, isNew: false, isRecap: true }));
 }

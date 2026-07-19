@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
 import { contentDb } from "../../db/contentDb";
 import type { Grade } from "../../db/types";
-import { buildTodayQueue, type QueueItem } from "../../srs/queue";
-import { gradeFlashcard } from "../../checkin/recordActivity";
+import { buildTodayQueue, buildTodayRecapQueue, type QueueItem } from "../../srs/queue";
+import { gradeFlashcard, recordReviewWithoutScheduling } from "../../checkin/recordActivity";
 import { GRADE_LABELS } from "../../srs/sm2";
 import { NOTE_TYPE_LABEL } from "../browser/wordLabels";
 import SpeakerButton from "../../components/SpeakerButton";
@@ -75,8 +75,12 @@ export default function ReviewScreen() {
     setQueue(null);
     setIndex(0);
     setFlipped(false);
-    buildTodayQueue(levelSel === "全部" ? undefined : [levelSel]).then((nextQueue) => {
-      if (!cancelled) setQueue(nextQueue);
+    const levels = levelSel === "全部" ? undefined : [levelSel];
+    buildTodayQueue(levels).then(async (nextQueue) => {
+      const hasDueCards = nextQueue.some((item) => !item.isNew);
+      const recapQueue = hasDueCards ? [] : await buildTodayRecapQueue(levels);
+      const resolvedQueue = recapQueue.length > 0 ? recapQueue : nextQueue;
+      if (!cancelled) setQueue(resolvedQueue);
     });
     return () => { cancelled = true; };
   }, [levelSel]);
@@ -96,13 +100,14 @@ export default function ReviewScreen() {
   }
 
   if (index >= queue.length) {
+    const wasRecap = queue.some((item) => item.isRecap);
     return (
       <div className="seal-review seal-state-page complete">
         <header className="seal-review-header"><Link to="/">← 萬字譜</Link><span>RITE COMPLETE</span></header>
         <div className="seal-complete-ring"><span>封</span></div>
-        <p className="seal-state-eyebrow">TODAY'S SEALS ARE STABLE</p>
-        <h1>校準完成</h1>
-        <p>已重新加固 {doneCount} 枚封印，今日修行已記錄。</p>
+        <p className="seal-state-eyebrow">{wasRecap ? "TODAY'S CAPTURES REVIEWED" : "TODAY'S SEALS ARE STABLE"}</p>
+        <h1>{wasRecap ? "今日回顧完成" : "校準完成"}</h1>
+        <p>{wasRecap ? `剛收服的 ${doneCount} 隻字獸已再見過一次，明天仍會照原定時間召回。` : `已重新加固 ${doneCount} 枚封印，今日修行已記錄。`}</p>
         <Link to="/" className="seal-state-action">返回萬字譜</Link>
       </div>
     );
@@ -113,7 +118,11 @@ export default function ReviewScreen() {
   async function handleGrade(grade: Grade) {
     const isNewSession = !sessionStarted.current;
     sessionStarted.current = true;
-    await gradeFlashcard(item.wordRecord.word, grade, sessionId.current, isNewSession);
+    if (item.isRecap) {
+      await recordReviewWithoutScheduling(item.wordRecord.word, grade, sessionId.current, isNewSession);
+    } else {
+      await gradeFlashcard(item.wordRecord.word, grade, sessionId.current, isNewSession);
+    }
     setDoneCount((count) => count + 1);
     setFlipped(false);
     setIndex((current) => current + 1);
@@ -123,13 +132,13 @@ export default function ReviewScreen() {
     <div className={`seal-review ${flipped ? "is-flipped" : ""}`}>
       <header className="seal-review-header">
         <Link to="/">← 萬字譜</Link>
-        <span>封印校準</span>
+        <span>{item.isRecap ? "今日收服回顧" : "封印校準"}</span>
         <b>{String(index + 1).padStart(2, "0")} / {String(queue.length).padStart(2, "0")}</b>
       </header>
 
       {index === 0 && !flipped && <LevelFilter selected={levelSel} onChange={setLevelSel} />}
 
-      <div className="seal-progress"><i style={{ width: `${(index / queue.length) * 100}%` }} /><span>{doneCount} 枚已穩定</span></div>
+      <div className="seal-progress"><i style={{ width: `${(index / queue.length) * 100}%` }} /><span>{item.isRecap ? "今日回顧，不改明日召回" : `${doneCount} 枚已穩定`}</span></div>
 
       <Flashcard
         key={item.wordRecord.word}
@@ -158,7 +167,7 @@ function Flashcard({ item, flipped, onFlip, onGrade, position }: { item: QueueIt
       <article className={`seal-card ${flipped ? "revealed" : "sealed"}`}>
         <div className="seal-card-border" />
         <div className="seal-card-meta">
-          <span>{item.isNew ? "未知字獸" : "封印鬆動"}</span>
+          <span>{item.isRecap ? "今日再會" : item.isNew ? "未知字獸" : "封印鬆動"}</span>
           <div><ExamTierBadge tier={priority?.priorityTier} compact /><b>NO. {String(position).padStart(3, "0")}</b></div>
         </div>
 

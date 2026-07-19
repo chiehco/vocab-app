@@ -50,6 +50,35 @@ export async function gradeFlashcard(
   );
 }
 
+/** 記錄同日回顧，但不推進 SRS 間隔或到期日。 */
+export async function recordReviewWithoutScheduling(
+  word: string,
+  grade: Grade,
+  sessionId: string,
+  isNewSession: boolean,
+): Promise<void> {
+  await progressDb.transaction(
+    "rw",
+    [progressDb.cardStates, progressDb.reviewLogs, progressDb.checkIns],
+    async () => {
+      const card = await progressDb.cardStates.get(word);
+      if (!card) return;
+      await progressDb.reviewLogs.add({
+        word,
+        reviewedAt: new Date().toISOString(),
+        sessionId,
+        grade,
+        intervalBefore: card.intervalDays,
+        intervalAfter: card.intervalDays,
+        easeFactorBefore: card.easeFactor,
+        easeFactorAfter: card.easeFactor,
+        mode: "same-day-recap",
+      });
+      await upsertCheckIn(false, isNewSession);
+    },
+  );
+}
+
 /** 測驗作答：記 quizStats + 歷史 + 打卡。MVP 不回寫 SM-2 卡片狀態。 */
 export async function recordQuizAnswer(
   word: string,
