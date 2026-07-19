@@ -6,6 +6,7 @@ import type { WordRecord } from "../../db/types";
 import SpeakerButton from "../../components/SpeakerButton";
 import { getWordBeastAsset } from "../wordbeast/wordBeastAssets";
 import ExamTierBadge from "../wordbeast/ExamTierBadge";
+import { getExamStarText } from "../wordbeast/examTier";
 import WordTraitBadges from "../wordbeast/WordTraitBadges";
 import ResilientBeastImage from "../wordbeast/ResilientBeastImage";
 import { buildSenseCountByWord } from "../wordbeast/wordTraits";
@@ -104,7 +105,7 @@ export default function WordDetailScreen() {
       <section className="dossier-status" aria-label="學習狀態">
         <div><span>封印狀態</span><b>{cardState ? STATE_LABEL[cardState.state] : "尚未遭遇"}</b></div>
         <div><span>下次校準</span><b>{cardState?.dueDate ?? "—"}</b></div>
-        <div><span>收錄位階</span><b>{priority ? `${priority.priorityTier}級・${word.level}` : word.level}</b></div>
+        <div><span>考頻／難度</span><b>{priority ? `${getExamStarText(priority.priorityTier)}・${word.level}` : word.level}</b></div>
       </section>
 
       {word.usagePattern && <section className="dossier-usage"><span>USAGE PATTERN</span><h2>使用軌跡</h2><p>{word.usagePattern}</p></section>}

@@ -8,7 +8,8 @@ import { gradeFlashcard } from "../../checkin/recordActivity";
 import { todayStr } from "../../lib/dates";
 import { speak } from "../../lib/speech";
 import { pickDistractors, shuffle } from "../../quiz/distractors";
-import ExamTierBadge, { type ExamTier } from "./ExamTierBadge";
+import ExamTierBadge from "./ExamTierBadge";
+import type { ExamTier } from "./examTier";
 import ResilientBeastImage from "./ResilientBeastImage";
 import { type CaptureData, selectDailyWords } from "./dailyCapture";
 import { getWordBeastAsset } from "./wordBeastAssets";
@@ -111,7 +112,7 @@ export default function WordBeastPrototype() {
       <div className="wordbeast-page archive-page">
         <header className="archive-header"><Link to="/" className="wordbeast-back">←</Link><div><p className="wordbeast-eyebrow">萬字譜・今日新錄</p><h1>真名錄</h1></div><button className="archive-replay" onClick={restart}>重看</button></header>
         <main className="archive-main">
-          <p className="archive-note">今日 {beasts.length} 隻字獸已留下真名。S、A 階字卡會留下專屬位階印。</p>
+          <p className="archive-note">今日 {beasts.length} 隻字獸已留下真名。考頻星星代表歷屆重要度，LV 代表學習難度。</p>
           <div className="archive-grid">
             {beasts.map((beast, index) => <button className="word-entry captured" style={{ animationDelay: `${index * 55}ms` }} key={beast.record.word} onClick={() => setSelectedBeast(beast)}>
               <span className="entry-index">{String(index + 1).padStart(2, "0")}</span><ExamTierBadge tier={beast.tier} compact /><ResilientBeastImage src={beast.image} word={beast.record.word} alt={`${beast.record.word} 字獸`} /><span className="entry-name">{beast.record.word.toUpperCase()}</span><span className="entry-meaning">{beast.record.meaningZh}・{beast.record.pos || "詞性未標"}</span><span className="entry-seal">錄</span>

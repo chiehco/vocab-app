@@ -1,30 +1,28 @@
 .exam-tier-badge {
-  --tier-color: #766f60;
-  --tier-glow: rgba(118,111,96,.2);
+  --tier-color: #8f4238;
+  --tier-glow: rgba(143,66,56,.14);
   position: relative;
   z-index: 8;
-  display: inline-flex;
-  min-width: 56px;
+  display: inline-grid;
+  width: 82px;
   height: 58px;
-  padding: 5px 7px 4px;
-  align-items: baseline;
-  justify-content: center;
+  padding: 5px 6px 4px;
+  place-items: center;
+  align-content: start;
   color: var(--tier-color);
   border: 1.5px solid currentColor;
-  background: rgba(239,231,211,.9);
+  background: rgba(239,231,211,.94);
   box-shadow: 0 0 0 4px var(--tier-glow), 0 7px 15px rgba(36,31,21,.1);
   font-family: "Noto Serif TC", serif;
-  transform: rotate(2deg);
+  transform: rotate(1deg);
   animation: tier-stamp-in .42s cubic-bezier(.18,.82,.24,1) both;
 }
-.exam-tier-badge b { font-size: 26px; line-height: 1; }
-.exam-tier-badge > span { margin-left: 2px; font-size: 8px; font-weight: 900; }
-.exam-tier-badge small { position: absolute; right: 0; bottom: 3px; left: 0; text-align: center; font-size: 6px; font-weight: 900; letter-spacing: .18em; }
-.exam-tier-badge.tier-s { --tier-color: #9d3128; --tier-glow: rgba(185,65,50,.2); color: #f0cf82; border-color: #c34a3b; background: #5a241f; }
-.exam-tier-badge.tier-a { --tier-color: #906722; --tier-glow: rgba(190,147,65,.18); background: #f0dfb2; }
-.exam-tier-badge.tier-b { --tier-color: #4e6655; --tier-glow: rgba(78,102,85,.14); }
-.exam-tier-badge.compact { min-width: 31px; width: 31px; height: 35px; padding: 3px; box-shadow: none; transform: rotate(1deg); }
-.exam-tier-badge.compact b { font-size: 16px; }
-.exam-tier-badge.compact > span { font-size: 6px; }
-@keyframes tier-stamp-in { from { opacity: 0; transform: rotate(-8deg) scale(1.65); } 70% { opacity: 1; transform: rotate(3deg) scale(.94); } }
+.exam-tier-badge > span { font-size: 7px; font-weight: 900; line-height: 1; letter-spacing: .15em; }
+.exam-tier-badge b { margin-top: 5px; font: 900 13px/1 Georgia, serif; letter-spacing: .02em; white-space: nowrap; }
+.exam-tier-badge small { position: absolute; right: 0; bottom: 3px; left: 0; text-align: center; font-size: 6px; font-weight: 900; letter-spacing: .12em; }
+.exam-tier-badge.tier-z { --tier-color: #777064; --tier-glow: rgba(119,112,100,.11); }
+.exam-tier-badge.compact { width: 46px; height: 34px; padding: 4px 3px 3px; box-shadow: none; transform: rotate(.5deg); }
+.exam-tier-badge.compact > span { font-size: 5px; letter-spacing: .08em; }
+.exam-tier-badge.compact b { margin-top: 4px; font-size: 7px; letter-spacing: 0; }
+@keyframes tier-stamp-in { from { opacity: 0; transform: rotate(-7deg) scale(1.45); } 70% { opacity: 1; transform: rotate(2deg) scale(.96); } }
 @media (prefers-reduced-motion: reduce) { .exam-tier-badge { animation: none; } }

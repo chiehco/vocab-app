@@ -15,7 +15,8 @@ import ResilientBeastImage from "../wordbeast/ResilientBeastImage";
 import { buildConfusableWordSet, buildMorphemeWordSet, buildSenseCountByWord } from "../wordbeast/wordTraits";
 import "../realm-pages.css";
 
-const LEVEL_CHOICES = ["S級", "全部", "LV1", "LV2", "LV3", "LV4", "LV5", "LV6"];
+const TOP_PRIORITY_FILTER = "考頻5★";
+const LEVEL_CHOICES = [TOP_PRIORITY_FILTER, "全部", "LV1", "LV2", "LV3", "LV4", "LV5", "LV6"];
 const QUIZ_SIZE = 10;
 type QuizMode = "w2m" | "m2w" | "image" | "fill";
 interface McqQuestion { target: WordRecord; options: WordRecord[]; }
@@ -37,7 +38,7 @@ export default function QuizScreen() {
   const [answered, setAnswered] = useState<string | null>(null);
   const [fillInput, setFillInput] = useState("");
   const [fillResult, setFillResult] = useState<"correct" | "wrong" | null>(null);
-  const [levelSel, setLevelSel] = useState("S級");
+  const [levelSel, setLevelSel] = useState(TOP_PRIORITY_FILTER);
   const sessionId = useRef(crypto.randomUUID());
   const sessionStarted = useRef(false);
 
@@ -58,7 +59,7 @@ export default function QuizScreen() {
   const priorityByWord = useMemo(() => new Map((examPriorities ?? []).map((row) => [row.word, row.priorityTier])), [examPriorities]);
   const fillPool = useMemo(() => {
     if (!allExamples || !allWords) return undefined;
-    if (levelSel === "S級") return allExamples.filter((example) => sWordSet.has(example.word));
+    if (levelSel === TOP_PRIORITY_FILTER) return allExamples.filter((example) => sWordSet.has(example.word));
     if (levelSel === "全部") return allExamples;
     const levelWords = new Set(allWords.filter((word) => word.level === levelSel).map((word) => word.word));
     return allExamples.filter((example) => levelWords.has(example.word));
@@ -67,7 +68,7 @@ export default function QuizScreen() {
   async function startMcq(nextMode: QuizMode) {
     if (!allWords) return;
     const learned = new Set((await progressDb.cardStates.toCollection().primaryKeys()) as string[]);
-    const scoped = levelSel === "S級"
+    const scoped = levelSel === TOP_PRIORITY_FILTER
       ? allWords.filter((word) => sWordSet.has(word.word))
       : levelSel === "全部"
         ? allWords

@@ -1,6 +1,6 @@
 import type { ExamPriorityRecord, ExampleRecord, RelationRecord, WordRecord } from "../../db/types";
 import { todayStr } from "../../lib/dates";
-import type { ExamTier } from "./ExamTierBadge";
+import type { ExamTier } from "./examTier";
 import { hasWordBeastAsset } from "./wordBeastAssets";
 
 export const DAILY_CAPTURE_SIZE = 15;

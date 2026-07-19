@@ -9,16 +9,16 @@ describe("word beast assets", () => {
 
   it("prefers an S-grade semantic image over the overlapping LV1 range", () => {
     expect(getWordBeastAsset("W000270", "even")).toMatch(
-      /wordbeast\/s\/W000270\.webp$/,
+      /wordbeast\/s\/W000270\.webp\?v=/,
     );
   });
 
   it("keeps legacy and LV1 fallbacks for non-S words", () => {
     expect(getWordBeastAsset("W999999", "volcano")).toMatch(
-      /wordbeast\/priest-volcano\.png$/,
+      /wordbeast\/priest-volcano\.png\?v=/,
     );
     expect(getWordBeastAsset("W000250", "unknown")).toMatch(
-      /wordbeast\/lv1\/W000250\.png$/,
+      /wordbeast\/lv1\/W000250\.png\?v=/,
     );
   });
 
