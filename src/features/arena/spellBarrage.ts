@@ -1,6 +1,7 @@
 import type { WordRecord } from "../../db/types";
 
 export type ArenaDifficulty = "apprentice" | "keeper" | "priest";
+export const CPU_OBSERVE_MS = 2500;
 
 export interface LetterTile {
   id: string;
@@ -9,9 +10,9 @@ export interface LetterTile {
 }
 
 export const ARENA_DIFFICULTIES: Record<ArenaDifficulty, { label: string; note: string; baseMs: number; perLetterMs: number }> = {
-  apprentice: { label: "見習豆魔", note: "會遲疑，也會發呆", baseMs: 2600, perLetterMs: 690 },
-  keeper: { label: "守陣豆魔", note: "穩定、有一點壓力", baseMs: 1900, perLetterMs: 520 },
-  priest: { label: "祭司幻影", note: "反應快，但不作弊", baseMs: 1250, perLetterMs: 390 },
+  apprentice: { label: "見習豆魔", note: "先看線索，再慢慢敲", baseMs: 4000, perLetterMs: 900 },
+  keeper: { label: "守陣豆魔", note: "穩定，開始有壓力", baseMs: 3000, perLetterMs: 700 },
+  priest: { label: "祭司幻影", note: "反應快，但仍會等你", baseMs: 2000, perLetterMs: 520 },
 };
 
 export function normalizeArenaAnswer(word: string): string {
@@ -81,7 +82,8 @@ export function getCpuFinishMs(
   const config = ARENA_DIFFICULTIES[difficulty];
   const normalizedJitter = Math.max(0, Math.min(1, jitter));
   return Math.round(
-    config.baseMs
+    CPU_OBSERVE_MS
+    + config.baseMs
     + normalizeArenaAnswer(answer).length * config.perLetterMs
     + blockerCount * 720
     + normalizedJitter * 850,

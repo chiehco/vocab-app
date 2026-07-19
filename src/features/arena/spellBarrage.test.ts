@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { WordRecord } from "../../db/types";
-import { buildLetterTiles, getCpuFinishMs, normalizeArenaAnswer, selectArenaWords } from "./spellBarrage";
+import { buildLetterTiles, CPU_OBSERVE_MS, getCpuFinishMs, normalizeArenaAnswer, selectArenaWords } from "./spellBarrage";
 
 function word(value: string, level = "LV1"): WordRecord {
   return {
@@ -57,5 +57,6 @@ describe("spell barrage", () => {
     const hard = getCpuFinishMs("witness", "priest", 0, 0);
     expect(hard).toBeLessThan(easy);
     expect(getCpuFinishMs("witness", "priest", 2, 0)).toBe(hard + 1440);
+    expect(hard).toBeGreaterThan(CPU_OBSERVE_MS);
   });
 });

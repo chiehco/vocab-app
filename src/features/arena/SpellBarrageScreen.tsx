@@ -9,6 +9,7 @@ import ResilientBeastImage from "../wordbeast/ResilientBeastImage";
 import { getWordBeastAsset } from "../wordbeast/wordBeastAssets";
 import {
   ARENA_DIFFICULTIES,
+  CPU_OBSERVE_MS,
   buildLetterTiles,
   getCpuFinishMs,
   normalizeArenaAnswer,
@@ -42,7 +43,7 @@ export default function SpellBarrageScreen() {
   }, []);
 
   const [stage, setStage] = useState<Stage>("setup");
-  const [difficulty, setDifficulty] = useState<ArenaDifficulty>("keeper");
+  const [difficulty, setDifficulty] = useState<ArenaDifficulty>("apprentice");
   const [roundWords, setRoundWords] = useState<WordRecord[]>([]);
   const [roundIndex, setRoundIndex] = useState(0);
   const [playerScore, setPlayerScore] = useState(0);
@@ -133,7 +134,9 @@ export default function SpellBarrageScreen() {
     if (stage !== "playing" || !currentWord || outcome || !cpuFinishMs) return;
     const timer = window.setInterval(() => {
       const elapsed = Date.now() - roundStartedAt;
-      const progress = Math.min(answer.length, Math.floor((elapsed / cpuFinishMs) * answer.length));
+      const activeElapsed = Math.max(0, elapsed - CPU_OBSERVE_MS);
+      const activeDuration = Math.max(1, cpuFinishMs - CPU_OBSERVE_MS);
+      const progress = Math.min(answer.length, Math.floor((activeElapsed / activeDuration) * answer.length));
       setCpuProgress(progress);
       if (elapsed < cpuFinishMs || roundLocked.current) return;
       roundLocked.current = true;
