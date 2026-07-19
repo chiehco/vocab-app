@@ -42,5 +42,40 @@
 .dossier-footer { margin: 30px 0 0; color: #928874; text-align: center; font: 700 8px "Noto Serif TC", serif; letter-spacing: .15em; }
 .dossier-loading { display: grid; min-height: calc(100svh - 64px); place-items: center; align-content: center; gap: 16px; color: #77705f; background: #ebe2cd; font: 700 10px "Noto Serif TC", serif; }.dossier-loading i { width: 60px; height: 60px; border: 1px dashed #56614f; border-radius: 50%; animation: dossier-orbit 3s linear infinite; }
 @keyframes dossier-orbit { to { transform: rotate(360deg); } }@keyframes dossier-breathe { 50% { transform: translateY(-6px) scale(1.015); } }
-@media (max-width: 390px) { .word-dossier-page { padding-inline: 15px; }.word-dossier-hero { margin-inline: -15px; grid-template-columns: 1.15fr .85fr; }.dossier-hero-copy { padding-left: 22px; }.dossier-hero-mark img { width: 220%; margin-left: -55px; }.dossier-title-row h1 { font-size: 43px; }.dossier-note-list article { grid-template-columns: 88px 1fr; } }
+@media (max-width: 640px) {
+  .word-dossier-page { padding-inline: 15px; }
+  .word-dossier-hero {
+    min-height: 0;
+    margin-inline: -15px;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .dossier-hero-copy {
+    min-height: 330px;
+    padding: 34px 24px 28px;
+  }
+  .dossier-title-row { margin-top: 30px; }
+  .dossier-title-row h1 { font-size: clamp(38px, 13vw, 54px); }
+  .dossier-hero-copy h2 { margin-top: 46px; }
+  .dossier-en { max-width: 34rem; font-size: 10px; }
+  .dossier-hero-mark {
+    min-height: min(100vw, 390px);
+    padding: 10px 18px 26px;
+    border-top: 1px solid rgba(238,229,208,.12);
+  }
+  .dossier-hero-mark img {
+    width: min(100%, 350px);
+    max-width: 350px;
+    height: auto;
+    aspect-ratio: 1;
+    margin: 0 auto;
+  }
+  .dossier-hero-mark > .beast-image-fallback {
+    width: min(100%, 350px);
+    height: min(82vw, 320px);
+    margin: 0 auto;
+  }
+  .dossier-hero-mark > .exam-tier-badge { top: 18px; right: 18px; }
+  .dossier-hero-mark > small { bottom: 22px; }
+  .dossier-note-list article { grid-template-columns: 88px 1fr; }
+}
 @media (prefers-reduced-motion: reduce) { .word-dossier-page *, .word-dossier-page *::before, .word-dossier-page *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; } }
