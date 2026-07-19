@@ -1,0 +1,184 @@
+.arena-hub,
+.spell-arena {
+  --arena-ink: #282b24;
+  --arena-moss: #43503e;
+  --arena-deep: #202820;
+  --arena-paper: #eee4cf;
+  --arena-gold: #d0ad68;
+  --arena-red: #aa4034;
+  min-height: 100svh;
+  color: var(--arena-ink);
+  background: repeating-linear-gradient(91deg, transparent 0 24px, rgba(60,48,29,.018) 25px 26px), #eee5d2;
+  font-family: "DM Sans", "Noto Sans TC", sans-serif;
+}
+
+.arena-hub { padding: 20px 20px 42px; }
+.arena-hub-header,
+.spell-arena-nav { display: grid; min-height: 40px; grid-template-columns: 1fr auto 1fr; align-items: center; }
+.arena-hub-header a,
+.spell-arena-nav a { color: #6d695c; text-decoration: none; font: 800 10px "Noto Serif TC", serif; }
+.arena-hub-header > span,
+.spell-arena-nav > span { color: #8a826f; font-size: 7px; font-weight: 900; letter-spacing: .16em; }
+.arena-hub-header b,
+.spell-arena-nav b { justify-self: end; color: #9c493f; font-size: 8px; }
+
+.arena-hub-hero {
+  position: relative;
+  display: grid;
+  min-height: 390px;
+  margin: 12px -20px 0;
+  grid-template-columns: 1.08fr .92fr;
+  overflow: hidden;
+  color: #efe5ce;
+  background: radial-gradient(circle at 75% 32%, rgba(203,172,105,.17), transparent 13rem), #253027;
+}
+.arena-hub-hero::before { content: ""; position: absolute; inset: 9px; border: 1px solid rgba(238,229,207,.12); }
+.arena-hub-hero > div { position: relative; z-index: 3; padding: 42px 0 34px 29px; }
+.arena-hub-hero p { margin: 0; color: #d4b873; font-size: 9px; font-weight: 900; letter-spacing: .16em; }
+.arena-hub-hero h1 { margin: 47px 0 0; font: 900 clamp(37px, 10vw, 54px)/1.05 "Noto Serif TC", serif; letter-spacing: -.06em; }
+.arena-hub-hero h1 em { color: #d8ba78; font-style: normal; }
+.arena-hub-hero div > span { display: block; max-width: 220px; margin-top: 30px; color: rgba(239,229,206,.58); font: 600 11px/1.75 "Noto Serif TC", serif; }
+.arena-hub-hero img { position: relative; z-index: 2; width: 205%; max-width: 370px; align-self: end; margin: 0 0 27px -68px; filter: drop-shadow(0 18px 20px rgba(0,0,0,.36)); animation: arena-opponent-float 3.2s ease-in-out infinite; }
+.arena-hub-hero > i { position: absolute; z-index: 1; right: -35px; bottom: 38px; width: 240px; height: 240px; border: 1px solid rgba(208,173,104,.2); border-radius: 50%; box-shadow: 0 0 0 35px rgba(208,173,104,.025), 0 0 0 70px rgba(208,173,104,.015); animation: arena-ring-turn 20s linear infinite; }
+
+.arena-game-list { margin-top: 28px; border-top: 1px solid rgba(44,47,39,.17); }
+.arena-game-entry { position: relative; display: grid; min-height: 125px; grid-template-columns: 43px 1fr auto; gap: 17px; padding: 24px 2px; align-items: center; color: inherit; border-bottom: 1px solid rgba(44,47,39,.17); text-decoration: none; }
+.arena-game-entry.live { transition: padding .2s ease, background .2s ease; }
+.arena-game-entry.live:hover { padding-inline: 10px; background: rgba(255,255,255,.2); }
+.arena-game-number { color: #a64a3e; font: 900 22px Georgia, serif; }
+.arena-game-entry p { margin: 0; color: #91846c; font-size: 7px; font-weight: 900; letter-spacing: .15em; }
+.arena-game-entry h2 { margin: 4px 0 0; font: 900 22px "Noto Serif TC", serif; }
+.arena-game-entry div > span { display: block; max-width: 270px; margin-top: 8px; color: #716d5f; font: 600 10px/1.6 "Noto Serif TC", serif; }
+.arena-game-entry > b { color: #9b493e; font: 800 9px "Noto Serif TC", serif; white-space: nowrap; }
+.arena-game-entry.locked { opacity: .46; }
+.arena-hub-note { margin: 28px 0 0; color: #8c8370; text-align: center; font: 700 8px/1.7 "Noto Serif TC", serif; letter-spacing: .08em; }
+
+.spell-arena { position: relative; overflow: hidden; background: #e9dec6; }
+.spell-arena-nav { position: relative; z-index: 20; min-height: 58px; padding: 0 18px; border-bottom: 1px solid rgba(47,49,40,.16); background: rgba(238,229,208,.93); }
+.spell-setup-main { padding: 36px 25px 35px; }
+.spell-duel-mark { display: grid; height: 96px; grid-template-columns: 1fr 42px 1fr; align-items: center; }
+.spell-duel-mark span { display: grid; width: 70px; height: 82px; place-items: center; color: #eee3c9; background: #46533f; font: 900 26px "Noto Serif TC", serif; box-shadow: 0 11px 22px rgba(43,43,31,.17); }
+.spell-duel-mark span:last-child { justify-self: end; color: #e2c379; background: #5b2823; transform: rotate(2deg); }
+.spell-duel-mark i { color: #a34539; text-align: center; font: 900 13px Georgia, serif; font-style: normal; }
+.spell-eyebrow { margin: 34px 0 0; color: #9e4a3e; font-size: 8px; font-weight: 900; letter-spacing: .16em; }
+.spell-setup-main > h1 { margin: 8px 0 0; font: 900 38px/1.16 "Noto Serif TC", serif; letter-spacing: -.04em; }
+.spell-setup-copy { max-width: 390px; margin: 18px 0 0; color: #6f6a5c; font: 650 12px/1.8 "Noto Serif TC", serif; }
+.spell-difficulty { margin-top: 30px; border-top: 1px solid rgba(48,51,41,.17); }
+.spell-difficulty > p { margin: 15px 0 7px; color: #8d826e; font-size: 8px; font-weight: 900; letter-spacing: .14em; }
+.spell-difficulty button { display: grid; width: 100%; min-height: 49px; grid-template-columns: 110px 1fr; padding: 0 11px; align-items: center; color: #5e5d51; border: 0; border-bottom: 1px solid rgba(48,51,41,.12); background: transparent; text-align: left; cursor: pointer; transition: color .16s ease, background .16s ease, padding .16s ease; }
+.spell-difficulty button span { font: 900 13px "Noto Serif TC", serif; }
+.spell-difficulty button small { color: #89816f; font: 650 9px "Noto Serif TC", serif; }
+.spell-difficulty button.active { padding-inline: 16px; color: #f0e5cc; background: #46523f; }
+.spell-difficulty button.active small { color: rgba(240,229,204,.65); }
+.spell-record { display: flex; margin-top: 22px; align-items: baseline; gap: 12px; color: #756f60; }
+.spell-record > span { font-size: 8px; font-weight: 900; letter-spacing: .12em; }
+.spell-record b { color: #42503e; font: 900 16px Georgia, serif; }
+.spell-record i { color: #9b493e; font: 800 12px Georgia, serif; font-style: normal; }
+.spell-record small { margin-left: auto; font-size: 8px; }
+.spell-start { display: flex; width: 100%; min-height: 55px; margin-top: 22px; padding: 0 18px; align-items: center; justify-content: space-between; color: #f0e5cc; border: 0; background: #9f4035; font: 900 13px "Noto Serif TC", serif; cursor: pointer; box-shadow: 0 11px 22px rgba(88,47,36,.2); }
+.spell-start:disabled { color: #888171; background: #d2c8b3; box-shadow: none; cursor: wait; }
+
+.spell-scoreboard { position: relative; z-index: 10; display: grid; min-height: 73px; grid-template-columns: 1fr auto 1fr; padding: 0 20px; align-items: center; color: #ede3cc; background: #29332a; }
+.spell-scoreboard > div:not(.round-pips) { display: flex; align-items: center; gap: 10px; }
+.spell-scoreboard .cpu { justify-content: flex-end; }
+.spell-scoreboard span { color: rgba(237,227,204,.57); font: 700 8px "Noto Serif TC", serif; letter-spacing: .08em; }
+.spell-scoreboard b { color: #d8bb77; font: 900 28px Georgia, serif; }
+.round-pips { display: flex; gap: 5px; }
+.round-pips i { width: 7px; height: 7px; border: 1px solid rgba(217,188,120,.38); border-radius: 50%; }
+.round-pips i.done { background: #a8463a; border-color: #a8463a; }
+.round-pips i.active { background: #d8bb77; border-color: #d8bb77; box-shadow: 0 0 9px rgba(216,187,119,.45); }
+
+.spell-battlefield { position: relative; display: grid; min-height: calc(100svh - 131px); grid-template-rows: 99px minmax(190px, .9fr) minmax(280px, 1.1fr); }
+.cpu-field { display: grid; grid-template-columns: 90px 1fr; padding: 10px 20px; align-items: center; color: #ede2c9; background: #4a241f; }
+.cpu-avatar { position: relative; height: 77px; }
+.cpu-avatar img { position: absolute; width: 94px; height: 88px; bottom: -7px; left: -14px; object-fit: contain; filter: drop-shadow(0 7px 8px rgba(0,0,0,.28)); }
+.cpu-avatar span { position: absolute; z-index: 2; top: 1px; left: 43px; min-width: 46px; padding: 4px 5px; color: #4f221e; background: #dfbd77; text-align: center; font: 900 7px "Noto Serif TC", serif; transform: rotate(3deg); }
+.cpu-slots,
+.player-slots { display: flex; min-width: 0; justify-content: center; gap: 4px; }
+.cpu-slots i,
+.player-slots i { display: grid; width: clamp(24px, 7vw, 34px); height: 38px; place-items: center; border-bottom: 2px solid currentColor; text-transform: uppercase; font: 900 19px Georgia, serif; font-style: normal; }
+.cpu-slots i { color: rgba(237,226,201,.32); }
+.cpu-slots i.filled { color: #e5c47d; animation: cpu-letter-land .2s ease both; }
+
+.spell-clue { position: relative; display: grid; grid-template-columns: 1.1fr .9fr; overflow: hidden; color: #2e3129; background: radial-gradient(circle at 80% 30%, rgba(255,255,255,.7), transparent 12rem), #eee4cf; border-bottom: 1px solid rgba(48,51,41,.15); }
+.spell-clue::before { content: ""; position: absolute; inset: 8px; border: 1px solid rgba(53,56,45,.08); pointer-events: none; }
+.clue-copy { position: relative; z-index: 2; display: flex; min-width: 0; padding: 25px 0 24px 27px; flex-direction: column; justify-content: center; }
+.clue-copy p { margin: 0; color: #a14a3e; font-size: 8px; font-weight: 900; letter-spacing: .13em; }
+.clue-copy h1 { margin: 12px 0 0; font: 900 clamp(24px, 7vw, 36px)/1.25 "Noto Serif TC", serif; overflow-wrap: anywhere; }
+.clue-copy span { margin-top: 11px; color: #817967; font-size: 9px; font-weight: 700; }
+.clue-visual { position: relative; display: grid; min-width: 0; place-items: center; }
+.clue-visual > img { width: 150%; max-width: 220px; height: 170px; margin-left: -33px; object-fit: contain; filter: drop-shadow(0 7px 10px rgba(45,39,28,.18)); }
+.clue-visual > span { display: grid; width: 100px; height: 120px; place-items: center; color: #58614e; border: 1px dashed #7e826e; font: 900 42px Georgia, serif; }
+.spell-speaker { position: absolute !important; right: 14px; bottom: 12px; display: grid !important; width: 36px; height: 36px; place-items: center; color: #6d735e !important; border: 1px solid rgba(55,59,48,.2) !important; border-radius: 50% !important; background: rgba(239,230,208,.84) !important; }
+
+.player-field { position: relative; padding: 20px 20px 25px; background: #e8dcc3; }
+.player-slots { color: #4d5848; }
+.player-slots i { height: 42px; }
+.player-slots i.filled { color: #9b4338; animation: player-letter-land .18s cubic-bezier(.2,.8,.2,1) both; }
+.spell-feedback { min-height: 18px; margin: 10px 0 8px; color: #7b715f; text-align: center; font: 750 10px "Noto Serif TC", serif; }
+.letter-bank { display: flex; max-width: 430px; margin: 0 auto; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.letter-bank button { position: relative; display: grid; width: 46px; height: 49px; place-items: center; color: #34382f; border: 1px solid rgba(53,57,47,.2); border-bottom-width: 4px; border-radius: 4px; background: #f4ead3; font: 900 20px Georgia, serif; cursor: pointer; box-shadow: 0 5px 8px rgba(52,43,29,.11); transition: translate .1s ease, border-bottom-width .1s ease, background .15s ease; }
+.letter-bank button:active { translate: 0 3px; border-bottom-width: 1px; }
+.letter-bank button.decoy { color: #7b7465; background: #ded2b9; }
+.letter-bank button.blocker { color: #efdcae; border-color: #753028; background: #5b2722; font: 900 14px "Noto Serif TC", serif; animation: blocker-pulse 1.2s ease-in-out infinite; }
+.letter-bank button.wrong { color: #f3e4c9; background: #a44438; animation: wrong-tile .28s ease both; }
+.letter-bank button:disabled { cursor: default; }
+
+.spell-impact { position: absolute; z-index: 30; inset: 0; display: grid; place-items: center; pointer-events: none; overflow: hidden; }
+.spell-impact i { position: absolute; width: 84px; height: 84px; border: 3px solid #dfb76a; border-radius: 50%; box-shadow: 0 0 0 26px rgba(223,183,106,.14), 0 0 0 60px rgba(223,183,106,.07); animation: barrage-shot .72s cubic-bezier(.18,.8,.2,1) both; }
+.spell-impact.cpu i { border-color: #bd5145; box-shadow: 0 0 0 26px rgba(189,81,69,.14), 0 0 0 60px rgba(189,81,69,.07); animation-direction: reverse; }
+.spell-impact span { padding: 10px 16px; color: #f0e4ca; background: #263128; font: 900 14px "Noto Serif TC", serif; letter-spacing: .14em; box-shadow: 0 7px 18px rgba(0,0,0,.28); animation: impact-label .75s ease both; }
+.battle-screen.impact-player .cpu-field { animation: field-hit .42s ease .32s both; }
+.battle-screen.impact-cpu .player-field { animation: field-hit .42s ease .32s both; }
+
+.spell-result-main { display: grid; min-height: calc(100svh - 58px); padding: 55px 28px 42px; place-items: center; align-content: center; text-align: center; }
+.spell-result-seal { display: grid; width: 96px; height: 116px; place-items: center; color: #ebd18f; border: 3px solid #a9473b; background: #4b241f; font: 900 42px "Noto Serif TC", serif; transform: rotate(-3deg); animation: result-seal-in .52s cubic-bezier(.18,.82,.2,1.2) both; }
+.spell-result-main > p { margin: 32px 0 0; color: #9c493e; font-size: 8px; font-weight: 900; letter-spacing: .18em; }
+.spell-result-main h1 { margin: 8px 0 0; font: 900 34px "Noto Serif TC", serif; }
+.spell-result-main > span { margin-top: 12px; color: #746d5d; font: 650 11px "Noto Serif TC", serif; }
+.spell-final-score { display: flex; margin-top: 34px; align-items: center; gap: 23px; }
+.spell-final-score b { color: #42503e; font: 900 50px Georgia, serif; }
+.spell-final-score i { color: #a6483c; font: 800 16px Georgia, serif; font-style: normal; }
+.spell-result-main button,
+.spell-result-main > a { display: grid; width: min(100%, 300px); min-height: 50px; margin-top: 28px; place-items: center; color: #eee3c8; border: 0; background: #46523f; text-decoration: none; font: 900 12px "Noto Serif TC", serif; cursor: pointer; }
+.spell-result-main > a { min-height: 40px; margin-top: 8px; color: #766f60; background: transparent; }
+
+@keyframes arena-opponent-float { 50% { transform: translateY(-7px) rotate(1deg); } }
+@keyframes arena-ring-turn { to { transform: rotate(360deg); } }
+@keyframes cpu-letter-land { from { opacity: 0; transform: translateY(-8px); } }
+@keyframes player-letter-land { from { opacity: 0; transform: translateY(8px) scale(1.2); } }
+@keyframes blocker-pulse { 50% { box-shadow: 0 0 0 5px rgba(164,68,56,.12), 0 5px 8px rgba(52,43,29,.11); } }
+@keyframes wrong-tile { 30% { transform: translateX(-4px) rotate(-3deg); } 70% { transform: translateX(4px) rotate(3deg); } }
+@keyframes barrage-shot { from { transform: translateY(170px) scale(.25); opacity: .2; } to { transform: translateY(-170px) scale(1.8); opacity: 0; } }
+@keyframes impact-label { 0%,100% { opacity: 0; transform: scale(.8); } 20%,75% { opacity: 1; transform: scale(1); } }
+@keyframes field-hit { 25% { transform: translateX(-7px); filter: brightness(1.45); } 65% { transform: translateX(6px); } }
+@keyframes result-seal-in { from { opacity: 0; transform: rotate(-18deg) scale(1.8); } }
+
+@media (max-width: 390px) {
+  .arena-hub { padding-inline: 15px; }
+  .arena-hub-hero { margin-inline: -15px; grid-template-columns: 1.15fr .85fr; }
+  .arena-hub-hero > div { padding-left: 23px; }
+  .arena-hub-hero h1 { font-size: 38px; }
+  .arena-hub-hero img { width: 230%; margin-left: -76px; }
+  .arena-game-entry { grid-template-columns: 35px 1fr; }
+  .arena-game-entry > b { grid-column: 2; justify-self: start; }
+  .spell-setup-main { padding-inline: 20px; }
+  .spell-battlefield { grid-template-rows: 92px minmax(180px, .82fr) minmax(285px, 1.18fr); }
+  .cpu-field { grid-template-columns: 72px 1fr; padding-inline: 14px; }
+  .cpu-avatar img { width: 82px; left: -17px; }
+  .clue-copy { padding-left: 20px; }
+  .clue-copy h1 { font-size: 24px; }
+  .clue-visual > img { width: 170%; margin-left: -42px; }
+  .player-field { padding-inline: 13px; }
+  .cpu-slots,
+  .player-slots { gap: 3px; }
+  .cpu-slots i,
+  .player-slots i { width: clamp(21px, 7.2vw, 28px); }
+  .letter-bank { gap: 6px; }
+  .letter-bank button { width: 42px; height: 45px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arena-hub *, .arena-hub *::before, .arena-hub *::after,
+  .spell-arena *, .spell-arena *::before, .spell-arena *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+}

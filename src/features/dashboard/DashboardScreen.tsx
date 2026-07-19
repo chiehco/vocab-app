@@ -80,6 +80,12 @@ export default function DashboardScreen() {
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" /></svg>
         </Link>
 
+        <Link to="/arena" className="arena-home-entry">
+          <span className="arena-home-mark">VS</span>
+          <div><p>OFFLINE ARENA</p><h2>字獸競技場</h2><span>字母轟炸已開陣・玩家對電腦</span></div>
+          <b>開戰 →</b>
+        </Link>
+
         <section className="daily-rite" aria-labelledby="daily-rite-title">
           <div className="section-heading">
             <div><p>TODAY'S RITE</p><h2 id="daily-rite-title">今日修行</h2></div>

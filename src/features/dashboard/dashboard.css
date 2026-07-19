@@ -140,6 +140,15 @@
 .entrance-test-entry div > span { display: block; margin-top: 5px; color: #7b7462; font: 600 8px "Noto Serif TC", serif; }
 .entrance-test-entry svg { width: 19px; fill: none; stroke: #7d7563; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; transition: transform .18s ease; }
 .entrance-test-entry:hover svg { transform: translateX(4px); }
+.arena-home-entry { position: relative; display: grid; min-height: 100px; grid-template-columns: 54px 1fr auto; gap: 16px; margin: 0 -20px; padding: 22px 24px; align-items: center; color: #eee4ce; background: #5a2823; text-decoration: none; overflow: hidden; }
+.arena-home-entry::after { content: ""; position: absolute; inset: 6px; border: 1px solid rgba(238,228,206,.13); pointer-events: none; }
+.arena-home-entry > * { position: relative; z-index: 2; }
+.arena-home-mark { display: grid; width: 48px; height: 56px; place-items: center; color: #e0c27d; border: 2px solid #bd5447; font: 900 15px Georgia, serif; transform: rotate(-2deg); }
+.arena-home-entry p { margin: 0; color: rgba(238,228,206,.48); font-size: 7px; font-weight: 900; letter-spacing: .17em; }
+.arena-home-entry h2 { margin: 4px 0 0; font: 900 19px "Noto Serif TC", serif; }
+.arena-home-entry div > span { display: block; margin-top: 5px; color: rgba(238,228,206,.68); font: 650 9px "Noto Serif TC", serif; }
+.arena-home-entry > b { color: #e0c27d; font: 900 9px "Noto Serif TC", serif; transition: transform .18s ease; }
+.arena-home-entry:hover > b { transform: translateX(4px); }
 .section-heading { display: flex; justify-content: space-between; align-items: end; }
 .section-heading h2, .archive-entry h2 { margin: 0; font: 900 20px "Noto Serif TC", serif; letter-spacing: .04em; }
 .section-heading > span, .section-heading > a { color: #7f7868; font-size: 9px; text-decoration: none; }
@@ -198,6 +207,7 @@
   .encounter-portal h2 { font-size: 51px; }
   .encounter-beast img { width: 210%; margin-left: -46px; }
   .archive-entry { margin-inline: -15px; }
+  .arena-home-entry { margin-inline: -15px; padding-inline: 20px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

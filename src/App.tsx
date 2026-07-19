@@ -13,6 +13,8 @@ import SettingsScreen from "./features/settings/SettingsScreen";
 import WordBeastPrototype from "./features/wordbeast/WordBeastPrototype";
 import PriestTrialScreen from "./features/wordbeast/PriestTrialScreen";
 import Lv1PilotScreen from "./features/wordbeast/Lv1PilotScreen";
+import ArenaScreen from "./features/arena/ArenaScreen";
+import SpellBarrageScreen from "./features/arena/SpellBarrageScreen";
 
 const NAV_ITEMS = [
   { to: "/", label: "首頁", icon: "home" },
@@ -32,7 +34,7 @@ function NavIcon({ name }: { name: string }) {
 
 function AppLayout() {
   const location = useLocation();
-  const immersive = location.pathname === "/slash" || location.pathname.startsWith("/wordbeast");
+  const immersive = location.pathname === "/slash" || location.pathname.startsWith("/wordbeast") || location.pathname.startsWith("/arena/spell-barrage");
 
   return (
     <div className="mx-auto flex min-h-screen max-w-lg flex-col">
@@ -50,6 +52,8 @@ function AppLayout() {
           <Route path="/word/:wordId" element={<WordDetailScreen />} />
           <Route path="/progress" element={<ProgressScreen />} />
           <Route path="/settings" element={<SettingsScreen />} />
+          <Route path="/arena" element={<ArenaScreen />} />
+          <Route path="/arena/spell-barrage" element={<SpellBarrageScreen />} />
         </Routes>
       </main>
       {!immersive && (
