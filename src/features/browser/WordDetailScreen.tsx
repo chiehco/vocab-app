@@ -6,7 +6,9 @@ import type { WordRecord } from "../../db/types";
 import SpeakerButton from "../../components/SpeakerButton";
 import { getWordBeastAsset } from "../wordbeast/wordBeastAssets";
 import ExamTierBadge from "../wordbeast/ExamTierBadge";
-import { NOTE_TYPE_LABEL, RELATION_TYPE_LABEL, STATE_LABEL } from "./wordLabels";
+import WordTraitBadges from "../wordbeast/WordTraitBadges";
+import { buildSenseCountByWord } from "../wordbeast/wordTraits";
+import { MORPHEME_TYPE_LABEL, NOTE_TYPE_LABEL, RELATION_TYPE_LABEL, STATE_LABEL } from "./wordLabels";
 import "./word-detail.css";
 
 function DossierSigil({ word }: { word: string }) {
@@ -68,6 +70,12 @@ export default function WordDetailScreen() {
 
   const asset = getWordBeastAsset(word.wordId, word.word);
   const sortedMorphemes = morphemes?.slice().sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+  const senseCount = buildSenseCountByWord(examples ?? []).get(word.word) ?? 0;
+  const kinRelations = relations?.filter((relation) => relation.relationType !== "confuse") ?? [];
+  const falseForms = [
+    ...(relations?.filter((relation) => relation.relationType === "confuse").map((relation) => ({ ...relation, kind: "易混淆", targetWord: relation.targetWord })) ?? []),
+    ...(examDistractors?.map((relation) => ({ ...relation, kind: "歷屆誘答", targetWord: relation.relatedWord })) ?? []),
+  ];
 
   return (
     <div className="word-dossier-page">
@@ -79,6 +87,7 @@ export default function WordDetailScreen() {
         <div className="dossier-hero-copy">
           <p>{word.pos || "詞性未標記"} · TRUE NAME</p>
           <div className="dossier-title-row"><h1>{word.word}</h1><SpeakerButton text={word.word} className="dossier-speaker" /></div>
+          <WordTraitBadges senseCount={senseCount} hasConfusables={falseForms.length > 0} hasMorphemes={!!sortedMorphemes?.length} />
           {word.phoneticUs && <span className="dossier-phonetic">/{word.phoneticUs}/</span>}
           <h2>{word.meaningZh || "尚無中文釋義"}</h2>
           {word.meaningEn && <p className="dossier-en">{word.meaningEn}</p>}
@@ -108,36 +117,36 @@ export default function WordDetailScreen() {
 
       {examples && examples.length > 0 && (
         <section className="dossier-section">
-          <div className="dossier-section-head"><div><p>ENCOUNTER LOG</p><h2>遭遇紀錄</h2></div><span>{examples.length} 則</span></div>
-          <ol className="dossier-examples">{examples.map((example, index) => <li key={example.exampleId}><b>{String(index + 1).padStart(2, "0")}</b><div><p>{example.sentenceEn}</p>{example.sentenceZh && <span>{example.sentenceZh}</span>}</div></li>)}</ol>
+          <div className="dossier-section-head"><div><p>{senseCount > 1 ? "TRUE NAME ASPECTS" : "ENCOUNTER LOG"}</p><h2>{senseCount > 1 ? "真名多相" : "遭遇紀錄"}</h2></div><span>{senseCount > 1 ? `${senseCount} 相` : `${examples.length} 則`}</span></div>
+          <ol className="dossier-examples">{examples.map((example, index) => <li key={example.exampleId}><b>{String(index + 1).padStart(2, "0")}</b><div>{example.meaningHint && <small className="example-sense">{example.sensePos || "語境"} · {example.meaningHint}</small>}<p>{example.sentenceEn}</p>{example.sentenceZh && <span>{example.sentenceZh}</span>}</div></li>)}</ol>
         </section>
       )}
 
-      {relations && relations.length > 0 && (
+      {kinRelations.length > 0 && (
         <section className="dossier-section">
-          <div className="dossier-section-head"><div><p>KIN TRACES</p><h2>同族痕跡</h2></div><span>{relations.length} 枚</span></div>
-          <div className="dossier-relations">{relations.map((relation) => {
+          <div className="dossier-section-head"><div><p>KIN TRACES</p><h2>同族痕跡</h2></div><span>{kinRelations.length} 枚</span></div>
+          <div className="dossier-relations">{kinRelations.map((relation) => {
             const related = relatedWords?.[relation.targetWord];
             return <div key={`${relation.relationId}:${relation.targetWord}`}><span>{related ? <Link to={`/word/${related.wordId}`}><strong>{relation.targetWord}</strong></Link> : <strong>{relation.targetWord}</strong>}<small>{RELATION_TYPE_LABEL[relation.relationType || ""] || relation.relationType || "關聯詞"}</small></span><p><b>{related?.meaningZh || "中文釋義待補"}</b>{relation.note && <span>{relation.note}</span>}</p></div>;
           })}</div>
         </section>
       )}
 
-      {examDistractors && examDistractors.length > 0 && (
+      {falseForms.length > 0 && (
         <section className="dossier-section misconception-section">
-          <div className="dossier-section-head"><div><p>FALSE FORMS</p><h2>斬妄形</h2></div><span>{examDistractors.length} 枚</span></div>
-          <p className="dossier-section-intro">這些字曾在大考同題現身，形似答案，卻不是這次要召喚的真名。</p>
-          <div className="dossier-relations">{examDistractors.map((relation) => {
-            const related = relatedWords?.[relation.relatedWord];
-            return <div key={relation.relationId}><span>{related ? <Link to={`/word/${related.wordId}`}><strong>{relation.relatedWord}</strong></Link> : <strong>{relation.relatedWord}</strong>}<small>斬妄形</small></span><p><b>{related?.meaningZh || "中文釋義待補"}</b>{relation.note && <span>{relation.note}</span>}</p></div>;
+          <div className="dossier-section-head"><div><p>FALSE FORMS</p><h2>斬妄形</h2></div><span>{falseForms.length} 枚</span></div>
+          <p className="dossier-section-intro">易混真名與歷屆誘答都收在這裡。先看差異，再斬掉冒牌答案。</p>
+          <div className="dossier-relations">{falseForms.map((relation) => {
+            const related = relatedWords?.[relation.targetWord];
+            return <div key={`${relation.relationId}:${relation.kind}`}><span>{related ? <Link to={`/word/${related.wordId}`}><strong>{relation.targetWord}</strong></Link> : <strong>{relation.targetWord}</strong>}<small>{relation.kind}</small></span><p><b>{related?.meaningZh || "中文釋義待補"}</b>{relation.note && <span>{relation.note}</span>}</p></div>;
           })}</div>
         </section>
       )}
 
       {sortedMorphemes && sortedMorphemes.length > 0 && (
         <section className="dossier-section morpheme-section">
-          <div className="dossier-section-head"><div><p>NAME ANATOMY</p><h2>真名拆解</h2></div><span>{sortedMorphemes.length} 節</span></div>
-          <div className="dossier-morphemes">{sortedMorphemes.map((morpheme) => <div key={morpheme.rowId}><strong>{morpheme.morpheme}</strong><span>{morpheme.morphemeType || "構詞"}</span><p>{morpheme.meaningZh || morpheme.meaningEn || "—"}</p></div>)}</div>
+          <div className="dossier-section-head"><div><p>NAME ANATOMY</p><h2>真名解構</h2></div><span>{sortedMorphemes.length} 段</span></div>
+          <div className="dossier-morphemes">{sortedMorphemes.map((morpheme) => <div key={morpheme.rowId}><strong>{morpheme.morpheme}</strong><span>{MORPHEME_TYPE_LABEL[morpheme.morphemeType || ""] || morpheme.morphemeType || "構件"}</span><p>{morpheme.meaningZh || morpheme.meaningEn || "—"}</p>{morpheme.origin && <small>{morpheme.origin}</small>}</div>)}</div>
         </section>
       )}
 

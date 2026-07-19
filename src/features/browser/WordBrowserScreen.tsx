@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
 import { contentDb } from "../../db/contentDb";
 import ExamTierBadge from "../wordbeast/ExamTierBadge";
+import WordTraitBadges from "../wordbeast/WordTraitBadges";
+import { buildConfusableWordSet, buildMorphemeWordSet, buildSenseCountByWord } from "../wordbeast/wordTraits";
 import "../realm-pages.css";
 
 const LEVELS = ["全部", "LV1", "LV2", "LV3", "LV4", "LV5", "LV6"];
@@ -14,7 +16,13 @@ export default function WordBrowserScreen() {
   const [limit, setLimit] = useState(PAGE_SIZE);
   const words = useLiveQuery(() => contentDb.words.orderBy("wordId").toArray(), []);
   const priorities = useLiveQuery(() => contentDb.examPriorities.toArray(), []);
+  const examples = useLiveQuery(() => contentDb.examples.toArray(), []);
+  const relations = useLiveQuery(() => contentDb.relations.toArray(), []);
+  const morphemes = useLiveQuery(() => contentDb.morphemes.toArray(), []);
   const priorityByWord = useMemo(() => new Map((priorities ?? []).map((row) => [row.word, row.priorityTier])), [priorities]);
+  const senseCountByWord = useMemo(() => buildSenseCountByWord(examples ?? []), [examples]);
+  const confusableWords = useMemo(() => buildConfusableWordSet(relations ?? []), [relations]);
+  const morphemeWords = useMemo(() => buildMorphemeWordSet(morphemes ?? []), [morphemes]);
 
   const filtered = useMemo(() => {
     if (!words) return [];
@@ -58,7 +66,7 @@ export default function WordBrowserScreen() {
               <li key={word.wordId}>
                 <Link to={`/word/${word.wordId}`}>
                   <span className="archive-number">{String(index + 1).padStart(4, "0")}</span>
-                  <span className="archive-word"><strong>{word.word}</strong><small>{word.pos || "—"}</small></span>
+                  <span className="archive-word"><strong>{word.word}</strong><small>{word.pos || "—"}</small><WordTraitBadges senseCount={senseCountByWord.get(word.word)} hasConfusables={confusableWords.has(word.word)} hasMorphemes={morphemeWords.has(word.word)} compact /></span>
                   <span className="archive-meaning">{word.meaningZh || "尚無釋義"}</span>
                   <span className="archive-level"><ExamTierBadge tier={priorityByWord.get(word.word)} compact /><small>{word.level}</small></span>
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12M13 7l5 5-5 5" /></svg>

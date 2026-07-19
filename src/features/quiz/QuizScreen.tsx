@@ -10,6 +10,8 @@ import { recordQuizAnswer } from "../../checkin/recordActivity";
 import SpeakerButton from "../../components/SpeakerButton";
 import { getWordBeastAsset, hasWordBeastAsset } from "../wordbeast/wordBeastAssets";
 import ExamTierBadge from "../wordbeast/ExamTierBadge";
+import WordTraitBadges from "../wordbeast/WordTraitBadges";
+import { buildConfusableWordSet, buildMorphemeWordSet, buildSenseCountByWord } from "../wordbeast/wordTraits";
 import "../realm-pages.css";
 
 const LEVEL_CHOICES = ["S級", "全部", "LV1", "LV2", "LV3", "LV4", "LV5", "LV6"];
@@ -17,8 +19,8 @@ const QUIZ_SIZE = 10;
 type QuizMode = "w2m" | "m2w" | "image" | "fill";
 interface McqQuestion { target: WordRecord; options: WordRecord[]; }
 
-function TrialHeader({ label = "祭司試煉", progress }: { label?: string; progress?: string }) {
-  return <header className="realm-header trial-header"><div><p>PRIEST'S TRIAL</p><h1>{label}</h1></div>{progress ? <span className="realm-count">{progress}</span> : <span className="trial-seal">試</span>}</header>;
+function TrialHeader({ label = "字獸馴化", progress }: { label?: string; progress?: string }) {
+  return <header className="realm-header trial-header"><div><p>BEAST TAMING</p><h1>{label}</h1></div>{progress ? <span className="realm-count">{progress}</span> : <span className="trial-seal">馴</span>}</header>;
 }
 
 function TrialLevels({ selected, onChange }: { selected: string; onChange: (level: string) => void }) {
@@ -41,7 +43,12 @@ export default function QuizScreen() {
   const allExamples = useLiveQuery(() => contentDb.examples.filter((example) => !!example.blankSentence && !!example.answer).toArray(), []);
   const allWords = useLiveQuery(() => contentDb.words.toArray(), []);
   const examPriorities = useLiveQuery(() => contentDb.examPriorities.toArray(), []);
-  const examDistractorRelations = useLiveQuery(() => contentDb.relations.where("relationType").equals("exam_distractor").toArray(), []);
+  const allRelations = useLiveQuery(() => contentDb.relations.toArray(), []);
+  const allMorphemes = useLiveQuery(() => contentDb.morphemes.toArray(), []);
+  const examDistractorRelations = useMemo(() => (allRelations ?? []).filter((relation) => relation.relationType === "exam_distractor"), [allRelations]);
+  const senseCountByWord = useMemo(() => buildSenseCountByWord(allExamples ?? []), [allExamples]);
+  const confusableWords = useMemo(() => buildConfusableWordSet(allRelations ?? []), [allRelations]);
+  const morphemeWords = useMemo(() => buildMorphemeWordSet(allMorphemes ?? []), [allMorphemes]);
   const sWordSet = useMemo(() => new Set(
     (examPriorities ?? [])
       .filter((row) => row.priorityTier === "S" && !row.isFunctionWord)
@@ -95,7 +102,7 @@ export default function QuizScreen() {
       <div className="realm-page trial-page">
         <TrialHeader />
         <section className="trial-intro">
-          <div><p>選擇今日試煉</p><h2>祭司不問你<br />背了多少，<em>只問你認不認得。</em></h2></div>
+          <div><p>選擇今日馴化</p><h2>收服只是相遇，<br />能在情境中認出，<em>才算真的馴化。</em></h2></div>
           <div className="trial-eye" aria-hidden="true"><i /><span /></div>
         </section>
         <div className="trial-scope"><span>出題範圍</span><TrialLevels selected={levelSel} onChange={setLevelSel} /></div>
@@ -113,12 +120,12 @@ export default function QuizScreen() {
     const perfect = score === total;
     return (
       <div className="realm-page trial-result-page">
-        <TrialHeader label="試煉結果" />
+        <TrialHeader label="馴化結果" />
         <div className={`trial-result-mark ${perfect ? "perfect" : ""}`}><span>{score}</span><small>/ {total}</small></div>
-        <p className="trial-result-kicker">{perfect ? "FLAWLESS BINDING" : "TRIAL COMPLETE"}</p>
+        <p className="trial-result-kicker">{perfect ? "FLAWLESS TAMING" : "TAMING COMPLETE"}</p>
         <h2>{perfect ? "真名無誤" : "判定完成"}</h2>
         <p>{perfect ? "所有字獸都被準確辨認。" : `本輪辨認 ${score} 枚，錯過 ${total - score} 枚。`}</p>
-        <div className="trial-result-actions"><button onClick={() => setMode(null)}>再試一次</button><Link to="/">返回萬字譜</Link></div>
+        <div className="trial-result-actions"><button onClick={() => setMode(null)}>再馴化一次</button><Link to="/">返回萬字譜</Link></div>
       </div>
     );
   }
@@ -139,13 +146,14 @@ export default function QuizScreen() {
         <div className="trial-progress"><i style={{ width: `${((index + 1) / total) * 100}%` }} /><span>目前辨認 {score}</span></div>
         <section className={`trial-question fill-question ${fillResult ?? ""}`}>
           <ExamTierBadge tier={priorityByWord.get(question.word)} compact />
+          <WordTraitBadges senseCount={senseCountByWord.get(question.word)} hasConfusables={confusableWords.has(question.word)} hasMorphemes={morphemeWords.has(question.word)} compact />
           <p className="trial-question-label">RESTORE THE MISSING NAME</p>
           <h2>{question.blankSentence}</h2>
           {question.sentenceZh && <p className="trial-translation">{question.sentenceZh}</p>}
           <label><span>填入真名</span><input value={fillInput} onChange={(event) => setFillInput(event.target.value)} onKeyDown={(event) => event.key === "Enter" && submitFill()} disabled={fillResult !== null} autoCapitalize="none" autoCorrect="off" /></label>
           {fillResult && <div className="trial-verdict"><b>{fillResult === "correct" ? "辨名成功" : "真名有誤"}</b><span>{fillResult === "correct" ? question.answer : `正確答案：${question.answer}`}</span></div>}
         </section>
-        <button className="trial-next" onClick={() => { if (fillResult === null) submitFill(); else { setIndex((current) => current + 1); setFillInput(""); setFillResult(null); } }}>{fillResult === null ? "提交祭司判定" : "下一道試煉"}<span>→</span></button>
+        <button className="trial-next" onClick={() => { if (fillResult === null) submitFill(); else { setIndex((current) => current + 1); setFillInput(""); setFillResult(null); } }}>{fillResult === null ? "確認馴化" : "下一隻字獸"}<span>→</span></button>
       </div>
     );
   }
@@ -179,6 +187,7 @@ export default function QuizScreen() {
       <div className="trial-progress"><i style={{ width: `${((index + 1) / total) * 100}%` }} /><span>目前辨認 {score}</span></div>
       <section className={`trial-question choice-question ${sealed ? "is-sealed" : ""}`}>
         <ExamTierBadge tier={priorityByWord.get(question.target.word)} compact />
+        <WordTraitBadges senseCount={senseCountByWord.get(question.target.word)} hasConfusables={confusableWords.has(question.target.word)} hasMorphemes={morphemeWords.has(question.target.word)} compact />
         <p className="trial-question-label">SPEAK THE TRUE ANSWER</p>
         {mode === "image" && targetAsset ? <img className="trial-wordbeast-clue" src={targetAsset} alt="待辨認的字獸圖卡" /> : <h2 className={mode === "w2m" ? "word-prompt" : "meaning-prompt"}>{prompt}{mode === "w2m" && <SpeakerButton text={question.target.word} className="trial-speaker" />}</h2>}
         <p className="trial-prompt-sub">{mode === "image" ? "看圖選出真名" : promptSub}</p>
@@ -193,7 +202,7 @@ export default function QuizScreen() {
       <div className="trial-options">
         {question.options.map((option, optionIndex) => <button key={option.word} className={optionState(option)} onClick={() => pick(option)}><b>{String.fromCharCode(65 + optionIndex)}</b><span>{mode === "w2m" ? option.meaningZh : option.word}</span><i /></button>)}
       </div>
-      {answered !== null && <button className="trial-next" onClick={() => { setIndex((current) => current + 1); setAnswered(null); }}>下一道試煉<span>→</span></button>}
+      {answered !== null && <button className="trial-next" onClick={() => { setIndex((current) => current + 1); setAnswered(null); }}>下一隻字獸<span>→</span></button>}
     </div>
   );
 }

@@ -17,7 +17,7 @@ import Lv1PilotScreen from "./features/wordbeast/Lv1PilotScreen";
 const NAV_ITEMS = [
   { to: "/", label: "首頁", icon: "home" },
   { to: "/review", label: "複習", icon: "review" },
-  { to: "/quiz", label: "試煉", icon: "trial" },
+  { to: "/quiz", label: "馴化", icon: "trial" },
   { to: "/browse", label: "萬字譜", icon: "archive" },
   { to: "/progress", label: "足跡", icon: "trace" },
 ];

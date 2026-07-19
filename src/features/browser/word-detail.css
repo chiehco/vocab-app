@@ -15,6 +15,7 @@
 .dossier-hero-copy { position: relative; z-index: 3; display: flex; min-width: 0; padding: 40px 0 35px 28px; flex-direction: column; align-items: flex-start; }
 .dossier-hero-copy > p:first-child { margin: 0; color: #d0b16d; font-size: 8px; font-weight: 800; letter-spacing: .14em; }
 .dossier-title-row { display: flex; max-width: 100%; margin-top: 38px; align-items: center; gap: 8px; }
+.dossier-hero-copy > .word-trait-badges { margin-top: 12px; }
 .dossier-title-row h1 { min-width: 0; margin: 0; font: 900 clamp(43px, 12vw, 66px)/.9 "Noto Serif TC", serif; letter-spacing: -.06em; overflow-wrap: anywhere; }
 .dossier-speaker { display: grid !important; flex: none; width: 36px; height: 36px; place-items: center; color: #e0c27d !important; border: 1px solid rgba(224,194,125,.38) !important; border-radius: 50% !important; background: transparent !important; font-size: 14px !important; }
 .dossier-phonetic { margin-top: 13px; color: rgba(238,229,208,.52); font: 600 11px Georgia, serif; }
@@ -36,7 +37,8 @@
 .dossier-section-intro { max-width: 540px; margin: 14px 0 0; color: #756b5b; font: 600 10px/1.75 "Noto Serif TC", serif; }
 .misconception-section { border-top-color: rgba(156,81,69,.45); }
 .misconception-section .dossier-section-head p, .misconception-section .dossier-relations small { color: #9c5145; }
-.dossier-morphemes { display: flex; gap: 0; margin-top: 22px; overflow-x: auto; }.dossier-morphemes > div { min-width: 120px; padding: 15px; border: 1px solid rgba(45,47,39,.17); border-left: 0; }.dossier-morphemes > div:first-child { border-left: 1px solid rgba(45,47,39,.17); }.dossier-morphemes strong, .dossier-morphemes span, .dossier-morphemes p { display: block; }.dossier-morphemes strong { font: 900 18px Georgia, serif; }.dossier-morphemes span { margin-top: 5px; color: #a04f44; font-size: 7px; font-weight: 800; }.dossier-morphemes p { margin: 10px 0 0; color: #6e6959; font: 600 9px "Noto Serif TC", serif; }
+.dossier-examples .example-sense { display: inline-block; margin-bottom: 7px; color: #7a567f; font-size: 8px; font-weight: 800; }
+.dossier-morphemes { display: flex; gap: 0; margin-top: 22px; overflow-x: auto; }.dossier-morphemes > div { min-width: 120px; padding: 15px; border: 1px solid rgba(45,47,39,.17); border-left: 0; }.dossier-morphemes > div:first-child { border-left: 1px solid rgba(45,47,39,.17); }.dossier-morphemes strong, .dossier-morphemes span, .dossier-morphemes p, .dossier-morphemes small { display: block; }.dossier-morphemes strong { font: 900 18px Georgia, serif; }.dossier-morphemes span { margin-top: 5px; color: #a04f44; font-size: 7px; font-weight: 800; }.dossier-morphemes p { margin: 10px 0 0; color: #6e6959; font: 600 9px "Noto Serif TC", serif; }.dossier-morphemes small { margin-top: 8px; color: #938a76; font-size: 7px; text-transform: uppercase; letter-spacing: .08em; }
 .dossier-footer { margin: 30px 0 0; color: #928874; text-align: center; font: 700 8px "Noto Serif TC", serif; letter-spacing: .15em; }
 .dossier-loading { display: grid; min-height: calc(100svh - 64px); place-items: center; align-content: center; gap: 16px; color: #77705f; background: #ebe2cd; font: 700 10px "Noto Serif TC", serif; }.dossier-loading i { width: 60px; height: 60px; border: 1px dashed #56614f; border-radius: 50%; animation: dossier-orbit 3s linear infinite; }
 @keyframes dossier-orbit { to { transform: rotate(360deg); } }@keyframes dossier-breathe { 50% { transform: translateY(-6px) scale(1.015); } }

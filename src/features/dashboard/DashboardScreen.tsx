@@ -93,7 +93,7 @@ export default function DashboardScreen() {
           </div>
           <div className="rite-actions">
             <Link to="/review">只複習舊封印 <span>→</span></Link>
-            <Link to="/quiz">進行實力試煉 <span>→</span></Link>
+            <Link to="/quiz">開始今日馴化 <span>→</span></Link>
           </div>
         </section>
 

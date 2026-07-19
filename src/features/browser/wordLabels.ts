@@ -23,3 +23,11 @@ export const RELATION_TYPE_LABEL: Record<string, string> = {
   topic: "主題關聯",
   exam_distractor: "斬妄形",
 };
+
+export const MORPHEME_TYPE_LABEL: Record<string, string> = {
+  prefix: "前印・字首",
+  root: "真核・字根",
+  base: "真核・字基",
+  suffix: "尾印・字尾",
+  combining_form: "合印・結合形",
+};

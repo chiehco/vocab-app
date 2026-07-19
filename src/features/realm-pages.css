@@ -49,6 +49,7 @@
 .archive-word strong, .archive-word small { display: block; }
 .archive-word strong { font: 900 16px "Noto Serif TC", serif; overflow-wrap: anywhere; }
 .archive-word small { margin-top: 3px; color: #8b826f; font-size: 7px; }
+.archive-word .word-trait-badges { margin-top: 5px; }
 .archive-meaning { min-width: 0; color: #696759; font: 600 10px "Noto Serif TC", serif; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .archive-level { display: flex; align-items: center; justify-content: center; flex-direction: column; color: #8f493f; font-size: 8px; font-weight: 800; }
 .archive-level small { margin-top: 2px; font-size: 6px; }
@@ -95,6 +96,7 @@
 .choice-question { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }.choice-question h2 { position: relative; z-index: 2; margin: 17px 0 0; font: 900 40px/1.15 "Noto Serif TC", serif; }.choice-question h2.meaning-prompt { font-size: 25px; }.trial-prompt-sub { position: relative; z-index: 2; margin: 10px 0 0; color: #827a68; font: 600 10px "Noto Serif TC", serif; }.trial-speaker { display: inline-grid !important; width: 34px; height: 34px; margin-left: 7px; place-items: center; border: 1px solid rgba(57,62,51,.24) !important; border-radius: 50% !important; background: transparent !important; vertical-align: middle; font-size: 14px !important; }
 .trial-wordbeast-clue { position: relative; z-index: 2; width: min(100%, 270px); height: 210px; margin-top: 10px; object-fit: contain; border-radius: 3px; filter: drop-shadow(0 8px 12px rgba(45,39,28,.15)); }
 .trial-question > .exam-tier-badge { position: absolute; top: 13px; right: 14px; }
+.trial-question > .word-trait-badges { position: absolute; z-index: 3; top: 40px; right: 14px; max-width: 62%; justify-content: flex-end; }
 .choice-question.is-sealed { overflow: hidden; animation: trial-boundary-flash .7s ease both; }
 .choice-question.is-sealed .trial-wordbeast-clue { animation: trial-beast-bound .9s cubic-bezier(.2,.78,.24,1) both; }
 .trial-binding { position: absolute; z-index: 5; inset: 0; display: grid; place-items: center; overflow: hidden; pointer-events: none; }

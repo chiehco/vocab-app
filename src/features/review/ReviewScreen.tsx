@@ -10,6 +10,8 @@ import { NOTE_TYPE_LABEL } from "../browser/wordLabels";
 import SpeakerButton from "../../components/SpeakerButton";
 import { getWordBeastAsset } from "../wordbeast/wordBeastAssets";
 import ExamTierBadge from "../wordbeast/ExamTierBadge";
+import WordTraitBadges from "../wordbeast/WordTraitBadges";
+import { buildConfusableWordSet, buildSenseCountByWord } from "../wordbeast/wordTraits";
 import "./review.css";
 
 const LEVEL_CHOICES = ["全部", "LV1", "LV2", "LV3", "LV4", "LV5", "LV6"];
@@ -144,7 +146,11 @@ function Flashcard({ item, flipped, onFlip, onGrade, position }: { item: QueueIt
   const word = item.wordRecord;
   const notes = useLiveQuery(() => contentDb.notes.where("word").equals(word.word).toArray(), [word.word]);
   const priority = useLiveQuery(() => contentDb.examPriorities.where("word").equals(word.word).first(), [word.word]);
+  const examples = useLiveQuery(() => contentDb.examples.where("word").equals(word.word).toArray(), [word.word]);
+  const relations = useLiveQuery(() => contentDb.relations.filter((relation) => relation.word === word.word || relation.relatedWord === word.word).toArray(), [word.word]);
+  const morphemes = useLiveQuery(() => contentDb.morphemes.where("word").equals(word.word).toArray(), [word.word]);
   const beastAsset = getWordBeastAsset(word.wordId, word.word);
+  const senseCount = buildSenseCountByWord(examples ?? []).get(word.word) ?? 0;
 
   return (
     <div className="seal-workspace">
@@ -164,6 +170,7 @@ function Flashcard({ item, flipped, onFlip, onGrade, position }: { item: QueueIt
         <div className="seal-card-identity">
           <div><h1>{word.word}</h1><SpeakerButton text={word.word} className="seal-speaker" /></div>
           <p>{word.pos || "詞性未標記"}</p>
+          <WordTraitBadges senseCount={senseCount} hasConfusables={buildConfusableWordSet(relations ?? []).has(word.word)} hasMorphemes={!!morphemes?.length} compact />
         </div>
 
         {flipped && (
