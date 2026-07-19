@@ -9,6 +9,7 @@ import { GRADE_LABELS } from "../../srs/sm2";
 import { NOTE_TYPE_LABEL } from "../browser/wordLabels";
 import SpeakerButton from "../../components/SpeakerButton";
 import { getWordBeastAsset } from "../wordbeast/wordBeastAssets";
+import ExamTierBadge from "../wordbeast/ExamTierBadge";
 import "./review.css";
 
 const LEVEL_CHOICES = ["全部", "LV1", "LV2", "LV3", "LV4", "LV5", "LV6"];
@@ -142,6 +143,7 @@ export default function ReviewScreen() {
 function Flashcard({ item, flipped, onFlip, onGrade, position }: { item: QueueItem; flipped: boolean; onFlip: () => void; onGrade: (grade: Grade) => void; position: number }) {
   const word = item.wordRecord;
   const notes = useLiveQuery(() => contentDb.notes.where("word").equals(word.word).toArray(), [word.word]);
+  const priority = useLiveQuery(() => contentDb.examPriorities.where("word").equals(word.word).first(), [word.word]);
   const beastAsset = getWordBeastAsset(word.wordId, word.word);
 
   return (
@@ -150,7 +152,7 @@ function Flashcard({ item, flipped, onFlip, onGrade, position }: { item: QueueIt
         <div className="seal-card-border" />
         <div className="seal-card-meta">
           <span>{item.isNew ? "未知字獸" : "封印鬆動"}</span>
-          <b>NO. {String(position).padStart(3, "0")}</b>
+          <div><ExamTierBadge tier={priority?.priorityTier} compact /><b>NO. {String(position).padStart(3, "0")}</b></div>
         </div>
 
         <div className="seal-card-visual">

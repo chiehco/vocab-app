@@ -20,6 +20,7 @@
 .dossier-phonetic { margin-top: 13px; color: rgba(238,229,208,.52); font: 600 11px Georgia, serif; }
 .dossier-hero-copy h2 { margin: auto 0 0; color: #f0e6cf; font: 900 22px/1.4 "Noto Serif TC", serif; }.dossier-en { margin: 9px 0 0; color: rgba(238,229,208,.53); font-size: 9px; line-height: 1.55; }
 .dossier-hero-mark { position: relative; z-index: 2; display: grid; min-width: 0; place-items: center; }
+.dossier-hero-mark > .exam-tier-badge { position: absolute; z-index: 5; top: 22px; right: 15px; }
 .dossier-hero-mark img { position: relative; z-index: 2; width: 190%; max-width: 340px; height: 325px; margin-left: -44px; object-fit: contain; filter: drop-shadow(0 14px 18px rgba(0,0,0,.32)); animation: dossier-breathe 3.8s ease-in-out infinite; }
 .dossier-hero-mark > small { position: absolute; z-index: 3; bottom: 40px; color: rgba(238,229,208,.42); font: 700 7px "Noto Serif TC", serif; letter-spacing: .17em; }
 .dossier-orbit { position: absolute; width: 180px; height: 180px; border: 1px solid rgba(214,182,113,.2); border-radius: 50%; box-shadow: 0 0 0 28px rgba(214,182,113,.025); animation: dossier-orbit 26s linear infinite; }.dossier-orbit::after { content: ""; position: absolute; inset: 26px; border: 1px dashed rgba(214,182,113,.2); transform: rotate(45deg); }

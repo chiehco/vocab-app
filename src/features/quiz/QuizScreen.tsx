@@ -9,6 +9,7 @@ import { pickExamDistractors } from "../../quiz/examDistractors";
 import { recordQuizAnswer } from "../../checkin/recordActivity";
 import SpeakerButton from "../../components/SpeakerButton";
 import { getWordBeastAsset, hasWordBeastAsset } from "../wordbeast/wordBeastAssets";
+import ExamTierBadge from "../wordbeast/ExamTierBadge";
 import "../realm-pages.css";
 
 const LEVEL_CHOICES = ["S級", "全部", "LV1", "LV2", "LV3", "LV4", "LV5", "LV6"];
@@ -46,6 +47,7 @@ export default function QuizScreen() {
       .filter((row) => row.priorityTier === "S" && !row.isFunctionWord)
       .map((row) => row.word),
   ), [examPriorities]);
+  const priorityByWord = useMemo(() => new Map((examPriorities ?? []).map((row) => [row.word, row.priorityTier])), [examPriorities]);
   const fillPool = useMemo(() => {
     if (!allExamples || !allWords) return undefined;
     if (levelSel === "S級") return allExamples.filter((example) => sWordSet.has(example.word));
@@ -136,6 +138,7 @@ export default function QuizScreen() {
         <TrialHeader label="殘句補名" progress={`${index + 1} / ${total}`} />
         <div className="trial-progress"><i style={{ width: `${((index + 1) / total) * 100}%` }} /><span>目前辨認 {score}</span></div>
         <section className={`trial-question fill-question ${fillResult ?? ""}`}>
+          <ExamTierBadge tier={priorityByWord.get(question.word)} compact />
           <p className="trial-question-label">RESTORE THE MISSING NAME</p>
           <h2>{question.blankSentence}</h2>
           {question.sentenceZh && <p className="trial-translation">{question.sentenceZh}</p>}
@@ -175,6 +178,7 @@ export default function QuizScreen() {
       <TrialHeader label={mode === "w2m" ? "見名辨義" : mode === "image" ? "看圖喚名" : "循義喚名"} progress={`${index + 1} / ${total}`} />
       <div className="trial-progress"><i style={{ width: `${((index + 1) / total) * 100}%` }} /><span>目前辨認 {score}</span></div>
       <section className={`trial-question choice-question ${sealed ? "is-sealed" : ""}`}>
+        <ExamTierBadge tier={priorityByWord.get(question.target.word)} compact />
         <p className="trial-question-label">SPEAK THE TRUE ANSWER</p>
         {mode === "image" && targetAsset ? <img className="trial-wordbeast-clue" src={targetAsset} alt="待辨認的字獸圖卡" /> : <h2 className={mode === "w2m" ? "word-prompt" : "meaning-prompt"}>{prompt}{mode === "w2m" && <SpeakerButton text={question.target.word} className="trial-speaker" />}</h2>}
         <p className="trial-prompt-sub">{mode === "image" ? "看圖選出真名" : promptSub}</p>

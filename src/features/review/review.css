@@ -34,6 +34,9 @@
 .seal-card::before { content: ""; position: absolute; width: 270px; height: 270px; top: 68px; left: 50%; border: 1px solid rgba(76,84,65,.13); border-radius: 50%; translate: -50% 0; box-shadow: 0 0 0 34px rgba(76,84,65,.025); }
 .seal-card-meta { position: relative; z-index: 2; display: flex; justify-content: space-between; color: #807866; font-size: 8px; font-weight: 700; letter-spacing: .16em; }
 .seal-card-meta span::before { content: ""; display: inline-block; width: 5px; height: 5px; margin-right: 6px; border-radius: 50%; background: var(--seal-red); }
+.seal-card-meta > div { display: flex; align-items: flex-start; gap: 9px; }
+.seal-card-meta > div > b { padding-top: 4px; }
+.seal-card-meta .exam-tier-badge > span::before { display: none; }
 
 .seal-card-visual { position: relative; z-index: 1; display: grid; height: 295px; place-items: center; }
 .seal-card-visual img { position: relative; z-index: 2; width: 112%; height: 285px; object-fit: contain; filter: drop-shadow(0 11px 15px rgba(45,39,28,.19)); animation: seal-beast-breathe 3.7s ease-in-out infinite; }

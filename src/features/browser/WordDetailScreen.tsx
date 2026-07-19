@@ -5,6 +5,7 @@ import { progressDb } from "../../db/progressDb";
 import type { WordRecord } from "../../db/types";
 import SpeakerButton from "../../components/SpeakerButton";
 import { getWordBeastAsset } from "../wordbeast/wordBeastAssets";
+import ExamTierBadge from "../wordbeast/ExamTierBadge";
 import { NOTE_TYPE_LABEL, RELATION_TYPE_LABEL, STATE_LABEL } from "./wordLabels";
 import "./word-detail.css";
 
@@ -51,6 +52,7 @@ export default function WordDetailScreen() {
   const morphemes = useLiveQuery(() => word ? contentDb.morphemes.where("word").equals(word.word).toArray() : [], [word?.word]);
   const notes = useLiveQuery(() => word ? contentDb.notes.where("word").equals(word.word).toArray() : [], [word?.word]);
   const cardState = useLiveQuery(() => word ? progressDb.cardStates.get(word.word) : undefined, [word?.word]);
+  const priority = useLiveQuery(() => word ? contentDb.examPriorities.where("word").equals(word.word).first() : undefined, [word?.word]);
   const relationTargets = [
     ...(relations?.map((relation) => relation.targetWord) ?? []),
     ...(examDistractors?.map((relation) => relation.relatedWord) ?? []),
@@ -82,6 +84,7 @@ export default function WordDetailScreen() {
           {word.meaningEn && <p className="dossier-en">{word.meaningEn}</p>}
         </div>
         <div className="dossier-hero-mark">
+          <ExamTierBadge tier={priority?.priorityTier} />
           <span className="dossier-orbit" />
           {asset ? <img src={asset} alt={`${word.word} 字獸`} /> : <DossierSigil word={word.word} />}
           {!asset && <small>圖像待收錄</small>}
@@ -91,7 +94,7 @@ export default function WordDetailScreen() {
       <section className="dossier-status" aria-label="學習狀態">
         <div><span>封印狀態</span><b>{cardState ? STATE_LABEL[cardState.state] : "尚未遭遇"}</b></div>
         <div><span>下次校準</span><b>{cardState?.dueDate ?? "—"}</b></div>
-        <div><span>收錄位階</span><b>{word.level}</b></div>
+        <div><span>收錄位階</span><b>{priority ? `${priority.priorityTier}級・${word.level}` : word.level}</b></div>
       </section>
 
       {word.usagePattern && <section className="dossier-usage"><span>USAGE PATTERN</span><h2>使用軌跡</h2><p>{word.usagePattern}</p></section>}

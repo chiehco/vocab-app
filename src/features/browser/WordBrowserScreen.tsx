@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
 import { contentDb } from "../../db/contentDb";
+import ExamTierBadge from "../wordbeast/ExamTierBadge";
 import "../realm-pages.css";
 
 const LEVELS = ["全部", "LV1", "LV2", "LV3", "LV4", "LV5", "LV6"];
@@ -12,6 +13,8 @@ export default function WordBrowserScreen() {
   const [level, setLevel] = useState("全部");
   const [limit, setLimit] = useState(PAGE_SIZE);
   const words = useLiveQuery(() => contentDb.words.orderBy("wordId").toArray(), []);
+  const priorities = useLiveQuery(() => contentDb.examPriorities.toArray(), []);
+  const priorityByWord = useMemo(() => new Map((priorities ?? []).map((row) => [row.word, row.priorityTier])), [priorities]);
 
   const filtered = useMemo(() => {
     if (!words) return [];
@@ -57,7 +60,7 @@ export default function WordBrowserScreen() {
                   <span className="archive-number">{String(index + 1).padStart(4, "0")}</span>
                   <span className="archive-word"><strong>{word.word}</strong><small>{word.pos || "—"}</small></span>
                   <span className="archive-meaning">{word.meaningZh || "尚無釋義"}</span>
-                  <span className="archive-level">{word.level}</span>
+                  <span className="archive-level"><ExamTierBadge tier={priorityByWord.get(word.word)} compact /><small>{word.level}</small></span>
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12M13 7l5 5-5 5" /></svg>
                 </Link>
               </li>

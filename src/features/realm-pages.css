@@ -50,7 +50,8 @@
 .archive-word strong { font: 900 16px "Noto Serif TC", serif; overflow-wrap: anywhere; }
 .archive-word small { margin-top: 3px; color: #8b826f; font-size: 7px; }
 .archive-meaning { min-width: 0; color: #696759; font: 600 10px "Noto Serif TC", serif; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.archive-level { color: #8f493f; font-size: 8px; font-weight: 800; }
+.archive-level { display: flex; align-items: center; justify-content: center; flex-direction: column; color: #8f493f; font-size: 8px; font-weight: 800; }
+.archive-level small { margin-top: 2px; font-size: 6px; }
 .archive-index svg { width: 14px; fill: none; stroke: #7c7665; stroke-width: 1.7; }
 .archive-more { width: 100%; margin-top: 18px; padding: 14px; color: #52584c; border: 1px solid rgba(51,54,45,.23); background: rgba(255,255,255,.13); font: 800 10px "Noto Serif TC", serif; cursor: pointer; }
 .archive-more span { margin-left: 8px; color: var(--realm-red); }
@@ -93,6 +94,7 @@
 .trial-question { position: relative; min-height: 265px; padding: 32px 24px; background: rgba(246,238,217,.63); border: 1px solid rgba(49,51,42,.25); box-shadow: 0 12px 26px rgba(53,45,30,.1), inset 0 0 0 6px rgba(255,255,255,.16); animation: trial-question-in .3s ease both; }.trial-question::after { content: ""; position: absolute; inset: 8px; border: 1px solid rgba(49,51,42,.1); pointer-events: none; }.trial-question-label { position: relative; z-index: 2; margin: 0; color: #9c5145; font-size: 7px; font-weight: 800; letter-spacing: .18em; }
 .choice-question { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }.choice-question h2 { position: relative; z-index: 2; margin: 17px 0 0; font: 900 40px/1.15 "Noto Serif TC", serif; }.choice-question h2.meaning-prompt { font-size: 25px; }.trial-prompt-sub { position: relative; z-index: 2; margin: 10px 0 0; color: #827a68; font: 600 10px "Noto Serif TC", serif; }.trial-speaker { display: inline-grid !important; width: 34px; height: 34px; margin-left: 7px; place-items: center; border: 1px solid rgba(57,62,51,.24) !important; border-radius: 50% !important; background: transparent !important; vertical-align: middle; font-size: 14px !important; }
 .trial-wordbeast-clue { position: relative; z-index: 2; width: min(100%, 270px); height: 210px; margin-top: 10px; object-fit: contain; border-radius: 3px; filter: drop-shadow(0 8px 12px rgba(45,39,28,.15)); }
+.trial-question > .exam-tier-badge { position: absolute; top: 13px; right: 14px; }
 .choice-question.is-sealed { overflow: hidden; animation: trial-boundary-flash .7s ease both; }
 .choice-question.is-sealed .trial-wordbeast-clue { animation: trial-beast-bound .9s cubic-bezier(.2,.78,.24,1) both; }
 .trial-binding { position: absolute; z-index: 5; inset: 0; display: grid; place-items: center; overflow: hidden; pointer-events: none; }

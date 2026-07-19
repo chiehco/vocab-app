@@ -169,6 +169,7 @@
   min-height: 0;
   place-items: center;
 }
+.beast-stage > .exam-tier-badge { position: absolute; z-index: 7; top: 1rem; right: 1.1rem; }
 
 .ink-halo {
   position: absolute;
@@ -439,7 +440,8 @@
 }
 button.word-entry { cursor: pointer; }
 .word-entry.captured { animation: wb-entry 560ms cubic-bezier(0.18, 0.82, 0.18, 1) both; }
-.word-entry img { position: absolute; top: 0.6rem; width: 86%; height: 70%; object-fit: contain; image-rendering: pixelated; }
+.word-entry img { position: absolute; top: 0.6rem; width: 86%; height: 70%; object-fit: contain; }
+.word-entry > .exam-tier-badge { position: absolute; top: .58rem; right: .62rem; }
 .word-entry .move-glyph {
   --glyph-ink: #3f2a18;
   position: absolute;
@@ -524,14 +526,21 @@ button.word-entry { cursor: pointer; }
   font-size: 1.35rem;
 }
 .dossier-portrait { position: relative; display: grid; height: 15rem; place-items: center; border-bottom: 1px solid rgba(78, 49, 24, 0.25); }
-.dossier-portrait img { width: 80%; height: 100%; object-fit: contain; image-rendering: pixelated; }
+.dossier-portrait img { width: 80%; height: 100%; object-fit: contain; }
+.dossier-portrait > .exam-tier-badge { position: absolute; z-index: 4; top: .7rem; left: .4rem; }
 .dossier-portrait .move-glyph {
   --glyph-ink: #3f2a18;
   width: 88%;
   height: 88%;
 }
 .dossier-portrait .move-glyph .moving-ink { stroke: #ead4a5; }
-.dossier-portrait span { position: absolute; right: 0; bottom: 0.8rem; border: 1px solid #7d6d42; color: #58613b; font-size: 0.62rem; letter-spacing: 0.14em; padding: 0.25rem 0.45rem; }
+.dossier-portrait > span:last-child { position: absolute; right: 0; bottom: 0.8rem; border: 1px solid #7d6d42; color: #58613b; font-size: 0.62rem; letter-spacing: 0.14em; padding: 0.25rem 0.45rem; }
+.capture-state { display: flex; min-height: 100svh; padding: 2rem; align-items: center; justify-content: center; flex-direction: column; text-align: center; background: #e8d7ae; }
+.capture-state > i { width: 78px; height: 78px; border: 1px solid #7b6542; border-radius: 50%; border-top-color: #a43d32; animation: wb-spin 1.4s linear infinite; }
+.capture-state > span { display: grid; width: 72px; height: 86px; place-items: center; color: #a43d32; border: 3px double #a43d32; font: 900 28px "Noto Serif TC", serif; transform: rotate(3deg); }
+.capture-state h1 { margin: 1.4rem 0 .4rem; font: 900 30px "Noto Serif TC", serif; }
+.capture-state p { margin: 0; color: #705f45; font: 600 12px/1.7 "Noto Serif TC", serif; }
+.capture-state a { margin-top: 1.4rem; padding: .8rem 1.15rem; color: #f0e5ca; background: #47513f; text-decoration: none; }
 .dossier-copy { padding: 1.2rem 0.2rem 0; }
 .dossier-copy h2 { margin: 0; font-size: 3rem; line-height: 1; letter-spacing: 0.08em; }
 .pronounce { margin-top: 0.45rem; border: 0; background: transparent; color: #795c36; cursor: pointer; font: 600 0.86rem Georgia, serif; padding: 0; }
@@ -569,6 +578,7 @@ button.word-entry { cursor: pointer; }
 @keyframes wb-ring { from { opacity: 0; transform: scale(0.5) rotate(-40deg); } 40% { opacity: 1; } to { opacity: 0.5; transform: scale(1.12) rotate(25deg); } }
 @keyframes wb-name { 0% { opacity: 0; transform: scale(2); letter-spacing: 0.6em; } 42%, 72% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(0.5); } }
 @keyframes wb-capture { 0%, 45% { opacity: 1; transform: none; } 100% { opacity: 0; transform: scale(0.12) rotate(-12deg); filter: sepia(1) brightness(0.25); } }
+@keyframes wb-spin { to { transform: rotate(360deg); } }
 @keyframes wb-seal { to { opacity: 1; transform: rotate(-9deg) scale(1); } }
 @keyframes wb-entry { from { opacity: 0; transform: scale(0.82) rotate(-2deg); filter: sepia(1) brightness(0.5); } }
 @keyframes wb-fade { from { opacity: 0; } }
