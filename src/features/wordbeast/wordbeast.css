@@ -270,11 +270,15 @@
 }
 
 .beast-clue {
+  max-width: 44rem;
   margin: 0;
+  margin-inline: auto;
   color: #f3ddb0;
   font-size: clamp(1.2rem, 4.5vw, 1.55rem);
   font-weight: 700;
   letter-spacing: 0.08em;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
 }
 
 .naming-instruction {
@@ -288,12 +292,15 @@
   display: grid;
   width: min(100%, 31rem);
   margin: auto;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.55rem;
 }
 
 .name-choices button {
   position: relative;
+  display: grid;
+  min-height: 3.6rem;
+  align-content: center;
   overflow: hidden;
   border: 1px solid #9a7b48;
   border-radius: 2px;
@@ -303,11 +310,15 @@
   box-shadow: inset 0 0 0 2px rgba(73, 47, 25, 0.16), 0 3px 0 #513a22;
   color: #261a10;
   cursor: pointer;
-  font: 700 clamp(0.9rem, 3.8vw, 1.1rem)/1 Georgia, serif;
+  min-width: 0;
+  font: 700 clamp(0.78rem, 3.4vw, 1.05rem)/1.15 Georgia, serif;
   letter-spacing: 0.04em;
-  padding: 0.82rem 0.2rem;
+  overflow-wrap: anywhere;
+  padding: 0.82rem 0.35rem;
   transition: transform 140ms ease, filter 140ms ease;
 }
+.name-choices button span { min-width: 0; overflow-wrap: anywhere; }
+.name-choices button small { display: block; margin-top: 0.3rem; color: #f2dfb8; font: 800 0.68rem/1.2 "Noto Serif TC", serif; letter-spacing: 0.08em; }
 .name-choices button:active { transform: translateY(3px); box-shadow: inset 0 0 0 2px rgba(73, 47, 25, 0.16); }
 .name-choices button.wrong { animation: wb-wrong 340ms ease; filter: grayscale(0.7) brightness(0.7); }
 
@@ -378,7 +389,7 @@
   animation: wb-reveal 420ms 400ms ease both;
 }
 .binding-copy p { margin: 0; color: #bca77a; font-size: 0.72rem; letter-spacing: 0.28em; }
-.binding-copy strong { margin-top: 0.3rem; color: #f2ddb1; font-size: 2.6rem; letter-spacing: 0.16em; }
+.binding-copy strong { max-width: calc(100% - 2rem); margin-top: 0.3rem; color: #f2ddb1; font-size: clamp(1.55rem, 8vw, 2.6rem); line-height: 1.05; letter-spacing: clamp(0.04em, 1.5vw, 0.16em); overflow-wrap: anywhere; }
 .binding-copy span { color: #c7b48b; font-size: 0.95rem; }
 .binding-copy small { margin-top: 1rem; color: #887759; letter-spacing: 0.12em; }
 

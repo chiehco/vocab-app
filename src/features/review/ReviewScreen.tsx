@@ -159,7 +159,7 @@ function Flashcard({ item, flipped, onFlip, onGrade, position }: { item: QueueIt
   const examples = useLiveQuery(() => contentDb.examples.where("word").equals(word.word).toArray(), [word.word]);
   const relations = useLiveQuery(() => contentDb.relations.filter((relation) => relation.word === word.word || relation.relatedWord === word.word).toArray(), [word.word]);
   const morphemes = useLiveQuery(() => contentDb.morphemes.where("word").equals(word.word).toArray(), [word.word]);
-  const beastAsset = getWordBeastAsset(word.wordId, word.word);
+  const beastAsset = getWordBeastAsset(word.wordId, word.word, word.imageWordId);
   const senseCount = buildSenseCountByWord(examples ?? []).get(word.word) ?? 0;
 
   return (

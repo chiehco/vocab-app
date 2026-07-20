@@ -28,7 +28,7 @@ export function selectDailyWords(data: CaptureData): WordRecord[] {
   for (const tier of ["S", "A", "B", "C", "Z"] as ExamTier[]) groups.set(tier, []);
   const unranked: WordRecord[] = [];
   for (const word of data.words) {
-    if (data.known.has(word.word) || !word.meaningZh || !hasWordBeastAsset(word.wordId, word.word)) continue;
+    if (data.known.has(word.word) || !word.meaningZh || !hasWordBeastAsset(word.wordId, word.word, word.imageWordId)) continue;
     const tier = tierByWord.get(word.word);
     (tier ? groups.get(tier)! : unranked).push(word);
   }

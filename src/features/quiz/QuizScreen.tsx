@@ -77,7 +77,7 @@ export default function QuizScreen() {
     const learnedWords = scoped.filter((word) => learned.has(word.word));
     const inScope = levelSel === "全部" ? scoped.filter((word) => levels.includes(word.level)) : scoped;
     const pool = learnedWords.length >= 4 ? learnedWords : inScope.length >= 4 ? inScope : scoped;
-    const eligiblePool = nextMode === "image" ? inScope.filter((word) => hasWordBeastAsset(word.wordId, word.word)) : pool;
+    const eligiblePool = nextMode === "image" ? inScope.filter((word) => hasWordBeastAsset(word.wordId, word.word, word.imageWordId)) : pool;
     const subjects = shuffle(eligiblePool).slice(0, QUIZ_SIZE);
     setQuestions(subjects.map((target) => ({
       target,
@@ -164,7 +164,7 @@ export default function QuizScreen() {
   const question = questions[index];
   const prompt = mode === "w2m" ? question.target.word : question.target.meaningZh;
   const promptSub = mode === "w2m" ? question.target.pos : `（${question.target.pos}）`;
-  const targetAsset = getWordBeastAsset(question.target.wordId, question.target.word);
+  const targetAsset = getWordBeastAsset(question.target.wordId, question.target.word, question.target.imageWordId);
   const sealed = mode === "image" && answered === question.target.word;
 
   async function pick(option: WordRecord) {

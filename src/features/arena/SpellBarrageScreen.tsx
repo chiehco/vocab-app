@@ -9,8 +9,8 @@ import ResilientBeastImage from "../wordbeast/ResilientBeastImage";
 import { getWordBeastAsset } from "../wordbeast/wordBeastAssets";
 import {
   ARENA_DIFFICULTIES,
-  CPU_OBSERVE_MS,
   buildLetterTiles,
+  composeArenaAnswer,
   getCpuFinishMs,
   normalizeArenaAnswer,
   selectArenaWords,
@@ -49,20 +49,21 @@ export default function SpellBarrageScreen() {
   const [playerScore, setPlayerScore] = useState(0);
   const [cpuScore, setCpuScore] = useState(0);
   const [tiles, setTiles] = useState<LetterTile[]>([]);
-  const [entered, setEntered] = useState("");
-  const [cpuProgress, setCpuProgress] = useState(0);
+  const [selectedTileIds, setSelectedTileIds] = useState<string[]>([]);
   const [cpuFinishMs, setCpuFinishMs] = useState(0);
   const [roundStartedAt, setRoundStartedAt] = useState(0);
   const [playerBlockers, setPlayerBlockers] = useState(0);
   const [cpuBlockers, setCpuBlockers] = useState(0);
   const [outcome, setOutcome] = useState<RoundOutcome | null>(null);
   const [matchWinner, setMatchWinner] = useState<Fighter | null>(null);
-  const [wrongTileId, setWrongTileId] = useState<string | null>(null);
-  const [feedback, setFeedback] = useState("依序敲出英文真名");
+  const [stunned, setStunned] = useState(false);
+  const [feedback, setFeedback] = useState("排好完整真名，再一起送出");
   const roundLocked = useRef(false);
+  const stunTimer = useRef<number | null>(null);
 
   const currentWord = roundWords[roundIndex];
   const answer = currentWord ? normalizeArenaAnswer(currentWord.word) : "";
+  const entered = composeArenaAnswer(tiles, selectedTileIds);
   const learnedCount = poolData ? poolData.words.filter((word) => poolData.known.has(word.word)).length : 0;
 
   const prepareRound = useCallback((words: WordRecord[], index: number, incomingPlayerBlockers: number, incomingCpuBlockers: number) => {
@@ -72,12 +73,11 @@ export default function SpellBarrageScreen() {
     setPlayerBlockers(incomingPlayerBlockers);
     setCpuBlockers(incomingCpuBlockers);
     setTiles(buildLetterTiles(nextAnswer, incomingPlayerBlockers));
-    setEntered("");
-    setCpuProgress(0);
+    setSelectedTileIds([]);
     setCpuFinishMs(getCpuFinishMs(nextAnswer, difficulty, incomingCpuBlockers, Math.random()));
     setRoundStartedAt(Date.now());
-    setWrongTileId(null);
-    setFeedback(incomingPlayerBlockers > 0 ? "先敲碎對手轟來的妄磚" : "依序敲出英文真名");
+    setStunned(false);
+    setFeedback(incomingPlayerBlockers > 0 ? "先敲碎對手轟來的妄磚" : "排好完整真名，再一起送出");
     setOutcome(null);
     roundLocked.current = false;
   }, [difficulty]);
@@ -94,17 +94,8 @@ export default function SpellBarrageScreen() {
     prepareRound(selected, 0, 0, 0);
   }
 
-  function playerCompletesWord() {
-    if (roundLocked.current) return;
-    roundLocked.current = true;
-    const nextScore = playerScore + 1;
-    setPlayerScore(nextScore);
-    setOutcome({ winner: "player", matchOver: nextScore >= MATCH_POINT });
-    setFeedback("真名完成——轟擊命中！");
-  }
-
   function handleTile(tile: LetterTile) {
-    if (roundLocked.current) return;
+    if (roundLocked.current || stunned) return;
     if (tile.kind === "blocker") {
       setTiles((current) => current.filter((item) => item.id !== tile.id));
       setPlayerBlockers((count) => Math.max(0, count - 1));
@@ -112,42 +103,56 @@ export default function SpellBarrageScreen() {
       return;
     }
     if (playerBlockers > 0) {
-      setWrongTileId(tile.id);
       setFeedback("先敲碎妄磚，真名法陣才會回應");
       return;
     }
-    const expected = answer[entered.length];
-    if (tile.kind === "letter" && tile.char === expected) {
-      const next = entered + tile.char;
-      setEntered(next);
-      setTiles((current) => current.filter((item) => item.id !== tile.id));
-      setWrongTileId(null);
-      setFeedback(next.length === answer.length ? "真名完成" : `已鎖定 ${next.length} / ${answer.length}`);
-      if (next.length === answer.length) playerCompletesWord();
+    setSelectedTileIds((current) => current.length >= answer.length || current.includes(tile.id) ? current : [...current, tile.id]);
+    setFeedback("排好完整真名，再一起送出");
+  }
+
+  function undoTile() {
+    if (roundLocked.current || stunned) return;
+    setSelectedTileIds((current) => current.slice(0, -1));
+  }
+
+  function submitAnswer() {
+    if (roundLocked.current || stunned || entered.length !== answer.length) return;
+    if (entered !== answer) {
+      setStunned(true);
+      setSelectedTileIds([]);
+      setFeedback("施法失敗——砲管冒煙，稍後再試");
+      if (stunTimer.current !== null) window.clearTimeout(stunTimer.current);
+      stunTimer.current = window.setTimeout(() => {
+        setStunned(false);
+        setFeedback("重新排好完整真名，再一起送出");
+        stunTimer.current = null;
+      }, 1400);
       return;
     }
-    setWrongTileId(tile.id);
-    setFeedback("這枚不是下一個字母，再看清楚");
+    roundLocked.current = true;
+    const nextScore = playerScore + 1;
+    setPlayerScore(nextScore);
+    setOutcome({ winner: "player", matchOver: nextScore >= MATCH_POINT });
+    setFeedback("真名正確——轟擊命中！");
   }
+
+  useEffect(() => () => {
+    if (stunTimer.current !== null) window.clearTimeout(stunTimer.current);
+  }, []);
 
   useEffect(() => {
     if (stage !== "playing" || !currentWord || outcome || !cpuFinishMs) return;
     const timer = window.setInterval(() => {
       const elapsed = Date.now() - roundStartedAt;
-      const activeElapsed = Math.max(0, elapsed - CPU_OBSERVE_MS);
-      const activeDuration = Math.max(1, cpuFinishMs - CPU_OBSERVE_MS);
-      const progress = Math.min(answer.length, Math.floor((activeElapsed / activeDuration) * answer.length));
-      setCpuProgress(progress);
       if (elapsed < cpuFinishMs || roundLocked.current) return;
       roundLocked.current = true;
-      setCpuProgress(answer.length);
       const nextScore = cpuScore + 1;
       setCpuScore(nextScore);
       setOutcome({ winner: "cpu", matchOver: nextScore >= MATCH_POINT });
       setFeedback("豆魔搶先完成，妄磚來襲！");
     }, 90);
     return () => window.clearInterval(timer);
-  }, [answer, cpuFinishMs, cpuScore, currentWord, outcome, roundStartedAt, stage]);
+  }, [cpuFinishMs, cpuScore, currentWord, outcome, roundStartedAt, stage]);
 
   useEffect(() => {
     if (!outcome) return;
@@ -166,7 +171,7 @@ export default function SpellBarrageScreen() {
       }
       const nextIndex = roundIndex + 1;
       prepareRound(roundWords, nextIndex, outcome.winner === "cpu" ? 2 : 0, outcome.winner === "player" ? 2 : 0);
-    }, 1250);
+    }, 1500);
     return () => window.clearTimeout(timer);
   }, [outcome, prepareRound, roundIndex, roundWords]);
 
@@ -216,8 +221,7 @@ export default function SpellBarrageScreen() {
   }
 
   if (!currentWord) return null;
-  const targetAsset = getWordBeastAsset(currentWord.wordId, currentWord.word);
-  const cpuLetters = [...answer].map((char, index) => index < cpuProgress ? char : "");
+  const targetAsset = getWordBeastAsset(currentWord.wordId, currentWord.word, currentWord.imageWordId);
   const playerLetters = [...answer].map((_, index) => entered[index] ?? "");
 
   return (
@@ -230,9 +234,9 @@ export default function SpellBarrageScreen() {
       </section>
 
       <main className="spell-battlefield">
-        <section className="cpu-field" aria-label="電腦對手拼字進度">
+        <section className="cpu-field" aria-label="電腦對手正在隱藏作答">
           <div className="cpu-avatar">{OPPONENT_ASSET && <img src={OPPONENT_ASSET} alt="豆魔對手" />}{cpuBlockers > 0 && <span>{cpuBlockers} 妄磚</span>}</div>
-          <div className="cpu-slots">{cpuLetters.map((char, index) => <i key={index} className={char ? "filled" : ""}>{char}</i>)}</div>
+          <div className="cpu-casting"><i /><i /><i /><span>豆魔正在暗中拼字</span></div>
         </section>
 
         <section className="spell-clue">
@@ -243,19 +247,23 @@ export default function SpellBarrageScreen() {
           </div>
         </section>
 
-        <section className="player-field" aria-label="玩家拼字區">
+        <section className={`player-field ${stunned ? "stunned" : ""}`} aria-label="玩家拼字區">
           <div className="player-slots">{playerLetters.map((char, index) => <i key={index} className={char ? "filled" : ""}>{char}</i>)}</div>
           <p className="spell-feedback" aria-live="polite">{feedback}</p>
           <div className="letter-bank">
             {tiles.map((tile) => (
               <button
                 key={tile.id}
-                className={`${tile.kind} ${wrongTileId === tile.id ? "wrong" : ""}`}
+                className={`${tile.kind} ${selectedTileIds.includes(tile.id) ? "selected" : ""}`}
                 onClick={() => handleTile(tile)}
-                disabled={Boolean(outcome)}
+                disabled={Boolean(outcome) || stunned || selectedTileIds.includes(tile.id)}
                 aria-label={tile.kind === "blocker" ? "敲碎妄磚" : `字母 ${tile.char.toUpperCase()}`}
               >{tile.kind === "blocker" ? "妄" : tile.char.toUpperCase()}</button>
             ))}
+          </div>
+          <div className="spell-actions">
+            <button className="spell-undo" onClick={undoTile} disabled={!selectedTileIds.length || stunned || Boolean(outcome)}>退回一格</button>
+            <button className="spell-submit" onClick={submitAnswer} disabled={entered.length !== answer.length || stunned || Boolean(outcome)}>送出施法</button>
           </div>
         </section>
 

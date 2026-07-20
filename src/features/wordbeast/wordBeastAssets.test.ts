@@ -22,6 +22,13 @@ describe("word beast assets", () => {
     );
   });
 
+  it("allows split words such as agree and agreement to share one image", () => {
+    const agreeAsset = getWordBeastAsset("W000250", "agree");
+    const agreementAsset = getWordBeastAsset("W006013", "agreement", "W000250");
+    expect(agreementAsset).toBe(agreeAsset);
+    expect(hasWordBeastAsset("W006013", "agreement", "W000250")).toBe(true);
+  });
+
   it("rejects IDs without a known asset", () => {
     expect(getWordBeastAsset("W999999", "unknown")).toBeNull();
     expect(hasWordBeastAsset("W999999", "unknown")).toBe(false);

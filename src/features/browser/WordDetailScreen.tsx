@@ -70,7 +70,7 @@ export default function WordDetailScreen() {
 
   if (!word) return <div className="dossier-loading"><i /><p>正在調閱卷宗</p></div>;
 
-  const asset = getWordBeastAsset(word.wordId, word.word);
+  const asset = getWordBeastAsset(word.wordId, word.word, word.imageWordId);
   const sortedMorphemes = morphemes?.slice().sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
   const senseCount = buildSenseCountByWord(examples ?? []).get(word.word) ?? 0;
   const kinRelations = relations?.filter((relation) => relation.relationType !== "confuse") ?? [];

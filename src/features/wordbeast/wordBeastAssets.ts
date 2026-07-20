@@ -20,8 +20,9 @@ const LEGACY_BEAST_ASSETS: Record<string, string> = {
   courage: versioned(`${BASE}wordbeast/priest-courage.png`),
 };
 
-export function getWordBeastAsset(wordId: string, word: string): string | null {
-  const match = /^W(\d{6})$/i.exec(wordId);
+export function getWordBeastAsset(wordId: string, word: string, imageWordId?: string): string | null {
+  const assetWordId = imageWordId || wordId;
+  const match = /^W(\d{6})$/i.exec(assetWordId);
   if (!match) return null;
   const normalizedId = `W${match[1]}`;
   if (S_GRADE_ASSET_IDS.has(normalizedId)) {
@@ -36,6 +37,6 @@ export function getWordBeastAsset(wordId: string, word: string): string | null {
   return versioned(`${BASE}wordbeast/lv1/W${match[1]}.png`);
 }
 
-export function hasWordBeastAsset(wordId: string, word: string): boolean {
-  return getWordBeastAsset(wordId, word) !== null;
+export function hasWordBeastAsset(wordId: string, word: string, imageWordId?: string): boolean {
+  return getWordBeastAsset(wordId, word, imageWordId) !== null;
 }

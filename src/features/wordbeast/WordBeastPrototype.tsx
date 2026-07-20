@@ -12,6 +12,7 @@ import ExamTierBadge from "./ExamTierBadge";
 import type { ExamTier } from "./examTier";
 import ResilientBeastImage from "./ResilientBeastImage";
 import { type CaptureData, selectDailyWords } from "./dailyCapture";
+import { getEncounterMeaning, getEncounterPos, getPrimaryMeaning } from "./encounterCopy";
 import { getWordBeastAsset } from "./wordBeastAssets";
 import "./wordbeast.css";
 
@@ -19,13 +20,17 @@ interface BeastSpec {
   record: WordRecord;
   tier: ExamTier | null;
   image: string;
-  choices: string[];
+  choices: Array<{ word: string; meaning: string }>;
   example?: ExampleRecord;
   related: Array<{ word: string; meaning: string; relation: string }>;
 }
 
 function encounterMeaning(beast: BeastSpec): string {
-  return beast.example?.meaningHint?.trim() || beast.record.meaningZh || "釋義待補";
+  return getEncounterMeaning(beast.record, beast.example);
+}
+
+function encounterPos(beast: BeastSpec): string {
+  return getEncounterPos(beast.record, beast.example);
 }
 
 function buildSpecs(data: CaptureData): BeastSpec[] {
@@ -44,8 +49,11 @@ function buildSpecs(data: CaptureData): BeastSpec[] {
   return selectDailyWords(data).map((record) => ({
     record,
     tier: tierByWord.get(record.word) ?? null,
-    image: getWordBeastAsset(record.wordId, record.word)!,
-    choices: shuffle([record, ...pickDistractors(record, data.words)]).map((word) => word.word),
+    image: getWordBeastAsset(record.wordId, record.word, record.imageWordId)!,
+    choices: shuffle([record, ...pickDistractors(record, data.words)]).map((word) => ({
+      word: word.word,
+      meaning: getPrimaryMeaning(word.meaningZh),
+    })),
     example: exampleByWord.get(record.word),
     related: (relationsByWord.get(record.word) ?? []).map((relation) => ({
       word: relation.relatedWord,
@@ -119,11 +127,11 @@ export default function WordBeastPrototype() {
           <p className="archive-note">今日 {beasts.length} 隻字獸已留下真名。考頻星星代表歷屆重要度，LV 代表學習難度。</p>
           <div className="archive-grid">
             {beasts.map((beast, index) => <button className="word-entry captured" style={{ animationDelay: `${index * 55}ms` }} key={beast.record.word} onClick={() => setSelectedBeast(beast)}>
-              <span className="entry-index">{String(index + 1).padStart(2, "0")}</span><ExamTierBadge tier={beast.tier} compact /><ResilientBeastImage src={beast.image} word={beast.record.word} alt={`${beast.record.word} 字獸`} /><span className="entry-name">{beast.record.word.toUpperCase()}</span><span className="entry-meaning">{encounterMeaning(beast)}・{beast.example?.sensePos || beast.record.pos || "詞性未標"}</span><span className="entry-seal">錄</span>
+              <span className="entry-index">{String(index + 1).padStart(2, "0")}</span><ExamTierBadge tier={beast.tier} compact /><ResilientBeastImage src={beast.image} word={beast.record.word} alt={`${beast.record.word} 字獸`} /><span className="entry-name">{beast.record.word.toUpperCase()}</span><span className="entry-meaning">{encounterMeaning(beast)}・{encounterPos(beast)}</span><span className="entry-seal">錄</span>
             </button>)}
           </div>
         </main>
-        {selectedBeast && <div className="detail-veil" role="dialog" aria-modal="true"><section className="beast-dossier"><button className="detail-close" onClick={() => setSelectedBeast(null)}>×</button><div className="dossier-portrait"><ExamTierBadge tier={selectedBeast.tier} /><ResilientBeastImage src={selectedBeast.image} word={selectedBeast.record.word} alt={`${selectedBeast.record.word} 字獸`} /><span>封印穩固</span></div><div className="dossier-copy"><p className="wordbeast-eyebrow">真名解讀・{selectedBeast.example?.sensePos || selectedBeast.record.pos}</p><h2>{selectedBeast.record.word}</h2><button className="pronounce" onClick={() => speak(selectedBeast.record.word)}>♪　再次喚名</button><p className="dossier-meaning"><small>本次顯相</small>{encounterMeaning(selectedBeast)}</p>{selectedBeast.example?.meaningHint && <p className="dossier-all-meanings">完整釋義・{selectedBeast.record.meaningZh}</p>}<div className="dossier-rule" /><dl>{selectedBeast.example && <div><dt>遭遇紀錄</dt><dd>{selectedBeast.example.sentenceEn}</dd><dd className="translation">{selectedBeast.example.sentenceZh}</dd></div>}{selectedBeast.related.length > 0 && <div><dt>同族痕跡</dt><dd className="related-traces">{selectedBeast.related.map((item) => <span className="related-trace" key={item.word}><span><strong>{item.word}</strong><small>{item.relation}</small></span><b>{item.meaning}</b></span>)}</dd></div>}</dl></div></section></div>}
+        {selectedBeast && <div className="detail-veil" role="dialog" aria-modal="true"><section className="beast-dossier"><button className="detail-close" onClick={() => setSelectedBeast(null)}>×</button><div className="dossier-portrait"><ExamTierBadge tier={selectedBeast.tier} /><ResilientBeastImage src={selectedBeast.image} word={selectedBeast.record.word} alt={`${selectedBeast.record.word} 字獸`} /><span>封印穩固</span></div><div className="dossier-copy"><p className="wordbeast-eyebrow">真名解讀・{encounterPos(selectedBeast)}</p><h2>{selectedBeast.record.word}</h2><button className="pronounce" onClick={() => speak(selectedBeast.record.word)}>♪　再次喚名</button><p className="dossier-meaning"><small>本次顯相</small>{encounterMeaning(selectedBeast)}</p>{selectedBeast.example?.meaningHint && <p className="dossier-all-meanings">完整釋義・{selectedBeast.record.meaningZh}</p>}<div className="dossier-rule" /><dl>{selectedBeast.example && <div><dt>遭遇紀錄</dt><dd>{selectedBeast.example.sentenceEn}</dd><dd className="translation">{selectedBeast.example.sentenceZh}</dd></div>}{selectedBeast.related.length > 0 && <div><dt>同族痕跡</dt><dd className="related-traces">{selectedBeast.related.map((item) => <span className="related-trace" key={item.word}><span><strong>{item.word}</strong><small>{item.relation}</small></span><b>{item.meaning}</b></span>)}</dd></div>}</dl></div></section></div>}
       </div>
     );
   }
@@ -133,8 +141,8 @@ export default function WordBeastPrototype() {
       <Link to="/" className="wordbeast-back light">×</Link><Link to="/wordbeast/priest" className="priest-trial-entry">祭司試煉冊 <span>30</span></Link><Link to="/wordbeast/lv1" className="lv1-pilot-entry">LV1 圖卡盲測 <span>30</span></Link><div className="mist mist-one" /><div className="mist mist-two" />
       <header className="encounter-header"><p className="wordbeast-eyebrow">萬字譜・今日收服　{encounterIndex + 1}/{beasts.length}</p><h1>{phase === "binding" ? "真名顯現" : "字獸來襲"}</h1><div className="encounter-rule" /></header>
       <main className="encounter-main"><div className="beast-stage"><ExamTierBadge tier={current.tier} /><div className="ink-halo" /><div key={current.record.word} className="beast-visual"><ResilientBeastImage src={current.image} word={current.record.word} alt={`${current.record.word} 字獸`} /></div>{phase === "binding" && <><div className="binding-ring" /><div className="true-name">{current.record.word.toUpperCase()}</div><div className="capture-seal">錄</div></>}</div>
-        {phase === "encounter" ? <section className="naming-panel"><p className="beast-clue">「{encounterMeaning(current)}」</p><p className="naming-instruction">看穿牠的偽裝，喚出英文真名</p><div className="name-choices">{current.choices.map((choice) => <button key={choice} disabled={answering} className={wrongChoice === choice ? "wrong" : ""} onClick={() => answer(choice)}>{choice}</button>)}</div><p className={`encounter-feedback ${wrongChoice ? "visible" : ""}`}>偽名破碎了。再看清牠留下的線索。</p></section>
-          : <section className="binding-copy"><p>{current.tier ? `${current.tier} 級字卡・真名已被喚醒` : "真名已被喚醒"}</p><strong>{current.record.word}</strong><span>{encounterMeaning(current)}・{current.example?.sensePos || current.record.pos}</span><small>{encounterIndex < beasts.length - 1 ? "下一道氣息正在靠近…" : "正在收錄《萬字譜》…"}</small></section>}
+        {phase === "encounter" ? <section className="naming-panel"><p className="beast-clue">「{encounterMeaning(current)}」</p><p className="naming-instruction">看穿牠的偽裝，喚出英文真名</p><div className="name-choices">{current.choices.map((choice) => <button key={choice.word} disabled={answering} className={wrongChoice === choice.word ? "wrong" : ""} onClick={() => answer(choice.word)}><span>{choice.word}</span>{wrongChoice === choice.word && <small>妄名・{choice.meaning}</small>}</button>)}</div><p className={`encounter-feedback ${wrongChoice ? "visible" : ""}`}>妄名已斬，記住牠的意思再找真正名稱。</p></section>
+          : <section className="binding-copy"><p>{current.tier ? `${current.tier} 級字卡・真名已被喚醒` : "真名已被喚醒"}</p><strong>{current.record.word}</strong><span>{encounterMeaning(current)}・{encounterPos(current)}</span><small>{encounterIndex < beasts.length - 1 ? "下一道氣息正在靠近…" : "正在收錄《萬字譜》…"}</small></section>}
       </main>
     </div>
   );

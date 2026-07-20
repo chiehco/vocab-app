@@ -3,6 +3,7 @@
 export interface WordRecord {
   wordId: string;
   word: string;
+  imageWordId?: string;
   wordVariants?: string[];
   level: string; // LV1–LV6
   pos: string | null;

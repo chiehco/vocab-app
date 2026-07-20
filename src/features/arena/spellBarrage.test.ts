@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { WordRecord } from "../../db/types";
-import { buildLetterTiles, CPU_OBSERVE_MS, getCpuFinishMs, normalizeArenaAnswer, selectArenaWords } from "./spellBarrage";
+import { buildLetterTiles, composeArenaAnswer, CPU_OBSERVE_MS, getCpuFinishMs, normalizeArenaAnswer, selectArenaWords } from "./spellBarrage";
 
 function word(value: string, level = "LV1"): WordRecord {
   return {
@@ -50,6 +50,19 @@ describe("spell barrage", () => {
       .toBe("aelpp");
     expect(tiles.filter((tile) => tile.kind === "decoy")).toHaveLength(2);
     expect(tiles.filter((tile) => tile.kind === "blocker")).toHaveLength(2);
+    expect(new Set(tiles.map((tile) => tile.id)).size).toBe(tiles.length);
+  });
+
+  it("依獨立磚 ID 組字，重複字母不會互相吞掉", () => {
+    const tiles = buildLetterTiles("letter", 0, () => 0.2);
+    expect(composeArenaAnswer(tiles, [
+      "letter-0-l",
+      "letter-1-e",
+      "letter-2-t",
+      "letter-3-t",
+      "letter-4-e",
+      "letter-5-r",
+    ])).toBe("letter");
   });
 
   it("難度越高電腦完成越快，妄磚則會拖慢電腦", () => {

@@ -9,6 +9,15 @@ export interface LetterTile {
   kind: "letter" | "decoy" | "blocker";
 }
 
+export function composeArenaAnswer(tiles: LetterTile[], selectedTileIds: string[]): string {
+  const tileById = new Map(tiles.map((tile) => [tile.id, tile]));
+  return selectedTileIds
+    .map((id) => tileById.get(id))
+    .filter((tile): tile is LetterTile => Boolean(tile && tile.kind !== "blocker"))
+    .map((tile) => tile.char)
+    .join("");
+}
+
 export const ARENA_DIFFICULTIES: Record<ArenaDifficulty, { label: string; note: string; baseMs: number; perLetterMs: number }> = {
   apprentice: { label: "見習豆魔", note: "先看線索，再慢慢敲", baseMs: 4000, perLetterMs: 900 },
   keeper: { label: "守陣豆魔", note: "穩定，開始有壓力", baseMs: 3000, perLetterMs: 700 },

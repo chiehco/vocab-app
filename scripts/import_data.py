@@ -102,7 +102,8 @@ def parse_words(ws):
     seen = {}
     for r in read_rows(ws):
         (word_id, word, level, pos, meaning_zh, meaning_en, usage_pattern, syllables,
-         stress, phonetic_us, family_key, is_core, source_note, status) = (list(r) + [None] * 14)[:14]
+         stress, phonetic_us, family_key, is_core, source_note, status,
+         image_word_id) = (list(r) + [None] * 15)[:15]
         if word is None:
             continue
         if word in seen:
@@ -118,6 +119,7 @@ def parse_words(ws):
         words.append({
             "wordId": word_id or gen_id("words", word),
             "word": word,
+            "imageWordId": image_word_id,
             "wordVariants": word_variants(word),
             "level": level,
             "pos": pos or None,
