@@ -4,7 +4,7 @@
 
 ## S 級試題與圖卡
 
-- S 級題庫共 185 筆，其中 179 個實詞可進入看圖模式，6 個功能詞保留在無圖題型。
+- S 級題庫共 185 筆，其中 179 個實詞可進入看圖模式，6 個功能詞保留在無圖題型；179 張圖包含 174 個新字與 5 個既有 LV1 字的升級圖。
 - 179 張正式原始圖為 1024×1024 PNG，保存在 C:/Users/USER/OneDrive/桌面/單字APP/wordbeast_art/S_179_codex/。
 - 網頁發布版放在 public/wordbeast/s/，使用同尺寸 WebP；179 張合計約 48.65 MB，會在用到時下載並快取。
 - S 級資產 ID 清單在 src/features/wordbeast/sGradeAssetIds.ts。看圖題、複習頁與單字詳情共用 getWordBeastAsset() 取得圖卡。
@@ -48,6 +48,7 @@ App 啟動時會比對資料雜湊值自動重灌內容資料庫；**學習進�
 Excel 填寫注意：
 - `input_words` 的 `word` 欄不可重複（匯入會直接報錯）
 - 各 `input_*` 表第 1 列是標題、第 2 列是填表說明，資料從第 3 列開始
+- `input_senses_義項表` 是例外：第 2 列起就是資料，填表說明放在最底列；每個 `sense_id` 必須唯一
 - 例句填空題只會出現在「有填 `blank_sentence` + `answer`」的例句
 
 ### 補充說明表（選配）：文法、片語、延伸用法

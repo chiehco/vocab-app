@@ -20,6 +20,20 @@ export interface WordRecord {
   status: string;
 }
 
+export interface SenseRecord {
+  senseId: string;
+  wordId: string;
+  word: string;
+  senseOrder: number;
+  sensePos: string;
+  meaningZh: string;
+  isExamSense: boolean;
+  examEvidence: string | null;
+  answerForms: string[];
+  note: string | null;
+  status: "draft" | "reviewed" | "approved" | "needs_check";
+}
+
 export interface ExampleRecord {
   exampleId: string;
   word: string;

@@ -5,6 +5,7 @@ import type {
   MorphemeRecord,
   NoteRecord,
   RelationRecord,
+  SenseRecord,
   WordRecord,
 } from "./types";
 
@@ -34,8 +35,9 @@ export async function seedContentIfNeeded(): Promise<void> {
   const stored = current?.contentHash ?? current?.wordsHash;
   if (current && stored === incoming) return;
 
-  const [words, examples, relations, morphemes, notes, examPriorities] = await Promise.all([
+  const [words, senses, examples, relations, morphemes, notes, examPriorities] = await Promise.all([
     fetchJson<WordRecord[]>("words.json"),
+    fetchJson<SenseRecord[]>("senses.json").catch(() => [] as SenseRecord[]),
     fetchJson<ExampleRecord[]>("examples.json"),
     fetchJson<RelationRecord[]>("relations.json"),
     fetchJson<MorphemeRecord[]>("morphemes.json"),
@@ -47,6 +49,7 @@ export async function seedContentIfNeeded(): Promise<void> {
     "rw",
     [
       contentDb.words,
+      contentDb.senses,
       contentDb.examples,
       contentDb.relations,
       contentDb.morphemes,
@@ -57,6 +60,7 @@ export async function seedContentIfNeeded(): Promise<void> {
     async () => {
       await Promise.all([
         contentDb.words.clear(),
+        contentDb.senses.clear(),
         contentDb.examples.clear(),
         contentDb.relations.clear(),
         contentDb.morphemes.clear(),
@@ -65,6 +69,7 @@ export async function seedContentIfNeeded(): Promise<void> {
       ]);
       await Promise.all([
         contentDb.words.bulkPut(words),
+        contentDb.senses.bulkPut(senses),
         contentDb.examples.bulkPut(examples),
         contentDb.relations.bulkPut(relations),
         contentDb.morphemes.bulkPut(morphemes),

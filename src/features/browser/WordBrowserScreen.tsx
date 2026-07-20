@@ -16,11 +16,11 @@ export default function WordBrowserScreen() {
   const [limit, setLimit] = useState(PAGE_SIZE);
   const words = useLiveQuery(() => contentDb.words.orderBy("wordId").toArray(), []);
   const priorities = useLiveQuery(() => contentDb.examPriorities.toArray(), []);
-  const examples = useLiveQuery(() => contentDb.examples.toArray(), []);
+  const senses = useLiveQuery(() => contentDb.senses.toArray(), []);
   const relations = useLiveQuery(() => contentDb.relations.toArray(), []);
   const morphemes = useLiveQuery(() => contentDb.morphemes.toArray(), []);
   const priorityByWord = useMemo(() => new Map((priorities ?? []).map((row) => [row.word, row.priorityTier])), [priorities]);
-  const senseCountByWord = useMemo(() => buildSenseCountByWord(examples ?? []), [examples]);
+  const senseCountByWord = useMemo(() => buildSenseCountByWord(senses ?? []), [senses]);
   const confusableWords = useMemo(() => buildConfusableWordSet(relations ?? []), [relations]);
   const morphemeWords = useMemo(() => buildMorphemeWordSet(morphemes ?? []), [morphemes]);
 

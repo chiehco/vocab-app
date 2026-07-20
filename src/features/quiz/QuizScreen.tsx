@@ -43,12 +43,13 @@ export default function QuizScreen() {
   const sessionStarted = useRef(false);
 
   const allExamples = useLiveQuery(() => contentDb.examples.filter((example) => !!example.blankSentence && !!example.answer).toArray(), []);
+  const allSenses = useLiveQuery(() => contentDb.senses.toArray(), []);
   const allWords = useLiveQuery(() => contentDb.words.toArray(), []);
   const examPriorities = useLiveQuery(() => contentDb.examPriorities.toArray(), []);
   const allRelations = useLiveQuery(() => contentDb.relations.toArray(), []);
   const allMorphemes = useLiveQuery(() => contentDb.morphemes.toArray(), []);
   const examDistractorRelations = useMemo(() => (allRelations ?? []).filter((relation) => relation.relationType === "exam_distractor"), [allRelations]);
-  const senseCountByWord = useMemo(() => buildSenseCountByWord(allExamples ?? []), [allExamples]);
+  const senseCountByWord = useMemo(() => buildSenseCountByWord(allSenses ?? []), [allSenses]);
   const confusableWords = useMemo(() => buildConfusableWordSet(allRelations ?? []), [allRelations]);
   const morphemeWords = useMemo(() => buildMorphemeWordSet(allMorphemes ?? []), [allMorphemes]);
   const sWordSet = useMemo(() => new Set(

@@ -1,15 +1,11 @@
-import type { ExampleRecord, MorphemeRecord, RelationRecord } from "../../db/types";
+import type { MorphemeRecord, RelationRecord, SenseRecord } from "../../db/types";
 
-export function buildSenseCountByWord(examples: ExampleRecord[]): Map<string, number> {
-  const senses = new Map<string, Set<string>>();
-  for (const example of examples) {
-    const hint = example.meaningHint?.trim();
-    if (!hint) continue;
-    const set = senses.get(example.word) ?? new Set<string>();
-    set.add(`${example.sensePos ?? ""}|${hint}`);
-    senses.set(example.word, set);
+export function buildSenseCountByWord(records: SenseRecord[]): Map<string, number> {
+  const senses = new Map<string, number>();
+  for (const record of records) {
+    senses.set(record.word, (senses.get(record.word) ?? 0) + 1);
   }
-  return new Map([...senses].map(([word, values]) => [word, values.size]));
+  return senses;
 }
 
 export function buildConfusableWordSet(relations: RelationRecord[]): Set<string> {

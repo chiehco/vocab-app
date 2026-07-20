@@ -156,11 +156,11 @@ function Flashcard({ item, flipped, onFlip, onGrade, position }: { item: QueueIt
   const word = item.wordRecord;
   const notes = useLiveQuery(() => contentDb.notes.where("word").equals(word.word).toArray(), [word.word]);
   const priority = useLiveQuery(() => contentDb.examPriorities.where("word").equals(word.word).first(), [word.word]);
-  const examples = useLiveQuery(() => contentDb.examples.where("word").equals(word.word).toArray(), [word.word]);
+  const senses = useLiveQuery(() => contentDb.senses.where("wordId").equals(word.wordId).sortBy("senseOrder"), [word.wordId]);
   const relations = useLiveQuery(() => contentDb.relations.filter((relation) => relation.word === word.word || relation.relatedWord === word.word).toArray(), [word.word]);
   const morphemes = useLiveQuery(() => contentDb.morphemes.where("word").equals(word.word).toArray(), [word.word]);
   const beastAsset = getWordBeastAsset(word.wordId, word.word, word.imageWordId);
-  const senseCount = buildSenseCountByWord(examples ?? []).get(word.word) ?? 0;
+  const senseCount = buildSenseCountByWord(senses ?? []).get(word.word) ?? 0;
 
   return (
     <div className="seal-workspace">
@@ -187,6 +187,7 @@ function Flashcard({ item, flipped, onFlip, onGrade, position }: { item: QueueIt
           <div className="seal-card-answer">
             <p className="answer-label">真名釋義</p>
             <h2>{word.meaningZh || "尚無中文釋義"}</h2>
+            {senses && senses.length > 1 && <ol className="answer-senses">{senses.map((sense) => <li key={sense.senseId}><span>{sense.sensePos}</span><b>{sense.meaningZh}</b>{sense.isExamSense && <small>學測顯相</small>}</li>)}</ol>}
             {word.meaningEn && <p className="answer-en">{word.meaningEn}</p>}
             {word.usagePattern && <div className="answer-note"><span>用法</span><p>{word.usagePattern}</p></div>}
             {notes?.map((note) => (

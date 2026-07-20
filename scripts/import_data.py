@@ -21,9 +21,11 @@ VALID_LEVELS = {"LV1", "LV2", "LV3", "LV4", "LV5", "LV6"}
 VALID_RELATION_TYPES = {"synonym", "antonym", "derivative", "word_form", "confuse", "root_family", "topic", "exam_distractor"}
 VALID_RELATION_DIRECTIONS = {"one_way", "two_way"}
 VALID_PRIORITY_TIERS = {"S", "A", "B", "C", "Z"}
+VALID_SENSE_STATUSES = {"draft", "reviewed", "approved", "needs_check"}
 
 SHEETS = {
     "words": "input_words_單字主表",
+    "senses": "input_senses_義項表",
     "examples": "input_examples_例句表",
     "relations": "input_relations_關聯詞",
     "morphemes": "input_morphemes_字根拆解",
@@ -116,10 +118,9 @@ def parse_words(ws):
             raise SystemExit(f"錯誤：單字「{word}」的 level 值「{level}」不在 LV1–LV6 範圍內。")
         pos = pos or ""
         pos_all = [p.strip() for p in pos.split("/") if p.strip()]
-        words.append({
+        record = {
             "wordId": word_id or gen_id("words", word),
             "word": word,
-            "imageWordId": image_word_id,
             "wordVariants": word_variants(word),
             "level": level,
             "pos": pos or None,
@@ -134,7 +135,10 @@ def parse_words(ws):
             "isCore": bool(is_core) if is_core is not None else False,
             "sourceNote": source_note,
             "status": status or "draft",
-        })
+        }
+        if image_word_id:
+            record["imageWordId"] = image_word_id
+        words.append(record)
     words.sort(key=lambda w: w["wordId"])
     return words
 
@@ -160,6 +164,60 @@ def parse_examples(ws):
             "status": status or "draft",
         })
     out.sort(key=lambda x: x["exampleId"])
+    return out
+
+
+def parse_senses(ws):
+    """Read the sense sheet, whose guidance row is at the bottom instead of row 2."""
+    rows = ws.iter_rows(min_row=1, values_only=True)
+    next(rows, None)  # header
+    out = []
+    seen = set()
+    for row_number, r in enumerate(rows, start=2):
+        (sense_id, word_id, word, sense_pos, meaning_zh, is_exam_sense,
+         exam_evidence, answer_forms, note, status) = (list(r) + [None] * 10)[:10]
+        values = [clean(value) for value in (
+            sense_id, word_id, word, sense_pos, meaning_zh, is_exam_sense,
+            exam_evidence, answer_forms, note, status,
+        )]
+        (sense_id, word_id, word, sense_pos, meaning_zh, is_exam_sense,
+         exam_evidence, answer_forms, note, status) = values
+        if all(value is None for value in values):
+            continue
+        if not isinstance(sense_id, str) or not re.fullmatch(r"W\d{6}-\d+", sense_id):
+            # The template keeps its field instructions in the last row.
+            if isinstance(sense_id, str) and sense_id.startswith("義項唯一鍵"):
+                continue
+            raise SystemExit(f"錯誤：義項表第 {row_number} 列的 sense_id 無效：{sense_id!r}")
+        if sense_id in seen:
+            raise SystemExit(f"錯誤：義項表 sense_id 重複：{sense_id}")
+        seen.add(sense_id)
+        if not word_id or not word or not sense_pos or not meaning_zh:
+            raise SystemExit(f"錯誤：義項表第 {row_number} 列缺少必要欄位：{sense_id}")
+        if not sense_id.startswith(f"{word_id}-"):
+            raise SystemExit(f"錯誤：義項 {sense_id} 與 word_id {word_id} 不一致")
+        if is_exam_sense not in (None, "Y"):
+            raise SystemExit(f"錯誤：義項 {sense_id} 的 is_exam_sense 必須為 Y 或留空")
+        status = status or "draft"
+        if status not in VALID_SENSE_STATUSES:
+            raise SystemExit(f"錯誤：義項 {sense_id} 的 status 無效：{status}")
+        forms = [] if answer_forms is None else [
+            item.strip() for item in re.split(r"[/,;；、]+", str(answer_forms)) if item.strip()
+        ]
+        out.append({
+            "senseId": sense_id,
+            "wordId": word_id,
+            "word": word,
+            "senseOrder": int(sense_id.rsplit("-", 1)[1]),
+            "sensePos": sense_pos,
+            "meaningZh": meaning_zh,
+            "isExamSense": is_exam_sense == "Y",
+            "examEvidence": exam_evidence,
+            "answerForms": forms,
+            "note": note,
+            "status": status,
+        })
+    out.sort(key=lambda row: (row["wordId"], row["senseOrder"]))
     return out
 
 
@@ -326,6 +384,7 @@ def main():
             raise SystemExit(f"錯誤：找不到工作表「{sheet_name}」。")
 
     words = parse_words(wb[SHEETS["words"]])
+    senses = parse_senses(wb[SHEETS["senses"]])
     examples = parse_examples(wb[SHEETS["examples"]])
     relations = parse_relations(wb[SHEETS["relations"]])
     morphemes = parse_morphemes(wb[SHEETS["morphemes"]])
@@ -337,6 +396,16 @@ def main():
 
     word_set = {w["word"] for w in words}
     word_ids = {w["wordId"]: w["word"] for w in words}
+    mismatched_senses = [
+        row for row in senses
+        if row["wordId"] not in word_ids or word_ids[row["wordId"]] != row["word"]
+    ]
+    if mismatched_senses:
+        sample = mismatched_senses[0]
+        raise SystemExit(
+            f"錯誤：義項表的 word_id 與單字主表不一致：{sample['senseId']} / "
+            f"{sample['wordId']} / {sample['word']}"
+        )
     missing_relation_words = sorted({
         endpoint
         for relation in relations
@@ -371,6 +440,7 @@ def main():
         )
 
     write_json(out_dir / "words.json", words)
+    write_json(out_dir / "senses.json", senses)
     write_json(out_dir / "examples.json", examples)
     write_json(out_dir / "relations.json", relations)
     write_json(out_dir / "morphemes.json", morphemes)
@@ -381,15 +451,16 @@ def main():
     words_hash = hashlib.sha256((out_dir / "words.json").read_bytes()).hexdigest()
     # contentHash 涵蓋所有 App 會載入的資料檔：任何一張表變動都會觸發前端重灌
     h = hashlib.sha256()
-    for name in ["words.json", "examples.json", "relations.json", "morphemes.json", "notes.json", "exam_priority.json"]:
+    for name in ["words.json", "senses.json", "examples.json", "relations.json", "morphemes.json", "notes.json", "exam_priority.json"]:
         h.update((out_dir / name).read_bytes())
     content_hash = h.hexdigest()
     meta = {
-        "schemaVersion": 1,
+        "schemaVersion": 2,
         "generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "sourceFile": src.name,
         "counts": {
             "words": len(words),
+            "senses": len(senses),
             "examples": len(examples),
             "relations": len(relations),
             "morphemes": len(morphemes),

@@ -27,6 +27,7 @@ function DossierSigil({ word }: { word: string }) {
 export default function WordDetailScreen() {
   const { wordId } = useParams<{ wordId: string }>();
   const word = useLiveQuery(() => wordId ? contentDb.words.get(wordId) : undefined, [wordId]);
+  const senses = useLiveQuery(() => word ? contentDb.senses.where("wordId").equals(word.wordId).sortBy("senseOrder") : [], [word?.wordId]);
   const examples = useLiveQuery(() => word ? contentDb.examples.where("word").equals(word.word).toArray() : [], [word?.word]);
   const relations = useLiveQuery(async () => {
     if (!word) return [];
@@ -72,7 +73,7 @@ export default function WordDetailScreen() {
 
   const asset = getWordBeastAsset(word.wordId, word.word, word.imageWordId);
   const sortedMorphemes = morphemes?.slice().sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
-  const senseCount = buildSenseCountByWord(examples ?? []).get(word.word) ?? 0;
+  const senseCount = buildSenseCountByWord(senses ?? []).get(word.word) ?? 0;
   const kinRelations = relations?.filter((relation) => relation.relationType !== "confuse") ?? [];
   const falseForms = [
     ...(relations?.filter((relation) => relation.relationType === "confuse").map((relation) => ({ ...relation, kind: "易混淆", targetWord: relation.targetWord })) ?? []),
@@ -117,9 +118,16 @@ export default function WordDetailScreen() {
         </section>
       )}
 
+      {senses && senses.length > 0 && (
+        <section className="dossier-section">
+          <div className="dossier-section-head"><div><p>TRUE NAME ASPECTS</p><h2>真名多相</h2></div><span>{senses.length} 相</span></div>
+          <ol className="dossier-senses">{senses.map((sense) => <li key={sense.senseId}><b>{String(sense.senseOrder).padStart(2, "0")}</b><div><p><span>{sense.sensePos}</span>{sense.meaningZh}</p>{sense.isExamSense && <small>學測顯相{sense.examEvidence ? ` · ${sense.examEvidence}` : ""}</small>}{sense.isExamSense && sense.note && <em>{sense.note}</em>}{sense.answerForms.length > 0 && <i>考卷字形 · {sense.answerForms.join("／")}</i>}</div></li>)}</ol>
+        </section>
+      )}
+
       {examples && examples.length > 0 && (
         <section className="dossier-section">
-          <div className="dossier-section-head"><div><p>{senseCount > 1 ? "TRUE NAME ASPECTS" : "ENCOUNTER LOG"}</p><h2>{senseCount > 1 ? "真名多相" : "遭遇紀錄"}</h2></div><span>{senseCount > 1 ? `${senseCount} 相` : `${examples.length} 則`}</span></div>
+          <div className="dossier-section-head"><div><p>ENCOUNTER LOG</p><h2>遭遇紀錄</h2></div><span>{examples.length} 則</span></div>
           <ol className="dossier-examples">{examples.map((example, index) => <li key={example.exampleId}><b>{String(index + 1).padStart(2, "0")}</b><div>{example.meaningHint && <small className="example-sense">{example.sensePos || "語境"} · {example.meaningHint}</small>}<p>{example.sentenceEn}</p>{example.sentenceZh && <span>{example.sentenceZh}</span>}</div></li>)}</ol>
         </section>
       )}

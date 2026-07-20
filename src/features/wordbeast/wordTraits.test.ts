@@ -1,27 +1,26 @@
 import { describe, expect, it } from "vitest";
-import type { ExampleRecord, MorphemeRecord, RelationRecord } from "../../db/types";
+import type { MorphemeRecord, RelationRecord, SenseRecord } from "../../db/types";
 import { buildConfusableWordSet, buildMorphemeWordSet, buildSenseCountByWord } from "./wordTraits";
 
-const example = (word: string, pos: string, hint: string): ExampleRecord => ({
-  exampleId: `${word}:${pos}:${hint}`,
+const sense = (word: string, order: number, pos: string, meaningZh: string): SenseRecord => ({
+  senseId: `${word}-${order}`,
+  wordId: `W${order}`,
   word,
+  senseOrder: order,
   sensePos: pos,
-  meaningHint: hint,
-  exampleType: "daily",
-  sentenceEn: "Example.",
-  sentenceZh: null,
-  blankSentence: null,
-  answer: null,
-  difficulty: null,
+  meaningZh,
+  isExamSense: false,
+  examEvidence: null,
+  answerForms: [],
+  note: null,
   status: "draft",
 });
 
 describe("word trait data", () => {
-  it("counts distinct contextual senses without inflating duplicate examples", () => {
+  it("counts the canonical sense rows for each word", () => {
     const counts = buildSenseCountByWord([
-      example("produce", "v.", "生產"),
-      example("produce", "v.", "生產"),
-      example("produce", "n.", "農產品"),
+      sense("produce", 1, "v.", "生產"),
+      sense("produce", 2, "n.", "農產品"),
     ]);
     expect(counts.get("produce")).toBe(2);
   });
