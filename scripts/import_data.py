@@ -22,6 +22,11 @@ VALID_RELATION_TYPES = {"synonym", "antonym", "derivative", "word_form", "confus
 VALID_RELATION_DIRECTIONS = {"one_way", "two_way"}
 VALID_PRIORITY_TIERS = {"S", "A", "B", "C", "Z"}
 VALID_SENSE_STATUSES = {"draft", "reviewed", "approved", "needs_check"}
+VALID_HOOK_TYPES = {"phonetic", "association", "etymology"}
+VALID_HOOK_SOURCE_TYPES = {"original", "adapted", "book_ref", "legacy"}
+VALID_HOOK_SCOPES = {"private_only", "public_ok"}
+VALID_HOOK_STATUSES = {"draft", "needs_check", "approved"}
+HOOK_GUIDE_MARKER = "填表說明"
 
 SHEETS = {
     "words": "input_words_單字主表",
@@ -36,6 +41,7 @@ SHEETS = {
 OPTIONAL_SHEETS = {
     "notes": "input_notes_補充說明",
     "exam_priority": "exam_priority_學測優先",
+    "hooks": "input_hooks_鉤子表",
 }
 
 ID_PREFIX = {"words": "W", "examples": "E", "relations": "R", "morphemes": "M", "media": "A", "notes": "N"}
@@ -360,6 +366,69 @@ def parse_notes(ws):
     return out
 
 
+def parse_hooks(ws):
+    """鉤子表：義項表模式（第 2 列即資料、說明列在底部）。
+
+    只跳過第一格等於 HOOK_GUIDE_MARKER 的說明列；其他格式錯誤一律報錯，
+    不得默默當說明列跳過（規格 v3 §1）。
+    """
+    rows = ws.iter_rows(min_row=1, values_only=True)
+    next(rows, None)  # header
+    out = []
+    seen = set()
+    for row_number, r in enumerate(rows, start=2):
+        values = [clean(v) for v in (list(r) + [None] * 13)[:13]]
+        (hook_id, word_id, word, sense_id, target_meaning_zh, hook_type,
+         hook_zh, hook_story, asset_id, source_type, source_ref,
+         distribution_scope, status) = values
+        if all(v is None for v in values):
+            continue
+        if hook_id == HOOK_GUIDE_MARKER:
+            continue
+        if not isinstance(hook_id, str) or not re.fullmatch(r"W\d{6}-H\d+", hook_id):
+            raise SystemExit(f"錯誤：鉤子表第 {row_number} 列的 hook_id 無效：{hook_id!r}")
+        if hook_id in seen:
+            raise SystemExit(f"錯誤：鉤子表 hook_id 重複：{hook_id}")
+        seen.add(hook_id)
+        if not word_id or not hook_id.startswith(f"{word_id}-H"):
+            raise SystemExit(f"錯誤：鉤子 {hook_id} 與 word_id {word_id!r} 不一致")
+        if not word:
+            raise SystemExit(f"錯誤：鉤子 {hook_id} 缺少 word")
+        if sense_id is None and target_meaning_zh is None:
+            raise SystemExit(f"錯誤：鉤子 {hook_id} 的 sense_id 與 target_meaning_zh 至少要填一個")
+        if hook_type not in VALID_HOOK_TYPES:
+            raise SystemExit(f"錯誤：鉤子 {hook_id} 的 hook_type 無效：{hook_type!r}")
+        if hook_type == "phonetic" and not hook_zh:
+            raise SystemExit(f"錯誤：鉤子 {hook_id} 為 phonetic 但 hook_zh 空白")
+        if not hook_story:
+            raise SystemExit(f"錯誤：鉤子 {hook_id} 缺少 hook_story")
+        if source_type not in VALID_HOOK_SOURCE_TYPES:
+            raise SystemExit(f"錯誤：鉤子 {hook_id} 的 source_type 無效：{source_type!r}")
+        if source_type != "original" and not source_ref:
+            raise SystemExit(f"錯誤：鉤子 {hook_id} 的 source_type 為 {source_type}，source_ref 不可空白")
+        if distribution_scope not in VALID_HOOK_SCOPES:
+            raise SystemExit(f"錯誤：鉤子 {hook_id} 的 distribution_scope 無效：{distribution_scope!r}")
+        if status not in VALID_HOOK_STATUSES:
+            raise SystemExit(f"錯誤：鉤子 {hook_id} 的 status 無效：{status!r}")
+        out.append({
+            "hookId": hook_id,
+            "wordId": word_id,
+            "word": word,
+            "senseId": sense_id,
+            "targetMeaningZh": target_meaning_zh,
+            "hookType": hook_type,
+            "hookZh": hook_zh,
+            "hookStory": hook_story,
+            "assetId": asset_id,
+            "sourceType": source_type,
+            "sourceRef": source_ref,
+            "distributionScope": distribution_scope,
+            "status": status,
+        })
+    out.sort(key=lambda x: x["hookId"])
+    return out
+
+
 def write_json(path, data):
     with open(path, "w", encoding="utf-8", newline="\n") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
@@ -369,13 +438,25 @@ def write_json(path, data):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--source", required=True)
-    ap.add_argument("--out", default="public/data/v1")
+    # 建置模式（規格 v3 §6，安全預設）：
+    #   public（預設）＝鉤子只留 public_ok+approved，可寫入 public/
+    #   private＝鉤子留所有 approved；qa＝鉤子全留（含未審）
+    #   private/qa 的產物一律不得寫入 public/，防止私用書籍資料被 commit 進公開站
+    ap.add_argument("--mode", choices=["public", "private", "qa"], default="public")
+    ap.add_argument("--out", default=None)
     args = ap.parse_args()
 
     src = Path(args.source)
     if not src.exists():
         raise SystemExit(f"錯誤：找不到來源檔案 {src}")
-    out_dir = Path(args.out)
+    default_out = {
+        "public": "public/data/v1",
+        "private": "dist-private/data/v1",
+        "qa": "dist-qa/data/v1",
+    }
+    out_dir = Path(args.out if args.out is not None else default_out[args.mode])
+    if args.mode != "public" and "public" in out_dir.parts:
+        raise SystemExit(f"錯誤：{args.mode} 模式的產物不可寫入 public/ 目錄（{out_dir}）。")
     out_dir.mkdir(parents=True, exist_ok=True)
 
     wb = openpyxl.load_workbook(src, read_only=True, data_only=True)
@@ -393,6 +474,8 @@ def main():
     notes = parse_notes(wb[notes_sheet]) if notes_sheet in wb.sheetnames else []
     priority_sheet = OPTIONAL_SHEETS["exam_priority"]
     exam_priority = parse_exam_priority(wb[priority_sheet]) if priority_sheet in wb.sheetnames else []
+    hooks_sheet = OPTIONAL_SHEETS["hooks"]
+    hooks = parse_hooks(wb[hooks_sheet]) if hooks_sheet in wb.sheetnames else []
 
     word_set = {w["word"] for w in words}
     word_ids = {w["wordId"]: w["word"] for w in words}
@@ -439,6 +522,34 @@ def main():
             f"錯誤：考試優先級的 word_id 與主表不一致：{sample['wordId']} / {sample['word']}"
         )
 
+    # 鉤子表跨表驗證（規格 v3 §6 驗證 2、3、5、7）
+    senses_by_id = {row["senseId"]: row for row in senses}
+    media_ids = {row["assetId"] for row in media}
+    for hook in hooks:
+        if hook["wordId"] not in word_ids or word_ids[hook["wordId"]] != hook["word"]:
+            raise SystemExit(
+                f"錯誤：鉤子 {hook['hookId']} 的 word_id/word 與主表不一致："
+                f"{hook['wordId']} / {hook['word']}"
+            )
+        if hook["senseId"] is not None:
+            sense = senses_by_id.get(hook["senseId"])
+            if sense is None:
+                raise SystemExit(f"錯誤：鉤子 {hook['hookId']} 的 sense_id 不存在：{hook['senseId']}")
+            if sense["wordId"] != hook["wordId"]:
+                raise SystemExit(
+                    f"錯誤：鉤子 {hook['hookId']} 的 sense_id {hook['senseId']} 屬於另一個字（{sense['wordId']}）"
+                )
+            # 同填時以 sense_id 為準；中文必須等於義項 meaning_zh 或其「；」分段之一，避免兩邊漂移
+            if hook["targetMeaningZh"] is not None:
+                segments = [s.strip() for s in re.split(r"[；;]", sense["meaningZh"]) if s.strip()]
+                if hook["targetMeaningZh"] != sense["meaningZh"] and hook["targetMeaningZh"] not in segments:
+                    raise SystemExit(
+                        f"錯誤：鉤子 {hook['hookId']} 的 target_meaning_zh「{hook['targetMeaningZh']}」"
+                        f"與義項 {hook['senseId']} 的 meaning_zh「{sense['meaningZh']}」不一致"
+                    )
+        if hook["assetId"] is not None and hook["assetId"] not in media_ids:
+            raise SystemExit(f"錯誤：鉤子 {hook['hookId']} 的 asset_id 不存在於圖卡表：{hook['assetId']}")
+
     write_json(out_dir / "words.json", words)
     write_json(out_dir / "senses.json", senses)
     write_json(out_dir / "examples.json", examples)
@@ -448,10 +559,20 @@ def main():
     write_json(out_dir / "notes.json", notes)
     write_json(out_dir / "exam_priority.json", exam_priority)
 
+    # 依建置模式過濾鉤子（安全預設：public 只出 public_ok+approved）
+    if args.mode == "public":
+        hooks_out = [h for h in hooks
+                     if h["distributionScope"] == "public_ok" and h["status"] == "approved"]
+    elif args.mode == "private":
+        hooks_out = [h for h in hooks if h["status"] == "approved"]
+    else:  # qa：唯一保留 draft／needs_check 的模式
+        hooks_out = hooks
+    write_json(out_dir / "hooks.json", hooks_out)
+
     words_hash = hashlib.sha256((out_dir / "words.json").read_bytes()).hexdigest()
     # contentHash 涵蓋所有 App 會載入的資料檔：任何一張表變動都會觸發前端重灌
     h = hashlib.sha256()
-    for name in ["words.json", "senses.json", "examples.json", "relations.json", "morphemes.json", "notes.json", "exam_priority.json"]:
+    for name in ["words.json", "senses.json", "examples.json", "relations.json", "morphemes.json", "notes.json", "exam_priority.json", "hooks.json"]:
         h.update((out_dir / name).read_bytes())
     content_hash = h.hexdigest()
     meta = {
@@ -467,13 +588,14 @@ def main():
             "media": len(media),
             "notes": len(notes),
             "examPriority": len(exam_priority),
+            "hooks": len(hooks_out),
         },
         "wordsHash": words_hash,
         "contentHash": content_hash,
     }
     write_json(out_dir / "meta.json", meta)
 
-    print("匯入完成：")
+    print(f"匯入完成（mode={args.mode} → {out_dir}）：")
     for k, v in meta["counts"].items():
         print(f"  {k}: {v}")
     print(f"  wordsHash: {words_hash[:16]}…")

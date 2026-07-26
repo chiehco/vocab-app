@@ -18,6 +18,7 @@ const LEGACY_BEAST_ASSETS: Record<string, string> = {
   whisper: versioned(`${BASE}wordbeast/priest-whisper.png`),
   jealous: versioned(`${BASE}wordbeast/priest-jealous.png`),
   courage: versioned(`${BASE}wordbeast/priest-courage.png`),
+  used: versioned(`${BASE}wordbeast/used.png`),
 };
 
 export function getWordBeastAsset(wordId: string, word: string, imageWordId?: string): string | null {

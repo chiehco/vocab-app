@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
 import { contentDb } from "../../db/contentDb";
@@ -11,7 +12,10 @@ import WordTraitBadges from "../wordbeast/WordTraitBadges";
 import ResilientBeastImage from "../wordbeast/ResilientBeastImage";
 import { buildSenseCountByWord } from "../wordbeast/wordTraits";
 import { MORPHEME_TYPE_LABEL, NOTE_TYPE_LABEL, RELATION_TYPE_LABEL, STATE_LABEL } from "./wordLabels";
+import { getWordDisplaySense } from "./wordDisplay";
 import "./word-detail.css";
+
+type DossierBackTab = "meaning" | "relations" | "roots" | "exam";
 
 function DossierSigil({ word }: { word: string }) {
   const value = [...word].reduce((sum, character) => sum + character.charCodeAt(0), 0);
@@ -26,6 +30,12 @@ function DossierSigil({ word }: { word: string }) {
 
 export default function WordDetailScreen() {
   const { wordId } = useParams<{ wordId: string }>();
+  const [cardSide, setCardSide] = useState<"front" | "back">("front");
+  const [backTab, setBackTab] = useState<DossierBackTab>("meaning");
+  useEffect(() => {
+    setCardSide("front");
+    setBackTab("meaning");
+  }, [wordId]);
   const word = useLiveQuery(() => wordId ? contentDb.words.get(wordId) : undefined, [wordId]);
   const senses = useLiveQuery(() => word ? contentDb.senses.where("wordId").equals(word.wordId).sortBy("senseOrder") : [], [word?.wordId]);
   const examples = useLiveQuery(() => word ? contentDb.examples.where("word").equals(word.word).toArray() : [], [word?.word]);
@@ -74,10 +84,18 @@ export default function WordDetailScreen() {
   const asset = getWordBeastAsset(word.wordId, word.word, word.imageWordId);
   const sortedMorphemes = morphemes?.slice().sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
   const senseCount = buildSenseCountByWord(senses ?? []).get(word.word) ?? 0;
+  const displaySense = getWordDisplaySense(word, senses ?? []);
+  const examExamples = examples?.filter((example) => example.exampleType === "exam") ?? [];
   const kinRelations = relations?.filter((relation) => relation.relationType !== "confuse") ?? [];
   const falseForms = [
     ...(relations?.filter((relation) => relation.relationType === "confuse").map((relation) => ({ ...relation, kind: "易混淆", targetWord: relation.targetWord })) ?? []),
     ...(examDistractors?.map((relation) => ({ ...relation, kind: "歷屆誘答", targetWord: relation.relatedWord })) ?? []),
+  ];
+  const availableBackTabs: [DossierBackTab, string][] = [
+    ["meaning", "字義"],
+    ...(kinRelations.length > 0 ? [["relations", "關聯詞"] as [DossierBackTab, string]] : []),
+    ...(sortedMorphemes && sortedMorphemes.length > 0 ? [["roots", "字根字首"] as [DossierBackTab, string]] : []),
+    ...(examExamples.length > 0 ? [["exam", "歷屆考題"] as [DossierBackTab, string]] : []),
   ];
 
   return (
@@ -86,22 +104,74 @@ export default function WordDetailScreen() {
         <Link to="/browse">← 萬字譜</Link><span>ARCHIVE · {word.wordId}</span><b>{word.level}</b>
       </header>
 
-      <section className="word-dossier-hero">
-        <div className="dossier-hero-copy">
-          <p>{word.pos || "詞性未標記"} · TRUE NAME</p>
-          <div className="dossier-title-row"><h1>{word.word}</h1><SpeakerButton text={word.word} className="dossier-speaker" /></div>
-          <WordTraitBadges senseCount={senseCount} hasConfusables={falseForms.length > 0} hasMorphemes={!!sortedMorphemes?.length} />
-          {word.phoneticUs && <span className="dossier-phonetic">/{word.phoneticUs}/</span>}
-          <h2>{word.meaningZh || "尚無中文釋義"}</h2>
-          {word.meaningEn && <p className="dossier-en">{word.meaningEn}</p>}
-        </div>
-        <div className="dossier-hero-mark">
-          <ExamTierBadge tier={priority?.priorityTier} />
-          <span className="dossier-orbit" />
-          {asset ? <ResilientBeastImage src={asset} word={word.word} alt={`${word.word} 字獸`} /> : <DossierSigil word={word.word} />}
-          {!asset && <small>圖像待收錄</small>}
-        </div>
-      </section>
+      <div className="dossier-card-controls" aria-label="字卡正反面">
+        <button className={cardSide === "front" ? "active" : ""} onClick={() => setCardSide("front")} aria-pressed={cardSide === "front"}>圖鑑正面</button>
+        <button className={cardSide === "back" ? "active" : ""} onClick={() => setCardSide("back")} aria-pressed={cardSide === "back"}>資料背面</button>
+      </div>
+
+      {cardSide === "front" ? (
+        <section className="word-dossier-hero">
+          <div className="dossier-hero-copy">
+            <p>{displaySense.pos} · TRUE NAME</p>
+            <div className="dossier-title-row"><h1>{word.word}</h1><SpeakerButton text={word.word} className="dossier-speaker" /></div>
+            <WordTraitBadges senseCount={senseCount} hasConfusables={falseForms.length > 0} hasMorphemes={!!sortedMorphemes?.length} />
+            {word.phoneticUs && <span className="dossier-phonetic">/{word.phoneticUs}/</span>}
+            <h2>{displaySense.meaning}</h2>
+            {displaySense.needsReview && <span className="dossier-needs-review">主義待校準</span>}
+          </div>
+          <div className="dossier-hero-mark">
+            <ExamTierBadge tier={priority?.priorityTier} />
+            <span className="dossier-orbit" />
+            {asset ? <ResilientBeastImage src={asset} word={word.word} alt={`${word.word} 字獸`} /> : <DossierSigil word={word.word} />}
+            {!asset && <small>圖像待收錄</small>}
+          </div>
+        </section>
+      ) : (
+        <section className="word-dossier-back">
+          <header>
+            <div><p>{displaySense.pos} · FIELD DOSSIER</p><h1>{word.word}</h1></div>
+            <SpeakerButton text={word.word} className="dossier-speaker" />
+          </header>
+          <nav aria-label="字卡背面資料">
+            {availableBackTabs.map(([tab, label]) => (
+              <button key={tab} className={backTab === tab ? "active" : ""} onClick={() => setBackTab(tab)}>{label}</button>
+            ))}
+          </nav>
+          <div className="dossier-back-content">
+            {backTab === "meaning" && (
+              <div className="back-meaning">
+                <small>主義 · {displaySense.pos}</small>
+                <h2>{displaySense.meaning}</h2>
+                {senses && senses.length > 0 ? (
+                  <ol>{senses.slice(0, 4).map((sense) => <li key={sense.senseId}><b>{sense.sensePos}</b><span>{sense.meaningZh}</span>{sense.isExamSense && <i>考義</i>}</li>)}</ol>
+                ) : (
+                  <p>目前只有字典彙總，尚未拆分常用義與考義。此字已列入校準清單。</p>
+                )}
+              </div>
+            )}
+            {backTab === "relations" && (
+              <div className="back-link-list">
+                {kinRelations.length > 0 ? kinRelations.slice(0, 6).map((relation) => {
+                  const related = relatedWords?.[relation.targetWord];
+                  return <div key={`${relation.relationId}:${relation.targetWord}`}><b>{related ? <Link to={`/word/${related.wordId}`}>{relation.targetWord}</Link> : relation.targetWord}</b><span>{related?.meaningZh || relation.note || "關聯義待補"}</span></div>;
+                }) : <p>尚未收錄關聯詞。</p>}
+              </div>
+            )}
+            {backTab === "roots" && (
+              <div className="back-root-list">
+                {sortedMorphemes && sortedMorphemes.length > 0 ? sortedMorphemes.slice(0, 5).map((morpheme) => <div key={morpheme.rowId}><b>{morpheme.morpheme}</b><small>{MORPHEME_TYPE_LABEL[morpheme.morphemeType || ""] || morpheme.morphemeType || "構件"}</small><span>{morpheme.meaningZh || morpheme.meaningEn || "釋義待補"}</span></div>) : <p>此字尚未收錄字根字首資料。</p>}
+              </div>
+            )}
+            {backTab === "exam" && (
+              <div className="back-exam">
+                {priority && <div className="back-exam-stats"><span><b>{priority.xtYears}</b>學測年度</span><span><b>{priority.xtAnswerCount}</b>答案次數</span><span><b>{priority.rank}</b>考頻順位</span></div>}
+                {priority?.xtYearList && <p>出現年度：{priority.xtYearList}</p>}
+                {examExamples.length > 0 ? examExamples.slice(0, 2).map((example) => <article key={example.exampleId}><b>{example.sentenceEn}</b>{example.sentenceZh && <span>{example.sentenceZh}</span>}</article>) : <p>目前沒有可顯示的歷屆例句。</p>}
+              </div>
+            )}
+          </div>
+        </section>
+      )}
 
       <section className="dossier-status" aria-label="學習狀態">
         <div><span>封印狀態</span><b>{cardState ? STATE_LABEL[cardState.state] : "尚未遭遇"}</b></div>

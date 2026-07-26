@@ -132,7 +132,17 @@ export interface CardState {
 
 export type Grade = 0 | 1 | 2 | 3; // Again / Hard / Good / Easy
 
-export type ReviewMode = "flashcard" | "same-day-recap" | "quiz-w2m" | "quiz-m2w" | "quiz-image" | "fill-blank" | "slash";
+export type ReviewMode =
+  | "flashcard"
+  | "same-day-recap"
+  | "quiz-w2m"
+  | "quiz-m2w"
+  | "quiz-image"
+  | "fill-blank"
+  | "expedition-w2m"
+  | "expedition-m2w"
+  | "expedition-fill"
+  | "slash";
 
 export interface ReviewLogEntry {
   id?: number;
