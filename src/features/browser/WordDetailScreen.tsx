@@ -13,6 +13,7 @@ import ResilientBeastImage from "../wordbeast/ResilientBeastImage";
 import { buildSenseCountByWord } from "../wordbeast/wordTraits";
 import { MORPHEME_TYPE_LABEL, NOTE_TYPE_LABEL, RELATION_TYPE_LABEL, STATE_LABEL } from "./wordLabels";
 import { getWordDisplaySense } from "./wordDisplay";
+import { buildRootFamilies, normalizeMorphemeKey, pickFamilyMorphemes } from "./rootFamily";
 import "./word-detail.css";
 
 type DossierBackTab = "meaning" | "relations" | "roots" | "exam";
@@ -78,6 +79,24 @@ export default function WordDetailScreen() {
     const records = await contentDb.words.where("word").anyOf(relationTargets).toArray();
     return Object.fromEntries(records.map((record) => [record.word, record]));
   }, [relationKey]);
+  const familyMorphemes = pickFamilyMorphemes(morphemes ?? []);
+  const familyLookupKey = familyMorphemes.map((morpheme) => morpheme.morpheme).join("|");
+  const rootFamilies = useLiveQuery(async () => {
+    if (!word || familyMorphemes.length === 0) return [];
+    // 索引比對大小寫敏感、也不吃連字號，所以原形與正規化形都查一次。
+    const lookups = [...new Set(
+      familyMorphemes.flatMap((morpheme) => [morpheme.morpheme, normalizeMorphemeKey(morpheme.morpheme)]),
+    )].filter(Boolean);
+    const candidates = await contentDb.morphemes.where("morpheme").anyOfIgnoreCase(lookups).toArray();
+    return buildRootFamilies(familyMorphemes, candidates, word.word);
+  }, [familyLookupKey, word?.word]);
+  const familyWords = (rootFamilies ?? []).flatMap((family) => family.siblings);
+  const familyWordKey = familyWords.slice().sort().join("|");
+  const familyWordRecords = useLiveQuery(async () => {
+    if (!familyWords.length) return {} as Record<string, WordRecord>;
+    const records = await contentDb.words.where("word").anyOf(familyWords).toArray();
+    return Object.fromEntries(records.map((record) => [record.word, record]));
+  }, [familyWordKey]);
 
   if (!word) return <div className="dossier-loading"><i /><p>正在調閱卷宗</p></div>;
 
@@ -160,6 +179,23 @@ export default function WordDetailScreen() {
             {backTab === "roots" && (
               <div className="back-root-list">
                 {sortedMorphemes && sortedMorphemes.length > 0 ? sortedMorphemes.slice(0, 5).map((morpheme) => <div key={morpheme.rowId}><b>{morpheme.morpheme}</b><small>{MORPHEME_TYPE_LABEL[morpheme.morphemeType || ""] || morpheme.morphemeType || "構件"}</small><span>{morpheme.meaningZh || morpheme.meaningEn || "釋義待補"}</span></div>) : <p>此字尚未收錄字根字首資料。</p>}
+                {rootFamilies && rootFamilies.length > 0 && (
+                  <div className="back-root-family">
+                    {rootFamilies.map((family) => (
+                      <div key={family.morpheme}>
+                        <small>同族字 · {family.morpheme}</small>
+                        <p>
+                          {family.siblings.map((sibling) => {
+                            const record = familyWordRecords?.[sibling];
+                            return record
+                              ? <Link key={sibling} to={`/word/${record.wordId}`}>{sibling}</Link>
+                              : <span key={sibling}>{sibling}</span>;
+                          })}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             )}
             {backTab === "exam" && (
@@ -227,6 +263,21 @@ export default function WordDetailScreen() {
         <section className="dossier-section morpheme-section">
           <div className="dossier-section-head"><div><p>NAME ANATOMY</p><h2>真名解構</h2></div><span>{sortedMorphemes.length} 段</span></div>
           <div className="dossier-morphemes">{sortedMorphemes.map((morpheme) => <div key={morpheme.rowId}><strong>{morpheme.morpheme}</strong><span>{MORPHEME_TYPE_LABEL[morpheme.morphemeType || ""] || morpheme.morphemeType || "構件"}</span><p>{morpheme.meaningZh || morpheme.meaningEn || "—"}</p>{morpheme.origin && <small>{morpheme.origin}</small>}</div>)}</div>
+          {rootFamilies && rootFamilies.length > 0 && (
+            <div className="dossier-root-family">
+              {rootFamilies.map((family) => (
+                <div key={family.morpheme}>
+                  <span><strong>{family.morpheme}</strong>{family.meaningZh && <small>{family.meaningZh}</small>}</span>
+                  <p>{family.siblings.map((sibling) => {
+                    const record = familyWordRecords?.[sibling];
+                    return record
+                      ? <Link key={sibling} to={`/word/${record.wordId}`}>{sibling}</Link>
+                      : <span key={sibling}>{sibling}</span>;
+                  })}</p>
+                </div>
+              ))}
+            </div>
+          )}
         </section>
       )}
 

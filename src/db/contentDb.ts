@@ -39,6 +39,10 @@ export class VocabContentDB extends Dexie {
     this.version(4).stores({
       senses: "senseId, wordId, word, sensePos, isExamSense, status",
     });
+    // v5：字族網要由字根反查同族字，morpheme 需要索引。
+    this.version(5).stores({
+      morphemes: "rowId, word, morpheme, morphemeType",
+    });
   }
 }
 
