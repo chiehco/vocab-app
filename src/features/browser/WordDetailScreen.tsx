@@ -16,7 +16,7 @@ import { getWordDisplaySense } from "./wordDisplay";
 import { buildRootFamilies, normalizeMorphemeKey, pickFamilyMorphemes } from "./rootFamily";
 import "./word-detail.css";
 
-type DossierBackTab = "meaning" | "relations" | "roots" | "exam";
+type DossierBackTab = "meaning" | "relations" | "roots" | "examples";
 
 function DossierSigil({ word }: { word: string }) {
   const value = [...word].reduce((sum, character) => sum + character.charCodeAt(0), 0);
@@ -104,7 +104,7 @@ export default function WordDetailScreen() {
   const sortedMorphemes = morphemes?.slice().sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
   const senseCount = buildSenseCountByWord(senses ?? []).get(word.word) ?? 0;
   const displaySense = getWordDisplaySense(word, senses ?? []);
-  const examExamples = examples?.filter((example) => example.exampleType === "exam") ?? [];
+  const examStyleExamples = examples?.filter((example) => example.exampleType === "exam") ?? [];
   const kinRelations = relations?.filter((relation) => relation.relationType !== "confuse") ?? [];
   const falseForms = [
     ...(relations?.filter((relation) => relation.relationType === "confuse").map((relation) => ({ ...relation, kind: "易混淆", targetWord: relation.targetWord })) ?? []),
@@ -114,7 +114,7 @@ export default function WordDetailScreen() {
     ["meaning", "字義"],
     ...(kinRelations.length > 0 ? [["relations", "關聯詞"] as [DossierBackTab, string]] : []),
     ...(sortedMorphemes && sortedMorphemes.length > 0 ? [["roots", "字根字首"] as [DossierBackTab, string]] : []),
-    ...(examExamples.length > 0 ? [["exam", "歷屆考題"] as [DossierBackTab, string]] : []),
+    ...(examStyleExamples.length > 0 ? [["examples", "考點例句"] as [DossierBackTab, string]] : []),
   ];
 
   return (
@@ -151,6 +151,16 @@ export default function WordDetailScreen() {
             <div><p>{displaySense.pos} · FIELD DOSSIER</p><h1>{word.word}</h1></div>
             <SpeakerButton text={word.word} className="dossier-speaker" />
           </header>
+          {priority && (
+            <div className="back-priority-panel" aria-label="考頻資料">
+              <div className="back-priority-stats">
+                <span><b>{priority.xtYears}</b>學測年數</span>
+                <span><b>{priority.xtAnswerCount}</b>答案次數</span>
+                <span><b>{priority.rank}</b>考頻順位</span>
+              </div>
+              {priority.xtYearList && <p>出現年度：{priority.xtYearList}</p>}
+            </div>
+          )}
           <nav aria-label="字卡背面資料">
             {availableBackTabs.map(([tab, label]) => (
               <button key={tab} className={backTab === tab ? "active" : ""} onClick={() => setBackTab(tab)}>{label}</button>
@@ -170,15 +180,15 @@ export default function WordDetailScreen() {
             )}
             {backTab === "relations" && (
               <div className="back-link-list">
-                {kinRelations.length > 0 ? kinRelations.slice(0, 6).map((relation) => {
+                {kinRelations.slice(0, 6).map((relation) => {
                   const related = relatedWords?.[relation.targetWord];
                   return <div key={`${relation.relationId}:${relation.targetWord}`}><b>{related ? <Link to={`/word/${related.wordId}`}>{relation.targetWord}</Link> : relation.targetWord}</b><span>{related?.meaningZh || relation.note || "關聯義待補"}</span></div>;
-                }) : <p>尚未收錄關聯詞。</p>}
+                })}
               </div>
             )}
             {backTab === "roots" && (
               <div className="back-root-list">
-                {sortedMorphemes && sortedMorphemes.length > 0 ? sortedMorphemes.slice(0, 5).map((morpheme) => <div key={morpheme.rowId}><b>{morpheme.morpheme}</b><small>{MORPHEME_TYPE_LABEL[morpheme.morphemeType || ""] || morpheme.morphemeType || "構件"}</small><span>{morpheme.meaningZh || morpheme.meaningEn || "釋義待補"}</span></div>) : <p>此字尚未收錄字根字首資料。</p>}
+                {sortedMorphemes?.slice(0, 5).map((morpheme) => <div key={morpheme.rowId}><b>{morpheme.morpheme}</b><small>{MORPHEME_TYPE_LABEL[morpheme.morphemeType || ""] || morpheme.morphemeType || "構件"}</small><span>{morpheme.meaningZh || morpheme.meaningEn || "釋義待補"}</span></div>)}
                 {rootFamilies && rootFamilies.length > 0 && (
                   <div className="back-root-family">
                     {rootFamilies.map((family) => (
@@ -198,11 +208,9 @@ export default function WordDetailScreen() {
                 )}
               </div>
             )}
-            {backTab === "exam" && (
+            {backTab === "examples" && (
               <div className="back-exam">
-                {priority && <div className="back-exam-stats"><span><b>{priority.xtYears}</b>學測年度</span><span><b>{priority.xtAnswerCount}</b>答案次數</span><span><b>{priority.rank}</b>考頻順位</span></div>}
-                {priority?.xtYearList && <p>出現年度：{priority.xtYearList}</p>}
-                {examExamples.length > 0 ? examExamples.slice(0, 2).map((example) => <article key={example.exampleId}><b>{example.sentenceEn}</b>{example.sentenceZh && <span>{example.sentenceZh}</span>}</article>) : <p>目前沒有可顯示的歷屆例句。</p>}
+                {examStyleExamples.slice(0, 2).map((example) => <article key={example.exampleId}><b>{example.sentenceEn}</b>{example.sentenceZh && <span>{example.sentenceZh}</span>}</article>)}
               </div>
             )}
           </div>

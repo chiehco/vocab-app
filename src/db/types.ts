@@ -139,9 +139,6 @@ export type ReviewMode =
   | "quiz-m2w"
   | "quiz-image"
   | "fill-blank"
-  | "expedition-w2m"
-  | "expedition-m2w"
-  | "expedition-fill"
   | "slash";
 
 export interface ReviewLogEntry {

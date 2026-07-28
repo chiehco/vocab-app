@@ -1,13 +1,30 @@
-import type { ExamPriorityRecord, WordRecord } from "../db/types";
+import type { ExampleRecord, ExamPriorityRecord, WordRecord } from "../db/types";
 
 export const TOP_EXAM_FILTER = "S+A";
-export const DEFAULT_TRIAL_LEVELS = ["LV3", "LV4"];
 
 export function buildTopExamWordSet(priorities: ExamPriorityRecord[]): Set<string> {
   return new Set(
     priorities
       .filter((row) => row.priorityTier === "S" || row.priorityTier === "A")
       .map((row) => row.word),
+  );
+}
+
+export function buildFunctionWordSet(priorities: ExamPriorityRecord[]): Set<string> {
+  return new Set(
+    priorities
+      .filter((row) => row.isFunctionWord)
+      .map((row) => row.word),
+  );
+}
+
+export function filterExactFillExamples(
+  examples: ExampleRecord[],
+  allowedWords: Set<string>,
+  functionWords: Set<string>,
+): ExampleRecord[] {
+  return examples.filter(
+    (example) => allowedWords.has(example.word) && !functionWords.has(example.word),
   );
 }
 
@@ -27,10 +44,4 @@ export function sortExamWordsByPriority(
   return words
     .filter((word) => rankByWord.has(word.word))
     .sort((a, b) => (rankByWord.get(a.word) ?? Infinity) - (rankByWord.get(b.word) ?? Infinity));
-}
-
-export function filterWordsByLevels(words: WordRecord[], levels: string[]): WordRecord[] {
-  if (levels.length === 0) return words;
-  const allowed = new Set(levels);
-  return words.filter((word) => allowed.has(word.level));
 }

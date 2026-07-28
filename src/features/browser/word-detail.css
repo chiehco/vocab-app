@@ -22,7 +22,7 @@
 .dossier-title-row h1 { min-width: 0; margin: 0; font: 900 clamp(43px, 12vw, 66px)/.9 "Noto Serif TC", serif; letter-spacing: -.06em; overflow-wrap: anywhere; }
 .dossier-speaker { display: grid !important; flex: none; width: 36px; height: 36px; place-items: center; color: #e0c27d !important; border: 1px solid rgba(224,194,125,.38) !important; border-radius: 50% !important; background: transparent !important; font-size: 14px !important; }
 .dossier-phonetic { margin-top: 13px; color: rgba(238,229,208,.52); font: 600 11px Georgia, serif; }
-.dossier-hero-copy h2 { margin: auto 0 0; color: #f0e6cf; font: 900 22px/1.4 "Noto Serif TC", serif; }.dossier-en { margin: 9px 0 0; color: rgba(238,229,208,.53); font-size: 9px; line-height: 1.55; }
+.dossier-hero-copy h2 { margin: auto 0 0; color: #f0e6cf; font: 900 22px/1.4 "Noto Serif TC", serif; }
 .dossier-needs-review { margin-top: 9px; padding: 4px 6px; color: #e0c27d; border: 1px solid rgba(224,194,125,.35); font-size: 7px; font-weight: 800; }
 .dossier-hero-mark { position: relative; z-index: 2; display: grid; min-width: 0; overflow: hidden; place-items: center; }
 .dossier-hero-mark > .exam-tier-badge { position: absolute; z-index: 5; top: 22px; right: 15px; }
@@ -34,13 +34,17 @@
 .word-dossier-back > header { display: flex; min-height: 75px; align-items: flex-start; justify-content: space-between; }
 .word-dossier-back > header p { margin: 0; color: #d0b16d; font-size: 7px; font-weight: 800; letter-spacing: .14em; }
 .word-dossier-back > header h1 { margin: 7px 0 0; font: 900 32px/.95 Georgia, "Noto Serif TC", serif; }
+.back-priority-panel { margin-top: 12px; }
+.back-priority-panel > p { margin: 9px 0 0; color: rgba(238,229,208,.48); font: 600 8px/1.5 "Noto Serif TC", serif; }
+.back-priority-stats { display: grid; grid-template-columns: repeat(3, 1fr); border-block: 1px solid rgba(238,229,208,.13); }
+.back-priority-stats span { padding: 11px 6px; color: rgba(238,229,208,.48); text-align: center; font-size: 7px; }.back-priority-stats b { display: block; margin-bottom: 4px; color: #e1c37b; font: 900 18px Georgia, serif; }
 .word-dossier-back > nav { display: grid; grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); margin: 17px 0 0; border-block: 1px solid rgba(238,229,208,.16); }
 .word-dossier-back > nav button { min-height: 45px; padding: 0 3px; color: rgba(238,229,208,.48); border: 0; border-bottom: 2px solid transparent; background: transparent; font: 800 8px "Noto Serif TC", serif; cursor: pointer; }
 .word-dossier-back > nav button.active { color: #e2c47d; border-bottom-color: #d4b670; }
 .dossier-back-content { min-height: 235px; padding-top: 24px; }
 .back-meaning > small { color: #d0b16d; font-size: 8px; font-weight: 800; }
 .back-meaning > h2 { margin: 9px 0 0; font: 900 25px/1.45 "Noto Serif TC", serif; }
-.back-meaning > p, .back-link-list > p, .back-root-list > p, .back-exam > p { color: rgba(238,229,208,.58); font: 600 10px/1.75 "Noto Serif TC", serif; }
+.back-meaning > p { color: rgba(238,229,208,.58); font: 600 10px/1.75 "Noto Serif TC", serif; }
 .back-meaning ol { margin: 20px 0 0; padding: 0; list-style: none; }
 .back-meaning li { display: grid; grid-template-columns: 42px 1fr auto; gap: 8px; padding: 10px 0; align-items: baseline; border-top: 1px solid rgba(238,229,208,.12); }
 .back-meaning li b { color: #d7b971; font-size: 8px; }.back-meaning li span { font: 700 11px "Noto Serif TC", serif; }.back-meaning li i { color: #df8f77; font-size: 7px; font-style: normal; font-weight: 800; }
@@ -50,8 +54,6 @@
 .back-root-list > div { min-height: 95px; padding: 13px; background: #30382f; }.back-root-list b, .back-root-list small, .back-root-list span { display: block; }.back-root-list b { color: #e2c47d; font: 900 18px Georgia, serif; }.back-root-list small { margin-top: 4px; color: #d58c75; font-size: 7px; }.back-root-list span { margin-top: 11px; color: rgba(238,229,208,.63); font: 600 9px/1.5 "Noto Serif TC", serif; }
 .back-root-family { grid-column: 1 / -1; padding: 13px; background: #30382f; }
 .back-root-family > div + div { margin-top: 11px; padding-top: 11px; border-top: 1px solid rgba(238,229,208,.12); }.back-root-family small { display: block; color: #d58c75; font-size: 7px; font-weight: 800; letter-spacing: .08em; }.back-root-family p { display: flex; flex-wrap: wrap; gap: 6px 12px; margin: 9px 0 0; }.back-root-family a, .back-root-family p > span { color: #e2c47d; font: 700 12px Georgia, serif; text-decoration: none; }.back-root-family a { border-bottom: 1px solid rgba(226,196,125,.35); }.back-root-family p > span { color: rgba(238,229,208,.45); }
-.back-exam-stats { display: grid; grid-template-columns: repeat(3, 1fr); margin-bottom: 17px; border-block: 1px solid rgba(238,229,208,.13); }
-.back-exam-stats span { padding: 13px 6px; color: rgba(238,229,208,.48); text-align: center; font-size: 7px; }.back-exam-stats b { display: block; margin-bottom: 4px; color: #e1c37b; font: 900 20px Georgia, serif; }
 .back-exam article { padding: 12px 0; border-top: 1px solid rgba(238,229,208,.12); }.back-exam article b, .back-exam article span { display: block; }.back-exam article b { font: 700 11px/1.55 Georgia, serif; }.back-exam article span { margin-top: 5px; color: rgba(238,229,208,.55); font: 600 9px/1.55 "Noto Serif TC", serif; }
 .dossier-status { display: grid; grid-template-columns: repeat(3, 1fr); padding: 24px 0; border-bottom: 1px solid rgba(45,47,39,.17); }
 .dossier-status > div { padding-left: 14px; border-left: 1px solid rgba(45,47,39,.15); }.dossier-status > div:first-child { padding-left: 2px; border-left: 0; }.dossier-status span, .dossier-status b { display: block; }.dossier-status span { color: #847c69; font-size: 7px; font-weight: 800; letter-spacing: .08em; }.dossier-status b { margin-top: 7px; font: 900 11px "Noto Serif TC", serif; }
@@ -88,7 +90,6 @@
   .dossier-title-row { margin-top: 22px; }
   .dossier-title-row h1 { font-size: clamp(36px, 12vw, 50px); }
   .dossier-hero-copy h2 { margin-top: 28px; }
-  .dossier-en { max-width: 34rem; font-size: 10px; }
   .dossier-hero-mark {
     min-height: 285px;
     padding: 12px 18px 18px;

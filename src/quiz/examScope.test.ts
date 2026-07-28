@@ -1,9 +1,10 @@
 import { describe, expect, it } from "vitest";
-import type { ExamPriorityRecord, WordRecord } from "../db/types";
+import type { ExampleRecord, ExamPriorityRecord, WordRecord } from "../db/types";
 import {
+  buildFunctionWordSet,
   buildTopExamWordSet,
+  filterExactFillExamples,
   filterTopExamWords,
-  filterWordsByLevels,
   sortExamWordsByPriority,
 } from "./examScope";
 
@@ -71,6 +72,32 @@ describe("S+A exam scope", () => {
     expect([...result]).toEqual(["serve", "along"]);
   });
 
+  it("keeps function words identifiable for exact-answer question filters", () => {
+    const result = buildFunctionWordSet([
+      priority("serve", "S"),
+      priority("along", "A", true),
+      priority("for", "S", true),
+    ]);
+
+    expect([...result]).toEqual(["along", "for"]);
+  });
+
+  it("excludes function words from exact-answer sentence completion", () => {
+    const examples = [
+      { exampleId: "E1", word: "for" },
+      { exampleId: "E2", word: "serve" },
+      { exampleId: "E3", word: "outside" },
+    ] as ExampleRecord[];
+
+    const result = filterExactFillExamples(
+      examples,
+      new Set(["for", "serve"]),
+      new Set(["for"]),
+    );
+
+    expect(result.map((example) => example.word)).toEqual(["serve"]);
+  });
+
   it("filters the word archive without changing collection state", () => {
     const words = [word("serve"), word("along"), word("material")];
     const result = filterTopExamWords(words, new Set(["serve", "along"]));
@@ -89,14 +116,4 @@ describe("S+A exam scope", () => {
     expect(result.map((row) => row.word)).toEqual(["serve", "along"]);
   });
 
-  it("defaults can focus a trial on discriminating levels while leaving the full pool open", () => {
-    const lv2 = { ...word("along"), level: "LV2" };
-    const lv3 = { ...word("serve"), level: "LV3" };
-    const lv4 = { ...word("provide"), level: "LV4" };
-
-    expect(filterWordsByLevels([lv2, lv3, lv4], ["LV3", "LV4"]).map((row) => row.word))
-      .toEqual(["serve", "provide"]);
-    expect(filterWordsByLevels([lv2, lv3, lv4], []).map((row) => row.word))
-      .toEqual(["along", "serve", "provide"]);
-  });
 });

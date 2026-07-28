@@ -6,11 +6,7 @@ import { progressDb } from "../../db/progressDb";
 import type { ExampleRecord, WordRecord } from "../../db/types";
 import { pickDistractors, shuffle } from "../../quiz/distractors";
 import { pickExamDistractors } from "../../quiz/examDistractors";
-import {
-  DEFAULT_TRIAL_LEVELS,
-  filterWordsByLevels,
-  sortExamWordsByPriority,
-} from "../../quiz/examScope";
+import { buildFunctionWordSet, filterExactFillExamples } from "../../quiz/examScope";
 import { recordQuizAnswer } from "../../checkin/recordActivity";
 import SpeakerButton from "../../components/SpeakerButton";
 import { getWordBeastAsset, hasWordBeastAsset } from "../wordbeast/wordBeastAssets";
@@ -23,19 +19,10 @@ import "../realm-pages.css";
 const LEVEL_CHOICES = ["全部", "LV1", "LV2", "LV3", "LV4", "LV5", "LV6"];
 const QUIZ_SIZE = 10;
 type QuizMode = "w2m" | "m2w" | "image" | "fill";
-type TrialKind = "taming" | "expedition";
-type ExpeditionScope = "LV3+LV4" | "LV3" | "LV4" | "全部";
 interface McqQuestion { target: WordRecord; options: WordRecord[]; }
 
-const EXPEDITION_SCOPES: { label: ExpeditionScope; levels: string[] }[] = [
-  { label: "LV3+LV4", levels: DEFAULT_TRIAL_LEVELS },
-  { label: "LV3", levels: ["LV3"] },
-  { label: "LV4", levels: ["LV4"] },
-  { label: "全部", levels: [] },
-];
-
-function TrialHeader({ label = "字獸馴化", progress, expedition = false }: { label?: string; progress?: string; expedition?: boolean }) {
-  return <header className="realm-header trial-header"><div><p>{expedition ? "S+A EXAM EXPEDITION" : "BEAST TAMING"}</p><h1>{label}</h1></div>{progress ? <span className="realm-count">{progress}</span> : <span className="trial-seal">{expedition ? "征" : "馴"}</span>}</header>;
+function TrialHeader({ label = "字獸馴化", progress }: { label?: string; progress?: string }) {
+  return <header className="realm-header trial-header"><div><p>BEAST TAMING</p><h1>{label}</h1></div>{progress ? <span className="realm-count">{progress}</span> : <span className="trial-seal">馴</span>}</header>;
 }
 
 function TrialLevels({ selected, onChange }: { selected: string; onChange: (level: string) => void }) {
@@ -44,7 +31,6 @@ function TrialLevels({ selected, onChange }: { selected: string; onChange: (leve
 
 export default function QuizScreen() {
   const [mode, setMode] = useState<QuizMode | null>(null);
-  const [trialKind, setTrialKind] = useState<TrialKind>("taming");
   const [questions, setQuestions] = useState<McqQuestion[] | null>(null);
   const [fillQuestions, setFillQuestions] = useState<ExampleRecord[] | null>(null);
   const [index, setIndex] = useState(0);
@@ -53,7 +39,6 @@ export default function QuizScreen() {
   const [fillInput, setFillInput] = useState("");
   const [fillResult, setFillResult] = useState<"correct" | "wrong" | null>(null);
   const [levelSel, setLevelSel] = useState("全部");
-  const [expeditionScope, setExpeditionScope] = useState<ExpeditionScope>("LV3+LV4");
   const sessionId = useRef(crypto.randomUUID());
   const sessionStarted = useRef(false);
 
@@ -71,15 +56,7 @@ export default function QuizScreen() {
   const senseCountByWord = useMemo(() => buildSenseCountByWord(allSenses ?? []), [allSenses]);
   const confusableWords = useMemo(() => buildConfusableWordSet(allRelations ?? []), [allRelations]);
   const morphemeWords = useMemo(() => buildMorphemeWordSet(allMorphemes ?? []), [allMorphemes]);
-  const topExamWords = useMemo(
-    () => allWords ? sortExamWordsByPriority(allWords, examPriorities ?? []) : undefined,
-    [allWords, examPriorities],
-  );
-  const expeditionWords = useMemo(() => {
-    if (!topExamWords) return undefined;
-    const levels = EXPEDITION_SCOPES.find((scope) => scope.label === expeditionScope)?.levels ?? [];
-    return filterWordsByLevels(topExamWords, levels);
-  }, [topExamWords, expeditionScope]);
+  const functionWordSet = useMemo(() => buildFunctionWordSet(examPriorities ?? []), [examPriorities]);
   const priorityByWord = useMemo(() => new Map((examPriorities ?? []).map((row) => [row.word, row.priorityTier])), [examPriorities]);
   const collectedWordSet = useMemo(() => new Set(collectedWordKeys ?? []), [collectedWordKeys]);
   const collectedWords = useMemo(() => {
@@ -98,18 +75,12 @@ export default function QuizScreen() {
   const fillPool = useMemo(() => {
     if (!allExamples || !scopedCollectedWords) return undefined;
     const scopedWordSet = new Set(scopedCollectedWords.map((word) => word.word));
-    return allExamples.filter((example) => scopedWordSet.has(example.word));
-  }, [allExamples, scopedCollectedWords]);
-  const expeditionFillPool = useMemo(() => {
-    if (!allExamples || !expeditionWords) return undefined;
-    const expeditionWordSet = new Set(expeditionWords.map((word) => word.word));
-    return allExamples.filter((example) => expeditionWordSet.has(example.word));
-  }, [allExamples, expeditionWords]);
+    return filterExactFillExamples(allExamples, scopedWordSet, functionWordSet);
+  }, [allExamples, functionWordSet, scopedCollectedWords]);
 
-  function startMcq(nextMode: QuizMode, kind: TrialKind = "taming") {
-    const sourcePool = kind === "expedition" ? expeditionWords : scopedCollectedWords;
-    if (!sourcePool) return;
-    const eligiblePool = nextMode === "image" ? imagePool ?? [] : sourcePool;
+  function startMcq(nextMode: QuizMode) {
+    if (!scopedCollectedWords || !allWords) return;
+    const eligiblePool = nextMode === "image" ? imagePool ?? [] : scopedCollectedWords;
     if (eligiblePool.length < 4) return;
     const subjects = shuffle(eligiblePool).slice(0, QUIZ_SIZE);
     setQuestions(subjects.map((target) => ({
@@ -117,19 +88,16 @@ export default function QuizScreen() {
       options: shuffle([
         target,
         ...(examDistractorRelations?.length
-          ? pickExamDistractors(target, eligiblePool, examDistractorRelations)
-          : pickDistractors(target, eligiblePool)),
+          ? pickExamDistractors(target, allWords, examDistractorRelations)
+          : pickDistractors(target, allWords)),
       ]),
     })));
-    setTrialKind(kind);
     setMode(nextMode); setIndex(0); setScore(0); setAnswered(null);
   }
 
-  function startFill(kind: TrialKind = "taming") {
-    const sourcePool = kind === "expedition" ? expeditionFillPool : fillPool;
-    if (!sourcePool?.length) return;
-    setFillQuestions(shuffle(sourcePool).slice(0, QUIZ_SIZE));
-    setTrialKind(kind);
+  function startFill() {
+    if (!fillPool?.length) return;
+    setFillQuestions(shuffle(fillPool).slice(0, QUIZ_SIZE));
     setMode("fill"); setIndex(0); setScore(0); setFillInput(""); setFillResult(null);
   }
 
@@ -149,31 +117,7 @@ export default function QuizScreen() {
           <button onClick={() => startMcq("w2m")} disabled={!scopedCollectedWords || scopedCollectedWords.length < 4}><b>01</b><div><h3>見名辨義</h3><p>{scopedCollectedWords && scopedCollectedWords.length < 4 ? "此範圍需收集至少 4 隻" : "看英文真名，選出正確釋義"}</p></div><span>→</span></button>
           <button onClick={() => startMcq("m2w")} disabled={!scopedCollectedWords || scopedCollectedWords.length < 4}><b>02</b><div><h3>循義喚名</h3><p>{scopedCollectedWords && scopedCollectedWords.length < 4 ? "此範圍需收集至少 4 隻" : "看中文釋義，找出真正名稱"}</p></div><span>→</span></button>
           <button onClick={() => startMcq("image")} disabled={!imagePool || imagePool.length < 4}><b>03</b><div><h3>看圖喚名</h3><p>{imagePool && imagePool.length < 4 ? `此範圍只有 ${imagePool.length} 隻有圖字獸` : "只看字獸圖卡，選出真正名稱"}</p></div><span>→</span></button>
-          <button onClick={() => startFill("taming")} disabled={!fillPool?.length}><b>04</b><div><h3>殘句補名</h3><p>{fillPool?.length ? `從 ${fillPool.length} 道例句中補回遺失真名` : "尚無可使用的例句"}</p></div><span>→</span></button>
-        </section>
-        <section className="trial-expedition" aria-labelledby="expedition-title">
-          <div className="trial-expedition-head">
-            <div><p>OPEN EXAM POOL</p><h2 id="expedition-title">S+A 獨立試煉場</h2><span>不必先收服；預設用 LV3＋LV4 拉開鑑別度。</span></div>
-            <strong><b>{expeditionWords?.length ?? "—"}</b> 字</strong>
-          </div>
-          <div className="trial-expedition-scopes" aria-label="試煉難度範圍">
-            {EXPEDITION_SCOPES.map((scope) => (
-              <button
-                key={scope.label}
-                className={expeditionScope === scope.label ? "active" : ""}
-                onClick={() => setExpeditionScope(scope.label)}
-              >
-                {scope.label}
-              </button>
-            ))}
-          </div>
-          <div className="trial-expedition-actions">
-            <button onClick={() => startMcq("w2m", "expedition")} disabled={!expeditionWords || expeditionWords.length < 4}><span>見名辨義</span><b>→</b></button>
-            <button onClick={() => startMcq("m2w", "expedition")} disabled={!expeditionWords || expeditionWords.length < 4}><span>循義喚名</span><b>→</b></button>
-            <button onClick={() => startFill("expedition")} disabled={!expeditionFillPool?.length}><span>例句補名</span><b>→</b></button>
-          </div>
-          <Link className="trial-expedition-archive" to="/browse">先看完整 S+A 字卡 <b>{topExamWords?.length ?? "—"}</b><span>→</span></Link>
-          <p className="trial-expedition-note">試煉只記錄應試強弱，不會把未收服字獸算成已收服，也不推進 SM-2。</p>
+          <button onClick={startFill} disabled={!fillPool?.length}><b>04</b><div><h3>殘句補名</h3><p>{fillPool?.length ? `從 ${fillPool.length} 道單一答案例句中補回遺失真名` : "尚無可使用的單一答案例句"}</p></div><span>→</span></button>
         </section>
       </div>
     );
@@ -183,12 +127,12 @@ export default function QuizScreen() {
     const perfect = score === total;
     return (
       <div className="realm-page trial-result-page">
-        <TrialHeader label={trialKind === "expedition" ? "遠征結果" : "馴化結果"} expedition={trialKind === "expedition"} />
+        <TrialHeader label="馴化結果" />
         <div className={`trial-result-mark ${perfect ? "perfect" : ""}`}><span>{score}</span><small>/ {total}</small></div>
-        <p className="trial-result-kicker">{trialKind === "expedition" ? (perfect ? "FLAWLESS EXPEDITION" : "EXPEDITION COMPLETE") : (perfect ? "FLAWLESS TAMING" : "TAMING COMPLETE")}</p>
+        <p className="trial-result-kicker">{perfect ? "FLAWLESS TAMING" : "TAMING COMPLETE"}</p>
         <h2>{perfect ? "真名無誤" : "判定完成"}</h2>
         <p>{perfect ? "所有字獸都被準確辨認。" : `本輪辨認 ${score} 枚，錯過 ${total - score} 枚。`}</p>
-        <div className="trial-result-actions"><button onClick={() => setMode(null)}>{trialKind === "expedition" ? "再選一場試煉" : "再馴化一次"}</button><Link to="/">返回萬字譜</Link></div>
+        <div className="trial-result-actions"><button onClick={() => setMode(null)}>再馴化一次</button><Link to="/">返回萬字譜</Link></div>
       </div>
     );
   }
@@ -201,11 +145,11 @@ export default function QuizScreen() {
       setFillResult(correct ? "correct" : "wrong");
       if (correct) setScore((current) => current + 1);
       const isNewSession = !sessionStarted.current; sessionStarted.current = true;
-      await recordQuizAnswer(question.word, correct, trialKind === "expedition" ? "expedition-fill" : "fill-blank", sessionId.current, isNewSession);
+      await recordQuizAnswer(question.word, correct, "fill-blank", sessionId.current, isNewSession);
     }
     return (
       <div className="realm-page active-trial-page">
-        <TrialHeader label={trialKind === "expedition" ? "S+A 例句補名" : "殘句補名"} progress={`${index + 1} / ${total}`} expedition={trialKind === "expedition"} />
+        <TrialHeader label="殘句補名" progress={`${index + 1} / ${total}`} />
         <div className="trial-progress"><i style={{ width: `${((index + 1) / total) * 100}%` }} /><span>目前辨認 {score}</span></div>
         <section className={`trial-question fill-question ${fillResult ?? ""}`}>
           <ExamTierBadge tier={priorityByWord.get(question.word)} compact />
@@ -234,9 +178,7 @@ export default function QuizScreen() {
     const correct = option.word === question.target.word;
     if (correct) setScore((current) => current + 1);
     const isNewSession = !sessionStarted.current; sessionStarted.current = true;
-    const reviewMode = trialKind === "expedition"
-      ? mode === "w2m" ? "expedition-w2m" : "expedition-m2w"
-      : mode === "w2m" ? "quiz-w2m" : mode === "image" ? "quiz-image" : "quiz-m2w";
+    const reviewMode = mode === "w2m" ? "quiz-w2m" : mode === "image" ? "quiz-image" : "quiz-m2w";
     await recordQuizAnswer(question.target.word, correct, reviewMode, sessionId.current, isNewSession);
   }
 
@@ -249,7 +191,7 @@ export default function QuizScreen() {
 
   return (
     <div className="realm-page active-trial-page">
-      <TrialHeader label={trialKind === "expedition" ? `S+A ${mode === "w2m" ? "見名辨義" : "循義喚名"}` : mode === "w2m" ? "見名辨義" : mode === "image" ? "看圖喚名" : "循義喚名"} progress={`${index + 1} / ${total}`} expedition={trialKind === "expedition"} />
+      <TrialHeader label={mode === "w2m" ? "見名辨義" : mode === "image" ? "看圖喚名" : "循義喚名"} progress={`${index + 1} / ${total}`} />
       <div className="trial-progress"><i style={{ width: `${((index + 1) / total) * 100}%` }} /><span>目前辨認 {score}</span></div>
       <section className={`trial-question choice-question ${sealed ? "is-sealed" : ""}`}>
         <ExamTierBadge tier={priorityByWord.get(question.target.word)} compact />

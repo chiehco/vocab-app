@@ -40,20 +40,6 @@
 .archive-tools .realm-levels button.active { color: #32382f; background: #d2b16d; border-color: #d2b16d; }
 .archive-result-head { display: flex; margin: 25px 0 10px; align-items: center; justify-content: space-between; color: #746d5c; font: 700 9px "Noto Serif TC", serif; }
 .archive-result-head b { color: #9c5044; font-size: 9px; letter-spacing: .08em; }
-.archive-index { margin: 0; padding: 0; list-style: none; border-top: 1px solid rgba(45,47,39,.2); }
-.archive-index li { border-bottom: 1px solid rgba(45,47,39,.14); }
-.archive-index a { display: grid; grid-template-columns: 38px minmax(90px, 1fr) minmax(75px, 1.2fr) 48px 15px; gap: 8px; min-height: 64px; align-items: center; color: inherit; text-decoration: none; transition: padding .18s ease, background .18s ease; }
-.archive-index a:hover { padding-inline: 8px; background: rgba(255,255,255,.18); }
-.archive-number { color: #a39a86; font-size: 7px; letter-spacing: .08em; }
-.archive-word { min-width: 0; }
-.archive-word strong, .archive-word small { display: block; }
-.archive-word strong { font: 900 16px "Noto Serif TC", serif; overflow-wrap: anywhere; }
-.archive-word small { margin-top: 3px; color: #8b826f; font-size: 7px; }
-.archive-word .word-trait-badges { margin-top: 5px; }
-.archive-meaning { min-width: 0; color: #696759; font: 600 10px "Noto Serif TC", serif; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.archive-level { display: flex; align-items: center; justify-content: center; flex-direction: column; color: #8f493f; font-size: 8px; font-weight: 800; }
-.archive-level small { margin-top: 2px; font-size: 6px; }
-.archive-index svg { width: 14px; fill: none; stroke: #7c7665; stroke-width: 1.7; }
 .archive-more { width: 100%; margin-top: 18px; padding: 14px; color: #52584c; border: 1px solid rgba(51,54,45,.23); background: rgba(255,255,255,.13); font: 800 10px "Noto Serif TC", serif; cursor: pointer; }
 .archive-more span { margin-left: 8px; color: var(--realm-red); }
 .archive-empty { padding: 90px 0; text-align: center; }
@@ -111,23 +97,6 @@
 .trial-empty a { color: #8a493f; font: 800 10px "Noto Serif TC", serif; text-decoration: none; white-space: nowrap; }.trial-empty a b { margin-left: 3px; }
 .trial-modes { margin-top: 13px; border-top: 1px solid rgba(45,47,39,.18); }
 .trial-modes button, .trial-modes a { display: grid; width: 100%; grid-template-columns: 37px 1fr 20px; gap: 13px; min-height: 83px; padding: 14px 3px; align-items: center; color: inherit; border: 0; border-bottom: 1px solid rgba(45,47,39,.15); background: transparent; text-align: left; text-decoration: none; cursor: pointer; }.trial-modes button:disabled { opacity: .4; cursor: not-allowed; }.trial-modes > * > b { color: #9d5145; font-size: 8px; letter-spacing: .1em; }.trial-modes h3 { margin: 0; font: 900 17px "Noto Serif TC", serif; }.trial-modes p { margin: 5px 0 0; color: #797261; font: 600 9px "Noto Serif TC", serif; }.trial-modes > * > span { color: #8b826e; font-size: 18px; transition: transform .18s ease; }.trial-modes > *:hover > span { transform: translateX(4px); }
-.trial-expedition { margin: 42px -20px -42px; padding: 34px 20px 38px; color: #eee5d0; background: #46513f; border-top: 4px double rgba(211,182,117,.44); animation: trial-expedition-in .45s ease both; }
-.trial-expedition-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
-.trial-expedition-head p { margin: 0; color: #d3b673; font-size: 8px; font-weight: 900; letter-spacing: .18em; }
-.trial-expedition-head h2 { margin: 8px 0 0; font: 900 23px "Noto Serif TC", serif; letter-spacing: .04em; }
-.trial-expedition-head span { display: block; margin-top: 9px; color: rgba(238,229,208,.6); font: 600 9px/1.6 "Noto Serif TC", serif; }
-.trial-expedition-head > strong { flex: none; color: rgba(238,229,208,.56); text-align: right; font-size: 8px; font-weight: 800; letter-spacing: .08em; }
-.trial-expedition-head > strong b { display: block; color: #d8b971; font: 900 31px/1 "Noto Serif TC", serif; }
-.trial-expedition-scopes { display: flex; gap: 6px; margin-top: 19px; overflow-x: auto; scrollbar-width: none; }
-.trial-expedition-scopes button { flex: none; min-height: 32px; padding: 0 11px; color: rgba(238,229,208,.55); border: 1px solid rgba(238,229,208,.18); background: transparent; font: 800 9px "Noto Serif TC", serif; cursor: pointer; transition: color .18s ease, border-color .18s ease, background .18s ease; }
-.trial-expedition-scopes button.active { color: #364034; border-color: #d8b971; background: #d8b971; }
-.trial-expedition-actions { display: grid; margin-top: 27px; border-top: 1px solid rgba(238,229,208,.18); }
-.trial-expedition-actions button { display: flex; min-height: 55px; padding: 0 3px; align-items: center; justify-content: space-between; color: #eee5d0; border: 0; border-bottom: 1px solid rgba(238,229,208,.15); background: transparent; font: 800 12px "Noto Serif TC", serif; cursor: pointer; transition: padding .18s ease, color .18s ease; }
-.trial-expedition-actions button:hover { padding-inline: 9px; color: #ddbf78; }.trial-expedition-actions button:disabled { opacity: .35; cursor: not-allowed; }
-.trial-expedition-actions button b { color: #d8b971; font-size: 17px; }
-.trial-expedition-archive { display: grid; grid-template-columns: 1fr auto 18px; gap: 7px; min-height: 58px; margin-top: 18px; padding: 0 14px; align-items: center; color: #353d33; background: #d8b971; text-decoration: none; font: 900 11px "Noto Serif TC", serif; transition: transform .18s ease; }
-.trial-expedition-archive:hover { transform: translateY(-2px); }.trial-expedition-archive b { font-size: 10px; }.trial-expedition-archive span { font-size: 17px; }
-.trial-expedition-note { margin: 14px 2px 0; color: rgba(238,229,208,.45); font: 600 8px/1.65 "Noto Serif TC", serif; }
 .trial-progress { position: relative; height: 31px; margin-top: 18px; border-top: 1px solid rgba(44,47,39,.16); }.trial-progress i { position: absolute; top: -1px; left: 0; height: 2px; background: var(--realm-red); transition: width .3s ease; }.trial-progress span { position: absolute; top: 7px; right: 0; color: #857d69; font-size: 8px; }
 .trial-question { position: relative; min-height: 265px; padding: 32px 24px; background: rgba(246,238,217,.63); border: 1px solid rgba(49,51,42,.25); box-shadow: 0 12px 26px rgba(53,45,30,.1), inset 0 0 0 6px rgba(255,255,255,.16); animation: trial-question-in .3s ease both; }.trial-question::after { content: ""; position: absolute; inset: 8px; border: 1px solid rgba(49,51,42,.1); pointer-events: none; }.trial-question-label { position: relative; z-index: 2; margin: 0; color: #9c5145; font-size: 7px; font-weight: 800; letter-spacing: .18em; }
 .choice-question { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }.choice-question h2 { position: relative; z-index: 2; margin: 17px 0 0; font: 900 40px/1.15 "Noto Serif TC", serif; }.choice-question h2.meaning-prompt { font-size: 25px; }.trial-prompt-sub { position: relative; z-index: 2; margin: 10px 0 0; color: #827a68; font: 600 10px "Noto Serif TC", serif; }.trial-speaker { display: inline-grid !important; width: 34px; height: 34px; margin-left: 7px; place-items: center; border: 1px solid rgba(57,62,51,.24) !important; border-radius: 50% !important; background: transparent !important; vertical-align: middle; font-size: 14px !important; }
@@ -163,12 +132,10 @@
 @keyframes trial-binding-close { 0% { opacity: 0; transform: rotate(-42deg) scale(1.75); } 48% { opacity: 1; } 100% { opacity: 1; transform: rotate(0) scale(1); } }
 @keyframes trial-seal-stamp { 0% { opacity: 0; transform: rotate(-18deg) scale(2.4); } 72% { opacity: 1; transform: rotate(-3deg) scale(.9); } 100% { opacity: 1; transform: rotate(-5deg) scale(1); } }
 @keyframes trial-binding-caption { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes trial-expedition-in { from { opacity: 0; transform: translateY(15px); } }
 @media (max-width: 390px) {
   .realm-page { padding-inline: 15px; }
   .archive-tools, .trial-intro, .streak-monument { margin-inline: -15px; }
   .trial-levels { margin-inline: -15px; padding-inline: 15px; }
-  .archive-index a { grid-template-columns: 32px minmax(82px, 1fr) minmax(65px, 1fr) 46px 12px; gap: 5px; }
   .streak-monument { grid-template-columns: 145px 1fr; padding-inline: 17px; }
   .streak-orbit { width: 130px; height: 130px; }
 }
