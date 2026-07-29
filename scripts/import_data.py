@@ -366,11 +366,11 @@ def parse_notes(ws):
     return out
 
 
-def parse_hooks(ws, mode="qa"):
+def parse_hooks(ws):
     """鉤子表：義項表模式（第 2 列即資料、說明列在底部）。
 
-    只跳過第一格等於 HOOK_GUIDE_MARKER 的說明列。public/private 模式只驗證
-    該模式會輸出的資料；qa 模式驗證全部資料（規格 v3 §1）。
+    只跳過第一格等於 HOOK_GUIDE_MARKER 的說明列；其他格式錯誤一律報錯，
+    不得默默當說明列跳過（規格 v3 §1）。
     """
     rows = ws.iter_rows(min_row=1, values_only=True)
     next(rows, None)  # header
@@ -384,12 +384,6 @@ def parse_hooks(ws, mode="qa"):
         if all(v is None for v in values):
             continue
         if hook_id == HOOK_GUIDE_MARKER:
-            continue
-        if mode == "public" and not (
-            distribution_scope == "public_ok" and status == "approved"
-        ):
-            continue
-        if mode == "private" and status != "approved":
             continue
         if not isinstance(hook_id, str) or not re.fullmatch(r"W\d{6}-H\d+", hook_id):
             raise SystemExit(f"錯誤：鉤子表第 {row_number} 列的 hook_id 無效：{hook_id!r}")
@@ -481,7 +475,7 @@ def main():
     priority_sheet = OPTIONAL_SHEETS["exam_priority"]
     exam_priority = parse_exam_priority(wb[priority_sheet]) if priority_sheet in wb.sheetnames else []
     hooks_sheet = OPTIONAL_SHEETS["hooks"]
-    hooks = parse_hooks(wb[hooks_sheet], args.mode) if hooks_sheet in wb.sheetnames else []
+    hooks = parse_hooks(wb[hooks_sheet]) if hooks_sheet in wb.sheetnames else []
 
     word_set = {w["word"] for w in words}
     word_ids = {w["wordId"]: w["word"] for w in words}

@@ -151,7 +151,7 @@ export default function WordDetailScreen() {
             <div><p>{displaySense.pos} · FIELD DOSSIER</p><h1>{word.word}</h1></div>
             <SpeakerButton text={word.word} className="dossier-speaker" />
           </header>
-          {priority && (
+          {priority && (priority.xtYears > 0 || priority.xtAnswerCount > 0) && (
             <div className="back-priority-panel" aria-label="考頻資料">
               <div className="back-priority-stats">
                 <span><b>{priority.xtYears}</b>學測年數</span>

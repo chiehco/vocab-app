@@ -4,7 +4,6 @@ import {
   buildFunctionWordSet,
   buildTopExamWordSet,
   filterExactFillExamples,
-  filterTopExamWords,
   sortExamWordsByPriority,
 } from "./examScope";
 
@@ -96,13 +95,6 @@ describe("S+A exam scope", () => {
     );
 
     expect(result.map((example) => example.word)).toEqual(["serve"]);
-  });
-
-  it("filters the word archive without changing collection state", () => {
-    const words = [word("serve"), word("along"), word("material")];
-    const result = filterTopExamWords(words, new Set(["serve", "along"]));
-
-    expect(result.map((row) => row.word)).toEqual(["serve", "along"]);
   });
 
   it("orders the open card pool by exam priority without leaking lower tiers", () => {

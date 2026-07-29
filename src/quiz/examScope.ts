@@ -28,10 +28,6 @@ export function filterExactFillExamples(
   );
 }
 
-export function filterTopExamWords(words: WordRecord[], topExamWordSet: Set<string>): WordRecord[] {
-  return words.filter((word) => topExamWordSet.has(word.word));
-}
-
 export function sortExamWordsByPriority(
   words: WordRecord[],
   priorities: ExamPriorityRecord[],
