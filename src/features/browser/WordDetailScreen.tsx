@@ -11,7 +11,7 @@ import { getExamStarText } from "../wordbeast/examTier";
 import WordTraitBadges from "../wordbeast/WordTraitBadges";
 import ResilientBeastImage from "../wordbeast/ResilientBeastImage";
 import { buildSenseCountByWord } from "../wordbeast/wordTraits";
-import { MORPHEME_TYPE_LABEL, NOTE_TYPE_LABEL, RELATION_TYPE_LABEL, STATE_LABEL } from "./wordLabels";
+import { MORPHEME_TYPE_LABEL, NOTE_TYPE_LABEL, RELATION_TYPE_LABEL, REVERSE_RELATION_LABEL, STATE_LABEL } from "./wordLabels";
 import { getWordDisplaySense } from "./wordDisplay";
 import { buildRootFamilies, normalizeMorphemeKey, pickFamilyMorphemes } from "./rootFamily";
 import "./word-detail.css";
@@ -49,10 +49,18 @@ export default function WordDetailScreen() {
     return [
       ...forward
         .filter((relation) => relation.relationType !== "exam_distractor")
-        .map((relation) => ({ ...relation, targetWord: relation.relatedWord })),
+        .map((relation) => ({ ...relation, targetWord: relation.relatedWord, reverseLabel: undefined as string | undefined })),
+      // one_way 也要反向顯示，否則 teacher 頁看不到 teach、coin 頁看不到 money。
+      // 標籤依類型決定，沒有標籤的類型（如 exam_distractor）不反向顯示。
       ...reverse
-        .filter((relation) => relation.direction === "two_way" && relation.relationType !== "exam_distractor")
-        .map((relation) => ({ ...relation, targetWord: relation.word })),
+        .filter((relation) => relation.direction === "two_way"
+          ? relation.relationType !== "exam_distractor"
+          : REVERSE_RELATION_LABEL[relation.relationType || ""] !== undefined)
+        .map((relation) => ({
+          ...relation,
+          targetWord: relation.word,
+          reverseLabel: relation.direction === "one_way" ? REVERSE_RELATION_LABEL[relation.relationType || ""] : undefined,
+        })),
     ];
   }, [word?.word]);
   const examDistractors = useLiveQuery(
@@ -182,7 +190,7 @@ export default function WordDetailScreen() {
               <div className="back-link-list">
                 {kinRelations.slice(0, 6).map((relation) => {
                   const related = relatedWords?.[relation.targetWord];
-                  return <div key={`${relation.relationId}:${relation.targetWord}`}><b>{related ? <Link to={`/word/${related.wordId}`}>{relation.targetWord}</Link> : relation.targetWord}</b><span>{related?.meaningZh || relation.note || "關聯義待補"}</span></div>;
+                  return <div key={`${relation.relationId}:${relation.targetWord}`}><b>{related ? <Link to={`/word/${related.wordId}`}>{relation.targetWord}</Link> : relation.targetWord}{relation.reverseLabel && <small>{relation.reverseLabel}</small>}</b><span>{related?.meaningZh || relation.note || "關聯義待補"}</span></div>;
                 })}
               </div>
             )}
@@ -251,7 +259,7 @@ export default function WordDetailScreen() {
           <div className="dossier-section-head"><div><p>KIN TRACES</p><h2>同族痕跡</h2></div><span>{kinRelations.length} 枚</span></div>
           <div className="dossier-relations">{kinRelations.map((relation) => {
             const related = relatedWords?.[relation.targetWord];
-            return <div key={`${relation.relationId}:${relation.targetWord}`}><span>{related ? <Link to={`/word/${related.wordId}`}><strong>{relation.targetWord}</strong></Link> : <strong>{relation.targetWord}</strong>}<small>{RELATION_TYPE_LABEL[relation.relationType || ""] || relation.relationType || "關聯詞"}</small></span><p><b>{related?.meaningZh || "中文釋義待補"}</b>{relation.note && <span>{relation.note}</span>}</p></div>;
+            return <div key={`${relation.relationId}:${relation.targetWord}`}><span>{related ? <Link to={`/word/${related.wordId}`}><strong>{relation.targetWord}</strong></Link> : <strong>{relation.targetWord}</strong>}<small>{relation.reverseLabel || RELATION_TYPE_LABEL[relation.relationType || ""] || relation.relationType || "關聯詞"}</small></span><p><b>{related?.meaningZh || "中文釋義待補"}</b>{relation.note && <span>{relation.note}</span>}</p></div>;
           })}</div>
         </section>
       )}

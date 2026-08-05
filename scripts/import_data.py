@@ -22,6 +22,17 @@ VALID_RELATION_TYPES = {"synonym", "antonym", "derivative", "word_form", "confus
 VALID_RELATION_DIRECTIONS = {"one_way", "two_way"}
 VALID_PRIORITY_TIERS = {"S", "A", "B", "C", "Z"}
 VALID_SENSE_STATUSES = {"draft", "reviewed", "approved", "needs_check"}
+VALID_RELATION_STATUSES = {
+    "draft", "reviewed", "approved", "machine_verified",
+    "needs_rewrite", "needs_check", "inactive",
+}
+# 關聯詞的發布門檻（提案 v7 §1-3）。machine_verified＝自動一致性檢查通過、
+# 尚未人工確認，不代表內容正確，故不得進入 public。升 approved 一律靠人工。
+RELATION_STATUS_BY_MODE = {
+    "public": {"approved"},
+    "private": {"approved", "reviewed", "machine_verified", "draft"},
+    "qa": VALID_RELATION_STATUSES - {"inactive"},
+}
 VALID_HOOK_TYPES = {"phonetic", "association", "etymology"}
 VALID_HOOK_SOURCE_TYPES = {"original", "adapted", "book_ref", "legacy"}
 VALID_HOOK_SCOPES = {"private_only", "public_ok"}
@@ -39,7 +50,7 @@ SHEETS = {
 
 # 選配工作表：Excel 裡還沒有也不會報錯，輸出空陣列
 OPTIONAL_SHEETS = {
-    "notes": "input_notes_補充說明",
+    "notes": "input_note_補充說明",
     "exam_priority": "exam_priority_學測優先",
     "hooks": "input_hooks_鉤子表",
 }
@@ -91,7 +102,9 @@ def read_rows(ws, validate_instruction=True):
     # shape ever changes this assert fails loudly instead of silently dropping a word.
     if validate_instruction and sample is not None and clean(sample[0]) is not None:
         first = str(sample[0])
-        if not ("可空" in first or "填" in first or "說明" in first):
+        # 各表的說明列用詞不一致：關聯詞寫「可空；程式自動產生」，
+        # 補充說明寫「可以先留白，匯入時自動產生」，故一併認「留白」。
+        if not ("可空" in first or "留白" in first or "填" in first or "說明" in first):
             raise SystemExit(
                 f"錯誤：工作表「{ws.title}」第 2 列看起來是真實資料（{first!r}），"
                 "與預期的填表說明列不符。請檢查模板結構或調整 import_data.py。"
@@ -227,9 +240,28 @@ def parse_senses(ws):
     return out
 
 
-def parse_relations(ws):
+def parse_relations(ws, word_ids_by_word=None):
+    """關聯詞表。
+
+    判重鍵（提案 v7 §五）＝（起點, 終點, relation_type, direction），端點優先用
+    word_id，解析不到才退回 casefold 字串。two_way 的兩端先排序成 canonical 形式，
+    使 A→B 與 B→A 產生同一把鍵；one_way 保持原順序，反向配對合法（例如
+    remote→vacant 與 vacant→remote 分屬不同考題的誘答）。
+    跨 relation_type 的同端點不判重、只警告——import→export 同時是 antonym 與
+    root_family，兩筆都對。
+    """
+    lookup = {}
+    for w, wid in (word_ids_by_word or {}).items():
+        lookup[w.casefold()] = wid
+
+    def endpoint(word):
+        # 只統一大小寫／空白（read_rows 已 strip）；不拆斜線、不展開括號，
+        # 因為 movie/film 在主表是單一詞條而非兩個端點。
+        return lookup.get(word.casefold(), word.casefold())
+
     out = []
     seen = {}
+    endpoints_by_pair = {}
     for row_number, r in enumerate(read_rows(ws), start=3):
         (rel_id, word, related, rel_type, direction, note, strength, status) = (list(r) + [None] * 8)[:8]
         if word is None or related is None:
@@ -242,15 +274,31 @@ def parse_relations(ws):
             raise SystemExit(f"錯誤：關聯詞第 {row_number} 列的 direction「{direction}」不合法。")
         if not isinstance(strength, (int, float)) or not 1 <= strength <= 5:
             raise SystemExit(f"錯誤：關聯詞第 {row_number} 列的 strength 必須是 1–5。")
-        key = (word.casefold(), related.casefold(), rel_type)
+        if status is not None and status not in VALID_RELATION_STATUSES:
+            raise SystemExit(f"錯誤：關聯詞第 {row_number} 列的 status「{status}」不合法。")
+
+        start, end = endpoint(word), endpoint(related)
+        if direction == "two_way":
+            start, end = min(start, end), max(start, end)
+        key = (start, end, rel_type, direction)
         if key in seen:
             print(
                 f"警告：關聯詞第 {row_number} 列與第 {seen[key]} 列重複："
-                f"{word} → {related}（{rel_type}），已保留第一筆。",
+                f"{word} → {related}（{rel_type}／{direction}），已保留第一筆。",
                 file=sys.stderr,
             )
             continue
         seen[key] = row_number
+
+        pair = (min(start, end), max(start, end))
+        prev = endpoints_by_pair.get(pair)
+        if prev and prev[1] != rel_type:
+            print(
+                f"提醒：關聯詞第 {row_number} 列與第 {prev[0]} 列是同一組端點但類型不同："
+                f"{word} ↔ {related}（{prev[1]} vs {rel_type}）。兩者可能都成立，未判重。",
+                file=sys.stderr,
+            )
+        endpoints_by_pair.setdefault(pair, (row_number, rel_type))
         out.append({
             "relationId": rel_id or gen_id("relations", word, related, rel_type),
             "word": word,
@@ -467,7 +515,10 @@ def main():
     words = parse_words(wb[SHEETS["words"]])
     senses = parse_senses(wb[SHEETS["senses"]])
     examples = parse_examples(wb[SHEETS["examples"]])
-    relations = parse_relations(wb[SHEETS["relations"]])
+    relations = parse_relations(
+        wb[SHEETS["relations"]],
+        {w["word"]: w["wordId"] for w in words},
+    )
     morphemes = parse_morphemes(wb[SHEETS["morphemes"]])
     media = parse_media(wb[SHEETS["media"]])
     notes_sheet = OPTIONAL_SHEETS["notes"]
@@ -553,7 +604,10 @@ def main():
     write_json(out_dir / "words.json", words)
     write_json(out_dir / "senses.json", senses)
     write_json(out_dir / "examples.json", examples)
-    write_json(out_dir / "relations.json", relations)
+    # 依建置模式過濾關聯詞（提案 v7 §1-3）：public 只出 approved。
+    allowed_relation_statuses = RELATION_STATUS_BY_MODE[args.mode]
+    relations_out = [r for r in relations if r["status"] in allowed_relation_statuses]
+    write_json(out_dir / "relations.json", relations_out)
     write_json(out_dir / "morphemes.json", morphemes)
     write_json(out_dir / "media.json", media)
     write_json(out_dir / "notes.json", notes)
@@ -583,7 +637,7 @@ def main():
             "words": len(words),
             "senses": len(senses),
             "examples": len(examples),
-            "relations": len(relations),
+            "relations": len(relations_out),
             "morphemes": len(morphemes),
             "media": len(media),
             "notes": len(notes),
