@@ -1,0 +1,354 @@
+/*
+ * Mobile reading floor
+ *
+ * Chinese learning copy carries meaning, so it should not use the tiny type
+ * reserved for decorative English eyebrows, serial numbers, and stamps.
+ */
+@media (max-width: 640px) {
+  .app-bottom-nav-inner {
+    height: 68px;
+  }
+
+  .app-nav-item {
+    gap: 4px;
+    font-size: 11px;
+    line-height: 1.2;
+  }
+
+  /* Home */
+  .encounter-kicker span,
+  .daily-checkin p,
+  .daily-checkin time,
+  .entrance-test-entry div > span,
+  .arena-home-entry div > span,
+  .arena-home-entry > b,
+  .section-heading > span,
+  .section-heading > a,
+  .rite-metrics span,
+  .rite-actions a,
+  .beast-home-motto {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .encounter-portal-copy > p {
+    max-width: 225px;
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .encounter-primary-action {
+    min-height: 52px;
+    font-size: 15px;
+  }
+
+  .rite-streak small {
+    font-size: 11px;
+  }
+
+  /* Shared archive, progress, quiz, and placement pages */
+  .realm-count,
+  .realm-section-head > span,
+  .realm-motto,
+  .archive-result-head,
+  .archive-result-head b,
+  .realm-loading,
+  .trace-legend,
+  .trial-scope > span,
+  .trial-progress span,
+  .trial-question-label,
+  .trial-image-clue > span,
+  .trial-binding > p span,
+  .fill-question label span,
+  .trial-result-kicker,
+  .placement-intro > p,
+  .placement-level-track span,
+  .placement-bars > div > span,
+  .placement-bars b {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .trial-intro p,
+  .wordbeast-eyebrow {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .realm-levels button {
+    min-height: 36px;
+    font-size: 13px;
+  }
+
+  .archive-search input {
+    font-size: 16px;
+  }
+
+  .archive-more,
+  .archive-empty p,
+  .trial-empty p,
+  .trial-empty a,
+  .trial-modes p,
+  .trial-prompt-sub,
+  .trial-image-clue small,
+  .trial-next,
+  .trial-translation,
+  .trial-result-page > p:not(.trial-result-kicker),
+  .trial-result-actions button,
+  .trial-result-actions a,
+  .trial-checkin-confirmed small,
+  .placement-intro > span,
+  .placement-start,
+  .placement-back,
+  .placement-verdict > p,
+  .placement-result-actions button {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .archive-atlas a {
+    min-height: 190px;
+  }
+
+  .atlas-gloss {
+    min-height: 38px;
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  .atlas-gloss b,
+  .atlas-meta small,
+  .atlas-meta i,
+  .word-trait-badges.compact span {
+    font-size: 9px;
+  }
+
+  .word-trait-badges span {
+    min-height: 26px;
+    font-size: 11px;
+    line-height: 1.25;
+  }
+
+  .streak-monument p,
+  .streak-monument > div > span,
+  .progress-ledger dt,
+  .progress-ledger dd small,
+  .placement-scale b,
+  .placement-scale span,
+  .placement-rules span,
+  .placement-rank small,
+  .placement-rank b,
+  .placement-apply p,
+  .placement-apply button {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .trial-empty p,
+  .trial-modes p,
+  .trial-result-page > p:not(.trial-result-kicker),
+  .placement-intro > span,
+  .placement-verdict > p {
+    font-size: 15px;
+  }
+
+  .trial-image-clue small {
+    font-size: 13px;
+  }
+
+  .trial-options button {
+    min-height: 60px;
+  }
+
+  .trial-options button b {
+    font-size: 11px;
+  }
+
+  .trial-options button span,
+  .trial-missed a span {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .trial-binding > p b,
+  .trial-verdict b,
+  .trial-verdict span {
+    font-size: 13px;
+  }
+
+  /* Word page: keep labels compact, but never microscopic. */
+  .word-dossier-nav a,
+  .word-dossier-nav span,
+  .word-dossier-nav b,
+  .dossier-card-controls button {
+    font-size: 14px;
+  }
+
+  .dossier-status span,
+  .dossier-section-head p,
+  .dossier-usage > span,
+  .dossier-note-list article > div span,
+  .dossier-relations small,
+  .dossier-morphemes span,
+  .dossier-root-family > div > span small,
+  .dossier-footer {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .dossier-section-head > span,
+  .dossier-examples .example-sense,
+  .dossier-senses p span,
+  .dossier-senses small,
+  .dossier-senses em,
+  .dossier-senses i {
+    font-size: 14px;
+  }
+
+  .study-illustration figcaption > span {
+    font-size: 14px;
+  }
+
+  .study-illustration figcaption p {
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  /* Review */
+  .seal-review-header a,
+  .seal-review-header b,
+  .seal-card-meta,
+  .seal-card-visual > small,
+  .answer-label,
+  .answer-senses span,
+  .answer-senses small,
+  .answer-note span,
+  .seal-reveal i,
+  .seal-state-eyebrow {
+    font-size: 11px;
+    line-height: 1.45;
+  }
+
+  .seal-card-identity p,
+  .answer-senses b,
+  .answer-en,
+  .answer-note p,
+  .seal-state-page > p,
+  .seal-state-action {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .seal-reveal {
+    min-height: 58px;
+    height: auto;
+    font-size: 16px;
+  }
+
+  .seal-levels button {
+    min-height: 36px;
+    font-size: 13px;
+  }
+
+  /* LV1 image review */
+  .lv1-pilot-page {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .pilot-header a,
+  .pilot-header > span,
+  .pilot-header > b,
+  .pilot-progress span,
+  .pilot-blind-copy p,
+  .pilot-reveal-copy > div,
+  .pilot-rating > p,
+  .pilot-finished > p:not(.pilot-finish-copy),
+  .pilot-score span {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .pilot-blind-copy span,
+  .pilot-reveal-copy p,
+  .pilot-rating button span,
+  .pilot-finish-copy,
+  .pilot-finish-actions button {
+    font-size: 14px !important;
+    line-height: 1.6;
+  }
+
+  .pilot-rating button small {
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  /* Encounter and arena */
+  .lv1-pilot-entry,
+  .naming-instruction,
+  .name-choices button small,
+  .encounter-feedback,
+  .arena-hub-header a,
+  .spell-arena-nav a,
+  .arena-hub-header b,
+  .spell-arena-nav b,
+  .arena-hub-hero p,
+  .arena-game-entry p,
+  .spell-eyebrow,
+  .spell-difficulty > p,
+  .spell-record > span,
+  .spell-record small,
+  .clue-copy p,
+  .clue-copy span,
+  .spell-feedback {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .arena-hub-hero div > span,
+  .arena-game-entry div > span,
+  .arena-game-entry > b,
+  .arena-hub-note,
+  .spell-setup-copy,
+  .spell-difficulty button small,
+  .spell-actions button,
+  .spell-result-main > span,
+  .spell-result-main button,
+  .spell-result-main > a {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .name-choices button small {
+    font-size: 13px;
+  }
+
+  /* Compact exam badges stay compact, but their Chinese label remains legible. */
+  .exam-tier-badge > span,
+  .exam-tier-badge small {
+    font-size: 9px;
+  }
+
+  .exam-tier-badge.compact > span {
+    font-size: 9px;
+  }
+
+  .exam-tier-badge.compact b {
+    font-size: 8px;
+  }
+
+  .exam-tier-badge.compact small {
+    font-size: 8px;
+  }
+
+  /* Tailwind utility copy in settings. */
+  .settings-page .text-xs {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .settings-page .text-sm {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+}

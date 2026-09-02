@@ -60,7 +60,7 @@ export default function SettingsScreen() {
   }
 
   return (
-    <div className="p-4">
+    <div className="settings-page p-4">
       <Link to="/" className="text-sm text-blue-600">
         ← 回首頁
       </Link>
