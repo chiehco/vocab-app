@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { HashRouter, NavLink, Route, Routes, useLocation } from "react-router-dom";
+import { HashRouter, Navigate, NavLink, Route, Routes, useLocation } from "react-router-dom";
 import { seedContentIfNeeded } from "./db/seed";
 import DashboardScreen from "./features/dashboard/DashboardScreen";
 import ReviewScreen from "./features/review/ReviewScreen";
@@ -11,7 +11,6 @@ import WordDetailScreen from "./features/browser/WordDetailScreen";
 import ProgressScreen from "./features/progress/ProgressScreen";
 import SettingsScreen from "./features/settings/SettingsScreen";
 import WordBeastPrototype from "./features/wordbeast/WordBeastPrototype";
-import PriestTrialScreen from "./features/wordbeast/PriestTrialScreen";
 import Lv1PilotScreen from "./features/wordbeast/Lv1PilotScreen";
 import ArenaScreen from "./features/arena/ArenaScreen";
 import SpellBarrageScreen from "./features/arena/SpellBarrageScreen";
@@ -44,7 +43,6 @@ function AppLayout() {
           <Route path="/review" element={<ReviewScreen />} />
           <Route path="/slash" element={<SlashScreen />} />
           <Route path="/wordbeast" element={<WordBeastPrototype />} />
-          <Route path="/wordbeast/priest" element={<PriestTrialScreen />} />
           <Route path="/wordbeast/lv1" element={<Lv1PilotScreen />} />
           <Route path="/quiz" element={<QuizScreen />} />
           <Route path="/placement" element={<PlacementScreen />} />
@@ -54,6 +52,7 @@ function AppLayout() {
           <Route path="/settings" element={<SettingsScreen />} />
           <Route path="/arena" element={<ArenaScreen />} />
           <Route path="/arena/spell-barrage" element={<SpellBarrageScreen />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
       {!immersive && (

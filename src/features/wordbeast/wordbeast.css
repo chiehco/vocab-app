@@ -50,41 +50,10 @@
   color: #f6e6c1;
 }
 
-.priest-trial-entry {
-  position: fixed;
-  z-index: 100;
-  top: max(1rem, env(safe-area-inset-top));
-  right: 1rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  min-height: 2.5rem;
-  padding: 0.45rem 0.55rem 0.45rem 0.85rem;
-  border: 1px solid rgba(235, 211, 164, 0.35);
-  border-radius: 999px;
-  color: #f6e6c1;
-  background: rgba(23, 16, 11, 0.58);
-  backdrop-filter: blur(8px);
-  text-decoration: none;
-  font: 700 0.7rem "Noto Serif TC", serif;
-  letter-spacing: 0.08em;
-}
-
-.priest-trial-entry span {
-  display: grid;
-  width: 1.6rem;
-  height: 1.6rem;
-  place-items: center;
-  border-radius: 50%;
-  color: #24170e;
-  background: #d2af68;
-  font: 800 0.62rem "DM Sans", sans-serif;
-}
-
 .lv1-pilot-entry {
   position: fixed;
   z-index: 100;
-  top: calc(max(1rem, env(safe-area-inset-top)) + 3rem);
+  top: max(1rem, env(safe-area-inset-top));
   right: 1rem;
   display: inline-flex;
   align-items: center;

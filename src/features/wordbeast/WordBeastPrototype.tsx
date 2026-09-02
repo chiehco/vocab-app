@@ -157,7 +157,7 @@ export default function WordBeastPrototype() {
 
   return current && (
     <div className={`wordbeast-page encounter-page ${phase}`}>
-      <Link to="/" className="wordbeast-back light">×</Link><Link to="/wordbeast/priest" className="priest-trial-entry">祭司試煉冊 <span>30</span></Link><Link to="/wordbeast/lv1" className="lv1-pilot-entry">LV1 圖卡盲測 <span>30</span></Link><div className="mist mist-one" /><div className="mist mist-two" />
+      <Link to="/" className="wordbeast-back light">×</Link><Link to="/wordbeast/lv1" className="lv1-pilot-entry">LV1 圖卡盲測 <span>30</span></Link><div className="mist mist-one" /><div className="mist mist-two" />
       <header className="encounter-header"><p className="wordbeast-eyebrow">S＋A・今日收服　{encounterIndex + 1}/{beasts.length}</p><h1>{phase === "binding" ? "真名顯現" : "字獸來襲"}</h1><div className="encounter-rule" /></header>
       {saveError && <p className="encounter-feedback visible" role="alert">{saveError}</p>}
       <main className="encounter-main"><div className="beast-stage"><ExamTierBadge tier={current.tier} /><div className="ink-halo" /><div key={current.record.word} className="beast-visual"><ResilientBeastImage src={current.image} word={current.record.word} alt={`${current.record.word} 字獸`} /></div>{phase === "binding" && <><div className="binding-ring" /><div className="true-name">{current.record.word.toUpperCase()}</div><div className="capture-seal">錄</div></>}</div>

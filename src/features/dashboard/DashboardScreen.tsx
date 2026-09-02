@@ -115,12 +115,6 @@ export default function DashboardScreen() {
           </div>
         </section>
 
-        <Link to="/wordbeast/priest" className="archive-entry">
-          <div className="archive-mark"><span>30</span><small>枚</small></div>
-          <div><p>PRIEST'S SELECTION</p><h2>祭司試煉冊</h2><span>查看三十枚高難度記憶符印</span></div>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" /></svg>
-        </Link>
-
         <section className="practice-trace" aria-labelledby="practice-title">
           <div className="section-heading">
             <div><p>SEAL RECORD</p><h2 id="practice-title">修行足跡</h2></div>
