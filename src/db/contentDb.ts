@@ -3,6 +3,7 @@ import type {
   ContentMetaRecord,
   ExamPriorityRecord,
   ExampleRecord,
+  MediaRecord,
   MorphemeRecord,
   NoteRecord,
   RelationRecord,
@@ -20,6 +21,7 @@ export class VocabContentDB extends Dexie {
   notes!: Table<NoteRecord, string>;
   meta!: Table<ContentMetaRecord, string>;
   examPriorities!: Table<ExamPriorityRecord, string>;
+  media!: Table<MediaRecord, string>;
 
   constructor() {
     super("VocabContentDB");
@@ -42,6 +44,10 @@ export class VocabContentDB extends Dexie {
     // v5：字族網要由字根反查同族字，morpheme 需要索引。
     this.version(5).stores({
       morphemes: "rowId, word, morpheme, morphemeType",
+    });
+    // v6：看圖辨字需要圖片所屬中文情境與指定提示。
+    this.version(6).stores({
+      media: "assetId, targetWord, targetType, status, imageType",
     });
   }
 }

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
+import { getKnownWords } from "../../db/progressIdentity";
 import { contentDb } from "../../db/contentDb";
 import { getSetting, progressDb } from "../../db/progressDb";
 import type { WordRecord } from "../../db/types";
@@ -32,7 +33,7 @@ export default function SpellBarrageScreen() {
   const poolData = useLiveQuery(async () => {
     const [words, knownKeys, levels] = await Promise.all([
       contentDb.words.toArray(),
-      progressDb.cardStates.toCollection().primaryKeys(),
+      getKnownWords(),
       getSetting<string[]>("learningLevels"),
     ]);
     return { words, known: new Set(knownKeys as string[]), levels };

@@ -1,10 +1,29 @@
 import { describe, expect, it } from "vitest";
+import { A_GRADE_ASSET_IDS } from "./aGradeAssetIds";
 import { S_GRADE_ASSET_IDS } from "./sGradeAssetIds";
 import { getWordBeastAsset, hasWordBeastAsset } from "./wordBeastAssets";
 
 describe("word beast assets", () => {
   it("tracks the complete audited S-grade asset set", () => {
-    expect(S_GRADE_ASSET_IDS.size).toBe(179);
+    expect(S_GRADE_ASSET_IDS.size).toBe(185);
+  });
+
+  it("includes the six generated S-tier function-word scenes", () => {
+    for (const wordId of ["W000323", "W000606", "W000897", "W000134", "W000615", "W000888"]) {
+      expect(getWordBeastAsset(wordId, "function-word")).toMatch(
+        new RegExp(`wordbeast/s/${wordId}\\.webp\\?v=`),
+      );
+    }
+  });
+
+  it("tracks the locally approved A-tier illustration batches", () => {
+    expect(A_GRADE_ASSET_IDS.size).toBe(793);
+    expect(getWordBeastAsset("W000851", "take")).toMatch(
+      /wordbeast\/a\/W000851\.webp\?v=/,
+    );
+    expect(getWordBeastAsset("W000343", "get")).toMatch(
+      /wordbeast\/a\/W000343\.webp\?v=/,
+    );
   });
 
   it("prefers an S-grade semantic image over the overlapping LV1 range", () => {
@@ -17,8 +36,8 @@ describe("word beast assets", () => {
     expect(getWordBeastAsset("W999999", "volcano")).toMatch(
       /wordbeast\/priest-volcano\.png\?v=/,
     );
-    expect(getWordBeastAsset("W000250", "unknown")).toMatch(
-      /wordbeast\/lv1\/W000250\.png\?v=/,
+    expect(getWordBeastAsset("W000251", "unknown")).toMatch(
+      /wordbeast\/lv1\/W000251\.png\?v=/,
     );
   });
 

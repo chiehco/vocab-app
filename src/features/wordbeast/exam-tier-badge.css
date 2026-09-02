@@ -21,7 +21,7 @@
 .exam-tier-badge b { margin-top: 5px; font: 900 13px/1 Georgia, serif; letter-spacing: .02em; white-space: nowrap; }
 .exam-tier-badge small { position: absolute; right: 0; bottom: 3px; left: 0; text-align: center; font-size: 6px; font-weight: 900; letter-spacing: .12em; }
 .exam-tier-badge.tier-z { --tier-color: #777064; --tier-glow: rgba(119,112,100,.11); }
-.exam-tier-badge.compact { width: 46px; height: 34px; padding: 4px 3px 3px; box-shadow: none; transform: rotate(.5deg); }
+.exam-tier-badge.compact { width: max-content; min-width: 46px; height: auto; min-height: 34px; padding: 4px 3px 3px; box-shadow: none; transform: rotate(.5deg); }
 .exam-tier-badge.compact > span { font-size: 5px; letter-spacing: .08em; }
 .exam-tier-badge.compact b { margin-top: 4px; font-size: 7px; letter-spacing: 0; }
 @keyframes tier-stamp-in { from { opacity: 0; transform: rotate(-7deg) scale(1.45); } 70% { opacity: 1; transform: rotate(2deg) scale(.96); } }

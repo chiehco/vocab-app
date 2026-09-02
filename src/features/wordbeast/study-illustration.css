@@ -1,0 +1,11 @@
+.study-illustration { min-width: 0; margin: 0; color: #30382f; background: #faf9f6; }
+.study-illustration-image { display: grid; min-width: 0; place-items: center; }
+.study-illustration-image > img { display: block; width: 100%; max-width: 320px; height: auto; aspect-ratio: 1; object-fit: contain; }
+.study-illustration-image > .beast-image-fallback { width: min(100%, 280px); margin: 20px auto; }
+.study-illustration figcaption { padding: 14px 24px 20px; border-top: 1px solid #e1e3dc; }
+.study-illustration figcaption > span { color: #58644f; font-size: .75rem; font-weight: 700; }
+.study-illustration figcaption p { margin: 6px 0 0; font-size: 1rem; line-height: 1.75; overflow-wrap: anywhere; }
+@media (max-width: 390px) {
+  .study-illustration-image > img { max-width: 280px; }
+  .study-illustration figcaption { padding-inline: 18px; }
+}

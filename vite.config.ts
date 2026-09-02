@@ -39,7 +39,8 @@ export default defineConfig({
         navigateFallback: "index.html",
         runtimeCaching: [
           {
-            urlPattern: /\/wordbeast\/.*\.(?:png|webp)$/i,
+            // Asset revisions use ?v=...; match the pathname so viewed cards remain available offline.
+            urlPattern: ({ url }) => /\/wordbeast\/.*\.(?:png|webp)$/i.test(url.pathname),
             handler: "StaleWhileRevalidate",
             options: {
               cacheName: "wordbeast-images-v1",

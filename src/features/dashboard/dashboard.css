@@ -133,6 +133,11 @@
 .rune-two { bottom: 61px; left: 2px; animation-delay: -1.2s; transform: rotate(-8deg); }
 
 .daily-rite { padding: 34px 3px 30px; border-bottom: 1px solid rgba(38,42,35,.16); }
+.daily-checkin { display: grid; grid-template-columns: 42px 1fr auto; gap: 12px; margin-top: 20px; padding: 14px 0; align-items: center; border-block: 1px solid rgba(38,42,35,.14); }
+.daily-checkin-mark { display: grid; width: 38px; height: 44px; place-items: center; color: #a43d32; border: 1.5px solid #a43d32; font: 900 14px "Noto Serif TC", serif; transform: rotate(-2deg); }
+.daily-checkin.is-complete .daily-checkin-mark { color: #eee5d0; border-color: #596a50; background: #596a50; }
+.daily-checkin b { display: block; font: 900 14px "Noto Serif TC", serif; }.daily-checkin p { margin: 4px 0 0; color: #736e60; font: 650 9px/1.5 "Noto Serif TC", serif; }
+.daily-checkin time { color: #9a5146; font: 800 9px "DM Sans", sans-serif; letter-spacing: .08em; }
 .entrance-test-entry { display: grid; grid-template-columns: 48px 1fr 20px; gap: 16px; min-height: 91px; padding: 21px 3px; align-items: center; color: #34382f; border-bottom: 1px solid rgba(38,42,35,.16); text-decoration: none; }
 .entrance-test-mark { display: grid; width: 43px; height: 52px; place-items: center; color: #a63c31; border: 2px solid #a63c31; font: 900 15px "Noto Serif TC", serif; transform: rotate(-2deg); }
 .entrance-test-entry p { margin: 0 0 3px; color: #9b5146; font-size: 7px; font-weight: 800; letter-spacing: .16em; }

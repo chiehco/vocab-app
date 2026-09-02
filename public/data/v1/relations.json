@@ -10,6 +10,16 @@
     "status": "approved"
   },
   {
+    "relationId": "RX014f23ab",
+    "word": "high",
+    "relatedWord": "tall",
+    "relationType": "topic",
+    "direction": "two_way",
+    "note": "high 常形容位置、建築或程度；tall 常形容人、樹及直立物體。",
+    "strength": 4,
+    "status": "approved"
+  },
+  {
     "relationId": "RX02e37e87",
     "word": "teach",
     "relatedWord": "teacher",
@@ -34,7 +44,7 @@
     "word": "chicken",
     "relatedWord": "cock",
     "relationType": "topic",
-    "direction": "two_way",
+    "direction": "one_way",
     "note": "cock 是成年公雞；chicken 是雞的通稱。",
     "strength": 3,
     "status": "approved"
@@ -64,18 +74,8 @@
     "word": "pig",
     "relatedWord": "ham",
     "relationType": "topic",
-    "direction": "two_way",
+    "direction": "one_way",
     "note": "ham 是豬後腿製成的火腿。",
-    "strength": 4,
-    "status": "approved"
-  },
-  {
-    "relationId": "RX22b172a8",
-    "word": "high",
-    "relatedWord": "tall",
-    "relationType": "confuse",
-    "direction": "two_way",
-    "note": "high 常形容位置、建築或程度；tall 常形容人、樹及直立物體。",
     "strength": 4,
     "status": "approved"
   },
@@ -90,16 +90,6 @@
     "status": "approved"
   },
   {
-    "relationId": "RX25e69b48",
-    "word": "ship",
-    "relatedWord": "boat",
-    "relationType": "confuse",
-    "direction": "two_way",
-    "note": "ship 通常指能遠航的大型船；boat 通常指較小的船艇。",
-    "strength": 4,
-    "status": "approved"
-  },
-  {
     "relationId": "RX2d630fe0",
     "word": "insect",
     "relatedWord": "bug",
@@ -110,21 +100,11 @@
     "status": "approved"
   },
   {
-    "relationId": "RX348388b4",
-    "word": "road",
-    "relatedWord": "street",
-    "relationType": "confuse",
-    "direction": "two_way",
-    "note": "road 泛指連接地點的道路；street 通常指城鎮中兩旁有建築物的街道。",
-    "strength": 4,
-    "status": "approved"
-  },
-  {
     "relationId": "RX3487b75f",
     "word": "pig",
     "relatedWord": "bacon",
     "relationType": "topic",
-    "direction": "two_way",
+    "direction": "one_way",
     "note": "bacon 是經醃製或煙燻的培根肉。",
     "strength": 4,
     "status": "approved"
@@ -154,7 +134,7 @@
     "word": "bee",
     "relatedWord": "honey",
     "relationType": "topic",
-    "direction": "two_way",
+    "direction": "one_way",
     "note": "蜜蜂採集花蜜並製造蜂蜜。",
     "strength": 4,
     "status": "approved"
@@ -166,6 +146,16 @@
     "relationType": "topic",
     "direction": "two_way",
     "note": "分別表示祖父／外祖父與祖母／外祖母。",
+    "strength": 4,
+    "status": "approved"
+  },
+  {
+    "relationId": "RX4a7468f1",
+    "word": "ship",
+    "relatedWord": "boat",
+    "relationType": "topic",
+    "direction": "two_way",
+    "note": "ship 通常指能遠航的大型船；boat 通常指較小的船艇。",
     "strength": 4,
     "status": "approved"
   },
@@ -194,9 +184,19 @@
     "word": "pig",
     "relatedWord": "pork",
     "relationType": "topic",
-    "direction": "two_way",
+    "direction": "one_way",
     "note": "pig 指動物「豬」；pork 指作為食物的豬肉。",
     "strength": 5,
+    "status": "approved"
+  },
+  {
+    "relationId": "RX76680d85",
+    "word": "cold",
+    "relatedWord": "cool",
+    "relationType": "topic",
+    "direction": "two_way",
+    "note": "cold 表示寒冷；cool 表示涼爽，也可表示很酷。",
+    "strength": 4,
     "status": "approved"
   },
   {
@@ -206,6 +206,26 @@
     "relationType": "synonym",
     "direction": "two_way",
     "note": "兩者都可指學生；pupil 常指中小學生，student 適用範圍較廣。",
+    "strength": 4,
+    "status": "approved"
+  },
+  {
+    "relationId": "RX83dd423a",
+    "word": "sea",
+    "relatedWord": "ocean",
+    "relationType": "topic",
+    "direction": "two_way",
+    "note": "ocean 通常指廣大的洋；sea 通常較小，或指靠近陸地的海域。",
+    "strength": 4,
+    "status": "approved"
+  },
+  {
+    "relationId": "RX8c2f1ec6",
+    "word": "road",
+    "relatedWord": "street",
+    "relationType": "topic",
+    "direction": "two_way",
+    "note": "road 泛指連接地點的道路；street 通常指城鎮中兩旁有建築物的街道。",
     "strength": 4,
     "status": "approved"
   },
@@ -230,22 +250,22 @@
     "status": "approved"
   },
   {
+    "relationId": "RX95037b53",
+    "word": "old",
+    "relatedWord": "elderly",
+    "relationType": "topic",
+    "direction": "two_way",
+    "note": "old 用途較廣；elderly 專指年長的人，語氣較委婉正式。",
+    "strength": 4,
+    "status": "approved"
+  },
+  {
     "relationId": "RX967e7df4",
     "word": "reason",
     "relatedWord": "reasonable",
     "relationType": "derivative",
     "direction": "one_way",
     "note": "加 -able，詞基拼字無變動（reason + able）",
-    "strength": 4,
-    "status": "approved"
-  },
-  {
-    "relationId": "RXa035bed8",
-    "word": "old",
-    "relatedWord": "elderly",
-    "relationType": "confuse",
-    "direction": "two_way",
-    "note": "old 用途較廣；elderly 專指年長的人，語氣較委婉正式。",
     "strength": 4,
     "status": "approved"
   },
@@ -270,16 +290,6 @@
     "status": "approved"
   },
   {
-    "relationId": "RXa972a457",
-    "word": "sea",
-    "relatedWord": "ocean",
-    "relationType": "confuse",
-    "direction": "two_way",
-    "note": "ocean 通常指廣大的洋；sea 通常較小，或指靠近陸地的海域。",
-    "strength": 4,
-    "status": "approved"
-  },
-  {
     "relationId": "RXabe56782",
     "word": "story",
     "relatedWord": "tale",
@@ -297,16 +307,6 @@
     "direction": "two_way",
     "note": "分別表示愛、喜愛與憎恨。",
     "strength": 5,
-    "status": "approved"
-  },
-  {
-    "relationId": "RXbf0bd2af",
-    "word": "old",
-    "relatedWord": "former",
-    "relationType": "confuse",
-    "direction": "two_way",
-    "note": "old 可表示舊有或年老；former 指以前具有的身分或兩者中的前者。",
-    "strength": 4,
     "status": "approved"
   },
   {
@@ -344,7 +344,7 @@
     "word": "chicken",
     "relatedWord": "hen",
     "relationType": "topic",
-    "direction": "two_way",
+    "direction": "one_way",
     "note": "hen 是成年母雞；chicken 是雞的通稱，也可表示雞肉。",
     "strength": 4,
     "status": "approved"
@@ -380,12 +380,12 @@
     "status": "approved"
   },
   {
-    "relationId": "RXf91bd54b",
-    "word": "cold",
-    "relatedWord": "cool",
-    "relationType": "confuse",
+    "relationId": "RXf5598234",
+    "word": "old",
+    "relatedWord": "former",
+    "relationType": "topic",
     "direction": "two_way",
-    "note": "cold 表示寒冷；cool 表示涼爽，也可表示很酷。",
+    "note": "old 可表示舊有或年老；former 指以前具有的身分或兩者中的前者。",
     "strength": 4,
     "status": "approved"
   },

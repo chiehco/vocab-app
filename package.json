@@ -5,11 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:qa": "vite --mode qa",
+    "dev:private": "vite --mode private",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
     "test": "vitest run",
-    "import-data": "python scripts/import_data.py --source \"C:/Users/USER/OneDrive/桌面/單字APP/vocab_app_source_template_merged_ceec111_semantic_draft.xlsx\" --out public/data/v1"
+    "import-data": "python scripts/import_data.py --source \"C:/Users/USER/OneDrive/文件/萬詞譜/outputs/01a048bd-a509-7073-ae67-77bc471e1117/萬詞譜母表_SA圖說人工核可_20260901.xlsx\" --mode public --out public/data/v1"
   },
   "dependencies": {
     "date-fns": "^4.4.0",
@@ -25,6 +27,7 @@
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.3",
+    "fake-indexeddb": "^6.2.5",
     "oxlint": "^1.71.0",
     "tailwindcss": "^4.3.2",
     "typescript": "~6.0.2",

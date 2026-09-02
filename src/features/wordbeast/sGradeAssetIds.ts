@@ -1,6 +1,12 @@
 // Generated from the audited S-grade manifest. Keep this list in sync with
 // public/wordbeast/s so synchronous image-mode eligibility remains exact.
 export const S_GRADE_ASSET_IDS = new Set<string>([
+  "W000323",
+  "W000606",
+  "W000897",
+  "W000134",
+  "W000615",
+  "W000888",
   "W001568",
   "W001388",
   "W000270",

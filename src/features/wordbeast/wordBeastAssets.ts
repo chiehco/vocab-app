@@ -1,3 +1,4 @@
+import { A_GRADE_ASSET_IDS } from "./aGradeAssetIds";
 import { S_GRADE_ASSET_IDS } from "./sGradeAssetIds";
 
 const BASE = import.meta.env.BASE_URL;
@@ -28,6 +29,9 @@ export function getWordBeastAsset(wordId: string, word: string, imageWordId?: st
   const normalizedId = `W${match[1]}`;
   if (S_GRADE_ASSET_IDS.has(normalizedId)) {
     return versioned(`${BASE}wordbeast/s/${normalizedId}.webp`);
+  }
+  if (A_GRADE_ASSET_IDS.has(normalizedId)) {
+    return versioned(`${BASE}wordbeast/a/${normalizedId}.webp`);
   }
 
   const legacy = LEGACY_BEAST_ASSETS[word.toLowerCase()];

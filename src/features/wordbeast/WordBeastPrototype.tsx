@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
+import { getKnownWords } from "../../db/progressIdentity";
 import { contentDb } from "../../db/contentDb";
 import { getSetting, progressDb } from "../../db/progressDb";
 import type { ExampleRecord, RelationRecord, WordRecord } from "../../db/types";
-import { gradeFlashcard } from "../../checkin/recordActivity";
+import { recordQuizAnswer } from "../../checkin/recordActivity";
 import { todayStr } from "../../lib/dates";
 import { speak } from "../../lib/speech";
 import { pickDistractors, shuffle } from "../../quiz/distractors";
@@ -73,7 +74,7 @@ export default function WordBeastPrototype() {
       contentDb.examPriorities.toArray(),
       contentDb.examples.toArray(),
       contentDb.relations.toArray(),
-      progressDb.cardStates.toCollection().primaryKeys(),
+      getKnownWords(),
       progressDb.checkIns.get(today),
       getSetting<number>("dailyNewWordCap"),
     ]);
@@ -86,6 +87,8 @@ export default function WordBeastPrototype() {
   const [selectedBeast, setSelectedBeast] = useState<BeastSpec | null>(null);
   const [captured, setCaptured] = useState(() => new Set<string>());
   const [answering, setAnswering] = useState(false);
+  const answeringRef = useRef(false);
+  const [saveError, setSaveError] = useState<string | null>(null);
   const sessionId = useRef(crypto.randomUUID());
   const sessionStarted = useRef(false);
 
@@ -103,21 +106,36 @@ export default function WordBeastPrototype() {
   }, [phase, encounterIndex, beasts]);
 
   async function answer(choice: string) {
-    if (!current || answering || phase !== "encounter") return;
-    if (choice !== current.record.word) { setWrongChoice(choice); return; }
-    setAnswering(true); setWrongChoice(null); speak(current.record.word);
-    if (!captured.has(current.record.word)) {
-      await gradeFlashcard(current.record.word, 2, sessionId.current, !sessionStarted.current, "quiz-image");
-      sessionStarted.current = true;
-      setCaptured((previous) => new Set(previous).add(current.record.word));
+    if (!current || answeringRef.current || phase !== "encounter") return;
+    const correct = choice === current.record.word;
+    answeringRef.current = true;
+    setAnswering(true);
+    setSaveError(null);
+    try {
+      if (!captured.has(current.record.word)) {
+        await recordQuizAnswer(current.record.word, correct, "quiz-image", sessionId.current, !sessionStarted.current);
+        sessionStarted.current = true;
+      }
+      if (correct) {
+        setCaptured((previous) => new Set(previous).add(current.record.word));
+        setWrongChoice(null);
+        speak(current.record.word);
+        setPhase("binding");
+      } else {
+        setWrongChoice(choice);
+      }
+    } catch {
+      setSaveError("這次作答尚未保存，請再試一次；不會先完成收服。");
+    } finally {
+      answeringRef.current = false;
+      setAnswering(false);
     }
-    setAnswering(false); setPhase("binding");
   }
 
   function restart() { setSelectedBeast(null); setWrongChoice(null); setEncounterIndex(0); setPhase("encounter"); }
 
   if (!beasts) return <div className="wordbeast-page capture-state"><i /><h1>正在尋找字獸</h1><p>祭司正在展開今日遭遇名冊。</p></div>;
-  if (beasts.length === 0) return <div className="wordbeast-page capture-state"><span>封</span><h1>今日收服完成</h1><p>今日的新字額度已完成，明天會有新的氣息靠近。</p><Link to="/review">召回鬆動封印</Link></div>;
+  if (beasts.length === 0) return <div className="wordbeast-page capture-state"><span>封</span><h1>目前沒有新字獸</h1><p>{source?.remaining === 0 ? "今日的新字額度已完成，可以回想已遇見的單字。" : "目前沒有尚未遇見的 S＋A 圖卡；你仍可前往複習或練習。"}</p><Link to="/review">前往回想複習</Link></div>;
 
   if (phase === "archive") {
     return (
@@ -125,6 +143,7 @@ export default function WordBeastPrototype() {
         <header className="archive-header"><Link to="/" className="wordbeast-back">←</Link><div><p className="wordbeast-eyebrow">萬字譜・今日新錄</p><h1>真名錄</h1></div><button className="archive-replay" onClick={restart}>重看</button></header>
         <main className="archive-main">
           <p className="archive-note">今日 {beasts.length} 隻字獸已留下真名。考頻星星代表歷屆重要度，LV 代表學習難度。</p>
+          <p className="archive-note"><Link to="/review">前往回想複習</Link>，確認記憶後安排下次複習。</p>
           <div className="archive-grid">
             {beasts.map((beast, index) => <button className="word-entry captured" style={{ animationDelay: `${index * 55}ms` }} key={beast.record.word} onClick={() => setSelectedBeast(beast)}>
               <span className="entry-index">{String(index + 1).padStart(2, "0")}</span><ExamTierBadge tier={beast.tier} compact /><ResilientBeastImage src={beast.image} word={beast.record.word} alt={`${beast.record.word} 字獸`} /><span className="entry-name">{beast.record.word.toUpperCase()}</span><span className="entry-meaning">{encounterMeaning(beast)}・{encounterPos(beast)}</span><span className="entry-seal">錄</span>
@@ -139,7 +158,8 @@ export default function WordBeastPrototype() {
   return current && (
     <div className={`wordbeast-page encounter-page ${phase}`}>
       <Link to="/" className="wordbeast-back light">×</Link><Link to="/wordbeast/priest" className="priest-trial-entry">祭司試煉冊 <span>30</span></Link><Link to="/wordbeast/lv1" className="lv1-pilot-entry">LV1 圖卡盲測 <span>30</span></Link><div className="mist mist-one" /><div className="mist mist-two" />
-      <header className="encounter-header"><p className="wordbeast-eyebrow">萬字譜・今日收服　{encounterIndex + 1}/{beasts.length}</p><h1>{phase === "binding" ? "真名顯現" : "字獸來襲"}</h1><div className="encounter-rule" /></header>
+      <header className="encounter-header"><p className="wordbeast-eyebrow">S＋A・今日收服　{encounterIndex + 1}/{beasts.length}</p><h1>{phase === "binding" ? "真名顯現" : "字獸來襲"}</h1><div className="encounter-rule" /></header>
+      {saveError && <p className="encounter-feedback visible" role="alert">{saveError}</p>}
       <main className="encounter-main"><div className="beast-stage"><ExamTierBadge tier={current.tier} /><div className="ink-halo" /><div key={current.record.word} className="beast-visual"><ResilientBeastImage src={current.image} word={current.record.word} alt={`${current.record.word} 字獸`} /></div>{phase === "binding" && <><div className="binding-ring" /><div className="true-name">{current.record.word.toUpperCase()}</div><div className="capture-seal">錄</div></>}</div>
         {phase === "encounter" ? <section className="naming-panel"><p className="beast-clue">「{encounterMeaning(current)}」</p><p className="naming-instruction">看穿牠的偽裝，喚出英文真名</p><div className="name-choices">{current.choices.map((choice) => <button key={choice.word} disabled={answering} className={wrongChoice === choice.word ? "wrong" : ""} onClick={() => answer(choice.word)}><span>{choice.word}</span>{wrongChoice === choice.word && <small>妄名・{choice.meaning}</small>}</button>)}</div><p className={`encounter-feedback ${wrongChoice ? "visible" : ""}`}>妄名已斬，記住牠的意思再找真正名稱。</p></section>
           : <section className="binding-copy"><p>{current.tier ? `${current.tier} 級字卡・真名已被喚醒` : "真名已被喚醒"}</p><strong>{current.record.word}</strong><span>{encounterMeaning(current)}・{encounterPos(current)}</span><small>{encounterIndex < beasts.length - 1 ? "下一道氣息正在靠近…" : "正在收錄《萬字譜》…"}</small></section>}

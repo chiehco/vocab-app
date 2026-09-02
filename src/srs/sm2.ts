@@ -1,5 +1,6 @@
 import type { CardState, Grade } from "../db/types";
 import { addDaysStr } from "../lib/dates";
+import { format } from "date-fns";
 
 /** 四鍵評分對應 SM-2 quality：Again=0, Hard=3, Good=4, Easy=5 */
 const GRADE_TO_QUALITY: Record<Grade, number> = { 0: 0, 1: 3, 2: 4, 3: 5 };
@@ -56,4 +57,15 @@ export function applyGrade(card: CardState, grade: Grade, today: string): CardSt
     dueDate: addDaysStr(today, intervalDays),
     lastReviewedAt: new Date().toISOString(),
   };
+}
+
+/** 正式回想的排程入口：提早／同日答對不延長間隔，忘記才提前召回。 */
+export function scheduleRecall(card: CardState, grade: Grade, today: string): CardState {
+  if (card.lastReviewedAt && card.dueDate > today) {
+    if (grade > 0) return card;
+    const alreadyFailedToday = card.repetitions === 0
+      && format(new Date(card.lastReviewedAt), "yyyy-MM-dd") === today;
+    if (alreadyFailedToday) return card;
+  }
+  return applyGrade(card, grade, today);
 }

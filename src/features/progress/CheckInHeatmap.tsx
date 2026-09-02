@@ -1,7 +1,8 @@
-import { useState } from "react";
-import { addDays, format, getDay, startOfWeek, subWeeks } from "date-fns";
+import { useEffect, useRef, useState } from "react";
+import { addDays, format, getDay, parseISO, startOfWeek, subWeeks } from "date-fns";
 import { useLiveQuery } from "dexie-react-hooks";
 import { progressDb } from "../../db/progressDb";
+import { useToday } from "../../hooks/useToday";
 
 function bucketClass(count: number): string {
   if (count === 0) return "bg-slate-100";
@@ -17,7 +18,13 @@ export default function CheckInHeatmap({ weeks = 53 }: { weeks?: number }) {
   const checkIns = useLiveQuery(() => progressDb.checkIns.toArray(), []);
   const byDate = new Map((checkIns ?? []).map((c) => [c.date, c]));
 
-  const today = new Date();
+  const todayKey = useToday();
+  const today = parseISO(todayKey);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const scroller = scrollRef.current;
+    if (scroller) scroller.scrollLeft = scroller.scrollWidth;
+  }, [todayKey, weeks]);
   const start = startOfWeek(subWeeks(today, weeks - 1), { weekStartsOn: 0 });
   const cells: { date: Date; key: string }[] = [];
   for (let d = start; d <= today; d = addDays(d, 1)) {
@@ -28,7 +35,7 @@ export default function CheckInHeatmap({ weeks = 53 }: { weeks?: number }) {
 
   return (
     <div>
-      <div className="overflow-x-auto pb-1">
+      <div ref={scrollRef} className="overflow-x-auto pb-1">
         <div
           className="grid grid-flow-col gap-[3px]"
           style={{ gridTemplateRows: "repeat(7, 1fr)" }}

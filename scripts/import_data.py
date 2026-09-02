@@ -337,13 +337,21 @@ def parse_morphemes(ws):
 
 def parse_media(ws):
     out = []
+    seen = set()
     for r in read_rows(ws):
         (asset_id, target_type, target_word, target_hint, media_type, image_type,
          prompt_en, caption_zh, status, license_note) = (list(r) + [None] * 10)[:10]
         if target_word is None or prompt_en is None:
             continue
+        asset_id = asset_id or gen_id("media", target_word, prompt_en)
+        if asset_id in seen:
+            raise SystemExit(
+                f"錯誤：圖卡 asset_id 重複：{asset_id}。"
+                "同一 ID 只能對應一筆現行紀錄；請先確認圖片並封存舊場景。"
+            )
+        seen.add(asset_id)
         out.append({
-            "assetId": asset_id or gen_id("media", target_word, prompt_en),
+            "assetId": asset_id,
             "targetType": target_type,
             "targetWord": target_word,
             "targetHint": target_hint,
@@ -481,6 +489,14 @@ def write_json(path, data):
     with open(path, "w", encoding="utf-8", newline="\n") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
         f.write("\n")
+
+
+def content_hash(out_dir):
+    """Include media so caption-only corrections invalidate the app content cache."""
+    h = hashlib.sha256()
+    for name in ["words.json", "senses.json", "examples.json", "relations.json", "morphemes.json", "notes.json", "exam_priority.json", "hooks.json", "media.json"]:
+        h.update((out_dir / name).read_bytes())
+    return h.hexdigest()
 
 
 def main():
@@ -625,10 +641,7 @@ def main():
 
     words_hash = hashlib.sha256((out_dir / "words.json").read_bytes()).hexdigest()
     # contentHash 涵蓋所有 App 會載入的資料檔：任何一張表變動都會觸發前端重灌
-    h = hashlib.sha256()
-    for name in ["words.json", "senses.json", "examples.json", "relations.json", "morphemes.json", "notes.json", "exam_priority.json", "hooks.json"]:
-        h.update((out_dir / name).read_bytes())
-    content_hash = h.hexdigest()
+    bundle_hash = content_hash(out_dir)
     meta = {
         "schemaVersion": 2,
         "generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -645,7 +658,7 @@ def main():
             "hooks": len(hooks_out),
         },
         "wordsHash": words_hash,
-        "contentHash": content_hash,
+        "contentHash": bundle_hash,
     }
     write_json(out_dir / "meta.json", meta)
 

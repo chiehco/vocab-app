@@ -1,4 +1,5 @@
 import { useLiveQuery } from "dexie-react-hooks";
+import { getLogicalCardStates } from "../../db/progressIdentity";
 import { progressDb } from "../../db/progressDb";
 import { useStreak } from "../../hooks/useStreak";
 import CheckInHeatmap from "./CheckInHeatmap";
@@ -7,13 +8,12 @@ import "../realm-pages.css";
 export default function ProgressScreen() {
   const streakInfo = useStreak();
   const totals = useLiveQuery(async () => {
-    const [reviews, started, mastered, checkInDays] = await Promise.all([
+    const [reviews, cards, checkInDays] = await Promise.all([
       progressDb.reviewLogs.count(),
-      progressDb.cardStates.count(),
-      progressDb.cardStates.where("state").equals("review").count(),
+      getLogicalCardStates(),
       progressDb.checkIns.count(),
     ]);
-    return { reviews, started, mastered, checkInDays };
+    return { reviews, started: cards.length, mastered: cards.filter((card) => card.state === "review").length, checkInDays };
   }, []);
 
   const started = totals?.started ?? 0;
@@ -33,11 +33,11 @@ export default function ProgressScreen() {
       </section>
 
       <section className="progress-ledger" aria-labelledby="ledger-title">
-        <div className="realm-section-head"><div><p>ARCHIVE STATUS</p><h2 id="ledger-title">封印總錄</h2></div><span>{stableRate}% 已進入穩定期</span></div>
+        <div className="realm-section-head"><div><p>ARCHIVE STATUS</p><h2 id="ledger-title">封印總錄</h2></div><span>{stableRate}% 最近回想通過</span></div>
         <div className="progress-line"><i style={{ width: `${stableRate}%` }} /></div>
         <dl>
           <div><dt>已相遇字獸</dt><dd>{totals?.started ?? "—"}<small>枚</small></dd></div>
-          <div><dt>穩定封印</dt><dd>{totals?.mastered ?? "—"}<small>枚</small></dd></div>
+          <div><dt>最近回想通過</dt><dd>{totals?.mastered ?? "—"}<small>枚</small></dd></div>
           <div><dt>累計辨名</dt><dd>{totals?.reviews ?? "—"}<small>次</small></dd></div>
           <div><dt>留下足跡</dt><dd>{totals?.checkInDays ?? "—"}<small>日</small></dd></div>
         </dl>

@@ -1,5 +1,6 @@
 import { contentDb } from "../db/contentDb";
 import { getSetting, progressDb } from "../db/progressDb";
+import { getLogicalCardStates } from "../db/progressIdentity";
 import type { CardState, WordRecord } from "../db/types";
 import { todayStr } from "../lib/dates";
 import { format } from "date-fns";
@@ -8,6 +9,7 @@ export interface QueueItem {
   wordRecord: WordRecord;
   isNew: boolean;
   isRecap?: boolean;
+  isPractice?: boolean;
 }
 
 export function wasCardCreatedOn(card: CardState, date: string): boolean {
@@ -32,19 +34,26 @@ export function interleave(due: WordRecord[], fresh: WordRecord[]): QueueItem[] 
  * 2. 新字依 wordId 順序補到每日上限，
  *    以 checkIns.newWordsCount 把關——同一天多次開 App 不會多發新字。
  * @param sessionLevels 本次限定的等級（不給則複習全收、新字照學習範圍設定）
+ * @param prioritizedWords 選填的單字白名單，順序同時作為新字與複習排序依據
  */
-export async function buildTodayQueue(sessionLevels?: string[]): Promise<QueueItem[]> {
+export async function buildTodayQueue(sessionLevels?: string[], prioritizedWords?: string[]): Promise<QueueItem[]> {
   const today = todayStr();
+  const priorityRank = prioritizedWords
+    ? new Map(prioritizedWords.map((word, index) => [word, index]))
+    : null;
+  const isInScope = (word: WordRecord) =>
+    (!sessionLevels || sessionLevels.includes(word.level))
+    && (!priorityRank || priorityRank.has(word.word));
 
-  const dueStates = await progressDb.cardStates
-    .where("dueDate")
-    .belowOrEqual(today)
-    .toArray();
+  const states = await getLogicalCardStates();
+  const dueStates = states.filter((card) => card.dueDate <= today || !!card.practicePending);
   const dueWords = (
     await contentDb.words.where("word").anyOf(dueStates.map((c) => c.word)).toArray()
   )
-    .filter((w) => !sessionLevels || sessionLevels.includes(w.level))
-    .sort((a, b) => a.wordId.localeCompare(b.wordId));
+    .filter(isInScope)
+    .sort((a, b) => priorityRank
+      ? (priorityRank.get(a.word) ?? Infinity) - (priorityRank.get(b.word) ?? Infinity)
+      : a.wordId.localeCompare(b.wordId));
 
   const cap = await getSetting<number>("dailyNewWordCap");
   const checkIn = await progressDb.checkIns.get(today);
@@ -56,21 +65,29 @@ export async function buildTodayQueue(sessionLevels?: string[]): Promise<QueueIt
     const levels = sessionLevels
       ? settingLevels.filter((l) => sessionLevels.includes(l))
       : settingLevels;
-    const known = new Set(await progressDb.cardStates.toCollection().primaryKeys());
-    freshWords = await contentDb.words
+    const known = new Set(states.map((card) => card.word));
+    const freshCandidates = await contentDb.words
       .orderBy("wordId")
-      .filter((w) => levels.includes(w.level) && !known.has(w.word))
-      .limit(remainingNew)
+      .filter((w) => (priorityRank ? priorityRank.has(w.word) : levels.includes(w.level)) && !known.has(w.word))
       .toArray();
+    freshWords = freshCandidates
+      .sort((a, b) => priorityRank
+        ? (priorityRank.get(a.word) ?? Infinity) - (priorityRank.get(b.word) ?? Infinity)
+        : a.wordId.localeCompare(b.wordId))
+      .slice(0, remainingNew);
   }
 
-  return interleave(dueWords, freshWords);
+  const practiceWords = new Set(dueStates.filter((card) => card.practicePending).map((card) => card.word));
+  return interleave(dueWords, freshWords).map((item) => ({
+    ...item, isPractice: practiceWords.has(item.wordRecord.word),
+  }));
 }
 
 /** 今日沒有到期卡時，提供剛收服字獸的同日回顧；不應用來推進 SRS。 */
-export async function buildTodayRecapQueue(sessionLevels?: string[]): Promise<QueueItem[]> {
+export async function buildTodayRecapQueue(sessionLevels?: string[], allowedWords?: string[]): Promise<QueueItem[]> {
   const today = todayStr();
-  const todayStates = (await progressDb.cardStates.toArray())
+  const allowedWordSet = allowedWords ? new Set(allowedWords) : null;
+  const todayStates = (await getLogicalCardStates())
     .filter((card) => wasCardCreatedOn(card, today));
   if (todayStates.length === 0) return [];
 
@@ -80,7 +97,7 @@ export async function buildTodayRecapQueue(sessionLevels?: string[]): Promise<Qu
     .toArray();
 
   return words
-    .filter((word) => !sessionLevels || sessionLevels.includes(word.level))
+    .filter((word) => (!sessionLevels || sessionLevels.includes(word.level)) && (!allowedWordSet || allowedWordSet.has(word.word)))
     .sort((a, b) => a.wordId.localeCompare(b.wordId))
     .map((wordRecord) => ({ wordRecord, isNew: false, isRecap: true }));
 }

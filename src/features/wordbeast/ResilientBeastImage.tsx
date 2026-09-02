@@ -14,7 +14,7 @@ export default function ResilientBeastImage({ src, word, className = "", alt = "
   return (
     <div className={`beast-image-fallback ${className}`} role="img" aria-label={`${word || "字獸"} 圖卡暫時無法顯示`}>
       <svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="43" /><path d="M60 17v22M60 81v22M17 60h22M81 60h22M35 35l16 16M85 35 69 51M35 85l16-16M85 85 69 69" /><text x="60" y="69" textAnchor="middle">{word?.charAt(0).toUpperCase() || "?"}</text></svg>
-      <small>圖卡待修復</small>
+      <small>圖卡暫時無法顯示</small>
     </div>
   );
 }

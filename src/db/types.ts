@@ -13,7 +13,7 @@ export interface WordRecord {
   usagePattern: string | null;
   syllables: string | null;
   stressPattern: string | null;
-  phoneticUs: string | null;
+  phoneticUs: string | null; // 台灣高中學習情境採 KK 音標；欄名暫保留以維持資料相容
   familyKey: string | null;
   isCore: boolean;
   sourceNote: string | null;
@@ -106,6 +106,19 @@ export interface NoteRecord {
   status: string;
 }
 
+export interface MediaRecord {
+  assetId: string;
+  targetType: string;
+  targetWord: string;
+  targetHint: string | null;
+  mediaType: string;
+  imageType: string | null;
+  promptEn: string | null;
+  captionZh: string | null;
+  status: string;
+  licenseNote: string | null;
+}
+
 export interface ContentMetaRecord {
   key: string; // "current"
   wordsHash: string;
@@ -128,6 +141,8 @@ export interface CardState {
   lastReviewedAt: string | null;
   lapses: number;
   createdAt: string;
+  /** 練習的新字／錯題待正式回想確認；不代表記憶間隔已改變。 */
+  practicePending?: boolean;
 }
 
 export type Grade = 0 | 1 | 2 | 3; // Again / Hard / Good / Easy
@@ -152,6 +167,7 @@ export interface ReviewLogEntry {
   easeFactorBefore: number;
   easeFactorAfter: number;
   mode: ReviewMode;
+  schedulingApplied?: boolean;
 }
 
 export interface CheckInRecord {

@@ -1,34 +1,38 @@
 import { Link } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
+import { getKnownWords, getLogicalCardStates } from "../../db/progressIdentity";
 import { contentDb } from "../../db/contentDb";
 import { getSetting, progressDb } from "../../db/progressDb";
-import { todayStr } from "../../lib/dates";
+import { useToday } from "../../hooks/useToday";
 import { useStreak } from "../../hooks/useStreak";
 import CheckInHeatmap from "../progress/CheckInHeatmap";
+import { buildTopExamWordSet } from "../../quiz/examScope";
+import { selectDailyWords } from "../wordbeast/dailyCapture";
 import "./dashboard.css";
 
 const BASE = import.meta.env.BASE_URL;
 
 export default function DashboardScreen() {
   const streakInfo = useStreak();
-  const today = todayStr();
+  const today = useToday();
 
   const dueCount = useLiveQuery(
-    () => progressDb.cardStates.where("dueDate").belowOrEqual(today).count(),
+    async () => {
+      const allowed = buildTopExamWordSet(await contentDb.examPriorities.toArray());
+      return (await getLogicalCardStates()).filter((card) => allowed.has(card.word) && (card.dueDate <= today || !!card.practicePending)).length;
+    },
     [today],
   );
   const todayCheckIn = useLiveQuery(() => progressDb.checkIns.get(today), [today]);
   const newRemaining = useLiveQuery(async () => {
-    const cap = await getSetting<number>("dailyNewWordCap");
-    const levels = await getSetting<string[]>("learningLevels");
-    const checkIn = await progressDb.checkIns.get(today);
-    const known = new Set(await progressDb.cardStates.toCollection().primaryKeys());
-    const available = await contentDb.words
-      .where("level")
-      .anyOf(levels)
-      .filter((word) => !known.has(word.word))
-      .count();
-    return Math.min(Math.max(0, cap - (checkIn?.newWordsCount ?? 0)), available);
+    const [cap, checkIn, knownKeys, words, priorities] = await Promise.all([
+      getSetting<number>("dailyNewWordCap"), progressDb.checkIns.get(today),
+      getKnownWords(), contentDb.words.toArray(),
+      contentDb.examPriorities.toArray(),
+    ]);
+    return selectDailyWords({ words, priorities, examples: [], relations: [],
+      known: new Set(knownKeys as string[]), remaining: Math.max(0, cap - (checkIn?.newWordsCount ?? 0)),
+    }).length;
   }, [today]);
 
   const due = dueCount ?? 0;
@@ -36,7 +40,7 @@ export default function DashboardScreen() {
   const practiced = todayCheckIn?.reviewCount ?? 0;
   const encounterCount = due + available;
   const streak = streakInfo?.streak ?? 0;
-  const dayComplete = Boolean(streakInfo && !streakInfo.atRisk && streak > 0);
+  const dayComplete = Boolean(todayCheckIn);
 
   return (
     <div className="beast-home">
@@ -54,13 +58,13 @@ export default function DashboardScreen() {
         <section className="encounter-portal" aria-labelledby="encounter-title">
           <div className="encounter-portal-copy">
             <div className="encounter-kicker">
-              <span className={dayComplete ? "is-complete" : ""}>{dayComplete ? "今日封印穩定" : "今日封印鬆動"}</span>
+              <span className={dayComplete ? "is-complete" : ""}>{dayComplete ? "今日已練習" : "今日還沒練習"}</span>
               <i>{encounterCount || "·"}</i>
             </div>
             <h2 id="encounter-title">今日<br /><em>遭遇</em></h2>
-            <p>{due > 0 ? `${due} 隻舊字獸正在掙脫封印。` : available > 0 ? `${available} 隻未知字獸正在林地出沒。` : "今日的封印安穩，仍可進入林地巡查。"}</p>
-            <Link to="/wordbeast" className="encounter-primary-action">
-              <span>{encounterCount > 0 ? "開始辨名收服" : "進入林地巡查"}</span>
+            <p>{due > 0 ? `${due} 個 S＋A 單字等你回想。` : available > 0 ? `${available} 隻 S＋A 字獸正在林地出沒。` : "目前沒有待回想的 S＋A 單字，也可以自由練習。"}</p>
+            <Link to={due > 0 ? "/review" : available > 0 ? "/wordbeast" : "/quiz"} className="encounter-primary-action">
+              <span>{due > 0 ? "開始回想複習" : available > 0 ? "開始辨名收服" : "自由練習"}</span>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" /></svg>
             </Link>
           </div>
@@ -90,6 +94,14 @@ export default function DashboardScreen() {
           <div className="section-heading">
             <div><p>TODAY'S RITE</p><h2 id="daily-rite-title">今日修行</h2></div>
             <span>{practiced > 0 ? `已完成 ${practiced} 次` : "尚未開始"}</span>
+          </div>
+          <div className={`daily-checkin ${todayCheckIn ? "is-complete" : ""}`} role="status">
+            <span className="daily-checkin-mark">{todayCheckIn ? "✓" : "待"}</span>
+            <div>
+              <b>{todayCheckIn ? "今日已打卡" : "今日尚未打卡"}</b>
+              <p>{todayCheckIn ? `已完成 ${practiced} 次辨名，連續修行 ${streak} 日。` : "完成任一題複習或練習後自動打卡。"}</p>
+            </div>
+            <time dateTime={today}>{today.slice(5).replace("-", "/")}</time>
           </div>
           <div className="rite-metrics">
             <div><strong>{dueCount ?? "—"}</strong><span>封印鬆動</span></div>
