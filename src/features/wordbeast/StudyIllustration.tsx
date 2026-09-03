@@ -7,7 +7,7 @@ export default function StudyIllustration({ src, word, caption }: { src: string;
       <div className="study-illustration-image">
         <ResilientBeastImage src={src} word={word} alt={`${word} 的情境示意圖`} />
       </div>
-      {caption?.trim() && <figcaption><span>看圖示意</span><p>{caption}</p></figcaption>}
+      {caption?.trim() && <figcaption><span>這張圖在畫什麼</span><p>{caption}</p></figcaption>}
     </figure>
   );
 }

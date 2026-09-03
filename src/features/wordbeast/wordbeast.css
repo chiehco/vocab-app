@@ -517,16 +517,17 @@ button.word-entry { cursor: pointer; }
 .dossier-portrait > span:last-child { position: absolute; right: 0; bottom: 0.8rem; border: 1px solid #7d6d42; color: #58613b; font-size: 0.62rem; letter-spacing: 0.14em; padding: 0.25rem 0.45rem; }
 .capture-state { display: flex; min-height: 100svh; padding: 2rem; align-items: center; justify-content: center; flex-direction: column; text-align: center; background: #e8d7ae; }
 .capture-state > i { width: 78px; height: 78px; border: 1px solid #7b6542; border-radius: 50%; border-top-color: #a43d32; animation: wb-spin 1.4s linear infinite; }
-.capture-state > span { display: grid; width: 72px; height: 86px; place-items: center; color: #a43d32; border: 3px double #a43d32; font: 900 28px "Noto Serif TC", serif; transform: rotate(3deg); }
-.capture-state h1 { margin: 1.4rem 0 .4rem; font: 900 30px "Noto Serif TC", serif; }
-.capture-state p { margin: 0; color: #705f45; font: 600 12px/1.7 "Noto Serif TC", serif; }
+.capture-state > span { display: grid; width: 72px; height: 86px; place-items: center; color: #a43d32; border: 3px double #a43d32; font: 900 1.75rem "Noto Serif TC", serif; transform: rotate(3deg); }
+.capture-state h1 { margin: 1.4rem 0 .4rem; font: 900 1.875rem "Noto Serif TC", serif; }
+.capture-state p { margin: 0; color: #705f45; font: 600 0.75rem/1.7 "Noto Serif TC", serif; }
 .capture-state a { margin-top: 1.4rem; padding: .8rem 1.15rem; color: #f0e5ca; background: #47513f; text-decoration: none; }
 .dossier-copy { padding: 1.2rem 0.2rem 0; }
 .dossier-copy h2 { margin: 0; font-size: 3rem; line-height: 1; letter-spacing: 0.08em; }
 .pronounce { margin-top: 0.45rem; border: 0; background: transparent; color: #795c36; cursor: pointer; font: 600 0.86rem Georgia, serif; padding: 0; }
 .dossier-meaning { display: grid; gap: 0.25rem; margin: 1rem 0 0.35rem; font-size: 1.05rem; font-weight: 700; }
-.dossier-meaning small { color: #9c332b; font-size: 0.65rem; letter-spacing: 0.14em; }
-.dossier-all-meanings { margin: 0 0 1rem; color: #7b6649; font-size: 0.76rem; line-height: 1.5; }
+.dossier-meaning small { color: #9c332b; font-size: 0.8rem; letter-spacing: 0.14em; }
+.dossier-all-meanings { display: grid; gap: 0.25rem; margin: 0 0 1rem; color: #594b39; font-size: 0.95rem; line-height: 1.65; }
+.dossier-all-meanings b { color: #80623c; font-size: 0.8rem; letter-spacing: 0.12em; }
 .dossier-rule { height: 1px; background: linear-gradient(90deg, var(--cinnabar) 0 3rem, rgba(79, 50, 25, 0.2) 3rem); }
 .dossier-copy dl { margin: 0; }
 .dossier-copy dl div { padding: 1rem 0; border-bottom: 1px solid rgba(79, 50, 25, 0.15); }

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
 import { contentDb } from "../../db/contentDb";
 import { ALL_LEVELS, DEFAULT_SETTINGS, progressDb, setSetting } from "../../db/progressDb";
+import { applyFontScale, FONT_SCALE_OPTIONS, normalizeFontScale } from "../../settings/fontScale";
 import {
   downloadProgressBackup,
   exportProgress,
@@ -26,6 +27,10 @@ export default function SettingsScreen() {
   const levels = useLiveQuery(async () => {
     const row = await progressDb.settings.get("learningLevels");
     return (row?.value as string[]) ?? [...DEFAULT_SETTINGS.learningLevels];
+  }, []);
+  const fontScale = useLiveQuery(async () => {
+    const row = await progressDb.settings.get("fontScale");
+    return normalizeFontScale(row?.value ?? DEFAULT_SETTINGS.fontScale);
   }, []);
 
   async function toggleLevel(lv: string) {
@@ -79,6 +84,30 @@ export default function SettingsScreen() {
               }`}
             >
               {n}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-4 rounded-xl bg-white p-4 shadow-sm">
+        <label className="block text-sm font-bold text-slate-600">字級</label>
+        <p className="mt-0.5 text-xs text-slate-400">放大全站文字，圖片與版面尺寸不會跟著放大。</p>
+        <div className="mt-2 grid grid-cols-3 gap-2">
+          {FONT_SCALE_OPTIONS.map((option) => (
+            <button
+              key={option.value}
+              onClick={async () => {
+                applyFontScale(option.value);
+                await setSetting("fontScale", option.value);
+              }}
+              className={`rounded-lg py-2 text-sm font-bold ${
+                fontScale === option.value
+                  ? "bg-blue-600 text-white"
+                  : "border border-slate-300 bg-white text-slate-600"
+              }`}
+              aria-pressed={fontScale === option.value}
+            >
+              {option.label} <span className="block text-xs font-normal opacity-75">{option.detail}</span>
             </button>
           ))}
         </div>

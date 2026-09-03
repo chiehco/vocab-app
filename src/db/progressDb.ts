@@ -38,6 +38,7 @@ export const DEFAULT_SETTINGS = {
   dailyNewWordCap: 15,
   reviewSessionSize: 20,
   learningLevels: ALL_LEVELS,
+  fontScale: 1,
 } as const;
 
 export async function getSetting<T>(key: keyof typeof DEFAULT_SETTINGS): Promise<T> {

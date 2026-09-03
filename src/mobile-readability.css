@@ -11,7 +11,7 @@
 
   .app-nav-item {
     gap: 4px;
-    font-size: 11px;
+    font-size: 0.6875rem;
     line-height: 1.2;
   }
 
@@ -27,23 +27,23 @@
   .rite-metrics span,
   .rite-actions a,
   .beast-home-motto {
-    font-size: 13px;
+    font-size: 0.8125rem;
     line-height: 1.55;
   }
 
   .encounter-portal-copy > p {
     max-width: 225px;
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 1.75;
   }
 
   .encounter-primary-action {
     min-height: 52px;
-    font-size: 15px;
+    font-size: 0.9375rem;
   }
 
   .rite-streak small {
-    font-size: 11px;
+    font-size: 0.6875rem;
   }
 
   /* Shared archive, progress, quiz, and placement pages */
@@ -65,23 +65,23 @@
   .placement-level-track span,
   .placement-bars > div > span,
   .placement-bars b {
-    font-size: 12px;
+    font-size: 0.75rem;
     line-height: 1.5;
   }
 
   .trial-intro p,
   .wordbeast-eyebrow {
-    font-size: 12px;
+    font-size: 0.75rem;
     line-height: 1.5;
   }
 
   .realm-levels button {
     min-height: 36px;
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
 
   .archive-search input {
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   .archive-more,
@@ -102,7 +102,7 @@
   .placement-back,
   .placement-verdict > p,
   .placement-result-actions button {
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 1.65;
   }
 
@@ -112,7 +112,7 @@
 
   .atlas-gloss {
     min-height: 38px;
-    font-size: 12px;
+    font-size: 0.75rem;
     line-height: 1.55;
   }
 
@@ -120,12 +120,12 @@
   .atlas-meta small,
   .atlas-meta i,
   .word-trait-badges.compact span {
-    font-size: 9px;
+    font-size: 0.5625rem;
   }
 
   .word-trait-badges span {
     min-height: 26px;
-    font-size: 11px;
+    font-size: 0.6875rem;
     line-height: 1.25;
   }
 
@@ -140,7 +140,7 @@
   .placement-rank b,
   .placement-apply p,
   .placement-apply button {
-    font-size: 11px;
+    font-size: 0.6875rem;
     line-height: 1.5;
   }
 
@@ -149,11 +149,11 @@
   .trial-result-page > p:not(.trial-result-kicker),
   .placement-intro > span,
   .placement-verdict > p {
-    font-size: 15px;
+    font-size: 0.9375rem;
   }
 
   .trial-image-clue small {
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
 
   .trial-options button {
@@ -161,27 +161,35 @@
   }
 
   .trial-options button b {
-    font-size: 11px;
+    font-size: 0.6875rem;
   }
 
   .trial-options button span,
   .trial-missed a span {
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.55;
   }
 
   .trial-binding > p b,
   .trial-verdict b,
   .trial-verdict span {
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
 
   /* Word page: keep labels compact, but never microscopic. */
   .word-dossier-nav a,
-  .word-dossier-nav span,
   .word-dossier-nav b,
   .dossier-card-controls button {
-    font-size: 14px;
+    font-size: 0.875rem;
+  }
+
+  .word-dossier-nav a,
+  .word-dossier-nav b {
+    white-space: nowrap;
+  }
+
+  .word-dossier-nav span {
+    font-size: 0.625rem;
   }
 
   .dossier-status span,
@@ -192,7 +200,7 @@
   .dossier-morphemes span,
   .dossier-root-family > div > span small,
   .dossier-footer {
-    font-size: 12px;
+    font-size: 0.75rem;
     line-height: 1.5;
   }
 
@@ -202,15 +210,15 @@
   .dossier-senses small,
   .dossier-senses em,
   .dossier-senses i {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 
   .study-illustration figcaption > span {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 
   .study-illustration figcaption p {
-    font-size: 17px;
+    font-size: 1.0625rem;
     line-height: 1.75;
   }
 
@@ -225,7 +233,7 @@
   .answer-note span,
   .seal-reveal i,
   .seal-state-eyebrow {
-    font-size: 11px;
+    font-size: 0.6875rem;
     line-height: 1.45;
   }
 
@@ -235,19 +243,19 @@
   .answer-note p,
   .seal-state-page > p,
   .seal-state-action {
-    font-size: 15px;
+    font-size: 0.9375rem;
     line-height: 1.7;
   }
 
   .seal-reveal {
     min-height: 58px;
     height: auto;
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   .seal-levels button {
     min-height: 36px;
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
 
   /* LV1 image review */
@@ -265,7 +273,7 @@
   .pilot-rating > p,
   .pilot-finished > p:not(.pilot-finish-copy),
   .pilot-score span {
-    font-size: 12px;
+    font-size: 0.75rem;
     line-height: 1.5;
   }
 
@@ -274,12 +282,12 @@
   .pilot-rating button span,
   .pilot-finish-copy,
   .pilot-finish-actions button {
-    font-size: 14px !important;
+    font-size: 0.875rem !important;
     line-height: 1.6;
   }
 
   .pilot-rating button small {
-    font-size: 12px;
+    font-size: 0.75rem;
     line-height: 1.45;
   }
 
@@ -301,7 +309,7 @@
   .clue-copy p,
   .clue-copy span,
   .spell-feedback {
-    font-size: 12px;
+    font-size: 0.75rem;
     line-height: 1.5;
   }
 
@@ -315,40 +323,40 @@
   .spell-result-main > span,
   .spell-result-main button,
   .spell-result-main > a {
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 1.6;
   }
 
   .name-choices button small {
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
 
   /* Compact exam badges stay compact, but their Chinese label remains legible. */
   .exam-tier-badge > span,
   .exam-tier-badge small {
-    font-size: 9px;
+    font-size: 0.5625rem;
   }
 
   .exam-tier-badge.compact > span {
-    font-size: 9px;
+    font-size: 0.5625rem;
   }
 
   .exam-tier-badge.compact b {
-    font-size: 8px;
+    font-size: 0.5rem;
   }
 
   .exam-tier-badge.compact small {
-    font-size: 8px;
+    font-size: 0.5rem;
   }
 
   /* Tailwind utility copy in settings. */
   .settings-page .text-xs {
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 1.55;
   }
 
   .settings-page .text-sm {
-    font-size: 15px;
+    font-size: 0.9375rem;
     line-height: 1.55;
   }
 }

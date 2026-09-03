@@ -15,7 +15,7 @@ import ExamTierBadge from "../wordbeast/ExamTierBadge";
 import WordTraitBadges from "../wordbeast/WordTraitBadges";
 import ResilientBeastImage from "../wordbeast/ResilientBeastImage";
 import { buildConfusableWordSet, buildMorphemeWordSet, buildSenseCountByWord } from "../wordbeast/wordTraits";
-import { findImageClueHighlight, splitImageCaption } from "../../quiz/imageClue";
+import { findImageClueHighlight, resolveImageClueCopy, splitImageCaption, type ImageClueCopy } from "../../quiz/imageClue";
 import { useToday } from "../../hooks/useToday";
 import "../realm-pages.css";
 
@@ -24,15 +24,14 @@ const QUIZ_SIZE = 10;
 type QuizMode = "w2m" | "m2w" | "image" | "fill";
 interface McqQuestion { target: WordRecord; options: WordRecord[]; }
 
-function ImageChineseClue({ word, media, example }: { word: WordRecord; media?: MediaRecord; example?: ExampleRecord }) {
-  const caption = media?.captionZh || example?.sentenceZh || `這張圖表現「${word.meaningZh?.split(/[；;,，、/]/)[0] || "這個意思"}」的情境。`;
-  const highlight = findImageClueHighlight(caption, media?.targetHint || example?.meaningHint, word.meaningZh);
-  const [before, answer, after] = splitImageCaption(caption, highlight);
+function ImageChineseClue({ word, clue }: { word: WordRecord; clue: ImageClueCopy }) {
+  const highlight = findImageClueHighlight(clue.text, clue.targetHint, word.meaningZh);
+  const [before, answer, after] = splitImageCaption(clue.text, highlight);
   const fallback = word.meaningZh?.split(/[；;,，、/]/)[0]?.trim();
 
   return (
     <div className="trial-image-clue">
-      <span>中文情境提示</span>
+      <span>{clue.label}</span>
       <p>{before}{answer && <mark>{answer}</mark>}{after}</p>
       {!answer && fallback && <small>指定回答：<b>{fallback}</b></small>}
     </div>
@@ -248,6 +247,11 @@ export default function QuizScreen() {
   const prompt = mode === "w2m" ? question.target.word : question.target.meaningZh;
   const promptSub = mode === "w2m" ? question.target.pos : `（${question.target.pos}）`;
   const targetAsset = getWordBeastAsset(question.target.wordId, question.target.word, question.target.imageWordId);
+  const imageMedia = mode === "image" ? mediaByWord.get(question.target.word) : undefined;
+  const imageExample = mode === "image" ? exampleByWord.get(question.target.word) : undefined;
+  const imageClue = mode === "image"
+    ? resolveImageClueCopy(imageMedia?.captionZh, imageExample?.sentenceZh, imageMedia?.targetHint, imageExample?.meaningHint)
+    : null;
   const sealed = mode === "image" && answered === question.target.word;
 
   async function pick(option: WordRecord) {
@@ -275,8 +279,8 @@ export default function QuizScreen() {
         <ExamTierBadge tier={priorityByWord.get(question.target.word)} compact />
         <WordTraitBadges senseCount={senseCountByWord.get(question.target.word)} hasConfusables={confusableWords.has(question.target.word)} hasMorphemes={morphemeWords.has(question.target.word)} compact />
         <p className="trial-question-label">SPEAK THE TRUE ANSWER</p>
-        {mode === "image" && targetAsset ? <><ResilientBeastImage className="trial-wordbeast-clue" src={targetAsset} word={question.target.word} alt="待辨認的字獸圖卡" /><ImageChineseClue word={question.target} media={mediaByWord.get(question.target.word)} example={exampleByWord.get(question.target.word)} /></> : <h2 className={mode === "w2m" ? "word-prompt" : "meaning-prompt"}>{prompt}{mode === "w2m" && <SpeakerButton text={question.target.word} className="trial-speaker" />}</h2>}
-        <p className="trial-prompt-sub">{mode === "image" ? "依圖片與中文提示選出英文單字" : promptSub}</p>
+        {mode === "image" && targetAsset ? <><ResilientBeastImage className="trial-wordbeast-clue" src={targetAsset} word={question.target.word} alt="待辨認的字獸圖卡" />{imageClue && <ImageChineseClue word={question.target} clue={imageClue} />}</> : <h2 className={mode === "w2m" ? "word-prompt" : "meaning-prompt"}>{prompt}{mode === "w2m" && <SpeakerButton text={question.target.word} className="trial-speaker" />}</h2>}
+        <p className="trial-prompt-sub">{mode === "image" ? imageClue ? "依圖片與中文提示選出英文單字" : "依圖片選出英文單字" : promptSub}</p>
         {sealed && (
           <div className="trial-binding" role="status" aria-live="polite">
             <div className="trial-binding-rings" aria-hidden="true"><i /><i /><i /></div>

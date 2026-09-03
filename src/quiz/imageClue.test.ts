@@ -1,7 +1,18 @@
 import { describe, expect, it } from "vitest";
-import { findImageClueHighlight, splitImageCaption } from "./imageClue";
+import { findImageClueHighlight, resolveImageClueCopy, splitImageCaption } from "./imageClue";
 
 describe("image clue highlighting", () => {
+  it("labels picture captions and example translations by their real source", () => {
+    expect(resolveImageClueCopy("豆豆正在下樓。", "例句翻譯。", "下樓", "翻譯"))
+      .toEqual({ label: "這張圖在畫什麼", text: "豆豆正在下樓。", targetHint: "下樓" });
+    expect(resolveImageClueCopy(null, "例句翻譯。", null, "翻譯"))
+      .toEqual({ label: "例句中譯", text: "例句翻譯。", targetHint: "翻譯" });
+  });
+
+  it("does not disguise a dictionary meaning as an image caption", () => {
+    expect(resolveImageClueCopy(null, null)).toBeNull();
+  });
+
   it("優先標亮圖片資料指定的中文提示", () => {
     expect(findImageClueHighlight("牠們團結起來。", "團結", "聯合；團結"))
       .toBe("團結");

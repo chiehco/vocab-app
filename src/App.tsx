@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { HashRouter, Navigate, NavLink, Route, Routes, useLocation } from "react-router-dom";
+import { useLiveQuery } from "dexie-react-hooks";
 import { seedContentIfNeeded } from "./db/seed";
+import { DEFAULT_SETTINGS, getSetting } from "./db/progressDb";
+import { withStartupTimeout } from "./db/startup";
+import { applyFontScale } from "./settings/fontScale";
 import DashboardScreen from "./features/dashboard/DashboardScreen";
 import ReviewScreen from "./features/review/ReviewScreen";
 import SlashScreen from "./features/slash/SlashScreen";
@@ -78,9 +82,18 @@ function AppLayout() {
 export default function App() {
   const [ready, setReady] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const fontScale = useLiveQuery(
+    () => getSetting<number>("fontScale"),
+    [],
+    DEFAULT_SETTINGS.fontScale,
+  );
 
   useEffect(() => {
-    seedContentIfNeeded()
+    applyFontScale(fontScale);
+  }, [fontScale]);
+
+  useEffect(() => {
+    withStartupTimeout(seedContentIfNeeded())
       .then(() => setReady(true))
       .catch((e) => setError(e instanceof Error ? e.message : String(e)));
   }, []);

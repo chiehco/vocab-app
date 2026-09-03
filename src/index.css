@@ -1,7 +1,14 @@
 @import "tailwindcss";
 
+:root {
+  --app-font-scale: 1;
+  font-size: calc(1rem * var(--app-font-scale));
+}
+
 html {
   -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -40,7 +47,7 @@ body {
   gap: 3px;
   color: #817b6c;
   text-decoration: none;
-  font-size: 9px;
+  font-size: 0.5625rem;
   font-weight: 700;
   letter-spacing: .04em;
 }

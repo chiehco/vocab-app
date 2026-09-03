@@ -14,25 +14,25 @@
 }
 
 .seal-review-header { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 8px; align-items: center; min-height: 35px; }
-.seal-review-header a { color: #676758; font: 700 10px "Noto Serif TC", serif; text-decoration: none; }
-.seal-review-header > span { min-width: 0; color: #3f473b; text-align: center; overflow-wrap: anywhere; font: 900 15px "Noto Serif TC", serif; letter-spacing: .14em; }
-.seal-review-header b { justify-self: end; color: #8a816e; font-size: 9px; letter-spacing: .12em; }
+.seal-review-header a { color: #676758; font: 700 0.625rem "Noto Serif TC", serif; text-decoration: none; }
+.seal-review-header > span { min-width: 0; color: #3f473b; text-align: center; overflow-wrap: anywhere; font: 900 0.9375rem "Noto Serif TC", serif; letter-spacing: .14em; }
+.seal-review-header b { justify-self: end; color: #8a816e; font-size: 0.5625rem; letter-spacing: .12em; }
 
 .seal-levels { display: flex; gap: 6px; margin: 17px -18px 0; padding: 0 18px 8px; overflow-x: auto; scrollbar-width: none; }
 .seal-levels::-webkit-scrollbar { display: none; }
-.seal-levels button { flex: none; min-width: 42px; padding: 7px 11px; border: 1px solid rgba(45,49,41,.19); border-radius: 999px; color: #706d5e; background: rgba(255,255,255,.15); font: 700 10px "DM Sans", sans-serif; cursor: pointer; }
+.seal-levels button { flex: none; min-width: 42px; padding: 7px 11px; border: 1px solid rgba(45,49,41,.19); border-radius: 999px; color: #706d5e; background: rgba(255,255,255,.15); font: 700 0.625rem "DM Sans", sans-serif; cursor: pointer; }
 .seal-levels button.active { color: #eee5d0; background: #46513f; border-color: #46513f; }
 
 .seal-progress { position: relative; height: 24px; margin: 15px 0 12px; border-top: 1px solid rgba(43,46,39,.17); }
 .seal-progress i { position: absolute; top: -1px; left: 0; height: 2px; background: var(--seal-red); transition: width .35s ease; }
-.seal-progress span { position: absolute; top: 6px; right: 0; color: #88806e; font-size: 8px; letter-spacing: .1em; }
+.seal-progress span { position: absolute; top: 6px; right: 0; color: #88806e; font-size: 0.5rem; letter-spacing: .1em; }
 
 .seal-workspace { display: flex; min-height: calc(100svh - 210px); flex-direction: column; }
 .seal-card { position: relative; display: flex; min-height: 560px; padding: 20px 24px 27px; flex-direction: column; overflow: hidden; background: rgba(246,238,217,.76); border: 1px solid rgba(54,54,44,.3); box-shadow: 0 16px 32px rgba(52,44,29,.13), inset 0 0 0 6px rgba(255,255,255,.2); animation: seal-card-in .35s cubic-bezier(.2,.75,.24,1) both; }
 .seal-card.revealed { min-height: 600px; }
 .seal-card-border { position: absolute; inset: 8px; border: 1px solid rgba(65,62,48,.13); pointer-events: none; }
 .seal-card::before { content: ""; position: absolute; width: 270px; height: 270px; top: 68px; left: 50%; border: 1px solid rgba(76,84,65,.13); border-radius: 50%; translate: -50% 0; box-shadow: 0 0 0 34px rgba(76,84,65,.025); }
-.seal-card-meta { position: relative; z-index: 2; display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between; color: #807866; font-size: 8px; font-weight: 700; letter-spacing: .16em; }
+.seal-card-meta { position: relative; z-index: 2; display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between; color: #807866; font-size: 0.5rem; font-weight: 700; letter-spacing: .16em; }
 .seal-card-meta span::before { content: ""; display: inline-block; width: 5px; height: 5px; margin-right: 6px; border-radius: 50%; background: var(--seal-red); }
 .seal-card-meta > div { display: flex; align-items: flex-start; gap: 9px; }
 .seal-card-meta > div > b { padding-top: 4px; }
@@ -40,39 +40,39 @@
 
 .seal-card-visual { position: relative; z-index: 1; display: grid; height: 295px; place-items: center; }
 .seal-card-visual img { position: relative; z-index: 2; width: 112%; height: 285px; object-fit: contain; filter: drop-shadow(0 11px 15px rgba(45,39,28,.19)); animation: seal-beast-breathe 3.7s ease-in-out infinite; }
-.seal-card-visual > small { position: absolute; bottom: 2px; color: #9a917c; font: 700 8px "Noto Serif TC", serif; letter-spacing: .18em; }
+.seal-card-visual > small { position: absolute; bottom: 2px; color: #9a917c; font: 700 0.5rem "Noto Serif TC", serif; letter-spacing: .18em; }
 .seal-card-orbit { position: absolute; width: 220px; height: 220px; border: 1px dashed rgba(89,98,75,.22); border-radius: 50%; animation: seal-orbit 25s linear infinite; }
 .seal-card-orbit::after { content: ""; position: absolute; inset: 24px; border: 1px solid rgba(89,98,75,.15); transform: rotate(45deg); }
 
 .word-sigil { position: relative; z-index: 2; width: 210px; overflow: visible; fill: none; stroke: #58634e; stroke-width: 2; stroke-linecap: round; opacity: .9; filter: drop-shadow(0 6px 5px rgba(44,45,36,.12)); }
 .word-sigil .sigil-dash { stroke-dasharray: 4 8; animation: seal-orbit 18s linear infinite reverse; transform-origin: center; }
-.word-sigil text { fill: #4b5544; stroke: none; font: 900 48px "Noto Serif TC", serif; }
+.word-sigil text { fill: #4b5544; stroke: none; font: 900 3rem "Noto Serif TC", serif; }
 
 .seal-card-identity { position: relative; z-index: 2; margin-top: auto; padding-top: 16px; border-top: 1px solid rgba(49,51,42,.17); }
 .seal-card-identity > div { display: flex; align-items: center; gap: 8px; }
-.seal-card-identity h1 { min-width: 0; margin: 0; font: 900 clamp(38px, 11vw, 56px)/1 "Noto Serif TC", serif; letter-spacing: -.055em; overflow-wrap: anywhere; }
-.seal-card-identity p { margin: 8px 0 0; color: #817966; font: 600 10px "Noto Serif TC", serif; }
-.seal-speaker { display: grid !important; flex: none; width: 33px; height: 33px; place-items: center; border: 1px solid rgba(65,71,58,.26) !important; border-radius: 50% !important; background: transparent !important; font-size: 14px !important; }
+.seal-card-identity h1 { min-width: 0; margin: 0; font: 900 clamp(2.375rem, 11vw, 3.5rem)/1 "Noto Serif TC", serif; letter-spacing: -.055em; overflow-wrap: anywhere; }
+.seal-card-identity p { margin: 8px 0 0; color: #817966; font: 600 0.625rem "Noto Serif TC", serif; }
+.seal-speaker { display: grid !important; flex: none; width: 33px; height: 33px; place-items: center; border: 1px solid rgba(65,71,58,.26) !important; border-radius: 50% !important; background: transparent !important; font-size: 0.875rem !important; }
 
 .seal-card-answer { position: relative; z-index: 2; margin-top: 22px; padding-top: 19px; border-top: 1px solid rgba(49,51,42,.17); animation: seal-answer-in .28s ease both; }
-.answer-label { margin: 0; color: var(--seal-red); font: 800 8px "Noto Serif TC", serif; letter-spacing: .18em; }
-.seal-card-answer h2 { margin: 8px 0 0; font: 900 23px/1.4 "Noto Serif TC", serif; }
-.answer-senses { display: grid; gap: 7px; margin: 14px 0 0; padding: 0; list-style: none; }.answer-senses li { display: grid; grid-template-columns: 42px 1fr auto; gap: 8px; align-items: baseline; }.answer-senses span { color: #7a567f; font: 800 8px "Noto Serif TC", serif; }.answer-senses b { color: #555548; font: 800 11px/1.5 "Noto Serif TC", serif; }.answer-senses small { color: #9b5549; font: 800 7px "Noto Serif TC", serif; }
-.answer-en { margin: 8px 0 0; color: #74705f; font-size: 11px; line-height: 1.55; }
+.answer-label { margin: 0; color: var(--seal-red); font: 800 0.5rem "Noto Serif TC", serif; letter-spacing: .18em; }
+.seal-card-answer h2 { margin: 8px 0 0; font: 900 1.4375rem/1.4 "Noto Serif TC", serif; }
+.answer-senses { display: grid; gap: 7px; margin: 14px 0 0; padding: 0; list-style: none; }.answer-senses li { display: grid; grid-template-columns: 42px 1fr auto; gap: 8px; align-items: baseline; }.answer-senses span { color: #7a567f; font: 800 0.5rem "Noto Serif TC", serif; }.answer-senses b { color: #555548; font: 800 0.6875rem/1.5 "Noto Serif TC", serif; }.answer-senses small { color: #9b5549; font: 800 0.4375rem "Noto Serif TC", serif; }
+.answer-en { margin: 8px 0 0; color: #74705f; font-size: 0.6875rem; line-height: 1.55; }
 .answer-note { display: grid; grid-template-columns: 58px 1fr; gap: 9px; margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(51,53,44,.12); }
-.answer-note span { color: #9b5549; font: 800 8px/1.5 "Noto Serif TC", serif; }
-.answer-note p { margin: 0; color: #555548; white-space: pre-wrap; font: 600 10px/1.7 "Noto Serif TC", serif; }
-.seal-card-stamp { position: absolute; z-index: 2; right: 17px; bottom: 18px; display: grid; width: 28px; height: 36px; place-items: center; color: #a43d32; border: 1.5px solid #a43d32; font: 900 12px "Noto Serif TC", serif; transform: rotate(3deg); }
+.answer-note span { color: #9b5549; font: 800 0.5rem/1.5 "Noto Serif TC", serif; }
+.answer-note p { margin: 0; color: #555548; white-space: pre-wrap; font: 600 0.625rem/1.7 "Noto Serif TC", serif; }
+.seal-card-stamp { position: absolute; z-index: 2; right: 17px; bottom: 18px; display: grid; width: 28px; height: 36px; place-items: center; color: #a43d32; border: 1.5px solid #a43d32; font: 900 0.75rem "Noto Serif TC", serif; transform: rotate(3deg); }
 
 .seal-controls { margin-top: 13px; }
-.seal-reveal { display: flex; width: 100%; height: 56px; padding: 0 13px 0 20px; align-items: center; justify-content: space-between; color: #f0e7d3; border: 0; background: #46513f; cursor: pointer; font: 800 12px "Noto Serif TC", serif; box-shadow: 0 7px 14px rgba(50,44,30,.13); }
-.seal-reveal i { display: grid; width: 39px; height: 39px; place-items: center; color: #dfc47f; border: 1px solid rgba(223,196,127,.54); font: 800 8px "Noto Serif TC", serif; font-style: normal; transform: rotate(2deg); }
+.seal-reveal { display: flex; width: 100%; height: 56px; padding: 0 13px 0 20px; align-items: center; justify-content: space-between; color: #f0e7d3; border: 0; background: #46513f; cursor: pointer; font: 800 0.75rem "Noto Serif TC", serif; box-shadow: 0 7px 14px rgba(50,44,30,.13); }
+.seal-reveal i { display: grid; width: 39px; height: 39px; place-items: center; color: #dfc47f; border: 1px solid rgba(223,196,127,.54); font: 800 0.5rem "Noto Serif TC", serif; font-style: normal; transform: rotate(2deg); }
 
 .seal-grades { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; }
 .seal-grades button { min-width: 0; min-height: 61px; padding: 8px 3px; color: #4f5045; border: 1px solid rgba(57,59,49,.23); background: rgba(246,238,217,.45); cursor: pointer; }
 .seal-grades button span, .seal-grades button small { display: block; }
-.seal-grades button span { font: 900 12px "Noto Serif TC", serif; }
-.seal-grades button small { margin-top: 5px; color: #898170; font-size: 7px; }
+.seal-grades button span { font: 900 0.75rem "Noto Serif TC", serif; }
+.seal-grades button small { margin-top: 5px; color: #898170; font-size: 0.4375rem; }
 .seal-grades .grade-0 { color: #973d34; border-color: rgba(164,61,50,.45); }
 .seal-grades .grade-2 { color: #eee5d0; background: #4b5744; border-color: #4b5744; }
 .seal-grades .grade-2 small { color: rgba(238,229,208,.58); }
@@ -92,12 +92,12 @@
 .seal-state-mark::after { inset: 50px; background: #59644f; border: 0; }
 .seal-state-mark i { position: absolute; width: 6px; height: 6px; border-radius: 50%; background: #a43d32; }
 .seal-state-mark i:nth-child(1) { top: -3px; left: 82px; }.seal-state-mark i:nth-child(2) { right: 12px; bottom: 22px; }.seal-state-mark i:nth-child(3) { left: 12px; bottom: 22px; }
-.seal-state-page h1 { margin: 0; font: 900 32px "Noto Serif TC", serif; letter-spacing: .08em; }
-.seal-state-page > p { margin: 12px 0 0; color: #77705f; font: 600 11px "Noto Serif TC", serif; }
-.seal-state-action { margin-top: 27px; padding: 13px 25px; color: #eee5d0; background: #46513f; text-decoration: none; font: 800 11px "Noto Serif TC", serif; }
+.seal-state-page h1 { margin: 0; font: 900 2rem "Noto Serif TC", serif; letter-spacing: .08em; }
+.seal-state-page > p { margin: 12px 0 0; color: #77705f; font: 600 0.6875rem "Noto Serif TC", serif; }
+.seal-state-action { margin-top: 27px; padding: 13px 25px; color: #eee5d0; background: #46513f; text-decoration: none; font: 800 0.6875rem "Noto Serif TC", serif; }
 .seal-complete-ring { display: grid; width: 190px; height: 190px; margin: 104px 0 31px; place-items: center; border: 1px solid rgba(73,85,66,.27); border-radius: 50%; box-shadow: 0 0 0 24px rgba(73,85,66,.035); }
-.seal-complete-ring span { display: grid; width: 70px; height: 84px; place-items: center; color: #a43d32; border: 3px double #a43d32; font: 900 28px "Noto Serif TC", serif; transform: rotate(3deg); }
-.seal-state-eyebrow { color: #a43d32 !important; font: 800 8px "DM Sans", sans-serif !important; letter-spacing: .18em; }
+.seal-complete-ring span { display: grid; width: 70px; height: 84px; place-items: center; color: #a43d32; border: 3px double #a43d32; font: 900 1.75rem "Noto Serif TC", serif; transform: rotate(3deg); }
+.seal-state-eyebrow { color: #a43d32 !important; font: 800 0.5rem "DM Sans", sans-serif !important; letter-spacing: .18em; }
 
 @keyframes seal-card-in { from { opacity: 0; transform: translateY(18px) scale(.985); } }
 @keyframes seal-answer-in { from { opacity: 0; transform: translateY(9px); } }
@@ -111,7 +111,6 @@
   .seal-card-visual { height: 265px; }
   .seal-card-visual img { height: 260px; }
   .seal-grades { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
-  .seal-grades button span { font-size: 10px; }
 }
 
 .seal-card.study-layout { min-height: 0; padding: 18px; background: #faf9f6; }

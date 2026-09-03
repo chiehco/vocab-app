@@ -1,5 +1,26 @@
 const SINGLE_CHARACTER_STOP_WORDS = new Set(["的", "了", "是", "在", "有", "和", "與", "或", "為", "可", "會", "能", "把", "讓"]);
 
+export interface ImageClueCopy {
+  label: "這張圖在畫什麼" | "例句中譯";
+  text: string;
+  targetHint: string | null | undefined;
+}
+
+export function resolveImageClueCopy(
+  captionZh: string | null | undefined,
+  sentenceZh: string | null | undefined,
+  mediaTargetHint?: string | null,
+  exampleMeaningHint?: string | null,
+): ImageClueCopy | null {
+  const caption = captionZh?.trim();
+  if (caption) return { label: "這張圖在畫什麼", text: caption, targetHint: mediaTargetHint };
+
+  const translation = sentenceZh?.trim();
+  if (translation) return { label: "例句中譯", text: translation, targetHint: exampleMeaningHint };
+
+  return null;
+}
+
 function chineseRuns(value: string | null | undefined): string[] {
   if (!value) return [];
   return value.match(/\p{Script=Han}+/gu) ?? [];
