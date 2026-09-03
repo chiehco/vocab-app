@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { applyGrade, newCardState } from "./sm2";
+import { applyGrade, clampIntervalToExam, newCardState } from "./sm2";
 
 const TODAY = "2026-07-03";
 
@@ -59,5 +59,23 @@ describe("applyGrade", () => {
   it("新卡第一次就 Again：state 為 learning", () => {
     const next = applyGrade(newCardState("test", TODAY), 0, TODAY);
     expect(next.state).toBe("learning");
+  });
+
+  it("考試前把長間隔限制在剩餘天數的一半", () => {
+    const mature = {
+      ...newCardState("test", "2026-09-03"),
+      state: "review" as const,
+      intervalDays: 38,
+      repetitions: 4,
+    };
+    const next = applyGrade(mature, 2, "2026-09-03", "2027-01-16");
+    expect(next.intervalDays).toBe(67);
+    expect(next.dueDate).toBe("2026-11-09");
+  });
+
+  it("考試日無效或已過時時不改 SM-2 間隔", () => {
+    expect(clampIntervalToExam(95, "2027-01-17", "2027-01-16")).toBe(95);
+    expect(clampIntervalToExam(95, "2026-09-03", "not-a-date")).toBe(95);
+    expect(clampIntervalToExam(95, "2026-09-03")).toBe(95);
   });
 });

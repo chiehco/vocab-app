@@ -39,6 +39,7 @@ export const DEFAULT_SETTINGS = {
   reviewSessionSize: 20,
   learningLevels: ALL_LEVELS,
   fontScale: 1,
+  examDate: "2027-01-16",
 } as const;
 
 export async function getSetting<T>(key: keyof typeof DEFAULT_SETTINGS): Promise<T> {

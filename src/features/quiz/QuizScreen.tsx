@@ -9,6 +9,8 @@ import { pickDistractors, shuffle } from "../../quiz/distractors";
 import { pickExamDistractors } from "../../quiz/examDistractors";
 import { buildFunctionWordSet, filterExactFillExamples, sortExamWordsByPriority, TOP_EXAM_FILTER } from "../../quiz/examScope";
 import { recordQuizAnswer } from "../../checkin/recordActivity";
+import { buildTodayQueue } from "../../srs/queue";
+import { selectScheduledPracticeItems } from "../../quiz/practiceSelection";
 import SpeakerButton from "../../components/SpeakerButton";
 import { getWordBeastAsset, hasWordBeastAsset } from "../wordbeast/wordBeastAssets";
 import ExamTierBadge from "../wordbeast/ExamTierBadge";
@@ -62,6 +64,8 @@ export default function QuizScreen() {
   const savingRef = useRef(false);
   const [saving, setSaving] = useState(false);
   const [saveError, setSaveError] = useState<string | null>(null);
+  const [startError, setStartError] = useState<string | null>(null);
+  const [startingMode, setStartingMode] = useState<QuizMode | null>(null);
   const today = useToday();
 
   const allExamples = useLiveQuery(() => contentDb.examples.toArray(), []);
@@ -122,29 +126,74 @@ export default function QuizScreen() {
     return filterExactFillExamples(exactExamples, scopedWordSet, functionWordSet);
   }, [allExamples, functionWordSet, scopedCollectedWords]);
 
-  function startMcq(nextMode: QuizMode) {
+  async function buildScheduledWords(candidateWords: string[]): Promise<string[]> {
+    const levels = levelSel.startsWith("LV") ? [levelSel] : undefined;
+    const queue = await buildTodayQueue(levels, candidateWords);
+    return queue.map((item) => item.wordRecord.word);
+  }
+
+  async function startMcq(nextMode: QuizMode) {
     if (!scopedCollectedWords || !allWords) return;
     const eligiblePool = nextMode === "image" ? imagePool ?? [] : scopedCollectedWords;
     if (eligiblePool.length < 4) return;
-    resetSession();
-    const subjects = shuffle(eligiblePool).slice(0, QUIZ_SIZE);
-    setQuestions(subjects.map((target) => ({
-      target,
-      options: shuffle([
+    setStartingMode(nextMode);
+    setStartError(null);
+    try {
+      const scheduledWords = await buildScheduledWords(eligiblePool.map((word) => word.word));
+      const subjects = selectScheduledPracticeItems(
+        eligiblePool,
+        (word) => word.word,
+        scheduledWords,
+        collectedWordSet,
+        QUIZ_SIZE,
+      );
+      if (subjects.length === 0) {
+        setStartError("今天沒有到期或可加入額度的新字；可以改選其他範圍練習。");
+        return;
+      }
+      resetSession();
+      setQuestions(subjects.map((target) => ({
         target,
-        ...(examDistractorRelations?.length
-          ? pickExamDistractors(target, allWords, examDistractorRelations)
-          : pickDistractors(target, allWords)),
-      ]),
-    })));
-    setMode(nextMode); setIndex(0); setScore(0); setAnswered(null); setWrongWords([]);
+        options: shuffle([
+          target,
+          ...(examDistractorRelations?.length
+            ? pickExamDistractors(target, allWords, examDistractorRelations)
+            : pickDistractors(target, allWords)),
+        ]),
+      })));
+      setMode(nextMode); setIndex(0); setScore(0); setAnswered(null); setWrongWords([]);
+    } catch {
+      setStartError("暫時無法整理今日題目，請再試一次。");
+    } finally {
+      setStartingMode(null);
+    }
   }
 
-  function startFill() {
+  async function startFill() {
     if (!fillPool?.length) return;
-    resetSession();
-    setFillQuestions(shuffle(fillPool).slice(0, QUIZ_SIZE));
-    setMode("fill"); setIndex(0); setScore(0); setFillInput(""); setFillResult(null); setWrongWords([]);
+    setStartingMode("fill");
+    setStartError(null);
+    try {
+      const scheduledWords = await buildScheduledWords([...new Set(fillPool.map((example) => example.word))]);
+      const selected = selectScheduledPracticeItems(
+        fillPool,
+        (example) => example.word,
+        scheduledWords,
+        collectedWordSet,
+        QUIZ_SIZE,
+      );
+      if (selected.length === 0) {
+        setStartError("今天沒有到期或可加入額度的填空單字；可以改選其他範圍練習。");
+        return;
+      }
+      resetSession();
+      setFillQuestions(selected);
+      setMode("fill"); setIndex(0); setScore(0); setFillInput(""); setFillResult(null); setWrongWords([]);
+    } catch {
+      setStartError("暫時無法整理今日題目，請再試一次。");
+    } finally {
+      setStartingMode(null);
+    }
   }
 
   function resetSession() {
@@ -182,12 +231,13 @@ export default function QuizScreen() {
           <div className="trial-eye" aria-hidden="true"><i /><span /></div>
         </section>
         <div className="trial-scope"><span>{levelSel === TOP_EXAM_FILTER ? `高頻題庫 ${scopedCollectedWords?.length ?? 0} 字・可直接練習` : `已收集 ${scopedCollectedWords?.length ?? 0} 隻・選擇出題範圍`}</span><TrialLevels selected={levelSel} onChange={setLevelSel} /></div>
+        {startError && <p role="alert">{startError}</p>}
         {levelSel !== TOP_EXAM_FILTER && collectedWords?.length === 0 && <div className="trial-empty"><span>集</span><div><h3>還沒有可馴化的字獸</h3><p>先完成收服，牠才會出現在這裡。</p></div><Link to="/wordbeast">前往收服場 <b>→</b></Link></div>}
         <section className="trial-modes" aria-label="選擇題型">
-          <button onClick={() => startMcq("w2m")} disabled={!scopedCollectedWords || scopedCollectedWords.length < 4}><b>01</b><div><h3>見名辨義</h3><p>{scopedCollectedWords && scopedCollectedWords.length < 4 ? "此範圍需收集至少 4 隻" : "看英文真名，選出正確釋義"}</p></div><span>→</span></button>
-          <button onClick={() => startMcq("m2w")} disabled={!scopedCollectedWords || scopedCollectedWords.length < 4}><b>02</b><div><h3>循義喚名</h3><p>{scopedCollectedWords && scopedCollectedWords.length < 4 ? "此範圍需收集至少 4 隻" : "看中文釋義，找出真正名稱"}</p></div><span>→</span></button>
-          <button onClick={() => startMcq("image")} disabled={!imagePool || imagePool.length < 4}><b>03</b><div><h3>看圖喚名</h3><p>{imagePool && imagePool.length < 4 ? `此範圍只有 ${imagePool.length} 隻有圖字獸` : "依圖片與中文情境，選出英文單字"}</p></div><span>→</span></button>
-          <button onClick={startFill} disabled={!fillPool?.length}><b>04</b><div><h3>殘句補名</h3><p>{fillPool?.length ? `從 ${fillPool.length} 道單一答案例句中補回遺失真名` : "尚無可使用的單一答案例句"}</p></div><span>→</span></button>
+          <button onClick={() => startMcq("w2m")} disabled={!!startingMode || !scopedCollectedWords || scopedCollectedWords.length < 4}><b>01</b><div><h3>見名辨義</h3><p>{startingMode === "w2m" ? "正在整理到期與高頻單字" : scopedCollectedWords && scopedCollectedWords.length < 4 ? "此範圍需收集至少 4 隻" : "看英文真名，選出正確釋義"}</p></div><span>→</span></button>
+          <button onClick={() => startMcq("m2w")} disabled={!!startingMode || !scopedCollectedWords || scopedCollectedWords.length < 4}><b>02</b><div><h3>循義喚名</h3><p>{startingMode === "m2w" ? "正在整理到期與高頻單字" : scopedCollectedWords && scopedCollectedWords.length < 4 ? "此範圍需收集至少 4 隻" : "看中文釋義，找出真正名稱"}</p></div><span>→</span></button>
+          <button onClick={() => startMcq("image")} disabled={!!startingMode || !imagePool || imagePool.length < 4}><b>03</b><div><h3>看圖喚名</h3><p>{startingMode === "image" ? "正在整理到期與高頻單字" : imagePool && imagePool.length < 4 ? `此範圍只有 ${imagePool.length} 隻有圖字獸` : "依圖片與中文情境，選出英文單字"}</p></div><span>→</span></button>
+          <button onClick={startFill} disabled={!!startingMode || !fillPool?.length}><b>04</b><div><h3>殘句補名</h3><p>{startingMode === "fill" ? "正在整理到期與高頻單字" : fillPool?.length ? `從 ${fillPool.length} 道單一答案例句中補回遺失真名` : "尚無可使用的單一答案例句"}</p></div><span>→</span></button>
         </section>
       </div>
     );

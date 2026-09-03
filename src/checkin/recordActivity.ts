@@ -1,4 +1,4 @@
-import { progressDb } from "../db/progressDb";
+import { getSetting, progressDb } from "../db/progressDb";
 import { findProgressCard, getProgressKeys } from "../db/progressIdentity";
 import type { CardState, Grade, ReviewMode } from "../db/types";
 import { scheduleRecall, newCardState } from "../srs/sm2";
@@ -30,6 +30,7 @@ export async function gradeFlashcard(
   if (mode !== "flashcard") return recordQuizAnswer(word, grade > 0, mode, sessionId, isNewSession);
   const keys = await getProgressKeys(word);
   const today = todayStr();
+  const examDate = await getSetting<string>("examDate");
   return progressDb.transaction(
     "rw",
     [progressDb.cardStates, progressDb.reviewLogs, progressDb.checkIns],
@@ -37,7 +38,7 @@ export async function gradeFlashcard(
       const existing = await findProgressCard(keys);
       const isNewWord = !existing;
       const before = existing ?? newCardState(word, today);
-      const scheduled = scheduleRecall(before, grade, today);
+      const scheduled = scheduleRecall(before, grade, today, examDate);
       const after = { ...scheduled, practicePending: false };
 
       await progressDb.cardStates.put(after);

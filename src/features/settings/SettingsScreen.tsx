@@ -32,6 +32,10 @@ export default function SettingsScreen() {
     const row = await progressDb.settings.get("fontScale");
     return normalizeFontScale(row?.value ?? DEFAULT_SETTINGS.fontScale);
   }, []);
+  const examDate = useLiveQuery(async () => {
+    const row = await progressDb.settings.get("examDate");
+    return (row?.value as string) ?? DEFAULT_SETTINGS.examDate;
+  }, []);
 
   async function toggleLevel(lv: string) {
     if (!levels) return;
@@ -111,6 +115,18 @@ export default function SettingsScreen() {
             </button>
           ))}
         </div>
+      </div>
+
+      <div className="mt-4 rounded-xl bg-white p-4 shadow-sm">
+        <label htmlFor="exam-date" className="block text-sm font-bold text-slate-600">學測日期</label>
+        <p className="mt-0.5 text-xs text-slate-400">複習間隔會依剩餘時間縮短，避免單字排到考試之後。</p>
+        <input
+          id="exam-date"
+          type="date"
+          value={examDate ?? ""}
+          onChange={(event) => setSetting("examDate", event.target.value)}
+          className="mt-2 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-bold text-slate-700"
+        />
       </div>
 
       <div className="mt-4 rounded-xl bg-white p-4 shadow-sm">

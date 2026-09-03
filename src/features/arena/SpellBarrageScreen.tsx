@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
-import { getKnownWords } from "../../db/progressIdentity";
+import { getKnownWords, getLogicalCardStates } from "../../db/progressIdentity";
 import { contentDb } from "../../db/contentDb";
 import { getSetting, progressDb } from "../../db/progressDb";
 import type { WordRecord } from "../../db/types";
@@ -19,6 +19,7 @@ import {
   type LetterTile,
 } from "./spellBarrage";
 import "./arena.css";
+import { useToday } from "../../hooks/useToday";
 
 type Stage = "setup" | "playing" | "result";
 type Fighter = "player" | "cpu";
@@ -30,14 +31,25 @@ const RECORD_KEY = "arenaSpellRecord";
 const OPPONENT_ASSET = getWordBeastAsset("W999999", "pest");
 
 export default function SpellBarrageScreen() {
+  const today = useToday();
   const poolData = useLiveQuery(async () => {
-    const [words, knownKeys, levels] = await Promise.all([
+    const [words, knownKeys, levels, priorities, cardStates] = await Promise.all([
       contentDb.words.toArray(),
       getKnownWords(),
       getSetting<string[]>("learningLevels"),
+      contentDb.examPriorities.where("priorityTier").anyOf(["S", "A"]).sortBy("rank"),
+      getLogicalCardStates(),
     ]);
-    return { words, known: new Set(knownKeys as string[]), levels };
-  }, []);
+    const dueWords = new Set(cardStates
+      .filter((card) => card.dueDate <= today || !!card.practicePending)
+      .map((card) => card.word));
+    return {
+      words,
+      known: new Set(knownKeys as string[]),
+      levels,
+      selectionContext: { prioritizedWords: priorities.map((row) => row.word), dueWords },
+    };
+  }, [today]);
   const record = useLiveQuery(async () => {
     const row = await progressDb.settings.get(RECORD_KEY);
     return (row?.value as ArenaRecord | undefined) ?? { wins: 0, losses: 0 };
@@ -85,7 +97,7 @@ export default function SpellBarrageScreen() {
 
   function startMatch() {
     if (!poolData) return;
-    const selected = selectArenaWords(poolData.words, poolData.known, poolData.levels, 5);
+    const selected = selectArenaWords(poolData.words, poolData.known, poolData.levels, 5, Math.random, poolData.selectionContext);
     if (selected.length < 5) return;
     setRoundWords(selected);
     setPlayerScore(0);
@@ -177,7 +189,14 @@ export default function SpellBarrageScreen() {
   }, [outcome, prepareRound, roundIndex, roundWords]);
 
   if (stage === "setup") {
-    const enoughWords = Boolean(poolData && selectArenaWords(poolData.words, poolData.known, poolData.levels, 5, () => 0.5).length >= 5);
+    const enoughWords = Boolean(poolData && selectArenaWords(
+      poolData.words,
+      poolData.known,
+      poolData.levels,
+      5,
+      () => 0.5,
+      poolData.selectionContext,
+    ).length >= 5);
     return (
       <div className="spell-arena setup-screen">
         <header className="spell-arena-nav"><Link to="/arena">← 競技場</Link><span>字母轟炸</span><b>離線</b></header>

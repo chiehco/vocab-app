@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { WordRecord } from "../../db/types";
-import { buildLetterTiles, composeArenaAnswer, CPU_OBSERVE_MS, getCpuFinishMs, normalizeArenaAnswer, selectArenaWords } from "./spellBarrage";
+import { buildLetterTiles, composeArenaAnswer, CPU_OBSERVE_MS, getCpuFinishMs, normalizeArenaAnswer, selectArenaWords, weightedArenaOrder } from "./spellBarrage";
 
 function word(value: string, level = "LV1"): WordRecord {
   return {
@@ -42,6 +42,15 @@ describe("spell barrage", () => {
     expect(selected.slice(0, 2).map((item) => item.word).sort()).toEqual(["cat", "dog"]);
     expect(selected).toHaveLength(4);
     expect(selected.some((item) => item.word === "star")).toBe(false);
+  });
+
+  it("到期與高頻字提高入選機率，但仍走隨機抽題", () => {
+    const words = [word("common"), word("due"), word("ordinary")];
+    const ordered = weightedArenaOrder(words, {
+      prioritizedWords: ["common"],
+      dueWords: new Set(["due"]),
+    }, () => 0.5);
+    expect(ordered.slice(0, 2).map((item) => item.word)).toEqual(["due", "common"]);
   });
 
   it("字母磚包含答案、誘餌與指定數量的妄磚", () => {

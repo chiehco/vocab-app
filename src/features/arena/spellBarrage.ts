@@ -42,19 +42,50 @@ export function shuffleWith<T>(items: T[], random: () => number = Math.random): 
   return result;
 }
 
+export interface ArenaSelectionContext {
+  /** S＋A 單字，依考試排名由前到後。 */
+  prioritizedWords?: readonly string[];
+  /** 今天到期或練習後待正式回想的單字。 */
+  dueWords?: ReadonlySet<string>;
+}
+
+/** 加權隨機排序，讓高頻／到期字較常出現，同時保留遊戲題目的變化。 */
+export function weightedArenaOrder(
+  words: WordRecord[],
+  context: ArenaSelectionContext,
+  random: () => number = Math.random,
+): WordRecord[] {
+  const prioritizedWords = context.prioritizedWords ?? [];
+  const priorityRank = new Map(prioritizedWords.map((word, index) => [word, index]));
+  const rankRange = Math.max(1, prioritizedWords.length - 1);
+  return words
+    .map((word, originalIndex) => {
+      const rank = priorityRank.get(word.word);
+      const examWeight = rank === undefined ? 1 : 2 + 2 * (1 - rank / rankRange);
+      const dueWeight = context.dueWords?.has(word.word) ? 4 : 0;
+      const weight = examWeight + dueWeight;
+      const sample = Math.max(Number.EPSILON, random());
+      return { word, originalIndex, key: Math.pow(sample, 1 / weight) };
+    })
+    .sort((a, b) => b.key - a.key || a.originalIndex - b.originalIndex)
+    .map((item) => item.word);
+}
+
 export function selectArenaWords(
   words: WordRecord[],
   knownWords: Set<string>,
   learningLevels: string[],
   count = 5,
   random: () => number = Math.random,
+  context: ArenaSelectionContext = {},
 ): WordRecord[] {
   const eligible = words.filter(isArenaWordEligible);
-  const known = shuffleWith(eligible.filter((word) => knownWords.has(word.word)), random);
+  const known = weightedArenaOrder(eligible.filter((word) => knownWords.has(word.word)), context, random);
   if (known.length >= count) return known.slice(0, count);
   const knownSet = new Set(known.map((word) => word.word));
-  const fallback = shuffleWith(
+  const fallback = weightedArenaOrder(
     eligible.filter((word) => learningLevels.includes(word.level) && !knownSet.has(word.word)),
+    context,
     random,
   );
   return [...known, ...fallback].slice(0, count);

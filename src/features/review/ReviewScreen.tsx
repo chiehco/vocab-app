@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
 import { contentDb } from "../../db/contentDb";
+import { DEFAULT_SETTINGS, getSetting } from "../../db/progressDb";
 import { getCardState } from "../../db/progressIdentity";
 import { todayStr } from "../../lib/dates";
 import { useToday } from "../../hooks/useToday";
@@ -192,11 +193,16 @@ function Flashcard({ item, flipped, onFlip, onGrade, position, saving }: { item:
   const word = item.wordRecord;
   const illustration = useIllustrationMedia(word);
   const card = useLiveQuery(() => getCardState(word.word), [word.word]);
+  const examDate = useLiveQuery(
+    () => getSetting<string>("examDate"),
+    [],
+    DEFAULT_SETTINGS.examDate,
+  );
   function nextReviewLabel(grade: Grade) {
     if (item.isRecap) return grade === 0 ? "加入待回想" : "維持原排程";
     const today = todayStr();
     const current = card ?? newCardState(word.word, today);
-    const next = scheduleRecall(current, grade, today);
+    const next = scheduleRecall(current, grade, today, examDate);
     return `${next === current ? "維持" : "複習"} ${next.dueDate.slice(5).replace("-", "/")}`;
   }
   const notes = useLiveQuery(() => contentDb.notes.where("word").equals(word.word).toArray(), [word.word]);
