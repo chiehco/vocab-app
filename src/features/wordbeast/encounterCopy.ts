@@ -19,17 +19,19 @@ export function stripExamPoint(value: string): string {
 }
 
 export function getPrimaryMeaning(value: string | null | undefined): string {
-  return value?.split(/[；;]/u)[0]?.trim() || "釋義待補";
+  return value?.split(/[；;]/u)[0]?.trim() || "中文意思待補";
 }
 
-export function getEncounterMeaning(record: WordRecord, example?: ExampleRecord): string {
-  const fallback = record.meaningZh?.trim() || "釋義待補";
+export function getEncounterMeaning(record: WordRecord, example?: ExampleRecord, imageTargetHint?: string | null): string {
+  const approvedImageMeaning = imageTargetHint?.trim();
+  if (approvedImageMeaning) return approvedImageMeaning;
+  const fallback = record.meaningZh?.trim() || "中文意思待補";
   if (!exampleMatchesEncounterWord(record, example)) return fallback;
   const hint = stripExamPoint(example?.meaningHint?.trim() || "");
   return hint || fallback;
 }
 
 export function getEncounterPos(record: WordRecord, example?: ExampleRecord): string {
-  if (!exampleMatchesEncounterWord(record, example)) return record.pos || "詞性未標";
-  return example?.sensePos || record.pos || "詞性未標";
+  if (!exampleMatchesEncounterWord(record, example)) return record.pos || "詞性待補";
+  return example?.sensePos || record.pos || "詞性待補";
 }

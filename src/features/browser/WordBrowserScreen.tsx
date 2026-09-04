@@ -55,14 +55,14 @@ export default function WordBrowserScreen() {
   return (
     <div className="realm-page archive-page">
       <header className="realm-header">
-        <div><p>WORD BEAST ARCHIVE</p><h1>萬字譜</h1></div>
-        <span className="realm-count"><b>{level === TOP_EXAM_FILTER ? topExamWordSet.size || "—" : words?.length ?? "—"}</b> {level === TOP_EXAM_FILTER ? "S+A 開放" : "總收錄"}</span>
+        <div><p>WORD BEAST ARCHIVE</p><h1>單字總表</h1></div>
+        <span className="realm-count"><b>{level === TOP_EXAM_FILTER ? topExamWordSet.size || "—" : words?.length ?? "—"}</b> {level === TOP_EXAM_FILTER ? "已解鎖 S+A" : "總收錄"}</span>
       </header>
 
       <section className="archive-tools" aria-label="搜尋與篩選">
         <label className="archive-search">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m15.5 15.5 5 5" /></svg>
-          <input type="search" value={search} onChange={(event) => { setSearch(event.target.value); setLimit(PAGE_SIZE); }} placeholder="輸入真名或中文釋義" />
+          <input type="search" value={search} onChange={(event) => { setSearch(event.target.value); setLimit(PAGE_SIZE); }} placeholder="搜尋英文單字或中文意思" />
           {search && <button onClick={() => setSearch("")} aria-label="清除搜尋">×</button>}
         </label>
         <div className="realm-levels">
@@ -71,11 +71,11 @@ export default function WordBrowserScreen() {
       </section>
 
       <div className="archive-result-head">
-        <span>{search ? `「${search}」的結果` : level === TOP_EXAM_FILTER ? "S+A 高頻字卡" : level === "全部" ? "全部真名" : `${level} 卷`}</span>
+        <span>{search ? `「${search}」的結果` : level === TOP_EXAM_FILTER ? "S+A 學測高頻字" : level === "全部" ? "全部真名" : `${level} 卷`}</span>
         <b>{filtered.length} 枚</b>
       </div>
 
-      {!words ? <div className="realm-loading"><i /><p>正在展開萬字譜</p></div> : (
+      {!words ? <div className="realm-loading"><i /><p>載入中</p></div> : (
         <>
           <ol className="archive-atlas">
             {shown.map((word, index) => {
@@ -95,7 +95,7 @@ export default function WordBrowserScreen() {
                     <span className="atlas-meta">
                       <ExamTierBadge tier={priorityByWord.get(word.word)} compact />
                       <small>{word.level}</small>
-                      {display.needsReview && <i title="主義尚待人工校準">待校</i>}
+                      {display.needsReview && <i title="主要意思待人工確認">待校</i>}
                     </span>
                   </Link>
                 </li>
@@ -103,7 +103,7 @@ export default function WordBrowserScreen() {
             })}
           </ol>
           {filtered.length > limit && <button className="archive-more" onClick={() => setLimit(limit + PAGE_SIZE)}>再展開 {Math.min(PAGE_SIZE, filtered.length - limit)} 枚 <span>↓</span></button>}
-          {filtered.length === 0 && <div className="archive-empty"><span>無</span><h2>譜中查無此名</h2><p>換一個拼法或等級再找找看。</p></div>}
+          {filtered.length === 0 && <div className="archive-empty"><span>無</span><h2>查無這個單字</h2><p>換個拼法或等級再找找看。</p></div>}
         </>
       )}
     </div>

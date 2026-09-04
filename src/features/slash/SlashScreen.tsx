@@ -93,9 +93,9 @@ function freshCore(): GameCore {
 }
 
 const MODE_HINTS: Record<SlashMode, string> = {
-  zh2en: "斬出正確的英文牌！",
-  en2zh: "斬出它的中文意思！",
-  audio: "聽音辨字，斬出你聽到的字！",
+  zh2en: "選出正確的英文單字",
+  en2zh: "選出正確的中文意思",
+  audio: "聽發音，選出你聽到的單字",
 };
 
 export default function SlashScreen() {
@@ -204,7 +204,7 @@ export default function SlashScreen() {
         );
       }
     } catch (e) {
-      console.error("千單斬進度寫入失敗", e);
+      console.error("進度儲存失敗", e);
     }
   }
 

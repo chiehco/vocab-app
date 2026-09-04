@@ -18,13 +18,14 @@ import WordBeastPrototype from "./features/wordbeast/WordBeastPrototype";
 import Lv1PilotScreen from "./features/wordbeast/Lv1PilotScreen";
 import ArenaScreen from "./features/arena/ArenaScreen";
 import SpellBarrageScreen from "./features/arena/SpellBarrageScreen";
+import ExamHubScreen from "./features/exam/ExamHubScreen";
 
 const NAV_ITEMS = [
   { to: "/", label: "首頁", icon: "home" },
   { to: "/review", label: "複習", icon: "review" },
-  { to: "/quiz", label: "馴化", icon: "trial" },
-  { to: "/browse", label: "萬字譜", icon: "archive" },
-  { to: "/progress", label: "足跡", icon: "trace" },
+  { to: "/quiz", label: "練習", icon: "trial" },
+  { to: "/browse", label: "單字總表", icon: "archive" },
+  { to: "/progress", label: "紀錄", icon: "trace" },
 ];
 
 function NavIcon({ name }: { name: string }) {
@@ -56,6 +57,7 @@ function AppLayout() {
           <Route path="/settings" element={<SettingsScreen />} />
           <Route path="/arena" element={<ArenaScreen />} />
           <Route path="/arena/spell-barrage" element={<SpellBarrageScreen />} />
+          <Route path="/exam" element={<ExamHubScreen />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
@@ -112,7 +114,7 @@ export default function App() {
   if (!ready) {
     return (
       <div className="flex min-h-screen items-center justify-center">
-        <p className="animate-pulse text-slate-500">單字資料載入中…</p>
+        <p className="animate-pulse text-slate-500">載入單字資料中…</p>
       </div>
     );
   }

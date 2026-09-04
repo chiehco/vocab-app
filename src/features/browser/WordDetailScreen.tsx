@@ -126,7 +126,7 @@ export default function WordDetailScreen() {
     return Object.fromEntries(records.map((record) => [record.word, record]));
   }, [familyWordKey]);
 
-  if (!word) return <div className="dossier-loading"><i /><p>正在調閱卷宗</p></div>;
+  if (!word) return <div className="dossier-loading"><i /><p>載入中</p></div>;
 
   const asset = getWordBeastAsset(word.wordId, word.word, word.imageWordId);
   const sortedMorphemes = morphemes?.slice().sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
@@ -138,7 +138,7 @@ export default function WordDetailScreen() {
   const kinRelations = relations?.filter((relation) => relation.relationType !== "confuse") ?? [];
   const falseForms = [
     ...(relations?.filter((relation) => relation.relationType === "confuse").map((relation) => ({ ...relation, kind: "易混淆", targetWord: relation.targetWord })) ?? []),
-    ...(examDistractors?.map((relation) => ({ ...relation, kind: "歷屆誘答", targetWord: relation.relatedWord })) ?? []),
+    ...(examDistractors?.map((relation) => ({ ...relation, kind: "歷屆的錯誤選項", targetWord: relation.relatedWord })) ?? []),
   ];
   const availableBackTabs: [DossierBackTab, string][] = [
     ["meaning", "字義"],
@@ -150,12 +150,12 @@ export default function WordDetailScreen() {
   return (
     <div className="word-dossier-page">
       <header className="word-dossier-nav">
-        <Link to="/browse">← 萬字譜</Link><span>ARCHIVE · {word.wordId}</span><b>{word.level}</b>
+        <Link to="/browse">← 單字總表</Link><span>ARCHIVE · {word.wordId}</span><b>{word.level}</b>
       </header>
 
       <div className="dossier-card-controls" aria-label="字卡正反面">
-        <button className={cardSide === "front" ? "active" : ""} onClick={() => setCardSide("front")} aria-pressed={cardSide === "front"}>圖鑑正面</button>
-        <button className={cardSide === "back" ? "active" : ""} onClick={() => setCardSide("back")} aria-pressed={cardSide === "back"}>資料背面</button>
+        <button className={cardSide === "front" ? "active" : ""} onClick={() => setCardSide("front")} aria-pressed={cardSide === "front"}>單字卡</button>
+        <button className={cardSide === "back" ? "active" : ""} onClick={() => setCardSide("back")} aria-pressed={cardSide === "back"}>詳細資料</button>
       </div>
 
       {cardSide === "front" ? (
@@ -166,12 +166,12 @@ export default function WordDetailScreen() {
             {word.phoneticUs && <span className="dossier-phonetic"><b>KK</b> /{word.phoneticUs}/</span>}
             <h2>{illustrationMeaning || displaySense.meaning}</h2>
             <WordTraitBadges senseCount={senseCount} hasConfusables={falseForms.length > 0} hasMorphemes={!!sortedMorphemes?.length} />
-            {displaySense.needsReview && !illustrationMeaning && <span className="dossier-needs-review">主義待校準</span>}
+            {displaySense.needsReview && !illustrationMeaning && <span className="dossier-needs-review">主要意思待確認</span>}
           </div>
           {asset ? <StudyIllustration src={asset} word={word.word} caption={illustration?.captionZh} /> : <div className="dossier-hero-mark">
             <span className="dossier-orbit" />
             <DossierSigil word={word.word} />
-            <small>圖像待收錄</small>
+            <small>圖片尚未收錄</small>
           </div>}
         </section>
       ) : (
@@ -185,9 +185,9 @@ export default function WordDetailScreen() {
               <div className="back-priority-stats">
                 <span><b>{priority.xtYears}</b>學測年數</span>
                 <span><b>{priority.xtAnswerCount}</b>答案次數</span>
-                <span><b>{priority.rank}</b>考頻順位</span>
+                <span><b>{priority.rank}</b>學測考頻排名</span>
               </div>
-              {priority.xtYearList && <p>出現年度：{priority.xtYearList}</p>}
+              {priority.xtYearList && <p>學測出現年度：{priority.xtYearList}</p>}
             </div>
           )}
           <nav aria-label="字卡背面資料">
@@ -198,12 +198,12 @@ export default function WordDetailScreen() {
           <div className="dossier-back-content">
             {backTab === "meaning" && (
               <div className="back-meaning">
-                <small>主義 · {displaySense.pos}</small>
+                <small>主要意思 · {displaySense.pos}</small>
                 <h2>{displaySense.meaning}</h2>
                 {senses && senses.length > 0 ? (
                   <ol>{senses.slice(0, 4).map((sense) => <li key={sense.senseId}><b>{sense.sensePos}</b><span>{sense.meaningZh}</span>{sense.isExamSense && <i>考義</i>}</li>)}</ol>
                 ) : (
-                  <p>目前只有字典彙總，尚未拆分常用義與考義。此字已列入校準清單。</p>
+                  <p>目前只有字典整體釋義，還沒拆出常用意思與考試意思。已列入待補清單。</p>
                 )}
               </div>
             )}
@@ -211,13 +211,13 @@ export default function WordDetailScreen() {
               <div className="back-link-list">
                 {kinRelations.slice(0, 6).map((relation) => {
                   const related = relatedWords?.[relation.targetWord];
-                  return <div key={`${relation.relationId}:${relation.targetWord}`}><b>{related ? <Link to={`/word/${related.wordId}`}>{relation.targetWord}</Link> : relation.targetWord}{relation.reverseLabel && <small>{relation.reverseLabel}</small>}</b><span>{related?.meaningZh || relation.note || "關聯義待補"}</span></div>;
+                  return <div key={`${relation.relationId}:${relation.targetWord}`}><b>{related ? <Link to={`/word/${related.wordId}`}>{relation.targetWord}</Link> : relation.targetWord}{relation.reverseLabel && <small>{relation.reverseLabel}</small>}</b><span>{related?.meaningZh || relation.note || "相關意思待補"}</span></div>;
                 })}
               </div>
             )}
             {backTab === "roots" && (
               <div className="back-root-list">
-                {sortedMorphemes?.slice(0, 5).map((morpheme) => <div key={morpheme.rowId}><b>{morpheme.morpheme}</b><small>{MORPHEME_TYPE_LABEL[morpheme.morphemeType || ""] || morpheme.morphemeType || "構件"}</small><span>{morpheme.meaningZh || morpheme.meaningEn || "釋義待補"}</span></div>)}
+                {sortedMorphemes?.slice(0, 5).map((morpheme) => <div key={morpheme.rowId}><b>{morpheme.morpheme}</b><small>{MORPHEME_TYPE_LABEL[morpheme.morphemeType || ""] || morpheme.morphemeType || "構件"}</small><span>{morpheme.meaningZh || morpheme.meaningEn || "中文意思待補"}</span></div>)}
                 {rootFamilies && rootFamilies.length > 0 && (
                   <div className="back-root-family">
                     {rootFamilies.map((family) => (
@@ -247,21 +247,21 @@ export default function WordDetailScreen() {
       )}
 
       <section className="dossier-status" aria-label="學習狀態">
-        <div><span>封印狀態</span><b>{cardState ? STATE_LABEL[cardState.state] : "尚未遭遇"}</b></div>
-        <div><span>{cardState?.practicePending ? "練習後待回想" : "下次校準"}</span><b>{cardState?.practicePending ? "可現在複習" : cardState?.dueDate ?? "—"}</b></div>
+        <div><span>記憶狀態</span><b>{cardState ? STATE_LABEL[cardState.state] : "尚未學過"}</b></div>
+        <div><span>{cardState?.practicePending ? "練習後待複習" : "下次複習"}</span><b>{cardState?.practicePending ? "現在可以複習" : cardState?.dueDate ?? "—"}</b></div>
         <div><span>考頻／難度</span><b>{priority ? `${getExamStarText(priority.priorityTier)}・${word.level}` : word.level}</b></div>
       </section>
 
       {senses && senses.length > 0 && (
         <section className="dossier-section meaning-focus-section">
-          <div className="dossier-section-head"><div><p>MEANING & EXAM FOCUS</p><h2>常用義 · 真名多相</h2></div><span>{senses.length} 相</span></div>
-          <ol className="dossier-senses">{senses.map((sense) => <li className={sense.isExamSense ? "exam-sense" : undefined} key={sense.senseId}><b>{String(sense.senseOrder).padStart(2, "0")}</b><div><p><span>{sense.sensePos}</span>{sense.meaningZh}</p>{sense.isExamSense && <small>歷屆考義{sense.examEvidence ? ` · ${sense.examEvidence}` : ""}</small>}{sense.isExamSense && sense.note && <em>{sense.note}</em>}{sense.answerForms.length > 0 && <i>考卷字形 · {sense.answerForms.join("／")}</i>}</div></li>)}</ol>
+          <div className="dossier-section-head"><div><p>MEANING & EXAM FOCUS</p><h2>常用意思</h2></div><span>{senses.length > 1 ? `${senses.length} 種意思` : "已整理"}</span></div>
+          <ol className="dossier-senses">{senses.map((sense) => <li className={sense.isExamSense ? "exam-sense" : undefined} key={sense.senseId}><b>{String(sense.senseOrder).padStart(2, "0")}</b><div><p><span>{sense.sensePos}</span>{sense.meaningZh}</p>{sense.isExamSense && <small>歷屆考過的意思{sense.examEvidence ? ` · ${sense.examEvidence}` : ""}</small>}{sense.isExamSense && sense.note && <em>{sense.note}</em>}{sense.answerForms.length > 0 && <i>考卷上的寫法 · {sense.answerForms.join("／")}</i>}</div></li>)}</ol>
         </section>
       )}
 
       {examples && examples.length > 0 && (
         <section className="dossier-section">
-          <div className="dossier-section-head"><div><p>EXAMPLES</p><h2>例句 · 遭遇紀錄</h2></div><span>{examples.length} 則</span></div>
+          <div className="dossier-section-head"><div><p>EXAMPLES</p><h2>例句</h2></div><span>{examples.length} 則</span></div>
           <ol className="dossier-examples">{examples.map((example, index) => <li key={example.exampleId}><b>{String(index + 1).padStart(2, "0")}</b><div>{example.meaningHint && <small className="example-sense">{example.sensePos || "語境"} · {example.meaningHint}</small>}<p>{example.sentenceEn}</p>{example.sentenceZh && <span>{example.sentenceZh}</span>}</div></li>)}</ol>
         </section>
       )}
@@ -270,35 +270,35 @@ export default function WordDetailScreen() {
 
       {notes && notes.length > 0 && (
         <section className="dossier-section">
-          <div className="dossier-section-head"><div><p>MEMORY & USAGE NOTES</p><h2>助記與用法</h2></div><span>{notes.length} 則</span></div>
+          <div className="dossier-section-head"><div><p>MEMORY & USAGE NOTES</p><h2>記憶法與用法</h2></div><span>{notes.length} 則</span></div>
           <div className="dossier-note-list">{notes.map((note) => <article key={note.noteId}><div><span>{NOTE_TYPE_LABEL[note.noteType] ?? note.noteType}</span><b>{note.title || "補充說明"}</b></div><p>{note.content}</p></article>)}</div>
         </section>
       )}
 
       {kinRelations.length > 0 && (
         <section className="dossier-section">
-          <div className="dossier-section-head"><div><p>RELATED WORDS</p><h2>關聯詞 · 同族痕跡</h2></div><span>{kinRelations.length} 枚</span></div>
+          <div className="dossier-section-head"><div><p>RELATED WORDS</p><h2>相關單字</h2></div><span>{kinRelations.length} 枚</span></div>
           <div className="dossier-relations">{kinRelations.map((relation) => {
             const related = relatedWords?.[relation.targetWord];
-            return <div key={`${relation.relationId}:${relation.targetWord}`}><span>{related ? <Link to={`/word/${related.wordId}`}><strong>{relation.targetWord}</strong></Link> : <strong>{relation.targetWord}</strong>}<small>{relation.reverseLabel || RELATION_TYPE_LABEL[relation.relationType || ""] || relation.relationType || "關聯詞"}</small></span><p><b>{related?.meaningZh || "中文釋義待補"}</b>{relation.note && <span>{relation.note}</span>}</p></div>;
+            return <div key={`${relation.relationId}:${relation.targetWord}`}><span>{related ? <Link to={`/word/${related.wordId}`}><strong>{relation.targetWord}</strong></Link> : <strong>{relation.targetWord}</strong>}<small>{relation.reverseLabel || RELATION_TYPE_LABEL[relation.relationType || ""] || relation.relationType || "關聯詞"}</small></span><p><b>{related?.meaningZh || "中文意思待補"}</b>{relation.note && <span>{relation.note}</span>}</p></div>;
           })}</div>
         </section>
       )}
 
       {falseForms.length > 0 && (
         <section className="dossier-section misconception-section">
-          <div className="dossier-section-head"><div><p>CONFUSABLES</p><h2>易混淆 · 斬妄形</h2></div><span>{falseForms.length} 枚</span></div>
-          <p className="dossier-section-intro">易混真名與歷屆誘答都收在這裡。先看差異，再斬掉冒牌答案。</p>
+          <div className="dossier-section-head"><div><p>CONFUSABLES</p><h2>容易混淆的字 · 斬妄</h2></div><span>{falseForms.length} 個</span></div>
+          <p className="dossier-section-intro">容易混淆的字與歷屆錯誤選項都收在這裡。先看差異，再排除錯誤答案。</p>
           <div className="dossier-relations">{falseForms.map((relation) => {
             const related = relatedWords?.[relation.targetWord];
-            return <div key={`${relation.relationId}:${relation.kind}`}><span>{related ? <Link to={`/word/${related.wordId}`}><strong>{relation.targetWord}</strong></Link> : <strong>{relation.targetWord}</strong>}<small>{relation.kind}</small></span><p><b>{related?.meaningZh || "中文釋義待補"}</b>{relation.note && <span>{relation.note}</span>}</p></div>;
+            return <div key={`${relation.relationId}:${relation.kind}`}><span>{related ? <Link to={`/word/${related.wordId}`}><strong>{relation.targetWord}</strong></Link> : <strong>{relation.targetWord}</strong>}<small>{relation.kind}</small></span><p><b>{related?.meaningZh || "中文意思待補"}</b>{relation.note && <span>{relation.note}</span>}</p></div>;
           })}</div>
         </section>
       )}
 
       {sortedMorphemes && sortedMorphemes.length > 0 && (
         <section className="dossier-section morpheme-section">
-          <div className="dossier-section-head"><div><p>WORD PARTS</p><h2>字根拆解 · 真名解構</h2></div><span>{sortedMorphemes.length} 段</span></div>
+          <div className="dossier-section-head"><div><p>WORD PARTS</p><h2>字根拆解</h2></div><span>{sortedMorphemes.length} 段</span></div>
           <div className="dossier-morphemes">{sortedMorphemes.map((morpheme) => <div key={morpheme.rowId}><strong>{morpheme.morpheme}</strong><span>{MORPHEME_TYPE_LABEL[morpheme.morphemeType || ""] || morpheme.morphemeType || "構件"}</span><p>{morpheme.meaningZh || morpheme.meaningEn || "—"}</p>{morpheme.origin && <small>{morpheme.origin}</small>}</div>)}</div>
           {rootFamilies && rootFamilies.length > 0 && (
             <div className="dossier-root-family">
@@ -318,7 +318,7 @@ export default function WordDetailScreen() {
         </section>
       )}
 
-      <p className="dossier-footer">萬字譜 · {word.wordId} · 封存</p>
+      <p className="dossier-footer">單字總表 · {word.wordId} · 封存</p>
     </div>
   );
 }

@@ -35,12 +35,12 @@ function ImageChineseClue({ word, clue }: { word: WordRecord; clue: ImageClueCop
     <div className="trial-image-clue">
       <span>{clue.label}</span>
       <p>{before}{answer && <mark>{answer}</mark>}{after}</p>
-      {!answer && fallback && <small>指定回答：<b>{fallback}</b></small>}
+      {!answer && fallback && <small>要回答的意思：<b>{fallback}</b></small>}
     </div>
   );
 }
 
-function TrialHeader({ label = "字獸馴化", progress }: { label?: string; progress?: string }) {
+function TrialHeader({ label = "單字練習", progress }: { label?: string; progress?: string }) {
   return <header className="realm-header trial-header"><div><p>BEAST TAMING</p><h1>{label}</h1></div>{progress ? <span className="realm-count">{progress}</span> : <span className="trial-seal">馴</span>}</header>;
 }
 
@@ -227,17 +227,17 @@ export default function QuizScreen() {
       <div className="realm-page trial-page">
         <TrialHeader />
         <section className="trial-intro">
-          <div><p>{levelSel === TOP_EXAM_FILTER ? "S＋A 高頻考詞" : "只馴化已收集字獸"}</p><h2>{levelSel === TOP_EXAM_FILTER ? <>先守住高頻，<br />再擴張你的<em>得分範圍。</em></> : <>收服只是相遇，<br />能在情境中認出，<em>才算真的馴化。</em></>}</h2></div>
+          <div><p>{levelSel === TOP_EXAM_FILTER ? "S+A 學測高頻字" : "只練習已學過的單字"}</p><h2>{levelSel === TOP_EXAM_FILTER ? <>先守住高頻，<br />再擴張你的<em>得分範圍。</em></> : <>收服只是相遇，<br />能在情境中認出，<em>才算真的馴化。</em></>}</h2></div>
           <div className="trial-eye" aria-hidden="true"><i /><span /></div>
         </section>
         <div className="trial-scope"><span>{levelSel === TOP_EXAM_FILTER ? `高頻題庫 ${scopedCollectedWords?.length ?? 0} 字・可直接練習` : `已收集 ${scopedCollectedWords?.length ?? 0} 隻・選擇出題範圍`}</span><TrialLevels selected={levelSel} onChange={setLevelSel} /></div>
         {startError && <p role="alert">{startError}</p>}
-        {levelSel !== TOP_EXAM_FILTER && collectedWords?.length === 0 && <div className="trial-empty"><span>集</span><div><h3>還沒有可馴化的字獸</h3><p>先完成收服，牠才會出現在這裡。</p></div><Link to="/wordbeast">前往收服場 <b>→</b></Link></div>}
+        {levelSel !== TOP_EXAM_FILTER && collectedWords?.length === 0 && <div className="trial-empty"><span>集</span><div><h3>還沒有可以練習的單字</h3><p>先完成收服，牠才會出現在這裡。</p></div><Link to="/wordbeast">前往收服場 <b>→</b></Link></div>}
         <section className="trial-modes" aria-label="選擇題型">
-          <button onClick={() => startMcq("w2m")} disabled={!!startingMode || !scopedCollectedWords || scopedCollectedWords.length < 4}><b>01</b><div><h3>見名辨義</h3><p>{startingMode === "w2m" ? "正在整理到期與高頻單字" : scopedCollectedWords && scopedCollectedWords.length < 4 ? "此範圍需收集至少 4 隻" : "看英文真名，選出正確釋義"}</p></div><span>→</span></button>
-          <button onClick={() => startMcq("m2w")} disabled={!!startingMode || !scopedCollectedWords || scopedCollectedWords.length < 4}><b>02</b><div><h3>循義喚名</h3><p>{startingMode === "m2w" ? "正在整理到期與高頻單字" : scopedCollectedWords && scopedCollectedWords.length < 4 ? "此範圍需收集至少 4 隻" : "看中文釋義，找出真正名稱"}</p></div><span>→</span></button>
+          <button onClick={() => startMcq("w2m")} disabled={!!startingMode || !scopedCollectedWords || scopedCollectedWords.length < 4}><b>01</b><div><h3>見名辨義</h3><p>{startingMode === "w2m" ? "正在整理到期與高頻單字" : scopedCollectedWords && scopedCollectedWords.length < 4 ? "這個範圍至少要有 4 個已學單字" : "看英文單字，選出正確的中文意思"}</p></div><span>→</span></button>
+          <button onClick={() => startMcq("m2w")} disabled={!!startingMode || !scopedCollectedWords || scopedCollectedWords.length < 4}><b>02</b><div><h3>循義喚名</h3><p>{startingMode === "m2w" ? "正在整理到期與高頻單字" : scopedCollectedWords && scopedCollectedWords.length < 4 ? "這個範圍至少要有 4 個已學單字" : "看中文意思，選出正確的英文單字"}</p></div><span>→</span></button>
           <button onClick={() => startMcq("image")} disabled={!!startingMode || !imagePool || imagePool.length < 4}><b>03</b><div><h3>看圖喚名</h3><p>{startingMode === "image" ? "正在整理到期與高頻單字" : imagePool && imagePool.length < 4 ? `此範圍只有 ${imagePool.length} 隻有圖字獸` : "依圖片與中文情境，選出英文單字"}</p></div><span>→</span></button>
-          <button onClick={startFill} disabled={!!startingMode || !fillPool?.length}><b>04</b><div><h3>殘句補名</h3><p>{startingMode === "fill" ? "正在整理到期與高頻單字" : fillPool?.length ? `從 ${fillPool.length} 道單一答案例句中補回遺失真名` : "尚無可使用的單一答案例句"}</p></div><span>→</span></button>
+          <button onClick={startFill} disabled={!!startingMode || !fillPool?.length}><b>04</b><div><h3>殘句補名</h3><p>{startingMode === "fill" ? "正在整理到期與高頻單字" : fillPool?.length ? `從 ${fillPool.length} 道單一答案例句中填入遺失的英文單字` : "尚無可使用的單一答案例句"}</p></div><span>→</span></button>
         </section>
       </div>
     );
@@ -250,15 +250,15 @@ export default function QuizScreen() {
       .filter((word): word is WordRecord => !!word);
     return (
       <div className="realm-page trial-result-page">
-        <TrialHeader label="馴化結果" />
+        <TrialHeader label="練習結果" />
         <div className={`trial-result-mark ${perfect ? "perfect" : ""}`}><span>{score}</span><small>/ {total}</small></div>
         <p className="trial-result-kicker">{perfect ? "FLAWLESS TAMING" : "TAMING COMPLETE"}</p>
-        <h2>{perfect ? "真名無誤" : "判定完成"}</h2>
-        <p>{perfect ? "所有字獸都被準確辨認。" : `本輪辨認 ${score} 枚，錯過 ${total - score} 枚。`}</p>
-        {todayCheckIn && <div className="trial-checkin-confirmed" role="status"><span>✓</span><div><b>今日已打卡</b><small>完成 {todayCheckIn.reviewCount} 次練習 · 本輪紀錄已保存</small></div></div>}
-        <p>新字與錯題已加入待回想；完成正式回想評分後，才會調整記憶間隔。</p>
+        <h2>{perfect ? "答對了" : "判定完成"}</h2>
+        <p>{perfect ? "全部答對，所有字獸都辨認成功！" : `本輪辨認 ${score} 枚，錯過 ${total - score} 枚。`}</p>
+        {todayCheckIn && <div className="trial-checkin-confirmed" role="status"><span>✓</span><div><b>今天已完成學習</b><small>完成 {todayCheckIn.reviewCount} 次練習 · 本輪紀錄已保存</small></div></div>}
+        <p>新字與錯題已加入待複習；完成正式複習評分後，才會調整記憶間隔。</p>
         {wrongWordRecords.length > 0 && <section className="trial-missed" aria-labelledby="trial-missed-title"><div><p>REVIEW NEXT</p><h3 id="trial-missed-title">本輪需再看</h3></div><div>{wrongWordRecords.map((word) => <Link key={word.wordId} to={`/word/${word.wordId}`}><b>{word.word}</b><span>{word.meaningZh}</span><i>→</i></Link>)}</div></section>}
-        <div className="trial-result-actions"><Link to="/review">前往回想複習</Link><button onClick={() => setMode(null)}>再馴化一次</button><Link to="/">返回萬字譜</Link></div>
+        <div className="trial-result-actions"><Link to="/review">前往複習</Link><button onClick={() => setMode(null)}>再練習一次</button><Link to="/">返回首頁</Link></div>
       </div>
     );
   }
@@ -283,11 +283,11 @@ export default function QuizScreen() {
           <p className="trial-question-label">RESTORE THE MISSING NAME</p>
           <h2>{question.blankSentence}</h2>
           {question.sentenceZh && <p className="trial-translation">{question.sentenceZh}</p>}
-          <label><span>填入真名</span><input value={fillInput} onChange={(event) => setFillInput(event.target.value)} onKeyDown={(event) => event.key === "Enter" && submitFill()} disabled={saving || fillResult !== null} autoCapitalize="none" autoCorrect="off" /></label>
-          {fillResult && <div className="trial-verdict"><b>{fillResult === "correct" ? "辨名成功" : "真名有誤"}</b><span>{fillResult === "correct" ? question.answer : `正確答案：${question.answer}`}</span></div>}
+          <label><span>填入英文單字</span><input value={fillInput} onChange={(event) => setFillInput(event.target.value)} onKeyDown={(event) => event.key === "Enter" && submitFill()} disabled={saving || fillResult !== null} autoCapitalize="none" autoCorrect="off" /></label>
+          {fillResult && <div className="trial-verdict"><b>{fillResult === "correct" ? "答對了" : "答錯了"}</b><span>{fillResult === "correct" ? question.answer : `正確答案：${question.answer}`}</span></div>}
         </section>
         {saveError && <p role="alert">{saveError}</p>}
-        <button className="trial-next" disabled={saving} onClick={() => { if (fillResult === null) submitFill(); else { setIndex((current) => current + 1); setFillInput(""); setFillResult(null); } }}>{saving ? "保存中" : fillResult === null ? "確認馴化" : "下一隻字獸"}<span>→</span></button>
+        <button className="trial-next" disabled={saving} onClick={() => { if (fillResult === null) submitFill(); else { setIndex((current) => current + 1); setFillInput(""); setFillResult(null); } }}>{saving ? "保存中" : fillResult === null ? "確認答案" : "下一個單字"}<span>→</span></button>
       </div>
     );
   }
@@ -335,7 +335,7 @@ export default function QuizScreen() {
           <div className="trial-binding" role="status" aria-live="polite">
             <div className="trial-binding-rings" aria-hidden="true"><i /><i /><i /></div>
             <div className="trial-binding-mark" aria-hidden="true">封</div>
-            <p><b>真名確認</b><span>封印完成</span></p>
+            <p><b>答案確認</b><span>已記錄</span></p>
           </div>
         )}
       </section>
@@ -343,7 +343,7 @@ export default function QuizScreen() {
         {question.options.map((option, optionIndex) => <button key={option.word} className={optionState(option)} disabled={saving || answered !== null} onClick={() => pick(option)}><b>{String.fromCharCode(65 + optionIndex)}</b><span>{mode === "w2m" ? option.meaningZh : option.word}</span><i /></button>)}
       </div>
       {saveError && <p role="alert">{saveError}</p>}
-      {answered !== null && <button className="trial-next" onClick={() => { setIndex((current) => current + 1); setAnswered(null); }}>下一隻字獸<span>→</span></button>}
+      {answered !== null && <button className="trial-next" onClick={() => { setIndex((current) => current + 1); setAnswered(null); }}>下一個單字<span>→</span></button>}
     </div>
   );
 }

@@ -39,26 +39,26 @@ export default function Lv1PilotScreen() {
   if (finished) {
     return (
       <div className="lv1-pilot-page pilot-finished">
-        <header className="pilot-header"><Link to="/wordbeast">← 收服場</Link><span>LV1 PILOT · COMPLETE</span></header>
+        <header className="pilot-header"><Link to="/wordbeast">← 練習</Link><span>LV1 PILOT · COMPLETE</span></header>
         <div className="pilot-finish-seal"><span>試</span></div>
         <p>FIRST BATCH COMPLETE</p><h1>三十枚判定完成</h1>
         <div className="pilot-score"><div><b>{totals.A}</b><span>A · 一眼命中</span></div><div><b>{totals.B}</b><span>B · 看後合理</span></div><div><b>{totals.C}</b><span>C · 造成誤導</span></div></div>
         <p className="pilot-finish-copy">結果已保存在這台裝置。大叔會優先分析 C，再從重複出現的 B 修整整類視覺語法。</p>
-        <div className="pilot-finish-actions"><button onClick={() => { setFinished(false); setIndex(0); setRevealed(true); }}>逐張複查</button><button onClick={reset}>重新盲測</button></div>
+        <div className="pilot-finish-actions"><button onClick={() => { setFinished(false); setIndex(0); setRevealed(true); }}>逐張檢查</button><button onClick={reset}>重新測驗</button></div>
       </div>
     );
   }
 
   return (
     <div className={`lv1-pilot-page ${revealed ? "is-revealed" : "is-blind"}`}>
-      <header className="pilot-header"><Link to="/wordbeast">← 收服場</Link><span>LV1 · 第一批試產</span><b>{String(index + 1).padStart(2, "0")} / 30</b></header>
+      <header className="pilot-header"><Link to="/wordbeast">← 練習</Link><span>LV1 · 第一批試產</span><b>{String(index + 1).padStart(2, "0")} / 30</b></header>
       <div className="pilot-progress"><i style={{ width: `${((index + 1) / 30) * 100}%` }} /><span>{Object.keys(ratings).length} 枚已判定</span></div>
 
       <main className="pilot-stage">
         <section className="pilot-card">
           <div className="pilot-card-border" /><span className="pilot-card-number">NO. {String(index + 1).padStart(2, "0")}</span>
           <div className="pilot-visual"><span className="pilot-orbit" /><Lv1PilotGlyph cue={current.cue} /></div>
-          {!revealed ? <div className="pilot-blind-copy"><p>THREE-SECOND TEST</p><h1>這張圖讓你想到什麼？</h1><span>先在腦中說出答案，再揭示真名。</span></div> : <div className="pilot-reveal-copy"><div><span>{PILOT_KIND_LABEL[current.kind]}</span><b>LV1</b></div><h1>{current.word}</h1><h2>{current.meaning}</h2><p>{current.recipe}</p></div>}
+          {!revealed ? <div className="pilot-blind-copy"><p>THREE-SECOND TEST</p><h1>這張圖在說哪個單字？</h1><span>先在腦中說出答案，再揭示真名。</span></div> : <div className="pilot-reveal-copy"><div><span>{PILOT_KIND_LABEL[current.kind]}</span><b>LV1</b></div><h1>{current.word}</h1><h2>{current.meaning}</h2><p>{current.recipe}</p></div>}
           <span className="pilot-card-seal">初</span>
         </section>
 

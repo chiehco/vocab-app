@@ -25,12 +25,12 @@ export function normalizeDisplayChinese(value: string): string {
 }
 
 export function firstSummaryMeaning(value: string | null): string {
-  if (!value) return "釋義待校準";
+  if (!value) return "中文意思待確認";
   const first = value
     .split(/[；;]/)
     .map((part) => part.trim())
     .find(Boolean);
-  return normalizeDisplayChinese(first || "釋義待校準");
+  return normalizeDisplayChinese(first || "中文意思待確認");
 }
 
 export function getWordDisplaySense(

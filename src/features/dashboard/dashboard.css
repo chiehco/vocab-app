@@ -137,6 +137,16 @@
 .daily-checkin.is-complete .daily-checkin-mark { color: #eee5d0; border-color: #596a50; background: #596a50; }
 .daily-checkin b { display: block; font: 900 0.875rem "Noto Serif TC", serif; }.daily-checkin p { margin: 4px 0 0; color: #736e60; font: 650 0.5625rem/1.5 "Noto Serif TC", serif; }
 .daily-checkin time { color: #9a5146; font: 800 0.5625rem "DM Sans", sans-serif; letter-spacing: .08em; }
+.exam-focus-entry { position: relative; display: grid; min-height: 112px; grid-template-columns: 57px 1fr auto; gap: 16px; margin: 0 -20px; padding: 23px 24px; align-items: center; overflow: hidden; color: #f0e6d0; background: linear-gradient(112deg, #242820, #3a2620 72%, #5b2823); text-decoration: none; }
+.exam-focus-entry::before { content: ""; position: absolute; width: 150px; height: 2px; right: 24px; top: 37px; background: rgba(181, 69, 58, .7); transform: rotate(-22deg); }
+.exam-focus-entry::after { content: ""; position: absolute; inset: 7px; border: 1px solid rgba(232, 215, 179, .12); pointer-events: none; }
+.exam-focus-entry > * { position: relative; z-index: 2; }
+.exam-focus-mark { display: grid; width: 50px; height: 61px; place-items: center; color: #e4c47f; border: 2px solid #ae473c; font: 900 1.25rem "Noto Serif TC", serif; transform: rotate(-3deg); }
+.exam-focus-entry p { margin: 0; color: rgba(240, 230, 208, .5); font-size: .5rem; font-weight: 900; letter-spacing: .17em; }
+.exam-focus-entry h2 { margin: 3px 0 0; font: 900 1.5rem "Noto Serif TC", serif; letter-spacing: .12em; }
+.exam-focus-entry div > span { display: block; margin-top: 4px; color: rgba(240, 230, 208, .7); font: 650 .6875rem "Noto Serif TC", serif; }
+.exam-focus-entry > b { color: #e4c47f; font: 900 .6875rem "Noto Serif TC", serif; transition: transform .18s ease; }
+.exam-focus-entry:hover > b { transform: translateX(4px); }
 .entrance-test-entry { display: grid; grid-template-columns: 48px 1fr 20px; gap: 16px; min-height: 91px; padding: 21px 3px; align-items: center; color: #34382f; border-bottom: 1px solid rgba(38,42,35,.16); text-decoration: none; }
 .entrance-test-mark { display: grid; width: 43px; height: 52px; place-items: center; color: #a63c31; border: 2px solid #a63c31; font: 900 0.9375rem "Noto Serif TC", serif; transform: rotate(-2deg); }
 .entrance-test-entry p { margin: 0 0 3px; color: #9b5146; font-size: 0.4375rem; font-weight: 800; letter-spacing: .16em; }
@@ -189,6 +199,7 @@
   .encounter-portal h2 { font-size: 3.1875rem; }
   .encounter-beast img { width: 210%; margin-left: -46px; }
   .arena-home-entry { margin-inline: -15px; padding-inline: 20px; }
+  .exam-focus-entry { margin-inline: -15px; padding-inline: 20px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

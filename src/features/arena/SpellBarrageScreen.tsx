@@ -70,7 +70,7 @@ export default function SpellBarrageScreen() {
   const [outcome, setOutcome] = useState<RoundOutcome | null>(null);
   const [matchWinner, setMatchWinner] = useState<Fighter | null>(null);
   const [stunned, setStunned] = useState(false);
-  const [feedback, setFeedback] = useState("排好完整真名，再一起送出");
+  const [feedback, setFeedback] = useState("排好完整拼字後再送出");
   const roundLocked = useRef(false);
   const stunTimer = useRef<number | null>(null);
 
@@ -90,7 +90,7 @@ export default function SpellBarrageScreen() {
     setCpuFinishMs(getCpuFinishMs(nextAnswer, difficulty, incomingCpuBlockers, Math.random()));
     setRoundStartedAt(Date.now());
     setStunned(false);
-    setFeedback(incomingPlayerBlockers > 0 ? "先敲碎對手轟來的妄磚" : "排好完整真名，再一起送出");
+    setFeedback(incomingPlayerBlockers > 0 ? "先敲碎對手轟來的妄磚" : "排好完整拼字後再送出");
     setOutcome(null);
     roundLocked.current = false;
   }, [difficulty]);
@@ -120,7 +120,7 @@ export default function SpellBarrageScreen() {
       return;
     }
     setSelectedTileIds((current) => current.length >= answer.length || current.includes(tile.id) ? current : [...current, tile.id]);
-    setFeedback("排好完整真名，再一起送出");
+    setFeedback("排好完整拼字後再送出");
   }
 
   function undoTile() {
@@ -146,7 +146,7 @@ export default function SpellBarrageScreen() {
     const nextScore = playerScore + 1;
     setPlayerScore(nextScore);
     setOutcome({ winner: "player", matchOver: nextScore >= MATCH_POINT });
-    setFeedback("真名正確——轟擊命中！");
+    setFeedback("答對了——轟擊命中！");
   }
 
   useEffect(() => () => {
@@ -199,11 +199,11 @@ export default function SpellBarrageScreen() {
     ).length >= 5);
     return (
       <div className="spell-arena setup-screen">
-        <header className="spell-arena-nav"><Link to="/arena">← 競技場</Link><span>字母轟炸</span><b>離線</b></header>
+        <header className="spell-arena-nav"><Link to="/arena">← 遊戲</Link><span>字母轟炸</span><b>離線</b></header>
         <main className="spell-setup-main">
           <div className="spell-duel-mark"><span>你</span><i>VS</i><span>豆</span></div>
           <p className="spell-eyebrow">SPELL BARRAGE · FIRST TO THREE</p>
-          <h1>五回合內，<br />先奪三印。</h1>
+          <h1>五回合內，<br />先得三分。</h1>
           <p className="spell-setup-copy">看中文與圖卡敲出真名。搶先完成會把兩枚妄磚轟進對手的下一題。</p>
 
           <section className="spell-difficulty" aria-label="選擇豆魔難度">
@@ -226,7 +226,7 @@ export default function SpellBarrageScreen() {
     const won = matchWinner === "player";
     return (
       <div className={`spell-arena result-screen ${won ? "won" : "lost"}`}>
-        <header className="spell-arena-nav"><Link to="/arena">← 競技場</Link><span>戰局終了</span><b>{playerScore}：{cpuScore}</b></header>
+        <header className="spell-arena-nav"><Link to="/arena">← 遊戲</Link><span>戰局終了</span><b>{playerScore}：{cpuScore}</b></header>
         <main className="spell-result-main">
           <div className="spell-result-seal">{won ? "勝" : "再"}</div>
           <p>{won ? "BARRAGE MASTERED" : "THE BEAN SURVIVED"}</p>
@@ -246,7 +246,7 @@ export default function SpellBarrageScreen() {
 
   return (
     <div className={`spell-arena battle-screen ${outcome ? `impact-${outcome.winner}` : ""}`}>
-      <header className="spell-arena-nav"><Link to="/arena">× 離開</Link><span>第 {roundIndex + 1} 回合</span><b>先取三印</b></header>
+      <header className="spell-arena-nav"><Link to="/arena">× 離開</Link><span>第 {roundIndex + 1} 回合</span><b>先得三分</b></header>
       <section className="spell-scoreboard" aria-label="目前比分">
         <div className="player"><span>召喚者</span><b>{playerScore}</b></div>
         <div className="round-pips">{Array.from({ length: 5 }, (_, index) => <i key={index} className={index < roundIndex ? "done" : index === roundIndex ? "active" : ""} />)}</div>
@@ -254,13 +254,13 @@ export default function SpellBarrageScreen() {
       </section>
 
       <main className="spell-battlefield">
-        <section className="cpu-field" aria-label="電腦對手正在隱藏作答">
+        <section className="cpu-field" aria-label="豆魔正在作答">
           <div className="cpu-avatar">{OPPONENT_ASSET && <img src={OPPONENT_ASSET} alt="豆魔對手" />}{cpuBlockers > 0 && <span>{cpuBlockers} 妄磚</span>}</div>
-          <div className="cpu-casting"><i /><i /><i /><span>豆魔正在暗中拼字</span></div>
+          <div className="cpu-casting"><i /><i /><i /><span>豆魔正在作答</span></div>
         </section>
 
         <section className="spell-clue">
-          <div className="clue-copy"><p>召出英文真名</p><h1>{currentWord.meaningZh}</h1><span>{currentWord.pos || "詞性未標"} · {currentWord.level}</span></div>
+          <div className="clue-copy"><p>拼出英文單字</p><h1>{currentWord.meaningZh}</h1><span>{currentWord.pos || "詞性待補"} · {currentWord.level}</span></div>
           <div className="clue-visual">
             {targetAsset ? <ResilientBeastImage src={targetAsset} word={currentWord.word} alt={`${currentWord.meaningZh} 字獸線索`} /> : <span>{currentWord.word.charAt(0).toUpperCase()}</span>}
             <SpeakerButton text={currentWord.word} className="spell-speaker" />
@@ -282,8 +282,8 @@ export default function SpellBarrageScreen() {
             ))}
           </div>
           <div className="spell-actions">
-            <button className="spell-undo" onClick={undoTile} disabled={!selectedTileIds.length || stunned || Boolean(outcome)}>退回一格</button>
-            <button className="spell-submit" onClick={submitAnswer} disabled={entered.length !== answer.length || stunned || Boolean(outcome)}>送出施法</button>
+            <button className="spell-undo" onClick={undoTile} disabled={!selectedTileIds.length || stunned || Boolean(outcome)}>退一格</button>
+            <button className="spell-submit" onClick={submitAnswer} disabled={entered.length !== answer.length || stunned || Boolean(outcome)}>送出答案</button>
           </div>
         </section>
 

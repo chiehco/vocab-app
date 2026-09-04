@@ -48,5 +48,5 @@ export default function Lv1PilotGlyph({ cue }: { cue: string }) {
     case "spring": drawing = <g className="spring-glyph"><path d="M80 28v164M160 28v164" /><path className="sprout" d="M38 157V86M38 112Q10 99 12 72q26 2 27 26M39 91q24-7 29-34-27 1-29 22" /><path className="coil" d="M91 155q57-13 0-30 57-13 0-30 57-13 23-31" /><g className="jumping"><Beast x={200} y={101} scale={.52} /></g><path d="M174 162q26 17 52 0" /></g>; break;
     default: drawing = <g><circle cx="120" cy="110" r="74" /><path d="m72 110 31 30 66-73" /></g>;
   }
-  return <svg className={`lv1-pilot-glyph cue-${cue}`} viewBox="0 0 240 220" role="img" aria-label="未揭示的記憶圖像">{drawing}</svg>;
+  return <svg className={`lv1-pilot-glyph cue-${cue}`} viewBox="0 0 240 220" role="img" aria-label="尚未解鎖的圖片">{drawing}</svg>;
 }

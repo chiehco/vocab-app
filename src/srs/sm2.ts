@@ -7,9 +7,9 @@ const GRADE_TO_QUALITY: Record<Grade, number> = { 0: 0, 1: 3, 2: 4, 3: 5 };
 
 export const GRADE_LABELS: Record<Grade, string> = {
   0: "忘記了",
-  1: "困難",
+  1: "有點難",
   2: "普通",
-  3: "簡單",
+  3: "很簡單",
 };
 
 export function newCardState(word: string, today: string): CardState {

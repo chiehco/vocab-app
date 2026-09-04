@@ -8,7 +8,7 @@ export default function ArenaScreen() {
   return (
     <div className="arena-hub">
       <header className="arena-hub-header">
-        <Link to="/">← 萬詞譜</Link>
+        <Link to="/">← 首頁</Link>
         <span>OFFLINE ARENA</span>
         <b>單人</b>
       </header>

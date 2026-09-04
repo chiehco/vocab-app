@@ -77,7 +77,7 @@ export default function SettingsScreen() {
 
       <div className="rounded-xl bg-white p-4 shadow-sm">
         <label className="block text-sm font-bold text-slate-600">每日新字上限</label>
-        <p className="mt-0.5 text-xs text-slate-400">每天最多引入幾個沒學過的新單字</p>
+        <p className="mt-0.5 text-xs text-slate-400">每天最多學幾個沒看過的新單字</p>
         <div className="mt-2 flex gap-2">
           {[5, 10, 15, 20, 30].map((n) => (
             <button
@@ -132,7 +132,7 @@ export default function SettingsScreen() {
       <div className="mt-4 rounded-xl bg-white p-4 shadow-sm">
         <label className="block text-sm font-bold text-slate-600">學習範圍（字彙等級）</label>
         <p className="mt-0.5 text-xs text-slate-400">
-          新字只會從勾選的等級引入；馴化（還沒學過任何字時）也以此範圍出題。已在學的字不受影響。
+          新字只會從勾選的等級引入；練習（還沒學過任何字時）也以此範圍出題。已在學的字不受影響。
         </p>
         <div className="mt-2 grid grid-cols-6 gap-1.5">
           {ALL_LEVELS.map((lv) => (
@@ -230,7 +230,7 @@ export default function SettingsScreen() {
                 onClick={async () => {
                   await importProgress(pendingImport);
                   setPendingImport(null);
-                  setBackupMsg({ ok: true, text: "匯入完成！進度已還原。" });
+                  setBackupMsg({ ok: true, text: "匯入完成，進度已還原。" });
                 }}
                 className="rounded-lg bg-orange-500 px-4 py-2 text-sm font-bold text-white"
               >
@@ -255,7 +255,7 @@ export default function SettingsScreen() {
       <div className="mt-4 rounded-xl border border-red-200 bg-red-50 p-4">
         <h2 className="text-sm font-bold text-red-600">危險區</h2>
         <p className="mt-1 text-xs text-red-500">
-          重置會清除所有學習進度、打卡與馴化紀錄，且無法復原（單字資料不受影響）。
+          重置會清除所有學習進度、打卡與練習紀錄，且無法復原（單字資料不受影響）。
         </p>
         {resetDone ? (
           <p className="mt-3 text-sm font-bold text-slate-600">已重置完成。</p>

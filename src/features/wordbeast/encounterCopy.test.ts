@@ -45,6 +45,10 @@ describe("word-beast encounter copy", () => {
     expect(getEncounterPos(obedient, derivativeExample)).toBe("adj.");
   });
 
+  it("uses the approved image meaning before a broader dictionary meaning", () => {
+    expect(getEncounterMeaning(obedient, derivativeExample, "順從")).toBe("順從");
+  });
+
   it("shows only the first common meaning when a false name is cut", () => {
     expect(getPrimaryMeaning("神祕的；不可思議的；難解的")).toBe("神祕的");
   });

@@ -57,12 +57,12 @@ function WordSigil({ word }: { word: string }) {
 function ScreenState({ type, level }: { type: "loading" | "empty"; level: string }) {
   return (
     <div className="seal-review seal-state-page">
-      <header className="seal-review-header"><Link to="/">← 萬字譜</Link><span>SEAL CALIBRATION</span></header>
+      <header className="seal-review-header"><Link to="/">← 首頁</Link><span>SEAL CALIBRATION</span></header>
       <LevelFilter selected={level} onChange={() => undefined} />
       <div className={`seal-state-mark ${type}`}><i /><i /><i /></div>
-      <h1>{type === "loading" ? "召回封印中" : "封印安穩"}</h1>
-      <p>{type === "loading" ? "正在整理今日需要校準的字獸。" : level === "全部" ? "今天沒有待複習的單字。" : `${level} 今天沒有鬆動的封印。`}</p>
-      {type === "empty" && <Link to="/" className="seal-state-action">返回萬字譜</Link>}
+      <h1>{type === "loading" ? "載入中" : "今天的複習已完成"}</h1>
+      <p>{type === "loading" ? "正在整理今天要複習的單字。" : level === "全部" ? "今天沒有要複習的單字。" : `${level} 今天沒有要複習的單字。`}</p>
+      {type === "empty" && <Link to="/" className="seal-state-action">返回首頁</Link>}
     </div>
   );
 }
@@ -113,12 +113,12 @@ export default function ReviewScreen() {
   if (queue.length === 0) {
     return (
       <div className="seal-review seal-state-page">
-        <header className="seal-review-header"><Link to="/">← 萬字譜</Link><span>SEAL CALIBRATION</span></header>
+        <header className="seal-review-header"><Link to="/">← 首頁</Link><span>SEAL CALIBRATION</span></header>
         <LevelFilter selected={levelSel} onChange={setLevelSel} />
         <div className="seal-state-mark empty"><i /><i /><i /></div>
-        <h1>封印安穩</h1>
-        <p>{levelSel === "全部" ? "今天沒有待複習的單字。" : levelSel === TOP_EXAM_FILTER ? "今天沒有待複習的 S＋A 高頻單字。" : `${levelSel} 今天沒有鬆動的封印。`}</p>
-        <Link to="/" className="seal-state-action">返回萬字譜</Link>
+        <h1>今天的複習已完成</h1>
+        <p>{levelSel === "全部" ? "今天沒有要複習的單字。" : levelSel === TOP_EXAM_FILTER ? "今天沒有待複習的 S+A 高頻單字。" : `${levelSel} 今天沒有要複習的單字。`}</p>
+        <Link to="/" className="seal-state-action">返回首頁</Link>
       </div>
     );
   }
@@ -127,12 +127,12 @@ export default function ReviewScreen() {
     const wasRecap = queue.some((item) => item.isRecap);
     return (
       <div className="seal-review seal-state-page complete">
-        <header className="seal-review-header"><Link to="/">← 萬字譜</Link><span>RITE COMPLETE</span></header>
+        <header className="seal-review-header"><Link to="/">← 首頁</Link><span>RITE COMPLETE</span></header>
         <div className="seal-complete-ring"><span>封</span></div>
         <p className="seal-state-eyebrow">{wasRecap ? "TODAY'S CAPTURES REVIEWED" : "TODAY'S SEALS ARE STABLE"}</p>
-        <h1>{wasRecap ? "今日回顧完成" : "校準完成"}</h1>
-        <p>{wasRecap ? `剛收服的 ${doneCount} 隻字獸已再見過一次，明天仍會照原定時間召回。` : `已重新加固 ${doneCount} 枚封印，今日修行已記錄。`}</p>
-        <Link to="/" className="seal-state-action">返回萬字譜</Link>
+        <h1>複習完成</h1>
+        <p>{wasRecap ? `剛學過的 ${doneCount} 個單字已再複習一次，明天仍會照原定時間出現。` : `已完成 ${doneCount} 個單字的複習，今天的學習紀錄已保存。`}</p>
+        <Link to="/" className="seal-state-action">返回首頁</Link>
       </div>
     );
   }
@@ -166,14 +166,14 @@ export default function ReviewScreen() {
   return (
     <div className={`seal-review ${flipped ? "is-flipped" : ""}`}>
       <header className="seal-review-header">
-        <Link to="/">← 萬字譜</Link>
-        <span>{levelSel === TOP_EXAM_FILTER ? "高頻複習" : item.isRecap ? "今日收服回顧" : "封印校準"}</span>
+        <Link to="/">← 首頁</Link>
+        <span>{levelSel === TOP_EXAM_FILTER ? "高頻複習" : item.isRecap ? "今天學過的字" : "複習"}</span>
         <b>{String(index + 1).padStart(2, "0")} / {String(queue.length).padStart(2, "0")}</b>
       </header>
 
       {index === 0 && !flipped && <LevelFilter selected={levelSel} onChange={setLevelSel} />}
 
-      <div className="seal-progress"><i style={{ width: `${(index / queue.length) * 100}%` }} /><span>{item.isPractice ? "練習後回想，確認記憶再排程" : item.isRecap ? "今日回顧，不延長間隔" : `${doneCount} 枚已完成回想`}</span></div>
+      <div className="seal-progress"><i style={{ width: `${(index / queue.length) * 100}%` }} /><span>{item.isPractice ? "練習後再複習一次，確認記得了才排下次" : item.isRecap ? "今天再看一次，不改變下次複習時間" : `${doneCount} 個已完成複習`}</span></div>
       {saveError && <p role="alert">{saveError}</p>}
 
       <Flashcard
@@ -199,7 +199,7 @@ function Flashcard({ item, flipped, onFlip, onGrade, position, saving }: { item:
     DEFAULT_SETTINGS.examDate,
   );
   function nextReviewLabel(grade: Grade) {
-    if (item.isRecap) return grade === 0 ? "加入待回想" : "維持原排程";
+    if (item.isRecap) return grade === 0 ? "加入待複習" : "維持原本的複習時間";
     const today = todayStr();
     const current = card ?? newCardState(word.word, today);
     const next = scheduleRecall(current, grade, today, examDate);
@@ -220,26 +220,26 @@ function Flashcard({ item, flipped, onFlip, onGrade, position, saving }: { item:
       <article className={`seal-card study-layout ${flipped ? "revealed" : "sealed"}`}>
         <div className="seal-card-border" />
         <div className="seal-card-meta">
-          <span>{item.isPractice ? "練習後回想" : item.isRecap ? "今日再會" : item.isNew ? "未知字獸" : "到期複習"}</span>
+          <span>{item.isPractice ? "練習後待複習" : item.isRecap ? "今天再複習" : item.isNew ? "尚未學過的單字" : "到期複習"}</span>
           <div><ExamTierBadge tier={priority?.priorityTier} compact /><b>NO. {String(position).padStart(3, "0")}</b></div>
         </div>
 
         <div className="seal-card-identity">
           <div><h1>{word.word}</h1><SpeakerButton text={word.word} className="seal-speaker" /></div>
-          <p>{word.pos || "詞性未標記"}{word.phoneticUs && <> · /{word.phoneticUs}/</>}</p>
-          {flipped && <h2>{illustrationMeaning || word.meaningZh || "尚無中文釋義"}</h2>}
+          <p>{word.pos || "詞性待補"}{word.phoneticUs && <> · /{word.phoneticUs}/</>}</p>
+          {flipped && <h2>{illustrationMeaning || word.meaningZh || "尚無中文意思"}</h2>}
           <WordTraitBadges senseCount={senseCount} hasConfusables={buildConfusableWordSet(relations ?? []).has(word.word)} hasMorphemes={!!morphemes?.length} compact />
         </div>
 
         {beastAsset ? <StudyIllustration src={beastAsset} word={word.word} caption={flipped ? illustration?.captionZh : undefined} /> : <div className="seal-card-visual">
-          <span className="seal-card-orbit" /><WordSigil word={word.word} /><small>圖像待收錄</small>
+          <span className="seal-card-orbit" /><WordSigil word={word.word} /><small>圖片尚未收錄</small>
         </div>}
 
         {flipped && (
           <div className="seal-card-answer">
-            <p className="answer-label">完整釋義</p>
-            <h2>{word.meaningZh || "尚無中文釋義"}</h2>
-            {senses && senses.length > 1 && <ol className="answer-senses">{senses.map((sense) => <li key={sense.senseId}><span>{sense.sensePos}</span><b>{sense.meaningZh}</b>{sense.isExamSense && <small>學測顯相</small>}</li>)}</ol>}
+            <p className="answer-label">完整意思{senses && senses.length > 1 ? `（共 ${senses.length} 個）` : ""}</p>
+            <h2>{word.meaningZh || "尚無中文意思"}</h2>
+            {senses && senses.length > 1 && <ol className="answer-senses">{senses.map((sense) => <li key={sense.senseId}><span>{sense.sensePos}</span><b>{sense.meaningZh}</b>{sense.isExamSense && <small>學測出現情形</small>}</li>)}</ol>}
             {word.meaningEn && <p className="answer-en">{word.meaningEn}</p>}
             {word.usagePattern && <div className="answer-note"><span>用法</span><p>{word.usagePattern}</p></div>}
             {notes?.map((note) => (
@@ -255,9 +255,9 @@ function Flashcard({ item, flipped, onFlip, onGrade, position, saving }: { item:
 
       <div className="seal-controls">
         {!flipped ? (
-          <button onClick={onFlip} className="seal-reveal"><span>顯示真名釋義</span><i>開封</i></button>
+          <button onClick={onFlip} className="seal-reveal"><span>顯示答案</span><i>開封</i></button>
         ) : (
-          <div className="seal-grades" aria-label="評估記憶程度">
+          <div className="seal-grades" aria-label="這個字你記得多牢？">
             {([0, 1, 2, 3] as Grade[]).map((grade) => (
               <button key={grade} className={`grade-${grade}`} disabled={saving} onClick={() => onGrade(grade)}>
                 <span>{GRADE_LABELS[grade]}</span>

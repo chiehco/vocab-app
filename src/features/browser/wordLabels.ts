@@ -7,10 +7,10 @@ export const NOTE_TYPE_LABEL: Record<string, string> = {
 };
 
 export const STATE_LABEL: Record<string, string> = {
-  new: "尚未穩定",
-  learning: "正在封印",
-  review: "封印穩定",
-  relearning: "重新加固",
+  new: "還不熟",
+  learning: "儲存中",
+  review: "記憶穩定",
+  relearning: "再複習一次",
 };
 
 export const RELATION_TYPE_LABEL: Record<string, string> = {
@@ -21,7 +21,7 @@ export const RELATION_TYPE_LABEL: Record<string, string> = {
   confuse: "易混淆",
   root_family: "同族詞",
   topic: "主題關聯",
-  exam_distractor: "斬妄形",
+  exam_distractor: "容易混淆的字",
 };
 
 // 反向查閱標籤：one_way 關聯在「終點字」的頁面顯示來源時用這個名稱。
@@ -33,9 +33,9 @@ export const REVERSE_RELATION_LABEL: Record<string, string> = {
 };
 
 export const MORPHEME_TYPE_LABEL: Record<string, string> = {
-  prefix: "前印・字首",
-  root: "真核・字根",
-  base: "真核・字基",
-  suffix: "尾印・字尾",
-  combining_form: "合印・結合形",
+  prefix: "字首｜前印",
+  root: "字根｜真核",
+  base: "字基｜真核",
+  suffix: "字尾｜尾印",
+  combining_form: "結合形｜合印",
 };

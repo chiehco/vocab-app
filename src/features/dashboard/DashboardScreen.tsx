@@ -47,7 +47,7 @@ export default function DashboardScreen() {
       <header className="beast-home-header">
         <div>
           <p>WORD BEAST ARCHIVE</p>
-          <h1>萬字譜</h1>
+          <h1>萬詞譜</h1>
         </div>
         <Link to="/settings" className="beast-home-settings" aria-label="設定">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3" /><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1" /></svg>
@@ -62,9 +62,9 @@ export default function DashboardScreen() {
               <i>{encounterCount || "·"}</i>
             </div>
             <h2 id="encounter-title">今日<br /><em>遭遇</em></h2>
-            <p>{due > 0 ? `${due} 個 S＋A 單字等你回想。` : available > 0 ? `${available} 隻 S＋A 字獸正在林地出沒。` : "目前沒有待回想的 S＋A 單字，也可以自由練習。"}</p>
+            <p>{due > 0 ? `${due} 個 S+A 單字等你複習。` : available > 0 ? `${available} 個 S+A 新單字等你學習。` : "目前沒有待複習的 S+A 單字，也可以自由練習。"}</p>
             <Link to={due > 0 ? "/review" : available > 0 ? "/wordbeast" : "/quiz"} className="encounter-primary-action">
-              <span>{due > 0 ? "開始回想複習" : available > 0 ? "開始辨名收服" : "自由練習"}</span>
+              <span>{due > 0 ? "開始複習" : available > 0 ? "開始學新單字" : "自由練習"}</span>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" /></svg>
             </Link>
           </div>
@@ -78,9 +78,15 @@ export default function DashboardScreen() {
           </div>
         </section>
 
+        <Link to="/exam" className="exam-focus-entry">
+          <span className="exam-focus-mark">斬</span>
+          <div><p>GSAT HIGH-FREQUENCY ZONE</p><h2>千單斬</h2><span>學測高頻單字專區・S+A 進度與今日任務</span></div>
+          <b>進入 →</b>
+        </Link>
+
         <Link to="/placement" className="entrance-test-entry">
           <span className="entrance-test-mark">初</span>
-          <div><p>ENTRANCE CALIBRATION</p><h2>入門測試</h2><span>24 題判定起始位階與新字範圍</span></div>
+          <div><p>ENTRANCE CALIBRATION</p><h2>程度測驗</h2><span>24 題判定起始位階與新字範圍</span></div>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" /></svg>
         </Link>
 
@@ -98,26 +104,26 @@ export default function DashboardScreen() {
           <div className={`daily-checkin ${todayCheckIn ? "is-complete" : ""}`} role="status">
             <span className="daily-checkin-mark">{todayCheckIn ? "✓" : "待"}</span>
             <div>
-              <b>{todayCheckIn ? "今日已打卡" : "今日尚未打卡"}</b>
+              <b>{todayCheckIn ? "今天已完成學習" : "今天還沒開始"}</b>
               <p>{todayCheckIn ? `已完成 ${practiced} 次辨名，連續修行 ${streak} 日。` : "完成任一題複習或練習後自動打卡。"}</p>
             </div>
             <time dateTime={today}>{today.slice(5).replace("-", "/")}</time>
           </div>
           <div className="rite-metrics">
-            <div><strong>{dueCount ?? "—"}</strong><span>封印鬆動</span></div>
-            <div><strong>{newRemaining ?? "—"}</strong><span>未知字獸</span></div>
-            <div><strong>{practiced}</strong><span>今日辨名</span></div>
-            <div className="rite-streak"><strong>{streak}</strong><span>連續修行</span><small>日</small></div>
+            <div><strong>{dueCount ?? "—"}</strong><span>快忘記了</span></div>
+            <div><strong>{newRemaining ?? "—"}</strong><span>尚未學過的單字</span></div>
+            <div><strong>{practiced}</strong><span>今天答對數</span></div>
+            <div className="rite-streak"><strong>{streak}</strong><span>連續學習天數</span><small>日</small></div>
           </div>
           <div className="rite-actions">
-            <Link to="/review">只複習舊封印 <span>→</span></Link>
-            <Link to="/quiz">開始今日馴化 <span>→</span></Link>
+            <Link to="/review">複習到期單字（{due} 個） <span>→</span></Link>
+            <Link to="/wordbeast">今天的新單字（{available} 個） <span>→</span></Link>
           </div>
         </section>
 
         <section className="practice-trace" aria-labelledby="practice-title">
           <div className="section-heading">
-            <div><p>SEAL RECORD</p><h2 id="practice-title">修行足跡</h2></div>
+            <div><p>SEAL RECORD</p><h2 id="practice-title">學習紀錄</h2></div>
             <Link to="/progress">完整紀錄</Link>
           </div>
           <CheckInHeatmap weeks={16} />

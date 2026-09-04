@@ -1,4 +1,4 @@
-import type { ExamPriorityRecord, ExampleRecord, RelationRecord, WordRecord } from "../../db/types";
+import type { ExamPriorityRecord, ExampleRecord, MediaRecord, RelationRecord, WordRecord } from "../../db/types";
 import { todayStr } from "../../lib/dates";
 import type { ExamTier } from "./examTier";
 import { hasWordBeastAsset } from "./wordBeastAssets";
@@ -11,6 +11,7 @@ export interface CaptureData {
   words: WordRecord[];
   priorities: ExamPriorityRecord[];
   examples: ExampleRecord[];
+  media?: MediaRecord[];
   relations: RelationRecord[];
   known: Set<string>;
   remaining: number;
