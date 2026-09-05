@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { HashRouter, Navigate, NavLink, Route, Routes, useLocation } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
-import { seedContentIfNeeded } from "./db/seed";
+import { ensureContentAvailable, refreshInstalledContent } from "./db/seed";
 import { DEFAULT_SETTINGS, getSetting } from "./db/progressDb";
 import { withStartupTimeout } from "./db/startup";
 import { applyFontScale } from "./settings/fontScale";
@@ -84,6 +84,7 @@ function AppLayout() {
 export default function App() {
   const [ready, setReady] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [startupAttempt, setStartupAttempt] = useState(0);
   const fontScale = useLiveQuery(
     () => getSetting<number>("fontScale"),
     [],
@@ -95,10 +96,23 @@ export default function App() {
   }, [fontScale]);
 
   useEffect(() => {
-    withStartupTimeout(seedContentIfNeeded())
-      .then(() => setReady(true))
-      .catch((e) => setError(e instanceof Error ? e.message : String(e)));
-  }, []);
+    let active = true;
+    let refreshTimer: number | undefined;
+    withStartupTimeout(ensureContentAvailable(), 30_000)
+      .then(() => {
+        if (!active) return;
+        setReady(true);
+        // 先讓今日圖片取得頻寬，再依目前安裝範圍背景檢查資料更新。
+        refreshTimer = window.setTimeout(() => { void refreshInstalledContent(); }, 15_000);
+      })
+      .catch((e) => {
+        if (active) setError(e instanceof Error ? e.message : String(e));
+      });
+    return () => {
+      active = false;
+      if (refreshTimer !== undefined) window.clearTimeout(refreshTimer);
+    };
+  }, [startupAttempt]);
 
   if (error) {
     return (
@@ -106,6 +120,17 @@ export default function App() {
         <div>
           <p className="mb-2 text-lg font-bold">資料載入失敗</p>
           <p className="text-sm text-slate-500">{error}</p>
+          <button
+            type="button"
+            onClick={() => {
+              setError(null);
+              setReady(false);
+              setStartupAttempt((attempt) => attempt + 1);
+            }}
+            className="mt-4 rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-bold text-white"
+          >
+            重新嘗試
+          </button>
         </div>
       </div>
     );

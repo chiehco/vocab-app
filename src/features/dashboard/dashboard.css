@@ -49,6 +49,15 @@
 
 .beast-home-settings svg { width: 19px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; }
 
+.beast-home-tools { display: flex; gap: 8px; align-items: center; }
+.offline-pack-status { display: flex; min-height: 34px; padding: 0 10px; gap: 6px; align-items: center; color: #756e5d; border: 1px solid rgba(38,42,35,.15); border-radius: 18px; background: rgba(255,255,255,.32); font: 750 .75rem "Noto Serif TC", serif; }
+.offline-pack-status i { width: 7px; height: 7px; flex: 0 0 auto; border-radius: 50%; background: #c19b58; }
+.offline-pack-status.is-loading i { animation: offline-pack-pulse 1s ease-in-out infinite; }
+.offline-pack-status.is-ready { color: #48583f; border-color: rgba(73,91,64,.3); }
+.offline-pack-status.is-ready i { background: #718866; }
+.offline-pack-status.has-error { color: #94483f; border-color: rgba(166,60,49,.3); cursor: pointer; }
+.offline-pack-status.has-error i { background: #a63c31; }
+
 .encounter-portal {
   position: relative;
   display: grid;
@@ -121,6 +130,7 @@
   transition: transform .2s ease, background .2s ease;
 }
 .encounter-primary-action:hover { transform: translateY(-2px); background: #e0c27f; }
+.encounter-primary-action.is-disabled { color: rgba(42,44,37,.68); background: #b9ac8b; cursor: wait; }
 .encounter-primary-action svg { width: 20px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 
 .encounter-beast { position: relative; z-index: 2; display: grid; min-width: 0; place-items: center; }
@@ -191,6 +201,7 @@
 @keyframes home-beast-breathe { 0%,100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-6px) scale(1.018); } }
 @keyframes home-halo { to { transform: rotate(360deg); } }
 @keyframes home-rune-float { 0%,100% { translate: 0 0; } 50% { translate: 0 -7px; } }
+@keyframes offline-pack-pulse { 50% { opacity: .3; transform: scale(.78); } }
 
 @media (max-width: 410px) {
   .beast-home { padding-inline: 15px; }
@@ -200,6 +211,7 @@
   .encounter-beast img { width: 210%; margin-left: -46px; }
   .arena-home-entry { margin-inline: -15px; padding-inline: 20px; }
   .exam-focus-entry { margin-inline: -15px; padding-inline: 20px; }
+  .offline-pack-status { max-width: 150px; padding-inline: 8px; font-size: .75rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

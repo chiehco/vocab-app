@@ -1,3 +1,4 @@
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
 import { getKnownWords, getLogicalCardStates } from "../../db/progressIdentity";
@@ -8,6 +9,8 @@ import { useStreak } from "../../hooks/useStreak";
 import CheckInHeatmap from "../progress/CheckInHeatmap";
 import { buildTopExamWordSet } from "../../quiz/examScope";
 import { selectDailyWords } from "../wordbeast/dailyCapture";
+import { getWordBeastAsset } from "../wordbeast/wordBeastAssets";
+import { prefetchTodayImages, type ImagePackProgress } from "../wordbeast/prefetchTodayImages";
 import "./dashboard.css";
 
 const BASE = import.meta.env.BASE_URL;
@@ -24,7 +27,7 @@ export default function DashboardScreen() {
     [today],
   );
   const todayCheckIn = useLiveQuery(() => progressDb.checkIns.get(today), [today]);
-  const newRemaining = useLiveQuery(async () => {
+  const todayNewWords = useLiveQuery(async () => {
     const [cap, checkIn, knownKeys, words, priorities] = await Promise.all([
       getSetting<number>("dailyNewWordCap"), progressDb.checkIns.get(today),
       getKnownWords(), contentDb.words.toArray(),
@@ -32,15 +35,69 @@ export default function DashboardScreen() {
     ]);
     return selectDailyWords({ words, priorities, examples: [], relations: [],
       known: new Set(knownKeys as string[]), remaining: Math.max(0, cap - (checkIn?.newWordsCount ?? 0)),
-    }).length;
+    });
   }, [today]);
 
+  const imageUrls = useMemo(
+    () => (todayNewWords ?? []).map((word) => getWordBeastAsset(word.wordId, word.word, word.imageWordId)),
+    [todayNewWords],
+  );
+  const imageKey = imageUrls.join("|");
+  const [imageRetry, setImageRetry] = useState(0);
+  const [imagePack, setImagePack] = useState<ImagePackProgress | null>(null);
+  const [online, setOnline] = useState(() => navigator.onLine);
+  const [offlineShellReady, setOfflineShellReady] = useState(false);
+
+  useEffect(() => {
+    if (!imageKey) {
+      setImagePack(null);
+      return;
+    }
+    const urls = imageKey.split("|");
+    let cancelled = false;
+    setImagePack({ processed: 0, cached: 0, failed: 0, total: urls.length, ready: false });
+    void prefetchTodayImages(urls, (value) => {
+      if (!cancelled) setImagePack(value);
+    });
+    return () => { cancelled = true; };
+  }, [imageKey, imageRetry]);
+
+  useEffect(() => {
+    const wentOnline = () => {
+      setOnline(true);
+      setImageRetry((value) => value + 1);
+    };
+    const wentOffline = () => setOnline(false);
+    window.addEventListener("online", wentOnline);
+    window.addEventListener("offline", wentOffline);
+    return () => {
+      window.removeEventListener("online", wentOnline);
+      window.removeEventListener("offline", wentOffline);
+    };
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+    if ("serviceWorker" in navigator) {
+      void navigator.serviceWorker.ready
+        .then((registration) => {
+          if (!cancelled && !!registration.active) setOfflineShellReady(true);
+        })
+        .catch(() => undefined);
+    }
+    return () => { cancelled = true; };
+  }, []);
+
   const due = dueCount ?? 0;
-  const available = newRemaining ?? 0;
+  const available = todayNewWords?.length ?? 0;
   const practiced = todayCheckIn?.reviewCount ?? 0;
   const encounterCount = due + available;
   const streak = streakInfo?.streak ?? 0;
   const dayComplete = Boolean(todayCheckIn);
+  const todayOfflineReady = Boolean(imagePack?.ready && offlineShellReady);
+  const preparingNewWordImages = due === 0 && available > 0 && (
+    !imagePack || imagePack.processed < imagePack.total || (!online && !imagePack.ready)
+  );
 
   return (
     <div className="beast-home">
@@ -49,9 +106,29 @@ export default function DashboardScreen() {
           <p>WORD BEAST ARCHIVE</p>
           <h1>萬詞譜</h1>
         </div>
-        <Link to="/settings" className="beast-home-settings" aria-label="設定">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3" /><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1" /></svg>
-        </Link>
+        <div className="beast-home-tools">
+          {available > 0 && imagePack && (
+            <button
+              type="button"
+              className={`offline-pack-status ${imagePack.ready ? "is-ready" : imagePack.processed === imagePack.total ? "has-error" : "is-loading"}`}
+              onClick={() => imagePack.processed === imagePack.total && !imagePack.ready && setImageRetry((value) => value + 1)}
+              disabled={imagePack.ready || imagePack.processed < imagePack.total}
+              aria-live="polite"
+            >
+              <i />
+              {todayOfflineReady
+                ? "今日新字離線可用"
+                : imagePack.ready
+                  ? "今日圖片已下載"
+                : imagePack.processed === imagePack.total
+                  ? `尚有 ${imagePack.failed} 張待下載`
+                  : `今日圖片 ${imagePack.cached}/${imagePack.total}`}
+            </button>
+          )}
+          <Link to="/settings" className="beast-home-settings" aria-label="設定">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3" /><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1" /></svg>
+          </Link>
+        </div>
       </header>
 
       <main>
@@ -63,10 +140,17 @@ export default function DashboardScreen() {
             </div>
             <h2 id="encounter-title">今日<br /><em>遭遇</em></h2>
             <p>{due > 0 ? `${due} 個 S+A 單字等你複習。` : available > 0 ? `${available} 個 S+A 新單字等你學習。` : "目前沒有待複習的 S+A 單字，也可以自由練習。"}</p>
-            <Link to={due > 0 ? "/review" : available > 0 ? "/wordbeast" : "/quiz"} className="encounter-primary-action">
-              <span>{due > 0 ? "開始複習" : available > 0 ? "開始學新單字" : "自由練習"}</span>
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" /></svg>
-            </Link>
+            {preparingNewWordImages ? (
+              <span className="encounter-primary-action is-disabled" aria-disabled="true">
+                <span>{online ? "正在準備今日圖片" : "需連線下載今日圖片"}</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" /></svg>
+              </span>
+            ) : (
+              <Link to={due > 0 ? "/review" : available > 0 ? "/wordbeast" : "/quiz"} className="encounter-primary-action">
+                <span>{due > 0 ? "開始複習" : available > 0 ? "開始學新單字" : "自由練習"}</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" /></svg>
+              </Link>
+            )}
           </div>
 
           <div className="encounter-beast" aria-hidden="true">
@@ -111,7 +195,7 @@ export default function DashboardScreen() {
           </div>
           <div className="rite-metrics">
             <div><strong>{dueCount ?? "—"}</strong><span>快忘記了</span></div>
-            <div><strong>{newRemaining ?? "—"}</strong><span>尚未學過的單字</span></div>
+            <div><strong>{todayNewWords?.length ?? "—"}</strong><span>尚未學過的單字</span></div>
             <div><strong>{practiced}</strong><span>今天答對數</span></div>
             <div className="rite-streak"><strong>{streak}</strong><span>連續學習天數</span><small>日</small></div>
           </div>

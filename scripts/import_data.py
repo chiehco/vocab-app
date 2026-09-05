@@ -17,6 +17,8 @@ from pathlib import Path
 
 import openpyxl
 
+from build_sa_pack import build_sa_pack
+
 VALID_LEVELS = {"LV1", "LV2", "LV3", "LV4", "LV5", "LV6"}
 VALID_RELATION_TYPES = {"synonym", "antonym", "derivative", "word_form", "confuse", "root_family", "topic", "exam_distractor"}
 VALID_RELATION_DIRECTIONS = {"one_way", "two_way"}
@@ -661,6 +663,7 @@ def main():
         "contentHash": bundle_hash,
     }
     write_json(out_dir / "meta.json", meta)
+    build_sa_pack(out_dir)
 
     print(f"匯入完成（mode={args.mode} → {out_dir}）：")
     for k, v in meta["counts"].items():

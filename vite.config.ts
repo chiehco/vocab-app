@@ -33,8 +33,8 @@ export default defineConfig({
         ],
       },
       workbox: {
-        // 核心程式與題庫離線可用；圖卡按需下載，避免首次載入整座圖庫。
-        globPatterns: ["**/*.{js,css,html,ico,svg,json}"],
+        // 首次只安裝程式與 S+A 輕量包；完整資料不再是啟動門檻。
+        globPatterns: ["**/*.{js,css,html,ico,svg}", "data/v1/sa-pack.json"],
         maximumFileSizeToCacheInBytes: 8 * 1024 * 1024,
         navigateFallback: "index.html",
         runtimeCaching: [
@@ -44,6 +44,10 @@ export default defineConfig({
             handler: "StaleWhileRevalidate",
             options: {
               cacheName: "wordbeast-images-v1",
+              matchOptions: {
+                // 程式版號更新不應讓已下載的同一張圖卡突然離線失效。
+                ignoreSearch: true,
+              },
               expiration: {
                 maxEntries: 500,
                 maxAgeSeconds: 30 * 24 * 60 * 60,
