@@ -19,6 +19,8 @@ import Lv1PilotScreen from "./features/wordbeast/Lv1PilotScreen";
 import ArenaScreen from "./features/arena/ArenaScreen";
 import SpellBarrageScreen from "./features/arena/SpellBarrageScreen";
 import ExamHubScreen from "./features/exam/ExamHubScreen";
+import UnitCatalogScreen from "./features/units/UnitCatalogScreen";
+import UnitStudyScreen from "./features/units/UnitStudyScreen";
 
 const NAV_ITEMS = [
   { to: "/", label: "首頁", icon: "home" },
@@ -38,7 +40,10 @@ function NavIcon({ name }: { name: string }) {
 
 function AppLayout() {
   const location = useLocation();
-  const immersive = location.pathname === "/slash" || location.pathname.startsWith("/wordbeast") || location.pathname.startsWith("/arena/spell-barrage");
+  const immersive = location.pathname === "/slash"
+    || location.pathname.startsWith("/wordbeast")
+    || location.pathname.startsWith("/arena/spell-barrage")
+    || /^\/units\/LV[1-6]\/\d+$/.test(location.pathname);
 
   return (
     <div className="mx-auto flex min-h-screen max-w-lg flex-col">
@@ -58,6 +63,8 @@ function AppLayout() {
           <Route path="/arena" element={<ArenaScreen />} />
           <Route path="/arena/spell-barrage" element={<SpellBarrageScreen />} />
           <Route path="/exam" element={<ExamHubScreen />} />
+          <Route path="/units" element={<UnitCatalogScreen />} />
+          <Route path="/units/:level/:unitNumber" element={<UnitStudyScreen />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>

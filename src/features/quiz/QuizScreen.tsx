@@ -1,5 +1,5 @@
 import { useMemo, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
 import { getKnownWords } from "../../db/progressIdentity";
 import { contentDb } from "../../db/contentDb";
@@ -20,6 +20,7 @@ import ResilientBeastImage from "../wordbeast/ResilientBeastImage";
 import { buildConfusableWordSet, buildMorphemeWordSet, buildSenseCountByWord } from "../wordbeast/wordTraits";
 import { findImageClueHighlight, resolveImageClueCopy, splitImageCaption, type ImageClueCopy } from "../../quiz/imageClue";
 import { useToday } from "../../hooks/useToday";
+import { getExamUnit } from "../units/unitPlan";
 import "../realm-pages.css";
 
 const LEVEL_CHOICES = [TOP_EXAM_FILTER, "全部", "LV1", "LV2", "LV3", "LV4", "LV5", "LV6"];
@@ -50,6 +51,12 @@ function TrialLevels({ selected, onChange }: { selected: string; onChange: (leve
 }
 
 export default function QuizScreen() {
+  const [searchParams] = useSearchParams();
+  const requestedLevel = searchParams.get("level") ?? "";
+  const requestedUnitNumber = Number(searchParams.get("unit"));
+  const hasUnitScope = /^LV[1-6]$/.test(requestedLevel)
+    && Number.isInteger(requestedUnitNumber)
+    && requestedUnitNumber > 0;
   const [mode, setMode] = useState<QuizMode | null>(null);
   const [questions, setQuestions] = useState<McqQuestion[] | null>(null);
   const [fillQuestions, setFillQuestions] = useState<ExampleRecord[] | null>(null);
@@ -58,7 +65,7 @@ export default function QuizScreen() {
   const [answered, setAnswered] = useState<string | null>(null);
   const [fillInput, setFillInput] = useState("");
   const [fillResult, setFillResult] = useState<"correct" | "wrong" | null>(null);
-  const [levelSel, setLevelSel] = useState(TOP_EXAM_FILTER);
+  const [levelSel, setLevelSel] = useState(hasUnitScope ? requestedLevel : TOP_EXAM_FILTER);
   const [wrongWords, setWrongWords] = useState<string[]>([]);
   const sessionId = useRef(crypto.randomUUID());
   const sessionStarted = useRef(false);
@@ -112,7 +119,12 @@ export default function QuizScreen() {
     if (!allWords || !collectedWordKeys) return undefined;
     return allWords.filter((word) => collectedWordSet.has(word.word));
   }, [allWords, collectedWordKeys, collectedWordSet]);
+  const requestedUnit = useMemo(() => {
+    if (!hasUnitScope || !allWords || !examPriorities) return undefined;
+    return getExamUnit(allWords, examPriorities, requestedLevel, requestedUnitNumber);
+  }, [allWords, examPriorities, hasUnitScope, requestedLevel, requestedUnitNumber]);
   const scopedCollectedWords = useMemo(() => {
+    if (hasUnitScope) return requestedUnit?.words;
     if (levelSel === TOP_EXAM_FILTER) {
       if (!allWords || !examPriorities) return undefined;
       return sortExamWordsByPriority(allWords, examPriorities);
@@ -120,7 +132,7 @@ export default function QuizScreen() {
     if (!collectedWords) return undefined;
     if (levelSel === "全部") return collectedWords;
     return collectedWords.filter((word) => word.level === levelSel);
-  }, [allWords, collectedWords, examPriorities, levelSel]);
+  }, [allWords, collectedWords, examPriorities, hasUnitScope, levelSel, requestedUnit]);
   const imagePool = useMemo(
     () => scopedCollectedWords?.filter((word) => hasWordBeastAsset(word.wordId, word.word, word.imageWordId)),
     [scopedCollectedWords],
@@ -133,7 +145,8 @@ export default function QuizScreen() {
   }, [allExamples, functionWordSet, scopedCollectedWords]);
 
   async function buildScheduledWords(candidateWords: string[]): Promise<string[]> {
-    const levels = levelSel.startsWith("LV") ? [levelSel] : undefined;
+    const activeLevel = hasUnitScope ? requestedLevel : levelSel;
+    const levels = activeLevel.startsWith("LV") ? [activeLevel] : undefined;
     const queue = await buildTodayQueue(levels, candidateWords);
     return queue.map((item) => item.wordRecord.word);
   }
@@ -227,18 +240,27 @@ export default function QuizScreen() {
   }
 
   const total = useMemo(() => mode === "fill" ? fillQuestions?.length ?? 0 : questions?.length ?? 0, [mode, questions, fillQuestions]);
+  const unitLabel = hasUnitScope ? `Unit ${String(requestedUnitNumber).padStart(2, "0")} · ` : "";
 
   if (mode === null) {
+    if (hasUnitScope && allWords && examPriorities && !requestedUnit) {
+      return (
+        <div className="realm-page trial-page">
+          <TrialHeader label="找不到這個 Unit" />
+          <div className="trial-empty"><span>?</span><div><h3>Unit 不存在</h3><p>回到 Unit 一覽重新選擇。</p></div><Link to="/units">查看 Units <b>→</b></Link></div>
+        </div>
+      );
+    }
     return (
       <div className="realm-page trial-page">
-        <TrialHeader />
+        <TrialHeader label={hasUnitScope ? `${requestedLevel} · Unit ${String(requestedUnitNumber).padStart(2, "0")}` : "單字練習"} />
         <section className="trial-intro">
-          <div><p>{levelSel === TOP_EXAM_FILTER ? "S+A 學測高頻字" : "只練習已學過的單字"}</p><h2>{levelSel === TOP_EXAM_FILTER ? <>先守住高頻，<br />再擴張你的<em>得分範圍。</em></> : <>收服只是相遇，<br />能在情境中認出，<em>才算真的馴化。</em></>}</h2></div>
+          <div><p>{hasUnitScope ? `${requestedUnit?.words.length ?? 0} 個 S+A 單字` : levelSel === TOP_EXAM_FILTER ? "S+A 學測高頻字" : "只練習已學過的單字"}</p><h2>{hasUnitScope ? <>本輪連續作答，<br />完成後再回到<em>Unit。</em></> : levelSel === TOP_EXAM_FILTER ? <>先守住高頻，<br />再擴張你的<em>得分範圍。</em></> : <>收服只是相遇，<br />能在情境中認出，<em>才算真的馴化。</em></>}</h2></div>
           <div className="trial-eye" aria-hidden="true"><i /><span /></div>
         </section>
-        <div className="trial-scope"><span>{levelSel === TOP_EXAM_FILTER ? `高頻題庫 ${scopedCollectedWords?.length ?? 0} 字・可直接練習` : `已收集 ${scopedCollectedWords?.length ?? 0} 隻・選擇出題範圍`}</span><TrialLevels selected={levelSel} onChange={setLevelSel} /></div>
+        <div className="trial-scope"><span>{hasUnitScope ? `${requestedLevel} · Unit ${String(requestedUnitNumber).padStart(2, "0")} · 本輪最多 ${QUIZ_SIZE} 題` : levelSel === TOP_EXAM_FILTER ? `高頻題庫 ${scopedCollectedWords?.length ?? 0} 字・可直接練習` : `已收集 ${scopedCollectedWords?.length ?? 0} 隻・選擇出題範圍`}</span>{hasUnitScope ? <Link className="trial-unit-return" to={`/units/${requestedLevel}/${requestedUnitNumber}`}>← 返回這個 Unit</Link> : <TrialLevels selected={levelSel} onChange={setLevelSel} />}</div>
         {startError && <p role="alert">{startError}</p>}
-        {levelSel !== TOP_EXAM_FILTER && collectedWords?.length === 0 && <div className="trial-empty"><span>集</span><div><h3>還沒有可以練習的單字</h3><p>先完成收服，牠才會出現在這裡。</p></div><Link to="/wordbeast">前往收服場 <b>→</b></Link></div>}
+        {!hasUnitScope && levelSel !== TOP_EXAM_FILTER && collectedWords?.length === 0 && <div className="trial-empty"><span>集</span><div><h3>還沒有可以練習的單字</h3><p>先完成收服，牠才會出現在這裡。</p></div><Link to="/wordbeast">前往收服場 <b>→</b></Link></div>}
         <section className="trial-modes" aria-label="選擇題型">
           <button onClick={() => startMcq("w2m")} disabled={!!startingMode || !scopedCollectedWords || scopedCollectedWords.length < 4}><b>01</b><div><h3>見名辨義</h3><p>{startingMode === "w2m" ? "正在整理到期與高頻單字" : scopedCollectedWords && scopedCollectedWords.length < 4 ? "這個範圍至少要有 4 個已學單字" : "看英文單字，選出正確的中文意思"}</p></div><span>→</span></button>
           <button onClick={() => startMcq("m2w")} disabled={!!startingMode || !scopedCollectedWords || scopedCollectedWords.length < 4}><b>02</b><div><h3>循義喚名</h3><p>{startingMode === "m2w" ? "正在整理到期與高頻單字" : scopedCollectedWords && scopedCollectedWords.length < 4 ? "這個範圍至少要有 4 個已學單字" : "看中文意思，選出正確的英文單字"}</p></div><span>→</span></button>
@@ -256,7 +278,7 @@ export default function QuizScreen() {
       .filter((word): word is WordRecord => !!word);
     return (
       <div className="realm-page trial-result-page">
-        <TrialHeader label="練習結果" />
+        <TrialHeader label={`${unitLabel}練習結果`} />
         <div className={`trial-result-mark ${perfect ? "perfect" : ""}`}><span>{score}</span><small>/ {total}</small></div>
         <p className="trial-result-kicker">{perfect ? "FLAWLESS TAMING" : "TAMING COMPLETE"}</p>
         <h2>{perfect ? "答對了" : "判定完成"}</h2>
@@ -264,7 +286,7 @@ export default function QuizScreen() {
         {todayCheckIn && <div className="trial-checkin-confirmed" role="status"><span>✓</span><div><b>今天已完成學習</b><small>完成 {todayCheckIn.reviewCount} 次練習 · 本輪紀錄已保存</small></div></div>}
         <p>新字與錯題已加入待複習；完成正式複習評分後，才會調整記憶間隔。</p>
         {wrongWordRecords.length > 0 && <section className="trial-missed" aria-labelledby="trial-missed-title"><div><p>REVIEW NEXT</p><h3 id="trial-missed-title">本輪需再看</h3></div><div>{wrongWordRecords.map((word) => <Link key={word.wordId} to={`/word/${word.wordId}`}><b>{word.word}</b><span>{word.meaningZh}</span><i>→</i></Link>)}</div></section>}
-        <div className="trial-result-actions"><Link to="/review">前往複習</Link><button onClick={() => setMode(null)}>再練習一次</button><Link to="/">返回首頁</Link></div>
+        <div className="trial-result-actions"><Link to="/review">前往複習</Link><button onClick={() => setMode(null)}>再練習一次</button><Link to={hasUnitScope ? `/units/${requestedLevel}/${requestedUnitNumber}` : "/"}>{hasUnitScope ? "返回 Unit" : "返回首頁"}</Link></div>
       </div>
     );
   }
@@ -282,7 +304,7 @@ export default function QuizScreen() {
     }
     return (
       <div className="realm-page active-trial-page">
-        <TrialHeader label="殘句補名" progress={`${index + 1} / ${total}`} />
+        <TrialHeader label={`${unitLabel}殘句補名`} progress={`${index + 1} / ${total}`} />
         <div className="trial-progress"><i style={{ width: `${((index + 1) / total) * 100}%` }} /><span>目前辨認 {score}</span></div>
         <section className={`trial-question fill-question ${fillResult ?? ""}`}>
           <ExamTierBadge tier={priorityByWord.get(question.word)} compact />
@@ -331,7 +353,7 @@ export default function QuizScreen() {
 
   return (
     <div className="realm-page active-trial-page">
-      <TrialHeader label={mode === "w2m" ? "見名辨義" : mode === "image" ? "看圖喚名" : "循義喚名"} progress={`${index + 1} / ${total}`} />
+      <TrialHeader label={`${unitLabel}${mode === "w2m" ? "見名辨義" : mode === "image" ? "看圖喚名" : "循義喚名"}`} progress={`${index + 1} / ${total}`} />
       <div className="trial-progress"><i style={{ width: `${((index + 1) / total) * 100}%` }} /><span>目前辨認 {score}</span></div>
       <section className={`trial-question choice-question ${mode === "image" ? "image-question" : ""} ${sealed ? "is-sealed" : ""}`}>
         <ExamTierBadge tier={priorityByWord.get(question.target.word)} compact />

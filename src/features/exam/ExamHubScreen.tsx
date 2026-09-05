@@ -82,8 +82,9 @@ export default function ExamHubScreen() {
         <section className="exam-actions" aria-label="學測專區功能">
           <Link to="/review"><span>01</span><div><b>高頻複習</b><small>依記憶曲線複習今天到期的字</small></div><i>→</i></Link>
           <Link to="/quiz"><span>02</span><div><b>高頻題型練習</b><small>看字、看義、看圖與例句填空</small></div><i>→</i></Link>
-          <Link to="/browse"><span>03</span><div><b>高頻單字總表</b><small>依考頻排名查看 S+A 單字</small></div><i>→</i></Link>
-          <Link to="/settings"><span>04</span><div><b>學測日期與字級</b><small>調整倒數日期和手機閱讀大小</small></div><i>→</i></Link>
+          <Link to="/units"><span>03</span><div><b>Unit 連續學習</b><small>同等級每 30 字一單元，連續看完不回字表</small></div><i>→</i></Link>
+          <Link to="/browse"><span>04</span><div><b>高頻單字總表</b><small>依考頻排名查找 S+A 單字</small></div><i>→</i></Link>
+          <Link to="/settings"><span>05</span><div><b>學測日期與字級</b><small>調整倒數日期和手機閱讀大小</small></div><i>→</i></Link>
         </section>
       </main>
 

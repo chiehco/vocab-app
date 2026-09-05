@@ -70,6 +70,10 @@ export default function WordBrowserScreen() {
         </div>
       </section>
 
+      <Link to="/units" className="archive-unit-entry">
+        <span><b>依 Unit 連續學習</b><small>同等級每 30 字一單元</small></span><i>開始 →</i>
+      </Link>
+
       <div className="archive-result-head">
         <span>{search ? `「${search}」的結果` : level === TOP_EXAM_FILTER ? "S+A 學測高頻字" : level === "全部" ? "全部真名" : `${level} 卷`}</span>
         <b>{filtered.length} 枚</b>
