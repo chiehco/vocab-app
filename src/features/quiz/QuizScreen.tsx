@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
 import { getKnownWords } from "../../db/progressIdentity";
 import { contentDb } from "../../db/contentDb";
-import { progressDb } from "../../db/progressDb";
+import { DEFAULT_SETTINGS, getSetting, progressDb } from "../../db/progressDb";
 import type { ExampleRecord, MediaRecord, ReviewMode, WordRecord } from "../../db/types";
 import { pickDistractors, shuffle } from "../../quiz/distractors";
 import { pickExamDistractors } from "../../quiz/examDistractors";
@@ -12,6 +12,7 @@ import { recordQuizAnswer } from "../../checkin/recordActivity";
 import { buildTodayQueue } from "../../srs/queue";
 import { selectScheduledPracticeItems } from "../../quiz/practiceSelection";
 import SpeakerButton from "../../components/SpeakerButton";
+import { speak } from "../../lib/speech";
 import { getWordBeastAsset, hasWordBeastAsset } from "../wordbeast/wordBeastAssets";
 import ExamTierBadge from "../wordbeast/ExamTierBadge";
 import WordTraitBadges from "../wordbeast/WordTraitBadges";
@@ -67,6 +68,11 @@ export default function QuizScreen() {
   const [startError, setStartError] = useState<string | null>(null);
   const [startingMode, setStartingMode] = useState<QuizMode | null>(null);
   const today = useToday();
+  const autoPronounce = useLiveQuery(
+    () => getSetting<boolean>("autoPronounce"),
+    [],
+    DEFAULT_SETTINGS.autoPronounce,
+  );
 
   const allExamples = useLiveQuery(() => contentDb.examples.toArray(), []);
   const allMedia = useLiveQuery(() => contentDb.media.filter((media) => media.mediaType === "image").toArray(), []);
@@ -266,8 +272,9 @@ export default function QuizScreen() {
   if (mode === "fill" && fillQuestions) {
     const question = fillQuestions[index];
     async function submitFill() {
-      if (fillResult !== null) return;
+      if (fillResult !== null || savingRef.current) return;
       const correct = fillInput.trim().toLowerCase() === (question.answer ?? "").trim().toLowerCase();
+      if (autoPronounce) speak(question.word);
       if (!await saveAnswer(question.word, correct, "fill-blank")) return;
       setFillResult(correct ? "correct" : "wrong");
       if (correct) setScore((current) => current + 1);
@@ -305,9 +312,10 @@ export default function QuizScreen() {
   const sealed = mode === "image" && answered === question.target.word;
 
   async function pick(option: WordRecord) {
-    if (answered !== null) return;
+    if (answered !== null || savingRef.current) return;
     const correct = option.word === question.target.word;
     const reviewMode = mode === "w2m" ? "quiz-w2m" : mode === "image" ? "quiz-image" : "quiz-m2w";
+    if (autoPronounce) speak(question.target.word);
     if (!await saveAnswer(question.target.word, correct, reviewMode)) return;
     setAnswered(option.word);
     if (correct) setScore((current) => current + 1);

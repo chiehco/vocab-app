@@ -5,6 +5,7 @@ import { contentDb } from "../../db/contentDb";
 import { DEFAULT_SETTINGS, getSetting } from "../../db/progressDb";
 import { getCardState } from "../../db/progressIdentity";
 import { todayStr } from "../../lib/dates";
+import { speak } from "../../lib/speech";
 import { useToday } from "../../hooks/useToday";
 import type { Grade } from "../../db/types";
 import { buildTodayQueue, buildTodayRecapQueue, type QueueItem } from "../../srs/queue";
@@ -79,6 +80,11 @@ export default function ReviewScreen() {
   const savingRef = useRef(false);
   const [saving, setSaving] = useState(false);
   const [saveError, setSaveError] = useState<string | null>(null);
+  const autoPronounce = useLiveQuery(
+    () => getSetting<boolean>("autoPronounce"),
+    [],
+    DEFAULT_SETTINGS.autoPronounce,
+  );
 
   useEffect(() => {
     let cancelled = false;
@@ -180,7 +186,10 @@ export default function ReviewScreen() {
         key={item.wordRecord.word}
         item={item}
         flipped={flipped}
-        onFlip={() => setFlipped(true)}
+        onFlip={() => {
+          if (autoPronounce) speak(item.wordRecord.word);
+          setFlipped(true);
+        }}
         onGrade={handleGrade}
         position={index + 1}
         saving={saving}

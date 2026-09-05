@@ -39,6 +39,7 @@ export const DEFAULT_SETTINGS = {
   reviewSessionSize: 20,
   learningLevels: ALL_LEVELS,
   fontScale: 1,
+  autoPronounce: true,
   examDate: "2027-01-16",
 } as const;
 

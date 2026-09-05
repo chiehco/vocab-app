@@ -32,6 +32,10 @@ export default function SettingsScreen() {
     const row = await progressDb.settings.get("fontScale");
     return normalizeFontScale(row?.value ?? DEFAULT_SETTINGS.fontScale);
   }, []);
+  const autoPronounce = useLiveQuery(async () => {
+    const row = await progressDb.settings.get("autoPronounce");
+    return (row?.value as boolean) ?? DEFAULT_SETTINGS.autoPronounce;
+  }, []);
   const examDate = useLiveQuery(async () => {
     const row = await progressDb.settings.get("examDate");
     return (row?.value as string) ?? DEFAULT_SETTINGS.examDate;
@@ -88,6 +92,30 @@ export default function SettingsScreen() {
               }`}
             >
               {n}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-4 rounded-xl bg-white p-4 shadow-sm">
+        <label className="block text-sm font-bold text-slate-600">自動播放英文發音</label>
+        <p className="mt-0.5 text-xs text-slate-400">答案揭曉時自動唸一次；作答前不會先唸出隱藏答案。</p>
+        <div className="mt-2 grid grid-cols-2 gap-2">
+          {[
+            { label: "開啟", value: true },
+            { label: "關閉", value: false },
+          ].map((option) => (
+            <button
+              key={option.label}
+              onClick={() => setSetting("autoPronounce", option.value)}
+              className={`rounded-lg py-2 text-sm font-bold ${
+                autoPronounce === option.value
+                  ? "bg-blue-600 text-white"
+                  : "border border-slate-300 bg-white text-slate-600"
+              }`}
+              aria-pressed={autoPronounce === option.value}
+            >
+              {option.label}
             </button>
           ))}
         </div>

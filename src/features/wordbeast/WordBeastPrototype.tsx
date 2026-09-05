@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
 import { getKnownWords } from "../../db/progressIdentity";
 import { contentDb } from "../../db/contentDb";
-import { getSetting, progressDb } from "../../db/progressDb";
+import { DEFAULT_SETTINGS, getSetting, progressDb } from "../../db/progressDb";
 import type { ExampleRecord, RelationRecord, WordRecord } from "../../db/types";
 import { recordQuizAnswer } from "../../checkin/recordActivity";
 import { todayStr } from "../../lib/dates";
@@ -104,6 +104,11 @@ export default function WordBeastPrototype() {
   const [saveError, setSaveError] = useState<string | null>(null);
   const sessionId = useRef(crypto.randomUUID());
   const sessionStarted = useRef(false);
+  const autoPronounce = useLiveQuery(
+    () => getSetting<boolean>("autoPronounce"),
+    [],
+    DEFAULT_SETTINGS.autoPronounce,
+  );
 
   useEffect(() => { if (source && beasts === null) setBeasts(buildSpecs(source)); }, [source, beasts]);
   const current = beasts?.[encounterIndex];
@@ -121,6 +126,8 @@ export default function WordBeastPrototype() {
   async function answer(choice: string) {
     if (!current || answeringRef.current || phase !== "encounter") return;
     const correct = choice === current.record.word;
+    // 行動瀏覽器常會阻擋 await 之後才觸發的語音；在直接點擊事件內先播放。
+    if (correct && autoPronounce) speak(current.record.word);
     answeringRef.current = true;
     setAnswering(true);
     setSaveError(null);
@@ -132,7 +139,6 @@ export default function WordBeastPrototype() {
       if (correct) {
         setCaptured((previous) => new Set(previous).add(current.record.word));
         setWrongChoice(null);
-        speak(current.record.word);
         setPhase("binding");
       } else {
         setWrongChoice(choice);
@@ -143,6 +149,11 @@ export default function WordBeastPrototype() {
       answeringRef.current = false;
       setAnswering(false);
     }
+  }
+
+  function openBeast(beast: BeastSpec) {
+    if (autoPronounce) speak(beast.record.word);
+    setSelectedBeast(beast);
   }
 
   function restart() { setSelectedBeast(null); setWrongChoice(null); setEncounterIndex(0); setPhase("encounter"); }
@@ -158,7 +169,7 @@ export default function WordBeastPrototype() {
           <p className="archive-note">今日 {beasts.length} 隻字獸已留下真名。考頻星星代表歷屆重要度，LV 代表學習難度。</p>
           <p className="archive-note"><Link to="/review">前往複習</Link>，確認記憶後安排下次複習。</p>
           <div className="archive-grid">
-            {beasts.map((beast, index) => <button className="word-entry captured" style={{ animationDelay: `${index * 55}ms` }} key={beast.record.word} onClick={() => setSelectedBeast(beast)}>
+            {beasts.map((beast, index) => <button className="word-entry captured" style={{ animationDelay: `${index * 55}ms` }} key={beast.record.word} onClick={() => openBeast(beast)}>
               <span className="entry-index">{String(index + 1).padStart(2, "0")}</span><ExamTierBadge tier={beast.tier} compact /><ResilientBeastImage src={beast.image} word={beast.record.word} alt={`${beast.record.word} 字獸`} /><span className="entry-name">{beast.record.word.toUpperCase()}</span><span className="entry-meaning">{encounterMeaning(beast)}・{encounterPos(beast)}</span><span className="entry-seal">錄</span>
             </button>)}
           </div>
