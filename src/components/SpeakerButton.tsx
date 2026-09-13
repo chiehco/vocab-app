@@ -1,4 +1,4 @@
-import { speak, speechAvailable } from "../lib/speech";
+import { speak } from "../lib/speech";
 
 export default function SpeakerButton({
   text,
@@ -7,9 +7,9 @@ export default function SpeakerButton({
   text: string;
   className?: string;
 }) {
-  if (!speechAvailable()) return null;
   return (
     <button
+      type="button"
       onClick={(e) => {
         e.preventDefault();
         e.stopPropagation();

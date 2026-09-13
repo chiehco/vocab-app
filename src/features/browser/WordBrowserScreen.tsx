@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
 import { contentDb } from "../../db/contentDb";
 import type { SenseRecord } from "../../db/types";
@@ -19,7 +19,14 @@ const PAGE_SIZE = 100;
 
 export default function WordBrowserScreen() {
   const [search, setSearch] = useState("");
-  const [level, setLevel] = useState(TOP_EXAM_FILTER);
+  const [params, setParams] = useSearchParams();
+  const requestedLevel = params.get("level") ?? TOP_EXAM_FILTER;
+  const level = LEVELS.includes(requestedLevel) ? requestedLevel : TOP_EXAM_FILTER;
+  function setLevel(value: string) {
+    const next = new URLSearchParams(params);
+    next.set("level", value);
+    setParams(next);
+  }
   const [limit, setLimit] = useState(PAGE_SIZE);
   const words = useLiveQuery(() => contentDb.words.orderBy("wordId").toArray(), []);
   const priorities = useLiveQuery(() => contentDb.examPriorities.toArray(), []);
@@ -54,6 +61,7 @@ export default function WordBrowserScreen() {
 
   return (
     <div className="realm-page archive-page">
+      <Link to="/modes/words" className="block px-5 pt-5 text-sm">← 單字模式</Link>
       <header className="realm-header">
         <div><p>WORD BEAST ARCHIVE</p><h1>單字總表</h1></div>
         <span className="realm-count"><b>{level === TOP_EXAM_FILTER ? topExamWordSet.size || "—" : words?.length ?? "—"}</b> {level === TOP_EXAM_FILTER ? "已解鎖 S+A" : "總收錄"}</span>

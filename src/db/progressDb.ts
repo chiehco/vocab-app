@@ -1,3 +1,5 @@
+import type { CustomGroup, DirectSession, DirectAttempt } from "../features/direct/model";
+import type { WrittenSession, WrittenSubmission } from "../features/exam/writtenModel";
 import Dexie, { type Table } from "dexie";
 import type {
   CardState,
@@ -18,6 +20,12 @@ export class VocabProgressDB extends Dexie {
   quizStats!: Table<QuizStatRecord, string>;
   settings!: Table<SettingRecord, string>;
 
+  customGroups!: Table<CustomGroup, string>;
+  directSessions!: Table<DirectSession, string>;
+  directAttempts!: Table<DirectAttempt, string>;
+  writtenSessions!: Table<WrittenSession,string>;
+  writtenSubmissions!: Table<WrittenSubmission,string>;
+
   constructor() {
     super("VocabProgressDB");
     this.version(1).stores({
@@ -27,6 +35,12 @@ export class VocabProgressDB extends Dexie {
       quizStats: "word",
       settings: "key",
     });
+    this.version(2).stores({
+      customGroups: "id, updatedAt",
+      directSessions: "id, updatedAt",
+      directAttempts: "id, questionId, sessionId, answeredAt",
+    });
+    this.version(3).stores({writtenSessions:'id, updatedAt',writtenSubmissions:'id, sessionId, questionId, submittedAt'});
   }
 }
 

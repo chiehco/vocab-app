@@ -1,0 +1,59 @@
+import { useState } from 'react';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import SpeakerButton from '../../components/SpeakerButton';
+import { templateGroup, unitItems } from '../direct/model';
+import { saveGroup, startSession } from '../direct/store';
+import { reviewedExample, practiceIds } from './model';
+import '../direct/direct.css';
+import './vocabulary.css';
+
+export default function VocabularyScreen(){
+  const [params,setParams]=useSearchParams(),navigate=useNavigate();
+  const level=['LV1','LV2','LV3','LV4','LV5','LV6'].includes(params.get('level')??'')?params.get('level')!:'LV3';
+  const unit=params.get('unit')==='2'?2:1;
+  const curriculumItems=unitItems(unit);
+  const vocabCount=curriculumItems.filter(i=>i.kind==='vocabulary').length,grammarCount=curriculumItems.length-vocabCount;
+  const kind=params.get('kind')==='grammar'?'grammar':'vocabulary';
+  const [query,setQuery]=useState(''),[busy,setBusy]=useState(false),[error,setError]=useState('');
+  const items=curriculumItems.filter(i=>i.kind===kind);
+  const matches=items.filter(i=>`${i.displayWord??i.pattern} ${i.chapterMeaningsZh??i.explanationZh}`.toLowerCase().includes(query.toLowerCase()));
+  const index=Math.max(0,matches.findIndex(i=>i.learningItemId===params.get('item'))),item=matches[index];
+  const example=item?reviewedExample(item):undefined;
+  function choose(values:Record<string,string>){setError('');setParams({unit:String(unit),...values});}
+  function show(id:string){choose({level,kind,item:id});}
+  async function practice(){if(busy||!item)return;setBusy(true);setError('');try{
+    const scope=practiceIds(items),batch=practiceIds(matches.slice(index,index+10));
+    const s=await startSession(batch,`LV3 Unit ${unit} · ${kind==='grammar'?'文法':'詞彙'}自由練習`,undefined,scope);
+    navigate(`/practice/direct?session=${s.id}`);
+  }catch{setError('無法開始練習，請重試。');}finally{setBusy(false);}}
+  async function createGroup(){if(busy)return;setBusy(true);setError('');try{const g=templateGroup(unit);await saveGroup(g);navigate(`/groups?group=${g.id}`);}catch{setError('群組未能保存，請重試。');}finally{setBusy(false);}}
+  return <div className="direct-page vocab-page">
+    <nav><Link to="/modes/words">← 單字模式</Link><Link to="/groups">我的群組</Link></nav>
+    <p className="direct-kicker">VOCABULARY</p><h1>教材字卡</h1>
+    <p className="direct-muted">直接看字卡、中文意思與例句，再依需要自由練習。</p>
+    <div className="vocab-levels" aria-label="選擇等級">{['LV1','LV2','LV3','LV4','LV5','LV6'].map(l=><button key={l} aria-pressed={level===l} onClick={()=>{setQuery('');choose({level:l});}}>{l}</button>)}</div>
+    {level!=='LV3'?<section><h2>{level} 教材內容整理中</h2><p>單元、完整義項與原創例句核對完成後開放。</p><button onClick={()=>choose({level:'LV3',unit:'1'})}>先看 LV3 Unit 1</button></section>:<>
+      <label>教材單元<select aria-label="教材單元" value={unit} onChange={e=>{setQuery('');choose({level,unit:e.target.value});}}><option value="1">Unit 1</option><option value="2">Unit 2</option></select></label>
+      <h2>LV3 · Unit {unit}</h2><p className="direct-muted">已核對 {vocabCount} 個詞彙、{grammarCount} 項文法。其他 Unit 整理中。</p>
+      <div className="vocab-levels"><button aria-pressed={kind==='vocabulary'} onClick={()=>{setQuery('');choose({level,kind:'vocabulary'});}}>詞彙字卡（{vocabCount}）</button><button aria-pressed={kind==='grammar'} onClick={()=>{setQuery('');choose({level,kind:'grammar'});}}>文法與搭配（{grammarCount}）</button></div>
+      <details className="vocab-find"><summary>搜尋或跳到指定項目</summary>
+        <label>搜尋本類項目<input value={query} onChange={e=>setQuery(e.target.value)} placeholder="輸入英文或中文" /></label>
+        {item&&<label>跳到項目<select aria-label="跳到項目" value={item.learningItemId} onChange={e=>show(e.target.value)}>{matches.map((i,n)=><option key={i.learningItemId} value={i.learningItemId}>{n+1}. {i.displayWord??i.pattern}</option>)}</select></label>}
+      </details>
+      {item?<>
+        <article className="vocab-card" aria-label="學習字卡">
+          <p className="direct-kicker">{index+1} / {matches.length} · 教材第 {item.sourcePage} 頁</p>
+          <h2>{item.displayWord??item.pattern}</h2>
+          {item.displayWord&&<SpeakerButton text={item.displayWord}/>}
+          {kind==='vocabulary'?<><p className="vocab-meaning">{item.sensePos} {item.chapterMeaningsZh}</p>
+            {example?<><h3>原創例句 · {item.targetMeaningZh}</h3><p className="direct-stem">{example.sentenceEn}</p><p>{example.sentenceZh}</p><SpeakerButton text={example.sentenceEn}/></>:<p>例句待核對。</p>}</>:<p className="vocab-meaning">{item.explanationZh}</p>}
+        </article>
+        <div className="vocab-levels"><button disabled={index===0} onClick={()=>show(matches[index-1].learningItemId)}>上一張</button><button disabled={index===matches.length-1} onClick={()=>show(matches[index+1].learningItemId)}>下一張</button></div>
+        <button className="direct-primary" disabled={busy} onClick={()=>void practice()}>從這裡自由練習（{Math.min(10,matches.length-index)} 題）</button>
+        <p className="direct-muted">瀏覽字卡不代表已熟悉；練習保留首答，不改變單字複習排程。</p>
+      </>:<p role="status">找不到符合的項目，請換個關鍵字。</p>}
+      <footer><button disabled={busy} onClick={()=>void createGroup()}>以完整 Unit 建立我的群組（{curriculumItems.length} 項）</button><p className="direct-muted">建立後可改名、增刪與排序。</p></footer>
+    </>}
+    {error&&<p role="alert">{error}</p>}
+  </div>;
+}

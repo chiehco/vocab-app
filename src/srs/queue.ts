@@ -4,6 +4,7 @@ import { getLogicalCardStates } from "../db/progressIdentity";
 import type { CardState, WordRecord } from "../db/types";
 import { todayStr } from "../lib/dates";
 import { format } from "date-fns";
+import { getDailyLearningPlan } from './dailyPlan';
 
 export interface QueueItem {
   wordRecord: WordRecord;
@@ -31,12 +32,12 @@ export function interleave(due: WordRecord[], fresh: WordRecord[]): QueueItem[] 
 /**
  * 建立今日學習隊列：
  * 1. 所有到期複習卡（不設上限，複習優先）
- * 2. 新字依 wordId 順序補到每日上限，
+ * 2. 新字依共同的 15–20 分鐘計畫與今日已學量分配，
  *    以 checkIns.newWordsCount 把關——同一天多次開 App 不會多發新字。
  * @param sessionLevels 本次限定的等級（不給則複習全收、新字照學習範圍設定）
  * @param prioritizedWords 選填的單字白名單，順序同時作為新字與複習排序依據
  */
-export async function buildTodayQueue(sessionLevels?: string[], prioritizedWords?: string[]): Promise<QueueItem[]> {
+export async function buildTodayQueue(sessionLevels?: string[], prioritizedWords?: string[], useDailyPlan = false): Promise<QueueItem[]> {
   const today = todayStr();
   const priorityRank = prioritizedWords
     ? new Map(prioritizedWords.map((word, index) => [word, index]))
@@ -55,9 +56,8 @@ export async function buildTodayQueue(sessionLevels?: string[], prioritizedWords
       ? (priorityRank.get(a.word) ?? Infinity) - (priorityRank.get(b.word) ?? Infinity)
       : a.wordId.localeCompare(b.wordId));
 
-  const cap = await getSetting<number>("dailyNewWordCap");
-  const checkIn = await progressDb.checkIns.get(today);
-  const remainingNew = Math.max(0, cap - (checkIn?.newWordsCount ?? 0));
+  const remainingNew = useDailyPlan ? (await getDailyLearningPlan(today)).remainingNew
+    : Math.max(0, (await getSetting<number>('dailyNewWordCap')) - ((await progressDb.checkIns.get(today))?.newWordsCount ?? 0));
 
   let freshWords: WordRecord[] = [];
   if (remainingNew > 0) {
@@ -78,7 +78,10 @@ export async function buildTodayQueue(sessionLevels?: string[], prioritizedWords
   }
 
   const practiceWords = new Set(dueStates.filter((card) => card.practicePending).map((card) => card.word));
-  return interleave(dueWords, freshWords).map((item) => ({
+  const ordered = useDailyPlan
+    ? [...dueWords.map(wordRecord=>({wordRecord,isNew:false})), ...freshWords.map(wordRecord=>({wordRecord,isNew:true}))]
+    : interleave(dueWords, freshWords);
+  return ordered.map((item) => ({
     ...item, isPractice: practiceWords.has(item.wordRecord.word),
   }));
 }

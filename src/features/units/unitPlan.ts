@@ -1,6 +1,23 @@
 import type { ExamPriorityRecord, WordRecord } from "../../db/types";
+import { compareSixYearFrequency } from '../../quiz/examScope';
 
 export const UNIT_SIZE = 30;
+export type UnitOrder = 'exam' | 'alphabet';
+export const parseUnitOrder = (value: string | null): UnitOrder => value === 'alphabet' ? 'alphabet' : 'exam';
+export const unitOrderLabel = (order: UnitOrder) => order === 'alphabet' ? '字母排序' : '學測優先';
+
+/** Both orders cover the same installed words and never change progress. */
+export function buildStudyUnits(words: readonly WordRecord[], level: string, order: UnitOrder): ExamUnit[] {
+  const selected = [...new Map(words.filter(w => w.level === level).map(w => [w.wordId, w])).values()]
+    .sort((a,b) => (order === 'exam' ? compareSixYearFrequency(a.word, b.word) : a.word.localeCompare(b.word, 'en', {sensitivity:'base'})) || a.wordId.localeCompare(b.wordId));
+  return Array.from({length:Math.ceil(selected.length / UNIT_SIZE)}, (_,i) => ({
+    unitId:`${order}-${level.toLowerCase()}-u${i+1}`, unitNumber:i+1, label:`Unit ${String(i+1).padStart(2,'0')}`,
+    level, words:selected.slice(i*UNIT_SIZE, (i+1)*UNIT_SIZE),
+  }));
+}
+export function getStudyUnit(words: readonly WordRecord[], level: string, number: number, order: UnitOrder): ExamUnit | undefined {
+  return Number.isInteger(number) && number > 0 ? buildStudyUnits(words, level, order)[number-1] : undefined;
+}
 
 export interface ExamUnit {
   unitId: string;

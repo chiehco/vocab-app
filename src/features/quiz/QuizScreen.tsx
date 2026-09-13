@@ -7,7 +7,7 @@ import { DEFAULT_SETTINGS, getSetting, progressDb } from "../../db/progressDb";
 import type { ExampleRecord, MediaRecord, ReviewMode, WordRecord } from "../../db/types";
 import { pickDistractors, shuffle } from "../../quiz/distractors";
 import { pickExamDistractors } from "../../quiz/examDistractors";
-import { buildFunctionWordSet, filterExactFillExamples, sortExamWordsByPriority, TOP_EXAM_FILTER } from "../../quiz/examScope";
+import { buildFunctionWordSet, filterExactFillExamples, sortStandaloneStudyWords, TOP_EXAM_FILTER } from "../../quiz/examScope";
 import { recordQuizAnswer } from "../../checkin/recordActivity";
 import { buildTodayQueue } from "../../srs/queue";
 import { selectScheduledPracticeItems } from "../../quiz/practiceSelection";
@@ -20,8 +20,9 @@ import ResilientBeastImage from "../wordbeast/ResilientBeastImage";
 import { buildConfusableWordSet, buildMorphemeWordSet, buildSenseCountByWord } from "../wordbeast/wordTraits";
 import { findImageClueHighlight, resolveImageClueCopy, splitImageCaption, type ImageClueCopy } from "../../quiz/imageClue";
 import { useToday } from "../../hooks/useToday";
-import { getExamUnit } from "../units/unitPlan";
+import { getExamUnit, getStudyUnit, parseUnitOrder, unitOrderLabel } from "../units/unitPlan";
 import "../realm-pages.css";
+import { groupWords } from "../direct/groupWords";
 
 const LEVEL_CHOICES = [TOP_EXAM_FILTER, "全部", "LV1", "LV2", "LV3", "LV4", "LV5", "LV6"];
 const QUIZ_SIZE = 10;
@@ -52,11 +53,19 @@ function TrialLevels({ selected, onChange }: { selected: string; onChange: (leve
 
 export default function QuizScreen() {
   const [searchParams] = useSearchParams();
+  const groupId = searchParams.get('group');
+  const customGroup = useLiveQuery(() => groupId ? progressDb.customGroups.get(groupId) : undefined, [groupId]);
+
+  const explicitOrder = searchParams.has('order');
+  const order = parseUnitOrder(searchParams.get('order'));
+  const unitOrderQuery = explicitOrder ? `?order=${order}` : '';
   const requestedLevel = searchParams.get("level") ?? "";
   const requestedUnitNumber = Number(searchParams.get("unit"));
   const hasUnitScope = /^LV[1-6]$/.test(requestedLevel)
     && Number.isInteger(requestedUnitNumber)
     && requestedUnitNumber > 0;
+  const freeScope = !!groupId || hasUnitScope && explicitOrder;
+  const minimumPool = freeScope ? 1 : 4;
   const [mode, setMode] = useState<QuizMode | null>(null);
   const [questions, setQuestions] = useState<McqQuestion[] | null>(null);
   const [fillQuestions, setFillQuestions] = useState<ExampleRecord[] | null>(null);
@@ -117,22 +126,24 @@ export default function QuizScreen() {
   const collectedWordSet = useMemo(() => new Set(collectedWordKeys ?? []), [collectedWordKeys]);
   const collectedWords = useMemo(() => {
     if (!allWords || !collectedWordKeys) return undefined;
-    return allWords.filter((word) => collectedWordSet.has(word.word));
-  }, [allWords, collectedWordKeys, collectedWordSet]);
+    return allWords.filter((word) => collectedWordSet.has(word.word) && !functionWordSet.has(word.word));
+  }, [allWords, collectedWordKeys, collectedWordSet, functionWordSet]);
   const requestedUnit = useMemo(() => {
     if (!hasUnitScope || !allWords || !examPriorities) return undefined;
-    return getExamUnit(allWords, examPriorities, requestedLevel, requestedUnitNumber);
-  }, [allWords, examPriorities, hasUnitScope, requestedLevel, requestedUnitNumber]);
+    return explicitOrder ? getStudyUnit(allWords, requestedLevel, requestedUnitNumber, order) : getExamUnit(allWords, examPriorities, requestedLevel, requestedUnitNumber);
+  }, [allWords, examPriorities, hasUnitScope, requestedLevel, requestedUnitNumber, explicitOrder, order]);
   const scopedCollectedWords = useMemo(() => {
-    if (hasUnitScope) return requestedUnit?.words;
+    if (groupId && (!allWords || !examPriorities)) return undefined;
+    if (groupId) return groupWords(customGroup?.wordIds ?? [], allWords ?? []).filter(w=>!functionWordSet.has(w.word));
+    if (hasUnitScope) return requestedUnit?.words.filter(w=>!functionWordSet.has(w.word));
     if (levelSel === TOP_EXAM_FILTER) {
       if (!allWords || !examPriorities) return undefined;
-      return sortExamWordsByPriority(allWords, examPriorities);
+      return sortStandaloneStudyWords(allWords, examPriorities);
     }
     if (!collectedWords) return undefined;
     if (levelSel === "全部") return collectedWords;
     return collectedWords.filter((word) => word.level === levelSel);
-  }, [allWords, collectedWords, examPriorities, hasUnitScope, levelSel, requestedUnit]);
+  }, [groupId, customGroup, allWords, collectedWords, examPriorities, hasUnitScope, levelSel, requestedUnit, functionWordSet]);
   const imagePool = useMemo(
     () => scopedCollectedWords?.filter((word) => hasWordBeastAsset(word.wordId, word.word, word.imageWordId)),
     [scopedCollectedWords],
@@ -147,19 +158,19 @@ export default function QuizScreen() {
   async function buildScheduledWords(candidateWords: string[]): Promise<string[]> {
     const activeLevel = hasUnitScope ? requestedLevel : levelSel;
     const levels = activeLevel.startsWith("LV") ? [activeLevel] : undefined;
-    const queue = await buildTodayQueue(levels, candidateWords);
+    const queue = await buildTodayQueue(levels, candidateWords, !hasUnitScope && !groupId && levelSel === TOP_EXAM_FILTER);
     return queue.map((item) => item.wordRecord.word);
   }
 
   async function startMcq(nextMode: QuizMode) {
     if (!scopedCollectedWords || !allWords) return;
     const eligiblePool = nextMode === "image" ? imagePool ?? [] : scopedCollectedWords;
-    if (eligiblePool.length < 4) return;
+    if (eligiblePool.length < minimumPool || allWords.filter(w=>!functionWordSet.has(w.word)).length < 4) return;
     setStartingMode(nextMode);
     setStartError(null);
     try {
-      const scheduledWords = await buildScheduledWords(eligiblePool.map((word) => word.word));
-      const subjects = selectScheduledPracticeItems(
+      const scheduledWords = freeScope ? [] : await buildScheduledWords(eligiblePool.map((word) => word.word));
+      const subjects = freeScope ? shuffle(eligiblePool).slice(0, QUIZ_SIZE) : selectScheduledPracticeItems(
         eligiblePool,
         (word) => word.word,
         scheduledWords,
@@ -176,8 +187,8 @@ export default function QuizScreen() {
         options: shuffle([
           target,
           ...(examDistractorRelations?.length
-            ? pickExamDistractors(target, allWords, examDistractorRelations)
-            : pickDistractors(target, allWords)),
+            ? pickExamDistractors(target, allWords.filter(w=>!functionWordSet.has(w.word)), examDistractorRelations)
+            : pickDistractors(target, allWords.filter(w=>!functionWordSet.has(w.word)))),
         ]),
       })));
       setMode(nextMode); setIndex(0); setScore(0); setAnswered(null); setWrongWords([]);
@@ -193,8 +204,8 @@ export default function QuizScreen() {
     setStartingMode("fill");
     setStartError(null);
     try {
-      const scheduledWords = await buildScheduledWords([...new Set(fillPool.map((example) => example.word))]);
-      const selected = selectScheduledPracticeItems(
+      const scheduledWords = freeScope ? [] : await buildScheduledWords([...new Set(fillPool.map((example) => example.word))]);
+      const selected = freeScope ? shuffle(fillPool).slice(0, QUIZ_SIZE) : selectScheduledPracticeItems(
         fillPool,
         (example) => example.word,
         scheduledWords,
@@ -240,7 +251,7 @@ export default function QuizScreen() {
   }
 
   const total = useMemo(() => mode === "fill" ? fillQuestions?.length ?? 0 : questions?.length ?? 0, [mode, questions, fillQuestions]);
-  const unitLabel = hasUnitScope ? `Unit ${String(requestedUnitNumber).padStart(2, "0")} · ` : "";
+  const unitLabel = groupId ? `${customGroup?.name ?? "群組"} · ` : hasUnitScope ? `Unit ${String(requestedUnitNumber).padStart(2, "0")} · ` : "";
 
   if (mode === null) {
     if (hasUnitScope && allWords && examPriorities && !requestedUnit) {
@@ -253,18 +264,18 @@ export default function QuizScreen() {
     }
     return (
       <div className="realm-page trial-page">
-        <TrialHeader label={hasUnitScope ? `${requestedLevel} · Unit ${String(requestedUnitNumber).padStart(2, "0")}` : "單字練習"} />
+        <TrialHeader label={groupId ? customGroup?.name ?? "群組練習" : hasUnitScope ? `${requestedLevel} · ${explicitOrder ? unitOrderLabel(order) : "舊版分組"} · Unit ${String(requestedUnitNumber).padStart(2, "0")}` : "單字練習"} />
         <section className="trial-intro">
-          <div><p>{hasUnitScope ? `${requestedUnit?.words.length ?? 0} 個 S+A 單字` : levelSel === TOP_EXAM_FILTER ? "S+A 學測高頻字" : "只練習已學過的單字"}</p><h2>{hasUnitScope ? <>本輪連續作答，<br />完成後再回到<em>Unit。</em></> : levelSel === TOP_EXAM_FILTER ? <>先守住高頻，<br />再擴張你的<em>得分範圍。</em></> : <>收服只是相遇，<br />能在情境中認出，<em>才算真的馴化。</em></>}</h2></div>
+          <div><p>{groupId ? `${scopedCollectedWords?.length ?? 0} 個可練習單字` : hasUnitScope ? `${requestedUnit?.words.length ?? 0} 個單字` : levelSel === TOP_EXAM_FILTER ? "S+A 學測高頻字" : "只練習已學過的單字"}</p><h2>{groupId ? <>依自己的清單，<br />自由<em>練習。</em></> : hasUnitScope ? <>本輪連續作答，<br />完成後再回到<em>Unit。</em></> : levelSel === TOP_EXAM_FILTER ? <>先守住高頻，<br />再擴張你的<em>得分範圍。</em></> : <>收服只是相遇，<br />能在情境中認出，<em>才算真的馴化。</em></>}</h2></div>
           <div className="trial-eye" aria-hidden="true"><i /><span /></div>
         </section>
-        <div className="trial-scope"><span>{hasUnitScope ? `${requestedLevel} · Unit ${String(requestedUnitNumber).padStart(2, "0")} · 本輪最多 ${QUIZ_SIZE} 題` : levelSel === TOP_EXAM_FILTER ? `高頻題庫 ${scopedCollectedWords?.length ?? 0} 字・可直接練習` : `已收集 ${scopedCollectedWords?.length ?? 0} 隻・選擇出題範圍`}</span>{hasUnitScope ? <Link className="trial-unit-return" to={`/units/${requestedLevel}/${requestedUnitNumber}`}>← 返回這個 Unit</Link> : <TrialLevels selected={levelSel} onChange={setLevelSel} />}</div>
+        <div className="trial-scope"><span>{groupId ? `本輪最多 ${QUIZ_SIZE} 題 · 介係詞與連接詞等功能詞暫不出題` : hasUnitScope ? `${requestedLevel} · Unit ${String(requestedUnitNumber).padStart(2, "0")} · 本輪最多 ${QUIZ_SIZE} 題` : levelSel === TOP_EXAM_FILTER ? `高頻題庫 ${scopedCollectedWords?.length ?? 0} 字・可直接練習` : `已收集 ${scopedCollectedWords?.length ?? 0} 隻・選擇出題範圍`}</span>{groupId ? <Link to={`/groups?group=${encodeURIComponent(groupId)}`}>← 返回群組</Link> : hasUnitScope ? <Link className="trial-unit-return" to={`/units/${requestedLevel}/${requestedUnitNumber}${unitOrderQuery}`}>← 返回這個 Unit</Link> : <TrialLevels selected={levelSel} onChange={setLevelSel} />}</div>
         {startError && <p role="alert">{startError}</p>}
-        {!hasUnitScope && levelSel !== TOP_EXAM_FILTER && collectedWords?.length === 0 && <div className="trial-empty"><span>集</span><div><h3>還沒有可以練習的單字</h3><p>先完成收服，牠才會出現在這裡。</p></div><Link to="/wordbeast">前往收服場 <b>→</b></Link></div>}
+        {!groupId && !hasUnitScope && levelSel !== TOP_EXAM_FILTER && collectedWords?.length === 0 && <div className="trial-empty"><span>集</span><div><h3>還沒有可以練習的單字</h3><p>先完成收服，牠才會出現在這裡。</p></div><Link to="/wordbeast">前往收服場 <b>→</b></Link></div>}
         <section className="trial-modes" aria-label="選擇題型">
-          <button onClick={() => startMcq("w2m")} disabled={!!startingMode || !scopedCollectedWords || scopedCollectedWords.length < 4}><b>01</b><div><h3>見名辨義</h3><p>{startingMode === "w2m" ? "正在整理到期與高頻單字" : scopedCollectedWords && scopedCollectedWords.length < 4 ? "這個範圍至少要有 4 個已學單字" : "看英文單字，選出正確的中文意思"}</p></div><span>→</span></button>
-          <button onClick={() => startMcq("m2w")} disabled={!!startingMode || !scopedCollectedWords || scopedCollectedWords.length < 4}><b>02</b><div><h3>循義喚名</h3><p>{startingMode === "m2w" ? "正在整理到期與高頻單字" : scopedCollectedWords && scopedCollectedWords.length < 4 ? "這個範圍至少要有 4 個已學單字" : "看中文意思，選出正確的英文單字"}</p></div><span>→</span></button>
-          <button onClick={() => startMcq("image")} disabled={!!startingMode || !imagePool || imagePool.length < 4}><b>03</b><div><h3>看圖喚名</h3><p>{startingMode === "image" ? "正在整理到期與高頻單字" : imagePool && imagePool.length < 4 ? `此範圍只有 ${imagePool.length} 隻有圖字獸` : "依圖片與中文情境，選出英文單字"}</p></div><span>→</span></button>
+          <button onClick={() => startMcq("w2m")} disabled={!!startingMode || !scopedCollectedWords || scopedCollectedWords.length < minimumPool}><b>01</b><div><h3>見名辨義</h3><p>{startingMode === "w2m" ? "正在整理到期與高頻單字" : scopedCollectedWords && scopedCollectedWords.length < minimumPool ? (groupId ? "群組目前沒有可出題的單字" : "這個範圍至少要有 4 個已學單字") : "看英文單字，選出正確的中文意思"}</p></div><span>→</span></button>
+          <button onClick={() => startMcq("m2w")} disabled={!!startingMode || !scopedCollectedWords || scopedCollectedWords.length < minimumPool}><b>02</b><div><h3>循義喚名</h3><p>{startingMode === "m2w" ? "正在整理到期與高頻單字" : scopedCollectedWords && scopedCollectedWords.length < minimumPool ? (groupId ? "群組目前沒有可出題的單字" : "這個範圍至少要有 4 個已學單字") : "看中文意思，選出正確的英文單字"}</p></div><span>→</span></button>
+          <button onClick={() => startMcq("image")} disabled={!!startingMode || !imagePool || imagePool.length < minimumPool}><b>03</b><div><h3>看圖喚名</h3><p>{startingMode === "image" ? "正在整理到期與高頻單字" : imagePool && imagePool.length < minimumPool ? `此範圍只有 ${imagePool.length} 隻有圖字獸` : "依圖片與中文情境，選出英文單字"}</p></div><span>→</span></button>
           <button onClick={startFill} disabled={!!startingMode || !fillPool?.length}><b>04</b><div><h3>殘句補名</h3><p>{startingMode === "fill" ? "正在整理到期與高頻單字" : fillPool?.length ? `從 ${fillPool.length} 道單一答案例句中填入遺失的英文單字` : "尚無可使用的單一答案例句"}</p></div><span>→</span></button>
         </section>
       </div>
@@ -286,7 +297,7 @@ export default function QuizScreen() {
         {todayCheckIn && <div className="trial-checkin-confirmed" role="status"><span>✓</span><div><b>今天已完成學習</b><small>完成 {todayCheckIn.reviewCount} 次練習 · 本輪紀錄已保存</small></div></div>}
         <p>新字與錯題已加入待複習；完成正式複習評分後，才會調整記憶間隔。</p>
         {wrongWordRecords.length > 0 && <section className="trial-missed" aria-labelledby="trial-missed-title"><div><p>REVIEW NEXT</p><h3 id="trial-missed-title">本輪需再看</h3></div><div>{wrongWordRecords.map((word) => <Link key={word.wordId} to={`/word/${word.wordId}`}><b>{word.word}</b><span>{word.meaningZh}</span><i>→</i></Link>)}</div></section>}
-        <div className="trial-result-actions"><Link to="/review">前往複習</Link><button onClick={() => setMode(null)}>再練習一次</button><Link to={hasUnitScope ? `/units/${requestedLevel}/${requestedUnitNumber}` : "/"}>{hasUnitScope ? "返回 Unit" : "返回首頁"}</Link></div>
+        <div className="trial-result-actions"><Link to="/review">前往複習</Link><button onClick={() => setMode(null)}>再練習一次</button><Link to={groupId ? `/groups?group=${encodeURIComponent(groupId)}` : hasUnitScope ? `/units/${requestedLevel}/${requestedUnitNumber}${unitOrderQuery}` : "/"}>{groupId ? "返回群組" : hasUnitScope ? "返回 Unit" : "返回首頁"}</Link></div>
       </div>
     );
   }

@@ -1,12 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
-import { getKnownWords } from "../../db/progressIdentity";
+import { getKnownWords, getCardState } from "../../db/progressIdentity";
 import { contentDb } from "../../db/contentDb";
-import { DEFAULT_SETTINGS, getSetting, progressDb } from "../../db/progressDb";
+import { DEFAULT_SETTINGS, getSetting } from "../../db/progressDb";
 import type { ExampleRecord, RelationRecord, WordRecord } from "../../db/types";
 import { recordQuizAnswer } from "../../checkin/recordActivity";
-import { todayStr } from "../../lib/dates";
 import { speak } from "../../lib/speech";
 import { pickDistractors, shuffle } from "../../quiz/distractors";
 import ExamTierBadge from "./ExamTierBadge";
@@ -16,6 +15,8 @@ import { type CaptureData, selectDailyWords } from "./dailyCapture";
 import { getEncounterMeaning, getEncounterPos, getPrimaryMeaning } from "./encounterCopy";
 import { getWordBeastAsset } from "./wordBeastAssets";
 import "./wordbeast.css";
+import { getDailyLearningPlan } from "../../srs/dailyPlan";
+import { useToday } from "../../hooks/useToday";
 
 interface BeastSpec {
   record: WordRecord;
@@ -79,20 +80,19 @@ function buildSpecs(data: CaptureData): BeastSpec[] {
 type Phase = "encounter" | "binding" | "archive";
 
 export default function WordBeastPrototype() {
+  const today = useToday();
   const source = useLiveQuery(async (): Promise<CaptureData> => {
-    const today = todayStr();
-    const [words, priorities, examples, relations, media, knownKeys, checkIn, cap] = await Promise.all([
+    const [words, priorities, examples, relations, media, knownKeys, plan] = await Promise.all([
       contentDb.words.toArray(),
       contentDb.examPriorities.toArray(),
       contentDb.examples.toArray(),
       contentDb.relations.toArray(),
       contentDb.media.toArray(),
       getKnownWords(),
-      progressDb.checkIns.get(today),
-      getSetting<number>("dailyNewWordCap"),
+      getDailyLearningPlan(today),
     ]);
-    return { words, priorities, examples, relations, media, known: new Set(knownKeys as string[]), remaining: Math.max(0, cap - (checkIn?.newWordsCount ?? 0)) };
-  }, []);
+    return { words, priorities, examples, relations, media, known: new Set(knownKeys as string[]), remaining: plan.remainingNew };
+  }, [today]);
   const [beasts, setBeasts] = useState<BeastSpec[] | null>(null);
   const [phase, setPhase] = useState<Phase>("encounter");
   const [encounterIndex, setEncounterIndex] = useState(0);
@@ -132,6 +132,10 @@ export default function WordBeastPrototype() {
     setAnswering(true);
     setSaveError(null);
     try {
+      if (!(await getCardState(current.record.word)) && (await getDailyLearningPlan()).remainingNew <= 0) {
+        setSaveError('今天的新字份量已完成，請先回學測專區複習。');
+        return;
+      }
       if (!captured.has(current.record.word)) {
         await recordQuizAnswer(current.record.word, correct, "quiz-image", sessionId.current, !sessionStarted.current);
         sessionStarted.current = true;
@@ -159,7 +163,7 @@ export default function WordBeastPrototype() {
   function restart() { setSelectedBeast(null); setWrongChoice(null); setEncounterIndex(0); setPhase("encounter"); }
 
   if (!beasts) return <div className="wordbeast-page capture-state"><i /><h1>正在尋找字獸</h1><p>祭司正在展開今日遭遇名冊。</p></div>;
-  if (beasts.length === 0) return <div className="wordbeast-page capture-state"><span>封</span><h1>目前沒有新單字</h1><p>{source?.remaining === 0 ? "今天的新字已學完，可以複習剛學過的單字。" : "目前沒有尚未學過的 S+A 圖卡；你仍可前往複習或練習。"}</p><Link to="/review">前往複習</Link></div>;
+  if (beasts.length === 0) return <div className="wordbeast-page capture-state"><span>封</span><h1>目前沒有新單字</h1><p>{source?.remaining === 0 ? "今天先不增加新字；可能已達今日份量，或需要先完成到期複習。" : "目前沒有尚未學過的 S+A 圖卡；你仍可前往複習或練習。"}</p><Link to="/review">前往複習</Link></div>;
 
   if (phase === "archive") {
     return (

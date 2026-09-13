@@ -80,8 +80,8 @@ export default function SettingsScreen() {
       <h1 className="mt-2 mb-4 text-xl font-bold">設定</h1>
 
       <div className="rounded-xl bg-white p-4 shadow-sm">
-        <label className="block text-sm font-bold text-slate-600">每日新字上限</label>
-        <p className="mt-0.5 text-xs text-slate-400">每天最多學幾個沒看過的新單字</p>
+        <label className="block text-sm font-bold text-slate-600">自動安排的新字上限</label>
+        <p className="mt-0.5 text-xs text-slate-400">學測一般安排 8–10 個新字，複習較多時減量，並遵守這裡較低的上限。單元與群組自由練習可另行安排。</p>
         <div className="mt-2 flex gap-2">
           {[5, 10, 15, 20, 30].map((n) => (
             <button
@@ -99,7 +99,7 @@ export default function SettingsScreen() {
 
       <div className="mt-4 rounded-xl bg-white p-4 shadow-sm">
         <label className="block text-sm font-bold text-slate-600">自動播放英文發音</label>
-        <p className="mt-0.5 text-xs text-slate-400">答案揭曉時自動唸一次；作答前不會先唸出隱藏答案。</p>
+        <p className="mt-0.5 text-xs text-slate-400">進入學習或複習字卡時自動唸一次；測驗在揭示答案後才唸。可隨時點喇叭重播。</p>
         <div className="mt-2 grid grid-cols-2 gap-2">
           {[
             { label: "開啟", value: true },
@@ -147,7 +147,7 @@ export default function SettingsScreen() {
 
       <div className="mt-4 rounded-xl bg-white p-4 shadow-sm">
         <label htmlFor="exam-date" className="block text-sm font-bold text-slate-600">學測日期</label>
-        <p className="mt-0.5 text-xs text-slate-400">複習間隔會依剩餘時間縮短，避免單字排到考試之後。</p>
+        <p className="mt-0.5 text-xs text-slate-400">用於倒數與第一輪學習時間估算；熟字的複習間隔不因考試接近而強制縮短。</p>
         <input
           id="exam-date"
           type="date"
@@ -204,7 +204,7 @@ export default function SettingsScreen() {
               downloadProgressBackup(backup);
               setBackupMsg({
                 ok: true,
-                text: `已匯出 ${backup.data.cardStates.length} 個單字的學習進度、${backup.data.checkIns.length} 天打卡紀錄`,
+                text: `已匯出 ${backup.data.cardStates.length} 個單字進度、${backup.data.checkIns.length} 天打卡、${backup.data.customGroups?.length ?? 0} 個群組與 ${backup.data.directAttempts?.length ?? 0} 筆直接作答、${backup.data.writtenSubmissions?.length ?? 0} 筆混合／非選作答`,
               });
             }}
             className="flex-1 rounded-lg bg-blue-600 py-2.5 text-sm font-bold text-white"
@@ -251,14 +251,22 @@ export default function SettingsScreen() {
               {pendingImport.data.cardStates.length} 個單字進度、
               {pendingImport.data.checkIns.length} 天打卡。
               <br />
-              匯入會<b>覆蓋</b>這台裝置目前的所有進度，確定嗎？
+              {pendingImport.schemaVersion >= 3
+                ? `另含 ${pendingImport.data.customGroups?.length ?? 0} 個群組、${pendingImport.data.directAttempts?.length ?? 0} 筆直接作答、${pendingImport.data.writtenSubmissions?.length ?? 0} 筆混合／非選作答。匯入會覆蓋這台裝置目前的所有進度，確定嗎？`
+                : pendingImport.schemaVersion === 2
+                ? `這是第二版備份，含 ${pendingImport.data.customGroups?.length ?? 0} 個群組、${pendingImport.data.directAttempts?.length ?? 0} 筆直接作答。匯入會覆蓋單字進度、群組及直接作答；保留目前混合／非選原答、自評與草稿。確定嗎？`
+                : '這是第一版備份；匯入會覆蓋原有單字學習進度，保留目前的自建群組、直接作答及混合／非選紀錄。確定嗎？'}
             </p>
             <div className="mt-2 flex gap-2">
               <button
                 onClick={async () => {
-                  await importProgress(pendingImport);
-                  setPendingImport(null);
-                  setBackupMsg({ ok: true, text: "匯入完成，進度已還原。" });
+                  try {
+                    await importProgress(pendingImport);
+                    setPendingImport(null);
+                    setBackupMsg({ ok: true, text: "匯入完成，進度已還原。" });
+                  } catch {
+                    setBackupMsg({ ok: false, text: "匯入失敗，原有進度已保留。請檢查備份或可用儲存空間。" });
+                  }
                 }}
                 className="rounded-lg bg-orange-500 px-4 py-2 text-sm font-bold text-white"
               >
@@ -283,7 +291,7 @@ export default function SettingsScreen() {
       <div className="mt-4 rounded-xl border border-red-200 bg-red-50 p-4">
         <h2 className="text-sm font-bold text-red-600">危險區</h2>
         <p className="mt-1 text-xs text-red-500">
-          重置會清除所有學習進度、打卡與練習紀錄，且無法復原（單字資料不受影響）。
+          重置會清除單字複習進度、打卡與一般測驗紀錄。自建群組、直接作答及混合／非選紀錄仍保留；單字資料不受影響。
         </p>
         {resetDone ? (
           <p className="mt-3 text-sm font-bold text-slate-600">已重置完成。</p>
@@ -292,7 +300,7 @@ export default function SettingsScreen() {
             onClick={() => setResetArmed(true)}
             className="mt-3 rounded-lg border border-red-400 bg-white px-4 py-2 text-sm font-bold text-red-500"
           >
-            重置所有學習進度…
+            重置單字複習進度…
           </button>
         ) : (
           <div className="mt-3 flex gap-2">

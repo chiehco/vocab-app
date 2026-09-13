@@ -1,3 +1,4 @@
+import VocabularyScreen from './features/vocabulary/VocabularyScreen';
 import { useEffect, useState } from "react";
 import { HashRouter, Navigate, NavLink, Route, Routes, useLocation } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
@@ -5,7 +6,7 @@ import { ensureContentAvailable, refreshInstalledContent } from "./db/seed";
 import { DEFAULT_SETTINGS, getSetting } from "./db/progressDb";
 import { withStartupTimeout } from "./db/startup";
 import { applyFontScale } from "./settings/fontScale";
-import DashboardScreen from "./features/dashboard/DashboardScreen";
+import ModeScreen from "./features/modes/ModeScreen";
 import ReviewScreen from "./features/review/ReviewScreen";
 import SlashScreen from "./features/slash/SlashScreen";
 import QuizScreen from "./features/quiz/QuizScreen";
@@ -18,19 +19,26 @@ import WordBeastPrototype from "./features/wordbeast/WordBeastPrototype";
 import Lv1PilotScreen from "./features/wordbeast/Lv1PilotScreen";
 import ArenaScreen from "./features/arena/ArenaScreen";
 import SpellBarrageScreen from "./features/arena/SpellBarrageScreen";
+import DirectScreen from "./features/direct/DirectScreen";
+import GroupsScreen from "./features/direct/GroupsScreen";
 import ExamHubScreen from "./features/exam/ExamHubScreen";
+import GsatScreen from "./features/exam/GsatScreen";
+import WrittenScreen from "./features/exam/WrittenScreen";
 import UnitCatalogScreen from "./features/units/UnitCatalogScreen";
 import UnitStudyScreen from "./features/units/UnitStudyScreen";
+import SpeechNotice from "./components/SpeechNotice";
+import { stopSpeech } from "./lib/speech";
 
 const NAV_ITEMS = [
   { to: "/", label: "首頁", icon: "home" },
-  { to: "/review", label: "複習", icon: "review" },
-  { to: "/quiz", label: "練習", icon: "trial" },
-  { to: "/browse", label: "單字總表", icon: "archive" },
-  { to: "/progress", label: "紀錄", icon: "trace" },
+  { to: "/modes/words", label: "單字", icon: "review" },
+  { to: "/exam", label: "大考", icon: "trial" },
+  { to: "/games", label: "遊戲", icon: "game" },
+  { to: "/story", label: "劇情", icon: "archive" },
 ];
 
 function NavIcon({ name }: { name: string }) {
+  if (name === "game") return <svg viewBox="0 0 24 24"><path d="M7 7h10l4 11h-5l-2-3h-4l-2 3H3Z"/><path d="M7 9v5M4.5 11.5h5M16 10h1M18 13h1"/></svg>;
   if (name === "home") return <svg viewBox="0 0 24 24"><path d="m4 11 8-7 8 7v9H4Z" /><path d="M9 20v-6h6v6" /></svg>;
   if (name === "review") return <svg viewBox="0 0 24 24"><path d="M4 5.5Q8 4 12 7v13q-4-3-8-1Z" /><path d="M20 5.5Q16 4 12 7v13q4-3 8-1Z" /></svg>;
   if (name === "trial") return <svg viewBox="0 0 24 24"><path d="M6 4h12l-1 16H7Z" /><path d="M9 8h6M9 12h6M10 16h4" /></svg>;
@@ -40,6 +48,7 @@ function NavIcon({ name }: { name: string }) {
 
 function AppLayout() {
   const location = useLocation();
+  useEffect(() => () => stopSpeech(), [location.pathname]);
   const immersive = location.pathname === "/slash"
     || location.pathname.startsWith("/wordbeast")
     || location.pathname.startsWith("/arena/spell-barrage")
@@ -49,7 +58,7 @@ function AppLayout() {
     <div className="mx-auto flex min-h-screen max-w-lg flex-col">
       <main className={immersive ? "flex-1" : "flex-1 pb-20"}>
         <Routes>
-          <Route path="/" element={<DashboardScreen />} />
+          <Route path="/" element={<ModeScreen />} />
           <Route path="/review" element={<ReviewScreen />} />
           <Route path="/slash" element={<SlashScreen />} />
           <Route path="/wordbeast" element={<WordBeastPrototype />} />
@@ -62,12 +71,22 @@ function AppLayout() {
           <Route path="/settings" element={<SettingsScreen />} />
           <Route path="/arena" element={<ArenaScreen />} />
           <Route path="/arena/spell-barrage" element={<SpellBarrageScreen />} />
-          <Route path="/exam" element={<ExamHubScreen />} />
+          <Route path="/practice/direct" element={<DirectScreen />} />
+          <Route path="/vocabulary" element={<VocabularyScreen />} />
+          <Route path="/groups" element={<GroupsScreen />} />
+          <Route path="/modes/words" element={<ModeScreen mode="words" />} />
+          <Route path="/games" element={<ModeScreen mode="games" />} />
+          <Route path="/story" element={<ModeScreen mode="story" />} />
+          <Route path="/exam" element={<ModeScreen mode="exam" />} />
+          <Route path="/exam/high-frequency" element={<ExamHubScreen />} />
+          <Route path="/exam/papers" element={<GsatScreen />} />
+          <Route path="/exam/written" element={<WrittenScreen />} />
           <Route path="/units" element={<UnitCatalogScreen />} />
           <Route path="/units/:level/:unitNumber" element={<UnitStudyScreen />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
+      <SpeechNotice key={location.pathname} />
       {!immersive && (
         <nav className="app-bottom-nav">
           <div className="app-bottom-nav-inner">
@@ -75,7 +94,7 @@ function AppLayout() {
               <NavLink
                 key={item.to}
                 to={item.to}
-                className={({ isActive }) => `app-nav-item ${isActive ? "active" : ""}`}
+                className={({ isActive }) => `app-nav-item ${isActive || (item.to === "/modes/words" && /^\/(vocabulary|groups|review|browse|word|units|practice|placement)(\/|$)/.test(location.pathname)) || (item.to === "/games" && location.pathname.startsWith("/arena")) ? "active" : ""}`}
               >
                 <NavIcon name={item.icon} />
                 <span>{item.label}</span>

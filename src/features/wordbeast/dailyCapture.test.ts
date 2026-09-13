@@ -49,11 +49,11 @@ describe("S＋A 每日捕捉", () => {
     expect(selectDailyWords(data)).toEqual([]);
   });
 
-  it("有可用圖的功能詞不因詞類被漏掉；無圖字留給一般學習與練習", () => {
+  it("功能詞不作獨立新字；無圖字仍保留原字卡", () => {
     const data = fixture();
     data.words = data.words.slice(0, 2);
     data.words[1].wordId = "W999999";
     data.priorities[0].isFunctionWord = true;
-    expect(selectDailyWords(data).map(w => w.word)).toEqual(["word-0"]);
+    expect(selectDailyWords(data).map(w => w.word)).toEqual([]);
   });
 });

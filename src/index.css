@@ -73,3 +73,25 @@ body {
 
 .app-nav-item.active { color: #414c3b; }
 .app-nav-item.active::before { background: #a63c31; }
+
+.speech-notice {
+  position: fixed;
+  z-index: 100;
+  left: 50%;
+  bottom: calc(85px + env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  width: min(440px, calc(100% - 24px));
+  display: flex;
+  align-items: start;
+  gap: 12px;
+  padding: 14px 16px;
+  color: #382e24;
+  background: #fff8df;
+  border: 1px solid #cbbd96;
+  border-radius: 12px;
+  box-shadow: 0 5px 24px #0002;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+.speech-notice p { margin: 0; flex: 1; }
+.speech-notice button { min-width: 32px; min-height: 32px; font-size: 1.5rem; }

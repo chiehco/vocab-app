@@ -1,6 +1,6 @@
 import type { CardState, Grade } from "../db/types";
 import { addDaysStr } from "../lib/dates";
-import { differenceInCalendarDays, format, isValid, parseISO } from "date-fns";
+import { format } from "date-fns";
 
 /** 四鍵評分對應 SM-2 quality：Again=0, Hard=3, Good=4, Easy=5 */
 const GRADE_TO_QUALITY: Record<Grade, number> = { 0: 0, 1: 3, 2: 4, 3: 5 };
@@ -26,23 +26,10 @@ export function newCardState(word: string, today: string): CardState {
   };
 }
 
-/**
- * 考試型排程：下一次複習不超過距考試剩餘天數的一半。
- * 無日期、日期格式錯誤、或考試已過時，保留原本的 SM-2 間隔。
- */
-export function clampIntervalToExam(intervalDays: number, today: string, examDate?: string): number {
-  if (!examDate) return intervalDays;
-  const todayDate = parseISO(today);
-  const targetDate = parseISO(examDate);
-  if (!isValid(todayDate) || !isValid(targetDate)) return intervalDays;
-  const remainingDays = differenceInCalendarDays(targetDate, todayDate);
-  if (remainingDays <= 0) return intervalDays;
-  const examAwareMaximum = Math.max(1, Math.floor(remainingDays / 2));
-  return Math.min(intervalDays, examAwareMaximum);
-}
-
+// Exam deadlines affect study planning, not the evidence-based state of an individual card.
+// Keep the optional date argument for callers; do not compress mature cards near the exam.
 /** 純函式：套用一次評分，回傳新的卡片狀態（不觸碰資料庫）。 */
-export function applyGrade(card: CardState, grade: Grade, today: string, examDate?: string): CardState {
+export function applyGrade(card: CardState, grade: Grade, today: string, _examDate?: string): CardState {
   const q = GRADE_TO_QUALITY[grade];
   let { easeFactor, intervalDays, repetitions, lapses } = card;
   let state = card.state;
@@ -59,8 +46,6 @@ export function applyGrade(card: CardState, grade: Grade, today: string, examDat
     repetitions += 1;
     state = "review";
   }
-
-  intervalDays = clampIntervalToExam(intervalDays, today, examDate);
 
   easeFactor = Math.max(1.3, easeFactor + (0.1 - (5 - q) * (0.08 + (5 - q) * 0.02)));
 

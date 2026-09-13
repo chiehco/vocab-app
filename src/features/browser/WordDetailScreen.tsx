@@ -1,10 +1,11 @@
 import { Fragment, useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useSearchParams } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
 import { contentDb } from "../../db/contentDb";
 import { getCardState } from "../../db/progressIdentity";
 import type { WordRecord } from "../../db/types";
 import SpeakerButton from "../../components/SpeakerButton";
+import { useCardPronunciation } from "../../hooks/useCardPronunciation";
 import { getWordBeastAsset } from "../wordbeast/wordBeastAssets";
 import ExamTierBadge from "../wordbeast/ExamTierBadge";
 import { getExamStarText } from "../wordbeast/examTier";
@@ -16,6 +17,7 @@ import { MORPHEME_TYPE_LABEL, NOTE_TYPE_LABEL, RELATION_TYPE_LABEL, REVERSE_RELA
 import { getWordDisplaySense } from "./wordDisplay";
 import { buildRootFamilies, normalizeMorphemeKey, pickFamilyMorphemes } from "./rootFamily";
 import "./word-detail.css";
+import { progressDb } from '../../db/progressDb';
 
 type DossierBackTab = "meaning" | "relations" | "roots" | "examples";
 
@@ -50,6 +52,10 @@ function dossierTitleContent(word: string) {
 
 export default function WordDetailScreen() {
   const { wordId } = useParams<{ wordId: string }>();
+  const [params] = useSearchParams();
+  const groupId = params.get('group');
+  const group = useLiveQuery(() => groupId ? progressDb.customGroups.get(groupId) : undefined, [groupId]);
+  const groupIndex = group?.wordIds?.indexOf(wordId ?? '') ?? -1;
   const [cardSide, setCardSide] = useState<"front" | "back">("front");
   const [backTab, setBackTab] = useState<DossierBackTab>("meaning");
   useEffect(() => {
@@ -57,6 +63,7 @@ export default function WordDetailScreen() {
     setBackTab("meaning");
   }, [wordId]);
   const word = useLiveQuery(() => wordId ? contentDb.words.get(wordId) : undefined, [wordId]);
+  useCardPronunciation(word?.word, wordId);
   const illustration = useIllustrationMedia(word);
   const senses = useLiveQuery(() => word ? contentDb.senses.where("wordId").equals(word.wordId).sortBy("senseOrder") : [], [word?.wordId]);
   const examples = useLiveQuery(() => word ? contentDb.examples.where("word").equals(word.word).toArray() : [], [word?.word]);
@@ -152,6 +159,13 @@ export default function WordDetailScreen() {
       <header className="word-dossier-nav">
         <Link to="/browse">← 單字總表</Link><span>ARCHIVE · {word.wordId}</span><b>{word.level}</b>
       </header>
+
+      {group && groupIndex >= 0 && <nav className="dossier-group-nav" aria-label="群組字卡導覽">
+        <Link to={`/groups?group=${encodeURIComponent(group.id)}`}>← {group.name}</Link>
+        <span>{groupIndex+1} / {group.wordIds!.length}</span>
+        <div>{groupIndex > 0 && <Link to={`/word/${group.wordIds![groupIndex-1]}?group=${encodeURIComponent(group.id)}`}>上一字</Link>}
+        {groupIndex < group.wordIds!.length-1 && <Link to={`/word/${group.wordIds![groupIndex+1]}?group=${encodeURIComponent(group.id)}`}>下一字 →</Link>}</div>
+      </nav>}
 
       <div className="dossier-card-controls" aria-label="字卡正反面">
         <button className={cardSide === "front" ? "active" : ""} onClick={() => setCardSide("front")} aria-pressed={cardSide === "front"}>單字卡</button>
@@ -255,7 +269,7 @@ export default function WordDetailScreen() {
       {senses && senses.length > 0 && (
         <section className="dossier-section meaning-focus-section">
           <div className="dossier-section-head"><div><p>MEANING & EXAM FOCUS</p><h2>常用意思</h2></div><span>{senses.length > 1 ? `${senses.length} 種意思` : "已整理"}</span></div>
-          <ol className="dossier-senses">{senses.map((sense) => <li className={sense.isExamSense ? "exam-sense" : undefined} key={sense.senseId}><b>{String(sense.senseOrder).padStart(2, "0")}</b><div><p><span>{sense.sensePos}</span>{sense.meaningZh}</p>{sense.isExamSense && <small>歷屆考過的意思{sense.examEvidence ? ` · ${sense.examEvidence}` : ""}</small>}{sense.isExamSense && sense.note && <em>{sense.note}</em>}{sense.answerForms.length > 0 && <i>考卷上的寫法 · {sense.answerForms.join("／")}</i>}</div></li>)}</ol>
+          <ol className="dossier-senses">{senses.map((sense) => <li className={sense.isExamSense ? "exam-sense" : undefined} key={sense.senseId}><b>{String(sense.senseOrder).padStart(2, "0")}</b><div><p><span>{sense.sensePos}</span>{sense.meaningZh}</p>{sense.answerForms.length > 0 && <i>考卷上的寫法 · {sense.answerForms.join("／")}</i>}</div></li>)}</ol>
         </section>
       )}
 

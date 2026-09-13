@@ -3,14 +3,14 @@ import { useLiveQuery } from "dexie-react-hooks";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import SpeakerButton from "../../components/SpeakerButton";
 import { contentDb } from "../../db/contentDb";
-import { DEFAULT_SETTINGS, getSetting } from "../../db/progressDb";
 import type { ExampleRecord } from "../../db/types";
-import { speak } from "../../lib/speech";
+import { useCardPronunciation } from "../../hooks/useCardPronunciation";
 import { getWordDisplaySense } from "../browser/wordDisplay";
 import StudyIllustration from "../wordbeast/StudyIllustration";
 import { useIllustrationMedia } from "../wordbeast/useIllustrationMedia";
 import { getWordBeastAsset } from "../wordbeast/wordBeastAssets";
-import { getExamUnit } from "./unitPlan";
+import { getExamUnit, getStudyUnit, parseUnitOrder, unitOrderLabel } from "./unitPlan";
+import AddUnitGroupButton from "./AddUnitGroupButton";
 import "./units.css";
 
 const LEVELS = new Set(["LV1", "LV2", "LV3", "LV4", "LV5", "LV6"]);
@@ -40,6 +40,10 @@ export default function UnitStudyScreen() {
     unitNumber: string;
   }>();
   const [searchParams, setSearchParams] = useSearchParams();
+  const order = parseUnitOrder(searchParams.get('order'));
+  const explicitOrder = searchParams.has('order');
+  const orderLabel = explicitOrder ? unitOrderLabel(order) : '舊版分組';
+  const orderQuery = explicitOrder ? `&order=${order}` : '';
   const pageRef = useRef<HTMLDivElement>(null);
   const level = levelParam?.toUpperCase() ?? "";
   const unitNumber = Number.parseInt(unitNumberParam ?? "", 10);
@@ -51,21 +55,17 @@ export default function UnitStudyScreen() {
     ]);
     return { words, priorities };
   }, []);
-  const autoPronounce = useLiveQuery(
-    () => getSetting<boolean>("autoPronounce"),
-    [],
-    DEFAULT_SETTINGS.autoPronounce,
-  );
   const unit = useMemo(
     () => data && LEVELS.has(level) && Number.isInteger(unitNumber)
-      ? getExamUnit(data.words, data.priorities, level, unitNumber)
+      ? (explicitOrder ? getStudyUnit(data.words, level, unitNumber, order) : getExamUnit(data.words, data.priorities, level, unitNumber))
       : undefined,
-    [data, level, unitNumber],
+    [data, level, unitNumber, explicitOrder, order],
   );
   const normalizedIndex = Number.isFinite(requestedIndex) ? Math.max(0, requestedIndex) : 0;
   const complete = !!unit && normalizedIndex >= unit.words.length;
   const index = unit ? Math.min(normalizedIndex, unit.words.length) : 0;
   const word = !complete ? unit?.words[index] : undefined;
+  useCardPronunciation(word?.word, `${level}:${orderLabel}:${unitNumber}:${index}`);
   const details = useLiveQuery(async () => {
     if (!word) return undefined;
     const [senses, examples] = await Promise.all([
@@ -79,8 +79,6 @@ export default function UnitStudyScreen() {
   function goTo(target: number) {
     if (!unit) return;
     const nextIndex = Math.max(0, Math.min(target, unit.words.length));
-    const nextWord = unit.words[nextIndex];
-    if (nextWord && autoPronounce) speak(nextWord.word);
     const next = new URLSearchParams(searchParams);
     next.set("index", String(nextIndex));
     setSearchParams(next, { replace: true });
@@ -99,19 +97,20 @@ export default function UnitStudyScreen() {
     return (
       <div className="unit-study-page unit-complete-page">
         <header className="unit-study-header">
-          <Link to={`/units?level=${level}`}>← Unit 清單</Link>
-          <span>{level} · {unit.label}</span>
+          <Link to={`/units?level=${level}${orderQuery}`}>← Unit 清單</Link>
+          <span>{level} · {orderLabel} · {unit.label}</span>
           <b>{unit.words.length}/{unit.words.length}</b>
         </header>
         <main className="unit-complete-main">
           <div className="unit-complete-seal" aria-hidden="true"><span>閱</span></div>
           <p>UNIT COMPLETE</p>
           <h1>這個 Unit 看完了</h1>
-          <span>你已連續看完 {unit.words.length} 個高頻單字。瀏覽不會改動記憶曲線，完成練習後才會更新學習進度。</span>
+          <span>你已連續看完 {unit.words.length} 個單字。瀏覽不會改動記憶曲線，完成練習後才會更新學習進度。</span>
+          <AddUnitGroupButton unit={unit} orderLabel={orderLabel} />
           <div className="unit-complete-actions">
-            <Link className="primary" to={`/quiz?level=${level}&unit=${unit.unitNumber}`}>練習這個 Unit</Link>
+            <Link className="primary" to={`/quiz?level=${level}&unit=${unit.unitNumber}${orderQuery}`}>練習這個 Unit</Link>
             <button type="button" onClick={() => goTo(0)}>從頭重看</button>
-            <Link to={`/units?level=${level}`}>回 Unit 清單</Link>
+            <Link to={`/units?level=${level}${orderQuery}`}>回 Unit 清單</Link>
           </div>
         </main>
       </div>
@@ -129,10 +128,11 @@ export default function UnitStudyScreen() {
   return (
     <div className="unit-study-page" ref={pageRef}>
       <header className="unit-study-header">
-        <Link to={`/units?level=${level}`}>← Unit 清單</Link>
-        <span>{level} · {unit.label}</span>
+        <Link to={`/units?level=${level}${orderQuery}`}>← Unit 清單</Link>
+        <span>{level} · {orderLabel} · {unit.label}</span>
         <b>{index + 1}/{unit.words.length}</b>
       </header>
+      <AddUnitGroupButton unit={unit} orderLabel={orderLabel} />
       <div className="unit-study-progress" aria-label={`目前第 ${index + 1} 個，共 ${unit.words.length} 個`}><i style={{ width: `${progress}%` }} /></div>
 
       <main className="unit-study-main">

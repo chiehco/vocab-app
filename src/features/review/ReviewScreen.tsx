@@ -5,7 +5,7 @@ import { contentDb } from "../../db/contentDb";
 import { DEFAULT_SETTINGS, getSetting } from "../../db/progressDb";
 import { getCardState } from "../../db/progressIdentity";
 import { todayStr } from "../../lib/dates";
-import { speak } from "../../lib/speech";
+import { useCardPronunciation } from "../../hooks/useCardPronunciation";
 import { useToday } from "../../hooks/useToday";
 import type { Grade } from "../../db/types";
 import { buildTodayQueue, buildTodayRecapQueue, type QueueItem } from "../../srs/queue";
@@ -19,8 +19,9 @@ import WordTraitBadges from "../wordbeast/WordTraitBadges";
 import StudyIllustration from "../wordbeast/StudyIllustration";
 import { useIllustrationMedia } from "../wordbeast/useIllustrationMedia";
 import { buildConfusableWordSet, buildSenseCountByWord } from "../wordbeast/wordTraits";
-import { TOP_EXAM_FILTER } from "../../quiz/examScope";
+import { TOP_EXAM_FILTER, standaloneStudyPriorities, buildFunctionWordSet } from "../../quiz/examScope";
 import "./review.css";
+import { getDailyLearningPlan } from '../../srs/dailyPlan';
 
 const LEVEL_CHOICES = [TOP_EXAM_FILTER, "全部", "LV1", "LV2", "LV3", "LV4", "LV5", "LV6"];
 
@@ -80,11 +81,7 @@ export default function ReviewScreen() {
   const savingRef = useRef(false);
   const [saving, setSaving] = useState(false);
   const [saveError, setSaveError] = useState<string | null>(null);
-  const autoPronounce = useLiveQuery(
-    () => getSetting<boolean>("autoPronounce"),
-    [],
-    DEFAULT_SETTINGS.autoPronounce,
-  );
+  useCardPronunciation(queue?.[index]?.wordRecord.word, `${levelSel}:${index}`);
 
   useEffect(() => {
     let cancelled = false;
@@ -98,14 +95,12 @@ export default function ReviewScreen() {
     const loadQueue = async () => {
       const isTopExam = levelSel === TOP_EXAM_FILTER;
       const levels = levelSel === "全部" || isTopExam ? undefined : [levelSel];
+      const priorities = await contentDb.examPriorities.toArray();
+      const functionWords = buildFunctionWordSet(priorities);
       const prioritizedWords = isTopExam
-        ? (await contentDb.examPriorities
-          .where("priorityTier")
-          .anyOf(["S", "A"])
-          .sortBy("rank"))
-          .map((row) => row.word)
-        : undefined;
-      const nextQueue = await buildTodayQueue(levels, prioritizedWords);
+        ? standaloneStudyPriorities(priorities).map(row=>row.word)
+        : (await contentDb.words.toArray()).filter(w=>!functionWords.has(w.word) && (!levels || levels.includes(w.level))).map(w=>w.word);
+      const nextQueue = await buildTodayQueue(levels, prioritizedWords, isTopExam);
       const hasDueCards = nextQueue.some((item) => !item.isNew);
       const recapQueue = hasDueCards ? [] : await buildTodayRecapQueue(levels, prioritizedWords);
       const resolvedQueue = recapQueue.length > 0 ? recapQueue : nextQueue;
@@ -152,6 +147,10 @@ export default function ReviewScreen() {
     setSaveError(null);
     const isNewSession = !sessionStarted.current;
     try {
+      if (levelSel === TOP_EXAM_FILTER && item.isNew && !(await getCardState(item.wordRecord.word)) && (await getDailyLearningPlan()).remainingNew <= 0) {
+        setSaveError('今天的新字份量已完成。可回學測專區查看複習安排，或自行選擇單元練習。');
+        return;
+      }
       if (item.isRecap) {
         await recordReviewWithoutScheduling(item.wordRecord.word, grade, sessionId.current, isNewSession);
       } else {
@@ -187,7 +186,6 @@ export default function ReviewScreen() {
         item={item}
         flipped={flipped}
         onFlip={() => {
-          if (autoPronounce) speak(item.wordRecord.word);
           setFlipped(true);
         }}
         onGrade={handleGrade}

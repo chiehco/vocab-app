@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { ExamPriorityRecord, WordRecord } from "../../db/types";
-import { buildExamUnits, getExamUnit, UNIT_SIZE } from "./unitPlan";
+import { buildExamUnits, getExamUnit, UNIT_SIZE, buildStudyUnits, getStudyUnit, parseUnitOrder } from "./unitPlan";
 
 function word(index: number, level = "LV1"): WordRecord {
   return {
@@ -110,5 +110,35 @@ describe("S+A unit plan", () => {
     expect(getExamUnit(words, priorities, "LV1", 2)?.words).toEqual([words[30]]);
     expect(getExamUnit(words, priorities, "LV1", 0)).toBeUndefined();
     expect(getExamUnit(words, priorities, "LV1", 3)).toBeUndefined();
+  });
+});
+
+
+describe('30-word study orders', () => {
+  it('includes every installed word in the level once, irrespective of legacy S/A membership', () => {
+    const words = Array.from({length:65},(_,i)=>word(i+1));
+    const outside = word(900,'LV2');
+    const baseline = JSON.stringify(words);
+    for (const order of ['exam','alphabet'] as const) {
+      const units = buildStudyUnits([...words,outside,words[0]],'LV1',order);
+      expect(units.map(u=>u.words.length)).toEqual([30,30,5]);
+      expect(new Set(units.flatMap(u=>u.words.map(w=>w.wordId)))).toEqual(new Set(words.map(w=>w.wordId)));
+      expect(buildStudyUnits([...words].reverse(),'LV1',order)).toEqual(units);
+    }
+    expect(JSON.stringify(words)).toBe(baseline);
+  });
+  it('puts a known six-year word before unrecorded words, with alphabetic fallback', () => {
+    const words = [{...word(1),word:'zz-unrecorded'}, {...word(2),word:'aa-unrecorded'}, {...word(3),word:'passage'}];
+    expect(buildStudyUnits(words,'LV1','exam')[0].words.map(w=>w.word)).toEqual(['passage','aa-unrecorded','zz-unrecorded']);
+    expect(buildStudyUnits(words,'LV1','alphabet')[0].words.map(w=>w.word)).toEqual(['aa-unrecorded','passage','zz-unrecorded']);
+    expect(buildStudyUnits(words,'LV1','exam')[0].unitId).not.toBe(buildStudyUnits(words,'LV1','alphabet')[0].unitId);
+  });
+  it('resolves the selected unit exactly and rejects invalid unit numbers', () => {
+    const words = Array.from({length:65},(_,i)=>word(i+1));
+    for (const order of ['exam','alphabet'] as const) {
+      expect(getStudyUnit(words,'LV1',2,order)).toEqual(buildStudyUnits(words,'LV1',order)[1]);
+      for (const n of [0,-1,1.5,NaN,Infinity,4]) expect(getStudyUnit(words,'LV1',n,order)).toBeUndefined();
+    }
+    expect(parseUnitOrder('alphabet')).toBe('alphabet');expect(parseUnitOrder('anything')).toBe('exam');
   });
 });

@@ -1,4 +1,5 @@
 import Dexie, { type Table } from "dexie";
+import { correctExample } from './exampleCorrections';
 import type {
   ContentMetaRecord,
   ExamPriorityRecord,
@@ -49,6 +50,7 @@ export class VocabContentDB extends Dexie {
     this.version(6).stores({
       media: "assetId, targetWord, targetType, status, imageType",
     });
+    this.examples.hook('reading', correctExample);
   }
 }
 
