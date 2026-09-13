@@ -84,7 +84,7 @@ it('all 176 group items have distinct questions; session snapshots preserve grou
   expect(new Set(allQuestions.map(q=>q.questionId)).size).toBe(360);
   for (const i of curriculum.learningItems) expect(allQuestions.filter(q=>q.learningItemId===i.learningItemId)).toHaveLength(1);
   const g=templateGroup();g.itemIds=[g.itemIds[1],g.itemIds[0],curriculum.learningItems.find(i=>i.kind==='grammar')!.learningItemId];await saveGroup(g);
-  const s=await startGroupSession(g.id);const q=allQuestions.find(q=>q.questionId===s.questionIds[0])!;
+  const groupSession=await startGroupSession(g.id);const s=await startSession(groupSession.questionIds,groupSession.title,g.id,groupSession.scopeQuestionIds,'advanced');const q=allQuestions.find(q=>q.questionId===s.questionIds[0])!;
   expect(q.targetWord).toBe('unity');
   await saveGroup({...g,itemIds:[]});
   expect((await progressDb.directSessions.get(s.id))?.questionIds).toEqual(s.questionIds);

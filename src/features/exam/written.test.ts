@@ -26,7 +26,7 @@ it('preserves original answers and assessment history through retries and export
  const s=await mixed();await submitWritten(s.id);const id=`${s.id}:gsat-115-q48`;await assessWritten(id,1);await assessWritten(id,null);await assessWritten(id,2);
  await expect(assessWritten(id,1.5)).rejects.toThrow();await expect(assessWritten(`${s.id}:gsat-115-q49`,4)).rejects.toThrow();
  const retry=await mixed();await editWritten(retry.id,{questionId:'gsat-115-q48',answer:'blended'});await submitWritten(retry.id);
- const b=await exportProgress();expect(b.schemaVersion).toBe(4);expect(validateBackup(b)).toBeNull();await importProgress(b);
+ const b=await exportProgress();expect(b.schemaVersion).toBe(5);expect(validateBackup(b)).toBeNull();await importProgress(b);
  const first=await progressDb.writtenSubmissions.get(id);expect(first?.rawAnswer).toBe('blend');expect(first?.assessments.map(a=>a.score)).toEqual([1,null,2]);expect((await progressDb.writtenSubmissions.toArray()).filter(a=>a.firstAttempt)).toHaveLength(4);
  b.data.writtenSubmissions!.pop();await expect(importProgress(b)).rejects.toThrow();expect(await progressDb.writtenSubmissions.count()).toBe(8);
 });

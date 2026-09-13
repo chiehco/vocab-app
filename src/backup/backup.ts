@@ -13,7 +13,7 @@ import type {
 } from "../db/types";
 
 const BACKUP_APP_ID = "vocab-app-progress";
-const BACKUP_SCHEMA_VERSION = 4;
+const BACKUP_SCHEMA_VERSION = 5;
 
 export interface ProgressBackup {
   app: typeof BACKUP_APP_ID;

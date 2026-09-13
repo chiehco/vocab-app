@@ -1,6 +1,6 @@
 import { progressDb } from '../../db/progressDb';
-import { questions, allQuestions, acceptsChoice, normalizeAnswer, REVISION, validGroup } from './model';
-import type { CustomGroup, DirectSession, DirectAttempt } from './model';
+import { questions, practiceQuestions as allQuestions, questionForMode, sessionMode, acceptsChoice, normalizeAnswer, REVISION, validGroup } from './model';
+import type { CustomGroup, DirectSession, DirectAttempt, PracticeMode } from './model';
 import { contentDb } from '../../db/contentDb';
 
 export async function importWordGroup(wordIds: string[], name: string, groupId?: string) {
@@ -19,7 +19,9 @@ export async function saveGroup(group: CustomGroup) {
   if (!validGroup(group)) throw new Error('群組名稱或項目無效，尚未儲存。');
   await progressDb.customGroups.put({ ...group, updatedAt: Date.now() });
 }
-export async function startSession(questionIds = questions.map(q => q.questionId), title = '新情境練習', groupId?: string, scopeQuestionIds = questionIds) {
+export async function startSession(questionIds = questions.map(q => q.questionId), title = '新情境練習', groupId?: string, scopeQuestionIds = questionIds, mode: PracticeMode = 'basic') {
+  questionIds = questionIds.map(id => questionForMode(id, mode));
+  scopeQuestionIds = scopeQuestionIds.map(id => questionForMode(id, mode));
   if (!questionIds.length || new Set(questionIds).size !== questionIds.length || questionIds.some(id => !allQuestions.some(q => q.questionId === id))) throw new Error('題目清單無效');
   if (new Set(scopeQuestionIds).size !== scopeQuestionIds.length || questionIds.some(id=>!scopeQuestionIds.includes(id)) || scopeQuestionIds.some(id=>!allQuestions.some(q=>q.questionId===id))) throw new Error('練習範圍無效');
   const session: DirectSession = { id: crypto.randomUUID(), questionIds:[...questionIds], scopeQuestionIds:[...scopeQuestionIds], index: 0, choices: {}, lookups: {}, startedAt: Date.now(), updatedAt: Date.now(), revision: REVISION, title, ...(groupId ? {groupId} : {}) };
@@ -66,4 +68,14 @@ export async function nextQuestion(sessionId: string) {
     if (!s || !(await progressDb.directAttempts.get(`${sessionId}:${s.questionIds[s.index]}`))) return;
     await progressDb.directSessions.put({ ...s, index: s.index + 1, updatedAt: Date.now() });
   });
+}
+
+export async function switchPracticeMode(sessionId: string, mode: PracticeMode) {
+  const current = await progressDb.directSessions.get(sessionId);
+  if (!current || current.revision !== REVISION) throw new Error('找不到練習');
+  if (sessionMode(current) === mode) return current;
+  const ids = current.questionIds.map(id => questionForMode(id, mode));
+  const scope = (current.scopeQuestionIds ?? current.questionIds).map(id => questionForMode(id, mode));
+  const existing = await progressDb.directSessions.orderBy('updatedAt').filter(s => s.revision === REVISION && s.groupId === current.groupId && s.title === current.title && JSON.stringify(s.questionIds) === JSON.stringify(ids) && JSON.stringify(s.scopeQuestionIds ?? s.questionIds) === JSON.stringify(scope)).last();
+  return existing ?? startSession(ids, current.title, current.groupId, scope, mode);
 }

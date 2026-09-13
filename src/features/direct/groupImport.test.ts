@@ -59,7 +59,7 @@ it('imports into existing groups atomically, preserves unit items and supports b
   expect(group.itemIds).toEqual(base.itemIds); expect(group.name).toBe(base.name);
   expect(group.wordIds).toEqual([passage.wordId, ability.wordId]);
   expect(groupWords(group.wordIds!, [ability, passage]).map(w=>w.word)).toEqual(['passage','ability']);
-  const backup = await exportProgress(); expect(backup.schemaVersion).toBe(4); expect(validateBackup(backup)).toBeNull();
+  const backup = await exportProgress(); expect(backup.schemaVersion).toBe(5); expect(validateBackup(backup)).toBeNull();
   await progressDb.customGroups.clear(); await importProgress(backup);
   expect((await progressDb.customGroups.get(base.id))?.wordIds).toEqual(group.wordIds);
   expect((await progressDb.settings.get('sentinel'))?.value).toBe('keep');

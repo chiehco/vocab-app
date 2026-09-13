@@ -1,3 +1,4 @@
+import choiceOptions from './choiceOptions.json';
 import unit2 from './curriculumUnit2.json';
 import curriculum from './curriculum.json';
 import questions from './questions.json';
@@ -39,5 +40,22 @@ export function validGroup(g: CustomGroup): boolean {
 export function wrongQuestionIds(attempts: DirectAttempt[]): string[] {
   const latest = new Map<string, DirectAttempt>();
   for (const a of [...attempts].sort((a,b) => a.answeredAt-b.answeredAt)) latest.set(a.questionId,a);
-  return allQuestions.filter(q => latest.has(q.questionId) && !latest.get(q.questionId)!.correct).map(q => q.questionId);
+  return practiceQuestions.filter(q => latest.has(q.questionId) && !latest.get(q.questionId)!.correct).map(q => q.questionId);
+}
+
+export type PracticeMode = 'basic' | 'advanced';
+export const BASIC_PREFIX = 'CHOICE-';
+export function questionForMode(id: string, mode: PracticeMode) {
+  const base = id.startsWith(BASIC_PREFIX) ? id.slice(BASIC_PREFIX.length) : id;
+  return mode === 'basic' && base.startsWith('CLOZE-') ? BASIC_PREFIX + base : base;
+}
+// Original IDs remain the spelling records; recognition uses independent IDs.
+export const choiceQuestions: PracticeQuestion[] = allQuestions.filter(q => !q.options.length).map(q => {
+  const entries = choiceOptions[q.questionId as keyof typeof choiceOptions];
+  const options = entries.map((o, index) => ({id: 'ABCD'[index], text: o.text, rationaleZh: o.text + '：' + o.meaningZh}));
+  return {...q, questionId: BASIC_PREFIX + q.questionId, learningItemId: undefined, sourceType: 'original_target_word_choice', options, answer: options.find(o => normalizeAnswer(o.text) === normalizeAnswer(q.answer))!.id};
+});
+export const practiceQuestions = [...allQuestions, ...choiceQuestions];
+export function sessionMode(s: DirectSession): PracticeMode {
+  return s.questionIds.some(id => id.startsWith('CLOZE-')) ? 'advanced' : 'basic';
 }
