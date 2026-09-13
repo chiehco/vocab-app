@@ -1,3 +1,4 @@
+import WordsWorkspace from './features/modes/WordsWorkspace';
 import VocabularyScreen from './features/vocabulary/VocabularyScreen';
 import { useEffect, useState } from "react";
 import { HashRouter, Navigate, NavLink, Route, Routes, useLocation } from "react-router-dom";
@@ -55,7 +56,7 @@ function AppLayout() {
     || /^\/units\/LV[1-6]\/\d+$/.test(location.pathname);
 
   return (
-    <div className="mx-auto flex min-h-screen max-w-lg flex-col">
+    <div className={`mx-auto flex min-h-screen flex-col ${location.pathname === "/modes/words" ? "max-w-6xl" : "max-w-lg"}`}>
       <main className={immersive ? "flex-1" : "flex-1 pb-20"}>
         <Routes>
           <Route path="/" element={<ModeScreen />} />
@@ -74,7 +75,7 @@ function AppLayout() {
           <Route path="/practice/direct" element={<DirectScreen />} />
           <Route path="/vocabulary" element={<VocabularyScreen />} />
           <Route path="/groups" element={<GroupsScreen />} />
-          <Route path="/modes/words" element={<ModeScreen mode="words" />} />
+          <Route path="/modes/words" element={<WordsWorkspace />} />
           <Route path="/games" element={<ModeScreen mode="games" />} />
           <Route path="/story" element={<ModeScreen mode="story" />} />
           <Route path="/exam" element={<ModeScreen mode="exam" />} />

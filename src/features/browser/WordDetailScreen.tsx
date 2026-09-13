@@ -1,3 +1,6 @@
+import type { CustomGroup } from '../direct/model';
+import { readWordList } from '../modes/wordLists';
+import type { WordList } from '../modes/wordLists';
 import { Fragment, useEffect, useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
@@ -53,8 +56,11 @@ function dossierTitleContent(word: string) {
 export default function WordDetailScreen() {
   const { wordId } = useParams<{ wordId: string }>();
   const [params] = useSearchParams();
-  const groupId = params.get('group');
-  const group = useLiveQuery(() => groupId ? progressDb.customGroups.get(groupId) : undefined, [groupId]);
+  const listId = params.get('list');
+  const groupId = listId || params.get('group');
+  const group = useLiveQuery<CustomGroup | WordList | undefined>(() => listId ? readWordList(listId) : groupId ? progressDb.customGroups.get(groupId) : undefined, [groupId,listId]);
+  const groupReturn = listId ? (group as WordList|undefined)?.returnTo ?? '/modes/words' : `/groups?group=${encodeURIComponent(groupId??'')}`;
+  const groupQuery = `${listId?'list':'group'}=${encodeURIComponent(groupId??'')}`;
   const groupIndex = group?.wordIds?.indexOf(wordId ?? '') ?? -1;
   const [cardSide, setCardSide] = useState<"front" | "back">("front");
   const [backTab, setBackTab] = useState<DossierBackTab>("meaning");
@@ -161,10 +167,10 @@ export default function WordDetailScreen() {
       </header>
 
       {group && groupIndex >= 0 && <nav className="dossier-group-nav" aria-label="群組字卡導覽">
-        <Link to={`/groups?group=${encodeURIComponent(group.id)}`}>← {group.name}</Link>
+        <Link to={groupReturn}>← {group.name}</Link>
         <span>{groupIndex+1} / {group.wordIds!.length}</span>
-        <div>{groupIndex > 0 && <Link to={`/word/${group.wordIds![groupIndex-1]}?group=${encodeURIComponent(group.id)}`}>上一字</Link>}
-        {groupIndex < group.wordIds!.length-1 && <Link to={`/word/${group.wordIds![groupIndex+1]}?group=${encodeURIComponent(group.id)}`}>下一字 →</Link>}</div>
+        <div>{groupIndex > 0 && <Link to={`/word/${group.wordIds![groupIndex-1]}?${groupQuery}`}>上一字</Link>}
+        {groupIndex < group.wordIds!.length-1 && <Link to={`/word/${group.wordIds![groupIndex+1]}?${groupQuery}`}>下一字 →</Link>}</div>
       </nav>}
 
       <div className="dossier-card-controls" aria-label="字卡正反面">

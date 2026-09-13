@@ -1,3 +1,6 @@
+import type { CustomGroup } from '../direct/model';
+import { readWordList } from '../modes/wordLists';
+import type { WordList } from '../modes/wordLists';
 import { useMemo, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
@@ -53,8 +56,10 @@ function TrialLevels({ selected, onChange }: { selected: string; onChange: (leve
 
 export default function QuizScreen() {
   const [searchParams] = useSearchParams();
-  const groupId = searchParams.get('group');
-  const customGroup = useLiveQuery(() => groupId ? progressDb.customGroups.get(groupId) : undefined, [groupId]);
+  const listId = searchParams.get('list');
+  const groupId = listId || searchParams.get('group');
+  const customGroup = useLiveQuery<CustomGroup | WordList | undefined>(() => listId ? readWordList(listId) : groupId ? progressDb.customGroups.get(groupId) : undefined, [groupId,listId]);
+  const groupReturn = listId ? (customGroup as WordList|undefined)?.returnTo ?? '/modes/words' : `/groups?group=${encodeURIComponent(groupId??'')}`;
 
   const explicitOrder = searchParams.has('order');
   const order = parseUnitOrder(searchParams.get('order'));
@@ -269,7 +274,7 @@ export default function QuizScreen() {
           <div><p>{groupId ? `${scopedCollectedWords?.length ?? 0} 個可練習單字` : hasUnitScope ? `${requestedUnit?.words.length ?? 0} 個單字` : levelSel === TOP_EXAM_FILTER ? "S+A 學測高頻字" : "只練習已學過的單字"}</p><h2>{groupId ? <>依自己的清單，<br />自由<em>練習。</em></> : hasUnitScope ? <>本輪連續作答，<br />完成後再回到<em>Unit。</em></> : levelSel === TOP_EXAM_FILTER ? <>先守住高頻，<br />再擴張你的<em>得分範圍。</em></> : <>收服只是相遇，<br />能在情境中認出，<em>才算真的馴化。</em></>}</h2></div>
           <div className="trial-eye" aria-hidden="true"><i /><span /></div>
         </section>
-        <div className="trial-scope"><span>{groupId ? `本輪最多 ${QUIZ_SIZE} 題 · 介係詞與連接詞等功能詞暫不出題` : hasUnitScope ? `${requestedLevel} · Unit ${String(requestedUnitNumber).padStart(2, "0")} · 本輪最多 ${QUIZ_SIZE} 題` : levelSel === TOP_EXAM_FILTER ? `高頻題庫 ${scopedCollectedWords?.length ?? 0} 字・可直接練習` : `已收集 ${scopedCollectedWords?.length ?? 0} 隻・選擇出題範圍`}</span>{groupId ? <Link to={`/groups?group=${encodeURIComponent(groupId)}`}>← 返回群組</Link> : hasUnitScope ? <Link className="trial-unit-return" to={`/units/${requestedLevel}/${requestedUnitNumber}${unitOrderQuery}`}>← 返回這個 Unit</Link> : <TrialLevels selected={levelSel} onChange={setLevelSel} />}</div>
+        <div className="trial-scope"><span>{groupId ? `本輪最多 ${QUIZ_SIZE} 題 · 介係詞與連接詞等功能詞暫不出題` : hasUnitScope ? `${requestedLevel} · Unit ${String(requestedUnitNumber).padStart(2, "0")} · 本輪最多 ${QUIZ_SIZE} 題` : levelSel === TOP_EXAM_FILTER ? `高頻題庫 ${scopedCollectedWords?.length ?? 0} 字・可直接練習` : `已收集 ${scopedCollectedWords?.length ?? 0} 隻・選擇出題範圍`}</span>{groupId ? <Link to={groupReturn}>← 返回群組</Link> : hasUnitScope ? <Link className="trial-unit-return" to={`/units/${requestedLevel}/${requestedUnitNumber}${unitOrderQuery}`}>← 返回這個 Unit</Link> : <TrialLevels selected={levelSel} onChange={setLevelSel} />}</div>
         {startError && <p role="alert">{startError}</p>}
         {!groupId && !hasUnitScope && levelSel !== TOP_EXAM_FILTER && collectedWords?.length === 0 && <div className="trial-empty"><span>集</span><div><h3>還沒有可以練習的單字</h3><p>先完成收服，牠才會出現在這裡。</p></div><Link to="/wordbeast">前往收服場 <b>→</b></Link></div>}
         <section className="trial-modes" aria-label="選擇題型">
@@ -297,7 +302,7 @@ export default function QuizScreen() {
         {todayCheckIn && <div className="trial-checkin-confirmed" role="status"><span>✓</span><div><b>今天已完成學習</b><small>完成 {todayCheckIn.reviewCount} 次練習 · 本輪紀錄已保存</small></div></div>}
         <p>新字與錯題已加入待複習；完成正式複習評分後，才會調整記憶間隔。</p>
         {wrongWordRecords.length > 0 && <section className="trial-missed" aria-labelledby="trial-missed-title"><div><p>REVIEW NEXT</p><h3 id="trial-missed-title">本輪需再看</h3></div><div>{wrongWordRecords.map((word) => <Link key={word.wordId} to={`/word/${word.wordId}`}><b>{word.word}</b><span>{word.meaningZh}</span><i>→</i></Link>)}</div></section>}
-        <div className="trial-result-actions"><Link to="/review">前往複習</Link><button onClick={() => setMode(null)}>再練習一次</button><Link to={groupId ? `/groups?group=${encodeURIComponent(groupId)}` : hasUnitScope ? `/units/${requestedLevel}/${requestedUnitNumber}${unitOrderQuery}` : "/"}>{groupId ? "返回群組" : hasUnitScope ? "返回 Unit" : "返回首頁"}</Link></div>
+        <div className="trial-result-actions"><Link to="/review">前往複習</Link><button onClick={() => setMode(null)}>再練習一次</button><Link to={groupId ? groupReturn : hasUnitScope ? `/units/${requestedLevel}/${requestedUnitNumber}${unitOrderQuery}` : "/"}>{groupId ? "返回群組" : hasUnitScope ? "返回 Unit" : "返回首頁"}</Link></div>
       </div>
     );
   }

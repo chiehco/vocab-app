@@ -1,10 +1,12 @@
+import GroupPicker from './GroupPicker';
+import { groupPreview, groupSize } from './groupFilter';
 import { useState, useEffect } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { progressDb } from '../../db/progressDb';
 import { learningItems, templateGroup } from './model';
 import type { CustomGroup } from './model';
-import { saveGroup, startGroupSession } from './store';
+import { deleteGroup, restoreGroup, saveGroup, startGroupSession } from './store';
 import './direct.css';
 import { contentDb } from '../../db/contentDb';
 import GroupImportPanel from './GroupImportPanel';
@@ -12,13 +14,15 @@ import { groupWords } from './groupWords';
 
 export default function GroupsScreen() {
   const navigate = useNavigate();
-  const [params]=useSearchParams();
+  const [params,setParams]=useSearchParams();
   const groups = useLiveQuery(() => progressDb.customGroups.orderBy('updatedAt').reverse().toArray());
   const words = useLiveQuery(() => contentDb.words.toArray());
   const [selected,setSelected] = useState(params.get('group')??'');
   const [name,setName] = useState(params.get('group')?'LV3 Unit 1':'');
   const [query,setQuery] = useState('');
   const [error,setError] = useState('');
+  const [deleted,setDeleted] = useState<CustomGroup>();
+  const [notice,setNotice] = useState('');
   const [busy,setBusy] = useState(false);
   const g = groups?.find(g => g.id === selected);
   const cards = groupWords(g?.wordIds ?? [], words ?? []);
@@ -26,6 +30,17 @@ export default function GroupsScreen() {
   useEffect(()=>{if(savedName!==undefined)setName(savedName);},[savedName]);
   const sessions=useLiveQuery(()=>progressDb.directSessions.orderBy('updatedAt').reverse().toArray());
   const resume=sessions?.find(s=>s.groupId===g?.id && s.index<s.questionIds.length);
+  async function remove() {
+    if(!g || busy || !window.confirm('刪除「'+g.name+'」？\n'+groupSize(g)+' 項：'+groupPreview(g,words??[])+'\n只移除這個群組；字卡、學習進度與已開始的練習都會保留。'))return;
+    setBusy(true);setError('');
+    try { const removed=await deleteGroup(g.id);setDeleted(removed);setSelected('');setName('');setParams({},{replace:true});setNotice('已刪除「'+removed.name+'」。'); }
+    catch {setError('未能刪除群組，請重試。');}finally{setBusy(false);}
+  }
+  async function undoDelete() {
+    if(!deleted||busy)return;setBusy(true);setError('');
+    try {await restoreGroup(deleted);setSelected(deleted.id);setName(deleted.name);setNotice('已復原「'+deleted.name+'」。');setDeleted(undefined);}
+    catch {setError('無法復原，群組可能已存在；目前群組未被覆蓋。');}finally{setBusy(false);}
+  }
   async function practice() { if(!g)return;setBusy(true);setError('');try {const s=await startGroupSession(g.id);navigate(`/practice/direct?session=${s.id}`);}catch {setError('未能開始練習，請確認群組至少有一個項目後再重試。');}finally {setBusy(false);} }
   async function save(group: CustomGroup) { setBusy(true); setError(''); try { await saveGroup(group); setSelected(group.id); } catch { setError('未能儲存。名稱不可空白，請重試。'); } finally { setBusy(false); } }
   function move(index:number,delta:number) { if (!g) return; const ids=[...g.itemIds]; [ids[index],ids[index+delta]]=[ids[index+delta],ids[index]]; void save({...g,itemIds:ids}); }
@@ -34,13 +49,17 @@ export default function GroupsScreen() {
   return <div className="direct-page"><nav><Link to="/modes/words">← 單字模式</Link><Link to="/vocabulary">單字字卡</Link></nav>
     <p className="direct-kicker">MY COLLECTION</p><h1>我的群組</h1><p className="direct-muted">匯入單字表，或把 Unit 收進群組，再依需要增刪與排序。</p>
     {error && <p role="alert">{error}</p>}
+    {notice && <p role="status">{notice}</p>}
+    {deleted && <button disabled={busy} onClick={()=>void undoDelete()}>復原刪除「{deleted.name}」</button>}
+    <GroupPicker groups={groups??[]} words={words??[]} value={selected} disabled={busy} onChange={id=>{setSelected(id);setName(groups?.find(g=>g.id===id)?.name??'');}} />
+    <details className="group-create" open={params.get('create')==='1'}><summary>建立或匯入群組</summary>
     <GroupImportPanel words={words} groups={groups ?? []} onSaved={group => {setSelected(group.id);setName(group.name);}} />
     <button className="direct-primary" disabled={busy} onClick={() => {setName('LV3 Unit 1'); void save(templateGroup());}}>以 LV3 Unit 1 建立群組</button>
     <button disabled={busy} onClick={() => {setName('LV3 Unit 2');void save(templateGroup(2));}}>以 LV3 Unit 2 建立群組</button>
     <button disabled={busy} onClick={() => {setName('我的群組'); void save({...templateGroup(),name:'我的群組',itemIds:[],templateId:null,templateRevision:null});}}>建立空白群組</button>
     <p className="direct-muted">Unit 1含123詞彙、53文法；Unit 2含138詞彙、40文法。例句均另行撰寫。</p>
-    <label>選擇群組<select value={selected} onChange={e => {setSelected(e.target.value);setName(groups?.find(g => g.id === e.target.value)?.name ?? '');}}><option value="">請選擇</option>{groups?.map(g => <option value={g.id} key={g.id}>{g.name}（{g.itemIds.length + (g.wordIds?.length ?? 0)}）</option>)}</select></label>
-    {g && <><form onSubmit={e => {e.preventDefault();void save({...g,name:name.trim()});}}><label>群組名稱<input value={name} maxLength={80} onChange={e => setName(e.target.value)} /></label><button disabled={busy || !name.trim()}>儲存名稱</button></form>
+    </details>
+    {g && <><button className="group-delete" disabled={busy} onClick={()=>void remove()}>刪除此群組</button><form onSubmit={e => {e.preventDefault();void save({...g,name:name.trim()});}}><label>群組名稱<input value={name} maxLength={80} onChange={e => setName(e.target.value)} /></label><button disabled={busy || !name.trim()}>儲存名稱</button></form>
       <h2>{g.name} · {g.itemIds.length + (g.wordIds?.length ?? 0)} 項</h2>
       {!!g.wordIds?.length && <>
         <div className="group-import-links">{cards[0] && <Link to={`/word/${cards[0].wordId}?group=${encodeURIComponent(g.id)}`}>依序看字卡</Link>}<Link to={`/quiz?group=${encodeURIComponent(g.id)}`}>單字自由練習</Link></div>

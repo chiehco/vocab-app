@@ -1,3 +1,4 @@
+import GroupPicker from './GroupPicker';
 import { useMemo, useState } from 'react';
 import type { WordRecord } from '../../db/types';
 import type { CustomGroup } from './model';
@@ -13,6 +14,7 @@ export default function GroupImportPanel({ words, groups, onSaved }: { words: Wo
   const [rows, setRows] = useState<ImportRow[]>([]);
   const [choices, setChoices] = useState<Record<number, string>>({});
   const [name, setName] = useState('');
+  const [method,setMethod]=useState('new');
   const [target, setTarget] = useState('');
   const [error, setError] = useState('');
   const [notice, setNotice] = useState('');
@@ -35,7 +37,7 @@ export default function GroupImportPanel({ words, groups, onSaved }: { words: Wo
     finally { setBusy(false); }
   }
   async function confirm() {
-    if (busy || unresolved || !selected.ids.length) return;
+    if (busy || unresolved || !selected.ids.length || method === 'existing' && !existing) return;
     setBusy(true); setError('');
     try {
       const group = await importWordGroup(selected.ids, name, target || undefined);
@@ -55,8 +57,9 @@ export default function GroupImportPanel({ words, groups, onSaved }: { words: Wo
     {busy && <p role="status">處理中…</p>}{error && <p role="alert">{error}</p>}{notice && <p role="status">{notice}</p>}
     {!!rows.length && <>
       <h3>匯入預覽 · {file?.name}</h3>
-      <label>加入方式<select value={target} disabled={busy} onChange={e => setTarget(e.target.value)}><option value="">建立新群組</option>{groups.map(g => <option value={g.id} key={g.id}>加入「{g.name}」</option>)}</select></label>
-      {!target && <label>新群組名稱<input value={name} maxLength={80} disabled={busy} onChange={e => setName(e.target.value)} /></label>}
+      <label>加入方式<select value={method} disabled={busy} onChange={e=>{setMethod(e.target.value);setTarget('');}}><option value="new">建立新群組</option><option value="existing">加入既有群組</option></select></label>
+      {method==='existing' && <><GroupPicker label="選擇匯入群組" groups={groups} words={words??[]} value={target} onChange={setTarget} disabled={busy}/>{!existing && <p role="status">請選擇要加入的群組；已刪除的群組不可匯入。</p>}</>}
+      {method==='new' && <label>新群組名稱<input value={name} maxLength={80} disabled={busy} onChange={e => setName(e.target.value)} /></label>}
       <p aria-live="polite">可加入 {selected.ids.length} 字 · 重複略過 {selected.duplicates} 列 · 無法加入 {skipped} 列{unresolved > 0 && ` · 待選擇 ${unresolved} 列`}</p>
       <ol className="group-import-preview">{matches.slice(page * 30, page * 30 + 30).map(m => <li key={m.row}>
         <div><small>第 {m.row} 列</small> <strong>{m.word || '（空白）'}</strong>{m.meaning && <p>檔案中文：{m.meaning}</p>}</div>
@@ -65,7 +68,7 @@ export default function GroupImportPanel({ words, groups, onSaved }: { words: Wo
       </li>)}</ol>
       {matches.length > 30 && <div className="group-import-pages"><button disabled={!page} onClick={() => setPage(page - 1)}>上一頁</button><span>{page + 1} / {Math.ceil(matches.length / 30)}</span><button disabled={(page + 1) * 30 >= matches.length} onClick={() => setPage(page + 1)}>下一頁</button></div>}
       <p className="direct-muted">只加入配對成功的單字，保留檔案順序；重複字卡只留一次。未配對項目可修改檔案後重試。</p>
-      <button className="direct-primary" disabled={busy || !selected.ids.length || unresolved > 0 || !target && !name.trim()} onClick={() => void confirm()}>確認加入 {selected.ids.length} 個單字</button>
+      <button className="direct-primary" disabled={busy || !selected.ids.length || unresolved > 0 || method === 'new' && !name.trim() || method === 'existing' && !existing} onClick={() => void confirm()}>確認加入 {selected.ids.length} 個單字</button>
       <button disabled={busy} onClick={() => { setRows([]); setFile(undefined); setSheets([]); setError(''); }}>取消匯入</button>
     </>}
   </section>;

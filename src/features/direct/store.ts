@@ -79,3 +79,17 @@ export async function switchPracticeMode(sessionId: string, mode: PracticeMode) 
   const existing = await progressDb.directSessions.orderBy('updatedAt').filter(s => s.revision === REVISION && s.groupId === current.groupId && s.title === current.title && JSON.stringify(s.questionIds) === JSON.stringify(ids) && JSON.stringify(s.scopeQuestionIds ?? s.questionIds) === JSON.stringify(scope)).last();
   return existing ?? startSession(ids, current.title, current.groupId, scope, mode);
 }
+
+// Group membership is separate from word learning and immutable practice snapshots.
+export async function deleteGroup(id: string) {
+  return progressDb.transaction('rw', progressDb.customGroups, async () => {
+    const group = await progressDb.customGroups.get(id);
+    if (!group) throw new Error('群組已不存在');
+    await progressDb.customGroups.delete(id);
+    return group;
+  });
+}
+export async function restoreGroup(group: CustomGroup) {
+  if (!validGroup(group)) throw new Error('群組資料無效');
+  await progressDb.customGroups.add(group);
+}

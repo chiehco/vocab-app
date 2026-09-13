@@ -123,7 +123,12 @@ export default function UnitStudyScreen() {
 
   const currentDetails = details?.wordId === word.wordId ? details : undefined;
   const display = getWordDisplaySense(word, currentDetails?.senses ?? []);
-  const example = pickExample(currentDetails?.examples ?? []);
+  const selectedExample = pickExample(currentDetails?.examples ?? []);
+  // This artwork depicts music connecting people. Keep the physical bridge
+  // sentence below the image without changing the source example or quiz sense.
+  const example = word.word === 'bridge' && illustration?.captionZh === '牠走過一座石橋。' && selectedExample?.exampleId === 'EX13f6ab21'
+    ? { ...selectedExample, sentenceEn: 'Doudou walks across a stone bridge.', sentenceZh: '牠走過一座石橋。' }
+    : selectedExample;
   const image = getWordBeastAsset(word.wordId, word.word, word.imageWordId);
   const progress = ((index + 1) / unit.words.length) * 100;
 
