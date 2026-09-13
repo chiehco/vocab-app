@@ -1,3 +1,4 @@
+import { useUpcomingIllustrations } from "./useUpcomingIllustrations";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
@@ -112,6 +113,7 @@ export default function WordBeastPrototype() {
 
   useEffect(() => { if (source && beasts === null) setBeasts(buildSpecs(source)); }, [source, beasts]);
   const current = beasts?.[encounterIndex];
+  useUpcomingIllustrations(beasts?.map(beast => beast.record), encounterIndex);
 
   useEffect(() => {
     if (phase !== "binding" || !beasts) return;

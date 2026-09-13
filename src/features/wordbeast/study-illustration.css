@@ -9,3 +9,8 @@
   .study-illustration-image > img { max-width: 280px; }
   .study-illustration figcaption { padding-inline: 18px; }
 }
+
+.study-illustration-image { position: relative; }
+.illustration-loading { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: #656854; font-size: .95rem; background: #f5f3ed; }
+.illustration-loading button { border: 1px solid #73765e; padding: 9px 14px; border-radius: 4px; background: #faf9f6; color: #394333; cursor: pointer; }
+.study-illustration figcaption p.illustration-caption-en { margin: 0 0 10px; color: #30382f; font-family: Georgia, serif; font-size: 1.08rem; line-height: 1.65; }

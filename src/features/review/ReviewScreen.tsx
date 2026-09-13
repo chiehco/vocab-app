@@ -1,3 +1,4 @@
+import { useUpcomingIllustrations } from "../wordbeast/useUpcomingIllustrations";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
@@ -82,6 +83,7 @@ export default function ReviewScreen() {
   const [saving, setSaving] = useState(false);
   const [saveError, setSaveError] = useState<string | null>(null);
   useCardPronunciation(queue?.[index]?.wordRecord.word, `${levelSel}:${index}`);
+  useUpcomingIllustrations(queue?.map(item => item.wordRecord), index);
 
   useEffect(() => {
     let cancelled = false;

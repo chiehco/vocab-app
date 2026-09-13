@@ -1,3 +1,4 @@
+import { useUpcomingIllustrations } from "../wordbeast/useUpcomingIllustrations";
 import { useMemo, useRef } from "react";
 import { useLiveQuery } from "dexie-react-hooks";
 import { Link, useParams, useSearchParams } from "react-router-dom";
@@ -75,6 +76,7 @@ export default function UnitStudyScreen() {
     return { wordId: word.wordId, senses, examples };
   }, [word?.wordId, word?.word]);
   const illustration = useIllustrationMedia(word);
+  useUpcomingIllustrations(unit?.words, index);
 
   function goTo(target: number) {
     if (!unit) return;
