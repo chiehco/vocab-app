@@ -27,7 +27,6 @@ function StudyState({ title, copy, level }: { title: string; copy: string; level
   return (
     <div className="unit-study-page unit-study-state">
       <div className="unit-study-state-mark" aria-hidden="true">單</div>
-      <p>UNIT STUDY</p>
       <h1>{title}</h1>
       <span>{copy}</span>
       <Link to={`/units${level ? `?level=${level}` : ""}`}>返回 Unit 清單</Link>
@@ -104,8 +103,7 @@ export default function UnitStudyScreen() {
           <b>{unit.words.length}/{unit.words.length}</b>
         </header>
         <main className="unit-complete-main">
-          <div className="unit-complete-seal" aria-hidden="true"><span>閱</span></div>
-          <p>UNIT COMPLETE</p>
+          <div className="unit-complete-seal" aria-hidden="true">✓</div>
           <h1>這個 Unit 看完了</h1>
           <span>你已連續看完 {unit.words.length} 個單字。瀏覽不會改動記憶曲線，完成練習後才會更新學習進度。</span>
           <AddUnitGroupButton unit={unit} orderLabel={orderLabel} />
@@ -139,7 +137,6 @@ export default function UnitStudyScreen() {
         <span>{level} · {orderLabel} · {unit.label}</span>
         <b>{index + 1}/{unit.words.length}</b>
       </header>
-      <AddUnitGroupButton unit={unit} orderLabel={orderLabel} />
       <div className="unit-study-progress" aria-label={`目前第 ${index + 1} 個，共 ${unit.words.length} 個`}><i style={{ width: `${progress}%` }} /></div>
 
       <main className="unit-study-main">
@@ -182,6 +179,7 @@ export default function UnitStudyScreen() {
           )}
         </article>
         <p className="unit-study-readonly">連續瀏覽模式 · 不會變更複習排程</p>
+        <AddUnitGroupButton unit={unit} orderLabel={orderLabel} />
       </main>
 
       <nav className="unit-study-controls" aria-label="Unit 單字切換">

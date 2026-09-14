@@ -1,16 +1,15 @@
-.study-illustration { min-width: 0; margin: 0; color: #30382f; background: #faf9f6; }
-.study-illustration-image { display: grid; min-width: 0; place-items: center; }
+/* 共用字卡圖與中英圖說（D-060）：英文在上、中文在下，兩者皆 1rem 起。 */
+.study-illustration { min-width: 0; margin: 0; color: var(--ui-text); background: var(--ui-surface); }
+.study-illustration-image { position: relative; display: grid; min-width: 0; place-items: center; }
 .study-illustration-image > img { display: block; width: 100%; max-width: 320px; height: auto; aspect-ratio: 1; object-fit: contain; }
 .study-illustration-image > .beast-image-fallback { width: min(100%, 280px); margin: 20px auto; }
-.study-illustration figcaption { padding: 14px 24px 20px; border-top: 1px solid #e1e3dc; }
-.study-illustration figcaption > span { color: #58644f; font-size: .75rem; font-weight: 700; }
-.study-illustration figcaption p { margin: 6px 0 0; font-size: 1rem; line-height: 1.75; overflow-wrap: anywhere; }
+.study-illustration figcaption { padding: var(--ui-sp-4) var(--ui-sp-6) 20px; border-top: 1px solid var(--ui-border); }
+.study-illustration figcaption > span { color: var(--ui-muted); font-size: var(--ui-fs-secondary); font-weight: 600; }
+.study-illustration figcaption p { margin: 6px 0 0; font-size: var(--ui-fs-body); line-height: 1.75; overflow-wrap: anywhere; }
+.study-illustration figcaption p.illustration-caption-en { margin: 0 0 var(--ui-sp-2); color: var(--ui-text); font-size: var(--ui-fs-body); line-height: var(--ui-lh-en); }
+.illustration-loading { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--ui-sp-3); color: var(--ui-muted); background: var(--ui-bg); font-size: var(--ui-fs-secondary); }
+.illustration-loading button { min-height: var(--ui-tap); padding: 9px 14px; border: 1px solid var(--ui-border-strong); border-radius: var(--ui-radius); background: var(--ui-surface); color: var(--ui-text); font: inherit; font-weight: 600; cursor: pointer; }
 @media (max-width: 390px) {
   .study-illustration-image > img { max-width: 280px; }
   .study-illustration figcaption { padding-inline: 18px; }
 }
-
-.study-illustration-image { position: relative; }
-.illustration-loading { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: #656854; font-size: .95rem; background: #f5f3ed; }
-.illustration-loading button { border: 1px solid #73765e; padding: 9px 14px; border-radius: 4px; background: #faf9f6; color: #394333; cursor: pointer; }
-.study-illustration figcaption p.illustration-caption-en { margin: 0 0 10px; color: #30382f; font-family: Georgia, serif; font-size: 1.08rem; line-height: 1.65; }

@@ -63,7 +63,7 @@ export default function WordBrowserScreen() {
     <div className="realm-page archive-page">
       <Link to="/modes/words" className="block px-5 pt-5 text-sm">← 單字模式</Link>
       <header className="realm-header">
-        <div><p>WORD BEAST ARCHIVE</p><h1>單字總表</h1></div>
+        <div><h1>單字總表</h1></div>
         <span className="realm-count"><b>{level === TOP_EXAM_FILTER ? topExamWordSet.size || "—" : words?.length ?? "—"}</b> {level === TOP_EXAM_FILTER ? "已解鎖 S+A" : "總收錄"}</span>
       </header>
 
@@ -90,13 +90,12 @@ export default function WordBrowserScreen() {
       {!words ? <div className="realm-loading"><i /><p>載入中</p></div> : (
         <>
           <ol className="archive-atlas">
-            {shown.map((word, index) => {
+            {shown.map((word) => {
               const display = getWordDisplaySense(word, sensesByWord.get(word.word) ?? []);
               const asset = getWordBeastAsset(word.wordId, word.word, word.imageWordId);
               return (
                 <li key={word.wordId}>
                   <Link to={`/word/${word.wordId}`} aria-label={`${word.word}，${display.pos}，${display.meaning}`}>
-                    <span className="atlas-number">{String(index + 1).padStart(3, "0")}</span>
                     <span className="atlas-portrait">
                       {asset
                         ? <ResilientBeastImage src={asset} word={word.word} alt="" />

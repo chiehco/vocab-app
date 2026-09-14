@@ -13,8 +13,8 @@ type Stage = "intro" | "quiz" | "result";
 function PlacementHeader({ stage, progress }: { stage: Stage; progress?: string }) {
   return (
     <header className="realm-header placement-header">
-      <div><p>ENTRANCE CALIBRATION</p><h1>{stage === "intro" ? "程度測驗" : stage === "quiz" ? "程度測驗" : "測驗結果"}</h1></div>
-      {progress ? <span className="realm-count">{progress}</span> : <span className="placement-seal">階</span>}
+      <div><h1>{stage === "intro" ? "程度測驗" : stage === "quiz" ? "程度測驗" : "測驗結果"}</h1></div>
+      {progress && <span className="realm-count">{progress}</span>}
     </header>
   );
 }
@@ -40,9 +40,7 @@ export default function PlacementScreen() {
       <div className="realm-page placement-page">
         <PlacementHeader stage="intro" />
         <section className="placement-intro">
-          <div className="placement-compass" aria-hidden="true"><span>位</span><i /><i /><i /></div>
-          <p>CALIBRATE YOUR RANGE</p>
-          <h2>看測驗建議<br />你目前的程度</h2>
+          <h2>看測驗建議你目前的程度</h2>
           <span>LV1–LV6 各取四個單字，由易至難完成 24 題。</span>
         </section>
         <section className="placement-scale" aria-label="測試位階">
@@ -61,15 +59,15 @@ export default function PlacementScreen() {
       <div className="realm-page placement-result-page">
         <PlacementHeader stage="result" />
         <section className="placement-verdict">
-          <div className="placement-rank"><small>RECOMMENDED</small><span>{recommendedLevel}</span><b>建議從這個等級開始</b></div>
+          <div className="placement-rank"><small>建議等級</small><span>{recommendedLevel}</span><b>建議從這個等級開始</b></div>
           <p>{recommendedLevel === "LV1" ? "建議從 LV1 開始建立基礎。" : `${recommendedLevel} 以前的單字已相當熟悉，從這個等級開始最有效率。`}</p>
         </section>
         <section className="placement-results" aria-label="各位階答對率">
-          <div className="realm-section-head"><div><p>LEVEL READOUT</p><h2>六階判讀</h2></div><span>每階四題</span></div>
+          <div className="realm-section-head"><h2>六階判讀</h2><span>每階四題</span></div>
           <div className="placement-bars">{results.map((result: LevelResult) => { const pct = result.total ? (result.correct / result.total) * 100 : 0; return <div key={result.level}><span>{result.level}</span><div><i className={pct >= 75 ? "stable" : pct >= 50 ? "shifting" : "broken"} style={{ width: `${pct}%` }} /></div><b>{result.correct}/{result.total}</b></div>; })}</div>
         </section>
         <section className={`placement-apply ${applied ? "applied" : ""}`}>
-          {applied ? <><span className="apply-mark">錄</span><div><h2>已套用建議等級</h2><p>尚未學過的單字將從 {recommendedLevel} 開始出現。</p></div></> : <><div><h2>套用建議等級</h2><p>把每天的新單字範圍設為 {recommendedLevel}。</p></div><button onClick={async () => { await setSetting("learningLevels", [recommendedLevel]); setApplied(true); }}>套用 {recommendedLevel}</button></>}
+          {applied ? <><span className="apply-mark" aria-hidden="true">✓</span><div><h2>已套用建議等級</h2><p>尚未學過的單字將從 {recommendedLevel} 開始出現。</p></div></> : <><div><h2>套用建議等級</h2><p>把每天的新單字範圍設為 {recommendedLevel}。</p></div><button onClick={async () => { await setSetting("learningLevels", [recommendedLevel]); setApplied(true); }}>套用 {recommendedLevel}</button></>}
         </section>
         <div className="placement-result-actions"><button onClick={start}>重新測驗</button><button onClick={() => navigate("/")}>返回首頁</button></div>
       </div>
@@ -96,7 +94,6 @@ export default function PlacementScreen() {
       <div className="placement-level-track">{ALL_LEVELS.map((level, levelIndex) => <span key={level} className={levelIndex < currentLevelIndex ? "passed" : levelIndex === currentLevelIndex ? "current" : ""}>{level}</span>)}</div>
       <div className="trial-progress"><i style={{ width: `${((index + 1) / questions.length) * 100}%` }} /><span>正在判讀 {question.target.level}</span></div>
       <section className="trial-question choice-question placement-question">
-        <p className="trial-question-label">IDENTIFY THE TRUE MEANING</p>
         <h2 className="word-prompt">{question.target.word}<SpeakerButton text={question.target.word} className="trial-speaker" /></h2>
         <p className="trial-prompt-sub">{question.target.pos || "詞性待補"}</p>
         <span className="question-level-stamp">{question.target.level}</span>

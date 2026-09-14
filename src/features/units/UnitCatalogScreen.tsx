@@ -50,7 +50,7 @@ export default function UnitCatalogScreen() {
   return (
     <div className="unit-catalog-page">
       <header className="unit-catalog-hero">
-        <nav><Link to="/modes/words">← 單字模式</Link><span>WORD STUDY</span></nav>
+        <nav><Link to="/modes/words">← 單字模式</Link></nav>
         <p>LV1–LV6 單字</p>
         <h1>依 Unit 連續學習</h1>
         <p className="unit-catalog-intro">每 30 字一個 Unit，最後一組可少於 30 字。兩種排序共用原字卡與學習進度。</p>
@@ -59,7 +59,7 @@ export default function UnitCatalogScreen() {
       <main className="unit-catalog-main">
         <section className="unit-level-picker" aria-labelledby="unit-level-title">
           <div className="unit-section-heading">
-            <div><p>CHOOSE A LEVEL</p><h2 id="unit-level-title">選擇等級</h2></div>
+            <h2 id="unit-level-title">選擇等級</h2>
             <span>{learnedInLevel}／{totalInLevel || "—"} 已學</span>
           </div>
           <div className="unit-level-buttons">
@@ -96,7 +96,7 @@ export default function UnitCatalogScreen() {
                   <Link
                     to={`/units/${unit.level}/${unit.unitNumber}?index=0&order=${order}`}
                   >
-                    <span className="unit-number"><small>UNIT</small><b>{String(unit.unitNumber).padStart(2, "0")}</b></span>
+                    <span className="unit-number"><small>Unit</small><b>{String(unit.unitNumber).padStart(2, "0")}</b></span>
                     <span className="unit-list-copy">
                       <span><b>{unit.words.length} 個單字</b><small>{learned === unit.words.length ? "已完成" : `已學 ${learned} 個`}</small></span>
                       <p>{preview}</p>

@@ -1,6 +1,53 @@
-.gsat-page .gsat-passage{line-height:2.15;font-size:1.12rem;border-block:1px solid #b4c3b5;padding:22px 0;margin:20px 0;overflow-wrap:anywhere}.gsat-blank{white-space:nowrap;color:#315b47}.gsat-question{margin:26px 0}.gsat-question h3{font-weight:700}.gsat-actions{display:flex;flex-wrap:wrap;gap:12px}.gsat-page [role=status]{margin-top:22px}.gsat-page .direct-result{padding:16px;background:#e9eee2}.gsat-page footer button{margin:8px 0}
-.gsat-passage p+p{margin-top:1.1em}.gsat-pool-item{padding:8px 0;border-bottom:1px solid #cad2c5;line-height:1.9}.gsat-page select{white-space:normal;min-width:0;text-overflow:ellipsis}
-.gsat-map{display:block;width:100%;height:auto;margin-top:12px;background:white}.gsat-page .gsat-question:has(.gsat-map) .direct-option-row{display:block}.gsat-page .gsat-question:has(.gsat-map) .direct-option{width:100%}
-.direct-page textarea{width:100%;border:1px solid #aabda9;padding:12px;background:#fffdf6;border-radius:4px;resize:vertical;line-height:1.7}.direct-page .written-check{display:flex;align-items:center;gap:12px}.direct-page .written-check input{width:20px;height:20px;margin:0;flex-shrink:0}.direct-result p{white-space:pre-wrap;overflow-wrap:anywhere}
+/* 學測歷屆練習與非選：疊在 direct.css 之上。文字 1rem 起，題組文章英文行高 1.7。 */
+.gsat-page .gsat-passage {
+  margin: 20px 0;
+  padding: 20px 0;
+  border-block: 1px solid var(--ui-border);
+  font-size: var(--ui-fs-body);
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+.gsat-passage p + p { margin-top: 1em; }
+.gsat-blank { color: var(--ui-accent); font-weight: 700; white-space: nowrap; }
 
-.gsat-original img { display:block; width:100%; height:auto; margin:1rem 0; border:1px solid #d5d9d0; }
+.gsat-question { margin: var(--ui-sp-8) 0; }
+.gsat-question h3 { margin: 0 0 var(--ui-sp-2); font-weight: 700; }
+.gsat-actions { display: flex; flex-wrap: wrap; gap: var(--ui-sp-3); }
+.gsat-page [role="status"] { margin-top: 20px; }
+.gsat-page footer button { margin: var(--ui-sp-2) 0; }
+
+.gsat-pool-item { padding: var(--ui-sp-2) 0; border-bottom: 1px solid var(--ui-border); line-height: 1.7; }
+.gsat-page select { min-width: 0; white-space: normal; text-overflow: ellipsis; }
+
+/* Result block: colour is reinforced by the heading text (答對了／你的答案) and a symbol. */
+.gsat-page .direct-result { padding: var(--ui-sp-4); border: 1px solid var(--ui-border); border-left: 4px solid var(--ui-muted); border-radius: var(--ui-radius); background: var(--ui-surface); }
+.gsat-page .direct-result h3 { margin-top: 0; }
+.gsat-page .direct-result.is-correct { border-left-color: var(--ui-success); }
+.gsat-page .direct-result.is-correct h3 { color: var(--ui-success); }
+.gsat-page .direct-result.is-wrong { border-left-color: var(--ui-danger); }
+.gsat-page .direct-result.is-wrong h3 { color: var(--ui-danger); }
+.gsat-page .direct-result small { display: block; margin-top: var(--ui-sp-2); color: var(--ui-muted); font-size: var(--ui-fs-secondary); }
+
+/* Figures */
+.gsat-map { display: block; width: 100%; height: auto; margin-top: var(--ui-sp-3); border: 1px solid var(--ui-border); background: var(--ui-surface); }
+.gsat-page .gsat-question:has(.gsat-map) .direct-option-row { display: block; }
+.gsat-page .gsat-question:has(.gsat-map) .direct-option { width: 100%; }
+.gsat-original img { display: block; width: 100%; height: auto; margin: var(--ui-sp-4) 0; border: 1px solid var(--ui-border); }
+
+/* Written answers */
+.direct-page textarea {
+  width: 100%;
+  margin-top: 6px;
+  padding: var(--ui-sp-3);
+  border: 1px solid var(--ui-border-strong);
+  border-radius: var(--ui-radius);
+  background: var(--ui-surface);
+  color: var(--ui-text);
+  font: inherit;
+  line-height: 1.7;
+  resize: vertical;
+}
+.direct-page .written-check { display: flex; align-items: center; gap: var(--ui-sp-3); min-height: var(--ui-tap); margin: var(--ui-sp-2) 0; font-weight: 400; }
+.direct-page .written-check input { flex-shrink: 0; width: 22px; height: 22px; min-height: 0; margin: 0; accent-color: var(--ui-accent); }
+.direct-result p { white-space: pre-wrap; overflow-wrap: anywhere; }
+.gsat-page details summary { min-height: var(--ui-tap); padding: var(--ui-sp-2) 0; cursor: pointer; }

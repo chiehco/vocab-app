@@ -74,21 +74,21 @@ export default function SettingsScreen() {
 
   return (
     <div className="settings-page p-4">
-      <Link to="/" className="text-sm text-blue-600">
+      <Link to="/" className="text-sm text-(--ui-accent)">
         ← 回首頁
       </Link>
-      <h1 className="mt-2 mb-4 text-xl font-bold">設定</h1>
+      <h1 className="mt-2 mb-4 text-[2rem] font-bold leading-tight">設定</h1>
 
-      <div className="rounded-xl bg-white p-4 shadow-sm">
-        <label className="block text-sm font-bold text-slate-600">自動安排的新字上限</label>
-        <p className="mt-0.5 text-xs text-slate-400">學測一般安排 8–10 個新字，複習較多時減量，並遵守這裡較低的上限。單元與群組自由練習可另行安排。</p>
+      <div className="rounded-lg border border-(--ui-border) bg-white p-4">
+        <label className="block text-sm font-bold text-(--ui-text)">自動安排的新字上限</label>
+        <p className="mt-1 text-sm text-(--ui-muted)">學測一般安排 8–10 個新字，複習較多時減量，並遵守這裡較低的上限。單元與群組自由練習可另行安排。</p>
         <div className="mt-2 flex gap-2">
           {[5, 10, 15, 20, 30].map((n) => (
             <button
               key={n}
               onClick={() => setSetting("dailyNewWordCap", n)}
-              className={`flex-1 rounded-lg py-2 text-sm font-bold ${
-                cap === n ? "bg-blue-600 text-white" : "border border-slate-300 bg-white text-slate-600"
+              className={`flex-1 min-h-11 rounded-lg py-2 text-sm font-bold ${
+                cap === n ? "bg-(--ui-accent) text-white" : "border border-(--ui-border-strong) bg-white text-(--ui-text)"
               }`}
             >
               {n}
@@ -97,9 +97,9 @@ export default function SettingsScreen() {
         </div>
       </div>
 
-      <div className="mt-4 rounded-xl bg-white p-4 shadow-sm">
-        <label className="block text-sm font-bold text-slate-600">自動播放英文發音</label>
-        <p className="mt-0.5 text-xs text-slate-400">進入學習或複習字卡時自動唸一次；測驗在揭示答案後才唸。可隨時點喇叭重播。</p>
+      <div className="mt-4 rounded-lg border border-(--ui-border) bg-white p-4">
+        <label className="block text-sm font-bold text-(--ui-text)">自動播放英文發音</label>
+        <p className="mt-1 text-sm text-(--ui-muted)">進入學習或複習字卡時自動唸一次；測驗在揭示答案後才唸。可隨時點喇叭重播。</p>
         <div className="mt-2 grid grid-cols-2 gap-2">
           {[
             { label: "開啟", value: true },
@@ -108,10 +108,10 @@ export default function SettingsScreen() {
             <button
               key={option.label}
               onClick={() => setSetting("autoPronounce", option.value)}
-              className={`rounded-lg py-2 text-sm font-bold ${
+              className={`min-h-11 rounded-lg py-2 text-sm font-bold ${
                 autoPronounce === option.value
-                  ? "bg-blue-600 text-white"
-                  : "border border-slate-300 bg-white text-slate-600"
+                  ? "bg-(--ui-accent) text-white"
+                  : "border border-(--ui-border-strong) bg-white text-(--ui-text)"
               }`}
               aria-pressed={autoPronounce === option.value}
             >
@@ -121,9 +121,9 @@ export default function SettingsScreen() {
         </div>
       </div>
 
-      <div className="mt-4 rounded-xl bg-white p-4 shadow-sm">
-        <label className="block text-sm font-bold text-slate-600">字級</label>
-        <p className="mt-0.5 text-xs text-slate-400">放大全站文字，圖片與版面尺寸不會跟著放大。</p>
+      <div className="mt-4 rounded-lg border border-(--ui-border) bg-white p-4">
+        <label className="block text-sm font-bold text-(--ui-text)">字級</label>
+        <p className="mt-1 text-sm text-(--ui-muted)">放大全站文字，圖片與版面尺寸不會跟著放大。</p>
         <div className="mt-2 grid grid-cols-3 gap-2">
           {FONT_SCALE_OPTIONS.map((option) => (
             <button
@@ -132,34 +132,34 @@ export default function SettingsScreen() {
                 applyFontScale(option.value);
                 await setSetting("fontScale", option.value);
               }}
-              className={`rounded-lg py-2 text-sm font-bold ${
+              className={`min-h-11 rounded-lg py-2 text-sm font-bold ${
                 fontScale === option.value
-                  ? "bg-blue-600 text-white"
-                  : "border border-slate-300 bg-white text-slate-600"
+                  ? "bg-(--ui-accent) text-white"
+                  : "border border-(--ui-border-strong) bg-white text-(--ui-text)"
               }`}
               aria-pressed={fontScale === option.value}
             >
-              {option.label} <span className="block text-xs font-normal opacity-75">{option.detail}</span>
+              {option.label} <span className="block text-xs font-normal opacity-90">{option.detail}</span>
             </button>
           ))}
         </div>
       </div>
 
-      <div className="mt-4 rounded-xl bg-white p-4 shadow-sm">
-        <label htmlFor="exam-date" className="block text-sm font-bold text-slate-600">學測日期</label>
-        <p className="mt-0.5 text-xs text-slate-400">用於倒數與第一輪學習時間估算；熟字的複習間隔不因考試接近而強制縮短。</p>
+      <div className="mt-4 rounded-lg border border-(--ui-border) bg-white p-4">
+        <label htmlFor="exam-date" className="block text-sm font-bold text-(--ui-text)">學測日期</label>
+        <p className="mt-1 text-sm text-(--ui-muted)">用於倒數與第一輪學習時間估算；熟字的複習間隔不因考試接近而強制縮短。</p>
         <input
           id="exam-date"
           type="date"
           value={examDate ?? ""}
           onChange={(event) => setSetting("examDate", event.target.value)}
-          className="mt-2 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-bold text-slate-700"
+          className="mt-2 w-full rounded-lg border border-(--ui-border-strong) bg-white px-3 py-2 text-sm font-bold text-(--ui-text)"
         />
       </div>
 
-      <div className="mt-4 rounded-xl bg-white p-4 shadow-sm">
-        <label className="block text-sm font-bold text-slate-600">學習範圍（字彙等級）</label>
-        <p className="mt-0.5 text-xs text-slate-400">
+      <div className="mt-4 rounded-lg border border-(--ui-border) bg-white p-4">
+        <label className="block text-sm font-bold text-(--ui-text)">學習範圍（字彙等級）</label>
+        <p className="mt-1 text-sm text-(--ui-muted)">
           新字只會從勾選的等級引入；練習（還沒學過任何字時）也以此範圍出題。已在學的字不受影響。
         </p>
         <div className="mt-2 grid grid-cols-6 gap-1.5">
@@ -167,10 +167,10 @@ export default function SettingsScreen() {
             <button
               key={lv}
               onClick={() => toggleLevel(lv)}
-              className={`rounded-lg py-2 text-sm font-bold ${
+              className={`min-h-11 rounded-lg py-2 text-sm font-bold ${
                 levels?.includes(lv)
-                  ? "bg-blue-600 text-white"
-                  : "border border-slate-300 bg-white text-slate-400"
+                  ? "bg-(--ui-accent) text-white"
+                  : "border border-(--ui-border-strong) bg-white text-(--ui-muted)"
               }`}
             >
               {lv}
@@ -179,22 +179,22 @@ export default function SettingsScreen() {
         </div>
       </div>
 
-      <div className="mt-4 rounded-xl bg-white p-4 shadow-sm">
-        <h2 className="text-sm font-bold text-slate-600">資料版本</h2>
+      <div className="mt-4 rounded-lg border border-(--ui-border) bg-white p-4">
+        <h2 className="text-sm font-bold text-(--ui-text)">資料版本</h2>
         {meta ? (
-          <p className="mt-1 text-sm text-slate-500">
+          <p className="mt-1 text-sm text-(--ui-muted)">
             共 {meta.counts.words} 個單字、{meta.counts.examples} 個例句
             <br />
             資料產生時間：{meta.generatedAt}
           </p>
         ) : (
-          <p className="mt-1 text-sm text-slate-400">載入中…</p>
+          <p className="mt-1 text-sm text-(--ui-muted)">載入中…</p>
         )}
       </div>
 
-      <div className="mt-4 rounded-xl bg-white p-4 shadow-sm">
-        <h2 className="text-sm font-bold text-slate-600">進度備份</h2>
-        <p className="mt-0.5 text-xs text-slate-400">
+      <div className="mt-4 rounded-lg border border-(--ui-border) bg-white p-4">
+        <h2 className="text-sm font-bold text-(--ui-text)">進度備份</h2>
+        <p className="mt-1 text-sm text-(--ui-muted)">
           學習進度存在這台裝置上；換手機或清除瀏覽器資料前，請先匯出備份。
         </p>
         <div className="mt-3 flex gap-2">
@@ -207,13 +207,13 @@ export default function SettingsScreen() {
                 text: `已匯出 ${backup.data.cardStates.length} 個單字進度、${backup.data.checkIns.length} 天打卡、${backup.data.customGroups?.length ?? 0} 個群組與 ${backup.data.directAttempts?.length ?? 0} 筆直接作答、${backup.data.writtenSubmissions?.length ?? 0} 筆混合／非選作答`,
               });
             }}
-            className="flex-1 rounded-lg bg-blue-600 py-2.5 text-sm font-bold text-white"
+            className="flex-1 min-h-11 rounded-lg bg-(--ui-accent) py-2.5 text-sm font-bold text-white"
           >
             匯出備份
           </button>
           <button
             onClick={() => fileInputRef.current?.click()}
-            className="flex-1 rounded-lg border border-blue-600 bg-white py-2.5 text-sm font-bold text-blue-600"
+            className="flex-1 min-h-11 rounded-lg border border-(--ui-accent) bg-white py-2.5 text-sm font-bold text-(--ui-accent)"
           >
             匯入備份…
           </button>
@@ -245,8 +245,8 @@ export default function SettingsScreen() {
           />
         </div>
         {pendingImport && (
-          <div className="mt-3 rounded-lg border border-orange-300 bg-orange-50 p-3">
-            <p className="text-sm text-orange-800">
+          <div className="mt-3 rounded-lg border border-(--ui-warning) bg-(--ui-warning-soft) p-3">
+            <p className="text-sm text-(--ui-warning)">
               備份檔（{pendingImport.exportedAt.slice(0, 10)}）含{" "}
               {pendingImport.data.cardStates.length} 個單字進度、
               {pendingImport.data.checkIns.length} 天打卡。
@@ -268,13 +268,13 @@ export default function SettingsScreen() {
                     setBackupMsg({ ok: false, text: "匯入失敗，原有進度已保留。請檢查備份或可用儲存空間。" });
                   }
                 }}
-                className="rounded-lg bg-orange-500 px-4 py-2 text-sm font-bold text-white"
+                className="rounded-lg bg-(--ui-warning) min-h-11 px-4 py-2 text-sm font-bold text-white"
               >
                 確定匯入
               </button>
               <button
                 onClick={() => setPendingImport(null)}
-                className="rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm text-slate-600"
+                className="rounded-lg border border-(--ui-border-strong) bg-white min-h-11 px-4 py-2 text-sm text-(--ui-text)"
               >
                 取消
               </button>
@@ -282,23 +282,23 @@ export default function SettingsScreen() {
           </div>
         )}
         {backupMsg && (
-          <p className={`mt-3 text-sm font-bold ${backupMsg.ok ? "text-green-600" : "text-red-500"}`}>
+          <p className={`mt-3 text-sm font-bold ${backupMsg.ok ? "text-(--ui-success)" : "text-(--ui-danger)"}`}>
             {backupMsg.text}
           </p>
         )}
       </div>
 
-      <div className="mt-4 rounded-xl border border-red-200 bg-red-50 p-4">
-        <h2 className="text-sm font-bold text-red-600">危險區</h2>
-        <p className="mt-1 text-xs text-red-500">
+      <div className="mt-4 rounded-lg border border-(--ui-danger) bg-(--ui-danger-soft) p-4">
+        <h2 className="text-sm font-bold text-(--ui-danger)">危險區</h2>
+        <p className="mt-1 text-sm text-(--ui-danger)">
           重置會清除單字複習進度、打卡與一般測驗紀錄。自建群組、直接作答及混合／非選紀錄仍保留；單字資料不受影響。
         </p>
         {resetDone ? (
-          <p className="mt-3 text-sm font-bold text-slate-600">已重置完成。</p>
+          <p className="mt-3 text-sm font-bold text-(--ui-text)">已重置完成。</p>
         ) : !resetArmed ? (
           <button
             onClick={() => setResetArmed(true)}
-            className="mt-3 rounded-lg border border-red-400 bg-white px-4 py-2 text-sm font-bold text-red-500"
+            className="mt-3 rounded-lg border border-(--ui-danger) bg-white min-h-11 px-4 py-2 text-sm font-bold text-(--ui-danger)"
           >
             重置單字複習進度…
           </button>
@@ -306,13 +306,13 @@ export default function SettingsScreen() {
           <div className="mt-3 flex gap-2">
             <button
               onClick={resetProgress}
-              className="rounded-lg bg-red-600 px-4 py-2 text-sm font-bold text-white"
+              className="rounded-lg bg-(--ui-danger) min-h-11 px-4 py-2 text-sm font-bold text-white"
             >
               確定重置（無法復原）
             </button>
             <button
               onClick={() => setResetArmed(false)}
-              className="rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm text-slate-600"
+              className="rounded-lg border border-(--ui-border-strong) bg-white min-h-11 px-4 py-2 text-sm text-(--ui-text)"
             >
               取消
             </button>

@@ -60,9 +60,9 @@ function WordSigil({ word }: { word: string }) {
 function ScreenState({ type, level }: { type: "loading" | "empty"; level: string }) {
   return (
     <div className="seal-review seal-state-page">
-      <header className="seal-review-header"><Link to="/">← 首頁</Link><span>SEAL CALIBRATION</span></header>
+      <header className="seal-review-header"><Link to="/">← 首頁</Link><span>複習</span><b /></header>
       <LevelFilter selected={level} onChange={() => undefined} />
-      <div className={`seal-state-mark ${type}`}><i /><i /><i /></div>
+      <div className={`seal-state-mark ${type}`} aria-hidden="true">{type === "loading" ? "" : "✓"}</div>
       <h1>{type === "loading" ? "載入中" : "今天的複習已完成"}</h1>
       <p>{type === "loading" ? "正在整理今天要複習的單字。" : level === "全部" ? "今天沒有要複習的單字。" : `${level} 今天沒有要複習的單字。`}</p>
       {type === "empty" && <Link to="/" className="seal-state-action">返回首頁</Link>}
@@ -116,9 +116,9 @@ export default function ReviewScreen() {
   if (queue.length === 0) {
     return (
       <div className="seal-review seal-state-page">
-        <header className="seal-review-header"><Link to="/">← 首頁</Link><span>SEAL CALIBRATION</span></header>
+        <header className="seal-review-header"><Link to="/">← 首頁</Link><span>複習</span><b /></header>
         <LevelFilter selected={levelSel} onChange={setLevelSel} />
-        <div className="seal-state-mark empty"><i /><i /><i /></div>
+        <div className="seal-state-mark empty" aria-hidden="true">✓</div>
         <h1>今天的複習已完成</h1>
         <p>{levelSel === "全部" ? "今天沒有要複習的單字。" : levelSel === TOP_EXAM_FILTER ? "今天沒有待複習的 S+A 高頻單字。" : `${levelSel} 今天沒有要複習的單字。`}</p>
         <Link to="/" className="seal-state-action">返回首頁</Link>
@@ -130,9 +130,8 @@ export default function ReviewScreen() {
     const wasRecap = queue.some((item) => item.isRecap);
     return (
       <div className="seal-review seal-state-page complete">
-        <header className="seal-review-header"><Link to="/">← 首頁</Link><span>RITE COMPLETE</span></header>
-        <div className="seal-complete-ring"><span>封</span></div>
-        <p className="seal-state-eyebrow">{wasRecap ? "TODAY'S CAPTURES REVIEWED" : "TODAY'S SEALS ARE STABLE"}</p>
+        <header className="seal-review-header"><Link to="/">← 首頁</Link><span>複習</span><b /></header>
+        <div className="seal-complete-ring" aria-hidden="true">✓</div>
         <h1>複習完成</h1>
         <p>{wasRecap ? `剛學過的 ${doneCount} 個單字已再複習一次，明天仍會照原定時間出現。` : `已完成 ${doneCount} 個單字的複習，今天的學習紀錄已保存。`}</p>
         <Link to="/" className="seal-state-action">返回首頁</Link>
@@ -227,10 +226,9 @@ function Flashcard({ item, flipped, onFlip, onGrade, position, saving }: { item:
   return (
     <div className="seal-workspace">
       <article className={`seal-card study-layout ${flipped ? "revealed" : "sealed"}`}>
-        <div className="seal-card-border" />
         <div className="seal-card-meta">
           <span>{item.isPractice ? "練習後待複習" : item.isRecap ? "今天再複習" : item.isNew ? "尚未學過的單字" : "到期複習"}</span>
-          <div><ExamTierBadge tier={priority?.priorityTier} compact /><b>NO. {String(position).padStart(3, "0")}</b></div>
+          <div><ExamTierBadge tier={priority?.priorityTier} compact /><b>第 {position} 張</b></div>
         </div>
 
         <div className="seal-card-identity">
@@ -241,7 +239,7 @@ function Flashcard({ item, flipped, onFlip, onGrade, position, saving }: { item:
         </div>
 
         {beastAsset ? <StudyIllustration src={beastAsset} word={word.word} caption={flipped ? illustration?.captionZh : undefined} /> : <div className="seal-card-visual">
-          <span className="seal-card-orbit" /><WordSigil word={word.word} /><small>圖片尚未收錄</small>
+          <WordSigil word={word.word} /><small>圖片尚未收錄</small>
         </div>}
 
         {flipped && (
@@ -259,12 +257,11 @@ function Flashcard({ item, flipped, onFlip, onGrade, position, saving }: { item:
             ))}
           </div>
         )}
-        <span className="seal-card-stamp">譜</span>
       </article>
 
       <div className="seal-controls">
         {!flipped ? (
-          <button onClick={onFlip} className="seal-reveal"><span>顯示答案</span><i>開封</i></button>
+          <button onClick={onFlip} className="seal-reveal">顯示答案</button>
         ) : (
           <div className="seal-grades" aria-label="這個字你記得多牢？">
             {([0, 1, 2, 3] as Grade[]).map((grade) => (

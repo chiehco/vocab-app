@@ -1,0 +1,58 @@
+/*
+ * Shared design tokens (UI 收斂 2026-09-13, batch A).
+ *
+ * Eight base colours named by role. Aliases below point back at them so a
+ * feature stylesheet never needs a new hex value for an everyday surface.
+ * Font sizes are rem so the 100% / 115% / 130% setting keeps working.
+ */
+:root {
+  /* Base colours */
+  --ui-bg: #faf8f2;
+  --ui-surface: #ffffff;
+  --ui-text: #263d34;
+  --ui-muted: #56675c;
+  --ui-border: #d9ddd5;
+  --ui-accent: #305f49;
+  --ui-danger: #a43d32;
+  --ui-warning: #80601d;
+
+  /* Semantic aliases */
+  --ui-success: var(--ui-accent);
+  --ui-on-accent: #ffffff;
+  --ui-accent-soft: #e6eee6;   /* selected option, success background */
+  --ui-danger-soft: #f6e7e4;
+  --ui-warning-soft: #f5eddb;
+  --ui-border-strong: #748677; /* input and button edges: 3.6:1 on --ui-bg */
+  --ui-focus: var(--ui-accent);
+  --ui-shadow: 0 1px 2px rgba(38, 61, 52, 0.08);
+
+  /* Type scale: 12 / 14 / 16 / 20 / 24 / 32 px at the standard root size */
+  --ui-fs-label: 0.75rem;
+  --ui-fs-secondary: 0.875rem;
+  --ui-fs-body: 1rem;
+  --ui-fs-subtitle: 1.25rem;
+  --ui-fs-title: 1.5rem;
+  --ui-fs-display: 2rem;
+
+  --ui-lh-zh: 1.7;
+  --ui-lh-en: 1.6;
+  --ui-lh-tight: 1.3;
+
+  /* Spacing: 4 / 8 / 12 / 16 / 24 / 32 */
+  --ui-sp-1: 4px;
+  --ui-sp-2: 8px;
+  --ui-sp-3: 12px;
+  --ui-sp-4: 16px;
+  --ui-sp-6: 24px;
+  --ui-sp-8: 32px;
+
+  --ui-radius: 6px;
+  --ui-tap: 44px;
+  --ui-motion: 150ms ease;
+
+  --ui-font: system-ui, -apple-system, "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --ui-motion: 0ms; }
+}

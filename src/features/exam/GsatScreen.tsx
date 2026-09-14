@@ -91,7 +91,7 @@ export default function GsatScreen() {
           {value.trim() && q.question_id !== 'gsat-115-q38' && <button disabled={busy} aria-label={`查選項：${value}`} onClick={() => lookup(value)}>查字</button>}
         </div>)}</div>}
         {s.lookups[q.question_id]?.length > 0 && <p className="direct-muted">已保存提交前查字紀錄。</p>}
-        {submitted && a && <div className="direct-result" aria-label={`第 ${q.number} 題解析`}><h3>{a.correct ? '答對了' : `你的答案：${a.choice}`} · 正解 {q.answer.value}</h3><p>{q.explanationZh}</p><p>{q.distractorNotesZh}</p><small>{a.hintUsed ? '本次提交前曾查字' : '本次提交前未查字'}</small></div>}
+        {submitted && a && <div className={`direct-result ${a.correct ? 'is-correct' : 'is-wrong'}`} aria-label={`第 ${q.number} 題解析`}><h3>{a.correct ? '✓ 答對了' : `✗ 你的答案：${a.choice}`} · 正解 {q.answer.value}</h3><p>{q.explanationZh}</p><p>{q.distractorNotesZh}</p><small>{a.hintUsed ? '本次提交前曾查字' : '本次提交前未查字'}</small></div>}
       </section>; })}
       {missingFigures && <p role="status">本題組的原卷圖片尚未完整載入。請確認連線後重新整理，圖片齊全後才能提交本組。</p>}
       {!submitted ? <><p role="status">已選 {qs.filter(q => s.choices[q.question_id]).length} / {qs.length} 題</p><button className="direct-primary" disabled={busy || missingFigures || qs.some(q => !s.choices[q.question_id])} onClick={() => void act(() => submitGsat(s.id))}>{isPassage ? `提交整組 ${qs.length} 題` : '確認答案'}</button></> : <button className="direct-primary" disabled={busy} onClick={() => void act(() => advanceGsat(s.id))}>{s.index + qs.length >= s.questionIds.length ? '查看本輪結果' : '繼續下一題組'}</button>}

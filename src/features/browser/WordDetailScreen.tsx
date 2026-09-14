@@ -28,7 +28,7 @@ function DossierSigil({ word }: { word: string }) {
   const value = [...word].reduce((sum, character) => sum + character.charCodeAt(0), 0);
   return (
     <svg className="dossier-sigil" viewBox="0 0 220 220" aria-hidden="true">
-      <circle cx="110" cy="110" r="81" /><circle className="dash" cx="110" cy="110" r="60" />
+      <circle cx="110" cy="110" r="81" /><circle cx="110" cy="110" r="60" />
       <g transform={`rotate(${value % 44 - 22} 110 110)`}><path d="M110 29V67M110 153v38M29 110h38M153 110h38" /><path d="M73 110 110 67l37 43-37 43Z" /><path d="m77 77 66 66M143 77l-66 66" /></g>
       <text x="110" y="126" textAnchor="middle">{word.charAt(0).toUpperCase()}</text>
     </svg>
@@ -163,7 +163,7 @@ export default function WordDetailScreen() {
   return (
     <div className="word-dossier-page">
       <header className="word-dossier-nav">
-        <Link to="/browse">← 單字總表</Link><span>ARCHIVE · {word.wordId}</span><b>{word.level}</b>
+        <Link to="/browse">← 單字總表</Link><span>{word.wordId}</span><b>{word.level}</b>
       </header>
 
       {group && groupIndex >= 0 && <nav className="dossier-group-nav" aria-label="群組字卡導覽">
@@ -189,7 +189,6 @@ export default function WordDetailScreen() {
             {displaySense.needsReview && !illustrationMeaning && <span className="dossier-needs-review">主要意思待確認</span>}
           </div>
           {asset ? <StudyIllustration src={asset} word={word.word} caption={illustration?.captionZh} /> : <div className="dossier-hero-mark">
-            <span className="dossier-orbit" />
             <DossierSigil word={word.word} />
             <small>圖片尚未收錄</small>
           </div>}
@@ -197,7 +196,7 @@ export default function WordDetailScreen() {
       ) : (
         <section className="word-dossier-back">
           <header>
-            <div><p>{displaySense.pos} · FIELD DOSSIER</p><h1>{word.word}</h1></div>
+            <div><p>{displaySense.pos}</p><h1>{word.word}</h1></div>
             <SpeakerButton text={word.word} className="dossier-speaker" />
           </header>
           {priority && (priority.xtYears > 0 || priority.xtAnswerCount > 0) && (
@@ -274,30 +273,30 @@ export default function WordDetailScreen() {
 
       {senses && senses.length > 0 && (
         <section className="dossier-section meaning-focus-section">
-          <div className="dossier-section-head"><div><p>MEANING & EXAM FOCUS</p><h2>常用意思</h2></div><span>{senses.length > 1 ? `${senses.length} 種意思` : "已整理"}</span></div>
+          <div className="dossier-section-head"><h2>常用意思</h2><span>{senses.length > 1 ? `${senses.length} 種意思` : "已整理"}</span></div>
           <ol className="dossier-senses">{senses.map((sense) => <li className={sense.isExamSense ? "exam-sense" : undefined} key={sense.senseId}><b>{String(sense.senseOrder).padStart(2, "0")}</b><div><p><span>{sense.sensePos}</span>{sense.meaningZh}</p>{sense.answerForms.length > 0 && <i>考卷上的寫法 · {sense.answerForms.join("／")}</i>}</div></li>)}</ol>
         </section>
       )}
 
       {examples && examples.length > 0 && (
         <section className="dossier-section">
-          <div className="dossier-section-head"><div><p>EXAMPLES</p><h2>例句</h2></div><span>{examples.length} 則</span></div>
+          <div className="dossier-section-head"><h2>例句</h2><span>{examples.length} 則</span></div>
           <ol className="dossier-examples">{examples.map((example, index) => <li key={example.exampleId}><b>{String(index + 1).padStart(2, "0")}</b><div>{example.meaningHint && <small className="example-sense">{example.sensePos || "語境"} · {example.meaningHint}</small>}<p>{example.sentenceEn}</p>{example.sentenceZh && <span>{example.sentenceZh}</span>}</div></li>)}</ol>
         </section>
       )}
 
-      {word.usagePattern && <section className="dossier-usage"><span>COLLOCATIONS</span><h2>常用搭配</h2><p>{word.usagePattern}</p></section>}
+      {word.usagePattern && <section className="dossier-usage"><h2>常用搭配</h2><p>{word.usagePattern}</p></section>}
 
       {notes && notes.length > 0 && (
         <section className="dossier-section">
-          <div className="dossier-section-head"><div><p>MEMORY & USAGE NOTES</p><h2>記憶法與用法</h2></div><span>{notes.length} 則</span></div>
+          <div className="dossier-section-head"><h2>記憶法與用法</h2><span>{notes.length} 則</span></div>
           <div className="dossier-note-list">{notes.map((note) => <article key={note.noteId}><div><span>{NOTE_TYPE_LABEL[note.noteType] ?? note.noteType}</span><b>{note.title || "補充說明"}</b></div><p>{note.content}</p></article>)}</div>
         </section>
       )}
 
       {kinRelations.length > 0 && (
         <section className="dossier-section">
-          <div className="dossier-section-head"><div><p>RELATED WORDS</p><h2>相關單字</h2></div><span>{kinRelations.length} 枚</span></div>
+          <div className="dossier-section-head"><h2>相關單字</h2><span>{kinRelations.length} 枚</span></div>
           <div className="dossier-relations">{kinRelations.map((relation) => {
             const related = relatedWords?.[relation.targetWord];
             return <div key={`${relation.relationId}:${relation.targetWord}`}><span>{related ? <Link to={`/word/${related.wordId}`}><strong>{relation.targetWord}</strong></Link> : <strong>{relation.targetWord}</strong>}<small>{relation.reverseLabel || RELATION_TYPE_LABEL[relation.relationType || ""] || relation.relationType || "關聯詞"}</small></span><p><b>{related?.meaningZh || "中文意思待補"}</b>{relation.note && <span>{relation.note}</span>}</p></div>;
@@ -307,7 +306,7 @@ export default function WordDetailScreen() {
 
       {falseForms.length > 0 && (
         <section className="dossier-section misconception-section">
-          <div className="dossier-section-head"><div><p>CONFUSABLES</p><h2>容易混淆的字 · 斬妄</h2></div><span>{falseForms.length} 個</span></div>
+          <div className="dossier-section-head"><h2>容易混淆的字</h2><span>{falseForms.length} 個</span></div>
           <p className="dossier-section-intro">容易混淆的字與歷屆錯誤選項都收在這裡。先看差異，再排除錯誤答案。</p>
           <div className="dossier-relations">{falseForms.map((relation) => {
             const related = relatedWords?.[relation.targetWord];
@@ -318,7 +317,7 @@ export default function WordDetailScreen() {
 
       {sortedMorphemes && sortedMorphemes.length > 0 && (
         <section className="dossier-section morpheme-section">
-          <div className="dossier-section-head"><div><p>WORD PARTS</p><h2>字根拆解</h2></div><span>{sortedMorphemes.length} 段</span></div>
+          <div className="dossier-section-head"><h2>字根拆解</h2><span>{sortedMorphemes.length} 段</span></div>
           <div className="dossier-morphemes">{sortedMorphemes.map((morpheme) => <div key={morpheme.rowId}><strong>{morpheme.morpheme}</strong><span>{MORPHEME_TYPE_LABEL[morpheme.morphemeType || ""] || morpheme.morphemeType || "構件"}</span><p>{morpheme.meaningZh || morpheme.meaningEn || "—"}</p>{morpheme.origin && <small>{morpheme.origin}</small>}</div>)}</div>
           {rootFamilies && rootFamilies.length > 0 && (
             <div className="dossier-root-family">
@@ -338,7 +337,7 @@ export default function WordDetailScreen() {
         </section>
       )}
 
-      <p className="dossier-footer">單字總表 · {word.wordId} · 封存</p>
+      <p className="dossier-footer">單字總表 · {word.wordId}</p>
     </div>
   );
 }

@@ -47,7 +47,7 @@ function ImageChineseClue({ word, clue }: { word: WordRecord; clue: ImageClueCop
 }
 
 function TrialHeader({ label = "單字練習", progress }: { label?: string; progress?: string }) {
-  return <header className="realm-header trial-header"><div><p>BEAST TAMING</p><h1>{label}</h1></div>{progress ? <span className="realm-count">{progress}</span> : <span className="trial-seal">馴</span>}</header>;
+  return <header className="realm-header trial-header"><div><h1>{label}</h1></div>{progress && <span className="realm-count">{progress}</span>}</header>;
 }
 
 function TrialLevels({ selected, onChange }: { selected: string; onChange: (level: string) => void }) {
@@ -271,17 +271,16 @@ export default function QuizScreen() {
       <div className="realm-page trial-page">
         <TrialHeader label={groupId ? customGroup?.name ?? "群組練習" : hasUnitScope ? `${requestedLevel} · ${explicitOrder ? unitOrderLabel(order) : "舊版分組"} · Unit ${String(requestedUnitNumber).padStart(2, "0")}` : "單字練習"} />
         <section className="trial-intro">
-          <div><p>{groupId ? `${scopedCollectedWords?.length ?? 0} 個可練習單字` : hasUnitScope ? `${requestedUnit?.words.length ?? 0} 個單字` : levelSel === TOP_EXAM_FILTER ? "S+A 學測高頻字" : "只練習已學過的單字"}</p><h2>{groupId ? <>依自己的清單，<br />自由<em>練習。</em></> : hasUnitScope ? <>本輪連續作答，<br />完成後再回到<em>Unit。</em></> : levelSel === TOP_EXAM_FILTER ? <>先守住高頻，<br />再擴張你的<em>得分範圍。</em></> : <>收服只是相遇，<br />能在情境中認出，<em>才算真的馴化。</em></>}</h2></div>
-          <div className="trial-eye" aria-hidden="true"><i /><span /></div>
+          <div><p>{groupId ? `${scopedCollectedWords?.length ?? 0} 個可練習單字` : hasUnitScope ? `${requestedUnit?.words.length ?? 0} 個單字` : levelSel === TOP_EXAM_FILTER ? "S+A 學測高頻字" : "只練習已學過的單字"}</p><h2>{groupId ? <>依自己的清單，自由<em>練習。</em></> : hasUnitScope ? <>本輪連續作答，完成後再回到<em>Unit。</em></> : levelSel === TOP_EXAM_FILTER ? <>先守住高頻，再擴張你的<em>得分範圍。</em></> : <>收服只是相遇，能在情境中認出，<em>才算真的馴化。</em></>}</h2></div>
         </section>
         <div className="trial-scope"><span>{groupId ? `本輪最多 ${QUIZ_SIZE} 題 · 介係詞與連接詞等功能詞暫不出題` : hasUnitScope ? `${requestedLevel} · Unit ${String(requestedUnitNumber).padStart(2, "0")} · 本輪最多 ${QUIZ_SIZE} 題` : levelSel === TOP_EXAM_FILTER ? `高頻題庫 ${scopedCollectedWords?.length ?? 0} 字・可直接練習` : `已收集 ${scopedCollectedWords?.length ?? 0} 隻・選擇出題範圍`}</span>{groupId ? <Link to={groupReturn}>← 返回群組</Link> : hasUnitScope ? <Link className="trial-unit-return" to={`/units/${requestedLevel}/${requestedUnitNumber}${unitOrderQuery}`}>← 返回這個 Unit</Link> : <TrialLevels selected={levelSel} onChange={setLevelSel} />}</div>
         {startError && <p role="alert">{startError}</p>}
         {!groupId && !hasUnitScope && levelSel !== TOP_EXAM_FILTER && collectedWords?.length === 0 && <div className="trial-empty"><span>集</span><div><h3>還沒有可以練習的單字</h3><p>先完成收服，牠才會出現在這裡。</p></div><Link to="/wordbeast">前往收服場 <b>→</b></Link></div>}
         <section className="trial-modes" aria-label="選擇題型">
-          <button onClick={() => startMcq("w2m")} disabled={!!startingMode || !scopedCollectedWords || scopedCollectedWords.length < minimumPool}><b>01</b><div><h3>見名辨義</h3><p>{startingMode === "w2m" ? "正在整理到期與高頻單字" : scopedCollectedWords && scopedCollectedWords.length < minimumPool ? (groupId ? "群組目前沒有可出題的單字" : "這個範圍至少要有 4 個已學單字") : "看英文單字，選出正確的中文意思"}</p></div><span>→</span></button>
-          <button onClick={() => startMcq("m2w")} disabled={!!startingMode || !scopedCollectedWords || scopedCollectedWords.length < minimumPool}><b>02</b><div><h3>循義喚名</h3><p>{startingMode === "m2w" ? "正在整理到期與高頻單字" : scopedCollectedWords && scopedCollectedWords.length < minimumPool ? (groupId ? "群組目前沒有可出題的單字" : "這個範圍至少要有 4 個已學單字") : "看中文意思，選出正確的英文單字"}</p></div><span>→</span></button>
-          <button onClick={() => startMcq("image")} disabled={!!startingMode || !imagePool || imagePool.length < minimumPool}><b>03</b><div><h3>看圖喚名</h3><p>{startingMode === "image" ? "正在整理到期與高頻單字" : imagePool && imagePool.length < minimumPool ? `此範圍只有 ${imagePool.length} 隻有圖字獸` : "依圖片與中文情境，選出英文單字"}</p></div><span>→</span></button>
-          <button onClick={startFill} disabled={!!startingMode || !fillPool?.length}><b>04</b><div><h3>殘句補名</h3><p>{startingMode === "fill" ? "正在整理到期與高頻單字" : fillPool?.length ? `從 ${fillPool.length} 道單一答案例句中填入遺失的英文單字` : "尚無可使用的單一答案例句"}</p></div><span>→</span></button>
+          <button onClick={() => startMcq("w2m")} disabled={!!startingMode || !scopedCollectedWords || scopedCollectedWords.length < minimumPool}><div><h3>見名辨義</h3><p>{startingMode === "w2m" ? "正在整理到期與高頻單字" : scopedCollectedWords && scopedCollectedWords.length < minimumPool ? (groupId ? "群組目前沒有可出題的單字" : "這個範圍至少要有 4 個已學單字") : "看英文單字，選出正確的中文意思"}</p></div><span>→</span></button>
+          <button onClick={() => startMcq("m2w")} disabled={!!startingMode || !scopedCollectedWords || scopedCollectedWords.length < minimumPool}><div><h3>循義喚名</h3><p>{startingMode === "m2w" ? "正在整理到期與高頻單字" : scopedCollectedWords && scopedCollectedWords.length < minimumPool ? (groupId ? "群組目前沒有可出題的單字" : "這個範圍至少要有 4 個已學單字") : "看中文意思，選出正確的英文單字"}</p></div><span>→</span></button>
+          <button onClick={() => startMcq("image")} disabled={!!startingMode || !imagePool || imagePool.length < minimumPool}><div><h3>看圖喚名</h3><p>{startingMode === "image" ? "正在整理到期與高頻單字" : imagePool && imagePool.length < minimumPool ? `此範圍只有 ${imagePool.length} 隻有圖字獸` : "依圖片與中文情境，選出英文單字"}</p></div><span>→</span></button>
+          <button onClick={startFill} disabled={!!startingMode || !fillPool?.length}><div><h3>殘句補名</h3><p>{startingMode === "fill" ? "正在整理到期與高頻單字" : fillPool?.length ? `從 ${fillPool.length} 道單一答案例句中填入遺失的英文單字` : "尚無可使用的單一答案例句"}</p></div><span>→</span></button>
         </section>
       </div>
     );
@@ -296,12 +295,11 @@ export default function QuizScreen() {
       <div className="realm-page trial-result-page">
         <TrialHeader label={`${unitLabel}練習結果`} />
         <div className={`trial-result-mark ${perfect ? "perfect" : ""}`}><span>{score}</span><small>/ {total}</small></div>
-        <p className="trial-result-kicker">{perfect ? "FLAWLESS TAMING" : "TAMING COMPLETE"}</p>
         <h2>{perfect ? "答對了" : "判定完成"}</h2>
         <p>{perfect ? "全部答對，所有字獸都辨認成功！" : `本輪辨認 ${score} 枚，錯過 ${total - score} 枚。`}</p>
         {todayCheckIn && <div className="trial-checkin-confirmed" role="status"><span>✓</span><div><b>今天已完成學習</b><small>完成 {todayCheckIn.reviewCount} 次練習 · 本輪紀錄已保存</small></div></div>}
         <p>新字與錯題已加入待複習；完成正式複習評分後，才會調整記憶間隔。</p>
-        {wrongWordRecords.length > 0 && <section className="trial-missed" aria-labelledby="trial-missed-title"><div><p>REVIEW NEXT</p><h3 id="trial-missed-title">本輪需再看</h3></div><div>{wrongWordRecords.map((word) => <Link key={word.wordId} to={`/word/${word.wordId}`}><b>{word.word}</b><span>{word.meaningZh}</span><i>→</i></Link>)}</div></section>}
+        {wrongWordRecords.length > 0 && <section className="trial-missed" aria-labelledby="trial-missed-title"><div><h3 id="trial-missed-title">本輪需再看</h3></div><div>{wrongWordRecords.map((word) => <Link key={word.wordId} to={`/word/${word.wordId}`}><b>{word.word}</b><span>{word.meaningZh}</span><i>→</i></Link>)}</div></section>}
         <div className="trial-result-actions"><Link to="/review">前往複習</Link><button onClick={() => setMode(null)}>再練習一次</button><Link to={groupId ? groupReturn : hasUnitScope ? `/units/${requestedLevel}/${requestedUnitNumber}${unitOrderQuery}` : "/"}>{groupId ? "返回群組" : hasUnitScope ? "返回 Unit" : "返回首頁"}</Link></div>
       </div>
     );
@@ -325,7 +323,6 @@ export default function QuizScreen() {
         <section className={`trial-question fill-question ${fillResult ?? ""}`}>
           <ExamTierBadge tier={priorityByWord.get(question.word)} compact />
           <WordTraitBadges senseCount={senseCountByWord.get(question.word)} hasConfusables={confusableWords.has(question.word)} hasMorphemes={morphemeWords.has(question.word)} compact />
-          <p className="trial-question-label">RESTORE THE MISSING NAME</p>
           <h2>{question.blankSentence}</h2>
           {question.sentenceZh && <p className="trial-translation">{question.sentenceZh}</p>}
           <label><span>填入英文單字</span><input value={fillInput} onChange={(event) => setFillInput(event.target.value)} onKeyDown={(event) => event.key === "Enter" && submitFill()} disabled={saving || fillResult !== null} autoCapitalize="none" autoCorrect="off" /></label>
@@ -374,13 +371,11 @@ export default function QuizScreen() {
       <section className={`trial-question choice-question ${mode === "image" ? "image-question" : ""} ${sealed ? "is-sealed" : ""}`}>
         <ExamTierBadge tier={priorityByWord.get(question.target.word)} compact />
         <WordTraitBadges senseCount={senseCountByWord.get(question.target.word)} hasConfusables={confusableWords.has(question.target.word)} hasMorphemes={morphemeWords.has(question.target.word)} compact />
-        <p className="trial-question-label">SPEAK THE TRUE ANSWER</p>
         {mode === "image" && targetAsset ? <><ResilientBeastImage className="trial-wordbeast-clue" src={targetAsset} word={question.target.word} alt="待辨認的字獸圖卡" />{imageClue && <ImageChineseClue word={question.target} clue={imageClue} />}</> : <h2 className={mode === "w2m" ? "word-prompt" : "meaning-prompt"}>{prompt}{mode === "w2m" && <SpeakerButton text={question.target.word} className="trial-speaker" />}</h2>}
         <p className="trial-prompt-sub">{mode === "image" ? imageClue ? "依圖片與中文提示選出英文單字" : "依圖片選出英文單字" : promptSub}</p>
         {sealed && (
           <div className="trial-binding" role="status" aria-live="polite">
-            <div className="trial-binding-rings" aria-hidden="true"><i /><i /><i /></div>
-            <div className="trial-binding-mark" aria-hidden="true">封</div>
+            <div className="trial-binding-mark" aria-hidden="true">✓</div>
             <p><b>答案確認</b><span>已記錄</span></p>
           </div>
         )}

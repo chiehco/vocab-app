@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./styles/tokens.css";
 
 :root {
   --app-font-scale: 1;
@@ -12,9 +13,16 @@ html {
 }
 
 body {
-  background-color: #eee6d4;
-  color: var(--color-slate-900);
-  font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  background-color: var(--ui-bg);
+  color: var(--ui-text);
+  font-family: var(--ui-font);
+  line-height: var(--ui-lh-zh);
+}
+
+/* One focus ring for every keyboard-reachable control; feature sheets may tighten the offset. */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--ui-focus);
+  outline-offset: 2px;
 }
 
 .app-bottom-nav {
@@ -24,15 +32,14 @@ body {
   bottom: 0;
   left: 0;
   padding-bottom: env(safe-area-inset-bottom);
-  border-top: 1px solid rgba(45, 48, 40, 0.14);
-  background: rgba(245, 239, 224, 0.94);
-  backdrop-filter: blur(14px);
+  border-top: 1px solid var(--ui-border);
+  background: var(--ui-bg);
 }
 
 .app-bottom-nav-inner {
   display: flex;
   max-width: 32rem;
-  height: 64px;
+  min-height: 64px;
   margin: 0 auto;
 }
 
@@ -41,20 +48,22 @@ body {
   display: flex;
   flex: 1;
   min-width: 0;
+  min-height: var(--ui-tap);
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 3px;
-  color: #817b6c;
+  gap: var(--ui-sp-1);
+  padding: var(--ui-sp-2) 0;
+  color: var(--ui-muted);
   text-decoration: none;
-  font-size: 0.5625rem;
-  font-weight: 700;
-  letter-spacing: .04em;
+  font-size: var(--ui-fs-label);
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 .app-nav-item svg {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.6;
@@ -66,13 +75,14 @@ body {
   content: "";
   position: absolute;
   top: 0;
-  width: 22px;
+  width: 24px;
   height: 2px;
   background: transparent;
 }
 
-.app-nav-item.active { color: #414c3b; }
-.app-nav-item.active::before { background: #a63c31; }
+.app-nav-item.active { color: var(--ui-accent); }
+.app-nav-item.active::before { background: var(--ui-accent); }
+.app-nav-item:focus-visible { outline-offset: -3px; }
 
 .speech-notice {
   position: fixed;
@@ -83,15 +93,15 @@ body {
   width: min(440px, calc(100% - 24px));
   display: flex;
   align-items: start;
-  gap: 12px;
-  padding: 14px 16px;
-  color: #382e24;
-  background: #fff8df;
-  border: 1px solid #cbbd96;
-  border-radius: 12px;
-  box-shadow: 0 5px 24px #0002;
-  font-size: 0.9375rem;
-  line-height: 1.6;
+  gap: var(--ui-sp-3);
+  padding: 14px var(--ui-sp-4);
+  color: var(--ui-text);
+  background: var(--ui-warning-soft);
+  border: 1px solid var(--ui-warning);
+  border-radius: var(--ui-radius);
+  box-shadow: var(--ui-shadow);
+  font-size: var(--ui-fs-secondary);
+  line-height: var(--ui-lh-zh);
 }
 .speech-notice p { margin: 0; flex: 1; }
 .speech-notice button { min-width: 32px; min-height: 32px; font-size: 1.5rem; }
