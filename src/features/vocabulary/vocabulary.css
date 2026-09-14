@@ -1,1 +1,16 @@
-.vocab-levels{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}.vocab-levels button[aria-pressed=true]{background:#305f49;color:#fff;border-color:#305f49}.vocab-card{margin:24px 0;padding:22px 0;border-top:1px solid #aabda9;border-bottom:1px solid #aabda9;overflow-wrap:anywhere}.vocab-card h2{font-size:2rem;margin:12px 0}.vocab-meaning{font-size:1.2rem;margin:18px 0}.vocab-card h3{margin-top:25px;font-size:.9rem;color:#5d6e65}
+.vocab-levels { display: flex; flex-wrap: wrap; gap: var(--ui-sp-2); margin: var(--ui-sp-4) 0; }
+.vocab-levels button[aria-pressed="true"] { background: var(--ui-accent); color: var(--ui-on-accent); border-color: var(--ui-accent); }
+.vocab-card { margin: var(--ui-sp-6) 0; padding: 20px 0; border-block: 1px solid var(--ui-border); overflow-wrap: anywhere; }
+.vocab-card h2 { margin: var(--ui-sp-3) 0; font-size: var(--ui-fs-display); }
+.vocab-meaning { margin: 18px 0; font-size: var(--ui-fs-subtitle); }
+.vocab-card h3 { margin-top: var(--ui-sp-6); color: var(--ui-muted); font-size: var(--ui-fs-secondary); font-weight: 600; }
+.vocab-find summary { min-height: var(--ui-tap); padding: var(--ui-sp-2) 0; cursor: pointer; font-weight: 600; }
+.vocab-illustration { margin: var(--ui-sp-4) 0; border: 1px solid var(--ui-border); border-radius: var(--ui-radius); background: var(--ui-surface); overflow: hidden; }
+.vocab-illustration img { display: block; width: min(100%, 360px); height: auto; aspect-ratio: 1; margin: 0 auto; object-fit: contain; }
+.vocab-illustration figcaption { padding: var(--ui-sp-3) var(--ui-sp-4) var(--ui-sp-4); border-top: 1px solid var(--ui-border); }
+.vocab-illustration figcaption p { margin: 0; font-size: var(--ui-fs-body); line-height: 1.7; overflow-wrap: anywhere; }
+.vocab-illustration figcaption p + p { margin-top: var(--ui-sp-1); }
+.vocab-related ul { margin: var(--ui-sp-2) 0 0; padding: 0; list-style: none; }
+.vocab-related li { display: flex; flex-wrap: wrap; gap: var(--ui-sp-2); padding: var(--ui-sp-2) 0; border-top: 1px solid var(--ui-border); }
+.vocab-related b { font-weight: 700; }
+.vocab-related span { color: var(--ui-muted); font-size: var(--ui-fs-secondary); }

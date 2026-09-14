@@ -43,7 +43,7 @@ export default function DirectScreen() {
   const wrong = wrongQuestionIds(data?.attempts ?? []).filter(id=>!scope || scope.includes(id));
   return <div className="direct-page">
     <nav><Link to="/exam">← 學測專區</Link><Link to="/groups">我的群組</Link></nav>
-    <p className="direct-kicker">LV3 / PRACTICE</p><h1>{s?.title ?? '新情境練習'}</h1>
+    <p className="direct-kicker">教材練習</p><h1>{s?.title ?? '新情境練習'}</h1>
     <p className="direct-muted">{s?.questionIds.some(id=>!questions.some(q=>q.questionId===id)) || s?.groupId ? `單元${mode === 'basic' ? '基礎練習：四選一與文法搭配' : '進階練習：自行填入目標詞，文法保留選項'}。可隨時離開，下次續答。` : '六題新編情境題，尚未校準學測難度。'}點英文查中文，作答後看解析。</p>
     {s && hasVocabulary && <section aria-label="練習難度"><div className="direct-modes">
       <button disabled={busy} aria-pressed={mode === 'basic'} onClick={() => void act(() => openSession(switchPracticeMode(s.id, 'basic')))}>基礎・四選一</button>
@@ -66,7 +66,7 @@ export default function DirectScreen() {
         <h2>{a.correct ? '答對了' : `${q.options.length ? '本題答案' : '本題目標詞'}：${q.options.find(o=>o.id===q.answer)?.text ?? q.answer}`}</h2><p>{q.targetWord} — {q.targetMeaningZh}</p>
         {q.sentenceEn && <><p>你的答案：{q.options.find(o=>o.id===a.choice)?.text ?? a.choice}</p><p>{q.sentenceEn}</p><p>{q.sentenceZh}</p></>}
         <p className="direct-muted">{a.hintUsed ? '本次作答使用過提示' : '本次作答未使用提示'}</p>
-        {(q.sourceType === 'new_grammar_authored' ? q.options.filter(o=>o.id===q.answer) : q.options).map(o => <p key={o.id}>{o.id} · {o.rationaleZh}</p>)}
+        {(q.sourceType === 'new_grammar_authored' || q.sourceType === 'original_usage_choice' ? q.options.filter(o=>o.id===q.answer) : q.options).map(o => <p key={o.id}>{o.id} · {o.rationaleZh}</p>)}
         <button className="direct-primary" disabled={busy} onClick={() => void act(() => nextQuestion(s.id))}>{s.index === s.questionIds.length - 1 ? '查看本輪結果' : '下一題'}</button>
       </section>}
     </> : <section><h2>本輪完成</h2><p className="direct-score">{data.attempts.filter(a => a.sessionId === s.id && a.correct).length} / {s.questionIds.length}</p>

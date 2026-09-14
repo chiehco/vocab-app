@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { progressDb } from '../../db/progressDb';
-import { learningItems, templateGroup } from './model';
+import { curriculumUnits, learningItems, templateGroup } from './model';
 import type { CustomGroup } from './model';
 import { deleteGroup, restoreGroup, saveGroup, startGroupSession } from './store';
 import './direct.css';
@@ -54,10 +54,9 @@ export default function GroupsScreen() {
     <GroupPicker groups={groups??[]} words={words??[]} value={selected} disabled={busy} onChange={id=>{setSelected(id);setName(groups?.find(g=>g.id===id)?.name??'');}} />
     <details className="group-create" open={params.get('create')==='1'}><summary>建立或匯入群組</summary>
     <GroupImportPanel words={words} groups={groups ?? []} onSaved={group => {setSelected(group.id);setName(group.name);}} />
-    <button className="direct-primary" disabled={busy} onClick={() => {setName('LV3 Unit 1'); void save(templateGroup());}}>以 LV3 Unit 1 建立群組</button>
-    <button disabled={busy} onClick={() => {setName('LV3 Unit 2');void save(templateGroup(2));}}>以 LV3 Unit 2 建立群組</button>
+    {curriculumUnits.map((u,n)=><button key={u.templateId} className={n===0?'direct-primary':undefined} disabled={busy} onClick={() => {setName(u.name); void save(templateGroup(u.templateId));}}>以 {u.name} 建立群組</button>)}
     <button disabled={busy} onClick={() => {setName('我的群組'); void save({...templateGroup(),name:'我的群組',itemIds:[],templateId:null,templateRevision:null});}}>建立空白群組</button>
-    <p className="direct-muted">Unit 1含123詞彙、53文法；Unit 2含138詞彙、40文法。例句均另行撰寫。</p>
+    <p className="direct-muted">{curriculumUnits.map(u=>`${u.name}：${u.items.filter(i=>i.kind==='vocabulary').length} 詞彙、${u.items.filter(i=>i.kind!=='vocabulary').length} 項用法`).join('；')}。例句均另行撰寫。</p>
     </details>
     {g && <><button className="group-delete" disabled={busy} onClick={()=>void remove()}>刪除此群組</button><form onSubmit={e => {e.preventDefault();void save({...g,name:name.trim()});}}><label>群組名稱<input value={name} maxLength={80} onChange={e => setName(e.target.value)} /></label><button disabled={busy || !name.trim()}>儲存名稱</button></form>
       <h2>{g.name} · {g.itemIds.length + (g.wordIds?.length ?? 0)} 項</h2>
