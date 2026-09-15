@@ -8,6 +8,7 @@ import { getWordBeastAsset } from '../wordbeast/wordBeastAssets';
 import ResilientBeastImage from '../wordbeast/ResilientBeastImage';
 import { sortExamWordsByPriority } from '../../quiz/examScope';
 import { saveWordList,workspaceWords } from './wordLists';
+import { curriculumUnits } from '../direct/model';
 import './words-workspace.css';
 
 export default function WordsWorkspace(){
@@ -21,6 +22,7 @@ export default function WordsWorkspace(){
   const matches=sort==='exam'?sortExamWordsByPriority(available,priorities??[]):[...available].sort((a,b)=>a.word.localeCompare(b.word,'en'));
   const filteredGroups=filterGroups(groups??[],words??[],groupSearch,'all','recent');
   const title=group?.name??(groupId?'群組已不存在':'全部單字');
+  const latestUnit=curriculumUnits[curriculumUnits.length-1];
   function choose(key:string,value:string){const next=new URLSearchParams(params);if(value)next.set(key,value);else next.delete(key);setParams(next,{replace:true});setLimit(30);setError('');panel.current?.scrollTo({top:0});}
   async function openList(practice:boolean,startId?:string){if(lock.current||!matches.length)return;lock.current=true;setBusy(true);setError('');try{
     const list=await saveWordList(matches,`${title}${level==='all'?'':` · ${level}`}`,`/modes/words?${params.toString()}`);
@@ -48,7 +50,7 @@ export default function WordsWorkspace(){
         {error&&<p role="alert">{error}</p>}
         {!words||!groups?<p>載入字卡中…</p>:matches.length===0?<div className="words-empty"><h3>目前沒有單字</h3><p>{groupId&&!group?'這個群組可能已刪除，請從左側重新選擇。':'換個等級、群組或搜尋詞試試。'}</p></div>:<ul className="words-list">{matches.slice(0,limit).map(w=>{const src=getWordBeastAsset(w.wordId,w.word,w.imageWordId);return <li key={w.wordId}><button disabled={busy} onClick={()=>void openList(false,w.wordId)}><span className="words-thumb">{src?<ResilientBeastImage src={src} word={w.word} alt=""/>:w.word[0].toUpperCase()}</span><span className="words-copy"><strong>{w.word}</strong><span>{w.meaningZh}</span><small>{w.level}</small></span></button></li>;})}</ul>}
         {matches.length>limit&&<button className="words-more" onClick={()=>setLimit(limit+30)}>再顯示 {Math.min(30,matches.length-limit)} 字</button>}
-        <footer className="words-tools"><Link to={`/units?level=${level==='all'?'LV1':level}&order=${sort==='alpha'?'alphabet':'exam'}`}>每 30 字分組</Link><Link to="/vocabulary">教材補充</Link><Link to="/placement">程度測驗</Link></footer>
+        <footer className="words-tools"><Link to={`/units?level=${level==='all'?'LV1':level}&order=${sort==='alpha'?'alphabet':'exam'}`}>每 30 字分組</Link><Link to={`/vocabulary?level=${latestUnit.level}&unit=${latestUnit.unit}`}>教材字卡 · {curriculumUnits.map(u=>u.name).join('、')}</Link><Link to="/placement">程度測驗</Link></footer>
       </div>
     </div>
   </div>;

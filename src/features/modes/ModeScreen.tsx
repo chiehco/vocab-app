@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { curriculumUnits } from '../direct/model';
 import './modes.css';
 
 type Mode = 'home' | 'words' | 'exam' | 'games' | 'story';
@@ -10,6 +11,8 @@ function Pending({title,description}:{title:string;description:string}) {
 }
 export default function ModeScreen({mode='home'}:{mode?:Mode}) {
   const titles = {home:'萬詞譜',words:'單字模式',exam:'大考模式',games:'遊戲模式',story:'劇情模式'};
+  const latestUnit = curriculumUnits[curriculumUnits.length-1];
+  const unitNames = curriculumUnits.map(u=>u.name).join('、');
   return <div className="mode-page">
     <header className="mode-top"><Link to="/">{mode==='home'?'學習入口':'← 萬詞譜'}</Link><Link to="/settings">設定</Link></header>
     <div className="mode-heading"><h1>{titles[mode]}</h1><span>{({home:'選擇今天的學習方式。',words:'從字卡開始，依自己的步調練習。',exam:'選擇考試，再選擇練習內容。',games:'用不同方式練習熟悉的單字。',story:'在故事裡遇見單字。'})[mode]}</span></div>
@@ -26,7 +29,8 @@ export default function ModeScreen({mode='home'}:{mode?:Mode}) {
       <Entry to="/units" title="連續看字卡" description="原有圖卡與內容 · 每 30 字一組 · 學測優先或字母排序"/>
       <Entry to="/groups" title="自建群組" description="建立自己的清單，或直接帶入教材 Unit"/>
       <Entry to="/review" title="複習模式" description="目前提供 S+A 高頻字的到期複習"/>
-      <details className="mode-more"><summary>更多單字工具</summary><Link to="/browse?level=全部">全部單字卡</Link><Link to="/vocabulary">教材義項與文法補充 · LV3 Unit 1–2</Link><Link to="/placement">程度測驗</Link></details>
+      <Entry to={`/vocabulary?level=${latestUnit.level}&unit=${latestUnit.unit}`} title="教材字卡" description={`${unitNames} · 圖卡、例句、四選一與填字`}/>
+      <details className="mode-more"><summary>更多單字工具</summary><Link to="/browse?level=全部">全部單字卡</Link><Link to="/placement">程度測驗</Link></details>
     </>}
     {mode==='exam'&&<>
       <section className="mode-section"><h2 className="mode-section-title">學測</h2><Entry to="/exam/papers" title="學測考古" description="110–115 年 · 選擇、混合與非選擇題"/><Entry to="/exam/high-frequency" title="高頻單字" description="S+A 單字 · 字表、複習與練習"/></section>
