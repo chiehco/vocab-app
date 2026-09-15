@@ -18,18 +18,10 @@
 
 .mode-section { margin-bottom: var(--ui-sp-6); }
 .mode-section-title { margin: 0 0 var(--ui-sp-3); color: var(--ui-muted); font-size: var(--ui-fs-secondary); font-weight: 600; }
-.mode-levels { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--ui-sp-2); }
-.mode-levels a { display: flex; flex-direction: column; gap: var(--ui-sp-1); min-height: var(--ui-tap); padding: var(--ui-sp-3) var(--ui-sp-2); border: 1px solid var(--ui-border-strong); border-radius: var(--ui-radius); color: var(--ui-text); text-align: center; transition: background var(--ui-motion); }
-.mode-levels a:hover { background: var(--ui-accent-soft); }
-.mode-levels b { font-size: var(--ui-fs-subtitle); font-weight: 700; }
-.mode-levels small { color: var(--ui-muted); font-size: var(--ui-fs-label); }
 .mode-pending { display: flex; justify-content: space-between; gap: var(--ui-sp-3); padding: 20px 0; border-top: 1px solid var(--ui-border); }
 .mode-pending > span { padding-top: 2px; color: var(--ui-muted); font-size: var(--ui-fs-secondary); white-space: nowrap; }
 .mode-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--ui-sp-3); padding-top: var(--ui-sp-6); border-top: 1px solid var(--ui-border); color: var(--ui-muted); font-size: var(--ui-fs-secondary); }
 .mode-footer a { display: inline-flex; align-items: center; min-height: var(--ui-tap); font-weight: 600; }
-.mode-more { padding-top: var(--ui-sp-4); border-top: 1px solid var(--ui-border); color: var(--ui-muted); font-size: var(--ui-fs-body); }
-.mode-more summary { min-height: var(--ui-tap); padding: var(--ui-sp-2) 0; color: var(--ui-text); font-weight: 600; cursor: pointer; }
-.mode-more a { display: block; padding: var(--ui-sp-3) 0; }
 
-@media (max-width: 360px) { .mode-page { padding-inline: var(--ui-sp-4); } .mode-levels { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (prefers-reduced-motion: reduce) { .mode-entry, .mode-arrow, .mode-levels a { transition: none; } }
+@media (max-width: 360px) { .mode-page { padding-inline: var(--ui-sp-4); } }
+@media (prefers-reduced-motion: reduce) { .mode-entry, .mode-arrow { transition: none; } }
