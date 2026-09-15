@@ -195,3 +195,37 @@
   .arena-hub *, .arena-hub *::before, .arena-hub *::after,
   .spell-arena *, .spell-arena *::before, .spell-arena *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
 }
+
+/* Mobile reading floor for the arena hub and spell barrage. Moved from src/mobile-readability.css (UI 收斂 batch D); values unchanged. */
+@media (max-width: 640px) {
+  .arena-hub-header a,
+  .spell-arena-nav a,
+  .arena-hub-header b,
+  .spell-arena-nav b,
+  .arena-hub-hero p,
+  .arena-game-entry p,
+  .spell-eyebrow,
+  .spell-difficulty > p,
+  .spell-record > span,
+  .spell-record small,
+  .clue-copy p,
+  .clue-copy span,
+  .spell-feedback {
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .arena-hub-hero div > span,
+  .arena-game-entry div > span,
+  .arena-game-entry > b,
+  .arena-hub-note,
+  .spell-setup-copy,
+  .spell-difficulty button small,
+  .spell-actions button,
+  .spell-result-main > span,
+  .spell-result-main button,
+  .spell-result-main > a {
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+}

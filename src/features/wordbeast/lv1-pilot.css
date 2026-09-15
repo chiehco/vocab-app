@@ -19,3 +19,39 @@
 .pilot-finished>p:not(.pilot-finish-copy){font-size:0.6875rem}.pilot-score span{font-size:0.75rem}.pilot-finish-copy{font-size:0.875rem!important}.pilot-finish-actions button{font-size:0.8125rem}
 @media(max-width:390px){.lv1-pilot-page{padding-inline:13px}.pilot-card{min-height:570px;padding-inline:19px}.pilot-visual{height:325px}.lv1-pilot-glyph{max-height:300px}.pilot-rating button{min-height:78px}.pilot-index{gap:4px}}
 @media(prefers-reduced-motion:reduce){.lv1-pilot-page *,.lv1-pilot-page *::before,.lv1-pilot-page *::after{animation-duration:.001ms!important;animation-iteration-count:1!important}}
+
+/* Mobile reading floor for the LV1 image review. Moved from src/mobile-readability.css (UI 收斂 batch D); values unchanged. */
+@media (max-width: 640px) {
+  /* LV1 image review */
+  .lv1-pilot-page {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .pilot-header a,
+  .pilot-header > span,
+  .pilot-header > b,
+  .pilot-progress span,
+  .pilot-blind-copy p,
+  .pilot-reveal-copy > div,
+  .pilot-rating > p,
+  .pilot-finished > p:not(.pilot-finish-copy),
+  .pilot-score span {
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .pilot-blind-copy span,
+  .pilot-reveal-copy p,
+  .pilot-rating button span,
+  .pilot-finish-copy,
+  .pilot-finish-actions button {
+    font-size: 0.875rem !important;
+    line-height: 1.6;
+  }
+
+  .pilot-rating button small {
+    font-size: 0.75rem;
+    line-height: 1.45;
+  }
+}

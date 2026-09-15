@@ -578,3 +578,18 @@ button.word-entry { cursor: pointer; }
     animation-iteration-count: 1 !important;
   }
 }
+
+/* Mobile reading floor for the encounter flow. Moved from src/mobile-readability.css (UI 收斂 batch D); values unchanged. */
+@media (max-width: 640px) {
+  .lv1-pilot-entry,
+  .naming-instruction,
+  .name-choices button small,
+  .encounter-feedback {
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .name-choices button small {
+    font-size: 0.8125rem;
+  }
+}
