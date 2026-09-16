@@ -27,7 +27,8 @@
 .realm-loading i { width: 32px; height: 32px; border: 3px solid var(--ui-border); border-top-color: var(--ui-accent); border-radius: 50%; animation: realm-spin .8s linear infinite; }
 
 /* ---------- Archive (單字總表) ---------- */
-.archive-page > a:first-child { display: inline-flex; align-items: center; min-height: var(--ui-tap); padding: 0 !important; font-size: var(--ui-fs-secondary); text-decoration: none; }
+/* browse-page：勿命名為 archive-page，wordbeast.css 的同名類別會套上羊皮紙底色。 */
+.browse-back { display: inline-flex; align-items: center; min-height: var(--ui-tap); font-size: var(--ui-fs-secondary); text-decoration: none; }
 .archive-tools { margin: var(--ui-sp-3) 0 0; }
 .archive-search { display: flex; align-items: center; min-height: var(--ui-tap); padding: 0 var(--ui-sp-3); border: 1px solid var(--ui-border-strong); border-radius: var(--ui-radius); background: var(--ui-surface); color: var(--ui-text); }
 .archive-search:focus-within { outline: 3px solid var(--ui-focus); outline-offset: 1px; }

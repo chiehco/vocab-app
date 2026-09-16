@@ -60,8 +60,8 @@ export default function WordBrowserScreen() {
   const shown = filtered.slice(0, limit);
 
   return (
-    <div className="realm-page archive-page">
-      <Link to="/modes/words" className="block px-5 pt-5 text-sm">← 單字模式</Link>
+    <div className="realm-page browse-page">
+      <Link to="/modes/words" className="browse-back">← 單字模式</Link>
       <header className="realm-header">
         <div><h1>單字總表</h1></div>
         <span className="realm-count"><b>{level === TOP_EXAM_FILTER ? topExamWordSet.size || "—" : words?.length ?? "—"}</b> {level === TOP_EXAM_FILTER ? "已解鎖 S+A" : "總收錄"}</span>
