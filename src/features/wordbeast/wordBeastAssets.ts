@@ -1,4 +1,5 @@
 import { A_GRADE_ASSET_IDS } from "./aGradeAssetIds";
+import { approvedUnit17Card } from '../vocabulary/approvedUnit17';
 import { S_GRADE_ASSET_IDS } from "./sGradeAssetIds";
 
 const BASE = import.meta.env.BASE_URL;
@@ -23,6 +24,8 @@ const LEGACY_BEAST_ASSETS: Record<string, string> = {
 };
 
 export function getWordBeastAsset(wordId: string, word: string, imageWordId?: string): string | null {
+  const approved = approvedUnit17Card(word, wordId);
+  if (approved?.illustration) return versioned(`${BASE}${approved.illustration.path}`);
   const assetWordId = imageWordId || wordId;
   const match = /^W(\d{6})$/i.exec(assetWordId);
   if (!match) return null;

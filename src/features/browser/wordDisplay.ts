@@ -1,4 +1,5 @@
 import type { MediaRecord, SenseRecord, WordRecord } from "../../db/types";
+import { approvedUnit17Card } from '../vocabulary/approvedUnit17';
 
 /** A picture caption must come from its approved media, never an unrelated example. */
 export function getWordIllustrationMedia(records: MediaRecord[]): MediaRecord | undefined {
@@ -10,7 +11,7 @@ export interface WordDisplaySense {
   meaning: string;
   pos: string;
   needsReview: boolean;
-  source: "sense" | "summary";
+  source: "sense" | "summary" | "curriculum";
 }
 
 const TRADITIONAL_NORMALIZATION: Record<string, string> = {
@@ -37,6 +38,8 @@ export function getWordDisplaySense(
   word: WordRecord,
   senses: SenseRecord[],
 ): WordDisplaySense {
+  const approved = approvedUnit17Card(word.word, word.wordId);
+  if (approved) return { meaning: approved.targetMeaningZh!, pos: approved.sensePos!, needsReview: false, source: 'curriculum' };
   const candidates = senses
     .filter((sense) => sense.wordId === word.wordId || sense.word === word.word);
   const matchesHeadword = (sense: SenseRecord) => sense.answerForms.some(

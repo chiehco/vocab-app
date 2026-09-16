@@ -145,7 +145,7 @@ export default function WordDetailScreen() {
   const sortedMorphemes = morphemes?.slice().sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
   const senseCount = buildSenseCountByWord(senses ?? []).get(word.word) ?? 0;
   const displaySense = getWordDisplaySense(word, senses ?? []);
-  const illustrationMeaning = asset && (!word.imageWordId || word.imageWordId === word.wordId)
+  const illustrationMeaning = displaySense.source !== 'curriculum' && asset && (!word.imageWordId || word.imageWordId === word.wordId)
     ? illustration?.targetHint?.trim() : undefined;
   const examStyleExamples = examples?.filter((example) => example.exampleType === "exam") ?? [];
   const kinRelations = relations?.filter((relation) => relation.relationType !== "confuse") ?? [];
@@ -222,7 +222,7 @@ export default function WordDetailScreen() {
                 {senses && senses.length > 0 ? (
                   <ol>{senses.slice(0, 4).map((sense) => <li key={sense.senseId}><b>{sense.sensePos}</b><span>{sense.meaningZh}</span>{sense.isExamSense && <i>考義</i>}</li>)}</ol>
                 ) : (
-                  <p>目前只有字典整體釋義，還沒拆出常用意思與考試意思。已列入待補清單。</p>
+                  <p>{displaySense.source === 'curriculum' ? '此處顯示已核准的 LV4 Unit17 教材義項。' : '目前只有字典整體釋義，還沒拆出常用意思與考試意思。已列入待補清單。'}</p>
                 )}
               </div>
             )}

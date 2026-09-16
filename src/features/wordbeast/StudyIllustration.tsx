@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { getIllustrationCaption } from "./illustrationCaptions";
+import { approvedUnit17Card } from '../vocabulary/approvedUnit17';
 import "./study-illustration.css";
 
 function IllustrationImage({ src, alt }: { src: string; alt: string }) {
@@ -18,7 +19,10 @@ function IllustrationImage({ src, alt }: { src: string; alt: string }) {
 }
 
 export default function StudyIllustration({ src, word, caption }: { src: string; word: string; caption?: string | null }) {
-  const pair = getIllustrationCaption(caption);
+  const approved = approvedUnit17Card(word)?.illustration;
+  const pair = approved && src.split('?')[0].endsWith('/' + approved.path)
+    ? { en: approved.captionEn, zh: approved.captionZh }
+    : getIllustrationCaption(caption);
   return (
     <figure className="study-illustration">
       <IllustrationImage key={src} src={src} alt={pair?.zh || `${word} 的情境圖`} />
