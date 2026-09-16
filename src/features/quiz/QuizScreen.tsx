@@ -51,7 +51,7 @@ function TrialHeader({ label = "單字練習", progress }: { label?: string; pro
 }
 
 function TrialLevels({ selected, onChange }: { selected: string; onChange: (level: string) => void }) {
-  return <div className="realm-levels trial-levels">{LEVEL_CHOICES.map((level) => <button key={level} className={selected === level ? "active" : ""} onClick={() => onChange(level)}>{level}</button>)}</div>;
+  return <div className="level-tabs trial-levels" aria-label="篩選等級">{LEVEL_CHOICES.map((level) => <button key={level} aria-pressed={selected === level} onClick={() => onChange(level)}>{level}</button>)}</div>;
 }
 
 export default function QuizScreen() {

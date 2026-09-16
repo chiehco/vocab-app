@@ -73,8 +73,8 @@ export default function WordBrowserScreen() {
           <input type="search" value={search} onChange={(event) => { setSearch(event.target.value); setLimit(PAGE_SIZE); }} placeholder="搜尋英文單字或中文意思" />
           {search && <button onClick={() => setSearch("")} aria-label="清除搜尋">×</button>}
         </label>
-        <div className="realm-levels">
-          {LEVELS.map((item) => <button key={item} className={level === item ? "active" : ""} onClick={() => { setLevel(item); setLimit(PAGE_SIZE); }}>{item}</button>)}
+        <div className="level-tabs" aria-label="篩選等級">
+          {LEVELS.map((item) => <button key={item} aria-pressed={level === item} onClick={() => { setLevel(item); setLimit(PAGE_SIZE); }}>{item}</button>)}
         </div>
       </section>
 

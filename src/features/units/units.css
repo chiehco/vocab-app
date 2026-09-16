@@ -23,20 +23,7 @@
 .unit-section-heading h2 { margin: 0; font-size: var(--ui-fs-subtitle); font-weight: 700; }
 .unit-section-heading > span { color: var(--ui-muted); font-size: var(--ui-fs-secondary); }
 
-.unit-level-buttons { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--ui-sp-2); margin-top: var(--ui-sp-3); }
-.unit-level-buttons button {
-  min-height: var(--ui-tap);
-  padding: 8px 4px;
-  border: 1px solid var(--ui-border-strong);
-  border-radius: var(--ui-radius);
-  color: var(--ui-text);
-  background: transparent;
-  font: inherit;
-  font-size: var(--ui-fs-secondary);
-  font-weight: 600;
-  cursor: pointer;
-}
-.unit-level-buttons button.active { color: var(--ui-on-accent); border-color: var(--ui-accent); background: var(--ui-accent); }
+.unit-level-buttons { margin-top: var(--ui-sp-3); }
 
 .unit-order-picker { padding: var(--ui-sp-3) 0 0; }
 .unit-order-picker button,
@@ -183,7 +170,6 @@
 @keyframes unit-card-in { from { opacity: 0; } }
 
 @media (max-width: 390px) {
-  .unit-level-buttons { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .unit-catalog-hero, .unit-catalog-main { padding-inline: var(--ui-sp-4); }
   .unit-list a { grid-template-columns: 48px minmax(0, 1fr) 20px; gap: var(--ui-sp-2); }
   .unit-number { width: 48px; height: 48px; }

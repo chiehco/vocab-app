@@ -14,10 +14,7 @@
 .seal-review-header > span { min-width: 0; text-align: center; font-size: var(--ui-fs-body); font-weight: 700; overflow-wrap: anywhere; }
 .seal-review-header b { justify-self: end; color: var(--ui-muted); font-size: var(--ui-fs-secondary); font-weight: 600; }
 
-.seal-levels { display: flex; gap: var(--ui-sp-2); margin: var(--ui-sp-3) -20px 0; padding: 0 20px var(--ui-sp-2); overflow-x: auto; scrollbar-width: none; }
-.seal-levels::-webkit-scrollbar { display: none; }
-.seal-levels button { flex: none; min-width: 44px; min-height: 36px; padding: 6px 12px; border: 1px solid var(--ui-border-strong); border-radius: 999px; color: var(--ui-text); background: transparent; font: inherit; font-size: var(--ui-fs-secondary); font-weight: 600; cursor: pointer; }
-.seal-levels button.active { color: var(--ui-on-accent); background: var(--ui-accent); border-color: var(--ui-accent); }
+.seal-levels { margin: var(--ui-sp-3) -20px 0; padding: 0 20px; }
 
 .seal-progress { position: relative; min-height: 24px; margin: var(--ui-sp-3) 0; border-top: 2px solid var(--ui-border); }
 .seal-progress i { position: absolute; top: -2px; left: 0; height: 2px; background: var(--ui-accent); transition: width var(--ui-motion); }

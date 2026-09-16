@@ -28,9 +28,9 @@ const LEVEL_CHOICES = [TOP_EXAM_FILTER, "全部", "LV1", "LV2", "LV3", "LV4", "L
 
 function LevelFilter({ selected, onChange }: { selected: string; onChange: (level: string) => void }) {
   return (
-    <div className="seal-levels" aria-label="篩選等級">
+    <div className="level-tabs seal-levels" aria-label="篩選等級">
       {LEVEL_CHOICES.map((level) => (
-        <button key={level} onClick={() => onChange(level)} className={selected === level ? "active" : ""}>{level}</button>
+        <button key={level} onClick={() => onChange(level)} aria-pressed={selected === level}>{level}</button>
       ))}
     </div>
   );

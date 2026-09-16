@@ -5,10 +5,7 @@
 .words-top a { display: inline-flex; align-items: center; min-height: var(--ui-tap); font-size: var(--ui-fs-secondary); }
 .words-top h1 { margin: 0; font-size: var(--ui-fs-subtitle); font-weight: 700; }
 
-.words-levels { display: flex; flex-shrink: 0; gap: var(--ui-sp-1); padding: var(--ui-sp-1) var(--ui-sp-3); overflow-x: auto; border-bottom: 1px solid var(--ui-border); scrollbar-width: none; }
-.words-levels::-webkit-scrollbar { display: none; }
-.words-levels button { min-width: 48px; min-height: var(--ui-tap); padding: 0 var(--ui-sp-2); border: 0; border-bottom: 3px solid transparent; background: transparent; color: var(--ui-muted); font: inherit; font-size: var(--ui-fs-secondary); font-weight: 600; cursor: pointer; }
-.words-levels button[aria-pressed="true"] { color: var(--ui-accent); border-color: var(--ui-accent); font-weight: 700; }
+.words-levels { flex-shrink: 0; padding: var(--ui-sp-1) var(--ui-sp-3) 0; }
 
 .words-columns { display: flex; flex: 1; min-height: 0; }
 .words-sidebar { flex-shrink: 0; width: 120px; padding-bottom: 20px; border-right: 1px solid var(--ui-border); background: var(--ui-bg); overflow-y: auto; overscroll-behavior: contain; }

@@ -1,0 +1,10 @@
+/*
+ * LV 篩選統一底線式分頁（2026-09-16）。
+ * 單字模式、單字總表、一般測驗、到期複習、每 30 字分組、教材字卡共用；
+ * 各頁只保留邊距與排版差異，不再各自畫藥丸或方塊。
+ * 選中狀態以 aria-pressed="true" 表示。
+ */
+.level-tabs { display: flex; gap: var(--ui-sp-1); overflow-x: auto; border-bottom: 1px solid var(--ui-border); scrollbar-width: none; }
+.level-tabs::-webkit-scrollbar { display: none; }
+.level-tabs button { flex: none; min-width: 48px; min-height: var(--ui-tap); margin-bottom: -1px; padding: 0 var(--ui-sp-2); border: 0; border-bottom: 3px solid transparent; border-radius: 0; background: transparent; color: var(--ui-muted); font: inherit; font-size: var(--ui-fs-secondary); font-weight: 600; white-space: nowrap; cursor: pointer; }
+.level-tabs button[aria-pressed="true"] { color: var(--ui-accent); border-color: var(--ui-accent); font-weight: 700; }

@@ -39,7 +39,7 @@ export default function VocabularyScreen(){
     <nav><Link to="/modes/words">← 單字模式</Link><Link to="/groups">我的群組</Link></nav>
     <p className="direct-kicker">單字模式 · 教材</p><h1>教材字卡</h1>
     <p className="direct-muted">直接看字卡、中文意思與例句，再依需要自由練習。</p>
-    <div className="vocab-levels" aria-label="選擇等級">{LEVELS.map(l=><button key={l} aria-pressed={level===l} onClick={()=>{setQuery('');choose({level:l});}}>{l}</button>)}</div>
+    <div className="level-tabs vocab-levels" aria-label="選擇等級">{LEVELS.map(l=><button key={l} aria-pressed={level===l} onClick={()=>{setQuery('');choose({level:l});}}>{l}</button>)}</div>
     {!current?<section><h2>{level} 教材內容整理中</h2><p>單元、完整義項與原創例句核對完成後開放。</p><button onClick={()=>{const first=curriculumUnits[0];choose({level:first.level,unit:String(first.unit)});}}>先看 {curriculumUnits[0].name}</button></section>:<>
       <label>教材單元<select aria-label="教材單元" value={unit} onChange={e=>{setQuery('');choose({level,unit:e.target.value});}}>{levelUnits.map(u=><option key={u.templateId} value={u.unit}>Unit {u.unit}</option>)}</select></label>
       <h2>{current.name}</h2><p className="direct-muted">已核對 {vocabCount} 個詞彙、{grammarCount} 項{usageLabel}。{levelUnits.length<2?'其他 Unit 整理中。':''}</p>

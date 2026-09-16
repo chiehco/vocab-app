@@ -16,10 +16,6 @@
 .realm-header h1 { margin: 0; font-size: var(--ui-fs-title); font-weight: 700; line-height: var(--ui-lh-tight); }
 .realm-count { color: var(--ui-muted); font-size: var(--ui-fs-secondary); white-space: nowrap; }
 .realm-count b { margin-right: 4px; color: var(--ui-text); font-size: var(--ui-fs-subtitle); font-weight: 700; }
-.realm-levels { display: flex; gap: var(--ui-sp-2); overflow-x: auto; scrollbar-width: none; }
-.realm-levels::-webkit-scrollbar { display: none; }
-.realm-levels button { flex: none; min-width: 44px; min-height: 36px; padding: 6px 12px; border: 1px solid var(--ui-border-strong); border-radius: 999px; color: var(--ui-text); background: transparent; font: inherit; font-size: var(--ui-fs-secondary); font-weight: 600; cursor: pointer; }
-.realm-levels button.active { color: var(--ui-on-accent); background: var(--ui-accent); border-color: var(--ui-accent); }
 .realm-section-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--ui-sp-3); }
 .realm-section-head h2 { margin: 0; font-size: var(--ui-fs-subtitle); font-weight: 700; line-height: var(--ui-lh-tight); }
 .realm-section-head > span { color: var(--ui-muted); font-size: var(--ui-fs-secondary); }
@@ -36,7 +32,7 @@
 .archive-search input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--ui-text); font: inherit; font-size: var(--ui-fs-body); }
 .archive-search input::placeholder { color: var(--ui-muted); }
 .archive-search button { width: 32px; height: 32px; border: 0; background: transparent; color: var(--ui-muted); font-size: 1.25rem; cursor: pointer; }
-.archive-tools .realm-levels { margin-top: var(--ui-sp-3); padding-bottom: 2px; }
+.archive-tools .level-tabs { margin-top: var(--ui-sp-3); }
 .archive-unit-entry { display: flex; align-items: center; justify-content: space-between; gap: var(--ui-sp-3); min-height: 64px; margin: var(--ui-sp-3) 0 0; padding: var(--ui-sp-3) 0; border-block: 1px solid var(--ui-border); color: var(--ui-text); text-decoration: none; }
 .archive-unit-entry span, .archive-unit-entry b, .archive-unit-entry small { display: block; }
 .archive-unit-entry b { font-size: var(--ui-fs-body); font-weight: 700; }
@@ -102,7 +98,7 @@
 .trial-scope { padding: var(--ui-sp-3) 0; border-block: 1px solid var(--ui-border); }
 .trial-scope > span { display: block; margin-bottom: var(--ui-sp-2); color: var(--ui-muted); font-size: var(--ui-fs-secondary); }
 .trial-unit-return { display: inline-flex; align-items: center; min-height: var(--ui-tap); font-size: var(--ui-fs-secondary); font-weight: 600; text-decoration: none; }
-.trial-levels { padding-bottom: 2px; }
+.trial-levels { margin-bottom: var(--ui-sp-2); }
 .trial-empty { display: grid; grid-template-columns: 40px 1fr auto; gap: var(--ui-sp-3); align-items: center; padding: var(--ui-sp-4) 0; border-bottom: 1px solid var(--ui-border); }
 .trial-empty > span { display: grid; width: 40px; height: 40px; place-items: center; border-radius: 50%; background: var(--ui-accent-soft); color: var(--ui-accent); font-weight: 700; }
 .trial-empty h3 { margin: 0; font-size: var(--ui-fs-body); font-weight: 700; }

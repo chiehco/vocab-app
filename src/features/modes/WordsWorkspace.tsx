@@ -29,7 +29,7 @@ export default function WordsWorkspace(){
   }catch{setError('無法開始，請重試。');}finally{lock.current=false;setBusy(false);}}
   return <div className="words-workspace">
     <header className="words-top"><Link to="/" aria-label="回首頁">萬詞譜</Link><h1>單字</h1><Link to="/review">到期複習</Link></header>
-    <nav className="words-levels" aria-label="單字等級">{['all','LV1','LV2','LV3','LV4','LV5','LV6'].map(l=><button key={l} aria-pressed={level===l} onClick={()=>choose('level',l)}>{l==='all'?'全部':l}</button>)}</nav>
+    <nav className="level-tabs words-levels" aria-label="單字等級">{['all','LV1','LV2','LV3','LV4','LV5','LV6'].map(l=><button key={l} aria-pressed={level===l} onClick={()=>choose('level',l)}>{l==='all'?'全部':l}</button>)}</nav>
     <div className="words-columns">
       <aside className="words-sidebar" aria-label="自建群組列表">
         <label className="words-group-search"><span>我的群組</span><input aria-label="搜尋側欄群組" type="search" placeholder="找群組" value={groupSearch} onChange={e=>{setGroupSearch(e.target.value);setGroupLimit(20);}}/></label>

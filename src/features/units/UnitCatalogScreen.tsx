@@ -62,12 +62,11 @@ export default function UnitCatalogScreen() {
             <h2 id="unit-level-title">選擇等級</h2>
             <span>{learnedInLevel}／{totalInLevel || "—"} 已學</span>
           </div>
-          <div className="unit-level-buttons">
+          <div className="level-tabs unit-level-buttons" aria-label="選擇等級">
             {LEVELS.map((level) => (
               <button
                 type="button"
                 key={level}
-                className={selectedLevel === level ? "active" : ""}
                 aria-pressed={selectedLevel === level}
                 onClick={() => chooseLevel(level)}
               >
