@@ -36,8 +36,20 @@ export default defineConfig({
         // 首次只安裝程式與 S+A 輕量包；完整資料不再是啟動門檻。
         globPatterns: ["**/*.{js,css,html,ico,svg}", "assets/gsat115-*.{png,pdf}", "exams/gsat/*.{jpg,pdf}", "data/v1/sa-pack.json", "templates/*.{xlsx,csv}", "curriculum/**/*.webp"],
         maximumFileSizeToCacheInBytes: 8 * 1024 * 1024,
-        navigateFallback: "index.html",
+        // Prefer the deployed shell on navigation; fall back to the offline shell.
+        navigateFallback: undefined,
         runtimeCaching: [
+          {
+            urlPattern: ({ request }) => request.mode === "navigate",
+            handler: "NetworkFirst",
+            options: {
+              cacheName: "app-pages-v1",
+              networkTimeoutSeconds: 5,
+              cacheableResponse: { statuses: [200] },
+              expiration: { maxEntries: 10 },
+              precacheFallback: { fallbackURL: "index.html" },
+            },
+          },
           {
             // Asset revisions use ?v=...; match the pathname so viewed cards remain available offline.
             urlPattern: ({ url }) => /\/wordbeast\/.*\.(?:png|webp)$/i.test(url.pathname),

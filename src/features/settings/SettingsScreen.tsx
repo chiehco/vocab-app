@@ -78,6 +78,7 @@ export default function SettingsScreen() {
         ← 回首頁
       </Link>
       <h1 className="mt-2 mb-4 text-[2rem] font-bold leading-tight">設定</h1>
+      <button type="button" className="mb-4 rounded-lg border px-4 py-2" onClick={() => window.dispatchEvent(new Event('vocab-check-update'))}>檢查網頁更新</button>
 
       <div className="rounded-lg border border-(--ui-border) bg-white p-4">
         <label className="block text-sm font-bold text-(--ui-text)">自動安排的新字上限</label>
