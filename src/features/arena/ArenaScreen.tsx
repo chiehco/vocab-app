@@ -29,11 +29,11 @@ export default function ArenaScreen() {
           <div><p>SPELL BARRAGE</p><h2>字母轟炸</h2><span>比豆魔更快敲完真名，勝者把妄字磚轟向對手。</span></div>
           <b>開戰 →</b>
         </Link>
-        <div className="arena-game-entry locked" aria-disabled="true">
+        <Link to="/arena/meaning-karuta" className="arena-game-entry live">
           <span className="arena-game-number">02</span>
-          <div><p>MEANING KARUTA</p><h2>搶義花牌</h2><span>等待祭司完成真名多相資料後開陣。</span></div>
-          <b>整備中</b>
-        </div>
+          <div><p>MEANING KARUTA</p><h2>搶義花牌</h2><span>二十張牌翻兩張，真名配上字義就收走，比豆魔搶到更多對子。</span></div>
+          <b>開局 →</b>
+        </Link>
       </main>
 
       <p className="arena-hub-note">電腦對手完全在本機運作，不使用付費 AI，也不會半夜傳戰帖。</p>

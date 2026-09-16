@@ -27,6 +27,7 @@ export default function ModeScreen({mode='home'}:{mode?:Mode}) {
     </>}
     {mode==='games'&&<>
       <Entry to="/arena" title="字母轟炸" description="已開放 · 與電腦對手練習拼字"/>
+      <Entry to="/arena/meaning-karuta" title="搶義花牌" description="已開放 · 翻牌配對英文與字義，和電腦搶對子"/>
       <Pending title="聽音" description="聽音辨字遊戲"/><Pending title="看圖" description="圖像單字遊戲"/>
     </>}
     {mode==='story'&&<Pending title="故事篇章" description="依開發順序，於單字與大考模式後推出。"/>}
