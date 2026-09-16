@@ -38,6 +38,7 @@ export default defineConfig({
         maximumFileSizeToCacheInBytes: 8 * 1024 * 1024,
         // Prefer the deployed shell on navigation; fall back to the offline shell.
         navigateFallback: undefined,
+        directoryIndex: null,
         runtimeCaching: [
           {
             urlPattern: ({ request }) => request.mode === "navigate",
