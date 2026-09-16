@@ -32,3 +32,18 @@ it('filters many groups by name, contained word and type without conflating iden
  expect(filterGroups(groups.filter(g=>g.name.startsWith('Unit')) ,words,'','all','name').slice(0,3).map(g=>g.name)).toEqual(['Unit 2','Unit 3','Unit 4']);
  expect(groups[0].id).toBe('group-0');
 });
+it('narrows the sidebar groups to the chosen level by name, unit template or contained words',()=>{
+ const words=[{wordId:'W000002',word:'ability',meaningZh:'能力',level:'LV5'} as WordRecord,{wordId:'W000009',word:'able',meaningZh:'能夠的',level:'LV1'} as WordRecord];
+ const base={...templateGroup(),itemIds:[] as string[],templateId:null,templateRevision:null};
+ const groups=[
+  {...base,id:'by-name',name:'LV1 學測優先 第 1 組',updatedAt:4},
+  {...base,id:'by-word',name:'匯入清單',wordIds:['W000009','W000002'],updatedAt:3},
+  {...templateGroup(),id:'by-unit',name:'教材',updatedAt:2},
+  {...base,id:'other',name:'LV10 補充',wordIds:['W000002'],updatedAt:1},
+ ];
+ expect(filterGroups(groups,words,'','all','recent','LV1').map(g=>g.id)).toEqual(['by-name','by-word']);
+ expect(filterGroups(groups,words,'','all','recent','LV3').map(g=>g.id)).toEqual(['by-unit']);
+ expect(filterGroups(groups,words,'','all','recent','LV5').map(g=>g.id)).toEqual(['by-word','other']);
+ expect(filterGroups(groups,words,'','all','recent','LV2')).toHaveLength(0);
+ expect(filterGroups(groups,words,'','all','recent')).toHaveLength(4);
+});

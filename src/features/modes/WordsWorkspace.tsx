@@ -20,7 +20,7 @@ export default function WordsWorkspace(){
   const lock=useRef(false),panel=useRef<HTMLDivElement>(null);
   const available=groupId&&!group?[]:workspaceWords(words??[],group,level,query);
   const matches=sort==='exam'?sortExamWordsByPriority(available,priorities??[]):[...available].sort((a,b)=>a.word.localeCompare(b.word,'en'));
-  const filteredGroups=filterGroups(groups??[],words??[],groupSearch,'all','recent');
+  const filteredGroups=filterGroups(groups??[],words??[],groupSearch,'all','recent',level);
   const title=group?.name??(groupId?'群組已不存在':'全部單字');
   const latestUnit=curriculumUnits[curriculumUnits.length-1];
   function choose(key:string,value:string){const next=new URLSearchParams(params);if(value)next.set(key,value);else next.delete(key);setParams(next,{replace:true});setLimit(30);setError('');panel.current?.scrollTo({top:0});}
@@ -36,7 +36,7 @@ export default function WordsWorkspace(){
         <label className="words-group-search"><span>我的群組</span><input aria-label="搜尋側欄群組" type="search" placeholder="找群組" value={groupSearch} onChange={e=>{setGroupSearch(e.target.value);setGroupLimit(20);}}/></label>
         <button className="words-group" aria-pressed={!groupId} onClick={()=>choose('group','')}><span>全部單字</span><small>{words?.length??0} 字</small></button>
         {filteredGroups.slice(0,groupLimit).map(g=>{const same=(groups??[]).filter(x=>x.name===g.name).sort((a,b)=>a.id.localeCompare(b.id));return <button key={g.id} className="words-group" aria-pressed={groupId===g.id} title={g.name} onClick={()=>choose('group',g.id)}><span>{g.name}</span><small>{groupSize(g)} 項{same.length>1&&` · 同名${same.findIndex(x=>x.id===g.id)+1}`}</small></button>;})}
-        {!filteredGroups.length&&<p className="words-side-empty">{groups?.length?'查無群組':'尚無群組'}</p>}
+        {!filteredGroups.length&&<p className="words-side-empty">{!groups?.length?'尚無群組':groupSearch?'查無群組':level==='all'?'查無群組':`${level} 尚無群組`}</p>}
         {filteredGroups.length>groupLimit&&<button className="words-more-groups" onClick={()=>setGroupLimit(groupLimit+20)}>更多群組</button>}
         <Link className="words-add" to="/groups?create=1">＋ 新增群組</Link>
         <Link className="words-manage" to="/groups">管理群組</Link>

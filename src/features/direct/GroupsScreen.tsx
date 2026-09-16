@@ -46,7 +46,7 @@ export default function GroupsScreen() {
   function move(index:number,delta:number) { if (!g) return; const ids=[...g.itemIds]; [ids[index],ids[index+delta]]=[ids[index+delta],ids[index]]; void save({...g,itemIds:ids}); }
   function moveWord(index:number,delta:number) { if (!g?.wordIds) return; const ids=[...g.wordIds]; [ids[index],ids[index+delta]]=[ids[index+delta],ids[index]]; void save({...g,wordIds:ids}); }
   const available = learningItems.filter(i => !g?.itemIds.includes(i.learningItemId) && `${i.displayWord ?? i.pattern} ${i.targetMeaningZh ?? i.explanationZh}`.toLowerCase().includes(query.toLowerCase()));
-  return <div className="direct-page"><nav><Link to="/modes/words">← 單字模式</Link><Link to="/vocabulary">單字字卡</Link></nav>
+  return <div className="direct-page"><nav><Link to={g?`/modes/words?group=${encodeURIComponent(g.id)}`:'/modes/words'}>← 單字模式</Link><Link to="/vocabulary">單字字卡</Link></nav>
     <p className="direct-kicker">MY COLLECTION</p><h1>我的群組</h1><p className="direct-muted">匯入單字表，或把 Unit 收進群組，再依需要增刪與排序。</p>
     {error && <p role="alert">{error}</p>}
     {notice && <p role="status">{notice}</p>}
