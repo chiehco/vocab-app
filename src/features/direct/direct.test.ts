@@ -80,8 +80,8 @@ it('contains only authored examples and resolves every question token offline', 
   expect(lookupWord('to make').meaning).toContain('make：');
 });
 it('all 176 group items have distinct questions; session snapshots preserve group order and text input across updates', async () => {
-  expect(allQuestions).toHaveLength(495); // 360 LV3 + 135 LV4 Unit 17
-  expect(new Set(allQuestions.map(q=>q.questionId)).size).toBe(495);
+  expect(allQuestions).toHaveLength(633); // 360 LV3 + 135 Unit17 + 138 Unit18
+  expect(new Set(allQuestions.map(q=>q.questionId)).size).toBe(633);
   for (const i of curriculum.learningItems) expect(allQuestions.filter(q=>q.learningItemId===i.learningItemId)).toHaveLength(1);
   const g=templateGroup();g.itemIds=[g.itemIds[1],g.itemIds[0],curriculum.learningItems.find(i=>i.kind==='grammar')!.learningItemId];await saveGroup(g);
   const groupSession=await startGroupSession(g.id);const s=await startSession(groupSession.questionIds,groupSession.title,g.id,groupSession.scopeQuestionIds,'advanced');const q=allQuestions.find(q=>q.questionId===s.questionIds[0])!;

@@ -18,6 +18,7 @@ import { useIllustrationMedia } from "../wordbeast/useIllustrationMedia";
 import { buildSenseCountByWord } from "../wordbeast/wordTraits";
 import { MORPHEME_TYPE_LABEL, NOTE_TYPE_LABEL, RELATION_TYPE_LABEL, REVERSE_RELATION_LABEL, STATE_LABEL } from "./wordLabels";
 import { getWordDisplaySense } from "./wordDisplay";
+import { approvedCurriculumCards } from '../vocabulary/approvedCurriculum';
 import { buildRootFamilies, normalizeMorphemeKey, pickFamilyMorphemes } from "./rootFamily";
 import "./word-detail.css";
 import { progressDb } from '../../db/progressDb';
@@ -222,8 +223,14 @@ export default function WordDetailScreen() {
                 {senses && senses.length > 0 ? (
                   <ol>{senses.slice(0, 4).map((sense) => <li key={sense.senseId}><b>{sense.sensePos}</b><span>{sense.meaningZh}</span>{sense.isExamSense && <i>考義</i>}</li>)}</ol>
                 ) : (
-                  <p>{displaySense.source === 'curriculum' ? '此處顯示已核准的 LV4 Unit17 教材義項。' : '目前只有字典整體釋義，還沒拆出常用意思與考試意思。已列入待補清單。'}</p>
+                  <p>{displaySense.source === 'curriculum' ? '此處顯示已核准的教材義項。' : '目前只有字典整體釋義，還沒拆出常用意思與考試意思。已列入待補清單。'}</p>
                 )}
+                {approvedCurriculumCards(word.word, word.wordId).length > 1 && <ul className="curriculum-meanings">
+                  {approvedCurriculumCards(word.word, word.wordId).map(card => <li key={card.learningItemId}>
+                    <b>{card.displayWord} · {card.sensePos}</b><span>{card.targetMeaningZh}</span>
+                    <small>{card.unitName}</small><p>{card.illustration.captionEn}</p><p>{card.illustration.captionZh}</p>
+                  </li>)}
+                </ul>}
               </div>
             )}
             {backTab === "relations" && (

@@ -1,4 +1,4 @@
-"""Build the small S+A bootstrap bundle used by the offline-first app startup."""
+"""Build the S+A and reviewed curriculum bootstrap bundle for offline startup."""
 
 from __future__ import annotations
 
@@ -32,10 +32,18 @@ def build_sa_pack(data_dir: Path) -> dict:
     selected_word_ids = {row["wordId"] for row in selected_priorities}
     selected_names = {row["word"] for row in selected_priorities}
 
+    # Reviewed textbook cards must also exist on a fresh lightweight installation.
+    curriculum_dir = Path(__file__).resolve().parent.parent / "src/features/direct"
+    for path in sorted(curriculum_dir.glob("curriculumLV4Unit*.json")):
+        unit = read_json(path)
+        selected_word_ids.update(item["officialWordId"] for item in unit["learningItems"]
+                                 if item.get("kind") == "vocabulary" and item.get("officialWordId")
+                                 and item.get("review") == "content_reviewed" and item.get("illustration"))
+
     words = [row for row in read_json(data_dir / "words.json") if row.get("wordId") in selected_word_ids]
     actual_word_ids = {row["wordId"] for row in words}
     actual_names = {row["word"] for row in words}
-    selected_priorities = [row for row in selected_priorities if row.get("wordId") in actual_word_ids]
+    selected_priorities = [row for row in priorities if row.get("wordId") in actual_word_ids]
 
     senses = [row for row in read_json(data_dir / "senses.json") if row.get("wordId") in actual_word_ids]
     examples = [row for row in read_json(data_dir / "examples.json") if row.get("word") in actual_names]
@@ -45,7 +53,8 @@ def build_sa_pack(data_dir: Path) -> dict:
     ]
     morphemes = [row for row in read_json(data_dir / "morphemes.json") if row.get("word") in actual_names]
     notes = [row for row in read_json(data_dir / "notes.json") if row.get("word") in actual_names]
-    media = [row for row in read_json(data_dir / "media.json") if row.get("targetWord") in actual_names]
+    # Curriculum pictures/captions are supplied by their reviewed registry, not old dictionary media.
+    media = [row for row in read_json(data_dir / "media.json") if row.get("targetWord") in selected_names]
 
     datasets = {
         "words": words,
@@ -62,7 +71,7 @@ def build_sa_pack(data_dir: Path) -> dict:
     missing = selected_word_ids - actual_word_ids
     if missing:
         raise SystemExit(f"S+A pack 缺少 {len(missing)} 個 words 記錄")
-    if selected_names != actual_names:
+    if not selected_names.issubset(actual_names):
         raise SystemExit("S+A pack 的 priority 與 words 名稱不一致")
 
     source_hash = meta.get("contentHash") or meta["wordsHash"]
@@ -72,7 +81,7 @@ def build_sa_pack(data_dir: Path) -> dict:
             "generatedAt": meta["generatedAt"],
             "counts": counts,
             "wordsHash": f"sa:{rows_hash(words)}",
-            "contentHash": f"sa:{source_hash}",
+            "contentHash": f"sa:{rows_hash({'sourceHash': source_hash, 'datasets': datasets})}",
         },
         **datasets,
     }

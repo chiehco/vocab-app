@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { getIllustrationCaption } from "./illustrationCaptions";
-import { approvedUnit17Card } from '../vocabulary/approvedUnit17';
+import { approvedCurriculumIllustration } from '../vocabulary/approvedCurriculum';
 import "./study-illustration.css";
 
 function IllustrationImage({ src, alt }: { src: string; alt: string }) {
@@ -19,8 +19,8 @@ function IllustrationImage({ src, alt }: { src: string; alt: string }) {
 }
 
 export default function StudyIllustration({ src, word, caption }: { src: string; word: string; caption?: string | null }) {
-  const approved = approvedUnit17Card(word)?.illustration;
-  const pair = approved && src.split('?')[0].endsWith('/' + approved.path)
+  const approved = approvedCurriculumIllustration(word, src);
+  const pair = approved
     ? { en: approved.captionEn, zh: approved.captionZh }
     : getIllustrationCaption(caption);
   return (

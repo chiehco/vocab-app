@@ -39,6 +39,8 @@ export default defineConfig({
         // Prefer the deployed shell on navigation; fall back to the offline shell.
         navigateFallback: undefined,
         directoryIndex: null,
+        // General cards add an asset revision query; use the same precached curriculum image offline.
+        ignoreURLParametersMatching: [/^utm_/, /^fbclid$/, /^v$/],
         runtimeCaching: [
           {
             urlPattern: ({ request }) => request.mode === "navigate",

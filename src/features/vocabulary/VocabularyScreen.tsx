@@ -58,10 +58,10 @@ export default function VocabularyScreen(){
               <img src={`${ASSET_BASE}${item.illustration.path}`} alt={item.illustration.captionZh} width="768" height="768" loading="eager" decoding="async"/>
               <figcaption><p lang="en">{item.illustration.captionEn}</p><p lang="zh-Hant">{item.illustration.captionZh}</p></figcaption>
             </figure>}
-            {example?<><h3>原創例句 · {item.targetMeaningZh}</h3><p className="direct-stem">{example.sentenceEn}</p><p>{example.sentenceZh}</p><SpeakerButton text={example.sentenceEn}/></>:<p>例句待核對。</p>}
+            {example?<><h3>情境例句 · {item.targetMeaningZh}</h3><p className="direct-stem">{example.sentenceEn}</p><p>{example.sentenceZh}</p><SpeakerButton text={example.sentenceEn}/></>:<p>例句待核對。</p>}
             {related.length>0&&<div className="vocab-related"><h3>相關詞</h3><ul>{related.map(n=><li key={`${n.word}:${n.meaningZh}`}><b>{n.word}</b><span>{n.meaningZh}</span></li>)}</ul></div>}
           </>:<><p className="vocab-meaning">{item.explanationZh}</p>
-            {example&&<><h3>原創例句</h3><p className="direct-stem">{example.sentenceEn}</p><p>{example.sentenceZh}</p><SpeakerButton text={example.sentenceEn}/></>}
+            {example&&<><h3>情境例句</h3><p className="direct-stem">{example.sentenceEn}</p><p>{example.sentenceZh}</p><SpeakerButton text={example.sentenceEn}/></>}
           </>}
         </article>
         <div className="vocab-levels"><button disabled={index===0} onClick={()=>show(matches[index-1].learningItemId)}>上一張</button><button disabled={index===matches.length-1} onClick={()=>show(matches[index+1].learningItemId)}>下一張</button></div>

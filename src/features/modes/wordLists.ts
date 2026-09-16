@@ -1,5 +1,6 @@
 import { progressDb } from '../../db/progressDb';
-import type { WordRecord } from '../../db/types';
+import type { WordRecord, ExamPriorityRecord } from '../../db/types';
+import { sortExamWordsByPriority } from '../../quiz/examScope';
 import { learningItems } from '../direct/model';
 import type { CustomGroup } from '../direct/model';
 
@@ -10,6 +11,12 @@ export function workspaceWords(words:WordRecord[],group:CustomGroup|undefined,le
   return ordered.filter(w=>(level==='all'||w.level===level)&&terms.every(t=>`${w.word} ${w.meaningZh??''}`.normalize('NFKC').toLowerCase().includes(t)));
 }
 export interface WordList extends CustomGroup {returnTo:string}
+// "Exam first" is an ordering choice in the workspace, not an S+A-only scope.
+export function sortWorkspaceWords(words: WordRecord[], priorities: ExamPriorityRecord[]): WordRecord[] {
+  const first = sortExamWordsByPriority(words, priorities);
+  const firstIds = new Set(first.map(w => w.wordId));
+  return [...first, ...words.filter(w => !firstIds.has(w.wordId)).sort((a,b) => a.word.localeCompare(b.word,'en'))];
+}
 export async function saveWordList(words:WordRecord[],name:string,returnTo:string) {
   if(!words.length||!returnTo.startsWith('/modes/words'))throw Error('沒有可用的字卡');
   const list:WordList={id:crypto.randomUUID(),name,wordIds:words.map(w=>w.wordId),itemIds:[],templateId:null,templateRevision:null,updatedAt:Date.now(),returnTo};

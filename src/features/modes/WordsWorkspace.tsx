@@ -6,8 +6,7 @@ import { progressDb } from '../../db/progressDb';
 import { filterGroups,groupSize } from '../direct/groupFilter';
 import { getWordBeastAsset } from '../wordbeast/wordBeastAssets';
 import ResilientBeastImage from '../wordbeast/ResilientBeastImage';
-import { sortExamWordsByPriority } from '../../quiz/examScope';
-import { saveWordList,workspaceWords } from './wordLists';
+import { saveWordList,workspaceWords,sortWorkspaceWords } from './wordLists';
 import { curriculumUnits } from '../direct/model';
 import './words-workspace.css';
 
@@ -19,7 +18,7 @@ export default function WordsWorkspace(){
   const [groupSearch,setGroupSearch]=useState(''),[groupLimit,setGroupLimit]=useState(20),[limit,setLimit]=useState(30),[busy,setBusy]=useState(false),[error,setError]=useState('');
   const lock=useRef(false),panel=useRef<HTMLDivElement>(null);
   const available=groupId&&!group?[]:workspaceWords(words??[],group,level,query);
-  const matches=sort==='exam'?sortExamWordsByPriority(available,priorities??[]):[...available].sort((a,b)=>a.word.localeCompare(b.word,'en'));
+  const matches=sort==='exam'?sortWorkspaceWords(available,priorities??[]):[...available].sort((a,b)=>a.word.localeCompare(b.word,'en'));
   const filteredGroups=filterGroups(groups??[],words??[],groupSearch,'all','recent',level);
   const title=group?.name??(groupId?'群組已不存在':'全部單字');
   const latestUnit=curriculumUnits[curriculumUnits.length-1];

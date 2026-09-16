@@ -69,6 +69,11 @@
 .back-meaning li b { color: var(--ui-muted); font-size: var(--ui-fs-label); font-weight: 600; }
 .back-meaning li span { font-size: var(--ui-fs-body); line-height: 1.65; }
 .back-meaning li i { color: var(--ui-danger); font-size: var(--ui-fs-label); font-style: normal; font-weight: 600; }
+.back-meaning .curriculum-meanings { list-style: none; margin: var(--ui-sp-4) 0 0; padding: 0; }
+.back-meaning .curriculum-meanings li { display: block; }
+.back-meaning .curriculum-meanings li span, .back-meaning .curriculum-meanings li small { display: block; }
+.back-meaning .curriculum-meanings li small { color: var(--ui-muted); }
+.back-meaning .curriculum-meanings li p { margin: var(--ui-sp-2) 0; overflow-wrap: anywhere; }
 .back-link-list > div { display: grid; grid-template-columns: 1fr; gap: var(--ui-sp-1); padding: var(--ui-sp-3) 0; border-top: 1px solid var(--ui-border); }
 .back-link-list b, .back-link-list a { font-size: var(--ui-fs-body); font-weight: 700; text-decoration: none; }
 .back-link-list b small { display: block; margin-top: 2px; color: var(--ui-danger); font-size: var(--ui-fs-label); font-weight: 600; }

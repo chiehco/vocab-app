@@ -11,7 +11,7 @@ beforeEach(async()=>{await progressDb.delete();await progressDb.open();});
 afterEach(async()=>{await progressDb.delete();});
 
 it('registers LV4 Unit 17 beside the LV3 units without changing them',()=>{
- expect(unitsForLevel('LV3').map(u=>u.unit)).toEqual([1,2]);expect(unitsForLevel('LV4').map(u=>u.unit)).toEqual([17]);
+ expect(unitsForLevel('LV3').map(u=>u.unit)).toEqual([1,2]);expect(unitsForLevel('LV4').map(u=>u.unit)).toEqual([17,18]);
  expect(templateGroup().itemIds).toHaveLength(176);expect(templateGroup(2).itemIds).toHaveLength(178);
  const unit=findUnit('LV4-U17')!;expect(unit.revision).toBe('20260914-LV4U17-3');
  const items=unitItems(17,'LV4'),voc=items.filter(i=>i.kind==='vocabulary'),usage=items.filter(i=>i.kind!=='vocabulary');

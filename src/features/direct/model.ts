@@ -2,6 +2,7 @@ import choiceOptions from './choiceOptions.json';
 import unit2 from './curriculumUnit2.json';
 import curriculum from './curriculum.json';
 import lv4Unit17 from './curriculumLV4Unit17.json';
+import lv4Unit18 from './curriculumLV4Unit18.json';
 import questions from './questions.json';
 import grammarQuestions from './grammarQuestions.json';
 import { catalogWordIds } from './groupWords';
@@ -19,6 +20,7 @@ export const curriculumUnits: CurriculumUnit[] = [
   { templateId: curriculum.template.templateId, revision: curriculum.template.revision, level: 'LV3', unit: 1, name: 'LV3 Unit 1', items: curriculum.learningItems as LearningItem[], questions: grammarQuestions, relatedNotes: [] },
   { templateId: unit2.template.templateId, revision: unit2.template.revision, level: 'LV3', unit: 2, name: 'LV3 Unit 2', items: unit2.learningItems as LearningItem[], questions: unit2.grammarQuestions, relatedNotes: [] },
   { templateId: lv4Unit17.template.templateId, revision: lv4Unit17.template.revision, level: 'LV4', unit: 17, name: lv4Unit17.template.title, items: lv4Unit17.learningItems as LearningItem[], questions: lv4Unit17.questions, relatedNotes: lv4Unit17.relatedNotes },
+  { templateId: lv4Unit18.template.templateId, revision: lv4Unit18.template.revision, level: 'LV4', unit: 18, name: lv4Unit18.template.title, items: lv4Unit18.learningItems as LearningItem[], questions: lv4Unit18.questions, relatedNotes: lv4Unit18.relatedNotes },
 ];
 export type UnitKey = number | string;
 export function findUnit(key: UnitKey, level?: string): CurriculumUnit | undefined {
