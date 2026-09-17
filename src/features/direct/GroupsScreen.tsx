@@ -54,6 +54,7 @@ export default function GroupsScreen() {
     {error && <p role="alert">{error}</p>}
     {notice && <p role="status">{notice}</p>}
     {deleted && <button disabled={busy} onClick={()=>void undoDelete()}>復原刪除「{deleted.name}」</button>}
+    <div className="groups-side">
     <GroupPicker groups={groups??[]} words={words??[]} value={selected} disabled={busy} onChange={id=>{setSelected(id);setName(groups?.find(g=>g.id===id)?.name??'');}} />
     <details className="group-create" open={params.get('create')==='1'}><summary>建立或匯入群組</summary>
     <GroupImportPanel words={words} groups={groups ?? []} onSaved={group => {setSelected(group.id);setName(group.name);}} />
@@ -61,7 +62,8 @@ export default function GroupsScreen() {
     <button disabled={busy} onClick={() => {setName('我的群組'); void save({...templateGroup(),name:'我的群組',itemIds:[],templateId:null,templateRevision:null});}}>建立空白群組</button>
     <p className="direct-muted">{curriculumUnits.map(u=>`${u.name}：${u.items.filter(i=>i.kind==='vocabulary').length} 詞彙、${u.items.filter(i=>i.kind!=='vocabulary').length} 項用法`).join('；')}。例句均另行撰寫。</p>
     </details>
-    {g && <><button className="group-delete" disabled={busy} onClick={()=>void remove()}>刪除此群組</button><form onSubmit={e => {e.preventDefault();void save({...g,name:name.trim()});}}><label>群組名稱<input value={name} maxLength={80} onChange={e => setName(e.target.value)} /></label><button disabled={busy || !name.trim()}>儲存名稱</button></form>
+    </div>
+    {g && <div className="groups-main"><button className="group-delete" disabled={busy} onClick={()=>void remove()}>刪除此群組</button><form onSubmit={e => {e.preventDefault();void save({...g,name:name.trim()});}}><label>群組名稱<input value={name} maxLength={80} onChange={e => setName(e.target.value)} /></label><button disabled={busy || !name.trim()}>儲存名稱</button></form>
       <h2>{g.name} · {g.itemIds.length + (g.wordIds?.length ?? 0)} 項</h2>
       {!!scopeWords.length && <div className="group-import-links" aria-label="用這個群組練習">
         <Link to={`/quiz?group=${encodeURIComponent(g.id)}`}>單字自由練習</Link>
@@ -88,6 +90,6 @@ export default function GroupsScreen() {
       <p className="direct-muted">另可加入已審核的 LV3 Unit 1、Unit 2 單字與文法練習。</p>
       {available.slice(0,30).map(i=><div className="direct-option-row" key={i.learningItemId}><span>{i.displayWord ?? i.pattern} {i.targetMeaningZh}</span><button disabled={busy} onClick={()=>void save({...g,itemIds:[...g.itemIds,i.learningItemId]})}>加入</button></div>)}
       {available.length>30 && <p>另有 {available.length-30} 項，請輸入關鍵字縮小範圍。</p>}
-    </>}
+    </div>}
   </div>;
 }

@@ -27,6 +27,17 @@ body {
   outline-offset: 2px;
 }
 
+/* 桌機外框：所有非沉浸式頁面共用，換頁時邊界不動 */
+.app-frame { width: 100%; max-width: var(--ui-frame); margin-inline: auto; }
+
+/* 外框內的閱讀欄：一次一題或以閱讀為主的頁面用，內容置中、兩側留白 */
+.ui-column,
+.trial-page, .trial-result-page, .active-trial-page,
+.placement-page, .placement-result-page, .placement-quiz-page,
+.seal-review,
+.word-dossier-page,
+.game-shell { width: 100%; max-width: var(--ui-column); margin-inline: auto; }
+
 .app-bottom-nav {
   position: fixed;
   z-index: 50;
@@ -40,7 +51,7 @@ body {
 
 .app-bottom-nav-inner {
   display: flex;
-  max-width: 32rem;
+  max-width: var(--ui-column);
   min-height: 64px;
   margin: 0 auto;
 }

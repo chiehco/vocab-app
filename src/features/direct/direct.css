@@ -127,3 +127,12 @@
 @media (max-width: 360px) {
   .direct-page { padding-inline: var(--ui-sp-4); }
 }
+
+/* 桌機：群組頁左邊選擇器與建立區、右邊群組內容；手機維持單欄 */
+@media (min-width: 768px) {
+  .direct-page:has(> .groups-side) { display: grid; grid-template-columns: 340px minmax(0, 1fr); column-gap: var(--ui-sp-8); align-items: start; }
+  .direct-page:has(> .groups-side) > :not(.groups-side):not(.groups-main) { grid-column: 1 / -1; }
+  .groups-side { grid-column: 1; position: sticky; top: var(--ui-sp-4); }
+  .groups-main { grid-column: 2; min-width: 0; }
+  .groups-main > h2:first-of-type { margin-top: 0; }
+}

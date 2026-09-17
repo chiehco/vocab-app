@@ -50,6 +50,12 @@
   --ui-tap: 44px;
   --ui-motion: 150ms ease;
 
+  /* Desktop layout (2026-09-17): one frame for every non-immersive page,
+     and a reading column inside it for one-question-at-a-time pages.
+     Both exceed a phone's width, so they only take effect on wide screens. */
+  --ui-frame: 960px;
+  --ui-column: 600px;
+
   --ui-font: system-ui, -apple-system, "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
 }
 

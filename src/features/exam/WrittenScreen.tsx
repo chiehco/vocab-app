@@ -45,7 +45,7 @@ export default function WrittenScreen(){
   function lookup(word:string){void act(async()=>{if(s&&!submitted)await editWritten(s.id,{lookup:word});setMeaning(lookupWord(word,data?.words));dialog.current?.showModal();});}
   function words(text:string){return text.split(/(\{\{\d+\}\}|[A-Za-z]+(?:[’'][A-Za-z]+)?)/g).map((t,i)=>t.startsWith('{{')?<strong key={i}>{t.replace('{{','（').replace('}}','）____')}</strong>:/^[A-Za-z]/.test(t)?<button disabled={busy||pending>0} key={i} className="direct-word" aria-label={`查字：${t}`} onClick={()=>lookup(t)}>{t}</button>:t);}
   function scores(q:typeof writtenQuestions[number]){return Array.from({length:q.points*(q.question_type==='translation'?2:1)+1},(_,i)=>i/(q.question_type==='translation'?2:1));}
-  return <div className="direct-page gsat-page">
+  return <div className="direct-page gsat-page ui-column">
     <nav><Link to={`/exam/papers?year=${year}`}>← 單選題</Link><Link to={`/exam/written?year=${year}`}>非選題目與紀錄</Link></nav>
     <p className="direct-kicker">GSAT / {year}</p><h1>{g?.title??'混合題・翻譯・作文'}</h1>
     <p className="direct-muted">保存原答，提交後對照官方參考，自評或待老師確認。自評不等於官方閱卷分數，不改變複習排程。</p>

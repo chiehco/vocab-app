@@ -57,7 +57,7 @@ function AppLayout() {
     || /^\/units\/LV[1-6]\/\d+$/.test(location.pathname);
 
   return (
-    <div className={`mx-auto flex min-h-screen flex-col ${location.pathname === "/modes/words" ? "max-w-6xl" : "max-w-lg"}`}>
+    <div className={immersive ? "mx-auto flex min-h-screen max-w-lg flex-col" : "app-frame flex min-h-screen flex-col"}>
       <main className={immersive ? "flex-1" : "flex-1 pb-20"}>
         <Routes>
           <Route path="/" element={<ModeScreen />} />

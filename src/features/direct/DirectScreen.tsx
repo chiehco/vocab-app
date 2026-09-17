@@ -41,7 +41,7 @@ export default function DirectScreen() {
     });
   }
   const wrong = wrongQuestionIds(data?.attempts ?? []).filter(id=>!scope || scope.includes(id));
-  return <div className="direct-page">
+  return <div className="direct-page ui-column">
     <nav><Link to="/exam">← 學測專區</Link><Link to="/groups">我的群組</Link></nav>
     <p className="direct-kicker">教材練習</p><h1>{s?.title ?? '新情境練習'}</h1>
     <p className="direct-muted">{s?.questionIds.some(id=>!questions.some(q=>q.questionId===id)) || s?.groupId ? `單元${mode === 'basic' ? '基礎練習：四選一與文法搭配' : '進階練習：自行填入目標詞，文法保留選項'}。可隨時離開，下次續答。` : '六題新編情境題，尚未校準學測難度。'}點英文查中文，作答後看解析。</p>

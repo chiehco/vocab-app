@@ -24,4 +24,10 @@
 .mode-footer a { display: inline-flex; align-items: center; min-height: var(--ui-tap); font-weight: 600; }
 
 @media (max-width: 360px) { .mode-page { padding-inline: var(--ui-sp-4); } }
+
+/* 桌機：入口清單兩欄，分節標題跨欄 */
+@media (min-width: 768px) {
+  .mode-list, .mode-section { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--ui-sp-8); }
+  .mode-section-title { grid-column: 1 / -1; }
+}
 @media (prefers-reduced-motion: reduce) { .mode-entry, .mode-arrow { transition: none; } }
