@@ -11,6 +11,7 @@ import {
   resolveTurn,
   seededRandom,
   selectKarutaWords,
+  selectScopedKarutaWords,
   type KarutaState,
 } from "./meaningKaruta";
 
@@ -157,5 +158,15 @@ describe("cpu memory", () => {
     const values = Array.from({ length: 5 }, () => a());
     expect(values).toEqual(Array.from({ length: 5 }, () => b()));
     values.forEach((value) => { expect(value).toBeGreaterThanOrEqual(0); expect(value).toBeLessThan(1); });
+  });
+
+  it("指定範圍時撞義的字只留一個，不足十對就回傳較少", () => {
+    const scoped = selectScopedKarutaWords(
+      [word("big", "大的"), word("large", "大的；巨大的"), word("cat", "貓"), word("dog", "狗"), word("run", "跑"), word("sprint", "跑；衝刺"), word("go", "去")],
+      10,
+      () => 0.5,
+    );
+    expect(scoped).toHaveLength(4);
+    expect(scoped.map((item) => item.word)).toContain("cat");
   });
 });

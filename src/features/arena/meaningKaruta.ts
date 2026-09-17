@@ -1,6 +1,6 @@
 import type { WordRecord } from "../../db/types";
 import { shortZh } from "../../game/slash";
-import { isArenaWordEligible, selectArenaWords, shuffleWith, type ArenaDifficulty, type ArenaSelectionContext } from "./spellBarrage";
+import { isArenaWordEligible, selectArenaWords, shuffleWith, weightedArenaOrder, type ArenaDifficulty, type ArenaSelectionContext } from "./spellBarrage";
 
 /**
  * 搶義花牌：翻牌配對。引擎是純狀態機，唯一的動作是 flip(cardId)，
@@ -32,6 +32,8 @@ export interface KarutaState {
 }
 
 export const PAIR_COUNT = 10;
+/** 指定範圍時的最低對數。 */
+export const MIN_PAIR_COUNT = 4;
 export const MAX_ZH_LABEL = 6;
 export const MISS_REVEAL_MS = 1200;
 export const MATCH_REVEAL_MS = 1500;
@@ -81,15 +83,8 @@ export function glossConflicts(a: WordRecord, b: WordRecord): boolean {
   return glossSegments(b.meaningZh).includes(shortA) || glossSegments(a.meaningZh).includes(shortB);
 }
 
-export function selectKarutaWords(
-  words: WordRecord[],
-  knownWords: Set<string>,
-  learningLevels: string[],
-  count = PAIR_COUNT,
-  random: () => number = Math.random,
-  context: ArenaSelectionContext = {},
-): WordRecord[] {
-  const ordered = selectArenaWords(words.filter(isKarutaWordEligible), knownWords, learningLevels, words.length, random, context);
+/** 從排好序的候選裡挑不互相撞義的字，最多 count 個。 */
+function pickKarutaPairs(ordered: WordRecord[], count: number): WordRecord[] {
   const picked: WordRecord[] = [];
   const seenWords = new Set<string>();
   for (const candidate of ordered) {
@@ -100,6 +95,28 @@ export function selectKarutaWords(
     seenWords.add(candidate.word);
   }
   return picked;
+}
+
+export function selectKarutaWords(
+  words: WordRecord[],
+  knownWords: Set<string>,
+  learningLevels: string[],
+  count = PAIR_COUNT,
+  random: () => number = Math.random,
+  context: ArenaSelectionContext = {},
+): WordRecord[] {
+  const ordered = selectArenaWords(words.filter(isKarutaWordEligible), knownWords, learningLevels, words.length, random, context);
+  return pickKarutaPairs(ordered, count);
+}
+
+/** 指定範圍：範圍內全部可入陣，合格對子不到 count 就打較少對（畫面另以 MIN_PAIR_COUNT 把關）。 */
+export function selectScopedKarutaWords(
+  words: WordRecord[],
+  count = PAIR_COUNT,
+  random: () => number = Math.random,
+  context: ArenaSelectionContext = {},
+): WordRecord[] {
+  return pickKarutaPairs(weightedArenaOrder(words.filter(isKarutaWordEligible), context, random), count);
 }
 
 export function dealBoard(words: WordRecord[], seed: number): KarutaState {

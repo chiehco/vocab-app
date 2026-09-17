@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { WordRecord } from "../../db/types";
-import { buildLetterTiles, composeArenaAnswer, CPU_OBSERVE_MS, getCpuFinishMs, normalizeArenaAnswer, selectArenaWords, weightedArenaOrder } from "./spellBarrage";
+import { buildLetterTiles, composeArenaAnswer, CPU_OBSERVE_MS, getCpuFinishMs, normalizeArenaAnswer, selectArenaWords, selectScopedArenaWords, weightedArenaOrder } from "./spellBarrage";
 
 function word(value: string, level = "LV1"): WordRecord {
   return {
@@ -80,5 +80,14 @@ describe("spell barrage", () => {
     expect(hard).toBeLessThan(easy);
     expect(getCpuFinishMs("witness", "priest", 2, 0)).toBe(hard + 1440);
     expect(hard).toBeGreaterThan(CPU_OBSERVE_MS);
+  });
+
+  it("指定範圍時不分已學與級別，只濾掉不能拼的字", () => {
+    const scoped = selectScopedArenaWords(
+      [word("go", "LV6"), word("ice-cream", "LV6"), word("cat", "LV6"), word("elephant", "LV5"), word("unbelievable", "LV6")],
+      5,
+      () => 0.5,
+    );
+    expect(scoped.map((item) => item.word).sort()).toEqual(["cat", "elephant"]);
   });
 });

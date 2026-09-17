@@ -91,6 +91,16 @@ export function selectArenaWords(
   return [...known, ...fallback].slice(0, count);
 }
 
+/** 指定範圍：範圍內全部視為可入陣，不分已學／級別，仍保留到期加權。 */
+export function selectScopedArenaWords(
+  words: WordRecord[],
+  count = 5,
+  random: () => number = Math.random,
+  context: ArenaSelectionContext = {},
+): WordRecord[] {
+  return weightedArenaOrder(words.filter(isArenaWordEligible), context, random).slice(0, count);
+}
+
 const DECOY_ALPHABET = "abcdefghijklmnopqrstuvwxyz";
 
 export function buildLetterTiles(
