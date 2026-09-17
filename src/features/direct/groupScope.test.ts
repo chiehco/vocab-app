@@ -6,7 +6,7 @@ import type { WordRecord } from '../../db/types';
 
 function word(wordId: string): WordRecord {
   const c = wordCatalog.find(w => w.wordId === wordId)!;
-  return { ...c, level:'LV4', pos:'n.',posAll:['n.'],meaningZh:'字義',meaningEn:null,usagePattern:null,syllables:null,stressPattern:null,phoneticUs:null,familyKey:null,isCore:false,imageWordId:null,sourceNote:null,status:'reviewed' } as WordRecord;
+  return { ...c, level:'LV4', pos:'n.',posAll:['n.'],meaningZh:'字義',meaningEn:null,usagePattern:null,syllables:null,stressPattern:null,phoneticUs:null,familyKey:null,isCore:false,sourceNote:null,status:'reviewed' };
 }
 const allWords = wordCatalog.map(w => word(w.wordId));
 

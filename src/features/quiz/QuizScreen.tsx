@@ -25,7 +25,6 @@ import { findImageClueHighlight, resolveImageClueCopy, splitImageCaption, type I
 import { useToday } from "../../hooks/useToday";
 import { getExamUnit, getStudyUnit, parseUnitOrder, unitOrderLabel } from "../units/unitPlan";
 import "../realm-pages.css";
-import { groupWords } from "../direct/groupWords";
 import { resolveGroupWords } from "../direct/groupScope";
 
 const LEVEL_CHOICES = [TOP_EXAM_FILTER, "全部", "LV1", "LV2", "LV3", "LV4", "LV5", "LV6"];
@@ -140,8 +139,8 @@ export default function QuizScreen() {
   }, [allWords, examPriorities, hasUnitScope, requestedLevel, requestedUnitNumber, explicitOrder, order]);
   const scopedCollectedWords = useMemo(() => {
     if (groupId && (!allWords || !examPriorities)) return undefined;
-    // 群組可能是 Unit 範本建的（itemIds），要經 officialWordId 展開；WordList 只有 wordIds
-    if (groupId) return (customGroup && 'itemIds' in customGroup ? resolveGroupWords(customGroup, allWords ?? []) : groupWords(customGroup?.wordIds ?? [], allWords ?? [])).filter(w=>!functionWordSet.has(w.word));
+    // Unit groups and WordLists share itemIds/wordIds; resolve both through the same scope.
+    if (groupId) return (customGroup ? resolveGroupWords(customGroup, allWords ?? []) : []).filter(w=>!functionWordSet.has(w.word));
     if (hasUnitScope) return requestedUnit?.words.filter(w=>!functionWordSet.has(w.word));
     if (levelSel === TOP_EXAM_FILTER) {
       if (!allWords || !examPriorities) return undefined;

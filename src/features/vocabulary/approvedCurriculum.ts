@@ -1,5 +1,6 @@
 import unit17 from '../direct/curriculumLV4Unit17.json';
 import unit18 from '../direct/curriculumLV4Unit18.json';
+import unit19 from '../direct/curriculumLV4Unit19.json';
 
 export interface ApprovedCurriculumCard {
   learningItemId: string;
@@ -13,7 +14,7 @@ export interface ApprovedCurriculumCard {
 
 // Registry order preserves the earlier approved default when a later unit reuses a word.
 // All matching senses remain accessible, including statistic and statistics under one ID.
-const cards: ApprovedCurriculumCard[] = [unit17, unit18].flatMap(unit =>
+const cards: ApprovedCurriculumCard[] = [unit17, unit18, unit19].flatMap(unit =>
   unit.learningItems.flatMap(item => item.kind === 'vocabulary' && item.officialWordId && item.illustration
     ? [{ learningItemId: item.learningItemId, displayWord: item.displayWord!, officialWordId: item.officialWordId,
       sensePos: item.sensePos!, targetMeaningZh: item.targetMeaningZh!, unitName: unit.template.title, illustration: item.illustration }]
