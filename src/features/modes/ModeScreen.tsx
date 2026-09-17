@@ -26,7 +26,7 @@ export default function ModeScreen({mode='home'}:{mode?:Mode}) {
       <section className="mode-section"><h2 className="mode-section-title">會考</h2><Pending title="會考考古" description="歷屆試題"/><Pending title="高頻單字" description="會考常見詞彙"/></section>
     </>}
     {mode==='games'&&<>
-      <Entry to="/arena" title="字母轟炸" description="已開放 · 與電腦對手練習拼字"/>
+      <Entry to="/arena/spell-barrage" title="字母轟炸" description="已開放 · 與電腦對手練習拼字"/>
       <Entry to="/arena/meaning-karuta" title="搶義花牌" description="已開放 · 翻牌配對英文與字義，和電腦搶對子"/>
       <Pending title="聽音" description="聽音辨字遊戲"/><Pending title="看圖" description="圖像單字遊戲"/>
     </>}

@@ -15,11 +15,13 @@ import {
   getCpuFinishMs,
   normalizeArenaAnswer,
   selectArenaWords,
+  selectScopedArenaWords,
   type ArenaDifficulty,
   type LetterTile,
 } from "./spellBarrage";
 import "./arena.css";
 import { useToday } from "../../hooks/useToday";
+import { useGroupScope } from "./useGroupScope";
 
 type Stage = "setup" | "playing" | "result";
 type Fighter = "player" | "cpu";
@@ -32,6 +34,7 @@ const OPPONENT_ASSET = getWordBeastAsset("W999999", "pest");
 
 export default function SpellBarrageScreen() {
   const today = useToday();
+  const scope = useGroupScope();
   const poolData = useLiveQuery(async () => {
     const [words, knownKeys, levels, priorities, cardStates] = await Promise.all([
       contentDb.words.toArray(),
@@ -78,6 +81,14 @@ export default function SpellBarrageScreen() {
   const answer = currentWord ? normalizeArenaAnswer(currentWord.word) : "";
   const entered = composeArenaAnswer(tiles, selectedTileIds);
   const learnedCount = poolData ? poolData.words.filter((word) => poolData.known.has(word.word)).length : 0;
+  const scopedEligibleCount = scope.groupId ? selectScopedArenaWords(scope.words ?? [], Infinity, () => 0.5).length : 0;
+  const poolReady = scope.groupId ? !scope.loading : !!poolData;
+
+  /** 群組模式只用範圍內的字；否則走已學優先的隨機字池。 */
+  const pickRound = useCallback((random: () => number) => {
+    if (scope.groupId) return selectScopedArenaWords(scope.words ?? [], 5, random, poolData?.selectionContext);
+    return poolData ? selectArenaWords(poolData.words, poolData.known, poolData.levels, 5, random, poolData.selectionContext) : [];
+  }, [scope.groupId, scope.words, poolData]);
 
   const prepareRound = useCallback((words: WordRecord[], index: number, incomingPlayerBlockers: number, incomingCpuBlockers: number) => {
     const word = words[index];
@@ -96,8 +107,7 @@ export default function SpellBarrageScreen() {
   }, [difficulty]);
 
   function startMatch() {
-    if (!poolData) return;
-    const selected = selectArenaWords(poolData.words, poolData.known, poolData.levels, 5, Math.random, poolData.selectionContext);
+    const selected = pickRound(Math.random);
     if (selected.length < 5) return;
     setRoundWords(selected);
     setPlayerScore(0);
@@ -188,36 +198,45 @@ export default function SpellBarrageScreen() {
     return () => window.clearTimeout(timer);
   }, [outcome, prepareRound, roundIndex, roundWords]);
 
-  if (stage === "setup") {
-    const enoughWords = Boolean(poolData && selectArenaWords(
-      poolData.words,
-      poolData.known,
-      poolData.levels,
-      5,
-      () => 0.5,
-      poolData.selectionContext,
-    ).length >= 5);
+  const backLabel = scope.groupId ? "← 群組" : "← 遊戲";
+
+  if (scope.missing) {
     return (
-      <div className="spell-arena setup-screen">
-        <header className="spell-arena-nav"><Link to="/arena">← 遊戲</Link><span>字母轟炸</span><b>離線</b></header>
-        <main className="spell-setup-main">
-          <div className="spell-duel-mark"><span>你</span><i>VS</i><span>豆</span></div>
-          <p className="spell-eyebrow">SPELL BARRAGE · FIRST TO THREE</p>
-          <h1>五回合內，<br />先得三分。</h1>
-          <p className="spell-setup-copy">看中文與圖卡敲出真名。搶先完成會把兩枚妄磚轟進對手的下一題。</p>
+      <div className="game-shell">
+        <header className="game-shell-nav"><Link to="/groups">← 群組</Link><span>字母轟炸</span><b>範圍練習</b></header>
+        <section className="game-shell-hero">
+          <div><h1>找不到這個群組</h1><p>它可能已被刪除。回群組頁重新選一組再開戰。</p></div>
+        </section>
+        <Link className="game-shell-start" to="/groups">回群組頁</Link>
+      </div>
+    );
+  }
 
-          <section className="spell-difficulty" aria-label="選擇豆魔難度">
-            <p>選擇對手</p>
-            {Object.entries(ARENA_DIFFICULTIES).map(([key, item]) => (
-              <button key={key} className={difficulty === key ? "active" : ""} onClick={() => setDifficulty(key as ArenaDifficulty)}>
-                <span>{item.label}</span><small>{item.note}</small>
-              </button>
-            ))}
-          </section>
+  if (stage === "setup") {
+    const enoughWords = poolReady && pickRound(() => 0.5).length >= 5;
+    return (
+      <div className="game-shell">
+        <header className="game-shell-nav"><Link to={scope.returnTo}>{backLabel}</Link><span>字母轟炸</span><b>{scope.groupId ? "範圍練習" : "單人"}</b></header>
+        <section className="game-shell-hero">
+          <div>
+            {scope.groupId && <p className="game-shell-scope">只出「{scope.group?.name ?? "群組"}」的字 · <b>{scopedEligibleCount} 個可入陣</b></p>}
+            <h1>五回合內，先得三分。</h1>
+            <p>看中文與圖卡敲出真名。搶先完成會把兩枚妄磚轟進對手的下一題。</p>
+          </div>
+          {OPPONENT_ASSET && <img src={OPPONENT_ASSET} alt="" />}
+        </section>
 
-          <div className="spell-record"><span>本機戰績</span><b>{record?.wins ?? 0} 勝</b><i>{record?.losses ?? 0} 敗</i><small>{learnedCount} 個已收服字可入陣</small></div>
-          <button className="spell-start" onClick={startMatch} disabled={!enoughWords}>{poolData ? enoughWords ? "敲響開戰鐘" : "至少需要 5 個可拼單字" : "正在整理字母磚"}<span>→</span></button>
-        </main>
+        <section className="game-shell-options" aria-label="選擇豆魔難度">
+          <p>選擇對手</p>
+          {Object.entries(ARENA_DIFFICULTIES).map(([key, item]) => (
+            <button key={key} aria-pressed={difficulty === key} onClick={() => setDifficulty(key as ArenaDifficulty)}>
+              <span>{item.label}</span><small>{item.note}</small>
+            </button>
+          ))}
+        </section>
+
+        <div className="game-shell-record"><span>本機戰績</span><b>{record?.wins ?? 0} 勝</b><b>{record?.losses ?? 0} 敗</b>{!scope.groupId && <small>{learnedCount} 個已收服字可入陣</small>}</div>
+        <button className="game-shell-start" onClick={startMatch} disabled={!enoughWords}>{!poolReady ? "正在整理字母磚" : enoughWords ? "敲響開戰鐘" : scope.groupId ? `這個群組只有 ${scopedEligibleCount} 個可拼的字，至少要 5 個` : "至少需要 5 個可拼單字"}</button>
       </div>
     );
   }
@@ -225,16 +244,17 @@ export default function SpellBarrageScreen() {
   if (stage === "result") {
     const won = matchWinner === "player";
     return (
-      <div className={`spell-arena result-screen ${won ? "won" : "lost"}`}>
-        <header className="spell-arena-nav"><Link to="/arena">← 遊戲</Link><span>戰局終了</span><b>{playerScore}：{cpuScore}</b></header>
-        <main className="spell-result-main">
-          <div className="spell-result-seal">{won ? "勝" : "再"}</div>
-          <p>{won ? "BARRAGE MASTERED" : "THE BEAN SURVIVED"}</p>
+      <div className="game-shell">
+        <header className="game-shell-nav"><Link to={scope.returnTo}>{backLabel}</Link><span>戰局終了</span><b>{playerScore}：{cpuScore}</b></header>
+        <main className={`game-shell-result ${won ? "won" : "lost"}`}>
+          <div className="game-shell-seal">{won ? "勝" : "再"}</div>
           <h1>{won ? "妄磚盡碎" : "豆魔逃過一劫"}</h1>
           <span>{won ? "你的真名法陣比豆魔快。" : "牠只是今天手感特別好，再轟一次。"}</span>
-          <div className="spell-final-score"><b>{playerScore}</b><i>—</i><b>{cpuScore}</b></div>
-          <button onClick={() => setStage("setup")}>調整對手再戰</button>
-          <Link to="/arena">返回競技場</Link>
+          <div className="game-shell-score"><b>{playerScore}</b><i>—</i><b>{cpuScore}</b></div>
+          <div className="game-shell-actions">
+            <button onClick={() => setStage("setup")}>調整對手再戰</button>
+            <Link to={scope.returnTo}>{scope.groupId ? "返回群組" : "返回遊戲"}</Link>
+          </div>
         </main>
       </div>
     );
@@ -246,7 +266,7 @@ export default function SpellBarrageScreen() {
 
   return (
     <div className={`spell-arena battle-screen ${outcome ? `impact-${outcome.winner}` : ""}`}>
-      <header className="spell-arena-nav"><Link to="/arena">× 離開</Link><span>第 {roundIndex + 1} 回合</span><b>先得三分</b></header>
+      <header className="spell-arena-nav"><Link to={scope.returnTo}>× 離開</Link><span>第 {roundIndex + 1} 回合</span><b>先得三分</b></header>
       <section className="spell-scoreboard" aria-label="目前比分">
         <div className="player"><span>召喚者</span><b>{playerScore}</b></div>
         <div className="round-pips">{Array.from({ length: 5 }, (_, index) => <i key={index} className={index < roundIndex ? "done" : index === roundIndex ? "active" : ""} />)}</div>

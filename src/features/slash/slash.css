@@ -216,17 +216,6 @@
   100% { transform: translate(-50%, -28px) scale(1); opacity: 0; }
 }
 
-.slash-title {
-  font-weight: 900;
-  letter-spacing: 0.35em;
-  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 3px 3px 0 #000;
-  animation: slash-title-glow 2.5s ease-in-out infinite;
-}
-@keyframes slash-title-glow {
-  0%, 100% { text-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 3px 3px 0 #000; }
-  50%      { text-shadow: 0 0 40px rgba(255, 215, 0, 1), 3px 3px 0 #000; }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .slash-card.running { animation: none; }
 }

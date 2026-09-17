@@ -18,7 +18,6 @@ import ProgressScreen from "./features/progress/ProgressScreen";
 import SettingsScreen from "./features/settings/SettingsScreen";
 import WordBeastPrototype from "./features/wordbeast/WordBeastPrototype";
 import Lv1PilotScreen from "./features/wordbeast/Lv1PilotScreen";
-import ArenaScreen from "./features/arena/ArenaScreen";
 import SpellBarrageScreen from "./features/arena/SpellBarrageScreen";
 import MeaningKarutaScreen from "./features/arena/MeaningKarutaScreen";
 import DirectScreen from "./features/direct/DirectScreen";
@@ -72,7 +71,8 @@ function AppLayout() {
           <Route path="/word/:wordId" element={<WordDetailScreen />} />
           <Route path="/progress" element={<ProgressScreen />} />
           <Route path="/settings" element={<SettingsScreen />} />
-          <Route path="/arena" element={<ArenaScreen />} />
+          {/* 競技場大廳已併入遊戲模式頁；舊書籤轉過去 */}
+          <Route path="/arena" element={<Navigate to="/games" replace />} />
           <Route path="/arena/spell-barrage" element={<SpellBarrageScreen />} />
           <Route path="/arena/meaning-karuta" element={<MeaningKarutaScreen />} />
           <Route path="/practice/direct" element={<DirectScreen />} />

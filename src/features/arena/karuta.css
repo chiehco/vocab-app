@@ -1,6 +1,5 @@
 /* 搶義花牌：延用 arena.css 的設定／結算畫面，這裡只放牌桌本身。 */
 .karuta-turn { color: #d8bb77; text-align: center; font: 800 0.6875rem "Noto Serif TC", serif; letter-spacing: .08em; }
-.karuta-arena .spell-record small { margin-left: 0; color: #756f60; font: 800 0.75rem Georgia, serif; }
 
 .karuta-table { position: relative; display: grid; min-height: calc(100svh - 131px); grid-template-rows: 74px 1fr; background: #e8dcc3; }
 .karuta-opponent { position: relative; display: flex; padding: 0 20px; align-items: center; gap: 12px; color: #ede2c9; background: #4a241f; }
@@ -39,12 +38,13 @@
 .karuta-reward b { margin-top: 8px; color: #e5c47d; font: 900 1.625rem Georgia, serif; }
 .karuta-reward span { margin-top: 4px; font: 700 0.8125rem "Noto Serif TC", serif; text-align: center; }
 
-.karuta-recap { display: grid; width: min(100%, 360px); margin: 26px 0 0; padding: 0; grid-template-columns: 1fr 1fr; gap: 6px; list-style: none; text-align: left; }
-.karuta-recap li a { display: grid; padding: 8px 10px; border-left: 3px solid #b8ad95; background: rgba(255,255,255,.35); text-decoration: none; color: inherit; }
-.karuta-recap li.player a { border-left-color: #46523f; }
-.karuta-recap li.cpu a { border-left-color: #a6483c; }
-.karuta-recap b { color: #2e3129; font: 900 0.875rem Georgia, serif; }
-.karuta-recap span { color: #746d5d; font: 650 0.6875rem "Noto Serif TC", serif; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+/* 結算頁的對子清單：外殼風格，左邊細條標記誰收走 */
+.karuta-recap { display: grid; width: 100%; margin: var(--ui-sp-2) 0 0; padding: 0; grid-template-columns: 1fr 1fr; gap: var(--ui-sp-2); list-style: none; text-align: left; }
+.karuta-recap li a { display: grid; padding: var(--ui-sp-2) var(--ui-sp-3); border-left: 3px solid var(--ui-border); border-radius: 0 var(--ui-radius) var(--ui-radius) 0; background: var(--ui-surface); color: var(--ui-text); text-decoration: none; }
+.karuta-recap li.player a { border-left-color: var(--ui-accent); }
+.karuta-recap li.cpu a { border-left-color: var(--ui-danger); }
+.karuta-recap b { font-size: var(--ui-fs-body); font-weight: 700; }
+.karuta-recap span { color: var(--ui-muted); font-size: var(--ui-fs-label); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 @keyframes karuta-match { 0% { transform: rotateY(0) scale(1); } 45% { transform: rotateY(0) scale(1.08); } 100% { transform: rotateY(0) scale(1); } }
 @keyframes karuta-miss { 30% { transform: rotateY(0) translateX(-3px); } 70% { transform: rotateY(0) translateX(3px); } 100% { transform: rotateY(0); } }

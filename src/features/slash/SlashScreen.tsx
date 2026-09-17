@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 import { contentDb } from "../../db/contentDb";
 import type { WordRecord } from "../../db/types";
 import { ALL_LEVELS } from "../../db/progressDb";
-import { buildTodayQueue } from "../../srs/queue";
+import { buildTodayQueue, type QueueItem } from "../../srs/queue";
 import { gradeFlashcard, recordQuizAnswer } from "../../checkin/recordActivity";
 import { speak, speechAvailable } from "../../lib/speech";
 import { shuffle } from "../../quiz/distractors";
+import { useGroupScope } from "../arena/useGroupScope";
 import {
   DIFFICULTIES,
   MAX_HP,
@@ -98,7 +99,11 @@ const MODE_HINTS: Record<SlashMode, string> = {
   audio: "聽發音，選出你聽到的單字",
 };
 
+const SCOPE_MIN_WORDS = 5;
+
 export default function SlashScreen() {
+  const scope = useGroupScope();
+  const scopedPool = (scope.words ?? []).filter((w) => !!w.meaningZh);
   const [phase, setPhase] = useState<Phase>("start");
   const [loading, setLoading] = useState(false);
   const [startError, setStartError] = useState<string | null>(null);
@@ -317,11 +322,24 @@ export default function SlashScreen() {
       // 不支援 WebAudio 就靜音玩
     }
     try {
-      const sessionLevels = levelSel === "全部" ? undefined : [levelSel];
-      let items = await buildTodayQueue(sessionLevels);
-      items = items.filter((it) => it.wordRecord.meaningZh);
+      let items: QueueItem[] = [];
       let free = false;
-      if (items.length === 0) {
+      if (scope.groupId) {
+        // 群組模式：只出範圍內的字，走自由練習（不寫記憶曲線）
+        if (scopedPool.length < SCOPE_MIN_WORDS) {
+          setStartError(`這個群組只有 ${scopedPool.length} 個可出題的字，至少要 ${SCOPE_MIN_WORDS} 個`);
+          return;
+        }
+        items = shuffle(scopedPool)
+          .slice(0, ROUND_SIZE)
+          .map((w) => ({ wordRecord: w, isNew: false }));
+        free = true;
+      } else {
+        const sessionLevels = levelSel === "全部" ? undefined : [levelSel];
+        items = await buildTodayQueue(sessionLevels);
+        items = items.filter((it) => it.wordRecord.meaningZh);
+      }
+      if (items.length === 0 && !scope.groupId) {
         const levels = levelSel === "全部" ? ALL_LEVELS : [levelSel];
         const pool = await contentDb.words
           .where("level")
@@ -359,72 +377,53 @@ export default function SlashScreen() {
   const core = g.current;
   const diff = core.diff;
 
+  const backLabel = scope.groupId ? "← 群組" : "← 遊戲";
+
   if (phase === "start") {
     return (
-      <div className="slash-game" style={ART_VARS}>
-        <div className="slash-bg" />
-        <div className="relative z-40 flex h-full flex-col items-center justify-center gap-6 bg-black/55 p-6 text-center">
+      <div className="game-shell">
+        <header className="game-shell-nav"><Link to={scope.returnTo}>{backLabel}</Link><span>千單斬</span><b>{scope.groupId ? "範圍練習" : "單人"}</b></header>
+        <section className="game-shell-hero">
           <div>
-            <h1 className="slash-title text-5xl">千單斬</h1>
-            <p className="mt-3 text-sm tracking-widest text-amber-100/80">
-              今日該複習的字，會化作怪物牌現身
-            </p>
+            {scope.groupId && !scope.missing && <p className="game-shell-scope">只出「{scope.group?.name ?? "群組"}」的字 · <b>{scopedPool.length} 個可出題</b></p>}
+            <h1>{scope.missing ? "找不到這個群組" : "該複習的字，化作怪物牌現身。"}</h1>
+            <p>{scope.missing ? "它可能已被刪除。回群組頁重新選一組再開局。" : "每張怪物牌限時作答，斬對連擊加分，斬錯扣血。"}</p>
           </div>
+          <img src={ART_URLS.idle} alt="" />
+        </section>
 
-          <div className="flex flex-wrap justify-center gap-1.5">
+        {!scope.groupId && (
+          <div className="level-tabs" aria-label="篩選等級">
             {LEVEL_CHOICES.map((lv) => (
-              <button
-                key={lv}
-                onClick={() => setLevelSel(lv)}
-                className={`rounded-full px-3 py-1 text-sm ${
-                  levelSel === lv
-                    ? "bg-amber-400 font-bold text-black"
-                    : "border border-amber-200/40 text-amber-100"
-                }`}
-              >
-                {lv}
-              </button>
+              <button key={lv} aria-pressed={levelSel === lv} onClick={() => setLevelSel(lv)}>{lv}</button>
             ))}
           </div>
+        )}
 
-          <div className="flex gap-2">
-            {DIFFICULTIES.map((d, i) => (
-              <button
-                key={d.label}
-                onClick={() => setDiffIdx(i)}
-                className={`rounded px-3 py-2 text-sm ${
-                  diffIdx === i
-                    ? "bg-amber-400 font-bold text-black"
-                    : "border border-amber-200/40 text-amber-100"
-                }`}
-              >
-                {d.label}
-                <span className="block text-xs opacity-70">
-                  {d.cards} 牌 {d.timerMs / 1000}s
-                </span>
-              </button>
-            ))}
-          </div>
+        <section className="game-shell-options" aria-label="選擇難度">
+          <p>選擇難度</p>
+          {DIFFICULTIES.map((d, i) => (
+            <button key={d.label} aria-pressed={diffIdx === i} onClick={() => setDiffIdx(i)}>
+              <span>{d.label}</span><small>{d.cards} 張牌 · {d.timerMs / 1000} 秒</small>
+            </button>
+          ))}
+        </section>
 
-          {startError && <p className="text-sm text-red-300">{startError}</p>}
+        {startError && <p className="game-shell-error">{startError}</p>}
 
-          <button
-            onClick={() => void startGame()}
-            disabled={loading}
-            className="rounded bg-gradient-to-b from-amber-300 to-amber-500 px-14 py-3.5 text-xl font-black tracking-[0.5em] text-amber-950 shadow-lg disabled:opacity-50"
-          >
-            {loading ? "備戰中…" : "開 局"}
-          </button>
+        <button
+          className="game-shell-start"
+          onClick={() => void startGame()}
+          disabled={loading || scope.loading || scope.missing}
+        >
+          {loading ? "備戰中…" : "開局"}
+        </button>
 
-          <p className="max-w-xs text-xs leading-5 text-amber-100/60">
-            斬對＝完成一次複習、斬錯或放走正解＝標記忘記，戰果直接記入記憶曲線。
-            沒有到期複習時自動改為自由練習。
-          </p>
-
-          <Link to="/" className="text-sm text-amber-100/70 underline">
-            離開道場
-          </Link>
-        </div>
+        <p className="game-shell-note">
+          {scope.groupId
+            ? "範圍練習只記戰果，不影響記憶曲線的複習排程。"
+            : "斬對＝完成一次複習、斬錯或放走正解＝標記忘記，戰果直接記入記憶曲線。沒有到期複習時自動改為自由練習。"}
+        </p>
       </div>
     );
   }
@@ -433,65 +432,43 @@ export default function SlashScreen() {
     const total = core.correct + core.wrong;
     const acc = total === 0 ? 0 : Math.round((core.correct / total) * 100);
     return (
-      <div className="slash-game" style={ART_VARS}>
-        <div className="slash-bg" />
-        <div className="relative z-40 flex h-full flex-col items-center justify-center gap-5 overflow-y-auto bg-black/60 p-6 text-center">
-          <h1
-            className={`text-4xl font-black tracking-[0.3em] ${
-              core.won ? "text-amber-300" : "text-red-400"
-            }`}
-          >
-            {core.won ? "闖關成功 ⚔️" : "武士陣亡 💀"}
-          </h1>
-          {freePlay && <p className="text-xs text-amber-100/70">自由練習（今日無到期複習）</p>}
+      <div className="game-shell">
+        <header className="game-shell-nav"><Link to={scope.returnTo}>{backLabel}</Link><span>戰局終了</span><b>{core.score} 分</b></header>
+        <main className={`game-shell-result ${core.won ? "won" : "lost"}`}>
+          <div className="game-shell-seal">{core.won ? "斬" : "再"}</div>
+          <h1>{core.won ? "闖關成功" : "武士陣亡"}</h1>
+          <span>
+            命中率 {acc}%
+            {freePlay && (scope.groupId ? ` · 「${scope.group?.name ?? "群組"}」範圍練習` : " · 自由練習（今日無到期複習）")}
+          </span>
 
-          <div className="grid grid-cols-4 gap-3">
+          <div className="game-shell-stats">
             {[
               ["斬殺", core.correct],
               ["失誤", core.wrong],
               ["最大連擊", core.maxCombo],
               ["得分", core.score],
             ].map(([label, value]) => (
-              <div key={label} className="rounded-lg bg-white/10 px-3 py-2">
-                <p className="text-2xl font-black text-amber-200">{value}</p>
-                <p className="mt-0.5 text-xs text-amber-100/70">{label}</p>
-              </div>
+              <div key={label}><b>{value}</b><span>{label}</span></div>
             ))}
           </div>
-          <p className="text-sm text-amber-100/80">命中率 {acc}%</p>
 
           {core.missed.length > 0 && (
-            <div className="w-full max-w-sm">
-              <p className="mb-2 text-sm font-bold text-red-300">逃走的怪物（點進去深析）</p>
-              <div className="flex flex-wrap justify-center gap-2">
+            <>
+              <p className="game-shell-section-title">逃走的怪物（點進去深析）</p>
+              <div className="game-shell-pills">
                 {core.missed.map((w) => (
-                  <Link
-                    key={w.word}
-                    to={`/word/${w.wordId}`}
-                    className="rounded-full bg-white/15 px-3 py-1 text-sm text-white underline"
-                  >
-                    {w.word}
-                  </Link>
+                  <Link key={w.word} to={`/word/${w.wordId}`}>{w.word}</Link>
                 ))}
               </div>
-            </div>
+            </>
           )}
 
-          <div className="mt-2 flex gap-3">
-            <button
-              onClick={() => setPhase("start")}
-              className="rounded bg-gradient-to-b from-amber-300 to-amber-500 px-8 py-3 font-black text-amber-950"
-            >
-              再戰一場
-            </button>
-            <Link
-              to="/"
-              className="rounded border border-amber-200/50 px-8 py-3 font-bold text-amber-100"
-            >
-              回首頁
-            </Link>
+          <div className="game-shell-actions">
+            <button onClick={() => setPhase("start")}>再戰一場</button>
+            <Link to={scope.returnTo}>{scope.groupId ? "返回群組" : "返回遊戲"}</Link>
           </div>
-        </div>
+        </main>
       </div>
     );
   }
@@ -504,7 +481,7 @@ export default function SlashScreen() {
 
       {/* HUD */}
       <div className="relative z-40 flex items-center justify-between gap-2 p-3">
-        <Link to="/" className="rounded bg-black/40 px-2.5 py-1 text-sm text-white/80">
+        <Link to={scope.returnTo} className="rounded bg-black/40 px-2.5 py-1 text-sm text-white/80">
           ✕
         </Link>
         <div className="text-lg tracking-wider" aria-label={`血量 ${core.hp}/${MAX_HP}`}>
