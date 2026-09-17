@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import SpeakerButton from '../../components/SpeakerButton';
+import { useSwipeNavigate } from '../../hooks/useSwipeNavigate';
 import { curriculumUnits, findUnit, templateGroup, unitsForLevel } from '../direct/model';
 import { saveGroup, startSession } from '../direct/store';
 import { reviewedExample, practiceIds } from './model';
@@ -29,6 +30,11 @@ export default function VocabularyScreen(){
   const usageLabel=level==='LV3'?'文法與搭配':'用法與搭配';
   function choose(values:Record<string,string>){setError('');setParams({unit:String(unit),...values});}
   function show(id:string){choose({level,kind,item:id});}
+  const cardRef=useSwipeNavigate<HTMLElement>({
+    enabled:matches.length>1,
+    onPrev:()=>{if(index>0)show(matches[index-1].learningItemId);},
+    onNext:()=>{if(index<matches.length-1)show(matches[index+1].learningItemId);},
+  });
   async function practice(){if(busy||!item||!current)return;setBusy(true);setError('');try{
     const scope=practiceIds(items),batch=practiceIds(matches.slice(index,index+10));
     const s=await startSession(batch,`${current.name} · ${kind==='grammar'?usageLabel:'詞彙'}自由練習`,undefined,scope);
@@ -49,7 +55,7 @@ export default function VocabularyScreen(){
         {item&&<label>跳到項目<select aria-label="跳到項目" value={item.learningItemId} onChange={e=>show(e.target.value)}>{matches.map((i,n)=><option key={i.learningItemId} value={i.learningItemId}>{n+1}. {i.displayWord??i.pattern}</option>)}</select></label>}
       </details>
       {item?<>
-        <article className="vocab-card" aria-label="學習字卡">
+        <article className="vocab-card swipe-pane" aria-label="學習字卡" ref={cardRef}>
           <p className="direct-kicker">{index+1} / {matches.length} · 教材第 {item.sourcePage} 頁</p>
           <h2>{item.displayWord??item.pattern}</h2>
           {item.displayWord&&<SpeakerButton text={item.displayWord}/>}
@@ -65,6 +71,7 @@ export default function VocabularyScreen(){
           </>}
         </article>
         <div className="vocab-levels"><button disabled={index===0} onClick={()=>show(matches[index-1].learningItemId)}>上一張</button><button disabled={index===matches.length-1} onClick={()=>show(matches[index+1].learningItemId)}>下一張</button></div>
+        {matches.length>1&&<p className="direct-muted swipe-hint">在字卡上左右滑動也可以換字卡。</p>}
         <button className="direct-primary" disabled={busy} onClick={()=>void practice()}>從這裡自由練習（{Math.min(10,matches.length-index)} 題）</button>
         <p className="direct-muted">瀏覽字卡不代表已熟悉；練習保留首答，不改變單字複習排程。</p>
       </>:<p role="status">找不到符合的項目，請換個關鍵字。</p>}

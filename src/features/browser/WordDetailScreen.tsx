@@ -2,13 +2,14 @@ import type { CustomGroup } from '../direct/model';
 import { readWordList } from '../modes/wordLists';
 import type { WordList } from '../modes/wordLists';
 import { Fragment, useEffect, useState } from "react";
-import { Link, useParams, useSearchParams } from "react-router-dom";
+import { Link, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
 import { contentDb } from "../../db/contentDb";
 import { getCardState } from "../../db/progressIdentity";
 import type { WordRecord } from "../../db/types";
 import SpeakerButton from "../../components/SpeakerButton";
 import { useCardPronunciation } from "../../hooks/useCardPronunciation";
+import { useSwipeNavigate } from "../../hooks/useSwipeNavigate";
 import { getWordBeastAsset } from "../wordbeast/wordBeastAssets";
 import ExamTierBadge from "../wordbeast/ExamTierBadge";
 import { getExamStarText } from "../wordbeast/examTier";
@@ -63,6 +64,14 @@ export default function WordDetailScreen() {
   const groupReturn = listId ? (group as WordList|undefined)?.returnTo ?? '/modes/words' : `/groups?group=${encodeURIComponent(groupId??'')}`;
   const groupQuery = `${listId?'list':'group'}=${encodeURIComponent(groupId??'')}`;
   const groupIndex = group?.wordIds?.indexOf(wordId ?? '') ?? -1;
+  const navigate = useNavigate();
+  const siblingIds = group?.wordIds ?? [];
+  // 正反面維持用按鈕，左右滑只負責在群組內換字。
+  const pageRef = useSwipeNavigate<HTMLDivElement>({
+    enabled: groupIndex >= 0 && siblingIds.length > 1,
+    onPrev: () => { if (groupIndex > 0) navigate(`/word/${siblingIds[groupIndex - 1]}?${groupQuery}`); },
+    onNext: () => { if (groupIndex >= 0 && groupIndex < siblingIds.length - 1) navigate(`/word/${siblingIds[groupIndex + 1]}?${groupQuery}`); },
+  });
   const [cardSide, setCardSide] = useState<"front" | "back">("front");
   const [backTab, setBackTab] = useState<DossierBackTab>("meaning");
   useEffect(() => {
@@ -163,7 +172,7 @@ export default function WordDetailScreen() {
   ];
 
   return (
-    <div className="word-dossier-page">
+    <div className="word-dossier-page swipe-pane" ref={pageRef}>
       <header className="word-dossier-nav">
         <Link to="/browse">← 單字總表</Link><span>{word.wordId}</span><b>{word.level}</b>
       </header>
@@ -173,6 +182,7 @@ export default function WordDetailScreen() {
         <span>{groupIndex+1} / {group.wordIds!.length}</span>
         <div>{groupIndex > 0 && <Link to={`/word/${group.wordIds![groupIndex-1]}?${groupQuery}`}>上一字</Link>}
         {groupIndex < group.wordIds!.length-1 && <Link to={`/word/${group.wordIds![groupIndex+1]}?${groupQuery}`}>下一字 →</Link>}</div>
+        {group.wordIds!.length > 1 && <small className="swipe-hint">左右滑動也可以換字。</small>}
       </nav>}
 
       <div className="dossier-card-controls" aria-label="字卡正反面">

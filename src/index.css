@@ -119,3 +119,10 @@ body {
 }
 .speech-notice p { margin: 0; flex: 1; }
 .speech-notice button { min-width: 32px; min-height: 32px; font-size: 1.5rem; }
+
+/* 左右滑換字卡。pan-y 保留頁面垂直捲動，只接手水平手勢。 */
+.swipe-pane { touch-action: pan-y; }
+.swipe-hint { display: block; margin: var(--ui-sp-2) 0 0; color: var(--ui-muted); font-size: var(--ui-fs-secondary); }
+.dossier-group-nav .swipe-hint { flex-basis: 100%; margin: 0; }
+/* 滑鼠裝置沒有這個手勢，只留上一張／下一張按鈕。 */
+@media (hover: hover) and (pointer: fine) { .swipe-hint { display: none; } }
