@@ -50,14 +50,15 @@ function NavIcon({ name }: { name: string }) {
 function AppLayout() {
   const location = useLocation();
   useEffect(() => () => stopSpeech(), [location.pathname]);
-  const immersive = location.pathname === "/slash"
-    || location.pathname.startsWith("/wordbeast")
+  const gameRoute = location.pathname === "/slash"
     || location.pathname.startsWith("/arena/spell-barrage")
-    || location.pathname.startsWith("/arena/meaning-karuta")
+    || location.pathname.startsWith("/arena/meaning-karuta");
+  const immersive = gameRoute
+    || location.pathname.startsWith("/wordbeast")
     || /^\/units\/LV[1-6]\/\d+$/.test(location.pathname);
 
   return (
-    <div className={immersive ? "mx-auto flex min-h-screen max-w-lg flex-col" : "app-frame flex min-h-screen flex-col"}>
+    <div className={immersive && !gameRoute ? "mx-auto flex min-h-screen max-w-lg flex-col" : "app-frame flex min-h-screen flex-col"}>
       <main className={immersive ? "flex-1" : "flex-1 pb-20"}>
         <Routes>
           <Route path="/" element={<ModeScreen />} />
