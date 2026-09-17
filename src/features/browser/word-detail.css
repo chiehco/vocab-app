@@ -64,6 +64,8 @@
 .back-meaning > small { color: var(--ui-muted); font-size: var(--ui-fs-secondary); font-weight: 600; }
 .back-meaning > h2 { margin: var(--ui-sp-1) 0 0; line-height: 1.5; }
 .back-meaning > p { margin: var(--ui-sp-3) 0 0; color: var(--ui-muted); font-size: var(--ui-fs-body); }
+.back-meaning > .back-meaning-gloss { color: var(--ui-text); }
+.back-meaning > .back-meaning-gloss small { display: block; margin-bottom: 2px; color: var(--ui-muted); font-size: var(--ui-fs-label); font-weight: 600; }
 .back-meaning ol { margin: var(--ui-sp-4) 0 0; padding: 0; list-style: none; }
 .back-meaning li { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: var(--ui-sp-2); align-items: baseline; padding: 10px 0; border-top: 1px solid var(--ui-border); }
 .back-meaning li b { color: var(--ui-muted); font-size: var(--ui-fs-label); font-weight: 600; }

@@ -224,7 +224,8 @@ export default function WordDetailScreen() {
                 {senses && senses.length > 0 ? (
                   <ol>{senses.slice(0, 4).map((sense) => <li key={sense.senseId}><b>{sense.sensePos}</b><span>{sense.meaningZh}</span>{sense.isExamSense && <i>考義</i>}</li>)}</ol>
                 ) : (
-                  <p>{displaySense.source === 'curriculum' ? '此處顯示已核准的教材義項。' : '目前只有字典整體釋義，還沒拆出常用意思與考試意思。已列入待補清單。'}</p>
+                  // 義項表還沒有這個字：退回主表的整體釋義，讓學習者至少看得到完整字義
+                  word.meaningZh && word.meaningZh !== displaySense.meaning && <p className="back-meaning-gloss"><small>字典釋義 · {word.posAll.join(' ')}</small>{word.meaningZh}</p>
                 )}
                 {approvedCurriculumCards(word.word, word.wordId).length > 1 && <ul className="curriculum-meanings">
                   {approvedCurriculumCards(word.word, word.wordId).map(card => <li key={card.learningItemId}>
