@@ -31,6 +31,13 @@ export function approvedCurriculumCard(word: string, wordId?: string) {
   return approvedCurriculumCards(word, wordId)[0];
 }
 
+// Unit19 p.207 explicitly teaches these uncountable nouns with "a piece of".
+export function approvedCurriculumUsage(word: string, wordId: string): string | undefined {
+  const key = word.trim().toLowerCase();
+  if (!approvedCurriculumCards(key, wordId).some(c => c.unitName === unit19.template.title)) return undefined;
+  return key === 'hardware' || key === 'software' ? `a piece of ${key}` : undefined;
+}
+
 export function approvedCurriculumIllustration(word: string, src: string) {
   return approvedCurriculumCards(word).find(card => src.split('?')[0].endsWith('/' + card.illustration.path))?.illustration;
 }

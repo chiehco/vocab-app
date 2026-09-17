@@ -9,7 +9,7 @@ import { progressDb } from '../../db/progressDb';
 import { templateGroup, unitItems, practiceQuestions, questionForMode, isCorrectAnswer } from '../direct/model';
 import { saveGroup, startGroupSession, switchPracticeMode, updateQuestion, submitAnswer, nextQuestion } from '../direct/store';
 import { reviewedExample, practiceIds } from './model';
-import { approvedCurriculumCards, approvedCurriculumIllustration } from './approvedCurriculum';
+import { approvedCurriculumCards, approvedCurriculumIllustration, approvedCurriculumUsage } from './approvedCurriculum';
 import { getWordBeastAsset } from '../wordbeast/wordBeastAssets';
 import { getWordDisplaySense } from '../browser/wordDisplay';
 import { sortWorkspaceWords, workspaceWords } from '../modes/wordLists';
@@ -35,6 +35,7 @@ it('exposes approved art and meaning for every actual official word on a fresh i
  expect(sortWorkspaceWords(group,bootstrap.examPriorities as ExamPriorityRecord[])).toHaveLength(39);
 });
 it('retains the final two revisions and accepts sled without accepting a different vehicle',()=>{
+ for(const name of ['hardware','software']){const w=words.find(w=>w.word===name)!;expect(approvedCurriculumUsage(name,w.wordId)).toBe('a piece of '+name);expect(approvedCurriculumUsage(name,'W000001')).toBeUndefined();}
  const h=unit.learningItems.find(i=>i.displayWord==='hardware')!;expect(h.illustration!.captionEn).toBe('The screen is a piece of computer hardware.');expect(h.originalExample.provenance).toBe('translated_from_user_chinese');
  expect(unit.learningItems.find(i=>i.displayWord==='autograph')!.illustration!.path).toContain('19-30-v2.webp');
  const q=practiceQuestions.find(q=>q.questionId==='CLOZE-ORIG-LV4U19-sledge')!;expect(isCorrectAnswer(q,' SLED ')).toBe(true);expect(isCorrectAnswer(q,'sleigh')).toBe(false);

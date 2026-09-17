@@ -18,7 +18,7 @@ import { useIllustrationMedia } from "../wordbeast/useIllustrationMedia";
 import { buildSenseCountByWord } from "../wordbeast/wordTraits";
 import { MORPHEME_TYPE_LABEL, NOTE_TYPE_LABEL, RELATION_TYPE_LABEL, REVERSE_RELATION_LABEL, STATE_LABEL } from "./wordLabels";
 import { getWordDisplaySense } from "./wordDisplay";
-import { approvedCurriculumCards } from '../vocabulary/approvedCurriculum';
+import { approvedCurriculumCards, approvedCurriculumUsage } from '../vocabulary/approvedCurriculum';
 import { buildRootFamilies, normalizeMorphemeKey, pickFamilyMorphemes } from "./rootFamily";
 import "./word-detail.css";
 import { progressDb } from '../../db/progressDb';
@@ -146,6 +146,7 @@ export default function WordDetailScreen() {
   const sortedMorphemes = morphemes?.slice().sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
   const senseCount = buildSenseCountByWord(senses ?? []).get(word.word) ?? 0;
   const displaySense = getWordDisplaySense(word, senses ?? []);
+  const usagePattern = approvedCurriculumUsage(word.word, word.wordId) ?? word.usagePattern;
   const illustrationMeaning = displaySense.source !== 'curriculum' && asset && (!word.imageWordId || word.imageWordId === word.wordId)
     ? illustration?.targetHint?.trim() : undefined;
   const examStyleExamples = examples?.filter((example) => example.exampleType === "exam") ?? [];
@@ -292,7 +293,7 @@ export default function WordDetailScreen() {
         </section>
       )}
 
-      {word.usagePattern && <section className="dossier-usage"><h2>常用搭配</h2><p>{word.usagePattern}</p></section>}
+      {usagePattern && <section className="dossier-usage"><h2>常用搭配</h2><p>{usagePattern}</p></section>}
 
       {notes && notes.length > 0 && (
         <section className="dossier-section">
