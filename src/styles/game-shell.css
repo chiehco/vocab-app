@@ -17,6 +17,7 @@
 .game-shell-hero h1 { margin: 0 0 var(--ui-sp-2); font-size: var(--ui-fs-display); font-weight: 700; line-height: var(--ui-lh-tight); }
 .game-shell-hero p { margin: 0; color: var(--ui-muted); font-size: var(--ui-fs-body); }
 .game-shell-hero img { width: 88px; height: 88px; object-fit: contain; }
+.game-shell-hero:not(:has(img)) { grid-template-columns: minmax(0, 1fr); }
 .game-shell-scope { margin: 0 0 var(--ui-sp-2); color: var(--ui-accent); font-size: var(--ui-fs-secondary); font-weight: 600; }
 .game-shell-scope b { font-weight: inherit; white-space: nowrap; }
 
@@ -28,6 +29,12 @@
 .game-shell-options button small { color: var(--ui-muted); font-size: var(--ui-fs-secondary); text-align: right; }
 .game-shell-options button[aria-pressed="true"] { border-radius: var(--ui-radius); background: var(--ui-accent-soft); color: var(--ui-accent); }
 .game-shell-options button[aria-pressed="true"] small { color: var(--ui-accent); }
+/* 自選群組展開的清單：縮排一層、字級小一號，選中同樣用淡綠底 */
+.game-shell-sublist { display: grid; padding: var(--ui-sp-2) 0 var(--ui-sp-2) var(--ui-sp-4); border-bottom: 1px solid var(--ui-border); }
+.game-shell-sublist button { min-height: 40px; padding-block: var(--ui-sp-1); border-bottom: 0; font-size: var(--ui-fs-secondary); }
+.game-shell-sublist button span { font-weight: 600; }
+.game-shell-sublist button small { font-size: var(--ui-fs-label); }
+.game-shell-options .game-shell-note { padding: var(--ui-sp-2) 0 var(--ui-sp-3) var(--ui-sp-4); margin: 0; border-bottom: 1px solid var(--ui-border); }
 
 /* 戰績列 */
 .game-shell-record { display: flex; flex-wrap: wrap; gap: var(--ui-sp-3); margin-top: var(--ui-sp-4); color: var(--ui-muted); font-size: var(--ui-fs-secondary); }

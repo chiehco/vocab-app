@@ -23,6 +23,7 @@ import {
   dealBoard,
   flipCard,
   isCardAvailable,
+  isKarutaWordEligible,
   karutaWinner,
   observeCard,
   resolveTurn,
@@ -34,6 +35,7 @@ import {
 import "./arena.css";
 import "./karuta.css";
 import { useGroupScope } from "./useGroupScope";
+import GroupDeckPicker from "./GroupDeckPicker";
 
 type Stage = "setup" | "playing" | "result";
 interface KarutaRecord { wins: number; losses: number; draws: number }
@@ -157,7 +159,7 @@ export default function MeaningKarutaScreen() {
     return () => window.clearTimeout(timer);
   }, [game]);
 
-  const backLabel = scope.groupId ? "← 群組" : "← 遊戲";
+  const backLabel = scope.origin === "group" ? "← 群組" : "← 遊戲";
 
   if (scope.missing) {
     return (
@@ -184,6 +186,8 @@ export default function MeaningKarutaScreen() {
           </div>
           {OPPONENT_ASSET && <img src={OPPONENT_ASSET} alt="" />}
         </section>
+
+        <GroupDeckPicker gameKey="meaning-karuta" scope={scope} eligible={isKarutaWordEligible} minimum={MIN_PAIR_COUNT} />
 
         <section className="game-shell-options" aria-label="選擇豆魔難度">
           <p>選擇對手</p>
@@ -229,7 +233,7 @@ export default function MeaningKarutaScreen() {
           </ul>
           <div className="game-shell-actions">
             <button onClick={() => setStage("setup")}>調整對手再戰</button>
-            <Link to={scope.returnTo}>{scope.groupId ? "返回群組" : "返回遊戲"}</Link>
+            <Link to={scope.returnTo}>{scope.origin === "group" ? "返回群組" : "返回遊戲"}</Link>
           </div>
         </main>
       </div>

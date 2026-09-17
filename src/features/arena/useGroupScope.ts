@@ -6,6 +6,9 @@ import { resolveGroupWords } from "../direct/groupScope";
 import type { CustomGroup } from "../direct/model";
 import type { WordRecord } from "../../db/types";
 
+/** 範圍是從哪裡指定的：群組頁連過來，或在遊戲設定頁自己選的 */
+export type GroupScopeOrigin = "group" | "game" | null;
+
 export interface GroupScope {
   groupId: string | null;
   group: CustomGroup | undefined;
@@ -14,7 +17,8 @@ export interface GroupScope {
   loading: boolean;
   /** 有 groupId 但群組已不存在 */
   missing: boolean;
-  /** 離開遊戲時回哪裡：群組頁或遊戲模式頁 */
+  origin: GroupScopeOrigin;
+  /** 離開遊戲時回哪裡：群組頁連來的回群組頁，其餘回遊戲模式頁 */
   returnTo: string;
 }
 
@@ -22,6 +26,7 @@ export interface GroupScope {
 export function useGroupScope(fallbackReturnTo = "/games"): GroupScope {
   const [searchParams] = useSearchParams();
   const groupId = searchParams.get("group");
+  const origin: GroupScopeOrigin = groupId ? (searchParams.get("from") === "game" ? "game" : "group") : null;
   const scope = useLiveQuery(async () => {
     if (!groupId) return null;
     const [group, words] = await Promise.all([progressDb.customGroups.get(groupId), contentDb.words.toArray()]);
@@ -34,6 +39,7 @@ export function useGroupScope(fallbackReturnTo = "/games"): GroupScope {
     words: scope?.words,
     loading,
     missing: !!groupId && !loading && !scope?.group,
-    returnTo: groupId ? `/groups?group=${encodeURIComponent(groupId)}` : fallbackReturnTo,
+    origin,
+    returnTo: origin === "group" ? `/groups?group=${encodeURIComponent(groupId!)}` : fallbackReturnTo,
   };
 }

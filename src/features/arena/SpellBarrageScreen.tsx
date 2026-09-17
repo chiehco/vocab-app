@@ -13,6 +13,7 @@ import {
   buildLetterTiles,
   composeArenaAnswer,
   getCpuFinishMs,
+  isArenaWordEligible,
   normalizeArenaAnswer,
   selectArenaWords,
   selectScopedArenaWords,
@@ -22,6 +23,7 @@ import {
 import "./arena.css";
 import { useToday } from "../../hooks/useToday";
 import { useGroupScope } from "./useGroupScope";
+import GroupDeckPicker from "./GroupDeckPicker";
 
 type Stage = "setup" | "playing" | "result";
 type Fighter = "player" | "cpu";
@@ -198,7 +200,7 @@ export default function SpellBarrageScreen() {
     return () => window.clearTimeout(timer);
   }, [outcome, prepareRound, roundIndex, roundWords]);
 
-  const backLabel = scope.groupId ? "← 群組" : "← 遊戲";
+  const backLabel = scope.origin === "group" ? "← 群組" : "← 遊戲";
 
   if (scope.missing) {
     return (
@@ -225,6 +227,8 @@ export default function SpellBarrageScreen() {
           </div>
           {OPPONENT_ASSET && <img src={OPPONENT_ASSET} alt="" />}
         </section>
+
+        <GroupDeckPicker gameKey="spell-barrage" scope={scope} eligible={isArenaWordEligible} minimum={5} />
 
         <section className="game-shell-options" aria-label="選擇豆魔難度">
           <p>選擇對手</p>
@@ -253,7 +257,7 @@ export default function SpellBarrageScreen() {
           <div className="game-shell-score"><b>{playerScore}</b><i>—</i><b>{cpuScore}</b></div>
           <div className="game-shell-actions">
             <button onClick={() => setStage("setup")}>調整對手再戰</button>
-            <Link to={scope.returnTo}>{scope.groupId ? "返回群組" : "返回遊戲"}</Link>
+            <Link to={scope.returnTo}>{scope.origin === "group" ? "返回群組" : "返回遊戲"}</Link>
           </div>
         </main>
       </div>

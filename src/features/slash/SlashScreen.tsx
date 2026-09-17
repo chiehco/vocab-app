@@ -8,6 +8,7 @@ import { gradeFlashcard, recordQuizAnswer } from "../../checkin/recordActivity";
 import { speak, speechAvailable } from "../../lib/speech";
 import { shuffle } from "../../quiz/distractors";
 import { useGroupScope } from "../arena/useGroupScope";
+import GroupDeckPicker from "../arena/GroupDeckPicker";
 import {
   DIFFICULTIES,
   MAX_HP,
@@ -100,6 +101,7 @@ const MODE_HINTS: Record<SlashMode, string> = {
 };
 
 const SCOPE_MIN_WORDS = 5;
+const hasGloss = (w: WordRecord) => !!w.meaningZh;
 
 export default function SlashScreen() {
   const scope = useGroupScope();
@@ -377,7 +379,7 @@ export default function SlashScreen() {
   const core = g.current;
   const diff = core.diff;
 
-  const backLabel = scope.groupId ? "← 群組" : "← 遊戲";
+  const backLabel = scope.origin === "group" ? "← 群組" : "← 遊戲";
 
   if (phase === "start") {
     return (
@@ -389,8 +391,10 @@ export default function SlashScreen() {
             <h1>{scope.missing ? "找不到這個群組" : "該複習的字，化作怪物牌現身。"}</h1>
             <p>{scope.missing ? "它可能已被刪除。回群組頁重新選一組再開局。" : "每張怪物牌限時作答，斬對連擊加分，斬錯扣血。"}</p>
           </div>
-          <img src={ART_URLS.idle} alt="" />
+          {/* 劍客小圖待重畫，先不放 */}
         </section>
+
+        <GroupDeckPicker gameKey="slash" scope={scope} eligible={hasGloss} minimum={SCOPE_MIN_WORDS} countLabel="可出題" />
 
         {!scope.groupId && (
           <div className="level-tabs" aria-label="篩選等級">
@@ -466,7 +470,7 @@ export default function SlashScreen() {
 
           <div className="game-shell-actions">
             <button onClick={() => setPhase("start")}>再戰一場</button>
-            <Link to={scope.returnTo}>{scope.groupId ? "返回群組" : "返回遊戲"}</Link>
+            <Link to={scope.returnTo}>{scope.origin === "group" ? "返回群組" : "返回遊戲"}</Link>
           </div>
         </main>
       </div>
