@@ -1,4 +1,13 @@
+import { approvedCurriculumIllustration } from '../features/vocabulary/approvedCurriculum';
 const SINGLE_CHARACTER_STOP_WORDS = new Set(["的", "了", "是", "在", "有", "和", "與", "或", "為", "可", "會", "能", "把", "讓"]);
+
+export function resolveWordImageClue(word: string, src: string | null | undefined,
+  captionZh?: string | null, sentenceZh?: string | null, targetHint?: string | null, meaningHint?: string | null): ImageClueCopy | null {
+  const approved = src ? approvedCurriculumIllustration(word, src) : undefined;
+  // The exact rendered image determines its caption; legacy examples cannot describe a new image.
+  return approved ? resolveImageClueCopy(approved.captionZh, null)
+    : resolveImageClueCopy(captionZh, sentenceZh, targetHint, meaningHint);
+}
 
 export interface ImageClueCopy {
   label: "這張圖在畫什麼" | "例句中譯";

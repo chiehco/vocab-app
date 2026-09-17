@@ -1,7 +1,15 @@
 import { describe, expect, it } from "vitest";
-import { findImageClueHighlight, resolveImageClueCopy, splitImageCaption } from "./imageClue";
+import { findImageClueHighlight, resolveImageClueCopy, resolveWordImageClue, splitImageCaption } from "./imageClue";
 
 describe("image clue highlighting", () => {
+  it('uses the approved caption of the displayed curriculum image rather than an older example or hint', () => {
+    expect(resolveWordImageClue('hardware', './curriculum/lv4-u19/19-09.webp?v=release', '舊圖說', '舊例句', '鍵盤', '舊提示'))
+      .toEqual({ label: '這張圖在畫什麼', text: '螢幕是電腦硬體的一種。', targetHint: undefined });
+    expect(resolveWordImageClue('hardware', './wordbeast/other.webp', '另一張圖說', '例句', '提示'))
+      .toEqual({ label: '這張圖在畫什麼', text: '另一張圖說', targetHint: '提示' });
+    expect(resolveWordImageClue('immigration', './curriculum/lv4-u19/19-01.webp')?.text)
+      .toBe('地圖顯示從一個國家移居到另一個國家的過程。');
+  });
   it("labels picture captions and example translations by their real source", () => {
     expect(resolveImageClueCopy("豆豆正在下樓。", "例句翻譯。", "下樓", "翻譯"))
       .toEqual({ label: "這張圖在畫什麼", text: "豆豆正在下樓。", targetHint: "下樓" });

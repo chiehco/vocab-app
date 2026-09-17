@@ -10,4 +10,6 @@ Validation: 237 tests passed; build, lint and diff checks passed. Isolated brows
 
 Two pre-existing build errors were also corrected: the group scope fixture supplied null to an optional string, and the quiz treated WordList as lacking itemIds despite extending CustomGroup. Both group types now use their common resolver.
 
+Follow-up image-quiz verification found that the image clue still used a legacy dictionary example. It now resolves the caption against the exact rendered approved image, including its version query, and preserves the old fallback for non-curriculum images. All 238 tests pass; the browser image question for hardware displays the approved screen caption. Build and lint pass.
+
 Master spreadsheet, dictionary source rows, SRS and user progress are unchanged.

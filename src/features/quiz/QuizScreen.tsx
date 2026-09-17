@@ -21,7 +21,7 @@ import ExamTierBadge from "../wordbeast/ExamTierBadge";
 import WordTraitBadges from "../wordbeast/WordTraitBadges";
 import ResilientBeastImage from "../wordbeast/ResilientBeastImage";
 import { buildConfusableWordSet, buildMorphemeWordSet, buildSenseCountByWord } from "../wordbeast/wordTraits";
-import { findImageClueHighlight, resolveImageClueCopy, splitImageCaption, type ImageClueCopy } from "../../quiz/imageClue";
+import { findImageClueHighlight, resolveWordImageClue, splitImageCaption, type ImageClueCopy } from "../../quiz/imageClue";
 import { useToday } from "../../hooks/useToday";
 import { getExamUnit, getStudyUnit, parseUnitOrder, unitOrderLabel } from "../units/unitPlan";
 import "../realm-pages.css";
@@ -343,7 +343,7 @@ export default function QuizScreen() {
   const imageMedia = mode === "image" ? mediaByWord.get(question.target.word) : undefined;
   const imageExample = mode === "image" ? exampleByWord.get(question.target.word) : undefined;
   const imageClue = mode === "image"
-    ? resolveImageClueCopy(imageMedia?.captionZh, imageExample?.sentenceZh, imageMedia?.targetHint, imageExample?.meaningHint)
+    ? resolveWordImageClue(question.target.word, targetAsset, imageMedia?.captionZh, imageExample?.sentenceZh, imageMedia?.targetHint, imageExample?.meaningHint)
     : null;
   const sealed = mode === "image" && answered === question.target.word;
 
