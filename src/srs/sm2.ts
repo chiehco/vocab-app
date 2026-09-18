@@ -71,3 +71,19 @@ export function scheduleRecall(card: CardState, grade: Grade, today: string, exa
   }
   return applyGrade(card, grade, today, examDate);
 }
+
+/** 使用者宣告已知時直接排到的間隔：跳過 1→6 天的學習梯子，考前 28 天仍能再確認一次。 */
+export const KNOWN_INTERVAL_DAYS = 21;
+
+/** 純函式：使用者答對後宣告「我已經會了」，把卡片直接排成三週後的成熟卡。 */
+export function markKnown(card: CardState, today: string): CardState {
+  return {
+    ...card,
+    state: "review",
+    repetitions: Math.max(card.repetitions, 2),
+    intervalDays: KNOWN_INTERVAL_DAYS,
+    dueDate: addDaysStr(today, KNOWN_INTERVAL_DAYS),
+    lastReviewedAt: new Date().toISOString(),
+    practicePending: false,
+  };
+}

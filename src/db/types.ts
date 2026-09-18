@@ -154,7 +154,8 @@ export type ReviewMode =
   | "quiz-m2w"
   | "quiz-image"
   | "fill-blank"
-  | "slash";
+  | "slash"
+  | "known";
 
 export interface ReviewLogEntry {
   id?: number;

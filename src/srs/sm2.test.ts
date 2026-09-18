@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { applyGrade, scheduleRecall, newCardState } from "./sm2";
+import { applyGrade, markKnown, scheduleRecall, newCardState, KNOWN_INTERVAL_DAYS } from "./sm2";
 
 const TODAY = "2026-07-03";
 
@@ -76,5 +76,37 @@ describe("applyGrade", () => {
       intervalDays:38,repetitions:4,dueDate:"2027-02-10",lastReviewedAt:"2027-01-01T10:00:00Z"};
     expect(scheduleRecall(mature,2,"2027-01-15","2027-01-16")).toBe(mature);
     expect(scheduleRecall(mature,0,"2027-01-15","2027-01-16").dueDate).toBe("2027-01-16");
+  });
+});
+
+describe("markKnown", () => {
+  it("新卡宣告已知：跳過 1→6 天梯子，直接 21 天後到期、進入 review", () => {
+    const next = markKnown(newCardState("test", TODAY), TODAY);
+    expect(next.state).toBe("review");
+    expect(next.intervalDays).toBe(KNOWN_INTERVAL_DAYS);
+    expect(next.repetitions).toBe(2);
+    expect(next.dueDate).toBe("2026-07-24");
+    expect(next.easeFactor).toBeCloseTo(2.5);
+    expect(next.practicePending).toBe(false);
+  });
+
+  it("已知卡之後答 Good：間隔 = round(21 × EF)，不回到 6 天", () => {
+    const known = markKnown(newCardState("test", TODAY), TODAY);
+    const next = applyGrade(known, 2, "2026-07-24");
+    expect(next.intervalDays).toBe(Math.round(KNOWN_INTERVAL_DAYS * 2.5));
+  });
+
+  it("已知卡之後忘記：照常回到 1 天", () => {
+    const known = markKnown(newCardState("test", TODAY), TODAY);
+    const next = applyGrade(known, 0, "2026-07-24");
+    expect(next.intervalDays).toBe(1);
+    expect(next.lapses).toBe(1);
+  });
+
+  it("已經很成熟的卡不會被降回 21 天的 repetitions", () => {
+    let card = newCardState("test", TODAY);
+    for (let i = 0; i < 4; i += 1) card = applyGrade(card, 2, TODAY);
+    const next = markKnown(card, TODAY);
+    expect(next.repetitions).toBe(4);
   });
 });

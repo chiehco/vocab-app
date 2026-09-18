@@ -83,6 +83,24 @@
 @keyframes seal-answer-in { from { opacity: 0; } }
 @keyframes seal-spin { to { transform: rotate(360deg); } }
 
+/* 直接選義：取代「顯示答案」的四選一；翻面後標出正解與誤選 */
+.seal-options { display: grid; gap: var(--ui-sp-2); }
+.seal-options > button { display: flex; align-items: center; gap: var(--ui-sp-2); min-height: 56px; padding: 0 var(--ui-sp-3); border: 1px solid var(--ui-border-strong); border-radius: var(--ui-radius); color: var(--ui-text); background: var(--ui-surface); font: inherit; font-size: var(--ui-fs-body); text-align: left; cursor: pointer; }
+.seal-options > button b { flex: 0 0 auto; color: var(--ui-muted); font-weight: 700; }
+.seal-options > button:disabled { cursor: default; }
+.seal-options > button.correct { color: var(--ui-on-accent); background: var(--ui-accent); border-color: var(--ui-accent); }
+.seal-options > button.correct b { color: rgba(255, 255, 255, .8); }
+.seal-options > button.wrong { color: var(--ui-danger); border-color: var(--ui-danger); }
+.seal-options > button.muted { opacity: .5; }
+.seal-answered { display: grid; gap: var(--ui-sp-2); margin-top: var(--ui-sp-2); }
+.seal-known, .seal-next { display: block; width: 100%; min-height: 60px; padding: var(--ui-sp-2) var(--ui-sp-3); border: 1px solid var(--ui-accent); border-radius: var(--ui-radius); color: var(--ui-on-accent); background: var(--ui-accent); font: inherit; font-weight: 700; text-align: center; cursor: pointer; }
+.seal-known span, .seal-next span { display: block; font-size: var(--ui-fs-body); }
+.seal-known small, .seal-next small { display: block; margin-top: 4px; color: rgba(255, 255, 255, .8); font-size: var(--ui-fs-label); font-weight: 400; line-height: 1.4; }
+.seal-next.is-wrong { background: var(--ui-danger); border-color: var(--ui-danger); }
+.seal-known:disabled, .seal-next:disabled { opacity: .65; cursor: wait; }
+.seal-swipe-hint { padding: var(--ui-sp-2) 0; border: 0; color: var(--ui-muted); background: transparent; font: inherit; font-size: var(--ui-fs-label); text-align: center; cursor: pointer; }
+.seal-swipe-hint:disabled { cursor: wait; }
+
 @media (max-width: 390px) {
   .seal-review { padding-inline: var(--ui-sp-4); }
   .seal-levels { margin-inline: calc(-1 * var(--ui-sp-4)); padding-inline: var(--ui-sp-4); }

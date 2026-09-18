@@ -1,7 +1,7 @@
 import { getSetting, progressDb } from "../db/progressDb";
 import { findProgressCard, getProgressKeys } from "../db/progressIdentity";
 import type { CardState, Grade, ReviewMode } from "../db/types";
-import { scheduleRecall, newCardState } from "../srs/sm2";
+import { markKnown, scheduleRecall, newCardState } from "../srs/sm2";
 import { todayStr } from "../lib/dates";
 import { format } from "date-fns";
 
@@ -55,6 +55,39 @@ export async function gradeFlashcard(
         schedulingApplied: scheduled !== before,
       });
       await upsertCheckIn(today, isNewWord, sessionId);
+      return after;
+    },
+  );
+}
+
+/** 使用者答對後宣告已知：直接排成三週後的成熟卡，不佔今日新字額度。 */
+export async function markWordKnown(
+  word: string,
+  sessionId: string,
+): Promise<CardState> {
+  const keys = await getProgressKeys(word);
+  const today = todayStr();
+  return progressDb.transaction(
+    "rw",
+    [progressDb.cardStates, progressDb.reviewLogs, progressDb.checkIns],
+    async () => {
+      const before = (await findProgressCard(keys)) ?? newCardState(word, today);
+      const after = markKnown(before, today);
+      await progressDb.cardStates.put(after);
+      await progressDb.reviewLogs.add({
+        word: after.word,
+        reviewedAt: new Date().toISOString(),
+        sessionId,
+        grade: 3,
+        intervalBefore: before.intervalDays,
+        intervalAfter: after.intervalDays,
+        easeFactorBefore: before.easeFactor,
+        easeFactorAfter: after.easeFactor,
+        mode: "known",
+        schedulingApplied: true,
+      });
+      // 已知字只花幾秒確認，不吃掉新字名額，初期才能真的往前推進。
+      await upsertCheckIn(today, false, sessionId);
       return after;
     },
   );
