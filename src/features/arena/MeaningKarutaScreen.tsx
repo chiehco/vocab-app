@@ -19,11 +19,11 @@ import {
   PAIR_COUNT,
   cardById,
   chooseCpuCard,
+  countScopedKarutaWords,
   countTaken,
   dealBoard,
   flipCard,
   isCardAvailable,
-  isKarutaWordEligible,
   karutaWinner,
   observeCard,
   resolveTurn,
@@ -82,8 +82,9 @@ export default function MeaningKarutaScreen() {
   const wordById = useMemo(() => new Map(roundWords.map((word) => [word.wordId, word])), [roundWords]);
   const recall = KARUTA_DIFFICULTIES[difficulty].recall;
   const requiredPairs = scope.groupId ? MIN_PAIR_COUNT : PAIR_COUNT;
-  const scopedEligibleCount = scope.groupId ? selectScopedKarutaWords(scope.words ?? [], Infinity, () => 0.5).length : 0;
-  const poolReady = scope.groupId ? !scope.loading : !!poolData;
+  const scopedEligibleCount = scope.words ? countScopedKarutaWords(scope.words) : 0;
+  // scope.ready 擋掉兩件事：群組還在讀（字池可能還是上一組的）、以及選了自選群組卻還沒挑群組
+  const poolReady = scope.ready && (!!scope.groupId || !!poolData);
 
   /** 群組模式只用範圍內的字，對子不足十組就打較少；否則走已學優先的隨機字池。 */
   const pickRound = useCallback((random: () => number) => {
@@ -105,6 +106,7 @@ export default function MeaningKarutaScreen() {
   }, [recall]);
 
   function startMatch() {
+    if (!poolReady) return;
     const selected = pickRound(Math.random);
     if (selected.length < requiredPairs) return;
     setRoundWords(selected);
@@ -164,30 +166,40 @@ export default function MeaningKarutaScreen() {
   if (scope.missing) {
     return (
       <div className="game-shell">
-        <header className="game-shell-nav"><Link to="/groups">← 群組</Link><span>搶義花牌</span><b>範圍練習</b></header>
+        <header className="game-shell-nav"><Link to={scope.returnTo}>{backLabel}</Link><span>搶義花牌</span><b>範圍練習</b></header>
         <section className="game-shell-hero">
-          <div><h1>找不到這個群組</h1><p>它可能已被刪除。回群組頁重新選一組再開局。</p></div>
+          <div><h1>找不到這個群組</h1><p>它可能已被刪除。可以直接改用預設字池，或回去重新選一組再開局。</p></div>
         </section>
-        <Link className="game-shell-start" to="/groups">回群組頁</Link>
+        <Link className="game-shell-start" to={scope.defaultTo}>改用預設群組開局</Link>
+        <p className="game-shell-note"><Link to={scope.returnTo}>{scope.origin === "group" ? "回群組頁重新選一組" : "回遊戲頁"}</Link></p>
       </div>
     );
   }
 
   if (stage === "setup") {
     const enoughWords = poolReady && pickRound(() => 0.5).length >= requiredPairs;
+    const startLabel = scope.pendingPick ? "先在上面挑一個群組"
+      : !poolReady ? "正在整理花牌"
+      : enoughWords ? "洗牌開局"
+      : scope.groupId ? `這個群組只有 ${scopedEligibleCount} 個可入陣的字，至少要 ${MIN_PAIR_COUNT} 個`
+      : `至少需要 ${PAIR_COUNT} 個可入陣的單字`;
     return (
       <div className="game-shell">
         <header className="game-shell-nav"><Link to={scope.returnTo}>{backLabel}</Link><span>搶義花牌</span><b>{scope.groupId ? "範圍練習" : "單人"}</b></header>
         <section className="game-shell-hero">
           <div>
-            {scope.groupId && <p className="game-shell-scope">只出「{scope.group?.name ?? "群組"}」的字 · <b>{scopedEligibleCount} 個可入陣</b></p>}
+            {scope.groupId && (
+              <p className="game-shell-scope">
+                {scope.loading ? "正在讀取群組字池…" : <>只出「{scope.group?.name ?? "群組"}」的字 · <b>{scopedEligibleCount} 個可入陣</b></>}
+              </p>
+            )}
             <h1>二十張牌，把真名和字義配成對。</h1>
             <p>一次翻兩張。英文配上中文就收走、再翻一次；配不上就蓋回去換豆魔。誰收的對子多誰贏。</p>
           </div>
           {OPPONENT_ASSET && <img src={OPPONENT_ASSET} alt="" />}
         </section>
 
-        <GroupDeckPicker gameKey="meaning-karuta" scope={scope} eligible={isKarutaWordEligible} minimum={MIN_PAIR_COUNT} />
+        <GroupDeckPicker gameKey="meaning-karuta" scope={scope} countDeck={countScopedKarutaWords} minimum={MIN_PAIR_COUNT} />
 
         <section className="game-shell-options" aria-label="選擇豆魔難度">
           <p>選擇對手</p>
@@ -199,7 +211,7 @@ export default function MeaningKarutaScreen() {
         </section>
 
         <div className="game-shell-record"><span>本機戰績</span><b>{record?.wins ?? 0} 勝</b><b>{record?.losses ?? 0} 敗</b><b>{record?.draws ?? 0} 平</b></div>
-        <button className="game-shell-start" onClick={startMatch} disabled={!enoughWords}>{!poolReady ? "正在整理花牌" : enoughWords ? "洗牌開局" : scope.groupId ? `這個群組只有 ${scopedEligibleCount} 個可入陣的字，至少要 ${MIN_PAIR_COUNT} 個` : `至少需要 ${PAIR_COUNT} 個可入陣的單字`}</button>
+        <button className="game-shell-start" onClick={startMatch} disabled={!enoughWords}>{startLabel}</button>
       </div>
     );
   }

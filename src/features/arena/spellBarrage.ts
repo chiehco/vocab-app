@@ -139,3 +139,11 @@ export function getCpuFinishMs(
     + normalizedJitter * 850,
   );
 }
+
+/**
+ * 群組選單與開局區共用的可出題數：走 selectScopedArenaWords 同一條規則，
+ * 只是不限數量、用固定亂數，這樣列表上的數字就是實際能入陣的字數。
+ */
+export function countScopedArenaWords(words: WordRecord[]): number {
+  return selectScopedArenaWords(words, Number.POSITIVE_INFINITY, () => 0.5).length;
+}

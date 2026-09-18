@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { WordRecord } from "../../db/types";
-import { buildLetterTiles, composeArenaAnswer, CPU_OBSERVE_MS, getCpuFinishMs, normalizeArenaAnswer, selectArenaWords, selectScopedArenaWords, weightedArenaOrder } from "./spellBarrage";
+import { buildLetterTiles, composeArenaAnswer, countScopedArenaWords, CPU_OBSERVE_MS, getCpuFinishMs, normalizeArenaAnswer, selectArenaWords, selectScopedArenaWords, weightedArenaOrder } from "./spellBarrage";
 
 function word(value: string, level = "LV1"): WordRecord {
   return {
@@ -89,5 +89,12 @@ describe("spell barrage", () => {
       () => 0.5,
     );
     expect(scoped.map((item) => item.word).sort()).toEqual(["cat", "elephant"]);
+  });
+
+  it("countScopedArenaWords 跟實際選字走同一條規則", () => {
+    const pool = [word("go", "LV6"), word("ice-cream", "LV6"), word("cat", "LV6"), word("elephant", "LV5")];
+    expect(countScopedArenaWords(pool)).toBe(2);
+    expect(countScopedArenaWords(pool)).toBe(selectScopedArenaWords(pool, Number.POSITIVE_INFINITY, () => 0.5).length);
+    expect(countScopedArenaWords([])).toBe(0);
   });
 });

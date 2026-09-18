@@ -2,10 +2,12 @@ import { describe, expect, it } from "vitest";
 import type { WordRecord } from "../../db/types";
 import {
   chooseCpuCard,
+  countScopedKarutaWords,
   countTaken,
   dealBoard,
   flipCard,
   glossConflicts,
+  isKarutaWordEligible,
   karutaWinner,
   observeCard,
   resolveTurn,
@@ -37,6 +39,12 @@ function word(value: string, meaningZh = `意思-${value}`, level = "LV1"): Word
 }
 
 const THREE = [word("cat", "貓"), word("dog", "狗"), word("sun", "太陽")];
+
+/** 扣掉太短的 go，六個字都通過 isKarutaWordEligible，但撞義排除後只剩四個能同場。 */
+const CONFLICTING = [
+  word("big", "大的"), word("large", "大的；巨大的"), word("cat", "貓"), word("dog", "狗"),
+  word("run", "跑"), word("sprint", "跑；衝刺"), word("go", "去"),
+];
 
 function cardId(state: KarutaState, value: string, face: "en" | "zh") {
   return state.cards.find((card) => card.wordId === `W-${value}` && card.face === face)!.id;
@@ -161,12 +169,15 @@ describe("cpu memory", () => {
   });
 
   it("指定範圍時撞義的字只留一個，不足十對就回傳較少", () => {
-    const scoped = selectScopedKarutaWords(
-      [word("big", "大的"), word("large", "大的；巨大的"), word("cat", "貓"), word("dog", "狗"), word("run", "跑"), word("sprint", "跑；衝刺"), word("go", "去")],
-      10,
-      () => 0.5,
-    );
+    const scoped = selectScopedKarutaWords(CONFLICTING, 10, () => 0.5);
     expect(scoped).toHaveLength(4);
     expect(scoped.map((item) => item.word)).toContain("cat");
+  });
+
+  it("countScopedKarutaWords 跟實際選字一致，不會把撞義的字算進去", () => {
+    // 只看 isKarutaWordEligible 會得到 6，但實際只湊得出 4 對
+    expect(CONFLICTING.filter(isKarutaWordEligible)).toHaveLength(6);
+    expect(countScopedKarutaWords(CONFLICTING)).toBe(4);
+    expect(countScopedKarutaWords(CONFLICTING)).toBe(selectScopedKarutaWords(CONFLICTING, 10, () => 0.5).length);
   });
 });

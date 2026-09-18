@@ -218,3 +218,11 @@ export function chooseCpuCard(state: KarutaState, memory: CpuMemory, random: () 
   }
   return pickRandom(unknown.length ? unknown : available);
 }
+
+/**
+ * 群組選單與開局區共用的可出題數。花牌會排掉互相撞義的字，所以不能只算 isKarutaWordEligible，
+ * 必須跑過 selectScopedKarutaWords 同一條規則，否則選單顯示 5 個、開局卻只湊得到 2 個。
+ */
+export function countScopedKarutaWords(words: WordRecord[]): number {
+  return selectScopedKarutaWords(words, Number.POSITIVE_INFINITY, () => 0.5).length;
+}

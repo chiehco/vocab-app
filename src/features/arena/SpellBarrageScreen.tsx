@@ -12,8 +12,8 @@ import {
   ARENA_DIFFICULTIES,
   buildLetterTiles,
   composeArenaAnswer,
+  countScopedArenaWords,
   getCpuFinishMs,
-  isArenaWordEligible,
   normalizeArenaAnswer,
   selectArenaWords,
   selectScopedArenaWords,
@@ -83,8 +83,9 @@ export default function SpellBarrageScreen() {
   const answer = currentWord ? normalizeArenaAnswer(currentWord.word) : "";
   const entered = composeArenaAnswer(tiles, selectedTileIds);
   const learnedCount = poolData ? poolData.words.filter((word) => poolData.known.has(word.word)).length : 0;
-  const scopedEligibleCount = scope.groupId ? selectScopedArenaWords(scope.words ?? [], Infinity, () => 0.5).length : 0;
-  const poolReady = scope.groupId ? !scope.loading : !!poolData;
+  const scopedEligibleCount = scope.words ? countScopedArenaWords(scope.words) : 0;
+  // scope.ready 擋掉兩件事：群組還在讀（字池可能還是上一組的）、以及選了自選群組卻還沒挑群組
+  const poolReady = scope.ready && (!!scope.groupId || !!poolData);
 
   /** 群組模式只用範圍內的字；否則走已學優先的隨機字池。 */
   const pickRound = useCallback((random: () => number) => {
@@ -109,6 +110,7 @@ export default function SpellBarrageScreen() {
   }, [difficulty]);
 
   function startMatch() {
+    if (!poolReady) return;
     const selected = pickRound(Math.random);
     if (selected.length < 5) return;
     setRoundWords(selected);
@@ -205,30 +207,40 @@ export default function SpellBarrageScreen() {
   if (scope.missing) {
     return (
       <div className="game-shell">
-        <header className="game-shell-nav"><Link to="/groups">← 群組</Link><span>字母轟炸</span><b>範圍練習</b></header>
+        <header className="game-shell-nav"><Link to={scope.returnTo}>{backLabel}</Link><span>字母轟炸</span><b>範圍練習</b></header>
         <section className="game-shell-hero">
-          <div><h1>找不到這個群組</h1><p>它可能已被刪除。回群組頁重新選一組再開戰。</p></div>
+          <div><h1>找不到這個群組</h1><p>它可能已被刪除。可以直接改用預設字池，或回去重新選一組再開戰。</p></div>
         </section>
-        <Link className="game-shell-start" to="/groups">回群組頁</Link>
+        <Link className="game-shell-start" to={scope.defaultTo}>改用預設群組開戰</Link>
+        <p className="game-shell-note"><Link to={scope.returnTo}>{scope.origin === "group" ? "回群組頁重新選一組" : "回遊戲頁"}</Link></p>
       </div>
     );
   }
 
   if (stage === "setup") {
     const enoughWords = poolReady && pickRound(() => 0.5).length >= 5;
+    const startLabel = scope.pendingPick ? "先在上面挑一個群組"
+      : !poolReady ? "正在整理字母磚"
+      : enoughWords ? "敲響開戰鐘"
+      : scope.groupId ? `這個群組只有 ${scopedEligibleCount} 個可拼的字，至少要 5 個`
+      : "至少需要 5 個可拼單字";
     return (
       <div className="game-shell">
         <header className="game-shell-nav"><Link to={scope.returnTo}>{backLabel}</Link><span>字母轟炸</span><b>{scope.groupId ? "範圍練習" : "單人"}</b></header>
         <section className="game-shell-hero">
           <div>
-            {scope.groupId && <p className="game-shell-scope">只出「{scope.group?.name ?? "群組"}」的字 · <b>{scopedEligibleCount} 個可入陣</b></p>}
+            {scope.groupId && (
+              <p className="game-shell-scope">
+                {scope.loading ? "正在讀取群組字池…" : <>只出「{scope.group?.name ?? "群組"}」的字 · <b>{scopedEligibleCount} 個可入陣</b></>}
+              </p>
+            )}
             <h1>五回合內，先得三分。</h1>
             <p>看中文與圖卡敲出真名。搶先完成會把兩枚妄磚轟進對手的下一題。</p>
           </div>
           {OPPONENT_ASSET && <img src={OPPONENT_ASSET} alt="" />}
         </section>
 
-        <GroupDeckPicker gameKey="spell-barrage" scope={scope} eligible={isArenaWordEligible} minimum={5} />
+        <GroupDeckPicker gameKey="spell-barrage" scope={scope} countDeck={countScopedArenaWords} minimum={5} />
 
         <section className="game-shell-options" aria-label="選擇豆魔難度">
           <p>選擇對手</p>
@@ -240,7 +252,7 @@ export default function SpellBarrageScreen() {
         </section>
 
         <div className="game-shell-record"><span>本機戰績</span><b>{record?.wins ?? 0} 勝</b><b>{record?.losses ?? 0} 敗</b>{!scope.groupId && <small>{learnedCount} 個已收服字可入陣</small>}</div>
-        <button className="game-shell-start" onClick={startMatch} disabled={!enoughWords}>{!poolReady ? "正在整理字母磚" : enoughWords ? "敲響開戰鐘" : scope.groupId ? `這個群組只有 ${scopedEligibleCount} 個可拼的字，至少要 5 個` : "至少需要 5 個可拼單字"}</button>
+        <button className="game-shell-start" onClick={startMatch} disabled={!enoughWords}>{startLabel}</button>
       </div>
     );
   }

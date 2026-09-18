@@ -102,10 +102,13 @@ const MODE_HINTS: Record<SlashMode, string> = {
 
 const SCOPE_MIN_WORDS = 5;
 const hasGloss = (w: WordRecord) => !!w.meaningZh;
+/** 群組選單與開局共用的可出題數，兩邊數字才會一致 */
+const countSlashDeck = (words: WordRecord[]) => words.filter(hasGloss).length;
 
 export default function SlashScreen() {
   const scope = useGroupScope();
-  const scopedPool = (scope.words ?? []).filter((w) => !!w.meaningZh);
+  // scope.words 在換群組的空窗期是 undefined，別退回上一組的字池
+  const scopedPool = (scope.words ?? []).filter(hasGloss);
   const [phase, setPhase] = useState<Phase>("start");
   const [loading, setLoading] = useState(false);
   const [startError, setStartError] = useState<string | null>(null);
@@ -326,6 +329,7 @@ export default function SlashScreen() {
     try {
       let items: QueueItem[] = [];
       let free = false;
+      if (!scope.ready) return;
       if (scope.groupId) {
         // 群組模式：只出範圍內的字，走自由練習（不寫記憶曲線）
         if (scopedPool.length < SCOPE_MIN_WORDS) {
@@ -387,14 +391,18 @@ export default function SlashScreen() {
         <header className="game-shell-nav"><Link to={scope.returnTo}>{backLabel}</Link><span>千單斬</span><b>{scope.groupId ? "範圍練習" : "單人"}</b></header>
         <section className="game-shell-hero">
           <div>
-            {scope.groupId && !scope.missing && <p className="game-shell-scope">只出「{scope.group?.name ?? "群組"}」的字 · <b>{scopedPool.length} 個可出題</b></p>}
+            {scope.groupId && !scope.missing && (
+              <p className="game-shell-scope">
+                {scope.loading ? "正在讀取群組字池…" : <>只出「{scope.group?.name ?? "群組"}」的字 · <b>{scopedPool.length} 個可出題</b></>}
+              </p>
+            )}
             <h1>{scope.missing ? "找不到這個群組" : "該複習的字，化作怪物牌現身。"}</h1>
-            <p>{scope.missing ? "它可能已被刪除。回群組頁重新選一組再開局。" : "每張怪物牌限時作答，斬對連擊加分，斬錯扣血。"}</p>
+            <p>{scope.missing ? "它可能已被刪除。改用預設字池，或回去重新選一組再開局。" : "每張怪物牌限時作答，斬對連擊加分，斬錯扣血。"}</p>
           </div>
           {/* 劍客小圖待重畫，先不放 */}
         </section>
 
-        <GroupDeckPicker gameKey="slash" scope={scope} eligible={hasGloss} minimum={SCOPE_MIN_WORDS} countLabel="可出題" />
+        <GroupDeckPicker gameKey="slash" scope={scope} countDeck={countSlashDeck} minimum={SCOPE_MIN_WORDS} countLabel="可出題" />
 
         {!scope.groupId && (
           <div className="level-tabs" aria-label="篩選等級">
@@ -415,13 +423,20 @@ export default function SlashScreen() {
 
         {startError && <p className="game-shell-error">{startError}</p>}
 
-        <button
-          className="game-shell-start"
-          onClick={() => void startGame()}
-          disabled={loading || scope.loading || scope.missing}
-        >
-          {loading ? "備戰中…" : "開局"}
-        </button>
+        {scope.missing ? (
+          <>
+            <Link className="game-shell-start" to={scope.defaultTo}>改用預設群組開局</Link>
+            <p className="game-shell-note"><Link to={scope.returnTo}>{scope.origin === "group" ? "回群組頁重新選一組" : "回遊戲頁"}</Link></p>
+          </>
+        ) : (
+          <button
+            className="game-shell-start"
+            onClick={() => void startGame()}
+            disabled={loading || !scope.ready}
+          >
+            {scope.pendingPick ? "先在上面挑一個群組" : loading ? "備戰中…" : "開局"}
+          </button>
+        )}
 
         <p className="game-shell-note">
           {scope.groupId
