@@ -19,7 +19,7 @@ beforeEach(async () => { await progressDb.delete(); await progressDb.open(); });
 afterEach(async () => { await progressDb.delete(); });
 
 it('registers the entire approved Unit18 with reconstructable examples and distinct practice IDs', () => {
-  expect(unitsForLevel('LV4').map(u => u.unit)).toEqual([17,18,19]);
+  expect(unitsForLevel('LV4').map(u => u.unit)).toEqual([17,18,19,20]);
   const items = unitItems(18, 'LV4');
   expect(items).toHaveLength(91);
   expect(items.filter(i => i.kind === 'vocabulary')).toHaveLength(47);
