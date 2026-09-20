@@ -12,6 +12,7 @@ import { contentDb } from '../../db/contentDb';
 import GroupImportPanel from './GroupImportPanel';
 import { groupWords } from './groupWords';
 import { resolveGroupWords } from './groupScope';
+import { addLV1ReviewedGroups, lv1ReviewedGroups } from './lv1ReviewedGroups';
 
 export default function GroupsScreen() {
   const navigate = useNavigate();
@@ -46,6 +47,18 @@ export default function GroupsScreen() {
   }
   async function practice() { if(!g)return;setBusy(true);setError('');try {const s=await startGroupSession(g.id);navigate(`/practice/direct?session=${s.id}`);}catch {setError('未能開始練習，請確認群組至少有一個項目後再重試。');}finally {setBusy(false);} }
   async function save(group: CustomGroup) { setBusy(true); setError(''); try { await saveGroup(group); setSelected(group.id); } catch { setError('未能儲存。名稱不可空白，請重試。'); } finally { setBusy(false); } }
+  async function addReviewed(units?: number[]) {
+    if (busy) return;
+    setBusy(true); setError('');
+    try {
+      const result = await addLV1ReviewedGroups(units);
+      const first = result.groups[0];
+      setSelected(first.id); setName(first.name);
+      setParams({group:first.id,create:'1'},{replace:true});
+      setNotice(result.added ? `已新增 ${result.added} 個 Unit 群組；既有群組與個人修改均保留。` : '群組已存在，已開啟；沒有重複新增或覆蓋內容。');
+    } catch (error) { setError(error instanceof Error ? error.message : '未能加入群組，請重試。'); }
+    finally { setBusy(false); }
+  }
   function move(index:number,delta:number) { if (!g) return; const ids=[...g.itemIds]; [ids[index],ids[index+delta]]=[ids[index+delta],ids[index]]; void save({...g,itemIds:ids}); }
   function moveWord(index:number,delta:number) { if (!g?.wordIds) return; const ids=[...g.wordIds]; [ids[index],ids[index+delta]]=[ids[index+delta],ids[index]]; void save({...g,wordIds:ids}); }
   const available = learningItems.filter(i => !g?.itemIds.includes(i.learningItemId) && `${i.displayWord ?? i.pattern} ${i.targetMeaningZh ?? i.explanationZh}`.toLowerCase().includes(query.toLowerCase()));
@@ -57,6 +70,16 @@ export default function GroupsScreen() {
     <div className="groups-side">
     <GroupPicker groups={groups??[]} words={words??[]} value={selected} disabled={busy} onChange={id=>{setSelected(id);setName(groups?.find(g=>g.id===id)?.name??'');}} />
     <details className="group-create" open={params.get('create')==='1'}><summary>建立或匯入群組</summary>
+    <section aria-label="LV1 已核准 Unit 群組">
+      <h2>LV1 Unit 01–15 · 已核准圖句</h2>
+      <p className="direct-muted">僅收錄已核准內容，不代表整個 Unit 已收齊。相同正式詞條在單一群組內只收一次；補充詞與本單元的確切圖句請由「看圖句」查看。一般字卡保留原有預設圖片。</p>
+      <button disabled={busy || !words || !groups} onClick={()=>void addReviewed()}>全部加入我的群組（15 個 Unit）</button>
+      {lv1ReviewedGroups.map(unit=><div className="direct-option-row" key={unit.templateId}>
+        <span>{unit.name}<small> · {unit.wordIds.length} 張字卡{unit.supplements.length > 0 && ` · ${unit.supplements.length} 個補充詞`}</small></span>
+        <a href={`${import.meta.env.BASE_URL}${unit.galleryPath}`}>看圖句 · Unit {String(unit.unit).padStart(2,'0')}</a>
+        <button disabled={busy || !words || !groups} onClick={()=>void addReviewed([unit.unit])}>{groups?.some(group=>group.templateId===unit.templateId)?'開啟':'加入'} Unit {String(unit.unit).padStart(2,'0')}</button>
+      </div>)}
+    </section>
     <GroupImportPanel words={words} groups={groups ?? []} onSaved={group => {setSelected(group.id);setName(group.name);}} />
     {curriculumUnits.map((u,n)=><button key={u.templateId} className={n===0?'direct-primary':undefined} disabled={busy} onClick={() => {setName(u.name); void save(templateGroup(u.templateId));}}>以 {u.name} 建立群組</button>)}
     <button disabled={busy} onClick={() => {setName('我的群組'); void save({...templateGroup(),name:'我的群組',itemIds:[],templateId:null,templateRevision:null});}}>建立空白群組</button>
@@ -65,6 +88,7 @@ export default function GroupsScreen() {
     </div>
     {g && <div className="groups-main"><button className="group-delete" disabled={busy} onClick={()=>void remove()}>刪除此群組</button><form onSubmit={e => {e.preventDefault();void save({...g,name:name.trim()});}}><label>群組名稱<input value={name} maxLength={80} onChange={e => setName(e.target.value)} /></label><button disabled={busy || !name.trim()}>儲存名稱</button></form>
       <h2>{g.name} · {g.itemIds.length + (g.wordIds?.length ?? 0)} 項</h2>
+      {lv1ReviewedGroups.filter(unit=>unit.templateId===g.templateId).map(unit=><p key={unit.templateId}><a href={`${import.meta.env.BASE_URL}${unit.galleryPath}`}>查看這個 Unit 的 {unit.pairCount} 組核准圖句{unit.supplements.length > 0 && `（含 ${unit.supplements.length} 個補充詞）`}</a></p>)}
       {!!scopeWords.length && <div className="group-import-links" aria-label="用這個群組練習">
         <Link to={`/quiz?group=${encodeURIComponent(g.id)}`}>單字自由練習</Link>
         <Link to={`/arena/spell-barrage?group=${encodeURIComponent(g.id)}`}>字母轟炸</Link>
