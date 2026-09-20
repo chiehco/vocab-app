@@ -21,8 +21,10 @@ describe("word beast assets", () => {
     expect(getWordBeastAsset("W000851", "take")).toMatch(
       /wordbeast\/a\/W000851\.webp\?v=/,
     );
+    expect(A_GRADE_ASSET_IDS.has('W000343')).toBe(true);
+    // Its approved Unit03 picture now supersedes the legacy A-tier default.
     expect(getWordBeastAsset("W000343", "get")).toMatch(
-      /wordbeast\/a\/W000343\.webp\?v=/,
+      /wordbeast\/lv1-reviewed\/LV1-U03-38-[a-f0-9]+\.webp\?v=/,
     );
   });
 

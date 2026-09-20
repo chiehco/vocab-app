@@ -18,7 +18,7 @@ import { useIllustrationMedia } from "../wordbeast/useIllustrationMedia";
 import { buildSenseCountByWord } from "../wordbeast/wordTraits";
 import { MORPHEME_TYPE_LABEL, NOTE_TYPE_LABEL, RELATION_TYPE_LABEL, REVERSE_RELATION_LABEL, STATE_LABEL } from "./wordLabels";
 import { getWordDisplaySense } from "./wordDisplay";
-import { approvedCurriculumCards, approvedCurriculumUsage } from '../vocabulary/approvedCurriculum';
+import { approvedCurriculumCards, approvedCurriculumUsage, approvedLV1Images, approvedWordIllustration } from '../vocabulary/approvedCurriculum';
 import { buildRootFamilies, normalizeMorphemeKey, pickFamilyMorphemes } from "./rootFamily";
 import "./word-detail.css";
 import { progressDb } from '../../db/progressDb';
@@ -147,7 +147,8 @@ export default function WordDetailScreen() {
   const senseCount = buildSenseCountByWord(senses ?? []).get(word.word) ?? 0;
   const displaySense = getWordDisplaySense(word, senses ?? []);
   const usagePattern = approvedCurriculumUsage(word.word, word.wordId) ?? word.usagePattern;
-  const illustrationMeaning = displaySense.source !== 'curriculum' && asset && (!word.imageWordId || word.imageWordId === word.wordId)
+  const lv1Images = approvedLV1Images(word.word, word.wordId);
+  const illustrationMeaning = !approvedWordIllustration(word.word, word.wordId) && asset && (!word.imageWordId || word.imageWordId === word.wordId)
     ? illustration?.targetHint?.trim() : undefined;
   const examStyleExamples = examples?.filter((example) => example.exampleType === "exam") ?? [];
   const kinRelations = relations?.filter((relation) => relation.relationType !== "confuse") ?? [];
@@ -189,6 +190,7 @@ export default function WordDetailScreen() {
             <h2>{illustrationMeaning || displaySense.meaning}</h2>
             <WordTraitBadges senseCount={senseCount} hasConfusables={falseForms.length > 0} hasMorphemes={!!sortedMorphemes?.length} />
             {displaySense.needsReview && !illustrationMeaning && <span className="dossier-needs-review">主要意思待確認</span>}
+            {lv1Images.length > 0 && <p><a href={`${import.meta.env.BASE_URL}wordbeast/lv1-reviewed/index.html#${lv1Images[0].id}`}>查看 LV1 核准圖句（{lv1Images.length} 組）</a></p>}
           </div>
           {asset ? <StudyIllustration src={asset} word={word.word} caption={illustration?.captionZh} /> : <div className="dossier-hero-mark">
             <DossierSigil word={word.word} />

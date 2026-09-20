@@ -40,6 +40,10 @@ def build_sa_pack(data_dir: Path) -> dict:
                                  if item.get("kind") == "vocabulary" and item.get("officialWordId")
                                  and item.get("review") == "content_reviewed" and item.get("illustration"))
 
+    # Image-only LV1 approvals also need their existing official words on fresh installs.
+    lv1_images = read_json(curriculum_dir.parent / "vocabulary/lv1ReviewedImages.json")
+    selected_word_ids.update(item["officialWordId"] for item in lv1_images if item.get("officialWordId"))
+
     words = [row for row in read_json(data_dir / "words.json") if row.get("wordId") in selected_word_ids]
     actual_word_ids = {row["wordId"] for row in words}
     actual_names = {row["word"] for row in words}

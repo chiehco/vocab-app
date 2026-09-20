@@ -1,4 +1,5 @@
 import { useUpcomingIllustrations } from "./useUpcomingIllustrations";
+import { approvedWordIllustration } from '../vocabulary/approvedCurriculum';
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
@@ -58,6 +59,7 @@ function buildSpecs(data: CaptureData): BeastSpec[] {
   return selectDailyWords(data).map((record) => {
     const imageSourceWord = record.imageWordId ? wordById.get(record.imageWordId)?.word ?? record.word : record.word;
     const imageMedia = mediaByWord.get(imageSourceWord);
+    const approved = approvedWordIllustration(record.word, record.wordId);
     return {
       record,
       tier: tierByWord.get(record.word) ?? null,
@@ -67,8 +69,8 @@ function buildSpecs(data: CaptureData): BeastSpec[] {
         meaning: getPrimaryMeaning(word.meaningZh),
       })),
       example: exampleByWord.get(record.word),
-      imageTargetHint: imageMedia?.targetHint,
-      imageCaptionZh: imageMedia?.captionZh,
+      imageTargetHint: approved ? undefined : imageMedia?.targetHint,
+      imageCaptionZh: approved?.captionZh ?? imageMedia?.captionZh,
       related: (relationsByWord.get(record.word) ?? []).map((relation) => ({
         word: relation.relatedWord,
         meaning: wordByName.get(relation.relatedWord)?.meaningZh ?? "中文意思待補",
