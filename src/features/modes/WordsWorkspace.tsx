@@ -38,7 +38,7 @@ export default function WordsWorkspace(){
         {!filteredGroups.length&&<p className="words-side-empty">{!groups?.length?'尚無群組':groupSearch?'查無群組':level==='all'?'查無群組':`${level} 尚無群組`}</p>}
         {filteredGroups.length>groupLimit&&<button className="words-more-groups" onClick={()=>setGroupLimit(groupLimit+20)}>更多群組</button>}
         <Link className="words-add" to="/groups?create=1">＋ 新增群組</Link>
-        <Link className="words-manage" to="/groups?create=1">加入 LV1 Unit 01–15 群組</Link>
+        <Link className="words-manage" to="/groups?create=1">加入 LV1 已審閱 Unit 群組</Link>
         <Link className="words-manage" to="/groups">管理群組</Link>
       </aside>
       <div className="words-content" ref={panel}>

@@ -1,4 +1,4 @@
-"""Publish only explicitly approved LV1 image/caption pairs; never import dictionary data.
+"""Publish reviewed LV1 image/caption pairs; never import dictionary data.
 
 Usage: python scripts/build_lv1_reviewed_images.py --images PATH --workspace PATH
 Requires Pillow. Original PNGs and reviewer files are read-only.
@@ -101,6 +101,23 @@ def main():
                 assert pair["english"] == row["english"] and pair["chinese"] == row["chinese"]
             source_rows.append(dict(row, id=item_id, unit=unit, image=image, approval=approval, pos=field(block,"詞性"), meaning=field(block,"詞義資料")))
     assert len(source_rows) == 434, len(source_rows)
+    delegated_approval = args.workspace / "work/LV1_U22-U25_修正_20260922/approval.json"
+    delegated = json.loads(read(delegated_approval))
+    assert delegated["units"] == [22, 23, 24, 25]
+    assert len(delegated["items"]) == 292
+    for pair in delegated["items"]:
+        assert pair["artworkProxyReviewed"] and pair["imageTextPairProxyReviewed"]
+        assert pair["publishAuthorized"] and not pair["userItemByItemApproval"]
+        directory = args.images / f"Unit_{pair['unit']:02}"
+        rows = list(csv.DictReader(read(directory/"manifest.tsv").splitlines(), delimiter="\t"))
+        row = next(row for row in rows if row["order"] == pair["order"])
+        assert pair["id"] == f"LV1-U{pair['unit']:02}-{row['order']}"
+        assert pair["word"] == row["word"] and pair["english"] == row["english"] and pair["chinese"] == row["chinese"]
+        image = directory / row["file"]
+        assert pair["imageFile"] == row["file"] and sha(image.read_bytes()) == pair["imageSha256"]
+        source_rows.append(dict(row, id=pair["id"], unit=pair["unit"], image=image, approval=delegated_approval,
+                                pos=pair.get("pos") or "", meaning=pair.get("meaning") or ""))
+    assert len(source_rows) == 726, len(source_rows)
     cards, audit = [], []
     target = ROOT/"public/wordbeast/lv1-reviewed"
     target.mkdir(parents=True, exist_ok=True)
@@ -124,11 +141,12 @@ def main():
     (ROOT/"src/features/vocabulary/lv1ReviewedImages.json").write_text(json.dumps(cards, ensure_ascii=False, indent=2)+"\n",encoding="utf-8")
     audit_dir = ROOT/"scripts/approvals"
     audit_dir.mkdir(exist_ok=True)
-    (audit_dir/"lv1-images-20260920.json").write_text(json.dumps(audit, ensure_ascii=False, indent=2)+"\n",encoding="utf-8")
+    (audit_dir/"lv1-images-20260922.json").write_text(json.dumps(audit, ensure_ascii=False, indent=2)+"\n",encoding="utf-8")
     # A lightweight public index also preserves supplemental words without inventing IDs.
     sections = []
     esc = html.escape
-    for unit in range(1,16):
+    published_units = sorted({card["unit"] for card in cards})
+    for unit in published_units:
         entries = []
         for card in cards:
             if card["unit"] != unit:
@@ -137,8 +155,8 @@ def main():
             link = '<a href="../../#/word/'+card["officialWordId"]+'">開啟字卡</a>' if card["officialWordId"] else '<span>教材補充詞（尚無獨立字卡）</span>'
             entries.append(f'<article id="{card["id"]}"><h3>{card["id"]} · {esc(card["displayWord"])}</h3><img loading="lazy" width="1254" height="1254" src="{img["path"].rsplit("/",1)[1]}" alt="{esc(img["captionZh"])}"><p lang="en">{esc(img["captionEn"])}</p><p>{esc(img["captionZh"])}</p>{link}</article>')
         sections.append(f'<section id="unit-{unit:02}"><h2>Unit {unit:02} · {len(entries)} 組</h2><div class="grid">'+"".join(entries)+"</div></section>")
-    nav=" ".join(f'<a href="#unit-{u:02}">{u:02}</a>' for u in range(1,16))
-    page='<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>LV1 已核准圖句</title><style>body{max-width:1200px;margin:24px auto;padding:0 20px;background:#f6f0df;color:#272c23;font:18px/1.7 system-ui}nav{display:flex;gap:16px;flex-wrap:wrap}a{color:#405734}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px}article{min-width:0;padding:16px;background:#fffdf7}img{width:100%;height:auto}h3{font-size:1rem}p{overflow-wrap:anywhere}</style><h1>LV1 已核准圖句</h1><p>434 組最終核准圖片與中英例句；尚未核准的項目不在本頁。補充詞保留素材，不建立虛構單字編號。</p><nav>'+nav+'</nav>'+"".join(sections)+'</html>'
+    nav=" ".join(f'<a href="#unit-{u:02}">{u:02}</a>' for u in published_units)
+    page='<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>LV1 已審閱圖句</title><style>body{max-width:1200px;margin:24px auto;padding:0 20px;background:#f6f0df;color:#272c23;font:18px/1.7 system-ui}nav{display:flex;gap:16px;flex-wrap:wrap}a{color:#405734}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px}article{min-width:0;padding:16px;background:#fffdf7}img{width:100%;height:auto}h3{font-size:1rem}p{overflow-wrap:anywhere}</style><h1>LV1 已審閱圖句</h1><p>726 組已審閱圖片與中英例句；Unit 01–15 為使用者核准內容，Unit 22–25 為使用者授權後的代理審查發布內容。補充詞保留素材，不建立虛構單字編號。</p><nav>'+nav+'</nav>'+"".join(sections)+'</html>'
     # Relative to wordbeast/lv1-reviewed/ under any deployment base.
     page=page.replace('<title>', '<link rel="icon" href="../../favicon.svg"><title>', 1)
     (target/"index.html").write_text(page,encoding="utf-8")

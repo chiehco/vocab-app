@@ -14,7 +14,7 @@ parser.add_argument('--base', required=True)
 parser.add_argument('--out', type=Path, required=True)
 args = parser.parse_args()
 cards = json.loads((root/'src/features/vocabulary/lv1ReviewedImages.json').read_text(encoding='utf-8'))
-audit = {x['id']: x for x in json.loads((root/'scripts/approvals/lv1-images-20260920.json').read_text(encoding='utf-8'))}
+audit = {x['id']: x for x in json.loads((root/'scripts/approvals/lv1-images-20260922.json').read_text(encoding='utf-8'))}
 
 
 def verify(card):

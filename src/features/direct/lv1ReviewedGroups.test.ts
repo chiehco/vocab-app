@@ -18,12 +18,13 @@ beforeEach(async () => {
 });
 afterEach(async () => { await progressDb.delete(); await contentDb.delete(); });
 
-it('covers all 15 approved units without inventing supplemental IDs', async () => {
-  expect(lv1ReviewedGroups).toHaveLength(15);
-  expect(lv1ReviewedGroups.reduce((n,g)=>n+g.pairCount,0)).toBe(434);
-  expect(lv1ReviewedGroups.reduce((n,g)=>n+g.supplements.length,0)).toBe(22);
+it('covers all 19 reviewed units without inventing supplemental IDs', async () => {
+  expect(lv1ReviewedGroups).toHaveLength(19);
+  expect(lv1ReviewedGroups.map(group=>group.unit)).toEqual([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,22,23,24,25]);
+  expect(lv1ReviewedGroups.reduce((n,g)=>n+g.pairCount,0)).toBe(726);
+  expect(lv1ReviewedGroups.reduce((n,g)=>n+g.supplements.length,0)).toBe(67);
   const result = await addLV1ReviewedGroups();
-  expect(result.added).toBe(15);
+  expect(result.added).toBe(19);
   for (const template of lv1ReviewedGroups) {
     const group = result.groups.find(g=>g.templateId===template.templateId)!;
     expect(validGroup(group)).toBe(true);
@@ -38,7 +39,7 @@ it('is idempotent across concurrent additions and never overwrites personal edit
   await saveGroup({id:'personal',name:'LV1 Unit 01（已核准）',itemIds:[],wordIds:['W000114'],templateId:null,templateRevision:null,updatedAt:1});
   const before = await exportProgress();
   await Promise.all([addLV1ReviewedGroups(),addLV1ReviewedGroups()]);
-  expect(await progressDb.customGroups.count()).toBe(16);
+  expect(await progressDb.customGroups.count()).toBe(20);
   expect(await progressDb.customGroups.get('personal')).toEqual(before.data.customGroups?.find(g=>g.id==='personal'));
   const {groups} = await addLV1ReviewedGroups([1]);
   await saveGroup({...groups[0],name:'我改的名字',wordIds:[]});

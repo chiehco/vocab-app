@@ -4,13 +4,14 @@ import { contentDb } from '../../db/contentDb';
 import { saveGroup } from './store';
 import type { CustomGroup } from './model';
 
-export const lv1ReviewedGroups = Array.from({ length: 15 }, (_, index) => {
-  const unit = index + 1;
+const reviewedUnits = [...new Set(images.map(card => card.unit))].sort((a, b) => a - b);
+
+export const lv1ReviewedGroups = reviewedUnits.map(unit => {
   const cards = images.filter(card => card.unit === unit);
   return {
     unit,
     templateId: `LV1-REVIEWED-IMAGES-U${String(unit).padStart(2, '0')}`,
-    name: `LV1 Unit ${String(unit).padStart(2, '0')}（已核准）`,
+    name: `LV1 Unit ${String(unit).padStart(2, '0')}（已審閱）`,
     wordIds: [...new Set(cards.flatMap(card => card.officialWordId ? [card.officialWordId] : []))],
     pairCount: cards.length,
     supplements: cards.filter(card => !card.officialWordId).map(card => card.displayWord),
@@ -37,7 +38,7 @@ export async function addLV1ReviewedGroups(units = lv1ReviewedGroups.map(group =
       let group = existing.find(group => group.templateId === template.templateId);
       if (!group) {
         group = { id: crypto.randomUUID(), name: template.name, itemIds: [], wordIds: [...template.wordIds],
-          templateId: template.templateId, templateRevision: '20260920-approved-images', updatedAt: Date.now() };
+          templateId: template.templateId, templateRevision: '20260922-reviewed-images', updatedAt: Date.now() };
         await saveGroup(group);
         added++;
       }

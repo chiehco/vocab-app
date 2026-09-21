@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import cards from './lv1ReviewedImages.json';
-import audit from '../../../scripts/approvals/lv1-images-20260920.json';
+import audit from '../../../scripts/approvals/lv1-images-20260922.json';
 import words from '../../../public/data/v1/words.json';
 import bootstrap from '../../../public/data/v1/sa-pack.json';
 import { approvedCurriculumCard, approvedCurriculumIllustration, approvedLV1Images, approvedWordIllustration } from './approvedCurriculum';
@@ -11,13 +11,17 @@ import { resolveWordImageClue } from '../../quiz/imageClue';
 
 const hash = (bytes: string | Buffer) => createHash('sha256').update(bytes).digest('hex');
 
-describe('approved LV1 image-only release', () => {
-  it('contains exactly the approved scope and preserves every final image and caption hash', () => {
-    expect(cards).toHaveLength(434);
-    expect(new Set(cards.map(c => c.id)).size).toBe(434);
+describe('reviewed LV1 image-only release', () => {
+  it('contains exactly the reviewed scope and preserves every final image and caption hash', () => {
+    expect(cards).toHaveLength(726);
+    expect(new Set(cards.map(c => c.id)).size).toBe(726);
     expect(cards.filter(c => c.unit === 1)).toHaveLength(38);
     expect(cards.filter(c => c.unit === 2)).toHaveLength(38);
     expect(cards.filter(c => c.unit === 3)).toHaveLength(22);
+    expect(cards.filter(c => c.unit === 22)).toHaveLength(79);
+    expect(cards.filter(c => c.unit === 23)).toHaveLength(109);
+    expect(cards.filter(c => c.unit === 24)).toHaveLength(52);
+    expect(cards.filter(c => c.unit === 25)).toHaveLength(52);
     for (const card of cards) {
       const record = audit.find(a => a.id === card.id)!;
       expect(record).toBeDefined();
@@ -39,7 +43,7 @@ describe('approved LV1 image-only release', () => {
   });
 
   it('does not invent IDs, promote dictionary senses, or match the wrong ID', () => {
-    expect(cards.filter(c => !c.officialWordId)).toHaveLength(22);
+    expect(cards.filter(c => !c.officialWordId)).toHaveLength(67);
     expect(approvedLV1Images('boy', 'W999999')).toEqual([]);
     expect(approvedWordIllustration('boy', 'W999999')).toBeUndefined();
     expect(approvedCurriculumCard('boy', 'W000114')).toBeUndefined();
@@ -57,5 +61,17 @@ describe('approved LV1 image-only release', () => {
     for (const id of ['07-04', '08-73', '11-15', '12-24']) {
       expect(audit.find(c => c.id === 'LV1-U' + id)?.sourceImage).toContain('_v2.png');
     }
+  });
+
+  it('uses the corrected five-finger glove and the final proxy-reviewed Unit22-25 captions', () => {
+    expect(audit.find(c => c.id === 'LV1-U23-77')?.sourceImage).toBe('77_NOID_glove_v2.png');
+    expect(cards.find(c => c.id === 'LV1-U23-77')?.illustration.captionEn)
+      .toBe('He put on one glove before touching the cold snow.');
+    expect(cards.find(c => c.id === 'LV1-U22-03')?.illustration.captionEn)
+      .toBe('The gift looked perfect, but there was a catch inside.');
+    expect(cards.find(c => c.id === 'LV1-U25-46')?.illustration.captionEn)
+      .toBe('This shirt is the last item he bought during the sale.');
+    expect(cards.filter(c => c.unit >= 22 && c.unit <= 25)
+      .some(c => /Doumo|Mr\. Bean|Mrs\. Bean|Ms\. Bean/.test(c.illustration.captionEn))).toBe(false);
   });
 });

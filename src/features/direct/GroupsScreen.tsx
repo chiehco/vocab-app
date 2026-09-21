@@ -70,10 +70,10 @@ export default function GroupsScreen() {
     <div className="groups-side">
     <GroupPicker groups={groups??[]} words={words??[]} value={selected} disabled={busy} onChange={id=>{setSelected(id);setName(groups?.find(g=>g.id===id)?.name??'');}} />
     <details className="group-create" open={params.get('create')==='1'}><summary>建立或匯入群組</summary>
-    <section aria-label="LV1 已核准 Unit 群組">
-      <h2>LV1 Unit 01–15 · 已核准圖句</h2>
-      <p className="direct-muted">僅收錄已核准內容，不代表整個 Unit 已收齊。相同正式詞條在單一群組內只收一次；補充詞與本單元的確切圖句請由「看圖句」查看。一般字卡保留原有預設圖片。</p>
-      <button disabled={busy || !words || !groups} onClick={()=>void addReviewed()}>全部加入我的群組（15 個 Unit）</button>
+    <section aria-label="LV1 已審閱 Unit 群組">
+      <h2>LV1 已審閱 Unit 圖句</h2>
+      <p className="direct-muted">僅收錄已審閱內容，不代表整個 Unit 已收齊。相同正式詞條在單一群組內只收一次；補充詞與本單元的確切圖句請由「看圖句」查看。一般字卡保留原有預設圖片。</p>
+      <button disabled={busy || !words || !groups} onClick={()=>void addReviewed()}>全部加入我的群組（{lv1ReviewedGroups.length} 個 Unit）</button>
       {lv1ReviewedGroups.map(unit=><div className="direct-option-row" key={unit.templateId}>
         <span>{unit.name}<small> · {unit.wordIds.length} 張字卡{unit.supplements.length > 0 && ` · ${unit.supplements.length} 個補充詞`}</small></span>
         <a href={`${import.meta.env.BASE_URL}${unit.galleryPath}`}>看圖句 · Unit {String(unit.unit).padStart(2,'0')}</a>
@@ -88,7 +88,7 @@ export default function GroupsScreen() {
     </div>
     {g && <div className="groups-main"><button className="group-delete" disabled={busy} onClick={()=>void remove()}>刪除此群組</button><form onSubmit={e => {e.preventDefault();void save({...g,name:name.trim()});}}><label>群組名稱<input value={name} maxLength={80} onChange={e => setName(e.target.value)} /></label><button disabled={busy || !name.trim()}>儲存名稱</button></form>
       <h2>{g.name} · {g.itemIds.length + (g.wordIds?.length ?? 0)} 項</h2>
-      {lv1ReviewedGroups.filter(unit=>unit.templateId===g.templateId).map(unit=><p key={unit.templateId}><a href={`${import.meta.env.BASE_URL}${unit.galleryPath}`}>查看這個 Unit 的 {unit.pairCount} 組核准圖句{unit.supplements.length > 0 && `（含 ${unit.supplements.length} 個補充詞）`}</a></p>)}
+      {lv1ReviewedGroups.filter(unit=>unit.templateId===g.templateId).map(unit=><p key={unit.templateId}><a href={`${import.meta.env.BASE_URL}${unit.galleryPath}`}>查看這個 Unit 的 {unit.pairCount} 組已審閱圖句{unit.supplements.length > 0 && `（含 ${unit.supplements.length} 個補充詞）`}</a></p>)}
       {!!scopeWords.length && <div className="group-import-links" aria-label="用這個群組練習">
         <Link to={`/quiz?group=${encodeURIComponent(g.id)}`}>單字自由練習</Link>
         <Link to={`/arena/spell-barrage?group=${encodeURIComponent(g.id)}`}>字母轟炸</Link>

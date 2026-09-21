@@ -190,7 +190,7 @@ export default function WordDetailScreen() {
             <h2>{illustrationMeaning || displaySense.meaning}</h2>
             <WordTraitBadges senseCount={senseCount} hasConfusables={falseForms.length > 0} hasMorphemes={!!sortedMorphemes?.length} />
             {displaySense.needsReview && !illustrationMeaning && <span className="dossier-needs-review">主要意思待確認</span>}
-            {lv1Images.length > 0 && <p><a href={`${import.meta.env.BASE_URL}wordbeast/lv1-reviewed/index.html#${lv1Images[0].id}`}>查看 LV1 核准圖句（{lv1Images.length} 組）</a></p>}
+            {lv1Images.length > 0 && <p><a href={`${import.meta.env.BASE_URL}wordbeast/lv1-reviewed/index.html#${lv1Images[0].id}`}>查看 LV1 已審閱圖句（{lv1Images.length} 組）</a></p>}
           </div>
           {asset ? <StudyIllustration src={asset} word={word.word} caption={illustration?.captionZh} /> : <div className="dossier-hero-mark">
             <DossierSigil word={word.word} />
