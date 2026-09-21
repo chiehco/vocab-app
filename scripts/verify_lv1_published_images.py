@@ -3,6 +3,7 @@ import argparse
 import hashlib
 import io
 import json
+import time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from urllib.request import urlopen
@@ -19,8 +20,18 @@ audit = {x['id']: x for x in json.loads((root/'scripts/approvals/lv1-images-2026
 
 def verify(card):
     try:
-        with urlopen(args.base.rstrip('/')+'/'+card['illustration']['path'], timeout=45) as response:
-            data = response.read()
+        last_error = None
+        for attempt in range(3):
+            try:
+                with urlopen(args.base.rstrip('/')+'/'+card['illustration']['path'], timeout=45) as response:
+                    data = response.read()
+                break
+            except Exception as error:
+                last_error = error
+                if attempt < 2:
+                    time.sleep(attempt + 1)
+        else:
+            raise last_error
         expected = audit[card['id']]
         assert hashlib.sha256(data).hexdigest() == expected['publishedImageSha256'], 'Hash mismatch'
         with Image.open(io.BytesIO(data)) as image:
