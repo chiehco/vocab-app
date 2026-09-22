@@ -14,6 +14,7 @@ export default function ModeScreen({mode}:{mode:Mode}) {
       <section className="mode-section"><h2 className="mode-section-title">學測</h2><Entry to="/exam/papers" title="學測考古" description="110–115 年 · 選擇、混合與非選擇題"/><Entry to="/exam/high-frequency" title="高頻單字" description="S+A 單字 · 字表、複習與練習"/></section>
     </>}
     {mode==='games'&&<>
+      <Entry to="/arena/word-siege" title="拼字守城" description="選 Unit 拼字召喚援軍、冰凍與爆破，守住 60 秒"/>
       <Entry to="/arena/spell-barrage" title="字母轟炸" description="與電腦對手練習拼字"/>
       <Entry to="/arena/meaning-karuta" title="搶義花牌" description="翻牌配對英文與字義，和電腦搶對子"/>
     </>}

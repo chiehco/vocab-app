@@ -23,6 +23,7 @@ import WordBeastPrototype from "./features/wordbeast/WordBeastPrototype";
 import Lv1PilotScreen from "./features/wordbeast/Lv1PilotScreen";
 import SpellBarrageScreen from "./features/arena/SpellBarrageScreen";
 import MeaningKarutaScreen from "./features/arena/MeaningKarutaScreen";
+import SiegeScreen from './features/siege/SiegeScreen';
 import DirectScreen from "./features/direct/DirectScreen";
 import GroupsScreen from "./features/direct/GroupsScreen";
 import ExamHubScreen from "./features/exam/ExamHubScreen";
@@ -53,6 +54,7 @@ function AppLayout() {
   const location = useLocation();
   useEffect(() => () => stopSpeech(), [location.pathname]);
   const gameRoute = location.pathname === "/slash"
+    || location.pathname.startsWith('/arena/word-siege')
     || location.pathname.startsWith("/arena/spell-barrage")
     || location.pathname.startsWith("/arena/meaning-karuta");
   const immersive = gameRoute
@@ -81,6 +83,7 @@ function AppLayout() {
           <Route path="/arena" element={<Navigate to="/games" replace />} />
           <Route path="/arena/spell-barrage" element={<SpellBarrageScreen />} />
           <Route path="/arena/meaning-karuta" element={<MeaningKarutaScreen />} />
+          <Route path="/arena/word-siege" element={<SiegeScreen />} />
           <Route path="/practice/direct" element={<DirectScreen />} />
           <Route path="/vocabulary" element={<VocabularyScreen />} />
           <Route path="/groups" element={<GroupsScreen />} />
