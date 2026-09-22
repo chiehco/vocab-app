@@ -1,7 +1,7 @@
 import type { CustomGroup } from '../direct/model';
 import { readWordList } from '../modes/wordLists';
 import type { WordList } from '../modes/wordLists';
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useEffectEvent, useMemo, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
 import { getKnownWords } from "../../db/progressIdentity";
@@ -60,6 +60,8 @@ export default function QuizScreen() {
   const groupId = listId || searchParams.get('group');
   const customGroup = useLiveQuery<CustomGroup | WordList | undefined>(() => listId ? readWordList(listId) : groupId ? progressDb.customGroups.get(groupId) : undefined, [groupId,listId]);
   const groupReturn = listId ? (customGroup as WordList|undefined)?.returnTo ?? '/modes/words' : `/groups?group=${encodeURIComponent(groupId??'')}`;
+  const textbookScope = groupReturn.startsWith('/textbook/');
+  const autoStarted = useRef<string | null>(null);
 
   const explicitOrder = searchParams.has('order');
   const order = parseUnitOrder(searchParams.get('order'));
@@ -237,6 +239,17 @@ export default function QuizScreen() {
     sessionStarted.current = false;
     setSaveError(null);
   }
+
+  // The textbook's primary action starts the simplest available exercise directly.
+  // Other entrances retain their existing choice of practice modes.
+  const startTextbookPractice = useEffectEvent(() => { void startMcq('w2m'); });
+  useEffect(() => {
+    if (!listId || !textbookScope || searchParams.get('start') !== 'w2m' || autoStarted.current === listId
+      || mode !== null || !scopedCollectedWords?.length || !allWords || !examPriorities || !examDistractorRelations
+      || allWords.filter(w => !functionWordSet.has(w.word)).length < 4) return;
+    autoStarted.current = listId;
+    startTextbookPractice();
+  }, [listId, textbookScope, searchParams, mode, scopedCollectedWords, allWords, examPriorities, examDistractorRelations, functionWordSet]);
 
   async function saveAnswer(word: string, correct: boolean, reviewMode: ReviewMode): Promise<boolean> {
     if (savingRef.current) return false;

@@ -22,6 +22,7 @@ import { approvedCurriculumCards, approvedCurriculumUsage, approvedLV1Images, ap
 import { buildRootFamilies, normalizeMorphemeKey, pickFamilyMorphemes } from "./rootFamily";
 import "./word-detail.css";
 import { progressDb } from '../../db/progressDb';
+import { useStudyBookmark } from '../modes/useStudyBookmark';
 
 type DossierBackTab = "meaning" | "relations" | "roots" | "examples";
 
@@ -70,6 +71,11 @@ export default function WordDetailScreen() {
     setBackTab("meaning");
   }, [wordId]);
   const word = useLiveQuery(() => wordId ? contentDb.words.get(wordId) : undefined, [wordId]);
+  const bookmarkFailed = useStudyBookmark(word && (!groupId || groupIndex >= 0) ? {
+    href: `/word/${word.wordId}${groupId ? `?${groupQuery}` : ''}`,
+    title: group?.name ?? word.word, position: groupIndex >= 0 ? groupIndex+1 : 1,
+    total: groupIndex >= 0 ? group!.wordIds!.length : 1,
+  } : undefined);
   useCardPronunciation(word?.word, wordId);
   const illustration = useIllustrationMedia(word);
   const senses = useLiveQuery(() => word ? contentDb.senses.where("wordId").equals(word.wordId).sortBy("senseOrder") : [], [word?.wordId]);
@@ -165,6 +171,7 @@ export default function WordDetailScreen() {
 
   return (
     <div className="word-dossier-page">
+      {bookmarkFailed && <p role="alert">學習位置尚未保存，請確認儲存空間後重新整理。</p>}
       <header className="word-dossier-nav">
         <Link to="/browse">← 單字總表</Link><span>{word.wordId}</span><b>{word.level}</b>
       </header>

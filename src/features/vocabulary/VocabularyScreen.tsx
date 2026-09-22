@@ -6,8 +6,10 @@ import { saveGroup, startSession } from '../direct/store';
 import { reviewedExample, practiceIds } from './model';
 import '../direct/direct.css';
 import './vocabulary.css';
+import { useStudyBookmark } from '../modes/useStudyBookmark';
+import { textbookLevels, textbookPath } from './textbookCatalog';
 
-const LEVELS = ['LV1','LV2','LV3','LV4','LV5','LV6'];
+const LEVELS = textbookLevels.filter(level => level !== 'LV1');
 const ASSET_BASE = import.meta.env.BASE_URL;
 
 export default function VocabularyScreen(){
@@ -26,6 +28,10 @@ export default function VocabularyScreen(){
   const index=Math.max(0,matches.findIndex(i=>i.learningItemId===params.get('item'))),item=matches[index];
   const example=item?reviewedExample(item):undefined;
   const related=item?.displayWord&&current?current.relatedNotes.filter(n=>n.parentWord===item.displayWord):[];
+  const saveFailed = useStudyBookmark(item && current ? {
+    href: `/vocabulary?${new URLSearchParams({level,unit:String(unit),kind,item:item.learningItemId})}`,
+    title: current.name, position: items.findIndex(i => i.learningItemId===item.learningItemId)+1, total: items.length,
+  } : undefined);
   const usageLabel=level==='LV3'?'文法與搭配':'用法與搭配';
   function choose(values:Record<string,string>){setError('');setParams({unit:String(unit),...values});}
   function show(id:string){choose({level,kind,item:id});}
@@ -36,7 +42,7 @@ export default function VocabularyScreen(){
   }catch{setError('無法開始練習，請重試。');}finally{setBusy(false);}}
   async function createGroup(){if(busy||!current)return;setBusy(true);setError('');try{const g=templateGroup(current.templateId);await saveGroup(g);navigate(`/groups?group=${g.id}`);}catch{setError('群組未能保存，請重試。');}finally{setBusy(false);}}
   return <div className="direct-page vocab-page">
-    <nav><Link to="/modes/words">← 單字模式</Link><Link to="/groups">我的群組</Link></nav>
+    <nav><Link to={textbookPath(level,unit)}>← 課本單元</Link><Link to="/">首頁</Link></nav>
     <p className="direct-kicker">單字模式 · 教材</p><h1>教材字卡</h1>
     <p className="direct-muted">直接看字卡、中文意思與例句，再依需要自由練習。</p>
     <div className="level-tabs vocab-levels" aria-label="選擇等級">{LEVELS.map(l=><button key={l} aria-pressed={level===l} onClick={()=>{setQuery('');choose({level:l});}}>{l}</button>)}</div>
@@ -65,11 +71,12 @@ export default function VocabularyScreen(){
           </>}
         </article>
         <div className="vocab-levels"><button disabled={index===0} onClick={()=>show(matches[index-1].learningItemId)}>上一張</button><button disabled={index===matches.length-1} onClick={()=>show(matches[index+1].learningItemId)}>下一張</button></div>
-        <button className="direct-primary" disabled={busy} onClick={()=>void practice()}>從這裡自由練習（{Math.min(10,matches.length-index)} 題）</button>
+        <button className="direct-primary" disabled={busy} onClick={()=>void practice()}>做題目（從這裡開始 {Math.min(10,matches.length-index)} 題）</button>
         <p className="direct-muted">瀏覽字卡不代表已熟悉；練習保留首答，不改變單字複習排程。</p>
       </>:<p role="status">找不到符合的項目，請換個關鍵字。</p>}
       <footer><button disabled={busy} onClick={()=>void createGroup()}>以完整 Unit 建立我的群組（{curriculumItems.length} 項）</button><p className="direct-muted">建立後可改名、增刪與排序。</p></footer>
     </>}
     {error&&<p role="alert">{error}</p>}
+    {saveFailed&&<p role="alert">學習位置尚未保存，請確認儲存空間後重新整理。</p>}
   </div>;
 }

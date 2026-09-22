@@ -1,0 +1,36 @@
+.learning-page { max-width: var(--ui-column); margin: 0 auto; padding: var(--ui-sp-6) var(--ui-sp-6) var(--ui-sp-8); color: var(--ui-text); line-height: var(--ui-lh-zh); }
+.learning-page a { color: var(--ui-accent); text-decoration: none; }
+.learning-header { display: flex; align-items: center; justify-content: space-between; gap: var(--ui-sp-4); margin-bottom: var(--ui-sp-6); }
+.learning-header a { display: inline-flex; align-items: center; min-height: var(--ui-tap); }
+.learning-header .learning-brand { font-size: var(--ui-fs-title); font-weight: 700; }
+.learning-page h1 { font-size: var(--ui-fs-display); line-height: var(--ui-lh-tight); margin: var(--ui-sp-4) 0; }
+.learning-page h2 { font-size: var(--ui-fs-title); line-height: var(--ui-lh-tight); margin: var(--ui-sp-2) 0; overflow-wrap: anywhere; }
+.learning-muted { color: var(--ui-muted); font-size: var(--ui-fs-secondary); }
+.learning-start { padding: var(--ui-sp-6); background: var(--ui-accent-soft); border-radius: 16px; margin: var(--ui-sp-6) 0 var(--ui-sp-4); }
+.learning-start p { margin: var(--ui-sp-2) 0; }
+.learning-start progress { display: block; width: 100%; height: 6px; border: 0; border-radius: 4px; overflow: hidden; appearance: none; background: var(--ui-border); margin: var(--ui-sp-6) 0 var(--ui-sp-2); }
+.learning-start progress::-webkit-progress-bar { background: var(--ui-border); }
+.learning-start progress::-webkit-progress-value { background: var(--ui-accent); }
+.learning-start progress::-moz-progress-bar { background: var(--ui-accent); }
+.learning-page .learning-primary, .learning-secondary { display: flex; justify-content: center; align-items: center; gap: var(--ui-sp-4); width: 100%; min-height: 50px; padding: var(--ui-sp-3) var(--ui-sp-4); border-radius: 10px; font: inherit; text-align: center; margin-top: var(--ui-sp-4); }
+.learning-page .learning-primary { background: var(--ui-accent); color: var(--ui-on-accent); border: 1px solid var(--ui-accent); font-weight: 600; transition: filter var(--ui-motion); }
+.learning-primary:hover { filter: brightness(.94); }
+.learning-secondary { background: var(--ui-surface); color: var(--ui-text); border: 1px solid var(--ui-border-strong); }
+.learning-page button:disabled { opacity: .6; cursor: default; }
+.learning-row { display: flex; justify-content: space-between; align-items: center; gap: var(--ui-sp-4); border-bottom: 1px solid var(--ui-border); padding: 20px 0; min-height: var(--ui-tap); }
+.learning-row strong { display: block; color: var(--ui-text); font-size: var(--ui-fs-body); }
+.learning-row small { display: block; color: var(--ui-muted); font-size: var(--ui-fs-secondary); margin-top: var(--ui-sp-1); }
+.learning-hint { margin: var(--ui-sp-6) 0; }
+.learning-footer { display: flex; flex-wrap: wrap; gap: var(--ui-sp-6); margin-top: var(--ui-sp-6); font-size: var(--ui-fs-secondary); }
+.learning-footer a { display: inline-flex; align-items: center; min-height: var(--ui-tap); }
+.learning-level { display: flex; justify-content: space-between; align-items: center; gap: var(--ui-sp-3); margin: var(--ui-sp-6) 0 var(--ui-sp-3); }
+.learning-level select { max-width: 65%; padding: var(--ui-sp-2) var(--ui-sp-4); min-height: var(--ui-tap); border: 1px solid var(--ui-border-strong); background: var(--ui-surface); border-radius: var(--ui-radius); color: var(--ui-text); font: inherit; }
+.learning-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--ui-sp-3); border-block: 1px solid var(--ui-border); padding: var(--ui-sp-4) 0; margin: var(--ui-sp-6) 0; }
+.learning-page details { border-top: 1px solid var(--ui-border); margin-top: var(--ui-sp-6); padding-top: var(--ui-sp-4); }
+.learning-page summary { min-height: var(--ui-tap); cursor: pointer; }
+.learning-illustration { margin: var(--ui-sp-6) 0; }
+.learning-illustration img { display: block; width: 100%; height: auto; border-radius: 12px; }
+.learning-illustration figcaption p { margin: var(--ui-sp-3) 0; }
+.learning-card-nav { display: flex; gap: var(--ui-sp-3); }
+.learning-card-nav > * { flex: 1; }
+@media (max-width: 360px) { .learning-page { padding-inline: var(--ui-sp-4); } .learning-start { padding: var(--ui-sp-4); } }

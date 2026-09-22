@@ -8,6 +8,9 @@ import { DEFAULT_SETTINGS, getSetting } from "./db/progressDb";
 import { withStartupTimeout } from "./db/startup";
 import { applyFontScale } from "./settings/fontScale";
 import ModeScreen from "./features/modes/ModeScreen";
+import HomeScreen from './features/modes/HomeScreen';
+import TextbookScreen from './features/vocabulary/TextbookScreen';
+import ReviewedCardsScreen from './features/vocabulary/ReviewedCardsScreen';
 import ReviewScreen from "./features/review/ReviewScreen";
 import SlashScreen from "./features/slash/SlashScreen";
 import QuizScreen from "./features/quiz/QuizScreen";
@@ -32,10 +35,9 @@ import { stopSpeech } from "./lib/speech";
 
 const NAV_ITEMS = [
   { to: "/", label: "首頁", icon: "home" },
-  { to: "/modes/words", label: "單字", icon: "review" },
+  { to: "/textbook", label: "單字", icon: "review" },
   { to: "/exam", label: "大考", icon: "trial" },
   { to: "/games", label: "遊戲", icon: "game" },
-  { to: "/story", label: "劇情", icon: "archive" },
 ];
 
 function NavIcon({ name }: { name: string }) {
@@ -61,7 +63,10 @@ function AppLayout() {
     <div className={immersive && !gameRoute ? "mx-auto flex min-h-screen max-w-lg flex-col" : "app-frame flex min-h-screen flex-col"}>
       <main className={immersive ? "flex-1" : "flex-1 pb-20"}>
         <Routes>
-          <Route path="/" element={<ModeScreen />} />
+          <Route path="/" element={<HomeScreen />} />
+          <Route path="/textbook" element={<TextbookScreen />} />
+          <Route path="/textbook/:level/:unit" element={<TextbookScreen />} />
+          <Route path="/textbook/LV1/:unit/cards" element={<ReviewedCardsScreen />} />
           <Route path="/review" element={<ReviewScreen />} />
           <Route path="/slash" element={<SlashScreen />} />
           <Route path="/wordbeast" element={<WordBeastPrototype />} />
@@ -81,7 +86,7 @@ function AppLayout() {
           <Route path="/groups" element={<GroupsScreen />} />
           <Route path="/modes/words" element={<WordsWorkspace />} />
           <Route path="/games" element={<ModeScreen mode="games" />} />
-          <Route path="/story" element={<ModeScreen mode="story" />} />
+          <Route path="/story" element={<Navigate to="/" replace />} />
           <Route path="/exam" element={<ModeScreen mode="exam" />} />
           <Route path="/exam/high-frequency" element={<ExamHubScreen />} />
           <Route path="/exam/papers" element={<GsatScreen />} />
@@ -99,7 +104,7 @@ function AppLayout() {
               <NavLink
                 key={item.to}
                 to={item.to}
-                className={({ isActive }) => `app-nav-item ${isActive || (item.to === "/modes/words" && /^\/(vocabulary|groups|review|browse|word|units|practice|placement)(\/|$)/.test(location.pathname)) || (item.to === "/games" && location.pathname.startsWith("/arena")) ? "active" : ""}`}
+                className={({ isActive }) => `app-nav-item ${isActive || (item.to === "/textbook" && /^\/(modes\/words|vocabulary|groups|review|browse|word|units|practice|placement|quiz)(\/|$)/.test(location.pathname)) || (item.to === "/games" && location.pathname.startsWith("/arena")) ? "active" : ""}`}
               >
                 <NavIcon name={item.icon} />
                 <span>{item.label}</span>

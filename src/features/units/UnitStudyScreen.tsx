@@ -13,6 +13,7 @@ import { getWordBeastAsset } from "../wordbeast/wordBeastAssets";
 import { getExamUnit, getStudyUnit, parseUnitOrder, unitOrderLabel } from "./unitPlan";
 import AddUnitGroupButton from "./AddUnitGroupButton";
 import "./units.css";
+import { useStudyBookmark } from '../modes/useStudyBookmark';
 
 const LEVELS = new Set(["LV1", "LV2", "LV3", "LV4", "LV5", "LV6"]);
 
@@ -65,6 +66,10 @@ export default function UnitStudyScreen() {
   const complete = !!unit && normalizedIndex >= unit.words.length;
   const index = unit ? Math.min(normalizedIndex, unit.words.length) : 0;
   const word = !complete ? unit?.words[index] : undefined;
+  const bookmarkFailed = useStudyBookmark(word && unit ? {
+    href: `/units/${level}/${unitNumber}?index=${index}${orderQuery}`,
+    title: `${level} · ${orderLabel} · ${unit.label}`, position: index+1, total: unit.words.length,
+  } : undefined);
   useCardPronunciation(word?.word, `${level}:${orderLabel}:${unitNumber}:${index}`);
   const details = useLiveQuery(async () => {
     if (!word) return undefined;
@@ -132,6 +137,7 @@ export default function UnitStudyScreen() {
 
   return (
     <div className="unit-study-page" ref={pageRef}>
+      {bookmarkFailed && <p role="alert">學習位置尚未保存，請確認儲存空間後重新整理。</p>}
       <header className="unit-study-header">
         <Link to={`/units?level=${level}${orderQuery}`}>← Unit 清單</Link>
         <span>{level} · {orderLabel} · {unit.label}</span>

@@ -18,13 +18,13 @@ export function sortWorkspaceWords(words: WordRecord[], priorities: ExamPriority
   return [...first, ...words.filter(w => !firstIds.has(w.wordId)).sort((a,b) => a.word.localeCompare(b.word,'en'))];
 }
 export async function saveWordList(words:WordRecord[],name:string,returnTo:string) {
-  if(!words.length||!returnTo.startsWith('/modes/words'))throw Error('沒有可用的字卡');
+  if(!words.length||!/^\/(?:modes\/words(?:\?|$)|textbook\/LV[1-6]\/\d+$)/.test(returnTo))throw Error('沒有可用的字卡');
   const list:WordList={id:crypto.randomUUID(),name,wordIds:words.map(w=>w.wordId),itemIds:[],templateId:null,templateRevision:null,updatedAt:Date.now(),returnTo};
   await progressDb.settings.put({key:`word-list:${list.id}`,value:list});
   return list;
 }
 export async function readWordList(id:string):Promise<WordList|undefined> {
   const value=(await progressDb.settings.get(`word-list:${id}`))?.value as WordList|undefined;
-  if(!value||value.id!==id||!Array.isArray(value.wordIds)||!value.wordIds.every(id=>typeof id==='string')||typeof value.name!=='string'||typeof value.returnTo!=='string'||!/^\/modes\/words(?:\?|$)/.test(value.returnTo))return undefined;
+  if(!value||value.id!==id||!Array.isArray(value.wordIds)||!value.wordIds.every(id=>typeof id==='string')||typeof value.name!=='string'||typeof value.returnTo!=='string'||!/^\/(?:modes\/words(?:\?|$)|textbook\/LV[1-6]\/\d+$)/.test(value.returnTo))return undefined;
   return value;
 }

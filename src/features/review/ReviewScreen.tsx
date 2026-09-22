@@ -1,6 +1,6 @@
 import { useUpcomingIllustrations } from "../wordbeast/useUpcomingIllustrations";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
 import { contentDb } from "../../db/contentDb";
 import { DEFAULT_SETTINGS, getSetting } from "../../db/progressDb";
@@ -25,6 +25,7 @@ import { pickDistractors, shuffle } from "../../quiz/distractors";
 import { pickExamDistractors } from "../../quiz/examDistractors";
 import "./review.css";
 import { getDailyLearningPlan } from '../../srs/dailyPlan';
+import { getDueReviewQueue } from '../../srs/dueReview';
 
 const LEVEL_CHOICES = [TOP_EXAM_FILTER, "全部", "LV1", "LV2", "LV3", "LV4", "LV5", "LV6"];
 
@@ -73,12 +74,14 @@ function ScreenState({ type, level }: { type: "loading" | "empty"; level: string
 }
 
 export default function ReviewScreen() {
+  const [params] = useSearchParams();
+  const dueOnly = params.get('due') === '1';
   const today = useToday();
   const [queue, setQueue] = useState<QueueItem[] | null>(null);
   const [index, setIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [doneCount, setDoneCount] = useState(0);
-  const [levelSel, setLevelSel] = useState(TOP_EXAM_FILTER);
+  const [levelSel, setLevelSel] = useState(dueOnly ? '全部' : TOP_EXAM_FILTER);
   const sessionId = useRef(crypto.randomUUID());
   const sessionStarted = useRef(false);
   const savingRef = useRef(false);
@@ -111,6 +114,12 @@ export default function ReviewScreen() {
     sessionId.current = crypto.randomUUID();
     sessionStarted.current = false;
     const loadQueue = async () => {
+      if (dueOnly) {
+        const due = await getDueReviewQueue(today);
+        const priorities = levelSel === TOP_EXAM_FILTER ? new Set(standaloneStudyPriorities(await contentDb.examPriorities.toArray()).map(p => p.word)) : undefined;
+        if (!cancelled) setQueue(due.filter(i => levelSel === '全部' || (priorities ? priorities.has(i.wordRecord.word) : i.wordRecord.level===levelSel)));
+        return;
+      }
       const isTopExam = levelSel === TOP_EXAM_FILTER;
       const levels = levelSel === "全部" || isTopExam ? undefined : [levelSel];
       const priorities = await contentDb.examPriorities.toArray();
@@ -126,7 +135,7 @@ export default function ReviewScreen() {
     };
     loadQueue();
     return () => { cancelled = true; };
-  }, [levelSel, today]);
+  }, [levelSel, today, dueOnly]);
 
   if (queue === null) return <ScreenState type="loading" level={levelSel} />;
   if (queue.length === 0) {

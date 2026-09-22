@@ -4,11 +4,12 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { contentDb } from '../../db/contentDb';
 import { progressDb } from '../../db/progressDb';
 import { downloadProgressBackup, exportProgress } from '../../backup/backup';
-import { practiceQuestions as allQuestions, sessionMode, questions, REVISION, wrongQuestionIds } from './model';
+import { practiceQuestions as allQuestions, sessionMode, questions, REVISION, wrongQuestionIds, curriculumUnits } from './model';
 import type { DirectSession } from './model';
 import { startSession, updateQuestion, submitAnswer, nextQuestion, switchPracticeMode } from './store';
 import { lookupWord } from './lookup';
 import './direct.css';
+import { practiceIds } from '../vocabulary/model';
 
 export default function DirectScreen() {
   const [params,setParams] = useSearchParams();
@@ -25,6 +26,10 @@ export default function DirectScreen() {
   const q = allQuestions.find(q => q.questionId === s?.questionIds[s.index]);
   const a = data?.attempts.find(a => a.id === `${s?.id}:${q?.questionId}`);
   const scope=s?.scopeQuestionIds ?? s?.questionIds;
+  const studyUnit = scope?.length ? curriculumUnits.find(u => {
+    const ids = new Set(practiceIds(u.items));
+    return scope.every(id => ids.has(id.startsWith('CHOICE-') ? id.slice(7) : id));
+  }) : undefined;
   const first = data?.attempts.filter(a => a.firstAttempt && allQuestions.some(q => q.questionId === a.questionId) && (!scope || scope.includes(a.questionId))) ?? [];
   async function openSession(create: Promise<DirectSession>) { const next=await create;setParams({session:next.id}); }
   async function act(action: () => Promise<unknown>) {
@@ -42,7 +47,7 @@ export default function DirectScreen() {
   }
   const wrong = wrongQuestionIds(data?.attempts ?? []).filter(id=>!scope || scope.includes(id));
   return <div className="direct-page ui-column">
-    <nav><Link to="/exam">← 學測專區</Link><Link to="/groups">我的群組</Link></nav>
+    <nav><Link to={studyUnit ? `/textbook/${studyUnit.level}/${studyUnit.unit}` : '/exam'}>← {studyUnit ? '課本單元' : '學測專區'}</Link><Link to="/groups">我的群組</Link></nav>
     <p className="direct-kicker">教材練習</p><h1>{s?.title ?? '新情境練習'}</h1>
     <p className="direct-muted">{s?.questionIds.some(id=>!questions.some(q=>q.questionId===id)) || s?.groupId ? `單元${mode === 'basic' ? '基礎練習：四選一與文法搭配' : '進階練習：自行填入目標詞，文法保留選項'}。可隨時離開，下次續答。` : '六題新編情境題，尚未校準學測難度。'}點英文查中文，作答後看解析。</p>
     {s && hasVocabulary && <section aria-label="練習難度"><div className="direct-modes">
@@ -73,7 +78,7 @@ export default function DirectScreen() {
       {wrong.length > 0 && <button className="direct-primary" disabled={busy} onClick={() => void act(() => openSession(startSession(wrong,s.title,s.groupId,scope,mode)))}>重練錯題（{wrong.length}）</button>}
       <button disabled={busy} onClick={() => void act(() => openSession(startSession(s.questionIds,s.title,s.groupId,scope,mode)))}>再練本輪題目</button>
     </section>}
-    <footer><p><Link to="/vocabulary">返回單字字卡</Link></p><p>{hasVocabulary ? (mode === 'basic' ? '基礎' : '進階') : ''}首次作答：{first.filter(a => a.correct).length} / {first.length} 題正確</p><p className="direct-muted">重練保留首答；本練習不改變正式複習排程。查字使用本機資料，不呼叫翻譯 API。</p>
+    <footer><p><Link to={studyUnit ? `/vocabulary?level=${studyUnit.level}&unit=${studyUnit.unit}` : '/textbook'}>返回單字字卡</Link></p><p>{hasVocabulary ? (mode === 'basic' ? '基礎' : '進階') : ''}首次作答：{first.filter(a => a.correct).length} / {first.length} 題正確</p><p className="direct-muted">重練保留首答；本練習不改變正式複習排程。查字使用本機資料，不呼叫翻譯 API。</p>
       <button disabled={busy} onClick={() => void act(async () => downloadProgressBackup(await exportProgress()))}>匯出完整進度備份</button>
       {s?.groupId && <p><button disabled={busy} onClick={() => void act(() => openSession(startSession()))}>開始新情境六題</button></p>}
     </footer>
