@@ -52,6 +52,14 @@ export function approvedCurriculumUsage(word: string, wordId: string): string | 
   return key === 'hardware' || key === 'software' ? `a piece of ${key}` : undefined;
 }
 
+export function approvedCurriculumUsageZh(word: string, wordId: string): string | undefined {
+  const key = word.trim().toLowerCase();
+  if (!approvedCurriculumCards(key, wordId).some(c => c.unitName === unit19.template.title)) return undefined;
+  if (key === 'hardware') return '一件硬體設備';
+  if (key === 'software') return '一套軟體';
+  return undefined;
+}
+
 export function approvedCurriculumIllustration(word: string, src: string) {
   const path = src.split(/[?#]/)[0];
   return approvedCurriculumCards(word).find(card => path.endsWith('/' + card.illustration.path))?.illustration

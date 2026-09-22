@@ -11,6 +11,7 @@ export interface WordRecord {
   meaningZh: string | null;
   meaningEn: string | null;
   usagePattern: string | null;
+  usagePatternZh?: string | null;
   syllables: string | null;
   stressPattern: string | null;
   phoneticUs: string | null; // 台灣高中學習情境採 KK 音標；欄名暫保留以維持資料相容

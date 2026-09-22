@@ -126,7 +126,7 @@ def parse_words(ws):
     for r in read_rows(ws):
         (word_id, word, level, pos, meaning_zh, meaning_en, usage_pattern, syllables,
          stress, phonetic_us, family_key, is_core, source_note, status,
-         image_word_id) = (list(r) + [None] * 15)[:15]
+         image_word_id, usage_pattern_zh) = (list(r) + [None] * 16)[:16]
         if word is None:
             continue
         if word in seen:
@@ -149,6 +149,7 @@ def parse_words(ws):
             "meaningZh": meaning_zh,
             "meaningEn": meaning_en,
             "usagePattern": usage_pattern,
+            "usagePatternZh": usage_pattern_zh,
             "syllables": syllables,
             "stressPattern": stress,
             "phoneticUs": phonetic_us,

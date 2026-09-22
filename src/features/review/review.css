@@ -54,6 +54,11 @@
 .answer-note { display: grid; grid-template-columns: minmax(56px, 30%) minmax(0, 1fr); gap: var(--ui-sp-2) var(--ui-sp-3); margin-top: var(--ui-sp-3); padding-top: var(--ui-sp-3); border-top: 1px solid var(--ui-border); }
 .answer-note span { color: var(--ui-muted); font-size: var(--ui-fs-label); font-weight: 600; line-height: 1.5; overflow-wrap: anywhere; }
 .answer-note p { margin: 0; font-size: var(--ui-fs-body); line-height: 1.75; white-space: pre-wrap; overflow-wrap: anywhere; }
+.answer-note .usage-pattern-items { margin: 0; padding: 0; border: 0; list-style: none; }
+.answer-note .usage-pattern-items li + li { margin-top: var(--ui-sp-2); }
+.answer-note .usage-pattern-items b, .answer-note .usage-pattern-items small { display: block; overflow-wrap: anywhere; }
+.answer-note .usage-pattern-items b { font-size: var(--ui-fs-body); font-weight: 500; line-height: var(--ui-lh-en); }
+.answer-note .usage-pattern-items small { margin-top: 2px; color: var(--ui-muted); font-size: var(--ui-fs-secondary); font-weight: 400; line-height: var(--ui-lh-zh); }
 
 .seal-controls { margin-top: var(--ui-sp-3); }
 .seal-reveal { display: flex; width: 100%; min-height: 56px; align-items: center; justify-content: center; padding: 0 20px; border: 0; border-radius: var(--ui-radius); color: var(--ui-on-accent); background: var(--ui-accent); font: inherit; font-size: var(--ui-fs-body); font-weight: 700; cursor: pointer; }

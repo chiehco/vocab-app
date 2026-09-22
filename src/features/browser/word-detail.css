@@ -106,7 +106,11 @@
 .dossier-status b { margin-top: var(--ui-sp-1); font-size: var(--ui-fs-secondary); font-weight: 700; line-height: 1.5; }
 
 .dossier-usage { padding: var(--ui-sp-6) 0; border-bottom: 1px solid var(--ui-border); }
-.dossier-usage p { margin: var(--ui-sp-3) 0 0; padding-left: var(--ui-sp-3); border-left: 3px solid var(--ui-accent); font-size: var(--ui-fs-body); line-height: 1.8; }
+.usage-pattern-items { margin: var(--ui-sp-3) 0 0; padding: 0 0 0 var(--ui-sp-3); border-left: 3px solid var(--ui-accent); list-style: none; }
+.usage-pattern-items li + li { margin-top: var(--ui-sp-3); }
+.usage-pattern-items b, .usage-pattern-items small { display: block; overflow-wrap: anywhere; }
+.usage-pattern-items b { font-size: var(--ui-fs-body); font-weight: 500; line-height: var(--ui-lh-en); }
+.usage-pattern-items small { margin-top: 2px; color: var(--ui-muted); font-size: var(--ui-fs-secondary); line-height: var(--ui-lh-zh); }
 
 .dossier-section { padding: var(--ui-sp-6) 0; border-bottom: 1px solid var(--ui-border); }
 .dossier-section-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--ui-sp-3); }

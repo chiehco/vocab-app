@@ -26,6 +26,7 @@ import { pickExamDistractors } from "../../quiz/examDistractors";
 import "./review.css";
 import { getDailyLearningPlan } from '../../srs/dailyPlan';
 import { getDueReviewQueue } from '../../srs/dueReview';
+import UsagePatternList from '../vocabulary/UsagePatternList';
 
 const LEVEL_CHOICES = [TOP_EXAM_FILTER, "全部", "LV1", "LV2", "LV3", "LV4", "LV5", "LV6"];
 
@@ -313,7 +314,7 @@ function Flashcard({ item, flipped, options, onFlip, onGrade, onKnown, position,
             <h2>{word.meaningZh || "尚無中文意思"}</h2>
             {senses && senses.length > 1 && <ol className="answer-senses">{senses.map((sense) => <li key={sense.senseId}><span>{sense.sensePos}</span><b>{sense.meaningZh}</b>{sense.isExamSense && <small>學測出現情形</small>}</li>)}</ol>}
             {word.meaningEn && <p className="answer-en">{word.meaningEn}</p>}
-            {word.usagePattern && <div className="answer-note"><span>用法</span><p>{word.usagePattern}</p></div>}
+            {word.usagePattern && <div className="answer-note"><span>用法</span><UsagePatternList english={word.usagePattern} chinese={word.usagePatternZh} /></div>}
             {notes?.map((note) => (
               <div className="answer-note" key={note.noteId}>
                 <span>{NOTE_TYPE_LABEL[note.noteType] ?? note.noteType}{note.title ? ` · ${note.title}` : ""}</span>

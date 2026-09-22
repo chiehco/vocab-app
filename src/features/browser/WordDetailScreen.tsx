@@ -18,7 +18,8 @@ import { useIllustrationMedia } from "../wordbeast/useIllustrationMedia";
 import { buildSenseCountByWord } from "../wordbeast/wordTraits";
 import { MORPHEME_TYPE_LABEL, NOTE_TYPE_LABEL, RELATION_TYPE_LABEL, REVERSE_RELATION_LABEL, STATE_LABEL } from "./wordLabels";
 import { getWordDisplaySense } from "./wordDisplay";
-import { approvedCurriculumCards, approvedCurriculumUsage, approvedLV1Images, approvedWordIllustration } from '../vocabulary/approvedCurriculum';
+import { approvedCurriculumCards, approvedCurriculumUsage, approvedCurriculumUsageZh, approvedLV1Images, approvedWordIllustration } from '../vocabulary/approvedCurriculum';
+import UsagePatternList from '../vocabulary/UsagePatternList';
 import { buildRootFamilies, normalizeMorphemeKey, pickFamilyMorphemes } from "./rootFamily";
 import "./word-detail.css";
 import { progressDb } from '../../db/progressDb';
@@ -153,6 +154,7 @@ export default function WordDetailScreen() {
   const senseCount = buildSenseCountByWord(senses ?? []).get(word.word) ?? 0;
   const displaySense = getWordDisplaySense(word, senses ?? []);
   const usagePattern = approvedCurriculumUsage(word.word, word.wordId) ?? word.usagePattern;
+  const usagePatternZh = approvedCurriculumUsageZh(word.word, word.wordId) ?? word.usagePatternZh;
   const lv1Images = approvedLV1Images(word.word, word.wordId);
   const illustrationMeaning = !approvedWordIllustration(word.word, word.wordId) && asset && (!word.imageWordId || word.imageWordId === word.wordId)
     ? illustration?.targetHint?.trim() : undefined;
@@ -303,7 +305,7 @@ export default function WordDetailScreen() {
         </section>
       )}
 
-      {usagePattern && <section className="dossier-usage"><h2>常用搭配</h2><p>{usagePattern}</p></section>}
+      {usagePattern && <section className="dossier-usage"><h2>常用搭配</h2><UsagePatternList english={usagePattern} chinese={usagePatternZh} /></section>}
 
       {notes && notes.length > 0 && (
         <section className="dossier-section">
