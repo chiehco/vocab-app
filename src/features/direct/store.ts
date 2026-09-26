@@ -2,6 +2,12 @@ import { progressDb } from '../../db/progressDb';
 import { questions, practiceQuestions as allQuestions, questionForMode, sessionMode, acceptsChoice, isCorrectAnswer, REVISION, validGroup } from './model';
 import type { CustomGroup, DirectSession, DirectAttempt, PracticeMode } from './model';
 import { contentDb } from '../../db/contentDb';
+import { orderPracticeScope } from './practiceOrder';
+
+export async function startScopeSession(scopeQuestionIds: string[], title: string, groupId?: string, mode: PracticeMode = 'basic') {
+  const attempts = await progressDb.directAttempts.toArray();
+  return startSession(orderPracticeScope(scopeQuestionIds, attempts, mode), title, groupId, scopeQuestionIds, mode);
+}
 
 export async function importWordGroup(wordIds: string[], name: string, groupId?: string) {
   if (!wordIds.length || (await contentDb.words.bulkGet(wordIds)).some(w => !w)) throw new Error('部分字卡目前無法使用，請重新預覽。');

@@ -6,7 +6,7 @@ import { progressDb } from '../../db/progressDb';
 import { downloadProgressBackup, exportProgress } from '../../backup/backup';
 import { practiceQuestions as allQuestions, sessionMode, questions, REVISION, wrongQuestionIds, curriculumUnits } from './model';
 import type { DirectSession } from './model';
-import { startSession, updateQuestion, submitAnswer, nextQuestion, switchPracticeMode } from './store';
+import { startSession, startScopeSession, updateQuestion, submitAnswer, nextQuestion, switchPracticeMode } from './store';
 import { lookupWord } from './lookup';
 import './direct.css';
 import { practiceIds } from '../vocabulary/model';
@@ -59,8 +59,7 @@ export default function DirectScreen() {
       <p className="direct-kicker">{s.index + 1} / {s.questionIds.length}</p>
       <h2 className="direct-stem">{q.stem.split(/([A-Za-z]+(?:'[A-Za-z]+)?)/g).map((token,i) => /^[A-Za-z]/.test(token) ? <button disabled={busy} key={i} className="direct-word" aria-label={`查字：${token}`} onClick={() => lookup(token)}>{token}</button> : token)}</h2>
       <p className="direct-muted">{s.lookups[q.questionId]?.length ? '本題已使用提示，會保留紀錄。' : '提交前查字會標記為使用提示。'}</p>
-      {q.sentenceEn && <p>目標義：{q.targetMeaningZh}</p>}
-      {q.sourceType === 'original_target_word_choice' && <p className="direct-muted">依中文目標義，選出適合填入句子的單字。</p>}
+      {q.sourceType === 'original_target_word_choice' && <p className="direct-muted">依句子情境，選出適合填入的單字。</p>}
       {!q.options.length && <><p className="direct-muted">請填本單元目標詞。系統只比對目標詞，不判定其他同義表達；大小寫不影響結果。</p><label>填入目標詞<input key={`${s.id}:${q.questionId}`} defaultValue={s.choices[q.questionId] ?? ''} disabled={busy || !!a} autoComplete="off" autoCapitalize="none" spellCheck={false} maxLength={120} onChange={e=> {void updateQuestion(s.id,q.questionId,{choice:e.target.value}).catch(()=>setError('未能保存輸入，請重試。'));}} /></label></>}
       {!q.options.length && !a && <><button disabled={busy} onClick={() => void act(() => updateQuestion(s.id, q.questionId, {lookup:'[首字母提示]'}))}>看首字母提示</button>{s.lookups[q.questionId]?.includes('[首字母提示]') && <p>首字母：{q.answer[0]}…</p>}</>}
       <div role="group" aria-label="答案選項">{q.options.map(o => <div className="direct-option-row" key={o.id}>
@@ -76,7 +75,7 @@ export default function DirectScreen() {
       </section>}
     </> : <section><h2>本輪完成</h2><p className="direct-score">{data.attempts.filter(a => a.sessionId === s.id && a.correct).length} / {s.questionIds.length}</p>
       {wrong.length > 0 && <button className="direct-primary" disabled={busy} onClick={() => void act(() => openSession(startSession(wrong,s.title,s.groupId,scope,mode)))}>重練錯題（{wrong.length}）</button>}
-      <button disabled={busy} onClick={() => void act(() => openSession(startSession(s.questionIds,s.title,s.groupId,scope,mode)))}>再練本輪題目</button>
+      <button className="direct-primary" disabled={busy} onClick={() => void act(() => openSession(startScopeSession(scope ?? s.questionIds,s.title ?? '教材練習',s.groupId,mode)))}>{studyUnit ? '再練整個單元' : '再練完整範圍'}（{scope?.length ?? s.questionIds.length} 題）</button>
     </section>}
     <footer><p><Link to={studyUnit ? `/vocabulary?level=${studyUnit.level}&unit=${studyUnit.unit}` : '/textbook'}>返回單字字卡</Link></p><p>{hasVocabulary ? (mode === 'basic' ? '基礎' : '進階') : ''}首次作答：{first.filter(a => a.correct).length} / {first.length} 題正確</p><p className="direct-muted">重練保留首答；本練習不改變正式複習排程。查字使用本機資料，不呼叫翻譯 API。</p>
       <button disabled={busy} onClick={() => void act(async () => downloadProgressBackup(await exportProgress()))}>匯出完整進度備份</button>

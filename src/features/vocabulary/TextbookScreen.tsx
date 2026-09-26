@@ -4,7 +4,7 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import { contentDb } from '../../db/contentDb';
 import { findUnit, templateGroup } from '../direct/model';
 import { addLV1ReviewedGroups, lv1ReviewedGroups } from '../direct/lv1ReviewedGroups';
-import { saveGroup, startSession } from '../direct/store';
+import { saveGroup, startScopeSession } from '../direct/store';
 import { saveWordList } from '../modes/wordLists';
 import { practiceIds } from './model';
 import { textbookLevels, textbookPath, textbookUnits } from './textbookCatalog';
@@ -40,7 +40,7 @@ export default function TextbookScreen() {
     } else {
       const unit = findUnit(chosen.unit, chosen.level)!;
       const ids = practiceIds(unit.items.filter(i => i.kind === 'vocabulary'));
-      const session = await startSession(ids.slice(0,10), `${chosen.name} · 詞彙練習`, undefined, ids);
+      const session = await startScopeSession(ids, `${chosen.name} · 詞彙練習`);
       navigate(`/practice/direct?session=${encodeURIComponent(session.id)}`);
     }
   }
@@ -60,7 +60,7 @@ export default function TextbookScreen() {
       {chosen.partial && <p className="learning-muted">部分內容：目前提供已審閱的圖句。</p>}
       <Link className="learning-primary" to={chosen.partial ? `${textbookPath(chosen.level,chosen.unit)}/cards` : `/vocabulary?level=${chosen.level}&unit=${chosen.unit}`}>看字卡 <span aria-hidden="true">→</span></Link>
       <button className="learning-secondary" disabled={busy || !words} onClick={() => void act(practice)}>做題目</button>
-      <p className="learning-muted learning-hint">{chosen.partial ? '題目使用已收錄詞條的一般單字練習；補充詞可在字卡閱讀。' : '每次先練 10 題，可隨時離開，下次接著答。'}</p>
+      <p className="learning-muted learning-hint">{chosen.partial ? '題目使用已收錄詞條的一般單字練習；補充詞可在字卡閱讀。' : '範圍涵蓋整個單元，未練過的題目優先。可隨時離開，下次接著答。'}</p>
       <details><summary>更多選項</summary><button className="learning-secondary" disabled={busy} onClick={() => void act(addGroup)}>加入我的群組</button><Link className="learning-row" to="/groups">管理我的群組 →</Link></details>
     </> : <>
       <h1>想學哪一課？</h1><p className="learning-muted">選好單元，就可以開始。</p>

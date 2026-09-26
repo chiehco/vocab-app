@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import SpeakerButton from '../../components/SpeakerButton';
 import { curriculumUnits, findUnit, templateGroup, unitsForLevel } from '../direct/model';
-import { saveGroup, startSession } from '../direct/store';
+import { saveGroup, startScopeSession } from '../direct/store';
 import { reviewedExample, practiceIds } from './model';
 import '../direct/direct.css';
 import './vocabulary.css';
@@ -36,8 +36,8 @@ export default function VocabularyScreen(){
   function choose(values:Record<string,string>){setError('');setParams({unit:String(unit),...values});}
   function show(id:string){choose({level,kind,item:id});}
   async function practice(){if(busy||!item||!current)return;setBusy(true);setError('');try{
-    const scope=practiceIds(items),batch=practiceIds(matches.slice(index,index+10));
-    const s=await startSession(batch,`${current.name} · ${kind==='grammar'?usageLabel:'詞彙'}自由練習`,undefined,scope);
+    const scope=practiceIds(items);
+    const s=await startScopeSession(scope,`${current.name} · ${kind==='grammar'?usageLabel:'詞彙'}自由練習`);
     navigate(`/practice/direct?session=${s.id}`);
   }catch{setError('無法開始練習，請重試。');}finally{setBusy(false);}}
   async function createGroup(){if(busy||!current)return;setBusy(true);setError('');try{const g=templateGroup(current.templateId);await saveGroup(g);navigate(`/groups?group=${g.id}`);}catch{setError('群組未能保存，請重試。');}finally{setBusy(false);}}
@@ -71,8 +71,8 @@ export default function VocabularyScreen(){
           </>}
         </article>
         <div className="vocab-levels"><button disabled={index===0} onClick={()=>show(matches[index-1].learningItemId)}>上一張</button><button disabled={index===matches.length-1} onClick={()=>show(matches[index+1].learningItemId)}>下一張</button></div>
-        <button className="direct-primary" disabled={busy} onClick={()=>void practice()}>做題目（從這裡開始 {Math.min(10,matches.length-index)} 題）</button>
-        <p className="direct-muted">瀏覽字卡不代表已熟悉；練習保留首答，不改變單字複習排程。</p>
+        <button className="direct-primary" disabled={busy} onClick={()=>void practice()}>做題目（整單元 {practiceIds(items).length} 題）</button>
+        <p className="direct-muted">範圍涵蓋本單元全部{kind==='grammar'?usageLabel:'詞彙'}，不受目前字卡或搜尋影響；未練過的優先。可隨時離開續答。</p>
       </>:<p role="status">找不到符合的項目，請換個關鍵字。</p>}
       <footer><button disabled={busy} onClick={()=>void createGroup()}>以完整 Unit 建立我的群組（{curriculumItems.length} 項）</button><p className="direct-muted">建立後可改名、增刪與排序。</p></footer>
     </>}
