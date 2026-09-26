@@ -1,12 +1,23 @@
 import { progressDb } from '../../db/progressDb';
-import { questions, practiceQuestions as allQuestions, questionForMode, sessionMode, acceptsChoice, isCorrectAnswer, REVISION, validGroup } from './model';
+import { questions, practiceQuestions as allQuestions, questionForMode, canonicalQuestionId, selectPracticeVariant, sessionMode, acceptsChoice, isCorrectAnswer, REVISION, validGroup } from './model';
 import type { CustomGroup, DirectSession, DirectAttempt, PracticeMode } from './model';
 import { contentDb } from '../../db/contentDb';
 import { orderPracticeScope } from './practiceOrder';
 
 export async function startScopeSession(scopeQuestionIds: string[], title: string, groupId?: string, mode: PracticeMode = 'basic') {
   const attempts = await progressDb.directAttempts.toArray();
-  return startSession(orderPracticeScope(scopeQuestionIds, attempts, mode), title, groupId, scopeQuestionIds, mode);
+  return createPracticeSession(orderPracticeScope(scopeQuestionIds, attempts, mode), title, groupId, scopeQuestionIds, mode, attempts);
+}
+
+function createPracticeSession(questionIds: string[], title: string, groupId: string | undefined, scope: string[], mode: PracticeMode, attempts: DirectAttempt[]) {
+  const key = (id: string) => questionForMode(canonicalQuestionId(id), mode);
+  const selected = new Map([...new Set(questionIds.map(key))].map(id => [id, selectPracticeVariant(id, attempts)]));
+  const snapshotScope = [...new Set(scope.map(key))].map(id => selected.get(id) ?? questionForMode(scope.find(s => key(s) === id)!, mode));
+  return startSession([...selected.values()], title, groupId, snapshotScope, mode);
+}
+
+export async function startReviewSession(questionIds: string[], title = '教材練習', groupId?: string, scope = questionIds, mode: PracticeMode = 'basic') {
+  return createPracticeSession(questionIds, title, groupId, scope, mode, await progressDb.directAttempts.toArray());
 }
 
 export async function importWordGroup(wordIds: string[], name: string, groupId?: string) {
@@ -43,7 +54,7 @@ export async function startGroupSession(groupId: string) {
   if (!group || !validGroup(group) || !group.itemIds.length) throw new Error('群組沒有可練習的項目');
   const ids = group.itemIds.map(id=>allQuestions.find(q=>q.learningItemId===id)?.questionId);
   if (ids.some(id=>!id)) throw new Error('群組部分項目尚未有題目');
-  return startSession(ids as string[],group.name,group.id);
+  return startReviewSession(ids as string[],group.name,group.id);
 }
 export async function updateQuestion(sessionId: string, questionId: string, change: { choice?: string; lookup?: string }) {
   await progressDb.transaction('rw', [progressDb.directSessions, progressDb.directAttempts], async () => {

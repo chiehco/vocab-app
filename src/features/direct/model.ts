@@ -7,6 +7,7 @@ import lv4Unit19 from './curriculumLV4Unit19.json';
 import lv4Unit20 from './curriculumLV4Unit20.json';
 import questions from './questions.json';
 import grammarQuestions from './grammarQuestions.json';
+import practiceVariants from './practiceVariantsLV4Unit17.json';
 import { catalogWordIds } from './groupWords';
 
 export { curriculum, questions };
@@ -72,8 +73,9 @@ export function validGroup(g: CustomGroup): boolean {
 }
 export function wrongQuestionIds(attempts: DirectAttempt[]): string[] {
   const latest = new Map<string, DirectAttempt>();
-  for (const a of [...attempts].sort((a,b) => a.answeredAt-b.answeredAt)) latest.set(a.questionId,a);
-  return practiceQuestions.filter(q => latest.has(q.questionId) && !latest.get(q.questionId)!.correct).map(q => q.questionId);
+  for (const a of [...attempts].sort((a,b) => a.answeredAt-b.answeredAt)) latest.set(canonicalQuestionId(a.questionId),a);
+  const wrong = new Set([...latest.values()].filter(a => !a.correct).map(a => a.questionId));
+  return practiceQuestions.filter(q => wrong.has(q.questionId)).map(q => q.questionId);
 }
 
 export type PracticeMode = 'basic' | 'advanced';
@@ -88,7 +90,58 @@ export const choiceQuestions: PracticeQuestion[] = allQuestions.filter(q => !q.o
   const options = entries.map((o, index) => ({id: 'ABCD'[index], text: o.text, rationaleZh: o.text + '：' + o.meaningZh}));
   return {...q, questionId: BASIC_PREFIX + q.questionId, learningItemId: undefined, sourceType: 'original_target_word_choice', options, answer: options.find(o => normalizeAnswer(o.text) === normalizeAnswer(q.answer))!.id};
 });
-export const practiceQuestions = [...allQuestions, ...choiceQuestions];
+// Additive, immutable IDs keep saved sessions and old explanations readable.
+const originalPracticeQuestions = [...allQuestions, ...choiceQuestions];
+export const variantQuestions: PracticeQuestion[] = practiceVariants.flatMap((v, index) => {
+  const original = originalPracticeQuestions.find(q => q.questionId === v.baseQuestionId)!;
+  const originalChoice = originalPracticeQuestions.find(q => q.questionId === BASIC_PREFIX + v.baseQuestionId)!;
+  const cloze: PracticeQuestion = { ...original, ...v, sourceType: 'practice_context_cloze', options: [] };
+  const offset = (index % 2 + 1) % originalChoice.options.length;
+  const entries = [...originalChoice.options.slice(offset), ...originalChoice.options.slice(0, offset)];
+  const options = entries.map((o, i) => ({
+    id: 'ABCD'[i], text: o.text,
+    rationaleZh: o.id === originalChoice.answer ? `${v.targetWord}：${v.targetMeaningZh}。${v.sentenceZh}`
+      : o.rationaleZh.replace('不符合本題指定字義', '不符合本句情境'),
+  }));
+  return [cloze, { ...cloze, questionId: BASIC_PREFIX + v.questionId, learningItemId: undefined,
+    sourceType: 'practice_context_choice', options, answer: options.find(o => o.text === v.answer)!.id }];
+});
+export const practiceQuestions = [...originalPracticeQuestions, ...variantQuestions];
+const variantBases = new Map(practiceVariants.map(v => [v.questionId, v.baseQuestionId]));
+/** A vocabulary target has multiple contexts; recognition and spelling remain distinct. */
+export function canonicalQuestionId(id: string): string {
+  const basic = id.startsWith(BASIC_PREFIX);
+  const base = basic ? id.slice(BASIC_PREFIX.length) : id;
+  return (basic ? BASIC_PREFIX : '') + (variantBases.get(base) ?? base);
+}
+export function firstTargetAttempts(attempts: DirectAttempt[]): DirectAttempt[] {
+  const first = new Map<string, DirectAttempt>();
+  for (const a of [...attempts].sort((a, b) => a.answeredAt - b.answeredAt)) {
+    const key = canonicalQuestionId(a.questionId);
+    if (!first.has(key)) first.set(key, a);
+  }
+  return [...first.values()];
+}
+export function selectPracticeVariant(id: string, attempts: DirectAttempt[], random = Math.random): string {
+  const basic = id.startsWith(BASIC_PREFIX);
+  const base = questionForMode(canonicalQuestionId(id), 'advanced');
+  const variants = practiceVariants.filter(v => v.baseQuestionId === base).map(v => v.questionId);
+  if (!variants.length) return id;
+  // Context exposure spans both modes; mode switching itself keeps the current sentence.
+  const history = attempts.filter(a => questionForMode(canonicalQuestionId(a.questionId), 'advanced') === base)
+    .sort((a, b) => a.answeredAt - b.answeredAt);
+  const last = history.at(-1);
+  const lastId = last && questionForMode(last.questionId, 'advanced');
+  const counts = new Map<string, number>();
+  for (const a of history) {
+    const key = questionForMode(a.questionId, 'advanced');
+    counts.set(key, (counts.get(key) ?? 0) + 1);
+  }
+  const candidates = variants.filter(v => v !== lastId);
+  const least = Math.min(...candidates.map(v => counts.get(v) ?? 0));
+  const unused = candidates.filter(v => (counts.get(v) ?? 0) === least);
+  return questionForMode(unused[Math.floor(random() * unused.length)], basic ? 'basic' : 'advanced');
+}
 export function sessionMode(s: DirectSession): PracticeMode {
   return s.questionIds.some(id => id.startsWith('CLOZE-')) ? 'advanced' : 'basic';
 }

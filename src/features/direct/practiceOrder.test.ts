@@ -2,7 +2,7 @@ import 'fake-indexeddb/auto';
 import { afterEach, beforeEach, expect, it } from 'vitest';
 import { progressDb } from '../../db/progressDb';
 import { practiceIds } from '../vocabulary/model';
-import { unitItems, questionForMode, practiceQuestions, type DirectAttempt } from './model';
+import { unitItems, questionForMode, canonicalQuestionId, practiceQuestions, type DirectAttempt } from './model';
 import { orderPracticeScope } from './practiceOrder';
 import { startScopeSession, startSession, submitAnswer, updateQuestion } from './store';
 
@@ -36,7 +36,7 @@ it('new full-scope sessions preserve old in-progress answers and attempts', asyn
   const full = await startScopeSession(old.scopeQuestionIds!, old.title!);
   expect(full.questionIds).toHaveLength(46);
   expect(full.scopeQuestionIds).toHaveLength(46);
-  expect(full.questionIds.at(-1)).toBe(first.questionId);
+  expect(canonicalQuestionId(full.questionIds.at(-1)!)).toBe(first.questionId);
   expect(await progressDb.directSessions.get(old.id)).toEqual(original);
   expect(await progressDb.directAttempts.count()).toBe(1);
 });
