@@ -1,4 +1,5 @@
 import type { CustomGroup } from '../direct/model';
+import { resolveGroupWords } from '../direct/groupScope';
 import { readWordList } from '../modes/wordLists';
 import type { WordList } from '../modes/wordLists';
 import { Fragment, useEffect, useState } from "react";
@@ -64,18 +65,20 @@ export default function WordDetailScreen() {
   const group = useLiveQuery<CustomGroup | WordList | undefined>(() => listId ? readWordList(listId) : groupId ? progressDb.customGroups.get(groupId) : undefined, [groupId,listId]);
   const groupReturn = listId ? (group as WordList|undefined)?.returnTo ?? '/modes/words' : `/groups?group=${encodeURIComponent(groupId??'')}`;
   const groupQuery = `${listId?'list':'group'}=${encodeURIComponent(groupId??'')}`;
-  const groupIndex = group?.wordIds?.indexOf(wordId ?? '') ?? -1;
+  const word = useLiveQuery(() => wordId ? contentDb.words.get(wordId) : undefined, [wordId]);
+  const groupCards = useLiveQuery(async () => group ? resolveGroupWords(group, await contentDb.words.toArray()) : [], [group]);
+  const groupIds = (groupCards ?? []).map(card => card.wordId);
+  const groupIndex = groupIds.indexOf(wordId ?? '');
   const [cardSide, setCardSide] = useState<"front" | "back">("front");
   const [backTab, setBackTab] = useState<DossierBackTab>("meaning");
   useEffect(() => {
     setCardSide("front");
     setBackTab("meaning");
   }, [wordId]);
-  const word = useLiveQuery(() => wordId ? contentDb.words.get(wordId) : undefined, [wordId]);
   const bookmarkFailed = useStudyBookmark(word && (!groupId || groupIndex >= 0) ? {
     href: `/word/${word.wordId}${groupId ? `?${groupQuery}` : ''}`,
     title: group?.name ?? word.word, position: groupIndex >= 0 ? groupIndex+1 : 1,
-    total: groupIndex >= 0 ? group!.wordIds!.length : 1,
+    total: groupIndex >= 0 ? groupIds.length : 1,
   } : undefined);
   useCardPronunciation(word?.word, wordId);
   const illustration = useIllustrationMedia(word);
@@ -180,9 +183,9 @@ export default function WordDetailScreen() {
 
       {group && groupIndex >= 0 && <nav className="dossier-group-nav" aria-label="群組字卡導覽">
         <Link to={groupReturn}>← {group.name}</Link>
-        <span>{groupIndex+1} / {group.wordIds!.length}</span>
-        <div>{groupIndex > 0 && <Link to={`/word/${group.wordIds![groupIndex-1]}?${groupQuery}`}>上一字</Link>}
-        {groupIndex < group.wordIds!.length-1 && <Link to={`/word/${group.wordIds![groupIndex+1]}?${groupQuery}`}>下一字 →</Link>}</div>
+        <span>{groupIndex+1} / {groupIds.length}</span>
+        <div>{groupIndex > 0 && <Link to={`/word/${groupIds[groupIndex-1]}?${groupQuery}`}>上一字</Link>}
+        {groupIndex < groupIds.length-1 && <Link to={`/word/${groupIds[groupIndex+1]}?${groupQuery}`}>下一字 →</Link>}</div>
       </nav>}
 
       <div className="dossier-card-controls" aria-label="字卡正反面">

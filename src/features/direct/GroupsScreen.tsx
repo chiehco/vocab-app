@@ -10,7 +10,6 @@ import { deleteGroup, restoreGroup, saveGroup, startGroupSession } from './store
 import './direct.css';
 import { contentDb } from '../../db/contentDb';
 import GroupImportPanel from './GroupImportPanel';
-import { groupWords } from './groupWords';
 import { resolveGroupWords } from './groupScope';
 import { addLV1ReviewedGroups, lv1ReviewedGroups } from './lv1ReviewedGroups';
 
@@ -27,7 +26,6 @@ export default function GroupsScreen() {
   const [notice,setNotice] = useState('');
   const [busy,setBusy] = useState(false);
   const g = groups?.find(g => g.id === selected);
-  const cards = groupWords(g?.wordIds ?? [], words ?? []);
   // Unit 項目對到主表的字也算進去，遊戲與測驗都用這份範圍
   const scopeWords = g ? resolveGroupWords(g, words ?? []) : [];
   const savedName=g?.name;
@@ -95,8 +93,8 @@ export default function GroupsScreen() {
         <Link to={`/arena/meaning-karuta?group=${encodeURIComponent(g.id)}`}>搶義花牌</Link>
         <Link to={`/slash?group=${encodeURIComponent(g.id)}`}>千單斬</Link>
       </div>}
+      {scopeWords[0] && <div className="group-import-links"><Link to={`/word/${scopeWords[0].wordId}?group=${encodeURIComponent(g.id)}`}>依序看字卡</Link></div>}
       {!!g.wordIds?.length && <>
-        {cards[0] && <div className="group-import-links"><Link to={`/word/${cards[0].wordId}?group=${encodeURIComponent(g.id)}`}>依序看字卡</Link></div>}
         <ol className="direct-items">{g.wordIds.map((id,index) => {const word=words?.find(w=>w.wordId===id);return <li key={id}>
           {word ? <Link to={`/word/${id}?group=${encodeURIComponent(g.id)}`}>{index+1}. {word.word} · {word.meaningZh}</Link> : <span>{index+1}. 此字卡目前無法使用</span>}
           <div className="direct-item-actions"><button disabled={busy || index===0} aria-label={`上移單字第${index+1}項`} onClick={()=>moveWord(index,-1)}>↑</button><button disabled={busy || index===g.wordIds!.length-1} aria-label={`下移單字第${index+1}項`} onClick={()=>moveWord(index,1)}>↓</button><button disabled={busy} aria-label={`移除單字第${index+1}項`} onClick={()=>void save({...g,wordIds:g.wordIds!.filter(x=>x!==id)})}>移除</button></div>
