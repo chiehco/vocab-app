@@ -9,6 +9,7 @@
     "dev:private": "vite --mode private",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
+    "typecheck": "tsc -b --noEmit",
     "preview": "vite preview",
     "test": "vitest run",
     "import-data": "python scripts/import_data.py --source \"C:/Users/USER/OneDrive/文件/萬詞譜/outputs/master_integrate_20260904/萬詞譜母表_SA義項清理整合_20260904.xlsx\" --mode public --out public/data/v1"
