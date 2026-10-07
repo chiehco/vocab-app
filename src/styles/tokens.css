@@ -26,6 +26,13 @@
   --ui-focus: var(--ui-accent);
   --ui-shadow: 0 1px 2px rgba(38, 61, 52, 0.08);
 
+  /* UI 改版 2026-10-07：暖色只標「等你回來」的提醒（今日複習），不當第二主色；
+     卡片用白底＋大圓角＋柔和陰影，跟米色頁面拉開一層。 */
+  --ui-warm: #8f5212;          /* 5.2:1 on --ui-warm-soft */
+  --ui-warm-soft: #f8ead6;
+  --ui-radius-card: 14px;
+  --ui-shadow-card: 0 1px 2px rgba(38, 61, 52, 0.06), 0 4px 14px rgba(38, 61, 52, 0.06);
+
   /* Type scale: 12 / 14 / 16 / 20 / 24 / 32 px at the standard root size */
   --ui-fs-label: 0.75rem;
   --ui-fs-secondary: 0.875rem;

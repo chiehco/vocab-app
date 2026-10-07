@@ -34,3 +34,22 @@
 .learning-card-nav { display: flex; gap: var(--ui-sp-3); }
 .learning-card-nav > * { flex: 1; }
 @media (max-width: 360px) { .learning-page { padding-inline: var(--ui-sp-4); } .learning-start { padding: var(--ui-sp-4); } }
+.textbook-scope-note { margin: 0 0 var(--ui-sp-2); }
+.textbook-unit-card .learning-meta { margin: 0 0 var(--ui-sp-2); padding-top: 0; border-top: 0; border-color: color-mix(in srgb, var(--ui-accent) 20%, transparent); }
+
+/* 首頁（2026-10-07 改版）：開始卡、暖色複習卡、兩格次要入口 */
+.learning-home .learning-start { border: 1px solid color-mix(in srgb, var(--ui-accent) 18%, transparent); }
+.learning-due { display: flex; align-items: center; gap: var(--ui-sp-4); margin: var(--ui-sp-4) 0; padding: var(--ui-sp-4); border-radius: var(--ui-radius-card); background: var(--ui-warm-soft); color: var(--ui-warm); }
+.learning-page a.learning-due { color: var(--ui-warm); }
+.learning-due > span:nth-last-child(2) { flex: 1; min-width: 0; }
+.learning-due strong { display: block; font-size: var(--ui-fs-body); }
+.learning-due small { display: block; font-size: var(--ui-fs-secondary); }
+.learning-due-faces { display: flex; flex-shrink: 0; }
+.learning-due-faces > * { width: 44px; height: 44px; border: 2px solid var(--ui-warm-soft); border-radius: 50%; background: var(--ui-surface); object-fit: cover; overflow: hidden; }
+.learning-due-faces > * + * { margin-left: -14px; }
+.learning-due-faces .beast-image-fallback small, .learning-due-faces .beast-image-fallback svg { display: none; }
+.learning-tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--ui-sp-3); margin: var(--ui-sp-4) 0; }
+.learning-tiles a { display: flex; flex-direction: column; gap: var(--ui-sp-1); min-height: 88px; padding: var(--ui-sp-4); border: 1px solid var(--ui-border); border-radius: var(--ui-radius-card); background: var(--ui-surface); box-shadow: var(--ui-shadow-card); transition: border-color var(--ui-motion); }
+.learning-tiles a:hover { border-color: var(--ui-accent); }
+.learning-tiles strong { color: var(--ui-text); font-size: var(--ui-fs-body); }
+.learning-tiles small { color: var(--ui-muted); font-size: var(--ui-fs-secondary); line-height: 1.4; }
