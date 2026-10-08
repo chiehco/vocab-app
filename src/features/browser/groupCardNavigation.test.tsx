@@ -70,9 +70,12 @@ it('a missing group or a word outside the group hides group navigation', () => {
 });
 
 
-it.each([[1, 97, 32], [2, 116, 34]])('LV3 U%s: installed pack controls every navigation link and count', async (unitNumber, mappedCount, installedCount) => {
+it.each([[1, 97, 97], [2, 116, 116], [1, 97, 32], [2, 116, 34]])('LV3 U%s: %s mapped, %s installed controls every navigation link and count', async (unitNumber, mappedCount, installedCount) => {
   const group = { ...templateGroup(unitNumber), id: `unit-${unitNumber}` };
-  const packWords = saPack.words as WordRecord[];
+  // Exercise both the complete shipped pack and a partially installed older library.
+  const mappedIds = new Set(groupWordIds(group));
+  const allowedIds = new Set([...mappedIds].slice(0, installedCount));
+  const packWords = saPack.words.filter(w => !mappedIds.has(w.wordId) || allowedIds.has(w.wordId)) as WordRecord[];
   const installedIds = new Set(packWords.map(w => w.wordId));
   const expected = groupWordIds(group).filter(id => installedIds.has(id));
   expect(groupWordIds(group)).toHaveLength(mappedCount);
