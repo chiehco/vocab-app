@@ -50,6 +50,11 @@ export default function GroupDeckPicker({ gameKey, scope, eligible, minimum, cou
     return (row?.value as string | null | undefined) ?? null;
   }, [gameKey]);
 
+  // 記住的單元在首次渲染後才恢復；網址切換單元時也同步選單。
+  useEffect(() => {
+    if (activeUnit) setUnitScope(resolveTextbookScope(activeUnit));
+  }, [activeUnit]);
+
   // 沒帶範圍進來、但上次選過單元或群組且它還在：直接套用
   useEffect(() => {
     if (scope.groupId || !remembered || !data || choseDefault.current) return;

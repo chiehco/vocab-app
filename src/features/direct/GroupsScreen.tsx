@@ -6,7 +6,7 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import { progressDb } from '../../db/progressDb';
 import { learningItems, templateGroup } from './model';
 import type { CustomGroup } from './model';
-import { deleteGroup, restoreGroup, saveGroup, startGroupSession } from './store';
+import { deleteGroup, getOrCreateTemplateGroup, restoreGroup, saveGroup, startGroupSession } from './store';
 import './direct.css';
 import { contentDb } from '../../db/contentDb';
 import GroupImportPanel from './GroupImportPanel';
@@ -56,7 +56,7 @@ export default function GroupsScreen() {
   }
   async function practice() { if(!g)return;setBusy(true);setError('');try {const s=await startGroupSession(g.id);navigate(`/practice/direct?session=${s.id}`);}catch {setError('未能開始練習，請確認群組至少有一個項目後再重試。');}finally {setBusy(false);} }
   async function save(group: CustomGroup, select = true) { setBusy(true); setError(''); try { await saveGroup(group); if(select && group.id!==selected) open(group.id); } catch { setError('未能儲存。名稱不可空白，請重試。'); } finally { setBusy(false); } }
-  /** 從單元建立：LV1 已審閱圖句走既有模板（不重複新增），教材單元建立 Unit 群組 */
+  /** 從單元建立：已建立的模板直接開啟，不重複新增或覆蓋個人編輯。 */
   async function addUnit(unit: TextbookUnit) {
     if (busy) return;
     setBusy(true); setError(''); setNotice('');
@@ -66,8 +66,9 @@ export default function GroupsScreen() {
         open(result.groups[0].id);
         setNotice(result.added ? `已建立「${result.groups[0].name}」。` : '這個單元的群組已存在，已開啟；沒有重複新增或覆蓋內容。');
       } else {
-        const group = templateGroup(unit.unit, unit.level);
-        await saveGroup(group); open(group.id); setNotice(`已建立「${group.name}」。`);
+        const { group, added } = await getOrCreateTemplateGroup(unit.unit, unit.level);
+        open(group.id);
+        setNotice(added ? `已建立「${group.name}」。` : '這個單元的群組已存在，已開啟；沒有重複新增或覆蓋內容。');
       }
     } catch (error) { setError(error instanceof Error ? error.message : '未能建立群組，請重試。'); }
     finally { setBusy(false); }
