@@ -8,8 +8,10 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import re
 import shutil
+import tempfile
 from datetime import datetime, timezone
 from html import escape
 from pathlib import Path
@@ -30,6 +32,13 @@ NS = {'s': 'http://schemas.openxmlformats.org/spreadsheetml/2006/main',
       'r': 'http://schemas.openxmlformats.org/officeDocument/2006/relationships'}
 UNCHANGED_DATA = ['examples.json', 'relations.json', 'morphemes.json', 'media.json', 'notes.json', 'exam_priority.json', 'hooks.json']
 CONTENT_FILES = ['words.json', 'senses.json', 'examples.json', 'relations.json', 'morphemes.json', 'notes.json', 'exam_priority.json', 'hooks.json', 'media.json']
+OUTPUT_FILES = [
+    'public/data/v1/words.json', 'public/data/v1/senses.json',
+    'public/data/v1/meta.json', 'public/data/v1/sa-pack.json',
+    'src/features/direct/curriculum.json', 'src/features/direct/curriculumUnit2.json',
+    'src/features/direct/wordCatalog.json', 'src/features/vocabulary/lv3ApprovedReview.json',
+    'public/curriculum/lv3-u1/probability.webp',
+]
 
 
 def sha(path):
@@ -96,18 +105,20 @@ def append_row(raw: bytes, values: list, expected_count: int):
 def stage_master(source, staged):
     assert sha(source) == BASE_MASTER_HASH, 'Master changed; re-audit instead of overwriting'
     wb = openpyxl.load_workbook(source, read_only=True, data_only=False)
-    existing_ids = set()
-    for ws in wb:
-        for row in ws.values:
-            for value in row:
-                if isinstance(value, str):
-                    existing_ids.update(re.findall(r'\bW\d{6}\b', value))
-    assert WORD_ID not in existing_ids and max(existing_ids) == 'W006084'
-    assert len(wb.sheetnames) == 64
-    words = list(wb['input_words_單字主表'].values)
-    senses = list(wb['input_senses_義項表'].values)
-    assert not any('limousine' in str(row[1]).lower() or row[1] == 'limo' for row in words)
-    wb.close()
+    try:
+        existing_ids = set()
+        for ws in wb:
+            for row in ws.values:
+                for value in row:
+                    if isinstance(value, str):
+                        existing_ids.update(re.findall(r'\bW\d{6}\b', value))
+        assert WORD_ID not in existing_ids and max(existing_ids) == 'W006084'
+        assert len(wb.sheetnames) == 64
+        words = list(wb['input_words_單字主表'].values)
+        senses = list(wb['input_senses_義項表'].values)
+        assert not any('limousine' in str(row[1]).lower() or row[1] == 'limo' for row in words)
+    finally:
+        wb.close()
     word_row = [WORD_ID, HEADWORD, 'LV3', 'n.', '加長型禮車', None, None, None, None, None,
                 'limousine', False, SOURCE_NOTE, 'reviewed', None, None]
     sense_row = [WORD_ID + '-1', WORD_ID, HEADWORD, 'n.', '加長型禮車', None, None,
@@ -139,36 +150,21 @@ def stage_master(source, staged):
                 sourceSha256=BASE_MASTER_HASH, stagedSha256=sha(staged), legacyWordTableRange='A1:O200 (unchanged)')
 
 
-def main():
-    ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument('--master', required=True, type=Path)
-    ap.add_argument('--review', required=True, type=Path)
-    ap.add_argument('--out', required=True, type=Path)
-    ap.add_argument('--publish-master', action='store_true')
-    ap.add_argument('--publish-only', action='store_true', help='Publish an already tested stage without reapplying App data')
-    args = ap.parse_args()
-    assert not args.publish_master or args.publish_only, 'Stage and verify first; publish with --publish-only --publish-master'
-    repo = Path(__file__).resolve().parent.parent
-    args.out.mkdir(parents=True, exist_ok=True)
-    staged = args.out / args.master.name
-    if args.publish_only:
-        assert args.publish_master, '--publish-only requires --publish-master'
-        evidence = read(args.out / 'apply-result.json')
-        audit = read(args.out.parent / 'scope-audit.json')
-        assert audit['status'] == 'pass' and audit['mother']['sha256'] == evidence['stagedSha256'], 'Scope audit required'
-        publish_master(args.master, staged, evidence)
-        write_json(args.out / 'apply-result.json', evidence)
-        print(json.dumps(evidence, ensure_ascii=False, indent=2))
-        return
-    evidence = stage_master(args.master, staged)
-    review = read(args.review)
+def build_outputs(repo, master, review_path, out):
+    """Run only inside the private stage; validation failures may discard it."""
+    out.mkdir(parents=True, exist_ok=True)
+    staged = out / master.name
+    evidence = stage_master(master, staged)
+    review = read(review_path)
     approved = {row['word']: row for row in review}
     data_dir = repo / 'public/data/v1'
     unchanged = {name: sha(data_dir / name) for name in UNCHANGED_DATA}
     wb = openpyxl.load_workbook(staged, read_only=True, data_only=True)
-    word = next(w for w in parse_words(wb['input_words_單字主表']) if w['wordId'] == WORD_ID)
-    sense = next(s for s in parse_senses(wb['input_senses_義項表']) if s['wordId'] == WORD_ID)
-    wb.close()
+    try:
+        word = next(w for w in parse_words(wb['input_words_單字主表']) if w['wordId'] == WORD_ID)
+        sense = next(s for s in parse_senses(wb['input_senses_義項表']) if s['wordId'] == WORD_ID)
+    finally:
+        wb.close()
     for filename, record, key in [('words.json', word, 'wordId'), ('senses.json', sense, 'senseId')]:
         rows = read(data_dir / filename)
         assert not any(row[key] == record[key] for row in rows), 'Already applied; do not duplicate'
@@ -187,7 +183,8 @@ def main():
         if target == 'probability':
             dst = repo / 'public' / relative
             dst.parent.mkdir(parents=True, exist_ok=True)
-            Image.open(src).save(dst, 'WEBP', lossless=True)
+            with Image.open(src) as image:
+                image.save(dst, 'WEBP', lossless=True)
         else:
             dst = repo / 'public' / relative
             assert sha(dst) == sha(src)
@@ -222,10 +219,114 @@ def main():
     write_json(data_dir / 'meta.json', meta)
     catalog = [dict(wordId=w['wordId'], word=w['word'], variants=w.get('wordVariants') or []) for w in read(data_dir / 'words.json')]
     (repo / 'src/features/direct/wordCatalog.json').write_text(json.dumps(catalog, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
-    pack_counts = build_sa_pack(data_dir)
+    pack_counts = build_sa_pack(data_dir, repo / 'src/features/direct')
     assert unchanged == {name: sha(data_dir / name) for name in UNCHANGED_DATA}
     evidence.update(unchangedDataSha256=unchanged, packCounts=pack_counts, publishedMaster=False)
-    write_json(args.out / 'apply-result.json', evidence)
+    write_json(out / 'apply-result.json', evidence)
+    return evidence
+
+
+def replace_outputs(outputs, before):
+    """Prepare same-directory replacements, then commit with rollback on errors."""
+    prepared, applied = [], []
+    retain_backups = False
+    try:
+        for source, destination in outputs:
+            current = destination.read_bytes() if destination.exists() else None
+            assert current == before[destination], f'Concurrent change: {destination}'
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            fd, temporary = tempfile.mkstemp(prefix='.lv3-new-', dir=destination.parent)
+            os.close(fd)
+            replacement = Path(temporary)
+            backup = None
+            prepared.append((destination, replacement, backup))
+            shutil.copy2(source, replacement)
+            if current is not None:
+                fd, temporary = tempfile.mkstemp(prefix='.lv3-before-', dir=destination.parent)
+                os.close(fd)
+                backup = Path(temporary)
+                prepared[-1] = (destination, replacement, backup)
+                shutil.copy2(destination, backup)
+        # Recheck every destination before any file is replaced.
+        for destination, _, _ in prepared:
+            assert (destination.read_bytes() if destination.exists() else None) == before[destination], f'Concurrent change: {destination}'
+        try:
+            for destination, replacement, backup in prepared:
+                os.replace(replacement, destination)
+                applied.append((destination, backup))
+        except BaseException:
+            try:
+                for destination, backup in reversed(applied):
+                    if backup is None:
+                        destination.unlink()
+                    else:
+                        os.replace(backup, destination)
+            except BaseException as error:
+                retain_backups = True
+                raise RuntimeError('Rollback failed; keep .lv3-before-* backups for recovery') from error
+            raise
+    finally:
+        for _, replacement, backup in prepared:
+            replacement.unlink(missing_ok=True)
+            if backup is not None and not retain_backups:
+                backup.unlink(missing_ok=True)
+
+
+def apply_review(repo, master, review_path, out):
+    """Build and validate every output before changing the repository or --out."""
+    direct = Path('src/features/direct')
+    assert out.resolve() != (repo / 'output').resolve() and out.resolve().is_relative_to((repo / 'output').resolve()), '--out must be a dedicated directory beneath repo/output'
+    inputs = [Path('public/data/v1') / name for name in CONTENT_FILES + ['meta.json']]
+    inputs += [direct / name for name in ['curriculum.json', 'curriculumUnit2.json']]
+    inputs += [path.relative_to(repo) for path in (repo / direct).glob('curriculumLV4Unit*.json')]
+    inputs += [Path('src/features/vocabulary/lv1ReviewedImages.json'), Path('public/wordbeast/s/W002812.webp')]
+    destinations = [repo / name for name in OUTPUT_FILES] + [out / master.name, out / 'apply-result.json']
+    assert master.resolve() not in {path.resolve() for path in destinations}, 'Never overwrite the source workbook while staging'
+    before = {path: path.read_bytes() if path.exists() else None for path in destinations}
+    input_before = {repo / path: (repo / path).read_bytes() for path in inputs}
+    input_before.update({master: master.read_bytes(), review_path: review_path.read_bytes()})
+    for item in read(review_path):
+        if item.get('word') in {'probability', 'slender'} and item.get('alternative'):
+            image = Path(item['alternative'])
+            if image.is_file():
+                input_before[image] = image.read_bytes()
+    with tempfile.TemporaryDirectory(prefix='.lv3-review-stage-', dir=repo.parent) as directory:
+        root = Path(directory).resolve()
+        assert root.is_relative_to(repo.parent.resolve())
+        stage = root / 'repo'
+        for relative in inputs:
+            target = stage / relative
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(repo / relative, target)
+        stage_out = root / 'source'
+        evidence = build_outputs(stage, master, review_path, stage_out)
+        for path, original in input_before.items():
+            assert path.read_bytes() == original, f'Input changed during validation: {path}'
+        outputs = [(stage / name, repo / name) for name in OUTPUT_FILES]
+        outputs += [(stage_out / master.name, out / master.name), (stage_out / 'apply-result.json', out / 'apply-result.json')]
+        replace_outputs(outputs, before)
+        return evidence
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument('--master', required=True, type=Path)
+    ap.add_argument('--review', required=True, type=Path)
+    ap.add_argument('--out', required=True, type=Path)
+    ap.add_argument('--publish-master', action='store_true')
+    ap.add_argument('--publish-only', action='store_true', help='Publish an already tested stage without reapplying App data')
+    args = ap.parse_args()
+    assert not args.publish_master or args.publish_only, 'Stage and verify first; publish with --publish-only --publish-master'
+    repo = Path(__file__).resolve().parent.parent
+    if args.publish_only:
+        assert args.publish_master, '--publish-only requires --publish-master'
+        evidence = read(args.out / 'apply-result.json')
+        audit = read(args.out.parent / 'scope-audit.json')
+        assert audit['status'] == 'pass' and audit['mother']['sha256'] == evidence['stagedSha256'], 'Scope audit required'
+        publish_master(args.master, args.out / args.master.name, evidence)
+        write_json(args.out / 'apply-result.json', evidence)
+    else:
+        evidence = apply_review(repo, args.master, args.review, args.out)
     print(json.dumps(evidence, ensure_ascii=False, indent=2))
 
 

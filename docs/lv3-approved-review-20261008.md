@@ -20,15 +20,19 @@
 
 只在主詞表第 6087 列與義項表第 767 列追加資料；ZIP 成員只改兩張工作表 XML。64 張工作表、829 個公式、所有既有儲存格和其他 ZIP 成員均保留。既有 InputWordsTable 範圍 A1:O200 是歷史範本範圍，原 6084 詞已在表格外；本批保留該 metadata，不擴大修改。
 
-`scripts/apply_lv3_approved_review.py` 先產生暫存來源與 App 資料；`scripts/verify_lv3_approved_review.py` 比對完整兩單元及正式資料 delta。只有取得 scope audit pass 後才可用 `--publish-only --publish-master`，寫回前再次檢查母表雜湊。發布資料 contentHash 固定按 Git LF 格式計算，避免 Windows checkout 換行造成不同雜湊。
+`scripts/apply_lv3_approved_review.py` 在隔離目錄完成母表追加、圖句核對、圖片轉換、完整資料與離線包生成，再替換 App 檔案及 `--out` 產物。提交前重查來源及目標，替換出錯會回復已替換檔案；後段驗證失敗不留下半套資料，修正輸入後可直接重試。`--out` 須為 repo/output 下的獨立目錄。
+
+`scripts/verify_lv3_approved_review.py` 比對完整兩單元及正式資料 delta。只有取得 scope audit pass 後才可用 `--publish-only --publish-master`，寫回前再次檢查母表雜湊。發布資料 contentHash 固定按 Git LF 格式計算，避免 Windows checkout 換行造成不同雜湊。
 
 既有 `verify_unit.py` 使用完整批准 LV4 包契約；本批 LV3 部分批准保留舊 schema，以專用 scope audit 全量核對，沒有捏造整單元批准或字表檢核。
 
 ## 本機驗收
 
-- lint、typecheck、build 通過；全套 317 個測試通過，補入跨平台雜湊測試後受影響 7 個測試通過。PR CI 執行最終完整 318 個測試。
+- lint、typecheck、build 及完整 318 個 App 測試通過。
+- 8 個 Python 套用器回歸測試通過並納入 CI：後段核准項目／圖片／雜湊缺漏、雜湊／例句不符、離線包生成失敗後重試、替換途中失敗回復，以及成功路徑。失敗時比較所有檔案路徑及 SHA256，包含既有暫存母表與收據。
+- 正式備份母表在隔離副本重跑成功：九項 App 輸出與 PR 相同（僅 generatedAt 可不同），產生的母表 SHA256 與正式母表相同；正式母表、備份、核准紀錄、原圖和目前 App 資料的 SHA256 均未變。本次核對未見半套用資料。
 - scope audit 通過：只有 probability、slender、limousine、limo 四個教材項目資料改動，兩張新批准配對，1 個新主詞、1 個新義項。
 - 隔離瀏覽器新安裝通過教材兩張圖卡、一般 slender 卡、兩份禮車教材原句，以及兩種拼字各只找到一張共用卡。
 - 390 × 844 手機尺寸及桌面截圖已核對；正常重新整理保留一張卡的已存列表；兩張變動圖片可離線重開。未驗實體手機。
 
-nostalgic、wizard/witch、其餘 93 張圖及 164 詞盤點建議仍待使用者裁示；本批未修改或批准。原 325 圖目視盤點、43 詞來源義項草稿及六頁審閱 PDF 保留原始證據。本階段只準備 draft PR，不合併、不部署。
+nostalgic、wizard/witch、其餘 93 張圖及 164 詞盤點建議仍待使用者裁示；本批未修改或批准。原 325 圖目視盤點、43 詞來源義項草稿及六頁審閱 PDF 保留原始證據。PR #21 已解除 draft；本次 review 修正不合併、不部署。
