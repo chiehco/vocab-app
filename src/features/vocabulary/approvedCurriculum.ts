@@ -3,6 +3,8 @@ import unit18 from '../direct/curriculumLV4Unit18.json';
 import unit19 from '../direct/curriculumLV4Unit19.json';
 import unit20 from '../direct/curriculumLV4Unit20.json';
 import lv1Images from './lv1ReviewedImages.json';
+import lv3Unit2 from '../direct/curriculumUnit2.json';
+import lv3Review from './lv3ApprovedReview.json';
 
 export interface ApprovedCurriculumCard {
   learningItemId: string;
@@ -16,11 +18,15 @@ export interface ApprovedCurriculumCard {
 
 // Registry order preserves the earlier approved default when a later unit reuses a word.
 // All matching senses remain accessible, including statistic and statistics under one ID.
-const cards: ApprovedCurriculumCard[] = [unit17, unit18, unit19, unit20].flatMap(unit =>
+const cards: ApprovedCurriculumCard[] = [...[unit17, unit18, unit19, unit20].flatMap(unit =>
   unit.learningItems.flatMap(item => item.kind === 'vocabulary' && item.officialWordId && item.illustration
     ? [{ learningItemId: item.learningItemId, displayWord: item.displayWord!, officialWordId: item.officialWordId,
       sensePos: item.sensePos!, targetMeaningZh: item.targetMeaningZh!, unitName: unit.template.title, illustration: item.illustration }]
-    : []));
+    : [])), ...lv3Unit2.learningItems.flatMap(item => item.kind === 'vocabulary' && item.officialWordId && item.illustration
+      && lv3Review.cards.some(approval => approval.reviewId === item.learningItemId)
+    ? [{ learningItemId: item.learningItemId, displayWord: item.displayWord!, officialWordId: item.officialWordId,
+      sensePos: item.sensePos!, targetMeaningZh: item.targetMeaningZh!, unitName: lv3Unit2.template.name, illustration: item.illustration }]
+    : [])];
 
 export function approvedCurriculumCards(word: string, wordId?: string): ApprovedCurriculumCard[] {
   const normalized = word.trim().toLowerCase();

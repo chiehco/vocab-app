@@ -70,7 +70,7 @@ it('a missing group or a word outside the group hides group navigation', () => {
 });
 
 
-it.each([[1, 97, 97], [2, 116, 116], [1, 97, 32], [2, 116, 34]])('LV3 U%s: %s mapped, %s installed controls every navigation link and count', async (unitNumber, mappedCount, installedCount) => {
+it.each([[1, 98, 98], [2, 116, 116], [1, 98, 32], [2, 116, 34]])('LV3 U%s: %s mapped, %s installed controls every navigation link and count', async (unitNumber, mappedCount, installedCount) => {
   const group = { ...templateGroup(unitNumber), id: `unit-${unitNumber}` };
   // Exercise both the complete shipped pack and a partially installed older library.
   const mappedIds = new Set(groupWordIds(group));
