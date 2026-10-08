@@ -136,3 +136,32 @@
   .groups-main { grid-column: 2; min-width: 0; }
   .groups-main > h2:first-of-type { margin-top: 0; }
 }
+
+/* 我的群組（2026-10-07 改版）：清單／內容兩個畫面，內容頁上方是一張開始卡 */
+.groups-page { max-width: var(--ui-column); margin-inline: auto; }
+.groups-page nav { align-items: center; }
+.direct-page .groups-edit-toggle { min-height: 36px; padding: 4px 16px; border-radius: 999px; }
+.direct-page .groups-edit-toggle[aria-pressed="true"] { border-color: var(--ui-accent); background: var(--ui-accent); color: var(--ui-on-accent); }
+.groups-hero { margin: var(--ui-sp-3) 0 var(--ui-sp-4); padding: var(--ui-sp-6); border: 1px solid color-mix(in srgb, var(--ui-accent) 18%, transparent); border-radius: 16px; background: var(--ui-accent-soft); }
+.direct-page .groups-hero h1 { margin-top: 0; overflow-wrap: anywhere; }
+.groups-hero > p { margin: var(--ui-sp-2) 0; }
+.direct-page .groups-primary, .direct-page .groups-secondary { display: flex; align-items: center; justify-content: center; gap: var(--ui-sp-3); width: 100%; min-height: 50px; margin-top: var(--ui-sp-3); border-radius: 10px; font-weight: 700; text-decoration: none; }
+.direct-page .groups-primary { border: 1px solid var(--ui-accent); background: var(--ui-accent); color: var(--ui-on-accent); }
+.direct-page .groups-secondary { border: 1px solid var(--ui-border-strong); background: var(--ui-surface); }
+.groups-play { display: flex; flex-wrap: wrap; gap: var(--ui-sp-2); margin-top: var(--ui-sp-4); }
+.direct-page .groups-play a { display: inline-flex; align-items: center; min-height: 36px; padding: 0 var(--ui-sp-3); border: 1px solid var(--ui-border-strong); border-radius: 999px; background: var(--ui-surface); color: var(--ui-text); font-size: var(--ui-fs-secondary); text-decoration: none; }
+.groups-page .direct-items li { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--ui-sp-2); }
+.groups-page .direct-items li > a { text-decoration: none; }
+.groups-page .direct-items li > a b { color: var(--ui-text); }
+.groups-page .direct-items details { flex: 1; min-width: 60%; }
+.groups-page .direct-item-actions { margin-top: 0; }
+.groups-edit { margin: var(--ui-sp-4) 0; padding: var(--ui-sp-4); border: 1px dashed var(--ui-border-strong); border-radius: var(--ui-radius-card); background: var(--ui-surface); }
+.groups-edit > h2:first-child, .groups-edit form label { margin-top: 0; }
+.groups-page .group-create > summary { display: flex; align-items: center; justify-content: center; border: 1px solid var(--ui-accent); border-radius: 10px; background: var(--ui-accent); color: var(--ui-on-accent); list-style: none; }
+.groups-page .group-create > summary::-webkit-details-marker { display: none; }
+.groups-page .group-create[open] > summary { margin-bottom: var(--ui-sp-4); background: transparent; color: var(--ui-accent); }
+.groups-page .group-create { border: 0; padding: 0; }
+.direct-page .unit-tile { padding: var(--ui-sp-3) var(--ui-sp-4); border: 1px solid var(--ui-border); border-radius: var(--ui-radius-card); background: var(--ui-surface); font-weight: 400; line-height: var(--ui-lh-zh); }
+.direct-page .unit-tile:hover { border-color: var(--ui-accent); background: var(--ui-surface); }
+.direct-page .scope-chips button { padding: 0 var(--ui-sp-4); border-radius: 999px; background: var(--ui-surface); }
+.direct-page .scope-chips button[aria-pressed="true"] { background: var(--ui-accent); }

@@ -69,3 +69,12 @@ a.game-shell-start { color: var(--ui-on-accent); }
 .game-shell-actions > :first-child { border-color: var(--ui-accent); background: var(--ui-accent); color: var(--ui-on-accent); }
 
 @media (max-width: 360px) { .game-shell { padding-inline: var(--ui-sp-4); } }
+
+/* 選單元（2026-10-07）：子清單內放三層選單＋單元方塊，蓋掉上面整列按鈕的通用樣式 */
+.game-shell-units { display: block; padding-right: 0; }
+.game-shell-units .scope-picker { margin-top: var(--ui-sp-2); }
+.game-shell-units .scope-chips button, .game-shell-units .scope-segment button { display: inline-flex; width: auto; min-height: 40px; align-items: center; justify-content: center; padding: 0 var(--ui-sp-4); border: 1px solid var(--ui-border-strong); border-radius: 999px; background: var(--ui-surface); font-size: var(--ui-fs-secondary); }
+.game-shell-units .scope-chips button[aria-pressed="true"] { border-color: var(--ui-accent); border-radius: 999px; background: var(--ui-accent); color: var(--ui-on-accent); }
+.game-shell-units .unit-tile { display: flex; min-height: 88px; padding: var(--ui-sp-3); border: 1px solid var(--ui-border); border-radius: var(--ui-radius-card); background: var(--ui-surface); }
+.game-shell-units .unit-tile[aria-pressed="true"] { border-color: var(--ui-accent); border-radius: var(--ui-radius-card); background: var(--ui-accent-soft); color: var(--ui-text); }
+.game-shell-units .unit-tile small { text-align: left; font-size: var(--ui-fs-label); }

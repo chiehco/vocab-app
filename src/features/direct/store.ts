@@ -1,6 +1,6 @@
 import { progressDb } from '../../db/progressDb';
-import { questions, practiceQuestions as allQuestions, questionForMode, canonicalQuestionId, selectPracticeVariant, sessionMode, acceptsChoice, isCorrectAnswer, REVISION, validGroup } from './model';
-import type { CustomGroup, DirectSession, DirectAttempt, PracticeMode } from './model';
+import { questions, practiceQuestions as allQuestions, questionForMode, canonicalQuestionId, selectPracticeVariant, sessionMode, acceptsChoice, isCorrectAnswer, REVISION, validGroup, templateGroup } from './model';
+import type { CustomGroup, DirectSession, DirectAttempt, PracticeMode, UnitKey } from './model';
 import { contentDb } from '../../db/contentDb';
 import { orderPracticeScope } from './practiceOrder';
 
@@ -36,6 +36,18 @@ export async function saveGroup(group: CustomGroup) {
   if (!validGroup(group)) throw new Error('群組名稱或項目無效，尚未儲存。');
   await progressDb.customGroups.put({ ...group, updatedAt: Date.now() });
 }
+
+/** 重開教材單元保留既有編輯；交易防止同時點選／跨分頁重複建立。 */
+export async function getOrCreateTemplateGroup(unit: UnitKey, level?: string) {
+  const template = templateGroup(unit, level);
+  return progressDb.transaction('rw', progressDb.customGroups, async () => {
+    const existing = await progressDb.customGroups.filter(group => group.templateId === template.templateId).first();
+    if (existing) return { group: existing, added: false };
+    await saveGroup(template);
+    return { group: template, added: true };
+  });
+}
+
 export async function startSession(questionIds = questions.map(q => q.questionId), title = '新情境練習', groupId?: string, scopeQuestionIds = questionIds, mode: PracticeMode = 'basic') {
   questionIds = questionIds.map(id => questionForMode(id, mode));
   scopeQuestionIds = scopeQuestionIds.map(id => questionForMode(id, mode));

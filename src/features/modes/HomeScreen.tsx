@@ -3,6 +3,8 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import { useToday } from '../../hooks/useToday';
 import { getStudyResume } from './studyResume';
 import { getDueReviewQueue } from '../../srs/dueReview';
+import { getWordBeastAsset } from '../wordbeast/wordBeastAssets';
+import ResilientBeastImage from '../wordbeast/ResilientBeastImage';
 import './learning-home.css';
 
 export default function HomeScreen() {
@@ -10,8 +12,10 @@ export default function HomeScreen() {
   const data = useLiveQuery(async () => {
     try {
       const [resume, due] = await Promise.all([getStudyResume(), getDueReviewQueue(today)]);
-      return { resume, dueCount: due.length, error: false };
-    } catch { return { resume: undefined, dueCount: 0, error: true }; }
+      // 到期字裡有圖的前幾隻，放在複習卡上；沒圖的字不硬湊
+      const faces = due.flatMap(({ wordRecord: w }) => { const src = getWordBeastAsset(w.wordId, w.word, w.imageWordId); return src ? [{ word: w.word, src }] : []; }).slice(0, 4);
+      return { resume, dueCount: due.length, faces, error: false };
+    } catch { return { resume: undefined, dueCount: 0, faces: [], error: true }; }
   }, [today]);
   const resume = data?.resume;
   return <div className="learning-page learning-home">
@@ -27,9 +31,14 @@ export default function HomeScreen() {
         <Link className="learning-primary" to={resume?.href ?? '/textbook'}>{resume ? '繼續學習' : '選課本單元'}<span aria-hidden="true">→</span></Link>
       </section>
       {!resume && !data.error && <p className="learning-muted learning-hint">開始學習後，這裡會幫你記住位置。</p>}
-      {data.dueCount > 0 && <Link className="learning-row" to="/review?due=1"><span><strong>今日複習</strong><small>{data.dueCount} 個單字等你複習</small></span><span aria-hidden="true">→</span></Link>}
-      {resume ? <Link className="learning-row" to="/textbook"><span><strong>換個單元</strong><small>按課本等級與 Unit 找內容</small></span><span aria-hidden="true">→</span></Link>
-        : <Link className="learning-row" to="/exam"><span><strong>想先練學測？</strong><small>直接進入大考練習</small></span><span aria-hidden="true">→</span></Link>}
+      {data.dueCount > 0 && <Link className="learning-due" to="/review?due=1">
+        {data.faces.length > 0 && <span className="learning-due-faces" aria-hidden="true">{data.faces.map(f => <ResilientBeastImage key={f.word} src={f.src} word={f.word} alt="" />)}</span>}
+        <span><strong>今日複習</strong><small>{data.dueCount} 個單字等你回來看看</small></span><span aria-hidden="true">→</span></Link>}
+      <nav className="learning-tiles" aria-label="其他入口">
+        {resume ? <Link to="/textbook"><strong>換個單元</strong><small>依等級與 Unit 選</small></Link>
+          : <Link to="/exam"><strong>想先練學測？</strong><small>直接進大考練習</small></Link>}
+        <Link to="/games"><strong>玩單字遊戲</strong><small>用學過的字對戰</small></Link>
+      </nav>
     </>}
     <footer className="learning-footer"><Link to="/progress">學習紀錄</Link><Link to="/groups">我的群組</Link></footer>
   </div>;

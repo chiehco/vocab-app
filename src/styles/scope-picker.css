@@ -1,0 +1,28 @@
+/*
+ * 選單元三層選單＋單元方塊（2026-10-07）。課本頁、單字頁、遊戲設定共用。
+ * 選中狀態一律 aria-pressed="true"。
+ */
+.scope-picker { display: grid; gap: var(--ui-sp-4); margin: var(--ui-sp-4) 0; }
+.scope-segment { display: grid; grid-auto-columns: minmax(0, 1fr); grid-auto-flow: column; gap: 3px; padding: 3px; border-radius: 12px; background: var(--ui-accent-soft); }
+.scope-segment button { min-height: 40px; border: 0; border-radius: 9px; background: transparent; color: var(--ui-muted); font: inherit; font-size: var(--ui-fs-secondary); font-weight: 600; cursor: pointer; }
+.scope-segment button[aria-pressed="true"] { background: var(--ui-surface); color: var(--ui-text); box-shadow: var(--ui-shadow); }
+.scope-layer { display: grid; gap: var(--ui-sp-2); }
+.scope-label { color: var(--ui-muted); font-size: var(--ui-fs-label); font-weight: 600; letter-spacing: .04em; }
+.scope-chips { display: flex; flex-wrap: wrap; gap: var(--ui-sp-2); }
+.scope-chips button { min-width: 56px; min-height: 40px; padding: 0 var(--ui-sp-4); border: 1px solid var(--ui-border-strong); border-radius: 999px; background: var(--ui-surface); color: var(--ui-text); font: inherit; font-size: var(--ui-fs-secondary); font-weight: 600; cursor: pointer; transition: background var(--ui-motion), color var(--ui-motion); }
+.scope-chips button:hover { background: var(--ui-accent-soft); }
+.scope-chips button[aria-pressed="true"] { border-color: var(--ui-accent); background: var(--ui-accent); color: var(--ui-on-accent); }
+
+.unit-tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--ui-sp-3); margin: var(--ui-sp-4) 0; padding: 0; list-style: none; }
+.unit-tile { display: flex; flex-direction: column; gap: var(--ui-sp-1); width: 100%; height: 100%; min-height: 96px; padding: var(--ui-sp-3) var(--ui-sp-4); border: 1px solid var(--ui-border); border-radius: var(--ui-radius-card); background: var(--ui-surface); box-shadow: var(--ui-shadow-card); color: var(--ui-text); font: inherit; text-align: left; text-decoration: none; cursor: pointer; transition: border-color var(--ui-motion), transform var(--ui-motion); }
+a.unit-tile { color: var(--ui-text); }
+.unit-tile:hover { border-color: var(--ui-accent); }
+.unit-tile:active { transform: scale(.98); }
+.unit-tile[aria-pressed="true"] { border-color: var(--ui-accent); outline: 2px solid var(--ui-accent); outline-offset: -1px; background: var(--ui-accent-soft); }
+.unit-tile strong { font-size: var(--ui-fs-body); font-weight: 700; line-height: 1.3; }
+.unit-tile small { color: var(--ui-muted); font-size: var(--ui-fs-label); line-height: 1.4; }
+.unit-tile .unit-tile-status { color: var(--ui-accent); font-weight: 600; }
+.unit-tile-track { display: block; height: 4px; margin-top: auto; border-radius: 2px; background: var(--ui-border); overflow: hidden; }
+.unit-tile-track i { display: block; height: 100%; border-radius: 2px; background: var(--ui-accent); }
+
+@media (min-width: 560px) { .unit-tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
