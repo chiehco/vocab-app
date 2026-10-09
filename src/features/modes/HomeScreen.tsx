@@ -21,6 +21,7 @@ export default function HomeScreen() {
   return <div className="learning-page learning-home">
     <header className="learning-header"><Link to="/" className="learning-brand">萬詞譜</Link><Link to="/settings">設定</Link></header>
     <h1>{resume ? '今天，接著學吧。' : '從一個單元開始。'}</h1>
+    <Link className="learning-row town-home-entry" to="/town/LV1/1"><span><strong>LV1 單字小鎮</strong><small>Unit 1 · 查看練習留下的小屋</small></span><span aria-hidden="true">→</span></Link>
     {!data ? <p role="status">正在讀取學習進度…</p> : <>
       {data.error && <p role="alert">暫時無法讀取進度，請重新整理後再試。仍可選擇課本單元。</p>}
       <section className="learning-start" aria-label={resume ? '上次學到' : '開始學習'}>

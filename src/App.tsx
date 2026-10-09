@@ -25,6 +25,8 @@ import SpellBarrageScreen from "./features/arena/SpellBarrageScreen";
 import MeaningKarutaScreen from "./features/arena/MeaningKarutaScreen";
 import SiegeScreen from './features/siege/SiegeScreen';
 import DirectScreen from "./features/direct/DirectScreen";
+import TownScreen from "./features/town/TownScreen";
+import LV1TownScreen from "./features/town/LV1TownScreen";
 import GroupsScreen from "./features/direct/GroupsScreen";
 import ExamHubScreen from "./features/exam/ExamHubScreen";
 import GsatScreen from "./features/exam/GsatScreen";
@@ -85,6 +87,8 @@ function AppLayout() {
           <Route path="/arena/meaning-karuta" element={<MeaningKarutaScreen />} />
           <Route path="/arena/word-siege" element={<SiegeScreen />} />
           <Route path="/practice/direct" element={<DirectScreen />} />
+          <Route path="/town/LV4/17" element={<TownScreen />} />
+          <Route path="/town/LV1/1" element={<LV1TownScreen />} />
           <Route path="/vocabulary" element={<VocabularyScreen />} />
           <Route path="/groups" element={<GroupsScreen />} />
           <Route path="/modes/words" element={<WordsWorkspace />} />
@@ -107,7 +111,7 @@ function AppLayout() {
               <NavLink
                 key={item.to}
                 to={item.to}
-                className={({ isActive }) => `app-nav-item ${isActive || (item.to === "/textbook" && /^\/(modes\/words|vocabulary|groups|review|browse|word|units|practice|placement|quiz)(\/|$)/.test(location.pathname)) || (item.to === "/games" && location.pathname.startsWith("/arena")) ? "active" : ""}`}
+                className={({ isActive }) => `app-nav-item ${isActive || (item.to === "/textbook" && /^\/(modes\/words|vocabulary|groups|review|browse|word|units|practice|placement|quiz|town)(\/|$)/.test(location.pathname)) || (item.to === "/games" && location.pathname.startsWith("/arena")) ? "active" : ""}`}
               >
                 <NavIcon name={item.icon} />
                 <span>{item.label}</span>
