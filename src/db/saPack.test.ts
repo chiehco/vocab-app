@@ -45,7 +45,7 @@ it("啟動包完整收錄 LV3 U1/U2，保留 S+A、LV4 reviewed、LV1 reviewed �
   expect(pack.words).toHaveLength(expected.size);
 });
 
-it("空庫安裝實際啟動包後，LV3 U1 97 張與 U2 116 張已映射字卡全部可解析", async () => {
+it("空庫安裝實際啟動包後，LV3 U1/U2 已映射字卡全部可解析且共用主卡去重", async () => {
   await Promise.all(contentDb.tables.map(table => table.clear()));
   vi.stubGlobal("fetch", vi.fn(async (url: string) => {
     if (!url.endsWith("/sa-pack.json")) throw new Error(`Unexpected full-data fallback: ${url}`);
@@ -56,7 +56,8 @@ it("空庫安裝實際啟動包後，LV3 U1 97 張與 U2 116 張已映射字卡�
   for (const [index, unit] of [1, 2].entries()) {
     const ids = items(units[index]).filter(item => item.kind === "vocabulary" && item.officialWordId)
       .map(item => item.officialWordId!);
-    expect(ids).toHaveLength([97, 116][index]);
+    expect(ids).toHaveLength([99, 116][index]);
+    expect(new Set(ids).size).toBe([98, 116][index]);
     expect(await contentDb.words.bulkGet(ids)).not.toContain(undefined);
     expect(new Set(resolveGroupWords(templateGroup(unit), installed).map(word => word.wordId)))
       .toEqual(new Set(ids));

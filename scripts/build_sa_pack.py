@@ -25,7 +25,7 @@ def rows_hash(rows) -> str:
     return hashlib.sha256(payload).hexdigest()
 
 
-def build_sa_pack(data_dir: Path) -> dict:
+def build_sa_pack(data_dir: Path, curriculum_dir: Path | None = None) -> dict:
     meta = read_json(data_dir / "meta.json")
     priorities = read_json(data_dir / "exam_priority.json")
     selected_priorities = [row for row in priorities if row.get("priorityTier") in {"S", "A"}]
@@ -33,7 +33,7 @@ def build_sa_pack(data_dir: Path) -> dict:
     selected_names = {row["word"] for row in selected_priorities}
 
     # Reviewed textbook cards must also exist on a fresh lightweight installation.
-    curriculum_dir = Path(__file__).resolve().parent.parent / "src/features/direct"
+    curriculum_dir = curriculum_dir or Path(__file__).resolve().parent.parent / "src/features/direct"
     # LV3 U1/U2 use separate files and already map to official dictionary words.
     # Include only those existing mappings; unmapped items remain outside this pack.
     for filename in ("curriculum.json", "curriculumUnit2.json"):
