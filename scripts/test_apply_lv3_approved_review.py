@@ -19,6 +19,9 @@ class ApplyReviewTest(unittest.TestCase):
         self.addCleanup(self.temporary.cleanup)
         self.root = Path(self.temporary.name).resolve()
         self.repo = self.root / 'repo'
+        self.expected_words = len(apply.read(ROOT / 'public/data/v1/words.json'))
+        self.expected_senses = len(apply.read(ROOT / 'public/data/v1/senses.json'))
+        self.expected_pack_words = len(apply.read(ROOT / 'public/data/v1/sa-pack.json')['words'])
         direct = Path('src/features/direct')
         files = [Path('public/data/v1') / name for name in apply.CONTENT_FILES + ['meta.json']]
         files += [direct / name for name in ['curriculum.json', 'curriculumUnit2.json', 'wordCatalog.json']]
@@ -52,7 +55,7 @@ class ApplyReviewTest(unittest.TestCase):
             self.review.append(dict(word=word, unit=dict(targetMeaningZh=meaning), captionProposal=dict(en='Candidate only', zh='僅為候選')))
         meta = self.repo / 'public/data/v1/meta.json'
         value = apply.read(meta)
-        value['counts'].update(words=6084, senses=765)
+        value['counts'].update(words=self.expected_words - 1, senses=self.expected_senses - 1)
         apply.write_json(meta, value)
         self.master = self.root / 'master.xlsx'
         self.master.write_bytes(b'untouched source fixture')
@@ -123,7 +126,7 @@ class ApplyReviewTest(unittest.TestCase):
             raise RuntimeError('Injected failure after pack generation')
         with patch.object(apply, 'build_sa_pack', side_effect=fail_after_pack):
             self.assert_failure_preserves_all_files(RuntimeError)
-        self.assertEqual(self.run_apply()['packCounts']['words'], 1529)
+        self.assertEqual(self.run_apply()['packCounts']['words'], self.expected_pack_words)
 
     def test_replacement_failure_rolls_back_all_files(self):
         original = apply.os.replace
@@ -142,10 +145,10 @@ class ApplyReviewTest(unittest.TestCase):
     def test_success_commits_complete_outputs_and_keeps_sources(self):
         before = self.snapshot()
         result = self.run_apply()
-        self.assertEqual(result['packCounts']['words'], 1529)
+        self.assertEqual(result['packCounts']['words'], self.expected_pack_words)
         data = self.repo / 'public/data/v1'
-        self.assertEqual(len(apply.read(data / 'words.json')), 6085)
-        self.assertEqual(len(apply.read(data / 'senses.json')), 766)
+        self.assertEqual(len(apply.read(data / 'words.json')), self.expected_words)
+        self.assertEqual(len(apply.read(data / 'senses.json')), self.expected_senses)
         self.assertEqual(apply.read(data / 'meta.json')['contentHash'], apply.published_content_hash(data))
         items = apply.read(self.repo / 'src/features/direct/curriculum.json')['learningItems']
         self.assertEqual([row['officialWordId'] for row in items if row.get('displayWord') in ['limousine', 'limo']], [apply.WORD_ID] * 2)

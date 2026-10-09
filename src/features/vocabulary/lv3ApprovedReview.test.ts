@@ -91,6 +91,6 @@ it('keeps determine/perform textbook senses and rejects promotion of pending pic
   expect(perform.illustration).toBeUndefined();
   expect(approvedCurriculumCard('determine')).toBeUndefined();
   expect(approvedCurriculumCard('perform')).toBeUndefined();
-  expect(unit1.learningItems.find(item => item.displayWord === 'nostalgic')!.officialWordId).toBeNull();
+  expect(unit1.learningItems.find(item => item.displayWord === 'nostalgic')!.illustration).toBeUndefined();
   expect(words.find(word => word.wordId === 'W004001')?.word).toBe('witch/wizard');
 });
