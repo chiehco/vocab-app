@@ -89,7 +89,7 @@ class NostalgicApplyTest(unittest.TestCase):
             raise RuntimeError('Late pack failure')
         with patch.object(apply, 'build_sa_pack', side_effect=fail_after_generation):
             self.assert_failure_unchanged(RuntimeError)
-        self.assertEqual(self.run_apply()['packCounts']['words'], 1530)
+        self.assertEqual(self.run_apply()['packCounts']['words'], len(apply.read(ROOT / 'public/data/v1/sa-pack.json')['words']))
         self.assertEqual(self.master.read_bytes(), b'original synthetic source')
         before = self.snapshot()
         with self.assertRaisesRegex(AssertionError, 'Already applied'):
