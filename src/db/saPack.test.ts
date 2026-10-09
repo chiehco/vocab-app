@@ -56,11 +56,16 @@ it("空庫安裝實際啟動包後，LV3 U1/U2 已映射字卡全部可解析且
   for (const [index, unit] of [1, 2].entries()) {
     const ids = items(units[index]).filter(item => item.kind === "vocabulary" && item.officialWordId)
       .map(item => item.officialWordId!);
-    expect(ids).toHaveLength([99, 116][index]);
-    expect(new Set(ids).size).toBe([98, 116][index]);
+    expect(ids).toHaveLength([100, 116][index]);
+    expect(new Set(ids).size).toBe([99, 116][index]);
     expect(await contentDb.words.bulkGet(ids)).not.toContain(undefined);
     expect(new Set(resolveGroupWords(templateGroup(unit), installed).map(word => word.wordId)))
       .toEqual(new Set(ids));
   }
+  expect(await contentDb.words.get('W006086')).toMatchObject({ word: 'nostalgic', meaningZh: '懷念往日時光的' });
+  expect(await contentDb.senses.get('W006086-1')).toMatchObject({ wordId: 'W006086', sensePos: 'adj.', meaningZh: '懷念往日時光的' });
+  expect(await contentDb.examples.get('EX-LV3U01-nostalgic')).toMatchObject({
+    word: 'nostalgic', sentenceEn: 'Finding her old school notebook made her feel nostalgic.',
+  });
   expect(fetch).toHaveBeenCalledTimes(1);
 }, 15000);
