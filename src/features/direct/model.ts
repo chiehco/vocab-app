@@ -17,7 +17,11 @@ export interface CurriculumUnit {
   items: LearningItem[]; questions: PracticeQuestion[];
   relatedNotes: { parentWord: string; word: string; meaningZh: string; officialWordId: string | null }[];
 }
-export type LearningItem = (typeof curriculum.learningItems)[number] & { illustration?: CurriculumIllustration; parentWord?: string; level?: string; unit?: number };
+// Mapping fields are nullable across units; LV3's current JSON is not their schema.
+export type LearningItem = Omit<(typeof curriculum.learningItems)[number], 'officialWordId' | 'officialSenseId'> & {
+  officialWordId?: string | null; officialSenseId?: string | null;
+  illustration?: CurriculumIllustration; parentWord?: string; level?: string; unit?: number;
+};
 // Textbook units available in the app. LV3 units keep their numeric `unit` shortcut for existing callers.
 export const curriculumUnits: CurriculumUnit[] = [
   { templateId: curriculum.template.templateId, revision: curriculum.template.revision, level: 'LV3', unit: 1, name: 'LV3 Unit 1', items: curriculum.learningItems as LearningItem[], questions: grammarQuestions, relatedNotes: [] },

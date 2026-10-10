@@ -43,7 +43,7 @@ it('registers the entire approved Unit18 with reconstructable examples and disti
 it('connects every official headword and its approved image/caption/meaning without granting supplementary IDs', () => {
   const cards = unit.learningItems.filter(i => i.kind === 'vocabulary');
   expect(new Set(cards.map(c => c.illustration!.path)).size).toBe(37);
-  expect(cards.filter(c => c.officialWordId)).toHaveLength(45);
+  expect(cards.filter(c => c.officialWordId)).toHaveLength(47);
   for (const card of cards) {
     expect(existsSync('public/' + card.illustration!.path)).toBe(true);
     if (!card.officialWordId) {
@@ -79,10 +79,10 @@ it('retains reviewed revisions and grades inflected target forms accurately', ()
   expect(isCorrectAnswer(q, 'ingredient')).toBe(false);
 });
 
-it('keeps all 44 Unit18 official words in the group and exam-first workspace order', () => {
+it('keeps all 46 Unit18 official words in the group and exam-first workspace order', () => {
   const groupWords = workspaceWords(bootstrap.words as WordRecord[], templateGroup('LV4-U18'), 'all', '');
-  expect(groupWords).toHaveLength(44);
-  expect(sortWorkspaceWords(groupWords, bootstrap.examPriorities as ExamPriorityRecord[])).toHaveLength(44);
+  expect(groupWords).toHaveLength(46);
+  expect(sortWorkspaceWords(groupWords, bootstrap.examPriorities as ExamPriorityRecord[])).toHaveLength(46);
   const found = workspaceWords(bootstrap.words as WordRecord[], undefined, 'all', 'guardian');
   expect(sortWorkspaceWords(found, bootstrap.examPriorities as ExamPriorityRecord[]).map(w => w.word)).toContain('guardian');
 });

@@ -36,7 +36,7 @@ it('provides the complete reviewed Unit20 package', () => {
 it('registers every official card and approved illustration on fresh install', () => {
   const cards = unit.learningItems.filter(item => item.kind === 'vocabulary');
   expect(new Set(cards.map(card => card.illustration!.path)).size).toBe(42);
-  expect(cards.filter(card => card.officialWordId)).toHaveLength(44);
+  expect(cards.filter(card => card.officialWordId)).toHaveLength(46);
   for (const card of cards) {
     expect(existsSync('public/' + card.illustration!.path)).toBe(true);
     if (!card.officialWordId) continue;
@@ -46,7 +46,7 @@ it('registers every official card and approved illustration on fresh install', (
     expect(approvedCurriculumCards(word.word, word.wordId).some(entry => entry.learningItemId === card.learningItemId)).toBe(true);
     expect(approvedCurriculumIllustration(card.displayWord!, '/' + card.illustration!.path + '?v=test')).toEqual(card.illustration);
   }
-  expect(workspaceWords(bootstrap.words as WordRecord[], templateGroup('LV4-U20'), 'all', '')).toHaveLength(44);
+  expect(workspaceWords(bootstrap.words as WordRecord[], templateGroup('LV4-U20'), 'all', '')).toHaveLength(46);
 });
 
 it('keeps all five final reviewed changes and target forms', () => {
