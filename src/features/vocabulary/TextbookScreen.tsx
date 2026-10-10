@@ -75,6 +75,8 @@ export default function TextbookScreen() {
         <Link className="learning-primary" to={chosen.partial ? `${textbookPath(chosen.level,chosen.unit)}/cards` : `/vocabulary?level=${chosen.level}&unit=${chosen.unit}`}>看字卡 <span aria-hidden="true">→</span></Link>
         <button className="learning-secondary" disabled={busy || !words} onClick={() => void act(practice)}>做題目</button>
       </section>
+      {chosen.publisher === 'ivy' && chosen.track === '7000' && chosen.level === 'LV4' && chosen.unit === 17 && <Link className="learning-secondary town-home-entry" to="/town/LV4/17">Unit 17 城鎮試玩 <span aria-hidden="true">→</span></Link>}
+      {chosen.publisher === 'ivy' && chosen.track === '7000' && chosen.level === 'LV1' && chosen.unit === 1 && <Link className="learning-secondary town-home-entry" to="/town/LV1/1">LV1 單字小鎮 <span aria-hidden="true">→</span></Link>}
       <p className="learning-muted learning-hint">{chosen.partial ? '題目使用已收錄詞條的一般單字練習；補充詞可在字卡閱讀。' : '範圍涵蓋整個單元，未練過的題目優先。可隨時離開，下次接著答。'}</p>
       <details><summary>更多選項</summary><button className="learning-secondary" disabled={busy} onClick={() => void act(addGroup)}>加入我的群組</button><Link className="learning-row" to="/groups">管理我的群組 →</Link></details>
     </> : <>
