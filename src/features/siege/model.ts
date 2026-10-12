@@ -22,7 +22,8 @@ export function siegeUnitWords(level: string, unit: number, dictionary: WordReco
     return eligibleWords(dictionary.filter(w => ids.has(w.wordId)).map(w => [w.word, w.meaningZh ?? '']));
   }
   const source = curriculumUnits.find(u => u.level === level && u.unit === unit);
-  return eligibleWords((source?.items ?? []).filter(i => i.kind === 'vocabulary')
+  // Pending supplements remain readable, but their placeholder is not an answer clue.
+  return eligibleWords((source?.items ?? []).filter(i => i.kind === 'vocabulary' && i.meaningSource !== 'unmapped_supplement')
     .map(i => [i.displayWord ?? '', i.targetMeaningZh ?? '']));
 }
 

@@ -14,6 +14,30 @@ describe('siege unit scope', () => {
     expect(siegeUnitWords('LV4', 99, [])).toEqual([]);
     expect(siegeUnitWords('LV1', 1, [])).toEqual([]);
   });
+  it.each([
+    { unit: 4, reading: 122, pending: 14, before: 120, playable: 108, excluded: ['OCCASIONALLY', 'CONSCIOUSNESS'], retained: ['awareness', 'elective'] },
+    { unit: 5, reading: 112, pending: 20, before: 109, playable: 90, excluded: ['CONSOLIDATE', 'WINNER'], retained: [] },
+    { unit: 6, reading: 105, pending: 20, before: 103, playable: 85, excluded: ['LOST', 'CHEETAH'], retained: ['practically', 'warning'] },
+  ])('excludes pending supplement clues from LV3 Unit $unit while retaining textbook reading', ({ unit, reading, pending, before, playable, excluded, retained }) => {
+    const source = curriculumUnits.find(u => u.level === 'LV3' && u.unit === unit)!;
+    const vocabulary = source.items.filter(i => i.kind === 'vocabulary');
+    expect(vocabulary).toHaveLength(reading);
+    expect(vocabulary.filter(i => i.meaningSource === 'unmapped_supplement')).toHaveLength(pending);
+    expect(eligibleWords(vocabulary.map(i => [i.displayWord ?? '', i.targetMeaningZh ?? '']))).toHaveLength(before);
+
+    const words = siegeUnitWords('LV3', unit, []);
+    expect(words).toHaveLength(playable);
+    expect(words.some(([, meaning]) => meaning === '教材補充詞；義項待核對。')).toBe(false);
+    for (const spelling of excluded) expect(words.some(([word]) => word === spelling)).toBe(false);
+    for (const spelling of retained) {
+      const item = vocabulary.find(i => i.displayWord === spelling)!;
+      expect(item.officialWordId).toBeNull();
+      expect(item.meaningSource).toBe('textbook_transcription');
+      expect(words).toContainEqual([spelling.toUpperCase(), item.targetMeaningZh]);
+    }
+    // Excluding a game clue must not remove its read-only textbook item.
+    expect(source.items.filter(i => i.meaningSource === 'unmapped_supplement')).toHaveLength(pending);
+  });
   it('escapes script terminators while retaining the original JSON values', () => {
     const input = [['</script><script>alert(1)</script>', '中文']];
     const encoded = scriptJson(input);
