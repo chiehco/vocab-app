@@ -30,7 +30,7 @@ LV1 Unit 1 沿用既有 WordList + Quiz，預設看英文選中文。小屋仍�
 - `npm run lint`：通過。
 - `npm run build`：通過，含 PWA 產物。保留原有大型 bundle 警告。
 - `git diff --check`：通過。
-- `npm test -- --maxWorkers=2 --testTimeout=30000`：74 檔、385 項全部通過，包含新增 8 項 React + 真實 IndexedDB 交易流程測試。
+- `npm test -- --maxWorkers=2 --testTimeout=30000`：初版 74 檔、385 項全部通過。舊快照修正後全量 74 檔、387 項通過；最後補強錯題清單後，10 項相關流程回歸、typecheck、lint、build 再次通過。
 
 全量首跑 384/385 通過，唯一失敗為既有 `lv1ReviewedImages.test.ts` 的 726 張圖片雜湊讀檔超過預設 5 秒；未修改該測試或素材，以 30 秒上限重跑全部通過。Sandbox 初次 npm 安裝、Vitest 暫存檔 rename 與 localhost 連線有環境限制，改由已批准的主機端執行後完成；沒有自動審查拒絕或未完成的驗證。
 
@@ -64,3 +64,9 @@ LV1 Unit 1 沿用既有 WordList + Quiz，預設看英文選中文。小屋仍�
 - 最終 JS 資產已進 service worker cache，頁面由正式 `sw.js` 控制；全程 pageErrors 為空。這是正式建置的本機離線驗收，並未部署正式站。
 
 更新驗收時也確認新版備妥提示正常；相同 hash URL 的導覽不會重新載入程式，需要真正重新整理載入新建置。離線證據與三張截圖位於上述 evidence 的 `pwa/`，原線上流程證據保留。
+
+## 瀏覽器上一頁的舊快照
+
+返回流程檢查另重現：先從未答 Quiz 回小鎮、續答並保存，再按瀏覽器上一頁，小鎮歷史可能仍帶原本未答快照。現在恢復與提交前都優先核對同 session、題型、單字及該字在本輪的出現次序，已保存答案不再重交；分數與錯題清單從既有 reviewLogs 恢復。原紀錄不含錯誤選項時，明說先前答錯，不憑空猜當時選項。
+
+新增答對／答錯兩項真實歷史返回回歸，確認 logs、quizStats、checkIns 不變，分數與結果頁錯題清單正確。最終正式 PWA 亦在全新 origin 離線重跑「上一頁 → 續答」，已保存題目保持停用、只有一筆 log，後續回鎮、重整與新分頁驗證全數通過，pageErrors 為空。未增加 DB 表、索引或紀錄欄位。

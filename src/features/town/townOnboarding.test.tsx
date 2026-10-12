@@ -2,7 +2,7 @@
 import 'fake-indexeddb/auto';
 import { act } from 'react';
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
-import { MemoryRouter, Route, Routes, useLocation } from 'react-router-dom';
+import { MemoryRouter, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { contentDb } from '../../db/contentDb';
 import { progressDb } from '../../db/progressDb';
 import type { WordRecord } from '../../db/types';
@@ -22,7 +22,8 @@ import { openTownDirectPractice } from './townPractice';
 let view: ReturnType<typeof createComponentHarness>;
 function Flow() {
   const location = useLocation();
-  return <><output data-testid="url">{location.pathname + location.search}</output><Routes>
+  const navigate = useNavigate();
+  return <><output data-testid="url">{location.pathname + location.search}</output><button data-testid="history-back" onClick={() => navigate(-1)}>上一頁</button><Routes>
     <Route path="/town/LV4/17" element={<TownScreen />} />
     <Route path="/town/LV1/1" element={<LV1TownScreen />} />
     <Route path="/practice/direct" element={<DirectScreen />} />
@@ -161,6 +162,36 @@ it('LV1: failed answer save cannot claim a house or lose the question', async ()
   expect(link('回小鎮看小屋 →')).toBeUndefined();
   expect(await progressDb.reviewLogs.count()).toBe(0);
   expect(await progressDb.quizStats.count()).toBe(0);
+});
+
+it.each([true, false])('LV1: browser Back restores an old pre-answer snapshot without duplicating evidence (correct=%s)', async correct => {
+  await view.render(<MemoryRouter initialEntries={['/town/LV1/1']}><Flow /></MemoryRouter>);
+  await view.waitFor(() => expect(button('開始蓋第一間小屋 →')).toBeDefined());
+  await view.click(button('開始蓋第一間小屋 →'));
+  await view.waitFor(() => expect(view.container.querySelectorAll('.trial-options button')).toHaveLength(4));
+  await view.click(link('← 回小鎮 · 保留本輪進度'));
+  await view.waitFor(() => expect(link('繼續本輪練習 →')).toBeDefined());
+  await view.click(link('繼續本輪練習 →'));
+  await view.waitFor(() => expect(view.container.querySelectorAll('.trial-options button')).toHaveLength(4));
+  const meaning = words.find(word => word.word === 'boy')!.meaningZh;
+  await view.click([...view.container.querySelectorAll('.trial-options button')].find(el => (el.querySelector('span')?.textContent === meaning) === correct));
+  await view.waitFor(() => expect(link('回小鎮看小屋 →')).toBeDefined());
+  const savedLogs = await progressDb.reviewLogs.toArray();
+  const savedStats = await progressDb.quizStats.toArray();
+  const savedCheckIns = await progressDb.checkIns.toArray();
+  // The previous town history entry still contains the earlier unanswered snapshot.
+  await view.click(view.container.querySelector('[data-testid=history-back]'));
+  await view.waitFor(() => expect(built()).toHaveLength(1));
+  await view.click(link('繼續本輪練習 →'));
+  await view.waitFor(() => expect(link('回小鎮看小屋 →')).toBeDefined());
+  expect([...view.container.querySelectorAll<HTMLButtonElement>('.trial-options button')].every(el => el.disabled)).toBe(true);
+  expect(view.container.querySelector('.trial-progress')?.textContent).toContain(`目前辨認 ${correct ? 1 : 0}`);
+  expect(await progressDb.reviewLogs.toArray()).toEqual(savedLogs);
+  expect(await progressDb.quizStats.toArray()).toEqual(savedStats);
+  expect(await progressDb.checkIns.toArray()).toEqual(savedCheckIns);
+  await view.click(view.container.querySelector('.trial-next'));
+  await view.waitFor(() => expect(view.container.querySelector('.trial-result-page')).not.toBeNull());
+  expect(view.container.querySelector('.trial-missed b')?.textContent).toBe(correct ? undefined : 'boy');
 });
 
 it('an existing house remains one house after another wrong answer and survives a reopened town', async () => {

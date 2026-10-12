@@ -31,6 +31,9 @@ import { getLV1TownItems } from '../town/lv1TownModel';
 const LEVEL_CHOICES = [TOP_EXAM_FILTER, "全部", "LV1", "LV2", "LV3", "LV4", "LV5", "LV6"];
 const QUIZ_SIZE = 10;
 type QuizMode = "w2m" | "m2w" | "image" | "fill";
+const RESTORED_WRONG_ANSWER = '[已保存的錯答]';
+const reviewModeFor = (mode: QuizMode): ReviewMode => mode === 'fill' ? 'fill-blank'
+  : mode === 'w2m' ? 'quiz-w2m' : mode === 'image' ? 'quiz-image' : 'quiz-m2w';
 interface McqQuestion { target: WordRecord; options: WordRecord[]; }
 // Browser navigation state, not a new progress record: a town visit can restore this exact round.
 interface TownQuizRound {
@@ -266,12 +269,33 @@ export default function QuizScreen() {
     startTextbookPractice();
   }, [listId, textbookScope, searchParams, mode, scopedCollectedWords, allWords, examPriorities, examDistractorRelations, functionWordSet]);
 
+  async function restoreSavedTownAnswer(word: string, reviewMode: ReviewMode): Promise<boolean> {
+    if (!townScope) return false;
+    const logs = await progressDb.reviewLogs.where('sessionId').equals(sessionId.current).toArray();
+    const previousOccurrences = mode === 'fill'
+      ? fillQuestions?.slice(0, index).filter(question => question.word === word).length ?? 0
+      : questions?.slice(0, index).filter(question => question.target.word === word).length ?? 0;
+    const saved = logs.filter(log => log.word === word && log.mode === reviewMode)
+      .sort((a, b) => Date.parse(a.reviewedAt) - Date.parse(b.reviewedAt) || (a.id ?? 0) - (b.id ?? 0))[previousOccurrences];
+    if (!saved) return false;
+    sessionStarted.current = true;
+    setScore(logs.filter(log => log.mode === reviewMode && log.grade > 0).length);
+    setWrongWords([...new Set(logs.filter(log => log.mode === reviewMode && log.grade === 0).map(log => log.word))]);
+    if (mode === 'fill') setFillResult(saved.grade > 0 ? 'correct' : 'wrong');
+    // reviewLogs retain correctness, not the chosen distractor; do not invent a past choice.
+    else setAnswered(saved.grade > 0 ? word : RESTORED_WRONG_ANSWER);
+    return true;
+  }
+
   async function saveAnswer(word: string, correct: boolean, reviewMode: ReviewMode): Promise<boolean> {
     if (savingRef.current) return false;
     savingRef.current = true;
     setSaving(true);
     setSaveError(null);
     try {
+      // Browser Back can restore an earlier town entry with a pre-answer snapshot.
+      // Saved evidence takes precedence, including before the restore effect finishes.
+      if (await restoreSavedTownAnswer(word, reviewMode)) return false;
       await recordQuizAnswer(word, correct, reviewMode, sessionId.current, !sessionStarted.current);
       sessionStarted.current = true;
       return true;
@@ -287,6 +311,14 @@ export default function QuizScreen() {
   const total = useMemo(() => mode === "fill" ? fillQuestions?.length ?? 0 : questions?.length ?? 0, [mode, questions, fillQuestions]);
   const unitLabel = groupId ? `${customGroup?.name ?? "群組"} · ` : hasUnitScope ? `Unit ${String(requestedUnitNumber).padStart(2, "0")} · ` : "";
   const practicedWord = mode === 'fill' ? fillQuestions?.[Math.min(index, total - 1)]?.word : questions?.[Math.min(index, total - 1)]?.target.word;
+  const restoreTownAnswer = useEffectEvent(async () => {
+    if (mode && practicedWord) await restoreSavedTownAnswer(practicedWord, reviewModeFor(mode));
+  });
+  useEffect(() => {
+    if (round?.sessionId !== sessionId.current || !townScope || !mode || index >= total
+      || (mode === 'fill' ? fillResult !== null : answered !== null)) return;
+    void restoreTownAnswer().catch(() => setSaveError('暫時無法讀取先前答案，請再試一次。'));
+  }, [round, townScope, mode, practicedWord, index, total, answered, fillResult]);
   const townItem = townItems.find(item => item.word === practicedWord);
   const townAnswerSaved = (index >= total && total > 0) || (mode === 'fill' ? fillResult !== null : answered !== null);
   const townRound: TownQuizRound = { listId: listId ?? '', mode, questions, fillQuestions, index, score, answered,
@@ -438,6 +470,7 @@ export default function QuizScreen() {
         {question.options.map((option, optionIndex) => <button key={option.word} className={optionState(option)} disabled={saving || answered !== null} onClick={() => pick(option)}><b>{String.fromCharCode(65 + optionIndex)}</b><span>{mode === "w2m" ? option.meaningZh : option.word}</span><i /></button>)}
       </div>
       {saveError && <p role="alert">{saveError}</p>}
+      {answered === RESTORED_WRONG_ANSWER && <p role="status">先前這題答錯，紀錄已保存；以下顯示正確答案。</p>}
       {answered !== null && townLink}
       {answered !== null && <button className="trial-next" onClick={() => { setIndex((current) => current + 1); setAnswered(null); }}>下一個單字<span>→</span></button>}
     </div>
