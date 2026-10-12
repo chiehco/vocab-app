@@ -38,7 +38,7 @@ export default function DirectScreen() {
   const hasRewardScope = !!s?.questionIds.some(id=>!!directRewardWord(id));
   const rewardWord = q ? directRewardWord(q.questionId) : undefined;
   const rewardRound = s && hasRewardScope ? directRoundId(s.id) : '';
-  const reward = useRewardRound(rewardRound,s?.questionIds.length ?? 0,hasRewardScope && !!q && !a && s?.revision===REVISION,
+  const reward = useRewardRound(rewardRound,s?.questionIds.length ?? 0,!!rewardWord && !!q && !a && s?.revision===REVISION,
     directRoundChallenge(s?.questionIds ?? []),new Set(s?.questionIds.map(directRewardWord).filter(Boolean)).size);
   const questionKey = `${s?.id}:${q?.questionId}`;
   const selectedChoice = selection?.key === questionKey ? selection.choice : s?.choices[q?.questionId ?? ''];
@@ -75,7 +75,7 @@ export default function DirectScreen() {
     if (!s || !q || a || lock.current) return;
     const previous = selectedRef.current?.key === questionKey ? selectedRef.current.choice : s.choices[q.questionId];
     if (previous === choice) {
-      void act(async () => { if (hasRewardScope) await reward.prepare(); await persistChoice(choice); await submitAnswer(s.id, q.questionId, true); });
+      void act(async () => { if (rewardWord) await reward.prepare(); await persistChoice(choice); await submitAnswer(s.id, q.questionId, true); });
     } else {
       selectedRef.current = { key: questionKey, choice };
       setSelection(selectedRef.current);
@@ -114,7 +114,7 @@ export default function DirectScreen() {
       {!q.options.length && <><p className="direct-muted">請填本單元目標詞。系統只比對目標詞，不判定其他同義表達；大小寫不影響結果。</p><label>填入目標詞<input key={`${s.id}:${q.questionId}`} defaultValue={s.choices[q.questionId] ?? ''} disabled={busy} autoComplete="off" autoCapitalize="none" spellCheck={false} maxLength={120} onChange={e=> {void updateQuestion(s.id,q.questionId,{choice:e.target.value}).catch(()=>setError('未能保存輸入，請重試。'));}} onKeyDown={event => {
         if (event.key !== 'Enter') return;
         event.preventDefault(); const value = event.currentTarget.value;
-        void act(async () => { if (hasRewardScope) await reward.prepare(); await updateQuestion(s.id, q.questionId, { choice: value }); await submitAnswer(s.id, q.questionId, true); });
+          void act(async () => { if (rewardWord) await reward.prepare(); await updateQuestion(s.id, q.questionId, { choice: value }); await submitAnswer(s.id, q.questionId, true); });
       }} /></label></>}
       {!q.options.length && !a && <><button disabled={busy} onClick={() => void act(() => updateQuestion(s.id, q.questionId, {lookup:'[首字母提示]'}))}>看首字母提示</button>{s.lookups[q.questionId]?.includes('[首字母提示]') && <p>首字母：{q.answer[0]}…</p>}</>}
       {q.options.length > 0 && <p className="direct-muted" id="direct-pick-instruction">點一次選取，再點同一選項送出。換選項先只選取。</p>}
@@ -122,7 +122,7 @@ export default function DirectScreen() {
         <button className="direct-option" disabled={busy} aria-pressed={selectedChoice === o.id} aria-describedby="direct-pick-instruction" onClick={() => chooseAnswer(o.id)}>{o.id} · {o.text}</button>
         {/^[A-Za-z]/.test(o.text) && <button disabled={busy} aria-label={`查選項：${o.text}`} onClick={() => lookup(o.text)}>查字</button>}
       </div>)}</div>
-      {!q.options.length && <button className="direct-primary" disabled={busy || !s.choices[q.questionId]?.trim()} onClick={() => void act(async () => { if (hasRewardScope) await reward.prepare(); await submitAnswer(s.id,q.questionId,true); })}>確認答案</button>}
+      {!q.options.length && <button className="direct-primary" disabled={busy || !s.choices[q.questionId]?.trim()} onClick={() => void act(async () => { if (rewardWord) await reward.prepare(); await submitAnswer(s.id,q.questionId,true); })}>確認答案</button>}
       {error && <p role="alert">{error}</p>}
       {busy && <p role="status">正在保存答案…</p>}
       </section> : <section className="direct-result direct-answer-feedback" ref={feedback} tabIndex={-1} aria-labelledby="direct-result-title">
