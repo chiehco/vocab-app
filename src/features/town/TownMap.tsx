@@ -2,21 +2,26 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import TownBuilding from './TownBuilding';
 import { getTownLayout } from './townLayout';
 
-export default function TownMap({ plots, selectedId, onSelect, label }: {
+export default function TownMap({ plots, selectedId, onSelect, label, focusOnMount = false }: {
   plots: { id: string; word: string; built: boolean }[];
   selectedId: string;
   onSelect: (id: string) => void;
   label: string;
+  focusOnMount?: boolean;
 }) {
   const map = useRef<HTMLDivElement>(null);
   const layout = useMemo(() => getTownLayout(plots.length), [plots.length]);
   const [scale, setScale] = useState(0.55);
+  const [fitted, setFitted] = useState(false);
+  const initialFocus = useRef(focusOnMount ? selectedId : '');
+  const focused = useRef(false);
   useEffect(() => {
     const viewport = map.current;
     if (!viewport) return;
     const observer = new ResizeObserver(() => {
       const fit = Math.max(0.45, Math.min(1, viewport.clientWidth / layout.width));
       setScale(fit);
+      setFitted(true);
       viewport.scrollLeft = Math.max(0, (layout.width * fit - viewport.clientWidth) / 2);
     });
     observer.observe(viewport, { box: 'border-box' });
@@ -24,6 +29,15 @@ export default function TownMap({ plots, selectedId, onSelect, label }: {
   }, [layout.width]);
   const drag = useRef<{ id: number; x: number; y: number; left: number; top: number; moved: boolean } | null>(null);
   const suppressClick = useRef(0);
+  useEffect(() => {
+    if (!fitted || !initialFocus.current || focused.current) return;
+    const tile = Array.from(map.current?.querySelectorAll<HTMLElement>('[data-town-item]') ?? [])
+      .find(element => element.dataset.townItem === initialFocus.current);
+    if (!tile || !map.current) return;
+    map.current.scrollTo({ left: (tile.offsetLeft + tile.offsetWidth / 2) * scale - map.current.clientWidth / 2,
+      top: (tile.offsetTop + tile.offsetHeight / 2) * scale - map.current.clientHeight / 2 });
+    focused.current = true;
+  }, [scale, fitted]);
   function centerSelected() {
     const tile = Array.from(map.current?.querySelectorAll<HTMLElement>('[data-town-item]') ?? [])
       .find(element => element.dataset.townItem === selectedId);

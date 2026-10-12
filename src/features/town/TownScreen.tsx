@@ -1,14 +1,18 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { progressDb } from '../../db/progressDb';
 import { useToday } from '../../hooks/useToday';
 import { getDueReviewQueue } from '../../srs/dueReview';
 import { getTownProgress } from './townModel';
 import TownView from './TownView';
+import { openTownDirectPractice, type TownPracticeReturn } from './townPractice';
 import './town.css';
 
 /** Existing evidence is projected into houses; opening this screen never writes progress. */
 export default function TownScreen() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const resume = (location.state as { townPractice?: TownPracticeReturn } | null)?.townPractice;
   const today = useToday();
   const data = useLiveQuery(async () => {
     try {
@@ -23,7 +27,11 @@ export default function TownScreen() {
   return <TownView level="LV4" unit={17} rows={getTownProgress(data.attempts).map(row => ({
     id: row.item.learningItemId, word: row.item.displayWord ?? '', meaning: row.item.targetMeaningZh ?? '',
     attempted: row.attempted, latestCorrect: row.latestCorrect, latestHintUsed: row.latestHintUsed,
-  }))} sibling={<Link to="/town/LV1/1">前往 LV1 小鎮 →</Link>}
+  }))} onPractice={async id => {
+    const session = await openTownDirectPractice(id);
+    navigate(`/practice/direct?session=${encodeURIComponent(session.id)}&town=LV4`);
+  }} resume={resume?.to.startsWith('/practice/direct?session=') ? resume : undefined}
+    sibling={<Link to="/town/LV1/1">前往 LV1 小鎮 →</Link>}
     due={data.dueCount > 0 ? <Link to="/review?due=1">到期複習 · 全字庫 {data.dueCount} 字 →</Link>
       : <p>今天沒有到期複習。舊字也可以自由練習。</p>} />;
 }
