@@ -48,7 +48,7 @@ export default function TownView({ level, unit, rows, sibling, due, onPractice, 
       {selected.attempted && <p className="town-subtle">{selected.latestCorrect ? '最近一次答對' : '最近一次還不熟，再陪牠練一次'}{selected.latestHintUsed ? ' · 使用過提示' : ''}。小屋會保留。</p>}
       <div className="town-selected-actions"><SpeakerButton text={selected.word} /><button className="town-secondary" disabled={busy} onClick={() => void practice(selected.id)}>{selected.attempted ? '再練這個字' : '練這個字，蓋小屋'}</button></div>
     </section>}
-    <p className="town-subtle town-footnote">小屋記錄練過的字，還要慢慢複習才會記穩。<br />進度保存在目前的瀏覽器。</p>
+    <p className="town-subtle town-footnote">小屋記錄練過的字，還要慢慢複習才會記穩。<br />進度保存在目前的瀏覽器。{level === 'LV1' && <><br />本輪續答請留在同一分頁。</>}</p>
     <div className="town-due">{sibling}</div>
     {due && <div className="town-due">{due}</div>}
   </div>;

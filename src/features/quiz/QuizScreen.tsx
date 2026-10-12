@@ -304,6 +304,7 @@ export default function QuizScreen() {
       state={{ townPractice: { to: location.pathname + location.search, state: { townQuizRound: townRound } } }}>
       {townAnswerSaved ? '回小鎮看小屋 →' : '← 回小鎮 · 保留本輪進度'}
     </Link>
+    <p>本輪續答請留在同一分頁。</p>
   </div>;
 
   if (mode === null) {

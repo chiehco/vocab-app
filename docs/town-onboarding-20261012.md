@@ -5,7 +5,7 @@
 隔離分支：`fix/town-onboarding-20261012`。
 隔離工作樹：`C:/Users/USER/Documents/Codex/2026-10-12/task/vocab-town-onboarding`。
 
-範圍為使用者已批准的三項操作流程修正，只本機實作、測試與提交。未推送、建立 PR、合併或部署，也未帶入 U9–U10 的 `94afb6f`、未重試其被拒推送。既有工作樹與使用者修改保留。
+最初範圍為使用者已批准的三項操作流程修正，只本機實作、測試與提交，初版為 `bd1560bc3650e3323cccad85da556009702a4a56`。後續使用者授權此專案推送，本輪按授權準備本任務的獨立分支與 draft PR，仍不合併或部署。未帶入 U9–U10 的 `94afb6f`、未重試其被拒推送。既有工作樹與使用者修改保留。
 
 已讀固定總入口、來源工作區 AGENTS.md、協作規則、決策簿、城鎮試玩紀錄與共用 CLAUDE.md 的必讀資料。程式 checkout 內無 AGENTS.md 或 .agents/skills；文件工作區 .agents 為空。瀏覽器驗收使用 playwright 技能。
 
@@ -46,8 +46,21 @@ LV1 Unit 1 沿用既有 WordList + Quiz，預設看英文選中文。小屋仍�
 
 ## 邊界與接續
 
-未驗實體手機、學生實際反應、Firefox／Safari、正式站部署與新版離線 PWA。LV1 的精確輪次續答依同分頁導覽歷史；全新分頁或電腦重啟後未還原該分頁歷史，不保證還原同一題序。學習紀錄與小屋仍存於既有 IndexedDB，LV4 session 也仍持久保存。
+未驗實體手機、學生實際反應、Firefox／Safari及正式站部署。LV1 的精確輪次續答依同分頁導覽歷史；全新分頁或電腦重啟後未還原該分頁歷史，不保證還原同一題序。學習紀錄與小屋仍存於既有 IndexedDB，LV4 session 也仍持久保存。
 
 本任務不處理既有 Codex 訊息路徑錯誤，也未宣稱能修復它。程式、證據與本機提交可在重啟後從上述工作樹接續。
 
 本機再啟動：在隔離工作樹執行 `npm run dev -- --host 127.0.0.1 --port 5188 --strictPort`，使用 `http://127.0.0.1:5188/#/town/LV1/1` 或 `#/town/LV4/17`。驗收用服務與獨立瀏覽器在交付前關閉。
+
+## 後續正式建置離線驗收
+
+依使用者的續答文案要求，LV1 小鎮與 Quiz 返回區加上「本輪續答請留在同一分頁」。未擴資料模型。這句文案後的 TypeScript、lint、8 項相關流程回歸與正式 build 再次通過。
+
+以最終 `dist`、真實 service worker 及獨立 Chromium profile 驗收，先完成安裝快取，再將瀏覽器網路設為 offline：
+
+- LV1 離線答題保存一筆 reviewLog，返回一棟、離線重整、接回同分頁原輪次；始終只有一筆，未重交答案。
+- LV1 在全新分頁開啟同一 Quiz URL，另建未作答輪次，不假稱接回原 session、不新增答案；同分頁提示可見。
+- LV4 離線答題保存一筆 directAttempt，返回一棟、離線重整與續答；session 和 attempt 完整不變。新分頁也可讀回原持久保存 session。
+- 最終 JS 資產已進 service worker cache，頁面由正式 `sw.js` 控制；全程 pageErrors 為空。這是正式建置的本機離線驗收，並未部署正式站。
+
+更新驗收時也確認新版備妥提示正常；相同 hash URL 的導覽不會重新載入程式，需要真正重新整理載入新建置。離線證據與三張截圖位於上述 evidence 的 `pwa/`，原線上流程證據保留。
