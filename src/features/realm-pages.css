@@ -264,3 +264,6 @@
 @media (prefers-reduced-motion: reduce) {
   .realm-page *, .realm-page *::before, .realm-page *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; }
 }
+.trial-town-return { margin:14px 0; line-height:1.7; }
+.trial-town-return a { display:flex; align-items:center; justify-content:center; min-height:48px; padding:12px; border-radius:10px; background:var(--ui-accent); color:var(--ui-on-accent); text-decoration:none; font-weight:600; }
+.trial-town-return a[aria-disabled=true] { opacity:.5; }

@@ -2,7 +2,7 @@ import type { CustomGroup } from '../direct/model';
 import { readWordList } from '../modes/wordLists';
 import type { WordList } from '../modes/wordLists';
 import { useEffect, useEffectEvent, useMemo, useRef, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
 import { getKnownWords } from "../../db/progressIdentity";
 import { contentDb } from "../../db/contentDb";
@@ -26,11 +26,18 @@ import { useToday } from "../../hooks/useToday";
 import { getExamUnit, getStudyUnit, parseUnitOrder, unitOrderLabel } from "../units/unitPlan";
 import "../realm-pages.css";
 import { resolveGroupWords } from "../direct/groupScope";
+import { getLV1TownItems } from '../town/lv1TownModel';
 
 const LEVEL_CHOICES = [TOP_EXAM_FILTER, "全部", "LV1", "LV2", "LV3", "LV4", "LV5", "LV6"];
 const QUIZ_SIZE = 10;
 type QuizMode = "w2m" | "m2w" | "image" | "fill";
 interface McqQuestion { target: WordRecord; options: WordRecord[]; }
+// Browser navigation state, not a new progress record: a town visit can restore this exact round.
+interface TownQuizRound {
+  listId: string; mode: QuizMode | null; questions: McqQuestion[] | null; fillQuestions: ExampleRecord[] | null;
+  index: number; score: number; answered: string | null; fillInput: string; fillResult: 'correct' | 'wrong' | null;
+  wrongWords: string[]; sessionId: string; sessionStarted: boolean;
+}
 
 function ImageChineseClue({ word, clue }: { word: WordRecord; clue: ImageClueCopy }) {
   const highlight = findImageClueHighlight(clue.text, clue.targetHint, word.meaningZh);
@@ -57,6 +64,10 @@ function TrialLevels({ selected, onChange }: { selected: string; onChange: (leve
 export default function QuizScreen() {
   const [searchParams] = useSearchParams();
   const listId = searchParams.get('list');
+  const location = useLocation();
+  const navigate = useNavigate();
+  const restored = useRef((location.state as { townQuizRound?: TownQuizRound } | null)?.townQuizRound);
+  const round = listId && restored.current?.listId === listId ? restored.current : undefined;
   const groupId = listId || searchParams.get('group');
   const customGroup = useLiveQuery<CustomGroup | WordList | undefined>(() => listId ? readWordList(listId) : groupId ? progressDb.customGroups.get(groupId) : undefined, [groupId,listId]);
   const groupReturn = listId ? (customGroup as WordList|undefined)?.returnTo ?? '/modes/words' : `/groups?group=${encodeURIComponent(groupId??'')}`;
@@ -73,18 +84,18 @@ export default function QuizScreen() {
     && requestedUnitNumber > 0;
   const freeScope = !!groupId || hasUnitScope && explicitOrder;
   const minimumPool = freeScope ? 1 : 4;
-  const [mode, setMode] = useState<QuizMode | null>(null);
-  const [questions, setQuestions] = useState<McqQuestion[] | null>(null);
-  const [fillQuestions, setFillQuestions] = useState<ExampleRecord[] | null>(null);
-  const [index, setIndex] = useState(0);
-  const [score, setScore] = useState(0);
-  const [answered, setAnswered] = useState<string | null>(null);
-  const [fillInput, setFillInput] = useState("");
-  const [fillResult, setFillResult] = useState<"correct" | "wrong" | null>(null);
+  const [mode, setMode] = useState<QuizMode | null>(round?.mode ?? null);
+  const [questions, setQuestions] = useState<McqQuestion[] | null>(round?.questions ?? null);
+  const [fillQuestions, setFillQuestions] = useState<ExampleRecord[] | null>(round?.fillQuestions ?? null);
+  const [index, setIndex] = useState(round?.index ?? 0);
+  const [score, setScore] = useState(round?.score ?? 0);
+  const [answered, setAnswered] = useState<string | null>(round?.answered ?? null);
+  const [fillInput, setFillInput] = useState(round?.fillInput ?? "");
+  const [fillResult, setFillResult] = useState<"correct" | "wrong" | null>(round?.fillResult ?? null);
   const [levelSel, setLevelSel] = useState(hasUnitScope ? requestedLevel : TOP_EXAM_FILTER);
-  const [wrongWords, setWrongWords] = useState<string[]>([]);
-  const sessionId = useRef(crypto.randomUUID());
-  const sessionStarted = useRef(false);
+  const [wrongWords, setWrongWords] = useState<string[]>(round?.wrongWords ?? []);
+  const sessionId = useRef(round?.sessionId ?? crypto.randomUUID());
+  const sessionStarted = useRef(round?.sessionStarted ?? false);
   const savingRef = useRef(false);
   const [saving, setSaving] = useState(false);
   const [saveError, setSaveError] = useState<string | null>(null);
@@ -102,6 +113,10 @@ export default function QuizScreen() {
   const todayCheckIn = useLiveQuery(() => progressDb.checkIns.get(today), [today]);
   const allSenses = useLiveQuery(() => contentDb.senses.toArray(), []);
   const allWords = useLiveQuery(() => contentDb.words.toArray(), []);
+  const townItems = useMemo(() => getLV1TownItems(allWords ?? []), [allWords]);
+  const townScope = !!listId
+    && (customGroup as WordList | undefined)?.returnTo === '/textbook/LV1/1'
+    && !!customGroup?.wordIds?.length && customGroup.wordIds.every(id => townItems.some(item => item.wordId === id));
   const examPriorities = useLiveQuery(() => contentDb.examPriorities.toArray(), []);
   const allRelations = useLiveQuery(() => contentDb.relations.toArray(), []);
   const allMorphemes = useLiveQuery(() => contentDb.morphemes.toArray(), []);
@@ -271,6 +286,25 @@ export default function QuizScreen() {
 
   const total = useMemo(() => mode === "fill" ? fillQuestions?.length ?? 0 : questions?.length ?? 0, [mode, questions, fillQuestions]);
   const unitLabel = groupId ? `${customGroup?.name ?? "群組"} · ` : hasUnitScope ? `Unit ${String(requestedUnitNumber).padStart(2, "0")} · ` : "";
+  const practicedWord = mode === 'fill' ? fillQuestions?.[Math.min(index, total - 1)]?.word : questions?.[Math.min(index, total - 1)]?.target.word;
+  const townItem = townItems.find(item => item.word === practicedWord);
+  const townAnswerSaved = (index >= total && total > 0) || (mode === 'fill' ? fillResult !== null : answered !== null);
+  const townRound: TownQuizRound = { listId: listId ?? '', mode, questions, fillQuestions, index, score, answered,
+    fillInput, fillResult, wrongWords, sessionId: sessionId.current, sessionStarted: sessionStarted.current };
+  const rememberTownRound = useEffectEvent(() => {
+    navigate(location.pathname + location.search, { replace: true, state: { townQuizRound: townRound } });
+  });
+  useEffect(() => {
+    if (townScope && !saving) rememberTownRound();
+  }, [townScope, mode, questions, fillQuestions, index, score, answered, fillInput, fillResult, wrongWords, saving]);
+  const townLink = townScope && <div className="trial-town-return">
+    {townAnswerSaved && <p role="status">答案已保存，這個字的小屋已落成。答錯也算練過。</p>}
+    <Link aria-disabled={saving} onClick={event => { if (savingRef.current) event.preventDefault(); }}
+      to={`/town/LV1/1${townItem ? `?item=${encodeURIComponent(townItem.id)}` : ''}`}
+      state={{ townPractice: { to: location.pathname + location.search, state: { townQuizRound: townRound } } }}>
+      {townAnswerSaved ? '回小鎮看小屋 →' : '← 回小鎮 · 保留本輪進度'}
+    </Link>
+  </div>;
 
   if (mode === null) {
     if (hasUnitScope && allWords && examPriorities && !requestedUnit) {
@@ -284,6 +318,7 @@ export default function QuizScreen() {
     return (
       <div className="realm-page trial-page">
         <TrialHeader label={groupId ? customGroup?.name ?? "群組練習" : hasUnitScope ? `${requestedLevel} · ${explicitOrder ? unitOrderLabel(order) : "舊版分組"} · Unit ${String(requestedUnitNumber).padStart(2, "0")}` : "單字練習"} />
+        {townLink}
         <section className="trial-intro">
           <div><p>{groupId ? `${scopedCollectedWords?.length ?? 0} 個可練習單字` : hasUnitScope ? `${requestedUnit?.words.length ?? 0} 個單字` : levelSel === TOP_EXAM_FILTER ? "S+A 學測高頻字" : "只練習已學過的單字"}</p><h2>{groupId ? <>依自己的清單，自由<em>練習。</em></> : hasUnitScope ? <>本輪連續作答，完成後再回到<em>Unit。</em></> : levelSel === TOP_EXAM_FILTER ? <>先守住高頻，再擴張你的<em>得分範圍。</em></> : <>收服只是相遇，能在情境中認出，<em>才算真的馴化。</em></>}</h2></div>
         </section>
@@ -308,6 +343,7 @@ export default function QuizScreen() {
     return (
       <div className="realm-page trial-result-page">
         <TrialHeader label={`${unitLabel}練習結果`} />
+        {townLink}
         <div className={`trial-result-mark ${perfect ? "perfect" : ""}`}><span>{score}</span><small>/ {total}</small></div>
         <h2>{perfect ? "答對了" : "判定完成"}</h2>
         <p>{perfect ? "全部答對，所有字獸都辨認成功！" : `本輪辨認 ${score} 枚，錯過 ${total - score} 枚。`}</p>
@@ -333,6 +369,7 @@ export default function QuizScreen() {
     return (
       <div className="realm-page active-trial-page">
         <TrialHeader label={`${unitLabel}殘句補名`} progress={`${index + 1} / ${total}`} />
+        {!fillResult && townLink}
         <div className="trial-progress"><i style={{ width: `${((index + 1) / total) * 100}%` }} /><span>目前辨認 {score}</span></div>
         <section className={`trial-question fill-question ${fillResult ?? ""}`}>
           <ExamTierBadge tier={priorityByWord.get(question.word)} compact />
@@ -343,6 +380,7 @@ export default function QuizScreen() {
           {fillResult && <div className="trial-verdict"><b>{fillResult === "correct" ? "答對了" : "答錯了"}</b><span>{fillResult === "correct" ? question.answer : `正確答案：${question.answer}`}</span></div>}
         </section>
         {saveError && <p role="alert">{saveError}</p>}
+        {fillResult && townLink}
         <button className="trial-next" disabled={saving} onClick={() => { if (fillResult === null) submitFill(); else { setIndex((current) => current + 1); setFillInput(""); setFillResult(null); } }}>{saving ? "保存中" : fillResult === null ? "確認答案" : "下一個單字"}<span>→</span></button>
       </div>
     );
@@ -381,6 +419,7 @@ export default function QuizScreen() {
   return (
     <div className="realm-page active-trial-page">
       <TrialHeader label={`${unitLabel}${mode === "w2m" ? "見名辨義" : mode === "image" ? "看圖喚名" : "循義喚名"}`} progress={`${index + 1} / ${total}`} />
+      {answered === null && townLink}
       <div className="trial-progress"><i style={{ width: `${((index + 1) / total) * 100}%` }} /><span>目前辨認 {score}</span></div>
       <section className={`trial-question choice-question ${mode === "image" ? "image-question" : ""} ${sealed ? "is-sealed" : ""}`}>
         <ExamTierBadge tier={priorityByWord.get(question.target.word)} compact />
@@ -398,6 +437,7 @@ export default function QuizScreen() {
         {question.options.map((option, optionIndex) => <button key={option.word} className={optionState(option)} disabled={saving || answered !== null} onClick={() => pick(option)}><b>{String.fromCharCode(65 + optionIndex)}</b><span>{mode === "w2m" ? option.meaningZh : option.word}</span><i /></button>)}
       </div>
       {saveError && <p role="alert">{saveError}</p>}
+      {answered !== null && townLink}
       {answered !== null && <button className="trial-next" onClick={() => { setIndex((current) => current + 1); setAnswered(null); }}>下一個單字<span>→</span></button>}
     </div>
   );

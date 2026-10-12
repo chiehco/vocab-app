@@ -1,0 +1,53 @@
+# 字彙小鎮新手引導：本機驗收
+
+2026-10-12。基準為實際核對並 fetch 的遠端 main `d94fe6bc227a03d8f261d805554bfc1742c007b4`；完成驗收後再次 ls-remote，main 仍為同一提交。App package 版本保持 `0.0.0`。
+
+隔離分支：`fix/town-onboarding-20261012`。
+隔離工作樹：`C:/Users/USER/Documents/Codex/2026-10-12/task/vocab-town-onboarding`。
+
+範圍為使用者已批准的三項操作流程修正，只本機實作、測試與提交。未推送、建立 PR、合併或部署，也未帶入 U9–U10 的 `94afb6f`、未重試其被拒推送。既有工作樹與使用者修改保留。
+
+已讀固定總入口、來源工作區 AGENTS.md、協作規則、決策簿、城鎮試玩紀錄與共用 CLAUDE.md 的必讀資料。程式 checkout 內無 AGENTS.md 或 .agents/skills；文件工作區 .agents 為空。瀏覽器驗收使用 playwright 技能。
+
+## 實際行為
+
+- 零屋時顯示「答一題，蓋第一間小屋」，明說答案保存後該字落成，答錯也算，只讀卡／發音不算。
+- 主入口直接開第一個未練字；地塊細節可練選取的字，已有房子則可重練。直接入口每次一字一題，原課本整單元練習範圍保留。
+- 答案保存成功後，顯示「回小鎮看小屋」。返回網址帶穩定的教材項目／圖卡 ID，選取並捲到該地塊。返回只做導覽，不提交答案、不前進題序。
+- 未作答可取消返回，不顯示落成訊息。進入與提交按鈕的既有／新增鎖避免連點重複動作；保存失敗保留題目並顯示錯誤。
+
+## 兩條紀錄路徑保留
+
+LV4 Unit 17 沿用 `directSessions/directAttempts`。基本四選一與輪換情境題先轉回 canonical 題號，再按原 `learningItemId` 定位。取消的一字練習可重開原 session；作答後回小鎮，再繼續時仍是原 session、選項、提示與 index。
+
+LV1 Unit 1 沿用既有 WordList + Quiz，預設看英文選中文。小屋仍只由 `quiz-w2m/quiz-m2w/quiz-image/fill-blank` 的 reviewLogs 派生。既有課本 Unit 1 清單也取得返回入口。這一輪的題目、題序、選項、分數、session ID 及已答狀態放在瀏覽器導覽狀態，讓同分頁返回與重新整理能續答。
+
+未修改 `townModel.ts`、`lv1TownModel.ts`、`direct/store.ts`、DB schema、資料表、進度記錄格式或 SRS 演算法。沒有新增分數、貨幣、連勝或成長門檻。小屋表示已練過，不表示已熟練；原有正誤與提示紀錄仍保留。
+
+## 驗證
+
+- `npm run typecheck`：通過。
+- `npm run lint`：通過。
+- `npm run build`：通過，含 PWA 產物。保留原有大型 bundle 警告。
+- `git diff --check`：通過。
+- `npm test -- --maxWorkers=2 --testTimeout=30000`：74 檔、385 項全部通過，包含新增 8 項 React + 真實 IndexedDB 交易流程測試。
+
+全量首跑 384/385 通過，唯一失敗為既有 `lv1ReviewedImages.test.ts` 的 726 張圖片雜湊讀檔超過預設 5 秒；未修改該測試或素材，以 30 秒上限重跑全部通過。Sandbox 初次 npm 安裝、Vitest 暫存檔 rename 與 localhost 連線有環境限制，改由已批准的主機端執行後完成；沒有自動審查拒絕或未完成的驗證。
+
+獨立 Chromium 瀏覽器（未使用使用者真實學習資料）驗收：
+
+- LV1 零屋 → 直接答題 → 故意答錯 → 返回一棟並定位；取消不蓋屋；連點只記一筆；答題前後重整及小鎮重開保留；同輪續答不重記。
+- LV4 零屋 → 查字提示 → 取消仍零屋 → 回原 session → 故意答錯 → 返回一棟並定位；重整不重記；完成後明確重練換題，仍一棟。
+- LV4 原課本 46 題 session 返回前後完整一致。LV1 原課本十題輪次在第二題返回／重整，題目、隨機選項、index=1、score=1 與 session ID 完整一致，接續只新增下一筆答案。
+- 320／390／736px 小鎮、Quiz 及 Direct 回答頁均無水平溢出；新增主要按鈕與返回連結高度 48px 以上。返回的選取地塊在地圖可見範圍內。
+- 各驗收頁瀏覽器 console 無錯誤或警告。
+
+本機證據位於 `C:/Users/USER/Documents/Codex/2026-10-12/task/town-onboarding-evidence/`：完整測試輸出、瀏覽器腳本／結果、`playwright/verification-summary.json` 及六張手機截圖。這些測試產物不進程式提交。
+
+## 邊界與接續
+
+未驗實體手機、學生實際反應、Firefox／Safari、正式站部署與新版離線 PWA。LV1 的精確輪次續答依同分頁導覽歷史；全新分頁或電腦重啟後未還原該分頁歷史，不保證還原同一題序。學習紀錄與小屋仍存於既有 IndexedDB，LV4 session 也仍持久保存。
+
+本任務不處理既有 Codex 訊息路徑錯誤，也未宣稱能修復它。程式、證據與本機提交可在重啟後從上述工作樹接續。
+
+本機再啟動：在隔離工作樹執行 `npm run dev -- --host 127.0.0.1 --port 5188 --strictPort`，使用 `http://127.0.0.1:5188/#/town/LV1/1` 或 `#/town/LV4/17`。驗收用服務與獨立瀏覽器在交付前關閉。

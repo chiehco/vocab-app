@@ -10,6 +10,7 @@ import { startSession, startScopeSession, startReviewSession, updateQuestion, su
 import { lookupWord } from './lookup';
 import './direct.css';
 import { practiceIds } from '../vocabulary/model';
+import { directTownItem } from '../town/townPractice';
 
 export default function DirectScreen() {
   const [params,setParams] = useSearchParams();
@@ -25,6 +26,10 @@ export default function DirectScreen() {
   const hasVocabulary = s?.questionIds.some(id => id.includes('CLOZE-'));
   const q = allQuestions.find(q => q.questionId === s?.questionIds[s.index]);
   const a = data?.attempts.find(a => a.id === `${s?.id}:${q?.questionId}`);
+  const lastTownAttempt = data?.attempts.filter(attempt => attempt.sessionId === s?.id && directTownItem(attempt.questionId))
+    .sort((a, b) => a.answeredAt - b.answeredAt).at(-1);
+  const townItem = directTownItem(q?.questionId ?? lastTownAttempt?.questionId ?? '');
+  const townReturn = s ? { townPractice: { to: `/practice/direct?session=${encodeURIComponent(s.id)}&town=LV4` } } : undefined;
   const scope=s?.scopeQuestionIds ?? s?.questionIds;
   const scopeTargets = scope && new Set(scope.map(canonicalQuestionId));
   const studyUnit = scope?.length ? curriculumUnits.find(u => {
@@ -32,7 +37,7 @@ export default function DirectScreen() {
     return scope.every(id => ids.has(questionForMode(canonicalQuestionId(id), 'advanced')));
   }) : undefined;
   const first = firstTargetAttempts(data?.attempts ?? []).filter(a => allQuestions.some(q => q.questionId === a.questionId) && (!scopeTargets || scopeTargets.has(canonicalQuestionId(a.questionId))));
-  async function openSession(create: Promise<DirectSession>) { const next=await create;setParams({session:next.id}); }
+  async function openSession(create: Promise<DirectSession>) { const next=await create;setParams({session:next.id, ...(params.get('town') === 'LV4' ? {town:'LV4'} : {})}); }
   async function act(action: () => Promise<unknown>) {
     if (lock.current) return;
     lock.current = true; setBusy(true); setError('');
@@ -49,6 +54,7 @@ export default function DirectScreen() {
   const wrong = wrongQuestionIds(data?.attempts ?? []).filter(id=>!scopeTargets || scopeTargets.has(canonicalQuestionId(id)));
   return <div className="direct-page ui-column">
     <nav><Link to={studyUnit ? `/textbook/${studyUnit.level}/${studyUnit.unit}` : '/exam'}>← {studyUnit ? '課本單元' : '學測專區'}</Link><Link to="/groups">我的群組</Link></nav>
+    {params.get('town') === 'LV4' && townItem && <p><Link to={`/town/LV4/17?item=${encodeURIComponent(townItem.learningItemId)}`} state={townReturn}>← 回小鎮 · 保留本輪進度</Link></p>}
     <p className="direct-kicker">教材練習</p><h1>{s?.title ?? '新情境練習'}</h1>
     <p className="direct-muted">{s?.questionIds.some(id=>!questions.some(q=>q.questionId===id)) || s?.groupId ? `單元${mode === 'basic' ? '基礎練習：四選一與文法搭配' : '進階練習：自行填入目標詞，文法保留選項'}。可隨時離開，下次續答。` : '六題新編情境題，尚未校準學測難度。'}點英文查中文，作答後看解析。</p>
     {s && hasVocabulary && <section aria-label="練習難度"><div className="direct-modes">
@@ -68,6 +74,7 @@ export default function DirectScreen() {
         {/^[A-Za-z]/.test(o.text) && <button disabled={busy} aria-label={`查選項：${o.text}`} onClick={() => lookup(o.text)}>查字</button>}
       </div>)}</div>
       {!a ? <button className="direct-primary" disabled={busy || !s.choices[q.questionId]?.trim()} onClick={() => void act(() => submitAnswer(s.id,q.questionId))}>確認答案</button> : <section className="direct-result">
+        {townItem && <div className="direct-town-result"><p role="status">答案已保存，這個字的小屋已落成。答錯或使用提示也算練過。</p><Link to={`/town/LV4/17?item=${encodeURIComponent(townItem.learningItemId)}`} state={townReturn}>回小鎮看小屋 →</Link></div>}
         <h2>{a.correct ? '答對了' : `${q.options.length ? '本題答案' : '本題目標詞'}：${q.options.find(o=>o.id===q.answer)?.text ?? q.answer}`}</h2><p>{q.targetWord} — {q.targetMeaningZh}</p>
         {q.sentenceEn && <><p>你的答案：{q.options.find(o=>o.id===a.choice)?.text ?? a.choice}</p><p>{q.sentenceEn}</p><p>{q.sentenceZh}</p></>}
         <p className="direct-muted">{a.hintUsed ? '本次作答使用過提示' : '本次作答未使用提示'}</p>
@@ -75,6 +82,7 @@ export default function DirectScreen() {
         <button className="direct-primary" disabled={busy} onClick={() => void act(() => nextQuestion(s.id))}>{s.index === s.questionIds.length - 1 ? '查看本輪結果' : '下一題'}</button>
       </section>}
     </> : <section><h2>本輪完成</h2><p className="direct-score">{data.attempts.filter(a => a.sessionId === s.id && a.correct).length} / {s.questionIds.length}</p>
+      {townItem && lastTownAttempt && <div className="direct-town-result"><p>本輪答案已保存，小屋會保留。</p><Link to={`/town/LV4/17?item=${encodeURIComponent(townItem.learningItemId)}`} state={townReturn}>回小鎮看小屋 →</Link></div>}
       {wrong.length > 0 && <button className="direct-primary" disabled={busy} onClick={() => void act(() => openSession(startReviewSession(wrong,s.title,s.groupId,scope,mode)))}>重練錯題（{wrong.length}）</button>}
       <button className="direct-primary" disabled={busy} onClick={() => void act(() => openSession(startScopeSession(scope ?? s.questionIds,s.title ?? '教材練習',s.groupId,mode)))}>{studyUnit ? '再練整個單元' : '再練完整範圍'}（{scope?.length ?? s.questionIds.length} 題）</button>
     </section>}
