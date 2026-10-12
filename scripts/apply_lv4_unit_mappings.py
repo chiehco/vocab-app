@@ -121,6 +121,7 @@ def build_outputs(repo, master, out):
     evidence = stage_master(master, staged)
     data, direct = repo / 'public/data/v1', repo / 'src/features/direct'
     cards = contract()['cards']
+    previous_pack_ids = {w['wordId'] for w in read(data / 'sa-pack.json')['words']}
     workbook = openpyxl.load_workbook(staged, read_only=True, data_only=True)
     try:
         for filename, parser, sheet, key, id_key in [
@@ -160,7 +161,7 @@ def build_outputs(repo, master, out):
     (direct / 'wordCatalog.json').write_text(json.dumps(catalog, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
     evidence['packCounts'] = build_sa_pack(data, direct)
     pack = read(data / 'sa-pack.json')
-    assert len(pack['words']) == 1534
+    assert {w['wordId'] for w in pack['words']} == previous_pack_ids | {c['wordId'] for c in cards}, 'Only the four approved IDs may extend the existing pack'
     for name in {c['unitFile'] for c in cards}:
         ids = {i['officialWordId'] for i in read(direct / name)['learningItems'] if i['kind'] == 'vocabulary'}
         assert ids.issubset({w['wordId'] for w in pack['words']})
@@ -175,9 +176,9 @@ def apply_review(repo, master, source_root, out):
     assert out.resolve() != (repo / 'output').resolve() and out.resolve().is_relative_to((repo / 'output').resolve()), 'Dedicated repo/output directory required'
     validate_sources(source_root, repo)
     direct = Path('src/features/direct')
-    inputs = [Path('public/data/v1') / n for n in CONTENT_FILES + ['meta.json']]
+    inputs = [Path('public/data/v1') / n for n in CONTENT_FILES + ['meta.json', 'sa-pack.json']]
     inputs += [direct / n for n in ['curriculum.json', 'curriculumUnit2.json']]
-    inputs += [p.relative_to(repo) for p in (repo / direct).glob('curriculumLV4Unit*.json')]
+    inputs += [p.relative_to(repo) for p in (repo / direct).glob('curriculumLV[34]Unit*.json')]
     inputs += [Path('src/features/vocabulary/lv1ReviewedImages.json')]
     destinations = [repo / n for n in OUTPUT_FILES] + [out / master.name, out / 'apply-result.json']
     assert master.resolve() not in {p.resolve() for p in destinations}

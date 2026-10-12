@@ -25,7 +25,7 @@ class ApplyReviewTest(unittest.TestCase):
         direct = Path('src/features/direct')
         files = [Path('public/data/v1') / name for name in apply.CONTENT_FILES + ['meta.json']]
         files += [direct / name for name in ['curriculum.json', 'curriculumUnit2.json', 'wordCatalog.json']]
-        files += [path.relative_to(ROOT) for path in (ROOT / direct).glob('curriculumLV4Unit*.json')]
+        files += [path.relative_to(ROOT) for path in (ROOT / direct).glob('curriculumLV[34]Unit*.json')]
         files += [Path('src/features/vocabulary/lv1ReviewedImages.json'), Path('public/wordbeast/s/W002812.webp')]
         for relative in files:
             (self.repo / relative).parent.mkdir(parents=True, exist_ok=True)

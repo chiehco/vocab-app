@@ -1,5 +1,6 @@
 import choiceOptions from './choiceOptions.json';
 import unit2 from './curriculumUnit2.json';
+import lv3Unit4 from './curriculumLV3Unit4.json';
 import curriculum from './curriculum.json';
 import lv4Unit17 from './curriculumLV4Unit17.json';
 import lv4Unit18 from './curriculumLV4Unit18.json';
@@ -16,16 +17,19 @@ export interface CurriculumUnit {
   templateId: string; revision: string; level: string; unit: number; name: string;
   items: LearningItem[]; questions: PracticeQuestion[];
   relatedNotes: { parentWord: string; word: string; meaningZh: string; officialWordId: string | null }[];
+  deliveryMode?: 'text_only';
 }
 // Mapping fields are nullable across units; LV3's current JSON is not their schema.
 export type LearningItem = Omit<(typeof curriculum.learningItems)[number], 'officialWordId' | 'officialSenseId'> & {
   officialWordId?: string | null; officialSenseId?: string | null;
   illustration?: CurriculumIllustration; parentWord?: string; level?: string; unit?: number;
+  sourceRole?: string; printedLabel?: string; meaningSource?: string;
 };
 // Textbook units available in the app. LV3 units keep their numeric `unit` shortcut for existing callers.
 export const curriculumUnits: CurriculumUnit[] = [
   { templateId: curriculum.template.templateId, revision: curriculum.template.revision, level: 'LV3', unit: 1, name: 'LV3 Unit 1', items: curriculum.learningItems as LearningItem[], questions: grammarQuestions, relatedNotes: [] },
   { templateId: unit2.template.templateId, revision: unit2.template.revision, level: 'LV3', unit: 2, name: 'LV3 Unit 2', items: unit2.learningItems as LearningItem[], questions: unit2.grammarQuestions, relatedNotes: [] },
+  { templateId: lv3Unit4.template.templateId, revision: lv3Unit4.template.revision, level: 'LV3', unit: 4, name: lv3Unit4.template.title, items: lv3Unit4.learningItems as LearningItem[], questions: lv3Unit4.questions, relatedNotes: [], deliveryMode: 'text_only' },
   { templateId: lv4Unit17.template.templateId, revision: lv4Unit17.template.revision, level: 'LV4', unit: 17, name: lv4Unit17.template.title, items: lv4Unit17.learningItems as LearningItem[], questions: lv4Unit17.questions, relatedNotes: lv4Unit17.relatedNotes },
   { templateId: lv4Unit18.template.templateId, revision: lv4Unit18.template.revision, level: 'LV4', unit: 18, name: lv4Unit18.template.title, items: lv4Unit18.learningItems as LearningItem[], questions: lv4Unit18.questions, relatedNotes: lv4Unit18.relatedNotes },
   { templateId: lv4Unit19.template.templateId, revision: lv4Unit19.template.revision, level: 'LV4', unit: 19, name: lv4Unit19.template.title, items: lv4Unit19.learningItems as LearningItem[], questions: lv4Unit19.questions, relatedNotes: lv4Unit19.relatedNotes },

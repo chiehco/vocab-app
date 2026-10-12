@@ -23,7 +23,7 @@ class FourWordApplyTest(unittest.TestCase):
         direct = Path('src/features/direct')
         files = [Path('public/data/v1') / n for n in apply.CONTENT_FILES + ['meta.json', 'sa-pack.json']]
         files += [direct / n for n in ['curriculum.json', 'curriculumUnit2.json', 'wordCatalog.json']]
-        files += [p.relative_to(ROOT) for p in (ROOT / direct).glob('curriculumLV4Unit*.json')]
+        files += [p.relative_to(ROOT) for p in (ROOT / direct).glob('curriculumLV[34]Unit*.json')]
         files += [Path('src/features/vocabulary/lv1ReviewedImages.json')]
         for path in files:
             target = self.repo / path
@@ -105,7 +105,7 @@ class FourWordApplyTest(unittest.TestCase):
             raise RuntimeError('Late pack failure')
         with patch.object(apply, 'build_sa_pack', side_effect=fail_after_generation):
             self.assert_failure_unchanged(RuntimeError)
-        self.assertEqual(self.run_apply()['packCounts']['words'], 1534)
+        self.assertEqual(self.run_apply()['packCounts']['words'], len(apply.read(ROOT / 'public/data/v1/sa-pack.json')['words']))
         self.assertEqual(self.master.read_bytes(), b'original synthetic source')
         before = self.snapshot()
         with self.assertRaisesRegex(AssertionError, 'Already applied'):
