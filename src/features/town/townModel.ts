@@ -7,6 +7,9 @@ import {
   type DirectAttempt,
   type LearningItem,
 } from '../direct/model';
+import type { ReviewLogEntry } from '../../db/types';
+import type { TownBinding } from './townStudy';
+import { learningHistory, learningLabel, ORDINARY_TOWN_MODES } from './townLearningEvidence';
 
 export const TOWN_UNIT = findUnit(17, 'LV4')!;
 export const TOWN_ITEMS = TOWN_UNIT.items.filter(item => item.kind === 'vocabulary');
@@ -21,6 +24,7 @@ export interface TownWordProgress {
   firstHintUsed: boolean;
   latestHintUsed: boolean;
   attempts: number;
+  latestLearningLabel?: string;
 }
 
 const townItemIds = new Set(TOWN_ITEMS.map(item => item.learningItemId));
@@ -38,7 +42,8 @@ const itemByQuestion = new Map(practiceQuestions.flatMap(question => {
 const usedHint = (attempt: DirectAttempt) => attempt.hintUsed || attempt.lookedUpWords.length > 0;
 
 /** Read-only town projection. All spellings, modes and contexts join by the curriculum item ID. */
-export function getTownProgress(attempts: readonly DirectAttempt[]): TownWordProgress[] {
+export function getTownProgress(attempts: readonly DirectAttempt[], logs: readonly ReviewLogEntry[] = [], bindings:readonly TownBinding[] = []): TownWordProgress[] {
+  const ordinary = learningHistory(bindings, logs, ORDINARY_TOWN_MODES);
   const byItem = new Map<string, DirectAttempt[]>();
   const seen = new Set<string>();
   for (const attempt of [...attempts].sort((a, b) => a.answeredAt - b.answeredAt || a.id.localeCompare(b.id))) {
@@ -54,14 +59,18 @@ export function getTownProgress(attempts: readonly DirectAttempt[]): TownWordPro
     const history = byItem.get(item.learningItemId) ?? [];
     const first = history[0];
     const latest = history.at(-1);
+    const learning = ordinary.get(item.learningItemId) ?? [];
+    const lastLearning = learning.at(-1);
+    const learningIsLatest = !!lastLearning && (!latest || Date.parse(lastLearning.reviewedAt) >= latest.answeredAt);
     return {
       item,
-      attempted: history.length > 0,
+      attempted: history.length + learning.length > 0,
       firstCorrect: !!first?.correct && !usedHint(first),
-      latestCorrect: !!latest?.correct,
+      latestCorrect: learningIsLatest ? lastLearning.grade > 0 : !!latest?.correct,
       firstHintUsed: !!first && usedHint(first),
-      latestHintUsed: !!latest && usedHint(latest),
-      attempts: history.length,
+      latestHintUsed: !learningIsLatest && !!latest && usedHint(latest),
+      attempts: history.length + learning.length,
+      latestLearningLabel: learningIsLatest ? learningLabel(lastLearning) : undefined,
     };
   });
 }

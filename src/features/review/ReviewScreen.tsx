@@ -9,7 +9,7 @@ import { addDaysStr, todayStr } from "../../lib/dates";
 import { useCardPronunciation } from "../../hooks/useCardPronunciation";
 import { useToday } from "../../hooks/useToday";
 import type { Grade, WordRecord } from "../../db/types";
-import { buildTodayQueue, buildTodayRecapQueue, type QueueItem } from "../../srs/queue";
+import { buildStudyQueue, type QueueItem } from "../../srs/queue";
 import { gradeFlashcard, markWordKnown, recordReviewWithoutScheduling } from "../../checkin/recordActivity";
 import { GRADE_LABELS, KNOWN_INTERVAL_DAYS, newCardState, scheduleRecall } from "../../srs/sm2";
 import { NOTE_TYPE_LABEL } from "../browser/wordLabels";
@@ -128,10 +128,7 @@ export default function ReviewScreen() {
       const prioritizedWords = isTopExam
         ? standaloneStudyPriorities(priorities).map(row=>row.word)
         : (await contentDb.words.toArray()).filter(w=>!functionWords.has(w.word) && (!levels || levels.includes(w.level))).map(w=>w.word);
-      const nextQueue = await buildTodayQueue(levels, prioritizedWords, isTopExam);
-      const hasDueCards = nextQueue.some((item) => !item.isNew);
-      const recapQueue = hasDueCards ? [] : await buildTodayRecapQueue(levels, prioritizedWords);
-      const resolvedQueue = recapQueue.length > 0 ? recapQueue : nextQueue;
+      const resolvedQueue = await buildStudyQueue(levels, prioritizedWords, isTopExam);
       if (!cancelled) setQueue(resolvedQueue);
     };
     loadQueue();
@@ -227,7 +224,7 @@ export default function ReviewScreen() {
       <div className="seal-progress"><i style={{ width: `${(index / queue.length) * 100}%` }} /><span>{item.isPractice ? "練習後再複習一次，確認記得了才排下次" : item.isRecap ? "今天再看一次，不改變下次複習時間" : `${doneCount} 個已完成複習`}</span></div>
       {saveError && <p role="alert">{saveError}</p>}
 
-      <Flashcard
+      <ReviewFlashcard
         key={item.wordRecord.word}
         item={item}
         flipped={flipped}
@@ -244,9 +241,10 @@ export default function ReviewScreen() {
   );
 }
 
-function Flashcard({ item, flipped, options, onFlip, onGrade, onKnown, position, saving }: { item: QueueItem; flipped: boolean; options: WordRecord[] | null; onFlip: () => void; onGrade: (grade: Grade) => void; onKnown: () => void; position: number; saving: boolean }) {
+export function ReviewFlashcard({ item, flipped, options, onFlip, onGrade, onKnown, position, saving, choice, onPick, saveBeforeNext=false }: { item: QueueItem; flipped: boolean; options: WordRecord[] | null; onFlip: () => void; onGrade: (grade: Grade) => void; onKnown: () => void; position: number; saving: boolean; choice?:string | null; onPick?:(word:string)=>void; saveBeforeNext?:boolean }) {
   const word = item.wordRecord;
-  const [picked, setPicked] = useState<string | null>(null);
+  const [localPick, setPicked] = useState<string | null>(null);
+  const picked=choice===undefined ? localPick : choice;
   const correct = picked !== null && picked === word.word;
   const answeredGrade: Grade = correct ? 2 : 0;
   const swipeStart = useRef<{ x: number; y: number } | null>(null);
@@ -333,7 +331,7 @@ function Flashcard({ item, flipped, options, onFlip, onGrade, onKnown, position,
                 key={option.word}
                 className={!flipped ? "" : option.word === word.word ? "correct" : option.word === picked ? "wrong" : "muted"}
                 disabled={saving || flipped}
-                onClick={() => { setPicked(option.word); onFlip(); }}
+                onClick={() => { if (onPick) onPick(option.word); else { setPicked(option.word); onFlip(); } }}
               >
                 <b>{String.fromCharCode(65 + optionIndex)}</b><span>{option.meaningZh}</span>
               </button>
@@ -342,17 +340,17 @@ function Flashcard({ item, flipped, options, onFlip, onGrade, onKnown, position,
               <div className="seal-answered">
                 {correct ? (
                   <button className="seal-known" disabled={saving} onClick={onKnown}>
-                    <span>我已經會了</span>
+                    <span>{saveBeforeNext ? '保存「我已經會了」' : '我已經會了'}</span>
                     <small>{saving ? "保存中" : `複習 ${addDaysLabel(KNOWN_INTERVAL_DAYS)}`}</small>
                   </button>
                 ) : (
                   <button className="seal-next is-wrong" disabled={saving} onClick={() => onGrade(0)}>
-                    <span>記錯了，下一張</span>
+                    <span>{saveBeforeNext ? '保存這次學習 · 還需要複習' : '記錯了，下一張'}</span>
                     <small>{saving ? "保存中" : nextReviewLabel(0)}</small>
                   </button>
                 )}
                 <button type="button" className="seal-swipe-hint" disabled={saving} onClick={() => onGrade(answeredGrade)}>
-                  {correct ? `答對了 · 右滑或點這裡到下一張（${nextReviewLabel(2)}）` : "右滑也可以到下一張"}
+                  {saveBeforeNext ? correct ? '保存這次學習 · 答對了' : '右滑也可以保存這次學習' : correct ? `答對了 · 右滑或點這裡到下一張（${nextReviewLabel(2)}）` : "右滑也可以到下一張"}
                 </button>
               </div>
             )}
