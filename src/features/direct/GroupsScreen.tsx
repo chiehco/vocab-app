@@ -9,6 +9,7 @@ import type { CustomGroup } from './model';
 import { deleteGroup, getOrCreateTemplateGroup, restoreGroup, saveGroup, startGroupSession } from './store';
 import './direct.css';
 import { contentDb } from '../../db/contentDb';
+import { practiceIds } from '../vocabulary/model';
 import GroupImportPanel from './GroupImportPanel';
 import { resolveGroupWords } from './groupScope';
 import { addLV1ReviewedGroups, lv1ReviewedGroups } from './lv1ReviewedGroups';
@@ -36,6 +37,8 @@ export default function GroupsScreen() {
   const g = groups?.find(g => g.id === selected);
   // Unit 項目對到主表的字也算進去，遊戲與測驗都用這份範圍
   const scopeWords = g ? resolveGroupWords(g, words ?? []) : [];
+  const groupItems = g ? learningItems.filter(i => g.itemIds.includes(i.learningItemId)) : [];
+  const completePractice = !!groupItems.length && practiceIds(groupItems).length === groupItems.length;
   const savedName=g?.name;
   useEffect(()=>{if(savedName!==undefined)setName(savedName);},[savedName]);
   useEffect(()=>{setEditing(false);setQuery('');},[selected]);
@@ -100,7 +103,8 @@ export default function GroupsScreen() {
       <p className="direct-muted">{groupSize(g)} 項{scopeWords.length !== groupSize(g) && ` · ${scopeWords.length} 張可用字卡`}</p>
       {lv1ReviewedGroups.filter(unit=>unit.templateId===g.templateId).map(unit=><p key={unit.templateId} className="direct-muted"><a href={`${import.meta.env.BASE_URL}${unit.galleryPath}`}>查看這個 Unit 的 {unit.pairCount} 組已審閱圖句{unit.supplements.length > 0 && `（含 ${unit.supplements.length} 個補充詞）`}</a></p>)}
       {scopeWords[0] && <Link className="groups-primary" to={`/word/${scopeWords[0].wordId}?group=${encodeURIComponent(g.id)}`}>依序看字卡</Link>}
-      {!!g.itemIds.length && <button className="groups-secondary" disabled={busy} onClick={()=>void practice()}>開始 Unit 內容練習（{g.itemIds.length} 題）</button>}
+      {completePractice && <button className="groups-secondary" disabled={busy} onClick={()=>void practice()}>開始 Unit 內容練習（{g.itemIds.length} 題）</button>}
+      {!!g.itemIds.length&&!completePractice&&<p className="direct-muted">教材題目尚未齊備，可先閱讀教材項目或做一般單字練習。</p>}
       {resume && <p><Link to={`/practice/direct?session=${resume.id}`}>繼續上次練習（第 {resume.index+1}／{resume.questionIds.length} 題）</Link><span className="direct-muted"> · 使用上次開練的清單</span></p>}
       {!!scopeWords.length && <div className="groups-play" aria-label="用這個群組練習">
         <Link to={`/quiz?group=${encodeURIComponent(g.id)}`}>單字自由練習</Link>
@@ -124,7 +128,7 @@ export default function GroupsScreen() {
       <h2>教材項目</h2>
       <ol className="direct-items">{g.itemIds.map((id,index) => {const item=learningItems.find(i=>i.learningItemId===id);return <li key={id}>
         <details><summary>{item?.displayWord ?? item?.pattern ?? '項目待更新'} <span>{item?.targetMeaningZh}</span></summary>
-          {item?.kind === 'grammar' ? <p>{item.explanationZh}</p> : <><p>教材收錄義：{item?.chapterMeaningsZh}</p><p>本題練習義：{item?.targetMeaningZh}</p><p>{item?.originalExample?.sentenceEn}</p><p>{item?.originalExample?.sentenceZh}</p></>}
+          {item?.kind === 'grammar' ? <p>{item.explanationZh}</p> : <><p>{item?.meaningSource==='existing_dictionary'?'既有一般字義':'教材收錄義'}：{item?.chapterMeaningsZh}</p>{item?.originalExample&&<><p>本題練習義：{item.targetMeaningZh}</p><p>{item.originalExample.sentenceEn}</p><p>{item.originalExample.sentenceZh}</p></>}</>}
         </details>
         {editing && <div className="direct-item-actions"><button disabled={busy || index===0} aria-label={`上移第${index+1}項`} onClick={()=>move(index,-1)}>↑</button><button disabled={busy || index===g.itemIds.length-1} aria-label={`下移第${index+1}項`} onClick={()=>move(index,1)}>↓</button><button disabled={busy} aria-label={`移除第${index+1}項`} onClick={()=>void save({...g,itemIds:g.itemIds.filter(x=>x!==id)})}>移除</button></div>}
       </li>;})}</ol>

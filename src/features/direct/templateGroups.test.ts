@@ -12,7 +12,8 @@ it.each(curriculumUnits)('$level Unit $unit reuses its template without overwrit
   const first = await getOrCreateTemplateGroup(unit.unit, unit.level);
   expect(first.added).toBe(true);
   expect(first.group.templateId).toBe(unit.templateId);
-  await startGroupSession(first.group.id);
+  if (unit.deliveryMode === 'text_only') await expect(startGroupSession(first.group.id)).rejects.toThrow('尚未有題目');
+  else await startGroupSession(first.group.id);
   await saveGroup({ ...first.group, name: '我改的單元', itemIds: first.group.itemIds.slice(1).reverse(), wordIds: ['W000002'] });
   const before = await exportProgress();
   const reopened = await getOrCreateTemplateGroup(unit.unit, unit.level);

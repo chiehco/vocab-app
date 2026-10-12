@@ -34,12 +34,18 @@ def build_sa_pack(data_dir: Path, curriculum_dir: Path | None = None) -> dict:
 
     # Reviewed textbook cards must also exist on a fresh lightweight installation.
     curriculum_dir = curriculum_dir or Path(__file__).resolve().parent.parent / "src/features/direct"
-    # LV3 U1/U2 use separate files and already map to official dictionary words.
+    # LV3 text units map to existing official dictionary words without requiring images.
     # Include only those existing mappings; unmapped items remain outside this pack.
     for filename in ("curriculum.json", "curriculumUnit2.json"):
         unit = read_json(curriculum_dir / filename)
         selected_word_ids.update(item["officialWordId"] for item in unit["learningItems"]
                                  if item.get("kind") == "vocabulary" and item.get("officialWordId"))
+
+    for path in sorted(curriculum_dir.glob("curriculumLV3Unit*.json")):
+        unit = read_json(path)
+        if unit.get("template", {}).get("deliveryMode") == "text_only":
+            selected_word_ids.update(item["officialWordId"] for item in unit["learningItems"]
+                                     if item.get("kind") == "vocabulary" and item.get("officialWordId"))
 
     for path in sorted(curriculum_dir.glob("curriculumLV4Unit*.json")):
         unit = read_json(path)

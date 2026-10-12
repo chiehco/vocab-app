@@ -60,7 +60,7 @@ it('resolves every U18/U20 vocabulary item using only the fresh-install starter 
     expect(groupWordIds(group)).toHaveLength(count);
     expect(resolveGroupWords(group, installed)).toHaveLength(count);
   }
-  expect(await contentDb.words.count()).toBe(1534);
+  expect(await contentDb.words.count()).toBe(pack.words.length);
   expect(fetch).toHaveBeenCalledTimes(1);
 }, 15000);
 
@@ -75,7 +75,7 @@ it('updates an installed starter package while retaining every progress table an
   let incoming = previous;
   vi.stubGlobal('fetch', vi.fn(async () => new Response(JSON.stringify(incoming))));
   await ensureContentAvailable();
-  expect(await contentDb.words.count()).toBe(1530);
+  expect(await contentDb.words.count()).toBe(previous.words.length);
   const group = templateGroup('LV4-U18');
   await saveGroup({ ...group, name: '保留我的 U18 範圍', itemIds: group.itemIds.slice(0, 3) });
   const session = await startGroupSession(group.id);
@@ -93,7 +93,7 @@ it('updates an installed starter package while retaining every progress table an
   const snapshot = await Promise.all(progressDb.tables.map(async table => [table.name, await table.toArray()]));
   incoming = pack;
   await refreshInstalledContent();
-  expect(await contentDb.words.count()).toBe(1534);
+  expect(await contentDb.words.count()).toBe(pack.words.length);
   expect(await Promise.all(progressDb.tables.map(async table => [table.name, await table.toArray()]))).toEqual(snapshot);
   expect((await progressDb.directSessions.get(session.id))?.index).toBe(1);
   expect((await progressDb.customGroups.get(group.id))?.name).toBe('保留我的 U18 範圍');

@@ -3,7 +3,7 @@ import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { useLiveQuery } from 'dexie-react-hooks';
 import { contentDb } from '../../db/contentDb';
 import { findUnit, templateGroup } from '../direct/model';
-import { addLV1ReviewedGroups, lv1ReviewedGroups } from '../direct/lv1ReviewedGroups';
+import { addLV1ReviewedGroups } from '../direct/lv1ReviewedGroups';
 import { saveGroup, startScopeSession } from '../direct/store';
 import { saveWordList } from '../modes/wordLists';
 import { practiceIds } from './model';
@@ -30,6 +30,7 @@ export default function TextbookScreen() {
   const scope = resolveTextbookScope({ track: params.get('track'), publisher: params.get('pub'), volume: route.level ?? params.get('level') });
   const units = scope ? unitsFor(scope) : [];
   const chosen = route.unit && scope?.volume === route.level ? units.find(u => u.unit === Number(route.unit)) : undefined;
+  const textOnly = chosen && findUnit(chosen.unit, chosen.level)?.deliveryMode === 'text_only';
   const listPath = scope ? `/textbook?${scopeQuery(scope)}` : '/textbook';
   const words = useLiveQuery(() => contentDb.words.toArray(), []);
   const lock = useRef(false);
@@ -45,9 +46,8 @@ export default function TextbookScreen() {
   }
   async function practice() {
     if (!chosen) return;
-    if (chosen.partial) {
-      const template = lv1ReviewedGroups.find(u => u.unit === chosen.unit)!;
-      const selected = template.wordIds.map(id => words?.find(w => w.wordId === id));
+    if (chosen.partial || textOnly) {
+      const selected = chosen.wordIds.map(id => words?.find(w => w.wordId === id));
       if (selected.some(w => !w)) throw new Error('字卡資料尚未載入完整，請稍後再試。');
       const list = await saveWordList(selected.filter(w => !!w), chosen.name, textbookPath(chosen.level, chosen.unit));
       navigate(`/quiz?list=${encodeURIComponent(list.id)}&start=w2m`);
@@ -72,12 +72,13 @@ export default function TextbookScreen() {
       <section className="learning-start textbook-unit-card" aria-label="開始這個單元">
         <div className="learning-meta"><span>{chosen.count} {chosen.partial ? '組圖句' : '個詞彙'}</span>{chosen.usageCount > 0 && <span>{chosen.usageCount} 項用法</span>}</div>
         {chosen.partial && <p className="learning-muted">部分內容：目前提供已審閱的圖句。</p>}
+        {textOnly && <p className="learning-muted">文字教材：可閱讀詞彙與用法。例句、圖片及教材題目整理中。</p>}
         <Link className="learning-primary" to={chosen.partial ? `${textbookPath(chosen.level,chosen.unit)}/cards` : `/vocabulary?level=${chosen.level}&unit=${chosen.unit}`}>看字卡 <span aria-hidden="true">→</span></Link>
-        <button className="learning-secondary" disabled={busy || !words} onClick={() => void act(practice)}>做題目</button>
+        <button className="learning-secondary" disabled={busy || !words} onClick={() => void act(practice)}>{textOnly ? `一般單字練習（${chosen.wordIds.length} 詞）` : '做題目'}</button>
       </section>
       {chosen.publisher === 'ivy' && chosen.track === '7000' && chosen.level === 'LV4' && chosen.unit === 17 && <Link className="learning-secondary town-home-entry" to="/town/LV4/17">Unit 17 城鎮試玩 <span aria-hidden="true">→</span></Link>}
       {chosen.publisher === 'ivy' && chosen.track === '7000' && chosen.level === 'LV1' && chosen.unit === 1 && <Link className="learning-secondary town-home-entry" to="/town/LV1/1">LV1 單字小鎮 <span aria-hidden="true">→</span></Link>}
-      <p className="learning-muted learning-hint">{chosen.partial ? '題目使用已收錄詞條的一般單字練習；補充詞可在字卡閱讀。' : '範圍涵蓋整個單元，未練過的題目優先。可隨時離開，下次接著答。'}</p>
+      <p className="learning-muted learning-hint">{chosen.partial || textOnly ? '題目使用已收錄詞條的一般單字練習；補充詞可在字卡閱讀。' : '範圍涵蓋整個單元，未練過的題目優先。可隨時離開，下次接著答。'}</p>
       <details><summary>更多選項</summary><button className="learning-secondary" disabled={busy} onClick={() => void act(addGroup)}>加入我的群組</button><Link className="learning-row" to="/groups">管理我的群組 →</Link></details>
     </> : <>
       <h1>想學哪一課？</h1><p className="learning-muted">選好單元，就可以開始。</p>
