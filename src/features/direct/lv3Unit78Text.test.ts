@@ -88,8 +88,8 @@ it('retains omitted heads, printed pages and the two distinct suspect blocks', (
   expect(u7.find(i => i.kind === 'grammar' && i.pattern?.includes('crop, copped, cropped'))?.pattern).toContain('待裁決');
   const suspect = u8.filter(i => i.displayWord === 'suspect');
   expect(suspect).toHaveLength(2);
-  expect(suspect.map(i => [i.printedNumber, i.sensePos, i.chapterMeaningsZh]))
-    .toEqual([[11,'vt.','懷疑；猜想'],[null,'n./adj.','嫌疑犯；可疑的']]);
+  expect(suspect[0]).toMatchObject({printedNumber:11,sensePos:'vt.',chapterMeaningsZh:'懷疑；猜想'});
+  expect(suspect[1]).toMatchObject({printedNumber:null,sensePos:'n./adj.',chapterMeaningsZh:'嫌疑犯；可疑的'});
   expect(new Set(suspect.map(i=>i.learningItemId)).size).toBe(2);
   expect(new Set(suspect.map(i=>i.officialWordId)).size).toBe(1);
   expect(suspect.every(i=>i.sourcePage===76 && !i.officialSenseId)).toBe(true);
