@@ -40,6 +40,22 @@ class FourWordApplyTest(unittest.TestCase):
                 index = next(n for n, item in enumerate(unit['learningItems']) if item['learningItemId'] == card['originalItem']['learningItemId'])
                 unit['learningItems'][index] = copy.deepcopy(card['originalItem'])
             apply.write_json(path, unit)
+        # This disposable fixture represents the state before these four IDs
+        # existed. Later text units may reuse them (e.g. LV3 U10 brutality),
+        # so their mappings must also be absent in this historical snapshot.
+        # Leave the published curriculum and the production pack rules intact.
+        unpublished_ids = {card['wordId'] for card in self.cards}
+        for path in (self.repo / direct).glob('curriculumLV3Unit*.json'):
+            unit = apply.read(path)
+            if unit.get('template', {}).get('deliveryMode') != 'text_only':
+                continue
+            changed = False
+            for item in unit['learningItems']:
+                if item.get('officialWordId') in unpublished_ids:
+                    item.pop('officialWordId')
+                    changed = True
+            if changed:
+                apply.write_json(path, unit)
         data = self.repo / 'public/data/v1'
         meta = apply.read(data / 'meta.json')
         for n in ['words', 'senses', 'examples']:
