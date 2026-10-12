@@ -1,6 +1,6 @@
 # LV3 U5–U6 純文字教材：隔離草稿
 
-狀態：教材來源與文字草稿已整理；362 項測試、21 項資料交易測試、lint、typecheck 與 build 通過，瀏覽器驗收待續。未 push、未開第二張 PR、未合併、未部署。本批暫以 PR25 的 `515c1aa70d6d95059993da7a5745072e22c219df` 為基底，待父任務協調正式基底後處理。
+狀態：教材來源與文字草稿已整理；362 項測試、21 項資料交易測試、lint、typecheck、build 與本機新安裝瀏覽器驗收通過。未 push、未開第二張 PR、未合併、未部署。本批以 PR25 的 `515c1aa70d6d95059993da7a5745072e22c219df` 為基底。PR25 已單獨合併，正式 main `01ae970b9203899f60396a47592400ff45f10a8b` 的 tree 與該基底相同；本草稿仍由父任務審閱後安排。
 
 ## 可交付範圍
 
@@ -63,8 +63,16 @@ U6 未映射 22 項：practically、warning、roasted、knuckle、unreasonable�
 
 啟動包由 1,617 變為 1,747 個既有字庫 ID：新增 130、移除 0，原有詞條記錄逐筆相等；完整 data/v1 除 sa-pack.json 以外逐檔相等。54 個受保護外部母表／原件／圖審檔案雜湊與前批證據一致。
 
-父任務確認 PR25 的最終基底後才能安排後續 PR。本草稿沒有更動 PR25 的內容、分支或遠端。正式已上線單元數本回合仍為原有 25。
+本草稿沒有進入 PR25，也未更動 PR25 的內容、分支或遠端。PR25 按另外收到的使用者批准完成合併部署後，正式已上線單元入口為 26；U5–U6 只在本機草稿。若本草稿將來通過並發布，入口才會增加為 28。
 
 ## 驗證
 
-詳細結果及本機 UI 證據隨最後 handoff 更新。自動化 fresh install 與內容更新測試涵蓋兩個新單元的全部映射、去重群組、未映射項、原有 progress 表及個人群組保留。瀏覽器實測與實體手機／正式站驗收分開記錄。
+自動化 fresh install 與內容更新測試涵蓋兩個新單元的全部映射、去重群組、未映射項、原有 progress 表及個人群組保留。72 個測試檔、362 項測試及 21 項合成資料交易測試全部通過；lint、typecheck、diff whitespace 檢查通過。
+
+本機 build 使用原始 production 配置，`RAYON_NUM_THREADS=1` 後成功（5.08 秒，PWA 262 precache entries）。未改 Vite 產品配置。第一次原生多執行緒掃描卡住並由本次代理停止；本機開發伺服器那次載入失敗不計驗收通過。
+
+成功 build 的 `dist` 由獨立 `127.0.0.1:4186` origin、全新測試瀏覽器驗證：兩單元入口、各 45 個主詞完整 option 順序、詞項／用法首尾、wage、appeal、dirt、automobile、practically、warning、parrot 與未映射補充詞、158／134 項完整群組、90／82 可解析詞與一般辨義練習。公開本機 starter 1,747 筆包含全部映射。390×844 視窗無橫向溢出、無待審圖片，瀏覽器無錯誤。
+
+證據位於本工作目錄 `output/playwright/u5-u6-browser-result.json`、抽查截圖及本次任務 `lv3-u5-u6-prep/source-audit.json`、`integrity-checks.json`。原件 SHA、來源拼字、正式 actual headword、既有 wordVariants 與每筆缺口可由 source manifests 追溯。
+
+U5–U6 正式更新與實體手機未驗；它們尚未部署。自動化內容更新測試是合成舊庫，沒有假稱為使用者原裝置或正式 U5–U6 更新。正式 U4 的 normal-update / fresh-install / offline 證據另在 `lv3-u4-review/release-handoff-20261012.json`。
