@@ -12,8 +12,12 @@ def build(source_path: Path, output_path: Path) -> dict:
     words = {w["wordId"]: w for w in json.loads((ROOT / "public/data/v1/words.json").read_text(encoding="utf-8"))}
     level, unit = source["level"], source["unit"]
     prefix = f"LI-{level}U{unit:02d}"
-    headwords = {r["word"]: r for r in source["headwords"]}
-    ordered = [headwords[word] for word in source["headwordOrder"]]
+    headwords = {}
+    for row in source["headwords"]:
+        headwords.setdefault(row["word"], []).append(row)
+    ordered = [headwords[word].pop(0) for word in source["headwordOrder"]]
+    if any(headwords.values()):
+        raise ValueError("Headword order does not cover every printed occurrence")
     rows = ordered + source["related"]
     items = []
     for index, row in enumerate(rows, 1):

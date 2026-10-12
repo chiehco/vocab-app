@@ -24,7 +24,7 @@ afterEach(() => vi.unstubAllGlobals());
 
 describe('LV3 U4 checked text delivery', () => {
   it('registers the checked text units and preserves U4 printed headword, supplement and usage order', () => {
-    expect(curriculumUnits.filter(u => u.level === 'LV3').map(u => u.unit)).toEqual([1, 2, 4, 5, 6]);
+    expect(curriculumUnits.filter(u => u.level === 'LV3').map(u => u.unit)).toEqual([1, 2, 4, 5, 6, 7, 8]);
     expect(unit.deliveryMode).toBe('text_only');
     expect(textbookUnits.find(u => u.level === 'LV3' && u.unit === 4)).toMatchObject({count: 122, usageCount: 61, partial: false});
     expect(vocabulary.slice(0, 45).map(i => i.displayWord)).toEqual(source.headwordOrder);
