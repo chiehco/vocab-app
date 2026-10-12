@@ -11,6 +11,10 @@ import { lookupWord } from './lookup';
 import './direct.css';
 import { practiceIds } from '../vocabulary/model';
 import { directTownItem } from '../town/townPractice';
+import RewardPanel, { RewardReceipt } from '../rewards/RewardPanel';
+import { directRoundId } from '../rewards/model';
+import { useRewardRound } from '../rewards/useRewardRound';
+import { directRewardWord, directRoundChallenge } from '../rewards/directScope';
 
 export default function DirectScreen() {
   const [params,setParams] = useSearchParams();
@@ -31,6 +35,11 @@ export default function DirectScreen() {
   const q = allQuestions.find(q => q.questionId === s?.questionIds[s.index]);
   const a = data?.attempts.find(a => a.id === `${s?.id}:${q?.questionId}`);
   const answerId = a?.id;
+  const hasRewardScope = !!s?.questionIds.some(id=>!!directRewardWord(id));
+  const rewardWord = q ? directRewardWord(q.questionId) : undefined;
+  const rewardRound = s && hasRewardScope ? directRoundId(s.id) : '';
+  const reward = useRewardRound(rewardRound,s?.questionIds.length ?? 0,!!rewardWord && !!q && !a && s?.revision===REVISION,
+    directRoundChallenge(s?.questionIds ?? []),new Set(s?.questionIds.map(directRewardWord).filter(Boolean)).size);
   const questionKey = `${s?.id}:${q?.questionId}`;
   const selectedChoice = selection?.key === questionKey ? selection.choice : s?.choices[q?.questionId ?? ''];
   useEffect(() => {
@@ -66,7 +75,7 @@ export default function DirectScreen() {
     if (!s || !q || a || lock.current) return;
     const previous = selectedRef.current?.key === questionKey ? selectedRef.current.choice : s.choices[q.questionId];
     if (previous === choice) {
-      void act(async () => { await persistChoice(choice); await submitAnswer(s.id, q.questionId); });
+      void act(async () => { if (rewardWord) await reward.prepare(); await persistChoice(choice); await submitAnswer(s.id, q.questionId, true); });
     } else {
       selectedRef.current = { key: questionKey, choice };
       setSelection(selectedRef.current);
@@ -93,16 +102,19 @@ export default function DirectScreen() {
       <button disabled={busy} aria-pressed={mode === 'advanced'} onClick={() => void act(() => openSession(switchPracticeMode(s.id, 'advanced')))}>進階・填單字</button>
     </div><p className="direct-muted">切換時各自續答；選字與填字分開記錄成績。</p></section>}
     {error && (!q || a) && <p role="alert">{error}</p>}
+    {s && <RewardPanel roundId={rewardRound || undefined} />}
+    {reward.error && <p role="alert">{reward.error}</p>}
     {!data ? <p>讀取進度中…</p> : !s || s.revision !== REVISION ? <button disabled={busy} className="direct-primary" onClick={() => void act(() => openSession(startSession()))}>開始作答 · 6 題</button> : q ? <>
       {!a ? <section className="direct-question-area" aria-label="目前題目">
       <p className="direct-kicker">{s.index + 1} / {s.questionIds.length}</p>
+      {!rewardWord && <p className="reward-note">本題題型尚未納入答題金幣。</p>}
       <h2 className="direct-stem">{q.stem.split(/([A-Za-z]+(?:'[A-Za-z]+)?)/g).map((token,i) => /^[A-Za-z]/.test(token) ? <button disabled={busy} key={i} className="direct-word" aria-label={`查字：${token}`} onClick={() => lookup(token)}>{token}</button> : token)}</h2>
       <p className="direct-muted">{s.lookups[q.questionId]?.length ? '本題已使用提示，會保留紀錄。' : '提交前查字會標記為使用提示。'}</p>
       {(q.sourceType === 'original_target_word_choice' || q.sourceType === 'practice_context_choice') && <p className="direct-muted">依句子情境，選出適合填入的單字。</p>}
       {!q.options.length && <><p className="direct-muted">請填本單元目標詞。系統只比對目標詞，不判定其他同義表達；大小寫不影響結果。</p><label>填入目標詞<input key={`${s.id}:${q.questionId}`} defaultValue={s.choices[q.questionId] ?? ''} disabled={busy} autoComplete="off" autoCapitalize="none" spellCheck={false} maxLength={120} onChange={e=> {void updateQuestion(s.id,q.questionId,{choice:e.target.value}).catch(()=>setError('未能保存輸入，請重試。'));}} onKeyDown={event => {
         if (event.key !== 'Enter') return;
         event.preventDefault(); const value = event.currentTarget.value;
-        void act(async () => { await updateQuestion(s.id, q.questionId, { choice: value }); await submitAnswer(s.id, q.questionId); });
+          void act(async () => { if (rewardWord) await reward.prepare(); await updateQuestion(s.id, q.questionId, { choice: value }); await submitAnswer(s.id, q.questionId, true); });
       }} /></label></>}
       {!q.options.length && !a && <><button disabled={busy} onClick={() => void act(() => updateQuestion(s.id, q.questionId, {lookup:'[首字母提示]'}))}>看首字母提示</button>{s.lookups[q.questionId]?.includes('[首字母提示]') && <p>首字母：{q.answer[0]}…</p>}</>}
       {q.options.length > 0 && <p className="direct-muted" id="direct-pick-instruction">點一次選取，再點同一選項送出。換選項先只選取。</p>}
@@ -110,7 +122,7 @@ export default function DirectScreen() {
         <button className="direct-option" disabled={busy} aria-pressed={selectedChoice === o.id} aria-describedby="direct-pick-instruction" onClick={() => chooseAnswer(o.id)}>{o.id} · {o.text}</button>
         {/^[A-Za-z]/.test(o.text) && <button disabled={busy} aria-label={`查選項：${o.text}`} onClick={() => lookup(o.text)}>查字</button>}
       </div>)}</div>
-      {!q.options.length && <button className="direct-primary" disabled={busy || !s.choices[q.questionId]?.trim()} onClick={() => void act(() => submitAnswer(s.id,q.questionId))}>確認答案</button>}
+      {!q.options.length && <button className="direct-primary" disabled={busy || !s.choices[q.questionId]?.trim()} onClick={() => void act(async () => { if (rewardWord) await reward.prepare(); await submitAnswer(s.id,q.questionId,true); })}>確認答案</button>}
       {error && <p role="alert">{error}</p>}
       {busy && <p role="status">正在保存答案…</p>}
       </section> : <section className="direct-result direct-answer-feedback" ref={feedback} tabIndex={-1} aria-labelledby="direct-result-title">
@@ -120,6 +132,7 @@ export default function DirectScreen() {
           {townItem && <Link onClick={event => { if (event.detail > 1) event.preventDefault(); }} to={`/town/LV4/17?item=${encodeURIComponent(townItem.learningItemId)}`} state={townReturn}>回小鎮看小屋 →</Link>}
           <button disabled={busy} onClick={event => { if (event.detail > 1) return; void act(() => nextQuestion(s.id)); }}>{s.index === s.questionIds.length - 1 ? '查看本輪結果' : '下一題'}</button>
         </div>
+        {rewardWord ? <RewardReceipt answerId={`answer:direct:${a.id}`} roundId={rewardRound} word={rewardWord} correct={a.correct} /> : <p className="reward-note">本題題型尚未納入答題金幣，沒有新增金幣。</p>}
         {townItem && <p role="status" className="direct-muted">這個字的小屋已落成。答錯或使用提示也算練過。</p>}
         {q.sentenceEn && <><p>你的答案：{q.options.find(o=>o.id===a.choice)?.text ?? a.choice}</p><p>{q.sentenceEn}</p><p>{q.sentenceZh}</p></>}
         <p className="direct-muted">{a.hintUsed ? '本次作答使用過提示' : '本次作答未使用提示'}</p>

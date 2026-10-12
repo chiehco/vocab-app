@@ -104,3 +104,10 @@ export async function buildTodayRecapQueue(sessionLevels?: string[], allowedWord
     .sort((a, b) => a.wordId.localeCompare(b.wordId))
     .map((wordRecord) => ({ wordRecord, isNew: false, isRecap: true }));
 }
+
+/** Shared resolution used by regular review and the town's scoped daily entry. */
+export async function buildStudyQueue(levels?:string[], prioritizedWords?:string[], useDailyPlan=false): Promise<QueueItem[]> {
+  const next=await buildTodayQueue(levels,prioritizedWords,useDailyPlan);
+  const recap=next.some(item=>!item.isNew) ? [] : await buildTodayRecapQueue(levels,prioritizedWords);
+  return recap.length ? recap : next;
+}

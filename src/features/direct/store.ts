@@ -3,6 +3,9 @@ import { questions, practiceQuestions as allQuestions, questionForMode, canonica
 import type { CustomGroup, DirectSession, DirectAttempt, PracticeMode, UnitKey } from './model';
 import { contentDb } from '../../db/contentDb';
 import { orderPracticeScope } from './practiceOrder';
+import { awardAnswer, rewardTables } from '../rewards/store';
+import { directRoundId } from '../rewards/model';
+import { directRewardWord, directChallenge } from '../rewards/directScope';
 
 export async function startScopeSession(scopeQuestionIds: string[], title: string, groupId?: string, mode: PracticeMode = 'basic') {
   const attempts = await progressDb.directAttempts.toArray();
@@ -78,8 +81,9 @@ export async function updateQuestion(sessionId: string, questionId: string, chan
     await progressDb.directSessions.put({ ...s, updatedAt: Date.now() });
   });
 }
-export async function submitAnswer(sessionId: string, questionId: string) {
-  await progressDb.transaction('rw', [progressDb.directSessions, progressDb.directAttempts], async () => {
+export async function submitAnswer(sessionId: string, questionId: string, rewards = false) {
+  const rewardWord = rewards ? directRewardWord(questionId) : undefined;
+  await progressDb.transaction('rw', [progressDb.directSessions, progressDb.directAttempts, ...(rewardWord ? rewardTables : [])], async () => {
     const s = await progressDb.directSessions.get(sessionId);
     const q = allQuestions.find(q => q.questionId === questionId);
     if (!s || !q || s.revision !== REVISION || s.questionIds[s.index] !== questionId || !acceptsChoice(q,s.choices[questionId])) throw new Error('請先填寫或選擇答案');
@@ -89,6 +93,8 @@ export async function submitAnswer(sessionId: string, questionId: string) {
     const last = await progressDb.directAttempts.orderBy('answeredAt').last();
     const attempt: DirectAttempt = { id, sessionId, questionId, revision: REVISION, choice: s.choices[questionId], correct: isCorrectAnswer(q, s.choices[questionId]), firstAttempt: !(await progressDb.directAttempts.where('questionId').equals(questionId).count()), hintUsed: lookedUpWords.length > 0, lookedUpWords, answeredAt: Math.max(Date.now(), (last?.answeredAt ?? 0) + 1), schedulingApplied: false };
     await progressDb.directAttempts.add(attempt);
+    if (rewardWord) await awardAnswer({id:`answer:direct:${id}`,roundId:directRoundId(sessionId),word:rewardWord,
+      correct:attempt.correct,source:'direct',referenceId:id,answeredAt:Date.now(),challenge:directChallenge(questionId)});
   });
 }
 export async function nextQuestion(sessionId: string) {

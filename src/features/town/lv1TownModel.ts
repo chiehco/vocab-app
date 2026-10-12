@@ -1,4 +1,6 @@
-import type { ReviewLogEntry, ReviewMode, WordRecord } from '../../db/types';
+import type { ReviewLogEntry, WordRecord } from '../../db/types';
+import type { TownBinding } from './townStudy';
+import { learningHistory, learningLabel, ORDINARY_TOWN_MODES } from './townLearningEvidence';
 import reviewedCards from '../vocabulary/lv1ReviewedImages.json';
 
 export const LV1_TOWN_SOURCE_CARDS = reviewedCards.filter(card => card.unit === 1);
@@ -19,6 +21,7 @@ export interface LV1TownWordProgress {
   firstCorrect: boolean;
   latestCorrect: boolean;
   attempts: number;
+  latestLearningLabel?: string;
 }
 
 /** The textbook's Unit 1 membership wins over dictionary level; woman is filed under LV2. */
@@ -41,30 +44,20 @@ export function getLV1TownItems(words: readonly WordRecord[]): LV1TownItem[] {
   });
 }
 
-const PRACTICE_MODES = new Set<ReviewMode>(['quiz-w2m', 'quiz-m2w', 'quiz-image', 'fill-blank']);
-
 /** ReviewLogEntry.word stores the canonical spelling, not a wordId. Unit 1 has no legacy renamed words. */
-export function getLV1TownProgress(items: readonly LV1TownItem[], logs: readonly ReviewLogEntry[]): LV1TownWordProgress[] {
-  const words = new Set(items.map(item => item.word));
-  const seenIds = new Set<number>();
-  const historyByWord = new Map<string, ReviewLogEntry[]>();
-  const eligible = logs.filter(log => PRACTICE_MODES.has(log.mode) && words.has(log.word))
-    .sort((a, b) => Date.parse(a.reviewedAt) - Date.parse(b.reviewedAt) || (a.id ?? 0) - (b.id ?? 0));
-  for (const log of eligible) {
-    if (log.id !== undefined && seenIds.has(log.id)) continue;
-    if (log.id !== undefined) seenIds.add(log.id);
-    const history = historyByWord.get(log.word) ?? [];
-    history.push(log);
-    historyByWord.set(log.word, history);
-  }
+export function getLV1TownProgress(items: readonly LV1TownItem[], logs: readonly ReviewLogEntry[], bindings:readonly TownBinding[] = items.map(item=>({id:item.id,wordId:item.wordId,word:item.word,keys:[item.word]}))): LV1TownWordProgress[] {
+  const historyByItem = learningHistory(bindings, logs);
   return items.map(item => {
-    const history = historyByWord.get(item.word) ?? [];
+    const history = historyByItem.get(item.id) ?? [];
+    const firstQuiz = history.find(log=>!ORDINARY_TOWN_MODES.has(log.mode));
+    const latest = history.at(-1);
     return {
       item,
       attempted: history.length > 0,
-      firstCorrect: (history[0]?.grade ?? 0) > 0,
-      latestCorrect: (history.at(-1)?.grade ?? 0) > 0,
+      firstCorrect: (firstQuiz?.grade ?? 0) > 0,
+      latestCorrect: (latest?.grade ?? 0) > 0,
       attempts: history.length,
+      latestLearningLabel: latest ? learningLabel(latest) : undefined,
     };
   });
 }

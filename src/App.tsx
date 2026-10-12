@@ -27,6 +27,7 @@ import SiegeScreen from './features/siege/SiegeScreen';
 import DirectScreen from "./features/direct/DirectScreen";
 import TownScreen from "./features/town/TownScreen";
 import LV1TownScreen from "./features/town/LV1TownScreen";
+import TownStudyScreen from './features/town/TownStudyScreen';
 import GroupsScreen from "./features/direct/GroupsScreen";
 import ExamHubScreen from "./features/exam/ExamHubScreen";
 import GsatScreen from "./features/exam/GsatScreen";
@@ -89,6 +90,7 @@ function AppLayout() {
           <Route path="/practice/direct" element={<DirectScreen />} />
           <Route path="/town/LV4/17" element={<TownScreen />} />
           <Route path="/town/LV1/1" element={<LV1TownScreen />} />
+          <Route path="/town/:level/:unit/study" element={<TownStudyScreen />} />
           <Route path="/vocabulary" element={<VocabularyScreen />} />
           <Route path="/groups" element={<GroupsScreen />} />
           <Route path="/modes/words" element={<WordsWorkspace />} />

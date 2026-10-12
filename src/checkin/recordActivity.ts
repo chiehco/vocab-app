@@ -1,9 +1,21 @@
 import { getSetting, progressDb } from "../db/progressDb";
 import { findProgressCard, getProgressKeys } from "../db/progressIdentity";
-import type { CardState, Grade, ReviewMode } from "../db/types";
+import type { CardState, Grade, ReviewMode, ReviewLogEntry } from "../db/types";
+import type { LearningCommitGuard } from './commitGuard';
 import { markKnown, scheduleRecall, newCardState } from "../srs/sm2";
 import { todayStr } from "../lib/dates";
 import { format } from "date-fns";
+import { awardAnswer, rewardTables } from '../features/rewards/store';
+import { quizChallenge, quizRoundId, type QuizRewardContext, type QuizRewardVerdict } from '../features/rewards/model';
+
+function quizRewardVerdict(logs: ReviewLogEntry[], correct:boolean, duplicate:boolean): QuizRewardVerdict {
+  return {correct,duplicate,score:logs.filter(log=>log.grade>0).length,wrongWords:[...new Set(logs.filter(log=>log.grade===0).map(log=>log.word))]};
+}
+
+async function writeLearningLog(log:ReviewLogEntry, guard?:LearningCommitGuard) {
+  const id=await progressDb.reviewLogs.add(log);
+  await guard?.after({...log,id});
+}
 
 async function upsertCheckIn(today: string, isNewWord: boolean, sessionId: string): Promise<void> {
   const existing = await progressDb.checkIns.get(today);
@@ -25,6 +37,7 @@ export async function gradeFlashcard(
   sessionId: string,
   isNewSession: boolean,
   mode: ReviewMode = "flashcard",
+  guard?: LearningCommitGuard,
 ): Promise<CardState> {
   // 捕捉與小遊戲只提供辨認證據，不能冒充正式回想而升級卡片。
   if (mode !== "flashcard") return recordQuizAnswer(word, grade > 0, mode, sessionId, isNewSession);
@@ -33,16 +46,17 @@ export async function gradeFlashcard(
   const examDate = await getSetting<string>("examDate");
   return progressDb.transaction(
     "rw",
-    [progressDb.cardStates, progressDb.reviewLogs, progressDb.checkIns],
+    [progressDb.cardStates, progressDb.reviewLogs, progressDb.checkIns, ...(guard?.tables ?? [])],
     async () => {
       const existing = await findProgressCard(keys);
       const isNewWord = !existing;
       const before = existing ?? newCardState(word, today);
+      if (guard && !await guard.before(existing)) return before;
       const scheduled = scheduleRecall(before, grade, today, examDate);
       const after = { ...scheduled, practicePending: false };
 
       await progressDb.cardStates.put(after);
-      await progressDb.reviewLogs.add({
+      await writeLearningLog({
         word: after.word,
         reviewedAt: new Date().toISOString(),
         sessionId,
@@ -53,7 +67,7 @@ export async function gradeFlashcard(
         easeFactorAfter: after.easeFactor,
         mode,
         schedulingApplied: scheduled !== before,
-      });
+      },guard);
       await upsertCheckIn(today, isNewWord, sessionId);
       return after;
     },
@@ -64,17 +78,19 @@ export async function gradeFlashcard(
 export async function markWordKnown(
   word: string,
   sessionId: string,
+  guard?: LearningCommitGuard,
 ): Promise<CardState> {
   const keys = await getProgressKeys(word);
   const today = todayStr();
   return progressDb.transaction(
     "rw",
-    [progressDb.cardStates, progressDb.reviewLogs, progressDb.checkIns],
+    [progressDb.cardStates, progressDb.reviewLogs, progressDb.checkIns, ...(guard?.tables ?? [])],
     async () => {
       const before = (await findProgressCard(keys)) ?? newCardState(word, today);
+      if (guard && !await guard.before(before)) return before;
       const after = markKnown(before, today);
       await progressDb.cardStates.put(after);
-      await progressDb.reviewLogs.add({
+      await writeLearningLog({
         word: after.word,
         reviewedAt: new Date().toISOString(),
         sessionId,
@@ -85,7 +101,7 @@ export async function markWordKnown(
         easeFactorAfter: after.easeFactor,
         mode: "known",
         schedulingApplied: true,
-      });
+      },guard);
       // 已知字只花幾秒確認，不吃掉新字名額，初期才能真的往前推進。
       await upsertCheckIn(today, false, sessionId);
       return after;
@@ -99,16 +115,18 @@ export async function recordReviewWithoutScheduling(
   grade: Grade,
   sessionId: string,
   _isNewSession: boolean,
+  guard?: LearningCommitGuard,
 ): Promise<void> {
   const keys = await getProgressKeys(word);
   const today = todayStr();
   await progressDb.transaction(
     "rw",
-    [progressDb.cardStates, progressDb.reviewLogs, progressDb.checkIns],
+    [progressDb.cardStates, progressDb.reviewLogs, progressDb.checkIns, ...(guard?.tables ?? [])],
     async () => {
       const card = await findProgressCard(keys);
       if (!card) return;
-      await progressDb.reviewLogs.add({
+      if (guard && !await guard.before(card)) return;
+      await writeLearningLog({
         word: card.word,
         reviewedAt: new Date().toISOString(),
         sessionId,
@@ -119,7 +137,7 @@ export async function recordReviewWithoutScheduling(
         easeFactorAfter: card.easeFactor,
         mode: "same-day-recap",
         schedulingApplied: false,
-      });
+      },guard);
       // 回顧發現忘記，不假裝記憶無誤；交給正式回想確認，這裡不改間隔。
       if (grade === 0) await progressDb.cardStates.put({ ...card, practicePending: true });
       await upsertCheckIn(today, false, sessionId);
@@ -134,15 +152,29 @@ export async function recordQuizAnswer(
   mode: ReviewMode,
   sessionId: string,
   _isNewSession: boolean,
-): Promise<CardState> {
+  reward?: QuizRewardContext,
+): Promise<CardState & { rewardVerdict?: QuizRewardVerdict }> {
+  if (reward && (!['quiz-w2m','quiz-m2w','quiz-image','fill-blank'].includes(mode) || !Number.isSafeInteger(reward.index) || reward.index < 0)) throw Error('Invalid rewarded quiz answer');
   const keys = await getProgressKeys(word);
   const today = todayStr();
   return progressDb.transaction(
     "rw",
-    [progressDb.cardStates, progressDb.quizStats, progressDb.reviewLogs, progressDb.checkIns],
+    [progressDb.cardStates, progressDb.quizStats, progressDb.reviewLogs, progressDb.checkIns, ...(reward ? rewardTables : [])],
     async () => {
       const existing = await findProgressCard(keys);
       const before = existing ?? newCardState(word, today);
+      const rewardId = reward ? `answer:quiz:${sessionId}:${reward.index}` : undefined;
+      const priorLogs = reward ? await progressDb.reviewLogs.where('sessionId').equals(sessionId).filter(log=>log.mode===mode).sortBy('id') : [];
+      const priorAnswer = reward ? priorLogs[reward.index] : undefined;
+      if (priorAnswer) {
+        if (!keys.includes(priorAnswer.word) && priorAnswer.word!==before.word) throw Error('Saved question does not match this round');
+        // Includes pre-feature evidence: do not back-pay it or append a second learning record.
+        return {...before,rewardVerdict:quizRewardVerdict(priorLogs,priorAnswer.grade>0,true)};
+      }
+      if (reward) {
+        const round = await progressDb.rewardRounds.get(quizRoundId(sessionId));
+        if (!round || reward.index>=round.questionCount) throw Error('Reward question is outside its presented round');
+      }
       const after = { ...before, practicePending: before.practicePending || !existing || !correct };
       await progressDb.cardStates.put(after);
       // Keep quiz evidence under its existing key even if a backup contains stats alone.
@@ -154,7 +186,7 @@ export async function recordQuizAnswer(
         timesCorrect: (stat?.timesCorrect ?? 0) + (correct ? 1 : 0),
         lastAskedAt: new Date().toISOString(),
       });
-      await progressDb.reviewLogs.add({
+      const logId = await progressDb.reviewLogs.add({
         word: after.word,
         reviewedAt: new Date().toISOString(),
         sessionId,
@@ -167,7 +199,11 @@ export async function recordQuizAnswer(
         schedulingApplied: false,
       });
       await upsertCheckIn(today, !existing, sessionId);
-      return after;
+      if (rewardId) await awardAnswer({id:rewardId,roundId:quizRoundId(sessionId),word,correct,source:'quiz',referenceId:String(logId),answeredAt:Date.now(),challenge:quizChallenge(mode)});
+      // An old backup may omit this learning record while retaining its paid event.
+      // Saving learning again is allowed; awardAnswer still refuses a second payment.
+      const savedLogs = reward ? await progressDb.reviewLogs.where('sessionId').equals(sessionId).filter(log=>log.mode===mode).toArray() : [];
+      return rewardId ? {...after,rewardVerdict:quizRewardVerdict(savedLogs,correct,false)} : after;
     },
   );
 }

@@ -54,18 +54,15 @@ describe('LV1 Unit 1 town', () => {
     expect(getLV1TownNewBatch(items, items.map((item, index) => log(item.word, index)))).toEqual([]);
   });
 
-  it('counts only saved quiz evidence and matches log words rather than mistaking word IDs for spellings', () => {
+  it('counts saved learning and quiz evidence and matches spellings rather than word IDs', () => {
     const ignored: ReviewLogEntry[] = [
-      log(items[0].word, 1, { mode: 'flashcard' }),
-      log(items[0].word, 2, { mode: 'known' }),
-      log(items[0].word, 3, { mode: 'same-day-recap' }),
       log(items[0].word, 4, { mode: 'slash' }),
       log(items[0].wordId, 5), log('not-in-this-unit', 6),
     ];
     expect(getLV1TownProgress(items, ignored).every(row => !row.attempted)).toBe(true);
-    const modes = ['quiz-w2m', 'quiz-m2w', 'quiz-image', 'fill-blank'] as const;
+    const modes = ['quiz-w2m', 'quiz-m2w', 'quiz-image', 'fill-blank', 'flashcard', 'known', 'same-day-recap'] as const;
     const included = modes.map((mode, index) => log(items[index].word, 10 + index, { mode }));
-    expect(getLV1TownProgress(items, [...ignored, ...included]).filter(row => row.attempted)).toHaveLength(4);
+    expect(getLV1TownProgress(items, [...ignored, ...included]).filter(row => row.attempted)).toHaveLength(7);
   });
 
   it('retains the first mistake, applies the latest answer, and keeps a house after a later failure', () => {
