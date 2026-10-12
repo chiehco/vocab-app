@@ -15,7 +15,7 @@ function read<T>(path: string): T {
 function items(file: string) {
   return read<{ learningItems: Item[] }>(direct + file).learningItems;
 }
-const units = ["curriculum.json", "curriculumUnit2.json", "curriculumLV3Unit4.json", "curriculumLV3Unit5.json", "curriculumLV3Unit6.json", "curriculumLV3Unit7.json", "curriculumLV3Unit8.json"];
+const units = ["curriculum.json", "curriculumUnit2.json", "curriculumLV3Unit4.json", "curriculumLV3Unit5.json", "curriculumLV3Unit6.json", "curriculumLV3Unit7.json", "curriculumLV3Unit8.json", "curriculumLV3Unit9.json", "curriculumLV3Unit10.json"];
 const pack = read<{ words: { wordId: string }[] }>(data + "sa-pack.json");
 
 afterEach(async () => {
@@ -23,7 +23,7 @@ afterEach(async () => {
   await Promise.all(contentDb.tables.map(table => table.clear()));
 });
 
-it("啟動包收錄 LV3 U1/U2 與 U4–U8 文字版，保留 S+A、LV4 reviewed、LV1 reviewed 且不擴其他範圍", () => {
+it("啟動包收錄 LV3 U1/U2 與 U4–U10 文字版，保留 S+A、LV4 reviewed、LV1 reviewed 且不擴其他範圍", () => {
   const expected = new Set(read<{ wordId: string; priorityTier: string }[]>(data + "exam_priority.json")
     .filter(row => ["S", "A"].includes(row.priorityTier)).map(row => row.wordId));
   for (const file of readdirSync(direct).filter(name => /^curriculumLV4Unit.*\.json$/.test(name))) {
