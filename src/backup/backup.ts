@@ -2,6 +2,8 @@ import { progressDb } from "../db/progressDb";
 import { validGroup } from "../features/direct/model";
 import { validGsatBackup } from "../features/exam/gsatStore";
 import { validWrittenBackup } from "../features/exam/writtenModel";
+import { validRewardBackup } from '../features/rewards/backup';
+import type { RewardWallet, RewardRound, RewardEvent } from '../features/rewards/model';
 import type { WrittenSession, WrittenSubmission } from "../features/exam/writtenModel";
 import type { CustomGroup, DirectSession, DirectAttempt } from "../features/direct/model";
 import type {
@@ -13,7 +15,7 @@ import type {
 } from "../db/types";
 
 const BACKUP_APP_ID = "vocab-app-progress";
-const BACKUP_SCHEMA_VERSION = 5;
+const BACKUP_SCHEMA_VERSION = 7;
 
 export interface ProgressBackup {
   app: typeof BACKUP_APP_ID;
@@ -30,12 +32,15 @@ export interface ProgressBackup {
     directAttempts?: DirectAttempt[];
     writtenSessions?: WrittenSession[];
     writtenSubmissions?: WrittenSubmission[];
+    rewardWallet?: RewardWallet[];
+    rewardRounds?: RewardRound[];
+    rewardLedger?: RewardEvent[];
   };
 }
 
 export async function exportProgress(): Promise<ProgressBackup> {
   return progressDb.transaction('r', progressDb.tables, async () => {
-  const [cardStates, reviewLogs, checkIns, quizStats, settings, customGroups, directSessions, directAttempts, writtenSessions, writtenSubmissions] = await Promise.all([
+  const [cardStates, reviewLogs, checkIns, quizStats, settings, customGroups, directSessions, directAttempts, writtenSessions, writtenSubmissions, rewardWallet, rewardRounds, rewardLedger] = await Promise.all([
     progressDb.cardStates.toArray(),
     progressDb.reviewLogs.toArray(),
     progressDb.checkIns.toArray(),
@@ -46,12 +51,15 @@ export async function exportProgress(): Promise<ProgressBackup> {
     progressDb.directAttempts.toArray(),
     progressDb.writtenSessions.toArray(),
     progressDb.writtenSubmissions.toArray(),
+    progressDb.rewardWallet.toArray(),
+    progressDb.rewardRounds.toArray(),
+    progressDb.rewardLedger.toArray(),
   ]);
   return {
     app: BACKUP_APP_ID,
     schemaVersion: BACKUP_SCHEMA_VERSION,
     exportedAt: new Date().toISOString(),
-    data: { cardStates, reviewLogs, checkIns, quizStats, settings, customGroups, directSessions, directAttempts, writtenSessions, writtenSubmissions },
+    data: { cardStates, reviewLogs, checkIns, quizStats, settings, customGroups, directSessions, directAttempts, writtenSessions, writtenSubmissions, rewardWallet, rewardRounds, rewardLedger },
   };
   });
 }
@@ -99,6 +107,7 @@ export function validateBackup(obj: unknown): string | null {
     if (!validGsatBackup(d.directSessions!, d.directAttempts!)) return '備份含不完整的學測題組或作答紀錄';
   }
   if (b.schemaVersion >= 3 && !validWrittenBackup(d.writtenSessions,d.writtenSubmissions)) return '備份含不完整或無效的非選作答與自評紀錄';
+  if (b.schemaVersion >= 6 && !validRewardBackup(d.rewardWallet,d.rewardRounds,d.rewardLedger)) return '備份含不一致的金幣紀錄或餘額';
   return null;
 }
 
@@ -119,6 +128,9 @@ export async function importProgress(backup: ProgressBackup): Promise<void> {
       progressDb.directAttempts,
       progressDb.writtenSessions,
       progressDb.writtenSubmissions,
+      progressDb.rewardWallet,
+      progressDb.rewardRounds,
+      progressDb.rewardLedger,
     ],
     async () => {
       await Promise.all([
@@ -139,6 +151,13 @@ export async function importProgress(backup: ProgressBackup): Promise<void> {
         await Promise.all([progressDb.writtenSessions.clear(),progressDb.writtenSubmissions.clear()]);
         await progressDb.writtenSessions.bulkPut(backup.data.writtenSessions!);
         await progressDb.writtenSubmissions.bulkPut(backup.data.writtenSubmissions!);
+      }
+      // Older backups cannot erase a wallet or restart its claim/round records.
+      if (backup.schemaVersion >= 6) {
+        await Promise.all([progressDb.rewardWallet.clear(),progressDb.rewardRounds.clear(),progressDb.rewardLedger.clear()]);
+        await progressDb.rewardWallet.bulkPut(backup.data.rewardWallet!);
+        await progressDb.rewardRounds.bulkPut(backup.data.rewardRounds!);
+        await progressDb.rewardLedger.bulkPut(backup.data.rewardLedger!);
       }
       // v1/v2 do not contain written work: preserve it. v3 replaces all tables atomically.
       // reviewLogs 的 id 是自動遞增主鍵，匯入時保留原 id

@@ -11,6 +11,8 @@ import { TOWN_ITEMS } from './townModel';
 import { getLV1TownItems } from './lv1TownModel';
 import { pickDistractors, shuffle } from '../../quiz/distractors';
 import { pickExamDistractors } from '../../quiz/examDistractors';
+import { awardAnswer, rewardTables } from '../rewards/store';
+import { townRoundId } from '../rewards/model';
 
 export type TownKey = 'LV1/1' | 'LV4/17';
 export const isTownKey = (value:string):value is TownKey => value==='LV1/1' || value==='LV4/17';
@@ -32,7 +34,7 @@ export async function townStudyQueue(town:TownKey) {
   return buildStudyQueue(undefined,scope.words.filter(word=>!functions.has(word.word)).map(word=>word.word));
 }
 interface StudyItem {wordId:string;word:string;isNew:boolean;isRecap?:boolean;isPractice?:boolean}
-export interface TownStudyAnswer {logId:number;grade:Grade;mode:ReviewMode;word:string;reviewedAt:string}
+export interface TownStudyAnswer {logId:number;grade:Grade;mode:ReviewMode;word:string;reviewedAt:string;objective?:{choiceWordId:string;correct:boolean}}
 export interface TownStudyRound {id:string;town:TownKey;day:string;createdAt:number;items:StudyItem[];index:number;choices:Record<string,string>;flipped:Record<string,boolean>;options:Record<string,string[]>;answers:Record<string,TownStudyAnswer>}
 const roundKey=(id:string)=>`town-study:${id}`;
 const activeKey=(town:TownKey)=>`town-study-active:${town}`;
@@ -47,7 +49,8 @@ function validRound(value:unknown):value is TownStudyRound {
     && object(r.choices) && Object.values(r.choices).every(value=>typeof value==='string') && object(r.flipped) && Object.values(r.flipped).every(value=>typeof value==='boolean')
     && object(r.options) && Object.values(r.options).every(value=>Array.isArray(value) && value.every(id=>typeof id==='string'))
     && object(r.answers) && Object.entries(r.answers).every(([index,a])=>/^\d+$/.test(index) && Number(index)<r.items.length && a && Number.isInteger(a.logId) && a.logId>0
-      && [0,1,2,3].includes(a.grade) && ['flashcard','known','same-day-recap'].includes(a.mode) && typeof a.word==='string' && Number.isFinite(Date.parse(a.reviewedAt)));
+      && [0,1,2,3].includes(a.grade) && ['flashcard','known','same-day-recap'].includes(a.mode) && typeof a.word==='string' && Number.isFinite(Date.parse(a.reviewedAt))
+      && (a.objective===undefined || typeof a.objective.choiceWordId==='string' && !!a.objective.choiceWordId && typeof a.objective.correct==='boolean'));
 }
 export async function readTownStudyRound(id:string):Promise<TownStudyRound|undefined> {
   const value=(await progressDb.settings.get(roundKey(id)))?.value;
@@ -117,23 +120,35 @@ export async function pickTownStudy(id:string,index:number,choice?:string) {
     await progressDb.settings.put({key:roundKey(id),value:round});
   });
 }
-export async function saveTownStudy(id:string,index:number,grade:Grade,known=false) {
+export async function saveTownStudy(id:string,index:number,grade:Grade,known=false,rewards=false) {
   const data=await resolveTownStudy(id), item=data.queue[index];
   if (!item) throw Error('本輪已完成，請回小鎮。');
-  const guard:LearningCommitGuard={tables:[progressDb.settings],before:async(card)=>{
+  let objective:TownStudyAnswer['objective'];
+  const guard:LearningCommitGuard={tables:[progressDb.settings,...(rewards?rewardTables:[])],before:async(card)=>{
     const current=await readTownStudyRound(id);if(!current || current.items[index]?.wordId!==item.wordRecord.wordId)throw Error('這輪日課已變更，請重新整理。');
     const answer=current.answers[index];
     if (answer) {const log=await progressDb.reviewLogs.get(answer.logId);if(log?.sessionId===id && log.word===answer.word && log.mode===answer.mode)return false;}
     if(current.index!==index || !current.flipped[index])throw Error('請先完成本題，再保存。');
     if(current.day!==todayStr())throw Error('本輪屬於前一日，請回小鎮查看今天安排。原紀錄保留。');
     if(known && current.choices[index]!==item.wordRecord.word)throw Error('請先完成本題選擇。');
+    // A revealed card or a self-assigned grade is not an objectively judged answer.
+    // Compare the persisted choice to the four frozen official options; never infer correctness from grade/known.
+    const options=current.options[index], choice=current.choices[index];
+    if(rewards && options?.length===4 && new Set(options).size===4 && options.includes(item.wordRecord.wordId) && choice) {
+      const records=data.options;
+      const chosen=records?.find(word=>word.word===choice);
+      if(chosen && options.includes(chosen.wordId))objective={choiceWordId:chosen.wordId,correct:chosen.wordId===item.wordRecord.wordId};
+    }
+    if(objective && !known && grade!==(objective.correct?2:0))throw Error('本題選擇已更新，請確認作答結果後再保存。');
     if(!known && !item.isRecap && !card && ((await progressDb.checkIns.get(todayStr()))?.newWordsCount ?? 0)>=await getSetting<number>('dailyNewWordCap'))
       throw Error('今天的新字額度已用完，本題尚未保存；請回小鎮重新查看安排。');
     return true;
   },after:async(log)=>{
     const current=await readTownStudyRound(id);if(!current)throw Error('日課紀錄暫時無法保存，請重試。');
-    current.answers[index]={logId:log.id,grade:log.grade,mode:log.mode,word:log.word,reviewedAt:log.reviewedAt};
+    current.answers[index]={logId:log.id,grade:log.grade,mode:log.mode,word:log.word,reviewedAt:log.reviewedAt,...(objective?{objective}: {})};
     await progressDb.settings.put({key:roundKey(id),value:current});
+    if(objective)await awardAnswer({id:`answer:town:${id}:${index}`,roundId:townRoundId(id),word:item.wordRecord.word,correct:objective.correct,
+      source:'town',referenceId:String(log.id),choiceWordId:objective.choiceWordId,answeredAt:Date.now(),challenge:'meaning-v2'});
   }};
   if(known)await markWordKnown(item.wordRecord.word,id,guard);
   else if(item.isRecap)await recordReviewWithoutScheduling(item.wordRecord.word,grade,id,index===0,guard);

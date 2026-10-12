@@ -4,6 +4,7 @@ import SpeakerButton from '../../components/SpeakerButton';
 import TownMap from './TownMap';
 import type { TownPracticeReturn } from './townPractice';
 import type { townStudyStatus } from './townStudy';
+import RewardPanel from '../rewards/RewardPanel';
 
 interface TownRow {
   id: string; word: string; meaning: string; attempted: boolean;
@@ -56,6 +57,7 @@ export default function TownView({ level, unit, rows, sibling, due, onPractice, 
       <p className="town-subtle">單字補練：每次只練這一字。<Link to={`/textbook/${level}/${unit}`}>到課本選範圍 →</Link></p>
       {resume && <Link className="town-text-button" to={resume.to} state={resume.state}>繼續本輪補練 →</Link>}
     </section>}
+    <RewardPanel />
     <p className="town-subtle town-footnote">小屋記錄練過的字，還要慢慢複習才會記穩。<br />進度保存在目前的瀏覽器。{level === 'LV1' && <><br />單字補練續答請留在同一分頁。</>}</p>
     <div className="town-due">{sibling}</div>
     {due && <div className="town-due">{due}</div>}

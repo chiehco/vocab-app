@@ -5,6 +5,12 @@ import type { LearningCommitGuard } from './commitGuard';
 import { markKnown, scheduleRecall, newCardState } from "../srs/sm2";
 import { todayStr } from "../lib/dates";
 import { format } from "date-fns";
+import { awardAnswer, rewardTables } from '../features/rewards/store';
+import { quizChallenge, quizRoundId, type QuizRewardContext, type QuizRewardVerdict } from '../features/rewards/model';
+
+function quizRewardVerdict(logs: ReviewLogEntry[], correct:boolean, duplicate:boolean): QuizRewardVerdict {
+  return {correct,duplicate,score:logs.filter(log=>log.grade>0).length,wrongWords:[...new Set(logs.filter(log=>log.grade===0).map(log=>log.word))]};
+}
 
 async function writeLearningLog(log:ReviewLogEntry, guard?:LearningCommitGuard) {
   const id=await progressDb.reviewLogs.add(log);
@@ -146,15 +152,29 @@ export async function recordQuizAnswer(
   mode: ReviewMode,
   sessionId: string,
   _isNewSession: boolean,
-): Promise<CardState> {
+  reward?: QuizRewardContext,
+): Promise<CardState & { rewardVerdict?: QuizRewardVerdict }> {
+  if (reward && (!['quiz-w2m','quiz-m2w','quiz-image','fill-blank'].includes(mode) || !Number.isSafeInteger(reward.index) || reward.index < 0)) throw Error('Invalid rewarded quiz answer');
   const keys = await getProgressKeys(word);
   const today = todayStr();
   return progressDb.transaction(
     "rw",
-    [progressDb.cardStates, progressDb.quizStats, progressDb.reviewLogs, progressDb.checkIns],
+    [progressDb.cardStates, progressDb.quizStats, progressDb.reviewLogs, progressDb.checkIns, ...(reward ? rewardTables : [])],
     async () => {
       const existing = await findProgressCard(keys);
       const before = existing ?? newCardState(word, today);
+      const rewardId = reward ? `answer:quiz:${sessionId}:${reward.index}` : undefined;
+      const priorLogs = reward ? await progressDb.reviewLogs.where('sessionId').equals(sessionId).filter(log=>log.mode===mode).sortBy('id') : [];
+      const priorAnswer = reward ? priorLogs[reward.index] : undefined;
+      if (priorAnswer) {
+        if (!keys.includes(priorAnswer.word) && priorAnswer.word!==before.word) throw Error('Saved question does not match this round');
+        // Includes pre-feature evidence: do not back-pay it or append a second learning record.
+        return {...before,rewardVerdict:quizRewardVerdict(priorLogs,priorAnswer.grade>0,true)};
+      }
+      if (reward) {
+        const round = await progressDb.rewardRounds.get(quizRoundId(sessionId));
+        if (!round || reward.index>=round.questionCount) throw Error('Reward question is outside its presented round');
+      }
       const after = { ...before, practicePending: before.practicePending || !existing || !correct };
       await progressDb.cardStates.put(after);
       // Keep quiz evidence under its existing key even if a backup contains stats alone.
@@ -166,7 +186,7 @@ export async function recordQuizAnswer(
         timesCorrect: (stat?.timesCorrect ?? 0) + (correct ? 1 : 0),
         lastAskedAt: new Date().toISOString(),
       });
-      await progressDb.reviewLogs.add({
+      const logId = await progressDb.reviewLogs.add({
         word: after.word,
         reviewedAt: new Date().toISOString(),
         sessionId,
@@ -179,7 +199,11 @@ export async function recordQuizAnswer(
         schedulingApplied: false,
       });
       await upsertCheckIn(today, !existing, sessionId);
-      return after;
+      if (rewardId) await awardAnswer({id:rewardId,roundId:quizRoundId(sessionId),word,correct,source:'quiz',referenceId:String(logId),answeredAt:Date.now(),challenge:quizChallenge(mode)});
+      // An old backup may omit this learning record while retaining its paid event.
+      // Saving learning again is allowed; awardAnswer still refuses a second payment.
+      const savedLogs = reward ? await progressDb.reviewLogs.where('sessionId').equals(sessionId).filter(log=>log.mode===mode).toArray() : [];
+      return rewardId ? {...after,rewardVerdict:quizRewardVerdict(savedLogs,correct,false)} : after;
     },
   );
 }

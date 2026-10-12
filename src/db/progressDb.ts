@@ -1,6 +1,7 @@
 import type { CustomGroup, DirectSession, DirectAttempt } from "../features/direct/model";
 import type { WrittenSession, WrittenSubmission } from "../features/exam/writtenModel";
 import Dexie, { type Table } from "dexie";
+import type { RewardWallet, RewardRound, RewardEvent } from '../features/rewards/model';
 import type {
   CardState,
   CheckInRecord,
@@ -25,6 +26,9 @@ export class VocabProgressDB extends Dexie {
   directAttempts!: Table<DirectAttempt, string>;
   writtenSessions!: Table<WrittenSession,string>;
   writtenSubmissions!: Table<WrittenSubmission,string>;
+  rewardWallet!: Table<RewardWallet,string>;
+  rewardRounds!: Table<RewardRound,string>;
+  rewardLedger!: Table<RewardEvent,string>;
 
   constructor() {
     super("VocabProgressDB");
@@ -41,6 +45,7 @@ export class VocabProgressDB extends Dexie {
       directAttempts: "id, questionId, sessionId, answeredAt",
     });
     this.version(3).stores({writtenSessions:'id, updatedAt',writtenSubmissions:'id, sessionId, questionId, submittedAt'});
+    this.version(4).stores({rewardWallet:'id',rewardRounds:'id, startedAt',rewardLedger:'id, kind, roundId, createdAt, taiwanDate'});
   }
 }
 

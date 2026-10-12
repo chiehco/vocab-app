@@ -122,6 +122,7 @@ it.each([true, false])('LV4: a saved answer (correct=%s) returns to the house wi
   expect(view.container.querySelector('.direct-question-area')).toBeNull();
   expect(view.container.querySelector('.direct-answer-feedback')?.textContent).toContain(question.targetMeaningZh);
   expect(await progressDb.directAttempts.count()).toBe(1);
+  expect((await progressDb.rewardWallet.get('local'))?.balance).toBe(correct ? 5 : 1);
   const savedSession = await progressDb.directSessions.get(session.id);
   await view.click(link('回小鎮看小屋 →'));
   await view.waitFor(() => expect(built()).toHaveLength(1));
@@ -132,6 +133,7 @@ it.each([true, false])('LV4: a saved answer (correct=%s) returns to the house wi
   expect((await progressDb.directSessions.get(session.id))?.index).toBe(0);
   expect(await progressDb.directAttempts.count()).toBe(1);
   expect(await progressDb.reviewLogs.count()).toBe(0);
+  expect(await progressDb.rewardLedger.where('kind').equals('answer').count()).toBe(1);
 });
 
 it('LV4: cancelling resumes the choice and lookups, and lookup alone never builds a house', async () => {
@@ -191,6 +193,7 @@ it.each([true, false])('LV1: saved Quiz answer (correct=%s) retains the exact ro
   await act(async () => { (option as HTMLButtonElement).click(); (option as HTMLButtonElement).click(); });
   await view.waitFor(() => expect(link('回小鎮看小屋 →')).toBeDefined());
   expect(await progressDb.reviewLogs.count()).toBe(1);
+  expect((await progressDb.rewardWallet.get('local'))?.balance).toBe(correct ? 5 : 1);
   const logs = await progressDb.reviewLogs.toArray();
   expect(logs[0]).toMatchObject({ word: 'boy', mode: 'quiz-w2m', grade: correct ? 2 : 0, schedulingApplied: false });
   await view.click(link('回小鎮看小屋 →'));
@@ -201,6 +204,7 @@ it.each([true, false])('LV1: saved Quiz answer (correct=%s) retains the exact ro
   expect(view.container.querySelector('.trial-options')).toBeNull();
   expect(view.container.querySelector('.trial-answer-feedback')).not.toBeNull();
   expect(await progressDb.reviewLogs.toArray()).toEqual(logs);
+  expect((await progressDb.rewardWallet.get('local'))?.balance).toBe(correct ? 5 : 1);
   expect(await progressDb.directAttempts.count()).toBe(0);
 });
 

@@ -253,11 +253,12 @@ export default function SettingsScreen() {
               {pendingImport.data.checkIns.length} 天打卡。
               <br />
               {pendingImport.schemaVersion >= 3
-                ? `另含 ${pendingImport.data.customGroups?.length ?? 0} 個群組、${pendingImport.data.directAttempts?.length ?? 0} 筆直接作答、${pendingImport.data.writtenSubmissions?.length ?? 0} 筆混合／非選作答。匯入會覆蓋這台裝置目前的所有進度，確定嗎？`
+                ? `另含 ${pendingImport.data.customGroups?.length ?? 0} 個群組、${pendingImport.data.directAttempts?.length ?? 0} 筆直接作答、${pendingImport.data.writtenSubmissions?.length ?? 0} 筆混合／非選作答。匯入會覆蓋這台裝置目前的學習進度，確定嗎？`
                 : pendingImport.schemaVersion === 2
                 ? `這是第二版備份，含 ${pendingImport.data.customGroups?.length ?? 0} 個群組、${pendingImport.data.directAttempts?.length ?? 0} 筆直接作答。匯入會覆蓋單字進度、群組及直接作答；保留目前混合／非選原答、自評與草稿。確定嗎？`
                 : '這是第一版備份；匯入會覆蓋原有單字學習進度，保留目前的自建群組、直接作答及混合／非選紀錄。確定嗎？'}
             </p>
+            <p className="text-sm text-(--ui-muted)">{pendingImport.schemaVersion>=6 ? '此備份含金幣資料，錢包、答題與領取紀錄也會一併還原。' : '此舊備份沒有金幣資料，現有錢包、答題獎勵與領取紀錄會保留。'}</p>
             <div className="mt-2 flex gap-2">
               <button
                 onClick={async () => {
@@ -292,7 +293,7 @@ export default function SettingsScreen() {
       <div className="mt-4 rounded-lg border border-(--ui-danger) bg-(--ui-danger-soft) p-4">
         <h2 className="text-sm font-bold text-(--ui-danger)">危險區</h2>
         <p className="mt-1 text-sm text-(--ui-danger)">
-          重置會清除單字複習進度、打卡與一般測驗紀錄。自建群組、直接作答及混合／非選紀錄仍保留；單字資料不受影響。
+          重置會清除單字複習進度、打卡與一般測驗紀錄。自建群組、直接作答、混合／非選紀錄、金幣與領取紀錄仍保留；單字資料不受影響。
         </p>
         {resetDone ? (
           <p className="mt-3 text-sm font-bold text-(--ui-text)">已重置完成。</p>

@@ -27,6 +27,9 @@ import { getExamUnit, getStudyUnit, parseUnitOrder, unitOrderLabel } from "../un
 import "../realm-pages.css";
 import { resolveGroupWords } from "../direct/groupScope";
 import { getLV1TownItems } from '../town/lv1TownModel';
+import RewardPanel, { RewardReceipt } from '../rewards/RewardPanel';
+import { quizChallenge, quizRoundId, type QuizRewardVerdict } from '../rewards/model';
+import { useRewardRound } from '../rewards/useRewardRound';
 
 const LEVEL_CHOICES = [TOP_EXAM_FILTER, "全部", "LV1", "LV2", "LV3", "LV4", "LV5", "LV6"];
 const QUIZ_SIZE = 10;
@@ -112,6 +115,10 @@ export default function QuizScreen() {
   const [startError, setStartError] = useState<string | null>(null);
   const [startingMode, setStartingMode] = useState<QuizMode | null>(null);
   const today = useToday();
+  const rewardRound = quizRoundId(sessionId.current);
+  const roundSize = mode === 'fill' ? fillQuestions?.length ?? 0 : questions?.length ?? 0;
+  const distinctWords=new Set(mode==='fill' ? fillQuestions?.map(question=>question.word) : questions?.map(question=>question.target.word)).size;
+  const reward = useRewardRound(rewardRound,roundSize,mode !== null && index < roundSize && answered === null && fillResult === null,quizChallenge(mode ?? ''),distinctWords);
   const autoPronounce = useLiveQuery(
     () => getSetting<boolean>("autoPronounce"),
     [],
@@ -296,21 +303,23 @@ export default function QuizScreen() {
     return true;
   }
 
-  async function saveAnswer(word: string, correct: boolean, reviewMode: ReviewMode): Promise<boolean> {
-    if (savingRef.current) return false;
+  async function saveAnswer(word: string, correct: boolean, reviewMode: ReviewMode): Promise<QuizRewardVerdict | null> {
+    if (savingRef.current) return null;
     savingRef.current = true;
     setSaving(true);
     setSaveError(null);
     try {
       // Browser Back can restore an earlier town entry with a pre-answer snapshot.
       // Saved evidence takes precedence, including before the restore effect finishes.
-      if (await restoreSavedTownAnswer(word, reviewMode)) return false;
-      await recordQuizAnswer(word, correct, reviewMode, sessionId.current, !sessionStarted.current);
+      if (await restoreSavedTownAnswer(word, reviewMode)) return null;
+      await reward.prepare();
+      const saved = await recordQuizAnswer(word, correct, reviewMode, sessionId.current, !sessionStarted.current, {index});
       sessionStarted.current = true;
-      return true;
+      // The transaction's saved verdict wins if another tab committed this question first.
+      return saved.rewardVerdict!;
     } catch {
       setSaveError("這次作答尚未保存，請再試一次；不會先計分或跳到下一題。");
-      return false;
+      return null;
     } finally {
       savingRef.current = false;
       setSaving(false);
@@ -394,6 +403,7 @@ export default function QuizScreen() {
     return (
       <div className="realm-page trial-result-page">
         <TrialHeader label={`${unitLabel}練習結果`} />
+        <RewardPanel roundId={rewardRound} />
         {townLink}
         <div className={`trial-result-mark ${perfect ? "perfect" : ""}`}><span>{score}</span><small>/ {total}</small></div>
         <h2>{perfect ? "答對了" : "判定完成"}</h2>
@@ -411,13 +421,13 @@ export default function QuizScreen() {
     async function submitFill() {
       const key = `${sessionId.current}:${index}`;
       if (fillResult !== null || savingRef.current || submittedRef.current === key) return;
-      const correct = fillInput.trim().toLowerCase() === (question.answer ?? "").trim().toLowerCase();
-      if (!await saveAnswer(question.word, correct, "fill-blank")) return;
+      const saved = await saveAnswer(question.word, fillInput.trim().toLowerCase() === (question.answer ?? "").trim().toLowerCase(), "fill-blank");
+      if (!saved) return;
+      const correct = saved.correct;
       submittedRef.current = key;
       if (autoPronounce) speak(question.word);
       setFillResult(correct ? "correct" : "wrong");
-      if (correct) setScore((current) => current + 1);
-      else setWrongWords((current) => current.includes(question.word) ? current : [...current, question.word]);
+      setScore(saved.score); setWrongWords(saved.wrongWords);
     }
     if (fillResult) return <div className="realm-page active-trial-page">
       <TrialHeader label={`${unitLabel}答案解析`} progress={`${index + 1} / ${total}`} />
@@ -428,6 +438,7 @@ export default function QuizScreen() {
           if (event.detail > 1) return;
           setIndex(index + 1); setFillInput(''); setFillResult(null);
         }}>{index === total - 1 ? '查看本輪結果' : '下一個單字'}<span>→</span></button></div>
+        <RewardReceipt answerId={`answer:quiz:${sessionId.current}:${index}`} roundId={rewardRound} word={question.word} correct={fillResult==='correct'} />
         {townScope && <p>這個字的小屋已落成。答錯也算練過。本輪續答請留在同一分頁。</p>}
         <p>正確答案：{question.answer}</p>
         <div className="trial-answer-example"><h4>例句</h4><p>{question.sentenceEn}</p><p>{question.sentenceZh}</p></div>
@@ -436,6 +447,8 @@ export default function QuizScreen() {
     return (
       <div className="realm-page active-trial-page">
         <TrialHeader label={`${unitLabel}殘句補名`} progress={`${index + 1} / ${total}`} />
+        <RewardPanel roundId={rewardRound} />
+        {reward.error && <p role="alert">{reward.error}</p>}
         {townLink}
         <div className="trial-progress"><i style={{ width: `${((index + 1) / total) * 100}%` }} /><span>目前辨認 {score}</span></div>
         <section className="trial-question fill-question">
@@ -467,14 +480,14 @@ export default function QuizScreen() {
     if (selectedRef.current?.key !== key || selectedRef.current.word !== option.word) {
       selectedRef.current = { key, word: option.word }; setSelection(selectedRef.current); setSaveError(null); return;
     }
-    const correct = option.word === question.target.word;
     const reviewMode = mode === "w2m" ? "quiz-w2m" : mode === "image" ? "quiz-image" : "quiz-m2w";
-    if (!await saveAnswer(question.target.word, correct, reviewMode)) return;
+    const saved = await saveAnswer(question.target.word, option.word === question.target.word, reviewMode);
+    if (!saved) return;
+    const correct = saved.correct;
     submittedRef.current = key;
     if (autoPronounce) speak(question.target.word);
-    setAnswered(option.word);
-    if (correct) setScore((current) => current + 1);
-    else setWrongWords((current) => current.includes(question.target.word) ? current : [...current, question.target.word]);
+    setAnswered(saved.duplicate ? correct ? question.target.word : RESTORED_WRONG_ANSWER : option.word);
+    setScore(saved.score); setWrongWords(saved.wrongWords);
   }
 
   if (answered !== null) {
@@ -490,6 +503,7 @@ export default function QuizScreen() {
           if (event.detail > 1) return;
           setIndex(index + 1); setAnswered(null); selectedRef.current = null; setSelection(null);
         }}>{index === total - 1 ? '查看本輪結果' : '下一個單字'}<span>→</span></button></div>
+        <RewardReceipt answerId={`answer:quiz:${sessionId.current}:${index}`} roundId={rewardRound} word={question.target.word} correct={correct} />
         {townScope && <p>這個字的小屋已落成。答錯也算練過。本輪續答請留在同一分頁。</p>}
         {answered === RESTORED_WRONG_ANSWER ? <p>先前這題答錯，紀錄已保存；以下顯示正確答案。</p>
           : chosen && <p>你的答案：{mode === 'w2m' ? chosen.meaningZh : chosen.word}</p>}
@@ -501,6 +515,8 @@ export default function QuizScreen() {
   return (
     <div className="realm-page active-trial-page">
       <TrialHeader label={`${unitLabel}${mode === "w2m" ? "見名辨義" : mode === "image" ? "看圖喚名" : "循義喚名"}`} progress={`${index + 1} / ${total}`} />
+      <RewardPanel roundId={rewardRound} />
+      {reward.error && <p role="alert">{reward.error}</p>}
       {answered === null && townLink}
       <div className="trial-progress"><i style={{ width: `${((index + 1) / total) * 100}%` }} /><span>目前辨認 {score}</span></div>
       {townEntry && <p className="trial-entry-scope">{total === 1 ? '小鎮選字入口 · 本輪一字一題' : `整單元範圍 · 本輪 ${total} 題`} · <Link to="/textbook/LV1/1">到課本選整單元範圍 →</Link></p>}
