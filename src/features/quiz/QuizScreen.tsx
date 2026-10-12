@@ -40,6 +40,7 @@ interface TownQuizRound {
   listId: string; mode: QuizMode | null; questions: McqQuestion[] | null; fillQuestions: ExampleRecord[] | null;
   index: number; score: number; answered: string | null; fillInput: string; fillResult: 'correct' | 'wrong' | null;
   wrongWords: string[]; sessionId: string; sessionStarted: boolean;
+  selectedChoice?: string | null;
 }
 
 function ImageChineseClue({ word, clue }: { word: WordRecord; clue: ImageClueCopy }) {
@@ -99,6 +100,12 @@ export default function QuizScreen() {
   const [wrongWords, setWrongWords] = useState<string[]>(round?.wrongWords ?? []);
   const sessionId = useRef(round?.sessionId ?? crypto.randomUUID());
   const sessionStarted = useRef(round?.sessionStarted ?? false);
+  const [selection, setSelection] = useState<{ key: string; word: string } | null>(round?.selectedChoice
+    ? { key: `${round.sessionId}:${round.index}`, word: round.selectedChoice } : null);
+  const selectedRef = useRef(selection);
+  const submittedRef = useRef<string | null>(null);
+  const selectedChoice = selection?.key === `${sessionId.current}:${index}` ? selection.word : null;
+  const feedback = useRef<HTMLElement>(null);
   const savingRef = useRef(false);
   const [saving, setSaving] = useState(false);
   const [saveError, setSaveError] = useState<string | null>(null);
@@ -256,6 +263,8 @@ export default function QuizScreen() {
     sessionId.current = crypto.randomUUID();
     sessionStarted.current = false;
     setSaveError(null);
+    selectedRef.current = null; setSelection(null);
+    submittedRef.current = null;
   }
 
   // The textbook's primary action starts the simplest available exercise directly.
@@ -309,7 +318,8 @@ export default function QuizScreen() {
   }
 
   const total = useMemo(() => mode === "fill" ? fillQuestions?.length ?? 0 : questions?.length ?? 0, [mode, questions, fillQuestions]);
-  const unitLabel = groupId ? `${customGroup?.name ?? "群組"} · ` : hasUnitScope ? `Unit ${String(requestedUnitNumber).padStart(2, "0")} · ` : "";
+  const townEntry = searchParams.get('town') === 'LV1' || groupReturn === '/textbook/LV1/1';
+  const unitLabel = townEntry ? 'LV1 Unit 1 · ' : groupId ? '群組 · ' : hasUnitScope ? `Unit ${String(requestedUnitNumber).padStart(2, "0")} · ` : "";
   const practicedWord = mode === 'fill' ? fillQuestions?.[Math.min(index, total - 1)]?.word : questions?.[Math.min(index, total - 1)]?.target.word;
   const restoreTownAnswer = useEffectEvent(async () => {
     if (mode && practicedWord) await restoreSavedTownAnswer(practicedWord, reviewModeFor(mode));
@@ -321,21 +331,29 @@ export default function QuizScreen() {
   }, [round, townScope, mode, practicedWord, index, total, answered, fillResult]);
   const townItem = townItems.find(item => item.word === practicedWord);
   const townAnswerSaved = (index >= total && total > 0) || (mode === 'fill' ? fillResult !== null : answered !== null);
+  const feedbackKey = (mode === 'fill' ? fillResult !== null : answered !== null) && index < total ? `${sessionId.current}:${index}` : null;
+  useEffect(() => {
+    if (!feedbackKey || !feedback.current) return;
+    feedback.current.focus({ preventScroll: true });
+    feedback.current.scrollIntoView({ block: 'start', behavior: 'instant' });
+  }, [feedbackKey]);
   const townRound: TownQuizRound = { listId: listId ?? '', mode, questions, fillQuestions, index, score, answered,
-    fillInput, fillResult, wrongWords, sessionId: sessionId.current, sessionStarted: sessionStarted.current };
+    fillInput, fillResult, wrongWords, selectedChoice, sessionId: sessionId.current, sessionStarted: sessionStarted.current };
   const rememberTownRound = useEffectEvent(() => {
     navigate(location.pathname + location.search, { replace: true, state: { townQuizRound: townRound } });
   });
   useEffect(() => {
     if (townScope && !saving) rememberTownRound();
-  }, [townScope, mode, questions, fillQuestions, index, score, answered, fillInput, fillResult, wrongWords, saving]);
+  }, [townScope, mode, questions, fillQuestions, index, score, answered, fillInput, fillResult, wrongWords, selectedChoice, saving]);
+  const townReturnAction = townScope && <Link className="trial-town-action" aria-disabled={saving}
+    onClick={event => { if (savingRef.current || townAnswerSaved && event.detail > 1) event.preventDefault(); }}
+    to={`/town/LV1/1${townItem ? `?item=${encodeURIComponent(townItem.id)}` : ''}`}
+    state={{ townPractice: { to: location.pathname + location.search, state: { townQuizRound: townRound } } }}>
+    {townAnswerSaved ? '回小鎮看小屋 →' : '← 回小鎮 · 保留本輪進度'}
+  </Link>;
   const townLink = townScope && <div className="trial-town-return">
     {townAnswerSaved && <p role="status">答案已保存，這個字的小屋已落成。答錯也算練過。</p>}
-    <Link aria-disabled={saving} onClick={event => { if (savingRef.current) event.preventDefault(); }}
-      to={`/town/LV1/1${townItem ? `?item=${encodeURIComponent(townItem.id)}` : ''}`}
-      state={{ townPractice: { to: location.pathname + location.search, state: { townQuizRound: townRound } } }}>
-      {townAnswerSaved ? '回小鎮看小屋 →' : '← 回小鎮 · 保留本輪進度'}
-    </Link>
+    {townReturnAction}
     <p>本輪續答請留在同一分頁。</p>
   </div>;
 
@@ -350,7 +368,7 @@ export default function QuizScreen() {
     }
     return (
       <div className="realm-page trial-page">
-        <TrialHeader label={groupId ? customGroup?.name ?? "群組練習" : hasUnitScope ? `${requestedLevel} · ${explicitOrder ? unitOrderLabel(order) : "舊版分組"} · Unit ${String(requestedUnitNumber).padStart(2, "0")}` : "單字練習"} />
+        <TrialHeader label={townEntry ? 'LV1 Unit 1 · 單字練習' : groupId ? customGroup?.name ?? "群組練習" : hasUnitScope ? `${requestedLevel} · ${explicitOrder ? unitOrderLabel(order) : "舊版分組"} · Unit ${String(requestedUnitNumber).padStart(2, "0")}` : "單字練習"} />
         {townLink}
         <section className="trial-intro">
           <div><p>{groupId ? `${scopedCollectedWords?.length ?? 0} 個可練習單字` : hasUnitScope ? `${requestedUnit?.words.length ?? 0} 個單字` : levelSel === TOP_EXAM_FILTER ? "S+A 學測高頻字" : "只練習已學過的單字"}</p><h2>{groupId ? <>依自己的清單，自由<em>練習。</em></> : hasUnitScope ? <>本輪連續作答，完成後再回到<em>Unit。</em></> : levelSel === TOP_EXAM_FILTER ? <>先守住高頻，再擴張你的<em>得分範圍。</em></> : <>收服只是相遇，能在情境中認出，<em>才算真的馴化。</em></>}</h2></div>
@@ -391,30 +409,44 @@ export default function QuizScreen() {
   if (mode === "fill" && fillQuestions) {
     const question = fillQuestions[index];
     async function submitFill() {
-      if (fillResult !== null || savingRef.current) return;
+      const key = `${sessionId.current}:${index}`;
+      if (fillResult !== null || savingRef.current || submittedRef.current === key) return;
       const correct = fillInput.trim().toLowerCase() === (question.answer ?? "").trim().toLowerCase();
-      if (autoPronounce) speak(question.word);
       if (!await saveAnswer(question.word, correct, "fill-blank")) return;
+      submittedRef.current = key;
+      if (autoPronounce) speak(question.word);
       setFillResult(correct ? "correct" : "wrong");
       if (correct) setScore((current) => current + 1);
       else setWrongWords((current) => current.includes(question.word) ? current : [...current, question.word]);
     }
+    if (fillResult) return <div className="realm-page active-trial-page">
+      <TrialHeader label={`${unitLabel}答案解析`} progress={`${index + 1} / ${total}`} />
+      <section className="trial-answer-feedback" ref={feedback} tabIndex={-1} aria-labelledby="trial-feedback-title">
+        <p role="status">答案已保存</p><h2 id="trial-feedback-title">{fillResult === 'correct' ? '答對了' : '這題答錯了，再練一次'}</h2>
+        <h3><span>{question.word}</span><SpeakerButton text={question.word} /></h3><p className="trial-answer-meaning">{allWords?.find(word => word.word === question.word)?.meaningZh}</p>
+        <div className="trial-answer-actions">{townReturnAction}<button className="trial-next" onClick={event => {
+          if (event.detail > 1) return;
+          setIndex(index + 1); setFillInput(''); setFillResult(null);
+        }}>{index === total - 1 ? '查看本輪結果' : '下一個單字'}<span>→</span></button></div>
+        {townScope && <p>這個字的小屋已落成。答錯也算練過。本輪續答請留在同一分頁。</p>}
+        <p>正確答案：{question.answer}</p>
+        <div className="trial-answer-example"><h4>例句</h4><p>{question.sentenceEn}</p><p>{question.sentenceZh}</p></div>
+      </section>
+    </div>;
     return (
       <div className="realm-page active-trial-page">
         <TrialHeader label={`${unitLabel}殘句補名`} progress={`${index + 1} / ${total}`} />
-        {!fillResult && townLink}
+        {townLink}
         <div className="trial-progress"><i style={{ width: `${((index + 1) / total) * 100}%` }} /><span>目前辨認 {score}</span></div>
-        <section className={`trial-question fill-question ${fillResult ?? ""}`}>
+        <section className="trial-question fill-question">
           <ExamTierBadge tier={priorityByWord.get(question.word)} compact />
           <WordTraitBadges senseCount={senseCountByWord.get(question.word)} hasConfusables={confusableWords.has(question.word)} hasMorphemes={morphemeWords.has(question.word)} compact />
           <h2>{question.blankSentence}</h2>
           {question.sentenceZh && <p className="trial-translation">{question.sentenceZh}</p>}
-          <label><span>填入英文單字</span><input value={fillInput} onChange={(event) => setFillInput(event.target.value)} onKeyDown={(event) => event.key === "Enter" && submitFill()} disabled={saving || fillResult !== null} autoCapitalize="none" autoCorrect="off" /></label>
-          {fillResult && <div className="trial-verdict"><b>{fillResult === "correct" ? "答對了" : "答錯了"}</b><span>{fillResult === "correct" ? question.answer : `正確答案：${question.answer}`}</span></div>}
+          <label><span>填入英文單字</span><input value={fillInput} onChange={(event) => setFillInput(event.target.value)} onKeyDown={(event) => { if (event.key === 'Enter') { event.preventDefault(); void submitFill(); } }} disabled={saving} autoCapitalize="none" autoCorrect="off" /></label>
         </section>
         {saveError && <p role="alert">{saveError}</p>}
-        {fillResult && townLink}
-        <button className="trial-next" disabled={saving} onClick={() => { if (fillResult === null) submitFill(); else { setIndex((current) => current + 1); setFillInput(""); setFillResult(null); } }}>{saving ? "保存中" : fillResult === null ? "確認答案" : "下一個單字"}<span>→</span></button>
+        <button className="trial-next" disabled={saving} onClick={() => void submitFill()}>{saving ? '保存中' : '確認答案'}<span>→</span></button>
       </div>
     );
   }
@@ -429,24 +461,41 @@ export default function QuizScreen() {
   const imageClue = mode === "image"
     ? resolveWordImageClue(question.target.word, targetAsset, imageMedia?.captionZh, imageExample?.sentenceZh, imageMedia?.targetHint, imageExample?.meaningHint)
     : null;
-  const sealed = mode === "image" && answered === question.target.word;
-
   async function pick(option: WordRecord) {
-    if (answered !== null || savingRef.current) return;
+    const key = `${sessionId.current}:${index}`;
+    if (answered !== null || savingRef.current || submittedRef.current === key) return;
+    if (selectedRef.current?.key !== key || selectedRef.current.word !== option.word) {
+      selectedRef.current = { key, word: option.word }; setSelection(selectedRef.current); setSaveError(null); return;
+    }
     const correct = option.word === question.target.word;
     const reviewMode = mode === "w2m" ? "quiz-w2m" : mode === "image" ? "quiz-image" : "quiz-m2w";
-    if (autoPronounce) speak(question.target.word);
     if (!await saveAnswer(question.target.word, correct, reviewMode)) return;
+    submittedRef.current = key;
+    if (autoPronounce) speak(question.target.word);
     setAnswered(option.word);
     if (correct) setScore((current) => current + 1);
     else setWrongWords((current) => current.includes(question.target.word) ? current : [...current, question.target.word]);
   }
 
-  function optionState(option: WordRecord) {
-    if (answered === null) return "";
-    if (option.word === question.target.word) return "correct";
-    if (option.word === answered) return "wrong";
-    return "muted";
+  if (answered !== null) {
+    const correct = answered === question.target.word;
+    const chosen = question.options.find(option => option.word === answered);
+    const example = townItem?.illustration ?? exampleByWord.get(question.target.word);
+    return <div className="realm-page active-trial-page">
+      <TrialHeader label={`${unitLabel}答案解析`} progress={`${index + 1} / ${total}`} />
+      <section className="trial-answer-feedback" ref={feedback} tabIndex={-1} aria-labelledby="trial-feedback-title">
+        <p role="status">答案已保存</p><h2 id="trial-feedback-title">{correct ? '答對了' : '這題答錯了，再練一次'}</h2>
+        <h3><span>{question.target.word}</span><SpeakerButton text={question.target.word} /></h3><p className="trial-answer-meaning">{question.target.meaningZh}</p>
+        <div className="trial-answer-actions">{townReturnAction}<button className="trial-next" onClick={event => {
+          if (event.detail > 1) return;
+          setIndex(index + 1); setAnswered(null); selectedRef.current = null; setSelection(null);
+        }}>{index === total - 1 ? '查看本輪結果' : '下一個單字'}<span>→</span></button></div>
+        {townScope && <p>這個字的小屋已落成。答錯也算練過。本輪續答請留在同一分頁。</p>}
+        {answered === RESTORED_WRONG_ANSWER ? <p>先前這題答錯，紀錄已保存；以下顯示正確答案。</p>
+          : chosen && <p>你的答案：{mode === 'w2m' ? chosen.meaningZh : chosen.word}</p>}
+        {example && <div className="trial-answer-example"><h4>例句</h4><p>{'captionEn' in example ? example.captionEn : example.sentenceEn}</p><p>{'captionZh' in example ? example.captionZh : example.sentenceZh}</p></div>}
+      </section>
+    </div>;
   }
 
   return (
@@ -454,25 +503,19 @@ export default function QuizScreen() {
       <TrialHeader label={`${unitLabel}${mode === "w2m" ? "見名辨義" : mode === "image" ? "看圖喚名" : "循義喚名"}`} progress={`${index + 1} / ${total}`} />
       {answered === null && townLink}
       <div className="trial-progress"><i style={{ width: `${((index + 1) / total) * 100}%` }} /><span>目前辨認 {score}</span></div>
-      <section className={`trial-question choice-question ${mode === "image" ? "image-question" : ""} ${sealed ? "is-sealed" : ""}`}>
+      {townEntry && <p className="trial-entry-scope">{total === 1 ? '小鎮選字入口 · 本輪一字一題' : `整單元範圍 · 本輪 ${total} 題`} · <Link to="/textbook/LV1/1">到課本選整單元範圍 →</Link></p>}
+      <section className={`trial-question choice-question ${mode === "image" ? "image-question" : ""}`}>
         <ExamTierBadge tier={priorityByWord.get(question.target.word)} compact />
         <WordTraitBadges senseCount={senseCountByWord.get(question.target.word)} hasConfusables={confusableWords.has(question.target.word)} hasMorphemes={morphemeWords.has(question.target.word)} compact />
         {mode === "image" && targetAsset ? <><ResilientBeastImage className="trial-wordbeast-clue" src={targetAsset} word={question.target.word} alt="待辨認的字獸圖卡" />{imageClue && <ImageChineseClue word={question.target} clue={imageClue} />}</> : <h2 className={mode === "w2m" ? "word-prompt" : "meaning-prompt"}>{prompt}{mode === "w2m" && <SpeakerButton text={question.target.word} className="trial-speaker" />}</h2>}
         <p className="trial-prompt-sub">{mode === "image" ? imageClue ? "依圖片與中文提示選出英文單字" : "依圖片選出英文單字" : promptSub}</p>
-        {sealed && (
-          <div className="trial-binding" role="status" aria-live="polite">
-            <div className="trial-binding-mark" aria-hidden="true">✓</div>
-            <p><b>答案確認</b><span>已記錄</span></p>
-          </div>
-        )}
       </section>
-      <div className="trial-options">
-        {question.options.map((option, optionIndex) => <button key={option.word} className={optionState(option)} disabled={saving || answered !== null} onClick={() => pick(option)}><b>{String.fromCharCode(65 + optionIndex)}</b><span>{mode === "w2m" ? option.meaningZh : option.word}</span><i /></button>)}
+      <p className="trial-pick-instruction" id="trial-pick-instruction">點一次選取，再點同一選項送出。換選項先只選取。</p>
+      <div className="trial-options" role="group" aria-label="答案選項">
+        {question.options.map((option, optionIndex) => <button key={option.word} className={selectedChoice === option.word ? 'selected' : ''} aria-pressed={selectedChoice === option.word} aria-describedby="trial-pick-instruction" disabled={saving} onClick={() => pick(option)}><b>{String.fromCharCode(65 + optionIndex)}</b><span>{mode === "w2m" ? option.meaningZh : option.word}</span><i /></button>)}
       </div>
       {saveError && <p role="alert">{saveError}</p>}
-      {answered === RESTORED_WRONG_ANSWER && <p role="status">先前這題答錯，紀錄已保存；以下顯示正確答案。</p>}
-      {answered !== null && townLink}
-      {answered !== null && <button className="trial-next" onClick={() => { setIndex((current) => current + 1); setAnswered(null); }}>下一個單字<span>→</span></button>}
+      {saving && <p role="status">正在保存答案…</p>}
     </div>
   );
 }

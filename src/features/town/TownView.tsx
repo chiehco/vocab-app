@@ -36,6 +36,7 @@ export default function TownView({ level, unit, rows, sibling, due, onPractice, 
     <p className="town-subtle">{built === 0 ? '選一個單字開始練習，答案保存後，這個字的小屋就會落成。答錯也算；只看字卡或聽發音不會蓋屋。' : '逛逛城鎮，點小屋看看單字。'}</p>
     {resume ? <Link className="town-primary town-practice-entry" to={resume.to} state={resume.state}>繼續本輪練習 →</Link>
       : next && <button className="town-primary town-practice-entry" disabled={busy} onClick={() => void practice(next.id)}>{busy ? '正在開啟練習…' : built === 0 ? '開始蓋第一間小屋 →' : '繼續練單字 →'}</button>}
+    <p className="town-subtle">小鎮選字入口每次練一字一題。<Link to={`/textbook/${level}/${unit}`}>到課本選整單元範圍 →</Link></p>
     {error && <p role="alert" className="town-error">{error}</p>}
     <div className="town-summary"><span><strong>{built}</strong>／{rows.length} 棟小屋</span><span>已練過 {built} 字</span></div>
     <progress className="town-meter" value={built} max={rows.length} aria-label={`已完成練習 ${built} 個字，共 ${rows.length} 個`} />
