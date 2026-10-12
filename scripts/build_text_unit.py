@@ -7,6 +7,7 @@ ROOT = Path(__file__).resolve().parent.parent
 
 
 def build(source_path: Path, output_path: Path) -> dict:
+    source_path, output_path = source_path.resolve(), output_path.resolve()
     source = json.loads(source_path.read_text(encoding="utf-8"))
     words = {w["wordId"]: w for w in json.loads((ROOT / "public/data/v1/words.json").read_text(encoding="utf-8"))}
     level, unit = source["level"], source["unit"]
