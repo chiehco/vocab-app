@@ -27,8 +27,9 @@ it("啟動包收錄 LV3 U1/U2 與 U4–U10 文字版，保留 S+A、LV4 reviewed
   const expected = new Set(read<{ wordId: string; priorityTier: string }[]>(data + "exam_priority.json")
     .filter(row => ["S", "A"].includes(row.priorityTier)).map(row => row.wordId));
   for (const file of readdirSync(direct).filter(name => /^curriculumLV4Unit.*\.json$/.test(name))) {
+    const textOnly = read<{ template: { deliveryMode?: string } }>(direct + file).template.deliveryMode === 'text_only';
     for (const item of items(file)) {
-      if (item.kind === "vocabulary" && item.officialWordId && item.review === "content_reviewed" && item.illustration) {
+      if (item.kind === "vocabulary" && item.officialWordId && (textOnly || item.review === "content_reviewed" && item.illustration)) {
         expected.add(item.officialWordId);
       }
     }

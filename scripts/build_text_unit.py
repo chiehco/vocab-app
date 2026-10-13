@@ -26,28 +26,29 @@ def build(source_path: Path, output_path: Path) -> dict:
         if word_id and (official is None or official["word"] != row["officialWord"]):
             raise ValueError(f"Invalid existing word mapping: {row['word']} / {word_id}")
         is_headword = index <= len(ordered)
-        meaning = row["chapterMeaningsZh"] if is_headword else official["meaningZh"] if official else "教材補充詞；義項待核對。"
+        source_meaning = row["chapterMeaningsZh"] if is_headword else row.get("chapterMeaningsZh")
+        meaning = source_meaning if source_meaning else official["meaningZh"] if official else "教材補充詞；義項待核對。"
         items.append({
             "learningItemId": f"{prefix}-V{index:03d}", "kind": "vocabulary",
             "displayWord": row["word"], "lexemeRef": word_id or row["word"],
             "officialWordId": word_id, "officialSenseId": None,
-            "sensePos": row["sourcePos"] if is_headword else official["pos"] if official else "",
+            "sensePos": row.get("sourcePos") if source_meaning else official["pos"] if official else "",
             "targetMeaningZh": meaning, "chapterMeaningsZh": meaning,
             "sourcePage": row["sourcePage"], "printedNumber": row.get("printedNumber"),
             "sourceRole": row["role"], "printedLabel": row.get("printedLabel", ""),
-            "meaningSource": "textbook_transcription" if is_headword else "existing_dictionary" if official else "unmapped_supplement",
+            "meaningSource": "textbook_transcription" if source_meaning else "existing_dictionary" if official else "unmapped_supplement",
             "review": "source_checked_text_only", "practiceMode": "read_only",
         })
     for index, row in enumerate(source["usage"], 1):
         items.append({
             "learningItemId": f"{prefix}-G{index:03d}", "kind": "grammar",
             "sourcePage": row["sourcePage"], "pattern": row["label"],
-            "explanationZh": "教材用法標記；例句與教材題目尚未提供。",
+            "explanationZh": row.get("explanationZh") or "教材用法標記；例句與教材題目尚未提供。",
             "review": "source_checked_text_only", "practiceMode": "read_only",
         })
     pack = {
         "template": {"templateId": f"TEXTBOOK-{level}-U{unit:02d}", "level": level, "unit": unit,
-                     "title": f"{level} Unit {unit}", "revision": "20261011-text-1", "deliveryMode": "text_only",
+                     "title": f"{level} Unit {unit}", "revision": source.get("revision", "20261011-text-1"), "deliveryMode": "text_only",
                      "sourcePages": source["sourcePages"], "sourceManifest": str(source_path.relative_to(ROOT)).replace("\\", "/")},
         "learningItems": items, "questions": [], "relatedNotes": [],
     }
