@@ -10,6 +10,8 @@ import lv3Unit10 from './curriculumLV3Unit10.json';
 import curriculum from './curriculum.json';
 import lv4Unit1 from './curriculumLV4Unit1.json';
 import lv4Unit2 from './curriculumLV4Unit2.json';
+import lv4Unit3 from './curriculumLV4Unit3.json';
+import lv4Unit4 from './curriculumLV4Unit4.json';
 import lv4Unit17 from './curriculumLV4Unit17.json';
 import lv4Unit18 from './curriculumLV4Unit18.json';
 import lv4Unit19 from './curriculumLV4Unit19.json';
@@ -46,6 +48,8 @@ export const curriculumUnits: CurriculumUnit[] = [
   { templateId: lv3Unit10.template.templateId, revision: lv3Unit10.template.revision, level: 'LV3', unit: 10, name: lv3Unit10.template.title, items: lv3Unit10.learningItems as LearningItem[], questions: lv3Unit10.questions, relatedNotes: [], deliveryMode: 'text_only' },
   { templateId: lv4Unit1.template.templateId, revision: lv4Unit1.template.revision, level: 'LV4', unit: 1, name: lv4Unit1.template.title, items: lv4Unit1.learningItems as LearningItem[], questions: lv4Unit1.questions, relatedNotes: [], deliveryMode: 'text_only' },
   { templateId: lv4Unit2.template.templateId, revision: lv4Unit2.template.revision, level: 'LV4', unit: 2, name: lv4Unit2.template.title, items: lv4Unit2.learningItems as LearningItem[], questions: lv4Unit2.questions, relatedNotes: [], deliveryMode: 'text_only' },
+  { templateId: lv4Unit3.template.templateId, revision: lv4Unit3.template.revision, level: 'LV4', unit: 3, name: lv4Unit3.template.title, items: lv4Unit3.learningItems as LearningItem[], questions: lv4Unit3.questions, relatedNotes: [], deliveryMode: 'text_only' },
+  { templateId: lv4Unit4.template.templateId, revision: lv4Unit4.template.revision, level: 'LV4', unit: 4, name: lv4Unit4.template.title, items: lv4Unit4.learningItems as LearningItem[], questions: lv4Unit4.questions, relatedNotes: [], deliveryMode: 'text_only' },
   { templateId: lv4Unit17.template.templateId, revision: lv4Unit17.template.revision, level: 'LV4', unit: 17, name: lv4Unit17.template.title, items: lv4Unit17.learningItems as LearningItem[], questions: lv4Unit17.questions, relatedNotes: lv4Unit17.relatedNotes },
   { templateId: lv4Unit18.template.templateId, revision: lv4Unit18.template.revision, level: 'LV4', unit: 18, name: lv4Unit18.template.title, items: lv4Unit18.learningItems as LearningItem[], questions: lv4Unit18.questions, relatedNotes: lv4Unit18.relatedNotes },
   { templateId: lv4Unit19.template.templateId, revision: lv4Unit19.template.revision, level: 'LV4', unit: 19, name: lv4Unit19.template.title, items: lv4Unit19.learningItems as LearningItem[], questions: lv4Unit19.questions, relatedNotes: lv4Unit19.relatedNotes },
