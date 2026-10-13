@@ -9,7 +9,7 @@
 - 真实照片：`C:/Users/USER/Downloads/Mobile Devices/LV1/LV4/`。較短的 `Downloads/Mobile Devices/LV4/` 曾混入 LV3 照片，不作冊別依據。
 - 原文字初稿：`C:/Users/USER/OneDrive/桌面/單字APP/書頁快抽/書頁快抽_p*_Terra初稿.md`；狀態原為 raw_capture，本輪以照片重新核對已採用範圍。
 - LV4 全頁整理原件：`C:/Users/USER/OneDrive/文件/萬詞譜/outputs/019ffcec-79df-7700-8ec1-e57bc07bd9c0/`。其匯入稽核涵蓋 p.1–266、975 主詞列、603 note 列、647 關聯列，記錄無缺少頁面區塊；這是既有稽核結果，不冒充本輪已目視所有 266 頁。
-- 本輪已目視 p.1–21 的可讀照片、p.19 補拍、p.23–66 U3–U6全文與p67的U7起點。p.10、p54為Notes，手寫字未採用。p61損毀時間檔改用同資料夾已核對的 `補拍_P.61.jpg`。p.22 照片原已損毀／不存在，既有原件 `書頁快抽_p021-025_Terra初稿.md` 與 `母表合併前置/全冊_缺頁與補拍清單.md` 明記使用者確認該頁無內容；本輪未猜補正文。
+- 已產出文字教材的範圍為p1–21可讀照片、p19補拍及p23–90全文，下一界p91已核對。p10、p54、p78為Notes，手寫字未採用。p61、p70、p89損毀時間檔改用同資料夾已核對的補拍。p22照片原已損毀／不存在，既有原件 `書頁快抽_p021-025_Terra初稿.md` 與 `母表合併前置/全冊_缺頁與補拍清單.md` 明記使用者確認該頁無內容；未猜補正文。
 - 9/26 的 LV4 Markdown 依母表 level／字母排序，明示沒有完整 Unit 對照；不能作教材單元劃分。
 
 ## 首批與後續順序
@@ -20,9 +20,11 @@
 | 2 | 已推送文字候選，父任務獨立QA | 11–21；22 無內容的既有確認；23 U3 起點 | 46（30 編號＋16 無編號） | 81 | 37 |
 | 3 | 已推送文字候選，父任務獨立QA | 23–32；33 U4 起點 | 46（28編號＋18無編號） | 60 | 40 |
 | 4 | 已推送文字候選，父任務獨立QA | 33–42；43 U5 起點 | 46（25編號＋21無編號） | 77 | 43 |
-| 5 | 第三批文字候選 | 43–53；54 Notes；55 U6起點 | 46（33編號＋13無編號） | 88 | 43 |
-| 6 | 第三批文字候選 | 55–66；67 U7起點 | 46（27編號＋19無編號） | 71 | 50 |
-| 7–16 | 待依序逐頁重核；每批兩單元 | 本輪尚未驗完後續全部分界 | — | — | — |
+| 5 | 已推送文字候選，父任務獨立QA | 43–53；54 Notes；55 U6起點 | 46（33編號＋13無編號） | 88 | 43 |
+| 6 | 已推送文字候選，父任務獨立QA | 55–66；67 U7起點 | 46（27編號＋19無編號） | 71 | 50 |
+| 7 | 第四批文字候選 | 67–77；78 Notes；79 U8起點 | 46（32編號＋14無編號） | 72 | 48 |
+| 8 | 第四批文字候選 | 79–90；91 U9起點 | 46（35編號＋11無編號） | 75 | 54 |
+| 9–16 | 待依序逐頁重核；每批兩單元 | 本輪尚未驗完後續全部分界 | — | — | — |
 | 17–20 | 已在主線上線，保留 | 依既有來源／核准包 | — | — | — |
 | 21 以後 | 待依原件確認單元數與分界再續作 | 不由資料夾名稱或固定字数猜測 | — | — | — |
 
@@ -32,7 +34,7 @@
 
 - `scripts/build_text_unit.py`：新來源若提供逐頁核對的補充詞義／詞性及用法中文，保留原件文字；既有無此欄位的來源仍沿用既有字典／待核對退回行為。revision 可由來源指定。沒有重產或改寫 LV3 單元。
 - `scripts/build_sa_pack.py`：LV4 的 `text_only` 單元纳入既有正式 ID；既有 U17–20 仍須 content_reviewed＋illustration。只重建本分支啟動包，交父任务集中整合時需由合併後所有單元重建。
-- `src/features/direct/model.ts`：第一批新增U1／U2，第二批新增U3／U4，第三批新增U5／U6；既有題目與revision不变。
+- `src/features/direct/model.ts`：各批依序新增U1–U8；既有題目與revision不变。
 - `src/db/saPack.test.ts`：驗收期望包含 LV4 text_only 對應詞。
 
 本分支不得合併／部署；PR 與集中整合由父任务協調。母表、正式 words.json、SRS、進度資料庫 schema、小鎮／金幣程式与其他工作樹未改。
@@ -40,3 +42,5 @@
 首批固定commit `03bd97ab14e7a2df30b843bdd4ad8996a10ec5b4`，分支 `draft/lv4-u1-u2-textbook`，exact-head CI [38477589199](https://github.com/chiehco/vocab-app/actions/runs/38477589199) success。第二批以此commit為基底，分支 `draft/lv4-u3-u4-textbook`，詳見 `lv4-unit3-4-textbook-20261014.md`。集中整合時不能以單一批啟動包覆蓋其他工作線，須依整合後教材重產。
 
 第二批固定commit `28caaf562d45cff1b3cf83726a15fa2935634e69`，exact-head CI [38480857370](https://github.com/chiehco/vocab-app/actions/runs/38480857370) success。第三批以此commit為基底，分支 `draft/lv4-u5-u6-textbook`，詳見 `lv4-unit5-6-textbook-20261014.md`。
+
+第三批固定commit `2709621707b5e4d90ab808f203a839f556509d54`，exact-head CI [38482854567](https://github.com/chiehco/vocab-app/actions/runs/38482854567) success。第四批以此commit為基底，分支 `draft/lv4-u7-u8-textbook`，詳見 `lv4-unit7-8-textbook-20261014.md`。
