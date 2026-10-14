@@ -20,6 +20,13 @@ def build(source_path: Path, output_path: Path) -> dict:
         raise ValueError("Headword order does not cover every printed occurrence")
     rows = ordered + source["related"]
     items = []
+    assigned_ids = set()
+    def item_id(row, fallback):
+        value = row.get("learningItemId", fallback)
+        if not value.startswith(prefix + "-") or value in assigned_ids:
+            raise ValueError(f"Invalid or duplicate learning item ID: {value}")
+        assigned_ids.add(value)
+        return value
     for index, row in enumerate(rows, 1):
         word_id = row["officialWordId"]
         official = words.get(word_id) if word_id else None
@@ -29,7 +36,7 @@ def build(source_path: Path, output_path: Path) -> dict:
         source_meaning = row["chapterMeaningsZh"] if is_headword else row.get("chapterMeaningsZh")
         meaning = source_meaning if source_meaning else official["meaningZh"] if official else "教材補充詞；義項待核對。"
         items.append({
-            "learningItemId": f"{prefix}-V{index:03d}", "kind": "vocabulary",
+            "learningItemId": item_id(row, f"{prefix}-V{index:03d}"), "kind": "vocabulary",
             "displayWord": row["word"], "lexemeRef": word_id or row["word"],
             "officialWordId": word_id, "officialSenseId": None,
             "sensePos": row.get("sourcePos") if source_meaning else official["pos"] if official else "",
@@ -41,7 +48,7 @@ def build(source_path: Path, output_path: Path) -> dict:
         })
     for index, row in enumerate(source["usage"], 1):
         items.append({
-            "learningItemId": f"{prefix}-G{index:03d}", "kind": "grammar",
+            "learningItemId": item_id(row, f"{prefix}-G{index:03d}"), "kind": "grammar",
             "sourcePage": row["sourcePage"], "pattern": row["label"],
             "explanationZh": row.get("explanationZh") or "教材用法標記；例句與教材題目尚未提供。",
             "review": "source_checked_text_only", "practiceMode": "read_only",

@@ -9,15 +9,15 @@
 - 真实照片：`C:/Users/USER/Downloads/Mobile Devices/LV1/LV4/`。較短的 `Downloads/Mobile Devices/LV4/` 曾混入 LV3 照片，不作冊別依據。
 - 原文字初稿：`C:/Users/USER/OneDrive/桌面/單字APP/書頁快抽/書頁快抽_p*_Terra初稿.md`；狀態原為 raw_capture，本輪以照片重新核對已採用範圍。
 - LV4 全頁整理原件：`C:/Users/USER/OneDrive/文件/萬詞譜/outputs/019ffcec-79df-7700-8ec1-e57bc07bd9c0/`。其匯入稽核涵蓋 p.1–266、975 主詞列、603 note 列、647 關聯列，記錄無缺少頁面區塊；這是既有稽核結果，不冒充本輪已目視所有 266 頁。
-- 已產出文字教材的範圍為p1–21可讀照片、p19補拍及p23–111全文，下一界p113已核對。p10、p54、p78、p112為Notes，手寫字未採用。p61、p70、p89損毀時間檔改用同資料夾已核對的補拍。p22照片原已損毀／不存在，既有原件 `書頁快抽_p021-025_Terra初稿.md` 與 `母表合併前置/全冊_缺頁與補拍清單.md` 明記使用者確認該頁無內容；未猜補正文。
+- 已產出文字教材的範圍為p1–21可讀照片、p19補拍及p23–111全文，下一界p113已核對。p10、p54、p78、p112為Notes，手寫字未採用。p61、p70、p89損毀時間檔改用同資料夾已核對的補拍。p22照片原已損毀／不存在，既有原件記述使用者確認無內容，但沒有可追溯用戶原文，來源狀態維持pending；依父指示不阻塞其他單元。
 - 9/26 的 LV4 Markdown 依母表 level／字母排序，明示沒有完整 Unit 對照；不能作教材單元劃分。
 
 ## 首批與後續順序
 
 | Unit | 本輪狀態 | 已確認頁範圍 | 主詞 | 補充詞 | 用法 |
 |---|---|---|---:|---:|---:|
-| 1 | 已推送文字候選，父任務獨立QA | 1–9；10 Notes；11 U2 起點 | 45（23 編號＋22 無編號） | 56 | 32 |
-| 2 | 已推送文字候選，父任務獨立QA | 11–21；22 無內容的既有確認；23 U3 起點 | 46（30 編號＋16 無編號） | 81 | 37 |
+| 1 | 首批QA修補已納入本分支 | 1–9；10 Notes；11 U2 起點 | 46（23 編號＋23 無編號） | 56 | 33 |
+| 2 | 首批QA修補已納入；p22證據pending | 11–21；22缺完整照片／可追溯原話；23 U3 起點 | 46（30 編號＋16 無編號） | 81 | 37 |
 | 3 | 已推送文字候選，父任務獨立QA | 23–32；33 U4 起點 | 46（28編號＋18無編號） | 60 | 40 |
 | 4 | 已推送文字候選，父任務獨立QA | 33–42；43 U5 起點 | 46（25編號＋21無編號） | 77 | 43 |
 | 5 | 已推送文字候選，父任務獨立QA | 43–53；54 Notes；55 U6起點 | 46（33編號＋13無編號） | 88 | 43 |
@@ -35,6 +35,7 @@
 ## 共用程式變更交集中驗收
 
 - `scripts/build_text_unit.py`：新來源若提供逐頁核對的補充詞義／詞性及用法中文，保留原件文字；既有無此欄位的來源仍沿用既有字典／待核對退回行為。revision 可由來源指定。沒有重產或改寫 LV3 單元。
+- 首批QA修補的可選来源learningItemId已納入，新增項目時保留原首批全部ID；既有未提供此欄位的來源產生方式維持不變。
 - `scripts/build_sa_pack.py`：LV4 的 `text_only` 單元纳入既有正式 ID；既有 U17–20 仍須 content_reviewed＋illustration。只重建本分支啟動包，交父任务集中整合時需由合併後所有單元重建。
 - `src/features/direct/model.ts`：各批依序新增U1–U10；既有題目與revision不变。
 - `src/db/saPack.test.ts`：驗收期望包含 LV4 text_only 對應詞。
@@ -48,3 +49,5 @@
 第三批固定commit `2709621707b5e4d90ab808f203a839f556509d54`，exact-head CI [38482854567](https://github.com/chiehco/vocab-app/actions/runs/38482854567) success。第四批以此commit為基底，分支 `draft/lv4-u7-u8-textbook`，詳見 `lv4-unit7-8-textbook-20261014.md`。
 
 第四批固定commit `539a524764f505e385c983001e9b75c47455eeb6`，exact-head CI [38484615154](https://github.com/chiehco/vocab-app/actions/runs/38484615154) success。第五批以此commit為基底，分支 `draft/lv4-u9-u10-textbook`，詳見 `lv4-unit9-10-textbook-20261014.md`。
+
+第五批固定commit `772bd4de57ec539af8d0f666d5b6d18e1ae4684b`，exact-head CI [38486407422](https://github.com/chiehco/vocab-app/actions/runs/38486407422) success。第六批 `draft/lv4-u11-u12-textbook` 從第五批建立，另外cherry-pick首批QA修補 `c301a0b0fd010f9b68828c66836075e17a5e516e`；僅此清單有文字衝突，已保留U3–U10紀錄並採用修補後U1數量與p22 pending。既有U3–U10候選不改寫、不force-push。最終整合必須納入首批修補；後批會以此依賴持續前進。
