@@ -23,6 +23,8 @@ import lv5Unit9 from './curriculumLV5Unit9.json';
 import lv5Unit10 from './curriculumLV5Unit10.json';
 import lv5Unit11 from './curriculumLV5Unit11.json';
 import lv5Unit12 from './curriculumLV5Unit12.json';
+import lv5Unit13 from './curriculumLV5Unit13.json';
+import lv5Unit14 from './curriculumLV5Unit14.json';
 import questions from './questions.json';
 import grammarQuestions from './grammarQuestions.json';
 import practiceVariants from './practiceVariantsLV4Unit17.json';
@@ -68,6 +70,8 @@ export const curriculumUnits: CurriculumUnit[] = [
   { templateId: lv5Unit10.template.templateId, revision: lv5Unit10.template.revision, level: 'LV5', unit: 10, name: lv5Unit10.template.title, items: lv5Unit10.learningItems as LearningItem[], questions: lv5Unit10.questions, relatedNotes: [], deliveryMode: 'text_only' },
   { templateId: lv5Unit11.template.templateId, revision: lv5Unit11.template.revision, level: 'LV5', unit: 11, name: lv5Unit11.template.title, items: lv5Unit11.learningItems as LearningItem[], questions: lv5Unit11.questions, relatedNotes: [], deliveryMode: 'text_only' },
   { templateId: lv5Unit12.template.templateId, revision: lv5Unit12.template.revision, level: 'LV5', unit: 12, name: lv5Unit12.template.title, items: lv5Unit12.learningItems as LearningItem[], questions: lv5Unit12.questions, relatedNotes: [], deliveryMode: 'text_only' },
+  { templateId: lv5Unit13.template.templateId, revision: lv5Unit13.template.revision, level: 'LV5', unit: 13, name: lv5Unit13.template.title, items: lv5Unit13.learningItems as LearningItem[], questions: lv5Unit13.questions, relatedNotes: [], deliveryMode: 'text_only' },
+  { templateId: lv5Unit14.template.templateId, revision: lv5Unit14.template.revision, level: 'LV5', unit: 14, name: lv5Unit14.template.title, items: lv5Unit14.learningItems as LearningItem[], questions: lv5Unit14.questions, relatedNotes: [], deliveryMode: 'text_only' },
 ];
 export type UnitKey = number | string;
 export function findUnit(key: UnitKey, level?: string): CurriculumUnit | undefined {
