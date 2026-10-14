@@ -1,4 +1,5 @@
 import { curriculumUnits } from '../direct/model';
+import { isUnitPublished } from './unitReleasePolicy';
 import { lv1ReviewedGroups } from '../direct/lv1ReviewedGroups';
 
 /**
@@ -36,7 +37,7 @@ export interface TextbookUnit {
 export const textbookUnits: TextbookUnit[] = [
   ...lv1ReviewedGroups.map(u => ({ track: '7000' as const, publisher: 'ivy', volume: 'LV1', level: 'LV1', unit: u.unit,
     name: `LV1 Unit ${String(u.unit).padStart(2,'0')}`, count: u.pairCount, usageCount: 0, partial: true, wordIds: u.wordIds })),
-  ...curriculumUnits.map(u => ({ track: '7000' as const, publisher: 'ivy', volume: u.level, level: u.level, unit: u.unit, name: u.name,
+  ...curriculumUnits.filter(u => isUnitPublished(u.level, u.unit)).map(u => ({ track: '7000' as const, publisher: 'ivy', volume: u.level, level: u.level, unit: u.unit, name: u.name,
     count: u.items.filter(i => i.kind === 'vocabulary').length,
     usageCount: u.items.filter(i => i.kind !== 'vocabulary').length, partial: false,
     wordIds: [...new Set(u.items.flatMap(i => i.kind === 'vocabulary' && i.officialWordId ? [i.officialWordId] : []))] })),

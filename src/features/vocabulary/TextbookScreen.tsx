@@ -7,6 +7,7 @@ import { addLV1ReviewedGroups } from '../direct/lv1ReviewedGroups';
 import { saveGroup, startScopeSession } from '../direct/store';
 import { saveWordList } from '../modes/wordLists';
 import { practiceIds } from './model';
+import { unitReleaseHold } from './unitReleasePolicy';
 import { publisherName, resolveTextbookScope, unitRanges, textbookPath, trackInfo, unitsFor, unitTitle, type TextbookScope, type TextbookUnit } from './textbookCatalog';
 import { ScopePicker, UnitTiles } from '../../components/ScopePicker';
 import '../modes/learning-home.css';
@@ -29,6 +30,7 @@ export default function TextbookScreen() {
   const navigate = useNavigate();
   const scope = resolveTextbookScope({ track: params.get('track'), publisher: params.get('pub'), volume: route.level ?? params.get('level') });
   const units = scope ? unitsFor(scope) : [];
+  const hold = unitReleaseHold(route.level, Number(route.unit));
   const chosen = route.unit && scope?.volume === route.level ? units.find(u => u.unit === Number(route.unit)) : undefined;
   const textOnly = chosen && findUnit(chosen.unit, chosen.level)?.deliveryMode === 'text_only';
   const listPath = scope ? `/textbook?${scopeQuery(scope)}` : '/textbook';
@@ -67,7 +69,7 @@ export default function TextbookScreen() {
 
   return <div className="learning-page">
     <header className="learning-header"><Link to={route.unit ? listPath : '/'}>← {route.unit ? '選單元' : '首頁'}</Link><Link to="/modes/words">全部單字</Link></header>
-    {route.unit ? !chosen ? <><h1>找不到這個單元</h1><Link className="learning-primary" to={listPath}>選單元</Link></> : <>
+    {route.unit ? hold ? <section aria-label="來源待補"><h1>來源待補</h1><p role="status">{hold.message}</p><Link className="learning-primary" to={listPath}>返回選單元</Link></section> : !chosen ? <><h1>找不到這個單元</h1><Link className="learning-primary" to={listPath}>選單元</Link></> : <>
       <p className="learning-muted">{publisherName(chosen.publisher)} {trackInfo(chosen.track).label} · {chosen.volume}</p><h1>{unitTitle(chosen)}</h1>
       <section className="learning-start textbook-unit-card" aria-label="開始這個單元">
         <div className="learning-meta"><span>{chosen.count} {chosen.partial ? '組圖句' : '個詞彙'}</span>{chosen.usageCount > 0 && <span>{chosen.usageCount} 項用法</span>}</div>

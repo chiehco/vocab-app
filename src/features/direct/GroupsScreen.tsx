@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { progressDb } from '../../db/progressDb';
-import { learningItems, templateGroup } from './model';
+import { curriculumUnits, findUnit, learningItems, templateGroup } from './model';
+import { isUnitPublished, unitReleaseHold } from '../vocabulary/unitReleasePolicy';
 import type { CustomGroup } from './model';
 import { deleteGroup, getOrCreateTemplateGroup, restoreGroup, saveGroup, startGroupSession } from './store';
 import './direct.css';
@@ -35,6 +36,9 @@ export default function GroupsScreen() {
   const [editing,setEditing] = useState(false);
   const [unitScope,setUnitScope] = useState<TextbookScope | undefined>(() => resolveTextbookScope({}));
   const g = groups?.find(g => g.id === selected);
+  const retainedUnit = g?.templateId ? findUnit(g.templateId) : undefined;
+  const hold = retainedUnit && unitReleaseHold(retainedUnit.level, retainedUnit.unit);
+  const heldItemIds = new Set(curriculumUnits.filter(u => !isUnitPublished(u.level,u.unit)).flatMap(u => u.items.map(i => i.learningItemId)));
   // Unit 項目對到主表的字也算進去，遊戲與測驗都用這份範圍
   const scopeWords = g ? resolveGroupWords(g, words ?? []) : [];
   const groupItems = g ? learningItems.filter(i => g.itemIds.includes(i.learningItemId)) : [];
@@ -61,7 +65,7 @@ export default function GroupsScreen() {
   async function save(group: CustomGroup, select = true) { setBusy(true); setError(''); try { await saveGroup(group); if(select && group.id!==selected) open(group.id); } catch { setError('未能儲存。名稱不可空白，請重試。'); } finally { setBusy(false); } }
   /** 從單元建立：已建立的模板直接開啟，不重複新增或覆蓋個人編輯。 */
   async function addUnit(unit: TextbookUnit) {
-    if (busy) return;
+    if (busy || !isUnitPublished(unit.level,unit.unit)) return;
     setBusy(true); setError(''); setNotice('');
     try {
       if (unit.partial) {
@@ -87,7 +91,7 @@ export default function GroupsScreen() {
   }
   function move(index:number,delta:number) { if (!g) return; const ids=[...g.itemIds]; [ids[index],ids[index+delta]]=[ids[index+delta],ids[index]]; void save({...g,itemIds:ids}); }
   function moveWord(index:number,delta:number) { if (!g?.wordIds) return; const ids=[...g.wordIds]; [ids[index],ids[index+delta]]=[ids[index+delta],ids[index]]; void save({...g,wordIds:ids}); }
-  const available = learningItems.filter(i => !g?.itemIds.includes(i.learningItemId) && `${i.displayWord ?? i.pattern} ${i.targetMeaningZh ?? i.explanationZh}`.toLowerCase().includes(query.toLowerCase()));
+  const available = learningItems.filter(i => !heldItemIds.has(i.learningItemId) && !g?.itemIds.includes(i.learningItemId) && `${i.displayWord ?? i.pattern} ${i.targetMeaningZh ?? i.explanationZh}`.toLowerCase().includes(query.toLowerCase()));
   const status = <>{error && <p role="alert">{error}</p>}{notice && <p role="status">{notice}</p>}
     {deleted && <button disabled={busy} onClick={()=>void undoDelete()}>復原刪除「{deleted.name}」</button>}</>;
 
@@ -100,6 +104,7 @@ export default function GroupsScreen() {
     <nav><Link to="/groups">← 所有群組</Link><button type="button" className="groups-edit-toggle" aria-pressed={editing} onClick={()=>setEditing(!editing)}>{editing?'完成':'編輯'}</button></nav>
     <header className="groups-hero">
       <h1>{g.name}</h1>
+      {hold && <p role="status" className="direct-muted">{hold.message} 已有群組內容與排序保留。</p>}
       <p className="direct-muted">{groupSize(g)} 項{scopeWords.length !== groupSize(g) && ` · ${scopeWords.length} 張可用字卡`}</p>
       {lv1ReviewedGroups.filter(unit=>unit.templateId===g.templateId).map(unit=><p key={unit.templateId} className="direct-muted"><a href={`${import.meta.env.BASE_URL}${unit.galleryPath}`}>查看這個 Unit 的 {unit.pairCount} 組已審閱圖句{unit.supplements.length > 0 && `（含 ${unit.supplements.length} 個補充詞）`}</a></p>)}
       {scopeWords[0] && <Link className="groups-primary" to={`/word/${scopeWords[0].wordId}?group=${encodeURIComponent(g.id)}`}>依序看字卡</Link>}
@@ -138,7 +143,7 @@ export default function GroupsScreen() {
       <h2>加入學習項目</h2><label>搜尋單字或文法<input value={query} onChange={e=>setQuery(e.target.value)} /></label>
       {!!query.trim() && <>{(words ?? []).filter(w=>!g.wordIds?.includes(w.wordId) && `${w.word} ${w.meaningZh}`.toLowerCase().includes(query.trim().toLowerCase())).slice(0,30).map(w=><div className="direct-option-row" key={w.wordId}><span>{w.word} {w.meaningZh}</span><button disabled={busy} onClick={()=>void save({...g,wordIds:[...(g.wordIds ?? []),w.wordId]})}>加入字卡</button></div>)}</>}
       <p className="direct-muted">另可加入已審核的教材單字與文法練習。</p>
-      {available.slice(0,30).map(i=><div className="direct-option-row" key={i.learningItemId}><span>{i.displayWord ?? i.pattern} {i.targetMeaningZh}</span><button disabled={busy} onClick={()=>void save({...g,itemIds:[...g.itemIds,i.learningItemId]})}>加入</button></div>)}
+      {available.slice(0,30).map(i=><div className="direct-option-row" key={i.learningItemId} data-learning-item-id={i.learningItemId}><span>{i.displayWord ?? i.pattern} {i.targetMeaningZh}</span><button disabled={busy} onClick={()=>void save({...g,itemIds:[...g.itemIds,i.learningItemId]})}>加入</button></div>)}
       {available.length>30 && <p>另有 {available.length-30} 項，請輸入關鍵字縮小範圍。</p>}
       <button className="group-delete" disabled={busy} onClick={()=>void remove()}>刪除此群組</button>
     </section>}
