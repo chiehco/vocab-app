@@ -21,7 +21,7 @@ beforeEach(async () => {
 });
 afterEach(() => vi.unstubAllGlobals());
 
-for (const [source, count, usageCount, mappedCount] of [[source1, 101, 32, 83], [source2, 127, 37, 102]] as const) {
+for (const [source, count, usageCount, mappedCount] of [[source1, 102, 33, 83], [source2, 127, 37, 102]] as const) {
   const unit = findUnit(source.unit, 'LV4')!;
   const vocabulary = unit.items.filter(i => i.kind === 'vocabulary');
   const rows = [...source.headwords, ...source.related];
@@ -79,6 +79,25 @@ it('uses printed boundaries and independent unnumbered heads instead of the inco
   expect(source1.boundaryEvidence.nextUnitPage).toBe(11);
   expect(source2.boundaryEvidence.nextUnitPage).toBe(23);
   expect(findUnit(2, 'LV4')!.items.find(i => i.displayWord === 'yellow')).toMatchObject({sensePos:'adj.',targetMeaningZh:'膽小的'});
+});
+
+it('preserves the separate p5 research frames, printed century note and p19 atmosphere meaning', () => {
+  const unit1 = findUnit(1, 'LV4')!;
+  const research = unit1.items.filter(i => i.displayWord === 'research');
+  expect(research).toHaveLength(2);
+  expect(source1.headwords.filter(i => i.word === 'research').map(i => i.printedNumber)).toEqual([12, null]);
+  expect(research.map(i => [i.sourcePage, i.sourceRole, i.sensePos, i.chapterMeaningsZh, i.officialWordId]))
+    .toEqual([[5, 'main', 'n.', '研究（不可數）', 'W003843'], [5, 'unnumbered_headword', 'vt.', '研究', 'W003843']]);
+  expect(research[0].learningItemId).not.toBe(research[1].learningItemId);
+  expect(research[1].learningItemId).toBe('LI-LV4U01-V102');
+  expect(groupWordIds(templateGroup(unit1.templateId)).filter(id => id === 'W003843')).toHaveLength(1);
+  const century = unit1.items.find(i => i.pattern === 'the 1500s')!;
+  expect(century).toMatchObject({ learningItemId: 'LI-LV4U01-G033', kind: 'grammar', sourcePage: 5, explanationZh: '16世紀', practiceMode: 'read_only' });
+  expect(century.officialWordId).toBeUndefined();
+  expect(findUnit(2, 'LV4')!.items.find(i => i.displayWord === 'atmosphere'))
+    .toMatchObject({ sourcePage: 19, targetMeaningZh: '大氣；空氣；氛圍', chapterMeaningsZh: '大氣；空氣；氛圍' });
+  expect(siegeUnitWords('LV4', 2, []).find(([word]) => word === 'ATMOSPHERE')?.[1]).toBe('大氣；空氣；氛圍');
+  expect(source2.boundaryEvidence.notesConfirmationStatus).toBe('pending_original_user_message_or_full_photo');
 });
 
 it('content refresh preserves all 13 nonempty progress tables, SRS, town rewards and personal groups', async () => {
