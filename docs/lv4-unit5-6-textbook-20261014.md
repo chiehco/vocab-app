@@ -10,8 +10,8 @@
 | 主詞合計 | 46 | 46 |
 | 補充詞（含印刷註詞） | 88 | 71 |
 | 詞彙字卡 | 134 | 117 |
-| 用法與搭配 | 43 | 50 |
-| 完整群組項目 | 177 | 167 |
+| 用法與搭配 | 45 | 50 |
+| 完整群組項目 | 179 | 167 |
 | 唯一既有正式ID | 100 | 92 |
 | 無正式ID的文字項目 | 34 | 22 |
 
@@ -40,3 +40,11 @@
 - 隔離新Chrome於390px驗U5入口134／43、完整177項群組／100正式卡，首卡occupy p43、尾卡tug-of-war p53與用法中文，依序開啟既有occupy W003692。U6入口117／50、完整167項群組／92正式卡，首卡assistance p55、尾卡lie p66與用法中文，一般練習實際啟動competition 1／10。兩單元無橫向溢出，console errors0。證據 `browser-u5-u6-entry-verified.log`、`browser-u6-verified.log`、`browser-u6-quiz.log`、`browser-u5-u6-console.log`。
 
 本批為 `text_only`／`read_only`：無待審圖句、圖片、圖說、例句、教材題目或正式senseId。56項未映射文字保留供閱讀；原件、母表、其他工作樹與使用者真實瀏覽器唯讀。實體手機、Safari／Firefox與正式站部署未驗。
+
+## p45 獨立來源 QA 修補（2026-10-14）
+
+原批次 `2709621707b5e4d90ab808f203a839f556509d54` 的工程與瀏覽器通過為歷史結果；獨立來源 QA 發現 U5 p45 convinced 詞框漏列 `be convinced of sth`（相信某事）與 `be convinced that...`（相信……）。兩組均為印刷片語，已對完整原照核實後插回 p45 順序，U5 用法 43→45，完整群組 177→179；U6 不變。
+
+修補來源 revision 為 `20261014-text-2`。原 177 個 learningItemId 及其全部欄位逐一保持相同，43 個舊用法 ID 明確固定；新增項目為 `LI-LV4U05-G044`／`LI-LV4U05-G045`，convinced 仍為 `LI-LV4U05-V013`、未映射且可讀。正式 ID、母表、字庫、義項、圖句、教材題、SRS、進度及獎勵程式均未改。教材與 starter 均重產；此修補僅加用法，starter 仍為 3,094 字且逐位元一致。
+
+此獨立修補由已保存 U23／U24 SHA `ab5c3cd246a9afcbc8957181fc2a8a001952fa75` 接續，分支 `fix/lv4-u5-p45-usage`。最終 exact SHA、定向來源／啟動包／工程／正常 PWA 更新與離線證據見交接根 `u5-p45-usage-fix-handoff.json`。後續單元需以此修正版作基底，或採入完整修補提交再重產 starter；舊批3–10的固定 SHA 本身尚未含此修補。

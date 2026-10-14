@@ -16,7 +16,7 @@ beforeEach(async () => {
 });
 afterEach(() => vi.unstubAllGlobals());
 
-for (const [source, count, usage, mapped] of [[source5,134,43,100],[source6,117,50,92]] as const) {
+for (const [source, count, usage, mapped] of [[source5,134,45,100],[source6,117,50,92]] as const) {
   const unit=findUnit(source.unit,'LV4')!;
   const rows=[...source.headwords,...source.related];
   it(`LV4 U${source.unit} preserves complete checked provenance and keeps textbook practice disabled`, () => {
@@ -67,4 +67,20 @@ it('preserves printed U5/U6 boundaries, replacement page and distinct repeated s
   expect(new Set(intensive.map(i=>i.officialWordId)).size).toBe(1);
   expect(new Set(intensive.map(i=>i.learningItemId)).size).toBe(2);
   expect(u6.filter(i=>i.displayWord==='comment').map(i=>i.sensePos)).toEqual(['vi.','n.']);
+});
+
+it('restores the two p45 convinced phrases without reassigning any legacy usage or vocabulary ID', () => {
+  const unit=findUnit(5,'LV4')!;
+  const grammar=unit.items.filter(i=>i.kind==='grammar');
+  const newIds=['LI-LV4U05-G044','LI-LV4U05-G045'];
+  expect(grammar.filter(i=>newIds.includes(i.learningItemId)).map(i=>[i.learningItemId,i.pattern,i.sourcePage,i.explanationZh,i.practiceMode]))
+    .toEqual([['LI-LV4U05-G044','be convinced of sth',45,'相信某事。','read_only'],['LI-LV4U05-G045','be convinced that...',45,'相信……。','read_only']]);
+  expect(grammar.filter(i=>!newIds.includes(i.learningItemId)).map(i=>i.learningItemId))
+    .toEqual(Array.from({length:43},(_,i)=>`LI-LV4U05-G${String(i+1).padStart(3,'0')}`));
+  const index=grammar.findIndex(i=>i.learningItemId==='LI-LV4U05-G013');
+  expect(grammar.slice(index,index+4).map(i=>i.learningItemId))
+    .toEqual(['LI-LV4U05-G013','LI-LV4U05-G044','LI-LV4U05-G045','LI-LV4U05-G014']);
+  expect(unit.items.find(i=>i.learningItemId==='LI-LV4U05-V013'))
+    .toMatchObject({displayWord:'convinced',sourcePage:45,officialWordId:null,officialSenseId:null,practiceMode:'read_only'});
+  expect(templateGroup(unit.templateId).itemIds).toHaveLength(179);
 });
