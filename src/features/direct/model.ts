@@ -12,6 +12,7 @@ import lv4Unit17 from './curriculumLV4Unit17.json';
 import lv4Unit18 from './curriculumLV4Unit18.json';
 import lv4Unit19 from './curriculumLV4Unit19.json';
 import lv4Unit20 from './curriculumLV4Unit20.json';
+import lv5Unit1 from './curriculumLV5Unit1.json';
 import questions from './questions.json';
 import grammarQuestions from './grammarQuestions.json';
 import practiceVariants from './practiceVariantsLV4Unit17.json';
@@ -46,6 +47,7 @@ export const curriculumUnits: CurriculumUnit[] = [
   { templateId: lv4Unit18.template.templateId, revision: lv4Unit18.template.revision, level: 'LV4', unit: 18, name: lv4Unit18.template.title, items: lv4Unit18.learningItems as LearningItem[], questions: lv4Unit18.questions, relatedNotes: lv4Unit18.relatedNotes },
   { templateId: lv4Unit19.template.templateId, revision: lv4Unit19.template.revision, level: 'LV4', unit: 19, name: lv4Unit19.template.title, items: lv4Unit19.learningItems as LearningItem[], questions: lv4Unit19.questions, relatedNotes: lv4Unit19.relatedNotes },
   { templateId: lv4Unit20.template.templateId, revision: lv4Unit20.template.revision, level: 'LV4', unit: 20, name: lv4Unit20.template.title, items: lv4Unit20.learningItems as LearningItem[], questions: lv4Unit20.questions, relatedNotes: lv4Unit20.relatedNotes },
+  { templateId: lv5Unit1.template.templateId, revision: lv5Unit1.template.revision, level: 'LV5', unit: 1, name: lv5Unit1.template.title, items: lv5Unit1.learningItems as LearningItem[], questions: lv5Unit1.questions, relatedNotes: [], deliveryMode: 'text_only' },
 ];
 export type UnitKey = number | string;
 export function findUnit(key: UnitKey, level?: string): CurriculumUnit | undefined {
