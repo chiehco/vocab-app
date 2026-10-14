@@ -30,6 +30,8 @@ import lv4Unit15 from './curriculumLV4Unit15.json';
 import lv4Unit16 from './curriculumLV4Unit16.json';
 import lv4Unit21 from './curriculumLV4Unit21.json';
 import lv4Unit22 from './curriculumLV4Unit22.json';
+import lv4Unit23 from './curriculumLV4Unit23.json';
+import lv4Unit24 from './curriculumLV4Unit24.json';
 import questions from './questions.json';
 import grammarQuestions from './grammarQuestions.json';
 import practiceVariants from './practiceVariantsLV4Unit17.json';
@@ -82,6 +84,8 @@ export const curriculumUnits: CurriculumUnit[] = [
   { templateId: lv4Unit20.template.templateId, revision: lv4Unit20.template.revision, level: 'LV4', unit: 20, name: lv4Unit20.template.title, items: lv4Unit20.learningItems as LearningItem[], questions: lv4Unit20.questions, relatedNotes: lv4Unit20.relatedNotes },
   { templateId: lv4Unit21.template.templateId, revision: lv4Unit21.template.revision, level: 'LV4', unit: 21, name: lv4Unit21.template.title, items: lv4Unit21.learningItems as LearningItem[], questions: lv4Unit21.questions, relatedNotes: [], deliveryMode: 'text_only' },
   { templateId: lv4Unit22.template.templateId, revision: lv4Unit22.template.revision, level: 'LV4', unit: 22, name: lv4Unit22.template.title, items: lv4Unit22.learningItems as LearningItem[], questions: lv4Unit22.questions, relatedNotes: [], deliveryMode: 'text_only' },
+  { templateId: lv4Unit23.template.templateId, revision: lv4Unit23.template.revision, level: 'LV4', unit: 23, name: lv4Unit23.template.title, items: lv4Unit23.learningItems as LearningItem[], questions: lv4Unit23.questions, relatedNotes: [], deliveryMode: 'text_only' },
+  { templateId: lv4Unit24.template.templateId, revision: lv4Unit24.template.revision, level: 'LV4', unit: 24, name: lv4Unit24.template.title, items: lv4Unit24.learningItems as LearningItem[], questions: lv4Unit24.questions, relatedNotes: [], deliveryMode: 'text_only' },
 ];
 export type UnitKey = number | string;
 export function findUnit(key: UnitKey, level?: string): CurriculumUnit | undefined {
