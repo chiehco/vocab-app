@@ -15,6 +15,7 @@ import { ensureContentAvailable, refreshInstalledContent } from '../../db/seed';
 import { gradeFlashcard } from '../../checkin/recordActivity';
 import { awardAnswer, claimDailyCheckIn, presentRewardRound } from '../rewards/store';
 import { WRITTEN_REVISION } from '../exam/writtenModel';
+import { exportProgress, validateBackup } from '../../backup/backup';
 
 beforeEach(async () => {
   await Promise.all([...contentDb.tables, ...progressDb.tables].map(table => table.clear()));
@@ -28,7 +29,9 @@ for (const [source, count, usageCount, mappedCount] of [[source1, 102, 33, 83], 
 
   it(`LV4 U${source.unit} keeps the checked scope, source meanings and nullable identities`, () => {
     expect(unit.deliveryMode).toBe('text_only');
-    expect(textbookUnits.find(u => u.level === 'LV4' && u.unit === source.unit)).toMatchObject({ count, usageCount });
+    const published = textbookUnits.find(u => u.level === 'LV4' && u.unit === source.unit);
+    if (source.unit === 2) expect(published).toBeUndefined();
+    else expect(published).toMatchObject({ count, usageCount });
     expect(vocabulary.map(i => [i.displayWord, i.sourcePage, i.sensePos, i.chapterMeaningsZh, i.officialWordId]))
       .toEqual(rows.map(i => [i.word, i.sourcePage, i.sourcePos, i.chapterMeaningsZh, i.officialWordId]));
     expect(vocabulary.slice(0, source.headwordOrder.length).map(i => i.displayWord)).toEqual(source.headwordOrder);
@@ -112,17 +115,22 @@ it('content refresh preserves all 13 nonempty progress tables, SRS, town rewards
   const oldUnit = findUnit(17, 'LV4')!;
   const {group} = await getOrCreateTemplateGroup(oldUnit.templateId);
   await saveGroup({...group,name:'保留自訂 U17',itemIds:[...group.itemIds].reverse()});
+  const oldU2 = templateGroup(2, 'LV4');
+  await saveGroup({...oldU2,name:'原有 U2 個人排序',itemIds:[...oldU2.itemIds].reverse()});
   const question=oldUnit.questions[0];
   await progressDb.directSessions.put({id:'retained-direct',questionIds:[question.questionId],index:0,choices:{},lookups:{},startedAt:1,updatedAt:2,revision:REVISION});
-  await progressDb.directAttempts.put({id:'retained-attempt',sessionId:'retained-direct',questionId:question.questionId,revision:REVISION,choice:question.answer,correct:true,firstAttempt:true,hintUsed:false,lookedUpWords:[],answeredAt:2,schedulingApplied:false});
+  await progressDb.directAttempts.put({id:'retained-direct:'+question.questionId,sessionId:'retained-direct',questionId:question.questionId,revision:REVISION,choice:question.answer,correct:true,firstAttempt:true,hintUsed:false,lookedUpWords:[],answeredAt:2,schedulingApplied:false});
   await progressDb.writtenSessions.put({id:'retained-written',groupId:'translation1',revision:WRITTEN_REVISION,answers:{'gsat-115-t01':'retained answer'},lookups:[],createdAt:1,updatedAt:2});
   await progressDb.writtenSubmissions.put({id:'retained-written:gsat-115-t01',sessionId:'retained-written',questionId:'gsat-115-t01',rawAnswer:'retained answer',submittedAt:2,firstAttempt:true,revision:WRITTEN_REVISION,lookedUpWords:[],assessments:[]});
   await claimDailyCheckIn(1791892800000);
-  await presentRewardRound('retained-town',1,100,'basic-only-v2');
-  await awardAnswer({id:'retained-town-answer',roundId:'retained-town',word:oldWords[0].word,correct:true,source:'town',referenceId:'retained-town-answer',answeredAt:200,challenge:'basic-only-v2'});
+  await presentRewardRound('town:retained-town',1,100,'meaning-v2');
+  await awardAnswer({id:'answer:town:retained-town:0',roundId:'town:retained-town',word:oldWords[0].word,correct:true,source:'town',referenceId:'1',choiceWordId:oldWords[0].wordId,answeredAt:200,challenge:'meaning-v2'});
   const before = await Promise.all(progressDb.tables.map(table => table.toArray()));
   expect(progressDb.tables).toHaveLength(13);
   expect(before.every(rows => rows.length > 0)).toBe(true);
+  const backup = await exportProgress();
+  expect(validateBackup(backup)).toBeNull();
+  expect(backup.data.customGroups!.find(g=>g.id===oldU2.id)?.itemIds).toEqual([...oldU2.itemIds].reverse());
   incoming = pack;
   await refreshInstalledContent();
   expect(await contentDb.words.bulkGet(ids)).not.toContain(undefined);
@@ -131,5 +139,8 @@ it('content refresh preserves all 13 nonempty progress tables, SRS, town rewards
   expect(saved.added).toBe(false);
   expect(saved.group.name).toBe('保留自訂 U17');
   expect(saved.group.itemIds).toEqual([...oldUnit.items.map(i=>i.learningItemId)].reverse());
+  const after = await exportProgress();
+  expect(after.data).toEqual(backup.data);
+  expect(validateBackup(after)).toBeNull();
   expect(await progressDb.rewardWallet.get('local')).toMatchObject({balance:35});
 });

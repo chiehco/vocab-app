@@ -8,6 +8,7 @@ import { scriptJson, siegeUnitWords, type SiegeWord } from './model';
 import template from './siege.html?raw';
 import '../modes/learning-home.css';
 import './siege.css';
+import { unitReleaseHold } from '../vocabulary/unitReleasePolicy';
 
 function Battle({ words, title }: { words: SiegeWord[]; title: string }) {
   const frame = useRef<HTMLIFrameElement>(null);
@@ -31,10 +32,13 @@ export default function SiegeScreen() {
   const scope = resolveTextbookScope({ track: params.get('track'), publisher: params.get('pub'), volume: params.get('level') })!;
   const level = scope.volume;
   const units = unitsFor(scope);
-  const unit = units.find(u => u.unit === Number(params.get('unit'))) ?? units[0];
+  const hold = unitReleaseHold(params.get('level') ?? undefined, Number(params.get('unit')));
+  const unit = hold ? undefined : units.find(u => u.unit === Number(params.get('unit'))) ?? units[0];
   const dictionary = useLiveQuery(() => contentDb.words.toArray(), []);
   const [match, setMatch] = useState<{ words: SiegeWord[]; title: string } | null>(null);
-  const words = useMemo(() => siegeUnitWords(level, unit.unit, dictionary ?? []), [level, unit.unit, dictionary]);
+  const words = useMemo(() => unit ? siegeUnitWords(level, unit.unit, dictionary ?? []) : [], [level, unit, dictionary]);
+  if (hold) return <div className="learning-page"><header className="learning-header"><Link to="/games">← 單字遊戲</Link></header><section aria-label="來源待補"><h1>來源待補</h1><p role="status">{hold.message}</p><Link className="learning-primary" to="/textbook?level=LV4">返回選單元</Link></section></div>;
+  if (!unit) return <div className="learning-page"><h1>找不到這個單元</h1><Link to="/textbook">返回選單元</Link></div>;
   if (match) return <div className="siege-page">
     <header className="siege-nav"><button onClick={() => setMatch(null)}>← 換單元</button><span>{match.title}</span><Link to="/games">遊戲</Link></header>
     <Battle words={match.words} title={match.title} />
