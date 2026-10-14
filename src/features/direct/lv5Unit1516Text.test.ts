@@ -59,3 +59,20 @@ it('keeps the printed U16 verb pending while the unchanged ordinary noun still r
   expect(ordinary).toEqual(pack.words.find(word=>word.wordId==='W005711'));
   expect(ordinary).toMatchObject({word:'prohibition',pos:'n.',meaningZh:'禁令；禁止'});
 });
+
+it('retains the photographed U15 p133 extension marker in source without adding a grammar badge or card', () => {
+  const row = source15.usage[9];
+  expect(row).toMatchObject({ sourcePage: 133, parentWord: 'tournament', sourceType: 'printed_usage',
+    label: 'a tennis / golf tournament', explanationZh: '網球／高爾夫錦標賽。', printedLabel: '延伸' });
+  expect(source15.usage).toHaveLength(57);
+  expect(source15.usage.filter(item => Object.hasOwn(item, 'printedLabel'))).toEqual([row]);
+  const unit = findUnit(15, 'LV5')!;
+  expect(unit.items).toHaveLength(171);
+  expect(unit.items.filter(item => item.kind === 'grammar')).toHaveLength(57);
+  expect(unit.items.find(item => item.learningItemId === 'LI-LV5U15-G010')).toEqual({
+    learningItemId: 'LI-LV5U15-G010', kind: 'grammar', sourcePage: 133,
+    pattern: 'a tennis / golf tournament', explanationZh: '網球／高爾夫錦標賽。',
+    review: 'source_checked_text_only', practiceMode: 'read_only',
+  });
+  expect(unit.items.filter(item => item.kind === 'grammar').every(item => !Object.hasOwn(item, 'printedLabel'))).toBe(true);
+});
