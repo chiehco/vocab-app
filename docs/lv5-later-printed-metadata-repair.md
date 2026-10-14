@@ -6,7 +6,7 @@ original photographs, preserving truly unmarked rows and the existing grammar
 schema. The fixture records photo hashes, explicit numbered-group evidence and
 exact source/compiled differences.
 
-Adopted units in this revision: U7, U8, U9, U10, U11, U12, U13, U14.
+Adopted units in this revision: U7, U8, U9, U10, U11, U12, U13, U14, U15, U16.
 The U1/U3-U6 repair is inherited through d3dc78cca72d94ef8812ee81184c2cdd92219f7d
 from f5c89aaa2ac2946f6318b671910b95eab3916aae. Original commits and frozen QA
 evidence remain available. Corrected source acceptance uses these exact repair
