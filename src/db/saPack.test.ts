@@ -49,6 +49,11 @@ it("啟動包收錄 LV3 U1/U2 與 U4–U10 文字版，保留 S+A、LV4 reviewed
       if (item.kind === "vocabulary" && item.officialWordId) expected.add(item.officialWordId);
     }
   }
+  // Preserve the complete existing ordinary noun card after U16's printed verb occurrence becomes pending.
+  const legacyNoun = read<{ wordId: string }[]>(data + "words.json").find(word => word.wordId === "W005711");
+  expect(legacyNoun).toBeDefined();
+  expect(pack.words.find(word => word.wordId === "W005711")).toEqual(legacyNoun);
+  expected.add("W005711");
   expect(new Set(pack.words.map(word => word.wordId))).toEqual(expected);
   expect(pack.words).toHaveLength(expected.size);
 });
@@ -75,5 +80,8 @@ it("空庫安裝實際啟動包後，LV3 U1/U2 已映射字卡全部可解析且
   expect(await contentDb.examples.get('EX-LV3U01-nostalgic')).toMatchObject({
     word: 'nostalgic', sentenceEn: 'Finding her old school notebook made her feel nostalgic.',
   });
+  expect(await contentDb.words.get("W005711")).toEqual(
+    read<{ wordId: string }[]>(data + "words.json").find(word => word.wordId === "W005711"),
+  );
   expect(fetch).toHaveBeenCalledTimes(1);
 }, 15000);

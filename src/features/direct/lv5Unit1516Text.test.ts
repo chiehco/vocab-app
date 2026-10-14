@@ -12,7 +12,7 @@ import { progressDb } from '../../db/progressDb';
 import { ensureContentAvailable } from '../../db/seed';
 beforeEach(async()=>{await Promise.all([...contentDb.tables,...progressDb.tables].map(t=>t.clear()));});
 afterEach(()=>vi.unstubAllGlobals());
-for(const [source,vocab,usage,mapped] of [[source15,114,57,73],[source16,108,62,75]] as const){
+for(const [source,vocab,usage,mapped] of [[source15,114,57,73],[source16,108,62,74]] as const){
   const unit=findUnit(source.unit,'LV5')!;
   it(`LV5 U${source.unit} retains checked book fields and excludes unapproved textbook practice`,()=>{
     const rows=[...source.headwords,...source.related];
@@ -46,3 +46,16 @@ for(const [source,vocab,usage,mapped] of [[source15,114,57,73],[source16,108,62,
     expect(unit.items.every(i=>typeof i.sourcePage==='number'&&i.sourcePage>=source.sourcePages[0]&&i.sourcePage<=source.sourcePages[1])).toBe(true);
   });
 }
+
+it('keeps the printed U16 verb pending while the unchanged ordinary noun still resolves', async()=>{
+  vi.stubGlobal('fetch',vi.fn(async()=>new Response(JSON.stringify(pack))));
+  await ensureContentAvailable();
+  const unit=findUnit(16,'LV5')!;
+  const occurrence=unit.items.find(item=>item.learningItemId==='LI-LV5U16-V064');
+  expect(occurrence).toMatchObject({displayWord:'prohibition',officialWordId:null,sensePos:'vt.',
+    targetMeaningZh:'禁止',chapterMeaningsZh:'禁止',sourcePage:144,printedLabel:'衍',practiceMode:'read_only'});
+  expect(groupWordIds(templateGroup(unit.templateId))).not.toContain('W005711');
+  const ordinary=await contentDb.words.get('W005711');
+  expect(ordinary).toEqual(pack.words.find(word=>word.wordId==='W005711'));
+  expect(ordinary).toMatchObject({word:'prohibition',pos:'n.',meaningZh:'禁令；禁止'});
+});
