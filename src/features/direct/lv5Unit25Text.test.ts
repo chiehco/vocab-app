@@ -1,0 +1,66 @@
+import 'fake-indexeddb/auto';
+import { afterEach, beforeEach, expect, it, vi } from 'vitest';
+import source25 from '../../../scripts/sources/LV5Unit25.json';
+import pack from '../../../public/data/v1/sa-pack.json';
+import { allQuestions, findUnit, templateGroup, validGroup } from './model';
+import { groupWordIds, resolveGroupWords } from './groupScope';
+import { textbookUnits } from '../vocabulary/textbookCatalog';
+import { practiceIds, reviewedExample } from '../vocabulary/model';
+import { contentDb } from '../../db/contentDb';
+import { progressDb } from '../../db/progressDb';
+import { ensureContentAvailable } from '../../db/seed';
+beforeEach(async()=>{await Promise.all([...contentDb.tables,...progressDb.tables].map(t=>t.clear()));});
+afterEach(()=>vi.unstubAllGlobals());
+for(const [source,vocab,usage,mapped] of [[source25,98,46,71]] as const){
+  const unit=findUnit(source.unit,'LV5')!;
+  it(`LV5 U${source.unit} retains checked book fields and excludes unapproved textbook practice`,()=>{
+    const rows=[...source.headwords,...source.related];
+    expect(unit.deliveryMode).toBe('text_only');
+    expect(textbookUnits.find(u=>u.level==='LV5'&&u.unit===source.unit)).toMatchObject({count:vocab,usageCount:usage});
+    expect(unit.items.filter(i=>i.kind==='vocabulary').map(i=>[i.displayWord,i.sourcePage,i.sourceRole,i.sensePos,i.chapterMeaningsZh,i.officialWordId]))
+      .toEqual(rows.map(r=>[r.word,r.sourcePage,r.role,r.sourcePos,r.chapterMeaningsZh,r.officialWordId]));
+    expect(unit.items.filter(i=>i.kind==='grammar').map(i=>[i.pattern,i.sourcePage,i.explanationZh]))
+      .toEqual(source.usage.map(r=>[r.label,r.sourcePage,r.explanationZh]));
+    expect(unit.items).toHaveLength(vocab+usage);
+    expect(new Set(unit.items.map(i=>i.learningItemId)).size).toBe(vocab+usage);
+    expect(unit.questions).toEqual([]);expect(practiceIds(unit.items)).toEqual([]);
+    expect(unit.items.every(i=>i.practiceMode==='read_only'&&!i.illustration&&!i.originalExample&&!i.officialSenseId&&!reviewedExample(i))).toBe(true);
+    expect(allQuestions.some(q=>unit.items.some(i=>i.learningItemId===q.learningItemId))).toBe(false);
+    for(const row of rows.filter(r=>r.officialWordId))expect(pack.words.find(w=>w.wordId===row.officialWordId)?.word).toBe(row.word);
+  });
+  it(`LV5 U${source.unit} resolves every formal card from a fresh single-fetch lightweight bootstrap`,async()=>{
+    vi.stubGlobal('fetch',vi.fn(async()=>new Response(JSON.stringify(pack))));
+    await ensureContentAvailable();
+    const group=templateGroup(unit.templateId),ids=groupWordIds(group);
+    expect(validGroup(group)).toBe(true);expect(group.itemIds).toHaveLength(vocab+usage);
+    expect(ids).toHaveLength(mapped);expect(await contentDb.words.bulkGet(ids)).not.toContain(undefined);
+    expect(resolveGroupWords(group,await contentDb.words.toArray())).toHaveLength(mapped);
+    expect(fetch).toHaveBeenCalledTimes(1);expect(String(vi.mocked(fetch).mock.calls[0][0])).toContain('sa-pack.json');
+  });
+  it(`LV5 U${source.unit} retains every printed number and full body photograph`,()=>{
+    const numbered=source.headwords.filter(r=>r.printedNumber).map(r=>r.printedNumber);
+    expect(numbered).toEqual(Array.from({length:numbered.length},(_,i)=>i+1));
+    expect(source.photos.map(p=>p.page)).toEqual(Array.from({length:source.sourcePages[1]-source.sourcePages[0]+1},(_,i)=>i+source.sourcePages[0]));
+    expect(source.boundaryEvidence.missingPages).toEqual([]);
+    expect(unit.items.every(i=>typeof i.sourcePage==='number'&&i.sourcePage>=source.sourcePages[0]&&i.sourcePage<=source.sourcePages[1])).toBe(true);
+  });
+}
+
+it('preserves the unsupported printed practice verb as readable pending', () => {
+  const unit = findUnit(25, 'LV5')!;
+  expect(unit.items.find(item => item.learningItemId === 'LI-LV5U25-V052')).toMatchObject({
+    displayWord: 'practice', sourcePage: 225, sensePos: 'vt.', chapterMeaningsZh: '開業從事', officialWordId: null, practiceMode: 'read_only',
+  });
+  expect(groupWordIds(templateGroup(unit.templateId))).not.toContain('W000673');
+});
+
+it('retains the photographed LV5 U25 p231 usage marker only in source', () => {
+  const row = source25.usage[40];
+  expect(row).toMatchObject({"sourcePage": 231, "parentWord": "chapel", "sourceType": "printed_usage", "label": "a small church", "explanationZh": "小教堂。", "sourceReview": "printed_text_visually_checked", "printedLabel": "似"});
+  expect(source25.usage).toHaveLength(46);
+  const unit = findUnit(25, 'LV5')!;
+  expect(unit.items).toHaveLength(144);
+  expect(unit.items.filter(item => item.kind === 'grammar')).toHaveLength(46);
+  expect(unit.items.find(item => item.learningItemId === 'LI-LV5U25-G041')).toEqual({"learningItemId": "LI-LV5U25-G041", "kind": "grammar", "sourcePage": 231, "pattern": "a small church", "explanationZh": "小教堂。", "review": "source_checked_text_only", "practiceMode": "read_only"});
+  expect(unit.items.filter(item => item.kind === 'grammar').every(item => !Object.hasOwn(item, 'printedLabel'))).toBe(true);
+});

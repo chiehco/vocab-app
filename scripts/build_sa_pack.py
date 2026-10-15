@@ -54,6 +54,26 @@ def build_sa_pack(data_dir: Path, curriculum_dir: Path | None = None) -> dict:
                                  if item.get("kind") == "vocabulary" and item.get("officialWordId")
                                  and (text_only or item.get("review") == "content_reviewed" and item.get("illustration")))
 
+    # Checked LV5 text cards map only to pre-existing official dictionary words.
+    for path in sorted(curriculum_dir.glob("curriculumLV5Unit*.json")):
+        unit = read_json(path)
+        if unit.get("template", {}).get("deliveryMode") == "text_only":
+            selected_word_ids.update(item["officialWordId"] for item in unit["learningItems"]
+                                     if item.get("kind") == "vocabulary" and item.get("officialWordId"))
+
+            # Preserve the existing ordinary noun card after this exact textbook item becomes pending.
+            if (unit["template"].get("level") == "LV5" and unit["template"].get("unit") == 16
+                    and any(item.get("learningItemId") == "LI-LV5U16-V064"
+                            and item.get("kind") == "vocabulary" and item.get("officialWordId", "") is None
+                            and item.get("displayWord") == item.get("lexemeRef") == "prohibition"
+                            and item.get("sensePos") == "vt." and item.get("sourcePage") == 144
+                            and item.get("targetMeaningZh") == item.get("chapterMeaningsZh") == "禁止"
+                            and item.get("meaningSource") == "textbook_transcription"
+                            and item.get("review") == "source_checked_text_only"
+                            and item.get("practiceMode") == "read_only"
+                            for item in unit["learningItems"])):
+                selected_word_ids.add("W005711")
+
     # Image-only LV1 approvals also need their existing official words on fresh installs.
     lv1_images = read_json(curriculum_dir.parent / "vocabulary/lv1ReviewedImages.json")
     selected_word_ids.update(item["officialWordId"] for item in lv1_images if item.get("officialWordId"))
