@@ -53,3 +53,14 @@ it('preserves the unsupported printed practice verb as readable pending', () => 
   });
   expect(groupWordIds(templateGroup(unit.templateId))).not.toContain('W000673');
 });
+
+it('retains the photographed LV5 U25 p231 usage marker only in source', () => {
+  const row = source25.usage[40];
+  expect(row).toMatchObject({"sourcePage": 231, "parentWord": "chapel", "sourceType": "printed_usage", "label": "a small church", "explanationZh": "小教堂。", "sourceReview": "printed_text_visually_checked", "printedLabel": "似"});
+  expect(source25.usage).toHaveLength(46);
+  const unit = findUnit(25, 'LV5')!;
+  expect(unit.items).toHaveLength(144);
+  expect(unit.items.filter(item => item.kind === 'grammar')).toHaveLength(46);
+  expect(unit.items.find(item => item.learningItemId === 'LI-LV5U25-G041')).toEqual({"learningItemId": "LI-LV5U25-G041", "kind": "grammar", "sourcePage": 231, "pattern": "a small church", "explanationZh": "小教堂。", "review": "source_checked_text_only", "practiceMode": "read_only"});
+  expect(unit.items.filter(item => item.kind === 'grammar').every(item => !Object.hasOwn(item, 'printedLabel'))).toBe(true);
+});
