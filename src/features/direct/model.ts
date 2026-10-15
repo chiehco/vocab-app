@@ -32,6 +32,24 @@ import lv4Unit21 from './curriculumLV4Unit21.json';
 import lv4Unit22 from './curriculumLV4Unit22.json';
 import lv4Unit23 from './curriculumLV4Unit23.json';
 import lv4Unit24 from './curriculumLV4Unit24.json';
+import lv5Unit1 from './curriculumLV5Unit1.json';
+import lv5Unit3 from './curriculumLV5Unit3.json';
+import lv5Unit4 from './curriculumLV5Unit4.json';
+import lv5Unit5 from './curriculumLV5Unit5.json';
+import lv5Unit6 from './curriculumLV5Unit6.json';
+import lv5Unit7 from './curriculumLV5Unit7.json';
+import lv5Unit8 from './curriculumLV5Unit8.json';
+import lv5Unit9 from './curriculumLV5Unit9.json';
+import lv5Unit10 from './curriculumLV5Unit10.json';
+import lv5Unit11 from './curriculumLV5Unit11.json';
+import lv5Unit12 from './curriculumLV5Unit12.json';
+import lv5Unit13 from './curriculumLV5Unit13.json';
+import lv5Unit14 from './curriculumLV5Unit14.json';
+import lv5Unit15 from './curriculumLV5Unit15.json';
+import lv5Unit16 from './curriculumLV5Unit16.json';
+import lv5Unit18 from './curriculumLV5Unit18.json';
+import lv5Unit22 from './curriculumLV5Unit22.json';
+import lv5Unit25 from './curriculumLV5Unit25.json';
 import questions from './questions.json';
 import grammarQuestions from './grammarQuestions.json';
 import practiceVariants from './practiceVariantsLV4Unit17.json';
@@ -86,6 +104,24 @@ export const curriculumUnits: CurriculumUnit[] = [
   { templateId: lv4Unit22.template.templateId, revision: lv4Unit22.template.revision, level: 'LV4', unit: 22, name: lv4Unit22.template.title, items: lv4Unit22.learningItems as LearningItem[], questions: lv4Unit22.questions, relatedNotes: [], deliveryMode: 'text_only' },
   { templateId: lv4Unit23.template.templateId, revision: lv4Unit23.template.revision, level: 'LV4', unit: 23, name: lv4Unit23.template.title, items: lv4Unit23.learningItems as LearningItem[], questions: lv4Unit23.questions, relatedNotes: [], deliveryMode: 'text_only' },
   { templateId: lv4Unit24.template.templateId, revision: lv4Unit24.template.revision, level: 'LV4', unit: 24, name: lv4Unit24.template.title, items: lv4Unit24.learningItems as LearningItem[], questions: lv4Unit24.questions, relatedNotes: [], deliveryMode: 'text_only' },
+  { templateId: lv5Unit1.template.templateId, revision: lv5Unit1.template.revision, level: 'LV5', unit: 1, name: lv5Unit1.template.title, items: lv5Unit1.learningItems as LearningItem[], questions: lv5Unit1.questions, relatedNotes: [], deliveryMode: 'text_only' },
+  { templateId: lv5Unit3.template.templateId, revision: lv5Unit3.template.revision, level: 'LV5', unit: 3, name: lv5Unit3.template.title, items: lv5Unit3.learningItems as LearningItem[], questions: lv5Unit3.questions, relatedNotes: [], deliveryMode: 'text_only' },
+  { templateId: lv5Unit4.template.templateId, revision: lv5Unit4.template.revision, level: 'LV5', unit: 4, name: lv5Unit4.template.title, items: lv5Unit4.learningItems as LearningItem[], questions: lv5Unit4.questions, relatedNotes: [], deliveryMode: 'text_only' },
+  { templateId: lv5Unit5.template.templateId, revision: lv5Unit5.template.revision, level: 'LV5', unit: 5, name: lv5Unit5.template.title, items: lv5Unit5.learningItems as LearningItem[], questions: lv5Unit5.questions, relatedNotes: [], deliveryMode: 'text_only' },
+  { templateId: lv5Unit6.template.templateId, revision: lv5Unit6.template.revision, level: 'LV5', unit: 6, name: lv5Unit6.template.title, items: lv5Unit6.learningItems as LearningItem[], questions: lv5Unit6.questions, relatedNotes: [], deliveryMode: 'text_only' },
+  { templateId: lv5Unit7.template.templateId, revision: lv5Unit7.template.revision, level: 'LV5', unit: 7, name: lv5Unit7.template.title, items: lv5Unit7.learningItems as LearningItem[], questions: lv5Unit7.questions, relatedNotes: [], deliveryMode: 'text_only' },
+  { templateId: lv5Unit8.template.templateId, revision: lv5Unit8.template.revision, level: 'LV5', unit: 8, name: lv5Unit8.template.title, items: lv5Unit8.learningItems as LearningItem[], questions: lv5Unit8.questions, relatedNotes: [], deliveryMode: 'text_only' },
+  { templateId: lv5Unit9.template.templateId, revision: lv5Unit9.template.revision, level: 'LV5', unit: 9, name: lv5Unit9.template.title, items: lv5Unit9.learningItems as LearningItem[], questions: lv5Unit9.questions, relatedNotes: [], deliveryMode: 'text_only' },
+  { templateId: lv5Unit10.template.templateId, revision: lv5Unit10.template.revision, level: 'LV5', unit: 10, name: lv5Unit10.template.title, items: lv5Unit10.learningItems as LearningItem[], questions: lv5Unit10.questions, relatedNotes: [], deliveryMode: 'text_only' },
+  { templateId: lv5Unit11.template.templateId, revision: lv5Unit11.template.revision, level: 'LV5', unit: 11, name: lv5Unit11.template.title, items: lv5Unit11.learningItems as LearningItem[], questions: lv5Unit11.questions, relatedNotes: [], deliveryMode: 'text_only' },
+  { templateId: lv5Unit12.template.templateId, revision: lv5Unit12.template.revision, level: 'LV5', unit: 12, name: lv5Unit12.template.title, items: lv5Unit12.learningItems as LearningItem[], questions: lv5Unit12.questions, relatedNotes: [], deliveryMode: 'text_only' },
+  { templateId: lv5Unit13.template.templateId, revision: lv5Unit13.template.revision, level: 'LV5', unit: 13, name: lv5Unit13.template.title, items: lv5Unit13.learningItems as LearningItem[], questions: lv5Unit13.questions, relatedNotes: [], deliveryMode: 'text_only' },
+  { templateId: lv5Unit14.template.templateId, revision: lv5Unit14.template.revision, level: 'LV5', unit: 14, name: lv5Unit14.template.title, items: lv5Unit14.learningItems as LearningItem[], questions: lv5Unit14.questions, relatedNotes: [], deliveryMode: 'text_only' },
+  { templateId: lv5Unit15.template.templateId, revision: lv5Unit15.template.revision, level: 'LV5', unit: 15, name: lv5Unit15.template.title, items: lv5Unit15.learningItems as LearningItem[], questions: lv5Unit15.questions, relatedNotes: [], deliveryMode: 'text_only' },
+  { templateId: lv5Unit16.template.templateId, revision: lv5Unit16.template.revision, level: 'LV5', unit: 16, name: lv5Unit16.template.title, items: lv5Unit16.learningItems as LearningItem[], questions: lv5Unit16.questions, relatedNotes: [], deliveryMode: 'text_only' },
+  { templateId: lv5Unit18.template.templateId, revision: lv5Unit18.template.revision, level: 'LV5', unit: 18, name: lv5Unit18.template.title, items: lv5Unit18.learningItems as LearningItem[], questions: lv5Unit18.questions, relatedNotes: [], deliveryMode: 'text_only' },
+  { templateId: lv5Unit22.template.templateId, revision: lv5Unit22.template.revision, level: 'LV5', unit: 22, name: lv5Unit22.template.title, items: lv5Unit22.learningItems as LearningItem[], questions: lv5Unit22.questions, relatedNotes: [], deliveryMode: 'text_only' },
+  { templateId: lv5Unit25.template.templateId, revision: lv5Unit25.template.revision, level: 'LV5', unit: 25, name: lv5Unit25.template.title, items: lv5Unit25.learningItems as LearningItem[], questions: lv5Unit25.questions, relatedNotes: [], deliveryMode: 'text_only' },
 ];
 export type UnitKey = number | string;
 export function findUnit(key: UnitKey, level?: string): CurriculumUnit | undefined {
