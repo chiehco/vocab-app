@@ -35,7 +35,7 @@ export default defineConfig({
       workbox: {
         // 首次只安裝程式與 S+A 輕量包；完整資料不再是啟動門檻。
         globPatterns: ["**/*.{js,css,html,ico,svg}", "assets/gsat115-*.{png,pdf}", "exams/gsat/*.{jpg,pdf}", "data/v1/sa-pack.json", "templates/*.{xlsx,csv}", "curriculum/**/*.webp"],
-        maximumFileSizeToCacheInBytes: 8 * 1024 * 1024,
+        maximumFileSizeToCacheInBytes: 16 * 1024 * 1024,
         // Prefer the deployed shell on navigation; fall back to the offline shell.
         navigateFallback: undefined,
         directoryIndex: null,

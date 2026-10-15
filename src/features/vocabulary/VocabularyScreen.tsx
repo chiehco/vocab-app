@@ -64,7 +64,7 @@ export default function VocabularyScreen(){
           <h2>{item.displayWord??item.pattern}</h2>
           {item.displayWord&&<SpeakerButton text={item.displayWord}/>}
           {kind==='vocabulary'?<><p className="vocab-meaning">{item.sensePos} {item.chapterMeaningsZh}</p>
-            {item.meaningSource==='existing_dictionary'&&<p className="direct-muted">教材相關補充詞 · 這裡顯示既有一般字義{item.printedLabel&&` · 書上標記：${item.printedLabel}`}</p>}
+            {(item.meaningSource==='existing_dictionary'||level==='LV6'&&item.meaningSource==='textbook_transcription'&&item.sourceRole==='printed_related_word')&&<p className="direct-muted">教材相關補充詞 · {item.meaningSource==='existing_dictionary'?'這裡顯示既有一般字義':'教材收錄義'}{item.printedLabel&&` · 書上標記：${item.printedLabel}`}</p>}
             {!item.officialWordId&&textOnly&&<p className="direct-muted">教材補充詞，尚未連到一般字卡。</p>}
             {item.illustration&&<figure className="vocab-illustration">
               <img src={`${ASSET_BASE}${item.illustration.path}`} alt={item.illustration.captionZh} width="768" height="768" loading="eager" decoding="async"/>

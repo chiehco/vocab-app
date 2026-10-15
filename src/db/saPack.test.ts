@@ -23,7 +23,7 @@ afterEach(async () => {
   await Promise.all(contentDb.tables.map(table => table.clear()));
 });
 
-it("啟動包收錄 LV3 U1/U2 與 U4–U10 文字版，保留 S+A、LV4 reviewed、LV1 reviewed 且不擴其他範圍", () => {
+it("啟動包保留已發布教材與 S+A，加入已驗 LV6 文字單元且不擴其他範圍", () => {
   const expected = new Set(read<{ wordId: string; priorityTier: string }[]>(data + "exam_priority.json")
     .filter(row => ["S", "A"].includes(row.priorityTier)).map(row => row.wordId));
   for (const file of readdirSync(direct).filter(name => /^curriculumLV4Unit.*\.json$/.test(name))) {
@@ -34,7 +34,7 @@ it("啟動包收錄 LV3 U1/U2 與 U4–U10 文字版，保留 S+A、LV4 reviewed
       }
     }
   }
-  for (const file of readdirSync(direct).filter(name => /^curriculumLV5Unit.*\.json$/.test(name))) {
+  for (const file of readdirSync(direct).filter(name => /^curriculumLV[56]Unit.*\.json$/.test(name))) {
     const unit = read<{ template: { deliveryMode?: string }; learningItems: Item[] }>(direct + file);
     if (unit.template.deliveryMode === "text_only") {
       for (const item of unit.learningItems) {

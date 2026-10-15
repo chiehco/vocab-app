@@ -21,7 +21,7 @@ class NostalgicApplyTest(unittest.TestCase):
         direct = Path('src/features/direct')
         files = [Path('public/data/v1') / name for name in apply.CONTENT_FILES + ['meta.json', 'sa-pack.json']]
         files += [direct / name for name in ['curriculum.json', 'curriculumUnit2.json', 'wordCatalog.json']]
-        files += [path.relative_to(ROOT) for path in (ROOT / direct).glob('curriculumLV[345]Unit*.json')]
+        files += [path.relative_to(ROOT) for path in (ROOT / direct).glob('curriculumLV[3456]Unit*.json')]
         files += [Path('src/features/vocabulary/lv1ReviewedImages.json')]
         for path in files:
             target = self.repo / path
@@ -37,6 +37,17 @@ class NostalgicApplyTest(unittest.TestCase):
         item = next(row for row in unit['learningItems'] if row.get('displayWord') == apply.WORD)
         item.update(lexemeRef='LC-LV3U01-nostalgic', officialWordId=None, officialSenseId=None, chapterMeaningsZh='鄉愁的')
         apply.write_json(unit_path, unit)
+        # This disposable snapshot predates nostalgic's official ID. Later text
+        # packages may reuse that ID; remove only those future mappings here.
+        for path in (self.repo / direct).glob('curriculumLV[3456]Unit*.json'):
+            later_unit = apply.read(path)
+            changed = False
+            for later_item in later_unit['learningItems']:
+                if later_item.get('officialWordId') == apply.WORD_ID:
+                    later_item.pop('officialWordId')
+                    changed = True
+            if changed:
+                apply.write_json(path, later_unit)
         data = self.repo / 'public/data/v1'
         meta = apply.read(data / 'meta.json')
         for name in ['words', 'senses', 'examples']:
