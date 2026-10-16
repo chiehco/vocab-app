@@ -1,6 +1,6 @@
 import 'fake-indexeddb/auto';
 import { expect, it } from 'vitest';
-import { renderToString } from 'react-dom/server';
+import { renderToStaticMarkup } from 'react-dom/server';
 import { MemoryRouter } from 'react-router-dom';
 import VocabularyScreen from './VocabularyScreen';
 
@@ -15,7 +15,7 @@ it.each([
   ['LV2', 37, 'LI-LV2U37-V092', 'vi./vt.', '拼寫'],
   ['LV2', 47, 'LI-LV2U47-V090', 'vt.', '避免'],
 ] as const)('keeps accepted book meaning and provenance for %s %s %s', (level, unit, id, pos, meaning) => {
-  const html = renderToString(<MemoryRouter initialEntries={[`/vocabulary?level=${level}&unit=${unit}&item=${id}`]}><VocabularyScreen /></MemoryRouter>);
+  const html = renderToStaticMarkup(<MemoryRouter initialEntries={[`/vocabulary?level=${level}&unit=${unit}&item=${id}`]}><VocabularyScreen /></MemoryRouter>);
   const article = html.match(/<article[\s\S]*?<\/article>/)?.[0];
   expect(article).toContain(`${pos} ${meaning}`);
   expect(article).toContain('教材收錄義');
