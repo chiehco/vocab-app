@@ -1,6 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import { eligibleWords, scriptJson, siegeUnitWords } from './model';
 import { curriculumUnits } from '../direct/model';
+import { lv1ReviewedGroups } from '../direct/lv1ReviewedGroups';
+import type { WordRecord } from '../../db/types';
 
 describe('siege unit scope', () => {
   it('keeps exact spellings and excludes unsupported forms instead of changing answers', () => {
@@ -44,4 +46,14 @@ describe('siege unit scope', () => {
     expect(encoded).not.toContain('<');
     expect(JSON.parse(encoded)).toEqual(input);
   });
+});
+
+it('uses LV1 text units and preserves existing reviewed-image groups', () => {
+  const source = curriculumUnits.find(u => u.level === 'LV1' && u.unit === 16)!;
+  const rows = source.items.filter(i => i.kind === 'vocabulary' && i.meaningSource !== 'unmapped_supplement');
+  expect(siegeUnitWords('LV1', 16, [])).toEqual(eligibleWords(rows.map(i => [i.displayWord ?? '', i.targetMeaningZh ?? ''])));
+  const group = lv1ReviewedGroups.find(g => g.unit === 1)!;
+  const dictionary = [{wordId: group.wordIds[0], word: 'apple', meaningZh: '蘋果'}, {wordId:'unrelated',word:'banana',meaningZh:'香蕉'}] as WordRecord[];
+  expect(siegeUnitWords('LV1', 1, dictionary)).toEqual([['APPLE','蘋果']]);
+  expect(siegeUnitWords('LV1', 99, dictionary)).toEqual([]);
 });

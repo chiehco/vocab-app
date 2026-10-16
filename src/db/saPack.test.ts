@@ -34,7 +34,7 @@ it("啟動包收錄 LV3 U1/U2 與 U4–U10 文字版，保留 S+A、LV4 reviewed
       }
     }
   }
-  for (const file of readdirSync(direct).filter(name => /^curriculumLV5Unit.*\.json$/.test(name))) {
+  for (const file of readdirSync(direct).filter(name => /^curriculumLV[1235]Unit.*\.json$/.test(name))) {
     const unit = read<{ template: { deliveryMode?: string }; learningItems: Item[] }>(direct + file);
     if (unit.template.deliveryMode === "text_only") {
       for (const item of unit.learningItems) {
