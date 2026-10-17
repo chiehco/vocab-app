@@ -11,7 +11,7 @@ afterEach(() => { vi.unstubAllGlobals(); vi.unstubAllEnvs(); });
 it('reuses the bootstrap count across StrictMode, answer rerenders, route changes, and remounts', async () => {
   vi.stubEnv('PROD', true);
   vi.stubEnv('MODE', 'production');
-  vi.stubEnv('VITE_PAGEVIEW_ENDPOINT', 'https://counter.example.test/pageviews');
+  vi.stubEnv('VITE_PAGEVIEW_ENDPOINT', 'https://vocab-pageviews.example.workers.dev/pageviews');
   vi.stubGlobal('location', new URL('https://chiehco.github.io/vocab-app/#/quiz'));
   const fetchMock = vi.fn().mockResolvedValue({ ok: true, json: async () => ({ total: 1234 }) });
   vi.stubGlobal('fetch', fetchMock);

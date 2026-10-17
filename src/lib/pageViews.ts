@@ -13,7 +13,8 @@ async function incrementPageView(): Promise<number | null> {
   let endpoint: URL;
   try {
     endpoint = new URL(configured);
-    if (endpoint.protocol !== 'https:' || endpoint.username || endpoint.password
+    if (endpoint.protocol !== 'https:' || !endpoint.hostname.endsWith('.workers.dev')
+      || endpoint.pathname !== '/pageviews' || endpoint.port || endpoint.username || endpoint.password
       || endpoint.search || endpoint.hash) return null;
   } catch { return null; }
 

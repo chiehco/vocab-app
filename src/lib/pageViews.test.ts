@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 
-const endpoint = 'https://counter.example.test/pageviews';
+const endpoint = 'https://vocab-pageviews.example.workers.dev/pageviews';
 let fetchMock: ReturnType<typeof vi.fn>;
 
 beforeEach(() => {
@@ -37,8 +37,10 @@ it('starts a new count after a document reload (new module lifetime)', async () 
 });
 
 it.each(['', 'http://counter.example.test', '/api/count', 'invalid',
-  'https://user:password@counter.example.test', 'https://counter.example.test/?key=secret',
-  'https://counter.example.test/#anything'])('rejects an unconfigured or unsuitable endpoint: %s', async value => {
+  'https://counter.example.test/pageviews', 'https://vocab-pageviews.example.workers.dev/',
+  `https://vocab-pageviews.example.workers.dev:8443/pageviews`,
+  `https://user:password@vocab-pageviews.example.workers.dev/pageviews`, `${endpoint}?key=secret`,
+  `${endpoint}#anything`])('rejects an unconfigured or unsuitable endpoint: %s', async value => {
   vi.stubEnv('VITE_PAGEVIEW_ENDPOINT', value);
   expect(await (await import('./pageViews')).recordPageView()).toBeNull();
   expect(fetchMock).not.toHaveBeenCalled();
