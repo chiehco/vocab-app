@@ -23,7 +23,7 @@ class FourWordApplyTest(unittest.TestCase):
         direct = Path('src/features/direct')
         files = [Path('public/data/v1') / n for n in apply.CONTENT_FILES + ['meta.json', 'sa-pack.json']]
         files += [direct / n for n in ['curriculum.json', 'curriculumUnit2.json', 'wordCatalog.json']]
-        files += [p.relative_to(ROOT) for p in (ROOT / direct).glob('curriculumLV[345]Unit*.json')]
+        files += [p.relative_to(ROOT) for p in (ROOT / direct).glob('curriculumLV[12345]Unit*.json')]
         files += [Path('src/features/vocabulary/lv1ReviewedImages.json')]
         for path in files:
             target = self.repo / path
@@ -45,7 +45,7 @@ class FourWordApplyTest(unittest.TestCase):
         # so their mappings must also be absent in this historical snapshot.
         # Leave the published curriculum and the production pack rules intact.
         unpublished_ids = {card['wordId'] for card in self.cards}
-        for path in (self.repo / direct).glob('curriculumLV[35]Unit*.json'):
+        for path in (self.repo / direct).glob('curriculumLV[1235]Unit*.json'):
             unit = apply.read(path)
             if unit.get('template', {}).get('deliveryMode') != 'text_only':
                 continue

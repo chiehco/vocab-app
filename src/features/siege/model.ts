@@ -16,12 +16,12 @@ export function eligibleWords(rows: SiegeWord[]): SiegeWord[] {
 }
 
 export function siegeUnitWords(level: string, unit: number, dictionary: WordRecord[]): SiegeWord[] {
-  if (level === 'LV1') {
+  const source = curriculumUnits.find(u => u.level === level && u.unit === unit);
+  if (level === 'LV1' && !source) {
     const group = lv1ReviewedGroups.find(g => g.unit === unit);
     const ids = new Set(group?.wordIds ?? []);
     return eligibleWords(dictionary.filter(w => ids.has(w.wordId)).map(w => [w.word, w.meaningZh ?? '']));
   }
-  const source = curriculumUnits.find(u => u.level === level && u.unit === unit);
   // Pending supplements remain readable, but their placeholder is not an answer clue.
   return eligibleWords((source?.items ?? []).filter(i => i.kind === 'vocabulary' && i.meaningSource !== 'unmapped_supplement')
     .map(i => [i.displayWord ?? '', i.targetMeaningZh ?? '']));
