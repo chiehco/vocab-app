@@ -29,6 +29,8 @@ jobs:
       - run: npm run build
         env:
           VITE_ASSET_REVISION: ${{ github.sha }}
+          # Leave unset until the counter provider and data transfer are approved.
+          VITE_PAGEVIEW_ENDPOINT: ${{ vars.PAGEVIEW_ENDPOINT }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
