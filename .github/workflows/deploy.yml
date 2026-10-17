@@ -29,8 +29,6 @@ jobs:
       - run: npm run build
         env:
           VITE_ASSET_REVISION: ${{ github.sha }}
-          # Cloudflare Worker /pageviews URL; unset keeps the counter disabled.
-          VITE_PAGEVIEW_ENDPOINT: ${{ vars.PAGEVIEW_ENDPOINT }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

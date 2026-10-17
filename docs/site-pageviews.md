@@ -1,40 +1,36 @@
-# 網站累計瀏覽次數：Cloudflare 候選
+# 網站累計瀏覽次數：Cloudflare
 
-## 狀態與範圍
+## 發布狀態
 
-- Cloudflare 分支：`feat/site-pageviews-cloudflare-20261017`。獨立 worktree，基準為已核對的主站 main `d3f4192`；不合併教材候選、PR35 或其他工作區變更。
-- GAS 候選完整保留於 `feat/site-pageviews-20261017` 的 `36b141a`，另有已交付 ZIP；此 Cloudflare 分支不包含 GAS transport。
-- 每次開啟／重新整理一份正式網站 document 嘗試加 1。SPA 切頁、切單字、答題、React 重繪／StrictMode 重掛不增加。不是不重複人數。
-- 顯示成功寫入後回傳的全站總數；從服務啟用時開始，不補造歷史、不用 localStorage 假裝全站統計。
-- 沒有部署、建立憑證、OAuth 授權、連 GitHub App、修改 Cloudflare 帳號或推送分支。主站合併／部署仍待批准。
+- **後端已上線；正式網站前端尚未上線。**
+- 端點：`https://vocab-pageviews.chiehco.workers.dev/pageviews`。
+- 後端現行版本：`93548a06-36a8-497a-b1d1-32d84ff594b3`。
+- 獨立前端分支 `feat/site-pageviews-cloudflare-20261017` 已 rebase 至 main `4a55fb6`，保留 PR36 合併的 42 個教材單元。未混入 PR35 或其他工作區未提交檔案。
+- 非秘密端點僅提交在此分支的 `.env.production`，不需 GitHub repository variable。沒有更動正式 main／Pages，合併、正式前端發布另待批准。
+- GAS 候選仍完整保留於 `feat/site-pageviews-20261017` 的 `36b141a` 與原交付 ZIP；Cloudflare 分支不含 GAS transport。
+- 雲端驗收留下 **11 次測試瀏覽**，總數截至驗收結束為 11，不清零、不當成既有訪客或補造歷史數字。
 
-## 實作
+## 行為與資料
 
-- 後端位於 `services/pageviews-cloudflare/`：單一 ES module Worker 與一個 SQLite-backed Durable Object。只保存一個數字 `total`，固定物件名 `site-total`。
-- 空白 `POST /pageviews` 才能加 1；只接受 `Origin: https://chiehco.github.io`。錯誤來源、路徑、query、method、body、preflight 都不加數。GET 不提供加數或 reset；沒有管理端點。
-- `PageViewCounter.increment` 只讀／加 1／寫回 `total`，用 Durable Object 儲存的 input gates 保護並發，等待持久化寫入後才回傳。錯誤或超出 JS 安全整數範圍的已存值不覆寫。
-- 回應固定 CORS、`Cache-Control: no-store`，不設 cookie。停用 Worker 應用 observability，無 console、訪客明細或識別碼。
-- 前端 `main.tsx` 不 await 計數，單一 document 共用一份 Promise；只在 production 與正式網站路徑執行。端點限定 HTTPS `*.workers.dev/pageviews`，無 query／帳密。
-- 每次只發一次空白 POST，`credentials: omit`、no-referrer、3 秒逾時；HTTP、離線、阻擋、格式或逾時失敗都靜默，不重試、不補數、不阻擋學習；不顯示假的 0。首頁重掛沿用同一回應快照。
+每次開啟或重新整理正式網站，一個新的 document 嘗試加 1。SPA 導航、換單字、答題、React 重繪、StrictMode 不增加。主頁顯示成功寫入後回傳的網站累計，並非不重複人數。
 
-## 資料與限制
+後端是單一 Worker 與 SQLite-backed Durable Object，只保存數字 `total`，固定物件 `site-total`。空 `POST /pageviews` 且 Origin 為 `https://chiehco.github.io` 才加數；錯誤來源、路徑、query、method、body、preflight 不加數，沒有 reset 或管理端點。Durable Object storage input gates 保護讀取／加 1／寫回，成功持久寫入才回傳。
 
-- 應用不傳／保存網頁 hash、單字、答案、學習進度、姓名、email、裝置／訪客 ID、本機資料庫內容。服務只保存總數。
-- Cloudflare 作為 HTTPS 服務商仍會接觸 IP、Origin、瀏覽器網路標頭、請求時間等連線資料及平台安全／執行中繼資料；不能聲稱供應商看不到連線資料。
-- 免費方案支援 SQLite-backed Durable Objects，受 Worker／DO 請求、執行時間與儲存讀寫配額限制。超額失敗就隱藏數字，不強制升級。
-- Origin／CORS 不是非瀏覽器請求的防偽認證，公開端點仍可能被灌數；離線或故障可能漏數。本功能不做訪客分析或防刷系統。
+前端 `main.tsx` 不 await 計數，每個 document 共用一個 Promise。只在 production build、正式網站 origin 與 `/vocab-app/` 或 `/vocab-app/index.html` 執行；本機、QA、private 與其他站點停用。端點限 HTTPS `*.workers.dev/pageviews`，不得含帳密、port、query 或 hash。
 
-## 部署與授權
+只發一次空 POST，`credentials: omit`、no-referrer、3 秒逾時。HTTP、離線、阻擋、格式、逾時失敗均安靜忽略，不重試、不補數，不影響學習、不顯示假的 0。主頁只顯示該次回應快照。
 
-使用者目前已停在 Dashboard 的 Hello World 部署前。此功能第一次建立類別必須套用 SQLite migration；只貼 `worker.mjs` 並不足以建立命名空間與 binding。採官方本機 Wrangler 路徑，詳見 [最小操作與權限](../services/pageviews-cloudflare/README.md)。
+不傳送或保存頁面 hash、單字、答案、進度、姓名、email、裝置／訪客 ID、本機資料庫。Worker observability 關閉，無 console 或事件表。Cloudflare 仍會接觸 IP、Origin、瀏覽器網路標頭與連線時間等資料，不能宣稱供應商看不到連線資料。
 
-已確認 Wrangler 4.151.1 可用；`wrangler whoami` 回報 `You are not authenticated. Please run wrangler login.`。未執行登入。下一步只需使用者批准並本人完成窄範圍 OAuth：`account:read`、`user:read`、`workers_scripts:write`，Wrangler 會自動加上 `offline_access` 並保存可續期登入。這不是訪客資料權限，且尚未授予。
+免費方案支援 SQLite DO，有帳戶共用配額；故障或超額可漏計，不影響學習。公開端點可能被非瀏覽器偽造 Origin 灌數，維持簡單瀏覽計數範圍。
 
-## 驗證
+## 部署與驗收
 
-- 服務 Node／VM 與本機 workerd／SQLite 測試 20 個通過，包括 100 次並發結果恰好 1–100，dispose／重啟同一持久化目錄後為 101。
-- `wrangler deploy --dry-run` 通過，確認 `env.PAGEVIEWS → PageViewCounter`；只是本機打包，不代表已建立雲端資源。
-- 主站全量 `npm test -- --maxWorkers=1 --testTimeout=15000`：106 檔、670 個測試全部通過，exit code 0，371.87 秒（session 75142 已完成）。lint、TypeScript 編譯、正式 Vite／PWA 建置與 `git diff --check` 通過；既有大 bundle 警告仍在。CI 加入獨立後端測試。
-- 真正 Cloudflare 端點尚未建立／驗收。主站端點變數 `PAGEVIEW_ENDPOINT` 尚未設定。
+使用者批准最小範圍 OAuth 與後端部署後，先核對帳戶及同名服務。官方 API 回覆 Worker 不存在（10007），再以 SQLite migration 建立服務。初次版本 `e74cfbd5-3b82-4b69-ab30-b758f9203dd0`，相同程式重新部署後為目前版本，累計延續。沒有改 DNS、付費方案、擴 OAuth、接 GitHub App 或建立 API token。詳見 [後端 README](../services/pageviews-cloudflare/README.md)。
+
+- 本機後端 20 個測試通過：workerd／SQLite 100 次並發恰為 1–100，dispose／重啟同一儲存後為 101，儲存故障回傳 503。
+- 雲端 POST 1 → GET／preflight／無效請求 → POST 2；8 次並發得到 3–10；重新部署後得到 11。CORS、無快取、拒絕來源與持久保存通過。
+- 前端測試覆蓋每 document 一次、重新整理、SPA、StrictMode、離線／阻擋／逾時／不重試。最新 main 整合後完整測試與建置結果見本次交付紀錄。
+- CI 已加入後端隔離測試，前端既有發布門檻維持。
 
 官方依據：[並發計數器](https://developers.cloudflare.com/durable-objects/examples/build-a-counter/)、[免費方案](https://developers.cloudflare.com/durable-objects/platform/pricing/)、[SQLite migration](https://developers.cloudflare.com/durable-objects/reference/durable-object-class-migrations-legacy/)。
