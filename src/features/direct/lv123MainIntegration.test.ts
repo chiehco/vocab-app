@@ -11,7 +11,7 @@ const selected = {
   LV3: [11, 13, 14, 15, 16, 17, 19, 20, 21, 22, 23, 24],
 };
 
-it('registers all 42 accepted units and leaves source gaps and LV6 out of the public catalog', () => {
+it('retains all 42 accepted units and leaves their source gaps out of the public catalog', () => {
   for (const [level, units] of Object.entries(selected)) {
     for (const unit of units) {
       expect(findUnit(unit, level)?.deliveryMode).toBe('text_only');
@@ -22,8 +22,6 @@ it('registers all 42 accepted units and leaves source gaps and LV6 out of the pu
     expect(findUnit(unit, level)).toBeUndefined();
     expect(textbookUnits.some(row => row.level === level && row.unit === unit)).toBe(false);
   }
-  expect(curriculumUnits.filter(row => row.level === 'LV6')).toEqual([]);
-  expect(textbookUnits.filter(row => row.level === 'LV6')).toEqual([]);
   expect(new Set(curriculumUnits.flatMap(row => row.items.map(item => item.learningItemId))).size)
     .toBe(curriculumUnits.reduce((count, row) => count + row.items.length, 0));
 });

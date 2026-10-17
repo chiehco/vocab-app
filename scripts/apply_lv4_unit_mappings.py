@@ -178,7 +178,7 @@ def apply_review(repo, master, source_root, out):
     direct = Path('src/features/direct')
     inputs = [Path('public/data/v1') / n for n in CONTENT_FILES + ['meta.json', 'sa-pack.json']]
     inputs += [direct / n for n in ['curriculum.json', 'curriculumUnit2.json']]
-    inputs += [p.relative_to(repo) for p in (repo / direct).glob('curriculumLV[12345]Unit*.json')]
+    inputs += [p.relative_to(repo) for p in (repo / direct).glob('curriculumLV[123456]Unit*.json')]
     inputs += [Path('src/features/vocabulary/lv1ReviewedImages.json')]
     destinations = [repo / n for n in OUTPUT_FILES] + [out / master.name, out / 'apply-result.json']
     assert master.resolve() not in {p.resolve() for p in destinations}
