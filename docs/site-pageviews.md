@@ -8,7 +8,7 @@
 - 獨立前端分支 `feat/site-pageviews-cloudflare-20261017` 已 rebase 至 main `4a55fb6`，保留 PR36 合併的 42 個教材單元。未混入 PR35 或其他工作區未提交檔案。
 - 非秘密端點僅提交在此分支的 `.env.production`，不需 GitHub repository variable。沒有更動正式 main／Pages，合併、正式前端發布另待批准。
 - GAS 候選仍完整保留於 `feat/site-pageviews-20261017` 的 `36b141a` 與原交付 ZIP；Cloudflare 分支不含 GAS transport。
-- 雲端驗收留下 **11 次測試瀏覽**，總數截至驗收結束為 11，不清零、不當成既有訪客或補造歷史數字。
+- 雲端與瀏覽器驗收共留下 **13 次測試瀏覽**（後端 11 次、隔離瀏覽器 2 次），最後一次成功回應總數為 13，不清零、不當成既有訪客或補造歷史數字。
 
 ## 行為與資料
 
@@ -30,7 +30,9 @@
 
 - 本機後端 20 個測試通過：workerd／SQLite 100 次並發恰為 1–100，dispose／重啟同一儲存後為 101，儲存故障回傳 503。
 - 雲端 POST 1 → GET／preflight／無效請求 → POST 2；8 次並發得到 3–10；重新部署後得到 11。CORS、無快取、拒絕來源與持久保存通過。
-- 前端測試覆蓋每 document 一次、重新整理、SPA、StrictMode、離線／阻擋／逾時／不重試。最新 main 整合後完整測試與建置結果見本次交付紀錄。
+- 最新 main 整合後完整回歸：151 個測試檔、1,101 個測試全部通過，exit 0，851.58 秒。計數專項 34 個測試通過；typecheck、lint、正式 Vite／PWA 建置與端點入包核對通過，僅保留既有大 bundle 警告。
+- 隔離 Chrome 載入本機正式建置，正式站資源全由測試攔截提供，service worker 封鎖，未發布前端。真實計數端點首次只收到一個 POST 並顯示 12；切到學習紀錄、回首頁仍只有一個 POST；重新載入後第二個 POST 顯示 13，實際瀏覽器 CORS 通過。
+- 瀏覽器封鎖端點後，第三個 document 僅有一個失敗嘗試，觀察超過 4 秒無重試；計數隱藏，仍能進入「想學哪一課？」課本選擇。此失敗請求在本機攔截，未送至 Cloudflare，不增加總數。成功／失敗畫面均已截圖驗收。
 - CI 已加入後端隔離測試，前端既有發布門檻維持。
 
 官方依據：[並發計數器](https://developers.cloudflare.com/durable-objects/examples/build-a-counter/)、[免費方案](https://developers.cloudflare.com/durable-objects/platform/pricing/)、[SQLite migration](https://developers.cloudflare.com/durable-objects/reference/durable-object-class-migrations-legacy/)。

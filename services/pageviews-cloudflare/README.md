@@ -6,18 +6,18 @@
 
 - **後端已上線，正式網站前端尚未接入。**
 - 端點：https://vocab-pageviews.chiehco.workers.dev/pageviews
-- Worker：`vocab-pageviews`；帳戶 ID：`a6a0e9070c9872a9a8021ff57c240ee4`。
+- Worker：`vocab-pageviews`；部署前已核對登入帳戶。
 - 部署前 API 回覆同名 Worker 不存在（10007），沒有覆蓋未知資源。
 - 初次版本：`e74cfbd5-3b82-4b69-ab30-b758f9203dd0`，2026-10-17 16:31 UTC。
 - 同份程式重新部署後現行版本：`93548a06-36a8-497a-b1d1-32d84ff594b3`。
-- 驗收共寫入 **11 次測試瀏覽**，保留在總數內；驗收結束總數為 11。沒有清零或補造歷史數字。
+- 驗收共寫入 **13 次測試瀏覽**（後端 11 次、隔離瀏覽器 2 次），保留在總數內；最後一次成功回應總數為 13。沒有清零或補造歷史數字。
 - 公開端點已填入獨立前端分支 `.env.production`；合併與 GitHub Pages 發布另待批准。
 
 ## 配置與驗收
 
 `wrangler.jsonc` 包含 `PAGEVIEWS → PageViewCounter` binding 與 `v1/new_sqlite_classes` migration。不要改成 `new_classes` 或另加 `exports`。固定物件 `site-total` 只保存數字 `total`。空 POST 且 Origin 為 `https://chiehco.github.io` 才加 1；GET、query、錯誤路徑／來源、非空 body、無效 preflight 都拒絕而不加數。沒有讀數、reset 或管理端點。
 
-本機 20 個測試通過，包括真實 workerd／SQLite 100 次並發得到 1–100、dispose／重啟後得到 101，以及儲存失敗回傳 503；Wrangler dry-run 通過。實際雲端驗收：POST 1 → GET／preflight／各無效請求 → POST 2；8 次並發得到 3–10；重新部署後 POST 得到 11。固定 CORS、無快取與拒絕來源通過。沒有刻意破壞雲端儲存；故障與前端離線／阻擋／逾時、不重試由隔離測試驗證。
+本機 20 個測試通過，包括真實 workerd／SQLite 100 次並發得到 1–100、dispose／重啟後得到 101，以及儲存失敗回傳 503；Wrangler dry-run 通過。實際雲端驗收：POST 1 → GET／preflight／各無效請求 → POST 2；8 次並發得到 3–10；重新部署後 POST 得到 11。隔離 Chrome 載入本機正式建置得到 12，SPA 切換未加數，重新載入得到 13。接著在瀏覽器封鎖端點，確認一次失敗、4 秒無重試、計數隱藏且仍可進入課本選擇；這次攔截沒有增加雲端總數。固定 CORS、無快取與拒絕來源通過。沒有刻意破壞雲端儲存；故障與前端離線／阻擋／逾時、不重試由隔離測試驗證。
 
 服務只保存總數，不設 cookie，不收訪客 ID、單字、作答或進度。Worker observability 關閉，無 console。Cloudflare 作為 HTTPS 服務商仍接觸 IP、Origin、瀏覽器網路標頭等連線資料。Origin／CORS 不能阻止非瀏覽器偽造來源，這是簡單瀏覽次數，不是不重複人數。
 
