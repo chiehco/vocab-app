@@ -9,20 +9,32 @@
 - 2026-10-17 檢查最新 `origin/main` `d3f4192`：GitHub Pages + React/Vite PWA，只有同站教材及圖片下載，IndexedDB 保存本機學習資料。追蹤程式、套件、工作流程及設定中未見可重用的共用後端或計數服務。
 - 獨立分支 `feat/site-pageviews-20261017`；沒有混入待發布的 42 單元候選或 PR35，沒有合併、推送或部署。
 
+**目前只完成前端、mock 測試及這份服務規格。尚未寫後端 Worker／Durable Object 程式，尚未實作或驗證服務端的原子遞增、持久化、CORS。** 不應把「前端準備完成」描述成已可使用的全站計數功能。
+
 ## 最小依賴與建議
 
 需要 **一個 HTTPS 寫入端點 + 一個持久化、可原子加 1 的全站整數**。GitHub Pages 本身只提供靜態託管，瀏覽器本機儲存無法共用總數。
 
 具體建議供選擇：由專案擁有者持有的 **Cloudflare Worker + 一個 SQLite-backed Durable Object**。所有請求固定送到同一個物件，只保存一個 `total`，依 Durable Objects 儲存序列化保證讀取／加 1／保存不會因並發遺失。無需另建訪客表、事件表、登入、前端金鑰或分析 SDK。這只是建議，尚未選定、註冊、建立或連線。
 
-官方依據：[GitHub Pages 靜態託管](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)、[Cloudflare 計數器範例與並發儲存保證](https://developers.cloudflare.com/durable-objects/examples/build-a-counter/)。方案與費用需在啟用前核對當時帳戶方案／配額，這份本機修改沒有增加 npm 依賴。
+官方依據：[GitHub Pages 靜態託管](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)、[Cloudflare 計數器範例與並發儲存保證](https://developers.cloudflare.com/durable-objects/examples/build-a-counter/)。這份本機修改沒有增加 npm 依賴；後續可用單一 JavaScript Worker 檔案，不需要後端框架或分析 SDK。
+
+## 免費方案核對（2026-10-17）
+
+**支援。** Cloudflare 官方價目明確列出 Workers Free 可使用 **SQLite-backed Durable Objects**；不能選舊的 key-value 儲存後端。SQLite 物件也可直接用其 `storage.get/put` API 保存單一總數，不需要另建資料服務。
+
+官方免費配額包含：Durable Object 請求 100,000／日、執行時間 13,000 GB-s／日、讀取 500 萬列／日、寫入 100,000 列／日、總儲存 5 GB；入口 Worker 另有 100,000 請求／日及每次 10 ms CPU 限制。這些是帳戶／方案配額，不是對本站保證的可用瀏覽量；使用量還會與其他用途共用。免費配額超過時相應操作會失敗，前端隱藏數字且不重試，不需要為此增加分析或排隊系統。
+
+來源：[Durable Objects 官方價格／免費方案條件](https://developers.cloudflare.com/durable-objects/platform/pricing/)、[Workers 官方價格](https://developers.cloudflare.com/workers/platform/pricing/)、[SQLite 物件可用 get/put 與持久化說明](https://developers.cloudflare.com/durable-objects/best-practices/access-durable-objects-storage/)。啟用當日仍需核對帳戶狀態與當時配額；這次沒有登入、註冊或啟用服務。
 
 ## 真正需要使用者處理的設定（核准後才做）
 
-1. 選定計數服務，並批准下述網路資料範圍；目前無需提供任何憑證。
-2. 若採 Cloudflare：由擁有者提供可使用 Workers／Durable Objects 的帳戶與部署授權；設定一個 Worker、一個固定 Durable Object binding/migration；服務端只保留總數，不開啟應用請求記錄或自行記錄 IP／UA。不將管理憑證放入前端或 repository variable。
-3. 服務應符合下述介面並以隔離測試計數器驗收，然後提供正式 HTTPS 端點。
-4. 設定 GitHub repository 的 **Actions variable `PAGEVIEW_ENDPOINT`** 為該端點（公開網址，非 secret）。工作流程會在 build 注入 `VITE_PAGEVIEW_ENDPOINT`；未設定時完全關閉。另行批准合併與部署後才上線。
+1. 擁有者選定 Cloudflare、批准下述網路資料範圍，並持有可用的 Workers Free 帳戶。現在不需要把憑證貼到對話。
+2. 獲准後由開發工作補上單一 Worker 檔案與 Wrangler 設定：一個固定名稱的 SQLite Durable Object、一個 binding；新專案依官方教學以 `exports.<ClassName>` 宣告 `type: durable-object`、`storage: sqlite`。只保留總數，不啟用應用請求記錄或自行記錄 IP／UA。先做隔離的原子遞增／持久化／CORS 測試，再在獲得外部部署批准後發佈一次，取得 `workers.dev` HTTPS 網址；不需要自訂網域、D1、Workers KV、額外後端框架或前端金鑰。
+3. 設定 GitHub repository 的 **Actions variable `PAGEVIEW_ENDPOINT`** 為固定 POST 端點（公開網址，非 secret）。工作流程會在 build 注入 `VITE_PAGEVIEW_ENDPOINT`；未設定時完全關閉。管理憑證只留在服務管理環境。
+4. 另行批准合併與網站部署後才上線。這些設定都尚未執行；服務程式尚待實作，不能只填入任意 URL 就視為完成。
+
+設定依據：[官方入門：binding、SQLite exports 與部署](https://developers.cloudflare.com/durable-objects/get-started/)。
 
 不需要使用者設定 Google Analytics、不需要訪客 ID、登入、答題資料庫或更改教材。
 
@@ -53,3 +65,11 @@
 - 離線／阻擋／失敗的開啟可能漏計，恢復連線也不補數；這是保持學習不中斷且避免超時重送重複加數的明確限制。
 
 本機開發不能用正式計數器試打。本機測試使用 `counter.example.test` 並完全 mock fetch，沒有向該網址或任何計數服務發出請求。
+
+## 本機驗證結果（2026-10-17）
+
+- `npm test -- --maxWorkers=1 --testTimeout=15000`：**106 個測試檔、667 個測試全數通過**，exit code 0，358.62 秒；session 69436 已完成。
+- 新增的計數模組及 StrictMode／SPA 元件測試：2 檔、31 個測試通過，已包含在上述 667 個測試中。
+- `npm run lint`、`git diff --check` 通過。
+- `npm run build` 通過，包含 TypeScript 編譯、Vite 正式建置與 PWA service worker 產出；既有大 bundle 警告仍存在。
+- 服務端尚未實作，因此這些結果不包含真正後端的並發原子遞增、重啟持久化或 CORS 驗證。
