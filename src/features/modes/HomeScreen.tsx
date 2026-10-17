@@ -6,6 +6,7 @@ import { getDueReviewQueue } from '../../srs/dueReview';
 import { getWordBeastAsset } from '../wordbeast/wordBeastAssets';
 import ResilientBeastImage from '../wordbeast/ResilientBeastImage';
 import './learning-home.css';
+import SitePageViews from '../../components/SitePageViews';
 
 export default function HomeScreen() {
   const today = useToday();
@@ -42,5 +43,6 @@ export default function HomeScreen() {
       </nav>
     </>}
     <footer className="learning-footer"><Link to="/progress">學習紀錄</Link><Link to="/groups">我的群組</Link></footer>
+    <SitePageViews />
   </div>;
 }

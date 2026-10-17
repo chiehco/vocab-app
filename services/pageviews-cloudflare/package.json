@@ -1,0 +1,14 @@
+{
+  "name": "vocab-pageviews",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-vm-modules --test verify.mjs",
+    "check": "wrangler deploy --dry-run --outdir .wrangler/check",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "miniflare": "4.20260730.0",
+    "wrangler": "4.151.1"
+  }
+}
