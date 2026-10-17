@@ -2,11 +2,11 @@
 
 ## 發布狀態
 
-- **後端已上線；正式網站前端尚未上線。**
+- **後端已上線；此版前端已接入公開端點，由 main 的 GitHub Pages 流程發布。**
 - 端點：`https://vocab-pageviews.chiehco.workers.dev/pageviews`。
 - 後端現行版本：`93548a06-36a8-497a-b1d1-32d84ff594b3`。
 - 獨立前端分支 `feat/site-pageviews-cloudflare-20261017` 已 rebase 至 main `4a55fb6`，保留 PR36 合併的 42 個教材單元。未混入 PR35 或其他工作區未提交檔案。
-- 非秘密端點僅提交在此分支的 `.env.production`，不需 GitHub repository variable。沒有更動正式 main／Pages，合併、正式前端發布另待批准。
+- 非秘密端點位於 `.env.production`，不需 GitHub repository variable；保留既有 main／GitHub Pages 發布流程。
 - GAS 候選仍完整保留於 `feat/site-pageviews-20261017` 的 `36b141a` 與原交付 ZIP；Cloudflare 分支不含 GAS transport。
 - 雲端與瀏覽器驗收共留下 **13 次測試瀏覽**（後端 11 次、隔離瀏覽器 2 次），最後一次成功回應總數為 13，不清零、不當成既有訪客或補造歷史數字。
 

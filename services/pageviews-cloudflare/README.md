@@ -4,14 +4,14 @@
 
 ## 部署狀態
 
-- **後端已上線，正式網站前端尚未接入。**
+- **後端已上線；此版前端已接入端點，透過 main 的 GitHub Pages 流程正式發布。**
 - 端點：https://vocab-pageviews.chiehco.workers.dev/pageviews
 - Worker：`vocab-pageviews`；部署前已核對登入帳戶。
 - 部署前 API 回覆同名 Worker 不存在（10007），沒有覆蓋未知資源。
 - 初次版本：`e74cfbd5-3b82-4b69-ab30-b758f9203dd0`，2026-10-17 16:31 UTC。
 - 同份程式重新部署後現行版本：`93548a06-36a8-497a-b1d1-32d84ff594b3`。
 - 驗收共寫入 **13 次測試瀏覽**（後端 11 次、隔離瀏覽器 2 次），保留在總數內；最後一次成功回應總數為 13。沒有清零或補造歷史數字。
-- 公開端點已填入獨立前端分支 `.env.production`；合併與 GitHub Pages 發布另待批准。
+- 公開端點已填入 `.env.production`，不需要秘密金鑰或 GitHub repository variable。
 
 ## 配置與驗收
 
