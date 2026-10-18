@@ -64,14 +64,14 @@ it.each(['LV1/1','LV4/17'] as const)('%s: main daily entry saves, returns to the
   await view.click(button('開始今日學新與複習 →'));
   await view.waitFor(()=>expect(view.container.querySelectorAll('.seal-options button')).toHaveLength(4));
   const url=view.container.querySelector('[data-testid=url]')!.textContent!;
-  const options=[...view.container.querySelectorAll('.seal-options button')].map(el=>el.textContent);
   await view.click(view.container.querySelector('.seal-options button'));
   expect(await progressDb.reviewLogs.count()).toBe(0);
   await view.click(link('← 回小鎮 · 保留本輪進度'));
   await view.waitFor(()=>expect(button('繼續今天的學習 →')).toBeDefined());expect(built()).toHaveLength(0);
   await view.click(button('繼續今天的學習 →'));
   await view.waitFor(()=>expect(view.container.querySelector('.seal-answered')).not.toBeNull());
-  expect([...view.container.querySelectorAll('.seal-options > button')].map(el=>el.textContent)).toEqual(options);
+  expect(view.container.querySelector('.seal-options')).toBeNull();
+  expect(view.container.querySelector('.seal-card-answer')).not.toBeNull();
   await act(async()=>{const save=view.container.querySelector<HTMLButtonElement>('.seal-swipe-hint')!;save.click();save.click();});
   await view.waitFor(()=>expect(link('回小鎮看小屋 →')).toBeDefined());expect(await progressDb.reviewLogs.count()).toBe(1);
   const log=(await progressDb.reviewLogs.toArray())[0],card=await progressDb.cardStates.get(log.word),checkin=await progressDb.checkIns.get(log.reviewedAt.slice(0,10));

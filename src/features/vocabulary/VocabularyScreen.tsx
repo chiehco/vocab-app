@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import SpeakerButton from '../../components/SpeakerButton';
+import StudyActions from '../../components/StudyActions';
+import { useCardSwipe } from '../../hooks/useCardSwipe';
 import { curriculumUnits, findUnit, templateGroup, unitsForLevel } from '../direct/model';
 import { saveGroup, startScopeSession } from '../direct/store';
 import { reviewedExample, practiceIds } from './model';
@@ -38,6 +40,9 @@ export default function VocabularyScreen(){
   const textOnly=current?.deliveryMode==='text_only';
   function choose(values:Record<string,string>){setError('');setParams({unit:String(unit),...values});}
   function show(id:string){choose({level,kind,item:id});}
+  function move(n:number){show(matches[n].learningItemId);window.scrollTo({top:0,behavior:'instant'});}
+  const swipe=useCardSwipe(item?.learningItemId ?? '',index>0?()=>move(index-1):undefined,
+    index<matches.length-1?()=>move(index+1):undefined);
   async function practice(){if(busy||!item||!current)return;setBusy(true);setError('');try{
     const scope=practiceIds(items);
     const s=await startScopeSession(scope,`${current.name} · ${kind==='grammar'?usageLabel:'詞彙'}自由練習`);
@@ -59,7 +64,7 @@ export default function VocabularyScreen(){
         {item&&<label>跳到項目<select aria-label="跳到項目" value={item.learningItemId} onChange={e=>show(e.target.value)}>{matches.map((i,n)=><option key={i.learningItemId} value={i.learningItemId}>{n+1}. {i.displayWord??i.pattern}</option>)}</select></label>}
       </details>
       {item?<>
-        <article className="vocab-card" aria-label="學習字卡">
+        <article className="vocab-card study-swipe-surface" aria-label="學習字卡" {...swipe}>
           <p className="direct-kicker">{index+1} / {matches.length} · 教材第 {item.sourcePage} 頁</p>
           <h2>{item.displayWord??item.pattern}</h2>
           {item.displayWord&&<SpeakerButton text={item.displayWord}/>}
@@ -76,7 +81,6 @@ export default function VocabularyScreen(){
             {example&&<><h3>情境例句</h3><p className="direct-stem">{example.sentenceEn}</p><p>{example.sentenceZh}</p><SpeakerButton text={example.sentenceEn}/></>}
           </>}
         </article>
-        <div className="vocab-levels"><button disabled={index===0} onClick={()=>show(matches[index-1].learningItemId)}>上一張</button><button disabled={index===matches.length-1} onClick={()=>show(matches[index+1].learningItemId)}>下一張</button></div>
         {practiceIds(items).length>0?<><button className="direct-primary" disabled={busy} onClick={()=>void practice()}>做題目（整單元 {practiceIds(items).length} 題）</button>
         <p className="direct-muted">範圍涵蓋本單元全部{kind==='grammar'?usageLabel:'詞彙'}，不受目前字卡或搜尋影響；未練過的優先。可隨時離開續答。</p></>:<Link className="direct-primary" to={textbookPath(level,unit)}>回單元頁做一般單字練習</Link>}
       </>:<p role="status">找不到符合的項目，請換個關鍵字。</p>}
@@ -84,5 +88,6 @@ export default function VocabularyScreen(){
     </>}
     {error&&<p role="alert">{error}</p>}
     {saveFailed&&<p role="alert">學習位置尚未保存，請確認儲存空間後重新整理。</p>}
+    {!hold&&current&&item&&<StudyActions label="字卡導覽"><div className="vocab-card-nav"><button disabled={index===0} onClick={()=>move(index-1)}>上一張</button><button disabled={index===matches.length-1} onClick={()=>move(index+1)}>下一張</button></div></StudyActions>}
   </div>;
 }

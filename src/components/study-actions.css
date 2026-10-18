@@ -1,0 +1,15 @@
+.study-actions-space { padding-bottom: env(safe-area-inset-bottom, 0px); }
+.study-actions-dock {
+  position: fixed; z-index: 40; bottom: calc(65px + env(safe-area-inset-bottom, 0px));
+  left: 50%; transform: translateX(-50%); width: 100%; max-width: var(--ui-column);
+  padding: 8px max(12px, env(safe-area-inset-right, 0px)) 8px max(12px, env(safe-area-inset-left, 0px));
+  background: var(--ui-bg); border-top: 1px solid var(--ui-border);
+  box-shadow: 0 -4px 16px #283b2910;
+}
+.study-actions-dock button, .study-actions-dock a { min-height: 44px; touch-action: manipulation; }
+.study-actions-dock .learning-card-nav, .study-actions-dock .vocab-card-nav,
+.study-actions-dock .seal-answered, .study-actions-dock .town-study-result-actions { margin: 0; }
+.learning-page .study-actions-dock .learning-card-nav > * { margin: 0; }
+.vocab-card-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.vocab-card-nav button { border: 1px solid var(--ui-border-strong); border-radius: var(--ui-radius); padding: 8px 12px; }
+.study-swipe-surface { touch-action: pan-y pinch-zoom; }
