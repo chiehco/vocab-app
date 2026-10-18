@@ -1,23 +1,22 @@
 export const TOWN_PLOT_SIZE = 104;
-const GAP_X = 116;
-const GAP_Y = 112;
-const MARGIN = 20;
+const GAP_X = 110;
+const GAP_Y = 110;
+const MARGIN = 12;
 type Side = 'north' | 'south' | 'west' | 'east';
 export interface TownPosition { left: number; top: number; side: Side }
 export interface TownArea { left: number; top: number; width: number; height: number }
 
 /** Appearance only: stable word order, a clear central square and four street entrances. */
-export function getTownLayout(count: number) {
+export function getTownLayout(count: number, columns = 6) {
   const size = Number.isFinite(count) ? Math.max(0, Math.floor(count)) : 0;
-  let cells = 9;
-  while (8 * cells - 24 < size) cells += 2;
-  const middle = Math.floor(cells / 2);
+  const rows = Math.max(4, Math.ceil((size + 4) / columns));
+  const plazaRow = Math.floor((rows - 2) / 2);
   const slots: Record<Side, TownPosition[]> = { north: [], south: [], west: [], east: [] };
-  for (let row = 0; row < cells; row++) {
-    for (let col = 0; col < cells; col++) {
-      const side: Side | undefined = row < 2 ? 'north' : row >= cells - 2 ? 'south'
-        : col < 2 ? 'west' : col >= cells - 2 ? 'east' : undefined;
-      if (!side || ((side === 'north' || side === 'south') ? col === middle : row === middle)) continue;
+  for (let row = 0; row < rows; row++) {
+    for (let col = 0; col < columns; col++) {
+      const side: Side | undefined = row < plazaRow ? 'north' : row >= plazaRow + 2 ? 'south'
+        : col < 2 ? 'west' : col >= 4 ? 'east' : undefined;
+      if (!side) continue;
       slots[side].push({ left: MARGIN + col * GAP_X, top: MARGIN + row * GAP_Y, side });
     }
   }
@@ -31,17 +30,17 @@ export function getTownLayout(count: number) {
   const positions = sides.flatMap((side, i) => Array.from({ length: quotas[i] }, (_, index) =>
     slots[side][quotas[i] === 1 ? Math.floor(slots[side].length / 2)
       : Math.round(index * (slots[side].length - 1) / (quotas[i] - 1))]));
-  const width = MARGIN * 2 + cells * GAP_X;
-  const height = MARGIN * 2 + cells * GAP_Y;
-  const square: TownArea = { left: MARGIN + 2 * GAP_X, top: MARGIN + 2 * GAP_Y,
-    width: (cells - 4) * GAP_X, height: (cells - 4) * GAP_Y };
-  const plaza: TownArea = { left: square.left + 35, top: square.top + 35,
-    width: square.width - 70, height: square.height - 70 };
+  const width = MARGIN * 2 + columns * GAP_X;
+  const height = MARGIN * 2 + rows * GAP_Y;
+  const square: TownArea = { left: MARGIN + 2 * GAP_X, top: MARGIN + plazaRow * GAP_Y,
+    width: GAP_X + TOWN_PLOT_SIZE, height: GAP_Y + TOWN_PLOT_SIZE };
+  const plaza: TownArea = { left: square.left + 12, top: square.top + 12,
+    width: square.width - 24, height: square.height - 24 };
   const entrances: TownArea[] = [
-    { left: MARGIN + middle * GAP_X + 35, top: 0, width: 34, height: square.top },
-    { left: MARGIN + middle * GAP_X + 35, top: square.top + square.height, width: 34, height: height - square.top - square.height },
-    { left: 0, top: MARGIN + middle * GAP_Y + 35, width: square.left, height: 34 },
-    { left: square.left + square.width, top: MARGIN + middle * GAP_Y + 35, width: width - square.left - square.width, height: 34 },
+    { left: square.left + TOWN_PLOT_SIZE, top: 0, width: GAP_X-TOWN_PLOT_SIZE, height: square.top },
+    { left: square.left + TOWN_PLOT_SIZE, top: square.top + square.height, width: GAP_X-TOWN_PLOT_SIZE, height: height - square.top - square.height },
+    { left: 0, top: square.top + TOWN_PLOT_SIZE, width: square.left, height: GAP_Y-TOWN_PLOT_SIZE },
+    { left: square.left + square.width, top: square.top + TOWN_PLOT_SIZE, width: width - square.left - square.width, height: GAP_Y-TOWN_PLOT_SIZE },
   ];
   return { positions, width, height, square, plaza, entrances };
 }

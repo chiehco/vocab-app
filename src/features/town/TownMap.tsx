@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import TownBuilding from './TownBuilding';
 import { getTownLayout } from './townLayout';
 
@@ -10,23 +10,33 @@ export default function TownMap({ plots, selectedId, onSelect, label, focusOnMou
   focusOnMount?: boolean;
 }) {
   const map = useRef<HTMLDivElement>(null);
-  const layout = useMemo(() => getTownLayout(plots.length), [plots.length]);
+  const [columns,setColumns]=useState(6);
+  const layout = useMemo(() => getTownLayout(plots.length,columns), [plots.length,columns]);
   const [scale, setScale] = useState(0.55);
   const [fitted, setFitted] = useState(false);
+  const fitScale = useRef(0.1);
   const initialFocus = useRef(focusOnMount ? selectedId : '');
   const focused = useRef(false);
   useEffect(() => {
     const viewport = map.current;
     if (!viewport) return;
     const observer = new ResizeObserver(() => {
-      const fit = Math.max(0.45, Math.min(1, viewport.clientWidth / layout.width));
+      let bestColumns=6, bestFit=0;
+      for(let count=6;count<=20;count++) {
+        const candidate=getTownLayout(plots.length,count);
+        const candidateFit=Math.min(1,viewport.clientWidth/candidate.width,viewport.clientHeight/candidate.height);
+        if(candidateFit>bestFit) {bestColumns=count;bestFit=candidateFit;}
+      }
+      setColumns(bestColumns);
+      const fit = Math.max(0.1,bestFit);
+      fitScale.current = fit;
       setScale(fit);
       setFitted(true);
       viewport.scrollLeft = Math.max(0, (layout.width * fit - viewport.clientWidth) / 2);
     });
     observer.observe(viewport, { box: 'border-box' });
     return () => observer.disconnect();
-  }, [layout.width]);
+  }, [layout.width, layout.height, plots.length]);
   const drag = useRef<{ id: number; x: number; y: number; left: number; top: number; moved: boolean } | null>(null);
   const suppressClick = useRef(0);
   useEffect(() => {
@@ -52,10 +62,10 @@ export default function TownMap({ plots, selectedId, onSelect, label, focusOnMou
       behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
   }
   return <>
-    <div className="town-map-bar"><span>拖曳或捲動，逛逛你的城鎮</span><div className="town-map-tools">
-      <button onClick={() => setScale(current => Math.max(0.45, current - 0.1))} disabled={scale <= 0.45} aria-label="縮小城鎮">−</button>
+    <div className="town-map-bar"><span>全貌預覽 · 可放大看單字</span><div className="town-map-tools">
+      <button onClick={() => setScale(current => Math.max(fitScale.current, current - 0.1))} disabled={scale <= fitScale.current} aria-label="縮小城鎮">−</button>
       <button onClick={() => setScale(current => Math.min(1, current + 0.1))} disabled={scale >= 1} aria-label="放大城鎮">＋</button>
-      <button onClick={centerPlaza}>看廣場</button><button onClick={centerSelected}>回到這棟</button>
+      <button onClick={() => {setScale(fitScale.current);centerPlaza();}}>看全貌</button><button onClick={centerSelected}>回到這棟</button>
     </div></div>
     <div className="town-map" ref={map} aria-label={label}
       onClickCapture={event => { if (performance.now() < suppressClick.current) { event.preventDefault(); event.stopPropagation(); } }}
@@ -70,7 +80,7 @@ export default function TownMap({ plots, selectedId, onSelect, label, focusOnMou
       onPointerUp={event => { const d = drag.current; if (d?.moved) { suppressClick.current = performance.now() + 100; if (event.currentTarget.hasPointerCapture(d.id)) event.currentTarget.releasePointerCapture(d.id); } drag.current = null; }}
       onPointerCancel={() => { drag.current = null; }} onPointerLeave={() => { if (!drag.current?.moved) drag.current = null; }}>
       <div className="town-world-frame" style={{ width: layout.width * scale, height: layout.height * scale }}>
-      <div className="town-world" style={{ width: layout.width, height: layout.height, transform: `scale(${scale})` }}>
+      <div className="town-world" style={{ width: layout.width, height: layout.height, transform: `scale(${scale})`, '--town-scale':scale } as CSSProperties}>
         <div className="town-river" aria-hidden="true" />
         {layout.entrances.map((street, i) => <i key={i} className="town-street" style={street} aria-hidden="true" />)}
         <div className="town-square" style={layout.square} aria-hidden="true" />
