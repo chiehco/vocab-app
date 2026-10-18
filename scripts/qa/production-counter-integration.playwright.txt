@@ -1,0 +1,28 @@
+async(page)=>{
+ const browser=page.context().browser(),contexts=[],counterOrigin='https://vocab-pageviews.chiehco.workers.dev',site='https://chiehco.github.io',requests=[],errors=[];let files=0;
+ const assert=(value,message)=>{if(!value)throw Error(message);};
+ async function localProduction(fail=false){
+  const context=await browser.newContext({viewport:{width:375,height:812},hasTouch:true,isMobile:true,serviceWorkers:'block',storageState:{cookies:[],origins:[]}});contexts.push(context);let attempts=0;
+  await context.route('**/*',async route=>{const request=route.request(),url=new URL(request.url());
+   if(url.origin===counterOrigin&&url.pathname==='/pageviews'){
+    attempts++;assert(request.method()==='POST'&&request.postData()===null,'counter method or payload changed');assert(!request.headers().referer&&!request.headers().cookie,'counter sends referrer or credentials');
+    if(!fail)requests.push({method:request.method(),emptyBody:true});await route.fulfill({status:fail?503:200,headers:{'access-control-allow-origin':site,'content-type':'application/json','cache-control':'no-store'},body:JSON.stringify(fail?{}:{total:4320+requests.length})});return;
+   }
+   if(url.origin===site&&url.pathname.startsWith('/vocab-app/')){const relative=decodeURIComponent(url.pathname.slice('/vocab-app/'.length))||'index.html';if(relative.split('/').includes('..'))throw Error('Unexpected asset path');files++;await route.fulfill({path:'dist/'+relative});return;}
+   throw Error('Unexpected external request blocked: '+url.origin);
+  });
+  const p=await context.newPage();p.on('pageerror',e=>errors.push(e.message));return{p,attempts:()=>attempts};
+ }
+ try{
+  const happy=await localProduction(),p=happy.p;await p.goto(site+'/vocab-app/#/');await p.getByText('網站累計瀏覽次數：4,321',{exact:true}).waitFor();assert(happy.attempts()===1,'initial document counted more than once');await p.screenshot({path:'output/playwright/integration-counter-success.png'});
+  await p.evaluate(()=>{location.hash='/textbook/LV1/1/cards';});await p.locator('.reviewed-cards-page .learning-card-nav').waitFor();assert(!await p.locator('.app-bottom-nav').isVisible(),'production narrow-card navigation visible');
+  for(let n=0;n<10;n++){const before=p.url();await p.getByRole('button',{name:'下一張 →',exact:true}).tap();await p.waitForURL(url=>url.toString()!==before);await p.waitForFunction(expected=>document.querySelector('.reviewed-cards-page .learning-muted')?.textContent.includes('· '+expected+'／'),n+2);assert(await p.evaluate(()=>scrollY===0),'production repeated card scroll changed');}
+  await p.getByRole('link',{name:'← 課本單元',exact:true}).tap();await p.locator('.reviewed-cards-page').waitFor({state:'detached'});await p.locator('.app-bottom-nav').waitFor({state:'visible'});await p.locator('.app-bottom-nav a[href="#/"]').tap();await p.getByText('網站累計瀏覽次數：4,321',{exact:true}).waitFor();
+  await p.locator('a[href="#/town/LV1/1"]').first().tap();await p.getByRole('link',{name:'商店',exact:true}).waitFor();await p.getByRole('link',{name:'商店',exact:true}).tap();await p.locator('.decoration-product').first().waitFor();await p.getByRole('link',{name:'← 回小鎮',exact:true}).tap();await p.locator('.app-bottom-nav').waitFor({state:'visible'});await p.locator('.app-bottom-nav a[href="#/"]').tap();await p.getByText('網站累計瀏覽次數：4,321',{exact:true}).waitFor();assert(happy.attempts()===1,'SPA routes or card changes counted again');
+  await p.reload();await p.getByText('網站累計瀏覽次數：4,322',{exact:true}).waitFor();assert(happy.attempts()===2,'reload did not count exactly once');
+  const unavailable=await localProduction(true),q=unavailable.p;await q.goto(site+'/vocab-app/#/');await q.locator('.app-bottom-nav').waitFor();
+  // Observe longer than the counter's documented 3-second timeout/retry window.
+  await q.waitForTimeout(3500);assert(await q.getByText(/網站累計瀏覽次數/).count()===0,'failed counter displays a fake total');assert(unavailable.attempts()===1,'failed counter retried');await q.screenshot({path:'output/playwright/integration-counter-unavailable.png'});await q.locator('.app-bottom-nav a[href="#/textbook"]').tap();await q.getByRole('heading',{name:'想學哪一課？',exact:true}).waitFor();assert(unavailable.attempts()===1,'navigation retried failed counter');assert(errors.length===0,JSON.stringify(errors));
+  return{productionBuildServedLocally:true,allNetworkIntercepted:true,realCounterWrites:0,initialAndReloadTotals:[4321,4322],SPAAndTenCardChangesOnlyOnePost:true,successfulPosts:requests,failedAttemptCount:1,failureHidden:true,learningNavigationWorks:true,localFilesServed:files,pageErrors:errors};
+ }finally{for(const context of contexts)await context.close();}
+}
