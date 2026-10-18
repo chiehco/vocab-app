@@ -112,3 +112,34 @@ npx --yes --package @playwright/cli playwright-cli --session review-p2 run-code 
 ```
 
 修正前後截圖及日誌在本機 `output/playwright/review-p2/`，不進 Git、不傳 Library。此修復仍未建立 PR、合入 main 或部署。
+
+## UI-QA-01-R1：缺圖佔位與超長選項的捲讀
+
+已實際查看獨立 QA 的 `long-parents-320.png`，並在本分支原 head `0dc80ee`、自己的 4187 埠重現：合成到期 `parent(s)`、種子 4、320×568、安全區 34px，缺圖佔位保留 100px，選項底端 618.30px，導航上緣 469px。獨立 QA 工作區僅讀取，未修改。
+
+這次產品改動仍只有 `review.css`，只套用寬 ≤600px、高 ≤650px 的答前狀態：
+
+- 缺圖佔位和正式插圖一樣收起；揭答後恢復圖片／佔位及完整意思。
+- 答前區域使用原生垂直捲動，高度止於 65px 導航加底部安全區的上緣。長內容末端留 16px，鍵盤聚焦末項也會捲到可操作的位置；離開或揭答恢復原頁面佈局。
+- 不縮字、不截詞義、不改按鈕高度或答題／保存規則；375×812、390×844 不套用本次新增規則。新版課本字卡兩檔繼續與 `c11582d` 完全一致。
+
+| 內容與尺寸 | 首屏選項底端 | 導航上緣 | 閱讀方式 |
+| --- | --- | --- | --- |
+| boy、320×568、16px | 463.92px | 469px | 四個選項首屏可見、可點；不需捲動作答 |
+| team、320×568、16px | 463.92px | 469px | 四個選項首屏可見、可點 |
+| parent(s)、320×568、16px | 518.30px | 469px | 完整長詞義需上下捲動；區域最大捲 65px 後底端 453.30px，末項在導航上方 |
+| parent(s)、375×812、16px | 598.53px | 713px | 與修正前相同，首屏完整 |
+| boy、375×812、16px | 612.34px | 713px | 與修正前相同，首屏完整 |
+
+超出視窗的文字保留原生上下捲讀，不宣稱所有長文都能零捲動。130% 字級是 20.8px；隔離的極長詞義 fixture 有 98 行，逐行捲動檢查均可到達，末尾文字完整。原生垂直拖曳、答前橫滑與閱讀皆未提交答案或增加學習紀錄。
+
+新增 `scripts/qa/review-scroll-fallback.playwright.txt`。沿用上方 4187 啟動方式，再執行：
+
+```powershell
+npx --yes --package @playwright/cli playwright-cli --session review-r1 open http://127.0.0.1:4187
+npx --yes --package @playwright/cli playwright-cli --session review-r1 run-code --filename=scripts/qa/review-scroll-fallback.playwright.txt
+```
+
+腳本在全新且經空庫檢查的非持久瀏覽器 context 播種合成資料；阻擋所有外部請求及 Service Worker。涵蓋 boy／parent(s)／team 三尺寸、真實已載入插圖／缺圖佔位／故意載圖失敗、安全區 0／34px、130% 字級、極長詞義每行可達、鍵盤末項焦點、原生垂直手勢及答前橫滑不提交、parent(s) 揭答後明確保存一次與返回後版面恢復。既有 `review-small-screen` 的大字級捲到底檢查同步支援此原生捲讀區。
+
+完整 UTF-8 幾何報告在 `output/playwright/review-r1/report.json`，修正前後手機截圖及檢視頁在同目錄。本地輸出不進 Git、不傳 Library；交付回報提供最終 head 及完整 CI 終態。本次仍未建立 PR、合入 main 或部署。

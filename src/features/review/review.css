@@ -132,10 +132,14 @@
   .seal-options > button { min-width:0; padding:8px; overflow-wrap:anywhere; }
 }
 @media (max-width:600px) and (max-height:650px) {
+  /* Keep native vertical reading above the navigation, including its safe area.
+     Long meanings may scroll; their font size and full text stay unchanged. */
+  .app-frame:has(.seal-review:not(.is-flipped)) > main { padding-bottom:0; }
+  .seal-review:not(.is-flipped) { height:calc(100dvh - 65px - env(safe-area-inset-bottom)); min-height:0; overflow-y:auto; padding-bottom:16px; scroll-padding-block:16px; scrollbar-width:thin; scrollbar-color:var(--ui-border-strong) transparent; }
   /* The header already shows the card count; keep its duplicate summary accessible without using a text row. */
   .seal-review:not(.is-flipped) .seal-progress { min-height:2px; margin-block:6px; }
   .seal-review:not(.is-flipped) .seal-progress span { position:absolute; width:1px; height:1px; padding:0; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
-  .seal-card.sealed .study-illustration { display:none; }
+  .seal-card.sealed .study-illustration, .seal-card.sealed .seal-card-visual { display:none; }
   .seal-card.sealed .seal-card-identity { padding:6px 12px; }
   .seal-card.sealed .seal-card-meta { padding-block:4px; }
 }
