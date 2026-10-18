@@ -22,8 +22,8 @@ describe('town square layout', () => {
     for (let i = 0; i < houses.length; i++) for (let j = i + 1; j < houses.length; j++) {
       expect(overlaps(houses[i], houses[j])).toBe(false);
     }
-    expect(layout.plaza.width).toBeGreaterThan(400);
-    expect(layout.plaza.height).toBeGreaterThan(400);
+    expect(layout.plaza.width / layout.width).toBeLessThan(.3);
+    expect(layout.plaza.width * layout.plaza.height / (layout.width * layout.height)).toBeLessThan(.1);
     expect(layout.entrances).toHaveLength(4);
     expect(getTownLayout(count)).toEqual(layout);
   });

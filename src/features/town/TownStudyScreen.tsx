@@ -11,6 +11,7 @@ import './town.css';
 import RewardPanel, { RewardReceipt } from '../rewards/RewardPanel';
 import { townRoundId } from '../rewards/model';
 import { useRewardRound } from '../rewards/useRewardRound';
+import StudyActions from '../../components/StudyActions';
 
 export default function TownStudyScreen() {
   const {level,unit}=useParams(), town=`${level}/${unit}`;
@@ -37,6 +38,7 @@ export default function TownStudyScreen() {
   useCardPronunciation(item?.wordRecord.word, `${id}:${index}`);
   useUpcomingIllustrations(data?.queue.map(item=>item.wordRecord),index);
   const savedLogId=data?.saved?.logId;
+  useEffect(()=>{window.scrollTo({top:0,behavior:'instant'});},[id,index]);
   useEffect(()=>{
     if(!savedLogId || !feedback.current)return;
     feedback.current.focus({preventScroll:true});feedback.current.scrollIntoView({block:'start',behavior:'instant'});
@@ -53,9 +55,8 @@ export default function TownStudyScreen() {
   if(!result)return <div className="town-page"><p role="status">正在恢復本輪學習…</p></div>;
   if(!data || !round)return <div className="town-page"><h1>日課暫時讀不到</h1><p role="alert">{result.error}</p><Link to={townUrl}>回小鎮</Link></div>;
   return <div className="seal-review town-study-flow">
-    <header className="seal-review-header"><Link to={townUrl}>← 回小鎮 · 保留本輪進度</Link><span>{level} · 今日學習</span></header>
+    <header className="seal-review-header"><Link to={townUrl} aria-label="← 回小鎮 · 保留本輪進度">← 回小鎮<span className="town-return-detail"> · 保留本輪進度</span></Link><span>{level} · 今日學習<small className="town-study-count">{Math.min(index+(data.saved?1:0),round.items.length)}／{round.items.length} 字已保存</small></span></header>
     <div className="town-study-status">
-      <p>{Math.min(index+(data.saved?1:0),round.items.length)}／{round.items.length} 字已保存</p>
       {error && <p role="alert" className="town-error">{error}</p>}
       {(round.day!==today || error.includes('額度已用完')) && <><p>原輪次與已保存紀錄會保留，可依今天剩餘額度重新安排。</p><button className="town-secondary" disabled={busy} onClick={()=>void act(async()=>{if(isTownKey(town))navigate(townStudyUrl(await replanTownStudy(town,id)));})}>重新安排今日學習 →</button></>}
     </div>
@@ -67,16 +68,15 @@ export default function TownStudyScreen() {
       <p role="status">學習紀錄已保存</p><h1>{item.wordRecord.word}</h1><p>{item.wordRecord.meaningZh}</p>
       <p>{data.saved.mode==='known' ? '已保存已會標記，沿用一般複習安排。' : data.saved.grade===0 ? '還需要複習，這個字的小屋也會保留。' : '這次學習已完成，小屋已落成。'}</p>
       {item.isRecap && <p className="town-subtle">同日回顧沿用原本的複習時間。</p>}
-      <div className="town-study-result-actions"><Link className="town-primary" to={townUrl}>回小鎮看小屋 →</Link><button className="town-secondary" disabled={busy} onClick={()=>void act(()=>nextTownStudy(id,index))}>{index+1<round.items.length ? '下一張 →' : '完成本輪 →'}</button></div>
       {data.saved.objective ? <RewardReceipt answerId={`answer:town:${id}:${index}`} roundId={rewardId} word={item.wordRecord.word} correct={data.saved.objective.correct}/>
         : <p className="reward-note">本題沒有新增答題金幣；翻卡自評或先前保存的學習紀錄仍可呈現小屋。</p>}
     </section> : round.day===today && data.options!==undefined ? <>
-      <div className="town-study-status"><RewardPanel roundId={rewardId} roundPreview={{challenge:'meaning-v2',distinctWordCount:availableWords}}/>{reward.error && <p role="alert">{reward.error}</p>}</div>
-      <p className="town-study-status town-subtle">保存後可以回小鎮看成果，或繼續下一張。</p>
+      <div className="town-study-status"><RewardPanel compact resetKey={`${id}:${index}`} roundId={rewardId} roundPreview={{challenge:'meaning-v2',distinctWordCount:availableWords}}/>{reward.error && <p role="alert">{reward.error}</p>}</div>
       <ReviewFlashcard key={`${id}:${index}`} item={item} flipped={!!round.flipped[index]} choice={round.choices[index] ?? null} options={data.options} saving={busy} position={index+1} saveBeforeNext
         onPick={word=>void act(()=>pickTownStudy(id,index,word))} onFlip={()=>void act(()=>pickTownStudy(id,index))}
         onGrade={(grade:Grade)=>void act(()=>save(grade))} onKnown={()=>void act(()=>save(3,true))} />
     </> : round.day===today ? <p className="town-study-status" role="status">正在恢復本題選項…</p> : null}
     {(data.saved || !item) && <div className="town-study-status"><RewardPanel roundId={rewardId}/></div>}
+    {item&&round.day===today&&data.saved&&<StudyActions label="已保存的字卡操作"><div className="town-study-result-actions"><Link className="town-primary" to={townUrl}>回小鎮看小屋 →</Link><button className="town-secondary" disabled={busy} onClick={()=>void act(()=>nextTownStudy(id,index))}>{index+1<round.items.length ? '下一張 →' : '完成本輪 →'}</button></div></StudyActions>}
   </div>;
 }

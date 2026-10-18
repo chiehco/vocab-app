@@ -14,6 +14,7 @@ import { progressDb } from '../../db/progressDb';
 import { ensureContentAvailable, refreshInstalledContent } from '../../db/seed';
 import { gradeFlashcard } from '../../checkin/recordActivity';
 import { awardAnswer, claimDailyCheckIn, presentRewardRound } from '../rewards/store';
+import { purchaseAndPlace } from '../town/decorations/store';
 import { WRITTEN_REVISION } from '../exam/writtenModel';
 import { exportProgress, validateBackup } from '../../backup/backup';
 
@@ -103,7 +104,7 @@ it('preserves the separate p5 research frames, printed century note and p19 atmo
   expect(source2.boundaryEvidence.notesConfirmationStatus).toBe('pending_original_user_message_or_full_photo');
 });
 
-it('content refresh preserves all 13 nonempty progress tables, SRS, town rewards and personal groups', async () => {
+it('content refresh preserves all 14 nonempty progress tables, SRS, town rewards, decorations and personal groups', async () => {
   const ids = [...new Set([1,2].flatMap(n => groupWordIds(templateGroup(findUnit(n,'LV4')!.templateId))))];
   const oldWords = pack.words.filter(w => !ids.includes(w.wordId));
   let incoming = {...pack, words:oldWords, meta:{...pack.meta, contentHash:'sa:before-LV4-U1-U2',counts:{...pack.meta.counts,words:oldWords.length}}};
@@ -125,8 +126,9 @@ it('content refresh preserves all 13 nonempty progress tables, SRS, town rewards
   await claimDailyCheckIn(1791892800000);
   await presentRewardRound('town:retained-town',1,100,'meaning-v2');
   await awardAnswer({id:'answer:town:retained-town:0',roundId:'town:retained-town',word:oldWords[0].word,correct:true,source:'town',referenceId:'1',choiceWordId:oldWords[0].wordId,answeredAt:200,challenge:'meaning-v2'});
+  await purchaseAndPlace({id:'retained-decoration',sku:'plant',town:'LV4/17',x:0,y:0});
   const before = await Promise.all(progressDb.tables.map(table => table.toArray()));
-  expect(progressDb.tables).toHaveLength(13);
+  expect(progressDb.tables).toHaveLength(14);
   expect(before.every(rows => rows.length > 0)).toBe(true);
   const backup = await exportProgress();
   expect(validateBackup(backup)).toBeNull();
@@ -142,5 +144,5 @@ it('content refresh preserves all 13 nonempty progress tables, SRS, town rewards
   const after = await exportProgress();
   expect(after.data).toEqual(backup.data);
   expect(validateBackup(after)).toBeNull();
-  expect(await progressDb.rewardWallet.get('local')).toMatchObject({balance:35});
+  expect(await progressDb.rewardWallet.get('local')).toMatchObject({balance:5});
 });

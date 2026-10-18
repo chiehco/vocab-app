@@ -96,3 +96,50 @@
 @media(max-width:360px) { .town-page { padding:16px 12px 25px; } .town-page h1 { font-size:1.5rem; } .town-actions { gap:7px; } .town-primary,.town-secondary { padding:12px 8px; } .town-actions strong { font-size:.875rem; } }
 @media(pointer:coarse) { .town-map-bar button { min-height:44px; } }
 @media(prefers-reduced-motion:reduce) { .town-page * { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+
+.town-overview { position:relative; display:flex; flex-direction:column; gap:6px; height:calc(100dvh - 65px - env(safe-area-inset-bottom, 0px)); padding:6px 12px; }
+.town-overview > * { flex-shrink:0; }
+.town-overview .town-header { min-height:44px; margin:0; gap:8px; }
+.town-overview .town-header .town-brand { font-size:1.1rem; letter-spacing:0; }
+.town-overview .town-header h1 { margin:0; font-size:1rem; white-space:nowrap; }
+.town-overview .town-practice-entry { min-height:44px; margin:0; padding:8px; }
+.town-overview .town-summary { margin:0; min-height:24px; font-size:.875rem; }
+.town-overview .town-summary strong { font-size:1rem; }
+.town-overview .town-meter { height:3px; margin:0; }
+.town-overview .town-map-bar { margin:0; gap:0; }
+.town-overview .town-map-bar > span { display:none; }
+.town-overview > .town-map { flex:1; min-height:0; max-height:none; aspect-ratio:auto; }
+.town-overview .town-world-frame { margin-inline:auto; }
+.town-overview .town-plot-word { font-size:calc(.75rem / var(--town-scale, .5)); line-height:calc(1.125rem / var(--town-scale, .5)); }
+.town-overview .town-plaza-label { font-size:calc(.75rem / var(--town-scale, .5)); white-space:nowrap; padding:4px; letter-spacing:0; }
+.town-overview .town-plaza-paving { inset:40px; }
+.town-about { position:absolute; right:12px; top:100px; z-index:5; font-size:.75rem; }
+.town-about summary { display:flex; align-items:center; min-height:44px; padding:0 8px; color:var(--ui-accent); cursor:pointer; }
+.town-about[open] { top:50px; left:12px; padding:10px; border:1px solid var(--ui-border); border-radius:12px; background:var(--ui-bg); box-shadow:0 6px 20px #283b2928; max-height:calc(100dvh - 140px - env(safe-area-inset-bottom, 0px)); overflow:auto; }
+.town-about[open] > summary { justify-content:flex-end; }
+.town-card-dialog { margin:auto; width:min(92vw, 480px); max-height:calc(100dvh - 48px - env(safe-area-inset-bottom, 0px)); padding:16px; border:1px solid var(--ui-border); border-radius:16px; background:var(--ui-bg); color:var(--ui-text); overflow:auto; }
+.town-card-dialog::backdrop { background:#18352266; }
+.town-dialog-close { display:block; min-height:44px; margin-left:auto; padding:8px; color:var(--ui-accent); }
+.town-card-dialog .town-selected { margin:0; padding-top:8px; }
+.town-overview .town-summary > span + span { display:none; }
+.town-study-flow { padding-top:8px; }
+.town-study-flow .town-study-status { width:100%; margin:4px auto; padding:0; }
+.town-study-flow .town-study-status > p { margin:0; }
+.town-study-flow .town-study-status:empty { display:none; }
+.town-study-flow .reward-panel-compact { margin:0; }
+.town-study-count { display:block; font-size:.75rem; font-weight:400; color:var(--ui-muted); }
+.town-study-flow .seal-review-header > span { line-height:1.25; }
+.town-return-detail { display:none; }
+.town-overview .town-practice-entry { width:calc(100% - 92px); }
+.town-overview .town-summary { position:absolute; top:56px; right:12px; width:84px; min-height:44px; align-items:center; white-space:nowrap; }
+.town-overview .town-meter { position:absolute; width:1px; height:1px; clip-path:inset(50%); }
+.town-about { top:104px; }
+@media (orientation:landscape) and (max-height:600px) {
+  .town-overview { max-width:none; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:44px 44px minmax(0,1fr); }
+  .town-overview > .town-header { grid-column:1; grid-row:1; }
+  .town-overview .town-practice-entry { grid-column:2; grid-row:1; width:100%; }
+  .town-overview .town-map-bar { grid-column:1; grid-row:2; }
+  .town-overview .town-summary { grid-column:2; grid-row:2; position:static; width:auto; }
+  .town-overview > .town-map { grid-column:1/-1; grid-row:3; }
+  .town-about { top:56px; }
+}

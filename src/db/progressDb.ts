@@ -2,6 +2,7 @@ import type { CustomGroup, DirectSession, DirectAttempt } from "../features/dire
 import type { WrittenSession, WrittenSubmission } from "../features/exam/writtenModel";
 import Dexie, { type Table } from "dexie";
 import type { RewardWallet, RewardRound, RewardEvent } from '../features/rewards/model';
+import type { OwnedDecoration } from '../features/town/decorations/model';
 import type {
   CardState,
   CheckInRecord,
@@ -29,9 +30,10 @@ export class VocabProgressDB extends Dexie {
   rewardWallet!: Table<RewardWallet,string>;
   rewardRounds!: Table<RewardRound,string>;
   rewardLedger!: Table<RewardEvent,string>;
+  townDecorations!: Table<OwnedDecoration,string>;
 
-  constructor() {
-    super("VocabProgressDB");
+  constructor(name="VocabProgressDB") {
+    super(name);
     this.version(1).stores({
       cardStates: "word, dueDate, state",
       reviewLogs: "++id, word, reviewedAt, sessionId",
@@ -46,6 +48,7 @@ export class VocabProgressDB extends Dexie {
     });
     this.version(3).stores({writtenSessions:'id, updatedAt',writtenSubmissions:'id, sessionId, questionId, submittedAt'});
     this.version(4).stores({rewardWallet:'id',rewardRounds:'id, startedAt',rewardLedger:'id, kind, roundId, createdAt, taiwanDate'});
+    this.version(5).stores({townDecorations:'id, sku, placement.town'});
   }
 }
 

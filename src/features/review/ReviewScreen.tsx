@@ -27,6 +27,8 @@ import "./review.css";
 import { getDailyLearningPlan } from '../../srs/dailyPlan';
 import { getDueReviewQueue } from '../../srs/dueReview';
 import UsagePatternList from '../vocabulary/UsagePatternList';
+import StudyActions from '../../components/StudyActions';
+import { useCardSwipe } from '../../hooks/useCardSwipe';
 
 const LEVEL_CHOICES = [TOP_EXAM_FILTER, "全部", "LV1", "LV2", "LV3", "LV4", "LV5", "LV6"];
 
@@ -247,19 +249,14 @@ export function ReviewFlashcard({ item, flipped, options, onFlip, onGrade, onKno
   const picked=choice===undefined ? localPick : choice;
   const correct = picked !== null && picked === word.word;
   const answeredGrade: Grade = correct ? 2 : 0;
-  const swipeStart = useRef<{ x: number; y: number } | null>(null);
-  // 翻面後右滑等於「下一張」；水平位移要明顯大於垂直，避免和捲動衝突。
-  function onPointerDown(event: React.PointerEvent) {
-    swipeStart.current = flipped && options ? { x: event.clientX, y: event.clientY } : null;
-  }
-  function onPointerUp(event: React.PointerEvent) {
-    const start = swipeStart.current;
-    swipeStart.current = null;
-    if (!start || !flipped || !options || saving) return;
-    const dx = event.clientX - start.x;
-    const dy = event.clientY - start.y;
-    if (dx > 60 && dx > Math.abs(dy) * 1.5) onGrade(answeredGrade);
-  }
+  // A town answer still needs explicit saving. A swipe must never submit it.
+  const advance = flipped && options && picked !== null && !saving && !saveBeforeNext
+    ? () => onGrade(answeredGrade) : undefined;
+  const swipe = useCardSwipe(`${word.word}:${flipped}`, advance, advance);
+  const article = useRef<HTMLElement>(null);
+  useEffect(() => {
+    if (flipped) article.current?.scrollIntoView({ block: 'start', behavior: 'instant' });
+  }, [flipped, word.word]);
   const illustration = useIllustrationMedia(word);
   const card = useLiveQuery(() => getCardState(word.word), [word.word]);
   const examDate = useLiveQuery(
@@ -288,14 +285,15 @@ export function ReviewFlashcard({ item, flipped, options, onFlip, onGrade, onKno
   const senseCount = buildSenseCountByWord(senses ?? []).get(word.word) ?? 0;
 
   return (
-    <div className="seal-workspace" onPointerDown={onPointerDown} onPointerUp={onPointerUp} onPointerCancel={() => { swipeStart.current = null; }}>
-      <article className={`seal-card study-layout ${flipped ? "revealed" : "sealed"}`}>
+    <div className="seal-workspace study-swipe-surface" {...swipe}>
+      <article ref={article} className={`seal-card study-layout ${flipped ? "revealed" : "sealed"}`}>
         <div className="seal-card-meta">
           <span>{item.isPractice ? "練習後待複習" : item.isRecap ? "今天再複習" : item.isNew ? "尚未學過的單字" : "到期複習"}</span>
           <div><ExamTierBadge tier={priority?.priorityTier} compact /><b>第 {position} 張</b></div>
         </div>
 
         <div className="seal-card-identity">
+          {flipped && options && <p role="status" className="seal-answer-status">{correct ? '答對了' : '這題還需要複習'}</p>}
           <div><h1>{word.word}</h1><SpeakerButton text={word.word} className="seal-speaker" /></div>
           <p>{word.pos || "詞性待補"}{word.phoneticUs && <> · /{word.phoneticUs}/</>}</p>
           {flipped && <h2>{illustrationMeaning || word.meaningZh || "尚無中文意思"}</h2>}
@@ -324,8 +322,8 @@ export function ReviewFlashcard({ item, flipped, options, onFlip, onGrade, onKno
       </article>
 
       <div className="seal-controls">
-        {options ? (
-          <div className={`seal-options ${flipped ? "is-answered" : ""}`} aria-label={flipped ? "作答結果" : "選出正確的中文意思"}>
+        {options && !flipped ? (
+          <div className="seal-options" aria-label="選出正確的中文意思">
             {options.map((option, optionIndex) => (
               <button
                 key={option.word}
@@ -336,7 +334,8 @@ export function ReviewFlashcard({ item, flipped, options, onFlip, onGrade, onKno
                 <b>{String.fromCharCode(65 + optionIndex)}</b><span>{option.meaningZh}</span>
               </button>
             ))}
-            {flipped && (
+          </div>
+        ) : options ? <StudyActions label="作答後操作">
               <div className="seal-answered">
                 {correct ? (
                   <button className="seal-known" disabled={saving} onClick={onKnown}>
@@ -350,22 +349,21 @@ export function ReviewFlashcard({ item, flipped, options, onFlip, onGrade, onKno
                   </button>
                 )}
                 <button type="button" className="seal-swipe-hint" disabled={saving} onClick={() => onGrade(answeredGrade)}>
-                  {saveBeforeNext ? correct ? '保存這次學習 · 答對了' : '右滑也可以保存這次學習' : correct ? `答對了 · 右滑或點這裡到下一張（${nextReviewLabel(2)}）` : "右滑也可以到下一張"}
+                  {saveBeforeNext ? `保存這次學習 · ${correct ? '答對了' : '還需要複習'}` : `下一張 · ${nextReviewLabel(answeredGrade)}`}
                 </button>
               </div>
-            )}
-          </div>
-        ) : !flipped ? (
-          <button onClick={onFlip} className="seal-reveal">顯示答案</button>
+        </StudyActions>
+        : !flipped ? (
+          <StudyActions label="翻開字卡"><button onClick={onFlip} className="seal-reveal">顯示答案</button></StudyActions>
         ) : (
-          <div className="seal-grades" aria-label="這個字你記得多牢？">
+          <StudyActions label="這個字你記得多牢？"><div className="seal-grades" aria-label="這個字你記得多牢？">
             {([0, 1, 2, 3] as Grade[]).map((grade) => (
               <button key={grade} className={`grade-${grade}`} disabled={saving} onClick={() => onGrade(grade)}>
                 <span>{GRADE_LABELS[grade]}</span>
                 <small>{saving ? "保存中" : nextReviewLabel(grade)}</small>
               </button>
             ))}
-          </div>
+          </div></StudyActions>
         )}
       </div>
     </div>
