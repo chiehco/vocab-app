@@ -28,6 +28,7 @@ import DirectScreen from "./features/direct/DirectScreen";
 import TownScreen from "./features/town/TownScreen";
 import LV1TownScreen from "./features/town/LV1TownScreen";
 import TownStudyScreen from './features/town/TownStudyScreen';
+import DecorationShopScreen from './features/town/decorations/DecorationShopScreen';
 import GroupsScreen from "./features/direct/GroupsScreen";
 import ExamHubScreen from "./features/exam/ExamHubScreen";
 import GsatScreen from "./features/exam/GsatScreen";
@@ -60,12 +61,14 @@ function AppLayout() {
     || location.pathname.startsWith('/arena/word-siege')
     || location.pathname.startsWith("/arena/spell-barrage")
     || location.pathname.startsWith("/arena/meaning-karuta");
+  const decorating=/^\/town\/(LV1\/1|LV4\/17)\/decorate$/.test(location.pathname);
   const immersive = gameRoute
     || location.pathname.startsWith("/wordbeast")
+    || decorating
     || /^\/units\/LV[1-6]\/\d+$/.test(location.pathname);
 
   return (
-    <div className={immersive && !gameRoute ? "mx-auto flex min-h-screen max-w-lg flex-col" : "app-frame flex min-h-screen flex-col"}>
+    <div className={immersive && !gameRoute && !decorating ? "mx-auto flex min-h-screen max-w-lg flex-col" : "app-frame flex min-h-screen flex-col"}>
       <main className={immersive ? "flex-1" : "flex-1 pb-20"}>
         <Routes>
           <Route path="/" element={<HomeScreen />} />
@@ -91,6 +94,7 @@ function AppLayout() {
           <Route path="/town/LV4/17" element={<TownScreen />} />
           <Route path="/town/LV1/1" element={<LV1TownScreen />} />
           <Route path="/town/:level/:unit/study" element={<TownStudyScreen />} />
+          <Route path="/town/:level/:unit/decorate" element={<DecorationShopScreen />} />
           <Route path="/vocabulary" element={<VocabularyScreen />} />
           <Route path="/groups" element={<GroupsScreen />} />
           <Route path="/modes/words" element={<WordsWorkspace />} />

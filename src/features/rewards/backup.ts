@@ -1,6 +1,6 @@
 import { LEGACY_CHALLENGE, challengeRule, qualifiedWords, rewardWord, taiwanDate, type RewardEvent, type RewardRound, type RewardWallet } from './model';
 
-export function validRewardBackup(wallets: RewardWallet[] | undefined, rounds: RewardRound[] | undefined, events: RewardEvent[] | undefined): boolean {
+export function validRewardBackup(wallets: RewardWallet[] | undefined, rounds: RewardRound[] | undefined, events: RewardEvent[] | undefined, decorationSpend=0): boolean {
   if (!Array.isArray(wallets) || !Array.isArray(rounds) || !Array.isArray(events)) return false;
   const finiteTime = (value: unknown) => typeof value === 'number' && value >= 0 && Number.isFinite(new Date(value).getTime());
   const unique = (rows: {id:string}[]) => rows.every(row=>row && typeof row.id==='string' && !!row.id) && new Set(rows.map(row=>row.id)).size===rows.length;
@@ -41,8 +41,8 @@ export function validRewardBackup(wallets: RewardWallet[] | undefined, rounds: R
       if (words.size<rule.words) return false;
     } else return false;
   }
-  const balance=events.reduce((sum,event)=>sum+event.amount,0);
-  if (!Number.isSafeInteger(balance)) return false;
+  const balance=events.reduce((sum,event)=>sum+event.amount,0)-decorationSpend;
+  if (!Number.isSafeInteger(decorationSpend)||decorationSpend<0||!Number.isSafeInteger(balance)||balance<0) return false;
   return wallets.length===0 ? balance===0 : wallets.length===1 && wallets[0].id==='local'
     && wallets[0].balance===balance && finiteTime(wallets[0].updatedAt);
 }
