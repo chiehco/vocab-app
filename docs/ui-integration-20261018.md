@@ -80,3 +80,35 @@ npx --yes --package @playwright/cli playwright-cli --session vocab-ui-qa run-cod
 5. 計數器在 localhost 開發模式本來就停用；正式模式驗證必須用攔截腳本，不能為測試新增真實瀏覽數。服務不可用時仍能學習。
 
 整合分支完整 CI 必須到終態；本次僅交付供獨立 QA 與後續審閱，正式發布仍待本次明確批准。
+
+## UI-QA-01：320×568 長選項遮擋修復
+
+獨立 QA 在 `7b4973e`、標準字級、底部安全區 34px、合成到期 `boy`、隨機種子 4 發現 C／D 最末行被導航擋住。本次先唯讀取用其報告及腳本，在自己的 4187 埠與全新私密 context 重現相同位置，沒有修改獨立 QA 工作區。
+
+產品改動只在 `src/features/review/review.css` 增加兩條規則：寬度不超過 600px、高度不超過 650px 且尚未揭答時，將重複的「已完成複習」摘要收成細進度線。摘要仍可由輔助科技讀取；選項字級、行距、按鈕尺寸、保存與發幣邏輯都不變。揭答後恢復原摘要，375×812 不套用緊縮。新版字卡兩檔仍與 `c11582d` 完全一致。
+
+| 種子 4、320×568 | 修正前 | 修正後 |
+| --- | --- | --- |
+| 導航上緣 | 469px | 469px |
+| 選項整體底端 | 505.72px | 463.92px |
+| C／D 文字底端 | 492.53px | 450.73px |
+| 選項字級 | 16px | 16px |
+| 單一選項高度 | 99.56px | 99.56px |
+
+新增實際瀏覽器回歸 `scripts/qa/review-small-screen.playwright.txt`：以文字 Range 逐行檢查導航遮擋、整個選項邊界、真實點擊命中、字級與目標尺寸，涵蓋 320×568、375×812、390×844，並檢查可及性摘要、答對／答錯明確保存及 130% 字級自然捲讀。375×812 選項底端仍是 612.34px，與修正前一致。
+
+本地 2 檔 4 項複習／字級測試、lint、TypeScript 與正式 build 通過；既有 375×812 完整整合腳本已在修復版重跑通過，包含連續第 1→11 張、導航恢復、小鎮、商店及舊合成進度與 v7／v8 備份。所有外部請求皆阻擋，沒有碰真實進度或寫正式計數器。完整 CI 與新 head 另由交付回報提供。
+
+複驗時，在已安裝依賴的新 clone 啟動 4187，再另開同目錄終端執行：
+
+```powershell
+npm run dev -- --host 127.0.0.1 --port 4187 --strictPort
+```
+
+```powershell
+node -e "require('node:fs').mkdirSync('output/playwright/review-p2',{recursive:true})"
+npx --yes --package @playwright/cli playwright-cli --session review-p2 open http://127.0.0.1:4187
+npx --yes --package @playwright/cli playwright-cli --session review-p2 run-code --filename=scripts/qa/review-small-screen.playwright.txt
+```
+
+修正前後截圖及日誌在本機 `output/playwright/review-p2/`，不進 Git、不傳 Library。此修復仍未建立 PR、合入 main 或部署。
