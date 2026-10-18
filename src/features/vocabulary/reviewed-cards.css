@@ -1,0 +1,58 @@
+/* Scope shell overrides to this mounted page; leaving it restores the shared nav. */
+.app-frame:has(.reviewed-cards-page) > .app-bottom-nav {
+  display: none;
+}
+
+.app-frame:has(.reviewed-cards-page) > main {
+  padding-bottom: 0;
+}
+
+.reviewed-cards-page {
+  /* Allow for wrapped action labels at the user's larger font settings, too. */
+  padding: var(--ui-sp-4) var(--ui-sp-4) calc(7.5rem + env(safe-area-inset-bottom, 0px));
+}
+
+.reviewed-cards-page .learning-header {
+  margin-bottom: var(--ui-sp-3);
+}
+
+.reviewed-card-heading {
+  display: flex;
+  align-items: center;
+  gap: var(--ui-sp-3);
+}
+
+.reviewed-card-heading h1 {
+  flex: 1;
+  min-width: 0;
+  margin-block: var(--ui-sp-2);
+  overflow-wrap: anywhere;
+}
+
+.reviewed-cards-page .learning-illustration {
+  margin-block: var(--ui-sp-3);
+}
+
+.reviewed-cards-page .learning-illustration img {
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: var(--ui-surface);
+}
+
+.reviewed-cards-page .learning-card-nav {
+  position: fixed;
+  z-index: 30;
+  inset-inline: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: var(--ui-column);
+  margin-inline: auto;
+  padding: var(--ui-sp-3) var(--ui-sp-4) calc(var(--ui-sp-3) + env(safe-area-inset-bottom, 0px));
+  background: var(--ui-bg);
+  border-top: 1px solid var(--ui-border);
+}
+
+.reviewed-cards-page .learning-card-nav > * {
+  min-width: 0;
+  margin-top: 0;
+}
