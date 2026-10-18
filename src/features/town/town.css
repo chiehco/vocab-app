@@ -130,14 +130,14 @@
 .town-study-count { display:block; font-size:.75rem; font-weight:400; color:var(--ui-muted); }
 .town-study-flow .seal-review-header > span { line-height:1.25; }
 .town-return-detail { display:none; }
-.town-overview .town-practice-entry { width:calc(100% - 92px); }
+.town-overview .town-practice-entry, .town-overview .town-practice-note { width:calc(100% - 92px); }
 .town-overview .town-summary { position:absolute; top:56px; right:12px; width:84px; min-height:44px; align-items:center; white-space:nowrap; }
 .town-overview .town-meter { position:absolute; width:1px; height:1px; clip-path:inset(50%); }
 .town-about { top:104px; }
 @media (orientation:landscape) and (max-height:600px) {
   .town-overview { max-width:none; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:44px 44px minmax(0,1fr); }
   .town-overview > .town-header { grid-column:1; grid-row:1; }
-  .town-overview .town-practice-entry { grid-column:2; grid-row:1; width:100%; }
+  .town-overview .town-practice-entry, .town-overview .town-practice-note { grid-column:2; grid-row:1; width:100%; }
   .town-overview .town-map-bar { grid-column:1; grid-row:2; }
   .town-overview .town-summary { grid-column:2; grid-row:2; position:static; width:auto; }
   .town-overview > .town-map { grid-column:1/-1; grid-row:3; }
