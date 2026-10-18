@@ -11,7 +11,7 @@ function useClock() {
   return now;
 }
 
-export default function RewardPanel({roundId,roundPreview}:{roundId?:string;roundPreview?:{challenge:'meaning-v2';distinctWordCount:number}}) {
+export default function RewardPanel({roundId,roundPreview,compact=false,resetKey}:{roundId?:string;roundPreview?:{challenge:'meaning-v2';distinctWordCount:number};compact?:boolean;resetKey?:string|number}) {
   const now = useClock(), date = taiwanDate(now);
   const [busy,setBusy] = useState(false), [error,setError] = useState('');
   const lock = useRef(false);
@@ -21,7 +21,7 @@ export default function RewardPanel({roundId,roundPreview}:{roundId?:string;roun
     entries:roundId ? await progressDb.rewardLedger.where('roundId').equals(roundId).toArray() : []}),[roundId,date]);
   const round = data?.round, rule=challengeRule(round ? round.challenge : roundPreview?.challenge);
   const correctWords=round ? qualifiedWords(round,data?.entries ?? []) : new Set<string>();
-  const seconds = round && rule ? Math.max(0,Math.ceil((round.startedAt+rule.windowMs-now)/1000)) : undefined;
+  const seconds = round && rule ? Math.min(rule.windowMs/1000,Math.max(0,Math.ceil((round.startedAt+rule.windowMs-now)/1000))) : undefined;
   const bonus=data?.entries.find(event=>event.kind==='round-bonus');
   const availableWords=round?.distinctWordCount ?? roundPreview?.distinctWordCount;
   async function checkIn() {
@@ -30,9 +30,8 @@ export default function RewardPanel({roundId,roundPreview}:{roundId?:string;roun
     try {await claimDailyCheckIn();} catch {setError('打卡尚未保存，沒有發放金幣；請再試一次。');}
     finally {lock.current=false;setBusy(false);}
   }
-  return <section className="reward-panel" aria-label="遊戲金幣">
-    <div className="reward-wallet-row"><p>遊戲金幣 <strong>{data ? data.wallet?.balance ?? 0 : '…'}</strong></p>
-      <button disabled={!data || busy || data.claimed} onClick={()=>void checkIn()}>{data?.claimed ? '今日已領 30' : busy ? '保存打卡中…' : '每日打卡 +30'}</button></div>
+  const claimButton=<button disabled={!data || busy || data.claimed} onClick={()=>void checkIn()}>{data?.claimed ? '今日已領 30' : busy ? '保存打卡中…' : '每日打卡 +30'}</button>;
+  const explanation=<>
     <p className="reward-note">台灣日期 {date} · 每天按一次領取。客觀答題保存後：答對 +5，答錯 +1。</p>
     {rule ? <>
       <p className="reward-note">{rule.label}加成：{rule.windowMs===30_000 ? '30 秒' : '3 分鐘'}內答對 {rule.words} 個不同字，額外 +{rule.amount}；每輪一次。</p>
@@ -41,8 +40,21 @@ export default function RewardPanel({roundId,roundPreview}:{roundId?:string;roun
         {roundPreview && <><br />沒有選項的翻卡自評不計答題金幣，也不計加成。</>}</p>
     </> : round ? <p className="reward-note">{round.challenge===undefined ? '舊輪次保留原紀錄，後續只領基礎金幣；新輪次才使用新版加成。' : '本輪題型只領基礎答題金幣，不參加辨義或填空加成。'}{bonus && ` 原有加成 +${bonus.amount} 已保留。`}</p>
       : !roundId && <p className="reward-note">辨義：30 秒答對 10 字額外 +30；填空：3 分鐘答對 15 字額外 +60。各輪一次，依實際題量與作答計算。</p>}
-    {error && <p role="alert">{error}</p>}
     {!!data?.history.length && <details><summary>最近金幣紀錄</summary><ol>{data.history.map(event=><li key={event.id}>+{event.amount} · {event.kind==='daily-check-in' ? `${event.taiwanDate} 打卡` : event.kind==='round-bonus' ? `額外${challengeRule(event.challenge)?.label ?? '舊版'}加成` : `基礎答題（${event.correct ? '答對' : '答錯'}）`} · {new Date(event.createdAt).toLocaleTimeString('zh-TW',{timeZone:'Asia/Taipei',hour:'2-digit',minute:'2-digit',hour12:false})}</li>)}</ol></details>}
+  </>;
+  return <section className={`reward-panel${compact ? ' reward-panel-compact' : ''}`} aria-label="遊戲金幣">
+    {compact ? <>
+      <div className="reward-compact-heading">
+        <details key={resetKey} className="reward-explanation"><summary>獎勵說明</summary><div>{claimButton}{explanation}</div></details>
+        <p className="reward-coin-count" aria-label={`遊戲金幣 ${data ? data.wallet?.balance ?? 0 : '讀取中'}`}><span aria-hidden="true">◉</span><strong>{data ? data.wallet?.balance ?? 0 : '…'}</strong></p>
+      </div>
+      {rule && <div className="reward-countdown"><label htmlFor={`reward-time-${roundId}`}>
+        {bonus ? '本輪加成已領' : seconds===undefined ? '本輪加成 · 尚未計時' : seconds===0 ? '加成時間已到' : `本輪加成 · 剩 ${Math.floor(seconds/60)}:${String(seconds%60).padStart(2,'0')}`}
+        <span>{correctWords.size} / {rule.words} 字</span></label>
+        <progress id={`reward-time-${roundId}`} max={rule.windowMs/1000} value={seconds ?? rule.windowMs/1000} aria-label="本輪加成剩餘時間" aria-valuetext={seconds===undefined ? '第一題客觀題呈現起計時' : `剩餘 ${seconds} 秒`}/>
+      </div>}
+    </> : <><div className="reward-wallet-row"><p>遊戲金幣 <strong>{data ? data.wallet?.balance ?? 0 : '…'}</strong></p>{claimButton}</div>{explanation}</>}
+    {error && <p role="alert">{error}</p>}
   </section>;
 }
 

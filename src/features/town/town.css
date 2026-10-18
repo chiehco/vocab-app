@@ -122,6 +122,14 @@
 .town-dialog-close { display:block; min-height:44px; margin-left:auto; padding:8px; color:var(--ui-accent); }
 .town-card-dialog .town-selected { margin:0; padding-top:8px; }
 .town-overview .town-summary > span + span { display:none; }
+.town-study-flow { padding-top:8px; }
+.town-study-flow .town-study-status { width:100%; margin:4px auto; padding:0; }
+.town-study-flow .town-study-status > p { margin:0; }
+.town-study-flow .town-study-status:empty { display:none; }
+.town-study-flow .reward-panel-compact { margin:0; }
+.town-study-count { display:block; font-size:.75rem; font-weight:400; color:var(--ui-muted); }
+.town-study-flow .seal-review-header > span { line-height:1.25; }
+.town-return-detail { display:none; }
 .town-overview .town-practice-entry { width:calc(100% - 92px); }
 .town-overview .town-summary { position:absolute; top:56px; right:12px; width:84px; min-height:44px; align-items:center; white-space:nowrap; }
 .town-overview .town-meter { position:absolute; width:1px; height:1px; clip-path:inset(50%); }
