@@ -81,7 +81,6 @@ export default function VocabularyScreen(){
             {example&&<><h3>情境例句</h3><p className="direct-stem">{example.sentenceEn}</p><p>{example.sentenceZh}</p><SpeakerButton text={example.sentenceEn}/></>}
           </>}
         </article>
-        <StudyActions label="字卡導覽"><div className="vocab-card-nav"><button disabled={index===0} onClick={()=>move(index-1)}>上一張</button><button disabled={index===matches.length-1} onClick={()=>move(index+1)}>下一張</button></div></StudyActions>
         {practiceIds(items).length>0?<><button className="direct-primary" disabled={busy} onClick={()=>void practice()}>做題目（整單元 {practiceIds(items).length} 題）</button>
         <p className="direct-muted">範圍涵蓋本單元全部{kind==='grammar'?usageLabel:'詞彙'}，不受目前字卡或搜尋影響；未練過的優先。可隨時離開續答。</p></>:<Link className="direct-primary" to={textbookPath(level,unit)}>回單元頁做一般單字練習</Link>}
       </>:<p role="status">找不到符合的項目，請換個關鍵字。</p>}
@@ -89,5 +88,6 @@ export default function VocabularyScreen(){
     </>}
     {error&&<p role="alert">{error}</p>}
     {saveFailed&&<p role="alert">學習位置尚未保存，請確認儲存空間後重新整理。</p>}
+    {!hold&&current&&item&&<StudyActions label="字卡導覽"><div className="vocab-card-nav"><button disabled={index===0} onClick={()=>move(index-1)}>上一張</button><button disabled={index===matches.length-1} onClick={()=>move(index+1)}>下一張</button></div></StudyActions>}
   </div>;
 }

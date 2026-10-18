@@ -8,3 +8,14 @@
 .reward-panel summary { min-height:44px; display:flex; align-items:center; cursor:pointer; }
 .reward-panel ol { padding-left:20px; font-size:var(--ui-fs-secondary); overflow-wrap:anywhere; }
 .reward-receipt { padding:10px 0; font-weight:600; }
+.reward-panel-compact { padding: 0; margin: 8px 0; border: 0; background: transparent; }
+.reward-compact-heading { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; position:relative; }
+.reward-coin-count { flex:none; display:flex; align-items:center; gap:6px; margin:0; padding:8px 0; font-variant-numeric:tabular-nums; }
+.reward-coin-count > span { color:var(--ui-warning); }
+.reward-explanation { flex:1; min-width:0; }
+.reward-explanation > summary { width:fit-content; color:var(--ui-muted); font-size:var(--ui-fs-secondary); }
+.reward-explanation > summary::before { content:'▸'; margin-right:6px; }
+.reward-explanation[open] > summary::before { content:'▾'; }
+.reward-explanation > div { padding:12px; border:1px solid var(--ui-border); border-radius:var(--ui-radius); background:var(--ui-surface); }
+.reward-countdown label { display:flex; justify-content:space-between; gap:8px; font-size:var(--ui-fs-label); color:var(--ui-muted); }
+.reward-countdown progress { display:block; width:100%; height:5px; margin-top:4px; accent-color:var(--ui-accent); }
