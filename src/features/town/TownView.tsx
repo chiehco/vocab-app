@@ -5,6 +5,7 @@ import TownMap from './TownMap';
 import type { TownPracticeReturn } from './townPractice';
 import type { townStudyStatus } from './townStudy';
 import RewardPanel from '../rewards/RewardPanel';
+import { isDecorationTown } from './decorations/model';
 
 interface TownRow {
   id: string; word: string; meaning: string; attempted: boolean;
@@ -19,6 +20,8 @@ export default function TownView({ level, unit, rows, sibling, due, onPractice, 
 }) {
   const [params] = useSearchParams();
   const focusId = params.get('item');
+  const town=`${level}/${unit}`;
+  const decorationTown=isDecorationTown(town)?town:undefined;
   const [selectedId, setSelectedId] = useState(rows.find(row => row.id === focusId)?.id ?? rows[0]?.id ?? '');
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
@@ -42,7 +45,7 @@ export default function TownView({ level, unit, rows, sibling, due, onPractice, 
     finally { lock.current = false; setBusy(false); }
   }
   return <div className="town-page town-overview">
-    <header className="town-header"><Link to="/" className="town-brand">萬詞譜</Link><h1>{level} · Unit {unit}</h1><Link to={`/textbook/${level}/${unit}`}>課本單元</Link></header>
+    <header className="town-header"><Link to="/" className="town-brand">萬詞譜</Link><h1>{level} · Unit {unit}</h1><div className="town-header-links">{decorationTown&&<Link to={`/town/${town}/decorate`}>商店</Link>}<Link to={`/textbook/${level}/${unit}`}>課本單元</Link></div></header>
     <details className="town-about"><summary>小鎮說明</summary><div>
       <p className="town-subtle">完成一般學習、複習或補練並保存紀錄，對應單字的小屋就會落成。答錯也算；只看字卡或聽發音不會蓋屋。</p>
       <p className="town-subtle">{remaining>0 ? `本輪還有 ${remaining} 字，依本小鎮詞域、到期時間與今日剩餘額度安排。` : continuing ? '本輪的紀錄已保存，可查看成果並完成本輪。' : '明天再來查看安排，也可以選一個單字補練。'}進度會保存，可隨時回小鎮再繼續。</p>
@@ -57,7 +60,7 @@ export default function TownView({ level, unit, rows, sibling, due, onPractice, 
     {error && <p role="alert" className="town-error">{error}</p>}
     <div className="town-summary"><span><strong>{built}</strong>／{rows.length} 小屋</span><span>已練過 {built} 字</span></div>
     <progress className="town-meter" value={built} max={rows.length} aria-label={`已完成練習 ${built} 個字，共 ${rows.length} 個`} />
-    <TownMap plots={rows.map(row => ({ id: row.id, word: row.word, built: row.attempted }))}
+    <TownMap town={decorationTown} plots={rows.map(row => ({ id: row.id, word: row.word, built: row.attempted }))}
       selectedId={selected?.id ?? ''} onSelect={id=>{setSelectedId(id);cardDialog.current?.showModal();}} focusOnMount={rows.some(row => row.id === focusId)} label={`${level} Unit ${unit} 單字城鎮全貌，可放大後拖曳`} />
     {selected && <dialog className="town-card-dialog" ref={cardDialog} onClick={event=>{if(event.target===event.currentTarget)event.currentTarget.close();}} aria-label="小鎮字卡">
       <button className="town-dialog-close" onClick={()=>cardDialog.current?.close()}>關閉字卡 ×</button><section className="town-selected" aria-label="選取的單字">

@@ -1,4 +1,6 @@
 import { progressDb } from "../db/progressDb";
+import type { VocabProgressDB } from '../db/progressDb';
+import { validDecorationBackup, type OwnedDecoration } from '../features/town/decorations/model';
 import { validGroup } from "../features/direct/model";
 import { validGsatBackup } from "../features/exam/gsatStore";
 import { validWrittenBackup } from "../features/exam/writtenModel";
@@ -15,7 +17,7 @@ import type {
 } from "../db/types";
 
 const BACKUP_APP_ID = "vocab-app-progress";
-const BACKUP_SCHEMA_VERSION = 7;
+const BACKUP_SCHEMA_VERSION = 8;
 
 export interface ProgressBackup {
   app: typeof BACKUP_APP_ID;
@@ -35,31 +37,33 @@ export interface ProgressBackup {
     rewardWallet?: RewardWallet[];
     rewardRounds?: RewardRound[];
     rewardLedger?: RewardEvent[];
+    townDecorations?: OwnedDecoration[];
   };
 }
 
-export async function exportProgress(): Promise<ProgressBackup> {
-  return progressDb.transaction('r', progressDb.tables, async () => {
-  const [cardStates, reviewLogs, checkIns, quizStats, settings, customGroups, directSessions, directAttempts, writtenSessions, writtenSubmissions, rewardWallet, rewardRounds, rewardLedger] = await Promise.all([
-    progressDb.cardStates.toArray(),
-    progressDb.reviewLogs.toArray(),
-    progressDb.checkIns.toArray(),
-    progressDb.quizStats.toArray(),
-    progressDb.settings.toArray(),
-    progressDb.customGroups.toArray(),
-    progressDb.directSessions.toArray(),
-    progressDb.directAttempts.toArray(),
-    progressDb.writtenSessions.toArray(),
-    progressDb.writtenSubmissions.toArray(),
-    progressDb.rewardWallet.toArray(),
-    progressDb.rewardRounds.toArray(),
-    progressDb.rewardLedger.toArray(),
+export async function exportProgress(db:VocabProgressDB=progressDb): Promise<ProgressBackup> {
+  return db.transaction('r', db.tables, async () => {
+  const [cardStates, reviewLogs, checkIns, quizStats, settings, customGroups, directSessions, directAttempts, writtenSessions, writtenSubmissions, rewardWallet, rewardRounds, rewardLedger, townDecorations] = await Promise.all([
+    db.cardStates.toArray(),
+    db.reviewLogs.toArray(),
+    db.checkIns.toArray(),
+    db.quizStats.toArray(),
+    db.settings.toArray(),
+    db.customGroups.toArray(),
+    db.directSessions.toArray(),
+    db.directAttempts.toArray(),
+    db.writtenSessions.toArray(),
+    db.writtenSubmissions.toArray(),
+    db.rewardWallet.toArray(),
+    db.rewardRounds.toArray(),
+    db.rewardLedger.toArray(),
+    db.townDecorations.toArray(),
   ]);
   return {
     app: BACKUP_APP_ID,
     schemaVersion: BACKUP_SCHEMA_VERSION,
     exportedAt: new Date().toISOString(),
-    data: { cardStates, reviewLogs, checkIns, quizStats, settings, customGroups, directSessions, directAttempts, writtenSessions, writtenSubmissions, rewardWallet, rewardRounds, rewardLedger },
+    data: { cardStates, reviewLogs, checkIns, quizStats, settings, customGroups, directSessions, directAttempts, writtenSessions, writtenSubmissions, rewardWallet, rewardRounds, rewardLedger, townDecorations },
   };
   });
 }
@@ -107,66 +111,75 @@ export function validateBackup(obj: unknown): string | null {
     if (!validGsatBackup(d.directSessions!, d.directAttempts!)) return '備份含不完整的學測題組或作答紀錄';
   }
   if (b.schemaVersion >= 3 && !validWrittenBackup(d.writtenSessions,d.writtenSubmissions)) return '備份含不完整或無效的非選作答與自評紀錄';
-  if (b.schemaVersion >= 6 && !validRewardBackup(d.rewardWallet,d.rewardRounds,d.rewardLedger)) return '備份含不一致的金幣紀錄或餘額';
+  if (b.schemaVersion >= 8 && !validDecorationBackup(d.townDecorations)) return '備份含無效或重疊的裝飾配置';
+  const decorationSpend=b.schemaVersion>=8 ? d.townDecorations!.reduce((sum,row)=>sum+row.pricePaid,0) : 0;
+  if (b.schemaVersion >= 6 && !validRewardBackup(d.rewardWallet,d.rewardRounds,d.rewardLedger,decorationSpend)) return '備份含不一致的金幣紀錄或餘額';
   return null;
 }
 
 /** 匯入備份：整批覆蓋現有進度（單一交易，失敗即整體回滾）。 */
-export async function importProgress(backup: ProgressBackup): Promise<void> {
+export async function importProgress(backup: ProgressBackup,db:VocabProgressDB=progressDb): Promise<void> {
   const error = validateBackup(backup);
   if (error) throw new Error(error);
-  await progressDb.transaction(
+  await db.transaction(
     "rw",
     [
-      progressDb.cardStates,
-      progressDb.reviewLogs,
-      progressDb.checkIns,
-      progressDb.quizStats,
-      progressDb.settings,
-      progressDb.customGroups,
-      progressDb.directSessions,
-      progressDb.directAttempts,
-      progressDb.writtenSessions,
-      progressDb.writtenSubmissions,
-      progressDb.rewardWallet,
-      progressDb.rewardRounds,
-      progressDb.rewardLedger,
+      db.cardStates,
+      db.reviewLogs,
+      db.checkIns,
+      db.quizStats,
+      db.settings,
+      db.customGroups,
+      db.directSessions,
+      db.directAttempts,
+      db.writtenSessions,
+      db.writtenSubmissions,
+      db.rewardWallet,
+      db.rewardRounds,
+      db.rewardLedger,
+      db.townDecorations,
     ],
     async () => {
+      // A legacy wallet cannot overwrite spending without its ownership receipts.
+      if(backup.schemaVersion>=6 && backup.schemaVersion<8 && await db.townDecorations.count())throw Error('此舊版備份不含裝飾，無法覆蓋已有購買的資料。請使用包含裝飾的新版備份。');
       await Promise.all([
-        progressDb.cardStates.clear(),
-        progressDb.reviewLogs.clear(),
-        progressDb.checkIns.clear(),
-        progressDb.quizStats.clear(),
-        progressDb.settings.clear(),
+        db.cardStates.clear(),
+        db.reviewLogs.clear(),
+        db.checkIns.clear(),
+        db.quizStats.clear(),
+        db.settings.clear(),
       ]);
       // 舊版備份沒有新功能資料：保留現有群組與練習，避免意外遺失。
       if (backup.schemaVersion >= 2) {
-        await Promise.all([progressDb.customGroups.clear(), progressDb.directSessions.clear(), progressDb.directAttempts.clear()]);
-        await progressDb.customGroups.bulkPut(backup.data.customGroups!);
-        await progressDb.directSessions.bulkPut(backup.data.directSessions!);
-        await progressDb.directAttempts.bulkPut(backup.data.directAttempts!);
+        await Promise.all([db.customGroups.clear(), db.directSessions.clear(), db.directAttempts.clear()]);
+        await db.customGroups.bulkPut(backup.data.customGroups!);
+        await db.directSessions.bulkPut(backup.data.directSessions!);
+        await db.directAttempts.bulkPut(backup.data.directAttempts!);
       }
       if (backup.schemaVersion >= 3) {
-        await Promise.all([progressDb.writtenSessions.clear(),progressDb.writtenSubmissions.clear()]);
-        await progressDb.writtenSessions.bulkPut(backup.data.writtenSessions!);
-        await progressDb.writtenSubmissions.bulkPut(backup.data.writtenSubmissions!);
+        await Promise.all([db.writtenSessions.clear(),db.writtenSubmissions.clear()]);
+        await db.writtenSessions.bulkPut(backup.data.writtenSessions!);
+        await db.writtenSubmissions.bulkPut(backup.data.writtenSubmissions!);
       }
       // Older backups cannot erase a wallet or restart its claim/round records.
       if (backup.schemaVersion >= 6) {
-        await Promise.all([progressDb.rewardWallet.clear(),progressDb.rewardRounds.clear(),progressDb.rewardLedger.clear()]);
-        await progressDb.rewardWallet.bulkPut(backup.data.rewardWallet!);
-        await progressDb.rewardRounds.bulkPut(backup.data.rewardRounds!);
-        await progressDb.rewardLedger.bulkPut(backup.data.rewardLedger!);
+        await Promise.all([db.rewardWallet.clear(),db.rewardRounds.clear(),db.rewardLedger.clear()]);
+        await db.rewardWallet.bulkPut(backup.data.rewardWallet!);
+        await db.rewardRounds.bulkPut(backup.data.rewardRounds!);
+        await db.rewardLedger.bulkPut(backup.data.rewardLedger!);
+      }
+      if(backup.schemaVersion>=8) {
+        await db.townDecorations.clear();
+        await db.townDecorations.bulkPut(backup.data.townDecorations!);
       }
       // v1/v2 do not contain written work: preserve it. v3 replaces all tables atomically.
       // reviewLogs 的 id 是自動遞增主鍵，匯入時保留原 id
       await Promise.all([
-        progressDb.cardStates.bulkPut(backup.data.cardStates),
-        progressDb.reviewLogs.bulkPut(backup.data.reviewLogs),
-        progressDb.checkIns.bulkPut(backup.data.checkIns),
-        progressDb.quizStats.bulkPut(backup.data.quizStats),
-        progressDb.settings.bulkPut(backup.data.settings),
+        db.cardStates.bulkPut(backup.data.cardStates),
+        db.reviewLogs.bulkPut(backup.data.reviewLogs),
+        db.checkIns.bulkPut(backup.data.checkIns),
+        db.quizStats.bulkPut(backup.data.quizStats),
+        db.settings.bulkPut(backup.data.settings),
       ]);
     },
   );

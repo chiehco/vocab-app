@@ -103,7 +103,7 @@ it('the 10th town answer and challenge roll back together when bonus storage fai
 
 it('v7 backup restores objective answers and coins; v5 learning restore never back-pays a town event',async()=>{
   const round=await startTownStudy('LV1/1');await prepare(round.id,0);const old=await exportProgress();old.schemaVersion=5;delete old.data.rewardLedger;delete old.data.rewardWallet;delete old.data.rewardRounds;
-  await saveTownStudy(round.id,0,2,false,true);const backup=await exportProgress();expect(backup.schemaVersion).toBe(7);
+  await saveTownStudy(round.id,0,2,false,true);const backup=await exportProgress();expect(backup.schemaVersion).toBe(8);
   await progressDb.delete();await progressDb.open();await importProgress(backup);await saveTownStudy(round.id,0,0,false,true);expect((await exportProgress()).data).toEqual(backup.data);
   await importProgress(old);await saveTownStudy(round.id,0,2,false,true);expect(await balance()).toBe(5);expect(await progressDb.reviewLogs.count()).toBe(1);expect(validateBackup(await exportProgress())).toBeNull();
   const wrongPolicy=structuredClone(backup);wrongPolicy.data.rewardLedger![0].challenge='fill-v2';expect(validateBackup(wrongPolicy)).toContain('金幣');

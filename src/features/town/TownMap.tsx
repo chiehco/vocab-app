@@ -1,15 +1,23 @@
 import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import TownBuilding from './TownBuilding';
 import { getTownLayout } from './townLayout';
+import { Link } from 'react-router-dom';
+import { useLiveQuery } from 'dexie-react-hooks';
+import { progressDb } from '../../db/progressDb';
+import type { DecorationTown, OwnedDecoration } from './decorations/model';
+import PlazaDecorations from './decorations/PlazaDecorations';
+import './decorations/decorations.css';
 
-export default function TownMap({ plots, selectedId, onSelect, label, focusOnMount = false }: {
+export default function TownMap({ plots, selectedId, onSelect, label, focusOnMount = false, town }: {
   plots: { id: string; word: string; built: boolean }[];
   selectedId: string;
   onSelect: (id: string) => void;
   label: string;
   focusOnMount?: boolean;
+  town?:DecorationTown;
 }) {
   const map = useRef<HTMLDivElement>(null);
+  const placed=useLiveQuery<OwnedDecoration[]>(()=>town?progressDb.townDecorations.where('placement.town').equals(town).toArray():Promise.resolve([]),[town])??[];
   const [columns,setColumns]=useState(6);
   const layout = useMemo(() => getTownLayout(plots.length,columns), [plots.length,columns]);
   const [scale, setScale] = useState(0.55);
@@ -85,7 +93,9 @@ export default function TownMap({ plots, selectedId, onSelect, label, focusOnMou
         {layout.entrances.map((street, i) => <i key={i} className="town-street" style={street} aria-hidden="true" />)}
         <div className="town-square" style={layout.square} aria-hidden="true" />
         <div className="town-plaza" style={layout.plaza} aria-label="中央廣場">
-          <span className="town-plaza-label">中央廣場</span><span className="town-plaza-paving" aria-hidden="true" />
+          {!placed.length&&<span className="town-plaza-label">中央廣場</span>}<span className="town-plaza-paving" aria-hidden="true" />
+          <PlazaDecorations owned={placed}/>
+          {town&&<Link className="town-plaza-open" to={`/town/${town}/decorate`} aria-label="布置中央廣場"/>}
           <i className="town-bench north" aria-hidden="true" /><i className="town-bench south" aria-hidden="true" />
           <i className="town-plaza-tree northwest" aria-hidden="true" /><i className="town-plaza-tree northeast" aria-hidden="true" />
           <i className="town-plaza-tree southwest" aria-hidden="true" /><i className="town-plaza-tree southeast" aria-hidden="true" />
