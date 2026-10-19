@@ -346,6 +346,9 @@ export default function QuizScreen() {
     feedback.current.focus({ preventScroll: true });
     feedback.current.scrollIntoView({ block: 'start', behavior: 'instant' });
   }, [feedbackKey]);
+  useEffect(() => {
+    if (mode && index < total && !townAnswerSaved) window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [mode, index, total, townAnswerSaved]);
   const townRound: TownQuizRound = { listId: listId ?? '', mode, questions, fillQuestions, index, score, answered,
     fillInput, fillResult, wrongWords, selectedChoice, sessionId: sessionId.current, sessionStarted: sessionStarted.current };
   const rememberTownRound = useEffectEvent(() => {
@@ -355,16 +358,28 @@ export default function QuizScreen() {
     if (townScope && !saving) rememberTownRound();
   }, [townScope, mode, questions, fillQuestions, index, score, answered, fillInput, fillResult, wrongWords, selectedChoice, saving]);
   const townReturnAction = townScope && <Link className="trial-town-action" aria-disabled={saving}
+    aria-label={townAnswerSaved ? '回小鎮看小屋 →' : '← 回小鎮 · 保留本輪進度'}
     onClick={event => { if (savingRef.current || townAnswerSaved && event.detail > 1) event.preventDefault(); }}
     to={`/town/LV1/1${townItem ? `?item=${encodeURIComponent(townItem.id)}` : ''}`}
     state={{ townPractice: { to: location.pathname + location.search, state: { townQuizRound: townRound } } }}>
-    {townAnswerSaved ? '回小鎮看小屋 →' : '← 回小鎮 · 保留本輪進度'}
+    {townAnswerSaved ? '回小鎮看小屋 →' : <>← 回小鎮<span className="trial-return-detail"> · 保留本輪進度</span></>}
   </Link>;
   const townLink = townScope && <div className="trial-town-return">
     {townAnswerSaved && <p role="status">答案已保存，這個字的小屋已落成。答錯也算練過。</p>}
     {townReturnAction}
     <p>本輪續答請留在同一分頁。</p>
   </div>;
+  const activeStatus = <div className={`trial-active-status${townScope && !townAnswerSaved ? ' has-return' : ''}`}>
+    {!townAnswerSaved && townReturnAction}
+    <RewardPanel compact resetKey={`${sessionId.current}:${index}:${townAnswerSaved}`} roundId={rewardRound} />
+    {reward.error && <p role="alert">{reward.error}</p>}
+  </div>;
+  const activeNotes = <details key={`${sessionId.current}:${index}:${townAnswerSaved}`} className="trial-context-notes">
+    <summary>本輪說明</summary>
+    <p>目前辨認 {score} 字。{mode !== 'fill' && '換選項只會選取，再點同一選項才送出。'}</p>
+    {townScope && <p>{townAnswerSaved && '這個字的小屋已落成，答錯也算練過。'}本輪續答請留在同一分頁。</p>}
+    {townEntry && <p className="trial-entry-scope">{total === 1 ? '小鎮選字入口 · 本輪一字一題' : `整單元範圍 · 本輪 ${total} 題`} · <Link to="/textbook/LV1/1">到課本選整單元範圍 →</Link></p>}
+  </details>;
 
   if (mode === null) {
     if (hasUnitScope && allWords && examPriorities && !requestedUnit) {
@@ -431,6 +446,7 @@ export default function QuizScreen() {
     }
     if (fillResult) return <div className="realm-page active-trial-page">
       <TrialHeader label={`${unitLabel}答案解析`} progress={`${index + 1} / ${total}`} />
+      {activeStatus}
       <section className="trial-answer-feedback" ref={feedback} tabIndex={-1} aria-labelledby="trial-feedback-title">
         <p role="status">答案已保存</p><h2 id="trial-feedback-title">{fillResult === 'correct' ? '答對了' : '這題答錯了，再練一次'}</h2>
         <h3><span>{question.word}</span><SpeakerButton text={question.word} /></h3><p className="trial-answer-meaning">{allWords?.find(word => word.word === question.word)?.meaningZh}</p>
@@ -439,7 +455,7 @@ export default function QuizScreen() {
           setIndex(index + 1); setFillInput(''); setFillResult(null);
         }}>{index === total - 1 ? '查看本輪結果' : '下一個單字'}<span>→</span></button></div>
         <RewardReceipt answerId={`answer:quiz:${sessionId.current}:${index}`} roundId={rewardRound} word={question.word} correct={fillResult==='correct'} />
-        {townScope && <p>這個字的小屋已落成。答錯也算練過。本輪續答請留在同一分頁。</p>}
+        {activeNotes}
         <p>正確答案：{question.answer}</p>
         <div className="trial-answer-example"><h4>例句</h4><p>{question.sentenceEn}</p><p>{question.sentenceZh}</p></div>
       </section>
@@ -447,10 +463,7 @@ export default function QuizScreen() {
     return (
       <div className="realm-page active-trial-page">
         <TrialHeader label={`${unitLabel}殘句補名`} progress={`${index + 1} / ${total}`} />
-        <RewardPanel roundId={rewardRound} />
-        {reward.error && <p role="alert">{reward.error}</p>}
-        {townLink}
-        <div className="trial-progress"><i style={{ width: `${((index + 1) / total) * 100}%` }} /><span>目前辨認 {score}</span></div>
+        {activeStatus}
         <section className="trial-question fill-question">
           <ExamTierBadge tier={priorityByWord.get(question.word)} compact />
           <WordTraitBadges senseCount={senseCountByWord.get(question.word)} hasConfusables={confusableWords.has(question.word)} hasMorphemes={morphemeWords.has(question.word)} compact />
@@ -460,6 +473,7 @@ export default function QuizScreen() {
         </section>
         {saveError && <p role="alert">{saveError}</p>}
         <button className="trial-next" disabled={saving} onClick={() => void submitFill()}>{saving ? '保存中' : '確認答案'}<span>→</span></button>
+        {activeNotes}
       </div>
     );
   }
@@ -496,6 +510,7 @@ export default function QuizScreen() {
     const example = townItem?.illustration ?? exampleByWord.get(question.target.word);
     return <div className="realm-page active-trial-page">
       <TrialHeader label={`${unitLabel}答案解析`} progress={`${index + 1} / ${total}`} />
+      {activeStatus}
       <section className="trial-answer-feedback" ref={feedback} tabIndex={-1} aria-labelledby="trial-feedback-title">
         <p role="status">答案已保存</p><h2 id="trial-feedback-title">{correct ? '答對了' : '這題答錯了，再練一次'}</h2>
         <h3><span>{question.target.word}</span><SpeakerButton text={question.target.word} /></h3><p className="trial-answer-meaning">{question.target.meaningZh}</p>
@@ -504,7 +519,7 @@ export default function QuizScreen() {
           setIndex(index + 1); setAnswered(null); selectedRef.current = null; setSelection(null);
         }}>{index === total - 1 ? '查看本輪結果' : '下一個單字'}<span>→</span></button></div>
         <RewardReceipt answerId={`answer:quiz:${sessionId.current}:${index}`} roundId={rewardRound} word={question.target.word} correct={correct} />
-        {townScope && <p>這個字的小屋已落成。答錯也算練過。本輪續答請留在同一分頁。</p>}
+        {activeNotes}
         {answered === RESTORED_WRONG_ANSWER ? <p>先前這題答錯，紀錄已保存；以下顯示正確答案。</p>
           : chosen && <p>你的答案：{mode === 'w2m' ? chosen.meaningZh : chosen.word}</p>}
         {example && <div className="trial-answer-example"><h4>例句</h4><p>{'captionEn' in example ? example.captionEn : example.sentenceEn}</p><p>{'captionZh' in example ? example.captionZh : example.sentenceZh}</p></div>}
@@ -515,23 +530,20 @@ export default function QuizScreen() {
   return (
     <div className="realm-page active-trial-page">
       <TrialHeader label={`${unitLabel}${mode === "w2m" ? "見名辨義" : mode === "image" ? "看圖喚名" : "循義喚名"}`} progress={`${index + 1} / ${total}`} />
-      <RewardPanel roundId={rewardRound} />
-      {reward.error && <p role="alert">{reward.error}</p>}
-      {answered === null && townLink}
-      <div className="trial-progress"><i style={{ width: `${((index + 1) / total) * 100}%` }} /><span>目前辨認 {score}</span></div>
-      {townEntry && <p className="trial-entry-scope">{total === 1 ? '小鎮選字入口 · 本輪一字一題' : `整單元範圍 · 本輪 ${total} 題`} · <Link to="/textbook/LV1/1">到課本選整單元範圍 →</Link></p>}
+      {activeStatus}
       <section className={`trial-question choice-question ${mode === "image" ? "image-question" : ""}`}>
         <ExamTierBadge tier={priorityByWord.get(question.target.word)} compact />
         <WordTraitBadges senseCount={senseCountByWord.get(question.target.word)} hasConfusables={confusableWords.has(question.target.word)} hasMorphemes={morphemeWords.has(question.target.word)} compact />
         {mode === "image" && targetAsset ? <><ResilientBeastImage className="trial-wordbeast-clue" src={targetAsset} word={question.target.word} alt="待辨認的字獸圖卡" />{imageClue && <ImageChineseClue word={question.target} clue={imageClue} />}</> : <h2 className={mode === "w2m" ? "word-prompt" : "meaning-prompt"}>{prompt}{mode === "w2m" && <SpeakerButton text={question.target.word} className="trial-speaker" />}</h2>}
         <p className="trial-prompt-sub">{mode === "image" ? imageClue ? "依圖片與中文提示選出英文單字" : "依圖片選出英文單字" : promptSub}</p>
       </section>
-      <p className="trial-pick-instruction" id="trial-pick-instruction">點一次選取，再點同一選項送出。換選項先只選取。</p>
+      <p className="trial-pick-instruction" id="trial-pick-instruction">點選，再點同一選項送出。</p>
       <div className="trial-options" role="group" aria-label="答案選項">
         {question.options.map((option, optionIndex) => <button key={option.word} className={selectedChoice === option.word ? 'selected' : ''} aria-pressed={selectedChoice === option.word} aria-describedby="trial-pick-instruction" disabled={saving} onClick={() => pick(option)}><b>{String.fromCharCode(65 + optionIndex)}</b><span>{mode === "w2m" ? option.meaningZh : option.word}</span><i /></button>)}
       </div>
       {saveError && <p role="alert">{saveError}</p>}
       {saving && <p role="status">正在保存答案…</p>}
+      {activeNotes}
     </div>
   );
 }

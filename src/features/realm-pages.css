@@ -266,7 +266,27 @@
 }
 .trial-town-return { margin:14px 0; line-height:1.7; }
 .trial-town-return a { display:flex; align-items:center; justify-content:center; min-height:48px; padding:12px; border-radius:10px; background:var(--ui-accent); color:var(--ui-on-accent); text-decoration:none; font-weight:600; }
-.trial-town-return a[aria-disabled=true] { opacity:.5; }
+.trial-town-return a[aria-disabled=true], .trial-active-status > .trial-town-action[aria-disabled=true] { opacity:.5; }
+.trial-active-status { margin:8px 0 12px; }
+.trial-active-status.has-return { display:grid; grid-template-columns:auto minmax(0,1fr); align-items:start; gap:8px; }
+.trial-active-status > .reward-panel { min-width:0; margin:0; }
+.trial-active-status > .trial-town-action { display:inline-flex; align-items:center; min-height:44px; font-size:var(--ui-fs-secondary); text-decoration:none; }
+.trial-active-status .trial-return-detail { display:none; }
+.trial-active-status > [role=alert] { grid-column:1 / -1; }
+.trial-context-notes { margin:12px 0; color:var(--ui-muted); font-size:var(--ui-fs-secondary); line-height:1.6; }
+.trial-context-notes > summary { display:flex; align-items:center; min-height:44px; width:fit-content; cursor:pointer; }
+.trial-context-notes > summary::before { content:'▸'; margin-right:6px; }
+.trial-context-notes[open] > summary::before { content:'▾'; }
+.trial-context-notes p { margin:8px 0; }
+.active-trial-page .choice-question:not(.image-question) { min-height:132px; padding:16px; }
+.active-trial-page .trial-question > .exam-tier-badge,
+.active-trial-page .trial-question > .word-trait-badges { position:static; align-self:flex-end; max-width:100%; margin:0 0 6px; }
+.active-trial-page .choice-question:not(.image-question) h2 { margin-top:8px; }
+.active-trial-page .trial-pick-instruction { margin:8px 0; }
+.active-trial-page .trial-answer-feedback { margin-top:12px; scroll-margin-top:160px; }
+.active-trial-page .fill-question { padding:16px; }
+.active-trial-page .fill-question h2 { margin-top:8px; }
+.active-trial-page .fill-question label { margin-top:16px; }
 .trial-options button.selected { outline:2px solid var(--ui-accent); background:var(--ui-accent-soft); }
 .trial-pick-instruction,.trial-entry-scope { margin:12px 0; color:var(--ui-muted); font-size:var(--ui-fs-secondary); line-height:1.7; }
 .trial-entry-scope a { display:inline-flex; min-height:44px; align-items:center; color:var(--ui-accent); }
