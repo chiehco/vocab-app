@@ -5,13 +5,13 @@ import { useLiveQuery } from "dexie-react-hooks";
 import { contentDb } from "../../db/contentDb";
 import { DEFAULT_SETTINGS, getSetting } from "../../db/progressDb";
 import { getCardState } from "../../db/progressIdentity";
-import { addDaysStr, todayStr } from "../../lib/dates";
+import { todayStr } from "../../lib/dates";
 import { useCardPronunciation } from "../../hooks/useCardPronunciation";
 import { useToday } from "../../hooks/useToday";
 import type { Grade, WordRecord } from "../../db/types";
 import { buildStudyQueue, type QueueItem } from "../../srs/queue";
 import { gradeFlashcard, markWordKnown, recordReviewWithoutScheduling } from "../../checkin/recordActivity";
-import { GRADE_LABELS, KNOWN_INTERVAL_DAYS, newCardState, scheduleRecall } from "../../srs/sm2";
+import { GRADE_LABELS, newCardState, scheduleRecall } from "../../srs/sm2";
 import { NOTE_TYPE_LABEL } from "../browser/wordLabels";
 import SpeakerButton from "../../components/SpeakerButton";
 import { getWordBeastAsset } from "../wordbeast/wordBeastAssets";
@@ -271,9 +271,6 @@ export function ReviewFlashcard({ item, flipped, options, onFlip, onGrade, onKno
     const next = scheduleRecall(current, grade, today, examDate);
     return `${next === current ? "維持" : "複習"} ${next.dueDate.slice(5).replace("-", "/")}`;
   }
-  function addDaysLabel(days: number) {
-    return addDaysStr(todayStr(), days).slice(5).replace("-", "/");
-  }
   const notes = useLiveQuery(() => contentDb.notes.where("word").equals(word.word).toArray(), [word.word]);
   const priority = useLiveQuery(() => contentDb.examPriorities.where("word").equals(word.word).first(), [word.word]);
   const senses = useLiveQuery(() => contentDb.senses.where("wordId").equals(word.wordId).sortBy("senseOrder"), [word.wordId]);
@@ -339,8 +336,7 @@ export function ReviewFlashcard({ item, flipped, options, onFlip, onGrade, onKno
               <div className="seal-answered">
                 {correct ? (
                   <button className="seal-known" disabled={saving} onClick={onKnown}>
-                    <span>{saveBeforeNext ? '保存「我已經會了」' : '我已經會了'}</span>
-                    <small>{saving ? "保存中" : `複習 ${addDaysLabel(KNOWN_INTERVAL_DAYS)}`}</small>
+                    <span>我已經會了</span>
                   </button>
                 ) : (
                   <button className="seal-next is-wrong" disabled={saving} onClick={() => onGrade(0)}>
