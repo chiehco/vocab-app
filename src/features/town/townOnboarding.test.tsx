@@ -297,6 +297,13 @@ it.each(['w2m', 'm2w', 'image'])('LV1 %s: safe header, selection changes, and in
   await view.waitFor(() => expect(modeButton.disabled).toBe(false));
   await view.click(modeButton);
   await view.waitFor(() => expect(view.container.querySelectorAll('.trial-options button')).toHaveLength(4));
+  await view.waitFor(() => expect(view.container.querySelector('.reward-panel-compact .reward-countdown') !== null).toBe(mode === 'w2m'));
+  const explanation = view.container.querySelector<HTMLDetailsElement>('.reward-explanation')!;
+  expect(explanation.open).toBe(false);
+  expect(view.container.querySelector<HTMLDetailsElement>('.trial-context-notes')?.open).toBe(false);
+  explanation.open = true;
+  await act(async () => { await vi.waitFor(async () => expect(await progressDb.rewardRounds.count()).toBe(1)); });
+  const rewardRound = (await progressDb.rewardRounds.toArray())[0];
   expect(view.container.querySelector('h1')?.textContent).not.toContain(boy.word);
   expect(view.container.querySelector('h1')?.textContent).not.toContain(boy.meaningZh);
   const [first, second] = [...view.container.querySelectorAll<HTMLButtonElement>('.trial-options button')];
@@ -311,6 +318,9 @@ it.each(['w2m', 'm2w', 'image'])('LV1 %s: safe header, selection changes, and in
   expect(view.container.querySelector('.trial-answer-meaning')?.textContent).toBe(boy.meaningZh);
   expect(view.container.querySelector('.trial-answer-example')?.textContent).toContain('boy');
   expect(view.container.querySelector('.realm-count')?.textContent).toBe('1 / 1');
+  expect(view.container.querySelector('.reward-panel-compact .reward-coin-count')).not.toBeNull();
+  expect(view.container.querySelector<HTMLDetailsElement>('.reward-explanation')?.open).toBe(false);
+  expect((await progressDb.rewardRounds.toArray())[0]).toEqual(rewardRound);
   expect(await progressDb.reviewLogs.count()).toBe(1);
 });
 
@@ -341,9 +351,18 @@ it('LV1 fill: one confirmation saves, and result replaces the input', async () =
   await view.waitFor(() => expect(modeButton.disabled).toBe(false));
   await view.click(modeButton);
   await view.waitFor(() => expect(view.container.querySelector('.fill-question input')).not.toBeNull());
+  await view.waitFor(() => expect(view.container.querySelector('.reward-panel-compact .reward-countdown')).not.toBeNull());
+  const explanation = view.container.querySelector<HTMLDetailsElement>('.reward-explanation')!;
+  expect(explanation.open).toBe(false);
+  explanation.open = true;
+  await act(async () => { await vi.waitFor(async () => expect(await progressDb.rewardRounds.count()).toBe(1)); });
+  const rewardRound = (await progressDb.rewardRounds.toArray())[0];
   await view.click(view.container.querySelector('.trial-next'));
   await view.waitFor(() => expect(view.container.querySelector('.trial-answer-feedback')).not.toBeNull());
   expect(view.container.querySelector('input')).toBeNull();
+  expect(view.container.querySelector('.reward-panel-compact .reward-coin-count')).not.toBeNull();
+  expect(view.container.querySelector<HTMLDetailsElement>('.reward-explanation')?.open).toBe(false);
+  expect((await progressDb.rewardRounds.toArray())[0]).toEqual(rewardRound);
   expect(view.container.querySelector('#trial-feedback-title')?.textContent).toContain('答錯');
   expect(await progressDb.reviewLogs.count()).toBe(1);
   expect((await progressDb.reviewLogs.toArray())[0]).toMatchObject({ mode: 'fill-blank', grade: 0 });
