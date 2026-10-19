@@ -1,4 +1,4 @@
-/* 單字詳細頁：正面（字卡）、反面（分頁資料）、學習狀態與各資料區。閱讀順序：單字 → 字義 → 圖片 → 圖說。 */
+/* 單字詳細頁：五分頁（字卡、字義、相關詞、搭配、記憶法）與各資料區。閱讀順序：單字 → 字義 → 圖片 → 圖說。 */
 .word-dossier-page {
   min-height: calc(100svh - 64px);
   padding: var(--ui-sp-4) 20px 44px;
@@ -22,10 +22,29 @@
 .dossier-group-nav a { display: inline-flex; align-items: center; min-height: var(--ui-tap); text-decoration: underline; }
 .dossier-group-nav span { color: var(--ui-muted); }
 
-.dossier-card-controls { display: grid; grid-template-columns: 1fr 1fr; margin: var(--ui-sp-3) 0 0; border: 1px solid var(--ui-border-strong); border-radius: var(--ui-radius); overflow: hidden; }
-.dossier-card-controls button { min-height: var(--ui-tap); border: 0; background: transparent; color: var(--ui-text); font: inherit; font-size: var(--ui-fs-secondary); font-weight: 600; cursor: pointer; transition: background var(--ui-motion); }
-.dossier-card-controls button.active { color: var(--ui-on-accent); background: var(--ui-accent); }
-.dossier-card-controls button:focus-visible { outline-offset: -3px; }
+/* 五分頁切換列：捲動時固定在頂端，不必捲回去才能換頁。 */
+.dossier-page-tabs { position: sticky; top: 0; z-index: 5; display: grid; margin: var(--ui-sp-3) calc(-1 * var(--ui-sp-1)) 0; padding: var(--ui-sp-1); border-bottom: 1px solid var(--ui-border); background: var(--ui-bg); }
+.dossier-page-tabs button { min-width: 0; min-height: var(--ui-tap); padding: 0 2px; border: 0; border-bottom: 3px solid transparent; background: transparent; color: var(--ui-muted); font: inherit; font-size: var(--ui-fs-secondary); font-weight: 600; line-height: 1.25; cursor: pointer; overflow-wrap: anywhere; transition: color var(--ui-motion), border-color var(--ui-motion); }
+.dossier-page-tabs button.active { color: var(--ui-accent); border-bottom-color: var(--ui-accent); }
+.dossier-page-tabs button:focus-visible { outline-offset: -3px; }
+.dossier-page { animation: dossier-back-in var(--ui-motion) both; }
+.dossier-page-title { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--ui-sp-3); padding: var(--ui-sp-4) 0 0; }
+.dossier-page-title > div { min-width: 0; }
+.dossier-page-title p { margin: 0; color: var(--ui-muted); font-size: var(--ui-fs-secondary); font-weight: 600; }
+.dossier-page-title h1 { margin: var(--ui-sp-1) 0 0; font-size: var(--ui-fs-display); font-weight: 700; line-height: var(--ui-lh-tight); }
+.dossier-page > .dossier-section:first-of-type, .dossier-page > .dossier-usage:first-of-type { padding-top: var(--ui-sp-4); }
+.dossier-english > p { margin: var(--ui-sp-3) 0 0; font-size: var(--ui-fs-body); line-height: var(--ui-lh-en); }
+.dossier-meaning-gloss { margin: var(--ui-sp-3) 0 0; font-size: var(--ui-fs-body); }
+.dossier-meaning-gloss small { display: block; margin-bottom: 2px; color: var(--ui-muted); font-size: var(--ui-fs-label); font-weight: 600; }
+.meaning-focus-section .curriculum-meanings { margin: var(--ui-sp-4) 0 0; padding: 0; list-style: none; }
+.meaning-focus-section .curriculum-meanings li { padding: var(--ui-sp-3) 0; border-top: 1px solid var(--ui-border); }
+.meaning-focus-section .curriculum-meanings b, .meaning-focus-section .curriculum-meanings span, .meaning-focus-section .curriculum-meanings small { display: block; }
+.meaning-focus-section .curriculum-meanings small { color: var(--ui-muted); font-size: var(--ui-fs-label); }
+.meaning-focus-section .curriculum-meanings p { margin: var(--ui-sp-2) 0 0; }
+.dossier-basic-example { padding: var(--ui-sp-4) 20px; border-top: 1px solid var(--ui-border); }
+.dossier-basic-example p { margin: 0; font-size: var(--ui-fs-body); line-height: var(--ui-lh-en); }
+.dossier-basic-example span { display: block; margin-top: var(--ui-sp-1); font-size: var(--ui-fs-body); }
+.dossier-next-page { display: flex; width: 100%; min-height: var(--ui-tap); margin-top: var(--ui-sp-4); align-items: center; justify-content: center; border: 1px solid var(--ui-border-strong); border-radius: var(--ui-radius); background: var(--ui-surface); color: var(--ui-accent); font: inherit; font-size: var(--ui-fs-secondary); font-weight: 600; cursor: pointer; }
 
 /* Front */
 .word-dossier-hero { margin: var(--ui-sp-3) 0 0; border: 1px solid var(--ui-border); border-radius: var(--ui-radius); background: var(--ui-surface); overflow: hidden; }
@@ -47,56 +66,11 @@
 .dossier-sigil { width: 160px; overflow: visible; fill: none; stroke: var(--ui-border-strong); stroke-width: 2; }
 .dossier-sigil text { fill: var(--ui-muted); stroke: none; font: 700 3rem var(--ui-font); }
 
-/* Back */
-.word-dossier-back { margin: var(--ui-sp-3) 0 0; padding: var(--ui-sp-4) 20px 20px; border: 1px solid var(--ui-border); border-radius: var(--ui-radius); background: var(--ui-surface); animation: dossier-back-in var(--ui-motion) both; }
-.word-dossier-back > header { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--ui-sp-3); }
-.word-dossier-back > header p { margin: 0; color: var(--ui-muted); font-size: var(--ui-fs-secondary); font-weight: 600; }
-.word-dossier-back > header h1 { margin: var(--ui-sp-1) 0 0; font-size: var(--ui-fs-display); font-weight: 700; line-height: var(--ui-lh-tight); }
-.back-priority-panel { margin-top: var(--ui-sp-3); }
+/* 字義頁的學測考頻 */
 .back-priority-panel > p { margin: var(--ui-sp-2) 0 0; color: var(--ui-muted); font-size: var(--ui-fs-secondary); }
-.back-priority-stats { display: grid; grid-template-columns: repeat(3, 1fr); border-block: 1px solid var(--ui-border); }
+.back-priority-stats { display: grid; margin-top: var(--ui-sp-3); grid-template-columns: repeat(3, 1fr); border-block: 1px solid var(--ui-border); }
 .back-priority-stats span { padding: var(--ui-sp-3) 6px; color: var(--ui-muted); text-align: center; font-size: var(--ui-fs-label); }
 .back-priority-stats b { display: block; margin-bottom: 2px; color: var(--ui-text); font-size: var(--ui-fs-subtitle); font-weight: 700; }
-.word-dossier-back > nav { display: grid; grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); margin: var(--ui-sp-4) 0 0; border-bottom: 1px solid var(--ui-border); }
-.word-dossier-back > nav button { min-height: var(--ui-tap); padding: 0 4px; border: 0; border-bottom: 2px solid transparent; background: transparent; color: var(--ui-muted); font: inherit; font-size: var(--ui-fs-secondary); font-weight: 600; cursor: pointer; }
-.word-dossier-back > nav button.active { color: var(--ui-accent); border-bottom-color: var(--ui-accent); }
-.dossier-back-content { min-height: 200px; padding-top: var(--ui-sp-4); }
-.back-meaning > small { color: var(--ui-muted); font-size: var(--ui-fs-secondary); font-weight: 600; }
-.back-meaning > h2 { margin: var(--ui-sp-1) 0 0; line-height: 1.5; }
-.back-meaning > p { margin: var(--ui-sp-3) 0 0; color: var(--ui-muted); font-size: var(--ui-fs-body); }
-.back-meaning > .back-meaning-gloss { color: var(--ui-text); }
-.back-meaning > .back-meaning-gloss small { display: block; margin-bottom: 2px; color: var(--ui-muted); font-size: var(--ui-fs-label); font-weight: 600; }
-.back-meaning ol { margin: var(--ui-sp-4) 0 0; padding: 0; list-style: none; }
-.back-meaning li { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: var(--ui-sp-2); align-items: baseline; padding: 10px 0; border-top: 1px solid var(--ui-border); }
-.back-meaning li b { color: var(--ui-muted); font-size: var(--ui-fs-label); font-weight: 600; }
-.back-meaning li span { font-size: var(--ui-fs-body); line-height: 1.65; }
-.back-meaning li i { color: var(--ui-danger); font-size: var(--ui-fs-label); font-style: normal; font-weight: 600; }
-.back-meaning .curriculum-meanings { list-style: none; margin: var(--ui-sp-4) 0 0; padding: 0; }
-.back-meaning .curriculum-meanings li { display: block; }
-.back-meaning .curriculum-meanings li span, .back-meaning .curriculum-meanings li small { display: block; }
-.back-meaning .curriculum-meanings li small { color: var(--ui-muted); }
-.back-meaning .curriculum-meanings li p { margin: var(--ui-sp-2) 0; overflow-wrap: anywhere; }
-.back-link-list > div { display: grid; grid-template-columns: 1fr; gap: var(--ui-sp-1); padding: var(--ui-sp-3) 0; border-top: 1px solid var(--ui-border); }
-.back-link-list b, .back-link-list a { font-size: var(--ui-fs-body); font-weight: 700; text-decoration: none; }
-.back-link-list b small { display: block; margin-top: 2px; color: var(--ui-danger); font-size: var(--ui-fs-label); font-weight: 600; }
-.back-link-list span { color: var(--ui-muted); font-size: var(--ui-fs-secondary); }
-.back-root-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--ui-sp-2); }
-.back-root-list > div { padding: var(--ui-sp-3); border: 1px solid var(--ui-border); border-radius: var(--ui-radius); }
-.back-root-list b, .back-root-list small, .back-root-list span { display: block; }
-.back-root-list b { font-size: var(--ui-fs-subtitle); font-weight: 700; }
-.back-root-list small { margin-top: 2px; color: var(--ui-danger); font-size: var(--ui-fs-label); font-weight: 600; }
-.back-root-list span { margin-top: var(--ui-sp-2); color: var(--ui-muted); font-size: var(--ui-fs-secondary); }
-.back-root-family { grid-column: 1 / -1; padding: var(--ui-sp-3); border: 1px solid var(--ui-border); border-radius: var(--ui-radius); }
-.back-root-family > div + div { margin-top: var(--ui-sp-3); padding-top: var(--ui-sp-3); border-top: 1px solid var(--ui-border); }
-.back-root-family small { display: block; color: var(--ui-muted); font-size: var(--ui-fs-label); font-weight: 600; }
-.back-root-family p { display: flex; flex-wrap: wrap; gap: 6px 12px; margin: var(--ui-sp-2) 0 0; }
-.back-root-family a, .back-root-family p > span { font-size: var(--ui-fs-body); font-weight: 600; text-decoration: none; }
-.back-root-family a { border-bottom: 1px solid var(--ui-accent); }
-.back-root-family p > span { color: var(--ui-muted); }
-.back-exam article { padding: var(--ui-sp-3) 0; border-top: 1px solid var(--ui-border); }
-.back-exam article b, .back-exam article span { display: block; }
-.back-exam article b { font-size: var(--ui-fs-body); font-weight: 600; line-height: var(--ui-lh-en); }
-.back-exam article span { margin-top: var(--ui-sp-1); color: var(--ui-muted); font-size: var(--ui-fs-secondary); }
 
 /* Status and sections */
 .dossier-status { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--ui-sp-2); padding: var(--ui-sp-6) 0; border-bottom: 1px solid var(--ui-border); }
@@ -175,8 +149,7 @@
 
 @media (max-width: 390px) {
   .word-dossier-page { padding-inline: var(--ui-sp-4); }
-  .dossier-hero-copy, .word-dossier-back { padding-inline: var(--ui-sp-4); }
-  .back-root-list { grid-template-columns: 1fr; }
+  .dossier-hero-copy, .dossier-basic-example { padding-inline: var(--ui-sp-4); }
 }
 @media (prefers-reduced-motion: reduce) {
   .word-dossier-page *, .word-dossier-page *::before, .word-dossier-page *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; }

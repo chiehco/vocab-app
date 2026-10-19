@@ -2,7 +2,7 @@ import type { CustomGroup } from '../direct/model';
 import { resolveGroupWords } from '../direct/groupScope';
 import { readWordList } from '../modes/wordLists';
 import type { WordList } from '../modes/wordLists';
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
 import { contentDb } from "../../db/contentDb";
@@ -19,14 +19,17 @@ import { useIllustrationMedia } from "../wordbeast/useIllustrationMedia";
 import { buildSenseCountByWord } from "../wordbeast/wordTraits";
 import { MORPHEME_TYPE_LABEL, NOTE_TYPE_LABEL, RELATION_TYPE_LABEL, REVERSE_RELATION_LABEL, STATE_LABEL } from "./wordLabels";
 import { getWordDisplaySense } from "./wordDisplay";
-import { approvedCurriculumCards, approvedCurriculumUsage, approvedCurriculumUsageZh, approvedLV1Images, approvedWordIllustration } from '../vocabulary/approvedCurriculum';
+import { approvedCurriculumCards, approvedCurriculumIllustration, approvedCurriculumUsage, approvedCurriculumUsageZh, approvedLV1Images, approvedWordIllustration } from '../vocabulary/approvedCurriculum';
+import { getIllustrationCaption } from "../wordbeast/illustrationCaptions";
 import UsagePatternList from '../vocabulary/UsagePatternList';
 import { buildRootFamilies, normalizeMorphemeKey, pickFamilyMorphemes } from "./rootFamily";
 import "./word-detail.css";
 import { progressDb } from '../../db/progressDb';
 import { useStudyBookmark } from '../modes/useStudyBookmark';
 
-type DossierBackTab = "meaning" | "relations" | "roots" | "examples";
+// 單字卡拆成五頁減少捲動：字卡 → 字義（含例句）→ 相關詞（含易混淆、字根）→ 搭配（片語、文法）→ 記憶法與用法。
+type DossierPage = "card" | "meaning" | "related" | "usage" | "memory";
+const USAGE_NOTE_TYPES = new Set(["phrase", "grammar"]);
 
 function DossierSigil({ word }: { word: string }) {
   const value = [...word].reduce((sum, character) => sum + character.charCodeAt(0), 0);
@@ -69,12 +72,17 @@ export default function WordDetailScreen() {
   const groupCards = useLiveQuery(async () => group ? resolveGroupWords(group, await contentDb.words.toArray()) : [], [group]);
   const groupIds = (groupCards ?? []).map(card => card.wordId);
   const groupIndex = groupIds.indexOf(wordId ?? '');
-  const [cardSide, setCardSide] = useState<"front" | "back">("front");
-  const [backTab, setBackTab] = useState<DossierBackTab>("meaning");
+  const [page, setPage] = useState<DossierPage>("card");
+  const pageTabsRef = useRef<HTMLElement>(null);
   useEffect(() => {
-    setCardSide("front");
-    setBackTab("meaning");
+    setPage("card");
   }, [wordId]);
+  const openPage = (next: DossierPage) => {
+    setPage(next);
+    // 從長頁切到短頁時，把分頁列拉回畫面頂端，不讓學習者停在空白處。
+    const tabs = pageTabsRef.current;
+    if (tabs && tabs.getBoundingClientRect().top < 0) tabs.scrollIntoView({ block: "start" });
+  };
   const bookmarkFailed = useStudyBookmark(word && (!groupId || groupIndex >= 0) ? {
     href: `/word/${word.wordId}${groupId ? `?${groupQuery}` : ''}`,
     title: group?.name ?? word.word, position: groupIndex >= 0 ? groupIndex+1 : 1,
@@ -161,18 +169,42 @@ export default function WordDetailScreen() {
   const lv1Images = approvedLV1Images(word.word, word.wordId);
   const illustrationMeaning = !approvedWordIllustration(word.word, word.wordId) && asset && (!word.imageWordId || word.imageWordId === word.wordId)
     ? illustration?.targetHint?.trim() : undefined;
-  const examStyleExamples = examples?.filter((example) => example.exampleType === "exam") ?? [];
+  const curriculumCards = approvedCurriculumCards(word.word, word.wordId);
+  const captionPair = asset
+    ? approvedCurriculumIllustration(word.word, asset) ?? getIllustrationCaption(illustration?.captionZh)
+    : undefined;
+  const hasEnglishCaption = !!(captionPair && ("captionEn" in captionPair ? captionPair.captionEn : captionPair.en));
+  // 圖說本身就是英文例句時不重複；否則字卡頁補一則基本例句（優先一般例句，不用考點句）。
+  const basicExample = hasEnglishCaption
+    ? undefined
+    : examples?.find((example) => example.exampleType !== "exam") ?? examples?.[0];
+  const usageNotes = notes?.filter((note) => USAGE_NOTE_TYPES.has(note.noteType)) ?? [];
+  const memoryNotes = notes?.filter((note) => !USAGE_NOTE_TYPES.has(note.noteType)) ?? [];
   const kinRelations = relations?.filter((relation) => relation.relationType !== "confuse") ?? [];
   const falseForms = [
     ...(relations?.filter((relation) => relation.relationType === "confuse").map((relation) => ({ ...relation, kind: "易混淆", targetWord: relation.targetWord })) ?? []),
     ...(examDistractors?.map((relation) => ({ ...relation, kind: "歷屆的錯誤選項", targetWord: relation.relatedWord })) ?? []),
   ];
-  const availableBackTabs: [DossierBackTab, string][] = [
+  const hasRelatedPage = kinRelations.length > 0 || falseForms.length > 0 || !!sortedMorphemes?.length;
+  const pages: [DossierPage, string][] = [
+    ["card", "字卡"],
     ["meaning", "字義"],
-    ...(kinRelations.length > 0 ? [["relations", "關聯詞"] as [DossierBackTab, string]] : []),
-    ...(sortedMorphemes && sortedMorphemes.length > 0 ? [["roots", "字根字首"] as [DossierBackTab, string]] : []),
-    ...(examStyleExamples.length > 0 ? [["examples", "考點例句"] as [DossierBackTab, string]] : []),
+    ...(hasRelatedPage ? [["related", "相關詞"] as [DossierPage, string]] : []),
+    ...(usagePattern || usageNotes.length > 0 ? [["usage", "搭配"] as [DossierPage, string]] : []),
+    ...(memoryNotes.length > 0 ? [["memory", "記憶法"] as [DossierPage, string]] : []),
   ];
+  const activePage = pages.some(([key]) => key === page) ? page : "card";
+  const pageIndex = pages.findIndex(([key]) => key === activePage);
+  const nextPage = pages[pageIndex + 1];
+  const pageTitle = (
+    <header className="dossier-page-title">
+      <div><p>{displaySense.pos}</p><h1 className={dossierTitleSize(word.word)}>{dossierTitleContent(word.word)}</h1></div>
+      <SpeakerButton text={word.word} className="dossier-speaker" />
+    </header>
+  );
+  const noteList = (items: typeof memoryNotes) => (
+    <div className="dossier-note-list">{items.map((note) => <article key={note.noteId}><div><span>{NOTE_TYPE_LABEL[note.noteType] ?? note.noteType}</span><b>{note.title || "補充說明"}</b></div><p>{note.content}</p></article>)}</div>
+  );
 
   return (
     <div className="word-dossier-page">
@@ -188,12 +220,13 @@ export default function WordDetailScreen() {
         {groupIndex < groupIds.length-1 && <Link to={`/word/${groupIds[groupIndex+1]}?${groupQuery}`}>下一字 →</Link>}</div>
       </nav>}
 
-      <div className="dossier-card-controls" aria-label="字卡正反面">
-        <button className={cardSide === "front" ? "active" : ""} onClick={() => setCardSide("front")} aria-pressed={cardSide === "front"}>單字卡</button>
-        <button className={cardSide === "back" ? "active" : ""} onClick={() => setCardSide("back")} aria-pressed={cardSide === "back"}>詳細資料</button>
-      </div>
+      <nav ref={pageTabsRef} className="dossier-page-tabs" aria-label="單字卡分頁" style={{ gridTemplateColumns: `repeat(${pages.length}, minmax(0, 1fr))` }}>
+        {pages.map(([key, label]) => (
+          <button key={key} type="button" className={activePage === key ? "active" : ""} aria-pressed={activePage === key} onClick={() => openPage(key)}>{label}</button>
+        ))}
+      </nav>
 
-      {cardSide === "front" ? (
+      {activePage === "card" && <>
         <section className="word-dossier-hero study-layout">
           <div className="dossier-hero-copy">
             <div className="dossier-study-meta"><p>{displaySense.pos}</p><ExamTierBadge tier={priority?.priorityTier} compact /></div>
@@ -208,157 +241,128 @@ export default function WordDetailScreen() {
             <DossierSigil word={word.word} />
             <small>圖片尚未收錄</small>
           </div>}
+          {basicExample && <div className="dossier-basic-example">
+            <p lang="en">{basicExample.sentenceEn}</p>
+            {basicExample.sentenceZh && <span>{basicExample.sentenceZh}</span>}
+          </div>}
         </section>
-      ) : (
-        <section className="word-dossier-back">
-          <header>
-            <div><p>{displaySense.pos}</p><h1>{word.word}</h1></div>
-            <SpeakerButton text={word.word} className="dossier-speaker" />
-          </header>
-          {priority && (priority.xtYears > 0 || priority.xtAnswerCount > 0) && (
-            <div className="back-priority-panel" aria-label="考頻資料">
-              <div className="back-priority-stats">
-                <span><b>{priority.xtYears}</b>學測年數</span>
-                <span><b>{priority.xtAnswerCount}</b>答案次數</span>
-                <span><b>{priority.rank}</b>學測考頻排名</span>
-              </div>
-              {priority.xtYearList && <p>學測出現年度：{priority.xtYearList}</p>}
-            </div>
-          )}
-          <nav aria-label="字卡背面資料">
-            {availableBackTabs.map(([tab, label]) => (
-              <button key={tab} className={backTab === tab ? "active" : ""} onClick={() => setBackTab(tab)}>{label}</button>
-            ))}
-          </nav>
-          <div className="dossier-back-content">
-            {backTab === "meaning" && (
-              <div className="back-meaning">
-                <small>主要意思 · {displaySense.pos}</small>
-                <h2>{displaySense.meaning}</h2>
-                {senses && senses.length > 0 ? (
-                  <ol>{senses.slice(0, 4).map((sense) => <li key={sense.senseId}><b>{sense.sensePos}</b><span>{sense.meaningZh}</span>{sense.isExamSense && <i>考義</i>}</li>)}</ol>
-                ) : (
-                  // 義項表還沒有這個字：退回主表的整體釋義，讓學習者至少看得到完整字義
-                  word.meaningZh && word.meaningZh !== displaySense.meaning && <p className="back-meaning-gloss"><small>字典釋義 · {word.posAll.join(' ')}</small>{word.meaningZh}</p>
-                )}
-                {approvedCurriculumCards(word.word, word.wordId).length > 1 && <ul className="curriculum-meanings">
-                  {approvedCurriculumCards(word.word, word.wordId).map(card => <li key={card.learningItemId}>
-                    <b>{card.displayWord} · {card.sensePos}</b><span>{card.targetMeaningZh}</span>
-                    <small>{card.unitName}</small><p>{card.illustration.captionEn}</p><p>{card.illustration.captionZh}</p>
-                  </li>)}
-                </ul>}
-              </div>
-            )}
-            {backTab === "relations" && (
-              <div className="back-link-list">
-                {kinRelations.slice(0, 6).map((relation) => {
-                  const related = relatedWords?.[relation.targetWord];
-                  return <div key={`${relation.relationId}:${relation.targetWord}`}><b>{related ? <Link to={`/word/${related.wordId}`}>{relation.targetWord}</Link> : relation.targetWord}{relation.reverseLabel && <small>{relation.reverseLabel}</small>}</b><span>{related?.meaningZh || relation.note || "相關意思待補"}</span></div>;
-                })}
-              </div>
-            )}
-            {backTab === "roots" && (
-              <div className="back-root-list">
-                {sortedMorphemes?.slice(0, 5).map((morpheme) => <div key={morpheme.rowId}><b>{morpheme.morpheme}</b><small>{MORPHEME_TYPE_LABEL[morpheme.morphemeType || ""] || morpheme.morphemeType || "構件"}</small><span>{morpheme.meaningZh || morpheme.meaningEn || "中文意思待補"}</span></div>)}
-                {rootFamilies && rootFamilies.length > 0 && (
-                  <div className="back-root-family">
-                    {rootFamilies.map((family) => (
-                      <div key={family.morpheme}>
-                        <small>同族字 · {family.morpheme}</small>
-                        <p>
-                          {family.siblings.map((sibling) => {
-                            const record = familyWordRecords?.[sibling];
-                            return record
-                              ? <Link key={sibling} to={`/word/${record.wordId}`}>{sibling}</Link>
-                              : <span key={sibling}>{sibling}</span>;
-                          })}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            )}
-            {backTab === "examples" && (
-              <div className="back-exam">
-                {examStyleExamples.slice(0, 2).map((example) => <article key={example.exampleId}><b>{example.sentenceEn}</b>{example.sentenceZh && <span>{example.sentenceZh}</span>}</article>)}
-              </div>
-            )}
-          </div>
+
+        <section className="dossier-status" aria-label="學習狀態">
+          <div><span>記憶狀態</span><b>{cardState ? STATE_LABEL[cardState.state] : "尚未學過"}</b></div>
+          <div><span>{cardState?.practicePending ? "練習後待複習" : "下次複習"}</span><b>{cardState?.practicePending ? "現在可以複習" : cardState?.dueDate ?? "—"}</b></div>
+          <div><span>考頻／難度</span><b>{priority ? `${getExamStarText(priority.priorityTier)}・${word.level}` : word.level}</b></div>
         </section>
-      )}
+      </>}
 
-      <section className="dossier-status" aria-label="學習狀態">
-        <div><span>記憶狀態</span><b>{cardState ? STATE_LABEL[cardState.state] : "尚未學過"}</b></div>
-        <div><span>{cardState?.practicePending ? "練習後待複習" : "下次複習"}</span><b>{cardState?.practicePending ? "現在可以複習" : cardState?.dueDate ?? "—"}</b></div>
-        <div><span>考頻／難度</span><b>{priority ? `${getExamStarText(priority.priorityTier)}・${word.level}` : word.level}</b></div>
-      </section>
+      {activePage === "meaning" && <div className="dossier-page">
+        {pageTitle}
+        {word.meaningEn && <section className="dossier-section dossier-english">
+          <div className="dossier-section-head"><h2>英英解釋</h2></div>
+          <p lang="en">{word.meaningEn}</p>
+        </section>}
 
-      {senses && senses.length > 0 && (
         <section className="dossier-section meaning-focus-section">
-          <div className="dossier-section-head"><h2>常用意思</h2><span>{senses.length > 1 ? `${senses.length} 種意思` : "已整理"}</span></div>
-          <ol className="dossier-senses">{senses.map((sense) => <li className={sense.isExamSense ? "exam-sense" : undefined} key={sense.senseId}><b>{String(sense.senseOrder).padStart(2, "0")}</b><div><p><span>{sense.sensePos}</span>{sense.meaningZh}</p>{sense.answerForms.length > 0 && <i>考卷上的寫法 · {sense.answerForms.join("／")}</i>}</div></li>)}</ol>
-        </section>
-      )}
-
-      {examples && examples.length > 0 && (
-        <section className="dossier-section">
-          <div className="dossier-section-head"><h2>例句</h2><span>{examples.length} 則</span></div>
-          <ol className="dossier-examples">{examples.map((example, index) => <li key={example.exampleId}><b>{String(index + 1).padStart(2, "0")}</b><div>{example.meaningHint && <small className="example-sense">{example.sensePos || "語境"} · {example.meaningHint}</small>}<p>{example.sentenceEn}</p>{example.sentenceZh && <span>{example.sentenceZh}</span>}</div></li>)}</ol>
-        </section>
-      )}
-
-      {usagePattern && <section className="dossier-usage"><h2>常用搭配</h2><UsagePatternList english={usagePattern} chinese={usagePatternZh} /></section>}
-
-      {notes && notes.length > 0 && (
-        <section className="dossier-section">
-          <div className="dossier-section-head"><h2>記憶法與用法</h2><span>{notes.length} 則</span></div>
-          <div className="dossier-note-list">{notes.map((note) => <article key={note.noteId}><div><span>{NOTE_TYPE_LABEL[note.noteType] ?? note.noteType}</span><b>{note.title || "補充說明"}</b></div><p>{note.content}</p></article>)}</div>
-        </section>
-      )}
-
-      {kinRelations.length > 0 && (
-        <section className="dossier-section">
-          <div className="dossier-section-head"><h2>相關單字</h2><span>{kinRelations.length} 枚</span></div>
-          <div className="dossier-relations">{kinRelations.map((relation) => {
-            const related = relatedWords?.[relation.targetWord];
-            return <div key={`${relation.relationId}:${relation.targetWord}`}><span>{related ? <Link to={`/word/${related.wordId}`}><strong>{relation.targetWord}</strong></Link> : <strong>{relation.targetWord}</strong>}<small>{relation.reverseLabel || RELATION_TYPE_LABEL[relation.relationType || ""] || relation.relationType || "關聯詞"}</small></span><p><b>{related?.meaningZh || "中文意思待補"}</b>{relation.note && <span>{relation.note}</span>}</p></div>;
-          })}</div>
-        </section>
-      )}
-
-      {falseForms.length > 0 && (
-        <section className="dossier-section misconception-section">
-          <div className="dossier-section-head"><h2>容易混淆的字</h2><span>{falseForms.length} 個</span></div>
-          <p className="dossier-section-intro">容易混淆的字與歷屆錯誤選項都收在這裡。先看差異，再排除錯誤答案。</p>
-          <div className="dossier-relations">{falseForms.map((relation) => {
-            const related = relatedWords?.[relation.targetWord];
-            return <div key={`${relation.relationId}:${relation.kind}`}><span>{related ? <Link to={`/word/${related.wordId}`}><strong>{relation.targetWord}</strong></Link> : <strong>{relation.targetWord}</strong>}<small>{relation.kind}</small></span><p><b>{related?.meaningZh || "中文意思待補"}</b>{relation.note && <span>{relation.note}</span>}</p></div>;
-          })}</div>
-        </section>
-      )}
-
-      {sortedMorphemes && sortedMorphemes.length > 0 && (
-        <section className="dossier-section morpheme-section">
-          <div className="dossier-section-head"><h2>字根拆解</h2><span>{sortedMorphemes.length} 段</span></div>
-          <div className="dossier-morphemes">{sortedMorphemes.map((morpheme) => <div key={morpheme.rowId}><strong>{morpheme.morpheme}</strong><span>{MORPHEME_TYPE_LABEL[morpheme.morphemeType || ""] || morpheme.morphemeType || "構件"}</span><p>{morpheme.meaningZh || morpheme.meaningEn || "—"}</p>{morpheme.origin && <small>{morpheme.origin}</small>}</div>)}</div>
-          {rootFamilies && rootFamilies.length > 0 && (
-            <div className="dossier-root-family">
-              {rootFamilies.map((family) => (
-                <div key={family.morpheme}>
-                  <span><strong>{family.morpheme}</strong>{family.meaningZh && <small>{family.meaningZh}</small>}</span>
-                  <p>{family.siblings.map((sibling) => {
-                    const record = familyWordRecords?.[sibling];
-                    return record
-                      ? <Link key={sibling} to={`/word/${record.wordId}`}>{sibling}</Link>
-                      : <span key={sibling}>{sibling}</span>;
-                  })}</p>
-                </div>
-              ))}
-            </div>
+          <div className="dossier-section-head"><h2>常用意思</h2><span>{senses && senses.length > 1 ? `${senses.length} 種意思` : "已整理"}</span></div>
+          {senses && senses.length > 0 ? (
+            <ol className="dossier-senses">{senses.map((sense) => <li className={sense.isExamSense ? "exam-sense" : undefined} key={sense.senseId}><b>{String(sense.senseOrder).padStart(2, "0")}</b><div><p><span>{sense.sensePos}</span>{sense.meaningZh}</p>{sense.answerForms.length > 0 && <i>考卷上的寫法 · {sense.answerForms.join("／")}</i>}</div></li>)}</ol>
+          ) : (
+            // 義項表還沒有這個字：退回主表的整體釋義，讓學習者至少看得到完整字義
+            <p className="dossier-meaning-gloss"><small>字典釋義 · {word.posAll.join(" ")}</small>{word.meaningZh || displaySense.meaning}</p>
           )}
+          {curriculumCards.length > 1 && <ul className="curriculum-meanings">
+            {curriculumCards.map(card => <li key={card.learningItemId}>
+              <b>{card.displayWord} · {card.sensePos}</b><span>{card.targetMeaningZh}</span>
+              <small>{card.unitName}</small><p>{card.illustration.captionEn}</p><p>{card.illustration.captionZh}</p>
+            </li>)}
+          </ul>}
         </section>
-      )}
+
+        {examples && examples.length > 0 && (
+          <section className="dossier-section">
+            <div className="dossier-section-head"><h2>例句</h2><span>{examples.length} 則</span></div>
+            <ol className="dossier-examples">{examples.map((example, index) => <li key={example.exampleId}><b>{String(index + 1).padStart(2, "0")}</b><div>{example.meaningHint && <small className="example-sense">{example.sensePos || "語境"} · {example.meaningHint}</small>}<p>{example.sentenceEn}</p>{example.sentenceZh && <span>{example.sentenceZh}</span>}</div></li>)}</ol>
+          </section>
+        )}
+
+        {priority && (priority.xtYears > 0 || priority.xtAnswerCount > 0) && (
+          <section className="dossier-section back-priority-panel" aria-label="考頻資料">
+            <div className="dossier-section-head"><h2>學測考頻</h2></div>
+            <div className="back-priority-stats">
+              <span><b>{priority.xtYears}</b>學測年數</span>
+              <span><b>{priority.xtAnswerCount}</b>答案次數</span>
+              <span><b>{priority.rank}</b>學測考頻排名</span>
+            </div>
+            {priority.xtYearList && <p>學測出現年度：{priority.xtYearList}</p>}
+          </section>
+        )}
+      </div>}
+
+      {activePage === "related" && <div className="dossier-page">
+        {pageTitle}
+        {kinRelations.length > 0 && (
+          <section className="dossier-section">
+            <div className="dossier-section-head"><h2>相關單字</h2><span>{kinRelations.length} 枚</span></div>
+            <div className="dossier-relations">{kinRelations.map((relation) => {
+              const related = relatedWords?.[relation.targetWord];
+              return <div key={`${relation.relationId}:${relation.targetWord}`}><span>{related ? <Link to={`/word/${related.wordId}`}><strong>{relation.targetWord}</strong></Link> : <strong>{relation.targetWord}</strong>}<small>{relation.reverseLabel || RELATION_TYPE_LABEL[relation.relationType || ""] || relation.relationType || "關聯詞"}</small></span><p><b>{related?.meaningZh || "中文意思待補"}</b>{relation.note && <span>{relation.note}</span>}</p></div>;
+            })}</div>
+          </section>
+        )}
+
+        {falseForms.length > 0 && (
+          <section className="dossier-section misconception-section">
+            <div className="dossier-section-head"><h2>容易混淆的字</h2><span>{falseForms.length} 個</span></div>
+            <p className="dossier-section-intro">容易混淆的字與歷屆錯誤選項都收在這裡。先看差異，再排除錯誤答案。</p>
+            <div className="dossier-relations">{falseForms.map((relation) => {
+              const related = relatedWords?.[relation.targetWord];
+              return <div key={`${relation.relationId}:${relation.kind}`}><span>{related ? <Link to={`/word/${related.wordId}`}><strong>{relation.targetWord}</strong></Link> : <strong>{relation.targetWord}</strong>}<small>{relation.kind}</small></span><p><b>{related?.meaningZh || "中文意思待補"}</b>{relation.note && <span>{relation.note}</span>}</p></div>;
+            })}</div>
+          </section>
+        )}
+
+        {sortedMorphemes && sortedMorphemes.length > 0 && (
+          <section className="dossier-section morpheme-section">
+            <div className="dossier-section-head"><h2>字根拆解</h2><span>{sortedMorphemes.length} 段</span></div>
+            <div className="dossier-morphemes">{sortedMorphemes.map((morpheme) => <div key={morpheme.rowId}><strong>{morpheme.morpheme}</strong><span>{MORPHEME_TYPE_LABEL[morpheme.morphemeType || ""] || morpheme.morphemeType || "構件"}</span><p>{morpheme.meaningZh || morpheme.meaningEn || "—"}</p>{morpheme.origin && <small>{morpheme.origin}</small>}</div>)}</div>
+            {rootFamilies && rootFamilies.length > 0 && (
+              <div className="dossier-root-family">
+                {rootFamilies.map((family) => (
+                  <div key={family.morpheme}>
+                    <span><strong>{family.morpheme}</strong>{family.meaningZh && <small>{family.meaningZh}</small>}</span>
+                    <p>{family.siblings.map((sibling) => {
+                      const record = familyWordRecords?.[sibling];
+                      return record
+                        ? <Link key={sibling} to={`/word/${record.wordId}`}>{sibling}</Link>
+                        : <span key={sibling}>{sibling}</span>;
+                    })}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </section>
+        )}
+      </div>}
+
+      {activePage === "usage" && <div className="dossier-page">
+        {pageTitle}
+        {usagePattern && <section className="dossier-usage"><h2>常用搭配</h2><UsagePatternList english={usagePattern} chinese={usagePatternZh} /></section>}
+        {usageNotes.length > 0 && (
+          <section className="dossier-section">
+            <div className="dossier-section-head"><h2>片語與文法</h2><span>{usageNotes.length} 則</span></div>
+            {noteList(usageNotes)}
+          </section>
+        )}
+      </div>}
+
+      {activePage === "memory" && <div className="dossier-page">
+        {pageTitle}
+        <section className="dossier-section">
+          <div className="dossier-section-head"><h2>記憶法與用法</h2><span>{memoryNotes.length} 則</span></div>
+          {noteList(memoryNotes)}
+        </section>
+      </div>}
+
+      {nextPage && <button type="button" className="dossier-next-page" onClick={() => openPage(nextPage[0])}>下一頁：{nextPage[1]} →</button>}
 
       <p className="dossier-footer">單字總表 · {word.wordId}</p>
     </div>
