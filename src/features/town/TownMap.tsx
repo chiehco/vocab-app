@@ -1,6 +1,6 @@
-import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import TownBuilding from './TownBuilding';
-import { getTownLayout } from './townLayout';
+import { fitTownLayout, getTownLayout, TOWN_PLOT_SIZE } from './townLayout';
 import { Link } from 'react-router-dom';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { progressDb } from '../../db/progressDb';
@@ -18,75 +18,109 @@ export default function TownMap({ plots, selectedId, onSelect, label, focusOnMou
 }) {
   const map = useRef<HTMLDivElement>(null);
   const placed=useLiveQuery<OwnedDecoration[]>(()=>town?progressDb.townDecorations.where('placement.town').equals(town).toArray():Promise.resolve([]),[town])??[];
-  const [columns,setColumns]=useState(6);
+  const [columns,setColumns]=useState(7);
   const layout = useMemo(() => getTownLayout(plots.length,columns), [plots.length,columns]);
   const [scale, setScale] = useState(0.55);
   const [fitted, setFitted] = useState(false);
+  const [detailMode, setDetailMode] = useState(false);
+  const [labelScale, setLabelScale] = useState(.8);
   const fitScale = useRef(0.1);
+  const pendingCenter = useRef<{ x:number; y:number; anchorX:number; anchorY:number } | null>(null);
+  const dense = scale * TOWN_PLOT_SIZE < 44;
   const initialFocus = useRef(focusOnMount ? selectedId : '');
   const focused = useRef(false);
   useEffect(() => {
     const viewport = map.current;
     if (!viewport) return;
     const observer = new ResizeObserver(() => {
-      let bestColumns=6, bestFit=0;
-      for(let count=6;count<=20;count++) {
-        const candidate=getTownLayout(plots.length,count);
-        const candidateFit=Math.min(1,viewport.clientWidth/candidate.width,viewport.clientHeight/candidate.height);
-        if(candidateFit>bestFit) {bestColumns=count;bestFit=candidateFit;}
-      }
-      setColumns(bestColumns);
-      const fit = Math.max(0.1,bestFit);
-      fitScale.current = fit;
-      setScale(fit);
+      const fit = fitTownLayout(plots.length, viewport.clientWidth, viewport.clientHeight);
+      setColumns(fit.columns);
+      fitScale.current = fit.scale;
+      setScale(fit.scale);
+      setDetailMode(false);
+      setLabelScale(Math.min(1, .8 * (parseFloat(getComputedStyle(document.documentElement).fontSize) || 16) / 16));
       setFitted(true);
-      viewport.scrollLeft = Math.max(0, (layout.width * fit - viewport.clientWidth) / 2);
+      pendingCenter.current = null;
+      viewport.scrollTo(0, 0);
     });
     observer.observe(viewport, { box: 'border-box' });
     return () => observer.disconnect();
-  }, [layout.width, layout.height, plots.length]);
-  const drag = useRef<{ id: number; x: number; y: number; left: number; top: number; moved: boolean } | null>(null);
+  }, [plots.length]);
+  const drag = useRef<{ id: number; x: number; y: number; left: number; top: number; moved: boolean; mouse:boolean } | null>(null);
   const suppressClick = useRef(0);
+  // Keep the place under the finger (or viewport center) stable while zooming.
+  useLayoutEffect(() => {
+    const target = pendingCenter.current, viewport = map.current;
+    if (!target || !viewport) return;
+    const frame = viewport.firstElementChild as HTMLElement;
+    viewport.scrollTo(frame.offsetLeft + target.x * scale - target.anchorX,
+      frame.offsetTop + target.y * scale - target.anchorY);
+    pendingCenter.current = null;
+  }, [scale, detailMode]);
+  function zoomTo(nextScale:number, clientX?:number, clientY?:number) {
+    const viewport = map.current;
+    if (!viewport) return;
+    const frame = viewport.firstElementChild as HTMLElement, rect = viewport.getBoundingClientRect();
+    const anchorX = clientX === undefined ? viewport.clientWidth / 2 : clientX - rect.left;
+    const anchorY = clientY === undefined ? viewport.clientHeight / 2 : clientY - rect.top;
+    pendingCenter.current = { x:(viewport.scrollLeft + anchorX - frame.offsetLeft) / scale,
+      y:(viewport.scrollTop + anchorY - frame.offsetTop) / scale, anchorX, anchorY };
+    setScale(nextScale);
+    setDetailMode(true);
+  }
   useEffect(() => {
     if (!fitted || !initialFocus.current || focused.current) return;
     const tile = Array.from(map.current?.querySelectorAll<HTMLElement>('[data-town-item]') ?? [])
       .find(element => element.dataset.townItem === initialFocus.current);
     if (!tile || !map.current) return;
-    map.current.scrollTo({ left: (tile.offsetLeft + tile.offsetWidth / 2) * scale - map.current.clientWidth / 2,
-      top: (tile.offsetTop + tile.offsetHeight / 2) * scale - map.current.clientHeight / 2 });
+    const frame = map.current.firstElementChild as HTMLElement;
+    map.current.scrollTo({ left: frame.offsetLeft + (tile.offsetLeft + tile.offsetWidth / 2) * scale - map.current.clientWidth / 2,
+      top: frame.offsetTop + (tile.offsetTop + tile.offsetHeight / 2) * scale - map.current.clientHeight / 2 });
     focused.current = true;
   }, [scale, fitted]);
   function centerSelected() {
     const tile = Array.from(map.current?.querySelectorAll<HTMLElement>('[data-town-item]') ?? [])
       .find(element => element.dataset.townItem === selectedId);
     if (!tile || !map.current) return;
-    map.current.scrollTo({ left: (tile.offsetLeft + tile.offsetWidth / 2) * scale - map.current.clientWidth / 2,
-      top: (tile.offsetTop + tile.offsetHeight / 2) * scale - map.current.clientHeight / 2,
-      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+    pendingCenter.current = { x:tile.offsetLeft + tile.offsetWidth / 2, y:tile.offsetTop + tile.offsetHeight / 2,
+      anchorX:map.current.clientWidth / 2, anchorY:map.current.clientHeight / 2 };
+    setScale(Math.max(scale, labelScale));
+    setDetailMode(true);
+    // Also center when already at this zoom level.
+    if (detailMode && scale >= labelScale) {
+      const frame = map.current.firstElementChild as HTMLElement, target = pendingCenter.current;
+      map.current.scrollTo({ left:frame.offsetLeft + target.x * scale - target.anchorX,
+        top:frame.offsetTop + target.y * scale - target.anchorY,
+        behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+      pendingCenter.current = null;
+    }
   }
-  function centerPlaza() {
-    map.current?.scrollTo({ left: layout.width * scale / 2 - map.current.clientWidth / 2,
-      top: layout.height * scale / 2 - map.current.clientHeight / 2,
-      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+  function showOverview() {
+    pendingCenter.current = null;
+    setScale(fitScale.current);
+    setDetailMode(false);
+    map.current?.scrollTo(0, 0);
   }
   return <>
-    <div className="town-map-bar"><span>全貌預覽 · 可放大看單字</span><div className="town-map-tools">
-      <button onClick={() => setScale(current => Math.max(fitScale.current, current - 0.1))} disabled={scale <= fitScale.current} aria-label="縮小城鎮">−</button>
-      <button onClick={() => setScale(current => Math.min(1, current + 0.1))} disabled={scale >= 1} aria-label="放大城鎮">＋</button>
-      <button onClick={() => {setScale(fitScale.current);centerPlaza();}}>看全貌</button><button onClick={centerSelected}>回到這棟</button>
-    </div></div>
-    <div className="town-map" ref={map} aria-label={label}
+    <div className="town-map-bar"><div className="town-map-tools">
+      <button onClick={() => scale <= labelScale ? showOverview() : zoomTo(Math.max(labelScale, scale - .1))} disabled={!detailMode} aria-label="縮小城鎮">−</button>
+      <button onClick={() => zoomTo(Math.min(1, Math.max(labelScale, scale + .1)))} disabled={scale >= 1 && detailMode} aria-label="放大城鎮">＋</button>
+      <button onClick={showOverview}>看全貌</button><button onClick={centerSelected}>回到這棟</button>
+    </div><span className="town-map-hint">{dense ? '點圖放大' : detailMode ? '拖動選屋' : '點屋看字卡'}</span></div>
+    <div className="town-map" ref={map} aria-label={label} data-dense={dense} data-labels={detailMode && scale >= labelScale}
       onClickCapture={event => { if (performance.now() < suppressClick.current) { event.preventDefault(); event.stopPropagation(); } }}
-      onPointerDown={event => { if (event.pointerType === 'mouse' && event.button === 0) drag.current = { id: event.pointerId, x: event.clientX, y: event.clientY, left: event.currentTarget.scrollLeft, top: event.currentTarget.scrollTop, moved: false }; }}
+      onClick={event => { if (dense && !(event.target as HTMLElement).closest('a, button')) zoomTo(Math.max(labelScale, scale), event.clientX, event.clientY); }}
+      onPointerDown={event => { if (event.button === 0) drag.current = { id: event.pointerId, x: event.clientX, y: event.clientY, left: event.currentTarget.scrollLeft, top: event.currentTarget.scrollTop, moved: false, mouse:event.pointerType === 'mouse' }; }}
       onPointerMove={event => {
         const d = drag.current; if (!d || d.id !== event.pointerId) return;
         const dx = event.clientX - d.x, dy = event.clientY - d.y;
         if (!d.moved && Math.hypot(dx, dy) < 6) return;
-        if (!d.moved) { d.moved = true; event.currentTarget.setPointerCapture(d.id); }
+        if (!d.moved) { d.moved = true; if (d.mouse) event.currentTarget.setPointerCapture(d.id); }
+        if (!d.mouse) return;
         event.preventDefault(); event.currentTarget.scrollLeft = d.left - dx; event.currentTarget.scrollTop = d.top - dy;
       }}
-      onPointerUp={event => { const d = drag.current; if (d?.moved) { suppressClick.current = performance.now() + 100; if (event.currentTarget.hasPointerCapture(d.id)) event.currentTarget.releasePointerCapture(d.id); } drag.current = null; }}
-      onPointerCancel={() => { drag.current = null; }} onPointerLeave={() => { if (!drag.current?.moved) drag.current = null; }}>
+      onPointerUp={event => { const d = drag.current; if (d?.moved) { suppressClick.current = performance.now() + 250; if (event.currentTarget.hasPointerCapture(d.id)) event.currentTarget.releasePointerCapture(d.id); } drag.current = null; }}
+      onPointerCancel={() => { suppressClick.current = performance.now() + 250; drag.current = null; }} onPointerLeave={() => { if (!drag.current?.moved) drag.current = null; }}>
       <div className="town-world-frame" style={{ width: layout.width * scale, height: layout.height * scale }}>
       <div className="town-world" style={{ width: layout.width, height: layout.height, transform: `scale(${scale})`, '--town-scale':scale } as CSSProperties}>
         <div className="town-river" aria-hidden="true" />

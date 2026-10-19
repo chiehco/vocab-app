@@ -50,7 +50,7 @@ export default function TownView({ level, unit, rows, sibling, due, onPractice, 
       <p className="town-subtle">完成一般學習、複習或補練並保存紀錄，對應單字的小屋就會落成。答錯也算；只看字卡或聽發音不會蓋屋。</p>
       <p className="town-subtle">{remaining>0 ? `本輪還有 ${remaining} 字，依本小鎮詞域、到期時間與今日剩餘額度安排。` : continuing ? '本輪的紀錄已保存，可查看成果並完成本輪。' : '明天再來查看安排，也可以選一個單字補練。'}進度會保存，可隨時回小鎮再繼續。</p>
       {study.missing.length>0 && <p className="town-subtle">{study.missing.join('、')} 尚未連到一般字卡，暫不排入日課；可點空地使用單字補練。</p>}
-      <p className="town-subtle">點小屋或空地查看字卡。全貌較密集時，可放大後拖曳，或用鍵盤逐棟選取。</p>
+      <p className="town-subtle">點小屋或空地查看字卡。全貌較密集時，先點地圖放大，再點小屋；也可按「＋」放大看單字、拖曳移動，或用鍵盤逐棟選取。</p>
       <RewardPanel />
       <p className="town-subtle town-footnote">小屋記錄練過的字，還要慢慢複習才會記穩。進度保存在目前的瀏覽器。{level==='LV1' && '單字補練續答請留在同一分頁。'}</p>
       <div className="town-due">{sibling}</div>{due && <div className="town-due">{due}</div>}

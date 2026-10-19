@@ -1,0 +1,13 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>小鎮比例合成夾具</title><div id="root"></div><script type="module">
+import React from 'react';
+import {createRoot} from 'react-dom/client';
+import {MemoryRouter} from 'react-router-dom';
+import TownView from '/src/features/town/TownView.tsx';
+import cards from '/src/features/vocabulary/lv1ReviewedImages.json';
+import '/src/index.css';import '/src/features/town/town.css';
+const q=new URLSearchParams(location.search),count=Math.max(0,Math.min(120,Number(q.get('count')??38))),built=Math.max(0,Number(q.get('built')??count));
+const words=cards.filter(c=>c.unit===1),rows=Array.from({length:count},(_,i)=>({id:'fixture-'+i,word:q.has('long')&&i===count-1?'internationalization':words[i%words.length].displayWord,meaning:'僅供隔離版面驗收的合成資料',attempted:i<built,latestCorrect:true}));
+window.__townFixture={count,built,rows};
+const h=React.createElement;
+createRoot(document.getElementById('root')).render(h(MemoryRouter,null,h('div',{className:'app-frame flex min-h-screen flex-col'},h('main',{className:'flex-1 pb-20'},h(TownView,{level:'LV1',unit:1,rows,sibling:null,study:{active:null,currentSaved:false,queueCount:count,recapOnly:false,missing:[]},onStudy:async()=>{},onPractice:async()=>{}})),h('nav',{className:'app-bottom-nav'},h('div',{className:'app-bottom-nav-inner'},...['首頁','單字','大考','遊戲'].map(text=>h('a',{key:text,className:'app-nav-item',href:'#'},text)))))));
+</script></html>

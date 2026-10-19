@@ -28,9 +28,9 @@
 .town-map-bar { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:9px; font-size:.75rem; color:var(--ui-muted); }
 .town-map-tools { display:flex; align-items:center; flex-wrap:wrap; gap:5px; }
 .town-map-bar button { border:1px solid var(--ui-border); border-radius:8px; padding:6px 9px; min-width:44px; min-height:44px; white-space:nowrap; }
-.town-map { position:relative; width:100%; aspect-ratio:1/1; min-height:365px; max-height:590px; overflow:auto; overscroll-behavior:contain; touch-action:pan-x pan-y; user-select:none; cursor:grab; border-radius:18px; background:#d6e1b9; scrollbar-width:thin; scrollbar-color:#9cb98d #d6e1b9; }
+.town-map { position:relative; display:flex; width:100%; aspect-ratio:1/1; min-height:365px; max-height:590px; overflow:auto; overscroll-behavior:contain; touch-action:pan-x pan-y; user-select:none; cursor:grab; border-radius:18px; background:#d6e1b9; scrollbar-width:thin; scrollbar-color:#9cb98d #d6e1b9; }
 .town-map:active { cursor:grabbing; }
-.town-world-frame { position:relative; }
+.town-world-frame { position:relative; flex:none; margin:auto; }
 .town-world { position:absolute; left:0; top:0; transform-origin:top left; background:radial-gradient(ellipse at 2% 5%,#b9d097 0 7%,transparent 7.2%),radial-gradient(ellipse at 98% 97%,#b9d097 0 9%,transparent 9.2%),#d6e1b9; }
 .town-river { position:absolute; bottom:0; right:0; width:125px; height:80px; border-radius:80% 0 0 0; background:#a4cdd0; border-top:5px solid #edf1cf; }
 .town-street { display:block; position:absolute; background:#eadcc0; }
@@ -38,6 +38,7 @@
 .town-plaza { position:absolute; display:flex; align-items:center; justify-content:center; border:3px solid #c8c49f; border-radius:24px; background:#f1e8cf; box-shadow:0 5px 0 #bcc097; }
 .town-plaza-label { position:relative; z-index:1; padding:10px 18px; color:#756d55; font-size:1.25rem; font-weight:600; letter-spacing:.12em; }
 .town-plaza-paving { position:absolute; inset:75px; border:2px solid #dfd7bd; border-radius:50%; }
+.town-plaza-label,.town-plaza-paving,.town-plaza > i { pointer-events:none; }
 .town-bench { position:absolute; left:calc(50% - 30px); width:60px; height:17px; border-radius:4px; background:#ac8960; border-bottom:5px solid #806b4e; box-shadow:0 6px 0 #aca68040; }
 .town-bench.north { top:20px; }.town-bench.south { bottom:20px; }
 .town-plaza-tree { position:absolute; width:32px; height:32px; border-radius:45% 52% 40% 50%; background:#92b477; box-shadow:0 8px 0 -2px #b3b28a; }
@@ -47,13 +48,15 @@
 .town-plot.hue-1 { --house-roof:#6e9291; --house-roof-side:#567b7d; }
 .town-plot.hue-2 { --house-roof:#a48b63; --house-roof-side:#87714f; }
 .town-plot.hue-3 { --house-roof:#9884a8; --house-roof-side:#7c6b91; }
-.town-lawn { position:absolute; inset:39px 6px 15px; border-radius:50%; background:#bbc89860; transition:background .18s; }
+.town-lawn { position:absolute; inset:54px 18px 20px; border-radius:50%; background:#bbc89860; transition:background .18s; }
 .town-plot[aria-pressed=true] { outline:3px solid #987639; outline-offset:2px; }
 .town-plot:hover .town-lawn { background:#abbf8580; }
 .town-plot:focus-visible { outline:4px solid #3d6956; outline-offset:3px; }
 .town-plot-word { position:absolute; bottom:0; left:0; width:104px; background:#fffdf2e8; border-radius:5px; text-align:center; color:#34523c; font-size:1.125rem; line-height:25px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
 .town-building { display:inline-block; width:105px; height:113px; position:relative; pointer-events:none; }
-.town-plot .town-building { position:absolute; left:0; top:-9px; transform:scale(.78); transform-origin:center; }
+.town-plot .town-building { position:absolute; left:0; top:-24px; transform:scale(.55); transform-origin:center; }
+.town-map[data-dense=true] .town-plot { pointer-events:none; }
+.town-map[data-labels=false] .town-plot-word { display:none; }
 .town-house-shadow { position:absolute; bottom:8px; left:6px; width:90px; height:22px; border-radius:50%; background:#a0aa6740; }
 .town-house-front { position:absolute; width:55px; height:54px; bottom:17px; left:6px; background:#f5ddab; border-bottom:4px solid #c8b47f; }
 .town-house-side { position:absolute; width:24px; height:66px; left:61px; bottom:17px; background:#d7b880; clip-path:polygon(0 18%,100% 0,100% 82%,0 100%); }
@@ -106,11 +109,12 @@
 .town-overview .town-summary { margin:0; min-height:24px; font-size:.875rem; }
 .town-overview .town-summary strong { font-size:1rem; }
 .town-overview .town-meter { height:3px; margin:0; }
-.town-overview .town-map-bar { margin:0; gap:0; }
-.town-overview .town-map-bar > span { display:none; }
+.town-overview .town-map-bar { margin:0; gap:2px; }
+.town-overview .town-map-tools { width:calc(100% - 3rem - 16px); }
+.town-map-hint { width:100%; min-height:18px; white-space:nowrap; }
 .town-overview > .town-map { flex:1; min-height:0; max-height:none; aspect-ratio:auto; }
 .town-overview .town-world-frame { margin-inline:auto; }
-.town-overview .town-plot-word { font-size:calc(.75rem / var(--town-scale, .5)); line-height:calc(1.125rem / var(--town-scale, .5)); }
+.town-overview .town-plot-word { font-size:calc(.75rem / var(--town-scale, .5)); line-height:calc(.875rem / var(--town-scale, .5)); max-height:calc(1.75rem / var(--town-scale, .5)); white-space:normal; overflow-wrap:anywhere; }
 .town-overview .town-plaza-label { font-size:calc(.75rem / var(--town-scale, .5)); white-space:nowrap; padding:4px; letter-spacing:0; }
 .town-overview .town-plaza-paving { inset:40px; }
 .town-about { position:absolute; right:12px; top:100px; z-index:5; font-size:.75rem; }
@@ -139,6 +143,8 @@
   .town-overview > .town-header { grid-column:1; grid-row:1; }
   .town-overview .town-practice-entry, .town-overview .town-practice-note { grid-column:2; grid-row:1; width:100%; }
   .town-overview .town-map-bar { grid-column:1; grid-row:2; }
+  .town-overview .town-map-tools { width:100%; }
+  .town-overview .town-map-hint { display:none; }
   .town-overview .town-summary { grid-column:2; grid-row:2; position:static; width:auto; }
   .town-overview > .town-map { grid-column:1/-1; grid-row:3; }
   .town-about { top:56px; }
