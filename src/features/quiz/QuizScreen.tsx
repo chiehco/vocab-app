@@ -328,6 +328,8 @@ export default function QuizScreen() {
 
   const total = useMemo(() => mode === "fill" ? fillQuestions?.length ?? 0 : questions?.length ?? 0, [mode, questions, fillQuestions]);
   const townEntry = searchParams.get('town') === 'LV1' || groupReturn === '/textbook/LV1/1';
+  // A town house list holds one word; fill mode asks every exact example of it, so total can exceed 1.
+  const singleWordScope = !!listId && customGroup?.wordIds?.length === 1;
   const unitLabel = townEntry ? 'LV1 Unit 1 · ' : groupId ? '群組 · ' : hasUnitScope ? `Unit ${String(requestedUnitNumber).padStart(2, "0")} · ` : "";
   const practicedWord = mode === 'fill' ? fillQuestions?.[Math.min(index, total - 1)]?.word : questions?.[Math.min(index, total - 1)]?.target.word;
   const restoreTownAnswer = useEffectEvent(async () => {
@@ -378,7 +380,8 @@ export default function QuizScreen() {
     <summary>本輪說明</summary>
     <p>目前辨認 {score} 字。{mode !== 'fill' && '換選項只會選取，再點同一選項才送出。'}</p>
     {townScope && <p>{townAnswerSaved && '這個字的小屋已落成，答錯也算練過。'}本輪續答請留在同一分頁。</p>}
-    {townEntry && <p className="trial-entry-scope">{total === 1 ? '小鎮選字入口 · 本輪一字一題' : `整單元範圍 · 本輪 ${total} 題`} · <Link to="/textbook/LV1/1">到課本選整單元範圍 →</Link></p>}
+    {townEntry && <p className="trial-entry-scope">{total === 1 ? '小鎮選字入口 · 本輪一字一題'
+      : singleWordScope ? `小鎮單屋 · 只練「${practicedWord}」這個字 · 本輪 ${total} 題` : `整單元範圍 · 本輪 ${total} 題`} · <Link to="/textbook/LV1/1">到課本選整單元範圍 →</Link></p>}
   </details>;
 
   if (mode === null) {
@@ -469,10 +472,12 @@ export default function QuizScreen() {
           <WordTraitBadges senseCount={senseCountByWord.get(question.word)} hasConfusables={confusableWords.has(question.word)} hasMorphemes={morphemeWords.has(question.word)} compact />
           <h2>{question.blankSentence}</h2>
           {question.sentenceZh && <p className="trial-translation">{question.sentenceZh}</p>}
-          <label><span>填入英文單字</span><input value={fillInput} onChange={(event) => setFillInput(event.target.value)} onKeyDown={(event) => { if (event.key === 'Enter') { event.preventDefault(); void submitFill(); } }} disabled={saving} autoCapitalize="none" autoCorrect="off" /></label>
+          <label><span>填入英文單字</span><input value={fillInput} onChange={(event) => setFillInput(event.target.value)} onKeyDown={(event) => { if (event.key === 'Enter') { event.preventDefault(); void submitFill(); } }} disabled={saving} placeholder="填入英文單字" autoCapitalize="none" autoCorrect="off" /></label>
         </section>
-        {saveError && <p role="alert">{saveError}</p>}
-        <button className="trial-next" disabled={saving} onClick={() => void submitFill()}>{saving ? '保存中' : '確認答案'}<span>→</span></button>
+        <div className="fill-submit-bar">
+          {saveError && <p role="alert">{saveError}</p>}
+          <button className="trial-next fill-submit" disabled={saving} onClick={() => void submitFill()}>{saving ? '保存中' : '確認答案'}<span>→</span></button>
+        </div>
         {activeNotes}
       </div>
     );
