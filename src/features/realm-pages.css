@@ -293,10 +293,13 @@
 .active-trial-page .fill-question > .exam-tier-badge,
 .active-trial-page .fill-question > .word-trait-badges { align-self:center; margin:0; }
 .active-trial-page .fill-question > .word-trait-badges { margin-left:auto; }
-.active-trial-page .fill-question input { scroll-margin-bottom:calc(150px + env(safe-area-inset-bottom)); }
+.active-trial-page .fill-question input { scroll-margin-bottom:calc(200px + env(safe-area-inset-bottom)); }
 /* placeholder 只在矮螢幕、標籤收起時顯示，避免和標籤重複 */
 .active-trial-page .fill-question input::placeholder { color:transparent; }
-.active-trial-page > .fill-submit { position:sticky; z-index:2; bottom:calc(73px + env(safe-area-inset-bottom)); box-shadow:0 0 0 8px var(--ui-bg); }
+/* 儲存失敗提示和送出鍵同在固定區，失敗時不會被擠到畫面外 */
+.active-trial-page > .fill-submit-bar { position:sticky; z-index:2; bottom:calc(65px + env(safe-area-inset-bottom)); margin-top:var(--ui-sp-2); padding:8px 0; background:var(--ui-bg); }
+.fill-submit-bar > .fill-submit { margin-top:0; }
+.fill-submit-bar > [role=alert] { margin:0 0 8px; color:var(--ui-danger); font-size:var(--ui-fs-secondary); font-weight:600; line-height:1.5; }
 @media (max-height: 640px) {
   .active-trial-page .fill-question { padding:12px; }
   .active-trial-page .fill-question label { margin-top:10px; }

@@ -474,8 +474,10 @@ export default function QuizScreen() {
           {question.sentenceZh && <p className="trial-translation">{question.sentenceZh}</p>}
           <label><span>填入英文單字</span><input value={fillInput} onChange={(event) => setFillInput(event.target.value)} onKeyDown={(event) => { if (event.key === 'Enter') { event.preventDefault(); void submitFill(); } }} disabled={saving} placeholder="填入英文單字" autoCapitalize="none" autoCorrect="off" /></label>
         </section>
-        {saveError && <p role="alert">{saveError}</p>}
-        <button className="trial-next fill-submit" disabled={saving} onClick={() => void submitFill()}>{saving ? '保存中' : '確認答案'}<span>→</span></button>
+        <div className="fill-submit-bar">
+          {saveError && <p role="alert">{saveError}</p>}
+          <button className="trial-next fill-submit" disabled={saving} onClick={() => void submitFill()}>{saving ? '保存中' : '確認答案'}<span>→</span></button>
+        </div>
         {activeNotes}
       </div>
     );

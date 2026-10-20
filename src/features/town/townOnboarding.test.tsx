@@ -367,3 +367,32 @@ it('LV1 fill: one confirmation saves, and result replaces the input', async () =
   expect(await progressDb.reviewLogs.count()).toBe(1);
   expect((await progressDb.reviewLogs.toArray())[0]).toMatchObject({ mode: 'fill-blank', grade: 0 });
 });
+
+it('LV1 fill: a failed save shows the alert inside the sticky submit bar and allows retry', async () => {
+  const boy = words.find(word => word.word === 'boy')! as WordRecord;
+  await contentDb.examples.bulkPut(examples.filter(example => example.word === 'boy') as ExampleRecord[]);
+  const list = await saveWordList([boy], 'boy 男孩', '/textbook/LV1/1');
+  await view.render(<MemoryRouter initialEntries={[`/quiz?list=${list.id}`]}><Flow /></MemoryRouter>);
+  await view.waitFor(() => expect(view.container.querySelectorAll('.trial-modes button')).toHaveLength(4));
+  const modeButton = [...view.container.querySelectorAll<HTMLButtonElement>('.trial-modes button')].find(el => el.querySelector('h3')?.textContent === '殘句補名')!;
+  await view.waitFor(() => expect(modeButton.disabled).toBe(false));
+  await view.click(modeButton);
+  await view.waitFor(() => expect(view.container.querySelector('.fill-question input')).not.toBeNull());
+  const transaction = progressDb.transaction.bind(progressDb) as (...args: unknown[]) => unknown;
+  let failed = false;
+  // Fail only the answer-saving transaction (it writes quizStats), once.
+  vi.spyOn(progressDb, 'transaction').mockImplementation(((...args: unknown[]) => {
+    if (!failed && Array.isArray(args[1]) && args[1].includes(progressDb.quizStats)) { failed = true; return Promise.reject(new Error('save failed')); }
+    return transaction(...args);
+  }) as never);
+  await view.click(view.container.querySelector('.fill-submit'));
+  await view.waitFor(() => expect(view.container.querySelector('.fill-submit-bar > [role=alert]')).not.toBeNull());
+  expect(view.container.querySelector('.fill-submit-bar > [role=alert]')?.textContent).toContain('尚未保存');
+  expect(view.container.querySelector('.fill-submit-bar > [role=alert] + .fill-submit')).not.toBeNull();
+  expect(view.container.querySelector('.trial-answer-feedback')).toBeNull();
+  expect(await progressDb.reviewLogs.count()).toBe(0);
+  await view.click(view.container.querySelector('.fill-submit'));
+  await view.waitFor(() => expect(view.container.querySelector('.trial-answer-feedback')).not.toBeNull());
+  expect(view.container.querySelector('[role=alert]')).toBeNull();
+  expect(await progressDb.reviewLogs.count()).toBe(1);
+});
