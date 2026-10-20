@@ -73,15 +73,22 @@ export default function WordDetailScreen() {
   const groupIds = (groupCards ?? []).map(card => card.wordId);
   const groupIndex = groupIds.indexOf(wordId ?? '');
   const [page, setPage] = useState<DossierPage>("card");
-  const pageTabsRef = useRef<HTMLElement>(null);
+  // 分頁列是 sticky，捲動後自身 top 恆為 0，所以用它前面不佔高度的定位點判斷是否已捲過分頁列。
+  const pageAnchorRef = useRef<HTMLSpanElement>(null);
+  const scrollOnPageChange = useRef(false);
   useEffect(() => {
     setPage("card");
   }, [wordId]);
+  useEffect(() => {
+    if (!scrollOnPageChange.current) return;
+    scrollOnPageChange.current = false;
+    // 新頁畫好後再捲，讓分頁列回到畫面頂端、頁首內容可見，不會停在上一頁的捲動位置。
+    const anchor = pageAnchorRef.current;
+    if (anchor && anchor.getBoundingClientRect().top < 0) anchor.scrollIntoView({ block: "start" });
+  }, [page]);
   const openPage = (next: DossierPage) => {
+    scrollOnPageChange.current = true;
     setPage(next);
-    // 從長頁切到短頁時，把分頁列拉回畫面頂端，不讓學習者停在空白處。
-    const tabs = pageTabsRef.current;
-    if (tabs && tabs.getBoundingClientRect().top < 0) tabs.scrollIntoView({ block: "start" });
   };
   const bookmarkFailed = useStudyBookmark(word && (!groupId || groupIndex >= 0) ? {
     href: `/word/${word.wordId}${groupId ? `?${groupQuery}` : ''}`,
@@ -220,7 +227,8 @@ export default function WordDetailScreen() {
         {groupIndex < groupIds.length-1 && <Link to={`/word/${groupIds[groupIndex+1]}?${groupQuery}`}>下一字 →</Link>}</div>
       </nav>}
 
-      <nav ref={pageTabsRef} className="dossier-page-tabs" aria-label="單字卡分頁" style={{ gridTemplateColumns: `repeat(${pages.length}, minmax(0, 1fr))` }}>
+      <span ref={pageAnchorRef} className="dossier-page-anchor" aria-hidden="true" />
+      <nav className="dossier-page-tabs" aria-label="單字卡分頁" style={{ gridTemplateColumns: `repeat(${pages.length}, minmax(0, 1fr))` }}>
         {pages.map(([key, label]) => (
           <button key={key} type="button" className={activePage === key ? "active" : ""} aria-pressed={activePage === key} onClick={() => openPage(key)}>{label}</button>
         ))}

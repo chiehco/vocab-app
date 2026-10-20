@@ -23,6 +23,7 @@
 .dossier-group-nav span { color: var(--ui-muted); }
 
 /* 五分頁切換列：捲動時固定在頂端，不必捲回去才能換頁。 */
+.dossier-page-anchor { display: block; height: 0; }
 .dossier-page-tabs { position: sticky; top: 0; z-index: 5; display: grid; margin: var(--ui-sp-3) calc(-1 * var(--ui-sp-1)) 0; padding: var(--ui-sp-1); border-bottom: 1px solid var(--ui-border); background: var(--ui-bg); }
 .dossier-page-tabs button { min-width: 0; min-height: var(--ui-tap); padding: 0 2px; border: 0; border-bottom: 3px solid transparent; background: transparent; color: var(--ui-muted); font: inherit; font-size: var(--ui-fs-secondary); font-weight: 600; line-height: 1.25; cursor: pointer; overflow-wrap: anywhere; transition: color var(--ui-motion), border-color var(--ui-motion); }
 .dossier-page-tabs button.active { color: var(--ui-accent); border-bottom-color: var(--ui-accent); }
