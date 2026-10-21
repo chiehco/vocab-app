@@ -35,6 +35,8 @@ export default function TextbookScreen() {
   const textOnly = chosen && findUnit(chosen.unit, chosen.level)?.deliveryMode === 'text_only';
   const listPath = scope ? `/textbook?${scopeQuery(scope)}` : '/textbook';
   const words = useLiveQuery(() => contentDb.words.toArray(), []);
+  const practicePending = !!chosen && (chosen.partial || textOnly) &&
+    (!words || chosen.wordIds.some(id => !words.some(word => word.wordId === id)));
   const lock = useRef(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
@@ -49,7 +51,7 @@ export default function TextbookScreen() {
   async function practice() {
     if (!chosen) return;
     if (chosen.partial || textOnly) {
-      const selected = chosen.wordIds.map(id => words?.find(w => w.wordId === id));
+      const selected = await contentDb.words.bulkGet(chosen.wordIds);
       if (selected.some(w => !w)) throw new Error('字卡資料尚未載入完整，請稍後再試。');
       const list = await saveWordList(selected.filter(w => !!w), chosen.name, textbookPath(chosen.level, chosen.unit));
       navigate(`/quiz?list=${encodeURIComponent(list.id)}&start=w2m`);
@@ -76,7 +78,7 @@ export default function TextbookScreen() {
         {chosen.partial && <p className="learning-muted">部分內容：目前提供已審閱的圖句。</p>}
         {textOnly && <p className="learning-muted">文字教材：可閱讀詞彙與用法。例句、圖片及教材題目整理中。</p>}
         <Link className="learning-primary" to={chosen.partial ? `${textbookPath(chosen.level,chosen.unit)}/cards` : `/vocabulary?level=${chosen.level}&unit=${chosen.unit}`}>看字卡 <span aria-hidden="true">→</span></Link>
-        <button className="learning-secondary" disabled={busy || !words} onClick={() => void act(practice)}>{textOnly ? `一般單字練習（${chosen.wordIds.length} 詞）` : '做題目'}</button>
+        <button className="learning-secondary" disabled={busy || !words || practicePending} aria-busy={busy || practicePending} onClick={() => void act(practice)}>{textOnly ? `一般單字練習（${chosen.wordIds.length} 詞）` : '做題目'}{practicePending && ' · 準備中'}</button>
       </section>
       {chosen.publisher === 'ivy' && chosen.track === '7000' && chosen.level === 'LV4' && chosen.unit === 17 && <Link className="learning-secondary town-home-entry" to="/town/LV4/17">Unit 17 城鎮試玩 <span aria-hidden="true">→</span></Link>}
       {chosen.publisher === 'ivy' && chosen.track === '7000' && chosen.level === 'LV1' && chosen.unit === 1 && <Link className="learning-secondary town-home-entry" to="/town/LV1/1">LV1 單字小鎮 <span aria-hidden="true">→</span></Link>}
