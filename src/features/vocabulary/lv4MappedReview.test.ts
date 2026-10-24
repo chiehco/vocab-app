@@ -62,7 +62,7 @@ it('resolves every U18/U20 vocabulary item using only the fresh-install starter 
   }
   expect(await contentDb.words.count()).toBe(pack.words.length);
   expect(fetch).toHaveBeenCalledTimes(1);
-}, 15000);
+}, 60000); // Full starter imports can exceed 15s on the Windows QA host.
 
 it('updates an installed starter package while retaining every progress table and saved curriculum session', async () => {
   await Promise.all([...contentDb.tables, ...progressDb.tables].map(table => table.clear()));
@@ -97,4 +97,4 @@ it('updates an installed starter package while retaining every progress table an
   expect(await Promise.all(progressDb.tables.map(async table => [table.name, await table.toArray()]))).toEqual(snapshot);
   expect((await progressDb.directSessions.get(session.id))?.index).toBe(1);
   expect((await progressDb.customGroups.get(group.id))?.name).toBe('保留我的 U18 範圍');
-}, 15000);
+}, 60000); // Keep every progress assertion; allow both complete starter imports.

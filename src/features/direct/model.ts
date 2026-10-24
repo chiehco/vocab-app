@@ -120,6 +120,7 @@ import questions from './questions.json';
 import grammarQuestions from './grammarQuestions.json';
 import practiceVariants from './practiceVariantsLV4Unit17.json';
 import { catalogWordIds } from './groupWords';
+import liveabcBasic from './liveabcBasic.json';
 
 export { curriculum, questions };
 export interface CurriculumIllustration { path: string; captionEn: string; captionZh: string }
@@ -128,6 +129,7 @@ export interface CurriculumUnit {
   items: LearningItem[]; questions: PracticeQuestion[];
   relatedNotes: { parentWord: string; word: string; meaningZh: string; officialWordId: string | null }[];
   deliveryMode?: 'text_only';
+  bookId?: string; publisher?: string; volume?: string;
 }
 // Mapping fields are nullable across units; LV3's current JSON is not their schema.
 export type LearningItem = Omit<(typeof curriculum.learningItems)[number], 'officialWordId' | 'officialSenseId'> & {
@@ -255,13 +257,15 @@ export const curriculumUnits: CurriculumUnit[] = [
   { templateId: lv6Unit24.template.templateId, revision: lv6Unit24.template.revision, level: 'LV6', unit: 24, name: lv6Unit24.template.title, items: lv6Unit24.learningItems as LearningItem[], questions: lv6Unit24.questions, relatedNotes: [], deliveryMode: 'text_only' },
   { templateId: lv6Unit25.template.templateId, revision: lv6Unit25.template.revision, level: 'LV6', unit: 25, name: lv6Unit25.template.title, items: lv6Unit25.learningItems as LearningItem[], questions: lv6Unit25.questions, relatedNotes: [], deliveryMode: 'text_only' },
 ];
+// Append without changing existing Ivy template order or numeric shortcuts.
+curriculumUnits.push(...liveabcBasic as CurriculumUnit[]);
 export type UnitKey = number | string;
 export function findUnit(key: UnitKey, level?: string): CurriculumUnit | undefined {
   return typeof key === 'string' ? curriculumUnits.find(u => u.templateId === key) : curriculumUnits.find(u => u.level === (level ?? 'LV3') && u.unit === key);
 }
 export const unitsForLevel = (level: string) => curriculumUnits.filter(u => u.level === level);
 export const learningItems: LearningItem[] = curriculumUnits.flatMap(u => u.items);
-export const unitItems = (unit: UnitKey, level?: string): LearningItem[] => findUnit(unit, level)?.items ?? curriculum.learningItems as LearningItem[];
+export const unitItems = (unit: UnitKey, level?: string): LearningItem[] => findUnit(unit, level)?.items ?? [];
 export const REVISION = '20260912-1';
 export interface PracticeQuestion {
   questionId: string; learningItemId?: string; sourceType: string; targetWord: string; targetMeaningZh: string;
@@ -292,7 +296,8 @@ export interface CustomGroup { id: string; name: string; itemIds: string[]; word
 export interface DirectSession { id: string; questionIds: string[]; index: number; choices: Record<string, string>; lookups: Record<string, string[]>; startedAt: number; updatedAt: number; revision: string; title?: string; groupId?: string; scopeQuestionIds?: string[] }
 export interface DirectAttempt { id: string; sessionId: string; questionId: string; revision: string; choice: string; correct: boolean; firstAttempt: boolean; hintUsed: boolean; lookedUpWords: string[]; answeredAt: number; schedulingApplied: false }
 export function templateGroup(unit: UnitKey = 1, level?: string): CustomGroup {
-  const u = findUnit(unit, level) ?? curriculumUnits[0];
+  const u = findUnit(unit, level);
+  if (!u) throw new Error('找不到這個教材單元');
   return { id: crypto.randomUUID(), name: u.name, itemIds: u.items.map(i => i.learningItemId), templateId: u.templateId, templateRevision: u.revision, updatedAt: Date.now() };
 }
 export function validGroup(g: CustomGroup): boolean {
