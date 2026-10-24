@@ -2,13 +2,13 @@ import { useRef, useState } from 'react';
 import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { contentDb } from '../../db/contentDb';
-import { findUnit, templateGroup } from '../direct/model';
+import { findUnit } from '../direct/model';
 import { addLV1ReviewedGroups } from '../direct/lv1ReviewedGroups';
-import { saveGroup, startScopeSession } from '../direct/store';
+import { getOrCreateTemplateGroup, startScopeSession } from '../direct/store';
 import { saveWordList } from '../modes/wordLists';
 import { practiceIds } from './model';
 import { unitReleaseHold } from './unitReleasePolicy';
-import { publisherName, resolveTextbookScope, unitRanges, textbookPath, trackInfo, unitsFor, unitTitle, type TextbookScope, type TextbookUnit } from './textbookCatalog';
+import { volumeName, publisherName, resolveTextbookScope, unitRanges, textbookPath, trackInfo, unitsFor, unitTitle, type TextbookScope, type TextbookUnit } from './textbookCatalog';
 import { ScopePicker, UnitTiles } from '../../components/ScopePicker';
 import '../modes/learning-home.css';
 
@@ -65,14 +65,14 @@ export default function TextbookScreen() {
   async function addGroup() {
     if (!chosen) return;
     if (chosen.partial) await addLV1ReviewedGroups([chosen.unit]);
-    else await saveGroup(templateGroup(chosen.unit, chosen.level));
+    else await getOrCreateTemplateGroup(chosen.unit, chosen.level);
     setNotice('已加入我的群組。');
   }
 
   return <div className="learning-page">
     <header className="learning-header"><Link to={route.unit ? listPath : '/'}>← {route.unit ? '選單元' : '首頁'}</Link><Link to="/modes/words">全部單字</Link></header>
     {route.unit ? hold ? <section aria-label="來源待補"><h1>來源待補</h1><p role="status">{hold.message}</p><Link className="learning-primary" to={listPath}>返回選單元</Link></section> : !chosen ? <><h1>找不到這個單元</h1><Link className="learning-primary" to={listPath}>選單元</Link></> : <>
-      <p className="learning-muted">{publisherName(chosen.publisher)} {trackInfo(chosen.track).label} · {chosen.volume}</p><h1>{unitTitle(chosen)}</h1>
+      <p className="learning-muted">{publisherName(chosen.publisher)} {trackInfo(chosen.track).label} · {volumeName(chosen.volume)}</p><h1>{unitTitle(chosen)}</h1>
       <section className="learning-start textbook-unit-card" aria-label="開始這個單元">
         <div className="learning-meta"><span>{chosen.count} {chosen.partial ? '組圖句' : '個詞彙'}</span>{chosen.usageCount > 0 && <span>{chosen.usageCount} 項用法</span>}</div>
         {chosen.partial && <p className="learning-muted">部分內容：目前提供已審閱的圖句。</p>}
@@ -105,7 +105,7 @@ function ScopeNote({ scope, units }: { scope: TextbookScope; units: TextbookUnit
   const label = ranges.map(([a, b]) => a === b ? pad(a) : `${pad(a)}–${pad(b)}`).join('、');
   const partial = units.some(u => u.partial);
   return <p className="learning-muted textbook-scope-note">
-    {publisherName(scope.publisher)} {info.label} {scope.volume}：收錄 {info.unitLabel === 'Unit' ? `Unit ${label}` : `第 ${label} 課`}
+    {publisherName(scope.publisher)} {info.label} {volumeName(scope.volume)}：收錄 {info.unitLabel === 'Unit' ? `Unit ${label}` : `第 ${label} 課`}
     {ranges.length > 1 ? '，其餘單元整理中' : ''}。{partial ? '目前提供已審閱的圖句，屬部分內容。' : ''}
   </p>;
 }

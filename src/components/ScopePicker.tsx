@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useUnitProgress } from './useUnitProgress';
 import {
-  availableTracks, publisherName, publishersFor, textbookUnits, trackInfo, unitKey, unitTitle, volumesFor,
+  availableTracks, publisherName, publishersFor, textbookUnits, trackInfo, unitKey, unitTitle, volumesFor, volumeName,
   type TextbookScope, type TextbookUnit,
 } from '../features/vocabulary/textbookCatalog';
 import '../styles/scope-picker.css';
@@ -41,7 +41,7 @@ export function ScopePicker({ scope, onChange, units = textbookUnits }: PickerPr
     {volumes.length > 0 && <div className="scope-layer">
       <span className="scope-label" id="scope-volume">{info.volumeLabel}</span>
       <div className="scope-chips" role="group" aria-labelledby="scope-volume">
-        {volumes.map(v => <button type="button" key={v} aria-pressed={scope.volume === v} onClick={() => onChange({ ...scope, volume: v })}>{v}</button>)}
+        {volumes.map(v => <button type="button" key={v} aria-pressed={scope.volume === v} onClick={() => onChange({ ...scope, volume: v })}>{volumeName(v)}</button>)}
       </div>
     </div>}
   </div>;

@@ -9,9 +9,9 @@ const unit = (over: Partial<TextbookUnit>): TextbookUnit => ({
 });
 
 describe('textbookCatalog', () => {
-  it('現有單元全部歸在常春藤 7000 單', () => {
+  it('常春藤單元保留原身分，LiveABC 使用獨立命名空間', () => {
     expect(textbookUnits.length).toBeGreaterThan(0);
-    expect(new Set(textbookUnits.map(u => `${u.track}/${u.publisher}`))).toEqual(new Set(['7000/ivy']));
+    expect(new Set(textbookUnits.map(u => `${u.track}/${u.publisher}`))).toEqual(new Set(['7000/ivy', '7000/liveabc']));
     expect(textbookUnits.every(u => u.level === u.volume)).toBe(true);
   });
 

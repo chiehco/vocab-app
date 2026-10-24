@@ -33,7 +33,7 @@ it('keeps every complete published starter payload and registers only the 24 acc
   }
   const catalogKeys = new Set(textbookUnits.map(unit => `${unit.level}:${unit.unit}`));
   expect(baseline.mainPublicUnitKeys.every(key => catalogKeys.has(key))).toBe(true);
-  expect(textbookUnits).toHaveLength(baseline.mainPublicUnitKeys.length + baseline.lv6Units.length);
+  expect(textbookUnits.filter(unit=>unit.publisher==='ivy')).toHaveLength(baseline.mainPublicUnitKeys.length + baseline.lv6Units.length);
   expect(textbookUnits.filter(unit => unit.level === 'LV6').map(unit => unit.unit)).toEqual(baseline.lv6Units);
   expect(curriculumUnits.filter(unit => unit.level === 'LV6')).toHaveLength(24);
   expect(findUnit(21, 'LV6')).toBeUndefined();

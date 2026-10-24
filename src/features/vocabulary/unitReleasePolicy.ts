@@ -10,6 +10,10 @@ const LV6_U21_HOLD = {
 } as const;
 
 export function unitReleaseHold(level: string | undefined, unit: number | undefined) {
+  if (level && !/^LV[1-6]$/.test(level) &&
+      !(level === 'LIVEABC_BASIC' && Number.isInteger(unit) && unit! >= 1 && unit! <= 7)) {
+    return { status: 'not_available', message: '這個教材單元尚未開放。目前 LiveABC Basic 僅提供照片核對完成的 Unit 01–07。' } as const;
+  }
   return level === 'LV4' && unit === 2 ? LV4_U2_HOLD
     : level === 'LV6' && unit === 21 ? LV6_U21_HOLD : undefined;
 }

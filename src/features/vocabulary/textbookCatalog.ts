@@ -15,11 +15,12 @@ export const TRACKS: readonly { id: TextbookTrack; label: string; volumeLabel: s
   { id: 'textbook', label: '課本', volumeLabel: '年級', unitLabel: '課次' },
 ];
 
-export const PUBLISHERS: Record<string, string> = { ivy: '常春藤' };
+export const PUBLISHERS: Record<string, string> = { ivy: '常春藤', liveabc: 'LiveABC' };
 
 export interface TextbookUnit {
   track: TextbookTrack;
   publisher: string;
+  bookId?: string;
   /** 7000 單是 LV1–LV6，課本是年級冊次；路由 /textbook/:level/:unit 用的就是這個值 */
   volume: string;
   /** 舊呼叫端沿用的欄位，等於 volume */
@@ -37,7 +38,7 @@ export interface TextbookUnit {
 export const textbookUnits: TextbookUnit[] = [
   ...lv1ReviewedGroups.map(u => ({ track: '7000' as const, publisher: 'ivy', volume: 'LV1', level: 'LV1', unit: u.unit,
     name: `LV1 Unit ${String(u.unit).padStart(2,'0')}`, count: u.pairCount, usageCount: 0, partial: true, wordIds: u.wordIds })),
-  ...curriculumUnits.filter(u => isUnitPublished(u.level, u.unit)).map(u => ({ track: '7000' as const, publisher: 'ivy', volume: u.level, level: u.level, unit: u.unit, name: u.name,
+  ...curriculumUnits.filter(u => isUnitPublished(u.level, u.unit)).map(u => ({ track: '7000' as const, publisher: u.publisher ?? 'ivy', bookId: u.bookId, volume: u.level, level: u.level, unit: u.unit, name: u.name,
     count: u.items.filter(i => i.kind === 'vocabulary').length,
     usageCount: u.items.filter(i => i.kind !== 'vocabulary').length, partial: false,
     wordIds: [...new Set(u.items.flatMap(i => i.kind === 'vocabulary' && i.officialWordId ? [i.officialWordId] : []))] })),
@@ -54,6 +55,7 @@ export const volumesFor = (track: TextbookTrack, publisher: string, units = text
   [...new Set(units.filter(u => u.track === track && u.publisher === publisher).map(u => u.volume))];
 export const unitsFor = (scope: TextbookScope, units = textbookUnits) =>
   units.filter(u => u.track === scope.track && u.publisher === scope.publisher && u.volume === scope.volume);
+export const volumeName = (level: string) => level === 'LIVEABC_BASIC' ? '核心字彙完全攻略 · Basic' : level;
 export const publisherName = (id: string) => PUBLISHERS[id] ?? id;
 export const trackInfo = (track: TextbookTrack) => TRACKS.find(t => t.id === track)!;
 
@@ -63,7 +65,9 @@ export function resolveTextbookScope(requested: { track?: string | null; publish
   const track = tracks.find(t => t.id === requested.track)?.id ?? tracks[0]?.id;
   if (!track) return undefined;
   const publishers = publishersFor(track, units);
-  const publisher = publishers.includes(requested.publisher ?? '') ? requested.publisher! : publishers[0];
+  // Recover the book from a namespaced deep link without changing legacy defaults.
+  const matchingVolume = !requested.publisher && units.find(u => u.track === track && u.volume === requested.volume);
+  const publisher = publishers.includes(requested.publisher ?? '') ? requested.publisher! : matchingVolume ? matchingVolume.publisher : publishers[0];
   const volumes = volumesFor(track, publisher, units);
   const volume = volumes.includes(requested.volume ?? '') ? requested.volume! : volumes[0];
   return { track, publisher, volume };

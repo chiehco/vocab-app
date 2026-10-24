@@ -3,13 +3,13 @@ import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import SpeakerButton from '../../components/SpeakerButton';
 import StudyActions from '../../components/StudyActions';
 import { useCardSwipe } from '../../hooks/useCardSwipe';
-import { curriculumUnits, findUnit, templateGroup, unitsForLevel } from '../direct/model';
-import { saveGroup, startScopeSession } from '../direct/store';
+import { curriculumUnits, findUnit, unitsForLevel } from '../direct/model';
+import { getOrCreateTemplateGroup, startScopeSession } from '../direct/store';
 import { reviewedExample, practiceIds } from './model';
 import '../direct/direct.css';
 import './vocabulary.css';
 import { useStudyBookmark } from '../modes/useStudyBookmark';
-import { textbookLevels, textbookPath } from './textbookCatalog';
+import { textbookLevels, textbookPath, volumeName } from './textbookCatalog';
 import { isUnitPublished, unitReleaseHold } from './unitReleasePolicy';
 
 const LEVELS = textbookLevels;
@@ -21,7 +21,7 @@ export default function VocabularyScreen(){
   const levelUnits=unitsForLevel(level).filter(u=>isUnitPublished(u.level,u.unit));
   const requestedUnit=Number.parseInt(params.get('unit')??'',10);
   const hold=unitReleaseHold(level,requestedUnit);
-  const current=hold?undefined:findUnit(requestedUnit,level)??levelUnits[0];
+  const current=hold?undefined:findUnit(requestedUnit,level)??(level==='LIVEABC_BASIC'&&params.has('unit')?undefined:levelUnits[0]);
   const unit=current?.unit??1;
   const curriculumItems=current?.items??[];
   const vocabCount=curriculumItems.filter(i=>i.kind==='vocabulary').length,grammarCount=curriculumItems.length-vocabCount;
@@ -48,12 +48,12 @@ export default function VocabularyScreen(){
     const s=await startScopeSession(scope,`${current.name} · ${kind==='grammar'?usageLabel:'詞彙'}自由練習`);
     navigate(`/practice/direct?session=${s.id}`);
   }catch{setError('無法開始練習，請重試。');}finally{setBusy(false);}}
-  async function createGroup(){if(busy||!current)return;setBusy(true);setError('');try{const g=templateGroup(current.templateId);await saveGroup(g);navigate(`/groups?group=${g.id}`);}catch{setError('群組未能保存，請重試。');}finally{setBusy(false);}}
+  async function createGroup(){if(busy||!current)return;setBusy(true);setError('');try{const {group:g}=await getOrCreateTemplateGroup(current.templateId);navigate(`/groups?group=${g.id}`);}catch{setError('群組未能保存，請重試。');}finally{setBusy(false);}}
   return <div className="direct-page vocab-page">
     <nav><Link to={hold?`/textbook?level=${level}`:textbookPath(level,unit)}>← 課本單元</Link><Link to="/">首頁</Link></nav>
     <p className="direct-kicker">單字模式 · 教材</p><h1>教材字卡</h1>
     <p className="direct-muted">直接看字卡、中文意思與例句，再依需要自由練習。</p>
-    <div className="level-tabs vocab-levels" aria-label="選擇等級">{LEVELS.map(l=><button key={l} aria-pressed={level===l} onClick={()=>{setQuery('');choose({level:l});}}>{l}</button>)}</div>
+    <div className="level-tabs vocab-levels" aria-label="選擇等級">{LEVELS.map(l=><button key={l} aria-pressed={level===l} onClick={()=>{setQuery('');choose({level:l});}}>{volumeName(l)}</button>)}</div>
     {hold?<section aria-label="來源待補"><h2>來源待補</h2><p role="status">{hold.message}</p><Link className="direct-primary" to={`/textbook?level=${level}`}>返回選單元</Link></section>:!current?<section><h2>{level} 教材內容整理中</h2><p>單元、完整義項與原創例句核對完成後開放。</p><button onClick={()=>{const first=curriculumUnits[0];choose({level:first.level,unit:String(first.unit)});}}>先看 {curriculumUnits[0].name}</button></section>:<>
       <label>教材單元<select aria-label="教材單元" value={unit} onChange={e=>{setQuery('');choose({level,unit:e.target.value});}}>{levelUnits.map(u=><option key={u.templateId} value={u.unit}>Unit {u.unit}</option>)}</select></label>
       <h2>{current.name}</h2><p className="direct-muted">已核對 {vocabCount} 個詞彙、{grammarCount} 項{usageLabel}。{levelUnits.length<2?'其他 Unit 整理中。':''}</p>

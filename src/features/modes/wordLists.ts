@@ -1,7 +1,7 @@
 import { progressDb } from '../../db/progressDb';
 import type { WordRecord, ExamPriorityRecord } from '../../db/types';
 import { sortExamWordsByPriority } from '../../quiz/examScope';
-import { learningItems } from '../direct/model';
+import { findUnit, learningItems } from '../direct/model';
 import type { CustomGroup } from '../direct/model';
 
 export function workspaceWords(words:WordRecord[],group:CustomGroup|undefined,level:string,query:string) {
@@ -11,6 +11,11 @@ export function workspaceWords(words:WordRecord[],group:CustomGroup|undefined,le
   return ordered.filter(w=>(level==='all'||w.level===level)&&terms.every(t=>`${w.word} ${w.meaningZh??''}`.normalize('NFKC').toLowerCase().includes(t)));
 }
 export interface WordList extends CustomGroup {returnTo:string}
+function validReturnTo(path:string) {
+  if (/^\/(?:modes\/words(?:\?|$)|textbook\/LV[1-6]\/\d+$)/.test(path)) return true;
+  const liveabc = path.match(/^\/textbook\/(LIVEABC_BASIC)\/([1-7])$/);
+  return !!liveabc && !!findUnit(Number(liveabc[2]),liveabc[1]);
+}
 // "Exam first" is an ordering choice in the workspace, not an S+A-only scope.
 export function sortWorkspaceWords(words: WordRecord[], priorities: ExamPriorityRecord[]): WordRecord[] {
   const first = sortExamWordsByPriority(words, priorities);
@@ -18,13 +23,13 @@ export function sortWorkspaceWords(words: WordRecord[], priorities: ExamPriority
   return [...first, ...words.filter(w => !firstIds.has(w.wordId)).sort((a,b) => a.word.localeCompare(b.word,'en'))];
 }
 export async function saveWordList(words:WordRecord[],name:string,returnTo:string) {
-  if(!words.length||!/^\/(?:modes\/words(?:\?|$)|textbook\/LV[1-6]\/\d+$)/.test(returnTo))throw Error('沒有可用的字卡');
+  if(!words.length||!validReturnTo(returnTo))throw Error('沒有可用的字卡');
   const list:WordList={id:crypto.randomUUID(),name,wordIds:words.map(w=>w.wordId),itemIds:[],templateId:null,templateRevision:null,updatedAt:Date.now(),returnTo};
   await progressDb.settings.put({key:`word-list:${list.id}`,value:list});
   return list;
 }
 export async function readWordList(id:string):Promise<WordList|undefined> {
   const value=(await progressDb.settings.get(`word-list:${id}`))?.value as WordList|undefined;
-  if(!value||value.id!==id||!Array.isArray(value.wordIds)||!value.wordIds.every(id=>typeof id==='string')||typeof value.name!=='string'||typeof value.returnTo!=='string'||!/^\/(?:modes\/words(?:\?|$)|textbook\/LV[1-6]\/\d+$)/.test(value.returnTo))return undefined;
+  if(!value||value.id!==id||!Array.isArray(value.wordIds)||!value.wordIds.every(id=>typeof id==='string')||typeof value.name!=='string'||typeof value.returnTo!=='string'||!validReturnTo(value.returnTo))return undefined;
   return value;
 }
