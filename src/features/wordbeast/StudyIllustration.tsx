@@ -18,7 +18,7 @@ function IllustrationImage({ src, alt }: { src: string; alt: string }) {
   </div>;
 }
 
-export default function StudyIllustration({ src, word, caption }: { src: string; word: string; caption?: string | null }) {
+export default function StudyIllustration({ src, word, caption, senseLabel, showSenseLabel }: { src: string; word: string; caption?: string | null; senseLabel?: string; showSenseLabel?: boolean }) {
   const approved = approvedCurriculumIllustration(word, src);
   const pair = approved
     ? { en: approved.captionEn, zh: approved.captionZh }
@@ -27,6 +27,7 @@ export default function StudyIllustration({ src, word, caption }: { src: string;
     <figure className="study-illustration">
       <IllustrationImage key={src} src={src} alt={pair?.zh || `${word} 的情境圖`} />
       {pair && <figcaption>
+        {showSenseLabel && <small>圖片／圖說對應：{senseLabel ?? '義項未連結'}</small>}
         {pair.en && <p className="illustration-caption-en" lang="en">{pair.en}</p>}
         <p lang="zh-Hant">{pair.zh}</p>
       </figcaption>}

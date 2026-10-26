@@ -1,5 +1,6 @@
 import { Link, useParams, useSearchParams } from 'react-router-dom';
 import SpeakerButton from '../../components/SpeakerButton';
+import DictionaryMeanings, { DictionarySenseLabel } from '../browser/DictionaryMeanings';
 import { useStudyBookmark } from '../modes/useStudyBookmark';
 import images from './lv1ReviewedImages.json';
 import { textbookPath } from './textbookCatalog';
@@ -21,6 +22,8 @@ export default function ReviewedCardsScreen() {
     {!card ? <h1>找不到這個單元</h1> : <>
       <p className="learning-muted">LV1 Unit {String(unit).padStart(2,'0')} · {index + 1}／{cards.length} 張</p>
       <div className="reviewed-card-heading"><h1>{card.displayWord}</h1><SpeakerButton text={card.displayWord}/></div>
+      <DictionaryMeanings wordId={card.officialWordId} />
+      <DictionarySenseLabel wordId={card.officialWordId} senseId={'senseId' in card.illustration ? card.illustration.senseId : undefined} />
       <figure className="learning-illustration"><img key={card.id} src={`${import.meta.env.BASE_URL}${card.illustration.path}`} alt={card.illustration.captionZh} width="768" height="768"/><figcaption><p lang="en">{card.illustration.captionEn}</p><p>{card.illustration.captionZh}</p></figcaption></figure>
       <div className="learning-card-nav"><button className="learning-secondary" disabled={index===0} onClick={() => next(index-1)}>上一張</button>{index < cards.length-1 ? <button className="learning-primary" onClick={() => next(index+1)}>下一張 →</button> : <Link className="learning-primary" to={path}>本單元看完了</Link>}</div>
       {card.officialWordId && <details><summary>更多詞義與搭配</summary><Link to={`/word/${card.officialWordId}`}>查看完整單字卡 →</Link></details>}

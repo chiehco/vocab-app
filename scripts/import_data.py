@@ -123,6 +123,10 @@ def read_rows(ws, validate_instruction=True):
 def parse_words(ws):
     words = []
     seen = {}
+    headers = {str(v): i for i, v in enumerate(next(ws.iter_rows(values_only=True)))}
+    def extra(row, key):
+        i = headers.get(key)
+        return clean(row[i]) if i is not None and i < len(row) else None
     for r in read_rows(ws):
         (word_id, word, level, pos, meaning_zh, meaning_en, usage_pattern, syllables,
          stress, phonetic_us, family_key, is_core, source_note, status,
@@ -160,6 +164,11 @@ def parse_words(ws):
         }
         if image_word_id:
             record["imageWordId"] = image_word_id
+        forms = [extra(r, key) for key in ("verb_base", "verb_past", "verb_past_participle", "verb_forms_source", "verb_forms_status")]
+        if any(forms):
+            if not all(forms) or forms[4] not in {"approved", "reviewed"} or forms[0] != word:
+                raise SystemExit(f"錯誤：{word} 的動詞三態缺欄位、來源或核定狀態")
+            record["verbForms"] = dict(zip(("base", "past", "pastParticiple", "sourceRef", "status"), forms))
         words.append(record)
     words.sort(key=lambda w: w["wordId"])
     return words
@@ -167,6 +176,7 @@ def parse_words(ws):
 
 def parse_examples(ws):
     out = []
+    headers = {str(v): i for i, v in enumerate(next(ws.iter_rows(values_only=True)))}
     for r in read_rows(ws):
         (ex_id, word, sense_pos, hint, ex_type, sen_en, sen_zh, blank, answer,
          difficulty, status) = (list(r) + [None] * 11)[:11]
@@ -185,6 +195,9 @@ def parse_examples(ws):
             "difficulty": difficulty,
             "status": status or "draft",
         })
+        column = headers.get("sense_id")
+        if column is not None and column < len(r) and clean(r[column]):
+            out[-1]["senseId"] = clean(r[column])
     out.sort(key=lambda x: x["exampleId"])
     return out
 
@@ -341,6 +354,7 @@ def parse_morphemes(ws):
 def parse_media(ws):
     out = []
     seen = set()
+    headers = {str(v): i for i, v in enumerate(next(ws.iter_rows(values_only=True)))}
     for r in read_rows(ws):
         (asset_id, target_type, target_word, target_hint, media_type, image_type,
          prompt_en, caption_zh, status, license_note) = (list(r) + [None] * 10)[:10]
@@ -365,6 +379,9 @@ def parse_media(ws):
             "status": status or "draft",
             "licenseNote": license_note,
         })
+        column = headers.get("sense_id")
+        if column is not None and column < len(r) and clean(r[column]):
+            out[-1]["senseId"] = clean(r[column])
     out.sort(key=lambda x: x["assetId"])
     return out
 
@@ -498,7 +515,9 @@ def content_hash(out_dir):
     """Include media so caption-only corrections invalidate the app content cache."""
     h = hashlib.sha256()
     for name in ["words.json", "senses.json", "examples.json", "relations.json", "morphemes.json", "notes.json", "exam_priority.json", "hooks.json", "media.json"]:
-        h.update((out_dir / name).read_bytes())
+        # Git may check unchanged data out as CRLF on Windows. Hash canonical LF,
+        # matching the public metadata contract and generated JSON on Linux.
+        h.update((out_dir / name).read_text(encoding="utf-8").encode("utf-8"))
     return h.hexdigest()
 
 
@@ -594,6 +613,11 @@ def main():
 
     # 鉤子表跨表驗證（規格 v3 §6 驗證 2、3、5、7）
     senses_by_id = {row["senseId"]: row for row in senses}
+    for row in examples + media:
+        if row.get("senseId"):
+            sense = senses_by_id.get(row["senseId"])
+            if not sense or sense["word"] != row.get("word", row.get("targetWord")):
+                raise SystemExit(f"錯誤：例句／圖片 senseId 不屬於該單字：{row['senseId']}")
     media_ids = {row["assetId"] for row in media}
     for hook in hooks:
         if hook["wordId"] not in word_ids or word_ids[hook["wordId"]] != hook["word"]:

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import SpeakerButton from '../../components/SpeakerButton';
+import DictionaryMeanings, { DictionarySenseLabel } from '../browser/DictionaryMeanings';
 import StudyActions from '../../components/StudyActions';
 import { useCardSwipe } from '../../hooks/useCardSwipe';
 import { curriculumUnits, findUnit, unitsForLevel } from '../direct/model';
@@ -69,9 +70,11 @@ export default function VocabularyScreen(){
           <h2>{item.displayWord??item.pattern}</h2>
           {item.displayWord&&<SpeakerButton text={item.displayWord}/>}
           {kind==='vocabulary'?<><p className="vocab-meaning">{item.sensePos} {item.chapterMeaningsZh}</p>
+            <DictionaryMeanings wordId={item.officialWordId} />
             {(item.meaningSource==='existing_dictionary'||item.meaningSource==='textbook_transcription'&&item.sourceRole==='printed_related_word')&&<p className="direct-muted">教材相關補充詞 · {item.meaningSource==='existing_dictionary'?'這裡顯示既有一般字義':'教材收錄義'}{item.printedLabel&&` · 書上標記：${item.printedLabel}`}</p>}
             {!item.officialWordId&&textOnly&&<p className="direct-muted">教材補充詞，尚未連到一般字卡。</p>}
             {item.illustration&&<figure className="vocab-illustration">
+              <DictionarySenseLabel wordId={item.officialWordId} senseId={item.officialSenseId} />
               <img src={`${ASSET_BASE}${item.illustration.path}`} alt={item.illustration.captionZh} width="768" height="768" loading="eager" decoding="async"/>
               <figcaption><p lang="en">{item.illustration.captionEn}</p><p lang="zh-Hant">{item.illustration.captionZh}</p></figcaption>
             </figure>}
