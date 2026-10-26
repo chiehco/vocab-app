@@ -18,6 +18,8 @@ import { getWordBeastAsset } from "../wordbeast/wordBeastAssets";
 import ExamTierBadge from "../wordbeast/ExamTierBadge";
 import WordTraitBadges from "../wordbeast/WordTraitBadges";
 import StudyIllustration from "../wordbeast/StudyIllustration";
+import RecordedMeanings from '../browser/RecordedMeanings';
+import { linkedSenseLabel } from '../browser/meaningRecords';
 import { useIllustrationMedia } from "../wordbeast/useIllustrationMedia";
 import { buildConfusableWordSet, buildSenseCountByWord } from "../wordbeast/wordTraits";
 import { TOP_EXAM_FILTER, standaloneStudyPriorities, buildFunctionWordSet } from "../../quiz/examScope";
@@ -277,8 +279,6 @@ export function ReviewFlashcard({ item, flipped, options, onFlip, onGrade, onKno
   const relations = useLiveQuery(() => contentDb.relations.filter((relation) => relation.word === word.word || relation.relatedWord === word.word).toArray(), [word.word]);
   const morphemes = useLiveQuery(() => contentDb.morphemes.where("word").equals(word.word).toArray(), [word.word]);
   const beastAsset = getWordBeastAsset(word.wordId, word.word, word.imageWordId);
-  const illustrationMeaning = beastAsset && (!word.imageWordId || word.imageWordId === word.wordId)
-    ? illustration?.targetHint?.trim() : undefined;
   const senseCount = buildSenseCountByWord(senses ?? []).get(word.word) ?? 0;
 
   return (
@@ -293,19 +293,17 @@ export function ReviewFlashcard({ item, flipped, options, onFlip, onGrade, onKno
           {flipped && options && <p role="status" className="seal-answer-status">{correct ? '答對了' : '這題還需要複習'}</p>}
           <div><h1>{word.word}</h1><SpeakerButton text={word.word} className="seal-speaker" /></div>
           <p>{word.pos || "詞性待補"}{word.phoneticUs && <> · /{word.phoneticUs}/</>}</p>
-          {flipped && <h2>{illustrationMeaning || word.meaningZh || "尚無中文意思"}</h2>}
           <WordTraitBadges senseCount={senseCount} hasConfusables={buildConfusableWordSet(relations ?? []).has(word.word)} hasMorphemes={!!morphemes?.length} compact />
         </div>
 
-        {beastAsset ? <StudyIllustration src={beastAsset} word={word.word} caption={flipped ? illustration?.captionZh : undefined} /> : <div className="seal-card-visual">
+        {beastAsset ? <StudyIllustration src={beastAsset} word={word.word} caption={flipped ? illustration?.captionZh : undefined} showSenseLabel={flipped} senseLabel={linkedSenseLabel(word, senses ?? [], illustration?.senseId)} /> : <div className="seal-card-visual">
           <WordSigil word={word.word} /><small>圖片尚未收錄</small>
         </div>}
 
         {flipped && (
           <div className="seal-card-answer">
-            <p className="answer-label">完整意思{senses && senses.length > 1 ? `（共 ${senses.length} 個）` : ""}</p>
-            <h2>{word.meaningZh || "尚無中文意思"}</h2>
-            {senses && senses.length > 1 && <ol className="answer-senses">{senses.map((sense) => <li key={sense.senseId}><span>{sense.sensePos}</span><b>{sense.meaningZh}</b>{sense.isExamSense && <small>學測出現情形</small>}</li>)}</ol>}
+            <p className="answer-label">已收錄字義</p>
+            <RecordedMeanings word={word} senses={senses ?? []} />
             {word.meaningEn && <p className="answer-en">{word.meaningEn}</p>}
             {word.usagePattern && <div className="answer-note"><span>用法</span><UsagePatternList english={word.usagePattern} chinese={word.usagePatternZh} /></div>}
             {notes?.map((note) => (

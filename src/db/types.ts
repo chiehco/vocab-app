@@ -1,6 +1,8 @@
 // ---- 內容資料（VocabContentDB，可由 JSON 重灌）----
 
 export interface WordRecord {
+  distributionScope?: string;
+  active?: boolean;
   wordId: string;
   word: string;
   imageWordId?: string;
@@ -19,9 +21,12 @@ export interface WordRecord {
   isCore: boolean;
   sourceNote: string | null;
   status: string;
+  verbForms?: { base: string; past: string; pastParticiple: string; sourceRef: string; status: string };
 }
 
 export interface SenseRecord {
+  distributionScope?: string;
+  active?: boolean;
   senseId: string;
   wordId: string;
   word: string;
@@ -36,6 +41,7 @@ export interface SenseRecord {
 }
 
 export interface ExampleRecord {
+  senseId?: string;
   exampleId: string;
   word: string;
   sensePos: string | null;
@@ -108,6 +114,7 @@ export interface NoteRecord {
 }
 
 export interface MediaRecord {
+  senseId?: string;
   assetId: string;
   targetType: string;
   targetWord: string;

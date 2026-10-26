@@ -13,7 +13,8 @@ import VocabularyScreen from './VocabularyScreen';
 import { getStudyResume } from '../modes/studyResume';
 
 const snapshot=vi.hoisted(()=>({words:[] as WordRecord[]}));
-vi.mock('dexie-react-hooks',()=>({useLiveQuery:()=>snapshot.words}));
+// Exercise the real query result shapes now that textbook cards also load
+// word/sense details; a global words-array mock cannot stand in for every query.
 vi.mock('../../components/useUnitProgress',()=>({useUnitProgress:()=>new Map()}));
 let view:ReturnType<typeof createComponentHarness>;
 const render=async (path:string)=>{

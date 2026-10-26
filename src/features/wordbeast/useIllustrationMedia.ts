@@ -14,6 +14,7 @@ export function useIllustrationMedia(word: WordRecord | undefined) {
     const media = getWordIllustrationMedia(await contentDb.media.where("targetWord").equals(source.word).toArray());
     const approved = approvedWordIllustration(word.word, word.wordId);
     // Old media hints belong to the old picture, not the newly approved scene.
-    return media && approved ? { ...media, captionZh: approved.captionZh, targetHint: undefined } : media;
+    return media && approved ? { ...media, captionZh: approved.captionZh, targetHint: undefined,
+      senseId: 'senseId' in approved && typeof approved.senseId === 'string' ? approved.senseId : undefined } : media;
   }, [word?.wordId, word?.word, word?.imageWordId]);
 }

@@ -6,7 +6,7 @@ import { ReviewFlashcard } from './ReviewScreen';
 import type { WordRecord } from '../../db/types';
 vi.mock('dexie-react-hooks',()=>({useLiveQuery:()=>undefined}));
 vi.mock('../wordbeast/useIllustrationMedia',()=>({useIllustrationMedia:()=>undefined}));
-const word={wordId:'W000291',word:'enter',meaningZh:'進入；參加',pos:'v.',level:'LV1'} as WordRecord;
+const word={wordId:'W000291',word:'enter',meaningZh:'進入；參加',pos:'v.',posAll:['v.'],level:'LV1',status:'reviewed'} as WordRecord;
 const options=[word,...['room','add','garden'].map(name=>({...word,word:name,meaningZh:name}))];
 let view:ReturnType<typeof createComponentHarness>;
 const flip=vi.fn(),grade=vi.fn(),known=vi.fn();

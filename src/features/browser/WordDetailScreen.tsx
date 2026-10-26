@@ -18,8 +18,9 @@ import StudyIllustration from "../wordbeast/StudyIllustration";
 import { useIllustrationMedia } from "../wordbeast/useIllustrationMedia";
 import { buildSenseCountByWord } from "../wordbeast/wordTraits";
 import { MORPHEME_TYPE_LABEL, NOTE_TYPE_LABEL, RELATION_TYPE_LABEL, REVERSE_RELATION_LABEL, STATE_LABEL } from "./wordLabels";
-import { getWordDisplaySense } from "./wordDisplay";
-import { approvedCurriculumCards, approvedCurriculumIllustration, approvedCurriculumUsage, approvedCurriculumUsageZh, approvedLV1Images, approvedWordIllustration } from '../vocabulary/approvedCurriculum';
+import RecordedMeanings from './RecordedMeanings';
+import { isPublicContent, isPublicSense, linkedSenseLabel } from './meaningRecords';
+import { approvedCurriculumCards, approvedCurriculumIllustration, approvedCurriculumUsage, approvedCurriculumUsageZh, approvedLV1Images } from '../vocabulary/approvedCurriculum';
 import { getIllustrationCaption } from "../wordbeast/illustrationCaptions";
 import UsagePatternList from '../vocabulary/UsagePatternList';
 import { buildRootFamilies, normalizeMorphemeKey, pickFamilyMorphemes } from "./rootFamily";
@@ -98,7 +99,8 @@ export default function WordDetailScreen() {
   useCardPronunciation(word?.word, wordId);
   const illustration = useIllustrationMedia(word);
   const senses = useLiveQuery(() => word ? contentDb.senses.where("wordId").equals(word.wordId).sortBy("senseOrder") : [], [word?.wordId]);
-  const examples = useLiveQuery(() => word ? contentDb.examples.where("word").equals(word.word).toArray() : [], [word?.word]);
+  const rawExamples = useLiveQuery(() => word ? contentDb.examples.where("word").equals(word.word).toArray() : [], [word?.word]);
+  const examples = rawExamples?.filter(isPublicContent);
   const relations = useLiveQuery(async () => {
     if (!word) return [];
     const [forward, reverse] = await Promise.all([
@@ -169,13 +171,11 @@ export default function WordDetailScreen() {
 
   const asset = getWordBeastAsset(word.wordId, word.word, word.imageWordId);
   const sortedMorphemes = morphemes?.slice().sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
-  const senseCount = buildSenseCountByWord(senses ?? []).get(word.word) ?? 0;
-  const displaySense = getWordDisplaySense(word, senses ?? []);
+  const senseCount = buildSenseCountByWord((senses ?? []).filter(isPublicSense)).get(word.word) ?? 0;
+  const publicSenses = (senses ?? []).filter(isPublicSense);
   const usagePattern = approvedCurriculumUsage(word.word, word.wordId) ?? word.usagePattern;
   const usagePatternZh = approvedCurriculumUsageZh(word.word, word.wordId) ?? word.usagePatternZh;
   const lv1Images = approvedLV1Images(word.word, word.wordId);
-  const illustrationMeaning = !approvedWordIllustration(word.word, word.wordId) && asset && (!word.imageWordId || word.imageWordId === word.wordId)
-    ? illustration?.targetHint?.trim() : undefined;
   const curriculumCards = approvedCurriculumCards(word.word, word.wordId);
   const captionPair = asset
     ? approvedCurriculumIllustration(word.word, asset) ?? getIllustrationCaption(illustration?.captionZh)
@@ -205,7 +205,7 @@ export default function WordDetailScreen() {
   const nextPage = pages[pageIndex + 1];
   const pageTitle = (
     <header className="dossier-page-title">
-      <div><p>{displaySense.pos}</p><h1 className={dossierTitleSize(word.word)}>{dossierTitleContent(word.word)}</h1></div>
+      <div><p>{word.posAll.join(' / ')}</p><h1 className={dossierTitleSize(word.word)}>{dossierTitleContent(word.word)}</h1></div>
       <SpeakerButton text={word.word} className="dossier-speaker" />
     </header>
   );
@@ -237,19 +237,19 @@ export default function WordDetailScreen() {
       {activePage === "card" && <>
         <section className="word-dossier-hero study-layout">
           <div className="dossier-hero-copy">
-            <div className="dossier-study-meta"><p>{displaySense.pos}</p><ExamTierBadge tier={priority?.priorityTier} compact /></div>
+            <div className="dossier-study-meta"><p>{word.posAll.join(' / ')}</p><ExamTierBadge tier={priority?.priorityTier} compact /></div>
             <div className="dossier-title-row"><h1 className={dossierTitleSize(word.word)}>{dossierTitleContent(word.word)}</h1><SpeakerButton text={word.word} className="dossier-speaker" /></div>
             {word.phoneticUs && <span className="dossier-phonetic"><b>KK</b> /{word.phoneticUs}/</span>}
-            <h2>{illustrationMeaning || displaySense.meaning}</h2>
+            <RecordedMeanings word={word} senses={senses ?? []} />
             <WordTraitBadges senseCount={senseCount} hasConfusables={falseForms.length > 0} hasMorphemes={!!sortedMorphemes?.length} />
-            {displaySense.needsReview && !illustrationMeaning && <span className="dossier-needs-review">主要意思待確認</span>}
             {lv1Images.length > 0 && <p><a href={`${import.meta.env.BASE_URL}wordbeast/lv1-reviewed/index.html#${lv1Images[0].id}`}>查看 LV1 已審閱圖句（{lv1Images.length} 組）</a></p>}
           </div>
-          {asset ? <StudyIllustration src={asset} word={word.word} caption={illustration?.captionZh} /> : <div className="dossier-hero-mark">
+          {asset ? <StudyIllustration src={asset} word={word.word} caption={illustration?.captionZh} showSenseLabel senseLabel={linkedSenseLabel(word, publicSenses, illustration?.senseId)} /> : <div className="dossier-hero-mark">
             <DossierSigil word={word.word} />
             <small>圖片尚未收錄</small>
           </div>}
           {basicExample && <div className="dossier-basic-example">
+            <small>例句對應：{linkedSenseLabel(word, publicSenses, basicExample.senseId) ?? '義項未連結'}</small>
             <p lang="en">{basicExample.sentenceEn}</p>
             {basicExample.sentenceZh && <span>{basicExample.sentenceZh}</span>}
           </div>}
@@ -270,13 +270,8 @@ export default function WordDetailScreen() {
         </section>}
 
         <section className="dossier-section meaning-focus-section">
-          <div className="dossier-section-head"><h2>字義</h2><span>{senses && senses.length > 1 ? `${senses.length} 種意思` : "已整理"}</span></div>
-          {senses && senses.length > 0 ? (
-            <ol className="dossier-senses">{senses.map((sense) => <li className={sense.isExamSense ? "exam-sense" : undefined} key={sense.senseId}><b>{String(sense.senseOrder).padStart(2, "0")}</b><div><p><span>{sense.sensePos}</span>{sense.meaningZh}</p>{sense.answerForms.length > 0 && <i>考卷上的寫法 · {sense.answerForms.join("／")}</i>}</div></li>)}</ol>
-          ) : (
-            // 義項表還沒有這個字：退回主表的整體釋義，讓學習者至少看得到完整字義
-            <p className="dossier-meaning-gloss"><small>字典釋義 · {word.posAll.join(" ")}</small>{word.meaningZh || displaySense.meaning}</p>
-          )}
+          <div className="dossier-section-head"><h2>字義</h2><span>{publicSenses.length} 筆已收錄義項</span></div>
+          <RecordedMeanings word={word} senses={senses ?? []} />
           {curriculumCards.length > 1 && <ul className="curriculum-meanings">
             {curriculumCards.map(card => <li key={card.learningItemId}>
               <b>{card.displayWord} · {card.sensePos}</b><span>{card.targetMeaningZh}</span>
@@ -288,7 +283,7 @@ export default function WordDetailScreen() {
         {examples && examples.length > 0 && (
           <section className="dossier-section">
             <div className="dossier-section-head"><h2>例句</h2><span>{examples.length} 則</span></div>
-            <ol className="dossier-examples">{examples.map((example, index) => <li key={example.exampleId}><b>{String(index + 1).padStart(2, "0")}</b><div>{example.meaningHint && <small className="example-sense">{example.sensePos || "語境"} · {example.meaningHint}</small>}<p>{example.sentenceEn}</p>{example.sentenceZh && <span>{example.sentenceZh}</span>}</div></li>)}</ol>
+            <ol className="dossier-examples">{examples.map((example, index) => <li key={example.exampleId}><b>{String(index + 1).padStart(2, "0")}</b><div><small className="example-sense">例句對應：{linkedSenseLabel(word, publicSenses, example.senseId) ?? '義項未連結'}</small>{example.meaningHint && <small className="example-sense">原標籤：{example.sensePos || "語境"} · {example.meaningHint}</small>}<p>{example.sentenceEn}</p>{example.sentenceZh && <span>{example.sentenceZh}</span>}</div></li>)}</ol>
           </section>
         )}
 

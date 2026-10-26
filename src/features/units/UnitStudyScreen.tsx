@@ -6,7 +6,8 @@ import SpeakerButton from "../../components/SpeakerButton";
 import { contentDb } from "../../db/contentDb";
 import type { ExampleRecord } from "../../db/types";
 import { useCardPronunciation } from "../../hooks/useCardPronunciation";
-import { getWordDisplaySense } from "../browser/wordDisplay";
+import RecordedMeanings from '../browser/RecordedMeanings';
+import { linkedSenseLabel } from '../browser/meaningRecords';
 import StudyIllustration from "../wordbeast/StudyIllustration";
 import { useIllustrationMedia } from "../wordbeast/useIllustrationMedia";
 import { getWordBeastAsset } from "../wordbeast/wordBeastAssets";
@@ -125,7 +126,6 @@ export default function UnitStudyScreen() {
   if (!word) return <StudyState title="找不到單字" copy="這個位置沒有可顯示的單字。" level={level} />;
 
   const currentDetails = details?.wordId === word.wordId ? details : undefined;
-  const display = getWordDisplaySense(word, currentDetails?.senses ?? []);
   const selectedExample = pickExample(currentDetails?.examples ?? []);
   // This artwork depicts music connecting people. Keep the physical bridge
   // sentence below the image without changing the source example or quiz sense.
@@ -149,7 +149,7 @@ export default function UnitStudyScreen() {
         <article className="unit-study-card" key={word.wordId}>
           <div className="unit-study-card-heading">
             <div>
-              <p>{display.pos} · {level}</p>
+              <p>{word.posAll.join(' / ')} · {level}</p>
               <h1>{word.word}</h1>
               {word.phoneticUs && <span><b>KK</b> /{word.phoneticUs}/</span>}
             </div>
@@ -157,7 +157,7 @@ export default function UnitStudyScreen() {
           </div>
 
           {image ? (
-            <StudyIllustration src={image} word={word.word} caption={illustration?.captionZh} />
+            <StudyIllustration src={image} word={word.word} caption={illustration?.captionZh} showSenseLabel senseLabel={linkedSenseLabel(word, currentDetails?.senses ?? [], illustration?.senseId)} />
           ) : (
             <div className="unit-image-empty" role="img" aria-label={`${word.word} 暫無圖卡`}>
               <span aria-hidden="true">?</span>
@@ -167,18 +167,13 @@ export default function UnitStudyScreen() {
 
           <section className="unit-study-meaning" aria-labelledby="unit-meaning-title">
             <p id="unit-meaning-title">這個字的意思</p>
-            <h2>{display.meaning}</h2>
-            {word.meaningZh && word.meaningZh !== display.meaning && (
-              <details>
-                <summary>查看完整意思</summary>
-                <span>{word.meaningZh}</span>
-              </details>
-            )}
+            <RecordedMeanings word={word} senses={currentDetails?.senses ?? []} />
           </section>
 
           {example && (
             <section className="unit-study-example" aria-labelledby="unit-example-title">
               <p id="unit-example-title">例句</p>
+              <small>例句對應：{linkedSenseLabel(word, currentDetails?.senses ?? [], example.senseId) ?? '義項未連結'}</small>
               <blockquote>{example.sentenceEn}</blockquote>
               {example.sentenceZh && <span>{example.sentenceZh}</span>}
             </section>
