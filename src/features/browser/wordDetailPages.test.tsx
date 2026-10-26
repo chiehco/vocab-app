@@ -37,6 +37,6 @@ it('card page carries the word, a basic example and a next-page button, but not 
   expect(html).toContain('This is a basic sentence.');
   expect(html).toContain('下一頁：字義 →');
   expect(html).not.toContain('詳細資料');
-  expect(html).not.toContain('常用意思');
+  expect(html).not.toContain('<h2>字義</h2>');
   expect(html).not.toContain('片語與文法');
 });

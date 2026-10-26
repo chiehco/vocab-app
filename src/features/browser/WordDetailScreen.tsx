@@ -270,7 +270,7 @@ export default function WordDetailScreen() {
         </section>}
 
         <section className="dossier-section meaning-focus-section">
-          <div className="dossier-section-head"><h2>常用意思</h2><span>{senses && senses.length > 1 ? `${senses.length} 種意思` : "已整理"}</span></div>
+          <div className="dossier-section-head"><h2>字義</h2><span>{senses && senses.length > 1 ? `${senses.length} 種意思` : "已整理"}</span></div>
           {senses && senses.length > 0 ? (
             <ol className="dossier-senses">{senses.map((sense) => <li className={sense.isExamSense ? "exam-sense" : undefined} key={sense.senseId}><b>{String(sense.senseOrder).padStart(2, "0")}</b><div><p><span>{sense.sensePos}</span>{sense.meaningZh}</p>{sense.answerForms.length > 0 && <i>考卷上的寫法 · {sense.answerForms.join("／")}</i>}</div></li>)}</ol>
           ) : (
