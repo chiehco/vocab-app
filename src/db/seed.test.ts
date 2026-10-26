@@ -43,7 +43,7 @@ function bootstrapPack(data: Record<string, unknown>) {
 }
 function serve(data: Record<string, unknown>, unavailable?: string) {
   vi.stubGlobal("fetch", vi.fn(async (path: string) => {
-    const name = path.split("/").pop()!;
+    const name = path.split("?")[0].split("/").pop()!;
     return new Response(JSON.stringify(data[name]), { status: name === unavailable ? 503 : 200 });
   }));
 }

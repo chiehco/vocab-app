@@ -77,7 +77,7 @@ it('preserves all 13 nonempty v4 tables through v5 upgrade, actual 5052→5728 u
 
   let incoming = oldPack;
   vi.stubGlobal('fetch', vi.fn(async (url: string) => {
-    if (!url.endsWith('/sa-pack.json')) throw Error(`Unexpected full-data fallback: ${url}`);
+    if (!url.split('?')[0].endsWith('/sa-pack.json')) throw Error(`Unexpected full-data fallback: ${url}`);
     return new Response(JSON.stringify(incoming));
   }));
   await ensureContentAvailable(); expect(await contentDb.words.count()).toBe(5052);
