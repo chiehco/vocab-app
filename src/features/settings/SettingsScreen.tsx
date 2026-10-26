@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
 import { contentDb } from "../../db/contentDb";
+import { updateDictionaryContent } from '../../db/seed';
 import { ALL_LEVELS, DEFAULT_SETTINGS, progressDb, setSetting } from "../../db/progressDb";
 import { applyFontScale, FONT_SCALE_OPTIONS, normalizeFontScale } from "../../settings/fontScale";
 import {
@@ -18,6 +19,22 @@ export default function SettingsScreen() {
   const [backupMsg, setBackupMsg] = useState<{ ok: boolean; text: string } | null>(null);
   const [pendingImport, setPendingImport] = useState<ProgressBackup | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const updatingDictionary = useRef(false);
+  const [dictionaryUpdate, setDictionaryUpdate] = useState<'idle' | 'pending' | 'updated' | 'current' | 'error'>('idle');
+
+  async function retryDictionaryUpdate() {
+    if (updatingDictionary.current) return;
+    updatingDictionary.current = true;
+    setDictionaryUpdate('pending');
+    try {
+      const result = await updateDictionaryContent();
+      setDictionaryUpdate(result.status);
+    } catch {
+      setDictionaryUpdate('error');
+    } finally {
+      updatingDictionary.current = false;
+    }
+  }
 
   const meta = useLiveQuery(() => contentDb.meta.get("current"), []);
   const cap = useLiveQuery(async () => {
@@ -182,6 +199,16 @@ export default function SettingsScreen() {
 
       <div className="mt-4 rounded-lg border border-(--ui-border) bg-white p-4">
         <h2 className="text-sm font-bold text-(--ui-text)">資料版本</h2>
+        <p className="mt-1 text-sm text-(--ui-muted)">字典資料與網頁版本分開更新。重新檢查字典不會重置學習進度。</p>
+        <button type="button" className="mt-3 min-h-11 rounded-lg border px-4 py-2 disabled:opacity-50" disabled={dictionaryUpdate === 'pending'} onClick={() => { void retryDictionaryUpdate(); }}>
+          {dictionaryUpdate === 'pending' ? '字典資料更新中…' : dictionaryUpdate === 'error' ? '重試字典資料更新' : '更新字典資料'}
+        </button>
+        {dictionaryUpdate !== 'idle' && <p role="status" aria-live="polite" className={`mt-2 text-sm ${dictionaryUpdate === 'error' ? 'text-(--ui-danger)' : 'text-(--ui-muted)'}`}>
+          {dictionaryUpdate === 'pending' ? '正在檢查並下載字典資料，請稍候。'
+            : dictionaryUpdate === 'updated' ? '字典資料已更新，學習進度已保留。'
+            : dictionaryUpdate === 'current' ? '字典資料已是最新，學習進度已保留。'
+            : '字典資料更新失敗，原有資料與學習進度已保留。請確認網路後重試。'}
+        </p>}
         {meta ? (
           <p className="mt-1 text-sm text-(--ui-muted)">
             共 {meta.counts.words} 個單字、{meta.counts.examples} 個例句

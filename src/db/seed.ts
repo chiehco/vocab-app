@@ -36,10 +36,21 @@ interface BootstrapBundle extends ContentBundle {
 const DATA_BASE_URL = (import.meta.env.VITE_DATA_BASE_URL || `${import.meta.env.BASE_URL}data/v1/`)
   .replace(/\/?$/, "/");
 
-async function fetchJson<T>(name: string): Promise<T> {
-  const res = await fetch(`${DATA_BASE_URL}${name}`);
-  if (!res.ok) throw new Error(`無法載入資料檔 ${name}（HTTP ${res.status}）`);
-  return res.json() as Promise<T>;
+async function fetchJson<T>(name: string, fresh = false): Promise<T> {
+  const controller = fresh ? new AbortController() : undefined;
+  const timeout = controller ? setTimeout(() => controller.abort(), 30_000) : undefined;
+  try {
+    // This query is deliberately outside Workbox's ignored parameters. A stable
+    // URL plus no-cache revalidates HTTP caches without reusing an old SW pack.
+    const url = `${DATA_BASE_URL}${name}${fresh ? '?dictionary-update=1' : ''}`;
+    const res = fresh
+      ? await fetch(url, { cache: 'no-cache', signal: controller!.signal })
+      : await fetch(url);
+    if (!res.ok) throw new Error(`無法載入資料檔 ${name}（HTTP ${res.status}）`);
+    return await res.json() as T;
+  } finally {
+    if (timeout !== undefined) clearTimeout(timeout);
+  }
 }
 
 /**
@@ -132,27 +143,77 @@ export async function ensureContentAvailable(): Promise<void> {
   }
 }
 
-/** 背景更新沿用已安裝的範圍；S+A 使用者不會被迫下載完整 6,000 字資料。 */
-export async function refreshInstalledContent(): Promise<void> {
+export interface DictionaryUpdateResult {
+  status: 'updated' | 'current';
+  scope: 'starter' | 'full';
+  generatedAt: string;
+}
+
+let updateInFlight: Promise<DictionaryUpdateResult> | null = null;
+
+/** Both manual and background checks share one atomic content-only operation. */
+export function updateDictionaryContent(): Promise<DictionaryUpdateResult> {
+  if (!updateInFlight) {
+    const task = synchronizeInstalledContent();
+    updateInFlight = task;
+    const release = () => { if (updateInFlight === task) updateInFlight = null; };
+    void task.then(release, release);
+  }
+  return updateInFlight;
+}
+
+async function synchronizeInstalledContent(): Promise<DictionaryUpdateResult> {
   const current = await contentDb.meta.get("current");
-  if (!current) {
-    await ensureContentAvailable();
-    return;
-  }
-  if (!current.contentHash?.startsWith("sa:")) {
-    await seedContentIfNeeded();
-    return;
-  }
-  try {
-    const pack = await fetchJson<BootstrapBundle>("sa-pack.json");
+  const scope = !current || current.contentHash?.startsWith('sa:') ? 'starter' : 'full';
+  if (scope === 'starter') {
+    const pack = await fetchJson<BootstrapBundle>('sa-pack.json', true);
+    validateBundle(pack.meta, pack);
     const incoming = pack.meta.contentHash ?? pack.meta.wordsHash;
-    const stored = current.contentHash ?? current.wordsHash;
-    if (incoming === stored && await hasUsableLocalContent()) return;
+    const stored = current?.contentHash ?? current?.wordsHash;
+    if (incoming === stored && await hasUsableLocalContent()) {
+      return { status: 'current', scope, generatedAt: pack.meta.generatedAt };
+    }
     const { meta, ...bundle } = pack;
     await installBundle(meta, bundle);
-  } catch {
-    // S+A 本機包已可使用；背景更新失敗不阻塞學習。
+    return { status: 'updated', scope, generatedAt: meta.generatedAt };
   }
+  const meta = await fetchJson<DataMeta>('meta.json', true);
+  const incoming = meta.contentHash ?? meta.wordsHash;
+  const stored = current?.contentHash ?? current?.wordsHash;
+  if (incoming === stored && await hasUsableLocalContent()
+    && await contentDb.media.count() === (meta.counts.media ?? 0)) {
+    return { status: 'current', scope, generatedAt: meta.generatedAt };
+  }
+  await installBundle(meta, await downloadFullBundle(meta, true));
+  return { status: 'updated', scope, generatedAt: meta.generatedAt };
+}
+
+/** Offline startup stays usable; manual callers receive the actual failure. */
+export async function refreshInstalledContent(): Promise<void> {
+  try {
+    await updateDictionaryContent();
+  } catch {
+    // Content and progress are retained. The settings action can retry explicitly.
+  }
+}
+
+async function downloadFullBundle(meta: DataMeta, fresh = false): Promise<ContentBundle> {
+  const optional = <T,>(file: string, countKey: string): Promise<T[]> =>
+    fetchJson<T[]>(file, fresh).catch((error: unknown) => {
+      if ((meta.counts[countKey] ?? 0) > 0) throw error;
+      return [];
+    });
+  const [words, senses, examples, relations, morphemes, notes, examPriorities, media] = await Promise.all([
+    fetchJson<WordRecord[]>('words.json', fresh),
+    optional<SenseRecord>('senses.json', 'senses'),
+    fetchJson<ExampleRecord[]>('examples.json', fresh),
+    fetchJson<RelationRecord[]>('relations.json', fresh),
+    fetchJson<MorphemeRecord[]>('morphemes.json', fresh),
+    optional<NoteRecord>('notes.json', 'notes'),
+    optional<ExamPriorityRecord>('exam_priority.json', 'examPriority'),
+    optional<MediaRecord>('media.json', 'media'),
+  ]);
+  return { words, senses, examples, relations, morphemes, notes, examPriorities, media };
 }
 
 /**
@@ -174,38 +235,12 @@ export async function seedContentIfNeeded(): Promise<void> {
   const mediaCount = await contentDb.media.count();
   if (current && stored === incoming && mediaCount === (meta.counts.media ?? 0)) return;
 
-  // 舊資料可缺選用表；已宣告有資料的表若下載失敗，不得用空表覆蓋既有內容。
-  const optional = <T,>(file: string, countKey: string): Promise<T[]> =>
-    fetchJson<T[]>(file).catch((error: unknown) => {
-      if ((meta.counts[countKey] ?? 0) > 0) throw error;
-      return [];
-    });
-
-  let downloaded: [
-    WordRecord[],
-    SenseRecord[],
-    ExampleRecord[],
-    RelationRecord[],
-    MorphemeRecord[],
-    NoteRecord[],
-    ExamPriorityRecord[],
-    MediaRecord[],
-  ];
+  let bundle: ContentBundle;
   try {
-    downloaded = await Promise.all([
-      fetchJson<WordRecord[]>("words.json"),
-      optional<SenseRecord>("senses.json", "senses"),
-      fetchJson<ExampleRecord[]>("examples.json"),
-      fetchJson<RelationRecord[]>("relations.json"),
-      fetchJson<MorphemeRecord[]>("morphemes.json"),
-      optional<NoteRecord>("notes.json", "notes"),
-      optional<ExamPriorityRecord>("exam_priority.json", "examPriority"),
-      optional<MediaRecord>("media.json", "media"),
-    ]);
+    bundle = await downloadFullBundle(meta);
   } catch (error) {
     if (await hasUsableLocalContent()) return;
     throw error;
   }
-  const [words, senses, examples, relations, morphemes, notes, examPriorities, media] = downloaded;
-  await installBundle(meta, { words, senses, examples, relations, morphemes, notes, examPriorities, media });
+  await installBundle(meta, bundle);
 }
