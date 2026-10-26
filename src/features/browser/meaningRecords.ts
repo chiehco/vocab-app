@@ -28,7 +28,7 @@ export function recordedMeanings(word: WordRecord, senses: SenseRecord[]) {
 export function recordedSummary(word: WordRecord, senses: SenseRecord[]) {
   if (!isPublicContent(word)) return '';
   const summary = normalizeDisplayChinese(word.meaningZh ?? '');
-  return senses.some(s => s.wordId === word.wordId && !isPublicSense(s) && summary.includes(s.meaningZh)) ? '' : summary;
+  return senses.some(s => s.wordId === word.wordId && !isPublicSense(s) && summary.includes(normalizeDisplayChinese(s.meaningZh))) ? '' : summary;
 }
 
 export function linkedSenseLabel(word: WordRecord, senses: SenseRecord[], senseId?: string) {

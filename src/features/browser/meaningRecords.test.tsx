@@ -25,6 +25,10 @@ it('rejects private, inactive and other-word senses, and marks pending public ro
  const rows=[sense(1,'n.',{distributionScope:'private_only'}),sense(2,'n.',{active:false}),sense(3,'n.',{wordId:'OTHER'}),sense(4,'v.',{status:'needs_check'}),sense(5,'n.',{distributionScope:'restricted'})];
  expect(recordedMeanings(word,rows).map(r=>r.key)).toEqual(['W999101-4']);expect(render(rows)).toContain('待核對');
 });
+it('does not resurrect a rejected meaning after Chinese display normalization',()=>{
+ const record={...word,meaningZh:'裏面'};
+ expect(render([sense(1,'n.',{status:'rejected' as SenseRecord['status'],meaningZh:'裏面'})],record)).not.toContain('裡面');
+});
 it.each([['zztest','zztested','zztested'],['zzgo','zzwent','zzgone']])('shows verified regular/irregular forms for %s', (base,past,pastParticiple)=>{
  const record={...word,word:base,verbForms:{base,past,pastParticiple,sourceRef:'synthetic:verified',status:'approved'}};
  const html=render([],record);for(const value of [base,past,pastParticiple])expect(html).toContain(value);expect(html).toContain('過去分詞');
