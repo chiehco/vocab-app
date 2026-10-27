@@ -83,7 +83,7 @@ export async function updateQuestion(sessionId: string, questionId: string, chan
 }
 export async function submitAnswer(sessionId: string, questionId: string, rewards = false) {
   const rewardWord = rewards ? directRewardWord(questionId) : undefined;
-  await progressDb.transaction('rw', [progressDb.directSessions, progressDb.directAttempts, ...(rewardWord ? rewardTables : [])], async () => {
+    return progressDb.transaction('rw', [progressDb.directSessions, progressDb.directAttempts, ...(rewardWord ? rewardTables : [])], async () => {
     const s = await progressDb.directSessions.get(sessionId);
     const q = allQuestions.find(q => q.questionId === questionId);
     if (!s || !q || s.revision !== REVISION || s.questionIds[s.index] !== questionId || !acceptsChoice(q,s.choices[questionId])) throw new Error('請先填寫或選擇答案');
@@ -95,6 +95,7 @@ export async function submitAnswer(sessionId: string, questionId: string, reward
     await progressDb.directAttempts.add(attempt);
     if (rewardWord) await awardAnswer({id:`answer:direct:${id}`,roundId:directRoundId(sessionId),word:rewardWord,
       correct:attempt.correct,source:'direct',referenceId:id,answeredAt:Date.now(),challenge:directChallenge(questionId)});
+      return attempt;
   });
 }
 export async function nextQuestion(sessionId: string) {

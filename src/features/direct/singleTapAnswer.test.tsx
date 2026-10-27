@@ -9,6 +9,7 @@ import { practiceQuestions } from './model';
 import * as store from './store';
 import DirectScreen from './DirectScreen';
 let view: ReturnType<typeof createComponentHarness>;
+let tones: number[];
 const question=practiceQuestions.find(q=>q.questionId==='CHOICE-CLOZE-ORIG-LV4U20-ferry')!;
 beforeEach(async()=>{
  await progressDb.delete();await progressDb.open();await contentDb.delete();await contentDb.open();
@@ -16,8 +17,14 @@ beforeEach(async()=>{
  vi.spyOn(HTMLElement.prototype,'scrollIntoView').mockImplementation(()=>{});
  vi.spyOn(HTMLDialogElement.prototype,'showModal').mockImplementation(function(this:HTMLDialogElement){this.open=true});
  view=createComponentHarness();
+ tones=[];
+ vi.stubGlobal('AudioContext',class {
+  state='running';currentTime=0;destination={};resume=async()=>{};close=async()=>{};
+  createOscillator(){return {type:'',frequency:{setValueAtTime:(n:number)=>tones.push(n)},connect(){},disconnect(){},start(){},stop(){}}}
+  createGain(){return {connect(){},disconnect(){},gain:{setValueAtTime(){},linearRampToValueAtTime(){},exponentialRampToValueAtTime(){}}}}
+ });
 });
-afterEach(async()=>{await view.unmount();vi.restoreAllMocks();await progressDb.delete();await contentDb.delete()});
+afterEach(async()=>{await view.unmount();vi.restoreAllMocks();vi.unstubAllGlobals();await progressDb.delete();await contentDb.delete()});
 const button=(text:string)=>[...view.container.querySelectorAll('button')].find(b=>b.textContent===text);
 async function open(ids=[question.questionId]){
  const session=await store.startSession(ids,'合成單次提交',undefined,ids,'basic');
@@ -32,6 +39,7 @@ it('keeps lookup independent, records its hint, and submits once even with repea
  await view.click(view.container.querySelector('[aria-label="查選項：sway"]'));
  await view.waitFor(()=>expect(view.container.querySelector('dialog')?.open).toBe(true));
  expect(await progressDb.directAttempts.count()).toBe(0);expect(await progressDb.rewardLedger.count()).toBe(0);
+ expect(tones).toEqual([]);
  const realUpdate=store.updateQuestion;let release!:()=>void;const gate=new Promise<void>(r=>release=r);
  vi.spyOn(store,'updateQuestion').mockImplementationOnce(async(...args)=>{await gate;return realUpdate(...args)});
  const submit=vi.spyOn(store,'submitAnswer');const selected=button('A · sway'),other=button('D · ferry');
@@ -42,14 +50,33 @@ it('keeps lookup independent, records its hint, and submits once even with repea
  expect(submit).toHaveBeenCalledTimes(1);expect(await progressDb.rewardLedger.count()).toBe(1);expect((await progressDb.rewardWallet.get('local'))?.balance).toBe(1);
  expect((await progressDb.directSessions.get(session.id))?.index).toBe(0);
  expect(view.container.querySelectorAll('.direct-option-explanation')).toHaveLength(4);
+ await view.waitFor(()=>expect(tones).toEqual([261.63,220]));
+ await view.click(view.container.querySelector('.direct-answer-explanation summary'));expect(tones).toHaveLength(2);
 });
 it('reports a failed save without an attempt or award, then permits one-click retry',async()=>{
  await open();vi.spyOn(store,'updateQuestion').mockRejectedValueOnce(new Error('synthetic write failure'));
  await view.click(button('D · ferry'));await view.waitFor(()=>expect(view.container.querySelector('[role="alert"]')?.textContent).toContain('未能儲存'));
  expect(await progressDb.directAttempts.count()).toBe(0);expect(await progressDb.rewardLedger.count()).toBe(0);
+ expect(tones).toEqual([]);
  await view.click(button('D · ferry'));await view.waitFor(()=>expect(view.container.querySelector('.direct-answer-feedback')).not.toBeNull());
  expect(await progressDb.directAttempts.count()).toBe(1);expect((await progressDb.directAttempts.toArray())[0]).toMatchObject({choice:'D',firstAttempt:true,correct:true});
  expect(await progressDb.rewardLedger.count()).toBe(1);expect((await progressDb.rewardWallet.get('local'))?.balance).toBe(5);
+ await view.waitFor(()=>expect(tones).toEqual([392,523.25]));
+});
+it('persists mute and restores answers silently; preference failures are retryable without changing awards',async()=>{
+ const session=await open();const sound=()=>view.container.querySelector<HTMLButtonElement>('[aria-label="作答音效"]');
+ await view.waitFor(()=>expect(sound()?.disabled).toBe(false));expect(sound()?.getAttribute('aria-pressed')).toBe('true');
+ await view.click(sound());await view.waitFor(()=>expect(sound()?.disabled).toBe(false));
+ expect((await progressDb.settings.get('answerFeedbackSound'))?.value).toBe(false);
+ await view.click(button('D · ferry'));await view.waitFor(()=>expect(view.container.querySelector('.direct-answer-feedback')).not.toBeNull());expect(tones).toEqual([]);
+ await view.unmount();view=createComponentHarness();
+ await view.render(<MemoryRouter initialEntries={[`/practice/direct?session=${session.id}`]}><DirectScreen/></MemoryRouter>);
+ await view.waitFor(()=>expect(sound()?.disabled).toBe(false));expect(sound()?.getAttribute('aria-pressed')).toBe('false');expect(tones).toEqual([]);
+ vi.spyOn(progressDb.settings,'put').mockRejectedValueOnce(Error('synthetic preference failure'));
+ await view.click(sound());await view.waitFor(()=>expect(view.container.querySelector('[role="alert"]')?.textContent).toContain('音效偏好尚未保存'));
+ expect(sound()?.getAttribute('aria-pressed')).toBe('true');expect(await progressDb.directAttempts.count()).toBe(1);expect(tones).toEqual([]);
+ await view.click(button('重試保存音效設定'));await view.waitFor(()=>expect(view.container.querySelector('[role="alert"]')).toBeNull());
+ expect((await progressDb.settings.get('answerFeedbackSound'))?.value).toBe(true);expect(await progressDb.rewardLedger.count()).toBe(1);
 });
 it('does not reveal option explanations before submission or advance twice on repeated next clicks',async()=>{
  const next=practiceQuestions.find(q=>q.sourceType==='original_target_word_choice'&&q.questionId!==question.questionId)!;

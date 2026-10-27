@@ -16,8 +16,10 @@ import { directRoundId } from '../rewards/model';
 import { useRewardRound } from '../rewards/useRewardRound';
 import { directRewardWord, directRoundChallenge } from '../rewards/directScope';
 import { optionExplanation } from './optionExplanation';
+import { useAnswerFeedback } from './useAnswerFeedback';
 
 export default function DirectScreen() {
+  const answerFeedback=useAnswerFeedback();
   const [params,setParams] = useSearchParams();
   const sessionId=params.get('session');
   const data = useLiveQuery(async () => ({ session: sessionId ? await progressDb.directSessions.get(sessionId) : await progressDb.directSessions.orderBy('updatedAt').filter(s => s.revision === REVISION).last(), attempts: await progressDb.directAttempts.toArray(), words: await contentDb.words.toArray(), senses: await contentDb.senses.toArray() }),[sessionId]);
@@ -76,12 +78,16 @@ export default function DirectScreen() {
   function chooseAnswer(choice: string) {
     if (!s || !q || a || lock.current || submittedChoice.current === questionKey) return;
     setSelection({ key: questionKey, choice });
-    void act(async () => {
-      if (rewardWord) await reward.prepare();
-      await persistChoice(choice);
-      await submitAnswer(s.id, q.questionId, true);
-      submittedChoice.current = questionKey;
-    });
+    void act(() => saveCurrentAnswer(choice));
+  }
+  async function saveCurrentAnswer(choice?: string) {
+    if(!s || !q || submittedChoice.current===questionKey)return;
+    const permit=answerFeedback.prepare();
+    if(rewardWord)await reward.prepare();
+    if(choice!==undefined)await persistChoice(choice);
+    const saved=await submitAnswer(s.id,q.questionId,true);
+    submittedChoice.current=questionKey;
+    if(saved)answerFeedback.play(saved.id,saved.correct,permit);
   }
   function lookup(word: string) {
     void act(async () => {
@@ -109,7 +115,8 @@ export default function DirectScreen() {
   return <div className="direct-page direct-practice-page ui-column">
     <nav><Link to={studyUnit ? `/textbook/${studyUnit.level}/${studyUnit.unit}` : '/exam'}>← {studyUnit ? '課本單元' : '學測專區'}</Link><Link to="/groups">我的群組</Link></nav>
     {params.get('town') === 'LV4' && townItem && <p><Link to={`/town/LV4/17?item=${encodeURIComponent(townItem.learningItemId)}`} state={townReturn}>← 回小鎮 · 保留本輪進度</Link></p>}
-    <header className="direct-practice-heading"><div><p className="direct-kicker">{studyUnit ? `${studyUnit.level} · Unit ${studyUnit.unit}` : '教材練習'}</p><h1>{studyUnit ? '教材練習' : s?.groupId ? '群組教材練習' : '新情境練習'}</h1></div></header>
+    <header className="direct-practice-heading"><div><p className="direct-kicker">{studyUnit ? `${studyUnit.level} · Unit ${studyUnit.unit}` : '教材練習'}</p><h1>{studyUnit ? '教材練習' : s?.groupId ? '群組教材練習' : '新情境練習'}</h1></div><button type="button" className="direct-sound-toggle" aria-label="作答音效" aria-pressed={answerFeedback.enabled} disabled={!answerFeedback.ready || answerFeedback.saving} onClick={()=>void answerFeedback.toggle()}>{answerFeedback.saving?'儲存中…':answerFeedback.enabled?'音效：開':'音效：關'}</button></header>
+    {answerFeedback.error && <p role="alert" className="direct-muted">{answerFeedback.error}<button type="button" disabled={answerFeedback.saving} onClick={()=>void answerFeedback.retry()}>重試保存音效設定</button></p>}
     {s && <p className="direct-scope">本輪 {s.questionIds.length} 題{params.get('town') === 'LV4' && s.questionIds.length === 1 ? ' · 小鎮選字練習，每次一字一題' : ''}。{studyUnit && <Link to={`/textbook/${studyUnit.level}/${studyUnit.unit}`}>到課本選整單元範圍 →</Link>}</p>}
     {s && hasVocabulary && <section aria-label="練習難度"><div className="direct-modes">
       <button disabled={busy} aria-pressed={mode === 'basic'} onClick={() => void act(() => openSession(switchPracticeMode(s.id, 'basic')))}>基礎・四選一</button>
@@ -126,14 +133,14 @@ export default function DirectScreen() {
       {!q.options.length && <><label>填入目標詞<input key={`${s.id}:${q.questionId}`} defaultValue={s.choices[q.questionId] ?? ''} disabled={busy} autoComplete="off" autoCapitalize="none" spellCheck={false} maxLength={120} onChange={e=> {void updateQuestion(s.id,q.questionId,{choice:e.target.value}).catch(()=>setError('未能保存輸入，請重試。'));}} onKeyDown={event => {
         if (event.key !== 'Enter') return;
         event.preventDefault(); const value = event.currentTarget.value;
-          void act(async () => { if (rewardWord) await reward.prepare(); await updateQuestion(s.id, q.questionId, { choice: value }); await submitAnswer(s.id, q.questionId, true); });
+          void act(() => saveCurrentAnswer(value));
       }} /></label></>}
       {!q.options.length && !a && <><button disabled={busy} onClick={() => void act(() => updateQuestion(s.id, q.questionId, {lookup:'[首字母提示]'}))}>看首字母提示</button>{s.lookups[q.questionId]?.includes('[首字母提示]') && <p>首字母：{q.answer[0]}…</p>}</>}
       <div role="group" aria-label="答案選項">{q.options.map(o => <div className="direct-option-row" key={o.id}>
         <button type="button" className="direct-option" disabled={busy} aria-pressed={selectedChoice === o.id} aria-describedby="direct-pick-instruction" onClick={() => chooseAnswer(o.id)}>{o.id} · {o.text}</button>
         {/^[A-Za-z]/.test(o.text) && <button type="button" disabled={busy} aria-label={`查選項：${o.text}`} onClick={() => lookup(o.text)}>查字</button>}
       </div>)}</div>
-      {!q.options.length && <button className="direct-primary" disabled={busy || !s.choices[q.questionId]?.trim()} onClick={() => void act(async () => { if (rewardWord) await reward.prepare(); await submitAnswer(s.id,q.questionId,true); })}>確認答案</button>}
+      {!q.options.length && <button className="direct-primary" disabled={busy || !s.choices[q.questionId]?.trim()} onClick={() => void act(() => saveCurrentAnswer())}>確認答案</button>}
       {error && <p role="alert">{error}</p>}
       {busy && <p role="status">正在保存答案…</p>}
       </section> : <section className="direct-result direct-answer-feedback" ref={feedback} tabIndex={-1} aria-labelledby="direct-result-title">
