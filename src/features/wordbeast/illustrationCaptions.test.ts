@@ -37,4 +37,11 @@ describe('image caption pairs', () => {
     expect(concealed).not.toContain('<figcaption>');
     expect(concealed).not.toContain(row.en);
   });
+  it('keeps an unlinked caption neutral and only names a supplied exact sense', () => {
+    const neutral = renderToStaticMarkup(createElement(StudyIllustration, { src: '/test.webp', word: 'zztest', caption: '合成圖說', showSenseLabel: true }));
+    expect(neutral).toContain('<small>圖說</small>');
+    expect(neutral).not.toContain('義項未連結');
+    const linked = renderToStaticMarkup(createElement(StudyIllustration, { src: '/test.webp', word: 'zztest', caption: '合成圖說', showSenseLabel: true, senseLabel: 'n. 合成義項' }));
+    expect(linked).toContain('圖片／圖說對應：n. 合成義項');
+  });
 });

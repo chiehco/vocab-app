@@ -13,10 +13,9 @@ export default function RecordedMeanings({ word, senses }: { word: WordRecord; s
       {row.source === 'curriculum' && <small>教材收錄義</small>}
     </li>)}</ul>}
     {summary && !rows.some(row => row.meaning === summary) && <p className="recorded-summary">
-      <small>詞條摘要（尚未逐義整理） · {word.posAll?.join(' ') || word.pos || '詞性待補'}</small>{summary}
+      <small>字義 · {word.posAll?.join(' ') || word.pos || '詞性待補'}</small>{summary}
     </p>}
     {!rows.length && !summary && <p>字義尚未收錄。</p>}
-    <p className="recorded-coverage">以上為目前已收錄資料，其他義項可能尚未整理。</p>
     {hasVerbMeaning(word, senses) && (forms ? <div className="recorded-verb-forms" aria-label="動詞三態">
       <p>動詞三態</p><dl>{[['原形', forms.base], ['過去式', forms.past], ['過去分詞', forms.pastParticiple]].map(([label, value]) =>
         <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>

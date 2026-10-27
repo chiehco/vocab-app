@@ -173,6 +173,10 @@ export default function WordDetailScreen() {
   const sortedMorphemes = morphemes?.slice().sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
   const senseCount = buildSenseCountByWord((senses ?? []).filter(isPublicSense)).get(word.word) ?? 0;
   const publicSenses = (senses ?? []).filter(isPublicSense);
+  const exampleLabel = (senseId?: string) => {
+    const label = linkedSenseLabel(word, publicSenses, senseId);
+    return label ? `例句對應：${label}` : '例句';
+  };
   const usagePattern = approvedCurriculumUsage(word.word, word.wordId) ?? word.usagePattern;
   const usagePatternZh = approvedCurriculumUsageZh(word.word, word.wordId) ?? word.usagePatternZh;
   const lv1Images = approvedLV1Images(word.word, word.wordId);
@@ -201,8 +205,6 @@ export default function WordDetailScreen() {
     ...(memoryNotes.length > 0 ? [["memory", "記憶法"] as [DossierPage, string]] : []),
   ];
   const activePage = pages.some(([key]) => key === page) ? page : "card";
-  const pageIndex = pages.findIndex(([key]) => key === activePage);
-  const nextPage = pages[pageIndex + 1];
   const pageTitle = (
     <header className="dossier-page-title">
       <div><p>{word.posAll.join(' / ')}</p><h1 className={dossierTitleSize(word.word)}>{dossierTitleContent(word.word)}</h1></div>
@@ -249,7 +251,7 @@ export default function WordDetailScreen() {
             <small>圖片尚未收錄</small>
           </div>}
           {basicExample && <div className="dossier-basic-example">
-            <small>例句對應：{linkedSenseLabel(word, publicSenses, basicExample.senseId) ?? '義項未連結'}</small>
+            <small>{exampleLabel(basicExample.senseId)}</small>
             <p lang="en">{basicExample.sentenceEn}</p>
             {basicExample.sentenceZh && <span>{basicExample.sentenceZh}</span>}
           </div>}
@@ -283,7 +285,7 @@ export default function WordDetailScreen() {
         {examples && examples.length > 0 && (
           <section className="dossier-section">
             <div className="dossier-section-head"><h2>例句</h2><span>{examples.length} 則</span></div>
-            <ol className="dossier-examples">{examples.map((example, index) => <li key={example.exampleId}><b>{String(index + 1).padStart(2, "0")}</b><div><small className="example-sense">例句對應：{linkedSenseLabel(word, publicSenses, example.senseId) ?? '義項未連結'}</small>{example.meaningHint && <small className="example-sense">原標籤：{example.sensePos || "語境"} · {example.meaningHint}</small>}<p>{example.sentenceEn}</p>{example.sentenceZh && <span>{example.sentenceZh}</span>}</div></li>)}</ol>
+            <ol className="dossier-examples">{examples.map((example, index) => <li key={example.exampleId}><b>{String(index + 1).padStart(2, "0")}</b><div><small className="example-sense">{exampleLabel(example.senseId)}</small>{example.meaningHint && <small className="example-sense">原標籤：{example.sensePos || "語境"} · {example.meaningHint}</small>}<p>{example.sentenceEn}</p>{example.sentenceZh && <span>{example.sentenceZh}</span>}</div></li>)}</ol>
           </section>
         )}
 
@@ -364,8 +366,6 @@ export default function WordDetailScreen() {
           {noteList(memoryNotes)}
         </section>
       </div>}
-
-      {nextPage && <button type="button" className="dossier-next-page" onClick={() => openPage(nextPage[0])}>下一頁：{nextPage[1]} →</button>}
 
       <p className="dossier-footer">單字總表 · {word.wordId}</p>
     </div>

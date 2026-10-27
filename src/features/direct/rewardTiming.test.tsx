@@ -39,7 +39,7 @@ it.each([true,false])('unrewarded grammar (correct=%s) neither presents nor star
   expect(await progressDb.rewardRounds.count()).toBe(0);
   // Ten minutes of grammar dwell must not consume the subsequent fill window.
   dwell=600_000;
-  await view.click(button(`${answer.id} · ${answer.text}`));await view.click(button(`${answer.id} · ${answer.text}`));
+  await view.click(button(`${answer.id} · ${answer.text}`));
   await view.waitFor(()=>expect(view.container.querySelector('.direct-answer-feedback')).not.toBeNull());
   expect(await progressDb.rewardRounds.count()).toBe(0);expect(await progressDb.rewardLedger.count()).toBe(0);
   const beforeFill=Date.now();await view.click(button('下一題'));

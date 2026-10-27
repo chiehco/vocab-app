@@ -9,7 +9,8 @@ export function DictionarySenseLabel({ wordId, senseId }: {wordId?: string | nul
     const word=await contentDb.words.get(wordId);
     return { wordId, senseId, text: word ? linkedSenseLabel(word,await contentDb.senses.where('wordId').equals(wordId).toArray(),senseId) ?? null : null };
   },[wordId,senseId]);
-  return <small>圖片／圖說對應：{label && label.wordId===wordId && label.senseId===senseId ? label.text ?? '義項未連結' : '義項未連結'}</small>;
+  const senseText = label && label.wordId===wordId && label.senseId===senseId ? label.text : undefined;
+  return <small>{senseText ? `圖片／圖說對應：${senseText}` : '圖說'}</small>;
 }
 
 export default function DictionaryMeanings({ wordId }: { wordId?: string | null }) {
