@@ -2,13 +2,15 @@ import type { SenseRecord, WordRecord } from '../../db/types';
 import type { PracticeQuestion } from './model';
 import { isPublicContent, recordedMeanings, recordedSummary } from '../browser/meaningRecords';
 import { optionContextRationales } from './optionContextRationales';
+import { approvedCurriculumCards } from '../vocabulary/approvedCurriculum';
 
 const normalize = (text: string) => text.trim().normalize('NFKC').toLowerCase();
 export function optionExplanation(question: PracticeQuestion, option: PracticeQuestion['options'][number], words: WordRecord[], senses: SenseRecord[]) {
   if (!['original_target_word_choice', 'practice_context_choice'].includes(question.sourceType))
     return { meaning: '', rationale: option.rationaleZh, source: 'existing-authored' };
   const key = normalize(option.text);
-  const records = words.filter(word => isPublicContent(word) && (normalize(word.word) === key || word.wordVariants?.some(form => normalize(form) === key)));
+  const approvedWordIds = new Set(approvedCurriculumCards(option.text).map(card => card.officialWordId));
+  const records = words.filter(word => isPublicContent(word) && (normalize(word.word) === key || word.wordVariants?.some(form => normalize(form) === key) || approvedWordIds.has(word.wordId)));
   const meanings = records.flatMap(word => {
     const rows = recordedMeanings(word, senses);
     const result = rows.map(row => `${row.pos} ${row.meaning}`.trim());

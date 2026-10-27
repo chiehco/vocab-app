@@ -2,6 +2,7 @@ import { expect, it } from 'vitest';
 import type { WordRecord, SenseRecord } from '../../db/types';
 import type { PracticeQuestion } from './model';
 import { optionExplanation } from './optionExplanation';
+import { approvedCurriculumCards } from '../vocabulary/approvedCurriculum';
 const word = (text:string,meaningZh:string,pos='n.') => ({wordId:`QA-${text}`,word:text,wordVariants:[text],meaningZh,pos,posAll:[pos],status:'reviewed'} as WordRecord);
 const options = ['sway','nowadays','dense','ferry'].map((text,i)=>({id:'ABCD'[i],text,rationaleZh:'此處應使用 ferry。'}));
 const question: PracticeQuestion = {questionId:'CHOICE-CLOZE-ORIG-LV4U20-ferry',sourceType:'original_target_word_choice',targetWord:'ferry',targetMeaningZh:'渡輪',stem:'The _____ carries the travelers across the river.',sentenceEn:'The ferry carries the travelers across the river.',sentenceZh:'渡輪載旅客過河。',options,answer:'D'};
@@ -30,4 +31,11 @@ it('does not invent missing glosses or inherit a rationale for a different sente
  const result=optionExplanation(q,q.options[4],[],[]);
  expect(result.meaning).toBe('字義尚未收錄');expect(result.rationale).toContain('尚無逐項語境解析');expect(result.source).toBe('question-context');
  expect(optionExplanation(q,options[0],words,[]).source).toBe('question-context');
+});
+it('uses an existing approved catalog/catalogue identity link without guessing other spelling changes',()=>{
+ const approval=approvedCurriculumCards('catalog')[0];expect(approval).toBeDefined();
+ const record={...word('catalogue','合成目錄義'),wordId:approval.officialWordId};
+ const option={id:'X',text:'catalog',rationaleZh:'此處應使用 ferry。'};
+ expect(optionExplanation(question,option,[record],[]).meaning).toContain('合成目錄義');
+ expect(optionExplanation(question,{...option,text:'zzcatalog'},[record],[]).meaning).toBe('字義尚未收錄');
 });
