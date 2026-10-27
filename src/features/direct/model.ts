@@ -294,7 +294,7 @@ export function acceptsChoice(q: PracticeQuestion, value: string | undefined) {
 }
 export interface CustomGroup { id: string; name: string; itemIds: string[]; wordIds?: string[]; templateId: string | null; templateRevision: string | null; updatedAt: number }
 export interface DirectSession { id: string; questionIds: string[]; index: number; choices: Record<string, string>; lookups: Record<string, string[]>; startedAt: number; updatedAt: number; revision: string; title?: string; groupId?: string; scopeQuestionIds?: string[] }
-export interface DirectAttempt { id: string; sessionId: string; questionId: string; revision: string; choice: string; correct: boolean; firstAttempt: boolean; hintUsed: boolean; lookedUpWords: string[]; answeredAt: number; schedulingApplied: false }
+export interface DirectAttempt { id: string; sessionId: string; questionId: string; revision: string; choice: string; correct: boolean; firstAttempt: boolean; hintUsed: boolean; lookedUpWords: string[]; answeredAt: number; schedulingApplied: false; houseGrowth?: import('../../db/types').HouseGrowthEvidence }
 export function templateGroup(unit: UnitKey = 1, level?: string): CustomGroup {
   const u = findUnit(unit, level);
   if (!u) throw new Error('找不到這個教材單元');

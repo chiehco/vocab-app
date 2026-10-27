@@ -67,6 +67,7 @@ export async function gradeFlashcard(
         easeFactorAfter: after.easeFactor,
         mode,
         schedulingApplied: scheduled !== before,
+        houseGrowth: {kind: grade === 0 ? 'none' : before.lastReviewedAt && before.dueDate <= today && scheduled !== before ? 'due-review' : 'learning', day: today},
       },guard);
       await upsertCheckIn(today, isNewWord, sessionId);
       return after;
@@ -101,6 +102,7 @@ export async function markWordKnown(
         easeFactorAfter: after.easeFactor,
         mode: "known",
         schedulingApplied: true,
+        houseGrowth: {kind: 'none', day: today},
       },guard);
       // 已知字只花幾秒確認，不吃掉新字名額，初期才能真的往前推進。
       await upsertCheckIn(today, false, sessionId);
@@ -137,6 +139,7 @@ export async function recordReviewWithoutScheduling(
         easeFactorAfter: card.easeFactor,
         mode: "same-day-recap",
         schedulingApplied: false,
+        houseGrowth: {kind: grade > 0 ? 'learning' : 'none', day: today},
       },guard);
       // 回顧發現忘記，不假裝記憶無誤；交給正式回想確認，這裡不改間隔。
       if (grade === 0) await progressDb.cardStates.put({ ...card, practicePending: true });
@@ -197,6 +200,7 @@ export async function recordQuizAnswer(
         easeFactorAfter: after.easeFactor,
         mode,
         schedulingApplied: false,
+        houseGrowth: {kind: correct ? 'learning' : 'none', day: today},
       });
       await upsertCheckIn(today, !existing, sessionId);
       if (rewardId) await awardAnswer({id:rewardId,roundId:quizRoundId(sessionId),word,correct,source:'quiz',referenceId:String(logId),answeredAt:Date.now(),challenge:quizChallenge(mode)});

@@ -147,7 +147,7 @@ export default function DirectScreen() {
         <p className="direct-kicker">第 {s.index + 1} 題 · 答案已保存</p>
         <h2 id="direct-result-title">{a.correct ? '答對了' : '這題答錯了，再練一次'}</h2><p className="direct-answer-meaning">{q.options.find(o=>o.id===q.answer)?.text ?? q.answer}{q.targetMeaningZh && ` — ${q.targetMeaningZh}`}</p>
         {rewardWord ? <RewardReceipt answerId={`answer:direct:${a.id}`} roundId={rewardRound} word={rewardWord} correct={a.correct} /> : <p className="reward-note">本題題型尚未納入答題金幣，沒有新增金幣。</p>}
-        {townItem && <p role="status" className="direct-muted">這個字的小屋已落成。答錯或使用提示也算練過。</p>}
+        {townItem && <p role="status" className="direct-muted">學習紀錄已保存。首次不查提示答對可開始施工；後續成長要等到期成功複習。</p>}
         {q.sentenceEn && <><p>你的答案：{q.options.find(o=>o.id===a.choice)?.text ?? a.choice}</p><p>{q.sentenceEn}</p><p>{q.sentenceZh}</p></>}
         <p className="direct-muted">{a.hintUsed ? '本次作答使用過提示' : '本次作答未使用提示'}</p>
         {(q.sourceType === 'new_grammar_authored' || q.sourceType === 'original_usage_choice' ? q.options.filter(o=>o.id===q.answer) : q.options).map(o => {

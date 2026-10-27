@@ -1,5 +1,6 @@
 import type { ReviewLogEntry, WordRecord } from '../../db/types';
 import type { TownBinding } from './townStudy';
+import { houseGrowth, type HouseStage } from './houseGrowth';
 import { learningHistory, learningLabel, ORDINARY_TOWN_MODES } from './townLearningEvidence';
 import reviewedCards from '../vocabulary/lv1ReviewedImages.json';
 
@@ -16,6 +17,8 @@ export interface LV1TownItem {
 }
 
 export interface LV1TownWordProgress {
+  houseStage: HouseStage;
+  legacyHouse: boolean;
   item: LV1TownItem;
   attempted: boolean;
   firstCorrect: boolean;
@@ -51,7 +54,9 @@ export function getLV1TownProgress(items: readonly LV1TownItem[], logs: readonly
     const history = historyByItem.get(item.id) ?? [];
     const firstQuiz = history.find(log=>!ORDINARY_TOWN_MODES.has(log.mode));
     const latest = history.at(-1);
+    const growth=houseGrowth(history.map(log=>({id:`review:${log.id ?? `${log.sessionId}:${log.reviewedAt}`}`,at:Date.parse(log.reviewedAt),evidence:log.houseGrowth})));
     return {
+      houseStage:growth.stage, legacyHouse:growth.legacy,
       item,
       attempted: history.length > 0,
       firstCorrect: (firstQuiz?.grade ?? 0) > 0,

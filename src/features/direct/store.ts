@@ -1,4 +1,5 @@
 import { progressDb } from '../../db/progressDb';
+import { todayStr } from '../../lib/dates';
 import { questions, practiceQuestions as allQuestions, questionForMode, canonicalQuestionId, selectPracticeVariant, sessionMode, acceptsChoice, isCorrectAnswer, REVISION, validGroup, templateGroup } from './model';
 import type { CustomGroup, DirectSession, DirectAttempt, PracticeMode, UnitKey } from './model';
 import { contentDb } from '../../db/contentDb';
@@ -92,6 +93,7 @@ export async function submitAnswer(sessionId: string, questionId: string, reward
     const lookedUpWords = [...(s.lookups[questionId] ?? [])];
     const last = await progressDb.directAttempts.orderBy('answeredAt').last();
     const attempt: DirectAttempt = { id, sessionId, questionId, revision: REVISION, choice: s.choices[questionId], correct: isCorrectAnswer(q, s.choices[questionId]), firstAttempt: !(await progressDb.directAttempts.where('questionId').equals(questionId).count()), hintUsed: lookedUpWords.length > 0, lookedUpWords, answeredAt: Math.max(Date.now(), (last?.answeredAt ?? 0) + 1), schedulingApplied: false };
+    attempt.houseGrowth = {kind: attempt.correct && !attempt.hintUsed ? 'learning' : 'none', day: todayStr()};
     await progressDb.directAttempts.add(attempt);
     if (rewardWord) await awardAnswer({id:`answer:direct:${id}`,roundId:directRoundId(sessionId),word:rewardWord,
       correct:attempt.correct,source:'direct',referenceId:id,answeredAt:Date.now(),challenge:directChallenge(questionId)});

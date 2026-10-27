@@ -367,7 +367,7 @@ export default function QuizScreen() {
     {townAnswerSaved ? '回小鎮看小屋 →' : <>← 回小鎮<span className="trial-return-detail"> · 保留本輪進度</span></>}
   </Link>;
   const townLink = townScope && <div className="trial-town-return">
-    {townAnswerSaved && <p role="status">答案已保存，這個字的小屋已落成。答錯也算練過。</p>}
+    {townAnswerSaved && <p role="status">答案已保存。首次答對可開始施工；答錯不加蓋，也不拆屋。</p>}
     {townReturnAction}
     <p>本輪續答請留在同一分頁。</p>
   </div>;
@@ -379,7 +379,7 @@ export default function QuizScreen() {
   const activeNotes = <details key={`${sessionId.current}:${index}:${townAnswerSaved}`} className="trial-context-notes">
     <summary>本輪說明</summary>
     <p>目前辨認 {score} 字。{mode !== 'fill' && '換選項只會選取，再點同一選項才送出。'}</p>
-    {townScope && <p>{townAnswerSaved && '這個字的小屋已落成，答錯也算練過。'}本輪續答請留在同一分頁。</p>}
+    {townScope && <p>{townAnswerSaved && '學習紀錄已保存。'}本輪續答請留在同一分頁。</p>}
     {townEntry && <p className="trial-entry-scope">{total === 1 ? '小鎮選字入口 · 本輪一字一題'
       : singleWordScope ? `小鎮單屋 · 只練「${practicedWord}」這個字 · 本輪 ${total} 題` : `整單元範圍 · 本輪 ${total} 題`} · <Link to="/textbook/LV1/1">到課本選整單元範圍 →</Link></p>}
   </details>;

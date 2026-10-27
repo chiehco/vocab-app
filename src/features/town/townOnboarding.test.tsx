@@ -75,7 +75,7 @@ it.each(['LV1/1','LV4/17'] as const)('%s: main daily entry saves, returns to the
   await act(async()=>{const save=view.container.querySelector<HTMLButtonElement>('.seal-swipe-hint')!;save.click();save.click();});
   await view.waitFor(()=>expect(link('回小鎮看小屋 →')).toBeDefined());expect(await progressDb.reviewLogs.count()).toBe(1);
   const log=(await progressDb.reviewLogs.toArray())[0],card=await progressDb.cardStates.get(log.word),checkin=await progressDb.checkIns.get(log.reviewedAt.slice(0,10));
-  await view.click(link('回小鎮看小屋 →'));await view.waitFor(()=>expect(built()).toHaveLength(1));
+  await view.click(link('回小鎮看小屋 →'));await view.waitFor(()=>expect(button('再練這個字')).toBeDefined());expect(built()).toHaveLength(log.grade>0?1:0);
   const selected=view.container.querySelector('[aria-pressed=true][data-town-item]');expect(selected?.querySelector('.town-plot-word')?.textContent).toBe(log.word);
   await view.unmount();view=createComponentHarness();
   await view.render(<MemoryRouter initialEntries={[url]}><Flow /></MemoryRouter>);
@@ -115,8 +115,6 @@ it.each([true, false])('LV4: a saved answer (correct=%s) returns to the house wi
   const option = question.options.find(o => (o.id === question.answer) === correct)!;
   expect(view.container.querySelector('h1')?.textContent).not.toContain(question.targetWord);
   expect(view.container.querySelector('h1')?.textContent).not.toContain(question.targetMeaningZh);
-  await view.click(button(`${option.id} · ${option.text}`));
-  expect(await progressDb.directAttempts.count()).toBe(0);
   await act(async () => { const selected = button(`${option.id} · ${option.text}`)!; selected.click(); selected.click(); });
   await view.waitFor(() => expect(link('回小鎮看小屋 →')).toBeDefined());
   expect(view.container.querySelector('.direct-question-area')).toBeNull();
@@ -125,7 +123,8 @@ it.each([true, false])('LV4: a saved answer (correct=%s) returns to the house wi
   expect((await progressDb.rewardWallet.get('local'))?.balance).toBe(correct ? 5 : 1);
   const savedSession = await progressDb.directSessions.get(session.id);
   await view.click(link('回小鎮看小屋 →'));
-  await view.waitFor(() => expect(built()).toHaveLength(1));
+  await view.waitFor(() => expect(button('再練這個字')).toBeDefined());expect(built()).toHaveLength(correct?1:0);
+  expect(view.container.querySelector('[aria-pressed=true][data-town-item]')?.getAttribute('data-house-stage')).toBe(correct?'1':'0');
   expect(view.container.querySelector('[aria-pressed=true][data-town-item]')?.getAttribute('data-town-item')).toBe(TOWN_ITEMS[0].learningItemId);
   await view.click(link('繼續本輪補練 →'));
   await view.waitFor(() => expect(link('回小鎮看小屋 →')).toBeDefined());
@@ -153,7 +152,7 @@ it('LV4: cancelling resumes the choice and lookups, and lookup alone never build
   await view.waitFor(() => expect(link('回小鎮看小屋 →')).toBeDefined());
   expect((await progressDb.directAttempts.toArray())[0].hintUsed).toBe(true);
   await view.click(link('回小鎮看小屋 →'));
-  await view.waitFor(() => expect(built()).toHaveLength(1));
+  await view.waitFor(() => expect(button('再練這個字')).toBeDefined());expect(built()).toHaveLength(0);
 });
 
 it('LV4: failed persistence shows no success CTA and leaves the plot empty', async () => {
@@ -197,7 +196,7 @@ it.each([true, false])('LV1: saved Quiz answer (correct=%s) retains the exact ro
   const logs = await progressDb.reviewLogs.toArray();
   expect(logs[0]).toMatchObject({ word: 'boy', mode: 'quiz-w2m', grade: correct ? 2 : 0, schedulingApplied: false });
   await view.click(link('回小鎮看小屋 →'));
-  await view.waitFor(() => expect(built()).toHaveLength(1));
+  await view.waitFor(() => expect(button('再練這個字')).toBeDefined());expect(built()).toHaveLength(correct?1:0);
   expect(view.container.querySelector('[aria-pressed=true][data-town-item]')?.getAttribute('data-town-item')).toBe(LV1_TOWN_SOURCE_CARDS[0].id);
   await view.click(link('繼續本輪補練 →'));
   await view.waitFor(() => expect(link('回小鎮看小屋 →')).toBeDefined());
@@ -245,7 +244,7 @@ it.each([true, false])('LV1: browser Back restores an old pre-answer snapshot wi
   const savedCheckIns = await progressDb.checkIns.toArray();
   // The previous town history entry still contains the earlier unanswered snapshot.
   await view.click(view.container.querySelector('[data-testid=history-back]'));
-  await view.waitFor(() => expect(built()).toHaveLength(1));
+  await view.waitFor(() => expect(button('再練這個字')).toBeDefined());expect(built()).toHaveLength(correct?1:0);
   await view.click(link('繼續本輪補練 →'));
   await view.waitFor(() => expect(link('回小鎮看小屋 →')).toBeDefined());
   expect(view.container.querySelector('.trial-options')).toBeNull();

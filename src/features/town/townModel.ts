@@ -9,12 +9,15 @@ import {
 } from '../direct/model';
 import type { ReviewLogEntry } from '../../db/types';
 import type { TownBinding } from './townStudy';
+import { houseGrowth, type HouseStage } from './houseGrowth';
 import { learningHistory, learningLabel, ORDINARY_TOWN_MODES } from './townLearningEvidence';
 
 export const TOWN_UNIT = findUnit(17, 'LV4')!;
 export const TOWN_ITEMS = TOWN_UNIT.items.filter(item => item.kind === 'vocabulary');
 
 export interface TownWordProgress {
+  houseStage: HouseStage;
+  legacyHouse: boolean;
   item: LearningItem;
   /** A saved answer means practice happened; it does not prove recall or mastery. */
   attempted: boolean;
@@ -62,7 +65,9 @@ export function getTownProgress(attempts: readonly DirectAttempt[], logs: readon
     const learning = ordinary.get(item.learningItemId) ?? [];
     const lastLearning = learning.at(-1);
     const learningIsLatest = !!lastLearning && (!latest || Date.parse(lastLearning.reviewedAt) >= latest.answeredAt);
+    const growth=houseGrowth([...history.map(a=>({id:`direct:${a.id}`,at:a.answeredAt,evidence:a.houseGrowth})),...learning.map(log=>({id:`review:${log.id ?? `${log.sessionId}:${log.reviewedAt}`}`,at:Date.parse(log.reviewedAt),evidence:log.houseGrowth}))]);
     return {
+      houseStage:growth.stage, legacyHouse:growth.legacy,
       item,
       attempted: history.length + learning.length > 0,
       firstCorrect: !!first?.correct && !usedHint(first),

@@ -155,6 +155,13 @@ export interface CardState {
 
 export type Grade = 0 | 1 | 2 | 3; // Again / Hard / Good / Easy
 
+/** Captured with the answer transaction. Absence means legacy evidence, not
+ * an inferred successful review. Uses the scheduler's local calendar day. */
+export interface HouseGrowthEvidence {
+  kind: 'learning' | 'due-review' | 'none';
+  day: string;
+}
+
 export type ReviewMode =
   | "flashcard"
   | "same-day-recap"
@@ -166,6 +173,7 @@ export type ReviewMode =
   | "known";
 
 export interface ReviewLogEntry {
+  houseGrowth?: HouseGrowthEvidence;
   id?: number;
   word: string;
   reviewedAt: string;
