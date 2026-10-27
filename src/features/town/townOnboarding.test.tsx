@@ -271,19 +271,24 @@ it('an existing house remains one house after another wrong answer and survives 
   expect(view.container.textContent).toContain('最近一次還不熟');
 });
 
-it('LV4: switching options only selects, and the second activation saves the final choice', async () => {
+it('LV4: one activation saves the first choice without advancing or issuing duplicate rewards', async () => {
   const session = await openTownDirectPractice(TOWN_ITEMS[0].learningItemId);
   const q = practiceQuestions.find(q => q.questionId === session.questionIds[0])!;
   await view.render(<MemoryRouter initialEntries={[`/practice/direct?session=${session.id}&town=LV4`]}><Flow /></MemoryRouter>);
   await view.waitFor(() => expect(view.container.querySelectorAll('.direct-option')).toHaveLength(4));
   const [first, second] = [...view.container.querySelectorAll<HTMLButtonElement>('.direct-option')];
+  const ledgerBefore = await progressDb.rewardLedger.count();
+  const balanceBefore = (await progressDb.rewardWallet.get('local'))?.balance ?? 0;
   await act(async () => { first.click(); second.click(); });
-  expect(second.getAttribute('aria-pressed')).toBe('true');
-  expect(first.getAttribute('aria-pressed')).toBe('false');
-  expect(await progressDb.directAttempts.count()).toBe(0);
-  await view.click(second);
   await view.waitFor(() => expect(view.container.querySelector('.direct-answer-feedback')).not.toBeNull());
-  expect((await progressDb.directAttempts.toArray())[0].choice).toBe(q.options[1].id);
+  const saved = await progressDb.directAttempts.toArray();
+  expect(saved).toHaveLength(1);
+  expect(saved[0].choice).toBe(q.options[0].id);
+  expect(saved[0].firstAttempt).toBe(true);
+  await view.click(second);
+  expect(await progressDb.directAttempts.toArray()).toEqual(saved);
+  expect(await progressDb.rewardLedger.count()).toBe(ledgerBefore + 1);
+  expect((await progressDb.rewardWallet.get('local'))?.balance).toBe(balanceBefore + (q.options[0].id === q.answer ? 5 : 1));
   expect((await progressDb.directSessions.get(session.id))?.index).toBe(0);
 });
 
