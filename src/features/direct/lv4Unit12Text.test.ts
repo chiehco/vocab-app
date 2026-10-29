@@ -31,8 +31,7 @@ for (const [source, count, usageCount, mappedCount] of [[source1, 102, 33, 83], 
   it(`LV4 U${source.unit} keeps the checked scope, source meanings and nullable identities`, () => {
     expect(unit.deliveryMode).toBe('text_only');
     const published = textbookUnits.find(u => u.level === 'LV4' && u.unit === source.unit);
-    if (source.unit === 2) expect(published).toBeUndefined();
-    else expect(published).toMatchObject({ count, usageCount });
+    expect(published).toMatchObject({ count, usageCount });
     expect(vocabulary.map(i => [i.displayWord, i.sourcePage, i.sensePos, i.chapterMeaningsZh, i.officialWordId]))
       .toEqual(rows.map(i => [i.word, i.sourcePage, i.sourcePos, i.chapterMeaningsZh, i.officialWordId]));
     expect(vocabulary.slice(0, source.headwordOrder.length).map(i => i.displayWord)).toEqual(source.headwordOrder);
@@ -101,7 +100,7 @@ it('preserves the separate p5 research frames, printed century note and p19 atmo
   expect(findUnit(2, 'LV4')!.items.find(i => i.displayWord === 'atmosphere'))
     .toMatchObject({ sourcePage: 19, targetMeaningZh: '大氣；空氣；氛圍', chapterMeaningsZh: '大氣；空氣；氛圍' });
   expect(siegeUnitWords('LV4', 2, []).find(([word]) => word === 'ATMOSPHERE')?.[1]).toBe('大氣；空氣；氛圍');
-  expect(source2.boundaryEvidence.notesConfirmationStatus).toBe('pending_original_user_message_or_full_photo');
+  expect(source2.boundaryEvidence.notesConfirmationStatus).toBe('confirmed_blank_notes_by_owner');
 });
 
 it('content refresh preserves all 14 nonempty progress tables, SRS, town rewards, decorations and personal groups', async () => {

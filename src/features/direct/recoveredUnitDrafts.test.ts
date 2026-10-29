@@ -111,7 +111,7 @@ describe('historical recovered-page drafts and accepted candidate integration', 
       expect(accepted.deliveryMode).toBe('text_only');
     }
     expect(unitReleaseHold('LV6', 21)).toBeUndefined();
-    expect(unitReleaseHold('LV4', 2)?.status).toBe('source_page_pending');
+    expect(unitReleaseHold('LV4', 2)).toBeUndefined();
     expect(plan.releaseHoldUnchanged).toBe(true);
     for (const { draft } of units) {
       expect(draft.releaseReview).toMatchObject({ status: 'pending_owner_data_release', registered: false, holdChange: false, publicDataChange: false });

@@ -33,8 +33,8 @@ function stable(value: unknown): unknown {
 
 it('preserves the former Ivy identities, adds three accepted units and retains all full public datasets', () => {
   const ivy = textbookUnits.filter(u => u.publisher === 'ivy');
-  expect(ivy).toHaveLength(138);
-  expect(new Set(ivy.map(unitKey)).size).toBe(138);
+  expect(ivy).toHaveLength(139);
+  expect(new Set(ivy.map(unitKey)).size).toBe(139);
   for (const u of ivy) expect(unitKey(u)).toBe(`7000.ivy.${u.level}.${u.unit}`);
   for (const file of readdirSync('public/data/v1')) {
     if (!file.endsWith('.json') || file === 'sa-pack.json') continue;

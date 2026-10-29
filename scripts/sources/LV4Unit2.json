@@ -2079,9 +2079,15 @@
   "boundaryEvidence": {
     "nextUnitPage": 23,
     "notesPage": 22,
-    "notesReview": "pending: p22 original photo absent; older assistant summaries mention user confirmation but do not supply a traceable original user message; no content inferred",
+    "notesReview": "The owner checked the physical LV4 book and confirmed printed p22 is a blank Notes page on 2026-10-29. Content remains p11-21; p23 begins Unit03. No complete p22 photograph is claimed.",
     "nextUnitPhoto": "C:\\Users\\USER\\Downloads\\Mobile Devices\\LV1\\LV4\\20260814_044154.jpg",
-    "notesConfirmationStatus": "pending_original_user_message_or_full_photo"
+    "notesConfirmationStatus": "confirmed_blank_notes_by_owner",
+    "notesConfirmationEvidence": {
+      "kind": "owner_physical_book_confirmation",
+      "confirmedAtUtc": "2026-10-29T14:18:00Z",
+      "pageType": "blank_notes",
+      "fullPagePhotograph": false
+    }
   },
   "transcriptionSources": [
     {
@@ -2109,7 +2115,8 @@
     "Terra draft incorrectly labels p20-21 as Unit03; printed Level4 Unit02 continues through numbered 30. Atmosphere starts p19; do not duplicate p20 continuation.",
     "Independent blue headwords with their own examples are retained as unnumbered_headword; smaller related words are supplements.",
     "No textbook examples, unapproved image captions, illustrations, or questions adopted.",
-    "Independent QA P2: p19 replacement photo prints 氛圍, not 氣圍. p22 remains pending: prior assistant summaries are not sufficient proof of a user confirmation or of the complete page."
+    "Historical QA on 2026-10-14: p19 replacement photo prints 氛圍, not 氣圍. At that time p22 remained evidence-pending because prior assistant summaries did not provide an original owner confirmation or complete photo.",
+    "2026-10-29 correction: the owner confirmed p22 is a blank Notes page. The former evidence-pending condition is resolved; no p22 content is inferred and all existing p11-21 text and learning-item IDs are retained."
   ],
   "excludedExamples": true,
   "unmappedPolicy": "retain_checked_textbook_meanings_for_reading_without_invented_word_or_sense_ids"

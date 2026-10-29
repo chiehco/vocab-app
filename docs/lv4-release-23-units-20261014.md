@@ -1,5 +1,7 @@
 # LV4 23-unit release preparation
 
+> 2026-10-29訂正：使用者已查閱實體LV4書並確認p22為空白筆記頁，原空頁確認缺口已解決，不再要求補拍。本文下方pending／23單元描述保留為2026-10-14歷史狀態；本批入口修正與驗收見 [本次訂正](lv4-u2-notes-confirmation-20261029.md)。
+
 LV4 publishes Unit 01 and Units 03–24. Unit 02 remains held because the complete p22 source photograph or traceable original confirmation is still missing. Its checked p11–21 data, all 164 learning-item IDs and existing personal groups remain available to compatibility and backup validation.
 
 The shared public-entry policy removes held U2 from textbook tiles, vocabulary options and new group templates/search. Its old textbook, vocabulary and siege URLs display the p22 pending message and a return link, without silently opening another unit. Previously saved groups retain their contents and order and can continue ordinary dictionary practice.

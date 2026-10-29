@@ -1,5 +1,7 @@
 # LV4 U1–U2 文字教材候選
 
+> 2026-10-29訂正：使用者已查閱實體LV4書並確認p22為空白筆記頁，原空頁確認缺口已解決，不再要求補拍。本文下方pending／23單元描述保留為2026-10-14歷史狀態；本批入口修正與驗收見 [本次訂正](lv4-u2-notes-confirmation-20261029.md)。
+
 基底：`03cebe42444eef66e26a7f7d1e8be83979ca32c6`。独立 checkout：`C:/Users/USER/Documents/Codex/2026-10-14/task/vocab-app-lv4-local`，分支 `draft/lv4-u1-u2-textbook`。本批完成后交父任务独立QA；PR、合併及部署由父任务集中處理。
 
 | 項目 | U1 | U2 |

@@ -22,17 +22,17 @@ afterEach(async () => {
 });
 
 it.each([
-  ['/textbook/LV4/2', '/textbook/:level/:unit', <TextbookScreen key="textbook" />],
-  ['/vocabulary?level=LV4&unit=2', '/vocabulary', <VocabularyScreen key="vocabulary" />],
-  ['/arena/word-siege?level=LV4&unit=2', '/arena/word-siege', <SiegeScreen key="siege" />],
-] as const)('keeps unrelated LV4 U2 source pending at %s without falling back or creating progress', async (url, path, screen) => {
+  ['/textbook/LV4/2', '/textbook/:level/:unit', <TextbookScreen key="textbook" />, '一般單字練習（102 詞）'],
+  ['/vocabulary?level=LV4&unit=2', '/vocabulary', <VocabularyScreen key="vocabulary" />, '127 個詞彙、37 項用法與搭配'],
+  ['/arena/word-siege?level=LV4&unit=2', '/arena/word-siege', <SiegeScreen key="siege" />, '個可玩單字'],
+] as const)('opens source-confirmed LV4 U2 at %s without learning or reward side effects', async (url, path, screen, expected) => {
+  await contentDb.words.bulkPut(pack.words as unknown as WordRecord[]);
   await view.render(<MemoryRouter initialEntries={[url]}><Routes><Route path={path} element={screen} /></Routes></MemoryRouter>);
-  await view.waitFor(() => expect(view.container.textContent).toContain('p22 完整來源待補'));
-  expect(view.container.querySelector('a[href="/textbook?level=LV4"]')).not.toBeNull();
-  expect(view.container.querySelector('.vocab-card')).toBeNull();
+  await view.waitFor(() => expect(view.container.textContent).toContain(expected));
+  expect(view.container.textContent).not.toContain('p22 完整來源待補');
   expect(view.container.querySelector('iframe')).toBeNull();
   expect(view.container.textContent).not.toContain('LV6 Unit 1');
-  expect(await Promise.all(progressDb.tables.map(table => table.count()))).toEqual(progressDb.tables.map(() => 0));
+  for (const table of progressDb.tables.filter(t => t.name !== 'settings')) expect(await table.count()).toBe(0);
 });
 
 it.each([
