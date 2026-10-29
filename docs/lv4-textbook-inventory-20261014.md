@@ -1,5 +1,7 @@
 # LV4 文字教材工作線盤點
 
+> 2026-10-29訂正：使用者已查閱實體LV4書並確認p22為空白筆記頁，原空頁確認缺口已解決，不再要求補拍。本文下方pending／23單元描述保留為2026-10-14歷史狀態；本批入口修正與驗收見 [本次訂正](lv4-u2-notes-confirmation-20261029.md)。
+
 主線與遠端分支於 2026-10-13 UTC 直接透過 GitHub API 核對。main 為 `03cebe42444eef66e26a7f7d1e8be83979ca32c6`；遠端全部 19 個分支無 LV4 新文字教材分支。通用名 `prep/ivy-unit-batch-20261009` 也另外核對了 direct 目錄，LV4 只有既有 U17–20。本機 U18／U19／U20 分支內容已在 main，沒有重做。main 的 LV4 教材登錄是 U17–20。
 
 独立 clone：`C:/Users/USER/Documents/Codex/2026-10-14/task/vocab-app-lv4-local`。第一批分支 `draft/lv4-u1-u2-textbook`。這個 clone 的 origin refs 是來源本機快照；最新遠端 main 證據另以 GitHub API 核對，不能用舊 origin/main 代替。

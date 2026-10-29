@@ -1,5 +1,7 @@
 # LV4 U1／U2 來源QA修補候選
 
+> 2026-10-29訂正：使用者已查閱實體LV4書並確認p22為空白筆記頁，原空頁確認缺口已解決，不再要求補拍。本文下方pending／23單元描述保留為2026-10-14歷史狀態；本批入口修正與驗收見 [本次訂正](lv4-u2-notes-confirmation-20261029.md)。
+
 基底固定 `03bd97ab14e7a2df30b843bdd4ad8996a10ec5b4`；獨立分支 `fix/lv4-u1-u2-source-qa`；checkout `C:/Users/USER/Documents/Codex/2026-10-14/task/vocab-app-lv4-local`。U3–U10各批固定分支／commit保存，本修補不混入後批教材。父任務負責獨立重驗、PR、合併與部署。
 
 ## 來源修正

@@ -28,9 +28,9 @@ it('retains the 42 former units, adds the two recovered LV3 units and keeps rema
 
 it('keeps released LV4/LV5 identities, the LV4 U2 hold, and the ordinary prohibition noun', () => {
   expect(curriculumUnits.filter(row => row.level === 'LV4').map(row => row.unit)).toEqual(Array.from({ length: 24 }, (_, n) => n + 1));
-  expect(textbookUnits.filter(row => row.level === 'LV4').map(row => row.unit)).toEqual([1, ...Array.from({ length: 22 }, (_, n) => n + 3)]);
+  expect(textbookUnits.filter(row => row.level === 'LV4').map(row => row.unit)).toEqual(Array.from({ length: 24 }, (_, i) => i + 1));
   expect(curriculumUnits.filter(row => row.level === 'LV5').map(row => row.unit)).toEqual(lv5Baseline.lv5Units);
-  expect(unitReleaseHold('LV4', 2)?.status).toBe('source_page_pending');
+  expect(unitReleaseHold('LV4', 2)).toBeUndefined();
   expect(findUnit(16, 'LV5')?.items.find(item => item.learningItemId === 'LI-LV5U16-V064'))
     .toMatchObject({ displayWord: 'prohibition', officialWordId: null, sensePos: 'vt.', practiceMode: 'read_only' });
   expect(pack.words.find(word => word.wordId === 'W005711')).toMatchObject({ word: 'prohibition', pos: 'n.' });

@@ -33,14 +33,14 @@ it('keeps every former starter payload and adds the three recovered text units',
   }
   const catalogKeys = new Set(textbookUnits.map(unit => `${unit.level}:${unit.unit}`));
   expect(baseline.mainPublicUnitKeys.every(key => catalogKeys.has(key))).toBe(true);
-  expect(textbookUnits.filter(unit=>unit.publisher==='ivy')).toHaveLength(baseline.mainPublicUnitKeys.length + baseline.lv6Units.length + 3);
+  expect(textbookUnits.filter(unit=>unit.publisher==='ivy')).toHaveLength(baseline.mainPublicUnitKeys.length + baseline.lv6Units.length + 4);
   expect(textbookUnits.filter(unit => unit.level === 'LV6').map(unit => unit.unit)).toEqual(Array.from({length:25}, (_, i) => i + 1));
   expect(curriculumUnits.filter(unit => unit.level === 'LV6')).toHaveLength(25);
   expect(findUnit(21, 'LV6')?.deliveryMode).toBe('text_only');
   expect(unitReleaseHold('LV6', 21)).toBeUndefined();
-  expect(textbookUnits.filter(unit => unit.level === 'LV4')).toHaveLength(23);
+  expect(textbookUnits.filter(unit => unit.level === 'LV4')).toHaveLength(24);
   expect(textbookUnits.filter(unit => unit.level === 'LV5')).toHaveLength(18);
-  expect(unitReleaseHold('LV4', 2)?.message).toContain('p22 完整來源待補');
+  expect(unitReleaseHold('LV4', 2)).toBeUndefined();
 });
 
 it('bootstraps all former main identities and every accepted LV6 mapping from the starter alone', async () => {

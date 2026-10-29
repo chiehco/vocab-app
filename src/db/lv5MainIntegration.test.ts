@@ -15,13 +15,13 @@ afterEach(async () => {
 
 it('adds only the eighteen accepted LV5 units while keeping main LV4 and its saved hidden U2 identities', () => {
   expect(textbookUnits.filter(u => u.level === 'LV4').map(u => u.unit))
-    .toEqual([1, ...Array.from({ length: 22 }, (_, i) => i + 3)]);
+    .toEqual(Array.from({ length: 24 }, (_, i) => i + 1));
   expect(curriculumUnits.filter(u => u.level === 'LV4')).toHaveLength(24);
   expect(textbookUnits.filter(u => u.level === 'LV5').map(u => u.unit)).toEqual(baseline.lv5Units);
   expect(curriculumUnits.filter(u => u.level === 'LV5').map(u => u.unit)).toEqual(baseline.lv5Units);
   expect(findUnit(2, 'LV4')!.items.map(i => i.learningItemId)).toEqual(baseline.mainU2ItemIds);
   expect(validGroup({ ...templateGroup(2, 'LV4'), itemIds: [...baseline.mainU2ItemIds].reverse() })).toBe(true);
-  expect(unitReleaseHold('LV4', 2)?.status).toBe('source_page_pending');
+  expect(unitReleaseHold('LV4', 2)).toBeUndefined();
   for (const [dataset, count] of Object.entries(baseline.packCounts)) {
     expect(pack[dataset as keyof typeof baseline.packCounts].length).toBeGreaterThanOrEqual(count);
   }
