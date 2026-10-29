@@ -99,7 +99,7 @@ it('keeps independent original printed labels and phrases',()=>{
 });
 it('registers the printed LV1 unit while preserving formal LV3 and LV4 entries',()=>{
  expect(textbookUnits.find(u=>u.level==='LV1'&&u.unit===16)).toMatchObject({volume:'LV1',track:'7000',publisher:'ivy',partial:false});
- expect(textbookUnits.filter(u=>u.level==='LV3').map(u=>u.unit)).toEqual([1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 19, 20, 21, 22, 23, 24]);
+ expect(textbookUnits.filter(u=>u.level==='LV3').map(u=>u.unit)).toEqual([1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]);
  expect(textbookUnits.filter(u=>u.level==='LV4').map(u=>u.unit)).toEqual([1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]);
 });
 

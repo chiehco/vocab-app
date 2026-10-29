@@ -33,9 +33,9 @@ beforeEach(async()=>{
 afterEach(async()=>{await view.unmount();await contentDb.delete();await progressDb.delete();});
 const start=()=>[...view.container.querySelectorAll('button')].find(button=>button.textContent?.includes('一般單字練習'));
 
-it('waits for all 78 LV6 IDs before allowing practice after the 5052→5728 content refresh',async()=>{
+it('waits for all 78 LV6 IDs before allowing practice after the former-main→current-starter content refresh',async()=>{
   expect(snapshot.words).toHaveLength(5052); expect(newlyInstalledId).toBeTruthy();
-  expect(await contentDb.words.count()).toBe(5728);
+  expect(await contentDb.words.count()).toBe(pack.words.length);
   expect(start()?.disabled).toBe(true); expect(start()?.textContent).toContain('準備中');
   await view.click(start()); expect(await progressDb.settings.count()).toBe(0);
   snapshot.words=pack.words as unknown as WordRecord[]; await view.render(screen());

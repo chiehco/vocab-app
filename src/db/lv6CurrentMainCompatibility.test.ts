@@ -39,7 +39,7 @@ afterEach(async () => {
   await contentDb.delete();
 });
 
-it('preserves all 13 nonempty v4 tables through v5 upgrade, actual 5052→5728 update, all-14-table backup and offline reopen', async () => {
+it('preserves all 13 nonempty v4 tables through v5 upgrade, former-main→current-starter update, all-14-table backup and offline reopen', async () => {
   const name = `lv6-current-main-${crypto.randomUUID()}`;
   const legacy = new Dexie(name); connections.push(legacy);
   legacy.version(4).stores(schema);
@@ -89,7 +89,7 @@ it('preserves all 13 nonempty v4 tables through v5 upgrade, actual 5052→5728 u
   const beforeBackup = await exportProgress(db); expect(validateBackup(beforeBackup)).toBeNull();
   if (process.env.LV6_AUDIT_OUTPUT) writeFileSync(process.env.LV6_AUDIT_OUTPUT, JSON.stringify({schema, legacy:beforeUpgrade, v5:beforeRefresh, backup:beforeBackup}));
   incoming = pack; await refreshInstalledContent();
-  expect(await contentDb.words.count()).toBe(5728);
+  expect(await contentDb.words.count()).toBe(pack.words.length);
   expect(await snapshot(db)).toEqual(beforeRefresh);
   expect((await db.rewardWallet.get('local'))?.balance).toBe(0);
   expect(await db.townDecorations.count()).toBe(2);
@@ -97,7 +97,7 @@ it('preserves all 13 nonempty v4 tables through v5 upgrade, actual 5052→5728 u
   db.close(); contentDb.close();
   vi.stubGlobal('fetch', vi.fn(async () => { throw new TypeError('offline'); }));
   await db.open(); await contentDb.open(); await ensureContentAvailable(); await refreshInstalledContent();
-  expect(await contentDb.words.count()).toBe(5728);
+  expect(await contentDb.words.count()).toBe(pack.words.length);
   expect(await snapshot(db)).toEqual(beforeRefresh);
   const v8 = await exportProgress(db);
   expect(v8.schemaVersion).toBe(8); expect(validateBackup(v8)).toBeNull();
