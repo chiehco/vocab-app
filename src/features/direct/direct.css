@@ -15,6 +15,7 @@
 .direct-page h3 { margin: var(--ui-sp-4) 0 var(--ui-sp-2); font-size: var(--ui-fs-body); font-weight: 700; }
 .direct-kicker { margin-top: var(--ui-sp-4); color: var(--ui-muted); font-size: var(--ui-fs-label); font-weight: 600; letter-spacing: .06em; }
 .direct-muted { margin: var(--ui-sp-3) 0; color: var(--ui-muted); font-size: var(--ui-fs-secondary); }
+.direct-answer-explanation > summary { min-height: var(--ui-tap); align-content: center; cursor: pointer; font-weight: 600; }
 .direct-page [role="alert"] { margin: var(--ui-sp-3) 0; color: var(--ui-danger); font-weight: 600; }
 .direct-page [role="status"] { color: var(--ui-muted); }
 .direct-page a { color: var(--ui-accent); text-underline-offset: 4px; }
@@ -175,3 +176,20 @@
 .direct-answer-feedback .direct-answer-meaning { font-size:var(--ui-fs-subtitle); font-weight:600; }
 .direct-feedback-actions { display:flex; flex-wrap:wrap; gap:10px; margin:14px 0; }
 .direct-feedback-actions a,.direct-feedback-actions button { display:flex; align-items:center; justify-content:center; flex:1; min-width:120px; min-height:48px; padding:12px; border:1px solid var(--ui-accent); border-radius:10px; background:var(--ui-accent); color:var(--ui-on-accent); text-decoration:none; font-weight:600; }
+.direct-practice-page { padding-top:16px; }
+.direct-practice-heading { display:flex; align-items:center; justify-content:space-between; gap:12px; margin:12px 0; }
+.direct-practice-heading > div { min-width:0; }
+.direct-practice-heading .direct-kicker { margin:0; }
+.direct-practice-heading h1 { margin:4px 0 0; font-size:clamp(1.5rem,5vw,2rem); }
+.direct-practice-heading .direct-sound-toggle { flex:none; font-size:var(--ui-fs-secondary); padding:8px 10px; }
+.direct-practice-page .direct-scope { margin:8px 0; }
+.direct-practice-page .direct-modes { margin:8px 0; }
+.direct-practice-page .direct-question-area { margin:16px 0; padding:16px; border:1px solid var(--ui-border); border-radius:var(--ui-radius-card); background:var(--ui-surface); }
+.direct-practice-page .direct-stem { margin:10px 0 16px; font-size:var(--ui-fs-subtitle); }
+.direct-practice-page .direct-option-explanation { padding:12px 0; border-top:1px solid var(--ui-border); }
+.direct-practice-page .direct-option-explanation p { margin:6px 0; }
+.direct-option-meaning { color:var(--ui-muted); font-size:var(--ui-fs-secondary); }
+.direct-option-tag { display:inline-block; margin-left:8px; padding:1px 6px; border:1px solid var(--ui-border-strong); border-radius:5px; color:var(--ui-accent); font-size:var(--ui-fs-label); }
+.direct-secondary { margin:20px 0; }
+.direct-practice-page footer { border-top:1px solid var(--ui-border); margin-top:20px; padding-top:12px; }
+@media(max-width:420px) { .direct-practice-page { padding-right:14px; padding-left:14px; } .direct-practice-page .direct-question-area { padding:12px; } }

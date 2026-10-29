@@ -27,7 +27,7 @@ export default function StudyIllustration({ src, word, caption, senseLabel, show
     <figure className="study-illustration">
       <IllustrationImage key={src} src={src} alt={pair?.zh || `${word} 的情境圖`} />
       {pair && <figcaption>
-        {showSenseLabel && <small>圖片／圖說對應：{senseLabel ?? '義項未連結'}</small>}
+        {showSenseLabel && <small>{senseLabel ? `圖片／圖說對應：${senseLabel}` : '圖說'}</small>}
         {pair.en && <p className="illustration-caption-en" lang="en">{pair.en}</p>}
         <p lang="zh-Hant">{pair.zh}</p>
       </figcaption>}

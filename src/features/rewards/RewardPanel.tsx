@@ -53,7 +53,9 @@ export default function RewardPanel({roundId,roundPreview,compact=false,resetKey
         <span>{correctWords.size} / {rule.words} 字</span></label>
         <progress id={`reward-time-${roundId}`} max={rule.windowMs/1000} value={seconds ?? rule.windowMs/1000} aria-label="本輪加成剩餘時間" aria-valuetext={seconds===undefined ? '第一題客觀題呈現起計時' : `剩餘 ${seconds} 秒`}/>
       </div>}
-    </> : <><div className="reward-wallet-row"><p>遊戲金幣 <strong>{data ? data.wallet?.balance ?? 0 : '…'}</strong></p>{claimButton}</div>{explanation}</>}
+    </> : <><div className="reward-wallet-row"><p>遊戲金幣 <strong>{data ? data.wallet?.balance ?? 0 : '…'}</strong></p>{claimButton}</div>
+      <details key={resetKey ?? roundId} className="reward-explanation"><summary>領取說明</summary><div>{explanation}</div></details>
+    </>}
     {error && <p role="alert">{error}</p>}
   </section>;
 }

@@ -133,6 +133,7 @@ export default function UnitStudyScreen() {
     ? { ...selectedExample, sentenceEn: 'Doudou walks across a stone bridge.', sentenceZh: '牠走過一座石橋。' }
     : selectedExample;
   const image = getWordBeastAsset(word.wordId, word.word, word.imageWordId);
+  const exampleSense = linkedSenseLabel(word, currentDetails?.senses ?? [], example?.senseId);
   const progress = ((index + 1) / unit.words.length) * 100;
 
   return (
@@ -173,7 +174,7 @@ export default function UnitStudyScreen() {
           {example && (
             <section className="unit-study-example" aria-labelledby="unit-example-title">
               <p id="unit-example-title">例句</p>
-              <small>例句對應：{linkedSenseLabel(word, currentDetails?.senses ?? [], example.senseId) ?? '義項未連結'}</small>
+              <small>{exampleSense ? `例句對應：${exampleSense}` : '例句'}</small>
               <blockquote>{example.sentenceEn}</blockquote>
               {example.sentenceZh && <span>{example.sentenceZh}</span>}
             </section>

@@ -28,6 +28,7 @@ export default function TownScreen() {
   return <TownView level="LV4" unit={17} study={data.study} onStudy={async()=>navigate(townStudyUrl(await startTownStudy('LV4/17')))} rows={getTownProgress(data.attempts, data.logs, data.scope.bindings).map(row => ({
     id: row.item.learningItemId, word: row.item.displayWord ?? '', meaning: row.item.targetMeaningZh ?? '',
     attempted: row.attempted, latestCorrect: row.latestCorrect, latestHintUsed: row.latestHintUsed, latestLearningLabel:row.latestLearningLabel,
+    houseStage:row.houseStage, legacyHouse:row.legacyHouse,
   }))} onPractice={async id => {
     const session = await openTownDirectPractice(id);
     navigate(`/practice/direct?session=${encodeURIComponent(session.id)}&town=LV4`);

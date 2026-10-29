@@ -32,10 +32,13 @@ it('shows only pages that have content, card page first', () => {
   expect(tabs(render([], [{ ...phrase, noteId: 'N2', noteType: 'usage' }]))).toEqual(['字卡', '字義', '記憶法']);
 });
 
-it('card page carries the word, a basic example and a next-page button, but not the detail sections', () => {
+it('card page keeps tab navigation and a neutral unlinked example without a redundant next-page control', () => {
   const html = render([example], [phrase]);
   expect(html).toContain('This is a basic sentence.');
-  expect(html).toContain('下一頁：字義 →');
+  expect(tabs(html)).toEqual(['字卡', '字義', '搭配']);
+  expect(html).toContain('<small>例句</small>');
+  expect(html).not.toContain('義項未連結');
+  expect(html).not.toContain('下一頁：');
   expect(html).not.toContain('詳細資料');
   expect(html).not.toContain('<h2>字義</h2>');
   expect(html).not.toContain('片語與文法');

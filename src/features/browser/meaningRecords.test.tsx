@@ -12,7 +12,8 @@ it('shows all recorded senses across POS without exam/default selection or sourc
  const rows=[sense(1,'v.',{isExamSense:true}),sense(2)];const before=JSON.stringify(rows);
  const html=render(rows);expect(html).toContain('字義1');expect(html).toContain('字義2');
  expect(recordedMeanings(word,rows).map(r=>r.key)).toEqual(['W999101-2','W999101-1']);expect(JSON.stringify(rows)).toBe(before);
- expect(html).toContain('原始摘要；未拆分內容');expect(html).toContain('其他義項可能尚未整理');
+ expect(html).toContain('原始摘要；未拆分內容');expect(html).toContain('字義 · n. v.');
+ expect(html).not.toContain('其他義項可能尚未整理');expect(html).not.toContain('尚未逐義整理');
 });
 it('keeps the whole unsplit summary for zero senses and does not hide a single sense',()=>{
  expect(render([])).toContain('原始摘要；未拆分內容');expect(render([sense(1)])).toContain('字義1');

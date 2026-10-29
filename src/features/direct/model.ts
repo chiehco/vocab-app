@@ -269,7 +269,7 @@ export const unitItems = (unit: UnitKey, level?: string): LearningItem[] => find
 export const REVISION = '20260912-1';
 export interface PracticeQuestion {
   questionId: string; learningItemId?: string; sourceType: string; targetWord: string; targetMeaningZh: string;
-  stem: string; options: {id:string;text:string;rationaleZh:string}[]; answer: string;
+  stem: string; options: {id:string;text:string;rationaleZh:string;meaningZh?:string}[]; answer: string;
   sentenceEn?: string; sentenceZh?: string; answerForms?: string[];
 }
 // Units that ship their own cloze/choice questions (LV4 Unit 17) are used as-is; LV3 cloze questions are derived from items.
@@ -294,7 +294,7 @@ export function acceptsChoice(q: PracticeQuestion, value: string | undefined) {
 }
 export interface CustomGroup { id: string; name: string; itemIds: string[]; wordIds?: string[]; templateId: string | null; templateRevision: string | null; updatedAt: number }
 export interface DirectSession { id: string; questionIds: string[]; index: number; choices: Record<string, string>; lookups: Record<string, string[]>; startedAt: number; updatedAt: number; revision: string; title?: string; groupId?: string; scopeQuestionIds?: string[] }
-export interface DirectAttempt { id: string; sessionId: string; questionId: string; revision: string; choice: string; correct: boolean; firstAttempt: boolean; hintUsed: boolean; lookedUpWords: string[]; answeredAt: number; schedulingApplied: false }
+export interface DirectAttempt { id: string; sessionId: string; questionId: string; revision: string; choice: string; correct: boolean; firstAttempt: boolean; hintUsed: boolean; lookedUpWords: string[]; answeredAt: number; schedulingApplied: false; houseGrowth?: import('../../db/types').HouseGrowthEvidence }
 export function templateGroup(unit: UnitKey = 1, level?: string): CustomGroup {
   const u = findUnit(unit, level);
   if (!u) throw new Error('找不到這個教材單元');
@@ -320,7 +320,7 @@ export function questionForMode(id: string, mode: PracticeMode) {
 // Original IDs remain the spelling records; recognition uses independent IDs.
 export const choiceQuestions: PracticeQuestion[] = allQuestions.filter(q => !q.options.length && q.questionId in choiceOptions).map(q => {
   const entries = choiceOptions[q.questionId as keyof typeof choiceOptions];
-  const options = entries.map((o, index) => ({id: 'ABCD'[index], text: o.text, rationaleZh: o.text + '：' + o.meaningZh}));
+  const options = entries.map((o, index) => ({id: 'ABCD'[index], text: o.text, meaningZh: o.meaningZh, rationaleZh: o.text + '：' + o.meaningZh}));
   return {...q, questionId: BASIC_PREFIX + q.questionId, learningItemId: undefined, sourceType: 'original_target_word_choice', options, answer: options.find(o => normalizeAnswer(o.text) === normalizeAnswer(q.answer))!.id};
 });
 // Additive, immutable IDs keep saved sessions and old explanations readable.
@@ -332,7 +332,7 @@ export const variantQuestions: PracticeQuestion[] = practiceVariants.flatMap((v,
   const offset = (index % 2 + 1) % originalChoice.options.length;
   const entries = [...originalChoice.options.slice(offset), ...originalChoice.options.slice(0, offset)];
   const options = entries.map((o, i) => ({
-    id: 'ABCD'[i], text: o.text,
+    id: 'ABCD'[i], text: o.text, meaningZh: o.meaningZh,
     rationaleZh: o.id === originalChoice.answer ? `${v.targetWord}：${v.targetMeaningZh}。${v.sentenceZh}`
       : o.rationaleZh.replace('不符合本題指定字義', '不符合本句情境'),
   }));

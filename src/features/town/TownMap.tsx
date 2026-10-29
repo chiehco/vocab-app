@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import TownBuilding from './TownBuilding';
+import { HOUSE_STAGE_LABELS, type HouseStage } from './houseGrowth';
 import { fitTownLayout, getTownLayout, TOWN_PLOT_SIZE } from './townLayout';
 import { Link } from 'react-router-dom';
 import { useLiveQuery } from 'dexie-react-hooks';
@@ -9,7 +10,7 @@ import PlazaDecorations from './decorations/PlazaDecorations';
 import './decorations/decorations.css';
 
 export default function TownMap({ plots, selectedId, onSelect, label, focusOnMount = false, town }: {
-  plots: { id: string; word: string; built: boolean }[];
+  plots: { id: string; word: string; built: boolean; stage?:HouseStage }[];
   selectedId: string;
   onSelect: (id: string) => void;
   label: string;
@@ -136,8 +137,9 @@ export default function TownMap({ plots, selectedId, onSelect, label, focusOnMou
         </div>
         {plots.map((plot, i) => <button key={plot.id} data-town-item={plot.id} data-built={plot.built} className={`town-plot hue-${i % 4}`}
           aria-pressed={selectedId === plot.id} style={{ left: layout.positions[i].left, top: layout.positions[i].top }}
-          onClick={() => onSelect(plot.id)} aria-label={`${plot.word}，${plot.built ? '已練過' : '尚未練過'}`}>
-          <span className="town-lawn" /><TownBuilding built={plot.built} />
+          data-house-stage={plot.stage ?? (plot.built ? 4 : 0)}
+          onClick={() => onSelect(plot.id)} aria-label={`${plot.word}，${HOUSE_STAGE_LABELS[plot.stage ?? (plot.built ? 4 : 0)]}`}>
+          <span className="town-lawn" /><TownBuilding built={plot.built} stage={plot.stage} />
           <span className="town-plot-word">{plot.word}</span>
         </button>)}
       </div>

@@ -66,7 +66,7 @@ export default function TownStudyScreen() {
       <Link className="town-primary" to={townUrl}>回小鎮看小屋 →</Link>
     </section> : round.day===today && data.saved ? <section className="town-page town-study-saved" ref={feedback} tabIndex={-1} aria-label="本題保存結果">
       <p role="status">學習紀錄已保存</p><h1>{item.wordRecord.word}</h1><p>{item.wordRecord.meaningZh}</p>
-      <p>{data.saved.mode==='known' ? '已保存已會標記，沿用一般複習安排。' : data.saved.grade===0 ? '還需要複習，這個字的小屋也會保留。' : '這次學習已完成，小屋已落成。'}</p>
+      <p>{data.saved.mode==='known' ? '已保存已會標記，沿用一般複習安排，不跳過房屋施工。' : data.saved.grade===0 ? '還需要複習，這個字的小屋也會保留。' : '這次學習已完成。小屋依首次有效學習與到期成功複習逐段施工。'}</p>
       {item.isRecap && <p className="town-subtle">同日回顧沿用原本的複習時間。</p>}
       {data.saved.objective ? <RewardReceipt answerId={`answer:town:${id}:${index}`} roundId={rewardId} word={item.wordRecord.word} correct={data.saved.objective.correct}/>
         : <p className="reward-note">本題沒有新增答題金幣；翻卡自評或先前保存的學習紀錄仍可呈現小屋。</p>}
