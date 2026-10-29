@@ -8,17 +8,17 @@ import { unitReleaseHold } from '../vocabulary/unitReleasePolicy';
 const selected = {
   LV1: [16, 17, 18, 19, 20, 21],
   LV2: Array.from({ length: 24 }, (_, n) => n + 27),
-  LV3: [11, 13, 14, 15, 16, 17, 19, 20, 21, 22, 23, 24],
+  LV3: [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24],
 };
 
-it('retains all 42 accepted units and leaves their source gaps out of the public catalog', () => {
+it('retains the 42 former units, adds the two recovered LV3 units and keeps remaining source gaps out', () => {
   for (const [level, units] of Object.entries(selected)) {
     for (const unit of units) {
       expect(findUnit(unit, level)?.deliveryMode).toBe('text_only');
       expect(textbookUnits.some(row => row.level === level && row.unit === unit)).toBe(true);
     }
   }
-  for (const [level, unit] of [['LV2', 26], ['LV3', 3], ['LV3', 12], ['LV3', 18], ['LV3', 25]] as const) {
+  for (const [level, unit] of [['LV2', 26], ['LV3', 3], ['LV3', 25]] as const) {
     expect(findUnit(unit, level)).toBeUndefined();
     expect(textbookUnits.some(row => row.level === level && row.unit === unit)).toBe(false);
   }

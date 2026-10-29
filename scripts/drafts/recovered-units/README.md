@@ -1,5 +1,28 @@
 # 三個追回來源單元：資料審閱草稿
 
+## 接入候選更新（2026-10-29）
+
+使用者已同意採用這三份文字草稿，沒有正式詞條編號的詞維持教材補充。本目錄保留 `732c234` 的歷史草稿；下文的「未登錄／5728／hold」與 `integration-plan.json` 的 `missingFromCurrentStarter` 均描述接入前基準，不能當成目前候選分支狀態。
+
+已採用的來源位於 `scripts/sources/LV3Unit12.json`、`LV3Unit18.json`、`LV6Unit21.json`，教材包位於 `src/features/direct/curriculumLV3Unit12.json`、`curriculumLV3Unit18.json`、`curriculumLV6Unit21.json`。候選分支登錄三單元，保留原草稿全部 483 個 item ID、來源詞性／文字、82 筆未映射補充列與 143 筆用法。起始包加入恰好 51 個既存正式 ID，5728 → 5779；完整字庫未改。候選分支解除已補齊來源的 U21 hold；LV4 U2 p22 hold 不變。
+
+此資料候選**尚待獨立發布批准**，不表示正式站已開放三單元。沒有採用圖片、原創例句、教材測驗題或批准新義項。一般單字練習僅使用現有正式映射，教材補充保持可閱讀、不可冒用其他 ID。
+
+可重現檢查：
+
+```text
+python scripts/prepare_recovered_unit_drafts.py --check
+python scripts/integrate_recovered_units.py --check
+python scripts/build_sa_pack.py
+npm test -- src/features/direct/recoveredUnitDrafts.test.ts src/features/direct/recoveredUnitIntegration.test.ts src/db/recoveredUnitUpdate.test.ts --maxWorkers=1 --testTimeout=15000
+```
+
+`scripts/fixtures/recovered-unit-integration-baseline.json` 固定接入前起始包及 124 份原有教材的內容指紋；回歸檢查原資料完整保留、51 個新增 ID 精確匹配，並以正常內容更新／失敗重試／離線重開驗證 14 張非空合成進度表。
+
+---
+
+以下為接入前草稿紀錄。
+
 基底為正式 main `a5f7701f77967f4a7540ba616f76278e54c51ba9`。這批沒有接到學生入口，沒有解除 LV6 U21 hold，也沒有改公開字庫／起始包、主 Excel、既有 ID 或進度。它是可重現的文字教材草稿，待另一批資料接入與發布批准。
 
 ## 已完成的來源與整理

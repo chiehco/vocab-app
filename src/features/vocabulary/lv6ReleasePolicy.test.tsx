@@ -1,6 +1,8 @@
 // @vitest-environment happy-dom
 import 'fake-indexeddb/auto';
 import { afterEach, beforeEach, expect, it } from 'vitest';
+import pack from '../../../public/data/v1/sa-pack.json';
+import type { WordRecord } from '../../db/types';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { contentDb } from '../../db/contentDb';
 import { progressDb } from '../../db/progressDb';
@@ -20,15 +22,31 @@ afterEach(async () => {
 });
 
 it.each([
-  ['/textbook/LV6/21', '/textbook/:level/:unit', <TextbookScreen key="textbook" />],
-  ['/vocabulary?level=LV6&unit=21', '/vocabulary', <VocabularyScreen key="vocabulary" />],
-  ['/arena/word-siege?level=LV6&unit=21', '/arena/word-siege', <SiegeScreen key="siege" />],
-] as const)('keeps missing LV6 U21 source pending at %s without falling back or creating progress', async (url, path, screen) => {
+  ['/textbook/LV4/2', '/textbook/:level/:unit', <TextbookScreen key="textbook" />],
+  ['/vocabulary?level=LV4&unit=2', '/vocabulary', <VocabularyScreen key="vocabulary" />],
+  ['/arena/word-siege?level=LV4&unit=2', '/arena/word-siege', <SiegeScreen key="siege" />],
+] as const)('keeps unrelated LV4 U2 source pending at %s without falling back or creating progress', async (url, path, screen) => {
   await view.render(<MemoryRouter initialEntries={[url]}><Routes><Route path={path} element={screen} /></Routes></MemoryRouter>);
-  await view.waitFor(() => expect(view.container.textContent).toContain('p199 完整來源待補'));
-  expect(view.container.querySelector('a[href="/textbook?level=LV6"]')).not.toBeNull();
+  await view.waitFor(() => expect(view.container.textContent).toContain('p22 完整來源待補'));
+  expect(view.container.querySelector('a[href="/textbook?level=LV4"]')).not.toBeNull();
   expect(view.container.querySelector('.vocab-card')).toBeNull();
   expect(view.container.querySelector('iframe')).toBeNull();
   expect(view.container.textContent).not.toContain('LV6 Unit 1');
   expect(await Promise.all(progressDb.tables.map(table => table.count()))).toEqual(progressDb.tables.map(() => 0));
+});
+
+it.each([
+  ['/textbook/LV6/21', '/textbook/:level/:unit', <TextbookScreen key="textbook" />, '一般單字練習（74 詞）'],
+  ['/vocabulary?level=LV6&unit=21', '/vocabulary', <VocabularyScreen key="vocabulary" />, '119 個詞彙、36 項用法'],
+  ['/arena/word-siege?level=LV6&unit=21', '/arena/word-siege', <SiegeScreen key="siege" />, '個可玩單字'],
+] as const)('opens accepted U21 text at %s without creating learning or reward records on render', async (url, path, screen, expected) => {
+  await contentDb.words.bulkPut(pack.words as unknown as WordRecord[]);
+  await view.render(<MemoryRouter initialEntries={[url]}><Routes><Route path={path} element={screen} /></Routes></MemoryRouter>);
+  await view.waitFor(() => expect(view.container.textContent).toContain(expected));
+  expect(view.container.textContent).not.toContain('完整來源待補');
+  expect(view.container.querySelector('iframe')).toBeNull();
+  for (const table of progressDb.tables.filter(table => table.name !== 'settings')) expect(await table.count()).toBe(0);
+  // VocabularyScreen persists its navigation location, independently of learning.
+  const settings = await progressDb.settings.toArray();
+  expect(settings.every(row => row.key === 'learning:last-location')).toBe(true);
 });

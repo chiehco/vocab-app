@@ -121,6 +121,9 @@ import grammarQuestions from './grammarQuestions.json';
 import practiceVariants from './practiceVariantsLV4Unit17.json';
 import { catalogWordIds } from './groupWords';
 import liveabcBasic from './liveabcBasic.json';
+import lv3Unit12 from './curriculumLV3Unit12.json';
+import lv3Unit18 from './curriculumLV3Unit18.json';
+import lv6Unit21 from './curriculumLV6Unit21.json';
 
 export { curriculum, questions };
 export interface CurriculumIllustration { path: string; captionEn: string; captionZh: string }
@@ -259,6 +262,12 @@ export const curriculumUnits: CurriculumUnit[] = [
 ];
 // Append without changing existing Ivy template order or numeric shortcuts.
 curriculumUnits.push(...liveabcBasic as CurriculumUnit[]);
+// Append accepted source recoveries so all former template indices stay stable.
+for (const pack of [lv3Unit12, lv3Unit18, lv6Unit21]) {
+  curriculumUnits.push({ templateId: pack.template.templateId, revision: pack.template.revision,
+    level: pack.template.level, unit: pack.template.unit, name: pack.template.title,
+    items: pack.learningItems as LearningItem[], questions: [], relatedNotes: [], deliveryMode: 'text_only' });
+}
 export type UnitKey = number | string;
 export function findUnit(key: UnitKey, level?: string): CurriculumUnit | undefined {
   return typeof key === 'string' ? curriculumUnits.find(u => u.templateId === key) : curriculumUnits.find(u => u.level === (level ?? 'LV3') && u.unit === key);

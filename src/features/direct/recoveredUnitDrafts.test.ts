@@ -8,6 +8,7 @@ import draft21 from '../../../scripts/drafts/recovered-units/LV6Unit21.curriculu
 import plan from '../../../scripts/drafts/recovered-units/integration-plan.json';
 import words from '../../../public/data/v1/words.json';
 import starter from '../../../public/data/v1/sa-pack.json';
+import baseline from '../../../scripts/fixtures/recovered-unit-integration-baseline.json';
 import { findUnit, learningItems, type LearningItem } from './model';
 import { practiceIds } from '../vocabulary/model';
 import { unitReleaseHold } from '../vocabulary/unitReleasePolicy';
@@ -20,7 +21,7 @@ const units = [
   { source: source21, draft: draft21, numbered: 38, heads: 46, pages: 9 },
 ];
 
-describe('recovered-page unit drafts remain separate from published material', () => {
+describe('historical recovered-page drafts and accepted candidate integration', () => {
   it.each(units)('$source.level Unit $source.unit covers every printed page and next-unit boundary', ({ source, numbered, heads, pages }) => {
     expect(source.publicationStatus).toBe('draft_not_registered');
     expect(source.headwords).toHaveLength(heads);
@@ -54,7 +55,7 @@ describe('recovered-page unit drafts remain separate from published material', (
     }
     const ids = draft.learningItems.map(i => i.learningItemId);
     expect(new Set(ids).size).toBe(ids.length);
-    expect(ids.some(id => learningItems.some(i => i.learningItemId === id))).toBe(false);
+    expect(ids.every(id => learningItems.some(i => i.learningItemId === id))).toBe(true);
   });
 
   it('retains the recovered p120 terms and its two missing official identities', () => {
@@ -94,18 +95,23 @@ describe('recovered-page unit drafts remain separate from published material', (
     for (const unit of plan.units) {
       const source = units.find(u => `${u.source.level}Unit${u.source.unit}` === unit.name)!.source;
       const ids = [...new Set([...source.headwords, ...source.related].flatMap(r => r.officialWordId ? [r.officialWordId] : []))];
-      expect(unit.missingFromCurrentStarter).toEqual(ids.filter(id => !starter.words.some(w => w.wordId === id)).sort());
+      expect(unit.missingFromCurrentStarter).toEqual(baseline.requiredByUnit[unit.name as keyof typeof baseline.requiredByUnit]);
+      expect(ids.every(id => starter.words.some(w => w.wordId === id))).toBe(true);
       const additions = words.filter(w => unit.missingFromCurrentStarter.includes(w.wordId));
       expect(additions).toHaveLength(unit.missingFromCurrentStarter.length);
       expect(groupWords(ids, [...starter.words, ...additions] as unknown as WordRecord[])).toHaveLength(ids.length);
     }
   });
 
-  it('keeps current entries, questions, review state and LV6 hold unchanged', () => {
-    expect(findUnit(12, 'LV3')).toBeUndefined();
-    expect(findUnit(18, 'LV3')).toBeUndefined();
-    expect(findUnit(21, 'LV6')).toBeUndefined();
-    expect(unitReleaseHold('LV6', 21)?.status).toBe('source_page_pending');
+  it('keeps historical draft review state while registering accepted text candidates only', () => {
+    for (const { source, draft } of units) {
+      const accepted = findUnit(source.unit, source.level)!;
+      expect(accepted.items).toEqual(draft.learningItems);
+      expect(accepted.questions).toEqual([]);
+      expect(accepted.deliveryMode).toBe('text_only');
+    }
+    expect(unitReleaseHold('LV6', 21)).toBeUndefined();
+    expect(unitReleaseHold('LV4', 2)?.status).toBe('source_page_pending');
     expect(plan.releaseHoldUnchanged).toBe(true);
     for (const { draft } of units) {
       expect(draft.releaseReview).toMatchObject({ status: 'pending_owner_data_release', registered: false, holdChange: false, publicDataChange: false });

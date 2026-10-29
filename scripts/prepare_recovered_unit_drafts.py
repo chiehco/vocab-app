@@ -85,8 +85,10 @@ def prepare_source(transcript, words):
 
 def prepare(check=False):
     words = json.loads((ROOT / "public/data/v1/words.json").read_text(encoding="utf-8"))
-    starter = json.loads((ROOT / "public/data/v1/sa-pack.json").read_text(encoding="utf-8"))
-    starter_ids = {w["wordId"] for w in starter["words"]}
+    # This is the historical pre-integration plan, even after the starter expands.
+    baseline = json.loads((ROOT / "scripts/fixtures/recovered-unit-integration-baseline.json").read_text(encoding="utf-8"))
+    additions = set(baseline["additionalWordIds"])
+    starter_ids = {w["wordId"] for w in words} - additions
     summaries = []
     for name in NAMES:
         transcript = json.loads((DRAFTS / f"{name}.transcript.json").read_text(encoding="utf-8"))
