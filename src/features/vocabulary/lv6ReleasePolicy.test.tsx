@@ -46,6 +46,10 @@ it.each([
   expect(view.container.textContent).not.toContain('完整來源待補');
   expect(view.container.querySelector('iframe')).toBeNull();
   for (const table of progressDb.tables.filter(table => table.name !== 'settings')) expect(await table.count()).toBe(0);
+  if (path === '/vocabulary') {
+    const select = view.container.querySelector<HTMLSelectElement>('select[aria-label="教材單元"]')!;
+    expect(Array.from(select.options).map(option => Number(option.value))).toEqual(Array.from({length:25}, (_, i) => i + 1));
+  }
   // VocabularyScreen persists its navigation location, independently of learning.
   const settings = await progressDb.settings.toArray();
   expect(settings.every(row => row.key === 'learning:last-location')).toBe(true);

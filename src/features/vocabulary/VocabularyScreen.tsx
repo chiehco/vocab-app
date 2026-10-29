@@ -19,7 +19,7 @@ const ASSET_BASE = import.meta.env.BASE_URL;
 export default function VocabularyScreen(){
   const [params,setParams]=useSearchParams(),navigate=useNavigate();
   const level=LEVELS.includes(params.get('level')??'')?params.get('level')!:'LV3';
-  const levelUnits=unitsForLevel(level).filter(u=>isUnitPublished(u.level,u.unit));
+  const levelUnits=unitsForLevel(level).filter(u=>isUnitPublished(u.level,u.unit)).sort((a,b)=>a.unit-b.unit);
   const requestedUnit=Number.parseInt(params.get('unit')??'',10);
   const hold=unitReleaseHold(level,requestedUnit);
   const current=hold?undefined:findUnit(requestedUnit,level)??(level==='LIVEABC_BASIC'&&params.has('unit')?undefined:levelUnits[0]);
