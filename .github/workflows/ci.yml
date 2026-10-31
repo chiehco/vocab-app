@@ -26,6 +26,7 @@ jobs:
       - run: python -m unittest discover -s scripts -p 'test_apply_lv3_*.py'
       - run: python -m unittest discover -s scripts -p 'test_apply_lv4_*.py'
       - run: python -m unittest discover -s scripts -p 'test_build_sa_pack_lv5_legacy.py'
+      - run: python -m unittest discover -s scripts -p 'test_interact_correction.py'
       - run: python scripts/prepare_recovered_unit_drafts.py --check
       - run: python scripts/integrate_recovered_units.py --check
       - run: npm run lint
