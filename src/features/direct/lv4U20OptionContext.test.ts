@@ -26,8 +26,8 @@ function permutations<T>(rows: T[]): T[][] {
 
 it('adds exactly five contexts while retaining the existing ferry record', () => {
   expect(authored.map(r => r.questionId)).toEqual(ids);
-  expect(new Set(optionContextRationales.map(r => r.questionId)).size).toBe(6);
-  expect(optionContextRationales).toHaveLength(6);
+  expect(new Set(optionContextRationales.map(r => r.questionId)).size).toBe(16);
+  expect(optionContextRationales).toHaveLength(16);
   expect(optionContextRationales[0].questionId).toBe('CHOICE-CLOZE-ORIG-LV4U20-ferry');
 });
 
