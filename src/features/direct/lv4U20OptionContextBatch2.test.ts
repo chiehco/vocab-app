@@ -10,7 +10,7 @@ import { optionExplanation } from './optionExplanation';
 import { isCorrectAnswer, practiceQuestions, type PracticeQuestion } from './model';
 
 const words = dictionary.words as WordRecord[], senses = dictionary.senses as SenseRecord[];
-const ids = ['disorder', 'freshman', 'harsh', 'privacy', 'sway', 'dense', 'overnight', 'alcohol', 'messenger', 'equality'].map(w => `CHOICE-CLOZE-ORIG-LV4U20-${w}`);
+const ids = ['disorder', 'freshman', 'harsh', 'privacy', 'sway', 'dense', 'alcohol', 'messenger', 'equality', 'bargain'].map(w => `CHOICE-CLOZE-ORIG-LV4U20-${w}`);
 const question = (id: string) => practiceQuestions.find(q => q.questionId === id)!;
 const normalize = (text: string) => text.trim().normalize('NFKC').toLowerCase();
 function stable(value: unknown): unknown {
@@ -73,7 +73,7 @@ it.each(authored)('fails closed for changed context, identity, answer or unknown
   expect(optionExplanation(q, { id: 'E', text: 'zz-unknown', rationaleZh: '' }, words, senses)).toMatchObject({ source: 'question-context', meaning: '字義尚未收錄' });
 });
 
-it.each(['interact', 'interaction', 'interactive', 'learned', 'passive', 'partnership', 'nowadays', 'socket'])('leaves the unresolved %s question on its original honest fallback', word => {
+it.each(['interact', 'interaction', 'interactive', 'learned', 'passive', 'partnership', 'nowadays', 'socket', 'overnight'])('leaves the unresolved %s question on its original honest fallback', word => {
   const q = question(`CHOICE-CLOZE-ORIG-LV4U20-${word}`), wrong = q.options.find(o => o.id !== q.answer)!;
   expect(optionContextRationales.some(r => r.questionId === q.questionId)).toBe(false);
   expect(optionExplanation(q, wrong, words, senses)).toMatchObject({ source: 'question-context' });

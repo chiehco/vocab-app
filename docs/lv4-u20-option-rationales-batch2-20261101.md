@@ -2,7 +2,7 @@
 
 基底 main：`248c7ba6e03d52d24cc11127e72bb3d702558f0d`（PR51已發布）。本批只準備 draft PR，尚未批准合併或部署；沒有孩子最新作答紀錄，不宣稱是孩子的錯題。
 
-從46題原創目標詞四選一中，既有6題已具逐項解析；本批新增10題40項，合計16題。其餘30題中，下列8題先列語境／排除依據待審，其餘22題未在本批涵蓋。128題整份教材題庫原樣保留，不修改題目ID、英文、中譯、選項、答案、評分、學習進度或字庫。
+從46題原創目標詞四選一中，既有6題已具逐項解析；本批新增10題40項，合計16題。其餘30題中，下列9題先列語境／排除依據待審，其餘21題未在本批涵蓋。128題整份教材題庫原樣保留，不修改題目ID、英文、中譯、選項、答案、評分、學習進度或字庫。
 
 ## 英文先核對：本批沒有硬補的題目
 
@@ -18,6 +18,7 @@
 | partnership／B · partnership | They work in partnership at the bakery. | 合理替代讀法：They work in privacy at the bakery 也能表示他們不受打擾／私下工作。英文沒有明說合作或分工，不能只靠中譯排除 privacy。 |
 | nowadays／B · Nowadays | Nowadays, many people pay with their phones. | 時間線索待核：Nowadays 與 overnight 都能作時間副詞；原句沒有足夠時間背景排除夜間付款的讀法。不能把 overnight 教成只有形容詞，或只靠選項首字大小寫判正誤。 |
 | socket／A · socket | He puts the plug into the socket. | 排除依據待核：alcohol 可指液體酒精；puts the plug into the alcohol 在清理物品等另種情境可成立，原句的 the 仍保留。英文沒有通電／連接插座的線索，不硬寫成酒精絕不可能作 into 的受詞。 |
+| overnight／D · overnight | Snow covers the quiet town overnight. | 合理替代讀法：Snow covers the quiet town messenger 可指雪覆蓋那位安靜的鎮信使。town 可以修飾 messenger，英文受詞不一定在 town 就結束；不能把名詞選項都說成這裡必須是時間副詞。 |
 
 ## 核對來源與表達邊界
 
@@ -37,6 +38,7 @@
 - [equality](https://dictionary.cambridge.org/dictionary/english/equality)
 - [bargain](https://dictionary.cambridge.org/dictionary/english/bargain)
 - [resignation](https://dictionary.cambridge.org/dictionary/english/resignation)
+- [miserable](https://dictionary.cambridge.org/dictionary/english/miserable)
 - [a/an](https://dictionary.cambridge.org/grammar/british-grammar/the)
 
 ## interact 唯讀溯源：已有檔案，不需重交
@@ -151,23 +153,6 @@ ID：`CHOICE-CLOZE-ORIG-LV4U20-dense`
 | C · dense（正解） | dense（形容詞）是「密集的、濃密的」。dense forest 指樹木長得密的森林；它修飾 forest，符合他們走過一片茂密森林的句意。 |
 | D · alcohol | alcohol（名詞）是「酒精、酒」。本句描述森林，不是在說酒精；而且 alcohol 開頭讀母音，若直接接在這裡，前面應用 an，不能用原句的 a。 |
 
-### overnight
-
-ID：`CHOICE-CLOZE-ORIG-LV4U20-overnight`
-
-原句：Snow covers the quiet town overnight.
-
-原中譯：大雪一夕之間覆蓋了安靜的小鎮。
-
-既有答案：D · overnight
-
-| 選項 | 完整解析 |
-|---|---|
-| A · socket | socket（名詞）是「插座、承窩」。本句已說明雪覆蓋小鎮，最後要補充這件事發生的時間；socket 不是時間詞。 |
-| B · alcohol | alcohol（名詞）是「酒精、酒」。它不是下雪發生的時間，也不能在這裡表示小鎮一夜之間被雪覆蓋。 |
-| C · messenger | messenger（名詞）是「送信者、快遞員」。它指人，不是時間，不能放在這裡說明雪多久就覆蓋小鎮。 |
-| D · overnight（正解） | overnight 在這裡作副詞「在夜間、一夜之間」，補充雪覆蓋小鎮的時間，符合句意。它不一定表示午夜，也不是固定指前一天晚上。 |
-
 ### alcohol
 
 ID：`CHOICE-CLOZE-ORIG-LV4U20-alcohol`
@@ -218,3 +203,20 @@ ID：`CHOICE-CLOZE-ORIG-LV4U20-equality`
 | B · bargain | bargain 可作名詞「便宜貨、交易」，也可作動詞「講價」。每人分量相同，說明的是對待是否平等，沒有說東西便宜或有人講價。 |
 | C · resign | resign（動詞）是「辭職、放棄」。with 後這裡要接表示對待方式的名詞，不能直接用這個動詞，也與相同分量無關。 |
 | D · resignation | resignation（名詞）可指「辭職」，也可指「無奈地接受」。它雖是名詞，卻不表示分配平等；equal shares 沒有提供辭職或無奈接受的線索。 |
+
+### bargain
+
+ID：`CHOICE-CLOZE-ORIG-LV4U20-bargain`
+
+原句：The lamp was a real bargain.
+
+原中譯：這盞燈實在很划算。
+
+既有答案：B · bargain
+
+| 選項 | 完整解析 |
+|---|---|
+| A · resign | resign（動詞）是「辭職、放棄」。a real 後這裡要接說明這盞燈是什麼的名詞，不能直接用這個動詞。 |
+| B · bargain（正解） | bargain 在這裡作名詞「便宜貨、划算的東西」。a real bargain 表示買得很划算，用來說這盞燈物超所值，符合句意。 |
+| C · resignation | resignation（名詞）可指「辭職」，也可指「無奈地接受」。它說的是離職或接受事情的態度，不是可以用划算價格買到的物品，不能把這盞燈稱為一次辭職。 |
+| D · miserable | miserable（形容詞）是「悲慘的、令人難受的」。它可以形容很糟的燈，例如 a miserable lamp；但原句的 a real 後需要名詞，miserable 不能單獨表示一件便宜貨。 |
