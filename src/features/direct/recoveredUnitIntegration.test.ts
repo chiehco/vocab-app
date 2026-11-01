@@ -20,7 +20,7 @@ function stable(value: unknown): unknown {
 }
 const hash = (value: unknown) => createHash('sha256').update(JSON.stringify(stable(value))).digest('hex');
 
-it('retains every pre-integration curriculum payload and question identity', () => {
+it('retains historical curriculum and question identities with the audited cubes gloss addition', () => {
   const existing = new Map<string, {items: unknown[]; questions: unknown[]}>();
   const record = (value: unknown) => {
     if (Array.isArray(value)) { value.forEach(record); return; }
@@ -40,7 +40,20 @@ it('retains every pre-integration curriculum payload and question identity', () 
     expect(retained, old.templateId).toBeDefined();
     expect(retained.items).toHaveLength(old.count);
     expect(hash(retained.items), old.templateId).toBe(old.itemsHash);
-    expect(hash(retained.questions), old.templateId).toBe(old.questionsHash);
+    const originalQuestions = structuredClone(retained.questions);
+    if (old.templateId === 'LV4-U20') {
+      // The 2026-10-31 rationale batch adds this one existing optional field.
+      // Verify the exact new payload, then restore only that field for the
+      // immutable historical snapshot; never exclude the unit or other fields.
+      expect(hash(originalQuestions)).toBe('2e3fab8927f0f56429931272eee4fa54b8897f11ded5e47cbb6a6ee4341cfcee');
+      const cube = originalQuestions.find(q => (q as {questionId?: string}).questionId === 'CHOICE-CLOZE-ORIG-LV4U20-cube') as {
+        options: {id: string; text: string; meaningZh?: string}[];
+      } | undefined;
+      const option = cube?.options.find(o => o.id === 'A' && o.text === 'cubes');
+      expect(option?.meaningZh).toBe('n. 立方體；方塊（cube 的複數）');
+      delete option!.meaningZh;
+    }
+    expect(hash(originalQuestions), old.templateId).toBe(old.questionsHash);
     expect(findUnit(old.templateId)?.items).toEqual(retained.items);
   }
 });
