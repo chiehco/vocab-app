@@ -18,7 +18,6 @@ export default function TownStudyScreen() {
   const [params]=useSearchParams(), id=params.get('session') ?? '';
   const navigate=useNavigate(), today=useToday();
   const [busy,setBusy]=useState(false), [error,setError]=useState(''), lock=useRef(false);
-  const feedback=useRef<HTMLElement>(null);
   const result=useLiveQuery(async()=>{
     try{return {data:await resolveTownStudy(id)};}
     catch(error){return {error:error instanceof Error ? error.message : '日課暫時讀不到，請稍後重試。'};}
@@ -34,15 +33,13 @@ export default function TownStudyScreen() {
   async function save(grade:Grade,known=false) {
     if(objectiveQuestion)await reward.prepare();
     await saveTownStudy(id,index,grade,known,true);
+    // Saving and advancing retain their existing idempotent persistence rules.
+    // A refresh between them restores the saved card's inline continue action.
+    await nextTownStudy(id,index);
   }
   useCardPronunciation(item?.wordRecord.word, `${id}:${index}`);
   useUpcomingIllustrations(data?.queue.map(item=>item.wordRecord),index);
-  const savedLogId=data?.saved?.logId;
   useEffect(()=>{window.scrollTo({top:0,behavior:'instant'});},[id,index]);
-  useEffect(()=>{
-    if(!savedLogId || !feedback.current)return;
-    feedback.current.focus({preventScroll:true});feedback.current.scrollIntoView({block:'start',behavior:'instant'});
-  },[savedLogId]);
   async function act(action:()=>Promise<unknown>) {
     if(lock.current)return;lock.current=true;setBusy(true);setError('');
     try{await action();}catch(error){setError(error instanceof Error?error.message:'暫時無法保存，請再試一次。');}
@@ -62,21 +59,22 @@ export default function TownStudyScreen() {
     </div>
     {!item ? <section className="town-page town-practice-complete">
       <h1>{round.items.length ? '本輪學習已完成' : '今天的安排已完成'}</h1>
-      <p>{round.items.length ? '本輪的學習紀錄已保存，回小鎮看看成果。' : '目前沒有可排的學新或複習。明天再來查看安排，也可以選字補練。'}</p>
+      <p>{round.items.length ? `本輪 ${round.items.length} 字的學習紀錄已保存，回小鎮看看成果。` : '目前沒有可排的學新或複習。明天再來查看安排，也可以選字補練。'}</p>
       <Link className="town-primary" to={townUrl}>回小鎮看小屋 →</Link>
-    </section> : round.day===today && data.saved ? <section className="town-page town-study-saved" ref={feedback} tabIndex={-1} aria-label="本題保存結果">
-      <p role="status">學習紀錄已保存</p><h1>{item.wordRecord.word}</h1><p>{item.wordRecord.meaningZh}</p>
-      <p>{data.saved.mode==='known' ? '已保存已會標記，沿用一般複習安排，不跳過房屋施工。' : data.saved.grade===0 ? '還需要複習，這個字的小屋也會保留。' : '這次學習已完成。小屋依首次有效學習與到期成功複習逐段施工。'}</p>
-      {item.isRecap && <p className="town-subtle">同日回顧沿用原本的複習時間。</p>}
-      {data.saved.objective ? <RewardReceipt answerId={`answer:town:${id}:${index}`} roundId={rewardId} word={item.wordRecord.word} correct={data.saved.objective.correct}/>
-        : <p className="reward-note">本題沒有新增答題金幣；翻卡自評或先前保存的學習紀錄仍可呈現小屋。</p>}
     </section> : round.day===today && data.options!==undefined ? <>
       <div className="town-study-status"><RewardPanel compact resetKey={`${id}:${index}`} roundId={rewardId} roundPreview={{challenge:'meaning-v2',distinctWordCount:availableWords}}/>{reward.error && <p role="alert">{reward.error}</p>}</div>
       <ReviewFlashcard key={`${id}:${index}`} item={item} flipped={!!round.flipped[index]} choice={round.choices[index] ?? null} options={data.options} saving={busy} position={index+1} saveBeforeNext
+        saveLabel={index+1<round.items.length ? '保存並繼續' : '保存並完成本輪'}
+        savedActions={data.saved && <StudyActions label="已保存的字卡操作">
+          <div><p role="status">本題已保存，可繼續本輪。</p>
+            {data.saved.objective ? <RewardReceipt answerId={`answer:town:${id}:${index}`} roundId={rewardId} word={item.wordRecord.word} correct={data.saved.objective.correct}/>
+              : <p className="reward-note">沿用先前保存的學習紀錄，本題沒有新增答題金幣。</p>}
+            <button className="town-secondary" disabled={busy} onClick={()=>void act(()=>nextTownStudy(id,index))}>{index+1<round.items.length ? '下一張 →' : '完成本輪 →'}</button>
+          </div>
+        </StudyActions>}
         onPick={word=>void act(()=>pickTownStudy(id,index,word))} onFlip={()=>void act(()=>pickTownStudy(id,index))}
         onGrade={(grade:Grade)=>void act(()=>save(grade))} onKnown={()=>void act(()=>save(3,true))} />
     </> : round.day===today ? <p className="town-study-status" role="status">正在恢復本題選項…</p> : null}
-    {(data.saved || !item) && <div className="town-study-status"><RewardPanel roundId={rewardId}/></div>}
-    {item&&round.day===today&&data.saved&&<StudyActions label="已保存的字卡操作"><div className="town-study-result-actions"><Link className="town-primary" to={townUrl}>回小鎮看小屋 →</Link><button className="town-secondary" disabled={busy} onClick={()=>void act(()=>nextTownStudy(id,index))}>{index+1<round.items.length ? '下一張 →' : '完成本輪 →'}</button></div></StudyActions>}
+    {!item && round.items.length>0 && <div className="town-study-status"><RewardPanel roundId={rewardId}/></div>}
   </div>;
 }
