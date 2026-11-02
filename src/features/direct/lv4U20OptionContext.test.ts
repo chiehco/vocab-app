@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto';
 import { expect, it } from 'vitest';
 import type { WordRecord, SenseRecord } from '../../db/types';
-import pack from './curriculumLV4Unit20.json';
+import { releasedUnit20BeforePracticeRevision } from './lv4U20PracticeRevision.testSupport';
 import authored from './optionContextRationalesLV4Unit20.json';
 import dictionary from '../../../public/data/v1/sa-pack.json';
 import { optionContextRationales } from './optionContextRationales';
@@ -26,8 +26,8 @@ function permutations<T>(rows: T[]): T[][] {
 
 it('adds exactly five contexts while retaining the existing ferry record', () => {
   expect(authored.map(r => r.questionId)).toEqual(ids);
-  expect(new Set(optionContextRationales.map(r => r.questionId)).size).toBe(16);
-  expect(optionContextRationales).toHaveLength(16);
+  expect(new Set(optionContextRationales.map(r => r.questionId)).size).toBe(25);
+  expect(optionContextRationales).toHaveLength(25);
   expect(optionContextRationales[0].questionId).toBe('CHOICE-CLOZE-ORIG-LV4U20-ferry');
 });
 
@@ -72,8 +72,8 @@ it.each(authored)('does not reuse $questionId for a changed sentence, answer, ID
   });
 });
 
-it('retains honest fallback for the uncovered interact question', () => {
-  const q = question('CHOICE-CLOZE-ORIG-LV4U20-interact');
+it('retains honest fallback for the uncovered resign question', () => {
+  const q = question('CHOICE-CLOZE-ORIG-LV4U20-resign');
   const wrong = q.options.find(o => o.id !== q.answer)!;
   expect(optionExplanation(q, wrong, words, senses)).toMatchObject({ source: 'question-context' });
   expect(optionExplanation(q, wrong, words, senses).rationale).toContain('尚無逐項語境解析');
@@ -87,7 +87,7 @@ it('uses the existing optional gloss for cubes without inventing an inflection l
 });
 
 it('retains all original unit text, IDs, options, answers, items and media apart from the one explicit gloss', () => {
-  const original = structuredClone(pack);
+  const original = releasedUnit20BeforePracticeRevision();
   const q = original.questions.find(q => q.questionId === ids[0])!;
   delete (q.options[0] as { meaningZh?: string }).meaningZh;
   const hash = createHash('sha256').update(JSON.stringify(stable(original))).digest('hex');

@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto';
 import { expect, it } from 'vitest';
 import type { WordRecord, SenseRecord } from '../../db/types';
-import pack from './curriculumLV4Unit20.json';
+import { releasedUnit20BeforePracticeRevision } from './lv4U20PracticeRevision.testSupport';
 import previous from './optionContextRationalesLV4Unit20.json';
 import authored from './optionContextRationalesLV4Unit20Batch2.json';
 import dictionary from '../../../public/data/v1/sa-pack.json';
@@ -28,10 +28,10 @@ function permutations<T>(rows: T[]): T[][] {
 
 it('adds exactly ten distinct contexts after the six existing authored questions', () => {
   expect(authored.map(r => r.questionId)).toEqual(ids);
-  expect(optionContextRationales).toHaveLength(16);
-  expect(new Set(optionContextRationales.map(r => r.questionId)).size).toBe(16);
+  expect(optionContextRationales).toHaveLength(25);
+  expect(new Set(optionContextRationales.map(r => r.questionId)).size).toBe(25);
   expect(optionContextRationales.slice(1, 6)).toEqual(previous);
-  expect(optionContextRationales.slice(6)).toEqual(authored);
+  expect(optionContextRationales.slice(6, 16)).toEqual(authored);
 });
 
 it.each(authored)('renders all four meanings and distinct context reasons for $questionId', record => {
@@ -73,7 +73,7 @@ it.each(authored)('fails closed for changed context, identity, answer or unknown
   expect(optionExplanation(q, { id: 'E', text: 'zz-unknown', rationaleZh: '' }, words, senses)).toMatchObject({ source: 'question-context', meaning: '字義尚未收錄' });
 });
 
-it.each(['interact', 'interaction', 'interactive', 'learned', 'passive', 'partnership', 'nowadays', 'socket', 'overnight'])('leaves the unresolved %s question on its original honest fallback', word => {
+it.each(['resign', 'resignation', 'miserable'])('leaves the uncovered %s question on its original honest fallback', word => {
   const q = question(`CHOICE-CLOZE-ORIG-LV4U20-${word}`), wrong = q.options.find(o => o.id !== q.answer)!;
   expect(optionContextRationales.some(r => r.questionId === q.questionId)).toBe(false);
   expect(optionExplanation(q, wrong, words, senses)).toMatchObject({ source: 'question-context' });
@@ -81,7 +81,7 @@ it.each(['interact', 'interaction', 'interactive', 'learned', 'passive', 'partne
 });
 
 it('preserves the complete original unit and the previous five authored records without removing fields', () => {
-  expect(hash(pack)).toBe('9a1fbe3f45067d7d0a80074f707efc0f036e93a446933e4d1cef52a2d866b9e0');
+  expect(hash(releasedUnit20BeforePracticeRevision())).toBe('9a1fbe3f45067d7d0a80074f707efc0f036e93a446933e4d1cef52a2d866b9e0');
   expect(hash(previous)).toBe('8931f944af5a061ea024fa17499427c5a6c4d1e1cbecee72b569ac2b71fcda9d');
 });
 
