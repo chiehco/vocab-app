@@ -9,6 +9,7 @@ import { findUnit, templateGroup, type LearningItem } from './model';
 import { groupWordIds } from './groupScope';
 import { textbookUnits } from '../vocabulary/textbookCatalog';
 import { practiceIds } from '../vocabulary/model';
+import { releasedUnit20BeforePracticeRevision } from './lv4U20PracticeRevision.testSupport';
 
 function stable(value: unknown): unknown {
   if (Array.isArray(value)) return value.map(stable);
@@ -39,8 +40,12 @@ it('retains historical curriculum and question identities with the audited cubes
     const retained = existing.get(old.templateId)!;
     expect(retained, old.templateId).toBeDefined();
     expect(retained.items).toHaveLength(old.count);
-    expect(hash(retained.items), old.templateId).toBe(old.itemsHash);
-    const originalQuestions = structuredClone(retained.questions);
+    // Only the five owner-approved practice examples differ from this snapshot.
+    // Undo those exact edits for the historical fingerprint; keep checking the
+    // real installed unit below and never omit U20 or change its old hash.
+    const priorPractice = old.templateId === 'LV4-U20' ? releasedUnit20BeforePracticeRevision() : undefined;
+    expect(hash(priorPractice?.learningItems ?? retained.items), old.templateId).toBe(old.itemsHash);
+    const originalQuestions = structuredClone(priorPractice?.questions ?? retained.questions);
     if (old.templateId === 'LV4-U20') {
       // The 2026-10-31 rationale batch adds this one existing optional field.
       // Verify the exact new payload, then restore only that field for the
