@@ -1,6 +1,8 @@
 /** Shared speech lifecycle: a new card replaces the old one's audio. */
 export type SpeechIssue = "unsupported" | "blocked" | "failed" | null;
 let issue: SpeechIssue = null;
+/** Kind the learner closed; auto-play stays quiet about it until audio works again. */
+let dismissed: SpeechIssue = null;
 const listeners = new Set<() => void>();
 let active: { dispose: () => void } | undefined;
 
@@ -10,7 +12,13 @@ export function subscribeSpeech(listener: () => void) {
 }
 export function getSpeechIssue() { return issue; }
 export function clearSpeechIssue() { setIssue(null); }
-function setIssue(next: SpeechIssue) {
+/** Learner closed the notice: stop re-showing the same problem on every new card. */
+export function dismissSpeechIssue() {
+  dismissed = issue;
+  setIssue(null);
+}
+function setIssue(next: SpeechIssue, userInitiated = false) {
+  if (next && next === dismissed && !userInitiated) return;
   if (next === issue) return;
   issue = next;
   listeners.forEach((listener) => listener());
@@ -27,11 +35,11 @@ export function stopSpeech() {
 }
 
 /** Cleanup only cancels this request, never a newer card's audio. */
-export function speak(text: string): () => void {
+export function speak(text: string, { userInitiated = false } = {}): () => void {
   stopSpeech();
   if (!text.trim()) return () => undefined;
   if (!speechAvailable()) {
-    setIssue("unsupported");
+    setIssue("unsupported", userInitiated);
     return clearSpeechIssue;
   }
   const synth = window.speechSynthesis;
@@ -60,7 +68,7 @@ export function speak(text: string): () => void {
   function fail(reason: SpeechIssue) {
     if (disposed || active !== request) return;
     dispose();
-    setIssue(reason);
+    setIssue(reason, userInitiated);
   }
   function play() {
     if (disposed || started) return;
@@ -75,7 +83,7 @@ export function speak(text: string): () => void {
       utterance.lang = "en-US";
       utterance.rate = 0.9;
       if (voice) utterance.voice = voice;
-      utterance.onstart = () => { clearTimeout(startTimer); setIssue(null); };
+      utterance.onstart = () => { clearTimeout(startTimer); dismissed = null; setIssue(null); };
       utterance.onend = () => { detach(); };
       utterance.onerror = (event) => {
         if (event.error !== "canceled" && event.error !== "interrupted") {

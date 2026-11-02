@@ -13,7 +13,7 @@ export default function SpeakerButton({
       onClick={(e) => {
         e.preventDefault();
         e.stopPropagation();
-        speak(text);
+        speak(text, { userInitiated: true });
       }}
       aria-label={`唸出 ${text}`}
       className={`rounded-full p-1.5 text-xl leading-none active:bg-blue-100 ${className}`}
