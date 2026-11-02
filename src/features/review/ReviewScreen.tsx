@@ -1,5 +1,5 @@
 import { useUpcomingIllustrations } from "../wordbeast/useUpcomingIllustrations";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
 import { contentDb } from "../../db/contentDb";
@@ -245,7 +245,7 @@ export default function ReviewScreen() {
   );
 }
 
-export function ReviewFlashcard({ item, flipped, options, onFlip, onGrade, onKnown, position, saving, choice, onPick, saveBeforeNext=false }: { item: QueueItem; flipped: boolean; options: WordRecord[] | null; onFlip: () => void; onGrade: (grade: Grade) => void; onKnown: () => void; position: number; saving: boolean; choice?:string | null; onPick?:(word:string)=>void; saveBeforeNext?:boolean }) {
+export function ReviewFlashcard({ item, flipped, options, onFlip, onGrade, onKnown, position, saving, choice, onPick, saveBeforeNext=false, saveLabel='保存這次學習', savedActions }: { item: QueueItem; flipped: boolean; options: WordRecord[] | null; onFlip: () => void; onGrade: (grade: Grade) => void; onKnown: () => void; position: number; saving: boolean; choice?:string | null; onPick?:(word:string)=>void; saveBeforeNext?:boolean; saveLabel?:string; savedActions?:ReactNode }) {
   const word = item.wordRecord;
   const [localPick, setPicked] = useState<string | null>(null);
   const picked=choice===undefined ? localPick : choice;
@@ -317,7 +317,7 @@ export function ReviewFlashcard({ item, flipped, options, onFlip, onGrade, onKno
       </article>
 
       <div className="seal-controls">
-        {options && !flipped ? (
+        {savedActions ?? (options && !flipped ? (
           <div className="seal-options" aria-label="選出正確的中文意思">
             {options.map((option, optionIndex) => (
               <button
@@ -338,12 +338,12 @@ export function ReviewFlashcard({ item, flipped, options, onFlip, onGrade, onKno
                   </button>
                 ) : (
                   <button className="seal-next is-wrong" disabled={saving} onClick={() => onGrade(0)}>
-                    <span>{saveBeforeNext ? '保存這次學習 · 還需要複習' : '記錯了，下一張'}</span>
+                    <span>{saveBeforeNext ? `${saveLabel} · 還需要複習` : '記錯了，下一張'}</span>
                     <small>{saving ? "保存中" : nextReviewLabel(0)}</small>
                   </button>
                 )}
                 <button type="button" className="seal-swipe-hint" disabled={saving} onClick={() => onGrade(answeredGrade)}>
-                  {saveBeforeNext ? `保存這次學習 · ${correct ? '答對了' : '還需要複習'}` : `下一張 · ${nextReviewLabel(answeredGrade)}`}
+                  {saveBeforeNext ? `${saveLabel} · ${correct ? '答對了' : '還需要複習'}` : `下一張 · ${nextReviewLabel(answeredGrade)}`}
                 </button>
               </div>
         </StudyActions>
@@ -358,7 +358,7 @@ export function ReviewFlashcard({ item, flipped, options, onFlip, onGrade, onKno
               </button>
             ))}
           </div></StudyActions>
-        )}
+        ))}
       </div>
     </div>
   );
