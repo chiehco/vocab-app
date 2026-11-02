@@ -14,6 +14,7 @@ import unit18 from '../direct/curriculumLV4Unit18.json';
 import unit20 from '../direct/curriculumLV4Unit20.json';
 import pack from '../../../public/data/v1/sa-pack.json';
 import review from './lv4MappedReview.json';
+import practiceRevision from '../direct/practiceTextRevisionsLV4Unit20.json';
 
 afterEach(async () => {
   vi.unstubAllGlobals();
@@ -27,14 +28,18 @@ it('maps only the four approved senses and preserves their exact examples, illus
   for (const card of review.cards) {
     const unit = card.originalItem.unit === 18 ? unit18 : unit20;
     const item = unit.learningItems.find(i => i.learningItemId === card.originalItem.learningItemId)!;
-    expect(item).toEqual({ ...card.originalItem, lexemeRef: card.wordId, officialWordId: card.wordId, officialSenseId: card.senseId });
+    const practiceChange = practiceRevision.changes.find(c => c.learningItemId === card.originalItem.learningItemId);
+    expect(item).toEqual({ ...card.originalItem, lexemeRef: card.wordId, officialWordId: card.wordId, officialSenseId: card.senseId,
+      originalExample: practiceChange?.after ?? card.originalItem.originalExample });
     const word = pack.words.find(w => w.wordId === card.wordId)!;
     const sense = pack.senses.find(s => s.senseId === card.senseId)!;
     expect(getWordDisplaySense(word as WordRecord, [sense] as SenseRecord[]))
       .toMatchObject({ meaning: item.targetMeaningZh, pos: item.sensePos, needsReview: false, source: 'curriculum' });
     const example = pack.examples.find(e => e.exampleId === card.exampleId)!;
-    expect(example).toMatchObject({ sentenceEn: item.originalExample.sentenceEn, sentenceZh: item.originalExample.sentenceZh,
-      blankSentence: item.originalExample.blankSentence, answer: item.originalExample.answer });
+    // Public dictionary examples and their illustration approval keep their
+    // original text; this batch revises the separately versioned practice only.
+    expect(example).toMatchObject({ sentenceEn: card.originalItem.originalExample.sentenceEn, sentenceZh: card.originalItem.originalExample.sentenceZh,
+      blankSentence: card.originalItem.originalExample.blankSentence, answer: card.originalItem.originalExample.answer });
     expect(allQuestions.find(q => q.questionId === 'CLOZE-' + item.originalExample.workExampleId))
       .toMatchObject({ sentenceEn: item.originalExample.sentenceEn, answer: item.originalExample.answer });
     expect(approvedCurriculumCard(card.word, card.wordId)?.illustration).toEqual(item.illustration);
