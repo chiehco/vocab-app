@@ -1,0 +1,40 @@
+// Run only after the synthetic fixture and read-only preservation verification.
+async (page) => {
+  if (new URL(page.url()).origin !== 'http://127.0.0.1:5175' || !page.url().includes('/study?session=')) throw Error('Disposable local study required');
+  const state = () => page.evaluate(async () => {
+    const request=indexedDB.open('VocabProgressDB'), db=await new Promise(resolve=>{request.onsuccess=()=>resolve(request.result);});
+    const data={};
+    for (const name of db.objectStoreNames) {const r=db.transaction(name).objectStore(name).getAll();data[name]=await new Promise(resolve=>{r.onsuccess=()=>resolve(r.result);});}
+    db.close();return data;
+  });
+  const check=(ok,message)=>{if(!ok)throw Error(message);};
+  const before=await state(), url=page.url();
+  check(before.settings.some(row=>row.key==='qa:3d-preserve'),'Synthetic sentinel required');
+  check(await page.locator('h1').textContent()==='boy','Expected the untouched first synthetic learning question');
+  await page.locator('.seal-options button').filter({hasText:'男孩；少年；兒子'}).click();
+  await page.locator('.seal-swipe-hint').click();
+  await page.waitForFunction(()=>document.querySelector('h1')?.textContent==='girl');
+  await page.waitForSelector('.seal-options button');
+  const options=await page.locator('.seal-options button').allTextContents();
+  const saved=await state();
+  check(saved.reviewLogs.length===before.reviewLogs.length+1,'Exactly one answer must be saved');
+  check(saved.rewardWallet[0].balance===before.rewardWallet[0].balance+5,'Exactly one correct-answer reward');
+  await page.getByRole('link',{name:'← 回小鎮 · 保留本輪進度',exact:true}).click();
+  await page.waitForSelector('.town3d-canvas canvas');
+  await page.getByRole('dialog',{name:'girl 字卡',exact:true}).waitFor({state:'visible'});
+  const camera=await page.locator('canvas').getAttribute('data-camera');
+  check(camera.endsWith(',2.000'),'Return-to-town query must focus the current plot');
+  await page.getByRole('button',{name:'關閉字卡 ×',exact:true}).click();
+  check(await page.locator('canvas').getAttribute('data-camera')===camera,'Closing the resumed dossier preserves the camera');
+  await page.getByRole('button',{name:'繼續今天的學習 →',exact:true}).click();
+  await page.waitForSelector('.seal-options button');
+  check(page.url()===url,'Resume must reuse the same round');
+  check(JSON.stringify(await page.locator('.seal-options button').allTextContents())===JSON.stringify(options),'Resume must retain exact options');
+  await page.reload(); await page.waitForSelector('.seal-options button');
+  check(JSON.stringify(await page.locator('.seal-options button').allTextContents())===JSON.stringify(options),'Reload must retain exact options');
+  const after=await state();
+  check(after.reviewLogs.length===saved.reviewLogs.length && after.rewardWallet[0].balance===saved.rewardWallet[0].balance,'Return and reload must never issue another answer or reward');
+  for (const name of ['customGroups','directAttempts','directSessions','writtenSessions','writtenSubmissions','townDecorations']) check(JSON.stringify(after[name])===JSON.stringify(before[name]),`Unrelated table changed: ${name}`);
+  await page.screenshot({path:'output/playwright/quick-study-resume.png',scale:'css'});
+  return {quickLearning:true,savedAnswers:1,coinsGranted:5,roundAndOptionsResumed:true,reloadNoDuplicateReward:true,returnFocusAndCamera:true,unrelatedTablesPreserved:true};
+}

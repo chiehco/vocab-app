@@ -61,11 +61,13 @@ function dossierTitleContent(word: string) {
   ));
 }
 
-export default function WordDetailScreen() {
-  const { wordId } = useParams<{ wordId: string }>();
+export default function WordDetailScreen({ embeddedWordId }: { embeddedWordId?: string } = {}) {
+  const { wordId: routeWordId } = useParams<{ wordId: string }>();
+  const wordId = embeddedWordId ?? routeWordId;
+  const embedded = embeddedWordId !== undefined;
   const [params] = useSearchParams();
-  const listId = params.get('list');
-  const groupId = listId || params.get('group');
+  const listId = embedded ? null : params.get('list');
+  const groupId = embedded ? null : listId || params.get('group');
   const group = useLiveQuery<CustomGroup | WordList | undefined>(() => listId ? readWordList(listId) : groupId ? progressDb.customGroups.get(groupId) : undefined, [groupId,listId]);
   const groupReturn = listId ? (group as WordList|undefined)?.returnTo ?? '/modes/words' : `/groups?group=${encodeURIComponent(groupId??'')}`;
   const groupQuery = `${listId?'list':'group'}=${encodeURIComponent(groupId??'')}`;
@@ -91,7 +93,7 @@ export default function WordDetailScreen() {
     scrollOnPageChange.current = true;
     setPage(next);
   };
-  const bookmarkFailed = useStudyBookmark(word && (!groupId || groupIndex >= 0) ? {
+  const bookmarkFailed = useStudyBookmark(!embedded && word && (!groupId || groupIndex >= 0) ? {
     href: `/word/${word.wordId}${groupId ? `?${groupQuery}` : ''}`,
     title: group?.name ?? word.word, position: groupIndex >= 0 ? groupIndex+1 : 1,
     total: groupIndex >= 0 ? groupIds.length : 1,
@@ -200,9 +202,9 @@ export default function WordDetailScreen() {
   const pages: [DossierPage, string][] = [
     ["card", "字卡"],
     ["meaning", "字義"],
-    ...(hasRelatedPage ? [["related", "相關詞"] as [DossierPage, string]] : []),
-    ...(usagePattern || usageNotes.length > 0 ? [["usage", "搭配"] as [DossierPage, string]] : []),
-    ...(memoryNotes.length > 0 ? [["memory", "記憶法"] as [DossierPage, string]] : []),
+    ...(embedded || hasRelatedPage ? [["related", "相關詞"] as [DossierPage, string]] : []),
+    ...(embedded || usagePattern || usageNotes.length > 0 ? [["usage", "搭配"] as [DossierPage, string]] : []),
+    ...(embedded || memoryNotes.length > 0 ? [["memory", "記憶法"] as [DossierPage, string]] : []),
   ];
   const activePage = pages.some(([key]) => key === page) ? page : "card";
   const pageTitle = (
@@ -218,9 +220,9 @@ export default function WordDetailScreen() {
   return (
     <div className="word-dossier-page">
       {bookmarkFailed && <p role="alert">學習位置尚未保存，請確認儲存空間後重新整理。</p>}
-      <header className="word-dossier-nav">
+      {!embedded && <header className="word-dossier-nav">
         <Link to="/browse">← 單字總表</Link><span>{word.wordId}</span><b>{word.level}</b>
-      </header>
+      </header>}
 
       {group && groupIndex >= 0 && <nav className="dossier-group-nav" aria-label="群組字卡導覽">
         <Link to={groupReturn}>← {group.name}</Link>
@@ -304,6 +306,7 @@ export default function WordDetailScreen() {
 
       {activePage === "related" && <div className="dossier-page">
         {pageTitle}
+        {!hasRelatedPage && <p>這個字尚未收錄相關詞與字根。</p>}
         {kinRelations.length > 0 && (
           <section className="dossier-section">
             <div className="dossier-section-head"><h2>相關單字</h2><span>{kinRelations.length} 枚</span></div>
@@ -350,6 +353,7 @@ export default function WordDetailScreen() {
 
       {activePage === "usage" && <div className="dossier-page">
         {pageTitle}
+        {!usagePattern && usageNotes.length === 0 && <p>這個字尚未收錄搭配。</p>}
         {usagePattern && <section className="dossier-usage"><h2>常用搭配</h2><UsagePatternList english={usagePattern} chinese={usagePatternZh} /></section>}
         {usageNotes.length > 0 && (
           <section className="dossier-section">
@@ -364,10 +368,11 @@ export default function WordDetailScreen() {
         <section className="dossier-section">
           <div className="dossier-section-head"><h2>記憶法與用法</h2><span>{memoryNotes.length} 則</span></div>
           {noteList(memoryNotes)}
+          {memoryNotes.length === 0 && <p>這個字尚未收錄記憶法。</p>}
         </section>
       </div>}
 
-      <p className="dossier-footer">單字總表 · {word.wordId}</p>
+      {!embedded && <p className="dossier-footer">單字總表 · {word.wordId}</p>}
     </div>
   );
 }

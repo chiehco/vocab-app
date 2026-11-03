@@ -25,7 +25,7 @@ export default function LV1TownScreen() {
   if (data.failed) return <div className="town-page"><h1>進度暫時讀不到</h1><p role="alert">請重新整理後再試，原有進度不會被清除。</p><Link to="/">回首頁</Link></div>;
   if (data.items.length !== LV1_TOWN_SOURCE_CARDS.length) return <div className="town-page"><h1>字卡還沒載入完整</h1><p>請重新整理後再試。</p><Link to="/">回首頁</Link></div>;
   return <TownView level="LV1" unit={1} study={data.study} onStudy={async()=>navigate(townStudyUrl(await startTownStudy('LV1/1')))} rows={getLV1TownProgress(data.items, data.logs, data.scope.bindings).map(row => ({
-    id: row.item.id, word: row.item.word, meaning: row.item.meaningZh,
+    id: row.item.id, wordId: row.item.wordId, word: row.item.word, meaning: row.item.meaningZh,
     attempted: row.attempted, latestCorrect: row.latestCorrect, latestLearningLabel:row.latestLearningLabel,
     houseStage:row.houseStage, legacyHouse:row.legacyHouse,
   }))} onPractice={async id => {
