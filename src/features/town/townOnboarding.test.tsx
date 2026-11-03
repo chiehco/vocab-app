@@ -56,7 +56,7 @@ beforeEach(async () => {
   view = createComponentHarness();
 });
 
-it.each(['LV1/1','LV4/17'] as const)('%s: main daily entry saves, returns to the exact house, reloads and continues without another save',async town=>{
+it.each(['LV1/1','LV4/17'] as const)('%s: main daily entry saves, continues in place, returns and reloads without another save',async town=>{
   await progressDb.settings.put({key:'dailyNewWordCap',value:2});
   await view.render(<MemoryRouter initialEntries={[`/town/${town}`]}><Flow /></MemoryRouter>);
   await view.waitFor(()=>expect(button('開始今日學新與複習 →')).toBeDefined());
@@ -73,15 +73,14 @@ it.each(['LV1/1','LV4/17'] as const)('%s: main daily entry saves, returns to the
   expect(view.container.querySelector('.seal-options')).toBeNull();
   expect(view.container.querySelector('.seal-card-answer')).not.toBeNull();
   await act(async()=>{const save=view.container.querySelector<HTMLButtonElement>('.seal-swipe-hint')!;save.click();save.click();});
-  await view.waitFor(()=>expect(link('回小鎮看小屋 →')).toBeDefined());expect(await progressDb.reviewLogs.count()).toBe(1);
+  await view.waitFor(()=>expect(view.container.querySelector('.seal-card-meta')?.textContent).toContain('第 2 張'));expect(await progressDb.reviewLogs.count()).toBe(1);
   const log=(await progressDb.reviewLogs.toArray())[0],card=await progressDb.cardStates.get(log.word),checkin=await progressDb.checkIns.get(log.reviewedAt.slice(0,10));
-  await view.click(link('回小鎮看小屋 →'));await view.waitFor(()=>expect(button('再練這個字')).toBeDefined());expect(built()).toHaveLength(log.grade>0?1:0);
-  const selected=view.container.querySelector('[aria-pressed=true][data-town-item]');expect(selected?.querySelector('.town-plot-word')?.textContent).toBe(log.word);
+  await view.click(link('← 回小鎮 · 保留本輪進度'));await view.waitFor(()=>expect(button('繼續今天的學習 →')).toBeDefined());expect(built()).toHaveLength(log.grade>0?1:0);
   await view.unmount();view=createComponentHarness();
   await view.render(<MemoryRouter initialEntries={[url]}><Flow /></MemoryRouter>);
-  await view.waitFor(()=>expect(link('回小鎮看小屋 →')).toBeDefined());expect(view.container.querySelector('.seal-options')).toBeNull();
+  await view.waitFor(()=>expect(view.container.querySelectorAll('.seal-options button')).toHaveLength(4));
   expect(await progressDb.reviewLogs.count()).toBe(1);expect(await progressDb.cardStates.get(log.word)).toEqual(card);expect(await progressDb.checkIns.get(log.reviewedAt.slice(0,10))).toEqual(checkin);
-  await view.click(button('下一張 →'));await view.waitFor(()=>expect(view.container.querySelector('.seal-card-meta')?.textContent).toContain('第 2 張'));
+  expect(view.container.querySelector('.seal-card-meta')?.textContent).toContain('第 2 張');
   expect(await progressDb.reviewLogs.count()).toBe(1);expect(await progressDb.directAttempts.count()).toBe(0);
 });
 
@@ -174,6 +173,8 @@ it('LV4: failed persistence shows no success CTA and leaves the plot empty', asy
 
 it.each([true, false])('LV1: saved Quiz answer (correct=%s) retains the exact round across town return', async correct => {
   await view.render(<MemoryRouter initialEntries={['/town/LV1/1']}><Flow /></MemoryRouter>);
+  await view.waitFor(() => expect(view.container.querySelector('[data-town-item]')).not.toBeNull());
+  await view.click(view.container.querySelector('[data-town-item]'));
   await view.waitFor(() => expect(button('練這個字，蓋小屋')).toBeDefined());
   await view.click(button('練這個字，蓋小屋'));
   await view.waitFor(() => expect(view.container.querySelectorAll('.trial-options button')).toHaveLength(4));
@@ -209,6 +210,8 @@ it.each([true, false])('LV1: saved Quiz answer (correct=%s) retains the exact ro
 
 it('LV1: failed answer save cannot claim a house or lose the question', async () => {
   await view.render(<MemoryRouter initialEntries={['/town/LV1/1']}><Flow /></MemoryRouter>);
+  await view.waitFor(() => expect(view.container.querySelector('[data-town-item]')).not.toBeNull());
+  await view.click(view.container.querySelector('[data-town-item]'));
   await view.waitFor(() => expect(button('練這個字，蓋小屋')).toBeDefined());
   await view.click(button('練這個字，蓋小屋'));
   await view.waitFor(() => expect(view.container.querySelectorAll('.trial-options button')).toHaveLength(4));
@@ -228,6 +231,8 @@ it('LV1: failed answer save cannot claim a house or lose the question', async ()
 
 it.each([true, false])('LV1: browser Back restores an old pre-answer snapshot without duplicating evidence (correct=%s)', async correct => {
   await view.render(<MemoryRouter initialEntries={['/town/LV1/1']}><Flow /></MemoryRouter>);
+  await view.waitFor(() => expect(view.container.querySelector('[data-town-item]')).not.toBeNull());
+  await view.click(view.container.querySelector('[data-town-item]'));
   await view.waitFor(() => expect(button('練這個字，蓋小屋')).toBeDefined());
   await view.click(button('練這個字，蓋小屋'));
   await view.waitFor(() => expect(view.container.querySelectorAll('.trial-options button')).toHaveLength(4));

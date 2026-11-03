@@ -1,0 +1,61 @@
+// A fresh nonpersistent browser context. All writes below are isolated QA data.
+async (page) => {
+  if(new URL(page.url()).origin!=='http://127.0.0.1:5175')throw Error('Local QA browser required');
+  const context=await page.context().browser().newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
+  await context.route('**/*',route=>new URL(route.request().url()).hostname==='127.0.0.1'?route.continue():route.abort());
+  const trial=await context.newPage(), check=(ok,message)=>{if(!ok)throw Error(message);};
+  await trial.goto('http://127.0.0.1:5175/#/town/LV1/1');await trial.waitForSelector('.town3d-canvas canvas');
+  const state=()=>trial.evaluate(async()=>{
+    const r=indexedDB.open('VocabProgressDB'),db=await new Promise(resolve=>{r.onsuccess=()=>resolve(r.result);});const data={};
+    for(const name of db.objectStoreNames){const q=db.transaction(name).objectStore(name).getAll();data[name]=await new Promise(resolve=>{q.onsuccess=()=>resolve(q.result);});}db.close();return data;
+  });
+  check(Object.values(await state()).every(rows=>rows.length===0),'Refusing nonempty progress database');
+  await trial.evaluate(async()=>{
+    const r=indexedDB.open('VocabProgressDB'),db=await new Promise(resolve=>{r.onsuccess=()=>resolve(r.result);});
+    const tx=db.transaction('settings','readwrite');for(const row of [{key:'autoPronounce',value:false},{key:'dailyNewWordCap',value:10},{key:'qa:full-round',value:true}])tx.objectStore('settings').put(row);
+    await new Promise((resolve,reject)=>{tx.oncomplete=resolve;tx.onabort=()=>reject(tx.error);});db.close();
+  });
+  await trial.reload();await trial.waitForSelector('.town3d-canvas canvas');
+  await trial.getByRole('button',{name:'開始今日學新與複習 →',exact:true}).tap();await trial.waitForSelector('.seal-options button');
+  const url=trial.url(), roundId=new URLSearchParams(url.split('?')[1]).get('session');
+  let resume=false, offline=false;
+  for(let index=0;index<10;index++){
+    await trial.waitForSelector('.seal-options button');
+    const data=await state(), round=data.settings.find(row=>row.key===`town-study:${roundId}`).value;
+    check(round.items.length===10 && round.index===index,'Frozen round and index');
+    check(data.reviewLogs.length===index,'No save before confirmation');
+    const target=await trial.evaluate(async wordId=>{
+      const r=indexedDB.open('VocabContentDB'),db=await new Promise(resolve=>{r.onsuccess=()=>resolve(r.result);});const q=db.transaction('words').objectStore('words').get(wordId),word=await new Promise(resolve=>{q.onsuccess=()=>resolve(q.result);});db.close();return word;
+    },round.items[index].wordId);
+    const option=round.options[index].findIndex(wordId=>(wordId===target.wordId)===(index%2===0));check(option>=0,'Expected correct/wrong choice');
+    await trial.locator('.seal-options button').nth(option).tap();await trial.locator('.seal-swipe-hint').waitFor();
+    if(index===4){
+      const choice=(await state()).settings.find(row=>row.key===`town-study:${roundId}`).value.choices[index];
+      await trial.getByRole('link',{name:'← 回小鎮 · 保留本輪進度',exact:true}).click();await trial.waitForSelector('.town3d-canvas canvas');
+      await trial.getByRole('button',{name:'關閉字卡 ×',exact:true}).click();
+      await trial.getByRole('button',{name:'繼續今天的學習 →',exact:true}).click();await trial.locator('.seal-swipe-hint').waitFor();
+      await trial.reload();await trial.locator('.seal-swipe-hint').waitFor();
+      const restored=(await state()).settings.find(row=>row.key===`town-study:${roundId}`).value;
+      check(restored.choices[index]===choice && trial.url()===url,'Same selected answer after return and reload');resume=true;
+    }
+    if(index===6){await trial.evaluate(async()=>{await navigator.serviceWorker.ready;});await trial.waitForFunction(()=>!!navigator.serviceWorker.controller);await context.setOffline(true);await trial.reload();await trial.locator('.seal-swipe-hint').waitFor();offline=true;}
+    await trial.locator('.seal-swipe-hint').evaluate(button=>{button.click();button.click();});
+    await trial.waitForFunction(next=>!!document.querySelector('.town-practice-complete') || document.querySelector('.seal-card-meta')?.textContent?.includes(`第 ${next} 張`),index+2);
+    check((await state()).reviewLogs.length===index+1,'Exactly one log per double confirmation');
+  }
+  await trial.locator('.town-practice-complete').waitFor();
+  check(await trial.locator('.town-practice-complete').count()===1,'One final summary');
+  const saved=await state(), answers=saved.rewardLedger.filter(row=>row.kind==='answer');
+  check(answers.length===10 && new Set(answers.map(row=>row.id)).size===10,'One award per answer');
+  check(saved.reviewLogs.filter(row=>row.grade===2).length===5 && saved.reviewLogs.filter(row=>row.grade===0).length===5,'Mixed correctness preserved');
+  check(saved.rewardWallet[0].balance===saved.rewardLedger.reduce((sum,row)=>sum+row.amount,0),'Wallet matches committed rewards');
+  await trial.screenshot({path:'output/playwright/full-round-summary-mobile.png',scale:'css'});
+  await trial.reload();await trial.locator('.town-practice-complete').waitFor();check(JSON.stringify(await state())===JSON.stringify(saved),'Offline summary reload must not duplicate any progress or reward');
+  await context.setOffline(false);await trial.getByRole('link',{name:'回小鎮看小屋 →',exact:true}).click();await trial.waitForSelector('.town3d-canvas canvas');
+  const labels=await trial.locator('.town3d-toolbar option').allTextContents();
+  check(labels.filter(label=>label.includes('下層半牆')).length===5,'Only the five correct first recalls start houses');
+  check(labels.filter(label=>label.includes('等待開工')).length===33,'Incorrect/unseen plots remain vacant');
+  await trial.screenshot({path:'output/playwright/full-round-town-mobile.png',scale:'css'});
+  const report={freshNonpersistentContext:true,questions:10,correct:5,wrong:5,logs:10,answerAwards:10,wallet:saved.rewardWallet[0].balance,duplicateConfirmationsIgnored:true,midRoundReturnAndReload:resume,offlineCompletion:offline,summaryReloadNoWrites:true,firstStageHouses:5,physicalDeviceTested:false};
+  await context.close();return report;
+}
