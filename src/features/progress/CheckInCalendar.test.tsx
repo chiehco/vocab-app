@@ -73,9 +73,12 @@ it('reacts to new check-ins and follows the current month across a year boundary
   await view.waitFor(() => expect(view.container.textContent).toContain('這個月還沒開始'));
   await act(async () => { await progressDb.checkIns.add({ date: '2025-12-31', reviewCount: 4, newWordsCount: 2, sessionsCount: 1 }); });
   await view.waitFor(() => expect(day('2025-12-31')?.classList.contains('stamped')).toBe(true));
+  await view.click(day('2025-12-31'));
+  expect(view.container.textContent).toContain('12 月 31 日：練習 4 次，新學 2 個字');
   clock.today = '2026-01-01';
   await view.render(<CheckInCalendar />);
   expect(title()).toBe('2026 年 1 月');
+  expect(view.container.querySelector('.checkin-calendar-detail')?.textContent).toBe('點日期看當天學了什麼。');
   expect(button('下個月')?.disabled).toBe(true);
   expect(button('上個月')?.disabled).toBe(false);
   await view.click(button('上個月'));

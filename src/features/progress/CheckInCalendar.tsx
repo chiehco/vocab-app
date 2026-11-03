@@ -23,7 +23,9 @@ export default function CheckInCalendar() {
   const shown = wanted > current ? current : wanted < earliest ? earliest : wanted;
   const cells = monthCells(shown);
   const studied = cells.filter((c) => c.key && byDate.has(c.key)).length;
-  const record = selected ? byDate.get(selected) : undefined;
+  // 跟隨本月跨月底時，前一個月的選取不應留在新月份的明細。
+  const visibleSelected = selected?.slice(0, 7) === shown ? selected : null;
+  const record = visibleSelected ? byDate.get(visibleSelected) : undefined;
 
   function go(delta: number) { setMonth(shiftMonth(shown, delta)); setSelected(null); }
 
@@ -52,8 +54,8 @@ export default function CheckInCalendar() {
         })}
       </div>
       <p className="checkin-calendar-detail" aria-live="polite">
-        {selected
-          ? `${Number(selected.slice(5, 7))} 月 ${Number(selected.slice(8))} 日：${record ? `練習 ${record.reviewCount} 次，新學 ${record.newWordsCount} 個字` : "這天沒有紀錄"}`
+        {visibleSelected
+          ? `${Number(visibleSelected.slice(5, 7))} 月 ${Number(visibleSelected.slice(8))} 日：${record ? `練習 ${record.reviewCount} 次，新學 ${record.newWordsCount} 個字` : "這天沒有紀錄"}`
           : "點日期看當天學了什麼。"}
       </p>
     </div>
