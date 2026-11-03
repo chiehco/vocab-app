@@ -2,10 +2,12 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { residentPose, town3DPositions, type Town3DPlot } from './town3dModel';
 import type { OwnedDecoration } from '../decorations/model';
+import { residentStudies, type ResidentStudy } from './residentIdentity';
+import { createResidentStudy, poseResident, type ResidentRig } from './createResidentStudy';
 
 export interface TownScene {
   update(plots: Town3DPlot[], selected: string, decorations: OwnedDecoration[]): void;
-  zoom(factor: number): void; reset(): void; focus(id: string): void;
+  zoom(factor: number): void; reset(): void; focus(id: string): void; focusResident(key: string): void;
   pause(value: boolean): void; dispose(): void;
 }
 
@@ -30,7 +32,7 @@ export function createTownScene(host: HTMLElement, onSelect: (id: string) => voi
   const controls = new OrbitControls(camera, canvas);
   controls.enableDamping = false;
   controls.minPolarAngle = .25; controls.maxPolarAngle = Math.PI / 2.45;
-  controls.minZoom = .7; controls.maxZoom = 3.4;
+  controls.minZoom = .7; controls.maxZoom = 18;
   controls.screenSpacePanning = false;
   controls.maxTargetRadius = 22;
   const geometries = new Set<THREE.BufferGeometry>();
@@ -89,9 +91,9 @@ export function createTownScene(host: HTMLElement, onSelect: (id: string) => voi
   scene.add(plotsGroup, residentsGroup, decorationGroup);
   const selection = mesh(scene, geometry(new THREE.RingGeometry(1.3, 1.47, 32)), '#faefbd', 0, .4, 0);
   selection.rotation.x = -Math.PI / 2;
-  let plots: Town3DPlot[] = [], plotKey = '', decorationKey = '', selectedId = '';
+  let plots: Town3DPlot[] = [], plotKey = '', residentKey = '', decorationKey = '', selectedId = '';
   let positions = town3DPositions(0);
-  const residents: { root: THREE.Group; body: THREE.Mesh; legs: THREE.Mesh[] }[] = [];
+  const residents: { study: ResidentStudy; rig: ResidentRig }[] = [];
   function addHouse(plot: Town3DPlot, index: number) {
     const p = positions[index], root = new THREE.Group(); root.position.set(p.x, .25, p.z); root.rotation.y = p.rotation;
     root.userData.itemId = plot.id; plotsGroup.add(root);
@@ -116,19 +118,10 @@ export function createTownScene(host: HTMLElement, onSelect: (id: string) => voi
       mesh(root, box, '#ddc9a3', .65, 2.85, -.45, .3, .8, .3);
     }
   }
-  function makeResident(index: number) {
-    const root = new THREE.Group(); root.userData.itemId = plots[index]?.id; residentsGroup.add(root);
-    groundDisc(root, '#bcb593', 0, 0, .6, .4, .08);
-    const color = ['#edc369', '#b5ced0', '#d7a8a1'][index];
-    const body = mesh(root, sphere, color, 0, 1.05, 0, .58, .72, .48);
-    for (const x of [-.2, .2]) {
-      mesh(root, sphere, '#f9f2dc', x, 1.26, .4, .14, .17, .09);
-      mesh(root, sphere, '#425e57', x, 1.26, .48, .065, .085, .04);
-      const antenna = mesh(root, cylinder, color, x * 1.4, 1.88, 0, .055, .55, .055); antenna.rotation.z = -x * .8;
-      mesh(root, sphere, color, x * 1.7, 2.14, 0, .11, .11, .11);
-    }
-    const legs = [-.27, .27].map(x => mesh(root, sphere, '#8d805f', x, .28, .08, .16, .23, .25));
-    residents.push({ root, body, legs });
+  function makeResident(study: ResidentStudy) {
+    const rig = createResidentStudy(study, geometry, material);
+    residentsGroup.add(rig.root); groundDisc(rig.root, '#bcb593', 0, 0, .6, .4, .08);
+    residents.push({ study, rig });
   }
   function addDecoration(row: OwnedDecoration) {
     const p = row.placement!;
@@ -155,10 +148,9 @@ export function createTownScene(host: HTMLElement, onSelect: (id: string) => voi
       if (moving && last) time += Math.min((now - last) / 1000, .1);
       last = now;
       residents.forEach((r, i) => {
-        const p = residentPose(time, i); r.root.position.set(p.x, .22, p.z); r.root.rotation.y = p.rotation;
+        const p = residentPose(time, i); r.rig.root.position.set(p.x, .22, p.z); r.rig.root.rotation.y = p.rotation;
         const step = moving && p.walking ? Math.sin(time * 9 + i) : 0;
-        r.body.position.y = 1.05 + Math.abs(step) * .08;
-        r.legs.forEach((leg, n) => { leg.position.z = .08 + step * (n ? -.16 : .16); });
+        poseResident(r.rig, step);
       });
       canvas.dataset.camera = [...camera.position.toArray(), ...controls.target.toArray(), camera.zoom].map(n => n.toFixed(3)).join(',');
       renderer.render(scene, camera);
@@ -177,6 +169,7 @@ export function createTownScene(host: HTMLElement, onSelect: (id: string) => voi
   function reset() { camera.position.set(34, 38, 42); camera.zoom = 1; controls.target.set(0, 0, 0); camera.updateProjectionMatrix(); controls.update(); redraw(); }
   const raycaster = new THREE.Raycaster(), pointer = new THREE.Vector2();
   let down: { x: number; y: number; moved: boolean } | undefined;
+  let tap: { id: string; until: number } | undefined;
   const pointers = new Set<number>();
   function pick(event: PointerEvent) {
     const rect = canvas.getBoundingClientRect();
@@ -188,6 +181,7 @@ export function createTownScene(host: HTMLElement, onSelect: (id: string) => voi
     return object?.userData.itemId as string | undefined;
   }
   function pointerDown(event: PointerEvent) {
+    tap = undefined;
     pointers.add(event.pointerId);
     if (pointers.size > 1) { if (down) down.moved = true; return; }
     if (event.button === 0) down = { x: event.clientX, y: event.clientY, moved: false }; else down = undefined;
@@ -196,22 +190,36 @@ export function createTownScene(host: HTMLElement, onSelect: (id: string) => voi
     if (down && Math.hypot(event.clientX - down.x, event.clientY - down.y) > 6) down.moved = true;
     if (!down) { const id = pick(event); canvas.style.cursor = id ? 'pointer' : 'grab'; canvas.title = plots.find(p => p.id === id)?.word ?? ''; }
   }
-  function pointerUp(event: PointerEvent) { pointers.delete(event.pointerId); if (down && !down.moved) { const id = pick(event); if (id) onSelect(id); } down = undefined; }
-  function cancel(event: PointerEvent) { pointers.delete(event.pointerId); down = undefined; }
+  function pointerUp(event: PointerEvent) {
+    pointers.delete(event.pointerId);
+    if (down && !down.moved) { const id = pick(event); if (id) tap = { id, until: performance.now() + 750 }; }
+    down = undefined;
+  }
+  function click() {
+    // Open after the compatibility click itself. Opening on pointerup lets a
+    // touch-generated click hit the entering modal's backdrop and close it again.
+    const candidate = tap; tap = undefined;
+    if (candidate && performance.now() <= candidate.until) onSelect(candidate.id);
+  }
+  function cancel(event: PointerEvent) { pointers.delete(event.pointerId); down = undefined; tap = undefined; }
   function contextLost(event: Event) { event.preventDefault(); onLost(); }
   canvas.addEventListener('pointerdown', pointerDown); canvas.addEventListener('pointermove', pointerMove);
   canvas.addEventListener('pointerup', pointerUp); canvas.addEventListener('pointercancel', cancel); canvas.addEventListener('webglcontextlost', contextLost);
+  canvas.addEventListener('click', click);
   controls.addEventListener('change', redraw);
   document.addEventListener('visibilitychange', redraw); reduced.addEventListener('change', redraw);
   const observer = new ResizeObserver(resize); observer.observe(host); reset(); resize();
   return {
     update(nextPlots, selected, decorations) {
-      const key = nextPlots.map(p => `${p.id}:${p.stage}:${p.built}:${p.word}`).join('|');
+      const key = nextPlots.map(p => `${p.id}:${p.wordId}:${p.stage}:${p.built}:${p.word}`).join('|');
       if (key !== plotKey) {
         plotKey = key; plots = nextPlots; positions = town3DPositions(plots.length);
         // Cached geometry/materials live until scene disposal; clearing groups does not allocate textures.
-        plotsGroup.clear(); residentsGroup.clear(); residents.length = 0;
-        plots.forEach(addHouse); for (let i = 0; i < Math.min(3, plots.length); i++) makeResident(i);
+        plotsGroup.clear(); plots.forEach(addHouse);
+      }
+      const studies = residentStudies(plots), rKey = studies.map(study => study.key).join('|');
+      if (rKey !== residentKey) {
+        residentKey = rKey; residentsGroup.clear(); residents.length = 0; studies.forEach(makeResident);
       }
       const placed = decorations.filter(d => d.placement?.town === 'LV1/1'), dKey = JSON.stringify(placed);
       if (dKey !== decorationKey) { decorationKey = dKey; decorationGroup.clear(); placed.forEach(addDecoration); }
@@ -223,12 +231,21 @@ export function createTownScene(host: HTMLElement, onSelect: (id: string) => voi
     zoom(factor) { camera.zoom = THREE.MathUtils.clamp(camera.zoom * factor, controls.minZoom, controls.maxZoom); camera.updateProjectionMatrix(); redraw(); },
     reset,
     focus(id) { const p = positions[plots.findIndex(plot => plot.id === id)]; if (!p) return; const delta = new THREE.Vector3(p.x, 0, p.z).sub(controls.target); controls.target.add(delta); camera.position.add(delta); camera.zoom = 2; camera.updateProjectionMatrix(); controls.update(); redraw(); },
+    focusResident(key) {
+      const resident = residents.find(r => r.study.key === key); if (!resident) return;
+      const root = resident.rig.root, angle = root.rotation.y + .4;
+      controls.target.copy(root.position).add(new THREE.Vector3(0, 1.15, 0));
+      camera.position.copy(controls.target).add(new THREE.Vector3(Math.sin(angle) * 7, 3.8, Math.cos(angle) * 7));
+      camera.zoom = Math.min(18, (camera.top - camera.bottom) / 5);
+      camera.updateProjectionMatrix(); controls.update(); redraw();
+    },
     pause(value) { paused = value; redraw(); },
     dispose() {
       disposed = true; cancelAnimationFrame(frame); observer.disconnect(); controls.dispose();
       document.removeEventListener('visibilitychange', redraw); reduced.removeEventListener('change', redraw);
       canvas.removeEventListener('pointerdown', pointerDown); canvas.removeEventListener('pointermove', pointerMove);
       canvas.removeEventListener('pointerup', pointerUp); canvas.removeEventListener('pointercancel', cancel); canvas.removeEventListener('webglcontextlost', contextLost);
+      canvas.removeEventListener('click', click);
       geometries.forEach(g => g.dispose()); materials.forEach(m => m.dispose()); scene.clear(); renderer.dispose(); renderer.forceContextLoss(); canvas.remove();
     },
   };

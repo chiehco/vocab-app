@@ -1,6 +1,6 @@
 import type { HouseStage } from '../houseGrowth';
 
-export interface Town3DPlot { id: string; word: string; built: boolean; stage?: HouseStage }
+export interface Town3DPlot { id: string; wordId?: string; word: string; built: boolean; stage?: HouseStage }
 export interface PlotPosition { x: number; z: number; rotation: number }
 /** Four residential sides leave the centre free for the player's existing plaza. */
 export function town3DPositions(count: number): PlotPosition[] {

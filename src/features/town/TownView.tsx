@@ -80,8 +80,8 @@ export default function TownView({ level, unit, rows, sibling, due, onPractice, 
     {error && <p role="alert" className="town-error">{error}</p>}
     <div className="town-summary"><span><strong>{built}</strong>／{rows.length} 小屋開工</span><span>屋頂完成 {roofed} 棟</span></div>
     <progress className="town-meter" value={built} max={rows.length} aria-label={`已開始施工 ${built} 棟，共 ${rows.length} 棟`} />
-    {is3DTown ? <ThreeTownMap plots={rows.map(row => ({ id: row.id, word: row.word, built: stageOf(row)>0, stage:stageOf(row) }))}
-      selectedId={selected?.id ?? ''} onSelect={id => { setSelectedId(id); setDrawerOpen(true); }} reading={drawerOpen} focusOnMount={hasFocus} /> : <TownMap town={decorationTown} plots={rows.map(row => ({ id: row.id, word: row.word, built: stageOf(row)>0, stage:stageOf(row) }))}
+    {is3DTown ? <ThreeTownMap plots={rows.map(row => ({ id: row.id, wordId: row.wordId, word: row.word, built: stageOf(row)>0, stage:stageOf(row) }))}
+      selectedId={selected?.id ?? ''} onHighlight={setSelectedId} onSelect={id => { setSelectedId(id); setDrawerOpen(true); }} reading={drawerOpen} focusOnMount={hasFocus} /> : <TownMap town={decorationTown} plots={rows.map(row => ({ id: row.id, word: row.word, built: stageOf(row)>0, stage:stageOf(row) }))}
       selectedId={selected?.id ?? ''} onSelect={id=>{setSelectedId(id);cardDialog.current?.showModal();}} focusOnMount={rows.some(row => row.id === focusId)} label={`${level} Unit ${unit} 單字城鎮全貌，可放大後拖曳`} />}
     {selected && (is3DTown ? <TownWordDrawer open={drawerOpen} wordId={selected.wordId} word={selected.word} onClose={() => setDrawerOpen(false)}>{selectedCard}</TownWordDrawer>
       : <dialog className="town-card-dialog" ref={cardDialog} onClick={event=>{if(event.target===event.currentTarget)event.currentTarget.close();}} aria-label="小鎮字卡">
