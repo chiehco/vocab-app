@@ -50,13 +50,14 @@ async (page) => {
    check(geometry.days.every(d=>d.left>=0&&d.right<=width&&d.bottom<=geometry.navTop),'day outside viewport or behind nav');
    check(geometry.days.filter(d=>d.hit!==null).every(d=>d.hit),'visible day tap blocked');
    check(geometry.detailBottom<=geometry.navTop,'detail behind navigation');
-   await p.screenshot({path:`/workspace/scratch/496f1327a1dd/qa-output/calendar-${width}-${scale}.png`,fullPage:true});
+   await p.screenshot({path:`output/playwright/checkin-calendar/calendar-${width}-${scale}.png`,fullPage:true});
    await p.getByRole('button',{name:'下個月',exact:true}).tap();
    check((await p.locator('.checkin-calendar-head strong').innerText())==='2026 年 1 月','forward across year wrong');
    check(await p.getByRole('button',{name:'下個月',exact:true}).isDisabled(),'current bound wrong');
    check(await p.locator('.checkin-day[aria-pressed=true]').count()===0,'stale selection remains after month switch');
    check(JSON.stringify(await snap(p))===JSON.stringify(before),'calendar changed progress or rewards');
    results.push({width,height,fontScale:scale,emptyState:true,legacyCheckIns:true,crossYear:true,monthBounds:true,progressAndRewardsUnchanged:true,geometry});
+   await context.close();
   }
   check(errors.length===0,'browser errors: '+errors.join('; '));
   return{results,pageErrors:errors,realUserDataTouched:false,externalRequestsBlocked:true};
