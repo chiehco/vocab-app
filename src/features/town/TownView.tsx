@@ -7,10 +7,12 @@ import type { townStudyStatus } from './townStudy';
 import RewardPanel from '../rewards/RewardPanel';
 import { isDecorationTown } from './decorations/model';
 import { HOUSE_STAGE_LABELS, type HouseStage } from './houseGrowth';
+import ThreeTownMap from './three/ThreeTownMap';
+import TownWordDrawer from './three/TownWordDrawer';
 
 interface TownRow {
   houseStage?:HouseStage; legacyHouse?:boolean;
-  id: string; word: string; meaning: string; attempted: boolean;
+  id: string; wordId?: string; word: string; meaning: string; attempted: boolean;
   latestCorrect: boolean; latestHintUsed?: boolean;
   latestLearningLabel?: string;
 }
@@ -23,18 +25,22 @@ export default function TownView({ level, unit, rows, sibling, due, onPractice, 
   const [params] = useSearchParams();
   const focusId = params.get('item');
   const town=`${level}/${unit}`;
+  const is3DTown = town === 'LV1/1';
   const decorationTown=isDecorationTown(town)?town:undefined;
   const [selectedId, setSelectedId] = useState(rows.find(row => row.id === focusId)?.id ?? rows[0]?.id ?? '');
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
   const lock = useRef(false);
   const cardDialog = useRef<HTMLDialogElement>(null);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const hasFocus = !!focusId && rows.some(row => row.id === focusId);
   useEffect(()=>{
-    if(focusId && rows.some(row=>row.id===focusId)) {
+    if(focusId && hasFocus) {
       setSelectedId(focusId);
-      if(cardDialog.current && !cardDialog.current.open)cardDialog.current.showModal();
+      if (is3DTown) setDrawerOpen(true);
+      else if(cardDialog.current && !cardDialog.current.open)cardDialog.current.showModal();
     }
-  },[focusId,rows]);
+  },[focusId,hasFocus,is3DTown]);
   const selected = rows.find(row => row.id === selectedId) ?? rows[0];
   const stageOf=(row:TownRow)=>row.houseStage ?? (row.attempted?4:0);
   const built = rows.filter(row => stageOf(row)>0).length;
@@ -48,14 +54,23 @@ export default function TownView({ level, unit, rows, sibling, due, onPractice, 
     catch { setError('暫時無法開始練習，請再試一次。原有進度會保留。'); }
     finally { lock.current = false; setBusy(false); }
   }
-  return <div className="town-page town-overview">
+  const selectedCard = selected && <section className="town-selected" aria-label="選取的單字">
+    <div className="town-selection-title"><h2>{selected.word}</h2><span>{HOUSE_STAGE_LABELS[stageOf(selected)]}{selected.legacyHouse && ' · 舊版保留'}</span></div>
+    {!is3DTown && <p>{selected.meaning}</p>}
+    {stageOf(selected)<4 && <p className="town-subtle">{stageOf(selected)===0 ? '先試著不查提示答對這個字，開始蓋半牆。' : '等到期再成功複習，繼續下一段施工。'}答錯不拆屋，原有學習紀錄會保留。</p>}
+    {selected.attempted && <p className="town-subtle">{selected.latestLearningLabel ?? (selected.latestCorrect ? '最近一次答對' : '最近一次還不熟，再陪牠練一次')}{selected.latestHintUsed ? ' · 使用過提示' : ''}。小屋會保留。</p>}
+    <div className="town-selected-actions"><SpeakerButton text={selected.word} /><button className="town-secondary" disabled={busy} onClick={() => void open(()=>onPractice(selected.id))}>{selected.attempted ? '再練這個字' : '練這個字，蓋小屋'}</button></div>
+    <p className="town-subtle">單字補練：每次只練這一字。<Link to={`/textbook/${level}/${unit}`}>到課本選範圍 →</Link></p>
+    {resume && <Link className="town-text-button" to={resume.to} state={resume.state}>繼續本輪補練 →</Link>}
+  </section>;
+  return <div className={`town-page town-overview${is3DTown ? ' town-3d-overview' : ''}`}>
     <header className="town-header"><Link to="/" className="town-brand">萬詞譜</Link><h1>{level} · Unit {unit}</h1><div className="town-header-links">{decorationTown&&<Link to={`/town/${town}/decorate`}>商店</Link>}<Link to={`/textbook/${level}/${unit}`}>課本單元</Link></div></header>
     <details className="town-about"><summary>小鎮說明</summary><div>
       <p className="town-subtle">首次有效答對蓋下層半牆，之後三次到期且答對的正式複習，依序加上門、一樓與窗戶、最後封屋頂。同日重答不加蓋；答錯不加蓋，也不拆屋。使用提示的補練與已會標記不會加蓋。</p>
       <p className="town-subtle">舊版小屋保留原貌，不代表補記成功複習。封屋頂後仍依原排程複習；只看字卡或聽發音不會蓋屋。</p>
       <p className="town-subtle">{remaining>0 ? `本輪還有 ${remaining} 字，依本小鎮詞域、到期時間與今日剩餘額度安排。` : continuing ? '本輪的紀錄已保存，可查看成果並完成本輪。' : '明天再來查看安排，也可以選一個單字補練。'}進度會保存，可隨時回小鎮再繼續。</p>
       {study.missing.length>0 && <p className="town-subtle">{study.missing.join('、')} 尚未連到一般字卡，暫不排入日課；可點空地使用單字補練。</p>}
-      <p className="town-subtle">點小屋或空地查看字卡。全貌較密集時，先點地圖放大，再點小屋；也可按「＋」放大看單字、拖曳移動，或用鍵盤逐棟選取。</p>
+      <p className="town-subtle">{is3DTown ? '點小屋、空地或散步角色開啟完整字卡；關閉後保留鏡頭。拖曳旋轉、雙指縮放，也可用單字目錄選屋。示範角色不代表已收服字獸。使用平面地圖或上方學習按鈕可直接學習。' : '點小屋或空地查看字卡。全貌較密集時，先點地圖放大，再點小屋；也可按「＋」放大看單字、拖曳移動，或用鍵盤逐棟選取。'}</p>
       <RewardPanel />
       <p className="town-subtle town-footnote">小屋記錄練過的字，還要慢慢複習才會記穩。進度保存在目前的瀏覽器。{level==='LV1' && '單字補練續答請留在同一分頁。'}</p>
       <div className="town-due">{sibling}</div>{due && <div className="town-due">{due}</div>}
@@ -65,17 +80,11 @@ export default function TownView({ level, unit, rows, sibling, due, onPractice, 
     {error && <p role="alert" className="town-error">{error}</p>}
     <div className="town-summary"><span><strong>{built}</strong>／{rows.length} 小屋開工</span><span>屋頂完成 {roofed} 棟</span></div>
     <progress className="town-meter" value={built} max={rows.length} aria-label={`已開始施工 ${built} 棟，共 ${rows.length} 棟`} />
-    <TownMap town={decorationTown} plots={rows.map(row => ({ id: row.id, word: row.word, built: stageOf(row)>0, stage:stageOf(row) }))}
-      selectedId={selected?.id ?? ''} onSelect={id=>{setSelectedId(id);cardDialog.current?.showModal();}} focusOnMount={rows.some(row => row.id === focusId)} label={`${level} Unit ${unit} 單字城鎮全貌，可放大後拖曳`} />
-    {selected && <dialog className="town-card-dialog" ref={cardDialog} onClick={event=>{if(event.target===event.currentTarget)event.currentTarget.close();}} aria-label="小鎮字卡">
-      <button className="town-dialog-close" onClick={()=>cardDialog.current?.close()}>關閉字卡 ×</button><section className="town-selected" aria-label="選取的單字">
-      <div className="town-selection-title"><h2>{selected.word}</h2><span>{HOUSE_STAGE_LABELS[stageOf(selected)]}{selected.legacyHouse && ' · 舊版保留'}</span></div>
-      <p>{selected.meaning}</p>
-      {stageOf(selected)<4 && <p className="town-subtle">{stageOf(selected)===0 ? '先試著不查提示答對這個字，開始蓋半牆。' : '等到期再成功複習，繼續下一段施工。'}答錯不拆屋，原有學習紀錄會保留。</p>}
-      {selected.attempted && <p className="town-subtle">{selected.latestLearningLabel ?? (selected.latestCorrect ? '最近一次答對' : '最近一次還不熟，再陪牠練一次')}{selected.latestHintUsed ? ' · 使用過提示' : ''}。小屋會保留。</p>}
-      <div className="town-selected-actions"><SpeakerButton text={selected.word} /><button className="town-secondary" disabled={busy} onClick={() => void open(()=>onPractice(selected.id))}>{selected.attempted ? '再練這個字' : '練這個字，蓋小屋'}</button></div>
-      <p className="town-subtle">單字補練：每次只練這一字。<Link to={`/textbook/${level}/${unit}`}>到課本選範圍 →</Link></p>
-      {resume && <Link className="town-text-button" to={resume.to} state={resume.state}>繼續本輪補練 →</Link>}
-    </section></dialog>}
+    {is3DTown ? <ThreeTownMap plots={rows.map(row => ({ id: row.id, word: row.word, built: stageOf(row)>0, stage:stageOf(row) }))}
+      selectedId={selected?.id ?? ''} onSelect={id => { setSelectedId(id); setDrawerOpen(true); }} reading={drawerOpen} focusOnMount={hasFocus} /> : <TownMap town={decorationTown} plots={rows.map(row => ({ id: row.id, word: row.word, built: stageOf(row)>0, stage:stageOf(row) }))}
+      selectedId={selected?.id ?? ''} onSelect={id=>{setSelectedId(id);cardDialog.current?.showModal();}} focusOnMount={rows.some(row => row.id === focusId)} label={`${level} Unit ${unit} 單字城鎮全貌，可放大後拖曳`} />}
+    {selected && (is3DTown ? <TownWordDrawer open={drawerOpen} wordId={selected.wordId} word={selected.word} onClose={() => setDrawerOpen(false)}>{selectedCard}</TownWordDrawer>
+      : <dialog className="town-card-dialog" ref={cardDialog} onClick={event=>{if(event.target===event.currentTarget)event.currentTarget.close();}} aria-label="小鎮字卡">
+        <button className="town-dialog-close" onClick={()=>cardDialog.current?.close()}>關閉字卡 ×</button>{selectedCard}</dialog>)}
   </div>;
 }

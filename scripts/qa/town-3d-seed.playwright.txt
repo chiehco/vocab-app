@@ -1,0 +1,50 @@
+// Playwright CLI run-code --filename. ONLY an isolated localhost test profile; never production.
+async (page) => {
+if (new URL(page.url()).origin !== 'http://127.0.0.1:5175') throw Error('Local test origin required');
+await page.waitForSelector('.town3d-canvas canvas');
+const seedReport = await page.evaluate(async () => {
+  const open = name => new Promise((resolve, reject) => {
+    const request = indexedDB.open(name); request.onsuccess = () => resolve(request.result); request.onerror = () => reject(request.error);
+  });
+  const content = await open('VocabContentDB');
+  const records = await new Promise((resolve, reject) => {
+    const request = content.transaction('words').objectStore('words').getAll(); request.onsuccess = () => resolve(request.result); request.onerror = () => reject(request.error);
+  }); content.close();
+  const names = [...document.querySelectorAll('.town3d-toolbar option')].map(option => option.textContent.split(' · ')[0]);
+  const progress = await open('VocabProgressDB');
+  const counts = await Promise.all([...progress.objectStoreNames].map(name => new Promise((resolve, reject) => {
+    const request = progress.transaction(name).objectStore(name).count(); request.onsuccess = () => resolve(request.result); request.onerror = () => reject(request.error);
+  })));
+  if (counts.some(Boolean)) { progress.close(); throw Error('Refusing to seed a nonempty progress database. Use a new nonpersistent browser session.'); }
+  const tx = progress.transaction([...progress.objectStoreNames], 'readwrite');
+  // New local test database only. These sentinels exercise preservation, never migrations or live data.
+  const day = '2026-10-01', at = '2026-10-01T08:00:00.000Z';
+  tx.objectStore('settings').put({key:'autoPronounce',value:false});
+  tx.objectStore('settings').put({key:'qa:3d-preserve',value:{nested:['keep',123]}});
+  tx.objectStore('cardStates').put({word:'zz-qa-sentinel',state:'review',easeFactor:2.5,intervalDays:8,repetitions:3,dueDate:'2099-01-01',lastReviewedAt:at,lapses:0,createdAt:at});
+  tx.objectStore('checkIns').put({date:day,reviewCount:4,newWordsCount:2,sessionsCount:1});
+  tx.objectStore('quizStats').put({word:'zz-qa-sentinel',timesAsked:3,timesCorrect:2,lastAskedAt:at});
+  tx.objectStore('customGroups').put({id:'qa:group',name:'QA sentinel',words:['zz-qa-sentinel'],createdAt:Date.parse(at),updatedAt:Date.parse(at)});
+  tx.objectStore('directSessions').put({id:'qa:direct',revision:'qa:unrelated',questionIds:[],index:0,createdAt:1,updatedAt:1});
+  tx.objectStore('directAttempts').put({id:'qa:attempt',questionId:'qa:question',sessionId:'qa:direct',answeredAt:1,correct:true});
+  tx.objectStore('writtenSessions').put({id:'qa:written',createdAt:1,updatedAt:1});
+  tx.objectStore('writtenSubmissions').put({id:'qa:submission',sessionId:'qa:written',questionId:'qa:question',submittedAt:1});
+  tx.objectStore('rewardWallet').put({id:'local',balance:60,updatedAt:1});
+  tx.objectStore('rewardRounds').put({id:'qa:round',startedAt:1,questionCount:1,challenge:'basic-only-v2'});
+  tx.objectStore('rewardLedger').put({id:'qa:reward',kind:'answer',amount:5,createdAt:1,roundId:'qa:round',word:'zz-qa-sentinel',correct:true,source:'quiz',referenceId:'qa:answer'});
+  tx.objectStore('townDecorations').put({id:'qa:bench',sku:'bench',pricePaid:90,purchasedAt:1,placement:{town:'LV1/1',x:1,y:1}});
+  tx.objectStore('townDecorations').put({id:'qa:plant',sku:'plant',pricePaid:30,purchasedAt:1,placement:{town:'LV4/17',x:0,y:0}});
+  names.forEach((name, i) => {
+    const word = records.find(row => row.word === name); if (!word) throw Error(`Missing content: ${name}`);
+    for (let stage = 0; stage < i % 5; stage++) {
+      const date = `2026-10-${String(stage + 1).padStart(2,'0')}`;
+      tx.objectStore('reviewLogs').add({word:name,reviewedAt:`${date}T08:00:00.000Z`,sessionId:`qa:stage:${i}:${stage}`,grade:2,intervalBefore:stage,intervalAfter:stage+1,easeFactorBefore:2.5,easeFactorAfter:2.5,mode:'flashcard',schedulingApplied:true,houseGrowth:{kind:stage ? 'due-review':'learning',day:date}});
+    }
+  });
+  await new Promise((resolve, reject) => {tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error);});
+  progress.close(); return {plots:names.length,synthetic:true};
+});
+await page.reload();
+await page.waitForSelector('.town3d-canvas canvas');
+return seedReport;
+}
