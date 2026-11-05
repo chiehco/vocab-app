@@ -1,17 +1,19 @@
 import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
 import assert from 'node:assert/strict';
 const phase=process.argv[2];assert.ok(['before','after'].includes(phase));
-const batch=process.argv[3]??'integration';assert.ok(['integration','u16'].includes(batch));
-const facts=JSON.parse(readFileSync('docs/unit-audit-20261105/'+(batch==='u16'?'VERIFIED-U16-VERB-FORMS-SOURCES.json':'VERIFIED-FOLLOWUP-VERB-FORMS-SOURCES.json'),'utf8')).facts;
+const batch=process.argv[3]??'integration';assert.ok(['integration','u16','u17'].includes(batch));
+const sourceFile={integration:'VERIFIED-FOLLOWUP-VERB-FORMS-SOURCES.json',u16:'VERIFIED-U16-VERB-FORMS-SOURCES.json',u17:'VERIFIED-U17-VERB-FORMS-SOURCES.json'}[batch];
+const facts=JSON.parse(readFileSync('docs/unit-audit-20261105/'+sourceFile,'utf8')).facts;
 const words=JSON.parse(readFileSync('public/data/v1/words.json','utf8'));
 const cards=facts.map(f=>({...f,currentWord:words.find(w=>w.wordId===f.wordId)}));
-assert.equal(cards.length,batch==='u16'?25:16);
+assert.equal(cards.length,{integration:16,u16:25,u17:18}[batch]);
 const out=`output/playwright/unit-audit/forms-${batch}-${phase}`;mkdirSync(out,{recursive:true});
 writeFileSync('output/playwright/unit-audit/integrated-forms-reopen.playwright.txt',`async(page)=>{
  const results=[];await page.setViewportSize({width:1000,height:1000});
  for(const fact of ${JSON.stringify(cards)}){
   await page.goto('http://127.0.0.1:5179/#/word/'+fact.wordId);
   await page.getByRole('heading',{name:fact.word,exact:true}).waitFor();
+  await page.getByRole('button',{name:'字卡',exact:true}).click();
   await page.waitForFunction(()=>{const i=document.querySelector('.study-illustration img');return i?i.complete&&i.naturalWidth>0:document.querySelector('main')?.innerText.includes('圖片尚未收錄')});
   await page.waitForTimeout(350);
   const expected=[fact.verbForms.base,fact.verbForms.past,fact.verbForms.pastParticiple];

@@ -12,6 +12,8 @@ import { practiceIds } from '../vocabulary/model';
 import { releasedUnit20BeforePracticeRevision } from './lv4U20PracticeRevision.testSupport';
 import currentUnit16 from './curriculumLV1Unit16.json';
 import { unit16BeforeAudit } from './lv1Unit16Audit.testSupport';
+import currentUnit17 from './curriculumLV1Unit17.json';
+import { unit17BeforeAudit } from './lv1Unit17Audit.testSupport';
 
 function stable(value: unknown): unknown {
   if (Array.isArray(value)) return value.map(stable);
@@ -49,6 +51,10 @@ it('retains historical curriculum and question identities with the audited cubes
     if(old.templateId === 'TEXTBOOK-LV1-U16'){
       expect(retained.items).toEqual(currentUnit16.learningItems);
       priorItems=unit16BeforeAudit(currentUnit16).learningItems;
+    }
+    if(old.templateId === 'TEXTBOOK-LV1-U17'){
+      expect(retained.items).toEqual(currentUnit17.learningItems);
+      priorItems=unit17BeforeAudit(currentUnit17).learningItems;
     }
     expect(hash(priorItems), old.templateId).toBe(old.itemsHash);
     const originalQuestions = structuredClone(priorPractice?.questions ?? retained.questions);

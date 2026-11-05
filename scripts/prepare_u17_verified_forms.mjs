@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import {readFileSync,writeFileSync} from 'node:fs';
+const read=p=>JSON.parse(readFileSync(p,'utf8'));
+const words=read('public/data/v1/words.json');
+const candidates=read('output/unit-audit-20261105/U17-source-form-facts.json');
+const ids='W000194 W000992 W000173 W000189 W000752 W000179 W000751 W000515 W000261 W000796 W000109 W000123 W000111 W004656 W001655 W001910 W000643 W000675'.split(' ');
+const facts=ids.map(id=>{const x=candidates.find(c=>c.wordId===id),row=words.find(w=>w.wordId===id);assert.ok(x&&row);assert.equal(x.researchStatus,'verified_candidate');assert.ok(row.pos.split('/').includes('v.'));assert.ok(!Object.hasOwn(row,'verbForms'));assert.equal(x.proposedVerbForms.base,row.word);assert.ok(x.evidence.length);return{wordId:id,word:row.word,verbForms:{...x.proposedVerbForms,status:'approved'},evidence:x.evidence,restriction:x.homographAndVariantRestrictions,verification:'Exact latest key absence and existing verb head checked; explicit dictionary past and past participle evidence retained; no whole-word approval.'};});
+assert.equal(new Set(facts.map(f=>f.wordId)).size,18);
+writeFileSync('docs/unit-audit-20261105/VERIFIED-U17-VERB-FORMS-SOURCES.json',JSON.stringify({baseCheckpoint:'ecbd15b2517d1c3d5db0ed34eeae5130ef15daa5',researchCommit:'e2d3f0fed929a17670af00ed1989fc9469426d8c',scope:'18 existing U17 verbs only. ring and photograph/photo retain absent global forms because their sense/head distinctions cannot be represented by one unlabeled panel. No adverb is treated as a verb merely because adv. contains v.',facts},null,2)+'\n');
+const patches=facts.map(f=>({dataset:'words',key:'wordId',id:f.wordId,before:{verbForms:{$absent:true}},after:{verbForms:f.verbForms},reason:'Add only the individually verified principal parts to a genuinely absent key; preserve POS, whole-word state and every sentence. Reverse by deleting the key.',evidence:f.evidence.map(e=>e.url).join(' ; ')}));
+writeFileSync('docs/unit-audit-20261105/LV1-U17-verified-forms-patches.json',JSON.stringify({baseCommit:'29cfc684d7a11b07f09988c478d30358830f1951',unit:'LV1-U17',patches},null,2)+'\n');console.log(JSON.stringify({facts:facts.length}));

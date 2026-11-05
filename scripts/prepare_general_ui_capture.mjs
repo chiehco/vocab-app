@@ -14,6 +14,9 @@ writeFileSync('output/playwright/unit-audit/general-capture.playwright.txt',`asy
   for(const card of cards){
     await page.goto('http://127.0.0.1:5179/#/word/'+card.officialWordId);
     await page.getByRole('heading',{name:card.word,exact:true}).waitFor();
+    // Consecutive source items can map to the same route. Explicitly restore
+    // the hero tab rather than relying on navigation to reset the prior tab.
+    await page.getByRole('button',{name:'字卡',exact:true}).click();
     await page.waitForFunction(()=>document.querySelector('.study-illustration img')||document.querySelector('main')?.innerText.includes('圖片尚未收錄'));
     const image=page.locator('.study-illustration img');
     if(await image.count())await page.waitForFunction(()=>{const i=document.querySelector('.study-illustration img');return i&&i.complete&&i.naturalWidth>0&&getComputedStyle(i).visibility!=='hidden'});

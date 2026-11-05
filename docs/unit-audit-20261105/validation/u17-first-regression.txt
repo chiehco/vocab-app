@@ -1,0 +1,30 @@
+
+> vocab-app@0.0.0 test
+> vitest run --maxWorkers=1 src/db/seed.test.ts src/db/unitAudit.testSupport.test.ts src/features/direct/lv1Unit16Text.test.ts src/features/direct/lv1Unit17Text.test.ts src/features/direct/lv1Unit16Audit.test.ts src/features/direct/lv1Unit17Audit.test.ts src/features/direct/recoveredUnitIntegration.test.ts src/features/vocabulary/auditedWordIllustrations.test.ts src/features/vocabulary/lv1ReviewedImages.test.ts src/db/lv6MainIntegration.test.ts src/features/direct/lv4NotesConfirmation.test.ts
+
+
+ RUN  v4.1.9 <repo>
+
+ ❯ src/features/vocabulary/lv1ReviewedImages.test.ts (11 tests | 1 failed) 11429ms
+     × contains exactly the reviewed scope and preserves every final image and caption hash 11326ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/features/vocabulary/lv1ReviewedImages.test.ts > reviewed LV1 image-only release > contains exactly the reviewed scope and preserves every final image and caption hash
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/features/vocabulary/lv1ReviewedImages.test.ts:17:3
+     15|
+     16| describe('reviewed LV1 image-only release', () => {
+     17|   it('contains exactly the reviewed scope and preserves every final im…
+       |   ^
+     18|     expect(cards).toHaveLength(726);
+     19|     expect(new Set(cards.map(c => c.id)).size).toBe(726);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 10 passed (11)
+      Tests  1 failed | 75 passed (76)
+   Start at  22:32:11
+   Duration  65.97s (transform 7.69s, setup 0ms, import 32.11s, tests 31.15s, environment 1ms)

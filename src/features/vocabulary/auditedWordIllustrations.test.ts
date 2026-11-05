@@ -15,6 +15,7 @@ import u12Evidence from '../../../docs/unit-audit-20261105/LV1-U12-original-imag
 import u13Evidence from '../../../docs/unit-audit-20261105/LV1-U13-original-image-review.json';
 import u14Evidence from '../../../docs/unit-audit-20261105/LV1-U14-original-image-review.json';
 import u15Evidence from '../../../docs/unit-audit-20261105/LV1-U15-original-image-review.json';
+import u17Evidence from '../../../docs/unit-audit-20261105/LV1-U17-original-image-review.json';
 import preparedElevator from '../../../docs/unit-audit-20261105/LV1-U12-push-elevator-prepared.json';
 import captionTranslations from '../../../docs/unit-audit-20261105/LV1-verified-caption-translations.json';
 import publishedUnits from './lv1ReviewedImages.json';
@@ -23,7 +24,7 @@ import {approvedCurriculumIllustration,approvedWordIllustration,approvedLV1Image
 import {getWordBeastAsset} from '../wordbeast/wordBeastAssets';
 
 it('binds the explicitly reviewed general-card repairs to exact images and captions',()=>{
- expect(cards).toHaveLength(328);
+ expect(cards).toHaveLength(329);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U03-'))).toHaveLength(18);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U04-'))).toHaveLength(19);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U05-'))).toHaveLength(4);
@@ -37,9 +38,10 @@ it('binds the explicitly reviewed general-card repairs to exact images and capti
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U13-'))).toHaveLength(34);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U14-'))).toHaveLength(34);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U15-'))).toHaveLength(42);
- expect(new Set(cards.map(c=>c.officialWordId)).size).toBe(328);
+ expect(cards.filter(c=>c.reviewId==='LI-LV1U17-V027')).toHaveLength(1);
+ expect(new Set(cards.map(c=>c.officialWordId)).size).toBe(329);
  for(const card of cards){
-  const proof=[...evidence.cards,...u4Evidence.cards,...u5Evidence.cards,...u6Evidence.cards,...u7Evidence.cards,...u8Evidence.cards,...u9Evidence.cards,...u10Evidence.cards,...u11Evidence.cards,...u12Evidence.cards,...u13Evidence.cards,...u14Evidence.cards,...u15Evidence.cards].find(c=>c.id===card.reviewId)!;
+  const proof=[...evidence.cards,...u4Evidence.cards,...u5Evidence.cards,...u6Evidence.cards,...u7Evidence.cards,...u8Evidence.cards,...u9Evidence.cards,...u10Evidence.cards,...u11Evidence.cards,...u12Evidence.cards,...u13Evidence.cards,...u14Evidence.cards,...u15Evidence.cards,...u17Evidence.cards].find(c=>c.id===card.reviewId)!;
   expect(proof.pixelReview).toContain('actually viewed original');
   expect(proof.observation).toBeTruthy();
   expect(createHash('sha256').update(readFileSync('public/'+card.illustration.path)).digest('hex')).toBe(proof.publishedImageSha256);
@@ -127,4 +129,14 @@ it('keeps the prepared elevator replacement outside published unit cards and the
   captionZh:'這個小男孩必須用盡全力推開那扇沉重的門。',
  });
  expect(approvedCurriculumIllustration('push','/'+preparedElevator.preparedReplacement.path.replace(/^public\//,''))).toBeUndefined();
+});
+
+it('pairs the retained fat cat bytes with their own caption and preserves the puppy example',()=>{
+ const pair=approvedWordIllustration('fat','W000299')!;
+ expect(pair).toEqual({path:'wordbeast/lv1/W000299.png',captionEn:'The cat is fat and lies comfortably on a cushion.',captionZh:'這隻貓很胖，舒服地躺在墊子上。'});
+ expect(approvedCurriculumIllustration('fat','/wordbeast/lv1/W000299.png?v=test')).toEqual(pair);
+ expect(approvedCurriculumIllustration('wrong-word','/wordbeast/lv1/W000299.png')).toBeUndefined();
+ const examples=JSON.parse(readFileSync('public/data/v1/examples.json','utf8'));
+ expect(examples.find((e:{exampleId:string})=>e.exampleId==='EX845bc672')).toMatchObject({sentenceEn:'The puppy grew fat after eating too many treats.',sentenceZh:'這隻小狗因為吃太多零食而變胖了。',blankSentence:'The puppy grew _____ after eating too many treats.',answer:'fat',sensePos:'adj.'});
+ expect(publishedUnits.some(c=>c.id==='LI-LV1U17-V027')).toBe(false);
 });

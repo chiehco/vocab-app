@@ -15,6 +15,8 @@ import u16Forms from '../../docs/unit-audit-20261105/LV1-U16-verified-forms-patc
 import u16FormSources from '../../docs/unit-audit-20261105/VERIFIED-U16-VERB-FORMS-SOURCES.json';
 import wordingFollowup from '../../docs/unit-audit-20261105/LV1-U11-U12-U15-wording-followup.json';
 import dieNote from '../../docs/unit-audit-20261105/LV1-U08-die-note-followup.json';
+import u17Forms from '../../docs/unit-audit-20261105/LV1-U17-verified-forms-patches.json';
+import u17FormSources from '../../docs/unit-audit-20261105/VERIFIED-U17-VERB-FORMS-SOURCES.json';
 
 type Row=Record<string,unknown>;
 const examples:Row[]=JSON.parse(readFileSync('public/data/v1/examples.json','utf8'));
@@ -153,4 +155,18 @@ it('retains the historical whole-note baseline and reverses only one exact dupli
  expect(()=>restoreRecordedAuditPatch('notes',{...p.before,...p.after,title:'Changed title'},p)).toThrow('source guard');
  const unlisted=structuredClone(notes);unlisted.find(n=>n.noteId!==p.id)!.content='Unlisted note drift';
  expect(createHash('sha256').update(JSON.stringify(stable(beforeUnitAudit('notes',unlisted)))).digest('hex')).not.toBe(actual);
+});
+
+it('restores only 18 exact U17 missing forms and rejects false absence or unverified forms',()=>{
+ expect(u17FormSources.facts).toHaveLength(18);
+ const earlier=new Set([...originalSources.facts,...followupSources.facts,...u16FormSources.facts].map(f=>f.wordId));
+ expect(u17FormSources.facts.every(f=>!earlier.has(f.wordId))).toBe(true);
+ const words:Row[]=JSON.parse(readFileSync('public/data/v1/words.json','utf8'));
+ for(const p of u17Forms.patches){
+  const row=structuredClone(words.find(w=>w.wordId===p.id)!);const preserved={...row};delete preserved.verbForms;
+  restoreRecordedAuditPatch('words',row,p);expect(row).toEqual(preserved);expect(row).not.toHaveProperty('verbForms');
+  for(const key of ['base','past','pastParticiple','sourceRef','status']){const wrong=structuredClone(p);(wrong.after.verbForms as Row)[key]='unverified';expect(()=>restoreRecordedAuditPatch('words',{...wrong.after},wrong)).toThrow();}
+  expect(()=>restoreRecordedAuditPatch('words',{...p.after},{...p,before:{verbForms:null}})).toThrow();
+ }
+ for(const id of ['W000717','W000639'])expect(words.find(w=>w.wordId===id)).not.toHaveProperty('verbForms');
 });
