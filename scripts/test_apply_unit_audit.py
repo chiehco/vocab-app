@@ -19,8 +19,9 @@ class AuditWriteBoundaryTests(unittest.TestCase):
         self.root = Path(self.temp.name)
         evidence_dir = self.root / 'docs/unit-audit-20261105'
         evidence_dir.mkdir(parents=True)
-        for name in ['VERIFIED-VERB-FORMS-SOURCES.json', 'VERIFIED-FOLLOWUP-VERB-FORMS-SOURCES.json', 'VERIFIED-U16-VERB-FORMS-SOURCES.json', 'VERIFIED-U17-VERB-FORMS-SOURCES.json', 'VERIFIED-U18-VERB-FORMS-SOURCES.json', 'VERIFIED-U19-VERB-FORMS-SOURCES.json', 'VERIFIED-U20-VERB-FORMS-SOURCES.json', 'VERIFIED-U21-VERB-FORMS-SOURCES.json', 'VERIFIED-U18-TRANSLATION-SOURCES.json', 'VERIFIED-TRANSLATION-SOURCES.json', 'VERIFIED-NOTE-SOURCES.json']:
+        for name in ['VERIFIED-VERB-FORMS-SOURCES.json', 'VERIFIED-FOLLOWUP-VERB-FORMS-SOURCES.json', 'VERIFIED-U16-VERB-FORMS-SOURCES.json', 'VERIFIED-U17-VERB-FORMS-SOURCES.json', 'VERIFIED-U18-VERB-FORMS-SOURCES.json', 'VERIFIED-U19-VERB-FORMS-SOURCES.json', 'VERIFIED-U20-VERB-FORMS-SOURCES.json', 'VERIFIED-U21-VERB-FORMS-SOURCES.json', 'VERIFIED-INTEGRATED-U05-U06-VERB-FORMS-SOURCES.json', 'VERIFIED-U18-TRANSLATION-SOURCES.json', 'VERIFIED-TRANSLATION-SOURCES.json', 'VERIFIED-NOTE-SOURCES.json']:
             audit.write_json(evidence_dir / name, audit.read(audit.ROOT / 'docs/unit-audit-20261105' / name))
+        self.integrated_words = audit.read(audit.ROOT / 'public/data/v1/words.json')
         self.data = self.root / "public/data/v1"
         self.data.mkdir(parents=True)
         self.row = {"exampleId": "EXtest", "word": "man", "sensePos": "n.",
@@ -356,6 +357,34 @@ class AuditWriteBoundaryTests(unittest.TestCase):
             with self.assertRaises(AssertionError):audit.validate_patch_shape(changed)
             changed=copy.deepcopy(p);changed.update(dataset='examples',key='exampleId')
             with self.assertRaises(AssertionError):audit.validate_patch_shape(changed)
+
+    def test_integrated_u05_u06_forms_preserve_exact_non_form_rows_and_absence(self):
+        facts = audit.read(self.root / 'docs/unit-audit-20261105/VERIFIED-INTEGRATED-U05-U06-VERB-FORMS-SOURCES.json')['facts']
+        self.assertEqual(len(facts), 45)
+        self.assertEqual({f['wordId'] for f in facts}, audit.INTEGRATED_U05_U06_FORM_IDS)
+        with patch.object(audit, 'ROOT', self.root):
+            for fact in facts:
+                original = copy.deepcopy(next(w for w in self.integrated_words if w['wordId'] == fact['wordId']))
+                original.pop('verbForms', None)
+                p = {'dataset':'words','key':'wordId','id':fact['wordId'],'before':{'verbForms':{'$absent':True}},'after':{'verbForms':fact['verbForms']},'reason':'Exact reconciled field','evidence':fact['verbForms']['sourceRef']}
+                audit.validate_patch_shape(p)
+                row = copy.deepcopy(original)
+                self.assertTrue(audit.apply_to_row(row, p))
+                self.assertFalse(audit.apply_to_row(row, p))
+                self.assertEqual({k:v for k,v in row.items() if k != 'verbForms'}, original)
+                for field in ['word', 'pos', 'status', 'meaningZh', 'meaningEn', 'usagePattern']:
+                    wrong = copy.deepcopy(row); wrong[field] = 'unrecorded'
+                    with self.assertRaises(AssertionError): audit.apply_to_row(wrong, p)
+                for existing in [None, {'base':fact['word'], 'past':'custom'}]:
+                    with self.assertRaises(AssertionError): audit.apply_to_row({**original, 'verbForms':existing}, p)
+                for field in ['base','past','pastParticiple','sourceRef','status']:
+                    wrong = copy.deepcopy(p); wrong['after']['verbForms'][field] = 'unverified'
+                    with self.assertRaises(AssertionError): audit.validate_patch_shape(wrong)
+                for identity in ['W999999','W000139','W000717']:
+                    wrong = copy.deepcopy(p); wrong['id'] = identity
+                    with self.assertRaises(AssertionError): audit.validate_patch_shape(wrong)
+                wrong = copy.deepcopy(p); wrong['before'] = {}
+                with self.assertRaises(AssertionError): audit.validate_patch_shape(wrong)
 
 if __name__ == "__main__":
     unittest.main()

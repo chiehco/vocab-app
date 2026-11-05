@@ -1,12 +1,12 @@
 import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
 import assert from 'node:assert/strict';
 const phase=process.argv[2];assert.ok(['before','after'].includes(phase));
-const batch=process.argv[3]??'integration';assert.ok(['integration','u16','u17','u18','u19','u20','u21'].includes(batch));
-const sourceFile={integration:'VERIFIED-FOLLOWUP-VERB-FORMS-SOURCES.json',u16:'VERIFIED-U16-VERB-FORMS-SOURCES.json',u17:'VERIFIED-U17-VERB-FORMS-SOURCES.json',u18:'VERIFIED-U18-VERB-FORMS-SOURCES.json',u19:'VERIFIED-U19-VERB-FORMS-SOURCES.json',u20:'VERIFIED-U20-VERB-FORMS-SOURCES.json',u21:'VERIFIED-U21-VERB-FORMS-SOURCES.json'}[batch];
+const batch=process.argv[3]??'integration';assert.ok(['integration','u16','u17','u18','u19','u20','u21','u05u06'].includes(batch));
+const sourceFile={integration:'VERIFIED-FOLLOWUP-VERB-FORMS-SOURCES.json',u16:'VERIFIED-U16-VERB-FORMS-SOURCES.json',u17:'VERIFIED-U17-VERB-FORMS-SOURCES.json',u18:'VERIFIED-U18-VERB-FORMS-SOURCES.json',u19:'VERIFIED-U19-VERB-FORMS-SOURCES.json',u20:'VERIFIED-U20-VERB-FORMS-SOURCES.json',u21:'VERIFIED-U21-VERB-FORMS-SOURCES.json',u05u06:'VERIFIED-INTEGRATED-U05-U06-VERB-FORMS-SOURCES.json'}[batch];
 const facts=JSON.parse(readFileSync('docs/unit-audit-20261105/'+sourceFile,'utf8')).facts;
 const words=JSON.parse(readFileSync('public/data/v1/words.json','utf8'));
 const cards=facts.map(f=>({...f,currentWord:words.find(w=>w.wordId===f.wordId)}));
-assert.equal(cards.length,{integration:16,u16:25,u17:18,u18:20,u19:13,u20:15,u21:9}[batch]);
+assert.equal(cards.length,{integration:16,u16:25,u17:18,u18:20,u19:13,u20:15,u21:9,u05u06:45}[batch]);
 const out=`output/playwright/unit-audit/forms-${batch}-${phase}`;mkdirSync(out,{recursive:true});
 writeFileSync('output/playwright/unit-audit/integrated-forms-reopen.playwright.txt',`async(page)=>{
  const results=[];await page.setViewportSize({width:1000,height:1000});
@@ -29,6 +29,7 @@ writeFileSync('output/playwright/unit-audit/integrated-forms-reopen.playwright.t
   if(fact.currentWord.meaningEn)await page.waitForFunction(text=>document.querySelector('main')?.innerText.replace(/\\s+/g,' ').includes(text.replace(/\\s+/g,' ')),fact.currentWord.meaningEn);
   const meaningForms=await readForms();
   if(${JSON.stringify(phase)}==='after'&&JSON.stringify(meaningForms)!==JSON.stringify(expected))throw Error('Meaning forms mismatch '+fact.word);
+  if(${JSON.stringify(phase)}==='before'&&meaningForms.length)throw Error('Original meaning-panel forms no longer absent '+fact.word);
   const examples=await page.locator('.dossier-examples li').evaluateAll(items=>items.map(li=>({en:li.querySelector('p')?.innerText,zh:li.querySelector('div>span')?.innerText,label:[...li.querySelectorAll('small')].map(s=>s.innerText)})));
   const meaningScreenshot='${out}/'+fact.wordId+'-meaning.png';await page.screenshot({path:meaningScreenshot,fullPage:true});
   await page.getByRole('button',{name:'搭配',exact:true}).click();await page.waitForTimeout(350);

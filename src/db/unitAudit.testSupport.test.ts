@@ -28,6 +28,8 @@ import u20Forms from '../../docs/unit-audit-20261105/LV1-U20-verified-forms-patc
 import u20FormSources from '../../docs/unit-audit-20261105/VERIFIED-U20-VERB-FORMS-SOURCES.json';
 import u21Forms from '../../docs/unit-audit-20261105/LV1-U21-verified-forms-patches.json';
 import u21FormSources from '../../docs/unit-audit-20261105/VERIFIED-U21-VERB-FORMS-SOURCES.json';
+import integratedU05U06 from '../../docs/unit-audit-20261105/LV1-U05-U06-integrated-forms-patches.json';
+import integratedU05U06Sources from '../../docs/unit-audit-20261105/VERIFIED-INTEGRATED-U05-U06-VERB-FORMS-SOURCES.json';
 type Row=Record<string,unknown>;
 const examples:Row[]=JSON.parse(readFileSync('public/data/v1/examples.json','utf8'));
 function stable(value:unknown):unknown{
@@ -237,4 +239,18 @@ it('restores only 9 exact U21 missing forms and rejects false absence or unverif
   expect(()=>restoreRecordedAuditPatch('words',{...p.after},{...p,before:{verbForms:null}})).toThrow();
  }
  for(const id of ['W000862','W000717','W000639'])expect(words.find(w=>w.wordId===id)).not.toHaveProperty('verbForms');
+});
+
+it('reverses only45 integrated U05-U06 fields and protects every other exact word field',()=>{
+ expect(integratedU05U06Sources.facts).toHaveLength(45);
+ const prior=new Set([...originalSources.facts,...followupSources.facts,...u16FormSources.facts,...u17FormSources.facts,...u18FormSources.facts,...u19FormSources.facts,...u20FormSources.facts,...u21FormSources.facts].map(f=>f.wordId));
+ expect(integratedU05U06Sources.facts.every(f=>!prior.has(f.wordId))).toBe(true);
+ const words:Row[]=JSON.parse(readFileSync('public/data/v1/words.json','utf8'));
+ for(const p of integratedU05U06.patches){const row=structuredClone(words.find(w=>w.wordId===p.id)!);const original={...row};delete original.verbForms;restoreRecordedAuditPatch('words',row,p);expect(row).toEqual(original);expect(row).not.toHaveProperty('verbForms');
+  for(const key of ['base','past','pastParticiple','sourceRef','status']){const wrong=structuredClone(p);(wrong.after.verbForms as Row)[key]='unverified';expect(()=>restoreRecordedAuditPatch('words',{...original,...wrong.after},wrong)).toThrow();}
+  for(const key of ['word','pos','status','meaningZh','meaningEn','usagePattern'])expect(()=>restoreRecordedAuditPatch('words',{...original,...p.after,[key]:'unrecorded'},p)).toThrow();
+  expect(()=>restoreRecordedAuditPatch('words',{...original,...p.after},{...p,before:{verbForms:null}})).toThrow();
+ }
+ const show=words.find(w=>w.wordId==='W000772')!;expect((show.verbForms as Row).sourceRef).toBe('https://www.collinsdictionary.com/dictionary/english/show; https://www.collinsdictionary.com/conjugation/english/show');
+ const caseWord=words.find(w=>w.wordId==='W000147')!;expect((caseWord.verbForms as Row).sourceRef).toBe('https://www.collinsdictionary.com/dictionary/english/case; https://www.collinsdictionary.com/us/conjugation/english/case');
 });
