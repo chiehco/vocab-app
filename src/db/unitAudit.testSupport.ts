@@ -37,13 +37,14 @@ import followupFormsU10 from '../../docs/unit-audit-20261105/LV1-U10-verified-fo
 import followupFormsU11 from '../../docs/unit-audit-20261105/LV1-U11-verified-forms-patches.json';
 import followupFormsU12 from '../../docs/unit-audit-20261105/LV1-U12-verified-forms-patches.json';
 import followupFormsU13 from '../../docs/unit-audit-20261105/LV1-U13-verified-forms-patches.json';
+import followupFormsU14 from '../../docs/unit-audit-20261105/LV1-U14-verified-forms-patches.json';
 import verifiedFollowupForms from '../../docs/unit-audit-20261105/VERIFIED-FOLLOWUP-VERB-FORMS-SOURCES.json';
 
 type Row = Record<string, unknown>;
 type Patch = {dataset:string; key:string; id:string; before:Row; after:Row; reason:string; evidence:string};
 const patches:Patch[]=[...u1.patches,...u2.patches,...pig.patches,...u3.patches,...u3Remaining.patches,...u4.patches,...u5.patches,...u6.patches,...u6Syntax.patches,...examSources.patches,...u7.patches,...u7Hints.patches,...lexicalSources.patches,...catDefinition.patches,...u7VerifiedExams.patches,...u8.patches,...demandVisible.patches,...u9.patches,...u8Hints.patches,...translations.patches,...forms.patches,...u10.patches,...u11.patches,...u11Usage.patches,...followupForms.patches,...followupFormsU05U06.patches,...followupFormsU07.patches];
 
-patches.push(...followupTranslations.patches,...followupFormsU08U09.patches,...followupFormsU10.patches,...followupFormsU11.patches,...followupFormsU12.patches,...followupFormsU13.patches);
+patches.push(...followupTranslations.patches,...followupFormsU08U09.patches,...followupFormsU10.patches,...followupFormsU11.patches,...followupFormsU12.patches,...followupFormsU13.patches,...followupFormsU14.patches);
 
 export function restoreRecordedAuditPatch(name:string,row:Row,patch:Patch):void{
  assert.ok(patch.reason&&patch.evidence,'each audit correction needs recorded evidence');

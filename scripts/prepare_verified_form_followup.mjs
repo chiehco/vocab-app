@@ -54,6 +54,15 @@ const batches = {
     preserveVariantEvidence: true,
     preserveUnitContexts: true,
   },
+  'U14': {
+    sources: ['U10-U15-PUBLISHED-VERB-FORMS-VERIFICATION.json','U14-ADDITIONAL-VERB-FORMS-VERIFICATION.json'],
+    ids: 'W000503 W000911 W000544 W000058 W000558 W000119 W000776 W000722 W000061 W000341 W000604 W000318 W000159 W001326 W000989 W000723 W005813 W000138'.split(' '),
+    sourceSnapshot: {researchCommit:'e2d3f0fed929a17670af00ed1989fc9469426d8c',sourceBlobs:{"U10-U15-PUBLISHED-VERB-FORMS-VERIFICATION.json":"5215e48aadd050f5118e85727bc391ad7150738b","U14-ADDITIONAL-VERB-FORMS-VERIFICATION.json":"e7bb332295aa822e63581a15f2465254703d97dc"}},
+    readVerifiedGitBlobs: true,
+    preserveVariantEvidence: true,
+    preserveUnitContexts: true,
+    currentSourceRefOverrides: {"W000911":"https://www.collinsdictionary.com/dictionary/english/touch","W000058":"https://www.collinsdictionary.com/dictionary/english/ball","W000558":"https://www.collinsdictionary.com/dictionary/english/mouth","W000776":"https://www.collinsdictionary.com/dictionary/english/sight","W000061":"https://www.collinsdictionary.com/dictionary/english/bank","W000341":"https://www.collinsdictionary.com/dictionary/english/garden"},
+  },
 };
 const batch = process.argv[2];
 assert.ok(batches[batch], 'Select an explicitly reviewed batch');
@@ -95,8 +104,12 @@ const facts = config.ids.map(id => {
   // explicitly distinguishes got (past) from got/gotten (past participle).
   if (id === 'W000343') verbForms.sourceRef = 'https://our-languages.canada.ca/en/writing-tips-plus/got-gotten-';
   if (id === 'W004780') verbForms.sourceRef = 'https://www.collinsdictionary.com/conjugation/english/sequence';
+  const currentOverride=config.currentSourceRefOverrides?.[id];
+  if(currentOverride)verbForms.sourceRef=currentOverride;
+  const evidence=[...entry.evidence];
+  if(currentOverride&&!evidence.some(e=>e.url===currentOverride))evidence.push({publisher:'HarperCollins',work:'Collins COBUILD Advanced Learner’s Dictionary',url:currentOverride,retrieval:'direct_dictionary_page',shortQuote:'past tense, past participle '+verbForms.past,location:'COBUILD Word forms and applicable verb sense',accessedDate:new Date().toISOString().slice(0,10),searchSnippetOnly:false,scope:'Directly rechecked current forms; original Oxford research evidence retained, current Oxford access returned 403.'});
   return {wordId:id, word:word.word, batch, units:entry.units,
-    verbForms, evidence:entry.evidence,
+    verbForms, evidence,
     restriction:entry.homographAndVariantRestrictions,
     applicableSense:entry.applicableSense,
     researchFile:entry.researchFile,
@@ -111,6 +124,7 @@ const facts = config.ids.map(id => {
       ...(entry.senseAndConstructionEvidence?{senseAndConstructionEvidence:entry.senseAndConstructionEvidence}:{}),
       ...(entry.regionalAndConstructionRestrictions?{regionalAndConstructionRestrictions:entry.regionalAndConstructionRestrictions}:{}),
       currentSourceCheck:{method:'Direct official dictionary forms and applicable verb construction; conjugation and regional notes checked where needed',checkedAt:new Date().toISOString(),success:true}} : {}),
+    ...(currentOverride?{currentSourceCheck:{verifiedUrl:currentOverride,method:'Direct Collins COBUILD Word forms and applicable verb construction',checkedAt:new Date().toISOString(),success:true,originalResearchSourceRef:entry.proposedVerbForms.sourceRef,unavailableRecheck:{url:entry.proposedVerbForms.sourceRef,status:403},note:'Independent Collins source recheck succeeded; original Oxford research retained, no successful current Oxford read claimed.'}}:{}),
     ...(id === 'W004780' ? {currentSourceCheck:{verifiedUrl:verbForms.sourceRef,method:'Direct Collins Past and Past Participle table',unavailableRecheck:{url:'https://www.oxfordlearnersdictionaries.com/definition/english/sequence_2',status:403},note:'Original research evidence is retained; this pass does not claim a successful direct Oxford read.'}} : {}),
     verification:'Exact current field absence, headword/POS and source forms checked before mutation.'};
 });

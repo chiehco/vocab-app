@@ -1,0 +1,923 @@
+{
+  "batch": "U14",
+  "base": "34f70ba0f4c4e628e69a8b3778eda5db20a69825",
+  "originalAuditBase": "d26603868f60e60069d29ea00613d2e86f94d7bd",
+  "branch": "content/lv1-verified-followups-20261105",
+  "checkedAt": "2026-11-05T16:20:56.779Z",
+  "scope": "18 absent verbForms additions only; image/example coverage explicitly pending",
+  "diff": {
+    "base": "34f70ba0f4c4e628e69a8b3778eda5db20a69825",
+    "batch": "U14",
+    "modifiedFields": 18,
+    "fullWordCount": 6090,
+    "starterCount": 5779,
+    "starterUpdated": 14,
+    "starterOmitted": [
+      "W000911",
+      "W000058",
+      "W000558",
+      "W000159"
+    ],
+    "unchangedOtherWordFields": true,
+    "unchangedOtherDatasets": [
+      "senses",
+      "examples",
+      "relations",
+      "morphemes",
+      "notes",
+      "exam_priority",
+      "hooks",
+      "media"
+    ],
+    "original31SourcesUnchanged": true,
+    "priorFollowupFactsUnchanged": 253,
+    "unchangedStarterIdentities": true,
+    "metadataHashesValid": true,
+    "unchangedAll7TranslationSources": true
+  },
+  "unitCounts": [
+    {
+      "unit": "U14",
+      "modified": 18,
+      "reopened": 18,
+      "chronologicalOriginalReopened": 18,
+      "imagesLoaded": 8,
+      "placeholderViews": 10,
+      "sourceContextDifferences": 2,
+      "usageOpened": 18,
+      "publishedExamplesMatched": 35,
+      "zeroPublicExampleCards": 1
+    }
+  ],
+  "localChecks": {
+    "python": {
+      "tests": 13,
+      "status": "passed",
+      "coversAllFollowupFacts": 271
+    },
+    "vitest": {
+      "files": 4,
+      "tests": 25,
+      "maxWorkers": 1,
+      "defaultTimeoutMs": 5000,
+      "status": "passed"
+    },
+    "typecheck": "passed",
+    "lint": "passed",
+    "build": "passed",
+    "publicationScan": "recorded separately",
+    "fullLocalSuite": "not_run",
+    "ci": "pending_first_push"
+  },
+  "browser": {
+    "origin": "http://127.0.0.1:5187",
+    "profile": "same isolated persistent profile outside watched repository",
+    "chronologicalPreMutationCardReopen": true,
+    "normalSettingsUpdate": {
+      "status": "updated",
+      "diagnosticImport": false,
+      "databaseCleared": false,
+      "contentWords": 6090,
+      "newFieldsVerified": 18,
+      "protectedWords": 285,
+      "protectedExamples": 7,
+      "protectedHashesUnchanged": true,
+      "progressTables": 14,
+      "nonemptyProgressTables": 1,
+      "progressCoverage": "Sparse isolated profile; no claim of real-device learned progress coverage",
+      "allProgressAndSettingsHashesUnchangedBeforeNavigation": true,
+      "screenshot": "output/playwright/verified-followups/u14-normal-dictionary-update.png"
+    },
+    "cards": [
+      {
+        "wordId": "W000503",
+        "word": "look",
+        "forms": [
+          "look",
+          "looked",
+          "looked"
+        ],
+        "meaningForms": [
+          "look",
+          "looked",
+          "looked"
+        ],
+        "chronologicalOriginalReopen": true,
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": {
+          "src": "./wordbeast/a/W000503.webp?v=local",
+          "loaded": true,
+          "width": 1024,
+          "height": 1024
+        },
+        "imageCheckStatus": "loaded_source_context_difference_pending_audit_line_reopen",
+        "caption": [
+          "圖說Doudou looks at the bird through a telescope.牠用望遠鏡看小鳥。"
+        ],
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "usageTextUnchanged": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000503-card.png",
+        "cardScreenshotSha256": "1a231f4ab960156419609060da58588bb59e5337fea7e77eefb681421c7c29b8",
+        "usageScreenshot": "output/playwright/verified-followups/W000503-usage.png",
+        "usageScreenshotSha256": "ac1a1ba875da2a1d0873370a52ba1284d68381a4e01e030be9877b48e9f3f37f",
+        "originalCardScreenshot": "output/playwright/verified-followups/U14-before-W000503-card.png",
+        "originalCardScreenshotSha256": "91886f997855f2fc5c6dee26775c5c03a8042784fafec0376d682d65ed1d009b",
+        "originalUsageScreenshot": "output/playwright/verified-followups/U14-before-W000503-usage.png",
+        "originalUsageScreenshotSha256": "9ca8abf612d1b0fb504418d9257085aec9add037f2ac6f4e2afcd28013bd4ca7"
+      },
+      {
+        "wordId": "W000911",
+        "word": "touch",
+        "forms": [
+          "touch",
+          "touched",
+          "touched"
+        ],
+        "meaningForms": [
+          "touch",
+          "touched",
+          "touched"
+        ],
+        "chronologicalOriginalReopen": true,
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": null,
+        "imageCheckStatus": "placeholder_pending_audit_line_reopen",
+        "caption": [],
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "usageTextUnchanged": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000911-card.png",
+        "cardScreenshotSha256": "48efbb46e3d003c48e57006c1d2c932123a2df7364cc547e95d890cf93ccd678",
+        "usageScreenshot": "output/playwright/verified-followups/W000911-usage.png",
+        "usageScreenshotSha256": "d80775584a6c2f5fcdc0b656cafbe73c7497f259a15beb09c880bf00ea4572bb",
+        "originalCardScreenshot": "output/playwright/verified-followups/U14-before-W000911-card.png",
+        "originalCardScreenshotSha256": "551bb5ec7c2d35088b852c4da392a80a5db18a2d3e186d91d3b1a771e19a9570",
+        "originalUsageScreenshot": "output/playwright/verified-followups/U14-before-W000911-usage.png",
+        "originalUsageScreenshotSha256": "d80775584a6c2f5fcdc0b656cafbe73c7497f259a15beb09c880bf00ea4572bb"
+      },
+      {
+        "wordId": "W000544",
+        "word": "miss",
+        "forms": [
+          "miss",
+          "missed",
+          "missed"
+        ],
+        "meaningForms": [
+          "miss",
+          "missed",
+          "missed"
+        ],
+        "chronologicalOriginalReopen": true,
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": null,
+        "imageCheckStatus": "placeholder_pending_audit_line_reopen",
+        "caption": [],
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "usageTextUnchanged": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000544-card.png",
+        "cardScreenshotSha256": "76b3e846b986511acfa8a241461c33d29843f8bc47ee0f11e84f2fe2233ce52c",
+        "usageScreenshot": "output/playwright/verified-followups/W000544-usage.png",
+        "usageScreenshotSha256": "7ebc68d67e78e06494d1c8bd6e15e980e9c274c69f6df564ed96944f8e139730",
+        "originalCardScreenshot": "output/playwright/verified-followups/U14-before-W000544-card.png",
+        "originalCardScreenshotSha256": "7d13f7567b641297f5f0811a8a22d8e384b8b549c66f63e891b903ac8306566c",
+        "originalUsageScreenshot": "output/playwright/verified-followups/U14-before-W000544-usage.png",
+        "originalUsageScreenshotSha256": "7ebc68d67e78e06494d1c8bd6e15e980e9c274c69f6df564ed96944f8e139730"
+      },
+      {
+        "wordId": "W000058",
+        "word": "ball",
+        "forms": [
+          "ball",
+          "balled",
+          "balled"
+        ],
+        "meaningForms": [
+          "ball",
+          "balled",
+          "balled"
+        ],
+        "chronologicalOriginalReopen": true,
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": null,
+        "imageCheckStatus": "placeholder_pending_audit_line_reopen",
+        "caption": [],
+        "wholeCardApproved": false,
+        "visibleExampleCount": 0,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "usageTextUnchanged": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000058-card.png",
+        "cardScreenshotSha256": "dc2977c37d249743649c28d33a3cc14723a22532a0aea01bddd252b802dd0ca8",
+        "usageScreenshot": "output/playwright/verified-followups/W000058-usage.png",
+        "usageScreenshotSha256": "0207c1e9bf7bfb5fa016045a4d0874dd0956eaf9cc296b5aa21710f3f05e3599",
+        "originalCardScreenshot": "output/playwright/verified-followups/U14-before-W000058-card.png",
+        "originalCardScreenshotSha256": "ffee9454453ad9ef251389ea93055d7db1da8cbc6d778159fe1b589f26307941",
+        "originalUsageScreenshot": "output/playwright/verified-followups/U14-before-W000058-usage.png",
+        "originalUsageScreenshotSha256": "0207c1e9bf7bfb5fa016045a4d0874dd0956eaf9cc296b5aa21710f3f05e3599"
+      },
+      {
+        "wordId": "W000558",
+        "word": "mouth",
+        "forms": [
+          "mouth",
+          "mouthed",
+          "mouthed"
+        ],
+        "meaningForms": [
+          "mouth",
+          "mouthed",
+          "mouthed"
+        ],
+        "chronologicalOriginalReopen": true,
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": null,
+        "imageCheckStatus": "placeholder_pending_audit_line_reopen",
+        "caption": [],
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "usageTextUnchanged": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000558-card.png",
+        "cardScreenshotSha256": "200c5ee18509253113a45db01d47a116fc12ea3fb66a0f34b3c7ae5ef29e812d",
+        "usageScreenshot": "output/playwright/verified-followups/W000558-usage.png",
+        "usageScreenshotSha256": "6e371fffc6e0c8073442c9a326dca7a0f7b890c617736e603eb173fe45783bd1",
+        "originalCardScreenshot": "output/playwright/verified-followups/U14-before-W000558-card.png",
+        "originalCardScreenshotSha256": "b98859103f02a99c84dc66b6789a3e50fe7421e848079b17a9eb09ea4ff4130f",
+        "originalUsageScreenshot": "output/playwright/verified-followups/U14-before-W000558-usage.png",
+        "originalUsageScreenshotSha256": "6e371fffc6e0c8073442c9a326dca7a0f7b890c617736e603eb173fe45783bd1"
+      },
+      {
+        "wordId": "W000119",
+        "word": "bridge",
+        "forms": [
+          "bridge",
+          "bridged",
+          "bridged"
+        ],
+        "meaningForms": [
+          "bridge",
+          "bridged",
+          "bridged"
+        ],
+        "chronologicalOriginalReopen": true,
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U14-19-f24818b59c1b.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "imageCheckStatus": "existing_image_decoded_caption_checked",
+        "caption": [
+          "圖說He built a small bridge so his friends could cross the stream.他搭了一座小橋，讓朋友們能過溪。"
+        ],
+        "wholeCardApproved": false,
+        "visibleExampleCount": 3,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "usageTextUnchanged": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000119-card.png",
+        "cardScreenshotSha256": "592dca04707b8b6b908d324e51120005c9e6412f4cef45bbd0ca366fc0e76576",
+        "usageScreenshot": "output/playwright/verified-followups/W000119-usage.png",
+        "usageScreenshotSha256": "9328d05da9177659399705c966d9b2e3f71236452c065abe5a5b083a95e5a87f",
+        "originalCardScreenshot": "output/playwright/verified-followups/U14-before-W000119-card.png",
+        "originalCardScreenshotSha256": "d448b86b5357666ed4c51088c7fbc91ce76343c9bed48f67db40ae29e8a758bd",
+        "originalUsageScreenshot": "output/playwright/verified-followups/U14-before-W000119-usage.png",
+        "originalUsageScreenshotSha256": "9328d05da9177659399705c966d9b2e3f71236452c065abe5a5b083a95e5a87f"
+      },
+      {
+        "wordId": "W000776",
+        "word": "sight",
+        "forms": [
+          "sight",
+          "sighted",
+          "sighted"
+        ],
+        "meaningForms": [
+          "sight",
+          "sighted",
+          "sighted"
+        ],
+        "chronologicalOriginalReopen": true,
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": null,
+        "imageCheckStatus": "placeholder_pending_audit_line_reopen",
+        "caption": [],
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "usageTextUnchanged": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000776-card.png",
+        "cardScreenshotSha256": "b5dfc378fd42b6c1ee97394c3f65e60e39be02417b0549e2f7010bcbea312fa7",
+        "usageScreenshot": "output/playwright/verified-followups/W000776-usage.png",
+        "usageScreenshotSha256": "cfab31606d91e86d00e904f8924d23df48f59ff476da44733da93cc2e52d29d7",
+        "originalCardScreenshot": "output/playwright/verified-followups/U14-before-W000776-card.png",
+        "originalCardScreenshotSha256": "5c3dbfe99046ab3d6518bdc238de8927fb0d30f9a838f5c8dd5226a3592a5ff4",
+        "originalUsageScreenshot": "output/playwright/verified-followups/U14-before-W000776-usage.png",
+        "originalUsageScreenshotSha256": "cfab31606d91e86d00e904f8924d23df48f59ff476da44733da93cc2e52d29d7"
+      },
+      {
+        "wordId": "W000722",
+        "word": "rock",
+        "forms": [
+          "rock",
+          "rocked",
+          "rocked"
+        ],
+        "meaningForms": [
+          "rock",
+          "rocked",
+          "rocked"
+        ],
+        "chronologicalOriginalReopen": true,
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": null,
+        "imageCheckStatus": "placeholder_pending_audit_line_reopen",
+        "caption": [],
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "usageTextUnchanged": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000722-card.png",
+        "cardScreenshotSha256": "8e2cbb0573a8a18240d71b3f04577bf1ccb39ca7b6764d67bf4c351e7171f834",
+        "usageScreenshot": "output/playwright/verified-followups/W000722-usage.png",
+        "usageScreenshotSha256": "2ee4fc8bbf4fd07a3f8642abc9d71a6c80048519e6f2520df251fe660f58e20f",
+        "originalCardScreenshot": "output/playwright/verified-followups/U14-before-W000722-card.png",
+        "originalCardScreenshotSha256": "c13aad5c2d1702ea21d87400dcbf733d20f870d5be81e8d21e468cc231cdc956",
+        "originalUsageScreenshot": "output/playwright/verified-followups/U14-before-W000722-usage.png",
+        "originalUsageScreenshotSha256": "2ee4fc8bbf4fd07a3f8642abc9d71a6c80048519e6f2520df251fe660f58e20f"
+      },
+      {
+        "wordId": "W000061",
+        "word": "bank",
+        "forms": [
+          "bank",
+          "banked",
+          "banked"
+        ],
+        "meaningForms": [
+          "bank",
+          "banked",
+          "banked"
+        ],
+        "chronologicalOriginalReopen": true,
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": null,
+        "imageCheckStatus": "placeholder_pending_audit_line_reopen",
+        "caption": [],
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "usageTextUnchanged": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000061-card.png",
+        "cardScreenshotSha256": "cc40697f2a6558b45826bbfcf030c62d7573ebb74b28a41879631f8261127dd6",
+        "usageScreenshot": "output/playwright/verified-followups/W000061-usage.png",
+        "usageScreenshotSha256": "0b680d18f879a8a4fddb3e56aea408f1cd54dfecd76ee8571ecf3092b86528fa",
+        "originalCardScreenshot": "output/playwright/verified-followups/U14-before-W000061-card.png",
+        "originalCardScreenshotSha256": "e9c8ddcd330bd9df19dfeafcbacf174ea80094e123d817ac51cda6f66cb9e42e",
+        "originalUsageScreenshot": "output/playwright/verified-followups/U14-before-W000061-usage.png",
+        "originalUsageScreenshotSha256": "0b680d18f879a8a4fddb3e56aea408f1cd54dfecd76ee8571ecf3092b86528fa"
+      },
+      {
+        "wordId": "W000341",
+        "word": "garden",
+        "forms": [
+          "garden",
+          "gardened",
+          "gardened"
+        ],
+        "meaningForms": [
+          "garden",
+          "gardened",
+          "gardened"
+        ],
+        "chronologicalOriginalReopen": true,
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": null,
+        "imageCheckStatus": "placeholder_pending_audit_line_reopen",
+        "caption": [],
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "usageTextUnchanged": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000341-card.png",
+        "cardScreenshotSha256": "81632ca58ac5780f2f2d92807b7b7250ba0f9c6c3a469aa58dc8db95cbd67864",
+        "usageScreenshot": "output/playwright/verified-followups/W000341-usage.png",
+        "usageScreenshotSha256": "e132f7805e4865ccd482465857f69e5a76b737add7df9a5de78c40eb56e320d5",
+        "originalCardScreenshot": "output/playwright/verified-followups/U14-before-W000341-card.png",
+        "originalCardScreenshotSha256": "ae58602a3dccf231d5b52a4affe4e926b9cd9a88ea6b810f816db1b80f4c7f55",
+        "originalUsageScreenshot": "output/playwright/verified-followups/U14-before-W000341-usage.png",
+        "originalUsageScreenshotSha256": "e132f7805e4865ccd482465857f69e5a76b737add7df9a5de78c40eb56e320d5"
+      },
+      {
+        "wordId": "W000604",
+        "word": "oil",
+        "forms": [
+          "oil",
+          "oiled",
+          "oiled"
+        ],
+        "meaningForms": [
+          "oil",
+          "oiled",
+          "oiled"
+        ],
+        "chronologicalOriginalReopen": true,
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U14-39-62242ee95ab4.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "imageCheckStatus": "existing_image_decoded_caption_checked",
+        "caption": [
+          "圖說She always uses olive oil when she cooks vegetables.她炒菜時總是使用橄欖油。"
+        ],
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "usageTextUnchanged": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000604-card.png",
+        "cardScreenshotSha256": "8f8535bed221b746e7d14c74e7b787e614ab3c6410f7580fea42c4fa5ab15d7d",
+        "usageScreenshot": "output/playwright/verified-followups/W000604-usage.png",
+        "usageScreenshotSha256": "2ccaeba3bc35b3d815ce7654f6313956b90625e91d153e0bbe6003a2f75072c4",
+        "originalCardScreenshot": "output/playwright/verified-followups/U14-before-W000604-card.png",
+        "originalCardScreenshotSha256": "075b9415fe2b76b3e5d721e379af31a7b0954e507c9dd3afebc7b51d08a198d7",
+        "originalUsageScreenshot": "output/playwright/verified-followups/U14-before-W000604-usage.png",
+        "originalUsageScreenshotSha256": "2ccaeba3bc35b3d815ce7654f6313956b90625e91d153e0bbe6003a2f75072c4"
+      },
+      {
+        "wordId": "W000318",
+        "word": "fly",
+        "forms": [
+          "fly",
+          "flew",
+          "flown"
+        ],
+        "meaningForms": [
+          "fly",
+          "flew",
+          "flown"
+        ],
+        "chronologicalOriginalReopen": true,
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U14-40-5edba20591d0.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "imageCheckStatus": "existing_image_decoded_caption_checked",
+        "caption": [
+          "圖說A fly kept buzzing around the kitchen while I was eating dinner.我吃晚餐時，一隻蒼蠅一直在廚房裡嗡嗡飛來飛去。"
+        ],
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "usageTextUnchanged": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000318-card.png",
+        "cardScreenshotSha256": "931171c8b457ab303f27fc757ec2bf2c93876f863ab1d0ab88001c67ef929257",
+        "usageScreenshot": "output/playwright/verified-followups/W000318-usage.png",
+        "usageScreenshotSha256": "ac59077753e2deeb0ff9dac6a8b1871efda2181ecc42c4943a2c9726daa83b8d",
+        "originalCardScreenshot": "output/playwright/verified-followups/U14-before-W000318-card.png",
+        "originalCardScreenshotSha256": "8ab2eb087d8094054c1c8de386e0af31af2afa06b63492311a3491652c98d7df",
+        "originalUsageScreenshot": "output/playwright/verified-followups/U14-before-W000318-usage.png",
+        "originalUsageScreenshotSha256": "ac59077753e2deeb0ff9dac6a8b1871efda2181ecc42c4943a2c9726daa83b8d"
+      },
+      {
+        "wordId": "W000159",
+        "word": "check",
+        "forms": [
+          "check",
+          "checked",
+          "checked"
+        ],
+        "meaningForms": [
+          "check",
+          "checked",
+          "checked"
+        ],
+        "chronologicalOriginalReopen": true,
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": null,
+        "imageCheckStatus": "placeholder_pending_audit_line_reopen",
+        "caption": [],
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "usageTextUnchanged": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000159-card.png",
+        "cardScreenshotSha256": "018b0ffff14e896ae24b23265aad0b4ab6c7d0615160d5e65c65321a2fcf3242",
+        "usageScreenshot": "output/playwright/verified-followups/W000159-usage.png",
+        "usageScreenshotSha256": "3985c35725592616325693e089c2f3627ee91207fed4cd541b7bc160f82abb94",
+        "originalCardScreenshot": "output/playwright/verified-followups/U14-before-W000159-card.png",
+        "originalCardScreenshotSha256": "ead1582e6a9ae56f00738e4c44c751faf413f43e15181f71e73fce4cab4768e6",
+        "originalUsageScreenshot": "output/playwright/verified-followups/U14-before-W000159-usage.png",
+        "originalUsageScreenshotSha256": "3985c35725592616325693e089c2f3627ee91207fed4cd541b7bc160f82abb94"
+      },
+      {
+        "wordId": "W001326",
+        "word": "examine",
+        "forms": [
+          "examine",
+          "examined",
+          "examined"
+        ],
+        "meaningForms": [
+          "examine",
+          "examined",
+          "examined"
+        ],
+        "chronologicalOriginalReopen": true,
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U14-56-f6b85dfd002d.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "imageCheckStatus": "existing_image_decoded_caption_checked",
+        "caption": [
+          "圖說He examined the ground closely for any useful clues.他仔細檢查地面，尋找任何有用的線索。"
+        ],
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "usageTextUnchanged": true,
+        "cardScreenshot": "output/playwright/verified-followups/W001326-card.png",
+        "cardScreenshotSha256": "b5cd3bb7c0b3c5001285eeb65dd42f007735e9e385e1259d064c731e52c428eb",
+        "usageScreenshot": "output/playwright/verified-followups/W001326-usage.png",
+        "usageScreenshotSha256": "c09215ec581e1baa3533bac8f6ae95e4828a679d8087778940628ac420cf09d8",
+        "originalCardScreenshot": "output/playwright/verified-followups/U14-before-W001326-card.png",
+        "originalCardScreenshotSha256": "832061c66e61c25724e3ff7bc91e444233e8d8fce10c8a18cf5f7113bebf334d",
+        "originalUsageScreenshot": "output/playwright/verified-followups/U14-before-W001326-usage.png",
+        "originalUsageScreenshotSha256": "c09215ec581e1baa3533bac8f6ae95e4828a679d8087778940628ac420cf09d8"
+      },
+      {
+        "wordId": "W000989",
+        "word": "worry",
+        "forms": [
+          "worry",
+          "worried",
+          "worried"
+        ],
+        "meaningForms": [
+          "worry",
+          "worried",
+          "worried"
+        ],
+        "chronologicalOriginalReopen": true,
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": null,
+        "imageCheckStatus": "placeholder_pending_audit_line_reopen",
+        "caption": [],
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "usageTextUnchanged": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000989-card.png",
+        "cardScreenshotSha256": "5171fca9f426e295aa6e28f019d90f16cb16cc3faaabd205695672666a282334",
+        "usageScreenshot": "output/playwright/verified-followups/W000989-usage.png",
+        "usageScreenshotSha256": "bc74b6c14ec1850d595839a27b66845e0773b7237810210c4a331d32e9e3b824",
+        "originalCardScreenshot": "output/playwright/verified-followups/U14-before-W000989-card.png",
+        "originalCardScreenshotSha256": "cdc50f0f70b20227628ab871b1a901616d69c0293de586cabd3b467a741b304e",
+        "originalUsageScreenshot": "output/playwright/verified-followups/U14-before-W000989-usage.png",
+        "originalUsageScreenshotSha256": "bc74b6c14ec1850d595839a27b66845e0773b7237810210c4a331d32e9e3b824"
+      },
+      {
+        "wordId": "W000723",
+        "word": "roll",
+        "forms": [
+          "roll",
+          "rolled",
+          "rolled"
+        ],
+        "meaningForms": [
+          "roll",
+          "rolled",
+          "rolled"
+        ],
+        "chronologicalOriginalReopen": true,
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": {
+          "src": "./wordbeast/a/W000723.webp?v=local",
+          "loaded": true,
+          "width": 1024,
+          "height": 1024
+        },
+        "imageCheckStatus": "loaded_source_context_difference_pending_audit_line_reopen",
+        "caption": [
+          "圖說Doudou lets the blue ball roll down the slope.豆豆讓藍色球沿著斜坡滾下去。"
+        ],
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "usageTextUnchanged": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000723-card.png",
+        "cardScreenshotSha256": "6de356c62a2f1d6f88cf7dbc0a54176f1be7aea52592ddb813c0f71e77689589",
+        "usageScreenshot": "output/playwright/verified-followups/W000723-usage.png",
+        "usageScreenshotSha256": "44a34f7e9bbc4922a5181931f17927258645db4b6140a26b79f5e73940bd19c1",
+        "originalCardScreenshot": "output/playwright/verified-followups/U14-before-W000723-card.png",
+        "originalCardScreenshotSha256": "58b6bb0b70bc1b2184149d1405ffd67fe5405c69999e6bf32817cfd5e37ce6af",
+        "originalUsageScreenshot": "output/playwright/verified-followups/U14-before-W000723-usage.png",
+        "originalUsageScreenshotSha256": "44a34f7e9bbc4922a5181931f17927258645db4b6140a26b79f5e73940bd19c1"
+      },
+      {
+        "wordId": "W005813",
+        "word": "sharpen",
+        "forms": [
+          "sharpen",
+          "sharpened",
+          "sharpened"
+        ],
+        "meaningForms": [
+          "sharpen",
+          "sharpened",
+          "sharpened"
+        ],
+        "chronologicalOriginalReopen": true,
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U14-62-d75fb2b2b66b.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "imageCheckStatus": "existing_image_decoded_caption_checked",
+        "caption": [
+          "圖說He sharpened his pencils before the exam started.他在考試開始前把鉛筆削尖。"
+        ],
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "usageTextUnchanged": true,
+        "cardScreenshot": "output/playwright/verified-followups/W005813-card.png",
+        "cardScreenshotSha256": "582c3ce47fe852c8bff39251bbd9a48abe4ea80d298df5b36fc45d3865081ec1",
+        "usageScreenshot": "output/playwright/verified-followups/W005813-usage.png",
+        "usageScreenshotSha256": "b162ba8e12beec794285aac1b25283bd295f0e91236970c2f661c9d708756290",
+        "originalCardScreenshot": "output/playwright/verified-followups/U14-before-W005813-card.png",
+        "originalCardScreenshotSha256": "b267e016ea5a499fa80de0cb395f5f67a2f1e29f2dc94ed1141822e02fe0ab5b",
+        "originalUsageScreenshot": "output/playwright/verified-followups/U14-before-W005813-usage.png",
+        "originalUsageScreenshotSha256": "b162ba8e12beec794285aac1b25283bd295f0e91236970c2f661c9d708756290"
+      },
+      {
+        "wordId": "W000138",
+        "word": "camp",
+        "forms": [
+          "camp",
+          "camped",
+          "camped"
+        ],
+        "meaningForms": [
+          "camp",
+          "camped",
+          "camped"
+        ],
+        "chronologicalOriginalReopen": true,
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U14-67-e0dc8b022a13.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "imageCheckStatus": "existing_image_decoded_caption_checked",
+        "caption": [
+          "圖說I camped by the river last weekend and watched the stars all night.上週末我在河邊紮營，整晚看星星。"
+        ],
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "usageTextUnchanged": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000138-card.png",
+        "cardScreenshotSha256": "9bd60a920d875484b3da7e04134674b5ca77df89cc5632deeb4022f23f58357c",
+        "usageScreenshot": "output/playwright/verified-followups/W000138-usage.png",
+        "usageScreenshotSha256": "d8415cce6e1b4697cc47eabd29fcac7b34c0143c4cb479b97f9b5cfee5f7b575",
+        "originalCardScreenshot": "output/playwright/verified-followups/U14-before-W000138-card.png",
+        "originalCardScreenshotSha256": "52d96d7c1c70b2f5e02755304b7cf5b4cbfd1b2fdf09a5416dfedf913a0aa7ab",
+        "originalUsageScreenshot": "output/playwright/verified-followups/U14-before-W000138-usage.png",
+        "originalUsageScreenshotSha256": "d8415cce6e1b4697cc47eabd29fcac7b34c0143c4cb479b97f9b5cfee5f7b575"
+      }
+    ],
+    "publishedExamplesMatched": 35,
+    "desktopScreenshotsReviewed": 72,
+    "contactSheetsReviewed": 12,
+    "mobile": [
+      {
+        "wordId": "W000318",
+        "width": 390,
+        "scrollWidth": 390,
+        "horizontalOverflow": false,
+        "screenshot": "output/playwright/verified-followups/U14-W000318-mobile-390.png",
+        "forms": [
+          "fly",
+          "flew",
+          "flown"
+        ]
+      },
+      {
+        "wordId": "W000558",
+        "width": 390,
+        "scrollWidth": 390,
+        "horizontalOverflow": false,
+        "screenshot": "output/playwright/verified-followups/U14-W000558-mobile-390.png",
+        "forms": [
+          "mouth",
+          "mouthed",
+          "mouthed"
+        ]
+      }
+    ],
+    "postNavigation": {
+      "otherProgressTablesUnchanged": 13,
+      "otherSettingsUnchanged": true,
+      "allowedChangedSetting": "learning:last-location",
+      "bookmarkWordId": "W000558",
+      "protectedHashesUnchanged": true
+    },
+    "pendingWordsReadBack": [
+      {
+        "wordId": "W000139",
+        "word": "can",
+        "status": "draft",
+        "verbFormsKey": "absent"
+      },
+      {
+        "wordId": "W000071",
+        "word": "bear",
+        "status": "reviewed",
+        "verbFormsKey": "absent"
+      },
+      {
+        "wordId": "W000574",
+        "word": "need",
+        "status": "draft",
+        "verbFormsKey": "absent"
+      },
+      {
+        "wordId": "W000195",
+        "word": "cost",
+        "status": "reviewed",
+        "verbFormsKey": "absent"
+      },
+      {
+        "wordId": "W000490",
+        "word": "lie",
+        "status": "draft",
+        "verbFormsKey": "absent"
+      },
+      {
+        "wordId": "W000496",
+        "word": "lip",
+        "status": "draft",
+        "verbFormsKey": "absent"
+      },
+      {
+        "wordId": "W000429",
+        "word": "inch",
+        "status": "reviewed",
+        "verbFormsKey": "absent"
+      },
+      {
+        "wordId": "W000573",
+        "word": "neck",
+        "status": "reviewed",
+        "verbFormsKey": "absent"
+      },
+      {
+        "wordId": "W000770",
+        "word": "shoulder",
+        "status": "draft",
+        "verbFormsKey": "absent"
+      },
+      {
+        "wordId": "W000977",
+        "word": "wind",
+        "status": "reviewed",
+        "verbFormsKey": "absent"
+      }
+    ],
+    "consoleErrors": 0,
+    "consoleWarnings": 0,
+    "failedRequests": []
+  },
+  "pendingExcludedForms": [
+    {
+      "wordId": "W000496",
+      "word": "lip",
+      "reason": "missing verb POS"
+    },
+    {
+      "wordId": "W000429",
+      "word": "inch",
+      "reason": "missing verb POS"
+    },
+    {
+      "wordId": "W000573",
+      "word": "neck",
+      "reason": "missing verb POS"
+    },
+    {
+      "wordId": "W000770",
+      "word": "shoulder",
+      "reason": "missing verb POS"
+    },
+    {
+      "wordId": "W000977",
+      "word": "wind",
+      "reason": "英文動詞定義確為纏繞／蜿蜒，但中文定義與字卡只給風／氣息等名詞義；目前整詞三態沒有可見義項限定，先不把 wound 掛到只見風義的卡片。"
+    }
+  ],
+  "imagesAdded": 0,
+  "imagesRepaired": 0,
+  "missingDisplayedImages": [
+    "W000911",
+    "W000544",
+    "W000058",
+    "W000558",
+    "W000776",
+    "W000722",
+    "W000061",
+    "W000341",
+    "W000159",
+    "W000989"
+  ],
+  "sourceContextDifferenceIds": [
+    "W000503",
+    "W000723"
+  ],
+  "zeroPublicExampleIds": [
+    "W000058"
+  ],
+  "imageAndExampleFollowupRecord": "pending/U14-isolated-image-observations.json",
+  "wordStatusesChanged": 0,
+  "senseStatusesChanged": 0,
+  "wholeCardsApproved": 0,
+  "next": {
+    "unit": "U15",
+    "firstWord": "paper",
+    "firstWordId": "W000625",
+    "cardId": "LV1-U15-05",
+    "applied": false,
+    "sourceSnapshot": "e2d3f0fed929a17670af00ed1989fc9469426d8c"
+  }
+}
