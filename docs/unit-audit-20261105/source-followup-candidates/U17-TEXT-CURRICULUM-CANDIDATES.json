@@ -1,0 +1,1742 @@
+{
+  "metadata": {
+    "unit": "LV1 U17",
+    "reviewDate": "2026-11-05",
+    "commit": "bb581cde64a311e2bfc95eadd4592e27f1db70cb",
+    "blobs": {
+      "curriculumBlob": "297ee827d031fe80ce421bc34774710180b1ee38",
+      "sourceBlob": "05e282de38a6d4539e022b4973508bec8b426f8b",
+      "wordsBlob": "9a00a5bc4d52e83dac1ed2a8e8985c829a82738a",
+      "examplesBlob": "529559441a3a8f602dce01818f780785558de1ad"
+    },
+    "sourceURL": "https://github.com/chiehco/vocab-app/blob/bb581cde64a311e2bfc95eadd4592e27f1db70cb/scripts/sources/LV1Unit17.json",
+    "scope": "唯讀教材與正式詞庫文字來源提案；無產品修改、無Git提交或推送。",
+    "counts": {
+      "curriculum": 142,
+      "vocabulary": 89,
+      "grammar": 53,
+      "formalWords": 62,
+      "formalExamples": 91
+    },
+    "method": [
+      "依現存教材陣列逐項閱讀：39主／未編號詞、50補充出現、53用法；分別對照source.headwords/related/usage。",
+      "詞義、POS、英中譯、搭配和罕義人工語言核查；疑點直接閱讀列出的可靠詞典原文。",
+      "91正式例句逐句檢視英中語意、hint及目標詞功能，另以程式確認blank回填answer是否等於sentenceEn。",
+      "確錯、可選精度與缺來源待核分列；候選數是field級提案，不等於錯字卡數。"
+    ],
+    "limits": [
+      "未檢視教材照片。本次只查repo轉錄一致性，不沿用sourceReview的歷史看圖宣稱。",
+      "來源陣列先列全部主詞、再補充詞、再文法；不聲稱等同頁面視覺交錯順序。",
+      "source第155、157頁頁腳部分、第159邊界頁頁腳缺失是原檔記載限制，本輪未獨立重驗。",
+      "主POS及posAll不被當成所有可存在義項清單。罕義／其他詞性保持，選定例句POS依語境判斷。",
+      "缺教材原義的21占位項提供字典補充候選，after=null；不以字典替代教科書原文認證。",
+      "正式詞sourceNote所指大考中心詞表不是這些英解、例句或中譯的逐條來源證明。",
+      "Cambridge多頁403；Princeton WordNet原站不可讀；Longman502，Britannica bread不可讀。成功改讀的出版商原文與官方頁另列；失敗頁未當實讀證據。",
+      "三態已有獨立研究，本輪只保留義項套用限制。"
+    ]
+  },
+  "summary": {
+    "fieldLevelProposalCounts": {
+      "confirmed_error": 22,
+      "optional_precision": 12,
+      "source_pending": 29
+    },
+    "distinctIdsWithConfirmedError": 19,
+    "exactClozeRoundTrips": 91,
+    "sourceSequenceMatches": 142,
+    "note": "補充義占位與可選精度不計為確錯；多field可能屬同一問題。",
+    "pairedTimeUsageFields": "U17-P017與U17-P062、U17-P018與U17-P063須分別成對套用；新增兩欄不增加錯誤ID數。"
+  },
+  "proposals": [
+    {
+      "proposalId": "U17-P001",
+      "classification": "confirmed_error",
+      "domain": "formalExamples",
+      "id": "EX1cea6f14",
+      "field": "sensePos",
+      "before": "adj.",
+      "after": "n.",
+      "reasonZh": "a third of the students中，a限定分數名詞third，of片語補述集合。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/third"
+      ],
+      "evidenceKeys": [
+        "third"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。"
+    },
+    {
+      "proposalId": "U17-P002",
+      "classification": "confirmed_error",
+      "domain": "formalExamples",
+      "id": "EX299cbc81",
+      "field": "sensePos",
+      "before": "n.",
+      "after": "v.",
+      "reasonZh": "Can you email me中email是情態動詞後的主要動詞，受詞為me與photos。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/email"
+      ],
+      "evidenceKeys": [
+        "email"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。"
+    },
+    {
+      "proposalId": "U17-P003",
+      "classification": "confirmed_error",
+      "domain": "formalExamples",
+      "id": "EX29ab06ce",
+      "field": "sensePos",
+      "before": "n.",
+      "after": "v.",
+      "reasonZh": "The judge sentenced the man中sentenced是過去式及物謂語。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/sentence"
+      ],
+      "evidenceKeys": [
+        "sentence"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。"
+    },
+    {
+      "proposalId": "U17-P004",
+      "classification": "confirmed_error",
+      "domain": "formalExamples",
+      "id": "EX658a3532",
+      "field": "sensePos",
+      "before": "n.",
+      "after": "v.",
+      "reasonZh": "were photographing the old castle為進行式謂語，非照片名詞。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/photograph"
+      ],
+      "evidenceKeys": [
+        "photograph"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。"
+    },
+    {
+      "proposalId": "U17-P005",
+      "classification": "confirmed_error",
+      "domain": "formalExamples",
+      "id": "EX6c18a48c",
+      "field": "sensePos",
+      "before": "n.",
+      "after": "v.",
+      "reasonZh": "can't picture myself living中picture是想像的及物動詞。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/picture"
+      ],
+      "evidenceKeys": [
+        "picture"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。"
+    },
+    {
+      "proposalId": "U17-P006",
+      "classification": "confirmed_error",
+      "domain": "formalExamples",
+      "id": "EX7195fc6a",
+      "field": "sensePos",
+      "before": "n.",
+      "after": "v.",
+      "reasonZh": "Workers coated the old fence中coated是過去式謂語。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/coat"
+      ],
+      "evidenceKeys": [
+        "coat"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。"
+    },
+    {
+      "proposalId": "U17-P007",
+      "classification": "confirmed_error",
+      "domain": "formalExamples",
+      "id": "EX7e36be76",
+      "field": "sensePos",
+      "before": "n.",
+      "after": "v.",
+      "reasonZh": "The phone rang中rang是響起的過去式謂語。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/ring"
+      ],
+      "evidenceKeys": [
+        "ring"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。"
+    },
+    {
+      "proposalId": "U17-P008",
+      "classification": "confirmed_error",
+      "domain": "formalExamples",
+      "id": "EX845bc672",
+      "field": "sensePos",
+      "before": "n.",
+      "after": "adj.",
+      "reasonZh": "grew fat中fat為描述puppy變胖的主詞補語，非脂肪名詞。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/fat"
+      ],
+      "evidenceKeys": [
+        "fat"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。"
+    },
+    {
+      "proposalId": "U17-P009",
+      "classification": "confirmed_error",
+      "domain": "formalExamples",
+      "id": "EXba46b75a",
+      "field": "sensePos",
+      "before": "adj.",
+      "after": "v.",
+      "reasonZh": "Brown the onions是祈使句，Brown為使洋蔥炒成棕色的動詞。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/brown"
+      ],
+      "evidenceKeys": [
+        "brown"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。"
+    },
+    {
+      "proposalId": "U17-P010",
+      "classification": "confirmed_error",
+      "domain": "formalExamples",
+      "id": "EXce637511",
+      "field": "sensePos",
+      "before": "adv.",
+      "after": "adj.",
+      "reasonZh": "the first time中first修飾名詞time；整個時間片語的副詞功能不等於first本身為副詞。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/first"
+      ],
+      "evidenceKeys": [
+        "first"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。"
+    },
+    {
+      "proposalId": "U17-P011",
+      "classification": "confirmed_error",
+      "domain": "formalExamples",
+      "id": "EXdff7520f",
+      "field": "sensePos",
+      "before": "adj.",
+      "after": "n.",
+      "reasonZh": "gave me a nice present中present為a nice修飾的禮物名詞。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/present"
+      ],
+      "evidenceKeys": [
+        "present"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。"
+    },
+    {
+      "proposalId": "U17-P012",
+      "classification": "confirmed_error",
+      "domain": "formalWords",
+      "id": "W000111",
+      "field": "meaningZh",
+      "before": "弓；眼睛框；用弓拉琴；彎成弓形",
+      "after": "弓；眼鏡框；用弓拉琴；彎成弓形",
+      "reasonZh": "只改眼睛→眼鏡，保留實存鏡框罕義。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/bow"
+      ],
+      "evidenceKeys": [
+        "bow"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。"
+    },
+    {
+      "proposalId": "U17-P013",
+      "classification": "confirmed_error",
+      "domain": "formalWords",
+      "id": "W003512",
+      "field": "meaningZh",
+      "before": "無知；愚味；不知情；愚昧",
+      "after": "無知；愚昧；不知情；愚昧",
+      "reasonZh": "愚味是愚昧誤字；最小字元更正，不另合併現有重複義。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/ignorance"
+      ],
+      "evidenceKeys": [
+        "ignorance"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。"
+    },
+    {
+      "proposalId": "U17-P014",
+      "classification": "confirmed_error",
+      "domain": "curriculum",
+      "id": "LI-LV1U17-V047",
+      "field": "targetMeaningZh",
+      "before": "無知；愚味；不知情；愚昧",
+      "after": "無知；愚昧；不知情；愚昧",
+      "reasonZh": "愚味是愚昧誤字；最小字元更正，不另合併現有重複義。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/ignorance"
+      ],
+      "evidenceKeys": [
+        "ignorance"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。"
+    },
+    {
+      "proposalId": "U17-P015",
+      "classification": "confirmed_error",
+      "domain": "curriculum",
+      "id": "LI-LV1U17-V047",
+      "field": "chapterMeaningsZh",
+      "before": "無知；愚味；不知情；愚昧",
+      "after": "無知；愚昧；不知情；愚昧",
+      "reasonZh": "愚味是愚昧誤字；最小字元更正，不另合併現有重複義。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/ignorance"
+      ],
+      "evidenceKeys": [
+        "ignorance"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。"
+    },
+    {
+      "proposalId": "U17-P016",
+      "classification": "confirmed_error",
+      "domain": "formalWords",
+      "id": "W000643",
+      "field": "usagePatternZh",
+      "before": "拍照；畫圖/作畫；圖片顯示名詞正在做某事",
+      "after": "拍照；畫圖/作畫；想像某人／某物正在做某事",
+      "reasonZh": "第三段英式picture N doing sth是動詞想像，不是圖片顯示；前兩段保留。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/picture"
+      ],
+      "evidenceKeys": [
+        "picture"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。"
+    },
+    {
+      "proposalId": "U17-P017",
+      "classification": "confirmed_error",
+      "domain": "formalWords",
+      "id": "W000030",
+      "field": "usagePattern",
+      "before": "V + am",
+      "after": "time + a.m.",
+      "reasonZh": "單獨V + 時間縮寫不能表達既定時刻，應接時間；此處只修形式，不變更縮寫映射。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/am",
+        "https://www.chicagomanualofstyle.org/qanda/data/faq/topics/Numbers/faq0029.html"
+      ],
+      "evidenceKeys": [
+        "am",
+        "time-style"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。",
+      "atomicChangeGroup": "U17-TIME-USAGE-AM",
+      "mustApplyTogetherWith": [
+        "U17-P062"
+      ],
+      "applicationConstraintZh": "中英文搭配欄須一起核對、成對套用；不得只改其中一欄。不得連動例句、alias或主詞性。"
+    },
+    {
+      "proposalId": "U17-P018",
+      "classification": "confirmed_error",
+      "domain": "formalWords",
+      "id": "W000659",
+      "field": "usagePattern",
+      "before": "V + pm",
+      "after": "time + p.m.",
+      "reasonZh": "單獨V + 時間縮寫不能表達既定時刻，應接時間；此處只修形式，不變更縮寫映射。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/pm",
+        "https://www.chicagomanualofstyle.org/qanda/data/faq/topics/Numbers/faq0029.html"
+      ],
+      "evidenceKeys": [
+        "pm",
+        "time-style"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。",
+      "atomicChangeGroup": "U17-TIME-USAGE-PM",
+      "mustApplyTogetherWith": [
+        "U17-P063"
+      ],
+      "applicationConstraintZh": "中英文搭配欄須一起核對、成對套用；不得只改其中一欄。不得連動例句、alias或主詞性。"
+    },
+    {
+      "proposalId": "U17-P019",
+      "classification": "confirmed_error",
+      "domain": "formalWords",
+      "id": "W001897",
+      "field": "meaningEn",
+      "before": "the calculated use of violence (or the threat of violence) against civilians in order to attain goals that are political or religious or...",
+      "after": "the calculated use of violence (or the threat of violence) against civilians in order to attain goals that are political or religious or ideological in nature; this is done through intimidation or coercion or instilling fear",
+      "reasonZh": "以現存完整前綴比對可讀詞典原文，恢復省略號後的尾段；來源是可讀的相同定義，不主張已查明原匯入站。",
+      "sourceURL": [
+        "https://www.vocabulary.com/dictionary/terrorism"
+      ],
+      "evidenceKeys": [
+        "terrorism-original"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。"
+    },
+    {
+      "proposalId": "U17-P020",
+      "classification": "confirmed_error",
+      "domain": "formalWords",
+      "id": "W003450",
+      "field": "meaningEn",
+      "before": "give qualities or abilities to; give as a present; make a gift of",
+      "after": "(adj.) having exceptional natural talent; (gift, v.; gifted is its past tense and past participle) give qualities or abilities to; give as a present; make a gift of",
+      "reasonZh": "本卡adj有天才的完全缺失，現英解全是gift動詞。補本卡形容詞並標明原動詞詞源／變化，不刪真實動詞義。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/gifted"
+      ],
+      "evidenceKeys": [
+        "gifted"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。"
+    },
+    {
+      "proposalId": "U17-P021",
+      "classification": "optional_precision",
+      "domain": "formalWords",
+      "id": "W000338",
+      "field": "meaningEn",
+      "before": "experiencing odd bodily sensations",
+      "after": "amusing or odd; experiencing odd bodily sensations",
+      "reasonZh": "原文不舒服義真實，不刪；補教材好笑／奇怪義以免中英文僅局部對應。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/funny"
+      ],
+      "evidenceKeys": [
+        "funny"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。"
+    },
+    {
+      "proposalId": "U17-P022",
+      "classification": "optional_precision",
+      "domain": "formalWords",
+      "id": "W003707",
+      "field": "meaningEn",
+      "before": "an additional protective coating (as of paint or varnish)",
+      "after": "a warm outer coat worn over other clothing; an additional protective coating (as of paint or varnish)",
+      "reasonZh": "原英文保護塗層義真實；只補本課大衣義。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/overcoat"
+      ],
+      "evidenceKeys": [
+        "overcoat"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。"
+    },
+    {
+      "proposalId": "U17-P023",
+      "classification": "optional_precision",
+      "domain": "formalWords",
+      "id": "W002808",
+      "field": "meaningEn",
+      "before": "confidential information about a topic or person; of or relating to or resembling skin",
+      "after": "very thin; confidential information about a topic or person; of or relating to or resembling skin",
+      "reasonZh": "原名詞內幕及似皮形容詞皆真實；只補本課瘦義，不依主POS刪義。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/skinny"
+      ],
+      "evidenceKeys": [
+        "skinny"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。"
+    },
+    {
+      "proposalId": "U17-P024",
+      "classification": "optional_precision",
+      "domain": "formalWords",
+      "id": "W003771",
+      "field": "meaningEn",
+      "before": "preceding in time",
+      "after": "the state of coming earlier in time; precedence in importance or entitlement; something to be dealt with before other things",
+      "reasonZh": "前後次序義真實，但現英解缺本卡優先權／優先事項。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/priority"
+      ],
+      "evidenceKeys": [
+        "priority"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。"
+    },
+    {
+      "proposalId": "U17-P025",
+      "classification": "optional_precision",
+      "domain": "formalWords",
+      "id": "W004656",
+      "field": "meaningEn",
+      "before": "disadvantage by prejudice; influence (somebody's) opinion in advance",
+      "after": "(n.) an opinion formed without adequate knowledge, especially an unfair bias; harm or disadvantage; (v.) disadvantage by prejudice; influence (somebody's) opinion in advance",
+      "reasonZh": "原動詞義真實，補中文偏見／侵害所對應名詞義。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/prejudice"
+      ],
+      "evidenceKeys": [
+        "prejudice"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。"
+    },
+    {
+      "proposalId": "U17-P026",
+      "classification": "optional_precision",
+      "domain": "formalWords",
+      "id": "W002808",
+      "field": "usagePatternZh",
+      "before": "表現得極瘦；極瘦的人",
+      "after": "很瘦；瘦的／細長的……",
+      "reasonZh": "be skinny是狀態，不必譯成表現得；skinny + N也非一概指人。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/skinny"
+      ],
+      "evidenceKeys": [
+        "skinny"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。"
+    },
+    {
+      "proposalId": "U17-P027",
+      "classification": "optional_precision",
+      "domain": "formalWords",
+      "id": "W004656",
+      "field": "usagePattern",
+      "before": "prejudice + N; prejudice to V; a/the prejudice",
+      "after": "prejudice against N; prejudice sb against N; prejudice sb's interests",
+      "reasonZh": "prejudice to V未指出可穩定使用的搭配；改成明確名詞／動詞搭配，保留其他義。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/prejudice"
+      ],
+      "evidenceKeys": [
+        "prejudice"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。"
+    },
+    {
+      "proposalId": "U17-P028",
+      "classification": "optional_precision",
+      "domain": "formalWords",
+      "id": "W004656",
+      "field": "usagePatternZh",
+      "before": "對……有偏見；對……有偏見以……；一種偏見",
+      "after": "對……的偏見；使某人對……產生偏見；損害某人的利益",
+      "reasonZh": "與建議的英語搭配逐一對齊，需成對採納。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/prejudice"
+      ],
+      "evidenceKeys": [
+        "prejudice"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。"
+    },
+    {
+      "proposalId": "U17-P029",
+      "classification": "source_pending",
+      "domain": "curriculum",
+      "id": "LI-LV1U17-V040",
+      "field": "targetMeaningZh",
+      "before": "教材補充詞；義項待核對。",
+      "after": null,
+      "reasonZh": "顯示的是待核占位，不是可教詞義。字典可提供補充解釋，但未見課本原頁，不把字典釋義假稱課本轉錄；不擅建母表詞或alias。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/firstly"
+      ],
+      "evidenceKeys": [
+        "firstly"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。",
+      "dictionarySuggestion": {
+        "sensePos": "adv.",
+        "meaningZh": "首先"
+      },
+      "relatedFields": [
+        "sensePos",
+        "chapterMeaningsZh",
+        "meaningSource"
+      ]
+    },
+    {
+      "proposalId": "U17-P030",
+      "classification": "source_pending",
+      "domain": "curriculum",
+      "id": "LI-LV1U17-V043",
+      "field": "targetMeaningZh",
+      "before": "教材補充詞；義項待核對。",
+      "after": null,
+      "reasonZh": "顯示的是待核占位，不是可教詞義。字典可提供補充解釋，但未見課本原頁，不把字典釋義假稱課本轉錄；不擅建母表詞或alias。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/secondhand"
+      ],
+      "evidenceKeys": [
+        "secondhand"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。",
+      "dictionarySuggestion": {
+        "sensePos": "adj./adv.",
+        "meaningZh": "二手的；間接得知的；間接地"
+      },
+      "relatedFields": [
+        "sensePos",
+        "chapterMeaningsZh",
+        "meaningSource"
+      ]
+    },
+    {
+      "proposalId": "U17-P031",
+      "classification": "source_pending",
+      "domain": "curriculum",
+      "id": "LI-LV1U17-V044",
+      "field": "targetMeaningZh",
+      "before": "教材補充詞；義項待核對。",
+      "after": null,
+      "reasonZh": "顯示的是待核占位，不是可教詞義。字典可提供補充解釋，但未見課本原頁，不把字典釋義假稱課本轉錄；不擅建母表詞或alias。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/secondly"
+      ],
+      "evidenceKeys": [
+        "secondly"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。",
+      "dictionarySuggestion": {
+        "sensePos": "adv.",
+        "meaningZh": "其次；第二"
+      },
+      "relatedFields": [
+        "sensePos",
+        "chapterMeaningsZh",
+        "meaningSource"
+      ]
+    },
+    {
+      "proposalId": "U17-P032",
+      "classification": "source_pending",
+      "domain": "curriculum",
+      "id": "LI-LV1U17-V045",
+      "field": "targetMeaningZh",
+      "before": "教材補充詞；義項待核對。",
+      "after": null,
+      "reasonZh": "顯示的是待核占位，不是可教詞義。字典可提供補充解釋，但未見課本原頁，不把字典釋義假稱課本轉錄；不擅建母表詞或alias。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/thirdly"
+      ],
+      "evidenceKeys": [
+        "thirdly"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。",
+      "dictionarySuggestion": {
+        "sensePos": "adv.",
+        "meaningZh": "第三；第三點"
+      },
+      "relatedFields": [
+        "sensePos",
+        "chapterMeaningsZh",
+        "meaningSource"
+      ]
+    },
+    {
+      "proposalId": "U17-P033",
+      "classification": "source_pending",
+      "domain": "curriculum",
+      "id": "LI-LV1U17-V049",
+      "field": "targetMeaningZh",
+      "before": "教材補充詞；義項待核對。",
+      "after": null,
+      "reasonZh": "顯示的是待核占位，不是可教詞義。字典可提供補充解釋，但未見課本原頁，不把字典釋義假稱課本轉錄；不擅建母表詞或alias。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/steadily"
+      ],
+      "evidenceKeys": [
+        "steadily"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。",
+      "dictionarySuggestion": {
+        "sensePos": "adv.",
+        "meaningZh": "穩定地；持續地"
+      },
+      "relatedFields": [
+        "sensePos",
+        "chapterMeaningsZh",
+        "meaningSource"
+      ]
+    },
+    {
+      "proposalId": "U17-P034",
+      "classification": "source_pending",
+      "domain": "curriculum",
+      "id": "LI-LV1U17-V051",
+      "field": "targetMeaningZh",
+      "before": "教材補充詞；義項待核對。",
+      "after": null,
+      "reasonZh": "顯示的是待核占位，不是可教詞義。字典可提供補充解釋，但未見課本原頁，不把字典釋義假稱課本轉錄；不擅建母表詞或alias。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/euro"
+      ],
+      "evidenceKeys": [
+        "euro"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。",
+      "dictionarySuggestion": {
+        "sensePos": "n.",
+        "meaningZh": "歐元"
+      },
+      "relatedFields": [
+        "sensePos",
+        "chapterMeaningsZh",
+        "meaningSource"
+      ]
+    },
+    {
+      "proposalId": "U17-P035",
+      "classification": "source_pending",
+      "domain": "curriculum",
+      "id": "LI-LV1U17-V059",
+      "field": "targetMeaningZh",
+      "before": "教材補充詞；義項待核對。",
+      "after": null,
+      "reasonZh": "顯示的是待核占位，不是可教詞義。字典可提供補充解釋，但未見課本原頁，不把字典釋義假稱課本轉錄；不擅建母表詞或alias。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/correctly"
+      ],
+      "evidenceKeys": [
+        "correctly"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。",
+      "dictionarySuggestion": {
+        "sensePos": "adv.",
+        "meaningZh": "正確地"
+      },
+      "relatedFields": [
+        "sensePos",
+        "chapterMeaningsZh",
+        "meaningSource"
+      ]
+    },
+    {
+      "proposalId": "U17-P036",
+      "classification": "source_pending",
+      "domain": "curriculum",
+      "id": "LI-LV1U17-V060",
+      "field": "targetMeaningZh",
+      "before": "教材補充詞；義項待核對。",
+      "after": null,
+      "reasonZh": "顯示的是待核占位，不是可教詞義。字典可提供補充解釋，但未見課本原頁，不把字典釋義假稱課本轉錄；不擅建母表詞或alias。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/correction"
+      ],
+      "evidenceKeys": [
+        "correction"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。",
+      "dictionarySuggestion": {
+        "sensePos": "n.",
+        "meaningZh": "改正；訂正"
+      },
+      "relatedFields": [
+        "sensePos",
+        "chapterMeaningsZh",
+        "meaningSource"
+      ]
+    },
+    {
+      "proposalId": "U17-P037",
+      "classification": "source_pending",
+      "domain": "curriculum",
+      "id": "LI-LV1U17-V064",
+      "field": "targetMeaningZh",
+      "before": "教材補充詞；義項待核對。",
+      "after": null,
+      "reasonZh": "顯示的是待核占位，不是可教詞義。字典可提供補充解釋，但未見課本原頁，不把字典釋義假稱課本轉錄；不擅建母表詞或alias。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/mailman"
+      ],
+      "evidenceKeys": [
+        "mailman"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。",
+      "dictionarySuggestion": {
+        "sensePos": "n.",
+        "meaningZh": "郵差"
+      },
+      "relatedFields": [
+        "sensePos",
+        "chapterMeaningsZh",
+        "meaningSource"
+      ]
+    },
+    {
+      "proposalId": "U17-P038",
+      "classification": "source_pending",
+      "domain": "curriculum",
+      "id": "LI-LV1U17-V065",
+      "field": "targetMeaningZh",
+      "before": "教材補充詞；義項待核對。",
+      "after": null,
+      "reasonZh": "顯示的是待核占位，不是可教詞義。字典可提供補充解釋，但未見課本原頁，不把字典釋義假稱課本轉錄；不擅建母表詞或alias。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/postman"
+      ],
+      "evidenceKeys": [
+        "postman"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。",
+      "dictionarySuggestion": {
+        "sensePos": "n.",
+        "meaningZh": "郵差"
+      },
+      "relatedFields": [
+        "sensePos",
+        "chapterMeaningsZh",
+        "meaningSource"
+      ]
+    },
+    {
+      "proposalId": "U17-P039",
+      "classification": "source_pending",
+      "domain": "curriculum",
+      "id": "LI-LV1U17-V070",
+      "field": "targetMeaningZh",
+      "before": "教材補充詞；義項待核對。",
+      "after": null,
+      "reasonZh": "顯示的是待核占位，不是可教詞義。字典可提供補充解釋，但未見課本原頁，不把字典釋義假稱課本轉錄；不擅建母表詞或alias。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/angrily"
+      ],
+      "evidenceKeys": [
+        "angrily"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。",
+      "dictionarySuggestion": {
+        "sensePos": "adv.",
+        "meaningZh": "生氣地"
+      },
+      "relatedFields": [
+        "sensePos",
+        "chapterMeaningsZh",
+        "meaningSource"
+      ]
+    },
+    {
+      "proposalId": "U17-P040",
+      "classification": "source_pending",
+      "domain": "curriculum",
+      "id": "LI-LV1U17-V071",
+      "field": "targetMeaningZh",
+      "before": "教材補充詞；義項待核對。",
+      "after": null,
+      "reasonZh": "顯示的是待核占位，不是可教詞義。字典可提供補充解釋，但未見課本原頁，不把字典釋義假稱課本轉錄；不擅建母表詞或alias。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/python"
+      ],
+      "evidenceKeys": [
+        "python"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。",
+      "dictionarySuggestion": {
+        "sensePos": "n.",
+        "meaningZh": "蟒蛇"
+      },
+      "relatedFields": [
+        "sensePos",
+        "chapterMeaningsZh",
+        "meaningSource"
+      ]
+    },
+    {
+      "proposalId": "U17-P041",
+      "classification": "source_pending",
+      "domain": "curriculum",
+      "id": "LI-LV1U17-V072",
+      "field": "targetMeaningZh",
+      "before": "教材補充詞；義項待核對。",
+      "after": null,
+      "reasonZh": "顯示的是待核占位，不是可教詞義。字典可提供補充解釋，但未見課本原頁，不把字典釋義假稱課本轉錄；不擅建母表詞或alias。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/fatty"
+      ],
+      "evidenceKeys": [
+        "fatty"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。",
+      "dictionarySuggestion": {
+        "sensePos": "adj.",
+        "meaningZh": "含脂肪的；脂肪多的"
+      },
+      "relatedFields": [
+        "sensePos",
+        "chapterMeaningsZh",
+        "meaningSource"
+      ]
+    },
+    {
+      "proposalId": "U17-P042",
+      "classification": "source_pending",
+      "domain": "curriculum",
+      "id": "LI-LV1U17-V074",
+      "field": "targetMeaningZh",
+      "before": "教材補充詞；義項待核對。",
+      "after": null,
+      "reasonZh": "顯示的是待核占位，不是可教詞義。字典可提供補充解釋，但未見課本原頁，不把字典釋義假稱課本轉錄；不擅建母表詞或alias。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/low-fat"
+      ],
+      "evidenceKeys": [
+        "low-fat"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。",
+      "dictionarySuggestion": {
+        "sensePos": "adj.",
+        "meaningZh": "低脂肪的"
+      },
+      "relatedFields": [
+        "sensePos",
+        "chapterMeaningsZh",
+        "meaningSource"
+      ]
+    },
+    {
+      "proposalId": "U17-P043",
+      "classification": "source_pending",
+      "domain": "curriculum",
+      "id": "LI-LV1U17-V078",
+      "field": "targetMeaningZh",
+      "before": "教材補充詞；義項待核對。",
+      "after": null,
+      "reasonZh": "顯示的是待核占位，不是可教詞義。字典可提供補充解釋，但未見課本原頁，不把字典釋義假稱課本轉錄；不擅建母表詞或alias。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/am"
+      ],
+      "evidenceKeys": [
+        "am"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。",
+      "dictionarySuggestion": {
+        "sensePos": "adv.（時間縮寫）",
+        "meaningZh": "上午"
+      },
+      "relatedFields": [
+        "sensePos",
+        "chapterMeaningsZh",
+        "meaningSource"
+      ]
+    },
+    {
+      "proposalId": "U17-P044",
+      "classification": "source_pending",
+      "domain": "curriculum",
+      "id": "LI-LV1U17-V079",
+      "field": "targetMeaningZh",
+      "before": "教材補充詞；義項待核對。",
+      "after": null,
+      "reasonZh": "顯示的是待核占位，不是可教詞義。字典可提供補充解釋，但未見課本原頁，不把字典釋義假稱課本轉錄；不擅建母表詞或alias。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/am"
+      ],
+      "evidenceKeys": [
+        "am"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。",
+      "dictionarySuggestion": {
+        "sensePos": "adv.（時間縮寫）",
+        "meaningZh": "上午"
+      },
+      "relatedFields": [
+        "sensePos",
+        "chapterMeaningsZh",
+        "meaningSource"
+      ]
+    },
+    {
+      "proposalId": "U17-P045",
+      "classification": "source_pending",
+      "domain": "curriculum",
+      "id": "LI-LV1U17-V081",
+      "field": "targetMeaningZh",
+      "before": "教材補充詞；義項待核對。",
+      "after": null,
+      "reasonZh": "顯示的是待核占位，不是可教詞義。字典可提供補充解釋，但未見課本原頁，不把字典釋義假稱課本轉錄；不擅建母表詞或alias。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/pm"
+      ],
+      "evidenceKeys": [
+        "pm"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。",
+      "dictionarySuggestion": {
+        "sensePos": "adv.（時間縮寫）",
+        "meaningZh": "下午"
+      },
+      "relatedFields": [
+        "sensePos",
+        "chapterMeaningsZh",
+        "meaningSource"
+      ]
+    },
+    {
+      "proposalId": "U17-P046",
+      "classification": "source_pending",
+      "domain": "curriculum",
+      "id": "LI-LV1U17-V082",
+      "field": "targetMeaningZh",
+      "before": "教材補充詞；義項待核對。",
+      "after": null,
+      "reasonZh": "顯示的是待核占位，不是可教詞義。字典可提供補充解釋，但未見課本原頁，不把字典釋義假稱課本轉錄；不擅建母表詞或alias。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/pm"
+      ],
+      "evidenceKeys": [
+        "pm"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。",
+      "dictionarySuggestion": {
+        "sensePos": "adv.（時間縮寫）",
+        "meaningZh": "下午"
+      },
+      "relatedFields": [
+        "sensePos",
+        "chapterMeaningsZh",
+        "meaningSource"
+      ]
+    },
+    {
+      "proposalId": "U17-P047",
+      "classification": "source_pending",
+      "domain": "curriculum",
+      "id": "LI-LV1U17-V084",
+      "field": "targetMeaningZh",
+      "before": "教材補充詞；義項待核對。",
+      "after": null,
+      "reasonZh": "顯示的是待核占位，不是可教詞義。字典可提供補充解釋，但未見課本原頁，不把字典釋義假稱課本轉錄；不擅建母表詞或alias。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/tyre"
+      ],
+      "evidenceKeys": [
+        "tyre"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。",
+      "dictionarySuggestion": {
+        "sensePos": "n.",
+        "meaningZh": "輪胎（英式拼法）"
+      },
+      "relatedFields": [
+        "sensePos",
+        "chapterMeaningsZh",
+        "meaningSource"
+      ]
+    },
+    {
+      "proposalId": "U17-P048",
+      "classification": "source_pending",
+      "domain": "curriculum",
+      "id": "LI-LV1U17-V086",
+      "field": "targetMeaningZh",
+      "before": "教材補充詞；義項待核對。",
+      "after": null,
+      "reasonZh": "顯示的是待核占位，不是可教詞義。字典可提供補充解釋，但未見課本原頁，不把字典釋義假稱課本轉錄；不擅建母表詞或alias。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/bottleneck"
+      ],
+      "evidenceKeys": [
+        "bottleneck"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。",
+      "dictionarySuggestion": {
+        "sensePos": "n.",
+        "meaningZh": "瓶頸；阻礙進展的環節"
+      },
+      "relatedFields": [
+        "sensePos",
+        "chapterMeaningsZh",
+        "meaningSource"
+      ]
+    },
+    {
+      "proposalId": "U17-P049",
+      "classification": "source_pending",
+      "domain": "curriculum",
+      "id": "LI-LV1U17-V087",
+      "field": "targetMeaningZh",
+      "before": "教材補充詞；義項待核對。",
+      "after": null,
+      "reasonZh": "顯示的是待核占位，不是可教詞義。字典可提供補充解釋，但未見課本原頁，不把字典釋義假稱課本轉錄；不擅建母表詞或alias。",
+      "sourceURL": [
+        "https://www.fda.gov/consumers/consumer-updates/bottled-water-everywhere-keeping-it-safe"
+      ],
+      "evidenceKeys": [
+        "water"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。",
+      "dictionarySuggestion": {
+        "sensePos": "n. phr.",
+        "meaningZh": "瓶裝水"
+      },
+      "relatedFields": [
+        "sensePos",
+        "chapterMeaningsZh",
+        "meaningSource"
+      ]
+    },
+    {
+      "proposalId": "U17-P050",
+      "classification": "source_pending",
+      "domain": "curriculum",
+      "id": "LI-LV1U17-V004",
+      "field": "sensePos",
+      "before": "n./vi.",
+      "after": null,
+      "reasonZh": "be rooted in通常涉及及物root的被動／形容詞用法，現n./vi.可能不完整；但root也有不及物義。須原頁語境，不能整詞強改vt.。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/root"
+      ],
+      "evidenceKeys": [
+        "root"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。"
+    },
+    {
+      "proposalId": "U17-P051",
+      "classification": "source_pending",
+      "domain": "curriculum",
+      "id": "LI-LV1U17-V031",
+      "field": "targetMeaningZh",
+      "before": "麵包（集合名詞，不可數）",
+      "after": null,
+      "reasonZh": "麵包一般為不可數物質名詞；集合名詞用語可能是教材分類慣例。尚無原頁及直接可讀的語法來源，不把分類爭議列確錯。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/bread"
+      ],
+      "evidenceKeys": [
+        "bread"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。"
+    },
+    {
+      "proposalId": "U17-P052",
+      "classification": "source_pending",
+      "domain": "formalWords",
+      "id": "W000506",
+      "field": "meaningZh",
+      "before": "大聲的；不斷的；喧吵的；高聲地",
+      "after": null,
+      "reasonZh": "loud「不斷的」在本次讀到詞條未找到直接支持，但未證不存在，不直接刪除或當確錯。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/loud"
+      ],
+      "evidenceKeys": [
+        "loud"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。"
+    },
+    {
+      "proposalId": "U17-P053",
+      "classification": "source_pending",
+      "domain": "curriculum",
+      "id": "LI-LV1U17-V057",
+      "field": "targetMeaningZh",
+      "before": "大聲的；不斷的；喧吵的；高聲地",
+      "after": null,
+      "reasonZh": "loud「不斷的」在本次讀到詞條未找到直接支持，但未證不存在，不直接刪除或當確錯。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/loud"
+      ],
+      "evidenceKeys": [
+        "loud"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。"
+    },
+    {
+      "proposalId": "U17-P054",
+      "classification": "optional_precision",
+      "domain": "curriculum",
+      "id": "LI-LV1U17-G006",
+      "field": "explanationZh",
+      "before": "其他的意見",
+      "after": "第二位專家提供的意見（例如第二診療意見）",
+      "reasonZh": "其他的意見過於概括；這是字典精度補充，不代表原轉錄錯字。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/second%20opinion"
+      ],
+      "evidenceKeys": [
+        "second opinion"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。"
+    },
+    {
+      "proposalId": "U17-P055",
+      "classification": "optional_precision",
+      "domain": "curriculum",
+      "id": "LI-LV1U17-G012",
+      "field": "explanationZh",
+      "before": "三分之一個……",
+      "after": "……的三分之一",
+      "reasonZh": "of後可以是複數集合，不限三分之一個單一物體；對應正式例句a third of the students。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/third"
+      ],
+      "evidenceKeys": [
+        "third"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。"
+    },
+    {
+      "proposalId": "U17-P056",
+      "classification": "optional_precision",
+      "domain": "curriculum",
+      "id": "LI-LV1U17-G045",
+      "field": "explanationZh",
+      "before": "a.m. 及 p.m. 通常用小寫，必須置於阿拉伯數字後，且不可與 o'clock 並用。a.m. 10（×）；ten a.m.（×）；10 o'clock a.m.（×）→ 10 a.m.（○）上午 10 點",
+      "after": "本教材採用 10 a.m. 等阿拉伯數字寫法，將 a.m./p.m. 放在時間後，不與 o'clock 並用；數字拼寫形式（例如 ten a.m.）是否採用屬文體規範，並非所有情境都錯。",
+      "reasonZh": "原文把ten a.m.普遍判錯過於絕對。Chicago18版允許一致使用／小說對話；保留教材規範並標明不是普遍文法定律。未核課本原圖，因此不直接改source轉錄。",
+      "sourceURL": [
+        "https://www.chicagomanualofstyle.org/qanda/data/faq/topics/Numbers/faq0029.html"
+      ],
+      "evidenceKeys": [
+        "time-style"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。",
+      "relatedFields": [
+        "pattern"
+      ]
+    },
+    {
+      "proposalId": "U17-P057",
+      "classification": "source_pending",
+      "domain": "curriculum",
+      "id": "LI-LV1U17-G020",
+      "field": "explanationZh",
+      "before": "教材用法標記；例句與教材題目尚未提供。",
+      "after": null,
+      "reasonZh": "這是缺教材說明的占位；三態已有獨立來源工作，本輪不重做。ring限定響鈴／打電話等義，不把rang/rung套至環繞的ringed。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/ring"
+      ],
+      "evidenceKeys": [
+        "ring"
+      ],
+      "retrievalMethod": "對釘住commit輸入逐欄實讀，並依evidenceKeys查核列出的原文。"
+    },
+    {
+      "proposalId": "U17-P058",
+      "classification": "source_pending",
+      "domain": "curriculum",
+      "id": "LI-LV1U17-G032",
+      "field": "explanationZh",
+      "before": "教材用法標記；例句與教材題目尚未提供。",
+      "after": null,
+      "reasonZh": "這是缺教材說明的占位；send三態已有獨立來源工作，本輪不重做。",
+      "sourceURL": [
+        "https://github.com/chiehco/vocab-app/blob/bb581cde64a311e2bfc95eadd4592e27f1db70cb/scripts/sources/LV1Unit17.json"
+      ],
+      "evidenceKeys": [],
+      "retrievalMethod": "對釘住commit輸入及scripts/sources/LV1Unit17.json逐項實讀比對。"
+    },
+    {
+      "proposalId": "U17-P059",
+      "classification": "optional_precision",
+      "domain": "formalExamples",
+      "id": "EX5a40827a",
+      "field": "blankSentence",
+      "before": "Turn _____ at the next block, and you'll see the restaurant. ＝ Turn to the right at the next block, and you'll see the restaurant.",
+      "after": null,
+      "reasonZh": "後半等值句直接顯示right，形成答案洩漏；cloze回填仍完全正確。若要改練習呈現，應隱藏／另置等值句，不刪改來源句。",
+      "sourceURL": [
+        "https://github.com/chiehco/vocab-app/blob/bb581cde64a311e2bfc95eadd4592e27f1db70cb/scripts/sources/LV1Unit17.json"
+      ],
+      "evidenceKeys": [],
+      "retrievalMethod": "對釘住commit輸入及scripts/sources/LV1Unit17.json逐項實讀比對。"
+    },
+    {
+      "proposalId": "U17-P060",
+      "classification": "source_pending",
+      "domain": "formalWords",
+      "id": "W000137",
+      "field": "meaningZh",
+      "before": "照相機；攝影機；密談室；暗箱",
+      "after": null,
+      "reasonZh": "暗箱有camera obscura支持；密談室未有精確原譯來源，先保留，勿由現代相機主義刪除。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/camera"
+      ],
+      "evidenceKeys": [
+        "camera"
+      ],
+      "retrievalMethod": "直接開啟MW詞條；photograph另讀Collins正文。未把未見證據當不存在的證明。"
+    },
+    {
+      "proposalId": "U17-P061",
+      "classification": "source_pending",
+      "domain": "formalWords",
+      "id": "W000639",
+      "field": "meaningZh",
+      "before": "相片；照片；逼真的描繪；照相",
+      "after": null,
+      "reasonZh": "逼真的描繪可能為引申義；MW及Collins實讀未直接找到此義，未證不存在，保留待核。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/photo",
+        "https://www.collinsdictionary.com/dictionary/english/photograph"
+      ],
+      "evidenceKeys": [
+        "photo",
+        "photograph-collins"
+      ],
+      "retrievalMethod": "直接開啟MW詞條；photograph另讀Collins正文。未把未見證據當不存在的證明。"
+    },
+    {
+      "proposalId": "U17-P062",
+      "classification": "confirmed_error",
+      "domain": "formalWords",
+      "id": "W000030",
+      "field": "usagePatternZh",
+      "before": "在上午做某事",
+      "after": "上午＋時間（例如：上午10點）",
+      "reasonZh": "既有「做某事」對應的是錯誤V模板，修正為指定時刻的中文模式；屬同一搭配修正的中文配套，不是新增錯誤字卡。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/am",
+        "https://www.chicagomanualofstyle.org/qanda/data/faq/topics/Numbers/faq0029.html"
+      ],
+      "evidenceKeys": [
+        "am",
+        "time-style"
+      ],
+      "retrievalMethod": "重新核對本次已實讀的Merriam-Webster時段縮寫正文與Chicago官方FAQ時間例式，並對照釘住commit的原中文欄位；中文是對time + 時段縮寫的語意翻譯，不聲稱詞典提供此中文原句。",
+      "atomicChangeGroup": "U17-TIME-USAGE-AM",
+      "mustApplyTogetherWith": [
+        "U17-P017"
+      ],
+      "applicationConstraintZh": "中英文搭配欄須一起核對、成對套用；不得只改其中一欄。不得連動例句、alias或主詞性。"
+    },
+    {
+      "proposalId": "U17-P063",
+      "classification": "confirmed_error",
+      "domain": "formalWords",
+      "id": "W000659",
+      "field": "usagePatternZh",
+      "before": "在下午做某事",
+      "after": "下午／晚上＋時間（例如：晚上10點）",
+      "reasonZh": "既有「做某事」對應的是錯誤V模板，修正為指定時刻的中文模式；屬同一搭配修正的中文配套，不是新增錯誤字卡。p.m.是正午後時段，中文依時刻譯下午或晚上。",
+      "sourceURL": [
+        "https://www.merriam-webster.com/dictionary/pm",
+        "https://www.chicagomanualofstyle.org/qanda/data/faq/topics/Numbers/faq0029.html"
+      ],
+      "evidenceKeys": [
+        "pm",
+        "time-style"
+      ],
+      "retrievalMethod": "重新核對本次已實讀的Merriam-Webster時段縮寫正文與Chicago官方FAQ時間例式，並對照釘住commit的原中文欄位；中文是對time + 時段縮寫的語意翻譯，不聲稱詞典提供此中文原句。",
+      "atomicChangeGroup": "U17-TIME-USAGE-PM",
+      "mustApplyTogetherWith": [
+        "U17-P018"
+      ],
+      "applicationConstraintZh": "中英文搭配欄須一起核對、成對套用；不得只改其中一欄。不得連動例句、alias或主詞性。"
+    }
+  ],
+  "evidence": {
+    "gifted": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/gifted",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "形容詞為有天賦；另列gift的過去式與過去分詞，不得否認其動詞形式。",
+      "shortQuote": "having great natural ability"
+    },
+    "picture": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/picture",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "動詞有在腦海中想像的義項。",
+      "shortQuote": "to form a mental image of"
+    },
+    "bow": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/bow",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "名詞bow確有眼鏡框／鏡腳義，眼睛框是中文字誤植。",
+      "shortQuote": "a frame for the lenses of eyeglasses"
+    },
+    "ignorance": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/ignorance",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "無知，缺乏知識或認知；愚味為愚昧誤字。",
+      "shortQuote": "lack of knowledge, education, or awareness"
+    },
+    "email": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/email",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "有寄電子郵件的及物動詞義。",
+      "shortQuote": "to send (something) by email"
+    },
+    "sentence": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/sentence",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "有判刑的及物動詞義。",
+      "shortQuote": "to impose a sentence on"
+    },
+    "photograph": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/photograph",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "photographing是拍攝的動詞形式。",
+      "shortQuote": "to take a photograph of"
+    },
+    "coat": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/coat",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "coated可作覆蓋表面的及物動詞。",
+      "shortQuote": "to cover or spread with a finishing, protecting, or enclosing layer"
+    },
+    "ring": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/ring",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "響鈴為動詞，rang屬該義；ringed另屬環繞等義。",
+      "shortQuote": "the doorbell rang"
+    },
+    "fat": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/fat",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "fat可作形容詞表示身體脂肪多；grew fat為變胖。",
+      "shortQuote": "having excessive body fat"
+    },
+    "brown": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/brown",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "brown有使變成棕色的動詞義。",
+      "shortQuote": "to make brown"
+    },
+    "first": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/first",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "詞典形容詞例句含first time，修飾time；並非把整個時間副詞片語當first詞性。",
+      "shortQuote": "I still remember the first time I saw her."
+    },
+    "present": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/present",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "present名詞禮物、動詞贈送及瞄準等義均真實。",
+      "shortQuote": "something presented"
+    },
+    "third": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/third",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "分數a third of為名詞，不是third修飾time的序數形容詞。",
+      "shortQuote": "a third of the pie"
+    },
+    "pound": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/pound",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "pound名詞確有圈養／捕魚圍欄義，不可直接當pond拼錯。",
+      "shortQuote": "an enclosure within which fish are kept or caught"
+    },
+    "skinny": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/skinny",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "似皮、極瘦、份量少及內幕消息均有詞典根據；不因adj主標刪名詞。",
+      "shortQuote": "resembling skin"
+    },
+    "overcoat": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/overcoat",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "大衣與表面保護塗層兩義均存在。",
+      "shortQuote": "a protective coating (as of paint)"
+    },
+    "secondary": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/secondary",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "次要形容詞和美式足球防守後場名詞均存在。",
+      "shortQuote": "a defensive football backfield"
+    },
+    "funny": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/funny",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "好笑、奇怪、不舒服及滑稽事物名詞均存在。",
+      "shortQuote": "my stomach feels funny"
+    },
+    "priority": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/priority",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "優先地位與優先事項名詞存在；preceding in time過窄但與先後相關。",
+      "shortQuote": "something given or meriting attention before competing alternatives"
+    },
+    "prejudice": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/prejudice",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "名詞偏見、損害及動詞使有偏見／損害均存在；應保留後者。",
+      "shortQuote": "The incident prejudiced consumers against the company."
+    },
+    "loud": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/loud",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "實讀聲量大、喧鬧、外觀刺目等義，未找到不斷的直接支持。",
+      "shortQuote": null
+    },
+    "bread": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/bread",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "麵包、生計及裹麵包屑動詞均有詞典根據。",
+      "shortQuote": "to cover with bread crumbs"
+    },
+    "tire": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/tire",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "頭飾是古義；不得刪除。",
+      "shortQuote": "a woman's headband or hair ornament"
+    },
+    "am": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/am",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "AM/a.m./am時間縮寫為ante meridiem；另有調幅等義須按本課時段限定。",
+      "shortQuote": "ante meridiem"
+    },
+    "pm": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/pm",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "PM/p.m./pm時段縮寫為post meridiem；不是只能接動詞。",
+      "shortQuote": "post meridiem"
+    },
+    "second opinion": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/second%20opinion",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "第二位專家對先前意見的再評估，不僅泛指其他想法。",
+      "shortQuote": "advice from a second expert"
+    },
+    "root": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/root",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "名詞根／根源明確；動詞及be rooted in須區分及物被動和不及物，原頁未核。",
+      "shortQuote": null
+    },
+    "skinny-stingy": {
+      "sourceURL": "https://en.langenscheidt.com/english-german/skinny",
+      "retrievalMethod": "以 skinny stingy dictionary 搜尋發現出版商詞條，再直接開啟閱讀編輯詞條（不是下方未審外部例句）。",
+      "readOn": "2026-11-05",
+      "findingZh": "Langenscheidt形容詞列skin-like與比喻stingy，支持似皮及小氣。",
+      "shortQuote": "skinny stingy"
+    },
+    "time-style": {
+      "sourceURL": "https://www.chicagomanualofstyle.org/qanda/data/faq/topics/Numbers/faq0029.html",
+      "retrievalMethod": "搜尋 site:chicagomanualofstyle.org \"ten\" \"a.m.\" 後開啟FAQ全文，特別閱讀18版編者更新。",
+      "readOn": "2026-11-05",
+      "findingZh": "18版更新指出one a.m.一致使用時可接受，且小說對話可能偏好；不能將英文數字寫法一律判成文法錯誤。",
+      "shortQuote": "can be acceptable if used consistently"
+    },
+    "terrorism-original": {
+      "sourceURL": "https://www.vocabulary.com/dictionary/terrorism",
+      "retrievalMethod": "以 terrorism \"against civilians in order to attain goals\" 搜尋定位，再直接開啟Vocabulary.com詞條第1名詞定義；與現存字串前綴逐字比對。Princeton原站無法讀取，未聲稱確定最初匯入站。",
+      "readOn": "2026-11-05",
+      "findingZh": "讀到與repo截斷前綴完全相同的完整定義，後續為ideological in nature及恐嚇／脅迫／灌輸恐懼。只恢復可追尾段，不另造定義。",
+      "shortQuote": "ideological in nature; this is done through intimidation or coercion or instilling fear"
+    },
+    "water": {
+      "sourceURL": "https://www.fda.gov/consumers/consumer-updates/bottled-water-everywhere-keeping-it-safe",
+      "retrievalMethod": "搜尋site:fda.gov bottled water sealed定位現行網址後直接開啟Types of Bottled Water段落。",
+      "readOn": "2026-11-05",
+      "findingZh": "官方正文定義瓶裝飲用水為供人飲用、封裝於瓶或其他容器的水；可支持一般譯詞瓶裝水，不拿法規分類擴大課本義項。",
+      "shortQuote": "sealed in bottles or other containers"
+    },
+    "firstly": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/firstly",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "正文支持此詞的字典補充釋義：首先；不代表課本原頁已核對。",
+      "shortQuote": null
+    },
+    "secondhand": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/secondhand",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "正文支持此詞的字典補充釋義：二手的；間接得知的；間接地；不代表課本原頁已核對。",
+      "shortQuote": null
+    },
+    "secondly": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/secondly",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "正文支持此詞的字典補充釋義：其次；第二；不代表課本原頁已核對。",
+      "shortQuote": null
+    },
+    "thirdly": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/thirdly",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "正文支持此詞的字典補充釋義：第三；第三點；不代表課本原頁已核對。",
+      "shortQuote": null
+    },
+    "steadily": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/steadily",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "正文支持此詞的字典補充釋義：穩定地；持續地；不代表課本原頁已核對。",
+      "shortQuote": null
+    },
+    "euro": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/euro",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "正文支持此詞的字典補充釋義：歐元；不代表課本原頁已核對。",
+      "shortQuote": null
+    },
+    "correctly": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/correctly",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "正文支持此詞的字典補充釋義：正確地；不代表課本原頁已核對。",
+      "shortQuote": null
+    },
+    "correction": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/correction",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "正文支持此詞的字典補充釋義：改正；訂正；不代表課本原頁已核對。",
+      "shortQuote": null
+    },
+    "mailman": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/mailman",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "正文支持此詞的字典補充釋義：郵差；不代表課本原頁已核對。",
+      "shortQuote": null
+    },
+    "postman": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/postman",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "正文支持此詞的字典補充釋義：郵差；不代表課本原頁已核對。",
+      "shortQuote": null
+    },
+    "angrily": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/angrily",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "正文支持此詞的字典補充釋義：生氣地；不代表課本原頁已核對。",
+      "shortQuote": null
+    },
+    "python": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/python",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "正文支持此詞的字典補充釋義：蟒蛇；不代表課本原頁已核對。",
+      "shortQuote": null
+    },
+    "fatty": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/fatty",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "正文支持此詞的字典補充釋義：含脂肪的；脂肪多的；不代表課本原頁已核對。",
+      "shortQuote": null
+    },
+    "low-fat": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/low-fat",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "正文支持此詞的字典補充釋義：低脂肪的；不代表課本原頁已核對。",
+      "shortQuote": null
+    },
+    "tyre": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/tyre",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "正文支持此詞的字典補充釋義：輪胎（英式拼法）；不代表課本原頁已核對。",
+      "shortQuote": null
+    },
+    "bottleneck": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/bottleneck",
+      "retrievalMethod": "直接開啟詞典詞條正文，閱讀定義及詞類標記；未以搜尋摘要代替原文。",
+      "readOn": "2026-11-05",
+      "findingZh": "正文支持此詞的字典補充釋義：瓶頸；阻礙進展的環節；不代表課本原頁已核對。",
+      "shortQuote": null
+    },
+    "camera": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/camera",
+      "readOn": "2026-11-05",
+      "retrievalMethod": "直接開啟出版商詞典正文並讀取詞性及義項。",
+      "findingZh": "詞典camera obscura支持暗箱；Kids列法官私人辦公室，但密談室是更泛譯法，尚待原譯來源。",
+      "shortQuote": "a judge's private office"
+    },
+    "fun": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/fun",
+      "readOn": "2026-11-05",
+      "retrievalMethod": "直接開啟出版商詞典正文並讀取詞性及義項。",
+      "findingZh": "詞典列形容詞、不可數名詞與開玩笑動詞；保留原各義。",
+      "shortQuote": "to indulge in banter or play"
+    },
+    "jacket": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/jacket",
+      "readOn": "2026-11-05",
+      "retrievalMethod": "直接開啟出版商詞典正文並讀取詞性及義項。",
+      "findingZh": "詞典有替物穿上／套上jacket的動詞，保留原中文。",
+      "shortQuote": "to put a jacket on"
+    },
+    "joy": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/joy",
+      "readOn": "2026-11-05",
+      "retrievalMethod": "直接開啟出版商詞典正文並讀取詞性及義項。",
+      "findingZh": "及物動詞古義gladden支持使快樂；非錯誤名詞刪除項。",
+      "shortQuote": "archaic : gladden"
+    },
+    "second": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/second",
+      "readOn": "2026-11-05",
+      "retrievalMethod": "直接開啟出版商詞典正文並讀取詞性及義項。",
+      "findingZh": "名詞有幫助或支持他人的人，支持者不是誤義。",
+      "shortQuote": "one that assists or supports another"
+    },
+    "mail": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/mail",
+      "readOn": "2026-11-05",
+      "retrievalMethod": "直接開啟出版商詞典正文並讀取詞性及義項。",
+      "findingZh": "名詞2為金屬環／金屬片盔甲，保留。",
+      "shortQuote": "armor made of metal links or sometimes plates"
+    },
+    "slim": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/slim",
+      "readOn": "2026-11-05",
+      "retrievalMethod": "直接開啟出版商詞典正文並讀取詞性及義項。",
+      "findingZh": "動詞減肥／使苗條真實，不能按adj主標刪除。",
+      "shortQuote": "to make slender"
+    },
+    "photo": {
+      "sourceURL": "https://www.merriam-webster.com/dictionary/photo",
+      "readOn": "2026-11-05",
+      "retrievalMethod": "直接開啟出版商詞典正文並讀取詞性及義項。",
+      "findingZh": "名詞及動詞皆指photograph；本次實讀未直接找到逼真的描繪引申義，保留待核。",
+      "shortQuote": null
+    },
+    "photograph-collins": {
+      "sourceURL": "https://www.collinsdictionary.com/dictionary/english/photograph",
+      "readOn": "2026-11-05",
+      "retrievalMethod": "直接開啟Collins並閱讀COBUILD、英式及美式定義。",
+      "findingZh": "均確認照片及拍照，未直接支持逼真的描繪引申義；此為未找到，不是不存在的證明。",
+      "shortQuote": null
+    }
+  }
+}
