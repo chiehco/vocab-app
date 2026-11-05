@@ -1,0 +1,196 @@
+{
+  "unit": "LV1-U16",
+  "checkpointAt": "2026-11-05T13:49:49.127Z",
+  "priorCheckpoint": "bb581cde64a311e2bfc95eadd4592e27f1db70cb",
+  "branch": "content/unit-audit-20261105",
+  "state": "checkpoint_with_explicit_unresolved_items",
+  "counts": {
+    "textbookLearningItems": 136,
+    "vocabularyItems": 79,
+    "usageItems": 57,
+    "originalContentPagesActuallyViewed": 8,
+    "formalDictionaryWords": 65,
+    "formalExamplesChecked": 104,
+    "clozeFailures": 0,
+    "unmappedFormalIdentitiesRetained": 14,
+    "printedSupplementGlossesRestored": 11,
+    "sourceDisplayCorrections": 21,
+    "sourceThreeFormExplanations": 6,
+    "curatedPatternClarifications": 3,
+    "generalCardsReopened": 65,
+    "existingGeneralImagesActuallyViewed": 19,
+    "generalCardsWithoutAnAsset": 46,
+    "brokenObservedImages": 0,
+    "adoptedCurriculumImages": 0,
+    "adoptedCurriculumExamples": 0,
+    "bilingualUsagePagesReopened": 20,
+    "principalPartsAddedAndBothPanelsReopened": 25,
+    "dictionaryPatchOperations": 49,
+    "dictionaryDefinitionOrUsageRows": 27,
+    "singleIncorrectExamplePos": 7,
+    "compositeExamplePosNarrowed": 6,
+    "existingNonemptyHintsNarrowed": 6,
+    "authoredPracticeStatusesReviewed": 2,
+    "nonExamSensesReviewed": 6,
+    "officialExamSensesVerified": 1,
+    "supplementalSentenceChineseFields": 3,
+    "supplementalDictionaryTypoFields": 1,
+    "supplementalNoteContentFields": 1,
+    "allDataPatchOperations": 79,
+    "uniqueDataRowsChanged": 65
+  },
+  "source": {
+    "curriculum": "src/features/direct/curriculumLV1Unit16.json",
+    "originalManifest": "scripts/sources/LV1Unit16.json",
+    "originalManifestUnmodified": true,
+    "pageEvidence": "LV1-U16-source-page-review.json",
+    "sourcePages": [
+      142,
+      149
+    ],
+    "literalOriginalPatternsRetainedInSourceAndBeforeRecords": true
+  },
+  "preserved": {
+    "deliveryMode": "text_only",
+    "practiceMode": "read_only",
+    "formalIdentityChanges": 0,
+    "wholeWordStatusChanges": 0,
+    "headwordPosChanges": 0,
+    "U16EnglishChineseSentenceClozeAnswerChanges": 0,
+    "original31FormsAndSeparate16Retained": true,
+    "noAutomaticPublication": true
+  },
+  "uiFieldBoundary": "Source-card exact Chinese and dictionary display strings were checked in all136 actual reopens. General meaning pages compare complete formal English/Chinese and definitions; per-example POS and hints are checked by sentence analysis and saved DB, not claimed individually visible when the current UI omits them.",
+  "imageBoundary": "Actually viewed 19 retained general-image originals in five contact sheets. No curriculum images exist or were added. Every observed src still decodes and remains the same exact asset.",
+  "pixelEvidence": {
+    "sourceCorrectionScreensActuallyViewed": 21,
+    "formsCardPanelsActuallyViewed": 25,
+    "sourceContactSheets": 4,
+    "formContactSheets": 5
+  },
+  "supplementalProof": "validation/U16-wording-followups.json",
+  "pending": [
+    {
+      "id": "W002081",
+      "field": "meaningEn",
+      "state": "confirmed_truncation_original_mapping_pending",
+      "reason": "Inherited besides ends at in a. Historical spatial adverb is supported; the longer deviation fragment matches Beside, so no guessed whole-field replacement or deletion was applied."
+    },
+    {
+      "ids": [
+        "W000465",
+        "W000734",
+        "W000078",
+        "W001418",
+        "W005498",
+        "W001012"
+      ],
+      "state": "individual_rare_gloss_precision_qualified",
+      "reason": "Technical/older glosses and exact Chinese mapping remain bounded; whole-word status and headword POS were retained. safe 冷藏室 is explicitly pending."
+    },
+    {
+      "id": "W004820",
+      "state": "historical_derogatory_gloss_partially_supported",
+      "reason": "Mother-pig noun and the historical insult are retained; the exact laziness restriction in 懶胖女人 remains unverified, with register and pronunciation made visible."
+    },
+    {
+      "id": "LI-LV1U16-V062",
+      "state": "dictionary_supplement_scope_qualified",
+      "reason": "The course uses an existing dictionary supplement; general besides now labels the old spatial adverb. It is not newly represented as a verbatim printed headword meaning."
+    },
+    {
+      "ids": [
+        "LI-LV1U16-V033",
+        "LI-LV1U16-V034",
+        "LI-LV1U16-V035",
+        "LI-LV1U16-V039",
+        "LI-LV1U16-V040",
+        "LI-LV1U16-V041",
+        "LI-LV1U16-V043",
+        "LI-LV1U16-V045",
+        "LI-LV1U16-V049",
+        "LI-LV1U16-V051",
+        "LI-LV1U16-V055",
+        "LI-LV1U16-V056",
+        "LI-LV1U16-V066",
+        "LI-LV1U16-V077"
+      ],
+      "state": "no_formal_dictionary_identity_invented",
+      "reason": "All 14 remain unmapped; 11 original printed glosses were restored while retaining existing practice exclusion and read_only."
+    },
+    {
+      "state": "linked_general_art_and_context_limits",
+      "reason": "19 linked general assets were actually viewed and fit their own captions at the core. Time, relationships, degree and protection claims cannot all be proved from pixels. 46 general cards have no asset; the text-only curriculum has no required or adopted image."
+    }
+  ],
+  "verification": {
+    "defaultTimeoutMs": 5000,
+    "finalRegression": {
+      "files": 9,
+      "tests": 60,
+      "conclusion": "passed"
+    },
+    "writeBoundary": {
+      "tests": 15,
+      "conclusion": "passed"
+    },
+    "typecheck": 0,
+    "lint": 0,
+    "build": 0,
+    "completedAt": "2026-11-05T13:44:32.6961330Z",
+    "savedRows": 1757,
+    "contentHash": "696d1231b8811ebe4a144bf0c162c9a5fc0ab59be051f2428a751e580055eba6",
+    "progressTables": 14,
+    "progressUnchanged": true,
+    "originalHashFixturesRetained": true,
+    "previousCompleteCi": {
+      "commit": "bb581cde64a311e2bfc95eadd4592e27f1db70cb",
+      "run": 42029411605,
+      "job": 127251703496,
+      "completedAt": "2026-11-05T12:54:59Z",
+      "testFiles": 209,
+      "tests": 1667,
+      "writeBoundaryTests": 13,
+      "conclusion": "success",
+      "allStepsIncludingBuild": "success"
+    },
+    "fullCiForThisCheckpoint": "pending exact pushed head",
+    "finalProofRecheck": {
+      "files": 2,
+      "tests": 23,
+      "timeoutMs": 5000,
+      "completedAt": "2026-11-05T13:51:02.5645029Z",
+      "conclusion": "passed"
+    }
+  },
+  "performanceRepair": {
+    "before": "Complete-pack initial install measured3003ms; refresh started3075ms into the original5000ms test and timed out. Full dataset and every progress/group assertion retained.",
+    "after": "Atomic content-only transaction skips identical stored rows, applies changed whole rows, deletes missing keys and rows, and commits metadata last. Raw reads bypass editorial reading hooks. Same original-timeout test passed; final nine-file60-test run also passed at5000ms.",
+    "newCoverage": [
+      "unchanged rows not rewritten",
+      "removed rows deleted",
+      "removed optional keys truly absent",
+      "raw stored examples repaired despite read-time hooks",
+      "all content plus metadata rolled back on a rejected row",
+      "all progress and personal group order assertions retained"
+    ],
+    "diagnosticFifteenSecondRun": "Earlier46-test success with the CI budget is diagnostic only and is not substituted for the final original-timeout pass."
+  },
+  "next": {
+    "unit": "LV1-U17",
+    "id": "LI-LV1U17-V001",
+    "word": "first",
+    "deliveryMode": "text_only",
+    "source": "src/features/direct/curriculumLV1Unit17.json",
+    "sourceManifest": "scripts/sources/LV1Unit17.json",
+    "learningItems": 142,
+    "vocabularyItems": 89,
+    "grammarItems": 53,
+    "state": "next_actual_card_not_yet_claimed_checked"
+  },
+  "publication": {
+    "merge": false,
+    "deploy": false,
+    "pr": false
+  }
+}

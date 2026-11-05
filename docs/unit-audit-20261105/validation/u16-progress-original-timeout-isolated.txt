@@ -1,0 +1,25 @@
+
+> vocab-app@0.0.0 test
+> vitest run --maxWorkers=1 src/features/direct/lv1Unit16Text.test.ts -t content refresh preserves every progress table and personal group name/order
+
+
+ RUN  v4.1.9 <repo>
+
+ ❯ src/features/direct/lv1Unit16Text.test.ts (11 tests | 1 failed | 10 skipped) 5153ms
+   × content refresh preserves every progress table and personal group name/order 5150ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/features/direct/lv1Unit16Text.test.ts > content refresh preserves every progress table and personal group name/order
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/features/direct/lv1Unit16Text.test.ts:66:1
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 10 skipped (11)
+   Start at  21:28:18
+   Duration  27.12s (transform 11.41s, setup 0ms, import 21.61s, tests 5.15s, environment 0ms)

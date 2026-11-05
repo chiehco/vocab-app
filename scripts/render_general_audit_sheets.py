@@ -10,7 +10,8 @@ from PIL import Image,ImageDraw,ImageFont
 unit=int(sys.argv[1])
 rows=json.loads((ROOT/f'output/unit-audit-20261105/U{unit:02}-ui-before.json').read_text(encoding='utf-8'))
 source=json.loads((ROOT/f'output/unit-audit-20261105/LV1-U{unit:02}-full-source.json').read_text(encoding='utf-8'))
-published={r['id'] for r in source if r['published']}
+published={r['id'] for r in source if r.get('published',False)}
+# Existing text-only units have no published image manifest entries.
 rows=[r for r in rows if r['imageInfo'] and r['id'] not in published]
 out=ROOT/f'output/unit-audit-20261105/sheets/U{unit:02}-general';out.mkdir(parents=True,exist_ok=True)
 font=ImageFont.truetype('C:/Windows/Fonts/segoeui.ttf',20)

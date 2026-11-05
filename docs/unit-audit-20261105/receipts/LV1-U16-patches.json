@@ -1,0 +1,2202 @@
+{
+  "manifest": "docs\\unit-audit-20261105\\LV1-U16-patches.json",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "checkedAt": "2026-11-05T13:09:25.456024+00:00",
+  "changeCount": 49,
+  "changes": [
+    {
+      "dataset": "examples",
+      "id": "EXec24ee4c",
+      "before": {
+        "exampleId": "EXec24ee4c",
+        "word": "safe",
+        "sensePos": "adj.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "He locked the important documents in a safe at home.",
+        "sentenceZh": "他把重要文件鎖在家裡的保險箱裡。",
+        "blankSentence": "He locked the important documents in a _____ at home.",
+        "answer": "safe",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EXec24ee4c",
+        "word": "safe",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "He locked the important documents in a safe at home.",
+        "sentenceZh": "他把重要文件鎖在家裡的保險箱裡。",
+        "blankSentence": "He locked the important documents in a _____ at home.",
+        "answer": "safe",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Read the complete unchanged sentence and actual cloze target: distinguish a safe/address/kind nouns from rowed/mistook/typed/sorting verbs. Preserve the headword POS and every English/Chinese sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/safe ; unchanged sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX138191eb",
+      "before": {
+        "exampleId": "EX138191eb",
+        "word": "row",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "He rowed the boat gently across the quiet lake.",
+        "sentenceZh": "他輕輕划著船，穿過寧靜的湖面。",
+        "blankSentence": "He _____ the boat gently across the quiet lake.",
+        "answer": "rowed",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EX138191eb",
+        "word": "row",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "He rowed the boat gently across the quiet lake.",
+        "sentenceZh": "他輕輕划著船，穿過寧靜的湖面。",
+        "blankSentence": "He _____ the boat gently across the quiet lake.",
+        "answer": "rowed",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Read the complete unchanged sentence and actual cloze target: distinguish a safe/address/kind nouns from rowed/mistook/typed/sorting verbs. Preserve the headword POS and every English/Chinese sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/row ; unchanged sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EXffaa9ccd",
+      "before": {
+        "exampleId": "EXffaa9ccd",
+        "word": "mistake",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "She mistook the stranger for her old classmate at the station.",
+        "sentenceZh": "她在車站把那個陌生人誤認成她的老同學。",
+        "blankSentence": "She _____ the stranger for her old classmate at the station.",
+        "answer": "mistook",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EXffaa9ccd",
+        "word": "mistake",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "She mistook the stranger for her old classmate at the station.",
+        "sentenceZh": "她在車站把那個陌生人誤認成她的老同學。",
+        "blankSentence": "She _____ the stranger for her old classmate at the station.",
+        "answer": "mistook",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Read the complete unchanged sentence and actual cloze target: distinguish a safe/address/kind nouns from rowed/mistook/typed/sorting verbs. Preserve the headword POS and every English/Chinese sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/mistake ; unchanged sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX8eb374df",
+      "before": {
+        "exampleId": "EX8eb374df",
+        "word": "type",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "She typed the report quickly and sent it to her manager before noon.",
+        "sentenceZh": "她很快地把報告打好，並在中午前傳給了經理。",
+        "blankSentence": "She _____ the report quickly and sent it to her manager before noon.",
+        "answer": "typed",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EX8eb374df",
+        "word": "type",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "She typed the report quickly and sent it to her manager before noon.",
+        "sentenceZh": "她很快地把報告打好，並在中午前傳給了經理。",
+        "blankSentence": "She _____ the report quickly and sent it to her manager before noon.",
+        "answer": "typed",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Read the complete unchanged sentence and actual cloze target: distinguish a safe/address/kind nouns from rowed/mistook/typed/sorting verbs. Preserve the headword POS and every English/Chinese sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/type ; unchanged sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX50089233",
+      "before": {
+        "exampleId": "EX50089233",
+        "word": "address",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "Please write your address clearly on the envelope.",
+        "sentenceZh": "請把你的住址清楚地寫在信封上。",
+        "blankSentence": "Please write your _____ clearly on the envelope.",
+        "answer": "address",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EX50089233",
+        "word": "address",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "Please write your address clearly on the envelope.",
+        "sentenceZh": "請把你的住址清楚地寫在信封上。",
+        "blankSentence": "Please write your _____ clearly on the envelope.",
+        "answer": "address",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "reason": "Read the complete unchanged sentence and actual cloze target: distinguish a safe/address/kind nouns from rowed/mistook/typed/sorting verbs. Preserve the headword POS and every English/Chinese sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/address ; unchanged sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX5fb70a28",
+      "before": {
+        "exampleId": "EX5fb70a28",
+        "word": "kind",
+        "sensePos": "adj.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "What kind of music do you usually listen to on weekends?",
+        "sentenceZh": "你週末平常都聽哪種音樂？",
+        "blankSentence": "What _____ of music do you usually listen to on weekends?",
+        "answer": "kind",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EX5fb70a28",
+        "word": "kind",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "What kind of music do you usually listen to on weekends?",
+        "sentenceZh": "你週末平常都聽哪種音樂？",
+        "blankSentence": "What _____ of music do you usually listen to on weekends?",
+        "answer": "kind",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Read the complete unchanged sentence and actual cloze target: distinguish a safe/address/kind nouns from rowed/mistook/typed/sorting verbs. Preserve the headword POS and every English/Chinese sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/kind ; unchanged sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EXabdae499",
+      "before": {
+        "exampleId": "EXabdae499",
+        "word": "sort",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "He spent the afternoon sorting out his old photos and letters.",
+        "sentenceZh": "他花了一個下午整理他的舊照片和信件。",
+        "blankSentence": "He spent the afternoon _____ out his old photos and letters.",
+        "answer": "sorting",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EXabdae499",
+        "word": "sort",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "He spent the afternoon sorting out his old photos and letters.",
+        "sentenceZh": "他花了一個下午整理他的舊照片和信件。",
+        "blankSentence": "He spent the afternoon _____ out his old photos and letters.",
+        "answer": "sorting",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "reason": "Read the complete unchanged sentence and actual cloze target: distinguish a safe/address/kind nouns from rowed/mistook/typed/sorting verbs. Preserve the headword POS and every English/Chinese sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/sort ; unchanged sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX1c9d6bdf",
+      "before": {
+        "exampleId": "EX1c9d6bdf",
+        "word": "love",
+        "sensePos": "n./v.",
+        "meaningHint": "愛；戀愛；愛情；愛好",
+        "exampleType": "textbook",
+        "sentenceEn": "Daniel loves this song so much that he sings it all the time.",
+        "sentenceZh": "丹尼爾太愛這首歌了，所以一直在唱。",
+        "blankSentence": "Daniel _____ this song so much that he sings it all the time.",
+        "answer": "loves",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EX1c9d6bdf",
+        "word": "love",
+        "sensePos": "v.",
+        "meaningHint": "喜愛",
+        "exampleType": "textbook",
+        "sentenceEn": "Daniel loves this song so much that he sings it all the time.",
+        "sentenceZh": "丹尼爾太愛這首歌了，所以一直在唱。",
+        "blankSentence": "Daniel _____ this song so much that he sings it all the time.",
+        "answer": "loves",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "reason": "Narrow the existing composite POS and nonempty mixed hint to this sentence. This precision refinement does not classify all inherited meanings as false and does not fill empty hints.",
+      "evidence": "https://www.merriam-webster.com/dictionary/love ; complete sentence and cloze."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX2d05faef",
+      "before": {
+        "exampleId": "EX2d05faef",
+        "word": "love",
+        "sensePos": "n./v.",
+        "meaningHint": "愛；戀愛；愛情；愛好",
+        "exampleType": "textbook",
+        "sentenceEn": "Janice loves reading novels in bed before going to sleep.",
+        "sentenceZh": "珍妮絲睡前很愛窩在床上看小說。",
+        "blankSentence": "Janice _____ reading novels in bed before going to sleep.",
+        "answer": "loves",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EX2d05faef",
+        "word": "love",
+        "sensePos": "v.",
+        "meaningHint": "喜愛",
+        "exampleType": "textbook",
+        "sentenceEn": "Janice loves reading novels in bed before going to sleep.",
+        "sentenceZh": "珍妮絲睡前很愛窩在床上看小說。",
+        "blankSentence": "Janice _____ reading novels in bed before going to sleep.",
+        "answer": "loves",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "reason": "Narrow the existing composite POS and nonempty mixed hint to this sentence. This precision refinement does not classify all inherited meanings as false and does not fill empty hints.",
+      "evidence": "https://www.merriam-webster.com/dictionary/love ; complete sentence and cloze."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX5ed4dbc2",
+      "before": {
+        "exampleId": "EX5ed4dbc2",
+        "word": "love",
+        "sensePos": "n./v.",
+        "meaningHint": "愛；戀愛；愛情；愛好",
+        "exampleType": "textbook",
+        "sentenceEn": "Janice loves to read novels in bed before going to sleep.",
+        "sentenceZh": "珍妮絲睡前很愛窩在床上看小說。",
+        "blankSentence": "Janice _____ to read novels in bed before going to sleep.",
+        "answer": "loves",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EX5ed4dbc2",
+        "word": "love",
+        "sensePos": "v.",
+        "meaningHint": "喜愛",
+        "exampleType": "textbook",
+        "sentenceEn": "Janice loves to read novels in bed before going to sleep.",
+        "sentenceZh": "珍妮絲睡前很愛窩在床上看小說。",
+        "blankSentence": "Janice _____ to read novels in bed before going to sleep.",
+        "answer": "loves",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "reason": "Narrow the existing composite POS and nonempty mixed hint to this sentence. This precision refinement does not classify all inherited meanings as false and does not fill empty hints.",
+      "evidence": "https://www.merriam-webster.com/dictionary/love ; complete sentence and cloze."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX5fa5c434",
+      "before": {
+        "exampleId": "EX5fa5c434",
+        "word": "love",
+        "sensePos": "n./v.",
+        "meaningHint": "愛；戀愛；愛情；愛好",
+        "exampleType": "textbook",
+        "sentenceEn": "When Jack met Rose, it was love at first sight.",
+        "sentenceZh": "傑克遇見蘿絲時，對她一見鍾情。",
+        "blankSentence": "When Jack met Rose, it was _____ at first sight.",
+        "answer": "love",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EX5fa5c434",
+        "word": "love",
+        "sensePos": "n.",
+        "meaningHint": "愛情（love at first sight：一見鍾情）",
+        "exampleType": "textbook",
+        "sentenceEn": "When Jack met Rose, it was love at first sight.",
+        "sentenceZh": "傑克遇見蘿絲時，對她一見鍾情。",
+        "blankSentence": "When Jack met Rose, it was _____ at first sight.",
+        "answer": "love",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "reason": "Narrow the existing composite POS and nonempty mixed hint to this sentence. This precision refinement does not classify all inherited meanings as false and does not fill empty hints.",
+      "evidence": "https://www.merriam-webster.com/dictionary/love ; complete sentence and cloze."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX67553255",
+      "before": {
+        "exampleId": "EX67553255",
+        "word": "love",
+        "sensePos": "n./v.",
+        "meaningHint": "愛；戀愛；愛情；愛好",
+        "exampleType": "textbook",
+        "sentenceEn": "Jasper fell in love with Clara two years ago.",
+        "sentenceZh": "賈斯柏 2 年前與克萊拉相戀。",
+        "blankSentence": "Jasper fell in _____ with Clara two years ago.",
+        "answer": "love",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EX67553255",
+        "word": "love",
+        "sensePos": "n.",
+        "meaningHint": "愛情（fall in love with：愛上）",
+        "exampleType": "textbook",
+        "sentenceEn": "Jasper fell in love with Clara two years ago.",
+        "sentenceZh": "賈斯柏 2 年前與克萊拉相戀。",
+        "blankSentence": "Jasper fell in _____ with Clara two years ago.",
+        "answer": "love",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "reason": "Narrow the existing composite POS and nonempty mixed hint to this sentence. This precision refinement does not classify all inherited meanings as false and does not fill empty hints.",
+      "evidence": "https://www.merriam-webster.com/dictionary/love ; complete sentence and cloze."
+    },
+    {
+      "dataset": "examples",
+      "id": "EXc90fa874",
+      "before": {
+        "exampleId": "EXc90fa874",
+        "word": "love",
+        "sensePos": "n./v.",
+        "meaningHint": "愛；戀愛；愛情；愛好",
+        "exampleType": "textbook",
+        "sentenceEn": "Vicky's love for her husband grew over the years.",
+        "sentenceZh": "多年來，薇琪對老公的愛越來越深。",
+        "blankSentence": "Vicky's _____ for her husband grew over the years.",
+        "answer": "love",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EXc90fa874",
+        "word": "love",
+        "sensePos": "n.",
+        "meaningHint": "愛；愛情",
+        "exampleType": "textbook",
+        "sentenceEn": "Vicky's love for her husband grew over the years.",
+        "sentenceZh": "多年來，薇琪對老公的愛越來越深。",
+        "blankSentence": "Vicky's _____ for her husband grew over the years.",
+        "answer": "love",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "reason": "Narrow the existing composite POS and nonempty mixed hint to this sentence. This precision refinement does not classify all inherited meanings as false and does not fill empty hints.",
+      "evidence": "https://www.merriam-webster.com/dictionary/love ; complete sentence and cloze."
+    },
+    {
+      "dataset": "examples",
+      "id": "EXaa9da5fc",
+      "before": {
+        "exampleId": "EXaa9da5fc",
+        "word": "visit",
+        "sensePos": "v.",
+        "meaningHint": "參觀",
+        "exampleType": "daily",
+        "sentenceEn": "We plan to visit the science museum this weekend.",
+        "sentenceZh": "我們打算這個週末去參觀科學博物館。",
+        "blankSentence": "We plan to _____ the science museum this weekend.",
+        "answer": "visit",
+        "difficulty": "LV2",
+        "status": "draft"
+      },
+      "after": {
+        "exampleId": "EXaa9da5fc",
+        "word": "visit",
+        "sensePos": "v.",
+        "meaningHint": "參觀",
+        "exampleType": "daily",
+        "sentenceEn": "We plan to visit the science museum this weekend.",
+        "sentenceZh": "我們打算這個週末去參觀科學博物館。",
+        "blankSentence": "We plan to _____ the science museum this weekend.",
+        "answer": "visit",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "reason": "Read this authored practice sentence, Chinese, cloze reconstruction and answer; it is not certified as a quotation from an official examination.",
+      "evidence": "https://www.merriam-webster.com/dictionary/visit ; full bilingual sentence."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX8d523d45",
+      "before": {
+        "exampleId": "EX8d523d45",
+        "word": "risky",
+        "sensePos": "adj.",
+        "meaningHint": "危險的、有風險的（考點：可能導致損失或受傷）",
+        "exampleType": "exam",
+        "sentenceEn": "Climbing that cliff without a rope is far too risky.",
+        "sentenceZh": "沒有繩子就爬那面峭壁太危險了。",
+        "blankSentence": "Climbing that cliff without a rope is far too _____.",
+        "answer": "risky",
+        "difficulty": "LV5",
+        "status": "draft"
+      },
+      "after": {
+        "exampleId": "EX8d523d45",
+        "word": "risky",
+        "sensePos": "adj.",
+        "meaningHint": "危險的、有風險的（考點：可能導致損失或受傷）",
+        "exampleType": "exam",
+        "sentenceEn": "Climbing that cliff without a rope is far too risky.",
+        "sentenceZh": "沒有繩子就爬那面峭壁太危險了。",
+        "blankSentence": "Climbing that cliff without a rope is far too _____.",
+        "answer": "risky",
+        "difficulty": "LV5",
+        "status": "reviewed"
+      },
+      "reason": "Read this authored practice sentence, Chinese, cloze reconstruction and answer; it is not certified as a quotation from an official examination.",
+      "evidence": "https://www.merriam-webster.com/dictionary/risky ; full bilingual sentence."
+    },
+    {
+      "dataset": "senses",
+      "id": "W000463-1",
+      "before": {
+        "senseId": "W000463-1",
+        "wordId": "W000463",
+        "word": "know",
+        "senseOrder": 1,
+        "sensePos": "v.",
+        "meaningZh": "知道；認識",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：知道；瞭解；認識；確信",
+        "status": "needs_check"
+      },
+      "after": {
+        "senseId": "W000463-1",
+        "wordId": "W000463",
+        "word": "know",
+        "senseOrder": 1,
+        "sensePos": "v.",
+        "meaningZh": "知道；認識",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "2026-11-05：已逐句核對本義、原英中練習句、實際挖空詞及答案；僅本義項與練習資料核對，不擴及整詞全部義項。",
+        "status": "reviewed"
+      },
+      "reason": "Review this existing non-exam sense against the complete unchanged practice context without promoting whole-word status.",
+      "evidence": "https://www.merriam-webster.com/dictionary/know"
+    },
+    {
+      "dataset": "senses",
+      "id": "W000464-1",
+      "before": {
+        "senseId": "W000464-1",
+        "wordId": "W000464",
+        "word": "knowledge",
+        "senseOrder": 1,
+        "sensePos": "n.",
+        "meaningZh": "知識",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：知識；學問；認識；知道",
+        "status": "needs_check"
+      },
+      "after": {
+        "senseId": "W000464-1",
+        "wordId": "W000464",
+        "word": "knowledge",
+        "senseOrder": 1,
+        "sensePos": "n.",
+        "meaningZh": "知識",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "2026-11-05：已逐句核對本義、原英中練習句、實際挖空詞及答案；僅本義項與練習資料核對，不擴及整詞全部義項。",
+        "status": "reviewed"
+      },
+      "reason": "Review this existing non-exam sense against the complete unchanged practice context without promoting whole-word status.",
+      "evidence": "https://www.merriam-webster.com/dictionary/knowledge"
+    },
+    {
+      "dataset": "senses",
+      "id": "W000940-1",
+      "before": {
+        "senseId": "W000940-1",
+        "wordId": "W000940",
+        "word": "visit",
+        "senseOrder": 1,
+        "sensePos": "v.",
+        "meaningZh": "拜訪；參觀",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：拜訪；訪問；遊覽；視察",
+        "status": "needs_check"
+      },
+      "after": {
+        "senseId": "W000940-1",
+        "wordId": "W000940",
+        "word": "visit",
+        "senseOrder": 1,
+        "sensePos": "v.",
+        "meaningZh": "拜訪；參觀",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "2026-11-05：已逐句核對本義、原英中練習句、實際挖空詞及答案；僅本義項與練習資料核對，不擴及整詞全部義項。",
+        "status": "reviewed"
+      },
+      "reason": "Review this existing non-exam sense against the complete unchanged practice context without promoting whole-word status.",
+      "evidence": "https://www.merriam-webster.com/dictionary/visit"
+    },
+    {
+      "dataset": "senses",
+      "id": "W000940-2",
+      "before": {
+        "senseId": "W000940-2",
+        "wordId": "W000940",
+        "word": "visit",
+        "senseOrder": 2,
+        "sensePos": "n.",
+        "meaningZh": "拜訪",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：拜訪；訪問；遊覽；視察",
+        "status": "needs_check"
+      },
+      "after": {
+        "senseId": "W000940-2",
+        "wordId": "W000940",
+        "word": "visit",
+        "senseOrder": 2,
+        "sensePos": "n.",
+        "meaningZh": "拜訪",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "2026-11-05：已逐句核對本義、原英中練習句、實際挖空詞及答案；僅本義項與練習資料核對，不擴及整詞全部義項。",
+        "status": "reviewed"
+      },
+      "reason": "Review this existing non-exam sense against the complete unchanged practice context without promoting whole-word status.",
+      "evidence": "https://www.merriam-webster.com/dictionary/visit"
+    },
+    {
+      "dataset": "senses",
+      "id": "W001012-1",
+      "before": {
+        "senseId": "W001012-1",
+        "wordId": "W001012",
+        "word": "address",
+        "senseOrder": 1,
+        "sensePos": "v.",
+        "meaningZh": "處理（問題）；向…發表談話",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：住址；演說；舉止；靈巧",
+        "status": "needs_check"
+      },
+      "after": {
+        "senseId": "W001012-1",
+        "wordId": "W001012",
+        "word": "address",
+        "senseOrder": 1,
+        "sensePos": "v.",
+        "meaningZh": "處理（問題）；向…發表談話",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "2026-11-05：已逐句核對本義、原英中練習句、實際挖空詞及答案；僅本義項與練習資料核對，不擴及整詞全部義項。",
+        "status": "reviewed"
+      },
+      "reason": "Review this existing non-exam sense against the complete unchanged practice context without promoting whole-word status.",
+      "evidence": "https://www.merriam-webster.com/dictionary/address"
+    },
+    {
+      "dataset": "senses",
+      "id": "W001012-2",
+      "before": {
+        "senseId": "W001012-2",
+        "wordId": "W001012",
+        "word": "address",
+        "senseOrder": 2,
+        "sensePos": "n.",
+        "meaningZh": "地址；演說",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：住址；演說；舉止；靈巧",
+        "status": "needs_check"
+      },
+      "after": {
+        "senseId": "W001012-2",
+        "wordId": "W001012",
+        "word": "address",
+        "senseOrder": 2,
+        "sensePos": "n.",
+        "meaningZh": "地址；演說",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "2026-11-05：已逐句核對本義、原英中練習句、實際挖空詞及答案；僅本義項與練習資料核對，不擴及整詞全部義項。",
+        "status": "reviewed"
+      },
+      "reason": "Review this existing non-exam sense against the complete unchanged practice context without promoting whole-word status.",
+      "evidence": "https://www.merriam-webster.com/dictionary/address"
+    },
+    {
+      "dataset": "senses",
+      "id": "W004751-1",
+      "before": {
+        "senseId": "W004751-1",
+        "wordId": "W004751",
+        "word": "risky",
+        "senseOrder": 1,
+        "sensePos": "adj.",
+        "meaningZh": "危險的、有風險的",
+        "isExamSense": true,
+        "examEvidence": "學測111 文意選填Q21",
+        "answerForms": [
+          "risky"
+        ],
+        "note": "考點：可能導致損失或受傷",
+        "status": "draft"
+      },
+      "after": {
+        "senseId": "W004751-1",
+        "wordId": "W004751",
+        "word": "risky",
+        "senseOrder": 1,
+        "sensePos": "adj.",
+        "meaningZh": "危險的、有風險的",
+        "isExamSense": true,
+        "examEvidence": [
+          {
+            "year": 111,
+            "question": 21,
+            "answer": "C",
+            "form": "risky",
+            "partOfSpeech": "adj.",
+            "meaningZh": "危險的；有風險的",
+            "questionUrl": "https://www.ceec.edu.tw/files/file_pool/1/0m053357638065462325/02-111%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7.pdf",
+            "answerUrl": "https://www.ceec.edu.tw/files/file_pool/1/0m052625594764853905/02-111%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88..pdf",
+            "verification": "direct_official_question_and_answer_text_read",
+            "printedPage": 3
+          }
+        ],
+        "answerForms": [
+          "risky"
+        ],
+        "note": "已實讀111學測英文印刷第3頁文意選填Q21上下文、C risky選項及官方答案Q21=C。題目說一般演員不宜執行太危險的特技；現有懸崖練習句另寫，並非原題引用。",
+        "status": "reviewed"
+      },
+      "reason": "Verify only this exact examination sense against the official full passage, option and answer. Keep the authored practice and whole-word status.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0m053357638065462325/02-111%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7.pdf ; https://www.ceec.edu.tw/files/file_pool/1/0m052625594764853905/02-111%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88..pdf"
+    },
+    {
+      "dataset": "words",
+      "id": "W000367",
+      "before": {
+        "wordId": "W000367",
+        "word": "guess",
+        "wordVariants": [
+          "guess"
+        ],
+        "level": "LV1",
+        "pos": "v./n.",
+        "posAll": [
+          "v.",
+          "n."
+        ],
+        "meaningZh": "猜測；臆測",
+        "meaningEn": "to give an answer or opinion without being certain; an attempt to answer without being sure",
+        "usagePattern": "guess (that) ...; guess what; take a guess; make a guess",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "guess",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "猜（那）……；猜猜看；猜一猜；作出猜測"
+      },
+      "after": {
+        "wordId": "W000367",
+        "word": "guess",
+        "wordVariants": [
+          "guess"
+        ],
+        "level": "LV1",
+        "pos": "v./n.",
+        "posAll": [
+          "v.",
+          "n."
+        ],
+        "meaningZh": "猜測；臆測",
+        "meaningEn": "to give an answer or opinion without being certain; an attempt to answer without being sure",
+        "usagePattern": "guess (that) ...; guess what; take a guess; make a guess",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "guess",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "猜測……（that 子句）；猜猜看；猜一猜；作出猜測"
+      },
+      "reason": "The conjunction that is not the demonstrative 那. Preserve all four corresponding English groups.",
+      "evidence": "https://www.merriam-webster.com/dictionary/guess"
+    },
+    {
+      "dataset": "words",
+      "id": "W000170",
+      "before": {
+        "wordId": "W000170",
+        "word": "clean",
+        "wordVariants": [
+          "clean"
+        ],
+        "level": "LV1",
+        "pos": "adj./v./adv./n.",
+        "posAll": [
+          "adj.",
+          "v.",
+          "adv.",
+          "n."
+        ],
+        "meaningZh": "乾淨的；清白的；簡潔的；清潔地",
+        "meaningEn": "free from dirt or marks; to remove dirt from something by washing or wiping it",
+        "usagePattern": "clean + N (room/house); clean up; keep sth clean",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "clean",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "清理 + 名詞（房間/房子）；清理乾淨；保持某物乾淨"
+      },
+      "after": {
+        "wordId": "W000170",
+        "word": "clean",
+        "wordVariants": [
+          "clean"
+        ],
+        "level": "LV1",
+        "pos": "adj./v./adv./n.",
+        "posAll": [
+          "adj.",
+          "v.",
+          "adv.",
+          "n."
+        ],
+        "meaningZh": "（形容詞）乾淨的；清白的；簡潔的；（動詞）清潔；清理；（副詞）徹底地；完全地；（名詞）清潔；清掃",
+        "meaningEn": "free from dirt or marks; to remove dirt from something by washing or wiping it; (adv.) completely or entirely; (n.) an act of cleaning.",
+        "usagePattern": "clean + N (room/house); clean up; keep sth clean",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "clean",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "清理房間／房子；清理乾淨；使某物保持乾淨"
+      },
+      "reason": "Restore already formal verb/adverb/noun categories. The original textbook p142 explicitly uses clean as 徹底地 and an act of cleaning; no original running example is adopted.",
+      "evidence": "https://www.merriam-webster.com/dictionary/clean"
+    },
+    {
+      "dataset": "words",
+      "id": "W000891",
+      "before": {
+        "wordId": "W000891",
+        "word": "tidy",
+        "wordVariants": [
+          "tidy"
+        ],
+        "level": "LV1",
+        "pos": "adj./v.",
+        "posAll": [
+          "adj.",
+          "v."
+        ],
+        "meaningZh": "椅子的背罩；裝雜物的容器；整齊的；有條理的",
+        "meaningEn": "receptacle that holds odds and ends (as sewing materials); put (things or places) in order",
+        "usagePattern": "keep N tidy; tidy up; a tidy room",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "tidy",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "保持……整潔；整理乾淨；整潔的房間"
+      },
+      "after": {
+        "wordId": "W000891",
+        "word": "tidy",
+        "wordVariants": [
+          "tidy"
+        ],
+        "level": "LV1",
+        "pos": "adj./v.",
+        "posAll": [
+          "adj.",
+          "v."
+        ],
+        "meaningZh": "（另列名詞用法）椅子的背罩；裝雜物的容器；（形容詞）整齊的；有條理的；（動詞）整理",
+        "meaningEn": "(n.) receptacle that holds odds and ends (as sewing materials); (v.) put (things or places) in order; (adj.) neat and orderly; (n., furnishings) a decorative cover protecting part of a chair or sofa",
+        "usagePattern": "keep N tidy; tidy up; a tidy room",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "tidy",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "保持……整潔；整理乾淨；整潔的房間"
+      },
+      "reason": "Preserve both genuine inherited noun meanings separately from the formal adj./v.; add the missing adjective and organizing verb without changing headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/tidy"
+    },
+    {
+      "dataset": "words",
+      "id": "W000906",
+      "before": {
+        "wordId": "W000906",
+        "word": "tool",
+        "wordVariants": [
+          "tool"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "工具；機牀；傀儡；用工具加工",
+        "meaningEn": "an implement used to do a particular kind of work; a person used by someone else for their own purposes",
+        "usagePattern": "a tool for N; use sth as a tool",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "tool",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "名詞的工具；把某事物當作工具使用"
+      },
+      "after": {
+        "wordId": "W000906",
+        "word": "tool",
+        "wordVariants": [
+          "tool"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "（名詞）工具；機牀；傀儡；（另列動詞用法）用工具加工",
+        "meaningEn": "an implement used to do a particular kind of work; a person used by someone else for their own purposes",
+        "usagePattern": "a tool for N; use sth as a tool",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "tool",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "用來做……的工具；把某物當作工具使用"
+      },
+      "reason": "Label rather than delete the inherited tooling verb; explain the actual noun construction.",
+      "evidence": "https://www.merriam-webster.com/dictionary/tool"
+    },
+    {
+      "dataset": "words",
+      "id": "W000734",
+      "before": {
+        "wordId": "W000734",
+        "word": "safe",
+        "wordVariants": [
+          "safe"
+        ],
+        "level": "LV1",
+        "pos": "adj./n.",
+        "posAll": [
+          "adj.",
+          "n."
+        ],
+        "meaningZh": "保險箱；冷藏室；安全的；可靠的",
+        "meaningEn": "not likely to cause or suffer harm, injury, or damage",
+        "usagePattern": "keep A safe; safe from N; a safe (n.)",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "safe",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "保護A安全；免於名詞；保險箱"
+      },
+      "after": {
+        "wordId": "W000734",
+        "word": "safe",
+        "wordVariants": [
+          "safe"
+        ],
+        "level": "LV1",
+        "pos": "adj./n.",
+        "posAll": [
+          "adj.",
+          "n."
+        ],
+        "meaningZh": "（名詞）保險箱；（原摘要名詞對應，精確來源待核）冷藏室；（形容詞）安全的；可靠的",
+        "meaningEn": "not likely to cause or suffer harm, injury, or damage; (n.) a strong lockable box or cabinet for valuable things.",
+        "usagePattern": "keep A safe; safe from N; a safe (n.)",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "safe",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "保護某人或某物安全；免受……；保險箱"
+      },
+      "reason": "Restore the actual a-safe noun and keep the inherited cold-storage gloss explicitly pending, without deleting or certifying it.",
+      "evidence": "https://www.merriam-webster.com/dictionary/safe"
+    },
+    {
+      "dataset": "words",
+      "id": "W000210",
+      "before": {
+        "wordId": "W000210",
+        "word": "dangerous",
+        "wordVariants": [
+          "dangerous"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "危險的；危害的",
+        "meaningEn": "likely to cause harm, injury, or death; involving risk",
+        "usagePattern": "be dangerous (to sb/sth); dangerous + N; It's dangerous to V",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "dangerous",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "對某人/某事物危險；危險 + 名詞；對主詞來說做某事很危險"
+      },
+      "after": {
+        "wordId": "W000210",
+        "word": "dangerous",
+        "wordVariants": [
+          "dangerous"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "危險的；危害的",
+        "meaningEn": "likely to cause harm, injury, or death; involving risk",
+        "usagePattern": "be dangerous (to sb/sth); dangerous + N; It's dangerous to V",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "dangerous",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "對某人／某物有危險；危險的……；做……很危險"
+      },
+      "reason": "Make each of three construction translations meaningful instead of confusing subject tokens with a supplied person.",
+      "evidence": "https://www.merriam-webster.com/dictionary/dangerous"
+    },
+    {
+      "dataset": "words",
+      "id": "W000140",
+      "before": {
+        "wordId": "W000140",
+        "word": "cap",
+        "wordVariants": [
+          "cap"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "蓋子；帽子；戴帽子；覆蓋",
+        "meaningEn": "(n.) a soft flat hat, often with a peak; a lid or top that covers something. (v.) to cover, or to set an upper limit on",
+        "usagePattern": "a baseball cap; put the cap on; a cap on spending",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "cap",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "棒球帽；戴上帽子；限制支出"
+      },
+      "after": {
+        "wordId": "W000140",
+        "word": "cap",
+        "wordVariants": [
+          "cap"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（名詞）蓋子；帽子；上限；（動詞）戴帽子；覆蓋；設定上限",
+        "meaningEn": "(n.) a soft flat hat, often with a peak; a lid or top that covers something. (v.) to cover, or to set an upper limit on",
+        "usagePattern": "a baseball cap; put the cap on; a cap on spending",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "cap",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "棒球帽；蓋上蓋子／戴上帽子（依物件）；支出上限"
+      },
+      "reason": "A cap on spending is a noun limit; putting the cap on may concern a lid or hat. Preserve both supported senses.",
+      "evidence": "https://www.merriam-webster.com/dictionary/cap"
+    },
+    {
+      "dataset": "words",
+      "id": "W000745",
+      "before": {
+        "wordId": "W000745",
+        "word": "seat",
+        "wordVariants": [
+          "seat"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "座；座位；位子；席位",
+        "meaningEn": "a place where you can sit, such as a chair or a space on a bus, train, or in a theater",
+        "usagePattern": "take a seat; reserve a seat; a window/aisle seat",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "seat",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "找個座位；預訂座位；窗邊/走道座位"
+      },
+      "after": {
+        "wordId": "W000745",
+        "word": "seat",
+        "wordVariants": [
+          "seat"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（名詞）座；座位；位子；席位；（動詞）使就座；可容納……人就座",
+        "meaningEn": "a place where you can sit, such as a chair or a space on a bus, train, or in a theater; (v.) to arrange for someone to sit, or to have room for a stated number of seated people.",
+        "usagePattern": "take a seat; reserve a seat; a window/aisle seat",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "seat",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "坐下；預訂座位；靠窗／靠走道座位"
+      },
+      "reason": "Restore the existing verb whose explicit source facts are independently retained, preserving the original seat noun.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/seat"
+    },
+    {
+      "dataset": "words",
+      "id": "W000729",
+      "before": {
+        "wordId": "W000729",
+        "word": "row",
+        "wordVariants": [
+          "row"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "排；行；街道；划船",
+        "meaningEn": "(n.) a line of people or things arranged next to each other; (v.) to move a boat through water using oars",
+        "usagePattern": "in a row; row a boat",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "row",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "連續；划船"
+      },
+      "after": {
+        "wordId": "W000729",
+        "word": "row",
+        "wordVariants": [
+          "row"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "排；行；街道；划船",
+        "meaningEn": "(n.) a line of people or things arranged next to each other; (v.) to move a boat through water using oars",
+        "usagePattern": "in a row; row a boat",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "row",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "成一排／連續地（依上下文）；划船"
+      },
+      "reason": "Keep the physical-line and consecutive senses in one corresponding in-a-row group; do not add a third Chinese group.",
+      "evidence": "https://www.merriam-webster.com/dictionary/row"
+    },
+    {
+      "dataset": "words",
+      "id": "W000098",
+      "before": {
+        "wordId": "W000098",
+        "word": "blow",
+        "wordVariants": [
+          "blow"
+        ],
+        "level": "LV1",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "吹；打擊；毆打；花開",
+        "meaningEn": "a powerful stroke with the fist or a weapon; an impact (as from a collision)",
+        "usagePattern": "blow on/into N; blow away; a blow to N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "blow",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "對著……吹／吹進……；吹走；對……的打擊"
+      },
+      "after": {
+        "wordId": "W000098",
+        "word": "blow",
+        "wordVariants": [
+          "blow"
+        ],
+        "level": "LV1",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "（動詞）吹；（另列名詞用法）打擊；毆打；（另一動詞義）花開",
+        "meaningEn": "(n.) a powerful stroke with the fist or a weapon; an impact (as from a collision); (v.) to move air or make air move; (separate verb sense) to bloom or cause to bloom",
+        "usagePattern": "blow on/into N; blow away; a blow to N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "blow",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "對著……吹／吹進……；吹走；對……的打擊"
+      },
+      "reason": "Keep every inherited strike/collision and flowering sense. Add missing ordinary verb meaning without expanding formal POS or claiming rare meanings false.",
+      "evidence": "https://www.ahdictionary.com/word/search.html?q=blow"
+    },
+    {
+      "dataset": "words",
+      "id": "W000660",
+      "before": {
+        "wordId": "W000660",
+        "word": "pocket",
+        "wordVariants": [
+          "pocket"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "口袋；錢袋；錢；容器",
+        "meaningEn": "a small pouch inside a garment for carrying small articles; a supply of money",
+        "usagePattern": "in one's pocket; put N in one's pocket; pocket money",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "pocket",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "在某人口袋裡；把……放進口袋；零用錢"
+      },
+      "after": {
+        "wordId": "W000660",
+        "word": "pocket",
+        "wordVariants": [
+          "pocket"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（名詞）口袋；錢袋；錢；容器；（動詞）把……放進口袋；據為己有",
+        "meaningEn": "a small pouch inside a garment for carrying small articles; a supply of money; (v.) to put something into a pocket or take it for oneself.",
+        "usagePattern": "in one's pocket; put N in one's pocket; pocket money",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "pocket",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "在某人口袋裡；把……放進口袋；零用錢"
+      },
+      "reason": "Add the already formal verb beside every inherited noun meaning.",
+      "evidence": "https://www.merriam-webster.com/dictionary/pocket"
+    },
+    {
+      "dataset": "words",
+      "id": "W000737",
+      "before": {
+        "wordId": "W000737",
+        "word": "salt",
+        "wordVariants": [
+          "salt"
+        ],
+        "level": "LV1",
+        "pos": "n./v./adj.",
+        "posAll": [
+          "n.",
+          "v.",
+          "adj."
+        ],
+        "meaningZh": "鹽；風趣；刺激；含鹽的",
+        "meaningEn": "a white substance used to flavor or preserve food, made mainly of sodium chloride",
+        "usagePattern": "add salt to N; salt and pepper; a pinch of salt",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "salt",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "在名詞上加鹽；鹽與胡椒；一點鹽"
+      },
+      "after": {
+        "wordId": "W000737",
+        "word": "salt",
+        "wordVariants": [
+          "salt"
+        ],
+        "level": "LV1",
+        "pos": "n./v./adj.",
+        "posAll": [
+          "n.",
+          "v.",
+          "adj."
+        ],
+        "meaningZh": "（名詞）鹽；風趣；刺激；（動詞）加鹽；用鹽醃製；（形容詞）含鹽的；用鹽醃製的",
+        "meaningEn": "a white substance used to flavor or preserve food, made mainly of sodium chloride; (v.) to add salt to or preserve with salt; (adj.) containing salt or preserved with salt.",
+        "usagePattern": "add salt to N; salt and pepper; a pinch of salt",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "salt",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "把鹽加進……；鹽與胡椒；一小撮鹽"
+      },
+      "reason": "Restore existing verb/adjective senses printed on textbook p147 while retaining the inherited figurative nouns.",
+      "evidence": "https://www.merriam-webster.com/dictionary/salt"
+    },
+    {
+      "dataset": "words",
+      "id": "W000463",
+      "before": {
+        "wordId": "W000463",
+        "word": "know",
+        "wordVariants": [
+          "know"
+        ],
+        "level": "LV1",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "知道；瞭解；認識；確信",
+        "meaningEn": "to have information in your mind as a result of experience or learning; to be certain about something; to be familiar with a person, place, or thing",
+        "usagePattern": "know about/of N; know how to V; get to know N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "know",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "了解名詞；知道如何原形動詞；認識名詞"
+      },
+      "after": {
+        "wordId": "W000463",
+        "word": "know",
+        "wordVariants": [
+          "know"
+        ],
+        "level": "LV1",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "知道；瞭解；認識；確信",
+        "meaningEn": "to have information in your mind as a result of experience or learning; to be certain about something; to be familiar with a person, place, or thing",
+        "usagePattern": "know about/of N; know how to V; get to know N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "know",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "知道／了解……；知道如何做……；逐漸認識／了解……"
+      },
+      "reason": "Explain know-how-to and get-to-know without literal 原形動詞 or noun tokens.",
+      "evidence": "https://www.merriam-webster.com/dictionary/know"
+    },
+    {
+      "dataset": "words",
+      "id": "W000464",
+      "before": {
+        "wordId": "W000464",
+        "word": "knowledge",
+        "wordVariants": [
+          "knowledge"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "知識；學問；認識；知道",
+        "meaningEn": "the information, understanding, and skills that a person has gained through experience or education",
+        "usagePattern": "knowledge of N; have knowledge; to my knowledge",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "knowledge",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "名詞的知識；具備知識；據我所知"
+      },
+      "after": {
+        "wordId": "W000464",
+        "word": "knowledge",
+        "wordVariants": [
+          "knowledge"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "知識；學問；認識；知道",
+        "meaningEn": "the information, understanding, and skills that a person has gained through experience or education",
+        "usagePattern": "knowledge of N; have knowledge; to my knowledge",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "knowledge",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "對……的知識／了解；具備知識；據我所知"
+      },
+      "reason": "Translate the three exact existing construction groups.",
+      "evidence": "https://www.merriam-webster.com/dictionary/knowledge"
+    },
+    {
+      "dataset": "words",
+      "id": "W000926",
+      "before": {
+        "wordId": "W000926",
+        "word": "type",
+        "wordVariants": [
+          "type"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "類型；樣式；典型；榜樣",
+        "meaningEn": "a particular kind of person or thing that shares certain characteristics with others; (verb) to write something using a computer keyboard",
+        "usagePattern": "a type of N; type up N; blood type",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "type",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "一種名詞；打字名詞；血型"
+      },
+      "after": {
+        "wordId": "W000926",
+        "word": "type",
+        "wordVariants": [
+          "type"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（名詞）類型；樣式；典型；榜樣；（動詞）打字",
+        "meaningEn": "a particular kind of person or thing that shares certain characteristics with others; (verb) to write something using a computer keyboard",
+        "usagePattern": "a type of N; type up N; blood type",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "type",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "一種……；把……打成文字；血型"
+      },
+      "reason": "Restore the typed-report verb already in English and formal POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/type"
+    },
+    {
+      "dataset": "words",
+      "id": "W005831",
+      "before": {
+        "wordId": "W005831",
+        "word": "sloppy",
+        "wordVariants": [
+          "sloppy"
+        ],
+        "level": "LV6",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "泥濘的；潮溼的；粗心的",
+        "meaningEn": "lacking neatness or order; wet or smeared with a spilled liquid or moist material",
+        "usagePattern": "be sloppy; sloppy + N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "sloppy",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "粗心大意的；粗心大意的……"
+      },
+      "after": {
+        "wordId": "W005831",
+        "word": "sloppy",
+        "wordVariants": [
+          "sloppy"
+        ],
+        "level": "LV6",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "凌亂的；邋遢的；粗心的；泥濘的；潮溼的",
+        "meaningEn": "lacking neatness or order; wet or smeared with a spilled liquid or moist material",
+        "usagePattern": "be sloppy; sloppy + N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "sloppy",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "凌亂／邋遢／馬虎（依上下文）；凌亂或粗心的……"
+      },
+      "reason": "Add the existing English untidy sense without removing genuine muddy/wet senses.",
+      "evidence": "https://www.merriam-webster.com/dictionary/sloppy"
+    },
+    {
+      "dataset": "words",
+      "id": "W001756",
+      "before": {
+        "wordId": "W001756",
+        "word": "scared",
+        "wordVariants": [
+          "scared"
+        ],
+        "level": "LV2",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "害怕的；擔驚受怕的；驚慌的；嚇壞了的",
+        "meaningEn": "cause fear in; cause to lose courage",
+        "usagePattern": "be scared; scared + N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "scared",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "感到害怕；害怕的某人"
+      },
+      "after": {
+        "wordId": "W001756",
+        "word": "scared",
+        "wordVariants": [
+          "scared"
+        ],
+        "level": "LV2",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "害怕的；擔驚受怕的；驚慌的；嚇壞了的",
+        "meaningEn": "feeling frightened or worried (adjective); related base verb scare: cause fear in; cause to lose courage",
+        "usagePattern": "be scared of N; be scared to V; be scared that + clause",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "scared",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "害怕……；害怕做……；擔心……（that 子句）"
+      },
+      "reason": "Correct the adjective experiencer direction; preserve the entire old causative phrase explicitly as related base verb scare.",
+      "evidence": "https://dictionary.cambridge.org/dictionary/english/scared ; https://dictionary.cambridge.org/dictionary/english/scaring"
+    },
+    {
+      "dataset": "words",
+      "id": "W000507",
+      "before": {
+        "wordId": "W000507",
+        "word": "love",
+        "wordVariants": [
+          "love"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "愛；戀愛；愛情；愛好",
+        "meaningEn": "(n.) a strong feeling of deep affection for someone or something; (v.) to feel great affection or a strong liking for someone or something",
+        "usagePattern": "fall in love with N; love to V/Ving",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "love",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "愛上名詞；喜歡去原形動詞/動名詞",
+        "verbForms": {
+          "base": "love",
+          "past": "loved",
+          "pastParticiple": "loved",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/love",
+          "status": "approved"
+        }
+      },
+      "after": {
+        "wordId": "W000507",
+        "word": "love",
+        "wordVariants": [
+          "love"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "愛；戀愛；愛情；愛好",
+        "meaningEn": "(n.) a strong feeling of deep affection for someone or something; (v.) to feel great affection or a strong liking for someone or something",
+        "usagePattern": "fall in love with N; love to V/Ving",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "love",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "愛上某人或某物；喜愛做……",
+        "verbForms": {
+          "base": "love",
+          "past": "loved",
+          "pastParticiple": "loved",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/love",
+          "status": "approved"
+        }
+      },
+      "reason": "Preserve both constructions without translating grammar notation as words.",
+      "evidence": "https://www.merriam-webster.com/dictionary/love"
+    },
+    {
+      "dataset": "words",
+      "id": "W000088",
+      "before": {
+        "wordId": "W000088",
+        "word": "beside",
+        "wordVariants": [
+          "beside"
+        ],
+        "level": "LV1",
+        "pos": "prep.",
+        "posAll": [
+          "prep."
+        ],
+        "meaningZh": "在旁邊",
+        "meaningEn": "At the side of; on one side of.; Aside from; out of the regular course or order of; in a",
+        "usagePattern": "beside N; beside oneself with N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "beside",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "在……旁邊；因……而失去自制"
+      },
+      "after": {
+        "wordId": "W000088",
+        "word": "beside",
+        "wordVariants": [
+          "beside"
+        ],
+        "level": "LV1",
+        "pos": "prep.",
+        "posAll": [
+          "prep."
+        ],
+        "meaningZh": "在旁邊",
+        "meaningEn": "At the side of; on one side of.; Aside from; out of the regular course or order of; in a state of deviation from; out of.",
+        "usagePattern": "beside N; beside oneself with N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "beside",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "在……旁邊；因……而失去自制"
+      },
+      "reason": "Append only the demonstrably missing Webster 1913 tail, keeping all inherited spatial and deviation senses. This transcription is not an inspection of the original printed dictionary page.",
+      "evidence": "https://www.gutenberg.org/cache/epub/660/pg660-images.html ; https://www.ahdictionary.com/word/search.html?q=beside"
+    },
+    {
+      "dataset": "words",
+      "id": "W002081",
+      "before": {
+        "wordId": "W002081",
+        "word": "besides",
+        "wordVariants": [
+          "besides"
+        ],
+        "level": "LV3",
+        "pos": "adv./prep.",
+        "posAll": [
+          "adv.",
+          "prep."
+        ],
+        "meaningZh": "除...之外；而且；此外；在旁邊",
+        "meaningEn": "making an additional point; anyway; besides, we can't afford it\"; in addition; At the side of; on one side of.; Aside from; out of the regular course or order of; in a",
+        "usagePattern": "V + besides; besides + N/V-ing",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "besides",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "動詞加上此外；除了……之外加上名詞或動名詞"
+      },
+      "after": {
+        "wordId": "W002081",
+        "word": "besides",
+        "wordVariants": [
+          "besides"
+        ],
+        "level": "LV3",
+        "pos": "adv./prep.",
+        "posAll": [
+          "adv.",
+          "prep."
+        ],
+        "meaningZh": "除……之外；而且；此外；（古副詞義）在旁邊",
+        "meaningEn": "making an additional point; anyway; besides, we can't afford it\"; in addition; At the side of; on one side of.; Aside from; out of the regular course or order of; in a",
+        "usagePattern": "Besides, + clause; besides + N/V-ing",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "besides",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "此外，……；除……之外"
+      },
+      "reason": "Keep the historically supported spatial adverb with its obsolete register. The incomplete English legacy fragment remains explicitly unresolved; do not guess a whole-field replacement.",
+      "evidence": "https://www.gutenberg.org/cache/epub/660/pg660-images.html ; https://www.ahdictionary.com/word/search.html?q=besides"
+    },
+    {
+      "dataset": "words",
+      "id": "W005678",
+      "before": {
+        "wordId": "W005678",
+        "word": "pickpocket",
+        "wordVariants": [
+          "pickpocket"
+        ],
+        "level": "LV6",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "扒手",
+        "meaningEn": "a thief who steals from the pockets or purses of others in public places",
+        "usagePattern": "a/the pickpocket; pickpocket of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "pickpocket",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "一名扒手；……的扒手"
+      },
+      "after": {
+        "wordId": "W005678",
+        "word": "pickpocket",
+        "wordVariants": [
+          "pickpocket"
+        ],
+        "level": "LV6",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "扒手",
+        "meaningEn": "a thief who steals from the pockets or purses of others in public places",
+        "usagePattern": "a pickpocket; watch out for pickpockets",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "pickpocket",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "一名扒手；提防扒手"
+      },
+      "reason": "Replace the unhelpful generic of-N template with ordinary existing noun constructions.",
+      "evidence": "https://www.merriam-webster.com/dictionary/pickpocket"
+    },
+    {
+      "dataset": "words",
+      "id": "W001845",
+      "before": {
+        "wordId": "W001845",
+        "word": "steak",
+        "wordVariants": [
+          "steak"
+        ],
+        "level": "LV2",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "牛排；魚排；肉排",
+        "meaningEn": "a slice of meat cut from the fleshy part of an animal or large fish",
+        "usagePattern": "a/the steak; steak of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "steak",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "牛排；……的肉排"
+      },
+      "after": {
+        "wordId": "W001845",
+        "word": "steak",
+        "wordVariants": [
+          "steak"
+        ],
+        "level": "LV2",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "牛排；魚排；肉排",
+        "meaningEn": "a slice of meat cut from the fleshy part of an animal or large fish",
+        "usagePattern": "a beef/fish steak; cook a steak",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "steak",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "牛排／魚排；烹調一份肉排"
+      },
+      "reason": "Use the already present animal/fish slice senses in clear noun constructions.",
+      "evidence": "https://www.merriam-webster.com/dictionary/steak"
+    },
+    {
+      "dataset": "words",
+      "id": "W004820",
+      "before": {
+        "wordId": "W004820",
+        "word": "sow",
+        "wordVariants": [
+          "sow"
+        ],
+        "level": "LV5",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "母豬；懶胖女人；播種；散佈",
+        "meaningEn": "(v., /soʊ/) to plant seeds in the ground or introduce a feeling or situation; (separate homograph noun, /saʊ/) an adult female pig.",
+        "usagePattern": "sow seeds; sow a field with seeds; sow doubt/confusion",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "sow",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "播種；在田裡播下種子；散佈疑慮／造成混亂"
+      },
+      "after": {
+        "wordId": "W004820",
+        "word": "sow",
+        "wordVariants": [
+          "sow"
+        ],
+        "level": "LV5",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "（名詞 /saʊ/）母豬；（歷史貶稱，原譯「懶」待核）懶胖女人；（動詞 /soʊ/）播種；散佈",
+        "meaningEn": "(v., /soʊ/) to plant seeds in the ground or introduce a feeling or situation; (separate homograph noun, /saʊ/) an adult female pig.",
+        "usagePattern": "sow seeds; sow a field with seeds; sow doubt/confusion",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "sow",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "播種；在田裡播下種子；散佈疑慮／造成混亂"
+      },
+      "reason": "Preserve every original gloss, separate the two pronunciations, and qualify the unresolved laziness restriction and derogatory register. Do not certify the whole word.",
+      "evidence": "https://www.merriam-webster.com/dictionary/sow ; https://www.gutenberg.org/cache/epub/5402/pg5402.html ; https://wehd.com/farmer/Sow.html"
+    },
+    {
+      "dataset": "words",
+      "id": "W002516",
+      "before": {
+        "wordId": "W002516",
+        "word": "magician",
+        "wordVariants": [
+          "magician"
+        ],
+        "level": "LV3",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "魔術家；幻術家；術士",
+        "meaningEn": "someone who performs magic tricks to amuse an audience",
+        "usagePattern": "a/the magician; magician of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "magician",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "魔術師；……的魔術師"
+      },
+      "after": {
+        "wordId": "W002516",
+        "word": "magician",
+        "wordVariants": [
+          "magician"
+        ],
+        "level": "LV3",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "魔術家；幻術家；術士",
+        "meaningEn": "someone who performs magic tricks to amuse an audience",
+        "usagePattern": "a magician; perform magic tricks",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "magician",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "一名魔術師；表演魔術"
+      },
+      "reason": "Replace the generic magician-of-N pattern with a concrete ordinary usage.",
+      "evidence": "https://www.merriam-webster.com/dictionary/magician"
+    },
+    {
+      "dataset": "words",
+      "id": "W001012",
+      "before": {
+        "wordId": "W001012",
+        "word": "address",
+        "wordVariants": [
+          "address"
+        ],
+        "level": "LV2",
+        "pos": "v./n.",
+        "posAll": [
+          "v.",
+          "n."
+        ],
+        "meaningZh": "住址；演說；舉止；靈巧",
+        "meaningEn": "(v.) to think about a problem and try to deal with it; to give a formal speech to a group of people; (n.) the number of a building, name of a street, and name of a town where a person lives or works",
+        "usagePattern": "address the problem/issue; an address to sb",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "address",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "處理問題／解決爭議；對某人發表的演說"
+      },
+      "after": {
+        "wordId": "W001012",
+        "word": "address",
+        "wordVariants": [
+          "address"
+        ],
+        "level": "LV2",
+        "pos": "v./n.",
+        "posAll": [
+          "v.",
+          "n."
+        ],
+        "meaningZh": "（名詞）住址；演說；舉止；靈巧；（動詞）處理；對……演說；在信件寫上地址／寄給……",
+        "meaningEn": "(v.) to think about a problem and try to deal with it; to give a formal speech to a group of people; (n.) the number of a building, name of a street, and name of a town where a person lives or works",
+        "usagePattern": "address the problem/issue; an address to sb",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "address",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "處理問題／解決爭議；對某人發表的演說"
+      },
+      "reason": "Retain the inherited noun senses and restore already formal dealing-with/speaking/writing-an-address verbs.",
+      "evidence": "https://www.merriam-webster.com/dictionary/address"
+    },
+    {
+      "dataset": "words",
+      "id": "W000455",
+      "before": {
+        "wordId": "W000455",
+        "word": "kind",
+        "wordVariants": [
+          "kind"
+        ],
+        "level": "LV1",
+        "pos": "adj./n.",
+        "posAll": [
+          "adj.",
+          "n."
+        ],
+        "meaningZh": "種類；性質；方式；親切的",
+        "meaningEn": "friendly, generous, and thoughtful toward other people; a group of people or things that share similar qualities",
+        "usagePattern": "be kind to + sb; a kind of + N; all kinds of + N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "kind",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "對某人友善；一種 + 名詞；各種 + 名詞"
+      },
+      "after": {
+        "wordId": "W000455",
+        "word": "kind",
+        "wordVariants": [
+          "kind"
+        ],
+        "level": "LV1",
+        "pos": "adj./n.",
+        "posAll": [
+          "adj.",
+          "n."
+        ],
+        "meaningZh": "種類；性質；方式；親切的",
+        "meaningEn": "friendly, generous, and thoughtful toward other people; a group of people or things that share similar qualities",
+        "usagePattern": "be kind to + sb; a kind of + N; all kinds of + N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "kind",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "對某人親切；一種……；各種……"
+      },
+      "reason": "Translate the actual kindness and category patterns without literal noun placeholders.",
+      "evidence": "https://www.merriam-webster.com/dictionary/kind"
+    },
+    {
+      "dataset": "words",
+      "id": "W001825",
+      "before": {
+        "wordId": "W001825",
+        "word": "sort",
+        "wordVariants": [
+          "sort"
+        ],
+        "level": "LV2",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "種類；方式；品質；態度",
+        "meaningEn": "a group of people or things that have similar qualities; to arrange things into groups according to their type",
+        "usagePattern": "a sort of N; sort out N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "sort",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "一種……；整理／分類……"
+      },
+      "after": {
+        "wordId": "W001825",
+        "word": "sort",
+        "wordVariants": [
+          "sort"
+        ],
+        "level": "LV2",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（名詞）種類；方式；品質；態度；（動詞）整理；分類",
+        "meaningEn": "a group of people or things that have similar qualities; to arrange things into groups according to their type",
+        "usagePattern": "a sort of N; sort out N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "sort",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "一種……；整理／分類……"
+      },
+      "reason": "Restore the existing sorting verb without deleting inherited nouns.",
+      "evidence": "https://www.merriam-webster.com/dictionary/sort"
+    }
+  ],
+  "masterTouched": false,
+  "sentencesChanged": false,
+  "englishSentencesChanged": false,
+  "imagesChanged": false,
+  "sourceHashesBefore": {
+    "words.json": "cc0c05d095363ac395ce8b04ca5bb6d0d56b8134b8e7d9480ce2d03fc897663b",
+    "senses.json": "30427cc665e3f199a5fcfdc040bbcf5b6caa45da49e44e059556aba67a680b76",
+    "examples.json": "2317de0f23be1c0027db79f988df6e6f075f4acf9e8b7779dba1fd1bcb9957d4",
+    "meta.json": "9967c41180c81d8150783c187484aa512e02b3d5472d26700b90a9578777625f",
+    "sa-pack.json": "006f14f515720c2c5d65d251cf3a03ef5bbcd7091f346ff21b9b0dac0cc6106d"
+  },
+  "sourceHashesAfter": {
+    "words.json": "2b39d9204e809795ecce7311b46e19417e5f9128db89fe3ea38c21d0e3441a39",
+    "senses.json": "0a1f3bf143215c7239d3d8c8f0afaccc16b022611394f1cb8bc8ae4841325caa",
+    "examples.json": "9cd031869ed3e0c6420c25f7bf9bdffc57b7acfae880fe18633b7a2f84abc991",
+    "meta.json": "ee59045173033ba4cb0b1e79d9d7ba5d1e4386d46f9f214b5620eff9a1158a3e",
+    "sa-pack.json": "3116a918646a8bf47088019f652fb84eb68b071e0263bc1ae12331c189496ba5"
+  },
+  "state": "applied_not_ui_verified"
+}

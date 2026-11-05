@@ -19,7 +19,7 @@ class AuditWriteBoundaryTests(unittest.TestCase):
         self.root = Path(self.temp.name)
         evidence_dir = self.root / 'docs/unit-audit-20261105'
         evidence_dir.mkdir(parents=True)
-        for name in ['VERIFIED-VERB-FORMS-SOURCES.json', 'VERIFIED-FOLLOWUP-VERB-FORMS-SOURCES.json', 'VERIFIED-TRANSLATION-SOURCES.json']:
+        for name in ['VERIFIED-VERB-FORMS-SOURCES.json', 'VERIFIED-FOLLOWUP-VERB-FORMS-SOURCES.json', 'VERIFIED-U16-VERB-FORMS-SOURCES.json', 'VERIFIED-TRANSLATION-SOURCES.json', 'VERIFIED-NOTE-SOURCES.json']:
             audit.write_json(evidence_dir / name, audit.read(audit.ROOT / 'docs/unit-audit-20261105' / name))
         self.data = self.root / "public/data/v1"
         self.data.mkdir(parents=True)
@@ -27,7 +27,7 @@ class AuditWriteBoundaryTests(unittest.TestCase):
                     "sentenceEn": "They man the desk.", "sentenceZh": "他們值守服務台。",
                     "blankSentence": "They _____ the desk.", "answer": "man"}
         audit.write_json(self.data / "examples.json", [self.row])
-        for name in ("words", "senses", "meta", "sa-pack"):
+        for name in ("words", "senses", "notes", "meta", "sa-pack"):
             audit.write_json(self.data / (name + ".json"), [])
         self.manifest = {"baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951", "patches": [{
             "dataset": "examples", "key": "exampleId", "id": "EXtest",
@@ -132,6 +132,29 @@ class AuditWriteBoundaryTests(unittest.TestCase):
                 changed['after']['status'] = 'reviewed'
                 with self.assertRaises(AssertionError):audit.validate_patch_shape(changed)
 
+    def test_u16_forms_require_each_exact_source_and_genuine_missing_key(self):
+        facts = audit.read(self.root / 'docs/unit-audit-20261105/VERIFIED-U16-VERB-FORMS-SOURCES.json')['facts']
+        self.assertEqual(len(facts),25)
+        self.assertEqual({f['wordId'] for f in facts},audit.U16_FORM_IDS)
+        self.assertFalse(audit.U16_FORM_IDS & (audit.FORM_IDS | audit.FOLLOWUP_FORM_IDS))
+        for fact in facts:
+            p={'dataset':'words','key':'wordId','id':fact['wordId'],'before':{'verbForms':{'$absent':True}},'after':{'verbForms':fact['verbForms']},'reason':'Only verified U16 absence.','evidence':fact['verbForms']['sourceRef']}
+            original={'wordId':fact['wordId'],'word':fact['word'],'pos':'n./v.','status':'draft','meaningZh':'Preserve'}
+            with patch.object(audit,'ROOT',self.root):
+                audit.validate_patch_shape(p)
+                row=copy.deepcopy(original)
+                self.assertTrue(audit.apply_to_row(row,p))
+                self.assertEqual({k:v for k,v in row.items() if k!='verbForms'},original)
+                for existing in [None,{'base':fact['word'],'past':'custom'}]:
+                    with self.assertRaises(AssertionError):audit.apply_to_row({**original,'verbForms':existing},p)
+                for field in ['base','past','pastParticiple','sourceRef','status']:
+                    changed=copy.deepcopy(p);changed['after']['verbForms'][field]='unverified'
+                    with self.assertRaises(AssertionError):audit.validate_patch_shape(changed)
+                changed=copy.deepcopy(p);changed['id']='W999999'
+                with self.assertRaises(AssertionError):audit.validate_patch_shape(changed)
+                changed=copy.deepcopy(p);changed['before']={}
+                with self.assertRaises(AssertionError):audit.validate_patch_shape(changed)
+
     def test_followup_pending_homographs_and_duplicate_identities_cannot_be_written(self):
         p = self.form_patch()
         p['id'] = 'W000139'  # can remains pending, not an allowlisted word.
@@ -155,7 +178,7 @@ class AuditWriteBoundaryTests(unittest.TestCase):
 
     def test_each_translation_requires_its_own_exact_source_and_cannot_expand_scope(self):
         facts = audit.read(self.root / 'docs/unit-audit-20261105/VERIFIED-TRANSLATION-SOURCES.json')['facts']
-        self.assertEqual(len(facts), 6)
+        self.assertEqual(len(facts), 9)
         self.assertEqual({f['exampleId'] for f in facts}, audit.TRANSLATION_IDS)
         for fact in facts:
             p = {'dataset':'examples','key':'exampleId','id':fact['exampleId'],
@@ -175,6 +198,26 @@ class AuditWriteBoundaryTests(unittest.TestCase):
                 changed = copy.deepcopy(p);changed['id'] = 'EXoutside_scope'
                 with self.assertRaises(AssertionError):audit.validate_patch_shape(changed)
 
+
+    def test_note_content_is_limited_to_one_exact_duplicate_translation(self):
+        fact=audit.read(self.root / 'docs/unit-audit-20261105/VERIFIED-NOTE-SOURCES.json')['facts'][0]
+        p={'dataset':'notes','key':'noteId','id':fact['noteId'],'before':fact['before'],'after':fact['after'],'reason':fact['reason'],'evidence':fact['evidence']}
+        with patch.object(audit,'ROOT',self.root):
+            audit.validate_patch_shape(p)
+            row={'noteId':fact['noteId'],**copy.deepcopy(fact['before'])}
+            self.assertTrue(audit.apply_to_row(row,p));self.assertFalse(audit.apply_to_row(row,p))
+            self.assertEqual({k:v for k,v in row.items() if k!='content'},{k:v for k,v in {'noteId':fact['noteId'],**fact['before']}.items() if k!='content'})
+            for field in ['word','noteType','title','status','content']:
+                changed=copy.deepcopy(p);changed['before'][field]='unrecorded'
+                with self.assertRaises(AssertionError):audit.validate_patch_shape(changed)
+            changed=copy.deepcopy(p);changed['after']['content']='Different English or Chinese'
+            with self.assertRaises(AssertionError):audit.validate_patch_shape(changed)
+            changed=copy.deepcopy(p);changed['id']='NXunknown'
+            with self.assertRaises(AssertionError):audit.validate_patch_shape(changed)
+            changed=copy.deepcopy(p);changed['after']['status']='reviewed'
+            with self.assertRaises(AssertionError):audit.validate_patch_shape(changed)
+            changed=copy.deepcopy(p);changed.update(dataset='examples',key='exampleId')
+            with self.assertRaises(AssertionError):audit.validate_patch_shape(changed)
 
 if __name__ == "__main__":
     unittest.main()

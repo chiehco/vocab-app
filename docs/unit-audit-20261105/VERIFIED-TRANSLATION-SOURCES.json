@@ -48,6 +48,108 @@
       "after": "這家麵包店每天早上上課前都會賣新鮮的麵包。",
       "reason": "Every morning before school starts refers to the daily start of classes, not the start of a school term.",
       "evidence": "https://www.merriam-webster.com/dictionary/school ; unchanged every morning context."
+    },
+    {
+      "exampleId": "EX4c5b9769",
+      "wordId": "W002921",
+      "word": "tough",
+      "sentenceEn": "Choosing which university to attend was a tough decision for most senior high students.",
+      "before": "對大多數高三學生來說，選擇要就讀哪所大學是一個艱難的決定。",
+      "after": "對大多數高中學生來說，選擇要就讀哪所大學是一個艱難的決定。",
+      "reason": "senior high 是高中階段，不是 high school senior（高中畢業班學生）。現譯把全體高中生限縮成高三；只把「高三」改為「高中」，保留其餘語義與空提示。",
+      "evidence": "https://www.collinsdictionary.com/us/dictionary/english/senior-high-school ; https://ahdictionary.com/word/search.html?q=senior+high+school",
+      "sources": [
+        {
+          "sourceId": "collins_senior_high",
+          "title": "Collins Dictionary: senior high school",
+          "url": "https://www.collinsdictionary.com/us/dictionary/english/senior-high-school",
+          "accessType": "direct_page_open_success",
+          "directOpen": "success; inspected definition lines 219–265",
+          "observedEvidence": "原頁將 senior high 視為 senior high school 的簡稱，說明為約 14／15 至 17／18 歲學生的學校，並列通常包含十至十二年級；不是只指最高年級。",
+          "supportsRows": [
+            64
+          ],
+          "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+        },
+        {
+          "sourceId": "ahd_senior_high",
+          "title": "American Heritage Dictionary: senior high school",
+          "url": "https://ahdictionary.com/word/search.html?q=senior+high+school",
+          "accessType": "direct_page_open_success",
+          "directOpen": "success; inspected entry line 41",
+          "observedEvidence": "原頁把 senior high school 定義為通常包含九、十、十一、十二年級的高中；支持學校階段而非畢業班。",
+          "supportsRows": [
+            64
+          ],
+          "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+        }
+      ]
+    },
+    {
+      "exampleId": "EX299bccf8",
+      "wordId": "W004689",
+      "word": "purchase",
+      "sentenceEn": "Customers who purchase more than three items will receive a ten percent discount at checkout.",
+      "before": "購買三件以上商品的顧客，結帳時可享九折優惠。",
+      "after": "購買超過三件商品的顧客，結帳時可享九折優惠。",
+      "reason": "more than three items 的數量嚴格大於三；「三件以上」在教學及購物門檻通常包含三件，會把折扣起算量提前一件。最小修正為「超過三件」，保留英文、purchase 答案與九折。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/more ; https://www.ehanlin.com.tw/app/keyword/%E5%9C%8B%E4%B8%AD/%E6%95%B8%E5%AD%B8/%E5%A4%A7%E6%96%BC%E6%88%96%E7%AD%89%E6%96%BC.html",
+      "sources": [
+        {
+          "sourceId": "collins_more",
+          "title": "Collins COBUILD: more, sense 2",
+          "url": "https://www.collinsdictionary.com/dictionary/english/more",
+          "accessType": "direct_page_open_success",
+          "directOpen": "成功開啟原頁；實讀相關義項，不宣稱讀完網站所有附加內容。",
+          "observedEvidence": "原頁第 250–258 行說明 more than 放在數目或數量前表示實際數量更大，並列數值比較例；支持嚴格大於三，不含三。",
+          "supportsRows": [
+            31
+          ],
+          "evidenceLimit": "僅支持所述詞義或構式。中文替代值為本次審核提案；未據此宣稱已比對原教材。"
+        },
+        {
+          "sourceId": "hanlin_greater_equal",
+          "title": "翰林雲端學院：大於或等於",
+          "url": "https://www.ehanlin.com.tw/app/keyword/%E5%9C%8B%E4%B8%AD/%E6%95%B8%E5%AD%B8/%E5%A4%A7%E6%96%BC%E6%88%96%E7%AD%89%E6%96%BC.html",
+          "accessType": "direct_page_open_success",
+          "directOpen": "成功開啟並實讀原頁第 12–17 行。",
+          "observedEvidence": "原頁將大於或等於符號與至少、以上（含）並列。用於教學數量門檻，三件以上會包含三件，與英文 more than three 不同。",
+          "supportsRows": [
+            31
+          ],
+          "evidenceLimit": "僅支持所述詞義或構式。中文替代值為本次審核提案；未據此宣稱已比對原教材。"
+        }
+      ]
+    },
+    {
+      "exampleId": "EX2ff9ba41",
+      "wordId": "W000509",
+      "word": "low",
+      "sentenceEn": "The shelf is low enough for a child to reach.",
+      "before": "這個架子夠低，小孩構得到。",
+      "after": "這個架子夠低，小孩搆得到。",
+      "reason": "reach 指伸手觸及，現譯構為木部構造之構；教育部原站以手部搆列觸及義。本提案只更換這一字，保留夠低及其餘內容。",
+      "evidence": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=4048&la=0&powerMode=0 ; https://dict.revised.moe.edu.tw/dictView.jsp?ID=4051&la=0&powerMode=0",
+      "sources": [
+        {
+          "sourceId": "moe_gou_reach",
+          "title": "教育部《重編國語辭典修訂本》：搆",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=4048&la=0&powerMode=0",
+          "accessType": "direct_page_open_success",
+          "directOpen": "成功開啟並實讀相關原頁內容（第 29–36 行）。",
+          "observedEvidence": "手部搆的第三動詞義是觸及，例句以小孩搆不著描述無法伸手觸及；同構註記位於引起、造成義，不能直接外推全部義項。",
+          "evidenceLimit": "僅支持所述詞義、構式或用字。中文替代值為本次審核提案，並非已比對原教材的逐字更正。"
+        },
+        {
+          "sourceId": "moe_gou_construct",
+          "title": "教育部《重編國語辭典修訂本》：構",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=4051&la=0&powerMode=0",
+          "accessType": "direct_page_open_success",
+          "directOpen": "成功開啟並實讀相關原頁內容（第 29–38 行）。",
+          "observedEvidence": "木部構列搭建、造成、策畫、陷害與挑撥等動詞義；本句要表達觸及，應選搆。",
+          "evidenceLimit": "僅支持所述詞義、構式或用字。中文替代值為本次審核提案，並非已比對原教材的逐字更正。"
+        }
+      ]
     }
   ]
 }

@@ -35,12 +35,20 @@ import u14 from '../../docs/unit-audit-20261105/LV1-U14-patches.json';
 import u14Translation from '../../docs/unit-audit-20261105/LV1-U14-translation-followup.json';
 import u15 from '../../docs/unit-audit-20261105/LV1-U15-patches.json';
 import u15Usage from '../../docs/unit-audit-20261105/LV1-U15-usage-followup.json';
+import u16 from '../../docs/unit-audit-20261105/LV1-U16-patches.json';
+import u16Forms from '../../docs/unit-audit-20261105/LV1-U16-verified-forms-patches.json';
+import verifiedU16Forms from '../../docs/unit-audit-20261105/VERIFIED-U16-VERB-FORMS-SOURCES.json';
+import wordingFollowup from '../../docs/unit-audit-20261105/LV1-U11-U12-U15-wording-followup.json';
+import dieNote from '../../docs/unit-audit-20261105/LV1-U08-die-note-followup.json';
+import verifiedNotes from '../../docs/unit-audit-20261105/VERIFIED-NOTE-SOURCES.json';
 import verifiedForms from '../../docs/unit-audit-20261105/VERIFIED-VERB-FORMS-SOURCES.json';
 import verifiedTranslations from '../../docs/unit-audit-20261105/VERIFIED-TRANSLATION-SOURCES.json';
 
 type Row = Record<string, unknown>;
 type Patch = {dataset:string; key:string; id:string; before:Row; after:Row; reason:string; evidence:string};
-const patches:Patch[]=[...u1.patches,...u2.patches,...pig.patches,...u3.patches,...u3Remaining.patches,...u4.patches,...u5.patches,...u6.patches,...u6Syntax.patches,...examSources.patches,...u7.patches,...u7Hints.patches,...lexicalSources.patches,...catDefinition.patches,...u7VerifiedExams.patches,...u8.patches,...demandVisible.patches,...u9.patches,...u8Hints.patches,...translations.patches,...forms.patches,...u10.patches,...u11.patches,...u11Usage.patches,...u12.patches,...u12Usage.patches,...u13.patches,...u13Definition.patches,...followupForms.patches,...u14.patches,...u14Translation.patches,...u15.patches,...u15Usage.patches];
+const patches:Patch[]=[...u1.patches,...u2.patches,...pig.patches,...u3.patches,...u3Remaining.patches,...u4.patches,...u5.patches,...u6.patches,...u6Syntax.patches,...examSources.patches,...u7.patches,...u7Hints.patches,...lexicalSources.patches,...catDefinition.patches,...u7VerifiedExams.patches,...u8.patches,...demandVisible.patches,...u9.patches,...u8Hints.patches,...translations.patches,...forms.patches,...u10.patches,...u11.patches,...u11Usage.patches,...u12.patches,...u12Usage.patches,...u13.patches,...u13Definition.patches,...followupForms.patches,...u14.patches,...u14Translation.patches,...u15.patches,...u15Usage.patches,...u16.patches,...u16Forms.patches,...wordingFollowup.patches];
+
+patches.push(...dieNote.patches);
 
 export function restoreRecordedAuditPatch(name:string,row:Row,patch:Patch):void{
  assert.ok(patch.reason&&patch.evidence,'each audit correction needs recorded evidence');
@@ -48,12 +56,17 @@ export function restoreRecordedAuditPatch(name:string,row:Row,patch:Patch):void{
  for(const [key,before]of Object.entries(patch.before))if(!Object.hasOwn(patch.after,key))assert.deepEqual(row[key],before,'immutable source guard changed');
  if(Object.hasOwn(patch.after,'verbForms')){
   assert.equal(name,'words');
-  const fact=[...verifiedForms.facts,...verifiedFollowupForms.facts].find(f=>f.wordId===patch.id);assert.ok(fact,'only source-verified verbs may acquire forms');
+  const fact=[...verifiedForms.facts,...verifiedFollowupForms.facts,...verifiedU16Forms.facts].find(f=>f.wordId===patch.id);assert.ok(fact,'only source-verified verbs may acquire forms');
   assert.deepEqual(patch.after,{verbForms:fact.verbForms});assert.deepEqual(patch.before,{verbForms:{$absent:true}});
  }
  if(Object.hasOwn(patch.after,'sentenceZh')){
   assert.equal(name,'examples');const fact=verifiedTranslations.facts.find(f=>f.exampleId===patch.id);assert.ok(fact,'only exact verified translations may change');
   assert.deepEqual(patch.before,{sentenceEn:fact.sentenceEn,sentenceZh:fact.before});assert.deepEqual(patch.after,{sentenceZh:fact.after});
+ }
+ if(name==='notes'||Object.hasOwn(patch.after,'content')){
+  assert.equal(name,'notes');const fact=verifiedNotes.facts.find(f=>f.noteId===patch.id);assert.ok(fact,'only exact verified note content may change');
+  assert.deepEqual(patch.before,fact.before);assert.deepEqual(patch.after,fact.after);
+  assert.deepEqual(Object.keys(patch.after),['content']);
  }
  for(const key of Object.keys(patch.after)){
   assert.ok(Object.hasOwn(patch.before,key),'old value must be explicit');

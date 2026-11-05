@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-05T12:35:44.359Z",
+  "updatedAt": "2026-11-05T13:49:49.127Z",
   "items": [
     {
       "id": "LV1-U01-30",
@@ -291,11 +291,13 @@
     },
     {
       "id": "EX4c5b9769",
-      "word": "senior",
+      "word": "tough",
       "field": "sentenceZh",
       "sourceCommit": "6d420a8803ccb60115bb1c15f2952e97708590a6",
       "summary": "senior high students means 高中學生, not 高三學生",
-      "state": "verified_in_isolated_checkpoint_not_integrated_here"
+      "state": "integrated_and_actual_general_card_reopened",
+      "resolvedAt": "2026-11-05T13:49:49.127Z",
+      "evidence": "docs/unit-audit-20261105/validation/U16-wording-followups.json"
     },
     {
       "id": "EX299bccf8",
@@ -303,7 +305,9 @@
       "field": "sentenceZh",
       "sourceCommit": "6d420a8803ccb60115bb1c15f2952e97708590a6",
       "summary": "more than three excludes exactly three; retain already corrected mainline verb POS",
-      "state": "verified_in_isolated_checkpoint_not_integrated_here"
+      "state": "integrated_and_actual_general_card_reopened",
+      "resolvedAt": "2026-11-05T13:49:49.127Z",
+      "evidence": "docs/unit-audit-20261105/validation/U16-wording-followups.json"
     },
     {
       "id": "LV1-U15-62",
@@ -325,6 +329,74 @@
       "word": "dryer",
       "state": "appliance_visual_identity_qualified",
       "observation": "Character puts wet towels into a front-loading appliance. Its controls do not independently distinguish a dryer from a washing machine; drying purpose is supplied by the caption."
+    },
+    {
+      "id": "LV1-U02-15",
+      "word": "low",
+      "state": "caption_synchronized_and_both_actual_cards_reopened",
+      "evidence": "docs/unit-audit-20261105/LV1-U02-low-caption-review.json",
+      "resolvedAt": "2026-11-05T13:49:49.127Z"
+    },
+    {
+      "id": "EX2ff9ba41",
+      "word": "low",
+      "state": "verified_character_saved_reopened_and_exact_caption_synchronized",
+      "evidence": "docs/unit-audit-20261105/validation/U16-wording-followups.json",
+      "resolvedAt": "2026-11-05T13:49:49.127Z"
+    },
+    {
+      "id": "W001283-orthography",
+      "word": "dryer",
+      "state": "one_character_saved_and_actual_card_reopened_whole_word_draft_retained",
+      "evidence": "docs/unit-audit-20261105/validation/U16-wording-followups.json",
+      "resolvedAt": "2026-11-05T13:49:49.127Z"
+    },
+    {
+      "id": "NXc62b0f26",
+      "word": "die",
+      "state": "exact_duplicate_translation_saved_note_and_example_reopened",
+      "evidence": "docs/unit-audit-20261105/validation/U16-wording-followups.json",
+      "resolvedAt": "2026-11-05T13:49:49.127Z"
+    },
+    {
+      "id": "LV1-U16-forms",
+      "wordIds": [
+        "W000745",
+        "W000653",
+        "W004820",
+        "W000892",
+        "W000170",
+        "W000522",
+        "W000367",
+        "W000891",
+        "W000448",
+        "W000140",
+        "W000380",
+        "W000729",
+        "W000098",
+        "W000660",
+        "W000737",
+        "W000545",
+        "W000463",
+        "W000940",
+        "W000926",
+        "W001437",
+        "W002486",
+        "W000739",
+        "W003767",
+        "W001012",
+        "W001825"
+      ],
+      "state": "25_exact_optional_fields_saved_and_both_panels_reopened",
+      "evidence": "docs/unit-audit-20261105/validation/U16-forms-final.json",
+      "resolvedAt": "2026-11-05T13:49:49.127Z"
+    },
+    {
+      "id": "W002081-English-truncation",
+      "word": "besides",
+      "state": "confirmed_truncated_legacy_source_mapping_pending",
+      "observation": "Inherited besides ends at in a. Historical spatial adverb is supported; the longer deviation fragment matches Beside, so no guessed whole-field replacement or deletion was applied.",
+      "resolvedAt": "2026-11-05T13:49:49.127Z"
     }
   ],
   "sourceFormResearchCoverage": {

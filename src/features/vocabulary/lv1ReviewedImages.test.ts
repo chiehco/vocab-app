@@ -6,6 +6,7 @@ import audit from '../../../scripts/approvals/lv1-images-20260922.json';
 import words from '../../../public/data/v1/words.json';
 import bootstrap from '../../../public/data/v1/sa-pack.json';
 import auditedGeneralCards from './auditedWordIllustrations.json';
+import lowCaptionProof from '../../../docs/unit-audit-20261105/LV1-U02-low-caption-review.json';
 import { approvedCurriculumCard, approvedCurriculumIllustration, approvedLV1Images, approvedWordIllustration } from './approvedCurriculum';
 import { getWordBeastAsset } from '../wordbeast/wordBeastAssets';
 import { resolveWordImageClue } from '../../quiz/imageClue';
@@ -74,6 +75,16 @@ describe('reviewed LV1 image-only release', () => {
     const example=bootstrap.examples.find(e=>e.exampleId==='EX3ebf8dd3')!;
     expect(example.sentenceEn).toBe('On summer afternoons, my grandfather likes to sun himself on the porch.');
     expect(example.sensePos).toBe('v.');
+  });
+
+  it('changes only the verified low reach character and retains its exact image and original text hash',()=>{
+    const low=cards.find(c=>c.id==='LV1-U02-15')!;
+    expect(low.illustration).toEqual({path:'wordbeast/lv1-reviewed/LV1-U02-15-00fe16b1863b.webp',captionEn:'The shelf is low enough for a child to reach.',captionZh:'這個架子夠低，小孩搆得到。'});
+    expect(hash(readFileSync('public/'+low.illustration.path))).toBe('8ecc15140b00b724f14a74038587339c23d363385049e91ed48fcb832c413b83');
+    expect(lowCaptionProof.previousApproval.textSha256).toBe('32fb1a861bf09ea5a24bc62926d8e5751c68299e9cc8958011b76ebe5fcfb481');
+    expect(hash(lowCaptionProof.previousIllustration.captionEn+'\n'+lowCaptionProof.previousIllustration.captionZh)).toBe(lowCaptionProof.previousApproval.textSha256);
+    expect(hash(low.illustration.captionEn+'\n'+low.illustration.captionZh)).toBe('ef8900cdf11335a1d4501dca72d9aeff2d5c14318e58b0d048b2206182489ca0');
+    expect(bootstrap.examples.find(e=>e.exampleId==='EX2ff9ba41')?.sentenceZh).toBe(low.illustration.captionZh);
   });
 
   it('repairs the U02 elephant anatomy with an exact replacement and recoverable original',()=>{

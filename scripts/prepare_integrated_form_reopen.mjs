@@ -1,11 +1,12 @@
 import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
 import assert from 'node:assert/strict';
 const phase=process.argv[2];assert.ok(['before','after'].includes(phase));
-const facts=JSON.parse(readFileSync('docs/unit-audit-20261105/VERIFIED-FOLLOWUP-VERB-FORMS-SOURCES.json','utf8')).facts;
+const batch=process.argv[3]??'integration';assert.ok(['integration','u16'].includes(batch));
+const facts=JSON.parse(readFileSync('docs/unit-audit-20261105/'+(batch==='u16'?'VERIFIED-U16-VERB-FORMS-SOURCES.json':'VERIFIED-FOLLOWUP-VERB-FORMS-SOURCES.json'),'utf8')).facts;
 const words=JSON.parse(readFileSync('public/data/v1/words.json','utf8'));
 const cards=facts.map(f=>({...f,currentWord:words.find(w=>w.wordId===f.wordId)}));
-assert.equal(cards.length,16);
-const out=`output/playwright/unit-audit/forms-integration-${phase}`;mkdirSync(out,{recursive:true});
+assert.equal(cards.length,batch==='u16'?25:16);
+const out=`output/playwright/unit-audit/forms-${batch}-${phase}`;mkdirSync(out,{recursive:true});
 writeFileSync('output/playwright/unit-audit/integrated-forms-reopen.playwright.txt',`async(page)=>{
  const results=[];await page.setViewportSize({width:1000,height:1000});
  for(const fact of ${JSON.stringify(cards)}){

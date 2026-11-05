@@ -1,0 +1,61 @@
+{
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "scope": "Exactly three Chinese sentence fields and one dictionary character. Preserve the mainline purchase v. and every English, cloze, answer, hint, status and other field.",
+  "patches": [
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX4c5b9769",
+      "before": {
+        "sentenceEn": "Choosing which university to attend was a tough decision for most senior high students.",
+        "sentenceZh": "對大多數高三學生來說，選擇要就讀哪所大學是一個艱難的決定。"
+      },
+      "after": {
+        "sentenceZh": "對大多數高中學生來說，選擇要就讀哪所大學是一個艱難的決定。"
+      },
+      "reason": "senior high 是高中階段，不是 high school senior（高中畢業班學生）。現譯把全體高中生限縮成高三；只把「高三」改為「高中」，保留其餘語義與空提示。",
+      "evidence": "https://www.collinsdictionary.com/us/dictionary/english/senior-high-school ; https://ahdictionary.com/word/search.html?q=senior+high+school"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX299bccf8",
+      "before": {
+        "sentenceEn": "Customers who purchase more than three items will receive a ten percent discount at checkout.",
+        "sentenceZh": "購買三件以上商品的顧客，結帳時可享九折優惠。"
+      },
+      "after": {
+        "sentenceZh": "購買超過三件商品的顧客，結帳時可享九折優惠。"
+      },
+      "reason": "more than three items 的數量嚴格大於三；「三件以上」在教學及購物門檻通常包含三件，會把折扣起算量提前一件。最小修正為「超過三件」，保留英文、purchase 答案與九折。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/more ; https://www.ehanlin.com.tw/app/keyword/%E5%9C%8B%E4%B8%AD/%E6%95%B8%E5%AD%B8/%E5%A4%A7%E6%96%BC%E6%88%96%E7%AD%89%E6%96%BC.html"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX2ff9ba41",
+      "before": {
+        "sentenceEn": "The shelf is low enough for a child to reach.",
+        "sentenceZh": "這個架子夠低，小孩構得到。"
+      },
+      "after": {
+        "sentenceZh": "這個架子夠低，小孩搆得到。"
+      },
+      "reason": "reach 指伸手觸及，現譯構為木部構造之構；教育部原站以手部搆列觸及義。本提案只更換這一字，保留夠低及其餘內容。",
+      "evidence": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=4048&la=0&powerMode=0 ; https://dict.revised.moe.edu.tw/dictView.jsp?ID=4051&la=0&powerMode=0"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001283",
+      "before": {
+        "meaningZh": "乾衣機；乾燥劑；催幹劑；乾燥器"
+      },
+      "after": {
+        "meaningZh": "乾衣機；乾燥劑；催乾劑；乾燥器"
+      },
+      "reason": "Only correct the drying-agent character 幹→乾. Retain all four source-supported meanings, existing noun POS and draft status; no optional domain rewrite is adopted.",
+      "evidence": "https://www.merriam-webster.com/dictionary/drier ; https://www.collinsdictionary.com/dictionary/english/dryer ; https://ed.arte.gov.tw/uploadfile/Book/3214_%E5%85%A7%E6%96%87.pdf (printed p30 text layer; page pixels not inspected)."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+
+> vocab-app@0.0.0 test
+> vitest run --maxWorkers=1 src/db/unitAudit.testSupport.test.ts src/db/lv6MainIntegration.test.ts src/features/direct/lv4NotesConfirmation.test.ts src/features/vocabulary/auditedWordIllustrations.test.ts src/features/vocabulary/lv1ReviewedImages.test.ts src/features/wordbeast/illustrationCaptions.test.ts src/features/direct/lv1Unit16Text.test.ts src/features/direct/lv1Unit16Audit.test.ts
+
+
+ RUN  v4.1.9 <repo>
+
+ ??src/features/direct/lv1Unit16Text.test.ts (11 tests | 1 failed) 10934ms
+   ? content refresh preserves every progress table and personal group name/order 5008ms
+ ??src/features/vocabulary/lv1ReviewedImages.test.ts (10 tests | 1 failed) 13156ms
+     ? contains exactly the reviewed scope and preserves every final image and caption hash 13056ms
+
+?胼?胼?胼??Failed Tests 2 ?胼?胼?胼??
+ FAIL  src/features/direct/lv1Unit16Text.test.ts > content refresh preserves every progress table and personal group name/order
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ??src/features/direct/lv1Unit16Text.test.ts:66:1
+
+
+?胼?胼?胼?胼?胼?胼?胼?胼?胼?胼?胼?胼[1/2]??
+ FAIL  src/features/vocabulary/lv1ReviewedImages.test.ts > reviewed LV1 image-only release > contains exactly the reviewed scope and preserves every final image and caption hash
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ??src/features/vocabulary/lv1ReviewedImages.test.ts:16:3
+     14|
+     15| describe('reviewed LV1 image-only release', () => {
+     16|   it('contains exactly the reviewed scope and preserves every final im??       |   ^
+     17|     expect(cards).toHaveLength(726);
+     18|     expect(new Set(cards.map(c => c.id)).size).toBe(726);
+
+?胼?胼?胼?胼?胼?胼?胼?胼?胼?胼?胼?胼[2/2]??
+
+ Test Files  2 failed | 6 passed (8)
+      Tests  2 failed | 43 passed (45)
+   Start at  21:10:19
+   Duration  81.66s (transform 15.50s, setup 0ms, import 42.42s, tests 36.55s, environment 1ms)
