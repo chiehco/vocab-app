@@ -7,7 +7,7 @@
     "reviewedCommit": "fe2ec66bb06ca15351946895cd94022084d9fa68",
     "reviewedBlobSha": "1bc82475bb3a536d131ca1c09719204c3e2d2d87",
     "reviewDateUTC": "2026-11-05",
-    "inputOrigin": "Parent supplied the current examples snapshot from the stated GitHub blob. This independent semantic reviewer read that local snapshot and did not independently refetch GitHub.",
+    "inputOrigin": "This review used the current examples snapshot from the stated GitHub blob rather than independently refetching it.",
     "originalTextbookVerification": "Not performed: original textbook pages were not supplied. Dictionary evidence verifies lexical meanings or constructions, not verbatim textbook provenance."
   },
   "summary": {
@@ -98,7 +98,7 @@
       "subtype": "sentence_specific_hint_refinement",
       "priority": "optional_refinement_not_proven_error",
       "reason": "本句只說紙容易著火。原提示的火已正確，火災並非本句明確發生的事件；縮到當句搭配可減少多義干擾，屬可選精度而非證實原提示錯誤。",
-      "confidence": "high_for_English_sense; Chinese_refinement_is_optional; parent_review_required",
+      "confidence": "high_for_English_sense; Chinese_refinement_is_optional; application_review_required",
       "sources": [
         {
           "sourceId": "cambridge_fire",
@@ -173,7 +173,7 @@
       "subtype": "sentence_specific_hint_refinement",
       "priority": "optional_refinement_not_proven_error",
       "reason": "為保暖而生火是有意用火，不是森林或建物火災。原提示包含正確的火義，因此只是可選移除不適合此句的災害聯想。",
-      "confidence": "high_for_English_sense; Chinese_refinement_is_optional; parent_review_required",
+      "confidence": "high_for_English_sense; Chinese_refinement_is_optional; application_review_required",
       "sources": [
         {
           "sourceId": "cambridge_fire",
@@ -248,7 +248,7 @@
       "subtype": "sentence_specific_hint_refinement",
       "priority": "optional_refinement_not_proven_error",
       "reason": "forest fire broke out 明指森林火災；原提示火災已正確，可選只留下該句災害義，不能把原來的火概括視作必改錯誤。",
-      "confidence": "high_for_English_sense; Chinese_refinement_is_optional; parent_review_required",
+      "confidence": "high_for_English_sense; Chinese_refinement_is_optional; application_review_required",
       "sources": [
         {
           "sourceId": "collins_fire",
@@ -311,7 +311,7 @@
       "subtype": "modifier_precision",
       "priority": "optional_refinement_not_proven_error",
       "reason": "careful 強調仔細、用心，充分強調足量。現譯大意可成立，但若要更直接教此形容詞，可選細心；不是聲稱充分準備整句必錯，空 meaningHint 不變。",
-      "confidence": "high_for_English_sense; Chinese_refinement_is_optional; parent_review_required",
+      "confidence": "high_for_English_sense; Chinese_refinement_is_optional; application_review_required",
       "sources": [
         {
           "sourceId": "cambridge_careful",
@@ -370,7 +370,7 @@
       "subtype": "spatial_relation_disambiguation",
       "priority": "optional_refinement_not_proven_error",
       "reason": "either side of the platform 的所屬關係是該月臺的兩側；兩側月臺上容易被讀成兩個月臺。改為月臺的兩側可消除歧義，不假定原教材畫面，也不把既有中文一概定錯。",
-      "confidence": "high_for_English_sense; Chinese_refinement_is_optional; parent_review_required",
+      "confidence": "high_for_English_sense; Chinese_refinement_is_optional; application_review_required",
       "sources": [
         {
           "sourceId": "cambridge_either_sides",
@@ -429,7 +429,7 @@
       "subtype": "degree_precision",
       "priority": "optional_refinement_not_proven_error",
       "reason": "barely see 是勉強能看見，幾乎看不見更直接呈現該程度。看不太清楚可作自然描述，故僅列可選精度改善，不指稱已證實的誤譯。",
-      "confidence": "high_for_English_sense; Chinese_refinement_is_optional; parent_review_required",
+      "confidence": "high_for_English_sense; Chinese_refinement_is_optional; application_review_required",
       "sources": [
         {
           "sourceId": "oxford_barely",
@@ -488,7 +488,7 @@
       "subtype": "inclusive_deadline_clarification",
       "priority": "optional_refinement_not_proven_error",
       "reason": "no later than 明示不晚於截止日；最遲於能清楚包含當日。中文日前的慣用包含性可能依上下文而異，故這是消除截止界線歧義，不是已證明原譯排除了當日；不加具體時分。",
-      "confidence": "high_for_English_sense; Chinese_refinement_is_optional; parent_review_required",
+      "confidence": "high_for_English_sense; Chinese_refinement_is_optional; application_review_required",
       "sources": [
         {
           "sourceId": "cambridge_by",
@@ -561,7 +561,7 @@
       "subtype": "object_sense_precision",
       "priority": "optional_refinement_not_proven_error",
       "reason": "weights 在 lift 的運動情境指可舉的重物，而不是抽象重量數值；改重物可明示物件義。中文舉起重量亦可理解為借代，故保守列可選精度，且不猜測是槓鈴或啞鈴。",
-      "confidence": "high_for_English_sense; Chinese_refinement_is_optional; parent_review_required",
+      "confidence": "high_for_English_sense; Chinese_refinement_is_optional; application_review_required",
       "sources": [
         {
           "sourceId": "collins_weight",
@@ -632,7 +632,7 @@
       "subtype": "inclusive_deadline_clarification",
       "priority": "optional_refinement_not_proven_error",
       "reason": "by next Monday 包含下週一這個最後期限；最遲於可避免週一前的界線歧義。不是斷言原中文在慣用上必排除週一，也不補出當天幾點截止。",
-      "confidence": "high_for_English_sense; Chinese_refinement_is_optional; parent_review_required",
+      "confidence": "high_for_English_sense; Chinese_refinement_is_optional; application_review_required",
       "sources": [
         {
           "sourceId": "cambridge_by",

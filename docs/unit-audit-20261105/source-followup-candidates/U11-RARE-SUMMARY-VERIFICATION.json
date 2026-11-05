@@ -1,0 +1,829 @@
+{
+  "reportType": "U11 rare and cross-part-of-speech summary verification",
+  "checkedAtUtc": "2026-11-05T10:10:30+00:00",
+  "sourceCommit": "d26603868f60e60069d29ea00613d2e86f94d7bd",
+  "scope": "只核實 5 個字卡原有中文摘要及必要詞性／領域限制；不修改 repository，也不批准整卡 reviewed。",
+  "repositoryModified": false,
+  "summary": {
+    "wordCount": 5,
+    "originalGlossesReviewed": 22,
+    "supportedOrQualifiedGlosses": 19,
+    "pendingGlosses": 3,
+    "conclusion": "保留稀有但有據的名詞與期票登記義；原義不因少見刪除。southern 的交叉參照須嚴格區分動詞與名詞。",
+    "pendingExactClaims": [
+      {
+        "word": "dollar",
+        "claim": "純經濟的",
+        "reason": "CDICT 朗道資料確有經濟領域標籤，惟未取得原版、例證或英文精確定義。Merriam-Webster 的 often attributive 及 Cambridge 的形容詞摘要均不能推導出純經濟的。"
+      },
+      {
+        "word": "plain",
+        "claim": "無格式",
+        "reason": "Microsoft 原廠正文支持 plain text 無文字樣式格式，證據對象是整個詞組／格式名稱。CDICT 彙編雖將 plain 列成資訊名詞無格式，未交代原版與實際軟體語境，不能把詞組證據直接轉移至單字一般義。"
+      },
+      {
+        "word": "southern",
+        "claim": "男風",
+        "reason": "外部彙編搜尋摘要也出現男风，可追查污染來源。但未取得 southern 名詞南風的可靠證據。Century 的 Same as south, 1, or souther 明屬 southern v.i.，表示風向轉南；souther 的南風名詞不能跨詞性借用。"
+      }
+    ],
+    "evidenceLimitation": "Century 原著已讀相關 OCR 正文並與具名轉錄比對，未完成頁面像素校讀；Cambridge 形容詞線索與 IsDict 男風線索僅為搜尋摘要。"
+  },
+  "method": {
+    "bodyVersusSnippet": "page_body_read 為讀到相關正文；pdf_body_ocr_read 為原著掃描可搜尋文字，存在多欄 OCR 順序問題，未宣稱像素核對；search_snippet_only 不當作完整正文。",
+    "translationMethod": "英文定義與中文摘要對照是本次語義判讀。notebook 手冊的限制是英文詞典與教育部中文義項交叉判讀，不冒稱來源直接作中英對譯。",
+    "historicalSenses": "舊詞典確有的義保留並註明來源年代或用法；不能從年代推定一律 obsolete，也不從今日少見推定錯誤。",
+    "candidateOnly": "afterCandidate 是最小標示候選，尚未套用。帶待確認文字的候選不代表相應語義通過。若顯示欄不適合 pending 標示，保留原值並在審查紀錄保留 pending。",
+    "sourceNoteCaution": "原輸入 sourceNote 的大考中心詞表不能視為對每項稀有中文義的證明。",
+    "scopeBoundary": "本次只針對摘要；其他英文義、例句、圖片、讀音及整卡狀態均不在本次核准範圍。",
+    "publicSafety": "不含私人工作目錄、檔案服務識別碼或工具引文代碼。"
+  },
+  "words": [
+    {
+      "wordId": "W000235",
+      "word": "dollar",
+      "before": {
+        "wordId": "W000235",
+        "word": "dollar",
+        "wordVariants": [
+          "dollar"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "美元；元(加、澳等國貨幣單位)；純經濟的；元",
+        "meaningEn": "the basic monetary unit in many countries; equal to 100 cents; a piece of paper money worth one dollar",
+        "usagePattern": "N dollars; cost N dollars; a dollar bill",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "dollar",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "……美元；價值……美元；一美元鈔票"
+      },
+      "overallFinding": "三個貨幣類摘要可保留；純經濟的只找到彙編來源線索，尚無可靠定義支持其精確語義。",
+      "senseFindings": [
+        {
+          "before": "美元",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "n.",
+          "finding": "美國貨幣單位有詞典正文支持。",
+          "afterCandidate": "美元",
+          "sourceIds": [
+            "collins_dollar",
+            "mw_dollar"
+          ]
+        },
+        {
+          "before": "元(加、澳等國貨幣單位)",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "n.",
+          "finding": "加拿大、澳洲等使用的 dollar 貨幣單位有正文支持。",
+          "afterCandidate": "元(加、澳等國貨幣單位)",
+          "sourceIds": [
+            "collins_dollar"
+          ]
+        },
+        {
+          "before": "純經濟的",
+          "status": "pending_exact_gloss_and_pos",
+          "decision": "pending_retain",
+          "pos": "未核實；原中文呈形容詞形態",
+          "finding": "CDICT 朗道資料確有經濟領域標籤，惟未取得原版、例證或英文精確定義。Merriam-Webster 的 often attributive 及 Cambridge 的形容詞摘要均不能推導出純經濟的。",
+          "afterCandidate": null,
+          "sourceIds": [
+            "cdict_dollar_provenance",
+            "mw_dollar",
+            "cambridge_dollar_pos_snippet"
+          ],
+          "retainOriginal": true,
+          "proposedAnnotation": "純經濟的〔待確認〕",
+          "nextEvidenceNeeded": "可驗原始專業詞典版次與原頁，或直接界定該語義的可靠詞典及對應例句。"
+        },
+        {
+          "before": "元",
+          "status": "supported_overlapping_currency_gloss",
+          "decision": "retain",
+          "pos": "n.",
+          "finding": "作 dollar 貨幣單位的中文概括有依據；與第二義重疊，但原摘要未說明是否另有所指，本次不刪也不自行改成中國人民幣。",
+          "afterCandidate": "元",
+          "sourceIds": [
+            "collins_dollar",
+            "mw_dollar"
+          ]
+        }
+      ],
+      "afterCandidate": {
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "美元；元(加、澳等國貨幣單位)；純經濟的〔待確認〕；元"
+      },
+      "candidateScope": "只標出待確認項；不因搜索未證實就刪義，不據商務詞典詞性摘要新增 adj.。",
+      "reviewStatusRecommendation": "partial_pending",
+      "wholeCardReviewedAuthorized": false,
+      "mustPreserve": [
+        "n. 主詞性",
+        "原有兩處元與純經濟的原文"
+      ],
+      "notAuthorizedByEvidence": [
+        "把純經濟的直接當現代一般形容詞義",
+        "只憑常作定語就宣告純經濟的已驗證",
+        "將元擅自限定人民幣或刪作重複"
+      ]
+    },
+    {
+      "wordId": "W001292",
+      "word": "eastern",
+      "before": {
+        "wordId": "W001292",
+        "word": "eastern",
+        "wordVariants": [
+          "eastern"
+        ],
+        "level": "LV2",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "東方人；東正教徒；東方的；向東的",
+        "meaningEn": "in, from, or relating to the east part of a place",
+        "usagePattern": "eastern Taiwan/Asia; the eastern part of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "eastern",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "台灣／亞洲東部；……的東部地區"
+      },
+      "overallFinding": "兩個方向形容詞及兩個歷史名詞均有來源；名詞需獨立詞性與舊詞典／大寫宗教限制。",
+      "senseFindings": [
+        {
+          "before": "東方人",
+          "status": "supported_requires_pos_and_usage_label",
+          "decision": "qualify",
+          "pos": "n.",
+          "finding": "Century 原著與轉錄均列東部地區或東方國家之人，不是現代形容詞義。",
+          "afterCandidate": "（n.，舊詞典用法）東方人",
+          "sourceIds": [
+            "century_eastern",
+            "wordnik_century_eastern"
+          ],
+          "usageCaution": "舊定義以歐洲為方位參考，不能擅改成只指當代東亞人；不宣稱這是今日日常首選稱呼。"
+        },
+        {
+          "before": "東正教徒",
+          "status": "supported_requires_capitalization_and_religious_label",
+          "decision": "qualify",
+          "pos": "n.",
+          "finding": "Century 名詞第2義明標大寫，指 orthodox Oriental or Greek Church 的成員；支持中文東正教徒，應保留歷史宗教用法界線。",
+          "afterCandidate": "（n.，大寫 Eastern，宗教舊用法）東正教徒",
+          "sourceIds": [
+            "century_eastern",
+            "wordnik_century_eastern"
+          ],
+          "usageCaution": "不是任何東方宗教信徒，也不是泛指所有東方基督教教派；不可只用宗教形容詞定義替代名詞證據。"
+        },
+        {
+          "before": "東方的",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "adj.",
+          "finding": "方位或區域的形容詞義有正文。",
+          "afterCandidate": "東方的",
+          "sourceIds": [
+            "collins_eastern"
+          ]
+        },
+        {
+          "before": "向東的",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "adj.",
+          "finding": "朝東、面向或行向東方有正文。",
+          "afterCandidate": "向東的",
+          "sourceIds": [
+            "collins_eastern"
+          ]
+        }
+      ],
+      "afterCandidate": {
+        "pos": "adj.",
+        "posAll": [
+          "adj.",
+          "n."
+        ],
+        "meaningZh": "（adj.）東方的；向東的；（n.，舊詞典用法）東方人；（n.，大寫 Eastern，宗教舊用法）東正教徒"
+      },
+      "candidateScope": "保留 adj. 主詞性，增加 n. 與使用限制。原著全文為 OCR，未宣稱完成影像校讀；不因此批准整卡 reviewed。",
+      "reviewStatusRecommendation": "source_supported_summary_candidate_only",
+      "wholeCardReviewedAuthorized": false,
+      "mustPreserve": [
+        "adj. 主詞性",
+        "兩個可證名詞義",
+        "Eastern 的大寫宗教限制"
+      ],
+      "notAuthorizedByEvidence": [
+        "刪除東方人或東正教徒",
+        "把 eastern 整張改成名詞或一律大寫",
+        "把歷史名詞義當成所有現代語境通用"
+      ]
+    },
+    {
+      "wordId": "W001588",
+      "word": "notebook",
+      "before": {
+        "wordId": "W001588",
+        "word": "notebook",
+        "wordVariants": [
+          "notebook"
+        ],
+        "level": "LV2",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "筆記本；手冊；期票簿",
+        "meaningEn": "a book with blank pages for recording notes or memoranda; a small compact portable computer",
+        "usagePattern": "a/the notebook; notebook of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "notebook",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "該筆記本；……的筆記本"
+      },
+      "overallFinding": "期票簿有直接可靠詞典依據；手冊可保留但只指記事小冊。",
+      "senseFindings": [
+        {
+          "before": "筆記本",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "n.",
+          "finding": "供記錄筆記的小冊是主要義。",
+          "afterCandidate": "筆記本",
+          "sourceIds": [
+            "collins_notebook"
+          ]
+        },
+        {
+          "before": "手冊",
+          "status": "supported_limited_translation",
+          "decision": "qualify",
+          "pos": "n.",
+          "finding": "英文字典 notebook 的記事小冊定義，與教育部手冊第1義對應；不支持把 notebook 泛當操作指南或專業知識手冊。此為兩個詞典的語義對照，不是教育部直接翻譯英文字。",
+          "afterCandidate": "（記事用）手冊",
+          "sourceIds": [
+            "collins_notebook",
+            "moe_handbook"
+          ]
+        },
+        {
+          "before": "期票簿",
+          "status": "supported_requires_precise_scope",
+          "decision": "clarify",
+          "pos": "n.",
+          "finding": "Collins 明列登記 promissory notes 的簿冊。最小補上登記，以免誤解為空白期票表單裝訂本。",
+          "afterCandidate": "期票登記簿",
+          "sourceIds": [
+            "collins_notebook"
+          ],
+          "usageCaution": "不加古義、英式專用等來源未一致明示的標籤。"
+        }
+      ],
+      "afterCandidate": {
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "筆記本；（記事用）手冊；期票登記簿"
+      },
+      "candidateScope": "只限定記事用手冊與精確化期票簿；不新增電腦義，也不聲稱全部卡片欄位已審查。",
+      "reviewStatusRecommendation": "source_supported_summary_candidate_only",
+      "wholeCardReviewedAuthorized": false,
+      "mustPreserve": [
+        "三個原有義",
+        "n. 主詞性"
+      ],
+      "notAuthorizedByEvidence": [
+        "因期票簿少見而刪除",
+        "把期票登記簿改成支票簿",
+        "把手冊泛化成任何 manual／handbook"
+      ]
+    },
+    {
+      "wordId": "W001636",
+      "word": "plain",
+      "before": {
+        "wordId": "W001636",
+        "word": "plain",
+        "wordVariants": [
+          "plain"
+        ],
+        "level": "LV2",
+        "pos": "adj./n.",
+        "posAll": [
+          "adj.",
+          "n."
+        ],
+        "meaningZh": "樸素的；簡單的；明白的；平原；草原；樸實無華的東西；無格式",
+        "meaningEn": "simple in style, without decoration; a large flat area of land with few trees",
+        "usagePattern": "a plain N; plain to see; the Great Plains",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "plain",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "樸素的……；顯而易見；大平原"
+      },
+      "overallFinding": "三個形容詞、平原／草原地貌及樸實無華的東西均有據。原廠資料僅直接支持 plain text 格式，單字無格式仍待確認。",
+      "senseFindings": [
+        {
+          "before": "樸素的",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "adj.",
+          "finding": "無裝飾、不華麗的形容詞義有正文。",
+          "afterCandidate": "樸素的",
+          "sourceIds": [
+            "collins_plain",
+            "ahd_plain"
+          ]
+        },
+        {
+          "before": "簡單的",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "adj.",
+          "finding": "不複雜的形容詞義有正文。",
+          "afterCandidate": "簡單的",
+          "sourceIds": [
+            "collins_plain"
+          ]
+        },
+        {
+          "before": "明白的",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "adj.",
+          "finding": "意思清楚、易懂或顯而易見的形容詞義有正文。",
+          "afterCandidate": "明白的",
+          "sourceIds": [
+            "ahd_plain"
+          ]
+        },
+        {
+          "before": "平原",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "n.",
+          "finding": "平坦開闊地形名詞有正文。",
+          "afterCandidate": "平原",
+          "sourceIds": [
+            "collins_plain",
+            "ahd_plain"
+          ]
+        },
+        {
+          "before": "草原",
+          "status": "supported_requires_geographic_scope",
+          "decision": "qualify",
+          "pos": "n.",
+          "finding": "Webster’s New World 地貌定義明列 prairie、steppe 為類型；支持平坦、開闊、少樹草原，並非任何草地。",
+          "afterCandidate": "（平坦開闊的）草原",
+          "sourceIds": [
+            "collins_plain"
+          ]
+        },
+        {
+          "before": "樸實無華的東西",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "n.",
+          "finding": "American Heritage 名詞第2義直接列無裝飾或無多餘成分之物。",
+          "afterCandidate": "樸實無華的東西",
+          "sourceIds": [
+            "ahd_plain"
+          ]
+        },
+        {
+          "before": "無格式",
+          "status": "pending_exact_standalone_gloss",
+          "decision": "pending_retain",
+          "pos": "原資料含 n.／資訊標籤；本項詞性尚未核實",
+          "finding": "Microsoft 原廠正文支持 plain text 無文字樣式格式，證據對象是整個詞組／格式名稱。CDICT 彙編雖將 plain 列成資訊名詞無格式，未交代原版與實際軟體語境，不能把詞組證據直接轉移至單字一般義。",
+          "afterCandidate": null,
+          "sourceIds": [
+            "microsoft_plain_text",
+            "cdict_plain_provenance"
+          ],
+          "retainOriginal": true,
+          "proposedAnnotation": "無格式〔資訊義待確認〕",
+          "verifiedPhraseNote": "plain text 是純文字格式，不支援粗體、斜體、字色等文字格式。",
+          "nextEvidenceNeeded": "原始詞典或原廠文件直接界定 plain 本字／特定介面標籤；若原文意在 plain text，須取得來源確認後才限定為該搭配。"
+        }
+      ],
+      "afterCandidate": {
+        "pos": "adj./n.",
+        "posAll": [
+          "adj.",
+          "n."
+        ],
+        "meaningZh": "（adj.）樸素的；簡單的；明白的；（n.）平原；（平坦開闊的）草原；樸實無華的東西；無格式〔資訊義待確認〕"
+      },
+      "candidateScope": "分列已核實詞性與地貌限制；原無格式原文保留 pending，不直接改名 plain text 也不刪除。",
+      "reviewStatusRecommendation": "partial_pending",
+      "wholeCardReviewedAuthorized": false,
+      "mustPreserve": [
+        "adj./n. 主詞性",
+        "樸實無華的東西名詞義",
+        "無格式原文與待確認紀錄"
+      ],
+      "notAuthorizedByEvidence": [
+        "刪除草原或樸實無華的東西",
+        "把 plain text 的格式證據說成 plain 一般名詞義已通過",
+        "把無格式理解成沒有任何編碼或資料格式"
+      ]
+    },
+    {
+      "wordId": "W001829",
+      "word": "southern",
+      "before": {
+        "wordId": "W001829",
+        "word": "southern",
+        "wordVariants": [
+          "southern"
+        ],
+        "level": "LV2",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "南方人；男風；向南方的；來自南方的",
+        "meaningEn": "in or characteristic of a region of the United States south of (approximately) the Mason-Dixon line; situated in or coming from regions of the south",
+        "usagePattern": "be southern; southern + N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "southern",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "位於南方；南方的……"
+      },
+      "overallFinding": "方向形容詞及南方人名詞有據；男風原文可疑，但尚未找到 southern 作南風名詞的可靠依據，不可只改同音字就宣告修正。",
+      "senseFindings": [
+        {
+          "before": "南方人",
+          "status": "supported_requires_pos_split",
+          "decision": "qualify",
+          "pos": "n.",
+          "finding": "Century 原著名詞確列南方國家或區域之人；Collins 的當代特定名詞用法為大寫 Southern、指美國南方人，其中 Webster’s New World 標方言異形。",
+          "afterCandidate": "（n.，舊詞典用法）南方人",
+          "sourceIds": [
+            "century_southern",
+            "collins_southern",
+            "collins_southerner"
+          ],
+          "usageCaution": "保留歷史一般地域義，不因 Collins 的美國條目就把所有南方人限為美國；亦不把整張字卡換成 southerner。"
+        },
+        {
+          "before": "男風",
+          "status": "pending_suspected_typo_without_target_sense",
+          "decision": "pending_retain",
+          "pos": "未核實；外部彙編摘要作 n.",
+          "finding": "外部彙編搜尋摘要也出現男风，可追查污染來源。但未取得 southern 名詞南風的可靠證據。Century 的 Same as south, 1, or souther 明屬 southern v.i.，表示風向轉南；souther 的南風名詞不能跨詞性借用。",
+          "afterCandidate": null,
+          "sourceIds": [
+            "century_southern",
+            "wordnik_century_southern",
+            "isdict_southern_provenance",
+            "collins_southern"
+          ],
+          "retainOriginal": true,
+          "proposedAnnotation": "男風〔待確認〕",
+          "proposedTypoCorrectionAuthorized": false,
+          "nextEvidenceNeeded": "直接收 southern 為南風名詞的可靠詞典正文，或可驗原始資料證明此處究竟誤字、誤詞頭還是誤併詞性。",
+          "rejectedEvidenceRoute": "不能把 southern breeze／southern wind 的整詞組翻譯，或 southern v.i. 對 souther v.i. 的交叉參照，冒充 southern n.=南風。"
+        },
+        {
+          "before": "向南方的",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "adj.",
+          "finding": "朝南、面向南方的形容詞有正文。",
+          "afterCandidate": "向南方的",
+          "sourceIds": [
+            "collins_southern"
+          ]
+        },
+        {
+          "before": "來自南方的",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "adj.",
+          "finding": "來自南方，包括修飾風的形容詞義有正文。",
+          "afterCandidate": "來自南方的",
+          "sourceIds": [
+            "collins_southern"
+          ]
+        }
+      ],
+      "afterCandidate": {
+        "pos": "adj.",
+        "posAll": [
+          "adj.",
+          "n."
+        ],
+        "meaningZh": "（adj.）向南方的；來自南方的；（n.，舊詞典用法）南方人；男風〔待確認〕"
+      },
+      "candidateScope": "保留 adj. 主詞性，只為已證南方人加 n. 與限制；男風原樣待確認。沒有提出男改南的已核准修正，也不新增原摘要沒有的風向動詞。",
+      "reviewStatusRecommendation": "partial_pending",
+      "wholeCardReviewedAuthorized": false,
+      "mustPreserve": [
+        "adj. 主詞性",
+        "南方人有據名詞義",
+        "男風原文及疑點"
+      ],
+      "notAuthorizedByEvidence": [
+        "直接將男風改為南風",
+        "新增南風為已核實 southern 名詞義",
+        "將 Century v.i. 交叉參照當名詞",
+        "因稀有刪除南方人"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "collins_dollar",
+      "title": "Collins: dollar",
+      "url": "https://www.collinsdictionary.com/dictionary/english/dollar",
+      "publisher": "HarperCollins",
+      "evidenceMode": "page_body_read",
+      "readScope": "COBUILD、Collins English Dictionary 及美語詞典各 dollar 定義。",
+      "excerpts": [
+        "the unit of money used in the USA, Canada, Australia, and some other countries",
+        "a coin or piece of paper money"
+      ],
+      "notes": "支持美、加、澳等貨幣單位。只核實摘要所需國家，不把頁面長國家清單當成現行貨幣制度資料。"
+    },
+    {
+      "sourceId": "mw_dollar",
+      "title": "Merriam-Webster: dollar",
+      "url": "https://www.merriam-webster.com/dictionary/dollar",
+      "publisher": "Merriam-Webster",
+      "evidenceMode": "page_body_read",
+      "readScope": "noun 定義及 often attributive 標籤。",
+      "excerpts": [
+        "often attributive",
+        "any of various basic monetary units"
+      ],
+      "notes": "定語使用不直接證明單字等於純經濟的。不能把未收此中文釋義當作已證偽。"
+    },
+    {
+      "sourceId": "cdict_dollar_provenance",
+      "title": "CDICT 所載朗道英漢字典: dollar",
+      "url": "https://cdict.net/q/dollar",
+      "publisher": "CDICT（詞典資料彙編；原版著作未核實）",
+      "evidenceMode": "page_body_read",
+      "readScope": "頁面 Source(1) 的原樣中文。",
+      "excerpts": [
+        "〖經〗 純經濟的, 美元, 元"
+      ],
+      "notes": "僅供追查來源。確實存在同文字與經濟標籤，但無可驗版次、原版頁碼或英文細分定義；不作該義正確性的獨立權威。"
+    },
+    {
+      "sourceId": "cambridge_dollar_pos_snippet",
+      "title": "Cambridge: dollar（商務詞典詞性線索）",
+      "url": "https://dictionary.cambridge.org/dictionary/english/dollar",
+      "publisher": "Cambridge University Press",
+      "evidenceMode": "search_snippet_only",
+      "readScope": "搜尋結果中的 Cambridge Business English Dictionary 詞性標籤；兩個公開英文頁正文均未取得。",
+      "excerpts": [
+        "adjective [ before noun ]"
+      ],
+      "notes": "只證明搜尋索引顯示形容詞項，沒有讀到相應定義，不足核實純經濟的。不得假稱已讀正文。"
+    },
+    {
+      "sourceId": "collins_eastern",
+      "title": "Collins: eastern",
+      "url": "https://www.collinsdictionary.com/dictionary/english/eastern",
+      "publisher": "HarperCollins",
+      "evidenceMode": "page_body_read",
+      "readScope": "形容詞方向義及美語大寫宗教標籤。",
+      "excerpts": [
+        "situated in or towards the east",
+        "facing or moving towards the east"
+      ],
+      "notes": "支持東方的及向東的。宗教形容詞不等於東正教徒名詞；後者另核對歷史詞典。"
+    },
+    {
+      "sourceId": "century_eastern",
+      "title": "The Century Dictionary: eastern（1889–1891 原著掃描）",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/80/The_Century_dictionary_-_an_encyclopedic_lexicon_of_the_English_language-_prepared_under_the_superintendence_of_William_Dwight_Whitney_%28IA_centurydictipt700whituoft%29.pdf",
+      "publisher": "New York: Century Co.; William Dwight Whitney 編",
+      "evidenceMode": "pdf_body_ocr_read",
+      "readScope": "eastern 的 a. and n.、名詞 II.1 與 II.2，以及大寫標籤。",
+      "excerpts": [
+        "A person living in or belonging to the eastern part of a country or region",
+        "[cap.] A member of the orthodox Oriental or Greek Church"
+      ],
+      "notes": "原著掃描的 OCR 多欄文字順序交錯；以 Wordnik 明示 Century 來源的轉錄交叉核對義項。原著宗教義明標 cap.，不是所有小寫 eastern 的一般義。原著 II.1 尾見 Rare；本報告最小候選採舊詞典用法，不把今日頻率當作已量測事實。未完成頁面像素核對，不虛填印刷頁碼。"
+    },
+    {
+      "sourceId": "wordnik_century_eastern",
+      "title": "Wordnik 所載 The Century Dictionary: eastern",
+      "url": "https://www.wordnik.com/words/eastern",
+      "publisher": "Wordnik（明示 The Century Dictionary 來源）",
+      "evidenceMode": "page_body_read",
+      "readScope": "Definitions 中 The Century Dictionary 區段的兩個 noun 條目。",
+      "excerpts": [
+        "[capitalized]",
+        "A member of the orthodox Oriental or Greek Church"
+      ],
+      "notes": "與原著 PDF 文字交叉核對。使用的是明示來源詞典區段，不是 Wiktionary、社群例句或一般詞語關聯。"
+    },
+    {
+      "sourceId": "collins_notebook",
+      "title": "Collins: notebook",
+      "url": "https://www.collinsdictionary.com/dictionary/english/notebook",
+      "publisher": "HarperCollins",
+      "evidenceMode": "page_body_read",
+      "readScope": "COBUILD、Collins English Dictionary 第1–2義及美語第3義。",
+      "excerpts": [
+        "a small book for writing notes in",
+        "a book for registering promissory notes"
+      ],
+      "notes": "直接支持記事本及期票登記簿。期票簿不是誤加義，不能因少見而刪；詞典未標 archaic，不自行加古義標籤。"
+    },
+    {
+      "sourceId": "moe_handbook",
+      "title": "教育部《重編國語辭典修訂本》: 手冊",
+      "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=130165",
+      "publisher": "中華民國教育部",
+      "evidenceMode": "page_body_read",
+      "readScope": "手冊兩個中文義項。",
+      "excerpts": [
+        "一種便於瀏覽的記事小冊。",
+        "介紹一般性或專業性知識的小冊子。"
+      ],
+      "notes": "中文手冊可指記事小冊，也可指知識／操作類小冊。和 notebook 英文定義交叉對照，只支持前者；不聲稱教育部直接給 notebook 翻譯。"
+    },
+    {
+      "sourceId": "collins_plain",
+      "title": "Collins: plain",
+      "url": "https://www.collinsdictionary.com/dictionary/english/plain",
+      "publisher": "HarperCollins",
+      "evidenceMode": "page_body_read",
+      "readScope": "形容詞簡單、樸素、清楚義，以及 Webster’s New World 名詞地貌義。",
+      "excerpts": [
+        "without adornment or show",
+        "not complicated; simple",
+        "an extent of relatively level country with few trees; prairie, steppe, etc."
+      ],
+      "notes": "草原可保留，但限定為平坦開闊、少樹的地貌，不等於所有草地。其他無關的動詞、針織等義不新增。"
+    },
+    {
+      "sourceId": "ahd_plain",
+      "title": "American Heritage Dictionary: plain",
+      "url": "https://ahdictionary.com/word/search.html?q=plain",
+      "publisher": "HarperCollins, The American Heritage Dictionary of the English Language, Fifth Edition",
+      "evidenceMode": "page_body_read",
+      "readScope": "adj.1–8 及 n.1–2 正文。",
+      "excerpts": [
+        "Obvious to the perception or mind; evident",
+        "Something free of ornamentation or extraneous matter"
+      ],
+      "notes": "名詞第2義直接支持樸實無華的東西，並非由形容詞憑空名詞化。"
+    },
+    {
+      "sourceId": "microsoft_plain_text",
+      "title": "Microsoft Support: Change the message format to HTML, Rich Text Format, or plain text in Outlook",
+      "url": "https://support.microsoft.com/en-us/outlook/change-the-message-format-to-html-rich-text-format-or-plain-text-in-outlook",
+      "publisher": "Microsoft",
+      "evidenceMode": "page_body_read",
+      "readScope": "新舊 Outlook 之 Plain text 節。",
+      "excerpts": [
+        "Plain text",
+        "it doesn’t support bold or italic text, colored fonts, or other text formatting"
+      ],
+      "notes": "證據對象是 plain text 整個格式名稱／詞組。支持無文字樣式格式的純文字，不證明 plain 單字可作一般名詞無格式，也不表示完全無編碼、換行或檔案格式。"
+    },
+    {
+      "sourceId": "cdict_plain_provenance",
+      "title": "CDICT 所載朗道與懶蟲英漢詞典: plain",
+      "url": "https://cdict.net/q/plain",
+      "publisher": "CDICT（詞典資料彙編；原版著作未核實）",
+      "evidenceMode": "page_body_read",
+      "readScope": "Source(1) 與 Source(3) 的資訊標籤及中文。",
+      "excerpts": [
+        "〖計〗 無格式",
+        "[計] 無格式"
+      ],
+      "notes": "同義串來源線索確有，但未提供可驗原版著作與具體軟體／詞組環境，不能取代可靠技術定義。"
+    },
+    {
+      "sourceId": "collins_southern",
+      "title": "Collins: southern",
+      "url": "https://www.collinsdictionary.com/dictionary/english/southern",
+      "publisher": "HarperCollins",
+      "evidenceMode": "page_body_read",
+      "readScope": "Collins 方向形容詞；Webster’s New World 及美語 Southern 名詞條目。",
+      "excerpts": [
+        "in, of, to, toward, or facing the south",
+        "from the south",
+        "(S-) dial. var. of southerner (sense 2)"
+      ],
+      "notes": "形容詞 wind 搭配不是 southern 單字的南風名詞義。Webster’s New World 指向美國南方人的方言異形並大寫，不可把該限制泛推所有歷史名詞用法。"
+    },
+    {
+      "sourceId": "collins_southerner",
+      "title": "Collins: southerner",
+      "url": "https://www.collinsdictionary.com/dictionary/english/southerner",
+      "publisher": "HarperCollins",
+      "evidenceMode": "page_body_read",
+      "readScope": "核對 southern 所連的 southerner sense 2。",
+      "excerpts": [
+        "a person born or living in a U.S. state of the South"
+      ],
+      "notes": "只用於解明交叉參照的美國範圍，不把 southern 全部改字為 southerner。"
+    },
+    {
+      "sourceId": "century_southern",
+      "title": "The Century Dictionary: southern、souther（1889–1891 原著掃描）",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/The_Century_dictionary_-_an_encyclopedic_lexicon_of_the_English_language-_prepared_under_the_superintendence_of_William_Dwight_Whitney_%28IA_centurydictipt2000whituoft%29.pdf",
+      "publisher": "New York: Century Co.; William Dwight Whitney 編",
+      "evidenceMode": "pdf_body_ocr_read",
+      "readScope": "southern 的 a. and n.、分開另起之 southern v.i.，以及 souther 名詞與動詞。",
+      "excerpts": [
+        "v. i.",
+        "To turn or veer toward the south"
+      ],
+      "notes": "關鍵：Same as south, 1, or souther 屬另一個 southern v.i. 條目，並有 southerned 的例證；其參照的是風向轉南的動詞。不能跨詞性接到 souther 的南風名詞來證明 southern=南風。原著名詞南方人則確有。OCR 多欄交錯但詞頭與 v.i. 可辨；未完成像素核對，不虛填頁碼。"
+    },
+    {
+      "sourceId": "wordnik_century_southern",
+      "title": "Wordnik 所載 The Century Dictionary: southern",
+      "url": "https://www.wordnik.com/words/southern",
+      "publisher": "Wordnik（明示 The Century Dictionary 來源）",
+      "evidenceMode": "page_body_read",
+      "readScope": "Century 區段之人名詞與 Same as... 交叉參照。",
+      "excerpts": [
+        "A native or an inhabitant of the south",
+        "Same as south, 1, or souther."
+      ],
+      "notes": "此網頁的交叉參照詞性欄缺漏；原著核對後確定是動詞，不能把頁面相鄰位置誤認為另一名詞義。"
+    },
+    {
+      "sourceId": "isdict_southern_provenance",
+      "title": "IsDict: southern（來源追查線索）",
+      "url": "https://isdict.com/word/southern-xomdupeoc",
+      "publisher": "IsDict（未核實原始詞典版本）",
+      "evidenceMode": "search_snippet_only",
+      "readScope": "只讀搜尋索引顯示的中文；正文開啟逾時。",
+      "excerpts": [
+        "n. 南方人, 男风 a. 向南方的, 来自南方的"
+      ],
+      "notes": "同誤字確見於外部彙編摘要，不是本次創造；但不能證明原譯本的意思，更不能授權把男風逕改南風。"
+    }
+  ],
+  "accessLimitations": [
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english/dollar",
+      "result": "正文回傳 403；僅將已見搜尋摘要列為詞性線索，未用作精確語義核准。"
+    },
+    {
+      "url": "https://dictionary.cambridge.org/us/dictionary/english/dollar",
+      "result": "正文回傳 403；未聲稱取得定義。"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/80/The_Century_dictionary_-_an_encyclopedic_lexicon_of_the_English_language-_prepared_under_the_superintendence_of_William_Dwight_Whitney_%28IA_centurydictipt700whituoft%29.pdf",
+      "result": "搜尋工具可讀原著 OCR 正文；PDF 截圖因檔案過大失敗，直接檔案下載也未成功。沒有宣稱完成像素核驗。"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/The_Century_dictionary_-_an_encyclopedic_lexicon_of_the_English_language-_prepared_under_the_superintendence_of_William_Dwight_Whitney_%28IA_centurydictipt2000whituoft%29.pdf",
+      "result": "搜尋工具可讀原著 OCR 正文；PDF 截圖因檔案過大失敗，沒有宣稱完成像素核驗。"
+    },
+    {
+      "url": "https://cdict.net/q/southern",
+      "result": "未取得正文，不作證據。"
+    },
+    {
+      "url": "https://isdict.com/word/southern-xomdupeoc",
+      "result": "正文開啟逾時；只保留已見搜尋摘要作來源追查線索。"
+    }
+  ]
+}

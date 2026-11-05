@@ -1,0 +1,798 @@
+{
+  "schemaVersion": 2,
+  "unit": "U11",
+  "provenance": {
+    "inputFile": "u11-current-examples-d266038.json",
+    "inputSha256": "7e0561710005682998355e5306469dfcaadbc5674f23d97f0b754d60694a0e7c",
+    "reviewedCommit": "d26603868f60e60069d29ea00613d2e86f94d7bd",
+    "reviewedBlobSha": "e91efc2cc5a89511229783107060b0f3c85f6fd8",
+    "reviewDateUTC": "2026-11-05",
+    "inputOrigin": "This review used the current examples snapshot from the stated GitHub blob rather than independently refetching it.",
+    "originalTextbookVerification": "Not performed: original textbook pages were not supplied for this text review. Dictionary evidence verifies lexical meanings or constructions, not verbatim textbook provenance."
+  },
+  "summary": {
+    "formalWordCount": 71,
+    "wordsWithExamples": 54,
+    "formalWordsWithoutExamplesCount": 17,
+    "exampleCount": 192,
+    "manuallyReviewedRows": 192,
+    "clozeAnswerExactReconstructionPassed": 192,
+    "newDefiniteClozeAnswerMismatchCount": 0,
+    "newDefiniteTextErrorCandidates": 1,
+    "optionalPrecisionCandidateCount": 3,
+    "hintPrecisionCandidates": 0,
+    "separateChineseTranslationCandidates": 3,
+    "pendingExampleItems": 3,
+    "pendingPOSConventionItems": 3,
+    "newPendingOriginalTextbookItems": 0,
+    "newMandatoryPOSChanges": 0,
+    "retainedWithoutNewCandidateOrPendingItem": 185,
+    "emptyDailyExamHintsPreserved": 104,
+    "emptyHintsByExampleType": {
+      "daily": 51,
+      "exam": 53
+    },
+    "nonemptyHintsReadInContext": 88,
+    "existingStatusCountsPreserved": {
+      "reviewed": 114,
+      "approved": 78
+    },
+    "exampleTypeCounts": {
+      "daily": 54,
+      "textbook": 78,
+      "exam": 59,
+      "basic": 1
+    },
+    "protectedPOSConventionsPreserved": [
+      "EX1c43652d",
+      "EX600a76ea",
+      "EXcb617f7e"
+    ],
+    "repoFilesModified": false,
+    "statusesModified": false,
+    "gitOperationsPerformed": false,
+    "findingsSummaryZh": "192 列已逐句實讀，全部 cloze 精確重建。新增明確文字錯誤 1 項：senior high students 應譯高中學生，不是高三學生。另有 3 項可選中文精度改善，不計為證實錯誤。185 列無新提案或待確認項；3 個指定詞性慣例保持待確認，104 個空提示保留。",
+    "countingCaution": "185 表示本輪逐句檢視後可保留且無新提案或待確認，不等於已比對 185 句原教材。3 項可選原值亦可保留。17 個無例句正式詞另列，不計入 192 列待確認。尚未核對原教材全文；零新原教材疑義不代表教材來源已驗證。"
+  },
+  "groups": {
+    "明確候選": [
+      "U11-D01"
+    ],
+    "可選精度改善": [
+      "U11-T01",
+      "U11-T02",
+      "U11-T03"
+    ],
+    "待詞性慣例確認": [
+      "U11-P01",
+      "U11-P02",
+      "U11-P03"
+    ]
+  },
+  "formalWordsWithoutExamples": [
+    {
+      "wordId": "W000110",
+      "word": "bottom",
+      "pos": "n./adj./v.",
+      "posAll": [
+        "n.",
+        "adj.",
+        "v."
+      ],
+      "meaningZh": "（名詞）底部；（形容詞）底部的；（動詞）給……裝底；查明根源／真相；（get to the bottom of）探究真相",
+      "meaningEn": "the lower side of anything; the lowest part of anything"
+    },
+    {
+      "wordId": "W000152",
+      "word": "cent",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "分；美分",
+      "meaningEn": "a fractional monetary unit of several countries"
+    },
+    {
+      "wordId": "W000235",
+      "word": "dollar",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "美元；元(加、澳等國貨幣單位)；純經濟的；元",
+      "meaningEn": "the basic monetary unit in many countries; equal to 100 cents; a piece of paper money worth one dollar"
+    },
+    {
+      "wordId": "W000670",
+      "word": "pot",
+      "pos": "n./v.",
+      "posAll": [
+        "n.",
+        "v."
+      ],
+      "meaningZh": "盆；罐；壺；坩堝",
+      "meaningEn": "metal or earthenware cooking vessel that is usually round and deep; often has a handle and lid; the quantity contained in a pot"
+    },
+    {
+      "wordId": "W001290",
+      "word": "earthquake",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "地震",
+      "meaningEn": "shaking and vibration at the surface of the earth resulting from underground movement along a fault plane or from volcanic activity; a disturbance that is extremely disruptive"
+    },
+    {
+      "wordId": "W001588",
+      "word": "notebook",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "筆記本；手冊；期票簿",
+      "meaningEn": "a book with blank pages for recording notes or memoranda; a small compact portable computer"
+    },
+    {
+      "wordId": "W001821",
+      "word": "soil",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "土壤；土地；國家；國土",
+      "meaningEn": "the part of the earth's surface consisting of humus and disintegrated rock"
+    },
+    {
+      "wordId": "W001829",
+      "word": "southern",
+      "pos": "adj.",
+      "posAll": [
+        "adj."
+      ],
+      "meaningZh": "南方人；男風；向南方的；來自南方的",
+      "meaningEn": "in or characteristic of a region of the United States south of (approximately) the Mason-Dixon line; situated in or coming from regions of the south"
+    },
+    {
+      "wordId": "W001854",
+      "word": "stream",
+      "pos": "n./v.",
+      "posAll": [
+        "n.",
+        "v."
+      ],
+      "meaningZh": "水流；小河；流出；趨勢",
+      "meaningEn": "(n.) a natural flow of water; a continuous succession, supply or current of events or ideas; (v.) to flow or move continuously, to emit in a stream, or to transmit/receive continuous digital media."
+    },
+    {
+      "wordId": "W002324",
+      "word": "fighter",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "鬥士；戰士；好戰者；戰鬥機",
+      "meaningEn": "a person who fights, such as a soldier or boxer; a fast armed military aircraft designed to destroy enemy aircraft."
+    },
+    {
+      "wordId": "W002486",
+      "word": "leap",
+      "pos": "n./v.",
+      "posAll": [
+        "n.",
+        "v."
+      ],
+      "meaningZh": "跳躍；劇增；急變；被越過之物",
+      "meaningEn": "(n.) a jump, abrupt transition, or place/distance jumped over; (v.) to jump, move suddenly, or pass over by jumping."
+    },
+    {
+      "wordId": "W002631",
+      "word": "penny",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "便士；一分；小錢；點滴",
+      "meaningEn": "a fractional monetary unit of Ireland and the United Kingdom; equal to one hundredth of a pound; a coin worth one-hundredth of the value of the basic unit"
+    },
+    {
+      "wordId": "W002665",
+      "word": "pottery",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "陶器；陶器廠",
+      "meaningEn": "ceramic ware made from clay and baked in a kiln; the craft of making earthenware"
+    },
+    {
+      "wordId": "W003188",
+      "word": "congratulate",
+      "pos": "v.",
+      "posAll": [
+        "v."
+      ],
+      "meaningZh": "祝賀；慶賀",
+      "meaningEn": "express congratulations"
+    },
+    {
+      "wordId": "W003975",
+      "word": "troublesome",
+      "pos": "adj.",
+      "posAll": [
+        "adj."
+      ],
+      "meaningZh": "麻煩的；令人討厭的",
+      "meaningEn": "difficult to deal with"
+    },
+    {
+      "wordId": "W005706",
+      "word": "priceless",
+      "pos": "adj.",
+      "posAll": [
+        "adj."
+      ],
+      "meaningZh": "無價的；極貴重的",
+      "meaningEn": "having incalculable monetary, intellectual, or spiritual worth"
+    },
+    {
+      "wordId": "W005939",
+      "word": "trifle",
+      "pos": "n./v.",
+      "posAll": [
+        "n.",
+        "v."
+      ],
+      "meaningZh": "瑣事；少量；浪費；開玩笑",
+      "meaningEn": "(n.) something of little importance or value, a small amount, or a layered sponge-cake dessert; (v.) to treat lightly, act without serious purpose, or waste time/resources."
+    }
+  ],
+  "missingExampleHandling": "17 個正式詞在本快照沒有正式 examples，無法逐句檢查；不另造句、不宣告整詞完成。請主線依原教材及詞卡欄位繼續核對。",
+  "sources": {
+    "collins_senior_high": {
+      "sourceId": "collins_senior_high",
+      "title": "Collins Dictionary: senior high school",
+      "url": "https://www.collinsdictionary.com/us/dictionary/english/senior-high-school",
+      "accessType": "direct_page_open_success",
+      "directOpen": "success; inspected definition lines 219–265",
+      "observedEvidence": "原頁將 senior high 視為 senior high school 的簡稱，說明為約 14／15 至 17／18 歲學生的學校，並列通常包含十至十二年級；不是只指最高年級。",
+      "supportsRows": [
+        64
+      ],
+      "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+    },
+    "ahd_senior_high": {
+      "sourceId": "ahd_senior_high",
+      "title": "American Heritage Dictionary: senior high school",
+      "url": "https://ahdictionary.com/word/search.html?q=senior+high+school",
+      "accessType": "direct_page_open_success",
+      "directOpen": "success; inspected entry line 41",
+      "observedEvidence": "原頁把 senior high school 定義為通常包含九、十、十一、十二年級的高中；支持學校階段而非畢業班。",
+      "supportsRows": [
+        64
+      ],
+      "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+    },
+    "cambridge_base_on": {
+      "sourceId": "cambridge_base_on",
+      "title": "Cambridge English–Traditional Chinese: base something on something",
+      "url": "https://dictionary.cambridge.org/dictionary/english-chinese-traditional/base-on",
+      "accessType": "actual_search_result_excerpt",
+      "directOpen": "not attempted for this exact URL; search excerpt only",
+      "observedEvidence": "實際搜尋節錄將 base on 解為以事實或想法為基礎發展作品；電影以短篇小說為本的例句，中文用根據小說改編而成。支持影集／真實故事的改編關係。",
+      "supportsRows": [
+        57
+      ],
+      "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified.",
+      "relatedDirectOpen": "The related /us/dictionary/english-chinese-traditional/base-on URL was attempted and returned 403. This search excerpt is not claimed as a full-page read."
+    },
+    "cambridge_tell": {
+      "sourceId": "cambridge_tell",
+      "title": "Cambridge Dictionary: tell",
+      "url": "https://dictionary.cambridge.org/dictionary/english/tell",
+      "accessType": "actual_search_result_excerpt",
+      "directOpen": "attempted; 403 Forbidden; full page not read",
+      "observedEvidence": "實際搜尋節錄列 tell 的說話、告知義，並列對孩子說故事的例句。tell a story 本身不指定是否照著書讀。",
+      "supportsRows": [
+        132
+      ],
+      "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+    },
+    "cambridge_complimentary_close": {
+      "sourceId": "cambridge_complimentary_close",
+      "title": "Cambridge Business English Dictionary: complimentary close",
+      "url": "https://dictionary.cambridge.org/us/dictionary/english/complimentary-close",
+      "accessType": "actual_search_result_excerpt",
+      "directOpen": "attempted; 403 Forbidden; full page not read",
+      "observedEvidence": "實際搜尋節錄說明書信末的祝頌語位於寫信人簽名之前，並將 Best wishes 列為例子。支持把後置人名理解為署名，而不是祝福的稱呼對象。",
+      "supportsRows": [
+        166
+      ],
+      "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+    },
+    "cambridge_wishes": {
+      "sourceId": "cambridge_wishes",
+      "title": "Cambridge Dictionary: wishes",
+      "url": "https://dictionary.cambridge.org/us/dictionary/english/wishes",
+      "accessType": "actual_search_result_excerpt",
+      "directOpen": "attempted; 403 Forbidden; full page not read",
+      "observedEvidence": "實際搜尋節錄在祝福義下列書信結尾例，Best wishes 後接人名 Carlo。與本列的祝頌語加人名結構相合，但不是原教材書信。",
+      "supportsRows": [
+        166
+      ],
+      "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+    },
+    "cambridge_take_easy": {
+      "sourceId": "cambridge_take_easy",
+      "title": "Cambridge Academic Content Dictionary: take it easy",
+      "url": "https://dictionary.cambridge.org/us/dictionary/english/take-it-easy",
+      "accessType": "actual_search_result_excerpt",
+      "directOpen": "not attempted; only actual search result excerpt read",
+      "observedEvidence": "實際搜尋節錄把 take it easy 列為慣用語，表示休息、放鬆或保持冷靜。此處的放輕鬆譯義正確；片語條目不能單獨決定資料庫 easy token 的詞性。",
+      "supportsRows": [
+        22
+      ],
+      "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+    },
+    "cambridge_worn_out": {
+      "sourceId": "cambridge_worn_out",
+      "title": "Cambridge Dictionary: worn out",
+      "url": "https://dictionary.cambridge.org/dictionary/english/worn-out",
+      "accessType": "actual_search_result_excerpt",
+      "directOpen": "not attempted; only actual search result excerpt read",
+      "observedEvidence": "實際搜尋節錄列 worn out 的形容詞疲憊義，指非常疲倦，並以整晚工作後筋疲力盡為例。完整短語標注不能直接取代本資料庫只挖 worn 的欄位慣例。",
+      "supportsRows": [
+        81
+      ],
+      "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+    },
+    "cambridge_west": {
+      "sourceId": "cambridge_west",
+      "title": "Cambridge Dictionary: west",
+      "url": "https://dictionary.cambridge.org/dictionary/english/west",
+      "accessType": "actual_search_result_excerpt",
+      "directOpen": "not attempted; only actual search result excerpt read",
+      "observedEvidence": "實際搜尋節錄呈現 west 的方向用法及副詞條目；單靠詞典多詞性不能決定本資料庫 west of 構式要採單詞還是片語標記。",
+      "supportsRows": [
+        162
+      ],
+      "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+    }
+  },
+  "definiteCandidates": [
+    {
+      "proposalId": "U11-D01",
+      "reviewIndex": 64,
+      "exampleId": "EX4c5b9769",
+      "wordId": "W002921",
+      "word": "tough",
+      "exampleType": "exam",
+      "sentenceEn": "Choosing which university to attend was a tough decision for most senior high students.",
+      "sentenceZh": "對大多數高三學生來說，選擇要就讀哪所大學是一個艱難的決定。",
+      "blankSentence": "Choosing which university to attend was a _____ decision for most senior high students.",
+      "answer": "tough",
+      "sensePos": "adj.",
+      "meaningHint": null,
+      "status": "reviewed",
+      "field": "sentenceZh",
+      "before": "對大多數高三學生來說，選擇要就讀哪所大學是一個艱難的決定。",
+      "after": "對大多數高中學生來說，選擇要就讀哪所大學是一個艱難的決定。",
+      "classification": "definite_text_error",
+      "classificationZh": "明確文字錯誤",
+      "subtype": "school_level_mistranslation",
+      "priority": "recommended_evidence_backed_correction",
+      "reason": "senior high 是高中階段，不是 high school senior（高中畢業班學生）。現譯把全體高中生限縮成高三；只把「高三」改為「高中」，保留其餘語義與空提示。",
+      "confidence": "high_for_English_sense; application_review_required",
+      "sources": [
+        {
+          "sourceId": "collins_senior_high",
+          "title": "Collins Dictionary: senior high school",
+          "url": "https://www.collinsdictionary.com/us/dictionary/english/senior-high-school",
+          "accessType": "direct_page_open_success",
+          "directOpen": "success; inspected definition lines 219–265",
+          "observedEvidence": "原頁將 senior high 視為 senior high school 的簡稱，說明為約 14／15 至 17／18 歲學生的學校，並列通常包含十至十二年級；不是只指最高年級。",
+          "supportsRows": [
+            64
+          ],
+          "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+        },
+        {
+          "sourceId": "ahd_senior_high",
+          "title": "American Heritage Dictionary: senior high school",
+          "url": "https://ahdictionary.com/word/search.html?q=senior+high+school",
+          "accessType": "direct_page_open_success",
+          "directOpen": "success; inspected entry line 41",
+          "observedEvidence": "原頁把 senior high school 定義為通常包含九、十、十一、十二年級的高中；支持學校階段而非畢業班。",
+          "supportsRows": [
+            64
+          ],
+          "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+        }
+      ],
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "d26603868f60e60069d29ea00613d2e86f94d7bd",
+        "reviewedBlobSha": "e91efc2cc5a89511229783107060b0f3c85f6fd8",
+        "exampleIdMustMatch": "EX4c5b9769",
+        "exactFieldBefore": {
+          "sentenceZh": "對大多數高三學生來說，選擇要就讀哪所大學是一個艱難的決定。"
+        },
+        "englishGuard": "Choosing which university to attend was a tough decision for most senior high students.",
+        "contextMustMatch": {
+          "sentenceEn": "Choosing which university to attend was a tough decision for most senior high students.",
+          "sentenceZh": "對大多數高三學生來說，選擇要就讀哪所大學是一個艱難的決定。",
+          "blankSentence": "Choosing which university to attend was a _____ decision for most senior high students.",
+          "answer": "tough",
+          "sensePos": "adj.",
+          "meaningHint": null,
+          "exampleType": "exam",
+          "status": "reviewed"
+        },
+        "doNotModify": [
+          "sentenceEn",
+          "blankSentence",
+          "answer",
+          "sensePos",
+          "meaningHint",
+          "exampleType",
+          "status"
+        ]
+      },
+      "applied": false
+    }
+  ],
+  "hintProposals": [],
+  "translationCandidates": [
+    {
+      "proposalId": "U11-T01",
+      "reviewIndex": 57,
+      "exampleId": "EX49d3f4ef",
+      "wordId": "W000830",
+      "word": "story",
+      "exampleType": "textbook",
+      "sentenceEn": "This TV series is based on a true story.",
+      "sentenceZh": "這部電視影集是根據一則真實故事。",
+      "blankSentence": "This TV series is based on a true _____.",
+      "answer": "story",
+      "sensePos": "n.",
+      "meaningHint": "故事",
+      "status": "approved",
+      "field": "sentenceZh",
+      "before": "這部電視影集是根據一則真實故事。",
+      "after": "這部電視影集是根據一則真實故事改編的。",
+      "classification": "optional_precision_improvement",
+      "classificationZh": "可選精度改善",
+      "subtype": "adaptation_relation_explicitness",
+      "priority": "optional_refinement_not_proven_error",
+      "reason": "原中文能讓讀者推知 based on 的大意，但「是根據一則真實故事」未明說作品與故事的改編關係。可選補「改編的」使中文關係完整；不把此可理解的省略列為證實詞義錯誤，也不聲稱核過原教材。",
+      "confidence": "high_for_English_construction; Chinese_refinement_is_optional; application_review_required",
+      "sources": [
+        {
+          "sourceId": "cambridge_base_on",
+          "title": "Cambridge English–Traditional Chinese: base something on something",
+          "url": "https://dictionary.cambridge.org/dictionary/english-chinese-traditional/base-on",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "not attempted for this exact URL; search excerpt only",
+          "observedEvidence": "實際搜尋節錄將 base on 解為以事實或想法為基礎發展作品；電影以短篇小說為本的例句，中文用根據小說改編而成。支持影集／真實故事的改編關係。",
+          "supportsRows": [
+            57
+          ],
+          "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified.",
+          "relatedDirectOpen": "The related /us/dictionary/english-chinese-traditional/base-on URL was attempted and returned 403. This search excerpt is not claimed as a full-page read."
+        }
+      ],
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "d26603868f60e60069d29ea00613d2e86f94d7bd",
+        "reviewedBlobSha": "e91efc2cc5a89511229783107060b0f3c85f6fd8",
+        "exampleIdMustMatch": "EX49d3f4ef",
+        "exactFieldBefore": {
+          "sentenceZh": "這部電視影集是根據一則真實故事。"
+        },
+        "englishGuard": "This TV series is based on a true story.",
+        "contextMustMatch": {
+          "sentenceEn": "This TV series is based on a true story.",
+          "sentenceZh": "這部電視影集是根據一則真實故事。",
+          "blankSentence": "This TV series is based on a true _____.",
+          "answer": "story",
+          "sensePos": "n.",
+          "meaningHint": "故事",
+          "exampleType": "textbook",
+          "status": "approved"
+        },
+        "doNotModify": [
+          "sentenceEn",
+          "blankSentence",
+          "answer",
+          "sensePos",
+          "meaningHint",
+          "exampleType",
+          "status"
+        ]
+      },
+      "applied": false
+    },
+    {
+      "proposalId": "U11-T02",
+      "reviewIndex": 132,
+      "exampleId": "EXa7236dae",
+      "wordId": "W000830",
+      "word": "story",
+      "exampleType": "textbook",
+      "sentenceEn": "Every night, Jim tells his son a story.",
+      "sentenceZh": "吉姆每晚都唸故事給兒子聽。",
+      "blankSentence": "Every night, Jim tells his son a _____.",
+      "answer": "story",
+      "sensePos": "n.",
+      "meaningHint": "故事",
+      "status": "approved",
+      "field": "sentenceZh",
+      "before": "吉姆每晚都唸故事給兒子聽。",
+      "after": "吉姆每晚都說故事給兒子聽。",
+      "classification": "optional_precision_improvement",
+      "classificationZh": "可選精度改善",
+      "subtype": "narration_mode_precision",
+      "priority": "optional_refinement_not_proven_error",
+      "reason": "tell a story 指敘述故事，不限定照著書唸；原中文「唸」在睡前情境可成立，但英文未明示閱讀。可選改成較中性的「說」以免增加方式，這是精度改善而非證實原場景錯誤。",
+      "confidence": "high_for_English_construction; Chinese_refinement_is_optional; application_review_required",
+      "sources": [
+        {
+          "sourceId": "cambridge_tell",
+          "title": "Cambridge Dictionary: tell",
+          "url": "https://dictionary.cambridge.org/dictionary/english/tell",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "attempted; 403 Forbidden; full page not read",
+          "observedEvidence": "實際搜尋節錄列 tell 的說話、告知義，並列對孩子說故事的例句。tell a story 本身不指定是否照著書讀。",
+          "supportsRows": [
+            132
+          ],
+          "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+        }
+      ],
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "d26603868f60e60069d29ea00613d2e86f94d7bd",
+        "reviewedBlobSha": "e91efc2cc5a89511229783107060b0f3c85f6fd8",
+        "exampleIdMustMatch": "EXa7236dae",
+        "exactFieldBefore": {
+          "sentenceZh": "吉姆每晚都唸故事給兒子聽。"
+        },
+        "englishGuard": "Every night, Jim tells his son a story.",
+        "contextMustMatch": {
+          "sentenceEn": "Every night, Jim tells his son a story.",
+          "sentenceZh": "吉姆每晚都唸故事給兒子聽。",
+          "blankSentence": "Every night, Jim tells his son a _____.",
+          "answer": "story",
+          "sensePos": "n.",
+          "meaningHint": "故事",
+          "exampleType": "textbook",
+          "status": "approved"
+        },
+        "doNotModify": [
+          "sentenceEn",
+          "blankSentence",
+          "answer",
+          "sensePos",
+          "meaningHint",
+          "exampleType",
+          "status"
+        ]
+      },
+      "applied": false
+    },
+    {
+      "proposalId": "U11-T03",
+      "reviewIndex": 166,
+      "exampleId": "EXce7dcec4",
+      "wordId": "W000980",
+      "word": "wish",
+      "exampleType": "textbook",
+      "sentenceEn": "With best wishes, Frank Foster.",
+      "sentenceZh": "把最誠摯的祝福獻給你，法蘭克．福斯特。（書信結尾用語）",
+      "blankSentence": "With best _____, Frank Foster.",
+      "answer": "wishes",
+      "sensePos": "n.",
+      "meaningHint": "祝福（best wishes：最誠摯的祝福）",
+      "status": "approved",
+      "field": "sentenceZh",
+      "before": "把最誠摯的祝福獻給你，法蘭克．福斯特。（書信結尾用語）",
+      "after": "把最誠摯的祝福獻給你。法蘭克．福斯特（署名；書信結尾用語）",
+      "classification": "optional_precision_improvement",
+      "classificationZh": "可選精度改善",
+      "subtype": "letter_signature_disambiguation",
+      "priority": "optional_refinement_not_proven_error",
+      "reason": "書信祝頌語之後的人名通常是寫信人署名。現譯逗點容易讓「你，法蘭克」被讀成向收件人呼語，但括注已提示書信結尾，所以不判定已證實把角色譯反。可選分句並標明署名；未取得原教材排版，不宣稱人物身分已由原書信確認。",
+      "confidence": "high_for_English_construction; Chinese_refinement_is_optional; application_review_required",
+      "sources": [
+        {
+          "sourceId": "cambridge_complimentary_close",
+          "title": "Cambridge Business English Dictionary: complimentary close",
+          "url": "https://dictionary.cambridge.org/us/dictionary/english/complimentary-close",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "attempted; 403 Forbidden; full page not read",
+          "observedEvidence": "實際搜尋節錄說明書信末的祝頌語位於寫信人簽名之前，並將 Best wishes 列為例子。支持把後置人名理解為署名，而不是祝福的稱呼對象。",
+          "supportsRows": [
+            166
+          ],
+          "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+        },
+        {
+          "sourceId": "cambridge_wishes",
+          "title": "Cambridge Dictionary: wishes",
+          "url": "https://dictionary.cambridge.org/us/dictionary/english/wishes",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "attempted; 403 Forbidden; full page not read",
+          "observedEvidence": "實際搜尋節錄在祝福義下列書信結尾例，Best wishes 後接人名 Carlo。與本列的祝頌語加人名結構相合，但不是原教材書信。",
+          "supportsRows": [
+            166
+          ],
+          "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+        }
+      ],
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "d26603868f60e60069d29ea00613d2e86f94d7bd",
+        "reviewedBlobSha": "e91efc2cc5a89511229783107060b0f3c85f6fd8",
+        "exampleIdMustMatch": "EXce7dcec4",
+        "exactFieldBefore": {
+          "sentenceZh": "把最誠摯的祝福獻給你，法蘭克．福斯特。（書信結尾用語）"
+        },
+        "englishGuard": "With best wishes, Frank Foster.",
+        "contextMustMatch": {
+          "sentenceEn": "With best wishes, Frank Foster.",
+          "sentenceZh": "把最誠摯的祝福獻給你，法蘭克．福斯特。（書信結尾用語）",
+          "blankSentence": "With best _____, Frank Foster.",
+          "answer": "wishes",
+          "sensePos": "n.",
+          "meaningHint": "祝福（best wishes：最誠摯的祝福）",
+          "exampleType": "textbook",
+          "status": "approved"
+        },
+        "doNotModify": [
+          "sentenceEn",
+          "blankSentence",
+          "answer",
+          "sensePos",
+          "meaningHint",
+          "exampleType",
+          "status"
+        ]
+      },
+      "applied": false
+    }
+  ],
+  "pendingConfirmation": [
+    {
+      "pendingItemId": "U11-P01",
+      "reviewIndex": 22,
+      "exampleId": "EX1c43652d",
+      "wordId": "W000255",
+      "word": "easy",
+      "classification": "pending_source_or_schema_confirmation",
+      "classificationZh": "待詞性慣例確認",
+      "fields": [
+        "sensePos"
+      ],
+      "before": {
+        "sensePos": "adj."
+      },
+      "after": null,
+      "reason": "take it easy 整體為慣用語，但欄位只挖 easy。依既有明示決定保留 adj.；需原教材詞性標注及專案 token／phrase 規則後才能統一，不新增硬改。",
+      "neededEvidence": "原教材該條詞性標記，以及專案 sensePos 對詞頭、挖空單詞、分詞及固定片語的明文規則。",
+      "sentenceEn": "Just relax and take it easy this weekend.",
+      "sentenceZh": "這個週末放輕鬆就好。",
+      "blankSentence": "Just relax and take it _____ this weekend.",
+      "answer": "easy",
+      "meaningHint": null,
+      "sensePos": "adj.",
+      "sources": [
+        {
+          "sourceId": "cambridge_take_easy",
+          "title": "Cambridge Academic Content Dictionary: take it easy",
+          "url": "https://dictionary.cambridge.org/us/dictionary/english/take-it-easy",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "not attempted; only actual search result excerpt read",
+          "observedEvidence": "實際搜尋節錄把 take it easy 列為慣用語，表示休息、放鬆或保持冷靜。此處的放輕鬆譯義正確；片語條目不能單獨決定資料庫 easy token 的詞性。",
+          "supportsRows": [
+            22
+          ],
+          "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+        }
+      ],
+      "action": "保留全部現值；本次不提出自動替換。",
+      "applied": false
+    },
+    {
+      "pendingItemId": "U11-P02",
+      "reviewIndex": 81,
+      "exampleId": "EX600a76ea",
+      "wordId": "W000955",
+      "word": "wear",
+      "classification": "pending_source_or_schema_confirmation",
+      "classificationZh": "待詞性慣例確認",
+      "fields": [
+        "sensePos"
+      ],
+      "before": {
+        "sensePos": "v."
+      },
+      "after": null,
+      "reason": "worn out 整體可作形容詞，資料列卻只挖 wear 的過去分詞 worn；依既有決定保留 v.，不把完整片語的詞性直接套用到單一答案。",
+      "neededEvidence": "原教材該條詞性標記，以及專案 sensePos 對詞頭、挖空單詞、分詞及固定片語的明文規則。",
+      "sentenceEn": "I was worn out after all the work.",
+      "sentenceZh": "所有工作做完後，我累壞了。",
+      "blankSentence": "I was _____ out after all the work.",
+      "answer": "worn",
+      "meaningHint": "筋疲力竭（be worn out）",
+      "sensePos": "v.",
+      "sources": [
+        {
+          "sourceId": "cambridge_worn_out",
+          "title": "Cambridge Dictionary: worn out",
+          "url": "https://dictionary.cambridge.org/dictionary/english/worn-out",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "not attempted; only actual search result excerpt read",
+          "observedEvidence": "實際搜尋節錄列 worn out 的形容詞疲憊義，指非常疲倦，並以整晚工作後筋疲力盡為例。完整短語標注不能直接取代本資料庫只挖 worn 的欄位慣例。",
+          "supportsRows": [
+            81
+          ],
+          "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+        }
+      ],
+      "action": "保留全部現值；本次不提出自動替換。",
+      "applied": false
+    },
+    {
+      "pendingItemId": "U11-P03",
+      "reviewIndex": 162,
+      "exampleId": "EXcb617f7e",
+      "wordId": "W000961",
+      "word": "west",
+      "classification": "pending_source_or_schema_confirmation",
+      "classificationZh": "待詞性慣例確認",
+      "fields": [
+        "sensePos"
+      ],
+      "before": {
+        "sensePos": "n."
+      },
+      "after": null,
+      "reason": "west of the river 的方位語義與中文正確；對 west 的單詞／片語標記慣例尚未統一，依既有決定保留 n.，不硬改 adv.。",
+      "neededEvidence": "原教材該條詞性標記，以及專案 sensePos 對詞頭、挖空單詞、分詞及固定片語的明文規則。",
+      "sentenceEn": "The old temple is located west of the river.",
+      "sentenceZh": "那座古老的寺廟位於河的西邊。",
+      "blankSentence": "The old temple is located _____ of the river.",
+      "answer": "west",
+      "meaningHint": null,
+      "sensePos": "n.",
+      "sources": [
+        {
+          "sourceId": "cambridge_west",
+          "title": "Cambridge Dictionary: west",
+          "url": "https://dictionary.cambridge.org/dictionary/english/west",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "not attempted; only actual search result excerpt read",
+          "observedEvidence": "實際搜尋節錄呈現 west 的方向用法及副詞條目；單靠詞典多詞性不能決定本資料庫 west of 構式要採單詞還是片語標記。",
+          "supportsRows": [
+            162
+          ],
+          "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+        }
+      ],
+      "action": "保留全部現值；本次不提出自動替換。",
+      "applied": false
+    }
+  ],
+  "scopeAndLimits": [
+    "唯一基底為 d266038 已修文字快照，不拿舊資料回填。",
+    "192 列逐一實讀英文、中文、meaningHint、sensePos、挖空與答案，人工撰寫各列語義紀錄。腳本只編排紀錄、核對完整字串與統計，不以批次規則代替語義審核。",
+    "104 個 daily/exam 空提示刻意保留，不為補滿製造提示。",
+    "英文原文、cloze、答案、既有詞性、提示、例句類型及 status 均未改；不升整詞 reviewed。",
+    "明確錯誤與可選中文精度分組；自然翻譯、親屬長幼、可接受的情境具體化及純風格改寫不算錯。",
+    "take it easy／worn out／west of 三個指定詞性慣例原樣保留。story 位於 ten-story 的名詞成分、jointly／noted 衍生用法也按實際答案及既有粒度審核，不機械套用整詞頭。",
+    "可靠詞典只能支持詞義與結構，不代替原教材。403 頁一律標示為實際搜尋節錄，沒有讀全文的主張。",
+    "不擴改整詞稀有摘要，不處理圖片、音標、出題出處或另造缺失例句；那些項目由其他子任務核查。",
+    "套用任何候選前必須讀取最新 repository 值逐欄對照 guard；差異先重新審核。此報告只有未套用提案，沒有 Git 操作。"
+  ],
+  "deliveryNote": "所有候選都尚未套用。僅 1 項列為明確錯誤，3 項中文精度提案可選；請勿將四個提案合稱四個證實錯誤。"
+}

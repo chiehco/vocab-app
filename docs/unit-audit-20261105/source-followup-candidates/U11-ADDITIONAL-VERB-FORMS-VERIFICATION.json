@@ -1,0 +1,1239 @@
+{
+  "title": "U11 完整原單元補入詞：13 個缺漏動詞三態追加查證",
+  "checkedAtUtc": "2026-11-05T10:08:44.032974+00:00",
+  "sourceCommit": "d26603868f60e60069d29ea00613d2e86f94d7bd",
+  "sourceWordsBlobSha": "90acf1b46b4793859fe9ff27b7898fcce0217686",
+  "scope": "僅交接清單的13個 U11 正式詞彙 ID；先前401個研究詞及已有三態由父任務排除。本交付不代表整個 U11 或任何整張字卡通過。",
+  "completionStatus": "completed",
+  "coverage": {
+    "expectedEntries": 13,
+    "entriesResearched": 13,
+    "lexicallyVerified": 13,
+    "verifiedCandidates": 13,
+    "pendingProductRepresentation": 0,
+    "pendingMissingLexicalEvidence": 0,
+    "notYetResearched": 0,
+    "ruleOnlyInferences": 0,
+    "productApprovals": 0
+  },
+  "unitCoverage": [
+    {
+      "unit": "LV1-U11",
+      "expectedAdditionalEntries": 13,
+      "entriesResearched": 13,
+      "verifiedCandidates": 13,
+      "pending": 0
+    }
+  ],
+  "method": "本次對13詞逐詞獨立打開 Collins 官方詞典並實讀 Word forms 中明示的 past tense/past participle。spring 另讀 MW 區別裝彈簧動詞及 Chambers 的 US 標記；wear 另讀 DSL 區別 Scots／歷史變體。依需要實讀 size up、trifle with 等正文核對構式。搜尋僅用於發現來源；沒有用搜尋摘要作三態定案證據。",
+  "beforeRepresentation": {
+    "marker": {
+      "$absent": true
+    },
+    "meaning": "13詞的交接快照皆無 verbForms key，不是 null。未直接重讀 repository，套用前須核對最新值。"
+  },
+  "schemaAndDisplayConstraints": {
+    "provenance": "由父任務交接，研究本身沒有修改或重讀 repository。",
+    "constraint": "整詞單一 base/past/pastParticiple 面板，sourceRef 不顯示；不能依隱藏來源文字替用戶區分不相容的動詞義。",
+    "rule": "每詞只提最小相容候選；spring 僅用既有跳起／突然移動義，Scots／其他專門義留研究記錄而非混排。"
+  },
+  "implementationBoundary": [
+    "沒有修改 repository、status、Git 或已發布內容。",
+    "沒有填入 IPA、重音、音節。",
+    "candidate 只表示有直接來源的最小三態提案，不是 approved 或整卡通過。",
+    "保持 before=$absent；套用時必須用 wordId 比對，且不可覆蓋已存在的三態。",
+    "沒有改原摘要、例句、詞性、圖片或其他欄位。",
+    "先前401研究詞已由交接篩選排除，本次只產生13個新增研究記錄。"
+  ],
+  "accessFailuresExcluded": [],
+  "searchSnippetOnlyEvidenceUsed": false,
+  "pendingWords": [],
+  "nonBlockingFindings": [
+    {
+      "word": "pot",
+      "wordId": "W000670",
+      "note": "既有詞性包含 v.，但來源快照的中英摘要及例句主要是名詞。這不使已直接查得的三態失效，也不代表摘要、詞義或字卡全面審核通過；不在本交付擴改。"
+    },
+    {
+      "word": "spring",
+      "wordId": "W000819",
+      "note": "過去式 sprung 為有來源的有效變體；裝彈簧的另義不能僅因原詞條含名詞彈簧而加入。"
+    },
+    {
+      "word": "wear",
+      "wordId": "W000955",
+      "note": "Scots 歷史形式另列，不加入一般三態面板。"
+    }
+  ],
+  "entries": [
+    {
+      "wordId": "W000110",
+      "word": "bottom",
+      "units": [
+        "LV1-U11"
+      ],
+      "cardIds": [
+        "LV1-U11-75"
+      ],
+      "sourceSnapshotPos": "n./adj./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "adj.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "draft",
+      "sourceMeaningZh": "（名詞）底部；（形容詞）底部的；（動詞）給……裝底；查明根源／真相；（get to the bottom of）探究真相",
+      "sourceMeaningEn": "the lower side of anything; the lowest part of anything",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U11-75",
+          "captionEn": "A coin was resting at the bottom of the glass jar.",
+          "captionZh": "一枚硬幣躺在玻璃罐底部。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "交接快照中的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "動詞裝底、查明真相／根源；不把 get to the bottom of 中的名詞 bottom 當成動詞。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "bottom",
+        "past": "bottomed",
+        "pastParticiple": "bottomed"
+      },
+      "proposedVerbForms": {
+        "base": "bottom",
+        "past": "bottomed",
+        "pastParticiple": "bottomed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/bottom"
+      },
+      "sourceSupportedForms": {
+        "base": "bottom",
+        "past": [
+          "bottomed"
+        ],
+        "pastParticiple": [
+          "bottomed"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/bottom",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle bottomed",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方詞典正文並讀取所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins English Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/bottom",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "to discover the full facts or truth of",
+          "location": "Collins English Dictionary, British English, verb sense 26",
+          "scope": "正文另核對查明真相義；sense 25 為給椅子等裝底／座面，這些動詞義不是 get to the bottom of 的名詞結構。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方詞典正文並讀取所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "get to the bottom of 的動詞是 get，不將 got/gotten 加入 bottom 三態；裝底與查明真相的 bottom 動詞可用 bottomed。",
+      "regionalAndConstructionRestrictions": "所讀三態主欄無地區限制；某些其他專業義有領域標籤，不擴展成摘要修訂。",
+      "variantAssessment": "所讀主 Word forms 欄未另列變體；此為最小一般教學候選，不聲稱窮盡歷史、Scots、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000444",
+      "word": "join",
+      "units": [
+        "LV1-U11"
+      ],
+      "cardIds": [
+        "LV1-U11-57"
+      ],
+      "sourceSnapshotPos": "v./n.",
+      "sourceSnapshotPosAll": [
+        "v.",
+        "n."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "參加；結合；加入；連接",
+      "sourceMeaningEn": "to become a member of a group or take part in an activity; to connect two things together",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U11-57",
+          "captionEn": "Would you like to join us for dinner this Friday night?",
+          "captionZh": "這週五晚上你要不要跟我們一起吃晚餐？"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "交接快照中的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "加入、參加、與人會合、連接。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "join",
+        "past": "joined",
+        "pastParticiple": "joined"
+      },
+      "proposedVerbForms": {
+        "base": "join",
+        "past": "joined",
+        "pastParticiple": "joined",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/join"
+      },
+      "sourceSupportedForms": {
+        "base": "join",
+        "past": [
+          "joined"
+        ],
+        "pastParticiple": [
+          "joined"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/join",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle joined",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方詞典正文並讀取所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "加入、結合與連接共用 joined；名詞 join 不另產生三態。",
+      "regionalAndConstructionRestrictions": "所讀主三態欄無地區限制；join in/with/up 等構式需按語境保留。",
+      "variantAssessment": "所讀主 Word forms 欄未另列變體；此為最小一般教學候選，不聲稱窮盡歷史、Scots、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000670",
+      "word": "pot",
+      "units": [
+        "LV1-U11"
+      ],
+      "cardIds": [
+        "LV1-U11-78"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "draft",
+      "sourceMeaningZh": "盆；罐；壺；坩堝",
+      "sourceMeaningEn": "metal or earthenware cooking vessel that is usually round and deep; often has a handle and lid; the quantity contained in a pot",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U11-78",
+          "captionEn": "A pot of vegetable soup simmered on the stove.",
+          "captionZh": "一鍋蔬菜湯在爐上慢慢燉煮。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "交接快照中的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "動詞把植物栽入盆中，及撞球把球擊入袋中。既有 pos 包含 v.，但提供的中英摘要與例句只明確呈現名詞；本研究不補寫動詞釋義。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "pot",
+        "past": "potted",
+        "pastParticiple": "potted"
+      },
+      "proposedVerbForms": {
+        "base": "pot",
+        "past": "potted",
+        "pastParticiple": "potted",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/pot"
+      },
+      "sourceSupportedForms": {
+        "base": "pot",
+        "past": [
+          "potted"
+        ],
+        "pastParticiple": [
+          "potted"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/pot",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle potted",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方詞典正文並讀取所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "potted 是詞典直接明示，並非依雙寫規則推導；名詞鍋／盆與 potted 作形容詞不能單獨證明動詞三態，但本頁明示的 Word forms 可以。",
+      "regionalAndConstructionRestrictions": "所讀主三態欄無地區限制；本研究核對的動詞有栽盆與撞球入袋義，不改動原名詞例句。",
+      "variantAssessment": "所讀主 Word forms 欄未另列變體；此為最小一般教學候選，不聲稱窮盡歷史、Scots、方言或專業變體。",
+      "pendingReason": null,
+      "adjacentIssueOutsideThisResearch": "既有詞性包含 v.，但來源快照的中英摘要及例句主要是名詞。這不使已直接查得的三態失效，也不代表摘要、詞義或字卡全面審核通過；不在本交付擴改。"
+    },
+    {
+      "wordId": "W000701",
+      "word": "ready",
+      "units": [
+        "LV1-U11"
+      ],
+      "cardIds": [
+        "LV1-U11-65"
+      ],
+      "sourceSnapshotPos": "adj./v.",
+      "sourceSnapshotPosAll": [
+        "adj.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "預備好的狀態；現款；準備好的；備用的",
+      "sourceMeaningEn": "(adj.) fully prepared and available for use, action, or a particular purpose; (v.) to prepare someone or something for a particular purpose",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U11-65",
+          "captionEn": "Dinner is ready, so come to the table now.",
+          "captionZh": "晚餐已經準備好了，現在過來餐桌吧。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "交接快照中的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "動詞使準備好、準備某人或某物。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "ready",
+        "past": "readied",
+        "pastParticiple": "readied"
+      },
+      "proposedVerbForms": {
+        "base": "ready",
+        "past": "readied",
+        "pastParticiple": "readied",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/ready"
+      },
+      "sourceSupportedForms": {
+        "base": "ready",
+        "past": [
+          "readied"
+        ],
+        "pastParticiple": [
+          "readied"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/ready",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle readied",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方詞典正文並讀取所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/ready",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "[formal]",
+          "location": "COBUILD verb sense 8",
+          "scope": "動詞使準備好在此標正式語域；不將形容詞級變化混入三態。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方詞典正文並讀取所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "readied 是動詞形式；readier/readiest 是形容詞比較級／最高級，不混入三態。be/get ready 的 ready 為形容詞，不直接改寫成 readied。",
+      "regionalAndConstructionRestrictions": "COBUILD 將使準備好的動詞義標 formal；這是語域說明，不代表 readied 僅限某地區。",
+      "variantAssessment": "所讀主 Word forms 欄未另列變體；此為最小一般教學候選，不聲稱窮盡歷史、Scots、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000711",
+      "word": "rest",
+      "units": [
+        "LV1-U11"
+      ],
+      "cardIds": [
+        "LV1-U11-40"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "（名詞／動詞）休息；睡眠；安息；稍息；（the rest）其餘部分",
+      "sourceMeaningEn": "(n.) relaxation, sleep or a pause from work; the remaining part or other members of a group; (v.) to relax or stop activity.",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U11-40",
+          "captionEn": "I finished half the report; I'll write the rest tomorrow.",
+          "captionZh": "我完成了一半的報告；剩下的部分我明天再寫。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "交接快照中的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "動詞休息、暫停活動；不是例句 the rest 的其餘部分義。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "rest",
+        "past": "rested",
+        "pastParticiple": "rested"
+      },
+      "proposedVerbForms": {
+        "base": "rest",
+        "past": "rested",
+        "pastParticiple": "rested",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/rest"
+      },
+      "sourceSupportedForms": {
+        "base": "rest",
+        "past": [
+          "rested"
+        ],
+        "pastParticiple": [
+          "rested"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/rest",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle rested",
+          "location": "COBUILD Word forms（rest 為 verb and noun uses 欄）",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方詞典正文並讀取所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "休息義的動詞用 rested；the rest 是其餘部分用法，不把名詞／代名詞的形式納入動詞三態。",
+      "regionalAndConstructionRestrictions": "所讀休息義三態無地區限制；rest on/with 等不同構式不改變 rested。",
+      "variantAssessment": "所讀主 Word forms 欄未另列變體；此為最小一般教學候選，不聲稱窮盡歷史、Scots、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000785",
+      "word": "size",
+      "units": [
+        "LV1-U11"
+      ],
+      "cardIds": [
+        "LV1-U11-73"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "大小；尺寸；規模；尺碼",
+      "sourceMeaningEn": "how big or small a person or thing is; a standard measurement of clothing, shoes, and similar items; to judge the nature of a situation or person",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U11-73",
+          "captionEn": "Could you tell me what size shoes you usually wear?",
+          "captionZh": "可以告訴我你平常穿幾號鞋嗎？"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "交接快照中的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "原英文摘要的評估／判斷義，依既有 usagePattern 與詞典對應 size up；大小、尺寸、尺碼為名詞用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "size",
+        "past": "sized",
+        "pastParticiple": "sized"
+      },
+      "proposedVerbForms": {
+        "base": "size",
+        "past": "sized",
+        "pastParticiple": "sized",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/size"
+      },
+      "sourceSupportedForms": {
+        "base": "size",
+        "past": [
+          "sized"
+        ],
+        "pastParticiple": [
+          "sized"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/size",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle sized",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方詞典正文並讀取所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/size-up",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "[informal]",
+          "location": "COBUILD size up, phrasal verb",
+          "scope": "正文確認評估某人／情勢義使用 size up，例型容許 size someone up；未以摘要或搜尋結果替代正文。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方詞典正文並讀取所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "評估義在原用法與詞典中是 size up；動詞本體仍為 size，三態不把 up 拼進 base/past/pastParticiple，也不藉此宣稱裸用 size 必然表評估義。",
+      "regionalAndConstructionRestrictions": "COBUILD 將 size up 標 informal，並列可分開受詞的構式；三態本體無另見地區限制。",
+      "variantAssessment": "所讀主 Word forms 欄未另列變體；此為最小一般教學候選，不聲稱窮盡歷史、Scots、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000819",
+      "word": "spring",
+      "units": [
+        "LV1-U11"
+      ],
+      "cardIds": [
+        "LV1-U11-74"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "（名詞）春天；彈簧；跳躍；彈性；（動詞）跳起；突然移動",
+      "sourceMeaningEn": "the season between winter and summer when plants start to grow; a coil of metal that returns to its original shape after being pressed; to jump or move suddenly",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U11-74",
+          "captionEn": "When she heard the good news, she sprang up from her chair with excitement.",
+          "captionZh": "聽到這個好消息時，她興奮地從椅子上跳了起來。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "交接快照中的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "動詞跳起、突然移動；既有摘要與例句只包含這一組動詞義，名詞彈簧不等於動詞裝彈簧。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "spring",
+        "past": "sprang",
+        "pastParticiple": "sprung"
+      },
+      "proposedVerbForms": {
+        "base": "spring",
+        "past": "sprang",
+        "pastParticiple": "sprung",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/spring"
+      },
+      "sourceSupportedForms": {
+        "base": "spring",
+        "past": [
+          "sprang",
+          "sprung"
+        ],
+        "pastParticiple": [
+          "sprung"
+        ],
+        "qualification": "此清單只記錄跳起／突然移動義的已見形式；不是要求在介面無限定並列所有形式。"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/spring",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense sprang , past participle sprung",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方詞典正文並讀取所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins English Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/spring",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "sprang or sprung, sprung",
+          "location": "Collins English Dictionary, British English verb Word forms",
+          "scope": "英式區塊亦列兩個過去式，不附 US-only 限制；不把 sprung 武斷標作僅美式。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方詞典正文並讀取所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "Chambers",
+          "work": "Chambers 21st Century Dictionary",
+          "url": "https://chambers.co.uk/search/?query=spring&title=21st&xref=21C40824",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense sprang or (US) sprung, past participle sprung",
+          "location": "Chambers 21st Century Dictionary, spring headword inflections",
+          "scope": "官方詞典正文直接標明 sprang／(US) sprung 與分詞 sprung；不是只有搜尋摘要。與 MW／Collins 的地區標記做來源區分。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方詞典正文並讀取所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "Merriam-Webster",
+          "work": "Merriam-Webster.com Dictionary",
+          "url": "https://www.merriam-webster.com/dictionary/spring",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "to fit with springs",
+          "location": "verb (2), inflection header and definition",
+          "scope": "另外的裝彈簧動詞在 MW 獨立列條，屈折欄列 sprung，接著為 springing。這個專門義不在交接詞條的動詞摘要中，不作原跳躍義的替代或額外無限定形式。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方詞典正文並讀取所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "Merriam-Webster",
+          "work": "Merriam-Webster.com Dictionary",
+          "url": "https://www.merriam-webster.com/dictionary/spring",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "sprung; springing",
+          "location": "verb (1), inflection header",
+          "scope": "主動詞屈折欄先列 sprang 或 sprung，再列分詞 sprung 及現在分詞 springing；此欄未標 sprung 僅限美式。不把其他義 verb (2) 的屈折欄混同。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方詞典正文並讀取所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "跳起／突然移動可用 sprang 或 sprung 作過去式，分詞為 sprung。最小候選只放 sprang–sprung；MW 的裝彈簧義獨立列為 verb (2)，不把其他義的屈折限制套入本詞條。",
+      "regionalAndConstructionRestrictions": "Chambers 將過去式 sprung 標 US；MW 及 Collins British English 的形式欄接受 sprang 或 sprung，未在該欄限制 sprung 僅美式。保留來源標籤差異，不將變體武斷標作錯誤或罕見。",
+      "variantAssessment": "sprang–sprung 是三本來源共同支持且符合原詞條跳起／突然移動義的最小候選。過去式 sprung 亦有明確詞典支持，不稱為錯字或稀有形式；Chambers 的 US 標記與 MW／Collins 未限制的欄位分開記錄。裝彈簧另義保留研究註記，不因名詞有彈簧義就加入該動詞義。",
+      "pendingReason": null,
+      "senseAndVariantRecords": [
+        {
+          "base": "spring",
+          "past": "sprang",
+          "pastParticiple": "sprung",
+          "includeInMinimalCandidate": true,
+          "sense": "跳起／突然移動",
+          "reason": "COBUILD 明示並吻合既有動詞摘要與原例句 sprang up。"
+        },
+        {
+          "base": "spring",
+          "past": "sprung",
+          "pastParticiple": "sprung",
+          "includeInMinimalCandidate": false,
+          "sense": "跳起／突然移動",
+          "label": "Chambers: US 作過去式；MW／Collins 該形式欄未限於 US",
+          "reason": "真實變體；最小候選使用跨詞典一致主式 sprang，不否認 sprung 的正確性。"
+        },
+        {
+          "base": "spring",
+          "includeInMinimalCandidate": false,
+          "sense": "給物件裝彈簧",
+          "sourceObservedInflectionHeader": "sprung; springing",
+          "label": "MW verb (2)",
+          "sourceRef": "https://www.merriam-webster.com/dictionary/spring",
+          "reason": "原詞條只列跳起／突然移動的動詞義；名詞彈簧不是授權加入新動詞義。此記錄不為非目標義推造完整三態。"
+        }
+      ]
+    },
+    {
+      "wordId": "W000908",
+      "word": "top",
+      "units": [
+        "LV1-U11"
+      ],
+      "cardIds": [
+        "LV1-U11-72"
+      ],
+      "sourceSnapshotPos": "n./adj./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "adj.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "（名詞）頂部；頂端；極點；上面；（形容詞）頂尖的；最好的；（動詞）超過；居首",
+      "sourceMeaningEn": "the highest point or part of something; being the highest, best, or most important; to be greater than or better than something else",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U11-72",
+          "captionEn": "He always looks for top brands when buying sports shoes.",
+          "captionZh": "他買運動鞋時，總是尋找頂尖品牌。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "交接快照中的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "動詞居首、超過；不是字卡 top brands 的形容詞。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "top",
+        "past": "topped",
+        "pastParticiple": "topped"
+      },
+      "proposedVerbForms": {
+        "base": "top",
+        "past": "topped",
+        "pastParticiple": "topped",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/top"
+      },
+      "sourceSupportedForms": {
+        "base": "top",
+        "past": [
+          "topped"
+        ],
+        "pastParticiple": [
+          "topped"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/top",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle topped",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方詞典正文並讀取所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/top",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "[journalism]",
+          "location": "COBUILD verb senses 13–14",
+          "scope": "正文核對名列榜首及超過數量義；新聞語域標籤屬於該義，不是 topped 的全詞語域限制。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方詞典正文並讀取所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "topped 是詞典直接明示，非由雙寫規則推導；不把 tops 或最高級等名詞／形容詞形式誤當過去式。",
+      "regionalAndConstructionRestrictions": "COBUILD 將 top a list／超過數量的義標 journalism；這些標籤不代表 topped 整體只能用於新聞。",
+      "variantAssessment": "所讀主 Word forms 欄未另列變體；此為最小一般教學候選，不聲稱窮盡歷史、Scots、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000955",
+      "word": "wear",
+      "units": [
+        "LV1-U11"
+      ],
+      "cardIds": [
+        "LV1-U11-41"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "穿著；戴；使用；耗損",
+      "sourceMeaningEn": "to have something on one's body as clothing or an accessory; to become damaged or thinner through continued use or friction",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U11-41",
+          "captionEn": "The soles of his shoes had worn thin after years of daily use.",
+          "captionZh": "經過多年天天穿，他鞋子的鞋底已經磨薄了。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "交接快照中的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "動詞穿戴，以及持續使用／摩擦造成磨損、變薄。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "wear",
+        "past": "wore",
+        "pastParticiple": "worn"
+      },
+      "proposedVerbForms": {
+        "base": "wear",
+        "past": "wore",
+        "pastParticiple": "worn",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/wear"
+      },
+      "sourceSupportedForms": {
+        "base": "wear",
+        "past": [
+          "wore"
+        ],
+        "pastParticiple": [
+          "worn"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/wear",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense wore , past participle worn",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方詞典正文並讀取所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/wear",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "has worn thin or smooth",
+          "location": "COBUILD verb sense 7",
+          "scope": "磨損變薄義直接使用 worn，吻合原字卡 had worn thin；同頁英式 nautical 獨立條也列 wore／worn，不導出新的通用形式。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方詞典正文並讀取所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "Dictionaries of the Scots Language",
+          "work": "Scottish National Dictionary (1700–)",
+          "url": "https://dsl.ac.uk/entry/snd/wear",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "weak weared",
+          "location": "Scottish National Dictionary, WEAR, A. Forms: Pa.t. and Pa.p.",
+          "scope": "Scots 形式欄在過去式與過去分詞分別列 weared，例證來自歷史文本。只作有來源的地域／歷史補充，不能無限定併入現代英語三態；不企圖列盡該條全部 Scots 拼寫。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方詞典正文並讀取所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "穿戴與磨損共同使用 wore–worn，原例句 had worn thin 的 worn 是過去分詞。歷史／Scots 變體不當成無限定現代英語形式。",
+      "regionalAndConstructionRestrictions": "主候選是一般現代英語 wore–worn。DSL 的 weared 來自 Scots 形式與歷史例證，不與普通教學三態並列。",
+      "variantAssessment": "一般現代英語最小候選為 wear–wore–worn。DSL 直接記錄 Scots 的 weared 等弱變化與其他歷史拼寫；本報告只摘錄 weared 作限制示例，不把 Scots 形式當成一般英語，也不宣稱列盡。",
+      "pendingReason": null,
+      "senseAndVariantRecords": [
+        {
+          "base": "wear",
+          "past": "wore",
+          "pastParticiple": "worn",
+          "includeInMinimalCandidate": true,
+          "sense": "穿戴及磨損／變薄",
+          "reason": "COBUILD 主欄明示；磨損義亦有 worn 的正文例型。"
+        },
+        {
+          "base": "wear",
+          "past": "weared",
+          "pastParticiple": "weared",
+          "includeInMinimalCandidate": false,
+          "label": "Scots 形式與歷史例證（DSL）",
+          "sourceRef": "https://dsl.ac.uk/entry/snd/wear",
+          "reason": "區域／歷史用法，非本英語詞條的無限定教學答案。"
+        }
+      ]
+    },
+    {
+      "wordId": "W000980",
+      "word": "wish",
+      "units": [
+        "LV1-U11"
+      ],
+      "cardIds": [
+        "LV1-U11-05"
+      ],
+      "sourceSnapshotPos": "v./n.",
+      "sourceSnapshotPosAll": [
+        "v.",
+        "n."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "希望；願望；祝願；命令",
+      "sourceMeaningEn": "(v.) to want something to happen or be true, often contrary to present reality; to express a hope or good wishes for someone; (n.) a desire or an expression of good wishes.",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U11-05",
+          "captionEn": "I wish you a happy birthday and all the best!",
+          "captionZh": "我祝你生日快樂，一切順利！"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "交接快照中的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "動詞希望、祝願；原例句為祝願構式。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "wish",
+        "past": "wished",
+        "pastParticiple": "wished"
+      },
+      "proposedVerbForms": {
+        "base": "wish",
+        "past": "wished",
+        "pastParticiple": "wished",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/wish"
+      },
+      "sourceSupportedForms": {
+        "base": "wish",
+        "past": [
+          "wished"
+        ],
+        "pastParticiple": [
+          "wished"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/wish",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle wished",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方詞典正文並讀取所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "wish 後假設內容使用 were/had 等，是補語的時態，不是 wish 的三態；wish 自身用 wished–wished。",
+      "regionalAndConstructionRestrictions": "wish to V 的義在 COBUILD 標 formal；祝願與假設補語的構式分開，詞形均為 wished。",
+      "variantAssessment": "所讀主 Word forms 欄未另列變體；此為最小一般教學候選，不聲稱窮盡歷史、Scots、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W001854",
+      "word": "stream",
+      "units": [
+        "LV1-U11"
+      ],
+      "cardIds": [
+        "LV1-U11-27"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "draft",
+      "sourceMeaningZh": "水流；小河；流出；趨勢",
+      "sourceMeaningEn": "(n.) a natural flow of water; a continuous succession, supply or current of events or ideas; (v.) to flow or move continuously, to emit in a stream, or to transmit/receive continuous digital media.",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U11-27",
+          "captionEn": "The children stepped across the shallow stream on stones.",
+          "captionZh": "孩子們踩著石頭越過淺淺的小溪。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "交接快照中的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "動詞流出、連續移動、發出流體或串流影音。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "stream",
+        "past": "streamed",
+        "pastParticiple": "streamed"
+      },
+      "proposedVerbForms": {
+        "base": "stream",
+        "past": "streamed",
+        "pastParticiple": "streamed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/stream"
+      },
+      "sourceSupportedForms": {
+        "base": "stream",
+        "past": [
+          "streamed"
+        ],
+        "pastParticiple": [
+          "streamed"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/stream",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle streamed",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方詞典正文並讀取所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/stream",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "To stream sound or video",
+          "location": "COBUILD verb sense 10",
+          "scope": "正文把影音經網路連續傳送／接收列為動詞，同頁主 Word forms 支援 streamed。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方詞典正文並讀取所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "流動與串流影音均受同一 Word forms 欄支援；名詞 streams 的複數不納入三態。",
+      "regionalAndConstructionRestrictions": "所讀主三態欄不設地區限制；英式能力分班義另有 British 標籤，不據此把普通流動／串流義標作英式專用。",
+      "variantAssessment": "所讀主 Word forms 欄未另列變體；此為最小一般教學候選，不聲稱窮盡歷史、Scots、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W003188",
+      "word": "congratulate",
+      "units": [
+        "LV1-U11"
+      ],
+      "cardIds": [
+        "LV1-U11-42"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "sourceSnapshotStatus": "draft",
+      "sourceMeaningZh": "祝賀；慶賀",
+      "sourceMeaningEn": "express congratulations",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U11-42",
+          "captionEn": "Her friends congratulated her on winning the race.",
+          "captionZh": "朋友們祝賀她贏得比賽。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "交接快照中的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "動詞祝賀、稱讚某人成就。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "congratulate",
+        "past": "congratulated",
+        "pastParticiple": "congratulated"
+      },
+      "proposedVerbForms": {
+        "base": "congratulate",
+        "past": "congratulated",
+        "pastParticiple": "congratulated",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/congratulate"
+      },
+      "sourceSupportedForms": {
+        "base": "congratulate",
+        "past": [
+          "congratulated"
+        ],
+        "pastParticiple": [
+          "congratulated"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/congratulate",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle congratulated",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方詞典正文並讀取所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "congratulate sb on/for N 或成就的構式不改變本體三態；congratulation(s) 是名詞，不納入動詞三態。",
+      "regionalAndConstructionRestrictions": "所讀主三態欄無地區限制；COBUILD 明示 on，亦接受部分 for 構式，本研究不修改用法摘要。",
+      "variantAssessment": "所讀主 Word forms 欄未另列變體；此為最小一般教學候選，不聲稱窮盡歷史、Scots、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W005939",
+      "word": "trifle",
+      "units": [
+        "LV1-U11"
+      ],
+      "cardIds": [
+        "LV1-U11-38"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "draft",
+      "sourceMeaningZh": "瑣事；少量；浪費；開玩笑",
+      "sourceMeaningEn": "(n.) something of little importance or value, a small amount, or a layered sponge-cake dessert; (v.) to treat lightly, act without serious purpose, or waste time/resources.",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U11-38",
+          "captionEn": "They argued over a trifle and soon laughed about it.",
+          "captionZh": "他們為一件小事爭論，很快又一笑置之。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "交接快照中的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "動詞輕率對待、以不認真態度行事或浪費時間；名詞瑣事與甜點不具有動詞三態。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "trifle",
+        "past": "trifled",
+        "pastParticiple": "trifled"
+      },
+      "proposedVerbForms": {
+        "base": "trifle",
+        "past": "trifled",
+        "pastParticiple": "trifled",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/trifle"
+      },
+      "sourceSupportedForms": {
+        "base": "trifle",
+        "past": [
+          "trifled"
+        ],
+        "pastParticiple": [
+          "trifled"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/trifle",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle trifled",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方詞典正文並讀取所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/trifle-with",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "He was not someone to be trifled with.",
+          "location": "COBUILD trifle with, phrasal verb",
+          "scope": "編輯例句補充構式與被動分詞使用；三態的主要證據仍是主詞條明示的 Word forms。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方詞典正文並讀取所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "trifle with 表輕率對待時保留 with；三態欄仍只填 trifle／trifled，不能把詞尾 -ing 的形容詞或甜點名詞當成時態。",
+      "regionalAndConstructionRestrictions": "Collins 動詞條標 usually followed by with；輕率對待與浪費義均為 trifled，不因名詞甜點的英式用法而把動詞三態標作英式專用。",
+      "variantAssessment": "所讀主 Word forms 欄未另列變體；此為最小一般教學候選，不聲稱窮盡歷史、Scots、方言或專業變體。",
+      "pendingReason": null
+    }
+  ]
+}
