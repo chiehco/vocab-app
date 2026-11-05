@@ -1,6 +1,7 @@
 """Produce public evidence references; private originals stay on the local backup."""
 import json
 import re
+import sys
 from pathlib import Path
 from audit_paths import source_root
 
@@ -9,7 +10,9 @@ ROOT = Path(__file__).resolve().parent.parent
 def clean_text(text):
     replacements = [(str(source_root()), 'source-art/LV1'),
                     (source_root().as_posix(), 'source-art/LV1'),
-                    (str(ROOT), '<repo>'), (ROOT.as_posix(), '<repo>')]
+                    (str(ROOT), '<repo>'), (ROOT.as_posix(), '<repo>'),
+                    (str(Path(sys.executable).parent), '<python-install>'),
+                    (Path(sys.executable).parent.as_posix(), '<python-install>')]
     for old, new in replacements:
         text = text.replace(old.replace('\\', '\\\\'), new).replace(old, new)
     text = re.sub(r'libfile_[a-z0-9]+|file_[0-9a-f]{24,}', '[private artifact identity omitted]', text)

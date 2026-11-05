@@ -2,8 +2,29 @@ import { describe, expect, it } from "vitest";
 import { buildUsagePatternItems } from "./usagePattern";
 import words from '../../../public/data/v1/words.json';
 import u11Audit from '../../../docs/unit-audit-20261105/LV1-U11-patches.json';
+import u12Audit from '../../../docs/unit-audit-20261105/LV1-U12-patches.json';
 
 describe("buildUsagePatternItems", () => {
+  it('keeps every corrected U12 bilingual usage pattern visible',()=>{
+    const ids=u12Audit.patches.filter(p=>p.dataset==='words'&&('usagePattern' in p.after||'usagePatternZh' in p.after)).map(p=>p.id);
+    expect(ids).toHaveLength(22);
+    for(const id of ids){const word=words.find(w=>w.wordId===id)!;
+      const items=buildUsagePatternItems(word.usagePattern,word.usagePatternZh);
+      expect(items.length).toBeGreaterThan(0);
+      expect(items.every(item=>Boolean(item.chinese)),id).toBe(true);
+    }
+    const answer=words.find(w=>w.wordId==='W000035')!,save=words.find(w=>w.wordId==='W000739')!;
+    expect(buildUsagePatternItems(answer.usagePattern,answer.usagePatternZh)).toEqual([
+      {english:'answer a question',chinese:'回答問題'},
+      {english:'the answer to N',chinese:'……的答案'},
+      {english:'answer for N',chinese:'對……負責'},
+    ]);
+    expect(buildUsagePatternItems(save.usagePattern,save.usagePatternZh)).toEqual([
+      {english:'save money',chinese:'存錢／省錢'},
+      {english:'save time',chinese:'節省時間'},
+      {english:"save someone's life",chinese:'拯救某人的生命'},
+    ]);
+  });
   it("pairs aligned English and Chinese collocations", () => {
     expect(buildUsagePatternItems(
       "have a great time; a great deal of N; It's great to V",

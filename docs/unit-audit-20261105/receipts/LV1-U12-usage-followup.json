@@ -1,0 +1,133 @@
+{
+  "manifest": "docs\\unit-audit-20261105\\LV1-U12-usage-followup.json",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "checkedAt": "2026-11-05T10:19:38.140684+00:00",
+  "changeCount": 2,
+  "changes": [
+    {
+      "dataset": "words",
+      "id": "W000035",
+      "before": {
+        "wordId": "W000035",
+        "word": "answer",
+        "wordVariants": [
+          "answer"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "答案；回答；回報；答辯",
+        "meaningEn": "(n.) something said or written in reply to a question; (v.) to reply to a question, letter, or request",
+        "usagePattern": "answer a question; the answer to N; answer for N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "answer",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "……的答案；對……負責"
+      },
+      "after": {
+        "wordId": "W000035",
+        "word": "answer",
+        "wordVariants": [
+          "answer"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "答案；回答；回報；答辯",
+        "meaningEn": "(n.) something said or written in reply to a question; (v.) to reply to a question, letter, or request",
+        "usagePattern": "answer a question; the answer to N; answer for N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "answer",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "回答問題；……的答案；對……負責"
+      },
+      "reason": "The preceding U12 correction omitted the first Chinese segment for answer a question, hiding all Chinese in the actual aligned-list component. Restore all three exact meanings, without weakening the alignment fallback.",
+      "evidence": "Exact current English list: answer a question; the answer to N; answer for N. UsagePatternList regression identified W000035; https://www.merriam-webster.com/dictionary/answer"
+    },
+    {
+      "dataset": "words",
+      "id": "W000739",
+      "before": {
+        "wordId": "W000739",
+        "word": "save",
+        "wordVariants": [
+          "save"
+        ],
+        "level": "LV1",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "救球；解救；挽救；儲蓄",
+        "meaningEn": "to make someone or something safe from harm, danger, or loss; to keep money for future use instead of spending it; (sports) to stop an opponent's shot from scoring",
+        "usagePattern": "save money; save time; save someone's life",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "save",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "拯救／節省……；存錢／省錢"
+      },
+      "after": {
+        "wordId": "W000739",
+        "word": "save",
+        "wordVariants": [
+          "save"
+        ],
+        "level": "LV1",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "救球；解救；挽救；儲蓄",
+        "meaningEn": "to make someone or something safe from harm, danger, or loss; to keep money for future use instead of spending it; (sports) to stop an opponent's shot from scoring",
+        "usagePattern": "save money; save time; save someone's life",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "save",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "存錢／省錢；節省時間；拯救某人的生命"
+      },
+      "reason": "The preceding U12 correction did not retain the three existing English constructions in order. Translate each exact pattern separately so save money includes accumulating savings and save someone's life remains rescue, not money-saving.",
+      "evidence": "Exact unchanged English list: save money; save time; save someone's life. https://www.merriam-webster.com/dictionary/save ; unchanged laptop-savings and seat-belt formal examples."
+    }
+  ],
+  "masterTouched": false,
+  "sentencesChanged": false,
+  "englishSentencesChanged": false,
+  "imagesChanged": false,
+  "sourceHashesBefore": {
+    "words.json": "f014c4c58aa6e0e2618ec162c36179810b3f993fd4c1c6be8931b6e0a5b50e7b",
+    "senses.json": "9f85dfb17ae7bccf8b3a9df7a1c7ceb6165acf5cd0b05e5e0ddb334c250cf422",
+    "examples.json": "b1fbe78e8a7f9a65238d92cb825cfadb66d42fc10c74b3afa5312f8ad3efc86b",
+    "meta.json": "6ae7b9143c2b6d0e8ee1dc45e6b2d217de8a30592526910981d6967ddb10850b",
+    "sa-pack.json": "89e441634f26474ba0ac3777c7cce10894d95f5fa8d58fb3579ac2cb0d017c54"
+  },
+  "sourceHashesAfter": {
+    "words.json": "b56c5063122a092d392b4d8057e514127cc82f6217128cea399b91219cb63a0d",
+    "senses.json": "9f85dfb17ae7bccf8b3a9df7a1c7ceb6165acf5cd0b05e5e0ddb334c250cf422",
+    "examples.json": "b1fbe78e8a7f9a65238d92cb825cfadb66d42fc10c74b3afa5312f8ad3efc86b",
+    "meta.json": "1cfd2b062f8fad10df5e5fc99069dce614f4b4191a72728b5b16345580cd3c8a",
+    "sa-pack.json": "6189a9d44542327aaeced4cac392cf1d4e6194e2fb9b8ce8eb0c114fa501dfdd"
+  },
+  "state": "applied_not_ui_verified"
+}

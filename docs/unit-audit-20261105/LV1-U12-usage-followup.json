@@ -1,0 +1,33 @@
+{
+  "unit": "LV1-U12",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "scope": "Restore the one-to-one bilingual segments for two actually diagnosed usage lists; preserve all English patterns and original example sentences.",
+  "patches": [
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000035",
+      "before": {
+        "usagePatternZh": "……的答案；對……負責"
+      },
+      "after": {
+        "usagePatternZh": "回答問題；……的答案；對……負責"
+      },
+      "reason": "The preceding U12 correction omitted the first Chinese segment for answer a question, hiding all Chinese in the actual aligned-list component. Restore all three exact meanings, without weakening the alignment fallback.",
+      "evidence": "Exact current English list: answer a question; the answer to N; answer for N. UsagePatternList regression identified W000035; https://www.merriam-webster.com/dictionary/answer"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000739",
+      "before": {
+        "usagePatternZh": "拯救／節省……；存錢／省錢"
+      },
+      "after": {
+        "usagePatternZh": "存錢／省錢；節省時間；拯救某人的生命"
+      },
+      "reason": "The preceding U12 correction did not retain the three existing English constructions in order. Translate each exact pattern separately so save money includes accumulating savings and save someone's life remains rescue, not money-saving.",
+      "evidence": "Exact unchanged English list: save money; save time; save someone's life. https://www.merriam-webster.com/dictionary/save ; unchanged laptop-savings and seat-belt formal examples."
+    }
+  ]
+}

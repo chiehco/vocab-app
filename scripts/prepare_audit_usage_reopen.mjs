@@ -8,7 +8,10 @@ writeFileSync('output/playwright/unit-audit/usage-reopen.playwright.txt',`async(
  await page.waitForTimeout(350);await page.getByRole('button',{name:'搭配',exact:true}).click();
  const expected=[...card.usagePattern.split(';'),...card.usagePatternZh.split('；')].map(s=>s.trim()).filter(Boolean);
  await page.waitForFunction(expected=>expected.every(s=>document.querySelector('main')?.innerText.includes(s)),expected);
- await page.waitForTimeout(350);const text=await page.locator('main').innerText();const screenshot='output/playwright/unit-audit/'+card.word+'-usage-followup.png';await page.screenshot({path:screenshot,fullPage:true});
- results.push({wordId:card.wordId,word:card.word,screenshot,url:page.url(),allRulePartsVisible:expected.every(s=>text.includes(s)),text});
+ await page.waitForTimeout(350);let text=await page.locator('main').innerText(),tabRetry=false;
+ if(!expected.every(s=>text.includes(s))){tabRetry=true;await page.getByRole('button',{name:'搭配',exact:true}).click();await page.waitForFunction(expected=>expected.every(s=>document.querySelector('main')?.innerText.includes(s)),expected);await page.waitForTimeout(350);text=await page.locator('main').innerText();}
+ if(!expected.every(s=>text.includes(s)))throw Error('Usage page did not remain visible: '+card.wordId);
+ const screenshot='output/playwright/unit-audit/'+card.word+'-usage-followup.png';await page.screenshot({path:screenshot,fullPage:true});
+ results.push({wordId:card.wordId,word:card.word,screenshot,url:page.url(),allRulePartsVisible:true,tabRetry,text});
 }return results;}`);
 console.log(JSON.stringify({usageCards:cards.length}));

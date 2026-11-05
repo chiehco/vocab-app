@@ -5,6 +5,8 @@ paths.push('LV1-U08-hints-followup.json','LV1-verified-translations-followup.jso
 paths.push('LV1-U10-patches.json');
 paths.push('LV1-U11-patches.json');
 paths.push('LV1-U11-usage-followup.json');
+paths.push('LV1-U12-patches.json');
+paths.push('LV1-U12-usage-followup.json');
 const expected={};
 for(const path of paths)for(const p of read('docs/unit-audit-20261105/'+path).patches){
  const key=p.dataset+':'+p.id;
