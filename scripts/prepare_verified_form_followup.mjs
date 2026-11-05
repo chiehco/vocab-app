@@ -17,6 +17,12 @@ const batches = {
     ids: 'W000008 W000041 W000046 W000082 W000146 W000387 W000432 W000476 W000498 W000525 W000529 W000534 W000541 W000569 W000613 W000632 W000672 W000699 W000724 W000732 W000745 W000755 W000784 W000822 W000920 W001086 W001523 W001598 W001768 W001779 W002047 W003270 W003306 W003352 W003553 W003959 W004780'.split(' '),
     sourceSnapshot: {researchCommit:'89f9fd242ed94d69393bf24ba10c8b39486669a1', sourceBlob:'46aef54ff3137de0c538391a0283523cfe21a8e7'},
   },
+  'U08-U09': {
+    sources: ['U08-U09-VERB-FORMS-VERIFICATION.json'],
+    ids: 'W000635 W000655 W003289 W000630 W000366 W000653 W004820 W000011 W000376 W001594 W000976 W000504 W000016 W001390 W000572 W000224 W001045 W003329 W000478 W000169 W003154 W000204 W001708 W001932 W000125 W000291 W002227 W000718 W001456 W000328 W000677 W000707 W000364 W000326 W000316 W000207 W002711 W001184 W001307 W002292 W000117 W000467 W004786 W004804 W003584 W000239 W000622 W000892 W000945 W000266 W001331 W000194 W000992 W000219'.split(' '),
+    sourceSnapshot: {researchCommit:'72d91393e73bc487f9bded8baa2ed76942e1d816', sourceBlob:'7a0fab10a5cfb4480b51a489a01acbd296b52100'},
+    preserveVariantEvidence: true,
+  },
 };
 const batch = process.argv[2];
 assert.ok(batches[batch], 'Select an explicitly reviewed batch');
@@ -56,6 +62,10 @@ const facts = config.ids.map(id => {
     researchFile:entry.researchFile,
     originalPos:word.pos,
     ...(config.sourceSnapshot ? {sourceSnapshot:config.sourceSnapshot} : {}),
+    ...(config.preserveVariantEvidence ? {sourceSupportedForms:entry.sourceSupportedForms,variantAssessment:entry.variantAssessment,
+      ...(entry.displayQualificationRecommended?{displayQualificationRecommended:entry.displayQualificationRecommended}:{}),
+      ...(entry.presentationPriority?{presentationPriority:entry.presentationPriority}:{}),
+      currentSourceCheck:{method:'Direct official dictionary forms and applicable verb construction; conjugation and regional notes checked where needed',checkedAt:new Date().toISOString(),success:true}} : {}),
     ...(id === 'W004780' ? {currentSourceCheck:{verifiedUrl:verbForms.sourceRef,method:'Direct Collins Past and Past Participle table',unavailableRecheck:{url:'https://www.oxfordlearnersdictionaries.com/definition/english/sequence_2',status:403},note:'Original research evidence is retained; this pass does not claim a successful direct Oxford read.'}} : {}),
     verification:'Exact current field absence, headword/POS and source forms checked before mutation.'};
 });

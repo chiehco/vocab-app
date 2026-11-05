@@ -10,8 +10,10 @@ const house=read('public/data/v1/words.json').filter(w=>w.word==='house');
 assert.equal(house.length,1);
 const targets=current.patches.map(p=>p.id);
 const protectedIds=[...original,...prior,...house].map(f=>f.wordId);
+const protectedExamples=[...read(root+'VERIFIED-TRANSLATION-SOURCES.json').facts,...read(root+'VERIFIED-FOLLOWUP-TRANSLATION-SOURCES.json').facts].map(f=>f.exampleId);
+assert.equal(new Set(protectedExamples).size,7);
 const out=`output/verified-followups/${batch}-progress-snapshot.playwright.txt`;
-writeFileSync(out,`async(page)=>page.evaluate(async({targets,protectedIds})=>{
+writeFileSync(out,`async(page)=>{const snapshot=await page.evaluate(async({targets,protectedIds,protectedExamples})=>{
  const readDB=name=>new Promise((resolve,reject)=>{
   const open=indexedDB.open(name);open.onerror=()=>reject(open.error);
   open.onsuccess=()=>{const db=open.result;const names=Array.from(db.objectStoreNames);const tx=db.transaction(names,'readonly');const rows={};
@@ -25,7 +27,8 @@ writeFileSync(out,`async(page)=>page.evaluate(async({targets,protectedIds})=>{
   meta:content.meta.find(row=>row.key==='current'),contentWords:content.words.length,
   targets:targets.map(id=>{const row=content.words.find(row=>row.wordId===id);return {wordId:id,present:!!row,formsPresent:row?Object.hasOwn(row,'verbForms'):false,forms:row?.verbForms??null};}),
   protectedWordCount:protectedIds.length,protectedWordsSha256:await hash(protectedIds.map(id=>content.words.find(row=>row.wordId===id))),
-  progress:await Promise.all(Object.keys(progress).sort().map(async table=>({table,count:progress[table].length,sha256:await hash(progress[table])})))
+  protectedExampleCount:protectedExamples.length,protectedExamplesSha256:await hash(protectedExamples.map(id=>content.examples.find(row=>row.exampleId===id))),
+  progress:await Promise.all(Object.keys(progress).sort().map(async table=>({table,count:progress[table].length,sha256:await hash(progress[table])}))),settings:progress.settings
  };
-},${JSON.stringify({targets,protectedIds})})`);
-console.log(JSON.stringify({batch,targets:targets.length,protectedWords:protectedIds.length,file:out}));
+},${JSON.stringify({targets,protectedIds,protectedExamples})});return page.evaluate(v=>btoa(unescape(encodeURIComponent(JSON.stringify(v)))),snapshot);}`);
+console.log(JSON.stringify({batch,targets:targets.length,protectedWords:protectedIds.length,protectedExamples:protectedExamples.length,file:out}));

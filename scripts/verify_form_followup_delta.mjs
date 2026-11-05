@@ -35,9 +35,11 @@ const retainedFiles=['senses','examples','relations','morphemes','notes','exam_p
 for(const name of retainedFiles)assert.deepEqual(read(`public/data/v1/${name}.json`),before(`public/data/v1/${name}.json`));
 const originalSources=root+'VERIFIED-VERB-FORMS-SOURCES.json';
 assert.deepEqual(read(originalSources),before(originalSources));
+for(const file of ['VERIFIED-TRANSLATION-SOURCES.json','VERIFIED-FOLLOWUP-TRANSLATION-SOURCES.json'])assert.deepEqual(read(root+file),before(root+file),'All seven translation sources remain exact');
 const sourcePath=root+'VERIFIED-FOLLOWUP-VERB-FORMS-SOURCES.json';
 const oldFacts=before(sourcePath).facts;const newFacts=read(sourcePath).facts;
 assert.deepEqual(newFacts.filter(f=>f.batch!==batch),oldFacts,'Prior followup facts remain exact');
+assert.deepEqual({...read(sourcePath),facts:oldFacts},before(sourcePath),'Prior source metadata remains exact');
 assert.equal(new Set(newFacts.map(f=>f.wordId)).size,newFacts.length);
 assert.deepEqual(new Set(newFacts.filter(f=>f.batch===batch).map(f=>f.wordId)),new Set(patches.keys()));
 const oldPack=before('public/data/v1/sa-pack.json'),pack=read('public/data/v1/sa-pack.json');
@@ -51,9 +53,12 @@ const digest=createHash('sha256');
 for(const name of ['words','senses','examples','relations','morphemes','notes','exam_priority','hooks','media'])digest.update(canonical(`public/data/v1/${name}.json`));
 assert.equal(meta.contentHash,digest.digest('hex'));
 assert.equal(pack.meta.wordsHash,'sa:'+sha(JSON.stringify(pack.words)));
+const datasets=Object.fromEntries(['words','senses','examples','relations','morphemes','notes','examPriorities','media'].map(k=>[k,pack[k]]));
+assert.equal(pack.meta.contentHash,'sa:'+sha(JSON.stringify({sourceHash:meta.contentHash,datasets})));
+assert.deepEqual({...pack.meta,generatedAt:oldPack.meta.generatedAt,wordsHash:oldPack.meta.wordsHash,contentHash:oldPack.meta.contentHash},oldPack.meta);
 const report={base,batch,modifiedFields:changed,fullWordCount:words.length,starterCount:pack.words.length,starterUpdated:starterChanged,
  starterOmitted:[...patches.keys()].filter(id=>!pack.words.some(w=>w.wordId===id)),
  unchangedOtherWordFields:true,unchangedOtherDatasets:retainedFiles,original31SourcesUnchanged:true,priorFollowupFactsUnchanged:oldFacts.length,
- unchangedStarterIdentities:true,metadataHashesValid:true};
+ unchangedStarterIdentities:true,metadataHashesValid:true,unchangedAll7TranslationSources:true};
 writeFileSync(`output/verified-followups/${batch}-exact-diff.json`,JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify(report));

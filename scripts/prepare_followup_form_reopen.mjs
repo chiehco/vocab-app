@@ -1,7 +1,8 @@
 import assert from 'node:assert/strict';
 import {readFileSync, writeFileSync, mkdirSync} from 'node:fs';
 const batch=process.argv[2];
-const facts=JSON.parse(readFileSync('docs/unit-audit-20261105/VERIFIED-FOLLOWUP-VERB-FORMS-SOURCES.json','utf8')).facts.filter(f=>f.batch===batch);
+const unit=process.argv[3];if(unit)assert.match(unit,/^U\d{2}$/);
+const facts=JSON.parse(readFileSync('docs/unit-audit-20261105/VERIFIED-FOLLOWUP-VERB-FORMS-SOURCES.json','utf8')).facts.filter(f=>f.batch===batch&&(!unit||f.units.some(u=>u.replace('LV1-','')===unit)));
 assert.ok(facts.length,'Known applied batch required');
 const examples=JSON.parse(readFileSync('public/data/v1/examples.json','utf8')).filter(row=>
   ['approved','reviewed','draft','needs_check'].includes(row.status)
@@ -9,7 +10,8 @@ const examples=JSON.parse(readFileSync('public/data/v1/examples.json','utf8')).f
 const expectedExamples=Object.fromEntries(facts.map(f=>[f.word,examples.filter(e=>e.word===f.word).map(e=>({sentenceEn:e.sentenceEn,sentenceZh:e.sentenceZh||''}))]));
 const out='output/playwright/verified-followups';
 mkdirSync(out,{recursive:true});
-writeFileSync(`${out}/${batch}-reopen.playwright.txt`,`async(page)=>{
+const suffix=unit?'-'+unit:'';
+writeFileSync(`${out}/${batch}${suffix}-reopen.playwright.txt`,`async(page)=>{
  const results=[];
  await page.setViewportSize({width:1000,height:900});
  for(const fact of ${JSON.stringify(facts)}){
@@ -29,7 +31,7 @@ writeFileSync(`${out}/${batch}-reopen.playwright.txt`,`async(page)=>{
   const images=await image.evaluateAll(imgs=>imgs.map(img=>({src:img.getAttribute('src'),loaded:img.complete&&img.naturalWidth>0,width:img.naturalWidth,height:img.naturalHeight})));
   if(images.some(img=>!img.loaded))throw Error('Existing illustration failed '+fact.word);
   const caption=await page.locator('.study-illustration figcaption').allTextContents();
-  const screenshot='${out}/'+fact.wordId+'-card.png';await page.screenshot({path:screenshot,fullPage:true});
+  const screenshot='${out}/'+fact.wordId+'-card.png';await page.screenshot({path:screenshot,fullPage:true,animations:'disabled'});
   await page.getByRole('button',{name:'字義',exact:true}).click();
   const meaningForms=await page.locator('.recorded-verb-forms dd').allTextContents();
   if(JSON.stringify(meaningForms)!==JSON.stringify(expected))throw Error('Meaning panel forms mismatch '+fact.word);
@@ -42,12 +44,12 @@ writeFileSync(`${out}/${batch}-reopen.playwright.txt`,`async(page)=>{
   const usageButton=page.getByRole('button',{name:'搭配',exact:true});let usage={present:false};
   if(await usageButton.count()){
    await usageButton.click();const text=await page.locator('main').innerText();
-   const usageScreenshot='${out}/'+fact.wordId+'-usage.png';await page.screenshot({path:usageScreenshot,fullPage:true});
+   const usageScreenshot='${out}/'+fact.wordId+'-usage.png';await page.screenshot({path:usageScreenshot,fullPage:true,animations:'disabled'});
    usage={present:true,text,screenshot:usageScreenshot};
   }
   results.push({wordId:fact.wordId,word:fact.word,savedForms:saved.verbForms,actual,meaningForms,images,caption,visibleExamples,usage,screenshot,verified:true});
  }
  // Keep native Windows console code pages from corrupting evidence JSON.
- return page.evaluate(value=>btoa(unescape(encodeURIComponent(JSON.stringify(value)))),{batch:${JSON.stringify(batch)},origin:new URL(page.url()).origin,reopened:results.length,results});
+ return page.evaluate(value=>btoa(unescape(encodeURIComponent(JSON.stringify(value)))),{batch:${JSON.stringify(batch)},unit:${JSON.stringify(unit??null)},origin:new URL(page.url()).origin,reopened:results.length,results});
 }`);
-console.log(JSON.stringify({batch,cards:facts.length,file:`${out}/${batch}-reopen.playwright.txt`}));
+console.log(JSON.stringify({batch,unit:unit??null,cards:facts.length,file:`${out}/${batch}${suffix}-reopen.playwright.txt`}));
