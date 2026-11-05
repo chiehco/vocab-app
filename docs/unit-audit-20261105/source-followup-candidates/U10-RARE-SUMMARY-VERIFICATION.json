@@ -1,0 +1,522 @@
+{
+  "reportType": "U10 rare and cross-part-of-speech summary verification",
+  "checkedAtUtc": "2026-11-05T09:30:00Z",
+  "sourceCommit": "fe2ec66bb06ca15351946895cd94022084d9fa68",
+  "scope": "只來源核實 3 個字卡現有中文摘要；不修改 repository，不以日常例句代替稀有義核驗。",
+  "repositoryModified": false,
+  "summary": {
+    "wordCount": 3,
+    "originalGlossesReviewed": 12,
+    "conclusion": "friendly 副詞、read 形容詞、include enclose 古義及 MS-DOS INCLUDE 技術內容均有來源支持，宜保留並加詞性／用法／領域標示。",
+    "pendingExactClaims": [
+      {
+        "word": "friendly",
+        "claim": "互助的作為單獨 friendly 的一般形容詞義",
+        "reason": "可靠正文只直接支持 friendly society 整個名詞詞組；現有單字中文來源仍未確證。"
+      },
+      {
+        "word": "include",
+        "claim": "DOS內部命令中的 internal 精確分類",
+        "reason": "原廠手冊支持 CONFIG.SYS 命令與功能，未取得直接 internal 分類；可改用已核實的精確環境名稱而不刪除命令。"
+      }
+    ],
+    "evidenceLimitation": "MS-DOS 證據為 Microsoft 原廠著作的第三方鏡像；friendly society 繁中譯名的 Cambridge 證據僅搜尋摘要。"
+  },
+  "method": {
+    "bodyVersusSnippet": "每個來源逐項標記 page_body_read、pdf_body_read 或 search_snippet_only。全文來源表示已取得並閱讀相關詞典條目正文，不表示逐字閱讀整站頁尾或整本手冊。",
+    "translationMethod": "英文詞典定義與中文摘要的對照為本次語義判讀；除特別標示的 Cambridge 摘要外，不聲稱來源直接使用相同中文字。",
+    "historicalSenses": "收錄少見、古義、技術義不等於錯誤；只做有據標示，不以今日常見程度決定刪除。",
+    "candidateOnly": "afterCandidate 是供審查的最小候選，不是已套用的修正。保留前後對照與 pending 原因。",
+    "sourceNoteCaution": "輸入的高中英文參考詞彙表 sourceNote 不代表該表已證實每個稀有中文義；此報告使用獨立詞典與原廠資料核實。",
+    "publicSafety": "此 JSON 不含私人工作目錄、檔案服務識別碼或工具引文代碼。"
+  },
+  "words": [
+    {
+      "wordId": "W000331",
+      "word": "friendly",
+      "before": {
+        "wordId": "W000331",
+        "word": "friendly",
+        "wordVariants": [
+          "friendly"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "友好的；親切的；互助的；友善地",
+        "meaningEn": "kind, helpful, and pleasant toward other people",
+        "usagePattern": "be friendly to/with sb; a friendly smile",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "friendly",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "對某人友好；友善的微笑"
+      },
+      "overallFinding": "副詞義確實存在，需要和形容詞分列；互助的作單獨單字義仍待確認，不能因有 friendly society 就宣告整串摘要通過。",
+      "senseFindings": [
+        {
+          "before": "友好的",
+          "status": "supported",
+          "pos": "adj.",
+          "finding": "可靠詞典的善意、親善義直接支持，保留。",
+          "afterCandidate": "友好的",
+          "sourceIds": [
+            "mw_friendly",
+            "collins_friendly"
+          ]
+        },
+        {
+          "before": "親切的",
+          "status": "supported",
+          "pos": "adj.",
+          "finding": "詞典的 kindly／pleasant 義支持此正常中文概括，保留。",
+          "afterCandidate": "親切的",
+          "sourceIds": [
+            "mw_friendly",
+            "collins_friendly"
+          ]
+        },
+        {
+          "before": "互助的",
+          "status": "pending_exact_standalone_gloss",
+          "pos": "adj.（原資料；此義尚未通過）",
+          "finding": "已核實 friendly society 是英式互助保險組織名詞詞組；尚無足夠可靠正文證明 friendly 單獨等於一般性的互助的。friendly 的 helpful／favorable 義也不能自動推成雙向互助。原中文可能源自該詞組，但只是未證實的來源推測。",
+          "afterCandidate": null,
+          "retainOriginal": true,
+          "proposedAnnotation": "互助的〔待確認是否屬 friendly society 特定搭配〕",
+          "sourceIds": [
+            "collins_friendly_society",
+            "cambridge_friendly_society_zh_snippet",
+            "mw_friendly",
+            "collins_friendly"
+          ],
+          "nextEvidenceNeeded": "原始詞義資料來源，或直接把 friendly 的特定形容詞義界定為互助的之可靠詞典正文。不可把未獲證明當作已證偽。"
+        },
+        {
+          "before": "友善地",
+          "status": "supported_requires_pos_split",
+          "pos": "adv.",
+          "finding": "Merriam-Webster 與 Collins 正文明確把 friendly 本字另列副詞，意為以友善方式。不是把 friendlily 誤當 friendly，也不是僅憑字尾 -ly 猜測。應保留詞義並分列 adv.。",
+          "afterCandidate": "（adv.）友善地",
+          "sourceIds": [
+            "mw_friendly",
+            "collins_friendly",
+            "bc_adverbials"
+          ],
+          "usageCaution": "日常學習造句優先採 in a friendly way；查得的副詞詞典條目未標 archaic，不能擅加古義或方言標籤。"
+        }
+      ],
+      "afterCandidate": {
+        "pos": "adj.",
+        "posAll": [
+          "adj.",
+          "adv."
+        ],
+        "meaningZh": "（adj.）友好的；親切的；互助的〔待確認〕；（adv.）友善地"
+      },
+      "candidateScope": "只提出最小詞性分列與待確認註記，不刪除原有摘要。若顯示欄不適合放待確認註記，可保留原 meaningZh 並在獨立審查紀錄列 pending。",
+      "reviewStatusRecommendation": "partial_pending",
+      "mustPreserve": [
+        "形容詞主詞性",
+        "日常英文釋義及原例句／搭配",
+        "互助的原文與待確認原因"
+      ],
+      "notAuthorizedByEvidence": [
+        "把 friendly 整張改成 adv.",
+        "刪除友善地",
+        "把互助的直接判為已核實的一般形容詞義",
+        "以完整 friendly society 詞組的意思替代單字而不說明"
+      ]
+    },
+    {
+      "wordId": "W000700",
+      "word": "read",
+      "before": {
+        "wordId": "W000700",
+        "word": "read",
+        "wordVariants": [
+          "read"
+        ],
+        "level": "LV1",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "讀；閱讀；理解；有學問的",
+        "meaningEn": "to look at written words and understand what they mean; to understand a situation, feeling, or person's character",
+        "usagePattern": "read a book/newspaper; read between the lines",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "read",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "讀書／報紙；讀懂言外之意"
+      },
+      "overallFinding": "前三義為動詞；有學問的是可靠詞典列出的受搭配限制形容詞義，應分列並註明來自閱讀及 well／widely 等副詞搭配。",
+      "senseFindings": [
+        {
+          "before": "讀",
+          "status": "supported",
+          "pos": "v.",
+          "finding": "閱讀文字及把文字讀出來均有詞典依據，保留。",
+          "afterCandidate": "讀",
+          "sourceIds": [
+            "collins_read"
+          ]
+        },
+        {
+          "before": "閱讀",
+          "status": "supported",
+          "pos": "v.",
+          "finding": "看懂書面文字為主要動詞義，保留。",
+          "afterCandidate": "閱讀",
+          "sourceIds": [
+            "collins_read"
+          ]
+        },
+        {
+          "before": "理解",
+          "status": "supported",
+          "pos": "v.",
+          "finding": "解讀情境、言語、人物或其外在訊號之義有詞典正文，不只一般閱讀例句；保留。",
+          "afterCandidate": "理解",
+          "sourceIds": [
+            "collins_read"
+          ]
+        },
+        {
+          "before": "有學問的",
+          "status": "supported_requires_pos_and_usage_split",
+          "pos": "adj.",
+          "finding": "Oxford 直接收錄 read 形容詞，讀 /red/，指由閱讀獲得知識，明註用於副詞後；Collins 的 read 及 well-read 均佐證。原中文並非捏造，但若無搭配／知識來源限制，會讓人誤以為 read 單獨可任意替代 learned。",
+          "afterCandidate": "（adj.，用於 well read、widely read 等搭配）有學問的",
+          "sourceIds": [
+            "oxford_read_adj",
+            "collins_read",
+            "collins_well_read"
+          ],
+          "usageCaution": "保留一般 read 的動詞詞性與 /riːd/ 現在式；只為形容詞義加 /red/ 和副詞搭配說明。不得把整張 read 改成 adj.，也不得把原單字全改成 well-read。"
+        }
+      ],
+      "afterCandidate": {
+        "pos": "v.",
+        "posAll": [
+          "v.",
+          "adj."
+        ],
+        "meaningZh": "（v.）讀；閱讀；理解；（adj.，用於 well read、widely read 等搭配）有學問的"
+      },
+      "candidateScope": "保留 v. 主詞性與現有日常英文釋義／搭配；增加跨詞性分列。形容詞補充註解：由閱讀獲得知識，讀 /red/，放在副詞後。",
+      "reviewStatusRecommendation": "source_supported_candidate_ready",
+      "mustPreserve": [
+        "read 主詞為 v.",
+        "前三個動詞義",
+        "有學問的形容詞義及使用限制"
+      ],
+      "notAuthorizedByEvidence": [
+        "整張改 adj.",
+        "用 well-read 替換所有 read",
+        "用 read a book 的例句當成有學問的義也已驗證"
+      ]
+    },
+    {
+      "wordId": "W001454",
+      "word": "include",
+      "before": {
+        "wordId": "W001454",
+        "word": "include",
+        "wordVariants": [
+          "include"
+        ],
+        "level": "LV2",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "包括；把...算入；包住；DOS內部命令:在CONFIG.SYS文件的一個配置塊中包含另一配置塊的內容",
+        "meaningEn": "to have something as one of the parts or members of something; to make something a part of something else",
+        "usagePattern": "include N; be included in N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "include",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "包含……；被包含在……中"
+      },
+      "overallFinding": "常用動詞義與古老 enclose 義都有可靠字典支持；MS-DOS INCLUDE 命令與區塊包含語義也有 Microsoft 原廠手冊正文支持。需把技術命令獨立標示，不能混當一般動詞詞義。",
+      "senseFindings": [
+        {
+          "before": "包括",
+          "status": "supported",
+          "pos": "v.",
+          "finding": "包含為整體之一部分的主要動詞義，保留。",
+          "afterCandidate": "包括",
+          "sourceIds": [
+            "collins_include",
+            "mw_include"
+          ]
+        },
+        {
+          "before": "把...算入",
+          "status": "supported",
+          "pos": "v.",
+          "finding": "把某人或某物列入整體／考慮範圍有正文支持，保留。",
+          "afterCandidate": "把...算入",
+          "sourceIds": [
+            "collins_include",
+            "mw_include"
+          ]
+        },
+        {
+          "before": "包住",
+          "status": "supported_requires_historical_label",
+          "pos": "v.",
+          "finding": "Collins Webster’s New World 的第 1 義明列 archaic，語義為封閉、圍入／enclose；Merriam-Webster 第 3 義亦列 enclose。因此不能因今日少見而刪除。包住作此中文概括有義項支持，不應讓人誤解為現代常用的包裝動作。",
+          "afterCandidate": "（古義）包住",
+          "sourceIds": [
+            "collins_include",
+            "mw_include"
+          ],
+          "usageCaution": "古義依 Collins 的 archaic 標籤；Merriam-Webster 該頁沒有同標籤。不要擅稱所有來源均標 obsolete。可另註此處指圍住／封閉在內。"
+        },
+        {
+          "before": "DOS內部命令:在CONFIG.SYS文件的一個配置塊中包含另一配置塊的內容",
+          "status": "supported_command_semantics_requires_technical_label",
+          "pos": "technical_command（不是另一個英語一般詞性）",
+          "finding": "Microsoft MS-DOS 6.22 原廠手冊明載 INCLUDE：用於 CONFIG.SYS 的配置區塊內，以區塊名稱包含另一區塊內容，實際效果為在執行當前區塊命令之外，也執行被引用區塊的命令。不是把另一個 CONFIG.SYS 檔案嵌入，也不是今天 Windows 命令提示字元的一般指令。",
+          "afterCandidate": "（MS-DOS CONFIG.SYS 命令 INCLUDE）在一個配置區塊中包含另一配置區塊的命令",
+          "sourceIds": [
+            "microsoft_dos622_manual_mirror"
+          ],
+          "scopeNotes": [
+            "限定已直接核實的 MS-DOS 6.22；不據此宣稱任何 DOS 或任何版本都支援。",
+            "原文把另一區塊的內容引入的功能基本正確。命令可保留為歷史電腦技術補註。",
+            "原廠手冊的精確稱法是 CONFIG.SYS 命令；本次尚未取得原廠直接把它稱為 internal command 的分類證據。"
+          ],
+          "subfindings": [
+            {
+              "claim": "INCLUDE 命令是否確有",
+              "status": "supported_by_vendor_authored_manual",
+              "finding": "確有。原廠手冊印刷頁 98–100、193。"
+            },
+            {
+              "claim": "包含另一配置區塊內容的語義",
+              "status": "supported",
+              "finding": "確有，但實際作用是引用／執行另一區塊命令；限配置區塊／CONFIG.SYS 的環境。"
+            },
+            {
+              "claim": "原標籤 DOS內部命令",
+              "status": "pending_exact_classification",
+              "finding": "本次未取得原廠明確 internal 分類，不判定它一定錯誤；最小改法是以已證實且更精確的 MS-DOS CONFIG.SYS 命令 替代含糊分類，保留命令本身。"
+            },
+            {
+              "claim": "是否讀到 Microsoft 官網託管版本",
+              "status": "not_found",
+              "finding": "沒有。取得並閱讀的是標明 Microsoft Corporation 的原廠手冊第三方鏡像，不冒充官方網站。"
+            }
+          ]
+        }
+      ],
+      "afterCandidate": {
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "包括；把...算入；（古義）包住；（MS-DOS CONFIG.SYS 命令 INCLUDE）在一個配置區塊中包含另一配置區塊的命令"
+      },
+      "candidateScope": "保留三個動詞義與命令內容；加古義、技術環境標示。若 schema 支援技術補註，宜把命令解釋放到補註而非一般詞義欄，但本次不設計新欄位、不直接修改資料。",
+      "reviewStatusRecommendation": "source_supported_candidate_with_classification_caveat",
+      "mustPreserve": [
+        "include 主詞為 v.",
+        "包住古義",
+        "有據的 MS-DOS 命令內容"
+      ],
+      "notAuthorizedByEvidence": [
+        "因少見刪除包住或 DOS 命令",
+        "把 INCLUDE 命令另標成英語名詞而無詞典支持",
+        "宣稱目前 Windows cmd.exe 一般支援此命令",
+        "宣稱已取得 Microsoft 現役網域上的條目正文"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "mw_friendly",
+      "title": "Merriam-Webster: friendly",
+      "url": "https://www.merriam-webster.com/dictionary/friendly",
+      "publisher": "Merriam-Webster",
+      "evidenceMode": "page_body_read",
+      "readScope": "friendly 形容詞、副詞、名詞條目及其詞典標籤；不以自動匯入網路例句作詞性證據。",
+      "excerpts": [
+        "showing kindly interest and goodwill",
+        "serving a beneficial or helpful purpose",
+        "in a friendly manner : amicably"
+      ],
+      "notes": "friendly 自身另列 adverb，不只是派生字 friendlily。副詞條目未標 archaic、obsolete 或方言。"
+    },
+    {
+      "sourceId": "collins_friendly",
+      "title": "Collins: friendly",
+      "url": "https://www.collinsdictionary.com/dictionary/english/friendly",
+      "publisher": "HarperCollins",
+      "evidenceMode": "page_body_read",
+      "readScope": "COBUILD、Collins English Dictionary、Webster’s New World College Dictionary 及美語詞條的相關定義。",
+      "excerpts": [
+        "in a friendly manner; as a friend",
+        "supporting; helping; favorable"
+      ],
+      "notes": "Webster’s New World College Dictionary 5th Digital Edition 的 friendly in American English 明列 adverb；一般幫助／有利不自動等於雙向互助。"
+    },
+    {
+      "sourceId": "bc_adverbials",
+      "title": "British Council LearnEnglish: Adverbials of manner",
+      "url": "https://learnenglish.britishcouncil.org/free-resources/grammar/english-grammar-reference/adverbials-manner",
+      "publisher": "British Council",
+      "evidenceMode": "page_body_read",
+      "readScope": "課文有關 -ly 形容詞與方式副詞片語的段落。",
+      "excerpts": [
+        "friendly: She spoke in a friendly way."
+      ],
+      "notes": "一般教學建議用 in a friendly way；這是現代學習用法指導，不能推翻其他詞典確實收錄 friendly 副詞的事實。"
+    },
+    {
+      "sourceId": "collins_friendly_society",
+      "title": "Collins: friendly society",
+      "url": "https://www.collinsdictionary.com/dictionary/english/friendly-society",
+      "publisher": "HarperCollins",
+      "evidenceMode": "page_body_read",
+      "readScope": "COBUILD 與 Collins English Dictionary 的完整 friendly society 定義及詞性／地域標籤。",
+      "excerpts": [
+        "noun",
+        "British",
+        "an association of people who pay regular dues or other sums in return for old-age pensions, sickness benefits, etc."
+      ],
+      "notes": "確認整個名詞詞組指會員定期繳費、獲養老或疾病給付的組織；未把單獨 friendly 定義成一般性的互助的。"
+    },
+    {
+      "sourceId": "cambridge_friendly_society_zh_snippet",
+      "title": "Cambridge: friendly society（繁體中文）",
+      "url": "https://dictionary.cambridge.org/dictionary/english-chinese-traditional/friendly-society",
+      "publisher": "Cambridge University Press",
+      "evidenceMode": "search_snippet_only",
+      "readScope": "僅搜尋摘要；未取得此繁中頁正文。",
+      "excerpts": [
+        "互助會，互濟會"
+      ],
+      "notes": "只作 whole phrase 的中文譯名旁證，不能宣稱已讀全文，也不能據此把 friendly 單字的互助的義判定通過。"
+    },
+    {
+      "sourceId": "oxford_read_adj",
+      "title": "Oxford Advanced Learner’s Dictionary: read adjective",
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/english/read_3",
+      "publisher": "Oxford University Press",
+      "evidenceMode": "page_body_read",
+      "readScope": "read adjective 的完整詞典定義、用法限制、讀音及例句。",
+      "excerpts": [
+        "used after an adverb",
+        "having knowledge that has been gained from reading books, etc."
+      ],
+      "notes": "詞性為 adjective，發音 /red/，指由讀書獲得知識，並以副詞修飾；另連結 well read。"
+    },
+    {
+      "sourceId": "collins_read",
+      "title": "Collins: read",
+      "url": "https://www.collinsdictionary.com/dictionary/english/read",
+      "publisher": "HarperCollins",
+      "evidenceMode": "page_body_read",
+      "readScope": "read 的閱讀／理解動詞義、read /red/ 形容詞義及相關用法。",
+      "excerpts": [
+        "look at and understand the words",
+        "understood or interpreted in that way",
+        "having knowledge gained from books"
+      ],
+      "notes": "正文另外列出 read in British English 2 的形容詞，並指出 widely read、well-read 等詞組；其存在不改變一般 read 為動詞。"
+    },
+    {
+      "sourceId": "collins_well_read",
+      "title": "Collins: well-read",
+      "url": "https://www.collinsdictionary.com/dictionary/english/well-read",
+      "publisher": "HarperCollins",
+      "evidenceMode": "page_body_read",
+      "readScope": "well-read／well read 的完整形容詞定義、後置用法與主詞範圍。",
+      "excerpts": [
+        "adjective (well read when postpositive)",
+        "having read widely and intelligently; erudite"
+      ],
+      "notes": "支持博覽而有學問之義。well-read 可作前置形容詞；後置常寫 well read。不能把整張 read 字卡改為 adj. 或把所有 read 改名 well-read。"
+    },
+    {
+      "sourceId": "collins_include",
+      "title": "Collins: include",
+      "url": "https://www.collinsdictionary.com/us/dictionary/english/include",
+      "publisher": "HarperCollins",
+      "evidenceMode": "page_body_read",
+      "readScope": "COBUILD include 動詞義及 Webster’s New World College Dictionary 第 1–4 義。",
+      "excerpts": [
+        "archaic",
+        "to shut up or in; enclose",
+        "to consider as part of a whole; take into account"
+      ],
+      "notes": "包住／圍住的 enclose 義有直接詞典支持；此版明確標 archaic，不宜自行升格為不存在或已完全廢棄。"
+    },
+    {
+      "sourceId": "mw_include",
+      "title": "Merriam-Webster: include",
+      "url": "https://www.merriam-webster.com/dictionary/include",
+      "publisher": "Merriam-Webster",
+      "evidenceMode": "page_body_read",
+      "readScope": "include 及物動詞第 1–3 義與字源歷史。",
+      "excerpts": [
+        "to take in or comprise as a part of a whole or group",
+        "to shut up : enclose"
+      ],
+      "notes": "第 3 義直接列 enclose，頁面未給該義 archaic 標籤。與 Collins 一起證明此義存在，但不同詞典的使用標籤不能混為一致。"
+    },
+    {
+      "sourceId": "microsoft_dos622_manual_mirror",
+      "title": "Microsoft MS-DOS 6.22 User’s Guide (1994), pp. 98–100, 193",
+      "url": "https://msdos-windows.com/index_html_files/MS-DOS%206.22%20Users%20Manual%201994.pdf",
+      "author": "Microsoft Corporation",
+      "publisher": "Microsoft Corporation",
+      "host": "msdos-windows.com（第三方鏡像）",
+      "evidenceMode": "pdf_body_read",
+      "readScope": "已讀封面／版權頁，以及印刷頁 98–100（PDF 第 115–117 頁）和 193（PDF 第 210 頁）的相關原廠手冊正文；未逐頁通讀全部 286 頁。",
+      "excerpts": [
+        "The include command can be used only within a configuration block.",
+        "Includes the contents of one configuration block within another."
+      ],
+      "notes": "可讀的原廠著作鏡像，不是 Microsoft 現役網站。版權頁標 ©1994 Microsoft Corporation；章節解釋引用的實際作用是連同當前區塊執行另一區塊命令。截圖介面只回傳圖片占位標記，未取得可視像素，因此不宣稱完成圖像核驗。"
+    }
+  ],
+  "accessLimitations": [
+    {
+      "url": "https://www.ahdictionary.com/word/search.html?q=friendly",
+      "result": "正文未成功取得；不作證據。"
+    },
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english/friendly-society",
+      "result": "開啟回傳 403；不宣稱讀到該英文頁全文。另以 Collins 正文驗證詞組。"
+    },
+    {
+      "url": "https://www.bitsavers.org/pdf/microsoft/msdos_6.22/DOS_6.22_Users_Manual_1994.pdf",
+      "result": "開啟回傳 403；僅搜尋找到此鏡像，不以其正文作證據。另找到可讀的原廠手冊鏡像。"
+    },
+    {
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/english/read_1",
+      "result": "開啟回傳 403；動詞義改以 Collins 正文核實。"
+    },
+    {
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/english/well-read",
+      "result": "第一次取得頁面但輸出僅導覽段落，續讀回傳 403；不聲稱讀到定義，改以 Collins well-read 正文佐證。"
+    }
+  ]
+}

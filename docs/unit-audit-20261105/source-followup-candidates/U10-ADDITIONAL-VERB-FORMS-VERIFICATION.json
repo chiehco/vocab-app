@@ -1,0 +1,1586 @@
+{
+  "title": "U10 完整原單元補入詞：19 個缺漏動詞三態追加查證",
+  "checkedAtUtc": "2026-11-05T09:30:39.083991+00:00",
+  "sourceCommit": "fe2ec66bb06ca15351946895cd94022084d9fa68",
+  "sourceWordsBlobSha": "10095d0591b0c737c92fb6634693a150bc4730ea",
+  "scope": "僅父任務從完整原單元新增的19詞；與原 U10–U15 已發布子集58詞分開計數。本報告不表示整個 U10 或 U10–U15 所有內容均已審完。",
+  "completionStatus": "completed",
+  "coverage": {
+    "expectedEntries": 19,
+    "entriesResearched": 19,
+    "lexicallyVerified": 19,
+    "verifiedCandidates": 18,
+    "pendingProductRepresentation": 1,
+    "pendingMissingLexicalEvidence": 0,
+    "notYetResearched": 0,
+    "ruleOnlyInferences": 0,
+    "productApprovals": 0
+  },
+  "unitCoverage": [
+    {
+      "unit": "LV1-U10",
+      "expectedAdditionalEntries": 19,
+      "entriesResearched": 19,
+      "verifiedCandidates": 18,
+      "pending": 1
+    }
+  ],
+  "method": "18詞逐詞實讀 Collins 官方 Word forms 的 past tense/past participle；forbid 另讀 Merriam-Webster、Collins 詳細變體。lie 獨立實讀 Merriam-Webster 兩詞條及編輯講解，分開確認躺臥與說謊兩套三態。",
+  "beforeRepresentation": {
+    "marker": {
+      "$absent": true
+    },
+    "meaning": "19詞的 verbForms key 皆不存在，不是 null。"
+  },
+  "schemaAndDisplayConstraints": {
+    "provenance": "父任務交接，未在本研究修改或重讀 repository。",
+    "constraint": "整詞只顯示一組 base/past/pastParticiple，sourceRef/status 不顯示，不能表達不同動詞義。",
+    "rule": "lie 保留 pending；分義三態是條件研究資料，不是可直接寫入 after。"
+  },
+  "implementationBoundary": [
+    "沒有修改 repository、status、Git 或已發布內容。",
+    "沒有填入 IPA、重音、音節。",
+    "沒有給予產品 approved；candidate 僅是有來源的最小修改提案。",
+    "維持 before=$absent；真正套用前須比對 wordId 與來源新舊值，不得覆蓋已存在三態。",
+    "不修改原58詞報告，追加19詞與原58詞不重複。"
+  ],
+  "accessFailuresExcluded": [
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english/lie",
+      "outcome": "403 Forbidden; not relied on"
+    },
+    {
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/english/lie_1",
+      "outcome": "403 Forbidden; not relied on"
+    },
+    {
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/english/lie_2",
+      "outcome": "Not accessible via web tool; not relied on"
+    }
+  ],
+  "searchSnippetOnlyEvidenceUsed": false,
+  "pendingWords": [
+    {
+      "word": "lie",
+      "wordId": "W000490",
+      "reason": "詞條同時保留躺臥／位於／在於與說謊兩個動詞，兩者三態不同。字卡的貓在陽光下躺著只對應躺臥義，不能因此把整個詞條的說謊義排除。既有單一整詞三態面板無法表達分義，故保持 pending，after=null，不寫入任一組通用三態。"
+    }
+  ],
+  "entries": [
+    {
+      "wordId": "W000023",
+      "word": "allow",
+      "units": [
+        "LV1-U10"
+      ],
+      "cardIds": [
+        "LV1-U10-02"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "允許；同意給予；承認；容許",
+      "sourceMeaningEn": "to let someone do something or let something happen; (allow for) to think about or plan for something when calculating or deciding something",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U10-02",
+          "captionEn": "The teacher allowed the students to leave early because of the heavy rain.",
+          "captionZh": "因為雨下得很大，老師准許學生提早離開。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "verbForms key 真實缺漏，不是 null；復原須刪除 key。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "允許、容許；allow for 考慮到。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "allow",
+        "past": "allowed",
+        "pastParticiple": "allowed"
+      },
+      "proposedVerbForms": {
+        "base": "allow",
+        "past": "allowed",
+        "pastParticiple": "allowed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/allow"
+      },
+      "sourceSupportedForms": {
+        "base": "allow",
+        "past": [
+          "allowed"
+        ],
+        "pastParticiple": [
+          "allowed"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/allow",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle allowed",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示過去式與過去分詞，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文並讀取所列相關段落；不是搜尋摘要，也不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "僅為動詞三態；不將名詞／形容詞的詞形誤作三態。",
+      "variantAssessment": "所讀詞典主 Word forms 欄未另列其他形式；不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000170",
+      "word": "clean",
+      "units": [
+        "LV1-U10"
+      ],
+      "cardIds": [
+        "LV1-U10-31"
+      ],
+      "sourceSnapshotPos": "adj./v./adv./n.",
+      "sourceSnapshotPosAll": [
+        "adj.",
+        "v.",
+        "adv.",
+        "n."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "乾淨的；清白的；簡潔的；清潔地",
+      "sourceMeaningEn": "free from dirt or marks; to remove dirt from something by washing or wiping it",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U10-31",
+          "captionEn": "I need to clean my room before my parents come home.",
+          "captionZh": "我得在爸媽回家前把房間打掃乾淨。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "verbForms key 真實缺漏，不是 null；復原須刪除 key。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "清潔、打掃。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "clean",
+        "past": "cleaned",
+        "pastParticiple": "cleaned"
+      },
+      "proposedVerbForms": {
+        "base": "clean",
+        "past": "cleaned",
+        "pastParticiple": "cleaned",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/clean"
+      },
+      "sourceSupportedForms": {
+        "base": "clean",
+        "past": [
+          "cleaned"
+        ],
+        "pastParticiple": [
+          "cleaned"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/clean",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle cleaned",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示過去式與過去分詞，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文並讀取所列相關段落；不是搜尋摘要，也不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "所列是清潔／清理的動詞三態；形容詞比較級與最高級不屬此欄。",
+      "variantAssessment": "所讀詞典主 Word forms 欄未另列其他形式；不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000171",
+      "word": "clear",
+      "units": [
+        "LV1-U10"
+      ],
+      "cardIds": [
+        "LV1-U10-27"
+      ],
+      "sourceSnapshotPos": "adj./v./adv.",
+      "sourceSnapshotPosAll": [
+        "adj.",
+        "v.",
+        "adv."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "清楚的；明確的；清澈的；晴朗的；清晰地；（動詞）清理；清空；澄清",
+      "sourceMeaningEn": "easy to see, hear, or understand; free from clouds, mist, or things that block it; to remove things from a place in order to make it empty or tidy",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U10-27",
+          "captionEn": "Please help me clear the table after we finish dinner.",
+          "captionZh": "晚餐後請幫我清理餐桌。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "verbForms key 真實缺漏，不是 null；復原須刪除 key。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "清理、清空、移除。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "clear",
+        "past": "cleared",
+        "pastParticiple": "cleared"
+      },
+      "proposedVerbForms": {
+        "base": "clear",
+        "past": "cleared",
+        "pastParticiple": "cleared",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/clear"
+      },
+      "sourceSupportedForms": {
+        "base": "clear",
+        "past": [
+          "cleared"
+        ],
+        "pastParticiple": [
+          "cleared"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/clear",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle cleared",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示過去式與過去分詞，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文並讀取所列相關段落；不是搜尋摘要，也不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "所列是清潔／清理的動詞三態；形容詞比較級與最高級不屬此欄。",
+      "variantAssessment": "所讀詞典主 Word forms 欄未另列其他形式；不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000201",
+      "word": "cover",
+      "units": [
+        "LV1-U10"
+      ],
+      "cardIds": [
+        "LV1-U10-28"
+      ],
+      "sourceSnapshotPos": "v./n.",
+      "sourceSnapshotPosAll": [
+        "v.",
+        "n."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "（名詞）蓋子；封面；掩護；藉口；（動詞）覆蓋；涵蓋；掩飾；代班",
+      "sourceMeaningEn": "to place something over or in front of another thing, especially to protect or hide it; to include or deal with a particular subject; something that is placed over an object, or the outer part of a book or magazine",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U10-28",
+          "captionEn": "She used a warm blanket to cover the sleeping baby.",
+          "captionZh": "她用溫暖的毯子蓋住熟睡的嬰兒。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "verbForms key 真實缺漏，不是 null；復原須刪除 key。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "覆蓋、涵蓋、掩飾、代班。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "cover",
+        "past": "covered",
+        "pastParticiple": "covered"
+      },
+      "proposedVerbForms": {
+        "base": "cover",
+        "past": "covered",
+        "pastParticiple": "covered",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/cover"
+      },
+      "sourceSupportedForms": {
+        "base": "cover",
+        "past": [
+          "covered"
+        ],
+        "pastParticiple": [
+          "covered"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/cover",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle covered",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示過去式與過去分詞，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文並讀取所列相關段落；不是搜尋摘要，也不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "僅為動詞三態；不將名詞／形容詞的詞形誤作三態。",
+      "variantAssessment": "所讀詞典主 Word forms 欄未另列其他形式；不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000243",
+      "word": "drive",
+      "units": [
+        "LV1-U10"
+      ],
+      "cardIds": [
+        "LV1-U10-56"
+      ],
+      "sourceSnapshotPos": "v./n.",
+      "sourceSnapshotPosAll": [
+        "v.",
+        "n."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "（動詞）駕車；開車載送；驅動；使處於某狀態；（名詞）車程；推進力；幹勁；私人車道",
+      "sourceMeaningEn": "(v.) to operate a vehicle, take someone in a vehicle, or cause a state or reaction; (n.) a journey by vehicle, a strong motivation to achieve, or a private road.",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U10-56",
+          "captionEn": "I usually drive to the night market with my friends on Friday evenings.",
+          "captionZh": "我通常星期五晚上跟朋友開車去夜市。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "verbForms key 真實缺漏，不是 null；復原須刪除 key。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "駕車、載送、驅動、使處於某狀態。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "drive",
+        "past": "drove",
+        "pastParticiple": "driven"
+      },
+      "proposedVerbForms": {
+        "base": "drive",
+        "past": "drove",
+        "pastParticiple": "driven",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/drive"
+      },
+      "sourceSupportedForms": {
+        "base": "drive",
+        "past": [
+          "drove"
+        ],
+        "pastParticiple": [
+          "driven"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/drive",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense drove , past participle driven",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示過去式與過去分詞，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文並讀取所列相關段落；不是搜尋摘要，也不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "僅為動詞三態；不將名詞／形容詞的詞形誤作三態。",
+      "variantAssessment": "所讀詞典主 Word forms 欄未另列其他形式；不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000307",
+      "word": "fill",
+      "units": [
+        "LV1-U10"
+      ],
+      "cardIds": [
+        "LV1-U10-48"
+      ],
+      "sourceSnapshotPos": "v./n.",
+      "sourceSnapshotPosAll": [
+        "v.",
+        "n."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "（動詞）裝滿；填充；瀰漫；供給；（名詞）足夠的量；（have one’s fill of）受夠",
+      "sourceMeaningEn": "to make something full by putting a lot of things or a substance into it; enough of something to satisfy someone completely",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U10-48",
+          "captionEn": "She filled her cup with hot coffee before the meeting.",
+          "captionZh": "開會前她把杯子裝滿了熱咖啡。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "verbForms key 真實缺漏，不是 null；復原須刪除 key。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "填滿、裝滿。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "fill",
+        "past": "filled",
+        "pastParticiple": "filled"
+      },
+      "proposedVerbForms": {
+        "base": "fill",
+        "past": "filled",
+        "pastParticiple": "filled",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/fill"
+      },
+      "sourceSupportedForms": {
+        "base": "fill",
+        "past": [
+          "filled"
+        ],
+        "pastParticiple": [
+          "filled"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/fill",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle filled",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示過去式與過去分詞，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文並讀取所列相關段落；不是搜尋摘要，也不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "僅為動詞三態；不將名詞／形容詞的詞形誤作三態。",
+      "variantAssessment": "所讀詞典主 Word forms 欄未另列其他形式；不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000313",
+      "word": "fire",
+      "units": [
+        "LV1-U10"
+      ],
+      "cardIds": [
+        "LV1-U10-64"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "（名詞）火；爐火；電爐；火災；（動詞）開槍；解僱",
+      "sourceMeaningEn": "(n.) the light, heat, and flame produced by burning; (v.) to shoot a weapon; to dismiss someone from a job",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U10-64",
+          "captionEn": "The building caught fire during the night, but no one was hurt.",
+          "captionZh": "這棟建築物在夜間發生火災，但沒有人受傷。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "verbForms key 真實缺漏，不是 null；復原須刪除 key。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "開槍、發射；解僱。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "fire",
+        "past": "fired",
+        "pastParticiple": "fired"
+      },
+      "proposedVerbForms": {
+        "base": "fire",
+        "past": "fired",
+        "pastParticiple": "fired",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/fire"
+      },
+      "sourceSupportedForms": {
+        "base": "fire",
+        "past": [
+          "fired"
+        ],
+        "pastParticiple": [
+          "fired"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/fire",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle fired",
+          "location": "COBUILD fire shooting or attacking 與 fire dismissal 的 Word forms；兩處明列 fired",
+          "scope": "直接明示過去式與過去分詞，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文並讀取所列相關段落；不是搜尋摘要，也不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "開槍及解僱兩動詞義均 fired/fired；字卡 caught fire 裡 fire 是名詞，不能把 catch 的 caught 當 fire 的三態。",
+      "variantAssessment": "所讀詞典主 Word forms 欄未另列其他形式；不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000490",
+      "word": "lie",
+      "units": [
+        "LV1-U10"
+      ],
+      "cardIds": [
+        "LV1-U10-04"
+      ],
+      "sourceSnapshotPos": "v./n.",
+      "sourceSnapshotPosAll": [
+        "v.",
+        "n."
+      ],
+      "sourceSnapshotStatus": "draft",
+      "sourceMeaningZh": "（動詞）躺；位於；在於；說謊；（名詞）謊言；假象；位置",
+      "sourceMeaningEn": "(v.) to rest in a horizontal position, be situated, or consist in something; (v., separate verb) to say something untrue deliberately; (n.) an untrue statement or the position in which something rests.",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U10-04",
+          "captionEn": "The cat likes to lie in the sun all afternoon.",
+          "captionZh": "這隻貓喜歡整個下午躺在陽光下。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "verbForms key 真實缺漏，不是 null；復原須刪除 key。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "兩動詞分義：躺臥／位於／在於；說謊。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "pending",
+      "researchStatus": "pending_product_representation",
+      "after": null,
+      "proposedVerbForms": null,
+      "pendingReason": "詞條同時保留躺臥／位於／在於與說謊兩個動詞，兩者三態不同。字卡的貓在陽光下躺著只對應躺臥義，不能因此把整個詞條的說謊義排除。既有單一整詞三態面板無法表達分義，故保持 pending，after=null，不寫入任一組通用三態。",
+      "conditionalSenseForms": [
+        {
+          "senseZh": "躺；位於；在於",
+          "conditionZh": "未來資料與介面能明確將三態綁定躺臥／位置／在於義時才可使用；目前字卡 LV1-U10-04 屬於躺臥義。",
+          "base": "lie",
+          "past": "lay",
+          "pastParticiple": "lain",
+          "evidenceLocation": "verb (1), lines 31–38, 44–58, 93–134; editor transcript lines 405–414",
+          "sourceUrl": "https://www.merriam-webster.com/dictionary/lie"
+        },
+        {
+          "senseZh": "說謊",
+          "conditionZh": "未來資料與介面能明確將三態綁定說謊義時才可使用，不可套用於目前的躺臥字卡。",
+          "base": "lie",
+          "past": "lied",
+          "pastParticiple": "lied",
+          "evidenceLocation": "verb (2), lines 197–214; editor transcript lines 416–417 explicitly gives lie, lied, have lied",
+          "sourceUrl": "https://www.merriam-webster.com/dictionary/lie"
+        }
+      ],
+      "sourceSupportedFormsBySense": [
+        {
+          "senseZh": "躺；位於；在於",
+          "base": "lie",
+          "past": "lay",
+          "pastParticiple": "lain"
+        },
+        {
+          "senseZh": "說謊",
+          "base": "lie",
+          "past": "lied",
+          "pastParticiple": "lied"
+        }
+      ],
+      "homographAndVariantRestrictions": "不得把 lay/lied 與 lain/lied 無義項限制並列；目前貓躺臥字卡只證明例句義，不足以刪除全詞的說謊義。",
+      "variantAssessment": "這不是同義變體，而是不同動詞的不同三態。",
+      "evidence": [
+        {
+          "publisher": "Merriam-Webster",
+          "work": "Merriam-Webster.com Dictionary: lie",
+          "url": "https://www.merriam-webster.com/dictionary/lie",
+          "retrieval": "direct_dictionary_page",
+          "shortQuotes": [
+            "For lie, we have lie, lay, have lain, lying.",
+            "That lie goes, lie, lied, have lied, lying."
+          ],
+          "location": "verb (1), verb (2), embedded editor transcript contrasting both senses",
+          "scope": "詞典編輯逐一列 lie, lay, have lain 以及 lie, lied, have lied；未以規則推論。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文並讀相關動詞詞條及內嵌編輯講解；不是搜尋摘要。"
+        }
+      ]
+    },
+    {
+      "wordId": "W000645",
+      "word": "piece",
+      "units": [
+        "LV1-U10"
+      ],
+      "cardIds": [
+        "LV1-U10-47"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "塊；片；篇；碎片",
+      "sourceMeaningEn": "a part of something that has been separated from, or that combines with other parts to make up, a whole; a single item of a particular kind, such as a piece of writing or music; (verb) piece together: to gradually put together separate parts to form a whole",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U10-47",
+          "captionEn": "Could you give me a piece of paper to write this note on?",
+          "captionZh": "你可以給我一張紙來寫這則便條嗎？"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "verbForms key 真實缺漏，不是 null；復原須刪除 key。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "拼合、拼湊，尤其 piece together。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "piece",
+        "past": "pieced",
+        "pastParticiple": "pieced"
+      },
+      "proposedVerbForms": {
+        "base": "piece",
+        "past": "pieced",
+        "pastParticiple": "pieced",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/piece"
+      },
+      "sourceSupportedForms": {
+        "base": "piece",
+        "past": [
+          "pieced"
+        ],
+        "pastParticiple": [
+          "pieced"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/piece",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle pieced",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示過去式與過去分詞，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文並讀取所列相關段落；不是搜尋摘要，也不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/piece-together",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "If you piece something together, you gradually make it by joining several things or parts together.",
+          "location": "COBUILD piece together sense 2",
+          "scope": "已讀片語動詞正文；三態的明示標籤另取 piece 主詞條。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文並讀取所列相關段落；不是搜尋摘要，也不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "既有動詞義為 piece together；base 保留 headword piece，不把片語詞序混入整詞三態。字卡 a piece of paper 的 piece 是名詞。",
+      "variantAssessment": "所讀詞典主 Word forms 欄未另列其他形式；不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000698",
+      "word": "raise",
+      "units": [
+        "LV1-U10"
+      ],
+      "cardIds": [
+        "LV1-U10-15"
+      ],
+      "sourceSnapshotPos": "v./n.",
+      "sourceSnapshotPosAll": [
+        "v.",
+        "n."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "（動詞）舉起；提高；籌募；撫養；（名詞）加薪；增高；（較少見名詞）上坡路段",
+      "sourceMeaningEn": "to lift something up or increase its amount or level, or an increase in the amount of money someone earns",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U10-15",
+          "captionEn": "Raise your hand if you know the answer.",
+          "captionZh": "知道答案的話請舉手。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "verbForms key 真實缺漏，不是 null；復原須刪除 key。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "舉起、提高、籌募、撫養。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "raise",
+        "past": "raised",
+        "pastParticiple": "raised"
+      },
+      "proposedVerbForms": {
+        "base": "raise",
+        "past": "raised",
+        "pastParticiple": "raised",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/raise"
+      },
+      "sourceSupportedForms": {
+        "base": "raise",
+        "past": [
+          "raised"
+        ],
+        "pastParticiple": [
+          "raised"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/raise",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle raised",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示過去式與過去分詞，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文並讀取所列相關段落；不是搜尋摘要，也不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "raise 的三態是 raised/raised；不要混入另一動詞 rise 的 rose/risen。",
+      "variantAssessment": "所讀詞典主 Word forms 欄未另列其他形式；不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000895",
+      "word": "tip",
+      "units": [
+        "LV1-U10"
+      ],
+      "cardIds": [
+        "LV1-U10-81"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "（名詞）頂；尖端；梢；末端；提示；訣竅；小費；（動詞）給小費；（tip off）密報",
+      "sourceMeaningEn": "(n.) an end or pointed part, a useful piece of advice, or a small extra payment for service; (v.) to give a gratuity or pass on inside information, especially tip off.",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U10-81",
+          "captionEn": "The tour guide gave us a useful tip about the best time to visit the museum.",
+          "captionZh": "導遊給了我們一個關於參觀博物館最佳時間的實用小提示。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "verbForms key 真實缺漏，不是 null；復原須刪除 key。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "給小費；tip off 密報。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "tip",
+        "past": "tipped",
+        "pastParticiple": "tipped"
+      },
+      "proposedVerbForms": {
+        "base": "tip",
+        "past": "tipped",
+        "pastParticiple": "tipped",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/tip"
+      },
+      "sourceSupportedForms": {
+        "base": "tip",
+        "past": [
+          "tipped"
+        ],
+        "pastParticiple": [
+          "tipped"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/tip",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle tipped",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示過去式與過去分詞，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文並讀取所列相關段落；不是搜尋摘要，也不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Key Words for Hospitality",
+          "url": "https://www.collinsdictionary.com/dictionary/english/tip",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "(past) tipped, (perfect) tipped",
+          "location": "Collins COBUILD Key Words for Hospitality: tip verb",
+          "scope": "實讀給小費義及該義的 past/perfect 標籤；另讀 Webster’s New World 密報義。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文並讀取所列相關段落；不是搜尋摘要，也不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "給小費、tip off 密報均使用 tipped；字卡的有用提示是名詞，不從名詞推導三態。",
+      "variantAssessment": "所讀詞典主 Word forms 欄未另列其他形式；不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000949",
+      "word": "watch",
+      "units": [
+        "LV1-U10"
+      ],
+      "cardIds": [
+        "LV1-U10-73"
+      ],
+      "sourceSnapshotPos": "v./n.",
+      "sourceSnapshotPosAll": [
+        "v.",
+        "n."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "觀察；手錶；看守；守護",
+      "sourceMeaningEn": "to look at or observe someone or something for a period of time; a small device worn on the wrist to show the time",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U10-73",
+          "captionEn": "The lifeguard has to watch the swimmers carefully all day long.",
+          "captionZh": "救生員一整天都必須仔細留意泳客。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "verbForms key 真實缺漏，不是 null；復原須刪除 key。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "注視、觀察、看守。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "watch",
+        "past": "watched",
+        "pastParticiple": "watched"
+      },
+      "proposedVerbForms": {
+        "base": "watch",
+        "past": "watched",
+        "pastParticiple": "watched",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/watch"
+      },
+      "sourceSupportedForms": {
+        "base": "watch",
+        "past": [
+          "watched"
+        ],
+        "pastParticiple": [
+          "watched"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/watch",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle watched",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示過去式與過去分詞，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文並讀取所列相關段落；不是搜尋摘要，也不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "僅為動詞三態；不將名詞／形容詞的詞形誤作三態。",
+      "variantAssessment": "所讀詞典主 Word forms 欄未另列其他形式；不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W001159",
+      "word": "claim",
+      "units": [
+        "LV1-U10"
+      ],
+      "cardIds": [
+        "LV1-U10-61"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "（名詞）要求；索賠；斷言；權利；（動詞）聲稱；索取",
+      "sourceMeaningEn": "to state that something is true without offering proof; a statement asserting that something is true, or a demand for something owed",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U10-61",
+          "captionEn": "He made a claim for compensation after his flight was cancelled.",
+          "captionZh": "他的班機被取消後，他提出了賠償要求。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "verbForms key 真實缺漏，不是 null；復原須刪除 key。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "聲稱、索取。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "claim",
+        "past": "claimed",
+        "pastParticiple": "claimed"
+      },
+      "proposedVerbForms": {
+        "base": "claim",
+        "past": "claimed",
+        "pastParticiple": "claimed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/claim"
+      },
+      "sourceSupportedForms": {
+        "base": "claim",
+        "past": [
+          "claimed"
+        ],
+        "pastParticiple": [
+          "claimed"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/claim",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle claimed",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示過去式與過去分詞，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文並讀取所列相關段落；不是搜尋摘要，也不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "僅為動詞三態；不將名詞／形容詞的詞形誤作三態。",
+      "variantAssessment": "所讀詞典主 Word forms 欄未另列其他形式；不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W001261",
+      "word": "discover",
+      "units": [
+        "LV1-U10"
+      ],
+      "cardIds": [
+        "LV1-U10-39"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "發現；找到；暴露",
+      "sourceMeaningEn": "to find something for the first time, or to learn about something that was not known before",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U10-39",
+          "captionEn": "I discovered that my keys were in my jacket pocket the whole time.",
+          "captionZh": "我發現我的鑰匙其實一直都在外套口袋裡。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "verbForms key 真實缺漏，不是 null；復原須刪除 key。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "發現。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "discover",
+        "past": "discovered",
+        "pastParticiple": "discovered"
+      },
+      "proposedVerbForms": {
+        "base": "discover",
+        "past": "discovered",
+        "pastParticiple": "discovered",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/discover"
+      },
+      "sourceSupportedForms": {
+        "base": "discover",
+        "past": [
+          "discovered"
+        ],
+        "pastParticiple": [
+          "discovered"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/discover",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle discovered",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示過去式與過去分詞，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文並讀取所列相關段落；不是搜尋摘要，也不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "僅為動詞三態；不將名詞／形容詞的詞形誤作三態。",
+      "variantAssessment": "所讀詞典主 Word forms 欄未另列其他形式；不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W001517",
+      "word": "lower",
+      "units": [
+        "LV1-U10"
+      ],
+      "cardIds": [
+        "LV1-U10-16"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "（動詞）降低；壓低；（形容詞比較級用法）較低的；下級的；下層的",
+      "sourceMeaningEn": "to reduce the amount, degree, or value of something; to move something down to a lower position",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U10-16",
+          "captionEn": "Please lower your voice; the baby is sleeping.",
+          "captionZh": "請壓低聲音，寶寶在睡覺。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "verbForms key 真實缺漏，不是 null；復原須刪除 key。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "降低、壓低。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "lower",
+        "past": "lowered",
+        "pastParticiple": "lowered"
+      },
+      "proposedVerbForms": {
+        "base": "lower",
+        "past": "lowered",
+        "pastParticiple": "lowered",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/lower"
+      },
+      "sourceSupportedForms": {
+        "base": "lower",
+        "past": [
+          "lowered"
+        ],
+        "pastParticiple": [
+          "lowered"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/lower",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle lowered",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示過去式與過去分詞，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文並讀取所列相關段落；不是搜尋摘要，也不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "動詞降低／壓低用 lowered；形容詞比較級 lower 並非本三態的過去式。",
+      "variantAssessment": "所讀詞典主 Word forms 欄未另列其他形式；不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W002734",
+      "word": "reveal",
+      "units": [
+        "LV1-U10"
+      ],
+      "cardIds": [
+        "LV1-U10-41"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "露出；顯示；透露；揭露",
+      "sourceMeaningEn": "(v.) to make known information that was previously secret; (v.) to show something that was hidden",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U10-41",
+          "captionEn": "She finally revealed her secret to her best friend.",
+          "captionZh": "她終於向最好的朋友透露了自己的秘密。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "verbForms key 真實缺漏，不是 null；復原須刪除 key。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "揭露、透露、顯示。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "reveal",
+        "past": "revealed",
+        "pastParticiple": "revealed"
+      },
+      "proposedVerbForms": {
+        "base": "reveal",
+        "past": "revealed",
+        "pastParticiple": "revealed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/reveal"
+      },
+      "sourceSupportedForms": {
+        "base": "reveal",
+        "past": [
+          "revealed"
+        ],
+        "pastParticiple": [
+          "revealed"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/reveal",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle revealed",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示過去式與過去分詞，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文並讀取所列相關段落；不是搜尋摘要，也不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "僅為動詞三態；不將名詞／形容詞的詞形誤作三態。",
+      "variantAssessment": "所讀詞典主 Word forms 欄未另列其他形式；不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W002983",
+      "word": "weaken",
+      "units": [
+        "LV1-U10"
+      ],
+      "cardIds": [
+        "LV1-U10-25"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "sourceSnapshotStatus": "draft",
+      "sourceMeaningZh": "削弱；減弱；使虛弱；變弱",
+      "sourceMeaningEn": "lessen the strength of; become weaker",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U10-25",
+          "captionEn": "Days of heavy rain weakened the old garden wall.",
+          "captionZh": "連日大雨使花園的老牆變得脆弱。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "verbForms key 真實缺漏，不是 null；復原須刪除 key。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "削弱、變弱。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "weaken",
+        "past": "weakened",
+        "pastParticiple": "weakened"
+      },
+      "proposedVerbForms": {
+        "base": "weaken",
+        "past": "weakened",
+        "pastParticiple": "weakened",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/weaken"
+      },
+      "sourceSupportedForms": {
+        "base": "weaken",
+        "past": [
+          "weakened"
+        ],
+        "pastParticiple": [
+          "weakened"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/weaken",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle weakened",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示過去式與過去分詞，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文並讀取所列相關段落；不是搜尋摘要，也不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "僅為動詞三態；不將名詞／形容詞的詞形誤作三態。",
+      "variantAssessment": "所讀詞典主 Word forms 欄未另列其他形式；不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W003416",
+      "word": "forbid",
+      "units": [
+        "LV1-U10"
+      ],
+      "cardIds": [
+        "LV1-U10-08"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "sourceSnapshotStatus": "draft",
+      "sourceMeaningZh": "禁止；不準；妨礙；不許",
+      "sourceMeaningEn": "command against",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U10-08",
+          "captionEn": "The school forbids students from using phones during class.",
+          "captionZh": "學校禁止學生在上課時使用手機。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "verbForms key 真實缺漏，不是 null；復原須刪除 key。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "禁止、不准、妨礙。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "forbid",
+        "past": "forbade",
+        "pastParticiple": "forbidden"
+      },
+      "proposedVerbForms": {
+        "base": "forbid",
+        "past": "forbade",
+        "pastParticiple": "forbidden",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/forbid"
+      },
+      "sourceSupportedForms": {
+        "base": "forbid",
+        "past": [
+          "forbade",
+          "forbad",
+          "forbid"
+        ],
+        "pastParticiple": [
+          "forbidden",
+          "forbid"
+        ],
+        "qualification": "研究範圍內的來源形式，不是介面並列清單。限定及來源標籤差異見 senseAndVariantRecords。"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/forbid",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense forbade , past participle forbidden",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示過去式與過去分詞，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文並讀取所列相關段落；不是搜尋摘要，也不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Webster’s New World College Dictionary, 5th Digital Edition",
+          "url": "https://www.collinsdictionary.com/dictionary/english/forbid",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "forbade or forbad, forbidden or archaic forbid",
+          "location": "Webster’s New World American English, Word forms",
+          "scope": "forbad 是承認的過去式變體；作過去分詞的 forbid 明標 archaic。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文並讀取所列相關段落；不是搜尋摘要，也不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "Merriam-Webster",
+          "work": "Merriam-Webster.com Dictionary",
+          "url": "https://www.merriam-webster.com/dictionary/forbid",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "also forbad",
+          "location": "verb (1), inflection header",
+          "scope": "Merriam-Webster 收 forbad 為 also 變體；不把此標記擅改成英式專用或古語。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文並讀取所列相關段落；不是搜尋摘要，也不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Random House entry hosted by Collins",
+          "url": "https://www.collinsdictionary.com/dictionary/english/forbade",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "a pt. of forbid. Also:",
+          "location": "Random House American English",
+          "scope": "此行實際續列 forbad 及 forbid；因此記錄 forbid 作過去式的來源，不因未採用便宣稱不存在。此段未附過去式 forbid 的語域標籤。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文並讀取所列相關段落；不是搜尋摘要，也不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "禁止／使不可能共用主候選；God forbid 等原形構式不構成過去式證據。",
+      "variantAssessment": "主候選 forbid–forbade–forbidden。forbad 為確證變體，所讀 MW 標 also 而非古語；分詞 forbid 在 Webster’s New World 標 archaic。Random House 亦列 forbid 作過去式，該段未標語域，不能把分詞的 archaic 標籤自動套到過去式。這些形式保留研究記錄，不無限定並列。",
+      "pendingReason": null,
+      "senseAndVariantRecords": [
+        {
+          "base": "forbid",
+          "past": "forbade",
+          "pastParticiple": "forbidden",
+          "includeInMinimalCandidate": true,
+          "reason": "COBUILD 主欄明列，與現代禁止義相符。"
+        },
+        {
+          "base": "forbid",
+          "past": "forbad",
+          "includeInMinimalCandidate": false,
+          "label": "also（Merriam-Webster）；Collins 亦列",
+          "reason": "真實變體；最小展示優先主式 forbade，不宣稱 forbad 不正確。"
+        },
+        {
+          "base": "forbid",
+          "pastParticiple": "forbid",
+          "includeInMinimalCandidate": false,
+          "label": "archaic（Webster’s New World）"
+        },
+        {
+          "base": "forbid",
+          "past": "forbid",
+          "includeInMinimalCandidate": false,
+          "label": "Random House 所讀段落未標語域",
+          "reason": "有來源，僅保留證據；不強行作無限定一般教學答案。"
+        }
+      ]
+    },
+    {
+      "wordId": "W003672",
+      "word": "neglect",
+      "units": [
+        "LV1-U10"
+      ],
+      "cardIds": [
+        "LV1-U10-77"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "draft",
+      "sourceMeaningZh": "疏忽；忽略；漏做；忽視",
+      "sourceMeaningEn": "the state of something that has been unused and neglected; leave undone or leave out",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U10-77",
+          "captionEn": "Do not neglect to water the plants during hot weather.",
+          "captionZh": "天氣炎熱時，別忘了替植物澆水。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "verbForms key 真實缺漏，不是 null；復原須刪除 key。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "疏忽、忽略、漏做。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "neglect",
+        "past": "neglected",
+        "pastParticiple": "neglected"
+      },
+      "proposedVerbForms": {
+        "base": "neglect",
+        "past": "neglected",
+        "pastParticiple": "neglected",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/neglect"
+      },
+      "sourceSupportedForms": {
+        "base": "neglect",
+        "past": [
+          "neglected"
+        ],
+        "pastParticiple": [
+          "neglected"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/neglect",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle neglected",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示過去式與過去分詞，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文並讀取所列相關段落；不是搜尋摘要，也不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "僅為動詞三態；不將名詞／形容詞的詞形誤作三態。",
+      "variantAssessment": "所讀詞典主 Word forms 欄未另列其他形式；不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    }
+  ]
+}

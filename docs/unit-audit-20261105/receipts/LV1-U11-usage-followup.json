@@ -1,0 +1,79 @@
+{
+  "manifest": "docs\\unit-audit-20261105\\LV1-U11-usage-followup.json",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "checkedAt": "2026-11-05T09:46:46.145950+00:00",
+  "changeCount": 1,
+  "changes": [
+    {
+      "dataset": "words",
+      "id": "W000253",
+      "before": {
+        "wordId": "W000253",
+        "word": "earth",
+        "wordVariants": [
+          "earth"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "地球；泥土；世界；塵世",
+        "meaningEn": "the planet on which we live; the loose soft material in which plants grow",
+        "usagePattern": "on earth; the earth's surface",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "earth",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "在世上；（on earth 加強疑問）究竟／到底；地球表面"
+      },
+      "after": {
+        "wordId": "W000253",
+        "word": "earth",
+        "wordVariants": [
+          "earth"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "地球；泥土；世界；塵世",
+        "meaningEn": "the planet on which we live; the loose soft material in which plants grow",
+        "usagePattern": "on earth; the earth's surface",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "earth",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "在世上／（加強疑問）究竟、到底；地球表面"
+      },
+      "reason": "Real usage-page verification found three Chinese segments for two English patterns. The existing renderer hides all Chinese when segment counts differ. Combine the two meanings of on earth into one corresponding segment, retaining the second earth-surface translation.",
+      "evidence": "Actual earth usage-page inspection and src/features/vocabulary/usagePattern.ts buildUsagePatternItems count-equality behavior; unchanged formal on-earth sentences independently reviewed."
+    }
+  ],
+  "masterTouched": false,
+  "sentencesChanged": false,
+  "englishSentencesChanged": false,
+  "imagesChanged": false,
+  "sourceHashesBefore": {
+    "words.json": "280ba903bdc8e8d8aea67f0e5b3df4d5ec9cefb7deb03a8cbb05f551610c84ed",
+    "senses.json": "312d65f5b186b4e06cfda1be68418a5a53b9d6ff970aa04e558af4cfc0799b97",
+    "examples.json": "4f965b2c72a61628efe35b24a3ac3ed6e6e04083f56cd2a538295f4177585e1e",
+    "meta.json": "919eeb043c8258b32800f370d1845e1b8a771998958f93c082f89059bb534ee1",
+    "sa-pack.json": "4922ca65f6de9bdf96a8c395f964a4fd64cb810aa0ff577357500f4dd47284c8"
+  },
+  "sourceHashesAfter": {
+    "words.json": "9d9e3bc618cebf1e46f976c6b4d9e1acd43a51b3afcadab68a6661f3554c6d05",
+    "senses.json": "312d65f5b186b4e06cfda1be68418a5a53b9d6ff970aa04e558af4cfc0799b97",
+    "examples.json": "4f965b2c72a61628efe35b24a3ac3ed6e6e04083f56cd2a538295f4177585e1e",
+    "meta.json": "3bfb8bcc416331de1c5a20608a6e1dc2068dfcb6b9b8509f3378b9b48f3bea3a",
+    "sa-pack.json": "6dc4a2daa3ffd208dabd1cf957ddd316f4fc4dd330d170c1f3e8bc23275fd373"
+  },
+  "state": "applied_not_ui_verified"
+}

@@ -1,0 +1,20 @@
+{
+  "unit": "LV1-U11",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "scope": "One observed usage-list alignment correction after the main U11 audit. Preserve all meanings and original example sentences.",
+  "patches": [
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000253",
+      "before": {
+        "usagePatternZh": "在世上；（on earth 加強疑問）究竟／到底；地球表面"
+      },
+      "after": {
+        "usagePatternZh": "在世上／（加強疑問）究竟、到底；地球表面"
+      },
+      "reason": "Real usage-page verification found three Chinese segments for two English patterns. The existing renderer hides all Chinese when segment counts differ. Combine the two meanings of on earth into one corresponding segment, retaining the second earth-surface translation.",
+      "evidence": "Actual earth usage-page inspection and src/features/vocabulary/usagePattern.ts buildUsagePatternItems count-equality behavior; unchanged formal on-earth sentences independently reviewed."
+    }
+  ]
+}

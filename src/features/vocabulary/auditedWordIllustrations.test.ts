@@ -10,6 +10,7 @@ import u7Evidence from '../../../docs/unit-audit-20261105/LV1-U07-original-image
 import u8Evidence from '../../../docs/unit-audit-20261105/LV1-U08-original-image-review.json';
 import u9Evidence from '../../../docs/unit-audit-20261105/LV1-U09-original-image-review.json';
 import u10Evidence from '../../../docs/unit-audit-20261105/LV1-U10-original-image-review.json';
+import u11Evidence from '../../../docs/unit-audit-20261105/LV1-U11-original-image-review.json';
 import captionTranslations from '../../../docs/unit-audit-20261105/LV1-verified-caption-translations.json';
 import publishedUnits from './lv1ReviewedImages.json';
 import words from '../../../public/data/v1/words.json';
@@ -17,7 +18,7 @@ import {approvedCurriculumIllustration,approvedWordIllustration,approvedLV1Image
 import {getWordBeastAsset} from '../wordbeast/wordBeastAssets';
 
 it('binds the explicitly reviewed general-card repairs to exact images and captions',()=>{
- expect(cards).toHaveLength(163);
+ expect(cards).toHaveLength(191);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U03-'))).toHaveLength(18);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U04-'))).toHaveLength(19);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U05-'))).toHaveLength(4);
@@ -26,9 +27,10 @@ it('binds the explicitly reviewed general-card repairs to exact images and capti
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U08-'))).toHaveLength(35);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U09-'))).toHaveLength(18);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U10-'))).toHaveLength(28);
- expect(new Set(cards.map(c=>c.officialWordId)).size).toBe(163);
+ expect(cards.filter(c=>c.reviewId.startsWith('LV1-U11-'))).toHaveLength(28);
+ expect(new Set(cards.map(c=>c.officialWordId)).size).toBe(191);
  for(const card of cards){
-  const proof=[...evidence.cards,...u4Evidence.cards,...u5Evidence.cards,...u6Evidence.cards,...u7Evidence.cards,...u8Evidence.cards,...u9Evidence.cards,...u10Evidence.cards].find(c=>c.id===card.reviewId)!;
+  const proof=[...evidence.cards,...u4Evidence.cards,...u5Evidence.cards,...u6Evidence.cards,...u7Evidence.cards,...u8Evidence.cards,...u9Evidence.cards,...u10Evidence.cards,...u11Evidence.cards].find(c=>c.id===card.reviewId)!;
   expect(proof.pixelReview).toContain('actually viewed original');
   expect(proof.observation).toBeTruthy();
   expect(createHash('sha256').update(readFileSync('public/'+card.illustration.path)).digest('hex')).toBe(proof.publishedImageSha256);

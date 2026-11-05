@@ -23,12 +23,14 @@ import u8Hints from '../../docs/unit-audit-20261105/LV1-U08-hints-followup.json'
 import translations from '../../docs/unit-audit-20261105/LV1-verified-translations-followup.json';
 import forms from '../../docs/unit-audit-20261105/LV1-U01-U02-verb-forms-followup.json';
 import u10 from '../../docs/unit-audit-20261105/LV1-U10-patches.json';
+import u11 from '../../docs/unit-audit-20261105/LV1-U11-patches.json';
+import u11Usage from '../../docs/unit-audit-20261105/LV1-U11-usage-followup.json';
 import verifiedForms from '../../docs/unit-audit-20261105/VERIFIED-VERB-FORMS-SOURCES.json';
 import verifiedTranslations from '../../docs/unit-audit-20261105/VERIFIED-TRANSLATION-SOURCES.json';
 
 type Row = Record<string, unknown>;
 type Patch = {dataset:string; key:string; id:string; before:Row; after:Row; reason:string; evidence:string};
-const patches:Patch[]=[...u1.patches,...u2.patches,...pig.patches,...u3.patches,...u3Remaining.patches,...u4.patches,...u5.patches,...u6.patches,...u6Syntax.patches,...examSources.patches,...u7.patches,...u7Hints.patches,...lexicalSources.patches,...catDefinition.patches,...u7VerifiedExams.patches,...u8.patches,...demandVisible.patches,...u9.patches,...u8Hints.patches,...translations.patches,...forms.patches,...u10.patches];
+const patches:Patch[]=[...u1.patches,...u2.patches,...pig.patches,...u3.patches,...u3Remaining.patches,...u4.patches,...u5.patches,...u6.patches,...u6Syntax.patches,...examSources.patches,...u7.patches,...u7Hints.patches,...lexicalSources.patches,...catDefinition.patches,...u7VerifiedExams.patches,...u8.patches,...demandVisible.patches,...u9.patches,...u8Hints.patches,...translations.patches,...forms.patches,...u10.patches,...u11.patches,...u11Usage.patches];
 
 export function restoreRecordedAuditPatch(name:string,row:Row,patch:Patch):void{
  assert.ok(patch.reason&&patch.evidence,'each audit correction needs recorded evidence');
@@ -81,9 +83,17 @@ export function beforeUnitAudit<T>(dataset:string, value:T):T {
     return copy;
   }
   if(!Array.isArray(copy))return copy;
+  const indexes=new Map<string,Map<unknown,Row[]>>();
   for(const patch of patches.filter(p=>p.dataset===name).reverse()){
     assert.ok(patch.reason&&patch.evidence,'each audit correction needs recorded evidence');
-    const rows=copy.filter((r:Row)=>r[patch.key]===patch.id);
+    assert.ok(!Object.hasOwn(patch.after,patch.key),'audit identities are immutable');
+    let index=indexes.get(patch.key);
+    if(!index){
+      index=new Map<unknown,Row[]>();
+      for(const row of copy as Row[]){const id=row[patch.key];const matches=index.get(id);if(matches)matches.push(row);else index.set(id,[row]);}
+      indexes.set(patch.key,index);
+    }
+    const rows=index.get(patch.id)??[];
     assert.ok(rows.length<=1,'audit cannot conceal duplicate identities');
     if(!rows.length)continue; // A starter subset can omit full-dictionary rows.
     const row=rows[0] as Row;
