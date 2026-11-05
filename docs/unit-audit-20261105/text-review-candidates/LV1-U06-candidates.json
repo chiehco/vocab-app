@@ -1,0 +1,2960 @@
+{
+  "sourceCommit": "b5144bc12ebd35a9083ee80de055a748cf973981",
+  "examplesBlobSha": "e133b703845ec3241b3421e13a7bb3d562b4252f",
+  "sourceCatalog": "source-catalog.json",
+  "status": "Candidates only. Not applied or whole-card approval.",
+  "unit": "LV1-U06",
+  "coverage": {
+    "unitMembershipExamplesRead": 237,
+    "uniqueExampleIdsWithinUnit": 237,
+    "examplesWithDisplayedHint": 170,
+    "examplesWithoutDisplayedHint": 67,
+    "emptyHintsByType": {
+      "exam": 36,
+      "daily": 31
+    },
+    "hintProposals": 145,
+    "hintProposalClasses": {
+      "narrow_mixed_or_overbroad_hint": 92,
+      "missing_or_incompatible_context_sense": 53
+    },
+    "translationProposals": 1,
+    "posProposals": 0,
+    "posConventionLimitedRows": [
+      "EX67451744",
+      "EX96ab7941",
+      "EX05dd73ac",
+      "EX986278a0",
+      "EXdf88569e"
+    ],
+    "clozeReconstructionFailures": [],
+    "repoOrStatusChanged": false
+  },
+  "candidates": [
+    {
+      "exampleId": "EX67451744",
+      "wordId": "W000554",
+      "word": "most",
+      "before": {
+        "meaningHint": "最多；最大；大多數的；幾乎全部的"
+      },
+      "after": {
+        "meaningHint": "最多（at most）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "數量上限，非大多數。",
+      "sentenceEn": "It will take 40 minutes at most to get to the airport.",
+      "blankSentence": "It will take 40 minutes at _____ to get to the airport.",
+      "answer": "most",
+      "sourceRefs": [
+        "S191"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX6e268e15",
+      "wordId": "W000554",
+      "word": "most",
+      "before": {
+        "meaningHint": "最多；最大；大多數的；幾乎全部的"
+      },
+      "after": {
+        "meaningHint": "大部分"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "of what 引導所指內容的大部分。",
+      "sentenceEn": "Most of what Grace told you was true.",
+      "blankSentence": "_____ of what Grace told you was true.",
+      "answer": "Most",
+      "sourceRefs": [
+        "S192"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX71c7ba3a",
+      "wordId": "W000554",
+      "word": "most",
+      "before": {
+        "meaningHint": "最多；最大；大多數的；幾乎全部的"
+      },
+      "after": {
+        "meaningHint": "最多的"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "所獲分數最多。",
+      "sentenceEn": "The player who scores the most points is the winner.",
+      "blankSentence": "The player who scores the _____ points is the winner.",
+      "answer": "most",
+      "sourceRefs": [
+        "S192"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX88ce194e",
+      "wordId": "W000554",
+      "word": "most",
+      "before": {
+        "meaningHint": "最多；最大；大多數的；幾乎全部的"
+      },
+      "after": {
+        "meaningHint": "大多數的"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "多數人，非數量最高級。",
+      "sentenceEn": "Most people find it hard to stop smoking.",
+      "blankSentence": "_____ people find it hard to stop smoking.",
+      "answer": "Most",
+      "sourceRefs": [
+        "S192"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXfd9a5383",
+      "wordId": "W000554",
+      "word": "most",
+      "before": {
+        "meaningHint": "最多；最大；大多數的；幾乎全部的"
+      },
+      "after": {
+        "meaningHint": "最（構成最高級）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "修飾 beautiful 的最高程度。",
+      "sentenceEn": "Lilly is the most beautiful girl I've ever seen.",
+      "blankSentence": "Lilly is the _____ beautiful girl I've ever seen.",
+      "answer": "most",
+      "sourceRefs": [
+        "S192"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX87b2d3ad",
+      "wordId": "W000479",
+      "word": "least",
+      "before": {
+        "meaningHint": "最少；最小；最小限度；最少的"
+      },
+      "after": {
+        "meaningHint": "最不（構成最低程度）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "least interesting 為最不有趣，非最少數量。",
+      "sentenceEn": "This is the least interesting event I've ever attended.",
+      "blankSentence": "This is the _____ interesting event I've ever attended.",
+      "answer": "least",
+      "sourceRefs": [
+        "S193"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX96ab7941",
+      "wordId": "W000479",
+      "word": "least",
+      "before": {
+        "meaningHint": "最少；最小；最小限度；最少的"
+      },
+      "after": {
+        "meaningHint": "至少（at least）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "五百人為下限。",
+      "sentenceEn": "At least five hundred people showed up for the rally.",
+      "blankSentence": "At _____ five hundred people showed up for the rally.",
+      "answer": "least",
+      "sourceRefs": [
+        "S194"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXbe785d68",
+      "wordId": "W000479",
+      "word": "least",
+      "before": {
+        "meaningHint": "最少；最小；最小限度；最少的"
+      },
+      "after": {
+        "meaningHint": "最少的"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "修飾 workload 的工作量最少。",
+      "sentenceEn": "Terry has the least workload of us all.",
+      "blankSentence": "Terry has the _____ workload of us all.",
+      "answer": "least",
+      "sourceRefs": [
+        "S193"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX01181a92",
+      "wordId": "W000334",
+      "word": "front",
+      "before": {
+        "meaningHint": "前面；開頭；前線；陣線"
+      },
+      "after": {
+        "meaningHint": "前面（in front of）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "攤位前方的位置。",
+      "sentenceEn": "There was a long lineup in front of the stand.",
+      "blankSentence": "There was a long lineup in _____ of the stand.",
+      "answer": "front",
+      "sourceRefs": [
+        "S195"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX26c91f63",
+      "wordId": "W000334",
+      "word": "front",
+      "before": {
+        "meaningHint": "前面；開頭；前線；陣線"
+      },
+      "after": {
+        "meaningHint": "前面的"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "修飾腳踏車輪的位置。",
+      "sentenceEn": "The front tire of Linda's bicycle was flat.",
+      "blankSentence": "The _____ tire of Linda's bicycle was flat.",
+      "answer": "front",
+      "sourceRefs": [
+        "S195"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX3337fe62",
+      "wordId": "W000334",
+      "word": "front",
+      "before": {
+        "meaningHint": "前面；開頭；前線；陣線"
+      },
+      "after": {
+        "meaningHint": "前方"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舞臺前方，非前線或陣線。",
+      "sentenceEn": "Maria walked to the front of the stage and took a bow.",
+      "blankSentence": "Maria walked to the _____ of the stage and took a bow.",
+      "answer": "front",
+      "sourceRefs": [
+        "S195"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX690dfc91",
+      "wordId": "W000334",
+      "word": "front",
+      "before": {
+        "meaningHint": "前面；開頭；前線；陣線"
+      },
+      "after": {
+        "meaningHint": "前部"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "劇場裡前方位置，非前線。",
+      "sentenceEn": "I'd like to sit in the front of the theater.",
+      "blankSentence": "I'd like to sit in the _____ of the theater.",
+      "answer": "front",
+      "sourceRefs": [
+        "S195"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX0cff82de",
+      "wordId": "W000055",
+      "word": "back",
+      "before": {
+        "meaningHint": "後面的；使後退；支持；倒退"
+      },
+      "after": {
+        "meaningHint": "來回（back and forth）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "前後往復移動，非支持義。",
+      "sentenceEn": "The security guard walked back and forth in front of the bank.",
+      "blankSentence": "The security guard walked _____ and forth in front of the bank.",
+      "answer": "back",
+      "sourceRefs": [
+        "S196"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX0ffa6627",
+      "wordId": "W000055",
+      "word": "back",
+      "before": {
+        "meaningHint": "後面的；使後退；支持；倒退"
+      },
+      "after": {
+        "meaningHint": "使後退；倒車"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "將車倒進車庫。",
+      "sentenceEn": "Dylan doesn't know how to back his car into the garage.",
+      "blankSentence": "Dylan doesn't know how to _____ his car into the garage.",
+      "answer": "back",
+      "sourceRefs": [
+        "S196"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX62359512",
+      "wordId": "W000055",
+      "word": "back",
+      "before": {
+        "meaningHint": "後面的；使後退；支持；倒退"
+      },
+      "after": {
+        "meaningHint": "背後（behind my back：背地裡）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "固定片語指本人不知情時，非支持或倒退。",
+      "sentenceEn": "I hate people who speak ill of me behind my back.",
+      "blankSentence": "I hate people who speak ill of me behind my _____.",
+      "answer": "back",
+      "sourceRefs": [
+        "S197"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX70599929",
+      "wordId": "W000055",
+      "word": "back",
+      "before": {
+        "meaningHint": "後面的；使後退；支持；倒退"
+      },
+      "after": {
+        "meaningHint": "回去"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "go back 指返回先前去過的餐廳。",
+      "sentenceEn": "Victor never went back to that restaurant.",
+      "blankSentence": "Victor never went _____ to that restaurant.",
+      "answer": "back",
+      "sourceRefs": [
+        "S196"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX96b2b541",
+      "wordId": "W000055",
+      "word": "back",
+      "before": {
+        "meaningHint": "後面的；使後退；支持；倒退"
+      },
+      "after": {
+        "meaningHint": "後部"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "頭的後部；原提示混有形容詞和動詞。",
+      "sentenceEn": "The baseball hit Jack on the back of his head.",
+      "blankSentence": "The baseball hit Jack on the _____ of his head.",
+      "answer": "back",
+      "sourceRefs": [
+        "S198"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXe5a6be7d",
+      "wordId": "W000055",
+      "word": "back",
+      "before": {
+        "meaningHint": "後面的；使後退；支持；倒退"
+      },
+      "after": {
+        "meaningHint": "後面的"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "修飾 pocket 的位置，非倒退或支持。",
+      "sentenceEn": "Rebecca keeps her phone in her back pocket.",
+      "blankSentence": "Rebecca keeps her phone in her _____ pocket.",
+      "answer": "back",
+      "sourceRefs": [
+        "S198"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX15e884ca",
+      "wordId": "W000772",
+      "word": "show",
+      "before": {
+        "meaningHint": "顯示；表現；展覽；賣弄"
+      },
+      "after": {
+        "meaningHint": "節目"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "電視 talk show 指節目，原提示缺此名詞義。",
+      "sentenceEn": "The talk show I saw on TV last night was fantastic.",
+      "blankSentence": "The talk _____ I saw on TV last night was fantastic.",
+      "answer": "show",
+      "sourceRefs": [
+        "S199"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX2f32f2bd",
+      "wordId": "W000772",
+      "word": "show",
+      "before": {
+        "meaningHint": "顯示；表現；展覽；賣弄"
+      },
+      "after": {
+        "meaningHint": "顯示"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "研究顯示結論。",
+      "sentenceEn": "A study shows that staying up all night to study isn't a great idea.",
+      "blankSentence": "A study _____ that staying up all night to study isn't a great idea.",
+      "answer": "shows",
+      "sourceRefs": [
+        "S199"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX4302ebae",
+      "wordId": "W000772",
+      "word": "show",
+      "before": {
+        "meaningHint": "顯示；表現；展覽；賣弄"
+      },
+      "after": {
+        "meaningHint": "放映"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "電影院播放電影。",
+      "sentenceEn": "All the theaters are showing the new James Bond movie.",
+      "blankSentence": "All the theaters are _____ the new James Bond movie.",
+      "answer": "showing",
+      "sourceRefs": [
+        "S200"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX745da23f",
+      "wordId": "W000772",
+      "word": "show",
+      "before": {
+        "meaningHint": "顯示；表現；展覽；賣弄"
+      },
+      "after": {
+        "meaningHint": "出現；到場（show up）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "show up 指到場，原提示缺片語義。",
+      "sentenceEn": "Jack didn't show up on time.",
+      "blankSentence": "Jack didn't _____ up on time.",
+      "answer": "show",
+      "sourceRefs": [
+        "S201"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX7f87b10f",
+      "wordId": "W000772",
+      "word": "show",
+      "before": {
+        "meaningHint": "顯示；表現；展覽；賣弄"
+      },
+      "after": {
+        "meaningHint": "給……看"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "將照片給對方看，非賣弄或表現。",
+      "sentenceEn": "Can you show me your favorite photo?",
+      "blankSentence": "Can you _____ me your favorite photo?",
+      "answer": "show",
+      "sourceRefs": [
+        "S200"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXf15ad0f7",
+      "wordId": "W000772",
+      "word": "show",
+      "before": {
+        "meaningHint": "顯示；表現；展覽；賣弄"
+      },
+      "after": {
+        "meaningHint": "展出"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "藝廊展示藝術作品。",
+      "sentenceEn": "The gallery shows the work of local artists.",
+      "blankSentence": "The gallery _____ the work of local artists.",
+      "answer": "shows",
+      "sourceRefs": [
+        "S200"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX984c9ed7",
+      "wordId": "W000415",
+      "word": "house",
+      "before": {
+        "meaningHint": "容納，收藏"
+      },
+      "after": {
+        "meaningHint": "容納"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "建築內設圖書館咖啡店，非收藏物品。",
+      "sentenceEn": "The renovated warehouse now houses a library and a small café.",
+      "blankSentence": "The renovated warehouse now _____ a library and a small café.",
+      "answer": "houses",
+      "sourceRefs": [
+        "S202"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX9f66f905",
+      "wordId": "W000415",
+      "word": "house",
+      "before": {
+        "meaningHint": "容納，收藏"
+      },
+      "after": {
+        "meaningHint": "收容；安置"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "為流浪狗提供住處，非收藏。",
+      "sentenceEn": "We need a bigger place to house those stray dogs.",
+      "blankSentence": "We need a bigger place to _____ those stray dogs.",
+      "answer": "house",
+      "sourceRefs": [
+        "S202"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXcf4d13ee",
+      "wordId": "W000415",
+      "word": "house",
+      "before": {
+        "meaningHint": "容納，收藏"
+      },
+      "after": {
+        "meaningHint": "收藏"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "博物館容有畫作收藏。",
+      "sentenceEn": "The museum houses a large collection of rare paintings from around the world.",
+      "blankSentence": "The museum ______ a large collection of rare paintings from around the world.",
+      "answer": "houses",
+      "sourceRefs": [
+        "S202"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX0f43c971",
+      "wordId": "W000136",
+      "word": "call",
+      "before": {
+        "meaningHint": "呼叫；訪問；打電話；號召"
+      },
+      "after": {
+        "meaningHint": "叫來"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "叫服務生過來，不是拜訪或打電話。",
+      "sentenceEn": "Janine called the waiter over to order another drink.",
+      "blankSentence": "Janine _____ the waiter over to order another drink.",
+      "answer": "called",
+      "sourceRefs": [
+        "S203"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX1ffd9231",
+      "wordId": "W000136",
+      "word": "call",
+      "before": {
+        "meaningHint": "呼叫；訪問；打電話；號召"
+      },
+      "after": {
+        "meaningHint": "取消（call off）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "call off 指取消比賽。",
+      "sentenceEn": "The game was called off because of rain.",
+      "blankSentence": "The game was _____ off because of rain.",
+      "answer": "called",
+      "sourceRefs": [
+        "S204"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX2b1d30f7",
+      "wordId": "W000136",
+      "word": "call",
+      "before": {
+        "meaningHint": "呼叫；訪問；打電話；號召"
+      },
+      "after": {
+        "meaningHint": "呼叫"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "媽媽出聲叫人。",
+      "sentenceEn": "My mom called me, but I didn't hear her.",
+      "blankSentence": "My mom _____ me, but I didn't hear her.",
+      "answer": "called",
+      "sourceRefs": [
+        "S203"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX690cb369",
+      "wordId": "W000136",
+      "word": "call",
+      "before": {
+        "meaningHint": "呼叫；訪問；打電話；號召"
+      },
+      "after": {
+        "meaningHint": "打電話"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "本句譯文和常用語境為電話聯絡，排除訪問。",
+      "sentenceEn": "Call me whenever you need help.",
+      "blankSentence": "_____ me whenever you need help.",
+      "answer": "Call",
+      "sourceRefs": [
+        "S203"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX888a9db4",
+      "wordId": "W000136",
+      "word": "call",
+      "before": {
+        "meaningHint": "呼叫；訪問；打電話；號召"
+      },
+      "after": {
+        "meaningHint": "電話（give someone a call：打電話給某人）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "give a call 中 call 為一次電話聯絡的名詞。",
+      "sentenceEn": "Give me a call whenever you need help.",
+      "blankSentence": "Give me a _____ whenever you need help.",
+      "answer": "call",
+      "sourceRefs": [
+        "S203"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX92db0e4b",
+      "wordId": "W000136",
+      "word": "call",
+      "before": {
+        "meaningHint": "呼叫；訪問；打電話；號召"
+      },
+      "after": {
+        "meaningHint": "召開"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "召集並安排會議。",
+      "sentenceEn": "The boss called a meeting to discuss the issue.",
+      "blankSentence": "The boss _____ a meeting to discuss the issue.",
+      "answer": "called",
+      "sourceRefs": [
+        "S203"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX9bdd46c2",
+      "wordId": "W000136",
+      "word": "call",
+      "before": {
+        "meaningHint": "呼叫；訪問；打電話；號召"
+      },
+      "after": {
+        "meaningHint": "呼喊聲"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "a call for help 指求救喊聲。",
+      "sentenceEn": "When I was walking along the river, I heard a call for help.",
+      "blankSentence": "When I was walking along the river, I heard a _____ for help.",
+      "answer": "call",
+      "sourceRefs": [
+        "S203"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXa3426342",
+      "wordId": "W000136",
+      "word": "call",
+      "before": {
+        "meaningHint": "呼叫；訪問；打電話；號召"
+      },
+      "after": {
+        "meaningHint": "稱呼"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "將 Max 稱為 Maxie，非呼喊、造訪或電話。",
+      "sentenceEn": "When Max was little, his parents called him Maxie.",
+      "blankSentence": "When Max was little, his parents _____ him Maxie.",
+      "answer": "called",
+      "sourceRefs": [
+        "S205"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXf07bc4bb",
+      "wordId": "W000136",
+      "word": "call",
+      "before": {
+        "meaningHint": "呼叫；訪問；打電話；號召"
+      },
+      "after": {
+        "meaningHint": "打電話（call up）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "call up 表電話聯絡。",
+      "sentenceEn": "Call me up whenever you need help.",
+      "blankSentence": "_____ me up whenever you need help.",
+      "answer": "Call",
+      "sourceRefs": [
+        "S203"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX19c3a84c",
+      "wordId": "W000480",
+      "word": "leave",
+      "before": {
+        "meaningHint": "許可；告別；請假；休假"
+      },
+      "after": {
+        "meaningHint": "動身前往（leave for）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "left for 香港是出發前往，非許可或休假。",
+      "sentenceEn": "John left for Hong Kong yesterday.",
+      "blankSentence": "John _____ for Hong Kong yesterday.",
+      "answer": "left",
+      "sourceRefs": [
+        "S206"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX26e3adf5",
+      "wordId": "W000480",
+      "word": "leave",
+      "before": {
+        "meaningHint": "許可；告別；請假；休假"
+      },
+      "after": {
+        "meaningHint": "使保持（某狀態）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "讓門維持打開，不是請假。",
+      "sentenceEn": "Ian left the door open, so that I could come in.",
+      "blankSentence": "Ian _____ the door open, so that I could come in.",
+      "answer": "left",
+      "sourceRefs": [
+        "S206"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX9fdb726b",
+      "wordId": "W000480",
+      "word": "leave",
+      "before": {
+        "meaningHint": "許可；告別；請假；休假"
+      },
+      "after": {
+        "meaningHint": "休假；假期"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "take leave 指請假，非許可或告別。",
+      "sentenceEn": "I'll take leave to attend my sister's wedding.",
+      "blankSentence": "I'll take _____ to attend my sister's wedding.",
+      "answer": "leave",
+      "sourceRefs": [
+        "S207"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXd23413d2",
+      "wordId": "W000480",
+      "word": "leave",
+      "before": {
+        "meaningHint": "許可；告別；請假；休假"
+      },
+      "after": {
+        "meaningHint": "留下"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "把手機留在辦公室；不擅自增補忘記。",
+      "sentenceEn": "I left my cellphone in the office.",
+      "blankSentence": "I _____ my cellphone in the office.",
+      "answer": "left",
+      "sourceRefs": [
+        "S206"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXf310a725",
+      "wordId": "W000480",
+      "word": "leave",
+      "before": {
+        "meaningHint": "許可；告別；請假；休假"
+      },
+      "after": {
+        "meaningHint": "離開"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "離開房間，原提示缺基本動詞義。",
+      "sentenceEn": "As soon as Molly left the room, her baby cried.",
+      "blankSentence": "As soon as Molly _____ the room, her baby cried.",
+      "answer": "left",
+      "sourceRefs": [
+        "S206"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX28931603",
+      "wordId": "W000741",
+      "word": "school",
+      "before": {
+        "meaningHint": "學校；魚羣；門派；學派"
+      },
+      "after": {
+        "meaningHint": "上課；上學（after school：放學後）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "此處 school 指上學活動，非魚群或學派。",
+      "sentenceEn": "We enjoy playing basketball after school.",
+      "blankSentence": "We enjoy playing basketball after _____.",
+      "answer": "school",
+      "sourceRefs": [
+        "S208"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXa9e49dc7",
+      "wordId": "W000741",
+      "word": "school",
+      "before": {
+        "meaningHint": "學校；魚羣；門派；學派"
+      },
+      "after": {
+        "meaningHint": "魚群"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "school of fish 是魚群。",
+      "sentenceEn": "We saw a school of fish in the river.",
+      "blankSentence": "We saw a _____ of fish in the river.",
+      "answer": "school",
+      "sourceRefs": [
+        "S208"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXaaeb34cf",
+      "wordId": "W000741",
+      "word": "school",
+      "before": {
+        "meaningHint": "學校；魚羣；門派；學派"
+      },
+      "after": {
+        "meaningHint": "教導"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "動詞 schooled 指教文法。",
+      "sentenceEn": "Tony schooled his son in the rules of grammar.",
+      "blankSentence": "Tony _____ his son in the rules of grammar.",
+      "answer": "schooled",
+      "sourceRefs": [
+        "S208"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX408e8626",
+      "wordId": "W000199",
+      "word": "course",
+      "before": {
+        "meaningHint": "課程；路線；過程；一道菜"
+      },
+      "after": {
+        "meaningHint": "路線"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "跑者行進路線。",
+      "sentenceEn": "The course takes the runners through the woods.",
+      "blankSentence": "The _____ takes the runners through the woods.",
+      "answer": "course",
+      "sourceRefs": [
+        "S209"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX560d3e8a",
+      "wordId": "W000199",
+      "word": "course",
+      "before": {
+        "meaningHint": "課程；路線；過程；一道菜"
+      },
+      "after": {
+        "meaningHint": "一道菜（main course：主菜）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "餐點中的主菜。",
+      "sentenceEn": "The main course is steak.",
+      "blankSentence": "The main _____ is steak.",
+      "answer": "course",
+      "sourceRefs": [
+        "S209"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX900e593a",
+      "wordId": "W000199",
+      "word": "course",
+      "before": {
+        "meaningHint": "課程；路線；過程；一道菜"
+      },
+      "after": {
+        "meaningHint": "課程"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "修寫作課程。",
+      "sentenceEn": "Next month I'm taking a writing course.",
+      "blankSentence": "Next month I'm taking a writing _____.",
+      "answer": "course",
+      "sourceRefs": [
+        "S209"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXacbe3fc9",
+      "wordId": "W000199",
+      "word": "course",
+      "before": {
+        "meaningHint": "課程；路線；過程；一道菜"
+      },
+      "after": {
+        "meaningHint": "流動；流下"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "眼淚流過臉頰，為動詞。",
+      "sentenceEn": "Tammy's tears coursed down her cheeks.",
+      "blankSentence": "Tammy's tears _____ down her cheeks.",
+      "answer": "coursed",
+      "sourceRefs": [
+        "S209"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXb91b49e1",
+      "wordId": "W000199",
+      "word": "course",
+      "before": {
+        "meaningHint": "課程；路線；過程；一道菜"
+      },
+      "after": {
+        "meaningHint": "過程；期間（in the course of）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "在旅行的過程中。",
+      "sentenceEn": "They'll find time to read in the course of their travels.",
+      "blankSentence": "They'll find time to read in the _____ of their travels.",
+      "answer": "course",
+      "sourceRefs": [
+        "S209"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX8de93d43",
+      "wordId": "W000968",
+      "word": "while",
+      "before": {
+        "meaningHint": "一會兒；(一段)時間；當...的時候；雖然"
+      },
+      "after": {
+        "meaningHint": "一會兒"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "for a while 名詞時間段。",
+      "sentenceEn": "I'll stay here for a while.",
+      "blankSentence": "I'll stay here for a _____.",
+      "answer": "while",
+      "sourceRefs": [
+        "S210"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX937e184c",
+      "wordId": "W000968",
+      "word": "while",
+      "before": {
+        "meaningHint": "一會兒；(一段)時間；當...的時候；雖然"
+      },
+      "after": {
+        "meaningHint": "消磨（時間）（while away）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "動詞消磨週末時間。",
+      "sentenceEn": "Aaron whiled his weekend away playing Nintendo Switch games.",
+      "blankSentence": "Aaron _____ his weekend away playing Nintendo Switch games.",
+      "answer": "whiled",
+      "sourceRefs": [
+        "S211"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXaa818a71",
+      "wordId": "W000968",
+      "word": "while",
+      "before": {
+        "meaningHint": "一會兒；(一段)時間；當...的時候；雖然"
+      },
+      "after": {
+        "meaningHint": "而；然而（表對比）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "對比兩人的愛好，非時間或讓步。",
+      "sentenceEn": "Linda likes singing, while Peter enjoys dancing.",
+      "blankSentence": "Linda likes singing, _____ Peter enjoys dancing.",
+      "answer": "while",
+      "sourceRefs": [
+        "S210"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXe750432d",
+      "wordId": "W000968",
+      "word": "while",
+      "before": {
+        "meaningHint": "一會兒；(一段)時間；當...的時候；雖然"
+      },
+      "after": {
+        "meaningHint": "雖然"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "雖瘦卻能吃的讓步。",
+      "sentenceEn": "While Vivian's thin, she can eat a lot.",
+      "blankSentence": "_____ Vivian's thin, she can eat a lot.",
+      "answer": "While",
+      "sourceRefs": [
+        "S210"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXf13897b9",
+      "wordId": "W000968",
+      "word": "while",
+      "before": {
+        "meaningHint": "一會兒；(一段)時間；當...的時候；雖然"
+      },
+      "after": {
+        "meaningHint": "當……的時候"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "吃飯時電話響的同時關係。",
+      "sentenceEn": "While we were having dinner, the phone rang.",
+      "blankSentence": "_____ we were having dinner, the phone rang.",
+      "answer": "While",
+      "sourceRefs": [
+        "S210"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX0f650d50",
+      "wordId": "W000628",
+      "word": "part",
+      "before": {
+        "meaningHint": "部分；局部；零件；要素"
+      },
+      "after": {
+        "meaningHint": "分開；散開"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "雲朵散開，為動詞，非部分名詞。",
+      "sentenceEn": "The clouds parted, and the sun began to shine.",
+      "blankSentence": "The clouds _____, and the sun began to shine.",
+      "answer": "parted",
+      "sourceRefs": [
+        "S212"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXa14c2189",
+      "wordId": "W000628",
+      "word": "part",
+      "before": {
+        "meaningHint": "部分；局部；零件；要素"
+      },
+      "after": {
+        "meaningHint": "角色"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "戲中灰姑娘的角色。",
+      "sentenceEn": "Sophie played the part of Cinderella.",
+      "blankSentence": "Sophie played the _____ of Cinderella.",
+      "answer": "part",
+      "sourceRefs": [
+        "S212"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXbad6b4ea",
+      "wordId": "W000628",
+      "word": "part",
+      "before": {
+        "meaningHint": "部分；局部；零件；要素"
+      },
+      "after": {
+        "meaningHint": "部分"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "小說首段／第一部分。",
+      "sentenceEn": "I don't like the first part of the novel.",
+      "blankSentence": "I don't like the first _____ of the novel.",
+      "answer": "part",
+      "sourceRefs": [
+        "S212"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXd717592f",
+      "wordId": "W000628",
+      "word": "part",
+      "before": {
+        "meaningHint": "部分；局部；零件；要素"
+      },
+      "after": {
+        "meaningHint": "零件"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "所要取得的零件。",
+      "sentenceEn": "The part you want is quite hard to get.",
+      "blankSentence": "The _____ you want is quite hard to get.",
+      "answer": "part",
+      "sourceRefs": [
+        "S212"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXe4a6b27c",
+      "wordId": "W000628",
+      "word": "part",
+      "before": {
+        "meaningHint": "部分；局部；零件；要素"
+      },
+      "after": {
+        "meaningHint": "參與（take part in）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "take part in 比賽指參與，原提示缺片語義。",
+      "sentenceEn": "How many students took part in the speech contest?",
+      "blankSentence": "How many students took _____ in the speech contest?",
+      "answer": "part",
+      "sourceRefs": [
+        "S213"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX028e0a65",
+      "wordId": "W000262",
+      "word": "end",
+      "before": {
+        "meaningHint": "結束；終點；目標；末端"
+      },
+      "after": {
+        "meaningHint": "結束"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "結束關係的動詞。",
+      "sentenceEn": "They decided to end their relationship.",
+      "blankSentence": "They decided to _____ their relationship.",
+      "answer": "end",
+      "sourceRefs": [
+        "S214"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX18c56a7b",
+      "wordId": "W000262",
+      "word": "end",
+      "before": {
+        "meaningHint": "結束；終點；目標；末端"
+      },
+      "after": {
+        "meaningHint": "最後（做某事）（end up）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "最後落得向人借錢的情況。",
+      "sentenceEn": "I knew you would end up borrowing money from me.",
+      "blankSentence": "I knew you would _____ up borrowing money from me.",
+      "answer": "end",
+      "sourceRefs": [
+        "S215"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXc0f7a7b7",
+      "wordId": "W000262",
+      "word": "end",
+      "before": {
+        "meaningHint": "結束；終點；目標；末端"
+      },
+      "after": {
+        "meaningHint": "結局；結尾"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "電影的結尾段落。",
+      "sentenceEn": "The end of the movie was the best part.",
+      "blankSentence": "The _____ of the movie was the best part.",
+      "answer": "end",
+      "sourceRefs": [
+        "S214"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXd2cfe13d",
+      "wordId": "W000262",
+      "word": "end",
+      "before": {
+        "meaningHint": "結束；終點；目標；末端"
+      },
+      "after": {
+        "meaningHint": "結束"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "功課似乎做不完。",
+      "sentenceEn": "It seems that my schoolwork will never end.",
+      "blankSentence": "It seems that my schoolwork will never _____.",
+      "answer": "end",
+      "sourceRefs": [
+        "S214"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXf6aa0917",
+      "wordId": "W000262",
+      "word": "end",
+      "before": {
+        "meaningHint": "結束；終點；目標；末端"
+      },
+      "after": {
+        "meaningHint": "結尾；尾聲"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "演唱會結束的時點。",
+      "sentenceEn": "At the end of the concert, everybody stood up.",
+      "blankSentence": "At the _____ of the concert, everybody stood up.",
+      "answer": "end",
+      "sourceRefs": [
+        "S214"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX099a0f96",
+      "wordId": "W000824",
+      "word": "start",
+      "before": {
+        "meaningHint": "驚起；出發；開端；起點"
+      },
+      "after": {
+        "meaningHint": "開端"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "演出開頭進展，非驚起或出發。",
+      "sentenceEn": "The school play got off to a poor start.",
+      "blankSentence": "The school play got off to a poor _____.",
+      "answer": "start",
+      "sourceRefs": [
+        "S216"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX0d4df1b1",
+      "wordId": "W000824",
+      "word": "start",
+      "before": {
+        "meaningHint": "驚起；出發；開端；起點"
+      },
+      "after": {
+        "meaningHint": "開始"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "開始運動，為動詞，不是開端名詞。",
+      "sentenceEn": "Renee started to exercise three days ago.",
+      "blankSentence": "Renee _____ to exercise three days ago.",
+      "answer": "started",
+      "sourceRefs": [
+        "S216"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXc7015ce8",
+      "wordId": "W000824",
+      "word": "start",
+      "before": {
+        "meaningHint": "驚起；出發；開端；起點"
+      },
+      "after": {
+        "meaningHint": "開始"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "開始運動，為動詞，不是開端名詞。",
+      "sentenceEn": "Renee started exercising three days ago.",
+      "blankSentence": "Renee _____ exercising three days ago.",
+      "answer": "started",
+      "sourceRefs": [
+        "S216"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXeea7b782",
+      "wordId": "W000824",
+      "word": "start",
+      "before": {
+        "meaningHint": "驚起；出發；開端；起點"
+      },
+      "after": {
+        "meaningHint": "開始"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "會議開始，為動詞，不是開端名詞。",
+      "sentenceEn": "The meeting will start in five minutes.",
+      "blankSentence": "The meeting will _____ in five minutes.",
+      "answer": "start",
+      "sourceRefs": [
+        "S216"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX81b84686",
+      "wordId": "W000302",
+      "word": "feel",
+      "before": {
+        "meaningHint": "感覺；覺得；觸摸；以為"
+      },
+      "after": {
+        "meaningHint": "氛圍；風格"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "地中海風情，為環境給人的感覺。",
+      "sentenceEn": "The new restaurant has a Mediterranean feel to it.",
+      "blankSentence": "The new restaurant has a Mediterranean _____ to it.",
+      "answer": "feel",
+      "sourceRefs": [
+        "S217"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXa603a289",
+      "wordId": "W000302",
+      "word": "feel",
+      "before": {
+        "meaningHint": "感覺；覺得；觸摸；以為"
+      },
+      "after": {
+        "meaningHint": "想要（feel like）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "詢問想不想看電影，非觸摸或以為。",
+      "sentenceEn": "Do you feel like going to the movies tonight?",
+      "blankSentence": "Do you _____ like going to the movies tonight?",
+      "answer": "feel",
+      "sourceRefs": [
+        "S218"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXb2b1db96",
+      "wordId": "W000302",
+      "word": "feel",
+      "before": {
+        "meaningHint": "感覺；覺得；觸摸；以為"
+      },
+      "after": {
+        "meaningHint": "感到"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "感受到鼓舞。",
+      "sentenceEn": "I feel encouraged when I hear those words.",
+      "blankSentence": "I _____ encouraged when I hear those words.",
+      "answer": "feel",
+      "sourceRefs": [
+        "S217"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXd6d9fbe8",
+      "wordId": "W000302",
+      "word": "feel",
+      "before": {
+        "meaningHint": "感覺；覺得；觸摸；以為"
+      },
+      "after": {
+        "meaningHint": "觸感"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "羊毛觸膚質感，為名詞。",
+      "sentenceEn": "Natalie loves the feel of soft wool on her skin.",
+      "blankSentence": "Natalie loves the _____ of soft wool on her skin.",
+      "answer": "feel",
+      "sourceRefs": [
+        "S217"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXdf1cdf07",
+      "wordId": "W000302",
+      "word": "feel",
+      "before": {
+        "meaningHint": "感覺；覺得；觸摸；以為"
+      },
+      "after": {
+        "meaningHint": "觸摸；碰到"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "黑暗中觸碰她的手。",
+      "sentenceEn": "I felt her hand in the darkness.",
+      "blankSentence": "I _____ her hand in the darkness.",
+      "answer": "felt",
+      "sourceRefs": [
+        "S217"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX2d706bb7",
+      "wordId": "W000595",
+      "word": "number",
+      "before": {
+        "meaningHint": "數；數字；數目；號碼"
+      },
+      "after": {
+        "meaningHint": "一些（a number of）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "不定數量的小朋友，非號碼。",
+      "sentenceEn": "A number of kids are playing in the park.",
+      "blankSentence": "A _____ of kids are playing in the park.",
+      "answer": "number",
+      "sourceRefs": [
+        "S219"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXac91022f",
+      "wordId": "W000595",
+      "word": "number",
+      "before": {
+        "meaningHint": "數；數字；數目；號碼"
+      },
+      "after": {
+        "meaningHint": "號碼"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "電話號碼。",
+      "sentenceEn": "May I have your phone number?",
+      "blankSentence": "May I have your phone _____?",
+      "answer": "number",
+      "sourceRefs": [
+        "S220"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXbe583752",
+      "wordId": "W000595",
+      "word": "number",
+      "before": {
+        "meaningHint": "數；數字；數目；號碼"
+      },
+      "after": {
+        "meaningHint": "數目"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "車禍發生的總數。",
+      "sentenceEn": "The number of car accidents fell last year.",
+      "blankSentence": "The _____ of car accidents fell last year.",
+      "answer": "number",
+      "sourceRefs": [
+        "S219"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXd57854e7",
+      "wordId": "W000595",
+      "word": "number",
+      "before": {
+        "meaningHint": "數；數字；數目；號碼"
+      },
+      "after": {
+        "meaningHint": "編號"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "將書籍賦予號碼，為動詞。",
+      "sentenceEn": "It took us four days to number all the books.",
+      "blankSentence": "It took us four days to _____ all the books.",
+      "answer": "number",
+      "sourceRefs": [
+        "S221"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX0f40ea8c",
+      "wordId": "W000319",
+      "word": "follow",
+      "before": {
+        "meaningHint": "跟隨；沿行；遵循；追求"
+      },
+      "after": {
+        "meaningHint": "遵從"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "遵照指示。",
+      "sentenceEn": "Please follow these instructions.",
+      "blankSentence": "Please _____ these instructions.",
+      "answer": "follow",
+      "sourceRefs": [
+        "S222"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX3ea26002",
+      "wordId": "W000319",
+      "word": "follow",
+      "before": {
+        "meaningHint": "跟隨；沿行；遵循；追求"
+      },
+      "after": {
+        "meaningHint": "遵循；依照（指標）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "依指標前行，非追求。",
+      "sentenceEn": "Follow the sign, and you'll find the restroom.",
+      "blankSentence": "_____ the sign, and you'll find the restroom.",
+      "answer": "Follow",
+      "sourceRefs": [
+        "S222"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX5d721b3c",
+      "wordId": "W000319",
+      "word": "follow",
+      "before": {
+        "meaningHint": "跟隨；沿行；遵循；追求"
+      },
+      "after": {
+        "meaningHint": "跟隨"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "跟在老師後面進教室。",
+      "sentenceEn": "I followed the teacher into the classroom.",
+      "blankSentence": "I _____ the teacher into the classroom.",
+      "answer": "followed",
+      "sourceRefs": [
+        "S222"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXef046191",
+      "wordId": "W000319",
+      "word": "follow",
+      "before": {
+        "meaningHint": "跟隨；沿行；遵循；追求"
+      },
+      "after": {
+        "meaningHint": "理解；聽懂"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "理解解釋，原提示缺認知義。",
+      "sentenceEn": "I just can't follow her explanation.",
+      "blankSentence": "I just can't _____ her explanation.",
+      "answer": "follow",
+      "sourceRefs": [
+        "S222"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX644a9a9c",
+      "wordId": "W000924",
+      "word": "turn",
+      "before": {
+        "meaningHint": "轉彎；轉動；旋轉；翻轉"
+      },
+      "after": {
+        "meaningHint": "輪到的機會"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "輪流做事的次序／機會，非旋轉。",
+      "sentenceEn": "It's your turn to wash the dishes.",
+      "blankSentence": "It's your _____ to wash the dishes.",
+      "answer": "turn",
+      "sourceRefs": [
+        "S223"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX6910e67c",
+      "wordId": "W000924",
+      "word": "turn",
+      "before": {
+        "meaningHint": "轉彎；轉動；旋轉；翻轉"
+      },
+      "after": {
+        "meaningHint": "轉身（turn around）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "轉身改變面向。",
+      "sentenceEn": "I turned around and saw Vincent standing by the door.",
+      "blankSentence": "I _____ around and saw Vincent standing by the door.",
+      "answer": "turned",
+      "sourceRefs": [
+        "S224"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX9bb0e8d0",
+      "wordId": "W000924",
+      "word": "turn",
+      "before": {
+        "meaningHint": "轉彎；轉動；旋轉；翻轉"
+      },
+      "after": {
+        "meaningHint": "轉彎"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "路口右轉。",
+      "sentenceEn": "Turn right at the next intersection.",
+      "blankSentence": "_____ right at the next intersection.",
+      "answer": "Turn",
+      "sourceRefs": [
+        "S224"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXc40a92d7",
+      "wordId": "W000924",
+      "word": "turn",
+      "before": {
+        "meaningHint": "轉彎；轉動；旋轉；翻轉"
+      },
+      "after": {
+        "meaningHint": "使變成（turn into）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "使王子變成野獸。",
+      "sentenceEn": "The witch turned the prince into a beast.",
+      "blankSentence": "The witch _____ the prince into a beast.",
+      "answer": "turned",
+      "sourceRefs": [
+        "S223"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXd81710b2",
+      "wordId": "W000924",
+      "word": "turn",
+      "before": {
+        "meaningHint": "轉彎；轉動；旋轉；翻轉"
+      },
+      "after": {
+        "meaningHint": "變成（turn into）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "青蛙變成王子。",
+      "sentenceEn": "Suddenly, the frog turned into a prince.",
+      "blankSentence": "Suddenly, the frog _____ into a prince.",
+      "answer": "turned",
+      "sourceRefs": [
+        "S223"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXe794407c",
+      "wordId": "W000924",
+      "word": "turn",
+      "before": {
+        "meaningHint": "轉彎；轉動；旋轉；翻轉"
+      },
+      "after": {
+        "meaningHint": "變得"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "樹葉變黃的狀態變化。",
+      "sentenceEn": "Leaves turn yellow in autumn.",
+      "blankSentence": "Leaves _____ yellow in autumn.",
+      "answer": "turn",
+      "sourceRefs": [
+        "S223"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX1bf7be2d",
+      "wordId": "W000679",
+      "word": "problem",
+      "before": {
+        "meaningHint": "問題；難題；成問題的；難處理的"
+      },
+      "after": {
+        "meaningHint": "問題；難題"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "名詞待解決問題，刪除形容詞義。",
+      "sentenceEn": "Let's try our best to solve the problem.",
+      "blankSentence": "Let's try our best to solve the _____.",
+      "answer": "problem",
+      "sourceRefs": [
+        "S225"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX1df79b2b",
+      "wordId": "W000679",
+      "word": "problem",
+      "before": {
+        "meaningHint": "問題；難題；成問題的；難處理的"
+      },
+      "after": {
+        "meaningHint": "困難"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "have problems doing 指做事有困難。",
+      "sentenceEn": "I have problems communicating with that stubborn guy.",
+      "blankSentence": "I have _____ communicating with that stubborn guy.",
+      "answer": "problems",
+      "sourceRefs": [
+        "S225"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX14e8e5f4",
+      "wordId": "W000688",
+      "word": "question",
+      "before": {
+        "meaningHint": "問題；詢問；審問；懷疑"
+      },
+      "after": {
+        "meaningHint": "質疑"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "質疑誠實性，非詢問一般問題。",
+      "sentenceEn": "Danny felt bad when his boss questioned his honesty.",
+      "blankSentence": "Danny felt bad when his boss _____ his honesty.",
+      "answer": "questioned",
+      "sourceRefs": [
+        "S226"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX28f6d889",
+      "wordId": "W000688",
+      "word": "question",
+      "before": {
+        "meaningHint": "問題；詢問；審問；懷疑"
+      },
+      "after": {
+        "meaningHint": "懷疑"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "no question about 指沒有懷疑。",
+      "sentenceEn": "There is no question about the CEO's ability.",
+      "blankSentence": "There is no _____ about the CEO's ability.",
+      "answer": "question",
+      "sourceRefs": [
+        "S226"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX9691f938",
+      "wordId": "W000688",
+      "word": "question",
+      "before": {
+        "meaningHint": "問題；詢問；審問；懷疑"
+      },
+      "after": {
+        "meaningHint": "訊問"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "警方訊問對象。",
+      "sentenceEn": "The police questioned Robert for nearly four hours.",
+      "blankSentence": "The police _____ Robert for nearly four hours.",
+      "answer": "questioned",
+      "sourceRefs": [
+        "S226"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXb83207a8",
+      "wordId": "W000688",
+      "word": "question",
+      "before": {
+        "meaningHint": "問題；詢問；審問；懷疑"
+      },
+      "after": {
+        "meaningHint": "問題"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "有疑問舉手，為名詞。",
+      "sentenceEn": "If you have any questions, please raise your hands.",
+      "blankSentence": "If you have any _____, please raise your hands.",
+      "answer": "questions",
+      "sourceRefs": [
+        "S226"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX2906fd63",
+      "wordId": "W000403",
+      "word": "hold",
+      "before": {
+        "meaningHint": "把握；把持力；柄；控制"
+      },
+      "after": {
+        "meaningHint": "舉行"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "舉行會議，原提示缺活動義。",
+      "sentenceEn": "We'll be holding a meeting at noon today.",
+      "blankSentence": "We'll be _____ a meeting at noon today.",
+      "answer": "holding",
+      "sourceRefs": [
+        "S227"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX48a6c1e7",
+      "wordId": "W000403",
+      "word": "hold",
+      "before": {
+        "meaningHint": "把握；把持力；柄；控制"
+      },
+      "after": {
+        "meaningHint": "抱著"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "把嬰兒抱在手臂中。",
+      "sentenceEn": "Paul held his new baby gently in his arms.",
+      "blankSentence": "Paul _____ his new baby gently in his arms.",
+      "answer": "held",
+      "sourceRefs": [
+        "S227"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX7639d200",
+      "wordId": "W000403",
+      "word": "hold",
+      "before": {
+        "meaningHint": "把握；把持力；柄；控制"
+      },
+      "after": {
+        "meaningHint": "稍等（hold on）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "要求等候取外套。",
+      "sentenceEn": "Hold on while I grab my jacket.",
+      "blankSentence": "_____ on while I grab my jacket.",
+      "answer": "Hold",
+      "sourceRefs": [
+        "S228"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXbfb0c2d0",
+      "wordId": "W000403",
+      "word": "hold",
+      "before": {
+        "meaningHint": "把握；把持力；柄；控制"
+      },
+      "after": {
+        "meaningHint": "握住（take hold of）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "固定片語握住繩子，cloze hold 保留名詞。",
+      "sentenceEn": "The worker took hold of the rope and pulled it hard.",
+      "blankSentence": "The worker took _____ of the rope and pulled it hard.",
+      "answer": "hold",
+      "sourceRefs": [
+        "S227"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX44011302",
+      "wordId": "W000288",
+      "word": "fact",
+      "before": {
+        "meaningHint": "事實；真實性；真相；細節"
+      },
+      "after": {
+        "meaningHint": "事實"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "看到的不一定是真實事實，非細節。",
+      "sentenceEn": "What you see is not always fact.",
+      "blankSentence": "What you see is not always _____.",
+      "answer": "fact",
+      "sourceRefs": [
+        "S229"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXb14d5d9a",
+      "wordId": "W000288",
+      "word": "fact",
+      "before": {
+        "meaningHint": "事實；真實性；真相；細節"
+      },
+      "after": {
+        "meaningHint": "事實上（as a matter of fact）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "表示實情的固定片語。",
+      "sentenceEn": "As a matter of fact, I don't believe Ray at all.",
+      "blankSentence": "As a matter of _____, I don't believe Ray at all.",
+      "answer": "fact",
+      "sourceRefs": [
+        "S230"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX0fc2e0b1",
+      "wordId": "W000450",
+      "word": "keep",
+      "before": {
+        "meaningHint": "生計；維持；保持；保存"
+      },
+      "after": {
+        "meaningHint": "跟上（keep up with）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "以足夠速度跟上，不是一般保存。",
+      "sentenceEn": "Don't walk so fast. I can't keep up with you.",
+      "blankSentence": "Don't walk so fast. I can't _____ up with you.",
+      "answer": "keep",
+      "sourceRefs": [
+        "S231"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX39f259bd",
+      "wordId": "W000450",
+      "word": "keep",
+      "before": {
+        "meaningHint": "生計；維持；保持；保存"
+      },
+      "after": {
+        "meaningHint": "飼養"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "飼養牛羊，原提示缺此義。",
+      "sentenceEn": "The old man keeps cows and sheep on his farm.",
+      "blankSentence": "The old man _____ cows and sheep on his farm.",
+      "answer": "keeps",
+      "sourceRefs": [
+        "S232"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX903d923e",
+      "wordId": "W000450",
+      "word": "keep",
+      "before": {
+        "meaningHint": "生計；維持；保持；保存"
+      },
+      "after": {
+        "meaningHint": "繼續（keep on）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "持續努力工作。",
+      "sentenceEn": "Keep on working hard, and you'll be successful some day.",
+      "blankSentence": "_____ on working hard, and you'll be successful some day.",
+      "answer": "Keep",
+      "sourceRefs": [
+        "S233"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX9be427c5",
+      "wordId": "W000450",
+      "word": "keep",
+      "before": {
+        "meaningHint": "生計；維持；保持；保存"
+      },
+      "after": {
+        "meaningHint": "保留；留下"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "保有找回的零錢。",
+      "sentenceEn": "You may keep the change.",
+      "blankSentence": "You may _____ the change.",
+      "answer": "keep",
+      "sourceRefs": [
+        "S234"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXd8b1f2ac",
+      "wordId": "W000450",
+      "word": "keep",
+      "before": {
+        "meaningHint": "生計；維持；保持；保存"
+      },
+      "after": {
+        "meaningHint": "生活費"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "earn my keep 的生活所需費用，為名詞。",
+      "sentenceEn": "I got a part-time job so I could earn my keep.",
+      "blankSentence": "I got a part-time job so I could earn my _____.",
+      "answer": "keep",
+      "sourceRefs": [
+        "S235"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXeee1ec3e",
+      "wordId": "W000450",
+      "word": "keep",
+      "before": {
+        "meaningHint": "生計；維持；保持；保存"
+      },
+      "after": {
+        "meaningHint": "保持"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "保持安靜狀態。",
+      "sentenceEn": "Keep quiet when you are in the hospital.",
+      "blankSentence": "_____ quiet when you are in the hospital.",
+      "answer": "Keep",
+      "sourceRefs": [
+        "S234"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX1144b984",
+      "wordId": "W000685",
+      "word": "put",
+      "before": {
+        "meaningHint": "放；擺；安置；移動"
+      },
+      "after": {
+        "meaningHint": "放；擺"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "把書放在架上，排除一般移動義。",
+      "sentenceEn": "You should put the book on the bookshelf.",
+      "blankSentence": "You should _____ the book on the bookshelf.",
+      "answer": "put",
+      "sourceRefs": [
+        "S236"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX2724c2f5",
+      "wordId": "W000685",
+      "word": "put",
+      "before": {
+        "meaningHint": "放；擺；安置；移動"
+      },
+      "after": {
+        "meaningHint": "忍受（put up with）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "忍受粗魯，原提示缺片語義。",
+      "sentenceEn": "I can't put up with Alan's rudeness anymore.",
+      "blankSentence": "I can't _____ up with Alan's rudeness anymore.",
+      "answer": "put",
+      "sourceRefs": [
+        "S237"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXea9dad16",
+      "wordId": "W000685",
+      "word": "put",
+      "before": {
+        "meaningHint": "放；擺；安置；移動"
+      },
+      "after": {
+        "meaningHint": "寫下（put down）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "寫下地址，非放下物品。",
+      "sentenceEn": "Put down your address before leaving.",
+      "blankSentence": "_____ down your address before leaving.",
+      "answer": "Put",
+      "sourceRefs": [
+        "S238"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX19d716c4",
+      "wordId": "W000121",
+      "word": "bring",
+      "before": {
+        "meaningHint": "帶來；產生；促使；提出"
+      },
+      "after": {
+        "meaningHint": "帶來"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "把玫瑰帶給妻子。",
+      "sentenceEn": "Nick brought a bunch of roses to his wife.",
+      "blankSentence": "Nick _____ a bunch of roses to his wife.",
+      "answer": "brought",
+      "sourceRefs": [
+        "S239"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX3aea5ad4",
+      "wordId": "W000121",
+      "word": "bring",
+      "before": {
+        "meaningHint": "帶來；產生；促使；提出"
+      },
+      "after": {
+        "meaningHint": "帶來；使產生"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "藥物帶來緩解結果，非提出。",
+      "sentenceEn": "The medicine brought great relief to the patient.",
+      "blankSentence": "The medicine _____ great relief to the patient.",
+      "answer": "brought",
+      "sourceRefs": [
+        "S239"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX4b6e249e",
+      "wordId": "W000121",
+      "word": "bring",
+      "before": {
+        "meaningHint": "帶來；產生；促使；提出"
+      },
+      "after": {
+        "meaningHint": "帶來"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "把玫瑰帶給妻子。",
+      "sentenceEn": "Nick brought his wife a bunch of roses.",
+      "blankSentence": "Nick _____ his wife a bunch of roses.",
+      "answer": "brought",
+      "sourceRefs": [
+        "S239"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXd02e9a10",
+      "wordId": "W000121",
+      "word": "bring",
+      "before": {
+        "meaningHint": "帶來；產生；促使；提出"
+      },
+      "after": {
+        "meaningHint": "養育（bring up）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "被在鄉下養育長大。",
+      "sentenceEn": "John was brought up in the country.",
+      "blankSentence": "John was _____ up in the country.",
+      "answer": "brought",
+      "sourceRefs": [
+        "S240"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXb039225d",
+      "wordId": "W000365",
+      "word": "group",
+      "before": {
+        "meaningHint": "團體；組；團；群"
+      },
+      "after": {
+        "meaningHint": "分類；分組"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "衣服依顏色分類的被動動詞。",
+      "sentenceEn": "Pamela's clothes are grouped by color.",
+      "blankSentence": "Pamela's clothes are _____ by color.",
+      "answer": "grouped",
+      "sourceRefs": [
+        "S241"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX05dd73ac",
+      "wordId": "W000147",
+      "word": "case",
+      "before": {
+        "meaningHint": "情形；情況；箱；容器"
+      },
+      "after": {
+        "meaningHint": "以防（in case）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "帶毛衣預防變冷，非箱子。",
+      "sentenceEn": "You should take a sweater, in case it gets cold.",
+      "blankSentence": "You should take a sweater, in _____ it gets cold.",
+      "answer": "case",
+      "sourceRefs": [
+        "S242"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX40e08b3d",
+      "wordId": "W000147",
+      "word": "case",
+      "before": {
+        "meaningHint": "情形；情況；箱；容器"
+      },
+      "after": {
+        "meaningHint": "情形；事例"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "一見鍾情的案例。",
+      "sentenceEn": "It was a case of love at first sight.",
+      "blankSentence": "It was a _____ of love at first sight.",
+      "answer": "case",
+      "sourceRefs": [
+        "S243"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX46f46c4e",
+      "wordId": "W000147",
+      "word": "case",
+      "before": {
+        "meaningHint": "情形；情況；箱；容器"
+      },
+      "after": {
+        "meaningHint": "裝入盒中"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "將珠寶裝入盒內的動詞。",
+      "sentenceEn": "The rich woman cased the expensive jewelry in a leather box.",
+      "blankSentence": "The rich woman _____ the expensive jewelry in a leather box.",
+      "answer": "cased",
+      "sourceRefs": [
+        "S243"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX58f9abe8",
+      "wordId": "W000147",
+      "word": "case",
+      "before": {
+        "meaningHint": "情形；情況；箱；容器"
+      },
+      "after": {
+        "meaningHint": "萬一；如果發生（in case of）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "緊急事件發生時的條件。",
+      "sentenceEn": "In case of emergency, call this number.",
+      "blankSentence": "In _____ of emergency, call this number.",
+      "answer": "case",
+      "sourceRefs": [
+        "S242"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXc3519c32",
+      "wordId": "W000147",
+      "word": "case",
+      "before": {
+        "meaningHint": "情形；情況；箱；容器"
+      },
+      "after": {
+        "meaningHint": "情況（in that case：那樣的話）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "承接前述情況。",
+      "sentenceEn": "In that case, I have nothing else to say.",
+      "blankSentence": "In that _____, I have nothing else to say.",
+      "answer": "case",
+      "sourceRefs": [
+        "S243"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXc8b44e27",
+      "wordId": "W000147",
+      "word": "case",
+      "before": {
+        "meaningHint": "情形；情況；箱；容器"
+      },
+      "after": {
+        "meaningHint": "案件"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "警方調查的案子，非箱或普通情形。",
+      "sentenceEn": "The police are still looking into the case.",
+      "blankSentence": "The police are still looking into the _____.",
+      "answer": "case",
+      "sourceRefs": [
+        "S243"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX31460548",
+      "wordId": "W000661",
+      "word": "point",
+      "before": {
+        "meaningHint": "點；小數點；標點；地點"
+      },
+      "after": {
+        "meaningHint": "重點"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "get to the point 指談到核心。",
+      "sentenceEn": "Eileen talked for ten minutes before she got to the point.",
+      "blankSentence": "Eileen talked for ten minutes before she got to the _____.",
+      "answer": "point",
+      "sourceRefs": [
+        "S244"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX5120415e",
+      "wordId": "W000661",
+      "word": "point",
+      "before": {
+        "meaningHint": "點；小數點；標點；地點"
+      },
+      "after": {
+        "meaningHint": "觀點；看法（point of view）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "對事物的看法，非小數點或地點。",
+      "sentenceEn": "I'm just trying to explain my point of view.",
+      "blankSentence": "I'm just trying to explain my _____ of view.",
+      "answer": "point",
+      "sourceRefs": [
+        "S245"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX5e396662",
+      "wordId": "W000661",
+      "word": "point",
+      "before": {
+        "meaningHint": "點；小數點；標點；地點"
+      },
+      "after": {
+        "meaningHint": "指出（point out）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "指出錯誤的動詞。",
+      "sentenceEn": "The teacher pointed out two grammar mistakes in my essay.",
+      "blankSentence": "The teacher _____ out two grammar mistakes in my essay.",
+      "answer": "pointed",
+      "sourceRefs": [
+        "S246"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX87bbd0df",
+      "wordId": "W000661",
+      "word": "point",
+      "before": {
+        "meaningHint": "點；小數點；標點；地點"
+      },
+      "after": {
+        "meaningHint": "分（分數單位）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "比賽分數，原提示缺此義。",
+      "sentenceEn": "The team lost the game by only a few points.",
+      "blankSentence": "The team lost the game by only a few _____.",
+      "answer": "points",
+      "sourceRefs": [
+        "S244"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX89092225",
+      "wordId": "W000661",
+      "word": "point",
+      "before": {
+        "meaningHint": "點；小數點；標點；地點"
+      },
+      "after": {
+        "meaningHint": "指著"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "以手指指示玩具的動詞。",
+      "sentenceEn": "The little boy pointed at the toy he wanted.",
+      "blankSentence": "The little boy _____ at the toy he wanted.",
+      "answer": "pointed",
+      "sourceRefs": [
+        "S244"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXa27da0e4",
+      "wordId": "W000661",
+      "word": "point",
+      "before": {
+        "meaningHint": "點；小數點；標點；地點"
+      },
+      "after": {
+        "meaningHint": "點"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "幾何／紙面上的兩個點，非標點或地點。",
+      "sentenceEn": "Harry drew a line between the two points.",
+      "blankSentence": "Harry drew a line between the two _____.",
+      "answer": "points",
+      "sourceRefs": [
+        "S244"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXaf51a469",
+      "wordId": "W000661",
+      "word": "point",
+      "before": {
+        "meaningHint": "點；小數點；標點；地點"
+      },
+      "after": {
+        "meaningHint": "對準"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "使照相機朝某方向。",
+      "sentenceEn": "I pointed my camera at the movie star.",
+      "blankSentence": "I _____ my camera at the movie star.",
+      "answer": "pointed",
+      "sourceRefs": [
+        "S244"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX30aa2d93",
+      "wordId": "W000043",
+      "word": "area",
+      "before": {
+        "meaningHint": "區域；面積；範圍；空地"
+      },
+      "after": {
+        "meaningHint": "領域"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "行銷知識領域，非實體面積或空地。",
+      "sentenceEn": "Frank is an expert in the area of marketing.",
+      "blankSentence": "Frank is an expert in the _____ of marketing.",
+      "answer": "area",
+      "sourceRefs": [
+        "S247"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX767c9c4c",
+      "wordId": "W000043",
+      "word": "area",
+      "before": {
+        "meaningHint": "區域；面積；範圍；空地"
+      },
+      "after": {
+        "meaningHint": "地區"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "國家內多個地區。",
+      "sentenceEn": "The hurricane caused a lot of damage in many areas of this country.",
+      "blankSentence": "The hurricane caused a lot of damage in many _____ of this country.",
+      "answer": "areas",
+      "sourceRefs": [
+        "S247"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX76151a08",
+      "wordId": "W000486",
+      "word": "let",
+      "before": {
+        "meaningHint": "讓；假設；出租；排放"
+      },
+      "after": {
+        "meaningHint": "允許；讓"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "父母允許外出，非出租或假設。",
+      "sentenceEn": "Mia's parents won't let her go out after 10 p.m.",
+      "blankSentence": "Mia's parents won't _____ her go out after 10 p.m.",
+      "answer": "let",
+      "sourceRefs": [
+        "S248"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXb80baa6e",
+      "wordId": "W000486",
+      "word": "let",
+      "before": {
+        "meaningHint": "讓；假設；出租；排放"
+      },
+      "after": {
+        "meaningHint": "讓我們……吧（let's：提出建議）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "邀大家去野餐的建議。",
+      "sentenceEn": "Let's go picnicking this afternoon!",
+      "blankSentence": "_____'s go picnicking this afternoon!",
+      "answer": "Let",
+      "sourceRefs": [
+        "S248"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXdf88569e",
+      "wordId": "W000486",
+      "word": "let",
+      "before": {
+        "meaningHint": "讓；假設；出租；排放"
+      },
+      "after": {
+        "meaningHint": "更不用說（let alone）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "否定後強調更不可能的事情，非出租或排放。",
+      "sentenceEn": "Ben can't afford a car, let alone a house.",
+      "blankSentence": "Ben can't afford a car, _____ alone a house.",
+      "answer": "let",
+      "sourceRefs": [
+        "S249"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX135d15b5",
+      "wordId": "W000775",
+      "word": "side",
+      "before": {
+        "meaningHint": "旁邊；側；方面；脅"
+      },
+      "after": {
+        "meaningHint": "邊；一側"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "公園的另一邊。",
+      "sentenceEn": "There is a lake on the other side of the park.",
+      "blankSentence": "There is a lake on the other _____ of the park.",
+      "answer": "side",
+      "sourceRefs": [
+        "S250"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX943ebe34",
+      "wordId": "W000775",
+      "word": "side",
+      "before": {
+        "meaningHint": "旁邊；側；方面；脅"
+      },
+      "after": {
+        "meaningHint": "支持一方（take sides with）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "爭論中選邊支持，非身體脅部。",
+      "sentenceEn": "George took sides with Linda in the argument.",
+      "blankSentence": "George took _____ with Linda in the argument.",
+      "answer": "sides",
+      "sourceRefs": [
+        "S251"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXc2703746",
+      "wordId": "W000775",
+      "word": "side",
+      "before": {
+        "meaningHint": "旁邊；側；方面；脅"
+      },
+      "after": {
+        "meaningHint": "身邊"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "媽媽旁邊的空間。",
+      "sentenceEn": "The scared little girl would not leave her mom's side.",
+      "blankSentence": "The scared little girl would not leave her mom's _____.",
+      "answer": "side",
+      "sourceRefs": [
+        "S250"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX0b2cfe19",
+      "wordId": "W000922",
+      "word": "try",
+      "before": {
+        "meaningHint": "嘗試；試驗；審理；審判"
+      },
+      "after": {
+        "meaningHint": "設法；努力嘗試"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "努力來到，非審判。",
+      "sentenceEn": "I know you're busy, but try to come.",
+      "blankSentence": "I know you're busy, but _____ to come.",
+      "answer": "try",
+      "sourceRefs": [
+        "S252"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX2cbd8605",
+      "wordId": "W000922",
+      "word": "try",
+      "before": {
+        "meaningHint": "嘗試；試驗；審理；審判"
+      },
+      "after": {
+        "meaningHint": "試穿（try on）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "試鞋子的穿著尺寸，非審理。",
+      "sentenceEn": "Can I try on these shoes?",
+      "blankSentence": "Can I _____ on these shoes?",
+      "answer": "try",
+      "sourceRefs": [
+        "S253"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX5bced7ff",
+      "wordId": "W000922",
+      "word": "try",
+      "before": {
+        "meaningHint": "嘗試；試驗；審理；審判"
+      },
+      "after": {
+        "meaningHint": "嘗試"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "名詞一次努力嘗試。",
+      "sentenceEn": "You made several mistakes, but it was a good try.",
+      "blankSentence": "You made several mistakes, but it was a good _____.",
+      "answer": "try",
+      "sourceRefs": [
+        "S252"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX9da39e6d",
+      "wordId": "W000922",
+      "word": "try",
+      "before": {
+        "meaningHint": "嘗試；試驗；審理；審判"
+      },
+      "after": {
+        "meaningHint": "試著做；試用（方法）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "try doing 指已試用的方法，非審判。",
+      "sentenceEn": "I tried shutting the computer, but it didn't work.",
+      "blankSentence": "I _____ shutting the computer, but it didn't work.",
+      "answer": "tried",
+      "sourceRefs": [
+        "S252"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX8147d16e",
+      "wordId": "W000950",
+      "word": "water",
+      "before": {
+        "meaningHint": "水；雨水；海水；水位"
+      },
+      "after": {
+        "meaningHint": "澆水"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "替花園澆水的動詞。",
+      "sentenceEn": "Jenny waters her garden every day.",
+      "blankSentence": "Jenny _____ her garden every day.",
+      "answer": "waters",
+      "sourceRefs": [
+        "S254"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXc189e8e8",
+      "wordId": "W000950",
+      "word": "water",
+      "before": {
+        "meaningHint": "水；雨水；海水；水位"
+      },
+      "after": {
+        "meaningHint": "水"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "飲用水，非雨水、海水或水位。",
+      "sentenceEn": "Just give me a glass of water.",
+      "blankSentence": "Just give me a glass of _____.",
+      "answer": "water",
+      "sourceRefs": [
+        "S254"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXffe29aca",
+      "wordId": "W000950",
+      "word": "water",
+      "before": {
+        "meaningHint": "水；雨水；海水；水位"
+      },
+      "after": {
+        "meaningHint": "流口水"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "mouth watered 指口腔分泌唾液。",
+      "sentenceEn": "My mouth watered when I saw the food.",
+      "blankSentence": "My mouth _____ when I saw the food.",
+      "answer": "watered",
+      "sourceRefs": [
+        "S254"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX6980768e",
+      "wordId": "W000494",
+      "word": "line",
+      "before": {
+        "meaningHint": "列；線；繩；電線"
+      },
+      "after": {
+        "meaningHint": "沿著……排列"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "街道旁排列咖啡館和餐廳，為動詞；原提示只有名詞。",
+      "sentenceEn": "Cafés and restaurants line the busy street.",
+      "blankSentence": "Cafés and restaurants _____ the busy street.",
+      "answer": "line",
+      "sourceRefs": [
+        "S255"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX98e7fead",
+      "wordId": "W000494",
+      "word": "line",
+      "before": {
+        "meaningHint": "列；線；繩；電線"
+      },
+      "after": {
+        "meaningHint": "隊伍（in line：排隊）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "等待熱狗的隊伍，非繩或電線。",
+      "sentenceEn": "Some people were standing in line at the hotdog stand.",
+      "blankSentence": "Some people were standing in _____ at the hotdog stand.",
+      "answer": "line",
+      "sourceRefs": [
+        "S255"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX9fd00ef0",
+      "wordId": "W000494",
+      "word": "line",
+      "before": {
+        "meaningHint": "列；線；繩；電線"
+      },
+      "after": {
+        "meaningHint": "排隊（line up）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "學生排隊領獎，動詞 lining 為列隊。",
+      "sentenceEn": "All of the students are lining up to receive their awards.",
+      "blankSentence": "All of the students are _____ up to receive their awards.",
+      "answer": "lining",
+      "sourceRefs": [
+        "S256"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXc9e0e500",
+      "wordId": "W000494",
+      "word": "line",
+      "before": {
+        "meaningHint": "列；線；繩；電線"
+      },
+      "after": {
+        "meaningHint": "線"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "作為站立界限的黃線，不是繩或電線。",
+      "sentenceEn": "Please stand behind the yellow line.",
+      "blankSentence": "Please stand behind the yellow _____.",
+      "answer": "line",
+      "sourceRefs": [
+        "S255"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXbaea005a",
+      "wordId": "W000450",
+      "word": "keep",
+      "before": {
+        "sentenceZh": "規律運動能幫助你保持身材與健康。"
+      },
+      "after": {
+        "sentenceZh": "規律運動能幫助你保持良好體能與健康。"
+      },
+      "classification": "translation_meaning_correction",
+      "reason": "fit 指身體健壯／適能，原譯身材限縮為外形，未表達原句的體能健康意涵。",
+      "sentenceEn": "Regular exercise can help you keep fit and healthy.",
+      "blankSentence": "Regular exercise can help you _____ fit and healthy.",
+      "answer": "keep",
+      "sourceRefs": [
+        "S257"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    }
+  ],
+  "deferred": [],
+  "candidateFieldCount": 146,
+  "deferredCount": 0,
+  "sharedCandidates": [],
+  "uniqueCandidateFieldCount": 146
+}

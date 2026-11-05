@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-05T08:32:25.363Z",
+  "updatedAt": "2026-11-05T09:16:48.564Z",
   "items": [
     {
       "id": "LV1-U01-30",
@@ -78,6 +78,135 @@
       "id": "LV1-U23-06-84-89",
       "issue": "Meat doneness, table corner/leg tripping, mineral crystals versus dietary minerals require source review.",
       "state": "pixel_precheck_pending_actual_unit_audit"
+    },
+    {
+      "id": "U01-U07-deep-text-candidates",
+      "state": "candidate_documents_received_not_applied",
+      "sourceCommit": "3319581a801d9332f7e4924d82b3d5c78b93330b",
+      "catalog": "text-review-candidates/source-catalog.json",
+      "reviewedBase": "b5144bc12ebd35a9083ee80de055a748cf973981",
+      "unitAttributedExamplesRead": 1470,
+      "fieldCandidatesAfterDeduplication": 950,
+      "notAllErrors": true,
+      "next": "Read each unit document and reconcile exact latest exampleId/field values, skipping already precise after values. Preserve original English/cloze/answer/status and uncertain translations. Do not infer application or whole-card approval from these candidate files."
+    },
+    {
+      "id": "U03-U04-verb-forms-followup",
+      "state": "sixteen_verified_candidates_queued_one_modal_homograph_deferred",
+      "evidence": "text-review-candidates/U03-U04-verb-form-candidates.json",
+      "applied": false,
+      "next": "Re-read latest missing keys; extend exact source allowlists and negative reversal tests only for these sixteen; preserve can key absence and region/sense qualifiers."
+    },
+    {
+      "id": "U09-precision-followup",
+      "state": "candidate_file_saved_pending_latest_reconciliation",
+      "examples": [
+        "EXae728991",
+        "EXbe3b434a",
+        "EX4c566312",
+        "EX7942ef56",
+        "EXae188031",
+        "EXca3cccad",
+        "EX2267c8c9",
+        "EXecc1cdb0",
+        "EX96488501",
+        "EXec450963",
+        "EX5b300da2",
+        "EX4ed56643"
+      ],
+      "next": "Skip the two exact current fall hints; reconcile remaining candidates, preserve null hints and draw/decide/because-of limits.",
+      "evidence": "source-followup-candidates/U09-TEXT-REVIEW-CANDIDATES.json",
+      "counts": {
+        "hints": 10,
+        "chineseTranslations": 2
+      },
+      "alreadyAppliedSharedHints": {
+        "EXae728991": "跌倒",
+        "EXbe3b434a": "下降（氣溫）"
+      },
+      "appliedBy": "LV1-U10-patches.json"
+    },
+    {
+      "id": "U03-U09-source-followup-candidates",
+      "state": "source_evidence_saved_not_product_applied",
+      "sourceCommit": "0438eb9f98ece26d69cc517cd91f2e5746aed42c",
+      "directory": "source-followup-candidates/",
+      "coverage": {
+        "wordsWithExplicitVerbFormEvidence": 157,
+        "formCandidates": 153,
+        "presentationPending": 4
+      },
+      "restrictions": "Includes the previously received U03–U04 sixteen candidates, not a second set. Reconcile current absent keys and shared words; preserve original 31 forms and house. Extend only exact source allowlists/negative tests and true absent-key reversal. Can, bear, need and cost require sense/display qualification; no indiscriminate modal or homograph forms. Forget uses forgotten as the main field, with other verified variants qualified separately. Candidate evidence is not application, UI validation or whole-card approval.",
+      "next": "After current U10 checkpoint, read source files by unit before applying exact verified optional fields."
+    },
+    {
+      "id": "U09-rare-summary-followup",
+      "state": "source_review_saved_not_applied",
+      "evidence": "source-followup-candidates/U09-RARE-SUMMARY-VERIFICATION.json",
+      "next": "Separate the confirmed husband verb and shatter plural noun from other meanings; retain fairly senses. Preserve unresolved original mappings for special album and shatter leaf/spray rather than deleting them."
+    },
+    {
+      "id": "U15-U25-image-repair-assets",
+      "state": "available_assets_not_fetched_or_integrated",
+      "assetBranch": "assets/lv1-u15-u25-image-fixes-20261105",
+      "assetCommit": "ab76da257068cac1085f04ba8ba57be8f6dc47a1",
+      "assets": [
+        {
+          "id": "LV1-U15-62",
+          "word": "fairly",
+          "path": "public/wordbeast/lv1-reviewed/LV1-U15-62-90932acf02e3.webp",
+          "sha256": "ca8b4a50b626289b295db4beb1dbe7cece3934f94438920e23d68f8a0087e865",
+          "sizeBytes": 162826,
+          "dimensions": [
+            1254,
+            1254
+          ],
+          "observation": "Closed thick jacket with hand on zipper."
+        },
+        {
+          "id": "LV1-U22-04",
+          "word": "eye-catching",
+          "path": "public/wordbeast/lv1-reviewed/LV1-U22-04-da76e7c6def2.webp",
+          "sha256": "ed9f96ee831e60d943961326c6eff970280a31e048a8b9d991941f6ad0792700",
+          "sizeBytes": 80550,
+          "dimensions": [
+            1254,
+            1254
+          ],
+          "observation": "Red central umbrella and four neutral gray umbrellas."
+        },
+        {
+          "id": "LV1-U23-50",
+          "word": "final",
+          "path": "public/wordbeast/lv1-reviewed/LV1-U23-50-c4476d14caae.webp",
+          "sha256": "a205d42a31e67d46ea93ad89149b84fc35562c3e0f1f2dd9f546df2a628cd94c",
+          "sizeBytes": 140328,
+          "dimensions": [
+            1254,
+            1254
+          ],
+          "observation": "Unique trophy held overhead; basketball remains on the ground."
+        },
+        {
+          "id": "LV1-U25-31",
+          "word": "wake",
+          "path": "public/wordbeast/lv1-reviewed/LV1-U25-31-ddde6ece5044.webp",
+          "sha256": "2f5d8f250cb26ded297d2e1e02060fff1202aada9ac78bb299b5cc0f7e53c1e7",
+          "sizeBytes": 77872,
+          "dimensions": [
+            1254,
+            1254
+          ],
+          "observation": "Clock clearly displays 06:30; morning stretching and watercolor clock casing retained."
+        }
+      ],
+      "next": "Use only in actual unit order after exact source/caption review, hash/dimension/pixel verification, precise pairing and real card reopen. Retain old assets and captions. These are not product fixes yet."
+    },
+    {
+      "id": "U10-mind-door",
+      "state": "integrated_and_both_distinct_routes_reopened",
+      "evidence": "LV1-U10-mind-door-review.json",
+      "next": "Complete checkpoint publication; general mind keeps its U07 closing-window pair."
     }
   ]
 }

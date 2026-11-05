@@ -104,6 +104,17 @@ describe('reviewed LV1 image-only release', () => {
     expect(example.sentenceEn).toBe(enough.illustration.captionEn);expect(example.sentenceZh).toBe(enough.illustration.captionZh);
   });
 
+  it('keeps the repaired U10 opening-door unit pair separate from the U07 general closing-window pair',()=>{
+    const door=cards.find(c=>c.id==='LV1-U10-76')!;
+    expect(door.illustration).toEqual({path:'wordbeast/lv1-reviewed/LV1-U10-76-0eae26fedc0f.webp',captionEn:'Would you mind opening the door? My hands are full.',captionZh:'你介意幫我開門嗎？我手上都是東西。'});
+    expect(hash(readFileSync('public/'+door.illustration.path))).toBe('0fd830ed1759186fe4b0253cf46e19fbb8142147d821f99a7fb76fac44eb931a');
+    const record=audit.find(c=>c.id===door.id)!;expect(hash(readFileSync('public/wordbeast/lv1-reviewed/LV1-U10-76-0f10b49c443c.webp'))).toBe(record.previousApproval?.publishedImageSha256);
+    const window=auditedGeneralCards.find(c=>c.reviewId==='LV1-U07-83')!;
+    expect(window.illustration.captionEn).toBe("Would you mind closing the window? It's a bit cold in here.");
+    expect(getWordBeastAsset('W000541','mind')).toContain(window.illustration.path);
+    expect(approvedCurriculumIllustration('mind','/'+door.illustration.path)).toEqual(door.illustration);
+  });
+
   it('uses the corrected five-finger glove and the final proxy-reviewed Unit22-25 captions', () => {
     expect(audit.find(c => c.id === 'LV1-U23-77')?.sourceImage).toBe('77_NOID_glove_v2.png');
     expect(cards.find(c => c.id === 'LV1-U23-77')?.illustration.captionEn)

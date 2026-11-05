@@ -1,0 +1,769 @@
+{
+  "sourceCommit": "b5144bc12ebd35a9083ee80de055a748cf973981",
+  "examplesBlobSha": "e133b703845ec3241b3421e13a7bb3d562b4252f",
+  "sourceCatalog": "source-catalog.json",
+  "status": "Candidates only. Not applied or whole-card approval.",
+  "unit": "LV1-U07",
+  "coverage": {
+    "unitMembershipExamplesRead": 276,
+    "uniqueExampleIdsWithinUnit": 276,
+    "examplesWithDisplayedHint": 169,
+    "examplesWithoutDisplayedHint": 107,
+    "emptyHintsByType": {
+      "exam": 58,
+      "daily": 49
+    },
+    "hintProposals": 42,
+    "hintProposalClasses": {
+      "narrow_mixed_or_overbroad_hint": 31,
+      "missing_or_incompatible_context_sense": 11
+    },
+    "translationProposals": 2,
+    "posProposals": 0,
+    "posConventionLimitedRows": [
+      "EX380e2a0a"
+    ],
+    "clozeReconstructionFailures": [],
+    "repoOrStatusChanged": false,
+    "deferredSourceQuotedTranslationCandidates": 1
+  },
+  "candidates": [
+    {
+      "exampleId": "EX30094a26",
+      "wordId": "W000784",
+      "word": "sit",
+      "before": {
+        "meaningHint": "坐；就座；坐落；使就座"
+      },
+      "after": {
+        "meaningHint": "坐"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "此處坐在最好朋友旁邊，不是坐落或使人就座。",
+      "sentenceEn": "Arnold was sitting next to his best friend.",
+      "blankSentence": "Arnold was _____ next to his best friend.",
+      "answer": "sitting",
+      "sourceRefs": [
+        "S258"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXe0788b31",
+      "wordId": "W000784",
+      "word": "sit",
+      "before": {
+        "meaningHint": "坐；就座；坐落；使就座"
+      },
+      "after": {
+        "meaningHint": "坐下（sit down）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "回家後坐下休息，非坐落或及物的使就座。",
+      "sentenceEn": "As soon as I arrived home, I sat down.",
+      "blankSentence": "As soon as I arrived home, I _____ down.",
+      "answer": "sat",
+      "sourceRefs": [
+        "S258"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX0accf761",
+      "wordId": "W000732",
+      "word": "run",
+      "before": {
+        "meaningHint": "跑；賽跑；奔跑；奔跑的路程"
+      },
+      "after": {
+        "meaningHint": "運作"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "影印機運作不正常，原提示只有奔跑義。",
+      "sentenceEn": "The copier isn't running properly.",
+      "blankSentence": "The copier isn't _____ properly.",
+      "answer": "running",
+      "sourceRefs": [
+        "S259"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX1e63a9a1",
+      "wordId": "W000732",
+      "word": "run",
+      "before": {
+        "meaningHint": "跑；賽跑；奔跑；奔跑的路程"
+      },
+      "after": {
+        "meaningHint": "逃跑（run away）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "從大狗身邊跑開逃離，排除名詞路程。",
+      "sentenceEn": "Little Billy ran away from the big dog.",
+      "blankSentence": "Little Billy _____ away from the big dog.",
+      "answer": "ran",
+      "sourceRefs": [
+        "S259"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX654805f3",
+      "wordId": "W000732",
+      "word": "run",
+      "before": {
+        "meaningHint": "跑；賽跑；奔跑；奔跑的路程"
+      },
+      "after": {
+        "meaningHint": "用盡；耗盡（run out of）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "車的汽油快用完，原提示未含耗盡片語義。",
+      "sentenceEn": "Our car was running out of gas.",
+      "blankSentence": "Our car was _____ out of gas.",
+      "answer": "running",
+      "sourceRefs": [
+        "S260"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX7a026298",
+      "wordId": "W000732",
+      "word": "run",
+      "before": {
+        "meaningHint": "跑；賽跑；奔跑；奔跑的路程"
+      },
+      "after": {
+        "meaningHint": "跑"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "沿路跑去見朋友，不是賽跑或名詞的奔跑路程。",
+      "sentenceEn": "Tessa ran down the road to meet her friend.",
+      "blankSentence": "Tessa _____ down the road to meet her friend.",
+      "answer": "ran",
+      "sourceRefs": [
+        "S259"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX7f99de2d",
+      "wordId": "W000732",
+      "word": "run",
+      "before": {
+        "meaningHint": "跑；賽跑；奔跑；奔跑的路程"
+      },
+      "after": {
+        "meaningHint": "經營"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "年輕夫婦經營餐廳，非奔跑。",
+      "sentenceEn": "The young couple runs a restaurant in Taipei.",
+      "blankSentence": "The young couple _____ a restaurant in Taipei.",
+      "answer": "runs",
+      "sourceRefs": [
+        "S259"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXa762fe51",
+      "wordId": "W000732",
+      "word": "run",
+      "before": {
+        "meaningHint": "跑；賽跑；奔跑；奔跑的路程"
+      },
+      "after": {
+        "meaningHint": "偶遇（run into）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "偶然碰見前妻，非跑步或路程。",
+      "sentenceEn": "Terry ran into his ex-wife on the street.",
+      "blankSentence": "Terry _____ into his ex-wife on the street.",
+      "answer": "ran",
+      "sourceRefs": [
+        "S261"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX553aec67",
+      "wordId": "W000387",
+      "word": "hear",
+      "before": {
+        "meaningHint": "聽到；傾聽；聽說；審理"
+      },
+      "after": {
+        "meaningHint": "收到消息（hear from）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "久未收到對方消息，非僅聽到聲音、傾聽或審理。",
+      "sentenceEn": "I haven't heard from you in a long time.",
+      "blankSentence": "I haven't _____ from you in a long time.",
+      "answer": "heard",
+      "sourceRefs": [
+        "S262"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX8d715acd",
+      "wordId": "W000387",
+      "word": "hear",
+      "before": {
+        "meaningHint": "聽到；傾聽；聽說；審理"
+      },
+      "after": {
+        "meaningHint": "聽說"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "得知升遷消息，非審理或傾聽。",
+      "sentenceEn": "Have you heard about Cole's promotion?",
+      "blankSentence": "Have you _____ about Cole's promotion?",
+      "answer": "heard",
+      "sourceRefs": [
+        "S262"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXd7539bbc",
+      "wordId": "W000387",
+      "word": "hear",
+      "before": {
+        "meaningHint": "聽到；傾聽；聽說；審理"
+      },
+      "after": {
+        "meaningHint": "聽到"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "以耳聽見敲門聲，非審理或聽說傳聞。",
+      "sentenceEn": "I heard someone knocking on the door.",
+      "blankSentence": "I _____ someone knocking on the door.",
+      "answer": "heard",
+      "sourceRefs": [
+        "S262"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX103522a0",
+      "wordId": "W000433",
+      "word": "interested",
+      "before": {
+        "meaningHint": "感興趣的；有利害關係的；有股份的；偏私的"
+      },
+      "after": {
+        "meaningHint": "感興趣的"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "對正在閱讀的雜誌有興趣，非有股份或利害關係。",
+      "sentenceEn": "I'm interested in the magazine you're reading.",
+      "blankSentence": "I'm _____ in the magazine you're reading.",
+      "answer": "interested",
+      "sourceRefs": [
+        "S263"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX2368908b",
+      "wordId": "W000498",
+      "word": "listen",
+      "before": {
+        "meaningHint": "聽；傾聽；聽從"
+      },
+      "after": {
+        "meaningHint": "聽；注意聽"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "請對方停下來注意聽話，未要求服從命令。",
+      "sentenceEn": "This is serious—stop what you're doing and just listen!",
+      "blankSentence": "This is serious—stop what you're doing and just _____!",
+      "answer": "listen",
+      "sourceRefs": [
+        "S264"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXba8519e2",
+      "wordId": "W000498",
+      "word": "listen",
+      "before": {
+        "meaningHint": "聽；傾聽；聽從"
+      },
+      "after": {
+        "meaningHint": "聽；聆聽"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "欣賞音樂，不是聽從命令。",
+      "sentenceEn": "I enjoy listening to music at night.",
+      "blankSentence": "I enjoy _____ to music at night.",
+      "answer": "listening",
+      "sourceRefs": [
+        "S264"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX8b3fc8f3",
+      "wordId": "W000672",
+      "word": "power",
+      "before": {
+        "meaningHint": "發電（power plant發電廠）"
+      },
+      "after": {
+        "meaningHint": "電力（power plant：發電廠）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "power plant 是發電廠；單字 power 在複合名詞中指電力，不宜只譯動作發電。",
+      "sentenceEn": "We paid a visit to the power plant yesterday.",
+      "blankSentence": "We paid a visit to the _____ plant yesterday.",
+      "answer": "power",
+      "sourceRefs": [
+        "S265"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX0c6247cc",
+      "wordId": "W000669",
+      "word": "possible",
+      "before": {
+        "meaningHint": "可能的；潛在的；合適的；可能性"
+      },
+      "after": {
+        "meaningHint": "可能的；可行的"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "說明可以網路訂書，排除潛在或名詞可能性。",
+      "sentenceEn": "It's possible to order a copy of the book online.",
+      "blankSentence": "It's _____ to order a copy of the book online.",
+      "answer": "possible",
+      "sourceRefs": [
+        "S266"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXb4adfad1",
+      "wordId": "W000669",
+      "word": "possible",
+      "before": {
+        "meaningHint": "可能的；潛在的；合適的；可能性"
+      },
+      "after": {
+        "meaningHint": "可能的（as soon as possible：儘快）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "以 possible 修飾可達程度，片語整體表儘快，不以整體副詞功能改單字詞性。",
+      "sentenceEn": "Come here as soon as possible. I have something important to tell you.",
+      "blankSentence": "Come here as soon as _____. I have something important to tell you.",
+      "answer": "possible",
+      "sourceRefs": [
+        "S266"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX67b3eb26",
+      "wordId": "W000754",
+      "word": "service",
+      "before": {
+        "meaningHint": "服務；貢獻；僱傭；公職"
+      },
+      "after": {
+        "meaningHint": "服務"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "飯店提供的服務品質，非公職或僱傭。",
+      "sentenceEn": "The best thing about the hotel was the service.",
+      "blankSentence": "The best thing about the hotel was the _____.",
+      "answer": "service",
+      "sourceRefs": [
+        "S267"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXeca22124",
+      "wordId": "W000754",
+      "word": "service",
+      "before": {
+        "meaningHint": "服務；貢獻；僱傭；公職"
+      },
+      "after": {
+        "meaningHint": "服務（at your service：為您效勞）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "固定片語表示願意效勞，非公職或僱傭。",
+      "sentenceEn": "I'm glad to be at your service.",
+      "blankSentence": "I'm glad to be at your _____.",
+      "answer": "service",
+      "sourceRefs": [
+        "S267"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX1aad4e4a",
+      "wordId": "W000534",
+      "word": "meet",
+      "before": {
+        "meaningHint": "會；集會；適宜的；合適的"
+      },
+      "after": {
+        "meaningHint": "碰面"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "約定兩點在機場見面，不是名詞集會或形容詞合適。",
+      "sentenceEn": "I'll meet you at the airport at 2 o'clock sharp.",
+      "blankSentence": "I'll _____ you at the airport at 2 o'clock sharp.",
+      "answer": "meet",
+      "sourceRefs": [
+        "S268"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX6963349a",
+      "wordId": "W000534",
+      "word": "meet",
+      "before": {
+        "meaningHint": "會；集會；適宜的；合適的"
+      },
+      "after": {
+        "meaningHint": "結識；遇見"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "在舞蹈課遇見並認識對方，非集會名詞或適宜形容詞。",
+      "sentenceEn": "Michael met Hannah in a dance class.",
+      "blankSentence": "Michael _____ Hannah in a dance class.",
+      "answer": "met",
+      "sourceRefs": [
+        "S268"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX911625a3",
+      "wordId": "W000534",
+      "word": "meet",
+      "before": {
+        "meaningHint": "會；集會；適宜的；合適的"
+      },
+      "after": {
+        "meaningHint": "符合；滿足"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "未達期望，原提示缺滿足要求義。",
+      "sentenceEn": "This restaurant failed to meet its customers' expectations.",
+      "blankSentence": "This restaurant failed to _____ its customers' expectations.",
+      "answer": "meet",
+      "sourceRefs": [
+        "S268"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXfaf56b7f",
+      "wordId": "W000534",
+      "word": "meet",
+      "before": {
+        "meaningHint": "會；集會；適宜的；合適的"
+      },
+      "after": {
+        "meaningHint": "遇見"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "在公園碰見某人，非適宜或集會。",
+      "sentenceEn": "I met Rachel in the park this morning.",
+      "blankSentence": "I _____ Rachel in the park this morning.",
+      "answer": "met",
+      "sourceRefs": [
+        "S268"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX01f207ae",
+      "wordId": "W000041",
+      "word": "appear",
+      "before": {
+        "meaningHint": "出現；顯得；來到；出庭"
+      },
+      "after": {
+        "meaningHint": "似乎；看來"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "畫似乎是贗品，非實際出現或出庭。",
+      "sentenceEn": "The painting appears to be a fake.",
+      "blankSentence": "The painting _____ to be a fake.",
+      "answer": "appears",
+      "sourceRefs": [
+        "S269"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX7330bcb1",
+      "wordId": "W000041",
+      "word": "appear",
+      "before": {
+        "meaningHint": "出現；顯得；來到；出庭"
+      },
+      "after": {
+        "meaningHint": "出現；到場"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "直到五分鐘前才到場，非顯得或出庭。",
+      "sentenceEn": "Andy didn't appear until five minutes ago.",
+      "blankSentence": "Andy didn't _____ until five minutes ago.",
+      "answer": "appear",
+      "sourceRefs": [
+        "S269"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXcdac7e2a",
+      "wordId": "W000041",
+      "word": "appear",
+      "before": {
+        "meaningHint": "出現；顯得；來到；出庭"
+      },
+      "after": {
+        "meaningHint": "似乎；看來"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "以主觀觀察推斷引擎有問題，非出庭或到場。",
+      "sentenceEn": "It appears to me that something is wrong with the plane's engine.",
+      "blankSentence": "It _____ to me that something is wrong with the plane's engine.",
+      "answer": "appears",
+      "sourceRefs": [
+        "S269"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX02e43b03",
+      "wordId": "W000009",
+      "word": "action",
+      "before": {
+        "meaningHint": "行動；活動；動作；作用"
+      },
+      "after": {
+        "meaningHint": "行動"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "take action 表採取行動，非作用或一般活動。",
+      "sentenceEn": "Let's take action before it is too late.",
+      "blankSentence": "Let's take _____ before it is too late.",
+      "answer": "action",
+      "sourceRefs": [
+        "S270"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX0dcc17c3",
+      "wordId": "W000477",
+      "word": "leader",
+      "before": {
+        "meaningHint": "領導者；社論；指揮；領袖"
+      },
+      "after": {
+        "meaningHint": "領導者；領袖"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "一群人的領導者，非報刊社論。",
+      "sentenceEn": "The leader of the group has many years of experience.",
+      "blankSentence": "The _____ of the group has many years of experience.",
+      "answer": "leader",
+      "sourceRefs": [
+        "S271"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX2a85979f",
+      "wordId": "W000146",
+      "word": "carry",
+      "before": {
+        "meaningHint": "進位；射程；運載；攜帶"
+      },
+      "after": {
+        "meaningHint": "攜帶；提"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "將袋子帶到家裡，排除進位及名詞射程；不額外指定是否進入屋內。",
+      "sentenceEn": "Can you help me carry this bag to my house?",
+      "blankSentence": "Can you help me _____ this bag to my house?",
+      "answer": "carry",
+      "sourceRefs": [
+        "S272"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX4895ccf3",
+      "wordId": "W000146",
+      "word": "carry",
+      "before": {
+        "meaningHint": "進位；射程；運載；攜帶"
+      },
+      "after": {
+        "meaningHint": "執行（carry out）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "執行計畫，原提示缺片語義。",
+      "sentenceEn": "To carry out the plan, we need at least another $50,000.",
+      "blankSentence": "To _____ out the plan, we need at least another $50,000.",
+      "answer": "carry",
+      "sourceRefs": [
+        "S273"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX7045c342",
+      "wordId": "W000146",
+      "word": "carry",
+      "before": {
+        "meaningHint": "進位；射程；運載；攜帶"
+      },
+      "after": {
+        "meaningHint": "繼續（carry on）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "繼續吃飯，原提示缺片語義。",
+      "sentenceEn": "If you carry on eating like that, you're going to gain a lot of weight.",
+      "blankSentence": "If you _____ on eating like that, you're going to gain a lot of weight.",
+      "answer": "carry",
+      "sourceRefs": [
+        "S274"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX0daec772",
+      "wordId": "W000784",
+      "word": "sit",
+      "before": {
+        "sentenceZh": "老師大聲朗讀故事時，孩子們被要求安靜地坐著。"
+      },
+      "after": {
+        "sentenceZh": "老師朗讀故事時，孩子們被要求安靜地坐著。"
+      },
+      "classification": "translation_meaning_correction",
+      "reason": "原文 aloud 指出聲讀而非默讀，沒有要求音量大；僅移除新增的大聲程度，保留朗讀。",
+      "sentenceEn": "The children were told to sit quietly while the teacher read the story aloud.",
+      "blankSentence": "The children were told to _____ quietly while the teacher read the story aloud.",
+      "answer": "sit",
+      "sourceRefs": [
+        "S275"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX49144abd",
+      "wordId": "W000071",
+      "word": "bear",
+      "before": {
+        "sentenceZh": "塔裡的每一口鐘都刻有一位聖人的名字。"
+      },
+      "after": {
+        "sentenceZh": "塔裡的每一口鐘上都有一位聖人的名字。"
+      },
+      "classification": "translation_meaning_correction",
+      "reason": "bear a name 僅表示帶有名字，未明示刻字技法；原譯刻有增加製作方式，改為中性的有。現有 hint 已精確，保留。",
+      "sentenceEn": "Each bell in the tower bears the name of a saint.",
+      "blankSentence": "Each bell in the tower _____ the name of a saint.",
+      "answer": "bears",
+      "sourceRefs": [
+        "S276",
+        "S277"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    }
+  ],
+  "deferred": [
+    {
+      "exampleId": "EX7a026298",
+      "word": "run",
+      "before": {
+        "sentenceZh": "泰莎跑到路上去見她的朋友。〔來源抄錄，課本原文〕"
+      },
+      "suggestedSeparateCorrectedTranslation": "泰莎沿著那條路跑去見她的朋友。",
+      "sentenceEn": "Tessa ran down the road to meet her friend.",
+      "blankSentence": "Tessa _____ down the road to meet her friend.",
+      "answer": "ran",
+      "classification": "source_quoted_translation_requires_separate_attribution",
+      "reason": "down the road 是沿路行進，不是跑到路上；現值有來源抄錄標記，改譯不得繼續標為課本原文。",
+      "restriction": "保留來源抄錄舊值，只能另標修正譯文；未指定資料模型欄位，不能直接覆寫 sentenceZh 或移除來源標記。套用前須重讀現值。"
+    }
+  ],
+  "candidateFieldCount": 44,
+  "deferredCount": 1,
+  "sharedCandidates": [
+    {
+      "exampleId": "EX0f43c971",
+      "field": "meaningHint",
+      "firstProposedIn": "LV1-U06"
+    },
+    {
+      "exampleId": "EX1ffd9231",
+      "field": "meaningHint",
+      "firstProposedIn": "LV1-U06"
+    },
+    {
+      "exampleId": "EX2b1d30f7",
+      "field": "meaningHint",
+      "firstProposedIn": "LV1-U06"
+    },
+    {
+      "exampleId": "EX690cb369",
+      "field": "meaningHint",
+      "firstProposedIn": "LV1-U06"
+    },
+    {
+      "exampleId": "EX888a9db4",
+      "field": "meaningHint",
+      "firstProposedIn": "LV1-U06"
+    },
+    {
+      "exampleId": "EX92db0e4b",
+      "field": "meaningHint",
+      "firstProposedIn": "LV1-U06"
+    },
+    {
+      "exampleId": "EX9bdd46c2",
+      "field": "meaningHint",
+      "firstProposedIn": "LV1-U06"
+    },
+    {
+      "exampleId": "EXa3426342",
+      "field": "meaningHint",
+      "firstProposedIn": "LV1-U06"
+    },
+    {
+      "exampleId": "EXf07bc4bb",
+      "field": "meaningHint",
+      "firstProposedIn": "LV1-U06"
+    },
+    {
+      "exampleId": "EX1bf7be2d",
+      "field": "meaningHint",
+      "firstProposedIn": "LV1-U06"
+    },
+    {
+      "exampleId": "EX1df79b2b",
+      "field": "meaningHint",
+      "firstProposedIn": "LV1-U06"
+    }
+  ],
+  "uniqueCandidateFieldCount": 33
+}

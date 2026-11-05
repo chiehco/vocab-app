@@ -1,0 +1,881 @@
+{
+  "schemaVersion": 1,
+  "unit": "U09",
+  "provenance": {
+    "inputSha256": "2ec63d8529abe0c9ee872e55bb91c1f466704e16706f103900b5e3ac64a425e5",
+    "reviewedCommit": "556735e57ff47697b660b91d890a5b0d241c7a60",
+    "reviewedBlobSha": "28471e8b2d5ea35d0c791cc854c77ac4d7835c6b",
+    "reviewDateUTC": "2026-11-05",
+    "inputOrigin": "Parent supplied a JSON snapshot read from the stated real GitHub blob; this reviewer did not independently refetch GitHub."
+  },
+  "summary": {
+    "formalWordCount": 81,
+    "wordsWithExamples": 72,
+    "exampleCount": 301,
+    "manuallyReviewedRows": 301,
+    "clozeAnswerExactReconstructionPassed": 301,
+    "newDefiniteClozeAnswerMismatchCount": 0,
+    "hintPrecisionCandidates": 10,
+    "separateChineseTranslationCandidates": 2,
+    "pendingItems": 3,
+    "newMandatoryPOSChanges": 0,
+    "retainedWithoutNewCandidateOrPendingItem": 286,
+    "existingStatusCountsPreserved": {
+      "approved": 152,
+      "reviewed": 148,
+      "needs_check": 1
+    },
+    "exampleTypeCounts": {
+      "textbook": 153,
+      "exam": 71,
+      "daily": 73,
+      "collocation": 4
+    },
+    "emptyDailyExamHintsPreserved": 112,
+    "protectedPOSConventionsPreserved": [
+      "EX4ed56643",
+      "EX5dde25ce",
+      "EX9c0dd66c",
+      "EX3334b66a",
+      "EX0925c3b9"
+    ],
+    "repoFilesModified": false,
+    "statusesModified": false,
+    "gitOperationsPerformed": false,
+    "findingsSummaryZh": "最新301列已逐句覆核；所有挖空答案可精確重建原文。10個hint候選多為本句義精確化，不應一概計為錯誤；2個中文精度候選另列。原draw來源矛盾保留，另記decide語境及because of詞性粒度待確認，不推測修補。"
+  },
+  "applyInstructions": [
+    "以556735e已修checkpoint為唯一文字基底，不用舊版本回填。",
+    "301列逐句讀英文、中文、cloze、answer、POS、hint；腳本僅編排完整人工記錄、重建檢查、數量QA與JSON輸出。",
+    "daily/exam 空hint允許，不填補112個空值。",
+    "不修改整詞頭POS、音標、英文原句、status；片語整體功能不自動套用單一挖空詞。",
+    "親屬長幼、父母系與自然中文不機械逐字修正；來源語境不足保留。",
+    "每項提案套用前重新讀最新值並逐欄比對；提案檔不是已套用報告。",
+    "直接開頁成功、實際搜尋節錄、純句法觀察分開標示；403來源未宣稱已讀原頁。",
+    "本工作為文字覆核，不評估圖片像素、詞條整體音標或缺少例句的原始教材。"
+  ],
+  "hintProposals": [
+    {
+      "proposalId": "U09-H01",
+      "reviewIndex": 8,
+      "exampleId": "EXae728991",
+      "wordId": "W000291",
+      "word": "fall",
+      "exampleType": "textbook",
+      "sentenceEn": "The old woman fell down and hurt her leg.",
+      "sentenceZh": "老婆婆跌倒，傷了腿。",
+      "blankSentence": "The old woman _____ down and hurt her leg.",
+      "answer": "fell",
+      "sensePos": "v.",
+      "meaningHint": "落下；下降",
+      "status": "approved",
+      "field": "meaningHint",
+      "before": "落下；下降",
+      "after": "跌倒",
+      "classification": "sentence_sense_alignment",
+      "priority": "recommended_precision",
+      "reason": "fell down 與 hurt her leg 明確描述跌倒。原提示落下／下降偏向方向或量的減少，未精準對應這次事故；僅改 hint，不動英文或中文。",
+      "confidence": "high_for_sense_selection; review_required_before_apply",
+      "sources": [
+        {
+          "sourceId": "cambridge_fall",
+          "title": "Cambridge Dictionary: fall",
+          "url": "https://dictionary.cambridge.org/dictionary/english/fall",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "attempted; 403 Forbidden; full page not read",
+          "observedEvidence": "實際搜尋節錄區分意外跌向地面的動詞義與數量／程度下降義，並提供氣溫降低的例子。",
+          "strength": "reliable_dictionary_excerpt_supports_sense; not_full_page_verification",
+          "supportsRows": [
+            8,
+            9
+          ]
+        }
+      ],
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "556735e57ff47697b660b91d890a5b0d241c7a60",
+        "reviewedBlobSha": "28471e8b2d5ea35d0c791cc854c77ac4d7835c6b",
+        "exampleIdMustMatch": "EXae728991",
+        "exactFieldBefore": {
+          "meaningHint": "落下；下降"
+        },
+        "contextMustMatch": {
+          "sentenceEn": "The old woman fell down and hurt her leg.",
+          "sentenceZh": "老婆婆跌倒，傷了腿。",
+          "blankSentence": "The old woman _____ down and hurt her leg.",
+          "answer": "fell",
+          "sensePos": "v."
+        },
+        "ifAnyValueChanged": "停止套用此提案，重新逐句覆核；不可拿舊快照覆蓋最新值。",
+        "fieldsOutsideProposal": "不可更動其他欄位、整詞頭 POS、音標、status 或來源。"
+      },
+      "applied": false
+    },
+    {
+      "proposalId": "U09-H02",
+      "reviewIndex": 9,
+      "exampleId": "EXbe3b434a",
+      "wordId": "W000291",
+      "word": "fall",
+      "exampleType": "textbook",
+      "sentenceEn": "The temperature has been falling for the past week.",
+      "sentenceZh": "過去一週氣溫持續下降。",
+      "blankSentence": "The temperature has been _____ for the past week.",
+      "answer": "falling",
+      "sensePos": "v.",
+      "meaningHint": "落下；下降",
+      "status": "approved",
+      "field": "meaningHint",
+      "before": "落下；下降",
+      "after": "下降（氣溫）",
+      "classification": "sentence_specific_hint_refinement",
+      "priority": "optional_refinement_not_error",
+      "reason": "原提示中的下降已正確；本句是氣溫降低，去除落下可減少多義干擾，屬精確化而非原句錯誤。",
+      "confidence": "high_for_sense_selection; review_required_before_apply",
+      "sources": [
+        {
+          "sourceId": "cambridge_fall",
+          "title": "Cambridge Dictionary: fall",
+          "url": "https://dictionary.cambridge.org/dictionary/english/fall",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "attempted; 403 Forbidden; full page not read",
+          "observedEvidence": "實際搜尋節錄區分意外跌向地面的動詞義與數量／程度下降義，並提供氣溫降低的例子。",
+          "strength": "reliable_dictionary_excerpt_supports_sense; not_full_page_verification",
+          "supportsRows": [
+            8,
+            9
+          ]
+        }
+      ],
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "556735e57ff47697b660b91d890a5b0d241c7a60",
+        "reviewedBlobSha": "28471e8b2d5ea35d0c791cc854c77ac4d7835c6b",
+        "exampleIdMustMatch": "EXbe3b434a",
+        "exactFieldBefore": {
+          "meaningHint": "落下；下降"
+        },
+        "contextMustMatch": {
+          "sentenceEn": "The temperature has been falling for the past week.",
+          "sentenceZh": "過去一週氣溫持續下降。",
+          "blankSentence": "The temperature has been _____ for the past week.",
+          "answer": "falling",
+          "sensePos": "v."
+        },
+        "ifAnyValueChanged": "停止套用此提案，重新逐句覆核；不可拿舊快照覆蓋最新值。",
+        "fieldsOutsideProposal": "不可更動其他欄位、整詞頭 POS、音標、status 或來源。"
+      },
+      "applied": false
+    },
+    {
+      "proposalId": "U09-H03",
+      "reviewIndex": 109,
+      "exampleId": "EX4c566312",
+      "wordId": "W000316",
+      "word": "floor",
+      "exampleType": "textbook",
+      "sentenceEn": "Be careful! The floor is wet.",
+      "sentenceZh": "小心！地板是濕的。",
+      "blankSentence": "Be careful! The _____ is wet.",
+      "answer": "floor",
+      "sensePos": "n.",
+      "meaningHint": "地板；樓層",
+      "status": "approved",
+      "field": "meaningHint",
+      "before": "地板；樓層",
+      "after": "地板",
+      "classification": "sentence_specific_hint_refinement",
+      "priority": "optional_refinement_not_error",
+      "reason": "wet floor 指濕滑的可行走表面，不是建築樓層；兩義皆屬 floor，但此句只需地板義。",
+      "confidence": "high_for_sense_selection; review_required_before_apply",
+      "sources": [
+        {
+          "sourceId": "cambridge_floor",
+          "title": "Cambridge Dictionary: floor",
+          "url": "https://dictionary.cambridge.org/dictionary/english/floor",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "attempted; 403 Forbidden; full page not read",
+          "observedEvidence": "實際搜尋節錄分開列出室內可行走的平面，以及建築物的一層；後者附第二層辦公室的用例。",
+          "strength": "reliable_dictionary_excerpt_supports_sense; not_full_page_verification",
+          "supportsRows": [
+            109,
+            111
+          ]
+        }
+      ],
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "556735e57ff47697b660b91d890a5b0d241c7a60",
+        "reviewedBlobSha": "28471e8b2d5ea35d0c791cc854c77ac4d7835c6b",
+        "exampleIdMustMatch": "EX4c566312",
+        "exactFieldBefore": {
+          "meaningHint": "地板；樓層"
+        },
+        "contextMustMatch": {
+          "sentenceEn": "Be careful! The floor is wet.",
+          "sentenceZh": "小心！地板是濕的。",
+          "blankSentence": "Be careful! The _____ is wet.",
+          "answer": "floor",
+          "sensePos": "n."
+        },
+        "ifAnyValueChanged": "停止套用此提案，重新逐句覆核；不可拿舊快照覆蓋最新值。",
+        "fieldsOutsideProposal": "不可更動其他欄位、整詞頭 POS、音標、status 或來源。"
+      },
+      "applied": false
+    },
+    {
+      "proposalId": "U09-H04",
+      "reviewIndex": 111,
+      "exampleId": "EX7942ef56",
+      "wordId": "W000316",
+      "word": "floor",
+      "exampleType": "textbook",
+      "sentenceEn": "I live on the fifth floor.",
+      "sentenceZh": "我住在 5 樓。",
+      "blankSentence": "I live on the fifth _____.",
+      "answer": "floor",
+      "sensePos": "n.",
+      "meaningHint": "地板；樓層",
+      "status": "approved",
+      "field": "meaningHint",
+      "before": "地板；樓層",
+      "after": "樓層",
+      "classification": "sentence_specific_hint_refinement",
+      "priority": "optional_refinement_not_error",
+      "reason": "on the fifth floor 直接指建築物第五層，不是地板材質或表面；原提示可收斂至本句義。",
+      "confidence": "high_for_sense_selection; review_required_before_apply",
+      "sources": [
+        {
+          "sourceId": "cambridge_floor",
+          "title": "Cambridge Dictionary: floor",
+          "url": "https://dictionary.cambridge.org/dictionary/english/floor",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "attempted; 403 Forbidden; full page not read",
+          "observedEvidence": "實際搜尋節錄分開列出室內可行走的平面，以及建築物的一層；後者附第二層辦公室的用例。",
+          "strength": "reliable_dictionary_excerpt_supports_sense; not_full_page_verification",
+          "supportsRows": [
+            109,
+            111
+          ]
+        }
+      ],
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "556735e57ff47697b660b91d890a5b0d241c7a60",
+        "reviewedBlobSha": "28471e8b2d5ea35d0c791cc854c77ac4d7835c6b",
+        "exampleIdMustMatch": "EX7942ef56",
+        "exactFieldBefore": {
+          "meaningHint": "地板；樓層"
+        },
+        "contextMustMatch": {
+          "sentenceEn": "I live on the fifth floor.",
+          "sentenceZh": "我住在 5 樓。",
+          "blankSentence": "I live on the fifth _____.",
+          "answer": "floor",
+          "sensePos": "n."
+        },
+        "ifAnyValueChanged": "停止套用此提案，重新逐句覆核；不可拿舊快照覆蓋最新值。",
+        "fieldsOutsideProposal": "不可更動其他欄位、整詞頭 POS、音標、status 或來源。"
+      },
+      "applied": false
+    },
+    {
+      "proposalId": "U09-H05",
+      "reviewIndex": 160,
+      "exampleId": "EXae188031",
+      "wordId": "W000467",
+      "word": "land",
+      "exampleType": "textbook",
+      "sentenceEn": "The passengers were pleased to see the land.",
+      "sentenceZh": "乘客很開心能看到陸地。",
+      "blankSentence": "The passengers were pleased to see the _____.",
+      "answer": "land",
+      "sensePos": "n.",
+      "meaningHint": "陸地；土地",
+      "status": "approved",
+      "field": "meaningHint",
+      "before": "陸地；土地",
+      "after": "陸地",
+      "classification": "sentence_specific_hint_refinement",
+      "priority": "optional_refinement_not_error",
+      "reason": "乘客看到 land 且中文作陸地，現有語境支持海陸相對義；土地仍是同字合法義，本提案僅提高本句提示集中度。",
+      "confidence": "high_for_sense_selection; review_required_before_apply",
+      "sources": [
+        {
+          "sourceId": "cambridge_land",
+          "title": "Cambridge Dictionary: land",
+          "url": "https://dictionary.cambridge.org/dictionary/english/land",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "attempted; 403 Forbidden; full page not read",
+          "observedEvidence": "實際搜尋節錄區分不被水覆蓋的地表、特定土地範圍及農耕用地，支持依句義分別提示陸地與土地。",
+          "strength": "reliable_dictionary_excerpt_supports_sense; not_full_page_verification",
+          "supportsRows": [
+            160,
+            162
+          ]
+        }
+      ],
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "556735e57ff47697b660b91d890a5b0d241c7a60",
+        "reviewedBlobSha": "28471e8b2d5ea35d0c791cc854c77ac4d7835c6b",
+        "exampleIdMustMatch": "EXae188031",
+        "exactFieldBefore": {
+          "meaningHint": "陸地；土地"
+        },
+        "contextMustMatch": {
+          "sentenceEn": "The passengers were pleased to see the land.",
+          "sentenceZh": "乘客很開心能看到陸地。",
+          "blankSentence": "The passengers were pleased to see the _____.",
+          "answer": "land",
+          "sensePos": "n."
+        },
+        "ifAnyValueChanged": "停止套用此提案，重新逐句覆核；不可拿舊快照覆蓋最新值。",
+        "fieldsOutsideProposal": "不可更動其他欄位、整詞頭 POS、音標、status 或來源。"
+      },
+      "applied": false
+    },
+    {
+      "proposalId": "U09-H06",
+      "reviewIndex": 162,
+      "exampleId": "EXca3cccad",
+      "wordId": "W000467",
+      "word": "land",
+      "exampleType": "textbook",
+      "sentenceEn": "This piece of land is used for farming.",
+      "sentenceZh": "這塊地供農作用。",
+      "blankSentence": "This piece of _____ is used for farming.",
+      "answer": "land",
+      "sensePos": "n.",
+      "meaningHint": "陸地；土地",
+      "status": "approved",
+      "field": "meaningHint",
+      "before": "陸地；土地",
+      "after": "土地",
+      "classification": "sentence_specific_hint_refinement",
+      "priority": "optional_refinement_not_error",
+      "reason": "piece of land used for farming 指一塊供農用的土地；原兩義並非拼錯，但可移除海陸相對的陸地提示。",
+      "confidence": "high_for_sense_selection; review_required_before_apply",
+      "sources": [
+        {
+          "sourceId": "cambridge_land",
+          "title": "Cambridge Dictionary: land",
+          "url": "https://dictionary.cambridge.org/dictionary/english/land",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "attempted; 403 Forbidden; full page not read",
+          "observedEvidence": "實際搜尋節錄區分不被水覆蓋的地表、特定土地範圍及農耕用地，支持依句義分別提示陸地與土地。",
+          "strength": "reliable_dictionary_excerpt_supports_sense; not_full_page_verification",
+          "supportsRows": [
+            160,
+            162
+          ]
+        }
+      ],
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "556735e57ff47697b660b91d890a5b0d241c7a60",
+        "reviewedBlobSha": "28471e8b2d5ea35d0c791cc854c77ac4d7835c6b",
+        "exampleIdMustMatch": "EXca3cccad",
+        "exactFieldBefore": {
+          "meaningHint": "陸地；土地"
+        },
+        "contextMustMatch": {
+          "sentenceEn": "This piece of land is used for farming.",
+          "sentenceZh": "這塊地供農作用。",
+          "blankSentence": "This piece of _____ is used for farming.",
+          "answer": "land",
+          "sensePos": "n."
+        },
+        "ifAnyValueChanged": "停止套用此提案，重新逐句覆核；不可拿舊快照覆蓋最新值。",
+        "fieldsOutsideProposal": "不可更動其他欄位、整詞頭 POS、音標、status 或來源。"
+      },
+      "applied": false
+    },
+    {
+      "proposalId": "U09-H07",
+      "reviewIndex": 256,
+      "exampleId": "EX2267c8c9",
+      "wordId": "W000081",
+      "word": "behind",
+      "exampleType": "textbook",
+      "sentenceEn": "Maureen stayed behind to help clean up.",
+      "sentenceZh": "莫琳留下來幫忙清理。",
+      "blankSentence": "Maureen stayed _____ to help clean up.",
+      "answer": "behind",
+      "sensePos": "adv.",
+      "meaningHint": "在後面；留下",
+      "status": "approved",
+      "field": "meaningHint",
+      "before": "在後面；留下",
+      "after": "留下（stay behind）",
+      "classification": "sentence_specific_hint_refinement",
+      "priority": "optional_refinement_not_error",
+      "reason": "stayed behind to help clean up 表留下幫忙，不強調位於他人身後；Oxford 分列留在原處與後方兩義。",
+      "confidence": "high_for_sense_selection; review_required_before_apply",
+      "sources": [
+        {
+          "sourceId": "oxford_behind",
+          "title": "Oxford Advanced Learner's Dictionary: behind adverb",
+          "url": "https://www.oxfordlearnersdictionaries.com/definition/english/behind_2",
+          "accessType": "direct_page_open_success",
+          "directOpen": "success; inspected definition lines 88–122",
+          "observedEvidence": "原頁明列 adv.，第一義指位於後方，第二義指留在原處，第三義指付款或工作落後；留校例可支持 stay behind。",
+          "strength": "direct_reliable_dictionary_definition",
+          "supportsRows": [
+            256,
+            259
+          ]
+        }
+      ],
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "556735e57ff47697b660b91d890a5b0d241c7a60",
+        "reviewedBlobSha": "28471e8b2d5ea35d0c791cc854c77ac4d7835c6b",
+        "exampleIdMustMatch": "EX2267c8c9",
+        "exactFieldBefore": {
+          "meaningHint": "在後面；留下"
+        },
+        "contextMustMatch": {
+          "sentenceEn": "Maureen stayed behind to help clean up.",
+          "sentenceZh": "莫琳留下來幫忙清理。",
+          "blankSentence": "Maureen stayed _____ to help clean up.",
+          "answer": "behind",
+          "sensePos": "adv."
+        },
+        "ifAnyValueChanged": "停止套用此提案，重新逐句覆核；不可拿舊快照覆蓋最新值。",
+        "fieldsOutsideProposal": "不可更動其他欄位、整詞頭 POS、音標、status 或來源。"
+      },
+      "applied": false
+    },
+    {
+      "proposalId": "U09-H08",
+      "reviewIndex": 259,
+      "exampleId": "EXecc1cdb0",
+      "wordId": "W000081",
+      "word": "behind",
+      "exampleType": "textbook",
+      "sentenceEn": "The bridesmaids entered the church, with the bride following behind.",
+      "sentenceZh": "伴娘們進入教堂，新娘跟在後方。",
+      "blankSentence": "The bridesmaids entered the church, with the bride following _____.",
+      "answer": "behind",
+      "sensePos": "adv.",
+      "meaningHint": "在後面；留下",
+      "status": "approved",
+      "field": "meaningHint",
+      "before": "在後面；留下",
+      "after": "在後面",
+      "classification": "sentence_specific_hint_refinement",
+      "priority": "optional_refinement_not_error",
+      "reason": "with the bride following behind 表新娘跟在後方，不是留在原地；只收斂提示，副詞標示不變。",
+      "confidence": "high_for_sense_selection; review_required_before_apply",
+      "sources": [
+        {
+          "sourceId": "oxford_behind",
+          "title": "Oxford Advanced Learner's Dictionary: behind adverb",
+          "url": "https://www.oxfordlearnersdictionaries.com/definition/english/behind_2",
+          "accessType": "direct_page_open_success",
+          "directOpen": "success; inspected definition lines 88–122",
+          "observedEvidence": "原頁明列 adv.，第一義指位於後方，第二義指留在原處，第三義指付款或工作落後；留校例可支持 stay behind。",
+          "strength": "direct_reliable_dictionary_definition",
+          "supportsRows": [
+            256,
+            259
+          ]
+        }
+      ],
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "556735e57ff47697b660b91d890a5b0d241c7a60",
+        "reviewedBlobSha": "28471e8b2d5ea35d0c791cc854c77ac4d7835c6b",
+        "exampleIdMustMatch": "EXecc1cdb0",
+        "exactFieldBefore": {
+          "meaningHint": "在後面；留下"
+        },
+        "contextMustMatch": {
+          "sentenceEn": "The bridesmaids entered the church, with the bride following behind.",
+          "sentenceZh": "伴娘們進入教堂，新娘跟在後方。",
+          "blankSentence": "The bridesmaids entered the church, with the bride following _____.",
+          "answer": "behind",
+          "sensePos": "adv."
+        },
+        "ifAnyValueChanged": "停止套用此提案，重新逐句覆核；不可拿舊快照覆蓋最新值。",
+        "fieldsOutsideProposal": "不可更動其他欄位、整詞頭 POS、音標、status 或來源。"
+      },
+      "applied": false
+    },
+    {
+      "proposalId": "U09-H09",
+      "reviewIndex": 267,
+      "exampleId": "EX96488501",
+      "wordId": "W000992",
+      "word": "wrong",
+      "exampleType": "textbook",
+      "sentenceEn": "There's something wrong with Becky's phone.",
+      "sentenceZh": "貝琪的電話出了點問題。",
+      "blankSentence": "There's something _____ with Becky's phone.",
+      "answer": "wrong",
+      "sensePos": "adj.",
+      "meaningHint": "錯誤的；不對勁的",
+      "status": "approved",
+      "field": "meaningHint",
+      "before": "錯誤的；不對勁的",
+      "after": "不對勁的；有問題的",
+      "classification": "sentence_specific_hint_refinement",
+      "priority": "optional_refinement_not_error",
+      "reason": "something wrong with a phone 指手機有問題；不以答案對錯義為主要提示，也不擅自診斷具體硬體故障。",
+      "confidence": "high_for_sense_selection; review_required_before_apply",
+      "sources": [
+        {
+          "sourceId": "cambridge_wrong",
+          "title": "Cambridge Dictionary: wrong",
+          "url": "https://dictionary.cambridge.org/dictionary/english/wrong",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "attempted; 403 Forbidden; full page not read",
+          "observedEvidence": "實際搜尋節錄分別顯示形容詞不正確義及運作不正常義；本句分別為答案錯誤與手機出問題。",
+          "strength": "reliable_dictionary_excerpt_supports_sense; not_full_page_verification",
+          "supportsRows": [
+            267,
+            268
+          ]
+        }
+      ],
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "556735e57ff47697b660b91d890a5b0d241c7a60",
+        "reviewedBlobSha": "28471e8b2d5ea35d0c791cc854c77ac4d7835c6b",
+        "exampleIdMustMatch": "EX96488501",
+        "exactFieldBefore": {
+          "meaningHint": "錯誤的；不對勁的"
+        },
+        "contextMustMatch": {
+          "sentenceEn": "There's something wrong with Becky's phone.",
+          "sentenceZh": "貝琪的電話出了點問題。",
+          "blankSentence": "There's something _____ with Becky's phone.",
+          "answer": "wrong",
+          "sensePos": "adj."
+        },
+        "ifAnyValueChanged": "停止套用此提案，重新逐句覆核；不可拿舊快照覆蓋最新值。",
+        "fieldsOutsideProposal": "不可更動其他欄位、整詞頭 POS、音標、status 或來源。"
+      },
+      "applied": false
+    },
+    {
+      "proposalId": "U09-H10",
+      "reviewIndex": 268,
+      "exampleId": "EXec450963",
+      "wordId": "W000992",
+      "word": "wrong",
+      "exampleType": "textbook",
+      "sentenceEn": "Most of the answers he wrote were wrong.",
+      "sentenceZh": "他寫的答案大部分是錯的。",
+      "blankSentence": "Most of the answers he wrote were _____.",
+      "answer": "wrong",
+      "sensePos": "adj.",
+      "meaningHint": "錯誤的；不對勁的",
+      "status": "approved",
+      "field": "meaningHint",
+      "before": "錯誤的；不對勁的",
+      "after": "錯誤的；不正確的",
+      "classification": "sentence_specific_hint_refinement",
+      "priority": "optional_refinement_not_error",
+      "reason": "answers were wrong 指答案不正確，不是機器狀態不對勁；兩者均屬形容詞，不改 POS。",
+      "confidence": "high_for_sense_selection; review_required_before_apply",
+      "sources": [
+        {
+          "sourceId": "cambridge_wrong",
+          "title": "Cambridge Dictionary: wrong",
+          "url": "https://dictionary.cambridge.org/dictionary/english/wrong",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "attempted; 403 Forbidden; full page not read",
+          "observedEvidence": "實際搜尋節錄分別顯示形容詞不正確義及運作不正常義；本句分別為答案錯誤與手機出問題。",
+          "strength": "reliable_dictionary_excerpt_supports_sense; not_full_page_verification",
+          "supportsRows": [
+            267,
+            268
+          ]
+        }
+      ],
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "556735e57ff47697b660b91d890a5b0d241c7a60",
+        "reviewedBlobSha": "28471e8b2d5ea35d0c791cc854c77ac4d7835c6b",
+        "exampleIdMustMatch": "EXec450963",
+        "exactFieldBefore": {
+          "meaningHint": "錯誤的；不對勁的"
+        },
+        "contextMustMatch": {
+          "sentenceEn": "Most of the answers he wrote were wrong.",
+          "sentenceZh": "他寫的答案大部分是錯的。",
+          "blankSentence": "Most of the answers he wrote were _____.",
+          "answer": "wrong",
+          "sensePos": "adj."
+        },
+        "ifAnyValueChanged": "停止套用此提案，重新逐句覆核；不可拿舊快照覆蓋最新值。",
+        "fieldsOutsideProposal": "不可更動其他欄位、整詞頭 POS、音標、status 或來源。"
+      },
+      "applied": false
+    }
+  ],
+  "translationCandidates": [
+    {
+      "proposalId": "U09-T01",
+      "reviewIndex": 35,
+      "exampleId": "EX5b300da2",
+      "wordId": "W000328",
+      "word": "free",
+      "exampleType": "daily",
+      "sentenceEn": "The museum offers free admission to children under six years old.",
+      "sentenceZh": "這間博物館提供六歲以下兒童免費入場。",
+      "blankSentence": "The museum offers _____ admission to children under six years old.",
+      "answer": "free",
+      "sensePos": "adj.",
+      "meaningHint": null,
+      "status": "reviewed",
+      "field": "sentenceZh",
+      "before": "這間博物館提供六歲以下兒童免費入場。",
+      "after": "這間博物館提供未滿六歲兒童免費入場。",
+      "classification": "translation_boundary_clarity",
+      "priority": "recommended_precision_not_major_error",
+      "reason": "英文 under six years old 排除已滿六歲；中文六歲以下在日常用法可能泛指較小兒童，但也常被理解為包含六歲。改未滿六歲可去除邊界歧義。這不是免費義或 free 的 POS 錯誤。",
+      "confidence": "high_for_English_meaning; editorial_review_for_Chinese_wording",
+      "sources": [
+        {
+          "sourceId": "cambridge_under",
+          "title": "Cambridge Dictionary: under",
+          "url": "https://dictionary.cambridge.org/dictionary/english/under",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "not attempted for this URL; an Oxford under candidate returned 403 and is not used as evidence",
+          "observedEvidence": "實際搜尋節錄把 under 的數量義列為少於，年齡用例表示小於該年齡；另列 six and under 的含界表達，可區分未滿六歲與六歲及以下。",
+          "strength": "reliable_dictionary_excerpt_supports_age_boundary; Chinese_rendering_is_reviewer_translation",
+          "supportsRows": [
+            35
+          ]
+        }
+      ],
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "556735e57ff47697b660b91d890a5b0d241c7a60",
+        "reviewedBlobSha": "28471e8b2d5ea35d0c791cc854c77ac4d7835c6b",
+        "exampleIdMustMatch": "EX5b300da2",
+        "exactFieldBefore": {
+          "sentenceZh": "這間博物館提供六歲以下兒童免費入場。"
+        },
+        "contextMustMatch": {
+          "sentenceEn": "The museum offers free admission to children under six years old.",
+          "sentenceZh": "這間博物館提供六歲以下兒童免費入場。",
+          "blankSentence": "The museum offers _____ admission to children under six years old.",
+          "answer": "free",
+          "sensePos": "adj."
+        },
+        "ifAnyValueChanged": "停止套用此提案，重新逐句覆核；不可拿舊快照覆蓋最新值。",
+        "fieldsOutsideProposal": "不可更動其他欄位、整詞頭 POS、音標、status 或來源。"
+      },
+      "applied": false
+    },
+    {
+      "proposalId": "U09-T02",
+      "reviewIndex": 178,
+      "exampleId": "EX4ed56643",
+      "wordId": "W000484",
+      "word": "less",
+      "exampleType": "textbook",
+      "sentenceEn": "Ryan can barely cook meat, much less pasta.",
+      "sentenceZh": "雷恩不會煮肉，更別說煮義大利麵了。",
+      "blankSentence": "Ryan can barely cook meat, much _____ pasta.",
+      "answer": "less",
+      "sensePos": "pron./adv./adj./prep.",
+      "meaningHint": "更不用說（much less）",
+      "status": "approved",
+      "field": "sentenceZh",
+      "before": "雷恩不會煮肉，更別說煮義大利麵了。",
+      "after": "雷恩幾乎不會煮肉，更別說煮義大利麵了。",
+      "classification": "translation_degree_refinement",
+      "priority": "optional_refinement_not_error",
+      "reason": "barely can 表能力僅勉強存在，現譯不會煮把程度壓成全無；增幾乎較精確。原中文亦可視為口語誇張，故低優先單列，不據此改 less 的既有多 POS。",
+      "confidence": "high_for_English_meaning; editorial_review_for_Chinese_wording",
+      "sources": [
+        {
+          "sourceId": "collins_barely",
+          "title": "Collins COBUILD: barely",
+          "url": "https://www.collinsdictionary.com/dictionary/english/barely",
+          "accessType": "direct_page_open_success",
+          "directOpen": "success; inspected definition lines 215–243",
+          "observedEvidence": "原頁第一義說明 barely 表事件或情況僅勉強成立，並列 only just／hardly 等近義，支持保留幾乎不會的程度。",
+          "strength": "direct_reliable_dictionary_definition; Chinese_rendering_is_reviewer_translation",
+          "supportsRows": [
+            178
+          ]
+        }
+      ],
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "556735e57ff47697b660b91d890a5b0d241c7a60",
+        "reviewedBlobSha": "28471e8b2d5ea35d0c791cc854c77ac4d7835c6b",
+        "exampleIdMustMatch": "EX4ed56643",
+        "exactFieldBefore": {
+          "sentenceZh": "雷恩不會煮肉，更別說煮義大利麵了。"
+        },
+        "contextMustMatch": {
+          "sentenceEn": "Ryan can barely cook meat, much less pasta.",
+          "sentenceZh": "雷恩不會煮肉，更別說煮義大利麵了。",
+          "blankSentence": "Ryan can barely cook meat, much _____ pasta.",
+          "answer": "less",
+          "sensePos": "pron./adv./adj./prep."
+        },
+        "ifAnyValueChanged": "停止套用此提案，重新逐句覆核；不可拿舊快照覆蓋最新值。",
+        "fieldsOutsideProposal": "不可更動其他欄位、整詞頭 POS、音標、status 或來源。"
+      },
+      "applied": false
+    }
+  ],
+  "pendingConfirmation": [
+    {
+      "itemId": "U09-P01",
+      "reviewIndex": 189,
+      "exampleId": "EX621ea341",
+      "wordId": "W000239",
+      "word": "draw",
+      "exampleType": "textbook",
+      "sentenceEn": "Paul drew a stool in the fireplace.",
+      "sentenceZh": "保羅拉了一張凳子到壁爐邊。",
+      "blankSentence": "Paul _____ a stool in the fireplace.",
+      "answer": "drew",
+      "sensePos": "v.",
+      "meaningHint": "動詞原意待核：原英文位置與中文譯文不一致",
+      "status": "needs_check",
+      "classification": "existing_source_conflict_preserve_needs_check",
+      "before": {
+        "sentenceEn": "Paul drew a stool in the fireplace.",
+        "sentenceZh": "保羅拉了一張凳子到壁爐邊。",
+        "blankSentence": "Paul _____ a stool in the fireplace.",
+        "answer": "drew",
+        "meaningHint": "動詞原意待核：原英文位置與中文譯文不一致",
+        "status": "needs_check"
+      },
+      "after": null,
+      "reason": "英文 in the fireplace 與中文到壁爐邊方向位置不相容；draw 亦有畫與拉的多義。未取得原始教材，無權猜 in 應改為 to／toward 或猜改中文。",
+      "sourceStrength": "direct_comparison_of_supplied_checkpoint; original_source_unavailable",
+      "sourceUrl": null,
+      "nextStep": "需原始教材頁面或可靠原句證據；在此之前保留既有 needs_check 與來源限制提示。",
+      "doNotApply": true
+    },
+    {
+      "itemId": "U09-P02",
+      "reviewIndex": 273,
+      "exampleId": "EX056c9e1a",
+      "wordId": "W000219",
+      "word": "decide",
+      "exampleType": "textbook",
+      "sentenceEn": "We've decided that we would change the plan. ＝ We've decided to change the plan. ＝ We've made a decision to change the plan.",
+      "sentenceZh": "我們已決定要改變計畫。",
+      "blankSentence": "We've _____ that we would change the plan. ＝ We've decided to change the plan. ＝ We've made a decision to change the plan.",
+      "answer": "decided",
+      "sensePos": "v.",
+      "meaningHint": "決定",
+      "status": "approved",
+      "classification": "possible_source_tense_context_question_not_confirmed_error",
+      "before": {
+        "sentenceEn": "We've decided that we would change the plan. ＝ We've decided to change the plan. ＝ We've made a decision to change the plan.",
+        "sentenceZh": "我們已決定要改變計畫。",
+        "blankSentence": "We've _____ that we would change the plan. ＝ We've decided to change the plan. ＝ We've made a decision to change the plan.",
+        "answer": "decided",
+        "sensePos": "v."
+      },
+      "after": null,
+      "reason": "第一句 have decided 搭 that we would change 可能承接過去觀點或條件語氣；脫離上下文時與後兩句的直接決定是否完全等義待核。不能僅依一般偏好將 would 猜改 will，挖空 decided 的 v. 本身無誤。",
+      "sourceStrength": "sentence_syntax_observation_only; exact_sentence_search_did_not_find_reliable_original",
+      "sourceUrl": null,
+      "nextStep": "有原始教材時核第一句的助動詞及上下文；本次保留全部原值，不改 status。",
+      "doNotApply": true
+    },
+    {
+      "itemId": "U09-P03",
+      "reviewIndex": 287,
+      "exampleId": "EX2ec1dd2d",
+      "wordId": "W000073",
+      "word": "because",
+      "exampleType": "textbook",
+      "sentenceEn": "Because of COVID-19, we couldn't travel abroad.",
+      "sentenceZh": "由於新冠肺炎，我們無法出國旅行。",
+      "blankSentence": "_____ of COVID-19, we couldn't travel abroad.",
+      "answer": "Because",
+      "sensePos": "prep.",
+      "meaningHint": "because of：由於（介系詞片語）",
+      "status": "approved",
+      "classification": "POS_granularity_convention_requires_confirmation",
+      "before": {
+        "sensePos": "prep.",
+        "meaningHint": "because of：由於（介系詞片語）"
+      },
+      "after": null,
+      "reason": "可靠語法節錄只證明 because of 整體為雙字介系詞，本列挖空只有 Because。現 hint 已明示片語，prep. 可能是教材約定，不能把整體功能當單字結論，也不能反向機械改為 conj.。",
+      "sources": [
+        {
+          "sourceId": "cambridge_because_grammar",
+          "title": "Cambridge English Grammar Today: Because, because of and cos, cos of",
+          "url": "https://dictionary.cambridge.org/grammar/british-grammar/because-and-because-of",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "attempted; 403 Forbidden; full page not read",
+          "observedEvidence": "實際搜尋節錄明指 because of 是雙字介系詞。這能證明整體片語標示，不能單獨決定只挖 because 時資料庫應採的詞性粒度。",
+          "strength": "reliable_grammar_excerpt_for_phrase; individual_token_label_remains_schema_convention",
+          "supportsRows": [
+            287
+          ]
+        },
+        {
+          "sourceId": "cambridge_because_pattern",
+          "title": "Cambridge English Grammar Today: Word patterns: because or because of?",
+          "url": "https://dictionary.cambridge.org/us/grammar/british-grammar/word-patterns-because-or-because-of",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "not attempted; do not claim full page read",
+          "observedEvidence": "實際搜尋節錄將引導子句的 because 說明為連接詞，將名詞前的 because of 說明為介系詞；本列只挖單字，故保留詞性粒度待確認。",
+          "strength": "reliable_grammar_excerpt_for_contrast; not_a_mandatory_POS_replacement",
+          "supportsRows": [
+            287
+          ]
+        }
+      ],
+      "sourceStrength": "reliable_grammar_excerpt_plus_schema_granularity_question",
+      "nextStep": "先確認資料庫 sensePos 是否允許以固定片語整體詞性標記部分挖空；確認前保留 prep. 與提示，不更動詞頭。",
+      "doNotApply": true
+    }
+  ],
+  "formalWordsWithoutExamples": [
+    {
+      "wordId": "W002059",
+      "word": "background"
+    },
+    {
+      "wordId": "W001307",
+      "word": "empty"
+    },
+    {
+      "wordId": "W004804",
+      "word": "smash"
+    },
+    {
+      "wordId": "W000892",
+      "word": "tie"
+    },
+    {
+      "wordId": "W004135",
+      "word": "certainty"
+    },
+    {
+      "wordId": "W002296",
+      "word": "entry"
+    },
+    {
+      "wordId": "W001331",
+      "word": "exit"
+    },
+    {
+      "wordId": "W005232",
+      "word": "decisive"
+    },
+    {
+      "wordId": "W004499",
+      "word": "journalist"
+    }
+  ]
+}

@@ -2,6 +2,7 @@ import {readFileSync,writeFileSync} from 'node:fs';
 const read=p=>JSON.parse(readFileSync(p,'utf8'));
 const paths=['LV1-U01-patches.json','LV1-U02-patches.json','LV1-U01-definition-supplement.json','LV1-U03-patches.json','LV1-U03-remaining-patches.json','LV1-U04-patches.json','LV1-U05-patches.json','LV1-U06-patches.json','LV1-U06-syntax-followup.json','LV1-U05-U06-exam-source-followup.json','LV1-U07-patches.json','LV1-U07-hints-followup.json','LV1-U02-U03-lexical-source-followup.json','LV1-U03-cat-definition-followup.json','LV1-U07-verified-exam-source-followup.json','LV1-U08-patches.json','LV1-U07-demand-visible-form-followup.json','LV1-U09-patches.json'];
 paths.push('LV1-U08-hints-followup.json','LV1-verified-translations-followup.json','LV1-U01-U02-verb-forms-followup.json');
+paths.push('LV1-U10-patches.json');
 const expected={};
 for(const path of paths)for(const p of read('docs/unit-audit-20261105/'+path).patches){
  const key=p.dataset+':'+p.id;

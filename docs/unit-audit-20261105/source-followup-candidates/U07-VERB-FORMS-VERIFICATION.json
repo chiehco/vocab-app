@@ -1,0 +1,2280 @@
+{
+  "title": "U07 缺漏動詞三態：39 詞逐筆來源查證",
+  "checkedAtUtc": "2026-11-05T09:02:28.503Z",
+  "sourceCommit": "c43255f2816be39e0efb2016a0c3ef8bc540780a",
+  "sourceWordsBlobSha": "9f0c8748ae224b94add05797ee8c7a742f3ad1c2",
+  "scope": "只處理輸入 missingVerbForms 的 39 詞。call 不在此清單且由 U05–U06 線處理，未重做。未修改 repository、status 或 Git，未執行 repository 測試；沒有改義項、例句或 cloze 語法。",
+  "unitLabelNote": "units 使用 U07，直接對應輸入 unitWordIds 的鍵 7；不假定它等於各詞 level。",
+  "coverage": {
+    "expectedEntries": 39,
+    "lexicallyVerified": 39,
+    "verifiedCandidates": 37,
+    "pendingProductRepresentation": 2,
+    "pendingMissingLexicalEvidence": 0,
+    "ruleOnlyInferences": 0,
+    "productApprovals": 0
+  },
+  "countInterpretation": "39 詞都有直接詞形證據。37 詞列為主線逐筆審核候選；bear 與 need 的相關詞形也已證實，但現行整卡呈現不足以區分義項／構式，保留待確認。",
+  "method": "逐詞直接讀可靠詞典明示過去式及過去分詞，主要使用 Collins Word forms／language note。disorder 使用同站官方 conjugation；sequence 另直接讀 Oxford Verb Forms 並以 Collins conjugation 交叉核對。未以拼字規則猜補。",
+  "evidenceClasses": {
+    "direct_dictionary_page": "透過 web open／find 實際讀到詞典頁的指定內容。",
+    "direct_official_dictionary_conjugation": "由主詞條的 Conjugations 連結實際讀取官方變化表，分別取得 Past 和 Past Participle。",
+    "official_dictionary_search_excerpt_only": "本次未使用搜尋節錄作詞形依據。",
+    "unverified_candidate_url": "無未核候選 URL 被用作已核證據；讀取失敗另列 retrievalNotes。"
+  },
+  "beforeRepresentation": {
+    "marker": {
+      "$absent": true
+    },
+    "meaning": "全部 39 列的 verbForms 屬性不存在，不是 null；回復時應 delete。"
+  },
+  "schemaAndDisplayReview": {
+    "basis": "主線交付的現行 schema／UI 限制；本線沒有另外檢查或修改 repo。",
+    "fields": [
+      "base",
+      "past",
+      "pastParticiple",
+      "sourceRef",
+      "status"
+    ],
+    "fieldType": "string",
+    "display": "UI 整卡顯示『動詞三態』，sourceRef 註解不顯示。",
+    "bearDecision": "暫不給無限定三態，保留 borne／born 各自適用構式。",
+    "needDecision": "暫不把實義 needed／needed 無限定套用於同卡 aux.。",
+    "statusBoundary": "proposedVerbForms 故意不帶產品 status；研究 verified_candidate 不等於產品 approved。"
+  },
+  "implementationBoundary": [
+    "主線必須逐筆核實並擴充 allowlist 和相應負向測試，再考慮新增；本報告不是放寬所有 words 的授權。",
+    "保持 exact-before $absent guard 及 delete 還原。",
+    "bear、need 應保留產品呈現待確認；lead、pay 必須保留適用義限制。",
+    "不因需要 forms 修改既有名詞 cloze 的語法；seat、sequence 的名詞英釋缺動詞說明另行審核，不由本次 forms 直接解決。"
+  ],
+  "entries": [
+    {
+      "wordId": "W000008",
+      "word": "act",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotMeaningZh": "行動；行爲；幕；法案",
+      "sourceSnapshotMeaningEn": "(v.) to do something, or to behave in a particular way; (n.) something that a person does; a formal law passed by a government",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "行動、做事或以某種方式表現。",
+      "sourceSupportedForms": {
+        "base": "act",
+        "past": [
+          "acted"
+        ],
+        "pastParticiple": [
+          "acted"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "act",
+        "past": "acted",
+        "pastParticiple": "acted",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/act"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/act",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle acted",
+          "scope": "詞典直接明列過去式及過去分詞，未依拼字規則推導。",
+          "location": "本次頁面 Word forms，L220"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000041",
+      "word": "appear",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "sourceSnapshotMeaningZh": "出現；顯得；來到；出庭",
+      "sourceSnapshotMeaningEn": "to come into view or existence; to seem or give the impression of being a certain way; to be shown or printed in the media",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "出現、顯得或呈現某種狀態。",
+      "sourceSupportedForms": {
+        "base": "appear",
+        "past": [
+          "appeared"
+        ],
+        "pastParticiple": [
+          "appeared"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "appear",
+        "past": "appeared",
+        "pastParticiple": "appeared",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/appear"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/appear",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle appeared",
+          "scope": "詞典直接明列過去式及過去分詞，未依拼字規則推導。",
+          "location": "本次頁面 Word forms，L222"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000046",
+      "word": "arrive",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "sourceSnapshotMeaningZh": "到達；抵達",
+      "sourceSnapshotMeaningEn": "to reach a place, especially at the end of a journey",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "到達或抵達目的地。",
+      "sourceSupportedForms": {
+        "base": "arrive",
+        "past": [
+          "arrived"
+        ],
+        "pastParticiple": [
+          "arrived"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "arrive",
+        "past": "arrived",
+        "pastParticiple": "arrived",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/arrive"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/arrive",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle arrived",
+          "scope": "詞典直接明列過去式及過去分詞，未依拼字規則推導。",
+          "location": "本次頁面 Word forms，L222"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000071",
+      "word": "bear",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "v./n.",
+      "sourceSnapshotPosAll": [
+        "v.",
+        "n."
+      ],
+      "sourceSnapshotMeaningZh": "熊；忍受；支承；產生",
+      "sourceSnapshotMeaningEn": "(v.) to accept or deal with something unpleasant; (n.) a large heavy animal with thick fur",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "pending_schema_disambiguation",
+      "applicableSense": "忍受、承受、支承、攜帶或產生；出生構式須另外區分 born。",
+      "sourceSupportedForms": {
+        "base": "bear",
+        "past": [
+          "bore"
+        ],
+        "pastParticiple": [
+          "borne",
+          "born"
+        ],
+        "senseQualifiedParadigms": [
+          {
+            "sense": "承受、忍受、支承、攜帶、產生等非出生用法",
+            "base": "bear",
+            "past": "bore",
+            "pastParticiple": "borne"
+          },
+          {
+            "sense": "生育用法以母親為焦點，或分詞後接 by",
+            "base": "bear",
+            "past": "bore",
+            "pastParticiple": "borne"
+          },
+          {
+            "sense": "以出生者為焦點、且分詞後不接 by 的出生被動構式",
+            "base": "bear",
+            "past": "bore",
+            "pastParticiple": "born"
+          }
+        ],
+        "notFreelyInterchangeable": true
+      },
+      "proposedVerbForms": null,
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/bear",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense bore , past participle borne",
+          "scope": "COBUILD 詞形欄明列 bore 和 borne。",
+          "location": "bear verb uses, Word forms, L222"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins English Dictionary / American English usage note",
+          "url": "https://www.collinsdictionary.com/dictionary/english/bear",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "borne is the past participle in all senses that do not refer to physical birth",
+          "scope": "直接讀美式 USAGE 段：非出生義用 borne；生育用法以母親為焦點、使用 have 或接 by 時仍用 borne。以出生者為焦點的被動構式用 born，兩者不可自由互換。",
+          "location": "bear in American English 1, USAGE, L1023–1025"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "不能把 born 當成忍受／攜帶義分詞，也不能把 borne 稱作所有出生構式唯一形式。來源另有金融市場壓低價格的 beared 同形詞，該義不在目前動詞釋義中，不擴充本卡。",
+      "variantAssessment": "bore、borne、born 的構式限制均已查明；待確認是產品如何明確呈現限定，不是詞形本身。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": "現行五個字串欄位及整卡『動詞三態』無可見義項／構式限定。保持 verbForms 缺鍵，不能只填 born 或 borne 當所有義唯一形式，也不能用未顯示的 sourceRef 藏註解。",
+      "futureCandidateAfterDisambiguation": {
+        "base": "bear",
+        "past": "bore",
+        "pastParticiple": "borne",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/bear",
+        "requiredVisibleQualification": "此組適用於承受、忍受、支承、攜帶、產生等用法；出生被動構式需另說明 born，並區分 borne 的生育用法。"
+      }
+    },
+    {
+      "wordId": "W000082",
+      "word": "believe",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "sourceSnapshotMeaningZh": "相信",
+      "sourceSnapshotMeaningEn": "to accept that something is true or that someone is telling the truth; to think that something is the case",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "相信或認為某事為真。",
+      "sourceSupportedForms": {
+        "base": "believe",
+        "past": [
+          "believed"
+        ],
+        "pastParticiple": [
+          "believed"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "believe",
+        "past": "believed",
+        "pastParticiple": "believed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/believe"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/believe",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle believed",
+          "scope": "詞典直接明列過去式及過去分詞，未依拼字規則推導。",
+          "location": "本次頁面 Word forms，L222"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000146",
+      "word": "carry",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "sourceSnapshotMeaningZh": "進位；射程；運載；攜帶",
+      "sourceSnapshotMeaningEn": "to hold or support something while moving it from one place to another; to do or complete something, especially a task that has been planned",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "攜帶、運載或執行某項任務。",
+      "sourceSupportedForms": {
+        "base": "carry",
+        "past": [
+          "carried"
+        ],
+        "pastParticiple": [
+          "carried"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "carry",
+        "past": "carried",
+        "pastParticiple": "carried",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/carry"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/carry",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle carried",
+          "scope": "詞典直接明列過去式及過去分詞，未依拼字規則推導。",
+          "location": "本次頁面 Word forms，L222"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000387",
+      "word": "hear",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "sourceSnapshotMeaningZh": "聽到；傾聽；聽說；審理",
+      "sourceSnapshotMeaningEn": "to notice a sound with your ears; to be told about something",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "聽見、聽說或聽取。",
+      "sourceSupportedForms": {
+        "base": "hear",
+        "past": [
+          "heard"
+        ],
+        "pastParticiple": [
+          "heard"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "hear",
+        "past": "heard",
+        "pastParticiple": "heard",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/hear"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/hear",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle heard",
+          "scope": "詞典直接明列過去式及過去分詞，未依拼字規則推導。",
+          "location": "本次頁面 Word forms，L222"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000432",
+      "word": "interest",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotMeaningZh": "興趣；嗜好；利息；利益",
+      "sourceSnapshotMeaningEn": "(n.) a feeling of wanting to know more about something or to be involved in it; money paid for the use of borrowed money; (v.) to make someone want to know more about something",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "使人感興趣。",
+      "sourceSupportedForms": {
+        "base": "interest",
+        "past": [
+          "interested"
+        ],
+        "pastParticiple": [
+          "interested"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "interest",
+        "past": "interested",
+        "pastParticiple": "interested",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/interest"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/interest",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle interested",
+          "scope": "詞典直接明列過去式及過去分詞，未依拼字規則推導。",
+          "location": "本次頁面 Word forms，L222"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000476",
+      "word": "lead",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "v./n.",
+      "sourceSnapshotPosAll": [
+        "v.",
+        "n."
+      ],
+      "sourceSnapshotMeaningZh": "鉛；鉛條；領導；超前量",
+      "sourceSnapshotMeaningEn": "(v.) to guide or direct a person, group, or activity; to result in a particular situation or event; (n.) an advantage that one competitor has over another in a race or contest",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "帶領、引導、領導或導致。",
+      "sourceSupportedForms": {
+        "base": "lead",
+        "past": [
+          "led"
+        ],
+        "pastParticiple": [
+          "led"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "lead",
+        "past": "led",
+        "pastParticiple": "led",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/lead"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/lead",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle led",
+          "scope": "詞典直接明列過去式及過去分詞，未依拼字規則推導。",
+          "location": "本次頁面 Word forms，L222"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins English Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/lead",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "to fill or treat with lead",
+          "scope": "詞典另列讀 /lɛd/ 的金屬詞項及其動詞義，與本次帶領義分開；此段不是本次其他詞形的明示證據。",
+          "location": "lead in British English 2, senses 11–12, L738–746"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "僅限目前英釋及 usagePattern 明示的帶領、領導、導致動詞，原形讀 /liːd/。中文中的鉛／鉛條屬另一同形名詞，不把 led 套作其派生金屬動詞的詞形，也不在本次新增金屬動詞義。",
+      "variantAssessment": "led／led 已直接核實為帶領義。來源另列金屬 lead 的動詞用法，但本次不把未明示其 past／past participle 的資訊當作新形式證據。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000498",
+      "word": "listen",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "sourceSnapshotMeaningZh": "聽；傾聽；聽從",
+      "sourceSnapshotMeaningEn": "to pay attention to sound or to what someone is saying; to take notice of and act on advice",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "聆聽、注意聽或聽從。",
+      "sourceSupportedForms": {
+        "base": "listen",
+        "past": [
+          "listened"
+        ],
+        "pastParticiple": [
+          "listened"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "listen",
+        "past": "listened",
+        "pastParticiple": "listened",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/listen"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/listen",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle listened",
+          "scope": "詞典直接明列過去式及過去分詞，未依拼字規則推導。",
+          "location": "本次頁面 Word forms，L222"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000525",
+      "word": "matter",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotMeaningZh": "事件；物質；原因；素材；重要；有影響",
+      "sourceSnapshotMeaningEn": "(n.) a subject or situation that you must deal with or discuss; the physical substance that everything in the universe is made of; (v.) to be important",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "有重要性或有影響。",
+      "sourceSupportedForms": {
+        "base": "matter",
+        "past": [
+          "mattered"
+        ],
+        "pastParticiple": [
+          "mattered"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "matter",
+        "past": "mattered",
+        "pastParticiple": "mattered",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/matter"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/matter",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle mattered",
+          "scope": "詞典直接明列過去式及過去分詞，未依拼字規則推導。",
+          "location": "本次頁面 Word forms，L222"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000529",
+      "word": "mean",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "v./adj.",
+      "sourceSnapshotPosAll": [
+        "v.",
+        "adj."
+      ],
+      "sourceSnapshotMeaningZh": "表示；意指；打算；對某人重要；低劣的；卑賤的；簡陋的；吝嗇的；刻薄的",
+      "sourceSnapshotMeaningEn": "(v.) to have a particular meaning; (v.) to intend to do something; (adj.) unkind or unpleasant to other people",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "表示、意指、打算或對某人重要。",
+      "sourceSupportedForms": {
+        "base": "mean",
+        "past": [
+          "meant"
+        ],
+        "pastParticiple": [
+          "meant"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "mean",
+        "past": "meant",
+        "pastParticiple": "meant",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/mean"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/mean",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle meant",
+          "scope": "詞典直接明列過去式及過去分詞，未依拼字規則推導。",
+          "location": "本次頁面 Word forms，L222"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000534",
+      "word": "meet",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "sourceSnapshotMeaningZh": "會面；遇見；滿足（需求）；會；集會；適宜的；合適的",
+      "sourceSnapshotMeaningEn": "to see and talk to someone, either by chance or arrangement; to satisfy a need, requirement, or standard",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "會面、遇見或滿足需求。",
+      "sourceSupportedForms": {
+        "base": "meet",
+        "past": [
+          "met"
+        ],
+        "pastParticiple": [
+          "met"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "meet",
+        "past": "met",
+        "pastParticiple": "met",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/meet"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/meet",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle met",
+          "scope": "詞典直接明列過去式及過去分詞，未依拼字規則推導。",
+          "location": "本次頁面 Word forms，L222"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000541",
+      "word": "mind",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotMeaningZh": "思想；願望；智力；記憶；介意；留意",
+      "sourceSnapshotMeaningEn": "the part of a person that thinks, feels, and remembers; to feel annoyed or worried about something; to be careful about something",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "介意、留心或照看。",
+      "sourceSupportedForms": {
+        "base": "mind",
+        "past": [
+          "minded"
+        ],
+        "pastParticiple": [
+          "minded"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "mind",
+        "past": "minded",
+        "pastParticiple": "minded",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/mind"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/mind",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle minded",
+          "scope": "詞典直接明列過去式及過去分詞，未依拼字規則推導。",
+          "location": "本次頁面 Word forms，L438"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000569",
+      "word": "name",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotMeaningZh": "名字；名稱；姓名；名義；命名；說出名字",
+      "sourceSnapshotMeaningEn": "(n.) what someone or something is called (v.) to give a name to someone or something",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "命名或說出名稱。",
+      "sourceSupportedForms": {
+        "base": "name",
+        "past": [
+          "named"
+        ],
+        "pastParticiple": [
+          "named"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "name",
+        "past": "named",
+        "pastParticiple": "named",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/name"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/name",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle named",
+          "scope": "詞典直接明列過去式及過去分詞，未依拼字規則推導。",
+          "location": "本次頁面 Word forms，L222"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000574",
+      "word": "need",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "v./n./aux.",
+      "sourceSnapshotPosAll": [
+        "v.",
+        "n.",
+        "aux."
+      ],
+      "sourceSnapshotMeaningZh": "需要；必須；缺乏；必需",
+      "sourceSnapshotMeaningEn": "(v.) to require something or have to do something; (n.) a requirement, lack, or something necessary; (aux., especially in negatives and questions) to be obliged to do something.",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "pending_schema_disambiguation",
+      "applicableSense": "實義動詞：需要某物或需要做某事；不把此三態套用於情態助動用法。",
+      "sourceSupportedForms": {
+        "base": "need",
+        "past": [
+          "needed"
+        ],
+        "pastParticiple": [
+          "needed"
+        ]
+      },
+      "proposedVerbForms": null,
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/need",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle needed",
+          "scope": "COBUILD 詞形欄直接列 needed；同欄接續說明一般動詞及情態用法不同。",
+          "location": "Word forms／language note, L222"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/need",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "sometimes like a modal",
+          "scope": "同一頁明確區分一般動詞與情態助動用法；後者例如 need not 後接不帶 to 的不定詞。",
+          "location": "Word forms／language note, L222"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Webster’s New World College Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/need",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "uninflected and followed by an infinitive without to",
+          "scope": "美式詞條說明不變化助動形式；不能把實義動詞 needed 分詞當作情態助動詞分詞。",
+          "location": "need in American English, sense 5, L531"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "needed／needed 只用於一般動詞 need；本卡 posAll 明列 aux.，且 meaningEn 含情態助動必要／義務用法，不能無限定共用。",
+      "variantAssessment": "實義三態已直接證實；情態助動用法與一般動詞不同，未臆造情態助動詞的分詞。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": "目前卡同時包含 v. 與 aux.，而 UI 不顯示義項限定。保留缺鍵，待可明確標出『一般動詞 need』後再採用 needed／needed；不必為了補 forms 改既有例句或名詞 cloze。",
+      "futureCandidateAfterDisambiguation": {
+        "base": "need",
+        "past": "needed",
+        "pastParticiple": "needed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/need",
+        "requiredVisibleQualification": "僅限一般動詞 need；情態助動用法 need not／needn't 等另列。"
+      }
+    },
+    {
+      "wordId": "W000613",
+      "word": "order",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotMeaningZh": "次序；規則；命令；定貨",
+      "sourceSnapshotMeaningEn": "(n.) the way in which things are arranged; an instruction given by someone in authority; (v.) to ask for food or goods to be brought or supplied",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "命令、訂購或安排順序。",
+      "sourceSupportedForms": {
+        "base": "order",
+        "past": [
+          "ordered"
+        ],
+        "pastParticiple": [
+          "ordered"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "order",
+        "past": "ordered",
+        "pastParticiple": "ordered",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/order"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/order",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle ordered",
+          "scope": "詞典直接明列過去式及過去分詞，未依拼字規則推導。",
+          "location": "本次頁面 Word forms，L253"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000632",
+      "word": "pay",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "sourceSnapshotMeaningZh": "薪資；付款；補償；支付；支付的款項(或實物)",
+      "sourceSnapshotMeaningEn": "to give someone money for goods, services, or work; a sum of money that is given or received in return for something",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "付款、支付或補償。",
+      "sourceSupportedForms": {
+        "base": "pay",
+        "past": [
+          "paid"
+        ],
+        "pastParticiple": [
+          "paid"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "pay",
+        "past": "paid",
+        "pastParticiple": "paid",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/pay"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/pay",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle paid",
+          "scope": "詞典直接明列過去式及過去分詞，未依拼字規則推導。",
+          "location": "本次頁面 Word forms，L222"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins English Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/pay",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense and past participle paid or payed",
+          "scope": "此段明標 nautical，故不能據此給目前付款義加 payed。",
+          "location": "pay in British English 1, sense 9, L435–437"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "付款／支付／補償義用 paid／paid。payed 在來源中受航海義或過時用法限制，不列成現代付款義的並列可換形式；不更動 pay/payment 拆義。",
+      "variantAssessment": "Collins 明列航海用法 paid or payed，另有船縫塗焦油義 payed；這些義不在本卡目前付款英釋及用法中。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000672",
+      "word": "power",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotMeaningZh": "力；體力；力量；勢力；權力；電力；驅動",
+      "sourceSnapshotMeaningEn": "the ability or right to control people or events; strength or energy, especially electricity used to make things work; (v.) to supply energy to make something work.",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "供應能源以驅動設備。",
+      "sourceSupportedForms": {
+        "base": "power",
+        "past": [
+          "powered"
+        ],
+        "pastParticiple": [
+          "powered"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "power",
+        "past": "powered",
+        "pastParticiple": "powered",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/power"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/power",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle powered",
+          "scope": "詞典直接明列過去式及過去分詞，未依拼字規則推導。",
+          "location": "本次頁面 Word forms，L222"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000699",
+      "word": "reach",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "v./n.",
+      "sourceSnapshotPosAll": [
+        "v.",
+        "n."
+      ],
+      "sourceSnapshotMeaningZh": "伸出；延伸；區域；範圍",
+      "sourceSnapshotMeaningEn": "to arrive at a place, especially after traveling; to stretch out your hand to touch or get something; (n.) the distance or area within which something can be touched, obtained or influenced.",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "到達、達到、伸手觸及或延伸。",
+      "sourceSupportedForms": {
+        "base": "reach",
+        "past": [
+          "reached"
+        ],
+        "pastParticiple": [
+          "reached"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "reach",
+        "past": "reached",
+        "pastParticiple": "reached",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/reach"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/reach",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle reached",
+          "scope": "詞典直接明列過去式及過去分詞，未依拼字規則推導。",
+          "location": "本次頁面 Word forms，L222"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000724",
+      "word": "room",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotMeaningZh": "房間；空位；場所；住宿",
+      "sourceSnapshotMeaningEn": "(n.) a space within a building divided by walls; available space or opportunity; (v.) to live or stay in accommodation, especially sharing it with another person.",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "住宿或與人同住；常見於 room with。",
+      "sourceSupportedForms": {
+        "base": "room",
+        "past": [
+          "roomed"
+        ],
+        "pastParticiple": [
+          "roomed"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "room",
+        "past": "roomed",
+        "pastParticiple": "roomed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/room"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/room",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle roomed",
+          "scope": "詞典直接明列過去式及過去分詞，未依拼字規則推導。",
+          "location": "本次頁面 Word forms，L222"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000732",
+      "word": "run",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "sourceSnapshotMeaningZh": "跑；賽跑；奔跑；奔跑的路程",
+      "sourceSnapshotMeaningEn": "to move quickly on foot; to manage or be in charge of a business or organization",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "跑步、運行或經營管理。",
+      "sourceSupportedForms": {
+        "base": "run",
+        "past": [
+          "ran"
+        ],
+        "pastParticiple": [
+          "run"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "run",
+        "past": "ran",
+        "pastParticiple": "run",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/run"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/run",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense ran",
+          "scope": "過去式直接列 ran。",
+          "location": "Word forms, L222"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/run",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "The form run is used in the present tense and is also the past participle of the verb.",
+          "scope": "language note 明示過去分詞為 run，不是由例句語法推斷。",
+          "location": "Word forms 後 language note, L222"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000745",
+      "word": "seat",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotMeaningZh": "座；座位；位子；席位",
+      "sourceSnapshotMeaningEn": "a place where you can sit, such as a chair or a space on a bus, train, or in a theater",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "使就座、安排座位或可容納若干人就座。",
+      "sourceSupportedForms": {
+        "base": "seat",
+        "past": [
+          "seated"
+        ],
+        "pastParticiple": [
+          "seated"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "seat",
+        "past": "seated",
+        "pastParticiple": "seated",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/seat"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/seat",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle seated",
+          "scope": "詞典直接明列過去式及過去分詞，未依拼字規則推導。",
+          "location": "本次頁面 Word forms，L222"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/seat",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "If you seat yourself somewhere, you sit down.",
+          "scope": "動詞詞性與使就座用法直接可見；引文省略詞典連結標記。",
+          "location": "sense 3, L239–245"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null,
+      "existingMeaningScopeCaution": "快照含動詞詞性，但 meaningEn 目前只寫名詞義。上述適用義由本次直接詞典證據界定；本報告只供 forms 逐筆審核，不更動原釋義、例句或名詞 cloze，也不代表整張詞卡內容已完成審核。"
+    },
+    {
+      "wordId": "W000755",
+      "word": "set",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "v./n.",
+      "sourceSnapshotPosAll": [
+        "v.",
+        "n."
+      ],
+      "sourceSnapshotMeaningZh": "日落；同夥；組合；集合",
+      "sourceSnapshotMeaningEn": "to put something in a specified place or position; to establish or fix a value, rule, or time; (n.) a group of things that belong together",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "放置、設定、確立或落下。",
+      "sourceSupportedForms": {
+        "base": "set",
+        "past": [
+          "set"
+        ],
+        "pastParticiple": [
+          "set"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "set",
+        "past": "set",
+        "pastParticiple": "set",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/set"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/set",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "The form set is used in the present tense and is the past tense and past participle of the verb.",
+          "scope": "language note 明確表示過去式與過去分詞均為 set。",
+          "location": "set verb and adjective uses, Word forms 後 language note, L307"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "set／set／set，不與 sit／sat／sat 混合；本次不為名詞 set 或名詞 cloze 更換語法。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000784",
+      "word": "sit",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "sourceSnapshotMeaningZh": "坐；就座；坐落；使就座",
+      "sourceSnapshotMeaningEn": "to rest your body so that your weight is supported by your bottom rather than your feet; (of a building) to be located in a particular place",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "坐、就座或坐落。",
+      "sourceSupportedForms": {
+        "base": "sit",
+        "past": [
+          "sat"
+        ],
+        "pastParticiple": [
+          "sat"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "sit",
+        "past": "sat",
+        "pastParticiple": "sat",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/sit"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/sit",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle sat",
+          "scope": "詞典直接明列過去式及過去分詞，未依拼字規則推導。",
+          "location": "本次頁面 Word forms，L222"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000822",
+      "word": "stand",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "v./n.",
+      "sourceSnapshotPosAll": [
+        "v.",
+        "n."
+      ],
+      "sourceSnapshotMeaningZh": "站立；站住；停頓；講臺；攤位；立場；忍受；經得起",
+      "sourceSnapshotMeaningEn": "(v.) to be in an upright position on one's feet; (v.) to be able to bear or tolerate something difficult; (n.) a small stall where goods are sold or displayed",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "站立、處於某位置、忍受或經得起。",
+      "sourceSupportedForms": {
+        "base": "stand",
+        "past": [
+          "stood"
+        ],
+        "pastParticiple": [
+          "stood"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "stand",
+        "past": "stood",
+        "pastParticiple": "stood",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/stand"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/stand",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle stood",
+          "scope": "詞典直接明列過去式及過去分詞，未依拼字規則推導。",
+          "location": "本次頁面 Word forms，L222"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000920",
+      "word": "trouble",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotMeaningZh": "煩惱；麻煩；困難；動亂",
+      "sourceSnapshotMeaningEn": "a problem, difficulty, or worry; to cause worry or difficulty for someone",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "使煩惱或造成麻煩。",
+      "sourceSupportedForms": {
+        "base": "trouble",
+        "past": [
+          "troubled"
+        ],
+        "pastParticiple": [
+          "troubled"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "trouble",
+        "past": "troubled",
+        "pastParticiple": "troubled",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/trouble"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/trouble",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle troubled",
+          "scope": "詞典直接明列過去式及過去分詞，未依拼字規則推導。",
+          "location": "本次頁面 Word forms，L222"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W001086",
+      "word": "behave",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "sourceSnapshotMeaningZh": "舉止端正；行爲規矩；檢點(自己的)行爲；使表現好",
+      "sourceSnapshotMeaningEn": "to act in a particular way; to act politely and properly",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "行為表現或舉止規矩。",
+      "sourceSupportedForms": {
+        "base": "behave",
+        "past": [
+          "behaved"
+        ],
+        "pastParticiple": [
+          "behaved"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "behave",
+        "past": "behaved",
+        "pastParticiple": "behaved",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/behave"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/behave",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle behaved",
+          "scope": "詞典直接明列過去式及過去分詞，未依拼字規則推導。",
+          "location": "本次頁面 Word forms，L222"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W001523",
+      "word": "manage",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "sourceSnapshotMeaningZh": "處理；管理；控制；維持；經營",
+      "sourceSnapshotMeaningEn": "manage (v.): to succeed in doing something difficult, or to control and run a business or activity; management (n.): the people who control and run a business or organization",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "管理、經營、處理或設法做到。",
+      "sourceSupportedForms": {
+        "base": "manage",
+        "past": [
+          "managed"
+        ],
+        "pastParticiple": [
+          "managed"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "manage",
+        "past": "managed",
+        "pastParticiple": "managed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/manage"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/manage",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle managed",
+          "scope": "詞典直接明列過去式及過去分詞，未依拼字規則推導。",
+          "location": "本次頁面 Word forms，L222"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W001598",
+      "word": "operate",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "sourceSnapshotMeaningZh": "操作；運轉；動手術；活動；經營",
+      "sourceSnapshotMeaningEn": "to work or control a machine, vehicle, or system; (of a machine) to work or function; to perform surgery on someone; to run or manage a business or organization.",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "操作、運轉、經營或動手術。",
+      "sourceSupportedForms": {
+        "base": "operate",
+        "past": [
+          "operated"
+        ],
+        "pastParticiple": [
+          "operated"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "operate",
+        "past": "operated",
+        "pastParticiple": "operated",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/operate"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/operate",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle operated",
+          "scope": "詞典直接明列過去式及過去分詞，未依拼字規則推導。",
+          "location": "本次頁面 Word forms，L222"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W001768",
+      "word": "seem",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "sourceSnapshotMeaningZh": "象是；似乎",
+      "sourceSnapshotMeaningEn": "to give the impression of being or doing something; to appear to be true",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "似乎、給人某種印象。",
+      "sourceSupportedForms": {
+        "base": "seem",
+        "past": [
+          "seemed"
+        ],
+        "pastParticiple": [
+          "seemed"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "seem",
+        "past": "seemed",
+        "pastParticiple": "seemed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/seem"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/seem",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle seemed",
+          "scope": "詞典直接明列過去式及過去分詞，未依拼字規則推導。",
+          "location": "本次頁面 Word forms，L222"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W001779",
+      "word": "serve",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "sourceSnapshotMeaningZh": "可作...用；服務；經歷；招待",
+      "sourceSnapshotMeaningEn": "to provide someone with food or drink; to work for or perform duties for a person, organization, or country; to fulfill a particular role or function",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "服務、招待、供應餐飲或發揮某種作用。",
+      "sourceSupportedForms": {
+        "base": "serve",
+        "past": [
+          "served"
+        ],
+        "pastParticiple": [
+          "served"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "serve",
+        "past": "served",
+        "pastParticiple": "served",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/serve"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/serve",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle served",
+          "scope": "詞典直接明列過去式及過去分詞，未依拼字規則推導。",
+          "location": "本次頁面 Word forms，L222"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W002047",
+      "word": "attract",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "sourceSnapshotMeaningZh": "吸引；誘惑；有吸引力",
+      "sourceSnapshotMeaningEn": "to cause someone or something to be drawn closer or to become interested, because of appealing qualities",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "吸引或引起興趣。",
+      "sourceSupportedForms": {
+        "base": "attract",
+        "past": [
+          "attracted"
+        ],
+        "pastParticiple": [
+          "attracted"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "attract",
+        "past": "attracted",
+        "pastParticiple": "attracted",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/attract"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/attract",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle attracted",
+          "scope": "詞典直接明列過去式及過去分詞，未依拼字規則推導。",
+          "location": "本次頁面 Word forms，L222"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W003270",
+      "word": "demand",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotMeaningZh": "要求；需求；需要；查詢",
+      "sourceSnapshotMeaningEn": "to ask for something firmly or urgently; the desire of buyers for goods or services; something that urgently needs attention",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "強烈要求或需要。",
+      "sourceSupportedForms": {
+        "base": "demand",
+        "past": [
+          "demanded"
+        ],
+        "pastParticiple": [
+          "demanded"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "demand",
+        "past": "demanded",
+        "pastParticiple": "demanded",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/demand"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/demand",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle demanded",
+          "scope": "詞典直接明列過去式及過去分詞，未依拼字規則推導。",
+          "location": "本次頁面 Word forms，L222"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W003306",
+      "word": "disorder",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotMeaningZh": "雜亂；混亂；擾亂；使失調",
+      "sourceSnapshotMeaningEn": "(n.) a state of untidiness or lack of order; a disturbance of public peace; an illness or abnormal functioning; (v.) to disturb the arrangement or normal functioning of something.",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "打亂排列或擾亂正常功能。",
+      "sourceSupportedForms": {
+        "base": "disorder",
+        "past": [
+          "disordered"
+        ],
+        "pastParticiple": [
+          "disordered"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "disorder",
+        "past": "disordered",
+        "pastParticiple": "disordered",
+        "sourceRef": "https://www.collinsdictionary.com/conjugation/english/disorder"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins English Verbs",
+          "url": "https://www.collinsdictionary.com/conjugation/english/disorder",
+          "retrieval": "direct_official_dictionary_conjugation",
+          "shortQuote": "Past Participle: disordered",
+          "scope": "官方動詞變化表在 Past Participle 標題下明列 disordered；冒號為摘錄排版。",
+          "location": "Past Participle, L221–223"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins English Verbs",
+          "url": "https://www.collinsdictionary.com/conjugation/english/disorder",
+          "retrieval": "direct_official_dictionary_conjugation",
+          "shortQuote": "I disordered",
+          "scope": "官方變化表 Past 欄明列 I disordered，不是由拼字規則補出。",
+          "location": "Past, L244–246"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins English Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/disorder",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "to upset the order of",
+          "scope": "主詞條直接支持打亂／擾亂動詞義；該頁 Word forms 只有名詞複數，故未將它冒充動詞三態來源。",
+          "location": "disorder in British English, sense 5, L305–313"
+        }
+      ],
+      "verificationMethod": "direct_official_dictionary_conjugation_explicit_past_and_past_participle_plus_dictionary_sense",
+      "homographAndVariantRestrictions": "只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W003352",
+      "word": "encounter",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotMeaningZh": "相會；相遇；遭遇；遇見",
+      "sourceSnapshotMeaningEn": "an unexpected or casual meeting with someone or something; to experience or meet something, especially a problem or danger",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "遭遇或偶然遇見。",
+      "sourceSupportedForms": {
+        "base": "encounter",
+        "past": [
+          "encountered"
+        ],
+        "pastParticiple": [
+          "encountered"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "encounter",
+        "past": "encountered",
+        "pastParticiple": "encountered",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/encounter"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/encounter",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle encountered",
+          "scope": "詞典直接明列過去式及過去分詞，未依拼字規則推導。",
+          "location": "本次頁面 Word forms，L222"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W003553",
+      "word": "intend",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "sourceSnapshotMeaningZh": "計劃；打算；意思是；想要",
+      "sourceSnapshotMeaningEn": "to have something in mind as a plan or purpose; to mean something",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "計畫、打算或意欲。",
+      "sourceSupportedForms": {
+        "base": "intend",
+        "past": [
+          "intended"
+        ],
+        "pastParticiple": [
+          "intended"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "intend",
+        "past": "intended",
+        "pastParticiple": "intended",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/intend"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/intend",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle intended",
+          "scope": "詞典直接明列過去式及過去分詞，未依拼字規則推導。",
+          "location": "本次頁面 Word forms，L222"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W003959",
+      "word": "tolerate",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "sourceSnapshotMeaningZh": "寬容；容許；有耐力",
+      "sourceSnapshotMeaningEn": "to accept or allow something that you do not like, without complaining",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "容忍、容許或忍受。",
+      "sourceSupportedForms": {
+        "base": "tolerate",
+        "past": [
+          "tolerated"
+        ],
+        "pastParticiple": [
+          "tolerated"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "tolerate",
+        "past": "tolerated",
+        "pastParticiple": "tolerated",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/tolerate"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/tolerate",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle tolerated",
+          "scope": "詞典直接明列過去式及過去分詞，未依拼字規則推導。",
+          "location": "本次頁面 Word forms，L222"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W004780",
+      "word": "sequence",
+      "units": [
+        "U07"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotMeaningZh": "序列；續發事件；順序；連續",
+      "sourceSnapshotMeaningEn": "a particular order in which related events, actions, or things follow one another",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "輸入快照沒有 verbForms key，不是 JSON null；復原時應刪除該屬性。",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "將事物排序；生物學用法亦包括定序。",
+      "sourceSupportedForms": {
+        "base": "sequence",
+        "past": [
+          "sequenced"
+        ],
+        "pastParticiple": [
+          "sequenced"
+        ]
+      },
+      "proposedVerbForms": {
+        "base": "sequence",
+        "past": "sequenced",
+        "pastParticiple": "sequenced",
+        "sourceRef": "https://www.oxfordlearnersdictionaries.com/definition/english/sequence_2"
+      },
+      "evidence": [
+        {
+          "publisher": "Oxford University Press",
+          "work": "Oxford Advanced Learner’s Dictionary",
+          "url": "https://www.oxfordlearnersdictionaries.com/definition/english/sequence_2",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past simple sequenced; past participle sequenced",
+          "scope": "Oxford Verb Forms 分別明列過去式與過去分詞；分號為摘錄排版。",
+          "location": "Verb Forms, L104–105"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins English Verbs",
+          "url": "https://www.collinsdictionary.com/conjugation/english/sequence",
+          "retrieval": "direct_official_dictionary_conjugation",
+          "shortQuote": "Past Participle: sequenced",
+          "scope": "Collins 官方變化表交叉證實分詞；冒號為摘錄排版。",
+          "location": "Past Participle, L195–197"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins English Verbs",
+          "url": "https://www.collinsdictionary.com/conjugation/english/sequence",
+          "retrieval": "direct_official_dictionary_conjugation",
+          "shortQuote": "I sequenced",
+          "scope": "Collins 官方 Past 欄交叉證實過去式。",
+          "location": "Past, L218–220"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins English Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/sequence",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "to arrange in a sequence",
+          "scope": "主詞條支持排序動詞義；未把名詞複數 sequences 當作動詞三態。",
+          "location": "sequence in British English, sense 11, L346–350"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle_cross_checked_official_conjugation",
+      "homographAndVariantRestrictions": "只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "variantAssessment": "已讀相關詞形欄未列適用義的其他形式；不聲稱排除所有歷史、方言或專業用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null,
+      "existingMeaningScopeCaution": "快照含動詞詞性，但 meaningEn 目前只寫名詞義。上述適用義由本次直接詞典證據界定；本報告只供 forms 逐筆審核，不更動原釋義、例句或名詞 cloze，也不代表整張詞卡內容已完成審核。"
+    }
+  ],
+  "status": "Source-qualified candidates only; not applied. Exact latest values, visible sense qualifications, guarded field additions, recovery tests and actual card reopening are required."
+}
