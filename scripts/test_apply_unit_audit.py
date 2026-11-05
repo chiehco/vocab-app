@@ -19,7 +19,7 @@ class AuditWriteBoundaryTests(unittest.TestCase):
         self.root = Path(self.temp.name)
         evidence_dir = self.root / 'docs/unit-audit-20261105'
         evidence_dir.mkdir(parents=True)
-        for name in ['VERIFIED-VERB-FORMS-SOURCES.json', 'VERIFIED-TRANSLATION-SOURCES.json']:
+        for name in ['VERIFIED-VERB-FORMS-SOURCES.json', 'VERIFIED-FOLLOWUP-VERB-FORMS-SOURCES.json', 'VERIFIED-TRANSLATION-SOURCES.json']:
             audit.write_json(evidence_dir / name, audit.read(audit.ROOT / 'docs/unit-audit-20261105' / name))
         self.data = self.root / "public/data/v1"
         self.data.mkdir(parents=True)
@@ -104,6 +104,40 @@ class AuditWriteBoundaryTests(unittest.TestCase):
             self.assertEqual({k:v for k,v in row.items() if k!='verbForms'},original)
             with self.assertRaises(AssertionError):audit.apply_to_row({**original,'verbForms':None},p)
             with self.assertRaises(AssertionError):audit.apply_to_row({**original,'word':'another'},p)
+
+    def test_each_followup_allows_only_exact_verified_field_and_rejects_existing_values(self):
+        facts = audit.read(self.root / 'docs/unit-audit-20261105/VERIFIED-FOLLOWUP-VERB-FORMS-SOURCES.json')['facts']
+        self.assertEqual({fact['wordId'] for fact in facts}, audit.FOLLOWUP_FORM_IDS)
+        self.assertFalse(audit.FORM_IDS & audit.FOLLOWUP_FORM_IDS)
+        for fact in facts:
+            p = {'dataset':'words','key':'wordId','id':fact['wordId'],
+                 'before':{'verbForms':{'$absent':True}},'after':{'verbForms':fact['verbForms']},
+                 'reason':'Verified missing field only.','evidence':fact['verbForms']['sourceRef']}
+            original = {'wordId':fact['wordId'],'word':fact['word'],'pos':fact['originalPos'],
+                        'status':'needs_check','meaningZh':'Preserve existing source value'}
+            with patch.object(audit,'ROOT',self.root):
+                audit.validate_patch_shape(p)
+                row = copy.deepcopy(original)
+                self.assertTrue(audit.apply_to_row(row,p))
+                self.assertFalse(audit.apply_to_row(row,p))
+                self.assertEqual({key:value for key,value in row.items() if key != 'verbForms'},original)
+                for existing in [None, {'base':fact['word'],'past':'user-new-value'}]:
+                    with self.assertRaises(AssertionError):audit.apply_to_row({**original,'verbForms':existing},p)
+                for field in ['base','past','pastParticiple','sourceRef','status']:
+                    changed = copy.deepcopy(p)
+                    changed['after']['verbForms'][field] = 'unverified'
+                    with self.assertRaises(AssertionError):audit.validate_patch_shape(changed)
+                changed = copy.deepcopy(p)
+                changed['before']['status'] = 'needs_check'
+                changed['after']['status'] = 'reviewed'
+                with self.assertRaises(AssertionError):audit.validate_patch_shape(changed)
+
+    def test_followup_pending_homographs_and_duplicate_identities_cannot_be_written(self):
+        p = self.form_patch()
+        p['id'] = 'W000139'  # can remains pending, not an allowlisted word.
+        self.assert_rejected_without_write({**self.manifest,'patches':[p]})
+        audit.write_json(self.data / 'examples.json',[self.row,self.row])
+        self.assert_rejected_without_write(self.manifest)
 
     def test_translation_requires_exact_english_guard_known_identity_and_known_chinese(self):
         for field,value in [('id','EXunknown'),('before',{'sentenceZh':'old'})]:
