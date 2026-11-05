@@ -46,6 +46,14 @@ const batches = {
     preserveVariantEvidence: true,
     preserveUnitContexts: true,
   },
+  'U13': {
+    sources: ['U10-U15-PUBLISHED-VERB-FORMS-VERIFICATION.json','U13-ADDITIONAL-VERB-FORMS-VERIFICATION.json'],
+    ids: 'W000715 W000393 W002042 W000829 W000401 W001376 W001188 W000767 W000910 W000790 W004016 W000143 W000693 W000301 W000084 W000097 W000627 W002229 W000951'.split(' '),
+    sourceSnapshot: {researchCommit:'e2d3f0fed929a17670af00ed1989fc9469426d8c',sourceBlobs:{"U10-U15-PUBLISHED-VERB-FORMS-VERIFICATION.json":"5215e48aadd050f5118e85727bc391ad7150738b","U13-ADDITIONAL-VERB-FORMS-VERIFICATION.json":"e6476c96583a03add5b1a8d2cf01e7c97e5e4ea4"}},
+    readVerifiedGitBlobs: true,
+    preserveVariantEvidence: true,
+    preserveUnitContexts: true,
+  },
 };
 const batch = process.argv[2];
 assert.ok(batches[batch], 'Select an explicitly reviewed batch');
@@ -99,6 +107,8 @@ const facts = config.ids.map(id => {
       ...(entry.displayQualificationRecommended?{displayQualificationRecommended:entry.displayQualificationRecommended}:{}),
       ...(entry.presentationPriority?{presentationPriority:entry.presentationPriority}:{}),
       ...(entry.senseAndVariantRecords?{senseAndVariantRecords:entry.senseAndVariantRecords}:{}),
+      ...(entry.excludedVariants?{excludedVariants:entry.excludedVariants}:{}),
+      ...(entry.senseAndConstructionEvidence?{senseAndConstructionEvidence:entry.senseAndConstructionEvidence}:{}),
       ...(entry.regionalAndConstructionRestrictions?{regionalAndConstructionRestrictions:entry.regionalAndConstructionRestrictions}:{}),
       currentSourceCheck:{method:'Direct official dictionary forms and applicable verb construction; conjugation and regional notes checked where needed',checkedAt:new Date().toISOString(),success:true}} : {}),
     ...(id === 'W004780' ? {currentSourceCheck:{verifiedUrl:verbForms.sourceRef,method:'Direct Collins Past and Past Participle table',unavailableRecheck:{url:'https://www.oxfordlearnersdictionaries.com/definition/english/sequence_2',status:403},note:'Original research evidence is retained; this pass does not claim a successful direct Oxford read.'}} : {}),
