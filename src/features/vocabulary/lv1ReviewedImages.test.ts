@@ -1,3 +1,4 @@
+import {beforeU23Pairs} from './u23Pairs.testSupport';
 import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
@@ -24,7 +25,10 @@ describe('reviewed LV1 image-only release', () => {
     expect(cards.filter(c => c.unit === 23)).toHaveLength(109);
     expect(cards.filter(c => c.unit === 24)).toHaveLength(52);
     expect(cards.filter(c => c.unit === 25)).toHaveLength(52);
-    for (const card of cards) {
+  });
+
+  it.each([...new Set(cards.map(c=>c.unit))])('preserves every final image caption and default in LV1 unit %s',(unit)=>{
+    for (const card of cards.filter(c=>c.unit===unit)) {
       const record = audit.find(a => a.id === card.id)!;
       expect(record).toBeDefined();
       expect(hash(readFileSync('public/' + card.illustration.path))).toBe(record.publishedImageSha256);
@@ -180,8 +184,8 @@ describe('reviewed LV1 image-only release', () => {
 it('changes only the two exact U22 pairs while preserving original assets captions and every other row',()=>{
  const proof=JSON.parse(readFileSync('docs/unit-audit-20261105/LV1-U22-exact-pair-review.json','utf8'));
  const ids=new Set(['LV1-U22-04','LV1-U22-46']);
- expect(hash(JSON.stringify(cards.filter(c=>!ids.has(c.id))))).toBe(proof.unchangedCardRowsSha256);
- expect(hash(JSON.stringify(audit.filter(c=>!ids.has(c.id))))).toBe(proof.unchangedApprovalRowsSha256);
+ expect(hash(JSON.stringify(beforeU23Pairs(cards,'cards').filter(c=>!ids.has(c.id))))).toBe(proof.unchangedCardRowsSha256);
+ expect(hash(JSON.stringify(beforeU23Pairs(audit,'approvals').filter(c=>!ids.has(c.id))))).toBe(proof.unchangedApprovalRowsSha256);
  for(const old of proof.before){
   const now=cards.find(c=>c.id===old.id)!;const record=audit.find(c=>c.id===old.id)!;
   expect(record.previousApproval).toEqual(old.approval);
@@ -204,4 +208,20 @@ it('changes only the two exact U22 pairs while preserving original assets captio
   if(word==='arrive')expect(getWordBeastAsset(id,word)).toContain('LV1-U07-86-');
   else expect(getWordBeastAsset(id,word)).toContain(path);
  }
+});
+
+it('repairs only the exact U23 trophy pair and two Chinese captions while retaining all other historical rows',()=>{
+ const proof=JSON.parse(readFileSync('docs/unit-audit-20261105/LV1-U23-exact-pair-review.json','utf8'));const ids=new Set(['LV1-U23-50','LV1-U23-84','LV1-U23-97']);
+ expect(hash(JSON.stringify(cards.filter(c=>!ids.has(c.id))))).toBe(proof.unchangedCardRowsSha256);expect(hash(JSON.stringify(audit.filter(c=>!ids.has(c.id))))).toBe(proof.unchangedApprovalRowsSha256);
+ expect(beforeU23Pairs(cards,'cards')).toHaveLength(726);expect(beforeU23Pairs(audit,'approvals')).toHaveLength(726);
+ for(const change of proof.changes){const now=cards.find(c=>c.id===change.id)!;expect(now).toEqual(change.after.card);expect(now.illustration.captionEn).toBe(change.before.card.illustration.captionEn);expect(hash(readFileSync('public/'+change.before.card.illustration.path))).toBe(change.before.approval.publishedImageSha256);expect(hash(change.before.card.illustration.captionEn+'\n'+change.before.card.illustration.captionZh)).toBe(change.before.approval.textSha256);}
+ const trophy=cards.find(c=>c.id==='LV1-U23-50')!;expect(trophy.illustration.path).toBe('wordbeast/lv1-reviewed/LV1-U23-50-c4476d14caae.webp');expect(hash(readFileSync('public/'+trophy.illustration.path))).toBe('a205d42a31e67d46ea93ad89149b84fc35562c3e0f1f2dd9f546df2a628cd94c');expect(trophy.illustration.captionEn).toBe('His team won the final and lifted the trophy.');
+ expect(getWordBeastAsset('W001356','final')).toContain('LV1-U10-44-dd0a6dc4ec60.webp');expect(approvedWordIllustration('final','W001356')).toMatchObject({captionEn:'Our basketball team made it to the final.',captionZh:'我們的籃球隊晉級了決賽。'});
+ expect(bootstrap.examples.filter(e=>e.word==='final').map(e=>e.sentenceEn)).toEqual(["Our school's basketball team made it to the final of the city competition.",'Many students stay up late in the library before their final exams.']);
+ expect(cards.find(c=>c.id==='LV1-U23-84')!.illustration.captionZh).toBe('他總是被這張桌子的角絆到。');expect(bootstrap.examples.find(e=>e.exampleId==='EXff6b330f')!.sentenceZh).toBe('我總是被這張桌子的角絆到。');
+ expect(cards.find(c=>c.id==='LV1-U23-97')!.illustration.captionZh).toBe('他打算在大學研讀電腦科學。');expect(bootstrap.examples.find(e=>e.exampleId==='EXf7d6aec6')!.sentenceZh).toBe('我哥哥打算在大學研讀電腦科學。');
+ const bad=structuredClone(cards);bad.find(c=>c.id==='LV1-U23-50')!.illustration.captionZh='unverified';expect(()=>beforeU23Pairs(bad,'cards')).toThrow();
+ const badApproval=structuredClone(audit);badApproval.find(a=>a.id==='LV1-U23-50')!.publishedImageSha256='unverified';expect(()=>beforeU23Pairs(badApproval,'approvals')).toThrow();
+ const other=structuredClone(cards);other.find(c=>!ids.has(c.id))!.illustration.captionEn='unrecorded';expect(hash(JSON.stringify(beforeU23Pairs(other,'cards').filter(c=>!['LV1-U22-04','LV1-U22-46'].includes(c.id))))).not.toBe(JSON.parse(readFileSync('docs/unit-audit-20261105/LV1-U22-exact-pair-review.json','utf8')).unchangedCardRowsSha256);
+ expect(()=>beforeU23Pairs([...cards,cards.find(c=>c.id==='LV1-U23-50')!],'cards')).toThrow();
 });

@@ -42,7 +42,11 @@ it('binds the explicitly reviewed general-card repairs to exact images and capti
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U15-'))).toHaveLength(42);
  expect(cards.filter(c=>c.reviewId==='LI-LV1U17-V027')).toHaveLength(1);
  expect(new Set(cards.map(c=>c.officialWordId)).size).toBe(332);
- for(const card of cards){
+});
+
+const reviewGroup=(id:string)=>id.startsWith('LI-')?id.split('-')[1]:id.split('-').slice(0,2).join('-');
+it.each([...new Set(cards.map(c=>reviewGroup(c.reviewId)))])('binds every explicitly reviewed general-card repair in %s',(group)=>{
+ for(const card of cards.filter(c=>reviewGroup(c.reviewId)===group)){
   const proof=[...evidence.cards,...u4Evidence.cards,...u5Evidence.cards,...u6Evidence.cards,...u7Evidence.cards,...u8Evidence.cards,...u9Evidence.cards,...u10Evidence.cards,...u11Evidence.cards,...u12Evidence.cards,...u13Evidence.cards,...u14Evidence.cards,...u15Evidence.cards,...u17Evidence.cards,...u18Evidence.cards,...u20Evidence.cards].find(c=>c.id===card.reviewId)!;
   expect(proof.pixelReview).toContain('actually viewed original');
   expect(proof.observation).toBeTruthy();

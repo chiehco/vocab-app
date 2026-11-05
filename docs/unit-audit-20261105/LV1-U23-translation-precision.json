@@ -1,0 +1,57 @@
+{
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "unit": "LV1-U23",
+  "patches": [
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXff6b330f",
+      "before": {
+        "word": "corner",
+        "sentenceEn": "I always trip over the corner of this table.",
+        "blankSentence": "I always trip over the _____ of this table.",
+        "answer": "corner",
+        "sentenceZh": "我總是被這張桌子的角撞到。"
+      },
+      "after": {
+        "sentenceZh": "我總是被這張桌子的角絆到。"
+      },
+      "reason": "Trip over describes catching a foot and stumbling, not merely being hit; 絆到 does not assert a completed fall.",
+      "evidence": "https://www.merriam-webster.com/dictionary/trip"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXf7d6aec6",
+      "before": {
+        "word": "study",
+        "sentenceEn": "My brother plans to study computer science in college.",
+        "blankSentence": "My brother plans to _____ computer science in college.",
+        "answer": "study",
+        "sentenceZh": "我哥哥打算在大學主修資訊工程。"
+      },
+      "after": {
+        "sentenceZh": "我哥哥打算在大學研讀電腦科學。"
+      },
+      "reason": "Study does not itself specify a declared major; preserve the stated computer-science subject without requiring an engineering specialization. This is translation precision, not a new English sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/study ; https://www.merriam-webster.com/dictionary/computer%20science"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXe50e7d1f",
+      "before": {
+        "word": "hotel",
+        "sentenceEn": "We checked into our hotel room and immediately went to the swimming pool.",
+        "blankSentence": "We checked into our _____ room and immediately went to the swimming pool.",
+        "answer": "hotel",
+        "sentenceZh": "我們一進飯店房間，就馬上去了游泳池。"
+      },
+      "after": {
+        "sentenceZh": "我們辦好飯店入住手續後，就立即去了游泳池。"
+      },
+      "reason": "Checking in means registering for the stay, not merely walking into the physical room.",
+      "evidence": "https://www.merriam-webster.com/dictionary/check%20in"
+    }
+  ]
+}

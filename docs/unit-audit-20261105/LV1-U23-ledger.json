@@ -1,0 +1,210 @@
+{
+  "unit": "LV1-U23",
+  "checkpointAt": "2026-11-05T21:50:52.873Z",
+  "priorCheckpoint": "cf8fc0f86ab01365bc71f65c0ba0a25b834c0f9e",
+  "priorCheckpointFullCi": {
+    "commit": "cf8fc0f86ab01365bc71f65c0ba0a25b834c0f9e",
+    "run": 42105997179,
+    "job": 127520852273,
+    "status": "completed",
+    "conclusion": "success",
+    "completedAt": "2026-11-05T20:53:55Z",
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42105997179/job/127520852273",
+    "files": 216,
+    "tests": 1715,
+    "pythonBatches": [
+      14,
+      7,
+      32,
+      10
+    ],
+    "allStepsSuccessful": true,
+    "lines": [
+      "2026-11-05T20:43:23.5172725Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +cf8fc0f86ab01365bc71f65c0ba0a25b834c0f9e:refs/remotes/origin/content/unit-audit-20261105",
+      "2026-11-05T20:43:33.6002339Z  * [new ref]         cf8fc0f86ab01365bc71f65c0ba0a25b834c0f9e -> origin/content/unit-audit-20261105",
+      "2026-11-05T20:43:34.3024490Z cf8fc0f86ab01365bc71f65c0ba0a25b834c0f9e",
+      "2026-11-05T20:44:09.4779875Z Ran 14 tests in 19.828s",
+      "2026-11-05T20:44:22.0871237Z Ran 7 tests in 12.458s",
+      "2026-11-05T20:44:37.4349160Z Ran 32 tests in 15.242s",
+      "2026-11-05T20:44:37.5499481Z Ran 10 tests in 0.051s",
+      "2026-11-05T20:53:18.4346591Z  Test Files  216 passed (216)",
+      "2026-11-05T20:53:18.4354329Z       Tests  1715 passed (1715)",
+      "2026-11-05T20:53:50.4094782Z ✓ built in 3.35s"
+    ]
+  },
+  "newCheckpointFullCi": {
+    "status": "pending_exact_head_after_commit"
+  },
+  "state": "precise_corrections_saved_actual_app_and_local_checks_passed",
+  "scope": {
+    "retainedPairs": 109,
+    "publishedPairs": 109,
+    "formalWords": 80,
+    "uniqueExamples": 124,
+    "noFormalId": 29,
+    "sourceClozeReconstructions": 124
+  },
+  "counts": {
+    "mainRows": 69,
+    "mainFields": 114,
+    "wordRows": 45,
+    "clozePos": 10,
+    "practiceSentencesReviewed": 4,
+    "individualSensesReviewed": 10,
+    "translations": 3,
+    "newVerbFormKeys": 23,
+    "totalPatchRows": 95,
+    "totalFields": 140,
+    "pairRepairs": 3,
+    "otherPairsUnchanged": 723
+  },
+  "manifests": [
+    "LV1-U23-patches.json",
+    "LV1-U23-translation-precision.json",
+    "LV1-U23-verified-forms-patches.json"
+  ],
+  "evidence": {
+    "sources": "LV1-U23-source-research.json",
+    "pixels": "LV1-U23-original-image-review.json",
+    "pairs": "LV1-U23-exact-pair-review.json",
+    "actualApp": "validation/U23-reopen-summary.json",
+    "exactInverse": "validation/U23-exact-inverse.json"
+  },
+  "localValidation": {
+    "state": "passed",
+    "recordedAt": "2026-11-05T21:50:52.469Z",
+    "regression": {
+      "files": 11,
+      "tests": 138,
+      "exitCode": 0,
+      "timeoutMs": 5000,
+      "maxWorkers": 1,
+      "log": "output/unit-audit-20261105/U23-final-regression.txt"
+    },
+    "python": {
+      "tests": 34,
+      "exitCode": 0,
+      "log": "output/unit-audit-20261105/U23-python-first.txt",
+      "scope": "Exact U23 additions, immutable source, true absence, existing values and earlier full-row guards; product words/examples unchanged since this success."
+    },
+    "lint": {
+      "exitCode": 0,
+      "log": "output/unit-audit-20261105/U23-lint-final.txt",
+      "remainingWarning": "Pre-existing unused curriculum variable in save_u16_audit_checkpoint.mjs; no new U23 warnings."
+    },
+    "typecheck": {
+      "exitCode": 0
+    },
+    "build": {
+      "exitCode": 0,
+      "log": "output/unit-audit-20261105/U23-build.txt",
+      "viteSeconds": 17.79
+    },
+    "publicationScan": {
+      "exitCode": 0,
+      "evidence": "validation/U23-publication-check.json",
+      "findings": 0
+    },
+    "history": {
+      "imageTimeouts": "validation/U23-reopen-summary.json",
+      "newWriterWarning": "Duplicate unit property in summary writer corrected to unitId; final lint rerun required.",
+      "writerDimensionAssertion": "Only inherited general popularity is768×768 before and after. Exact same source and dimensions asserted; all U23 unit images and the replacement remain1254×1254."
+    },
+    "checksAreFor": "Current uncommitted U23 payload; a new pushed head requires its own full CI."
+  },
+  "preserved": {
+    "headwordIdsPosWholeWordStatuses": true,
+    "allEnglishClozeAnswers": true,
+    "originalImageAndApprovalHashes": true,
+    "allExistingHints": true,
+    "emptyHints": 101,
+    "existingNonemptyHints": 23,
+    "generalFinalU10Pair": true,
+    "pickChooseSelectPriority": true,
+    "oldPayloadAndImageBaselines": true,
+    "normalInstallProgressTables": 14
+  },
+  "pending": [
+    {
+      "word": "butterfly",
+      "fields": "蝶式棉塊／翼形皮癬／紙蝶",
+      "reason": "Bandage/shape-related uses exist, but exact inherited Chinese terms are not established by the opened definitions. Preserve; do not mark whole word reviewed."
+    },
+    {
+      "word": "reporter",
+      "fields": "指示器",
+      "reason": "Precise technical source scope not established; preserve inherited term without claiming new approval."
+    },
+    {
+      "word": "pickup",
+      "fields": "刺激／獵物的收集／warrant",
+      "reason": "Current common truck/collection meanings are supported. Precise inherited rare gloss partition remains pending; original text retained."
+    },
+    {
+      "word": "miner",
+      "fields": "坑道工兵",
+      "reason": "Human worker and continuous-machine meanings directly supported; exact military gloss still needs a reliable scoped source, retained."
+    },
+    {
+      "word": "raw",
+      "fields": "半成品",
+      "reason": "Unfinished-state sense is supported, but the precise nominal Chinese partition remains unchanged rather than independently approved."
+    },
+    {
+      "word": "lovely",
+      "fields": "有趣的",
+      "reason": "Pleasant/delightful may support this rendering in context; do not delete it or certify a new exact equivalence."
+    },
+    {
+      "word": "hide",
+      "fields": "verbForms",
+      "reason": "Different concealment/beating principal parts remain a sense-specific presentation limitation. No new field added."
+    },
+    {
+      "word": "cousin / love",
+      "fields": "relative age/branch/reciprocity in existing translations",
+      "reason": "Original context is not available to settle finer personal relations; retain existing wording."
+    },
+    {
+      "word": "report",
+      "fields": "by next Monday translation precision",
+      "reason": "Optional deadline-boundary clarification is not included in this patch; no new major-error claim."
+    }
+  ],
+  "visualLimits": [
+    {
+      "id": "LV1-U23-06",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "observation": "Large pink center within browned steak exterior and a matching thought bubble. Meat/degree theme fits; the exact medium-well temperature or degree cannot be established from watercolor color alone.",
+      "action": "Retain exact caption; precise doneness remains unverified."
+    },
+    {
+      "id": "LV1-U23-84",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "observation": "Raised foot contacts a vertical table leg/edge and character stumbles. Exact tabletop corner geometry unclear.",
+      "action": "Dictionary-supported 撞到→絆到 Chinese correction; no English object substitution or new image."
+    },
+    {
+      "id": "LV1-U23-89",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "observation": "Fruit/vegetable table with thought bubble containing four crystal/rock forms. Nutrition context is present, but depicted geological pieces are conceptual symbols and do not verify dietary chemical form.",
+      "action": "Keep caption and precise visual limitation; no inference that rocks are edible."
+    }
+  ],
+  "boundaries": "No original textbook-page images newly inspected; no formal IDs for29 standalone items; exact source captions and formal practice sentences remain separate. No physical-phone, installed-app or production/offline-deployment claim.",
+  "next": {
+    "unit": "LV1-U24",
+    "firstCard": "LV1-U24-01",
+    "state": "not_started"
+  },
+  "deployment": "No merge, deployment, PR or publication-mode change."
+}
