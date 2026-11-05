@@ -1,0 +1,927 @@
+{
+  "unit": "LV1-U13",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "scope": "All 78 retained original pairs, 60 formal words and 99 formal examples. Original English/Chinese sentences, cloze, answers, IDs, headword POS and whole-word states unchanged; one existing nonempty hint narrowed. Earlier source-followup batches are separate.",
+  "retainedIssues": [
+    {
+      "type": "published_image_caption_mismatch",
+      "id": "LV1-U13-65",
+      "reason": "Actually viewed the 1254 original and actual unit screenshot. The chart is filled with blue water and the arrow measures water-surface-to-bottom; unchanged source caption says valley depth. Do not change valley to lake. A valley chart revision is still needed."
+    },
+    {
+      "type": "separate_verified_artwork_available_not_integrated",
+      "id": "LV1-U13-53",
+      "wordId": "W000301",
+      "commit": "36a0e1074c1d8771ccd3ed1d171dd0064894ce84",
+      "reason": "The separate feed/file/flower change has an exact EX0577146b feed image and its own validated integration. Inspected exact changes; do not generate duplicate art or overwrite its example-level mechanism. This checkout still lacks that integration."
+    },
+    {
+      "type": "official_source_followup_not_integrated",
+      "senseId": "W003035-1",
+      "reason": "Agreeable 111 GSAT Q6 C has separate direct official-source verification and is being handled in an earlier-source followup batch. Existing draft state is preserved here, not treated as source-unverified fact or whole-word pass."
+    },
+    {
+      "type": "rare_summary_mapping_pending",
+      "words": [
+        "pony",
+        "horse"
+      ],
+      "reason": "Pony has real small-horse, racehorse and literal-translation senses; Collins also records a slang verb using a crib. Exact inherited small/daily-summary adjective translations remain unresolved. Horse cavalry/support/frame meanings and riding verb need their precise source boundary. Preserve original uncertain text and formal POS."
+    },
+    {
+      "type": "structured_verb_forms_followup",
+      "reason": "Principal-part source candidates are being handled in separate precise batches. No forms are added or counted complete by this lexical/image checkpoint."
+    }
+  ],
+  "patches": [
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXe2ffb3e9",
+      "before": {
+        "sensePos": "v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Read the complete unchanged sentence and actual cloze target: a ride, a hit and this form are nouns; very light is an adjective; store/shop/totaled/slow/care/parked/waved are the actual verbs. Formal headword POS is unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/ride ; full sentence, blank and answer token."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXba18ddcb",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "adj."
+      },
+      "reason": "Read the complete unchanged sentence and actual cloze target: a ride, a hit and this form are nouns; very light is an adjective; store/shop/totaled/slow/care/parked/waved are the actual verbs. Formal headword POS is unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/light ; full sentence, blank and answer token."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXa22038e9",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Read the complete unchanged sentence and actual cloze target: a ride, a hit and this form are nouns; very light is an adjective; store/shop/totaled/slow/care/parked/waved are the actual verbs. Formal headword POS is unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/store ; full sentence, blank and answer token."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXd0a6c5b2",
+      "before": {
+        "sensePos": "v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Read the complete unchanged sentence and actual cloze target: a ride, a hit and this form are nouns; very light is an adjective; store/shop/totaled/slow/care/parked/waved are the actual verbs. Formal headword POS is unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/hit ; full sentence, blank and answer token."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1bc16079",
+      "before": {
+        "sensePos": "v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Read the complete unchanged sentence and actual cloze target: a ride, a hit and this form are nouns; very light is an adjective; store/shop/totaled/slow/care/parked/waved are the actual verbs. Formal headword POS is unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/form ; full sentence, blank and answer token."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX681286e7",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Read the complete unchanged sentence and actual cloze target: a ride, a hit and this form are nouns; very light is an adjective; store/shop/totaled/slow/care/parked/waved are the actual verbs. Formal headword POS is unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/shop ; full sentence, blank and answer token."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX28f92236",
+      "before": {
+        "sensePos": "adj."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Read the complete unchanged sentence and actual cloze target: a ride, a hit and this form are nouns; very light is an adjective; store/shop/totaled/slow/care/parked/waved are the actual verbs. Formal headword POS is unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/total ; full sentence, blank and answer token."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX762307f2",
+      "before": {
+        "sensePos": "adj."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Read the complete unchanged sentence and actual cloze target: a ride, a hit and this form are nouns; very light is an adjective; store/shop/totaled/slow/care/parked/waved are the actual verbs. Formal headword POS is unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/slow ; full sentence, blank and answer token."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXf272bccf",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Read the complete unchanged sentence and actual cloze target: a ride, a hit and this form are nouns; very light is an adjective; store/shop/totaled/slow/care/parked/waved are the actual verbs. Formal headword POS is unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/care ; full sentence, blank and answer token."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXd4eb501c",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Read the complete unchanged sentence and actual cloze target: a ride, a hit and this form are nouns; very light is an adjective; store/shop/totaled/slow/care/parked/waved are the actual verbs. Formal headword POS is unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/park ; full sentence, blank and answer token."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX46bc173e",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Read the complete unchanged sentence and actual cloze target: a ride, a hit and this form are nouns; very light is an adjective; store/shop/totaled/slow/care/parked/waved are the actual verbs. Formal headword POS is unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/wave ; full sentence, blank and answer token."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX292f4a4b",
+      "before": {
+        "meaningHint": "有用的；有益的；有效的"
+      },
+      "after": {
+        "meaningHint": "有用的"
+      },
+      "reason": "Narrow an existing broad hint to useful for driving. The original listed senses were not all false; empty hints stay empty.",
+      "evidence": "https://www.merriam-webster.com/dictionary/useful ; unchanged online-map sentence."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXdcb3cdb7",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Actually read the complete exercise/concentration English, Chinese, cloze and answer; the practice status is separate from image and whole-word review.",
+      "evidence": "https://www.merriam-webster.com/dictionary/help ; unchanged full practice sentence."
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000393-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：幫忙；幫助者；補救辦法；有益的東西"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：本義與可靠詞典、既有完整例句分別核對。light 的輕裝副詞、quick 的口語副詞及 deep 副詞有明確詞典依據，保留，不因罕見刪除；未出現在本卡例句的義項只核其詞典義。圖句、練習、考題來源與整詞狀態分開。"
+      },
+      "reason": "Verify only this existing lexical sense. Direct dictionary entries distinguish noun/verb/adjective/adverb senses; light/quick adverbs are genuine and are retained.",
+      "evidence": "https://www.merriam-webster.com/dictionary/help"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000393-2",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：幫忙；幫助者；補救辦法；有益的東西"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：本義與可靠詞典、既有完整例句分別核對。light 的輕裝副詞、quick 的口語副詞及 deep 副詞有明確詞典依據，保留，不因罕見刪除；未出現在本卡例句的義項只核其詞典義。圖句、練習、考題來源與整詞狀態分開。"
+      },
+      "reason": "Verify only this existing lexical sense. Direct dictionary entries distinguish noun/verb/adjective/adverb senses; light/quick adverbs are genuine and are retained.",
+      "evidence": "https://www.merriam-webster.com/dictionary/help"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000492-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：光；光亮；燈；日光"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：本義與可靠詞典、既有完整例句分別核對。light 的輕裝副詞、quick 的口語副詞及 deep 副詞有明確詞典依據，保留，不因罕見刪除；未出現在本卡例句的義項只核其詞典義。圖句、練習、考題來源與整詞狀態分開。"
+      },
+      "reason": "Verify only this existing lexical sense. Direct dictionary entries distinguish noun/verb/adjective/adverb senses; light/quick adverbs are genuine and are retained.",
+      "evidence": "https://www.merriam-webster.com/dictionary/light"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000492-2",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：光；光亮；燈；日光"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：本義與可靠詞典、既有完整例句分別核對。light 的輕裝副詞、quick 的口語副詞及 deep 副詞有明確詞典依據，保留，不因罕見刪除；未出現在本卡例句的義項只核其詞典義。圖句、練習、考題來源與整詞狀態分開。"
+      },
+      "reason": "Verify only this existing lexical sense. Direct dictionary entries distinguish noun/verb/adjective/adverb senses; light/quick adverbs are genuine and are retained.",
+      "evidence": "https://www.merriam-webster.com/dictionary/light"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000492-3",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：光；光亮；燈；日光"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：本義與可靠詞典、既有完整例句分別核對。light 的輕裝副詞、quick 的口語副詞及 deep 副詞有明確詞典依據，保留，不因罕見刪除；未出現在本卡例句的義項只核其詞典義。圖句、練習、考題來源與整詞狀態分開。"
+      },
+      "reason": "Verify only this existing lexical sense. Direct dictionary entries distinguish noun/verb/adjective/adverb senses; light/quick adverbs are genuine and are retained.",
+      "evidence": "https://www.merriam-webster.com/dictionary/light"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000492-4",
+      "before": {
+        "status": "needs_check",
+        "note": "罕用，建議刪列｜待拆分；主表字義：光；光亮；燈；日光"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：本義與可靠詞典、既有完整例句分別核對。light 的輕裝副詞、quick 的口語副詞及 deep 副詞有明確詞典依據，保留，不因罕見刪除；未出現在本卡例句的義項只核其詞典義。圖句、練習、考題來源與整詞狀態分開。"
+      },
+      "reason": "Verify only this existing lexical sense. Direct dictionary entries distinguish noun/verb/adjective/adverb senses; light/quick adverbs are genuine and are retained.",
+      "evidence": "https://www.merriam-webster.com/dictionary/light"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001376-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：形狀；形體；類型；方式"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：本義與可靠詞典、既有完整例句分別核對。light 的輕裝副詞、quick 的口語副詞及 deep 副詞有明確詞典依據，保留，不因罕見刪除；未出現在本卡例句的義項只核其詞典義。圖句、練習、考題來源與整詞狀態分開。"
+      },
+      "reason": "Verify only this existing lexical sense. Direct dictionary entries distinguish noun/verb/adjective/adverb senses; light/quick adverbs are genuine and are retained.",
+      "evidence": "https://www.merriam-webster.com/dictionary/form"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001376-2",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：形狀；形體；類型；方式"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：本義與可靠詞典、既有完整例句分別核對。light 的輕裝副詞、quick 的口語副詞及 deep 副詞有明確詞典依據，保留，不因罕見刪除；未出現在本卡例句的義項只核其詞典義。圖句、練習、考題來源與整詞狀態分開。"
+      },
+      "reason": "Verify only this existing lexical sense. Direct dictionary entries distinguish noun/verb/adjective/adverb senses; light/quick adverbs are genuine and are retained.",
+      "evidence": "https://www.merriam-webster.com/dictionary/form"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000689-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：快的；迅速的；敏捷的；靈敏的"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：本義與可靠詞典、既有完整例句分別核對。light 的輕裝副詞、quick 的口語副詞及 deep 副詞有明確詞典依據，保留，不因罕見刪除；未出現在本卡例句的義項只核其詞典義。圖句、練習、考題來源與整詞狀態分開。"
+      },
+      "reason": "Verify only this existing lexical sense. Direct dictionary entries distinguish noun/verb/adjective/adverb senses; light/quick adverbs are genuine and are retained.",
+      "evidence": "https://www.merriam-webster.com/dictionary/quick"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000689-2",
+      "before": {
+        "status": "needs_check",
+        "note": "罕用，建議刪列｜待拆分；主表字義：快的；迅速的；敏捷的；靈敏的"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：本義與可靠詞典、既有完整例句分別核對。light 的輕裝副詞、quick 的口語副詞及 deep 副詞有明確詞典依據，保留，不因罕見刪除；未出現在本卡例句的義項只核其詞典義。圖句、練習、考題來源與整詞狀態分開。"
+      },
+      "reason": "Verify only this existing lexical sense. Direct dictionary entries distinguish noun/verb/adjective/adverb senses; light/quick adverbs are genuine and are retained.",
+      "evidence": "https://www.merriam-webster.com/dictionary/quick"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000220-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：深的；深入地；深淵；深處"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：本義與可靠詞典、既有完整例句分別核對。light 的輕裝副詞、quick 的口語副詞及 deep 副詞有明確詞典依據，保留，不因罕見刪除；未出現在本卡例句的義項只核其詞典義。圖句、練習、考題來源與整詞狀態分開。"
+      },
+      "reason": "Verify only this existing lexical sense. Direct dictionary entries distinguish noun/verb/adjective/adverb senses; light/quick adverbs are genuine and are retained.",
+      "evidence": "https://www.merriam-webster.com/dictionary/deep"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000220-2",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：深的；深入地；深淵；深處"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：本義與可靠詞典、既有完整例句分別核對。light 的輕裝副詞、quick 的口語副詞及 deep 副詞有明確詞典依據，保留，不因罕見刪除；未出現在本卡例句的義項只核其詞典義。圖句、練習、考題來源與整詞狀態分開。"
+      },
+      "reason": "Verify only this existing lexical sense. Direct dictionary entries distinguish noun/verb/adjective/adverb senses; light/quick adverbs are genuine and are retained.",
+      "evidence": "https://www.merriam-webster.com/dictionary/deep"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000390",
+      "before": {
+        "usagePatternZh": "大雨/交通繁忙；一個沉重的名詞（包/盒）"
+      },
+      "after": {
+        "usagePatternZh": "大雨／交通繁忙；沉重的包／箱子"
+      },
+      "reason": "Replace a literal grammatical-placeholder translation with the actual bag/box construction, preserving both English segments.",
+      "evidence": "https://www.merriam-webster.com/dictionary/heavy"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000621",
+      "before": {
+        "usagePatternZh": "在第名詞頁；翻頁；網頁"
+      },
+      "after": {
+        "usagePatternZh": "在第 N 頁；翻頁；網頁"
+      },
+      "reason": "N in on page N is a page number, not the word noun; preserve the original English pattern.",
+      "evidence": "https://www.merriam-webster.com/dictionary/page"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000393",
+      "before": {
+        "usagePatternZh": "幫助 + 受詞 + 原形動詞；幫助處理 + 名詞；尋求幫助"
+      },
+      "after": {
+        "usagePatternZh": "幫某人做……；幫忙處理……；尋求幫助"
+      },
+      "reason": "Explain the existing three constructions in meaningful Chinese rather than literal grammatical tokens.",
+      "evidence": "https://www.merriam-webster.com/dictionary/help"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000492",
+      "before": {
+        "meaningEn": "the natural or artificial brightness that makes things visible; not heavy; to make something start burning",
+        "meaningZh": "光；光亮；燈；日光",
+        "usagePatternZh": "開／關燈；根據名詞；點燃蠟燭"
+      },
+      "after": {
+        "meaningEn": "(n.) brightness, daylight, or a lamp. (adj.) bright or pale; not heavy. (v.) to ignite or illuminate. (adv.) lightly or with little baggage, as in travel light.",
+        "meaningZh": "（名詞）光；光亮；燈；日光；（形容詞）輕的；明亮的；淺色的；（動詞）點燃；照亮；（副詞）輕裝地",
+        "usagePatternZh": "開／關燈；根據……／從……角度看；點燃蠟燭"
+      },
+      "reason": "Restore the actual light-bag adjective and existing genuine verb/adverb senses omitted from the Chinese noun-only summary. MW explicitly labels pack/travel light as adverb; no deletion for rarity.",
+      "evidence": "https://www.merriam-webster.com/dictionary/light"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002042",
+      "before": {
+        "meaningEn": "(sports) the act of enabling another player to make a good play; act as an assistant in a subordinate or supportive function",
+        "usagePattern": "assist + N; assist to V",
+        "usagePatternZh": "協助……；協助去做某事"
+      },
+      "after": {
+        "meaningEn": "(v.) to give help or support. (Separate noun) an act of help, including a play that helps a teammate score in a sport.",
+        "usagePattern": "assist sb with N; assist in V-ing",
+        "usagePatternZh": "協助某人處理……；協助做……"
+      },
+      "reason": "Lead the formal verb with support/aid rather than a sports noun definition; retain the genuine separate sports noun. Use object-with-task and in-doing constructions.",
+      "evidence": "https://www.merriam-webster.com/dictionary/assist ; https://www.oxfordlearnersdictionaries.com/definition/english/assist"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000759",
+      "before": {
+        "meaningZh": "形狀；形態；外形；形式"
+      },
+      "after": {
+        "meaningZh": "形狀；形態；外形；形式；（身體或事物的）狀況；體態"
+      },
+      "reason": "Include the directly read in-shape health/condition noun used by the jogging sentence; preserve shape and outline meanings.",
+      "evidence": "https://www.merriam-webster.com/dictionary/shape"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000829",
+      "before": {
+        "meaningZh": "商店；貯藏；倉庫；備用品",
+        "usagePatternZh": "儲存……的物品；存放以備將來使用"
+      },
+      "after": {
+        "meaningZh": "（名詞）商店；貯藏；倉庫；備用品；（動詞）儲存；存放",
+        "usagePatternZh": "一批／儲備的……；存放以備將來使用"
+      },
+      "reason": "Separate the existing food-storage verb from shop nouns; a store of something is a supply, not a literal item for storing.",
+      "evidence": "https://www.merriam-webster.com/dictionary/store"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000401",
+      "before": {
+        "meaningZh": "打擊；打；衝撞；諷刺",
+        "usagePatternZh": "打某人/某事物；大受歡迎；被 + 名詞打到"
+      },
+      "after": {
+        "meaningZh": "（動詞）打；打擊；衝撞；（名詞）打擊；諷刺；大受歡迎的人或作品",
+        "usagePatternZh": "打／撞某人或某物；大受歡迎的人或作品；被……擊中／撞到"
+      },
+      "reason": "The huge-hit song is a noun success, absent from the old Chinese summary; retain the genuine critical-remark noun separately.",
+      "evidence": "https://www.merriam-webster.com/dictionary/hit"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002384",
+      "before": {
+        "meaningEn": "United States blues musician who transcribed and published traditional blues music (1873-1958); easy to reach",
+        "usagePattern": "be handy; handy + N",
+        "usagePatternZh": "便利的；便利的某事物"
+      },
+      "after": {
+        "meaningEn": "(adj.) convenient to use or easy to reach; skillful with the hands. (Separate capitalized biographical name, Handy) W. C. Handy, an American blues musician (1873–1958).",
+        "usagePattern": "come in handy; handy with tools; a handy tool",
+        "usagePatternZh": "派上用場；善於使用工具；方便好用的工具"
+      },
+      "reason": "The source pocket tool needs the missing convenient-for-use adjective. The musician was a real capitalized biographical entry, now explicitly separated rather than deleted as a false word sense.",
+      "evidence": "https://www.merriam-webster.com/dictionary/handy"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001376",
+      "before": {
+        "meaningZh": "形狀；形體；類型；方式"
+      },
+      "after": {
+        "meaningZh": "（名詞）形狀；形體；類型；方式；表格；（動詞）形成；組成"
+      },
+      "reason": "Include the actual fill-in form noun and formed-a-study-group verb instead of a shape/type-only summary.",
+      "evidence": "https://www.merriam-webster.com/dictionary/form"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000767",
+      "before": {
+        "usagePatternZh": "去購物；為某名詞購物；咖啡館／禮品店"
+      },
+      "after": {
+        "usagePatternZh": "去購物；挑選／購買……；咖啡館／禮品店"
+      },
+      "reason": "Shop for books is shopping for a specific item, not the literal noun token.",
+      "evidence": "https://www.merriam-webster.com/dictionary/shop"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000910",
+      "before": {
+        "meaningEn": "(adj.) complete; being the whole amount of something; (n.) the whole amount when everything is added together; (v.) to add up to a particular amount",
+        "meaningZh": "全體的；總的；全然的；計算...的總和",
+        "usagePatternZh": "共計名詞；總共；總費用"
+      },
+      "after": {
+        "meaningEn": "(adj.) whole or complete. (n.) the whole amount or sum. (v.) to calculate a sum, or to amount to a particular sum.",
+        "meaningZh": "（形容詞）全體的；總的；全然的；（名詞）總數；總額；（動詞）計算總和；總計為",
+        "usagePatternZh": "共計……；總共；總費用"
+      },
+      "reason": "Distinguish totaling the coins (calculate) from expenses totaled an amount (amount to); add the existing noun total without changing headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/total"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000790",
+      "before": {
+        "meaningEn": "(adj.) moving or happening without much speed; (v.) to reduce speed, or to make someone or something do this",
+        "meaningZh": "慢的；緩慢的；遲緩的；遲鈍的",
+        "usagePatternZh": "放慢；一個緩慢的名詞（學習者/過程）"
+      },
+      "after": {
+        "meaningEn": "(adj.) moving or happening without much speed. (v.) to reduce speed or become slower. (adv.) slowly, commonly after verbs of movement or action.",
+        "meaningZh": "（形容詞）慢的；緩慢的；遲緩的；遲鈍的；（動詞）放慢；（副詞）慢慢地",
+        "usagePatternZh": "放慢速度；學得慢的學習者／緩慢的過程"
+      },
+      "reason": "Include actual slow-down verb and genuine slow adverb; MW usage note supports retaining it rather than treating it as an error.",
+      "evidence": "https://www.merriam-webster.com/dictionary/slow"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003717",
+      "before": {
+        "meaningZh": "部分的；偏袒的；偏愛的；分音",
+        "usagePattern": "be partial; partial + N",
+        "usagePatternZh": "部分的；部分的N"
+      },
+      "after": {
+        "meaningZh": "（形容詞）部分的；偏袒的；偏愛的；（另有音樂名詞義）分音",
+        "usagePattern": "a partial repair/solution; be partial to N",
+        "usagePatternZh": "部分修繕／部分解法；偏愛……"
+      },
+      "reason": "Separate the genuine musical noun from the formal adjective summary and show the attested partial-to liking construction.",
+      "evidence": "https://www.merriam-webster.com/dictionary/partial"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000298",
+      "before": {
+        "usagePatternZh": "跑/走快；速食；緊抓名詞"
+      },
+      "after": {
+        "usagePatternZh": "跑／走得快；速食；緊握／堅持……"
+      },
+      "reason": "Hold fast to something expresses firm attachment or adherence, not a literal noun placeholder.",
+      "evidence": "https://www.merriam-webster.com/dictionary/fast"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000399",
+      "before": {
+        "meaningEn": "a local and well-defined elevation of the land; United States railroad tycoon (1838-1916)",
+        "meaningZh": "小山；丘陵；小土堆；作成土堆"
+      },
+      "after": {
+        "meaningEn": "(n.) a raised area of land lower than a mountain, or a heap of earth. (Separate capitalized biographical name, Hill) James J. Hill (1838–1916), a Canadian-born American financier.",
+        "meaningZh": "（名詞）小山；丘陵；小土堆；（另有動詞義）作成土堆"
+      },
+      "reason": "The inherited financier was a real proper-name entry, now clearly separated from the common hill noun. MW directly verifies identity and dates; keep the genuine separate heaping verb without expanding formal POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/hill"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000556",
+      "before": {
+        "usagePatternZh": "爬山；名詞的一座山"
+      },
+      "after": {
+        "usagePatternZh": "爬山；大量／一大堆……"
+      },
+      "reason": "A mountain of homework is figurative a large amount, not a literal mountain made of a noun.",
+      "evidence": "https://www.merriam-webster.com/dictionary/mountain"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000143",
+      "before": {
+        "usagePatternZh": "照顧某事物；關心某事物；照料某事物"
+      },
+      "after": {
+        "usagePatternZh": "照顧……；在意／關心……；照料……"
+      },
+      "reason": "Care about what friends think is concern/interest, not physical nursing only; retain all three original English constructions.",
+      "evidence": "https://www.merriam-webster.com/dictionary/care"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000689",
+      "before": {
+        "meaningEn": "moving or happening fast; done in a short amount of time",
+        "meaningZh": "快的；迅速的；敏捷的；靈敏的",
+        "usagePatternZh": "快速去原形動詞；一個快速的名詞；快"
+      },
+      "after": {
+        "meaningEn": "(adj.) fast in action or occurrence; taking little time. (adv., often informal) quickly.",
+        "meaningZh": "（形容詞）快的；迅速的；敏捷的；靈敏的；（副詞，常見於口語）快地",
+        "usagePatternZh": "很快做……；迅速的……；快一點"
+      },
+      "reason": "MW explicitly has quick as an adverb, including get rich quick. Keep this sense and its informal qualification; existing two adjective examples stay unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/quick"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000625",
+      "before": {
+        "meaningEn": "a material made in thin sheets, used for writing, printing, or wrapping; a piece of academic writing, especially one for a class or a journal",
+        "meaningZh": "紙；文件；文章；報紙"
+      },
+      "after": {
+        "meaningEn": "(n.) thin material for writing, printing or wrapping; a written document or academic composition. (v.) to cover or line a surface with paper, especially wallpaper.",
+        "meaningZh": "（名詞）紙；文件；文章；報紙；（動詞）用紙覆蓋；貼壁紙"
+      },
+      "reason": "Restore a verified verb meaning already present in formal POS, separate from paper/research-paper nouns.",
+      "evidence": "https://www.merriam-webster.com/dictionary/paper"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000693",
+      "before": {
+        "meaningEn": "a competition to see who can run, drive, or move fastest; a group of people who share the same ancestry and physical features",
+        "meaningZh": "種族；人種；賽跑；比賽",
+        "usagePatternZh": "贏/輸比賽；與名詞比賽；各種族的人"
+      },
+      "after": {
+        "meaningEn": "(n.) a speed competition; a group of people classified by shared ancestry or physical characteristics. (v.) to compete in speed or move very quickly.",
+        "meaningZh": "（名詞）種族；人種；賽跑；比賽；（動詞）競速；快速移動",
+        "usagePatternZh": "贏得／輸掉比賽；與……競速；各種族的人"
+      },
+      "reason": "Keep the actual race/religion noun and running-race noun distinct; include the existing verb and meaningful against-object construction.",
+      "evidence": "https://www.merriam-webster.com/dictionary/race"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000631",
+      "before": {
+        "meaningEn": "the time that has elapsed; a earlier period in someone's life (especially one that they have reason to keep secret)",
+        "meaningZh": "過去；昔時；往事；早年經歷"
+      },
+      "after": {
+        "meaningEn": "(adj.) belonging to an earlier time. (n.) elapsed time, or an earlier part of a person's life, sometimes kept secret. (prep.) beyond a place or later than a time. (adv.) so as to go by and beyond.",
+        "meaningZh": "（形容詞）過去的；（名詞）過去；昔時；往事；早年經歷；（介系詞）經過；超過；（副詞）經過"
+      },
+      "reason": "The walked-past source needs a preposition, absent from the inherited noun-only definition. Keep all existing four formal categories and private-history noun; correct a earlier to an earlier without changing any example.",
+      "evidence": "https://www.merriam-webster.com/dictionary/past"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004696",
+      "before": {
+        "usagePattern": "a/the racism; racism of N",
+        "usagePatternZh": "一種／該種族主義；……的種族主義"
+      },
+      "after": {
+        "usagePattern": "racism against N; fight racism",
+        "usagePatternZh": "針對……的種族歧視；反對／對抗種族主義"
+      },
+      "reason": "Replace a generic a-racism placeholder with meaningful mass-noun constructions; the full unchanged school source is read.",
+      "evidence": "https://www.merriam-webster.com/dictionary/racism"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000386",
+      "before": {
+        "usagePatternZh": "健康的某名詞（飲食/生活習慣）；保持健康"
+      },
+      "after": {
+        "usagePatternZh": "健康的飲食／生活方式；保持健康"
+      },
+      "reason": "Replace a literal noun placeholder while preserving the two aligned English segments.",
+      "evidence": "https://www.merriam-webster.com/dictionary/healthy"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000456",
+      "before": {
+        "meaningZh": "國王；君主；使...成爲君主；君臨",
+        "usagePatternZh": "名詞之王；國王與王后；成為國王"
+      },
+      "after": {
+        "meaningZh": "（名詞）國王；君主；王者；（另有動詞義）使成為君主；君臨",
+        "usagePatternZh": "……之王；國王與王后；成為國王"
+      },
+      "reason": "The lion uses a preeminent king noun. Collins directly records make someone king and reign as king verbs; retain and label them separately without changing formal n.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/king ; https://www.merriam-webster.com/dictionary/king"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000084",
+      "before": {
+        "meaningZh": "屬於；合適",
+        "usagePattern": "belong to + N",
+        "usagePatternZh": "屬於 + 名詞"
+      },
+      "after": {
+        "meaningZh": "屬於；合適；有歸屬感",
+        "usagePattern": "belong to sb/a group; belong here/there",
+        "usagePatternZh": "屬於某人／某團體；在這裡／那裡有歸屬感"
+      },
+      "reason": "The actual belonged-there example expresses fitting into a place/group, not possession only; do not teach that every belong requires to.",
+      "evidence": "https://www.merriam-webster.com/dictionary/belong"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002472",
+      "before": {
+        "meaningEn": "a country ruled by a king or queen",
+        "meaningZh": "王國；領域；界(動物；植物"
+      },
+      "after": {
+        "meaningEn": "a country ruled by a king or queen; a sphere or realm; a major category in biological classification, such as the animal or plant kingdom.",
+        "meaningZh": "王國；領域；（生物分類）界（如動物界、植物界）"
+      },
+      "reason": "The formal animal-kingdom example needs the biological noun already present in a malformed unclosed Chinese parenthesis; preserve kingdom and realm.",
+      "evidence": "https://www.merriam-webster.com/dictionary/kingdom"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000687",
+      "before": {
+        "meaningZh": "王后；女王；立爲女王；做女王"
+      },
+      "after": {
+        "meaningZh": "（名詞）王后；女王；（另有動詞義）立為女王；做女王"
+      },
+      "reason": "Separate genuine queen verb meanings from the two actual female-monarch nouns, preserving formal noun POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/queen ; https://www.merriam-webster.com/dictionary/queen"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004089",
+      "before": {
+        "meaningEn": "something owned; any tangible or intangible possession that is owned by someone;; happiness felt in a secure relationship; happiness felt in a secure relationship",
+        "usagePattern": "a/the belongings; belongings of N",
+        "usagePatternZh": "個人物品；……的財產"
+      },
+      "after": {
+        "meaningEn": "personal possessions: the things that a person owns, especially things that can be carried.",
+        "usagePattern": "personal belongings; pack one's belongings",
+        "usagePatternZh": "個人物品；打包某人的隨身物品"
+      },
+      "reason": "Collins explicitly labels belongings a plural noun for possessions. Remove duplicated secure-relationship feeling copied from singular belonging, retain the exact original value in before, and avoid a belongings.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/belongings ; https://www.merriam-webster.com/dictionary/belongings"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000097",
+      "before": {
+        "meaningZh": "街區；木塊；石塊；塊"
+      },
+      "after": {
+        "meaningZh": "（名詞）街區；木塊；石塊；塊；（動詞）阻擋；堵住"
+      },
+      "reason": "Both actual blocking-driveway and tree-blocked-road examples need the missing Chinese verb gloss.",
+      "evidence": "https://www.merriam-webster.com/dictionary/block"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000220",
+      "before": {
+        "meaningEn": "extending far down from the top or in from the surface; very strongly felt",
+        "meaningZh": "深的；深入地；深淵；深處",
+        "usagePattern": "deep breath/sleep; deep in thought; N + deep (measurement)",
+        "usagePatternZh": "深呼吸/深睡；沉思；名詞 + 深（測量）"
+      },
+      "after": {
+        "meaningEn": "(adj.) extending far down or inward; strongly felt or intense. (adv.) to a great depth or far into something. (Separate noun) an abyss, a deep part of water, or the ocean.",
+        "meaningZh": "（形容詞）深的；（副詞）深入地；（另有名詞義）深淵；深處",
+        "usagePattern": "deep breath/sleep; deep in thought; two meters deep",
+        "usagePatternZh": "深呼吸／深睡；沉思；兩公尺深"
+      },
+      "reason": "Keep the existing genuine adverb and separate abyss noun. The measurement complement is a distance, not any arbitrary noun.",
+      "evidence": "https://www.merriam-webster.com/dictionary/deep"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000657",
+      "before": {
+        "meaningZh": "請；使高興；合...的心意；取悅",
+        "usagePattern": "please sb; be eager/hard to please; please oneself",
+        "usagePatternZh": "取悅某人；渴望/很難取悅；自得其樂"
+      },
+      "after": {
+        "meaningZh": "（動詞）使高興；合……的心意；取悅；（另有禮貌用語）請",
+        "usagePattern": "please sb; be eager to please; be hard to please; please oneself",
+        "usagePatternZh": "取悅某人；急於討人歡心；難以取悅；隨自己的意思行事"
+      },
+      "reason": "Separate eager-to-please from hard-to-please and correct please oneself from merely enjoying oneself to doing as one wishes. Polite please is retained separately from the formal verb.",
+      "evidence": "https://www.merriam-webster.com/dictionary/please ; https://www.collinsdictionary.com/dictionary/english/please-yourself"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002786",
+      "before": {
+        "meaningZh": "水淺的地方；淺灘；淺的；膚淺的"
+      },
+      "after": {
+        "meaningZh": "（形容詞）淺的；膚淺的；（另有名詞義，通常用複數 shallows）淺水處；淺灘"
+      },
+      "reason": "Retain the genuine plural noun shallows separately from the source/actual shallow-water adjective, without expanding formal POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/shallow"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000658",
+      "before": {
+        "meaningEn": "a fundamental feeling that is hard to define but that people desire to experience; a formal expression"
+      },
+      "after": {
+        "meaningEn": "a feeling of enjoyment or satisfaction; an activity or experience that gives enjoyment; also used in polite expressions of willingness or appreciation."
+      },
+      "reason": "The actual picnic source is a pleasurable experience; replace an unexplained formal-expression fragment with the verified enjoyment/source-of-enjoyment senses.",
+      "evidence": "https://www.merriam-webster.com/dictionary/pleasure"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000508",
+      "before": {
+        "meaningZh": "可愛的；有趣的",
+        "meaningEn": "appealing to the emotions as well as the eye"
+      },
+      "after": {
+        "meaningZh": "可愛的；有趣的；美好的；令人愉快的",
+        "meaningEn": "beautiful or attractive; delightful or very pleasant."
+      },
+      "reason": "The lovely picnic is enjoyable/pleasant, not only visually appealing or funny; preserve existing glosses while supplying the missing sense.",
+      "evidence": "https://www.merriam-webster.com/dictionary/lovely"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005689",
+      "before": {
+        "meaningEn": "a range horse of the western United States; an informal term for a racehorse",
+        "usagePattern": "a/the pony; pony of N",
+        "usagePatternZh": "一匹矮種馬；……的矮種馬"
+      },
+      "after": {
+        "meaningEn": "a small horse, especially one of a small breed; also a horse of the western United States or, informally, a racehorse.",
+        "usagePattern": "ride a pony; brush a pony",
+        "usagePatternZh": "騎矮種馬；替矮種馬刷毛"
+      },
+      "reason": "Restore the primary small-horse sense missing from the inherited western/racehorse-only English. MW and Collins directly support it. Other inherited Chinese verb/adjective fragments remain pending exact mapping rather than being deleted as false.",
+      "evidence": "https://www.merriam-webster.com/dictionary/pony ; https://www.collinsdictionary.com/dictionary/english/pony"
+    }
+  ]
+}

@@ -12,6 +12,8 @@ import u9Evidence from '../../../docs/unit-audit-20261105/LV1-U09-original-image
 import u10Evidence from '../../../docs/unit-audit-20261105/LV1-U10-original-image-review.json';
 import u11Evidence from '../../../docs/unit-audit-20261105/LV1-U11-original-image-review.json';
 import u12Evidence from '../../../docs/unit-audit-20261105/LV1-U12-original-image-review.json';
+import u13Evidence from '../../../docs/unit-audit-20261105/LV1-U13-original-image-review.json';
+import preparedElevator from '../../../docs/unit-audit-20261105/LV1-U12-push-elevator-prepared.json';
 import captionTranslations from '../../../docs/unit-audit-20261105/LV1-verified-caption-translations.json';
 import publishedUnits from './lv1ReviewedImages.json';
 import words from '../../../public/data/v1/words.json';
@@ -19,7 +21,7 @@ import {approvedCurriculumIllustration,approvedWordIllustration,approvedLV1Image
 import {getWordBeastAsset} from '../wordbeast/wordBeastAssets';
 
 it('binds the explicitly reviewed general-card repairs to exact images and captions',()=>{
- expect(cards).toHaveLength(218);
+ expect(cards).toHaveLength(252);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U03-'))).toHaveLength(18);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U04-'))).toHaveLength(19);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U05-'))).toHaveLength(4);
@@ -30,9 +32,10 @@ it('binds the explicitly reviewed general-card repairs to exact images and capti
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U10-'))).toHaveLength(28);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U11-'))).toHaveLength(28);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U12-'))).toHaveLength(27);
- expect(new Set(cards.map(c=>c.officialWordId)).size).toBe(218);
+ expect(cards.filter(c=>c.reviewId.startsWith('LV1-U13-'))).toHaveLength(34);
+ expect(new Set(cards.map(c=>c.officialWordId)).size).toBe(252);
  for(const card of cards){
-  const proof=[...evidence.cards,...u4Evidence.cards,...u5Evidence.cards,...u6Evidence.cards,...u7Evidence.cards,...u8Evidence.cards,...u9Evidence.cards,...u10Evidence.cards,...u11Evidence.cards,...u12Evidence.cards].find(c=>c.id===card.reviewId)!;
+  const proof=[...evidence.cards,...u4Evidence.cards,...u5Evidence.cards,...u6Evidence.cards,...u7Evidence.cards,...u8Evidence.cards,...u9Evidence.cards,...u10Evidence.cards,...u11Evidence.cards,...u12Evidence.cards,...u13Evidence.cards].find(c=>c.id===card.reviewId)!;
   expect(proof.pixelReview).toContain('actually viewed original');
   expect(proof.observation).toBeTruthy();
   expect(createHash('sha256').update(readFileSync('public/'+card.illustration.path)).digest('hex')).toBe(proof.publishedImageSha256);
@@ -86,6 +89,10 @@ it('keeps the twenty-four unpublished curriculum drafts out of the published uni
  for(const draft of u10Evidence.cards.filter(c=>!c.sourceUnitPublished))expect(publishedUnits.some(c=>c.id===draft.id)).toBe(false);
  for(const draft of u11Evidence.cards.filter(c=>!c.sourceUnitPublished))expect(publishedUnits.some(c=>c.id===draft.id)).toBe(false);
  for(const draft of u12Evidence.cards.filter(c=>!c.sourceUnitPublished))expect(publishedUnits.some(c=>c.id===draft.id)).toBe(false);
+ for(const draft of u13Evidence.cards.filter(c=>!c.sourceUnitPublished))expect(publishedUnits.some(c=>c.id===draft.id)).toBe(false);
+ expect(publishedUnits.filter(c=>c.unit===13)).toHaveLength(15);
+ expect(cards.some(c=>c.reviewId==='LV1-U13-53')).toBe(false);
+ expect(u13Evidence.cards.find(c=>c.id==='LV1-U13-53')?.generalCardIntegration).toBe('separate_verified_example_artwork_pending_integration');
 });
 
 it('binds the wooden-door image only to the unchanged heavy-door example and retains the elevator source issue',()=>{
@@ -98,4 +105,20 @@ it('binds the wooden-door image only to the unchanged heavy-door example and ret
  expect(proof.originalPairState).toBe('original_caption_mismatch_pending');
  expect(publishedUnits.some(c=>c.id===proof.id)).toBe(false);
  expect(approvedWordIllustration('push',repaired.officialWordId)).toEqual(repaired.illustration);
+});
+
+it('keeps the prepared elevator replacement outside published unit cards and the general wooden-door pair',()=>{
+ expect(preparedElevator.id).toBe('LV1-U12-31');
+ expect(preparedElevator.sourceUnitPublished).toBe(false);
+ expect(preparedElevator.state).toBe('replacement_asset_prepared_and_pixels_viewed_not_integrated_into_reopenable_source_card');
+ expect(preparedElevator.captionEn).toBe('Just push the button and the elevator door will open.');
+ expect(preparedElevator.captionZh).toBe('只要按下按鈕，電梯門就會打開。');
+ expect(createHash('sha256').update(readFileSync(preparedElevator.preparedReplacement.path)).digest('hex')).toBe('381392f19334f356505f5a8004596772026c244852a5af7e4ff1995a760a156a');
+ expect(publishedUnits.some(c=>c.id===preparedElevator.id)).toBe(false);
+ expect(approvedWordIllustration('push','W000684')).toEqual({
+  path:'wordbeast/audited-20261105/LV1-U12-31-c3edbd6fdbf4.webp',
+  captionEn:'The little boy had to push the heavy door with all his strength to open it.',
+  captionZh:'這個小男孩必須用盡全力推開那扇沉重的門。',
+ });
+ expect(approvedCurriculumIllustration('push','/'+preparedElevator.preparedReplacement.path.replace(/^public\//,''))).toBeUndefined();
 });

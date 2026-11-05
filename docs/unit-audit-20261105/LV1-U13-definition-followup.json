@@ -1,0 +1,20 @@
+{
+  "unit": "LV1-U13",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "scope": "One visible Chinese summary omission found when viewing the actual reopened wave card; preserve formal n./v., English, all examples and whole-word state.",
+  "patches": [
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000951",
+      "before": {
+        "meaningZh": "波；波浪；波動；起伏"
+      },
+      "after": {
+        "meaningZh": "（名詞）波；波浪；波動；起伏；（動詞）揮手；揮動"
+      },
+      "reason": "Actual reopened card still showed a water-wave-only Chinese summary although its displayed caption and formal EX46bc173e use waved to friends. Include the verified hand-signaling verb separately; do not alter the noun enthusiasm-wave example.",
+      "evidence": "https://www.merriam-webster.com/dictionary/wave ; unchanged full sentences, source image and actually viewed reopened card."
+    }
+  ]
+}

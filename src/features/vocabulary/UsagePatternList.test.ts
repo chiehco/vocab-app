@@ -3,8 +3,24 @@ import { buildUsagePatternItems } from "./usagePattern";
 import words from '../../../public/data/v1/words.json';
 import u11Audit from '../../../docs/unit-audit-20261105/LV1-U11-patches.json';
 import u12Audit from '../../../docs/unit-audit-20261105/LV1-U12-patches.json';
+import u13Audit from '../../../docs/unit-audit-20261105/LV1-U13-patches.json';
 
 describe("buildUsagePatternItems", () => {
+  it('shows every corrected U13 bilingual pattern and distinguishes pleasing others from doing as one wishes',()=>{
+    const ids=u13Audit.patches.filter(p=>p.dataset==='words'&&('usagePattern' in p.after||'usagePatternZh' in p.after)).map(p=>p.id);
+    expect(ids).toHaveLength(25);
+    for(const id of ids){const word=words.find(w=>w.wordId===id)!;
+      expect(buildUsagePatternItems(word.usagePattern,word.usagePatternZh).every(item=>Boolean(item.chinese)),id).toBe(true);
+    }
+    const please=words.find(w=>w.wordId==='W000657')!,mountain=words.find(w=>w.wordId==='W000556')!;
+    expect(buildUsagePatternItems(please.usagePattern,please.usagePatternZh)).toEqual([
+      {english:'please sb',chinese:'取悅某人'},
+      {english:'be eager to please',chinese:'急於討人歡心'},
+      {english:'be hard to please',chinese:'難以取悅'},
+      {english:'please oneself',chinese:'隨自己的意思行事'},
+    ]);
+    expect(buildUsagePatternItems(mountain.usagePattern,mountain.usagePatternZh)[1]).toEqual({english:'a mountain of N',chinese:'大量／一大堆……'});
+  });
   it('keeps every corrected U12 bilingual usage pattern visible',()=>{
     const ids=u12Audit.patches.filter(p=>p.dataset==='words'&&('usagePattern' in p.after||'usagePatternZh' in p.after)).map(p=>p.id);
     expect(ids).toHaveLength(22);

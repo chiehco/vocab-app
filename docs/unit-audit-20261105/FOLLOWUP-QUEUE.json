@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-05T10:32:08.190Z",
+  "updatedAt": "2026-11-05T11:06:59.229Z",
   "items": [
     {
       "id": "LV1-U01-30",
@@ -245,12 +245,12 @@
     },
     {
       "id": "LV1-U12-31",
-      "state": "unpublished_original_elevator_image_pending_general_heavy_door_pair_verified",
+      "state": "replacement_asset_prepared_and_pixels_viewed_not_integrated_into_reopenable_source_card",
       "word": "push",
       "englishUnchanged": "Just push the button and the elevator door will open.",
-      "observation": "Original picture is a wooden door, not an elevator button. General card now uses the unchanged different formal heavy-door sentence EXc3772fba; original source issue remains pending.",
-      "evidence": "docs/unit-audit-20261105/LV1-U12-ledger.json",
-      "next": "Create an elevator-button image retaining original caption; do not automatically publish source draft."
+      "observation": "Replacement elevator-button asset fetched, exact hash/dimensions checked and actual WebP pixels viewed. No editable/reopenable unpublished-source-card layer exists. General wooden-door pair separately reopened and preserved.",
+      "evidence": "docs/unit-audit-20261105/LV1-U12-push-elevator-prepared.json",
+      "next": "Keep the exact prepared source pair for later authorized source publication; this checkpoint does not publish it."
     },
     {
       "id": "LV1-U12-68",
@@ -260,6 +260,23 @@
       "observation": "Full-size original and actual unit screenshot show drops outside a still-held cup. Nearly spilled is preserved; amount/extent of spill remains unresolved.",
       "evidence": "docs/unit-audit-20261105/LV1-U12-ledger.json",
       "next": "Resolve literal spill detail without changing the original example to fit the image."
+    },
+    {
+      "id": "LV1-U13-65",
+      "state": "confirmed_valley_water_depth_image_mismatch_pending",
+      "word": "depth",
+      "englishUnchanged": "The teacher showed the depth of the valley on the chart.",
+      "observation": "Full 1254 original and actual unit card show a blue-water-filled chart and water-surface-to-bottom arrow. Caption specifies valley depth; original wording remains unchanged.",
+      "evidence": "docs/unit-audit-20261105/LV1-U13-ledger.json",
+      "next": "Prepare a valley cross-section image retaining the original caption and precise existing unit/general pairing."
+    },
+    {
+      "id": "LV1-U13-53",
+      "state": "separate_verified_artwork_available_not_integrated",
+      "word": "feed",
+      "commit": "36a0e1074c1d8771ccd3ed1d171dd0064894ce84",
+      "observation": "Separate exact EX0577146b artwork and example-level integration already validated; current checkout still lacks it. Do not duplicate generation or replace with older whole files.",
+      "evidence": "docs/unit-audit-20261105/LV1-U13-ledger.json"
     }
   ],
   "sourceFormResearchCoverage": {
@@ -272,5 +289,9 @@
   "earlySourceFollowups": {
     "state": "separate_isolated_followup_branch_work_in_progress_not_integrated_here",
     "scope": "Earlier verified candidate batches are being processed separately. This checkpoint applies only the explicitly listed U12 rows, including four shared ask hints. Reconcile exact latest before values before any later integration."
+  },
+  "verifiedFollowupBatchQueued": {
+    "commit": "86b353fadad09b4cd1ff65fff6e2636cb68df096",
+    "scope": "16 U03/U04 verbForms exact absent-key patches; separate branch CI 42012971670 success. Not yet integrated into this checkpoint. Reconcile exact fields and source guards before own UI/DB verification; never copy whole words/pack/meta."
   }
 }
