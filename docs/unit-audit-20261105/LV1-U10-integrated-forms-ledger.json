@@ -1,0 +1,121 @@
+{
+  "batch": "LV1-U10-verified-form-integration",
+  "checkpointAt": "2026-11-05T18:32:25.124Z",
+  "priorCheckpoint": "44e927f023e3a328562c17fb0e4c89738305421b",
+  "priorCheckpointFullCi": {
+    "commit": "44e927f023e3a328562c17fb0e4c89738305421b",
+    "run": 42083710660,
+    "job": 127443122476,
+    "status": "in_progress",
+    "conclusion": null,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42083710660/job/127443122476"
+  },
+  "sourceEvidenceCommit": "4fa2648c42fe747cf506c02d8a2db170c4beb4a2",
+  "state": "exact_26_fields_integrated_actual_ui_verified_local_checks_passed",
+  "counts": {
+    "originalPreparedFields": 26,
+    "addedTrueAbsentKeys": 26,
+    "alreadyIdenticalSkipped": 1,
+    "conflictsOverwritten": 0,
+    "actualBeforeCards": 26,
+    "actualAfterCards": 26,
+    "bothPanelDisplaysViewed": 52,
+    "existingImagesUnchanged": 26,
+    "exampleComparisonsUnchanged": 113,
+    "usagePagesUnchanged": 26,
+    "progressTables": 14,
+    "savedRows": 2072
+  },
+  "source": "VERIFIED-INTEGRATED-U10-VERB-FORMS-SOURCES.json",
+  "manifest": "LV1-U10-integrated-forms-patches.json",
+  "guards": "Fixed explicitly enumerated IDs, each exact sourced form/status and complete non-form row hash. Null/custom/existing values, missing before, false after, unknown ID and all non-form drift are rejected. Absent fields reverse by delete. Every previous source table and historical hash fixture is retained.",
+  "inverse": {
+    "baseCheckpoint": "44e927f023e3a328562c17fb0e4c89738305421b",
+    "addedKeys": 26,
+    "allWords": 6090,
+    "exactInverse": true,
+    "restoredSha256": "8d3a6c0a4f3933790015ae7e617335002d39b9c23568acb3536d59676e066f4f",
+    "baseSha256": "8d3a6c0a4f3933790015ae7e617335002d39b9c23568acb3536d59676e066f4f",
+    "allOtherWordFieldsUnchanged": true
+  },
+  "progress": {
+    "action": "existing App full-dictionary installer in isolated localhost audit browser",
+    "words": 6090,
+    "examples": 7871,
+    "progressTables": 14,
+    "progressUnchanged": true
+  },
+  "pixels": {
+    "checkedAt": "2026-11-05T18:30:42.590Z",
+    "cardsViewed": 26,
+    "bothPanelDisplaysViewed": 52,
+    "allSheetsActuallyViewed": true,
+    "contactSheets": [
+      "output/unit-audit-20261105/sheets/integrated-u10/01-03.png",
+      "output/unit-audit-20261105/sheets/integrated-u10/04-06.png",
+      "output/unit-audit-20261105/sheets/integrated-u10/07-09.png",
+      "output/unit-audit-20261105/sheets/integrated-u10/10-12.png",
+      "output/unit-audit-20261105/sheets/integrated-u10/13-15.png",
+      "output/unit-audit-20261105/sheets/integrated-u10/16-18.png",
+      "output/unit-audit-20261105/sheets/integrated-u10/19-21.png",
+      "output/unit-audit-20261105/sheets/integrated-u10/22-24.png",
+      "output/unit-audit-20261105/sheets/integrated-u10/25-26.png"
+    ],
+    "scope": "All26 real card and meaning screenshots viewed; all52 principal-parts displays readable and exact. Complete image src/dimensions/captions and113 examples and26 usage pages independently compared from reopened DOM. Source references/long qualification notes are saved-data evidence, not claimed visible.",
+    "observations": [
+      "forbid shows forbade/forbidden; drive shows drove/driven; see shows saw/seen.",
+      "read/read/read spelling is exact; no pronunciation field was changed or claimed identical.",
+      "Existing derived/nominal uses, original sentences, images and caption pair boundaries remain unchanged."
+    ]
+  },
+  "regression": {
+    "originalLocalTimeoutMs": 5000,
+    "files": 11,
+    "tests": 91,
+    "pythonBoundaryTests": 25,
+    "exits": {
+      "build": 0,
+      "typecheck": 0,
+      "python": 0,
+      "completedAt": "2026-11-05T18:32:03.4165340Z",
+      "lint": 0,
+      "tests": 0
+    },
+    "oldWholePackAndHistoricalHashesUnchanged": true
+  },
+  "preserved": {
+    "wholeWordApproval": false,
+    "headwordPosChanges": 0,
+    "definitionChanges": 0,
+    "exampleChanges": 0,
+    "usageChanges": 0,
+    "imageChanges": 0,
+    "restrictions": [
+      "read has the same written forms in all three columns; distinct pronunciation is not changed or implied identical.",
+      "raise/raised is separate from rise/rose/risen; lower is the existing lowering verb.",
+      "piece together and tip off retain their particles in usage and examples; base remains the formal headword.",
+      "fire in caught fire remains a noun; existing catch form and practice sentences are untouched.",
+      "lie and wind sense-specific presentation remains outside this batch."
+    ]
+  },
+  "newCheckpointFullCi": "Pending this new integration commit and its own full CI.",
+  "remaining": {
+    "formCandidatesFromPreparedSnapshot": 112,
+    "scope": "Remaining prepared fields require latest reconciliation and actual integration verification; not counted as applied.",
+    "nextFormBatch": "U11,25 prepared fields",
+    "nextComprehensiveUnit": {
+      "unit": "LV1-U22",
+      "id": "LV1-U22-01",
+      "word": "arrive"
+    }
+  },
+  "publicationReview": {
+    "checkedAt": "2026-11-05T18:33:49.762Z",
+    "filesScanned": 706,
+    "findings": 0,
+    "diffCheckExit": 0,
+    "postRecordLintExit": 0,
+    "unrelatedWorkIncluded": false,
+    "history": "Parent44e927f is already remote; no unpublished earlier commits or private backup history are included."
+  }
+}

@@ -34,6 +34,8 @@ import integratedU07 from '../../docs/unit-audit-20261105/LV1-U07-integrated-for
 import integratedU07Sources from '../../docs/unit-audit-20261105/VERIFIED-INTEGRATED-U07-VERB-FORMS-SOURCES.json';
 import integratedU08U09 from '../../docs/unit-audit-20261105/LV1-U08-U09-integrated-forms-patches.json';
 import integratedU08U09Sources from '../../docs/unit-audit-20261105/VERIFIED-INTEGRATED-U08-U09-VERB-FORMS-SOURCES.json';
+import integratedU10 from '../../docs/unit-audit-20261105/LV1-U10-integrated-forms-patches.json';
+import integratedU10Sources from '../../docs/unit-audit-20261105/VERIFIED-INTEGRATED-U10-VERB-FORMS-SOURCES.json';
 type Row=Record<string,unknown>;
 const examples:Row[]=JSON.parse(readFileSync('public/data/v1/examples.json','utf8'));
 function stable(value:unknown):unknown{
@@ -277,6 +279,18 @@ it('reverses only49 integrated U08-U09 fields and protects every other exact wor
  expect(integratedU08U09Sources.facts.every(f=>!prior.has(f.wordId))).toBe(true);
  const words:Row[]=JSON.parse(readFileSync('public/data/v1/words.json','utf8'));
  for(const p of integratedU08U09.patches){const row=structuredClone(words.find(w=>w.wordId===p.id)!);const original={...row};delete original.verbForms;restoreRecordedAuditPatch('words',row,p);expect(row).toEqual(original);expect(row).not.toHaveProperty('verbForms');
+  for(const key of ['base','past','pastParticiple','sourceRef','status']){const wrong=structuredClone(p);(wrong.after.verbForms as Row)[key]='unverified';expect(()=>restoreRecordedAuditPatch('words',{...original,...wrong.after},wrong)).toThrow();}
+  for(const key of ['word','pos','status','meaningZh','meaningEn','usagePattern'])expect(()=>restoreRecordedAuditPatch('words',{...original,...p.after,[key]:'unrecorded'},p)).toThrow();
+  expect(()=>restoreRecordedAuditPatch('words',{...original,...p.after},{...p,before:{verbForms:null}})).toThrow();
+ }
+});
+
+it('reverses only26 integrated U10 fields and protects every other exact word field',()=>{
+ expect(integratedU10Sources.facts).toHaveLength(26);
+ const prior=new Set([...originalSources.facts,...followupSources.facts,...u16FormSources.facts,...u17FormSources.facts,...u18FormSources.facts,...u19FormSources.facts,...u20FormSources.facts,...u21FormSources.facts,...integratedU05U06Sources.facts,...integratedU07Sources.facts,...integratedU08U09Sources.facts].map(f=>f.wordId));
+ expect(integratedU10Sources.facts.every(f=>!prior.has(f.wordId))).toBe(true);
+ const words:Row[]=JSON.parse(readFileSync('public/data/v1/words.json','utf8'));
+ for(const p of integratedU10.patches){const row=structuredClone(words.find(w=>w.wordId===p.id)!);const original={...row};delete original.verbForms;restoreRecordedAuditPatch('words',row,p);expect(row).toEqual(original);expect(row).not.toHaveProperty('verbForms');
   for(const key of ['base','past','pastParticiple','sourceRef','status']){const wrong=structuredClone(p);(wrong.after.verbForms as Row)[key]='unverified';expect(()=>restoreRecordedAuditPatch('words',{...original,...wrong.after},wrong)).toThrow();}
   for(const key of ['word','pos','status','meaningZh','meaningEn','usagePattern'])expect(()=>restoreRecordedAuditPatch('words',{...original,...p.after,[key]:'unrecorded'},p)).toThrow();
   expect(()=>restoreRecordedAuditPatch('words',{...original,...p.after},{...p,before:{verbForms:null}})).toThrow();
