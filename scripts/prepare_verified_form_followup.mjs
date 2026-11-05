@@ -63,6 +63,14 @@ const batches = {
     preserveUnitContexts: true,
     currentSourceRefOverrides: {"W000911":"https://www.collinsdictionary.com/dictionary/english/touch","W000058":"https://www.collinsdictionary.com/dictionary/english/ball","W000558":"https://www.collinsdictionary.com/dictionary/english/mouth","W000776":"https://www.collinsdictionary.com/dictionary/english/sight","W000061":"https://www.collinsdictionary.com/dictionary/english/bank","W000341":"https://www.collinsdictionary.com/dictionary/english/garden"},
   },
+  'U15': {
+    sources: ['U10-U15-PUBLISHED-VERB-FORMS-VERIFICATION.json','U15-ADDITIONAL-VERB-FORMS-VERIFICATION.json'],
+    ids: 'W000625 W000593 W000069 W000451 W004579 W000846 W001788 W000197 W000492 W000361 W005517 W000461 W000771 W005090 W000948 W000191 W000247 W000855 W001125 W000962 W002330 W000284 W000780'.split(' '),
+    sourceSnapshot: {researchCommit:'e2d3f0fed929a17670af00ed1989fc9469426d8c',sourceBlobs:{"U10-U15-PUBLISHED-VERB-FORMS-VERIFICATION.json":"5215e48aadd050f5118e85727bc391ad7150738b","U15-ADDITIONAL-VERB-FORMS-VERIFICATION.json":"b477d7935f5d44d9867bbde5928a506b3d0ce785"}},
+    readVerifiedGitBlobs: true,
+    preserveVariantEvidence: true,
+    preserveUnitContexts: true,
+  },
 };
 const batch = process.argv[2];
 assert.ok(batches[batch], 'Select an explicitly reviewed batch');

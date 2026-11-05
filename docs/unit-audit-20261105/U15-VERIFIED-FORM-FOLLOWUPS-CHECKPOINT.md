@@ -1,0 +1,29 @@
+# Verified form followups: U15
+
+Twenty-three existing words receive sourced principal parts only in genuinely absent `verbForms` keys, in original U15 order from paper (`W000625`, `LV1-U15-05`) through sing (`W000780`, `LV1-U15-83`). Of twenty-five research entries, pair and glass remain excluded because this product has noun-only POS. No existing/null/custom value or other field is overwritten.
+
+- Exact base: `6175d487ac6f9f6eeae8c280a8ef92d39e4f1d00`; original audit base: `d26603868f60e60069d29ea00613d2e86f94d7bd`.
+- Branch: `content/lv1-verified-followups-20261105`.
+- Research snapshot: `e2d3f0fed929a17670af00ed1989fc9469426d8c`.
+- Published-form evidence blob: `5215e48aadd050f5118e85727bc391ad7150738b`; U15 additional evidence blob: `b477d7935f5d44d9867bbde5928a506b3d0ce785`.
+- Exact patch: `LV1-U15-verified-forms-patches.json`; twenty-three new facts only in the cumulative source file.
+- Old/new rows: `receipts/LV1-U15-verified-forms-patches.json`; per-card evidence: `validation/U15-verified-form-followups.json`.
+- Coverage and editorial boundaries: `pending/U15-isolated-image-observations.json`.
+
+All twenty-three forms were directly rechecked at Collins. Gray's grayed past and participle were read in the official conjugation table and its US-priority spelling in the dictionary; grey/greyed remains a separate spelling group. Flavor/flavored retains the US head rather than mixing flavour/flavoured. Light displays usual lit/lit while retaining supported lighted in the evidence, without inventing a British/American split. Wet displays wet/wet while preserving supported wetted; wetted is not restricted exclusively to technical usage. Sing uses sang/sung. Knife's knifed is distinct from plural knives and third-person knifes. Key's keyed is supported for existing verb POS, but does not approve or add missing verb explanations in its summaries. Existing noun/adjective examples were not rewritten into verb examples. Applicable constructions and register restrictions are retained per fact.
+
+| Missing form fields filled | Original cards reopened before mutation | Modified cards reopened | Images decoded per version | Older-base placeholders per version | Public example rows matched per version |
+| ---: | ---: | ---: | ---: | ---: | ---: |
+| 23 | 23 | 23 | 7 | 16 | 35 |
+
+Only nested form records receive approval. Whole-word/sense states, pending labels, POS, summaries, examples, cloze, answers, translations, usage and pictures remain exact. Original thirty-one sources, prior 271 supplemental facts, house and seven verified translations/source records are preserved. Earlier history pins remain fixed; the explicit original 271-fact projection is additionally pinned to `dc43c28b5f001be13736293ee2ad6a0dc55164579596981eb378c181101ebadb`. Reversal deletes new keys rather than writing null. Negative tests continue to reject unknown IDs, altered base/past/participle/source/status, mixed fields and existing null/custom values.
+
+All twenty-three card/meaning/usage views were reopened before mutation and after the normal Settings dictionary update. Both form panels match saved database values. The thirty-five actual public example rows and all usage texts match the original views exactly. Ninety-two desktop screenshots were visually reviewed through sixteen contact sheets, plus light and wet at 390px without horizontal overflow. Across the update all fourteen progress-table hashes and raw settings remained exact; later navigation changed only the last-location bookmark. Hashes for 303 protected word rows and seven translated examples stayed exact. The sparse isolated profile has one nonempty settings table; this is not certification of real-device learned-progress data.
+
+Sixteen general cards still display old-base placeholders: notice, key, notify, shock, count, gray, lighten, knife, shout, beautify, warm, cool, dry, calm, flavor and sing. Read-only comparison at newer audit-line commit `038624c87614e6bc2da1c4422cd2fb30a6a89187` found mappings and nonempty blobs for all sixteen; they were not imported or UI-certified here. Notify, gray, lighten, knife, beautify and calm have zero public meaning-tab example rows in this older base; source card contexts remain recorded. Empty-array equality is not completeness approval.
+
+Taste's cooking picture matches its own general-card caption; its music-taste unit source is a separate context. The newer audit ledger retains the general pair as checked with visual limits and separately records the reviewed, unpublished original music pair. This is not a claim that current main needs a replacement or lacks an image. Four older usage frames observed here (notify, lighten, beautify and calm with to V) are already corrected in the newer main snapshot; those newer frames must be preserved during form reconciliation. Key's summary limitation remains explicit. No image was generated/repaired, example invented or whole card approved.
+
+Local checks passed: thirteen Python boundary tests across all 294 supplemental facts, four Vitest files/twenty-five tests with one worker and unchanged default 5000ms timeout, typecheck, lint, build, exact dataset comparison and publication scan. Console errors/warnings and failed requests were zero. Full local Vitest was not repeated; exact pushed-head full CI is recorded separately.
+
+Reconcile only these twenty-three form fields and new source facts against latest audit-line IDs, heads, verb senses and actual absent keys. Preserve newer words, pictures, examples, usage and review states; do not copy cumulative datasets or merge automatically. Continue at U16 guess (`W000367`, `LI-LV1U16-V001`) with fresh checks. U16's curriculum is text-only, so it must not be declared missing illustrations merely because no unit picture is required. No merge, deployment, forced push, PR, payment or shared configuration change is included.
