@@ -6,9 +6,31 @@
     "commit": "a3124e2e24bda7eb17308226aabda0d2e138f780",
     "run": 42089904446,
     "job": 127464890993,
-    "status": "in_progress",
-    "conclusion": null,
-    "url": "https://github.com/chiehco/vocab-app/actions/runs/42089904446/job/127464890993"
+    "status": "completed",
+    "conclusion": "success",
+    "completedAt": "2026-11-05T19:17:37Z",
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42089904446/job/127464890993",
+    "files": 216,
+    "tests": 1709,
+    "pythonBatches": [
+      14,
+      7,
+      27,
+      10
+    ],
+    "allStepsSuccessful": true,
+    "lines": [
+      "2026-11-05T19:01:43.8169392Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +a3124e2e24bda7eb17308226aabda0d2e138f780:refs/remotes/origin/content/unit-audit-20261105",
+      "2026-11-05T19:01:54.0119303Z  * [new ref]         a3124e2e24bda7eb17308226aabda0d2e138f780 -> origin/content/unit-audit-20261105",
+      "2026-11-05T19:01:54.7597818Z a3124e2e24bda7eb17308226aabda0d2e138f780",
+      "2026-11-05T19:02:46.2536149Z Ran 14 tests in 23.229s",
+      "2026-11-05T19:03:03.4762910Z Ran 7 tests in 17.035s",
+      "2026-11-05T19:03:18.6957396Z Ran 27 tests in 15.099s",
+      "2026-11-05T19:03:18.8261014Z Ran 10 tests in 0.058s",
+      "2026-11-05T19:16:52.7286382Z  Test Files  216 passed (216)",
+      "2026-11-05T19:16:52.7295146Z       Tests  1709 passed (1709)",
+      "2026-11-05T19:17:32.4262703Z ✓ built in 3.06s"
+    ]
   },
   "sourceEvidenceCommit": "34f70ba0f4c4e628e69a8b3778eda5db20a69825",
   "state": "exact_19_fields_integrated_actual_ui_verified_local_checks_passed",
