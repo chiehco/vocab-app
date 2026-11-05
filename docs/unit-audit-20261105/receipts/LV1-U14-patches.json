@@ -1,0 +1,3148 @@
+{
+  "manifest": "docs\\unit-audit-20261105\\LV1-U14-patches.json",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "checkedAt": "2026-11-05T11:37:45.144392+00:00",
+  "changeCount": 69,
+  "changes": [
+    {
+      "dataset": "examples",
+      "id": "EXe43ab5e2",
+      "before": {
+        "exampleId": "EXe43ab5e2",
+        "word": "bridge",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "Volunteers organized weekly talks to bridge the gap between the two communities.",
+        "sentenceZh": "志工們每週舉辦座談，以彌合兩個社群之間的隔閡。",
+        "blankSentence": "Volunteers organized weekly talks to _____ the gap between the two communities.",
+        "answer": "bridge",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EXe43ab5e2",
+        "word": "bridge",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "Volunteers organized weekly talks to bridge the gap between the two communities.",
+        "sentenceZh": "志工們每週舉辦座談，以彌合兩個社群之間的隔閡。",
+        "blankSentence": "Volunteers organized weekly talks to _____ the gap between the two communities.",
+        "answer": "bridge",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Read the unchanged complete sentence and actual cloze target. Distinguish the fly/check/roll nouns, exact-time sharp and late/early adverbs, actual bridge/rock/garden/camp verbs, and precise color senses. Painting the fence is the verbal -ing phrase with a direct object under the project actual-target convention; the separate painting headword remains n. and its work-of-art example stays n.",
+      "evidence": "https://www.merriam-webster.com/dictionary/bridge ; actual sentence/blank/answer; painting is explicitly also the present participle of paint in MW."
+    },
+    {
+      "dataset": "examples",
+      "id": "EXb344feee",
+      "before": {
+        "exampleId": "EXb344feee",
+        "word": "rock",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "The baby fell asleep as her mother gently rocked her in the chair.",
+        "sentenceZh": "寶寶在媽媽於椅子上輕輕搖晃她時睡著了。",
+        "blankSentence": "The baby fell asleep as her mother gently _____ her in the chair.",
+        "answer": "rocked",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EXb344feee",
+        "word": "rock",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "The baby fell asleep as her mother gently rocked her in the chair.",
+        "sentenceZh": "寶寶在媽媽於椅子上輕輕搖晃她時睡著了。",
+        "blankSentence": "The baby fell asleep as her mother gently _____ her in the chair.",
+        "answer": "rocked",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Read the unchanged complete sentence and actual cloze target. Distinguish the fly/check/roll nouns, exact-time sharp and late/early adverbs, actual bridge/rock/garden/camp verbs, and precise color senses. Painting the fence is the verbal -ing phrase with a direct object under the project actual-target convention; the separate painting headword remains n. and its work-of-art example stays n.",
+      "evidence": "https://www.merriam-webster.com/dictionary/rock ; actual sentence/blank/answer; painting is explicitly also the present participle of paint in MW."
+    },
+    {
+      "dataset": "examples",
+      "id": "EXbcf50257",
+      "before": {
+        "exampleId": "EXbcf50257",
+        "word": "garden",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "He likes to garden on weekends, growing tomatoes and roses.",
+        "sentenceZh": "他喜歡在週末從事園藝，種植番茄和玫瑰。",
+        "blankSentence": "He likes to _____ on weekends, growing tomatoes and roses.",
+        "answer": "garden",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EXbcf50257",
+        "word": "garden",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "He likes to garden on weekends, growing tomatoes and roses.",
+        "sentenceZh": "他喜歡在週末從事園藝，種植番茄和玫瑰。",
+        "blankSentence": "He likes to _____ on weekends, growing tomatoes and roses.",
+        "answer": "garden",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Read the unchanged complete sentence and actual cloze target. Distinguish the fly/check/roll nouns, exact-time sharp and late/early adverbs, actual bridge/rock/garden/camp verbs, and precise color senses. Painting the fence is the verbal -ing phrase with a direct object under the project actual-target convention; the separate painting headword remains n. and its work-of-art example stays n.",
+      "evidence": "https://www.merriam-webster.com/dictionary/garden ; actual sentence/blank/answer; painting is explicitly also the present participle of paint in MW."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX417d968f",
+      "before": {
+        "exampleId": "EX417d968f",
+        "word": "fly",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "A fly kept buzzing around the kitchen while we were eating dinner.",
+        "sentenceZh": "我們吃晚餐時，一隻蒼蠅一直在廚房裡嗡嗡飛來飛去。",
+        "blankSentence": "A _____ kept buzzing around the kitchen while we were eating dinner.",
+        "answer": "fly",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EX417d968f",
+        "word": "fly",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "A fly kept buzzing around the kitchen while we were eating dinner.",
+        "sentenceZh": "我們吃晚餐時，一隻蒼蠅一直在廚房裡嗡嗡飛來飛去。",
+        "blankSentence": "A _____ kept buzzing around the kitchen while we were eating dinner.",
+        "answer": "fly",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Read the unchanged complete sentence and actual cloze target. Distinguish the fly/check/roll nouns, exact-time sharp and late/early adverbs, actual bridge/rock/garden/camp verbs, and precise color senses. Painting the fence is the verbal -ing phrase with a direct object under the project actual-target convention; the separate painting headword remains n. and its work-of-art example stays n.",
+      "evidence": "https://www.merriam-webster.com/dictionary/fly ; actual sentence/blank/answer; painting is explicitly also the present participle of paint in MW."
+    },
+    {
+      "dataset": "examples",
+      "id": "EXf7b87396",
+      "before": {
+        "exampleId": "EXf7b87396",
+        "word": "check",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "Could you ask the waiter for the check? We need to leave soon.",
+        "sentenceZh": "你可以請服務生把帳單拿來嗎？我們得快點離開了。",
+        "blankSentence": "Could you ask the waiter for the _____? We need to leave soon.",
+        "answer": "check",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EXf7b87396",
+        "word": "check",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "Could you ask the waiter for the check? We need to leave soon.",
+        "sentenceZh": "你可以請服務生把帳單拿來嗎？我們得快點離開了。",
+        "blankSentence": "Could you ask the waiter for the _____? We need to leave soon.",
+        "answer": "check",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Read the unchanged complete sentence and actual cloze target. Distinguish the fly/check/roll nouns, exact-time sharp and late/early adverbs, actual bridge/rock/garden/camp verbs, and precise color senses. Painting the fence is the verbal -ing phrase with a direct object under the project actual-target convention; the separate painting headword remains n. and its work-of-art example stays n.",
+      "evidence": "https://www.merriam-webster.com/dictionary/check ; actual sentence/blank/answer; painting is explicitly also the present participle of paint in MW."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX092c0e27",
+      "before": {
+        "exampleId": "EX092c0e27",
+        "word": "sharp",
+        "sensePos": "adj.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "Please arrive at seven o'clock sharp.",
+        "sentenceZh": "請務必在七點整準時到達。",
+        "blankSentence": "Please arrive at seven o'clock _____.",
+        "answer": "sharp",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EX092c0e27",
+        "word": "sharp",
+        "sensePos": "adv.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "Please arrive at seven o'clock sharp.",
+        "sentenceZh": "請務必在七點整準時到達。",
+        "blankSentence": "Please arrive at seven o'clock _____.",
+        "answer": "sharp",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Read the unchanged complete sentence and actual cloze target. Distinguish the fly/check/roll nouns, exact-time sharp and late/early adverbs, actual bridge/rock/garden/camp verbs, and precise color senses. Painting the fence is the verbal -ing phrase with a direct object under the project actual-target convention; the separate painting headword remains n. and its work-of-art example stays n.",
+      "evidence": "https://www.merriam-webster.com/dictionary/sharp ; actual sentence/blank/answer; painting is explicitly also the present participle of paint in MW."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX97a9189d",
+      "before": {
+        "exampleId": "EX97a9189d",
+        "word": "roll",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "The teacher calls the roll every morning before class starts.",
+        "sentenceZh": "老師每天早上上課前都會點名。",
+        "blankSentence": "The teacher calls the _____ every morning before class starts.",
+        "answer": "roll",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EX97a9189d",
+        "word": "roll",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "The teacher calls the roll every morning before class starts.",
+        "sentenceZh": "老師每天早上上課前都會點名。",
+        "blankSentence": "The teacher calls the _____ every morning before class starts.",
+        "answer": "roll",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Read the unchanged complete sentence and actual cloze target. Distinguish the fly/check/roll nouns, exact-time sharp and late/early adverbs, actual bridge/rock/garden/camp verbs, and precise color senses. Painting the fence is the verbal -ing phrase with a direct object under the project actual-target convention; the separate painting headword remains n. and its work-of-art example stays n.",
+      "evidence": "https://www.merriam-webster.com/dictionary/roll ; actual sentence/blank/answer; painting is explicitly also the present participle of paint in MW."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX8dc725f5",
+      "before": {
+        "exampleId": "EX8dc725f5",
+        "word": "camp",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "Students set up their tents when they camp in the mountains during summer vacation.",
+        "sentenceZh": "學生們暑假在山上露營時會搭好帳篷。",
+        "blankSentence": "Students set up their tents when they _____ in the mountains during summer vacation.",
+        "answer": "camp",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EX8dc725f5",
+        "word": "camp",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "Students set up their tents when they camp in the mountains during summer vacation.",
+        "sentenceZh": "學生們暑假在山上露營時會搭好帳篷。",
+        "blankSentence": "Students set up their tents when they _____ in the mountains during summer vacation.",
+        "answer": "camp",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Read the unchanged complete sentence and actual cloze target. Distinguish the fly/check/roll nouns, exact-time sharp and late/early adverbs, actual bridge/rock/garden/camp verbs, and precise color senses. Painting the fence is the verbal -ing phrase with a direct object under the project actual-target convention; the separate painting headword remains n. and its work-of-art example stays n.",
+      "evidence": "https://www.merriam-webster.com/dictionary/camp ; actual sentence/blank/answer; painting is explicitly also the present participle of paint in MW."
+    },
+    {
+      "dataset": "examples",
+      "id": "EXc043afbb",
+      "before": {
+        "exampleId": "EXc043afbb",
+        "word": "camp",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "We camped by the river last weekend and watched the stars all night.",
+        "sentenceZh": "上週末我們在河邊紮營，整晚看星星。",
+        "blankSentence": "We _____ by the river last weekend and watched the stars all night.",
+        "answer": "camped",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EXc043afbb",
+        "word": "camp",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "We camped by the river last weekend and watched the stars all night.",
+        "sentenceZh": "上週末我們在河邊紮營，整晚看星星。",
+        "blankSentence": "We _____ by the river last weekend and watched the stars all night.",
+        "answer": "camped",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Read the unchanged complete sentence and actual cloze target. Distinguish the fly/check/roll nouns, exact-time sharp and late/early adverbs, actual bridge/rock/garden/camp verbs, and precise color senses. Painting the fence is the verbal -ing phrase with a direct object under the project actual-target convention; the separate painting headword remains n. and its work-of-art example stays n.",
+      "evidence": "https://www.merriam-webster.com/dictionary/camp ; actual sentence/blank/answer; painting is explicitly also the present participle of paint in MW."
+    },
+    {
+      "dataset": "examples",
+      "id": "EXfe7c70c5",
+      "before": {
+        "exampleId": "EXfe7c70c5",
+        "word": "late",
+        "sensePos": "adj.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "We stayed up late last night watching a movie together.",
+        "sentenceZh": "我們昨晚熬夜到很晚，一起看了一部電影。",
+        "blankSentence": "We stayed up _____ last night watching a movie together.",
+        "answer": "late",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EXfe7c70c5",
+        "word": "late",
+        "sensePos": "adv.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "We stayed up late last night watching a movie together.",
+        "sentenceZh": "我們昨晚熬夜到很晚，一起看了一部電影。",
+        "blankSentence": "We stayed up _____ last night watching a movie together.",
+        "answer": "late",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Read the unchanged complete sentence and actual cloze target. Distinguish the fly/check/roll nouns, exact-time sharp and late/early adverbs, actual bridge/rock/garden/camp verbs, and precise color senses. Painting the fence is the verbal -ing phrase with a direct object under the project actual-target convention; the separate painting headword remains n. and its work-of-art example stays n.",
+      "evidence": "https://www.merriam-webster.com/dictionary/late ; actual sentence/blank/answer; painting is explicitly also the present participle of paint in MW."
+    },
+    {
+      "dataset": "examples",
+      "id": "EXe61b1f22",
+      "before": {
+        "exampleId": "EXe61b1f22",
+        "word": "early",
+        "sensePos": "adj.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "Passengers are advised to arrive early to avoid missing their flights.",
+        "sentenceZh": "建議旅客提早抵達，以免錯過班機。",
+        "blankSentence": "Passengers are advised to arrive _____ to avoid missing their flights.",
+        "answer": "early",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EXe61b1f22",
+        "word": "early",
+        "sensePos": "adv.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "Passengers are advised to arrive early to avoid missing their flights.",
+        "sentenceZh": "建議旅客提早抵達，以免錯過班機。",
+        "blankSentence": "Passengers are advised to arrive _____ to avoid missing their flights.",
+        "answer": "early",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Read the unchanged complete sentence and actual cloze target. Distinguish the fly/check/roll nouns, exact-time sharp and late/early adverbs, actual bridge/rock/garden/camp verbs, and precise color senses. Painting the fence is the verbal -ing phrase with a direct object under the project actual-target convention; the separate painting headword remains n. and its work-of-art example stays n.",
+      "evidence": "https://www.merriam-webster.com/dictionary/early ; actual sentence/blank/answer; painting is explicitly also the present participle of paint in MW."
+    },
+    {
+      "dataset": "examples",
+      "id": "EXad2c72f1",
+      "before": {
+        "exampleId": "EXad2c72f1",
+        "word": "painting",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "My father spent the whole weekend painting the fence in our garden.",
+        "sentenceZh": "我爸爸花了整個週末在粉刷我們家花園的籬笆。",
+        "blankSentence": "My father spent the whole weekend _____ the fence in our garden.",
+        "answer": "painting",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EXad2c72f1",
+        "word": "painting",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "My father spent the whole weekend painting the fence in our garden.",
+        "sentenceZh": "我爸爸花了整個週末在粉刷我們家花園的籬笆。",
+        "blankSentence": "My father spent the whole weekend _____ the fence in our garden.",
+        "answer": "painting",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "reason": "Read the unchanged complete sentence and actual cloze target. Distinguish the fly/check/roll nouns, exact-time sharp and late/early adverbs, actual bridge/rock/garden/camp verbs, and precise color senses. Painting the fence is the verbal -ing phrase with a direct object under the project actual-target convention; the separate painting headword remains n. and its work-of-art example stays n.",
+      "evidence": "https://www.merriam-webster.com/dictionary/painting ; actual sentence/blank/answer; painting is explicitly also the present participle of paint in MW."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX3bed340e",
+      "before": {
+        "exampleId": "EX3bed340e",
+        "word": "color",
+        "sensePos": "n./v.",
+        "meaningHint": "顏色；面色；顏料；外貌",
+        "exampleType": "textbook",
+        "sentenceEn": "Diana painted the walls yellow to give the room color.",
+        "sentenceZh": "黛安娜把牆漆成黃色，來增添房間的色彩。",
+        "blankSentence": "Diana painted the walls yellow to give the room _____.",
+        "answer": "color",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EX3bed340e",
+        "word": "color",
+        "sensePos": "n.",
+        "meaningHint": "色彩",
+        "exampleType": "textbook",
+        "sentenceEn": "Diana painted the walls yellow to give the room color.",
+        "sentenceZh": "黛安娜把牆漆成黃色，來增添房間的色彩。",
+        "blankSentence": "Diana painted the walls yellow to give the room _____.",
+        "answer": "color",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "reason": "Read the unchanged complete sentence and actual cloze target. Distinguish the fly/check/roll nouns, exact-time sharp and late/early adverbs, actual bridge/rock/garden/camp verbs, and precise color senses. Painting the fence is the verbal -ing phrase with a direct object under the project actual-target convention; the separate painting headword remains n. and its work-of-art example stays n. Narrow this existing nonempty mixed hint to the actual cloze sense. This is contextual precision, not a claim that every old headword sense was false. Empty hints remain empty.",
+      "evidence": "https://www.merriam-webster.com/dictionary/color ; actual sentence/blank/answer; painting is explicitly also the present participle of paint in MW."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX45619b43",
+      "before": {
+        "exampleId": "EX45619b43",
+        "word": "color",
+        "sensePos": "n./v.",
+        "meaningHint": "顏色；面色；顏料；外貌",
+        "exampleType": "textbook",
+        "sentenceEn": "The girl drew a picture and then colored it in.",
+        "sentenceZh": "這位女孩畫了一張圖，然後替它上色。",
+        "blankSentence": "The girl drew a picture and then _____ it in.",
+        "answer": "colored",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EX45619b43",
+        "word": "color",
+        "sensePos": "v.",
+        "meaningHint": "替……著色（color in）",
+        "exampleType": "textbook",
+        "sentenceEn": "The girl drew a picture and then colored it in.",
+        "sentenceZh": "這位女孩畫了一張圖，然後替它上色。",
+        "blankSentence": "The girl drew a picture and then _____ it in.",
+        "answer": "colored",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "reason": "Read the unchanged complete sentence and actual cloze target. Distinguish the fly/check/roll nouns, exact-time sharp and late/early adverbs, actual bridge/rock/garden/camp verbs, and precise color senses. Painting the fence is the verbal -ing phrase with a direct object under the project actual-target convention; the separate painting headword remains n. and its work-of-art example stays n. Narrow this existing nonempty mixed hint to the actual cloze sense. This is contextual precision, not a claim that every old headword sense was false. Empty hints remain empty.",
+      "evidence": "https://www.merriam-webster.com/dictionary/color ; actual sentence/blank/answer; painting is explicitly also the present participle of paint in MW."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX7b94566f",
+      "before": {
+        "exampleId": "EX7b94566f",
+        "word": "color",
+        "sensePos": "n./v.",
+        "meaningHint": "顏色；面色；顏料；外貌",
+        "exampleType": "textbook",
+        "sentenceEn": "Janet's favorite colors are pink and purple.",
+        "sentenceZh": "珍妮特最喜歡的顏色是粉色和紫色。",
+        "blankSentence": "Janet's favorite _____ are pink and purple.",
+        "answer": "colors",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EX7b94566f",
+        "word": "color",
+        "sensePos": "n.",
+        "meaningHint": "顏色",
+        "exampleType": "textbook",
+        "sentenceEn": "Janet's favorite colors are pink and purple.",
+        "sentenceZh": "珍妮特最喜歡的顏色是粉色和紫色。",
+        "blankSentence": "Janet's favorite _____ are pink and purple.",
+        "answer": "colors",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "reason": "Read the unchanged complete sentence and actual cloze target. Distinguish the fly/check/roll nouns, exact-time sharp and late/early adverbs, actual bridge/rock/garden/camp verbs, and precise color senses. Painting the fence is the verbal -ing phrase with a direct object under the project actual-target convention; the separate painting headword remains n. and its work-of-art example stays n. Narrow this existing nonempty mixed hint to the actual cloze sense. This is contextual precision, not a claim that every old headword sense was false. Empty hints remain empty.",
+      "evidence": "https://www.merriam-webster.com/dictionary/color ; actual sentence/blank/answer; painting is explicitly also the present participle of paint in MW."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX80069924",
+      "before": {
+        "exampleId": "EX80069924",
+        "word": "color",
+        "sensePos": "n./v.",
+        "meaningHint": "顏色；面色；顏料；外貌",
+        "exampleType": "textbook",
+        "sentenceEn": "Veronica colors her hair to hide the gray.",
+        "sentenceZh": "維洛妮卡染髮來遮住灰白髮。",
+        "blankSentence": "Veronica _____ her hair to hide the gray.",
+        "answer": "colors",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EX80069924",
+        "word": "color",
+        "sensePos": "v.",
+        "meaningHint": "染色（此處指染髮）",
+        "exampleType": "textbook",
+        "sentenceEn": "Veronica colors her hair to hide the gray.",
+        "sentenceZh": "維洛妮卡染髮來遮住灰白髮。",
+        "blankSentence": "Veronica _____ her hair to hide the gray.",
+        "answer": "colors",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "reason": "Read the unchanged complete sentence and actual cloze target. Distinguish the fly/check/roll nouns, exact-time sharp and late/early adverbs, actual bridge/rock/garden/camp verbs, and precise color senses. Painting the fence is the verbal -ing phrase with a direct object under the project actual-target convention; the separate painting headword remains n. and its work-of-art example stays n. Narrow this existing nonempty mixed hint to the actual cloze sense. This is contextual precision, not a claim that every old headword sense was false. Empty hints remain empty.",
+      "evidence": "https://www.merriam-webster.com/dictionary/color ; actual sentence/blank/answer; painting is explicitly also the present participle of paint in MW."
+    },
+    {
+      "dataset": "examples",
+      "id": "EXdc198008",
+      "before": {
+        "exampleId": "EXdc198008",
+        "word": "color",
+        "sensePos": "n./v.",
+        "meaningHint": "顏色；面色；顏料；外貌",
+        "exampleType": "textbook",
+        "sentenceEn": "Cindy can spend hours just coloring.",
+        "sentenceZh": "辛蒂可以花好幾個小時只著色。",
+        "blankSentence": "Cindy can spend hours just _____.",
+        "answer": "coloring",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EXdc198008",
+        "word": "color",
+        "sensePos": "v.",
+        "meaningHint": "著色",
+        "exampleType": "textbook",
+        "sentenceEn": "Cindy can spend hours just coloring.",
+        "sentenceZh": "辛蒂可以花好幾個小時只著色。",
+        "blankSentence": "Cindy can spend hours just _____.",
+        "answer": "coloring",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "reason": "Read the unchanged complete sentence and actual cloze target. Distinguish the fly/check/roll nouns, exact-time sharp and late/early adverbs, actual bridge/rock/garden/camp verbs, and precise color senses. Painting the fence is the verbal -ing phrase with a direct object under the project actual-target convention; the separate painting headword remains n. and its work-of-art example stays n. Narrow this existing nonempty mixed hint to the actual cloze sense. This is contextual precision, not a claim that every old headword sense was false. Empty hints remain empty.",
+      "evidence": "https://www.merriam-webster.com/dictionary/color ; actual sentence/blank/answer; painting is explicitly also the present participle of paint in MW."
+    },
+    {
+      "dataset": "examples",
+      "id": "EXa4cd6f15",
+      "before": {
+        "exampleId": "EXa4cd6f15",
+        "word": "watch",
+        "sensePos": "v.",
+        "meaningHint": "觀看；注意",
+        "exampleType": "textbook",
+        "sentenceEn": "Lily watched an interesting movie this afternoon.",
+        "sentenceZh": "莉莉今天下午看了一部有趣的電影。",
+        "blankSentence": "Lily _____ an interesting movie this afternoon.",
+        "answer": "watched",
+        "difficulty": "LV2",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EXa4cd6f15",
+        "word": "watch",
+        "sensePos": "v.",
+        "meaningHint": "觀看",
+        "exampleType": "textbook",
+        "sentenceEn": "Lily watched an interesting movie this afternoon.",
+        "sentenceZh": "莉莉今天下午看了一部有趣的電影。",
+        "blankSentence": "Lily _____ an interesting movie this afternoon.",
+        "answer": "watched",
+        "difficulty": "LV2",
+        "status": "approved"
+      },
+      "reason": "Narrow this existing nonempty mixed hint to the actual cloze sense. This is contextual precision, not a claim that every old headword sense was false. Empty hints remain empty.",
+      "evidence": "https://www.merriam-webster.com/dictionary/watch ; unchanged full sentence."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX13f6ab21",
+      "before": {
+        "exampleId": "EX13f6ab21",
+        "word": "bridge",
+        "sensePos": "n.",
+        "meaningHint": "橋樑（考點：比喻義，連結兩方的媒介）",
+        "exampleType": "exam",
+        "sentenceEn": "Music can be a bridge between people who speak different languages.",
+        "sentenceZh": "音樂可以成為不同語言的人之間的橋樑。",
+        "blankSentence": "Music can be a _____ between people who speak different languages.",
+        "answer": "bridge",
+        "difficulty": "LV1",
+        "status": "draft"
+      },
+      "after": {
+        "exampleId": "EX13f6ab21",
+        "word": "bridge",
+        "sensePos": "n.",
+        "meaningHint": "橋樑（考點：比喻義，連結兩方的媒介）",
+        "exampleType": "exam",
+        "sentenceEn": "Music can be a bridge between people who speak different languages.",
+        "sentenceZh": "音樂可以成為不同語言的人之間的橋樑。",
+        "blankSentence": "Music can be a _____ between people who speak different languages.",
+        "answer": "bridge",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Read the authored music-as-a-bridge practice sentence, Chinese, cloze and answer. It is not the official wind-phone question.",
+      "evidence": "https://www.merriam-webster.com/dictionary/bridge ; separate official 113 GSAT Q28 evidence below."
+    },
+    {
+      "dataset": "senses",
+      "id": "W000503-1",
+      "before": {
+        "senseId": "W000503-1",
+        "wordId": "W000503",
+        "word": "look",
+        "senseOrder": 1,
+        "sensePos": "v.",
+        "meaningZh": "看；看起來",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：一看；神色；樣子；面容",
+        "status": "needs_check"
+      },
+      "after": {
+        "senseId": "W000503-1",
+        "wordId": "W000503",
+        "word": "look",
+        "senseOrder": 1,
+        "sensePos": "v.",
+        "meaningZh": "看；看起來",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "2026-11-05：本義與詞典分詞性條目及本卡完整例句分別核對。look 的看／外表、roll 的滾動／名冊、always 的頻率副詞、early 的形容詞／副詞分開；未出現在例句的義只核詞典義。圖片、例句、整詞狀態與本義核查不互相替代。",
+        "status": "reviewed"
+      },
+      "reason": "Verify only this existing lexical sense, preserving other senses and whole-word status.",
+      "evidence": "https://www.merriam-webster.com/dictionary/look"
+    },
+    {
+      "dataset": "senses",
+      "id": "W000503-2",
+      "before": {
+        "senseId": "W000503-2",
+        "wordId": "W000503",
+        "word": "look",
+        "senseOrder": 2,
+        "sensePos": "n.",
+        "meaningZh": "看一眼；外表",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：一看；神色；樣子；面容",
+        "status": "needs_check"
+      },
+      "after": {
+        "senseId": "W000503-2",
+        "wordId": "W000503",
+        "word": "look",
+        "senseOrder": 2,
+        "sensePos": "n.",
+        "meaningZh": "看一眼；外表",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "2026-11-05：本義與詞典分詞性條目及本卡完整例句分別核對。look 的看／外表、roll 的滾動／名冊、always 的頻率副詞、early 的形容詞／副詞分開；未出現在例句的義只核詞典義。圖片、例句、整詞狀態與本義核查不互相替代。",
+        "status": "reviewed"
+      },
+      "reason": "Verify only this existing lexical sense, preserving other senses and whole-word status.",
+      "evidence": "https://www.merriam-webster.com/dictionary/look"
+    },
+    {
+      "dataset": "senses",
+      "id": "W000723-1",
+      "before": {
+        "senseId": "W000723-1",
+        "wordId": "W000723",
+        "word": "roll",
+        "senseOrder": 1,
+        "sensePos": "v.",
+        "meaningZh": "滾動；捲",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：卷；滾動；名單；案卷",
+        "status": "needs_check"
+      },
+      "after": {
+        "senseId": "W000723-1",
+        "wordId": "W000723",
+        "word": "roll",
+        "senseOrder": 1,
+        "sensePos": "v.",
+        "meaningZh": "滾動；捲",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "2026-11-05：本義與詞典分詞性條目及本卡完整例句分別核對。look 的看／外表、roll 的滾動／名冊、always 的頻率副詞、early 的形容詞／副詞分開；未出現在例句的義只核詞典義。圖片、例句、整詞狀態與本義核查不互相替代。",
+        "status": "reviewed"
+      },
+      "reason": "Verify only this existing lexical sense, preserving other senses and whole-word status.",
+      "evidence": "https://www.merriam-webster.com/dictionary/roll"
+    },
+    {
+      "dataset": "senses",
+      "id": "W000723-2",
+      "before": {
+        "senseId": "W000723-2",
+        "wordId": "W000723",
+        "word": "roll",
+        "senseOrder": 2,
+        "sensePos": "n.",
+        "meaningZh": "一捲；名冊",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：卷；滾動；名單；案卷",
+        "status": "needs_check"
+      },
+      "after": {
+        "senseId": "W000723-2",
+        "wordId": "W000723",
+        "word": "roll",
+        "senseOrder": 2,
+        "sensePos": "n.",
+        "meaningZh": "一捲；名冊",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "2026-11-05：本義與詞典分詞性條目及本卡完整例句分別核對。look 的看／外表、roll 的滾動／名冊、always 的頻率副詞、early 的形容詞／副詞分開；未出現在例句的義只核詞典義。圖片、例句、整詞狀態與本義核查不互相替代。",
+        "status": "reviewed"
+      },
+      "reason": "Verify only this existing lexical sense, preserving other senses and whole-word status.",
+      "evidence": "https://www.merriam-webster.com/dictionary/roll"
+    },
+    {
+      "dataset": "senses",
+      "id": "W000029-1",
+      "before": {
+        "senseId": "W000029-1",
+        "wordId": "W000029",
+        "word": "always",
+        "senseOrder": 1,
+        "sensePos": "adv.",
+        "meaningZh": "總是",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：總是；始終；永遠；總是（等於always）",
+        "status": "needs_check"
+      },
+      "after": {
+        "senseId": "W000029-1",
+        "wordId": "W000029",
+        "word": "always",
+        "senseOrder": 1,
+        "sensePos": "adv.",
+        "meaningZh": "總是",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "2026-11-05：本義與詞典分詞性條目及本卡完整例句分別核對。look 的看／外表、roll 的滾動／名冊、always 的頻率副詞、early 的形容詞／副詞分開；未出現在例句的義只核詞典義。圖片、例句、整詞狀態與本義核查不互相替代。",
+        "status": "reviewed"
+      },
+      "reason": "Verify only this existing lexical sense, preserving other senses and whole-word status.",
+      "evidence": "https://www.merriam-webster.com/dictionary/always"
+    },
+    {
+      "dataset": "senses",
+      "id": "W000252-1",
+      "before": {
+        "senseId": "W000252-1",
+        "wordId": "W000252",
+        "word": "early",
+        "senseOrder": 1,
+        "sensePos": "adj.",
+        "meaningZh": "早的",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：早的；早熟的；很早；初",
+        "status": "needs_check"
+      },
+      "after": {
+        "senseId": "W000252-1",
+        "wordId": "W000252",
+        "word": "early",
+        "senseOrder": 1,
+        "sensePos": "adj.",
+        "meaningZh": "早的",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "2026-11-05：本義與詞典分詞性條目及本卡完整例句分別核對。look 的看／外表、roll 的滾動／名冊、always 的頻率副詞、early 的形容詞／副詞分開；未出現在例句的義只核詞典義。圖片、例句、整詞狀態與本義核查不互相替代。",
+        "status": "reviewed"
+      },
+      "reason": "Verify only this existing lexical sense, preserving other senses and whole-word status.",
+      "evidence": "https://www.merriam-webster.com/dictionary/early"
+    },
+    {
+      "dataset": "senses",
+      "id": "W000252-2",
+      "before": {
+        "senseId": "W000252-2",
+        "wordId": "W000252",
+        "word": "early",
+        "senseOrder": 2,
+        "sensePos": "adv.",
+        "meaningZh": "提早地",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：早的；早熟的；很早；初",
+        "status": "needs_check"
+      },
+      "after": {
+        "senseId": "W000252-2",
+        "wordId": "W000252",
+        "word": "early",
+        "senseOrder": 2,
+        "sensePos": "adv.",
+        "meaningZh": "提早地",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "2026-11-05：本義與詞典分詞性條目及本卡完整例句分別核對。look 的看／外表、roll 的滾動／名冊、always 的頻率副詞、early 的形容詞／副詞分開；未出現在例句的義只核詞典義。圖片、例句、整詞狀態與本義核查不互相替代。",
+        "status": "reviewed"
+      },
+      "reason": "Verify only this existing lexical sense, preserving other senses and whole-word status.",
+      "evidence": "https://www.merriam-webster.com/dictionary/early"
+    },
+    {
+      "dataset": "senses",
+      "id": "W000119-1",
+      "before": {
+        "senseId": "W000119-1",
+        "wordId": "W000119",
+        "word": "bridge",
+        "senseOrder": 1,
+        "sensePos": "n.",
+        "meaningZh": "橋樑",
+        "isExamSense": true,
+        "examEvidence": "學測113 文意選填Q28",
+        "answerForms": [
+          "bridge"
+        ],
+        "note": "考點：比喻義，連結兩方的媒介",
+        "status": "draft"
+      },
+      "after": {
+        "senseId": "W000119-1",
+        "wordId": "W000119",
+        "word": "bridge",
+        "senseOrder": 1,
+        "sensePos": "n.",
+        "meaningZh": "橋樑",
+        "isExamSense": true,
+        "examEvidence": [
+          {
+            "year": 113,
+            "question": 28,
+            "answer": "B",
+            "form": "bridge",
+            "partOfSpeech": "n.",
+            "meaningZh": "橋樑；連結兩方的媒介",
+            "questionUrl": "https://www.ceec.edu.tw/files/file_pool/1/0o051427482769341323/02-113%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%A7%91%E5%AE%9A%E7%A8%BF.pdf",
+            "answerUrl": "https://www.ceec.edu.tw/files/file_pool/1/0o051427843482078305/02-113%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf",
+            "verification": "direct_official_question_and_answer_text_read",
+            "printedPage": 3
+          }
+        ],
+        "answerForms": [
+          "bridge"
+        ],
+        "note": "已實讀大考中心113學測英文試題印刷第3頁文意選填Q28及官方答案Q28=B，選項B為bridge。風之電話成為生者與死者間的橋樑，支持比喻的連結媒介名詞義。庫中音樂練習句EX13f6ab21為另寫句，並非原題逐字引用。",
+        "status": "reviewed"
+      },
+      "reason": "Direct official paper establishes both the complete context and option B; the official answer independently gives Q28 B. Do not treat the authored practice as an official quotation.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0o051427482769341323/02-113%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%A7%91%E5%AE%9A%E7%A8%BF.pdf ; https://www.ceec.edu.tw/files/file_pool/1/0o051427843482078305/02-113%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf"
+    },
+    {
+      "dataset": "words",
+      "id": "W000503",
+      "before": {
+        "wordId": "W000503",
+        "word": "look",
+        "wordVariants": [
+          "look"
+        ],
+        "level": "LV1",
+        "pos": "v./n.",
+        "posAll": [
+          "v.",
+          "n."
+        ],
+        "meaningZh": "一看；神色；樣子；面容",
+        "meaningEn": "to direct your eyes toward someone or something in order to see it; to try to find someone or something; to appear or seem to be a certain way; (n.) an expression on someone's face; appearance",
+        "usagePattern": "look at N; look for N; look like N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "look",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "看名詞；尋找名詞；看起來像名詞"
+      },
+      "after": {
+        "wordId": "W000503",
+        "word": "look",
+        "wordVariants": [
+          "look"
+        ],
+        "level": "LV1",
+        "pos": "v./n.",
+        "posAll": [
+          "v.",
+          "n."
+        ],
+        "meaningZh": "（動詞）看；尋找；看起來；（名詞）一看；神色；樣子；面容",
+        "meaningEn": "to direct your eyes toward someone or something in order to see it; to try to find someone or something; to appear or seem to be a certain way; (n.) an expression on someone's face; appearance",
+        "usagePattern": "look at N; look for N; look like N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "look",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "看……；尋找……；看起來像……"
+      },
+      "reason": "Restore the actual looking-for-keys verb and meaningful Chinese constructions, preserving the original noun senses.",
+      "evidence": "https://www.merriam-webster.com/dictionary/look"
+    },
+    {
+      "dataset": "words",
+      "id": "W000911",
+      "before": {
+        "wordId": "W000911",
+        "word": "touch",
+        "wordVariants": [
+          "touch"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "觸覺；碰；觸；機靈",
+        "meaningEn": "(v.) to put your hand or fingers on something in order to feel it, or to make someone feel strong emotion; (n.) the sense that lets you feel things with your skin",
+        "usagePattern": "touch something; be touched by N; keep in touch",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "touch",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "觸碰某物；被名詞感動；保持聯絡"
+      },
+      "after": {
+        "wordId": "W000911",
+        "word": "touch",
+        "wordVariants": [
+          "touch"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（名詞）觸覺；碰；觸；機靈；（動詞）觸碰；使感動",
+        "meaningEn": "(v.) to put your hand or fingers on something in order to feel it, or to make someone feel strong emotion; (n.) the sense that lets you feel things with your skin",
+        "usagePattern": "touch something; be touched by N; keep in touch",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "touch",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "觸碰某物；為……感動；保持聯絡"
+      },
+      "reason": "Restore the existing emotional and physical verbs from the correct English definition. The rare tact-like noun is retained, not deleted for unfamiliarity.",
+      "evidence": "https://www.merriam-webster.com/dictionary/touch"
+    },
+    {
+      "dataset": "words",
+      "id": "W000544",
+      "before": {
+        "wordId": "W000544",
+        "word": "miss",
+        "wordVariants": [
+          "miss"
+        ],
+        "level": "LV1",
+        "pos": "v./n.",
+        "posAll": [
+          "v.",
+          "n."
+        ],
+        "meaningZh": "失誤；避免；失敗；小姐",
+        "meaningEn": "(v.) to fail to hit, reach, or catch something; to feel sad because someone or something is not present; (n.) a title used before the name of an unmarried woman",
+        "usagePattern": "miss the bus/train; miss someone; Miss + name",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "miss",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "錯過公車/火車；想念某人；小姐 + 名字"
+      },
+      "after": {
+        "wordId": "W000544",
+        "word": "miss",
+        "wordVariants": [
+          "miss"
+        ],
+        "level": "LV1",
+        "pos": "v./n.",
+        "posAll": [
+          "v.",
+          "n."
+        ],
+        "meaningZh": "（動詞）想念；錯過；未擊中；避免；（名詞）失誤；失敗；（稱謂 Miss）小姐",
+        "meaningEn": "(v.) to fail to hit, reach, or catch something; to feel sad because someone or something is not present; (n.) a title used before the name of an unmarried woman",
+        "usagePattern": "miss the bus/train; miss someone; Miss + name",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "miss",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "錯過公車/火車；想念某人；小姐 + 名字"
+      },
+      "reason": "Restore the actual longing and missed-bus senses; MW also directly records avoid/escape and failed-result noun, so preserve them with categories.",
+      "evidence": "https://www.merriam-webster.com/dictionary/miss"
+    },
+    {
+      "dataset": "words",
+      "id": "W000058",
+      "before": {
+        "wordId": "W000058",
+        "word": "ball",
+        "wordVariants": [
+          "ball"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "球；舞會；球狀物；捏成球形",
+        "meaningEn": "round object that is hit or thrown or kicked in games; an object with a spherical shape",
+        "usagePattern": "play with a ball; throw/catch a ball; a ball game",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "ball",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "玩球；丟球／接球；球類運動"
+      },
+      "after": {
+        "wordId": "W000058",
+        "word": "ball",
+        "wordVariants": [
+          "ball"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "球；舞會；球狀物；捏成球形",
+        "meaningEn": "(n.) a round object used in games; a rounded object; a formal social event with dancing. (v.) to form or gather into a rounded mass.",
+        "usagePattern": "play with a ball; throw/catch a ball; a ball game",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "ball",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "玩球；丟球／接球；球類運動"
+      },
+      "reason": "Restore the real dance-event noun and existing form-into-a-ball verb, omitted from the old round-object-only English summary.",
+      "evidence": "https://www.merriam-webster.com/dictionary/ball"
+    },
+    {
+      "dataset": "words",
+      "id": "W000558",
+      "before": {
+        "wordId": "W000558",
+        "word": "mouth",
+        "wordVariants": [
+          "mouth"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "嘴；口；口腔；口狀物",
+        "meaningEn": "(n.) the body part used for eating and speaking; an opening resembling a mouth, as of a river or container; (v.) to form words with the lips without making a sound",
+        "usagePattern": "open one's mouth; the mouth of a river; mouth the words",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "mouth",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "張開嘴巴；河口；說出（嘴裡的）話"
+      },
+      "after": {
+        "wordId": "W000558",
+        "word": "mouth",
+        "wordVariants": [
+          "mouth"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（名詞）嘴；口；口腔；口狀物；（動詞）用口形無聲地說",
+        "meaningEn": "(n.) the body part used for eating and speaking; an opening resembling a mouth, as of a river or container; (v.) to form words with the lips without making a sound",
+        "usagePattern": "open one's mouth; the mouth of a river; mouth the words",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "mouth",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "張開嘴巴；河口；用口形無聲地說出話語"
+      },
+      "reason": "The existing English explicitly describes silent lip movement; remove the misleading ordinary-speaking Chinese pattern and include that verb. MW directly lists soundless formation.",
+      "evidence": "https://www.merriam-webster.com/dictionary/mouth"
+    },
+    {
+      "dataset": "words",
+      "id": "W000496",
+      "before": {
+        "wordId": "W000496",
+        "word": "lip",
+        "wordVariants": [
+          "lip"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "脣；口緣；脣狀構造；以嘴脣碰",
+        "meaningEn": "either of two fleshy folds of tissue that surround the mouth and play a role in speaking; (botany) either of the two parts of a bilabiate corolla or calyx",
+        "usagePattern": "one's upper/lower lip; bite one's lip",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "lip",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "某人的上脣／下脣；咬嘴脣"
+      },
+      "after": {
+        "wordId": "W000496",
+        "word": "lip",
+        "wordVariants": [
+          "lip"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "（名詞）脣；口緣；脣狀構造；（另有動詞義）以嘴脣碰",
+        "meaningEn": "either of two fleshy folds of tissue that surround the mouth and play a role in speaking; (botany) either of the two parts of a bilabiate corolla or calyx",
+        "usagePattern": "one's upper/lower lip; bite one's lip",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "lip",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "某人的上脣／下脣；咬嘴脣"
+      },
+      "reason": "MW directly records the botanical lip and touch-with-lips verb. Separate the latter from the formal n. without expanding headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/lip"
+    },
+    {
+      "dataset": "words",
+      "id": "W002973",
+      "before": {
+        "wordId": "W002973",
+        "word": "volleyball",
+        "wordVariants": [
+          "volleyball"
+        ],
+        "level": "LV3",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "排球",
+        "meaningEn": "a game in which two teams hit an inflated ball over a high net using their hands; an inflated ball used in playing volleyball",
+        "usagePattern": "a/the volleyball; volleyball of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "volleyball",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "排球；排球運動"
+      },
+      "after": {
+        "wordId": "W002973",
+        "word": "volleyball",
+        "wordVariants": [
+          "volleyball"
+        ],
+        "level": "LV3",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "排球",
+        "meaningEn": "a game in which two teams hit an inflated ball over a high net using their hands; an inflated ball used in playing volleyball",
+        "usagePattern": "play/practice volleyball; a volleyball team; beach volleyball",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "volleyball",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "打／練習排球；排球隊；沙灘排球"
+      },
+      "reason": "Replace generic of-N placeholders with ordinary constructions appropriate to the unchanged beach practice caption.",
+      "evidence": "https://www.merriam-webster.com/dictionary/volleyball"
+    },
+    {
+      "dataset": "words",
+      "id": "W003601",
+      "before": {
+        "wordId": "W003601",
+        "word": "lipstick",
+        "wordVariants": [
+          "lipstick"
+        ],
+        "level": "LV4",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "口紅；脣膏",
+        "meaningEn": "makeup that is used to color the lips; form by tracing with lipstick",
+        "usagePattern": "a/the lipstick; lipstick of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "lipstick",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "某支口紅；……的口紅"
+      },
+      "after": {
+        "wordId": "W003601",
+        "word": "lipstick",
+        "wordVariants": [
+          "lipstick"
+        ],
+        "level": "LV4",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "口紅；脣膏",
+        "meaningEn": "(n.) a cosmetic used to color the lips, or a small tube or stick containing it. (Separate verb recorded in Princeton WordNet 3.0 as reproduced by Wordnik) to trace a form with lipstick or to apply lipstick.",
+        "usagePattern": "wear/put on lipstick; a tube of lipstick",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "lipstick",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "擦／塗口紅；一管口紅"
+      },
+      "reason": "The tracing fragment is a genuine WordNet verb, not false contamination. Explicitly separate its source/category from the formal cosmetic noun; primary MW/Collins support the noun.",
+      "evidence": "https://www.merriam-webster.com/dictionary/lipstick ; https://www.collinsdictionary.com/dictionary/english/lipstick ; https://www.wordnik.com/words/lipstick"
+    },
+    {
+      "dataset": "words",
+      "id": "W000119",
+      "before": {
+        "wordId": "W000119",
+        "word": "bridge",
+        "wordVariants": [
+          "bridge"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "橋；艦橋；橋樑；橋牌",
+        "meaningEn": "(n.) a structure built over a river, road, or other obstacle so people or vehicles can cross it; a card game for four players; (v.) to build a bridge, or to reduce the difference between two things.",
+        "usagePattern": "a bridge over/across N; bridge the gap between A and B",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "bridge",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "一座橋跨越名詞；彌合A與B之間的差距"
+      },
+      "after": {
+        "wordId": "W000119",
+        "word": "bridge",
+        "wordVariants": [
+          "bridge"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（名詞）橋；艦橋；橋樑；橋牌；（動詞）架橋；彌合差距",
+        "meaningEn": "(n.) a structure built over a river, road, or other obstacle so people or vehicles can cross it; a card game for four players; (v.) to build a bridge, or to reduce the difference between two things.",
+        "usagePattern": "a bridge over/across N; bridge the gap between A and B",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "bridge",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "跨越……的橋；彌合 A 與 B 之間的差距"
+      },
+      "reason": "Include the actual bridge-the-gap verb and explain the two existing constructions without grammatical placeholders.",
+      "evidence": "https://www.merriam-webster.com/dictionary/bridge"
+    },
+    {
+      "dataset": "words",
+      "id": "W000429",
+      "before": {
+        "wordId": "W000429",
+        "word": "inch",
+        "wordVariants": [
+          "inch"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "英寸；身高；小島；慢慢前進",
+        "meaningEn": "a unit of length equal to one twelfth of a foot (about 2.54 centimeters); a very small amount or distance",
+        "usagePattern": "inch by inch; every inch",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "inch",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "一寸一寸地；每一寸"
+      },
+      "after": {
+        "wordId": "W000429",
+        "word": "inch",
+        "wordVariants": [
+          "inch"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "（名詞）英寸；身高；（蘇格蘭同形名詞）小島；（另有動詞義）慢慢前進",
+        "meaningEn": "a unit of length equal to one twelfth of a foot (about 2.54 centimeters); a very small amount or distance",
+        "usagePattern": "inch by inch; every inch",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "inch",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "一寸一寸地；每一寸"
+      },
+      "reason": "MW directly distinguishes the chiefly Scottish island homograph and slow-motion verb from the length noun. Preserve both rare senses without expanding formal n.",
+      "evidence": "https://www.merriam-webster.com/dictionary/inch"
+    },
+    {
+      "dataset": "words",
+      "id": "W000776",
+      "before": {
+        "wordId": "W000776",
+        "word": "sight",
+        "wordVariants": [
+          "sight"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "景觀；視力；眼界；閱讀",
+        "meaningEn": "the ability to see, or the act of seeing someone or something",
+        "usagePattern": "at first sight; catch sight of; lose sight of",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "sight",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "乍看之下；瞥見；失去視線"
+      },
+      "after": {
+        "wordId": "W000776",
+        "word": "sight",
+        "wordVariants": [
+          "sight"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（名詞）景觀；景象；視力；眼界；閱讀；（動詞）看見；發現；瞄準",
+        "meaningEn": "(n.) the ability or act of seeing; something seen, especially an impressive view or scene. (v.) to catch sight of, spot, or aim using sights.",
+        "usagePattern": "at first sight; catch sight of; lose sight of",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "sight",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "乍看之下；瞥見；失去視線"
+      },
+      "reason": "Restore the actual beautiful-sight scene and existing verb categories. The inherited reading gloss is retained pending precise source mapping.",
+      "evidence": "https://www.merriam-webster.com/dictionary/sight"
+    },
+    {
+      "dataset": "words",
+      "id": "W004602",
+      "before": {
+        "wordId": "W004602",
+        "word": "outsider",
+        "wordVariants": [
+          "outsider"
+        ],
+        "level": "LV5",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "外人；局外人；非會員；外行",
+        "meaningEn": "a contestant (human or animal) not considered to have a good chance to win",
+        "usagePattern": "an/the outsider; outsider of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "outsider",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "一位局外人；……的局外人"
+      },
+      "after": {
+        "wordId": "W004602",
+        "word": "outsider",
+        "wordVariants": [
+          "outsider"
+        ],
+        "level": "LV5",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "外人；局外人；非會員；外行",
+        "meaningEn": "a person who does not belong to a particular group or is not accepted as part of it; also, a contestant considered unlikely to win.",
+        "usagePattern": "feel like an outsider; an outsider to a group",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "outsider",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "覺得自己像個局外人；某團體的外人"
+      },
+      "reason": "Restore the new-student nonmember sense while retaining the genuine outsider contestant sense.",
+      "evidence": "https://www.merriam-webster.com/dictionary/outsider"
+    },
+    {
+      "dataset": "words",
+      "id": "W003895",
+      "before": {
+        "wordId": "W003895",
+        "word": "sightseeing",
+        "wordVariants": [
+          "sightseeing"
+        ],
+        "level": "LV4",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "觀光；遊覽；觀光的；遊覽的",
+        "meaningEn": "going about to look at places of interest",
+        "usagePattern": "a/the sightseeing; sightseeing of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "sightseeing",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "觀光行程；對……的觀光"
+      },
+      "after": {
+        "wordId": "W003895",
+        "word": "sightseeing",
+        "wordVariants": [
+          "sightseeing"
+        ],
+        "level": "LV4",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "觀光；遊覽；觀光的；遊覽的",
+        "meaningEn": "going about to look at places of interest",
+        "usagePattern": "go sightseeing; a sightseeing tour",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "sightseeing",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "去觀光；觀光行程"
+      },
+      "reason": "Use the mass activity and existing attributive construction rather than a sightseeing/of-N templates.",
+      "evidence": "https://www.merriam-webster.com/dictionary/sightseeing"
+    },
+    {
+      "dataset": "words",
+      "id": "W005342",
+      "before": {
+        "wordId": "W005342",
+        "word": "eyesight",
+        "wordVariants": [
+          "eyesight"
+        ],
+        "level": "LV6",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "視力；目力",
+        "meaningEn": "normal use of the faculty of vision",
+        "usagePattern": "an/the eyesight; eyesight of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "eyesight",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "視力；……的視力"
+      },
+      "after": {
+        "wordId": "W005342",
+        "word": "eyesight",
+        "wordVariants": [
+          "eyesight"
+        ],
+        "level": "LV6",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "視力；目力",
+        "meaningEn": "the ability to see; vision.",
+        "usagePattern": "good/poor eyesight; protect/improve one's eyesight",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "eyesight",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "良好／不佳的視力；保護／改善某人的視力"
+      },
+      "reason": "Eyesight means the faculty generally and does not presuppose normal vision; use meaningful collocations. The image is not independent medical evidence for the practice claim.",
+      "evidence": "https://www.merriam-webster.com/dictionary/eyesight"
+    },
+    {
+      "dataset": "words",
+      "id": "W000722",
+      "before": {
+        "wordId": "W000722",
+        "word": "rock",
+        "wordVariants": [
+          "rock"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "岩石；岩礁；石頭；基石",
+        "meaningEn": "(n.) a hard solid mineral material that forms part of the earth's surface; (v.) to move gently backward and forward or from side to side",
+        "usagePattern": "rock climbing; rock back and forth; a piece of rock",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "rock",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "攀岩；前後搖晃的岩石；一塊岩石"
+      },
+      "after": {
+        "wordId": "W000722",
+        "word": "rock",
+        "wordVariants": [
+          "rock"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（名詞）岩石；岩礁；石頭；基石；（動詞）輕輕搖動；搖晃",
+        "meaningEn": "(n.) a hard solid mineral material that forms part of the earth's surface; (v.) to move gently backward and forward or from side to side",
+        "usagePattern": "rock climbing; rock back and forth; a piece of rock",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "rock",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "攀岩；前後搖晃；一塊岩石"
+      },
+      "reason": "Restore the actual rocked-baby verb; rock back and forth is a movement, not a rock noun modified by that movement.",
+      "evidence": "https://www.merriam-webster.com/dictionary/rock"
+    },
+    {
+      "dataset": "words",
+      "id": "W001736",
+      "before": {
+        "wordId": "W001736",
+        "word": "rocky",
+        "wordVariants": [
+          "rocky"
+        ],
+        "level": "LV2",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "岩石的；多石的；像岩石的；無情的",
+        "meaningEn": "full of rocks; (of a situation) difficult and full of problems",
+        "usagePattern": "a rocky road/coast/path; a rocky start; a rocky relationship",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "rocky",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "崎嶇的道路／海岸／小徑；艱難的開端；不穩定的關係"
+      },
+      "after": {
+        "wordId": "W001736",
+        "word": "rocky",
+        "wordVariants": [
+          "rocky"
+        ],
+        "level": "LV2",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "岩石的；多石的；像岩石的；無情的；艱難的；不順利的",
+        "meaningEn": "full of rocks; (of a situation) difficult and full of problems",
+        "usagePattern": "a rocky road/coast/path; a rocky start; a rocky relationship",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "rocky",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "崎嶇的道路／海岸／小徑；艱難的開端；不穩定的關係"
+      },
+      "reason": "Add the actual difficult-friendship sense. MW explicitly preserves insensitive/steadfast senses, so do not delete the inherited insensitive gloss for rarity.",
+      "evidence": "https://www.merriam-webster.com/dictionary/rocky"
+    },
+    {
+      "dataset": "words",
+      "id": "W000329",
+      "before": {
+        "wordId": "W000329",
+        "word": "fresh",
+        "wordVariants": [
+          "fresh"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "新鮮的；新奇的；另外的；淡的",
+        "meaningEn": "recently made, produced, or picked, and not preserved or frozen; newly experienced or presented in a new way",
+        "usagePattern": "fresh food/air; a fresh start/idea; fresh water",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "fresh",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "新鮮食物/空氣；嶄新的開始/想法；淡水"
+      },
+      "after": {
+        "wordId": "W000329",
+        "word": "fresh",
+        "wordVariants": [
+          "fresh"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "新鮮的；新奇的；另外的；清新的；淡的（如淡水）",
+        "meaningEn": "recently made, produced or picked; new or additional; pleasantly clean and cool, as of air; not salty, as of water.",
+        "usagePattern": "fresh food/air; a fresh start/idea; fresh water",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "fresh",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "新鮮食物／清新空氣；嶄新的開始／想法；淡水"
+      },
+      "reason": "Restore the actual fresh-air and legitimate fresh-water meanings rather than treating everything as recently produced food.",
+      "evidence": "https://www.merriam-webster.com/dictionary/fresh"
+    },
+    {
+      "dataset": "words",
+      "id": "W000573",
+      "before": {
+        "wordId": "W000573",
+        "word": "neck",
+        "wordVariants": [
+          "neck"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "脖子；衣領；頸；擁抱",
+        "meaningEn": "the part of the body that connects the head to the shoulders; the part of a piece of clothing that fits around this part of the body; a narrow part of something that resembles a neck, such as a bottle",
+        "usagePattern": "a stiff/sore neck; a V-neck/crew neck; the neck of a bottle",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "neck",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "僵硬/酸痛的脖子；原形動詞-領口/圓領；瓶子的瓶頸"
+      },
+      "after": {
+        "wordId": "W000573",
+        "word": "neck",
+        "wordVariants": [
+          "neck"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "（名詞）脖子；衣領；頸；瓶頸等狹窄部分；（另有動詞義）親吻擁抱",
+        "meaningEn": "the part of the body that connects the head to the shoulders; the part of a piece of clothing that fits around this part of the body; a narrow part of something that resembles a neck, such as a bottle",
+        "usagePattern": "a stiff/sore neck; a V-neck/crew neck; the neck of a bottle",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "neck",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "僵硬／酸痛的脖子；V 字領／圓領；瓶頸"
+      },
+      "reason": "The V in V-neck is a shape, not a verb placeholder. MW records neck as amorous kissing/caressing, separately from formal noun senses.",
+      "evidence": "https://www.merriam-webster.com/dictionary/neck"
+    },
+    {
+      "dataset": "words",
+      "id": "W002608",
+      "before": {
+        "wordId": "W002608",
+        "word": "painter",
+        "wordVariants": [
+          "painter"
+        ],
+        "level": "LV3",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "畫家；油漆匠；噴漆匠",
+        "meaningEn": "an artist who paints pictures; a person whose job is painting walls, houses, or other surfaces",
+        "usagePattern": "a famous painter; hire a painter; a house painter",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "painter",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "知名畫家；雇用畫家；油漆工"
+      },
+      "after": {
+        "wordId": "W002608",
+        "word": "painter",
+        "wordVariants": [
+          "painter"
+        ],
+        "level": "LV3",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "畫家；油漆匠；噴漆匠",
+        "meaningEn": "an artist who paints pictures; a person whose job is painting walls, houses, or other surfaces",
+        "usagePattern": "a famous painter; hire a painter; a house painter",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "painter",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "知名畫家；雇用油漆工／畫家；房屋油漆工"
+      },
+      "reason": "The actual hire-a-painter front-door context is a decorator, while the other example is an artist; keep both legitimate senses.",
+      "evidence": "https://www.merriam-webster.com/dictionary/painter"
+    },
+    {
+      "dataset": "words",
+      "id": "W000183",
+      "before": {
+        "wordId": "W000183",
+        "word": "color",
+        "wordVariants": [
+          "color"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "顏色；面色；顏料；外貌",
+        "meaningEn": "(n.) the property, such as red or blue, that an object has as a result of reflecting light; (v.) to give color to something",
+        "usagePattern": "primary colors; color in N; change color",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "color",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "原色；在名詞上塗色；變色",
+        "verbForms": {
+          "base": "color",
+          "past": "colored",
+          "pastParticiple": "colored",
+          "sourceRef": "https://www.collinsdictionary.com/us/dictionary/english/color",
+          "status": "approved"
+        }
+      },
+      "after": {
+        "wordId": "W000183",
+        "word": "color",
+        "wordVariants": [
+          "color"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（名詞）顏色；面色；顏料；外貌；（動詞）著色；染色",
+        "meaningEn": "(n.) the property, such as red or blue, that an object has as a result of reflecting light; (v.) to give color to something",
+        "usagePattern": "primary colors; color in N; change color",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "color",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "原色；替……著色；變色",
+        "verbForms": {
+          "base": "color",
+          "past": "colored",
+          "pastParticiple": "colored",
+          "sourceRef": "https://www.collinsdictionary.com/us/dictionary/english/color",
+          "status": "approved"
+        }
+      },
+      "reason": "Restore the existing color-in and hair-color verbs, preserving the newly integrated exact verbForms and every other field.",
+      "evidence": "https://www.merriam-webster.com/dictionary/color"
+    },
+    {
+      "dataset": "words",
+      "id": "W002574",
+      "before": {
+        "wordId": "W002574",
+        "word": "necktie",
+        "wordVariants": [
+          "necktie"
+        ],
+        "level": "LV3",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "領帶",
+        "meaningEn": "neckwear consisting of a long narrow piece of material worn (mostly by men) under a collar and tied in knot at the front",
+        "usagePattern": "a/the necktie; necktie of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "necktie",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "一條領帶；某人的領帶"
+      },
+      "after": {
+        "wordId": "W002574",
+        "word": "necktie",
+        "wordVariants": [
+          "necktie"
+        ],
+        "level": "LV3",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "領帶",
+        "meaningEn": "neckwear consisting of a long narrow piece of material worn (mostly by men) under a collar and tied in knot at the front",
+        "usagePattern": "wear a necktie; tie a necktie",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "necktie",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "戴領帶；打領帶"
+      },
+      "reason": "Replace the generic of-N placeholder with actual wear/tie constructions.",
+      "evidence": "https://www.merriam-webster.com/dictionary/necktie"
+    },
+    {
+      "dataset": "words",
+      "id": "W000770",
+      "before": {
+        "wordId": "W000770",
+        "word": "shoulder",
+        "wordVariants": [
+          "shoulder"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "肩；肩膀；衣肩；肩負",
+        "meaningEn": "the part of the body between the neck and the upper arm; a cut of meat including the upper joint of the foreleg",
+        "usagePattern": "on one's shoulder; a shoulder bag; shrug one's shoulders",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "shoulder",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "在某人肩上；肩背包；聳肩"
+      },
+      "after": {
+        "wordId": "W000770",
+        "word": "shoulder",
+        "wordVariants": [
+          "shoulder"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "（名詞）肩；肩膀；衣肩；（另有動詞義）肩負",
+        "meaningEn": "the part of the body between the neck and the upper arm; a cut of meat including the upper joint of the foreleg",
+        "usagePattern": "on one's shoulder; a shoulder bag; shrug one's shoulders",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "shoulder",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "在某人肩上；肩背包；聳肩"
+      },
+      "reason": "Clearly separate the genuine carrying/responsibility verb from the formal shoulder noun; do not expand headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/shoulder"
+    },
+    {
+      "dataset": "words",
+      "id": "W000061",
+      "before": {
+        "wordId": "W000061",
+        "word": "bank",
+        "wordVariants": [
+          "bank"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "銀行；堤；岸；庫",
+        "meaningEn": "(n.) a business that keeps and lends money for its customers; the land along the side of a river or lake; (v.) to feel sure that something will happen",
+        "usagePattern": "a bank account; the river bank; bank on N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "bank",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "銀行帳戶；河堤；依靠名詞"
+      },
+      "after": {
+        "wordId": "W000061",
+        "word": "bank",
+        "wordVariants": [
+          "bank"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "銀行；堤；岸；庫",
+        "meaningEn": "(n.) a business that keeps and lends money for its customers; the land along the side of a river or lake; (v.) to feel sure that something will happen",
+        "usagePattern": "a bank account; the river bank; bank on N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "bank",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "銀行帳戶；河岸；指望／依靠……"
+      },
+      "reason": "River bank is the bank or shore, not necessarily an engineered embankment; bank on is rely on, not a noun token.",
+      "evidence": "https://www.merriam-webster.com/dictionary/bank"
+    },
+    {
+      "dataset": "words",
+      "id": "W000341",
+      "before": {
+        "wordId": "W000341",
+        "word": "garden",
+        "wordVariants": [
+          "garden"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "花園；果園；菜園；栽培花木",
+        "meaningEn": "a piece of ground near a house where flowers, vegetables, or fruit are grown; to work in a garden, growing and taking care of plants",
+        "usagePattern": "in the garden; grow N in the garden; garden (v.) on weekends",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "garden",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "在花園裡；在花園裡種植名詞；週末園藝"
+      },
+      "after": {
+        "wordId": "W000341",
+        "word": "garden",
+        "wordVariants": [
+          "garden"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "花園；果園；菜園；栽培花木",
+        "meaningEn": "a piece of ground near a house where flowers, vegetables, or fruit are grown; to work in a garden, growing and taking care of plants",
+        "usagePattern": "in the garden; grow N in the garden; garden (v.) on weekends",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "garden",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "在花園裡；在花園裡種植……；週末從事園藝"
+      },
+      "reason": "Explain the unchanged growing and gardening constructions without a literal noun placeholder.",
+      "evidence": "https://www.merriam-webster.com/dictionary/garden"
+    },
+    {
+      "dataset": "words",
+      "id": "W000604",
+      "before": {
+        "wordId": "W000604",
+        "word": "oil",
+        "wordVariants": [
+          "oil"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "油；石油；油畫顏料；塗油於",
+        "meaningEn": "a thick liquid that does not mix with water, used as fuel, in cooking, or found underground; to put oil on something, especially a machine, to make it work smoothly",
+        "usagePattern": "cooking oil; crude oil; oil a machine",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "oil",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "食用油；原油；機油"
+      },
+      "after": {
+        "wordId": "W000604",
+        "word": "oil",
+        "wordVariants": [
+          "oil"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "油；石油；油畫顏料；塗油於",
+        "meaningEn": "a thick liquid that does not mix with water, used as fuel, in cooking, or found underground; to put oil on something, especially a machine, to make it work smoothly",
+        "usagePattern": "cooking oil; crude oil; oil a machine",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "oil",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "食用油；原油；為機器上油"
+      },
+      "reason": "Oil a machine is a verb phrase, not the noun machine oil.",
+      "evidence": "https://www.merriam-webster.com/dictionary/oil"
+    },
+    {
+      "dataset": "words",
+      "id": "W000318",
+      "before": {
+        "wordId": "W000318",
+        "word": "fly",
+        "wordVariants": [
+          "fly"
+        ],
+        "level": "LV1",
+        "pos": "v./n.",
+        "posAll": [
+          "v.",
+          "n."
+        ],
+        "meaningZh": "蒼蠅；兩翼昆蟲；飛行；飛",
+        "meaningEn": "(v.) to move through the air using wings, or to travel in an aircraft; (n.) a small flying insect with two wings, often considered a pest",
+        "usagePattern": "fly to N; fly a kite; a fly buzzing around",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "fly",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "飛往 + 名詞；放風箏；一隻飛蟲嗡嗡叫"
+      },
+      "after": {
+        "wordId": "W000318",
+        "word": "fly",
+        "wordVariants": [
+          "fly"
+        ],
+        "level": "LV1",
+        "pos": "v./n.",
+        "posAll": [
+          "v.",
+          "n."
+        ],
+        "meaningZh": "蒼蠅；兩翼昆蟲；飛行；飛",
+        "meaningEn": "(v.) to move through the air using wings, or to travel in an aircraft; (n.) a small flying insect with two wings, often considered a pest",
+        "usagePattern": "fly to N; fly a kite; a fly buzzing around",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "fly",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "飛往……；放風箏；蒼蠅在附近嗡嗡飛"
+      },
+      "reason": "Retain all three constructions and identify fly noun in the actual buzzing example.",
+      "evidence": "https://www.merriam-webster.com/dictionary/fly"
+    },
+    {
+      "dataset": "words",
+      "id": "W002067",
+      "before": {
+        "wordId": "W002067",
+        "word": "banker",
+        "wordVariants": [
+          "banker"
+        ],
+        "level": "LV3",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "銀行家；莊家；銀行業者",
+        "meaningEn": "a financier who owns or is an executive in a bank; the person in charge of the bank in a gambling game",
+        "usagePattern": "a/the banker; banker of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "banker",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "銀行家／銀行業者；……的銀行家"
+      },
+      "after": {
+        "wordId": "W002067",
+        "word": "banker",
+        "wordVariants": [
+          "banker"
+        ],
+        "level": "LV3",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "銀行家；莊家；銀行業者",
+        "meaningEn": "a financier who owns or is an executive in a bank; the person in charge of the bank in a gambling game",
+        "usagePattern": "a banker; work as a banker; a merchant banker",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "banker",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "銀行家／銀行業者；擔任銀行從業人員；商業銀行家"
+      },
+      "reason": "Replace unsupported generic banker-of-N with meaningful existing noun constructions; keep the gambling banker sense in the definition.",
+      "evidence": "https://www.merriam-webster.com/dictionary/banker"
+    },
+    {
+      "dataset": "words",
+      "id": "W005674",
+      "before": {
+        "wordId": "W005674",
+        "word": "petroleum",
+        "wordVariants": [
+          "petroleum"
+        ],
+        "level": "LV6",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "石油",
+        "meaningEn": "a dark oil consisting mainly of hydrocarbons",
+        "usagePattern": "a/the petroleum; petroleum of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "petroleum",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "一些石油；……的石油"
+      },
+      "after": {
+        "wordId": "W005674",
+        "word": "petroleum",
+        "wordVariants": [
+          "petroleum"
+        ],
+        "level": "LV6",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "石油",
+        "meaningEn": "a dark oil consisting mainly of hydrocarbons",
+        "usagePattern": "crude petroleum; petroleum products; refine petroleum",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "petroleum",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "原油；石油產品；煉製石油"
+      },
+      "reason": "Use ordinary mass-noun petroleum and processing collocations instead of a petroleum/of-N.",
+      "evidence": "https://www.merriam-webster.com/dictionary/petroleum"
+    },
+    {
+      "dataset": "words",
+      "id": "W000977",
+      "before": {
+        "wordId": "W000977",
+        "word": "wind",
+        "wordVariants": [
+          "wind"
+        ],
+        "level": "LV2",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "風；氣息；氣味；呼吸",
+        "meaningEn": "(n.) air that moves naturally, especially in a strong current; (v.) to move in a twisting or spiral course, or to turn something around and around",
+        "usagePattern": "a strong/gentle wind; the wind blows; wind up sth",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "wind",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "強風／微風；風吹；結束某事"
+      },
+      "after": {
+        "wordId": "W000977",
+        "word": "wind",
+        "wordVariants": [
+          "wind"
+        ],
+        "level": "LV2",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（名詞）風；氣息；氣味；呼吸；（另讀音動詞 wind）纏繞；轉動",
+        "meaningEn": "(n.) air that moves naturally, especially in a strong current; (v.) to move in a twisting or spiral course, or to turn something around and around",
+        "usagePattern": "a strong/gentle wind; the wind blows; wind up sth",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "wind",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "強風／微風；風吹；結束某事"
+      },
+      "reason": "The existing English winding verb has another pronunciation and principal-part family. Label the category boundary visibly; no unqualified structured forms are added.",
+      "evidence": "https://www.merriam-webster.com/dictionary/wind"
+    },
+    {
+      "dataset": "words",
+      "id": "W000120",
+      "before": {
+        "wordId": "W000120",
+        "word": "bright",
+        "wordVariants": [
+          "bright"
+        ],
+        "level": "LV1",
+        "pos": "adj./adv.",
+        "posAll": [
+          "adj.",
+          "adv."
+        ],
+        "meaningZh": "明亮的；聰明的；鮮明的；歡快的",
+        "meaningEn": "giving out or full of light; clever or intelligent; (of color) strong and vivid",
+        "usagePattern": "bright colors/light; a bright student/idea; a bright future",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "bright",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "鮮豔的顏色／光；聰明的學生／主意；光明的未來"
+      },
+      "after": {
+        "wordId": "W000120",
+        "word": "bright",
+        "wordVariants": [
+          "bright"
+        ],
+        "level": "LV1",
+        "pos": "adj./adv.",
+        "posAll": [
+          "adj.",
+          "adv."
+        ],
+        "meaningZh": "明亮的；聰明的；鮮明的；歡快的",
+        "meaningEn": "giving out or full of light; clever or intelligent; (of color) strong and vivid",
+        "usagePattern": "bright colors/light; a bright student/idea; a bright future",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "bright",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "鮮豔的顏色／明亮的光；聰明的學生／好主意；光明的未來"
+      },
+      "reason": "Keep the distinct color/light/intelligence collocations; bright light means bright illumination rather than a vivid color.",
+      "evidence": "https://www.merriam-webster.com/dictionary/bright"
+    },
+    {
+      "dataset": "words",
+      "id": "W000159",
+      "before": {
+        "wordId": "W000159",
+        "word": "check",
+        "wordVariants": [
+          "check"
+        ],
+        "level": "LV1",
+        "pos": "v./n.",
+        "posAll": [
+          "v.",
+          "n."
+        ],
+        "meaningZh": "檢查；支票；阻止物；寄物牌",
+        "meaningEn": "to make sure that something is correct, safe, or in good condition; a written order to a bank to pay money from your account; the bill for food and drinks in a restaurant",
+        "usagePattern": "check for N; double-check N; pay by check",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "check",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "檢查某物；再次確認某物；以支票付款"
+      },
+      "after": {
+        "wordId": "W000159",
+        "word": "check",
+        "wordVariants": [
+          "check"
+        ],
+        "level": "LV1",
+        "pos": "v./n.",
+        "posAll": [
+          "v.",
+          "n."
+        ],
+        "meaningZh": "（動詞）檢查；核對；（名詞）支票；帳單；阻止物；寄物牌",
+        "meaningEn": "to make sure that something is correct, safe, or in good condition; a written order to a bank to pay money from your account; the bill for food and drinks in a restaurant",
+        "usagePattern": "check for N; double-check N; pay by check",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "check",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "檢查是否有……；再次核對……；以支票付款"
+      },
+      "reason": "Restore the actual restaurant bill and align check-for, double-check and pay-by-check without collapsing their distinct functions.",
+      "evidence": "https://www.merriam-webster.com/dictionary/check"
+    },
+    {
+      "dataset": "words",
+      "id": "W001364",
+      "before": {
+        "wordId": "W001364",
+        "word": "flight",
+        "wordVariants": [
+          "flight"
+        ],
+        "level": "LV2",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "飛行；射程；逃走；飛躍",
+        "meaningEn": "a journey made by aircraft; the action of flying through the air; an act of running away from danger",
+        "usagePattern": "book/take/catch a flight; flight to N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "flight",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "預訂／搭乘／趕上班機；飛往某地的班機"
+      },
+      "after": {
+        "wordId": "W001364",
+        "word": "flight",
+        "wordVariants": [
+          "flight"
+        ],
+        "level": "LV2",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "飛行；班機；飛行旅程；射程；逃走；飛躍",
+        "meaningEn": "a journey made by aircraft; the action of flying through the air; an act of running away from danger",
+        "usagePattern": "book/take/catch a flight; flight to N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "flight",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "預訂／搭乘／趕上班機；飛往某地的班機"
+      },
+      "reason": "Add the actual booked/delayed flight senses, retaining the other source noun meanings.",
+      "evidence": "https://www.merriam-webster.com/dictionary/flight"
+    },
+    {
+      "dataset": "words",
+      "id": "W001986",
+      "before": {
+        "wordId": "W001986",
+        "word": "windy",
+        "wordVariants": [
+          "windy"
+        ],
+        "level": "LV3",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "多風的；風強的；腹脹的；吹牛的",
+        "meaningEn": "resembling the wind in speed, force, or variability",
+        "usagePattern": "be windy; windy + N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "windy",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "風大的；多風的……"
+      },
+      "after": {
+        "wordId": "W001986",
+        "word": "windy",
+        "wordVariants": [
+          "windy"
+        ],
+        "level": "LV3",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "多風的；風強的；腹脹的；吹牛的",
+        "meaningEn": "marked by strong or frequent wind; also flatulent, verbose or boastful. A separate pronunciation can mean winding.",
+        "usagePattern": "be windy; windy + N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "windy",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "風大的；多風的……"
+      },
+      "reason": "MW directly confirms the gusty, flatulent and bombastic senses plus another-pronunciation winding adjective. Keep them; restore the weather meaning missing from the old resemblance-only English.",
+      "evidence": "https://www.merriam-webster.com/dictionary/windy"
+    },
+    {
+      "dataset": "words",
+      "id": "W005152",
+      "before": {
+        "wordId": "W005152",
+        "word": "checkup",
+        "wordVariants": [
+          "checkup"
+        ],
+        "level": "LV6",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "審查；鑑定；健康檢查",
+        "meaningEn": "a thorough physical examination; includes a variety of tests depending on the age and sex and health of the person",
+        "usagePattern": "a/the checkup; checkup of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "checkup",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "健康檢查；……的檢查"
+      },
+      "after": {
+        "wordId": "W005152",
+        "word": "checkup",
+        "wordVariants": [
+          "checkup"
+        ],
+        "level": "LV6",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "審查；鑑定；健康檢查",
+        "meaningEn": "a thorough physical examination; includes a variety of tests depending on the age and sex and health of the person",
+        "usagePattern": "have/get a checkup; a dental/medical checkup",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "checkup",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "接受檢查；牙科／健康檢查"
+      },
+      "reason": "Use the actual dental/medical checkup constructions rather than generic of-N.",
+      "evidence": "https://www.merriam-webster.com/dictionary/checkup"
+    },
+    {
+      "dataset": "words",
+      "id": "W000761",
+      "before": {
+        "wordId": "W000761",
+        "word": "sharp",
+        "wordVariants": [
+          "sharp"
+        ],
+        "level": "LV1",
+        "pos": "adj./adv.",
+        "posAll": [
+          "adj.",
+          "adv."
+        ],
+        "meaningZh": "半升音調；利刃；騙子；鋒利的",
+        "meaningEn": "having an edge or point that can cut or make holes in things very easily",
+        "usagePattern": "sharp pain; a sharp increase; look sharp",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "sharp",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "劇痛；大幅增加；趕快／機靈點"
+      },
+      "after": {
+        "wordId": "W000761",
+        "word": "sharp",
+        "wordVariants": [
+          "sharp"
+        ],
+        "level": "LV1",
+        "pos": "adj./adv.",
+        "posAll": [
+          "adj.",
+          "adv."
+        ],
+        "meaningZh": "（形容詞）鋒利的；敏銳的；劇烈的；（副詞）整；準時；（另有名詞義）升高半音的音；升記號；利刃；騙子",
+        "meaningEn": "(adj.) having an edge or point that cuts easily; intense, sudden or perceptive. (adv.) exactly, especially at a stated time. (Separate noun) a musical note raised by a semitone, a sharp edge, or a sharper.",
+        "usagePattern": "sharp pain; a sharp increase; look sharp",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "sharp",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "劇痛；大幅增加；趕快／機靈點"
+      },
+      "reason": "The actual seven-o'clock sharp is the explicitly attested exactly adverb, missing from the old edge-only summary. Keep genuine separately sourced musical/edge/sharper nouns.",
+      "evidence": "https://www.merriam-webster.com/dictionary/sharp ; https://www.collinsdictionary.com/dictionary/english/sharp"
+    },
+    {
+      "dataset": "words",
+      "id": "W000723",
+      "before": {
+        "wordId": "W000723",
+        "word": "roll",
+        "wordVariants": [
+          "roll"
+        ],
+        "level": "LV1",
+        "pos": "v./n.",
+        "posAll": [
+          "v.",
+          "n."
+        ],
+        "meaningZh": "卷；滾動；名單；案卷",
+        "meaningEn": "to move by turning over and over on an axis; a list of names, for example of students or members",
+        "usagePattern": "roll down/over; a roll of N; call the roll",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "roll",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "滾下/滾過；一捲名詞；點名"
+      },
+      "after": {
+        "wordId": "W000723",
+        "word": "roll",
+        "wordVariants": [
+          "roll"
+        ],
+        "level": "LV1",
+        "pos": "v./n.",
+        "posAll": [
+          "v.",
+          "n."
+        ],
+        "meaningZh": "卷；滾動；名單；案卷",
+        "meaningEn": "to move by turning over and over on an axis; a list of names, for example of students or members",
+        "usagePattern": "roll down/over; a roll of N; call the roll",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "roll",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "滾下／翻滾過去；一捲……；點名"
+      },
+      "reason": "A roll of takes the material or item, not a literal noun token. The actual call-the-roll target is the list noun.",
+      "evidence": "https://www.merriam-webster.com/dictionary/roll"
+    },
+    {
+      "dataset": "words",
+      "id": "W005813",
+      "before": {
+        "wordId": "W005813",
+        "word": "sharpen",
+        "wordVariants": [
+          "sharpen"
+        ],
+        "level": "LV6",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "使尖銳；使敏捷；加重；削尖",
+        "meaningEn": "to make something sharp or sharper; to improve a skill or ability",
+        "usagePattern": "sharpen a pencil/knife; sharpen one's skills",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "sharpen",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "磨利鉛筆或刀子；磨練某人的技能"
+      },
+      "after": {
+        "wordId": "W005813",
+        "word": "sharpen",
+        "wordVariants": [
+          "sharpen"
+        ],
+        "level": "LV6",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "使尖銳；使敏捷；加重；削尖",
+        "meaningEn": "to make something sharp or sharper; to improve a skill or ability",
+        "usagePattern": "sharpen a pencil/knife; sharpen one's skills",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "sharpen",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "削尖鉛筆／磨利刀子；磨練某人的技能"
+      },
+      "reason": "Use the specific pencil-sharpening versus knife-honing Chinese collocations, preserving the metaphorical skill sense.",
+      "evidence": "https://www.merriam-webster.com/dictionary/sharpen"
+    },
+    {
+      "dataset": "words",
+      "id": "W001285",
+      "before": {
+        "wordId": "W001285",
+        "word": "dull",
+        "wordVariants": [
+          "dull"
+        ],
+        "level": "LV2",
+        "pos": "adj./v.",
+        "posAll": [
+          "adj.",
+          "v."
+        ],
+        "meaningZh": "鈍的；無趣的；呆滯的；陰暗的",
+        "meaningEn": "make dull in appearance; become dull or lusterless in appearance; lose shine or brightness",
+        "usagePattern": "dull + N; dull to V; be dull",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "dull",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "使……變遲鈍；枯燥地做……；是枯燥乏味的"
+      },
+      "after": {
+        "wordId": "W001285",
+        "word": "dull",
+        "wordVariants": [
+          "dull"
+        ],
+        "level": "LV2",
+        "pos": "adj./v.",
+        "posAll": [
+          "adj.",
+          "v."
+        ],
+        "meaningZh": "鈍的；無趣的；呆滯的；陰暗的",
+        "meaningEn": "(adj.) lacking a sharp edge; uninteresting; not bright or lively. (v.) to make or become less sharp, bright, sensitive or intense.",
+        "usagePattern": "a dull knife; a dull lecture; dull the pain",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "dull",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "鈍刀；無趣的講課；減輕疼痛"
+      },
+      "reason": "The actual dull-knife source uses an adjective, absent from the old luster-only verbs. Preserve the existing dulling verb and restore its category boundary.",
+      "evidence": "https://www.merriam-webster.com/dictionary/dull"
+    },
+    {
+      "dataset": "words",
+      "id": "W000279",
+      "before": {
+        "wordId": "W000279",
+        "word": "excited",
+        "wordVariants": [
+          "excited"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "興奮的；已勵磁的；已激發的；激昂的",
+        "meaningEn": "feeling very happy, eager, and full of energy about something",
+        "usagePattern": "be excited about N; be excited to V; get excited",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "excited",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "對名詞感到興奮；對原形動詞感到興奮；變得興奮"
+      },
+      "after": {
+        "wordId": "W000279",
+        "word": "excited",
+        "wordVariants": [
+          "excited"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "興奮的；已勵磁的；已激發的；激昂的",
+        "meaningEn": "feeling very happy, eager, and full of energy about something",
+        "usagePattern": "be excited about N; be excited to V; get excited",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "excited",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "對……感到興奮；因即將做……而興奮；變得興奮"
+      },
+      "reason": "Translate the constructions meaningfully rather than literally teaching noun or base-verb tokens. Technical inherited senses remain separate pending exact summary mapping.",
+      "evidence": "https://www.merriam-webster.com/dictionary/excited"
+    },
+    {
+      "dataset": "words",
+      "id": "W000471",
+      "before": {
+        "wordId": "W000471",
+        "word": "late",
+        "wordVariants": [
+          "late"
+        ],
+        "level": "LV1",
+        "pos": "adj./adv.",
+        "posAll": [
+          "adj.",
+          "adv."
+        ],
+        "meaningZh": "遲的；晚的；已故的；很晚",
+        "meaningEn": "(adj.) happening or arriving after the expected or usual time; no longer alive; (adv.) after the usual, expected, or fixed time",
+        "usagePattern": "be late for N; stay up late",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "late",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "遲到某事；熬夜"
+      },
+      "after": {
+        "wordId": "W000471",
+        "word": "late",
+        "wordVariants": [
+          "late"
+        ],
+        "level": "LV1",
+        "pos": "adj./adv.",
+        "posAll": [
+          "adj.",
+          "adv."
+        ],
+        "meaningZh": "遲的；晚的；已故的；很晚",
+        "meaningEn": "(adj.) happening or arriving after the expected or usual time; no longer alive; (adv.) after the usual, expected, or fixed time",
+        "usagePattern": "be late for N; stay up late",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "late",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "因……遲到；熬夜"
+      },
+      "reason": "Be late for names the event one is late for; stay-up-late is the actual late adverb.",
+      "evidence": "https://www.merriam-webster.com/dictionary/late"
+    },
+    {
+      "dataset": "words",
+      "id": "W000029",
+      "before": {
+        "wordId": "W000029",
+        "word": "always",
+        "wordVariants": [
+          "always"
+        ],
+        "level": "LV1",
+        "pos": "adv.",
+        "posAll": [
+          "adv."
+        ],
+        "meaningZh": "總是；始終；永遠；總是（等於always）",
+        "meaningEn": "at all times; on every occasion",
+        "usagePattern": "always + V; not always",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "always",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "總是 + 原形動詞；並非總是"
+      },
+      "after": {
+        "wordId": "W000029",
+        "word": "always",
+        "wordVariants": [
+          "always"
+        ],
+        "level": "LV1",
+        "pos": "adv.",
+        "posAll": [
+          "adv."
+        ],
+        "meaningZh": "總是；始終；永遠",
+        "meaningEn": "at all times; on every occasion",
+        "usagePattern": "always + V; not always",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "always",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "總是做……；並非總是"
+      },
+      "reason": "Remove only the duplicated self-referential gloss and literal base-verb placeholder, preserving every distinct existing sense.",
+      "evidence": "https://www.merriam-webster.com/dictionary/always"
+    },
+    {
+      "dataset": "words",
+      "id": "W000252",
+      "before": {
+        "wordId": "W000252",
+        "word": "early",
+        "wordVariants": [
+          "early"
+        ],
+        "level": "LV1",
+        "pos": "adj./adv.",
+        "posAll": [
+          "adj.",
+          "adv."
+        ],
+        "meaningZh": "早的；早熟的；很早；初",
+        "meaningEn": "happening or coming before the usual or expected time",
+        "usagePattern": "early + N; V + early",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "early",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "早的 + 名詞；動詞原形 + 早"
+      },
+      "after": {
+        "wordId": "W000252",
+        "word": "early",
+        "wordVariants": [
+          "early"
+        ],
+        "level": "LV1",
+        "pos": "adj./adv.",
+        "posAll": [
+          "adj.",
+          "adv."
+        ],
+        "meaningZh": "早的；早熟的；很早；初",
+        "meaningEn": "(adj.) occurring near the beginning or before the usual or expected time. (adv.) near the beginning, or before the usual or expected time.",
+        "usagePattern": "early + N; V + early",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "early",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "早的／提前的……；提早做……"
+      },
+      "reason": "The actual arrive-early sentence needs the already formal adverb, while early dinner remains an adjective.",
+      "evidence": "https://www.merriam-webster.com/dictionary/early"
+    }
+  ],
+  "masterTouched": false,
+  "sentencesChanged": false,
+  "englishSentencesChanged": false,
+  "imagesChanged": false,
+  "sourceHashesBefore": {
+    "words.json": "6b9cf748f809f4b6b52243003d39713c0aacfa67ecd4744e15ce1b9784d7400f",
+    "senses.json": "38a1d524bef8550a8a23b833ee8cb00f59998e77c802c2de7fc82f4af7be2ecc",
+    "examples.json": "45959a45e5e883a1d54990b08721b00d003f5798b2dc236724e7cae7291834ca",
+    "meta.json": "54e98dbefd81291233b64d7bb0d18554083eb553d2a61aeb8ac04d5607264212",
+    "sa-pack.json": "83df541fda9d266541e477cc10df4f09a90f048be3856929a626ec83e55f8065"
+  },
+  "sourceHashesAfter": {
+    "words.json": "c3df8db2f7bdba7ecd879d25b0c3c34b7cd096d22d912eaaf6709d2811af9514",
+    "senses.json": "56b4c14a7e9c815430eef59764f4c2568990db46d3b3efef56bdea0ab3205668",
+    "examples.json": "15af61ef1690ca63390d801b51af64db075c9f22b9e5c61295b2d33c1de5893e",
+    "meta.json": "7945db09c5cc66fd2cc45ff1e6821da07e01aff1e1bdb77bbfa7dfcc0b834510",
+    "sa-pack.json": "bc9e5fd76a758f89618241fc00e65ab9c488e9e082180a84f3012c8eb95357bc"
+  },
+  "state": "applied_not_ui_verified"
+}

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-05T11:25:39.435Z",
+  "updatedAt": "2026-11-05T11:50:46.742Z",
   "items": [
     {
       "id": "LV1-U01-30",
@@ -263,12 +263,15 @@
     },
     {
       "id": "LV1-U13-65",
-      "state": "confirmed_valley_water_depth_image_mismatch_pending",
+      "state": "confirmed_mismatch_verified_replacement_asset_available_not_integrated",
       "word": "depth",
       "englishUnchanged": "The teacher showed the depth of the valley on the chart.",
-      "observation": "Full 1254 original and actual unit card show a blue-water-filled chart and water-surface-to-bottom arrow. Caption specifies valley depth; original wording remains unchanged.",
+      "observation": "Valley-versus-water mismatch remains in the product. A verified valley-chart replacement is available for exact later integration; not counted locally installed or reopened.",
       "evidence": "docs/unit-audit-20261105/LV1-U13-ledger.json",
-      "next": "Prepare a valley cross-section image retaining the original caption and precise existing unit/general pairing."
+      "next": "At an appropriate small checkpoint verify bytes and pixels, update only exact unit/general depth pairs, reopen both, preserve original caption and original hashes.",
+      "assetCommit": "aebca7265b70e3f51f91a029b8a009998b84f858",
+      "assetPath": "public/wordbeast/lv1-reviewed/LV1-U13-65-3dc230fb571f.webp",
+      "assetSha256": "924029ff52b7e8848d30e86f21f8616f32303e0b6ae7aedd33df1a951af2527e"
     },
     {
       "id": "LV1-U13-53",
@@ -277,6 +280,13 @@
       "commit": "36a0e1074c1d8771ccd3ed1d171dd0064894ce84",
       "observation": "Separate exact EX0577146b artwork and example-level integration already validated; current checkout still lacks it. Do not duplicate generation or replace with older whole files.",
       "evidence": "docs/unit-audit-20261105/LV1-U13-ledger.json"
+    },
+    {
+      "id": "LV1-U14-26",
+      "word": "rocky",
+      "state": "physical_core_present_main_narrative_intent_qualified",
+      "observation": "Stony path is visible, but the main narrative moves from angry separated characters to friendly reconciliation. Full 1254 original and actual unit screenshot were additionally viewed. Physical rocky-path core is present; exact difficulty walking is not directly depicted.",
+      "evidence": "docs/unit-audit-20261105/LV1-U14-ledger.json"
     }
   ],
   "sourceFormResearchCoverage": {

@@ -19,7 +19,7 @@ IDENTITY_KEYS = {"examples": "exampleId", "senses": "senseId", "words": "wordId"
 EDITABLE_FIELDS = {"sensePos", "meaningHint", "status", "meaningZh", "meaningEn", "note", "senseId", "usagePattern", "usagePatternZh", "examEvidence"}
 FORM_IDS = set('W000044 W000086 W000102 W000107 W000130 W000133 W000175 W000205 W000209 W000248 W000287 W000311 W000322 W000353 W000374 W000383 W000453 W000460 W000473 W000502 W000517 W000518 W000610 W000646 W000704 W000750 W000764 W000794 W000828 W000842 W000947'.split())
 FOLLOWUP_FORM_IDS = set('W000113 W000155 W000183 W000184 W000343 W000363 W000507 W000633 W000650 W000695 W000740 W000823 W000851 W000858 W000894 W000995'.split())
-TRANSLATION_IDS = {'EX50693488', 'EXddc4d110', 'EX66703666', 'EX1f033d08', 'EX51e703b4'}
+TRANSLATION_IDS = {'EX50693488', 'EXddc4d110', 'EX66703666', 'EX1f033d08', 'EX51e703b4', 'EXd51bd96d'}
 ABSENT = {"$absent": True}
 
 def validate_patch_shape(patch):
@@ -46,10 +46,10 @@ def validate_patch_shape(patch):
         fact = next(f for f in facts if f['wordId'] == patch['id'])
         assert patch['after']['verbForms'] == fact['verbForms'], 'Unverified principal parts or source'
     if 'sentenceZh' in patch['after']:
-        assert patch['dataset'] == 'examples' and patch['id'] in TRANSLATION_IDS, 'Only five verified Chinese translations are editable'
+        assert patch['dataset'] == 'examples' and patch['id'] in TRANSLATION_IDS, 'Only individually verified Chinese translations are editable'
         assert set(patch['before']) == {'sentenceEn', 'sentenceZh'} and set(patch['after']) == {'sentenceZh'}, 'Exact unchanged English guard required'
         facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-TRANSLATION-SOURCES.json')['facts']
-        assert len(facts) == 5 and {f['exampleId'] for f in facts} == TRANSLATION_IDS
+        assert len(facts) == 6 and {f['exampleId'] for f in facts} == TRANSLATION_IDS
         fact = next(f for f in facts if f['exampleId'] == patch['id'])
         assert patch['before'] == {'sentenceEn': fact['sentenceEn'], 'sentenceZh': fact['before']} and patch['after'] == {'sentenceZh': fact['after']}, 'Unverified translation or English guard'
 

@@ -153,6 +153,28 @@ class AuditWriteBoundaryTests(unittest.TestCase):
             row['sentenceEn']='Unrecorded English drift'
             with self.assertRaises(AssertionError):audit.apply_to_row(row,p)
 
+    def test_each_translation_requires_its_own_exact_source_and_cannot_expand_scope(self):
+        facts = audit.read(self.root / 'docs/unit-audit-20261105/VERIFIED-TRANSLATION-SOURCES.json')['facts']
+        self.assertEqual(len(facts), 6)
+        self.assertEqual({f['exampleId'] for f in facts}, audit.TRANSLATION_IDS)
+        for fact in facts:
+            p = {'dataset':'examples','key':'exampleId','id':fact['exampleId'],
+                 'before':{'sentenceEn':fact['sentenceEn'],'sentenceZh':fact['before']},
+                 'after':{'sentenceZh':fact['after']},'reason':fact['reason'],'evidence':fact['evidence']}
+            with patch.object(audit,'ROOT',self.root):
+                audit.validate_patch_shape(p)
+                row = {'exampleId':p['id'],**p['before'],'blankSentence':'preserve exact cloze','answer':'preserve answer'}
+                self.assertTrue(audit.apply_to_row(row,p))
+                self.assertEqual(row['blankSentence'],'preserve exact cloze')
+                self.assertEqual(row['answer'],'preserve answer')
+                for field in ['sentenceEn','sentenceZh']:
+                    changed = copy.deepcopy(p);changed['before'][field] = 'unrecorded'
+                    with self.assertRaises(AssertionError):audit.validate_patch_shape(changed)
+                changed = copy.deepcopy(p);changed['after']['sentenceZh'] = 'unrecorded'
+                with self.assertRaises(AssertionError):audit.validate_patch_shape(changed)
+                changed = copy.deepcopy(p);changed['id'] = 'EXoutside_scope'
+                with self.assertRaises(AssertionError):audit.validate_patch_shape(changed)
+
 
 if __name__ == "__main__":
     unittest.main()

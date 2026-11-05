@@ -32,9 +32,16 @@ writeFileSync('output/playwright/unit-audit/general-capture.playwright.txt',`asy
     const mismatches=card.examples.filter(e=>!actual.some(a=>a.en===e.sentenceEn&&a.zh===(e.sentenceZh??undefined))).map(e=>e.exampleId);
     const screenshot='output/playwright/unit-audit/'+card.id+'-general-after.png';
     await page.screenshot({path:screenshot,fullPage:true});
-    const meaningPageText=await page.locator('main').innerText();
-    const definitionMatches=!card.meaningEn||meaningPageText.replace(/\\s+/g,' ').includes(card.meaningEn.replace(/\\s+/g,' '));
-    results.push({id:card.id,word:card.word,url:page.url(),screenshot,heroScreenshot,hero,imageInfo,exampleCount:actual.length,mismatches,examples:actual,definitionMatches});
+    let meaningPageText=await page.locator('main').innerText(),definitionTabRetried=false;
+    let definitionMatches=!card.meaningEn||meaningPageText.replace(/\\s+/g,' ').includes(card.meaningEn.replace(/\\s+/g,' '));
+    if(!definitionMatches){
+      definitionTabRetried=true;await page.getByRole('button',{name:'字義',exact:true}).click();
+      await page.waitForFunction(expected=>document.querySelector('main')?.innerText.replace(/\\s+/g,' ').includes(expected.replace(/\\s+/g,' ')),card.meaningEn);
+      await page.waitForTimeout(350);meaningPageText=await page.locator('main').innerText();
+      definitionMatches=meaningPageText.replace(/\\s+/g,' ').includes(card.meaningEn.replace(/\\s+/g,' '));
+      if(definitionMatches)await page.screenshot({path:screenshot,fullPage:true});
+    }
+    results.push({id:card.id,word:card.word,url:page.url(),screenshot,heroScreenshot,hero,imageInfo,exampleCount:actual.length,mismatches,examples:actual,definitionMatches,definitionTabRetried});
   }
   return results;
 }`);

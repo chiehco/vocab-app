@@ -1,0 +1,21 @@
+{
+  "unit": "LV1-U14",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "scope": "Only the daily-school-start Chinese translation; source rain-air caption is a different unchanged sentence.",
+  "patches": [
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXd51bd96d",
+      "before": {
+        "sentenceEn": "The bakery sells fresh bread every morning before school starts.",
+        "sentenceZh": "這家麵包店每天早上開學前都會賣新鮮的麵包。"
+      },
+      "after": {
+        "sentenceZh": "這家麵包店每天早上上課前都會賣新鮮的麵包。"
+      },
+      "reason": "Every morning before school starts refers to the daily start of classes, not the start of a school term.",
+      "evidence": "https://www.merriam-webster.com/dictionary/school ; unchanged every morning context."
+    }
+  ]
+}

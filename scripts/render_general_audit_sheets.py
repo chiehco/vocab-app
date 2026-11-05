@@ -24,8 +24,9 @@ for start in range(0,len(rows),4):
         with Image.open(path) as original:
             original.load();image=original.convert('RGB');image.thumbnail((660,660))
             sheet.paste(image,(x+20+(660-image.width)//2,y+40))
-        hero=row['hero'];marker='圖說' if '圖說' in hero else '例句'
-        text=hero.split(marker,1)[1].split('記憶狀態',1)[0].strip().split('\n\n')[0]
+        hero=row['hero'];marker=next((m for m in ['圖說','例句'] if m in hero),None)
+        text=(hero.split(marker,1)[1].split('記憶狀態',1)[0].strip().split('\n\n')[0]
+              if marker else 'No image caption was shown in the observed UI.')
         for line_no,line in enumerate(textwrap.wrap(text,64)):
             draw.text((x+20,y+705+line_no*25),line,font=font,fill='black')
     sheet.save(out/f'{start+1:02}-{min(start+4,len(rows)):02}.png')

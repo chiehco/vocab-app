@@ -1,5 +1,5 @@
 {
-  "scope": "Exactly five Chinese-only corrections; each original English sentence is an immutable write guard.",
+  "scope": "Exactly six individually verified Chinese-only corrections; each unchanged English sentence is an immutable write guard.",
   "facts": [
     {
       "exampleId": "EX50693488",
@@ -40,6 +40,14 @@
       "after": "這件上衣對他來說已經不夠大了。",
       "reason": "Shirt includes the round-neck T-shirt actually shown; remove the unsupported collared-shirt specificity.",
       "evidence": "https://www.merriam-webster.com/dictionary/shirt ; https://dictionary.cambridge.org/dictionary/english/t-shirt"
+    },
+    {
+      "exampleId": "EXd51bd96d",
+      "sentenceEn": "The bakery sells fresh bread every morning before school starts.",
+      "before": "這家麵包店每天早上開學前都會賣新鮮的麵包。",
+      "after": "這家麵包店每天早上上課前都會賣新鮮的麵包。",
+      "reason": "Every morning before school starts refers to the daily start of classes, not the start of a school term.",
+      "evidence": "https://www.merriam-webster.com/dictionary/school ; unchanged every morning context."
     }
   ]
 }

@@ -10,6 +10,7 @@ import translations from '../../docs/unit-audit-20261105/LV1-verified-translatio
 import followups from '../../docs/unit-audit-20261105/LV1-U03-U04-verified-forms-patches.json';
 import followupSources from '../../docs/unit-audit-20261105/VERIFIED-FOLLOWUP-VERB-FORMS-SOURCES.json';
 import originalSources from '../../docs/unit-audit-20261105/VERIFIED-VERB-FORMS-SOURCES.json';
+import u14Translation from '../../docs/unit-audit-20261105/LV1-U14-translation-followup.json';
 
 type Row=Record<string,unknown>;
 const examples:Row[]=JSON.parse(readFileSync('public/data/v1/examples.json','utf8'));
@@ -92,4 +93,15 @@ it('reverses only exact followup fields to absent and retains the original 31 so
   expect(()=>restoreRecordedAuditPatch('words',{...p.after},{...p,before:{verbForms:null}})).toThrow();
  }
  expect(words.find(row=>row.wordId==='W000139')).not.toHaveProperty('verbForms');
+});
+
+it('restores only the verified daily-school Chinese translation with unchanged English and cloze',()=>{
+ const p=u14Translation.patches[0];
+ const current=structuredClone(examples.find(e=>e.exampleId===p.id)!);
+ const immutable={sentenceEn:current.sentenceEn,blankSentence:current.blankSentence,answer:current.answer,sensePos:current.sensePos};
+ restoreRecordedAuditPatch('examples',current,p);
+ expect(current.sentenceZh).toBe(p.before.sentenceZh);
+ for(const [key,value]of Object.entries(immutable))expect(current[key]).toEqual(value);
+ expect(()=>restoreRecordedAuditPatch('examples',{...p.after,sentenceEn:'Unrecorded English drift'},p)).toThrow('source guard');
+ expect(()=>restoreRecordedAuditPatch('examples',{...p.before,...p.after},{...p,id:'EXoutside_scope'})).toThrow('verified translations');
 });
