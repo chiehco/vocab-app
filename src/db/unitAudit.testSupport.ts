@@ -17,10 +17,12 @@ import lexicalSources from '../../docs/unit-audit-20261105/LV1-U02-U03-lexical-s
 import catDefinition from '../../docs/unit-audit-20261105/LV1-U03-cat-definition-followup.json';
 import u7VerifiedExams from '../../docs/unit-audit-20261105/LV1-U07-verified-exam-source-followup.json';
 import u8 from '../../docs/unit-audit-20261105/LV1-U08-patches.json';
+import demandVisible from '../../docs/unit-audit-20261105/LV1-U07-demand-visible-form-followup.json';
+import u9 from '../../docs/unit-audit-20261105/LV1-U09-patches.json';
 
 type Row = Record<string, unknown>;
 type Patch = {dataset:string; key:string; id:string; before:Row; after:Row; reason:string; evidence:string};
-const patches:Patch[]=[...u1.patches,...u2.patches,...pig.patches,...u3.patches,...u3Remaining.patches,...u4.patches,...u5.patches,...u6.patches,...u6Syntax.patches,...examSources.patches,...u7.patches,...u7Hints.patches,...lexicalSources.patches,...catDefinition.patches,...u7VerifiedExams.patches,...u8.patches];
+const patches:Patch[]=[...u1.patches,...u2.patches,...pig.patches,...u3.patches,...u3Remaining.patches,...u4.patches,...u5.patches,...u6.patches,...u6Syntax.patches,...examSources.patches,...u7.patches,...u7Hints.patches,...lexicalSources.patches,...catDefinition.patches,...u7VerifiedExams.patches,...u8.patches,...demandVisible.patches,...u9.patches];
 
 // Keep the historical payload hashes intact. Check each explicitly recorded new
 // field before reversing only that field for the old-release comparison.

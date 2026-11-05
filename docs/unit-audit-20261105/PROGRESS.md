@@ -2,9 +2,9 @@
 
 ## 目前狀態
 
-更新：2026-11-05T07:26:28.212Z。U01–U08逐單元checkpoint已保存，未核欄位及來源疑點仍列待確認。U08完整97組原稿已目視、22張已發布單元卡與85張一般詞卡修改後重開，285個正式例句無顯示或填空差異。35張一般卡缺圖已補、intersection路口方向已修且兩入口重開；36張新WebP保留原始可恢復版本。140個文字列已修正，累計751個修改列自實際資料庫讀回零失敗，14個進度表未變。下一張LV1-U09-01 build：完整96原稿、51已發布子集、81正式詞條、301例句。
+更新：2026-11-05T08:11:24.386Z。U01–U09 checkpoint 已保存，原有待確認項不視為通過。U09完整96組原稿已目視，51張已發布單元卡、81張一般字卡及301例句修改後重開；18張缺圖補入、outbreak多一位站立者的矛盾已修，兩入口實際截圖均已目視。228個文字列修正含120筆詞性及160筆提示精確化，這些數字有重疊；18個待審例句實核後更新，draw原句來源矛盾反而恢復needs_check。資料庫累計979列讀回零失敗，14進度表未變。下一張LV1-U10-01 along，U10完整89原稿、35已發布子集、77詞、264例句。已核實的早期提示、翻譯及31詞三態補充另列待執行，不能因工程檢查成功視為已完成。
 
-最近已推送且完整CI成功的精確head：3addd99015f75294d40ef23c5479fa71dd190ba0，run41985018911於2026-11-05 07:18:58 UTC完成，209檔／1,654測試及lint、typecheck、Python、pageviews、build全過。0ba3ab06的歷史單一預設圖片斷言失敗保留記錄，已由此精確保護修正解決。當前U08另有17個相關測試、6個負向保護測試及lint/typecheck/build全過，待推送後核新完整CI。未合併或部署。U07九義項十考題來源已補實，練習句與原題引文有明確區分；不連帶批准整詞。
+最近完整CI成功：b5144bc12ebd35a9083ee80de055a748cf973981，run 41987727832，2026-11-05 07:44:07 UTC，209檔／1654測試及lint/typecheck/Python/pageviews/build全過。當前U09本機17相關測試、6負向測試、lint/typecheck/build均成功，待推送後核同head完整CI。未合併或部署。
 
 ## 實際範圍與順序
 
@@ -99,3 +99,7 @@ U02-32 sunrise replacement verified by exact SHA-256, 1254×1254 dimensions and 
 140個修改列包含13個明確詞性錯誤、62個複合詞性精準化、12個draft例句實核後reviewed、25個needs_check義項實核後reviewed、4個已reviewed義項過時註記按真實核對結果更新、24個字義／用法修復。true副詞與校準動詞、people動詞、near左側技術義皆保留。三筆far/near詞性慣例、far句意連接與sow中文貶稱來源仍待確認；缺少的結構化欄位未謊報完成。
 
 U07九義項十筆官方考題來源另有11列精確補充，九卡重開及49例句無差異。active限身體活動量，demanding明示衍生形容詞，appear首次由first修飾；mean現有unlike句為改寫而非原題totally different from逐字引文。每筆before/after及完整來源在對應manifest和receipts中。下一張LV1-U09-01 build。
+
+## LV1 Unit 09 checkpoint
+
+完整96組原稿與14張原有非發布一般卡圖已實際目視。51張單元卡、81張一般卡及301個正式例句修改後重開，17張搭配頁另行核對。18張一般卡缺圖補入；outbreak僅移除唯一站立角色，保留原英中句與舊圖。enter、entry方向仍待確認；building望遠鏡、shatter球、playground複數動作等細節有明確視覺限制。draw原句英中來源矛盾保留needs_check。15個NOID未造正式ID，45組未發布原稿未自動公開。逐卡結果、before/after與恢復資料見LV1-U09-ledger、patches及receipts。demanding衍生形容詞已在實際hero可見，不只留於隱藏note。
