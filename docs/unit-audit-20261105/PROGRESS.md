@@ -57,3 +57,15 @@ U03的原始下一卡為U04-01；最新位置見下列U04 checkpoint。
 ## U02 sunrise follow-up
 
 U02-32 sunrise replacement verified by exact SHA-256, 1254×1254 dimensions and actual compressed pixels; both the unit card and general card were reopened and visually checked. The original sunrise sentence and all six dictionary examples are unchanged. The old sunbathing image is retained; the other sun-himself example is not automatically marked as paired. U02 now has 37 consistent image/caption pairs and one remaining elephant anatomy repair blocked by the image-edit input limitation. See LV1-U02-sunrise-review.json for exact before/after paths, hashes, approval history and UI evidence.
+
+## LV1 Unit 05 checkpoint
+
+完整原稿32組、已發布13組；32張原始圖片與27張既有一般卡圖片已逐張實際目視，13張單元卡實際開啟，30個有正式ID的一般詞卡修改後重新開啟，171筆例句／翻譯／填空核對零差異。3張一般卡缺圖（worker、sorry、tell）已補，eat的吃飯圖配腐蝕例句已修為原稿的上學途中早餐圖句，原腐蝕例句保留。4張最終重開截圖均已目視。19份未發布教材原稿仍未發布；useless與coworker沒有正式字庫ID，分開記錄，未造號。
+
+122筆列修改：4個明確單一詞性錯誤（live concert、keep still、feel well、a cold drink），另74個複合標記精準化及78筆用法提示、10筆draft例句與23筆needs_check義項核對後更新、11筆文字定義修復。所有原例句保持原意與原字串，詞頭多詞性不縮減；greats及real find名詞義均有詞典支持，保留。even既有考題來源聲稱未核實，該義項draft保留。
+
+30張一般卡重開後圖片皆可顯示；累計251改列與內容hash從實際IndexedDB讀回全相符。第一次載入檢查因頁面導覽中斷，未推定成功；先核對實際保存內容，再作穩定的冪等檢查，14進度表完全不變。相關5檔21測試、lint、build通過；未宣稱全套suite通過。
+
+前次對外checkpoint：47958136d6df58dfbe9435ce5e666a1c98caa15d，已核實遠端獨立分支同SHA，含U01–U04與sun修復。U05實際before/after與重開證據見本單元ledger、patches、receipt及validation。下一張：LV1-U06-01 most，完整原稿51組、已發布子集23組。
+
+全App的19,726為教材項目盤點：13,101個vocabulary項目、5,899個grammar項目、726組已發布LV1圖句。它不是已核實字卡總數，亦不代表均已檢查；未檢項目仍not_checked。

@@ -7,10 +7,11 @@ import u3 from '../../docs/unit-audit-20261105/LV1-U03-patches.json';
 import pig from '../../docs/unit-audit-20261105/LV1-U01-definition-supplement.json';
 import u3Remaining from '../../docs/unit-audit-20261105/LV1-U03-remaining-patches.json';
 import u4 from '../../docs/unit-audit-20261105/LV1-U04-patches.json';
+import u5 from '../../docs/unit-audit-20261105/LV1-U05-patches.json';
 
 type Row = Record<string, unknown>;
 type Patch = {dataset:string; key:string; id:string; before:Row; after:Row; reason:string; evidence:string};
-const patches:Patch[]=[...u1.patches,...u2.patches,...pig.patches,...u3.patches,...u3Remaining.patches,...u4.patches];
+const patches:Patch[]=[...u1.patches,...u2.patches,...pig.patches,...u3.patches,...u3Remaining.patches,...u4.patches,...u5.patches];
 
 // Keep the historical payload hashes intact. Check each explicitly recorded new
 // field before reversing only that field for the old-release comparison.
