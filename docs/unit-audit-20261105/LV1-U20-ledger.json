@@ -1,0 +1,1724 @@
+{
+  "unit": "LV1-U20",
+  "checkpointAt": "2026-11-05T16:54:35.375Z",
+  "priorCheckpoint": "038624c87614e6bc2da1c4422cd2fb30a6a89187",
+  "branch": "content/unit-audit-20261105",
+  "state": "checkpoint_with_explicit_unresolved_items",
+  "counts": {
+    "textbookLearningItems": 143,
+    "vocabularyOccurrences": 91,
+    "grammarItems": 52,
+    "originalContentPhotosActuallyViewed": 7,
+    "originalHalvesActuallyViewed": 14,
+    "formalWordOccurrences": 61,
+    "uniqueFormalWords": 59,
+    "formalExampleComparisons": 105,
+    "uniqueFormalExamples": 103,
+    "clozeFailures": 0,
+    "unmappedIdentitiesRetained": 30,
+    "printedSupplementRowsRestored": 27,
+    "sourceDisplayPatchRows": 39,
+    "sourceThreeFormExplanations": 4,
+    "qualifiedGrammarRows": 1,
+    "dictionaryScopedSourceRows": 7,
+    "generalReopens": 61,
+    "existingGeneralAssetsActuallyViewed": 14,
+    "generalWordsWithoutAsset": 45,
+    "legacyCaptionPairsRepairedWithUnchangedBytes": 2,
+    "formsAddedAndBothPanelsReopened": 15,
+    "usagePagesReopened": 13,
+    "dictionaryPatchOperations": 80,
+    "uniqueDictionaryRowsChanged": 70,
+    "singleWrongPosCorrections": 9,
+    "mixedPosNarrowed": 10,
+    "nonemptyHintPrecisions": 19,
+    "authoredPracticeStatusesReviewed": 3,
+    "nonExaminationSensesReviewed": 4,
+    "textbookImagesAdopted": 0,
+    "textbookExamplesAdopted": 0
+  },
+  "source": {
+    "curriculum": "src/features/direct/curriculumLV1Unit20.json",
+    "manifest": "scripts/sources/LV1Unit20.json",
+    "originalManifestUnmodified": true,
+    "pageEvidence": "LV1-U20-source-page-review.json",
+    "sourcePages": [
+      173,
+      179
+    ]
+  },
+  "preserved": {
+    "deliveryMode": "text_only",
+    "practiceMode": "read_only",
+    "formalIdentityChanges": 0,
+    "headwordPosChanges": 0,
+    "wholeWordStatusChanges": 0,
+    "EnglishSentenceChanges": 0,
+    "ChineseSentenceChanges": 0,
+    "clozeOrAnswerChanges": 0,
+    "existingImageByteChanges": 0,
+    "progressTables": 14,
+    "progressUnchanged": true
+  },
+  "uiBoundary": "143 source item displays and61 general reopens compared exactly.15 form panels on both tabs and13 usage pages reopened; all39 changed source displays and15 form panels actually viewed in10 contact sheets, plus two repaired full general hero screenshots. Per-example POS and long note/source fields are exact saved-DB/syntax/source checks; omitted UI fields are not falsely claimed visible.",
+  "beforeAfterBoundary": "Legacy general capture paths were reused. The before JSON records actual text/URL/dimensions and the before asset sheets preserve the unchanged image pixels, but a reused screenshot path now denotes after pixels, not an independently frozen before full-UI image. Future captures support distinct before/final filenames.",
+  "regression": {
+    "originalLocalTimeoutMs": 5000,
+    "files": 16,
+    "tests": 107,
+    "pythonWriteBoundaryTests": 20,
+    "exits": {
+      "completedAt": "2026-11-05T16:54:13.6320343Z",
+      "typecheck": 0,
+      "python": 0,
+      "tests": 0,
+      "lint": 0,
+      "build": 0
+    },
+    "firstPass": "validation/u20-first-regression.txt",
+    "imageRetry": "validation/u20-image-isolated-retry.txt",
+    "failureHistory": "First batch8 files passed and1 image-hash file timed out under default5000ms; no content assertion difference. After that process completed, isolated same-file11 tests passed in1.78s under the original timeout. Final16-file run is separately recorded. The before text capture failed at a real display-normalization difference; original error and exact map diagnostic retained."
+  },
+  "priorExactCi": "validation/U19-ci-038624c.json",
+  "newCheckpointFullCi": "Pending this checkpoint commit and its own full CI.",
+  "persistence": {
+    "rowsChecked": 1953,
+    "failures": [],
+    "actualContentHash": "e93fdd7c019524cbd24bad40cd94e0a8e408a457ea34c2e86e7a95238f4cf744",
+    "expectedContentHash": true,
+    "progressDatabaseWritten": false
+  },
+  "imageCaptionEvidence": "LV1-U20-original-image-review.json",
+  "knownLimits": [
+    {
+      "id": "W000862",
+      "field": "verbForms",
+      "reason": "Existing combined telephone/phone head has no single qualified base presentation. Leave key absent; do not fabricate a slash-inflected paradigm."
+    },
+    {
+      "id": "U20-30-unmapped-identities",
+      "field": "officialWordId",
+      "reason": "Thirty identities stay null;27 previously placeholder supplement displays now use the actually printed gloss. No IDs, practice examples or images invented."
+    },
+    {
+      "id": "U20-original-world-example",
+      "field": "unadopted printed translation",
+      "reason": "See original page174 observation. Original pixels preserved, no adopted editable App example exists."
+    },
+    {
+      "id": "U20-optional-pronunciation-fields",
+      "field": "phoneticUs/syllables/stressPattern",
+      "reason": "No US-specific pronunciation is inferred from unqualified printed IPA."
+    }
+  ],
+  "next": {
+    "unit": "LV1-U21",
+    "id": "LI-LV1U21-V001",
+    "word": "today",
+    "deliveryMode": "text_only"
+  },
+  "cards": [
+    {
+      "id": "LI-LV1U20-V001",
+      "word": "fan",
+      "officialWordId": "W000294",
+      "sourcePage": 173,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX74dd5419",
+        "EXfbbc328f"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V002",
+      "word": "zero",
+      "officialWordId": "W001001",
+      "sourcePage": 173,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V003",
+      "word": "toy",
+      "officialWordId": "W000914",
+      "sourcePage": 173,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EXa2307805",
+        "EXc3abf30d"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V004",
+      "word": "robot",
+      "officialWordId": "W000721",
+      "sourcePage": 173,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V005",
+      "word": "ant",
+      "officialWordId": "W000036",
+      "sourcePage": 173,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX7f6aaaa1",
+        "EXe825453d"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V006",
+      "word": "pet",
+      "officialWordId": "W000638",
+      "sourcePage": 174,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX078e10c2",
+        "EXc92c0a61"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V007",
+      "word": "ham",
+      "officialWordId": "W000373",
+      "sourcePage": 174,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V008",
+      "word": "born",
+      "officialWordId": "W000105",
+      "sourcePage": 174,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX380e2a0a",
+        "EX7025f68a"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V009",
+      "word": "world",
+      "officialWordId": "W000988",
+      "sourcePage": 174,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 3,
+      "exampleIds": [
+        "EX43b88345",
+        "EX622fe15c",
+        "EX9f1c23bd"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V010",
+      "word": "worldwide",
+      "officialWordId": null,
+      "sourcePage": 174,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V011",
+      "word": "frog",
+      "officialWordId": "W000332",
+      "sourcePage": 175,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V012",
+      "word": "homework",
+      "officialWordId": "W000406",
+      "sourcePage": 175,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V013",
+      "word": "juice",
+      "officialWordId": "W000447",
+      "sourcePage": 175,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V014",
+      "word": "lazy",
+      "officialWordId": "W000475",
+      "sourcePage": 175,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V015",
+      "word": "pants",
+      "officialWordId": "W000624",
+      "sourcePage": 175,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX22a1fee5",
+        "EX2388865e"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V016",
+      "word": "shorts",
+      "officialWordId": "W000769",
+      "sourcePage": 175,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V017",
+      "word": "jeans",
+      "officialWordId": "W000442",
+      "sourcePage": 175,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX0e0d790b",
+        "EXb2beab8e"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V018",
+      "word": "skirt",
+      "officialWordId": "W000786",
+      "sourcePage": 176,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V019",
+      "word": "dress",
+      "officialWordId": "W000241",
+      "sourcePage": 176,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EXc7172cde",
+        "EXe9ba3a95"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V020",
+      "word": "rainbow",
+      "officialWordId": "W000696",
+      "sourcePage": 176,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX05839113",
+        "EX9575dda4"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V021",
+      "word": "bug",
+      "officialWordId": "W000124",
+      "sourcePage": 176,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX42637a06",
+        "EXc2206b0a"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V022",
+      "word": "kite",
+      "officialWordId": "W000459",
+      "sourcePage": 176,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V023",
+      "word": "kind",
+      "officialWordId": "W000455",
+      "sourcePage": 177,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX2a108fbf",
+        "EX5fb70a28"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V024",
+      "word": "kindness",
+      "officialWordId": null,
+      "sourcePage": 177,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V025",
+      "word": "yummy",
+      "officialWordId": null,
+      "sourcePage": 177,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V026",
+      "word": "cellphone",
+      "officialWordId": "W000151",
+      "sourcePage": 177,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V027",
+      "word": "telephone",
+      "officialWordId": "W000862",
+      "sourcePage": 177,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX202a9df5",
+        "EXaab61eb5"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V028",
+      "word": "test",
+      "officialWordId": "W000868",
+      "sourcePage": 177,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX3f5fcf40",
+        "EX5f4eeec6"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V029",
+      "word": "grade",
+      "officialWordId": "W000357",
+      "sourcePage": 178,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX62cf0124",
+        "EX937550d0"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V030",
+      "word": "mathematics",
+      "officialWordId": "W000524",
+      "sourcePage": 178,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V031",
+      "word": "parent",
+      "officialWordId": "W000626",
+      "sourcePage": 178,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX485c343b",
+        "EX964198d7"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V032",
+      "word": "son",
+      "officialWordId": "W000806",
+      "sourcePage": 178,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V033",
+      "word": "daughter",
+      "officialWordId": "W000213",
+      "sourcePage": 178,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX029302b6",
+        "EXd836fd36"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V034",
+      "word": "write",
+      "officialWordId": "W000990",
+      "sourcePage": 178,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX10686275",
+        "EXf9be9a90"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V035",
+      "word": "writer",
+      "officialWordId": "W000991",
+      "sourcePage": 179,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V036",
+      "word": "weather",
+      "officialWordId": "W000956",
+      "sourcePage": 179,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 3,
+      "exampleIds": [
+        "EX190f099a",
+        "EX7e6b6e5e",
+        "EX8bd0ddbf"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V037",
+      "word": "sunny",
+      "officialWordId": "W000843",
+      "sourcePage": 179,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX33527f3d",
+        "EX4c4af297"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V038",
+      "word": "rainy",
+      "officialWordId": "W000697",
+      "sourcePage": 179,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX39ade26f",
+        "EX7a0de2c1"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V039",
+      "word": "file",
+      "officialWordId": "W000306",
+      "sourcePage": 179,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX24d99801",
+        "EX2731478a"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V040",
+      "word": "stimulate",
+      "officialWordId": "W004853",
+      "sourcePage": 173,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX6c258b18",
+        "EXe1e0b1ff"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V041",
+      "word": "zeros",
+      "officialWordId": null,
+      "sourcePage": 173,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V042",
+      "word": "zeroes",
+      "officialWordId": null,
+      "sourcePage": 173,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V043",
+      "word": "robotic",
+      "officialWordId": null,
+      "sourcePage": 173,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V044",
+      "word": "earth",
+      "officialWordId": "W000253",
+      "sourcePage": 174,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 6,
+      "exampleIds": [
+        "EX01139763",
+        "EX23ec6d71",
+        "EX30291af8",
+        "EX36d6ad37",
+        "EX73ebae58",
+        "EX7f262532"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V045",
+      "word": "globe",
+      "officialWordId": "W003455",
+      "sourcePage": 174,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V046",
+      "word": "global",
+      "officialWordId": "W002362",
+      "sourcePage": 174,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX1d910c9e",
+        "EX4b3e3ae3"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V047",
+      "word": "universal",
+      "officialWordId": "W003978",
+      "sourcePage": 174,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX095786e5",
+        "EX18276eff"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V048",
+      "word": "toad",
+      "officialWordId": null,
+      "sourcePage": 175,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V049",
+      "word": "assignment",
+      "officialWordId": "W006058",
+      "sourcePage": 175,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 1,
+      "exampleIds": [
+        "EX6fcd3eea"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V050",
+      "word": "schoolwork",
+      "officialWordId": null,
+      "sourcePage": 175,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V051",
+      "word": "juicy",
+      "officialWordId": "W002463",
+      "sourcePage": 175,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V052",
+      "word": "laziness",
+      "officialWordId": null,
+      "sourcePage": 175,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V053",
+      "word": "lazily",
+      "officialWordId": null,
+      "sourcePage": 175,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V054",
+      "word": "lazybones",
+      "officialWordId": null,
+      "sourcePage": 175,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V055",
+      "word": "trousers",
+      "officialWordId": null,
+      "sourcePage": 175,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V056",
+      "word": "denim",
+      "officialWordId": null,
+      "sourcePage": 175,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V057",
+      "word": "miniskirt",
+      "officialWordId": null,
+      "sourcePage": 176,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V058",
+      "word": "dresses",
+      "officialWordId": null,
+      "sourcePage": 176,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V059",
+      "word": "dressed",
+      "officialWordId": null,
+      "sourcePage": 176,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V060",
+      "word": "dressing",
+      "officialWordId": "W005294",
+      "sourcePage": 176,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V061",
+      "word": "clothe",
+      "officialWordId": "W002162",
+      "sourcePage": 176,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V062",
+      "word": "bow",
+      "officialWordId": "W000111",
+      "sourcePage": 176,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V063",
+      "word": "ladybug",
+      "officialWordId": "W001489",
+      "sourcePage": 176,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V064",
+      "word": "worm",
+      "officialWordId": "W001997",
+      "sourcePage": 176,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V065",
+      "word": "bother",
+      "officialWordId": "W001107",
+      "sourcePage": 176,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EXa57e277e",
+        "EXe12abfed"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V066",
+      "word": "annoy",
+      "officialWordId": "W003048",
+      "sourcePage": 176,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX1eac629d",
+        "EX29d2d6ae"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V067",
+      "word": "kinda",
+      "officialWordId": null,
+      "sourcePage": 177,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V068",
+      "word": "kindly",
+      "officialWordId": null,
+      "sourcePage": 177,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V069",
+      "word": "kind-hearted",
+      "officialWordId": null,
+      "sourcePage": 177,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V070",
+      "word": "type",
+      "officialWordId": "W000926",
+      "sourcePage": 177,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX392beb68",
+        "EX8eb374df"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V071",
+      "word": "sort",
+      "officialWordId": "W001825",
+      "sourcePage": 177,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX12df4c30",
+        "EXabdae499"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V072",
+      "word": "unkind",
+      "officialWordId": null,
+      "sourcePage": 177,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V073",
+      "word": "delicious",
+      "officialWordId": "W001235",
+      "sourcePage": 177,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 3,
+      "exampleIds": [
+        "EX0fecd40b",
+        "EX829bcbde",
+        "EXd83c93da"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V074",
+      "word": "tasty",
+      "officialWordId": "W002895",
+      "sourcePage": 177,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX10942882",
+        "EXd387c963"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V075",
+      "word": "banana split",
+      "officialWordId": null,
+      "sourcePage": 177,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V076",
+      "word": "cell phone",
+      "officialWordId": null,
+      "sourcePage": 177,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V077",
+      "word": "a cellular phone",
+      "officialWordId": null,
+      "sourcePage": 177,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V078",
+      "word": "a mobile phone",
+      "officialWordId": null,
+      "sourcePage": 177,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V079",
+      "word": "phone",
+      "officialWordId": "W000862",
+      "sourcePage": 177,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX202a9df5",
+        "EXaab61eb5"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V080",
+      "word": "call",
+      "officialWordId": "W000136",
+      "sourcePage": 177,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 11,
+      "exampleIds": [
+        "EX0f43c971",
+        "EX1ffd9231",
+        "EX2a78daae",
+        "EX2b1d30f7",
+        "EX690cb369",
+        "EX888a9db4",
+        "EX92db0e4b",
+        "EX94f1176c",
+        "EX9bdd46c2",
+        "EXa3426342",
+        "EXf07bc4bb"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V081",
+      "word": "optometrist",
+      "officialWordId": null,
+      "sourcePage": 178,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V082",
+      "word": "graded",
+      "officialWordId": null,
+      "sourcePage": 178,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V083",
+      "word": "math",
+      "officialWordId": "W000524",
+      "sourcePage": 178,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V084",
+      "word": "son-in-law",
+      "officialWordId": null,
+      "sourcePage": 178,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V085",
+      "word": "daughter-in-law",
+      "officialWordId": null,
+      "sourcePage": 178,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V086",
+      "word": "writing",
+      "officialWordId": null,
+      "sourcePage": 178,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V087",
+      "word": "rewrite",
+      "officialWordId": null,
+      "sourcePage": 178,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V088",
+      "word": "author",
+      "officialWordId": "W001057",
+      "sourcePage": 179,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX8706dc7b",
+        "EX8d19a3d9"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V089",
+      "word": "whether",
+      "officialWordId": "W000966",
+      "sourcePage": 179,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 4,
+      "exampleIds": [
+        "EX12fc23fa",
+        "EX912ad5cd",
+        "EX93e0c677",
+        "EXd44a9092"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V090",
+      "word": "sun",
+      "officialWordId": "W000842",
+      "sourcePage": 179,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 6,
+      "exampleIds": [
+        "EX3bd86f94",
+        "EX3ebf8dd3",
+        "EX71bc04d3",
+        "EX9d5ca00b",
+        "EXa5b2afd3",
+        "EXa9650151"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U20-V091",
+      "word": "rain",
+      "officialWordId": "W000695",
+      "sourcePage": 179,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 8,
+      "exampleIds": [
+        "EX7e1d2022",
+        "EX7efe7a82",
+        "EXa71b4b3e",
+        "EXb8a519a9",
+        "EXcde783da",
+        "EXda11a469",
+        "EXf16ab239",
+        "EXff740886"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    }
+  ],
+  "grammar": [
+    {
+      "id": "LI-LV1U20-G001",
+      "pattern": "fan, fanned, fanned",
+      "sourcePage": 173,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G002",
+      "pattern": "a fan club",
+      "sourcePage": 173,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G003",
+      "pattern": "fan the flames (of sth)",
+      "sourcePage": 173,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G004",
+      "pattern": "from zero",
+      "sourcePage": 173,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G005",
+      "pattern": "above / below zero",
+      "sourcePage": 173,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G006",
+      "pattern": "toy with sb/sth",
+      "sourcePage": 173,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G007",
+      "pattern": "a colony of ants",
+      "sourcePage": 173,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G008",
+      "pattern": "have / get ants in one's pants",
+      "sourcePage": 173,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G009",
+      "pattern": "pet, petted, petted",
+      "sourcePage": 174,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G010",
+      "pattern": "a pet dog / cat / store",
+      "sourcePage": 174,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G011",
+      "pattern": "keep (... as) a pet",
+      "sourcePage": 174,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G012",
+      "pattern": "a ham sandwich",
+      "sourcePage": 174,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G013",
+      "pattern": "ham and eggs",
+      "sourcePage": 174,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G014",
+      "pattern": "be born in + 年分 / 國家",
+      "sourcePage": 174,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G015",
+      "pattern": "be born into + 家庭",
+      "sourcePage": 174,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G016",
+      "pattern": "be born to V",
+      "sourcePage": 174,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G017",
+      "pattern": "be born with a silver spoon in one's mouth",
+      "sourcePage": 174,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G018",
+      "pattern": "travel the world",
+      "sourcePage": 174,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G019",
+      "pattern": "have (got) a frog in one's throat",
+      "sourcePage": 175,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G020",
+      "pattern": "do homework",
+      "sourcePage": 175,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G021",
+      "pattern": "a pair of pants",
+      "sourcePage": 175,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G022",
+      "pattern": "a pair of shorts",
+      "sourcePage": 175,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G023",
+      "pattern": "short shorts",
+      "sourcePage": 175,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G024",
+      "pattern": "a pair of jeans",
+      "sourcePage": 175,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G025",
+      "pattern": "a long / short skirt",
+      "sourcePage": 176,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G026",
+      "pattern": "a wedding / an evening dress",
+      "sourcePage": 176,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G027",
+      "pattern": "a dress code",
+      "sourcePage": 176,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G028",
+      "pattern": "dress sb in...",
+      "sourcePage": 176,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G029",
+      "pattern": "dress (sb) up",
+      "sourcePage": 176,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G030",
+      "pattern": "bug, bugged, bugged",
+      "sourcePage": 176,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G031",
+      "pattern": "fly a kite",
+      "sourcePage": 176,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G032",
+      "pattern": "It is kind of sb to V",
+      "sourcePage": 177,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G033",
+      "pattern": "be kind to sb",
+      "sourcePage": 177,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G034",
+      "pattern": "kind of",
+      "sourcePage": 177,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G035",
+      "pattern": "one of a kind",
+      "sourcePage": 177,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G036",
+      "pattern": "talk on the telephone = talk on the phone",
+      "sourcePage": 177,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G037",
+      "pattern": "test sb on sth",
+      "sourcePage": 177,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G038",
+      "pattern": "a blood test",
+      "sourcePage": 177,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G039",
+      "pattern": "be in (the) first / second / third grade",
+      "sourcePage": 178,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G040",
+      "pattern": "repeat / skip the grade",
+      "sourcePage": 178,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G041",
+      "pattern": "a mathematics / math teacher",
+      "sourcePage": 178,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G042",
+      "pattern": "a mathematics / math test",
+      "sourcePage": 178,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G043",
+      "pattern": "write, wrote, written",
+      "sourcePage": 178,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G044",
+      "pattern": "write about...",
+      "sourcePage": 178,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G045",
+      "pattern": "write sth to sb",
+      "sourcePage": 178,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G046",
+      "pattern": "write sth down / write down sth",
+      "sourcePage": 178,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G047",
+      "pattern": "a weather forecast",
+      "sourcePage": 179,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G048",
+      "pattern": "feel / be under the weather",
+      "sourcePage": 179,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G049",
+      "pattern": "climate / weather：可數與不可數用法",
+      "sourcePage": 179,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G050",
+      "pattern": "for a rainy day",
+      "sourcePage": 179,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G051",
+      "pattern": "keep sth on file",
+      "sourcePage": 179,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U20-G052",
+      "pattern": "file a lawsuit (against sb)",
+      "sourcePage": 179,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    }
+  ]
+}

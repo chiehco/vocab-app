@@ -1,5 +1,7 @@
 import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
 const [unit=1,start=1,end=38]=process.argv.slice(2).map(Number);
+const phase=process.argv[6]??'legacy';
+if(!['legacy','before','final'].includes(phase))throw Error('Expected before/final capture phase');
 const read=p=>JSON.parse(readFileSync(p,'utf8'));
 const cards=(process.argv[5]?read(process.argv[5]):read('src/features/vocabulary/lv1ReviewedImages.json').filter(c=>c.unit===unit)).slice(start-1,end);
 const words=read('public/data/v1/words.json');
@@ -24,7 +26,7 @@ writeFileSync('output/playwright/unit-audit/general-capture.playwright.txt',`asy
     await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
     const hero=await page.locator('main').innerText();
     const imageInfo=await page.locator('main img').evaluateAll(imgs=>imgs.map(i=>({src:i.src,complete:i.complete,width:i.naturalWidth,height:i.naturalHeight})));
-    const heroScreenshot='output/playwright/unit-audit/'+card.id+'-general-hero.png';
+    const heroScreenshot='output/playwright/unit-audit/'+card.id+'-general${phase==='legacy'?'':'-'+phase}-hero.png';
     await page.screenshot({path:heroScreenshot,fullPage:true});
     await page.getByRole('button',{name:'字義',exact:true}).click();
     await page.waitForFunction(n=>document.querySelectorAll('.dossier-examples li').length===n,card.examples.length);
@@ -33,7 +35,7 @@ writeFileSync('output/playwright/unit-audit/general-capture.playwright.txt',`asy
     await page.waitForTimeout(350);
     const actual=await page.locator('.dossier-examples li').evaluateAll(items=>items.map(li=>({en:li.querySelector('p')?.innerText,zh:li.querySelector('div>span')?.innerText,label:[...li.querySelectorAll('small')].map(s=>s.innerText)})));
     const mismatches=card.examples.filter(e=>!actual.some(a=>a.en===e.sentenceEn&&a.zh===(e.sentenceZh??undefined))).map(e=>e.exampleId);
-    const screenshot='output/playwright/unit-audit/'+card.id+'-general-after.png';
+    const screenshot='output/playwright/unit-audit/'+card.id+'-general-${phase==='legacy'?'after':phase+'-meaning'}.png';
     await page.screenshot({path:screenshot,fullPage:true});
     let meaningPageText=await page.locator('main').innerText(),definitionTabRetried=false;
     let definitionMatches=!card.meaningEn||meaningPageText.replace(/\\s+/g,' ').includes(card.meaningEn.replace(/\\s+/g,' '));
@@ -44,7 +46,7 @@ writeFileSync('output/playwright/unit-audit/general-capture.playwright.txt',`asy
       definitionMatches=meaningPageText.replace(/\\s+/g,' ').includes(card.meaningEn.replace(/\\s+/g,' '));
       if(definitionMatches)await page.screenshot({path:screenshot,fullPage:true});
     }
-    results.push({id:card.id,word:card.word,url:page.url(),screenshot,heroScreenshot,hero,imageInfo,exampleCount:actual.length,mismatches,examples:actual,definitionMatches,definitionTabRetried});
+    results.push({id:card.id,word:card.word,url:page.url(),capturePhase:${JSON.stringify(phase)},screenshot,heroScreenshot,hero,imageInfo,exampleCount:actual.length,mismatches,examples:actual,definitionMatches,definitionTabRetried});
   }
   return results;
 }`);

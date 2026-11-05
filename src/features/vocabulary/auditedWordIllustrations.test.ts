@@ -17,6 +17,7 @@ import u14Evidence from '../../../docs/unit-audit-20261105/LV1-U14-original-imag
 import u15Evidence from '../../../docs/unit-audit-20261105/LV1-U15-original-image-review.json';
 import u17Evidence from '../../../docs/unit-audit-20261105/LV1-U17-original-image-review.json';
 import u18Evidence from '../../../docs/unit-audit-20261105/LV1-U18-original-image-review.json';
+import u20Evidence from '../../../docs/unit-audit-20261105/LV1-U20-original-image-review.json';
 import preparedElevator from '../../../docs/unit-audit-20261105/LV1-U12-push-elevator-prepared.json';
 import captionTranslations from '../../../docs/unit-audit-20261105/LV1-verified-caption-translations.json';
 import publishedUnits from './lv1ReviewedImages.json';
@@ -25,7 +26,7 @@ import {approvedCurriculumIllustration,approvedWordIllustration,approvedLV1Image
 import {getWordBeastAsset} from '../wordbeast/wordBeastAssets';
 
 it('binds the explicitly reviewed general-card repairs to exact images and captions',()=>{
- expect(cards).toHaveLength(330);
+ expect(cards).toHaveLength(332);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U03-'))).toHaveLength(18);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U04-'))).toHaveLength(19);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U05-'))).toHaveLength(4);
@@ -40,9 +41,9 @@ it('binds the explicitly reviewed general-card repairs to exact images and capti
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U14-'))).toHaveLength(34);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U15-'))).toHaveLength(42);
  expect(cards.filter(c=>c.reviewId==='LI-LV1U17-V027')).toHaveLength(1);
- expect(new Set(cards.map(c=>c.officialWordId)).size).toBe(330);
+ expect(new Set(cards.map(c=>c.officialWordId)).size).toBe(332);
  for(const card of cards){
-  const proof=[...evidence.cards,...u4Evidence.cards,...u5Evidence.cards,...u6Evidence.cards,...u7Evidence.cards,...u8Evidence.cards,...u9Evidence.cards,...u10Evidence.cards,...u11Evidence.cards,...u12Evidence.cards,...u13Evidence.cards,...u14Evidence.cards,...u15Evidence.cards,...u17Evidence.cards,...u18Evidence.cards].find(c=>c.id===card.reviewId)!;
+  const proof=[...evidence.cards,...u4Evidence.cards,...u5Evidence.cards,...u6Evidence.cards,...u7Evidence.cards,...u8Evidence.cards,...u9Evidence.cards,...u10Evidence.cards,...u11Evidence.cards,...u12Evidence.cards,...u13Evidence.cards,...u14Evidence.cards,...u15Evidence.cards,...u17Evidence.cards,...u18Evidence.cards,...u20Evidence.cards].find(c=>c.id===card.reviewId)!;
   expect(proof.pixelReview).toContain('actually viewed original');
   expect(proof.observation).toBeTruthy();
   expect(createHash('sha256').update(readFileSync('public/'+card.illustration.path)).digest('hex')).toBe(proof.publishedImageSha256);
@@ -149,6 +150,14 @@ it('pairs the retained crown bytes with their own caption and preserves the phon
  expect(approvedCurriculumIllustration('wrong-word','/wordbeast/lv1/W000283.png')).toBeUndefined();
  const examples=JSON.parse(readFileSync('public/data/v1/examples.json','utf8'));
  expect(examples.find((e:{exampleId:string})=>e.exampleId==='EX7c7366a9')).toMatchObject({sentenceEn:'This phone is too expensive for me.',sentenceZh:'這支手機對我來說太貴了。',blankSentence:'This phone is too _____ for me.',answer:'expensive',sensePos:'adj.'});
- expect(createHash('sha256').update(JSON.stringify(cards.filter(c=>c.reviewId!=='LI-LV1U18-V045'))).digest('hex')).toBe(u18Evidence.previousRegistryHash);
+ expect(createHash('sha256').update(JSON.stringify(cards.filter(c=>!['LI-LV1U18-V045','LI-LV1U20-V065','LI-LV1U20-V073'].includes(c.reviewId)))).digest('hex')).toBe(u18Evidence.previousRegistryHash);
  expect(publishedUnits.some(c=>c.id==='LI-LV1U18-V045')).toBe(false);
+});
+
+it('pairs the unchanged U20 fly and blueberry images with their own captions while retaining all previous pairs',()=>{
+ expect(createHash('sha256').update(JSON.stringify(cards.filter(c=>!['LI-LV1U20-V065','LI-LV1U20-V073'].includes(c.reviewId)))).digest('hex')).toBe(u20Evidence.previousRegistryHash);
+ const examples=JSON.parse(readFileSync('public/data/v1/examples.json','utf8'));
+ for(const proof of u20Evidence.cards){const pair=approvedWordIllustration(proof.word,proof.officialWordId)!;expect(pair).toMatchObject({captionEn:proof.captionEn,captionZh:proof.captionZh});expect(approvedCurriculumIllustration(proof.word,'/'+pair.path+'?v=test')).toEqual(pair);expect(approvedCurriculumIllustration('wrong-word','/'+pair.path)).toBeUndefined();expect(publishedUnits.some(c=>c.id===proof.id)).toBe(false);}
+ expect(examples.find((e:{exampleId:string})=>e.exampleId==='EXe12abfed')).toMatchObject({sentenceEn:'The noise from the construction site really bothers me every morning.',sentenceZh:'每天早上工地傳來的噪音都讓我很煩。',blankSentence:'The noise from the construction site really _____ me every morning.',answer:'bothers'});
+ expect(examples.find((e:{exampleId:string})=>e.exampleId==='EX0fecd40b')).toMatchObject({sentenceEn:'This restaurant serves the most delicious noodles in town.',sentenceZh:'這家餐廳供應鎮上最美味的麵。',blankSentence:'This restaurant serves the most _____ noodles in town.',answer:'delicious'});
 });

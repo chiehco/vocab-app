@@ -1,0 +1,165 @@
+{
+  "commit": "038624c87614e6bc2da1c4422cd2fb30a6a89187",
+  "runId": 42062749008,
+  "jobId": 127368586080,
+  "url": "https://github.com/chiehco/vocab-app/actions/runs/42062749008/job/127368586080",
+  "status": "completed",
+  "conclusion": "success",
+  "startedAt": "2026-11-05T16:16:54Z",
+  "completedAt": "2026-11-05T16:33:25Z",
+  "steps": [
+    {
+      "name": "Set up job",
+      "status": "completed",
+      "conclusion": "success",
+      "completedAt": "2026-11-05T16:16:56Z"
+    },
+    {
+      "name": "Run actions/checkout@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "completedAt": "2026-11-05T16:17:06Z"
+    },
+    {
+      "name": "Run actions/setup-node@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "completedAt": "2026-11-05T16:17:08Z"
+    },
+    {
+      "name": "Run npm ci",
+      "status": "completed",
+      "conclusion": "success",
+      "completedAt": "2026-11-05T16:17:15Z"
+    },
+    {
+      "name": "Run npm ci --prefix services/pageviews-cloudflare",
+      "status": "completed",
+      "conclusion": "success",
+      "completedAt": "2026-11-05T16:17:22Z"
+    },
+    {
+      "name": "Run npm test --prefix services/pageviews-cloudflare",
+      "status": "completed",
+      "conclusion": "success",
+      "completedAt": "2026-11-05T16:17:23Z"
+    },
+    {
+      "name": "Run actions/setup-python@v5",
+      "status": "completed",
+      "conclusion": "success",
+      "completedAt": "2026-11-05T16:17:23Z"
+    },
+    {
+      "name": "Run python -m pip install openpyxl==3.1.5 Pillow==12.0.0",
+      "status": "completed",
+      "conclusion": "success",
+      "completedAt": "2026-11-05T16:17:35Z"
+    },
+    {
+      "name": "Run python -m unittest discover -s scripts -p 'test_apply_lv3_*.py'",
+      "status": "completed",
+      "conclusion": "success",
+      "completedAt": "2026-11-05T16:18:02Z"
+    },
+    {
+      "name": "Run python -m unittest discover -s scripts -p 'test_apply_lv4_*.py'",
+      "status": "completed",
+      "conclusion": "success",
+      "completedAt": "2026-11-05T16:18:21Z"
+    },
+    {
+      "name": "Run python -m unittest discover -s scripts -p 'test_apply_unit_audit.py'",
+      "status": "completed",
+      "conclusion": "success",
+      "completedAt": "2026-11-05T16:18:22Z"
+    },
+    {
+      "name": "Run python -m unittest discover -s scripts -p 'test_build_sa_pack_lv5_legacy.py'",
+      "status": "completed",
+      "conclusion": "success",
+      "completedAt": "2026-11-05T16:18:22Z"
+    },
+    {
+      "name": "Run python scripts/prepare_recovered_unit_drafts.py --check",
+      "status": "completed",
+      "conclusion": "success",
+      "completedAt": "2026-11-05T16:18:23Z"
+    },
+    {
+      "name": "Run python scripts/integrate_recovered_units.py --check",
+      "status": "completed",
+      "conclusion": "success",
+      "completedAt": "2026-11-05T16:18:24Z"
+    },
+    {
+      "name": "Run npm run lint",
+      "status": "completed",
+      "conclusion": "success",
+      "completedAt": "2026-11-05T16:18:25Z"
+    },
+    {
+      "name": "Run npm run typecheck",
+      "status": "completed",
+      "conclusion": "success",
+      "completedAt": "2026-11-05T16:19:04Z"
+    },
+    {
+      "name": "Run npm run test -- --maxWorkers=1 --testTimeout=15000",
+      "status": "completed",
+      "conclusion": "success",
+      "completedAt": "2026-11-05T16:32:37Z"
+    },
+    {
+      "name": "Run npm run build",
+      "status": "completed",
+      "conclusion": "success",
+      "completedAt": "2026-11-05T16:33:22Z"
+    },
+    {
+      "name": "Post Run actions/setup-python@v5",
+      "status": "completed",
+      "conclusion": "success",
+      "completedAt": "2026-11-05T16:33:22Z"
+    },
+    {
+      "name": "Post Run actions/setup-node@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "completedAt": "2026-11-05T16:33:22Z"
+    },
+    {
+      "name": "Post Run actions/checkout@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "completedAt": "2026-11-05T16:33:23Z"
+    },
+    {
+      "name": "Complete job",
+      "status": "completed",
+      "conclusion": "success",
+      "completedAt": "2026-11-05T16:33:23Z"
+    }
+  ],
+  "files": 214,
+  "tests": 1696,
+  "pythonBatches": [
+    14,
+    7,
+    19,
+    10
+  ],
+  "checkoutShaMatched": true,
+  "buildCompletedAt": "2026-11-05T16:33:20.0719679Z",
+  "verification": "Direct official job payload and complete decoded log read; exact checkout SHA and final test/build summaries matched.",
+  "push": {
+    "command": "git push origin content/unit-audit-20261105",
+    "remote": "https://github.com/chiehco/vocab-app.git",
+    "branch": "content/unit-audit-20261105",
+    "firstAttempt": "Executed; GitHub returned remote: fatal error in commit_refs and remote rejected (failure).",
+    "readOnlyOutcomeCheck": "Remote ref remained 6cb646248b9fb89f0ee7aca9be1ee6ef6ee15461 after the rejected attempt.",
+    "boundedRecovery": "One normal retry of the same command succeeded. git ls-remote confirmed exact 038624c87614e6bc2da1c4422cd2fb30a6a89187. No force push, main change, merge or deployment.",
+    "state": "confirmed_success_no_further_push_needed"
+  },
+  "ciTimeoutBoundary": "The existing CI command uses --testTimeout=15000. Local U19 regression used the unchanged default5000ms; these are recorded separately."
+}

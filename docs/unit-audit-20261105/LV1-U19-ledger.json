@@ -79,7 +79,16 @@
     "browserRecovery": "Initial final-general batch failed with execution context destroyed and returned no complete result. Repeated only that confirmed failed read-only batch after the process ended;64 reopens/65 comparisons passed. Source reopens and installation were not repeated."
   },
   "priorExactCi": "validation/U18-ci-6cb6462.json",
-  "newCheckpointFullCi": "Pending this checkpoint commit and its own full CI.",
+  "newCheckpointFullCi": {
+    "commit": "038624c87614e6bc2da1c4422cd2fb30a6a89187",
+    "runId": 42062749008,
+    "jobId": 127368586080,
+    "status": "completed",
+    "conclusion": "success",
+    "files": 214,
+    "tests": 1696,
+    "evidence": "validation/U19-ci-038624c.json"
+  },
   "persistence": {
     "rowsChecked": 1892,
     "failures": [],
