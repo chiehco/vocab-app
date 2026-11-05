@@ -176,3 +176,32 @@ describe('reviewed LV1 image-only release', () => {
       .some(c => /Doumo|Mr\. Bean|Mrs\. Bean|Ms\. Bean/.test(c.illustration.captionEn))).toBe(false);
   });
 });
+
+it('changes only the two exact U22 pairs while preserving original assets captions and every other row',()=>{
+ const proof=JSON.parse(readFileSync('docs/unit-audit-20261105/LV1-U22-exact-pair-review.json','utf8'));
+ const ids=new Set(['LV1-U22-04','LV1-U22-46']);
+ expect(hash(JSON.stringify(cards.filter(c=>!ids.has(c.id))))).toBe(proof.unchangedCardRowsSha256);
+ expect(hash(JSON.stringify(audit.filter(c=>!ids.has(c.id))))).toBe(proof.unchangedApprovalRowsSha256);
+ for(const old of proof.before){
+  const now=cards.find(c=>c.id===old.id)!;const record=audit.find(c=>c.id===old.id)!;
+  expect(record.previousApproval).toEqual(old.approval);
+  expect(hash(readFileSync('public/'+old.illustration.path))).toBe(old.approval.publishedImageSha256);
+  expect(hash(old.illustration.captionEn+'\n'+old.illustration.captionZh)).toBe(old.approval.textSha256);
+  expect(now.illustration.captionEn).toBe(old.illustration.captionEn);
+ }
+ const umbrella=cards.find(c=>c.id==='LV1-U22-04')!;
+ expect(umbrella.officialWordId).toBeNull();
+ expect(umbrella.illustration.path).toBe('wordbeast/lv1-reviewed/LV1-U22-04-da76e7c6def2.webp');
+ expect(hash(readFileSync('public/'+umbrella.illustration.path))).toBe('ed9f96ee831e60d943961326c6eff970280a31e048a8b9d991941f6ad0792700');
+ expect(umbrella.illustration.captionZh).toBe(proof.before[0].illustration.captionZh);
+ const choose=cards.find(c=>c.id==='LV1-U22-46')!;
+ expect(choose.officialWordId).toBe('W000165');
+ expect(choose.illustration).toEqual({path:'wordbeast/lv1-reviewed/LV1-U22-46-c0b8effa6d8b.webp',captionEn:'He chose the blue shirt instead of the red one.',captionZh:'他選了藍色上衣，而不是紅色的。'});
+ expect(getWordBeastAsset('W000165','choose')).toContain(choose.illustration.path);
+ expect(approvedWordIllustration('choose','W000165')).toEqual(choose.illustration);
+ expect(bootstrap.examples.find(e=>e.exampleId==='EX93dc7fe9')?.sentenceZh).toBe(choose.illustration.captionZh);
+ for(const [word,id,path]of [['arrive','W000046','LV1-U07-86-'],['circular','W003145','curriculum/lv4-u17/circular.webp'],['circulation','W003147','curriculum/lv4-u17/circulate.webp'],['oval','W003706','curriculum/lv4-u17/oval-v7.webp']]){
+  if(word==='arrive')expect(getWordBeastAsset(id,word)).toContain('LV1-U07-86-');
+  else expect(getWordBeastAsset(id,word)).toContain(path);
+ }
+});

@@ -6,7 +6,7 @@ const read=p=>JSON.parse(readFileSync(p,'utf8'));
 const cards=(process.argv[5]?read(process.argv[5]):read('src/features/vocabulary/lv1ReviewedImages.json').filter(c=>c.unit===unit)).slice(start-1,end);
 const words=read('public/data/v1/words.json');
 const examples=read('public/data/v1/examples.json');
-const data=cards.filter(c=>words.some(w=>w.wordId===c.officialWordId)).map(c=>({...c,word:words.find(w=>w.wordId===c.officialWordId).word,meaningEn:words.find(w=>w.wordId===c.officialWordId).meaningEn,
+const data=cards.filter(c=>words.some(w=>w.wordId===c.officialWordId)).map(c=>({...c,word:words.find(w=>w.wordId===c.officialWordId).word,meaningEn:words.find(w=>w.wordId===c.officialWordId).meaningEn,verbForms:words.find(w=>w.wordId===c.officialWordId).verbForms??null,
  examples:examples.filter(e=>e.word===words.find(w=>w.wordId===c.officialWordId).word && ['approved','reviewed','draft','needs_check'].includes(e.status))}));
 mkdirSync('output/playwright/unit-audit',{recursive:true});
 writeFileSync('output/playwright/unit-audit/general-capture.playwright.txt',`async(page)=>{
@@ -14,7 +14,7 @@ writeFileSync('output/playwright/unit-audit/general-capture.playwright.txt',`asy
   await page.setViewportSize({width:1000,height:1000});
   const results=[];
   for(const card of cards){
-    await page.goto('http://127.0.0.1:5179/#/word/'+card.officialWordId);
+    await page.goto('http://127.0.0.1:5179/#/word/'+card.officialWordId,{waitUntil:'domcontentloaded'});
     await page.getByRole('heading',{name:card.word,exact:true}).waitFor();
     // Consecutive source items can map to the same route. Explicitly restore
     // the hero tab rather than relying on navigation to reset the prior tab.
@@ -26,6 +26,7 @@ writeFileSync('output/playwright/unit-audit/general-capture.playwright.txt',`asy
     await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
     const hero=await page.locator('main').innerText();
     const imageInfo=await page.locator('main img').evaluateAll(imgs=>imgs.map(i=>({src:i.src,complete:i.complete,width:i.naturalWidth,height:i.naturalHeight})));
+    const heroForms=await page.locator('.recorded-verb-forms dd').allTextContents();
     const heroScreenshot='output/playwright/unit-audit/'+card.id+'-general${phase==='legacy'?'':'-'+phase}-hero.png';
     await page.screenshot({path:heroScreenshot,fullPage:true});
     await page.getByRole('button',{name:'字義',exact:true}).click();
@@ -46,7 +47,10 @@ writeFileSync('output/playwright/unit-audit/general-capture.playwright.txt',`asy
       definitionMatches=meaningPageText.replace(/\\s+/g,' ').includes(card.meaningEn.replace(/\\s+/g,' '));
       if(definitionMatches)await page.screenshot({path:screenshot,fullPage:true});
     }
-    results.push({id:card.id,word:card.word,url:page.url(),capturePhase:${JSON.stringify(phase)},screenshot,heroScreenshot,hero,imageInfo,exampleCount:actual.length,mismatches,examples:actual,definitionMatches,definitionTabRetried});
+    const meaningForms=await page.locator('.recorded-verb-forms dd').allTextContents();
+    const expectedForms=card.verbForms?[card.verbForms.base,card.verbForms.past,card.verbForms.pastParticiple]:[];
+    const formsMatch=JSON.stringify(heroForms.map(x=>x.trim()))===JSON.stringify(expectedForms)&&JSON.stringify(meaningForms.map(x=>x.trim()))===JSON.stringify(expectedForms);
+    results.push({expectedForms,heroForms,meaningForms,formsMatch,id:card.id,word:card.word,url:page.url(),capturePhase:${JSON.stringify(phase)},screenshot,heroScreenshot,hero,imageInfo,exampleCount:actual.length,mismatches,examples:actual,meaningPageText,definitionMatches,definitionTabRetried});
   }
   return results;
 }`);

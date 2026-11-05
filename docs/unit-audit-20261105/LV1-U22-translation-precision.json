@@ -1,0 +1,23 @@
+{
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "unit": "LV1-U22",
+  "patches": [
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX93dc7fe9",
+      "before": {
+        "word": "choose",
+        "sentenceEn": "He chose the blue shirt instead of the red one.",
+        "blankSentence": "He _____ the blue shirt instead of the red one.",
+        "answer": "chose",
+        "sentenceZh": "他選了藍色襯衫，而不是紅色的。"
+      },
+      "after": {
+        "sentenceZh": "他選了藍色上衣，而不是紅色的。"
+      },
+      "reason": "The original English shirt covers the visible T-shirts; remove the unsupported collared-shirt specificity from Chinese only.",
+      "evidence": "https://www.merriam-webster.com/dictionary/shirt ; LV1-U22-46 original 1254 × 1254 image"
+    }
+  ]
+}

@@ -162,7 +162,36 @@
       "Existing image pairings, original captions and every earlier source table remain unchanged."
     ]
   },
-  "newCheckpointFullCi": "Pending this new integration commit and its own full CI.",
+  "newCheckpointFullCi": {
+    "commit": "f2426fd1f46090ad0c6831afbe933831c73f636a",
+    "run": 42094302699,
+    "job": 127480213204,
+    "status": "completed",
+    "conclusion": "success",
+    "completedAt": "2026-11-05T19:38:57Z",
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42094302699/job/127480213204",
+    "files": 216,
+    "tests": 1711,
+    "pythonBatches": [
+      14,
+      7,
+      29,
+      10
+    ],
+    "allStepsSuccessful": true,
+    "lines": [
+      "2026-11-05T19:29:06.7017209Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +f2426fd1f46090ad0c6831afbe933831c73f636a:refs/remotes/origin/content/unit-audit-20261105",
+      "2026-11-05T19:29:17.0454386Z  * [new ref]         f2426fd1f46090ad0c6831afbe933831c73f636a -> origin/content/unit-audit-20261105",
+      "2026-11-05T19:29:17.6875712Z f2426fd1f46090ad0c6831afbe933831c73f636a",
+      "2026-11-05T19:29:52.9593855Z Ran 14 tests in 18.296s",
+      "2026-11-05T19:30:05.4021717Z Ran 7 tests in 12.309s",
+      "2026-11-05T19:30:17.7176131Z Ran 29 tests in 12.215s",
+      "2026-11-05T19:30:17.8275952Z Ran 10 tests in 0.051s",
+      "2026-11-05T19:38:28.4545414Z  Test Files  216 passed (216)",
+      "2026-11-05T19:38:28.4549029Z       Tests  1711 passed (1711)",
+      "2026-11-05T19:38:53.7310327Z ✓ built in 3.11s"
+    ]
+  },
   "remaining": {
     "formCandidatesFromPreparedSnapshot": 22,
     "scope": "Remaining prepared fields require latest reconciliation and actual integration verification; not counted as applied.",

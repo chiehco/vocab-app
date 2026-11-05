@@ -10,9 +10,15 @@ from PIL import Image,ImageDraw,ImageFont
 unit=int(sys.argv[1])
 rows=json.loads((ROOT/f'output/unit-audit-20261105/U{unit:02}-ui-before.json').read_text(encoding='utf-8'))
 source=json.loads((ROOT/f'output/unit-audit-20261105/LV1-U{unit:02}-full-source.json').read_text(encoding='utf-8'))
-published={r['id'] for r in source if r.get('published',False)}
 # Existing text-only units have no published image manifest entries.
-rows=[r for r in rows if r['imageInfo'] and r['id'] not in published]
+def different_observed_pair(row):
+    if not row['imageInfo']:
+        return False
+    item = next(s for s in source if s['id'] == row['id'])
+    pair = item.get('publishedPair', {}).get('illustration')
+    return (pair is None or not any(pair['path'] in i['src'] for i in row['imageInfo'])
+            or pair['captionEn'] not in row['hero'] or pair['captionZh'] not in row['hero'])
+rows=[r for r in rows if different_observed_pair(r)]
 out=ROOT/f'output/unit-audit-20261105/sheets/U{unit:02}-general';out.mkdir(parents=True,exist_ok=True)
 font=ImageFont.truetype('C:/Windows/Fonts/segoeui.ttf',20)
 for start in range(0,len(rows),4):
