@@ -26,6 +26,7 @@ U19_FORM_IDS = set('W000596 W000959 W000457 W000065 W000817 W000317 W001490 W005
 U20_FORM_IDS = set('W000136 W000294 W000638 W000241 W000124 W000868 W000357 W000990 W000956 W000306 W004853 W001997 W001107 W003048 W001057'.split())
 U21_FORM_IDS = set('W000815 W000958 W000929 W000264 W001992 W004194 W003357 W001844 W001285'.split())
 INTEGRATED_U05_U06_FORM_IDS = set('W000348 W000309 W000270 W000933 W000493 W000881 W000618 W000500 W000986 W000870 W000256 W000242 W000074 W000864 W000049 W000055 W000772 W000480 W000741 W000199 W000968 W000628 W000262 W000824 W000080 W000302 W000595 W000319 W000924 W000688 W000403 W000450 W000685 W000121 W000365 W000147 W000661 W000494 W000486 W000922 W000950 W001054 W005996 W000559 W001723'.split())
+INTEGRATED_U07_FORM_IDS = set('W000008 W000041 W000046 W000082 W000146 W000387 W000432 W000476 W000498 W000525 W000529 W000534 W000541 W000569 W000613 W000632 W000672 W000699 W000724 W000732 W000755 W000784 W000822 W000920 W001086 W001523 W001598 W001768 W001779 W002047 W003270 W003306 W003352 W003553 W003959 W004780'.split())
 U18_TRANSLATION_IDS = {'EX0f888c6a', 'EXf0dab820'}
 TRANSLATION_IDS = {'EX50693488', 'EXddc4d110', 'EX66703666', 'EX1f033d08', 'EX51e703b4', 'EXd51bd96d', 'EX4c5b9769', 'EX299bccf8', 'EX2ff9ba41'}
 ABSENT = {"$absent": True}
@@ -51,7 +52,7 @@ def validate_patch_shape(patch):
         assert set(patch['after']) == {'content'}, 'No note identity, title, type or status change'
         assert fact['after']['content'] == fact['before']['content'].replace('腦部創傷','頭部傷勢'), 'Only the verified duplicate translation is editable'
     if 'verbForms' in patch['after']:
-        assert patch['dataset'] == 'words' and patch['id'] in FORM_IDS | FOLLOWUP_FORM_IDS | U16_FORM_IDS | U17_FORM_IDS | U18_FORM_IDS | U19_FORM_IDS | U20_FORM_IDS | U21_FORM_IDS | INTEGRATED_U05_U06_FORM_IDS, 'Only individually verified existing verbs may acquire principal parts'
+        assert patch['dataset'] == 'words' and patch['id'] in FORM_IDS | FOLLOWUP_FORM_IDS | U16_FORM_IDS | U17_FORM_IDS | U18_FORM_IDS | U19_FORM_IDS | U20_FORM_IDS | U21_FORM_IDS | INTEGRATED_U05_U06_FORM_IDS | INTEGRATED_U07_FORM_IDS, 'Only individually verified existing verbs may acquire principal parts'
         assert patch['before'] == {'verbForms': ABSENT} and set(patch['after']) == {'verbForms'}, 'Only an explicitly absent verbForms field may be added'
         facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-VERB-FORMS-SOURCES.json')['facts']
         assert len(facts) == 31 and {f['wordId'] for f in facts} == FORM_IDS
@@ -79,7 +80,10 @@ def validate_patch_shape(patch):
         integrated_u05_u06 = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-INTEGRATED-U05-U06-VERB-FORMS-SOURCES.json')['facts']
         assert len(integrated_u05_u06) == 45 and {f['wordId'] for f in integrated_u05_u06} == INTEGRATED_U05_U06_FORM_IDS
         assert not (FORM_IDS | FOLLOWUP_FORM_IDS | U16_FORM_IDS | U17_FORM_IDS | U18_FORM_IDS | U19_FORM_IDS | U20_FORM_IDS | U21_FORM_IDS) & INTEGRATED_U05_U06_FORM_IDS, 'Integrated U05-U06 scope must remain exact and separate'
-        facts += followups + u16 + u17 + u18 + u19 + u20 + u21 + integrated_u05_u06
+        integrated_u07 = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-INTEGRATED-U07-VERB-FORMS-SOURCES.json')['facts']
+        assert len(integrated_u07) == 36 and {f['wordId'] for f in integrated_u07} == INTEGRATED_U07_FORM_IDS
+        assert not (FORM_IDS | FOLLOWUP_FORM_IDS | U16_FORM_IDS | U17_FORM_IDS | U18_FORM_IDS | U19_FORM_IDS | U20_FORM_IDS | U21_FORM_IDS | INTEGRATED_U05_U06_FORM_IDS) & INTEGRATED_U07_FORM_IDS, 'Integrated U07 scope must remain exact and separate'
+        facts += followups + u16 + u17 + u18 + u19 + u20 + u21 + integrated_u05_u06 + integrated_u07
         fact = next(f for f in facts if f['wordId'] == patch['id'])
         assert patch['after']['verbForms'] == fact['verbForms'], 'Unverified principal parts or source'
     if 'sentenceZh' in patch['after']:
@@ -98,8 +102,9 @@ def apply_to_row(row, patch):
     """Validate guards even for idempotent rows; missing optional keys stay distinct from null."""
     if 'verbForms' in patch['after']:
         assert row['word'] == patch['after']['verbForms']['base'] and 'v.' in row['pos'], 'Forms belong only to this existing verb'
-        if patch['id'] in INTEGRATED_U05_U06_FORM_IDS:
-            fact = next(f for f in read(ROOT / 'docs/unit-audit-20261105/VERIFIED-INTEGRATED-U05-U06-VERB-FORMS-SOURCES.json')['facts'] if f['wordId'] == patch['id'])
+        if patch['id'] in INTEGRATED_U05_U06_FORM_IDS | INTEGRATED_U07_FORM_IDS:
+            source_name = 'VERIFIED-INTEGRATED-U07-VERB-FORMS-SOURCES.json' if patch['id'] in INTEGRATED_U07_FORM_IDS else 'VERIFIED-INTEGRATED-U05-U06-VERB-FORMS-SOURCES.json'
+            fact = next(f for f in read(ROOT / 'docs/unit-audit-20261105' / source_name)['facts'] if f['wordId'] == patch['id'])
             non_form = {k: v for k, v in row.items() if k != 'verbForms'}
             digest = hashlib.sha256(json.dumps(non_form, ensure_ascii=False, separators=(',', ':')).encode('utf-8')).hexdigest()
             assert digest == fact['nonFormRowSha256'], 'Exact integrated non-form row guard changed'
