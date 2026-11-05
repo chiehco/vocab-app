@@ -1,0 +1,595 @@
+{
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "integrationBaseCheckpoint": "d20191cc5c9bcc157a4da9edbab208ce850de763",
+  "unit": "LV1-U12-form-followup",
+  "patches": [
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000035",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "answer",
+          "past": "answered",
+          "pastParticiple": "answered",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/answer",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只描述動詞詞形；名詞、形容詞或副詞不屈折成這組三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/answer"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001726",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "reply",
+          "past": "replied",
+          "pastParticiple": "replied",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/reply",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. replied 的完整拼字由來源直接明示，不依 y 改 i 的規則推導。a reply 是名詞，不直接作為動詞證據。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/reply"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001729",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "respond",
+          "past": "responded",
+          "pastParticiple": "responded",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/respond",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只描述動詞詞形；名詞、形容詞或副詞不屈折成這組三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/respond"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000389",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "heat",
+          "past": "heated",
+          "pastParticiple": "heated",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/heat",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. heated 由動詞欄明示，不以形容詞 heated 的存在倒推三態；名詞熱量不另產生三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/heat"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000916",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "train",
+          "past": "trained",
+          "pastParticiple": "trained",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/train",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只描述動詞詞形；名詞、形容詞或副詞不屈折成這組三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/train"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000683",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "pull",
+          "past": "pulled",
+          "pastParticiple": "pulled",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/pull",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只描述動詞詞形；名詞、形容詞或副詞不屈折成這組三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/pull"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000296",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "farm",
+          "past": "farmed",
+          "pastParticiple": "farmed",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/farm",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只描述動詞詞形；名詞、形容詞或副詞不屈折成這組三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/farm"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000684",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "push",
+          "past": "pushed",
+          "pastParticiple": "pushed",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/push",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 名詞推動的一次動作不另產生三態；本候選 pushed 適用現有施力推門的動詞義。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/push"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001528",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "marry",
+          "past": "married",
+          "pastParticiple": "married",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/marry",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只描述動詞詞形；名詞、形容詞或副詞不屈折成這組三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/marry"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000312",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "finish",
+          "past": "finished",
+          "pastParticiple": "finished",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/finish",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. finished 是明示的動詞過去式及過去分詞；名詞 finish 不另產生三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/finish"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002996",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "widen",
+          "past": "widened",
+          "pastParticiple": "widened",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/widen",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只描述動詞詞形；名詞、形容詞或副詞不屈折成這組三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/widen"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001566",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "narrow",
+          "past": "narrowed",
+          "pastParticiple": "narrowed",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/narrow",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只描述動詞詞形；名詞、形容詞或副詞不屈折成這組三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/narrow"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004689",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "purchase",
+          "past": "purchased",
+          "pastParticiple": "purchased",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/purchase",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只描述動詞詞形；名詞、形容詞或副詞不屈折成這組三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/purchase"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001291",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "ease",
+          "past": "eased",
+          "pastParticiple": "eased",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/ease",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只描述動詞詞形；名詞、形容詞或副詞不屈折成這組三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/ease"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000216",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "deal",
+          "past": "dealt",
+          "pastParticiple": "dealt",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/deal",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只描述動詞詞形；名詞、形容詞或副詞不屈折成這組三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/deal"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000673",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "practice",
+          "past": "practiced",
+          "pastParticiple": "practiced",
+          "sourceRef": "https://www.collinsdictionary.com/conjugation/english/practice",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 保留正式詞目 practice 及美式 practiced；英式動詞另拼 practise、過去式及過去分詞 practised。不能把兩套拼字不加限定地混排，也不能把正式詞目擅改為 practise。",
+      "evidence": "https://www.collinsdictionary.com/conjugation/english/practice ; https://www.collinsdictionary.com/conjugation/english/practice ; https://www.collinsdictionary.com/conjugation/english/practice ; https://www.collinsdictionary.com/dictionary/english/practice ; https://www.collinsdictionary.com/dictionary/english/practise"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000919",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "trip",
+          "past": "tripped",
+          "pastParticiple": "tripped",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/trip",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. tripped 的雙寫 p 由來源直接明示；旅行名詞不另產生三態。其他口語或文學動詞義不因此被加入原摘要。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/trip"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000212",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "date",
+          "past": "dated",
+          "pastParticiple": "dated",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/date",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 日期、約會、棗類的名詞 date 不另有動詞三態；本候選對應動詞 date，不把名詞複數 dates 當成過去式。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/date"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000662",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "police",
+          "past": "policed",
+          "pastParticiple": "policed",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/police",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. policed 對應動詞維持治安，不是名詞警察的複數或謂語變化；不把 police 名詞與動詞混淆。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/police"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000405",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "home",
+          "past": "homed",
+          "pastParticiple": "homed",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/home",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只描述動詞詞形；名詞、形容詞或副詞不屈折成這組三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/home ; https://www.collinsdictionary.com/dictionary/english/home ; https://www.collinsdictionary.com/dictionary/english/home-in"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001919",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "tour",
+          "past": "toured",
+          "pastParticiple": "toured",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/tour",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只描述動詞詞形；名詞、形容詞或副詞不屈折成這組三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/tour"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001927",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "travel",
+          "past": "traveled",
+          "pastParticiple": "traveled",
+          "sourceRef": "https://www.collinsdictionary.com/us/dictionary/english/travel",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. traveled 為美式典型拼字；travelled 在美國之外較主流，包含英式。,兩者是同義拼字變體，不是不同動詞義。此候選不宣稱 travelled 錯誤。,若產品實際採英式方針，應整組改為 travel–travelled–travelled；目前不混放兩種拼字。",
+      "evidence": "https://www.collinsdictionary.com/us/dictionary/english/travel ; https://www.merriam-webster.com/dictionary/travel"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002461",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "journey",
+          "past": "journeyed",
+          "pastParticiple": "journeyed",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/journey",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 動詞 journey 帶 formal 標記；字卡的 journey 是名詞，三態來源是詞典，不是字卡名詞。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/journey ; https://www.collinsdictionary.com/dictionary/english/journey"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004866",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "stumble",
+          "past": "stumbled",
+          "pastParticiple": "stumbled",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/stumble",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只描述動詞詞形；名詞、形容詞或副詞不屈折成這組三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/stumble"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000852",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "talk",
+          "past": "talked",
+          "pastParticiple": "talked",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/talk",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只描述動詞詞形；名詞、形容詞或副詞不屈折成這組三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/talk"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000651",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "plan",
+          "past": "planned",
+          "pastParticiple": "planned",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/plan",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. planned 的雙寫 n 由來源直接明示，不從拼字規則推導。名詞 plan 不另產生三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/plan"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000694",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "radio",
+          "past": "radioed",
+          "pastParticiple": "radioed",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/radio",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. radioed 是官方 Word forms 直接列出的完整拼字；不由字尾 o 的規則推導，也不將 radios 誤作過去式。收音機名詞不另產生三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/radio"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000665",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "pool",
+          "past": "pooled",
+          "pastParticiple": "pooled",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/pool",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只描述動詞詞形；名詞、形容詞或副詞不屈折成這組三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/pool ; https://www.collinsdictionary.com/dictionary/english/pool"
+    }
+  ]
+}

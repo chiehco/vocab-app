@@ -1,12 +1,12 @@
 import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
 import assert from 'node:assert/strict';
 const phase=process.argv[2];assert.ok(['before','after'].includes(phase));
-const batch=process.argv[3]??'integration';assert.ok(['integration','u16','u17','u18','u19','u20','u21','u05u06','integratedu07','integratedu08u09','integratedu10','integratedu11'].includes(batch));
-const sourceFile={integration:'VERIFIED-FOLLOWUP-VERB-FORMS-SOURCES.json',u16:'VERIFIED-U16-VERB-FORMS-SOURCES.json',u17:'VERIFIED-U17-VERB-FORMS-SOURCES.json',u18:'VERIFIED-U18-VERB-FORMS-SOURCES.json',u19:'VERIFIED-U19-VERB-FORMS-SOURCES.json',u20:'VERIFIED-U20-VERB-FORMS-SOURCES.json',u21:'VERIFIED-U21-VERB-FORMS-SOURCES.json',u05u06:'VERIFIED-INTEGRATED-U05-U06-VERB-FORMS-SOURCES.json',integratedu07:'VERIFIED-INTEGRATED-U07-VERB-FORMS-SOURCES.json',integratedu08u09:'VERIFIED-INTEGRATED-U08-U09-VERB-FORMS-SOURCES.json',integratedu10:'VERIFIED-INTEGRATED-U10-VERB-FORMS-SOURCES.json',integratedu11:'VERIFIED-INTEGRATED-U11-VERB-FORMS-SOURCES.json'}[batch];
+const batch=process.argv[3]??'integration';assert.ok(['integration','u16','u17','u18','u19','u20','u21','u05u06','integratedu07','integratedu08u09','integratedu10','integratedu11','integratedu12'].includes(batch));
+const sourceFile={integration:'VERIFIED-FOLLOWUP-VERB-FORMS-SOURCES.json',u16:'VERIFIED-U16-VERB-FORMS-SOURCES.json',u17:'VERIFIED-U17-VERB-FORMS-SOURCES.json',u18:'VERIFIED-U18-VERB-FORMS-SOURCES.json',u19:'VERIFIED-U19-VERB-FORMS-SOURCES.json',u20:'VERIFIED-U20-VERB-FORMS-SOURCES.json',u21:'VERIFIED-U21-VERB-FORMS-SOURCES.json',u05u06:'VERIFIED-INTEGRATED-U05-U06-VERB-FORMS-SOURCES.json',integratedu07:'VERIFIED-INTEGRATED-U07-VERB-FORMS-SOURCES.json',integratedu08u09:'VERIFIED-INTEGRATED-U08-U09-VERB-FORMS-SOURCES.json',integratedu10:'VERIFIED-INTEGRATED-U10-VERB-FORMS-SOURCES.json',integratedu11:'VERIFIED-INTEGRATED-U11-VERB-FORMS-SOURCES.json',integratedu12:'VERIFIED-INTEGRATED-U12-VERB-FORMS-SOURCES.json'}[batch];
 const facts=JSON.parse(readFileSync('docs/unit-audit-20261105/'+sourceFile,'utf8')).facts;
 const words=JSON.parse(readFileSync('public/data/v1/words.json','utf8'));
 const cards=facts.map(f=>({...f,currentWord:words.find(w=>w.wordId===f.wordId)}));
-assert.equal(cards.length,{integration:16,u16:25,u17:18,u18:20,u19:13,u20:15,u21:9,u05u06:45,integratedu07:36,integratedu08u09:49,integratedu10:26,integratedu11:25}[batch]);
+assert.equal(cards.length,{integration:16,u16:25,u17:18,u18:20,u19:13,u20:15,u21:9,u05u06:45,integratedu07:36,integratedu08u09:49,integratedu10:26,integratedu11:25,integratedu12:28}[batch]);
 const out=`output/playwright/unit-audit/forms-${batch}-${phase}`;mkdirSync(out,{recursive:true});
 writeFileSync('output/playwright/unit-audit/integrated-forms-reopen.playwright.txt',`async(page)=>{
  const results=[];await page.setViewportSize({width:1000,height:1000});
