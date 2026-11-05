@@ -12,6 +12,8 @@ paths.push('LV1-U13-definition-followup.json');
 paths.push('LV1-U03-U04-verified-forms-patches.json');
 paths.push('LV1-U14-patches.json');
 paths.push('LV1-U14-translation-followup.json');
+paths.push('LV1-U15-patches.json');
+paths.push('LV1-U15-usage-followup.json');
 const expected={};
 for(const path of paths)for(const p of read('docs/unit-audit-20261105/'+path).patches){
  const key=p.dataset+':'+p.id;

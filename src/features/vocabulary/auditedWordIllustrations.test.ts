@@ -14,6 +14,7 @@ import u11Evidence from '../../../docs/unit-audit-20261105/LV1-U11-original-imag
 import u12Evidence from '../../../docs/unit-audit-20261105/LV1-U12-original-image-review.json';
 import u13Evidence from '../../../docs/unit-audit-20261105/LV1-U13-original-image-review.json';
 import u14Evidence from '../../../docs/unit-audit-20261105/LV1-U14-original-image-review.json';
+import u15Evidence from '../../../docs/unit-audit-20261105/LV1-U15-original-image-review.json';
 import preparedElevator from '../../../docs/unit-audit-20261105/LV1-U12-push-elevator-prepared.json';
 import captionTranslations from '../../../docs/unit-audit-20261105/LV1-verified-caption-translations.json';
 import publishedUnits from './lv1ReviewedImages.json';
@@ -22,7 +23,7 @@ import {approvedCurriculumIllustration,approvedWordIllustration,approvedLV1Image
 import {getWordBeastAsset} from '../wordbeast/wordBeastAssets';
 
 it('binds the explicitly reviewed general-card repairs to exact images and captions',()=>{
- expect(cards).toHaveLength(286);
+ expect(cards).toHaveLength(328);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U03-'))).toHaveLength(18);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U04-'))).toHaveLength(19);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U05-'))).toHaveLength(4);
@@ -35,9 +36,10 @@ it('binds the explicitly reviewed general-card repairs to exact images and capti
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U12-'))).toHaveLength(27);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U13-'))).toHaveLength(34);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U14-'))).toHaveLength(34);
- expect(new Set(cards.map(c=>c.officialWordId)).size).toBe(286);
+ expect(cards.filter(c=>c.reviewId.startsWith('LV1-U15-'))).toHaveLength(42);
+ expect(new Set(cards.map(c=>c.officialWordId)).size).toBe(328);
  for(const card of cards){
-  const proof=[...evidence.cards,...u4Evidence.cards,...u5Evidence.cards,...u6Evidence.cards,...u7Evidence.cards,...u8Evidence.cards,...u9Evidence.cards,...u10Evidence.cards,...u11Evidence.cards,...u12Evidence.cards,...u13Evidence.cards,...u14Evidence.cards].find(c=>c.id===card.reviewId)!;
+  const proof=[...evidence.cards,...u4Evidence.cards,...u5Evidence.cards,...u6Evidence.cards,...u7Evidence.cards,...u8Evidence.cards,...u9Evidence.cards,...u10Evidence.cards,...u11Evidence.cards,...u12Evidence.cards,...u13Evidence.cards,...u14Evidence.cards,...u15Evidence.cards].find(c=>c.id===card.reviewId)!;
   expect(proof.pixelReview).toContain('actually viewed original');
   expect(proof.observation).toBeTruthy();
   expect(createHash('sha256').update(readFileSync('public/'+card.illustration.path)).digest('hex')).toBe(proof.publishedImageSha256);

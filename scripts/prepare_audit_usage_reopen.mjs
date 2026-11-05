@@ -7,11 +7,15 @@ writeFileSync('output/playwright/unit-audit/usage-reopen.playwright.txt',`async(
  await page.waitForFunction(()=>{const i=document.querySelector('.study-illustration img');return i?i.complete&&i.naturalWidth>0:document.querySelector('main')?.innerText.includes('圖片尚未收錄')});
  await page.waitForTimeout(350);await page.getByRole('button',{name:'搭配',exact:true}).click();
  const expected=[...card.usagePattern.split(';'),...card.usagePatternZh.split('；')].map(s=>s.trim()).filter(Boolean);
- await page.waitForFunction(expected=>expected.every(s=>document.querySelector('main')?.innerText.includes(s)),expected);
- await page.waitForTimeout(350);let text=await page.locator('main').innerText(),tabRetry=false;
- if(!expected.every(s=>text.includes(s))){tabRetry=true;await page.getByRole('button',{name:'搭配',exact:true}).click();await page.waitForFunction(expected=>expected.every(s=>document.querySelector('main')?.innerText.includes(s)),expected);await page.waitForTimeout(350);text=await page.locator('main').innerText();}
+ let initialWaitFailure=false;
+ try{await page.waitForFunction(expected=>expected.every(s=>document.querySelector('main')?.innerText.includes(s)),expected,{timeout:3000});}
+ catch{initialWaitFailure=true;await page.getByRole('button',{name:'搭配',exact:true}).click();
+  try{await page.waitForFunction(expected=>expected.every(s=>document.querySelector('main')?.innerText.includes(s)),expected,{timeout:3000});}
+  catch{throw Error('Usage initial visibility failed after one reclick '+card.wordId+' '+JSON.stringify({expected,actual:await page.locator('main').innerText()}));}}
+ await page.waitForTimeout(350);let text=await page.locator('main').innerText(),tabRetry=initialWaitFailure;
+ if(!expected.every(s=>text.includes(s))&&!tabRetry){tabRetry=true;await page.getByRole('button',{name:'搭配',exact:true}).click();await page.waitForFunction(expected=>expected.every(s=>document.querySelector('main')?.innerText.includes(s)),expected);await page.waitForTimeout(350);text=await page.locator('main').innerText();}
  if(!expected.every(s=>text.includes(s)))throw Error('Usage page did not remain visible: '+card.wordId);
  const screenshot='output/playwright/unit-audit/'+card.word+'-usage-followup.png';await page.screenshot({path:screenshot,fullPage:true});
- results.push({wordId:card.wordId,word:card.word,screenshot,url:page.url(),allRulePartsVisible:true,tabRetry,text});
+ results.push({wordId:card.wordId,word:card.word,screenshot,url:page.url(),allRulePartsVisible:true,tabRetry,initialWaitFailure,text});
 }return results;}`);
 console.log(JSON.stringify({usageCards:cards.length}));

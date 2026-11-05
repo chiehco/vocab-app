@@ -135,6 +135,24 @@ describe('reviewed LV1 image-only release', () => {
     expect(formal.some(e=>e.sentenceEn===card.illustration.captionEn)).toBe(false);
   });
 
+  it('repairs only the exact U15 zipped-jacket pair while keeping both different formal fairly sentences',()=>{
+    const card=cards.find(c=>c.id==='LV1-U15-62')!;
+    expect(card.officialWordId).toBe('W002311');
+    expect(card.illustration).toEqual({path:'wordbeast/lv1-reviewed/LV1-U15-62-90932acf02e3.webp',captionEn:"It's fairly cold outside, so he zipped up his thick jacket.",captionZh:'外面相當冷，所以他把厚外套的拉鍊拉上。'});
+    expect(hash(readFileSync('public/'+card.illustration.path))).toBe('ca8b4a50b626289b295db4beb1dbe7cece3934f94438920e23d68f8a0087e865');
+    const record=audit.find(c=>c.id===card.id)!;
+    expect(hash(readFileSync('public/wordbeast/lv1-reviewed/LV1-U15-62-b6655d2d2032.webp'))).toBe(record.previousApproval?.publishedImageSha256);
+    expect(record.previousApproval?.textSha256).toBe(record.textSha256);
+    expect(getWordBeastAsset('W002311','fairly')).toContain(card.illustration.path);
+    expect(approvedWordIllustration('fairly','W002311')).toEqual(card.illustration);
+    expect(approvedCurriculumIllustration('fairly','/'+card.illustration.path)).toEqual(card.illustration);
+    expect(bootstrap.examples.filter(e=>e.word==='fairly').map(e=>[e.exampleId,e.sentenceEn])).toEqual([
+      ['EX74b62599','The weather was fairly cold this morning, so I put on a thick jacket.'],
+      ['EXdc08c0df','The judges were praised for evaluating every contestant fairly during the competition.'],
+    ]);
+    expect(cards.filter(c=>c.unit===15)).toHaveLength(23);
+  });
+
   it('uses the corrected five-finger glove and the final proxy-reviewed Unit22-25 captions', () => {
     expect(audit.find(c => c.id === 'LV1-U23-77')?.sourceImage).toBe('77_NOID_glove_v2.png');
     expect(cards.find(c => c.id === 'LV1-U23-77')?.illustration.captionEn)
