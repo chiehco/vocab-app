@@ -3,6 +3,7 @@ import unit18 from '../direct/curriculumLV4Unit18.json';
 import unit19 from '../direct/curriculumLV4Unit19.json';
 import unit20 from '../direct/curriculumLV4Unit20.json';
 import lv1Images from './lv1ReviewedImages.json';
+import exampleImages from './approvedExampleImages.json';
 import lv3Unit2 from '../direct/curriculumUnit2.json';
 import lv3Review from './lv3ApprovedReview.json';
 
@@ -48,7 +49,10 @@ export function approvedLV1Images(word: string, wordId: string) {
 
 export function approvedWordIllustration(word: string, wordId: string) {
   return approvedCurriculumCard(word, wordId)?.illustration
-    ?? approvedLV1Images(word, wordId)[0]?.illustration;
+    ?? approvedLV1Images(word, wordId)[0]?.illustration
+    // Image/example approval does not approve or invent a dictionary sense.
+    ?? exampleImages.find(card => card.officialWordId === wordId
+      && card.word === word.trim().toLowerCase())?.illustration;
 }
 
 // Unit19 p.207 explicitly teaches these uncountable nouns with "a piece of".
@@ -70,5 +74,7 @@ export function approvedCurriculumIllustration(word: string, src: string) {
   const path = src.split(/[?#]/)[0];
   return approvedCurriculumCards(word).find(card => path.endsWith('/' + card.illustration.path))?.illustration
     ?? lv1Images.find(card => card.aliases.includes(word.trim().toLowerCase())
+      && path.endsWith('/' + card.illustration.path))?.illustration
+    ?? exampleImages.find(card => card.word === word.trim().toLowerCase()
       && path.endsWith('/' + card.illustration.path))?.illustration;
 }
