@@ -1,0 +1,56 @@
+{
+  "saved": {
+    "rowsChecked": 445,
+    "failures": [],
+    "actualContentHash": "1e149289aeddabda16321b93ca0804db5ecfa3737719fb4c0129079b06c70852",
+    "expectedContentHash": true,
+    "progressDatabaseWritten": false
+  },
+  "progress": {
+    "action": "existing App full-dictionary installer in isolated localhost audit browser",
+    "words": 6090,
+    "examples": 7871,
+    "progressTables": 14,
+    "progressUnchanged": true
+  },
+  "logs": {
+    "u06-regression": {
+      "rawSha256": "c8d4ca136a12d9ab006c83b0e3f404f2805d59caae16a3da402b5fcf58904d6e"
+    },
+    "u06-build": {
+      "rawSha256": "5ab306e5e1234299e97554833c7a6dcf9b95bc598f0dcfe33c53f4438c5973af"
+    },
+    "u06-final-typecheck": {
+      "rawSha256": "0d93be78e4da5c0077681c4d834163661d59ddd24a0477595fb70ec25d5a5ea8"
+    },
+    "u06-final-lint": {
+      "rawSha256": "b45857a7f1e44cfc278e2dc8e70d00d9b3a2375e4032776e8311e81e20cbc31e"
+    },
+    "u06-write-boundary-python": {
+      "rawSha256": "7f6ce5a37f9e5593f07db491a949835e23587693e1c64fd90643c6675a23d599"
+    },
+    "ci-protection-before": {
+      "rawSha256": "868054fda9d52f9d4af14c414e6ebfb42106d1ed010cda51769daf1bc7424c85"
+    },
+    "ci-protection-final": {
+      "rawSha256": "9c891585649e22bf15a980a42c7205c284c91d1ac62dba1a9f9344af49123b7d"
+    },
+    "ci-protection-verified": {
+      "rawSha256": "c0f27327f3dc5bdcf33ddf07beca55a4a2da6a8ca892fc1ebd5e04012bc0f683"
+    }
+  },
+  "originalCi": {
+    "checkpoint": "af165704178eb5b3b5bd453af3c3f42da07a6445",
+    "testFiles": {
+      "passed": 207,
+      "failed": 2
+    },
+    "tests": {
+      "passed": 1649,
+      "failed": 2
+    },
+    "source": "https://github.com/chiehco/vocab-app/actions/runs/41975278449/job/127072552113"
+  },
+  "resolution": "Both fixed baseline files retained. Exact authorized columns reversed; starter metadata checked against current saved rows then only three old metadata fields restored. Initial added negative-test serializer used locale sorting; corrected to the original key-sort convention. Unlisted columns/rows remain protected.",
+  "fullCi": "pending_next_checkpoint"
+}

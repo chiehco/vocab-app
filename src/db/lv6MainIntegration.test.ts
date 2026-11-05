@@ -8,6 +8,7 @@ import { ensureContentAvailable } from './seed';
 import { curriculumUnits, findUnit } from '../features/direct/model';
 import { textbookUnits } from '../features/vocabulary/textbookCatalog';
 import { unitReleaseHold } from '../features/vocabulary/unitReleasePolicy';
+import {beforeUnitAudit} from './unitAudit.testSupport';
 
 function stable(value: unknown): unknown {
   if (Array.isArray(value)) return value.map(stable);
@@ -29,7 +30,7 @@ it('keeps every former starter payload and adds the three recovered text units',
     const oldIds = new Set(dataset.ids);
     const retained = rows.filter(row => oldIds.has(String(row[dataset.key])));
     expect(retained.map(row => row[dataset.key])).toEqual(dataset.ids);
-    expect(createHash('sha256').update(JSON.stringify(stable(retained))).digest('hex')).toBe(dataset.payloadSha256);
+    expect(createHash('sha256').update(JSON.stringify(stable(beforeUnitAudit(dataset.name,retained)))).digest('hex')).toBe(dataset.payloadSha256);
   }
   const catalogKeys = new Set(textbookUnits.map(unit => `${unit.level}:${unit.unit}`));
   expect(baseline.mainPublicUnitKeys.every(key => catalogKeys.has(key))).toBe(true);

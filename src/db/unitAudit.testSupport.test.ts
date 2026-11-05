@@ -3,13 +3,14 @@ import {readFileSync} from 'node:fs';
 import {expect,it} from 'vitest';
 import baseline from '../../scripts/fixtures/recovered-unit-integration-baseline.json';
 import u1 from '../../docs/unit-audit-20261105/LV1-U01-patches.json';
+import starterBaseline from '../../scripts/fixtures/lv4-u2-notes-confirmation-baseline.json';
 import {beforeUnitAudit} from './unitAudit.testSupport';
 
 type Row=Record<string,unknown>;
 const examples:Row[]=JSON.parse(readFileSync('public/data/v1/examples.json','utf8'));
 function stable(value:unknown):unknown{
  if(Array.isArray(value))return value.map(stable);
- if(value&&typeof value==='object')return Object.fromEntries(Object.entries(value).sort(([a],[b])=>a.localeCompare(b,'en')).map(([k,v])=>[k,stable(v)]));
+ if(value&&typeof value==='object')return Object.fromEntries(Object.keys(value).sort().map(k=>[k,stable((value as Row)[k])]));
  return value;
 }
 const hash=(rows:Row[])=>createHash('sha256').update(JSON.stringify(stable(beforeUnitAudit('examples',rows)))).digest('hex');
@@ -37,4 +38,17 @@ it('rejects an unexpected after value and duplicate audited identity',()=>{
 it('allows omitted full-dictionary rows in starter subsets without claiming completeness',()=>{
  expect(beforeUnitAudit('examples',[])).toEqual([]);
  expect(hash([])).not.toBe(historical);
+});
+
+it('reverses only recorded starter corrections while retaining the old whole-pack fixture',()=>{
+ const pack=JSON.parse(readFileSync('public/data/v1/sa-pack.json','utf8'));
+ const restored=beforeUnitAudit('sa-pack.json',pack);
+ const actual=createHash('sha256').update(JSON.stringify(stable(restored))).digest('hex');
+ expect(actual).toBe(starterBaseline.publicFiles.find(f=>f.name==='sa-pack.json')!.payloadHash);
+ const column=structuredClone(pack);column.examples[0].sentenceEn='Unrecorded starter sentence';
+ expect(()=>beforeUnitAudit('sa-pack',column)).toThrow('contentHash');
+ const row=structuredClone(pack);row.examples.push({exampleId:'EXunrecorded'});
+ expect(()=>beforeUnitAudit('sa-pack',row)).toThrow('contentHash');
+ const metadata=structuredClone(pack);metadata.meta.wordsHash='sa:wrong';
+ expect(()=>beforeUnitAudit('sa-pack',metadata)).toThrow('wordsHash');
 });

@@ -16,7 +16,7 @@ from build_sa_pack import build_sa_pack
 
 ROOT = Path(__file__).resolve().parent.parent
 IDENTITY_KEYS = {"examples": "exampleId", "senses": "senseId", "words": "wordId"}
-EDITABLE_FIELDS = {"sensePos", "meaningHint", "status", "meaningZh", "meaningEn", "note", "senseId"}
+EDITABLE_FIELDS = {"sensePos", "meaningHint", "status", "meaningZh", "meaningEn", "note", "senseId", "usagePattern", "usagePatternZh"}
 
 def validate_patch_shape(patch):
     """Reject incomplete evidence before the idempotent check or any write."""

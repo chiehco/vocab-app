@@ -1,0 +1,33 @@
+
+> vocab-app@0.0.0 test
+> vitest run src/db/lv6MainIntegration.test.ts src/features/direct/lv4NotesConfirmation.test.ts --maxWorkers=1 --testTimeout=30000
+
+
+ RUN  v4.1.9 <repo>
+
+ ❯ src/db/lv6MainIntegration.test.ts (2 tests | 1 failed) 5081ms
+   × keeps every former starter payload and adds the three recovered text units 122ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/db/lv6MainIntegration.test.ts > keeps every former starter payload and adds the three recovered text units
+AssertionError: expected 'a17c84b6a3610122d1a4bbc74ea8ca3c3422f…' to be 'a1047d62975fbf4bf0040fbd46ba48dbe9199…' // Object.is equality
+
+Expected: "a1047d62975fbf4bf0040fbd46ba48dbe9199ecea23f161d458d209aaa01bbdb"
+Received: "a17c84b6a3610122d1a4bbc74ea8ca3c3422f1ffa5ac308000f9899d9563534e"
+
+ ❯ src/db/lv6MainIntegration.test.ts:32:89
+     31|     const retained = rows.filter(row => oldIds.has(String(row[dataset.…
+     32|     expect(retained.map(row => row[dataset.key])).toEqual(dataset.ids);
+     33|     expect(createHash('sha256').update(JSON.stringify(stable(beforeUni…
+       |                ^
+     34|   }
+     35|   const catalogKeys = new Set(textbookUnits.map(unit => `${unit.level}…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 3 passed (4)
+   Start at  13:52:50
+   Duration  33.73s (transform 11.41s, setup 0ms, import 26.10s, tests 7.07s, environment 0ms)

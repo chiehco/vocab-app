@@ -1,6 +1,6 @@
 {
   "unit": "LV1-U02",
-  "state": "one_repair_integrated_one_tool_blocked",
+  "state": "both_image_repairs_integrated_and_reopened",
   "mappingSource": "src/features/vocabulary/lv1ReviewedImages.json",
   "imageApprovalBinding": "scripts/approvals/lv1-images-20260922.json",
   "consumers": [
@@ -20,14 +20,19 @@
       "unchangedCaptionZh": "大象用鼻子噴水。",
       "issue": "主噴水象鼻下、蘋果旁及嘴下另有灰色帶皮紋彎管，容易誤讀為多條象鼻；原尺寸已目視確認。",
       "draft": "只移除兩個額外灰色鼻狀部件；保留唯一向上彎曲且噴水的長象鼻、普通小嘴、自然大象四肢、持蘋果豆形角色、河岸、水彩色鉛筆與暖米色紙底。不要新增象牙或文字，不改例句。",
-      "attempt": {
-        "tool": "image_gen__imagegen",
-        "reference": "<repo>/public/wordbeast/lv1-reviewed/LV1-U02-08-d5dd7302b647.webp",
-        "result": "failed_before_generation",
-        "error": "AbsolutePathBuf deserialized without a base path at line 1 column 151",
-        "status": "tool_input_blocked; no generated image; no file or mapping changed",
-        "paidFallbackUsed": false
-      }
+      "status": "locally_integrated_and_reopened",
+      "newAsset": {
+        "path": "wordbeast/lv1-reviewed/LV1-U02-08-7426b87a0d8e.webp",
+        "sha256": "445728d61fb0f9c4b7ca8cd52c9861a93d2c9baadd7d08644b5b1e4c7d15257f",
+        "dimensions": [
+          1254,
+          1254
+        ],
+        "sizeBytes": 122508,
+        "assetCommit": "9c4f44687b54fe2083fca7e2925baaf13e9503e2",
+        "gitBlob": "8c8bcab6e4a55a8f5b249043302fbe9106ffadfd"
+      },
+      "reopenEvidence": "docs/unit-audit-20261105/LV1-U02-elephant-review.json"
     },
     {
       "id": "LV1-U02-32",

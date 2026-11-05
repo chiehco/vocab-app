@@ -61,6 +61,13 @@ describe('reviewed LV1 image-only release', () => {
     expect(example.sensePos).toBe('v.');
   });
 
+  it('repairs the U02 elephant anatomy with an exact replacement and recoverable original',()=>{
+    const elephant=cards.find(c=>c.id==='LV1-U02-08')!;
+    expect(elephant.illustration).toMatchObject({path:'wordbeast/lv1-reviewed/LV1-U02-08-7426b87a0d8e.webp',captionEn:'The elephant used its trunk to spray water.'});
+    expect(hash(readFileSync('public/'+elephant.illustration.path))).toBe('445728d61fb0f9c4b7ca8cd52c9861a93d2c9baadd7d08644b5b1e4c7d15257f');
+    expect(hash(readFileSync('public/wordbeast/lv1-reviewed/LV1-U02-08-d5dd7302b647.webp'))).toBe('4e05c2d51561a77fd81c7649ec3ab41a82842df48caec83a7706f5a57ec95375');
+  });
+
   it('uses the final Unit01 redraws and marriage correction', () => {
     for (const id of ['15', '27', '32', '36', '38']) {
       expect(audit.find(c => c.id === 'LV1-U01-' + id)?.sourceImage).toContain('_v2_');

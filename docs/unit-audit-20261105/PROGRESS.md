@@ -1,6 +1,10 @@
 # 逐單元全面檢查與修正
 
-基準 main：`29cfc684d7a11b07f09988c478d30358830f1951`；分支：`content/unit-audit-20261105`。
+## 目前狀態
+
+更新：2026-11-05T05:57:43.591Z。U01–U06已完成各自檢查checkpoint並保留明確未決欄位；U06本輪51組原稿全部實看，47張正式詞卡與237筆例句重新開啟，10缺圖與2組配對已修。194列修改及累計445改列已從實際資料庫驗證。現在下一張為LV1-U07-01 stand；U07完整原稿93組、已發布子集37組，尚未因獨立子集複核而標全單元通過。
+
+U02 sun與elephant兩項圖片修復均已於2026-11-05完成，原圖保留、原句不變，單元卡與一般卡均重新開啟並目視。前段舊限制已解決，詳見各自review檔。最近已推送並核實遠端SHA為af165704178eb5b3b5bd453af3c3f42da07a6445；本次U06等待checkpoint推送及完整CI。未合併或部署。
 
 ## 實際範圍與順序
 
@@ -30,7 +34,7 @@ U03另修love動詞、pen撰寫動詞，修banana截斷英英解釋、cute破損
 
 ## 未解圖片限制
 
-U02 elephant原尺寸確認兩個多鼻狀灰部件；內建修圖Windows路徑解析失敗：AbsolutePathBuf deserialized without a base path。U02 sun原圖為日光浴，原單元句為日出；父側新圖Library已保存，但正式材料化helper缺os.setxattr，目的地無檔，尚未接入。兩張均未標通過。精確原圖、hash、新圖Library ID、修正草稿見image-repair-drafts.json。舊sunbathing圖保留供sun himself語境，不把另一例句自動標成配圖完成。
+歷史紀錄（2026-11-05）：U02 elephant原尺寸確認有兩個多鼻狀灰部件，當時本機圖片編輯未成功；2026-11-05已接入修復圖並重開驗證完成。sun當時的取檔限制已於2026-11-05解除，日出新圖已接入並在兩個入口重開驗證；詳見LV1-U02-sunrise-review.json。舊sunbathing圖保留，另一例句未自動標配圖完成。
 
 ## 可回復紀錄與保護
 
@@ -50,7 +54,7 @@ U03的原始下一卡為U04-01；最新位置見下列U04 checkpoint。
 
 測試原4檔16過1失敗已定位為目視證據描述字串格式；統一真實紀錄格式並保留原actually viewed original斷言後針對性重跑，結果見validation/u04-art-final-test.txt，原失敗證據保留。其他3檔15項已通過；lint與build通過。未宣稱完整suite通過。
 
-可回復的前一提交：a0102dde197b6baabc26a23666736464d05f0f25（U01–U03，71檔）。U04完整before/after、逐卡目視與重開證據在LV1-U04-patches.json、receipts/、LV1-U04-original-image-review.json與LV1-U04-ledger.json。sun與elephant舊限制保持未完成。
+可回復的前一提交：a0102dde197b6baabc26a23666736464d05f0f25（U01–U03，71檔）。U04完整before/after、逐卡目視與重開證據在LV1-U04-patches.json、receipts/、LV1-U04-original-image-review.json與LV1-U04-ledger.json。歷史狀態：當時sun與elephant未完成；sun已於2026-11-05接入並重開通過，elephant也已於2026-11-05接入並重開驗證完成。
 
 下一張：LV1-U05-01 give；完整原稿32張、已發布子集13張。其他未檢卡仍not_checked。
 
@@ -69,3 +73,13 @@ U02-32 sunrise replacement verified by exact SHA-256, 1254×1254 dimensions and 
 前次對外checkpoint：47958136d6df58dfbe9435ce5e666a1c98caa15d，已核實遠端獨立分支同SHA，含U01–U04與sun修復。U05實際before/after與重開證據見本單元ledger、patches、receipt及validation。下一張：LV1-U06-01 most，完整原稿51組、已發布子集23組。
 
 全App的19,726為教材項目盤點：13,101個vocabulary項目、5,899個grammar項目、726組已發布LV1圖句。它不是已核實字卡總數，亦不代表均已檢查；未檢項目仍not_checked。
+
+## LV1 Unit 06 checkpoint
+
+完整原稿51組、已發布23組、47正式詞條與237例句。原圖51張與原一般卡37張均逐張實際目視；47一般卡修改後全數重開、內容與圖片皆符合，12張最終修圖卡截圖另已目視。10張一般卡缺圖已補，follow的跟隨人物圖配遵循指示句、line的排隊圖配店家沿街排列句已改用原稿精確圖句；所有正式例句保留，其他例句不自動標為已配圖。
+
+194筆列修改包含7筆單一詞性錯誤、121筆複合詞性精準化、10筆draft例句與36筆needs_check義項完成核對後更新，以及20筆字義／用法列修復。least的截斷英英解釋、while錯誤的to V模板、movement混入move動詞解釋均已修。名詞feel、hold、keep及動詞case有詞典支持，保留，不因罕見刪除。4項NOID與28份未發布教材原稿界線保留。
+
+累計445改列與內容hash實際讀回符合，14進度表不變。相關22測試與Python5負向測試、build通過；另完整CI揭露的兩個既有固定hash測試已按精確patch反向還原修復，舊fixtures未改，兩個原失敗測試加starter保護負向測試共8項通過。最後typecheck/lint見validation，完整CI須待此checkpoint推送後確認。
+
+本輪同時完成U02 elephant替換圖的hash、尺寸、像素及雙入口重開，38組U02圖句均核心一致；這不代表所有詞條義項自動通過。前checkpoint為af165704178eb5b3b5bd453af3c3f42da07a6445。下一張：LV1-U07-01 stand。
