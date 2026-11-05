@@ -5,6 +5,7 @@ import cards from './lv1ReviewedImages.json';
 import audit from '../../../scripts/approvals/lv1-images-20260922.json';
 import words from '../../../public/data/v1/words.json';
 import bootstrap from '../../../public/data/v1/sa-pack.json';
+import auditedGeneralCards from './auditedWordIllustrations.json';
 import { approvedCurriculumCard, approvedCurriculumIllustration, approvedLV1Images, approvedWordIllustration } from './approvedCurriculum';
 import { getWordBeastAsset } from '../wordbeast/wordBeastAssets';
 import { resolveWordImageClue } from '../../quiz/imageClue';
@@ -35,7 +36,21 @@ describe('reviewed LV1 image-only release', () => {
         expect(official).toBeDefined();
         expect(bootstrap.words.some(w => w.wordId === official.wordId)).toBe(true);
         expect(approvedLV1Images(official.word, official.wordId)).toContainEqual(card);
+        // Only this exact inspected general-card repair supersedes a published
+        // LV1 default. All unit-specific bytes/captions above remain protected.
+        const override = card.id === 'LV1-U10-76'
+          ? auditedGeneralCards.find(c => c.reviewId === 'LV1-U07-83') : undefined;
+        if (card.id === 'LV1-U10-76') {
+          expect(official.wordId).toBe('W000541');
+          expect(override?.officialWordId).toBe(official.wordId);
+          expect(override?.illustration).toEqual({
+            path: 'wordbeast/audited-20261105/LV1-U07-83-2f2adec62019.webp',
+            captionEn: "Would you mind closing the window? It's a bit cold in here.",
+            captionZh: '你介意把窗戶關上嗎？這裡有點冷。',
+          });
+        }
         const expected = approvedCurriculumCard(official.word, official.wordId)?.illustration
+          ?? override?.illustration
           ?? approvedLV1Images(official.word, official.wordId)[0].illustration;
         expect(getWordBeastAsset(official.wordId, official.word)).toContain(expected.path);
       }

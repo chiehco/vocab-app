@@ -25,6 +25,9 @@ writeFileSync('output/playwright/unit-audit/general-capture.playwright.txt',`asy
     await page.screenshot({path:heroScreenshot,fullPage:true});
     await page.getByRole('button',{name:'字義',exact:true}).click();
     await page.waitForFunction(n=>document.querySelectorAll('.dossier-examples li').length===n,card.examples.length);
+    if(card.meaningEn)await page.waitForFunction(expected=>document.querySelector('main')?.innerText.replace(/\\s+/g,' ').includes(expected.replace(/\\s+/g,' ')),card.meaningEn);
+    await page.getByRole('heading',{name:card.word,exact:true}).waitFor();
+    await page.waitForTimeout(350);
     const actual=await page.locator('.dossier-examples li').evaluateAll(items=>items.map(li=>({en:li.querySelector('p')?.innerText,zh:li.querySelector('div>span')?.innerText,label:[...li.querySelectorAll('small')].map(s=>s.innerText)})));
     const mismatches=card.examples.filter(e=>!actual.some(a=>a.en===e.sentenceEn&&a.zh===(e.sentenceZh??undefined))).map(e=>e.exampleId);
     const screenshot='output/playwright/unit-audit/'+card.id+'-general-after.png';

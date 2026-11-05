@@ -1,0 +1,31 @@
+{
+  "commit": "0ba3ab06990f279b258051d17d74b061e8631766",
+  "remote": "https://github.com/chiehco/vocab-app.git",
+  "branch": "content/unit-audit-20261105",
+  "remoteShaVerified": true,
+  "workflow": {
+    "id": 41982475960,
+    "state": "completed",
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/41982475960",
+    "conclusion": "failure",
+    "completedAt": "2026-11-05T06:57:30Z",
+    "testFiles": {
+      "passed": 208,
+      "failed": 1
+    },
+    "tests": {
+      "passed": 1653,
+      "failed": 1
+    },
+    "build": "skipped"
+  },
+  "merge": false,
+  "deploy": false,
+  "failure": {
+    "test": "src/features/vocabulary/lv1ReviewedImages.test.ts",
+    "reason": "The general-card assertion still assumed the inherited U10 mind pair. Original unit asset/caption hashes themselves passed.",
+    "resolution": "Allow only LV1-U10-76 to use the exact inspected LV1-U07-83 general pair; all unit hashes and other defaults retain assertions.",
+    "relatedVerification": "2 files /9 image tests passed",
+    "nextFullCi": "pending_guard_checkpoint_push"
+  }
+}

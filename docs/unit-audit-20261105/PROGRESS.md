@@ -4,7 +4,7 @@
 
 更新：2026-11-05T06:41:42.616Z。U01–U07各自檢查checkpoint已保存，未核欄位仍明列待確認。U07完整93組原稿全部目視，37張已發布單元卡及78張正式詞卡重開，276例句無顯示或填空差異。27缺圖、manage與mind兩組配對已修，29張最終畫面均實看；156個文字列修正及同列90個精確提示補充已保存。累計606個改列從實際資料庫讀回零失敗，14進度表不變。下一張LV1-U08-01 perhaps；U08有97原稿、22已發布子集、85正式詞條、285例句。
 
-最近已推送精確head為2337abd4f86703cde370777af379fa8c4083e128，完整CI run41977386293於2026-11-05 06:12:37 UTC成功：209測試檔、1,653測試及lint/typecheck/Python/pageviews/build全過。此U07 checkpoint另有本機驗證，等待推送後的新完整CI。未合併或部署。U02 sun與elephant修復均已完成；even、part官方來源及while分詞用語補充已核實。詳見SOURCE-FOLLOWUPS.json及FOLLOWUP-QUEUE.json。
+U07已推送並核實遠端精確head為0ba3ab06990f279b258051d17d74b061e8631766；新CI run41982475960已結束：208檔通過、1檔舊一般卡預設斷言失敗；1,653測試通過、1失敗，build未跑。已精確修正mind唯一覆寫的舊斷言，本機9個圖片測試通過，等待此保護修正checkpoint的新完整CI。前一head2337abd4f86703cde370777af379fa8c4083e128的完整CI run41977386293於2026-11-05 06:12:37 UTC成功：209測試檔、1,653測試及lint/typecheck/Python/pageviews/build全過。此U07 checkpoint的本機驗證已全過，新完整CI失敗已明列於validation/u07-publication.json，保護修正後須再核下一精確head。未合併或部署。U02 sun與elephant修復均已完成；even、part官方來源及while分詞用語補充已核實。詳見SOURCE-FOLLOWUPS.json及FOLLOWUP-QUEUE.json。
 
 ## 實際範圍與順序
 
