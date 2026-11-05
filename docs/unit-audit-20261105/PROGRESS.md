@@ -2,13 +2,13 @@
 
 ## 目前狀態
 
-更新：2026-11-05T18:09:01.190Z。U01–U21逐單元checkpoint已保存。U21 7a43faf003dcd5365cd06d595b4218b90577c351的完整CI42075860226／job127415740847成功，216檔1703測試及build全過，精確checkout SHA相符。首批45三態整合062276ee1c3fcc91ed5eb115b8f7d4f39a8afb74已推送；其自己的CI42079016053／job127426804944為in_progress／尚未有終態，不引用U21成功代替。
+更新：2026-11-05T18:21:15.402Z。U01–U21逐單元checkpoint已保存。U21 7a43faf003dcd5365cd06d595b4218b90577c351完整CI42075860226／job127415740847成功，216檔1703測試及build全過。首批45三態整合062276ee1c3fcc91ed5eb115b8f7d4f39a8afb74自己的完整CI42079016053／job127426804944已成功，216檔1704測試、22項本批Python及build全過，精確checkout SHA相符。前次整合checkpoint 45d55832ee73e84f01287ca2341d71f348c2ffc7的CI42081710110／job127436168673為in_progress／尚未有終態，不引用其他版本成功代替。
 
-本批U07只補36個真正缺鍵verbForms，seat已相同而跳過。逐ID、現有動詞義、詞頭／POS／status、完整列hash、缺鍵before與精確after重新核對，沒有衝突覆寫。刪除36新鍵可精確還原062276ee完整6090詞，原31詞／house、既有16、U16–U21和首批45來源／資料保護全保留。lead金屬同形詞、payed航海義、set與sit限制維持；demanding可見衍生詞說明與一般mind關窗／U10開門配對未改。
+本批U08-U09只補49個真正缺鍵verbForms，5筆已相同而跳過；逐ID、現有動詞義、詞頭／POS／status、完整列hash、缺鍵before與精確after重新核對，零衝突覆寫。刪除新鍵可精確還原前次完整6090詞。所有其他文字、例句、提示、POS、搭配、狀態與圖片不變；舊來源與starter／教材／圖文hash基準保留。分義與變體限制見本批source及ledger，並非整詞批准。
 
-36卡修改前後、72個修改後三態面板已實際重開，12張雙面板sheet全數目視。36圖、172例句與36搭配頁和修改前完全一致；正常App更新14進度表不變，累計2038列DB讀回零差異。本機原5000ms下11檔89測試、23項Python、lint/typecheck/build全過，原starter／教材／圖文hash基準不變。這份新checkpoint仍需自己的遠端CI。
+49卡修改前後、98個修改後三態面板已實際重開，17張雙面板sheet全數目視。49圖、225例句與49搭配頁和修改前完全一致；正常App更新14進度表不變，累計2064列DB讀回零差異。本機原5000ms下11檔90測試、24項Python、lint/typecheck/build全過。這份新checkpoint仍需自己的遠端CI。
 
-交界補欄累計81個新鍵已實際接入，其餘187候選未算完成；下一小批U08–U09的49筆先按新checkpoint再對帳。全面單元下一張仍LV1-U22-01 arrive，按完整原稿順序處理，現成資產不重生圖。未merge、deploy或開PR。
+交界補欄累計130個新鍵已實際接入，其餘138候選尚未完成；下一小批U10,26 prepared fields先按新checkpoint再對帳。全面單元下一張仍LV1-U22-01 arrive，按完整原稿順序處理，現成資產不重生圖。未merge、deploy或開PR。
 
 ## 實際範圍與順序
 

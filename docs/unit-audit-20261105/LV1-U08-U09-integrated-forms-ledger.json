@@ -1,0 +1,129 @@
+{
+  "batch": "LV1-U08-U09-verified-form-integration",
+  "checkpointAt": "2026-11-05T18:21:15.402Z",
+  "priorCheckpoint": "45d55832ee73e84f01287ca2341d71f348c2ffc7",
+  "priorCheckpointFullCi": {
+    "commit": "45d55832ee73e84f01287ca2341d71f348c2ffc7",
+    "run": 42081710110,
+    "job": 127436168673,
+    "status": "in_progress",
+    "conclusion": null,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42081710110/job/127436168673"
+  },
+  "sourceEvidenceCommit": "84b213858982e6f176aaaaee30b9951c7da26ae6",
+  "state": "exact_49_fields_integrated_actual_ui_verified_local_checks_passed",
+  "counts": {
+    "originalPreparedFields": 49,
+    "addedTrueAbsentKeys": 49,
+    "alreadyIdenticalSkipped": 5,
+    "conflictsOverwritten": 0,
+    "actualBeforeCards": 49,
+    "actualAfterCards": 49,
+    "bothPanelDisplaysViewed": 98,
+    "existingImagesUnchanged": 49,
+    "exampleComparisonsUnchanged": 225,
+    "usagePagesUnchanged": 49,
+    "progressTables": 14,
+    "savedRows": 2064
+  },
+  "source": "VERIFIED-INTEGRATED-U08-U09-VERB-FORMS-SOURCES.json",
+  "manifest": "LV1-U08-U09-integrated-forms-patches.json",
+  "guards": "Fixed explicitly enumerated IDs, each exact sourced form/status and complete non-form row hash. Null/custom/existing values, missing before, false after, unknown ID and all non-form drift are rejected. Absent fields reverse by delete. Every previous source table and historical hash fixture is retained.",
+  "inverse": {
+    "baseCheckpoint": "45d55832ee73e84f01287ca2341d71f348c2ffc7",
+    "addedKeys": 49,
+    "allWords": 6090,
+    "exactInverse": true,
+    "restoredSha256": "9a5e5d2f198f89f2c9c8c9e970ce31e5930960cc41dafcc11ee4fd80fd352030",
+    "baseSha256": "9a5e5d2f198f89f2c9c8c9e970ce31e5930960cc41dafcc11ee4fd80fd352030",
+    "allOtherWordFieldsUnchanged": true
+  },
+  "progress": {
+    "action": "existing App full-dictionary installer in isolated localhost audit browser",
+    "words": 6090,
+    "examples": 7871,
+    "progressTables": 14,
+    "progressUnchanged": true
+  },
+  "pixels": {
+    "checkedAt": "2026-11-05T18:20:14.765Z",
+    "cardsViewed": 49,
+    "bothPanelDisplaysViewed": 98,
+    "allSheetsActuallyViewed": true,
+    "contactSheets": [
+      "output/unit-audit-20261105/sheets/integrated-u08-u09/01-03.png",
+      "output/unit-audit-20261105/sheets/integrated-u08-u09/04-06.png",
+      "output/unit-audit-20261105/sheets/integrated-u08-u09/07-09.png",
+      "output/unit-audit-20261105/sheets/integrated-u08-u09/10-12.png",
+      "output/unit-audit-20261105/sheets/integrated-u08-u09/13-15.png",
+      "output/unit-audit-20261105/sheets/integrated-u08-u09/16-18.png",
+      "output/unit-audit-20261105/sheets/integrated-u08-u09/19-21.png",
+      "output/unit-audit-20261105/sheets/integrated-u08-u09/22-24.png",
+      "output/unit-audit-20261105/sheets/integrated-u08-u09/25-27.png",
+      "output/unit-audit-20261105/sheets/integrated-u08-u09/28-30.png",
+      "output/unit-audit-20261105/sheets/integrated-u08-u09/31-33.png",
+      "output/unit-audit-20261105/sheets/integrated-u08-u09/34-36.png",
+      "output/unit-audit-20261105/sheets/integrated-u08-u09/37-39.png",
+      "output/unit-audit-20261105/sheets/integrated-u08-u09/40-42.png",
+      "output/unit-audit-20261105/sheets/integrated-u08-u09/43-45.png",
+      "output/unit-audit-20261105/sheets/integrated-u08-u09/46-48.png",
+      "output/unit-audit-20261105/sheets/integrated-u08-u09/49-49.png"
+    ],
+    "scope": "All49 real card and meaning screenshots viewed; all98 principal-parts displays readable and exact. Complete image src/dimensions/captions and225 examples and49 usage pages independently compared from reopened DOM. Source references/long qualification notes are saved-data evidence, not claimed visible.",
+    "observations": [
+      "Both learned/learnt variants fit the existing panel without clipping.",
+      "forget shows forgot/forgotten; ground shows grounded/grounded; true shows trued/trued.",
+      "Existing die head-injury translation and realize purpose translation remain unchanged.",
+      "No example, hint, POS, usage, image or caption was edited by this batch."
+    ]
+  },
+  "regression": {
+    "originalLocalTimeoutMs": 5000,
+    "files": 11,
+    "tests": 90,
+    "pythonBoundaryTests": 24,
+    "exits": {
+      "python": 0,
+      "tests": 0,
+      "completedAt": "2026-11-05T18:20:47.2768028Z",
+      "build": 0,
+      "typecheck": 0,
+      "lint": 0
+    },
+    "oldWholePackAndHistoricalHashesUnchanged": true
+  },
+  "preserved": {
+    "wholeWordApproval": false,
+    "headwordPosChanges": 0,
+    "definitionChanges": 0,
+    "exampleChanges": 0,
+    "usageChanges": 0,
+    "imageChanges": 0,
+    "restrictions": [
+      "forget past participle uses the primary forgotten; source-supported forgot variant remains qualified in evidence.",
+      "ground/grounded is separate from grind/ground; true/trued belongs only to the existing aligning verb, not come true.",
+      "learn learned/learnt regional variants and realize spelling boundary retained.",
+      "cost/costed sense-specific presentation is not included or approved."
+    ]
+  },
+  "newCheckpointFullCi": "Pending this new integration commit and its own full CI.",
+  "remaining": {
+    "formCandidatesFromPreparedSnapshot": 138,
+    "scope": "Remaining prepared fields require latest reconciliation and actual integration verification; not counted as applied.",
+    "nextFormBatch": "U10,26 prepared fields",
+    "nextComprehensiveUnit": {
+      "unit": "LV1-U22",
+      "id": "LV1-U22-01",
+      "word": "arrive"
+    }
+  },
+  "publicationReview": {
+    "checkedAt": "2026-11-05T18:22:46.634Z",
+    "filesScanned": 689,
+    "findings": 0,
+    "diffCheckExit": 0,
+    "postRecordLintExit": 0,
+    "unrelatedWorkIncluded": false,
+    "history": "Parent45d55832 is already remote; no unpublished earlier commits or private backup history are included."
+  }
+}
