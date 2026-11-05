@@ -7093,7 +7093,7 @@
     },
     {
       "type": "exam_source_assertions",
-      "state": "draft_senses_retained",
+      "state": "resolved_for_nine_specific_senses_2026-11-05",
       "words": [
         "stand",
         "bear",
@@ -7105,7 +7105,7 @@
         "active",
         "belief"
       ],
-      "details": "Practice sentence grammar/meaning checked separately. Inherited exam-source assertions are not automatically approved. The available official active Q22 source is queued for a precise followup."
+      "details": "Nine senses and ten official question/answer pairs now verified in the precise followup manifest. General headword POS/status unchanged; demanding is explicitly a derived adjective. Authored or adapted practice sentences are not presented as original exam quotations."
     },
     {
       "type": "source_family_mapping",
@@ -7181,7 +7181,16 @@
       "reason": "The general-card assertion still assumed the inherited U10 mind pair. Original unit asset/caption hashes themselves passed.",
       "resolution": "Allow only LV1-U10-76 to use the exact inspected LV1-U07-83 general pair; all unit hashes and other defaults retain assertions.",
       "relatedVerification": "2 files /9 image tests passed",
-      "nextFullCi": "pending_guard_checkpoint_push"
+      "nextFullCi": "pending_guard_checkpoint_push",
+      "fullCi": {
+        "commit": "3addd99015f75294d40ef23c5479fa71dd190ba0",
+        "run": 41985018911,
+        "completedAt": "2026-11-05T07:18:58Z",
+        "conclusion": "success",
+        "testFiles": 209,
+        "tests": 1654,
+        "url": "https://github.com/chiehco/vocab-app/actions/runs/41985018911"
+      }
     }
   },
   "previousFullCi": {
@@ -7206,5 +7215,6 @@
     "state": "verified_local_checkpoint_ready_for_authorized_non_main_push",
     "merge": false,
     "deploy": false
-  }
+  },
+  "sourceFollowup": "LV1-U07-verified-exam-source-followup.json"
 }

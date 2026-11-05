@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-05",
+  "updatedAt": "2026-11-05T07:26:28.049Z",
   "items": [
     {
       "id": "LV1-U01-30",
@@ -13,10 +13,12 @@
     },
     {
       "id": "LV1-U08-90",
-      "state": "needs_original_and_actual_card_review",
+      "state": "locally_integrated_and_reopened",
       "word": "intersection",
       "englishUnchanged": "Turn left at the next intersection to get to the bakery.",
-      "observation": "Existing original-image review found a red arrow pointing screen-left while the bakery is on the right-hand road. Recheck full-size image and actual route before deciding the minimal repair."
+      "observation": "Existing original-image review found a red arrow pointing screen-left while the bakery is on the right-hand road. Recheck full-size image and actual route before deciding the minimal repair.",
+      "evidence": "docs/unit-audit-20261105/LV1-U08-intersection-review.json",
+      "next": null
     },
     {
       "id": "LV1-U10-76",
@@ -27,10 +29,10 @@
     },
     {
       "id": "W001008-1",
-      "state": "official_source_available_for_precise_followup_not_applied",
+      "state": "specific_official_source_applied_and_reopened_2026-11-05",
       "word": "active",
-      "evidence": "The same CEEC112 paper and answer used for even show Q22 option B active, describing a physically active outdoor worker; answer Q22=B. The grandmother-swimming practice sentence is separately authored.",
-      "next": "Record exact old/new source, explain original context separately from practice sentence, verify actual saved sense before changing draft status."
+      "evidence": "LV1-U07-verified-exam-source-followup.json; SOURCE-FOLLOWUPS.json",
+      "next": null
     }
   ]
 }
