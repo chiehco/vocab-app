@@ -133,7 +133,7 @@ class AuditWriteBoundaryTests(unittest.TestCase):
                 with self.assertRaises(AssertionError):audit.validate_patch_shape(changed)
 
     def test_followup_pending_homographs_and_duplicate_identities_cannot_be_written(self):
-        for pending_id in ['W000139', 'W000071', 'W000574', 'W000195']:  # can, bear, need, cost remain outside the allowlist.
+        for pending_id in ['W000139', 'W000071', 'W000574', 'W000195', 'W000490']:  # can, bear, need, cost, lie remain outside the allowlist.
             p = self.form_patch()
             p['id'] = pending_id
             self.assert_rejected_without_write({**self.manifest,'patches':[p]})
