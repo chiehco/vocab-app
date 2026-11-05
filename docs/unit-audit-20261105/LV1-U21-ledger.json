@@ -1,0 +1,1710 @@
+{
+  "unit": "LV1-U21",
+  "checkpointAt": "2026-11-05T17:32:17.433Z",
+  "priorCheckpoint": "00d3229f9b2ccc541ef42a6c336223af99a72f04",
+  "branch": "content/unit-audit-20261105",
+  "state": "checkpoint_with_explicit_unresolved_items",
+  "counts": {
+    "textbookLearningItems": 138,
+    "vocabularyOccurrences": 93,
+    "grammarItems": 45,
+    "originalContentPhotosActuallyViewed": 8,
+    "originalHalvesActuallyViewed": 16,
+    "formalWordOccurrences": 78,
+    "uniqueFormalWords": 77,
+    "formalExampleComparisons": 96,
+    "uniqueFormalExamples": 96,
+    "clozeFailures": 0,
+    "unmappedIdentitiesRetained": 15,
+    "printedSupplementRowsRestored": 15,
+    "sourceDisplayPatchRows": 26,
+    "sourceThreeFormExplanations": 2,
+    "qualifiedGrammarRows": 2,
+    "dictionaryScopedSourceRows": 7,
+    "generalReopens": 78,
+    "existingGeneralAssetsActuallyViewed": 24,
+    "generalWordsWithoutAsset": 53,
+    "formsAddedAndBothPanelsReopened": 9,
+    "usagePagesReopened": 10,
+    "dictionaryPatchOperations": 42,
+    "uniqueDictionaryRowsChanged": 38,
+    "singleWrongPosCorrections": 2,
+    "nonemptyHintPrecisions": 1,
+    "authoredPracticeStatusesReviewed": 5,
+    "nonExaminationSensesReviewed": 4,
+    "officialExamSensesVerified": 1,
+    "textbookImagesAdopted": 0,
+    "textbookExamplesAdopted": 0
+  },
+  "source": {
+    "curriculum": "src/features/direct/curriculumLV1Unit21.json",
+    "manifest": "scripts/sources/LV1Unit21.json",
+    "originalManifestUnmodified": true,
+    "pageEvidence": "LV1-U21-source-page-review.json",
+    "sourcePages": [
+      180,
+      187
+    ]
+  },
+  "preserved": {
+    "deliveryMode": "text_only",
+    "practiceMode": "read_only",
+    "formalIdentityChanges": 0,
+    "headwordPosChanges": 0,
+    "wholeWordStatusChanges": 0,
+    "EnglishSentenceChanges": 0,
+    "ChineseSentenceChanges": 0,
+    "clozeOrAnswerChanges": 0,
+    "existingImageByteChanges": 0,
+    "progressTables": 14,
+    "progressUnchanged": true
+  },
+  "uiBoundary": "138 source displays,78 general reopens/96 example comparisons,9 principal-parts panels on both tabs and10 usage pages verified. All26 changed source displays and9 form panels actually viewed in7 contact sheets. Per-example POS and long source/note fields use saved DB/syntax/source verification; omitted UI fields are not claimed visible.",
+  "beforeAfterBoundary": "All current source and general captures use distinct before/final filenames; actual text/URL/dimensions retained in both JSON phases. No reused before screenshot is claimed frozen independently.",
+  "regression": {
+    "originalLocalTimeoutMs": 5000,
+    "files": 16,
+    "tests": 131,
+    "pythonWriteBoundaryTests": 21,
+    "exits": {
+      "tests": 0,
+      "python": 0,
+      "lint": 0,
+      "typecheck": 0,
+      "build": 0,
+      "completedAt": "2026-11-05T17:28:46.2389237Z",
+      "finalTestCompletedAt": "2026-11-05T17:31:30.9610053Z"
+    },
+    "failureHistory": "First run7 files passed/56 tests;2 suites could not import a newly copied helper because a broad20-to21 replacement also changed the date directory to21261105. Corrected exactly two import paths; no product data or fixture changed. Retry9 files/62 tests passed under original5000ms. First16-file final run had15 files/130 tests pass and one image-hash test exceed5000ms at9.1s; no hash assertion difference. After all checks exited, isolated11 image tests and a new16-file run were repeated under the unchanged5000ms. Full final run is separate."
+  },
+  "priorExactCi": "validation/U20-ci-00d3229.json",
+  "newCheckpointFullCi": "Pending this new checkpoint commit and its own full CI.",
+  "persistence": {
+    "rowsChecked": 1990,
+    "failures": [],
+    "actualContentHash": "f610223becade52208d8db9305aaa7704cf4dbe0092c131a2f4c85dee05e02b5",
+    "expectedContentHash": true,
+    "progressDatabaseWritten": false
+  },
+  "imageEvidence": "LV1-U21-original-image-review.json",
+  "knownLimits": [
+    {
+      "id": "LV1-U21-unmapped",
+      "scope": "15 printed supplements now have verified visible printed glosses but no invented official ID, practice or textbook question."
+    },
+    {
+      "id": "LV1-U21-boring",
+      "wordId": "W000104",
+      "field": "meaningZh",
+      "reason": "Drilling noun is genuine; exact 成孔期 translation not established. Original string retained, not certified."
+    },
+    {
+      "id": "LV1-U21-restroom-boredom",
+      "wordIds": [
+        "W001731",
+        "W004107"
+      ],
+      "reason": "Broader inherited rest/changing-room and boredom-as-boring-thing Chinese need precise original-source evidence; not deleted or approved solely from ordinary definitions."
+    },
+    {
+      "id": "LV1-U21-nowadays",
+      "wordId": "W003678",
+      "reason": "OED index supports adjective category but full definition unavailable; inherited 現在的 and formal adv. retained without whole-word approval."
+    },
+    {
+      "id": "LV1-U21-grammatical-conventions",
+      "reason": "Project numeral n. and giant-panda adjective conventions retained; no unsupported global POS changes."
+    },
+    {
+      "id": "LV1-U21-source-examples",
+      "reason": "Original page running examples, including by-tomorrow deadline Chinese, remain on source pixels and are not adopted into editable curriculum examples. Raw source transcription is unchanged."
+    },
+    {
+      "id": "LV1-U21-pronunciation",
+      "reason": "Optional formal pronunciation fields remain absent where source/import does not provide a verified field; page pronunciation is not silently imported."
+    }
+  ],
+  "next": {
+    "unit": "LV1-U22",
+    "id": "LV1-U22-01",
+    "word": "arrive",
+    "state": "next_full_original_inventory_and_actual_card_pending"
+  },
+  "cards": [
+    {
+      "id": "LI-LV1U21-V001",
+      "word": "today",
+      "officialWordId": "W000898",
+      "sourcePage": 180,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX197147ce",
+        "EX5e74957e"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V002",
+      "word": "yesterday",
+      "officialWordId": "W000997",
+      "sourcePage": 180,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX103a6a85",
+        "EXbb0341b2"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V003",
+      "word": "tomorrow",
+      "officialWordId": "W000903",
+      "sourcePage": 180,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V004",
+      "word": "tonight",
+      "officialWordId": "W000904",
+      "sourcePage": 180,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V005",
+      "word": "wonderful",
+      "officialWordId": "W000984",
+      "sourcePage": 181,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX1690b2b6",
+        "EXe1c670da"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V006",
+      "word": "speak",
+      "officialWordId": "W000815",
+      "sourcePage": 181,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX5740be47",
+        "EXdef22c16"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V007",
+      "word": "probably",
+      "officialWordId": "W000678",
+      "sourcePage": 181,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX27a728c1",
+        "EXffcae2cf"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V008",
+      "word": "each",
+      "officialWordId": "W000250",
+      "sourcePage": 181,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 1,
+      "exampleIds": [
+        "EXaf4a2711"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V009",
+      "word": "both",
+      "officialWordId": "W000108",
+      "sourcePage": 181,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 1,
+      "exampleIds": [
+        "EX72b66721"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V010",
+      "word": "hobby",
+      "officialWordId": "W000402",
+      "sourcePage": 182,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V011",
+      "word": "habit",
+      "officialWordId": "W000370",
+      "sourcePage": 182,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX272005fb",
+        "EXefba3827"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V012",
+      "word": "expensive",
+      "officialWordId": "W000283",
+      "sourcePage": 182,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 3,
+      "exampleIds": [
+        "EX14fb0b06",
+        "EX7c7366a9",
+        "EX8119a1a2"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V013",
+      "word": "cheap",
+      "officialWordId": "W000158",
+      "sourcePage": 182,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 3,
+      "exampleIds": [
+        "EX4f188af0",
+        "EX55f5d9b8",
+        "EXf6f26229"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V014",
+      "word": "million",
+      "officialWordId": "W000540",
+      "sourcePage": 182,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX2559fa7d",
+        "EXb2070166"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V015",
+      "word": "island",
+      "officialWordId": "W000438",
+      "sourcePage": 183,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX1aff86b4",
+        "EXbd5fcbec"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V016",
+      "word": "language",
+      "officialWordId": "W000468",
+      "sourcePage": 183,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX7fff1b19",
+        "EXa5fe62bb"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V017",
+      "word": "tennis",
+      "officialWordId": "W000866",
+      "sourcePage": 183,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX0a031376",
+        "EX26354aae"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V018",
+      "word": "week",
+      "officialWordId": "W000957",
+      "sourcePage": 183,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX5d6d009e",
+        "EX72a0b114"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V019",
+      "word": "weekend",
+      "officialWordId": "W000958",
+      "sourcePage": 183,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V020",
+      "word": "topic",
+      "officialWordId": "W000909",
+      "sourcePage": 184,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V021",
+      "word": "understand",
+      "officialWordId": "W000929",
+      "sourcePage": 184,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX2a1a0999",
+        "EX5c25b4d9"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V022",
+      "word": "bedroom",
+      "officialWordId": "W000076",
+      "sourcePage": 184,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V023",
+      "word": "kitchen",
+      "officialWordId": "W000458",
+      "sourcePage": 184,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX69599d26",
+        "EXc4547708"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V024",
+      "word": "bathroom",
+      "officialWordId": "W000067",
+      "sourcePage": 184,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX1d1f8ab5",
+        "EXb4eed017"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V025",
+      "word": "toilet",
+      "officialWordId": "W000901",
+      "sourcePage": 184,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V026",
+      "word": "yard",
+      "officialWordId": "W000993",
+      "sourcePage": 184,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V027",
+      "word": "polite",
+      "officialWordId": "W000663",
+      "sourcePage": 185,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V028",
+      "word": "pink",
+      "officialWordId": "W000648",
+      "sourcePage": 185,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX827b2c54",
+        "EXbdb02e1f"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V029",
+      "word": "lemon",
+      "officialWordId": "W000483",
+      "sourcePage": 185,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V030",
+      "word": "large",
+      "officialWordId": "W000469",
+      "sourcePage": 185,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX1a0d536f",
+        "EXc0a06c93"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V031",
+      "word": "giant",
+      "officialWordId": "W000345",
+      "sourcePage": 185,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EXae47b119",
+        "EXcfc617d3"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V032",
+      "word": "grass",
+      "officialWordId": "W000360",
+      "sourcePage": 186,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V033",
+      "word": "enjoy",
+      "officialWordId": "W000264",
+      "sourcePage": 186,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX52ae5980",
+        "EXded893b4"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V034",
+      "word": "enjoyment",
+      "officialWordId": "W006028",
+      "sourcePage": 186,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V035",
+      "word": "country",
+      "officialWordId": "W000198",
+      "sourcePage": 186,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX66d47192",
+        "EX6ef1cf6a"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V036",
+      "word": "national",
+      "officialWordId": "W000570",
+      "sourcePage": 186,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX6af0b8e9",
+        "EXf45d2d5f"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V037",
+      "word": "bored",
+      "officialWordId": "W000103",
+      "sourcePage": 186,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX5a737c22",
+        "EX901900e8"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V038",
+      "word": "boring",
+      "officialWordId": "W000104",
+      "sourcePage": 187,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V039",
+      "word": "science",
+      "officialWordId": "W000742",
+      "sourcePage": 187,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX34810071",
+        "EX56d5159b"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V040",
+      "word": "present",
+      "officialWordId": "W000675",
+      "sourcePage": 180,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EXbae704fd",
+        "EXdff7520f"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V041",
+      "word": "nowadays",
+      "officialWordId": "W003678",
+      "sourcePage": 180,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX84f279cc",
+        "EXb9dbf320"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V042",
+      "word": "extinction",
+      "officialWordId": null,
+      "sourcePage": 180,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V043",
+      "word": "wonder",
+      "officialWordId": "W001992",
+      "sourcePage": 181,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX12bfdeaf",
+        "EX135167bc"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V044",
+      "word": "speaker",
+      "officialWordId": "W001831",
+      "sourcePage": 181,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EXb90cc8eb",
+        "EXc36ba2ab"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V045",
+      "word": "a migrant worker",
+      "officialWordId": null,
+      "sourcePage": 181,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V046",
+      "word": "probable",
+      "officialWordId": "W002676",
+      "sourcePage": 181,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V047",
+      "word": "probability",
+      "officialWordId": null,
+      "sourcePage": 181,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V048",
+      "word": "hobbies",
+      "officialWordId": null,
+      "sourcePage": 182,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V049",
+      "word": "pastime",
+      "officialWordId": "W005658",
+      "sourcePage": 182,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V050",
+      "word": "costly",
+      "officialWordId": "W002194",
+      "sourcePage": 182,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EXe254a625",
+        "EXfdece04a"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V051",
+      "word": "inexpensive",
+      "officialWordId": null,
+      "sourcePage": 182,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V052",
+      "word": "cheaply",
+      "officialWordId": null,
+      "sourcePage": 182,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V053",
+      "word": "millionaire",
+      "officialWordId": "W003642",
+      "sourcePage": 183,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V054",
+      "word": "billion",
+      "officialWordId": "W001093",
+      "sourcePage": 183,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX56f05dda",
+        "EXb71c68e4"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V055",
+      "word": "trillion",
+      "officialWordId": "W005940",
+      "sourcePage": 183,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V056",
+      "word": "weekday",
+      "officialWordId": "W001970",
+      "sourcePage": 183,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V057",
+      "word": "weekly",
+      "officialWordId": "W002990",
+      "sourcePage": 183,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX69d0cf32",
+        "EX98f5bac2"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V058",
+      "word": "topical",
+      "officialWordId": null,
+      "sourcePage": 184,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V059",
+      "word": "subject",
+      "officialWordId": "W000839",
+      "sourcePage": 184,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EXc23ae3bb",
+        "EXe4ac2f2f"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V060",
+      "word": "understandable",
+      "officialWordId": null,
+      "sourcePage": 184,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V061",
+      "word": "know",
+      "officialWordId": "W000463",
+      "sourcePage": 184,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX6b17f93f",
+        "EXb65aaa75"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V062",
+      "word": "comprehend",
+      "officialWordId": "W004194",
+      "sourcePage": 184,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V063",
+      "word": "kitchenware",
+      "officialWordId": null,
+      "sourcePage": 184,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V064",
+      "word": "bath",
+      "officialWordId": "W000066",
+      "sourcePage": 184,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V065",
+      "word": "restroom",
+      "officialWordId": "W001731",
+      "sourcePage": 184,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V066",
+      "word": "yd",
+      "officialWordId": null,
+      "sourcePage": 184,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V067",
+      "word": "yd.",
+      "officialWordId": null,
+      "sourcePage": 184,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V068",
+      "word": "backyard",
+      "officialWordId": "W004082",
+      "sourcePage": 185,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V069",
+      "word": "courtyard",
+      "officialWordId": "W005209",
+      "sourcePage": 185,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V070",
+      "word": "politely",
+      "officialWordId": null,
+      "sourcePage": 185,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V071",
+      "word": "politeness",
+      "officialWordId": null,
+      "sourcePage": 185,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V072",
+      "word": "impolite",
+      "officialWordId": null,
+      "sourcePage": 185,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V073",
+      "word": "lemonade",
+      "officialWordId": "W002490",
+      "sourcePage": 185,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V074",
+      "word": "largely",
+      "officialWordId": "W003585",
+      "sourcePage": 185,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX18cf2be4",
+        "EX3b6a1b55"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V075",
+      "word": "enlarge",
+      "officialWordId": "W003357",
+      "sourcePage": 185,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V076",
+      "word": "huge",
+      "officialWordId": "W001439",
+      "sourcePage": 185,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 3,
+      "exampleIds": [
+        "EX2511641c",
+        "EX2a993eec",
+        "EX3a15d774"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V077",
+      "word": "gigantic",
+      "officialWordId": "W003451",
+      "sourcePage": 185,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX556964a0",
+        "EXec30d86a"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V078",
+      "word": "grassy",
+      "officialWordId": "W002372",
+      "sourcePage": 186,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V079",
+      "word": "lawn",
+      "officialWordId": "W002484",
+      "sourcePage": 186,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V080",
+      "word": "enjoyable",
+      "officialWordId": "W002295",
+      "sourcePage": 186,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX096b3c95",
+        "EXe1937539"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V081",
+      "word": "fun",
+      "officialWordId": "W000337",
+      "sourcePage": 186,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX7b94348a",
+        "EXe5e9dc26"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V082",
+      "word": "enormous",
+      "officialWordId": "W003358",
+      "sourcePage": 186,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 3,
+      "exampleIds": [
+        "EX0235cd10",
+        "EX5816c977",
+        "EXab97c02a"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V083",
+      "word": "countries",
+      "officialWordId": null,
+      "sourcePage": 186,
+      "sourceTextReopened": true,
+      "generalReopened": false,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V084",
+      "word": "nation",
+      "officialWordId": "W001567",
+      "sourcePage": 186,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V085",
+      "word": "state",
+      "officialWordId": "W001844",
+      "sourcePage": 186,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 1,
+      "exampleIds": [
+        "EX6ec89ed4"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V086",
+      "word": "nation",
+      "officialWordId": "W001567",
+      "sourcePage": 186,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V087",
+      "word": "nationality",
+      "officialWordId": "W003670",
+      "sourcePage": 186,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V088",
+      "word": "boredom",
+      "officialWordId": "W004107",
+      "sourcePage": 187,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V089",
+      "word": "interested",
+      "officialWordId": "W000433",
+      "sourcePage": 187,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 3,
+      "exampleIds": [
+        "EX0766af7b",
+        "EX103522a0",
+        "EXb68acc41"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V090",
+      "word": "dull",
+      "officialWordId": "W001285",
+      "sourcePage": 187,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 0,
+      "exampleIds": [],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V091",
+      "word": "interesting",
+      "officialWordId": "W000434",
+      "sourcePage": 187,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 4,
+      "exampleIds": [
+        "EX708424fb",
+        "EX8652dd83",
+        "EXed97ffab",
+        "EXf877ed47"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V092",
+      "word": "scientific",
+      "officialWordId": "W002770",
+      "sourcePage": 187,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EXb707e8a8",
+        "EXff2edb55"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    },
+    {
+      "id": "LI-LV1U21-V093",
+      "word": "scientist",
+      "officialWordId": "W002771",
+      "sourcePage": 187,
+      "sourceTextReopened": true,
+      "generalReopened": true,
+      "formalExampleCount": 2,
+      "exampleIds": [
+        "EX2e4a12d7",
+        "EX63bd1ed9"
+      ],
+      "state": "checked_source_and_available_general_fields_with_explicit_limits",
+      "wholeWordApproved": false
+    }
+  ],
+  "grammar": [
+    {
+      "id": "LI-LV1U21-G001",
+      "pattern": "the day before yesterday",
+      "sourcePage": 180,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G002",
+      "pattern": "the day after tomorrow",
+      "sourcePage": 180,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G003",
+      "pattern": "like there is no tomorrow",
+      "sourcePage": 180,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G004",
+      "pattern": "speak, spoke, spoken",
+      "sourcePage": 181,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G005",
+      "pattern": "speak to / with sb",
+      "sourcePage": 181,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G006",
+      "pattern": "speak + 語言",
+      "sourcePage": 181,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G007",
+      "pattern": "speak about / of...",
+      "sourcePage": 181,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G008",
+      "pattern": "speak for sb",
+      "sourcePage": 181,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G009",
+      "pattern": "speak up (for...)",
+      "sourcePage": 181,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G010",
+      "pattern": "each and every",
+      "sourcePage": 181,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G011",
+      "pattern": "each 作形容詞時置單數可數名詞前，其後動詞使用單數形動詞；each 作代詞與 of 並用時連接複數名詞，其後動詞亦使用單數形動詞。",
+      "sourcePage": 181,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G012",
+      "pattern": "both A and B",
+      "sourcePage": 182,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G013",
+      "pattern": "both 作形容詞時置複數名詞前，其後動詞使用複數形動詞；both 作代詞與 of 並用時連接複數名詞，其後動詞亦使用複數形動詞。",
+      "sourcePage": 182,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G014",
+      "pattern": "be in the habit of + V-ing",
+      "sourcePage": 182,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G015",
+      "pattern": "break a habit (of + V-ing)",
+      "sourcePage": 182,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G016",
+      "pattern": "not come cheap",
+      "sourcePage": 182,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G017",
+      "pattern": "millions of + 複數名詞",
+      "sourcePage": 182,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G018",
+      "pattern": "look like a million dollars",
+      "sourcePage": 182,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G019",
+      "pattern": "be one in a million",
+      "sourcePage": 182,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G020",
+      "pattern": "以「數字 + million」表「幾百萬」時，無論前面的數字為多少，million 一律不加 s，例如：one / two / three million",
+      "sourcePage": 183,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G021",
+      "pattern": "on an island",
+      "sourcePage": 183,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G022",
+      "pattern": "a foreign language",
+      "sourcePage": 183,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G023",
+      "pattern": "dirty / body language",
+      "sourcePage": 183,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G024",
+      "pattern": "play tennis",
+      "sourcePage": 183,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G025",
+      "pattern": "a tennis player / court / racket",
+      "sourcePage": 183,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G026",
+      "pattern": "tennis shoes",
+      "sourcePage": 183,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G027",
+      "pattern": "on weekends",
+      "sourcePage": 183,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G028",
+      "pattern": "on the weekend",
+      "sourcePage": 183,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G029",
+      "pattern": "understand, understood, understood",
+      "sourcePage": 184,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G030",
+      "pattern": "everything but the kitchen sink",
+      "sourcePage": 184,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G031",
+      "pattern": "go to the bathroom = use the bathroom",
+      "sourcePage": 184,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G032",
+      "pattern": "flush the toilet",
+      "sourcePage": 184,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G033",
+      "pattern": "be polite to sb",
+      "sourcePage": 185,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G034",
+      "pattern": "in polite society",
+      "sourcePage": 185,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G035",
+      "pattern": "a slice of lemon",
+      "sourcePage": 185,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G036",
+      "pattern": "lemon juice",
+      "sourcePage": 185,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G037",
+      "pattern": "be at large",
+      "sourcePage": 185,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G038",
+      "pattern": "a blade / field of grass",
+      "sourcePage": 186,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G039",
+      "pattern": "cut / mow the grass",
+      "sourcePage": 186,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G040",
+      "pattern": "enjoy + V-ing",
+      "sourcePage": 186,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G041",
+      "pattern": "enjoy oneself",
+      "sourcePage": 186,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G042",
+      "pattern": "the country = the countryside",
+      "sourcePage": 186,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G043",
+      "pattern": "the national anthem",
+      "sourcePage": 186,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G044",
+      "pattern": "be bored with...",
+      "sourcePage": 186,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    },
+    {
+      "id": "LI-LV1U21-G045",
+      "pattern": "become / get bored",
+      "sourcePage": 186,
+      "actualReopen": true,
+      "originalTextRetainedInSource": true
+    }
+  ]
+}

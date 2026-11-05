@@ -26,6 +26,8 @@ import u19Forms from '../../docs/unit-audit-20261105/LV1-U19-verified-forms-patc
 import u19FormSources from '../../docs/unit-audit-20261105/VERIFIED-U19-VERB-FORMS-SOURCES.json';
 import u20Forms from '../../docs/unit-audit-20261105/LV1-U20-verified-forms-patches.json';
 import u20FormSources from '../../docs/unit-audit-20261105/VERIFIED-U20-VERB-FORMS-SOURCES.json';
+import u21Forms from '../../docs/unit-audit-20261105/LV1-U21-verified-forms-patches.json';
+import u21FormSources from '../../docs/unit-audit-20261105/VERIFIED-U21-VERB-FORMS-SOURCES.json';
 type Row=Record<string,unknown>;
 const examples:Row[]=JSON.parse(readFileSync('public/data/v1/examples.json','utf8'));
 function stable(value:unknown):unknown{
@@ -215,6 +217,20 @@ it('restores only 15 exact U20 missing forms and rejects false absence or unveri
  expect(u20FormSources.facts.every(f=>!earlier.has(f.wordId))).toBe(true);
  const words:Row[]=JSON.parse(readFileSync('public/data/v1/words.json','utf8'));
  for(const p of u20Forms.patches){
+  const row=structuredClone(words.find(w=>w.wordId===p.id)!);const preserved={...row};delete preserved.verbForms;
+  restoreRecordedAuditPatch('words',row,p);expect(row).toEqual(preserved);expect(row).not.toHaveProperty('verbForms');
+  for(const key of ['base','past','pastParticiple','sourceRef','status']){const wrong=structuredClone(p);(wrong.after.verbForms as Row)[key]='unverified';expect(()=>restoreRecordedAuditPatch('words',{...wrong.after},wrong)).toThrow();}
+  expect(()=>restoreRecordedAuditPatch('words',{...p.after},{...p,before:{verbForms:null}})).toThrow();
+ }
+ for(const id of ['W000862','W000717','W000639'])expect(words.find(w=>w.wordId===id)).not.toHaveProperty('verbForms');
+});
+
+it('restores only 9 exact U21 missing forms and rejects false absence or unverified forms',()=>{
+ expect(u21FormSources.facts).toHaveLength(9);
+ const earlier=new Set([...originalSources.facts,...followupSources.facts,...u16FormSources.facts,...u17FormSources.facts,...u18FormSources.facts,...u19FormSources.facts,...u20FormSources.facts].map(f=>f.wordId));
+ expect(u21FormSources.facts.every(f=>!earlier.has(f.wordId))).toBe(true);
+ const words:Row[]=JSON.parse(readFileSync('public/data/v1/words.json','utf8'));
+ for(const p of u21Forms.patches){
   const row=structuredClone(words.find(w=>w.wordId===p.id)!);const preserved={...row};delete preserved.verbForms;
   restoreRecordedAuditPatch('words',row,p);expect(row).toEqual(preserved);expect(row).not.toHaveProperty('verbForms');
   for(const key of ['base','past','pastParticiple','sourceRef','status']){const wrong=structuredClone(p);(wrong.after.verbForms as Row)[key]='unverified';expect(()=>restoreRecordedAuditPatch('words',{...wrong.after},wrong)).toThrow();}

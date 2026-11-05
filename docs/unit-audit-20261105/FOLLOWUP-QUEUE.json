@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-05T16:54:35.375Z",
+  "updatedAt": "2026-11-05T17:32:17.433Z",
   "items": [
     {
       "id": "LV1-U01-30",
@@ -598,6 +598,67 @@
       "reason": "No US-specific pronunciation is inferred from unqualified printed IPA.",
       "state": "explicit_limit_retained_not_whole_card_approval",
       "evidence": "docs/unit-audit-20261105/LV1-U20-ledger.json"
+    },
+    {
+      "id": "LV1-U21-verified-reopens",
+      "state": "138_text_items_78_general_reopens_9_forms_and10_usage_verified",
+      "evidence": "docs/unit-audit-20261105/LV1-U21-ledger.json",
+      "resolvedAt": "2026-11-05T17:32:17.433Z"
+    },
+    {
+      "id": "LV1-U21-unmapped",
+      "scope": "15 printed supplements now have verified visible printed glosses but no invented official ID, practice or textbook question.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U21-ledger.json"
+    },
+    {
+      "id": "LV1-U21-boring",
+      "wordId": "W000104",
+      "field": "meaningZh",
+      "reason": "Drilling noun is genuine; exact 成孔期 translation not established. Original string retained, not certified.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U21-ledger.json"
+    },
+    {
+      "id": "LV1-U21-restroom-boredom",
+      "wordIds": [
+        "W001731",
+        "W004107"
+      ],
+      "reason": "Broader inherited rest/changing-room and boredom-as-boring-thing Chinese need precise original-source evidence; not deleted or approved solely from ordinary definitions.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U21-ledger.json"
+    },
+    {
+      "id": "LV1-U21-nowadays",
+      "wordId": "W003678",
+      "reason": "OED index supports adjective category but full definition unavailable; inherited 現在的 and formal adv. retained without whole-word approval.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U21-ledger.json"
+    },
+    {
+      "id": "LV1-U21-grammatical-conventions",
+      "reason": "Project numeral n. and giant-panda adjective conventions retained; no unsupported global POS changes.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U21-ledger.json"
+    },
+    {
+      "id": "LV1-U21-source-examples",
+      "reason": "Original page running examples, including by-tomorrow deadline Chinese, remain on source pixels and are not adopted into editable curriculum examples. Raw source transcription is unchanged.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U21-ledger.json"
+    },
+    {
+      "id": "LV1-U21-pronunciation",
+      "reason": "Optional formal pronunciation fields remain absent where source/import does not provide a verified field; page pronunciation is not silently imported.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U21-ledger.json"
+    },
+    {
+      "id": "LV1-U03-U15-exact-forms-integration",
+      "state": "verified_payload_prepared_not_yet_locally_reconciled_or_ui_integrated",
+      "scope": "268 genuinely absent verbForms at prior00d3229 snapshot; recheck latest exact values before each small batch. First batchU05–U06 starts give/W000348. Same values skip; null/custom/conflict never overwrite.",
+      "remaining": "Read prepared payload and guards after this U21 checkpoint; complete small batches with actual App/persistence/14-progress verification and their own CI. Do not count preparation as integration."
     }
   ],
   "sourceFormResearchCoverage": {

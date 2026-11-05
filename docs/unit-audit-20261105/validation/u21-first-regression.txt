@@ -1,0 +1,42 @@
+
+> vocab-app@0.0.0 test
+> vitest run --maxWorkers=1 src/features/direct/lv1Unit21Text.test.ts src/features/direct/lv1Unit21Audit.test.ts src/features/direct/recoveredUnitIntegration.test.ts src/db/unitAudit.testSupport.test.ts src/db/lv6MainIntegration.test.ts src/features/direct/lv4NotesConfirmation.test.ts src/features/vocabulary/lv1ReviewedImages.test.ts src/features/vocabulary/auditedWordIllustrations.test.ts src/features/vocabulary/approvedExampleImages.test.ts
+
+
+ RUN  v4.1.9 <repo>
+
+ ❯ src/features/direct/recoveredUnitIntegration.test.ts (0 test)
+ ❯ src/features/direct/lv1Unit21Audit.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/features/direct/lv1Unit21Audit.test.ts [ src/features/direct/lv1Unit21Audit.test.ts ]
+Error: Cannot find module '../../../docs/unit-audit-21261105/LV1-U21-curriculum-patches.json' imported from <repo>/src/features/direct/lv1Unit21Audit.test.ts
+ ❯ src/features/direct/lv1Unit21Audit.test.ts:5:1
+      3| import current from './curriculumLV1Unit21.json';
+      4| import source from '../../../scripts/sources/LV1Unit21.json';
+      5| import corrections from '../../../docs/unit-audit-21261105/LV1-U21-cur…
+       | ^
+      6| import {unit21BeforeAudit as restore} from './lv1Unit21Audit.testSuppo…
+      7| const hash=(v:unknown)=>createHash('sha256').update(JSON.stringify(v))…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/features/direct/recoveredUnitIntegration.test.ts [ src/features/direct/recoveredUnitIntegration.test.ts ]
+Error: Cannot find module '../../../docs/unit-audit-21261105/LV1-U21-curriculum-patches.json' imported from <repo>/src/features/direct/lv1Unit21Audit.testSupport.ts
+ ❯ src/features/direct/lv1Unit21Audit.testSupport.ts:3:1
+      1| import {expect} from 'vitest';
+      2| import current from './curriculumLV1Unit21.json';
+      3| import corrections from '../../../docs/unit-audit-21261105/LV1-U21-cur…
+       | ^
+      4| export function unit21BeforeAudit(value:typeof current){
+      5|  const copy=structuredClone(value);expect(copy.learningItems).toHaveLe…
+ ❯ src/features/direct/recoveredUnitIntegration.test.ts:28:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed | 7 passed (9)
+      Tests  56 passed (56)
+   Start at  01:13:30
+   Duration  48.67s (transform 9.76s, setup 0ms, import 31.63s, tests 12.20s, environment 1ms)

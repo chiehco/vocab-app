@@ -24,6 +24,7 @@ U17_FORM_IDS = set('W000194 W000992 W000173 W000189 W000752 W000179 W000751 W000
 U18_FORM_IDS = set('W000793 W000230 W000227 W000728 W000773 W000315 W000452 W000795 W000229 W000520 W000445 W000421 W000246 W000094 W000118 W000511 W001953 W001078 W002271 W000492'.split())
 U19_FORM_IDS = set('W000596 W000959 W000457 W000065 W000817 W000317 W001490 W005402 W002162 W000690 W005089 W005416 W003399'.split())
 U20_FORM_IDS = set('W000136 W000294 W000638 W000241 W000124 W000868 W000357 W000990 W000956 W000306 W004853 W001997 W001107 W003048 W001057'.split())
+U21_FORM_IDS = set('W000815 W000958 W000929 W000264 W001992 W004194 W003357 W001844 W001285'.split())
 U18_TRANSLATION_IDS = {'EX0f888c6a', 'EXf0dab820'}
 TRANSLATION_IDS = {'EX50693488', 'EXddc4d110', 'EX66703666', 'EX1f033d08', 'EX51e703b4', 'EXd51bd96d', 'EX4c5b9769', 'EX299bccf8', 'EX2ff9ba41'}
 ABSENT = {"$absent": True}
@@ -49,7 +50,7 @@ def validate_patch_shape(patch):
         assert set(patch['after']) == {'content'}, 'No note identity, title, type or status change'
         assert fact['after']['content'] == fact['before']['content'].replace('腦部創傷','頭部傷勢'), 'Only the verified duplicate translation is editable'
     if 'verbForms' in patch['after']:
-        assert patch['dataset'] == 'words' and patch['id'] in FORM_IDS | FOLLOWUP_FORM_IDS | U16_FORM_IDS | U17_FORM_IDS | U18_FORM_IDS | U19_FORM_IDS | U20_FORM_IDS, 'Only individually verified existing verbs may acquire principal parts'
+        assert patch['dataset'] == 'words' and patch['id'] in FORM_IDS | FOLLOWUP_FORM_IDS | U16_FORM_IDS | U17_FORM_IDS | U18_FORM_IDS | U19_FORM_IDS | U20_FORM_IDS | U21_FORM_IDS, 'Only individually verified existing verbs may acquire principal parts'
         assert patch['before'] == {'verbForms': ABSENT} and set(patch['after']) == {'verbForms'}, 'Only an explicitly absent verbForms field may be added'
         facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-VERB-FORMS-SOURCES.json')['facts']
         assert len(facts) == 31 and {f['wordId'] for f in facts} == FORM_IDS
@@ -71,7 +72,10 @@ def validate_patch_shape(patch):
         u20 = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-U20-VERB-FORMS-SOURCES.json')['facts']
         assert len(u20) == 15 and {f['wordId'] for f in u20} == U20_FORM_IDS
         assert not (FORM_IDS | FOLLOWUP_FORM_IDS | U16_FORM_IDS | U17_FORM_IDS | U18_FORM_IDS | U19_FORM_IDS) & U20_FORM_IDS, 'Keep the exact U20 source scope separate'
-        facts += followups + u16 + u17 + u18 + u19 + u20
+        u21 = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-U21-VERB-FORMS-SOURCES.json')['facts']
+        assert len(u21) == 9 and {f['wordId'] for f in u21} == U21_FORM_IDS
+        assert not (FORM_IDS | FOLLOWUP_FORM_IDS | U16_FORM_IDS | U17_FORM_IDS | U18_FORM_IDS | U19_FORM_IDS | U20_FORM_IDS) & U21_FORM_IDS, 'Keep the exact U21 source scope separate'
+        facts += followups + u16 + u17 + u18 + u19 + u20 + u21
         fact = next(f for f in facts if f['wordId'] == patch['id'])
         assert patch['after']['verbForms'] == fact['verbForms'], 'Unverified principal parts or source'
     if 'sentenceZh' in patch['after']:

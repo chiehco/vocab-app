@@ -24,6 +24,9 @@ import { unit19BeforeAudit } from './lv1Unit19Audit.testSupport';
 import currentUnit20 from './curriculumLV1Unit20.json';
 import { unit20BeforeAudit } from './lv1Unit20Audit.testSupport';
 
+import currentUnit21 from './curriculumLV1Unit21.json';
+import { unit21BeforeAudit } from './lv1Unit21Audit.testSupport';
+
 function stable(value: unknown): unknown {
   if (Array.isArray(value)) return value.map(stable);
   if (value && typeof value === 'object') {
@@ -76,6 +79,10 @@ it('retains historical curriculum and question identities with the audited cubes
     if(old.templateId === 'TEXTBOOK-LV1-U20'){
       expect(retained.items).toEqual(currentUnit20.learningItems);
       priorItems=unit20BeforeAudit(currentUnit20).learningItems;
+    }
+    if(old.templateId === 'TEXTBOOK-LV1-U21'){
+      expect(retained.items).toEqual(currentUnit21.learningItems);
+      priorItems=unit21BeforeAudit(currentUnit21).learningItems;
     }
     expect(hash(priorItems), old.templateId).toBe(old.itemsHash);
     const originalQuestions = structuredClone(priorPractice?.questions ?? retained.questions);
