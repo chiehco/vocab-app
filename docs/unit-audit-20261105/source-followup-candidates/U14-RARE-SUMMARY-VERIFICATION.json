@@ -1,0 +1,837 @@
+{
+  "reportType": "U14 rare and mixed-part-of-speech summary verification",
+  "checkedAtUtc": "2026-11-05T12:07:26.632515+00:00",
+  "sourceCommit": "3b14fc8ac56ca58dd715a088340d913e5230a0b7",
+  "sourceWordsBlobSha": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+  "scope": "逐一核對5詞全部24項原有中文摘要；不更動 repository、mainPOS、主詞性、審核狀態，不推送，未核准任何整卡。",
+  "repositoryModified": false,
+  "mainPOSModified": false,
+  "reviewStatusModified": false,
+  "pushed": false,
+  "summary": {
+    "wordCount": 5,
+    "originalGlossesReviewed": 24,
+    "supportedOrQualifiedGlosses": 23,
+    "partiallySupportedPendingGlosses": 1,
+    "pendingGlosses": 1,
+    "deletedGlosses": 0,
+    "wholeCardsApprovedReviewed": 0,
+    "conclusion": "sight 閱讀與 touch 機靈都有現行原站單字名詞正文，應保留並限義。excited 電磁分詞形容詞已用1897原書頁像核對，量子物理形容詞有現行原站。checkup 非醫療檢查成立，鑑定只能限定查驗狀況或準確性。exciting 激磁概念及現在分詞已核實，但原摘要所暗示的獨立電學形容詞分類仍待原著補證。",
+    "pendingExactClaims": [
+      {
+        "word": "exciting",
+        "claim": "激磁在現有 adj. 摘要中是否是獨立電學形容詞（激磁的），而不是 excite 的現在分詞或動作名詞",
+        "reason": "現行原站直接支持 excite 的磁場動詞義與 exciting 詞形；1897原書只列一般分詞形容詞與動作名詞。後世OED專門形容詞線索只有二手摘錄，OED原站未取得正文。不能借詞形、片語或轉載宣稱已核實獨立電學形容詞。",
+        "verifiedPart": "如明標為 excite 的現在分詞，激磁的動作語義有直接原站支持，不應刪除。"
+      }
+    ]
+  },
+  "method": {
+    "bodyVersusSnippet": "採用實際讀到的出版社原站正文或原書掃描頁像；搜尋摘要與中文彙編不作獨立核准證據。",
+    "originalGlossCounting": "按原 meaningZh 分號分列的中文義計數；名詞／動詞標題不計，碰與觸各算一項，不因重疊擅自刪除。",
+    "translationMethod": "依英文直接定義核對中文，不冒稱取得每個中文譯詞的英漢原書；鑑定等限義翻譯明標推論。",
+    "inflectionBoundary": "普通詞形變化能證 exciting 是 excite 的現在分詞，不能自動證明詞典另列獨立電學形容詞。",
+    "candidateOnly": "afterCandidate 只供審閱，沒有修改任何詞卡。若不適合在顯示欄加待確認字樣，可保留原值，將 pending 放審查紀錄。",
+    "sourceNoteCaution": "大考中心詞表不等於每個罕見中文義的逐義來源。",
+    "statusBoundary": "before 保留原 reviewed／draft 值只是精確快照，不代表本報告同意整卡 reviewed。",
+    "historicalLabels": "不因版本年代自行添加 archaic／obsolete；只採該義項明標的領域與語域。"
+  },
+  "words": [
+    {
+      "wordId": "W000279",
+      "word": "excited",
+      "before": {
+        "wordId": "W000279",
+        "word": "excited",
+        "wordVariants": [
+          "excited"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "興奮的；已勵磁的；已激發的；激昂的",
+        "meaningEn": "feeling very happy, eager, and full of energy about something",
+        "usagePattern": "be excited about N; be excited to V; get excited",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "excited",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "對……感到興奮；因即將做……而興奮；變得興奮"
+      },
+      "overallFinding": "四義均有依據。已勵磁的是電磁學分詞形容詞；已激發的是物理狀態，須與情緒義分開。",
+      "senseFindings": [
+        {
+          "before": "興奮的",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "adj.",
+          "domainOrRegister": "一般情緒",
+          "finding": "Collins 獨立 excited 形容詞條目說明高興、期待而難以平靜，與原譯一致。",
+          "afterCandidate": "興奮的",
+          "sourceIds": [
+            "collins_excited"
+          ]
+        },
+        {
+          "before": "已勵磁的",
+          "status": "supported_requires_domain",
+          "decision": "qualify",
+          "pos": "ppl. adj.（分詞形容詞）",
+          "domainOrRegister": "電學／磁學",
+          "finding": "1897年原書 excited 獨立 ppl. a. 條目2a直接定義受到電或磁作用、已磁化；已實看印刷頁381中欄詞頭及右欄2a。現行 Collins 電機工程 excite 條目以被動 excited 描寫機器、磁場繞組勵磁，交叉支持此電學使用。",
+          "afterCandidate": "（電磁學）已勵磁的",
+          "sourceIds": [
+            "ned1897_excited",
+            "collins_excite_electrical"
+          ],
+          "usageCaution": "不是心情興奮，也不是將 excited state 的量子物理義誤作磁場義。歷史條目涵蓋帶電或磁化，本候選僅保留原摘要的磁化／勵磁部分。原義項未標 obsolete，不因書齡自行加古語。"
+        },
+        {
+          "before": "已激發的",
+          "status": "supported_requires_domain",
+          "decision": "qualify",
+          "pos": "adj.",
+          "domainOrRegister": "物理",
+          "finding": "Collins 獨立 excited 形容詞4明定原子、分子等處於高於基態的能階；Webster’s New World 同頁形容詞2明標 physics。",
+          "afterCandidate": "（物理）已激發的",
+          "sourceIds": [
+            "collins_excited"
+          ],
+          "usageCaution": "此候選指原子、分子等的激發態，不把勵磁與量子激發當作同一物理過程，也不延伸成任意事物已被觸發。"
+        },
+        {
+          "before": "激昂的",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "adj.",
+          "domainOrRegister": "一般情緒",
+          "finding": "Collins 的 emotionally aroused／agitated 及 Random House 的情緒被激起均支持激昂／激動，非只有愉快。",
+          "afterCandidate": "激昂的",
+          "sourceIds": [
+            "collins_excited"
+          ]
+        }
+      ],
+      "afterCandidate": {
+        "meaningZh": "興奮的；（電磁學）已勵磁的；（物理）已激發的；激昂的"
+      },
+      "candidateScope": "只提供現有中文義的最小文字／領域／詞性標示候選；未套用，不更動主詞性或審核狀態。",
+      "wholeCardReviewedAuthorized": false,
+      "reviewStatusRecommendation": "summary_supported_with_domain_labels",
+      "notAuthorizedByEvidence": [
+        "因技術義少見而刪除",
+        "將電磁學與量子激發合併成同一義",
+        "升格整卡 reviewed"
+      ]
+    },
+    {
+      "wordId": "W000280",
+      "word": "exciting",
+      "before": {
+        "wordId": "W000280",
+        "word": "exciting",
+        "wordVariants": [
+          "exciting"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "令人興奮的；刺激的；激磁",
+        "meaningEn": "creating or arousing excitement; stimulating interest and discussion",
+        "usagePattern": "be exciting; an exciting game/story",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "exciting",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "很刺激／令人興奮；刺激的比賽／故事"
+      },
+      "overallFinding": "令人興奮的、刺激的是獨立形容詞。激磁的技術含義可證為 excite 的現在分詞；原摘要把它混在 adj. 欄，獨立電學形容詞與裸名詞分類尚未取得原著直接支持。",
+      "senseFindings": [
+        {
+          "before": "令人興奮的",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "adj.",
+          "domainOrRegister": "一般情緒",
+          "finding": "Collins exciting 獨立形容詞定義為引起興奮。",
+          "afterCandidate": "令人興奮的",
+          "sourceIds": [
+            "collins_exciting",
+            "mw_exciting"
+          ]
+        },
+        {
+          "before": "刺激的",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "adj.",
+          "domainOrRegister": "一般情緒／活動的感受",
+          "finding": "Collins 獨立形容詞包括 stirring、stimulating、thrilling，支持刺激的。",
+          "afterCandidate": "刺激的",
+          "sourceIds": [
+            "collins_exciting"
+          ]
+        },
+        {
+          "before": "激磁",
+          "status": "partially_supported_pending_lexical_pos",
+          "decision": "retain_pending",
+          "pos": "已核：excite 的現在分詞；未核：獨立電學 adj. 或獨立 n.",
+          "domainOrRegister": "電機工程／磁場",
+          "finding": "MW exciting 明列 present participle of excite；MW excite 2b直接定義產生磁場。Collins 電機工程專門 excite 詞條同時列 progressive exciting 與對線圈供電產生磁場的定義。因此不是無據的電學義，也不是只能由 exciting current 片語倒推。但這些證據不能直接把 exciting 核准為獨立電學形容詞，亦不能把激磁視為已核實的獨立名詞。",
+          "afterCandidate": "激磁〔電學；已證為 excite 的現在分詞，原摘要詞性待釐清〕",
+          "sourceIds": [
+            "mw_exciting",
+            "mw_excite",
+            "collins_excite_electrical",
+            "ned1897_exciting",
+            "cdict_exciting_provenance"
+          ],
+          "supportedReclassificationCandidate": "（excite 的現在分詞，電學）激磁",
+          "conditionalAdjectiveCandidateIfVerified": "（形容詞，電學）激磁的",
+          "missingEvidence": "如要保留為獨立電學形容詞，須核對可靠詞典原站或原書 exciting 形容詞中明列激發電流／磁場的義項。現行 OED 原站未取得正文；二手論文摘錄提及此義但未用作核准證據。",
+          "usageCaution": "1897年原書印刷頁381末至382初有獨立動作名詞，頁382有獨立分詞形容詞，但兩條均未明列磁場義。不得將它們的一般定義或後世轉載直接升格為已核過的專門形容詞。若採已核現在分詞候選，應明示詞形，不把主詞性從 adj. 改為 v.。"
+        }
+      ],
+      "afterCandidate": {
+        "meaningZh": "令人興奮的；刺激的；激磁〔電學；已證為 excite 的現在分詞，原摘要詞性待釐清〕"
+      },
+      "candidateScope": "只提供現有中文義的最小文字／領域／詞性標示候選；未套用，不更動主詞性或審核狀態。",
+      "wholeCardReviewedAuthorized": false,
+      "reviewStatusRecommendation": "summary_partially_supported_pending_lexical_pos",
+      "notAuthorizedByEvidence": [
+        "直接刪除激磁",
+        "把動詞現在分詞證據說成獨立電學形容詞證據",
+        "把 exciting current 片語的詞性轉嫁為 exciting 名詞",
+        "只因查到現在分詞就把主詞性改成 v.",
+        "升格整卡 reviewed"
+      ]
+    },
+    {
+      "wordId": "W000776",
+      "word": "sight",
+      "before": {
+        "wordId": "W000776",
+        "word": "sight",
+        "wordVariants": [
+          "sight"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（名詞）景觀；景象；視力；眼界；閱讀；（動詞）看見；發現；瞄準",
+        "meaningEn": "(n.) the ability or act of seeing; something seen, especially an impressive view or scene. (v.) to catch sight of, spot, or aim using sights.",
+        "usagePattern": "at first sight; catch sight of; lose sight of",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "sight",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "乍看之下；瞥見；失去視線"
+      },
+      "overallFinding": "八項現有中文均可保留；閱讀有單字名詞正文支持，不需要借 sight-reading。眼界與發現須限義，避免泛化。",
+      "senseFindings": [
+        {
+          "before": "景觀",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "n.",
+          "domainOrRegister": "一般；名勝景點義常用複數",
+          "finding": "MW 名詞1為看見的事物，2a為值得一看的事物；Collins 名詞條目亦列景色、景觀。",
+          "afterCandidate": "景觀",
+          "sourceIds": [
+            "mw_sight",
+            "collins_sight"
+          ],
+          "usageCaution": "若專指一地名勝通常用 sights；並非所有景觀義都必須複數。"
+        },
+        {
+          "before": "景象",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "n.",
+          "domainOrRegister": "一般",
+          "finding": "MW 名詞1直接指所見景象；Collins COBUILD 名詞3直接指看見的事物。",
+          "afterCandidate": "景象",
+          "sourceIds": [
+            "mw_sight",
+            "collins_sight"
+          ]
+        },
+        {
+          "before": "視力",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "n.",
+          "domainOrRegister": "一般感官能力",
+          "finding": "MW 名詞4a、Collins 名詞1直接列看見的能力。",
+          "afterCandidate": "視力",
+          "sourceIds": [
+            "mw_sight",
+            "collins_sight"
+          ]
+        },
+        {
+          "before": "眼界",
+          "status": "supported_requires_scope",
+          "decision": "qualify",
+          "pos": "n.",
+          "domainOrRegister": "視野；比喻看法／判斷",
+          "finding": "MW 名詞6b為視覺範圍，4b–c為心智感知／看法；Collins 英式名詞3、4直接區分視野與看法／判斷。",
+          "afterCandidate": "眼界（視野／看法）",
+          "sourceIds": [
+            "mw_sight",
+            "collins_sight"
+          ],
+          "usageCaution": "不直接擴充為所有人生閱歷、知識廣博或見多識廣。Collins 相鄰 insight／skill 義另標 obsolete，不把該標籤錯貼到現行視野／看法義。"
+        },
+        {
+          "before": "閱讀",
+          "status": "supported_requires_semantic_precision",
+          "decision": "qualify",
+          "pos": "n.",
+          "domainOrRegister": "閱覽／審閱",
+          "finding": "MW sight 名詞5b在單字條目直接以 inspection, perusal 定義；同站 perusal 名詞明說 reading or examining。這是獨立名詞義的直接連結核對，不是從 sight-reading 或 read at sight 片語反推。",
+          "afterCandidate": "閱讀（閱覽／審閱）",
+          "sourceIds": [
+            "mw_sight",
+            "mw_perusal"
+          ],
+          "usageCaution": "不表示 sight 可無限制取代所有 reading，不把名詞閱讀誤列為 sight 的動詞，也不改譯成音樂視奏。原站未為此義標古語或俚語。"
+        },
+        {
+          "before": "看見",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "v.t.",
+          "domainOrRegister": "一般視覺；常指初見或短暫看見",
+          "finding": "MW 動詞1、Collins 及物動詞21／22直接定義看見、瞥見。",
+          "afterCandidate": "看見",
+          "sourceIds": [
+            "mw_sight",
+            "collins_sight"
+          ]
+        },
+        {
+          "before": "發現",
+          "status": "supported_requires_visual_scope",
+          "decision": "qualify",
+          "pos": "v.t.",
+          "domainOrRegister": "視覺辨見",
+          "finding": "Collins COBUILD 動詞4與名詞條目後的及物動詞均為看見／注意到，支持以視覺發現。",
+          "afterCandidate": "發現（以視覺看見）",
+          "sourceIds": [
+            "collins_sight",
+            "mw_sight"
+          ],
+          "usageCaution": "不是泛指研究發明、得知事實或 discover 的全部意義。"
+        },
+        {
+          "before": "瞄準",
+          "status": "supported_requires_aiming_scope",
+          "decision": "qualify",
+          "pos": "v.t. / v.i.",
+          "domainOrRegister": "射擊／儀器瞄準",
+          "finding": "MW 及物動詞3為用瞄準器瞄準，不及物動詞1為瞄準；Collins 亦明列。",
+          "afterCandidate": "瞄準",
+          "sourceIds": [
+            "mw_sight",
+            "collins_sight"
+          ],
+          "usageCaution": "主要是以瞄準器或視線對準，不把 set one’s sights on 的抱負片語混作這個動詞義。"
+        }
+      ],
+      "afterCandidate": {
+        "meaningZh": "（名詞）景觀；景象；視力；眼界（視野／看法）；閱讀（閱覽／審閱）；（動詞）看見；發現（以視覺看見）；瞄準"
+      },
+      "candidateScope": "只提供現有中文義的最小文字／領域／詞性標示候選；未套用，不更動主詞性或審核狀態。",
+      "wholeCardReviewedAuthorized": false,
+      "reviewStatusRecommendation": "summary_supported_with_qualifications",
+      "notAuthorizedByEvidence": [
+        "因閱讀少見而刪除",
+        "以 sight-reading 片語取代單字閱讀名詞",
+        "將閱讀列為 sight 動詞",
+        "把眼界一律當作廣博人生閱歷",
+        "升格整卡 reviewed"
+      ]
+    },
+    {
+      "wordId": "W000911",
+      "word": "touch",
+      "before": {
+        "wordId": "W000911",
+        "word": "touch",
+        "wordVariants": [
+          "touch"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（名詞）觸覺；碰；觸；機靈；（動詞）觸碰；使感動",
+        "meaningEn": "(v.) to put your hand or fingers on something in order to feel it, or to make someone feel strong emotion; (n.) the sense that lets you feel things with your skin",
+        "usagePattern": "touch something; be touched by N; keep in touch",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "touch",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "觸碰某物；為……感動；保持聯絡"
+      },
+      "overallFinding": "六項均有單字正文依據。機靈須限定心智敏銳、應對分寸；不是把 tact 的字源誤作 touch 詞義。",
+      "senseFindings": [
+        {
+          "before": "觸覺",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "n.",
+          "domainOrRegister": "一般感官",
+          "finding": "MW touch 名詞2直接定義皮膚等接受壓力刺激的感覺；Collins 名詞31亦為觸覺。",
+          "afterCandidate": "觸覺",
+          "sourceIds": [
+            "mw_touch",
+            "collins_touch"
+          ]
+        },
+        {
+          "before": "碰",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "n.",
+          "domainOrRegister": "接觸動作",
+          "finding": "MW 名詞1直接定義接觸的動作或事實，名詞4a亦列輕碰、輕推。",
+          "afterCandidate": "碰",
+          "sourceIds": [
+            "mw_touch"
+          ]
+        },
+        {
+          "before": "觸",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "n.",
+          "domainOrRegister": "接觸動作／狀態",
+          "finding": "同一單字名詞1支持接觸；與碰部分重疊，但本輪不為精簡刪除其中一項。",
+          "afterCandidate": "觸",
+          "sourceIds": [
+            "mw_touch",
+            "collins_touch"
+          ]
+        },
+        {
+          "before": "機靈",
+          "status": "supported_requires_semantic_precision",
+          "decision": "qualify",
+          "pos": "n.",
+          "domainOrRegister": "比喻：心智敏銳、待人處事的應對分寸",
+          "finding": "MW touch 名詞6直接列心智或道德敏銳、反應或 tact；Collins Webster’s New World 名詞33與 Random House 名詞39亦有心智敏感／理解，並以難相處的人、與人交往作例。不是由 tact 的拉丁字源、近義詞表或 have a touch 片語反推。",
+          "afterCandidate": "機靈（敏銳、應對的分寸）",
+          "sourceIds": [
+            "mw_touch",
+            "collins_touch",
+            "mw_tact_boundary"
+          ],
+          "usageCaution": "原譯太簡略時易被誤解為一般聰明、反應快或狡黠。本候選限定到正文已證的敏銳／應對，不增添泛稱 intelligence。touch 名詞已直接寫 tact，另查 tact 只為限縮譯義，不作替代單字證據。原站未標 archaic 或 slang。"
+        },
+        {
+          "before": "觸碰",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "v.t. / v.i.",
+          "domainOrRegister": "一般接觸",
+          "finding": "MW 及物動詞1–4、Collins 動詞1以及不及物接觸義直接支持。",
+          "afterCandidate": "觸碰",
+          "sourceIds": [
+            "mw_touch",
+            "collins_touch"
+          ]
+        },
+        {
+          "before": "使感動",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "v.t.",
+          "domainOrRegister": "情感",
+          "finding": "MW 及物動詞9a直接指使生同情感受；Collins 亦列引起感情。",
+          "afterCandidate": "使感動",
+          "sourceIds": [
+            "mw_touch",
+            "collins_touch"
+          ]
+        }
+      ],
+      "afterCandidate": {
+        "meaningZh": "（名詞）觸覺；碰；觸；機靈（敏銳、應對的分寸）；（動詞）觸碰；使感動"
+      },
+      "candidateScope": "只提供現有中文義的最小文字／領域／詞性標示候選；未套用，不更動主詞性或審核狀態。",
+      "wholeCardReviewedAuthorized": false,
+      "reviewStatusRecommendation": "summary_supported_with_qualification",
+      "notAuthorizedByEvidence": [
+        "直接刪除機靈",
+        "把 touch 與 tact 當作同一詞",
+        "僅因 tact 字源為觸摸便核准 touch 機靈義",
+        "把機靈擴成所有聰明或智力",
+        "升格整卡 reviewed"
+      ]
+    },
+    {
+      "wordId": "W005152",
+      "word": "checkup",
+      "before": {
+        "wordId": "W005152",
+        "word": "checkup",
+        "wordVariants": [
+          "checkup"
+        ],
+        "level": "LV6",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "審查；鑑定；健康檢查",
+        "meaningEn": "a thorough physical examination; includes a variety of tests depending on the age and sex and health of the person",
+        "usagePattern": "have/get a checkup; a dental/medical checkup",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "checkup",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "接受檢查；牙科／健康檢查"
+      },
+      "overallFinding": "三項均可保留在明確的名詞範圍；審查是一般檢查，鑑定只支持核實狀況／準確性，不證明專業真偽或估價鑑定的泛用義。",
+      "senseFindings": [
+        {
+          "before": "審查",
+          "status": "supported_requires_scope",
+          "decision": "qualify",
+          "pos": "n.",
+          "domainOrRegister": "一般檢查／核查；不只醫療",
+          "finding": "Collins 英式名詞1為檢查是否正常，美式 Webster’s New World 為 examination or investigation；Random House 名詞2為核實、準確性或比較所做的細查。",
+          "afterCandidate": "審查（檢查、核實）",
+          "sourceIds": [
+            "collins_checkup",
+            "mw_checkup"
+          ],
+          "usageCaution": "這是名詞 checkup 的直接義項，不是用 check up on 的片語動詞代證。亦不等同每種正式行政審核或審判。"
+        },
+        {
+          "before": "鑑定",
+          "status": "supported_only_as_bounded_translation",
+          "decision": "qualify",
+          "pos": "n.",
+          "domainOrRegister": "核實物件狀況、正確性或比較所作的查驗",
+          "finding": "Collins Random House checkup 名詞2直接列為核實、準確性、比較而作的檢查／細查；例為馬達檢查。將原譯鑑定限定到查驗狀況或準確性，是依英文定義所作的翻譯判斷，不冒稱原站英漢字典逐字寫鑑定。",
+          "afterCandidate": "鑑定（查驗狀況或準確性）",
+          "sourceIds": [
+            "collins_checkup",
+            "mw_checkup",
+            "cdict_checkup_provenance"
+          ],
+          "translationInference": true,
+          "usageCaution": "未取得 checkup 可泛指藝術品真偽鑑別、專家估價、身分鑑定或正式認證的獨立原站義項，不能以此候選授權這些擴張。中文彙編與原摘要完全同列，但只作追查線索。若產品要求鑑定必須涵蓋上述專業認證，該擴張須另留 pending，不能用一般 scrutiny 代證。"
+        },
+        {
+          "before": "健康檢查",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "n.",
+          "domainOrRegister": "醫療／牙科",
+          "finding": "Collins 與 MW 都在 checkup 單字名詞下直接列例行身體或牙科檢查。",
+          "afterCandidate": "健康檢查",
+          "sourceIds": [
+            "collins_checkup",
+            "mw_checkup"
+          ]
+        }
+      ],
+      "afterCandidate": {
+        "meaningZh": "審查（檢查、核實）；鑑定（查驗狀況或準確性）；健康檢查"
+      },
+      "candidateScope": "只提供現有中文義的最小文字／領域／詞性標示候選；未套用，不更動主詞性或審核狀態。",
+      "wholeCardReviewedAuthorized": false,
+      "reviewStatusRecommendation": "summary_supported_with_bounded_translation",
+      "notAuthorizedByEvidence": [
+        "因非醫療義少見而刪除審查或鑑定",
+        "用 check up on 的片語義直接代證單字名詞",
+        "宣稱 checkup 一般等於專業真偽鑑別、估價或正式認證",
+        "升格整卡 reviewed"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "collins_excited",
+      "title": "Collins: excited（含 Webster’s New World、Random House）",
+      "url": "https://www.collinsdictionary.com/dictionary/english/excited",
+      "publisher": "HarperCollins；分列各詞典",
+      "evidenceMode": "page_body_read",
+      "readScope": "獨立形容詞的一般情緒義、英式第4義、Webster’s New World physics 第2義。",
+      "excerpts": [
+        "emotionally aroused",
+        "occupying an energy level above the ground state",
+        "in a state of excitation"
+      ],
+      "notes": "單字 excited 的獨立形容詞正文；不靠 excited state 複合詞代證。"
+    },
+    {
+      "sourceId": "ned1897_excited",
+      "title": "A New English Dictionary on Historical Principles，Vol. III, Part II: E（1897），excited，p.381",
+      "url": "https://archive.org/download/oxforddictionary0003unse/page/n390.jpg",
+      "publisher": "Oxford, Clarendon Press；Internet Archive 的 Marygrove College Library 原書掃描",
+      "evidenceMode": "original_scan_visual_and_ocr_read",
+      "readScope": "印刷頁381中欄底部 excited, ppl. a.；右欄頂部第2a義；實際檢視整頁影像。",
+      "excerpts": [
+        "ppl. a.",
+        "Electricity and Magnetism",
+        "In which electrical or magnetic action has been induced; electrized, magnetized."
+      ],
+      "notes": "書目、年份及出版者由原掃描館藏記錄核對。已把OCR詞頭誤辨校回 ppl. a.，並核對右欄第2a確屬 excited。沒有把 nearby excite 的標籤誤套。頁像上的日期與WEHD修訂轉錄略有差異，採原像。",
+      "catalogUrl": "https://archive.org/details/oxforddictionary0003unse"
+    },
+    {
+      "sourceId": "collins_exciting",
+      "title": "Collins: exciting",
+      "url": "https://www.collinsdictionary.com/dictionary/english/exciting",
+      "publisher": "HarperCollins；含 Webster’s New World 與 Random House",
+      "evidenceMode": "page_body_read",
+      "readScope": "三本詞典的獨立形容詞定義。",
+      "excerpts": [
+        "causing excitement; stirring; stimulating"
+      ],
+      "notes": "已讀獨立形容詞正文，但本頁沒有專門電學形容詞義；不能以未收錄斷言該義不存在。"
+    },
+    {
+      "sourceId": "mw_exciting",
+      "title": "Merriam-Webster: exciting",
+      "url": "https://www.merriam-webster.com/dictionary/exciting",
+      "publisher": "Merriam-Webster",
+      "evidenceMode": "page_body_read",
+      "readScope": "Entry 1 adjective 與 Entry 2 詞形欄。",
+      "excerpts": [
+        "producing excitement",
+        "present participle of excite"
+      ],
+      "notes": "直接證一般形容詞及 excite 現在分詞，不直接證獨立電學形容詞。"
+    },
+    {
+      "sourceId": "mw_excite",
+      "title": "Merriam-Webster: excite",
+      "url": "https://www.merriam-webster.com/dictionary/excite",
+      "publisher": "Merriam-Webster",
+      "evidenceMode": "page_body_read",
+      "readScope": "及物動詞2a–b、4及詞形欄。",
+      "excerpts": [
+        "excited; exciting",
+        "to produce a magnetic field in"
+      ],
+      "notes": "單字動詞的磁場義，支援將 exciting 明標為 excite 的現在分詞；不冒稱它是 exciting 的獨立形容詞定義。"
+    },
+    {
+      "sourceId": "collins_excite_electrical",
+      "title": "Collins: excite，含 COBUILD Key Words for Electrical Engineering",
+      "url": "https://www.collinsdictionary.com/dictionary/english/excite",
+      "publisher": "HarperCollins",
+      "evidenceMode": "page_body_read",
+      "readScope": "英式動詞7、Webster’s New World electricity 4a–b、電機工程專門詞條及詞形欄。",
+      "excerpts": [
+        "(progressive) exciting",
+        "This type of machine is excited with a concentrated winding located on each pole."
+      ],
+      "notes": "專門詞條的說明是電流供給發電機／馬達線圈以產生磁場。標 electrical power、motor or generator 與 verb；不是另立 exciting adjective。"
+    },
+    {
+      "sourceId": "ned1897_exciting",
+      "title": "A New English Dictionary on Historical Principles（1897），exciting，pp.381–382",
+      "url": "https://archive.org/download/oxforddictionary0003unse/page/n391.jpg",
+      "publisher": "Oxford, Clarendon Press；Internet Archive 原書掃描",
+      "evidenceMode": "original_scan_visual_and_ocr_read",
+      "readScope": "印刷頁381末動作名詞起頭及382首續文、獨立分詞形容詞。",
+      "excerpts": [
+        "vbl. sb.",
+        "The action of the verb EXCITE.",
+        "ppl. a.",
+        "That excites."
+      ],
+      "notes": "已實看頁381、382。原書形容詞舉病理 exciting cause 等，但未獨立列後世轉載提及的電流／磁場形容詞子義。這一缺項不是不存在證明，只是不足以核准該專門形容詞。",
+      "additionalPageUrl": "https://archive.org/download/oxforddictionary0003unse/page/n390.jpg"
+    },
+    {
+      "sourceId": "mw_sight",
+      "title": "Merriam-Webster: sight",
+      "url": "https://www.merriam-webster.com/dictionary/sight",
+      "publisher": "Merriam-Webster",
+      "evidenceMode": "page_body_read",
+      "readScope": "名詞1、2a、4a–c、5b、6b；及物動詞1、3及不及物動詞1。",
+      "excerpts": [
+        "inspection, perusal",
+        "the range of vision",
+        "to get or catch sight of",
+        "to aim by means of sights"
+      ],
+      "notes": "5b為單字名詞義，直接支援閱覽；其他原摘要義亦在單字詞條中。"
+    },
+    {
+      "sourceId": "mw_perusal",
+      "title": "Merriam-Webster: perusal",
+      "url": "https://www.merriam-webster.com/dictionary/perusal",
+      "publisher": "Merriam-Webster",
+      "evidenceMode": "page_body_read",
+      "readScope": "名詞完整定義。",
+      "excerpts": [
+        "a reading or examining of something"
+      ],
+      "notes": "只解開 sight 5b 的直接定義詞，不以別字讀音或字源補造 sight 詞義。"
+    },
+    {
+      "sourceId": "collins_sight",
+      "title": "Collins: sight",
+      "url": "https://www.collinsdictionary.com/dictionary/english/sight",
+      "publisher": "HarperCollins；含 Webster’s New World 與 Random House",
+      "evidenceMode": "page_body_read",
+      "readScope": "COBUILD 名詞1–3、動詞4；英式名詞3–4、6–7及動詞21–23；美式相應條目。",
+      "excerpts": [
+        "range of mental vision; point of view; judgment",
+        "to see, view, or glimpse"
+      ],
+      "notes": "區分視野、看法與相鄰 obsolete insight／skill；後者不用于原眼界義標籤。"
+    },
+    {
+      "sourceId": "mw_touch",
+      "title": "Merriam-Webster: touch",
+      "url": "https://www.merriam-webster.com/dictionary/touch",
+      "publisher": "Merriam-Webster",
+      "evidenceMode": "page_body_read",
+      "readScope": "名詞1、2、4a、6及及物動詞1–4、9a。",
+      "excerpts": [
+        "mental or moral sensitiveness, responsiveness, or tact",
+        "the act or fact of touching",
+        "to move to sympathetic feeling"
+      ],
+      "notes": "機靈的受限語義是 touch 名詞6直接列義，不是借 tact 的字源。"
+    },
+    {
+      "sourceId": "collins_touch",
+      "title": "Collins: touch",
+      "url": "https://www.collinsdictionary.com/dictionary/english/touch",
+      "publisher": "HarperCollins；含 Webster’s New World 與 Random House",
+      "evidenceMode": "page_body_read",
+      "readScope": "Webster’s New World 名詞30–34；Random House 名詞35–40；一般接觸與情感動詞。",
+      "excerpts": [
+        "mental or moral sensitivity",
+        "mental or moral perception, sensitivity, or understanding"
+      ],
+      "notes": "兩套原站詞典交叉支持心智敏銳、理解與應對，與單純 skill／knack 義分列。"
+    },
+    {
+      "sourceId": "mw_tact_boundary",
+      "title": "Merriam-Webster: tact（譯義邊界對照）",
+      "url": "https://www.merriam-webster.com/dictionary/tact",
+      "publisher": "Merriam-Webster",
+      "evidenceMode": "page_body_read",
+      "readScope": "名詞1、2及同義詞辨析。",
+      "excerpts": [
+        "sensitive mental or aesthetic perception",
+        "skill and grace in dealing with others"
+      ],
+      "notes": "只幫助釐清 touch 定義中 tact 的意思，不因兩詞字源相近便推定 touch 義項。"
+    },
+    {
+      "sourceId": "collins_checkup",
+      "title": "Collins: checkup",
+      "url": "https://www.collinsdictionary.com/dictionary/english/checkup",
+      "publisher": "HarperCollins；含 Webster’s New World 與 Random House",
+      "evidenceMode": "page_body_read",
+      "readScope": "英式名詞1–2、Webster’s New World 名詞、Random House 名詞1–2。",
+      "excerpts": [
+        "an examination or investigation",
+        "an examination or close scrutiny, as for verification, accuracy, or comparison"
+      ],
+      "notes": "直接單字名詞；相鄰 verb check up 另列，不借用。鑑定候選只限核實狀況／準確性，是有邊界的中文翻譯判斷。"
+    },
+    {
+      "sourceId": "mw_checkup",
+      "title": "Merriam-Webster: checkup",
+      "url": "https://www.merriam-webster.com/dictionary/checkup",
+      "publisher": "Merriam-Webster",
+      "evidenceMode": "page_body_read",
+      "readScope": "名詞完整定義與車輛、例行醫療／牙科例。",
+      "excerpts": [
+        "a general examination of someone's or something's condition",
+        "a periodic medical or dental examination"
+      ],
+      "notes": "證明 checkup 不只醫療，但不證明泛稱一切專業鑑定。"
+    },
+    {
+      "sourceId": "cdict_exciting_provenance",
+      "title": "CDICT 所載朗道英漢字典: exciting",
+      "url": "https://cdict.net/q/exciting",
+      "publisher": "CDICT；原英漢詞典版次頁碼未核",
+      "evidenceMode": "compilation_body_read_provenance_only",
+      "readScope": "Source(1) 普通形容詞與分行電學義。",
+      "excerpts": [
+        "a. 令人興奮的, 刺激的",
+        "〖電〗 激磁"
+      ],
+      "notes": "原摘要與此序列相同，且電學領域標籤消失。此處電學行沒有獨立詞性，不能據此核准為 adj. 或 n.。只作追查線索。"
+    },
+    {
+      "sourceId": "cdict_checkup_provenance",
+      "title": "CDICT 所載朗道英漢字典: checkup",
+      "url": "https://cdict.net/q/checkup",
+      "publisher": "CDICT；原英漢詞典版次頁碼未核",
+      "evidenceMode": "compilation_body_read_provenance_only",
+      "readScope": "Source(1) 與其他彙編義列。",
+      "excerpts": [
+        "n. 審查, 鑑定, 健康檢查"
+      ],
+      "notes": "與原摘要同序。只作出處追查，不把多個相同字典資料源當作多份獨立證據。"
+    }
+  ],
+  "accessLimitations": [
+    {
+      "url": "https://www.oed.com/dictionary/excited_adj",
+      "result": "原站回傳需要JavaScript的真人驗證頁，沒有正文；未處理驗證或繞過限制。以公開1897原書掃描核對同名詞條。"
+    },
+    {
+      "url": "https://www.oed.com/dictionary/exciting_adj",
+      "result": "原站回傳403，未取得正文，未繞過。公開1897原書不含後世二手摘錄的專門電學子義，因此該獨立形容詞分類仍 pending。"
+    },
+    {
+      "url": "https://wehd.com/32/Excited.html",
+      "result": "讀到2025修訂的歷史詞典轉錄，只作原書定位；已另核1897原書頁381，不將轉錄直接冒稱原著。"
+    },
+    {
+      "url": "https://wehd.com/32/Exciting_ppl_a.html",
+      "result": "讀到歷史形容詞轉錄，並核1897原書頁382；未見獨立磁場義。"
+    },
+    {
+      "url": "https://archive.org/stream/oxforddictionary0003unse/oxforddictionary0003unse_djvu.txt",
+      "result": "網頁讀取因長度拒讀；正常公開下載OCR成功，並下載公開單頁影像實看頁381、382。頁像服務n390對應印刷381，n391對應印刷382，已按像上頁碼校正，不以機器頁序猜頁碼。"
+    },
+    {
+      "url": "https://truthbook.com/urantia-book-viewer-core/1924-Websters-Dictionary-Edition/LETTER-E.pdf",
+      "result": "公開原書PDF下載、文字提取成功；excite 電學動詞正文可查，未另核此本頁像，故不把它列作 excited／exciting 獨立形容詞核准依據。"
+    }
+  ]
+}

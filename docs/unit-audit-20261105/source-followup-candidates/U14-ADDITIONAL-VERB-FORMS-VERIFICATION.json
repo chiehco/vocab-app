@@ -1,0 +1,1588 @@
+{
+  "title": "U14 完整原單元補入詞：16 個缺漏動詞三態追加查證",
+  "checkedAtUtc": "2026-11-05T12:03:23.848190+00:00",
+  "sourceCommit": "3b14fc8ac56ca58dd715a088340d913e5230a0b7",
+  "sourceWordsBlobSha": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+  "scope": "僅本次來源清單的16個 U14 正式詞彙 ID；先前438個研究詞與 U14 原31個檢查詞不重複納入。painting 是名詞誤判，已排除。本交付不代表整個 U14 或任何整張字卡通過。",
+  "completionStatus": "completed",
+  "coverage": {
+    "expectedEntries": 16,
+    "entriesResearched": 16,
+    "lexicallyVerified": 16,
+    "verifiedCandidates": 16,
+    "pendingProductRepresentation": 0,
+    "pendingMissingLexicalEvidence": 0,
+    "notYetResearched": 0,
+    "ruleOnlyInferences": 0,
+    "productApprovals": 0
+  },
+  "unitCoverage": [
+    {
+      "unit": "LV1-U14",
+      "expectedAdditionalEntries": 16,
+      "entriesResearched": 16,
+      "verifiedCandidates": 16,
+      "pending": 0
+    }
+  ],
+  "method": "逐詞獨立開啟 Oxford 或 Collins 官方詞典正文，實讀明示的 past simple／past tense 及 past participle。lip 另實讀 Collins 官方 conjugation 的 Infinitive、Past 與 Past Participle，沒有以雙寫規則推算。對照動詞義、同形名詞、語域與構式；另用 Collins 專條補核 bank on、inch 的小島同形名詞、mouth 名動異音及 sight 瞄準義。沒有以搜尋摘要作定案依據。",
+  "beforeRepresentation": {
+    "marker": {
+      "$absent": true
+    },
+    "meaning": "16詞的來源快照均無 verbForms key，不是 null。本次沒有直接重讀 repository，套用前須核對最新值。"
+  },
+  "schemaAndDisplayConstraints": {
+    "provenance": "沿用本系列研究的三態欄位規格；本次沒有修改或直接重讀 repository。",
+    "constraint": "每詞單一 base/past/pastParticiple，sourceRef 不作為義項分流畫面。",
+    "rule": "只提出既有動詞義可共用的一組最小三態。inch／lip／neck／shoulder 雖主 POS=n.，現有中文摘要已明列另一動詞義，面板只適用該動詞；不藉此改主 POS、摘要、例句或 status。",
+    "limitation": "未實測畫面；若套用端不是明確的動詞三態面板，或不能保留既有名動詞區別，應暫停該筆套用並重新評估呈現。"
+  },
+  "implementationBoundary": [
+    "沒有修改 repository、status、Git 或已發布內容。",
+    "沒有填入 IPA、重音、音節。",
+    "candidate 只表示有直接詞典證據的最小三態提案，不是 approved、已套用或整卡通過。",
+    "套用前須以 wordId 比對最新 before，不能覆蓋已存在的 verbForms。",
+    "沒有改原摘要、詞性、例句、圖片或其他欄位。"
+  ],
+  "accessFailuresExcluded": [
+    {
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/english/check_1",
+      "result": "403 Forbidden",
+      "usedAsEvidence": false,
+      "impact": "該次讀取失敗沒有作為證據；未重試受限操作。相關詞已由其他成功實讀的官方詞典正文完成核對。"
+    },
+    {
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/english/shoulder_2",
+      "result": "403 Forbidden",
+      "usedAsEvidence": false,
+      "impact": "該次讀取失敗沒有作為證據；未重試受限操作。相關詞已由其他成功實讀的官方詞典正文完成核對。"
+    },
+    {
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/english/look_1",
+      "result": "403 Forbidden",
+      "usedAsEvidence": false,
+      "impact": "該次讀取失敗沒有作為證據；未重試受限操作。相關詞已由其他成功實讀的官方詞典正文完成核對。"
+    },
+    {
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/english/miss_1",
+      "result": "403 Forbidden",
+      "usedAsEvidence": false,
+      "impact": "該次讀取失敗沒有作為證據；未重試受限操作。相關詞已由其他成功實讀的官方詞典正文完成核對。"
+    },
+    {
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/english/rock_2",
+      "result": "403 Forbidden",
+      "usedAsEvidence": false,
+      "impact": "該次讀取失敗沒有作為證據；未重試受限操作。相關詞已由其他成功實讀的官方詞典正文完成核對。"
+    },
+    {
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/english/roll_1",
+      "result": "403 Forbidden",
+      "usedAsEvidence": false,
+      "impact": "該次讀取失敗沒有作為證據；未重試受限操作。相關詞已由其他成功實讀的官方詞典正文完成核對。"
+    },
+    {
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/english/worry_1",
+      "result": "403 Forbidden",
+      "usedAsEvidence": false,
+      "impact": "該次讀取失敗沒有作為證據；未重試受限操作。相關詞已由其他成功實讀的官方詞典正文完成核對。"
+    },
+    {
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/english/bank-on",
+      "result": "403 Forbidden",
+      "usedAsEvidence": false,
+      "impact": "該次讀取失敗沒有作為證據；未重試受限操作。相關詞已由其他成功實讀的官方詞典正文完成核對。"
+    }
+  ],
+  "searchSnippetOnlyEvidenceUsed": false,
+  "pendingWords": [],
+  "excludedFalsePositives": [
+    {
+      "wordId": "W001608",
+      "word": "painting",
+      "reason": "Current head is a nominal painting entry, not base-form paint; nominal Chinese 塗漆 does not authorize separate verbForms."
+    }
+  ],
+  "nonBlockingFindings": [
+    {
+      "word": "lip",
+      "wordId": "W000496",
+      "note": "lipped 的過去式及過去分詞由官方變化表直接明列，非由拼字規則推定；主 POS=n. 保留。"
+    },
+    {
+      "word": "neck",
+      "wordId": "W000573",
+      "note": "親吻義標 old-fashioned、informal，通常 be necking；來源仍明列 necked 兩態，保留這個語域限制，不把它改成一般身體名詞義。"
+    },
+    {
+      "word": "bank",
+      "wordId": "W000061",
+      "note": "指望義要使用 bank on；只補 bank 的變化，不把 on 加入原形，也不改 river bank 名詞例句。"
+    },
+    {
+      "word": "mouth",
+      "wordId": "W000558",
+      "note": "名詞嘴巴和動詞無聲說話同拼字但異音；這次只提三態，不改發音欄。"
+    },
+    {
+      "word": "inch",
+      "wordId": "W000429",
+      "note": "小島義的 Scottish and Irish 標記只屬同形名詞；慢慢前進是另一動詞用法，主 POS=n. 保留。"
+    },
+    {
+      "word": "shoulder",
+      "wordId": "W000770",
+      "note": "主 POS=n. 與 status=draft 保留；shouldered 候選只服務摘要已有的肩負動詞義。"
+    }
+  ],
+  "entries": [
+    {
+      "wordId": "W000058",
+      "word": "ball",
+      "units": [
+        "LV1-U14"
+      ],
+      "cardIds": [
+        "LV1-U14-09"
+      ],
+      "sourceSnapshotLevel": "LV1",
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "draft",
+      "sourceMeaningZh": "球；舞會；球狀物；捏成球形",
+      "sourceMeaningEn": "(n.) a round object used in games; a rounded object; a formal social event with dancing. (v.) to form or gather into a rounded mass.",
+      "sourceUsagePattern": "play with a ball; throw/catch a ball; a ball game",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U14-09",
+          "captionEn": "The children kicked a ball across the playground.",
+          "captionZh": "孩子們把球踢過遊樂場。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "只適用現有「捏成球形／成團」動詞義；U14 例句 kicked a ball 使用名詞，不改例句。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "ball",
+        "past": "balled",
+        "pastParticiple": "balled"
+      },
+      "proposedVerbForms": {
+        "base": "ball",
+        "past": "balled",
+        "pastParticiple": "balled",
+        "sourceRef": "https://www.oxfordlearnersdictionaries.com/definition/english/ball_2"
+      },
+      "sourceSupportedForms": {
+        "base": "ball",
+        "past": [
+          "balled"
+        ],
+        "pastParticiple": [
+          "balled"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "Oxford University Press",
+          "work": "Oxford Advanced Learner’s Dictionary",
+          "url": "https://www.oxfordlearnersdictionaries.com/definition/english/ball_2",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past simple balled; past participle balled",
+          "location": "Verb Forms；動詞義 1–2",
+          "scope": "直接明示 past／past simple 與 past participle；base 由同頁詞目及原形欄確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立開啟官方正文，實讀所列欄位或段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "senseAndConstructionEvidence": {
+        "url": "https://www.oxfordlearnersdictionaries.com/definition/english/ball_2",
+        "location": "Verb Forms；動詞義 1–2",
+        "retrieval": "direct_dictionary_page",
+        "searchSnippetOnly": false,
+        "note": "適用義與構式據所列官方正文核對；字卡文字直接保留來源快照。"
+      },
+      "homographAndVariantRestrictions": "球、球狀物與舞會均為名詞，不將其當成動詞；北美禁忌俚語的另一動詞義不納入目前教學義項。",
+      "regionalAndConstructionRestrictions": "成團義可及物或不及物，構式為 ball (something) into something；來源只有另一性行為義標註北美、禁忌與俚語，這些標記不擴及成團義。",
+      "variantAssessment": "所讀適用動詞的主三態或官方變化表未另列變體；僅提一組最小候選，不聲稱窮盡歷史、方言或所有專業用法。",
+      "panelApplicability": "動詞三態面板只適用正式詞彙中已存在的動詞義，不適用名詞義。",
+      "representationAssessment": "本次適用動詞義沒有需要按義項／地區分開的互斥三態，單一 base/past/pastParticiple 可表達這組最小形式；這不是 UI 或整張字卡驗收。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000061",
+      "word": "bank",
+      "units": [
+        "LV1-U14"
+      ],
+      "cardIds": [
+        "LV1-U14-37"
+      ],
+      "sourceSnapshotLevel": "LV1",
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "銀行；堤；岸；庫",
+      "sourceMeaningEn": "(n.) a business that keeps and lends money for its customers; the land along the side of a river or lake; (v.) to feel sure that something will happen",
+      "sourceUsagePattern": "a bank account; the river bank; bank on N",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U14-37",
+          "captionEn": "The children sat on the river bank and watched the boats go by.",
+          "captionZh": "孩子們坐在河岸邊看船隻經過。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "現有英語摘要「指望」須在 bank on 構式使用；候選 base 是 bank，on 留在構式欄。U14 river bank 是名詞。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "bank",
+        "past": "banked",
+        "pastParticiple": "banked"
+      },
+      "proposedVerbForms": {
+        "base": "bank",
+        "past": "banked",
+        "pastParticiple": "banked",
+        "sourceRef": "https://www.oxfordlearnersdictionaries.com/definition/english/bank_2"
+      },
+      "sourceSupportedForms": {
+        "base": "bank",
+        "past": [
+          "banked"
+        ],
+        "pastParticiple": [
+          "banked"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "Oxford University Press",
+          "work": "Oxford Advanced Learner’s Dictionary",
+          "url": "https://www.oxfordlearnersdictionaries.com/definition/english/bank_2",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past simple banked; past participle banked",
+          "location": "Verb Forms；money、of plane、form piles 與 phrasal verbs",
+          "scope": "直接明示 past／past simple 與 past participle；base 由同頁詞目及原形欄確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立開啟官方正文，實讀所列欄位或段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/bank-on",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "phrasal verb",
+          "location": "COBUILD bank on；British English；American English",
+          "scope": "正文核對指望／依賴構式及語域，並非用摘要推定。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立開啟官方正文，實讀所列欄位或段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "senseAndConstructionEvidence": {
+        "url": "https://www.oxfordlearnersdictionaries.com/definition/english/bank_2",
+        "location": "Verb Forms；money、of plane、form piles 與 phrasal verbs",
+        "retrieval": "direct_dictionary_page",
+        "searchSnippetOnly": false,
+        "note": "適用義與構式據所列官方正文核對；字卡文字直接保留來源快照。"
+      },
+      "homographAndVariantRestrictions": "金融與河岸等同形名詞及不同詞源，不產生另一組三態；名詞 bank 不套動詞變化。",
+      "regionalAndConstructionRestrictions": "本次動詞主三態沒有英美拼字分歧；指望義是 bank on something／something happening。Collins 美語分項標示 US, informal，不將其當成 banked 的拼字限制。",
+      "variantAssessment": "所讀適用動詞的主三態或官方變化表未另列變體；僅提一組最小候選，不聲稱窮盡歷史、方言或所有專業用法。",
+      "panelApplicability": "動詞三態面板只適用正式詞彙中已存在的動詞義，不適用名詞義。",
+      "representationAssessment": "本次適用動詞義沒有需要按義項／地區分開的互斥三態，單一 base/past/pastParticiple 可表達這組最小形式；這不是 UI 或整張字卡驗收。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000159",
+      "word": "check",
+      "units": [
+        "LV1-U14"
+      ],
+      "cardIds": [
+        "LV1-U14-47"
+      ],
+      "sourceSnapshotLevel": "LV1",
+      "sourceSnapshotPos": "v./n.",
+      "sourceSnapshotPosAll": [
+        "v.",
+        "n."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "（動詞）檢查；核對；（名詞）支票；帳單；阻止物；寄物牌",
+      "sourceMeaningEn": "to make sure that something is correct, safe, or in good condition; a written order to a bank to pay money from your account; the bill for food and drinks in a restaurant",
+      "sourceUsagePattern": "check for N; double-check N; pay by check",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U14-47",
+          "captionEn": "Could you ask the waiter for the check? We need to leave soon.",
+          "captionZh": "你可以請服務生把帳單拿來嗎？我們得快點離開了。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "只補現有檢查、核對的動詞；U14 ask for the check 使用餐廳帳單名詞。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "check",
+        "past": "checked",
+        "pastParticiple": "checked"
+      },
+      "proposedVerbForms": {
+        "base": "check",
+        "past": "checked",
+        "pastParticiple": "checked",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/check"
+      },
+      "sourceSupportedForms": {
+        "base": "check",
+        "past": [
+          "checked"
+        ],
+        "pastParticiple": [
+          "checked"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/check",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle checked",
+          "location": "COBUILD Word forms；動詞義 1、3–7；名詞義 8、12",
+          "scope": "直接明示 past／past simple 與 past participle；base 由同頁詞目及原形欄確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立開啟官方正文，實讀所列欄位或段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "senseAndConstructionEvidence": {
+        "url": "https://www.collinsdictionary.com/dictionary/english/check",
+        "location": "COBUILD Word forms；動詞義 1、3–7；名詞義 8、12",
+        "retrieval": "direct_dictionary_page",
+        "searchSnippetOnly": false,
+        "note": "適用義與構式據所列官方正文核對；字卡文字直接保留來源快照。"
+      },
+      "homographAndVariantRestrictions": "金融名詞 check／cheque 的英美拼字差異不構成動詞 check 的過去式變體。",
+      "regionalAndConstructionRestrictions": "核對可接名詞、that／wh 子句，check on 為查看狀況；勾選義標 US、餐廳帳單義標 mainly US，不把這些限制套到一般檢查義。",
+      "variantAssessment": "所讀適用動詞的主三態或官方變化表未另列變體；僅提一組最小候選，不聲稱窮盡歷史、方言或所有專業用法。",
+      "panelApplicability": "動詞三態面板只適用正式詞彙中已存在的動詞義，不適用名詞義。",
+      "representationAssessment": "本次適用動詞義沒有需要按義項／地區分開的互斥三態，單一 base/past/pastParticiple 可表達這組最小形式；這不是 UI 或整張字卡驗收。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000341",
+      "word": "garden",
+      "units": [
+        "LV1-U14"
+      ],
+      "cardIds": [
+        "LV1-U14-38"
+      ],
+      "sourceSnapshotLevel": "LV1",
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "花園；果園；菜園；栽培花木",
+      "sourceMeaningEn": "a piece of ground near a house where flowers, vegetables, or fruit are grown; to work in a garden, growing and taking care of plants",
+      "sourceUsagePattern": "in the garden; grow N in the garden; garden (v.) on weekends",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U14-38",
+          "captionEn": "He likes to garden on weekends, growing tomatoes and roses.",
+          "captionZh": "他喜歡在週末從事園藝，種植番茄和玫瑰。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "從事園藝的動詞，適用 U14 likes to garden on weekends。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "garden",
+        "past": "gardened",
+        "pastParticiple": "gardened"
+      },
+      "proposedVerbForms": {
+        "base": "garden",
+        "past": "gardened",
+        "pastParticiple": "gardened",
+        "sourceRef": "https://www.oxfordlearnersdictionaries.com/definition/english/garden_2"
+      },
+      "sourceSupportedForms": {
+        "base": "garden",
+        "past": [
+          "gardened"
+        ],
+        "pastParticiple": [
+          "gardened"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "Oxford University Press",
+          "work": "Oxford Advanced Learner’s Dictionary",
+          "url": "https://www.oxfordlearnersdictionaries.com/definition/english/garden_2",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past simple gardened; past participle gardened",
+          "location": "Verb Forms；[intransitive] 定義",
+          "scope": "直接明示 past／past simple 與 past participle；base 由同頁詞目及原形欄確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立開啟官方正文，實讀所列欄位或段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "senseAndConstructionEvidence": {
+        "url": "https://www.oxfordlearnersdictionaries.com/definition/english/garden_2",
+        "location": "Verb Forms；[intransitive] 定義",
+        "retrieval": "direct_dictionary_page",
+        "searchSnippetOnly": false,
+        "note": "適用義與構式據所列官方正文核對；字卡文字直接保留來源快照。"
+      },
+      "homographAndVariantRestrictions": "花園、菜園等名詞與 garden 動詞分開；本候選不是名詞複數 gardens。",
+      "regionalAndConstructionRestrictions": "本頁標不及物動詞；garden organically 等修飾不改三態，所讀三態欄沒有地區限制。",
+      "variantAssessment": "所讀適用動詞的主三態或官方變化表未另列變體；僅提一組最小候選，不聲稱窮盡歷史、方言或所有專業用法。",
+      "panelApplicability": "動詞三態面板只適用正式詞彙中已存在的動詞義，不適用名詞義。",
+      "representationAssessment": "本次適用動詞義沒有需要按義項／地區分開的互斥三態，單一 base/past/pastParticiple 可表達這組最小形式；這不是 UI 或整張字卡驗收。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000429",
+      "word": "inch",
+      "units": [
+        "LV1-U14"
+      ],
+      "cardIds": [
+        "LV1-U14-20"
+      ],
+      "sourceSnapshotLevel": "LV1",
+      "sourceSnapshotPos": "n.",
+      "sourceSnapshotPosAll": [
+        "n."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "（名詞）英寸；身高；（蘇格蘭同形名詞）小島；（另有動詞義）慢慢前進",
+      "sourceMeaningEn": "a unit of length equal to one twelfth of a foot (about 2.54 centimeters); a very small amount or distance",
+      "sourceUsagePattern": "inch by inch; every inch",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U14-20",
+          "captionEn": "The plant grew several inches taller in the sunlight.",
+          "captionZh": "這株植物在陽光下長高了好幾英寸。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "只適用現有中文摘要另列「慢慢前進」動詞義；主 POS=n. 原樣保留。U14 inches taller 使用長度名詞，不是動詞。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "inch",
+        "past": "inched",
+        "pastParticiple": "inched"
+      },
+      "proposedVerbForms": {
+        "base": "inch",
+        "past": "inched",
+        "pastParticiple": "inched",
+        "sourceRef": "https://www.oxfordlearnersdictionaries.com/definition/english/inch_2"
+      },
+      "sourceSupportedForms": {
+        "base": "inch",
+        "past": [
+          "inched"
+        ],
+        "pastParticiple": [
+          "inched"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "Oxford University Press",
+          "work": "Oxford Advanced Learner’s Dictionary",
+          "url": "https://www.oxfordlearnersdictionaries.com/definition/english/inch_2",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past simple inched; past participle inched",
+          "location": "Verb Forms；[intransitive, transitive] 定義與構式",
+          "scope": "直接明示 past／past simple 與 past participle；base 由同頁詞目及原形欄確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立開啟官方正文，實讀所列欄位或段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/inch",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "Scottish and Irish",
+          "location": "Collins English Dictionary：inch in British English 2",
+          "scope": "核對小島為另一同形名詞及其地區限制。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立開啟官方正文，實讀所列欄位或段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "senseAndConstructionEvidence": {
+        "url": "https://www.oxfordlearnersdictionaries.com/definition/english/inch_2",
+        "location": "Verb Forms；[intransitive, transitive] 定義與構式",
+        "retrieval": "direct_dictionary_page",
+        "searchSnippetOnly": false,
+        "note": "適用義與構式據所列官方正文核對；字卡文字直接保留來源快照。"
+      },
+      "homographAndVariantRestrictions": "長度名詞與另詞源、蘇格蘭及愛爾蘭的小島名詞均不使用 inched；本候選只針對緩慢移動的動詞。",
+      "regionalAndConstructionRestrictions": "可不及物 inch + 方向，或及物 inch something + 方向；inch one’s way 亦見正文。小島義的地區標記不限制動詞。",
+      "variantAssessment": "所讀適用動詞的主三態或官方變化表未另列變體；僅提一組最小候選，不聲稱窮盡歷史、方言或所有專業用法。",
+      "panelApplicability": "本面板只表示既有中文摘要「另有動詞義」的動詞變化，不改主 POS=n.、英文摘要或名詞例句。",
+      "representationAssessment": "本次適用動詞義沒有需要按義項／地區分開的互斥三態，單一 base/past/pastParticiple 可表達這組最小形式；這不是 UI 或整張字卡驗收。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000496",
+      "word": "lip",
+      "units": [
+        "LV1-U14"
+      ],
+      "cardIds": [
+        "LV1-U14-11"
+      ],
+      "sourceSnapshotLevel": "LV1",
+      "sourceSnapshotPos": "n.",
+      "sourceSnapshotPosAll": [
+        "n."
+      ],
+      "sourceSnapshotStatus": "draft",
+      "sourceMeaningZh": "（名詞）脣；口緣；脣狀構造；（另有動詞義）以嘴脣碰",
+      "sourceMeaningEn": "either of two fleshy folds of tissue that surround the mouth and play a role in speaking; (botany) either of the two parts of a bilabiate corolla or calyx",
+      "sourceUsagePattern": "one's upper/lower lip; bite one's lip",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U14-11",
+          "captionEn": "I burned my lip on a spoonful of hot soup.",
+          "captionZh": "我被一匙熱湯燙到了嘴唇。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "只適用現有中文摘要另列「以嘴脣碰」的及物動詞義；主 POS=n. 原樣保留。U14 burned my lip 使用名詞。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "lip",
+        "past": "lipped",
+        "pastParticiple": "lipped"
+      },
+      "proposedVerbForms": {
+        "base": "lip",
+        "past": "lipped",
+        "pastParticiple": "lipped",
+        "sourceRef": "https://www.collinsdictionary.com/conjugation/english/lip"
+      },
+      "sourceSupportedForms": {
+        "base": "lip",
+        "past": [
+          "lipped"
+        ],
+        "pastParticiple": [
+          "lipped"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins English Verbs conjugation table",
+          "url": "https://www.collinsdictionary.com/conjugation/english/lip",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "Infinitive: to lip; Past Participle: lipped; Past: I lipped",
+          "location": "Infinitive、Past Participle、Present、Past",
+          "scope": "直接明示 past／past simple 與 past participle；base 由同頁詞目及原形欄確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立開啟官方正文，實讀所列欄位或段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins English Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/lip",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "verb Word forms: lips, lipping, lipped",
+          "location": "Collins English Dictionary：British English 動詞義 11–14",
+          "scope": "核對以嘴唇碰為及物動詞，以及 rare 僅修飾另一低聲說義。此頁的未分項字形另以官方 conjugation 明示的 Past／Past Participle 交叉核實。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立開啟官方正文，實讀所列欄位或段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "senseAndConstructionEvidence": {
+        "url": "https://www.collinsdictionary.com/dictionary/english/lip",
+        "location": "Collins English Dictionary：British English 動詞義 11–14",
+        "retrieval": "direct_dictionary_page",
+        "searchSnippetOnly": false,
+        "note": "適用義與構式據所列官方正文核對；字卡文字直接保留來源快照。"
+      },
+      "homographAndVariantRestrictions": "嘴唇及植物部位等名詞、lip-／lipo- 組合形式不使用本三態；本案不是名詞複數 lips。",
+      "regionalAndConstructionRestrictions": "Collins 英語詞典明列 lip 的及物「以嘴唇碰」義；rare 標記屬另項「低聲說」，不能移到此義。另有管樂器用唇的專業義，未新增至現有摘要。",
+      "variantAssessment": "所讀適用動詞的主三態或官方變化表未另列變體；僅提一組最小候選，不聲稱窮盡歷史、方言或所有專業用法。",
+      "panelApplicability": "本面板只表示既有中文摘要「另有動詞義」的動詞變化，不改主 POS=n.、英文摘要或名詞例句。",
+      "representationAssessment": "本次適用動詞義沒有需要按義項／地區分開的互斥三態，單一 base/past/pastParticiple 可表達這組最小形式；這不是 UI 或整張字卡驗收。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000503",
+      "word": "look",
+      "units": [
+        "LV1-U14"
+      ],
+      "cardIds": [
+        "LV1-U14-01"
+      ],
+      "sourceSnapshotLevel": "LV1",
+      "sourceSnapshotPos": "v./n.",
+      "sourceSnapshotPosAll": [
+        "v.",
+        "n."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "（動詞）看；尋找；看起來；（名詞）一看；神色；樣子；面容",
+      "sourceMeaningEn": "to direct your eyes toward someone or something in order to see it; to try to find someone or something; to appear or seem to be a certain way; (n.) an expression on someone's face; appearance",
+      "sourceUsagePattern": "look at N; look for N; look like N",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U14-01",
+          "captionEn": "I'm looking for my keys; have you seen them?",
+          "captionZh": "我在找我的鑰匙；你有看到嗎？"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "現有看、尋找與看起來的動詞義可用同一組三態；U14 looking for my keys 為尋找構式。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "look",
+        "past": "looked",
+        "pastParticiple": "looked"
+      },
+      "proposedVerbForms": {
+        "base": "look",
+        "past": "looked",
+        "pastParticiple": "looked",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/look"
+      },
+      "sourceSupportedForms": {
+        "base": "look",
+        "past": [
+          "looked"
+        ],
+        "pastParticiple": [
+          "looked"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/look",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle looked",
+          "location": "COBUILD Word forms；using your eyes or your mind 義 1、5；seeming to be 義 1、4",
+          "scope": "直接明示 past／past simple 與 past participle；base 由同頁詞目及原形欄確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立開啟官方正文，實讀所列欄位或段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "senseAndConstructionEvidence": {
+        "url": "https://www.collinsdictionary.com/dictionary/english/look",
+        "location": "COBUILD Word forms；using your eyes or your mind 義 1、5；seeming to be 義 1、4",
+        "retrieval": "direct_dictionary_page",
+        "searchSnippetOnly": false,
+        "note": "適用義與構式據所列官方正文核對；字卡文字直接保留來源快照。"
+      },
+      "homographAndVariantRestrictions": "a look、looks 的名詞神色／外表不套動詞三態；look at、look for、look like 的差異不能刪成同一詞義。",
+      "regionalAndConstructionRestrictions": "看向用 look at，尋找用 look for；看起來可接形容詞或 like 等補語。所讀一般三態欄沒有英美異形；不同補語不造成不同過去式。",
+      "variantAssessment": "所讀適用動詞的主三態或官方變化表未另列變體；僅提一組最小候選，不聲稱窮盡歷史、方言或所有專業用法。",
+      "panelApplicability": "動詞三態面板只適用正式詞彙中已存在的動詞義，不適用名詞義。",
+      "representationAssessment": "本次適用動詞義沒有需要按義項／地區分開的互斥三態，單一 base/past/pastParticiple 可表達這組最小形式；這不是 UI 或整張字卡驗收。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000544",
+      "word": "miss",
+      "units": [
+        "LV1-U14"
+      ],
+      "cardIds": [
+        "LV1-U14-03"
+      ],
+      "sourceSnapshotLevel": "LV1",
+      "sourceSnapshotPos": "v./n.",
+      "sourceSnapshotPosAll": [
+        "v.",
+        "n."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "（動詞）想念；錯過；未擊中；避免；（名詞）失誤；失敗；（稱謂 Miss）小姐",
+      "sourceMeaningEn": "(v.) to fail to hit, reach, or catch something; to feel sad because someone or something is not present; (n.) a title used before the name of an unmarried woman",
+      "sourceUsagePattern": "miss the bus/train; miss someone; Miss + name",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U14-03",
+          "captionEn": "I really miss my grandmother's cooking since I moved to the city.",
+          "captionZh": "自從搬到城市後，我真的很想念奶奶煮的菜。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "適用想念、錯過及未擊中的動詞義；U14 miss my grandmother’s cooking 對應失去某種經驗而想念。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "miss",
+        "past": "missed",
+        "pastParticiple": "missed"
+      },
+      "proposedVerbForms": {
+        "base": "miss",
+        "past": "missed",
+        "pastParticiple": "missed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/miss"
+      },
+      "sourceSupportedForms": {
+        "base": "miss",
+        "past": [
+          "missed"
+        ],
+        "pastParticiple": [
+          "missed"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/miss",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle missed",
+          "location": "COBUILD VERB AND NOUN USES Word forms、義 1、6–8；Miss title section",
+          "scope": "直接明示 past／past simple 與 past participle；base 由同頁詞目及原形欄確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立開啟官方正文，實讀所列欄位或段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "senseAndConstructionEvidence": {
+        "url": "https://www.collinsdictionary.com/dictionary/english/miss",
+        "location": "COBUILD VERB AND NOUN USES Word forms、義 1、6–8；Miss title section",
+        "retrieval": "direct_dictionary_page",
+        "searchSnippetOnly": false,
+        "note": "適用義與構式據所列官方正文核對；字卡文字直接保留來源快照。"
+      },
+      "homographAndVariantRestrictions": "Miss 稱謂、Miss. 地名縮寫與失誤名詞均不是此動詞；不將大小寫同形詞或名詞複數 Misses／misses 當成三態。",
+      "regionalAndConstructionRestrictions": "想念可接人、事物或動名詞，未趕上可接交通工具；稱呼女性教師的 mainly British 與直接稱呼的 old-fashioned 標記屬稱謂，不限制動詞 missed。",
+      "variantAssessment": "所讀適用動詞的主三態或官方變化表未另列變體；僅提一組最小候選，不聲稱窮盡歷史、方言或所有專業用法。",
+      "panelApplicability": "動詞三態面板只適用正式詞彙中已存在的動詞義，不適用名詞義。",
+      "representationAssessment": "本次適用動詞義沒有需要按義項／地區分開的互斥三態，單一 base/past/pastParticiple 可表達這組最小形式；這不是 UI 或整張字卡驗收。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000558",
+      "word": "mouth",
+      "units": [
+        "LV1-U14"
+      ],
+      "cardIds": [
+        "LV1-U14-10"
+      ],
+      "sourceSnapshotLevel": "LV1",
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "（名詞）嘴；口；口腔；口狀物；（動詞）用口形無聲地說",
+      "sourceMeaningEn": "(n.) the body part used for eating and speaking; an opening resembling a mouth, as of a river or container; (v.) to form words with the lips without making a sound",
+      "sourceUsagePattern": "open one's mouth; the mouth of a river; mouth the words",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U14-10",
+          "captionEn": "She covered her mouth with her hand when she started to laugh.",
+          "captionZh": "她開始笑的時候用手摀住嘴巴。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "只適用既有「用口形無聲地說」動詞；U14 covered her mouth 使用嘴巴名詞。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "mouth",
+        "past": "mouthed",
+        "pastParticiple": "mouthed"
+      },
+      "proposedVerbForms": {
+        "base": "mouth",
+        "past": "mouthed",
+        "pastParticiple": "mouthed",
+        "sourceRef": "https://www.oxfordlearnersdictionaries.com/definition/english/mouth_2"
+      },
+      "sourceSupportedForms": {
+        "base": "mouth",
+        "past": [
+          "mouthed"
+        ],
+        "pastParticiple": [
+          "mouthed"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "Oxford University Press",
+          "work": "Oxford Advanced Learner’s Dictionary",
+          "url": "https://www.oxfordlearnersdictionaries.com/definition/english/mouth_2",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past simple mouthed; past participle mouthed",
+          "location": "Verb Forms；動詞義 1–2",
+          "scope": "直接明示 past／past simple 與 past participle；base 由同頁詞目及原形欄確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立開啟官方正文，實讀所列欄位或段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/mouth",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle mouthed",
+          "location": "COBUILD Word forms 與 pronunciation note；動詞義 5–6",
+          "scope": "交叉核對三態及名詞、動詞異音；不填寫本案以外的發音欄。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立開啟官方正文，實讀所列欄位或段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "senseAndConstructionEvidence": {
+        "url": "https://www.oxfordlearnersdictionaries.com/definition/english/mouth_2",
+        "location": "Verb Forms；動詞義 1–2",
+        "retrieval": "direct_dictionary_page",
+        "searchSnippetOnly": false,
+        "note": "適用義與構式據所列官方正文核對；字卡文字直接保留來源快照。"
+      },
+      "homographAndVariantRestrictions": "名詞與動詞同拼字但發音不同；mouthed 亦可出現在 open-mouthed 類組合形容詞，不能反過來把它們視為動詞例句。",
+      "regionalAndConstructionRestrictions": "用口形說可接話語內容或直接引語。另一徒具口號、口是心非的說法標 disapproving，不能擴及無聲說話義；三態欄沒有區域異形。",
+      "variantAssessment": "所讀適用動詞的主三態或官方變化表未另列變體；僅提一組最小候選，不聲稱窮盡歷史、方言或所有專業用法。",
+      "panelApplicability": "動詞三態面板只適用正式詞彙中已存在的動詞義，不適用名詞義。",
+      "representationAssessment": "本次適用動詞義沒有需要按義項／地區分開的互斥三態，單一 base/past/pastParticiple 可表達這組最小形式；這不是 UI 或整張字卡驗收。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000573",
+      "word": "neck",
+      "units": [
+        "LV1-U14"
+      ],
+      "cardIds": [
+        "LV1-U14-29"
+      ],
+      "sourceSnapshotLevel": "LV1",
+      "sourceSnapshotPos": "n.",
+      "sourceSnapshotPosAll": [
+        "n."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "（名詞）脖子；衣領；頸；瓶頸等狹窄部分；（另有動詞義）親吻擁抱",
+      "sourceMeaningEn": "the part of the body that connects the head to the shoulders; the part of a piece of clothing that fits around this part of the body; a narrow part of something that resembles a neck, such as a bottle",
+      "sourceUsagePattern": "a stiff/sore neck; a V-neck/crew neck; the neck of a bottle",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U14-29",
+          "captionEn": "The bird got its head stuck in the neck of the glass bottle.",
+          "captionZh": "那隻鳥的頭卡在玻璃瓶的瓶頸裡。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "只適用既有中文摘要另列「親吻擁抱」動詞義；主 POS=n. 原樣保留。U14 neck of the bottle 是瓶頸名詞。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "neck",
+        "past": "necked",
+        "pastParticiple": "necked"
+      },
+      "proposedVerbForms": {
+        "base": "neck",
+        "past": "necked",
+        "pastParticiple": "necked",
+        "sourceRef": "https://www.oxfordlearnersdictionaries.com/definition/english/neck_2"
+      },
+      "sourceSupportedForms": {
+        "base": "neck",
+        "past": [
+          "necked"
+        ],
+        "pastParticiple": [
+          "necked"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "Oxford University Press",
+          "work": "Oxford Advanced Learner’s Dictionary",
+          "url": "https://www.oxfordlearnersdictionaries.com/definition/english/neck_2",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past simple necked; past participle necked",
+          "location": "Verb Forms；(usually be necking) [intransitive] (old-fashioned, informal)",
+          "scope": "直接明示 past／past simple 與 past participle；base 由同頁詞目及原形欄確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立開啟官方正文，實讀所列欄位或段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "senseAndConstructionEvidence": {
+        "url": "https://www.oxfordlearnersdictionaries.com/definition/english/neck_2",
+        "location": "Verb Forms；(usually be necking) [intransitive] (old-fashioned, informal)",
+        "retrieval": "direct_dictionary_page",
+        "searchSnippetOnly": false,
+        "note": "適用義與構式據所列官方正文核對；字卡文字直接保留來源快照。"
+      },
+      "homographAndVariantRestrictions": "身體部位、衣領、瓶頸等名詞不使用此三態；複合形容詞中的 -necked 不等於此動詞的實際使用。",
+      "regionalAndConstructionRestrictions": "來源將此親吻動詞標為不及物、old-fashioned、informal，且通常用 be necking；詞典仍直接明列 necked 的過去式及過去分詞，不因常用進行式刪去它們。",
+      "variantAssessment": "所讀適用動詞的主三態或官方變化表未另列變體；僅提一組最小候選，不聲稱窮盡歷史、方言或所有專業用法。",
+      "panelApplicability": "本面板只表示既有中文摘要「另有動詞義」的動詞變化，不改主 POS=n.、英文摘要或名詞例句。",
+      "representationAssessment": "本次適用動詞義沒有需要按義項／地區分開的互斥三態，單一 base/past/pastParticiple 可表達這組最小形式；這不是 UI 或整張字卡驗收。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000722",
+      "word": "rock",
+      "units": [
+        "LV1-U14"
+      ],
+      "cardIds": [
+        "LV1-U14-25"
+      ],
+      "sourceSnapshotLevel": "LV1",
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "（名詞）岩石；岩礁；石頭；基石；（動詞）輕輕搖動；搖晃",
+      "sourceMeaningEn": "(n.) a hard solid mineral material that forms part of the earth's surface; (v.) to move gently backward and forward or from side to side",
+      "sourceUsagePattern": "rock climbing; rock back and forth; a piece of rock",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U14-25",
+          "captionEn": "The baby fell asleep as her mother gently rocked her in the chair.",
+          "captionZh": "寶寶在媽媽於椅子上輕輕搖晃她時睡著了。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "輕輕搖動及搖晃的動詞；適用 U14 mother gently rocked her 的例句。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "rock",
+        "past": "rocked",
+        "pastParticiple": "rocked"
+      },
+      "proposedVerbForms": {
+        "base": "rock",
+        "past": "rocked",
+        "pastParticiple": "rocked",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/rock"
+      },
+      "sourceSupportedForms": {
+        "base": "rock",
+        "past": [
+          "rocked"
+        ],
+        "pastParticiple": [
+          "rocked"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/rock",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle rocked",
+          "location": "COBUILD Word forms；動詞義 4–6 與相鄰名詞義",
+          "scope": "直接明示 past／past simple 與 past participle；base 由同頁詞目及原形欄確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立開啟官方正文，實讀所列欄位或段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "senseAndConstructionEvidence": {
+        "url": "https://www.collinsdictionary.com/dictionary/english/rock",
+        "location": "COBUILD Word forms；動詞義 4–6 與相鄰名詞義",
+        "retrieval": "direct_dictionary_page",
+        "searchSnippetOnly": false,
+        "note": "適用義與構式據所列官方正文核對；字卡文字直接保留來源快照。"
+      },
+      "homographAndVariantRestrictions": "岩石、搖滾樂與糖果等同形名詞不套動詞三態；不加入其他俗語動詞義。",
+      "regionalAndConstructionRestrictions": "搖動可不及物或及物，rock the baby／rock from side to side 均見正文；爆炸或新聞使震動的義項標 journalism，不擴及搖嬰兒義。",
+      "variantAssessment": "所讀適用動詞的主三態或官方變化表未另列變體；僅提一組最小候選，不聲稱窮盡歷史、方言或所有專業用法。",
+      "panelApplicability": "動詞三態面板只適用正式詞彙中已存在的動詞義，不適用名詞義。",
+      "representationAssessment": "本次適用動詞義沒有需要按義項／地區分開的互斥三態，單一 base/past/pastParticiple 可表達這組最小形式；這不是 UI 或整張字卡驗收。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000723",
+      "word": "roll",
+      "units": [
+        "LV1-U14"
+      ],
+      "cardIds": [
+        "LV1-U14-60"
+      ],
+      "sourceSnapshotLevel": "LV1",
+      "sourceSnapshotPos": "v./n.",
+      "sourceSnapshotPosAll": [
+        "v.",
+        "n."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "卷；滾動；名單；案卷",
+      "sourceMeaningEn": "to move by turning over and over on an axis; a list of names, for example of students or members",
+      "sourceUsagePattern": "roll down/over; a roll of N; call the roll",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U14-60",
+          "captionEn": "The teacher calls the roll every morning before class starts.",
+          "captionZh": "老師每天早上上課前都會點名。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "只適用現有滾動、捲成的動詞義；U14 calls the roll 的 roll 是名單名詞。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "roll",
+        "past": "rolled",
+        "pastParticiple": "rolled"
+      },
+      "proposedVerbForms": {
+        "base": "roll",
+        "past": "rolled",
+        "pastParticiple": "rolled",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/roll"
+      },
+      "sourceSupportedForms": {
+        "base": "roll",
+        "past": [
+          "rolled"
+        ],
+        "pastParticiple": [
+          "rolled"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/roll",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle rolled",
+          "location": "COBUILD Word forms；動詞義 1–2、6",
+          "scope": "直接明示 past／past simple 與 past participle；base 由同頁詞目及原形欄確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立開啟官方正文，實讀所列欄位或段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "senseAndConstructionEvidence": {
+        "url": "https://www.collinsdictionary.com/dictionary/english/roll",
+        "location": "COBUILD Word forms；動詞義 1–2、6",
+        "retrieval": "direct_dictionary_page",
+        "searchSnippetOnly": false,
+        "note": "適用義與構式據所列官方正文核對；字卡文字直接保留來源快照。"
+      },
+      "homographAndVariantRestrictions": "點名冊、卷及麵包卷等名詞不套動詞三態；roll 與同音 role 不混用。",
+      "regionalAndConstructionRestrictions": "roll over／down 等方向構式與 roll something into something、roll something up 同用 rolled；所讀主三態欄未標地區變體。",
+      "variantAssessment": "所讀適用動詞的主三態或官方變化表未另列變體；僅提一組最小候選，不聲稱窮盡歷史、方言或所有專業用法。",
+      "panelApplicability": "動詞三態面板只適用正式詞彙中已存在的動詞義，不適用名詞義。",
+      "representationAssessment": "本次適用動詞義沒有需要按義項／地區分開的互斥三態，單一 base/past/pastParticiple 可表達這組最小形式；這不是 UI 或整張字卡驗收。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000770",
+      "word": "shoulder",
+      "units": [
+        "LV1-U14"
+      ],
+      "cardIds": [
+        "LV1-U14-36"
+      ],
+      "sourceSnapshotLevel": "LV1",
+      "sourceSnapshotPos": "n.",
+      "sourceSnapshotPosAll": [
+        "n."
+      ],
+      "sourceSnapshotStatus": "draft",
+      "sourceMeaningZh": "（名詞）肩；肩膀；衣肩；（另有動詞義）肩負",
+      "sourceMeaningEn": "the part of the body between the neck and the upper arm; a cut of meat including the upper joint of the foreleg",
+      "sourceUsagePattern": "on one's shoulder; a shoulder bag; shrug one's shoulders",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U14-36",
+          "captionEn": "She carried the heavy bag on her shoulder.",
+          "captionZh": "她把沉重的袋子背在肩上。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "只適用現有中文摘要另列「肩負」動詞義，包含承擔責任或把重物扛在肩上；主 POS=n. 原樣保留。U14 on her shoulder 是名詞。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "shoulder",
+        "past": "shouldered",
+        "pastParticiple": "shouldered"
+      },
+      "proposedVerbForms": {
+        "base": "shoulder",
+        "past": "shouldered",
+        "pastParticiple": "shouldered",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/shoulder"
+      },
+      "sourceSupportedForms": {
+        "base": "shoulder",
+        "past": [
+          "shouldered"
+        ],
+        "pastParticiple": [
+          "shouldered"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/shoulder",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle shouldered",
+          "location": "COBUILD Word forms；動詞義 4–6",
+          "scope": "直接明示 past／past simple 與 past participle；base 由同頁詞目及原形欄確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立開啟官方正文，實讀所列欄位或段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "senseAndConstructionEvidence": {
+        "url": "https://www.collinsdictionary.com/dictionary/english/shoulder",
+        "location": "COBUILD Word forms；動詞義 4–6",
+        "retrieval": "direct_dictionary_page",
+        "searchSnippetOnly": false,
+        "note": "適用義與構式據所列官方正文核對；字卡文字直接保留來源快照。"
+      },
+      "homographAndVariantRestrictions": "肩膀、衣肩、肉塊及路肩名詞不套動詞三態；肩負動詞不能由字卡的名詞句直接推定。",
+      "regionalAndConstructionRestrictions": "肩負責任及扛物件為及物構式 shoulder something；另有以肩推開／擠過人的構式。本次候選只補三態，不擴寫原摘要義項或構式。",
+      "variantAssessment": "所讀適用動詞的主三態或官方變化表未另列變體；僅提一組最小候選，不聲稱窮盡歷史、方言或所有專業用法。",
+      "panelApplicability": "本面板只表示既有中文摘要「另有動詞義」的動詞變化，不改主 POS=n.、英文摘要或名詞例句。",
+      "representationAssessment": "本次適用動詞義沒有需要按義項／地區分開的互斥三態，單一 base/past/pastParticiple 可表達這組最小形式；這不是 UI 或整張字卡驗收。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000776",
+      "word": "sight",
+      "units": [
+        "LV1-U14"
+      ],
+      "cardIds": [
+        "LV1-U14-21"
+      ],
+      "sourceSnapshotLevel": "LV1",
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "（名詞）景觀；景象；視力；眼界；閱讀；（動詞）看見；發現；瞄準",
+      "sourceMeaningEn": "(n.) the ability or act of seeing; something seen, especially an impressive view or scene. (v.) to catch sight of, spot, or aim using sights.",
+      "sourceUsagePattern": "at first sight; catch sight of; lose sight of",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U14-21",
+          "captionEn": "The mountain view was a beautiful sight.",
+          "captionZh": "那片山景是個美麗的景象。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "只適用現有看見、發現及瞄準動詞義；U14 a beautiful sight 為景象名詞。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "sight",
+        "past": "sighted",
+        "pastParticiple": "sighted"
+      },
+      "proposedVerbForms": {
+        "base": "sight",
+        "past": "sighted",
+        "pastParticiple": "sighted",
+        "sourceRef": "https://www.oxfordlearnersdictionaries.com/definition/english/sight_2"
+      },
+      "sourceSupportedForms": {
+        "base": "sight",
+        "past": [
+          "sighted"
+        ],
+        "pastParticiple": [
+          "sighted"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "Oxford University Press",
+          "work": "Oxford Advanced Learner’s Dictionary",
+          "url": "https://www.oxfordlearnersdictionaries.com/definition/english/sight_2",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past simple sighted; past participle sighted",
+          "location": "Verb Forms；formal 動詞定義與 homophones",
+          "scope": "直接明示 past／past simple 與 past participle；base 由同頁詞目及原形欄確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立開啟官方正文，實讀所列欄位或段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/sight",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle sighted",
+          "location": "COBUILD Word forms、動詞義 4；Collins English Dictionary British English 動詞義 21–23",
+          "scope": "交叉核對三態並確認瞄準、調校瞄準具為動詞義；不把名詞瞄準具本身當動詞。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立開啟官方正文，實讀所列欄位或段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "senseAndConstructionEvidence": {
+        "url": "https://www.oxfordlearnersdictionaries.com/definition/english/sight_2",
+        "location": "Verb Forms；formal 動詞定義與 homophones",
+        "retrieval": "direct_dictionary_page",
+        "searchSnippetOnly": false,
+        "note": "適用義與構式據所列官方正文核對；字卡文字直接保留來源快照。"
+      },
+      "homographAndVariantRestrictions": "不與 cite 或 site 的同音動詞混淆；sight-read 為另一複合動詞，不由 sighted 推定其三態。catch sight of 的 sight 仍為名詞。",
+      "regionalAndConstructionRestrictions": "Oxford 發現／看見義標 formal，構式 sight something；Collins 另列以瞄準具瞄準或調校瞄準具的義項。名詞 sight 的視力、景象及閱讀等摘要用法不由本查證背書。",
+      "variantAssessment": "所讀適用動詞的主三態或官方變化表未另列變體；僅提一組最小候選，不聲稱窮盡歷史、方言或所有專業用法。",
+      "panelApplicability": "動詞三態面板只適用正式詞彙中已存在的動詞義，不適用名詞義。",
+      "representationAssessment": "本次適用動詞義沒有需要按義項／地區分開的互斥三態，單一 base/past/pastParticiple 可表達這組最小形式；這不是 UI 或整張字卡驗收。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000911",
+      "word": "touch",
+      "units": [
+        "LV1-U14"
+      ],
+      "cardIds": [
+        "LV1-U14-02"
+      ],
+      "sourceSnapshotLevel": "LV1",
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "（名詞）觸覺；碰；觸；機靈；（動詞）觸碰；使感動",
+      "sourceMeaningEn": "(v.) to put your hand or fingers on something in order to feel it, or to make someone feel strong emotion; (n.) the sense that lets you feel things with your skin",
+      "sourceUsagePattern": "touch something; be touched by N; keep in touch",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U14-02",
+          "captionEn": "I was deeply touched when my classmates surprised me on my birthday.",
+          "captionZh": "當同學們在我生日那天給我驚喜時，我深受感動。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "適用觸碰及使感動動詞；U14 was deeply touched 對應受感動的被動／分詞用法，保留句子原貌。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "touch",
+        "past": "touched",
+        "pastParticiple": "touched"
+      },
+      "proposedVerbForms": {
+        "base": "touch",
+        "past": "touched",
+        "pastParticiple": "touched",
+        "sourceRef": "https://www.oxfordlearnersdictionaries.com/definition/english/touch_1"
+      },
+      "sourceSupportedForms": {
+        "base": "touch",
+        "past": [
+          "touched"
+        ],
+        "pastParticiple": [
+          "touched"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "Oxford University Press",
+          "work": "Oxford Advanced Learner’s Dictionary",
+          "url": "https://www.oxfordlearnersdictionaries.com/definition/english/touch_1",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past simple touched; past participle touched",
+          "location": "Verb Forms；with hand/part of body 與 affect somebody/something 義 4",
+          "scope": "直接明示 past／past simple 與 past participle；base 由同頁詞目及原形欄確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立開啟官方正文，實讀所列欄位或段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "senseAndConstructionEvidence": {
+        "url": "https://www.oxfordlearnersdictionaries.com/definition/english/touch_1",
+        "location": "Verb Forms；with hand/part of body 與 affect somebody/something 義 4",
+        "retrieval": "direct_dictionary_page",
+        "searchSnippetOnly": false,
+        "note": "適用義與構式據所列官方正文核對；字卡文字直接保留來源快照。"
+      },
+      "homographAndVariantRestrictions": "觸覺名詞及 keep in touch 的名詞不套動詞三態；touched 的形容詞用法不產生另一套詞形。",
+      "regionalAndConstructionRestrictions": "身體接觸可用 touch somebody/something、on/with 補語；感動義可用被動 touched by。下一項一般「影響」義的 old-fashioned or formal 標記，不擴及感動義。",
+      "variantAssessment": "所讀適用動詞的主三態或官方變化表未另列變體；僅提一組最小候選，不聲稱窮盡歷史、方言或所有專業用法。",
+      "panelApplicability": "動詞三態面板只適用正式詞彙中已存在的動詞義，不適用名詞義。",
+      "representationAssessment": "本次適用動詞義沒有需要按義項／地區分開的互斥三態，單一 base/past/pastParticiple 可表達這組最小形式；這不是 UI 或整張字卡驗收。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000989",
+      "word": "worry",
+      "units": [
+        "LV1-U14"
+      ],
+      "cardIds": [
+        "LV1-U14-59"
+      ],
+      "sourceSnapshotLevel": "LV2",
+      "sourceSnapshotPos": "v./n.",
+      "sourceSnapshotPosAll": [
+        "v.",
+        "n."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "擔心；煩惱；憂慮；苦惱",
+      "sourceMeaningEn": "to feel or show fear and anxiety about something, or to make someone feel this way; a feeling of anxiety, or something that causes it",
+      "sourceUsagePattern": "worry about + N; don't worry; worry that + S + V",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U14-59",
+          "captionEn": "Don't worry about the test results; you did your best and that's enough.",
+          "captionZh": "別擔心考試結果，你已經盡力了，這樣就夠了。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "擔心或使人擔心的動詞；適用 U14 don’t worry about the test results。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "worry",
+        "past": "worried",
+        "pastParticiple": "worried"
+      },
+      "proposedVerbForms": {
+        "base": "worry",
+        "past": "worried",
+        "pastParticiple": "worried",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/worry"
+      },
+      "sourceSupportedForms": {
+        "base": "worry",
+        "past": [
+          "worried"
+        ],
+        "pastParticiple": [
+          "worried"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/worry",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle worried",
+          "location": "COBUILD Word forms；動詞義 1–3",
+          "scope": "直接明示 past／past simple 與 past participle；base 由同頁詞目及原形欄確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立開啟官方正文，實讀所列欄位或段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "senseAndConstructionEvidence": {
+        "url": "https://www.collinsdictionary.com/dictionary/english/worry",
+        "location": "COBUILD Word forms；動詞義 1–3",
+        "retrieval": "direct_dictionary_page",
+        "searchSnippetOnly": false,
+        "note": "適用義與構式據所列官方正文核對；字卡文字直接保留來源快照。"
+      },
+      "homographAndVariantRestrictions": "焦慮的感受／令人擔心之事等名詞不套動詞三態；worried 可作分詞或形容詞，不增造另一三態。",
+      "regionalAndConstructionRestrictions": "自覺擔心用 worry about + 名詞／動名詞或 worry that 子句；使人擔心用 worry somebody。另一「不在意／不受困擾」義標 spoken，三態本身未分英美拼字。",
+      "variantAssessment": "所讀適用動詞的主三態或官方變化表未另列變體；僅提一組最小候選，不聲稱窮盡歷史、方言或所有專業用法。",
+      "panelApplicability": "動詞三態面板只適用正式詞彙中已存在的動詞義，不適用名詞義。",
+      "representationAssessment": "本次適用動詞義沒有需要按義項／地區分開的互斥三態，單一 base/past/pastParticiple 可表達這組最小形式；這不是 UI 或整張字卡驗收。",
+      "pendingReason": null
+    }
+  ],
+  "validation": {
+    "jsonParsed": true,
+    "expectedEntryCount": 16,
+    "actualEntryCount": 16,
+    "uniqueWordIds": 16,
+    "allInputWordIdsCovered": true,
+    "allBeforeKeysConfirmedAbsentInInput": true,
+    "explicitNullConflatedWithAbsent": false,
+    "allAfterFieldsMinimal": true,
+    "allCandidatesHaveDirectDictionaryEvidence": true,
+    "allStatusesAndPartsOfSpeechPreserved": true,
+    "actualRepositoryApplication": false,
+    "sourceSnapshotRecheckRequiredBeforeApplication": true,
+    "publicArtifactContentCheckPassed": true
+  }
+}

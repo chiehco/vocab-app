@@ -1,0 +1,677 @@
+{
+  "schemaVersion": 2,
+  "unit": "U14",
+  "provenance": {
+    "inputFile": "u14-current-examples-3b14fc8.json",
+    "inputSha256": "5bf8710743e0cad4782392794952dff477260cb1e8e0246d941cfc015d27ce64",
+    "wordInputFile": "u14-current-words-3b14fc8.json",
+    "wordInputSha256": "a9614a483da4124297c9628b30c135564849e2babd6e087b8dfff774d0bf5473",
+    "reviewedCommit": "3b14fc8ac56ca58dd715a088340d913e5230a0b7",
+    "reviewedBlobSha": "04df8f3de1befa0da25734046a1b32c206cdd37c",
+    "wordBlobSha": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+    "reviewDateUTC": "2026-11-05",
+    "inputOrigin": "輸入為上述 commit 實際 Git 抓取後備妥的例句及詞條快照；本次以該快照逐列核查，沒有再從 GitHub 抓取 blob。",
+    "originalTextbookVerification": "97 列全句均已實讀，但快照沒有原教材頁碼、來源網址或試題出處欄位。exampleType 和原 status 不是原教材逐字驗證證據；本次未取得原教材頁面。"
+  },
+  "summary": {
+    "formalWordCount": 59,
+    "wordsWithExamples": 41,
+    "formalWordsWithoutExamplesCount": 18,
+    "exampleCount": 97,
+    "manuallyReviewedRows": 97,
+    "clozeAnswerExactReconstructionPassed": 97,
+    "newDefiniteClozeAnswerMismatchCount": 0,
+    "newDefiniteTextErrorCandidates": 0,
+    "newOptionalPrecisionCandidateCount": 2,
+    "newHintPrecisionCandidates": 0,
+    "newChineseTranslationCandidates": 2,
+    "previouslyRecordedOptionalCandidatesDeduplicated": 1,
+    "pendingExampleItems": 1,
+    "pendingPOSConventionItems": 0,
+    "pendingHeadwordExampleLinkageItems": 1,
+    "newPendingSentenceIntentItems": 0,
+    "newMandatoryPOSChanges": 0,
+    "retainedWithoutNewCandidateOrPendingItem": 94,
+    "retainedWithoutAnyNewOrExistingCandidateReference": 93,
+    "emptyHintsPreserved": 80,
+    "emptyHintsByExampleType": {
+      "daily": 39,
+      "exam": 41
+    },
+    "nonemptyHintsReadInContext": 17,
+    "existingStatusCountsPreserved": {
+      "reviewed": 84,
+      "approved": 13
+    },
+    "exampleTypeCounts": {
+      "daily": 41,
+      "textbook": 13,
+      "exam": 43
+    },
+    "repoFilesModified": false,
+    "statusesModified": false,
+    "gitOperationsPerformed": false,
+    "findingsSummaryZh": "97 列逐句實讀，97 列 cloze 精確重建；未新增確定文字錯誤。2 項新可選精度：明示 for college 用途、補出 finish our meals 的吃完。1 項 painting 詞條與動詞形式例句的收錄範圍待確認，句內 v. 不改。另 1 項截止譯法已屬 U10-T04，跨單元去重。80 個空提示保留，17 個非空提示均實讀；18 個無正式例句詞不另造句。",
+    "countingCaution": "2 項新可選精度不等於 2 個確錯；1 項收錄慣例待確認也不是新 POS 錯誤。既有 U10-T04 不計入 U14 新候選。原教材出處、全詞卡欄位與圖片不在本次逐句完成證明之內。"
+  },
+  "groups": {
+    "明確候選": [],
+    "新可選精度改善": [
+      "U14-T01",
+      "U14-T02"
+    ],
+    "既有跨單元去重": [
+      "U10-T04"
+    ],
+    "待詞條與例句收錄慣例確認": [
+      "U14-P01"
+    ],
+    "待例句意圖確認": []
+  },
+  "formalWordsWithoutExamples": [
+    {
+      "wordId": "W000058",
+      "word": "ball",
+      "pos": "n./v.",
+      "posAll": [
+        "n.",
+        "v."
+      ],
+      "meaningZh": "球；舞會；球狀物；捏成球形",
+      "meaningEn": "(n.) a round object used in games; a rounded object; a formal social event with dancing. (v.) to form or gather into a rounded mass.",
+      "status": "draft"
+    },
+    {
+      "wordId": "W000280",
+      "word": "exciting",
+      "pos": "adj.",
+      "posAll": [
+        "adj."
+      ],
+      "meaningZh": "令人興奮的；刺激的；激磁",
+      "meaningEn": "creating or arousing excitement; stimulating interest and discussion",
+      "status": "draft"
+    },
+    {
+      "wordId": "W000431",
+      "word": "inside",
+      "pos": "prep./adv./n./adj.",
+      "posAll": [
+        "prep.",
+        "adv.",
+        "n.",
+        "adj."
+      ],
+      "meaningZh": "在裡面；向裡；內部；內臟；內幕；內部的",
+      "meaningEn": "the region that is inside of something; the inner or enclosed surface of something; (prep.) within a place; (adv.) in or toward the inner part; (adj.) situated on the inner side.",
+      "status": "draft"
+    },
+    {
+      "wordId": "W000496",
+      "word": "lip",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "（名詞）脣；口緣；脣狀構造；（另有動詞義）以嘴脣碰",
+      "meaningEn": "either of two fleshy folds of tissue that surround the mouth and play a role in speaking; (botany) either of the two parts of a bilabiate corolla or calyx",
+      "status": "draft"
+    },
+    {
+      "wordId": "W000616",
+      "word": "outside",
+      "pos": "prep./adv./adj./n.",
+      "posAll": [
+        "prep.",
+        "adv.",
+        "adj.",
+        "n."
+      ],
+      "meaningZh": "外面；外表；外界；外面的",
+      "meaningEn": "the region that is outside of something; the outer side or surface of something; (prep.) beyond the boundary of a place; (adv.) in or toward the open air; (adj.) on the outer side.",
+      "status": "draft"
+    },
+    {
+      "wordId": "W000770",
+      "word": "shoulder",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "（名詞）肩；肩膀；衣肩；（另有動詞義）肩負",
+      "meaningEn": "the part of the body between the neck and the upper arm; a cut of meat including the upper joint of the foreleg",
+      "status": "draft"
+    },
+    {
+      "wordId": "W001285",
+      "word": "dull",
+      "pos": "adj./v.",
+      "posAll": [
+        "adj.",
+        "v."
+      ],
+      "meaningZh": "鈍的；無趣的；呆滯的；陰暗的",
+      "meaningEn": "(adj.) lacking a sharp edge; uninteresting; not bright or lively. (v.) to make or become less sharp, bright, sensitive or intense.",
+      "status": "draft"
+    },
+    {
+      "wordId": "W001986",
+      "word": "windy",
+      "pos": "adj.",
+      "posAll": [
+        "adj."
+      ],
+      "meaningZh": "多風的；風強的；腹脹的；吹牛的",
+      "meaningEn": "marked by strong or frequent wind; also flatulent, verbose or boastful. A separate pronunciation can mean winding.",
+      "status": "draft"
+    },
+    {
+      "wordId": "W002067",
+      "word": "banker",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "銀行家；莊家；銀行業者",
+      "meaningEn": "a financier who owns or is an executive in a bank; the person in charge of the bank in a gambling game",
+      "status": "draft"
+    },
+    {
+      "wordId": "W002481",
+      "word": "lately",
+      "pos": "adv.",
+      "posAll": [
+        "adv."
+      ],
+      "meaningZh": "近來；最近",
+      "meaningEn": "in the recent past",
+      "status": "draft"
+    },
+    {
+      "wordId": "W002574",
+      "word": "necktie",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "領帶",
+      "meaningEn": "neckwear consisting of a long narrow piece of material worn (mostly by men) under a collar and tied in knot at the front",
+      "status": "draft"
+    },
+    {
+      "wordId": "W002973",
+      "word": "volleyball",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "排球",
+      "meaningEn": "a game in which two teams hit an inflated ball over a high net using their hands; an inflated ball used in playing volleyball",
+      "status": "draft"
+    },
+    {
+      "wordId": "W003601",
+      "word": "lipstick",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "口紅；脣膏",
+      "meaningEn": "(n.) a cosmetic used to color the lips, or a small tube or stick containing it. (Separate verb recorded in Princeton WordNet 3.0 as reproduced by Wordnik) to trace a form with lipstick or to apply lipstick.",
+      "status": "draft"
+    },
+    {
+      "wordId": "W003895",
+      "word": "sightseeing",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "觀光；遊覽；觀光的；遊覽的",
+      "meaningEn": "going about to look at places of interest",
+      "status": "draft"
+    },
+    {
+      "wordId": "W004602",
+      "word": "outsider",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "外人；局外人；非會員；外行",
+      "meaningEn": "a person who does not belong to a particular group or is not accepted as part of it; also, a contestant considered unlikely to win.",
+      "status": "draft"
+    },
+    {
+      "wordId": "W005152",
+      "word": "checkup",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "審查；鑑定；健康檢查",
+      "meaningEn": "a thorough physical examination; includes a variety of tests depending on the age and sex and health of the person",
+      "status": "draft"
+    },
+    {
+      "wordId": "W005342",
+      "word": "eyesight",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "視力；目力",
+      "meaningEn": "the ability to see; vision.",
+      "status": "draft"
+    },
+    {
+      "wordId": "W005674",
+      "word": "petroleum",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "石油",
+      "meaningEn": "a dark oil consisting mainly of hydrocarbons",
+      "status": "draft"
+    }
+  ],
+  "missingExampleHandling": "18 個正式詞沒有正式 examples，不能逐句核查；保留原詞與原 status，不另造句、不宣告整詞完成。",
+  "sources": {
+    "collins_for": {
+      "sourceId": "collins_for",
+      "title": "Collins COBUILD: for, purpose sense",
+      "url": "https://www.collinsdictionary.com/dictionary/english/for",
+      "accessType": "direct_page_open_success",
+      "directOpen": "成功直接開啟並實讀相關原頁內容（第 304–311 行）。",
+      "observedEvidence": "for 可引出物件、行為或活動的用途；此處 for college 可清楚表達儲蓄用於上大學，不能單憑本句推定特定金融產品名稱。",
+      "supportsRows": [
+        33
+      ],
+      "evidenceLimit": "僅支持所述詞義或構式；中文替代值為本次審核提案，未取得或逐字比對原教材頁面。"
+    },
+    "collins_finish": {
+      "sourceId": "collins_finish",
+      "title": "Collins COBUILD: finish",
+      "url": "https://www.collinsdictionary.com/dictionary/english/finish",
+      "accessType": "direct_page_open_success",
+      "directOpen": "成功直接開啟並實讀相關原頁內容（第 224–233 行）。",
+      "observedEvidence": "finish 指完成剩餘部分直至結束；finish our meals 的吃完意思比泛指吃飯更明確。",
+      "supportsRows": [
+        39
+      ],
+      "evidenceLimit": "僅支持所述詞義或構式；中文替代值為本次審核提案，未取得或逐字比對原教材頁面。"
+    },
+    "collins_spend": {
+      "sourceId": "collins_spend",
+      "title": "Collins COBUILD: spend, time/energy sense",
+      "url": "https://www.collinsdictionary.com/dictionary/english/spend",
+      "accessType": "direct_page_open_success",
+      "directOpen": "成功直接開啟並實讀相關原頁內容（第 243–248 行）。",
+      "observedEvidence": "spend 時間後接 -ing 構式用以說明該時間所做活動；條目將此結構標示為動詞接名詞及 verb-ing。",
+      "supportsRows": [
+        29,
+        57,
+        84
+      ],
+      "evidenceLimit": "僅支持所述詞義或構式；中文替代值為本次審核提案，未取得或逐字比對原教材頁面。"
+    },
+    "collins_painting": {
+      "sourceId": "collins_painting",
+      "title": "Collins COBUILD: painting",
+      "url": "https://www.collinsdictionary.com/dictionary/english/painting",
+      "accessType": "direct_page_open_success",
+      "directOpen": "成功直接開啟並實讀相關原頁內容（第 222–241 行）。",
+      "observedEvidence": "獨立名詞 painting 可指畫作、繪畫活動或粉刷活動；其存在不代表每個拼寫相同的 -ing 形式都應在句內標成名詞。",
+      "supportsRows": [
+        40,
+        57
+      ],
+      "evidenceLimit": "僅支持所述詞義或構式；中文替代值為本次審核提案，未取得或逐字比對原教材頁面。"
+    },
+    "collins_paint": {
+      "sourceId": "collins_paint",
+      "title": "Collins COBUILD: paint",
+      "url": "https://www.collinsdictionary.com/dictionary/english/paint",
+      "accessType": "direct_page_open_success",
+      "directOpen": "成功直接開啟並實讀相關原頁內容（第 222、243–250 行）。",
+      "observedEvidence": "paint 列有現在分詞 painting，粉刷牆面或物件的動詞用法可直接接受詞；支持 painting the fence 的句內動詞分析。",
+      "supportsRows": [
+        29,
+        57
+      ],
+      "evidenceLimit": "僅支持所述詞義或構式；中文替代值為本次審核提案，未取得或逐字比對原教材頁面。"
+    }
+  },
+  "sourceAccessLimitations": [
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english/spend",
+      "result": "403 Forbidden；沒有讀到原頁，不作證據。"
+    },
+    {
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/english/painting",
+      "result": "403 Forbidden；沒有讀到原頁，不作證據。"
+    },
+    {
+      "url": "https://www.collinsdictionary.com/dictionary/english/no-later-than",
+      "result": "原頁無法存取；不作證據，截止項僅做既有提案的去重核對。"
+    }
+  ],
+  "definiteCandidates": [],
+  "hintProposals": [],
+  "translationCandidates": [
+    {
+      "proposalId": "U14-T01",
+      "reviewIndex": 33,
+      "wordId": "W000061",
+      "exampleId": "EX6971af62",
+      "word": "bank",
+      "sensePos": "n.",
+      "meaningHint": null,
+      "exampleType": "exam",
+      "sentenceEn": "She went to the bank to open a new savings account for college.",
+      "sentenceZh": "她去銀行開了一個新的大學儲蓄帳戶。",
+      "blankSentence": "She went to the _____ to open a new savings account for college.",
+      "answer": "bank",
+      "difficulty": "LV1",
+      "status": "reviewed",
+      "field": "sentenceZh",
+      "before": "她去銀行開了一個新的大學儲蓄帳戶。",
+      "after": "她去銀行新開了一個儲蓄帳戶，為上大學存錢。",
+      "englishGuard": "She went to the bank to open a new savings account for college.",
+      "classification": "optional_precision_improvement",
+      "classificationZh": "可選精度改善",
+      "priority": "optional_refinement_not_proven_error",
+      "reason": "for college 指儲蓄的用途。大學儲蓄帳戶可理解為此用途，故不是確錯；為避免初學者把它讀成由大學持有的帳戶或某個已確定名稱的產品，建議把用途明說。沒有額外推定帳戶類型、學校或費用項目。",
+      "confidence": "high_for_English_sense; Chinese_refinement_is_optional",
+      "sources": [
+        {
+          "sourceId": "collins_for",
+          "title": "Collins COBUILD: for, purpose sense",
+          "url": "https://www.collinsdictionary.com/dictionary/english/for",
+          "accessType": "direct_page_open_success",
+          "directOpen": "成功直接開啟並實讀相關原頁內容（第 304–311 行）。",
+          "observedEvidence": "for 可引出物件、行為或活動的用途；此處 for college 可清楚表達儲蓄用於上大學，不能單憑本句推定特定金融產品名稱。",
+          "supportsRows": [
+            33
+          ],
+          "evidenceLimit": "僅支持所述詞義或構式；中文替代值為本次審核提案，未取得或逐字比對原教材頁面。"
+        }
+      ],
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "3b14fc8ac56ca58dd715a088340d913e5230a0b7",
+        "reviewedBlobSha": "04df8f3de1befa0da25734046a1b32c206cdd37c",
+        "exampleIdMustMatch": "EX6971af62",
+        "exactFieldBefore": {
+          "sentenceZh": "她去銀行開了一個新的大學儲蓄帳戶。"
+        },
+        "englishGuard": "She went to the bank to open a new savings account for college.",
+        "contextMustMatch": {
+          "sentenceEn": "She went to the bank to open a new savings account for college.",
+          "sentenceZh": "她去銀行開了一個新的大學儲蓄帳戶。",
+          "blankSentence": "She went to the _____ to open a new savings account for college.",
+          "answer": "bank",
+          "sensePos": "n.",
+          "meaningHint": null,
+          "exampleType": "exam",
+          "status": "reviewed"
+        },
+        "ifAnyValueChanged": "停止套用並重讀該列，不以舊快照覆蓋最新值。",
+        "doNotModify": [
+          "sentenceEn",
+          "blankSentence",
+          "answer",
+          "sensePos",
+          "meaningHint",
+          "exampleType",
+          "status"
+        ]
+      },
+      "applied": false
+    },
+    {
+      "proposalId": "U14-T02",
+      "reviewIndex": 39,
+      "wordId": "W000029",
+      "exampleId": "EX88760ca2",
+      "word": "always",
+      "sensePos": "adv.",
+      "meaningHint": null,
+      "exampleType": "exam",
+      "sentenceEn": "My grandmother always tells us to finish our meals without wasting food.",
+      "sentenceZh": "我奶奶總是告訴我們吃飯不要浪費食物。",
+      "blankSentence": "My grandmother _____ tells us to finish our meals without wasting food.",
+      "answer": "always",
+      "difficulty": "LV1",
+      "status": "reviewed",
+      "field": "sentenceZh",
+      "before": "我奶奶總是告訴我們吃飯不要浪費食物。",
+      "after": "我奶奶總是告訴我們要把飯菜吃完，不要浪費食物。",
+      "englishGuard": "My grandmother always tells us to finish our meals without wasting food.",
+      "classification": "optional_precision_improvement",
+      "classificationZh": "可選精度改善",
+      "priority": "optional_refinement_not_proven_error",
+      "reason": "原譯已保留奶奶的提醒及不浪費食物，語義自然。可選補出 finish our meals 的完成性，使吃完與一般吃飯有明確對應；這是譯文完整度改善，不列為誤義或強制改動。",
+      "confidence": "high_for_English_sense; Chinese_refinement_is_optional",
+      "sources": [
+        {
+          "sourceId": "collins_finish",
+          "title": "Collins COBUILD: finish",
+          "url": "https://www.collinsdictionary.com/dictionary/english/finish",
+          "accessType": "direct_page_open_success",
+          "directOpen": "成功直接開啟並實讀相關原頁內容（第 224–233 行）。",
+          "observedEvidence": "finish 指完成剩餘部分直至結束；finish our meals 的吃完意思比泛指吃飯更明確。",
+          "supportsRows": [
+            39
+          ],
+          "evidenceLimit": "僅支持所述詞義或構式；中文替代值為本次審核提案，未取得或逐字比對原教材頁面。"
+        }
+      ],
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "3b14fc8ac56ca58dd715a088340d913e5230a0b7",
+        "reviewedBlobSha": "04df8f3de1befa0da25734046a1b32c206cdd37c",
+        "exampleIdMustMatch": "EX88760ca2",
+        "exactFieldBefore": {
+          "sentenceZh": "我奶奶總是告訴我們吃飯不要浪費食物。"
+        },
+        "englishGuard": "My grandmother always tells us to finish our meals without wasting food.",
+        "contextMustMatch": {
+          "sentenceEn": "My grandmother always tells us to finish our meals without wasting food.",
+          "sentenceZh": "我奶奶總是告訴我們吃飯不要浪費食物。",
+          "blankSentence": "My grandmother _____ tells us to finish our meals without wasting food.",
+          "answer": "always",
+          "sensePos": "adv.",
+          "meaningHint": null,
+          "exampleType": "exam",
+          "status": "reviewed"
+        },
+        "ifAnyValueChanged": "停止套用並重讀該列，不以舊快照覆蓋最新值。",
+        "doNotModify": [
+          "sentenceEn",
+          "blankSentence",
+          "answer",
+          "sensePos",
+          "meaningHint",
+          "exampleType",
+          "status"
+        ]
+      },
+      "applied": false
+    }
+  ],
+  "pendingConfirmation": [
+    {
+      "pendingItemId": "U14-P01",
+      "reviewIndex": 57,
+      "wordId": "W001608",
+      "exampleId": "EXad2c72f1",
+      "word": "painting",
+      "classification": "pending_headword_example_linkage_convention",
+      "classificationZh": "待詞條與例句收錄慣例確認",
+      "observedExample": {
+        "exampleId": "EXad2c72f1",
+        "word": "painting",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "My father spent the whole weekend painting the fence in our garden.",
+        "sentenceZh": "我爸爸花了整個週末在粉刷我們家花園的籬笆。",
+        "blankSentence": "My father spent the whole weekend _____ the fence in our garden.",
+        "answer": "painting",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "observedWord": {
+        "wordId": "W001608",
+        "word": "painting",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "畫；繪畫；油漆；塗漆",
+        "meaningEn": "a picture made using paint; the activity of covering a wall or object with paint",
+        "usagePattern": "a painting of N; hang a painting; painting the walls/fence",
+        "status": "reviewed"
+      },
+      "relatedCardContext": {
+        "id": "LV1-U14-31",
+        "word": "painting",
+        "officialWordId": "W001608",
+        "captionEn": "He is painting the garden fence white.",
+        "captionZh": "他正在把花園的籬笆漆成白色。"
+      },
+      "englishGuard": "My father spent the whole weekend painting the fence in our garden.",
+      "reason": "句內 painting 直接帶受詞 the fence，且位於 spend time doing 結構，現行 sensePos=v. 合理。正式 painting 詞條只列 n.，相關詞卡也用 is painting，顯示詞形示例與名詞詞條的收錄範圍仍需確認；不能把這點簡化為例句 POS 必須改回 n.。",
+      "questionToResolve": "此資料集是否允許名詞 painting 詞條收錄 paint 的 -ing 動詞形式？若允許，保留現狀並說明範圍；若要求每句直接示範正式名詞義，需回核教材後決定調整關聯或例句。",
+      "safeActionNow": "保留英文、中文、答案、v.、詞條 n.、詞卡和所有 status；不移動、不編造替代例句。",
+      "sources": [
+        {
+          "sourceId": "collins_spend",
+          "title": "Collins COBUILD: spend, time/energy sense",
+          "url": "https://www.collinsdictionary.com/dictionary/english/spend",
+          "accessType": "direct_page_open_success",
+          "directOpen": "成功直接開啟並實讀相關原頁內容（第 243–248 行）。",
+          "observedEvidence": "spend 時間後接 -ing 構式用以說明該時間所做活動；條目將此結構標示為動詞接名詞及 verb-ing。",
+          "supportsRows": [
+            29,
+            57,
+            84
+          ],
+          "evidenceLimit": "僅支持所述詞義或構式；中文替代值為本次審核提案，未取得或逐字比對原教材頁面。"
+        },
+        {
+          "sourceId": "collins_paint",
+          "title": "Collins COBUILD: paint",
+          "url": "https://www.collinsdictionary.com/dictionary/english/paint",
+          "accessType": "direct_page_open_success",
+          "directOpen": "成功直接開啟並實讀相關原頁內容（第 222、243–250 行）。",
+          "observedEvidence": "paint 列有現在分詞 painting，粉刷牆面或物件的動詞用法可直接接受詞；支持 painting the fence 的句內動詞分析。",
+          "supportsRows": [
+            29,
+            57
+          ],
+          "evidenceLimit": "僅支持所述詞義或構式；中文替代值為本次審核提案，未取得或逐字比對原教材頁面。"
+        },
+        {
+          "sourceId": "collins_painting",
+          "title": "Collins COBUILD: painting",
+          "url": "https://www.collinsdictionary.com/dictionary/english/painting",
+          "accessType": "direct_page_open_success",
+          "directOpen": "成功直接開啟並實讀相關原頁內容（第 222–241 行）。",
+          "observedEvidence": "獨立名詞 painting 可指畫作、繪畫活動或粉刷活動；其存在不代表每個拼寫相同的 -ing 形式都應在句內標成名詞。",
+          "supportsRows": [
+            40,
+            57
+          ],
+          "evidenceLimit": "僅支持所述詞義或構式；中文替代值為本次審核提案，未取得或逐字比對原教材頁面。"
+        }
+      ],
+      "before": {
+        "sentenceEn": "My father spent the whole weekend painting the fence in our garden.",
+        "sentenceZh": "我爸爸花了整個週末在粉刷我們家花園的籬笆。",
+        "blankSentence": "My father spent the whole weekend _____ the fence in our garden.",
+        "answer": "painting",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "status": "reviewed"
+      },
+      "after": null,
+      "applyAllowed": false,
+      "applied": false,
+      "originalTextbookRequiredForSourceIntent": true
+    }
+  ],
+  "deduplicatedExistingCandidates": [
+    {
+      "existingProposalId": "U10-T04",
+      "existingUnit": "U10",
+      "reviewIndex": 68,
+      "exampleId": "EXbf4b15ea",
+      "wordId": "W000472",
+      "word": "later",
+      "classification": "previously_recorded_optional_precision_improvement",
+      "classificationZh": "已記錄可選精度，跨單元去重",
+      "field": "sentenceZh",
+      "before": "這篇文章得在 5 月 31 日前遞交。",
+      "after": "這篇文章最遲須於 5 月 31 日遞交。",
+      "englishGuard": "The article must be submitted no later than May 31st.",
+      "reason": "no later than 的最遲界線與中文日前的慣用包含性值得釐清，但不能把所有日前用法都判為排除當日。此同一 exampleId、英文及中文 before 已有 U10-T04，不另創 U14 修正或增加新錯數。",
+      "deduplicationEvidence": {
+        "file": "u10-supplemental-text-proposals-fe2ec66.json",
+        "proposalId": "U10-T04",
+        "exactExampleIdEnglishAndBeforeMatched": true,
+        "originalSourceReopenedInThisReview": false,
+        "limit": "此檔僅用來核對既有候選及去重，不等於本次重新實讀其詞典來源。"
+      },
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "3b14fc8ac56ca58dd715a088340d913e5230a0b7",
+        "reviewedBlobSha": "04df8f3de1befa0da25734046a1b32c206cdd37c",
+        "exampleIdMustMatch": "EXbf4b15ea",
+        "exactFieldBefore": {
+          "sentenceZh": "這篇文章得在 5 月 31 日前遞交。"
+        },
+        "englishGuard": "The article must be submitted no later than May 31st.",
+        "contextMustMatch": {
+          "sentenceEn": "The article must be submitted no later than May 31st.",
+          "sentenceZh": "這篇文章得在 5 月 31 日前遞交。",
+          "blankSentence": "The article must be submitted no _____ than May 31st.",
+          "answer": "later",
+          "sensePos": "adv.",
+          "meaningHint": "晚於（no later than：最遲不超過）",
+          "exampleType": "textbook",
+          "status": "approved"
+        },
+        "ifAnyValueChanged": "停止套用並重讀該列，不以舊快照覆蓋最新值。",
+        "doNotModify": [
+          "sentenceEn",
+          "blankSentence",
+          "answer",
+          "sensePos",
+          "meaningHint",
+          "exampleType",
+          "status"
+        ]
+      },
+      "countAsNewU14Proposal": false,
+      "applied": false
+    }
+  ],
+  "scopeAndLimits": [
+    "僅以 3b14fc8 最新快照為基底；不以較早資料回填。",
+    "英文、中文、cloze、答案、句內 POS、提示、exampleType 與 status 均逐列實讀；結構程式檢查另行完成，不代替語義審核。",
+    "59 個正式詞的詞條摘要用於核對例句收錄範圍；本次不是罕見詞義、所有用法或詞卡圖片的完整審核。",
+    "97 列沒有教材頁碼或來源 URL。保留 textbook、daily、exam 類別和 approved／reviewed 原值，不把它們視為逐字來源證據。",
+    "80 個空提示有意保留；不以空提示推導缺漏或補造教學意圖。",
+    "18 個沒有正式 examples 的詞保留缺口，不另造例句，也不將無句可核說成整詞完成。",
+    "spent time painting 的 v. 可成立；對名詞 painting 詞條的收錄界線只列待確認，不為消除表面 POS 差異而改動正確句法。",
+    "中文自然轉譯、詞序差異及未明說的語境細節不一律判為錯；只提出兩項能讓教學對應更清楚的可選精度。",
+    "5/31 截止譯法的 exampleId、英文及 before 與既有 U10-T04 相同，已去重；不重複累加候選數。",
+    "本次未修改倉庫、詞條狀態或例句狀態，未推送；所有候選 applied=false。",
+    "相關 painting 詞卡只用於確認已觀察到的收錄問題，不表示 79 張詞卡已在本報告逐張檢核。"
+  ],
+  "deliveryNote": "無新確錯；2 項新可選中文精度、1 項收錄慣例待確認。1 項 U10 已記錄的截止精度去重，不重算。全部未套用，也不據此升格整單元或整詞 status。"
+}
