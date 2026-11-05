@@ -1,3 +1,6 @@
+import u24Notes from '../../docs/unit-audit-20261105/LV1-U24-usage-note-followup.json';
+import u24Forms from '../../docs/unit-audit-20261105/LV1-U24-verified-forms-patches.json';
+import u24FormSources from '../../docs/unit-audit-20261105/VERIFIED-U24-VERB-FORMS-SOURCES.json';
 import u23 from '../../docs/unit-audit-20261105/LV1-U23-patches.json';
 import u23Forms from '../../docs/unit-audit-20261105/LV1-U23-verified-forms-patches.json';
 import u23FormSources from '../../docs/unit-audit-20261105/VERIFIED-U23-VERB-FORMS-SOURCES.json';
@@ -429,3 +432,22 @@ it('reconstructs the old fine form fixture only after validating its exact later
  restoreRecordedAuditPatch('words',row,p);const nonForm={...row};delete nonForm.verbForms;expect(createHash('sha256').update(JSON.stringify(nonForm)).digest('hex')).toBe(old.nonFormRowSha256);
  expect(()=>restoreRecordedAuditPatch('words',{...row,meaningEn:'unrecorded'},p)).toThrow();
 });
+
+it('reverses only7 exact U24 sourced form keys and rejects all other row drift',()=>{
+ expect(u24FormSources.facts).toHaveLength(7);
+ const words:Row[]=JSON.parse(readFileSync('public/data/v1/words.json','utf8'));
+ for(const p of u24Forms.patches){
+  const row=structuredClone(words.find(w=>w.wordId===p.id)!);
+  const fact=u24FormSources.facts.find(f=>f.wordId===p.id)!;
+  restoreRecordedAuditPatch('words',row,p);expect(row).toEqual(fact.nonFormRow);expect(row).not.toHaveProperty('verbForms');
+  for(const key of ['base','past','pastParticiple','sourceRef','status']){
+   const wrong=structuredClone(p);(wrong.after.verbForms as Row)[key]='unverified';
+   expect(()=>restoreRecordedAuditPatch('words',{...fact.nonFormRow,...wrong.after},wrong)).toThrow();
+  }
+  for(const key of ['word','pos','status','meaningZh','meaningEn','usagePattern'])expect(()=>restoreRecordedAuditPatch('words',{...fact.nonFormRow,...p.after,[key]:'unrecorded'},p)).toThrow();
+  expect(()=>restoreRecordedAuditPatch('words',{...fact.nonFormRow,...p.after},{...p,before:{verbForms:null}})).toThrow();
+ }
+});
+
+
+it('preserves exact U24 flat note identity status and source while reversing only its content',()=>{const p=u24Notes.patches.find(p=>p.dataset==='notes')!;const row={...p.before,...p.after};restoreRecordedAuditPatch('notes',row,p);expect(row).toEqual(p.before);for(const key of ['word','title','noteType','status','noteId']){expect(()=>restoreRecordedAuditPatch('notes',{...p.before,...p.after,[key]:'changed'},p)).toThrow();expect(()=>restoreRecordedAuditPatch('notes',{...p.before,...p.after},{...p,before:{...p.before,[key]:'changed'}})).toThrow();}expect(()=>restoreRecordedAuditPatch('notes',{...p.before,content:'unverified'},{...p,after:{content:'unverified'}})).toThrow();expect(()=>restoreRecordedAuditPatch('notes',{...p.before,...p.after},{...p,id:'NXunknown'})).toThrow();});

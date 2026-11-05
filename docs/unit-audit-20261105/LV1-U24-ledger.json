@@ -1,0 +1,219 @@
+{
+  "unit": "LV1-U24",
+  "checkpointAt": "2026-11-05T22:28:00.313Z",
+  "priorCheckpoint": "3e1863874f3cdd5ef78965baaa5e158d22fd0e8c",
+  "priorCheckpointFullCi": {
+    "commit": "3e1863874f3cdd5ef78965baaa5e158d22fd0e8c",
+    "run": 42116648279,
+    "job": 127557946978,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42116648279/job/127557946978",
+    "status": "completed",
+    "conclusion": "success",
+    "checkoutShaMatched": true,
+    "evidence": "GitHub job metadata and decoded full job logs actually read; test and build summaries extracted.",
+    "vitest": {
+      "files": 216,
+      "passed": 1754,
+      "total": 1754,
+      "summaryAt": "2026-11-05T22:09:00Z"
+    },
+    "pythonBatches": [
+      14,
+      7,
+      34,
+      10
+    ],
+    "lint": "success",
+    "typecheck": "success",
+    "pageviews": "success",
+    "build": "success",
+    "lastBuildSummaryAt": "2026-11-05T22:09:40Z"
+  },
+  "newCheckpointFullCi": {
+    "status": "pending_exact_head_after_commit"
+  },
+  "state": "precise_corrections_saved_actual_app_and_local_checks_passed",
+  "scope": {
+    "retainedPairs": 52,
+    "publishedPairs": 52,
+    "formalWords": 49,
+    "uniqueExamples": 69,
+    "noFormalId": 3,
+    "sourceClozeReconstructions": 69,
+    "notesRead": 53
+  },
+  "counts": {
+    "mainRows": 29,
+    "mainFields": 52,
+    "wordRows": 20,
+    "clozePos": 7,
+    "practiceSentencesReviewed": 2,
+    "newVerbFormKeys": 7,
+    "usageNoteFollowups": 2,
+    "carrotDefinitionFields": 1,
+    "totalPatchRows": 39,
+    "totalFields": 62,
+    "changedUsagePages": 17,
+    "imageReplacements": 0
+  },
+  "manifests": [
+    "LV1-U24-patches.json",
+    "LV1-U24-verified-forms-patches.json",
+    "LV1-U24-usage-note-followup.json",
+    "LV1-U24-carrot-definition.json"
+  ],
+  "evidence": {
+    "sources": "LV1-U24-source-research.json",
+    "pixels": "LV1-U24-original-image-review.json",
+    "actualApp": "validation/U24-reopen-summary.json",
+    "exactInverse": "validation/U24-exact-inverse.json"
+  },
+  "localValidation": {
+    "unit": "LV1-U24",
+    "state": "passed",
+    "recordedAt": "2026-11-05T22:27:59.587Z",
+    "checks": [
+      {
+        "exitCode": 0,
+        "check": "regression"
+      },
+      {
+        "exitCode": 0,
+        "check": "python"
+      },
+      {
+        "exitCode": 0,
+        "check": "lint"
+      },
+      {
+        "exitCode": 0,
+        "check": "typecheck"
+      },
+      {
+        "exitCode": 0,
+        "check": "build"
+      }
+    ],
+    "originalLocalTestTimeoutPreserved": true,
+    "maxWorkers": 1,
+    "regression": {
+      "files": 11,
+      "passed": 140,
+      "total": 140
+    },
+    "pythonBoundaryTests": 36,
+    "writerFinalLintExitCode": 0,
+    "lintWarning": "Only the pre-existing unused curriculum variable in save_u16_audit_checkpoint.mjs; unchanged.",
+    "build": {
+      "seconds": 16.7,
+      "pwaPrecacheEntries": 268
+    },
+    "logs": [
+      {
+        "path": "output/unit-audit-20261105/U24-complete-regression.txt",
+        "sha256": "2385ad318bf037f253013c1083a5671fec2c3e239e14ae6b45f4c5b44e51060d"
+      },
+      {
+        "path": "output/unit-audit-20261105/U24-complete-python-retry.txt",
+        "sha256": "c18ae250393496cc8c6148a4a7bec203e2c5ee1aa3cebe1a71af98a8aa15c572"
+      },
+      {
+        "path": "output/unit-audit-20261105/U24-lint.txt",
+        "sha256": "888a42f6c7f512ba1e82976cdd04c02535dff24230cd962d095590259218b3ed"
+      },
+      {
+        "path": "output/unit-audit-20261105/U24-final-writer-lint.txt",
+        "sha256": "ccabb7869f4cb42e101c297b8547ee1f73b0920624a413ad76fd804b17f8dd29"
+      },
+      {
+        "path": "output/unit-audit-20261105/U24-typecheck.txt",
+        "sha256": "da91f4c430838409de74534c4d8bed41445d7c7283163b2a63c446dde034587b"
+      },
+      {
+        "path": "output/unit-audit-20261105/U24-build.txt",
+        "sha256": "5993b15a174aa16cba0a3ad9a5b15f568ad3d445393fa5482caa0d403581ac60"
+      }
+    ],
+    "operationRecovery": {
+      "initialRunnerExitCode": 1,
+      "reason": "PowerShell treated native unittest progress on stderr as an invocation error before a terminal result could be captured. No matching Python process remained; rerun obtained the complete36-test OK and native exit0. No test assertion or timeout was weakened."
+    },
+    "scope": "Final saved content after the two usage/note fields and single carrot definition correction; earlier139-test success retained as earlier worktree evidence."
+  },
+  "preserved": {
+    "headwordIdsPosWholeWordStatuses": true,
+    "allExampleEnglishClozeAnswersAndChinese": true,
+    "originalImageAndApprovalHashes": true,
+    "allExistingHints": true,
+    "emptyHints": 66,
+    "nonemptyHints": 3,
+    "all726PublishedPairs": true,
+    "normalInstallProgressTables": 14
+  },
+  "pending": [
+    {
+      "word": "yearly",
+      "field": "meaningEn",
+      "reason": "The inherited annual-reference-book noun definition is not verified by the consulted MW and Collins adjective/adverb entries. Preserved; the new adjective/adverb usage phrases do not certify this noun."
+    },
+    {
+      "word": "doctor/doc",
+      "field": "meaningZh",
+      "reason": "The inherited 通信部 abbreviation gloss needs precise independent identification; no change or whole-word approval."
+    },
+    {
+      "word": "medical",
+      "field": "meaningZh",
+      "reason": "Medical-examination noun is supported; the separate inherited 醫生 gloss still needs exact source. The formal adjective is unchanged."
+    },
+    {
+      "word": "medicine",
+      "field": "meaningZh",
+      "reason": "Existing nominal medicine/internal-medicine and related verbal wording retained. No expanded whole-word approval."
+    },
+    {
+      "word": "abroad",
+      "field": "meaningZh",
+      "reason": "MW supports adverb/adjective, wide circulation and older outside-home uses. Preserve the related adjective separately; no formal POS expansion."
+    },
+    {
+      "word": "pleasant",
+      "field": "meaningZh",
+      "reason": "Inherited 可愛的／活潑的 wording not removed based on rarity; exact broader Chinese scope remains unverified."
+    },
+    {
+      "word": "monthly",
+      "field": "image",
+      "reason": "Blank calendar and payment bag support the core concept; month-end date is not legible."
+    },
+    {
+      "word": "town/month/wise",
+      "field": "image_and_translation",
+      "reason": "Kinship branch, sibling age and duration cannot be established from the illustration alone; source wording retained."
+    },
+    {
+      "word": "board/convenience",
+      "field": "image",
+      "reason": "Blank notice/bill details are not legible; do not claim the schedule or online invoice contents were read."
+    },
+    {
+      "word": "day",
+      "field": "sense",
+      "reason": "The existing needs_check composite day sense remains unchanged; reviewing two practice sentences does not certify all senses."
+    }
+  ],
+  "rawIdResolution": {
+    "id": "LV1-U24-04",
+    "sourceOfficialWordId": "NOID",
+    "existingPublishedId": "W000232",
+    "formalHeadword": "doctor/doc",
+    "variant": "doctor",
+    "newIdCreated": false
+  },
+  "boundaries": "No new original textbook-page image inspection, official-exam-source claim, physical-phone test, deployment or publication-mode change.",
+  "next": {
+    "unit": "LV1-U25",
+    "state": "not_started"
+  },
+  "deployment": "No merge, deployment, PR or publication-mode change."
+}

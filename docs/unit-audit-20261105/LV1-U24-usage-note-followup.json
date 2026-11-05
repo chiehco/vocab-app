@@ -1,0 +1,38 @@
+{
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "unit": "LV1-U24",
+  "patches": [
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000339",
+      "before": {
+        "usagePattern": "in the future; a bright/near future; future + N (plans/generations)",
+        "usagePatternZh": "將來；光明的未來／不久的將來；未來的計畫／世代"
+      },
+      "after": {
+        "usagePattern": "in the future; a bright future / the near future; future plans/generations"
+      },
+      "reason": "Keep a bright future and the near future with their own articles; Chinese paired alternatives already exact.",
+      "evidence": "https://www.merriam-webster.com/dictionary/future"
+    },
+    {
+      "dataset": "notes",
+      "key": "noteId",
+      "id": "NXe49d83a6",
+      "before": {
+        "noteId": "NXe49d83a6",
+        "word": "flat",
+        "noteType": "phrase",
+        "title": "have a flat tire",
+        "content": "爆胎。",
+        "status": "approved"
+      },
+      "after": {
+        "content": "輪胎洩氣。"
+      },
+      "reason": "A flat tire lacks air and need not have burst. Preserve title, word, type, status and identity.",
+      "evidence": "https://www.merriam-webster.com/dictionary/flat"
+    }
+  ]
+}
