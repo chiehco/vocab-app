@@ -96,9 +96,12 @@ async function replaceChangedRows<T>(table: Table<T, string>, incoming: T[], key
   // replacement semantics, including deleted rows and removed optional fields.
   const existing = await table.toCollection().raw().toArray();
   const previous = new Map(existing.map(row => [key(row), row]));
-  const incomingIds = new Set(incoming.map(key));
+  // bulkPut used the last incoming value for a repeated key. Resolve that value
+  // before comparing with storage, even when the last value equals the old row.
+  const finalIncoming = new Map(incoming.map(row => [key(row), row]));
+  const incomingIds = new Set(finalIncoming.keys());
   const removed = existing.map(key).filter(id => !incomingIds.has(id));
-  const changed = incoming.filter(row => !sameContentValue(previous.get(key(row)),row));
+  const changed = [...finalIncoming.values()].filter(row => !sameContentValue(previous.get(key(row)),row));
   if (removed.length) await table.bulkDelete(removed);
   if (changed.length) await table.bulkPut(changed);
 }

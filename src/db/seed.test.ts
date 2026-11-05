@@ -209,3 +209,16 @@ it('rolls back every delta and metadata when any content table rejects a row',as
   serve(bad);await expect(updateDictionaryContent()).rejects.toThrow();
   expect(await Promise.all(contentDb.tables.map(t=>t.toCollection().raw().toArray()))).toEqual(before);
 });
+
+it.each(['changed then original','original then changed'] as const)('retains last-write-wins for repeated incoming keys: %s',async(order)=>{
+  const oldData=renamedBundle('duplicate-old','enjoy');serve(oldData);await seedContentIfNeeded();
+  const original=(oldData['words.json'] as WordRecord[])[0],changed={...original,meaningZh:'A changed value'};
+  const next=structuredClone(oldData);(next['meta.json'] as {contentHash:string}).contentHash='duplicate-new';
+  next['words.json']=order==='changed then original'?[changed,original]:[original,changed];
+  (next['meta.json'] as {counts:Record<string,number>}).counts.words=2;
+  const put=vi.spyOn(contentDb.words,'bulkPut');serve(next);await seedContentIfNeeded();
+  const expected=order==='changed then original'?original:changed;
+  expect(await contentDb.words.get(original.wordId)).toEqual(expected);
+  if(order==='changed then original')expect(put).not.toHaveBeenCalled();else expect(put).toHaveBeenCalledWith([changed]);
+  expect((await contentDb.meta.get('current'))?.contentHash).toBe('duplicate-new');
+});

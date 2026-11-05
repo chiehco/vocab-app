@@ -10,6 +10,8 @@ import { groupWordIds } from './groupScope';
 import { textbookUnits } from '../vocabulary/textbookCatalog';
 import { practiceIds } from '../vocabulary/model';
 import { releasedUnit20BeforePracticeRevision } from './lv4U20PracticeRevision.testSupport';
+import currentUnit16 from './curriculumLV1Unit16.json';
+import { unit16BeforeAudit } from './lv1Unit16Audit.testSupport';
 
 function stable(value: unknown): unknown {
   if (Array.isArray(value)) return value.map(stable);
@@ -40,11 +42,15 @@ it('retains historical curriculum and question identities with the audited cubes
     const retained = existing.get(old.templateId)!;
     expect(retained, old.templateId).toBeDefined();
     expect(retained.items).toHaveLength(old.count);
-    // Only the five owner-approved practice examples differ from this snapshot.
-    // Undo those exact edits for the historical fingerprint; keep checking the
-    // real installed unit below and never omit U20 or change its old hash.
+    // Undo only exact recorded edits for the immutable historical fingerprint.
+    // The real installed units remain checked below; no unit or old hash is omitted.
     const priorPractice = old.templateId === 'LV4-U20' ? releasedUnit20BeforePracticeRevision() : undefined;
-    expect(hash(priorPractice?.learningItems ?? retained.items), old.templateId).toBe(old.itemsHash);
+    let priorItems=priorPractice?.learningItems ?? retained.items;
+    if(old.templateId === 'TEXTBOOK-LV1-U16'){
+      expect(retained.items).toEqual(currentUnit16.learningItems);
+      priorItems=unit16BeforeAudit(currentUnit16).learningItems;
+    }
+    expect(hash(priorItems), old.templateId).toBe(old.itemsHash);
     const originalQuestions = structuredClone(priorPractice?.questions ?? retained.questions);
     if (old.templateId === 'LV4-U20') {
       // The 2026-10-31 rationale batch adds this one existing optional field.
