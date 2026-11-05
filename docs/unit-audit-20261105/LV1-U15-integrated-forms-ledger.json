@@ -1,0 +1,179 @@
+{
+  "batch": "LV1-U15-verified-form-integration",
+  "checkpointAt": "2026-11-05T19:38:45.747Z",
+  "priorCheckpoint": "f2426fd1f46090ad0c6831afbe933831c73f636a",
+  "priorCheckpointFullCi": {
+    "commit": "f2426fd1f46090ad0c6831afbe933831c73f636a",
+    "run": 42094302699,
+    "job": 127480213204,
+    "status": "in_progress",
+    "conclusion": null,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42094302699/job/127480213204"
+  },
+  "latestCompletedIntegrationCiAtCheckpoint": {
+    "commit": "608836483cd053ae456b33299554060db686f5c0",
+    "run": 42092287847,
+    "job": 127473172745,
+    "status": "completed",
+    "conclusion": "success",
+    "completedAt": "2026-11-05T19:32:46Z",
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42092287847/job/127473172745",
+    "files": 216,
+    "tests": 1710,
+    "pythonBatches": [
+      14,
+      7,
+      28,
+      10
+    ],
+    "allStepsSuccessful": true,
+    "lines": [
+      "2026-11-05T19:16:28.0892020Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +608836483cd053ae456b33299554060db686f5c0:refs/remotes/origin/content/unit-audit-20261105",
+      "2026-11-05T19:16:37.6750686Z  * [new ref]         608836483cd053ae456b33299554060db686f5c0 -> origin/content/unit-audit-20261105",
+      "2026-11-05T19:16:38.4507021Z 608836483cd053ae456b33299554060db686f5c0",
+      "2026-11-05T19:17:22.2715308Z Ran 14 tests in 24.904s",
+      "2026-11-05T19:17:39.8040477Z Ran 7 tests in 17.342s",
+      "2026-11-05T19:17:58.1317334Z Ran 28 tests in 18.198s",
+      "2026-11-05T19:17:58.2641249Z Ran 10 tests in 0.058s",
+      "2026-11-05T19:31:59.7678286Z  Test Files  216 passed (216)",
+      "2026-11-05T19:31:59.7687393Z       Tests  1710 passed (1710)",
+      "2026-11-05T19:32:40.4379563Z ✓ built in 3.00s"
+    ]
+  },
+  "sourceEvidenceCommit": "316b3eed6646c716d20a833b4342945475968c02",
+  "state": "exact_22_fields_integrated_actual_ui_verified_local_checks_passed",
+  "counts": {
+    "originalPreparedFields": 22,
+    "addedTrueAbsentKeys": 22,
+    "alreadyIdenticalSkipped": 1,
+    "conflictsOverwritten": 0,
+    "actualBeforeCards": 22,
+    "actualAfterCards": 22,
+    "bothPanelDisplaysViewed": 44,
+    "existingImagesUnchanged": 22,
+    "exampleComparisonsUnchanged": 33,
+    "usagePagesUnchanged": 22,
+    "progressTables": 14,
+    "savedRows": 2100
+  },
+  "source": "VERIFIED-INTEGRATED-U15-VERB-FORMS-SOURCES.json",
+  "manifest": "LV1-U15-integrated-forms-patches.json",
+  "guards": "Fixed explicitly enumerated IDs, each exact sourced form/status and complete non-form row hash. Null/custom/existing values, missing before, false after, unknown ID and all non-form drift are rejected. Absent fields reverse by delete. Every previous source table and historical hash fixture is retained.",
+  "inverse": {
+    "base": "f2426fd1f46090ad0c6831afbe933831c73f636a",
+    "rowsCompared": 6090,
+    "addedKeys": 22,
+    "exactInverse": true,
+    "beforeSha256": "5176f315a9d88be8a8f2f2edd0db65d3911df58823ff281e2c8f88615f6487b0",
+    "restoredSha256": "5176f315a9d88be8a8f2f2edd0db65d3911df58823ff281e2c8f88615f6487b0",
+    "allNonFormFieldsUnchanged": true
+  },
+  "progress": {
+    "action": "existing App full-dictionary installer in isolated localhost audit browser",
+    "words": 6090,
+    "examples": 7871,
+    "progressTables": 14,
+    "progressUnchanged": true
+  },
+  "pixels": {
+    "checkedAt": "2026-11-05T19:35:44.912Z",
+    "cardsViewed": 22,
+    "bothPanelDisplaysViewed": 44,
+    "contactSheets": [
+      "output/unit-audit-20261105/sheets/integrated-u15/01-03.png",
+      "output/unit-audit-20261105/sheets/integrated-u15/04-06.png",
+      "output/unit-audit-20261105/sheets/integrated-u15/07-09.png",
+      "output/unit-audit-20261105/sheets/integrated-u15/10-12.png",
+      "output/unit-audit-20261105/sheets/integrated-u15/13-15.png",
+      "output/unit-audit-20261105/sheets/integrated-u15/16-18.png",
+      "output/unit-audit-20261105/sheets/integrated-u15/19-21.png",
+      "output/unit-audit-20261105/sheets/integrated-u15/22-22.png"
+    ],
+    "allSheetsActuallyViewed": true,
+    "observation": "All22 real card and meaning panels were legible and matched sourced principal parts. Sing showed sang/sung; wet showed selected wet/wet; gray showed grayed/grayed. Existing images remained visible.",
+    "scope": "Cropped actual panel pixels inspected; complete image/caption/example/usage equality and full saved data/progress are separate DOM and IndexedDB evidence. Source restrictions/long notes are retained but are not claimed visible.",
+    "wordIds": [
+      "W000625",
+      "W000593",
+      "W000069",
+      "W000451",
+      "W004579",
+      "W000846",
+      "W001788",
+      "W000197",
+      "W000361",
+      "W005517",
+      "W000461",
+      "W000771",
+      "W005090",
+      "W000948",
+      "W000191",
+      "W000247",
+      "W000855",
+      "W001125",
+      "W000962",
+      "W002330",
+      "W000284",
+      "W000780"
+    ]
+  },
+  "regression": {
+    "originalLocalTimeoutMs": 5000,
+    "files": 11,
+    "tests": 96,
+    "pythonBoundaryTests": 30,
+    "exits": {
+      "build": 0,
+      "completedAt": "2026-11-05T19:37:33.2595992Z",
+      "tests": 0,
+      "typecheck": 0,
+      "lint": 0,
+      "python": 0
+    },
+    "oldWholePackAndHistoricalHashesUnchanged": true
+  },
+  "preserved": {
+    "wholeWordApproval": false,
+    "headwordPosChanges": 0,
+    "definitionChanges": 0,
+    "exampleChanges": 0,
+    "usageChanges": 0,
+    "imageChanges": 0,
+    "restrictions": [
+      "sing uses sang/sung; sing. abbreviation remains separate.",
+      "wet selects sourced wet/wet, while valid wetted remains qualified in evidence; adjective get wet is unchanged.",
+      "gray/grayed and flavor/flavored retain the existing American spelling; lighten remains distinct from light/lit.",
+      "Noun, adjective and compound usages of paper, key, notice, count, taste, calm and other entries keep their original sentence-level POS and wording.",
+      "Existing light/lit/lit field is identical and preserved; no whole-word status, definitions or imagery is approved by principal-part verification."
+    ]
+  },
+  "newCheckpointFullCi": "Pending this new integration commit and its own full CI.",
+  "remaining": {
+    "formCandidatesFromPreparedSnapshot": 0,
+    "scope": "The selected prepared integration is complete; separate unresolved homograph/presentation and text candidates retain their pending status.",
+    "nextFormBatch": null,
+    "nextComprehensiveUnit": {
+      "unit": "LV1-U22",
+      "id": "LV1-U22-01",
+      "word": "arrive"
+    }
+  },
+  "completePreparedPackageReconciliation": {
+    "selectedFacts": 294,
+    "newTrueAbsentKeysIntegrated": 268,
+    "existingExactPreserved": 26,
+    "conflictsOverwritten": 0,
+    "allCurrentFormsExact": true,
+    "combinedInverseWordRows": 6090,
+    "evidence": "validation/U03-U15-integrated-package-reconciliation.json"
+  },
+  "publicationReview": {
+    "checkedAt": "2026-11-05T19:39:49.551Z",
+    "filesScanned": 795,
+    "findings": 0,
+    "diffCheckExit": 0,
+    "postRecordLintExit": 0,
+    "unrelatedWorkIncluded": false,
+    "history": "Base commit f2426fd is already remote; no earlier unpublished commits or private backup history are included."
+  }
+}
