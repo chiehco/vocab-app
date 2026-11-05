@@ -115,6 +115,26 @@ describe('reviewed LV1 image-only release', () => {
     expect(approvedCurriculumIllustration('mind','/'+door.illustration.path)).toEqual(door.illustration);
   });
 
+  it('repairs only the exact U13 valley chart while retaining old bytes and both different formal examples',()=>{
+    const card=cards.find(c=>c.id==='LV1-U13-65')!;
+    expect(card.officialWordId).toBe('W001242');
+    expect(card.illustration).toEqual({path:'wordbeast/lv1-reviewed/LV1-U13-65-3dc230fb571f.webp',captionEn:'The teacher showed the depth of the valley on the chart.',captionZh:'老師在圖表上展示了山谷的深度。'});
+    expect(hash(readFileSync('public/'+card.illustration.path))).toBe('924029ff52b7e8848d30e86f21f8616f32303e0b6ae7aedd33df1a951af2527e');
+    expect(hash(readFileSync('public/wordbeast/lv1-reviewed/LV1-U13-65-439edb15ebab.webp'))).toBe('efff15ae8aa4bab09f042caa62af9ace6a3576d93e954df7feb28b2c4a11c882');
+    const approval=audit.find(c=>c.id===card.id)!;
+    expect(approval.previousApproval?.publishedImageSha256).toBe('efff15ae8aa4bab09f042caa62af9ace6a3576d93e954df7feb28b2c4a11c882');
+    expect(approval.previousApproval?.textSha256).toBe(approval.textSha256);
+    expect(getWordBeastAsset('W001242','depth')).toContain(card.illustration.path);
+    expect(approvedWordIllustration('depth','W001242')).toEqual(card.illustration);
+    expect(approvedCurriculumIllustration('depth','/'+card.illustration.path)).toEqual(card.illustration);
+    const formal=bootstrap.examples.filter(e=>e.word==='depth');
+    expect(formal.map(e=>[e.exampleId,e.sentenceEn])).toEqual([
+      ['EX4b50cf68','The teacher explained the topic in depth so everyone could fully understand it.'],
+      ['EX63e39700','Scientists measured the depth of the lake before building the new bridge nearby.'],
+    ]);
+    expect(formal.some(e=>e.sentenceEn===card.illustration.captionEn)).toBe(false);
+  });
+
   it('uses the corrected five-finger glove and the final proxy-reviewed Unit22-25 captions', () => {
     expect(audit.find(c => c.id === 'LV1-U23-77')?.sourceImage).toBe('77_NOID_glove_v2.png');
     expect(cards.find(c => c.id === 'LV1-U23-77')?.illustration.captionEn)
