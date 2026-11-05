@@ -7,6 +7,9 @@ import starterBaseline from '../../scripts/fixtures/lv4-u2-notes-confirmation-ba
 import {beforeUnitAudit,restoreRecordedAuditPatch} from './unitAudit.testSupport';
 import forms from '../../docs/unit-audit-20261105/LV1-U01-U02-verb-forms-followup.json';
 import translations from '../../docs/unit-audit-20261105/LV1-verified-translations-followup.json';
+import followups from '../../docs/unit-audit-20261105/LV1-U03-U04-verified-forms-patches.json';
+import followupSources from '../../docs/unit-audit-20261105/VERIFIED-FOLLOWUP-VERB-FORMS-SOURCES.json';
+import originalSources from '../../docs/unit-audit-20261105/VERIFIED-VERB-FORMS-SOURCES.json';
 
 type Row=Record<string,unknown>;
 const examples:Row[]=JSON.parse(readFileSync('public/data/v1/examples.json','utf8'));
@@ -68,4 +71,25 @@ it('checks unchanged English guards and reverses only exact verified Chinese cor
  restoreRecordedAuditPatch('examples',row,p);expect(row.sentenceZh).toBe(p.before.sentenceZh);expect(row.sentenceEn).toBe(p.before.sentenceEn);expect(row.answer).toBe('died');
  expect(()=>restoreRecordedAuditPatch('examples',{...p.after,sentenceEn:'Unrecorded English'},p)).toThrow('source guard');
  expect(()=>restoreRecordedAuditPatch('examples',{...p.before,...p.after},{...p,id:'EXunknown'})).toThrow('verified translations');
+});
+
+it('reverses only exact followup fields to absent and retains the original 31 source facts',()=>{
+ expect(originalSources.facts).toHaveLength(31);
+ const originalIds=new Set(originalSources.facts.map(f=>f.wordId));
+ expect(followupSources.facts.every(f=>!originalIds.has(f.wordId))).toBe(true);
+ const words:Row[]=JSON.parse(readFileSync('public/data/v1/words.json','utf8'));
+ for(const p of followups.patches){
+  const row=structuredClone(words.find(row=>row.wordId===p.id)!);
+  const preserved={...row};delete preserved.verbForms;
+  restoreRecordedAuditPatch('words',row,p);
+  expect(Object.hasOwn(row,'verbForms')).toBe(false);
+  expect(row).toEqual(preserved);
+  for(const key of ['base','past','pastParticiple','sourceRef','status']){
+   const changed=structuredClone(p);
+   (changed.after.verbForms as Row)[key]='unverified';
+   expect(()=>restoreRecordedAuditPatch('words',{...changed.after},changed)).toThrow();
+  }
+  expect(()=>restoreRecordedAuditPatch('words',{...p.after},{...p,before:{verbForms:null}})).toThrow();
+ }
+ expect(words.find(row=>row.wordId==='W000139')).not.toHaveProperty('verbForms');
 });

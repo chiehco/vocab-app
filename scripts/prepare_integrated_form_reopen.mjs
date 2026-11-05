@@ -1,0 +1,36 @@
+import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
+import assert from 'node:assert/strict';
+const phase=process.argv[2];assert.ok(['before','after'].includes(phase));
+const facts=JSON.parse(readFileSync('docs/unit-audit-20261105/VERIFIED-FOLLOWUP-VERB-FORMS-SOURCES.json','utf8')).facts;
+const words=JSON.parse(readFileSync('public/data/v1/words.json','utf8'));
+const cards=facts.map(f=>({...f,currentWord:words.find(w=>w.wordId===f.wordId)}));
+assert.equal(cards.length,16);
+const out=`output/playwright/unit-audit/forms-integration-${phase}`;mkdirSync(out,{recursive:true});
+writeFileSync('output/playwright/unit-audit/integrated-forms-reopen.playwright.txt',`async(page)=>{
+ const results=[];await page.setViewportSize({width:1000,height:1000});
+ for(const fact of ${JSON.stringify(cards)}){
+  await page.goto('http://127.0.0.1:5179/#/word/'+fact.wordId);
+  await page.getByRole('heading',{name:fact.word,exact:true}).waitFor();
+  await page.waitForFunction(()=>{const i=document.querySelector('.study-illustration img');return i?i.complete&&i.naturalWidth>0:document.querySelector('main')?.innerText.includes('圖片尚未收錄')});
+  await page.waitForTimeout(350);
+  const expected=[fact.verbForms.base,fact.verbForms.past,fact.verbForms.pastParticiple];
+  const readForms=()=>page.locator('.recorded-verb-forms dd').allTextContents();
+  let actual=await readForms();
+  if(${JSON.stringify(phase)}==='after'&&JSON.stringify(actual)!==JSON.stringify(expected))throw Error('Card forms mismatch '+fact.word);
+  if(${JSON.stringify(phase)}==='before'&&actual.length)throw Error('Original field is no longer absent '+fact.word);
+  const hero=await page.locator('main').innerText(),images=await page.locator('.study-illustration img').evaluateAll(imgs=>imgs.map(i=>({src:i.getAttribute('src'),loaded:i.complete&&i.naturalWidth>0,width:i.naturalWidth,height:i.naturalHeight})));
+  if(images.some(i=>!i.loaded))throw Error('Existing image failed '+fact.word);
+  const caption=await page.locator('.study-illustration figcaption').allTextContents();
+  const screenshot='${out}/'+fact.wordId+'-card.png';await page.screenshot({path:screenshot,fullPage:true});
+  await page.getByRole('button',{name:'字義',exact:true}).click();
+  if(fact.currentWord.meaningEn)await page.waitForFunction(text=>document.querySelector('main')?.innerText.replace(/\\s+/g,' ').includes(text.replace(/\\s+/g,' ')),fact.currentWord.meaningEn);
+  const meaningForms=await readForms();
+  if(${JSON.stringify(phase)}==='after'&&JSON.stringify(meaningForms)!==JSON.stringify(expected))throw Error('Meaning forms mismatch '+fact.word);
+  const examples=await page.locator('.dossier-examples li').evaluateAll(items=>items.map(li=>({en:li.querySelector('p')?.innerText,zh:li.querySelector('div>span')?.innerText,label:[...li.querySelectorAll('small')].map(s=>s.innerText)})));
+  const meaningScreenshot='${out}/'+fact.wordId+'-meaning.png';await page.screenshot({path:meaningScreenshot,fullPage:true});
+  await page.getByRole('button',{name:'搭配',exact:true}).click();await page.waitForTimeout(350);
+  const usage=await page.locator('main').innerText(),usageScreenshot='${out}/'+fact.wordId+'-usage.png';await page.screenshot({path:usageScreenshot,fullPage:true});
+  results.push({wordId:fact.wordId,word:fact.word,actual,meaningForms,hero,images,caption,examples,usage,screenshot,meaningScreenshot,usageScreenshot});
+ }return {phase:${JSON.stringify(phase)},cards:results.length,results};
+}`);
+console.log(JSON.stringify({phase,cards:cards.length}));
