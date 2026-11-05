@@ -1,0 +1,2493 @@
+{
+  "reviewTitle": "LV1 U16 純文字教材與正式例句獨立預審",
+  "reviewedAtUtc": "2026-11-05",
+  "snapshot": {
+    "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+    "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+    "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+    "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+    "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+  },
+  "scope": "read_only_text_review",
+  "sourceImagesRead": false,
+  "limitationsZh": [
+    "本次只獨立閱讀固定 Git 快照的課程 JSON、source JSON、65 個關聯正式詞與 104 個正式例句，沒有讀取教材頁像。sourceReview、pageNumberVerified 等為既有聲明，並非本次獨立實證。",
+    "未驗證教材照片頁碼、原始字形、原句全文、版面原順序或邊界頁。順序比對僅證明 curriculum 對 source manifest 一致。",
+    "單元既定 text_only/read_only；缺配圖、空 questions、空 relatedNotes、null officialSenseId 與 null 未映射 officialWordId 不當成錯誤，也未升級為完整圖像／例題單元。",
+    "104 句是正式字庫既有例句，不是本章教材原例句；沒有新造原教材句、映射 ID 或圖片。",
+    "語義逐列實讀與程式結構驗證分開記錄。程式 cloze 還原通過並不取代語義判讀。",
+    "Cambridge 直接開啟部分頁面回傳 403；已閱讀的 Cambridge 內容來自搜尋工具回傳之出版社原站索引正文。Collins cleanly/lakelet/blow 與 Merriam-Webster besides 原站頁成功開啟。未跨越登入、付費或存取限制。",
+    "所有候選未套用，未改 repository、發布模式、審核狀態或推送。候選分類與欄位數不能換算成單元錯誤數；同 issueGroup 去重才可計問題族。",
+    "正式字庫廣義 gloss 的罕見義與跨詞性分義仍有未核事項，已記 formalWordReview；未因本次覆蓋全列而宣稱所有細義均經字典逐條證實。",
+    "修訂版不以常見義替換完整詞條摘要。已支持的稀有義保留；未核細義不刪、不標通過。"
+  ],
+  "summary": {
+    "learningItemsRead": 136,
+    "vocabularyRead": 79,
+    "grammarRead": 57,
+    "sourceHeadwordsRead": 38,
+    "sourceRelatedRead": 41,
+    "sourceUsageRead": 57,
+    "mappedVocabulary": 65,
+    "unmappedVocabulary": 14,
+    "unmappedHeadwords": [
+      "Mr.",
+      "Mrs.",
+      "Ms."
+    ],
+    "unmappedSupplements": 11,
+    "formalWordsRead": 65,
+    "formalExamplesRead": 104,
+    "formalWordsWithExamples": 46,
+    "formalWordsWithoutExamples": 19,
+    "formalWordStatusCounts": {
+      "reviewed": 46,
+      "draft": 19
+    },
+    "formalExampleStatusCounts": {
+      "reviewed": 93,
+      "approved": 9,
+      "draft": 2
+    },
+    "allSourceMappingsConsistent": true,
+    "allClozeReconstructionExact": true,
+    "examplePosDefects": 7,
+    "grammarPlaceholderExplanations": 6,
+    "supplementPlaceholderMeanings": 11,
+    "proposalRecordCounts": {
+      "確錯": 10,
+      "可選精度": 20,
+      "待確認": 16
+    },
+    "confirmedIssueGroups": 10,
+    "proposalRecordsAreNotErrorCount": true,
+    "confirmedDefectBreakdown": {
+      "examplePosMismatch": 7,
+      "truncatedDefinition": 2,
+      "adjectiveDefinitionDirection": 1
+    },
+    "confirmedCandidatesWithConcreteAfter": 9,
+    "confirmedCandidatesAwaitingSafeReplacement": 1,
+    "supersedesPreviousIssueCount": true,
+    "prior13Group14RecordConclusionWithdrawn": true
+  },
+  "applyRuleZh": "本版取代修訂版 1，舊提案不可套用。先以固定 ID、recordSha256、before 及英文 guard 比對主線。minimalAfter=null 代表已確認缺陷但沒有可安全套用的完整修正。保留已支持稀有義，未核細義不刪、不標通過。全域詞條與章節選義分開，不以 v. 主標籤清空同形名詞。所有候選均未套用，不改發布與審核狀態。",
+  "proposals": [
+    {
+      "proposalId": "U16P001",
+      "classification": "確錯",
+      "findingType": "example_pos_mismatch",
+      "issueGroup": "EX138191eb",
+      "targetKind": "formalExample",
+      "targetId": "EX138191eb",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "582689450bfa8e192ad25dd74b7397045dae80b585d7ce58ceba02380dcb9bc6",
+      "englishGuard": {
+        "word": "row",
+        "sentenceEn": "He rowed the boat gently across the quiet lake.",
+        "blankSentence": "He _____ the boat gently across the quiet lake.",
+        "answer": "rowed"
+      },
+      "before": {
+        "sensePos": "n."
+      },
+      "minimalAfter": {
+        "sensePos": "v."
+      },
+      "reasonZh": "rowed 為帶 boat 受詞的過去式動詞。",
+      "evidenceSources": [],
+      "limitationsZh": "只對固定快照提出候選，未套用。主線若已改動，必須以 ID、英文 guard、before 與 recordSha256 重新比對；不可按陣列位置盲套。",
+      "applied": false
+    },
+    {
+      "proposalId": "U16P002",
+      "classification": "確錯",
+      "findingType": "example_pos_mismatch",
+      "issueGroup": "EX50089233",
+      "targetKind": "formalExample",
+      "targetId": "EX50089233",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "2ff8a55345650ef586e946a5487527bf9c0df7cf6b69e727fcfbd77e96381fc4",
+      "englishGuard": {
+        "word": "address",
+        "sentenceEn": "Please write your address clearly on the envelope.",
+        "blankSentence": "Please write your _____ clearly on the envelope.",
+        "answer": "address"
+      },
+      "before": {
+        "sensePos": "v."
+      },
+      "minimalAfter": {
+        "sensePos": "n."
+      },
+      "reasonZh": "your address 為 write 的受詞名詞住址。",
+      "evidenceSources": [],
+      "limitationsZh": "只對固定快照提出候選，未套用。主線若已改動，必須以 ID、英文 guard、before 與 recordSha256 重新比對；不可按陣列位置盲套。",
+      "applied": false
+    },
+    {
+      "proposalId": "U16P003",
+      "classification": "確錯",
+      "findingType": "example_pos_mismatch",
+      "issueGroup": "EX5fb70a28",
+      "targetKind": "formalExample",
+      "targetId": "EX5fb70a28",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "634c78da073d9a99aeebf8ae297c0f6a5423d06806b909f2a32d10f2e79d695f",
+      "englishGuard": {
+        "word": "kind",
+        "sentenceEn": "What kind of music do you usually listen to on weekends?",
+        "blankSentence": "What _____ of music do you usually listen to on weekends?",
+        "answer": "kind"
+      },
+      "before": {
+        "sensePos": "adj."
+      },
+      "minimalAfter": {
+        "sensePos": "n."
+      },
+      "reasonZh": "kind of music 中 kind 為種類名詞。",
+      "evidenceSources": [],
+      "limitationsZh": "只對固定快照提出候選，未套用。主線若已改動，必須以 ID、英文 guard、before 與 recordSha256 重新比對；不可按陣列位置盲套。",
+      "applied": false
+    },
+    {
+      "proposalId": "U16P004",
+      "classification": "確錯",
+      "findingType": "example_pos_mismatch",
+      "issueGroup": "EX8eb374df",
+      "targetKind": "formalExample",
+      "targetId": "EX8eb374df",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "9f30d4f07fb5204dace44a8ba28a5e5314d678379c4e51c8cedb1a259c9b505f",
+      "englishGuard": {
+        "word": "type",
+        "sentenceEn": "She typed the report quickly and sent it to her manager before noon.",
+        "blankSentence": "She _____ the report quickly and sent it to her manager before noon.",
+        "answer": "typed"
+      },
+      "before": {
+        "sensePos": "n."
+      },
+      "minimalAfter": {
+        "sensePos": "v."
+      },
+      "reasonZh": "typed 為與 sent 並列的過去式動詞。",
+      "evidenceSources": [],
+      "limitationsZh": "只對固定快照提出候選，未套用。主線若已改動，必須以 ID、英文 guard、before 與 recordSha256 重新比對；不可按陣列位置盲套。",
+      "applied": false
+    },
+    {
+      "proposalId": "U16P005",
+      "classification": "確錯",
+      "findingType": "example_pos_mismatch",
+      "issueGroup": "EXabdae499",
+      "targetKind": "formalExample",
+      "targetId": "EXabdae499",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "e28812d014b42bd1f008ef2fe8db1ec32d1386412280f9f6fa2577972c2f59f4",
+      "englishGuard": {
+        "word": "sort",
+        "sentenceEn": "He spent the afternoon sorting out his old photos and letters.",
+        "blankSentence": "He spent the afternoon _____ out his old photos and letters.",
+        "answer": "sorting"
+      },
+      "before": {
+        "sensePos": "n."
+      },
+      "minimalAfter": {
+        "sensePos": "v."
+      },
+      "reasonZh": "sorting out 為 spend time V-ing 結構中的動詞分詞。",
+      "evidenceSources": [],
+      "limitationsZh": "只對固定快照提出候選，未套用。主線若已改動，必須以 ID、英文 guard、before 與 recordSha256 重新比對；不可按陣列位置盲套。",
+      "applied": false
+    },
+    {
+      "proposalId": "U16P006",
+      "classification": "確錯",
+      "findingType": "example_pos_mismatch",
+      "issueGroup": "EXec24ee4c",
+      "targetKind": "formalExample",
+      "targetId": "EXec24ee4c",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "4e9937a97238546328a931d37e2138f57ecb65aab605c29c881f6632a45c7c7b",
+      "englishGuard": {
+        "word": "safe",
+        "sentenceEn": "He locked the important documents in a safe at home.",
+        "blankSentence": "He locked the important documents in a _____ at home.",
+        "answer": "safe"
+      },
+      "before": {
+        "sensePos": "adj."
+      },
+      "minimalAfter": {
+        "sensePos": "n."
+      },
+      "reasonZh": "a safe 為保險箱可數名詞。",
+      "evidenceSources": [],
+      "limitationsZh": "只對固定快照提出候選，未套用。主線若已改動，必須以 ID、英文 guard、before 與 recordSha256 重新比對；不可按陣列位置盲套。",
+      "applied": false
+    },
+    {
+      "proposalId": "U16P007",
+      "classification": "確錯",
+      "findingType": "example_pos_mismatch",
+      "issueGroup": "EXffaa9ccd",
+      "targetKind": "formalExample",
+      "targetId": "EXffaa9ccd",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "22623f433d25b3d9f9d6cce131fd9d580936b118a1ab12b00f6ec217d5faa842",
+      "englishGuard": {
+        "word": "mistake",
+        "sentenceEn": "She mistook the stranger for her old classmate at the station.",
+        "blankSentence": "She _____ the stranger for her old classmate at the station.",
+        "answer": "mistook"
+      },
+      "before": {
+        "sensePos": "n."
+      },
+      "minimalAfter": {
+        "sensePos": "v."
+      },
+      "reasonZh": "mistook 為 mistake A for B 的過去式動詞。",
+      "evidenceSources": [],
+      "limitationsZh": "只對固定快照提出候選，未套用。主線若已改動，必須以 ID、英文 guard、before 與 recordSha256 重新比對；不可按陣列位置盲套。",
+      "applied": false
+    },
+    {
+      "proposalId": "U16P008",
+      "classification": "確錯",
+      "findingType": "truncated_definition",
+      "issueGroup": "W000088",
+      "targetKind": "formalWord",
+      "targetId": "W000088",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "b3dbbc84301f905a1f32991fd17d5f8cddc83df77cb286bec02e2317cb6fae1d",
+      "englishGuard": {
+        "word": "beside",
+        "meaningEn": "At the side of; on one side of.; Aside from; out of the regular course or order of; in a",
+        "usagePattern": "beside N; beside oneself with N"
+      },
+      "before": {
+        "meaningEn": "At the side of; on one side of.; Aside from; out of the regular course or order of; in a"
+      },
+      "minimalAfter": {
+        "meaningEn": "At the side of; on one side of.; Aside from; out of the regular course or order of; in a state of deviation from; out of."
+      },
+      "reasonZh": "欄位確實截斷在 in a；Gutenberg 的 Webster 1913 數位原書 Beside 第 2 義找到完全對應的後半句。只追加缺尾，不再用 next to 的單一常用義取代整欄。旁逸／偏離義本身成立，並非錯義。",
+      "evidenceSources": [
+        "https://www.gutenberg.org/cache/epub/660/pg660-images.html",
+        "https://www.ahdictionary.com/word/search.html?q=beside"
+      ],
+      "limitationsZh": "只補可逐字對上的尾段；保留全部現有前綴及罕見義。Gutenberg 是原書電子轉錄，未看紙本頁像，且其前言告知有轉錄錯字。未更動狀態。",
+      "applied": false,
+      "revision": 2
+    },
+    {
+      "proposalId": "U16P009",
+      "classification": "可選精度",
+      "findingType": "sense_label_completeness",
+      "issueGroup": "W000098",
+      "targetKind": "formalWord",
+      "targetId": "W000098",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "81aa6985f6c419caed1c2ed53167fe62c6a990cd150bf1c4815cd224ab854f28",
+      "englishGuard": {
+        "word": "blow",
+        "meaningEn": "a powerful stroke with the fist or a weapon; an impact (as from a collision)",
+        "usagePattern": "blow on/into N; blow away; a blow to N"
+      },
+      "before": {
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningEn": "a powerful stroke with the fist or a weapon; an impact (as from a collision)"
+      },
+      "minimalAfter": {
+        "pos": "v./n.",
+        "posAll": [
+          "v.",
+          "n."
+        ],
+        "meaningEn": "(n.) a powerful stroke with the fist or a weapon; an impact (as from a collision); (v.) to move air or make air move; (separate verb sense) to bloom or cause to bloom"
+      },
+      "reasonZh": "既有英文打擊／碰撞名詞義是真實義，中文花開也由 AHD 的 blow 第 3 同形詞證實。問題是原標籤 v. 與多義摘要不齊、缺常用動詞解釋；候選只增補標籤和已核義，不刪任何既有英文、中文義，不再算整詞確錯。",
+      "evidenceSources": [
+        "https://www.ahdictionary.com/word/search.html?q=blow",
+        "https://dictionary.cambridge.org/dictionary/english/blow"
+      ],
+      "limitationsZh": "原 meaningZh 完整保留。此為多義呈現補齊，不是把花開、打擊或碰撞判錯；不藉此擴展教材原文或審核狀態。",
+      "applied": false,
+      "revision": 2
+    },
+    {
+      "proposalId": "U16P010",
+      "classification": "可選精度",
+      "findingType": "sense_label_completeness",
+      "issueGroup": "W000891",
+      "targetKind": "formalWord",
+      "targetId": "W000891",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "a632d2306282d30e95ea62d4093d896696db88c3aa42738fb49704cc1ee21ce9",
+      "englishGuard": {
+        "word": "tidy",
+        "meaningEn": "receptacle that holds odds and ends (as sewing materials); put (things or places) in order",
+        "usagePattern": "keep N tidy; tidy up; a tidy room"
+      },
+      "before": {
+        "pos": "adj./v.",
+        "posAll": [
+          "adj.",
+          "v."
+        ],
+        "meaningZh": "椅子的背罩；裝雜物的容器；整齊的；有條理的",
+        "meaningEn": "receptacle that holds odds and ends (as sewing materials); put (things or places) in order"
+      },
+      "minimalAfter": {
+        "pos": "adj./v./n.",
+        "posAll": [
+          "adj.",
+          "v.",
+          "n."
+        ],
+        "meaningZh": "（名詞）椅子的背罩；裝雜物的容器；（形容詞）整齊的；有條理的；（動詞）整理",
+        "meaningEn": "(n.) receptacle that holds odds and ends (as sewing materials); (v.) put (things or places) in order; (adj.) neat and orderly; (n., furnishings) a decorative cover protecting part of a chair or sofa"
+      },
+      "reasonZh": "Merriam-Webster 原站明列收納容器及保護椅／沙發的裝飾罩，原兩個名詞義均成立。撤回刪名詞的替換稿；改為增列 n.、標明中文分義，保留既有英文容器／整理兩義，補形容詞與背罩義。",
+      "evidenceSources": [
+        "https://www.merriam-webster.com/dictionary/tidy",
+        "https://dictionary.cambridge.org/dictionary/english/tidy"
+      ],
+      "limitationsZh": "不宣稱名詞義錯誤，也不因少見而剔除。所有原中文義原樣保留，只加分義標籤與缺漏的動詞整理。",
+      "applied": false,
+      "revision": 2
+    },
+    {
+      "proposalId": "U16P011",
+      "classification": "確錯",
+      "findingType": "adjective_definition_direction",
+      "issueGroup": "W001756",
+      "targetKind": "formalWord",
+      "targetId": "W001756",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "b94a945dfb25945f2e9fd9d3c17a30a163f7d893f48bb9d979558ac4e849c946",
+      "englishGuard": {
+        "word": "scared",
+        "meaningEn": "cause fear in; cause to lose courage",
+        "usagePattern": "be scared; scared + N"
+      },
+      "before": {
+        "meaningEn": "cause fear in; cause to lose courage"
+      },
+      "minimalAfter": {
+        "meaningEn": "feeling frightened or worried (adjective); related base verb scare: cause fear in; cause to lose courage"
+      },
+      "reasonZh": "目前所選 adj. 義的方向確實不對：cause fear 是相關基礎動詞 scare 的使人害怕，不是形容詞感到害怕。保留原動詞片段並明示它屬相關 base verb，前置已核形容詞定義，不以改常見義為由刪掉原片段。",
+      "evidenceSources": [
+        "https://dictionary.cambridge.org/dictionary/english/scared",
+        "https://dictionary.cambridge.org/dictionary/english/scaring"
+      ],
+      "limitationsZh": "只釐清現有 adj. 與 related base verb 的角色。保留原 cause fear in; cause to lose courage 全字串；不宣稱 scared 作過去式／過去分詞不存在。",
+      "applied": false,
+      "revision": 2
+    },
+    {
+      "proposalId": "U16P012",
+      "classification": "確錯",
+      "findingType": "truncated_definition",
+      "issueGroup": "W002081",
+      "targetKind": "formalWord",
+      "targetId": "W002081",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "d35d6ab3785c2433bf5caad7d9705173aa1712dfd0d2fb1df57e0b247c644f5a",
+      "englishGuard": {
+        "word": "besides",
+        "meaningEn": "making an additional point; anyway; besides, we can't afford it\"; in addition; At the side of; on one side of.; Aside from; out of the regular course or order of; in a",
+        "usagePattern": "V + besides; besides + N/V-ing"
+      },
+      "before": {
+        "meaningEn": "making an additional point; anyway; besides, we can't afford it\"; in addition; At the side of; on one side of.; Aside from; out of the regular course or order of; in a"
+      },
+      "minimalAfter": null,
+      "reasonZh": "可確定的是英文欄位截斷及引號殘缺，不是 At the side of 這類舊義必然不存在。Webster 1913 確列 besides 的 on one side 為 obsolete；較長的 Aside from... 片段則對得上 Beside 條，未能證實目前 besides 全段映射來源。撤回整欄常用義替換，暫無可無條件套用的完整 after。",
+      "evidenceSources": [
+        "https://www.gutenberg.org/cache/epub/660/pg660-images.html",
+        "https://www.ahdictionary.com/word/search.html?q=besides",
+        "https://www.collinsdictionary.com/dictionary/english/besides"
+      ],
+      "limitationsZh": "已成立的古義保留。AHD 現代用法註與 1913 歷史義涵蓋範圍不同，不能用現代常用義否定歷史義。取得字庫原始來源／分義映射前，不把 Beside 的長釋義直接移入 Besides，也不刪掉。",
+      "applied": false,
+      "revision": 2,
+      "remediationStatus": "confirmed_defect_no_safe_whole_field_replacement",
+      "unappliedCompletionReference": {
+        "matchedSourceHeadword": "Beside",
+        "tailAfterInA": "state of deviation from; out of.",
+        "appliesAutomaticallyToBesides": false
+      },
+      "retainedSenseAssessment": [
+        {
+          "fragment": "making an additional point; anyway; in addition",
+          "assessment": "現代添加／另外論點副詞義可成立。"
+        },
+        {
+          "fragment": "At the side of; on one side of.",
+          "assessment": "besides 的空間副詞古義有 1913 原書證據；須標 obsolete，不能說不存在。"
+        },
+        {
+          "fragment": "Aside from; out of the regular course or order of; in a",
+          "assessment": "已找到 Beside 原書來源的完整片段，與 Besides 的確切映射仍待核；現欄末尾截斷確定。"
+        }
+      ]
+    },
+    {
+      "proposalId": "U16P013",
+      "classification": "待確認",
+      "findingType": "homograph_label_and_unresolved_gloss",
+      "issueGroup": "sow-general-homograph-labels",
+      "targetKind": "formalWord",
+      "targetId": "W004820",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "f8e1b878d692e896b55cc07425fc3e9b8cc1f5375ac9f98043d9ffe2a5364234",
+      "englishGuard": {
+        "word": "sow",
+        "meaningEn": "(v., /soʊ/) to plant seeds in the ground or introduce a feeling or situation; (separate homograph noun, /saʊ/) an adult female pig.",
+        "usagePattern": "sow seeds; sow a field with seeds; sow doubt/confusion"
+      },
+      "before": {
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "母豬；懶胖女人；播種；散佈"
+      },
+      "minimalAfter": {
+        "pos": "v./n.",
+        "posAll": [
+          "v.",
+          "n."
+        ],
+        "meaningZh": "（名詞 /saʊ/）母豬；（歷史貶稱，原譯「懶」待核）懶胖女人；（動詞 /soʊ/）播種；散佈"
+      },
+      "reasonZh": "母豬是現代字典明列的 /saʊ/ 名詞；Grose 1811 原書可證針對肥胖女性的舊貶稱，Farmer 亦標 old 並列 general abuse。但尚未核得原中文懶字的可靠原書根據。撤回僅剩動詞的刪義稿，保留每一原中文義，加異音、詞性與待核標示；不把整詞混標等同名詞義錯。",
+      "evidenceSources": [
+        "https://www.merriam-webster.com/dictionary/sow",
+        "https://www.ahdictionary.com/word/search.html?q=sow",
+        "https://www.collinsdictionary.com/dictionary/english/sow",
+        "https://www.gutenberg.org/cache/epub/5402/pg5402.html",
+        "https://wehd.com/farmer/Sow.html"
+      ],
+      "limitationsZh": "名詞母豬已核；舊女性貶稱只核到肥胖／侮辱語域，原譯懶仍待確認，不能標通過或直接刪除。新稿僅供分義標示方案，不是宣稱整個字庫摘要已完備；所有原義保留，不改 status。",
+      "applied": false,
+      "revision": 2
+    },
+    {
+      "proposalId": "U16P014",
+      "classification": "可選精度",
+      "findingType": "course_sense_scope_precision",
+      "issueGroup": "sow-course-verb-scope",
+      "targetKind": "learningItem",
+      "targetId": "LI-LV1U16-V068",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "24ea825631de10c4861ca2aef0957185a452cb274182983cdd26e8c314ea94ca",
+      "englishGuard": {
+        "displayWord": "sow"
+      },
+      "before": {
+        "targetMeaningZh": "母豬；懶胖女人；播種；散佈",
+        "chapterMeaningsZh": "母豬；懶胖女人；播種；散佈"
+      },
+      "minimalAfter": {
+        "targetMeaningZh": "播種；散佈",
+        "chapterMeaningsZh": "播種；散佈"
+      },
+      "reasonZh": "LI-LV1U16-V068 明確 sensePos=v. 且 meaningSource=existing_dictionary；source.related 僅有 printed related word sow，沒有教材原義文字。可只讓這個 v. 專屬課程項目顯示播種／散佈，與 seed 的章節用途一致；此局部範圍選擇不授權刪全域 sow 名詞摘要。",
+      "evidenceSources": [
+        "https://www.merriam-webster.com/dictionary/sow",
+        "https://www.ahdictionary.com/word/search.html?q=sow"
+      ],
+      "limitationsZh": "保留 formalWord 的名詞／舊義。只修字庫補充的 v. 專屬課程展示；非教材原頁驗證，不改 source.related、ID、狀態或 text_only/read_only。",
+      "applied": false,
+      "sourceGuard": {
+        "manifestArray": "related",
+        "snapshotSourceIndex": 29,
+        "stableCompositeKey": {
+          "word": "sow",
+          "sourcePage": 147,
+          "role": "printed_related_word",
+          "printedLabel": "似"
+        },
+        "sourceRecordSha256": "d760e627749791e8f79acd36dc890c4299f95fd6d862d051ca6390cf9f707314",
+        "exactSourceBefore": {
+          "word": "sow",
+          "sourcePage": 147,
+          "role": "printed_related_word",
+          "printedLabel": "似",
+          "officialWordId": "W004820",
+          "officialWord": "sow",
+          "mappingEvidence": "exact_headword"
+        }
+      },
+      "revision": 2
+    },
+    {
+      "proposalId": "U16P015",
+      "classification": "可選精度",
+      "findingType": "placeholder_completion",
+      "issueGroup": "LI-LV1U16-G006",
+      "targetKind": "learningItem",
+      "targetId": "LI-LV1U16-G006",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "23c4a63f7f40a11402f106135f49ece1b5f21f9c05fd5439b558680f77640d5f",
+      "englishGuard": {
+        "pattern": "tidy, tidied, tidied"
+      },
+      "before": {
+        "explanationZh": "教材用法標記；例句與教材題目尚未提供。"
+      },
+      "minimalAfter": {
+        "explanationZh": "動詞三態：原形 tidy；過去式 tidied；過去分詞 tidied。"
+      },
+      "reasonZh": "三態本身正確；解釋欄為未提供例句／教材題目的占位，用三態的自足說明取代，不新增原教材例句。",
+      "evidenceSources": [],
+      "limitationsZh": "只對固定快照提出候選，未套用。主線若已改動，必須以 ID、英文 guard、before 與 recordSha256 重新比對；不可按陣列位置盲套。",
+      "applied": false,
+      "sourceGuard": {
+        "manifestArray": "usage",
+        "snapshotSourceIndex": 5,
+        "stableCompositeKey": {
+          "label": "tidy, tidied, tidied",
+          "sourcePage": 142
+        },
+        "sourceRecordSha256": "33e34ad30cb9320d46ba99ebe91cd66cec7cf173a79169fe51129b949970caba",
+        "exactSourceBefore": {
+          "sourcePage": 142,
+          "label": "tidy, tidied, tidied"
+        }
+      }
+    },
+    {
+      "proposalId": "U16P016",
+      "classification": "可選精度",
+      "findingType": "placeholder_completion",
+      "issueGroup": "LI-LV1U16-G016",
+      "targetKind": "learningItem",
+      "targetId": "LI-LV1U16-G016",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "39f72a427881f958838ff843705a4fa45383771bed99db0a2248f169c8b5ad52",
+      "englishGuard": {
+        "pattern": "cap, capped, capped"
+      },
+      "before": {
+        "explanationZh": "教材用法標記；例句與教材題目尚未提供。"
+      },
+      "minimalAfter": {
+        "explanationZh": "動詞三態：原形 cap；過去式 capped；過去分詞 capped。"
+      },
+      "reasonZh": "三態本身正確；解釋欄為未提供例句／教材題目的占位，用三態的自足說明取代，不新增原教材例句。",
+      "evidenceSources": [],
+      "limitationsZh": "只對固定快照提出候選，未套用。主線若已改動，必須以 ID、英文 guard、before 與 recordSha256 重新比對；不可按陣列位置盲套。",
+      "applied": false,
+      "sourceGuard": {
+        "manifestArray": "usage",
+        "snapshotSourceIndex": 15,
+        "stableCompositeKey": {
+          "label": "cap, capped, capped",
+          "sourcePage": 143
+        },
+        "sourceRecordSha256": "aecefa9bf84f41cd54c323639f92f46a8075412188bc2a6e8211677052263150",
+        "exactSourceBefore": {
+          "sourcePage": 143,
+          "label": "cap, capped, capped"
+        }
+      }
+    },
+    {
+      "proposalId": "U16P017",
+      "classification": "可選精度",
+      "findingType": "placeholder_completion",
+      "issueGroup": "LI-LV1U16-G025",
+      "targetKind": "learningItem",
+      "targetId": "LI-LV1U16-G025",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "1fa88440f8c970924e517c7519fd0cc37d3826257aa0a47e5d30d08c506da10c",
+      "englishGuard": {
+        "pattern": "tie, tied, tied"
+      },
+      "before": {
+        "explanationZh": "教材用法標記；例句與教材題目尚未提供。"
+      },
+      "minimalAfter": {
+        "explanationZh": "動詞三態：原形 tie；過去式 tied；過去分詞 tied。"
+      },
+      "reasonZh": "三態本身正確；解釋欄為未提供例句／教材題目的占位，用三態的自足說明取代，不新增原教材例句。",
+      "evidenceSources": [],
+      "limitationsZh": "只對固定快照提出候選，未套用。主線若已改動，必須以 ID、英文 guard、before 與 recordSha256 重新比對；不可按陣列位置盲套。",
+      "applied": false,
+      "sourceGuard": {
+        "manifestArray": "usage",
+        "snapshotSourceIndex": 24,
+        "stableCompositeKey": {
+          "label": "tie, tied, tied",
+          "sourcePage": 145
+        },
+        "sourceRecordSha256": "b15c8c1296f7dfaa00210a3a9f3113f30c74f29c3c9e7883cb32d00cef96d951",
+        "exactSourceBefore": {
+          "sourcePage": 145,
+          "label": "tie, tied, tied"
+        }
+      }
+    },
+    {
+      "proposalId": "U16P018",
+      "classification": "可選精度",
+      "findingType": "placeholder_completion",
+      "issueGroup": "LI-LV1U16-G033",
+      "targetKind": "learningItem",
+      "targetId": "LI-LV1U16-G033",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "b493d1a3f4560fdc56398b53fb3eaf2d9a031f8203c0306b7a58e121b2bdff9f",
+      "englishGuard": {
+        "pattern": "blow, blew, blown"
+      },
+      "before": {
+        "explanationZh": "教材用法標記；例句與教材題目尚未提供。"
+      },
+      "minimalAfter": {
+        "explanationZh": "動詞三態：原形 blow；過去式 blew；過去分詞 blown。"
+      },
+      "reasonZh": "三態本身正確；解釋欄為未提供例句／教材題目的占位，用三態的自足說明取代，不新增原教材例句。",
+      "evidenceSources": [],
+      "limitationsZh": "只對固定快照提出候選，未套用。主線若已改動，必須以 ID、英文 guard、before 與 recordSha256 重新比對；不可按陣列位置盲套。",
+      "applied": false,
+      "sourceGuard": {
+        "manifestArray": "usage",
+        "snapshotSourceIndex": 32,
+        "stableCompositeKey": {
+          "label": "blow, blew, blown",
+          "sourcePage": 145
+        },
+        "sourceRecordSha256": "abc1dea6f4b7ae48bdec4e3d6b5f82f6257394d862a636a8a91d863a0c22312f",
+        "exactSourceBefore": {
+          "sourcePage": 145,
+          "label": "blow, blew, blown"
+        }
+      }
+    },
+    {
+      "proposalId": "U16P019",
+      "classification": "可選精度",
+      "findingType": "placeholder_completion",
+      "issueGroup": "LI-LV1U16-G043",
+      "targetKind": "learningItem",
+      "targetId": "LI-LV1U16-G043",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "fcc72e2af542f7ce0d45f21692af5bb15a16dd1b50ff21bbb35fc5e9724d1274",
+      "englishGuard": {
+        "pattern": "mistake, mistook, mistaken"
+      },
+      "before": {
+        "explanationZh": "教材用法標記；例句與教材題目尚未提供。"
+      },
+      "minimalAfter": {
+        "explanationZh": "動詞三態：原形 mistake；過去式 mistook；過去分詞 mistaken。"
+      },
+      "reasonZh": "三態本身正確；解釋欄為未提供例句／教材題目的占位，用三態的自足說明取代，不新增原教材例句。",
+      "evidenceSources": [],
+      "limitationsZh": "只對固定快照提出候選，未套用。主線若已改動，必須以 ID、英文 guard、before 與 recordSha256 重新比對；不可按陣列位置盲套。",
+      "applied": false,
+      "sourceGuard": {
+        "manifestArray": "usage",
+        "snapshotSourceIndex": 42,
+        "stableCompositeKey": {
+          "label": "mistake, mistook, mistaken",
+          "sourcePage": 147
+        },
+        "sourceRecordSha256": "4046d96c9ca10561942e9970ef18550206dc8140c1d8fee254b3e18a3c56b5ff",
+        "exactSourceBefore": {
+          "sourcePage": 147,
+          "label": "mistake, mistook, mistaken"
+        }
+      }
+    },
+    {
+      "proposalId": "U16P020",
+      "classification": "可選精度",
+      "findingType": "placeholder_completion",
+      "issueGroup": "LI-LV1U16-G049",
+      "targetKind": "learningItem",
+      "targetId": "LI-LV1U16-G049",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "3fa54c5de983ff8ca1a92e94ce8a8af55e079b9ccc04359ca622aa0c37b49abf",
+      "englishGuard": {
+        "pattern": "know, knew, known"
+      },
+      "before": {
+        "explanationZh": "教材用法標記；例句與教材題目尚未提供。"
+      },
+      "minimalAfter": {
+        "explanationZh": "動詞三態：原形 know；過去式 knew；過去分詞 known。"
+      },
+      "reasonZh": "三態本身正確；解釋欄為未提供例句／教材題目的占位，用三態的自足說明取代，不新增原教材例句。",
+      "evidenceSources": [],
+      "limitationsZh": "只對固定快照提出候選，未套用。主線若已改動，必須以 ID、英文 guard、before 與 recordSha256 重新比對；不可按陣列位置盲套。",
+      "applied": false,
+      "sourceGuard": {
+        "manifestArray": "usage",
+        "snapshotSourceIndex": 48,
+        "stableCompositeKey": {
+          "label": "know, knew, known",
+          "sourcePage": 148
+        },
+        "sourceRecordSha256": "abb4a22ab6a016f95e99f0b18517790c78cd691aa3b6a39f47d32940590dfe4c",
+        "exactSourceBefore": {
+          "sourcePage": 148,
+          "label": "know, knew, known"
+        }
+      }
+    },
+    {
+      "proposalId": "U16P021",
+      "classification": "可選精度",
+      "findingType": "dictionary_snapshot_drift",
+      "issueGroup": "LI-LV1U16-V057",
+      "targetKind": "learningItem",
+      "targetId": "LI-LV1U16-V057",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "f67e625d62c78f5b39b2585e3948ffe6aa5117f4b302be80c8eccb482488f483",
+      "englishGuard": {
+        "displayWord": "plant"
+      },
+      "before": {
+        "targetMeaningZh": "植物；作物；工廠；樹枝",
+        "chapterMeaningsZh": "植物；作物；工廠；樹枝"
+      },
+      "minimalAfter": {
+        "targetMeaningZh": "植物；作物；工廠；樹枝；（動詞）種植",
+        "chapterMeaningsZh": "植物；作物；工廠；樹枝；（動詞）種植"
+      },
+      "reasonZh": "meaningSource 是 existing_dictionary，但本快照正式條目已補動詞義而課程仍是舊值；可同步。同時保留樹枝等罕見 gloss 的待核，不藉同步聲稱所有舊義已驗證。",
+      "evidenceSources": [],
+      "limitationsZh": "只對固定快照提出候選，未套用。主線若已改動，必須以 ID、英文 guard、before 與 recordSha256 重新比對；不可按陣列位置盲套。",
+      "applied": false,
+      "sourceGuard": {
+        "manifestArray": "related",
+        "snapshotSourceIndex": 18,
+        "stableCompositeKey": {
+          "word": "plant",
+          "sourcePage": 144,
+          "role": "printed_related_word",
+          "printedLabel": "似"
+        },
+        "sourceRecordSha256": "31b4b7e030fab5c41146c5d2faf8fd24a80cba0672fb1282648025880a6fbea3",
+        "exactSourceBefore": {
+          "word": "plant",
+          "sourcePage": 144,
+          "role": "printed_related_word",
+          "printedLabel": "似",
+          "officialWordId": "W000653",
+          "officialWord": "plant",
+          "mappingEvidence": "exact_headword"
+        }
+      }
+    },
+    {
+      "proposalId": "U16P022",
+      "classification": "可選精度",
+      "findingType": "dictionary_snapshot_drift",
+      "issueGroup": "LI-LV1U16-V072",
+      "targetKind": "learningItem",
+      "targetId": "LI-LV1U16-V072",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "fd2d2c52ab4b892e02aece33b6752ee54537ee53675e5b5bf573586f7db13fa4",
+      "englishGuard": {
+        "displayWord": "market"
+      },
+      "before": {
+        "targetMeaningZh": "市場；交易；集市；推銷地區",
+        "chapterMeaningsZh": "市場；交易；集市；推銷地區"
+      },
+      "minimalAfter": {
+        "targetMeaningZh": "（名詞）市場；交易；集市；銷售地區；（動詞）行銷；推銷",
+        "chapterMeaningsZh": "（名詞）市場；交易；集市；銷售地區；（動詞）行銷；推銷"
+      },
+      "reasonZh": "meaningSource 是 existing_dictionary，但本快照正式條目已補動詞義而課程仍是舊值；可同步。同時保留樹枝等罕見 gloss 的待核，不藉同步聲稱所有舊義已驗證。",
+      "evidenceSources": [],
+      "limitationsZh": "只對固定快照提出候選，未套用。主線若已改動，必須以 ID、英文 guard、before 與 recordSha256 重新比對；不可按陣列位置盲套。",
+      "applied": false,
+      "sourceGuard": {
+        "manifestArray": "related",
+        "snapshotSourceIndex": 33,
+        "stableCompositeKey": {
+          "word": "market",
+          "sourcePage": 148,
+          "role": "printed_related_word",
+          "printedLabel": "似"
+        },
+        "sourceRecordSha256": "046cb8aa28fa55c20e4e1acb53b8901426488437a0f6594c0507901b396a6a5b",
+        "exactSourceBefore": {
+          "word": "market",
+          "sourcePage": 148,
+          "role": "printed_related_word",
+          "printedLabel": "似",
+          "officialWordId": "W000522",
+          "officialWord": "market",
+          "mappingEvidence": "exact_headword"
+        }
+      }
+    },
+    {
+      "proposalId": "U16P023",
+      "classification": "可選精度",
+      "findingType": "missing_sense_gloss",
+      "issueGroup": "sort-verb-gloss",
+      "targetKind": "formalWord",
+      "targetId": "W001825",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "5b9b013285ac41dcf400de114d2219fb0d05642c74a2005036eb3cd27ceb2c58",
+      "englishGuard": {
+        "word": "sort",
+        "meaningEn": "a group of people or things that have similar qualities; to arrange things into groups according to their type",
+        "usagePattern": "a sort of N; sort out N"
+      },
+      "before": {
+        "meaningZh": "種類；方式；品質；態度"
+      },
+      "minimalAfter": {
+        "meaningZh": "種類；方式；品質；態度；（動詞）分類；整理"
+      },
+      "reasonZh": "既有 n./v. 與英文、例句含分類整理，但中文未明列該動詞義；保留原名詞義而補齊。",
+      "evidenceSources": [
+        "https://dictionary.cambridge.org/dictionary/english/sort"
+      ],
+      "limitationsZh": "只對固定快照提出候選，未套用。主線若已改動，必須以 ID、英文 guard、before 與 recordSha256 重新比對；不可按陣列位置盲套。",
+      "applied": false
+    },
+    {
+      "proposalId": "U16P024",
+      "classification": "可選精度",
+      "findingType": "missing_sense_gloss",
+      "issueGroup": "sort-verb-gloss",
+      "targetKind": "learningItem",
+      "targetId": "LI-LV1U16-V079",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "a03d67afeb434b20a03a811646f78295945a32914aaa5ea5aa01e599df2087c3",
+      "englishGuard": {
+        "displayWord": "sort"
+      },
+      "before": {
+        "targetMeaningZh": "種類；方式；品質；態度",
+        "chapterMeaningsZh": "種類；方式；品質；態度"
+      },
+      "minimalAfter": {
+        "targetMeaningZh": "種類；方式；品質；態度；（動詞）分類；整理",
+        "chapterMeaningsZh": "種類；方式；品質；態度；（動詞）分類；整理"
+      },
+      "reasonZh": "與正式 sort 動詞中文補齊候選同步，同問題族。",
+      "evidenceSources": [
+        "https://dictionary.cambridge.org/dictionary/english/sort"
+      ],
+      "limitationsZh": "只對固定快照提出候選，未套用。主線若已改動，必須以 ID、英文 guard、before 與 recordSha256 重新比對；不可按陣列位置盲套。",
+      "applied": false,
+      "sourceGuard": {
+        "manifestArray": "related",
+        "snapshotSourceIndex": 40,
+        "stableCompositeKey": {
+          "word": "sort",
+          "sourcePage": 149,
+          "role": "printed_related_word",
+          "printedLabel": "似"
+        },
+        "sourceRecordSha256": "735d0cb3be1cd5a6b7c878a030fcfeba12b3990be71f3d1c5dc60fde7843d21e",
+        "exactSourceBefore": {
+          "word": "sort",
+          "sourcePage": 149,
+          "role": "printed_related_word",
+          "printedLabel": "似",
+          "officialWordId": "W001825",
+          "officialWord": "sort",
+          "mappingEvidence": "exact_headword"
+        }
+      }
+    },
+    {
+      "proposalId": "U16P025",
+      "classification": "可選精度",
+      "findingType": "learner_precision",
+      "issueGroup": "besides-modern-historical-labels",
+      "targetKind": "formalWord",
+      "targetId": "W002081",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "d35d6ab3785c2433bf5caad7d9705173aa1712dfd0d2fb1df57e0b247c644f5a",
+      "englishGuard": {
+        "word": "besides",
+        "meaningEn": "making an additional point; anyway; besides, we can't afford it\"; in addition; At the side of; on one side of.; Aside from; out of the regular course or order of; in a",
+        "usagePattern": "V + besides; besides + N/V-ing"
+      },
+      "before": {
+        "meaningZh": "除...之外；而且；此外；在旁邊",
+        "usagePattern": "V + besides; besides + N/V-ing",
+        "usagePatternZh": "動詞加上此外；除了……之外加上名詞或動名詞"
+      },
+      "minimalAfter": {
+        "meaningZh": "除……之外；而且；此外；在旁邊（古義）",
+        "usagePattern": "besides + N/V-ing; Besides, + clause; ... besides",
+        "usagePatternZh": "除了……之外；此外，……；……以外還有"
+      },
+      "reasonZh": "在旁邊有歷史副詞義證據，因此不刪，只標古義。現代入門可優先展示添加義與連接副詞用法；原 V + besides 只是過泛模板，非宣稱所有後置 besides 不合文法。",
+      "evidenceSources": [
+        "https://www.gutenberg.org/cache/epub/660/pg660-images.html",
+        "https://www.ahdictionary.com/word/search.html?q=besides",
+        "https://www.collinsdictionary.com/dictionary/english/besides"
+      ],
+      "limitationsZh": "新舊義並存且明示語域，不把古義列成現代一般用法。此中文／構式候選不處理英文長片段來源待核問題。",
+      "applied": false,
+      "revision": 2
+    },
+    {
+      "proposalId": "U16P026",
+      "classification": "可選精度",
+      "findingType": "learner_precision",
+      "issueGroup": "besides-modern-historical-labels",
+      "targetKind": "learningItem",
+      "targetId": "LI-LV1U16-V062",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "3f06930e1ad229f3ed337b8a053ff32cd04f237091d2142a0427e02d682ed36a",
+      "englishGuard": {
+        "displayWord": "besides"
+      },
+      "before": {
+        "targetMeaningZh": "除...之外；而且；此外；在旁邊",
+        "chapterMeaningsZh": "除...之外；而且；此外；在旁邊"
+      },
+      "minimalAfter": {
+        "targetMeaningZh": "除……之外；而且；此外；在旁邊（古義）",
+        "chapterMeaningsZh": "除……之外；而且；此外；在旁邊（古義）"
+      },
+      "reasonZh": "與正式 besides 的語域分標候選同步，保留原在旁邊並註古義；不改來源印刷似標籤，不假裝教材原頁提供此註解。",
+      "evidenceSources": [
+        "https://www.gutenberg.org/cache/epub/660/pg660-images.html",
+        "https://www.ahdictionary.com/word/search.html?q=besides"
+      ],
+      "limitationsZh": "此項是 existing_dictionary 補充展示的精度調整，不是刪除古義，也不是教材逐字轉錄。",
+      "applied": false,
+      "sourceGuard": {
+        "manifestArray": "related",
+        "snapshotSourceIndex": 23,
+        "stableCompositeKey": {
+          "word": "besides",
+          "sourcePage": 145,
+          "role": "printed_related_word",
+          "printedLabel": "似"
+        },
+        "sourceRecordSha256": "92ade57e370bfa770a6f557147a1fd1819fce81f04362cdcd31602261990075b",
+        "exactSourceBefore": {
+          "word": "besides",
+          "sourcePage": 145,
+          "role": "printed_related_word",
+          "printedLabel": "似",
+          "officialWordId": "W002081",
+          "officialWord": "besides",
+          "mappingEvidence": "exact_headword"
+        }
+      },
+      "revision": 2
+    },
+    {
+      "proposalId": "U16P027",
+      "classification": "可選精度",
+      "findingType": "learner_precision",
+      "issueGroup": "LI-LV1U16-V044",
+      "targetKind": "learningItem",
+      "targetId": "LI-LV1U16-V044",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "0f320bfe6fc46f293958f4a1b318b6f786b32708cae9e82ae5cf81b6e285b823",
+      "englishGuard": {
+        "displayWord": "sloppy"
+      },
+      "before": {
+        "targetMeaningZh": "泥濘的；潮溼的；粗心的",
+        "chapterMeaningsZh": "泥濘的；潮溼的；粗心的"
+      },
+      "minimalAfter": {
+        "targetMeaningZh": "不整潔的；馬虎的；泥濘的；潮溼的",
+        "chapterMeaningsZh": "不整潔的；馬虎的；泥濘的；潮溼的"
+      },
+      "reasonZh": "此項在 tidy 旁標反；現有中文未清楚呈現不整潔的，而正式英文已明示 lacking neatness。以既有正式定義支持章節釐清，非原教材轉錄。",
+      "evidenceSources": [],
+      "limitationsZh": "只對固定快照提出候選，未套用。主線若已改動，必須以 ID、英文 guard、before 與 recordSha256 重新比對；不可按陣列位置盲套。",
+      "applied": false,
+      "sourceGuard": {
+        "manifestArray": "related",
+        "snapshotSourceIndex": 5,
+        "stableCompositeKey": {
+          "word": "sloppy",
+          "sourcePage": 142,
+          "role": "printed_related_word",
+          "printedLabel": "反"
+        },
+        "sourceRecordSha256": "b36ee60630885543552ed25cfa154ce12a6f3efb89a34aca4d34ba8097deb146",
+        "exactSourceBefore": {
+          "word": "sloppy",
+          "sourcePage": 142,
+          "role": "printed_related_word",
+          "printedLabel": "反",
+          "officialWordId": "W005831",
+          "officialWord": "sloppy",
+          "mappingEvidence": "exact_headword"
+        }
+      }
+    },
+    {
+      "proposalId": "U16P028",
+      "classification": "可選精度",
+      "findingType": "learner_precision",
+      "issueGroup": "LI-LV1U16-V071",
+      "targetKind": "learningItem",
+      "targetId": "LI-LV1U16-V071",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "e14dc7da2172d6c63bcd8e3705d0c3003450858a283b45aff42acfd98f075efc",
+      "englishGuard": {
+        "displayWord": "knowledgeable"
+      },
+      "before": {
+        "targetMeaningZh": "聰明的；有知識的",
+        "chapterMeaningsZh": "聰明的；有知識的"
+      },
+      "minimalAfter": {
+        "targetMeaningZh": "有知識的；博學的",
+        "chapterMeaningsZh": "有知識的；博學的"
+      },
+      "reasonZh": "knowledgeable 強調具備知識而非泛指智能聰明。",
+      "evidenceSources": [
+        "https://dictionary.cambridge.org/dictionary/english/knowledgeable"
+      ],
+      "limitationsZh": "只對固定快照提出候選，未套用。主線若已改動，必須以 ID、英文 guard、before 與 recordSha256 重新比對；不可按陣列位置盲套。",
+      "applied": false,
+      "sourceGuard": {
+        "manifestArray": "related",
+        "snapshotSourceIndex": 32,
+        "stableCompositeKey": {
+          "word": "knowledgeable",
+          "sourcePage": 148,
+          "role": "printed_related_word",
+          "printedLabel": "衍"
+        },
+        "sourceRecordSha256": "7d4c40fc969a0de100ddb8b2074ce0afb7b3009fff339e2a823c0fdca86ff157",
+        "exactSourceBefore": {
+          "word": "knowledgeable",
+          "sourcePage": 148,
+          "role": "printed_related_word",
+          "printedLabel": "衍",
+          "officialWordId": "W005498",
+          "officialWord": "knowledgeable",
+          "mappingEvidence": "exact_headword"
+        }
+      }
+    },
+    {
+      "proposalId": "U16P029",
+      "classification": "可選精度",
+      "findingType": "translation_precision",
+      "issueGroup": "LI-LV1U16-V035",
+      "targetKind": "learningItem",
+      "targetId": "LI-LV1U16-V035",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "e4795da9b917a3dfd6a816651a3e225c850a3feb2db0a4821865c67da3aed7de",
+      "englishGuard": {
+        "displayWord": "Ms."
+      },
+      "before": {
+        "targetMeaningZh": "小姐（對未婚或已婚女子皆可使用）",
+        "chapterMeaningsZh": "小姐（對未婚或已婚女子皆可使用）"
+      },
+      "minimalAfter": {
+        "targetMeaningZh": "女士（對未婚或已婚女子皆可使用）",
+        "chapterMeaningsZh": "女士（對未婚或已婚女子皆可使用）"
+      },
+      "reasonZh": "女士較不暗示婚姻狀態；原小姐有華語地域慣用法，非硬錯。教材轉錄原值應另保留。",
+      "evidenceSources": [],
+      "limitationsZh": "若採用只能作編輯釋義，不可把未親讀的教材原詞改寫成已核轉錄。",
+      "applied": false,
+      "sourceGuard": {
+        "manifestArray": "headwords",
+        "snapshotSourceIndex": 34,
+        "stableCompositeKey": {
+          "word": "Ms.",
+          "sourcePage": 148,
+          "printedNumber": null,
+          "role": "unnumbered_headword"
+        },
+        "sourceRecordSha256": "76830c816e9a47b903a91d6481463986d6ed4c0864c890dd09f778eaaf86a1e2",
+        "exactSourceBefore": {
+          "word": "Ms.",
+          "sourcePage": 148,
+          "printedNumber": null,
+          "role": "unnumbered_headword",
+          "sourcePos": "n.",
+          "chapterMeaningsZh": "小姐（對未婚或已婚女子皆可使用）",
+          "officialWordId": null,
+          "officialWord": null,
+          "mappingEvidence": "unmapped"
+        }
+      }
+    },
+    {
+      "proposalId": "U16P030",
+      "classification": "可選精度",
+      "findingType": "translation_precision",
+      "issueGroup": "EX67553255",
+      "targetKind": "formalExample",
+      "targetId": "EX67553255",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "e05c78473dfdcbd94651dde8f69b8f675c4d405e12b352a5d88826e6b36229c7",
+      "englishGuard": {
+        "word": "love",
+        "sentenceEn": "Jasper fell in love with Clara two years ago.",
+        "blankSentence": "Jasper fell in _____ with Clara two years ago.",
+        "answer": "love"
+      },
+      "before": {
+        "sentenceZh": "賈斯柏 2 年前與克萊拉相戀。"
+      },
+      "minimalAfter": {
+        "sentenceZh": "賈斯柏 2 年前愛上了克萊拉。"
+      },
+      "reasonZh": "fell in love with 表他愛上對方；與對方相戀可能增加雙方已建立關係的語意。英文與 cloze 不改。",
+      "evidenceSources": [],
+      "limitationsZh": "只對固定快照提出候選，未套用。主線若已改動，必須以 ID、英文 guard、before 與 recordSha256 重新比對；不可按陣列位置盲套。",
+      "applied": false
+    },
+    {
+      "proposalId": "U16P031",
+      "classification": "可選精度",
+      "findingType": "grammar_precision",
+      "issueGroup": "LI-LV1U16-G023",
+      "targetKind": "learningItem",
+      "targetId": "LI-LV1U16-G023",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "537510b5f1c99a7fbc07a3582a151b1c5c515e4a0057eaeda469b1f3368670b7",
+      "englishGuard": {
+        "pattern": "hate + V-ing = hate to V"
+      },
+      "before": {
+        "explanationZh": "討厭 / 厭惡做……"
+      },
+      "minimalAfter": {
+        "explanationZh": "討厭／厭惡做……。兩種接法常見，但語意重點與語境可能不同；would hate 通常接 to V。"
+      },
+      "reasonZh": "兩種接法成立，等號容易被理解為無條件互換，可補限制。",
+      "evidenceSources": [
+        "https://dictionary.cambridge.org/grammar/british-grammar/hate-like"
+      ],
+      "limitationsZh": "只對固定快照提出候選，未套用。主線若已改動，必須以 ID、英文 guard、before 與 recordSha256 重新比對；不可按陣列位置盲套。",
+      "applied": false,
+      "sourceGuard": {
+        "manifestArray": "usage",
+        "snapshotSourceIndex": 22,
+        "stableCompositeKey": {
+          "label": "hate + V-ing = hate to V",
+          "sourcePage": 144
+        },
+        "sourceRecordSha256": "428e0e3f9b0020ecbe09ddfa01d173d0ad532df734c1055b5985203120a4f28c",
+        "exactSourceBefore": {
+          "sourcePage": 144,
+          "label": "hate + V-ing = hate to V",
+          "explanationZh": "討厭 / 厭惡做……"
+        }
+      }
+    },
+    {
+      "proposalId": "U16P032",
+      "classification": "待確認",
+      "findingType": "unresolved_supplement",
+      "issueGroup": "LI-LV1U16-V039",
+      "targetKind": "learningItem",
+      "targetId": "LI-LV1U16-V039",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "6cfde8aa370d44e44fa55a8b9b1c848307297bf367253579bea907d0e5c20a0b",
+      "englishGuard": {
+        "displayWord": "lakeside"
+      },
+      "before": {
+        "sensePos": "",
+        "targetMeaningZh": "教材補充詞；義項待核對。",
+        "chapterMeaningsZh": "教材補充詞；義項待核對。"
+      },
+      "minimalAfter": {
+        "sensePos": "n.",
+        "targetMeaningZh": "湖邊；湖畔",
+        "chapterMeaningsZh": "湖邊；湖畔"
+      },
+      "reasonZh": "空詞性與義項待核對為確定存在的未完成欄位；字典支持此補充釋義，但沒有教材原頁／原義文字，不能說已校對教材。",
+      "evidenceSources": [
+        "https://dictionary.cambridge.org/dictionary/english/lakeside"
+      ],
+      "limitationsZh": "建議值僅為字典補充，不是教材轉錄。若採用須先有可驗證的編輯來源欄位／註記；保留 officialWordId=null、原字形、text_only/read_only，不造 ID，不新增原教材例句。",
+      "applied": false,
+      "sourceGuard": {
+        "manifestArray": "related",
+        "snapshotSourceIndex": 0,
+        "stableCompositeKey": {
+          "word": "lakeside",
+          "sourcePage": 142,
+          "role": "printed_related_word",
+          "printedLabel": "衍"
+        },
+        "sourceRecordSha256": "f6ac2e7c9999ede6910094d85b9f52011945468977be10bd966f53725c957ba2",
+        "exactSourceBefore": {
+          "word": "lakeside",
+          "sourcePage": 142,
+          "role": "printed_related_word",
+          "printedLabel": "衍",
+          "officialWordId": null,
+          "officialWord": null,
+          "mappingEvidence": "unmapped"
+        }
+      }
+    },
+    {
+      "proposalId": "U16P033",
+      "classification": "待確認",
+      "findingType": "unresolved_supplement",
+      "issueGroup": "LI-LV1U16-V040",
+      "targetKind": "learningItem",
+      "targetId": "LI-LV1U16-V040",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "1665475be72f152ca4ef63af4036e31223e047eaf2883e97f724a1c3277cb445",
+      "englishGuard": {
+        "displayWord": "lakelet"
+      },
+      "before": {
+        "sensePos": "",
+        "targetMeaningZh": "教材補充詞；義項待核對。",
+        "chapterMeaningsZh": "教材補充詞；義項待核對。"
+      },
+      "minimalAfter": {
+        "sensePos": "n.",
+        "targetMeaningZh": "小湖（文學用語）",
+        "chapterMeaningsZh": "小湖（文學用語）"
+      },
+      "reasonZh": "空詞性與義項待核對為確定存在的未完成欄位；字典支持此補充釋義，但沒有教材原頁／原義文字，不能說已校對教材。",
+      "evidenceSources": [
+        "https://www.collinsdictionary.com/dictionary/english/lakelet"
+      ],
+      "limitationsZh": "建議值僅為字典補充，不是教材轉錄。若採用須先有可驗證的編輯來源欄位／註記；保留 officialWordId=null、原字形、text_only/read_only，不造 ID，不新增原教材例句。",
+      "applied": false,
+      "sourceGuard": {
+        "manifestArray": "related",
+        "snapshotSourceIndex": 1,
+        "stableCompositeKey": {
+          "word": "lakelet",
+          "sourcePage": 142,
+          "role": "printed_related_word",
+          "printedLabel": "衍"
+        },
+        "sourceRecordSha256": "d2e5e7a83dbb2eef52a3c0e7eaa3999b001b5a27334f4c8c9978f75f64a456b5",
+        "exactSourceBefore": {
+          "word": "lakelet",
+          "sourcePage": 142,
+          "role": "printed_related_word",
+          "printedLabel": "衍",
+          "officialWordId": null,
+          "officialWord": null,
+          "mappingEvidence": "unmapped"
+        }
+      }
+    },
+    {
+      "proposalId": "U16P034",
+      "classification": "待確認",
+      "findingType": "unresolved_supplement",
+      "issueGroup": "LI-LV1U16-V041",
+      "targetKind": "learningItem",
+      "targetId": "LI-LV1U16-V041",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "5914c3fb410231879a4777fd27d23bf4603b921fa40bd3ace8a5a3b737bbd61c",
+      "englishGuard": {
+        "displayWord": "cleanly"
+      },
+      "before": {
+        "sensePos": "",
+        "targetMeaningZh": "教材補充詞；義項待核對。",
+        "chapterMeaningsZh": "教材補充詞；義項待核對。"
+      },
+      "minimalAfter": {
+        "sensePos": "adv.",
+        "targetMeaningZh": "乾淨俐落地；順利地",
+        "chapterMeaningsZh": "乾淨俐落地；順利地"
+      },
+      "reasonZh": "空詞性與義項待核對為確定存在的未完成欄位；字典支持此補充釋義，但沒有教材原頁／原義文字，不能說已校對教材。",
+      "evidenceSources": [
+        "https://www.collinsdictionary.com/dictionary/english/cleanly"
+      ],
+      "limitationsZh": "建議值僅為字典補充，不是教材轉錄。若採用須先有可驗證的編輯來源欄位／註記；保留 officialWordId=null、原字形、text_only/read_only，不造 ID，不新增原教材例句。",
+      "applied": false,
+      "sourceGuard": {
+        "manifestArray": "related",
+        "snapshotSourceIndex": 2,
+        "stableCompositeKey": {
+          "word": "cleanly",
+          "sourcePage": 142,
+          "role": "printed_related_word",
+          "printedLabel": "衍"
+        },
+        "sourceRecordSha256": "1f0ed579b0b4256522e8baed40fe7a8520684c1bef66132c8073382e02dcbaee",
+        "exactSourceBefore": {
+          "word": "cleanly",
+          "sourcePage": 142,
+          "role": "printed_related_word",
+          "printedLabel": "衍",
+          "officialWordId": null,
+          "officialWord": null,
+          "mappingEvidence": "unmapped"
+        }
+      }
+    },
+    {
+      "proposalId": "U16P035",
+      "classification": "待確認",
+      "findingType": "unresolved_supplement",
+      "issueGroup": "LI-LV1U16-V043",
+      "targetKind": "learningItem",
+      "targetId": "LI-LV1U16-V043",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "5c9d248ffa8cf7ba5d23b59d93e93d7bb8e0c5d27fe810ebcddec0b67b197b1b",
+      "englishGuard": {
+        "displayWord": "untidy"
+      },
+      "before": {
+        "sensePos": "",
+        "targetMeaningZh": "教材補充詞；義項待核對。",
+        "chapterMeaningsZh": "教材補充詞；義項待核對。"
+      },
+      "minimalAfter": {
+        "sensePos": "adj.",
+        "targetMeaningZh": "不整齊的；凌亂的",
+        "chapterMeaningsZh": "不整齊的；凌亂的"
+      },
+      "reasonZh": "空詞性與義項待核對為確定存在的未完成欄位；字典支持此補充釋義，但沒有教材原頁／原義文字，不能說已校對教材。",
+      "evidenceSources": [
+        "https://dictionary.cambridge.org/dictionary/english/untidy"
+      ],
+      "limitationsZh": "建議值僅為字典補充，不是教材轉錄。若採用須先有可驗證的編輯來源欄位／註記；保留 officialWordId=null、原字形、text_only/read_only，不造 ID，不新增原教材例句。",
+      "applied": false,
+      "sourceGuard": {
+        "manifestArray": "related",
+        "snapshotSourceIndex": 4,
+        "stableCompositeKey": {
+          "word": "untidy",
+          "sourcePage": 142,
+          "role": "printed_related_word",
+          "printedLabel": "反"
+        },
+        "sourceRecordSha256": "d3e58b29bec227f02e2e6baf7bbfd2c25a73d3d0e5e3102f6266a56be8c3087f",
+        "exactSourceBefore": {
+          "word": "untidy",
+          "sourcePage": 142,
+          "role": "printed_related_word",
+          "printedLabel": "反",
+          "officialWordId": null,
+          "officialWord": null,
+          "mappingEvidence": "unmapped"
+        }
+      }
+    },
+    {
+      "proposalId": "U16P036",
+      "classification": "待確認",
+      "findingType": "unresolved_supplement",
+      "issueGroup": "LI-LV1U16-V045",
+      "targetKind": "learningItem",
+      "targetId": "LI-LV1U16-V045",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "3661d97e2275281f9027f29013c7ca8069361c8b65af782964023e953acbb99d",
+      "englishGuard": {
+        "displayWord": "lazybones"
+      },
+      "before": {
+        "sensePos": "",
+        "targetMeaningZh": "教材補充詞；義項待核對。",
+        "chapterMeaningsZh": "教材補充詞；義項待核對。"
+      },
+      "minimalAfter": {
+        "sensePos": "n.",
+        "targetMeaningZh": "懶人；懶骨頭（單複數同形）",
+        "chapterMeaningsZh": "懶人；懶骨頭（單複數同形）"
+      },
+      "reasonZh": "空詞性與義項待核對為確定存在的未完成欄位；字典支持此補充釋義，但沒有教材原頁／原義文字，不能說已校對教材。",
+      "evidenceSources": [
+        "https://dictionary.cambridge.org/dictionary/english/lazybones"
+      ],
+      "limitationsZh": "建議值僅為字典補充，不是教材轉錄。若採用須先有可驗證的編輯來源欄位／註記；保留 officialWordId=null、原字形、text_only/read_only，不造 ID，不新增原教材例句。",
+      "applied": false,
+      "sourceGuard": {
+        "manifestArray": "related",
+        "snapshotSourceIndex": 6,
+        "stableCompositeKey": {
+          "word": "lazybones",
+          "sourcePage": 142,
+          "role": "printed_related_word",
+          "printedLabel": "*"
+        },
+        "sourceRecordSha256": "fa99a5b5979862da9e340633adf49153028579335deec6f9fa9685d09cf98e6c",
+        "exactSourceBefore": {
+          "word": "lazybones",
+          "sourcePage": 142,
+          "role": "printed_related_word",
+          "printedLabel": "*",
+          "officialWordId": null,
+          "officialWord": null,
+          "mappingEvidence": "unmapped"
+        }
+      }
+    },
+    {
+      "proposalId": "U16P037",
+      "classification": "待確認",
+      "findingType": "unresolved_supplement",
+      "issueGroup": "LI-LV1U16-V049",
+      "targetKind": "learningItem",
+      "targetId": "LI-LV1U16-V049",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "7d1cf6c38a7a59c885b4a4c5e625fca4494462f546d9a5e2d2328c9753c7a47f",
+      "englishGuard": {
+        "displayWord": "safely"
+      },
+      "before": {
+        "sensePos": "",
+        "targetMeaningZh": "教材補充詞；義項待核對。",
+        "chapterMeaningsZh": "教材補充詞；義項待核對。"
+      },
+      "minimalAfter": {
+        "sensePos": "adv.",
+        "targetMeaningZh": "安全地；平安地",
+        "chapterMeaningsZh": "安全地；平安地"
+      },
+      "reasonZh": "空詞性與義項待核對為確定存在的未完成欄位；字典支持此補充釋義，但沒有教材原頁／原義文字，不能說已校對教材。",
+      "evidenceSources": [
+        "https://dictionary.cambridge.org/dictionary/english/safely"
+      ],
+      "limitationsZh": "建議值僅為字典補充，不是教材轉錄。若採用須先有可驗證的編輯來源欄位／註記；保留 officialWordId=null、原字形、text_only/read_only，不造 ID，不新增原教材例句。",
+      "applied": false,
+      "sourceGuard": {
+        "manifestArray": "related",
+        "snapshotSourceIndex": 10,
+        "stableCompositeKey": {
+          "word": "safely",
+          "sourcePage": 143,
+          "role": "printed_related_word",
+          "printedLabel": "衍"
+        },
+        "sourceRecordSha256": "8520bb1841f00c5b5268b894b39e6718d81014a781c5a9659a3fd61eb52a5221",
+        "exactSourceBefore": {
+          "word": "safely",
+          "sourcePage": 143,
+          "role": "printed_related_word",
+          "printedLabel": "衍",
+          "officialWordId": null,
+          "officialWord": null,
+          "mappingEvidence": "unmapped"
+        }
+      }
+    },
+    {
+      "proposalId": "U16P038",
+      "classification": "待確認",
+      "findingType": "unresolved_supplement",
+      "issueGroup": "LI-LV1U16-V051",
+      "targetKind": "learningItem",
+      "targetId": "LI-LV1U16-V051",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "a5c922c5c787eb73382bf2d934ca00201cf85d05fcffd4f5141b994cc996f740",
+      "englishGuard": {
+        "displayWord": "unsafe"
+      },
+      "before": {
+        "sensePos": "",
+        "targetMeaningZh": "教材補充詞；義項待核對。",
+        "chapterMeaningsZh": "教材補充詞；義項待核對。"
+      },
+      "minimalAfter": {
+        "sensePos": "adj.",
+        "targetMeaningZh": "不安全的；危險的",
+        "chapterMeaningsZh": "不安全的；危險的"
+      },
+      "reasonZh": "空詞性與義項待核對為確定存在的未完成欄位；字典支持此補充釋義，但沒有教材原頁／原義文字，不能說已校對教材。",
+      "evidenceSources": [
+        "https://dictionary.cambridge.org/dictionary/english/unsafe"
+      ],
+      "limitationsZh": "建議值僅為字典補充，不是教材轉錄。若採用須先有可驗證的編輯來源欄位／註記；保留 officialWordId=null、原字形、text_only/read_only，不造 ID，不新增原教材例句。",
+      "applied": false,
+      "sourceGuard": {
+        "manifestArray": "related",
+        "snapshotSourceIndex": 12,
+        "stableCompositeKey": {
+          "word": "unsafe",
+          "sourcePage": 143,
+          "role": "printed_related_word",
+          "printedLabel": "反"
+        },
+        "sourceRecordSha256": "c16048c5669a16d92ba8da1ce682237d62665ce67c3245e69f6ba121a6ac71eb",
+        "exactSourceBefore": {
+          "word": "unsafe",
+          "sourcePage": 143,
+          "role": "printed_related_word",
+          "printedLabel": "反",
+          "officialWordId": null,
+          "officialWord": null,
+          "mappingEvidence": "unmapped"
+        }
+      }
+    },
+    {
+      "proposalId": "U16P039",
+      "classification": "待確認",
+      "findingType": "unresolved_supplement",
+      "issueGroup": "LI-LV1U16-V055",
+      "targetKind": "learningItem",
+      "targetId": "LI-LV1U16-V055",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "902c5082b3970ef4f16edc9ce8a4203e8438a57f79740aa2e381de36c3bdc17d",
+      "englishGuard": {
+        "displayWord": "sweeten"
+      },
+      "before": {
+        "sensePos": "",
+        "targetMeaningZh": "教材補充詞；義項待核對。",
+        "chapterMeaningsZh": "教材補充詞；義項待核對。"
+      },
+      "minimalAfter": {
+        "sensePos": "vt.",
+        "targetMeaningZh": "使變甜；加糖於",
+        "chapterMeaningsZh": "使變甜；加糖於"
+      },
+      "reasonZh": "空詞性與義項待核對為確定存在的未完成欄位；字典支持此補充釋義，但沒有教材原頁／原義文字，不能說已校對教材。",
+      "evidenceSources": [
+        "https://dictionary.cambridge.org/dictionary/english/sweeten"
+      ],
+      "limitationsZh": "建議值僅為字典補充，不是教材轉錄。若採用須先有可驗證的編輯來源欄位／註記；保留 officialWordId=null、原字形、text_only/read_only，不造 ID，不新增原教材例句。",
+      "applied": false,
+      "sourceGuard": {
+        "manifestArray": "related",
+        "snapshotSourceIndex": 16,
+        "stableCompositeKey": {
+          "word": "sweeten",
+          "sourcePage": 144,
+          "role": "printed_related_word",
+          "printedLabel": "衍"
+        },
+        "sourceRecordSha256": "53caef82a073e4c1308edcdf7fc3ce3bc64f4f885ad04afa0401404ebeb9c1f8",
+        "exactSourceBefore": {
+          "word": "sweeten",
+          "sourcePage": 144,
+          "role": "printed_related_word",
+          "printedLabel": "衍",
+          "officialWordId": null,
+          "officialWord": null,
+          "mappingEvidence": "unmapped"
+        }
+      }
+    },
+    {
+      "proposalId": "U16P040",
+      "classification": "待確認",
+      "findingType": "unresolved_supplement",
+      "issueGroup": "LI-LV1U16-V056",
+      "targetKind": "learningItem",
+      "targetId": "LI-LV1U16-V056",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "27d7ecf0e650b0510db56a7b8ef7150ccd792927133effa348e25d3f72a14d2e",
+      "englishGuard": {
+        "displayWord": "sweet-and-sour pork"
+      },
+      "before": {
+        "sensePos": "",
+        "targetMeaningZh": "教材補充詞；義項待核對。",
+        "chapterMeaningsZh": "教材補充詞；義項待核對。"
+      },
+      "minimalAfter": {
+        "sensePos": "n. phr.",
+        "targetMeaningZh": "糖醋豬肉",
+        "chapterMeaningsZh": "糖醋豬肉"
+      },
+      "reasonZh": "空詞性與義項待核對為確定存在的未完成欄位；字典支持此補充釋義，但沒有教材原頁／原義文字，不能說已校對教材。",
+      "evidenceSources": [
+        "https://dictionary.cambridge.org/dictionary/english/sweet-and-sour?q=sour-sweet"
+      ],
+      "limitationsZh": "建議值僅為字典補充，不是教材轉錄。若採用須先有可驗證的編輯來源欄位／註記；保留 officialWordId=null、原字形、text_only/read_only，不造 ID，不新增原教材例句。",
+      "applied": false,
+      "sourceGuard": {
+        "manifestArray": "related",
+        "snapshotSourceIndex": 17,
+        "stableCompositeKey": {
+          "word": "sweet-and-sour pork",
+          "sourcePage": 144,
+          "role": "printed_related_word",
+          "printedLabel": "延伸"
+        },
+        "sourceRecordSha256": "72c6a1abfd8329612f2ba062e0ba7e92e701ef850addd78e97bd7c77b6dbaa00",
+        "exactSourceBefore": {
+          "word": "sweet-and-sour pork",
+          "sourcePage": 144,
+          "role": "printed_related_word",
+          "printedLabel": "延伸",
+          "officialWordId": null,
+          "officialWord": null,
+          "mappingEvidence": "unmapped"
+        }
+      }
+    },
+    {
+      "proposalId": "U16P041",
+      "classification": "待確認",
+      "findingType": "unresolved_supplement",
+      "issueGroup": "LI-LV1U16-V066",
+      "targetKind": "learningItem",
+      "targetId": "LI-LV1U16-V066",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "1db71bd02ad3dc95f5ad851dfc05742f16185aab2cad6ca69faa70693b25806b",
+      "englishGuard": {
+        "displayWord": "cod"
+      },
+      "before": {
+        "sensePos": "",
+        "targetMeaningZh": "教材補充詞；義項待核對。",
+        "chapterMeaningsZh": "教材補充詞；義項待核對。"
+      },
+      "minimalAfter": {
+        "sensePos": "n.",
+        "targetMeaningZh": "鱈魚；鱈魚肉",
+        "chapterMeaningsZh": "鱈魚；鱈魚肉"
+      },
+      "reasonZh": "空詞性與義項待核對為確定存在的未完成欄位；字典支持此補充釋義，但沒有教材原頁／原義文字，不能說已校對教材。",
+      "evidenceSources": [
+        "https://dictionary.cambridge.org/dictionary/english/cod"
+      ],
+      "limitationsZh": "建議值僅為字典補充，不是教材轉錄。若採用須先有可驗證的編輯來源欄位／註記；保留 officialWordId=null、原字形、text_only/read_only，不造 ID，不新增原教材例句。",
+      "applied": false,
+      "sourceGuard": {
+        "manifestArray": "related",
+        "snapshotSourceIndex": 27,
+        "stableCompositeKey": {
+          "word": "cod",
+          "sourcePage": 147,
+          "role": "printed_related_word",
+          "printedLabel": "*"
+        },
+        "sourceRecordSha256": "aa6cb4a26155726f23d8fba1c38c627b28b1366dc6f16ed885dad17a71426abe",
+        "exactSourceBefore": {
+          "word": "cod",
+          "sourcePage": 147,
+          "role": "printed_related_word",
+          "printedLabel": "*",
+          "officialWordId": null,
+          "officialWord": null,
+          "mappingEvidence": "unmapped"
+        }
+      }
+    },
+    {
+      "proposalId": "U16P042",
+      "classification": "待確認",
+      "findingType": "unresolved_supplement",
+      "issueGroup": "LI-LV1U16-V077",
+      "targetKind": "learningItem",
+      "targetId": "LI-LV1U16-V077",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "ca3fdfbd6d0e881e56fb735d48b2cf4c9909807a266e8ec778f1f2e06164d3de",
+      "englishGuard": {
+        "displayWord": "typing"
+      },
+      "before": {
+        "sensePos": "",
+        "targetMeaningZh": "教材補充詞；義項待核對。",
+        "chapterMeaningsZh": "教材補充詞；義項待核對。"
+      },
+      "minimalAfter": {
+        "sensePos": "n.",
+        "targetMeaningZh": "打字（不可數）",
+        "chapterMeaningsZh": "打字（不可數）"
+      },
+      "reasonZh": "空詞性與義項待核對為確定存在的未完成欄位；字典支持此補充釋義，但沒有教材原頁／原義文字，不能說已校對教材。",
+      "evidenceSources": [
+        "https://dictionary.cambridge.org/dictionary/english/typing"
+      ],
+      "limitationsZh": "建議值僅為字典補充，不是教材轉錄。若採用須先有可驗證的編輯來源欄位／註記；保留 officialWordId=null、原字形、text_only/read_only，不造 ID，不新增原教材例句。",
+      "applied": false,
+      "sourceGuard": {
+        "manifestArray": "related",
+        "snapshotSourceIndex": 38,
+        "stableCompositeKey": {
+          "word": "typing",
+          "sourcePage": 149,
+          "role": "printed_related_word",
+          "printedLabel": "衍"
+        },
+        "sourceRecordSha256": "a31222cb59cd692281e46c23b14c3db94d0364e09e0d41bd2ff32a5fa70a2c41",
+        "exactSourceBefore": {
+          "word": "typing",
+          "sourcePage": 149,
+          "role": "printed_related_word",
+          "printedLabel": "衍",
+          "officialWordId": null,
+          "officialWord": null,
+          "mappingEvidence": "unmapped"
+        }
+      }
+    },
+    {
+      "proposalId": "U16P043",
+      "classification": "待確認",
+      "findingType": "literal_source_conflict",
+      "issueGroup": "LI-LV1U16-G005",
+      "targetKind": "learningItem",
+      "targetId": "LI-LV1U16-G005",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "294e173105b5862de92bffb2fc8b7bc113c395700398fc28c576c40e3fe9debe",
+      "englishGuard": {
+        "pattern": "do thing cleanly"
+      },
+      "before": {
+        "pattern": "do thing cleanly"
+      },
+      "minimalAfter": {
+        "pattern": "do things cleanly"
+      },
+      "reasonZh": "可數 thing 泛稱事物需複數或限定詞；來源 notes 明示 literal original usage strings，未讀原頁不能靜默校改。",
+      "evidenceSources": [
+        "https://www.collinsdictionary.com/dictionary/english/cleanly"
+      ],
+      "limitationsZh": "先取得原頁或把原文與編輯註分離。此 after 是一般英文校訂建議，不是原教材讀取結果。",
+      "applied": false,
+      "sourceGuard": {
+        "manifestArray": "usage",
+        "snapshotSourceIndex": 4,
+        "stableCompositeKey": {
+          "label": "do thing cleanly",
+          "sourcePage": 142,
+          "printedLabel": "衍"
+        },
+        "sourceRecordSha256": "68eaf2043cc949b279006c93b50ea3b1c12b49b62a830398f6a5ec0a1ffb063f",
+        "exactSourceBefore": {
+          "sourcePage": 142,
+          "label": "do thing cleanly",
+          "printedLabel": "衍",
+          "explanationZh": "做事乾淨俐落"
+        }
+      }
+    },
+    {
+      "proposalId": "U16P044",
+      "classification": "待確認",
+      "findingType": "literal_source_conflict",
+      "issueGroup": "LI-LV1U16-G050",
+      "targetKind": "learningItem",
+      "targetId": "LI-LV1U16-G050",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "43bdb14d550c5194b96cf107d026929e368cb8c901c0252fc4de31bf5c97b08b",
+      "englishGuard": {
+        "pattern": "As sb know,..."
+      },
+      "before": {
+        "explanationZh": "如某人所知，……"
+      },
+      "minimalAfter": {
+        "explanationZh": "如某人所知，……（know 須配合主詞變化；單數第三人稱用 knows。）"
+      },
+      "reasonZh": "sb 是主詞占位代號，不能斷言所有替換都用 knows；來源明示保留 As sb know,...，可加教學註但須保留原字串。",
+      "evidenceSources": [],
+      "limitationsZh": "原 pattern 不改；尚未取得原教材頁檢查此寫法及其上下文。",
+      "applied": false,
+      "sourceGuard": {
+        "manifestArray": "usage",
+        "snapshotSourceIndex": 49,
+        "stableCompositeKey": {
+          "label": "As sb know,...",
+          "sourcePage": 148
+        },
+        "sourceRecordSha256": "642ce6e9435023c375c7bb7e1b14f38b3df4c67abdc41c2775bdd0fcd73c88ea",
+        "exactSourceBefore": {
+          "sourcePage": 148,
+          "label": "As sb know,...",
+          "explanationZh": "如某人所知，……"
+        }
+      }
+    },
+    {
+      "proposalId": "U16P045",
+      "classification": "待確認",
+      "findingType": "insufficient_source_context",
+      "issueGroup": "LI-LV1U16-G038",
+      "targetKind": "learningItem",
+      "targetId": "LI-LV1U16-G038",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "9bd6df3667580233e08a180386c85038744a8069727300ece7d6fa0e0eef5356",
+      "englishGuard": {
+        "pattern": "a blow of..."
+      },
+      "before": {
+        "explanationZh": "吹來一陣……"
+      },
+      "minimalAfter": {
+        "explanationZh": "原轉錄作「吹來一陣……」；具體搭配與原頁語境待核對。"
+      },
+      "reasonZh": "a blow of... 未具體列補語；blow 的名詞打擊、吹氣或風義依搭配而異，不能從開放模板直接等同任意一陣風。",
+      "evidenceSources": [
+        "https://dictionary.cambridge.org/dictionary/english/blow",
+        "https://www.collinsdictionary.com/dictionary/english/blow"
+      ],
+      "limitationsZh": "不自動改成 a gust of wind，亦不造原教材例句。after 只是可用的待核文字。",
+      "applied": false,
+      "sourceGuard": {
+        "manifestArray": "usage",
+        "snapshotSourceIndex": 37,
+        "stableCompositeKey": {
+          "label": "a blow of...",
+          "sourcePage": 146
+        },
+        "sourceRecordSha256": "5d3afa7de7b22d4f0d102f201b8fa10daf87cecf75c46c79e3f84f51a514db29",
+        "exactSourceBefore": {
+          "sourcePage": 146,
+          "label": "a blow of...",
+          "explanationZh": "吹來一陣……"
+        }
+      }
+    },
+    {
+      "proposalId": "U16P046",
+      "classification": "待確認",
+      "findingType": "literal_source_conflict",
+      "issueGroup": "LI-LV1U16-V073",
+      "targetKind": "learningItem",
+      "targetId": "LI-LV1U16-V073",
+      "snapshot": {
+        "commit": "26cc432853d13617f19f843c430ccd3ee9543733",
+        "curriculumBlob": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+        "sourceBlob": "093592fe4240db95a13169235f37af80d0b2ad5e",
+        "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+        "examplesBlob": "04df8f3de1befa0da25734046a1b32c206cdd37c"
+      },
+      "recordSha256": "1fc27974264d6e9b37a2da142d8674d5e6a44f2dc1dacdd3d619365d68bfa31e",
+      "englishGuard": {
+        "displayWord": "address"
+      },
+      "before": {
+        "targetMeaningZh": "寄（信）給……",
+        "chapterMeaningsZh": "寄（信）給……"
+      },
+      "minimalAfter": {
+        "targetMeaningZh": "在（信封或包裹）上寫收件人姓名／地址；寫明寄給……",
+        "chapterMeaningsZh": "在（信封或包裹）上寫收件人姓名／地址；寫明寄給……"
+      },
+      "reasonZh": "address 的此動詞義是寫收件地址，不保證已寄出；來源中文寄信給是既有轉錄，須保留原文再補精確註解。",
+      "evidenceSources": [
+        "https://dictionary.cambridge.org/dictionary/english/address"
+      ],
+      "limitationsZh": "字典能支持語義區別，不能證明原教材誤印或轉錄錯誤。未見頁像前不覆寫 source.related 原義。",
+      "applied": false,
+      "sourceGuard": {
+        "manifestArray": "related",
+        "snapshotSourceIndex": 34,
+        "stableCompositeKey": {
+          "word": "address",
+          "sourcePage": 148,
+          "role": "printed_related_word",
+          "printedLabel": "*"
+        },
+        "sourceRecordSha256": "1202b0f22d8fb494aa998694a544045e34962b82466170a87c420e35b7f90554",
+        "exactSourceBefore": {
+          "word": "address",
+          "sourcePage": 148,
+          "role": "printed_related_word",
+          "printedLabel": "*",
+          "officialWordId": "W001012",
+          "officialWord": "address",
+          "mappingEvidence": "exact_headword",
+          "sourcePos": "vt.",
+          "chapterMeaningsZh": "寄（信）給……"
+        }
+      }
+    }
+  ],
+  "evidenceCatalog": [
+    {
+      "url": "https://dictionary.cambridge.org/grammar/british-grammar/beside-or-besides",
+      "evidenceSummaryZh": "beside 為空間介系詞；besides 為添加義介系詞／連接副詞。",
+      "accessMethod": "publisher_content_returned_by_search_index",
+      "accessedDateUtc": "2026-11-05",
+      "textbookOriginalEvidence": false
+    },
+    {
+      "url": "https://www.merriam-webster.com/dictionary/besides",
+      "evidenceSummaryZh": "besides 的現代添加／其他義與副詞功能；原站已開啟。",
+      "accessMethod": "publisher_page_opened",
+      "accessedDateUtc": "2026-11-05",
+      "textbookOriginalEvidence": false
+    },
+    {
+      "url": "https://www.collinsdictionary.com/dictionary/english/cleanly",
+      "evidenceSummaryZh": "副詞 /ˈkliːnli/ 可指順利或流暢；形容詞另讀 /ˈklɛnli/。原站已開啟。",
+      "accessMethod": "publisher_page_opened",
+      "accessedDateUtc": "2026-11-05",
+      "textbookOriginalEvidence": false
+    },
+    {
+      "url": "https://www.collinsdictionary.com/dictionary/english/lakelet",
+      "evidenceSummaryZh": "名詞小湖，標文學用語；原站已開啟。",
+      "accessMethod": "publisher_page_opened",
+      "accessedDateUtc": "2026-11-05",
+      "textbookOriginalEvidence": false
+    },
+    {
+      "url": "https://www.collinsdictionary.com/dictionary/english/blow",
+      "evidenceSummaryZh": "吹風／吹氣動詞與打擊名詞；原站已開啟。",
+      "accessMethod": "publisher_page_opened",
+      "accessedDateUtc": "2026-11-05",
+      "textbookOriginalEvidence": false
+    },
+    {
+      "url": "https://dictionary.cambridge.org/grammar/british-grammar/hate-like",
+      "evidenceSummaryZh": "hate 可接 ing 或 to V，但語意有差別，would hate 接 to V。",
+      "accessMethod": "publisher_content_returned_by_search_index",
+      "accessedDateUtc": "2026-11-05",
+      "textbookOriginalEvidence": false
+    },
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english/blow",
+      "evidenceSummaryZh": "動詞吹與名詞打擊均存在，三態 blew/blown。",
+      "accessMethod": "publisher_content_returned_by_search_index",
+      "accessedDateUtc": "2026-11-05",
+      "textbookOriginalEvidence": false
+    },
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english/tidy",
+      "evidenceSummaryZh": "整齊的形容詞、整理動詞、收納容器名詞分列。",
+      "accessMethod": "publisher_content_returned_by_search_index",
+      "accessedDateUtc": "2026-11-05",
+      "textbookOriginalEvidence": false
+    },
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english/scared",
+      "evidenceSummaryZh": "感到害怕的形容詞，不是主動使害怕。",
+      "accessMethod": "publisher_content_returned_by_search_index",
+      "accessedDateUtc": "2026-11-05",
+      "textbookOriginalEvidence": false
+    },
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english/sow",
+      "evidenceSummaryZh": "/soʊ/ 動詞播種；/saʊ/ 名詞母豬分列。",
+      "accessMethod": "publisher_content_returned_by_search_index",
+      "accessedDateUtc": "2026-11-05",
+      "textbookOriginalEvidence": false
+    },
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english/sort",
+      "evidenceSummaryZh": "動詞依順序整理或分類。",
+      "accessMethod": "publisher_content_returned_by_search_index",
+      "accessedDateUtc": "2026-11-05",
+      "textbookOriginalEvidence": false
+    },
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english/knowledgeable",
+      "evidenceSummaryZh": "知道很多，常見 knowledgeable about。",
+      "accessMethod": "publisher_content_returned_by_search_index",
+      "accessedDateUtc": "2026-11-05",
+      "textbookOriginalEvidence": false
+    },
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english/lakeside",
+      "evidenceSummaryZh": "湖的邊緣地帶，名詞。",
+      "accessMethod": "publisher_content_returned_by_search_index",
+      "accessedDateUtc": "2026-11-05",
+      "textbookOriginalEvidence": false
+    },
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english/untidy",
+      "evidenceSummaryZh": "不整齊的形容詞。",
+      "accessMethod": "publisher_content_returned_by_search_index",
+      "accessedDateUtc": "2026-11-05",
+      "textbookOriginalEvidence": false
+    },
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english/lazybones",
+      "evidenceSummaryZh": "懶人名詞，單複數同形。",
+      "accessMethod": "publisher_content_returned_by_search_index",
+      "accessedDateUtc": "2026-11-05",
+      "textbookOriginalEvidence": false
+    },
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english/safely",
+      "evidenceSummaryZh": "安全地副詞。",
+      "accessMethod": "publisher_content_returned_by_search_index",
+      "accessedDateUtc": "2026-11-05",
+      "textbookOriginalEvidence": false
+    },
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english/unsafe",
+      "evidenceSummaryZh": "不安全的形容詞。",
+      "accessMethod": "publisher_content_returned_by_search_index",
+      "accessedDateUtc": "2026-11-05",
+      "textbookOriginalEvidence": false
+    },
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english/sweeten",
+      "evidenceSummaryZh": "使東西變甜，及物動詞。",
+      "accessMethod": "publisher_content_returned_by_search_index",
+      "accessedDateUtc": "2026-11-05",
+      "textbookOriginalEvidence": false
+    },
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english/sweet-and-sour?q=sour-sweet",
+      "evidenceSummaryZh": "酸甜味形容詞，頁面有 sweet-and-sour pork 搭配。",
+      "accessMethod": "publisher_content_returned_by_search_index",
+      "accessedDateUtc": "2026-11-05",
+      "textbookOriginalEvidence": false
+    },
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english/cod",
+      "evidenceSummaryZh": "可食用海魚／魚肉名詞。",
+      "accessMethod": "publisher_content_returned_by_search_index",
+      "accessedDateUtc": "2026-11-05",
+      "textbookOriginalEvidence": false
+    },
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english/typing",
+      "evidenceSummaryZh": "使用鍵盤打字的活動，不可數名詞。",
+      "accessMethod": "publisher_content_returned_by_search_index",
+      "accessedDateUtc": "2026-11-05",
+      "textbookOriginalEvidence": false
+    },
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english/address",
+      "evidenceSummaryZh": "信件義動詞是寫收件人姓名或地址，而非保證寄出。",
+      "accessMethod": "publisher_content_returned_by_search_index",
+      "accessedDateUtc": "2026-11-05",
+      "textbookOriginalEvidence": false
+    },
+    {
+      "url": "https://www.gutenberg.org/cache/epub/660/pg660-images.html",
+      "evidenceSummaryZh": "Webster 1913 數位原書 Beside 第 2 義完整尾句；Besides/Beside 共列的 obsolete 空間副詞義。",
+      "accessMethod": "historical_book_electronic_transcription",
+      "accessedDateUtc": "2026-11-05",
+      "textbookOriginalEvidence": false
+    },
+    {
+      "url": "https://www.gutenberg.org/cache/epub/5402/pg5402.html",
+      "evidenceSummaryZh": "Grose 1811 原書電子版 Sow 條支持肥胖女性舊俚語；沒有懶的限制。",
+      "accessMethod": "historical_book_electronic_transcription",
+      "accessedDateUtc": "2026-11-05",
+      "textbookOriginalEvidence": false
+    },
+    {
+      "url": "https://wehd.com/farmer/Sow.html",
+      "evidenceSummaryZh": "Farmer 歷史詞典電子轉錄標 old，亦說泛用侮辱語。",
+      "accessMethod": "historical_dictionary_transcription",
+      "accessedDateUtc": "2026-11-05",
+      "textbookOriginalEvidence": false
+    },
+    {
+      "url": "https://www.merriam-webster.com/dictionary/sow",
+      "evidenceSummaryZh": "分列 /saʊ/ 動物名詞與 /soʊ/ 播種／散布動詞。",
+      "accessMethod": "publisher_page_opened",
+      "accessedDateUtc": "2026-11-05",
+      "textbookOriginalEvidence": false
+    },
+    {
+      "url": "https://www.ahdictionary.com/word/search.html?q=sow",
+      "evidenceSummaryZh": "分列 sow1 動詞與 sow2 名詞，母豬義及異音明確。",
+      "accessMethod": "publisher_page_opened",
+      "accessedDateUtc": "2026-11-05",
+      "textbookOriginalEvidence": false
+    },
+    {
+      "url": "https://www.collinsdictionary.com/dictionary/english/sow",
+      "evidenceSummaryZh": "分列動詞播種與母豬名詞，未找到懶胖女性的限制。",
+      "accessMethod": "publisher_page_opened",
+      "accessedDateUtc": "2026-11-05",
+      "textbookOriginalEvidence": false
+    },
+    {
+      "url": "https://www.merriam-webster.com/dictionary/tidy",
+      "evidenceSummaryZh": "名詞明列小物收納容器與椅／沙發的裝飾保護罩。",
+      "accessMethod": "publisher_page_opened",
+      "accessedDateUtc": "2026-11-05",
+      "textbookOriginalEvidence": false
+    },
+    {
+      "url": "https://www.ahdictionary.com/word/search.html?q=blow",
+      "evidenceSummaryZh": "吹氣、打擊、花開分列不同同形詞條，花開義成立。",
+      "accessMethod": "publisher_page_opened",
+      "accessedDateUtc": "2026-11-05",
+      "textbookOriginalEvidence": false
+    },
+    {
+      "url": "https://www.ahdictionary.com/word/search.html?q=beside",
+      "evidenceSummaryZh": "旁邊、比較、另加、例外及不相關等義；支持不應精簡到單義。",
+      "accessMethod": "publisher_page_opened",
+      "accessedDateUtc": "2026-11-05",
+      "textbookOriginalEvidence": false
+    },
+    {
+      "url": "https://www.ahdictionary.com/word/search.html?q=besides",
+      "evidenceSummaryZh": "現代添加／例外副詞介系詞義與現代區分註；不代表否定 1913 古義。",
+      "accessMethod": "publisher_page_opened",
+      "accessedDateUtc": "2026-11-05",
+      "textbookOriginalEvidence": false
+    },
+    {
+      "url": "https://www.collinsdictionary.com/dictionary/english/besides",
+      "evidenceSummaryZh": "現代 besides 添加／進一步論點等義。",
+      "accessMethod": "publisher_page_opened",
+      "accessedDateUtc": "2026-11-05",
+      "textbookOriginalEvidence": false
+    },
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english/scaring",
+      "evidenceSummaryZh": "scare 主動使恐懼動詞與 scared 形容詞方向不同。",
+      "accessMethod": "publisher_content_returned_by_search_index",
+      "accessedDateUtc": "2026-11-05",
+      "textbookOriginalEvidence": false
+    }
+  ],
+  "reviewRevision": 2,
+  "supersedesReviewRevision": 1,
+  "amendmentReasonZh": "撤回把全域分義／語域問題等同錯義並刪除真實名詞或古義的候選；重新逐義查證。舊 13 問題族／14 確錯候選結論不再使用。",
+  "rareSenseRecheckReport": "U16-RARE-SENSE-RECHECK.json",
+  "amendmentLog": [
+    {
+      "proposalId": "U16P008",
+      "previousClassification": "確錯",
+      "newClassification": "確錯",
+      "changeReasonZh": "欄位確實截斷在 in a；Gutenberg 的 Webster 1913 數位原書 Beside 第 2 義找到完全對應的後半句。只追加缺尾，不再用 next to 的單一常用義取代整欄。旁逸／偏離義本身成立，並非錯義。",
+      "previousReplacementWithdrawn": true
+    },
+    {
+      "proposalId": "U16P009",
+      "previousClassification": "確錯",
+      "newClassification": "可選精度",
+      "changeReasonZh": "既有英文打擊／碰撞名詞義是真實義，中文花開也由 AHD 的 blow 第 3 同形詞證實。問題是原標籤 v. 與多義摘要不齊、缺常用動詞解釋；候選只增補標籤和已核義，不刪任何既有英文、中文義，不再算整詞確錯。",
+      "previousReplacementWithdrawn": true
+    },
+    {
+      "proposalId": "U16P010",
+      "previousClassification": "確錯",
+      "newClassification": "可選精度",
+      "changeReasonZh": "Merriam-Webster 原站明列收納容器及保護椅／沙發的裝飾罩，原兩個名詞義均成立。撤回刪名詞的替換稿；改為增列 n.、標明中文分義，保留既有英文容器／整理兩義，補形容詞與背罩義。",
+      "previousReplacementWithdrawn": true
+    },
+    {
+      "proposalId": "U16P011",
+      "previousClassification": "確錯",
+      "newClassification": "確錯",
+      "changeReasonZh": "目前所選 adj. 義的方向確實不對：cause fear 是相關基礎動詞 scare 的使人害怕，不是形容詞感到害怕。保留原動詞片段並明示它屬相關 base verb，前置已核形容詞定義，不以改常見義為由刪掉原片段。",
+      "previousReplacementWithdrawn": true
+    },
+    {
+      "proposalId": "U16P012",
+      "previousClassification": "確錯",
+      "newClassification": "確錯",
+      "changeReasonZh": "可確定的是英文欄位截斷及引號殘缺，不是 At the side of 這類舊義必然不存在。Webster 1913 確列 besides 的 on one side 為 obsolete；較長的 Aside from... 片段則對得上 Beside 條，未能證實目前 besides 全段映射來源。撤回整欄常用義替換，暫無可無條件套用的完整 after。",
+      "previousReplacementWithdrawn": true
+    },
+    {
+      "proposalId": "U16P013",
+      "previousClassification": "確錯",
+      "newClassification": "待確認",
+      "changeReasonZh": "母豬是現代字典明列的 /saʊ/ 名詞；Grose 1811 原書可證針對肥胖女性的舊貶稱，Farmer 亦標 old 並列 general abuse。但尚未核得原中文懶字的可靠原書根據。撤回僅剩動詞的刪義稿，保留每一原中文義，加異音、詞性與待核標示；不把整詞混標等同名詞義錯。",
+      "previousReplacementWithdrawn": true
+    },
+    {
+      "proposalId": "U16P014",
+      "previousClassification": "確錯",
+      "newClassification": "可選精度",
+      "changeReasonZh": "LI-LV1U16-V068 明確 sensePos=v. 且 meaningSource=existing_dictionary；source.related 僅有 printed related word sow，沒有教材原義文字。可只讓這個 v. 專屬課程項目顯示播種／散佈，與 seed 的章節用途一致；此局部範圍選擇不授權刪全域 sow 名詞摘要。",
+      "previousReplacementWithdrawn": true
+    },
+    {
+      "proposalId": "U16P025",
+      "previousClassification": "可選精度",
+      "newClassification": "可選精度",
+      "changeReasonZh": "在旁邊有歷史副詞義證據，因此不刪，只標古義。現代入門可優先展示添加義與連接副詞用法；原 V + besides 只是過泛模板，非宣稱所有後置 besides 不合文法。",
+      "previousReplacementWithdrawn": true
+    },
+    {
+      "proposalId": "U16P026",
+      "previousClassification": "可選精度",
+      "newClassification": "可選精度",
+      "changeReasonZh": "與正式 besides 的語域分標候選同步，保留原在旁邊並註古義；不改來源印刷似標籤，不假裝教材原頁提供此註解。",
+      "previousReplacementWithdrawn": true
+    }
+  ]
+}
