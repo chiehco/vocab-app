@@ -1,0 +1,915 @@
+{
+  "batch": "U11",
+  "base": "4fa2648c42fe747cf506c02d8a2db170c4beb4a2",
+  "originalAuditBase": "d26603868f60e60069d29ea00613d2e86f94d7bd",
+  "branch": "content/lv1-verified-followups-20261105",
+  "checkedAt": "2026-11-05T14:13:51.451Z",
+  "scope": "26 absent verbForms additions only; no whole-card approval",
+  "diff": {
+    "base": "4fa2648c42fe747cf506c02d8a2db170c4beb4a2",
+    "batch": "U11",
+    "modifiedFields": 26,
+    "fullWordCount": 6090,
+    "starterCount": 5779,
+    "starterUpdated": 22,
+    "starterOmitted": [
+      "W000980",
+      "W000711",
+      "W000908",
+      "W000785"
+    ],
+    "unchangedOtherWordFields": true,
+    "unchangedOtherDatasets": [
+      "senses",
+      "examples",
+      "relations",
+      "morphemes",
+      "notes",
+      "exam_priority",
+      "hooks",
+      "media"
+    ],
+    "original31SourcesUnchanged": true,
+    "priorFollowupFactsUnchanged": 180,
+    "unchangedStarterIdentities": true,
+    "metadataHashesValid": true,
+    "unchangedAll7TranslationSources": true
+  },
+  "unitCounts": [
+    {
+      "unit": "U11",
+      "modified": 26,
+      "reopened": 26,
+      "imagesLoaded": 26,
+      "usageOpened": 26,
+      "examplesMatched": 88
+    }
+  ],
+  "localChecks": {
+    "python": {
+      "tests": 13,
+      "status": "passed",
+      "coversAll206FollowupFacts": true
+    },
+    "vitest": {
+      "files": 4,
+      "tests": 25,
+      "maxWorkers": 1,
+      "defaultTimeoutUnchanged": true,
+      "status": "passed"
+    },
+    "typecheck": "passed",
+    "lint": "passed",
+    "build": "passed",
+    "publicationScan": {
+      "status": "passed",
+      "filesScanned": 329,
+      "findings": []
+    },
+    "fullLocalSuite": "not_run",
+    "ci": "pending_first_push",
+    "initialSandboxAttempt": {
+      "status": "failed_before_test_execution",
+      "error": "EPERM rename in SSR transform cache",
+      "testsExecuted": 0,
+      "resolution": "Same official npm pipeline with normal execution access passed; no timeout/assertion/cache-clearing changes."
+    }
+  },
+  "browser": {
+    "origin": "http://127.0.0.1:5187",
+    "profile": "same isolated persistent profile outside watched repository",
+    "normalSettingsUpdate": {
+      "status": "updated",
+      "diagnosticImport": false,
+      "databaseCleared": false,
+      "contentWords": 6090,
+      "newFieldsVerified": 26,
+      "protectedWords": 212,
+      "protectedExamples": 7,
+      "protectedHashesUnchanged": true,
+      "progressTables": 14,
+      "nonemptyProgressTables": 1,
+      "allProgressAndSettingsHashesUnchangedBeforeNavigation": true,
+      "screenshot": "output/playwright/verified-followups/u11-normal-dictionary-update.png"
+    },
+    "cards": [
+      {
+        "wordId": "W000409",
+        "word": "hope",
+        "forms": [
+          "hope",
+          "hoped",
+          "hoped"
+        ],
+        "meaningForms": [
+          "hope",
+          "hoped",
+          "hoped"
+        ],
+        "databaseFormsMatch": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U11-01-cbbabcba791d.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "visibleExampleCount": 6,
+        "exampleTextMatchesPublishedData": true,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000409-card.png",
+        "cardScreenshotSha256": "53a10e64a90e987608794e8bbd7e13ca6ba28f03d8db56d6c6bd904d7bb6345d",
+        "usageScreenshot": "output/playwright/verified-followups/W000409-usage.png",
+        "usageScreenshotSha256": "ea7b332e1c08a8a6afa3f1b8f48a5019f3abed1328bf1b0c9fe21337842e5d1f"
+      },
+      {
+        "wordId": "W000980",
+        "word": "wish",
+        "forms": [
+          "wish",
+          "wished",
+          "wished"
+        ],
+        "meaningForms": [
+          "wish",
+          "wished",
+          "wished"
+        ],
+        "databaseFormsMatch": true,
+        "image": {
+          "src": "./wordbeast/audited-20261105/LV1-U11-05-7caf5462e42d.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "visibleExampleCount": 8,
+        "exampleTextMatchesPublishedData": true,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000980-card.png",
+        "cardScreenshotSha256": "43a1338469c77377cdcf5db2ab9eaea5f04a3aff8516057922fa913a6751cc02",
+        "usageScreenshot": "output/playwright/verified-followups/W000980-usage.png",
+        "usageScreenshotSha256": "89f0ef07eac67fa180fce7d96ccfbb782a7f3513cd3163237be594682b9ad100"
+      },
+      {
+        "wordId": "W000591",
+        "word": "note",
+        "forms": [
+          "note",
+          "noted",
+          "noted"
+        ],
+        "meaningForms": [
+          "note",
+          "noted",
+          "noted"
+        ],
+        "databaseFormsMatch": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U11-13-6f6e185495be.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "visibleExampleCount": 7,
+        "exampleTextMatchesPublishedData": true,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000591-card.png",
+        "cardScreenshotSha256": "489803b45f641028e84eb8b9b425c6886027712114c8dd9eb4efb1e31f987f3b",
+        "usageScreenshot": "output/playwright/verified-followups/W000591-usage.png",
+        "usageScreenshotSha256": "35c1fb06c956cd1933ef718d4f075bfe339c2a50c0080b054edf8e9ba4f64895"
+      },
+      {
+        "wordId": "W000522",
+        "word": "market",
+        "forms": [
+          "market",
+          "marketed",
+          "marketed"
+        ],
+        "meaningForms": [
+          "market",
+          "marketed",
+          "marketed"
+        ],
+        "databaseFormsMatch": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U11-16-54b9fab1fe1e.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "visibleExampleCount": 6,
+        "exampleTextMatchesPublishedData": true,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000522-card.png",
+        "cardScreenshotSha256": "bb5aee0e9aacfbfdee692d74d26c8dfb6fbf8d347336f9841dd1b2190b489788",
+        "usageScreenshot": "output/playwright/verified-followups/W000522-usage.png",
+        "usageScreenshotSha256": "2b578a69c91f0650a0bb2be892fd1612df3e5e5cd24185e1126a959280ebaf44"
+      },
+      {
+        "wordId": "W001854",
+        "word": "stream",
+        "forms": [
+          "stream",
+          "streamed",
+          "streamed"
+        ],
+        "meaningForms": [
+          "stream",
+          "streamed",
+          "streamed"
+        ],
+        "databaseFormsMatch": true,
+        "image": {
+          "src": "./wordbeast/audited-20261105/LV1-U11-27-f934c6127c5e.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "visibleExampleCount": 0,
+        "exampleTextMatchesPublishedData": true,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W001854-card.png",
+        "cardScreenshotSha256": "4c48d2d5e2b0bfd3c2625ebffd687dbf9393f2b1288f0c8818785dfa9d2f9e11",
+        "usageScreenshot": "output/playwright/verified-followups/W001854-usage.png",
+        "usageScreenshotSha256": "476d36c4373c0e0df6605e91f42bf6461860c291b3e52c6a56abcf9719ae72f5"
+      },
+      {
+        "wordId": "W000018",
+        "word": "agree",
+        "forms": [
+          "agree",
+          "agreed",
+          "agreed"
+        ],
+        "meaningForms": [
+          "agree",
+          "agreed",
+          "agreed"
+        ],
+        "databaseFormsMatch": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U11-28-804ccb19b2ff.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "visibleExampleCount": 1,
+        "exampleTextMatchesPublishedData": true,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000018-card.png",
+        "cardScreenshotSha256": "89c866d99472c1f47698909ce3d2dbe2f091998b5ba96bfaef1802fcce2dc037",
+        "usageScreenshot": "output/playwright/verified-followups/W000018-usage.png",
+        "usageScreenshotSha256": "6041d4d461b923139165dee7a7a98653bd4607a19443c0463c53da1427703335"
+      },
+      {
+        "wordId": "W001259",
+        "word": "disagree",
+        "forms": [
+          "disagree",
+          "disagreed",
+          "disagreed"
+        ],
+        "meaningForms": [
+          "disagree",
+          "disagreed",
+          "disagreed"
+        ],
+        "databaseFormsMatch": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U11-30-032d8cc75d45.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "visibleExampleCount": 2,
+        "exampleTextMatchesPublishedData": true,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W001259-card.png",
+        "cardScreenshotSha256": "c9ae72e024c56d53c21a1ce792b9824f974185073872787dcfb1c361bcdbea8f",
+        "usageScreenshot": "output/playwright/verified-followups/W001259-usage.png",
+        "usageScreenshotSha256": "9e30800184d102deaebe201150dd32f72a7d0f5faddfbcde95cd7880dc42f0ec"
+      },
+      {
+        "wordId": "W000156",
+        "word": "chance",
+        "forms": [
+          "chance",
+          "chanced",
+          "chanced"
+        ],
+        "meaningForms": [
+          "chance",
+          "chanced",
+          "chanced"
+        ],
+        "databaseFormsMatch": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U11-32-d2acb668c1f7.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "visibleExampleCount": 8,
+        "exampleTextMatchesPublishedData": true,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000156-card.png",
+        "cardScreenshotSha256": "51710afb29bc921ada174d55a2ea42084db1e6419481c0e3fc43ff15d89ea148",
+        "usageScreenshot": "output/playwright/verified-followups/W000156-usage.png",
+        "usageScreenshotSha256": "2ce55d1e62b356f238c7c0b922efe3d55bcc7a3058bb6a8df51513a919f82be1"
+      },
+      {
+        "wordId": "W000889",
+        "word": "throw",
+        "forms": [
+          "throw",
+          "threw",
+          "thrown"
+        ],
+        "meaningForms": [
+          "throw",
+          "threw",
+          "thrown"
+        ],
+        "databaseFormsMatch": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U11-34-50d5dee9af48.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "visibleExampleCount": 7,
+        "exampleTextMatchesPublishedData": true,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000889-card.png",
+        "cardScreenshotSha256": "e8cfad7dcfb49f152dbe97998d44be01ed694e69fb6730c8322adcb42b2abe65",
+        "usageScreenshot": "output/playwright/verified-followups/W000889-usage.png",
+        "usageScreenshotSha256": "d3423f94c17b4c9068e3a936566112ca510e2485ec7cffa4d1df7508e586d9a7"
+      },
+      {
+        "wordId": "W005939",
+        "word": "trifle",
+        "forms": [
+          "trifle",
+          "trifled",
+          "trifled"
+        ],
+        "meaningForms": [
+          "trifle",
+          "trifled",
+          "trifled"
+        ],
+        "databaseFormsMatch": true,
+        "image": {
+          "src": "./wordbeast/audited-20261105/LV1-U11-38-21f4ca551731.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "visibleExampleCount": 0,
+        "exampleTextMatchesPublishedData": true,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W005939-card.png",
+        "cardScreenshotSha256": "edc6e798c6c9cdb97ade66ebbee92d38c85a382a77f88adc2badf3510cd18c25",
+        "usageScreenshot": "output/playwright/verified-followups/W005939-usage.png",
+        "usageScreenshotSha256": "394914e4f2364e44d5d621963d49a5ab119ae22d6baddd2c9c3891e7a7e846ae"
+      },
+      {
+        "wordId": "W000305",
+        "word": "fight",
+        "forms": [
+          "fight",
+          "fought",
+          "fought"
+        ],
+        "meaningForms": [
+          "fight",
+          "fought",
+          "fought"
+        ],
+        "databaseFormsMatch": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U11-39-0f9fedcdc183.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "visibleExampleCount": 7,
+        "exampleTextMatchesPublishedData": true,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000305-card.png",
+        "cardScreenshotSha256": "13180c4fb21378249be14f25118d21358cd8f4f958c329d6be7a01c30dd53213",
+        "usageScreenshot": "output/playwright/verified-followups/W000305-usage.png",
+        "usageScreenshotSha256": "eb9448c4e0b90d2667dae8beacc207e2f265afc3069b0391d3570c364f64cdda"
+      },
+      {
+        "wordId": "W000711",
+        "word": "rest",
+        "forms": [
+          "rest",
+          "rested",
+          "rested"
+        ],
+        "meaningForms": [
+          "rest",
+          "rested",
+          "rested"
+        ],
+        "databaseFormsMatch": true,
+        "image": {
+          "src": "./wordbeast/audited-20261105/LV1-U11-40-f569012d10fb.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "visibleExampleCount": 7,
+        "exampleTextMatchesPublishedData": true,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000711-card.png",
+        "cardScreenshotSha256": "1e816365cb049faef02b78d135e5ae59f2882164569d89426b7c363bc3311e69",
+        "usageScreenshot": "output/playwright/verified-followups/W000711-usage.png",
+        "usageScreenshotSha256": "6115c3974508a53581a110d4259b0011c66b9df7b9ed9cba5e2ae3ac56ee6ccd"
+      },
+      {
+        "wordId": "W000955",
+        "word": "wear",
+        "forms": [
+          "wear",
+          "wore",
+          "worn"
+        ],
+        "meaningForms": [
+          "wear",
+          "wore",
+          "worn"
+        ],
+        "databaseFormsMatch": true,
+        "image": {
+          "src": "./wordbeast/a/W000955.webp?v=local",
+          "loaded": true,
+          "width": 1024,
+          "height": 1024
+        },
+        "visibleExampleCount": 6,
+        "exampleTextMatchesPublishedData": true,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000955-card.png",
+        "cardScreenshotSha256": "229d01627e3d74dde5c206bc767c544398c4dc36eb3c6dc8b93bb9371eb53eaa",
+        "usageScreenshot": "output/playwright/verified-followups/W000955-usage.png",
+        "usageScreenshotSha256": "96ec8a8435419796cb707e4b9ab73ad7fe902bd5110d3b06d1e4b2af3f0a7fa9"
+      },
+      {
+        "wordId": "W003188",
+        "word": "congratulate",
+        "forms": [
+          "congratulate",
+          "congratulated",
+          "congratulated"
+        ],
+        "meaningForms": [
+          "congratulate",
+          "congratulated",
+          "congratulated"
+        ],
+        "databaseFormsMatch": true,
+        "image": {
+          "src": "./wordbeast/audited-20261105/LV1-U11-42-f6a46e6909ca.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "visibleExampleCount": 0,
+        "exampleTextMatchesPublishedData": true,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W003188-card.png",
+        "cardScreenshotSha256": "be2ff3c6e4c597ea40c1fe9c7ecce0b7457ec03747d506e85787c8f21f7eaf0e",
+        "usageScreenshot": "output/playwright/verified-followups/W003188-usage.png",
+        "usageScreenshotSha256": "673afab378da70d471619c843455a1b1c1c32bf9f5cde680055a5933006c2468"
+      },
+      {
+        "wordId": "W000497",
+        "word": "list",
+        "forms": [
+          "list",
+          "listed",
+          "listed"
+        ],
+        "meaningForms": [
+          "list",
+          "listed",
+          "listed"
+        ],
+        "databaseFormsMatch": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U11-45-1322a3d3f24a.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "visibleExampleCount": 2,
+        "exampleTextMatchesPublishedData": true,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000497-card.png",
+        "cardScreenshotSha256": "4c3ddae4556114ead9c88f68911f2cd27fb55052875e29067439d2c3411d9a06",
+        "usageScreenshot": "output/playwright/verified-followups/W000497-usage.png",
+        "usageScreenshotSha256": "741fac265ff056eab1ff5da517fcdbf463267ce0fc79a3076d02dd66ed47ad98"
+      },
+      {
+        "wordId": "W000444",
+        "word": "join",
+        "forms": [
+          "join",
+          "joined",
+          "joined"
+        ],
+        "meaningForms": [
+          "join",
+          "joined",
+          "joined"
+        ],
+        "databaseFormsMatch": true,
+        "image": {
+          "src": "./wordbeast/audited-20261105/LV1-U11-57-dc9c171889ee.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "visibleExampleCount": 2,
+        "exampleTextMatchesPublishedData": true,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000444-card.png",
+        "cardScreenshotSha256": "242bba5155ebc3487568cb03cb803e134f5f65ce8359f28745996f03610efde1",
+        "usageScreenshot": "output/playwright/verified-followups/W000444-usage.png",
+        "usageScreenshotSha256": "4fcf5f04a43d019a1c75ddc53501fdf0f4b71663bd44df028bdc5a1781fdc07d"
+      },
+      {
+        "wordId": "W000730",
+        "word": "rule",
+        "forms": [
+          "rule",
+          "ruled",
+          "ruled"
+        ],
+        "meaningForms": [
+          "rule",
+          "ruled",
+          "ruled"
+        ],
+        "databaseFormsMatch": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U11-59-6d76d8447006.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "visibleExampleCount": 2,
+        "exampleTextMatchesPublishedData": true,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000730-card.png",
+        "cardScreenshotSha256": "0910ef6187cd6a928b5e36ab270465b7d6111d7a8fbc8aa1620f66cac4cfd697",
+        "usageScreenshot": "output/playwright/verified-followups/W000730-usage.png",
+        "usageScreenshotSha256": "47fb054cd88f7bceb97f2539a1725c0d4b38732472b99d3b5cc4b44c425c571b"
+      },
+      {
+        "wordId": "W000701",
+        "word": "ready",
+        "forms": [
+          "ready",
+          "readied",
+          "readied"
+        ],
+        "meaningForms": [
+          "ready",
+          "readied",
+          "readied"
+        ],
+        "databaseFormsMatch": true,
+        "image": {
+          "src": "./wordbeast/s/W000701.webp?v=local",
+          "loaded": true,
+          "width": 1024,
+          "height": 1024
+        },
+        "visibleExampleCount": 3,
+        "exampleTextMatchesPublishedData": true,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000701-card.png",
+        "cardScreenshotSha256": "b3cb8120b8e8da83bd9e6b02d4a86a83c8dab2787b92199770d359aa79ccc9ed",
+        "usageScreenshot": "output/playwright/verified-followups/W000701-usage.png",
+        "usageScreenshotSha256": "8edbd293dd651a429e6fac9266f9b260ea6d8f624128675d37662ad983326b22"
+      },
+      {
+        "wordId": "W000310",
+        "word": "fine",
+        "forms": [
+          "fine",
+          "fined",
+          "fined"
+        ],
+        "meaningForms": [
+          "fine",
+          "fined",
+          "fined"
+        ],
+        "databaseFormsMatch": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U11-66-2f1f25739702.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "visibleExampleCount": 2,
+        "exampleTextMatchesPublishedData": true,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000310-card.png",
+        "cardScreenshotSha256": "4ff1deba005042fdba1cacb3cbd94212f6c5288690175678751a2b4805081730",
+        "usageScreenshot": "output/playwright/verified-followups/W000310-usage.png",
+        "usageScreenshotSha256": "72acd6ebee7e19576b9fa583ea9e9ab8f6082daf5e510b6aac4dbb6e5769d2fc"
+      },
+      {
+        "wordId": "W000454",
+        "word": "kill",
+        "forms": [
+          "kill",
+          "killed",
+          "killed"
+        ],
+        "meaningForms": [
+          "kill",
+          "killed",
+          "killed"
+        ],
+        "databaseFormsMatch": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U11-67-b685bb24ea87.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "visibleExampleCount": 2,
+        "exampleTextMatchesPublishedData": true,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000454-card.png",
+        "cardScreenshotSha256": "217e422fc468695981b3de32fa85e8e8f130f9953bfde7bc9ee438f814ab8e19",
+        "usageScreenshot": "output/playwright/verified-followups/W000454-usage.png",
+        "usageScreenshotSha256": "259c8563cf80333b462727e0ede4b49f354eae73cbb9ea066a486cc83ba95518"
+      },
+      {
+        "wordId": "W000674",
+        "word": "prepare",
+        "forms": [
+          "prepare",
+          "prepared",
+          "prepared"
+        ],
+        "meaningForms": [
+          "prepare",
+          "prepared",
+          "prepared"
+        ],
+        "databaseFormsMatch": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U11-70-2249390bc701.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "visibleExampleCount": 4,
+        "exampleTextMatchesPublishedData": true,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000674-card.png",
+        "cardScreenshotSha256": "8bed173c48d197be0b623d00077ef4caf0abab910591577f3c3cc3e0413d8688",
+        "usageScreenshot": "output/playwright/verified-followups/W000674-usage.png",
+        "usageScreenshotSha256": "d66d8add541c6bc68512bcc441ff24f5e9be1c2c2c2cc346e99d47146a336387"
+      },
+      {
+        "wordId": "W000908",
+        "word": "top",
+        "forms": [
+          "top",
+          "topped",
+          "topped"
+        ],
+        "meaningForms": [
+          "top",
+          "topped",
+          "topped"
+        ],
+        "databaseFormsMatch": true,
+        "image": {
+          "src": "./wordbeast/audited-20261105/LV1-U11-72-e79e56ad4a5f.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "visibleExampleCount": 2,
+        "exampleTextMatchesPublishedData": true,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000908-card.png",
+        "cardScreenshotSha256": "c4b2e0fa3cb78e4c2dd24aae8adde16e6ce75fa087d00c6f885c7f2048537353",
+        "usageScreenshot": "output/playwright/verified-followups/W000908-usage.png",
+        "usageScreenshotSha256": "13329980071e77accdb2316ebce1a2a76d014a37aecd28916a819bd9e6f379db"
+      },
+      {
+        "wordId": "W000785",
+        "word": "size",
+        "forms": [
+          "size",
+          "sized",
+          "sized"
+        ],
+        "meaningForms": [
+          "size",
+          "sized",
+          "sized"
+        ],
+        "databaseFormsMatch": true,
+        "image": {
+          "src": "./wordbeast/audited-20261105/LV1-U11-73-e76065651609.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "visibleExampleCount": 2,
+        "exampleTextMatchesPublishedData": true,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000785-card.png",
+        "cardScreenshotSha256": "81140533976465106fb25807f97fdc32ef982f866db7a92773e74c0f09630d5e",
+        "usageScreenshot": "output/playwright/verified-followups/W000785-usage.png",
+        "usageScreenshotSha256": "941e0ef03040b4f6d7dbcec2171cf7ca90c6d400cdf0463d22c35055516d73db"
+      },
+      {
+        "wordId": "W000819",
+        "word": "spring",
+        "forms": [
+          "spring",
+          "sprang",
+          "sprung"
+        ],
+        "meaningForms": [
+          "spring",
+          "sprang",
+          "sprung"
+        ],
+        "databaseFormsMatch": true,
+        "image": {
+          "src": "./wordbeast/audited-20261105/LV1-U11-74-cb3367a6c4c0.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "visibleExampleCount": 2,
+        "exampleTextMatchesPublishedData": true,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000819-card.png",
+        "cardScreenshotSha256": "aaea4c1eb985fa6b9e6656a932607ff8310cfae4ae13d6aa01e481505015140a",
+        "usageScreenshot": "output/playwright/verified-followups/W000819-usage.png",
+        "usageScreenshotSha256": "8b646a5c13ff62cc773a07357001c7f5846c00d2645667c0292535809000d41a"
+      },
+      {
+        "wordId": "W000110",
+        "word": "bottom",
+        "forms": [
+          "bottom",
+          "bottomed",
+          "bottomed"
+        ],
+        "meaningForms": [
+          "bottom",
+          "bottomed",
+          "bottomed"
+        ],
+        "databaseFormsMatch": true,
+        "image": {
+          "src": "./wordbeast/audited-20261105/LV1-U11-75-e4d6b43562c0.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "visibleExampleCount": 0,
+        "exampleTextMatchesPublishedData": true,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000110-card.png",
+        "cardScreenshotSha256": "37193ddea4b570efc5ceae538cc41b9ca6676970f9ec40260e81a9fa9a45c8d1",
+        "usageScreenshot": "output/playwright/verified-followups/W000110-usage.png",
+        "usageScreenshotSha256": "7cc72d7aeb98aacf73ebfa08bec0c3e141305374962b43631ab6d6d535808400"
+      },
+      {
+        "wordId": "W000670",
+        "word": "pot",
+        "forms": [
+          "pot",
+          "potted",
+          "potted"
+        ],
+        "meaningForms": [
+          "pot",
+          "potted",
+          "potted"
+        ],
+        "databaseFormsMatch": true,
+        "image": {
+          "src": "./wordbeast/audited-20261105/LV1-U11-78-7d180a337454.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "visibleExampleCount": 0,
+        "exampleTextMatchesPublishedData": true,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000670-card.png",
+        "cardScreenshotSha256": "23cd9ced9a26c533652a594b437c53ae1477d6e50ff52655f890246533c5c8ff",
+        "usageScreenshot": "output/playwright/verified-followups/W000670-usage.png",
+        "usageScreenshotSha256": "3fa7085ce49b646eb21bfcea0efe8381b3d5f2db2e68dab3e58ca07199b66d39"
+      }
+    ],
+    "publishedExamplesMatched": 88,
+    "screenshotsReviewedViaContactSheets": 52,
+    "contactSheetsReviewed": 10,
+    "mobile": [
+      {
+        "wordId": "W000819",
+        "width": 390,
+        "scrollWidth": 390,
+        "horizontalOverflow": false,
+        "screenshot": "output/playwright/verified-followups/U11-W000819-mobile-390.png",
+        "forms": [
+          "spring",
+          "sprang",
+          "sprung"
+        ]
+      },
+      {
+        "wordId": "W000670",
+        "width": 390,
+        "scrollWidth": 390,
+        "horizontalOverflow": false,
+        "screenshot": "output/playwright/verified-followups/U11-W000670-mobile-390.png",
+        "forms": [
+          "pot",
+          "potted",
+          "potted"
+        ]
+      }
+    ],
+    "postNavigation": {
+      "otherProgressTablesUnchanged": 13,
+      "otherSettingsUnchanged": true,
+      "allowedChangedSetting": "learning:last-location",
+      "bookmarkWordId": "W000670",
+      "protectedHashesUnchanged": true
+    },
+    "pendingWordsReadBack": [
+      {
+        "wordId": "W000139",
+        "word": "can",
+        "status": "draft",
+        "verbFormsKey": "absent"
+      },
+      {
+        "wordId": "W000071",
+        "word": "bear",
+        "status": "reviewed",
+        "verbFormsKey": "absent"
+      },
+      {
+        "wordId": "W000574",
+        "word": "need",
+        "status": "draft",
+        "verbFormsKey": "absent"
+      },
+      {
+        "wordId": "W000195",
+        "word": "cost",
+        "status": "reviewed",
+        "verbFormsKey": "absent"
+      },
+      {
+        "wordId": "W000490",
+        "word": "lie",
+        "status": "draft",
+        "verbFormsKey": "absent"
+      }
+    ],
+    "consoleErrors": 0,
+    "consoleWarnings": 0,
+    "failedRequests": [],
+    "updateWaitDiagnostic": {
+      "rootCause": "Screenshot helper initially waited without clicking update; no App update request or content mutation occurred.",
+      "resolution": "Actual normal update button clicked once; saved records and progress subsequently verified.",
+      "databaseUnchangedBeforeActualClick": true
+    }
+  },
+  "pendingExcluded": [],
+  "imagesAdded": 0,
+  "imagesRepaired": 0,
+  "missingDisplayedImages": [],
+  "wordStatusesChanged": 0,
+  "senseStatusesChanged": 0,
+  "next": {
+    "unit": "U12",
+    "firstWord": "answer",
+    "firstWordId": "W000035",
+    "cardId": "LV1-U12-03",
+    "applied": false
+  }
+}

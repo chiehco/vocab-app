@@ -30,6 +30,14 @@ const batches = {
     preserveVariantEvidence: true,
     preserveUnitContexts: true,
   },
+  'U11': {
+    sources: ['U10-U15-PUBLISHED-VERB-FORMS-VERIFICATION.json','U11-ADDITIONAL-VERB-FORMS-VERIFICATION.json'],
+    ids: 'W000409 W000980 W000591 W000522 W001854 W000018 W001259 W000156 W000889 W005939 W000305 W000711 W000955 W003188 W000497 W000444 W000730 W000701 W000310 W000454 W000674 W000908 W000785 W000819 W000110 W000670'.split(' '),
+    sourceSnapshot: {researchCommit:'872786556e223809a88c3a315ecba1f843de718d',sourceBlobs:{'U10-U15-PUBLISHED-VERB-FORMS-VERIFICATION.json':'5215e48aadd050f5118e85727bc391ad7150738b','U11-ADDITIONAL-VERB-FORMS-VERIFICATION.json':'eb3742b2155fd5b652df7788f76408c036d1d2a2'}},
+    readVerifiedGitBlobs: true,
+    preserveVariantEvidence: true,
+    preserveUnitContexts: true,
+  },
 };
 const batch = process.argv[2];
 assert.ok(batches[batch], 'Select an explicitly reviewed batch');
@@ -44,11 +52,16 @@ const sources = existsSync(sourcePath) ? read(sourcePath) : {
   scope: 'Only explicitly listed missing verbForms fields. No meaning, example, POS or whole-word review approval.',
   facts: [],
 };
-const entries = config.sources.flatMap(name => read(root + 'source-followup-candidates/' + name).entries.map(entry => ({...entry, researchFile: name})));
+const sourceRef=config.readVerifiedGitBlobs?config.sourceSnapshot.researchCommit:'HEAD';
+const entries = config.sources.flatMap(name => {
+  const path=root+'source-followup-candidates/'+name;
+  const source=config.readVerifiedGitBlobs?JSON.parse(execFileSync('git',['show',sourceRef+':'+path],{encoding:'utf8',maxBuffer:8e6})):read(path);
+  return source.entries.map(entry => ({...entry,researchFile:name}));
+});
 if (config.sourceSnapshot) for(const name of config.sources){
   const expected=config.sourceSnapshot.sourceBlobs?.[name]??config.sourceSnapshot.sourceBlob;
   assert.ok(expected,'Every source needs an exact verified blob');
-  assert.equal(execFileSync('git',['rev-parse','HEAD:'+root+'source-followup-candidates/'+name],{encoding:'utf8'}).trim(),expected,'Current source must match the verified latest research blob');
+  assert.equal(execFileSync('git',['rev-parse',sourceRef+':'+root+'source-followup-candidates/'+name],{encoding:'utf8'}).trim(),expected,'Current source must match the verified latest research blob');
 }
 const facts = config.ids.map(id => {
   const matches = entries.filter(entry => entry.wordId === id);
@@ -78,6 +91,7 @@ const facts = config.ids.map(id => {
       ...(entry.displayQualificationRecommended?{displayQualificationRecommended:entry.displayQualificationRecommended}:{}),
       ...(entry.presentationPriority?{presentationPriority:entry.presentationPriority}:{}),
       ...(entry.senseAndVariantRecords?{senseAndVariantRecords:entry.senseAndVariantRecords}:{}),
+      ...(entry.regionalAndConstructionRestrictions?{regionalAndConstructionRestrictions:entry.regionalAndConstructionRestrictions}:{}),
       currentSourceCheck:{method:'Direct official dictionary forms and applicable verb construction; conjugation and regional notes checked where needed',checkedAt:new Date().toISOString(),success:true}} : {}),
     ...(id === 'W004780' ? {currentSourceCheck:{verifiedUrl:verbForms.sourceRef,method:'Direct Collins Past and Past Participle table',unavailableRecheck:{url:'https://www.oxfordlearnersdictionaries.com/definition/english/sequence_2',status:403},note:'Original research evidence is retained; this pass does not claim a successful direct Oxford read.'}} : {}),
     verification:'Exact current field absence, headword/POS and source forms checked before mutation.'};

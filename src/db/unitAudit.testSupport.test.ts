@@ -12,6 +12,7 @@ import followupsU05U06 from '../../docs/unit-audit-20261105/LV1-U05-U06-verified
 import followupsU07 from '../../docs/unit-audit-20261105/LV1-U07-verified-forms-patches.json';
 import followupsU08U09 from '../../docs/unit-audit-20261105/LV1-U08-U09-verified-forms-patches.json';
 import followupsU10 from '../../docs/unit-audit-20261105/LV1-U10-verified-forms-patches.json';
+import followupsU11 from '../../docs/unit-audit-20261105/LV1-U11-verified-forms-patches.json';
 import followupSources from '../../docs/unit-audit-20261105/VERIFIED-FOLLOWUP-VERB-FORMS-SOURCES.json';
 import originalSources from '../../docs/unit-audit-20261105/VERIFIED-VERB-FORMS-SOURCES.json';
 import translationFollowups from '../../docs/unit-audit-20261105/LV1-U11-U12-verified-translations-patches.json';
@@ -89,9 +90,10 @@ it('reverses only exact followup fields to absent and retains the original 31 so
  expect(followupsU07.patches).toHaveLength(37);
  expect(followupsU08U09.patches).toHaveLength(54);
  expect(followupsU10.patches).toHaveLength(27);
+ expect(followupsU11.patches).toHaveLength(26);
  expect(createHash('sha256').update(JSON.stringify(stable(followupSources.facts.filter(f=>f.batch==='U03-U04')))).digest('hex')).toBe('98c2d594a21911e85d8bb34eed8f479dd7df59c034d51006d752ad74559d0b87');
  expect(createHash('sha256').update(JSON.stringify(stable(followupSources.facts.filter(f=>['U03-U04','U05-U06'].includes(f.batch))))).digest('hex')).toBe('982208b048a385d2a00564f8bc77be91109c5a7e9aa9b328c6a7394b499f060b');
- for(const p of [...followups.patches,...followupsU05U06.patches,...followupsU07.patches,...followupsU08U09.patches,...followupsU10.patches]){
+ for(const p of [...followups.patches,...followupsU05U06.patches,...followupsU07.patches,...followupsU08U09.patches,...followupsU10.patches,...followupsU11.patches]){
   const row=structuredClone(words.find(row=>row.wordId===p.id)!);
   const preserved={...row};delete preserved.verbForms;
   restoreRecordedAuditPatch('words',row,p);
@@ -122,6 +124,13 @@ it('reverses only exact followup fields to absent and retains the original 31 so
  expect(form('W000700')).toMatchObject({base:'read',past:'read',pastParticiple:'read'});
  expect(form('W000698')).toMatchObject({base:'raise',past:'raised',pastParticiple:'raised'});
  expect(form('W000313')).toMatchObject({base:'fire',past:'fired',pastParticiple:'fired'});
+ expect(form('W000819')).toMatchObject({base:'spring',past:'sprang',pastParticiple:'sprung'});
+ expect(form('W000955')).toMatchObject({base:'wear',past:'wore',pastParticiple:'worn'});
+ expect(form('W000785')).toMatchObject({base:'size',past:'sized',pastParticiple:'sized'});
+ expect(form('W000110')).toMatchObject({base:'bottom',past:'bottomed',pastParticiple:'bottomed'});
+ expect(form('W000670')).toMatchObject({base:'pot',past:'potted',pastParticiple:'potted'});
+ expect(form('W000701')).toMatchObject({base:'ready',past:'readied',pastParticiple:'readied'});
+ expect(followupSources.facts.find(f=>f.wordId==='W000819')).toMatchObject({sourceSupportedForms:{past:['sprang','sprung'],pastParticiple:['sprung']}});
 });
 
 it('reverses only the two verified translations while preserving all prior sources and unrelated row fields',()=>{
@@ -131,9 +140,12 @@ it('reverses only the two verified translations while preserving all prior sourc
  expect(original99.facts).toHaveLength(99);
  // Reconstruct the original 99-fact file; retain its fixed hash as new facts are appended.
  expect(createHash('sha256').update(JSON.stringify(original99,null,2)+'\n').digest('hex')).toBe('241c3bb9212192299797bc290ed0a0a138e395bb7bd69708176df6421f85a250');
- const original153={...followupSources,facts:followupSources.facts.filter(f=>f.batch!=='U10')};
+ const original153={...followupSources,facts:followupSources.facts.filter(f=>['U03-U04','U05-U06','U07','U08-U09'].includes(f.batch))};
  expect(original153.facts).toHaveLength(153);
  expect(createHash('sha256').update(JSON.stringify(original153,null,2)+'\n').digest('hex')).toBe('81a95ac526c17241257c888406452a3b5d73932a0db596d719c4ba7dd256a6a0');
+ const original180={...followupSources,facts:followupSources.facts.filter(f=>['U03-U04','U05-U06','U07','U08-U09','U10'].includes(f.batch))};
+ expect(original180.facts).toHaveLength(180);
+ expect(createHash('sha256').update(JSON.stringify(original180,null,2)+'\n').digest('hex')).toBe('a40ef2362bbeeb9f18b35755e6748a2813e10256355ef5e7302b94fdb1a174b2');
  expect(translationFollowups.patches).toHaveLength(2);
  expect(translationFollowupSources.facts.map(f=>f.exampleId).sort()).toEqual(['EX299bccf8','EX4c5b9769']);
  for(const p of translationFollowups.patches){
