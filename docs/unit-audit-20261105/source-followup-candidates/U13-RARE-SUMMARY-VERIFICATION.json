@@ -1,0 +1,424 @@
+{
+  "reportType": "U13 rare and mixed-part-of-speech summary verification",
+  "checkedAtUtc": "2026-11-05T11:28:57.699392+00:00",
+  "sourceCommit": "b7e99544d6b84bf91805d36cfbb0807fc452dce5",
+  "scope": "只核實 horse、pony 原有中文摘要及必要詞性、語法、領域限制；不改 repository，不核准整卡 reviewed。",
+  "repositoryModified": false,
+  "summary": {
+    "wordCount": 2,
+    "originalGlossesReviewed": 8,
+    "supportedOrQualifiedGlosses": 7,
+    "pendingGlosses": 1,
+    "conclusion": "horse 四義均可保留，須標集合騎兵、承托架及騎乘動詞。pony 矮種馬、藉譯文翻譯、小型的均有正文支持；每日摘要的有新聞通訊義線索，但未核到可靠詞典原著的獨立形容詞義，保留待確認。",
+    "pendingExactClaims": [
+      {
+        "word": "pony",
+        "claim": "每日摘要的",
+        "reason": "自稱 Webster 的轉載列獨立形容詞定義，1917 年新聞教材亦定義 pony report；但前者原版／頁碼未核，後者只證片語。1924 年原書 pony 條目未收此義，現行原站 Unabridged 導向訂閱頁。不能以片語或轉載替代原著單字義。"
+      }
+    ],
+    "evidenceLimitation": "現代詞典原站讀到相關完整義項。1924 年 Webster 使用原書掃描鏡像，p.1674 已用像素校讀動詞與形容詞。每日摘要的仍只有未核實版本的轉載及片語歷史旁證。"
+  },
+  "method": {
+    "bodyVersusSnippet": "核准依據只使用實際讀到的原站詞典正文或原書掃描；搜尋摘要、中文彙編及未核實的英文詞典轉載只作來源追查。",
+    "translationMethod": "以英文定義核對原中文語義，不冒稱取得原英漢詞典頁；腳架須限定為承托物件的有腳架。",
+    "historicalSenses": "少見不等於錯誤。1924 年明列的 pony 動詞帶 Slang, U.S.；其形容詞未標 obsolete／archaic，不只因書齡加上古語標籤。",
+    "candidateOnly": "afterCandidate 是未套用的最小標示候選。若顯示欄不適合放待確認文字，保留該原值，在審查紀錄另列 pending。",
+    "sourceNoteCaution": "原 sourceNote 的大考中心詞表不是全部中文稀有義的逐義出處。",
+    "scopeBoundary": "不核准例句、搭配、圖片、讀音或整卡狀態。附列 pony 已有英文摘要及 crib 名詞的邊界，只為防止跨詞性或誤刪，不自動新增中文義。",
+    "publicSafety": "不含私人工作目錄、檔案服務識別碼、工具引文代碼或協作角色。"
+  },
+  "words": [
+    {
+      "wordId": "W000410",
+      "word": "horse",
+      "before": {
+        "wordId": "W000410",
+        "word": "horse",
+        "wordVariants": [
+          "horse"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "馬；騎兵；腳架；騎馬",
+        "meaningEn": "a large, strong animal with four legs and a tail that people ride on or use to pull and carry things",
+        "usagePattern": "ride a horse; a horse race",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "horse",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "騎馬；賽馬"
+      },
+      "overallFinding": "馬、騎兵、腳架、騎馬均有直接詞典義項；後三者需要語法、指稱或詞性限制，不能把動詞騎馬列成名詞。",
+      "senseFindings": [
+        {
+          "before": "馬",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "n.",
+          "finding": "一般動物名詞，與原摘要相符。",
+          "afterCandidate": "馬",
+          "sourceIds": [
+            "mw_horse",
+            "collins_horse"
+          ]
+        },
+        {
+          "before": "騎兵",
+          "status": "supported_requires_number_scope",
+          "decision": "qualify",
+          "pos": "n.",
+          "finding": "指騎兵部隊／騎馬軍人，horse 是集合／複數用法，不是單數一名騎兵的普通稱呼。MW 明標 horse plural；Collins 英式條目明標 functioning as plural。",
+          "afterCandidate": "（集合／複數用法）騎兵",
+          "sourceIds": [
+            "mw_horse",
+            "collins_horse",
+            "ahd_horse"
+          ],
+          "usageCaution": "Webster’s New World 明標 British, army 及與複數動詞連用；MW、AHD、同頁 Random House 條目未將此義限為英國用法。保留各來源差異，不統一斷言僅英式，也不因常見於軍事歷史而自行標 obsolete。沒有必須大寫的限制。"
+        },
+        {
+          "before": "腳架",
+          "status": "supported_requires_object_scope",
+          "decision": "qualify",
+          "pos": "n.",
+          "finding": "horse 單字直接指通常有腳、承托木板或平台等物件的架子；可與 sawhorse／trestle 對照。不是僅由複合詞倒推。",
+          "afterCandidate": "腳架（承托木板等的有腳支架）",
+          "sourceIds": [
+            "mw_horse",
+            "collins_horse",
+            "ahd_horse"
+          ],
+          "usageCaution": "不能泛化為任意攝影三腳架，也不與體操鞍馬／跳馬義混作同一器具。"
+        },
+        {
+          "before": "騎馬",
+          "status": "supported_requires_pos_split",
+          "decision": "qualify",
+          "pos": "v.i.",
+          "finding": "Collins 原站 Webster’s New World 的不及物動詞14與 Random House 不及物動詞33直接列上馬／騎馬，非由 ride a horse 片語反推。",
+          "afterCandidate": "（v.i.）騎馬",
+          "sourceIds": [
+            "collins_horse"
+          ],
+          "usageCaution": "此義為不及物。及物 horse 在相鄰義是給予馬匹或使上馬，不可據此把 horse a horse 解為一般 ride a horse。相關原站義項未標 archaic，不能借用相鄰「置於他人背上受鞭打」的 archaic 標籤。MW、AHD 現行頁未收上馬／騎馬動詞，不構成否證。"
+        }
+      ],
+      "afterCandidate": {
+        "pos": "n.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（n.）馬；（集合／複數用法）騎兵；腳架（承托木板等的有腳支架）；（v.i.）騎馬"
+      },
+      "candidateScope": "保持 n. 主詞性，posAll 可補 v.；只為現有四義加必要標示，不新增詞典的其他義。",
+      "reviewStatusRecommendation": "summary_supported_with_qualifications",
+      "wholeCardReviewedAuthorized": false,
+      "mustPreserve": [
+        "n. 主詞性",
+        "騎兵的集合／複數用法",
+        "腳架的承托架限制",
+        "騎馬的獨立不及物動詞義"
+      ],
+      "notAuthorizedByEvidence": [
+        "因騎兵、腳架少見而刪除",
+        "把騎兵理解為普通單數騎兵",
+        "把腳架一律等同攝影 tripod",
+        "用 ride a horse 的片語動詞詞性代替 horse 單字義",
+        "將別義的 archaic 或 slang 標籤搬到騎馬",
+        "批准整卡 reviewed"
+      ]
+    },
+    {
+      "wordId": "W005689",
+      "word": "pony",
+      "before": {
+        "wordId": "W005689",
+        "word": "pony",
+        "wordVariants": [
+          "pony"
+        ],
+        "level": "LV6",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "矮種馬；藉助逐字直譯文翻譯；小型的；每日摘要的",
+        "meaningEn": "a small horse, especially one of a small breed; also a horse of the western United States or, informally, a racehorse.",
+        "usagePattern": "ride a pony; brush a pony",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "pony",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "騎矮種馬；替矮種馬刷毛"
+      },
+      "overallFinding": "矮種馬可保留；藉譯文翻譯是有直接原書支持的美國俚語動詞；小型的是有直接原書支持的形容詞。每日摘要的須保留 pending，不能以 pony report 片語代證。",
+      "senseFindings": [
+        {
+          "before": "矮種馬",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "n.",
+          "finding": "小型馬種的馬，原中文不需改成幼馬；成年矮種馬亦符合。",
+          "afterCandidate": "（n.）矮種馬",
+          "sourceIds": [
+            "mw_pony",
+            "collins_pony",
+            "ahd_pony"
+          ]
+        },
+        {
+          "before": "藉助逐字直譯文翻譯",
+          "status": "supported_requires_pos_and_register",
+          "decision": "qualify",
+          "pos": "v.t. / v.i.",
+          "finding": "1924 年 Webster 原書 pony 動詞第2義直接定義藉 pony 譯文翻譯，整個動詞條目標 v. t. & i.、Slang, U.S.；同頁名詞3以 crib 定義譯文／解答。現代 Collins 原站 Random House 另列用 pony 準備功課的及物及不及物用法。",
+          "afterCandidate": "（v.，美國俚語）藉助逐字直譯文翻譯",
+          "sourceIds": [
+            "webster1924_pony",
+            "collins_pony",
+            "mw_pony"
+          ],
+          "usageCaution": "這是借助既有譯文／課業輔助本的動作，不是 pony 名詞本身等於翻譯動作，也不等於單純逐字翻譯的所有情況。1924 年語域標籤不能搬到所有 pony 名詞義；pony up 付款是另一片語，不可替換本義。"
+        },
+        {
+          "before": "小型的",
+          "status": "supported_requires_pos_split",
+          "decision": "qualify",
+          "pos": "adj.",
+          "finding": "1924 年 Webster 原書有獨立 pony, a.，定義尺寸比通常小；並非拿「小型物件」名詞作形容詞證據。",
+          "afterCandidate": "（adj.）小型的",
+          "sourceIds": [
+            "webster1924_pony"
+          ],
+          "usageCaution": "本義原書未標美式、俚語、古語或大寫限制。原書以名詞前修飾舉例，不據此延伸為所有位置都可取代 small。"
+        },
+        {
+          "before": "每日摘要的",
+          "status": "pending_primary_dictionary_verification",
+          "decision": "retain_pending",
+          "pos": "adj.（原譯與轉載標示，未以可靠詞典原著核准此義）",
+          "finding": "中文彙編與原摘要同源序列；一英文轉載另列形容詞，描述透過電報、電話或郵件提供每日重點新聞的簡報式服務，並舉 pony report／pony service。但無法核實該轉載的原版、頁碼或是否完整。1917 年 News Writing 正文確定義 pony report，僅可作新聞背景旁證。",
+          "afterCandidate": "每日摘要的〔待確認：新聞通訊義的原著單字條目未核〕",
+          "sourceIds": [
+            "slovar_pony_provenance",
+            "cdict_pony_provenance",
+            "spencer_news_writing"
+          ],
+          "usageCaution": "不直接刪除，不斷言錯譯；不把複合片語的每日新聞摘要含義變成一般 daily 形容詞義。也不能只因 1924 年未收此義，就推論後來詞典均無。",
+          "missingEvidence": "需可信詞典原站或可核對版次、頁碼的原書 pony 獨立形容詞條目，確認新聞義、語域與完整限制。",
+          "conditionalCandidateIfVerified": "（adj.，新聞通訊）每日要聞摘要的；此候選不得在原著補證前視為已核准修正。"
+        }
+      ],
+      "afterCandidate": {
+        "pos": "n.",
+        "posAll": [
+          "n.",
+          "v.",
+          "adj."
+        ],
+        "meaningZh": "（n.）矮種馬；（v.，美國俚語）藉助逐字直譯文翻譯；（adj.）小型的；每日摘要的〔待確認：新聞通訊義的原著單字條目未核〕"
+      },
+      "candidateScope": "保持 n. 主詞性；v. 與 adj. 各由已核實的現有義支持。pending 義不能因同詞其他義已核實就升格。未新增逐字譯文名詞、賽馬、付款等中文摘要。",
+      "relatedBoundaryFindings": [
+        {
+          "claim": "pony 的逐字譯文名詞",
+          "finding": "MW noun 3、AHD noun 4明列外語文本逐字譯文；Collins 英式條目標 US slang，與課業／考試輔助本的背景一致。只用來釐清原有動詞，不自動新增中文名詞義。",
+          "sourceIds": [
+            "mw_pony",
+            "ahd_pony",
+            "collins_pony"
+          ]
+        },
+        {
+          "claim": "原 meaningEn 的美國西部馬與賽馬",
+          "finding": "MW noun 1b直接定義美國西部的 bronco、mustang 等馬；1c為 racehorse，通常用複數。AHD 的賽馬標 Informal，Webster’s New World 標 US, slang。這些有正文支持，但不表示所有 pony 都是賽馬或只見於美國西部。",
+          "sourceIds": [
+            "mw_pony",
+            "ahd_pony",
+            "collins_pony"
+          ],
+          "fieldChangeAuthorized": false
+        }
+      ],
+      "reviewStatusRecommendation": "summary_partially_supported_pending_one_sense",
+      "wholeCardReviewedAuthorized": false,
+      "mustPreserve": [
+        "n. 主詞性",
+        "矮種馬不是只能指幼馬",
+        "原書支持的翻譯動詞及美國俚語限制",
+        "獨立形容詞小型的",
+        "每日摘要的待確認記錄"
+      ],
+      "notAuthorizedByEvidence": [
+        "直接刪除三項少見義",
+        "把翻譯動作列為 n.",
+        "以小型物件名詞借證小型的形容詞",
+        "以 pony report 片語借證 pony 單字的獨立每日摘要形容詞義",
+        "將未核實英文轉載當作已讀 Webster 原著",
+        "把新聞義擴展為任何每日摘要",
+        "因其中三義可證而批准整卡 reviewed"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "mw_horse",
+      "title": "Merriam-Webster: horse",
+      "url": "https://www.merriam-webster.com/dictionary/horse",
+      "publisher": "Merriam-Webster",
+      "evidenceMode": "page_body_read",
+      "readScope": "noun 1a、2b、3及相鄰動詞欄。",
+      "excerpts": [
+        "horse plural : cavalry",
+        "a frame usually with legs used for supporting something"
+      ],
+      "notes": "horse 單字明確列支架和騎兵；騎兵用 horse 複數形式。此頁動詞無上馬／騎馬義，不將缺項當作否證。"
+    },
+    {
+      "sourceId": "collins_horse",
+      "title": "Collins: horse，含 Webster’s New World 與 Random House 詞典",
+      "url": "https://www.collinsdictionary.com/dictionary/english/horse",
+      "publisher": "HarperCollins；頁內分列各詞典",
+      "evidenceMode": "page_body_read",
+      "readScope": "英式名詞5、7；Webster’s New World 名詞10、不及物動詞14；Random House 名詞5、8、不及物動詞33及相鄰 archaic 義。",
+      "excerpts": [
+        "functioning as plural",
+        "British, army",
+        "to mount or go on horseback"
+      ],
+      "notes": "直接支持不及物騎馬。British, army 是 Webster’s New World 騎兵義標籤；其他同頁版本未限英式。archaic 出現在另義，不能移到騎馬。"
+    },
+    {
+      "sourceId": "ahd_horse",
+      "title": "The American Heritage Dictionary, Fifth Edition: horse",
+      "url": "https://ahdictionary.com/word/search.html?q=horse",
+      "publisher": "HarperCollins，2022",
+      "evidenceMode": "page_body_read",
+      "readScope": "noun 2與6。",
+      "excerpts": [
+        "Mounted soldiers; cavalry",
+        "usually with four legs"
+      ],
+      "notes": "支架和騎兵義的原站交叉核驗；騎兵例用 squadron of horse，未標只限英式。"
+    },
+    {
+      "sourceId": "mw_pony",
+      "title": "Merriam-Webster: pony",
+      "url": "https://www.merriam-webster.com/dictionary/pony",
+      "publisher": "Merriam-Webster",
+      "evidenceMode": "page_body_read",
+      "readScope": "noun 1a–c、2、3及 Kids Definition。",
+      "excerpts": [
+        "a small horse",
+        "a literal translation of a foreign language text",
+        "usually plural"
+      ],
+      "notes": "直接證小馬／矮種馬、western U.S. 馬及賽馬名詞；賽馬通常為複數。小型物件是名詞，不用來證形容詞。"
+    },
+    {
+      "sourceId": "collins_pony",
+      "title": "Collins: pony，含 Webster’s New World 與 Random House 詞典",
+      "url": "https://www.collinsdictionary.com/dictionary/english/pony",
+      "publisher": "HarperCollins；頁內分列各詞典",
+      "evidenceMode": "page_body_read",
+      "readScope": "英式名詞1與5；Webster’s New World 名詞3、5；Random House 及物動詞11與不及物動詞13。",
+      "excerpts": [
+        "US slang",
+        "to prepare (lessons) by means of a pony"
+      ],
+      "notes": "外語譯本為美國俚語／課業語境；Random House 直接列藉 pony 準備課業的動詞。全文沒有形容詞欄，不用名詞 small of its kind 代證形容詞。"
+    },
+    {
+      "sourceId": "ahd_pony",
+      "title": "The American Heritage Dictionary, Fifth Edition: pony",
+      "url": "https://ahdictionary.com/word/search.html?q=pony",
+      "publisher": "HarperCollins，2022",
+      "evidenceMode": "page_body_read",
+      "readScope": "noun 1、2a、4。",
+      "excerpts": [
+        "Informal A racehorse",
+        "A word-for-word translation of a foreign language text"
+      ],
+      "notes": "只核對已有英文摘要及 crib 名詞背景，不將現代原站未收翻譯動詞當作否證，也不新增中文義。"
+    },
+    {
+      "sourceId": "webster1924_pony",
+      "title": "Webster’s New International Dictionary of the English Language (1924): pony，p.1674",
+      "url": "https://truthbook.com/urantia-book-viewer-core/1924-Websters-Dictionary-Edition/LETTER-P.pdf#page=134",
+      "publisher": "G. & C. Merriam Company；原書掃描由 TruthBook 鏡像提供",
+      "evidenceMode": "original_scan_mirror_ocr_and_visual_body_read",
+      "readScope": "印刷頁1674中欄 pony 名詞、動詞第2義及獨立 a. 條目；PDF第134頁，共206頁。",
+      "excerpts": [
+        "Slang, U.S.",
+        "To translate with the aid of a pony.",
+        "Of a size smaller than usual"
+      ],
+      "notes": "實際取得原書掃描並將第134頁渲染，以像素核對 v. t. & i.、Slang, U.S.、第2義和 a. 定義。OCR 存在錯行與誤字，決定依頁像校核。1924 版本及出版者由PDF書目資訊標示，分冊未含完整扉頁；本頁未收每日摘要新聞義。"
+    },
+    {
+      "sourceId": "slovar_pony_provenance",
+      "title": "Slovar-vocab 所載 Webster’s New International English Dictionary: PONY",
+      "url": "https://slovar-vocab.com/english/websters-international-vocab/pony-8684518.html",
+      "publisher": "Slovar-vocab；自稱 Webster 詞典，原版與頁碼未核實",
+      "evidenceMode": "unverified_dictionary_republication_body_read",
+      "readScope": "III. adjective 第1、2義；僅作原著追查線索。",
+      "excerpts": [
+        "limited to a brief daily account of only the most important news"
+      ],
+      "notes": "第2義描述以電報、電話、郵件發送每日重要新聞的簡報服務，例為 pony report 和 pony service；無法核實原版。頁末2012是網站標示，不能當作 Webster 原書出版年。不是核准證據。"
+    },
+    {
+      "sourceId": "cdict_pony_provenance",
+      "title": "CDICT 所載朗道英漢字典: pony",
+      "url": "https://cdict.net/q/pony",
+      "publisher": "CDICT；原英漢詞典版次頁碼未核實",
+      "evidenceMode": "compilation_body_read",
+      "readScope": "Source(1) n.、vt.、vi.、a.，及 Source(3) 新聞限制。",
+      "excerpts": [
+        "a. 小型的, 每日摘要的"
+      ],
+      "notes": "與原摘要同序列且原有詞性在字卡合併時消失，是出處追查線索；不能當作可靠原版逐義證明。"
+    },
+    {
+      "sourceId": "spencer_news_writing",
+      "title": "M. Lyle Spencer, News Writing (1917)，Terminology: Pony Report，p.282",
+      "url": "https://www.gutenberg.org/files/30765/30765-h/30765-h.htm",
+      "publisher": "原書 D. C. Heath & Co.；Project Gutenberg 校訂轉錄，2009",
+      "evidenceMode": "public_domain_original_work_transcription_body_read_context_only",
+      "readScope": "書名、作者、1917版權頁及 Terminology 的 Pony Report 定義。",
+      "excerpts": [
+        "A condensed report of the day's news"
+      ],
+      "notes": "原著教材正文可證 pony report 為通訊社提供給不訂全套服務報紙的每日新聞簡報。只證片語／背景，不能因此核准 pony 單字有一般每日摘要形容詞義。未用頁像核對此轉錄。"
+    }
+  ],
+  "accessLimitations": [
+    {
+      "url": "https://unabridged.merriam-webster.com/unabridged/pony",
+      "result": "網頁讀取介面無法取得詞條；普通HTTP取得的是訂閱介紹頁，未登入、未訂閱、未繞過付費牆，沒有 pony 原著正文。"
+    },
+    {
+      "url": "https://www.oed.com/dictionary/pony_adj",
+      "result": "未取得可讀原站正文，不作證據；未由搜尋摘要推定其內容。"
+    },
+    {
+      "url": "https://truthbook.com/urantia-book-viewer-core/1924-Websters-Dictionary-Edition/LETTER-P.pdf",
+      "result": "網頁讀取介面因檔案大小拒讀；正常下載成功，已提取文字並實際視讀相關第134頁，不再列作正文缺失。"
+    },
+    {
+      "url": "https://slovar-vocab.com/english/websters-international-vocab/pony-8684518.html",
+      "result": "讀到轉載正文，但缺可核對的原版書名細節、版本與頁碼；不升格為原著證據。"
+    }
+  ]
+}

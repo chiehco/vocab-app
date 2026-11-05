@@ -1,0 +1,1318 @@
+{
+  "title": "U13 完整原單元補入詞：14 個缺漏動詞三態追加查證",
+  "checkedAtUtc": "2026-11-05T11:26:16.529027+00:00",
+  "sourceCommit": "b7e99544d6b84bf91805d36cfbb0807fc452dce5",
+  "sourceWordsBlobSha": "5a242a8d9202881b30c56f10cd9189379cc66dc6",
+  "scope": "僅本次來源清單的14個 U13 正式詞彙 ID；先前424個研究詞及已有三態已排除。本交付不代表整個 U13 或任何整張字卡通過。",
+  "completionStatus": "completed",
+  "coverage": {
+    "expectedEntries": 14,
+    "entriesResearched": 14,
+    "lexicallyVerified": 14,
+    "verifiedCandidates": 14,
+    "pendingProductRepresentation": 0,
+    "pendingMissingLexicalEvidence": 0,
+    "notYetResearched": 0,
+    "ruleOnlyInferences": 0,
+    "productApprovals": 0
+  },
+  "unitCoverage": [
+    {
+      "unit": "LV1-U13",
+      "expectedAdditionalEntries": 14,
+      "entriesResearched": 14,
+      "verifiedCandidates": 14,
+      "pending": 0
+    }
+  ],
+  "method": "本次對14詞逐詞獨立打開 Collins 官方正文，實讀 COBUILD Word forms 中明示的 past tense/past participle，base 依同頁詞目確認。feed／fed、ride／rode／ridden 與 shop／shopped 等均由原文明示，不以記憶或拼字規則替代來源。相關動詞義與構式均對照正文。help 另實讀 holp、holpen 專條的古語／方言等限制，排除出一般三態候選。沒有以搜尋摘要作定案證據。",
+  "beforeRepresentation": {
+    "marker": {
+      "$absent": true
+    },
+    "meaning": "14詞的來源快照均無 verbForms key，不是 null。本次沒有直接重讀 repository，套用前須核對最新值。"
+  },
+  "schemaAndDisplayConstraints": {
+    "provenance": "採用本次研究所提供的顯示規格；研究本身沒有修改或重讀 repository。",
+    "constraint": "整詞單一 base/past/pastParticiple 面板，sourceRef 不顯示；不能用隱藏來源文字替用戶區分有條件的形式。",
+    "rule": "每詞只提最小相容候選；help 僅提 helped／helped，古語／方言 holp、holpen 只另記限制，不混入一般三態。"
+  },
+  "implementationBoundary": [
+    "沒有修改 repository、status、Git 或已發布內容。",
+    "沒有填入 IPA、重音、音節。",
+    "candidate 只表示有直接來源的最小三態提案，不是 approved 或整卡通過。",
+    "保持 before=$absent；套用時必須用 wordId 比對，且不可覆蓋已存在的三態。",
+    "沒有改原摘要、例句、詞性、圖片或其他欄位。",
+    "先前424研究詞已排除，本次只產生14個新增研究記錄。"
+  ],
+  "accessFailuresExcluded": [
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english/feed",
+      "result": "403 Forbidden",
+      "role": "選擇性的第二來源補核",
+      "usedAsEvidence": false,
+      "impact": "已有 Collins 直接明示的完整三態，無待查缺口；沒有重試或繞過限制。"
+    },
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english/ride",
+      "result": "403 Forbidden",
+      "role": "選擇性的第二來源補核",
+      "usedAsEvidence": false,
+      "impact": "已有 Collins 直接明示的完整三態，無待查缺口；沒有重試或繞過限制。"
+    }
+  ],
+  "searchSnippetOnlyEvidenceUsed": false,
+  "pendingWords": [],
+  "nonBlockingFindings": [
+    {
+      "word": "help",
+      "wordId": "W000393",
+      "note": "holp、holpen 確有詞典依據，但限定古語／方言或非標準用法，不能混成一般教學形式；最小候選維持 help／helped／helped。"
+    },
+    {
+      "word": "race",
+      "wordId": "W000693",
+      "note": "U13 的例句使用種族名詞；三態候選只服務正式詞彙已存在的競速／快速移動動詞義，不更改該例句。"
+    },
+    {
+      "word": "ride",
+      "wordId": "W000715",
+      "note": "give me a ride 的 ride 是名詞；三態候選服務正式詞彙已存在的騎乘動詞義。"
+    },
+    {
+      "word": "shop",
+      "wordId": "W000767",
+      "note": "coffee shop 的 shop 是名詞；三態候選服務正式詞彙已存在的購物動詞義。"
+    },
+    {
+      "word": "condition",
+      "wordId": "W001188",
+      "note": "on condition that 是名詞構式；新增三態候選不代表已審過摘要各義項或將此構式當成動詞。"
+    },
+    {
+      "word": "assist",
+      "wordId": "W002042",
+      "note": "原 status=draft、主 POS=v. 均原樣保留；本次三態查證不代表摘要其他義項或整卡通過。"
+    }
+  ],
+  "entries": [
+    {
+      "wordId": "W000097",
+      "word": "block",
+      "units": [
+        "LV1-U13"
+      ],
+      "cardIds": [
+        "LV1-U13-58"
+      ],
+      "sourceSnapshotLevel": "LV1",
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "（名詞）街區；木塊；石塊；塊；（動詞）阻擋；堵住",
+      "sourceMeaningEn": "(n.) a solid piece of something; a section of a town between streets (v.) to stop movement or progress",
+      "sourceUsagePattern": "a block of ice; block the road; walk around the block; block someone's way",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U13-58",
+          "captionEn": "Could you move your car? It's blocking my driveway.",
+          "captionZh": "你可以移一下車嗎？它擋住我家車道了。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "動詞阻塞道路、通道或管線；適用目前 blocking my driveway 的例句。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "block",
+        "past": "blocked",
+        "pastParticiple": "blocked"
+      },
+      "proposedVerbForms": {
+        "base": "block",
+        "past": "blocked",
+        "pastParticiple": "blocked",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/block"
+      },
+      "sourceSupportedForms": {
+        "base": "block",
+        "past": [
+          "blocked"
+        ],
+        "pastParticiple": [
+          "blocked"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/block",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle blocked",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "senseAndConstructionEvidence": {
+        "url": "https://www.collinsdictionary.com/dictionary/english/block",
+        "location": "COBUILD Word forms；動詞義 4",
+        "retrieval": "direct_dictionary_page",
+        "searchSnippetOnly": false,
+        "note": "構式與適用義據同頁正文核對；所列字卡本身來自待查來源快照。"
+      },
+      "homographAndVariantRestrictions": "名詞街區、建築物或塊狀物不另有動詞三態；本候選只補動詞 block。",
+      "regionalAndConstructionRestrictions": "所讀動詞三態主欄無地區限制；block a road/channel/pipe 為及物構式，來源正文直接列有 blocked highway 與 blocked drains。",
+      "variantAssessment": "所讀一般教學三態欄未另列變體；本提案不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000143",
+      "word": "care",
+      "units": [
+        "LV1-U13"
+      ],
+      "cardIds": [
+        "LV1-U13-36"
+      ],
+      "sourceSnapshotLevel": "LV1",
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "小心；照料；憂慮；關心",
+      "sourceMeaningEn": "the process of looking after someone or something and providing what they need; to feel interest in or concern about someone or something",
+      "sourceUsagePattern": "take care of N; care about N; care for N",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U13-36",
+          "captionEn": "I really care about what my friends think of me.",
+          "captionZh": "我真的很在意朋友怎麼看我。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "動詞在意、關心及照料；適用目前 care about what my friends think of me 的例句。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "care",
+        "past": "cared",
+        "pastParticiple": "cared"
+      },
+      "proposedVerbForms": {
+        "base": "care",
+        "past": "cared",
+        "pastParticiple": "cared",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/care"
+      },
+      "sourceSupportedForms": {
+        "base": "care",
+        "past": [
+          "cared"
+        ],
+        "pastParticiple": [
+          "cared"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/care",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle cared",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "senseAndConstructionEvidence": {
+        "url": "https://www.collinsdictionary.com/dictionary/english/care",
+        "location": "COBUILD Word forms；動詞義 1–3",
+        "retrieval": "direct_dictionary_page",
+        "searchSnippetOnly": false,
+        "note": "構式與適用義據同頁正文核對；所列字卡本身來自待查來源快照。"
+      },
+      "homographAndVariantRestrictions": "名詞 care 不另有動詞三態；care about 與 care for 的不同義項都沿用 cared，不合併其詞義。",
+      "regionalAndConstructionRestrictions": "所讀三態主欄無地區限制；在意的 care about 與表示感情的 care for 標記 [no cont]；照料的 care for 另列，不把 no cont 擴及所有義項。",
+      "variantAssessment": "所讀一般教學三態欄未另列變體；本提案不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000301",
+      "word": "feed",
+      "units": [
+        "LV1-U13"
+      ],
+      "cardIds": [
+        "LV1-U13-53"
+      ],
+      "sourceSnapshotLevel": "LV1",
+      "sourceSnapshotPos": "v./n.",
+      "sourceSnapshotPosAll": [
+        "v.",
+        "n."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "飼料；一餐；飼養；喂",
+      "sourceMeaningEn": "(v.) to give food to a person or animal; (n.) food that is given to farm animals",
+      "sourceUsagePattern": "feed the animals/baby; feed N to N; chicken feed",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U13-53",
+          "captionEn": "My little sister loves to feed the ducks at the park.",
+          "captionZh": "我妹妹很喜歡在公園餵鴨子。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "動詞給人或動物食物、餵養；適用目前 feed the ducks 的例句。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "feed",
+        "past": "fed",
+        "pastParticiple": "fed"
+      },
+      "proposedVerbForms": {
+        "base": "feed",
+        "past": "fed",
+        "pastParticiple": "fed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/feed"
+      },
+      "sourceSupportedForms": {
+        "base": "feed",
+        "past": [
+          "fed"
+        ],
+        "pastParticiple": [
+          "fed"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/feed",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle fed",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "senseAndConstructionEvidence": {
+        "url": "https://www.collinsdictionary.com/dictionary/english/feed",
+        "location": "COBUILD Word forms；動詞義 1–2 與相鄰名詞義",
+        "retrieval": "direct_dictionary_page",
+        "searchSnippetOnly": false,
+        "note": "構式與適用義據同頁正文核對；所列字卡本身來自待查來源快照。"
+      },
+      "homographAndVariantRestrictions": "名詞飼料或一餐不另有動詞三態；不因名詞 feed 的部分地區標記限制動詞 fed。",
+      "regionalAndConstructionRestrictions": "所讀動詞三態主欄無地區限制；來源列 feed someone、feed someone something、feed something to someone，以及 feed animals on/with food。mainly British 標記對應「一餐」的名詞義，並非 fed 的地區限制。",
+      "variantAssessment": "所讀一般教學三態欄未另列變體；本提案不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000393",
+      "word": "help",
+      "units": [
+        "LV1-U13"
+      ],
+      "cardIds": [
+        "LV1-U13-04"
+      ],
+      "sourceSnapshotLevel": "LV1",
+      "sourceSnapshotPos": "v./n.",
+      "sourceSnapshotPosAll": [
+        "v.",
+        "n."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "幫忙；幫助者；補救辦法；有益的東西",
+      "sourceMeaningEn": "(v.) to make it easier for someone to do something by providing aid or support; (n.) the action of helping someone",
+      "sourceUsagePattern": "help + O + V; help with + N; ask for help",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U13-04",
+          "captionEn": "Can you help me carry these books to the library?",
+          "captionZh": "你可以幫我把這些書拿到圖書館嗎？"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "現代一般動詞幫助；適用 help me carry these books 的例句。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "help",
+        "past": "helped",
+        "pastParticiple": "helped"
+      },
+      "proposedVerbForms": {
+        "base": "help",
+        "past": "helped",
+        "pastParticiple": "helped",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/help"
+      },
+      "sourceSupportedForms": {
+        "base": "help",
+        "past": [
+          "helped"
+        ],
+        "pastParticiple": [
+          "helped"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/help",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle helped",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins English Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/holp",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "archaic or dialect a past tense of help",
+          "location": "holp in British English；另核同頁 American English 限制",
+          "scope": "只證實受古語／方言限制的歷史形式；不得作一般三態並列。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins English Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/holpen",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "archaic a past participle of help",
+          "location": "holpen in British English；另核同頁 American English 限制",
+          "scope": "只證實古語過去分詞；同頁美式條目另有方言或非標準標記，不加入一般三態。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "senseAndConstructionEvidence": {
+        "url": "https://www.collinsdictionary.com/dictionary/english/help",
+        "location": "COBUILD Word forms；動詞義 1；另核 holp、holpen 專條",
+        "retrieval": "direct_dictionary_page",
+        "searchSnippetOnly": false,
+        "note": "構式與適用義據同頁正文核對；所列字卡本身來自待查來源快照。"
+      },
+      "homographAndVariantRestrictions": "名詞 help 不另有動詞三態。holp／holpen 為另有古語、方言或非標準限制的形式，不混入一般三態單一面板。",
+      "regionalAndConstructionRestrictions": "一般三態 helped／helped 無所讀主欄地區限制；正文直接支持 help (someone) (to) do。holp 的 Collins 英式詞條標 archaic or dialect；美式條目另標方言、廢止過去分詞或美國南部非標準過去式。holpen 標古語／方言或非標準過去分詞，均只記為限制說明。",
+      "variantAssessment": "現代一般教學候選僅 help／helped／helped。已直接查閱 holp、holpen 的限制；不把古語、方言、廢止或非標準形式無標記放入同一面板。",
+      "pendingReason": null,
+      "excludedVariants": [
+        {
+          "form": "holp",
+          "tense": "past",
+          "restriction": "archaic or dialect；美式條目另有 South Midland and Southern US nonstandard 標記",
+          "sourceUrl": "https://www.collinsdictionary.com/dictionary/english/holp"
+        },
+        {
+          "form": "holp",
+          "tense": "pastParticiple",
+          "restriction": "Webster’s New World 的同頁美式條目標 obs.；不用於一般現代三態",
+          "sourceUrl": "https://www.collinsdictionary.com/dictionary/english/holp"
+        },
+        {
+          "form": "holpen",
+          "tense": "pastParticiple",
+          "restriction": "archaic；同頁美式條目亦見 archaic or dialect／not standard 限制",
+          "sourceUrl": "https://www.collinsdictionary.com/dictionary/english/holpen"
+        }
+      ]
+    },
+    {
+      "wordId": "W000627",
+      "word": "park",
+      "units": [
+        "LV1-U13"
+      ],
+      "cardIds": [
+        "LV1-U13-59"
+      ],
+      "sourceSnapshotLevel": "LV1",
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "公園；停車處；停車；置於",
+      "sourceMeaningEn": "a public area of land with grass and trees, usually in a town, where people go to relax and enjoy themselves; to stop and leave a vehicle somewhere for a period of time",
+      "sourceUsagePattern": "in the park; park a car",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U13-59",
+          "captionEn": "He parked his car outside the supermarket.",
+          "captionZh": "他把車停在超市外面。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "動詞停車、把車停在某處；適用 parked his car 的例句。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "park",
+        "past": "parked",
+        "pastParticiple": "parked"
+      },
+      "proposedVerbForms": {
+        "base": "park",
+        "past": "parked",
+        "pastParticiple": "parked",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/park"
+      },
+      "sourceSupportedForms": {
+        "base": "park",
+        "past": [
+          "parked"
+        ],
+        "pastParticiple": [
+          "parked"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/park",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle parked",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "senseAndConstructionEvidence": {
+        "url": "https://www.collinsdictionary.com/dictionary/english/park",
+        "location": "COBUILD Word forms；動詞義 2",
+        "retrieval": "direct_dictionary_page",
+        "searchSnippetOnly": false,
+        "note": "構式與適用義據同頁正文核對；所列字卡本身來自待查來源快照。"
+      },
+      "homographAndVariantRestrictions": "公園、園區及球場等名詞 park 的地區義項不另有動詞三態；不將名詞義的 British／US 標記套到 parked。",
+      "regionalAndConstructionRestrictions": "所讀動詞三態主欄無地區限制；動詞義 2 同列 park a vehicle、park、park somewhere，均用 parked。",
+      "variantAssessment": "所讀一般教學三態欄未另列變體；本提案不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000693",
+      "word": "race",
+      "units": [
+        "LV1-U13"
+      ],
+      "cardIds": [
+        "LV1-U13-43"
+      ],
+      "sourceSnapshotLevel": "LV1",
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "（名詞）種族；人種；賽跑；比賽；（動詞）競速；快速移動",
+      "sourceMeaningEn": "(n.) a speed competition; a group of people classified by shared ancestry or physical characteristics. (v.) to compete in speed or move very quickly.",
+      "sourceUsagePattern": "win/lose a race; race against N; people of all races",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U13-43",
+          "captionEn": "The new law aims to protect people from discrimination based on race or religion.",
+          "captionZh": "這項新法旨在保護人民不因種族或宗教而受到歧視。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "動詞參加競速、與人競賽或快速移動；目前 based on race or religion 的字卡例句用的是種族名詞。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "race",
+        "past": "raced",
+        "pastParticiple": "raced"
+      },
+      "proposedVerbForms": {
+        "base": "race",
+        "past": "raced",
+        "pastParticiple": "raced",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/race"
+      },
+      "sourceSupportedForms": {
+        "base": "race",
+        "past": [
+          "raced"
+        ],
+        "pastParticiple": [
+          "raced"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/race",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle raced",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "senseAndConstructionEvidence": {
+        "url": "https://www.collinsdictionary.com/dictionary/english/race",
+        "location": "COBUILD Word forms；動詞義 2、8；名詞義 6",
+        "retrieval": "direct_dictionary_page",
+        "searchSnippetOnly": false,
+        "note": "構式與適用義據同頁正文核對；所列字卡本身來自待查來源快照。"
+      },
+      "homographAndVariantRestrictions": "競速動詞用 raced；種族、人種與比賽的名詞義不另有三態，也不把 raced 解成種族義的屈折。",
+      "regionalAndConstructionRestrictions": "所讀動詞三態主欄無地區限制；競賽義正文列 race、race each other、race against，快速移動義列 race + 方向／地點。",
+      "variantAssessment": "所讀一般教學三態欄未另列變體；本提案不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000715",
+      "word": "ride",
+      "units": [
+        "LV1-U13"
+      ],
+      "cardIds": [
+        "LV1-U13-02"
+      ],
+      "sourceSnapshotLevel": "LV1",
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "騎馬；乘坐；乘車；搭便車",
+      "sourceMeaningEn": "(v.) to sit on and control the movement of a bicycle, horse, or vehicle; (n.) a trip taken in or on a vehicle",
+      "sourceUsagePattern": "ride a bike/horse; give sb a ride; take a ride",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U13-02",
+          "captionEn": "Can you give me a ride to the train station tomorrow morning?",
+          "captionZh": "你明天早上可以載我去火車站嗎？"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "動詞騎馬、騎自行車或乘坐交通工具；目前 give me a ride 的例句中 ride 是名詞。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "ride",
+        "past": "rode",
+        "pastParticiple": "ridden"
+      },
+      "proposedVerbForms": {
+        "base": "ride",
+        "past": "rode",
+        "pastParticiple": "ridden",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/ride"
+      },
+      "sourceSupportedForms": {
+        "base": "ride",
+        "past": [
+          "rode"
+        ],
+        "pastParticiple": [
+          "ridden"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/ride",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense rode , past participle ridden",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "senseAndConstructionEvidence": {
+        "url": "https://www.collinsdictionary.com/dictionary/english/ride",
+        "location": "COBUILD Word forms；動詞義 1–3；名詞義 4",
+        "retrieval": "direct_dictionary_page",
+        "searchSnippetOnly": false,
+        "note": "構式與適用義據同頁正文核對；所列字卡本身來自待查來源快照。"
+      },
+      "homographAndVariantRestrictions": "動詞明示 ride／rode／ridden；旅程、搭乘機會的名詞 ride 不另有動詞三態。",
+      "regionalAndConstructionRestrictions": "所讀動詞三態主欄無地區限制；ride a horse/bicycle 與 ride in/on a vehicle 的相關義項同用 rode／ridden。正文列 rode to work on a bicycle 與 rode to a place in a cab。",
+      "variantAssessment": "所讀一般教學三態欄未另列變體；本提案不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000767",
+      "word": "shop",
+      "units": [
+        "LV1-U13"
+      ],
+      "cardIds": [
+        "LV1-U13-20"
+      ],
+      "sourceSnapshotLevel": "LV1",
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "商店；工廠；車間；購物",
+      "sourceMeaningEn": "(n.) a place where goods or services are sold; (v.) to go to stores to look at and buy things",
+      "sourceUsagePattern": "go shopping; shop for N; a coffee/gift shop",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U13-20",
+          "captionEn": "There is a small coffee shop around the corner from my house.",
+          "captionZh": "我家轉角附近有一間小咖啡店。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "動詞購物；目前 coffee shop 的字卡例句是名詞，正式詞彙另含購物的動詞義。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "shop",
+        "past": "shopped",
+        "pastParticiple": "shopped"
+      },
+      "proposedVerbForms": {
+        "base": "shop",
+        "past": "shopped",
+        "pastParticiple": "shopped",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/shop"
+      },
+      "sourceSupportedForms": {
+        "base": "shop",
+        "past": [
+          "shopped"
+        ],
+        "pastParticiple": [
+          "shopped"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/shop",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle shopped",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "senseAndConstructionEvidence": {
+        "url": "https://www.collinsdictionary.com/dictionary/english/shop",
+        "location": "COBUILD Word forms；動詞義 2、6；名詞義 1",
+        "retrieval": "direct_dictionary_page",
+        "searchSnippetOnly": false,
+        "note": "構式與適用義據同頁正文核對；所列字卡本身來自待查來源快照。"
+      },
+      "homographAndVariantRestrictions": "商店、車間等名詞 shop 不另有動詞三態；英式非正式「向警方告發」義亦列 shopped，但本候選以目前的購物義為適用範圍。",
+      "regionalAndConstructionRestrictions": "所讀購物動詞三態無地區限制；shop at a store、shop for something 均可。mainly British／American store 是商店名詞的地區說明，不限制購物動詞；告發義另標 British, informal，不擅加進現有摘要。",
+      "variantAssessment": "所讀一般教學三態欄未另列變體；本提案不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000790",
+      "word": "slow",
+      "units": [
+        "LV1-U13"
+      ],
+      "cardIds": [
+        "LV1-U13-23"
+      ],
+      "sourceSnapshotLevel": "LV1",
+      "sourceSnapshotPos": "adj./v./adv.",
+      "sourceSnapshotPosAll": [
+        "adj.",
+        "v.",
+        "adv."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "（形容詞）慢的；緩慢的；遲緩的；遲鈍的；（動詞）放慢；（副詞）慢慢地",
+      "sourceMeaningEn": "(adj.) moving or happening without much speed. (v.) to reduce speed or become slower. (adv.) slowly, commonly after verbs of movement or action.",
+      "sourceUsagePattern": "slow down; a slow N (learner/process)",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U13-23",
+          "captionEn": "Please slow down when you walk through the hospital hallway.",
+          "captionZh": "走過醫院走廊時請放慢腳步。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "動詞減慢速度或使某事變慢；目前 slow down 的例句屬動詞。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "slow",
+        "past": "slowed",
+        "pastParticiple": "slowed"
+      },
+      "proposedVerbForms": {
+        "base": "slow",
+        "past": "slowed",
+        "pastParticiple": "slowed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/slow"
+      },
+      "sourceSupportedForms": {
+        "base": "slow",
+        "past": [
+          "slowed"
+        ],
+        "pastParticiple": [
+          "slowed"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/slow",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle slowed",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "senseAndConstructionEvidence": {
+        "url": "https://www.collinsdictionary.com/dictionary/english/slow",
+        "location": "COBUILD Word forms；動詞義 5；相鄰形容詞及副詞欄",
+        "retrieval": "direct_dictionary_page",
+        "searchSnippetOnly": false,
+        "note": "構式與適用義據同頁正文核對；所列字卡本身來自待查來源快照。"
+      },
+      "homographAndVariantRestrictions": "形容詞及副詞的 slower／slowest 不作為動詞過去式；只補 slow／slowed／slowed，不改原主 POS。",
+      "regionalAndConstructionRestrictions": "所讀動詞三態主欄無地區限制；動詞義 5 同列不及物與及物用法。副詞 slow 的語域說明屬另一詞性，不影響此動詞三態，也不據此擅改原摘要。",
+      "variantAssessment": "所讀一般教學三態欄未另列變體；本提案不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000951",
+      "word": "wave",
+      "units": [
+        "LV1-U13"
+      ],
+      "cardIds": [
+        "LV1-U13-76"
+      ],
+      "sourceSnapshotLevel": "LV2",
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "（名詞）波；波浪；波動；起伏；（動詞）揮手；揮動",
+      "sourceMeaningEn": "(n.) a raised line of water moving across the surface of the sea; a sudden increase in an activity or feeling that spreads through a group of people; (v.) to move your hand from side to side as a greeting or signal",
+      "sourceUsagePattern": "a wave of N; wave to/at sb; wave goodbye",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U13-76",
+          "captionEn": "She waved to her friends across the street before crossing the road.",
+          "captionZh": "她在過馬路前朝街對面的朋友揮手。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "動詞揮手、揮動物品；適用 waved to her friends 的例句。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "wave",
+        "past": "waved",
+        "pastParticiple": "waved"
+      },
+      "proposedVerbForms": {
+        "base": "wave",
+        "past": "waved",
+        "pastParticiple": "waved",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/wave"
+      },
+      "sourceSupportedForms": {
+        "base": "wave",
+        "past": [
+          "waved"
+        ],
+        "pastParticiple": [
+          "waved"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/wave",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle waved",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "senseAndConstructionEvidence": {
+        "url": "https://www.collinsdictionary.com/dictionary/english/wave",
+        "location": "COBUILD Word forms；動詞義 1–4",
+        "retrieval": "direct_dictionary_page",
+        "searchSnippetOnly": false,
+        "note": "構式與適用義據同頁正文核對；所列字卡本身來自待查來源快照。"
+      },
+      "homographAndVariantRestrictions": "波浪、波動、揮手動作等名詞不另有動詞三態；保留詞目 wave，不與不同拼字的詞混合。",
+      "regionalAndConstructionRestrictions": "所讀動詞三態主欄無地區限制；正文列 wave to/at someone、wave a hand、wave someone away/on 及 wave something，使用 waved。",
+      "variantAssessment": "所讀一般教學三態欄未另列變體；本提案不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W001188",
+      "word": "condition",
+      "units": [
+        "LV1-U13"
+      ],
+      "cardIds": [
+        "LV1-U13-18"
+      ],
+      "sourceSnapshotLevel": "LV2",
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "情況；條件；使健康；以...爲條件",
+      "sourceMeaningEn": "(n.) the physical state that someone or something is in, especially how good or bad it is; something that must exist or happen before something else can happen; (v.) to train a person or animal to react or behave in a particular way",
+      "sourceUsagePattern": "in good/poor condition; on condition that + S + V",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U13-18",
+          "captionEn": "You can borrow my bike on condition that you return it before dinner.",
+          "captionZh": "你可以借我的腳踏車，但條件是晚餐前要還我。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "動詞使形成特定反應或行為、使受影響，以及護理頭髮或皮膚；目前 on condition that 的字卡例句是條件名詞構式。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "condition",
+        "past": "conditioned",
+        "pastParticiple": "conditioned"
+      },
+      "proposedVerbForms": {
+        "base": "condition",
+        "past": "conditioned",
+        "pastParticiple": "conditioned",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/condition"
+      },
+      "sourceSupportedForms": {
+        "base": "condition",
+        "past": [
+          "conditioned"
+        ],
+        "pastParticiple": [
+          "conditioned"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/condition",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle conditioned",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "senseAndConstructionEvidence": {
+        "url": "https://www.collinsdictionary.com/dictionary/english/condition",
+        "location": "COBUILD Word forms；動詞義 7–8；名詞義 5",
+        "retrieval": "direct_dictionary_page",
+        "searchSnippetOnly": false,
+        "note": "構式與適用義據同頁正文核對；所列字卡本身來自待查來源快照。"
+      },
+      "homographAndVariantRestrictions": "狀況、條件及疾病等名詞 condition 不另有動詞三態；不把 on condition that 分析成動詞。",
+      "regionalAndConstructionRestrictions": "所讀動詞三態主欄無地區限制；行為塑造義標 usually passive，正文列 be conditioned by、be conditioned to do、be conditioned into doing。護理義另列 condition hair/skin；不把被動偏好套至所有義項。",
+      "variantAssessment": "所讀一般教學三態欄未另列變體；本提案不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W002042",
+      "word": "assist",
+      "units": [
+        "LV1-U13"
+      ],
+      "cardIds": [
+        "LV1-U13-09"
+      ],
+      "sourceSnapshotLevel": "LV3",
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "sourceSnapshotStatus": "draft",
+      "sourceMeaningZh": "幫助；協助；促進；參加",
+      "sourceMeaningEn": "(v.) to give help or support. (Separate noun) an act of help, including a play that helps a teammate score in a sport.",
+      "sourceUsagePattern": "assist sb with N; assist in V-ing",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U13-09",
+          "captionEn": "The nurse assisted the older patient as he stood up.",
+          "captionZh": "護理師在年長病人起身時扶助他。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "動詞幫助、協助或促進完成事情；適用 nurse assisted the older patient 的例句。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "assist",
+        "past": "assisted",
+        "pastParticiple": "assisted"
+      },
+      "proposedVerbForms": {
+        "base": "assist",
+        "past": "assisted",
+        "pastParticiple": "assisted",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/assist"
+      },
+      "sourceSupportedForms": {
+        "base": "assist",
+        "past": [
+          "assisted"
+        ],
+        "pastParticiple": [
+          "assisted"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/assist",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle assisted",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "senseAndConstructionEvidence": {
+        "url": "https://www.collinsdictionary.com/dictionary/english/assist",
+        "location": "COBUILD Word forms；動詞義 1–3",
+        "retrieval": "direct_dictionary_page",
+        "searchSnippetOnly": false,
+        "note": "構式與適用義據同頁正文核對；所列字卡本身來自待查來源快照。"
+      },
+      "homographAndVariantRestrictions": "本次只補已存在的動詞詞性三態；運動中的助攻等名詞義不構成新增主 POS 或改摘要的授權。",
+      "regionalAndConstructionRestrictions": "所讀動詞三態主欄無地區限制；正文列 assist someone、assist someone to do、assist someone with/in、assist in/with。只確認這些構式及三態，不替原中文摘要的其他義項背書。",
+      "variantAssessment": "所讀一般教學三態欄未另列變體；本提案不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W002229",
+      "word": "deepen",
+      "units": [
+        "LV1-U13"
+      ],
+      "cardIds": [
+        "LV1-U13-66"
+      ],
+      "sourceSnapshotLevel": "LV3",
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "深化；使加深；使強烈",
+      "sourceMeaningEn": "to become deeper or more intense, or to make something deeper or more intense",
+      "sourceUsagePattern": "deepen understanding; deepen a relationship; deepen a crisis",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U13-66",
+          "captionEn": "Spending time together every weekend helped deepen their friendship.",
+          "captionZh": "每個週末一起相處，讓他們的友誼更加深厚。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "動詞使程度加深、使關係或情感更深，或深化理解；適用 deepen their friendship 的例句。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "deepen",
+        "past": "deepened",
+        "pastParticiple": "deepened"
+      },
+      "proposedVerbForms": {
+        "base": "deepen",
+        "past": "deepened",
+        "pastParticiple": "deepened",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/deepen"
+      },
+      "sourceSupportedForms": {
+        "base": "deepen",
+        "past": [
+          "deepened"
+        ],
+        "pastParticiple": [
+          "deepened"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/deepen",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle deepened",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "senseAndConstructionEvidence": {
+        "url": "https://www.collinsdictionary.com/dictionary/english/deepen",
+        "location": "COBUILD Word forms；動詞義 1–3",
+        "retrieval": "direct_dictionary_page",
+        "searchSnippetOnly": false,
+        "note": "構式與適用義據同頁正文核對；所列字卡本身來自待查來源快照。"
+      },
+      "homographAndVariantRestrictions": "保持 deepen 為動詞；不將 deep 的形容詞比較級或 deepening 的形容詞用法混作過去式。",
+      "regionalAndConstructionRestrictions": "所讀動詞三態主欄無地區限制；程度加強義有及物與不及物用法，理解義列 deepen knowledge/understanding。光色變深義另標 literary，此標記不套到一般深化關係義。",
+      "variantAssessment": "所讀一般教學三態欄未另列變體；本提案不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W004016",
+      "word": "accelerate",
+      "units": [
+        "LV1-U13"
+      ],
+      "cardIds": [
+        "LV1-U13-30"
+      ],
+      "sourceSnapshotLevel": "LV5",
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "加速；促進",
+      "sourceMeaningEn": "to happen or make something happen more quickly or earlier than expected; to go faster or make a vehicle go faster",
+      "sourceUsagePattern": "accelerate the process; accelerate growth/development",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U13-30",
+          "captionEn": "The driver accelerated quickly to merge onto the highway.",
+          "captionZh": "那位駕駛人為了匯入高速公路而迅速加速。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "動詞加快進程或提高移動速度；適用 driver accelerated 的例句。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "accelerate",
+        "past": "accelerated",
+        "pastParticiple": "accelerated"
+      },
+      "proposedVerbForms": {
+        "base": "accelerate",
+        "past": "accelerated",
+        "pastParticiple": "accelerated",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/accelerate"
+      },
+      "sourceSupportedForms": {
+        "base": "accelerate",
+        "past": [
+          "accelerated"
+        ],
+        "pastParticiple": [
+          "accelerated"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/accelerate",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle accelerated",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "senseAndConstructionEvidence": {
+        "url": "https://www.collinsdictionary.com/dictionary/english/accelerate",
+        "location": "COBUILD Word forms；動詞義 1–2",
+        "retrieval": "direct_dictionary_page",
+        "searchSnippetOnly": false,
+        "note": "構式與適用義據同頁正文核對；所列字卡本身來自待查來源快照。"
+      },
+      "homographAndVariantRestrictions": "只補動詞 accelerate；不新增其他詞性、派生詞或摘要內容。",
+      "regionalAndConstructionRestrictions": "所讀動詞三態主欄無地區限制；正文列過程加快的及物／不及物用法及車輛加速的不及物用法，均用 accelerated。",
+      "variantAssessment": "所讀一般教學三態欄未另列變體；本提案不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    }
+  ]
+}
