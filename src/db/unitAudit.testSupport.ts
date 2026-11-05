@@ -48,11 +48,17 @@ import verifiedU17Forms from '../../docs/unit-audit-20261105/VERIFIED-U17-VERB-F
 import verifiedForms from '../../docs/unit-audit-20261105/VERIFIED-VERB-FORMS-SOURCES.json';
 import verifiedTranslations from '../../docs/unit-audit-20261105/VERIFIED-TRANSLATION-SOURCES.json';
 
+import u18 from '../../docs/unit-audit-20261105/LV1-U18-patches.json';
+import u18Forms from '../../docs/unit-audit-20261105/LV1-U18-verified-forms-patches.json';
+import u18Translations from '../../docs/unit-audit-20261105/LV1-U18-translation-precision.json';
+import verifiedU18Forms from '../../docs/unit-audit-20261105/VERIFIED-U18-VERB-FORMS-SOURCES.json';
+import verifiedU18Translations from '../../docs/unit-audit-20261105/VERIFIED-U18-TRANSLATION-SOURCES.json';
+
 type Row = Record<string, unknown>;
 type Patch = {dataset:string; key:string; id:string; before:Row; after:Row; reason:string; evidence:string};
 const patches:Patch[]=[...u1.patches,...u2.patches,...pig.patches,...u3.patches,...u3Remaining.patches,...u4.patches,...u5.patches,...u6.patches,...u6Syntax.patches,...examSources.patches,...u7.patches,...u7Hints.patches,...lexicalSources.patches,...catDefinition.patches,...u7VerifiedExams.patches,...u8.patches,...demandVisible.patches,...u9.patches,...u8Hints.patches,...translations.patches,...forms.patches,...u10.patches,...u11.patches,...u11Usage.patches,...u12.patches,...u12Usage.patches,...u13.patches,...u13Definition.patches,...followupForms.patches,...u14.patches,...u14Translation.patches,...u15.patches,...u15Usage.patches,...u16.patches,...u16Forms.patches,...wordingFollowup.patches];
 
-patches.push(...dieNote.patches,...u17.patches,...u17Forms.patches,...u17Definition.patches);
+patches.push(...dieNote.patches,...u17.patches,...u17Forms.patches,...u17Definition.patches,...u18.patches,...u18Forms.patches,...u18Translations.patches);
 
 export function restoreRecordedAuditPatch(name:string,row:Row,patch:Patch):void{
  assert.ok(patch.reason&&patch.evidence,'each audit correction needs recorded evidence');
@@ -60,11 +66,11 @@ export function restoreRecordedAuditPatch(name:string,row:Row,patch:Patch):void{
  for(const [key,before]of Object.entries(patch.before))if(!Object.hasOwn(patch.after,key))assert.deepEqual(row[key],before,'immutable source guard changed');
  if(Object.hasOwn(patch.after,'verbForms')){
   assert.equal(name,'words');
-  const fact=[...verifiedForms.facts,...verifiedFollowupForms.facts,...verifiedU16Forms.facts,...verifiedU17Forms.facts].find(f=>f.wordId===patch.id);assert.ok(fact,'only source-verified verbs may acquire forms');
+  const fact=[...verifiedForms.facts,...verifiedFollowupForms.facts,...verifiedU16Forms.facts,...verifiedU17Forms.facts,...verifiedU18Forms.facts].find(f=>f.wordId===patch.id);assert.ok(fact,'only source-verified verbs may acquire forms');
   assert.deepEqual(patch.after,{verbForms:fact.verbForms});assert.deepEqual(patch.before,{verbForms:{$absent:true}});
  }
  if(Object.hasOwn(patch.after,'sentenceZh')){
-  assert.equal(name,'examples');const fact=verifiedTranslations.facts.find(f=>f.exampleId===patch.id);assert.ok(fact,'only exact verified translations may change');
+  assert.equal(name,'examples');const fact=[...verifiedTranslations.facts,...verifiedU18Translations.facts].find(f=>f.exampleId===patch.id);assert.ok(fact,'only exact verified translations may change');
   assert.deepEqual(patch.before,{sentenceEn:fact.sentenceEn,sentenceZh:fact.before});assert.deepEqual(patch.after,{sentenceZh:fact.after});
  }
  if(name==='notes'||Object.hasOwn(patch.after,'content')){

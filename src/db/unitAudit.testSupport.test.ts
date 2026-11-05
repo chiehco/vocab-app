@@ -18,6 +18,10 @@ import dieNote from '../../docs/unit-audit-20261105/LV1-U08-die-note-followup.js
 import u17Forms from '../../docs/unit-audit-20261105/LV1-U17-verified-forms-patches.json';
 import u17FormSources from '../../docs/unit-audit-20261105/VERIFIED-U17-VERB-FORMS-SOURCES.json';
 
+import u18Forms from '../../docs/unit-audit-20261105/LV1-U18-verified-forms-patches.json';
+import u18FormSources from '../../docs/unit-audit-20261105/VERIFIED-U18-VERB-FORMS-SOURCES.json';
+import u18Translations from '../../docs/unit-audit-20261105/LV1-U18-translation-precision.json';
+
 type Row=Record<string,unknown>;
 const examples:Row[]=JSON.parse(readFileSync('public/data/v1/examples.json','utf8'));
 function stable(value:unknown):unknown{
@@ -169,4 +173,21 @@ it('restores only 18 exact U17 missing forms and rejects false absence or unveri
   expect(()=>restoreRecordedAuditPatch('words',{...p.after},{...p,before:{verbForms:null}})).toThrow();
  }
  for(const id of ['W000717','W000639'])expect(words.find(w=>w.wordId===id)).not.toHaveProperty('verbForms');
+});
+it('restores only 20 exact U18 missing forms and rejects false absence or unverified forms',()=>{
+ expect(u18FormSources.facts).toHaveLength(20);
+ const earlier=new Set([...originalSources.facts,...followupSources.facts,...u16FormSources.facts,...u17FormSources.facts].map(f=>f.wordId));
+ expect(u18FormSources.facts.every(f=>!earlier.has(f.wordId))).toBe(true);
+ const words:Row[]=JSON.parse(readFileSync('public/data/v1/words.json','utf8'));
+ for(const p of u18Forms.patches){
+  const row=structuredClone(words.find(w=>w.wordId===p.id)!);const preserved={...row};delete preserved.verbForms;
+  restoreRecordedAuditPatch('words',row,p);expect(row).toEqual(preserved);expect(row).not.toHaveProperty('verbForms');
+  for(const key of ['base','past','pastParticiple','sourceRef','status']){const wrong=structuredClone(p);(wrong.after.verbForms as Row)[key]='unverified';expect(()=>restoreRecordedAuditPatch('words',{...wrong.after},wrong)).toThrow();}
+  expect(()=>restoreRecordedAuditPatch('words',{...p.after},{...p,before:{verbForms:null}})).toThrow();
+ }
+ for(const id of ['W000717','W000639'])expect(words.find(w=>w.wordId===id)).not.toHaveProperty('verbForms');
+});
+
+it('reverses only the two optional U18 Chinese refinements with immutable English and cloze',()=>{
+ for(const p of u18Translations.patches){const row=structuredClone(examples.find(e=>e.exampleId===p.id)!);const original={...row};restoreRecordedAuditPatch('examples',row,p);expect(row.sentenceZh).toBe(p.before.sentenceZh);expect({...row,sentenceZh:original.sentenceZh}).toEqual(original);expect(()=>restoreRecordedAuditPatch('examples',{...p.before,...p.after,sentenceEn:'drift'},p)).toThrow();expect(()=>restoreRecordedAuditPatch('examples',{...p.before,...p.after},{...p,id:'EXoutside'})).toThrow();}
 });

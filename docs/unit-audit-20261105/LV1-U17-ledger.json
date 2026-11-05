@@ -76,7 +76,17 @@
     "initialFailureReason": "The unchanged 726-image protection test timed out; 75 other tests and 16 Python cases passed. The original timeout and all hashes remained. Isolated original-timeout recheck passed 11/11; final 11-file run passed 77/77."
   },
   "priorExactCi": "validation/seed-u16-ci-ecbd15b.json",
-  "newCheckpointFullCi": "Pending this checkpoint commit and its own full CI.",
+  "newCheckpointFullCi": {
+    "head": "abda0618cf74c84c0876482a2b327bafc02b53d7",
+    "run": 42049068339,
+    "job": 127319920228,
+    "status": "completed",
+    "conclusion": "success",
+    "files": 211,
+    "tests": 1681,
+    "completedAt": "2026-11-05T15:07:20Z",
+    "evidence": "validation/U17-ci-abda0618.json"
+  },
   "persistence": {
     "rowsChecked": 1818,
     "failures": [],

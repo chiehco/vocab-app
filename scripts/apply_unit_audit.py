@@ -21,6 +21,8 @@ FORM_IDS = set('W000044 W000086 W000102 W000107 W000130 W000133 W000175 W000205 
 FOLLOWUP_FORM_IDS = set('W000113 W000155 W000183 W000184 W000343 W000363 W000507 W000633 W000650 W000695 W000740 W000823 W000851 W000858 W000894 W000995'.split())
 U16_FORM_IDS = set('W000367 W000170 W000891 W000448 W000140 W000380 W000745 W000892 W000729 W000098 W000660 W000737 W000545 W000463 W000940 W000926 W001437 W002486 W000739 W000653 W003767 W004820 W000522 W001012 W001825'.split())
 U17_FORM_IDS = set('W000194 W000992 W000173 W000189 W000752 W000179 W000751 W000515 W000261 W000796 W000109 W000123 W000111 W004656 W001655 W001910 W000643 W000675'.split())
+U18_FORM_IDS = set('W000793 W000230 W000227 W000728 W000773 W000315 W000452 W000795 W000229 W000520 W000445 W000421 W000246 W000094 W000118 W000511 W001953 W001078 W002271 W000492'.split())
+U18_TRANSLATION_IDS = {'EX0f888c6a', 'EXf0dab820'}
 TRANSLATION_IDS = {'EX50693488', 'EXddc4d110', 'EX66703666', 'EX1f033d08', 'EX51e703b4', 'EXd51bd96d', 'EX4c5b9769', 'EX299bccf8', 'EX2ff9ba41'}
 ABSENT = {"$absent": True}
 
@@ -45,7 +47,7 @@ def validate_patch_shape(patch):
         assert set(patch['after']) == {'content'}, 'No note identity, title, type or status change'
         assert fact['after']['content'] == fact['before']['content'].replace('腦部創傷','頭部傷勢'), 'Only the verified duplicate translation is editable'
     if 'verbForms' in patch['after']:
-        assert patch['dataset'] == 'words' and patch['id'] in FORM_IDS | FOLLOWUP_FORM_IDS | U16_FORM_IDS | U17_FORM_IDS, 'Only individually verified existing verbs may acquire principal parts'
+        assert patch['dataset'] == 'words' and patch['id'] in FORM_IDS | FOLLOWUP_FORM_IDS | U16_FORM_IDS | U17_FORM_IDS | U18_FORM_IDS, 'Only individually verified existing verbs may acquire principal parts'
         assert patch['before'] == {'verbForms': ABSENT} and set(patch['after']) == {'verbForms'}, 'Only an explicitly absent verbForms field may be added'
         facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-VERB-FORMS-SOURCES.json')['facts']
         assert len(facts) == 31 and {f['wordId'] for f in facts} == FORM_IDS
@@ -58,14 +60,21 @@ def validate_patch_shape(patch):
         u17 = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-U17-VERB-FORMS-SOURCES.json')['facts']
         assert len(u17) == 18 and {f['wordId'] for f in u17} == U17_FORM_IDS
         assert not (FORM_IDS | FOLLOWUP_FORM_IDS | U16_FORM_IDS) & U17_FORM_IDS, 'Keep the exact U17 source scope separate'
-        facts += followups + u16 + u17
+        u18 = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-U18-VERB-FORMS-SOURCES.json')['facts']
+        assert len(u18) == 20 and {f['wordId'] for f in u18} == U18_FORM_IDS
+        assert not (FORM_IDS | FOLLOWUP_FORM_IDS | U16_FORM_IDS | U17_FORM_IDS) & U18_FORM_IDS, 'Keep the exact U18 source scope separate'
+        facts += followups + u16 + u17 + u18
         fact = next(f for f in facts if f['wordId'] == patch['id'])
         assert patch['after']['verbForms'] == fact['verbForms'], 'Unverified principal parts or source'
     if 'sentenceZh' in patch['after']:
-        assert patch['dataset'] == 'examples' and patch['id'] in TRANSLATION_IDS, 'Only individually verified Chinese translations are editable'
+        assert patch['dataset'] == 'examples' and patch['id'] in TRANSLATION_IDS | U18_TRANSLATION_IDS, 'Only individually verified Chinese translations are editable'
         assert set(patch['before']) == {'sentenceEn', 'sentenceZh'} and set(patch['after']) == {'sentenceZh'}, 'Exact unchanged English guard required'
         facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-TRANSLATION-SOURCES.json')['facts']
         assert len(facts) == 9 and {f['exampleId'] for f in facts} == TRANSLATION_IDS
+        u18_translations = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-U18-TRANSLATION-SOURCES.json')['facts']
+        assert len(u18_translations) == 2 and {f['exampleId'] for f in u18_translations} == U18_TRANSLATION_IDS
+        assert not TRANSLATION_IDS & U18_TRANSLATION_IDS
+        facts += u18_translations
         fact = next(f for f in facts if f['exampleId'] == patch['id'])
         assert patch['before'] == {'sentenceEn': fact['sentenceEn'], 'sentenceZh': fact['before']} and patch['after'] == {'sentenceZh': fact['after']}, 'Unverified translation or English guard'
 

@@ -19,7 +19,7 @@ class AuditWriteBoundaryTests(unittest.TestCase):
         self.root = Path(self.temp.name)
         evidence_dir = self.root / 'docs/unit-audit-20261105'
         evidence_dir.mkdir(parents=True)
-        for name in ['VERIFIED-VERB-FORMS-SOURCES.json', 'VERIFIED-FOLLOWUP-VERB-FORMS-SOURCES.json', 'VERIFIED-U16-VERB-FORMS-SOURCES.json', 'VERIFIED-U17-VERB-FORMS-SOURCES.json', 'VERIFIED-TRANSLATION-SOURCES.json', 'VERIFIED-NOTE-SOURCES.json']:
+        for name in ['VERIFIED-VERB-FORMS-SOURCES.json', 'VERIFIED-FOLLOWUP-VERB-FORMS-SOURCES.json', 'VERIFIED-U16-VERB-FORMS-SOURCES.json', 'VERIFIED-U17-VERB-FORMS-SOURCES.json', 'VERIFIED-U18-VERB-FORMS-SOURCES.json', 'VERIFIED-U18-TRANSLATION-SOURCES.json', 'VERIFIED-TRANSLATION-SOURCES.json', 'VERIFIED-NOTE-SOURCES.json']:
             audit.write_json(evidence_dir / name, audit.read(audit.ROOT / 'docs/unit-audit-20261105' / name))
         self.data = self.root / "public/data/v1"
         self.data.mkdir(parents=True)
@@ -178,6 +178,29 @@ class AuditWriteBoundaryTests(unittest.TestCase):
                     wrong=copy.deepcopy(p);wrong['id']=identity
                     with self.assertRaises(AssertionError):audit.validate_patch_shape(wrong)
 
+    def test_u18_forms_require_exact_identity_source_and_true_absence(self):
+        facts = audit.read(self.root / 'docs/unit-audit-20261105/VERIFIED-U18-VERB-FORMS-SOURCES.json')['facts']
+        self.assertEqual(len(facts),20)
+        self.assertEqual({f['wordId'] for f in facts},audit.U18_FORM_IDS)
+        self.assertFalse(audit.U18_FORM_IDS & (audit.FORM_IDS | audit.FOLLOWUP_FORM_IDS | audit.U16_FORM_IDS | audit.U17_FORM_IDS))
+        with patch.object(audit,'ROOT',self.root):
+            for fact in facts:
+                p={'dataset':'words','key':'wordId','id':fact['wordId'],'before':{'verbForms':{'$absent':True}},'after':{'verbForms':fact['verbForms']},'reason':'Exact U18 absence','evidence':fact['verbForms']['sourceRef']}
+                audit.validate_patch_shape(p)
+                original={'wordId':p['id'],'word':fact['word'],'pos':'n./v.','status':'draft'}
+                row=copy.deepcopy(original);self.assertTrue(audit.apply_to_row(row,p))
+                self.assertEqual({k:v for k,v in row.items() if k!='verbForms'},original)
+                for existing in [None,{'base':fact['word'],'past':'custom'}]:
+                    with self.assertRaises(AssertionError):audit.apply_to_row({**original,'verbForms':existing},p)
+                for field in ['base','past','pastParticiple','sourceRef','status']:
+                    wrong=copy.deepcopy(p);wrong['after']['verbForms'][field]='unverified'
+                    with self.assertRaises(AssertionError):audit.validate_patch_shape(wrong)
+                wrong=copy.deepcopy(p);wrong['before']={}
+                with self.assertRaises(AssertionError):audit.validate_patch_shape(wrong)
+                for identity in ['W000717','W000639','W999999']:
+                    wrong=copy.deepcopy(p);wrong['id']=identity
+                    with self.assertRaises(AssertionError):audit.validate_patch_shape(wrong)
+
     def test_followup_pending_homographs_and_duplicate_identities_cannot_be_written(self):
         p = self.form_patch()
         p['id'] = 'W000139'  # can remains pending, not an allowlisted word.
@@ -203,6 +226,29 @@ class AuditWriteBoundaryTests(unittest.TestCase):
         facts = audit.read(self.root / 'docs/unit-audit-20261105/VERIFIED-TRANSLATION-SOURCES.json')['facts']
         self.assertEqual(len(facts), 9)
         self.assertEqual({f['exampleId'] for f in facts}, audit.TRANSLATION_IDS)
+        for fact in facts:
+            p = {'dataset':'examples','key':'exampleId','id':fact['exampleId'],
+                 'before':{'sentenceEn':fact['sentenceEn'],'sentenceZh':fact['before']},
+                 'after':{'sentenceZh':fact['after']},'reason':fact['reason'],'evidence':fact['evidence']}
+            with patch.object(audit,'ROOT',self.root):
+                audit.validate_patch_shape(p)
+                row = {'exampleId':p['id'],**p['before'],'blankSentence':'preserve exact cloze','answer':'preserve answer'}
+                self.assertTrue(audit.apply_to_row(row,p))
+                self.assertEqual(row['blankSentence'],'preserve exact cloze')
+                self.assertEqual(row['answer'],'preserve answer')
+                for field in ['sentenceEn','sentenceZh']:
+                    changed = copy.deepcopy(p);changed['before'][field] = 'unrecorded'
+                    with self.assertRaises(AssertionError):audit.validate_patch_shape(changed)
+                changed = copy.deepcopy(p);changed['after']['sentenceZh'] = 'unrecorded'
+                with self.assertRaises(AssertionError):audit.validate_patch_shape(changed)
+                changed = copy.deepcopy(p);changed['id'] = 'EXoutside_scope'
+                with self.assertRaises(AssertionError):audit.validate_patch_shape(changed)
+
+
+    def test_u18_translation_requires_its_own_exact_source_and_cannot_expand_scope(self):
+        facts = audit.read(self.root / 'docs/unit-audit-20261105/VERIFIED-U18-TRANSLATION-SOURCES.json')['facts']
+        self.assertEqual(len(facts), 2)
+        self.assertEqual({f['exampleId'] for f in facts}, audit.U18_TRANSLATION_IDS)
         for fact in facts:
             p = {'dataset':'examples','key':'exampleId','id':fact['exampleId'],
                  'before':{'sentenceEn':fact['sentenceEn'],'sentenceZh':fact['before']},

@@ -1,0 +1,48 @@
+
+ RUN  v4.1.9 <repo>
+
+ ❯ src/db/unitAudit.testSupport.test.ts (14 tests | 2 failed) 2645ms
+   × restores only 20 exact U18 missing forms and rejects false absence or unverified forms 2ms
+   × reverses only the two optional U18 Chinese refinements with immutable English and cloze 0ms
+ ❯ src/features/vocabulary/lv1ReviewedImages.test.ts (11 tests | 1 failed) 10381ms
+     × contains exactly the reviewed scope and preserves every final image and caption hash 10308ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/db/unitAudit.testSupport.test.ts > restores only 20 exact U18 missing forms and rejects false absence or unverified forms
+ReferenceError: u18FormSources is not defined
+ ❯ src/db/unitAudit.testSupport.test.ts:174:9
+    172| });
+    173| it('restores only 20 exact U18 missing forms and rejects false absence…
+    174|  expect(u18FormSources.facts).toHaveLength(20);
+       |         ^
+    175|  const earlier=new Set([...originalSources.facts,...followupSources.fa…
+    176|  expect(u18FormSources.facts.every(f=>!earlier.has(f.wordId))).toBe(tr…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  src/db/unitAudit.testSupport.test.ts > reverses only the two optional U18 Chinese refinements with immutable English and cloze
+ReferenceError: u18Translations is not defined
+ ❯ src/db/unitAudit.testSupport.test.ts:188:33
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  src/features/vocabulary/lv1ReviewedImages.test.ts > reviewed LV1 image-only release > contains exactly the reviewed scope and preserves every final image and caption hash
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/features/vocabulary/lv1ReviewedImages.test.ts:17:3
+     15|
+     16| describe('reviewed LV1 image-only release', () => {
+     17|   it('contains exactly the reviewed scope and preserves every final im…
+       |   ^
+     18|     expect(cards).toHaveLength(726);
+     19|     expect(new Set(cards.map(c => c.id)).size).toBe(726);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  2 failed | 7 passed (9)
+      Tests  3 failed | 63 passed (66)
+   Start at  23:20:06
+   Duration  78.59s (transform 11.35s, setup 0ms, import 46.71s, tests 28.31s, environment 1ms)

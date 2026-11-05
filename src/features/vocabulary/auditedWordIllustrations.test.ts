@@ -16,6 +16,7 @@ import u13Evidence from '../../../docs/unit-audit-20261105/LV1-U13-original-imag
 import u14Evidence from '../../../docs/unit-audit-20261105/LV1-U14-original-image-review.json';
 import u15Evidence from '../../../docs/unit-audit-20261105/LV1-U15-original-image-review.json';
 import u17Evidence from '../../../docs/unit-audit-20261105/LV1-U17-original-image-review.json';
+import u18Evidence from '../../../docs/unit-audit-20261105/LV1-U18-original-image-review.json';
 import preparedElevator from '../../../docs/unit-audit-20261105/LV1-U12-push-elevator-prepared.json';
 import captionTranslations from '../../../docs/unit-audit-20261105/LV1-verified-caption-translations.json';
 import publishedUnits from './lv1ReviewedImages.json';
@@ -24,7 +25,7 @@ import {approvedCurriculumIllustration,approvedWordIllustration,approvedLV1Image
 import {getWordBeastAsset} from '../wordbeast/wordBeastAssets';
 
 it('binds the explicitly reviewed general-card repairs to exact images and captions',()=>{
- expect(cards).toHaveLength(329);
+ expect(cards).toHaveLength(330);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U03-'))).toHaveLength(18);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U04-'))).toHaveLength(19);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U05-'))).toHaveLength(4);
@@ -39,9 +40,9 @@ it('binds the explicitly reviewed general-card repairs to exact images and capti
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U14-'))).toHaveLength(34);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U15-'))).toHaveLength(42);
  expect(cards.filter(c=>c.reviewId==='LI-LV1U17-V027')).toHaveLength(1);
- expect(new Set(cards.map(c=>c.officialWordId)).size).toBe(329);
+ expect(new Set(cards.map(c=>c.officialWordId)).size).toBe(330);
  for(const card of cards){
-  const proof=[...evidence.cards,...u4Evidence.cards,...u5Evidence.cards,...u6Evidence.cards,...u7Evidence.cards,...u8Evidence.cards,...u9Evidence.cards,...u10Evidence.cards,...u11Evidence.cards,...u12Evidence.cards,...u13Evidence.cards,...u14Evidence.cards,...u15Evidence.cards,...u17Evidence.cards].find(c=>c.id===card.reviewId)!;
+  const proof=[...evidence.cards,...u4Evidence.cards,...u5Evidence.cards,...u6Evidence.cards,...u7Evidence.cards,...u8Evidence.cards,...u9Evidence.cards,...u10Evidence.cards,...u11Evidence.cards,...u12Evidence.cards,...u13Evidence.cards,...u14Evidence.cards,...u15Evidence.cards,...u17Evidence.cards,...u18Evidence.cards].find(c=>c.id===card.reviewId)!;
   expect(proof.pixelReview).toContain('actually viewed original');
   expect(proof.observation).toBeTruthy();
   expect(createHash('sha256').update(readFileSync('public/'+card.illustration.path)).digest('hex')).toBe(proof.publishedImageSha256);
@@ -139,4 +140,15 @@ it('pairs the retained fat cat bytes with their own caption and preserves the pu
  const examples=JSON.parse(readFileSync('public/data/v1/examples.json','utf8'));
  expect(examples.find((e:{exampleId:string})=>e.exampleId==='EX845bc672')).toMatchObject({sentenceEn:'The puppy grew fat after eating too many treats.',sentenceZh:'這隻小狗因為吃太多零食而變胖了。',blankSentence:'The puppy grew _____ after eating too many treats.',answer:'fat',sensePos:'adj.'});
  expect(publishedUnits.some(c=>c.id==='LI-LV1U17-V027')).toBe(false);
+});
+
+it('pairs the retained crown bytes with their own caption and preserves the phone example',()=>{
+ const pair=approvedWordIllustration('expensive','W000283')!;
+ expect(pair).toEqual({path:'wordbeast/lv1/W000283.png',captionEn:'This crown costs a lot of money and is very expensive.',captionZh:'這頂皇冠要很多錢，非常昂貴。'});
+ expect(approvedCurriculumIllustration('expensive','/wordbeast/lv1/W000283.png?v=test')).toEqual(pair);
+ expect(approvedCurriculumIllustration('wrong-word','/wordbeast/lv1/W000283.png')).toBeUndefined();
+ const examples=JSON.parse(readFileSync('public/data/v1/examples.json','utf8'));
+ expect(examples.find((e:{exampleId:string})=>e.exampleId==='EX7c7366a9')).toMatchObject({sentenceEn:'This phone is too expensive for me.',sentenceZh:'這支手機對我來說太貴了。',blankSentence:'This phone is too _____ for me.',answer:'expensive',sensePos:'adj.'});
+ expect(createHash('sha256').update(JSON.stringify(cards.filter(c=>c.reviewId!=='LI-LV1U18-V045'))).digest('hex')).toBe(u18Evidence.previousRegistryHash);
+ expect(publishedUnits.some(c=>c.id==='LI-LV1U18-V045')).toBe(false);
 });
