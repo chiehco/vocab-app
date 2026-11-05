@@ -84,11 +84,14 @@ import verifiedIntegratedU11 from '../../docs/unit-audit-20261105/VERIFIED-INTEG
 import integratedU12 from '../../docs/unit-audit-20261105/LV1-U12-integrated-forms-patches.json';
 import verifiedIntegratedU12 from '../../docs/unit-audit-20261105/VERIFIED-INTEGRATED-U12-VERB-FORMS-SOURCES.json';
 
+import integratedU13 from '../../docs/unit-audit-20261105/LV1-U13-integrated-forms-patches.json';
+import verifiedIntegratedU13 from '../../docs/unit-audit-20261105/VERIFIED-INTEGRATED-U13-VERB-FORMS-SOURCES.json';
+
 type Row = Record<string, unknown>;
 type Patch = {dataset:string; key:string; id:string; before:Row; after:Row; reason:string; evidence:string};
 const patches:Patch[]=[...u1.patches,...u2.patches,...pig.patches,...u3.patches,...u3Remaining.patches,...u4.patches,...u5.patches,...u6.patches,...u6Syntax.patches,...examSources.patches,...u7.patches,...u7Hints.patches,...lexicalSources.patches,...catDefinition.patches,...u7VerifiedExams.patches,...u8.patches,...demandVisible.patches,...u9.patches,...u8Hints.patches,...translations.patches,...forms.patches,...u10.patches,...u11.patches,...u11Usage.patches,...u12.patches,...u12Usage.patches,...u13.patches,...u13Definition.patches,...followupForms.patches,...u14.patches,...u14Translation.patches,...u15.patches,...u15Usage.patches,...u16.patches,...u16Forms.patches,...wordingFollowup.patches];
 
-patches.push(...dieNote.patches,...u17.patches,...u17Forms.patches,...u17Definition.patches,...u18.patches,...u18Forms.patches,...u18Translations.patches,...u19.patches,...u19Forms.patches,...u20.patches,...u20Forms.patches,...u21.patches,...u21Forms.patches,...integratedU05U06.patches,...integratedU07.patches,...integratedU08U09.patches,...integratedU10.patches,...integratedU11.patches,...integratedU12.patches);
+patches.push(...dieNote.patches,...u17.patches,...u17Forms.patches,...u17Definition.patches,...u18.patches,...u18Forms.patches,...u18Translations.patches,...u19.patches,...u19Forms.patches,...u20.patches,...u20Forms.patches,...u21.patches,...u21Forms.patches,...integratedU05U06.patches,...integratedU07.patches,...integratedU08U09.patches,...integratedU10.patches,...integratedU11.patches,...integratedU12.patches,...integratedU13.patches);
 
 export function restoreRecordedAuditPatch(name:string,row:Row,patch:Patch):void{
  assert.ok(patch.reason&&patch.evidence,'each audit correction needs recorded evidence');
@@ -96,9 +99,9 @@ export function restoreRecordedAuditPatch(name:string,row:Row,patch:Patch):void{
  for(const [key,before]of Object.entries(patch.before))if(!Object.hasOwn(patch.after,key))assert.deepEqual(row[key],before,'immutable source guard changed');
  if(Object.hasOwn(patch.after,'verbForms')){
   assert.equal(name,'words');
-  const fact=[...verifiedForms.facts,...verifiedFollowupForms.facts,...verifiedU16Forms.facts,...verifiedU17Forms.facts,...verifiedU18Forms.facts,...verifiedU19Forms.facts,...verifiedU20Forms.facts,...verifiedU21Forms.facts,...verifiedIntegratedU05U06.facts,...verifiedIntegratedU07.facts,...verifiedIntegratedU08U09.facts,...verifiedIntegratedU10.facts,...verifiedIntegratedU11.facts,...verifiedIntegratedU12.facts].find(f=>f.wordId===patch.id);assert.ok(fact,'only source-verified verbs may acquire forms');
+  const fact=[...verifiedForms.facts,...verifiedFollowupForms.facts,...verifiedU16Forms.facts,...verifiedU17Forms.facts,...verifiedU18Forms.facts,...verifiedU19Forms.facts,...verifiedU20Forms.facts,...verifiedU21Forms.facts,...verifiedIntegratedU05U06.facts,...verifiedIntegratedU07.facts,...verifiedIntegratedU08U09.facts,...verifiedIntegratedU10.facts,...verifiedIntegratedU11.facts,...verifiedIntegratedU12.facts,...verifiedIntegratedU13.facts].find(f=>f.wordId===patch.id);assert.ok(fact,'only source-verified verbs may acquire forms');
   assert.deepEqual(patch.after,{verbForms:fact.verbForms});assert.deepEqual(patch.before,{verbForms:{$absent:true}});
-  const integratedFact=[...verifiedIntegratedU05U06.facts,...verifiedIntegratedU07.facts,...verifiedIntegratedU08U09.facts,...verifiedIntegratedU10.facts,...verifiedIntegratedU11.facts,...verifiedIntegratedU12.facts].find(f=>f.wordId===patch.id);
+  const integratedFact=[...verifiedIntegratedU05U06.facts,...verifiedIntegratedU07.facts,...verifiedIntegratedU08U09.facts,...verifiedIntegratedU10.facts,...verifiedIntegratedU11.facts,...verifiedIntegratedU12.facts,...verifiedIntegratedU13.facts].find(f=>f.wordId===patch.id);
   if(integratedFact){const nonForm={...row};delete nonForm.verbForms;assert.equal(createHash('sha256').update(JSON.stringify(nonForm)).digest('hex'),integratedFact.nonFormRowSha256,'integrated non-form row guard changed');}
  }
  if(Object.hasOwn(patch.after,'sentenceZh')){
