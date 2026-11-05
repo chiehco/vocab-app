@@ -4112,7 +4112,7 @@
       "generalCardRepair": false,
       "repairReason": null,
       "generalCardIntegration": "separate_verified_example_artwork_pending_integration",
-      "unresolved": "Exact separate artwork integration at commit 36a0e1074c1d8771ccd3ed1d171dd0064894ce84 is available; no duplicate image prepared here.",
+      "unresolved": null,
       "generalAfter": {
         "id": "LV1-U13-53",
         "word": "feed",
@@ -4174,7 +4174,15 @@
         "EX0577146b"
       ],
       "scopeBoundary": "Exact image/caption check is separate from each formal example; a different source caption is not automatically inserted into examples.",
-      "wholeWordState": "not_automatically_promoted_by_image_or_single_sense_review"
+      "wholeWordState": "not_automatically_promoted_by_image_or_single_sense_review",
+      "unresolvedAtOriginalCheckpoint": "Exact separate artwork integration at commit 36a0e1074c1d8771ccd3ed1d171dd0064894ce84 is available; no duplicate image prepared here.",
+      "followupResolution": {
+        "resolvedAt": "2026-11-05T16:13:26.012Z",
+        "state": "general_exact_example_image_integrated_and_reopened",
+        "sourceCommit": "36a0e1074c1d8771ccd3ed1d171dd0064894ce84",
+        "evidence": "LV1-verified-example-art-integration.json",
+        "historicalBoundary": "The original U13 counts and before/after screenshots remain historical. This later resolution adds a general-card example image only; it does not publish the source unit card."
+      }
     },
     {
       "id": "LV1-U13-54",
@@ -6353,7 +6361,11 @@
       "id": "LV1-U13-53",
       "wordId": "W000301",
       "commit": "36a0e1074c1d8771ccd3ed1d171dd0064894ce84",
-      "reason": "The separate feed/file/flower change has an exact EX0577146b feed image and its own validated integration. Inspected exact changes; do not generate duplicate art or overwrite its example-level mechanism. This checkout still lacks that integration."
+      "reason": "Resolved in the U19 checkpoint by exact example-level artwork integration and actual general-card reopen. The original U13 limitation is retained in reasonAtOriginalCheckpoint; no source unit publication.",
+      "state": "resolved_general_example_integration",
+      "resolvedAt": "2026-11-05T16:13:26.012Z",
+      "resolutionEvidence": "LV1-verified-example-art-integration.json",
+      "reasonAtOriginalCheckpoint": "The separate feed/file/flower change has an exact EX0577146b feed image and its own validated integration. Inspected exact changes; do not generate duplicate art or overwrite its example-level mechanism. This checkout still lacks that integration."
     },
     {
       "type": "official_source_followup_not_integrated",
@@ -6539,5 +6551,14 @@
       "state": "integrated_and_both_actual_cards_reopened",
       "scope": "Original checkpoint issue/evidence retained above as history; exact image now repaired, other pending matters unchanged."
     }
-  ]
+  ],
+  "followupResolutions": {
+    "LV1-U13-53": {
+      "resolvedAt": "2026-11-05T16:13:26.012Z",
+      "state": "general_exact_example_image_integrated_and_reopened",
+      "sourceCommit": "36a0e1074c1d8771ccd3ed1d171dd0064894ce84",
+      "evidence": "LV1-verified-example-art-integration.json",
+      "historicalBoundary": "The original U13 counts and before/after screenshots remain historical. This later resolution adds a general-card example image only; it does not publish the source unit card."
+    }
+  }
 }

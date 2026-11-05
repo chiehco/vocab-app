@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-05T15:31:58.130Z",
+  "updatedAt": "2026-11-05T16:13:26.012Z",
   "items": [
     {
       "id": "LV1-U01-30",
@@ -276,11 +276,13 @@
     },
     {
       "id": "LV1-U13-53",
-      "state": "separate_verified_artwork_available_not_integrated",
+      "state": "exact_example_artwork_integrated_and_actual_general_card_reopened",
       "word": "feed",
       "commit": "36a0e1074c1d8771ccd3ed1d171dd0064894ce84",
-      "observation": "Separate exact EX0577146b artwork and example-level integration already validated; current checkout still lacks it. Do not duplicate generation or replace with older whole files.",
-      "evidence": "docs/unit-audit-20261105/LV1-U13-ledger.json"
+      "observation": "Resolved by taking only the existing three assets, exact example registry/test and a minimal resolver fallback; all prior dictionary changes and defaults retained. Original unpublished U13 source card remains unpublished.",
+      "evidence": "docs/unit-audit-20261105/LV1-verified-example-art-integration.json",
+      "previousState": "separate_verified_artwork_available_not_integrated",
+      "resolvedAt": "2026-11-05T16:13:26.012Z"
     },
     {
       "id": "LV1-U14-26",
@@ -507,6 +509,61 @@
       "reason": "No new sourced phonetic transcription was added. The unit review does not claim optional pronunciation fields are complete.",
       "state": "explicit_limit_retained_not_whole_card_approval",
       "evidence": "docs/unit-audit-20261105/LV1-U18-ledger.json"
+    },
+    {
+      "id": "LV1-U19-verified-reopens",
+      "state": "141_text_items_64_general_reopens_13_forms_11_usage_and_three_exact_example_images_verified",
+      "evidence": "docs/unit-audit-20261105/LV1-U19-ledger.json",
+      "resolvedAt": "2026-11-05T16:13:26.012Z"
+    },
+    {
+      "id": "W000644",
+      "field": "meaningZh",
+      "reason": "The economic-share pie noun is supported; exact inherited 貪污受賄 was not established by the opened primary entry. Keep it pending rather than delete it or falsely certify it.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U19-ledger.json"
+    },
+    {
+      "id": "W000812",
+      "field": "meaningZh",
+      "reason": "Related soup up increase-power verb is directly supported. That alone does not establish the inherited bare noun 馬力; preserve the source boundary.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U19-ledger.json"
+    },
+    {
+      "id": "W000420",
+      "field": "meaningZh",
+      "reason": "Eager and barren-soil hungry senses are positively supported. The exact inherited 荒年的 wording retains an explicit source limitation.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U19-ledger.json"
+    },
+    {
+      "id": "W000856",
+      "field": "formalPosAndForms",
+      "reason": "Existing combined taxicab/taxi/cab n. head is retained. Cab-only nouns and related taxi verbs are visibly qualified; no fabricated combined base or whole-head verb POS is added.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U19-ledger.json"
+    },
+    {
+      "id": "W000936",
+      "field": "figurativeRegister",
+      "reason": "A dull or merely physical-existence person meaning is real. The inherited 無精打采之人 is not newly certified as an exact equivalent or conflated with the separately sometimes-offensive severe-impairment meaning.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U19-ledger.json"
+    },
+    {
+      "id": "U19-unmapped-identities",
+      "field": "officialWordId",
+      "reason": "25 source identities remain null.22 supplement display rows have printed glosses or an explicitly marked mouses dictionary qualification, without invented identity or practice eligibility.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U19-ledger.json"
+    },
+    {
+      "id": "U19-optional-pronunciation-fields",
+      "field": "phoneticUs/syllables/stressPattern",
+      "reason": "No new accent-specific transcription is inferred from unqualified book IPA; optional fields are not claimed complete.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U19-ledger.json"
     }
   ],
   "sourceFormResearchCoverage": {

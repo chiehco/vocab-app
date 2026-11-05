@@ -101,7 +101,7 @@ it('keeps the twenty-four unpublished curriculum drafts out of the published uni
  expect(publishedUnits.filter(c=>c.unit===14)).toHaveLength(23);
  expect(publishedUnits.filter(c=>c.unit===13)).toHaveLength(15);
  expect(cards.some(c=>c.reviewId==='LV1-U13-53')).toBe(false);
- expect(u13Evidence.cards.find(c=>c.id==='LV1-U13-53')?.generalCardIntegration).toBe('separate_verified_example_artwork_pending_integration');
+ expect(u13Evidence.cards.find(c=>c.id==='LV1-U13-53')?.generalCardIntegration).toBe('exact_existing_example_artwork_saved_and_general_card_reopened');
 });
 
 it('binds the wooden-door image only to the unchanged heavy-door example and retains the elevator source issue',()=>{

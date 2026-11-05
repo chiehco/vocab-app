@@ -77,7 +77,17 @@
     "initialFailureReason": "Two newly added guard tests lacked imports; fixed those imports. The unchanged726-image protection test also timed out. Same two files subsequently passed25/25 under original5000ms, and the final13-file run passed without changing timeouts or baseline hashes."
   },
   "priorExactCi": "validation/U17-ci-abda0618.json",
-  "newCheckpointFullCi": "Pending this checkpoint commit and its own full CI.",
+  "newCheckpointFullCi": {
+    "head": "6cb646248b9fb89f0ee7aca9be1ee6ef6ee15461",
+    "run": 42056160564,
+    "job": 127344994519,
+    "status": "completed",
+    "conclusion": "success",
+    "files": 212,
+    "tests": 1686,
+    "buildCompletedAt": "2026-11-05T15:49:21Z",
+    "evidence": "validation/U18-ci-6cb6462.json"
+  },
   "persistence": {
     "rowsChecked": 1865,
     "failures": [],
