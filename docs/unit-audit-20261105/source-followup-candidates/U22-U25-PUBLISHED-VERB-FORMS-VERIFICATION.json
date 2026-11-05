@@ -1,0 +1,5344 @@
+{
+  "title": "U22–U25 已發布子集缺漏動詞三態：77 詞獨立來源查證",
+  "checkedAtUtc": "2026-11-05T09:30:59.222123+00:00",
+  "sourceCommit": "c43255f2816be39e0efb2016a0c3ef8bc540780a",
+  "sourceWordsBlobSha": "9f0c8748ae224b94add05797ee8c7a742f3ad1c2",
+  "sourceSnapshot": "u22-u25-published-verb-input-c43255f.json",
+  "scope": "僅輸入 missingVerbForms 的 77 個唯一詞條；已發布 U22–U25 子集，絕非完整原始單元。排除已研究／分派 U01–U15 詞與已有 verbForms。",
+  "completionStatus": "completed",
+  "coverage": {
+    "expectedEntries": 77,
+    "entriesResearched": 77,
+    "lexicallyVerified": 77,
+    "verifiedCandidates": 74,
+    "pendingProductRepresentation": 3,
+    "pendingMissingLexicalEvidence": 0,
+    "notYetResearched": 0,
+    "ruleOnlyInferences": 0,
+    "productApprovals": 0
+  },
+  "unitCoverage": [
+    {
+      "unit": "LV1-U22",
+      "publishedUnitWordIds": 66,
+      "targetUniqueVerbs": 19,
+      "researched": 19,
+      "verifiedCandidates": 19,
+      "pending": 0,
+      "scope": "僅本次輸入的已發布子集，不代表原始全單元。"
+    },
+    {
+      "unit": "LV1-U23",
+      "publishedUnitWordIds": 80,
+      "targetUniqueVerbs": 27,
+      "researched": 27,
+      "verifiedCandidates": 26,
+      "pending": 1,
+      "scope": "僅本次輸入的已發布子集，不代表原始全單元。"
+    },
+    {
+      "unit": "LV1-U24",
+      "publishedUnitWordIds": 49,
+      "targetUniqueVerbs": 8,
+      "researched": 8,
+      "verifiedCandidates": 8,
+      "pending": 0,
+      "scope": "僅本次輸入的已發布子集，不代表原始全單元。"
+    },
+    {
+      "unit": "LV1-U25",
+      "publishedUnitWordIds": 52,
+      "targetUniqueVerbs": 26,
+      "researched": 26,
+      "verifiedCandidates": 24,
+      "pending": 2,
+      "scope": "僅本次輸入的已發布子集，不代表原始全單元。"
+    }
+  ],
+  "method": "逐詞開啟 Collins 官方詞典相關段落並讀取明示的 Word forms／language note；best 另開官方變位表；beat、program、dream、hide、wake、awake 另讀 Merriam-Webster。所列證據均為直接詞典頁／官方變位表，不使用搜尋摘要作最後依據；未宣稱逐行閱讀頁面全部內容。",
+  "beforeRepresentation": {
+    "marker": {
+      "$absent": true
+    },
+    "meaning": "來源 verbForms key 真正缺失，不是 null。"
+  },
+  "schemaAndDisplayConstraints": {
+    "provenance": "父任務提供，未由此研究任務重新檢查 repository。",
+    "schema": "整詞 verbForms：base/past/pastParticiple；來源與狀態不提供可見分義。",
+    "display": "sourceRef/status 不顯示，沒有可見 senseLabel。",
+    "rule": "按義變化保留 pending；單一共同接受形式可作最小候選，變體與地區限制另記，不視為已核准產品內容。"
+  },
+  "implementationBoundary": [
+    "僅研究並建立本報告；沒有修改 repository、提交、推送或發布。",
+    "未填 IPA、重音、音節，也未修改詞性、詞義、例句、圖片或產品 status。",
+    "候選 after 僅列 base/past/pastParticiple；proposedVerbForms 另攜帶查證來源。pending 的 after/proposedVerbForms 為 null，意思是不建議寫入，並非把來源欄位改成 null。",
+    "實作前應逐筆核對完整詞條範圍、精確 before 缺 key 保護及復原行為。"
+  ],
+  "excludedAlreadyAssignedWordIds": [
+    "W000008",
+    "W000011",
+    "W000016",
+    "W000018",
+    "W000035",
+    "W000041",
+    "W000046",
+    "W000049",
+    "W000055",
+    "W000069",
+    "W000071",
+    "W000074",
+    "W000080",
+    "W000082",
+    "W000084",
+    "W000113",
+    "W000117",
+    "W000119",
+    "W000121",
+    "W000125",
+    "W000136",
+    "W000138",
+    "W000139",
+    "W000146",
+    "W000147",
+    "W000155",
+    "W000156",
+    "W000169",
+    "W000183",
+    "W000184",
+    "W000194",
+    "W000195",
+    "W000199",
+    "W000204",
+    "W000207",
+    "W000216",
+    "W000219",
+    "W000224",
+    "W000239",
+    "W000242",
+    "W000256",
+    "W000262",
+    "W000266",
+    "W000270",
+    "W000284",
+    "W000291",
+    "W000296",
+    "W000302",
+    "W000305",
+    "W000309",
+    "W000310",
+    "W000316",
+    "W000318",
+    "W000319",
+    "W000326",
+    "W000328",
+    "W000343",
+    "W000348",
+    "W000363",
+    "W000364",
+    "W000365",
+    "W000366",
+    "W000376",
+    "W000387",
+    "W000401",
+    "W000403",
+    "W000405",
+    "W000409",
+    "W000432",
+    "W000450",
+    "W000454",
+    "W000467",
+    "W000476",
+    "W000478",
+    "W000480",
+    "W000486",
+    "W000492",
+    "W000493",
+    "W000494",
+    "W000497",
+    "W000498",
+    "W000500",
+    "W000504",
+    "W000507",
+    "W000522",
+    "W000525",
+    "W000529",
+    "W000534",
+    "W000541",
+    "W000559",
+    "W000569",
+    "W000572",
+    "W000574",
+    "W000591",
+    "W000595",
+    "W000604",
+    "W000613",
+    "W000618",
+    "W000622",
+    "W000625",
+    "W000628",
+    "W000630",
+    "W000632",
+    "W000633",
+    "W000635",
+    "W000650",
+    "W000653",
+    "W000655",
+    "W000661",
+    "W000665",
+    "W000672",
+    "W000674",
+    "W000677",
+    "W000683",
+    "W000685",
+    "W000688",
+    "W000695",
+    "W000699",
+    "W000700",
+    "W000707",
+    "W000709",
+    "W000718",
+    "W000724",
+    "W000730",
+    "W000732",
+    "W000740",
+    "W000741",
+    "W000745",
+    "W000748",
+    "W000755",
+    "W000772",
+    "W000784",
+    "W000814",
+    "W000822",
+    "W000823",
+    "W000824",
+    "W000826",
+    "W000829",
+    "W000846",
+    "W000851",
+    "W000852",
+    "W000858",
+    "W000864",
+    "W000870",
+    "W000881",
+    "W000889",
+    "W000892",
+    "W000894",
+    "W000910",
+    "W000916",
+    "W000920",
+    "W000922",
+    "W000924",
+    "W000933",
+    "W000945",
+    "W000950",
+    "W000962",
+    "W000968",
+    "W000976",
+    "W000977",
+    "W000986",
+    "W000992",
+    "W000995",
+    "W001045",
+    "W001054",
+    "W001086",
+    "W001184",
+    "W001259",
+    "W001291",
+    "W001307",
+    "W001326",
+    "W001331",
+    "W001376",
+    "W001390",
+    "W001454",
+    "W001456",
+    "W001523",
+    "W001528",
+    "W001566",
+    "W001594",
+    "W001598",
+    "W001708",
+    "W001723",
+    "W001729",
+    "W001768",
+    "W001779",
+    "W001919",
+    "W001927",
+    "W001932",
+    "W002047",
+    "W002227",
+    "W002292",
+    "W002461",
+    "W002636",
+    "W002711",
+    "W002996",
+    "W003020",
+    "W003154",
+    "W003270",
+    "W003289",
+    "W003306",
+    "W003329",
+    "W003352",
+    "W003553",
+    "W003584",
+    "W003959",
+    "W004689",
+    "W004780",
+    "W004786",
+    "W004804",
+    "W004820",
+    "W004866",
+    "W004944",
+    "W005813",
+    "W005996"
+  ],
+  "entries": [
+    {
+      "wordId": "W000149",
+      "word": "catch",
+      "units": [
+        "LV1-U22"
+      ],
+      "cardIds": [
+        "LV1-U22-03"
+      ],
+      "sourceSnapshotPos": "v./n.",
+      "sourceSnapshotPosAll": [
+        "v.",
+        "n."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：捕捉、接住或趕上交通工具。",
+      "sourceSupportedForms": {
+        "base": "catch",
+        "past": [
+          "caught"
+        ],
+        "pastParticiple": [
+          "caught"
+        ]
+      },
+      "after": {
+        "base": "catch",
+        "past": "caught",
+        "pastParticiple": "caught"
+      },
+      "proposedVerbForms": {
+        "base": "catch",
+        "past": "caught",
+        "pastParticiple": "caught",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/catch"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/catch",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle caught",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000915",
+      "word": "traffic",
+      "units": [
+        "LV1-U22"
+      ],
+      "cardIds": [
+        "LV1-U22-09"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：販運／交易，常見於 traffic in 非法商品；不是名詞「交通流量」的變化。",
+      "sourceSupportedForms": {
+        "base": "traffic",
+        "past": [
+          "trafficked"
+        ],
+        "pastParticiple": [
+          "trafficked"
+        ]
+      },
+      "after": {
+        "base": "traffic",
+        "past": "trafficked",
+        "pastParticiple": "trafficked"
+      },
+      "proposedVerbForms": {
+        "base": "traffic",
+        "past": "trafficked",
+        "pastParticiple": "trafficked",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/traffic"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/traffic",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle trafficked",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "trafficked 的 ck 拼寫為詞典逐字證據。不能把它翻譯成名詞「交通」的過去式。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [
+        "英文摘要與字卡例句均為交通名詞，沒有交代「販運／交易」動詞義。",
+        "三態來源已查證不代表原詞義摘要已修正；本案不改詞義、詞性、例句或字卡圖片。"
+      ],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000167",
+      "word": "circle",
+      "units": [
+        "LV1-U22"
+      ],
+      "cardIds": [
+        "LV1-U22-14"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：圈住、繞行。",
+      "sourceSupportedForms": {
+        "base": "circle",
+        "past": [
+          "circled"
+        ],
+        "pastParticiple": [
+          "circled"
+        ]
+      },
+      "after": {
+        "base": "circle",
+        "past": "circled",
+        "pastParticiple": "circled"
+      },
+      "proposedVerbForms": {
+        "base": "circle",
+        "past": "circled",
+        "pastParticiple": "circled",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/circle"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/circle",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle circled",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000728",
+      "word": "round",
+      "units": [
+        "LV1-U22"
+      ],
+      "cardIds": [
+        "LV1-U22-17"
+      ],
+      "sourceSnapshotPos": "adj./n./adv./prep./v.",
+      "sourceSnapshotPosAll": [
+        "adj.",
+        "n.",
+        "adv.",
+        "prep.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：繞過或將數字取整；不是 round 形容詞、介詞、副詞或名詞的變化。",
+      "sourceSupportedForms": {
+        "base": "round",
+        "past": [
+          "rounded"
+        ],
+        "pastParticiple": [
+          "rounded"
+        ]
+      },
+      "after": {
+        "base": "round",
+        "past": "rounded",
+        "pastParticiple": "rounded"
+      },
+      "proposedVerbForms": {
+        "base": "round",
+        "past": "rounded",
+        "pastParticiple": "rounded",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/round"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/round",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle rounded",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [
+        "英文摘要只列彈藥與巡訪的名詞義；字卡 round shape 是形容詞。",
+        "三態來源已查證不代表原詞義摘要已修正；本案不改詞義、詞性、例句或字卡圖片。"
+      ],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W004858",
+      "word": "straighten",
+      "units": [
+        "LV1-U22"
+      ],
+      "cardIds": [
+        "LV1-U22-25"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：弄直、挺直或整理。",
+      "sourceSupportedForms": {
+        "base": "straighten",
+        "past": [
+          "straightened"
+        ],
+        "pastParticiple": [
+          "straightened"
+        ]
+      },
+      "after": {
+        "base": "straighten",
+        "past": "straightened",
+        "pastParticiple": "straightened"
+      },
+      "proposedVerbForms": {
+        "base": "straighten",
+        "past": "straightened",
+        "pastParticiple": "straightened",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/straighten"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/straighten",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle straightened",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [
+        "既有 usagePattern 中的泛用 to V 構式未由三態證據驗證，不在本案擴改。"
+      ],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000196",
+      "word": "couch",
+      "units": [
+        "LV1-U22"
+      ],
+      "cardIds": [
+        "LV1-U22-27"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：以特定措辭表達，常見 be couched in/as；另有躺臥義。",
+      "sourceSupportedForms": {
+        "base": "couch",
+        "past": [
+          "couched"
+        ],
+        "pastParticiple": [
+          "couched"
+        ]
+      },
+      "after": {
+        "base": "couch",
+        "past": "couched",
+        "pastParticiple": "couched"
+      },
+      "proposedVerbForms": {
+        "base": "couch",
+        "past": "couched",
+        "pastParticiple": "couched",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/couch"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/couch",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle couched",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "措辭義常為書面、被動結構 be couched in/as；現有中文含橫躺而英文未列動詞，三態正確不代表可自動改寫詞義。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [
+        "英文摘要只列底漆與診療床的名詞義，未交代動詞；中文字義含「橫躺」，不能自動替換為措辭義。",
+        "三態來源已查證不代表原詞義摘要已修正；本案不改詞義、詞性、例句或字卡圖片。"
+      ],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000788",
+      "word": "sleep",
+      "units": [
+        "LV1-U22"
+      ],
+      "cardIds": [
+        "LV1-U22-30"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：睡覺。",
+      "sourceSupportedForms": {
+        "base": "sleep",
+        "past": [
+          "slept"
+        ],
+        "pastParticiple": [
+          "slept"
+        ]
+      },
+      "after": {
+        "base": "sleep",
+        "past": "slept",
+        "pastParticiple": "slept"
+      },
+      "proposedVerbForms": {
+        "base": "sleep",
+        "past": "slept",
+        "pastParticiple": "slept",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/sleep"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/sleep",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle slept",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000165",
+      "word": "choose",
+      "units": [
+        "LV1-U22",
+        "LV1-U23"
+      ],
+      "cardIds": [
+        "LV1-U22-46",
+        "LV1-U23-94"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：選擇。",
+      "sourceSupportedForms": {
+        "base": "choose",
+        "past": [
+          "chose"
+        ],
+        "pastParticiple": [
+          "chosen"
+        ]
+      },
+      "after": {
+        "base": "choose",
+        "past": "chose",
+        "pastParticiple": "chosen"
+      },
+      "proposedVerbForms": {
+        "base": "choose",
+        "past": "chose",
+        "pastParticiple": "chosen",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/choose"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/choose",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense chose , past participle chosen",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000641",
+      "word": "pick",
+      "units": [
+        "LV1-U22",
+        "LV1-U23"
+      ],
+      "cardIds": [
+        "LV1-U22-47",
+        "LV1-U23-92"
+      ],
+      "sourceSnapshotPos": "v./n.",
+      "sourceSnapshotPosAll": [
+        "v.",
+        "n."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：挑選、採摘或撿取。",
+      "sourceSupportedForms": {
+        "base": "pick",
+        "past": [
+          "picked"
+        ],
+        "pastParticiple": [
+          "picked"
+        ]
+      },
+      "after": {
+        "base": "pick",
+        "past": "picked",
+        "pastParticiple": "picked"
+      },
+      "proposedVerbForms": {
+        "base": "pick",
+        "past": "picked",
+        "pastParticiple": "picked",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/pick"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/pick",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle picked",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W001771",
+      "word": "select",
+      "units": [
+        "LV1-U22",
+        "LV1-U23"
+      ],
+      "cardIds": [
+        "LV1-U22-48",
+        "LV1-U23-95"
+      ],
+      "sourceSnapshotPos": "v./adj.",
+      "sourceSnapshotPosAll": [
+        "v.",
+        "adj."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：挑選。",
+      "sourceSupportedForms": {
+        "base": "select",
+        "past": [
+          "selected"
+        ],
+        "pastParticiple": [
+          "selected"
+        ]
+      },
+      "after": {
+        "base": "select",
+        "past": "selected",
+        "pastParticiple": "selected"
+      },
+      "proposedVerbForms": {
+        "base": "select",
+        "past": "selected",
+        "pastParticiple": "selected",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/select"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/select",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle selected",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [
+        "既有 usagePattern 中的泛用 to V 構式未由三態證據驗證，不在本案擴改。"
+      ],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W001521",
+      "word": "major",
+      "units": [
+        "LV1-U22"
+      ],
+      "cardIds": [
+        "LV1-U22-52"
+      ],
+      "sourceSnapshotPos": "adj./n./v.",
+      "sourceSnapshotPosAll": [
+        "adj.",
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：主修，常與 in 連用。",
+      "sourceSupportedForms": {
+        "base": "major",
+        "past": [
+          "majored"
+        ],
+        "pastParticiple": [
+          "majored"
+        ]
+      },
+      "after": {
+        "base": "major",
+        "past": "majored",
+        "pastParticiple": "majored"
+      },
+      "proposedVerbForms": {
+        "base": "major",
+        "past": "majored",
+        "pastParticiple": "majored",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/major"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/major",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle majored",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "主修義常與 in 連用；base 維持 major，不另創 major in 作為詞頭。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000643",
+      "word": "picture",
+      "units": [
+        "LV1-U22"
+      ],
+      "cardIds": [
+        "LV1-U22-54"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：想像或描繪。",
+      "sourceSupportedForms": {
+        "base": "picture",
+        "past": [
+          "pictured"
+        ],
+        "pastParticiple": [
+          "pictured"
+        ]
+      },
+      "after": {
+        "base": "picture",
+        "past": "pictured",
+        "pastParticiple": "pictured"
+      },
+      "proposedVerbForms": {
+        "base": "picture",
+        "past": "pictured",
+        "pastParticiple": "pictured",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/picture"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/picture",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle pictured",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W001450",
+      "word": "imagine",
+      "units": [
+        "LV1-U22"
+      ],
+      "cardIds": [
+        "LV1-U22-55"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：想像、設想。",
+      "sourceSupportedForms": {
+        "base": "imagine",
+        "past": [
+          "imagined"
+        ],
+        "pastParticiple": [
+          "imagined"
+        ]
+      },
+      "after": {
+        "base": "imagine",
+        "past": "imagined",
+        "pastParticiple": "imagined"
+      },
+      "proposedVerbForms": {
+        "base": "imagine",
+        "past": "imagined",
+        "pastParticiple": "imagined",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/imagine"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/imagine",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle imagined",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000818",
+      "word": "spend",
+      "units": [
+        "LV1-U22"
+      ],
+      "cardIds": [
+        "LV1-U22-59"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：花費金錢或時間。",
+      "sourceSupportedForms": {
+        "base": "spend",
+        "past": [
+          "spent"
+        ],
+        "pastParticiple": [
+          "spent"
+        ]
+      },
+      "after": {
+        "base": "spend",
+        "past": "spent",
+        "pastParticiple": "spent"
+      },
+      "proposedVerbForms": {
+        "base": "spend",
+        "past": "spent",
+        "pastParticiple": "spent",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/spend"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/spend",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle spent",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000089",
+      "word": "best",
+      "units": [
+        "LV1-U22"
+      ],
+      "cardIds": [
+        "LV1-U22-64"
+      ],
+      "sourceSnapshotPos": "adj./adv./v./n.",
+      "sourceSnapshotPosAll": [
+        "adj.",
+        "adv.",
+        "v.",
+        "n."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：勝過、打敗；不是 good/well 的最高級變化。",
+      "sourceSupportedForms": {
+        "base": "best",
+        "past": [
+          "bested"
+        ],
+        "pastParticiple": [
+          "bested"
+        ]
+      },
+      "after": {
+        "base": "best",
+        "past": "bested",
+        "pastParticiple": "bested"
+      },
+      "proposedVerbForms": {
+        "base": "best",
+        "past": "bested",
+        "pastParticiple": "bested",
+        "sourceRef": "https://www.collinsdictionary.com/conjugation/english/best"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins English Verbs",
+          "url": "https://www.collinsdictionary.com/conjugation/english/best",
+          "retrieval": "direct_official_conjugation_table",
+          "shortQuote": "bested",
+          "scope": "官方變位表的 Infinitive 為 to best、Past 列 I bested，Past Participle 為 bested。",
+          "location": "Infinitive, Past, Past Participle"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Webster’s New World College Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/best",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "to win out over; defeat or outdo",
+          "scope": "美式義項 12 明示 best 的動詞義是勝過。",
+          "location": "best in American English, verb transitive 12"
+        }
+      ],
+      "verificationMethod": "direct_official_conjugation_table_and_dictionary_sense",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [
+        "現有摘要與例句只描述最高級形容詞，未交代動詞「勝過」。",
+        "三態來源已查證不代表原詞義摘要已修正；本案不改詞義、詞性、例句或字卡圖片。"
+      ],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W001081",
+      "word": "beat",
+      "units": [
+        "LV1-U22"
+      ],
+      "cardIds": [
+        "LV1-U22-65"
+      ],
+      "sourceSnapshotPos": "v./n.",
+      "sourceSnapshotPosAll": [
+        "v.",
+        "n."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：擊打、打敗或心臟跳動。",
+      "sourceSupportedForms": {
+        "base": "beat",
+        "past": [
+          "beat"
+        ],
+        "pastParticiple": [
+          "beaten",
+          "beat"
+        ]
+      },
+      "after": {
+        "base": "beat",
+        "past": "beat",
+        "pastParticiple": "beaten"
+      },
+      "proposedVerbForms": {
+        "base": "beat",
+        "past": "beat",
+        "pastParticiple": "beaten",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/beat"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/beat",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past participle beaten",
+          "scope": "Word forms 明列過去分詞 beaten，緊接的 language note 明說 beat 同時是現在式及過去式。",
+          "location": "Word forms 及 language note"
+        },
+        {
+          "publisher": "Merriam-Webster",
+          "work": "Merriam-Webster.com Dictionary",
+          "url": "https://www.merriam-webster.com/dictionary/beat",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "or beat",
+          "scope": "詞頭主要變化欄在過去分詞 beaten 後另列 or beat。",
+          "location": "verb 詞頭屈折欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "Collins 學習詞典主表採 beaten；Merriam-Webster 也列過去分詞 beat。最小候選只採 beaten，不將其他列法判為錯誤，也不聲稱本次來源證明其低頻程度。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W003261",
+      "word": "defeat",
+      "units": [
+        "LV1-U22"
+      ],
+      "cardIds": [
+        "LV1-U22-66"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：擊敗、使失敗。",
+      "sourceSupportedForms": {
+        "base": "defeat",
+        "past": [
+          "defeated"
+        ],
+        "pastParticiple": [
+          "defeated"
+        ]
+      },
+      "after": {
+        "base": "defeat",
+        "past": "defeated",
+        "pastParticiple": "defeated"
+      },
+      "proposedVerbForms": {
+        "base": "defeat",
+        "past": "defeated",
+        "pastParticiple": "defeated",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/defeat"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/defeat",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle defeated",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [
+        "英文摘要是失敗的名詞義，未交代動詞「擊敗」。",
+        "三態來源已查證不代表原詞義摘要已修正；本案不改詞義、詞性、例句或字卡圖片。",
+        "既有 usagePattern 中的泛用 to V 構式未由三態證據驗證，不在本案擴改。"
+      ],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000917",
+      "word": "treat",
+      "units": [
+        "LV1-U22"
+      ],
+      "cardIds": [
+        "LV1-U22-72"
+      ],
+      "sourceSnapshotPos": "v./n.",
+      "sourceSnapshotPosAll": [
+        "v.",
+        "n."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：對待、治療或請客。",
+      "sourceSupportedForms": {
+        "base": "treat",
+        "past": [
+          "treated"
+        ],
+        "pastParticiple": [
+          "treated"
+        ]
+      },
+      "after": {
+        "base": "treat",
+        "past": "treated",
+        "pastParticiple": "treated"
+      },
+      "proposedVerbForms": {
+        "base": "treat",
+        "past": "treated",
+        "pastParticiple": "treated",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/treat"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/treat",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle treated",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000860",
+      "word": "team",
+      "units": [
+        "LV1-U22"
+      ],
+      "cardIds": [
+        "LV1-U22-75"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：組隊、使合作；team up 的粒子 up 不改 lemma。",
+      "sourceSupportedForms": {
+        "base": "team",
+        "past": [
+          "teamed"
+        ],
+        "pastParticiple": [
+          "teamed"
+        ]
+      },
+      "after": {
+        "base": "team",
+        "past": "teamed",
+        "pastParticiple": "teamed"
+      },
+      "proposedVerbForms": {
+        "base": "team",
+        "past": "teamed",
+        "pastParticiple": "teamed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/team"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/team",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle teamed",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "team up / team up with 的 up、with 屬構式；base 保持 team，過去式可在構式中作 teamed up。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000157",
+      "word": "change",
+      "units": [
+        "LV1-U23"
+      ],
+      "cardIds": [
+        "LV1-U23-14"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：改變、變成。",
+      "sourceSupportedForms": {
+        "base": "change",
+        "past": [
+          "changed"
+        ],
+        "pastParticiple": [
+          "changed"
+        ]
+      },
+      "after": {
+        "base": "change",
+        "past": "changed",
+        "pastParticiple": "changed"
+      },
+      "proposedVerbForms": {
+        "base": "change",
+        "past": "changed",
+        "pastParticiple": "changed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/change"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/change",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle changed",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W004048",
+      "word": "alter",
+      "units": [
+        "LV1-U23"
+      ],
+      "cardIds": [
+        "LV1-U23-16"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：改變。",
+      "sourceSupportedForms": {
+        "base": "alter",
+        "past": [
+          "altered"
+        ],
+        "pastParticiple": [
+          "altered"
+        ]
+      },
+      "after": {
+        "base": "alter",
+        "past": "altered",
+        "pastParticiple": "altered"
+      },
+      "proposedVerbForms": {
+        "base": "alter",
+        "past": "altered",
+        "pastParticiple": "altered",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/alter"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/alter",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle altered",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000938",
+      "word": "video",
+      "units": [
+        "LV1-U23"
+      ],
+      "cardIds": [
+        "LV1-U23-26"
+      ],
+      "sourceSnapshotPos": "n./v./adj.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v.",
+        "adj."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：錄影；Collins 將這個用法標作 mainly British。",
+      "sourceSupportedForms": {
+        "base": "video",
+        "past": [
+          "videoed"
+        ],
+        "pastParticiple": [
+          "videoed"
+        ]
+      },
+      "after": {
+        "base": "video",
+        "past": "videoed",
+        "pastParticiple": "videoed"
+      },
+      "proposedVerbForms": {
+        "base": "video",
+        "past": "videoed",
+        "pastParticiple": "videoed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/video"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/video",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle videoed",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [
+        "詞形 videoed 為詞典明列，動詞用法在 Collins 標 mainly British；沒有將此標籤推廣到名詞 video。"
+      ],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W001711",
+      "word": "record",
+      "units": [
+        "LV1-U23"
+      ],
+      "cardIds": [
+        "LV1-U23-28"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：記錄或錄製。",
+      "sourceSupportedForms": {
+        "base": "record",
+        "past": [
+          "recorded"
+        ],
+        "pastParticiple": [
+          "recorded"
+        ]
+      },
+      "after": {
+        "base": "record",
+        "past": "recorded",
+        "pastParticiple": "recorded"
+      },
+      "proposedVerbForms": {
+        "base": "record",
+        "past": "recorded",
+        "pastParticiple": "recorded",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/record"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/record",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle recorded",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000680",
+      "word": "program",
+      "units": [
+        "LV1-U23"
+      ],
+      "cardIds": [
+        "LV1-U23-32"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：編寫／設定程式或安排節目。",
+      "sourceSupportedForms": {
+        "base": "program",
+        "past": [
+          "programmed",
+          "programed"
+        ],
+        "pastParticiple": [
+          "programmed",
+          "programed"
+        ]
+      },
+      "after": {
+        "base": "program",
+        "past": "programmed",
+        "pastParticiple": "programmed"
+      },
+      "proposedVerbForms": {
+        "base": "program",
+        "past": "programmed",
+        "pastParticiple": "programmed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/program"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/program",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle programmed",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        },
+        {
+          "publisher": "Merriam-Webster",
+          "work": "Merriam-Webster.com Dictionary",
+          "url": "https://www.merriam-webster.com/dictionary/program",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "programmed or programed; programming or programing",
+          "scope": "美式詞典詞頭列出單 m 變體；候選仍用 Collins 明列的 programmed。",
+          "location": "verb 詞頭屈折欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "主表採 programmed；同頁美式詞典及 Merriam-Webster 也列 programed。候選只用 programmed。programme 是另外的英式詞頭拼寫，不改目前 base=program，也不把 programed 的頻率自行標作罕用。",
+      "existingContextLimitations": [
+        "摘要與例句只描述節目名詞，未交代動詞義。",
+        "三態來源已查證不代表原詞義摘要已修正；本案不改詞義、詞性、例句或字卡圖片。"
+      ],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000619",
+      "word": "pack",
+      "units": [
+        "LV1-U23"
+      ],
+      "cardIds": [
+        "LV1-U23-35"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：打包、裝入。",
+      "sourceSupportedForms": {
+        "base": "pack",
+        "past": [
+          "packed"
+        ],
+        "pastParticiple": [
+          "packed"
+        ]
+      },
+      "after": {
+        "base": "pack",
+        "past": "packed",
+        "pastParticiple": "packed"
+      },
+      "proposedVerbForms": {
+        "base": "pack",
+        "past": "packed",
+        "pastParticiple": "packed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/pack"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/pack",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle packed",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W002616",
+      "word": "parcel",
+      "units": [
+        "LV1-U23"
+      ],
+      "cardIds": [
+        "LV1-U23-40"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：打包、分配；分配義常見 parcel out。",
+      "sourceSupportedForms": {
+        "base": "parcel",
+        "past": [
+          "parceled",
+          "parcelled"
+        ],
+        "pastParticiple": [
+          "parceled",
+          "parcelled"
+        ],
+        "regionalParadigms": [
+          {
+            "region": "American spelling",
+            "past": "parceled",
+            "pastParticiple": "parceled"
+          },
+          {
+            "region": "British spelling",
+            "past": "parcelled",
+            "pastParticiple": "parcelled"
+          }
+        ]
+      },
+      "after": {
+        "base": "parcel",
+        "past": "parceled",
+        "pastParticiple": "parceled"
+      },
+      "proposedVerbForms": {
+        "base": "parcel",
+        "past": "parceled",
+        "pastParticiple": "parceled",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/parcel"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/parcel",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle parcelled regional note:   in AM, use parceling, parceled",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "parcel out 中的 out 是粒子，不更動 base=parcel；區域拼字分開記錄。",
+      "variantAssessment": "Collins regional note 指明美式 parceled，主表使用 parcelled。兩者是區域拼字差異；候選採一套美式拼字 parceled，不將兩套拼字無限定拼接。這不是已核准的全專案英美風格決定。",
+      "existingContextLimitations": [
+        "既有 usagePattern 中的泛用 to V 構式未由三態證據驗證，不在本案擴改。"
+      ],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000435",
+      "word": "interview",
+      "units": [
+        "LV1-U23"
+      ],
+      "cardIds": [
+        "LV1-U23-44"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：面試、採訪或詢問。",
+      "sourceSupportedForms": {
+        "base": "interview",
+        "past": [
+          "interviewed"
+        ],
+        "pastParticiple": [
+          "interviewed"
+        ]
+      },
+      "after": {
+        "base": "interview",
+        "past": "interviewed",
+        "pastParticiple": "interviewed"
+      },
+      "proposedVerbForms": {
+        "base": "interview",
+        "past": "interviewed",
+        "pastParticiple": "interviewed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/interview"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/interview",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle interviewed",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [
+        "英文摘要以面試會面的名詞描述為主，未明列動詞釋義。",
+        "三態來源已查證不代表原詞義摘要已修正；本案不改詞義、詞性、例句或字卡圖片。"
+      ],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000470",
+      "word": "last",
+      "units": [
+        "LV1-U23"
+      ],
+      "cardIds": [
+        "LV1-U23-47"
+      ],
+      "sourceSnapshotPos": "n./v./adv./adj.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v.",
+        "adv.",
+        "adj."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：持續、維持。",
+      "sourceSupportedForms": {
+        "base": "last",
+        "past": [
+          "lasted"
+        ],
+        "pastParticiple": [
+          "lasted"
+        ]
+      },
+      "after": {
+        "base": "last",
+        "past": "lasted",
+        "pastParticiple": "lasted"
+      },
+      "proposedVerbForms": {
+        "base": "last",
+        "past": "lasted",
+        "pastParticiple": "lasted",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/last"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/last",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle lasted",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W001197",
+      "word": "continue",
+      "units": [
+        "LV1-U23"
+      ],
+      "cardIds": [
+        "LV1-U23-48"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：繼續。",
+      "sourceSupportedForms": {
+        "base": "continue",
+        "past": [
+          "continued"
+        ],
+        "pastParticiple": [
+          "continued"
+        ]
+      },
+      "after": {
+        "base": "continue",
+        "past": "continued",
+        "pastParticiple": "continued"
+      },
+      "proposedVerbForms": {
+        "base": "continue",
+        "past": "continued",
+        "pastParticiple": "continued",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/continue"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/continue",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle continued",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W002720",
+      "word": "remain",
+      "units": [
+        "LV1-U23"
+      ],
+      "cardIds": [
+        "LV1-U23-49"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：仍然處於某狀態或留下。",
+      "sourceSupportedForms": {
+        "base": "remain",
+        "past": [
+          "remained"
+        ],
+        "pastParticiple": [
+          "remained"
+        ]
+      },
+      "after": {
+        "base": "remain",
+        "past": "remained",
+        "pastParticiple": "remained"
+      },
+      "proposedVerbForms": {
+        "base": "remain",
+        "past": "remained",
+        "pastParticiple": "remained",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/remain"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/remain",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle remained",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000397",
+      "word": "hide",
+      "units": [
+        "LV1-U23"
+      ],
+      "cardIds": [
+        "LV1-U23-53"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "pending",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "pending_schema_disambiguation",
+      "applicableSense": "隱藏義是 hide → hid → hidden（詞典另列過去分詞 hid）；同形另有口語「鞭打」動詞 hide，詞形 hided。",
+      "sourceSupportedForms": {
+        "base": "hide",
+        "senseParadigms": [
+          {
+            "sense": "隱藏、躲藏、掩飾",
+            "past": [
+              "hid"
+            ],
+            "pastParticiple": [
+              "hidden",
+              "hid"
+            ]
+          },
+          {
+            "sense": "鞭打；informal；獨立同形動詞",
+            "attestedPrincipalPart": "hided",
+            "evidenceLimit": "詳表以詞典屈折簡記列 hided, hiding；本案不將這套跨義詞形輸出為通用 after。"
+          }
+        ]
+      },
+      "after": null,
+      "proposedVerbForms": null,
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/hide",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense hid , past participle hidden",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        },
+        {
+          "publisher": "Merriam-Webster",
+          "work": "Merriam-Webster.com Dictionary",
+          "url": "https://www.merriam-webster.com/dictionary/hided",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "hided; hiding",
+          "scope": "已開啟 hided 查詢結果的 hide 詞條：verb (1) 是 hid／hidden 或 hid；verb (2) 獨立列 hided，不能合併為 conceal 義的任意變體。",
+          "location": "hide, verb (1) 及 verb (2)"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Webster’s New World College Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/hide",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "verb transitive Word forms: hided, hiding",
+          "scope": "同頁美式 hide 2 動詞義為嚴重毆打／鞭打，並標 informal；英式 hide 2 也有 hided。",
+          "location": "hide in American English 2, sense 3"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "hid 是隱藏義過去式，也被詳表接受為另一過去分詞；hided 屬另一鞭打義。不能把 hided 混入隱藏義，不能因 hid 過去分詞也有記載就否定主要教學形式 hidden。",
+      "variantAssessment": "常見隱藏義的最小形式是 hid／hidden；過去分詞 hid 已有來源，但本次來源沒有提供其精確頻率。hided 保留為分義證據，不作無限定候選。",
+      "existingContextLimitations": [
+        "輸入摘要與本次已發布字卡落在常見義；仍不能由一張例句推定整詞全義範圍。pending 是產品呈現邊界，不是缺少常見三態證據。"
+      ],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": "詞形已查證，但同詞頭有需按義區分的形式。現行整詞 verbForms／顯示沒有可見義項限定，sourceRef/status 又不顯示。保留 key absent；須先核對完整義項呈現範圍或加入可見分義，再決定是否採用限定候選。不得用括號改 base 來迴避。",
+      "futureCandidatesAfterDisambiguation": [
+        {
+          "base": "hide",
+          "past": "hid",
+          "pastParticiple": "hidden",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/hide",
+          "requiredVisibleQualification": "僅隱藏、躲藏或掩飾義；排除同形鞭打義。"
+        }
+      ]
+    },
+    {
+      "wordId": "W004199",
+      "word": "conceal",
+      "units": [
+        "LV1-U23"
+      ],
+      "cardIds": [
+        "LV1-U23-55"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：隱藏、掩飾。",
+      "sourceSupportedForms": {
+        "base": "conceal",
+        "past": [
+          "concealed"
+        ],
+        "pastParticiple": [
+          "concealed"
+        ]
+      },
+      "after": {
+        "base": "conceal",
+        "past": "concealed",
+        "pastParticiple": "concealed"
+      },
+      "proposedVerbForms": {
+        "base": "conceal",
+        "past": "concealed",
+        "pastParticiple": "concealed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/conceal"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/conceal",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle concealed",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000240",
+      "word": "dream",
+      "units": [
+        "LV1-U23"
+      ],
+      "cardIds": [
+        "LV1-U23-63"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：做夢、夢想或想像。",
+      "sourceSupportedForms": {
+        "base": "dream",
+        "past": [
+          "dreamed",
+          "dreamt"
+        ],
+        "pastParticiple": [
+          "dreamed",
+          "dreamt"
+        ]
+      },
+      "after": {
+        "base": "dream",
+        "past": "dreamed",
+        "pastParticiple": "dreamed"
+      },
+      "proposedVerbForms": {
+        "base": "dream",
+        "past": "dreamed",
+        "pastParticiple": "dreamed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/dream"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/dream",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle dreamed or dreamt",
+          "scope": "Word forms 明列兩式；language note 明說英式可用 dreamed 或 dreamt，美式採 dreamed。",
+          "location": "Word forms 及 language note"
+        },
+        {
+          "publisher": "Merriam-Webster",
+          "work": "Merriam-Webster.com Dictionary",
+          "url": "https://www.merriam-webster.com/dictionary/dream",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "or dreamt",
+          "scope": "動詞詞頭同列 dreamed 及 dreamt，沒有把 dreamt 標作英式專用。",
+          "location": "verb 詞頭屈折欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "Collins language note 將 dreamed 作為美式，並明說英式可用 dreamed 或 dreamt。Merriam-Webster 同樣接受兩式，因此不能寫成 dreamt 只在英國才合法。最小候選 dreamed 兩地皆可用；不按做夢／夢想分派不同詞形。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W005329",
+      "word": "excel",
+      "units": [
+        "LV1-U23"
+      ],
+      "cardIds": [
+        "LV1-U23-68"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：擅長、勝過。",
+      "sourceSupportedForms": {
+        "base": "excel",
+        "past": [
+          "excelled"
+        ],
+        "pastParticiple": [
+          "excelled"
+        ]
+      },
+      "after": {
+        "base": "excel",
+        "past": "excelled",
+        "pastParticiple": "excelled"
+      },
+      "proposedVerbForms": {
+        "base": "excel",
+        "past": "excelled",
+        "pastParticiple": "excelled",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/excel"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/excel",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle excelled",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000321",
+      "word": "fool",
+      "units": [
+        "LV1-U23"
+      ],
+      "cardIds": [
+        "LV1-U23-69"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：愚弄、欺騙。",
+      "sourceSupportedForms": {
+        "base": "fool",
+        "past": [
+          "fooled"
+        ],
+        "pastParticiple": [
+          "fooled"
+        ]
+      },
+      "after": {
+        "base": "fool",
+        "past": "fooled",
+        "pastParticiple": "fooled"
+      },
+      "proposedVerbForms": {
+        "base": "fool",
+        "past": "fooled",
+        "pastParticiple": "fooled",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/fool"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/fool",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle fooled",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W001931",
+      "word": "trick",
+      "units": [
+        "LV1-U23"
+      ],
+      "cardIds": [
+        "LV1-U23-71"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：欺騙。",
+      "sourceSupportedForms": {
+        "base": "trick",
+        "past": [
+          "tricked"
+        ],
+        "pastParticiple": [
+          "tricked"
+        ]
+      },
+      "after": {
+        "base": "trick",
+        "past": "tricked",
+        "pastParticiple": "tricked"
+      },
+      "proposedVerbForms": {
+        "base": "trick",
+        "past": "tricked",
+        "pastParticiple": "tricked",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/trick"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/trick",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle tricked",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W004266",
+      "word": "deceive",
+      "units": [
+        "LV1-U23"
+      ],
+      "cardIds": [
+        "LV1-U23-72"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：欺騙。",
+      "sourceSupportedForms": {
+        "base": "deceive",
+        "past": [
+          "deceived"
+        ],
+        "pastParticiple": [
+          "deceived"
+        ]
+      },
+      "after": {
+        "base": "deceive",
+        "past": "deceived",
+        "pastParticiple": "deceived"
+      },
+      "proposedVerbForms": {
+        "base": "deceive",
+        "past": "deceived",
+        "pastParticiple": "deceived",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/deceive"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/deceive",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle deceived",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000106",
+      "word": "borrow",
+      "units": [
+        "LV1-U23"
+      ],
+      "cardIds": [
+        "LV1-U23-81"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：借入、借用。",
+      "sourceSupportedForms": {
+        "base": "borrow",
+        "past": [
+          "borrowed"
+        ],
+        "pastParticiple": [
+          "borrowed"
+        ]
+      },
+      "after": {
+        "base": "borrow",
+        "past": "borrowed",
+        "pastParticiple": "borrowed"
+      },
+      "proposedVerbForms": {
+        "base": "borrow",
+        "past": "borrowed",
+        "pastParticiple": "borrowed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/borrow"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/borrow",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle borrowed",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W001501",
+      "word": "lend",
+      "units": [
+        "LV1-U23"
+      ],
+      "cardIds": [
+        "LV1-U23-82"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：借出、賦予。",
+      "sourceSupportedForms": {
+        "base": "lend",
+        "past": [
+          "lent"
+        ],
+        "pastParticiple": [
+          "lent"
+        ]
+      },
+      "after": {
+        "base": "lend",
+        "past": "lent",
+        "pastParticiple": "lent"
+      },
+      "proposedVerbForms": {
+        "base": "lend",
+        "past": "lent",
+        "pastParticiple": "lent",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/lend"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/lend",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle lent",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000542",
+      "word": "mine",
+      "units": [
+        "LV1-U23"
+      ],
+      "cardIds": [
+        "LV1-U23-87"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：開採；不處理代名詞 mine 的變化。",
+      "sourceSupportedForms": {
+        "base": "mine",
+        "past": [
+          "mined"
+        ],
+        "pastParticiple": [
+          "mined"
+        ]
+      },
+      "after": {
+        "base": "mine",
+        "past": "mined",
+        "pastParticiple": "mined"
+      },
+      "proposedVerbForms": {
+        "base": "mine",
+        "past": "mined",
+        "pastParticiple": "mined",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/mine"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/mine",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle mined",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000837",
+      "word": "study",
+      "units": [
+        "LV1-U23"
+      ],
+      "cardIds": [
+        "LV1-U23-97"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：學習、研究。",
+      "sourceSupportedForms": {
+        "base": "study",
+        "past": [
+          "studied"
+        ],
+        "pastParticiple": [
+          "studied"
+        ]
+      },
+      "after": {
+        "base": "study",
+        "past": "studied",
+        "pastParticiple": "studied"
+      },
+      "proposedVerbForms": {
+        "base": "study",
+        "past": "studied",
+        "pastParticiple": "studied",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/study"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/study",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle studied",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000512",
+      "word": "machine",
+      "units": [
+        "LV1-U23"
+      ],
+      "cardIds": [
+        "LV1-U23-101"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：以機器加工或製造。",
+      "sourceSupportedForms": {
+        "base": "machine",
+        "past": [
+          "machined"
+        ],
+        "pastParticiple": [
+          "machined"
+        ]
+      },
+      "after": {
+        "base": "machine",
+        "past": "machined",
+        "pastParticiple": "machined"
+      },
+      "proposedVerbForms": {
+        "base": "machine",
+        "past": "machined",
+        "pastParticiple": "machined",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/machine"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/machine",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle machined",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [
+        "英文摘要是機器名詞，未交代動詞「加工／製造」。",
+        "三態來源已查證不代表原詞義摘要已修正；本案不改詞義、詞性、例句或字卡圖片。"
+      ],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000462",
+      "word": "knock",
+      "units": [
+        "LV1-U23"
+      ],
+      "cardIds": [
+        "LV1-U23-109"
+      ],
+      "sourceSnapshotPos": "v./n.",
+      "sourceSnapshotPosAll": [
+        "v.",
+        "n."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：敲擊、碰撞或批評。",
+      "sourceSupportedForms": {
+        "base": "knock",
+        "past": [
+          "knocked"
+        ],
+        "pastParticiple": [
+          "knocked"
+        ]
+      },
+      "after": {
+        "base": "knock",
+        "past": "knocked",
+        "pastParticiple": "knocked"
+      },
+      "proposedVerbForms": {
+        "base": "knock",
+        "past": "knocked",
+        "pastParticiple": "knocked",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/knock"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/knock",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle knocked",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [
+        "英文摘要只列敲擊聲與批評名詞，未明列動詞義。",
+        "三態來源已查證不代表原詞義摘要已修正；本案不改詞義、詞性、例句或字卡圖片。"
+      ],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W002174",
+      "word": "comfort",
+      "units": [
+        "LV1-U24"
+      ],
+      "cardIds": [
+        "LV1-U24-10"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：安慰。",
+      "sourceSupportedForms": {
+        "base": "comfort",
+        "past": [
+          "comforted"
+        ],
+        "pastParticiple": [
+          "comforted"
+        ]
+      },
+      "after": {
+        "base": "comfort",
+        "past": "comforted",
+        "pastParticiple": "comforted"
+      },
+      "proposedVerbForms": {
+        "base": "comfort",
+        "past": "comforted",
+        "pastParticiple": "comforted",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/comfort"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/comfort",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle comforted",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000943",
+      "word": "wait",
+      "units": [
+        "LV1-U24"
+      ],
+      "cardIds": [
+        "LV1-U24-12"
+      ],
+      "sourceSnapshotPos": "v./n.",
+      "sourceSnapshotPosAll": [
+        "v.",
+        "n."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：等候。",
+      "sourceSupportedForms": {
+        "base": "wait",
+        "past": [
+          "waited"
+        ],
+        "pastParticiple": [
+          "waited"
+        ]
+      },
+      "after": {
+        "base": "wait",
+        "past": "waited",
+        "pastParticiple": "waited"
+      },
+      "proposedVerbForms": {
+        "base": "wait",
+        "past": "waited",
+        "pastParticiple": "waited",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/wait"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/wait",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle waited",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W001102",
+      "word": "board",
+      "units": [
+        "LV1-U24"
+      ],
+      "cardIds": [
+        "LV1-U24-30"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：登上交通工具或供膳宿。",
+      "sourceSupportedForms": {
+        "base": "board",
+        "past": [
+          "boarded"
+        ],
+        "pastParticiple": [
+          "boarded"
+        ]
+      },
+      "after": {
+        "base": "board",
+        "past": "boarded",
+        "pastParticiple": "boarded"
+      },
+      "proposedVerbForms": {
+        "base": "board",
+        "past": "boarded",
+        "pastParticiple": "boarded",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/board"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/board",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle boarded",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000575",
+      "word": "net",
+      "units": [
+        "LV1-U24"
+      ],
+      "cardIds": [
+        "LV1-U24-34"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：用網捕捉、取得／賺得或進球。",
+      "sourceSupportedForms": {
+        "base": "net",
+        "past": [
+          "netted"
+        ],
+        "pastParticiple": [
+          "netted"
+        ]
+      },
+      "after": {
+        "base": "net",
+        "past": "netted",
+        "pastParticiple": "netted"
+      },
+      "proposedVerbForms": {
+        "base": "net",
+        "past": "netted",
+        "pastParticiple": "netted",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/net"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/net",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle netted",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [
+        "英文摘要只列網與球門名詞，未明列動詞義。",
+        "三態來源已查證不代表原詞義摘要已修正；本案不改詞義、詞性、例句或字卡圖片。",
+        "既有 usagePattern 中的泛用 to V 構式未由三態證據驗證，不在本案擴改。"
+      ],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W001581",
+      "word": "network",
+      "units": [
+        "LV1-U24"
+      ],
+      "cardIds": [
+        "LV1-U24-35"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：建立人脈或連接網路。",
+      "sourceSupportedForms": {
+        "base": "network",
+        "past": [
+          "networked"
+        ],
+        "pastParticiple": [
+          "networked"
+        ]
+      },
+      "after": {
+        "base": "network",
+        "past": "networked",
+        "pastParticiple": "networked"
+      },
+      "proposedVerbForms": {
+        "base": "network",
+        "past": "networked",
+        "pastParticiple": "networked",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/network"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/network",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle networked",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000657",
+      "word": "please",
+      "units": [
+        "LV1-U24"
+      ],
+      "cardIds": [
+        "LV1-U24-38"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：使高興、使滿意；不是禮貌用語 please 的時態變化。",
+      "sourceSupportedForms": {
+        "base": "please",
+        "past": [
+          "pleased"
+        ],
+        "pastParticiple": [
+          "pleased"
+        ]
+      },
+      "after": {
+        "base": "please",
+        "past": "pleased",
+        "pastParticiple": "pleased"
+      },
+      "proposedVerbForms": {
+        "base": "please",
+        "past": "pleased",
+        "pastParticiple": "pleased",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/please"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/please",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle pleased",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000642",
+      "word": "picnic",
+      "units": [
+        "LV1-U24"
+      ],
+      "cardIds": [
+        "LV1-U24-47"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：野餐。",
+      "sourceSupportedForms": {
+        "base": "picnic",
+        "past": [
+          "picnicked"
+        ],
+        "pastParticiple": [
+          "picnicked"
+        ]
+      },
+      "after": {
+        "base": "picnic",
+        "past": "picnicked",
+        "pastParticiple": "picnicked"
+      },
+      "proposedVerbForms": {
+        "base": "picnic",
+        "past": "picnicked",
+        "pastParticiple": "picnicked",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/picnic"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/picnic",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle picnicked",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "picnicked 的 ck 拼寫為詞典逐字證據，不是本案以拼字規則推導。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000675",
+      "word": "present",
+      "units": [
+        "LV1-U24"
+      ],
+      "cardIds": [
+        "LV1-U24-50"
+      ],
+      "sourceSnapshotPos": "adj./n./v.",
+      "sourceSnapshotPosAll": [
+        "adj.",
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：贈予、呈現或提出；不是名詞「現在／禮物」或形容詞「目前的」。",
+      "sourceSupportedForms": {
+        "base": "present",
+        "past": [
+          "presented"
+        ],
+        "pastParticiple": [
+          "presented"
+        ]
+      },
+      "after": {
+        "base": "present",
+        "past": "presented",
+        "pastParticiple": "presented"
+      },
+      "proposedVerbForms": {
+        "base": "present",
+        "past": "presented",
+        "pastParticiple": "presented",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/present"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/present",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle presented",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [
+        "英文摘要只列「現在／禮物」名詞及「目前的」形容詞，未列動詞義。",
+        "三態來源已查證不代表原詞義摘要已修正；本案不改詞義、詞性、例句或字卡圖片。"
+      ],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000437",
+      "word": "invite",
+      "units": [
+        "LV1-U25"
+      ],
+      "cardIds": [
+        "LV1-U25-05"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：邀請。",
+      "sourceSupportedForms": {
+        "base": "invite",
+        "past": [
+          "invited"
+        ],
+        "pastParticiple": [
+          "invited"
+        ]
+      },
+      "after": {
+        "base": "invite",
+        "past": "invited",
+        "pastParticiple": "invited"
+      },
+      "proposedVerbForms": {
+        "base": "invite",
+        "past": "invited",
+        "pastParticiple": "invited",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/invite"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/invite",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle invited",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000760",
+      "word": "share",
+      "units": [
+        "LV1-U25"
+      ],
+      "cardIds": [
+        "LV1-U25-06"
+      ],
+      "sourceSnapshotPos": "v./n.",
+      "sourceSnapshotPosAll": [
+        "v.",
+        "n."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：分享、共有。",
+      "sourceSupportedForms": {
+        "base": "share",
+        "past": [
+          "shared"
+        ],
+        "pastParticiple": [
+          "shared"
+        ]
+      },
+      "after": {
+        "base": "share",
+        "past": "shared",
+        "pastParticiple": "shared"
+      },
+      "proposedVerbForms": {
+        "base": "share",
+        "past": "shared",
+        "pastParticiple": "shared",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/share"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/share",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle shared",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000629",
+      "word": "party",
+      "units": [
+        "LV1-U25"
+      ],
+      "cardIds": [
+        "LV1-U25-07"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：參加聚會、歡慶；不是政治黨派名詞的變化。",
+      "sourceSupportedForms": {
+        "base": "party",
+        "past": [
+          "partied"
+        ],
+        "pastParticiple": [
+          "partied"
+        ]
+      },
+      "after": {
+        "base": "party",
+        "past": "partied",
+        "pastParticiple": "partied"
+      },
+      "proposedVerbForms": {
+        "base": "party",
+        "past": "partied",
+        "pastParticiple": "partied",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/party"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/party",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle partied",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000281",
+      "word": "exercise",
+      "units": [
+        "LV1-U25"
+      ],
+      "cardIds": [
+        "LV1-U25-08"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：運動、鍛鍊或行使。",
+      "sourceSupportedForms": {
+        "base": "exercise",
+        "past": [
+          "exercised"
+        ],
+        "pastParticiple": [
+          "exercised"
+        ]
+      },
+      "after": {
+        "base": "exercise",
+        "past": "exercised",
+        "pastParticiple": "exercised"
+      },
+      "proposedVerbForms": {
+        "base": "exercise",
+        "past": "exercised",
+        "pastParticiple": "exercised",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/exercise"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/exercise",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle exercised",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000797",
+      "word": "snow",
+      "units": [
+        "LV1-U25"
+      ],
+      "cardIds": [
+        "LV1-U25-10"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：下雪。",
+      "sourceSupportedForms": {
+        "base": "snow",
+        "past": [
+          "snowed"
+        ],
+        "pastParticiple": [
+          "snowed"
+        ]
+      },
+      "after": {
+        "base": "snow",
+        "past": "snowed",
+        "pastParticiple": "snowed"
+      },
+      "proposedVerbForms": {
+        "base": "snow",
+        "past": "snowed",
+        "pastParticiple": "snowed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/snow"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/snow",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle snowed",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000150",
+      "word": "celebrate",
+      "units": [
+        "LV1-U25"
+      ],
+      "cardIds": [
+        "LV1-U25-12"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：慶祝。",
+      "sourceSupportedForms": {
+        "base": "celebrate",
+        "past": [
+          "celebrated"
+        ],
+        "pastParticiple": [
+          "celebrated"
+        ]
+      },
+      "after": {
+        "base": "celebrate",
+        "past": "celebrated",
+        "pastParticiple": "celebrated"
+      },
+      "proposedVerbForms": {
+        "base": "celebrate",
+        "past": "celebrated",
+        "pastParticiple": "celebrated",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/celebrate"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/celebrate",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle celebrated",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000132",
+      "word": "button",
+      "units": [
+        "LV1-U25"
+      ],
+      "cardIds": [
+        "LV1-U25-13"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：扣上鈕扣。",
+      "sourceSupportedForms": {
+        "base": "button",
+        "past": [
+          "buttoned"
+        ],
+        "pastParticiple": [
+          "buttoned"
+        ]
+      },
+      "after": {
+        "base": "button",
+        "past": "buttoned",
+        "pastParticiple": "buttoned"
+      },
+      "proposedVerbForms": {
+        "base": "button",
+        "past": "buttoned",
+        "pastParticiple": "buttoned",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/button"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/button",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle buttoned",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [
+        "英文摘要只列鈕扣與植物部分名詞，未列扣鈕扣動詞義。",
+        "三態來源已查證不代表原詞義摘要已修正；本案不改詞義、詞性、例句或字卡圖片。"
+      ],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000192",
+      "word": "copy",
+      "units": [
+        "LV1-U25"
+      ],
+      "cardIds": [
+        "LV1-U25-15"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：複製、仿效。",
+      "sourceSupportedForms": {
+        "base": "copy",
+        "past": [
+          "copied"
+        ],
+        "pastParticiple": [
+          "copied"
+        ]
+      },
+      "after": {
+        "base": "copy",
+        "past": "copied",
+        "pastParticiple": "copied"
+      },
+      "proposedVerbForms": {
+        "base": "copy",
+        "past": "copied",
+        "pastParticiple": "copied",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/copy"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/copy",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle copied",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000285",
+      "word": "explain",
+      "units": [
+        "LV1-U25"
+      ],
+      "cardIds": [
+        "LV1-U25-18"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：解釋。",
+      "sourceSupportedForms": {
+        "base": "explain",
+        "past": [
+          "explained"
+        ],
+        "pastParticiple": [
+          "explained"
+        ]
+      },
+      "after": {
+        "base": "explain",
+        "past": "explained",
+        "pastParticiple": "explained"
+      },
+      "proposedVerbForms": {
+        "base": "explain",
+        "past": "explained",
+        "pastParticiple": "explained",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/explain"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/explain",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle explained",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000182",
+      "word": "collect",
+      "units": [
+        "LV1-U25"
+      ],
+      "cardIds": [
+        "LV1-U25-21"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：收集。",
+      "sourceSupportedForms": {
+        "base": "collect",
+        "past": [
+          "collected"
+        ],
+        "pastParticiple": [
+          "collected"
+        ]
+      },
+      "after": {
+        "base": "collect",
+        "past": "collected",
+        "pastParticiple": "collected"
+      },
+      "proposedVerbForms": {
+        "base": "collect",
+        "past": "collected",
+        "pastParticiple": "collected",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/collect"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/collect",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle collected",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000375",
+      "word": "hang",
+      "units": [
+        "LV1-U25"
+      ],
+      "cardIds": [
+        "LV1-U25-22"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "pending",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "pending_schema_disambiguation",
+      "applicableSense": "懸掛／閒晃等一般義使用 hung；以絞索致死義使用 hanged，不能當作無條件自由變體。",
+      "sourceSupportedForms": {
+        "base": "hang",
+        "senseParadigms": [
+          {
+            "sense": "懸掛、閒晃等一般義",
+            "past": [
+              "hung"
+            ],
+            "pastParticiple": [
+              "hung"
+            ]
+          },
+          {
+            "sense": "用絞索致死",
+            "past": [
+              "hanged"
+            ],
+            "pastParticiple": [
+              "hanged"
+            ]
+          }
+        ]
+      },
+      "after": null,
+      "proposedVerbForms": null,
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/hang",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle hung , past tense, past participle hanged",
+          "scope": "language note 明確限定 hanged 於 sense 5；已讀 sense 5，該義為用絞索致死。其餘一般義主表使用 hung。",
+          "location": "Word forms、language note 及 sense 5"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "hanged 是絞死義的限定形式，不是 hung 的自由替代。原字卡 hang out 為下課後閒晃，不應使用 hanged out。",
+      "variantAssessment": "按已讀 Collins 學習詞典保留 hung／hanged 的義項區分；不把形式混列成通用答案。",
+      "existingContextLimitations": [
+        "輸入摘要與本次已發布字卡落在常見義；仍不能由一張例句推定整詞全義範圍。pending 是產品呈現邊界，不是缺少常見三態證據。"
+      ],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": "詞形已查證，但同詞頭有需按義區分的形式。現行整詞 verbForms／顯示沒有可見義項限定，sourceRef/status 又不顯示。保留 key absent；須先核對完整義項呈現範圍或加入可見分義，再決定是否採用限定候選。不得用括號改 base 來迴避。",
+      "futureCandidatesAfterDisambiguation": [
+        {
+          "base": "hang",
+          "past": "hung",
+          "pastParticiple": "hung",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/hang",
+          "requiredVisibleQualification": "僅懸掛、閒晃等非絞死義。"
+        },
+        {
+          "base": "hang",
+          "past": "hanged",
+          "pastParticiple": "hanged",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/hang",
+          "requiredVisibleQualification": "僅用絞索致死義。"
+        }
+      ]
+    },
+    {
+      "wordId": "W000912",
+      "word": "towel",
+      "units": [
+        "LV1-U25"
+      ],
+      "cardIds": [
+        "LV1-U25-26"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：以毛巾擦拭、擦乾。",
+      "sourceSupportedForms": {
+        "base": "towel",
+        "past": [
+          "toweled",
+          "towelled"
+        ],
+        "pastParticiple": [
+          "toweled",
+          "towelled"
+        ],
+        "regionalParadigms": [
+          {
+            "region": "American spelling",
+            "past": "toweled",
+            "pastParticiple": "toweled"
+          },
+          {
+            "region": "British spelling",
+            "past": "towelled",
+            "pastParticiple": "towelled"
+          }
+        ]
+      },
+      "after": {
+        "base": "towel",
+        "past": "toweled",
+        "pastParticiple": "toweled"
+      },
+      "proposedVerbForms": {
+        "base": "towel",
+        "past": "toweled",
+        "pastParticiple": "toweled",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/towel"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/towel",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle towelled regional note:   in AM, use toweling, toweled",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "Collins regional note 指明美式 toweled，主表使用 towelled。兩者是區域拼字差異；候選採一套美式拼字 toweled，不將兩套拼字無限定拼接。這不是已核准的全專案英美風格決定。",
+      "existingContextLimitations": [
+        "既有 usagePattern 中的泛用 to V 構式未由三態證據驗證，不在本案擴改。"
+      ],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000521",
+      "word": "mark",
+      "units": [
+        "LV1-U25"
+      ],
+      "cardIds": [
+        "LV1-U25-27"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：作記號、評分。",
+      "sourceSupportedForms": {
+        "base": "mark",
+        "past": [
+          "marked"
+        ],
+        "pastParticiple": [
+          "marked"
+        ]
+      },
+      "after": {
+        "base": "mark",
+        "past": "marked",
+        "pastParticiple": "marked"
+      },
+      "proposedVerbForms": {
+        "base": "mark",
+        "past": "marked",
+        "pastParticiple": "marked",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/mark"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/mark",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle marked",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000290",
+      "word": "fail",
+      "units": [
+        "LV1-U25"
+      ],
+      "cardIds": [
+        "LV1-U25-29"
+      ],
+      "sourceSnapshotPos": "v./n.",
+      "sourceSnapshotPosAll": [
+        "v.",
+        "n."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：失敗、未能做到。",
+      "sourceSupportedForms": {
+        "base": "fail",
+        "past": [
+          "failed"
+        ],
+        "pastParticiple": [
+          "failed"
+        ]
+      },
+      "after": {
+        "base": "fail",
+        "past": "failed",
+        "pastParticiple": "failed"
+      },
+      "proposedVerbForms": {
+        "base": "fail",
+        "past": "failed",
+        "pastParticiple": "failed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/fail"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/fail",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle failed",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000178",
+      "word": "club",
+      "units": [
+        "LV1-U25"
+      ],
+      "cardIds": [
+        "LV1-U25-30"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：棒打或合力／合資；不是社團名詞的變化。",
+      "sourceSupportedForms": {
+        "base": "club",
+        "past": [
+          "clubbed"
+        ],
+        "pastParticiple": [
+          "clubbed"
+        ]
+      },
+      "after": {
+        "base": "club",
+        "past": "clubbed",
+        "pastParticiple": "clubbed"
+      },
+      "proposedVerbForms": {
+        "base": "club",
+        "past": "clubbed",
+        "pastParticiple": "clubbed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/club"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/club",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle clubbed",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [
+        "英文摘要只列社團與棍棒名詞，未列動詞義。",
+        "三態來源已查證不代表原詞義摘要已修正；本案不改詞義、詞性、例句或字卡圖片。"
+      ],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000944",
+      "word": "wake",
+      "units": [
+        "LV1-U25"
+      ],
+      "cardIds": [
+        "LV1-U25-31"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "pending",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "pending_schema_disambiguation",
+      "applicableSense": "醒來／喚醒義一般可用 woke → woken；另有 waked 變體及守靈義的限定詞形。",
+      "sourceSupportedForms": {
+        "base": "wake",
+        "senseParadigms": [
+          {
+            "sense": "醒來、喚醒或喚起",
+            "past": [
+              "woke",
+              "waked"
+            ],
+            "pastParticiple": [
+              "woken",
+              "waked",
+              "woke"
+            ],
+            "preferredMinimal": {
+              "past": "woke",
+              "pastParticiple": "woken"
+            }
+          },
+          {
+            "sense": "守靈、守夜；chiefly dialectal",
+            "past": [
+              "waked"
+            ],
+            "pastParticiple": [
+              "waked"
+            ]
+          }
+        ]
+      },
+      "after": null,
+      "proposedVerbForms": null,
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/wake",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense woke , past participle woken",
+          "scope": "COBUILD Word forms 明示 woke／woken；language note 說美式過去式也用 waked。",
+          "location": "Word forms 及 language note"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Webster’s New World College Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/wake",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "pt.; pp. waked chiefly dialectal",
+          "scope": "Webster’s New World 的義項 5 與 8，守靈／守夜義，明示過去式與過去分詞 waked 並標 chiefly dialectal。",
+          "location": "wake in American English 1, senses 5 and 8"
+        },
+        {
+          "publisher": "Merriam-Webster",
+          "work": "Merriam-Webster.com Dictionary",
+          "url": "https://www.merriam-webster.com/dictionary/wake",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "or waked also woke",
+          "scope": "動詞屈折欄也列過去式 waked，及過去分詞 waked、woke；未把它們全部標成守靈專用。",
+          "location": "verb 詞頭屈折欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "waked 不是只用於守靈：一般醒來義也有詞典證據。反之，Webster’s New World 對守靈義明定 waked，不能宣稱 woke／woken 適用所有義項。",
+      "variantAssessment": "保留 Collins 主表與美式詳表、Merriam-Webster 的不同覆蓋範圍；一般義可有最小 woke／woken 候選，但整詞無分義顯示先 pending。",
+      "existingContextLimitations": [
+        "輸入摘要與本次已發布字卡落在常見義；仍不能由一張例句推定整詞全義範圍。pending 是產品呈現邊界，不是缺少常見三態證據。"
+      ],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": "詞形已查證，但同詞頭有需按義區分的形式。現行整詞 verbForms／顯示沒有可見義項限定，sourceRef/status 又不顯示。保留 key absent；須先核對完整義項呈現範圍或加入可見分義，再決定是否採用限定候選。不得用括號改 base 來迴避。",
+      "futureCandidatesAfterDisambiguation": [
+        {
+          "base": "wake",
+          "past": "woke",
+          "pastParticiple": "woken",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/wake",
+          "requiredVisibleQualification": "僅醒來、喚醒或一般喚起義；排除守靈／守夜義。"
+        }
+      ]
+    },
+    {
+      "wordId": "W002053",
+      "word": "awake",
+      "units": [
+        "LV1-U25"
+      ],
+      "cardIds": [
+        "LV1-U25-32"
+      ],
+      "sourceSnapshotPos": "adj./v.",
+      "sourceSnapshotPosAll": [
+        "adj.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：醒來／喚醒、意識到；stay/wide awake 中的 awake 是形容詞。",
+      "sourceSupportedForms": {
+        "base": "awake",
+        "past": [
+          "awoke",
+          "awaked"
+        ],
+        "pastParticiple": [
+          "awoken",
+          "awaked",
+          "awoke"
+        ]
+      },
+      "after": {
+        "base": "awake",
+        "past": "awoke",
+        "pastParticiple": "awoken"
+      },
+      "proposedVerbForms": {
+        "base": "awake",
+        "past": "awoke",
+        "pastParticiple": "awoken",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/awake"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/awake",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense awoke , past participle awoken",
+          "scope": "Word forms 直接明列 awoke、awoken；同頁動詞義標 literary。",
+          "location": "Word forms 欄"
+        },
+        {
+          "publisher": "Merriam-Webster",
+          "work": "Merriam-Webster.com Dictionary",
+          "url": "https://www.merriam-webster.com/dictionary/awake",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "also awaked or awoke",
+          "scope": "屈折欄保留 awaked／awoke 的過去分詞變體；Did you know 的用法說明把 awoke 及 was awoken 例式標作目前最常見，並明確區分 awake 與 awaken。",
+          "location": "verb 詞頭屈折欄及 The Past Tense Forms of Awake and Awaken"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "本字卡例句 stay awake 是形容詞，不能改作 stay awoken；動詞 awake 的形式與形容詞用法須分清。Collins 將醒來的動詞用法標作 literary，不能據此把整張字卡的形容詞也標作 literary。",
+      "variantAssessment": "Collins 主表列 awoke／awoken；英美詳表及 Merriam-Webster 另有 awaked，Merriam-Webster 也列過去分詞 awoke。其 Did you know 說明 awoke／awoken 是現今最常見組合，故採此最小候選；其他形式保留於研究註記，不當作同等推薦。awaken 是另一個動詞，awakened 不能移入 awake 的三態。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000221",
+      "word": "define",
+      "units": [
+        "LV1-U25"
+      ],
+      "cardIds": [
+        "LV1-U25-33"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：定義、界定。",
+      "sourceSupportedForms": {
+        "base": "define",
+        "past": [
+          "defined"
+        ],
+        "pastParticiple": [
+          "defined"
+        ]
+      },
+      "after": {
+        "base": "define",
+        "past": "defined",
+        "pastParticiple": "defined"
+      },
+      "proposedVerbForms": {
+        "base": "define",
+        "past": "defined",
+        "pastParticiple": "defined",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/define"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/define",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle defined",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000282",
+      "word": "expect",
+      "units": [
+        "LV1-U25"
+      ],
+      "cardIds": [
+        "LV1-U25-35"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：預期、期待。",
+      "sourceSupportedForms": {
+        "base": "expect",
+        "past": [
+          "expected"
+        ],
+        "pastParticiple": [
+          "expected"
+        ]
+      },
+      "after": {
+        "base": "expect",
+        "past": "expected",
+        "pastParticiple": "expected"
+      },
+      "proposedVerbForms": {
+        "base": "expect",
+        "past": "expected",
+        "pastParticiple": "expected",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/expect"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/expect",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle expected",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000647",
+      "word": "pin",
+      "units": [
+        "LV1-U25"
+      ],
+      "cardIds": [
+        "LV1-U25-40"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：以別針固定、壓住或置頂。",
+      "sourceSupportedForms": {
+        "base": "pin",
+        "past": [
+          "pinned"
+        ],
+        "pastParticiple": [
+          "pinned"
+        ]
+      },
+      "after": {
+        "base": "pin",
+        "past": "pinned",
+        "pastParticiple": "pinned"
+      },
+      "proposedVerbForms": {
+        "base": "pin",
+        "past": "pinned",
+        "pastParticiple": "pinned",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/pin"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/pin",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle pinned",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [
+        "英文摘要只列飾品與腿的名詞義，未列固定動詞義。",
+        "三態來源已查證不代表原詞義摘要已修正；本案不改詞義、詞性、例句或字卡圖片。"
+      ],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000708",
+      "word": "repeat",
+      "units": [
+        "LV1-U25"
+      ],
+      "cardIds": [
+        "LV1-U25-41"
+      ],
+      "sourceSnapshotPos": "v.",
+      "sourceSnapshotPosAll": [
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：重複。",
+      "sourceSupportedForms": {
+        "base": "repeat",
+        "past": [
+          "repeated"
+        ],
+        "pastParticiple": [
+          "repeated"
+        ]
+      },
+      "after": {
+        "base": "repeat",
+        "past": "repeated",
+        "pastParticiple": "repeated"
+      },
+      "proposedVerbForms": {
+        "base": "repeat",
+        "past": "repeated",
+        "pastParticiple": "repeated",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/repeat"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/repeat",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle repeated",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000245",
+      "word": "drop",
+      "units": [
+        "LV1-U25"
+      ],
+      "cardIds": [
+        "LV1-U25-42"
+      ],
+      "sourceSnapshotPos": "v./n.",
+      "sourceSnapshotPosAll": [
+        "v.",
+        "n."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：落下、使落下或下降。",
+      "sourceSupportedForms": {
+        "base": "drop",
+        "past": [
+          "dropped"
+        ],
+        "pastParticiple": [
+          "dropped"
+        ]
+      },
+      "after": {
+        "base": "drop",
+        "past": "dropped",
+        "pastParticiple": "dropped"
+      },
+      "proposedVerbForms": {
+        "base": "drop",
+        "past": "dropped",
+        "pastParticiple": "dropped",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/drop"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/drop",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle dropped",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000051",
+      "word": "attack",
+      "units": [
+        "LV1-U25"
+      ],
+      "cardIds": [
+        "LV1-U25-43"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：攻擊。",
+      "sourceSupportedForms": {
+        "base": "attack",
+        "past": [
+          "attacked"
+        ],
+        "pastParticiple": [
+          "attacked"
+        ]
+      },
+      "after": {
+        "base": "attack",
+        "past": "attacked",
+        "pastParticiple": "attacked"
+      },
+      "proposedVerbForms": {
+        "base": "attack",
+        "past": "attacked",
+        "pastParticiple": "attacked",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/attack"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/attack",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle attacked",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000777",
+      "word": "sign",
+      "units": [
+        "LV1-U25"
+      ],
+      "cardIds": [
+        "LV1-U25-44"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：簽名、簽署或示意。",
+      "sourceSupportedForms": {
+        "base": "sign",
+        "past": [
+          "signed"
+        ],
+        "pastParticiple": [
+          "signed"
+        ]
+      },
+      "after": {
+        "base": "sign",
+        "past": "signed",
+        "pastParticiple": "signed"
+      },
+      "proposedVerbForms": {
+        "base": "sign",
+        "past": "signed",
+        "pastParticiple": "signed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/sign"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/sign",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle signed",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000096",
+      "word": "blind",
+      "units": [
+        "LV1-U25"
+      ],
+      "cardIds": [
+        "LV1-U25-48"
+      ],
+      "sourceSnapshotPos": "adj./v.",
+      "sourceSnapshotPosAll": [
+        "adj.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：使失明、使看不見或使無法察覺。",
+      "sourceSupportedForms": {
+        "base": "blind",
+        "past": [
+          "blinded"
+        ],
+        "pastParticiple": [
+          "blinded"
+        ]
+      },
+      "after": {
+        "base": "blind",
+        "past": "blinded",
+        "pastParticiple": "blinded"
+      },
+      "proposedVerbForms": {
+        "base": "blind",
+        "past": "blinded",
+        "pastParticiple": "blinded",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/blind"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/blind",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle blinded",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [
+        "英文摘要只列形容詞及百葉窗名詞，未列動詞義。",
+        "三態來源已查證不代表原詞義摘要已修正；本案不改詞義、詞性、例句或字卡圖片。"
+      ],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000649",
+      "word": "pipe",
+      "units": [
+        "LV1-U25"
+      ],
+      "cardIds": [
+        "LV1-U25-52"
+      ],
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源 verbForms key 不存在，不是 null。若將來實作後復原，須刪除屬性。",
+      "decision": "candidate",
+      "lexicalEvidenceStatus": "verified",
+      "researchStatus": "verified_candidate",
+      "applicableSense": "動詞：用管輸送或吹奏／發出尖聲；不是管子／煙斗名詞的變化。",
+      "sourceSupportedForms": {
+        "base": "pipe",
+        "past": [
+          "piped"
+        ],
+        "pastParticiple": [
+          "piped"
+        ]
+      },
+      "after": {
+        "base": "pipe",
+        "past": "piped",
+        "pastParticiple": "piped"
+      },
+      "proposedVerbForms": {
+        "base": "pipe",
+        "past": "piped",
+        "pastParticiple": "piped",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/pipe"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/pipe",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle piped",
+          "scope": "詞典直接明示過去式／過去分詞；base 為頁面詞頭。沒有用拼字規則生成形式。",
+          "location": "Word forms 欄"
+        }
+      ],
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "homographAndVariantRestrictions": "只處理既有動詞詞性；不把同形名詞、形容詞或副詞當成動詞變化。",
+      "variantAssessment": "本次主要詞形欄未列另一套過去式／過去分詞；不聲稱窮盡歷史、方言或所有專業變體。",
+      "existingContextLimitations": [
+        "英文摘要只列煙斗與管子的名詞義，未列動詞義。",
+        "三態來源已查證不代表原詞義摘要已修正；本案不改詞義、詞性、例句或字卡圖片。"
+      ],
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "pendingReason": null
+    }
+  ],
+  "countInterpretation": "77 是去重 wordId 數；choose、pick、select 跨 U22/U23，逐單元計數相加大於 77。本報告不宣稱完成任何完整單元，也不將文獻確認當成產品 approved。",
+  "failedOrSecondaryRetrievals": [
+    {
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/english/traffic_2",
+      "status": "403 Forbidden",
+      "usedAsEvidence": false
+    },
+    {
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/english/catch_1",
+      "status": "403 Forbidden",
+      "usedAsEvidence": false
+    },
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english/hide",
+      "status": "403 Forbidden",
+      "usedAsEvidence": false
+    },
+    {
+      "url": "https://www.collinsdictionary.com/dictionary/awake",
+      "status": "地址缺少 english，無法讀取；其後已成功讀取正確詞條。",
+      "usedAsEvidence": false
+    },
+    {
+      "url": "https://www.collinsdictionary.com/dictionary/english/hided",
+      "status": "無法讀取；hided 只以成功讀取的 hide／Merriam-Webster hided 詞條為證。",
+      "usedAsEvidence": false
+    }
+  ],
+  "pendingEntries": [
+    {
+      "wordId": "W000397",
+      "word": "hide",
+      "reason": "詞形已查證，但同詞頭有需按義區分的形式。現行整詞 verbForms／顯示沒有可見義項限定，sourceRef/status 又不顯示。保留 key absent；須先核對完整義項呈現範圍或加入可見分義，再決定是否採用限定候選。不得用括號改 base 來迴避。"
+    },
+    {
+      "wordId": "W000375",
+      "word": "hang",
+      "reason": "詞形已查證，但同詞頭有需按義區分的形式。現行整詞 verbForms／顯示沒有可見義項限定，sourceRef/status 又不顯示。保留 key absent；須先核對完整義項呈現範圍或加入可見分義，再決定是否採用限定候選。不得用括號改 base 來迴避。"
+    },
+    {
+      "wordId": "W000944",
+      "word": "wake",
+      "reason": "詞形已查證，但同詞頭有需按義區分的形式。現行整詞 verbForms／顯示沒有可見義項限定，sourceRef/status 又不顯示。保留 key absent；須先核對完整義項呈現範圍或加入可見分義，再決定是否採用限定候選。不得用括號改 base 來迴避。"
+    }
+  ]
+}
