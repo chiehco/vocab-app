@@ -1,0 +1,3459 @@
+{
+  "unit": "LV1-U04",
+  "checkpointAt": "2026-11-05T05:19:08.996Z",
+  "branch": "content/unit-audit-20261105",
+  "priorCheckpoint": "a0102dde197b6baabc26a23666736464d05f0f25",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "counts": {
+    "retainedSourceCards": 36,
+    "publishedUnitCardsOpenedAndViewed": 5,
+    "rawPairsPixelChecked": 36,
+    "existingGeneralImagesPixelChecked": 19,
+    "distinctGeneralWordsReopenedAfterChange": 36,
+    "formalExamplesChecked": 198,
+    "clozeFailures": 0,
+    "examplePosFixed": 6,
+    "exampleDraftReviewed": 7,
+    "exampleNeedsCheckReviewed": 5,
+    "senseNeedsCheckReviewed": 9,
+    "senseDraftReviewed": 1,
+    "wordNeedsCheckReviewed": 1,
+    "wordDefinitionRepairs": 9,
+    "missingGeneralImagesFilled": 17,
+    "generalPairingsRepaired": 2,
+    "newLocalWebpAssets": 19,
+    "remainingMissingGeneralImages": 0,
+    "unpublishedUnitPairsStillUnpublished": 31
+  },
+  "cards": [
+    {
+      "id": "LV1-U04-01",
+      "word": "aunt",
+      "officialWordId": "W000052",
+      "sourceOfficialWordId": "W000052",
+      "sourceImage": "source-art/LV1\\Unit_04\\01_W000052_aunt.png",
+      "sourceImageSha256": "930c414d7f362dc295c968d0d5e5c4cf6d55a639434f9d9d17c41cfb99045c16",
+      "captionEn": "My aunt brought fresh fruit when she visited us on Sunday.",
+      "captionZh": "阿姨星期天來看我們時帶了新鮮水果。",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "成人女性角色登門帶水果，孩子迎接；星期日與親屬身分為句子提供。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/01-04.png",
+      "generalCardRepair": true,
+      "repairReason": "actual general card displayed missing-image placeholder",
+      "generalBeforeImagePaths": [],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-01-general-hero-before-art.png",
+      "generalCardIntegration": "local_integrated_and_reopened",
+      "sourceUnitPublished": false,
+      "draftUnitPublication": "unchanged",
+      "localAsset": "public/wordbeast/audited-20261105/LV1-U04-01-930c414d7f36.webp",
+      "publishedImageSha256": "5cefc2b43a154de7b614737827a5c4675632058e8eb02afc7d4d00ef4cdead9c",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "reopenedEvidence": "output/playwright/unit-audit/u04-general-final-ui.txt",
+      "publishedUnitAfter": null,
+      "generalAfter": {
+        "id": "LV1-U04-01",
+        "word": "aunt",
+        "url": "http://127.0.0.1:5179/#/word/W000052",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-01-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-01-general-hero.png",
+        "hero": "← 單字總表\nW000052\nLV1\n字卡\n字義\n相關詞\n搭配\n\nn.\n\naunt\n🔊\n\n字義 · n.\n阿姨；姨媽；舅媽；姑媽\n\n圖說\n\nMy aunt brought fresh fruit when she visited us on Sunday.\n\n阿姨星期天來看我們時帶了新鮮水果。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\nLV1\n\n單字總表 · W000052",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/audited-20261105/LV1-U04-01-930c414d7f36.webp?v=local",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "exampleCount": 1,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "Marnie's aunt owns a small restaurant.",
+            "zh": "瑪妮的阿姨擁有一間小餐館。",
+            "label": [
+              "例句",
+              "原標籤：n. · 阿姨；姨媽；舅媽；姑媽"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "draft"
+    },
+    {
+      "id": "LV1-U04-02",
+      "word": "come",
+      "officialWordId": "W000184",
+      "sourceOfficialWordId": "W000184",
+      "sourceImage": "source-art/LV1\\Unit_04\\02_W000184_come.png",
+      "sourceImageSha256": "9f86eab43316a28f4992bf4447851f2af2b7cbf5933d10d6f54723b53a1b0456",
+      "captionEn": "She comes from a small town in the countryside.",
+      "captionZh": "她來自鄉下的一個小鎮。",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "角色背包從鄉間小鎮方向走來，支持來自鄉間小鎮。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/01-04.png",
+      "generalCardRepair": false,
+      "repairReason": "existing exact image/caption retained",
+      "generalBeforeImagePaths": [
+        "http://127.0.0.1:5179/wordbeast/a/W000184.webp?v=local"
+      ],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-02-general-hero-before-art.png",
+      "generalCardIntegration": "not_changed",
+      "sourceUnitPublished": false,
+      "draftUnitPublication": "unchanged",
+      "publishedUnitAfter": null,
+      "generalAfter": {
+        "id": "LV1-U04-02",
+        "word": "come",
+        "url": "http://127.0.0.1:5179/#/word/W000184",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-02-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-02-general-hero.png",
+        "hero": "← 單字總表\nW000184\nLV1\n字卡\n字義\n搭配\n\nv.\n\n考頻\n★★★★☆\ncome\n🔊\nv.\n來；到來\n\n字義 · v.\n過來；來；到達；出現\n\n動詞三態尚未收錄。\n\n圖說\n\nA friend is coming toward Doudou.\n\n朋友正朝牠走過來。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\n★★★★☆・LV1\n\n單字總表 · W000184",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/a/W000184.webp?v=local",
+            "complete": true,
+            "width": 1024,
+            "height": 1024
+          }
+        ],
+        "exampleCount": 9,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "She comes from a small town in the countryside.",
+            "zh": "她來自鄉下的一個小鎮。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "Terry's friend came with him to his home after school.",
+            "zh": "放學後，泰瑞的朋友和他一起到家裡來。",
+            "label": [
+              "例句",
+              "原標籤：v. · 過來；來；到達；出現"
+            ]
+          },
+          {
+            "en": "After years of hard work, her dream finally came true.",
+            "zh": "經過多年的努力，她的夢想終於實現了。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "Veronica came to discuss the project with us.",
+            "zh": "薇洛妮卡過來和我們討論這項企畫。",
+            "label": [
+              "例句",
+              "原標籤：v. · 過來；來；到達；出現"
+            ]
+          },
+          {
+            "en": "Aria came to the party and brought some cake.",
+            "zh": "艾瑞亞來參加派對，也帶了些蛋糕。",
+            "label": [
+              "例句",
+              "原標籤：v. · 過來；來；到達；出現"
+            ]
+          },
+          {
+            "en": "Harold came up with a good idea for his school essay.",
+            "zh": "哈洛德想出一個好點子來寫學校的作文。",
+            "label": [
+              "例句",
+              "原標籤：v. · 過來；來；到達；出現"
+            ]
+          },
+          {
+            "en": "Monica came across a pretty dress while she was shopping.",
+            "zh": "莫妮卡逛街時偶然發現一件漂亮的洋裝。",
+            "label": [
+              "例句",
+              "原標籤：v. · 過來；來；到達；出現"
+            ]
+          },
+          {
+            "en": "Helen comes from a small town in the south of France.",
+            "zh": "海倫來自南法的一個小鎮。",
+            "label": [
+              "例句",
+              "原標籤：v. · 過來；來；到達；出現"
+            ]
+          },
+          {
+            "en": "Dennis liked the restaurant so much that he came back many times.",
+            "zh": "丹尼斯很喜歡這間餐廳，所以他再訪好幾次了。",
+            "label": [
+              "例句",
+              "原標籤：v. · 過來；來；到達；出現"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "reviewed"
+    },
+    {
+      "id": "LV1-U04-03",
+      "word": "television",
+      "officialWordId": "W000863",
+      "sourceOfficialWordId": "NOID",
+      "sourceImage": "source-art/LV1\\Unit_04\\03_NOID_television.png",
+      "sourceImageSha256": "2c1b4c408f2767232faeffe42acac93faa9f24bd8c39a122fc72237c8b016142",
+      "captionEn": "We are watching a nature program on television.",
+      "captionZh": "我們正在電視上看一個自然節目。",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "兩角色看電視鳥類自然節目。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/01-04.png",
+      "generalCardRepair": false,
+      "repairReason": "existing exact image/caption retained",
+      "generalBeforeImagePaths": [
+        "http://127.0.0.1:5179/wordbeast/lv1-reviewed/LV1-U04-03-2c1b4c408f27.webp?v=local"
+      ],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-03-general-hero-before-art.png",
+      "generalCardIntegration": "not_changed",
+      "sourceUnitPublished": true,
+      "draftUnitPublication": "unchanged",
+      "publishedUnitAfter": {
+        "id": "LV1-U04-03",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-03.png",
+        "url": "http://127.0.0.1:5179/#/textbook/LV1/4/cards?item=LV1-U04-03",
+        "text": "← 課本單元\n首頁\n\nLV1 Unit 04 · 1／5 張\n\ntelevision\n🔊\n已收錄字義\n\n字義 · n.\n電視；電視機\n\n圖說\n\nWe are watching a nature program on television.\n\n我們正在電視上看一個自然節目。\n\n上一張\n下一張 →\n更多詞義與搭配",
+        "images": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/lv1-reviewed/LV1-U04-03-2c1b4c408f27.webp",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ]
+      },
+      "generalAfter": {
+        "id": "LV1-U04-03",
+        "word": "television/tv",
+        "url": "http://127.0.0.1:5179/#/word/W000863",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-03-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-03-general-hero.png",
+        "hero": "← 單字總表\nW000863\nLV1\n字卡\n字義\n相關詞\n搭配\n記憶法\n\nn.\n\n考頻\n★★★☆☆\ntelevision/tv\n🔊\n\n字義 · n.\n電視；電視機\n\n可解構\n\n查看 LV1 已審閱圖句（1 組）\n\n圖說\n\nWe are watching a nature program on television.\n\n我們正在電視上看一個自然節目。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\n★★★☆☆・LV1\n\n單字總表 · W000863",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/lv1-reviewed/LV1-U04-03-2c1b4c408f27.webp?v=local",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "exampleCount": 5,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "Susan turned off the television and went to bed.",
+            "zh": "蘇珊關掉電視去睡覺。",
+            "label": [
+              "例句",
+              "原標籤：n. · 電視；轉移向量"
+            ]
+          },
+          {
+            "en": "Shelley is waiting for her favorite television program to start.",
+            "zh": "雪莉在等她最喜歡的電視節目開播。",
+            "label": [
+              "例句",
+              "原標籤：n. · 電視；轉移向量"
+            ]
+          },
+          {
+            "en": "Raymond likes to watch television on the weekends.",
+            "zh": "雷蒙德週末時喜歡看電視。",
+            "label": [
+              "例句",
+              "原標籤：n. · 電視；轉移向量"
+            ]
+          },
+          {
+            "en": "My father turned off the TV and told us to go to bed.",
+            "zh": "我爸爸關掉電視，叫我們去睡覺。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "Many families in Taiwan like to watch the news on television every evening.",
+            "zh": "台灣許多家庭喜歡每天傍晚看電視新聞。",
+            "label": [
+              "例句"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "reviewed"
+    },
+    {
+      "id": "LV1-U04-04",
+      "word": "food",
+      "officialWordId": "W000320",
+      "sourceOfficialWordId": "W000320",
+      "sourceImage": "source-art/LV1\\Unit_04\\04_W000320_food.png",
+      "sourceImageSha256": "1d0f6a4a57187d24728fab13acca6bf357dc3ab5b5bbd2b663ccc7fec8635edb",
+      "captionEn": "The night market is famous for its cheap and tasty food.",
+      "captionZh": "夜市以便宜又好吃的食物聞名。",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "夜市食物攤、吃麵與包子烤串，核心食物情境相符。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/01-04.png",
+      "generalCardRepair": false,
+      "repairReason": "existing exact image/caption retained",
+      "generalBeforeImagePaths": [
+        "http://127.0.0.1:5179/wordbeast/a/W000320.webp?v=local"
+      ],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-04-general-hero-before-art.png",
+      "generalCardIntegration": "not_changed",
+      "sourceUnitPublished": false,
+      "draftUnitPublication": "unchanged",
+      "publishedUnitAfter": null,
+      "generalAfter": {
+        "id": "LV1-U04-04",
+        "word": "food",
+        "url": "http://127.0.0.1:5179/#/word/W000320",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-04-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-04-general-hero.png",
+        "hero": "← 單字總表\nW000320\nLV1\n字卡\n字義\n搭配\n記憶法\n\nn.\n\n考頻\n★★★★☆\nfood\n🔊\nn.\n食物（不可數）\nphr.\nfast food 速食\nphr.\nfood for thought 引人深思的事\n\n字義 · n.\n食物；養料；食品\n\n多義 ×3\n圖說\n\nThere are different kinds of food on the table.\n\n桌上有各種食物。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\n★★★★☆・LV1\n\n單字總表 · W000320",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/a/W000320.webp?v=local",
+            "complete": true,
+            "width": 1024,
+            "height": 1024
+          }
+        ],
+        "exampleCount": 6,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "The comments from Ron's teacher were food for thought.",
+            "zh": "榮恩的老師給他的評語啟發他思考。",
+            "label": [
+              "例句",
+              "原標籤：n. · 食物；養料；食品"
+            ]
+          },
+          {
+            "en": "Jerry eats a lot of food, but he is still slim.",
+            "zh": "傑瑞吃一大堆食物，但他還是很瘦。",
+            "label": [
+              "例句",
+              "原標籤：n. · 食物；養料；食品"
+            ]
+          },
+          {
+            "en": "The night market is famous for its cheap and tasty food.",
+            "zh": "夜市以便宜又好吃的食物聞名。",
+            "label": [
+              "例句",
+              "原標籤：n. · 食物"
+            ]
+          },
+          {
+            "en": "Fast food is popular among teenagers, but it is not good for their health.",
+            "zh": "速食在青少年間很受歡迎，但對他們的健康不好。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "Olive thinks that it's fine to eat fast food sometimes.",
+            "zh": "奧莉芙覺得偶爾吃速食是沒問題的。",
+            "label": [
+              "例句",
+              "原標籤：n. · 食物；養料；食品"
+            ]
+          },
+          {
+            "en": "We ordered some food from our favorite restaurant for dinner tonight.",
+            "zh": "我們今晚從我們最喜歡的餐廳點了一些食物當晚餐。",
+            "label": [
+              "例句"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "reviewed"
+    },
+    {
+      "id": "LV1-U04-05",
+      "word": "o'clock",
+      "officialWordId": "W000598",
+      "sourceOfficialWordId": "W000598",
+      "sourceImage": "source-art/LV1\\Unit_04\\05_W000598_o'clock.png",
+      "sourceImageSha256": "df57ef322366cba856adf83598494e8c8d781106db39c17864584de85dcd5d4c",
+      "captionEn": "The bakery opens at seven o'clock every morning.",
+      "captionZh": "這家麵包店每天早上七點開門。",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "晨光下麵包店開門，鐘短針七、長針十二，七點清楚。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/05-08.png",
+      "generalCardRepair": true,
+      "repairReason": "actual general card displayed missing-image placeholder",
+      "generalBeforeImagePaths": [],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-05-general-hero-before-art.png",
+      "generalCardIntegration": "local_integrated_and_reopened",
+      "sourceUnitPublished": false,
+      "draftUnitPublication": "unchanged",
+      "localAsset": "public/wordbeast/audited-20261105/LV1-U04-05-df57ef322366.webp",
+      "publishedImageSha256": "2a8f7414b8b81326648d85033a60c920c8b831e70eb19fc3c08960255755ccf8",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "reopenedEvidence": "output/playwright/unit-audit/u04-general-final-ui.txt",
+      "publishedUnitAfter": null,
+      "generalAfter": {
+        "id": "LV1-U04-05",
+        "word": "o’clock",
+        "url": "http://127.0.0.1:5179/#/word/W000598",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-05-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-05-general-hero.png",
+        "hero": "← 單字總表\nW000598\nLV1\n字卡\n字義\n搭配\n\nadv.\n\no’clock\n🔊\n\n字義 · adv.\n……點鐘\n\n圖說\n\nThe bakery opens at seven o'clock every morning.\n\n這家麵包店每天早上七點開門。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\nLV1\n\n單字總表 · W000598",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/audited-20261105/LV1-U04-05-df57ef322366.webp?v=local",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "exampleCount": 1,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "At six o'clock, Peter finished his job and went home.",
+            "zh": "彼得在 6 點時做完工作回家。",
+            "label": [
+              "例句",
+              "原標籤：adv. · ……點鐘"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "draft"
+    },
+    {
+      "id": "LV1-U04-06",
+      "word": "clock",
+      "officialWordId": "W000174",
+      "sourceOfficialWordId": "W000174",
+      "sourceImage": "source-art/LV1\\Unit_04\\06_W000174_clock.png",
+      "sourceImageSha256": "a36a72fde6675829ffce9f741523886d0c8de36cc118013b572b6eef6be0c170",
+      "captionEn": "He is hanging a large clock on the classroom wall.",
+      "captionZh": "他正在把一個大時鐘掛到教室牆上。",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "教室站凳掛大鐘，動作與場景清楚。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/05-08.png",
+      "generalCardRepair": false,
+      "repairReason": "existing exact image/caption retained",
+      "generalBeforeImagePaths": [
+        "http://127.0.0.1:5179/wordbeast/lv1-reviewed/LV1-U04-06-a36a72fde667.webp?v=local"
+      ],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-06-general-hero-before-art.png",
+      "generalCardIntegration": "not_changed",
+      "sourceUnitPublished": true,
+      "draftUnitPublication": "unchanged",
+      "publishedUnitAfter": {
+        "id": "LV1-U04-06",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-06.png",
+        "url": "http://127.0.0.1:5179/#/textbook/LV1/4/cards?item=LV1-U04-06",
+        "text": "← 課本單元\n首頁\n\nLV1 Unit 04 · 2／5 張\n\nclock\n🔊\n已收錄字義\n\n字義 · n.\n時鐘；計時器；(襪子上的)繡花邊花；繡花樣\n\n圖說\n\nHe is hanging a large clock on the classroom wall.\n\n他正在把一個大時鐘掛到教室牆上。\n\n上一張\n下一張 →\n更多詞義與搭配",
+        "images": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/lv1-reviewed/LV1-U04-06-a36a72fde667.webp",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ]
+      },
+      "generalAfter": {
+        "id": "LV1-U04-06",
+        "word": "clock",
+        "url": "http://127.0.0.1:5179/#/word/W000174",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-06-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-06-general-hero.png",
+        "hero": "← 單字總表\nW000174\nLV1\n字卡\n字義\n搭配\n\nn.\n\n考頻\n★★☆☆☆\nclock\n🔊\n\n字義 · n.\n時鐘；計時器；(襪子上的)繡花邊花；繡花樣\n\n查看 LV1 已審閱圖句（1 組）\n\n圖說\n\nHe is hanging a large clock on the classroom wall.\n\n他正在把一個大時鐘掛到教室牆上。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\n★★☆☆☆・LV1\n\n單字總表 · W000174",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/lv1-reviewed/LV1-U04-06-a36a72fde667.webp?v=local",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "exampleCount": 4,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "The clock on the wall has been broken for a while.",
+            "zh": "牆上的時鐘壞掉一陣子了。",
+            "label": [
+              "例句",
+              "原標籤：n. · 時鐘；計時器；(襪子上的)繡花邊花；繡花樣"
+            ]
+          },
+          {
+            "en": "The factory operates around the clock to meet the growing demand.",
+            "zh": "這家工廠全天候運作以應付日益成長的需求。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "The convenience store is open around the clock.",
+            "zh": "這間便利商店全天都有營業。",
+            "label": [
+              "例句",
+              "原標籤：n. · 時鐘；計時器；(襪子上的)繡花邊花；繡花樣"
+            ]
+          },
+          {
+            "en": "There is a large clock hanging on the wall of the classroom.",
+            "zh": "教室牆上掛著一個大時鐘。",
+            "label": [
+              "例句"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "reviewed"
+    },
+    {
+      "id": "LV1-U04-07",
+      "word": "hour",
+      "officialWordId": "W000414",
+      "sourceOfficialWordId": "W000414",
+      "sourceImage": "source-art/LV1\\Unit_04\\07_W000414_hour.png",
+      "sourceImageSha256": "2a6a2f81f5e03ef8e6dbf25b71b7bb347f2f32940bc416cb7e0e5f1364078f97",
+      "captionEn": "It takes about two hours to get there by high-speed rail.",
+      "captionZh": "搭高鐵到那裡大約需要兩個小時。",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "高鐵車內時計沙漏與窗外列車，兩小時為原句近似時間，不強求像素證實。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/05-08.png",
+      "generalCardRepair": false,
+      "repairReason": "existing exact image/caption retained",
+      "generalBeforeImagePaths": [
+        "http://127.0.0.1:5179/wordbeast/lv1-reviewed/LV1-U04-07-2a6a2f81f5e0.webp?v=local"
+      ],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-07-general-hero-before-art.png",
+      "generalCardIntegration": "not_changed",
+      "sourceUnitPublished": true,
+      "draftUnitPublication": "unchanged",
+      "publishedUnitAfter": {
+        "id": "LV1-U04-07",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-07.png",
+        "url": "http://127.0.0.1:5179/#/textbook/LV1/4/cards?item=LV1-U04-07",
+        "text": "← 課本單元\n首頁\n\nLV1 Unit 04 · 3／5 張\n\nhour\n🔊\n已收錄字義\nn.\n小時\n\n字義 · n.\n小時；鐘頭；時間；...點鐘\n\n圖說\n\nIt takes about two hours to get there by high-speed rail.\n\n搭高鐵到那裡大約需要兩個小時。\n\n上一張\n下一張 →\n更多詞義與搭配",
+        "images": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/lv1-reviewed/LV1-U04-07-2a6a2f81f5e0.webp",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ]
+      },
+      "generalAfter": {
+        "id": "LV1-U04-07",
+        "word": "hour",
+        "url": "http://127.0.0.1:5179/#/word/W000414",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-07-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-07-general-hero.png",
+        "hero": "← 單字總表\nW000414\nLV1\n字卡\n字義\n搭配\n\nn.\n\n考頻\n★★★★☆\nhour\n🔊\nn.\n小時\n\n字義 · n.\n小時；鐘頭；時間；...點鐘\n\n查看 LV1 已審閱圖句（1 組）\n\n圖說\n\nIt takes about two hours to get there by high-speed rail.\n\n搭高鐵到那裡大約需要兩個小時。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\n★★★★☆・LV1\n\n單字總表 · W000414",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/lv1-reviewed/LV1-U04-07-2a6a2f81f5e0.webp?v=local",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "exampleCount": 3,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "The library's opening hours have changed since last month.",
+            "zh": "圖書館的開放時間自上個月起已經改變。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "Mike and Judy played tennis for two hours.",
+            "zh": "麥克和茱蒂打了 2 小時的網球。",
+            "label": [
+              "例句",
+              "原標籤：n. · 小時；鐘頭；時間；...點鐘"
+            ]
+          },
+          {
+            "en": "It takes about two hours to travel from Taipei to Kaohsiung by high-speed rail.",
+            "zh": "搭高鐵從台北到高雄大約需要兩個小時。",
+            "label": [
+              "例句"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "reviewed"
+    },
+    {
+      "id": "LV1-U04-08",
+      "word": "minute",
+      "officialWordId": "W000543",
+      "sourceOfficialWordId": "W000543",
+      "sourceImage": "source-art/LV1\\Unit_04\\08_W000543_minute.png",
+      "sourceImageSha256": "567c321718fb85f5869e3b8b2b0333a51793e3e5dcab42d560d0f50e039a6684",
+      "captionEn": "Could you give me just a minute to check my schedule?",
+      "captionZh": "你能給我一分鐘的時間讓我查一下行程嗎？",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "角色持日程本、舉一指示意稍等，旁沙漏，查行程一分鐘合理簡化。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/05-08.png",
+      "generalCardRepair": false,
+      "repairReason": "existing exact image/caption retained",
+      "generalBeforeImagePaths": [
+        "http://127.0.0.1:5179/wordbeast/a/W000543.webp?v=local"
+      ],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-08-general-hero-before-art.png",
+      "generalCardIntegration": "not_changed",
+      "sourceUnitPublished": false,
+      "draftUnitPublication": "unchanged",
+      "publishedUnitAfter": null,
+      "generalAfter": {
+        "id": "LV1-U04-08",
+        "word": "minute",
+        "url": "http://127.0.0.1:5179/#/word/W000543",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-08-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-08-general-hero.png",
+        "hero": "← 單字總表\nW000543\nLV1\n字卡\n字義\n相關詞\n搭配\n記憶法\n\nn.\n\n考頻\n★★★★☆\nminute\n🔊\nn.\n分鐘；一會兒\n\n字義 · n.\n分；分鐘；片刻；備忘錄\n\n可解構\n圖說\n\nThe clock's hand has moved forward by just one minute.\n\n時鐘的指針只移動了一分鐘。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\n★★★★☆・LV1\n\n單字總表 · W000543",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/a/W000543.webp?v=local",
+            "complete": true,
+            "width": 1024,
+            "height": 1024
+          }
+        ],
+        "exampleCount": 6,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "After running for 50 minutes, Dianne stopped to take a rest.",
+            "zh": "黛安跑了 50 分鐘後停下來休息。",
+            "label": [
+              "例句",
+              "原標籤：n. · 分；分鐘；片刻；備忘錄"
+            ]
+          },
+          {
+            "en": "Could you give me just a minute to check my schedule?",
+            "zh": "你能給我一分鐘的時間讓我查一下行程嗎？",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "Please wait a few minutes while I finish this report.",
+            "zh": "請等幾分鐘，我把這份報告寫完。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "We don't know who took the minutes of the last meeting.",
+            "zh": "我們不清楚上次做會議紀錄的人是誰。",
+            "label": [
+              "例句",
+              "原標籤：n. · 分；分鐘；片刻；備忘錄"
+            ]
+          },
+          {
+            "en": "Please wait a minute. I'll take your order soon.",
+            "zh": "請稍等一下。我晚點會來幫您點餐。",
+            "label": [
+              "例句",
+              "原標籤：n. · 分；分鐘；片刻；備忘錄"
+            ]
+          },
+          {
+            "en": "Tony said he could only talk to Phil for a minute.",
+            "zh": "東尼說他只能跟菲爾講一下話而已。",
+            "label": [
+              "例句",
+              "原標籤：n. · 分；分鐘；片刻；備忘錄"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "reviewed"
+    },
+    {
+      "id": "LV1-U04-09",
+      "word": "else",
+      "officialWordId": "W000260",
+      "sourceOfficialWordId": "W000260",
+      "sourceImage": "source-art/LV1\\Unit_04\\09_W000260_else.png",
+      "sourceImageSha256": "9487307e7d18a25e16bea455ffdc9c20e3b0e5c0a2a8b2927c1e72d2e100511b",
+      "captionEn": "Is there anything else we should consider before submitting the report?",
+      "captionZh": "在提交報告之前，還有沒有其他我們該考量的事？",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "角色思考並檢查報告及另一張紙，anything else抽象用法可理解。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/09-12.png",
+      "generalCardRepair": true,
+      "repairReason": "existing fruit-choice illustration paired with forgot-meeting/or-else sentence",
+      "generalBeforeImagePaths": [
+        "http://127.0.0.1:5179/wordbeast/lv1/W000260.png?v=local"
+      ],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-09-general-hero-before-art.png",
+      "generalCardIntegration": "local_integrated_and_reopened",
+      "sourceUnitPublished": false,
+      "draftUnitPublication": "unchanged",
+      "localAsset": "public/wordbeast/audited-20261105/LV1-U04-09-9487307e7d18.webp",
+      "publishedImageSha256": "8ecf7e5e4f8b8739eea8e5e8af630e48bb230acb8d3c7b32a8c3cbb4e346198f",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "reopenedEvidence": "output/playwright/unit-audit/u04-general-final-ui.txt",
+      "publishedUnitAfter": null,
+      "generalAfter": {
+        "id": "LV1-U04-09",
+        "word": "else",
+        "url": "http://127.0.0.1:5179/#/word/W000260",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-09-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-09-general-hero.png",
+        "hero": "← 單字總表\nW000260\nLV1\n字卡\n字義\n搭配\n記憶法\n\nadv.\n\n考頻\n★★☆☆☆\nelse\n🔊\n\n字義 · adv.\n別的；其他的；另外；否則\n\n圖說\n\nIs there anything else we should consider before submitting the report?\n\n在提交報告之前，還有沒有其他我們該考量的事？\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\n★★☆☆☆・LV1\n\n單字總表 · W000260",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/audited-20261105/LV1-U04-09-9487307e7d18.webp?v=local",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "exampleCount": 5,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "Is there anything else we should consider before submitting the report?",
+            "zh": "在提交報告之前，還有沒有其他我們該考量的事？",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "Ben either forgot about the meeting or else he is late.",
+            "zh": "班要麼是忘了這場會議，要麼就是他遲到了。",
+            "label": [
+              "例句",
+              "原標籤：adv. · 別的；其他的；另外；否則"
+            ]
+          },
+          {
+            "en": "Lily knew she should study or else she would fail the test.",
+            "zh": "莉莉知道她該讀書，要不然可能會考不及格。",
+            "label": [
+              "例句",
+              "原標籤：adv. · 別的；其他的；另外；否則"
+            ]
+          },
+          {
+            "en": "Let's finish our homework first, or else we won't be able to watch the movie.",
+            "zh": "我們先把功課寫完，否則就沒辦法看電影了。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "Rita said she didn't want anything else to eat.",
+            "zh": "瑞塔說她不想吃其他任何東西。",
+            "label": [
+              "例句",
+              "原標籤：adv. · 別的；其他的；另外；否則"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "reviewed"
+    },
+    {
+      "id": "LV1-U04-10",
+      "word": "nice",
+      "officialWordId": "W000581",
+      "sourceOfficialWordId": "W000581",
+      "sourceImage": "source-art/LV1\\Unit_04\\10_W000581_nice.png",
+      "sourceImageSha256": "926d1639e0a75c8a34a6629de0eb29215408a31382ea964792b064732ba6443b",
+      "captionEn": "My new neighbor gave me a nice basket of oranges.",
+      "captionZh": "我的新鄰居送了我一籃很棒的柳橙。",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "鄰居門口贈一籃柳橙。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/09-12.png",
+      "generalCardRepair": false,
+      "repairReason": "existing exact image/caption retained",
+      "generalBeforeImagePaths": [
+        "http://127.0.0.1:5179/wordbeast/lv1-reviewed/LV1-U04-10-926d1639e0a7.webp?v=local"
+      ],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-10-general-hero-before-art.png",
+      "generalCardIntegration": "not_changed",
+      "sourceUnitPublished": true,
+      "draftUnitPublication": "unchanged",
+      "publishedUnitAfter": {
+        "id": "LV1-U04-10",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-10.png",
+        "url": "http://127.0.0.1:5179/#/textbook/LV1/4/cards?item=LV1-U04-10",
+        "text": "← 課本單元\n首頁\n\nLV1 Unit 04 · 4／5 張\n\nnice\n🔊\n已收錄字義\n\n字義 · adj.\n美好的；和藹的；正派的；做得好的\n\n圖說\n\nMy new neighbor gave me a nice basket of oranges.\n\n我的新鄰居送了我一籃很棒的柳橙。\n\n上一張\n下一張 →\n更多詞義與搭配",
+        "images": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/lv1-reviewed/LV1-U04-10-926d1639e0a7.webp",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ]
+      },
+      "generalAfter": {
+        "id": "LV1-U04-10",
+        "word": "nice",
+        "url": "http://127.0.0.1:5179/#/word/W000581",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-10-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-10-general-hero.png",
+        "hero": "← 單字總表\nW000581\nLV1\n字卡\n字義\n搭配\n\nadj.\n\nnice\n🔊\n\n字義 · adj.\n美好的；和藹的；正派的；做得好的\n\n查看 LV1 已審閱圖句（1 組）\n\n圖說\n\nMy new neighbor gave me a nice basket of oranges.\n\n我的新鄰居送了我一籃很棒的柳橙。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\nLV1\n\n單字總表 · W000581",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/lv1-reviewed/LV1-U04-10-926d1639e0a7.webp?v=local",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "exampleCount": 3,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "The sofa looked nice, so Patty bought it.",
+            "zh": "這張沙發看起來還不錯，所以派蒂買了下來。",
+            "label": [
+              "例句",
+              "原標籤：adj. · 美好的；和藹的；正派的；做得好的"
+            ]
+          },
+          {
+            "en": "Grant had a nice time visiting his friends.",
+            "zh": "葛蘭特拜訪好友度過一段美好的時光。",
+            "label": [
+              "例句",
+              "原標籤：adj. · 美好的；和藹的；正派的；做得好的"
+            ]
+          },
+          {
+            "en": "Freddy is a nice guy, so he has lots of friends.",
+            "zh": "弗萊迪很友善，所以他有很多朋友。",
+            "label": [
+              "例句",
+              "原標籤：adj. · 美好的；和藹的；正派的；做得好的"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "draft"
+    },
+    {
+      "id": "LV1-U04-11",
+      "word": "road",
+      "officialWordId": "W000720",
+      "sourceOfficialWordId": "W000720",
+      "sourceImage": "source-art/LV1\\Unit_04\\11_W000720_road.png",
+      "sourceImageSha256": "0f689562aa6e32eb8b27017ca841d9bab7f8158c407f8e14622553211e027501",
+      "captionEn": "Drivers should slow down when the road is wet after rain.",
+      "captionZh": "下雨後路面濕滑，駕駛人應該減速慢行。",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "濕路水窪上開車，專注謹慎表情，雨後小心駕駛一致。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/09-12.png",
+      "generalCardRepair": true,
+      "repairReason": "actual general card displayed missing-image placeholder",
+      "generalBeforeImagePaths": [],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-11-general-hero-before-art.png",
+      "generalCardIntegration": "local_integrated_and_reopened",
+      "sourceUnitPublished": false,
+      "draftUnitPublication": "unchanged",
+      "localAsset": "public/wordbeast/audited-20261105/LV1-U04-11-0f689562aa6e.webp",
+      "publishedImageSha256": "d86fab3db9817ff5cb96102402f69a71e1a3dcd28aaa4457c8ccebbd7ac4bacc",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "reopenedEvidence": "output/playwright/unit-audit/u04-general-final-ui.txt",
+      "publishedUnitAfter": null,
+      "generalAfter": {
+        "id": "LV1-U04-11",
+        "word": "road",
+        "url": "http://127.0.0.1:5179/#/word/W000720",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-11-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-11-general-hero.png",
+        "hero": "← 單字總表\nW000720\nLV1\n字卡\n字義\n相關詞\n搭配\n\nn.\n\n考頻\n★★★☆☆\nroad\n🔊\n\n字義 · n.\n路；道路；公路；途徑\n\n圖說\n\nDrivers should slow down when the road is wet after rain.\n\n下雨後路面濕滑，駕駛人應該減速慢行。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\n★★★☆☆・LV1\n\n單字總表 · W000720",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/audited-20261105/LV1-U04-11-0f689562aa6e.webp?v=local",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "exampleCount": 5,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "Kirk turned right and drove onto a dirt road.",
+            "zh": "柯克右轉並開上土砂道。",
+            "label": [
+              "例句",
+              "原標籤：n. · 路；道路；公路；途徑"
+            ]
+          },
+          {
+            "en": "The road to success is often full of challenges and failures.",
+            "zh": "通往成功的道路往往充滿挑戰與失敗。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "Drivers should slow down when the road is wet after rain.",
+            "zh": "下雨後路面濕滑，駕駛人應該減速慢行。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "Miranda said it was time to hit the road.",
+            "zh": "米蘭達說是時候出發了。",
+            "label": [
+              "例句",
+              "原標籤：n. · 路；道路；公路；途徑"
+            ]
+          },
+          {
+            "en": "Larry was traveling fast along the road before the accident.",
+            "zh": "車禍前，賴瑞沿路飛快行駛。",
+            "label": [
+              "例句",
+              "原標籤：n. · 路；道路；公路；途徑"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "reviewed"
+    },
+    {
+      "id": "LV1-U04-12",
+      "word": "street",
+      "officialWordId": "W000833",
+      "sourceOfficialWordId": "W000833",
+      "sourceImage": "source-art/LV1\\Unit_04\\12_W000833_street.png",
+      "sourceImageSha256": "29b9cb7360909ec622a61cce734c839d35f2c9fec251b399105923b81e057e24",
+      "captionEn": "It is dangerous to cross the street without looking both ways.",
+      "captionZh": "過馬路時沒有左右查看是很危險的。",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "過街前角色左右看交通，支持危險提示句的安全對照，不要求畫出事故。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/09-12.png",
+      "generalCardRepair": true,
+      "repairReason": "actual general card displayed missing-image placeholder",
+      "generalBeforeImagePaths": [],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-12-general-hero-before-art.png",
+      "generalCardIntegration": "local_integrated_and_reopened",
+      "sourceUnitPublished": false,
+      "draftUnitPublication": "unchanged",
+      "localAsset": "public/wordbeast/audited-20261105/LV1-U04-12-29b9cb736090.webp",
+      "publishedImageSha256": "77dc16fc30f6f23147ac0b3c40168843f847420b6340fa40fd09d00f64d93092",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "reopenedEvidence": "output/playwright/unit-audit/u04-general-final-ui.txt",
+      "publishedUnitAfter": null,
+      "generalAfter": {
+        "id": "LV1-U04-12",
+        "word": "street",
+        "url": "http://127.0.0.1:5179/#/word/W000833",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-12-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-12-general-hero.png",
+        "hero": "← 單字總表\nW000833\nLV1\n字卡\n字義\n相關詞\n搭配\n記憶法\n\nn.\n\n考頻\n★★★☆☆\nstreet\n🔊\n\n字義 · n.\n街道；馬路；街區；街道的\n\n圖說\n\nIt is dangerous to cross the street without looking both ways.\n\n過馬路時沒有左右查看是很危險的。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\n★★★☆☆・LV1\n\n單字總表 · W000833",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/audited-20261105/LV1-U04-12-29b9cb736090.webp?v=local",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "exampleCount": 5,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "It is dangerous to cross the street without looking both ways.",
+            "zh": "過馬路時沒有左右查看是很危險的。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "Ronald lives across the street from a big museum.",
+            "zh": "羅納德住在一間大博物館的對街。",
+            "label": [
+              "例句",
+              "原標籤：n. · 街道；馬路；街區；街道的"
+            ]
+          },
+          {
+            "en": "Bart walked down the street while singing a song.",
+            "zh": "巴特邊唱歌邊走過街道。",
+            "label": [
+              "例句",
+              "原標籤：n. · 街道；馬路；街區；街道的"
+            ]
+          },
+          {
+            "en": "Ellen crossed the street to go to the supermarket.",
+            "zh": "艾倫穿越街道去超市。",
+            "label": [
+              "例句",
+              "原標籤：n. · 街道；馬路；街區；街道的"
+            ]
+          },
+          {
+            "en": "There are many small shops along this street.",
+            "zh": "這條街上有許多小商店。",
+            "label": [
+              "例句"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "reviewed"
+    },
+    {
+      "id": "LV1-U04-13",
+      "word": "computer",
+      "officialWordId": "W000187",
+      "sourceOfficialWordId": "W000187",
+      "sourceImage": "source-art/LV1\\Unit_04\\13_W000187_computer.png",
+      "sourceImageSha256": "d87a490b64edd3d516e2c0b9c6b65ff11d5bae090d1e83d2db57a4696e2ff2f1",
+      "captionEn": "Many students use a computer to do their homework.",
+      "captionZh": "許多學生使用電腦做功課。",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "多名學生在有課本的桌前用電腦。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/13-16.png",
+      "generalCardRepair": true,
+      "repairReason": "actual general card displayed missing-image placeholder",
+      "generalBeforeImagePaths": [],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-13-general-hero-before-art.png",
+      "generalCardIntegration": "local_integrated_and_reopened",
+      "sourceUnitPublished": false,
+      "draftUnitPublication": "unchanged",
+      "localAsset": "public/wordbeast/audited-20261105/LV1-U04-13-d87a490b64ed.webp",
+      "publishedImageSha256": "faa71b6a32ced9b9c44f59669147baae3e73d425eb064e919807774d44d9975c",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "reopenedEvidence": "output/playwright/unit-audit/u04-general-final-ui.txt",
+      "publishedUnitAfter": null,
+      "generalAfter": {
+        "id": "LV1-U04-13",
+        "word": "computer",
+        "url": "http://127.0.0.1:5179/#/word/W000187",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-13-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-13-general-hero.png",
+        "hero": "← 單字總表\nW000187\nLV1\n字卡\n字義\n相關詞\n搭配\n\nn.\n\n考頻\n★★☆☆☆\ncomputer\n🔊\n\n字義 · n.\n電腦；電子電腦\n\n可解構\n圖說\n\nMany students use a computer to do their homework.\n\n許多學生使用電腦做功課。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\n★★☆☆☆・LV1\n\n單字總表 · W000187",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/audited-20261105/LV1-U04-13-d87a490b64ed.webp?v=local",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "exampleCount": 3,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "Many students use a computer to do their homework.",
+            "zh": "許多學生使用電腦做功課。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "The computer in my room is quite old now.",
+            "zh": "我房間裡的電腦現在有點舊了。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "Computers have made life much easier.",
+            "zh": "電腦使生活方便多了。",
+            "label": [
+              "例句",
+              "原標籤：n. · 電腦；電子電腦"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "reviewed"
+    },
+    {
+      "id": "LV1-U04-14",
+      "word": "student",
+      "officialWordId": "W000836",
+      "sourceOfficialWordId": "W000836",
+      "sourceImage": "source-art/LV1\\Unit_04\\14_W000836_student.png",
+      "sourceImageSha256": "8b72df783245c0376375849680605dd2ede072d079293fd13d390a9ccf2d5ba4",
+      "captionEn": "She is a student at a university near her home.",
+      "captionZh": "她是一所離家不遠的大學的學生。",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "攜書背包角色在住宅與校舍旁，支持家附近大學生。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/13-16.png",
+      "generalCardRepair": true,
+      "repairReason": "actual general card displayed missing-image placeholder",
+      "generalBeforeImagePaths": [],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-14-general-hero-before-art.png",
+      "generalCardIntegration": "local_integrated_and_reopened",
+      "sourceUnitPublished": false,
+      "draftUnitPublication": "unchanged",
+      "localAsset": "public/wordbeast/audited-20261105/LV1-U04-14-8b72df783245.webp",
+      "publishedImageSha256": "061cd8006da14e4c4d31fb8daa78c2b46977600e0f321acae721d8b4ccaaf2e4",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "reopenedEvidence": "output/playwright/unit-audit/u04-general-final-ui.txt",
+      "publishedUnitAfter": null,
+      "generalAfter": {
+        "id": "LV1-U04-14",
+        "word": "student",
+        "url": "http://127.0.0.1:5179/#/word/W000836",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-14-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-14-general-hero.png",
+        "hero": "← 單字總表\nW000836\nLV1\n字卡\n字義\n相關詞\n搭配\n\nn.\n\n考頻\n★★★☆☆\nstudent\n🔊\n\n字義 · n.\n學生；研究者；學者\n\n可解構\n圖說\n\nShe is a student at a university near her home.\n\n她是一所離家不遠的大學的學生。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\n★★★☆☆・LV1\n\n單字總表 · W000836",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/audited-20261105/LV1-U04-14-8b72df783245.webp?v=local",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "exampleCount": 3,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "All students should do their homework carefully.",
+            "zh": "所有學生都應仔細做功課。",
+            "label": [
+              "例句",
+              "原標籤：n. · 學生；研究者；學者"
+            ]
+          },
+          {
+            "en": "Every student in the class must hand in the report by Friday.",
+            "zh": "班上每個學生都必須在星期五前交報告。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "She is a student at a university near her home.",
+            "zh": "她是一所離家不遠的大學的學生。",
+            "label": [
+              "例句"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "reviewed"
+    },
+    {
+      "id": "LV1-U04-15",
+      "word": "teacher",
+      "officialWordId": "W000859",
+      "sourceOfficialWordId": "W000859",
+      "sourceImage": "source-art/LV1\\Unit_04\\15_W000859_teacher.png",
+      "sourceImageSha256": "e93c4061395a3f9f23aa986c5a65a9e3471d0bec38f6c7faf9fea1075335962b",
+      "captionEn": "My homeroom teacher always encourages us to ask questions in class.",
+      "captionZh": "我的導師總是鼓勵我們在課堂上發問。",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "教師面向舉手學生，鼓勵提問核心一致。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/13-16.png",
+      "generalCardRepair": true,
+      "repairReason": "actual general card displayed missing-image placeholder",
+      "generalBeforeImagePaths": [],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-15-general-hero-before-art.png",
+      "generalCardIntegration": "local_integrated_and_reopened",
+      "sourceUnitPublished": false,
+      "draftUnitPublication": "unchanged",
+      "localAsset": "public/wordbeast/audited-20261105/LV1-U04-15-e93c4061395a.webp",
+      "publishedImageSha256": "5511bc93e4079abe633f6a2dd729718bdbcc5282d921d135ea613f54ce18145f",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "reopenedEvidence": "output/playwright/unit-audit/u04-general-final-ui.txt",
+      "publishedUnitAfter": null,
+      "generalAfter": {
+        "id": "LV1-U04-15",
+        "word": "teacher",
+        "url": "http://127.0.0.1:5179/#/word/W000859",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-15-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-15-general-hero.png",
+        "hero": "← 單字總表\nW000859\nLV1\n字卡\n字義\n相關詞\n搭配\n\nn.\n\n考頻\n★★★☆☆\nteacher\n🔊\n\n字義 · n.\n教師；老師；導師\n\n可解構\n圖說\n\nMy homeroom teacher always encourages us to ask questions in class.\n\n我的導師總是鼓勵我們在課堂上發問。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\n★★★☆☆・LV1\n\n單字總表 · W000859",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/audited-20261105/LV1-U04-15-e93c4061395a.webp?v=local",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "exampleCount": 3,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "My homeroom teacher always encourages us to ask questions in class.",
+            "zh": "我的導師總是鼓勵我們在課堂上發問。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "Mrs. Simpson works as a math teacher.",
+            "zh": "辛普森女士的工作是一名數學老師。",
+            "label": [
+              "例句",
+              "原標籤：n. · 教師；老師；導師"
+            ]
+          },
+          {
+            "en": "She has wanted to be a teacher since she was a little girl.",
+            "zh": "她從小就想當老師。",
+            "label": [
+              "例句"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "reviewed"
+    },
+    {
+      "id": "LV1-U04-16",
+      "word": "teach",
+      "officialWordId": "W000858",
+      "sourceOfficialWordId": "W000858",
+      "sourceImage": "source-art/LV1\\Unit_04\\16_W000858_teach.png",
+      "sourceImageSha256": "2756458bda2b7065626ddd063d9d713366182096a55a5fefe5443e35256e517c",
+      "captionEn": "My grandmother taught me how to bake cookies last weekend.",
+      "captionZh": "我奶奶上週教我怎麼烤餅乾。",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "戴眼鏡年長女性指導孩子桿餅乾麵團，烘焙教學一致。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/13-16.png",
+      "generalCardRepair": true,
+      "repairReason": "actual general card displayed missing-image placeholder",
+      "generalBeforeImagePaths": [],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-16-general-hero-before-art.png",
+      "generalCardIntegration": "local_integrated_and_reopened",
+      "sourceUnitPublished": false,
+      "draftUnitPublication": "unchanged",
+      "localAsset": "public/wordbeast/audited-20261105/LV1-U04-16-2756458bda2b.webp",
+      "publishedImageSha256": "19121204e2096a5bb682e40ffa866fe45110826078a960d52415d3a67edb33a2",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "reopenedEvidence": "output/playwright/unit-audit/u04-general-final-ui.txt",
+      "publishedUnitAfter": null,
+      "generalAfter": {
+        "id": "LV1-U04-16",
+        "word": "teach",
+        "url": "http://127.0.0.1:5179/#/word/W000858",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-16-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-16-general-hero.png",
+        "hero": "← 單字總表\nW000858\nLV1\n字卡\n字義\n相關詞\n搭配\n\nv.\n\n考頻\n★★☆☆☆\nteach\n🔊\n\n字義 · v.\n教；講授；教導；教育\n\n動詞三態尚未收錄。\n\n圖說\n\nMy grandmother taught me how to bake cookies last weekend.\n\n我奶奶上週教我怎麼烤餅乾。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\n★★☆☆☆・LV1\n\n單字總表 · W000858",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/audited-20261105/LV1-U04-16-2756458bda2b.webp?v=local",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "exampleCount": 5,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "Grant teaches his students about science.",
+            "zh": "葛蘭特教他的學生自然科學。",
+            "label": [
+              "例句",
+              "原標籤：v. · 教；講授；教導；教育"
+            ]
+          },
+          {
+            "en": "Carleen's father taught her how to drive a car.",
+            "zh": "卡琳的爸爸教她如何開車。",
+            "label": [
+              "例句",
+              "原標籤：v. · 教；講授；教導；教育"
+            ]
+          },
+          {
+            "en": "Ms. Lin has taught math at our school since 2010.",
+            "zh": "林老師自2010年起就在我們學校教數學。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "Glenda went to college to learn how to teach.",
+            "zh": "葛蘭達上大學學習如何教書。",
+            "label": [
+              "例句",
+              "原標籤：v. · 教；講授；教導；教育"
+            ]
+          },
+          {
+            "en": "My grandmother taught me how to bake cookies last weekend.",
+            "zh": "我奶奶上週教我怎麼烤餅乾。",
+            "label": [
+              "例句"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "reviewed"
+    },
+    {
+      "id": "LV1-U04-17",
+      "word": "star",
+      "officialWordId": "W000823",
+      "sourceOfficialWordId": "W000823",
+      "sourceImage": "source-art/LV1\\Unit_04\\17_W000823_star.png",
+      "sourceImageSha256": "810d9cc5ab4fe57e4faec5f99b19726206b4ad712f0747db70d57e2b5524916f",
+      "captionEn": "On a clear night, you can see thousands of stars shining in the sky.",
+      "captionZh": "在晴朗的夜晚，你可以看到數千顆星星在天空中閃耀。",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "晴朗夜空繁星及望遠鏡，數千為遠景象徵。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/17-20.png",
+      "generalCardRepair": false,
+      "repairReason": "existing exact image/caption retained",
+      "generalBeforeImagePaths": [
+        "http://127.0.0.1:5179/wordbeast/lv1-reviewed/LV1-U15-91-0a765a927a89.webp?v=local"
+      ],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-17-general-hero-before-art.png",
+      "generalCardIntegration": "not_changed",
+      "sourceUnitPublished": false,
+      "draftUnitPublication": "unchanged",
+      "publishedUnitAfter": null,
+      "generalAfter": {
+        "id": "LV1-U04-17",
+        "word": "star",
+        "url": "http://127.0.0.1:5179/#/word/W000823",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-17-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-17-general-hero.png",
+        "hero": "← 單字總表\nW000823\nLV1\n字卡\n字義\n相關詞\n搭配\n記憶法\n\nn. / v.\n\n考頻\n★★☆☆☆\nstar\n🔊\n\n字義 · n. v.\n星；恆星；星形物；運氣\n\n動詞三態尚未收錄。\n\n查看 LV1 已審閱圖句（1 組）\n\n圖說\n\nThe famous actor is starring in a new movie.\n\n這位知名演員正在主演一部新電影。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\n★★☆☆☆・LV1\n\n單字總表 · W000823",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/lv1-reviewed/LV1-U15-91-0a765a927a89.webp?v=local",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "exampleCount": 7,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "When Reggie looked up, he saw a shooting star.",
+            "zh": "雷吉往上看時，看到一顆流星。",
+            "label": [
+              "例句",
+              "原標籤：n./v. · 星；恆星；星形物；運氣"
+            ]
+          },
+          {
+            "en": "On a clear night, you can see thousands of stars shining in the sky.",
+            "zh": "在晴朗的夜晚，你可以看到數千顆星星在天空中閃耀。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "The TV show stars some famous actors.",
+            "zh": "這檔電視節目由一些知名演員主演。",
+            "label": [
+              "例句",
+              "原標籤：n./v. · 星；恆星；星形物；運氣"
+            ]
+          },
+          {
+            "en": "The famous actor will star in a new movie next year.",
+            "zh": "這位知名演員明年將主演一部新電影。",
+            "label": [
+              "例句",
+              "原標籤：v. · 主演"
+            ]
+          },
+          {
+            "en": "Lady Gaga starred in A Star is Born.",
+            "zh": "女神卡卡主演《一個巨星的誕生》。",
+            "label": [
+              "例句",
+              "原標籤：n./v. · 星；恆星；星形物；運氣"
+            ]
+          },
+          {
+            "en": "Hal's favorite movie star is Lily Collins.",
+            "zh": "海爾最喜歡的影星是莉莉・柯林斯。",
+            "label": [
+              "例句",
+              "原標籤：n./v. · 星；恆星；星形物；運氣"
+            ]
+          },
+          {
+            "en": "The Sun is the closest star to Earth.",
+            "zh": "太陽是距離地球最近的恆星。",
+            "label": [
+              "例句",
+              "原標籤：n./v. · 星；恆星；星形物；運氣"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "reviewed"
+    },
+    {
+      "id": "LV1-U04-18",
+      "word": "hundred",
+      "officialWordId": "W000419",
+      "sourceOfficialWordId": "W000419",
+      "sourceImage": "source-art/LV1\\Unit_04\\18_W000419_hundred.png",
+      "sourceImageSha256": "c433f9c02b1ff9ed2a56b7132d95317dc535b2ecd01fca15917bd1f9eba38673",
+      "captionEn": "Hundreds of students joined the charity walk last Saturday.",
+      "captionZh": "上週六，數以百計的學生參加了這場慈善健行活動。",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "背包學生大隊健行，代表數百人參與；慈善目的與上週六為句子提供。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/17-20.png",
+      "generalCardRepair": true,
+      "repairReason": "actual general card displayed missing-image placeholder",
+      "generalBeforeImagePaths": [],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-18-general-hero-before-art.png",
+      "generalCardIntegration": "local_integrated_and_reopened",
+      "sourceUnitPublished": false,
+      "draftUnitPublication": "unchanged",
+      "localAsset": "public/wordbeast/audited-20261105/LV1-U04-18-c433f9c02b1f.webp",
+      "publishedImageSha256": "4a6119eba345a5185529b7463c6661fa4e1c9dfc28f0eabbaa14aef6ad0e6a3e",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "reopenedEvidence": "output/playwright/unit-audit/u04-general-final-ui.txt",
+      "publishedUnitAfter": null,
+      "generalAfter": {
+        "id": "LV1-U04-18",
+        "word": "hundred",
+        "url": "http://127.0.0.1:5179/#/word/W000419",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-18-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-18-general-hero.png",
+        "hero": "← 單字總表\nW000419\nLV1\n字卡\n字義\n搭配\n記憶法\n\nn. / adj.\n\n考頻\n★★★☆☆\nhundred\n🔊\n\n字義 · n. adj.\n百；百個東西；num. 百；百個\n\n圖說\n\nHundreds of students joined the charity walk last Saturday.\n\n上週六，數以百計的學生參加了這場慈善健行活動。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\n★★★☆☆・LV1\n\n單字總表 · W000419",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/audited-20261105/LV1-U04-18-c433f9c02b1f.webp?v=local",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "exampleCount": 5,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "More than a hundred people attended the event.",
+            "zh": "超過 1 百人參加這場活動。",
+            "label": [
+              "例句",
+              "原標籤：n./adj. · 百；百個東西；num. 百；百個"
+            ]
+          },
+          {
+            "en": "Nancy has hundreds of friends on Facebook.",
+            "zh": "南希的臉書好友有上百位。",
+            "label": [
+              "例句",
+              "原標籤：n./adj. · 百；百個東西；num. 百；百個"
+            ]
+          },
+          {
+            "en": "I paid about three hundred dollars for the concert ticket.",
+            "zh": "我大約付了三百元買那張演唱會門票。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "Hundreds of students joined the charity walk last Saturday.",
+            "zh": "上週六，數以百計的學生參加了這場慈善健行活動。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "About one hundred could fit into the large room.",
+            "zh": "這間大房間可以容納大約 1 百人。",
+            "label": [
+              "例句",
+              "原標籤：n./adj. · 百；百個東西；num. 百；百個"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "reviewed"
+    },
+    {
+      "id": "LV1-U04-19",
+      "word": "thousand",
+      "officialWordId": "W000886",
+      "sourceOfficialWordId": "W000886",
+      "sourceImage": "source-art/LV1\\Unit_04\\19_W000886_thousand.png",
+      "sourceImageSha256": "f46d0454691a9a3f6cb289ec1e78e39c153f778a791b8cab6e780f0a983c6e57",
+      "captionEn": "Thousands of people gathered downtown to watch the fireworks last night.",
+      "captionZh": "昨晚有成千上萬的人聚集在市中心觀賞煙火。",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "城市夜間大群人看煙火，支持數千人聚集的代表性簡化。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/17-20.png",
+      "generalCardRepair": true,
+      "repairReason": "actual general card displayed missing-image placeholder",
+      "generalBeforeImagePaths": [],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-19-general-hero-before-art.png",
+      "generalCardIntegration": "local_integrated_and_reopened",
+      "sourceUnitPublished": false,
+      "draftUnitPublication": "unchanged",
+      "localAsset": "public/wordbeast/audited-20261105/LV1-U04-19-f46d0454691a.webp",
+      "publishedImageSha256": "6543bffdaa123b33b1f25a1b9173039d2fefde27ea8727e596dd7dc84f8f591b",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "reopenedEvidence": "output/playwright/unit-audit/u04-general-final-ui.txt",
+      "publishedUnitAfter": null,
+      "generalAfter": {
+        "id": "LV1-U04-19",
+        "word": "thousand",
+        "url": "http://127.0.0.1:5179/#/word/W000886",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-19-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-19-general-hero.png",
+        "hero": "← 單字總表\nW000886\nLV1\n字卡\n字義\n搭配\n記憶法\n\nn. / adj.\n\n考頻\n★★☆☆☆\nthousand\n🔊\n\n字義 · n. adj.\nnum. 千；成千的；許多的；許許多多\n\n圖說\n\nThousands of people gathered downtown to watch the fireworks last night.\n\n昨晚有成千上萬的人聚集在市中心觀賞煙火。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\n★★☆☆☆・LV1\n\n單字總表 · W000886",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/audited-20261105/LV1-U04-19-f46d0454691a.webp?v=local",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "exampleCount": 5,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "More than a thousand students took part in the summer English camp.",
+            "zh": "超過一千名學生參加了這場暑期英語營。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "Craig has gone swimming thousands of times.",
+            "zh": "克雷格去游泳好多次了。",
+            "label": [
+              "例句",
+              "原標籤：n./adj. · num. 千；成千的；許多的；許許多多"
+            ]
+          },
+          {
+            "en": "Thousands of people gathered downtown to watch the fireworks last night.",
+            "zh": "昨晚有成千上萬的人聚集在市中心觀賞煙火。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "One thousand applied, but only 20 people were hired.",
+            "zh": "有 1 千人應徵，但只有 20 人被錄用。",
+            "label": [
+              "例句",
+              "原標籤：n./adj. · num. 千；成千的；許多的；許許多多"
+            ]
+          },
+          {
+            "en": "On his trip, Carl flew over one thousand kilometers.",
+            "zh": "卡爾的旅途飛了 1 千多公里。",
+            "label": [
+              "例句",
+              "原標籤：n./adj. · num. 千；成千的；許多的；許許多多"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "reviewed"
+    },
+    {
+      "id": "LV1-U04-20",
+      "word": "box",
+      "officialWordId": "W000113",
+      "sourceOfficialWordId": "W000113",
+      "sourceImage": "source-art/LV1\\Unit_04\\20_W000113_box.png",
+      "sourceImageSha256": "6ac28f717682253930faa30ce8ba767ed5f0067778242de10c6f5bc2ea535f6d",
+      "captionEn": "She boxed up all her old textbooks before donating them.",
+      "captionZh": "她把所有舊教科書都裝箱後拿去捐了。",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "角色將舊書裝箱，捐贈為後續目的可省略。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/17-20.png",
+      "generalCardRepair": true,
+      "repairReason": "actual general card displayed missing-image placeholder",
+      "generalBeforeImagePaths": [],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-20-general-hero-before-art.png",
+      "generalCardIntegration": "local_integrated_and_reopened",
+      "sourceUnitPublished": false,
+      "draftUnitPublication": "unchanged",
+      "localAsset": "public/wordbeast/audited-20261105/LV1-U04-20-6ac28f717682.webp",
+      "publishedImageSha256": "f2d837aa8b747220856354fffcc2cffee29b00997e583ab6d6dbdbd67d86accb",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "reopenedEvidence": "output/playwright/unit-audit/u04-general-final-ui.txt",
+      "publishedUnitAfter": null,
+      "generalAfter": {
+        "id": "LV1-U04-20",
+        "word": "box",
+        "url": "http://127.0.0.1:5179/#/word/W000113",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-20-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-20-general-hero.png",
+        "hero": "← 單字總表\nW000113\nLV1\n字卡\n字義\n搭配\n\nn. / v.\n\n考頻\n★★☆☆☆\nbox\n🔊\n\n字義 · n. v.\n盒子；箱；方框；一巴掌\n\n動詞三態尚未收錄。\n\n圖說\n\nShe boxed up all her old textbooks before donating them.\n\n她把所有舊教科書都裝箱後拿去捐了。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\n★★☆☆☆・LV1\n\n單字總表 · W000113",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/audited-20261105/LV1-U04-20-6ac28f717682.webp?v=local",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "exampleCount": 5,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "Please check the box next to the correct answer on the answer sheet.",
+            "zh": "請在答案卷上正確答案旁邊的方框內打勾。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "Rita bought three boxes of cookies at the store.",
+            "zh": "麗塔在店裡買了 3 箱的餅乾。",
+            "label": [
+              "例句",
+              "原標籤：n./v. · 盒子；箱；方框；一巴掌"
+            ]
+          },
+          {
+            "en": "Clare asked the salesperson to box up the shirt for her.",
+            "zh": "克萊兒請店員幫她把襯衫裝進箱內。",
+            "label": [
+              "例句",
+              "原標籤：n./v. · 盒子；箱；方框；一巴掌"
+            ]
+          },
+          {
+            "en": "Brenda put her old clothes into a large box.",
+            "zh": "布蘭達把她的舊衣服放進一個大箱子裡。",
+            "label": [
+              "例句",
+              "原標籤：n./v. · 盒子；箱；方框；一巴掌"
+            ]
+          },
+          {
+            "en": "She boxed up all her old textbooks before donating them.",
+            "zh": "她把所有舊教科書都裝箱後拿去捐了。",
+            "label": [
+              "例句",
+              "原標籤：v. · 裝箱"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "reviewed"
+    },
+    {
+      "id": "LV1-U04-21",
+      "word": "bird",
+      "officialWordId": "W000093",
+      "sourceOfficialWordId": "W000093",
+      "sourceImage": "source-art/LV1\\Unit_04\\21_W000093_bird.png",
+      "sourceImageSha256": "55861fca5f140d97fd3fc7d5810dec856cf458c777f6c85c128aab3dbedff4cd",
+      "captionEn": "The little boy was excited to see a colorful bird in the park.",
+      "captionZh": "小男孩很興奮在公園裡看到一隻色彩鮮豔的鳥。",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "孩子興奮指公園枝上藍橘小鳥。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/21-24.png",
+      "generalCardRepair": true,
+      "repairReason": "actual general card displayed missing-image placeholder",
+      "generalBeforeImagePaths": [],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-21-general-hero-before-art.png",
+      "generalCardIntegration": "local_integrated_and_reopened",
+      "sourceUnitPublished": false,
+      "draftUnitPublication": "unchanged",
+      "localAsset": "public/wordbeast/audited-20261105/LV1-U04-21-55861fca5f14.webp",
+      "publishedImageSha256": "176425447699b318f5391a8cf30044b69b6446ca264fe06d66d9c16e4422cbe9",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "reopenedEvidence": "output/playwright/unit-audit/u04-general-final-ui.txt",
+      "publishedUnitAfter": null,
+      "generalAfter": {
+        "id": "LV1-U04-21",
+        "word": "bird",
+        "url": "http://127.0.0.1:5179/#/word/W000093",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-21-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-21-general-hero.png",
+        "hero": "← 單字總表\nW000093\nLV1\n字卡\n字義\n搭配\n\nn.\n\n考頻\n★★★☆☆\nbird\n🔊\n\n字義 · n.\n鳥；羽毛球；打鳥\n\n圖說\n\nThe little boy was excited to see a colorful bird in the park.\n\n小男孩很興奮在公園裡看到一隻色彩鮮豔的鳥。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\n★★★☆☆・LV1\n\n單字總表 · W000093",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/audited-20261105/LV1-U04-21-55861fca5f14.webp?v=local",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "exampleCount": 4,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "The little boy was excited to see a colorful bird in the park.",
+            "zh": "小男孩很興奮在公園裡看到一隻色彩鮮豔的鳥。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "Tracy keeps a bird in a cage as a pet.",
+            "zh": "崔西養一隻鳥在籠子裡當作寵物。",
+            "label": [
+              "例句",
+              "原標籤：n. · 鳥；羽毛球；打鳥"
+            ]
+          },
+          {
+            "en": "Every morning, we can hear birds singing outside our classroom window.",
+            "zh": "每天早上，我們都能聽到教室窗外有鳥兒在歌唱。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "Chloe killed two birds with one stone by exercising while working.",
+            "zh": "克蘿伊邊運動邊工作，真是一舉兩得。",
+            "label": [
+              "例句",
+              "原標籤：n. · 鳥；羽毛球；打鳥"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "reviewed"
+    },
+    {
+      "id": "LV1-U04-22",
+      "word": "again",
+      "officialWordId": "W000015",
+      "sourceOfficialWordId": "W000015",
+      "sourceImage": "source-art/LV1\\Unit_04\\22_W000015_again.png",
+      "sourceImageSha256": "24d2b35ce181353a9790af446a78888e480d09b32c95f8195785a51873fdbc4c",
+      "captionEn": "I forgot my umbrella, so I had to go back home again.",
+      "captionZh": "我忘了帶傘，所以只好又跑回家一趟。",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "腳印顯示折返回家，門內雨傘、雨中回頭角色，again核心清楚。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/21-24.png",
+      "generalCardRepair": true,
+      "repairReason": "actual general card displayed missing-image placeholder",
+      "generalBeforeImagePaths": [],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-22-general-hero-before-art.png",
+      "generalCardIntegration": "local_integrated_and_reopened",
+      "sourceUnitPublished": false,
+      "draftUnitPublication": "unchanged",
+      "localAsset": "public/wordbeast/audited-20261105/LV1-U04-22-24d2b35ce181.webp",
+      "publishedImageSha256": "69d4d6cdb5e4cec8627bd84c6039fdaa38223d548986913ac7f0b4f5023e85c9",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "reopenedEvidence": "output/playwright/unit-audit/u04-general-final-ui.txt",
+      "publishedUnitAfter": null,
+      "generalAfter": {
+        "id": "LV1-U04-22",
+        "word": "again",
+        "url": "http://127.0.0.1:5179/#/word/W000015",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-22-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-22-general-hero.png",
+        "hero": "← 單字總表\nW000015\nLV1\n字卡\n字義\n搭配\n\nadv.\n\n考頻\n★★★☆☆\nagain\n🔊\n\n字義 · adv.\n再一次；又；到原處\n\n圖說\n\nI forgot my umbrella, so I had to go back home again.\n\n我忘了帶傘，所以只好又跑回家一趟。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\n★★★☆☆・LV1\n\n單字總表 · W000015",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/audited-20261105/LV1-U04-22-24d2b35ce181.webp?v=local",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "exampleCount": 7,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "Once again, Rick's team was beaten by the stronger team.",
+            "zh": "瑞克的隊伍又再次被那個較強勁的隊伍打敗了。",
+            "label": [
+              "例句",
+              "原標籤：adv. · 再一次；又；到原處"
+            ]
+          },
+          {
+            "en": "I forgot my umbrella, so I had to go back home again.",
+            "zh": "我忘了帶傘，所以只好又跑回家一趟。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "Harry had to do his assignment all over again.",
+            "zh": "哈利得重新再做他的功課。",
+            "label": [
+              "例句",
+              "原標籤：adv. · 再一次；又；到原處"
+            ]
+          },
+          {
+            "en": "Millie's mother told her again and again to clean her room.",
+            "zh": "米莉的媽媽再三叫她清理自己的房間。",
+            "label": [
+              "例句",
+              "原標籤：adv. · 再一次；又；到原處"
+            ]
+          },
+          {
+            "en": "Julie said it was nice to see me again.",
+            "zh": "茱麗說能再見到我真好。",
+            "label": [
+              "例句",
+              "原標籤：adv. · 再一次；又；到原處"
+            ]
+          },
+          {
+            "en": "Frank played tennis yesterday and then again today.",
+            "zh": "法蘭克昨天打網球，今天又打了一次。",
+            "label": [
+              "例句",
+              "原標籤：adv. · 再一次；又；到原處"
+            ]
+          },
+          {
+            "en": "Please read the instructions again before you start the experiment.",
+            "zh": "開始實驗前，請再讀一次說明。",
+            "label": [
+              "例句"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "reviewed"
+    },
+    {
+      "id": "LV1-U04-23",
+      "word": "thing",
+      "officialWordId": "W000880",
+      "sourceOfficialWordId": "W000880",
+      "sourceImage": "source-art/LV1\\Unit_04\\23_W000880_thing.png",
+      "sourceImageSha256": "9101113875ca0da0df247b786b3b512fa253a32cf32a2ff03dc2bbb6d94c3ced",
+      "captionEn": "I still have a few things to pack before the trip.",
+      "captionZh": "出發旅行前，我還有幾樣東西要打包。",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "行李箱旁尚有幾樣物品待裝。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/21-24.png",
+      "generalCardRepair": false,
+      "repairReason": "existing exact image/caption retained",
+      "generalBeforeImagePaths": [
+        "http://127.0.0.1:5179/wordbeast/lv1-reviewed/LV1-U04-23-9101113875ca.webp?v=local"
+      ],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-23-general-hero-before-art.png",
+      "generalCardIntegration": "not_changed",
+      "sourceUnitPublished": true,
+      "draftUnitPublication": "unchanged",
+      "publishedUnitAfter": {
+        "id": "LV1-U04-23",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-23.png",
+        "url": "http://127.0.0.1:5179/#/textbook/LV1/4/cards?item=LV1-U04-23",
+        "text": "← 課本單元\n首頁\n\nLV1 Unit 04 · 5／5 張\n\nthing\n🔊\n已收錄字義\nn.\n東西；事情\n\n字義 · n.\n事物；東西；物；用品\n\n圖說\n\nI still have a few things to pack before the trip.\n\n出發旅行前，我還有幾樣東西要打包。\n\n上一張\n本單元看完了\n更多詞義與搭配",
+        "images": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/lv1-reviewed/LV1-U04-23-9101113875ca.webp",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ]
+      },
+      "generalAfter": {
+        "id": "LV1-U04-23",
+        "word": "thing",
+        "url": "http://127.0.0.1:5179/#/word/W000880",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-23-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-23-general-hero.png",
+        "hero": "← 單字總表\nW000880\nLV1\n字卡\n字義\n搭配\n\nn.\n\n考頻\n★★★★☆\nthing\n🔊\nn.\n東西；事情\n\n字義 · n.\n事物；東西；物；用品\n\n查看 LV1 已審閱圖句（1 組）\n\n圖說\n\nI still have a few things to pack before the trip.\n\n出發旅行前，我還有幾樣東西要打包。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\n★★★★☆・LV1\n\n單字總表 · W000880",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/lv1-reviewed/LV1-U04-23-9101113875ca.webp?v=local",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "exampleCount": 7,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "For one thing, milk is good for your bones; for another, it's rich in protein.",
+            "zh": "一方面，牛奶對骨骼有益；另一方面，它富含蛋白質。",
+            "label": [
+              "例句",
+              "原標籤：n. · 事物；東西；物；用品"
+            ]
+          },
+          {
+            "en": "Pete sent Wendy an email first thing in the morning.",
+            "zh": "彼特一早就馬上寄電子郵件給溫蒂。",
+            "label": [
+              "例句",
+              "原標籤：n. · 事物；東西；物；用品"
+            ]
+          },
+          {
+            "en": "I forgot to pack a few things before the trip.",
+            "zh": "我出發旅行前忘了打包幾樣東西。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "Vicky had a few things to do before going home.",
+            "zh": "維琪回家前還有幾件事情得做。",
+            "label": [
+              "例句",
+              "原標籤：n. · 事物；東西；物；用品"
+            ]
+          },
+          {
+            "en": "Doing the laundry is one thing that Eric hates.",
+            "zh": "洗衣服是一件艾瑞克討厭做的事情。",
+            "label": [
+              "例句",
+              "原標籤：n. · 事物；東西；物；用品"
+            ]
+          },
+          {
+            "en": "The most important thing about learning a language is practicing every day.",
+            "zh": "學習語言最重要的事就是每天練習。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "Jeff took some things out of his bag.",
+            "zh": "傑夫從袋子裡拿出一些東西。",
+            "label": [
+              "例句",
+              "原標籤：n. · 事物；東西；物；用品"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "reviewed"
+    },
+    {
+      "id": "LV1-U04-24",
+      "word": "money",
+      "officialWordId": "W000548",
+      "sourceOfficialWordId": "W000548",
+      "sourceImage": "source-art/LV1\\Unit_04\\24_W000548_money.png",
+      "sourceImageSha256": "9563052221c5423c949ad782a74c01af0e2340174a393c3aa2f2754ba629bbc5",
+      "captionEn": "She works part-time on weekends to save money for a new phone.",
+      "captionZh": "她週末打工，為了存錢買一支新手機。",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "餐飲工作場景投幣儲蓄罐，旁手機，打工存錢核心一致。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/21-24.png",
+      "generalCardRepair": true,
+      "repairReason": "actual general card displayed missing-image placeholder",
+      "generalBeforeImagePaths": [],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-24-general-hero-before-art.png",
+      "generalCardIntegration": "local_integrated_and_reopened",
+      "sourceUnitPublished": false,
+      "draftUnitPublication": "unchanged",
+      "localAsset": "public/wordbeast/audited-20261105/LV1-U04-24-9563052221c5.webp",
+      "publishedImageSha256": "c301f669de4e7ea5d5bf917bf2433f04288d65f37642483c5f8328b4881959e7",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "reopenedEvidence": "output/playwright/unit-audit/u04-general-final-ui.txt",
+      "publishedUnitAfter": null,
+      "generalAfter": {
+        "id": "LV1-U04-24",
+        "word": "money",
+        "url": "http://127.0.0.1:5179/#/word/W000548",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-24-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-24-general-hero.png",
+        "hero": "← 單字總表\nW000548\nLV1\n字卡\n字義\n搭配\n\nn.\n\n考頻\n★★★☆☆\nmoney\n🔊\n\n字義 · n.\n金錢；一筆款；財富；貨幣\n\n圖說\n\nShe works part-time on weekends to save money for a new phone.\n\n她週末打工，為了存錢買一支新手機。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\n★★★☆☆・LV1\n\n單字總表 · W000548",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/audited-20261105/LV1-U04-24-9563052221c5.webp?v=local",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "exampleCount": 6,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "She works part-time on weekends to save money for a new phone.",
+            "zh": "她週末打工，為了存錢買一支新手機。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "Oscar always says, “Money doesn't grow on trees, so you should use it wisely.”",
+            "zh": "奧斯卡總是說：「錢得來不易，你應該要明智用錢。」",
+            "label": [
+              "例句",
+              "原標籤：n. · 金錢；一筆款；財富；貨幣"
+            ]
+          },
+          {
+            "en": "Charlie made some money by investing.",
+            "zh": "查理透過投資賺了點錢。",
+            "label": [
+              "例句",
+              "原標籤：n. · 金錢；一筆款；財富；貨幣"
+            ]
+          },
+          {
+            "en": "Many teenagers today think that money can buy happiness, but is that really true?",
+            "zh": "現今許多青少年認為金錢可以買到快樂，但這是真的嗎？",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "Ron saves money by riding a bike to school.",
+            "zh": "榮恩騎腳踏車去上學來省錢。",
+            "label": [
+              "例句",
+              "原標籤：n. · 金錢；一筆款；財富；貨幣"
+            ]
+          },
+          {
+            "en": "Erica's house cost a lot of money to buy.",
+            "zh": "艾瑞卡的家花了很多錢買。",
+            "label": [
+              "例句",
+              "原標籤：n. · 金錢；一筆款；財富；貨幣"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "reviewed"
+    },
+    {
+      "id": "LV1-U04-25",
+      "word": "place",
+      "officialWordId": "W000650",
+      "sourceOfficialWordId": "W000650",
+      "sourceImage": "source-art/LV1\\Unit_04\\25_W000650_place.png",
+      "sourceImageSha256": "b41d2d6603d5c125d5976a726b98d4bbf8c33cb08fdc849b2234bec090ff1c6e",
+      "captionEn": "She placed the vase carefully on the wooden table.",
+      "captionZh": "她小心翼翼地把花瓶放在木桌上。",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "雙手小心放花瓶於木桌。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/25-28.png",
+      "generalCardRepair": false,
+      "repairReason": "existing exact image/caption retained",
+      "generalBeforeImagePaths": [
+        "http://127.0.0.1:5179/wordbeast/a/W000650.webp?v=local"
+      ],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-25-general-hero-before-art.png",
+      "generalCardIntegration": "not_changed",
+      "sourceUnitPublished": false,
+      "draftUnitPublication": "unchanged",
+      "publishedUnitAfter": null,
+      "generalAfter": {
+        "id": "LV1-U04-25",
+        "word": "place",
+        "url": "http://127.0.0.1:5179/#/word/W000650",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-25-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-25-general-hero.png",
+        "hero": "← 單字總表\nW000650\nLV1\n字卡\n字義\n搭配\n\nn. / v.\n\n考頻\n★★★★☆\nplace\n🔊\nn.\n地方；地點\nv.\n放置；使處於\n\n字義 · n. v.\n地方；地點；位置；住所\n\n動詞三態尚未收錄。\n\n多義 ×2\n圖說\n\nDoudou finds a place to rest.\n\n牠找到一個休息的地方。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\n★★★★☆・LV1\n\n單字總表 · W000650",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/a/W000650.webp?v=local",
+            "complete": true,
+            "width": 1024,
+            "height": 1024
+          }
+        ],
+        "exampleCount": 9,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "She placed the vase carefully on the wooden table.",
+            "zh": "她小心翼翼地把花瓶放在木桌上。",
+            "label": [
+              "例句",
+              "原標籤：v. · 放置"
+            ]
+          },
+          {
+            "en": "Wayne placed an order for a hamburger at the counter.",
+            "zh": "韋恩在櫃臺點了一份漢堡。",
+            "label": [
+              "例句",
+              "原標籤：n./v. · 地方；地點；位置；住所"
+            ]
+          },
+          {
+            "en": "The meeting will take place on Thursday afternoon.",
+            "zh": "這場會議會在週四下午舉辦。",
+            "label": [
+              "例句",
+              "原標籤：n./v. · 地方；地點；位置；住所"
+            ]
+          },
+          {
+            "en": "Rodney placed his elbows on the table.",
+            "zh": "羅德尼把他的手肘放在桌上。",
+            "label": [
+              "例句",
+              "原標籤：n./v. · 地方；地點；位置；住所"
+            ]
+          },
+          {
+            "en": "Shirley thinks Sydney is the nicest place to live.",
+            "zh": "雪莉認為雪梨是最棒的居住地。",
+            "label": [
+              "例句",
+              "原標籤：n./v. · 地方；地點；位置；住所"
+            ]
+          },
+          {
+            "en": "Trina places a lot of importance on fashion.",
+            "zh": "崔娜很看重時尚。",
+            "label": [
+              "例句",
+              "原標籤：n./v. · 地方；地點；位置；住所"
+            ]
+          },
+          {
+            "en": "The graduation ceremony will take place in the school gym next Friday.",
+            "zh": "畢業典禮將於下週五在學校體育館舉行。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "Ted went to Jim's place to play games.",
+            "zh": "泰德去吉姆的家玩遊戲。",
+            "label": [
+              "例句",
+              "原標籤：n./v. · 地方；地點；位置；住所"
+            ]
+          },
+          {
+            "en": "David didn't win, but he came in second place.",
+            "zh": "大衛沒有獲勝，但他拿了第二名。",
+            "label": [
+              "例句",
+              "原標籤：n./v. · 地方；地點；位置；住所"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "reviewed"
+    },
+    {
+      "id": "LV1-U04-26",
+      "word": "color",
+      "officialWordId": "W000183",
+      "sourceOfficialWordId": "W000183",
+      "sourceImage": "source-art/LV1\\Unit_04\\26_W000183_color.png",
+      "sourceImageSha256": "e52357304d7df3d20ec6398e794214c4b6798696227e589b34ee5bb8b8d04adc",
+      "captionEn": "The little girl colored the picture with bright crayons.",
+      "captionZh": "這個小女孩用鮮豔的蠟筆替圖畫著色。",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "角色以鮮豔蠟筆替圖畫著色。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/25-28.png",
+      "generalCardRepair": false,
+      "repairReason": "existing exact image/caption retained",
+      "generalBeforeImagePaths": [
+        "http://127.0.0.1:5179/wordbeast/lv1-reviewed/LV1-U14-33-54c0fa71fc81.webp?v=local"
+      ],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-26-general-hero-before-art.png",
+      "generalCardIntegration": "not_changed",
+      "sourceUnitPublished": false,
+      "draftUnitPublication": "unchanged",
+      "publishedUnitAfter": null,
+      "generalAfter": {
+        "id": "LV1-U04-26",
+        "word": "color",
+        "url": "http://127.0.0.1:5179/#/word/W000183",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-26-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-26-general-hero.png",
+        "hero": "← 單字總表\nW000183\nLV1\n字卡\n字義\n搭配\n記憶法\n\nn. / v.\n\n考頻\n★★★★☆\ncolor\n🔊\nn.\n顏色\nv.\n著色\n\n字義 · n. v.\n顏色；面色；顏料；外貌\n\n動詞三態尚未收錄。\n\n多義 ×2\n\n查看 LV1 已審閱圖句（1 組）\n\n圖說\n\nHe colored a big red flower with his crayons.\n\n他用蠟筆畫了一朵大紅花並著色。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\n★★★★☆・LV1\n\n單字總表 · W000183",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/lv1-reviewed/LV1-U14-33-54c0fa71fc81.webp?v=local",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "exampleCount": 7,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "Diana painted the walls yellow to give the room color.",
+            "zh": "黛安娜把牆漆成黃色，來增添房間的色彩。",
+            "label": [
+              "例句",
+              "原標籤：n./v. · 顏色；面色；顏料；外貌"
+            ]
+          },
+          {
+            "en": "The girl drew a picture and then colored it in.",
+            "zh": "這位女孩畫了一張圖，然後替它上色。",
+            "label": [
+              "例句",
+              "原標籤：n./v. · 顏色；面色；顏料；外貌"
+            ]
+          },
+          {
+            "en": "Red and yellow are two of the primary colors used in painting.",
+            "zh": "紅色和黃色是繪畫中使用的其中兩種原色。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "Janet's favorite colors are pink and purple.",
+            "zh": "珍妮特最喜歡的顏色是粉色和紫色。",
+            "label": [
+              "例句",
+              "原標籤：n./v. · 顏色；面色；顏料；外貌"
+            ]
+          },
+          {
+            "en": "Veronica colors her hair to hide the gray.",
+            "zh": "維洛妮卡染髮來遮住灰白髮。",
+            "label": [
+              "例句",
+              "原標籤：n./v. · 顏色；面色；顏料；外貌"
+            ]
+          },
+          {
+            "en": "The little girl colored the picture with bright crayons.",
+            "zh": "這個小女孩用鮮豔的蠟筆替圖畫著色。",
+            "label": [
+              "例句",
+              "原標籤：v. · 著色"
+            ]
+          },
+          {
+            "en": "Cindy can spend hours just coloring.",
+            "zh": "辛蒂可以花好幾個小時只著色。",
+            "label": [
+              "例句",
+              "原標籤：n./v. · 顏色；面色；顏料；外貌"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "reviewed"
+    },
+    {
+      "id": "LV1-U04-27",
+      "word": "blue",
+      "officialWordId": "W000099",
+      "sourceOfficialWordId": "W000099",
+      "sourceImage": "source-art/LV1\\Unit_04\\27_W000099_blue.png",
+      "sourceImageSha256": "5ca228cc41d4a2567baf0d40907f6703591ad038f1552e4625eb44852b8be39c",
+      "captionEn": "He bought a blue jacket for the cold winter days.",
+      "captionZh": "他買了一件藍色外套來應付寒冷的冬天。",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "雪景窗前角色穿藍色冬外套，防寒核心一致。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/25-28.png",
+      "generalCardRepair": true,
+      "repairReason": "actual general card displayed missing-image placeholder",
+      "generalBeforeImagePaths": [],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-27-general-hero-before-art.png",
+      "generalCardIntegration": "local_integrated_and_reopened",
+      "sourceUnitPublished": false,
+      "draftUnitPublication": "unchanged",
+      "localAsset": "public/wordbeast/audited-20261105/LV1-U04-27-5ca228cc41d4.webp",
+      "publishedImageSha256": "7e813ee769e3e83f7ed03fbe6a7bef53699b95ddf2702f7982b1ff2628aa4ab2",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "reopenedEvidence": "output/playwright/unit-audit/u04-general-final-ui.txt",
+      "publishedUnitAfter": null,
+      "generalAfter": {
+        "id": "LV1-U04-27",
+        "word": "blue",
+        "url": "http://127.0.0.1:5179/#/word/W000099",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-27-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-27-general-hero.png",
+        "hero": "← 單字總表\nW000099\nLV1\n字卡\n字義\n搭配\n\nadj. / n.\n\n考頻\n★★☆☆☆\nblue\n🔊\n\n字義 · adj. n.\n藍色；藍色的；下流的；憂鬱的\n\n圖說\n\nHe bought a blue jacket for the cold winter days.\n\n他買了一件藍色外套來應付寒冷的冬天。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\n★★☆☆☆・LV1\n\n單字總表 · W000099",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/audited-20261105/LV1-U04-27-5ca228cc41d4.webp?v=local",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "exampleCount": 6,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "My girlfriend is a Canadian with blonde hair and blue eyes.",
+            "zh": "我女友是加拿大人，有金黃色的頭髮和湛藍的雙眼。",
+            "label": [
+              "例句",
+              "原標籤：adj./n. · 藍色；藍色的；下流的；憂鬱的"
+            ]
+          },
+          {
+            "en": "She felt a little blue after saying goodbye to her friends.",
+            "zh": "跟朋友道別後，她感到有點憂鬱。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "He bought a blue jacket for the cold winter days.",
+            "zh": "他買了一件藍色外套來應付寒冷的冬天。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "Eileen thinks that light blue is the most beautiful color.",
+            "zh": "艾琳覺得淺藍色是最漂亮的顏色。",
+            "label": [
+              "例句",
+              "原標籤：adj./n. · 藍色；藍色的；下流的；憂鬱的"
+            ]
+          },
+          {
+            "en": "We were having dinner when Peter appeared out of the blue.",
+            "zh": "我們正在吃晚餐，此時彼得突然出現了。",
+            "label": [
+              "例句",
+              "原標籤：adj./n. · 藍色；藍色的；下流的；憂鬱的"
+            ]
+          },
+          {
+            "en": "When winter comes, some people easily feel blue because of the gloomy weather.",
+            "zh": "冬天來臨時，有些人容易因為陰沉的天氣而感到憂鬱。",
+            "label": [
+              "例句",
+              "原標籤：adj./n. · 藍色；藍色的；下流的；憂鬱的"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "reviewed"
+    },
+    {
+      "id": "LV1-U04-28",
+      "word": "red",
+      "officialWordId": "W000705",
+      "sourceOfficialWordId": "W000705",
+      "sourceImage": "source-art/LV1\\Unit_04\\28_W000705_red.png",
+      "sourceImageSha256": "2e140052f0bdf8181d4edee3a07553e330c0d869c051ef9e6f3c60457cb0849d",
+      "captionEn": "She wore a red dress to the party.",
+      "captionZh": "她穿了一件紅色洋裝去參加派對。",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "紅色洋裝角色在有氣球餐點的派對。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/25-28.png",
+      "generalCardRepair": true,
+      "repairReason": "legacy red painter sprite paired with a red-dress party sentence",
+      "generalBeforeImagePaths": [
+        "http://127.0.0.1:5179/wordbeast/red-beast.png?v=local"
+      ],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-28-general-hero-before-art.png",
+      "generalCardIntegration": "local_integrated_and_reopened",
+      "sourceUnitPublished": false,
+      "draftUnitPublication": "unchanged",
+      "localAsset": "public/wordbeast/audited-20261105/LV1-U04-28-2e140052f0bd.webp",
+      "publishedImageSha256": "279def57ebc5ceccaf527d806d3fc97d7a3b440dca77fec59653c839f1fdf278",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "reopenedEvidence": "output/playwright/unit-audit/u04-general-final-ui.txt",
+      "publishedUnitAfter": null,
+      "generalAfter": {
+        "id": "LV1-U04-28",
+        "word": "red",
+        "url": "http://127.0.0.1:5179/#/word/W000705",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-28-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-28-general-hero.png",
+        "hero": "← 單字總表\nW000705\nLV1\n字卡\n字義\n搭配\n\nadj. / n.\n\n考頻\n★★★☆☆\nred\n🔊\n\n字義 · adj. n.\n紅的；紅色的；紅腫的；流血的\n\n圖說\n\nShe wore a red dress to the party.\n\n她穿了一件紅色洋裝去參加派對。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\n★★★☆☆・LV1\n\n單字總表 · W000705",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/audited-20261105/LV1-U04-28-2e140052f0bd.webp?v=local",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "exampleCount": 5,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "She wore a red dress to the party.",
+            "zh": "她穿了一件紅色洋裝去參加派對。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "Phil turned red when the boss found his mistake.",
+            "zh": "老闆發現菲爾出錯時，他的臉都紅了。",
+            "label": [
+              "例句",
+              "原標籤：adj./n. · 紅的；紅色的；紅腫的；流血的"
+            ]
+          },
+          {
+            "en": "The students turned red with excitement when their team scored the winning goal.",
+            "zh": "當球隊踢進致勝一球時，學生們興奮得滿臉通紅。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "Troy got a red envelope with some money in it.",
+            "zh": "特洛伊拿到一個裝了點錢的紅包袋。",
+            "label": [
+              "例句",
+              "原標籤：adj./n. · 紅的；紅色的；紅腫的；流血的"
+            ]
+          },
+          {
+            "en": "Betty likes to use red to paint with.",
+            "zh": "貝蒂喜歡用紅色來畫畫。",
+            "label": [
+              "例句",
+              "原標籤：adj./n. · 紅的；紅色的；紅腫的；流血的"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "reviewed"
+    },
+    {
+      "id": "LV1-U04-29",
+      "word": "yellow",
+      "officialWordId": "W000995",
+      "sourceOfficialWordId": "W000995",
+      "sourceImage": "source-art/LV1\\Unit_04\\29_W000995_yellow.png",
+      "sourceImageSha256": "59f2db75a48e9a9540b3ba453445318d1dbc73c433c233766befc2ad5ac3cf1a",
+      "captionEn": "The old letters had turned yellow after being stored for many years.",
+      "captionZh": "那些舊信件存放多年後已經泛黃。",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "儲藏箱中泛黃舊信件，時間經過為靜態合理簡化。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/29-32.png",
+      "generalCardRepair": true,
+      "repairReason": "actual general card displayed missing-image placeholder",
+      "generalBeforeImagePaths": [],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-29-general-hero-before-art.png",
+      "generalCardIntegration": "local_integrated_and_reopened",
+      "sourceUnitPublished": false,
+      "draftUnitPublication": "unchanged",
+      "localAsset": "public/wordbeast/audited-20261105/LV1-U04-29-59f2db75a48e.webp",
+      "publishedImageSha256": "812721ba555bb4a568834eae5446c91540d6cb5a410da9cd83814759c7af235a",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "reopenedEvidence": "output/playwright/unit-audit/u04-general-final-ui.txt",
+      "publishedUnitAfter": null,
+      "generalAfter": {
+        "id": "LV1-U04-29",
+        "word": "yellow",
+        "url": "http://127.0.0.1:5179/#/word/W000995",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-29-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-29-general-hero.png",
+        "hero": "← 單字總表\nW000995\nLV2\n字卡\n字義\n搭配\n記憶法\n\nadj. / n. / v.\n\n考頻\n★★★☆☆\nyellow\n🔊\n\n字義 · adj. n. v.\n黃色；黃色的\n\n動詞三態尚未收錄。\n\n圖說\n\nThe old letters had turned yellow after being stored for many years.\n\n那些舊信件存放多年後已經泛黃。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\n★★★☆☆・LV2\n\n單字總表 · W000995",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/audited-20261105/LV1-U04-29-59f2db75a48e.webp?v=local",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "exampleCount": 6,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "Monica didn't want to buy the yellow car.",
+            "zh": "莫妮卡不想買那輛黃色的車。",
+            "label": [
+              "例句",
+              "原標籤：adj./n./v. · 黃色；黃色的"
+            ]
+          },
+          {
+            "en": "Over time, the photograph began to yellow.",
+            "zh": "照片隨著時間過去變黃了。",
+            "label": [
+              "例句",
+              "原標籤：adj./n./v. · 黃色；黃色的"
+            ]
+          },
+          {
+            "en": "The old letters had turned yellow after being stored for many years.",
+            "zh": "那些舊信件存放多年後已經泛黃。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "Students are asked to wear a yellow hat during the school field trip.",
+            "zh": "學生們被要求在校外教學時戴上黃色帽子。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "Samantha chose yellow for her bedroom walls.",
+            "zh": "莎曼珊選了黃色做她房間牆壁的顏色。",
+            "label": [
+              "例句",
+              "原標籤：adj./n./v. · 黃色；黃色的"
+            ]
+          },
+          {
+            "en": "The sun yellowed the papers by the window.",
+            "zh": "太陽染黃了窗邊的文件。",
+            "label": [
+              "例句",
+              "原標籤：adj./n./v. · 黃色；黃色的"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "reviewed"
+    },
+    {
+      "id": "LV1-U04-30",
+      "word": "green",
+      "officialWordId": "W000363",
+      "sourceOfficialWordId": "W000363",
+      "sourceImage": "source-art/LV1\\Unit_04\\30_W000363_green.png",
+      "sourceImageSha256": "7148531448a8b81bc2dcd8eeafe09384d5614c68ff8b600fd99f8d3fc1f8e652",
+      "captionEn": "She painted her bedroom walls a soft green color.",
+      "captionZh": "她把臥室的牆漆成柔和的綠色。",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "臥室以滾筒刷柔綠牆壁。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/29-32.png",
+      "generalCardRepair": true,
+      "repairReason": "actual general card displayed missing-image placeholder",
+      "generalBeforeImagePaths": [],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-30-general-hero-before-art.png",
+      "generalCardIntegration": "local_integrated_and_reopened",
+      "sourceUnitPublished": false,
+      "draftUnitPublication": "unchanged",
+      "localAsset": "public/wordbeast/audited-20261105/LV1-U04-30-7148531448a8.webp",
+      "publishedImageSha256": "325acc831d89244d7feae19b5889fada85e59191a50c087363a1d6401bf071b6",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "reopenedEvidence": "output/playwright/unit-audit/u04-general-final-ui.txt",
+      "publishedUnitAfter": null,
+      "generalAfter": {
+        "id": "LV1-U04-30",
+        "word": "green",
+        "url": "http://127.0.0.1:5179/#/word/W000363",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-30-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-30-general-hero.png",
+        "hero": "← 單字總表\nW000363\nLV1\n字卡\n字義\n搭配\n記憶法\n\nadj. / n. / v.\n\n考頻\n★★★☆☆\ngreen\n🔊\n\n字義 · adj. n. v.\n綠色；綠色顏料；綠色的；未成熟的\n\n動詞三態尚未收錄。\n\n圖說\n\nShe painted her bedroom walls a soft green color.\n\n她把臥室的牆漆成柔和的綠色。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\n★★★☆☆・LV1\n\n單字總表 · W000363",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/audited-20261105/LV1-U04-30-7148531448a8.webp?v=local",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "exampleCount": 8,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "She painted her bedroom walls a soft green color.",
+            "zh": "她把臥室的牆漆成柔和的綠色。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "Many children played on the green near the library.",
+            "zh": "許多小朋友在圖書館旁的草地上玩耍。",
+            "label": [
+              "例句",
+              "原標籤：adj./n./v. · 綠色；綠色顏料；綠色的；未成熟的"
+            ]
+          },
+          {
+            "en": "The green of the grass made Nicole feel happy.",
+            "zh": "草地綠油油的顏色讓妮可感到快樂。",
+            "label": [
+              "例句",
+              "原標籤：adj./n./v. · 綠色；綠色顏料；綠色的；未成熟的"
+            ]
+          },
+          {
+            "en": "Chuck bought an electric scooter because it uses green energy.",
+            "zh": "查克買了一臺電動摩托車，因為它使用綠能。",
+            "label": [
+              "例句",
+              "原標籤：adj./n./v. · 綠色；綠色顏料；綠色的；未成熟的"
+            ]
+          },
+          {
+            "en": "Fanny wore a green dress to the party.",
+            "zh": "芬妮穿了一件綠色的洋裝出席派對。",
+            "label": [
+              "例句",
+              "原標籤：adj./n./v. · 綠色；綠色顏料；綠色的；未成熟的"
+            ]
+          },
+          {
+            "en": "To green the town, many trees were planted.",
+            "zh": "種植了許多樹木以綠化這座城鎮。",
+            "label": [
+              "例句",
+              "原標籤：adj./n./v. · 綠色；綠色顏料；綠色的；未成熟的"
+            ]
+          },
+          {
+            "en": "Because his friend is rich, Steve is green with envy.",
+            "zh": "史蒂夫嫉妒他朋友很有錢。",
+            "label": [
+              "例句",
+              "原標籤：adj./n./v. · 綠色；綠色顏料；綠色的；未成熟的"
+            ]
+          },
+          {
+            "en": "More and more companies are trying to go green by using renewable energy.",
+            "zh": "越來越多公司試圖透過使用再生能源來實現環保。",
+            "label": [
+              "例句"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "reviewed"
+    },
+    {
+      "id": "LV1-U04-31",
+      "word": "for",
+      "officialWordId": "W000323",
+      "sourceOfficialWordId": "W000323",
+      "sourceImage": "source-art/LV1\\Unit_04\\31_W000323_for.png",
+      "sourceImageSha256": "d3818c8ac8282ebd23b4feefcd32c9e0137f3284b843ff728c91737dcf4ff7e4",
+      "captionEn": "I made a sandwich for my younger brother.",
+      "captionZh": "我替弟弟做了一份三明治。",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "成人製作並給較小角色三明治，for對象清楚。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/29-32.png",
+      "generalCardRepair": false,
+      "repairReason": "existing exact image/caption retained",
+      "generalBeforeImagePaths": [
+        "http://127.0.0.1:5179/wordbeast/s/W000323.webp?v=local"
+      ],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-31-general-hero-before-art.png",
+      "generalCardIntegration": "not_changed",
+      "sourceUnitPublished": false,
+      "draftUnitPublication": "unchanged",
+      "publishedUnitAfter": null,
+      "generalAfter": {
+        "id": "LV1-U04-31",
+        "word": "for",
+        "url": "http://127.0.0.1:5179/#/word/W000323",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-31-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-31-general-hero.png",
+        "hero": "← 單字總表\nW000323\nLV1\n字卡\n字義\n搭配\n記憶法\n\nprep. / conj.\n\n考頻\n★★★★★\nfor\n🔊\n\n字義 · prep. conj.\n為了；給；對；因為；贊成；（表示持續時間）\n\n圖說\n\nThis gift is for a friend.\n\n這份禮物是給朋友的。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\n★★★★★・LV1\n\n單字總表 · W000323",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/s/W000323.webp?v=local",
+            "complete": true,
+            "width": 1024,
+            "height": 1024
+          }
+        ],
+        "exampleCount": 6,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "Lucas wrote a song for his wife.",
+            "zh": "盧卡斯寫了一首歌給他太太。",
+            "label": [
+              "例句",
+              "原標籤：prep. · 給；替"
+            ]
+          },
+          {
+            "en": "For some reason, Nora decided not to study abroad.",
+            "zh": "基於某些原因，諾拉決定不出國念書。",
+            "label": [
+              "例句",
+              "原標籤：prep. · 因為；基於"
+            ]
+          },
+          {
+            "en": "Those people are fighting for their freedom.",
+            "zh": "那些人是為了他們的自由而戰。",
+            "label": [
+              "例句",
+              "原標籤：prep. · 為了"
+            ]
+          },
+          {
+            "en": "Jerry decided to stop for lunch first, for he was feeling hungry.",
+            "zh": "傑瑞決定先停下來吃午餐，因為他肚子餓了。",
+            "label": [
+              "例句",
+              "原標籤：prep. · 為了（目的）"
+            ]
+          },
+          {
+            "en": "Are you for or against the proposal?",
+            "zh": "你是贊成或反對本提案？",
+            "label": [
+              "例句",
+              "原標籤：prep. · 贊成"
+            ]
+          },
+          {
+            "en": "I made a sandwich for my younger brother.",
+            "zh": "我替弟弟做了一份三明治。",
+            "label": [
+              "例句",
+              "原標籤：prep. · 為了；給"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "needs_check"
+    },
+    {
+      "id": "LV1-U04-32",
+      "word": "because",
+      "officialWordId": "W000073",
+      "sourceOfficialWordId": "W000073",
+      "sourceImage": "source-art/LV1\\Unit_04\\32_W000073_because.png",
+      "sourceImageSha256": "29a55bc1efb193eb2b7ba7bb264b7f809536e6bdc8d7d615ba18d9861c0024b1",
+      "captionEn": "We stayed inside because the rain was heavy.",
+      "captionZh": "因為雨很大，我們待在室內。",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "兩角色室內，窗外大雨，因雨留屋內一致。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/29-32.png",
+      "generalCardRepair": false,
+      "repairReason": "existing exact image/caption retained",
+      "generalBeforeImagePaths": [
+        "http://127.0.0.1:5179/wordbeast/lv1-reviewed/LV1-U09-92-dc363705d529.webp?v=local"
+      ],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-32-general-hero-before-art.png",
+      "generalCardIntegration": "not_changed",
+      "sourceUnitPublished": false,
+      "draftUnitPublication": "unchanged",
+      "publishedUnitAfter": null,
+      "generalAfter": {
+        "id": "LV1-U04-32",
+        "word": "because",
+        "url": "http://127.0.0.1:5179/#/word/W000073",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-32-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-32-general-hero.png",
+        "hero": "← 單字總表\nW000073\nLV1\n字卡\n字義\n搭配\n\nconj.\n\n考頻\n★★★★☆\nbecause\n🔊\nconj.\n因為（+ 子句）\nphr.\nbecause of + 名詞 由於\n\n字義 · conj.\n因為\n\n多義 ×2\n\n查看 LV1 已審閱圖句（1 組）\n\n圖說\n\nI stayed inside because it was raining heavily.\n\n因為雨下得很大，我待在室內。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\n★★★★☆・LV1\n\n單字總表 · W000073",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/lv1-reviewed/LV1-U09-92-dc363705d529.webp?v=local",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "exampleCount": 4,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "Because of COVID-19, we couldn't travel abroad.",
+            "zh": "由於新冠肺炎，我們無法出國旅行。",
+            "label": [
+              "例句",
+              "原標籤：prep. · because of：由於（介系詞片語）"
+            ]
+          },
+          {
+            "en": "We stayed inside because the rain was heavy.",
+            "zh": "因為雨很大，我們待在室內。",
+            "label": [
+              "例句",
+              "原標籤：conj. · 因為"
+            ]
+          },
+          {
+            "en": "I like Jeremy because he is polite.",
+            "zh": "因為傑洛米有禮貌，所以我喜歡他。",
+            "label": [
+              "例句",
+              "原標籤：conj. · 因為"
+            ]
+          },
+          {
+            "en": "Because Jeremy is polite, I like him.",
+            "zh": "因為傑洛米有禮貌，所以我喜歡他。",
+            "label": [
+              "例句",
+              "原標籤：conj. · 因為"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "draft"
+    },
+    {
+      "id": "LV1-U04-33",
+      "word": "will",
+      "officialWordId": "W000975",
+      "sourceOfficialWordId": "W000975",
+      "sourceImage": "source-art/LV1\\Unit_04\\33_W000975_will.png",
+      "sourceImageSha256": "c9fc75bb31b498e37d78d6bb88334a2dd358113644537582ea3a720e73e567db",
+      "captionEn": "The weather will become cooler after sunset.",
+      "captionZh": "日落後天氣會變涼。",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "夕陽地平線，角色準備圍圍巾，日落後變涼的未來情境一致。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/33-36.png",
+      "generalCardRepair": false,
+      "repairReason": "existing exact image/caption retained",
+      "generalBeforeImagePaths": [
+        "http://127.0.0.1:5179/wordbeast/a/W000975.webp?v=local"
+      ],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-33-general-hero-before-art.png",
+      "generalCardIntegration": "not_changed",
+      "sourceUnitPublished": false,
+      "draftUnitPublication": "unchanged",
+      "publishedUnitAfter": null,
+      "generalAfter": {
+        "id": "LV1-U04-33",
+        "word": "will",
+        "url": "http://127.0.0.1:5179/#/word/W000975",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-33-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-33-general-hero.png",
+        "hero": "← 單字總表\nW000975\nLV2\n字卡\n字義\n搭配\n記憶法\n\naux. / n.\n\n考頻\n★★★★☆\nwill\n🔊\naux.\n將會；將要\nn.\n意志；決心\nn.\n遺囑\nphr.\nat will 隨意；任意\n\n字義 · aux. n.\n將；意願\n\n多義 ×4\n圖說\n\nThe bud will open after Doudou waters it.\n\n豆豆澆水後，花苞將會開花。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\n★★★★☆・LV2\n\n單字總表 · W000975",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/a/W000975.webp?v=local",
+            "complete": true,
+            "width": 1024,
+            "height": 1024
+          }
+        ],
+        "exampleCount": 6,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "Nobody can question Stanley's will to win.",
+            "zh": "沒有人可以質疑史坦利的求勝意志。",
+            "label": [
+              "例句",
+              "原標籤：aux./n. · 將；意願"
+            ]
+          },
+          {
+            "en": "You can't just ignore the rules at will.",
+            "zh": "你不能隨意忽略這些規定。",
+            "label": [
+              "例句",
+              "原標籤：aux./n. · 將；意願"
+            ]
+          },
+          {
+            "en": "I'll arrive in New York tomorrow morning.",
+            "zh": "明早我將會抵達紐約。",
+            "label": [
+              "例句",
+              "原標籤：aux./n. · 將；意願"
+            ]
+          },
+          {
+            "en": "The weather will become cooler after sunset.",
+            "zh": "日落後天氣會變涼。",
+            "label": [
+              "例句",
+              "原標籤：aux. · 將會"
+            ]
+          },
+          {
+            "en": "The man made his final will a month before he died.",
+            "zh": "這名男子在去世前一個月立下最後的遺囑。",
+            "label": [
+              "例句",
+              "原標籤：aux./n. · 將；意願"
+            ]
+          },
+          {
+            "en": "I will arrive in New York tomorrow morning.",
+            "zh": "明早我將會抵達紐約。",
+            "label": [
+              "例句",
+              "原標籤：aux./n. · 將；意願"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "draft"
+    },
+    {
+      "id": "LV1-U04-34",
+      "word": "can",
+      "officialWordId": "W000139",
+      "sourceOfficialWordId": "W000139",
+      "sourceImage": "source-art/LV1\\Unit_04\\34_W000139_can.png",
+      "sourceImageSha256": "89ebb09fecec5d49e38fd6dd57410f82863ff6f61f56d94e68edf2c32f0be715",
+      "captionEn": "You can borrow my umbrella if you need it.",
+      "captionZh": "如果你需要，可以借我的雨傘。",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "雨中一角色把傘提供給較小濕身角色，許可借傘清楚。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/33-36.png",
+      "generalCardRepair": false,
+      "repairReason": "existing exact image/caption retained",
+      "generalBeforeImagePaths": [
+        "http://127.0.0.1:5179/wordbeast/a/W000139.webp?v=local"
+      ],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-34-general-hero-before-art.png",
+      "generalCardIntegration": "not_changed",
+      "sourceUnitPublished": false,
+      "draftUnitPublication": "unchanged",
+      "publishedUnitAfter": null,
+      "generalAfter": {
+        "id": "LV1-U04-34",
+        "word": "can",
+        "url": "http://127.0.0.1:5179/#/word/W000139",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-34-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-34-general-hero.png",
+        "hero": "← 單字總表\nW000139\nLV1\n字卡\n字義\n搭配\n記憶法\n\naux. / n. / v.\n\n考頻\n★★★★☆\ncan\n🔊\naux.\n能夠；會（能力）\naux.\n可以（許可）\nn.\n罐；罐頭\nv.\n把…製成罐頭\n\n字義 · aux. n. v.\n能；可以；罐\n\n動詞三態尚未收錄。\n\n多義 ×4\n圖說\n\nDoudou can ride a bicycle.\n\n牠會騎腳踏車。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\n★★★★☆・LV1\n\n單字總表 · W000139",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/a/W000139.webp?v=local",
+            "complete": true,
+            "width": 1024,
+            "height": 1024
+          }
+        ],
+        "exampleCount": 6,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "My mother always cans fruit at the end of the summer.",
+            "zh": "每年夏末，我母親總是把水果製成罐頭。",
+            "label": [
+              "例句",
+              "原標籤：aux./n./v. · 能；可以；罐"
+            ]
+          },
+          {
+            "en": "You can't talk loudly in the library.",
+            "zh": "在圖書館內不能大聲喧嘩。",
+            "label": [
+              "例句",
+              "原標籤：aux./n./v. · 能；可以；罐"
+            ]
+          },
+          {
+            "en": "You can borrow my umbrella if you need it.",
+            "zh": "如果你需要，可以借我的雨傘。",
+            "label": [
+              "例句",
+              "原標籤：aux. · 能；可以"
+            ]
+          },
+          {
+            "en": "You cannot talk loudly in the library.",
+            "zh": "在圖書館內不能大聲喧嘩。",
+            "label": [
+              "例句",
+              "原標籤：aux./n./v. · 能；可以；罐"
+            ]
+          },
+          {
+            "en": "Can you speak French?",
+            "zh": "你會說法文嗎？",
+            "label": [
+              "例句",
+              "原標籤：aux./n./v. · 能；可以；罐"
+            ]
+          },
+          {
+            "en": "Matthew drank ten cans of soda at the party.",
+            "zh": "馬修在派對上喝了 10 罐汽水。",
+            "label": [
+              "例句",
+              "原標籤：aux./n./v. · 能；可以；罐"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "draft"
+    },
+    {
+      "id": "LV1-U04-35",
+      "word": "time",
+      "officialWordId": "W000894",
+      "sourceOfficialWordId": "W000894",
+      "sourceImage": "source-art/LV1\\Unit_04\\35_W000894_time.png",
+      "sourceImageSha256": "52937bcbb2fe19092647f51eefe2165fedf3326f2b3f3490aa90c6e65ebd515e",
+      "captionEn": "We had a great time at the beach last weekend.",
+      "captionZh": "我們上週末在海邊玩得很開心。",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "海邊角色玩球堆沙堡，玩得開心的time片語一致。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/33-36.png",
+      "generalCardRepair": false,
+      "repairReason": "existing exact image/caption retained",
+      "generalBeforeImagePaths": [
+        "http://127.0.0.1:5179/wordbeast/s/W000894.webp?v=local"
+      ],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-35-general-hero-before-art.png",
+      "generalCardIntegration": "not_changed",
+      "sourceUnitPublished": false,
+      "draftUnitPublication": "unchanged",
+      "publishedUnitAfter": null,
+      "generalAfter": {
+        "id": "LV1-U04-35",
+        "word": "time",
+        "url": "http://127.0.0.1:5179/#/word/W000894",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-35-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-35-general-hero.png",
+        "hero": "← 單字總表\nW000894\nLV1\n字卡\n字義\n搭配\n記憶法\n\nn. / v.\n\n考頻\n★★★★★\ntime\n🔊\nn.\n時間\n\n字義 · n. v.\n時間；時侯；時機；時期\n\n動詞三態尚未收錄。\n\n圖說\n\nDoudou spends time playing with blocks with a little Doudou.\n\n豆豆花時間陪小豆豆玩積木。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\n★★★★★・LV1\n\n單字總表 · W000894",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/s/W000894.webp?v=local",
+            "complete": true,
+            "width": 1024,
+            "height": 1024
+          }
+        ],
+        "exampleCount": 13,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "My parents come to Taipei to see me from time to time.",
+            "zh": "我父母偶爾會來臺北看我。",
+            "label": [
+              "例句",
+              "原標籤：n./v. · 時間；時侯；時機；時期"
+            ]
+          },
+          {
+            "en": "Will you be here in time for the concert?",
+            "zh": "你來得及趕來聽這場演唱會嗎？",
+            "label": [
+              "例句",
+              "原標籤：n./v. · 時間；時侯；時機；時期"
+            ]
+          },
+          {
+            "en": "Passengers are reminded to arrive at the gate on time before boarding.",
+            "zh": "提醒乘客在登機前準時抵達登機門。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "Take your time with the meal; there's no rush.",
+            "zh": "你可以慢慢用餐，不用急。",
+            "label": [
+              "例句",
+              "原標籤：n./v. · 時間；時侯；時機；時期"
+            ]
+          },
+          {
+            "en": "Nate goes to the gym three times a week.",
+            "zh": "奈特一週上健身房 3 次。",
+            "label": [
+              "例句",
+              "原標籤：n./v. · 時間；時侯；時機；時期"
+            ]
+          },
+          {
+            "en": "I'm afraid that you have to share your room for the time being.",
+            "zh": "恐怕你得暫時跟別人合住一間房。",
+            "label": [
+              "例句",
+              "原標籤：n./v. · 時間；時侯；時機；時期"
+            ]
+          },
+          {
+            "en": "John didn't have time to prepare for the test.",
+            "zh": "約翰沒有時間來準備考試。",
+            "label": [
+              "例句",
+              "原標籤：n./v. · 時間；時侯；時機；時期"
+            ]
+          },
+          {
+            "en": "The train arrived at the station on time.",
+            "zh": "火車準時到站。",
+            "label": [
+              "例句",
+              "原標籤：n./v. · 時間；時侯；時機；時期"
+            ]
+          },
+          {
+            "en": "Luke finished the job in no time and left.",
+            "zh": "路克很快地把工作做完就離開了。",
+            "label": [
+              "例句",
+              "原標籤：n./v. · 時間；時侯；時機；時期"
+            ]
+          },
+          {
+            "en": "We had a great time at the beach last weekend.",
+            "zh": "我們上週末在海邊玩得很開心。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "Tom timed his visit to suit Judy's convenience.",
+            "zh": "湯姆選在茱蒂方便的時候去拜訪她。",
+            "label": [
+              "例句",
+              "原標籤：n./v. · 時間；時侯；時機；時期"
+            ]
+          },
+          {
+            "en": "Time passes quickly when you're having fun.",
+            "zh": "玩樂時，時間過得特別快。",
+            "label": [
+              "例句",
+              "原標籤：n./v. · 時間；時侯；時機；時期"
+            ]
+          },
+          {
+            "en": "No matter how tired he is, he always makes time for his daughter.",
+            "zh": "不管多累，他總是會挪出時間陪女兒。",
+            "label": [
+              "例句",
+              "原標籤：n. · 時間（考點：make time for 挪出時間）"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "reviewed"
+    },
+    {
+      "id": "LV1-U04-36",
+      "word": "take",
+      "officialWordId": "W000851",
+      "sourceOfficialWordId": "W000851",
+      "sourceImage": "source-art/LV1\\Unit_04\\36_W000851_take.png",
+      "sourceImageSha256": "8ab54e9225a0b8d7087eee2e24cad0729c13bbbb26bd4c5b90a135a1b0d7d20a",
+      "captionEn": "My brother takes the bus to school every morning.",
+      "captionZh": "我弟弟每天早上搭公車上學。",
+      "pixelReview": "agent actually viewed original PNG contact sheets (660px, every labeled image) and five published cards in actual UI",
+      "observation": "背書包角色在學校旁上公車，搭車上學清楚。",
+      "contactSheet": "output/unit-audit-20261105/sheets/U04/33-36.png",
+      "generalCardRepair": false,
+      "repairReason": "existing exact image/caption retained",
+      "generalBeforeImagePaths": [
+        "http://127.0.0.1:5179/wordbeast/a/W000851.webp?v=local"
+      ],
+      "generalBeforeHeroScreenshot": "output/playwright/unit-audit/LV1-U04-36-general-hero-before-art.png",
+      "generalCardIntegration": "not_changed",
+      "sourceUnitPublished": false,
+      "draftUnitPublication": "unchanged",
+      "publishedUnitAfter": null,
+      "generalAfter": {
+        "id": "LV1-U04-36",
+        "word": "take",
+        "url": "http://127.0.0.1:5179/#/word/W000851",
+        "screenshot": "output/playwright/unit-audit/LV1-U04-36-general-after.png",
+        "heroScreenshot": "output/playwright/unit-audit/LV1-U04-36-general-hero.png",
+        "hero": "← 單字總表\nW000851\nLV1\n字卡\n字義\n搭配\n\nv.\n\n考頻\n★★★★☆\ntake\n🔊\nv.\n拿取；帶（人或物）去\n\n字義 · v.\n拿；取；抓；帶領\n\n動詞三態尚未收錄。\n\n圖說\n\nDoudou takes an apple out of the basket.\n\n牠從籃子裡拿出蘋果。\n\n記憶狀態\n尚未學過\n下次複習\n—\n考頻／難度\n★★★★☆・LV1\n\n單字總表 · W000851",
+        "imageInfo": [
+          {
+            "src": "http://127.0.0.1:5179/wordbeast/a/W000851.webp?v=local",
+            "complete": true,
+            "width": 1024,
+            "height": 1024
+          }
+        ],
+        "exampleCount": 9,
+        "mismatches": [],
+        "examples": [
+          {
+            "en": "My brother takes the bus to school every morning.",
+            "zh": "我弟弟每天早上搭公車上學。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "What's your take on this issue?",
+            "zh": "你對這個議題的看法為何？",
+            "label": [
+              "例句",
+              "原標籤：n. · 看法；解讀"
+            ]
+          },
+          {
+            "en": "Grace takes a bus to work every day.",
+            "zh": "葛瑞絲每天搭公車去上班。",
+            "label": [
+              "例句",
+              "原標籤：v. · 拿；取；抓；帶領"
+            ]
+          },
+          {
+            "en": "It takes me about twenty minutes to walk to school.",
+            "zh": "走路上學大約要花我二十分鐘。",
+            "label": [
+              "例句",
+              "原標籤：v. · 花費（時間）"
+            ]
+          },
+          {
+            "en": "Do you know who took my book?",
+            "zh": "你知道誰拿走我的書嗎？",
+            "label": [
+              "例句",
+              "原標籤：v. · 拿；取；抓；帶領"
+            ]
+          },
+          {
+            "en": "Eric took his children to the amusement park.",
+            "zh": "艾瑞克帶他的小孩到遊樂園。",
+            "label": [
+              "例句",
+              "原標籤：v. · 拿；取；抓；帶領"
+            ]
+          },
+          {
+            "en": "It usually takes about ten minutes to walk from my house to the MRT station.",
+            "zh": "從我家走到捷運站通常要花大約十分鐘。",
+            "label": [
+              "例句"
+            ]
+          },
+          {
+            "en": "It took me five hours to finish the book.",
+            "zh": "我花了 5 個小時看完那本書。",
+            "label": [
+              "例句",
+              "原標籤：v. · 拿；取；抓；帶領"
+            ]
+          },
+          {
+            "en": "We should all learn to give and take.",
+            "zh": "我們都應該學會互相讓步。",
+            "label": [
+              "例句",
+              "原標籤：v. · 拿；取；抓；帶領"
+            ]
+          }
+        ],
+        "definitionMatches": true
+      },
+      "wholeDictionaryWordState": "not_automatically_promoted_by_image_pass",
+      "originalWordStatus": "reviewed"
+    }
+  ],
+  "savedContentVerification": {
+    "rowsChecked": 129,
+    "failures": [],
+    "actualContentHash": "2fe738f7d3e858d3654a7510228d62821a5193730ab843fb0ef4083233edbd44",
+    "expectedContentHash": true,
+    "progressDatabaseWritten": false
+  },
+  "isolatedProgressVerification": {
+    "action": "existing App full-dictionary installer in isolated localhost audit browser",
+    "words": 6090,
+    "examples": 7871,
+    "progressTables": 14,
+    "progressUnchanged": true
+  },
+  "retainedIssues": [
+    {
+      "type": "source_mapping",
+      "id": "LV1-U04-03",
+      "details": "原稿word_id為NOID；採App既有已發布映射W000863對到television/tv，保留原稿NOID作來源紀錄，不虛構新ID。"
+    },
+    {
+      "type": "abbreviation_gloss_contamination",
+      "id": "LV1-U04-03",
+      "state": "learner_gloss_fixed_source_cause_unresolved",
+      "details": "依本詞英英解釋、全部五例與Merriam的電視義，移除非television的轉移向量混入；未宣稱已查明原匯入混入過程。"
+    },
+    {
+      "type": "rare_valid_meaning",
+      "id": "LV1-U04-06",
+      "state": "retained_with_primary_source",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/clock",
+      "details": "Collins British English2與American English2均收錄襪側織繡飾紋義，保留，沒有因罕見刪掉。"
+    },
+    {
+      "type": "proper_name",
+      "id": "LV1-U04-10",
+      "details": "nice形容詞義置前，原城市內容標為大寫專名Nice並保留，整詞draft不提升；原來源混入原因未定。"
+    },
+    {
+      "type": "classification_boundary",
+      "words": [
+        "hundred",
+        "thousand"
+      ],
+      "details": "數詞、名詞／形容詞的教材分類慣例尚需對照完整詞表，沒有只因字尾或名詞前位置就擅改。"
+    },
+    {
+      "type": "unexpanded_dictionary_coverage",
+      "words": [
+        "take",
+        "time",
+        "will",
+        "can",
+        "green"
+      ],
+      "details": "補回現有例句／義項所用英英解釋；原詞頭官方POS範圍、未拆義與原draft摘要不因這次圖片通過自動提升。"
+    },
+    {
+      "type": "structured_verb_forms",
+      "details": "尚未收錄的結構化三態仍保留明確待處理，不猜填。"
+    },
+    {
+      "type": "draft_unit_boundary",
+      "details": "31份未發布教材原稿維持未發布；19組只修本地一般卡圖句，未增加群組或教材單元入口。"
+    }
+  ],
+  "next": {
+    "unit": "LV1-U05",
+    "sourceCards": 32,
+    "publishedImageSubset": 13,
+    "id": "LV1-U05-01",
+    "word": "give"
+  },
+  "publication": {
+    "commit": "next authorized local checkpoint; resolve exact SHA using git log for this ledger",
+    "push": false,
+    "merge": false,
+    "deploy": false
+  }
+}

@@ -1,0 +1,33 @@
+
+> vocab-app@0.0.0 test
+> vitest run src/features/vocabulary/auditedWordIllustrations.test.ts src/features/vocabulary/lv1ReviewedImages.test.ts src/features/vocabulary/liveabcIntegration.test.ts src/db/recoveredUnitUpdate.test.ts --maxWorkers=1 --testTimeout=30000
+
+
+ RUN  v4.1.9 <repo>
+
+ ❯ src/features/vocabulary/auditedWordIllustrations.test.ts (2 tests | 1 failed) 45ms
+   × binds the explicitly reviewed general-card repairs to exact images and captions 40ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/features/vocabulary/auditedWordIllustrations.test.ts > binds the explicitly reviewed general-card repairs to exact images and captions
+AssertionError: expected 'agent actually viewed every labeled o…' to contain 'actually viewed original'
+
+Expected: "actually viewed original"
+Received: "agent actually viewed every labeled original PNG (660px contact-sheet image) and five published cards in actual UI"
+
+ ❯ src/features/vocabulary/auditedWordIllustrations.test.ts:19:29
+     17|  for(const card of cards){
+     18|   const proof=[...evidence.cards,...u4Evidence.cards].find(c=>c.id===c…
+     19|   expect(proof.pixelReview).toContain('actually viewed original');
+       |                             ^
+     20|   expect(createHash('sha256').update(readFileSync('public/'+card.illus…
+     21|   expect(card.illustration).toMatchObject({captionEn:proof.captionEn,c…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 3 passed (4)
+      Tests  1 failed | 16 passed (17)
+   Start at  13:05:53
+   Duration  78.14s (transform 25.38s, setup 0ms, import 56.72s, tests 20.12s, environment 1ms)

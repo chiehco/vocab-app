@@ -1,0 +1,70 @@
+{
+  "unit": "LV1-U02",
+  "state": "one_repair_integrated_one_tool_blocked",
+  "mappingSource": "src/features/vocabulary/lv1ReviewedImages.json",
+  "imageApprovalBinding": "scripts/approvals/lv1-images-20260922.json",
+  "consumers": [
+    "ReviewedCardsScreen",
+    "approvedWordIllustration -> getWordBeastAsset",
+    "approvedCurriculumIllustration -> exact path caption",
+    "LV1 reviewed static overview public/wordbeast/lv1-reviewed/index.html"
+  ],
+  "repairs": [
+    {
+      "id": "LV1-U02-08",
+      "wordId": "W000259",
+      "originalPath": "public/wordbeast/lv1-reviewed/LV1-U02-08-d5dd7302b647.webp",
+      "originalPublishedSha256": "4e05c2d51561a77fd81c7649ec3ab41a82842df48caec83a7706f5a57ec95375",
+      "originalGitBlob": "d5e92de3ea40e8ce6d54e8809c7775c06f880a87",
+      "unchangedCaptionEn": "The elephant used its trunk to spray water.",
+      "unchangedCaptionZh": "大象用鼻子噴水。",
+      "issue": "主噴水象鼻下、蘋果旁及嘴下另有灰色帶皮紋彎管，容易誤讀為多條象鼻；原尺寸已目視確認。",
+      "draft": "只移除兩個額外灰色鼻狀部件；保留唯一向上彎曲且噴水的長象鼻、普通小嘴、自然大象四肢、持蘋果豆形角色、河岸、水彩色鉛筆與暖米色紙底。不要新增象牙或文字，不改例句。",
+      "attempt": {
+        "tool": "image_gen__imagegen",
+        "reference": "<repo>/public/wordbeast/lv1-reviewed/LV1-U02-08-d5dd7302b647.webp",
+        "result": "failed_before_generation",
+        "error": "AbsolutePathBuf deserialized without a base path at line 1 column 151",
+        "status": "tool_input_blocked; no generated image; no file or mapping changed",
+        "paidFallbackUsed": false
+      }
+    },
+    {
+      "id": "LV1-U02-32",
+      "wordId": "W000842",
+      "originalPath": "public/wordbeast/lv1-reviewed/LV1-U02-32-af5bdc9689ae.webp",
+      "originalPublishedSha256": "1078eaf972da567a977c5a08bcc54b67ef65c7b705e5a96a880a77472d76c327",
+      "originalGitBlob": "e523f01b59cfef4f81af8055ebbd1dc14cfb8e5e",
+      "unchangedCaptionEn": "The sun rises in the east.",
+      "unchangedCaptionZh": "太陽從東方升起。",
+      "issue": "原圖為高掛太陽下的躺椅日光浴，缺少原句核心的日出。",
+      "draft": "晨曦、低地平線正在升起的太陽、同風格豆形角色看日出；東方以合理一致構圖簡化，不加方向文字、不畫日光浴，不改例句。",
+      "status": "locally_integrated_and_reopened",
+      "otherExample": {
+        "exampleId": "EX3ebf8dd3",
+        "sentenceEn": "On summer afternoons, my grandfather likes to sun himself on the porch.",
+        "sensePosFixed": "v.",
+        "oldImageDisposition": "retain original sunbathing WebP as recoverable candidate for this verb example; no example-level image binding claimed",
+        "runtimeContract": "General card shows an image with its exact registered caption. The meaning tab lists all examples separately; existing schema does not require one image per example. Replacing the U02 image must preserve The sun rises in the east. and must not promote this other example as paired."
+      },
+      "newAsset": {
+        "path": "wordbeast/lv1-reviewed/LV1-U02-32-972fd78d0fe4.webp",
+        "sha256": "fefa5b56747479f118879d64d67b32b8ef651e328b1efaa705e18cd49d2cbdde",
+        "gitBlob": "90828aadfa267153eb97618e1bbea53397b92628",
+        "assetCommit": "88d7b9a32f3ad661f039d190bcb3de52cce1080a",
+        "sizeBytes": 142858,
+        "dimensions": [
+          1254,
+          1254
+        ]
+      },
+      "reopenEvidence": "docs/unit-audit-20261105/LV1-U02-sunrise-review.json"
+    }
+  ],
+  "integrationRequirements": [
+    "原檔保留；新圖另存含內容雜湊的 sibling WebP，quality 85，核對實際尺寸與解碼。",
+    "更新精確卡號圖片路徑與既有發布圖雜湊綁定，保留原批准記錄並另記2026-11-05代理修正來源，不捏造使用者逐圖批准。",
+    "同步靜態圖句總覽的同一卡號引用；不要改同詞其他單元。",
+    "重開單元卡與一般卡，確認保存、圖像載入、原caption與新圖相符，重跑圖片契約測試。"
+  ]
+}

@@ -14,6 +14,7 @@ import { WRITTEN_REVISION } from '../features/exam/writtenModel';
 import { exportProgress, validateBackup } from '../backup/backup';
 import { claimDailyCheckIn, presentRewardRound, awardAnswer } from '../features/rewards/store';
 import { purchaseAndPlace } from '../features/town/decorations/store';
+import {beforeUnitAudit} from './unitAudit.testSupport';
 
 const additional = new Set(baseline.additionalWordIds);
 const oldWords = pack.words.filter(w => !additional.has(w.wordId));
@@ -57,7 +58,7 @@ it('adds exactly the 51 existing IDs while retaining every original starter payl
     expect(rows).toHaveLength(dataset.count);
     expect(rows.every(row => typeof row[dataset.key] === 'string')).toBe(true);
     expect(new Set(rows.map(row => row[dataset.key])).size).toBe(rows.length);
-    expect(createHash('sha256').update(JSON.stringify(stable(rows))).digest('hex')).toBe(dataset.payloadHash);
+    expect(createHash('sha256').update(JSON.stringify(stable(beforeUnitAudit(dataset.name,rows)))).digest('hex')).toBe(dataset.payloadHash);
   }
   expect(pack.meta.contentHash).not.toBe(oldPack.meta.contentHash);
 });

@@ -1,0 +1,432 @@
+{
+  "manifest": "docs\\unit-audit-20261105\\LV1-U03-remaining-patches.json",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "checkedAt": "2026-11-05T04:30:41.654883+00:00",
+  "changeCount": 10,
+  "changes": [
+    {
+      "dataset": "examples",
+      "id": "EX943781df",
+      "before": {
+        "exampleId": "EX943781df",
+        "word": "love",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "Many teenagers love to spend their weekends chatting with friends online.",
+        "sentenceZh": "許多青少年喜歡在週末花時間跟朋友線上聊天。",
+        "blankSentence": "Many teenagers _____ to spend their weekends chatting with friends online.",
+        "answer": "love",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EX943781df",
+        "word": "love",
+        "sensePos": "v.",
+        "meaningHint": "喜愛；喜歡",
+        "exampleType": "exam",
+        "sentenceEn": "Many teenagers love to spend their weekends chatting with friends online.",
+        "sentenceZh": "許多青少年喜歡在週末花時間跟朋友線上聊天。",
+        "blankSentence": "Many teenagers _____ to spend their weekends chatting with friends online.",
+        "answer": "love",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "love to spend是動詞用法，原n.標記錯置；原句不變。",
+      "evidence": "https://www.merriam-webster.com/dictionary/love"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX1bf694d4",
+      "before": {
+        "exampleId": "EX1bf694d4",
+        "word": "pen",
+        "sensePos": "n./v.",
+        "meaningHint": "鋼筆；筆；筆調；筆桿子",
+        "exampleType": "textbook",
+        "sentenceEn": "It had been a long time since Jim penned a letter.",
+        "sentenceZh": "吉姆已好久沒寫信了。",
+        "blankSentence": "It had been a long time since Jim _____ a letter.",
+        "answer": "penned",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EX1bf694d4",
+        "word": "pen",
+        "sensePos": "v.",
+        "meaningHint": "寫；撰寫",
+        "exampleType": "textbook",
+        "sentenceEn": "It had been a long time since Jim penned a letter.",
+        "sentenceZh": "吉姆已好久沒寫信了。",
+        "blankSentence": "It had been a long time since Jim _____ a letter.",
+        "answer": "penned",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "reason": "penned a letter是寫信的動詞；將整詞混合詞性提示細化為該句實際用法，原句不變。",
+      "evidence": "https://www.merriam-webster.com/dictionary/pen"
+    },
+    {
+      "dataset": "examples",
+      "id": "EXd4d75e97",
+      "before": {
+        "exampleId": "EXd4d75e97",
+        "word": "only",
+        "sensePos": "adv.",
+        "meaningHint": "只有；僅僅",
+        "exampleType": "daily",
+        "sentenceEn": "Only three tickets were left this morning.",
+        "sentenceZh": "今天早上只剩三張票。",
+        "blankSentence": "_____ three tickets were left this morning.",
+        "answer": "Only",
+        "difficulty": "LV1",
+        "status": "draft"
+      },
+      "after": {
+        "exampleId": "EXd4d75e97",
+        "word": "only",
+        "sensePos": "adv.",
+        "meaningHint": "只有；僅僅",
+        "exampleType": "daily",
+        "sentenceEn": "Only three tickets were left this morning.",
+        "sentenceZh": "今天早上只剩三張票。",
+        "blankSentence": "_____ three tickets were left this morning.",
+        "answer": "Only",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "已核對Only three的限制副詞、英中句意及填空還原；原句不變。",
+      "evidence": "https://www.merriam-webster.com/dictionary/only"
+    },
+    {
+      "dataset": "senses",
+      "id": "W000740-1",
+      "before": {
+        "senseId": "W000740-1",
+        "wordId": "W000740",
+        "word": "say",
+        "senseOrder": 1,
+        "sensePos": "v.",
+        "meaningZh": "說",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：說；講；念；說明",
+        "status": "needs_check"
+      },
+      "after": {
+        "senseId": "W000740-1",
+        "wordId": "W000740",
+        "word": "say",
+        "senseOrder": 1,
+        "sensePos": "v.",
+        "meaningZh": "說",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：說；講；念；說明",
+        "status": "reviewed"
+      },
+      "reason": "逐義檢查詞性、中文及全部既有例句，與詞典相符後僅更新此義項。",
+      "evidence": "https://www.merriam-webster.com/dictionary/say"
+    },
+    {
+      "dataset": "senses",
+      "id": "W000577-1",
+      "before": {
+        "senseId": "W000577-1",
+        "wordId": "W000577",
+        "word": "new",
+        "senseOrder": 1,
+        "sensePos": "adj.",
+        "meaningZh": "新的",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：新的；陌生的；最近的；不熟悉的",
+        "status": "needs_check"
+      },
+      "after": {
+        "senseId": "W000577-1",
+        "wordId": "W000577",
+        "word": "new",
+        "senseOrder": 1,
+        "sensePos": "adj.",
+        "meaningZh": "新的",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：新的；陌生的；最近的；不熟悉的",
+        "status": "reviewed"
+      },
+      "reason": "逐義檢查詞性、中文及全部既有例句，與詞典相符後僅更新此義項。",
+      "evidence": "https://www.merriam-webster.com/dictionary/new"
+    },
+    {
+      "dataset": "senses",
+      "id": "W000292-1",
+      "before": {
+        "senseId": "W000292-1",
+        "wordId": "W000292",
+        "word": "family",
+        "senseOrder": 1,
+        "sensePos": "n.",
+        "meaningZh": "家庭；家人",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：家庭；家人；族；家庭的",
+        "status": "needs_check"
+      },
+      "after": {
+        "senseId": "W000292-1",
+        "wordId": "W000292",
+        "word": "family",
+        "senseOrder": 1,
+        "sensePos": "n.",
+        "meaningZh": "家庭；家人",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：家庭；家人；族；家庭的",
+        "status": "reviewed"
+      },
+      "reason": "逐義檢查詞性、中文及全部既有例句，與詞典相符後僅更新此義項。",
+      "evidence": "https://www.merriam-webster.com/dictionary/family"
+    },
+    {
+      "dataset": "words",
+      "id": "W000633",
+      "before": {
+        "wordId": "W000633",
+        "word": "pen",
+        "wordVariants": [
+          "pen"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "鋼筆；筆；筆調；筆桿子",
+        "meaningEn": "a writing implement with a point from which ink flows; an enclosure for confining livestock",
+        "usagePattern": "write with a pen; a ballpoint pen",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "pen",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "用筆書寫；原子筆"
+      },
+      "after": {
+        "wordId": "W000633",
+        "word": "pen",
+        "wordVariants": [
+          "pen"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "鋼筆；筆；筆調；筆桿子",
+        "meaningEn": "a writing implement with a point from which ink flows; an enclosure for confining livestock; (v.) to write or compose words",
+        "usagePattern": "write with a pen; a ballpoint pen",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "pen",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "用筆書寫；原子筆"
+      },
+      "reason": "補回既有penned a letter例句所用撰寫動詞的英英解釋；保留原名詞解釋。",
+      "evidence": "https://www.merriam-webster.com/dictionary/pen"
+    },
+    {
+      "dataset": "words",
+      "id": "W000609",
+      "before": {
+        "wordId": "W000609",
+        "word": "only",
+        "wordVariants": [
+          "only"
+        ],
+        "level": "LV1",
+        "pos": "adv./adj./conj.",
+        "posAll": [
+          "adv.",
+          "adj.",
+          "conj."
+        ],
+        "meaningZh": "唯一的；僅有的；最佳的；只有",
+        "meaningEn": "with nevertheless the final result; in the final outcome",
+        "usagePattern": "only + N; the only N; not only ... but also",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "only",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "只有……；唯一的……；不但……而且……"
+      },
+      "after": {
+        "wordId": "W000609",
+        "word": "only",
+        "wordVariants": [
+          "only"
+        ],
+        "level": "LV1",
+        "pos": "adv./adj./conj.",
+        "posAll": [
+          "adv.",
+          "adj.",
+          "conj."
+        ],
+        "meaningZh": "唯一的；僅有的；最佳的；只有",
+        "meaningEn": "(adv.) no more than; (adj.) the single one; (conj.) but; with nevertheless the final result; in the final outcome",
+        "usagePattern": "only + N; the only N; not only ... but also",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "only",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "只有……；唯一的……；不但……而且……"
+      },
+      "reason": "既有解釋只含最後結果的副詞義，漏掉已收錄的基本副詞、形容詞及連接詞；補齊且保留原義。",
+      "evidence": "https://www.merriam-webster.com/dictionary/only"
+    },
+    {
+      "dataset": "words",
+      "id": "W000208",
+      "before": {
+        "wordId": "W000208",
+        "word": "cute",
+        "wordVariants": [
+          "cute"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "可愛的；聰明的；伶俐的；品他病",
+        "meaningEn": "obviously contrived to charm",
+        "usagePattern": "be/look cute; a cute animal",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "cute",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "很可愛／看起來可愛；可愛的動物"
+      },
+      "after": {
+        "wordId": "W000208",
+        "word": "cute",
+        "wordVariants": [
+          "cute"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "可愛的；聰明的；伶俐的",
+        "meaningEn": "attractive in a pleasing or childlike way; clever or shrewd; obviously contrived to charm",
+        "usagePattern": "be/look cute; a cute animal",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "cute",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "很可愛／看起來可愛；可愛的動物"
+      },
+      "reason": "品他病為無法解釋的破損文字；核對詞典後保留可證的三種中文表達，補回英英解釋漏掉的常用可愛與機敏義。draft仍保留。",
+      "evidence": "https://www.merriam-webster.com/dictionary/cute"
+    },
+    {
+      "dataset": "words",
+      "id": "W000059",
+      "before": {
+        "wordId": "W000059",
+        "word": "banana",
+        "wordVariants": [
+          "banana"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "香蕉",
+        "meaningEn": "any of several tropical and subtropical treelike herbs of the genus Musa having a terminal crown of large entire leaves and usually beari...; elongated crescent-shaped yellow fruit with soft sweet flesh",
+        "usagePattern": "eat/peel a banana; a bunch of bananas",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "banana",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "吃／剝香蕉；一串香蕉"
+      },
+      "after": {
+        "wordId": "W000059",
+        "word": "banana",
+        "wordVariants": [
+          "banana"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "香蕉",
+        "meaningEn": "a tropical plant of the genus Musa that produces bunches of long fruit; an elongated, usually yellow fruit with soft, sweet flesh",
+        "usagePattern": "eat/peel a banana; a bunch of bananas",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "banana",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "吃／剝香蕉；一串香蕉"
+      },
+      "reason": "原植物義在beari...遭截斷；依詞典將植物及果實兩義用完整自述句修復，不新增原句。",
+      "evidence": "https://www.merriam-webster.com/dictionary/banana"
+    }
+  ],
+  "masterTouched": false,
+  "sentencesChanged": false,
+  "imagesChanged": false,
+  "sourceHashesBefore": {
+    "words.json": "db84aefa9566e971a7a27d95ac4793948462e345d9afe7a5654662b271e5aa00",
+    "senses.json": "ff74ab77cbb221245e5f1ded322597da686a8d5dcf221c0f958ef40b6fe8710e",
+    "examples.json": "99b6890e1784a0346571938ba05b18557fd680c001c41d8d520b996c046340c7",
+    "meta.json": "d806d32ceb3fd48db1ede78435283b299785d4fc71589b5182734ac2bf36f1ba",
+    "sa-pack.json": "49ae639bb2794a5e1ad7f5bb2ab7cb9dc17aba6fdd183c81b7ca607b4b5cc249"
+  },
+  "sourceHashesAfter": {
+    "words.json": "3ac76de0a713ab3f1c6bf467c9845249695bdcef1864d8fe9f75ec8f0422d1ca",
+    "senses.json": "64b2e9b3784f96b7b5c4fbc92731e6a82148989f727c14985f18287e0afd5002",
+    "examples.json": "aad214508501fd7a0df2605a36aeb9cc788de46c155017fed9109a916ac5dc49",
+    "meta.json": "673eb27a34d97fed9c3cca302a1800a8894f3037af26fa65d9a5516563f29727",
+    "sa-pack.json": "92e342931d70f1f3e2c59633679ec58899aa4e08f4c4a7128054e8ab98a64642"
+  },
+  "state": "applied_not_ui_verified"
+}

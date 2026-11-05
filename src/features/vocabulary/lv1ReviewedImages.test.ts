@@ -51,6 +51,16 @@ describe('reviewed LV1 image-only release', () => {
     expect(approvedCurriculumIllustration('wrong-word', '/' + cards[0].illustration.path)).toBeUndefined();
   });
 
+  it('repairs only the U02 sunrise pair and retains the old image and sun-yourself example',()=>{
+    const sun=cards.find(c=>c.id==='LV1-U02-32')!;
+    expect(sun.illustration).toMatchObject({path:'wordbeast/lv1-reviewed/LV1-U02-32-972fd78d0fe4.webp',captionEn:'The sun rises in the east.'});
+    expect(hash(readFileSync('public/'+sun.illustration.path))).toBe('fefa5b56747479f118879d64d67b32b8ef651e328b1efaa705e18cd49d2cbdde');
+    expect(hash(readFileSync('public/wordbeast/lv1-reviewed/LV1-U02-32-af5bdc9689ae.webp'))).toBe('1078eaf972da567a977c5a08bcc54b67ef65c7b705e5a96a880a77472d76c327');
+    const example=bootstrap.examples.find(e=>e.exampleId==='EX3ebf8dd3')!;
+    expect(example.sentenceEn).toBe('On summer afternoons, my grandfather likes to sun himself on the porch.');
+    expect(example.sensePos).toBe('v.');
+  });
+
   it('uses the final Unit01 redraws and marriage correction', () => {
     for (const id of ['15', '27', '32', '36', '38']) {
       expect(audit.find(c => c.id === 'LV1-U01-' + id)?.sourceImage).toContain('_v2_');
