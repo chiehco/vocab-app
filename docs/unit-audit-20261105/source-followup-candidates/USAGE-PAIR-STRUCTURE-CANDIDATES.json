@@ -1,0 +1,2037 @@
+{
+  "schemaVersion": 1,
+  "repository": "chiehco/vocab-app",
+  "auditedHead": "26cc432853d13617f19f843c430ccd3ee9543733",
+  "classification": "結構候選，而非已證語義錯誤",
+  "scope": "All 6090 records in the exact committed words.json blob. Only usagePattern / usagePatternZh grouping and the general word-card usage renderer are audited.",
+  "verification": {
+    "wordsBlob": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+    "wordsBytes": 4417236,
+    "allSourceBlobHashesVerified": true,
+    "method": "Execute the fetched usagePattern.ts functions after Node TypeScript-only stripping. Inspect UsagePatternList.tsx and its WordDetailScreen call site statically. Account for hardware/software approved overrides.",
+    "browserUiAcceptance": false,
+    "reactRendererExecuted": false,
+    "applicationBuildRun": false,
+    "repositoryEdited": false,
+    "commitsCreated": false,
+    "pushed": false,
+    "noClaim": "This is not semantic certification, complete-unit acceptance, live deployment verification, or validation of uncommitted drafts."
+  },
+  "sourceFiles": [
+    {
+      "path": "public/data/v1/words.json",
+      "blobSha": "d3bbe543d29ac2ca0a6f9ef7d62891b50bc5e6d3",
+      "url": "https://github.com/chiehco/vocab-app/blob/26cc432853d13617f19f843c430ccd3ee9543733/public/data/v1/words.json"
+    },
+    {
+      "path": "src/features/vocabulary/usagePattern.ts",
+      "blobSha": "bd8a81b83873860d5821c21985bd7bf708d05963",
+      "url": "https://github.com/chiehco/vocab-app/blob/26cc432853d13617f19f843c430ccd3ee9543733/src/features/vocabulary/usagePattern.ts"
+    },
+    {
+      "path": "src/features/vocabulary/UsagePatternList.tsx",
+      "blobSha": "eecf98c6c254a1334d79ede6e58dfe4428b80fde",
+      "url": "https://github.com/chiehco/vocab-app/blob/26cc432853d13617f19f843c430ccd3ee9543733/src/features/vocabulary/UsagePatternList.tsx"
+    },
+    {
+      "path": "src/features/browser/WordDetailScreen.tsx",
+      "blobSha": "144a5d9176cc6fd200fdfa54e1d03c7f392afdeb",
+      "url": "https://github.com/chiehco/vocab-app/blob/26cc432853d13617f19f843c430ccd3ee9543733/src/features/browser/WordDetailScreen.tsx"
+    },
+    {
+      "path": "src/features/vocabulary/approvedCurriculum.ts",
+      "blobSha": "c7e558eb79a81aa52f5f7ba3d32d0b9b9c6c9aa2",
+      "url": "https://github.com/chiehco/vocab-app/blob/26cc432853d13617f19f843c430ccd3ee9543733/src/features/vocabulary/approvedCurriculum.ts"
+    },
+    {
+      "path": "src/features/vocabulary/lv1ReviewedImages.json",
+      "blobSha": "8545d69bf5b33af5fb7c33b7055625cffd934bd5",
+      "url": "https://github.com/chiehco/vocab-app/blob/26cc432853d13617f19f843c430ccd3ee9543733/src/features/vocabulary/lv1ReviewedImages.json"
+    },
+    {
+      "path": "src/features/direct/curriculumLV4Unit19.json",
+      "blobSha": "9870bb9000bd301623c20be7779087fb9ebdb1a8",
+      "url": "https://github.com/chiehco/vocab-app/blob/26cc432853d13617f19f843c430ccd3ee9543733/src/features/direct/curriculumLV4Unit19.json"
+    },
+    {
+      "path": "src/features/direct/model.ts",
+      "blobSha": "9a32ed4a3117081004c5b6b42b1457232c9f6aab",
+      "url": "https://github.com/chiehco/vocab-app/blob/26cc432853d13617f19f843c430ccd3ee9543733/src/features/direct/model.ts"
+    },
+    {
+      "path": "src/features/direct/curriculum.json",
+      "blobSha": "31269337781b5be4303895b396cd46bb6c8de0a5",
+      "url": "https://github.com/chiehco/vocab-app/blob/26cc432853d13617f19f843c430ccd3ee9543733/src/features/direct/curriculum.json"
+    },
+    {
+      "path": "src/features/direct/curriculumLV1Unit16.json",
+      "blobSha": "e7c6e08e48d9910540e41e8311870df69488d0d4",
+      "url": "https://github.com/chiehco/vocab-app/blob/26cc432853d13617f19f843c430ccd3ee9543733/src/features/direct/curriculumLV1Unit16.json"
+    },
+    {
+      "path": "src/features/direct/curriculumLV1Unit17.json",
+      "blobSha": "297ee827d031fe80ce421bc34774710180b1ee38",
+      "url": "https://github.com/chiehco/vocab-app/blob/26cc432853d13617f19f843c430ccd3ee9543733/src/features/direct/curriculumLV1Unit17.json"
+    },
+    {
+      "path": "src/features/direct/curriculumLV1Unit18.json",
+      "blobSha": "4e48a8e8a74b55d90bec5f795ccebaba157eafd2",
+      "url": "https://github.com/chiehco/vocab-app/blob/26cc432853d13617f19f843c430ccd3ee9543733/src/features/direct/curriculumLV1Unit18.json"
+    },
+    {
+      "path": "src/features/direct/curriculumLV1Unit19.json",
+      "blobSha": "56ff6b44cb250ab44eb20bc9050d98f73826f486",
+      "url": "https://github.com/chiehco/vocab-app/blob/26cc432853d13617f19f843c430ccd3ee9543733/src/features/direct/curriculumLV1Unit19.json"
+    },
+    {
+      "path": "src/features/direct/curriculumLV1Unit20.json",
+      "blobSha": "f1835f20d53e4ca890ad0e0c74eb21fa86e8bc5a",
+      "url": "https://github.com/chiehco/vocab-app/blob/26cc432853d13617f19f843c430ccd3ee9543733/src/features/direct/curriculumLV1Unit20.json"
+    },
+    {
+      "path": "src/features/direct/curriculumLV1Unit21.json",
+      "blobSha": "727a166c65cfb37cbf8c3d23288abf833a43705d",
+      "url": "https://github.com/chiehco/vocab-app/blob/26cc432853d13617f19f843c430ccd3ee9543733/src/features/direct/curriculumLV1Unit21.json"
+    }
+  ],
+  "parserRules": {
+    "source": "export interface UsagePatternItem {\n  english: string;\n  chinese?: string;\n}\n\nfunction splitPattern(value?: string | null) {\n  return value?.split(/[;；]/).map(item => item.trim()).filter(Boolean) ?? [];\n}\n\nexport function buildUsagePatternItems(\n  english?: string | null,\n  chinese?: string | null,\n): UsagePatternItem[] {\n  const englishItems = splitPattern(english);\n  const chineseItems = splitPattern(chinese);\n  const hasAlignedChinese = englishItems.length > 0 && englishItems.length === chineseItems.length;\n  return englishItems.map((item, index) => ({\n    english: item,\n    chinese: hasAlignedChinese ? chineseItems[index] : undefined,\n  }));\n}\n",
+    "chineseUndefinedSerialization": "JSON omits an undefined chinese property. chinesePropertyStates explicitly records undefined for each omitted property.",
+    "split": "Split only on ASCII semicolon or fullwidth semicolon, trim each segment, and drop empty segments.",
+    "alignment": "Chinese is attached only when the nonempty English segment count is positive and equals the nonempty Chinese segment count. Any mismatch suppresses every Chinese segment.",
+    "component": "UsagePatternList returns null for no English items. Otherwise it emits a bold English item, and emits small Chinese text only when item.chinese is truthy.",
+    "callSite": "WordDetailScreen.tsx lines 182–183 select approved overrides then fall back to word data. Line 357 renders the section only when usagePattern is truthy. The town drawer embeds WordDetailScreen.",
+    "slashCommaAlternatives": "Slashes, Chinese enumeration commas and commas do not create parser groups. Grouped alternatives can therefore be structurally valid. Equal counts alone do not establish semantic correctness."
+  },
+  "summary": {
+    "totalWords": 6090,
+    "aligned": 6073,
+    "group_count_mismatch": 1,
+    "english_without_chinese": 0,
+    "chinese_without_english": 0,
+    "both_empty": 16,
+    "candidateCount": 1,
+    "byLevel": {
+      "LV1": {
+        "total": 944,
+        "aligned": 943,
+        "group_count_mismatch": 1,
+        "english_without_chinese": 0,
+        "chinese_without_english": 0,
+        "both_empty": 0
+      },
+      "LV2": {
+        "total": 965,
+        "aligned": 965,
+        "group_count_mismatch": 0,
+        "english_without_chinese": 0,
+        "chinese_without_english": 0,
+        "both_empty": 0
+      },
+      "LV3": {
+        "total": 1126,
+        "aligned": 1124,
+        "group_count_mismatch": 0,
+        "english_without_chinese": 0,
+        "chinese_without_english": 0,
+        "both_empty": 2
+      },
+      "LV4": {
+        "total": 1022,
+        "aligned": 1022,
+        "group_count_mismatch": 0,
+        "english_without_chinese": 0,
+        "chinese_without_english": 0,
+        "both_empty": 0
+      },
+      "LV5": {
+        "total": 1001,
+        "aligned": 1001,
+        "group_count_mismatch": 0,
+        "english_without_chinese": 0,
+        "chinese_without_english": 0,
+        "both_empty": 0
+      },
+      "LV6": {
+        "total": 1032,
+        "aligned": 1018,
+        "group_count_mismatch": 0,
+        "english_without_chinese": 0,
+        "chinese_without_english": 0,
+        "both_empty": 14
+      }
+    }
+  },
+  "unitImpact": {
+    "lv1CheckedRosterUnits": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25
+    ],
+    "lv1KnownCompletedAuditLedgerRangeAtHead": "LV1 U01–U14; this report does not re-certify those audits.",
+    "structuralCandidateDirectMappingsInLV1": [],
+    "explanation": "if W000426 has no direct officialWordId link in the LV1 image rosters or LV1 U16–U21 vocabulary packs. Thus no direct candidate intersects the LV1 U01–U14 rosters checked here. It still affects its general word card. This does not exclude mentions in examples, grammar notes, related words or other-level units.",
+    "emptyMappedLV3Words": [
+      {
+        "wordId": "W006085",
+        "word": "limousine/limo",
+        "unitMappings": [
+          {
+            "level": "LV3",
+            "unit": 1,
+            "itemId": "LI-LV3U01-limousine",
+            "source": "src/features/direct/curriculum.json",
+            "relationship": "direct_officialWordId"
+          },
+          {
+            "level": "LV3",
+            "unit": 1,
+            "itemId": "LI-LV3U01-limo",
+            "source": "src/features/direct/curriculum.json",
+            "relationship": "direct_officialWordId"
+          }
+        ]
+      },
+      {
+        "wordId": "W006086",
+        "word": "nostalgic",
+        "unitMappings": [
+          {
+            "level": "LV3",
+            "unit": 1,
+            "itemId": "LI-LV3U01-nostalgic",
+            "source": "src/features/direct/curriculum.json",
+            "relationship": "direct_officialWordId"
+          }
+        ]
+      }
+    ],
+    "otherUnitMappingLimit": "No exhaustive cross-level unit ownership scan was performed for the 14 LV6 supplemental empty records. Do not infer unit numbers from alphabetical position or level."
+  },
+  "candidates": [
+    {
+      "wordId": "W000426",
+      "word": "if",
+      "level": "LV1",
+      "status": "draft",
+      "before": {
+        "usagePattern": "if + clause; even if; as if",
+        "usagePatternZh": "如果……；即使……；彷彿……；在間接問句中表示是否"
+      },
+      "parser": {
+        "englishItems": [
+          "if + clause",
+          "even if",
+          "as if"
+        ],
+        "chineseItems": [
+          "如果……",
+          "即使……",
+          "彷彿……",
+          "在間接問句中表示是否"
+        ],
+        "englishCount": 3,
+        "chineseCount": 4,
+        "hasAlignedChinese": false,
+        "items": [
+          {
+            "english": "if + clause"
+          },
+          {
+            "english": "even if"
+          },
+          {
+            "english": "as if"
+          }
+        ],
+        "chinesePropertyStates": [
+          "undefined",
+          "undefined",
+          "undefined"
+        ],
+        "renderedEnglishCount": 3,
+        "renderedChineseCount": 0,
+        "listReturnsNull": false
+      },
+      "effectiveInput": {
+        "usagePattern": "if + clause; even if; as if",
+        "usagePatternZh": "如果……；即使……；彷彿……；在間接問句中表示是否"
+      },
+      "effectiveParser": {
+        "englishItems": [
+          "if + clause",
+          "even if",
+          "as if"
+        ],
+        "chineseItems": [
+          "如果……",
+          "即使……",
+          "彷彿……",
+          "在間接問句中表示是否"
+        ],
+        "englishCount": 3,
+        "chineseCount": 4,
+        "hasAlignedChinese": false,
+        "items": [
+          {
+            "english": "if + clause"
+          },
+          {
+            "english": "even if"
+          },
+          {
+            "english": "as if"
+          }
+        ],
+        "chinesePropertyStates": [
+          "undefined",
+          "undefined",
+          "undefined"
+        ],
+        "renderedEnglishCount": 3,
+        "renderedChineseCount": 0,
+        "listReturnsNull": false
+      },
+      "unitMappings": [],
+      "classification": "結構候選，而非已證語義錯誤",
+      "category": "group_count_mismatch",
+      "evidenceStrength": "Exact parser execution plus static renderer inspection; no browser or React render performed.",
+      "manualReview": {
+        "unmatchedChineseSegment": {
+          "oneBasedIndex": 4,
+          "text": "在間接問句中表示是否"
+        },
+        "interpretation": "這一段描述 if 的另一義／句法用途，可能應與第一組 if + clause 合組，或另增清楚對應的英文組。數量不符本身不能證明這段內容應刪除。",
+        "nextStep": "人工核對 if 的條件子句與間接問句用法，再選擇保留資訊的合組或增組方式；不要直接刪除第4組。"
+      }
+    }
+  ],
+  "bothEmptyExceptions": [
+    {
+      "wordId": "W006013",
+      "word": "ambush",
+      "level": "LV6",
+      "status": "draft",
+      "before": {
+        "usagePattern": null,
+        "usagePatternZh": null
+      },
+      "parser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      },
+      "effectiveInput": {
+        "usagePattern": null,
+        "usagePatternZh": null
+      },
+      "effectiveParser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      },
+      "unitMappings": [],
+      "classification": "雙欄空值例外，不是中文被分組規則隱藏",
+      "effect": "UsagePatternList returns null; WordDetailScreen does not render the 常用搭配 section for a falsy usagePattern. Other notes may still produce a 搭配 tab."
+    },
+    {
+      "wordId": "W006014",
+      "word": "assassin",
+      "level": "LV6",
+      "status": "draft",
+      "before": {
+        "usagePattern": null,
+        "usagePatternZh": null
+      },
+      "parser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      },
+      "effectiveInput": {
+        "usagePattern": null,
+        "usagePatternZh": null
+      },
+      "effectiveParser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      },
+      "unitMappings": [],
+      "classification": "雙欄空值例外，不是中文被分組規則隱藏",
+      "effect": "UsagePatternList returns null; WordDetailScreen does not render the 常用搭配 section for a falsy usagePattern. Other notes may still produce a 搭配 tab."
+    },
+    {
+      "wordId": "W006015",
+      "word": "bungalow",
+      "level": "LV6",
+      "status": "draft",
+      "before": {
+        "usagePattern": null,
+        "usagePatternZh": null
+      },
+      "parser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      },
+      "effectiveInput": {
+        "usagePattern": null,
+        "usagePatternZh": null
+      },
+      "effectiveParser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      },
+      "unitMappings": [],
+      "classification": "雙欄空值例外，不是中文被分組規則隱藏",
+      "effect": "UsagePatternList returns null; WordDetailScreen does not render the 常用搭配 section for a falsy usagePattern. Other notes may still produce a 搭配 tab."
+    },
+    {
+      "wordId": "W006016",
+      "word": "collide",
+      "level": "LV6",
+      "status": "draft",
+      "before": {
+        "usagePattern": null,
+        "usagePatternZh": null
+      },
+      "parser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      },
+      "effectiveInput": {
+        "usagePattern": null,
+        "usagePatternZh": null
+      },
+      "effectiveParser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      },
+      "unitMappings": [],
+      "classification": "雙欄空值例外，不是中文被分組規則隱藏",
+      "effect": "UsagePatternList returns null; WordDetailScreen does not render the 常用搭配 section for a falsy usagePattern. Other notes may still produce a 搭配 tab."
+    },
+    {
+      "wordId": "W006017",
+      "word": "ecstasy",
+      "level": "LV6",
+      "status": "draft",
+      "before": {
+        "usagePattern": null,
+        "usagePatternZh": null
+      },
+      "parser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      },
+      "effectiveInput": {
+        "usagePattern": null,
+        "usagePatternZh": null
+      },
+      "effectiveParser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      },
+      "unitMappings": [],
+      "classification": "雙欄空值例外，不是中文被分組規則隱藏",
+      "effect": "UsagePatternList returns null; WordDetailScreen does not render the 常用搭配 section for a falsy usagePattern. Other notes may still produce a 搭配 tab."
+    },
+    {
+      "wordId": "W006018",
+      "word": "establish",
+      "level": "LV6",
+      "status": "draft",
+      "before": {
+        "usagePattern": null,
+        "usagePatternZh": null
+      },
+      "parser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      },
+      "effectiveInput": {
+        "usagePattern": null,
+        "usagePatternZh": null
+      },
+      "effectiveParser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      },
+      "unitMappings": [],
+      "classification": "雙欄空值例外，不是中文被分組規則隱藏",
+      "effect": "UsagePatternList returns null; WordDetailScreen does not render the 常用搭配 section for a falsy usagePattern. Other notes may still produce a 搭配 tab."
+    },
+    {
+      "wordId": "W006019",
+      "word": "hermit",
+      "level": "LV6",
+      "status": "draft",
+      "before": {
+        "usagePattern": null,
+        "usagePatternZh": null
+      },
+      "parser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      },
+      "effectiveInput": {
+        "usagePattern": null,
+        "usagePatternZh": null
+      },
+      "effectiveParser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      },
+      "unitMappings": [],
+      "classification": "雙欄空值例外，不是中文被分組規則隱藏",
+      "effect": "UsagePatternList returns null; WordDetailScreen does not render the 常用搭配 section for a falsy usagePattern. Other notes may still produce a 搭配 tab."
+    },
+    {
+      "wordId": "W006020",
+      "word": "involve",
+      "level": "LV6",
+      "status": "draft",
+      "before": {
+        "usagePattern": null,
+        "usagePatternZh": null
+      },
+      "parser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      },
+      "effectiveInput": {
+        "usagePattern": null,
+        "usagePatternZh": null
+      },
+      "effectiveParser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      },
+      "unitMappings": [],
+      "classification": "雙欄空值例外，不是中文被分組規則隱藏",
+      "effect": "UsagePatternList returns null; WordDetailScreen does not render the 常用搭配 section for a falsy usagePattern. Other notes may still produce a 搭配 tab."
+    },
+    {
+      "wordId": "W006021",
+      "word": "morbid",
+      "level": "LV6",
+      "status": "draft",
+      "before": {
+        "usagePattern": null,
+        "usagePatternZh": null
+      },
+      "parser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      },
+      "effectiveInput": {
+        "usagePattern": null,
+        "usagePatternZh": null
+      },
+      "effectiveParser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      },
+      "unitMappings": [],
+      "classification": "雙欄空值例外，不是中文被分組規則隱藏",
+      "effect": "UsagePatternList returns null; WordDetailScreen does not render the 常用搭配 section for a falsy usagePattern. Other notes may still produce a 搭配 tab."
+    },
+    {
+      "wordId": "W006022",
+      "word": "newbie",
+      "level": "LV6",
+      "status": "draft",
+      "before": {
+        "usagePattern": null,
+        "usagePatternZh": null
+      },
+      "parser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      },
+      "effectiveInput": {
+        "usagePattern": null,
+        "usagePatternZh": null
+      },
+      "effectiveParser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      },
+      "unitMappings": [],
+      "classification": "雙欄空值例外，不是中文被分組規則隱藏",
+      "effect": "UsagePatternList returns null; WordDetailScreen does not render the 常用搭配 section for a falsy usagePattern. Other notes may still produce a 搭配 tab."
+    },
+    {
+      "wordId": "W006023",
+      "word": "ponderous",
+      "level": "LV6",
+      "status": "draft",
+      "before": {
+        "usagePattern": null,
+        "usagePatternZh": null
+      },
+      "parser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      },
+      "effectiveInput": {
+        "usagePattern": null,
+        "usagePatternZh": null
+      },
+      "effectiveParser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      },
+      "unitMappings": [],
+      "classification": "雙欄空值例外，不是中文被分組規則隱藏",
+      "effect": "UsagePatternList returns null; WordDetailScreen does not render the 常用搭配 section for a falsy usagePattern. Other notes may still produce a 搭配 tab."
+    },
+    {
+      "wordId": "W006024",
+      "word": "putrid",
+      "level": "LV6",
+      "status": "draft",
+      "before": {
+        "usagePattern": null,
+        "usagePatternZh": null
+      },
+      "parser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      },
+      "effectiveInput": {
+        "usagePattern": null,
+        "usagePatternZh": null
+      },
+      "effectiveParser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      },
+      "unitMappings": [],
+      "classification": "雙欄空值例外，不是中文被分組規則隱藏",
+      "effect": "UsagePatternList returns null; WordDetailScreen does not render the 常用搭配 section for a falsy usagePattern. Other notes may still produce a 搭配 tab."
+    },
+    {
+      "wordId": "W006025",
+      "word": "require",
+      "level": "LV6",
+      "status": "draft",
+      "before": {
+        "usagePattern": null,
+        "usagePatternZh": null
+      },
+      "parser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      },
+      "effectiveInput": {
+        "usagePattern": null,
+        "usagePatternZh": null
+      },
+      "effectiveParser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      },
+      "unitMappings": [],
+      "classification": "雙欄空值例外，不是中文被分組規則隱藏",
+      "effect": "UsagePatternList returns null; WordDetailScreen does not render the 常用搭配 section for a falsy usagePattern. Other notes may still produce a 搭配 tab."
+    },
+    {
+      "wordId": "W006026",
+      "word": "abyss",
+      "level": "LV6",
+      "status": "draft",
+      "before": {
+        "usagePattern": null,
+        "usagePatternZh": null
+      },
+      "parser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      },
+      "effectiveInput": {
+        "usagePattern": null,
+        "usagePatternZh": null
+      },
+      "effectiveParser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      },
+      "unitMappings": [],
+      "classification": "雙欄空值例外，不是中文被分組規則隱藏",
+      "effect": "UsagePatternList returns null; WordDetailScreen does not render the 常用搭配 section for a falsy usagePattern. Other notes may still produce a 搭配 tab."
+    },
+    {
+      "wordId": "W006085",
+      "word": "limousine/limo",
+      "level": "LV3",
+      "status": "reviewed",
+      "before": {
+        "usagePattern": null,
+        "usagePatternZh": null
+      },
+      "parser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      },
+      "effectiveInput": {
+        "usagePattern": null,
+        "usagePatternZh": null
+      },
+      "effectiveParser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      },
+      "unitMappings": [
+        {
+          "level": "LV3",
+          "unit": 1,
+          "itemId": "LI-LV3U01-limousine",
+          "source": "src/features/direct/curriculum.json",
+          "relationship": "direct_officialWordId"
+        },
+        {
+          "level": "LV3",
+          "unit": 1,
+          "itemId": "LI-LV3U01-limo",
+          "source": "src/features/direct/curriculum.json",
+          "relationship": "direct_officialWordId"
+        }
+      ],
+      "classification": "雙欄空值例外，不是中文被分組規則隱藏",
+      "effect": "UsagePatternList returns null; WordDetailScreen does not render the 常用搭配 section for a falsy usagePattern. Other notes may still produce a 搭配 tab."
+    },
+    {
+      "wordId": "W006086",
+      "word": "nostalgic",
+      "level": "LV3",
+      "status": "reviewed",
+      "before": {
+        "usagePattern": null,
+        "usagePatternZh": null
+      },
+      "parser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      },
+      "effectiveInput": {
+        "usagePattern": null,
+        "usagePatternZh": null
+      },
+      "effectiveParser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      },
+      "unitMappings": [
+        {
+          "level": "LV3",
+          "unit": 1,
+          "itemId": "LI-LV3U01-nostalgic",
+          "source": "src/features/direct/curriculum.json",
+          "relationship": "direct_officialWordId"
+        }
+      ],
+      "classification": "雙欄空值例外，不是中文被分組規則隱藏",
+      "effect": "UsagePatternList returns null; WordDetailScreen does not render the 常用搭配 section for a falsy usagePattern. Other notes may still produce a 搭配 tab."
+    }
+  ],
+  "committedRegressionControls": [
+    {
+      "wordId": "W000035",
+      "word": "answer",
+      "level": "LV1",
+      "status": "reviewed",
+      "before": {
+        "usagePattern": "answer a question; the answer to N; answer for N",
+        "usagePatternZh": "回答問題；……的答案；對……負責"
+      },
+      "parser": {
+        "englishItems": [
+          "answer a question",
+          "the answer to N",
+          "answer for N"
+        ],
+        "chineseItems": [
+          "回答問題",
+          "……的答案",
+          "對……負責"
+        ],
+        "englishCount": 3,
+        "chineseCount": 3,
+        "hasAlignedChinese": true,
+        "items": [
+          {
+            "english": "answer a question",
+            "chinese": "回答問題"
+          },
+          {
+            "english": "the answer to N",
+            "chinese": "……的答案"
+          },
+          {
+            "english": "answer for N",
+            "chinese": "對……負責"
+          }
+        ],
+        "chinesePropertyStates": [
+          "string",
+          "string",
+          "string"
+        ],
+        "renderedEnglishCount": 3,
+        "renderedChineseCount": 3,
+        "listReturnsNull": false
+      },
+      "effectiveInput": {
+        "usagePattern": "answer a question; the answer to N; answer for N",
+        "usagePatternZh": "回答問題；……的答案；對……負責"
+      },
+      "effectiveParser": {
+        "englishItems": [
+          "answer a question",
+          "the answer to N",
+          "answer for N"
+        ],
+        "chineseItems": [
+          "回答問題",
+          "……的答案",
+          "對……負責"
+        ],
+        "englishCount": 3,
+        "chineseCount": 3,
+        "hasAlignedChinese": true,
+        "items": [
+          {
+            "english": "answer a question",
+            "chinese": "回答問題"
+          },
+          {
+            "english": "the answer to N",
+            "chinese": "……的答案"
+          },
+          {
+            "english": "answer for N",
+            "chinese": "對……負責"
+          }
+        ],
+        "chinesePropertyStates": [
+          "string",
+          "string",
+          "string"
+        ],
+        "renderedEnglishCount": 3,
+        "renderedChineseCount": 3,
+        "listReturnsNull": false
+      },
+      "unitMappings": [
+        {
+          "level": "LV1",
+          "unit": 12,
+          "itemId": "LV1-U12-03",
+          "source": "src/features/vocabulary/lv1ReviewedImages.json",
+          "relationship": "direct_officialWordId"
+        }
+      ]
+    },
+    {
+      "wordId": "W000739",
+      "word": "save",
+      "level": "LV1",
+      "status": "reviewed",
+      "before": {
+        "usagePattern": "save money; save time; save someone's life",
+        "usagePatternZh": "存錢／省錢；節省時間；拯救某人的生命"
+      },
+      "parser": {
+        "englishItems": [
+          "save money",
+          "save time",
+          "save someone's life"
+        ],
+        "chineseItems": [
+          "存錢／省錢",
+          "節省時間",
+          "拯救某人的生命"
+        ],
+        "englishCount": 3,
+        "chineseCount": 3,
+        "hasAlignedChinese": true,
+        "items": [
+          {
+            "english": "save money",
+            "chinese": "存錢／省錢"
+          },
+          {
+            "english": "save time",
+            "chinese": "節省時間"
+          },
+          {
+            "english": "save someone's life",
+            "chinese": "拯救某人的生命"
+          }
+        ],
+        "chinesePropertyStates": [
+          "string",
+          "string",
+          "string"
+        ],
+        "renderedEnglishCount": 3,
+        "renderedChineseCount": 3,
+        "listReturnsNull": false
+      },
+      "effectiveInput": {
+        "usagePattern": "save money; save time; save someone's life",
+        "usagePatternZh": "存錢／省錢；節省時間；拯救某人的生命"
+      },
+      "effectiveParser": {
+        "englishItems": [
+          "save money",
+          "save time",
+          "save someone's life"
+        ],
+        "chineseItems": [
+          "存錢／省錢",
+          "節省時間",
+          "拯救某人的生命"
+        ],
+        "englishCount": 3,
+        "chineseCount": 3,
+        "hasAlignedChinese": true,
+        "items": [
+          {
+            "english": "save money",
+            "chinese": "存錢／省錢"
+          },
+          {
+            "english": "save time",
+            "chinese": "節省時間"
+          },
+          {
+            "english": "save someone's life",
+            "chinese": "拯救某人的生命"
+          }
+        ],
+        "chinesePropertyStates": [
+          "string",
+          "string",
+          "string"
+        ],
+        "renderedEnglishCount": 3,
+        "renderedChineseCount": 3,
+        "listReturnsNull": false
+      },
+      "unitMappings": [
+        {
+          "level": "LV1",
+          "unit": 16,
+          "itemId": "LI-LV1U16-V050",
+          "source": "src/features/direct/curriculumLV1Unit16.json",
+          "relationship": "direct_officialWordId"
+        }
+      ]
+    },
+    {
+      "wordId": "W000593",
+      "word": "notice",
+      "level": "LV1",
+      "status": "reviewed",
+      "before": {
+        "usagePattern": "notice + O + V-ing; put up a notice; without notice",
+        "usagePatternZh": "注意 + 受詞 + 動名詞；張貼通知；無預告地"
+      },
+      "parser": {
+        "englishItems": [
+          "notice + O + V-ing",
+          "put up a notice",
+          "without notice"
+        ],
+        "chineseItems": [
+          "注意 + 受詞 + 動名詞",
+          "張貼通知",
+          "無預告地"
+        ],
+        "englishCount": 3,
+        "chineseCount": 3,
+        "hasAlignedChinese": true,
+        "items": [
+          {
+            "english": "notice + O + V-ing",
+            "chinese": "注意 + 受詞 + 動名詞"
+          },
+          {
+            "english": "put up a notice",
+            "chinese": "張貼通知"
+          },
+          {
+            "english": "without notice",
+            "chinese": "無預告地"
+          }
+        ],
+        "chinesePropertyStates": [
+          "string",
+          "string",
+          "string"
+        ],
+        "renderedEnglishCount": 3,
+        "renderedChineseCount": 3,
+        "listReturnsNull": false
+      },
+      "effectiveInput": {
+        "usagePattern": "notice + O + V-ing; put up a notice; without notice",
+        "usagePatternZh": "注意 + 受詞 + 動名詞；張貼通知；無預告地"
+      },
+      "effectiveParser": {
+        "englishItems": [
+          "notice + O + V-ing",
+          "put up a notice",
+          "without notice"
+        ],
+        "chineseItems": [
+          "注意 + 受詞 + 動名詞",
+          "張貼通知",
+          "無預告地"
+        ],
+        "englishCount": 3,
+        "chineseCount": 3,
+        "hasAlignedChinese": true,
+        "items": [
+          {
+            "english": "notice + O + V-ing",
+            "chinese": "注意 + 受詞 + 動名詞"
+          },
+          {
+            "english": "put up a notice",
+            "chinese": "張貼通知"
+          },
+          {
+            "english": "without notice",
+            "chinese": "無預告地"
+          }
+        ],
+        "chinesePropertyStates": [
+          "string",
+          "string",
+          "string"
+        ],
+        "renderedEnglishCount": 3,
+        "renderedChineseCount": 3,
+        "listReturnsNull": false
+      },
+      "unitMappings": []
+    }
+  ],
+  "noticeDraftBoundary": {
+    "wordId": "W000593",
+    "committedHead": "26cc432853d13617f19f843c430ccd3ee9543733",
+    "committedState": "3 English / 3 Chinese groups; all three Chinese groups survive the actual parser.",
+    "uncommittedDraftState": "A separate U15 editing pass reported a proposed 3-English / 2-Chinese draft. That draft was not inspected or executed here and is not part of the committed snapshot.",
+    "handling": "No notice defect is attributed to this committed blob. Leave the in-progress U15 draft correction to its existing editing pass."
+  },
+  "legalGroupedExamples": [
+    {
+      "wordId": "W000004",
+      "word": "about",
+      "level": "LV1",
+      "status": "draft",
+      "before": {
+        "usagePattern": "about N/V-ing; be about to V",
+        "usagePatternZh": "關於……／做……；正要做……"
+      },
+      "parser": {
+        "englishItems": [
+          "about N/V-ing",
+          "be about to V"
+        ],
+        "chineseItems": [
+          "關於……／做……",
+          "正要做……"
+        ],
+        "englishCount": 2,
+        "chineseCount": 2,
+        "hasAlignedChinese": true,
+        "items": [
+          {
+            "english": "about N/V-ing",
+            "chinese": "關於……／做……"
+          },
+          {
+            "english": "be about to V",
+            "chinese": "正要做……"
+          }
+        ],
+        "chinesePropertyStates": [
+          "string",
+          "string"
+        ],
+        "renderedEnglishCount": 2,
+        "renderedChineseCount": 2,
+        "listReturnsNull": false
+      },
+      "effectiveInput": {
+        "usagePattern": "about N/V-ing; be about to V",
+        "usagePatternZh": "關於……／做……；正要做……"
+      },
+      "effectiveParser": {
+        "englishItems": [
+          "about N/V-ing",
+          "be about to V"
+        ],
+        "chineseItems": [
+          "關於……／做……",
+          "正要做……"
+        ],
+        "englishCount": 2,
+        "chineseCount": 2,
+        "hasAlignedChinese": true,
+        "items": [
+          {
+            "english": "about N/V-ing",
+            "chinese": "關於……／做……"
+          },
+          {
+            "english": "be about to V",
+            "chinese": "正要做……"
+          }
+        ],
+        "chinesePropertyStates": [
+          "string",
+          "string"
+        ],
+        "renderedEnglishCount": 2,
+        "renderedChineseCount": 2,
+        "listReturnsNull": false
+      },
+      "unitMappings": [],
+      "classification": "Parser-valid grouped alternatives; not independently certified for semantic completeness."
+    },
+    {
+      "wordId": "W000006",
+      "word": "abroad",
+      "level": "LV1",
+      "status": "draft",
+      "before": {
+        "usagePattern": "go/study/live abroad",
+        "usagePatternZh": "出國／在國外留學／住在國外"
+      },
+      "parser": {
+        "englishItems": [
+          "go/study/live abroad"
+        ],
+        "chineseItems": [
+          "出國／在國外留學／住在國外"
+        ],
+        "englishCount": 1,
+        "chineseCount": 1,
+        "hasAlignedChinese": true,
+        "items": [
+          {
+            "english": "go/study/live abroad",
+            "chinese": "出國／在國外留學／住在國外"
+          }
+        ],
+        "chinesePropertyStates": [
+          "string"
+        ],
+        "renderedEnglishCount": 1,
+        "renderedChineseCount": 1,
+        "listReturnsNull": false
+      },
+      "effectiveInput": {
+        "usagePattern": "go/study/live abroad",
+        "usagePatternZh": "出國／在國外留學／住在國外"
+      },
+      "effectiveParser": {
+        "englishItems": [
+          "go/study/live abroad"
+        ],
+        "chineseItems": [
+          "出國／在國外留學／住在國外"
+        ],
+        "englishCount": 1,
+        "chineseCount": 1,
+        "hasAlignedChinese": true,
+        "items": [
+          {
+            "english": "go/study/live abroad",
+            "chinese": "出國／在國外留學／住在國外"
+          }
+        ],
+        "chinesePropertyStates": [
+          "string"
+        ],
+        "renderedEnglishCount": 1,
+        "renderedChineseCount": 1,
+        "listReturnsNull": false
+      },
+      "unitMappings": [
+        {
+          "level": "LV1",
+          "unit": 24,
+          "itemId": "LV1-U24-29",
+          "source": "src/features/vocabulary/lv1ReviewedImages.json",
+          "relationship": "direct_officialWordId"
+        }
+      ],
+      "classification": "Parser-valid grouped alternatives; not independently certified for semantic completeness."
+    },
+    {
+      "wordId": "W000058",
+      "word": "ball",
+      "level": "LV1",
+      "status": "draft",
+      "before": {
+        "usagePattern": "play with a ball; throw/catch a ball; a ball game",
+        "usagePatternZh": "玩球；丟球／接球；球類運動"
+      },
+      "parser": {
+        "englishItems": [
+          "play with a ball",
+          "throw/catch a ball",
+          "a ball game"
+        ],
+        "chineseItems": [
+          "玩球",
+          "丟球／接球",
+          "球類運動"
+        ],
+        "englishCount": 3,
+        "chineseCount": 3,
+        "hasAlignedChinese": true,
+        "items": [
+          {
+            "english": "play with a ball",
+            "chinese": "玩球"
+          },
+          {
+            "english": "throw/catch a ball",
+            "chinese": "丟球／接球"
+          },
+          {
+            "english": "a ball game",
+            "chinese": "球類運動"
+          }
+        ],
+        "chinesePropertyStates": [
+          "string",
+          "string",
+          "string"
+        ],
+        "renderedEnglishCount": 3,
+        "renderedChineseCount": 3,
+        "listReturnsNull": false
+      },
+      "effectiveInput": {
+        "usagePattern": "play with a ball; throw/catch a ball; a ball game",
+        "usagePatternZh": "玩球；丟球／接球；球類運動"
+      },
+      "effectiveParser": {
+        "englishItems": [
+          "play with a ball",
+          "throw/catch a ball",
+          "a ball game"
+        ],
+        "chineseItems": [
+          "玩球",
+          "丟球／接球",
+          "球類運動"
+        ],
+        "englishCount": 3,
+        "chineseCount": 3,
+        "hasAlignedChinese": true,
+        "items": [
+          {
+            "english": "play with a ball",
+            "chinese": "玩球"
+          },
+          {
+            "english": "throw/catch a ball",
+            "chinese": "丟球／接球"
+          },
+          {
+            "english": "a ball game",
+            "chinese": "球類運動"
+          }
+        ],
+        "chinesePropertyStates": [
+          "string",
+          "string",
+          "string"
+        ],
+        "renderedEnglishCount": 3,
+        "renderedChineseCount": 3,
+        "listReturnsNull": false
+      },
+      "unitMappings": [],
+      "classification": "Parser-valid grouped alternatives; not independently certified for semantic completeness."
+    }
+  ],
+  "approvedOverrideControls": [
+    {
+      "wordId": "W003482",
+      "word": "hardware",
+      "level": "LV4",
+      "status": "draft",
+      "before": {
+        "usagePattern": "a/the hardware; hardware of N",
+        "usagePatternZh": "該硬體；……的硬體"
+      },
+      "parser": {
+        "englishItems": [
+          "a/the hardware",
+          "hardware of N"
+        ],
+        "chineseItems": [
+          "該硬體",
+          "……的硬體"
+        ],
+        "englishCount": 2,
+        "chineseCount": 2,
+        "hasAlignedChinese": true,
+        "items": [
+          {
+            "english": "a/the hardware",
+            "chinese": "該硬體"
+          },
+          {
+            "english": "hardware of N",
+            "chinese": "……的硬體"
+          }
+        ],
+        "chinesePropertyStates": [
+          "string",
+          "string"
+        ],
+        "renderedEnglishCount": 2,
+        "renderedChineseCount": 2,
+        "listReturnsNull": false
+      },
+      "effectiveInput": {
+        "usagePattern": "a piece of hardware",
+        "usagePatternZh": "一件硬體設備"
+      },
+      "effectiveParser": {
+        "englishItems": [
+          "a piece of hardware"
+        ],
+        "chineseItems": [
+          "一件硬體設備"
+        ],
+        "englishCount": 1,
+        "chineseCount": 1,
+        "hasAlignedChinese": true,
+        "items": [
+          {
+            "english": "a piece of hardware",
+            "chinese": "一件硬體設備"
+          }
+        ],
+        "chinesePropertyStates": [
+          "string"
+        ],
+        "renderedEnglishCount": 1,
+        "renderedChineseCount": 1,
+        "listReturnsNull": false
+      },
+      "unitMappings": []
+    },
+    {
+      "wordId": "W003906",
+      "word": "software",
+      "level": "LV4",
+      "status": "draft",
+      "before": {
+        "usagePattern": "a/the software; software of N",
+        "usagePatternZh": "一套軟體；……的軟體"
+      },
+      "parser": {
+        "englishItems": [
+          "a/the software",
+          "software of N"
+        ],
+        "chineseItems": [
+          "一套軟體",
+          "……的軟體"
+        ],
+        "englishCount": 2,
+        "chineseCount": 2,
+        "hasAlignedChinese": true,
+        "items": [
+          {
+            "english": "a/the software",
+            "chinese": "一套軟體"
+          },
+          {
+            "english": "software of N",
+            "chinese": "……的軟體"
+          }
+        ],
+        "chinesePropertyStates": [
+          "string",
+          "string"
+        ],
+        "renderedEnglishCount": 2,
+        "renderedChineseCount": 2,
+        "listReturnsNull": false
+      },
+      "effectiveInput": {
+        "usagePattern": "a piece of software",
+        "usagePatternZh": "一套軟體"
+      },
+      "effectiveParser": {
+        "englishItems": [
+          "a piece of software"
+        ],
+        "chineseItems": [
+          "一套軟體"
+        ],
+        "englishCount": 1,
+        "chineseCount": 1,
+        "hasAlignedChinese": true,
+        "items": [
+          {
+            "english": "a piece of software",
+            "chinese": "一套軟體"
+          }
+        ],
+        "chinesePropertyStates": [
+          "string"
+        ],
+        "renderedEnglishCount": 1,
+        "renderedChineseCount": 1,
+        "listReturnsNull": false
+      },
+      "unitMappings": []
+    }
+  ],
+  "boundaryCases": [
+    {
+      "id": "undefined_both",
+      "input": {
+        "english": null,
+        "chinese": null,
+        "englishType": "undefined",
+        "chineseType": "undefined"
+      },
+      "parser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      }
+    },
+    {
+      "id": "null_both",
+      "input": {
+        "english": null,
+        "chinese": null,
+        "englishType": "null",
+        "chineseType": "null"
+      },
+      "parser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      }
+    },
+    {
+      "id": "empty_and_whitespace",
+      "input": {
+        "english": "",
+        "chinese": "   ",
+        "englishType": "string",
+        "chineseType": "string"
+      },
+      "parser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      }
+    },
+    {
+      "id": "delimiters_only",
+      "input": {
+        "english": ";； ;",
+        "chinese": "；;",
+        "englishType": "string",
+        "chineseType": "string"
+      },
+      "parser": {
+        "englishItems": [],
+        "chineseItems": [],
+        "englishCount": 0,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      }
+    },
+    {
+      "id": "trim_and_drop_empty_groups",
+      "input": {
+        "english": " first ; ; second；",
+        "chinese": " 第一；；第二 ;",
+        "englishType": "string",
+        "chineseType": "string"
+      },
+      "parser": {
+        "englishItems": [
+          "first",
+          "second"
+        ],
+        "chineseItems": [
+          "第一",
+          "第二"
+        ],
+        "englishCount": 2,
+        "chineseCount": 2,
+        "hasAlignedChinese": true,
+        "items": [
+          {
+            "english": "first",
+            "chinese": "第一"
+          },
+          {
+            "english": "second",
+            "chinese": "第二"
+          }
+        ],
+        "chinesePropertyStates": [
+          "string",
+          "string"
+        ],
+        "renderedEnglishCount": 2,
+        "renderedChineseCount": 2,
+        "listReturnsNull": false
+      }
+    },
+    {
+      "id": "mismatch_hides_all_chinese",
+      "input": {
+        "english": "first; second",
+        "chinese": "只有一段",
+        "englishType": "string",
+        "chineseType": "string"
+      },
+      "parser": {
+        "englishItems": [
+          "first",
+          "second"
+        ],
+        "chineseItems": [
+          "只有一段"
+        ],
+        "englishCount": 2,
+        "chineseCount": 1,
+        "hasAlignedChinese": false,
+        "items": [
+          {
+            "english": "first"
+          },
+          {
+            "english": "second"
+          }
+        ],
+        "chinesePropertyStates": [
+          "undefined",
+          "undefined"
+        ],
+        "renderedEnglishCount": 2,
+        "renderedChineseCount": 0,
+        "listReturnsNull": false
+      }
+    },
+    {
+      "id": "chinese_only_returns_null",
+      "input": {
+        "english": null,
+        "chinese": "只有中文",
+        "englishType": "null",
+        "chineseType": "string"
+      },
+      "parser": {
+        "englishItems": [],
+        "chineseItems": [
+          "只有中文"
+        ],
+        "englishCount": 0,
+        "chineseCount": 1,
+        "hasAlignedChinese": false,
+        "items": [],
+        "chinesePropertyStates": [],
+        "renderedEnglishCount": 0,
+        "renderedChineseCount": 0,
+        "listReturnsNull": true
+      }
+    },
+    {
+      "id": "english_only",
+      "input": {
+        "english": "first",
+        "chinese": null,
+        "englishType": "string",
+        "chineseType": "null"
+      },
+      "parser": {
+        "englishItems": [
+          "first"
+        ],
+        "chineseItems": [],
+        "englishCount": 1,
+        "chineseCount": 0,
+        "hasAlignedChinese": false,
+        "items": [
+          {
+            "english": "first"
+          }
+        ],
+        "chinesePropertyStates": [
+          "undefined"
+        ],
+        "renderedEnglishCount": 1,
+        "renderedChineseCount": 0,
+        "listReturnsNull": false
+      }
+    },
+    {
+      "id": "slashes_stay_in_one_group",
+      "input": {
+        "english": "go/study/live abroad",
+        "chinese": "出國／在國外留學／住在國外",
+        "englishType": "string",
+        "chineseType": "string"
+      },
+      "parser": {
+        "englishItems": [
+          "go/study/live abroad"
+        ],
+        "chineseItems": [
+          "出國／在國外留學／住在國外"
+        ],
+        "englishCount": 1,
+        "chineseCount": 1,
+        "hasAlignedChinese": true,
+        "items": [
+          {
+            "english": "go/study/live abroad",
+            "chinese": "出國／在國外留學／住在國外"
+          }
+        ],
+        "chinesePropertyStates": [
+          "string"
+        ],
+        "renderedEnglishCount": 1,
+        "renderedChineseCount": 1,
+        "listReturnsNull": false
+      }
+    },
+    {
+      "id": "punctuation_is_not_semicolon",
+      "input": {
+        "english": "A / B, C",
+        "chinese": "甲／乙、丙",
+        "englishType": "string",
+        "chineseType": "string"
+      },
+      "parser": {
+        "englishItems": [
+          "A / B, C"
+        ],
+        "chineseItems": [
+          "甲／乙、丙"
+        ],
+        "englishCount": 1,
+        "chineseCount": 1,
+        "hasAlignedChinese": true,
+        "items": [
+          {
+            "english": "A / B, C",
+            "chinese": "甲／乙、丙"
+          }
+        ],
+        "chinesePropertyStates": [
+          "string"
+        ],
+        "renderedEnglishCount": 1,
+        "renderedChineseCount": 1,
+        "listReturnsNull": false
+      }
+    },
+    {
+      "id": "semicolon_inside_parentheses_still_splits",
+      "input": {
+        "english": "A (B; C)",
+        "chinese": "甲（乙；丙）",
+        "englishType": "string",
+        "chineseType": "string"
+      },
+      "parser": {
+        "englishItems": [
+          "A (B",
+          "C)"
+        ],
+        "chineseItems": [
+          "甲（乙",
+          "丙）"
+        ],
+        "englishCount": 2,
+        "chineseCount": 2,
+        "hasAlignedChinese": true,
+        "items": [
+          {
+            "english": "A (B",
+            "chinese": "甲（乙"
+          },
+          {
+            "english": "C)",
+            "chinese": "丙）"
+          }
+        ],
+        "chinesePropertyStates": [
+          "string",
+          "string"
+        ],
+        "renderedEnglishCount": 2,
+        "renderedChineseCount": 2,
+        "listReturnsNull": false
+      }
+    }
+  ],
+  "inputTypeSummary": {
+    "usagePattern": {
+      "nonemptyString": 6074,
+      "null": 16,
+      "missing": 0,
+      "emptyOrWhitespaceString": 0,
+      "delimiterOnlyString": 0,
+      "wrongType": 0
+    },
+    "usagePatternZh": {
+      "nonemptyString": 6074,
+      "null": 16,
+      "missing": 0,
+      "emptyOrWhitespaceString": 0,
+      "delimiterOnlyString": 0,
+      "wrongType": 0
+    }
+  },
+  "reproduction": {
+    "repositoryFiles": [
+      "public/data/v1/words.json",
+      "src/features/vocabulary/usagePattern.ts",
+      "src/features/vocabulary/UsagePatternList.tsx",
+      "src/features/browser/WordDetailScreen.tsx",
+      "src/features/vocabulary/approvedCurriculum.ts",
+      "src/features/vocabulary/lv1ReviewedImages.json",
+      "src/features/direct/curriculumLV4Unit19.json",
+      "src/features/direct/model.ts",
+      "src/features/direct/curriculum.json",
+      "src/features/direct/curriculumLV1Unit16.json",
+      "src/features/direct/curriculumLV1Unit17.json",
+      "src/features/direct/curriculumLV1Unit18.json",
+      "src/features/direct/curriculumLV1Unit19.json",
+      "src/features/direct/curriculumLV1Unit20.json",
+      "src/features/direct/curriculumLV1Unit21.json"
+    ],
+    "auditedCommit": "26cc432853d13617f19f843c430ccd3ee9543733",
+    "checks": "Exact words and source blob hashes, 6090 records, only if mismatch, 16 dual-null records, zero emitted Chinese items for if, committed notice 3/3, empty-group trimming, Chinese-only null list, and slash alternatives remaining one group.",
+    "executionMethod": "Execute the fetched usagePattern.ts functions after Node TypeScript-only stripping. Inspect UsagePatternList.tsx and its WordDetailScreen call site statically. Account for hardware/software approved overrides.",
+    "scope": "Analysis executed against exact hash-verified repository inputs. Browser acceptance remains outstanding."
+  }
+}
