@@ -1,0 +1,42 @@
+import assert from 'node:assert/strict';
+import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
+import {execFileSync} from 'node:child_process';
+import {createHash} from 'node:crypto';
+const root='docs/unit-audit-20261105/';
+const read=p=>JSON.parse(readFileSync(p,'utf8'));
+const manifest=read(root+'LV1-U11-U12-verified-translations-patches.json');
+const base=manifest.checkpointBefore;assert.match(base,/^[0-9a-f]{40}$/);
+const oldText=p=>execFileSync('git',['show',base+':'+p],{encoding:'utf8',maxBuffer:32e6}).replace(/\r\n/g,'\n');
+const text=p=>readFileSync(p,'utf8').replace(/\r\n/g,'\n');
+const old=p=>JSON.parse(oldText(p));
+const sha=s=>createHash('sha256').update(s).digest('hex');
+const reverse=(rows,starter)=>{
+ const result=structuredClone(rows);let changed=0;
+ for(const p of manifest.patches){
+  const found=result.filter(r=>r.exampleId===p.id);assert.ok(found.length<=1,'Duplicate example identity');
+  if(!starter)assert.equal(found.length,1);
+  if(!found.length)continue;
+  assert.equal(found[0].sentenceEn,p.before.sentenceEn);assert.equal(found[0].sentenceZh,p.after.sentenceZh);
+  found[0].sentenceZh=p.before.sentenceZh;changed++;
+ }
+ return {rows:result,changed};
+};
+assert.equal(manifest.patches.length,2);assert.equal(new Set(manifest.patches.map(p=>p.id)).size,2);
+const full=reverse(read('public/data/v1/examples.json'),false);assert.deepEqual(full.rows,old('public/data/v1/examples.json'));
+const files=['words','senses','relations','morphemes','notes','exam_priority','hooks','media'];
+for(const name of files)assert.equal(text('public/data/v1/'+name+'.json'),oldText('public/data/v1/'+name+'.json'));
+for(const name of ['VERIFIED-VERB-FORMS-SOURCES.json','VERIFIED-FOLLOWUP-VERB-FORMS-SOURCES.json','VERIFIED-TRANSLATION-SOURCES.json'])assert.equal(text(root+name),oldText(root+name));
+const meta=read('public/data/v1/meta.json'),priorMeta=old('public/data/v1/meta.json');
+assert.equal(meta.wordsHash,priorMeta.wordsHash);
+const digest=createHash('sha256');for(const file of ['words','senses','examples','relations','morphemes','notes','exam_priority','hooks','media'])digest.update(text('public/data/v1/'+file+'.json'));
+assert.equal(meta.contentHash,digest.digest('hex'));
+assert.deepEqual({...meta,generatedAt:priorMeta.generatedAt,contentHash:priorMeta.contentHash},priorMeta);
+const pack=read('public/data/v1/sa-pack.json'),priorPack=old('public/data/v1/sa-pack.json');
+const starter=reverse(pack.examples,true);
+const datasets=Object.fromEntries(['words','senses','examples','relations','morphemes','notes','examPriorities','media'].map(k=>[k,pack[k]]));
+assert.equal(pack.meta.wordsHash,priorPack.meta.wordsHash);
+assert.equal(pack.meta.contentHash,'sa:'+sha(JSON.stringify({sourceHash:meta.contentHash,datasets})));
+assert.deepEqual({...pack,examples:starter.rows,meta:{...pack.meta,generatedAt:priorPack.meta.generatedAt,contentHash:priorPack.meta.contentHash}},priorPack);
+const result={batch:manifest.batch,base,modifiedFields:2,fullExamples:full.rows.length,starterExamples:pack.examples.length,starterTranslationsUpdated:starter.changed,unchangedAllOtherExampleFields:true,unchangedOtherDatasets:files,unchangedAllWordsIncludingOriginal31Followup99AndHouse:true,unchangedOriginal5TranslationSources:true,unchangedPriorFormSources:true,unchangedStarterIdentities:true,metadataHashesValid:true,englishClozeAnswerStatusesPosHintsUnchanged:true};
+mkdirSync('output/verified-followups/translations',{recursive:true});writeFileSync('output/verified-followups/translations/exact-diff.json',JSON.stringify(result,null,2)+'\n');
+console.log(JSON.stringify(result));

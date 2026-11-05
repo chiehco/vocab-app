@@ -1,0 +1,92 @@
+{
+  "manifest": "docs\\unit-audit-20261105\\LV1-U11-U12-verified-translations-patches.json",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "checkedAt": "2026-11-05T12:12:33.915982+00:00",
+  "changeCount": 2,
+  "changes": [
+    {
+      "dataset": "examples",
+      "id": "EX4c5b9769",
+      "before": {
+        "exampleId": "EX4c5b9769",
+        "word": "tough",
+        "sensePos": "adj.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "Choosing which university to attend was a tough decision for most senior high students.",
+        "sentenceZh": "對大多數高三學生來說，選擇要就讀哪所大學是一個艱難的決定。",
+        "blankSentence": "Choosing which university to attend was a _____ decision for most senior high students.",
+        "answer": "tough",
+        "difficulty": "LV3",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EX4c5b9769",
+        "word": "tough",
+        "sensePos": "adj.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "Choosing which university to attend was a tough decision for most senior high students.",
+        "sentenceZh": "對大多數高中學生來說，選擇要就讀哪所大學是一個艱難的決定。",
+        "blankSentence": "Choosing which university to attend was a _____ decision for most senior high students.",
+        "answer": "tough",
+        "difficulty": "LV3",
+        "status": "reviewed"
+      },
+      "reason": "senior high 是高中階段，不是 high school senior（高中畢業班學生）。現譯把全體高中生限縮成高三；只把「高三」改為「高中」，保留其餘語義與空提示。",
+      "evidence": "https://www.collinsdictionary.com/us/dictionary/english/senior-high-school ; https://ahdictionary.com/word/search.html?q=senior+high+school"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX299bccf8",
+      "before": {
+        "exampleId": "EX299bccf8",
+        "word": "purchase",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "Customers who purchase more than three items will receive a ten percent discount at checkout.",
+        "sentenceZh": "購買三件以上商品的顧客，結帳時可享九折優惠。",
+        "blankSentence": "Customers who _____ more than three items will receive a ten percent discount at checkout.",
+        "answer": "purchase",
+        "difficulty": "LV5",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EX299bccf8",
+        "word": "purchase",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "Customers who purchase more than three items will receive a ten percent discount at checkout.",
+        "sentenceZh": "購買超過三件商品的顧客，結帳時可享九折優惠。",
+        "blankSentence": "Customers who _____ more than three items will receive a ten percent discount at checkout.",
+        "answer": "purchase",
+        "difficulty": "LV5",
+        "status": "reviewed"
+      },
+      "reason": "more than three items 的數量嚴格大於三；「三件以上」在教學及購物門檻通常包含三件，會把折扣起算量提前一件。最小修正為「超過三件」，保留英文、purchase 答案與九折。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/more ; https://www.ehanlin.com.tw/app/keyword/%E5%9C%8B%E4%B8%AD/%E6%95%B8%E5%AD%B8/%E5%A4%A7%E6%96%BC%E6%88%96%E7%AD%89%E6%96%BC.html"
+    }
+  ],
+  "masterTouched": false,
+  "sentencesChanged": true,
+  "englishSentencesChanged": false,
+  "imagesChanged": false,
+  "sourceHashesBefore": {
+    "words.json": "e64bef772de55747a26e4084d7aee97b9ac930cc0c3a13538bdae8b142077f8e",
+    "senses.json": "312d65f5b186b4e06cfda1be68418a5a53b9d6ff970aa04e558af4cfc0799b97",
+    "examples.json": "4f965b2c72a61628efe35b24a3ac3ed6e6e04083f56cd2a538295f4177585e1e",
+    "meta.json": "45115f9ead6f0d5bc67b4a8165eb6b2ce9c509e6c23fa6f1b9c187b1621f6d4f",
+    "sa-pack.json": "66595bc502aab1a8424ed6a0d140c140af96ef4aed6582a38c150b0745af2082"
+  },
+  "sourceHashesAfter": {
+    "words.json": "e64bef772de55747a26e4084d7aee97b9ac930cc0c3a13538bdae8b142077f8e",
+    "senses.json": "312d65f5b186b4e06cfda1be68418a5a53b9d6ff970aa04e558af4cfc0799b97",
+    "examples.json": "f124797c100affd00c3948d3f6d4d81f661b2f795c2899899235b5cdf689fb19",
+    "meta.json": "3e413c2ab79351af2a2f86c81b4219109ba11d79276dfd21cf9a37ad0ba5d289",
+    "sa-pack.json": "9e3910924424dc6d6547fd44790b5c4b0f693ecdc21080ad3fe87f4f1d9b3ce6"
+  },
+  "state": "applied_and_2_examples_ui_verified",
+  "uiValidation": "validation/U11-U12-verified-translations.json"
+}

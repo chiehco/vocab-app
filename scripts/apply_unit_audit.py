@@ -26,6 +26,7 @@ U07_FORM_IDS = set('W000008 W000041 W000046 W000082 W000146 W000387 W000432 W000
 assert not FOLLOWUP_FORM_IDS & U07_FORM_IDS
 FOLLOWUP_FORM_IDS |= U07_FORM_IDS
 TRANSLATION_IDS = {'EX50693488', 'EXddc4d110', 'EX66703666', 'EX1f033d08', 'EX51e703b4'}
+FOLLOWUP_TRANSLATION_IDS = {'EX4c5b9769', 'EX299bccf8'}
 ABSENT = {"$absent": True}
 
 def validate_patch_shape(patch):
@@ -52,12 +53,18 @@ def validate_patch_shape(patch):
         fact = next(f for f in facts if f['wordId'] == patch['id'])
         assert patch['after']['verbForms'] == fact['verbForms'], 'Unverified principal parts or source'
     if 'sentenceZh' in patch['after']:
-        assert patch['dataset'] == 'examples' and patch['id'] in TRANSLATION_IDS, 'Only five verified Chinese translations are editable'
+        assert patch['dataset'] == 'examples' and patch['id'] in TRANSLATION_IDS | FOLLOWUP_TRANSLATION_IDS, 'Only individually verified Chinese translations are editable'
         assert set(patch['before']) == {'sentenceEn', 'sentenceZh'} and set(patch['after']) == {'sentenceZh'}, 'Exact unchanged English guard required'
         facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-TRANSLATION-SOURCES.json')['facts']
         assert len(facts) == 5 and {f['exampleId'] for f in facts} == TRANSLATION_IDS
+        followups = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-FOLLOWUP-TRANSLATION-SOURCES.json')['facts']
+        assert len(followups) == 2 and {f['exampleId'] for f in followups} == FOLLOWUP_TRANSLATION_IDS
+        assert not TRANSLATION_IDS & FOLLOWUP_TRANSLATION_IDS
+        facts += followups
         fact = next(f for f in facts if f['exampleId'] == patch['id'])
         assert patch['before'] == {'sentenceEn': fact['sentenceEn'], 'sentenceZh': fact['before']} and patch['after'] == {'sentenceZh': fact['after']}, 'Unverified translation or English guard'
+        if patch['id'] in FOLLOWUP_TRANSLATION_IDS:
+            assert patch['evidence'] == fact['evidence'], 'Unverified translation source'
 
 def apply_to_row(row, patch):
     """Validate guards even for idempotent rows; missing optional keys stay distinct from null."""

@@ -12,6 +12,8 @@ import followupsU05U06 from '../../docs/unit-audit-20261105/LV1-U05-U06-verified
 import followupsU07 from '../../docs/unit-audit-20261105/LV1-U07-verified-forms-patches.json';
 import followupSources from '../../docs/unit-audit-20261105/VERIFIED-FOLLOWUP-VERB-FORMS-SOURCES.json';
 import originalSources from '../../docs/unit-audit-20261105/VERIFIED-VERB-FORMS-SOURCES.json';
+import translationFollowups from '../../docs/unit-audit-20261105/LV1-U11-U12-verified-translations-patches.json';
+import translationFollowupSources from '../../docs/unit-audit-20261105/VERIFIED-FOLLOWUP-TRANSLATION-SOURCES.json';
 
 type Row=Record<string,unknown>;
 const examples:Row[]=JSON.parse(readFileSync('public/data/v1/examples.json','utf8'));
@@ -101,4 +103,27 @@ it('reverses only exact followup fields to absent and retains the original 31 so
  expect(words.find(row=>row.wordId==='W000139')).not.toHaveProperty('verbForms');
  expect(words.find(row=>row.wordId==='W000071')).not.toHaveProperty('verbForms');
  expect(words.find(row=>row.wordId==='W000574')).not.toHaveProperty('verbForms');
+});
+
+it('reverses only the two verified translations while preserving all prior sources and unrelated row fields',()=>{
+ const sourceHash=(file:string)=>createHash('sha256').update(readFileSync('docs/unit-audit-20261105/'+file,'utf8').replace(/\r\n/g,'\n')).digest('hex');
+ expect(sourceHash('VERIFIED-TRANSLATION-SOURCES.json')).toBe('abd99633fec797fe0b9e894a5906014054a5cd93d14a82d67fcaec3b4e5a359e');
+ expect(sourceHash('VERIFIED-FOLLOWUP-VERB-FORMS-SOURCES.json')).toBe('241c3bb9212192299797bc290ed0a0a138e395bb7bd69708176df6421f85a250');
+ expect(translationFollowups.patches).toHaveLength(2);
+ expect(translationFollowupSources.facts.map(f=>f.exampleId).sort()).toEqual(['EX299bccf8','EX4c5b9769']);
+ for(const p of translationFollowups.patches){
+  const saved=examples.find(row=>row.exampleId===p.id)!;expect(saved.sentenceZh).toBe(p.after.sentenceZh);
+  for(const sensePos of ['n.','v.']){
+   const row={...structuredClone(saved),sensePos};const expected={...row,sentenceZh:p.before.sentenceZh};
+   restoreRecordedAuditPatch('examples',row,p);expect(row).toEqual(expected);
+  }
+  expect(()=>restoreRecordedAuditPatch('examples',{...saved,sentenceEn:'Changed English'},p)).toThrow('source guard');
+  expect(()=>restoreRecordedAuditPatch('examples',{...saved,sentenceZh:'A newer translation'},p)).toThrow();
+  expect(()=>restoreRecordedAuditPatch('examples',{...saved},{...p,id:'EXunknown'})).toThrow('verified translations');
+  expect(()=>restoreRecordedAuditPatch('examples',{...saved},{...p,evidence:'https://unverified.invalid'})).toThrow('sources');
+  const wrongBefore={...p,before:{...p.before,sentenceZh:'Different source value'}};
+  expect(()=>restoreRecordedAuditPatch('examples',{...saved},wrongBefore)).toThrow();
+  const mixed={...p,before:{...p.before,status:'reviewed'},after:{...p.after,status:'reviewed'}};
+  expect(()=>restoreRecordedAuditPatch('examples',{...saved},mixed)).toThrow();
+ }
 });

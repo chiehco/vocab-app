@@ -1,0 +1,215 @@
+{
+  "batch": "U11-U12-translations",
+  "base": "a57f7283f400503c1634b6b8278483be004d2c41",
+  "branch": "content/lv1-verified-followups-20261105",
+  "checkedAt": "2026-11-05T12:18:50.974Z",
+  "scope": "Exactly two sentenceZh changes; no other product field approval",
+  "diff": {
+    "batch": "U11-U12-translations",
+    "base": "a57f7283f400503c1634b6b8278483be004d2c41",
+    "modifiedFields": 2,
+    "fullExamples": 7871,
+    "starterExamples": 7436,
+    "starterTranslationsUpdated": 2,
+    "unchangedAllOtherExampleFields": true,
+    "unchangedOtherDatasets": [
+      "words",
+      "senses",
+      "relations",
+      "morphemes",
+      "notes",
+      "exam_priority",
+      "hooks",
+      "media"
+    ],
+    "unchangedAllWordsIncludingOriginal31Followup99AndHouse": true,
+    "unchangedOriginal5TranslationSources": true,
+    "unchangedPriorFormSources": true,
+    "unchangedStarterIdentities": true,
+    "metadataHashesValid": true,
+    "englishClozeAnswerStatusesPosHintsUnchanged": true
+  },
+  "unitCounts": [
+    {
+      "unit": "U11",
+      "modified": 1,
+      "reopened": 1
+    },
+    {
+      "unit": "U12",
+      "modified": 1,
+      "reopened": 1
+    }
+  ],
+  "localChecks": {
+    "python": {
+      "tests": 13,
+      "status": "passed"
+    },
+    "vitest": {
+      "files": 4,
+      "tests": 25,
+      "maxWorkers": 1,
+      "defaultTimeoutUnchanged": true,
+      "status": "passed"
+    },
+    "typecheck": "passed",
+    "lint": "passed",
+    "build": "passed",
+    "publicationScan": {
+      "filesScanned": 316,
+      "findings": []
+    },
+    "fullLocalSuite": "not_run",
+    "ci": "pending_first_push"
+  },
+  "mainComparisons": [
+    {
+      "exampleId": "EX4c5b9769",
+      "compared": [
+        {
+          "revision": "3b14fc8ac56ca58dd715a088340d913e5230a0b7",
+          "differentFields": []
+        },
+        {
+          "revision": "26cc432853d13617f19f843c430ccd3ee9543733",
+          "differentFields": []
+        }
+      ]
+    },
+    {
+      "exampleId": "EX299bccf8",
+      "compared": [
+        {
+          "revision": "3b14fc8ac56ca58dd715a088340d913e5230a0b7",
+          "differentFields": [
+            {
+              "field": "sensePos",
+              "isolatedValue": "n.",
+              "mainValue": "v."
+            }
+          ]
+        },
+        {
+          "revision": "26cc432853d13617f19f843c430ccd3ee9543733",
+          "differentFields": [
+            {
+              "field": "sensePos",
+              "isolatedValue": "n.",
+              "mainValue": "v."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "browser": {
+    "origin": "http://127.0.0.1:5187",
+    "profile": "existing isolated persistent profile outside watched repository",
+    "normalSettingsUpdate": {
+      "status": "updated",
+      "intervention": false,
+      "databaseCleared": false,
+      "progressTables": 14,
+      "nonemptyTables": 1,
+      "allProgressHashesUnchangedBeforeNavigation": true,
+      "protectedWords": 131,
+      "protectedExamples": 5,
+      "allProtectedHashesUnchanged": true,
+      "screenshot": "output/verified-followups/translations/normal-update.png",
+      "screenshotSha256": "fd05701a0d3a7dce21f18762e35a250c5fa22febbfd5845ea1212f34a4674fb8"
+    },
+    "cards": [
+      {
+        "wordId": "W002921",
+        "word": "tough",
+        "exampleId": "EX4c5b9769",
+        "sentenceEn": "Choosing which university to attend was a tough decision for most senior high students.",
+        "sentenceZh": "對大多數高中學生來說，選擇要就讀哪所大學是一個艱難的決定。",
+        "allSavedFieldsMatchPublicData": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U11-08-f9360902735b.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "caption": "圖說\n\nThe coach is tough on his players during training.\n\n教練在訓練時對球員很嚴格。",
+        "usageOpened": true,
+        "screenshots": [
+          {
+            "path": "output/verified-followups/translations/tough-card.png",
+            "sha256": "31fa3460618469eb0f45d6b72eb52c2bd06a4ef448132fd28aab05e2e86d9357"
+          },
+          {
+            "path": "output/verified-followups/translations/EX4c5b9769-example.png",
+            "sha256": "76bc7fdb37a8008163bd20fb9016d9490d93679b592ac6a6ecc5f8d2b28014df"
+          },
+          {
+            "path": "output/verified-followups/translations/tough-usage.png",
+            "sha256": "36587f6ded6c8235b52d60e6dae13562d4f42662642afc040db858eafe0d1108"
+          }
+        ]
+      },
+      {
+        "wordId": "W004689",
+        "word": "purchase",
+        "exampleId": "EX299bccf8",
+        "sentenceEn": "Customers who purchase more than three items will receive a ten percent discount at checkout.",
+        "sentenceZh": "購買超過三件商品的顧客，結帳時可享九折優惠。",
+        "allSavedFieldsMatchPublicData": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U12-45-1e5f6b56cc2b.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "caption": "圖說\n\nShe is making an online purchase of a new phone case.\n\n她正在網路上購買一個新手機殼。",
+        "usageOpened": true,
+        "screenshots": [
+          {
+            "path": "output/verified-followups/translations/purchase-card.png",
+            "sha256": "1cd0667b824eac4fc35ddb95b8b8f3a3fefd19c473844ff9f51ce12bba263f40"
+          },
+          {
+            "path": "output/verified-followups/translations/EX299bccf8-example.png",
+            "sha256": "446e725f28aebfee6e5b7a91200f1dc9374b595a2a6cf5ed9db0f7e4545f62e2"
+          },
+          {
+            "path": "output/verified-followups/translations/purchase-usage.png",
+            "sha256": "6d88fcf3b0c2d38b1bb210eae21dffe9f6a7285f895a1c902bcb426cd056b674"
+          }
+        ]
+      }
+    ],
+    "screenshotsVisuallyReviewed": 7,
+    "postNavigation": {
+      "otherProgressTablesUnchanged": 13,
+      "otherSettingsUnchanged": true,
+      "allowedChangedSetting": "learning:last-location",
+      "bookmarkWordId": "W004689"
+    },
+    "consoleErrors": 0,
+    "consoleWarnings": 0,
+    "failedRequests": []
+  },
+  "pendingOrOutOfScope": [
+    {
+      "exampleId": "EX299bccf8",
+      "field": "sensePos",
+      "isolatedValue": "n.",
+      "newerMainValue": "v.",
+      "action": "Preserved each branch value. Integrate only sentenceZh; never overwrite newer main POS."
+    }
+  ],
+  "imagesAdded": 0,
+  "imagesModified": 0,
+  "missingDisplayedImages": [],
+  "wordStatusesChanged": 0,
+  "senseStatusesChanged": 0,
+  "next": {
+    "unit": "U08",
+    "firstWord": "people",
+    "firstWordId": "W000635",
+    "applied": false
+  }
+}
