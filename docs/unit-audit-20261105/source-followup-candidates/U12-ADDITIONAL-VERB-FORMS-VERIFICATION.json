@@ -1,0 +1,894 @@
+{
+  "title": "U12 完整原單元補入詞：10 個缺漏動詞三態追加查證",
+  "checkedAtUtc": "2026-11-05T10:49:04.710020+00:00",
+  "sourceCommit": "a95a8759fa5312ad7785b35444f0ed6e8fb16db5",
+  "sourceWordsBlobSha": "d90bacb45c5877f8b7145a410827a6672f043bee",
+  "scope": "僅本次來源清單的10個 U12 正式詞彙 ID；先前414個研究詞及已有三態已排除。本交付不代表整個 U12 或任何整張字卡通過。",
+  "completionStatus": "completed",
+  "coverage": {
+    "expectedEntries": 10,
+    "entriesResearched": 10,
+    "lexicallyVerified": 10,
+    "verifiedCandidates": 10,
+    "pendingProductRepresentation": 0,
+    "pendingMissingLexicalEvidence": 0,
+    "notYetResearched": 0,
+    "ruleOnlyInferences": 0,
+    "productApprovals": 0
+  },
+  "unitCoverage": [
+    {
+      "unit": "LV1-U12",
+      "expectedAdditionalEntries": 10,
+      "entriesResearched": 10,
+      "verifiedCandidates": 10,
+      "pending": 0
+    }
+  ],
+  "method": "本次對10詞逐詞獨立打開 Collins 官方正文。9詞實讀 COBUILD Word forms 中明示的 past tense/past participle；practice 另實讀官方 conjugation 的 Infinitive、Past Participle、Past 三節，並核對 practice/practise 的美英拼字限制。radioed、planned、tripped、replied 都由原文明示，沒有由拼字規則推導。相關動詞義與構式均對照同頁正文；沒有以搜尋摘要作定案證據。",
+  "beforeRepresentation": {
+    "marker": {
+      "$absent": true
+    },
+    "meaning": "10詞的來源快照均無 verbForms key，不是 null。本次沒有直接重讀 repository，套用前須核對最新值。"
+  },
+  "schemaAndDisplayConstraints": {
+    "provenance": "採用本次研究所提供的顯示規格；研究本身沒有修改或重讀 repository。",
+    "constraint": "整詞單一 base/past/pastParticiple 面板，sourceRef 不顯示；不能用隱藏來源文字替用戶區分有條件的形式。",
+    "rule": "每詞只提最小相容候選；practice 保留現有美式詞目，practise/practised 英式拼字另記，不混排或改名。"
+  },
+  "implementationBoundary": [
+    "沒有修改 repository、status、Git 或已發布內容。",
+    "沒有填入 IPA、重音、音節。",
+    "candidate 只表示有直接來源的最小三態提案，不是 approved 或整卡通過。",
+    "保持 before=$absent；套用時必須用 wordId 比對，且不可覆蓋已存在的三態。",
+    "沒有改原摘要、例句、詞性、圖片或其他欄位。",
+    "先前414研究詞已排除，本次只產生10個新增研究記錄。"
+  ],
+  "accessFailuresExcluded": [],
+  "searchSnippetOnlyEvidenceUsed": false,
+  "pendingWords": [],
+  "nonBlockingFindings": [
+    {
+      "word": "practice",
+      "wordId": "W000673",
+      "note": "practice 作動詞是美式拼字。現有正式詞目與 practices the piano 的例句一致，最小三態候選為 practice/practiced/practiced；英式 practise/practised 另記，不擅改正式詞目。"
+    },
+    {
+      "word": "police",
+      "wordId": "W000662",
+      "note": "原中文摘要與詞性包含動詞，但英文摘要、用法和例句主要為名詞。本次只確認三態，不表示其他欄位通過。"
+    }
+  ],
+  "entries": [
+    {
+      "wordId": "W000212",
+      "word": "date",
+      "units": [
+        "LV1-U12"
+      ],
+      "cardIds": [
+        "LV1-U12-62"
+      ],
+      "sourceSnapshotLevel": "LV1",
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "日期；約會；棗椰樹；定日期",
+      "sourceMeaningEn": "a particular day of the month or year; an arrangement to meet someone, especially a romantic meeting",
+      "sourceUsagePattern": "the date of N; on a date; date sb",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-62",
+          "captionEn": "They went on their first date at a small café near the park.",
+          "captionZh": "他們的第一次約會是在公園附近的一家小咖啡廳。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "動詞標示或判定日期、與人約會；字卡例句的 first date 本身是名詞。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "date",
+        "past": "dated",
+        "pastParticiple": "dated"
+      },
+      "proposedVerbForms": {
+        "base": "date",
+        "past": "dated",
+        "pastParticiple": "dated",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/date"
+      },
+      "sourceSupportedForms": {
+        "base": "date",
+        "past": [
+          "dated"
+        ],
+        "pastParticiple": [
+          "dated"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/date",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle dated",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "日期、約會、棗類的名詞 date 不另有動詞三態；本候選對應動詞 date，不把名詞複數 dates 當成過去式。",
+      "regionalAndConstructionRestrictions": "所讀動詞三態主欄無地區限制；date sb 與標日期的 date sth 共用 dated。",
+      "variantAssessment": "所讀主三態欄未另列變體；這是最小一般教學候選，不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000312",
+      "word": "finish",
+      "units": [
+        "LV1-U12"
+      ],
+      "cardIds": [
+        "LV1-U12-38"
+      ],
+      "sourceSnapshotLevel": "LV1",
+      "sourceSnapshotPos": "v./n.",
+      "sourceSnapshotPosAll": [
+        "v.",
+        "n."
+      ],
+      "sourceSnapshotStatus": "draft",
+      "sourceMeaningZh": "完成；結束；末道漆；磨光",
+      "sourceMeaningEn": "(v.) to complete an activity or bring it to an end; to give a surface its final treatment. (n.) an ending, a final stage, or a surface coating or texture.",
+      "sourceUsagePattern": "finish N; finish V-ing; finish with N",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-38",
+          "captionEn": "Doumo worked carefully to finish the wooden model before dinner.",
+          "captionZh": "豆魔仔細工作，趕在晚餐前完成木製模型。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "動詞完成工作或製作某物；與現有完成木製模型的例句相符。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "finish",
+        "past": "finished",
+        "pastParticiple": "finished"
+      },
+      "proposedVerbForms": {
+        "base": "finish",
+        "past": "finished",
+        "pastParticiple": "finished",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/finish"
+      },
+      "sourceSupportedForms": {
+        "base": "finish",
+        "past": [
+          "finished"
+        ],
+        "pastParticiple": [
+          "finished"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/finish",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle finished",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "finished 是明示的動詞過去式及過去分詞；名詞 finish 不另產生三態。",
+      "regionalAndConstructionRestrictions": "所讀主三態欄無地區限制；正文支持 finish N、finish V-ing。finish up 作完成義另有美式標記，未加入 base。",
+      "variantAssessment": "所讀主三態欄未另列變體；這是最小一般教學候選，不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000389",
+      "word": "heat",
+      "units": [
+        "LV1-U12"
+      ],
+      "cardIds": [
+        "LV1-U12-16"
+      ],
+      "sourceSnapshotLevel": "LV1",
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "（名詞）熱；熱度；體溫；高潮；（動詞）加熱",
+      "sourceMeaningEn": "(n.) the quality of being hot, or the energy that makes something hot; (v.) to make something hot or warm",
+      "sourceUsagePattern": "heat sth up; the heat of N",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-16",
+          "captionEn": "Please heat the soup before you serve it.",
+          "captionZh": "上桌前請把湯加熱。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "動詞使某物升溫、加熱；與現有加熱湯的例句相符。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "heat",
+        "past": "heated",
+        "pastParticiple": "heated"
+      },
+      "proposedVerbForms": {
+        "base": "heat",
+        "past": "heated",
+        "pastParticiple": "heated",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/heat"
+      },
+      "sourceSupportedForms": {
+        "base": "heat",
+        "past": [
+          "heated"
+        ],
+        "pastParticiple": [
+          "heated"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/heat",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle heated",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "heated 由動詞欄明示，不以形容詞 heated 的存在倒推三態；名詞熱量不另產生三態。",
+      "regionalAndConstructionRestrictions": "所讀加熱義三態無地區限制；候選 base 保持 heat，不改成 heat up。",
+      "variantAssessment": "所讀主三態欄未另列變體；這是最小一般教學候選，不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000651",
+      "word": "plan",
+      "units": [
+        "LV1-U12"
+      ],
+      "cardIds": [
+        "LV1-U12-80"
+      ],
+      "sourceSnapshotLevel": "LV1",
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "計劃；方案；策略；方法",
+      "sourceMeaningEn": "a detailed idea or arrangement for doing something in the future; to decide on and arrange something in advance",
+      "sourceUsagePattern": "plan to V; make a plan",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-80",
+          "captionEn": "I have a plan to clean my whole room this weekend.",
+          "captionZh": "我這個週末計畫把整個房間打掃乾淨。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "動詞事先安排、計畫做某事；字卡的 have a plan 使用名詞。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "plan",
+        "past": "planned",
+        "pastParticiple": "planned"
+      },
+      "proposedVerbForms": {
+        "base": "plan",
+        "past": "planned",
+        "pastParticiple": "planned",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/plan"
+      },
+      "sourceSupportedForms": {
+        "base": "plan",
+        "past": [
+          "planned"
+        ],
+        "pastParticiple": [
+          "planned"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/plan",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle planned",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "planned 的雙寫 n 由來源直接明示，不從拼字規則推導。名詞 plan 不另產生三態。",
+      "regionalAndConstructionRestrictions": "所讀三態主欄無地區限制；正文支持 plan to V、plan for N、plan N。",
+      "variantAssessment": "所讀主三態欄未另列變體；這是最小一般教學候選，不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000662",
+      "word": "police",
+      "units": [
+        "LV1-U12"
+      ],
+      "cardIds": [
+        "LV1-U12-63"
+      ],
+      "sourceSnapshotLevel": "LV1",
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "警察；警察當局；治安；維持治安",
+      "sourceMeaningEn": "the official organization whose job is to enforce the law, keep order, and catch criminals",
+      "sourceUsagePattern": "call the police; a police officer/station",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-63",
+          "captionEn": "A friendly police officer helped the lost child find his parents.",
+          "captionZh": "一位親切的警察幫助迷路的孩子找到他的父母。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "動詞在某地或活動中維持法律與秩序；字卡的 police officer 為名詞修飾語用法。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "police",
+        "past": "policed",
+        "pastParticiple": "policed"
+      },
+      "proposedVerbForms": {
+        "base": "police",
+        "past": "policed",
+        "pastParticiple": "policed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/police"
+      },
+      "sourceSupportedForms": {
+        "base": "police",
+        "past": [
+          "policed"
+        ],
+        "pastParticiple": [
+          "policed"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/police",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle policed",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "policed 對應動詞維持治安，不是名詞警察的複數或謂語變化；不把 police 名詞與動詞混淆。",
+      "regionalAndConstructionRestrictions": "所讀維持治安義三態無地區限制；動詞 police an area/event 有賓語，現有 call the police 的 police 是名詞。",
+      "variantAssessment": "所讀主三態欄未另列變體；這是最小一般教學候選，不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null,
+      "adjacentIssueOutsideThisResearch": "原中文摘要與詞性包含動詞維持治安，但英文摘要、用法及例句主要是名詞；三態查證不表示摘要或整張字卡已全面通過，本交付不擴改。"
+    },
+    {
+      "wordId": "W000673",
+      "word": "practice",
+      "units": [
+        "LV1-U12"
+      ],
+      "cardIds": [
+        "LV1-U12-53"
+      ],
+      "sourceSnapshotLevel": "LV1",
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "實踐；練習；實行；慣例",
+      "sourceMeaningEn": "activity done repeatedly in order to improve a skill; something that is done regularly as a habit or custom; to do something repeatedly so as to become better at it",
+      "sourceUsagePattern": "practice + V-ing; put sth into practice; common/current practice",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-53",
+          "captionEn": "He practices the piano for an hour every day after dinner.",
+          "captionZh": "他每天晚餐後練習彈鋼琴一小時。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "美式動詞反覆練習以熟練某項技能；與現有 practices the piano 的拼字及語義相符。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_official_conjugation_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "practice",
+        "past": "practiced",
+        "pastParticiple": "practiced"
+      },
+      "proposedVerbForms": {
+        "base": "practice",
+        "past": "practiced",
+        "pastParticiple": "practiced",
+        "sourceRef": "https://www.collinsdictionary.com/conjugation/english/practice"
+      },
+      "sourceSupportedForms": {
+        "base": "practice",
+        "past": [
+          "practiced"
+        ],
+        "pastParticiple": [
+          "practiced"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins English Verbs conjugation table",
+          "url": "https://www.collinsdictionary.com/conjugation/english/practice",
+          "retrieval": "direct_official_conjugation_page",
+          "shortQuote": "Infinitive\n\nto practice",
+          "location": "Infinitive 節",
+          "scope": "直接明示原形為 practice。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins English Verbs conjugation table",
+          "url": "https://www.collinsdictionary.com/conjugation/english/practice",
+          "retrieval": "direct_official_conjugation_page",
+          "shortQuote": "Past Participle\n\npracticed",
+          "location": "Past Participle 節",
+          "scope": "直接明示過去分詞為 practiced。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins English Verbs conjugation table",
+          "url": "https://www.collinsdictionary.com/conjugation/english/practice",
+          "retrieval": "direct_official_conjugation_page",
+          "shortQuote": "I practiced",
+          "location": "Past 節",
+          "scope": "過去式表直接明示 practiced；不是由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins English Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/practice",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "the US spelling of practise",
+          "location": "Collins English Dictionary, British English, verb sense 7",
+          "scope": "直接確認 practice 作動詞的美式拼字；American English 動詞欄另列 practiced, practicing。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/practise",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle practised regional note: in AM, use practice",
+          "location": "COBUILD Word forms 與 regional note",
+          "scope": "英式動詞 practise 的 practised 另有直接三態證據；同頁將美式對應標為 practice。只記限制，不把英式形式混入美式候選。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "保留正式詞目 practice 及美式 practiced；英式動詞另拼 practise、過去式及過去分詞 practised。不能把兩套拼字不加限定地混排，也不能把正式詞目擅改為 practise。",
+      "regionalAndConstructionRestrictions": "practice 作動詞是美式拼字；英式動詞一般為 practise。名詞 practice 不因地區註記改成 practise。字卡 practices the piano 與美式候選一致。",
+      "variantAssessment": "英式 practise/practised/practised 有直接來源，屬另一套地區拼字。現有正式詞目和例句均採 practice，因此最小候選只填美式 practiced；不擅增 wordVariants 或改詞目。",
+      "pendingReason": null,
+      "conditionalVariantsExcludedFromProposal": [
+        {
+          "region": "British English",
+          "base": "practise",
+          "past": "practised",
+          "pastParticiple": "practised",
+          "reason": "需與英式原形 practise 成套呈現，不把 practised 無限定混入現有 practice 單一面板。",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/practise"
+        }
+      ]
+    },
+    {
+      "wordId": "W000684",
+      "word": "push",
+      "units": [
+        "LV1-U12"
+      ],
+      "cardIds": [
+        "LV1-U12-31"
+      ],
+      "sourceSnapshotLevel": "LV1",
+      "sourceSnapshotPos": "v./n.",
+      "sourceSnapshotPosAll": [
+        "v.",
+        "n."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "推；推動；奮鬥；攻擊",
+      "sourceMeaningEn": "v. to press against something in order to move it away from you; n. an act of pushing something",
+      "sourceUsagePattern": "push the door/button; push N to do V",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-31",
+          "captionEn": "The little boy had to push the heavy door with all his strength to open it.",
+          "captionZh": "這個小男孩必須用盡全力推開那扇沉重的門。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "動詞施力推動某物；與現有推門的例句相符。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "push",
+        "past": "pushed",
+        "pastParticiple": "pushed"
+      },
+      "proposedVerbForms": {
+        "base": "push",
+        "past": "pushed",
+        "pastParticiple": "pushed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/push"
+      },
+      "sourceSupportedForms": {
+        "base": "push",
+        "past": [
+          "pushed"
+        ],
+        "pastParticiple": [
+          "pushed"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/push",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle pushed",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "名詞推動的一次動作不另產生三態；本候選 pushed 適用現有施力推門的動詞義。",
+      "regionalAndConstructionRestrictions": "所讀施力推動義三態無地區限制；push the door 的受詞結構與正文一致。未把片語粒子加入 base。",
+      "variantAssessment": "所讀主三態欄未另列變體；這是最小一般教學候選，不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000694",
+      "word": "radio",
+      "units": [
+        "LV1-U12"
+      ],
+      "cardIds": [
+        "LV1-U12-82"
+      ],
+      "sourceSnapshotLevel": "LV1",
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "（名詞）無線電；收音機；無線電報；無線電廣播；（動詞）用無線電傳訊",
+      "sourceMeaningEn": "(n.) a piece of equipment used for receiving broadcast programs by sound waves, or for sending and receiving spoken messages; (v.) to send a message to someone by radio",
+      "sourceUsagePattern": "on the radio; listen to the radio; radio for help",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-82",
+          "captionEn": "Can you turn on the radio? I want to listen to some music.",
+          "captionZh": "你可以打開收音機嗎？我想聽點音樂。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "動詞用無線電向某人傳訊；字卡的 turn on the radio 使用名詞。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "radio",
+        "past": "radioed",
+        "pastParticiple": "radioed"
+      },
+      "proposedVerbForms": {
+        "base": "radio",
+        "past": "radioed",
+        "pastParticiple": "radioed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/radio"
+      },
+      "sourceSupportedForms": {
+        "base": "radio",
+        "past": [
+          "radioed"
+        ],
+        "pastParticiple": [
+          "radioed"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/radio",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle radioed",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "radioed 是官方 Word forms 直接列出的完整拼字；不由字尾 o 的規則推導，也不將 radios 誤作過去式。收音機名詞不另產生三態。",
+      "regionalAndConstructionRestrictions": "所讀傳訊義三態無地區限制；正文有 radio someone、radio for advice 及 radio that 子句。保留 base radio，不擴成 radio for。",
+      "variantAssessment": "所讀主三態欄未另列變體；這是最小一般教學候選，不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W000919",
+      "word": "trip",
+      "units": [
+        "LV1-U12"
+      ],
+      "cardIds": [
+        "LV1-U12-61"
+      ],
+      "sourceSnapshotLevel": "LV1",
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "reviewed",
+      "sourceMeaningZh": "旅行；絆倒；摔倒；失足",
+      "sourceMeaningEn": "a journey in which you travel somewhere, usually for a short time, and come back again; to catch your foot on something and fall or almost fall",
+      "sourceUsagePattern": "go on a trip; a trip to N; trip over N",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-61",
+          "captionEn": "She tripped over a rock and fell while walking in the park.",
+          "captionZh": "她在公園散步時被一顆石頭絆倒摔了一跤。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "動詞腳碰到障礙而絆倒或險些絆倒；與現有 tripped over a rock 的例句相符。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "trip",
+        "past": "tripped",
+        "pastParticiple": "tripped"
+      },
+      "proposedVerbForms": {
+        "base": "trip",
+        "past": "tripped",
+        "pastParticiple": "tripped",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/trip"
+      },
+      "sourceSupportedForms": {
+        "base": "trip",
+        "past": [
+          "tripped"
+        ],
+        "pastParticiple": [
+          "tripped"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/trip",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle tripped",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "tripped 的雙寫 p 由來源直接明示；旅行名詞不另產生三態。其他口語或文學動詞義不因此被加入原摘要。",
+      "regionalAndConstructionRestrictions": "所讀絆倒義三態無地區限制；正文支持 trip on/over N。字卡的 tripped over 與候選一致，base 不納入 over。",
+      "variantAssessment": "所讀主三態欄未另列變體；這是最小一般教學候選，不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    },
+    {
+      "wordId": "W001726",
+      "word": "reply",
+      "units": [
+        "LV1-U12"
+      ],
+      "cardIds": [
+        "LV1-U12-09"
+      ],
+      "sourceSnapshotLevel": "LV2",
+      "sourceSnapshotPos": "n./v.",
+      "sourceSnapshotPosAll": [
+        "n.",
+        "v."
+      ],
+      "sourceSnapshotStatus": "draft",
+      "sourceMeaningZh": "答覆；回答；答辯；回擊",
+      "sourceMeaningEn": "(n.) something said, written or done as an answer; (v.) to answer in words or writing, or respond by an action.",
+      "sourceUsagePattern": "reply to N; reply that S+V; a reply to/from sb",
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-09",
+          "captionEn": "Doumo read the message and wrote a friendly reply.",
+          "captionZh": "豆魔讀完訊息後，寫了一封友善的回覆。"
+        }
+      ],
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "exactBeforeExplanation": "來源快照的 verbForms key 真實缺漏，不是 null；復原須刪除 key。套用前必須重比對目前資料。",
+      "lexicalEvidenceStatus": "verified",
+      "applicableSense": "動詞以言語、文字或行動回應；字卡的 wrote a friendly reply 使用名詞。",
+      "grammarInferenceUsed": false,
+      "productApprovalAssigned": false,
+      "verificationMethod": "direct_dictionary_explicit_past_and_past_participle",
+      "decision": "candidate",
+      "researchStatus": "verified_candidate",
+      "after": {
+        "base": "reply",
+        "past": "replied",
+        "pastParticiple": "replied"
+      },
+      "proposedVerbForms": {
+        "base": "reply",
+        "past": "replied",
+        "pastParticiple": "replied",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/reply"
+      },
+      "sourceSupportedForms": {
+        "base": "reply",
+        "past": [
+          "replied"
+        ],
+        "pastParticiple": [
+          "replied"
+        ]
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/reply",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle replied",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "homographAndVariantRestrictions": "replied 的完整拼字由來源直接明示，不依 y 改 i 的規則推導。a reply 是名詞，不直接作為動詞證據。",
+      "regionalAndConstructionRestrictions": "所讀回答義三態無地區限制；正文支持 reply to N、reply that 子句、reply with N。候選 base 保持 reply。",
+      "variantAssessment": "所讀主三態欄未另列變體；這是最小一般教學候選，不聲稱窮盡歷史、方言或專業變體。",
+      "pendingReason": null
+    }
+  ]
+}

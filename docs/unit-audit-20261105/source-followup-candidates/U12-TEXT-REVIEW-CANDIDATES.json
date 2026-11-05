@@ -1,0 +1,627 @@
+{
+  "schemaVersion": 2,
+  "unit": "U12",
+  "provenance": {
+    "inputFile": "u12-current-examples-a95a875.json",
+    "inputSha256": "2dce3dbb487892692f18bfb4bf51e7ffb9bee999c890142e76e41d9ed392a9cc",
+    "reviewedCommit": "a95a8759fa5312ad7785b35444f0ed6e8fb16db5",
+    "reviewedBlobSha": "4262fd09bd3f209a000898bf7b11eb38102ed2e5",
+    "reviewDateUTC": "2026-11-05",
+    "inputOrigin": "以標示上述 commit 與 blob 的現行例句快照逐列審核；本次沒有另行從 GitHub 重新取得該 blob。",
+    "originalTextbookVerification": "未取得原教材頁面。已讀現行例句快照；詞典證據用於詞義與構式，不作原教材逐字出處驗證。"
+  },
+  "summary": {
+    "formalWordCount": 74,
+    "wordsWithExamples": 57,
+    "formalWordsWithoutExamplesCount": 17,
+    "exampleCount": 128,
+    "manuallyReviewedRows": 128,
+    "clozeAnswerExactReconstructionPassed": 128,
+    "newDefiniteClozeAnswerMismatchCount": 0,
+    "newDefiniteTextErrorCandidates": 1,
+    "optionalPrecisionCandidateCount": 1,
+    "hintPrecisionCandidates": 0,
+    "separateChineseTranslationCandidates": 1,
+    "pendingExampleItems": 2,
+    "pendingPOSConventionItems": 1,
+    "newPendingSentenceIntentItems": 1,
+    "newMandatoryPOSChanges": 0,
+    "retainedWithoutNewCandidateOrPendingItem": 124,
+    "emptyDailyExamHintsPreserved": 111,
+    "emptyHintsByExampleType": {
+      "daily": 56,
+      "exam": 55
+    },
+    "nonemptyHintsReadInContext": 17,
+    "existingStatusCountsPreserved": {
+      "reviewed": 119,
+      "approved": 9
+    },
+    "exampleTypeCounts": {
+      "daily": 59,
+      "textbook": 9,
+      "exam": 60
+    },
+    "protectedPOSConventionsPreserved": [
+      "EX1c43652d"
+    ],
+    "repoFilesModified": false,
+    "statusesModified": false,
+    "gitOperationsPerformed": false,
+    "findingsSummaryZh": "128 列逐句實讀，全部 cloze 精確重建。1 項明確錯誤為 more than three 被譯成三件以上；1 項可選精度為 closed down 改採中性「關閉」。2 項待確認為既有 easy 詞性慣例及 open the room 尾句意圖。111 個空提示保留，17 個無例句正式詞不另造句。",
+    "countingCaution": "124 列無新提案或待確認，並非已比對 124 句原教材。可選精度不計為確錯；待確認不等於已證實文法錯誤。17 個無例句詞不計入 128 列，也不宣告整詞完成。"
+  },
+  "groups": {
+    "明確候選": [
+      "U12-D01"
+    ],
+    "可選精度改善": [
+      "U12-T01"
+    ],
+    "待詞性慣例確認": [
+      "U12-P01"
+    ],
+    "待例句意圖確認": [
+      "U12-P02"
+    ]
+  },
+  "formalWordsWithoutExamples": [
+    {
+      "wordId": "W000312",
+      "word": "finish",
+      "pos": "v./n.",
+      "posAll": [
+        "v.",
+        "n."
+      ],
+      "meaningZh": "完成；結束；末道漆；磨光",
+      "meaningEn": "(v.) to complete an activity or bring it to an end; to give a surface its final treatment. (n.) an ending, a final stage, or a surface coating or texture."
+    },
+    {
+      "wordId": "W000325",
+      "word": "foreigner",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "外國人；外地人；進口貨；外國貨",
+      "meaningEn": "a person who comes from a foreign country; someone who does not owe allegiance to your country; someone who is excluded from or is not a member of a group"
+    },
+    {
+      "wordId": "W000549",
+      "word": "monkey",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "猴子；猿；打樁錘；淘氣",
+      "meaningEn": "any of various long-tailed primates (excluding the prosimians)"
+    },
+    {
+      "wordId": "W000921",
+      "word": "truck",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "（名詞）卡車；貨車；（另有動詞義）用卡車運送；進行交易；來往",
+      "meaningEn": "(n.) a motor vehicle used for carrying goods. (Separate verb) to carry goods by truck or to trade."
+    },
+    {
+      "wordId": "W001095",
+      "word": "biscuit",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "餅乾；素坯",
+      "meaningEn": "(British English) a small crisp baked food, a cookie; (US English) a small soft quick bread; (ceramics) fired but unglazed earthenware or porcelain."
+    },
+    {
+      "wordId": "W001113",
+      "word": "broad",
+      "pos": "adj.",
+      "posAll": [
+        "adj."
+      ],
+      "meaningZh": "寬廣的；遼闊的；廣大的；顯著的",
+      "meaningEn": "(adj.) wide from side to side, covering a large area or range, or dealing with main points rather than details. (Separate noun, slang and often offensive) a woman."
+    },
+    {
+      "wordId": "W001271",
+      "word": "domestic",
+      "pos": "adj.",
+      "posAll": [
+        "adj."
+      ],
+      "meaningZh": "（形容詞）家庭的；家用的；國內的；馴養的；（另有名詞義）家僕",
+      "meaningEn": "(adj.) relating to home or family; occurring within one country; tame or kept by people. (Separate noun) a household servant."
+    },
+    {
+      "wordId": "W001422",
+      "word": "haircut",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "理髮；(男子的)髮式",
+      "meaningEn": "the style in which hair has been cut; the act of cutting the hair"
+    },
+    {
+      "wordId": "W001528",
+      "word": "marry",
+      "pos": "v.",
+      "posAll": [
+        "v."
+      ],
+      "meaningZh": "與...結婚；娶；嫁；結婚",
+      "meaningEn": "take in marriage; perform a marriage ceremony"
+    },
+    {
+      "wordId": "W001726",
+      "word": "reply",
+      "pos": "n./v.",
+      "posAll": [
+        "n.",
+        "v."
+      ],
+      "meaningZh": "答覆；回答；答辯；回擊",
+      "meaningEn": "(n.) something said, written or done as an answer; (v.) to answer in words or writing, or respond by an action."
+    },
+    {
+      "wordId": "W002159",
+      "word": "clinic",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "診所；臨牀教學；診所(門診部)；臨牀(講解)",
+      "meaningEn": "a medical establishment run by a group of medical specialists; meeting for diagnosis of problems and instruction or remedial work in a particular activity"
+    },
+    {
+      "wordId": "W002223",
+      "word": "dealer",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "經銷商；商人；交易員；販賣商",
+      "meaningEn": "a person or business that buys and sells goods; also a seller of illegal goods or a person who distributes playing cards."
+    },
+    {
+      "wordId": "W002379",
+      "word": "hairdresser",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "美髮師；理髮師",
+      "meaningEn": "someone who cuts or beautifies hair"
+    },
+    {
+      "wordId": "W002398",
+      "word": "heater",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "加熱器；燈絲；加熱工",
+      "meaningEn": "device that heats water or supplies warmth to a room"
+    },
+    {
+      "wordId": "W002410",
+      "word": "homesick",
+      "pos": "adj.",
+      "posAll": [
+        "adj."
+      ],
+      "meaningZh": "思家的；思鄉病的",
+      "meaningEn": "longing to return home"
+    },
+    {
+      "wordId": "W002996",
+      "word": "widen",
+      "pos": "v.",
+      "posAll": [
+        "v."
+      ],
+      "meaningZh": "弄寬；加寬；擴大；變寬",
+      "meaningEn": "become broader or wider or more extensive; make wider"
+    },
+    {
+      "wordId": "W004652",
+      "word": "practitioner",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "從業者；開業者；行醫者；醫師",
+      "meaningEn": "someone who practices a learned profession"
+    }
+  ],
+  "missingExampleHandling": "17 個正式詞在此快照沒有正式 examples，無法逐句核查；不另造句、不宣告整詞完成，保留原教材及詞卡欄位核對需求。",
+  "sources": {
+    "collins_more": {
+      "sourceId": "collins_more",
+      "title": "Collins COBUILD: more, sense 2",
+      "url": "https://www.collinsdictionary.com/dictionary/english/more",
+      "accessType": "direct_page_open_success",
+      "directOpen": "成功開啟原頁；實讀相關義項，不宣稱讀完網站所有附加內容。",
+      "observedEvidence": "原頁第 250–258 行說明 more than 放在數目或數量前表示實際數量更大，並列數值比較例；支持嚴格大於三，不含三。",
+      "supportsRows": [
+        31
+      ],
+      "evidenceLimit": "僅支持所述詞義或構式。中文替代值為本次審核提案；未據此宣稱已比對原教材。"
+    },
+    "hanlin_greater_equal": {
+      "sourceId": "hanlin_greater_equal",
+      "title": "翰林雲端學院：大於或等於",
+      "url": "https://www.ehanlin.com.tw/app/keyword/%E5%9C%8B%E4%B8%AD/%E6%95%B8%E5%AD%B8/%E5%A4%A7%E6%96%BC%E6%88%96%E7%AD%89%E6%96%BC.html",
+      "accessType": "direct_page_open_success",
+      "directOpen": "成功開啟並實讀原頁第 12–17 行。",
+      "observedEvidence": "原頁將大於或等於符號與至少、以上（含）並列。用於教學數量門檻，三件以上會包含三件，與英文 more than three 不同。",
+      "supportsRows": [
+        31
+      ],
+      "evidenceLimit": "僅支持所述詞義或構式。中文替代值為本次審核提案；未據此宣稱已比對原教材。"
+    },
+    "collins_close_down": {
+      "sourceId": "collins_close_down",
+      "title": "Collins English Dictionary: close down",
+      "url": "https://www.collinsdictionary.com/dictionary/english/close-down",
+      "accessType": "direct_page_open_success",
+      "directOpen": "成功開啟原頁並實讀停止營運相關義項。",
+      "observedEvidence": "原頁第 235–251 行將動詞解為停止營運，並列工廠停止運作的名詞義；義項沒有要求破產或財務倒閉原因。",
+      "supportsRows": [
+        114
+      ],
+      "evidenceLimit": "僅支持所述詞義或構式。中文替代值為本次審核提案；未據此宣稱已比對原教材。"
+    },
+    "cambridge_close_down": {
+      "sourceId": "cambridge_close_down",
+      "title": "Cambridge Dictionary: close (something) down",
+      "url": "https://dictionary.cambridge.org/dictionary/english/close-down",
+      "accessType": "actual_search_result_excerpt",
+      "directOpen": "直接開啟回傳 403 Forbidden，未讀到原頁全文；此處僅使用實際搜尋節錄。",
+      "observedEvidence": "實際搜尋節錄把 close down 解為停止某物的運作，尤其營業場所停止營業；支持中性的關閉譯法，但不能證明原例句一定不是倒閉。",
+      "supportsRows": [
+        114
+      ],
+      "evidenceLimit": "僅支持所述詞義或構式。中文替代值為本次審核提案；未據此宣稱已比對原教材。"
+    },
+    "collins_open": {
+      "sourceId": "collins_open",
+      "title": "Collins English Dictionary: open",
+      "url": "https://www.collinsdictionary.com/dictionary/english/open",
+      "accessType": "direct_page_open_success",
+      "directOpen": "成功開啟原頁，實讀門窗義及後續 find 返回的可進入／可使用義項。",
+      "observedEvidence": "原頁的門窗義指移動門窗使開口不再被遮住；其他義項也允許使場所可進入或可使用。故 open the room 不可僅憑不常見就斷為不合文法，仍需辨明本句是開門還是開放空間。",
+      "supportsRows": [
+        94
+      ],
+      "evidenceLimit": "僅支持所述詞義或構式。中文替代值為本次審核提案；未據此宣稱已比對原教材。"
+    },
+    "cambridge_door": {
+      "sourceId": "cambridge_door",
+      "title": "Cambridge Dictionary: door",
+      "url": "https://dictionary.cambridge.org/dictionary/english/door",
+      "accessType": "actual_search_result_excerpt",
+      "directOpen": "直接開啟回傳 403 Forbidden，僅讀搜尋節錄，未讀原頁全文。",
+      "observedEvidence": "實際搜尋節錄將 door 解為封閉房間或建築入口的物件，並列 open the door 搭配。這能支持門與房間的區分，不能單獨否定 open the room。",
+      "supportsRows": [
+        94
+      ],
+      "evidenceLimit": "僅支持所述詞義或構式。中文替代值為本次審核提案；未據此宣稱已比對原教材。"
+    },
+    "cambridge_take_easy": {
+      "sourceId": "cambridge_take_easy",
+      "title": "Cambridge Academic Content Dictionary: take it easy",
+      "url": "https://dictionary.cambridge.org/us/dictionary/english/take-it-easy",
+      "accessType": "actual_search_result_excerpt",
+      "directOpen": "直接開啟回傳 403 Forbidden，僅讀搜尋節錄，未讀原頁全文。",
+      "observedEvidence": "實際搜尋節錄將整個慣用語解為休息、放鬆或保持冷靜；支持中文放輕鬆，不足以替資料庫決定單獨 easy token 的詞性慣例。",
+      "supportsRows": [
+        26
+      ],
+      "evidenceLimit": "僅支持所述詞義或構式。中文替代值為本次審核提案；未據此宣稱已比對原教材。"
+    },
+    "cambridge_stumble": {
+      "sourceId": "cambridge_stumble",
+      "title": "Cambridge English–Traditional Chinese: stumble",
+      "url": "https://dictionary.cambridge.org/dictionary/english-chinese-traditional/stumble",
+      "accessType": "actual_search_result_excerpt",
+      "directOpen": "直接開啟回傳 403 Forbidden；後續搜尋確實返回 WALK 義項與例句，但不是直接讀原頁。",
+      "observedEvidence": "實際搜尋節錄說明走路或跑步失衡而跌倒或開始要跌，中文列絆腳、絆倒，且示例包括未跌倒情境。因此不能把所有「絆倒」直接判成譯錯，三列保留。",
+      "supportsRows": [
+        52,
+        100,
+        109
+      ],
+      "evidenceLimit": "僅支持所述詞義或構式。中文替代值為本次審核提案；未據此宣稱已比對原教材。"
+    }
+  },
+  "definiteCandidates": [
+    {
+      "proposalId": "U12-D01",
+      "reviewIndex": 31,
+      "exampleId": "EX299bccf8",
+      "wordId": "W004689",
+      "word": "purchase",
+      "sensePos": "v.",
+      "meaningHint": null,
+      "exampleType": "exam",
+      "sentenceEn": "Customers who purchase more than three items will receive a ten percent discount at checkout.",
+      "sentenceZh": "購買三件以上商品的顧客，結帳時可享九折優惠。",
+      "blankSentence": "Customers who _____ more than three items will receive a ten percent discount at checkout.",
+      "answer": "purchase",
+      "difficulty": "LV5",
+      "status": "reviewed",
+      "field": "sentenceZh",
+      "before": "購買三件以上商品的顧客，結帳時可享九折優惠。",
+      "after": "購買超過三件商品的顧客，結帳時可享九折優惠。",
+      "englishGuard": "Customers who purchase more than three items will receive a ten percent discount at checkout.",
+      "classification": "definite_text_error",
+      "classificationZh": "明確文字錯誤",
+      "priority": "correct_with_exact_guard",
+      "reason": "more than three items 的數量嚴格大於三；「三件以上」在教學及購物門檻通常包含三件，會把折扣起算量提前一件。最小修正為「超過三件」，保留英文、purchase 答案與九折。",
+      "confidence": "high_for_quantitative_boundary",
+      "sources": [
+        {
+          "sourceId": "collins_more",
+          "title": "Collins COBUILD: more, sense 2",
+          "url": "https://www.collinsdictionary.com/dictionary/english/more",
+          "accessType": "direct_page_open_success",
+          "directOpen": "成功開啟原頁；實讀相關義項，不宣稱讀完網站所有附加內容。",
+          "observedEvidence": "原頁第 250–258 行說明 more than 放在數目或數量前表示實際數量更大，並列數值比較例；支持嚴格大於三，不含三。",
+          "supportsRows": [
+            31
+          ],
+          "evidenceLimit": "僅支持所述詞義或構式。中文替代值為本次審核提案；未據此宣稱已比對原教材。"
+        },
+        {
+          "sourceId": "hanlin_greater_equal",
+          "title": "翰林雲端學院：大於或等於",
+          "url": "https://www.ehanlin.com.tw/app/keyword/%E5%9C%8B%E4%B8%AD/%E6%95%B8%E5%AD%B8/%E5%A4%A7%E6%96%BC%E6%88%96%E7%AD%89%E6%96%BC.html",
+          "accessType": "direct_page_open_success",
+          "directOpen": "成功開啟並實讀原頁第 12–17 行。",
+          "observedEvidence": "原頁將大於或等於符號與至少、以上（含）並列。用於教學數量門檻，三件以上會包含三件，與英文 more than three 不同。",
+          "supportsRows": [
+            31
+          ],
+          "evidenceLimit": "僅支持所述詞義或構式。中文替代值為本次審核提案；未據此宣稱已比對原教材。"
+        }
+      ],
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "a95a8759fa5312ad7785b35444f0ed6e8fb16db5",
+        "reviewedBlobSha": "4262fd09bd3f209a000898bf7b11eb38102ed2e5",
+        "exampleIdMustMatch": "EX299bccf8",
+        "exactFieldBefore": {
+          "sentenceZh": "購買三件以上商品的顧客，結帳時可享九折優惠。"
+        },
+        "englishGuard": "Customers who purchase more than three items will receive a ten percent discount at checkout.",
+        "contextMustMatch": {
+          "sentenceEn": "Customers who purchase more than three items will receive a ten percent discount at checkout.",
+          "sentenceZh": "購買三件以上商品的顧客，結帳時可享九折優惠。",
+          "blankSentence": "Customers who _____ more than three items will receive a ten percent discount at checkout.",
+          "answer": "purchase",
+          "sensePos": "v.",
+          "meaningHint": null,
+          "exampleType": "exam",
+          "status": "reviewed"
+        },
+        "doNotModify": [
+          "sentenceEn",
+          "blankSentence",
+          "answer",
+          "sensePos",
+          "meaningHint",
+          "exampleType",
+          "status"
+        ]
+      },
+      "applied": false
+    }
+  ],
+  "hintProposals": [],
+  "translationCandidates": [
+    {
+      "proposalId": "U12-T01",
+      "reviewIndex": 114,
+      "exampleId": "EXdb9c43d0",
+      "wordId": "W000289",
+      "word": "factory",
+      "sensePos": "n.",
+      "meaningHint": null,
+      "exampleType": "exam",
+      "sentenceEn": "Many workers lost their jobs when the factory closed down.",
+      "sentenceZh": "工廠倒閉後，許多工人失去了工作。",
+      "blankSentence": "Many workers lost their jobs when the _____ closed down.",
+      "answer": "factory",
+      "difficulty": "LV1",
+      "status": "reviewed",
+      "field": "sentenceZh",
+      "before": "工廠倒閉後，許多工人失去了工作。",
+      "after": "工廠關閉後，許多工人失去了工作。",
+      "englishGuard": "Many workers lost their jobs when the factory closed down.",
+      "classification": "optional_precision_improvement",
+      "classificationZh": "可選精度改善",
+      "priority": "optional_refinement_not_proven_error",
+      "reason": "closed down 僅說工廠停止營運，未交代原因。「倒閉」是合理可能情境，並非已證實誤譯，但可能讓讀者自行補入經營失敗原因。可選改「關閉」保留英文的中性範圍；不把此提案計為確錯。",
+      "confidence": "high_for_lexical_range; original_translation_remains_possible",
+      "sources": [
+        {
+          "sourceId": "collins_close_down",
+          "title": "Collins English Dictionary: close down",
+          "url": "https://www.collinsdictionary.com/dictionary/english/close-down",
+          "accessType": "direct_page_open_success",
+          "directOpen": "成功開啟原頁並實讀停止營運相關義項。",
+          "observedEvidence": "原頁第 235–251 行將動詞解為停止營運，並列工廠停止運作的名詞義；義項沒有要求破產或財務倒閉原因。",
+          "supportsRows": [
+            114
+          ],
+          "evidenceLimit": "僅支持所述詞義或構式。中文替代值為本次審核提案；未據此宣稱已比對原教材。"
+        },
+        {
+          "sourceId": "cambridge_close_down",
+          "title": "Cambridge Dictionary: close (something) down",
+          "url": "https://dictionary.cambridge.org/dictionary/english/close-down",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "直接開啟回傳 403 Forbidden，未讀到原頁全文；此處僅使用實際搜尋節錄。",
+          "observedEvidence": "實際搜尋節錄把 close down 解為停止某物的運作，尤其營業場所停止營業；支持中性的關閉譯法，但不能證明原例句一定不是倒閉。",
+          "supportsRows": [
+            114
+          ],
+          "evidenceLimit": "僅支持所述詞義或構式。中文替代值為本次審核提案；未據此宣稱已比對原教材。"
+        }
+      ],
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "a95a8759fa5312ad7785b35444f0ed6e8fb16db5",
+        "reviewedBlobSha": "4262fd09bd3f209a000898bf7b11eb38102ed2e5",
+        "exampleIdMustMatch": "EXdb9c43d0",
+        "exactFieldBefore": {
+          "sentenceZh": "工廠倒閉後，許多工人失去了工作。"
+        },
+        "englishGuard": "Many workers lost their jobs when the factory closed down.",
+        "contextMustMatch": {
+          "sentenceEn": "Many workers lost their jobs when the factory closed down.",
+          "sentenceZh": "工廠倒閉後，許多工人失去了工作。",
+          "blankSentence": "Many workers lost their jobs when the _____ closed down.",
+          "answer": "factory",
+          "sensePos": "n.",
+          "meaningHint": null,
+          "exampleType": "exam",
+          "status": "reviewed"
+        },
+        "doNotModify": [
+          "sentenceEn",
+          "blankSentence",
+          "answer",
+          "sensePos",
+          "meaningHint",
+          "exampleType",
+          "status"
+        ]
+      },
+      "applied": false
+    }
+  ],
+  "pendingConfirmation": [
+    {
+      "pendingItemId": "U12-P01",
+      "reviewIndex": 26,
+      "exampleId": "EX1c43652d",
+      "wordId": "W000255",
+      "word": "easy",
+      "classification": "pending_POS_convention",
+      "classificationZh": "待詞性慣例確認",
+      "fields": [
+        "sensePos"
+      ],
+      "before": {
+        "sensePos": "adj."
+      },
+      "after": null,
+      "englishGuard": "Just relax and take it easy this weekend.",
+      "reason": "take it easy 整體為慣用語，本列只挖 easy。依既有保留慣例不改 adj.；不能將整個片語條目的標示機械套用到單一答案。",
+      "neededEvidence": "原教材標記及 sensePos 對詞頭、單一挖空詞與固定片語的明文規則。",
+      "sentenceEn": "Just relax and take it easy this weekend.",
+      "sentenceZh": "這個週末放輕鬆就好。",
+      "blankSentence": "Just relax and take it _____ this weekend.",
+      "answer": "easy",
+      "meaningHint": null,
+      "sensePos": "adj.",
+      "exampleType": "daily",
+      "status": "reviewed",
+      "sources": [
+        {
+          "sourceId": "cambridge_take_easy",
+          "title": "Cambridge Academic Content Dictionary: take it easy",
+          "url": "https://dictionary.cambridge.org/us/dictionary/english/take-it-easy",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "直接開啟回傳 403 Forbidden，僅讀搜尋節錄，未讀原頁全文。",
+          "observedEvidence": "實際搜尋節錄將整個慣用語解為休息、放鬆或保持冷靜；支持中文放輕鬆，不足以替資料庫決定單獨 easy token 的詞性慣例。",
+          "supportsRows": [
+            26
+          ],
+          "evidenceLimit": "僅支持所述詞義或構式。中文替代值為本次審核提案；未據此宣稱已比對原教材。"
+        }
+      ],
+      "action": "保留現值，不自動替換；不把待確認項計為確錯。",
+      "applied": false
+    },
+    {
+      "pendingItemId": "U12-P02",
+      "reviewIndex": 94,
+      "exampleId": "EXb4e20439",
+      "wordId": "W000683",
+      "word": "pull",
+      "classification": "pending_sentence_intent_confirmation",
+      "classificationZh": "待例句意圖確認",
+      "fields": [
+        "sentenceEn",
+        "blankSentence",
+        "sentenceZh"
+      ],
+      "before": {
+        "sentenceEn": "Please pull the door instead of pushing it to open the room.",
+        "blankSentence": "Please _____ the door instead of pushing it to open the room.",
+        "sentenceZh": "請用拉的方式而不是用推的方式打開這間房門。"
+      },
+      "after": null,
+      "englishGuard": "Please pull the door instead of pushing it to open the room.",
+      "reason": "前半句拉門而非推門與中文吻合；to open the room 卻可指使房間可進入／使用，不如開啟門的意思明確。open 有可進入義，故不是已證實文法錯誤。沒有原例句編寫依據時，不擅自把 room 換成 door／it，也不改 cloze。",
+      "neededEvidence": "該 exam 例句的原始題本或編寫紀錄，確認尾句原意是開門、進入房間或開放房間使用。確認前保留全文。",
+      "sentenceEn": "Please pull the door instead of pushing it to open the room.",
+      "sentenceZh": "請用拉的方式而不是用推的方式打開這間房門。",
+      "blankSentence": "Please _____ the door instead of pushing it to open the room.",
+      "answer": "pull",
+      "meaningHint": null,
+      "sensePos": "v.",
+      "exampleType": "exam",
+      "status": "reviewed",
+      "sources": [
+        {
+          "sourceId": "collins_open",
+          "title": "Collins English Dictionary: open",
+          "url": "https://www.collinsdictionary.com/dictionary/english/open",
+          "accessType": "direct_page_open_success",
+          "directOpen": "成功開啟原頁，實讀門窗義及後續 find 返回的可進入／可使用義項。",
+          "observedEvidence": "原頁的門窗義指移動門窗使開口不再被遮住；其他義項也允許使場所可進入或可使用。故 open the room 不可僅憑不常見就斷為不合文法，仍需辨明本句是開門還是開放空間。",
+          "supportsRows": [
+            94
+          ],
+          "evidenceLimit": "僅支持所述詞義或構式。中文替代值為本次審核提案；未據此宣稱已比對原教材。"
+        },
+        {
+          "sourceId": "cambridge_door",
+          "title": "Cambridge Dictionary: door",
+          "url": "https://dictionary.cambridge.org/dictionary/english/door",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "直接開啟回傳 403 Forbidden，僅讀搜尋節錄，未讀原頁全文。",
+          "observedEvidence": "實際搜尋節錄將 door 解為封閉房間或建築入口的物件，並列 open the door 搭配。這能支持門與房間的區分，不能單獨否定 open the room。",
+          "supportsRows": [
+            94
+          ],
+          "evidenceLimit": "僅支持所述詞義或構式。中文替代值為本次審核提案；未據此宣稱已比對原教材。"
+        }
+      ],
+      "action": "保留現值，不自動替換；不把待確認項計為確錯。",
+      "applied": false
+    }
+  ],
+  "scopeAndLimits": [
+    "唯一基底為 a95a875 已修文字快照，不使用舊值回填。",
+    "128 列逐一實讀英文、中文、提示、詞性、挖空與答案；逐列語義紀錄為人工審核，腳本僅編排、精確重建及統計。",
+    "111 個 daily/exam 空提示刻意保留，不為填滿新增提示；17 個現有非空提示均已在句中閱讀。",
+    "沒有修改英文、中文、cloze、答案、提示、詞性、例句類型或 status。所有候選尚未套用，也沒有 Git 操作。",
+    "僅數量門檻歧義列為明確修正；可選關閉譯法不計確錯。自然翻譯、親屬具體化、可成立情境及純風格差異不機械列錯。",
+    "easy 的指定詞性慣例維持 adj.；police officer、car pool 等名詞修飾用法不因修飾名詞就硬改形容詞。",
+    "open the room 另列意圖待確認；詞典顯示 open 有可進入或使用義，所以不斷言該片語本身不合文法，也不擅改英文目的子句。",
+    "可靠詞典只支持詞義與構式，不代替原教材。原頁實讀和搜尋節錄均逐一標明；403 頁不宣稱讀全文。",
+    "不擴改罕見詞義摘要，不處理圖片、音標、原始題本標記或補造缺失例句；未獨立核實高鐵班次等情境事實。",
+    "套用候選前須讀取最新資料，以 exampleId、原欄位值及英文 guard 逐項比對。若版本或上下文有變，先重新審核。"
+  ],
+  "deliveryNote": "所有提案尚未套用。1 項明確文字錯誤、1 項可選中文精度、2 項待確認應分別計數，不合稱四個錯誤。"
+}

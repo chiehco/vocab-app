@@ -1,0 +1,765 @@
+{
+  "reportType": "U12 rare and cross-headword summary verification",
+  "checkedAtUtc": "2026-11-05T10:52:32+00:00",
+  "sourceCommit": "a95a8759fa5312ad7785b35444f0ed6e8fb16db5",
+  "scope": "只核實5個字卡原有中文摘要與必要詞性、詞頭、領域限制；不改 repository，不核准整卡 reviewed。",
+  "repositoryModified": false,
+  "summary": {
+    "wordCount": 5,
+    "originalGlossesReviewed": 20,
+    "supportedOrQualifiedGlosses": 19,
+    "pendingGlosses": 1,
+    "conclusion": "保留所有已證稀有義；policeman 實驗室澱帚與 cop 抓住分頭分詞性；plant 樹枝仍待原譯或精確義項。",
+    "pendingExactClaims": [
+      {
+        "word": "plant",
+        "claim": "樹枝",
+        "reason": "已證供移植的插枝／幼苗及舊詞典幼樹幹作棍棒義，但沒有一般樹枝的可靠正文，亦未取得原英漢譯本。"
+      }
+    ],
+    "evidenceLimitation": "中文澱帚由官方技術正文與 MW 單字定義交叉核對；heater 的中文譯名輔證為標準中英文題名，不是全文。歷史詞典為原著鏡像OCR，未像素校讀。"
+  },
+  "method": {
+    "bodyVersusSnippet": "只將實際讀到的詞典／官方相關正文列為核准證據。彙編正文只供原譯追查，搜尋摘要不替代原著。",
+    "translationMethod": "英文定義與中文技術用語的對照為語義核驗；跨來源比對明示，不捏造直接英漢詞典原頁。",
+    "historicalSenses": "稀有不等於錯誤；只有原著明標 obsolete 的特定幼樹幹義標古義，不向其他名詞義外推。",
+    "candidateOnly": "afterCandidate 是未套用的最小標示候選。若顯示欄不適合 pending 文字，保留原值並在審查紀錄保留 pending。",
+    "sourceNoteCaution": "大考中心詞表的原 sourceNote 不是對所有稀有中文摘要的逐義證明。",
+    "scopeBoundary": "不核准英文摘要、例句、搭配、圖片、讀音或整卡狀態；雙詞頭的全義不可互換。",
+    "publicSafety": "不含私人工作目錄、檔案服務識別碼、工具引文代碼或協作角色。"
+  },
+  "words": [
+    {
+      "wordId": "W000324",
+      "word": "foreign",
+      "before": {
+        "wordId": "W000324",
+        "word": "foreign",
+        "wordVariants": [
+          "foreign"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "外國的；外交的；外省的；外來的",
+        "meaningEn": "belonging to or coming from a country that is not your own; relating to a country's dealings with other countries",
+        "usagePattern": "foreign language/country; foreign policy; a foreign + N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "foreign",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "外語/外國；外交政策；外國的 + 名詞"
+      },
+      "overallFinding": "四項均有詞典原站形容詞正文支持；外省的與外來的不是污染。",
+      "senseFindings": [
+        {
+          "before": "外國的",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "adj.",
+          "finding": "來自或涉及其他國家的獨立形容詞義。",
+          "afterCandidate": "外國的",
+          "sourceIds": [
+            "collins_foreign"
+          ]
+        },
+        {
+          "before": "外交的",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "adj.",
+          "finding": "涉及本國與他國交往的獨立義，不限單一 foreign policy 詞組。",
+          "afterCandidate": "外交的",
+          "sourceIds": [
+            "collins_foreign"
+          ]
+        },
+        {
+          "before": "外省的",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "adj.",
+          "finding": "原站明列其他省／區域及省外位置；此處是一般地理範圍，不專指特定歷史族群。",
+          "afterCandidate": "外省的",
+          "sourceIds": [
+            "collins_foreign"
+          ]
+        },
+        {
+          "before": "外來的",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "adj.",
+          "finding": "不原屬所在地方或身體、從外部進入之義。",
+          "afterCandidate": "外來的",
+          "sourceIds": [
+            "collins_foreign"
+          ]
+        }
+      ],
+      "afterCandidate": {
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "外國的；外交的；外省的；外來的"
+      },
+      "candidateScope": "原摘要可保留，不必為少見地域義刪詞。",
+      "reviewStatusRecommendation": "summary_supported_with_qualifications",
+      "wholeCardReviewedAuthorized": false,
+      "mustPreserve": [
+        "adj. 主詞性",
+        "外省的原義"
+      ],
+      "notAuthorizedByEvidence": [
+        "把外省的視為錯誤刪除",
+        "把外交的限為職稱片語",
+        "批准整卡 reviewed"
+      ]
+    },
+    {
+      "wordId": "W000325",
+      "word": "foreigner",
+      "before": {
+        "wordId": "W000325",
+        "word": "foreigner",
+        "wordVariants": [
+          "foreigner"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "外國人；外地人；進口貨；外國貨",
+        "meaningEn": "a person who comes from a foreign country; someone who does not owe allegiance to your country; someone who is excluded from or is not a member of a group",
+        "usagePattern": "a foreigner in N; be a foreigner",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "foreigner",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "在……的外國人；是外國人"
+      },
+      "overallFinding": "人與物的四項摘要都有原站名詞正文；物品義需與人義分開。",
+      "senseFindings": [
+        {
+          "before": "外國人",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "n.",
+          "finding": "來自外國的人。",
+          "afterCandidate": "外國人",
+          "sourceIds": [
+            "collins_foreigner"
+          ]
+        },
+        {
+          "before": "外地人",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "n.",
+          "finding": "來自自己社區以外的人，範圍不限國界。",
+          "afterCandidate": "外地人",
+          "sourceIds": [
+            "collins_foreigner"
+          ]
+        },
+        {
+          "before": "進口貨",
+          "status": "supported_requires_scope",
+          "decision": "qualify",
+          "pos": "n.",
+          "finding": "指從外國帶入的物品，不把此義套在人身上；不專指報關法律程序。",
+          "afterCandidate": "（物品）進口貨",
+          "sourceIds": [
+            "collins_foreigner"
+          ]
+        },
+        {
+          "before": "外國貨",
+          "status": "supported_requires_scope",
+          "decision": "qualify",
+          "pos": "n.",
+          "finding": "指外國生產的物品。",
+          "afterCandidate": "外國貨",
+          "sourceIds": [
+            "collins_foreigner"
+          ]
+        }
+      ],
+      "afterCandidate": {
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "外國人；外地人；（物品）進口貨；外國貨"
+      },
+      "candidateScope": "只加物品限制，不改主詞性或新增原摘要沒有的船舶專義。",
+      "reviewStatusRecommendation": "summary_supported_with_qualifications",
+      "wholeCardReviewedAuthorized": false,
+      "mustPreserve": [
+        "n. 主詞性",
+        "進口貨與外國貨有據義項"
+      ],
+      "notAuthorizedByEvidence": [
+        "刪除所有非人義",
+        "自行標成古義或俚語",
+        "批准整卡 reviewed"
+      ]
+    },
+    {
+      "wordId": "W000653",
+      "word": "plant",
+      "before": {
+        "wordId": "W000653",
+        "word": "plant",
+        "wordVariants": [
+          "plant"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "植物；作物；工廠；樹枝；（動詞）種植",
+        "meaningEn": "(n.) a living thing that grows in soil and usually has leaves, stems, and roots; a factory or building where power or products are made; (v.) to put a seed or young plant in the ground so it can grow",
+        "usagePattern": "plant a tree/seed; a power plant",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "plant",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "種一棵樹/種子；發電廠"
+      },
+      "overallFinding": "植物、作物、工廠、種植可保留；一般樹枝未證，已證的插枝／幼苗不能直接冒充其原意。",
+      "senseFindings": [
+        {
+          "before": "植物",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "n.",
+          "finding": "植物生物義有原站定義。",
+          "afterCandidate": "植物",
+          "sourceIds": [
+            "collins_plant",
+            "mw_plant"
+          ]
+        },
+        {
+          "before": "作物",
+          "status": "supported_requires_scope",
+          "decision": "qualify",
+          "pos": "n.",
+          "finding": "指所種植的植物／生長物。1924原著也明列 crop or growth，不表示所有收穫產品或產量。",
+          "afterCandidate": "（栽培中的）作物",
+          "sourceIds": [
+            "mw_plant",
+            "webster1924_plant"
+          ]
+        },
+        {
+          "before": "工廠",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "n.",
+          "finding": "生產特定產品的工廠或工場。",
+          "afterCandidate": "工廠",
+          "sourceIds": [
+            "collins_plant",
+            "mw_plant"
+          ]
+        },
+        {
+          "before": "樹枝",
+          "status": "pending_exact_gloss",
+          "decision": "pending_retain",
+          "pos": "n.",
+          "finding": "CDICT 朗道彙編確載樹枝，但未見可驗原譯本。Collins 的 cutting／seedling／growing slip 是供繁殖或移植的插枝、苗株；1924詞典另有作棍棒的幼樹幹古義，二者均不等同一般樹枝。",
+          "afterCandidate": null,
+          "sourceIds": [
+            "cdict_plant_provenance",
+            "collins_plant",
+            "webster1924_plant"
+          ],
+          "retainOriginal": true,
+          "proposedAnnotation": "樹枝〔待確認〕",
+          "nextEvidenceNeeded": "可驗的英漢原著頁面或獨立權威 plant 名詞枝條義及語境，確認原譯究竟是插枝、幼苗或另一義。",
+          "narrowerSupportedAlternative": "（園藝，n.）供扦插／移植的插枝或苗株",
+          "alternativeAutomaticallyAuthorized": false,
+          "rejectedEvidenceRoute": "拉丁詞源 planta＝shoot/twig、plant a branch 片語及其他詞條的 branch 定義均不能證明 plant 一般名詞＝樹枝。"
+        },
+        {
+          "before": "（動詞）種植",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "v.",
+          "finding": "將種子／幼苗放入土中生長。",
+          "afterCandidate": "（v.）種植",
+          "sourceIds": [
+            "collins_plant",
+            "mw_plant"
+          ]
+        }
+      ],
+      "afterCandidate": {
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "植物；（栽培中的）作物；工廠；樹枝〔待確認〕；（動詞）種植"
+      },
+      "candidateScope": "保留樹枝原文及待確認；有據的窄義只列研究替代候選，不自動用插枝或棍棒替換。",
+      "reviewStatusRecommendation": "partial_pending",
+      "wholeCardReviewedAuthorized": false,
+      "mustPreserve": [
+        "n./v. 主詞性",
+        "樹枝原文及未決紀錄"
+      ],
+      "notAuthorizedByEvidence": [
+        "把詞源當英文義項",
+        "從插枝泛化所有樹枝",
+        "以未查到為由刪除樹枝",
+        "批准整卡 reviewed"
+      ]
+    },
+    {
+      "wordId": "W001645",
+      "word": "policeman/cop",
+      "before": {
+        "wordId": "W001645",
+        "word": "policeman/cop",
+        "wordVariants": [
+          "policeman",
+          "cop"
+        ],
+        "level": "LV2",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "警察；澱帚；警官；抓住",
+        "meaningEn": "a member of the police force whose job is to make sure people obey the law and to protect people and property",
+        "usagePattern": "a young/local policeman; call the police",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "policeman",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "年輕／當地的警察；報警"
+      },
+      "overallFinding": "澱帚為已核實實驗室器具，必須保留且只歸 policeman；抓住只屬 cop 俚語動詞，須與警察名詞分列。",
+      "senseFindings": [
+        {
+          "before": "警察",
+          "status": "supported_requires_headword_scope",
+          "decision": "qualify",
+          "pos": "n.",
+          "finding": "policeman 的警察義與 cop 的口語 police officer 義均有正文。",
+          "afterCandidate": "（policeman/cop，n.）警察",
+          "sourceIds": [
+            "mw_policeman",
+            "mw_cop"
+          ],
+          "headwords": [
+            "policeman",
+            "cop"
+          ],
+          "registerByHeadword": {
+            "policeman": "一般警務用法",
+            "cop": "informal（口語）"
+          }
+        },
+        {
+          "before": "澱帚",
+          "status": "supported_requires_headword_and_domain",
+          "decision": "qualify",
+          "pos": "n.",
+          "finding": "MW 的 policeman 單字醫學定義與政府中文淀帚形制、清除器壁固體的用途一致，並有原刊實驗器材名稱佐證。僅 policeman，不套用 cop。",
+          "afterCandidate": "（policeman，實驗室用語）澱帚（橡皮頭玻璃刮棒）",
+          "sourceIds": [
+            "mw_policeman",
+            "mee_dianzhou",
+            "pku_dianzhou",
+            "cdict_policeman_provenance",
+            "fisher_policeman"
+          ],
+          "headwords": [
+            "policeman"
+          ],
+          "translationCaution": "中文術語與英文原站定義交叉核對；政府與原刊沒有直接英中對譯，不宣稱原書英漢譯頁已取得。刮棒補註描述除去固體用途，不把它說成掃帚、警械或一般清潔刷。"
+        },
+        {
+          "before": "警官",
+          "status": "supported_requires_scope",
+          "decision": "qualify",
+          "pos": "n.",
+          "finding": "此處是一般 police officer／警察的對譯，不表示持有特定高階警銜；cop 名詞為口語。",
+          "afterCandidate": "警官（泛指警察；cop 為口語）",
+          "sourceIds": [
+            "mw_policeman",
+            "mw_cop"
+          ],
+          "headwords": [
+            "policeman",
+            "cop"
+          ]
+        },
+        {
+          "before": "抓住",
+          "status": "supported_requires_pos_and_headword_split",
+          "decision": "qualify",
+          "pos": "v.t.",
+          "finding": "MW 直接列 cop 及物動詞 catch/capture，標 slang。",
+          "afterCandidate": "（cop，v.，俚語）抓住",
+          "sourceIds": [
+            "mw_cop"
+          ],
+          "headwords": [
+            "cop"
+          ]
+        }
+      ],
+      "afterCandidate": {
+        "pos": "n.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（policeman/cop，n.）警察；警官（泛指警察；cop 為口語）；（policeman，n.，實驗室用語）澱帚（橡皮頭玻璃刮棒）；（cop，v.，俚語）抓住"
+      },
+      "candidateScope": "保持 n. 主詞性，posAll 可補 v.，但每義需明示所屬詞頭。此建議為同卡分列義項，不代表必須新增或拆成另一張卡。",
+      "reviewStatusRecommendation": "summary_supported_with_qualifications",
+      "wholeCardReviewedAuthorized": false,
+      "mustPreserve": [
+        "n. 主詞性",
+        "policeman 澱帚專義",
+        "cop 抓住的動詞義及俚語標籤",
+        "兩詞頭的適用差異"
+      ],
+      "notAuthorizedByEvidence": [
+        "把澱帚當污染刪除",
+        "宣稱 cop 也有澱帚義",
+        "把抓住列作名詞或當作 policeman 動詞",
+        "把合併詞頭視為全義可互換",
+        "批准整卡 reviewed"
+      ]
+    },
+    {
+      "wordId": "W002398",
+      "word": "heater",
+      "before": {
+        "wordId": "W002398",
+        "word": "heater",
+        "wordVariants": [
+          "heater"
+        ],
+        "level": "LV3",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "加熱器；燈絲；加熱工",
+        "meaningEn": "device that heats water or supplies warmth to a room",
+        "usagePattern": "a/the heater; heater of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "heater",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "一個／那個加熱器；……的加熱器"
+      },
+      "overallFinding": "三項均可保留；燈絲限定電子管間接加熱陰極的元件，加熱工有直接人物定義。",
+      "senseFindings": [
+        {
+          "before": "加熱器",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "n.",
+          "finding": "供熱或提高溫度的器具。",
+          "afterCandidate": "加熱器",
+          "sourceIds": [
+            "collins_heater"
+          ]
+        },
+        {
+          "before": "燈絲",
+          "status": "supported_requires_domain",
+          "decision": "qualify",
+          "pos": "n.",
+          "finding": "heater 單字的電子管陰極加熱元件義已由詞典與官方術語庫直接定義；官方標準中英文題名另佐證電子管領域的燈絲譯法。",
+          "afterCandidate": "（電子管）燈絲（間接加熱陰極的元件）",
+          "sourceIds": [
+            "collins_heater",
+            "gdt_heater",
+            "samr_heater"
+          ],
+          "usageCaution": "不可把此專義泛化為所有照明燈泡的 filament；heater 與直接受熱發射電子的 filament cathode 也不可不加區別。"
+        },
+        {
+          "before": "加熱工",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "n.",
+          "finding": "Webster’s New World 直接列工作為加熱某物的人。",
+          "afterCandidate": "加熱工",
+          "sourceIds": [
+            "collins_heater"
+          ]
+        }
+      ],
+      "afterCandidate": {
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "加熱器；（電子管）燈絲（間接加熱陰極的元件）；加熱工"
+      },
+      "candidateScope": "只加電子管與功能限制；不改 n.，不新增本摘要外的槍枝或棒球義。",
+      "reviewStatusRecommendation": "summary_supported_with_qualifications",
+      "wholeCardReviewedAuthorized": false,
+      "mustPreserve": [
+        "n. 主詞性",
+        "加熱工人物義",
+        "限定後的燈絲技術義"
+      ],
+      "notAuthorizedByEvidence": [
+        "因今日少見刪除加熱工",
+        "把電子管定義泛推所有燈泡",
+        "只憑 heater filament 或標準標題片語核准單字義",
+        "批准整卡 reviewed"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "collins_foreign",
+      "title": "Collins: foreign",
+      "url": "https://www.collinsdictionary.com/dictionary/english/foreign",
+      "publisher": "HarperCollins",
+      "evidenceMode": "page_body_read",
+      "readScope": "COBUILD 及兩種美語詞典的 adjective 正文。",
+      "excerpts": [
+        "belonging to or coming from another district, province, etc",
+        "of or pertaining to contact or dealings with other countries"
+      ],
+      "notes": "原站明列別省／別區與國際交往義；不是僅從 foreign policy 片語推導。外來物亦有不屬於所在身體／地方的獨立定義。"
+    },
+    {
+      "sourceId": "collins_foreigner",
+      "title": "Collins: foreigner",
+      "url": "https://www.collinsdictionary.com/dictionary/english/foreigner",
+      "publisher": "HarperCollins",
+      "evidenceMode": "page_body_read",
+      "readScope": "英式第1–3義及美式名詞第1–3義。",
+      "excerpts": [
+        "a person from outside one's community",
+        "a thing produced in or brought from a foreign country"
+      ],
+      "notes": "直接有物品義，亦有 ship or product 例示，故不能因通常指人就刪除進口貨／外國貨。未加來源未標的古義或俚語標籤。"
+    },
+    {
+      "sourceId": "collins_plant",
+      "title": "Collins: plant",
+      "url": "https://www.collinsdictionary.com/dictionary/english/plant",
+      "publisher": "HarperCollins",
+      "evidenceMode": "page_body_read",
+      "readScope": "plant 英式名詞、動詞及美式名詞的生物、cutting、工廠、種植定義。",
+      "excerpts": [
+        "a cutting, seedling, or similar structure, esp when ready for transplantation",
+        "a factory or workshop"
+      ],
+      "notes": "已證插枝／苗株用途，不證任何普通樹枝均可叫 plant。詞源欄 Latin planta 的 shoot／twig 也不是現代英文獨立義項。"
+    },
+    {
+      "sourceId": "mw_plant",
+      "title": "Merriam-Webster: plant",
+      "url": "https://www.merriam-webster.com/dictionary/plant",
+      "publisher": "Merriam-Webster",
+      "evidenceMode": "page_body_read",
+      "readScope": "verb 1 與 noun 1、2、4。",
+      "excerpts": [
+        "something or someone planted"
+      ],
+      "notes": "支持植物、工廠及種植；名詞亦包含被種植者。作物限指栽培中的植物，不泛化為收穫產量或收割後產品。"
+    },
+    {
+      "sourceId": "webster1924_plant",
+      "title": "Webster’s New International Dictionary (1924): plant",
+      "url": "https://truthbook.com/urantia-book-viewer-core/1924-Websters-Dictionary-Edition/LETTER-P.pdf",
+      "publisher": "G. & C. Merriam；原著掃描由 TruthBook 鏡像提供",
+      "evidenceMode": "original_scan_mirror_ocr_body_read",
+      "readScope": "印刷頁1649 的 plant n. 第1、2、5e義；只讀相關可搜尋正文。",
+      "excerpts": [
+        "A crop or growth of something planted.",
+        "The stem of a young tree used as a cudgel, pole, etc."
+      ],
+      "notes": "第5e明列種植作物／生長物；第2為幼樹幹作棍棒並標 Obs.，不是一般樹枝。OCR 存在大量重複行及排版錯誤，未做頁面像素校讀；不單憑此掃描把原摘要樹枝改作古義棍棒。"
+    },
+    {
+      "sourceId": "cdict_plant_provenance",
+      "title": "CDICT 所載朗道英漢字典: plant",
+      "url": "https://cdict.net/q/plant",
+      "publisher": "CDICT，原版版本及頁碼未核實",
+      "evidenceMode": "compilation_body_read",
+      "readScope": "Source(1) 名詞中文摘要。",
+      "excerpts": [
+        "植物, 作物, 工廠, 樹枝"
+      ],
+      "notes": "與原摘要同序列，是來源追查線索，不是樹枝義的獨立原著證據。"
+    },
+    {
+      "sourceId": "mw_policeman",
+      "title": "Merriam-Webster: policeman，含 Medical Definition",
+      "url": "https://www.merriam-webster.com/dictionary/policeman",
+      "publisher": "Merriam-Webster",
+      "evidenceMode": "page_body_read",
+      "readScope": "一般 noun 第1義與 Medical Definition。",
+      "excerpts": [
+        "a member of a police force",
+        "for removing solids from a vessel"
+      ],
+      "notes": "醫學欄完整定義明指玻璃棒上的扁平橡皮等器具。/medical/policeman 重新導向同頁，醫學正文仍可讀。這是 policeman 單字義，不需由 rubber policeman 複合詞反推。"
+    },
+    {
+      "sourceId": "mee_dianzhou",
+      "title": "《環境空氣 降塵的測定 重量法（徵求意見稿）》編制說明 §5.4.3",
+      "url": "https://www.mee.gov.cn/xxgk2018/xxgk/xxgk06/202009/W020200930600771235224.pdf",
+      "publisher": "中國生態環境部公開；天津市生態環境監測中心標準編制組，2020年9月",
+      "evidenceMode": "official_pdf_text_body_read",
+      "readScope": "PDF第15頁（零起算14），§5.4.3 軟質矽膠刮刀。",
+      "excerpts": [
+        "原标准中使用淀帚擦洗缸壁、扫除尘粒"
+      ],
+      "notes": "正文描述淀帚由玻璃棒端的乳膠管製成，與 MW 的橡皮頭器具形制及用途相符；中文與英文跨來源比對，不冒稱本文件直接列英文 policeman。原文為簡體，報告沿用原字卡繁體澱帚。這是術語取證，不是把徵求意見稿稱為現行操作規範。未完成像素校讀。"
+    },
+    {
+      "sourceId": "pku_dianzhou",
+      "title": "大學化學：多技術融合－創新設計沉澱重量法測定鋇含量的實驗",
+      "url": "https://www.dxhx.pku.edu.cn/CN/10.3866/PKU.DXHX202110049",
+      "publisher": "大學化學編輯部；寧夏大學作者，2022",
+      "evidenceMode": "page_body_read",
+      "readScope": "表2 儀器列。",
+      "excerpts": [
+        "淀帚"
+      ],
+      "notes": "獨立確認中文實驗器具名稱確在原刊使用；表格本身沒有英中對譯或形制定義，僅為輔證。"
+    },
+    {
+      "sourceId": "cdict_policeman_provenance",
+      "title": "CDICT 所載朗道英漢字典: policeman",
+      "url": "https://cdict.net/q/policeman",
+      "publisher": "CDICT，原版版本及頁碼未核實",
+      "evidenceMode": "compilation_body_read",
+      "readScope": "Source(1) 化學及醫學標籤。",
+      "excerpts": [
+        "〖醫〗 澱帚(橡皮頭玻璃攪棒)"
+      ],
+      "notes": "只作原譯來源線索。器具及中文術語另以 MW、政府正文核實，不能單靠彙編互相抄錄算獨立證據。"
+    },
+    {
+      "sourceId": "fisher_policeman",
+      "title": "Fisher Scientific: GSC Go Science Crazy Rubber Policeman",
+      "url": "https://www.fishersci.com/shop/products/rubber-policeman-1/S24581",
+      "publisher": "Fisher Scientific，GSC 商品說明",
+      "evidenceMode": "official_product_body_read",
+      "readScope": "產品材料欄及 Description。",
+      "excerpts": [
+        "Natural Rubber Scraper Attached to Glass Rod"
+      ],
+      "notes": "實物用途包括轉移沉澱／固體與組織培養細胞。僅輔證器具形制；policeman 單字義已由 MW 獨立定義證實。未購買或變更商品頁。"
+    },
+    {
+      "sourceId": "mw_cop",
+      "title": "Merriam-Webster: cop",
+      "url": "https://www.merriam-webster.com/dictionary/cop",
+      "publisher": "Merriam-Webster",
+      "evidenceMode": "page_body_read",
+      "readScope": "noun (1) informal；verb transitive 第1義 slang。",
+      "excerpts": [
+        "informal",
+        "police officer",
+        "slang",
+        "to get hold of",
+        "catch",
+        "capture"
+      ],
+      "notes": "抓住為 cop 及物動詞，不是 policeman 的動詞，也不是警察名詞翻譯。cop 名詞的口語限制與動詞的俚語限制分列。"
+    },
+    {
+      "sourceId": "collins_heater",
+      "title": "Collins: heater",
+      "url": "https://www.collinsdictionary.com/dictionary/english/heater",
+      "publisher": "HarperCollins",
+      "evidenceMode": "page_body_read",
+      "readScope": "英式名詞1、3；Webster’s New World 美式名詞1–3。",
+      "excerpts": [
+        "a person whose work is to heat something",
+        "a conductor carrying a current that indirectly heats the cathode"
+      ],
+      "notes": "原站明確支持加熱工，不需從 -er 詞尾推斷。電子學義限定電子管間接加熱陰極的元件，非一切燈泡的燈絲。"
+    },
+    {
+      "sourceId": "gdt_heater",
+      "title": "Le Grand Dictionnaire Terminologique: filament chauffant / heater",
+      "url": "https://vitrinelinguistique.oqlf.gouv.qc.ca/fiche-gdt/fiche/4491698/filament-chauffant",
+      "publisher": "Office québécois de la langue française；明示作者 International Electrotechnical Commission，1974",
+      "evidenceMode": "official_terminology_body_read",
+      "readScope": "電子管領域的英文單字 heater 及英法雙語定義。",
+      "excerpts": [
+        "An electrically heated element for supplying heat to an indirectly heated cathode."
+      ],
+      "notes": "官方術語庫明載 heater 單字及其定義；不是僅看到 heater filament 片語。本來源未提供中文譯名。"
+    },
+    {
+      "sourceId": "samr_heater",
+      "title": "全國標準資訊公共服務平台: GB/T 3307-1982",
+      "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=dTVSXwDHoLc%3D&mode=p",
+      "publisher": "國家市場監督管理總局／國家標準化管理委員會",
+      "evidenceMode": "official_metadata_body_read",
+      "readScope": "標準中英文標題及電子管領域資訊。",
+      "excerpts": [
+        "小功率电子管灯丝断续试验方法",
+        "Method of heater intermittent test of low-power electronic tubes"
+      ],
+      "notes": "中英文標題為電子管情境的燈絲／heater 譯法輔證。未讀標準全文，亦未把標題片語單獨當作 heater 單字義；單字語義以 Collins 與 GDT 為主。"
+    }
+  ],
+  "accessLimitations": [
+    {
+      "url": "https://hxsyzx.sxu.edu.cn/docs/20130103112043814619.pdf",
+      "result": "原始大學文件未能開啟；未採搜尋摘要作決定證據。"
+    },
+    {
+      "url": "https://www.worldradiohistory.com/Archive-Modern-Era-Miscellaneous/General-Electric-How-Electronics-Tubes-Work-1944.pdf",
+      "result": "原廠歷史手冊鏡像回傳403；未採為正文證據。"
+    },
+    {
+      "url": "https://ahdictionary.com/word/search.html?q=heater",
+      "result": "無法取得正文；未採為證據。"
+    },
+    {
+      "url": "https://www.mee.gov.cn/xxgk2018/xxgk/xxgk06/202009/W020200930600771235224.pdf",
+      "result": "已讀§5.4.3文字正文；頁面截圖介面只回傳影像占位文字，未實際取得可檢視像素，不宣稱視覺校讀。"
+    },
+    {
+      "url": "https://truthbook.com/urantia-book-viewer-core/1924-Websters-Dictionary-Edition/LETTER-P.pdf",
+      "result": "原著鏡像文字有重複及OCR問題；讀取相關名詞正文，未完成像素校讀。"
+    }
+  ]
+}
