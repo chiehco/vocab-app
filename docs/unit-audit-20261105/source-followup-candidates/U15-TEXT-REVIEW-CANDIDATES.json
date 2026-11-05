@@ -1,0 +1,906 @@
+{
+  "schemaVersion": 2,
+  "unit": "U15",
+  "provenance": {
+    "inputFile": "u15-current-examples-bb581cd.json",
+    "inputSha256": "757798b5ce5b6b056ec9dea51102c35f7b9abd3bfc4faba095196eab3313a3f1",
+    "wordInputFile": "u15-current-words-bb581cd.json",
+    "wordInputSha256": "a2bcd2b64efe9dc03db72dc56ea6da43903756a39016f0b8722e42a5404595c3",
+    "reviewedCommit": "bb581cde64a311e2bfc95eadd4592e27f1db70cb",
+    "reviewedBlobSha": "529559441a3a8f602dce01818f780785558de1ad",
+    "wordBlobSha": "9a00a5bc4d52e83dac1ed2a8e8985c829a82738a",
+    "reviewDateUTC": "2026-11-05",
+    "inputOrigin": "以指定 commit 的例句及詞條快照逐列核查；本次沒有再抓取 Git blob。",
+    "originalTextbookVerification": "157 列全句均已實讀；快照沒有原教材頁碼、來源網址或原試題出處。exampleType 與 status 是現有標記，不是原教材逐字核驗證據。"
+  },
+  "summary": {
+    "formalWordCount": 76,
+    "wordsWithExamples": 61,
+    "formalWordsWithoutExamplesCount": 15,
+    "exampleCount": 157,
+    "manuallyReviewedRows": 157,
+    "clozeAnswerExactReconstructionPassed": 157,
+    "newDefiniteClozeAnswerMismatchCount": 0,
+    "newDefiniteTextErrorCandidates": 1,
+    "newOptionalPrecisionCandidateCount": 5,
+    "newHintPrecisionCandidates": 0,
+    "newChineseTranslationCandidates": 6,
+    "previouslyRecordedCandidatesDeduplicated": 0,
+    "pendingExampleItems": 3,
+    "pendingPOSConventionItems": 1,
+    "pendingHeadwordExampleLinkageItems": 2,
+    "newPendingSentenceIntentItems": 0,
+    "newMandatoryPOSChanges": 0,
+    "retainedWithoutNewCandidateOrPendingItem": 148,
+    "emptyHintsPreserved": 117,
+    "emptyHintsByExampleType": {
+      "exam": 58,
+      "daily": 59
+    },
+    "nonemptyHintsReadInContext": 40,
+    "existingStatusCountsPreserved": {
+      "approved": 26,
+      "reviewed": 131
+    },
+    "exampleTypeCounts": {
+      "textbook": 26,
+      "exam": 66,
+      "daily": 64,
+      "basic": 1
+    },
+    "repoFilesModified": false,
+    "statusesModified": false,
+    "gitOperationsPerformed": false,
+    "findingsSummaryZh": "157 列逐句實讀且 cloze 精確重建。1 項明確中文用字候選：構得到改搆得到；5 項可選翻譯精度；3 項分類／收錄規則待確認。small 副詞與 smalls 小號名詞有原站支持。117 個空提示及 15 個無例句詞保留，不造句。",
+    "countingCaution": "1 項用字錯誤、5 項可選精度與 3 項待確認分開計數。可選與待確認不等於錯誤；全詞卡欄位、圖像及原教材來源不在本次逐句完成證明內。"
+  },
+  "groups": {
+    "明確候選": [
+      "U15-D01"
+    ],
+    "新可選精度改善": [
+      "U15-T01",
+      "U15-T02",
+      "U15-T03",
+      "U15-T04",
+      "U15-T05"
+    ],
+    "既有跨單元去重": [],
+    "待詞性分類慣例確認": [
+      "U15-P01"
+    ],
+    "待詞條與例句收錄慣例確認": [
+      "U15-P02",
+      "U15-P03"
+    ]
+  },
+  "formalWordsWithoutExamples": [
+    {
+      "wordId": "W000304",
+      "word": "few",
+      "pos": "adj./pron.",
+      "posAll": [
+        "adj.",
+        "pron."
+      ],
+      "meaningZh": "很少的；不多的；少數的；少數",
+      "meaningEn": "a small elite group; a quantifier that can be used with count nouns and is often preceded by 'a'; a small but indefinite number",
+      "status": "draft"
+    },
+    {
+      "wordId": "W000327",
+      "word": "fork",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "叉子；叉狀物；分岔；分支",
+      "meaningEn": "cutlery used for serving and eating food; the region of the angle formed by the junction of two branches",
+      "status": "draft"
+    },
+    {
+      "wordId": "W000361",
+      "word": "gray",
+      "pos": "adj./n./v.",
+      "posAll": [
+        "adj.",
+        "n.",
+        "v."
+      ],
+      "meaningZh": "（形容詞）灰色的；灰暗的；（名詞）灰色；（動詞）使變灰；變灰；（單位名詞 gray，Gy）戈雷：每公斤物質吸收一焦耳輻射能量的吸收劑量",
+      "meaningEn": "(adj.) having a color between black and white; dull or gloomy. (n.) that color; also the absorbed-dose unit gray (Gy), equal to one joule per kilogram of irradiated material. (v.) to become or make gray.",
+      "status": "draft"
+    },
+    {
+      "wordId": "W000461",
+      "word": "knife",
+      "pos": "n./v.",
+      "posAll": [
+        "n.",
+        "v."
+      ],
+      "meaningZh": "小刀；匕首；切割；傷害",
+      "meaningEn": "(n.) a cutting tool or weapon with a blade and handle. (v.) to cut or stab with a knife; figuratively, to harm or betray.",
+      "status": "draft"
+    },
+    {
+      "wordId": "W000781",
+      "word": "singer",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "歌手",
+      "meaningEn": "a person who sings. (Separate capitalized name, Singer) Isaac Merritt Singer (1811–1875), an American sewing-machine inventor and manufacturer.",
+      "status": "draft"
+    },
+    {
+      "wordId": "W000832",
+      "word": "strange",
+      "pos": "adj.",
+      "posAll": [
+        "adj."
+      ],
+      "meaningZh": "奇怪的；陌生的；生疏的；不熟悉的",
+      "meaningEn": "being definitely out of the ordinary and unexpected; slightly odd or even a bit weird; not known before",
+      "status": "draft"
+    },
+    {
+      "wordId": "W001125",
+      "word": "calm",
+      "pos": "v./adj./n",
+      "posAll": [
+        "v.",
+        "adj.",
+        "n"
+      ],
+      "meaningZh": "（形容詞）平靜的；冷靜的；（名詞）平靜；風平浪靜；（動詞）使平靜；鎮定下來",
+      "meaningEn": "(adj.) peaceful and not anxious or excited. (n.) a peaceful state or absence of wind. (v.) to make or become peaceful and less upset.",
+      "status": "draft"
+    },
+    {
+      "wordId": "W001169",
+      "word": "cloudy",
+      "pos": "adj.",
+      "posAll": [
+        "adj."
+      ],
+      "meaningZh": "多雲的；有愁容的；雲的；渾濁的",
+      "meaningEn": "lacking definite form or limits; full of or covered with clouds",
+      "status": "draft"
+    },
+    {
+      "wordId": "W001283",
+      "word": "dryer",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "乾衣機；乾燥劑；催幹劑；乾燥器",
+      "meaningEn": "an appliance that removes moisture",
+      "status": "draft"
+    },
+    {
+      "wordId": "W001852",
+      "word": "stranger",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "陌生人；門外漢；局外人；非當事人",
+      "meaningEn": "anyone who does not belong in the environment in which they are found; an individual that one is not acquainted with",
+      "status": "draft"
+    },
+    {
+      "wordId": "W002979",
+      "word": "warmth",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "溫暖；溫情；暖和；激動",
+      "meaningEn": "the quality of having a moderate degree of heat",
+      "status": "draft"
+    },
+    {
+      "wordId": "W003876",
+      "word": "satellite",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "衛星（天然或人造）；（原摘要另列醫學對應，待核）伴行靜脈；陪靜脈；陪病部",
+      "meaningEn": "a natural or artificial body that orbits a planet or other larger body; also, a person or organization dependent on or following another.",
+      "status": "draft"
+    },
+    {
+      "wordId": "W004579",
+      "word": "notify",
+      "pos": "v.",
+      "posAll": [
+        "v."
+      ],
+      "meaningZh": "通知；通告；報告",
+      "meaningEn": "inform (somebody) of something",
+      "status": "draft"
+    },
+    {
+      "wordId": "W005090",
+      "word": "beautify",
+      "pos": "v.",
+      "posAll": [
+        "v."
+      ],
+      "meaningZh": "美化；變美；修飾",
+      "meaningEn": "make more beautiful; be beautiful to look at",
+      "status": "draft"
+    },
+    {
+      "wordId": "W005517",
+      "word": "lighten",
+      "pos": "v.",
+      "posAll": [
+        "v."
+      ],
+      "meaningZh": "照亮；點亮；減輕；使輕鬆",
+      "meaningEn": "make more cheerful; reduce the weight on; make lighter",
+      "status": "draft"
+    }
+  ],
+  "missingExampleHandling": "15 個正式詞條沒有本次提供的例句，保留其原狀態；不自動補造句子或提示，也不宣稱這些詞條已完成全卡審核。",
+  "sources": [
+    {
+      "sourceId": "moe_gou_reach",
+      "title": "教育部《重編國語辭典修訂本》：搆",
+      "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=4048&la=0&powerMode=0",
+      "accessType": "direct_page_open_success",
+      "directOpen": "成功開啟並實讀相關原頁內容（第 29–36 行）。",
+      "observedEvidence": "手部搆的第三動詞義是觸及，例句以小孩搆不著描述無法伸手觸及；同構註記位於引起、造成義，不能直接外推全部義項。",
+      "evidenceLimit": "僅支持所述詞義、構式或用字。中文替代值為本次審核提案，並非已比對原教材的逐字更正。"
+    },
+    {
+      "sourceId": "moe_gou_construct",
+      "title": "教育部《重編國語辭典修訂本》：構",
+      "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=4051&la=0&powerMode=0",
+      "accessType": "direct_page_open_success",
+      "directOpen": "成功開啟並實讀相關原頁內容（第 29–38 行）。",
+      "observedEvidence": "木部構列搭建、造成、策畫、陷害與挑撥等動詞義；本句要表達觸及，應選搆。",
+      "evidenceLimit": "僅支持所述詞義、構式或用字。中文替代值為本次審核提案，並非已比對原教材的逐字更正。"
+    },
+    {
+      "sourceId": "mw_small",
+      "title": "Merriam-Webster: small",
+      "url": "https://www.merriam-webster.com/dictionary/small",
+      "accessType": "direct_page_open_success",
+      "directOpen": "成功開啟並實讀相關原頁內容（第 113–158、198–200 行）。",
+      "observedEvidence": "原頁列 small 副詞表示以小的方式；smalls 名詞可指小尺寸產品，並有襯衫小號的編輯例句。另列英式內衣義不排除小尺寸義。",
+      "evidenceLimit": "僅支持所述詞義、構式或用字。中文替代值為本次審核提案，並非已比對原教材的逐字更正。"
+    },
+    {
+      "sourceId": "mw_young",
+      "title": "Merriam-Webster: young",
+      "url": "https://www.merriam-webster.com/dictionary/young",
+      "accessType": "direct_page_open_success",
+      "directOpen": "成功開啟並實讀相關原頁內容（第 99–144 行）。",
+      "observedEvidence": "原頁列名詞 young 表年輕人及幼小動物後代，並列 the young 與鳥餵幼鳥的例子；這可支持詞義，不能替教材選定實體化形容詞標法。",
+      "evidenceLimit": "僅支持所述詞義、構式或用字。中文替代值為本次審核提案，並非已比對原教材的逐字更正。"
+    },
+    {
+      "sourceId": "mw_shocked",
+      "title": "Merriam-Webster: shocked",
+      "url": "https://www.merriam-webster.com/dictionary/shocked",
+      "accessType": "direct_page_open_success",
+      "directOpen": "成功開啟並實讀相關原頁內容（第 31–67 行）。",
+      "observedEvidence": "shocked 有表示受到震驚的形容詞條，同時另列為 shock 的過去式／過去分詞；本句 adj. 不能僅因基本詞卡是 n./v. 就判錯。",
+      "evidenceLimit": "僅支持所述詞義、構式或用字。中文替代值為本次審核提案，並非已比對原教材的逐字更正。"
+    },
+    {
+      "sourceId": "mw_surprised",
+      "title": "Merriam-Webster: surprised",
+      "url": "https://www.merriam-webster.com/dictionary/surprised",
+      "accessType": "direct_page_open_success",
+      "directOpen": "成功開啟並實讀相關原頁內容（第 31–54 行）。",
+      "observedEvidence": "surprised 有表示因意外而驚訝的形容詞條，也可為 surprise 的過去式／過去分詞；本句情緒狀態可標 adj.。",
+      "evidenceLimit": "僅支持所述詞義、構式或用字。中文替代值為本次審核提案，並非已比對原教材的逐字更正。"
+    },
+    {
+      "sourceId": "mw_cousin",
+      "title": "Merriam-Webster: cousin",
+      "url": "https://www.merriam-webster.com/dictionary/cousin",
+      "accessType": "direct_page_open_success",
+      "directOpen": "成功開啟並實讀相關原頁內容（第 31–50 行）。",
+      "observedEvidence": "cousin 基本義涵蓋叔伯姑舅姨的子女，英文詞本身不限定男性、表親或比說話者年幼；little 在本句另給年幼線索。",
+      "evidenceLimit": "僅支持所述詞義、構式或用字。中文替代值為本次審核提案，並非已比對原教材的逐字更正。"
+    },
+    {
+      "sourceId": "mw_waste",
+      "title": "Merriam-Webster: waste",
+      "url": "https://www.merriam-webster.com/dictionary/waste",
+      "accessType": "direct_page_open_success",
+      "directOpen": "成功開啟並實讀相關原頁內容（第 70–110 行）。",
+      "observedEvidence": "waste 的名詞義可指製程廢料與生活廢棄物。plastic waste 的直接對應是塑膠廢棄物，減少使用塑膠只是一種可能方法。",
+      "evidenceLimit": "僅支持所述詞義、構式或用字。中文替代值為本次審核提案，並非已比對原教材的逐字更正。"
+    },
+    {
+      "sourceId": "collins_by",
+      "title": "Collins COBUILD／English Dictionary: by",
+      "url": "https://www.collinsdictionary.com/dictionary/english/by",
+      "accessType": "direct_page_open_success",
+      "directOpen": "成功開啟並實讀相關原頁內容（第 345–350、620–624、852–855 行）。",
+      "observedEvidence": "時間介系詞 by 包含在指定時間或以前，不晚於該時間；本句沒有具體鐘點，不能自行設定下午幾點或一天結束。",
+      "evidenceLimit": "僅支持所述詞義、構式或用字。中文替代值為本次審核提案，並非已比對原教材的逐字更正。"
+    },
+    {
+      "sourceId": "mw_flavor",
+      "title": "Merriam-Webster: flavor",
+      "url": "https://www.merriam-webster.com/dictionary/flavor",
+      "accessType": "direct_page_open_success",
+      "directOpen": "成功開啟並實讀相關原頁內容（第 31–68 行）。",
+      "observedEvidence": "flavor 在食品語境重點是味道，以及口中味覺與嗅覺的綜合；不是只指食物質地。",
+      "evidenceLimit": "僅支持所述詞義、構式或用字。中文替代值為本次審核提案，並非已比對原教材的逐字更正。"
+    },
+    {
+      "sourceId": "collins_creamy",
+      "title": "Collins COBUILD: creamy",
+      "url": "https://www.collinsdictionary.com/dictionary/english/creamy",
+      "accessType": "direct_page_open_success",
+      "directOpen": "成功開啟並實讀相關原頁內容（第 222–240 行）。",
+      "observedEvidence": "creamy 可描述奶或奶油豐富，也可描述柔軟滑順質地；因此原譯綿密口感有根據，若為 flavor 作直接對譯可選更明示風味的版本。",
+      "evidenceLimit": "僅支持所述詞義、構式或用字。中文替代值為本次審核提案，並非已比對原教材的逐字更正。"
+    }
+  ],
+  "sourceAccessLimitations": [
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english/shocked",
+      "result": "直接開啟回傳 403 Forbidden，沒有讀到正文；未以搜尋節錄替代正文證據。"
+    },
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english/surprised",
+      "result": "直接開啟回傳 403 Forbidden，沒有讀到正文；未以搜尋節錄替代正文證據。"
+    },
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english/young",
+      "result": "直接開啟回傳 403 Forbidden，沒有讀到正文；未以搜尋節錄替代正文證據。"
+    }
+  ],
+  "definiteCandidates": [
+    {
+      "proposalId": "U15-D01",
+      "reviewIndex": 40,
+      "wordId": "W000509",
+      "exampleId": "EX2ff9ba41",
+      "word": "low",
+      "sensePos": "adj.",
+      "meaningHint": "低的",
+      "exampleType": "daily",
+      "sentenceEn": "The shelf is low enough for a child to reach.",
+      "sentenceZh": "這個架子夠低，小孩構得到。",
+      "blankSentence": "The shelf is _____ enough for a child to reach.",
+      "answer": "low",
+      "difficulty": "LV1",
+      "status": "reviewed",
+      "field": "sentenceZh",
+      "before": "這個架子夠低，小孩構得到。",
+      "after": "這個架子夠低，小孩搆得到。",
+      "englishGuard": "The shelf is low enough for a child to reach.",
+      "classification": "definite_text_error",
+      "classificationZh": "明確用字錯誤",
+      "priority": "minimal_typo_correction",
+      "reason": "reach 指伸手觸及，現譯構為木部構造之構；教育部原站以手部搆列觸及義。本提案只更換這一字，保留夠低及其餘內容。",
+      "confidence": "high_for_character_and_context",
+      "sources": [
+        {
+          "sourceId": "moe_gou_reach",
+          "title": "教育部《重編國語辭典修訂本》：搆",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=4048&la=0&powerMode=0",
+          "accessType": "direct_page_open_success",
+          "directOpen": "成功開啟並實讀相關原頁內容（第 29–36 行）。",
+          "observedEvidence": "手部搆的第三動詞義是觸及，例句以小孩搆不著描述無法伸手觸及；同構註記位於引起、造成義，不能直接外推全部義項。",
+          "evidenceLimit": "僅支持所述詞義、構式或用字。中文替代值為本次審核提案，並非已比對原教材的逐字更正。"
+        },
+        {
+          "sourceId": "moe_gou_construct",
+          "title": "教育部《重編國語辭典修訂本》：構",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=4051&la=0&powerMode=0",
+          "accessType": "direct_page_open_success",
+          "directOpen": "成功開啟並實讀相關原頁內容（第 29–38 行）。",
+          "observedEvidence": "木部構列搭建、造成、策畫、陷害與挑撥等動詞義；本句要表達觸及，應選搆。",
+          "evidenceLimit": "僅支持所述詞義、構式或用字。中文替代值為本次審核提案，並非已比對原教材的逐字更正。"
+        }
+      ],
+      "sourceLimit": "未取得原教材；不以來源類別或既有 approved 狀態充當原文對照。",
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "bb581cde64a311e2bfc95eadd4592e27f1db70cb",
+        "reviewedBlobSha": "529559441a3a8f602dce01818f780785558de1ad",
+        "exampleIdMustMatch": "EX2ff9ba41",
+        "exactFieldBefore": {
+          "sentenceZh": "這個架子夠低，小孩構得到。"
+        },
+        "englishGuard": "The shelf is low enough for a child to reach.",
+        "contextMustMatch": {
+          "sentenceEn": "The shelf is low enough for a child to reach.",
+          "sentenceZh": "這個架子夠低，小孩構得到。",
+          "blankSentence": "The shelf is _____ enough for a child to reach.",
+          "answer": "low",
+          "sensePos": "adj.",
+          "meaningHint": "低的",
+          "exampleType": "daily",
+          "status": "reviewed"
+        },
+        "ifAnyValueChanged": "停止套用並重讀該列，不以舊快照覆蓋最新值。",
+        "fieldsOutsideProposal": "只改明列欄位；英文、答案、POS、提示、原來源、status、詞條摘要與其他欄位不變。"
+      },
+      "applied": false
+    }
+  ],
+  "hintProposals": [],
+  "translationCandidates": [
+    {
+      "proposalId": "U15-T01",
+      "reviewIndex": 44,
+      "wordId": "W000791",
+      "exampleId": "EX37cbd628",
+      "word": "small",
+      "sensePos": "adj.",
+      "meaningHint": "小的；輕微的",
+      "exampleType": "textbook",
+      "sentenceEn": "It was just a small mistake, so it was easily fixed.",
+      "sentenceZh": "這只是個小錯誤，可以很輕易地解決。",
+      "blankSentence": "It was just a _____ mistake, so it was easily fixed.",
+      "answer": "small",
+      "difficulty": "LV1",
+      "status": "approved",
+      "field": "sentenceZh",
+      "before": "這只是個小錯誤，可以很輕易地解決。",
+      "after": "這只是個小錯誤，所以很輕易就修正了。",
+      "englishGuard": "It was just a small mistake, so it was easily fixed.",
+      "classification": "optional_precision_improvement",
+      "classificationZh": "可選精度改善",
+      "priority": "optional_refinement_not_proven_error",
+      "reason": "was easily fixed 敘述已發生的修正結果；原譯可以很輕易地解決可自然表達容易處理，但偏向可能性。可選改成完成狀態以貼合原句，不宣稱原英文有錯。",
+      "confidence": "high_for_English_sense; Chinese_refinement_is_optional",
+      "sources": [],
+      "sourceLimit": "未取得原教材；不以來源類別或既有 approved 狀態充當原文對照。",
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "bb581cde64a311e2bfc95eadd4592e27f1db70cb",
+        "reviewedBlobSha": "529559441a3a8f602dce01818f780785558de1ad",
+        "exampleIdMustMatch": "EX37cbd628",
+        "exactFieldBefore": {
+          "sentenceZh": "這只是個小錯誤，可以很輕易地解決。"
+        },
+        "englishGuard": "It was just a small mistake, so it was easily fixed.",
+        "contextMustMatch": {
+          "sentenceEn": "It was just a small mistake, so it was easily fixed.",
+          "sentenceZh": "這只是個小錯誤，可以很輕易地解決。",
+          "blankSentence": "It was just a _____ mistake, so it was easily fixed.",
+          "answer": "small",
+          "sensePos": "adj.",
+          "meaningHint": "小的；輕微的",
+          "exampleType": "textbook",
+          "status": "approved"
+        },
+        "ifAnyValueChanged": "停止套用並重讀該列，不以舊快照覆蓋最新值。",
+        "fieldsOutsideProposal": "只改明列欄位；英文、答案、POS、提示、原來源、status、詞條摘要與其他欄位不變。"
+      },
+      "applied": false
+    },
+    {
+      "proposalId": "U15-T02",
+      "reviewIndex": 51,
+      "wordId": "W000069",
+      "exampleId": "EX4b87307b",
+      "word": "beach",
+      "sensePos": "n.",
+      "meaningHint": null,
+      "exampleType": "daily",
+      "sentenceEn": "We spent the whole afternoon building sandcastles on the beach with my little cousins.",
+      "sentenceZh": "我們和我的小表弟們在海灘上花了一整個下午堆沙堡。",
+      "blankSentence": "We spent the whole afternoon building sandcastles on the _____ with my little cousins.",
+      "answer": "beach",
+      "difficulty": "LV1",
+      "status": "reviewed",
+      "field": "sentenceZh",
+      "before": "我們和我的小表弟們在海灘上花了一整個下午堆沙堡。",
+      "after": "我們和我年幼的堂表親們在海灘上花了一整個下午堆沙堡。",
+      "englishGuard": "We spent the whole afternoon building sandcastles on the beach with my little cousins.",
+      "classification": "optional_precision_improvement",
+      "classificationZh": "可選精度改善",
+      "priority": "optional_refinement_not_proven_error",
+      "reason": "little cousins 沒有指定男性或堂表支系；小表弟們可能符合原情境，未取得教材背景不能判為確錯。中性堂表親譯法可減少單句外推，不新增親屬性別。",
+      "confidence": "high_for_English_sense; Chinese_refinement_is_optional",
+      "sources": [
+        {
+          "sourceId": "mw_cousin",
+          "title": "Merriam-Webster: cousin",
+          "url": "https://www.merriam-webster.com/dictionary/cousin",
+          "accessType": "direct_page_open_success",
+          "directOpen": "成功開啟並實讀相關原頁內容（第 31–50 行）。",
+          "observedEvidence": "cousin 基本義涵蓋叔伯姑舅姨的子女，英文詞本身不限定男性、表親或比說話者年幼；little 在本句另給年幼線索。",
+          "evidenceLimit": "僅支持所述詞義、構式或用字。中文替代值為本次審核提案，並非已比對原教材的逐字更正。"
+        }
+      ],
+      "sourceLimit": "未取得原教材；不以來源類別或既有 approved 狀態充當原文對照。",
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "bb581cde64a311e2bfc95eadd4592e27f1db70cb",
+        "reviewedBlobSha": "529559441a3a8f602dce01818f780785558de1ad",
+        "exampleIdMustMatch": "EX4b87307b",
+        "exactFieldBefore": {
+          "sentenceZh": "我們和我的小表弟們在海灘上花了一整個下午堆沙堡。"
+        },
+        "englishGuard": "We spent the whole afternoon building sandcastles on the beach with my little cousins.",
+        "contextMustMatch": {
+          "sentenceEn": "We spent the whole afternoon building sandcastles on the beach with my little cousins.",
+          "sentenceZh": "我們和我的小表弟們在海灘上花了一整個下午堆沙堡。",
+          "blankSentence": "We spent the whole afternoon building sandcastles on the _____ with my little cousins.",
+          "answer": "beach",
+          "sensePos": "n.",
+          "meaningHint": null,
+          "exampleType": "daily",
+          "status": "reviewed"
+        },
+        "ifAnyValueChanged": "停止套用並重讀該列，不以舊快照覆蓋最新值。",
+        "fieldsOutsideProposal": "只改明列欄位；英文、答案、POS、提示、原來源、status、詞條摘要與其他欄位不變。"
+      },
+      "applied": false
+    },
+    {
+      "proposalId": "U15-T03",
+      "reviewIndex": 78,
+      "wordId": "W000652",
+      "exampleId": "EX7c1f25c4",
+      "word": "planet",
+      "sensePos": "n.",
+      "meaningHint": null,
+      "exampleType": "daily",
+      "sentenceEn": "Everyone should do their part to protect the planet by reducing plastic waste.",
+      "sentenceZh": "每個人都應該減少使用塑膠來盡一份保護地球的心力。",
+      "blankSentence": "Everyone should do their part to protect the _____ by reducing plastic waste.",
+      "answer": "planet",
+      "difficulty": "LV1",
+      "status": "reviewed",
+      "field": "sentenceZh",
+      "before": "每個人都應該減少使用塑膠來盡一份保護地球的心力。",
+      "after": "每個人都應該減少塑膠廢棄物，為保護地球盡一份心力。",
+      "englishGuard": "Everyone should do their part to protect the planet by reducing plastic waste.",
+      "classification": "optional_precision_improvement",
+      "classificationZh": "可選精度改善",
+      "priority": "optional_refinement_not_proven_error",
+      "reason": "reducing plastic waste 直接描述減少廢棄物；少用塑膠是可行方法，但不是唯一方法。可選讓中譯與英文行為對象一致，不把減少使用的自然轉譯硬判錯。",
+      "confidence": "high_for_English_sense; Chinese_refinement_is_optional",
+      "sources": [
+        {
+          "sourceId": "mw_waste",
+          "title": "Merriam-Webster: waste",
+          "url": "https://www.merriam-webster.com/dictionary/waste",
+          "accessType": "direct_page_open_success",
+          "directOpen": "成功開啟並實讀相關原頁內容（第 70–110 行）。",
+          "observedEvidence": "waste 的名詞義可指製程廢料與生活廢棄物。plastic waste 的直接對應是塑膠廢棄物，減少使用塑膠只是一種可能方法。",
+          "evidenceLimit": "僅支持所述詞義、構式或用字。中文替代值為本次審核提案，並非已比對原教材的逐字更正。"
+        }
+      ],
+      "sourceLimit": "未取得原教材；不以來源類別或既有 approved 狀態充當原文對照。",
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "bb581cde64a311e2bfc95eadd4592e27f1db70cb",
+        "reviewedBlobSha": "529559441a3a8f602dce01818f780785558de1ad",
+        "exampleIdMustMatch": "EX7c1f25c4",
+        "exactFieldBefore": {
+          "sentenceZh": "每個人都應該減少使用塑膠來盡一份保護地球的心力。"
+        },
+        "englishGuard": "Everyone should do their part to protect the planet by reducing plastic waste.",
+        "contextMustMatch": {
+          "sentenceEn": "Everyone should do their part to protect the planet by reducing plastic waste.",
+          "sentenceZh": "每個人都應該減少使用塑膠來盡一份保護地球的心力。",
+          "blankSentence": "Everyone should do their part to protect the _____ by reducing plastic waste.",
+          "answer": "planet",
+          "sensePos": "n.",
+          "meaningHint": null,
+          "exampleType": "daily",
+          "status": "reviewed"
+        },
+        "ifAnyValueChanged": "停止套用並重讀該列，不以舊快照覆蓋最新值。",
+        "fieldsOutsideProposal": "只改明列欄位；英文、答案、POS、提示、原來源、status、詞條摘要與其他欄位不變。"
+      },
+      "applied": false
+    },
+    {
+      "proposalId": "U15-T04",
+      "reviewIndex": 96,
+      "wordId": "W000625",
+      "exampleId": "EX924fb7b3",
+      "word": "paper",
+      "sensePos": "n.",
+      "meaningHint": null,
+      "exampleType": "exam",
+      "sentenceEn": "Please hand in your research paper by Friday afternoon.",
+      "sentenceZh": "請在星期五下午前繳交你的研究報告。",
+      "blankSentence": "Please hand in your research _____ by Friday afternoon.",
+      "answer": "paper",
+      "difficulty": "LV1",
+      "status": "reviewed",
+      "field": "sentenceZh",
+      "before": "請在星期五下午前繳交你的研究報告。",
+      "after": "請最遲於星期五下午繳交你的研究報告。",
+      "englishGuard": "Please hand in your research paper by Friday afternoon.",
+      "classification": "optional_precision_improvement",
+      "classificationZh": "可選精度改善",
+      "priority": "optional_refinement_not_proven_error",
+      "reason": "by 指不晚於指定時間，原譯星期五下午前在中文可自然當截止語，但也可能被理解成不含下午。可選最遲於保留時間範圍，未指定確切鐘點，不任意增補。",
+      "confidence": "high_for_English_sense; Chinese_refinement_is_optional",
+      "sources": [
+        {
+          "sourceId": "collins_by",
+          "title": "Collins COBUILD／English Dictionary: by",
+          "url": "https://www.collinsdictionary.com/dictionary/english/by",
+          "accessType": "direct_page_open_success",
+          "directOpen": "成功開啟並實讀相關原頁內容（第 345–350、620–624、852–855 行）。",
+          "observedEvidence": "時間介系詞 by 包含在指定時間或以前，不晚於該時間；本句沒有具體鐘點，不能自行設定下午幾點或一天結束。",
+          "evidenceLimit": "僅支持所述詞義、構式或用字。中文替代值為本次審核提案，並非已比對原教材的逐字更正。"
+        }
+      ],
+      "sourceLimit": "未取得原教材；不以來源類別或既有 approved 狀態充當原文對照。",
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "bb581cde64a311e2bfc95eadd4592e27f1db70cb",
+        "reviewedBlobSha": "529559441a3a8f602dce01818f780785558de1ad",
+        "exampleIdMustMatch": "EX924fb7b3",
+        "exactFieldBefore": {
+          "sentenceZh": "請在星期五下午前繳交你的研究報告。"
+        },
+        "englishGuard": "Please hand in your research paper by Friday afternoon.",
+        "contextMustMatch": {
+          "sentenceEn": "Please hand in your research paper by Friday afternoon.",
+          "sentenceZh": "請在星期五下午前繳交你的研究報告。",
+          "blankSentence": "Please hand in your research _____ by Friday afternoon.",
+          "answer": "paper",
+          "sensePos": "n.",
+          "meaningHint": null,
+          "exampleType": "exam",
+          "status": "reviewed"
+        },
+        "ifAnyValueChanged": "停止套用並重讀該列，不以舊快照覆蓋最新值。",
+        "fieldsOutsideProposal": "只改明列欄位；英文、答案、POS、提示、原來源、status、詞條摘要與其他欄位不變。"
+      },
+      "applied": false
+    },
+    {
+      "proposalId": "U15-T05",
+      "reviewIndex": 126,
+      "wordId": "W000714",
+      "exampleId": "EXc6a68b3e",
+      "word": "rich",
+      "sensePos": "adj.",
+      "meaningHint": null,
+      "exampleType": "daily",
+      "sentenceEn": "This chocolate cake has a rich, creamy flavor that everyone loves.",
+      "sentenceZh": "這個巧克力蛋糕有濃郁綿密的口感，大家都很喜歡。",
+      "blankSentence": "This chocolate cake has a _____, creamy flavor that everyone loves.",
+      "answer": "rich",
+      "difficulty": "LV1",
+      "status": "reviewed",
+      "field": "sentenceZh",
+      "before": "這個巧克力蛋糕有濃郁綿密的口感，大家都很喜歡。",
+      "after": "這個巧克力蛋糕風味濃郁、帶有奶香，大家都很喜歡。",
+      "englishGuard": "This chocolate cake has a rich, creamy flavor that everyone loves.",
+      "classification": "optional_precision_improvement",
+      "classificationZh": "可選精度改善",
+      "priority": "optional_refinement_not_proven_error",
+      "reason": "rich, creamy flavor 以 flavor 為中心。creamy 確可形容綿滑質地，所以現濃郁綿密的口感不是無據；若要教風味而不只口感，可選明示濃郁奶香的譯法，不據此推定實際使用奶油的配方。",
+      "confidence": "high_for_English_sense; Chinese_refinement_is_optional",
+      "sources": [
+        {
+          "sourceId": "mw_flavor",
+          "title": "Merriam-Webster: flavor",
+          "url": "https://www.merriam-webster.com/dictionary/flavor",
+          "accessType": "direct_page_open_success",
+          "directOpen": "成功開啟並實讀相關原頁內容（第 31–68 行）。",
+          "observedEvidence": "flavor 在食品語境重點是味道，以及口中味覺與嗅覺的綜合；不是只指食物質地。",
+          "evidenceLimit": "僅支持所述詞義、構式或用字。中文替代值為本次審核提案，並非已比對原教材的逐字更正。"
+        },
+        {
+          "sourceId": "collins_creamy",
+          "title": "Collins COBUILD: creamy",
+          "url": "https://www.collinsdictionary.com/dictionary/english/creamy",
+          "accessType": "direct_page_open_success",
+          "directOpen": "成功開啟並實讀相關原頁內容（第 222–240 行）。",
+          "observedEvidence": "creamy 可描述奶或奶油豐富，也可描述柔軟滑順質地；因此原譯綿密口感有根據，若為 flavor 作直接對譯可選更明示風味的版本。",
+          "evidenceLimit": "僅支持所述詞義、構式或用字。中文替代值為本次審核提案，並非已比對原教材的逐字更正。"
+        }
+      ],
+      "sourceLimit": "未取得原教材；不以來源類別或既有 approved 狀態充當原文對照。",
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "bb581cde64a311e2bfc95eadd4592e27f1db70cb",
+        "reviewedBlobSha": "529559441a3a8f602dce01818f780785558de1ad",
+        "exampleIdMustMatch": "EXc6a68b3e",
+        "exactFieldBefore": {
+          "sentenceZh": "這個巧克力蛋糕有濃郁綿密的口感，大家都很喜歡。"
+        },
+        "englishGuard": "This chocolate cake has a rich, creamy flavor that everyone loves.",
+        "contextMustMatch": {
+          "sentenceEn": "This chocolate cake has a rich, creamy flavor that everyone loves.",
+          "sentenceZh": "這個巧克力蛋糕有濃郁綿密的口感，大家都很喜歡。",
+          "blankSentence": "This chocolate cake has a _____, creamy flavor that everyone loves.",
+          "answer": "rich",
+          "sensePos": "adj.",
+          "meaningHint": null,
+          "exampleType": "daily",
+          "status": "reviewed"
+        },
+        "ifAnyValueChanged": "停止套用並重讀該列，不以舊快照覆蓋最新值。",
+        "fieldsOutsideProposal": "只改明列欄位；英文、答案、POS、提示、原來源、status、詞條摘要與其他欄位不變。"
+      },
+      "applied": false
+    }
+  ],
+  "pendingConfirmation": [
+    {
+      "pendingItemId": "U15-P01",
+      "reviewIndex": 48,
+      "wordId": "W001000",
+      "exampleId": "EX457aa9dd",
+      "word": "young",
+      "category": "POS_convention",
+      "before": {
+        "sentenceEn": "Dancing is not only for the young; older people can do it, too.",
+        "sentenceZh": "跳舞不只是年輕人做的活動，年長者也跳舞。",
+        "blankSentence": "Dancing is not only for the _____; older people can do it, too.",
+        "answer": "young",
+        "sensePos": "adj./n.",
+        "meaningHint": "年輕人（the young）",
+        "exampleType": "textbook",
+        "status": "approved"
+      },
+      "englishGuard": "Dancing is not only for the young; older people can do it, too.",
+      "reason": "the young 的人群義正確。名詞分析與實體化形容詞分析並存，現 adj./n. 是待確認的既有分類慣例；不單憑外部字典自動改成 n. 或 adj.。",
+      "proposedAction": "保留現值，不套改；先確認教材或資料收錄規則。",
+      "after": null,
+      "sources": [
+        {
+          "sourceId": "mw_young",
+          "title": "Merriam-Webster: young",
+          "url": "https://www.merriam-webster.com/dictionary/young",
+          "accessType": "direct_page_open_success",
+          "directOpen": "成功開啟並實讀相關原頁內容（第 99–144 行）。",
+          "observedEvidence": "原頁列名詞 young 表年輕人及幼小動物後代，並列 the young 與鳥餵幼鳥的例子；這可支持詞義，不能替教材選定實體化形容詞標法。",
+          "evidenceLimit": "僅支持所述詞義、構式或用字。中文替代值為本次審核提案，並非已比對原教材的逐字更正。"
+        }
+      ],
+      "relatedWordId": null,
+      "evidenceLimit": "字典支持現有句內讀法，但不能證明原教材的詞性分類或跨詞卡收錄規則。",
+      "statusChanged": false
+    },
+    {
+      "pendingItemId": "U15-P02",
+      "reviewIndex": 64,
+      "wordId": "W001788",
+      "exampleId": "EX5a115532",
+      "word": "shock",
+      "category": "headword_example_linkage",
+      "before": {
+        "sentenceEn": "I was shocked to hear that my best friend was moving to another country.",
+        "sentenceZh": "聽到我最好的朋友要搬到另一個國家，我感到很震驚。",
+        "blankSentence": "I was _____ to hear that my best friend was moving to another country.",
+        "answer": "shocked",
+        "sensePos": "adj.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "status": "reviewed"
+      },
+      "englishGuard": "I was shocked to hear that my best friend was moving to another country.",
+      "reason": "此句 shocked 為形容詞狀態，shock 詞條只列 n./v.；要確認資料是否允許動詞詞卡收錄其分詞形容詞，或需要對應衍生詞。先保留句內 adj. 與答案 shocked，不加造新詞卡。",
+      "proposedAction": "保留現值，不套改；先確認教材或資料收錄規則。",
+      "after": null,
+      "sources": [
+        {
+          "sourceId": "mw_shocked",
+          "title": "Merriam-Webster: shocked",
+          "url": "https://www.merriam-webster.com/dictionary/shocked",
+          "accessType": "direct_page_open_success",
+          "directOpen": "成功開啟並實讀相關原頁內容（第 31–67 行）。",
+          "observedEvidence": "shocked 有表示受到震驚的形容詞條，同時另列為 shock 的過去式／過去分詞；本句 adj. 不能僅因基本詞卡是 n./v. 就判錯。",
+          "evidenceLimit": "僅支持所述詞義、構式或用字。中文替代值為本次審核提案，並非已比對原教材的逐字更正。"
+        }
+      ],
+      "relatedWordId": null,
+      "evidenceLimit": "字典支持現有句內讀法，但不能證明原教材的詞性分類或跨詞卡收錄規則。",
+      "statusChanged": false
+    },
+    {
+      "pendingItemId": "U15-P03",
+      "reviewIndex": 103,
+      "wordId": "W000846",
+      "exampleId": "EXa0a4a549",
+      "word": "surprise",
+      "category": "headword_example_linkage",
+      "before": {
+        "sentenceEn": "Everyone was surprised when the shy student won first prize in the contest.",
+        "sentenceZh": "當那位害羞的學生在比賽中獲得第一名時，大家都感到很驚訝。",
+        "blankSentence": "Everyone was _____ when the shy student won first prize in the contest.",
+        "answer": "surprised",
+        "sensePos": "adj.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "status": "reviewed"
+      },
+      "englishGuard": "Everyone was surprised when the shy student won first prize in the contest.",
+      "reason": "此句 surprised 可標 adj.，但目前掛 surprise（n./v.），同單元另有 W000847 surprised（adj.）及其例句。需確認是否容許基本動詞卡與分詞形容詞卡交叉收錄；不自行移句、刪句或反改 POS。",
+      "proposedAction": "保留現值，不套改；先確認教材或資料收錄規則。",
+      "after": null,
+      "sources": [
+        {
+          "sourceId": "mw_surprised",
+          "title": "Merriam-Webster: surprised",
+          "url": "https://www.merriam-webster.com/dictionary/surprised",
+          "accessType": "direct_page_open_success",
+          "directOpen": "成功開啟並實讀相關原頁內容（第 31–54 行）。",
+          "observedEvidence": "surprised 有表示因意外而驚訝的形容詞條，也可為 surprise 的過去式／過去分詞；本句情緒狀態可標 adj.。",
+          "evidenceLimit": "僅支持所述詞義、構式或用字。中文替代值為本次審核提案，並非已比對原教材的逐字更正。"
+        }
+      ],
+      "relatedWordId": "W000847",
+      "evidenceLimit": "字典支持現有句內讀法，但不能證明原教材的詞性分類或跨詞卡收錄規則。",
+      "statusChanged": false
+    }
+  ],
+  "deduplicatedExistingCandidates": [],
+  "deduplication": {
+    "checkedFiles": [
+      {
+        "file": "u10-supplemental-text-proposals-fe2ec66.json",
+        "sha256": "bc6dddd2a12095e85a4711a9e3c0a40b74a4bb8c2ed02136878c8443444c2378",
+        "candidateRecordsChecked": 14
+      },
+      {
+        "file": "u11-supplemental-text-proposals-d266038.json",
+        "sha256": "c2dd5a9a92e3b3c0fc68398cd73822e35a690c02b616223bc4026c21b3ef3880",
+        "candidateRecordsChecked": 7
+      },
+      {
+        "file": "u12-supplemental-text-proposals-a95a875.json",
+        "sha256": "57bb7517218e45629e2aadbc9298ad6873bde3e5431c30d5a8e73ae9a8c4f962",
+        "candidateRecordsChecked": 4
+      },
+      {
+        "file": "u13-supplemental-text-proposals-b7e9954.json",
+        "sha256": "b675656bbc6a643103c035129736f3221db51541c2955073e9738008e7c367d1",
+        "candidateRecordsChecked": 2
+      },
+      {
+        "file": "u14-supplemental-text-proposals-3b14fc8.json",
+        "sha256": "881ce296accc46b12514d07609a35b0c048e7df6f079b78f35122be93cc9631d",
+        "candidateRecordsChecked": 4
+      }
+    ],
+    "comparison": "exampleId 或僅規整空白後的完整英文句比對；相似主題不視為同一例句。",
+    "matchesFound": 0,
+    "note": "U15 的 Friday afternoon 截止句和 cousins 海灘句未在所查 U10–14 候選中出現；不能因期限／親屬議題相似就合併不同例句。"
+  },
+  "scopeAndLimits": [
+    "逐列實讀英文、中譯、cloze 答案、句內 POS、提示及來源／狀態標籤。",
+    "未改儲存庫、status、原教材、英文或詞條摘要；所有 after 皆為未套用提案。",
+    "沒有因少見而刪除任何詞義；空提示、無例句、衍生詞收錄慣例均不自動補造。",
+    "外部字典僅證實字義或構式，不證明教材原句出處或人物家庭細節。"
+  ],
+  "deliveryNote": "套用前須讀取最新版本並逐欄核對 before 與英文 guard；任何差異先重審，不覆蓋新值。",
+  "fullReviewFile": "u15-independent-text-review-bb581cd.json",
+  "applyInstructions": "僅明列候選可進一步審核；可選精度須與確錯區分，待確認項不套改。",
+  "validation": {
+    "jsonParsed": true,
+    "formalWordCountVerified": 76,
+    "inputExampleCountVerified": 157,
+    "uniqueExampleIdsVerified": 157,
+    "all157RowsManuallyRead": true,
+    "all157ClozeAnswersReconstructExactly": true,
+    "rowSnapshotsMatchInputExactly": true,
+    "allCandidateBeforeValuesMatchInputExactly": true,
+    "allCandidateEnglishGuardsMatchInputExactly": true,
+    "pendingBeforeValuesMatchInputExactly": true,
+    "inputFilesUnchanged": true,
+    "privatePathsOrToolCitationTokensFound": false,
+    "repositoryAndStatusesUnchanged": true
+  }
+}

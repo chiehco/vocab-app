@@ -1,0 +1,1025 @@
+{
+  "reportType": "U15 rare, technical and mixed-part-of-speech summary verification",
+  "checkedAtUtc": "2026-11-05T12:57:26.311080+00:00",
+  "sourceCommit": "bb581cde64a311e2bfc95eadd4592e27f1db70cb",
+  "sourceWordsBlobSha": "9a00a5bc4d52e83dac1ed2a8e8985c829a82738a",
+  "scope": "逐義核對8詞全部32個原中文摘要義；附核key真正動詞。僅研究與候選，不改詞卡、主POS、狀態或推送。",
+  "repositoryModified": false,
+  "mainPOSModified": false,
+  "reviewStatusModified": false,
+  "pushed": false,
+  "summary": {
+    "wordCount": 8,
+    "originalGlossesReviewed": 32,
+    "supportedOrQualifiedGlosses": 27,
+    "pendingGlosses": 5,
+    "partiallySupportedPendingGlosses": 1,
+    "unsupportedRemovedGlosses": 0,
+    "wholeCardsApprovedReviewed": 0,
+    "supplementalVerifiedFindingsNotCounted": 1,
+    "conclusion": "27項原摘要義有直接支持或需詞性／領域限定；5項保留待核，其中LAMP系統存在已證、但原摘要歸屬未證。key動詞鍵入另已核，不計入32個原摘要義。沒有套用任何變更。",
+    "pendingExactClaims": [
+      {
+        "word": "glasses",
+        "before": "格拉斯",
+        "reason": "原站能確認大寫 Glass 人名，但不能確認詞頭 glasses 對應格拉斯。若原摘要意指 Glass，應另存其來源與大小寫；現有證據不足以斷言來源或刪除。"
+      },
+      {
+        "word": "lamp",
+        "before": "邏輯模擬分析系統",
+        "reason": "原論文證實LAMP是Logic Analyzer for Maintenance Planning，屬數位邏輯模擬與分析系統；但未證原摘要指此，且大寫縮寫不得當作小寫lamp普通單字義。保留原摘要待核，不自動刪除或改成另一同字縮寫。"
+      },
+      {
+        "word": "sometimes",
+        "before": "某一時間的",
+        "reason": "sometime 原站有未指定某時的副詞義，但不等於 sometimes 有此形容詞義；sometimes形容詞交叉參照不能跨入sometime副詞義。尚缺直接證據，不刪除。"
+      },
+      {
+        "word": "satellite",
+        "before": "陪靜脈",
+        "reason": "與已支持的伴行靜脈可能是同概念，但本次精確譯名只見CDICT及DICT.TW轉載／來源未核列表，尚未取得原醫學辭書頁面；不能只因可能同義便計為支持。"
+      },
+      {
+        "word": "satellite",
+        "before": "陪病部",
+        "reason": "精確原字串見朗道英漢字典的二手轉載；Taber公開原文只說鄰接較大結構的小結構，不能自動等同病灶。衛星病灶等線索不足以證明陪病部的原譯或逕改字。"
+      }
+    ]
+  },
+  "method": {
+    "originalGlossCounting": "按原meaningZh各分號之義計數，去除詞性與待核前綴；同義近義仍逐項計，不合併有時／偶爾等。衛星天然或人造為原單項，但兩部分均核。",
+    "bodyVersusSnippet": "核准依據為出版社原站、Dr.eye原辭典服務正文或原書PDF文字層；搜尋節錄、一般轉載與只讀片語不作獨立核准。",
+    "readingLimit": "所有來源逐一記錄實讀範圍。PDF截圖未取得可視像素，故無任何已看頁像的聲稱；Century文字層的版次與頁碼未核，不依它單獨更改詞卡。",
+    "dictionaryProvider": "Dr.eye頁面是該辭典產品自家查詢服務並明列辭典來源，可作所列用法依據；未顯示版次／頁碼的限制保留，不宣稱核驗紙本或原教材。",
+    "crossReferenceBoundary": "只接受辭典明確的同詞性參照。sometimes adjective→sometime adjective可核；不得越過到sometime adverb。縮寫LAMP及人名Glass另核身分，不能補證lamp/glasses普通義。",
+    "sourceNoteCaution": "完整before僅為原資料快照；大考中心來源註記未逐義驗證，不能代表罕見義或中文摘要出自該詞表。",
+    "statusBoundary": "before中的reviewed/draft不代表本次核准整卡；不更動主POS、posAll、status。",
+    "candidateOnly": "afterCandidate與逐義候選均未套用。含pending的詞不生成整段替代。欄位若不宜顯示待核，可保留原值並使用獨立審查記錄。",
+    "historicalLabels": "只有來源直接標Rare時才建議罕用；不因古書存在或現行短詞典缺列，自動標古語或刪除。"
+  },
+  "words": [
+    {
+      "wordId": "W000351",
+      "word": "glasses",
+      "before": {
+        "wordId": "W000351",
+        "word": "glasses",
+        "wordVariants": [
+          "glasses"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "眼鏡；雙筒望遠鏡；玻璃（glass的複數形式）；格拉斯",
+        "meaningEn": "a pair of lenses in a frame worn in front of the eyes to help you see better; containers for drinking, made of glass",
+        "usagePattern": "wear glasses; a pair of glasses",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "glasses",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "戴眼鏡；一副眼鏡"
+      },
+      "overallFinding": "前三義可保留並限定材料複數；格拉斯仍須釐清原詞頭，無整段無損替代候選。",
+      "senseFindings": [
+        {
+          "before": "眼鏡",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "plural n.",
+          "domainOrRegister": "一般用語",
+          "finding": "AHD直接把 glasses 名詞定義為成對鏡片及鏡框，支持眼鏡。",
+          "afterCandidate": "眼鏡",
+          "safeToApplyInIsolation": true,
+          "sourceIds": [
+            "ahd_glass"
+          ]
+        },
+        {
+          "before": "雙筒望遠鏡",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "plural n.",
+          "domainOrRegister": "光學器材",
+          "finding": "AHD明列 often glasses，直接定義 binocular or field glass；不是僅從 field glasses 片語推論。",
+          "afterCandidate": "雙筒望遠鏡",
+          "safeToApplyInIsolation": true,
+          "sourceIds": [
+            "ahd_glass",
+            "collins_glass"
+          ]
+        },
+        {
+          "before": "玻璃（glass的複數形式）",
+          "status": "supported_requires_scope",
+          "decision": "qualify",
+          "pos": "plural n.",
+          "domainOrRegister": "材料科學，玻璃種類／材料",
+          "finding": "一般 glass 材料義通常不可數，但 UNSW 原頁直接用 two glasses 指兩類玻璃；應限定為不同種類的玻璃，不能因一般用法而刪除。",
+          "afterCandidate": "（材料領域，指不同種類）玻璃（glass 的複數）",
+          "safeToApplyInIsolation": true,
+          "sourceIds": [
+            "collins_glass",
+            "unsw_glasses"
+          ]
+        },
+        {
+          "before": "格拉斯",
+          "status": "pending_identity",
+          "decision": "retain_pending",
+          "pos": "proper name?",
+          "domainOrRegister": "音譯人名／姓氏，對應尚未核定",
+          "finding": "原站能確認大寫 Glass 人名，但不能確認詞頭 glasses 對應格拉斯。若原摘要意指 Glass，應另存其來源與大小寫；現有證據不足以斷言來源或刪除。",
+          "afterCandidate": null,
+          "safeToApplyInIsolation": false,
+          "sourceIds": [
+            "ahd_glass"
+          ]
+        }
+      ],
+      "afterCandidate": null,
+      "applied": false
+    },
+    {
+      "wordId": "W000451",
+      "word": "key",
+      "before": {
+        "wordId": "W000451",
+        "word": "key",
+        "wordVariants": [
+          "key"
+        ],
+        "level": "LV1",
+        "pos": "adj./n./v.",
+        "posAll": [
+          "adj.",
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（名詞）鑰匙；關鍵；答案；（形容詞）關鍵的",
+        "meaningEn": "(n.) a small piece of shaped metal used to open or lock a door; (adj.) very important and necessary for something to happen or succeed",
+        "usagePattern": "the key to N; key + N (key role/factor)",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "key",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "……的關鍵；關鍵的……（關鍵角色／因素）"
+      },
+      "overallFinding": "原有四義成立；真動詞 key 有獨立條目，可另補鍵入，不能因摘要缺動詞就刪掉原v.。",
+      "senseFindings": [
+        {
+          "before": "鑰匙",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "n.",
+          "domainOrRegister": "一般用語",
+          "finding": "兩家原站名詞正文直接支持開鎖用鑰匙。",
+          "afterCandidate": "鑰匙",
+          "safeToApplyInIsolation": true,
+          "sourceIds": [
+            "mw_key",
+            "collins_key"
+          ]
+        },
+        {
+          "before": "關鍵",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "n.",
+          "domainOrRegister": "抽象／比喻",
+          "finding": "MW名詞2b決定性因素，Collins名詞7、8達成目標或解釋的關鍵，均支持。",
+          "afterCandidate": "關鍵",
+          "safeToApplyInIsolation": true,
+          "sourceIds": [
+            "mw_key",
+            "collins_key"
+          ]
+        },
+        {
+          "before": "答案",
+          "status": "supported_requires_scope",
+          "decision": "qualify",
+          "pos": "n.",
+          "domainOrRegister": "題目／謎題的解答",
+          "finding": "MW名詞3a明列提供 solution，直接支持解答；應避免誤認是任意問題的泛稱 answer。",
+          "afterCandidate": "（題目等的）答案／解答",
+          "safeToApplyInIsolation": true,
+          "sourceIds": [
+            "mw_key"
+          ]
+        },
+        {
+          "before": "關鍵的",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "adj.",
+          "domainOrRegister": "一般用語",
+          "finding": "原站直接列 crucially important／crucial 的形容詞條目。",
+          "afterCandidate": "關鍵的",
+          "safeToApplyInIsolation": true,
+          "sourceIds": [
+            "mw_key",
+            "collins_key"
+          ]
+        }
+      ],
+      "afterCandidate": "（名詞）鑰匙；關鍵；（題目等的）答案／解答；（形容詞）關鍵的；（動詞）鍵入（文字或資料）",
+      "applied": false,
+      "supplementalFindings": [
+        {
+          "claim": "key 真動詞",
+          "status": "supported",
+          "pos": "v.t.",
+          "candidate": "鍵入（文字或資料）",
+          "evidence": "MW transitive verb 7 直接列鍵盤輸入；keying changes to a manuscript 的正文例句不依賴片語動詞。",
+          "sourceIds": [
+            "mw_key"
+          ],
+          "countedInOriginalGlossTotal": false
+        }
+      ],
+      "candidateNote": "新增動詞只為補足原有v.對應；未宣稱補齊 key 的全部辭典義。未修改任何詞性欄。"
+    },
+    {
+      "wordId": "W000466",
+      "word": "lamp",
+      "before": {
+        "wordId": "W000466",
+        "word": "lamp",
+        "wordVariants": [
+          "lamp"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "燈；照亮；邏輯模擬分析系統",
+        "meaningEn": "a device that produces light, usually using electricity",
+        "usagePattern": "turn on/off a lamp; a desk/street lamp",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "lamp",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "開/關一盞燈；書桌/街燈"
+      },
+      "overallFinding": "燈與罕用動詞照亮有直接依據；系統名的真實存在已驗，但原摘要來源與詞頭歸屬未驗。",
+      "senseFindings": [
+        {
+          "before": "燈",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "n.",
+          "domainOrRegister": "一般照明器材",
+          "finding": "MW原站及Dr.eye名詞正文直接支持。",
+          "afterCandidate": "（名詞）燈",
+          "safeToApplyInIsolation": true,
+          "sourceIds": [
+            "mw_lamp",
+            "dreye_lamp"
+          ]
+        },
+        {
+          "before": "照亮",
+          "status": "supported_requires_pos_register",
+          "decision": "qualify",
+          "pos": "v.t.",
+          "domainOrRegister": "照明；Century原書將此動詞標Rare",
+          "finding": "Dr.eye原頁明列vt.照亮，英文辭典欄亦列illuminate；Century原書文字層直接列及物動詞與Rare。不可因卡片主POS為n.而刪除。",
+          "afterCandidate": "（動詞，罕用）照亮",
+          "safeToApplyInIsolation": true,
+          "sourceIds": [
+            "dreye_lamp",
+            "century_lamp"
+          ]
+        },
+        {
+          "before": "邏輯模擬分析系統",
+          "status": "partially_supported_pending_identity",
+          "decision": "retain_pending",
+          "pos": "proper-system-name abbreviation?",
+          "domainOrRegister": "1974年Bell Labs電路模擬／測試系統；大寫LAMP",
+          "finding": "原論文證實LAMP是Logic Analyzer for Maintenance Planning，屬數位邏輯模擬與分析系統；但未證原摘要指此，且大寫縮寫不得當作小寫lamp普通單字義。保留原摘要待核，不自動刪除或改成另一同字縮寫。",
+          "afterCandidate": null,
+          "safeToApplyInIsolation": false,
+          "sourceIds": [
+            "bstj_lamp",
+            "nokia_lamp"
+          ]
+        }
+      ],
+      "afterCandidate": null,
+      "applied": false,
+      "identityCandidateForReview": "若原摘要確指1974年Bell Labs系統，可另列「LAMP（專名縮寫）：維護規劃邏輯分析器，數位邏輯模擬與分析系統」。此候選不供自動套用為lamp普通義。"
+    },
+    {
+      "wordId": "W000652",
+      "word": "planet",
+      "before": {
+        "wordId": "W000652",
+        "word": "planet",
+        "wordVariants": [
+          "planet"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "行星；命運星辰；傑出的人；重大影響的事",
+        "meaningEn": "a large, round object in space that moves around a star such as the sun",
+        "usagePattern": "planet Earth; a distant planet; protect the planet",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "planet",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "地球；一顆遙遠的行星；保護地球"
+      },
+      "overallFinding": "四義均有原站支持；比喻義不標古語，命運義須明確標占星學。",
+      "senseFindings": [
+        {
+          "before": "行星",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "n.",
+          "domainOrRegister": "天文學",
+          "finding": "MW及Collins原站直接支持行星。",
+          "afterCandidate": "行星",
+          "safeToApplyInIsolation": true,
+          "sourceIds": [
+            "mw_planet",
+            "collins_planet"
+          ]
+        },
+        {
+          "before": "命運星辰",
+          "status": "supported_requires_domain",
+          "decision": "qualify",
+          "pos": "n.",
+          "domainOrRegister": "占星學／歷史信念",
+          "finding": "MW名詞2明確定義被認為影響人類命運的天體，Collins亦標astrology；須說明是占星信念。",
+          "afterCandidate": "（占星學）被認為影響命運的星辰",
+          "safeToApplyInIsolation": true,
+          "sourceIds": [
+            "mw_planet",
+            "collins_planet"
+          ]
+        },
+        {
+          "before": "傑出的人",
+          "status": "supported_requires_scope",
+          "decision": "qualify",
+          "pos": "n.",
+          "domainOrRegister": "比喻",
+          "finding": "MW名詞3直接列重要的人或事物並以luminary釋義；保留但以「重要／傑出人物」限制。",
+          "afterCandidate": "（比喻）重要或傑出的人物",
+          "safeToApplyInIsolation": true,
+          "sourceIds": [
+            "mw_planet"
+          ]
+        },
+        {
+          "before": "重大影響的事",
+          "status": "supported_requires_scope",
+          "decision": "qualify",
+          "pos": "n.",
+          "domainOrRegister": "比喻",
+          "finding": "MW名詞3的thing of great importance支持重要事物；原「重大影響的事」語法不完整且比原義多了因果影響，可最小改成「重要的事物」。",
+          "afterCandidate": "（比喻）重要的事物",
+          "safeToApplyInIsolation": true,
+          "sourceIds": [
+            "mw_planet"
+          ]
+        }
+      ],
+      "afterCandidate": "行星；（占星學）被認為影響命運的星辰；（比喻）重要或傑出的人物；重要的事物",
+      "applied": false
+    },
+    {
+      "wordId": "W000804",
+      "word": "sometimes",
+      "before": {
+        "wordId": "W000804",
+        "word": "sometimes",
+        "wordVariants": [
+          "sometimes"
+        ],
+        "level": "LV1",
+        "pos": "adv.",
+        "posAll": [
+          "adv."
+        ],
+        "meaningZh": "（副詞）有時；偶爾；（另列形容詞用法）以前的；偶爾的；（原摘要其他對應待核）某一時間的",
+        "meaningEn": "used to say that something happens occasionally, or on some occasions but not always",
+        "usagePattern": "Sometimes, S + V...; S + sometimes + V",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "sometimes",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "有時，主詞 + 原形動詞……；主詞 + 有時 + 原形動詞"
+      },
+      "overallFinding": "前四義可保留，其中兩形容詞有MW顯式正文支持；最後一義仍待核。不把Collins obsolete副詞標籤套到全部形容詞。",
+      "senseFindings": [
+        {
+          "before": "有時",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "adv.",
+          "domainOrRegister": "一般頻率副詞",
+          "finding": "MW與Collins正文支持不定期／部分時候發生。",
+          "afterCandidate": "有時",
+          "safeToApplyInIsolation": true,
+          "sourceIds": [
+            "mw_sometimes",
+            "collins_sometimes"
+          ]
+        },
+        {
+          "before": "偶爾",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "adv.",
+          "domainOrRegister": "一般頻率副詞",
+          "finding": "MW明列occasionally。",
+          "afterCandidate": "偶爾",
+          "safeToApplyInIsolation": true,
+          "sourceIds": [
+            "mw_sometimes"
+          ]
+        },
+        {
+          "before": "以前的",
+          "status": "supported_via_explicit_same_pos_crossreference",
+          "decision": "retain",
+          "pos": "adj.",
+          "domainOrRegister": "Merriam-Webster另列的形容詞；各辭典收錄不一",
+          "finding": "MW sometimes 明列 adjective 並交叉參照 sometime；同站 sometime adjective 1 是 former。這是原辭典的同POS參照，不能因字尾s就直接判混字。",
+          "afterCandidate": "（另列形容詞用法）以前的",
+          "safeToApplyInIsolation": true,
+          "sourceIds": [
+            "mw_sometimes",
+            "mw_sometime"
+          ]
+        },
+        {
+          "before": "偶爾的",
+          "status": "supported_via_explicit_same_pos_crossreference",
+          "decision": "retain",
+          "pos": "adj.",
+          "domainOrRegister": "Merriam-Webster另列的形容詞；各辭典收錄不一",
+          "finding": "同一顯式形容詞參照可接 sometime adjective 2 的偶爾具此身分／性質；不靠副詞修飾形容詞的句子倒推。",
+          "afterCandidate": "（另列形容詞用法）偶爾的",
+          "safeToApplyInIsolation": true,
+          "sourceIds": [
+            "mw_sometimes",
+            "mw_sometime"
+          ]
+        },
+        {
+          "before": "某一時間的",
+          "status": "pending_exact_sense_pos",
+          "decision": "retain_pending",
+          "pos": "adj.?",
+          "domainOrRegister": "原摘要詞性與對應待核",
+          "finding": "sometime 原站有未指定某時的副詞義，但不等於 sometimes 有此形容詞義；sometimes形容詞交叉參照不能跨入sometime副詞義。尚缺直接證據，不刪除。",
+          "afterCandidate": null,
+          "safeToApplyInIsolation": false,
+          "sourceIds": [
+            "mw_sometimes",
+            "mw_sometime"
+          ]
+        }
+      ],
+      "afterCandidate": null,
+      "applied": false
+    },
+    {
+      "wordId": "W001283",
+      "word": "dryer",
+      "before": {
+        "wordId": "W001283",
+        "word": "dryer",
+        "wordVariants": [
+          "dryer"
+        ],
+        "level": "LV2",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "乾衣機；乾燥劑；催幹劑；乾燥器",
+        "meaningEn": "an appliance that removes moisture",
+        "usagePattern": "a clothes dryer; put clothes in the dryer; a hair dryer",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "dryer",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "烘衣機；把衣物放進烘衣機；吹風機"
+      },
+      "overallFinding": "四義都成立；乾燥劑與催乾劑的功能須分辨，催幹劑可明確更正為催乾劑。",
+      "senseFindings": [
+        {
+          "before": "乾衣機",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "n.",
+          "domainOrRegister": "家用電器",
+          "finding": "Collins原站明指乾燥已洗衣物的機器。",
+          "afterCandidate": "乾衣機",
+          "safeToApplyInIsolation": true,
+          "sourceIds": [
+            "collins_dryer"
+          ]
+        },
+        {
+          "before": "乾燥劑",
+          "status": "supported_requires_domain",
+          "decision": "qualify",
+          "pos": "n.",
+          "domainOrRegister": "除濕／吸濕材料",
+          "finding": "MW drier 名詞1直接定義抽取或吸收水分之物，詞頭明列dryer變體，支持乾燥劑。",
+          "afterCandidate": "（吸濕／除濕用）乾燥劑",
+          "safeToApplyInIsolation": true,
+          "sourceIds": [
+            "mw_drier"
+          ]
+        },
+        {
+          "before": "催幹劑",
+          "status": "supported_with_orthographic_correction",
+          "decision": "correct_spelling_and_qualify",
+          "pos": "n.",
+          "domainOrRegister": "油漆／油墨／油彩化學品",
+          "finding": "MW、Collins直接支持促乾化學品；臺灣藝術教育館原書用語為催乾劑。原「幹」是此乾燥用語的錯字，改乾不刪義。",
+          "afterCandidate": "（油漆、油墨等的）催乾劑",
+          "safeToApplyInIsolation": true,
+          "sourceIds": [
+            "mw_drier",
+            "collins_dryer",
+            "arte_drier"
+          ]
+        },
+        {
+          "before": "乾燥器",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "n.",
+          "domainOrRegister": "設備／工程",
+          "finding": "MW名詞3與Collins一般名詞2均列乾燥設備。",
+          "afterCandidate": "乾燥器",
+          "safeToApplyInIsolation": true,
+          "sourceIds": [
+            "mw_drier",
+            "collins_dryer"
+          ]
+        }
+      ],
+      "afterCandidate": "乾衣機；（吸濕／除濕用）乾燥劑；（油漆、油墨等的）催乾劑；乾燥器",
+      "applied": false
+    },
+    {
+      "wordId": "W002197",
+      "word": "countable",
+      "before": {
+        "wordId": "W002197",
+        "word": "countable",
+        "wordVariants": [
+          "countable"
+        ],
+        "level": "LV3",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "（形容詞）可數的；能計數的；（原摘要另列名詞用法，來源待核）可數的東西；可數名詞",
+        "meaningEn": "able to be counted; (grammar) able to be used in both singular and plural forms",
+        "usagePattern": "a countable noun; countable and uncountable nouns",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "countable",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "可數名詞；可數與不可數名詞"
+      },
+      "overallFinding": "四義成立；可移除名詞來源待核標示，但此結論不授權改主POS或整卡狀態。",
+      "senseFindings": [
+        {
+          "before": "可數的",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "adj.",
+          "domainOrRegister": "一般；亦見文法與數學專用",
+          "finding": "MW、Dr.eye形容詞條直接支持可數。",
+          "afterCandidate": "可數的",
+          "safeToApplyInIsolation": true,
+          "sourceIds": [
+            "mw_countable",
+            "dreye_countable"
+          ]
+        },
+        {
+          "before": "能計數的",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "adj.",
+          "domainOrRegister": "一般",
+          "finding": "MW capable of being counted及Dr.eye可計算的與原摘要對應。",
+          "afterCandidate": "能計數的",
+          "safeToApplyInIsolation": true,
+          "sourceIds": [
+            "mw_countable",
+            "dreye_countable"
+          ]
+        },
+        {
+          "before": "可數的東西",
+          "status": "supported_dictionary_provider",
+          "decision": "retain",
+          "pos": "n.",
+          "domainOrRegister": "Dr.eye《英漢大辭典》另列名詞；未加語域標籤",
+          "finding": "Dr.eye自家服務正文n.第1項直接列原中文，不是把countable things片語省略成名詞，也非由形容詞自行推導。",
+          "afterCandidate": "（另列名詞用法）可數的東西",
+          "safeToApplyInIsolation": true,
+          "sourceIds": [
+            "dreye_countable"
+          ]
+        },
+        {
+          "before": "可數名詞",
+          "status": "supported_requires_domain",
+          "decision": "qualify",
+          "pos": "n.",
+          "domainOrRegister": "語法術語",
+          "finding": "Dr.eye n.第2項明標語法；Oxford Grammar原書另有countable (n. & adj.)獨立詞頭，交叉支持，非只引用countable noun片語。",
+          "afterCandidate": "（名詞，語法）可數名詞",
+          "safeToApplyInIsolation": true,
+          "sourceIds": [
+            "dreye_countable",
+            "oxford_grammar_countable"
+          ]
+        }
+      ],
+      "afterCandidate": "（形容詞）可數的；能計數的；（另列名詞用法）可數的東西；（語法）可數名詞",
+      "applied": false
+    },
+    {
+      "wordId": "W003876",
+      "word": "satellite",
+      "before": {
+        "wordId": "W003876",
+        "word": "satellite",
+        "wordVariants": [
+          "satellite"
+        ],
+        "level": "LV4",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "衛星（天然或人造）；（原摘要另列醫學對應，待核）伴行靜脈；陪靜脈；陪病部",
+        "meaningEn": "a natural or artificial body that orbits a planet or other larger body; also, a person or organization dependent on or following another.",
+        "usagePattern": "a satellite orbiting Earth; a satellite of a planet; satellite images",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "satellite",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "環繞地球的衛星；行星的衛星；衛星影像"
+      },
+      "overallFinding": "衛星與醫學伴行靜脈可保留並移除後者待核；陪靜脈和陪病部仍保留待核，無整段替換。",
+      "senseFindings": [
+        {
+          "before": "衛星（天然或人造）",
+          "status": "supported",
+          "decision": "retain",
+          "pos": "n.",
+          "domainOrRegister": "天文／航太",
+          "finding": "MW名詞1a、1b分列天然天體與人造軌道物體，兩部分都已核。",
+          "afterCandidate": "衛星（天然或人造）",
+          "safeToApplyInIsolation": true,
+          "sourceIds": [
+            "mw_satellite"
+          ]
+        },
+        {
+          "before": "伴行靜脈",
+          "status": "supported_requires_domain",
+          "decision": "qualify",
+          "pos": "n.（醫學譯名；專業欄未另標POS）",
+          "domainOrRegister": "解剖／醫學",
+          "finding": "Dr.eye《英漢醫學詞典》專業欄在satellite獨立詞頭直接列伴行靜脈，因此不是只由satellite vein片語推單字義。",
+          "afterCandidate": "（醫學）伴行靜脈",
+          "safeToApplyInIsolation": true,
+          "sourceIds": [
+            "dreye_satellite"
+          ]
+        },
+        {
+          "before": "陪靜脈",
+          "status": "pending_exact_translation",
+          "decision": "retain_pending",
+          "pos": "n.?",
+          "domainOrRegister": "解剖／醫學，譯名來源待核",
+          "finding": "與已支持的伴行靜脈可能是同概念，但本次精確譯名只見CDICT及DICT.TW轉載／來源未核列表，尚未取得原醫學辭書頁面；不能只因可能同義便計為支持。",
+          "afterCandidate": null,
+          "safeToApplyInIsolation": false,
+          "sourceIds": [
+            "dreye_satellite",
+            "cdict_satellite_lead",
+            "dicttw_satellite_lead"
+          ]
+        },
+        {
+          "before": "陪病部",
+          "status": "pending_exact_translation",
+          "decision": "retain_pending",
+          "pos": "n.?",
+          "domainOrRegister": "病理／醫學，原譯對應未明",
+          "finding": "精確原字串見朗道英漢字典的二手轉載；Taber公開原文只說鄰接較大結構的小結構，不能自動等同病灶。衛星病灶等線索不足以證明陪病部的原譯或逕改字。",
+          "afterCandidate": null,
+          "safeToApplyInIsolation": false,
+          "sourceIds": [
+            "tabers_satellite",
+            "cdict_satellite_lead",
+            "dicttw_satellite_lead"
+          ]
+        }
+      ],
+      "afterCandidate": null,
+      "applied": false
+    }
+  ],
+  "sources": [
+    {
+      "id": "mw_sometimes",
+      "title": "Merriam-Webster: sometimes",
+      "url": "https://www.merriam-webster.com/dictionary/sometimes",
+      "shortExcerpt": "adverb: at times; adjective: sometime",
+      "readEvidence": "已讀原站主條目，明列 adverb 與 adjective；點開 adjective 的 sometime 交叉參照。",
+      "limitations": "不採原站自動擷取例句作詞性證據；其 adjective 例句自動標籤並不可靠。原站未將 adjective 標為古語。",
+      "sourceType": "publisher_dictionary_body"
+    },
+    {
+      "id": "mw_sometime",
+      "title": "Merriam-Webster: sometime",
+      "url": "https://www.merriam-webster.com/dictionary/sometime",
+      "shortExcerpt": "having been formerly; being so occasionally or in only some respects",
+      "readEvidence": "已讀 adjective 1、2 及 adverb 1、2；sometimes 的原站形容詞交叉參照連到此條。",
+      "limitations": "某未指明時間是此字的副詞義，不能跨詞性當作 sometimes 的「某一時間的」。",
+      "sourceType": "publisher_dictionary_body"
+    },
+    {
+      "id": "collins_sometimes",
+      "title": "Collins: sometimes",
+      "url": "https://www.collinsdictionary.com/dictionary/english/sometimes",
+      "shortExcerpt": "adverb; obsolete: formerly",
+      "readEvidence": "已讀英美辭典正文，一般副詞偶爾及 obsolete 副詞 formerly。",
+      "limitations": "此站只列副詞，不足以否定 Merriam-Webster 明列的形容詞；不把其副詞 obsolete 標籤轉貼到全部形容詞。",
+      "sourceType": "publisher_dictionary_body"
+    },
+    {
+      "id": "mw_key",
+      "title": "Merriam-Webster: key",
+      "url": "https://www.merriam-webster.com/dictionary/key",
+      "shortExcerpt": "to enter or input (text or data) by using a keyboard",
+      "readEvidence": "已讀 noun 1a、2b、3a，adjective 與 transitive verb 7 正文；鍵入是單字 key 動詞，in/into 只是 often-used-with。",
+      "limitations": "沒有核對原詞表對 key 三詞性的教學範圍；不得把本次補義當成原教材對應。",
+      "sourceType": "publisher_dictionary_body"
+    },
+    {
+      "id": "collins_key",
+      "title": "Collins: key",
+      "url": "https://www.collinsdictionary.com/dictionary/english/key",
+      "shortExcerpt": "of great importance; crucial",
+      "readEvidence": "已讀英式 noun 1、7、8，adjective 26，verb 27–34；交叉核對原摘要名詞與形容詞。",
+      "limitations": "",
+      "sourceType": "publisher_dictionary_body"
+    },
+    {
+      "id": "mw_lamp",
+      "title": "Merriam-Webster: lamp",
+      "url": "https://www.merriam-webster.com/dictionary/lamp",
+      "shortExcerpt": "devices for producing light",
+      "readEvidence": "已讀 noun 1 正文。",
+      "limitations": "此現行簡式頁未列照亮動詞，不以缺列否定歷史或其他辭典所列義。",
+      "sourceType": "publisher_dictionary_body"
+    },
+    {
+      "id": "dreye_lamp",
+      "title": "Dr.eye 權威釋義: lamp",
+      "url": "https://yun.dreye.com/dict_new/dict_mobile_new.php?w=lamp",
+      "shortExcerpt": "vt. 照；照亮；v. supply with lamps; illuminate.",
+      "readEvidence": "已讀 Dr.eye 原服務正文：《英漢大辭典》vt. 與《簡明牛津英語詞典》lamp¹ v. 均明列照亮，亦有名詞燈。",
+      "limitations": "頁面列辭典名稱，未顯示所載版次、編者與頁碼；這是辭典服務原頁，不是把其他查字網的轉載當原書。",
+      "sourceType": "dictionary_provider_body"
+    },
+    {
+      "id": "century_lamp",
+      "title": "The Century Dictionary: lamp¹ v.",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/16/The_Century_dictionary_-_an_encyclopedic_lexicon_of_the_English_language-_prepared_under_the_superintendence_of_William_Dwight_Whitney_%28IA_centurydictipt1200whituoft%29.pdf",
+      "shortExcerpt": "I. trans. To furnish light to; light. [Rare.]",
+      "readEvidence": "已讀原書 PDF 文字層的 lamp¹ 動詞條及後續 II. intrans. To shine；原書明標 Rare。",
+      "limitations": "PDF 文字層欄位次序有交錯，未取得可視頁像、印刷頁碼與版年核定，因此不宣稱完成頁像校讀。另用 Dr.eye 的獨立原頁確認動詞義與詞性。",
+      "sourceType": "original_book_text_layer"
+    },
+    {
+      "id": "bstj_lamp",
+      "title": "Chang, Smith and Walford, LAMP: System Description (1974)",
+      "url": "https://ftpmirror.your.org/pub/misc/bitsavers/magazines/Bell_System_Technical_Journal/BSTJ_V53N08_197410.pdf",
+      "shortExcerpt": "Logic Analyzer for Maintenance Planning; digital-logic simulation and analysis system",
+      "readEvidence": "已讀 Bell System Technical Journal 53(8), 1974年10月，原論文1431頁摘要及1432–1433頁正文文字層，系統名與用途明確。",
+      "limitations": "第三方保存的原期刊PDF；文字層有OCR瑕疵，未實看頁像。只支持這個大寫專名的存在，不證明使用者原摘要所指即此，也不證明小寫 lamp 有普通單字的系統義。",
+      "sourceType": "original_paper_text_layer"
+    },
+    {
+      "id": "nokia_lamp",
+      "title": "Nokia Bell Labs: LAMP: System Description",
+      "url": "https://www.nokia.com/bell-labs/publications-and-media/publications/lamp-system-description/",
+      "shortExcerpt": "LAMP: System Description; 01 October 1974",
+      "readEvidence": "已讀 Bell Labs 現行原站著錄及引言，核對題名、日期與邏輯電路驗證用途。",
+      "limitations": "現行頁只提供部分引言，未呈現完整摘要或縮寫展開；不能單獨支持縮寫全名。",
+      "sourceType": "author_institution_body"
+    },
+    {
+      "id": "mw_planet",
+      "title": "Merriam-Webster: planet",
+      "url": "https://www.merriam-webster.com/dictionary/planet",
+      "shortExcerpt": "a person or thing of great importance: luminary",
+      "readEvidence": "已讀 noun 1 的太陽系／系外行星、2 的被認為影響人類命運之天體、3 的重要人或事物。",
+      "limitations": "比喻義未標古語，不擅加古語標籤；占星義是信念描述，不是科學因果聲稱。",
+      "sourceType": "publisher_dictionary_body"
+    },
+    {
+      "id": "collins_planet",
+      "title": "Collins: planet",
+      "url": "https://www.collinsdictionary.com/dictionary/english/planet",
+      "shortExcerpt": "astrology: celestial bodies regarded as influencing human lives",
+      "readEvidence": "已讀各版天文與占星學名詞正文。",
+      "limitations": "此頁沒有重要人或事物義，不以缺列否定 Merriam-Webster 的直接列義。",
+      "sourceType": "publisher_dictionary_body"
+    },
+    {
+      "id": "mw_drier",
+      "title": "Merriam-Webster: drier / dryer",
+      "url": "https://www.merriam-webster.com/dictionary/drier",
+      "shortExcerpt": "variants or dryer; something that extracts or absorbs moisture",
+      "readEvidence": "已讀 noun 詞頭的 dryer 變體與1吸濕／除濕物、2促乾物、3乾燥設備全部三義。",
+      "limitations": "區分乾燥劑的吸濕用途與油漆催乾劑的加快乾化用途，不合併成同一原理。",
+      "sourceType": "publisher_dictionary_body"
+    },
+    {
+      "id": "collins_dryer",
+      "title": "Collins: dryer",
+      "url": "https://www.collinsdictionary.com/dictionary/english/dryer",
+      "shortExcerpt": "a person or thing that dries",
+      "readEvidence": "已讀一般名詞乾燥設備、洗後衣物乾燥機，以及 Chemical Engineering 專欄的促乾化學品正文。",
+      "limitations": "",
+      "sourceType": "publisher_dictionary_body"
+    },
+    {
+      "id": "arte_drier",
+      "title": "國立臺灣藝術教育館：知油彩・賞油畫，油畫材料製作與特性",
+      "url": "https://ed.arte.gov.tw/uploadfile/Book/3214_%E5%85%A7%E6%96%87.pdf",
+      "shortExcerpt": "催乾劑（Driers or Siccatives）",
+      "readEvidence": "已讀原機構PDF文字層，印刷30頁小節明列催乾劑的中英名稱與加快油彩乾燥用途。",
+      "limitations": "本次僅核對用語「催乾劑」，不採其材料配方或操作建議。",
+      "sourceType": "institution_original_book_text"
+    },
+    {
+      "id": "mw_countable",
+      "title": "Merriam-Webster: countable",
+      "url": "https://www.merriam-webster.com/dictionary/countable",
+      "shortExcerpt": "capable of being counted",
+      "readEvidence": "已讀獨立形容詞正文及數學範圍說明。",
+      "limitations": "此現行簡式頁沒有 countable 名詞，不能因此認定其他辭典的名詞是錯誤。",
+      "sourceType": "publisher_dictionary_body"
+    },
+    {
+      "id": "dreye_countable",
+      "title": "Dr.eye 權威釋義: countable",
+      "url": "https://yun.dreye.com/dict_new/dict_mobile_new.php?w=countable",
+      "shortExcerpt": "n. 可數的東西；〖語〗可數名詞",
+      "readEvidence": "已讀 Dr.eye 原服務正文，a. 與 n. 分欄，且名詞明列兩項，來源標示《英漢大辭典》。",
+      "limitations": "頁面未顯示版次、編者與紙本頁碼；可支持該辭典的獨立名詞用法，不宣稱本次已核原教材或官方核心詞性。",
+      "sourceType": "dictionary_provider_body"
+    },
+    {
+      "id": "oxford_grammar_countable",
+      "title": "Aarts, Chalker and Weiner, The Oxford Dictionary of English Grammar, 2nd ed. (2014), p.104",
+      "url": "https://scholar.alaqsa.edu.ps/10710/1/the-oxford-dictionary-of-english-grammar-oxford-quick-reference-2nd_edition%20%28%20PDFDrive%20%29.pdf",
+      "shortExcerpt": "countable (n. & adj.) (Designating) a noun with singular and plural forms.",
+      "readEvidence": "已讀原書PDF文字層：題名頁、2014第二版版權頁，及PDF第115頁／印刷104頁 countable 獨立條目。",
+      "limitations": "大學資料庫保存的原書，不是出版社網站；已讀文字層，截圖未取得可視像素，因此不宣稱頁像校讀。此項獨立支持可數名詞義，不支持泛指可數的東西義。",
+      "sourceType": "original_book_text_layer"
+    },
+    {
+      "id": "mw_satellite",
+      "title": "Merriam-Webster: satellite",
+      "url": "https://www.merriam-webster.com/dictionary/satellite",
+      "shortExcerpt": "a celestial body orbiting another of larger size",
+      "readEvidence": "已讀 noun 1a 天然天體及1b 人造軌道物體正文。",
+      "limitations": "",
+      "sourceType": "publisher_dictionary_body"
+    },
+    {
+      "id": "dreye_satellite",
+      "title": "Dr.eye 權威釋義: satellite",
+      "url": "https://yun.dreye.com/dict_new/dict_mobile_new.php?w=satellite",
+      "shortExcerpt": "專業：隨體；伴行靜脈；衛星",
+      "readEvidence": "已讀原服務的《英漢醫學詞典》專業欄，獨立 satellite 詞頭直接給「伴行靜脈」，並非從 satellite vein 片語自行縮減。",
+      "limitations": "專業欄未另標POS、版次或頁碼；本次未在該頁找到陪靜脈、陪病部。",
+      "sourceType": "dictionary_provider_body"
+    },
+    {
+      "id": "tabers_satellite",
+      "title": "Taber’s Medical Dictionary, 25th ed. (2025): satellite",
+      "url": "https://www.tabers.com/tabersonline/view/Tabers-Dictionary/770407/0/satellite",
+      "shortExcerpt": "A small structure attached or adjacent to a related, larger one.",
+      "readEvidence": "已讀 F.A. Davis / Unbound Medicine 的公開條目第1、2義。",
+      "limitations": "其餘正文限訂閱，沒有讀到；公開正文只支持依附／鄰近較大結構的一般醫學概念，不等於已核特定陪靜脈或陪病部中文。",
+      "sourceType": "medical_dictionary_original_service"
+    },
+    {
+      "id": "cdict_satellite_lead",
+      "title": "CDICT: satellite（轉載線索）",
+      "url": "https://cdict.net/q/satellite",
+      "shortExcerpt": "朗道英漢字典：伴行靜脈，陪靜脈，陪病部",
+      "readEvidence": "已讀轉載正文，明列其來源標籤為朗道英漢字典。",
+      "limitations": "無原書版次／頁碼與編校證據；僅作尋源線索，不能核准陪靜脈或陪病部。",
+      "sourceType": "secondary_reprint_not_approval"
+    },
+    {
+      "id": "dicttw_satellite_lead",
+      "title": "DICT.TW: satellite（轉載／來源未核線索）",
+      "url": "https://dict.tw/dict/satellite",
+      "shortExcerpt": "伴行靜脈，陪靜脈，衛星病灶",
+      "readEvidence": "已讀其英文醫學字典欄，名詞標記可見。",
+      "limitations": "尚未驗明該欄的原始編纂／出版責任及版本，不能把這個列表當可靠原書核准；也不能從衛星病灶反推出「陪病部」就是同義。",
+      "sourceType": "secondary_or_unverified_dictionary"
+    },
+    {
+      "id": "ahd_glass",
+      "title": "The American Heritage Dictionary, 5th ed.: glass / Glass",
+      "url": "https://www.ahdictionary.com/word/search.html?q=glass",
+      "shortExcerpt": "often glasses: A binocular or field glass.",
+      "readEvidence": "已讀名詞3a眼鏡、3b雙筒望遠鏡，以及獨立大寫 Glass, Philip 人名條。",
+      "limitations": "人名是 Glass，不是 glasses；不能把大小寫與詞尾差異當作已證同一單字義。",
+      "sourceType": "publisher_dictionary_body"
+    },
+    {
+      "id": "collins_glass",
+      "title": "Collins: glass",
+      "url": "https://www.collinsdictionary.com/dictionary/english/glass",
+      "shortExcerpt": "Word forms: plural glasses; uncountable noun; countable noun",
+      "readEvidence": "已讀一般材料的不可數用法、容器的可數用法，及美式條目明列複數眼鏡與雙筒望遠鏡。",
+      "limitations": "不以一般材料義為不可數就否定材料學中按種類區分的複數 glasses。",
+      "sourceType": "publisher_dictionary_body"
+    },
+    {
+      "id": "unsw_glasses",
+      "title": "UNSW School of Materials Science and Engineering: Glass",
+      "url": "https://www.unsw.edu.au/science/our-schools/materials/engage-with-us/high-school-students-and-teachers/online-tutorials/ceramics/glass",
+      "shortExcerpt": "Glasses are a unique range of ceramic materials",
+      "readEvidence": "已讀原校材料教學頁；正文以 two glasses 分指鈉鈣玻璃與硼矽玻璃，直接證明材料種類意義可用 glasses。",
+      "limitations": "這證明材料學的限定複數用法；不是說任何一般不可數 glass 都可無條件改成 glasses。",
+      "sourceType": "university_original_educational_body"
+    }
+  ],
+  "unreadOrFailedSources": [
+    {
+      "url": "https://www.oed.com/dictionary/sometimes_adv",
+      "result": "僅JavaScript／機器人驗證頁，未取得條目正文，未使用作支持。"
+    },
+    {
+      "url": "https://www.oed.com/dictionary/countable_adj",
+      "result": "僅JavaScript／機器人驗證頁，未取得正文。"
+    },
+    {
+      "url": "https://theodora.com/medical_dictionary/satellite_scapular.html",
+      "result": "實開只有驗證頁；搜尋摘要有小結構、靜脈、病灶線索，但不是已實讀正文，不作核准。"
+    }
+  ]
+}
