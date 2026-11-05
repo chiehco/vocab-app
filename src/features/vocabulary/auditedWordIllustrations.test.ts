@@ -9,6 +9,7 @@ import u6Evidence from '../../../docs/unit-audit-20261105/LV1-U06-original-image
 import u7Evidence from '../../../docs/unit-audit-20261105/LV1-U07-original-image-review.json';
 import u8Evidence from '../../../docs/unit-audit-20261105/LV1-U08-original-image-review.json';
 import u9Evidence from '../../../docs/unit-audit-20261105/LV1-U09-original-image-review.json';
+import captionTranslations from '../../../docs/unit-audit-20261105/LV1-verified-caption-translations.json';
 import publishedUnits from './lv1ReviewedImages.json';
 import words from '../../../public/data/v1/words.json';
 import {approvedCurriculumIllustration,approvedWordIllustration,approvedLV1Images,approvedCurriculumCard} from './approvedCurriculum';
@@ -29,7 +30,13 @@ it('binds the explicitly reviewed general-card repairs to exact images and capti
   expect(proof.pixelReview).toContain('actually viewed original');
   expect(proof.observation).toBeTruthy();
   expect(createHash('sha256').update(readFileSync('public/'+card.illustration.path)).digest('hex')).toBe(proof.publishedImageSha256);
-  expect(card.illustration).toMatchObject({captionEn:proof.captionEn,captionZh:proof.captionZh});
+  if(card.reviewId==='LV1-U08-92'){
+   const change=captionTranslations.changes.find(c=>c.id==='LV1-U08-92')!;
+   expect(change.previousIllustration).toMatchObject({captionEn:proof.captionEn,captionZh:proof.captionZh});
+   expect(card.officialWordId).toBe('W001708');
+   expect(card.illustration).toEqual({path:'wordbeast/audited-20261105/LV1-U08-92-185cf5437c0d.webp',captionEn:'She worked hard for ten years to realize her dream of opening a bakery.',captionZh:'為了實現開一家麵包店的夢想，她努力了十年。'});
+   expect(change.currentIllustration).toEqual(card.illustration);expect(change.englishAndImageUnchanged).toBe(true);
+  }else expect(card.illustration).toMatchObject({captionEn:proof.captionEn,captionZh:proof.captionZh});
   const word=words.find(w=>w.wordId===card.officialWordId)!;
   expect(word).toBeDefined();
   expect(approvedWordIllustration(word.word,word.wordId)).toEqual(card.illustration);

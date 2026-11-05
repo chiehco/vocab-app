@@ -95,6 +95,15 @@ describe('reviewed LV1 image-only release', () => {
     }
   });
 
+  it('narrows only the verified shirt translation and preserves its exact image and English',()=>{
+    const enough=cards.find(c=>c.id==='LV1-U01-30')!;
+    expect(enough.illustration).toEqual({path:'wordbeast/lv1-reviewed/LV1-U01-30-d34e8ac01d69.webp',captionEn:"This shirt isn't big enough for him anymore.",captionZh:'這件上衣對他來說已經不夠大了。'});
+    const record=audit.find(c=>c.id===enough.id)!;
+    expect(record.publishedImageSha256).toBe(record.previousApproval?.publishedImageSha256);
+    const example=bootstrap.examples.find(e=>e.exampleId==='EX51e703b4')!;
+    expect(example.sentenceEn).toBe(enough.illustration.captionEn);expect(example.sentenceZh).toBe(enough.illustration.captionZh);
+  });
+
   it('uses the corrected five-finger glove and the final proxy-reviewed Unit22-25 captions', () => {
     expect(audit.find(c => c.id === 'LV1-U23-77')?.sourceImage).toBe('77_NOID_glove_v2.png');
     expect(cards.find(c => c.id === 'LV1-U23-77')?.illustration.captionEn)

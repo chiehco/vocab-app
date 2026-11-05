@@ -4,7 +4,9 @@ import {expect,it} from 'vitest';
 import baseline from '../../scripts/fixtures/recovered-unit-integration-baseline.json';
 import u1 from '../../docs/unit-audit-20261105/LV1-U01-patches.json';
 import starterBaseline from '../../scripts/fixtures/lv4-u2-notes-confirmation-baseline.json';
-import {beforeUnitAudit} from './unitAudit.testSupport';
+import {beforeUnitAudit,restoreRecordedAuditPatch} from './unitAudit.testSupport';
+import forms from '../../docs/unit-audit-20261105/LV1-U01-U02-verb-forms-followup.json';
+import translations from '../../docs/unit-audit-20261105/LV1-verified-translations-followup.json';
 
 type Row=Record<string,unknown>;
 const examples:Row[]=JSON.parse(readFileSync('public/data/v1/examples.json','utf8'));
@@ -51,4 +53,19 @@ it('reverses only recorded starter corrections while retaining the old whole-pac
  expect(()=>beforeUnitAudit('sa-pack',row)).toThrow('contentHash');
  const metadata=structuredClone(pack);metadata.meta.wordsHash='sa:wrong';
  expect(()=>beforeUnitAudit('sa-pack',metadata)).toThrow('wordsHash');
+});
+
+it('restores genuine missing optional keys and rejects unverified forms or identities',()=>{
+ const p=forms.patches[0];const row:Row={wordId:p.id,word:'arm',pos:'n. v.',status:'draft',...p.after};
+ restoreRecordedAuditPatch('words',row,p);expect(Object.hasOwn(row,'verbForms')).toBe(false);expect(row.status).toBe('draft');
+ expect(()=>restoreRecordedAuditPatch('words',{...p.after},{...p,id:'Wunknown'})).toThrow('source-verified');
+ expect(()=>restoreRecordedAuditPatch('words',{verbForms:null},p)).toThrow();
+ expect(()=>restoreRecordedAuditPatch('words',{...p.after},{...p,before:{verbForms:null}})).toThrow();
+});
+
+it('checks unchanged English guards and reverses only exact verified Chinese corrections',()=>{
+ const p=translations.patches[0];const row:Row={...p.before,...p.after,answer:'died'};
+ restoreRecordedAuditPatch('examples',row,p);expect(row.sentenceZh).toBe(p.before.sentenceZh);expect(row.sentenceEn).toBe(p.before.sentenceEn);expect(row.answer).toBe('died');
+ expect(()=>restoreRecordedAuditPatch('examples',{...p.after,sentenceEn:'Unrecorded English'},p)).toThrow('source guard');
+ expect(()=>restoreRecordedAuditPatch('examples',{...p.before,...p.after},{...p,id:'EXunknown'})).toThrow('verified translations');
 });

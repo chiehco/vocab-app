@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026-11-05T07:26:28.049Z",
+  "updatedAt": "2026-11-05T08:32:25.363Z",
   "items": [
     {
       "id": "LV1-U01-30",
-      "state": "supported_translation_refinement_queued_not_applied",
+      "state": "translation_corrected_and_both_routes_reopened",
       "word": "enough",
       "englishUnchanged": "This shirt isn't big enough for him anymore.",
       "beforeChinese": "這件襯衫對他來說已經不夠大了。",
       "proposedChinese": "這件上衣對他來說已經不夠大了。",
-      "evidence": "Round-neck T-shirt in the original image; shirt covers upper-body clothing: https://www.merriam-webster.com/dictionary/shirt",
-      "next": "Check all actual caption/example matches, preserve exact before/after and approval text hashes, reopen unit/general pair. No image or English change."
+      "evidence": "LV1-verified-caption-translations.json",
+      "next": null
     },
     {
       "id": "LV1-U08-90",
@@ -22,10 +22,15 @@
     },
     {
       "id": "LV1-U10-76",
-      "state": "confirmed_pair_mismatch_not_repaired_in_unit",
+      "state": "verified_asset_available_not_locally_integrated",
       "word": "mind",
       "englishUnchanged": "Would you mind opening the door? My hands are full.",
-      "observation": "Original path shows a shivering character beside a window, not a person with full hands opening a door. General mind card now uses the separately checked U07 closing-window pair. The U10 unit sentence and asset remain recoverable and unchanged, pending its own image repair."
+      "observation": "Original path shows a shivering character beside a window, not a person with full hands opening a door. General mind card now uses the separately checked U07 closing-window pair. The U10 unit sentence and asset remain recoverable and unchanged, pending its own image repair.",
+      "unit": "LV1-U10",
+      "issue": "Exact unit opening-door pair mismatched existing closing-window art; preserve general U07 closing-window pair.",
+      "assetCommit": "c4ec9c9e4b5d366d56e79f1e3063c1753c266a3a",
+      "assetPath": "public/wordbeast/lv1-reviewed/LV1-U10-76-0eae26fedc0f.webp",
+      "sha256": "0fd830ed1759186fe4b0253cf46e19fbb8142147d821f99a7fb76fac44eb931a"
     },
     {
       "id": "W001008-1",
@@ -33,6 +38,46 @@
       "word": "active",
       "evidence": "LV1-U07-verified-exam-source-followup.json; SOURCE-FOLLOWUPS.json",
       "next": null
+    },
+    {
+      "id": "U03-U05-context-followup",
+      "state": "source_verified_proposals_queued_for_current_row_reconciliation",
+      "reviewedCommit": "b5144bc12ebd35a9083ee80de055a748cf973981",
+      "scope": {
+        "U03": {
+          "formalExamplesRead": 185,
+          "hints": 103,
+          "clozePos": 32,
+          "translationCandidates": 3
+        },
+        "U05": {
+          "formalExamplesRead": 171,
+          "hints": 39,
+          "reciprocalPronounPos": 1,
+          "translationCandidates": 1
+        }
+      },
+      "next": "After the current verified followup checkpoint, re-read every latest exampleId and immutable English guard; reconcile shared words instead of overwriting newer precise values. Keep source full-page versus search-excerpt evidence distinct and uncertain family/context translations pending."
+    },
+    {
+      "id": "LV1-U22-04",
+      "issue": "Other umbrellas are not all grey although caption says so.",
+      "state": "pixel_precheck_pending_actual_unit_audit"
+    },
+    {
+      "id": "LV1-U22-46",
+      "issue": "Shirt translated specifically as collared shirt although T-shirt pictured; check exact original.",
+      "state": "pixel_precheck_pending_actual_unit_audit"
+    },
+    {
+      "id": "LV1-U23-50",
+      "issue": "Caption trophy held aloft; picture trophy on ground and ball raised.",
+      "state": "pixel_precheck_pending_actual_unit_audit"
+    },
+    {
+      "id": "LV1-U23-06-84-89",
+      "issue": "Meat doneness, table corner/leg tripping, mineral crystals versus dietary minerals require source review.",
+      "state": "pixel_precheck_pending_actual_unit_audit"
     }
   ]
 }

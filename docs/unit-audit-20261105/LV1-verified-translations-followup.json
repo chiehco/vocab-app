@@ -1,0 +1,76 @@
+{
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "scope": "Only the Chinese wording of these five exact sentences. English, cloze, answer, POS, status and all other rows remain unchanged.",
+  "patches": [
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX50693488",
+      "before": {
+        "sentenceEn": "The girl died from head injuries.",
+        "sentenceZh": "這女孩死於腦部創傷。"
+      },
+      "after": {
+        "sentenceZh": "這女孩死於頭部傷勢。"
+      },
+      "reason": "Head injuries do not necessarily mean brain injuries.",
+      "evidence": "https://www.merriam-webster.com/dictionary/head ; https://www.merriam-webster.com/dictionary/injury"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXddc4d110",
+      "before": {
+        "sentenceEn": "She needs additional time to finish her science project this weekend.",
+        "sentenceZh": "她這個週末需要額外的時間才能完成科展作品。"
+      },
+      "after": {
+        "sentenceZh": "她這個週末需要額外的時間才能完成她的科學專題。"
+      },
+      "reason": "Science project does not specify participation in a science fair.",
+      "evidence": "https://www.merriam-webster.com/dictionary/project"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX66703666",
+      "before": {
+        "sentenceEn": "She worked hard for ten years to realize her dream of opening a bakery.",
+        "sentenceZh": "她努力了十年，終於實現了開一家麵包店的夢想。"
+      },
+      "after": {
+        "sentenceZh": "為了實現開一家麵包店的夢想，她努力了十年。"
+      },
+      "reason": "The purpose infinitive does not independently assert that the goal was achieved.",
+      "evidence": "https://dictionary.cambridge.org/grammar/british-grammar/in-order-to ; https://learnenglish.britishcouncil.org/free-resources/grammar/english-grammar-reference/infinitives"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1f033d08",
+      "before": {
+        "sentenceEn": "The new model is far better than the old one.",
+        "sentenceZh": "新型號比起舊的還要好。"
+      },
+      "after": {
+        "sentenceZh": "新型號比舊型號好得多。"
+      },
+      "reason": "Far before the comparative explicitly indicates a large degree.",
+      "evidence": "https://www.merriam-webster.com/dictionary/far"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX51e703b4",
+      "before": {
+        "sentenceEn": "This shirt isn't big enough for him anymore.",
+        "sentenceZh": "這件襯衫對他來說已經不夠大了。"
+      },
+      "after": {
+        "sentenceZh": "這件上衣對他來說已經不夠大了。"
+      },
+      "reason": "Shirt includes the round-neck T-shirt actually shown; remove the unsupported collared-shirt specificity.",
+      "evidence": "https://www.merriam-webster.com/dictionary/shirt ; https://dictionary.cambridge.org/dictionary/english/t-shirt"
+    }
+  ]
+}

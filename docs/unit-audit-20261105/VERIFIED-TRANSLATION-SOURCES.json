@@ -1,0 +1,45 @@
+{
+  "scope": "Exactly five Chinese-only corrections; each original English sentence is an immutable write guard.",
+  "facts": [
+    {
+      "exampleId": "EX50693488",
+      "sentenceEn": "The girl died from head injuries.",
+      "before": "這女孩死於腦部創傷。",
+      "after": "這女孩死於頭部傷勢。",
+      "reason": "Head injuries do not necessarily mean brain injuries.",
+      "evidence": "https://www.merriam-webster.com/dictionary/head ; https://www.merriam-webster.com/dictionary/injury"
+    },
+    {
+      "exampleId": "EXddc4d110",
+      "sentenceEn": "She needs additional time to finish her science project this weekend.",
+      "before": "她這個週末需要額外的時間才能完成科展作品。",
+      "after": "她這個週末需要額外的時間才能完成她的科學專題。",
+      "reason": "Science project does not specify participation in a science fair.",
+      "evidence": "https://www.merriam-webster.com/dictionary/project"
+    },
+    {
+      "exampleId": "EX66703666",
+      "sentenceEn": "She worked hard for ten years to realize her dream of opening a bakery.",
+      "before": "她努力了十年，終於實現了開一家麵包店的夢想。",
+      "after": "為了實現開一家麵包店的夢想，她努力了十年。",
+      "reason": "The purpose infinitive does not independently assert that the goal was achieved.",
+      "evidence": "https://dictionary.cambridge.org/grammar/british-grammar/in-order-to ; https://learnenglish.britishcouncil.org/free-resources/grammar/english-grammar-reference/infinitives"
+    },
+    {
+      "exampleId": "EX1f033d08",
+      "sentenceEn": "The new model is far better than the old one.",
+      "before": "新型號比起舊的還要好。",
+      "after": "新型號比舊型號好得多。",
+      "reason": "Far before the comparative explicitly indicates a large degree.",
+      "evidence": "https://www.merriam-webster.com/dictionary/far"
+    },
+    {
+      "exampleId": "EX51e703b4",
+      "sentenceEn": "This shirt isn't big enough for him anymore.",
+      "before": "這件襯衫對他來說已經不夠大了。",
+      "after": "這件上衣對他來說已經不夠大了。",
+      "reason": "Shirt includes the round-neck T-shirt actually shown; remove the unsupported collared-shirt specificity.",
+      "evidence": "https://www.merriam-webster.com/dictionary/shirt ; https://dictionary.cambridge.org/dictionary/english/t-shirt"
+    }
+  ]
+}

@@ -19,10 +19,35 @@ import u7VerifiedExams from '../../docs/unit-audit-20261105/LV1-U07-verified-exa
 import u8 from '../../docs/unit-audit-20261105/LV1-U08-patches.json';
 import demandVisible from '../../docs/unit-audit-20261105/LV1-U07-demand-visible-form-followup.json';
 import u9 from '../../docs/unit-audit-20261105/LV1-U09-patches.json';
+import u8Hints from '../../docs/unit-audit-20261105/LV1-U08-hints-followup.json';
+import translations from '../../docs/unit-audit-20261105/LV1-verified-translations-followup.json';
+import forms from '../../docs/unit-audit-20261105/LV1-U01-U02-verb-forms-followup.json';
+import verifiedForms from '../../docs/unit-audit-20261105/VERIFIED-VERB-FORMS-SOURCES.json';
+import verifiedTranslations from '../../docs/unit-audit-20261105/VERIFIED-TRANSLATION-SOURCES.json';
 
 type Row = Record<string, unknown>;
 type Patch = {dataset:string; key:string; id:string; before:Row; after:Row; reason:string; evidence:string};
-const patches:Patch[]=[...u1.patches,...u2.patches,...pig.patches,...u3.patches,...u3Remaining.patches,...u4.patches,...u5.patches,...u6.patches,...u6Syntax.patches,...examSources.patches,...u7.patches,...u7Hints.patches,...lexicalSources.patches,...catDefinition.patches,...u7VerifiedExams.patches,...u8.patches,...demandVisible.patches,...u9.patches];
+const patches:Patch[]=[...u1.patches,...u2.patches,...pig.patches,...u3.patches,...u3Remaining.patches,...u4.patches,...u5.patches,...u6.patches,...u6Syntax.patches,...examSources.patches,...u7.patches,...u7Hints.patches,...lexicalSources.patches,...catDefinition.patches,...u7VerifiedExams.patches,...u8.patches,...demandVisible.patches,...u9.patches,...u8Hints.patches,...translations.patches,...forms.patches];
+
+export function restoreRecordedAuditPatch(name:string,row:Row,patch:Patch):void{
+ assert.ok(patch.reason&&patch.evidence,'each audit correction needs recorded evidence');
+ for(const [key,after]of Object.entries(patch.after))assert.deepEqual(row[key],after,`${name}:${patch.id}:${key}`);
+ for(const [key,before]of Object.entries(patch.before))if(!Object.hasOwn(patch.after,key))assert.deepEqual(row[key],before,'immutable source guard changed');
+ if(Object.hasOwn(patch.after,'verbForms')){
+  assert.equal(name,'words');
+  const fact=verifiedForms.facts.find(f=>f.wordId===patch.id);assert.ok(fact,'only source-verified verbs may acquire forms');
+  assert.deepEqual(patch.after,{verbForms:fact.verbForms});assert.deepEqual(patch.before,{verbForms:{$absent:true}});
+ }
+ if(Object.hasOwn(patch.after,'sentenceZh')){
+  assert.equal(name,'examples');const fact=verifiedTranslations.facts.find(f=>f.exampleId===patch.id);assert.ok(fact,'only exact verified translations may change');
+  assert.deepEqual(patch.before,{sentenceEn:fact.sentenceEn,sentenceZh:fact.before});assert.deepEqual(patch.after,{sentenceZh:fact.after});
+ }
+ for(const key of Object.keys(patch.after)){
+  assert.ok(Object.hasOwn(patch.before,key),'old value must be explicit');
+  if(key==='verbForms'&&JSON.stringify(patch.before[key])===JSON.stringify({$absent:true}))delete row[key];
+  else row[key]=patch.before[key];
+ }
+}
 
 // Keep the historical payload hashes intact. Check each explicitly recorded new
 // field before reversing only that field for the old-release comparison.
@@ -61,11 +86,7 @@ export function beforeUnitAudit<T>(dataset:string, value:T):T {
     assert.ok(rows.length<=1,'audit cannot conceal duplicate identities');
     if(!rows.length)continue; // A starter subset can omit full-dictionary rows.
     const row=rows[0] as Row;
-    for(const [key,after]of Object.entries(patch.after))assert.deepEqual(row[key],after,`${name}:${patch.id}:${key}`);
-    for(const key of Object.keys(patch.after)){
-      assert.ok(Object.hasOwn(patch.before,key),'old value must be explicit');
-      row[key]=patch.before[key];
-    }
+    restoreRecordedAuditPatch(name,row,patch);
   }
   return copy;
 }

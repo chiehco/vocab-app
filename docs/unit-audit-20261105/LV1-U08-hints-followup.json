@@ -1,0 +1,1685 @@
+{
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "scope": "Only contextual meaningHint; no sentence, answer, cloze, POS, identity or null-hint filling.",
+  "counts": {
+    "candidates": 120,
+    "applied": 117,
+    "alreadyHandledInU09": 3,
+    "originalMissingOrIncompatible": 33,
+    "originalOverbroad": 87,
+    "intentionallyBlankUntouched": 129
+  },
+  "skipped": [
+    {
+      "exampleId": "EX0282b9db",
+      "reason": "Already contextually narrowed in the later U09 audit; preserve that newer precise value.",
+      "currentHint": "非常地（強調程度）",
+      "proposedEquivalent": "非常；很"
+    },
+    {
+      "exampleId": "EXa6e2171a",
+      "reason": "Already contextually narrowed in the later U09 audit; preserve that newer precise value.",
+      "currentHint": "實際上；真正地",
+      "proposedEquivalent": "實際上"
+    },
+    {
+      "exampleId": "EXd96728e7",
+      "reason": "Already contextually narrowed in the later U09 audit; preserve that newer precise value.",
+      "currentHint": "的確；確實",
+      "proposedEquivalent": "確實；真的"
+    }
+  ],
+  "retainedLimitations": {
+    "pos": [
+      "EX31dbed9d",
+      "EXd17463c4",
+      "EX3ef1ac3c",
+      "EXffa00af8"
+    ],
+    "sourceLogic": [
+      "EX26a967bf"
+    ],
+    "sow": "Exact Chinese lazy/fat-woman source unverified; retain pending rather than certify or delete.",
+    "dye": "Natural dyes are chemicals too; do not silently add synthetic to the original instead-of-chemicals sentence."
+  },
+  "patches": [
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXdaa81c6a",
+      "before": {
+        "meaningHint": "人；人身；人稱；法人"
+      },
+      "after": {
+        "meaningHint": "人"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/person"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXf39910f3",
+      "before": {
+        "meaningHint": "人；人身；人稱；法人"
+      },
+      "after": {
+        "meaningHint": "親自（in person）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. missing_or_incompatible_context_sense",
+      "evidence": "https://www.merriam-webster.com/dictionary/in%20person"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX50279301",
+      "before": {
+        "meaningHint": "教堂；禮拜；教會；使人接受宗教儀式"
+      },
+      "after": {
+        "meaningHint": "禮拜（go to church：上教堂做禮拜）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/church"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXeb13d81e",
+      "before": {
+        "meaningHint": "也許；大概；可能性"
+      },
+      "after": {
+        "meaningHint": "也許；大概"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/maybe"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX3927e1d7",
+      "before": {
+        "meaningHint": "人；人民；民族；平民"
+      },
+      "after": {
+        "meaningHint": "人們"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/people"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXa6ac3f3a",
+      "before": {
+        "meaningHint": "人；人民；民族；平民"
+      },
+      "after": {
+        "meaningHint": "居住於（be peopled by：由……居住）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. missing_or_incompatible_context_sense",
+      "evidence": "https://www.merriam-webster.com/dictionary/people"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXe76eb57c",
+      "before": {
+        "meaningHint": "人；人民；民族；平民"
+      },
+      "after": {
+        "meaningHint": "人們"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/people"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX342c2e1c",
+      "before": {
+        "meaningHint": "遊戲；遊玩；玩笑；運動"
+      },
+      "after": {
+        "meaningHint": "玩（play with：玩……）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/play"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX3d20b4a9",
+      "before": {
+        "meaningHint": "遊戲；遊玩；玩笑；運動"
+      },
+      "after": {
+        "meaningHint": "玩（play house：玩扮家家酒）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/play"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX82523daf",
+      "before": {
+        "meaningHint": "遊戲；遊玩；玩笑；運動"
+      },
+      "after": {
+        "meaningHint": "起……作用；扮演（play a role）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. missing_or_incompatible_context_sense",
+      "evidence": "https://www.merriam-webster.com/dictionary/play"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXc3a3f4dd",
+      "before": {
+        "meaningHint": "遊戲；遊玩；玩笑；運動"
+      },
+      "after": {
+        "meaningHint": "戲劇"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. missing_or_incompatible_context_sense",
+      "evidence": "https://www.merriam-webster.com/dictionary/play"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXc447b1db",
+      "before": {
+        "meaningHint": "遊戲；遊玩；玩笑；運動"
+      },
+      "after": {
+        "meaningHint": "播放（音樂）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. missing_or_incompatible_context_sense",
+      "evidence": "https://www.merriam-webster.com/dictionary/play"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXd313983c",
+      "before": {
+        "meaningHint": "遊戲；遊玩；玩笑；運動"
+      },
+      "after": {
+        "meaningHint": "演奏（樂器）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. missing_or_incompatible_context_sense",
+      "evidence": "https://www.merriam-webster.com/dictionary/play"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXdf3ef6f9",
+      "before": {
+        "meaningHint": "遊戲；遊玩；玩笑；運動"
+      },
+      "after": {
+        "meaningHint": "打（球類運動）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/play"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX549a929f",
+      "before": {
+        "meaningHint": "不同的；差動；微分的；差速器"
+      },
+      "after": {
+        "meaningHint": "不同的（different from：與……不同）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. missing_or_incompatible_context_sense",
+      "evidence": "https://www.merriam-webster.com/dictionary/different"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX9929fad0",
+      "before": {
+        "meaningHint": "不同的；差動；微分的；差速器"
+      },
+      "after": {
+        "meaningHint": "另一個的；不同的"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. missing_or_incompatible_context_sense",
+      "evidence": "https://www.merriam-webster.com/dictionary/different"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXbf52d1e9",
+      "before": {
+        "meaningHint": "競賽者；上場隊員；遊戲者；演員"
+      },
+      "after": {
+        "meaningHint": "樂器演奏者"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. missing_or_incompatible_context_sense",
+      "evidence": "https://www.merriam-webster.com/dictionary/player"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXd1fa9627",
+      "before": {
+        "meaningHint": "競賽者；上場隊員；遊戲者；演員"
+      },
+      "after": {
+        "meaningHint": "選手；參賽者"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/player"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX05fc3a04",
+      "before": {
+        "meaningHint": "經過；要隘；途徑；通行"
+      },
+      "after": {
+        "meaningHint": "（時間）過去"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/pass"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX34660fd2",
+      "before": {
+        "meaningHint": "經過；要隘；途徑；通行"
+      },
+      "after": {
+        "meaningHint": "經過"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/pass"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX74b687d0",
+      "before": {
+        "meaningHint": "經過；要隘；途徑；通行"
+      },
+      "after": {
+        "meaningHint": "昏倒（pass out）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. missing_or_incompatible_context_sense",
+      "evidence": "https://www.merriam-webster.com/dictionary/pass%20out"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX8e9aef7f",
+      "before": {
+        "meaningHint": "經過；要隘；途徑；通行"
+      },
+      "after": {
+        "meaningHint": "通行證（boarding pass：登機證）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. missing_or_incompatible_context_sense",
+      "evidence": "https://www.merriam-webster.com/dictionary/pass"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX9d8f1fa7",
+      "before": {
+        "meaningHint": "經過；要隘；途徑；通行"
+      },
+      "after": {
+        "meaningHint": "過世（pass away）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. missing_or_incompatible_context_sense",
+      "evidence": "https://www.merriam-webster.com/dictionary/pass%20away"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXd1b4039c",
+      "before": {
+        "meaningHint": "經過；要隘；途徑；通行"
+      },
+      "after": {
+        "meaningHint": "通過（考試）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. missing_or_incompatible_context_sense",
+      "evidence": "https://www.merriam-webster.com/dictionary/pass"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXf33cf190",
+      "before": {
+        "meaningHint": "經過；要隘；途徑；通行"
+      },
+      "after": {
+        "meaningHint": "經過"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/pass"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXfe0f1f51",
+      "before": {
+        "meaningHint": "經過；要隘；途徑；通行"
+      },
+      "after": {
+        "meaningHint": "遞給"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. missing_or_incompatible_context_sense",
+      "evidence": "https://www.merriam-webster.com/dictionary/pass"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX0034127d",
+      "before": {
+        "meaningHint": "種植；使長滿；生長；變成"
+      },
+      "after": {
+        "meaningHint": "生長"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/grow"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX57ed4d18",
+      "before": {
+        "meaningHint": "種植；使長滿；生長；變成"
+      },
+      "after": {
+        "meaningHint": "增長；成長"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/grow"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX629645a2",
+      "before": {
+        "meaningHint": "種植；使長滿；生長；變成"
+      },
+      "after": {
+        "meaningHint": "長大（grow up）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/grow"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXad4251dc",
+      "before": {
+        "meaningHint": "種植；使長滿；生長；變成"
+      },
+      "after": {
+        "meaningHint": "變得"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/grow"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXc74666de",
+      "before": {
+        "meaningHint": "種植；使長滿；生長；變成"
+      },
+      "after": {
+        "meaningHint": "種植"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/grow"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1429fb9a",
+      "before": {
+        "meaningHint": "工作；零活；職業；事情"
+      },
+      "after": {
+        "meaningHint": "職責；應做的工作"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/job"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX3c492456",
+      "before": {
+        "meaningHint": "工作；零活；職業；事情"
+      },
+      "after": {
+        "meaningHint": "工作；職位"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/job"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXc81fa15e",
+      "before": {
+        "meaningHint": "工作；零活；職業；事情"
+      },
+      "after": {
+        "meaningHint": "工作；職位"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/job"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX912ad5cd",
+      "before": {
+        "meaningHint": "是否；不論；兩個中的哪一個"
+      },
+      "after": {
+        "meaningHint": "是否（whether to V：是否要做……）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/whether"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX93e0c677",
+      "before": {
+        "meaningHint": "是否；不論；兩個中的哪一個"
+      },
+      "after": {
+        "meaningHint": "是否"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/whether"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXd44a9092",
+      "before": {
+        "meaningHint": "是否；不論；兩個中的哪一個"
+      },
+      "after": {
+        "meaningHint": "是……還是……（whether ... or ...）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/whether"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX854b43af",
+      "before": {
+        "meaningHint": "變成；變得；適合"
+      },
+      "after": {
+        "meaningHint": "變得"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/become"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX89d9d5b5",
+      "before": {
+        "meaningHint": "變成；變得；適合"
+      },
+      "after": {
+        "meaningHint": "成為"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/become"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX3b0e680d",
+      "before": {
+        "meaningHint": "增加；添加；附帶說明；計算...總和"
+      },
+      "after": {
+        "meaningHint": "增添（add to）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/add"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX84cd9b29",
+      "before": {
+        "meaningHint": "增加；添加；附帶說明；計算...總和"
+      },
+      "after": {
+        "meaningHint": "添加"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/add"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXe9265e6a",
+      "before": {
+        "meaningHint": "增加；添加；附帶說明；計算...總和"
+      },
+      "after": {
+        "meaningHint": "把……相加"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/add"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX9d76ca7f",
+      "before": {
+        "meaningHint": "辦公室；部；公職；職責"
+      },
+      "after": {
+        "meaningHint": "公職（take office：就職）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/office"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXa72768f2",
+      "before": {
+        "meaningHint": "辦公室；部；公職；職責"
+      },
+      "after": {
+        "meaningHint": "辦公室"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/office"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX7db864bc",
+      "before": {
+        "meaningHint": "還；尚；仍然；已經"
+      },
+      "after": {
+        "meaningHint": "尚；還（not ... yet：尚未……）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/yet"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXb4d37e58",
+      "before": {
+        "meaningHint": "還；尚；仍然；已經"
+      },
+      "after": {
+        "meaningHint": "但是；然而"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. missing_or_incompatible_context_sense",
+      "evidence": "https://www.merriam-webster.com/dictionary/yet"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX4aba39fe",
+      "before": {
+        "meaningHint": "發生；恰巧"
+      },
+      "after": {
+        "meaningHint": "發生（happen to：……發生了某事）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/happen"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX5c455ab5",
+      "before": {
+        "meaningHint": "發生；恰巧"
+      },
+      "after": {
+        "meaningHint": "碰巧（happen to V）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/happen"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXb2628abc",
+      "before": {
+        "meaningHint": "發生；恰巧"
+      },
+      "after": {
+        "meaningHint": "發生"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/happen"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXb0701854",
+      "before": {
+        "meaningHint": "軍官；主管；官員；公務員"
+      },
+      "after": {
+        "meaningHint": "警察（police officer）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. missing_or_incompatible_context_sense",
+      "evidence": "https://www.merriam-webster.com/dictionary/officer"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX11d20733",
+      "before": {
+        "meaningHint": "贏得；打勝；成功；獲勝"
+      },
+      "after": {
+        "meaningHint": "贏得（比賽）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/win"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX6eeeaa87",
+      "before": {
+        "meaningHint": "贏得；打勝；成功；獲勝"
+      },
+      "after": {
+        "meaningHint": "勝利（可數名詞）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. missing_or_incompatible_context_sense",
+      "evidence": "https://www.merriam-webster.com/dictionary/win"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX8fa1ecd8",
+      "before": {
+        "meaningHint": "贏得；打勝；成功；獲勝"
+      },
+      "after": {
+        "meaningHint": "獲勝"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/win"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX29d6f608",
+      "before": {
+        "meaningHint": "遺失；損失；丟失；使失去"
+      },
+      "after": {
+        "meaningHint": "失去（興趣）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/lose"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX68631ae8",
+      "before": {
+        "meaningHint": "遺失；損失；丟失；使失去"
+      },
+      "after": {
+        "meaningHint": "發脾氣（lose one's temper）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. missing_or_incompatible_context_sense",
+      "evidence": "https://www.merriam-webster.com/dictionary/lose"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX9e3b7b60",
+      "before": {
+        "meaningHint": "遺失；損失；丟失；使失去"
+      },
+      "after": {
+        "meaningHint": "弄丟；遺失"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/lose"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXbfc3a25b",
+      "before": {
+        "meaningHint": "遺失；損失；丟失；使失去"
+      },
+      "after": {
+        "meaningHint": "輸掉（比賽）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. missing_or_incompatible_context_sense",
+      "evidence": "https://www.merriam-webster.com/dictionary/lose"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX9fff4d23",
+      "before": {
+        "meaningHint": "片刻；瞬間；重要；階段"
+      },
+      "after": {
+        "meaningHint": "片刻（in a moment：過一會兒）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/moment"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXfe56ab5b",
+      "before": {
+        "meaningHint": "片刻；瞬間；重要；階段"
+      },
+      "after": {
+        "meaningHint": "此刻（at the moment）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/moment"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX4f7d9bcf",
+      "before": {
+        "meaningHint": "公眾；民眾；公眾的；公共的"
+      },
+      "after": {
+        "meaningHint": "公開場合（in public）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/public"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX842b5aae",
+      "before": {
+        "meaningHint": "公眾；民眾；公眾的；公共的"
+      },
+      "after": {
+        "meaningHint": "大眾；公眾"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/public"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXa023dcab",
+      "before": {
+        "meaningHint": "公眾；民眾；公眾的；公共的"
+      },
+      "after": {
+        "meaningHint": "公共的"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/public"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXbee22c0a",
+      "before": {
+        "meaningHint": "公眾；民眾；公眾的；公共的"
+      },
+      "after": {
+        "meaningHint": "大眾的（public opinion：民意）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/public"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXc13f3aff",
+      "before": {
+        "meaningHint": "公眾；民眾；公眾的；公共的"
+      },
+      "after": {
+        "meaningHint": "公眾的（public image：公眾形象）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/public"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX0f307754",
+      "before": {
+        "meaningHint": "年齡；老年；成年；壽命"
+      },
+      "after": {
+        "meaningHint": "很長一段時間（ages）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. missing_or_incompatible_context_sense",
+      "evidence": "https://www.merriam-webster.com/dictionary/age"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1ab2cc83",
+      "before": {
+        "meaningHint": "年齡；老年；成年；壽命"
+      },
+      "after": {
+        "meaningHint": "時代（the Middle Ages：中世紀）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. missing_or_incompatible_context_sense",
+      "evidence": "https://www.merriam-webster.com/dictionary/age"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX2c3948d9",
+      "before": {
+        "meaningHint": "年齡；老年；成年；壽命"
+      },
+      "after": {
+        "meaningHint": "變老"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. missing_or_incompatible_context_sense",
+      "evidence": "https://www.merriam-webster.com/dictionary/age"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX40a17cb9",
+      "before": {
+        "meaningHint": "年齡；老年；成年；壽命"
+      },
+      "after": {
+        "meaningHint": "年齡"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/age"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXa2eac2f4",
+      "before": {
+        "meaningHint": "年齡；老年；成年；壽命"
+      },
+      "after": {
+        "meaningHint": "時代"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. missing_or_incompatible_context_sense",
+      "evidence": "https://www.merriam-webster.com/dictionary/age"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX0af7edc7",
+      "before": {
+        "meaningHint": "空氣；旋律；態度；晾"
+      },
+      "after": {
+        "meaningHint": "廣播；播出（on the air）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. missing_or_incompatible_context_sense",
+      "evidence": "https://www.merriam-webster.com/dictionary/air"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX2e91e9b8",
+      "before": {
+        "meaningHint": "空氣；旋律；態度；晾"
+      },
+      "after": {
+        "meaningHint": "懸而未決（up in the air）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. missing_or_incompatible_context_sense",
+      "evidence": "https://www.merriam-webster.com/dictionary/up%20in%20the%20air"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXefdf4a7c",
+      "before": {
+        "meaningHint": "空氣；旋律；態度；晾"
+      },
+      "after": {
+        "meaningHint": "空氣"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/air"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXefec056a",
+      "before": {
+        "meaningHint": "空氣；旋律；態度；晾"
+      },
+      "after": {
+        "meaningHint": "氣氛（in the air：瀰漫著）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/air"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX0d9c8fd4",
+      "before": {
+        "meaningHint": "遠的；久遠的；遙遠的；甚遠地"
+      },
+      "after": {
+        "meaningHint": "就……所及（as far as I can remember：就我所記得的）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. missing_or_incompatible_context_sense",
+      "evidence": "https://www.merriam-webster.com/dictionary/far"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1f033d08",
+      "before": {
+        "meaningHint": "遠的；久遠的；遙遠的；甚遠地"
+      },
+      "after": {
+        "meaningHint": "……得多（far + 比較級）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. missing_or_incompatible_context_sense",
+      "evidence": "https://www.merriam-webster.com/dictionary/far"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX31dbed9d",
+      "before": {
+        "meaningHint": "遠的；久遠的；遙遠的；甚遠地"
+      },
+      "after": {
+        "meaningHint": "遠遠偏離（far from the truth：與事實相差甚遠）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/far"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX51fc9922",
+      "before": {
+        "meaningHint": "遠的；久遠的；遙遠的；甚遠地"
+      },
+      "after": {
+        "meaningHint": "遠；到遠處"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/far"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXd17463c4",
+      "before": {
+        "meaningHint": "遠的；久遠的；遙遠的；甚遠地"
+      },
+      "after": {
+        "meaningHint": "距離遠（too far：太遠）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/far"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX29b00769",
+      "before": {
+        "meaningHint": "近的；近親的；近似的；接近"
+      },
+      "after": {
+        "meaningHint": "接近"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/near"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX3ef1ac3c",
+      "before": {
+        "meaningHint": "近的；近親的；近似的；接近"
+      },
+      "after": {
+        "meaningHint": "距離近"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/near"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX8b973225",
+      "before": {
+        "meaningHint": "近的；近親的；近似的；接近"
+      },
+      "after": {
+        "meaningHint": "在……附近"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/near"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX9f1ad874",
+      "before": {
+        "meaningHint": "近的；近親的；近似的；接近"
+      },
+      "after": {
+        "meaningHint": "臨近；快到了（draw near）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/near"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXc1968e54",
+      "before": {
+        "meaningHint": "近的；近親的；近似的；接近"
+      },
+      "after": {
+        "meaningHint": "靠近……；在……附近"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/near"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX0ded3f8d",
+      "before": {
+        "meaningHint": "中心；中心點；中鋒；中央的"
+      },
+      "after": {
+        "meaningHint": "中心（某項活動集中的地方）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/center"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXf97760b6",
+      "before": {
+        "meaningHint": "中心；中心點；中鋒；中央的"
+      },
+      "after": {
+        "meaningHint": "中心（shopping center：購物中心）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/center"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX3ed61cb1",
+      "before": {
+        "meaningHint": "死亡；消逝；平息；熄滅"
+      },
+      "after": {
+        "meaningHint": "死亡（die of：死於……）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/die"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX50693488",
+      "before": {
+        "meaningHint": "死亡；消逝；平息；熄滅"
+      },
+      "after": {
+        "meaningHint": "死亡（die from：因……而死）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/die"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX336b5411",
+      "before": {
+        "meaningHint": "結束；完結；靠近的；親近的"
+      },
+      "after": {
+        "meaningHint": "結束；終結"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/close"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX361c9dec",
+      "before": {
+        "meaningHint": "結束；完結；靠近的；親近的"
+      },
+      "after": {
+        "meaningHint": "親近的"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/close"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX4cc44eae",
+      "before": {
+        "meaningHint": "結束；完結；靠近的；親近的"
+      },
+      "after": {
+        "meaningHint": "關閉"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. missing_or_incompatible_context_sense",
+      "evidence": "https://www.merriam-webster.com/dictionary/close"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXf09276e3",
+      "before": {
+        "meaningHint": "結束；完結；靠近的；親近的"
+      },
+      "after": {
+        "meaningHint": "關閉；結束營業"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/close"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXf3047307",
+      "before": {
+        "meaningHint": "結束；完結；靠近的；親近的"
+      },
+      "after": {
+        "meaningHint": "靠近的（close to：鄰近……）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/close"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXf63059bf",
+      "before": {
+        "meaningHint": "結束；完結；靠近的；親近的"
+      },
+      "after": {
+        "meaningHint": "結束（close with：以……作結）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/close"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXffa00af8",
+      "before": {
+        "meaningHint": "結束；完結；靠近的；親近的"
+      },
+      "after": {
+        "meaningHint": "差一點（come close to V-ing）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/close ; https://www.oxfordlearnersdictionaries.com/us/definition/american_english/close2_1"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX243832dc",
+      "before": {
+        "meaningHint": "死的；不活潑的；麻木的；熄滅的"
+      },
+      "after": {
+        "meaningHint": "已死亡的"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/dead"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXffd8a86e",
+      "before": {
+        "meaningHint": "死的；不活潑的；麻木的；熄滅的"
+      },
+      "after": {
+        "meaningHint": "無法運作的；沒電的"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. missing_or_incompatible_context_sense",
+      "evidence": "https://www.merriam-webster.com/dictionary/dead"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX19c2b8ae",
+      "before": {
+        "meaningHint": "學習；認識到；得知"
+      },
+      "after": {
+        "meaningHint": "學習（learn from：向……學習）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/learn"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX4325d27e",
+      "before": {
+        "meaningHint": "學習；認識到；得知"
+      },
+      "after": {
+        "meaningHint": "得知（learn of）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/learn"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX5144ce71",
+      "before": {
+        "meaningHint": "學習；認識到；得知"
+      },
+      "after": {
+        "meaningHint": "學到（learn one's lesson：記取教訓）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/learn"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX409122fe",
+      "before": {
+        "meaningHint": "班級；階級；種類；課"
+      },
+      "after": {
+        "meaningHint": "歸類（be classed as：被歸類為……）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. missing_or_incompatible_context_sense",
+      "evidence": "https://www.merriam-webster.com/dictionary/class"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX58e89c84",
+      "before": {
+        "meaningHint": "班級；階級；種類；課"
+      },
+      "after": {
+        "meaningHint": "艙等（first class：頭等艙）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. missing_or_incompatible_context_sense",
+      "evidence": "https://www.merriam-webster.com/dictionary/class"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX60b45326",
+      "before": {
+        "meaningHint": "班級；階級；種類；課"
+      },
+      "after": {
+        "meaningHint": "班級"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/class"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX6faa6723",
+      "before": {
+        "meaningHint": "班級；階級；種類；課"
+      },
+      "after": {
+        "meaningHint": "課；課程"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/class"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXb409fe60",
+      "before": {
+        "meaningHint": "班級；階級；種類；課"
+      },
+      "after": {
+        "meaningHint": "課（skip class：蹺課）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/class"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX9a7d7e26",
+      "before": {
+        "meaningHint": "歷史；過去；經歷；發展過程"
+      },
+      "after": {
+        "meaningHint": "歷史（學科）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/history"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXe729c3aa",
+      "before": {
+        "meaningHint": "歷史；過去；經歷；發展過程"
+      },
+      "after": {
+        "meaningHint": "歷史（make history：創造歷史）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/history"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1e49c907",
+      "before": {
+        "meaningHint": "越過；穿過；在對面"
+      },
+      "after": {
+        "meaningHint": "橫越；穿過"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/across"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX35fe3c7f",
+      "before": {
+        "meaningHint": "越過；穿過；在對面"
+      },
+      "after": {
+        "meaningHint": "在對面（across from）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/across ; https://www.oxfordlearnersdictionaries.com/definition/english/across_2"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXe65bbcd5",
+      "before": {
+        "meaningHint": "越過；穿過；在對面"
+      },
+      "after": {
+        "meaningHint": "到另一邊（swim across：游泳橫渡）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/across"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX843f8824",
+      "before": {
+        "meaningHint": "真的；真實的；實際的；實在的"
+      },
+      "after": {
+        "meaningHint": "真正的"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/real"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXb3cefca1",
+      "before": {
+        "meaningHint": "真的；真實的；實際的；實在的"
+      },
+      "after": {
+        "meaningHint": "真的（for real）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/real"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXee55bf57",
+      "before": {
+        "meaningHint": "真的；真實的；實際的；實在的"
+      },
+      "after": {
+        "meaningHint": "真實存在的"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/real"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX7bab74e2",
+      "before": {
+        "meaningHint": "十字架；十字架形物件；交叉；十字標"
+      },
+      "after": {
+        "meaningHint": "十字架"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/cross"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX9348fdf7",
+      "before": {
+        "meaningHint": "十字架；十字架形物件；交叉；十字標"
+      },
+      "after": {
+        "meaningHint": "十字形"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/cross"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX956197d5",
+      "before": {
+        "meaningHint": "十字架；十字架形物件；交叉；十字標"
+      },
+      "after": {
+        "meaningHint": "叉號（×）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/cross"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXa14bb1b2",
+      "before": {
+        "meaningHint": "十字架；十字架形物件；交叉；十字標"
+      },
+      "after": {
+        "meaningHint": "交會；交叉"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. narrow_mixed_or_overbroad_hint",
+      "evidence": "https://www.merriam-webster.com/dictionary/cross"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXba68e63c",
+      "before": {
+        "meaningHint": "十字架；十字架形物件；交叉；十字標"
+      },
+      "after": {
+        "meaningHint": "穿越"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "Match the hint to the actual unchanged cloze target in this particular sentence. missing_or_incompatible_context_sense",
+      "evidence": "https://www.merriam-webster.com/dictionary/cross"
+    }
+  ]
+}

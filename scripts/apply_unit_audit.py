@@ -17,6 +17,9 @@ from build_sa_pack import build_sa_pack
 ROOT = Path(__file__).resolve().parent.parent
 IDENTITY_KEYS = {"examples": "exampleId", "senses": "senseId", "words": "wordId"}
 EDITABLE_FIELDS = {"sensePos", "meaningHint", "status", "meaningZh", "meaningEn", "note", "senseId", "usagePattern", "usagePatternZh", "examEvidence"}
+FORM_IDS = set('W000044 W000086 W000102 W000107 W000130 W000133 W000175 W000205 W000209 W000248 W000287 W000311 W000322 W000353 W000374 W000383 W000453 W000460 W000473 W000502 W000517 W000518 W000610 W000646 W000704 W000750 W000764 W000794 W000828 W000842 W000947'.split())
+TRANSLATION_IDS = {'EX50693488', 'EXddc4d110', 'EX66703666', 'EX1f033d08', 'EX51e703b4'}
+ABSENT = {"$absent": True}
 
 def validate_patch_shape(patch):
     """Reject incomplete evidence before the idempotent check or any write."""
@@ -25,11 +28,42 @@ def validate_patch_shape(patch):
     assert patch.get("reason") and patch.get("evidence")
     assert isinstance(patch.get("before"), dict) and isinstance(patch.get("after"), dict)
     assert patch["after"], "Empty correction"
-    assert set(patch["after"]) <= EDITABLE_FIELDS, "Unlisted editable field"
+    assert set(patch["after"]) <= EDITABLE_FIELDS | {'verbForms', 'sentenceZh'}, "Unlisted editable field"
     assert set(patch["after"]) <= set(patch["before"]), "Every after field needs an explicit before value"
     assert patch["key"] not in patch["after"], "Row identity cannot change"
     if "examEvidence" in patch["after"]:
         assert patch["dataset"] == "senses", "Exam-source evidence belongs to the sense row"
+    if 'verbForms' in patch['after']:
+        assert patch['dataset'] == 'words' and patch['id'] in FORM_IDS, 'Only the 31 verified existing verbs may acquire principal parts'
+        assert patch['before'] == {'verbForms': ABSENT} and set(patch['after']) == {'verbForms'}, 'Only an explicitly absent verbForms field may be added'
+        facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-VERB-FORMS-SOURCES.json')['facts']
+        assert len(facts) == 31 and {f['wordId'] for f in facts} == FORM_IDS
+        fact = next(f for f in facts if f['wordId'] == patch['id'])
+        assert patch['after']['verbForms'] == fact['verbForms'], 'Unverified principal parts or source'
+    if 'sentenceZh' in patch['after']:
+        assert patch['dataset'] == 'examples' and patch['id'] in TRANSLATION_IDS, 'Only five verified Chinese translations are editable'
+        assert set(patch['before']) == {'sentenceEn', 'sentenceZh'} and set(patch['after']) == {'sentenceZh'}, 'Exact unchanged English guard required'
+        facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-TRANSLATION-SOURCES.json')['facts']
+        assert len(facts) == 5 and {f['exampleId'] for f in facts} == TRANSLATION_IDS
+        fact = next(f for f in facts if f['exampleId'] == patch['id'])
+        assert patch['before'] == {'sentenceEn': fact['sentenceEn'], 'sentenceZh': fact['before']} and patch['after'] == {'sentenceZh': fact['after']}, 'Unverified translation or English guard'
+
+def apply_to_row(row, patch):
+    """Validate guards even for idempotent rows; missing optional keys stay distinct from null."""
+    if 'verbForms' in patch['after']:
+        assert row['word'] == patch['after']['verbForms']['base'] and 'v.' in row['pos'], 'Forms belong only to this existing verb'
+    for key, value in patch['before'].items():
+        if key not in patch['after']:
+            assert key in row and row[key] == value, 'Immutable source guard changed'
+    if all(key in row and row[key] == value for key, value in patch['after'].items()):
+        return False
+    for key, value in patch['before'].items():
+        if key == 'verbForms' and value == ABSENT:
+            assert key not in row, 'Expected a genuinely missing optional field, not null or existing data'
+        else:
+            assert key in row and row[key] == value, 'Recorded old field/value differs'
+    row.update(copy.deepcopy(patch['after']))
+    return True
 
 def read(path):
     return json.loads(path.read_text(encoding="utf-8"))
@@ -66,20 +100,19 @@ def main():
         assert len(matches) == 1, patch["id"]
         row = matches[0]
         before = copy.deepcopy(row)
-        fields = patch["after"]
-        assert set(patch["before"]) <= set(row), "Recorded old field absent from row"
-        if all(row.get(k) == v for k, v in fields.items()):
+        if not apply_to_row(row, patch):
             continue
-        assert all(row.get(k) == v for k, v in patch["before"].items()), (patch["id"], row)
-        row.update(fields)
         if name == "examples":
-            for key in ("exampleId", "word", "sentenceEn", "sentenceZh", "blankSentence", "answer"):
+            immutable = ("exampleId", "word", "sentenceEn", "blankSentence", "answer")
+            if 'sentenceZh' not in patch['after']:
+                immutable += ('sentenceZh',)
+            for key in immutable:
                 assert row.get(key) == before.get(key), (patch["id"], key)
         changes.append({"dataset": name, "id": patch["id"], "before": before, "after": row.copy(),
                         "reason": patch["reason"], "evidence": patch["evidence"]})
     receipt = {"manifest": str(args.manifest), "baseCommit": manifest["baseCommit"],
                "checkedAt": datetime.now(timezone.utc).isoformat(), "changeCount": len(changes), "changes": changes,
-               "masterTouched": False, "sentencesChanged": False, "imagesChanged": False,
+               "masterTouched": False, "sentencesChanged": any('sentenceZh' in p['after'] for p in manifest['patches']), "englishSentencesChanged": False, "imagesChanged": False,
                "sourceHashesBefore": {f: sha(data_dir/f) for f in ("words.json","senses.json","examples.json","meta.json","sa-pack.json")}}
     if args.apply and changes:
         out = ROOT / "output/unit-audit-20261105/receipts"
@@ -107,7 +140,7 @@ def main():
             row = next(r for r in rows if r[patch["key"]] == patch["id"])
             assert all(row.get(k) == v for k,v in patch["after"].items())
     print(json.dumps({"mode": "apply" if args.apply else "dry_run", "changedRows": len(changes),
-                      "datasets": list(datasets), "masterTouched": False, "sentencesChanged": False}))
+                      "datasets": list(datasets), "masterTouched": False, "sentencesChanged": receipt['sentencesChanged'], "englishSentencesChanged": False}))
 
 if __name__ == "__main__":
     main()

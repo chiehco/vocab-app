@@ -1,0 +1,657 @@
+{
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "scope": "Exactly 31 source-verified existing verbs. Missing-key sentinel restores true absence, not null. No headword POS, status, meaning, sense or example changes.",
+  "patches": [
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000044",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "arm",
+          "past": "armed",
+          "pastParticiple": "armed",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/arm",
+          "status": "approved"
+        }
+      },
+      "reason": "Fill only independently verified past and past-participle fields. Weapon/equipment verb, not body-part noun.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/arm ; The authoritative field explicitly lists past and past participle; not inferred from a spelling rule."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000086",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "belt",
+          "past": "belted",
+          "pastParticiple": "belted",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/belt",
+          "status": "approved"
+        }
+      },
+      "reason": "Fill only independently verified past and past-participle fields. Only the existing verb; not belt noun meanings.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/belt ; The authoritative field explicitly lists past and past participle; not inferred from a spelling rule."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000102",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "book",
+          "past": "booked",
+          "pastParticiple": "booked",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/book",
+          "status": "approved"
+        }
+      },
+      "reason": "Fill only independently verified past and past-participle fields. Booking verb, not books as plural noun.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/book ; The authoritative field explicitly lists past and past participle; not inferred from a spelling rule."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000107",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "boss",
+          "past": "bossed",
+          "pastParticiple": "bossed",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/boss",
+          "status": "approved"
+        }
+      },
+      "reason": "Fill only independently verified past and past-participle fields. Boss/boss around verb; preserve boss noun meanings.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/boss ; The authoritative field explicitly lists past and past participle; not inferred from a spelling rule."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000130",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "butter",
+          "past": "buttered",
+          "pastParticiple": "buttered",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/butter",
+          "status": "approved"
+        }
+      },
+      "reason": "Fill only independently verified past and past-participle fields. Spreading-butter verb; the separate head-butting homograph does not acquire verb certification.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/butter ; The authoritative field explicitly lists past and past participle; not inferred from a spelling rule."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000133",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "buy",
+          "past": "bought",
+          "pastParticiple": "bought",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/buy",
+          "status": "approved"
+        }
+      },
+      "reason": "Fill only independently verified past and past-participle fields. Verify verb forms only; preserve existing headword POS, status, noun meanings, examples and unrelated fields.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/buy ; The authoritative field explicitly lists past and past participle; not inferred from a spelling rule."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000175",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "close",
+          "past": "closed",
+          "pastParticiple": "closed",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/close",
+          "status": "approved"
+        }
+      },
+      "reason": "Fill only independently verified past and past-participle fields. Shutting/completing verb, not adjective/adverb comparative forms.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/close ; The authoritative field explicitly lists past and past participle; not inferred from a spelling rule."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000205",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "cry",
+          "past": "cried",
+          "pastParticiple": "cried",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/cry",
+          "status": "approved"
+        }
+      },
+      "reason": "Fill only independently verified past and past-participle fields. Verify verb forms only; preserve existing headword POS, status, noun meanings, examples and unrelated fields.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/cry ; The authoritative field explicitly lists past and past participle; not inferred from a spelling rule."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000209",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "dance",
+          "past": "danced",
+          "pastParticiple": "danced",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/dance",
+          "status": "approved"
+        }
+      },
+      "reason": "Fill only independently verified past and past-participle fields. Verify verb forms only; preserve existing headword POS, status, noun meanings, examples and unrelated fields.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/dance ; The authoritative field explicitly lists past and past participle; not inferred from a spelling rule."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000248",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "duck",
+          "past": "ducked",
+          "pastParticiple": "ducked",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/duck",
+          "status": "approved"
+        }
+      },
+      "reason": "Fill only independently verified past and past-participle fields. Duck/lower/avoid verb, not the bird noun.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/duck ; The authoritative field explicitly lists past and past participle; not inferred from a spelling rule."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000287",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "face",
+          "past": "faced",
+          "pastParticiple": "faced",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/face",
+          "status": "approved"
+        }
+      },
+      "reason": "Fill only independently verified past and past-participle fields. Verify verb forms only; preserve existing headword POS, status, noun meanings, examples and unrelated fields.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/face ; The authoritative field explicitly lists past and past participle; not inferred from a spelling rule."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000311",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "finger",
+          "past": "fingered",
+          "pastParticiple": "fingered",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/finger",
+          "status": "approved"
+        }
+      },
+      "reason": "Fill only independently verified past and past-participle fields. Touch/finger verb; not fingers as a noun plural.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/finger ; The authoritative field explicitly lists past and past participle; not inferred from a spelling rule."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000322",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "foot",
+          "past": "footed",
+          "pastParticiple": "footed",
+          "sourceRef": "https://www.collinsdictionary.com/conjugation/english/foot",
+          "status": "approved"
+        }
+      },
+      "reason": "Fill only independently verified past and past-participle fields. General conjugation table directly lists both past and past participle; feet is a noun plural. No verb meaning added by this form-only check.",
+      "evidence": "https://www.collinsdictionary.com/conjugation/english/foot ; The authoritative field explicitly lists past and past participle; not inferred from a spelling rule."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000353",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "go",
+          "past": "went",
+          "pastParticiple": "gone",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/go",
+          "status": "approved"
+        }
+      },
+      "reason": "Fill only independently verified past and past-participle fields. Standard go–went–gone. Been has restricted returned-visit/experience uses and does not replace standard gone.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/go ; The authoritative field explicitly lists past and past participle; not inferred from a spelling rule."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000374",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "hand",
+          "past": "handed",
+          "pastParticiple": "handed",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/hand",
+          "status": "approved"
+        }
+      },
+      "reason": "Fill only independently verified past and past-participle fields. Hand over/give verb; not hands noun plural.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/hand ; The authoritative field explicitly lists past and past participle; not inferred from a spelling rule."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000383",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "head",
+          "past": "headed",
+          "pastParticiple": "headed",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/head",
+          "status": "approved"
+        }
+      },
+      "reason": "Fill only independently verified past and past-participle fields. Head toward/lead verb; no change to head noun.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/head ; The authoritative field explicitly lists past and past participle; not inferred from a spelling rule."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000453",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "kid",
+          "past": "kidded",
+          "pastParticiple": "kidded",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/kid",
+          "status": "approved"
+        }
+      },
+      "reason": "Fill only independently verified past and past-participle fields. Joking/teasing verb; kidded, not kid noun plural.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/kid ; The authoritative field explicitly lists past and past participle; not inferred from a spelling rule."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000460",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "knee",
+          "past": "kneed",
+          "pastParticiple": "kneed",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/knee",
+          "status": "approved"
+        }
+      },
+      "reason": "Fill only independently verified past and past-participle fields. Strike with the knee: knee–kneed–kneed. Do not substitute forms of the distinct verb kneel.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/knee ; The authoritative field explicitly lists past and past participle; not inferred from a spelling rule."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000473",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "laugh",
+          "past": "laughed",
+          "pastParticiple": "laughed",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/laugh",
+          "status": "approved"
+        }
+      },
+      "reason": "Fill only independently verified past and past-participle fields. Verify verb forms only; preserve existing headword POS, status, noun meanings, examples and unrelated fields.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/laugh ; The authoritative field explicitly lists past and past participle; not inferred from a spelling rule."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000502",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "long",
+          "past": "longed",
+          "pastParticiple": "longed",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/long",
+          "status": "approved"
+        }
+      },
+      "reason": "Fill only independently verified past and past-participle fields. Long for/long to desire verb; not longer/longest adjective forms.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/long ; The authoritative field explicitly lists past and past participle; not inferred from a spelling rule."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000517",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "make",
+          "past": "made",
+          "pastParticiple": "made",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/make",
+          "status": "approved"
+        }
+      },
+      "reason": "Fill only independently verified past and past-participle fields. Verify verb forms only; preserve existing headword POS, status, noun meanings, examples and unrelated fields.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/make ; The authoritative field explicitly lists past and past participle; not inferred from a spelling rule."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000518",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "man",
+          "past": "manned",
+          "pastParticiple": "manned",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/man",
+          "status": "approved"
+        }
+      },
+      "reason": "Fill only independently verified past and past-participle fields. Provide personnel verb; men is not a verb past tense.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/man ; The authoritative field explicitly lists past and past participle; not inferred from a spelling rule."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000610",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "open",
+          "past": "opened",
+          "pastParticiple": "opened",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/open",
+          "status": "approved"
+        }
+      },
+      "reason": "Fill only independently verified past and past-participle fields. Opening verb; the adjective open is not a past participle.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/open ; The authoritative field explicitly lists past and past participle; not inferred from a spelling rule."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000646",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "pig",
+          "past": "pigged",
+          "pastParticiple": "pigged",
+          "sourceRef": "https://www.collinsdictionary.com/conjugation/english/pig",
+          "status": "approved"
+        }
+      },
+      "reason": "Fill only independently verified past and past-participle fields. General conjugation table lists both forms; no inference solely from consonant doubling.",
+      "evidence": "https://www.collinsdictionary.com/conjugation/english/pig ; The authoritative field explicitly lists past and past participle; not inferred from a spelling rule."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000704",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "reason",
+          "past": "reasoned",
+          "pastParticiple": "reasoned",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/reason",
+          "status": "approved"
+        }
+      },
+      "reason": "Fill only independently verified past and past-participle fields. Reasoning verb; noun cause definitions are not automatically approved.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/reason ; The authoritative field explicitly lists past and past participle; not inferred from a spelling rule."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000750",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "sell",
+          "past": "sold",
+          "pastParticiple": "sold",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/sell",
+          "status": "approved"
+        }
+      },
+      "reason": "Fill only independently verified past and past-participle fields. Verify verb forms only; preserve existing headword POS, status, noun meanings, examples and unrelated fields.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/sell ; The authoritative field explicitly lists past and past participle; not inferred from a spelling rule."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000764",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "ship",
+          "past": "shipped",
+          "pastParticiple": "shipped",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/ship",
+          "status": "approved"
+        }
+      },
+      "reason": "Fill only independently verified past and past-participle fields. Verify verb forms only; preserve existing headword POS, status, noun meanings, examples and unrelated fields.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/ship ; The authoritative field explicitly lists past and past participle; not inferred from a spelling rule."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000794",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "smile",
+          "past": "smiled",
+          "pastParticiple": "smiled",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/smile",
+          "status": "approved"
+        }
+      },
+      "reason": "Fill only independently verified past and past-participle fields. Verify verb forms only; preserve existing headword POS, status, noun meanings, examples and unrelated fields.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/smile ; The authoritative field explicitly lists past and past participle; not inferred from a spelling rule."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000828",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "stop",
+          "past": "stopped",
+          "pastParticiple": "stopped",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/stop",
+          "status": "approved"
+        }
+      },
+      "reason": "Fill only independently verified past and past-participle fields. Verify verb forms only; preserve existing headword POS, status, noun meanings, examples and unrelated fields.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/stop ; The authoritative field explicitly lists past and past participle; not inferred from a spelling rule."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000842",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "sun",
+          "past": "sunned",
+          "pastParticiple": "sunned",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/sun",
+          "status": "approved"
+        }
+      },
+      "reason": "Fill only independently verified past and past-participle fields. Expose to sun/sun oneself; not forms of shine.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/sun ; The authoritative field explicitly lists past and past participle; not inferred from a spelling rule."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000947",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "want",
+          "past": "wanted",
+          "pastParticiple": "wanted",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/want",
+          "status": "approved"
+        }
+      },
+      "reason": "Fill only independently verified past and past-participle fields. Verify verb forms only; preserve existing headword POS, status, noun meanings, examples and unrelated fields.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/want ; The authoritative field explicitly lists past and past participle; not inferred from a spelling rule."
+    }
+  ]
+}
