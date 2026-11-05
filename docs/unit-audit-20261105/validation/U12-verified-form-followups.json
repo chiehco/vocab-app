@@ -1,0 +1,1425 @@
+{
+  "batch": "U12",
+  "base": "30b60ffac8efd710ea344e5a2cd98ecf3875670f",
+  "originalAuditBase": "d26603868f60e60069d29ea00613d2e86f94d7bd",
+  "branch": "content/lv1-verified-followups-20261105",
+  "checkedAt": "2026-11-05T14:51:32.305Z",
+  "scope": "28 absent verbForms additions only; form-panel verification is separate from unresolved image/example completeness checks",
+  "diff": {
+    "base": "30b60ffac8efd710ea344e5a2cd98ecf3875670f",
+    "batch": "U12",
+    "modifiedFields": 28,
+    "fullWordCount": 6090,
+    "starterCount": 5779,
+    "starterUpdated": 24,
+    "starterOmitted": [
+      "W000389",
+      "W000212",
+      "W000651",
+      "W000694"
+    ],
+    "unchangedOtherWordFields": true,
+    "unchangedOtherDatasets": [
+      "senses",
+      "examples",
+      "relations",
+      "morphemes",
+      "notes",
+      "exam_priority",
+      "hooks",
+      "media"
+    ],
+    "original31SourcesUnchanged": true,
+    "priorFollowupFactsUnchanged": 206,
+    "unchangedStarterIdentities": true,
+    "metadataHashesValid": true,
+    "unchangedAll7TranslationSources": true
+  },
+  "unitCounts": [
+    {
+      "unit": "U12",
+      "modified": 28,
+      "reopened": 28,
+      "imagesLoaded": 19,
+      "placeholderViews": 9,
+      "olderSceneDifferences": 1,
+      "usageOpened": 28,
+      "publishedExamplesMatched": 54,
+      "zeroPublicExampleCards": 4
+    }
+  ],
+  "localChecks": {
+    "python": {
+      "tests": 13,
+      "status": "passed",
+      "coversAll234FollowupFacts": true
+    },
+    "vitest": {
+      "files": 4,
+      "tests": 25,
+      "maxWorkers": 1,
+      "defaultTimeoutMs": 5000,
+      "status": "passed"
+    },
+    "typecheck": "passed",
+    "lint": "passed",
+    "build": "passed",
+    "publicationScan": {
+      "status": "passed",
+      "filesScanned": 334,
+      "findings": []
+    },
+    "fullLocalSuite": "not_run",
+    "ci": "pending_first_push"
+  },
+  "browser": {
+    "origin": "http://127.0.0.1:5187",
+    "profile": "same isolated persistent profile outside watched repository",
+    "normalSettingsUpdate": {
+      "status": "updated",
+      "diagnosticImport": false,
+      "databaseCleared": false,
+      "contentWords": 6090,
+      "newFieldsVerified": 28,
+      "protectedWords": 238,
+      "protectedExamples": 7,
+      "protectedHashesUnchanged": true,
+      "progressTables": 14,
+      "nonemptyProgressTables": 1,
+      "allProgressAndSettingsHashesUnchangedBeforeNavigation": true,
+      "screenshot": "output/playwright/verified-followups/u12-normal-dictionary-update.png"
+    },
+    "cards": [
+      {
+        "wordId": "W000035",
+        "word": "answer",
+        "forms": [
+          "answer",
+          "answered",
+          "answered"
+        ],
+        "meaningForms": [
+          "answer",
+          "answered",
+          "answered"
+        ],
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U12-03-94fdf7684a59.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "imageCheckStatus": "existing_image_decoded_caption_checked",
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000035-card.png",
+        "cardScreenshotSha256": "abd8d7c5a9a9eacb093913888d7f0c6ec1ef76ec8cdedfd37a083029d3a0bebe",
+        "usageScreenshot": "output/playwright/verified-followups/W000035-usage.png",
+        "usageScreenshotSha256": "616e2ca38985eba3d58187ed8f79d844f46c3ce868b809b3191e18f2c4b8b64f"
+      },
+      {
+        "wordId": "W001726",
+        "word": "reply",
+        "forms": [
+          "reply",
+          "replied",
+          "replied"
+        ],
+        "meaningForms": [
+          "reply",
+          "replied",
+          "replied"
+        ],
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": null,
+        "imageCheckStatus": "placeholder_pending_audit_line_reopen",
+        "wholeCardApproved": false,
+        "visibleExampleCount": 0,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W001726-card.png",
+        "cardScreenshotSha256": "ac1b655abc0311d1b6c65e9236756a086edc10ad41d90e5923e35629677f5b4d",
+        "usageScreenshot": "output/playwright/verified-followups/W001726-usage.png",
+        "usageScreenshotSha256": "5ad961aa065fa36605e9b49d89cd6ee7d2ff9ee4e43a277e6540252c0138c9de"
+      },
+      {
+        "wordId": "W001729",
+        "word": "respond",
+        "forms": [
+          "respond",
+          "responded",
+          "responded"
+        ],
+        "meaningForms": [
+          "respond",
+          "responded",
+          "responded"
+        ],
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U12-10-8dd8657d7b94.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "imageCheckStatus": "existing_image_decoded_caption_checked",
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W001729-card.png",
+        "cardScreenshotSha256": "fba5389285fe685e92628a357c646a3164f83b83e85031948bb7eac026bde837",
+        "usageScreenshot": "output/playwright/verified-followups/W001729-usage.png",
+        "usageScreenshotSha256": "3c261640b8a3156a97551494c600c65a871122a3700a73f6b1be6a2c4e6890ec"
+      },
+      {
+        "wordId": "W000389",
+        "word": "heat",
+        "forms": [
+          "heat",
+          "heated",
+          "heated"
+        ],
+        "meaningForms": [
+          "heat",
+          "heated",
+          "heated"
+        ],
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": null,
+        "imageCheckStatus": "placeholder_pending_audit_line_reopen",
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000389-card.png",
+        "cardScreenshotSha256": "759786ddd601e11194abb801429cc556d8670fb7a63aa542142430e4d0e99df3",
+        "usageScreenshot": "output/playwright/verified-followups/W000389-usage.png",
+        "usageScreenshotSha256": "f6a6d2140a88a71749d87a59ff71bbdda5645bb3388353934bb7dc48b24b3329"
+      },
+      {
+        "wordId": "W000916",
+        "word": "train",
+        "forms": [
+          "train",
+          "trained",
+          "trained"
+        ],
+        "meaningForms": [
+          "train",
+          "trained",
+          "trained"
+        ],
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U12-19-821af99f3e9c.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "imageCheckStatus": "existing_image_decoded_caption_checked",
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000916-card.png",
+        "cardScreenshotSha256": "6320c5d87b8250a0b099b1b20f52d5bc7b940a0bc6624c0804724aa8a18ba850",
+        "usageScreenshot": "output/playwright/verified-followups/W000916-usage.png",
+        "usageScreenshotSha256": "581ea4dab122550ceb01f32c2c7e8ebf9cf1a518e244b9434da205862615a043"
+      },
+      {
+        "wordId": "W000683",
+        "word": "pull",
+        "forms": [
+          "pull",
+          "pulled",
+          "pulled"
+        ],
+        "meaningForms": [
+          "pull",
+          "pulled",
+          "pulled"
+        ],
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U12-26-8ff6c69e1203.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "imageCheckStatus": "existing_image_decoded_caption_checked",
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000683-card.png",
+        "cardScreenshotSha256": "922dca97aa2d433c346cfe5b5e5a392f5b15e4d9d06d0e2abde01b88634ac389",
+        "usageScreenshot": "output/playwright/verified-followups/W000683-usage.png",
+        "usageScreenshotSha256": "6f99869c94ac849313eeec7504572393d2fca35b78290f07747134fc7665a221"
+      },
+      {
+        "wordId": "W000296",
+        "word": "farm",
+        "forms": [
+          "farm",
+          "farmed",
+          "farmed"
+        ],
+        "meaningForms": [
+          "farm",
+          "farmed",
+          "farmed"
+        ],
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U12-28-b4edcade6524.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "imageCheckStatus": "existing_image_decoded_caption_checked",
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000296-card.png",
+        "cardScreenshotSha256": "5566ff3b0bbcf5e170ffbc68871ab828ddd92acf61417589375c9edc564c5fea",
+        "usageScreenshot": "output/playwright/verified-followups/W000296-usage.png",
+        "usageScreenshotSha256": "024f6b0dfe3897fa1526791544acaa3b213460d76035115ac108f4b170e8c0bd"
+      },
+      {
+        "wordId": "W000684",
+        "word": "push",
+        "forms": [
+          "push",
+          "pushed",
+          "pushed"
+        ],
+        "meaningForms": [
+          "push",
+          "pushed",
+          "pushed"
+        ],
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": null,
+        "imageCheckStatus": "placeholder_pending_audit_line_reopen",
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000684-card.png",
+        "cardScreenshotSha256": "a08bffed5fdbf674d2e326f2cb39e65854af33847e223cd804bf45fe738fee6d",
+        "usageScreenshot": "output/playwright/verified-followups/W000684-usage.png",
+        "usageScreenshotSha256": "751f95e7ecba6bb73534aa1b0a46da0112f4a5094e063ec33651c33e298f3be1"
+      },
+      {
+        "wordId": "W001528",
+        "word": "marry",
+        "forms": [
+          "marry",
+          "married",
+          "married"
+        ],
+        "meaningForms": [
+          "marry",
+          "married",
+          "married"
+        ],
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U12-32-c5e263183040.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "imageCheckStatus": "existing_image_decoded_caption_checked",
+        "wholeCardApproved": false,
+        "visibleExampleCount": 0,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W001528-card.png",
+        "cardScreenshotSha256": "5e6727e2b5a511f56d1fd5e639cc29486429ca71b5caf02dfe3a596ae65da4ff",
+        "usageScreenshot": "output/playwright/verified-followups/W001528-usage.png",
+        "usageScreenshotSha256": "2e37b1de1d5f4f41cc1f9927131b76c9f2d97a07b27671fcab621e89e0112e0b"
+      },
+      {
+        "wordId": "W000312",
+        "word": "finish",
+        "forms": [
+          "finish",
+          "finished",
+          "finished"
+        ],
+        "meaningForms": [
+          "finish",
+          "finished",
+          "finished"
+        ],
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": null,
+        "imageCheckStatus": "placeholder_pending_audit_line_reopen",
+        "wholeCardApproved": false,
+        "visibleExampleCount": 0,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000312-card.png",
+        "cardScreenshotSha256": "b77ca05c4825466e9b1dfaf5fa51f945372a2bf62ba746ca3213a73d6fb83de5",
+        "usageScreenshot": "output/playwright/verified-followups/W000312-usage.png",
+        "usageScreenshotSha256": "71f0ac551c984dda9334ed880dcb2f58ace83144856c7e04869ae433d815c526"
+      },
+      {
+        "wordId": "W002996",
+        "word": "widen",
+        "forms": [
+          "widen",
+          "widened",
+          "widened"
+        ],
+        "meaningForms": [
+          "widen",
+          "widened",
+          "widened"
+        ],
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U12-41-81b46a03590f.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "imageCheckStatus": "existing_image_decoded_caption_checked",
+        "wholeCardApproved": false,
+        "visibleExampleCount": 0,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W002996-card.png",
+        "cardScreenshotSha256": "19f8721fa5be93fe126ba6b7c6c6143e78d29d747136fadb58ba0d3bb15968e0",
+        "usageScreenshot": "output/playwright/verified-followups/W002996-usage.png",
+        "usageScreenshotSha256": "48476b4b06273a4b3df335c11dc2c11bd89500070b7f7034a3c31d02bbd70372"
+      },
+      {
+        "wordId": "W001566",
+        "word": "narrow",
+        "forms": [
+          "narrow",
+          "narrowed",
+          "narrowed"
+        ],
+        "meaningForms": [
+          "narrow",
+          "narrowed",
+          "narrowed"
+        ],
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U12-43-8e1e802909d0.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "imageCheckStatus": "existing_image_decoded_caption_checked",
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W001566-card.png",
+        "cardScreenshotSha256": "60558e64dbf5f0e47f076c5c4a36b8cb5a8c7a10c917e71d2b18cc808d79e707",
+        "usageScreenshot": "output/playwright/verified-followups/W001566-usage.png",
+        "usageScreenshotSha256": "b473120ab398471bc85d1048ada6f3da0aabaad980e138c214bd8693e48a0064"
+      },
+      {
+        "wordId": "W004689",
+        "word": "purchase",
+        "forms": [
+          "purchase",
+          "purchased",
+          "purchased"
+        ],
+        "meaningForms": [
+          "purchase",
+          "purchased",
+          "purchased"
+        ],
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U12-45-1e5f6b56cc2b.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "imageCheckStatus": "existing_image_decoded_caption_checked",
+        "wholeCardApproved": false,
+        "visibleExampleCount": 4,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W004689-card.png",
+        "cardScreenshotSha256": "e7cc810f6c810b3c78499fd3137d828210b5d385b56eac182fa534c5732457fe",
+        "usageScreenshot": "output/playwright/verified-followups/W004689-usage.png",
+        "usageScreenshotSha256": "bc321099eeb71b12388c2b379146d5b760cf061771846b05c0488d2b3ab681c0"
+      },
+      {
+        "wordId": "W001291",
+        "word": "ease",
+        "forms": [
+          "ease",
+          "eased",
+          "eased"
+        ],
+        "meaningForms": [
+          "ease",
+          "eased",
+          "eased"
+        ],
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U12-46-275c36b95242.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "imageCheckStatus": "existing_image_decoded_caption_checked",
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W001291-card.png",
+        "cardScreenshotSha256": "e8df875bed882a2412e61de9f09365dd4e6e54aa2e069231bc73115cc541a814",
+        "usageScreenshot": "output/playwright/verified-followups/W001291-usage.png",
+        "usageScreenshotSha256": "771ac81afdd25d7d1fa61337a7cf88513e3c78342d6114ff7869116b34d7e931"
+      },
+      {
+        "wordId": "W000216",
+        "word": "deal",
+        "forms": [
+          "deal",
+          "dealt",
+          "dealt"
+        ],
+        "meaningForms": [
+          "deal",
+          "dealt",
+          "dealt"
+        ],
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U12-51-afd22d43f593.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "imageCheckStatus": "existing_image_decoded_caption_checked",
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000216-card.png",
+        "cardScreenshotSha256": "eb6646e4e651a9167281ed9f441418ce7afa2cdce89ea539fdabe33458c07f74",
+        "usageScreenshot": "output/playwright/verified-followups/W000216-usage.png",
+        "usageScreenshotSha256": "de115d1a5e944bd127bc3d4725668f08b92a0f580fe669766e044e00dab0cdc6"
+      },
+      {
+        "wordId": "W000673",
+        "word": "practice",
+        "forms": [
+          "practice",
+          "practiced",
+          "practiced"
+        ],
+        "meaningForms": [
+          "practice",
+          "practiced",
+          "practiced"
+        ],
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": {
+          "src": "./wordbeast/a/W000673.webp?v=local",
+          "loaded": true,
+          "width": 1024,
+          "height": 1024
+        },
+        "imageCheckStatus": "loaded_older_scene_pending_audit_line_reopen",
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000673-card.png",
+        "cardScreenshotSha256": "5151527bfc94514c804247590ae66b59e43abb966d343a33a8cb9dacfca10cdd",
+        "usageScreenshot": "output/playwright/verified-followups/W000673-usage.png",
+        "usageScreenshotSha256": "6d3cfdf4471a1d78b073645a0573922d3cab5479d56c2c964fc36b2efac99e4f"
+      },
+      {
+        "wordId": "W000919",
+        "word": "trip",
+        "forms": [
+          "trip",
+          "tripped",
+          "tripped"
+        ],
+        "meaningForms": [
+          "trip",
+          "tripped",
+          "tripped"
+        ],
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": null,
+        "imageCheckStatus": "placeholder_pending_audit_line_reopen",
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000919-card.png",
+        "cardScreenshotSha256": "8136fae3276458e604004325946d7560365a50bfee323367626c1ff56fc1caf1",
+        "usageScreenshot": "output/playwright/verified-followups/W000919-usage.png",
+        "usageScreenshotSha256": "8b79d77a2c3692f0d3adca10e71d44f4fd1d9dc130803504084dce0b8f393579"
+      },
+      {
+        "wordId": "W000212",
+        "word": "date",
+        "forms": [
+          "date",
+          "dated",
+          "dated"
+        ],
+        "meaningForms": [
+          "date",
+          "dated",
+          "dated"
+        ],
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": null,
+        "imageCheckStatus": "placeholder_pending_audit_line_reopen",
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000212-card.png",
+        "cardScreenshotSha256": "dff432f995de46bfa205ea148337d2c369339785e05c59bdf2fb15717c454188",
+        "usageScreenshot": "output/playwright/verified-followups/W000212-usage.png",
+        "usageScreenshotSha256": "c73794d6aec5538df937e77b6e59c82f19f3e9a5f9d3eb359b0ddde2d0d25cf5"
+      },
+      {
+        "wordId": "W000662",
+        "word": "police",
+        "forms": [
+          "police",
+          "policed",
+          "policed"
+        ],
+        "meaningForms": [
+          "police",
+          "policed",
+          "policed"
+        ],
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": null,
+        "imageCheckStatus": "placeholder_pending_audit_line_reopen",
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000662-card.png",
+        "cardScreenshotSha256": "77f8cf9970b9faeb412db6da66907e308d41cebd054c81a28afbbb3f726fab12",
+        "usageScreenshot": "output/playwright/verified-followups/W000662-usage.png",
+        "usageScreenshotSha256": "02ac218cbeb61c05996cc76b594413d1d30b77448ef7e1c6ce51c66967429ed5"
+      },
+      {
+        "wordId": "W000405",
+        "word": "home",
+        "forms": [
+          "home",
+          "homed",
+          "homed"
+        ],
+        "meaningForms": [
+          "home",
+          "homed",
+          "homed"
+        ],
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U12-64-8f5fce08ea08.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "imageCheckStatus": "existing_image_decoded_caption_checked",
+        "wholeCardApproved": false,
+        "visibleExampleCount": 3,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000405-card.png",
+        "cardScreenshotSha256": "0c10cc33949bf0be2974d854881bfd8f71b4b2d6ef13398c8f88735371c555e6",
+        "usageScreenshot": "output/playwright/verified-followups/W000405-usage.png",
+        "usageScreenshotSha256": "47b6187106db72b39ab9b87d2960c7956f005000b81f2a7aae0c79a031353e5c"
+      },
+      {
+        "wordId": "W001919",
+        "word": "tour",
+        "forms": [
+          "tour",
+          "toured",
+          "toured"
+        ],
+        "meaningForms": [
+          "tour",
+          "toured",
+          "toured"
+        ],
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U12-65-84fb7c4545ee.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "imageCheckStatus": "existing_image_decoded_caption_checked",
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W001919-card.png",
+        "cardScreenshotSha256": "6583e3a4d5a0aab199986e86a2afdea7316adffd1f5ae56368cc563c6ae0a7cb",
+        "usageScreenshot": "output/playwright/verified-followups/W001919-usage.png",
+        "usageScreenshotSha256": "d62ab967600ff8575b64a9d320e44388a8ed0e92d5df09d03aa88191e6dd8616"
+      },
+      {
+        "wordId": "W001927",
+        "word": "travel",
+        "forms": [
+          "travel",
+          "traveled",
+          "traveled"
+        ],
+        "meaningForms": [
+          "travel",
+          "traveled",
+          "traveled"
+        ],
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U12-66-1ed428ad58ff.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "imageCheckStatus": "existing_image_decoded_caption_checked",
+        "wholeCardApproved": false,
+        "visibleExampleCount": 3,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W001927-card.png",
+        "cardScreenshotSha256": "9d42d1b13938a2466606e585458996162fe7cbba756483d5cbca7bb346f7cf8f",
+        "usageScreenshot": "output/playwright/verified-followups/W001927-usage.png",
+        "usageScreenshotSha256": "ea4b3f3376fd1475de6d1b7d04f2c3a8e5044633299aea005c0037ed23ec48e0"
+      },
+      {
+        "wordId": "W002461",
+        "word": "journey",
+        "forms": [
+          "journey",
+          "journeyed",
+          "journeyed"
+        ],
+        "meaningForms": [
+          "journey",
+          "journeyed",
+          "journeyed"
+        ],
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U12-67-d192030af015.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "imageCheckStatus": "existing_image_decoded_caption_checked",
+        "wholeCardApproved": false,
+        "visibleExampleCount": 3,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W002461-card.png",
+        "cardScreenshotSha256": "cbb4060d09d1e4b91b54009188077f7d12e074d3732cc40ffd2be39374a71867",
+        "usageScreenshot": "output/playwright/verified-followups/W002461-usage.png",
+        "usageScreenshotSha256": "97f8f11c76b71d04dcc90e947ef561ba5441e3d255276d29207fa6a2f3312791"
+      },
+      {
+        "wordId": "W004866",
+        "word": "stumble",
+        "forms": [
+          "stumble",
+          "stumbled",
+          "stumbled"
+        ],
+        "meaningForms": [
+          "stumble",
+          "stumbled",
+          "stumbled"
+        ],
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U12-68-b36f6ca2dd1d.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "imageCheckStatus": "existing_image_decoded_caption_checked",
+        "wholeCardApproved": false,
+        "visibleExampleCount": 3,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W004866-card.png",
+        "cardScreenshotSha256": "6c4a172b726ddd471d71100f5536ede83ac792f6c08c3696cb10661b134402de",
+        "usageScreenshot": "output/playwright/verified-followups/W004866-usage.png",
+        "usageScreenshotSha256": "9ebb43c9b3dca6f929825357e5ea8996db3d7c4844fa41c3705bb85922d44d42"
+      },
+      {
+        "wordId": "W000852",
+        "word": "talk",
+        "forms": [
+          "talk",
+          "talked",
+          "talked"
+        ],
+        "meaningForms": [
+          "talk",
+          "talked",
+          "talked"
+        ],
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U12-70-5a4301a72cf2.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "imageCheckStatus": "existing_image_decoded_caption_checked",
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000852-card.png",
+        "cardScreenshotSha256": "5e3b900f7aca75f36cab4c49f6c1429392428bdabecf7992a42a43ef9074d8db",
+        "usageScreenshot": "output/playwright/verified-followups/W000852-usage.png",
+        "usageScreenshotSha256": "615cbc0d2bc22e9f0b8712bf5d7a7c6a29564f50d97d88600883e3a5ec7618f8"
+      },
+      {
+        "wordId": "W000651",
+        "word": "plan",
+        "forms": [
+          "plan",
+          "planned",
+          "planned"
+        ],
+        "meaningForms": [
+          "plan",
+          "planned",
+          "planned"
+        ],
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": null,
+        "imageCheckStatus": "placeholder_pending_audit_line_reopen",
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000651-card.png",
+        "cardScreenshotSha256": "1cf1e46028175103e183cdfbe820ebd9ab5f2fcd5dc04e10b3241d779253b529",
+        "usageScreenshot": "output/playwright/verified-followups/W000651-usage.png",
+        "usageScreenshotSha256": "20faa8f49c3d1ea83454c3cef721a23f4eb0d1db1378e386b017d87f5c0dca36"
+      },
+      {
+        "wordId": "W000694",
+        "word": "radio",
+        "forms": [
+          "radio",
+          "radioed",
+          "radioed"
+        ],
+        "meaningForms": [
+          "radio",
+          "radioed",
+          "radioed"
+        ],
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": null,
+        "imageCheckStatus": "placeholder_pending_audit_line_reopen",
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000694-card.png",
+        "cardScreenshotSha256": "12083fd0233287115e0c5832ceb8511d94fc83cbd411672338ff9064dfc4e335",
+        "usageScreenshot": "output/playwright/verified-followups/W000694-usage.png",
+        "usageScreenshotSha256": "6f0602ab7518415fbf5919b29cd41259dea4f853d15dbef20ae3d78fb43c307f"
+      },
+      {
+        "wordId": "W000665",
+        "word": "pool",
+        "forms": [
+          "pool",
+          "pooled",
+          "pooled"
+        ],
+        "meaningForms": [
+          "pool",
+          "pooled",
+          "pooled"
+        ],
+        "databaseFormsMatch": true,
+        "formPanelsUiVerified": true,
+        "image": {
+          "src": "./wordbeast/lv1-reviewed/LV1-U12-84-3ada694bcba3.webp?v=local",
+          "loaded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        "imageCheckStatus": "existing_image_decoded_caption_checked",
+        "wholeCardApproved": false,
+        "visibleExampleCount": 2,
+        "renderedExamplesMatchIsolatedPublishedRows": true,
+        "exampleCompletenessVerified": false,
+        "usageOpened": true,
+        "cardScreenshot": "output/playwright/verified-followups/W000665-card.png",
+        "cardScreenshotSha256": "c6819b54016a145320aef02083df8d5e269407d3c7c253d82663296ed22ce2ce",
+        "usageScreenshot": "output/playwright/verified-followups/W000665-usage.png",
+        "usageScreenshotSha256": "b3b111acdff2afb3b4df6c7de389f063d79281f4b0d331d4f402d9069e791c46"
+      }
+    ],
+    "publishedExamplesMatched": 54,
+    "screenshotsReviewedViaContactSheets": 56,
+    "contactSheetsReviewed": 10,
+    "mobile": [
+      {
+        "wordId": "W000673",
+        "width": 390,
+        "scrollWidth": 390,
+        "horizontalOverflow": false,
+        "screenshot": "output/playwright/verified-followups/U12-W000673-mobile-390.png",
+        "forms": [
+          "practice",
+          "practiced",
+          "practiced"
+        ]
+      },
+      {
+        "wordId": "W001927",
+        "width": 390,
+        "scrollWidth": 390,
+        "horizontalOverflow": false,
+        "screenshot": "output/playwright/verified-followups/U12-W001927-mobile-390.png",
+        "forms": [
+          "travel",
+          "traveled",
+          "traveled"
+        ]
+      }
+    ],
+    "postNavigation": {
+      "otherProgressTablesUnchanged": 13,
+      "otherSettingsUnchanged": true,
+      "allowedChangedSetting": "learning:last-location",
+      "bookmarkWordId": "W001927",
+      "protectedHashesUnchanged": true
+    },
+    "pendingWordsReadBack": [
+      {
+        "wordId": "W000139",
+        "word": "can",
+        "status": "draft",
+        "verbFormsKey": "absent"
+      },
+      {
+        "wordId": "W000071",
+        "word": "bear",
+        "status": "reviewed",
+        "verbFormsKey": "absent"
+      },
+      {
+        "wordId": "W000574",
+        "word": "need",
+        "status": "draft",
+        "verbFormsKey": "absent"
+      },
+      {
+        "wordId": "W000195",
+        "word": "cost",
+        "status": "reviewed",
+        "verbFormsKey": "absent"
+      },
+      {
+        "wordId": "W000490",
+        "word": "lie",
+        "status": "draft",
+        "verbFormsKey": "absent"
+      }
+    ],
+    "consoleErrors": 0,
+    "consoleWarnings": 0,
+    "failedRequests": []
+  },
+  "pendingExcludedForms": [],
+  "imagesAdded": 0,
+  "imagesRepaired": 0,
+  "missingDisplayedImages": [
+    "W001726",
+    "W000389",
+    "W000684",
+    "W000312",
+    "W000919",
+    "W000212",
+    "W000662",
+    "W000651",
+    "W000694"
+  ],
+  "olderSceneDifferenceIds": [
+    "W000673"
+  ],
+  "zeroPublicExampleIds": [
+    "W001726",
+    "W001528",
+    "W000312",
+    "W002996"
+  ],
+  "imageAndExampleFollowupRecord": "pending/U12-isolated-image-observations.json",
+  "wordStatusesChanged": 0,
+  "senseStatusesChanged": 0,
+  "wholeCardsApproved": 0,
+  "next": {
+    "unit": "U13",
+    "firstWord": "ride",
+    "firstWordId": "W000715",
+    "cardId": "LV1-U13-02",
+    "applied": false
+  },
+  "originalVersionUiComparison": {
+    "base": "30b60ffac8efd710ea344e5a2cd98ecf3875670f",
+    "origin": "http://127.0.0.1:5297",
+    "method": "Retrospective reopening of the exact original checkpoint in a separate verification profile. Actual pre-mutation evidence remains the saved real-profile database/progress snapshot.",
+    "chronologicalPreMutationCardReopen": false,
+    "actualPreMutationDataSnapshot": true,
+    "exactContentHashesAndTargetsMatchActualPreMutationSnapshot": true,
+    "protectedWordsMatch": 238,
+    "protectedExamplesMatch": 7,
+    "reopened": 28,
+    "cardAndMeaningFormsAbsent": 28,
+    "imagesLoaded": 19,
+    "placeholders": 9,
+    "publicExamplesMatched": 54,
+    "usageTextMatchesAfter": 28,
+    "desktopScreenshotsReviewed": 56,
+    "contactSheetsReviewed": 10,
+    "initialStarterAttempt": {
+      "words": 5779,
+      "statusMessage": "字典資料已是最新，學習進度已保留。",
+      "reportHelperExpectedWrongStatusAndFullScope": true,
+      "fullDataComparisonRejected": true,
+      "retained": true
+    },
+    "fullBootstrap": {
+      "strategy": "In a fresh verification profile only, deliberately fail the one startup sa-pack request to exercise the unchanged App full-seed fallback, then remove the route and use normal Settings update.",
+      "expectedFailedRequests": 1,
+      "expectedConsoleErrors": 1,
+      "failedRequestPath": "/data/v1/sa-pack.json",
+      "databaseImport": false,
+      "productOrStarterFilesChanged": false,
+      "expectedFailureVerified": true,
+      "actualProductProfileMutated": false
+    },
+    "current5187ContentProgressAndSettingsUnchangedAfterBaseline": true,
+    "cards": [
+      {
+        "wordId": "W000035",
+        "cardFormsAbsent": true,
+        "meaningFormsAbsent": true,
+        "imageCount": 1,
+        "exampleCount": 2,
+        "usageTextMatchesAfter": true,
+        "cardScreenshot": "output/playwright/verified-followups/U12-before-W000035-card.png",
+        "cardScreenshotSha256": "7f985553d1ad4f42d64ada3626c0037379e3c0a2547add08b76a5da6632009dd",
+        "usageScreenshot": "output/playwright/verified-followups/U12-before-W000035-usage.png",
+        "usageScreenshotSha256": "616e2ca38985eba3d58187ed8f79d844f46c3ce868b809b3191e18f2c4b8b64f"
+      },
+      {
+        "wordId": "W001726",
+        "cardFormsAbsent": true,
+        "meaningFormsAbsent": true,
+        "imageCount": 0,
+        "exampleCount": 0,
+        "usageTextMatchesAfter": true,
+        "cardScreenshot": "output/playwright/verified-followups/U12-before-W001726-card.png",
+        "cardScreenshotSha256": "1d59f615287a33bac422ea5618cbf50e54cc268f8c9ee740068b0c380761892d",
+        "usageScreenshot": "output/playwright/verified-followups/U12-before-W001726-usage.png",
+        "usageScreenshotSha256": "5ad961aa065fa36605e9b49d89cd6ee7d2ff9ee4e43a277e6540252c0138c9de"
+      },
+      {
+        "wordId": "W001729",
+        "cardFormsAbsent": true,
+        "meaningFormsAbsent": true,
+        "imageCount": 1,
+        "exampleCount": 2,
+        "usageTextMatchesAfter": true,
+        "cardScreenshot": "output/playwright/verified-followups/U12-before-W001729-card.png",
+        "cardScreenshotSha256": "d2541514af5135b9edea18a3e84bf3d4905d0bf278470ec5c60ce6f923ef0df8",
+        "usageScreenshot": "output/playwright/verified-followups/U12-before-W001729-usage.png",
+        "usageScreenshotSha256": "3c261640b8a3156a97551494c600c65a871122a3700a73f6b1be6a2c4e6890ec"
+      },
+      {
+        "wordId": "W000389",
+        "cardFormsAbsent": true,
+        "meaningFormsAbsent": true,
+        "imageCount": 0,
+        "exampleCount": 2,
+        "usageTextMatchesAfter": true,
+        "cardScreenshot": "output/playwright/verified-followups/U12-before-W000389-card.png",
+        "cardScreenshotSha256": "f479f04ebdca7be0f670738140ce70ea4ddef71030bae22956fa4728e268d4a6",
+        "usageScreenshot": "output/playwright/verified-followups/U12-before-W000389-usage.png",
+        "usageScreenshotSha256": "f6a6d2140a88a71749d87a59ff71bbdda5645bb3388353934bb7dc48b24b3329"
+      },
+      {
+        "wordId": "W000916",
+        "cardFormsAbsent": true,
+        "meaningFormsAbsent": true,
+        "imageCount": 1,
+        "exampleCount": 2,
+        "usageTextMatchesAfter": true,
+        "cardScreenshot": "output/playwright/verified-followups/U12-before-W000916-card.png",
+        "cardScreenshotSha256": "8ae7484709c731b9b98e6de934fe0fe074323b7d61abaa7903f1e6628c996721",
+        "usageScreenshot": "output/playwright/verified-followups/U12-before-W000916-usage.png",
+        "usageScreenshotSha256": "581ea4dab122550ceb01f32c2c7e8ebf9cf1a518e244b9434da205862615a043"
+      },
+      {
+        "wordId": "W000683",
+        "cardFormsAbsent": true,
+        "meaningFormsAbsent": true,
+        "imageCount": 1,
+        "exampleCount": 2,
+        "usageTextMatchesAfter": true,
+        "cardScreenshot": "output/playwright/verified-followups/U12-before-W000683-card.png",
+        "cardScreenshotSha256": "dde2a7a53e0a52e3de95856bfc6d0a87953e36c14deb473837c40f7395c2a2ee",
+        "usageScreenshot": "output/playwright/verified-followups/U12-before-W000683-usage.png",
+        "usageScreenshotSha256": "6f99869c94ac849313eeec7504572393d2fca35b78290f07747134fc7665a221"
+      },
+      {
+        "wordId": "W000296",
+        "cardFormsAbsent": true,
+        "meaningFormsAbsent": true,
+        "imageCount": 1,
+        "exampleCount": 2,
+        "usageTextMatchesAfter": true,
+        "cardScreenshot": "output/playwright/verified-followups/U12-before-W000296-card.png",
+        "cardScreenshotSha256": "06290f515f6813eed7751bec7eab59004d25f95dc97c71e1f58cbf8cccdef1c9",
+        "usageScreenshot": "output/playwright/verified-followups/U12-before-W000296-usage.png",
+        "usageScreenshotSha256": "024f6b0dfe3897fa1526791544acaa3b213460d76035115ac108f4b170e8c0bd"
+      },
+      {
+        "wordId": "W000684",
+        "cardFormsAbsent": true,
+        "meaningFormsAbsent": true,
+        "imageCount": 0,
+        "exampleCount": 2,
+        "usageTextMatchesAfter": true,
+        "cardScreenshot": "output/playwright/verified-followups/U12-before-W000684-card.png",
+        "cardScreenshotSha256": "8592b18fb607e730610ee16703dd59484fbaaa6187b4342b6972b663ae5ceb5b",
+        "usageScreenshot": "output/playwright/verified-followups/U12-before-W000684-usage.png",
+        "usageScreenshotSha256": "751f95e7ecba6bb73534aa1b0a46da0112f4a5094e063ec33651c33e298f3be1"
+      },
+      {
+        "wordId": "W001528",
+        "cardFormsAbsent": true,
+        "meaningFormsAbsent": true,
+        "imageCount": 1,
+        "exampleCount": 0,
+        "usageTextMatchesAfter": true,
+        "cardScreenshot": "output/playwright/verified-followups/U12-before-W001528-card.png",
+        "cardScreenshotSha256": "7a790aca298b8e560c5f15ed9f4a78dbe42a1702e5dfd8fd853b5c6c37e16f92",
+        "usageScreenshot": "output/playwright/verified-followups/U12-before-W001528-usage.png",
+        "usageScreenshotSha256": "2e37b1de1d5f4f41cc1f9927131b76c9f2d97a07b27671fcab621e89e0112e0b"
+      },
+      {
+        "wordId": "W000312",
+        "cardFormsAbsent": true,
+        "meaningFormsAbsent": true,
+        "imageCount": 0,
+        "exampleCount": 0,
+        "usageTextMatchesAfter": true,
+        "cardScreenshot": "output/playwright/verified-followups/U12-before-W000312-card.png",
+        "cardScreenshotSha256": "3d3d6ee21e949f8dfc0174bf8426d2f8a69190f9260dce6070108d971a91ad42",
+        "usageScreenshot": "output/playwright/verified-followups/U12-before-W000312-usage.png",
+        "usageScreenshotSha256": "71f0ac551c984dda9334ed880dcb2f58ace83144856c7e04869ae433d815c526"
+      },
+      {
+        "wordId": "W002996",
+        "cardFormsAbsent": true,
+        "meaningFormsAbsent": true,
+        "imageCount": 1,
+        "exampleCount": 0,
+        "usageTextMatchesAfter": true,
+        "cardScreenshot": "output/playwright/verified-followups/U12-before-W002996-card.png",
+        "cardScreenshotSha256": "5a2d029174b6f9ab76532157545e7b654bc75757870adfecf30789525eb16ea7",
+        "usageScreenshot": "output/playwright/verified-followups/U12-before-W002996-usage.png",
+        "usageScreenshotSha256": "48476b4b06273a4b3df335c11dc2c11bd89500070b7f7034a3c31d02bbd70372"
+      },
+      {
+        "wordId": "W001566",
+        "cardFormsAbsent": true,
+        "meaningFormsAbsent": true,
+        "imageCount": 1,
+        "exampleCount": 2,
+        "usageTextMatchesAfter": true,
+        "cardScreenshot": "output/playwright/verified-followups/U12-before-W001566-card.png",
+        "cardScreenshotSha256": "b62a71973179dfc0165361c16155be89f9bf93c0a63ef267a1c4d15063663b8c",
+        "usageScreenshot": "output/playwright/verified-followups/U12-before-W001566-usage.png",
+        "usageScreenshotSha256": "b473120ab398471bc85d1048ada6f3da0aabaad980e138c214bd8693e48a0064"
+      },
+      {
+        "wordId": "W004689",
+        "cardFormsAbsent": true,
+        "meaningFormsAbsent": true,
+        "imageCount": 1,
+        "exampleCount": 4,
+        "usageTextMatchesAfter": true,
+        "cardScreenshot": "output/playwright/verified-followups/U12-before-W004689-card.png",
+        "cardScreenshotSha256": "60bb7ee23bfe324b9c3afb1b9138c1b8b6711e5a020553dabd96e9e0de5a5175",
+        "usageScreenshot": "output/playwright/verified-followups/U12-before-W004689-usage.png",
+        "usageScreenshotSha256": "bc321099eeb71b12388c2b379146d5b760cf061771846b05c0488d2b3ab681c0"
+      },
+      {
+        "wordId": "W001291",
+        "cardFormsAbsent": true,
+        "meaningFormsAbsent": true,
+        "imageCount": 1,
+        "exampleCount": 2,
+        "usageTextMatchesAfter": true,
+        "cardScreenshot": "output/playwright/verified-followups/U12-before-W001291-card.png",
+        "cardScreenshotSha256": "769002405adb99f694c394312fb38464b16857968bb10bfce9234c5478d8e0a8",
+        "usageScreenshot": "output/playwright/verified-followups/U12-before-W001291-usage.png",
+        "usageScreenshotSha256": "771ac81afdd25d7d1fa61337a7cf88513e3c78342d6114ff7869116b34d7e931"
+      },
+      {
+        "wordId": "W000216",
+        "cardFormsAbsent": true,
+        "meaningFormsAbsent": true,
+        "imageCount": 1,
+        "exampleCount": 2,
+        "usageTextMatchesAfter": true,
+        "cardScreenshot": "output/playwright/verified-followups/U12-before-W000216-card.png",
+        "cardScreenshotSha256": "c13e3766f5a297defb33dd11797b4c7698ddbb2af8b8939735a9c5c68f4415c0",
+        "usageScreenshot": "output/playwright/verified-followups/U12-before-W000216-usage.png",
+        "usageScreenshotSha256": "de115d1a5e944bd127bc3d4725668f08b92a0f580fe669766e044e00dab0cdc6"
+      },
+      {
+        "wordId": "W000673",
+        "cardFormsAbsent": true,
+        "meaningFormsAbsent": true,
+        "imageCount": 1,
+        "exampleCount": 2,
+        "usageTextMatchesAfter": true,
+        "cardScreenshot": "output/playwright/verified-followups/U12-before-W000673-card.png",
+        "cardScreenshotSha256": "84eeecfbec93bacb8841c8521cc2c77bc33096a15af1c2f3a2161f64dcab6005",
+        "usageScreenshot": "output/playwright/verified-followups/U12-before-W000673-usage.png",
+        "usageScreenshotSha256": "6d3cfdf4471a1d78b073645a0573922d3cab5479d56c2c964fc36b2efac99e4f"
+      },
+      {
+        "wordId": "W000919",
+        "cardFormsAbsent": true,
+        "meaningFormsAbsent": true,
+        "imageCount": 0,
+        "exampleCount": 2,
+        "usageTextMatchesAfter": true,
+        "cardScreenshot": "output/playwright/verified-followups/U12-before-W000919-card.png",
+        "cardScreenshotSha256": "d62ae919818f9f211acb46070bf58d166ebebead1d5c665e01a3a9f78c878e39",
+        "usageScreenshot": "output/playwright/verified-followups/U12-before-W000919-usage.png",
+        "usageScreenshotSha256": "8b79d77a2c3692f0d3adca10e71d44f4fd1d9dc130803504084dce0b8f393579"
+      },
+      {
+        "wordId": "W000212",
+        "cardFormsAbsent": true,
+        "meaningFormsAbsent": true,
+        "imageCount": 0,
+        "exampleCount": 2,
+        "usageTextMatchesAfter": true,
+        "cardScreenshot": "output/playwright/verified-followups/U12-before-W000212-card.png",
+        "cardScreenshotSha256": "eb04fad41d5d39ce2fafc0ffe3c2f36f06c30d3e9c9c7871b765b20f7185600c",
+        "usageScreenshot": "output/playwright/verified-followups/U12-before-W000212-usage.png",
+        "usageScreenshotSha256": "c73794d6aec5538df937e77b6e59c82f19f3e9a5f9d3eb359b0ddde2d0d25cf5"
+      },
+      {
+        "wordId": "W000662",
+        "cardFormsAbsent": true,
+        "meaningFormsAbsent": true,
+        "imageCount": 0,
+        "exampleCount": 2,
+        "usageTextMatchesAfter": true,
+        "cardScreenshot": "output/playwright/verified-followups/U12-before-W000662-card.png",
+        "cardScreenshotSha256": "68c52503af0be465592f54b731ee9fedea3e79cefbe456c42cca26fa33899a52",
+        "usageScreenshot": "output/playwright/verified-followups/U12-before-W000662-usage.png",
+        "usageScreenshotSha256": "02ac218cbeb61c05996cc76b594413d1d30b77448ef7e1c6ce51c66967429ed5"
+      },
+      {
+        "wordId": "W000405",
+        "cardFormsAbsent": true,
+        "meaningFormsAbsent": true,
+        "imageCount": 1,
+        "exampleCount": 3,
+        "usageTextMatchesAfter": true,
+        "cardScreenshot": "output/playwright/verified-followups/U12-before-W000405-card.png",
+        "cardScreenshotSha256": "12394c4fe84bb001bc2eeeacb98342bb665760e258d32f6a0b887de4d398e5d2",
+        "usageScreenshot": "output/playwright/verified-followups/U12-before-W000405-usage.png",
+        "usageScreenshotSha256": "47b6187106db72b39ab9b87d2960c7956f005000b81f2a7aae0c79a031353e5c"
+      },
+      {
+        "wordId": "W001919",
+        "cardFormsAbsent": true,
+        "meaningFormsAbsent": true,
+        "imageCount": 1,
+        "exampleCount": 2,
+        "usageTextMatchesAfter": true,
+        "cardScreenshot": "output/playwright/verified-followups/U12-before-W001919-card.png",
+        "cardScreenshotSha256": "83aa9700a5803b8383fb7bdfaf4da7433f6237128ca83d8162c77bab7ed89ee8",
+        "usageScreenshot": "output/playwright/verified-followups/U12-before-W001919-usage.png",
+        "usageScreenshotSha256": "d62ab967600ff8575b64a9d320e44388a8ed0e92d5df09d03aa88191e6dd8616"
+      },
+      {
+        "wordId": "W001927",
+        "cardFormsAbsent": true,
+        "meaningFormsAbsent": true,
+        "imageCount": 1,
+        "exampleCount": 3,
+        "usageTextMatchesAfter": true,
+        "cardScreenshot": "output/playwright/verified-followups/U12-before-W001927-card.png",
+        "cardScreenshotSha256": "6ae388c7a6fa0a774f4b11665d89a0c8701ecaf3fb3c1c553ee113aed6680fc2",
+        "usageScreenshot": "output/playwright/verified-followups/U12-before-W001927-usage.png",
+        "usageScreenshotSha256": "ea4b3f3376fd1475de6d1b7d04f2c3a8e5044633299aea005c0037ed23ec48e0"
+      },
+      {
+        "wordId": "W002461",
+        "cardFormsAbsent": true,
+        "meaningFormsAbsent": true,
+        "imageCount": 1,
+        "exampleCount": 3,
+        "usageTextMatchesAfter": true,
+        "cardScreenshot": "output/playwright/verified-followups/U12-before-W002461-card.png",
+        "cardScreenshotSha256": "12ce0b0beeabe657cd122eeae7b96a5c33122d5a983aaa9691345efdde05f4be",
+        "usageScreenshot": "output/playwright/verified-followups/U12-before-W002461-usage.png",
+        "usageScreenshotSha256": "97f8f11c76b71d04dcc90e947ef561ba5441e3d255276d29207fa6a2f3312791"
+      },
+      {
+        "wordId": "W004866",
+        "cardFormsAbsent": true,
+        "meaningFormsAbsent": true,
+        "imageCount": 1,
+        "exampleCount": 3,
+        "usageTextMatchesAfter": true,
+        "cardScreenshot": "output/playwright/verified-followups/U12-before-W004866-card.png",
+        "cardScreenshotSha256": "9520b05ec6c0a5589114d936a709bd8259ea0a47c53180e0a7b247fa722fbdcc",
+        "usageScreenshot": "output/playwright/verified-followups/U12-before-W004866-usage.png",
+        "usageScreenshotSha256": "9ebb43c9b3dca6f929825357e5ea8996db3d7c4844fa41c3705bb85922d44d42"
+      },
+      {
+        "wordId": "W000852",
+        "cardFormsAbsent": true,
+        "meaningFormsAbsent": true,
+        "imageCount": 1,
+        "exampleCount": 2,
+        "usageTextMatchesAfter": true,
+        "cardScreenshot": "output/playwright/verified-followups/U12-before-W000852-card.png",
+        "cardScreenshotSha256": "b1051a9d672b0d4f67bea0c000137e248454a4f5759d00f987a248aae88028f8",
+        "usageScreenshot": "output/playwright/verified-followups/U12-before-W000852-usage.png",
+        "usageScreenshotSha256": "615cbc0d2bc22e9f0b8712bf5d7a7c6a29564f50d97d88600883e3a5ec7618f8"
+      },
+      {
+        "wordId": "W000651",
+        "cardFormsAbsent": true,
+        "meaningFormsAbsent": true,
+        "imageCount": 0,
+        "exampleCount": 2,
+        "usageTextMatchesAfter": true,
+        "cardScreenshot": "output/playwright/verified-followups/U12-before-W000651-card.png",
+        "cardScreenshotSha256": "89c0c62c7246a0fd117ccb8a082e817c955a2d22e93f7a57ca449360c5e9cbee",
+        "usageScreenshot": "output/playwright/verified-followups/U12-before-W000651-usage.png",
+        "usageScreenshotSha256": "20faa8f49c3d1ea83454c3cef721a23f4eb0d1db1378e386b017d87f5c0dca36"
+      },
+      {
+        "wordId": "W000694",
+        "cardFormsAbsent": true,
+        "meaningFormsAbsent": true,
+        "imageCount": 0,
+        "exampleCount": 2,
+        "usageTextMatchesAfter": true,
+        "cardScreenshot": "output/playwright/verified-followups/U12-before-W000694-card.png",
+        "cardScreenshotSha256": "72c0247a68fe77e49ba1578dc68291936b0dd1aac40ffe373b97ef55dd1ddfa6",
+        "usageScreenshot": "output/playwright/verified-followups/U12-before-W000694-usage.png",
+        "usageScreenshotSha256": "6f0602ab7518415fbf5919b29cd41259dea4f853d15dbef20ae3d78fb43c307f"
+      },
+      {
+        "wordId": "W000665",
+        "cardFormsAbsent": true,
+        "meaningFormsAbsent": true,
+        "imageCount": 1,
+        "exampleCount": 2,
+        "usageTextMatchesAfter": true,
+        "cardScreenshot": "output/playwright/verified-followups/U12-before-W000665-card.png",
+        "cardScreenshotSha256": "bae1514ff54d4da6045847c9604193a21037a4a05dbd4f76d696b2cddc5d5f8f",
+        "usageScreenshot": "output/playwright/verified-followups/U12-before-W000665-usage.png",
+        "usageScreenshotSha256": "b3b111acdff2afb3b4df6c7de389f063d79281f4b0d331d4f402d9069e791c46"
+      }
+    ]
+  }
+}

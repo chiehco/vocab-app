@@ -38,6 +38,14 @@ const batches = {
     preserveVariantEvidence: true,
     preserveUnitContexts: true,
   },
+  'U12': {
+    sources: ['U10-U15-PUBLISHED-VERB-FORMS-VERIFICATION.json','U12-ADDITIONAL-VERB-FORMS-VERIFICATION.json'],
+    ids: 'W000035 W001726 W001729 W000389 W000916 W000683 W000296 W000684 W001528 W000312 W002996 W001566 W004689 W001291 W000216 W000673 W000919 W000212 W000662 W000405 W001919 W001927 W002461 W004866 W000852 W000651 W000694 W000665'.split(' '),
+    sourceSnapshot: {researchCommit:'e2d3f0fed929a17670af00ed1989fc9469426d8c',sourceBlobs:{'U10-U15-PUBLISHED-VERB-FORMS-VERIFICATION.json':'5215e48aadd050f5118e85727bc391ad7150738b','U12-ADDITIONAL-VERB-FORMS-VERIFICATION.json':'ef314c1bae64cee1410bd02fd30356cd8ff53a87'}},
+    readVerifiedGitBlobs: true,
+    preserveVariantEvidence: true,
+    preserveUnitContexts: true,
+  },
 };
 const batch = process.argv[2];
 assert.ok(batches[batch], 'Select an explicitly reviewed batch');
