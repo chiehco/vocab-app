@@ -9,6 +9,7 @@ import forms from '../../docs/unit-audit-20261105/LV1-U01-U02-verb-forms-followu
 import translations from '../../docs/unit-audit-20261105/LV1-verified-translations-followup.json';
 import followups from '../../docs/unit-audit-20261105/LV1-U03-U04-verified-forms-patches.json';
 import followupsU05U06 from '../../docs/unit-audit-20261105/LV1-U05-U06-verified-forms-patches.json';
+import followupsU07 from '../../docs/unit-audit-20261105/LV1-U07-verified-forms-patches.json';
 import followupSources from '../../docs/unit-audit-20261105/VERIFIED-FOLLOWUP-VERB-FORMS-SOURCES.json';
 import originalSources from '../../docs/unit-audit-20261105/VERIFIED-VERB-FORMS-SOURCES.json';
 
@@ -81,8 +82,10 @@ it('reverses only exact followup fields to absent and retains the original 31 so
  const words:Row[]=JSON.parse(readFileSync('public/data/v1/words.json','utf8'));
  expect(followups.patches).toHaveLength(16);
  expect(followupsU05U06.patches).toHaveLength(46);
+ expect(followupsU07.patches).toHaveLength(37);
  expect(createHash('sha256').update(JSON.stringify(stable(followupSources.facts.filter(f=>f.batch==='U03-U04')))).digest('hex')).toBe('98c2d594a21911e85d8bb34eed8f479dd7df59c034d51006d752ad74559d0b87');
- for(const p of [...followups.patches,...followupsU05U06.patches]){
+ expect(createHash('sha256').update(JSON.stringify(stable(followupSources.facts.filter(f=>['U03-U04','U05-U06'].includes(f.batch))))).digest('hex')).toBe('982208b048a385d2a00564f8bc77be91109c5a7e9aa9b328c6a7394b499f060b');
+ for(const p of [...followups.patches,...followupsU05U06.patches,...followupsU07.patches]){
   const row=structuredClone(words.find(row=>row.wordId===p.id)!);
   const preserved={...row};delete preserved.verbForms;
   restoreRecordedAuditPatch('words',row,p);
@@ -96,4 +99,6 @@ it('reverses only exact followup fields to absent and retains the original 31 so
   expect(()=>restoreRecordedAuditPatch('words',{...p.after},{...p,before:{verbForms:null}})).toThrow();
  }
  expect(words.find(row=>row.wordId==='W000139')).not.toHaveProperty('verbForms');
+ expect(words.find(row=>row.wordId==='W000071')).not.toHaveProperty('verbForms');
+ expect(words.find(row=>row.wordId==='W000574')).not.toHaveProperty('verbForms');
 });

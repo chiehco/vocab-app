@@ -12,6 +12,11 @@ const batches = {
     sources: ['U05-U06-VERB-FORMS-VERIFICATION.json'],
     ids: 'W000348 W000309 W000270 W000933 W000493 W000881 W000618 W000500 W000986 W000870 W000256 W000242 W000074 W000864 W000049 W000055 W000772 W000136 W000480 W000741 W000199 W000968 W000628 W000262 W000824 W000080 W000302 W000595 W000319 W000924 W000688 W000403 W000450 W000685 W000121 W000365 W000147 W000661 W000494 W000486 W000922 W000950 W001054 W005996 W000559 W001723'.split(' '),
   },
+  'U07': {
+    sources: ['U07-VERB-FORMS-VERIFICATION.json'],
+    ids: 'W000008 W000041 W000046 W000082 W000146 W000387 W000432 W000476 W000498 W000525 W000529 W000534 W000541 W000569 W000613 W000632 W000672 W000699 W000724 W000732 W000745 W000755 W000784 W000822 W000920 W001086 W001523 W001598 W001768 W001779 W002047 W003270 W003306 W003352 W003553 W003959 W004780'.split(' '),
+    sourceSnapshot: {researchCommit:'89f9fd242ed94d69393bf24ba10c8b39486669a1', sourceBlob:'46aef54ff3137de0c538391a0283523cfe21a8e7'},
+  },
 };
 const batch = process.argv[2];
 assert.ok(batches[batch], 'Select an explicitly reviewed batch');
@@ -27,6 +32,7 @@ const sources = existsSync(sourcePath) ? read(sourcePath) : {
   facts: [],
 };
 const entries = config.sources.flatMap(name => read(root + 'source-followup-candidates/' + name).entries.map(entry => ({...entry, researchFile: name})));
+if (config.sourceSnapshot) assert.equal(execFileSync('git',['rev-parse','HEAD:'+root+'source-followup-candidates/'+config.sources[0]],{encoding:'utf8'}).trim(),config.sourceSnapshot.sourceBlob,'Current source must match the verified latest research blob');
 const facts = config.ids.map(id => {
   const matches = entries.filter(entry => entry.wordId === id);
   assert.equal(matches.length, 1, 'Exactly one research entry: ' + id);
@@ -42,12 +48,15 @@ const facts = config.ids.map(id => {
   // Cambridge direct access failed; the directly read government reference
   // explicitly distinguishes got (past) from got/gotten (past participle).
   if (id === 'W000343') verbForms.sourceRef = 'https://our-languages.canada.ca/en/writing-tips-plus/got-gotten-';
+  if (id === 'W004780') verbForms.sourceRef = 'https://www.collinsdictionary.com/conjugation/english/sequence';
   return {wordId:id, word:word.word, batch, units:entry.units,
     verbForms, evidence:entry.evidence,
     restriction:entry.homographAndVariantRestrictions,
     applicableSense:entry.applicableSense,
     researchFile:entry.researchFile,
     originalPos:word.pos,
+    ...(config.sourceSnapshot ? {sourceSnapshot:config.sourceSnapshot} : {}),
+    ...(id === 'W004780' ? {currentSourceCheck:{verifiedUrl:verbForms.sourceRef,method:'Direct Collins Past and Past Participle table',unavailableRecheck:{url:'https://www.oxfordlearnersdictionaries.com/definition/english/sequence_2',status:403},note:'Original research evidence is retained; this pass does not claim a successful direct Oxford read.'}} : {}),
     verification:'Exact current field absence, headword/POS and source forms checked before mutation.'};
 });
 assert.equal(new Set([...sources.facts, ...facts].map(fact => fact.wordId)).size, sources.facts.length + facts.length, 'Do not duplicate an earlier correction');

@@ -3,6 +3,10 @@ import {readFileSync, writeFileSync, mkdirSync} from 'node:fs';
 const batch=process.argv[2];
 const facts=JSON.parse(readFileSync('docs/unit-audit-20261105/VERIFIED-FOLLOWUP-VERB-FORMS-SOURCES.json','utf8')).facts.filter(f=>f.batch===batch);
 assert.ok(facts.length,'Known applied batch required');
+const examples=JSON.parse(readFileSync('public/data/v1/examples.json','utf8')).filter(row=>
+  ['approved','reviewed','draft','needs_check'].includes(row.status)
+  && (row.distributionScope===undefined||row.distributionScope==='public_ok')&&row.active!==false);
+const expectedExamples=Object.fromEntries(facts.map(f=>[f.word,examples.filter(e=>e.word===f.word).map(e=>({sentenceEn:e.sentenceEn,sentenceZh:e.sentenceZh||''}))]));
 const out='output/playwright/verified-followups';
 mkdirSync(out,{recursive:true});
 writeFileSync(`${out}/${batch}-reopen.playwright.txt`,`async(page)=>{
@@ -29,13 +33,19 @@ writeFileSync(`${out}/${batch}-reopen.playwright.txt`,`async(page)=>{
   await page.getByRole('button',{name:'字義',exact:true}).click();
   const meaningForms=await page.locator('.recorded-verb-forms dd').allTextContents();
   if(JSON.stringify(meaningForms)!==JSON.stringify(expected))throw Error('Meaning panel forms mismatch '+fact.word);
+  const exampleRows=page.locator('.dossier-examples li');
+  const expectedExamples=${JSON.stringify(expectedExamples)}[fact.word];
+  if(expectedExamples.length)await exampleRows.first().waitFor();
+  const visibleExamples=await exampleRows.evaluateAll(rows=>rows.map(row=>({sentenceEn:row.querySelector('p')?.textContent||'',sentenceZh:row.querySelector('div > span')?.textContent||''})));
+  const normalized=rows=>rows.map(row=>JSON.stringify(row)).sort();
+  if(JSON.stringify(normalized(visibleExamples))!==JSON.stringify(normalized(expectedExamples)))throw Error('Published examples mismatch '+fact.word);
   const usageButton=page.getByRole('button',{name:'搭配',exact:true});let usage={present:false};
   if(await usageButton.count()){
    await usageButton.click();const text=await page.locator('main').innerText();
    const usageScreenshot='${out}/'+fact.wordId+'-usage.png';await page.screenshot({path:usageScreenshot,fullPage:true});
    usage={present:true,text,screenshot:usageScreenshot};
   }
-  results.push({wordId:fact.wordId,word:fact.word,savedForms:saved.verbForms,actual,meaningForms,images,caption,usage,screenshot,verified:true});
+  results.push({wordId:fact.wordId,word:fact.word,savedForms:saved.verbForms,actual,meaningForms,images,caption,visibleExamples,usage,screenshot,verified:true});
  }
  // Keep native Windows console code pages from corrupting evidence JSON.
  return page.evaluate(value=>btoa(unescape(encodeURIComponent(JSON.stringify(value)))),{batch:${JSON.stringify(batch)},origin:new URL(page.url()).origin,reopened:results.length,results});

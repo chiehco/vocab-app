@@ -4,7 +4,7 @@ import {execFileSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 const [base,batch]=process.argv.slice(2);
 assert.match(base??'',/^[a-f0-9]{40}$/);
-assert.match(batch??'',/^U\d{2}-U\d{2}$/);
+assert.match(batch??'',/^U\d{2}(?:-U\d{2})?$/);
 const root='docs/unit-audit-20261105/';
 const read=path=>JSON.parse(readFileSync(path,'utf8'));
 const before=path=>JSON.parse(execFileSync('git',['show',base+':'+path],{encoding:'utf8',maxBuffer:32e6}));
