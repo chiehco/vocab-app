@@ -1,0 +1,18 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+const r=p=>JSON.parse(fs.readFileSync(p,'utf8')),w=(p,x)=>fs.writeFileSync(p,JSON.stringify(x,null,2)+'\n'),hash=x=>createHash('sha256').update(x).digest('hex');
+const cardFile='src/features/vocabulary/lv1ReviewedImages.json',approvalFile='scripts/approvals/lv1-images-20260922.json',proofFile='docs/unit-audit-20261105/LV1-U25-exact-pair-review.json';
+assert(!fs.existsSync(proofFile),'One-time exact mapping write; inspect saved evidence before any retry.');
+const cards=r(cardFile),approvals=r(approvalFile),id='LV1-U25-31',card=cards.find(c=>c.id===id),approval=approvals.find(c=>c.id===id);
+assert.equal(cards.length,726);assert.equal(cards.filter(c=>c.id===id).length,1);assert.equal(approvals.filter(c=>c.id===id).length,1);
+assert.equal(card.officialWordId,'W000944');assert.equal(card.illustration.path,'wordbeast/lv1-reviewed/LV1-U25-31-d8c959aa2236.webp');
+assert.equal(card.illustration.captionEn,'He usually wakes up at six thirty every morning.');assert.equal(card.illustration.captionZh,'他通常每天早上六點半醒來。');
+assert.equal(hash(fs.readFileSync('public/'+card.illustration.path)),approval.publishedImageSha256);assert.equal(hash(card.illustration.captionEn+'\n'+card.illustration.captionZh),approval.textSha256);
+const newPath='wordbeast/lv1-reviewed/LV1-U25-31-ddde6ece5044.webp',newSha='2f5d8f250cb26ded297d2e1e02060fff1202aada9ac78bb299b5cc0f7e53c1e7';
+assert.equal(hash(fs.readFileSync('public/'+newPath)),newSha);assert.equal(fs.statSync('public/'+newPath).size,77872);
+const before={card:structuredClone(card),approval:structuredClone(approval)};
+const nextCard={...card,illustration:{...card.illustration,path:newPath}},nextApproval={...approval,publishedImageSha256:newSha,approvalSource:proofFile,previousApproval:structuredClone(approval)};delete nextApproval.approvalSha256;
+const examples=r('public/data/v1/examples.json').filter(e=>e.word==='wake');assert.deepEqual(examples.map(e=>e.exampleId),['EXc596d720','EXdc2a1435']);
+const proof={priorCheckpoint:'c38b0b1ee4aa5f8cf6f91c2122471343b7f25266',state:'exact_saved_pair_change_with_separate_app_validation',scope:'Only LV1-U25-31 and the general wake default of the same exact pair. Neither formal example is rebound to the unit caption.',unchangedCards:725,unchangedCardRowsSha256:hash(JSON.stringify(cards.filter(c=>c.id!==id))),unchangedApprovalRowsSha256:hash(JSON.stringify(approvals.filter(c=>c.id!==id))),changes:[{id,before,after:{card:nextCard,approval:nextApproval},reason:'Native original clock has the short hand at7 and long hand at12, not06:30. Replacement clearly displays06:30 in the existing clock case; scene and exact captions retained.',assetCommit:'ab76da257068cac1085f04ba8ba57be8f6dc47a1',dimensions:[1254,1254],bytes:77872,newAssetSha256:newSha,exampleIds:examples.map(e=>e.exampleId),formalExamples:examples,englishAndChineseUnchanged:true,originalAssetRetained:true}],actualValidationFile:'validation/U25-reopen-summary.json',pixelEvidence:{originalPngViewed:true,replacementWebpViewed:true,replacementPngLocallyViewed:false,format:'1254 square RGB WebP; supplied q85/method6, no local resize or re-encoding'},limits:['The original PNG and original approval hash remain immutable. The replacement PNG was not locally inspected in this checkpoint.','Wake verb forms remain absent pending sense-qualified presentation.']};
+w(proofFile,proof);cards[cards.indexOf(card)]=nextCard;approvals[approvals.indexOf(approval)]={...nextApproval,approvalSha256:hash(fs.readFileSync(proofFile))};w(cardFile,cards);w(approvalFile,approvals);console.log(JSON.stringify({id,newPath,newSha,unchanged:725,formalExamplesPreserved:examples.length}));

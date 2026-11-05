@@ -1,3 +1,4 @@
+import {beforeU25Pairs} from './u25Pairs.testSupport';
 import {beforeU23Pairs} from './u23Pairs.testSupport';
 import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
@@ -212,7 +213,7 @@ it('changes only the two exact U22 pairs while preserving original assets captio
 
 it('repairs only the exact U23 trophy pair and two Chinese captions while retaining all other historical rows',()=>{
  const proof=JSON.parse(readFileSync('docs/unit-audit-20261105/LV1-U23-exact-pair-review.json','utf8'));const ids=new Set(['LV1-U23-50','LV1-U23-84','LV1-U23-97']);
- expect(hash(JSON.stringify(cards.filter(c=>!ids.has(c.id))))).toBe(proof.unchangedCardRowsSha256);expect(hash(JSON.stringify(audit.filter(c=>!ids.has(c.id))))).toBe(proof.unchangedApprovalRowsSha256);
+ expect(hash(JSON.stringify(beforeU25Pairs(cards,'cards').filter(c=>!ids.has(c.id))))).toBe(proof.unchangedCardRowsSha256);expect(hash(JSON.stringify(beforeU25Pairs(audit,'approvals').filter(c=>!ids.has(c.id))))).toBe(proof.unchangedApprovalRowsSha256);
  expect(beforeU23Pairs(cards,'cards')).toHaveLength(726);expect(beforeU23Pairs(audit,'approvals')).toHaveLength(726);
  for(const change of proof.changes){const now=cards.find(c=>c.id===change.id)!;expect(now).toEqual(change.after.card);expect(now.illustration.captionEn).toBe(change.before.card.illustration.captionEn);expect(hash(readFileSync('public/'+change.before.card.illustration.path))).toBe(change.before.approval.publishedImageSha256);expect(hash(change.before.card.illustration.captionEn+'\n'+change.before.card.illustration.captionZh)).toBe(change.before.approval.textSha256);}
  const trophy=cards.find(c=>c.id==='LV1-U23-50')!;expect(trophy.illustration.path).toBe('wordbeast/lv1-reviewed/LV1-U23-50-c4476d14caae.webp');expect(hash(readFileSync('public/'+trophy.illustration.path))).toBe('a205d42a31e67d46ea93ad89149b84fc35562c3e0f1f2dd9f546df2a628cd94c');expect(trophy.illustration.captionEn).toBe('His team won the final and lifted the trophy.');
@@ -224,4 +225,16 @@ it('repairs only the exact U23 trophy pair and two Chinese captions while retain
  const badApproval=structuredClone(audit);badApproval.find(a=>a.id==='LV1-U23-50')!.publishedImageSha256='unverified';expect(()=>beforeU23Pairs(badApproval,'approvals')).toThrow();
  const other=structuredClone(cards);other.find(c=>!ids.has(c.id))!.illustration.captionEn='unrecorded';expect(hash(JSON.stringify(beforeU23Pairs(other,'cards').filter(c=>!['LV1-U22-04','LV1-U22-46'].includes(c.id))))).not.toBe(JSON.parse(readFileSync('docs/unit-audit-20261105/LV1-U22-exact-pair-review.json','utf8')).unchangedCardRowsSha256);
  expect(()=>beforeU23Pairs([...cards,cards.find(c=>c.id==='LV1-U23-50')!],'cards')).toThrow();
+});
+
+it('repairs only the U25 wake clock and preserves both formal examples and every other pair',()=>{
+ const proof=JSON.parse(readFileSync('docs/unit-audit-20261105/LV1-U25-exact-pair-review.json','utf8')),c=proof.changes[0];
+ expect(proof.changes.map((x:{id:string})=>x.id)).toEqual(['LV1-U25-31']);expect(hash(JSON.stringify(cards.filter(x=>x.id!==c.id)))).toBe(proof.unchangedCardRowsSha256);expect(hash(JSON.stringify(audit.filter(x=>x.id!==c.id)))).toBe(proof.unchangedApprovalRowsSha256);
+ const now=cards.find(x=>x.id===c.id)!;expect(now).toEqual(c.after.card);expect(now.illustration.captionEn).toBe(c.before.card.illustration.captionEn);expect(now.illustration.captionZh).toBe(c.before.card.illustration.captionZh);
+ expect(hash(readFileSync('public/'+now.illustration.path))).toBe('2f5d8f250cb26ded297d2e1e02060fff1202aada9ac78bb299b5cc0f7e53c1e7');expect(hash(readFileSync('public/'+c.before.card.illustration.path))).toBe(c.before.approval.publishedImageSha256);
+ expect(beforeU25Pairs(cards,'cards')).toHaveLength(726);expect(beforeU25Pairs(audit,'approvals')).toHaveLength(726);expect(getWordBeastAsset('W000944','wake')).toContain(now.illustration.path);expect(approvedWordIllustration('wake','W000944')).toEqual(now.illustration);
+ expect(bootstrap.examples.filter(e=>e.word==='wake')).toEqual(c.formalExamples);expect(words.find(w=>w.wordId==='W000944')).not.toHaveProperty('verbForms');
+ for(const field of ['captionEn','captionZh','path']){const bad=structuredClone(cards);bad.find(x=>x.id===c.id)!.illustration[field as 'path']='unverified';expect(()=>beforeU25Pairs(bad,'cards')).toThrow();}
+ const bad=structuredClone(audit);bad.find(x=>x.id===c.id)!.publishedImageSha256='unverified';expect(()=>beforeU25Pairs(bad,'approvals')).toThrow();expect(()=>beforeU25Pairs([...cards,now],'cards')).toThrow();
+ const other=structuredClone(cards);other[0].illustration.captionEn='unrecorded';expect(hash(JSON.stringify(other.filter(x=>x.id!==c.id)))).not.toBe(proof.unchangedCardRowsSha256);
 });

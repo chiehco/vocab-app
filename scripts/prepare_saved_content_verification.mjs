@@ -28,6 +28,7 @@ paths.push('LV1-U23-patches.json','LV1-U23-translation-precision.json','LV1-U23-
 paths.push('LV1-U24-patches.json','LV1-U24-verified-forms-patches.json');
 paths.push('LV1-U24-usage-note-followup.json');
 paths.push('LV1-U24-carrot-definition.json');
+paths.push('LV1-U25-patches.json','LV1-U25-verified-forms-patches.json');
 const expected={};
 for(const path of paths)for(const p of read('docs/unit-audit-20261105/'+path).patches){
  const key=p.dataset+':'+p.id;

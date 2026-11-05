@@ -1,0 +1,269 @@
+{
+  "unit": "LV1-U25",
+  "checkpointAt": "2026-11-05T23:07:35.000Z",
+  "priorCheckpoint": "c38b0b1ee4aa5f8cf6f91c2122471343b7f25266",
+  "priorCheckpointFullCi": {
+    "commit": "c38b0b1ee4aa5f8cf6f91c2122471343b7f25266",
+    "run": 42122011505,
+    "job": 127576528663,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42122011505/job/127576528663",
+    "status": "completed",
+    "conclusion": "success",
+    "checkoutShaMatched": true,
+    "testFiles": 216,
+    "tests": 1756,
+    "python": [
+      14,
+      7,
+      36,
+      10
+    ],
+    "steps": [
+      {
+        "name": "Set up job",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/checkout@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/setup-node@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm ci",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm ci --prefix services/pageviews-cloudflare",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm test --prefix services/pageviews-cloudflare",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/setup-python@v5",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m pip install openpyxl==3.1.5 Pillow==12.0.0",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m unittest discover -s scripts -p 'test_apply_lv3_*.py'",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m unittest discover -s scripts -p 'test_apply_lv4_*.py'",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m unittest discover -s scripts -p 'test_apply_unit_audit.py'",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m unittest discover -s scripts -p 'test_build_sa_pack_lv5_legacy.py'",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python scripts/prepare_recovered_unit_drafts.py --check",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python scripts/integrate_recovered_units.py --check",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm run lint",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm run typecheck",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm run test -- --maxWorkers=1 --testTimeout=15000",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm run build",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/setup-python@v5",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/setup-node@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/checkout@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Complete job",
+        "conclusion": "success"
+      }
+    ],
+    "logEvidence": [
+      "2026-11-05T22:30:12.7929829Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +c38b0b1ee4aa5f8cf6f91c2122471343b7f25266:refs/remotes/origin/content/unit-audit-20261105",
+      "2026-11-05T22:30:22.5678448Z  * [new ref]         c38b0b1ee4aa5f8cf6f91c2122471343b7f25266 -> origin/content/unit-audit-20261105",
+      "2026-11-05T22:30:23.4495966Z c38b0b1ee4aa5f8cf6f91c2122471343b7f25266",
+      "2026-11-05T22:31:04.4234650Z Ran 14 tests in 23.412s",
+      "2026-11-05T22:31:19.7674112Z Ran 7 tests in 15.181s",
+      "2026-11-05T22:31:42.9920695Z Ran 36 tests in 23.109s",
+      "2026-11-05T22:31:43.1756448Z Ran 10 tests in 0.113s",
+      "2026-11-05T22:42:43.1609297Z  Test Files  216 passed (216)",
+      "2026-11-05T22:42:43.1616305Z       Tests  1756 passed (1756)",
+      "2026-11-05T22:43:17.4278701Z ✓ built in 3.66s"
+    ]
+  },
+  "newCheckpointFullCi": {
+    "status": "pending_exact_head_after_commit"
+  },
+  "state": "precise_corrections_saved_actual_app_and_local_checks_passed",
+  "scope": {
+    "retainedPairs": 52,
+    "publishedPairs": 52,
+    "formalWords": 52,
+    "uniqueExamples": 80,
+    "notesRead": 69,
+    "noFormalId": 0
+  },
+  "counts": {
+    "mainRows": 54,
+    "mainFields": 92,
+    "wordRows": 42,
+    "clozePos": 10,
+    "practiceSentencesReviewed": 2,
+    "newVerbFormKeys": 24,
+    "totalPatchRows": 78,
+    "totalFields": 116,
+    "changedUsagePages": 30,
+    "imageReplacements": 1
+  },
+  "manifests": [
+    "LV1-U25-patches.json",
+    "LV1-U25-verified-forms-patches.json"
+  ],
+  "evidence": {
+    "sources": "LV1-U25-source-research.json",
+    "pixels": "LV1-U25-original-image-review.json",
+    "actualApp": "validation/U25-reopen-summary.json",
+    "exactInverse": "validation/U25-exact-inverse.json",
+    "pair": "LV1-U25-exact-pair-review.json"
+  },
+  "localValidation": {
+    "state": "passed",
+    "recordedAt": "2026-11-05T23:07:33.726Z",
+    "localVitest": {
+      "files": 11,
+      "tests": 143,
+      "groups": [
+        {
+          "files": 2,
+          "tests": 68,
+          "exitCode": 0,
+          "logSha256": "b61f3e8720a41e7007312a140d74988e7fccb87d212cedb78d27fa6bfc47ae7f"
+        },
+        {
+          "files": 9,
+          "tests": 75,
+          "exitCode": 0,
+          "logSha256": "c198a01dcf3ed15105010e2641ba202123bc87e2c94a88d7a00be4e919cc889f"
+        }
+      ],
+      "maxWorkers": 1,
+      "timeoutMs": 5000,
+      "defaultTimeoutUnchanged": true
+    },
+    "python": {
+      "tests": 37,
+      "exitCode": 0,
+      "logSha256": "360a29341643e7eca5c3b5e1b88baef8d979b196f86350b4deebfe591019b42f",
+      "scope": "Exact absent-field, full-row, source/status/identity, custom/null, mutation and recoverability boundaries."
+    },
+    "lint": {
+      "exitCode": 0,
+      "logSha256": "ccabb7869f4cb42e101c297b8547ee1f73b0920624a413ad76fd804b17f8dd29"
+    },
+    "typecheck": {
+      "exitCode": 0,
+      "logSha256": "0d93be78e4da5c0077681c4d834163661d59ddd24a0477595fb70ec25d5a5ea8"
+    },
+    "build": {
+      "exitCode": 0,
+      "logSha256": "dafe6d99ef4c288dc3233b8d091378a399c86c8cc97a97359b2af9a144dc96c1",
+      "builtSeconds": 13.48,
+      "pwaEntries": 268
+    },
+    "history": {
+      "allOriginalFixtureHashesRetained": true,
+      "wetPriorFormGuard": "Validate and reverse only the exact U25 get-wet usage correction before the old U15 whole-row SHA comparison.",
+      "imageGuard": "Validate the complete exact U25 wake card and approval before inverse reconstruction for U23/U22 historical rows."
+    },
+    "limitations": [
+      "This local success does not replace the new commit own full CI.",
+      "Two browser navigation interruptions and their limited successful retries are recorded in U25-reopen-summary.json."
+    ]
+  },
+  "preserved": {
+    "headwordIdsPosWholeWordStatuses": true,
+    "allExampleEnglishChineseClozeAnswersAndHints": true,
+    "originalImageAndApprovalHashes": true,
+    "other725PairRows": true,
+    "progressTables": 14,
+    "wakeFormalExamples": 2,
+    "independentPhraseSenseSource": true
+  },
+  "pending": [
+    {
+      "wordId": "W000303",
+      "word": "festival",
+      "field": "meaningZh",
+      "reason": "Modern noun and festival-related adjective are supported. A historical Webster1828 search excerpt also lists joyous/mirthful, but its original edition page was not examined. All inherited wording is retained; modern general-adjective scope remains qualified."
+    },
+    {
+      "wordId": "W000546",
+      "senseId": "W000546-1",
+      "word": "modern",
+      "reason": "Composite sense needs_check remains independent of the corrected visible summary and exact practice sentence."
+    },
+    {
+      "id": "LV1-U25-21",
+      "reason": "Picture card subtype is uncertain; do not infer standard baseball trading cards from a ball image."
+    },
+    {
+      "id": "LV1-U25-50",
+      "reason": "Coins have no denominations; exact price ratio cannot be derived from visible coin counts."
+    },
+    {
+      "id": "LV1-U25-39",
+      "reason": "So excited to put on / 迫不及待穿上 nuance and scene timing are retained pending original context."
+    }
+  ],
+  "formsPending": [
+    {
+      "wordId": "W000375",
+      "word": "hang",
+      "reason": "Hung/hanged apply to different senses; existing unqualified forms panel cannot display that boundary."
+    },
+    {
+      "wordId": "W000944",
+      "word": "wake",
+      "reason": "Different sense-specific principal forms require qualified presentation; image correction does not resolve this."
+    }
+  ],
+  "next": {
+    "key": "7000.ivy.LV2.27",
+    "unit": "LV2-U27",
+    "first": "LI-LV2U27-V001 / pride",
+    "deliveryMode": "text_only",
+    "practiceMode": "read_only",
+    "state": "not_started"
+  },
+  "deployment": "No merge, deployment, PR or publication-mode change."
+}
