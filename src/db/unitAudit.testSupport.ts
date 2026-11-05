@@ -9,10 +9,16 @@ import u3Remaining from '../../docs/unit-audit-20261105/LV1-U03-remaining-patche
 import u4 from '../../docs/unit-audit-20261105/LV1-U04-patches.json';
 import u5 from '../../docs/unit-audit-20261105/LV1-U05-patches.json';
 import u6 from '../../docs/unit-audit-20261105/LV1-U06-patches.json';
+import u6Syntax from '../../docs/unit-audit-20261105/LV1-U06-syntax-followup.json';
+import examSources from '../../docs/unit-audit-20261105/LV1-U05-U06-exam-source-followup.json';
+import u7 from '../../docs/unit-audit-20261105/LV1-U07-patches.json';
+import u7Hints from '../../docs/unit-audit-20261105/LV1-U07-hints-followup.json';
+import lexicalSources from '../../docs/unit-audit-20261105/LV1-U02-U03-lexical-source-followup.json';
+import catDefinition from '../../docs/unit-audit-20261105/LV1-U03-cat-definition-followup.json';
 
 type Row = Record<string, unknown>;
 type Patch = {dataset:string; key:string; id:string; before:Row; after:Row; reason:string; evidence:string};
-const patches:Patch[]=[...u1.patches,...u2.patches,...pig.patches,...u3.patches,...u3Remaining.patches,...u4.patches,...u5.patches,...u6.patches];
+const patches:Patch[]=[...u1.patches,...u2.patches,...pig.patches,...u3.patches,...u3Remaining.patches,...u4.patches,...u5.patches,...u6.patches,...u6Syntax.patches,...examSources.patches,...u7.patches,...u7Hints.patches,...lexicalSources.patches,...catDefinition.patches];
 
 // Keep the historical payload hashes intact. Check each explicitly recorded new
 // field before reversing only that field for the old-release comparison.

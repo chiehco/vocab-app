@@ -6,20 +6,22 @@ import evidence from '../../../docs/unit-audit-20261105/LV1-U03-original-image-r
 import u4Evidence from '../../../docs/unit-audit-20261105/LV1-U04-original-image-review.json';
 import u5Evidence from '../../../docs/unit-audit-20261105/LV1-U05-original-image-review.json';
 import u6Evidence from '../../../docs/unit-audit-20261105/LV1-U06-original-image-review.json';
+import u7Evidence from '../../../docs/unit-audit-20261105/LV1-U07-original-image-review.json';
 import publishedUnits from './lv1ReviewedImages.json';
 import words from '../../../public/data/v1/words.json';
-import {approvedCurriculumIllustration,approvedWordIllustration} from './approvedCurriculum';
+import {approvedCurriculumIllustration,approvedWordIllustration,approvedLV1Images,approvedCurriculumCard} from './approvedCurriculum';
 import {getWordBeastAsset} from '../wordbeast/wordBeastAssets';
 
 it('binds the explicitly reviewed general-card repairs to exact images and captions',()=>{
- expect(cards).toHaveLength(53);
+ expect(cards).toHaveLength(82);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U03-'))).toHaveLength(18);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U04-'))).toHaveLength(19);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U05-'))).toHaveLength(4);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U06-'))).toHaveLength(12);
- expect(new Set(cards.map(c=>c.officialWordId)).size).toBe(53);
+ expect(cards.filter(c=>c.reviewId.startsWith('LV1-U07-'))).toHaveLength(29);
+ expect(new Set(cards.map(c=>c.officialWordId)).size).toBe(82);
  for(const card of cards){
-  const proof=[...evidence.cards,...u4Evidence.cards,...u5Evidence.cards,...u6Evidence.cards].find(c=>c.id===card.reviewId)!;
+  const proof=[...evidence.cards,...u4Evidence.cards,...u5Evidence.cards,...u6Evidence.cards,...u7Evidence.cards].find(c=>c.id===card.reviewId)!;
   expect(proof.pixelReview).toContain('actually viewed original');
   expect(proof.observation).toBeTruthy();
   expect(createHash('sha256').update(readFileSync('public/'+card.illustration.path)).digest('hex')).toBe(proof.publishedImageSha256);
@@ -34,14 +36,29 @@ it('binds the explicitly reviewed general-card repairs to exact images and capti
  }
 });
 
+it('uses an exact audited general-card repair while retaining original unit-specific paths and other defaults',()=>{
+ const repaired=cards.find(c=>c.reviewId==='LV1-U07-83')!;
+ const original=publishedUnits.find(c=>c.id==='LV1-U10-76')!;
+ expect(approvedWordIllustration('mind',repaired.officialWordId)).toEqual(repaired.illustration);
+ expect(approvedLV1Images('mind',repaired.officialWordId)).toContainEqual(original);
+ expect(approvedCurriculumIllustration('mind','/'+original.illustration.path)).toEqual(original.illustration);
+ for(const c of publishedUnits){
+  if(!c.officialWordId||cards.some(a=>a.officialWordId===c.officialWordId))continue;
+  const expected=approvedCurriculumCard(c.aliases[0],c.officialWordId)?.illustration??approvedLV1Images(c.aliases[0],c.officialWordId)[0]?.illustration;
+  expect(approvedWordIllustration(c.aliases[0],c.officialWordId)).toEqual(expected);
+ }
+});
+
 it('keeps the twenty-four unpublished curriculum drafts out of the published unit manifest',()=>{
  expect(publishedUnits).toHaveLength(726);
  expect(publishedUnits.filter(c=>c.unit===3)).toHaveLength(22);
  expect(publishedUnits.filter(c=>c.unit===4)).toHaveLength(5);
  expect(publishedUnits.filter(c=>c.unit===5)).toHaveLength(13);
  expect(publishedUnits.filter(c=>c.unit===6)).toHaveLength(23);
+ expect(publishedUnits.filter(c=>c.unit===7)).toHaveLength(37);
  for(const draft of evidence.cards)expect(publishedUnits.some(c=>c.id===draft.id)).toBe(false);
  for(const draft of u4Evidence.cards.filter(c=>!c.sourceUnitPublished))expect(publishedUnits.some(c=>c.id===draft.id)).toBe(false);
  for(const draft of u5Evidence.cards.filter(c=>!c.sourceUnitPublished))expect(publishedUnits.some(c=>c.id===draft.id)).toBe(false);
  for(const draft of u6Evidence.cards.filter(c=>!c.sourceUnitPublished))expect(publishedUnits.some(c=>c.id===draft.id)).toBe(false);
+ for(const draft of u7Evidence.cards.filter(c=>!c.sourceUnitPublished))expect(publishedUnits.some(c=>c.id===draft.id)).toBe(false);
 });

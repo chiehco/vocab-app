@@ -4748,8 +4748,8 @@
         "part"
       ],
       "type": "unverified_exam_source",
-      "state": "draft_sense_retained",
-      "details": "Current example grammar and meaning were checked. The inherited GSAT106 Q38 source assertion was not independently checked, so the draft sense is not promoted."
+      "state": "resolved_for_this_exact_sense_2026-11-05",
+      "details": "Official CEEC paper and answer now checked; see SOURCE-FOLLOWUPS.json and exact patch manifest. Separately authored practice sentence remains distinct from original exam text."
     },
     {
       "words": [
@@ -4792,7 +4792,15 @@
     "build": "passed; existing large-chunk warning",
     "finalTypecheck": "see validation/u06-final-typecheck.txt",
     "finalLint": "see validation/u06-final-lint.txt",
-    "fullCi": "pending_next_pushed_checkpoint"
+    "fullCi": {
+      "commit": "2337abd4f86703cde370777af379fa8c4083e128",
+      "run": 41977386293,
+      "conclusion": "success",
+      "completedAt": "2026-11-05T06:12:37Z",
+      "testFiles": 209,
+      "tests": 1653,
+      "url": "https://github.com/chiehco/vocab-app/actions/runs/41977386293"
+    }
   },
   "imageFollowups": {
     "sun": "U02 repaired and reopened, see LV1-U02-sunrise-review.json",
@@ -4806,8 +4814,10 @@
     "publishedSubset": 37
   },
   "publication": {
-    "state": "verified_local_checkpoint_ready_for_authorized_non_main_push",
+    "state": "pushed_remote_sha_verified",
+    "commit": "2337abd4f86703cde370777af379fa8c4083e128",
     "merge": false,
     "deploy": false
-  }
+  },
+  "sourceFollowups": "SOURCE-FOLLOWUPS.json"
 }

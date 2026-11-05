@@ -48,10 +48,12 @@ export function approvedLV1Images(word: string, wordId: string) {
 }
 
 export function approvedWordIllustration(word: string, wordId: string) {
+  // Exact audited general-card repairs supersede inherited LV1 defaults.
+  // Unit routes still retrieve their original exact image/caption by path.
   return approvedCurriculumCard(word, wordId)?.illustration
-    ?? approvedLV1Images(word, wordId)[0]?.illustration
     ?? auditedWordImages.find(card => card.officialWordId === wordId
-      && card.aliases.includes(word.trim().toLowerCase()))?.illustration;
+      && card.aliases.includes(word.trim().toLowerCase()))?.illustration
+    ?? approvedLV1Images(word, wordId)[0]?.illustration;
 }
 
 // Unit19 p.207 explicitly teaches these uncountable nouns with "a piece of".

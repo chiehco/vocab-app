@@ -53,6 +53,11 @@ class AuditWriteBoundaryTests(unittest.TestCase):
         self.manifest["patches"][0]["before"]["sensePos"] = "adj."
         self.assert_rejected_without_write(self.manifest)
 
+    def test_exam_source_is_limited_to_sense_rows(self):
+        self.manifest["patches"][0]["before"] = {"examEvidence": "old"}
+        self.manifest["patches"][0]["after"] = {"examEvidence": "new"}
+        self.assert_rejected_without_write(self.manifest)
+
     def test_unlisted_sentence_field_is_rejected(self):
         p = self.manifest["patches"][0]
         p["before"]["sentenceEn"] = self.row["sentenceEn"]

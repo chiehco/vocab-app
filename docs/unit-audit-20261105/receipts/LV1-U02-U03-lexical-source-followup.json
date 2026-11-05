@@ -1,0 +1,196 @@
+{
+  "manifest": "docs\\unit-audit-20261105\\LV1-U02-U03-lexical-source-followup.json",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "checkedAt": "2026-11-05T06:28:37.300708+00:00",
+  "changeCount": 4,
+  "changes": [
+    {
+      "dataset": "words",
+      "id": "W000130",
+      "before": {
+        "wordId": "W000130",
+        "word": "butter",
+        "wordVariants": [
+          "butter"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "奶油；黃油；塗黃油於",
+        "meaningEn": "an edible emulsion of fat globules made by churning milk or cream; for cooking and table use; a fighter who strikes the opponent with his head; (v.) to spread butter on food",
+        "usagePattern": "spread butter on N; buttered bread; peanut butter",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "butter",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "把奶油塗在……上；奶油麵包；花生醬"
+      },
+      "after": {
+        "wordId": "W000130",
+        "word": "butter",
+        "wordVariants": [
+          "butter"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "奶油；黃油；塗黃油於",
+        "meaningEn": "(n., food) a fatty spread made by churning milk or cream; (v.) to spread butter on food; (separate homograph noun) a person or animal that strikes with its head.",
+        "usagePattern": "spread butter on N; buttered bread; peanut butter",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "butter",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "把奶油塗在……上；奶油麵包；花生醬"
+      },
+      "reason": "Separate the food and spreading senses from the valid but unrelated head-butting homograph. Retain original draft status.",
+      "evidence": "Wordnik reproduces Princeton WordNet 3.0 and Century definitions: https://www.wordnik.com/words/butter . The Princeton endpoint was not read directly; this is an attributed reproduction, not a claim of direct Princeton access."
+    },
+    {
+      "dataset": "words",
+      "id": "W000148",
+      "before": {
+        "wordId": "W000148",
+        "word": "cat",
+        "wordVariants": [
+          "cat"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "貓；惡婦；嘔吐；電腦輔助教育",
+        "meaningEn": "feline mammal usually having thick soft fur and no ability to roar: domestic cats; wildcats; a spiteful woman gossip",
+        "usagePattern": "a/the cat; cat of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "cat",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "貓；某事物的貓"
+      },
+      "after": {
+        "wordId": "W000148",
+        "word": "cat",
+        "wordVariants": [
+          "cat"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "貓；（舊式貶義名詞）惡意說閒話的人",
+        "meaningEn": "(n.) a domestic cat or another animal of the cat family; (dated, derogatory noun) a malicious gossip. Other source uses are separate: cat as a British slang verb means to vomit; the uppercase abbreviation CAT can mean computer-aided teaching. These do not expand this learner headword’s existing noun POS.",
+        "usagePattern": "a/the cat",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "cat",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "一隻／那隻貓"
+      },
+      "reason": "Distinguish noun meanings from the slang verb and the separate uppercase abbreviation; replace the unsupported cat of N template. Keep the existing noun headword identity and draft status.",
+      "evidence": "Collins cat/CAT entries: https://www.collinsdictionary.com/dictionary/english/cat . Old raw values are retained in this exact before/after record; no headword POS expansion."
+    },
+    {
+      "dataset": "examples",
+      "id": "EXf48af4b5",
+      "before": {
+        "exampleId": "EXf48af4b5",
+        "word": "cat",
+        "sensePos": "n.",
+        "meaningHint": "貓；惡婦；嘔吐；電腦輔助教育",
+        "exampleType": "textbook",
+        "sentenceEn": "Some people prefer to have cats as pets.",
+        "sentenceZh": "有些人比較喜歡養貓作寵物。",
+        "blankSentence": "Some people prefer to have _____ as pets.",
+        "answer": "cats",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EXf48af4b5",
+        "word": "cat",
+        "sensePos": "n.",
+        "meaningHint": "貓",
+        "exampleType": "textbook",
+        "sentenceEn": "Some people prefer to have cats as pets.",
+        "sentenceZh": "有些人比較喜歡養貓作寵物。",
+        "blankSentence": "Some people prefer to have _____ as pets.",
+        "answer": "cats",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "reason": "The unchanged pet sentence uses cats as the animal noun, with no vomiting or acronym meaning.",
+      "evidence": "Existing sentence and cloze; Collins noun cat: https://www.collinsdictionary.com/dictionary/english/cat"
+    },
+    {
+      "dataset": "examples",
+      "id": "EXd479da4b",
+      "before": {
+        "exampleId": "EXd479da4b",
+        "word": "grandfather",
+        "sensePos": "n.",
+        "meaningHint": "祖父；始祖；原始資料組",
+        "exampleType": "textbook",
+        "sentenceEn": "Simon became a grandfather when his daughter had a son.",
+        "sentenceZh": "賽門的女兒生兒子後，他成了外公。",
+        "blankSentence": "Simon became a _____ when his daughter had a son.",
+        "answer": "grandfather",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EXd479da4b",
+        "word": "grandfather",
+        "sensePos": "n.",
+        "meaningHint": "外祖父（外公）",
+        "exampleType": "textbook",
+        "sentenceEn": "Simon became a grandfather when his daughter had a son.",
+        "sentenceZh": "賽門的女兒生兒子後，他成了外公。",
+        "blankSentence": "Simon became a _____ when his daughter had a son.",
+        "answer": "grandfather",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "reason": "His daughter has a son, so the specific family relationship is maternal grandfather. Keep the correct original Chinese sentence.",
+      "evidence": "Existing sentence and cloze; Collins family noun: https://www.collinsdictionary.com/dictionary/english/grandfather"
+    }
+  ],
+  "masterTouched": false,
+  "sentencesChanged": false,
+  "imagesChanged": false,
+  "sourceHashesBefore": {
+    "words.json": "c99a07f31991490283f592de3ef2ce47e08d53a5f21aafa6b0da589067614b5c",
+    "senses.json": "c6260380841af2824fa20ecde928234e7a68b7a783212790d4b869d4eb75b824",
+    "examples.json": "26b960fa927cb89e9897da94820ea99e7d5f6327c30ec9a42fce1a9031c7e847",
+    "meta.json": "2068ad8029e5af0dacc2b81f981994f71599693adf930b9233b5150f6413a529",
+    "sa-pack.json": "cd2b12c923b65bf77fbd033b55f962267471c39b6b230b6351e1733d570fc470"
+  },
+  "sourceHashesAfter": {
+    "words.json": "4e77d981d01570273dc54dede00d4a7eea3c052650f0eed1240e44bfb0c83758",
+    "senses.json": "c6260380841af2824fa20ecde928234e7a68b7a783212790d4b869d4eb75b824",
+    "examples.json": "f38559d81a18116ce0511a5069713119067e7e85d8a66d1c3c07b28c50d1fcb6",
+    "meta.json": "3e8becb707dbd1107772ca273d6b3c2390666cfff09ac77a8768fd7b2c134f63",
+    "sa-pack.json": "9de8396f41e3e540d11c7190d91d628522542d4702fc1f7891a6ff3b7bee4d06"
+  },
+  "state": "applied_not_ui_verified"
+}

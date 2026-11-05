@@ -16,7 +16,7 @@ from build_sa_pack import build_sa_pack
 
 ROOT = Path(__file__).resolve().parent.parent
 IDENTITY_KEYS = {"examples": "exampleId", "senses": "senseId", "words": "wordId"}
-EDITABLE_FIELDS = {"sensePos", "meaningHint", "status", "meaningZh", "meaningEn", "note", "senseId", "usagePattern", "usagePatternZh"}
+EDITABLE_FIELDS = {"sensePos", "meaningHint", "status", "meaningZh", "meaningEn", "note", "senseId", "usagePattern", "usagePatternZh", "examEvidence"}
 
 def validate_patch_shape(patch):
     """Reject incomplete evidence before the idempotent check or any write."""
@@ -28,6 +28,8 @@ def validate_patch_shape(patch):
     assert set(patch["after"]) <= EDITABLE_FIELDS, "Unlisted editable field"
     assert set(patch["after"]) <= set(patch["before"]), "Every after field needs an explicit before value"
     assert patch["key"] not in patch["after"], "Row identity cannot change"
+    if "examEvidence" in patch["after"]:
+        assert patch["dataset"] == "senses", "Exam-source evidence belongs to the sense row"
 
 def read(path):
     return json.loads(path.read_text(encoding="utf-8"))

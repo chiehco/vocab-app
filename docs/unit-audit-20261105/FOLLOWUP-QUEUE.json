@@ -1,0 +1,36 @@
+{
+  "updatedAt": "2026-11-05",
+  "items": [
+    {
+      "id": "LV1-U01-30",
+      "state": "supported_translation_refinement_queued_not_applied",
+      "word": "enough",
+      "englishUnchanged": "This shirt isn't big enough for him anymore.",
+      "beforeChinese": "這件襯衫對他來說已經不夠大了。",
+      "proposedChinese": "這件上衣對他來說已經不夠大了。",
+      "evidence": "Round-neck T-shirt in the original image; shirt covers upper-body clothing: https://www.merriam-webster.com/dictionary/shirt",
+      "next": "Check all actual caption/example matches, preserve exact before/after and approval text hashes, reopen unit/general pair. No image or English change."
+    },
+    {
+      "id": "LV1-U08-90",
+      "state": "needs_original_and_actual_card_review",
+      "word": "intersection",
+      "englishUnchanged": "Turn left at the next intersection to get to the bakery.",
+      "observation": "Existing original-image review found a red arrow pointing screen-left while the bakery is on the right-hand road. Recheck full-size image and actual route before deciding the minimal repair."
+    },
+    {
+      "id": "LV1-U10-76",
+      "state": "confirmed_pair_mismatch_not_repaired_in_unit",
+      "word": "mind",
+      "englishUnchanged": "Would you mind opening the door? My hands are full.",
+      "observation": "Original path shows a shivering character beside a window, not a person with full hands opening a door. General mind card now uses the separately checked U07 closing-window pair. The U10 unit sentence and asset remain recoverable and unchanged, pending its own image repair."
+    },
+    {
+      "id": "W001008-1",
+      "state": "official_source_available_for_precise_followup_not_applied",
+      "word": "active",
+      "evidence": "The same CEEC112 paper and answer used for even show Q22 option B active, describing a physically active outdoor worker; answer Q22=B. The grandmother-swimming practice sentence is separately authored.",
+      "next": "Record exact old/new source, explain original context separately from practice sentence, verify actual saved sense before changing draft status."
+    }
+  ]
+}

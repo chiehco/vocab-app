@@ -1,0 +1,20 @@
+{
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "unit": "LV1-U06",
+  "scope": "Terminology correction to the previously audited while usage rule; no example meaning or source sentence changes.",
+  "patches": [
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000968",
+      "before": {
+        "usagePatternZh": "當……時／然而／雖然 + 子句；簡化子句可接動名詞；一會兒；消磨時間"
+      },
+      "after": {
+        "usagePatternZh": "當……時／然而／雖然 + 子句；主語相同時可簡化為 while + V-ing 分詞子句；一會兒；消磨時間"
+      },
+      "reason": "The reduced while clause uses a present participle, not a gerund complement. State the normal shared-subject condition explicitly.",
+      "evidence": "British Council, Participle clauses: present participles and normally the same subject as the main clause; includes while examples. https://learnenglish.britishcouncil.org/free-resources/grammar/c1/participle-clauses"
+    }
+  ]
+}

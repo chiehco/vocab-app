@@ -1,0 +1,18 @@
+{
+  "test": "src/features/vocabulary/auditedWordIllustrations.test.ts",
+  "testName": "binds the explicitly reviewed general-card repairs to exact images and captions",
+  "state": "resolved_after_general_default_priority_fix",
+  "evidenceKind": "Observed process stderr; initial stdout is archived separately in u07-regression.txt",
+  "expected": {
+    "path": "wordbeast/audited-20261105/LV1-U07-83-2f2adec62019.webp",
+    "captionEn": "Would you mind closing the window? It's a bit cold in here.",
+    "captionZh": "你介意把窗戶關上嗎？這裡有點冷。"
+  },
+  "receivedBeforeFix": {
+    "path": "wordbeast/lv1-reviewed/LV1-U10-76-0f10b49c443c.webp",
+    "captionEn": "Would you mind opening the door? My hands are full.",
+    "captionZh": "你介意幫我開門嗎？我手上都是東西。"
+  },
+  "resolution": "The exact audited general-card pair precedes inherited LV1 defaults. Earlier LV3/LV4 defaults remain first, while exact unit-specific paths and all non-overridden defaults retain regression coverage. The U10 unit's image mismatch itself remains queued; no original sentence was altered.",
+  "verification": "3 image tests passed after the fix; final related regression passed 6 files and 22 tests, with actual mind card reopened and pixels viewed."
+}

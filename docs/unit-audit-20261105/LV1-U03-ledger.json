@@ -3217,7 +3217,8 @@
     {
       "id": "LV1-U03-02",
       "type": "source_dictionary_conflict",
-      "details": "cat通用中文含惡婦、嘔吐、電腦輔助教育，與單一n.摘要的來源／大小寫及詞性範圍仍待來源核定；本次未猜改。"
+      "details": "Collins supports cat animal noun, dated derogatory noun, British slang verb and separate uppercase CAT abbreviation. Noun summary, exact pet hint and unsupported usage rule clarified; no headword POS expansion or whole-word promotion. See SOURCE-FOLLOWUPS.json.",
+      "state": "source_uses_separated_whole_word_draft_retained"
     },
     {
       "id": "LV1-U03-12",
@@ -3233,7 +3234,8 @@
     {
       "id": "LV1-U03-44",
       "type": "source_dictionary_conflict",
-      "details": "grandfather中文摘要含原始資料組，來源未確認；保留原摘要，不影響已核對grandfather clock原句。"
+      "details": "Pearson official ICT marking scheme confirms Grandfather as the oldest master-file generation. Retain the original computing sense; inherited Chinese wording remains pending precision. Daughter/son example hint now identifies maternal grandfather; original sentence and grandfather-clock example unchanged.",
+      "state": "computing_source_confirmed_chinese_precision_pending"
     },
     {
       "type": "structured_verb_forms",
@@ -3270,5 +3272,10 @@
     "push": false,
     "merge": false,
     "deploy": false
+  },
+  "sourceFollowups": {
+    "record": "SOURCE-FOLLOWUPS.json",
+    "cat": "noun/slang/uppercase source distinctions clarified; draft whole-word status retained",
+    "grandfather": "computing sense confirmed; exact family hint corrected; original Chinese computing summary still pending"
   }
 }
