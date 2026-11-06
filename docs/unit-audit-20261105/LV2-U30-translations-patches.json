@@ -1,0 +1,24 @@
+{
+  "unit": "LV2-U30",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "baseCheckpoint": "a0ce2de14c050686aedefe58a05255163e55ad34",
+  "patches": [
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXc43d3286",
+      "before": {
+        "word": "model",
+        "sentenceEn": "The students built a model of the solar system for their science project.",
+        "blankSentence": "The students built a _____ of the solar system for their science project.",
+        "answer": "model",
+        "sentenceZh": "學生們為科展製作了一個太陽系模型。"
+      },
+      "after": {
+        "sentenceZh": "學生們為科學專題製作了一個太陽系模型。"
+      },
+      "reason": "science project does not specifically say science fair; no image on model general card.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/project"
+    }
+  ]
+}

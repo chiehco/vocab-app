@@ -1,0 +1,26 @@
+{
+  "facts": [
+    {
+      "exampleId": "EXc43d3286",
+      "before": {
+        "word": "model",
+        "sentenceEn": "The students built a model of the solar system for their science project.",
+        "blankSentence": "The students built a _____ of the solar system for their science project.",
+        "answer": "model",
+        "sentenceZh": "學生們為科展製作了一個太陽系模型。"
+      },
+      "after": {
+        "sentenceZh": "學生們為科學專題製作了一個太陽系模型。"
+      },
+      "reason": "science project does not specifically say science fair; no image on model general card.",
+      "evidence": [
+        {
+          "url": "https://www.collinsdictionary.com/dictionary/english/project",
+          "retrieval": "direct_official_dictionary_find",
+          "support": "Project is planned work; the unchanged sentence does not specify a science fair."
+        }
+      ],
+      "pairBoundary": "No image is loaded on the actual model general card."
+    }
+  ]
+}

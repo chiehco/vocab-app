@@ -1,3 +1,4 @@
+import u30Evidence from '../../../docs/unit-audit-20261105/LV2-U30-original-image-review.json';
 import {createHash} from 'node:crypto';
 import {readFileSync} from 'node:fs';
 import {expect,it} from 'vitest';
@@ -25,8 +26,15 @@ import words from '../../../public/data/v1/words.json';
 import {approvedCurriculumIllustration,approvedWordIllustration,approvedLV1Images,approvedCurriculumCard} from './approvedCurriculum';
 import {getWordBeastAsset} from '../wordbeast/wordBeastAssets';
 
+const particularAuditRow={reviewId:'LI-LV2U30-V035',officialWordId:'W001616',aliases:['particular'],illustration:{path:'wordbeast/audited-20261105/LV2-U30-W001616-1ceb569d4c35.webp',captionEn:'Doudou picks out the particular shell with white spots.',captionZh:'豆豆挑出那個有白點的特定貝殼。'}};
+function registryBeforeU30(value:typeof cards){
+ expect(value).toHaveLength(333);
+ expect(value.filter(c=>c.reviewId===particularAuditRow.reviewId)).toEqual([particularAuditRow]);
+ return value.filter(c=>c.reviewId!==particularAuditRow.reviewId);
+}
+
 it('binds the explicitly reviewed general-card repairs to exact images and captions',()=>{
- expect(cards).toHaveLength(332);
+ expect(cards).toHaveLength(333);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U03-'))).toHaveLength(18);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U04-'))).toHaveLength(19);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U05-'))).toHaveLength(4);
@@ -41,13 +49,13 @@ it('binds the explicitly reviewed general-card repairs to exact images and capti
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U14-'))).toHaveLength(34);
  expect(cards.filter(c=>c.reviewId.startsWith('LV1-U15-'))).toHaveLength(42);
  expect(cards.filter(c=>c.reviewId==='LI-LV1U17-V027')).toHaveLength(1);
- expect(new Set(cards.map(c=>c.officialWordId)).size).toBe(332);
+ expect(new Set(cards.map(c=>c.officialWordId)).size).toBe(333);
 });
 
 const reviewGroup=(id:string)=>id.startsWith('LI-')?id.split('-')[1]:id.split('-').slice(0,2).join('-');
 it.each([...new Set(cards.map(c=>reviewGroup(c.reviewId)))])('binds every explicitly reviewed general-card repair in %s',(group)=>{
  for(const card of cards.filter(c=>reviewGroup(c.reviewId)===group)){
-  const proof=[...evidence.cards,...u4Evidence.cards,...u5Evidence.cards,...u6Evidence.cards,...u7Evidence.cards,...u8Evidence.cards,...u9Evidence.cards,...u10Evidence.cards,...u11Evidence.cards,...u12Evidence.cards,...u13Evidence.cards,...u14Evidence.cards,...u15Evidence.cards,...u17Evidence.cards,...u18Evidence.cards,...u20Evidence.cards].find(c=>c.id===card.reviewId)!;
+  const proof=[...evidence.cards,...u4Evidence.cards,...u5Evidence.cards,...u6Evidence.cards,...u7Evidence.cards,...u8Evidence.cards,...u9Evidence.cards,...u10Evidence.cards,...u11Evidence.cards,...u12Evidence.cards,...u13Evidence.cards,...u14Evidence.cards,...u15Evidence.cards,...u17Evidence.cards,...u18Evidence.cards,...u20Evidence.cards,...u30Evidence.cards].find(c=>c.id===card.reviewId)!;
   expect(proof.pixelReview).toContain('actually viewed original');
   expect(proof.observation).toBeTruthy();
   expect(createHash('sha256').update(readFileSync('public/'+card.illustration.path)).digest('hex')).toBe(proof.publishedImageSha256);
@@ -154,14 +162,33 @@ it('pairs the retained crown bytes with their own caption and preserves the phon
  expect(approvedCurriculumIllustration('wrong-word','/wordbeast/lv1/W000283.png')).toBeUndefined();
  const examples=JSON.parse(readFileSync('public/data/v1/examples.json','utf8'));
  expect(examples.find((e:{exampleId:string})=>e.exampleId==='EX7c7366a9')).toMatchObject({sentenceEn:'This phone is too expensive for me.',sentenceZh:'這支手機對我來說太貴了。',blankSentence:'This phone is too _____ for me.',answer:'expensive',sensePos:'adj.'});
- expect(createHash('sha256').update(JSON.stringify(cards.filter(c=>!['LI-LV1U18-V045','LI-LV1U20-V065','LI-LV1U20-V073'].includes(c.reviewId)))).digest('hex')).toBe(u18Evidence.previousRegistryHash);
+ expect(createHash('sha256').update(JSON.stringify(registryBeforeU30(cards).filter(c=>!['LI-LV1U18-V045','LI-LV1U20-V065','LI-LV1U20-V073'].includes(c.reviewId)))).digest('hex')).toBe(u18Evidence.previousRegistryHash);
  expect(publishedUnits.some(c=>c.id==='LI-LV1U18-V045')).toBe(false);
 });
 
 it('pairs the unchanged U20 fly and blueberry images with their own captions while retaining all previous pairs',()=>{
- expect(createHash('sha256').update(JSON.stringify(cards.filter(c=>!['LI-LV1U20-V065','LI-LV1U20-V073'].includes(c.reviewId)))).digest('hex')).toBe(u20Evidence.previousRegistryHash);
+ expect(createHash('sha256').update(JSON.stringify(registryBeforeU30(cards).filter(c=>!['LI-LV1U20-V065','LI-LV1U20-V073'].includes(c.reviewId)))).digest('hex')).toBe(u20Evidence.previousRegistryHash);
  const examples=JSON.parse(readFileSync('public/data/v1/examples.json','utf8'));
  for(const proof of u20Evidence.cards){const pair=approvedWordIllustration(proof.word,proof.officialWordId)!;expect(pair).toMatchObject({captionEn:proof.captionEn,captionZh:proof.captionZh});expect(approvedCurriculumIllustration(proof.word,'/'+pair.path+'?v=test')).toEqual(pair);expect(approvedCurriculumIllustration('wrong-word','/'+pair.path)).toBeUndefined();expect(publishedUnits.some(c=>c.id===proof.id)).toBe(false);}
  expect(examples.find((e:{exampleId:string})=>e.exampleId==='EXe12abfed')).toMatchObject({sentenceEn:'The noise from the construction site really bothers me every morning.',sentenceZh:'每天早上工地傳來的噪音都讓我很煩。',blankSentence:'The noise from the construction site really _____ me every morning.',answer:'bothers'});
  expect(examples.find((e:{exampleId:string})=>e.exampleId==='EX0fecd40b')).toMatchObject({sentenceEn:'This restaurant serves the most delicious noodles in town.',sentenceZh:'這家餐廳供應鎮上最美味的麵。',blankSentence:'This restaurant serves the most _____ noodles in town.',answer:'delicious'});
+});
+
+it('changes only the exact particular general pair and retains all332 previous audited pairs',()=>{
+ const added=cards.find(c=>c.reviewId==='LI-LV2U30-V035')!;
+ expect(added).toEqual(particularAuditRow);
+ expect(createHash('sha256').update(JSON.stringify(registryBeforeU30(cards))).digest('hex')).toBe('5bed66e484106d29474ba2da5704276c856b7af27cff72cb28c2e363f85efd70');
+ expect(createHash('sha256').update(readFileSync('public/wordbeast/s/W001616.webp')).digest('hex')).toBe('c55ca3324db35925d9f74202b922acb9e391050aac34ed92ded81bd35af8a7b0');
+ expect(publishedUnits.some(c=>c.officialWordId==='W001616')).toBe(false);
+ expect(approvedWordIllustration('particular','W001616')).toEqual(added.illustration);
+ expect(approvedWordIllustration('particular','W999999')).toBeUndefined();
+ expect(approvedCurriculumIllustration('wrong-word','/'+added.illustration.path)).toBeUndefined();
+});
+
+it('rejects altered U30 pairs before reconstructing the immutable earlier registry',()=>{
+ for(const field of ['reviewId','officialWordId']){const bad=structuredClone(cards);(bad.find(c=>c.reviewId===particularAuditRow.reviewId)! as Record<string,unknown>)[field]='invented';expect(()=>registryBeforeU30(bad)).toThrow();}
+ for(const field of ['path','captionEn','captionZh']){const bad=structuredClone(cards);(bad.find(c=>c.reviewId===particularAuditRow.reviewId)!.illustration as Record<string,unknown>)[field]='unverified';expect(()=>registryBeforeU30(bad)).toThrow();}
+ const extra=structuredClone(cards);(extra.find(c=>c.reviewId===particularAuditRow.reviewId)! as Record<string,unknown>).unrecorded='unverified';expect(()=>registryBeforeU30(extra)).toThrow();
+ expect(()=>registryBeforeU30(cards.filter(c=>c.reviewId!==particularAuditRow.reviewId))).toThrow();
+ const previous=structuredClone(cards);previous[0].illustration.captionEn='unrecorded';expect(createHash('sha256').update(JSON.stringify(registryBeforeU30(previous))).digest('hex')).not.toBe('5bed66e484106d29474ba2da5704276c856b7af27cff72cb28c2e363f85efd70');
 });

@@ -1,3 +1,5 @@
+import currentLV2Unit30 from './curriculumLV2Unit30.json';
+import {lv2Unit30BeforeAudit} from './lv2Unit30Audit.testSupport';
 import currentLV2Unit29 from './curriculumLV2Unit29.json';
 import {lv2Unit29BeforeAudit} from './lv2Unit29Audit.testSupport';
 import currentLV2Unit28 from './curriculumLV2Unit28.json';
@@ -89,6 +91,10 @@ it('retains historical curriculum and question identities with the audited cubes
     if(old.templateId === 'TEXTBOOK-LV1-U21'){
       expect(retained.items).toEqual(currentUnit21.learningItems);
       priorItems=unit21BeforeAudit(currentUnit21).learningItems;
+    }
+    if(old.templateId === 'TEXTBOOK-LV2-U30'){
+      expect(retained.items).toEqual(currentLV2Unit30.learningItems);
+      priorItems=lv2Unit30BeforeAudit(currentLV2Unit30).learningItems;
     }
     if(old.templateId === 'TEXTBOOK-LV2-U29'){
       expect(retained.items).toEqual(currentLV2Unit29.learningItems);
