@@ -693,7 +693,7 @@
       "word": "generosity",
       "wordId": "W003446",
       "observedInUnit": "LV2-U38",
-      "state": "exact_pair_reopened_saved_verified_new_head_ci_pending",
+      "state": "exact_pair_app_reopened_saved_and_own_ci_success",
       "classification": "confirmed_literal_recipient_count_mismatch",
       "reason": "Original1024px image gives one apple to each of two friends; English says both apples to a friend. Preserve the exact English/Chinese caption and old asset; a future minimal image correction must show both apples given to one friend.",
       "repoPath": "public/wordbeast/a/W003446.webp",
@@ -709,7 +709,7 @@
       "productPairChanged": true,
       "oldAssetRetained": true,
       "evidence": "docs/unit-audit-20261105/validation/LV2-U38-image-followups.json",
-      "updatedAt": "2026-11-06T19:53:47.940Z",
+      "updatedAt": "2026-11-06T20:30:00.875Z",
       "acceptedGenerationCalls": 0,
       "uncertainOutcome": false,
       "toolBlockerEvidence": "docs/unit-audit-20261105/validation/LV2-U38-image-tool-blocker.json",
@@ -752,7 +752,7 @@
         "newAssetAvailableScope": "Reported candidate PNG only; no verified publication WebP locally installed or integrated."
       },
       "currentResolution": {
-        "state": "exact_consumer_locally_accepted_new_head_ci_pending",
+        "state": "accepted_own_consumer_ci_success",
         "assetCommit": "248c092f13c969123b0cd98102dd4d459112479f",
         "oldPath": "wordbeast/a/W003446.webp",
         "oldSha256": "3077fa8f9c844484d2f119f995ae1cc91cab7f01bd3857aeddbb380fe3d041da",
@@ -763,16 +763,17 @@
         "normalAppReopened": true,
         "savedVerified": true,
         "progressTablesPreserved": 14,
-        "evidence": "LV2-U38-U41-image-repairs.json"
+        "evidence": "LV2-U38-U41-image-repairs.json",
+        "consumerIntegrationCommit": "7ff55408250827184e243d2a83f31ca77088c3ee"
       },
-      "nextAction": "Track the new consumer-integration commit full CI; no regeneration or repeat integration."
+      "nextAction": null
     },
     {
       "id": "LV1-U09-27-image-quantity",
       "word": "playground",
       "wordId": "W001638",
       "observedInUnit": "LV2-U38",
-      "state": "exact_pair_reopened_saved_verified_new_head_ci_pending",
+      "state": "exact_pair_app_reopened_saved_and_own_ci_success",
       "classification": "core_alignment_with_literal_quantity_gap",
       "reason": "One child is swinging while the second stands cheering; actual caption uses plural kids are swinging. Preserve the core playground/happy action, exact caption and original1254px asset. No whole-theme mismatch is asserted.",
       "repoPath": "public/wordbeast/lv1-reviewed/LV1-U09-27-39abaecad0fa.webp",
@@ -788,7 +789,7 @@
       "productPairChanged": true,
       "oldAssetRetained": true,
       "evidence": "docs/unit-audit-20261105/validation/LV2-U38-image-followups.json",
-      "updatedAt": "2026-11-06T19:53:47.940Z",
+      "updatedAt": "2026-11-06T20:30:00.875Z",
       "acceptedGenerationCalls": 0,
       "uncertainOutcome": false,
       "toolBlockerEvidence": "docs/unit-audit-20261105/validation/LV2-U38-image-tool-blocker.json",
@@ -831,7 +832,7 @@
         "newAssetAvailableScope": "Reported candidate PNG only; no verified publication WebP locally installed or integrated."
       },
       "currentResolution": {
-        "state": "exact_consumer_locally_accepted_new_head_ci_pending",
+        "state": "accepted_own_consumer_ci_success",
         "assetCommit": "248c092f13c969123b0cd98102dd4d459112479f",
         "oldPath": "wordbeast/lv1-reviewed/LV1-U09-27-39abaecad0fa.webp",
         "oldSha256": "2a11198019d75bd6c145a98ac9a5e0a661e5bf6070867b17d093b4ae1aa2b407",
@@ -842,9 +843,10 @@
         "normalAppReopened": true,
         "savedVerified": true,
         "progressTablesPreserved": 14,
-        "evidence": "LV2-U38-U41-image-repairs.json"
+        "evidence": "LV2-U38-U41-image-repairs.json",
+        "consumerIntegrationCommit": "7ff55408250827184e243d2a83f31ca77088c3ee"
       },
-      "nextAction": "Track the new consumer-integration commit full CI; no regeneration or repeat integration."
+      "nextAction": null
     }
   ],
   "sourceFormResearchCoverage": {

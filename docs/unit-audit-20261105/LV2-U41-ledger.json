@@ -1,6 +1,6 @@
 {
   "unit": "LV2-U41",
-  "state": "text_checkpoint_complete_literal_image_followups_locally_accepted_new_head_ci_pending",
+  "state": "text_checkpoint_complete_literal_image_followups_app_and_own_ci_accepted",
   "baseCheckpoint": "8febac6a2ee1138e6f9cea1ef064b78abac67a57",
   "updatedAt": "2026-11-06T19:52:24.766Z",
   "scope": {
@@ -354,15 +354,38 @@
   "imageFollowups": {
     "discover": "validation/LV2-U41-discover-image-followup.json",
     "discoverLiteralActorQuantityPending": false,
-    "u38": "Both U38 image consumers locally accepted; separate image checkpoint CI pending.",
-    "discoverDelivery": "Verified producer asset installed, actual consumer reopened and saved; no local regeneration.",
+    "u38": "Both U38 exact image consumers reopened and saved; integration commit 7ff55408250827184e243d2a83f31ca77088c3ee has its own full CI success.",
+    "discoverDelivery": "Verified producer asset installed, actual discover consumer reopened and saved; exact integration head full CI success. No local regeneration.",
     "deliveryReview": "validation/LV2-U38-U41-delivery-review.json",
-    "state": "locally_accepted_new_image_checkpoint_ci_pending",
+    "state": "app_saved_and_own_image_checkpoint_ci_success",
     "resolution": "LV2-U38-U41-image-repairs.json",
     "doNotCountAsWholeUnitImagePass": true,
     "resolvedWords": [
       "discover"
-    ]
+    ],
+    "consumerIntegrationCi": {
+      "commit": "7ff55408250827184e243d2a83f31ca77088c3ee",
+      "run": 42283703235,
+      "job": 128118970362,
+      "url": "https://github.com/chiehco/vocab-app/actions/runs/42283703235/job/128118970362",
+      "status": "completed",
+      "conclusion": "success",
+      "checkoutShaReadFromFullLog": true,
+      "testFiles": 233,
+      "tests": 1903,
+      "pythonBatches": [
+        14,
+        7,
+        78,
+        3,
+        10
+      ],
+      "lint": "success",
+      "typecheck": "success",
+      "build": "success",
+      "buildLogCompletedAtUtc": "2026-11-06T20:11:49.1798035Z",
+      "jobCompletedAtUtc": "2026-11-06T20:11:53Z"
+    }
   },
   "priorCheckpointFullCi": {
     "commit": "8febac6a2ee1138e6f9cea1ef064b78abac67a57",

@@ -1,5 +1,5 @@
 {
-  "state": "local_required_checks_passed_new_head_ci_pending",
+  "state": "local_checks_and_exact_consumer_head_ci_success",
   "originalVitestTimeoutMs": 5000,
   "workers": 1,
   "regression": {
@@ -28,6 +28,26 @@
   "fullRegistryAndSingleGalleryInverse": true,
   "unrelatedHistoricalHashesUnchanged": true,
   "newHeadCi": {
-    "state": "pending_this_new_commit"
+    "commit": "7ff55408250827184e243d2a83f31ca77088c3ee",
+    "run": 42283703235,
+    "job": 128118970362,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42283703235/job/128118970362",
+    "status": "completed",
+    "conclusion": "success",
+    "checkoutShaReadFromFullLog": true,
+    "testFiles": 233,
+    "tests": 1903,
+    "pythonBatches": [
+      14,
+      7,
+      78,
+      3,
+      10
+    ],
+    "lint": "success",
+    "typecheck": "success",
+    "build": "success",
+    "buildLogCompletedAtUtc": "2026-11-06T20:11:49.1798035Z",
+    "jobCompletedAtUtc": "2026-11-06T20:11:53Z"
   }
 }

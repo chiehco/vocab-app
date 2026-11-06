@@ -84,7 +84,32 @@
     }
   ],
   "consumerResolution": {
-    "state": "all_three_locally_accepted_new_head_ci_pending",
-    "evidence": "LV2-U38-U41-image-repairs.json"
-  }
+    "state": "all_three_exact_consumers_app_saved_own_ci_success",
+    "evidence": "LV2-U38-U41-image-repairs.json",
+    "consumerIntegrationCi": {
+      "commit": "7ff55408250827184e243d2a83f31ca77088c3ee",
+      "run": 42283703235,
+      "job": 128118970362,
+      "url": "https://github.com/chiehco/vocab-app/actions/runs/42283703235/job/128118970362",
+      "status": "completed",
+      "conclusion": "success",
+      "checkoutShaReadFromFullLog": true,
+      "testFiles": 233,
+      "tests": 1903,
+      "pythonBatches": [
+        14,
+        7,
+        78,
+        3,
+        10
+      ],
+      "lint": "success",
+      "typecheck": "success",
+      "build": "success",
+      "buildLogCompletedAtUtc": "2026-11-06T20:11:49.1798035Z",
+      "jobCompletedAtUtc": "2026-11-06T20:11:53Z"
+    }
+  },
+  "historicalDeliveryObservationPreserved": true,
+  "currentResolutionUpdatedAtUtc": "2026-11-06T20:39:50.136Z"
 }

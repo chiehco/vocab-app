@@ -252,9 +252,32 @@
     "enterEntryDirection": "validation/LV2-U42-image-review.json",
     "confirmedReversal": false,
     "candidateDelivery": "validation/LV2-U38-U41-delivery-review.json",
-    "u41Discover": "Exact discover consumer locally accepted in the separate image followup; new image-checkpoint CI pending.",
-    "u38": "Both consumers locally accepted in the separate image followup; new image-checkpoint CI pending.",
-    "resolution": "LV2-U38-U41-image-repairs.json"
+    "u41Discover": "Exact discover consumer reopened and saved in integration commit 7ff55408250827184e243d2a83f31ca77088c3ee; its own full CI succeeded.",
+    "u38": "Both exact U38 consumers reopened and saved in the separate integration commit; its own full CI succeeded.",
+    "resolution": "LV2-U38-U41-image-repairs.json",
+    "consumerIntegrationCi": {
+      "commit": "7ff55408250827184e243d2a83f31ca77088c3ee",
+      "run": 42283703235,
+      "job": 128118970362,
+      "url": "https://github.com/chiehco/vocab-app/actions/runs/42283703235/job/128118970362",
+      "status": "completed",
+      "conclusion": "success",
+      "checkoutShaReadFromFullLog": true,
+      "testFiles": 233,
+      "tests": 1903,
+      "pythonBatches": [
+        14,
+        7,
+        78,
+        3,
+        10
+      ],
+      "lint": "success",
+      "typecheck": "success",
+      "build": "success",
+      "buildLogCompletedAtUtc": "2026-11-06T20:11:49.1798035Z",
+      "jobCompletedAtUtc": "2026-11-06T20:11:53Z"
+    }
   },
   "priorCheckpointFullCi": {
     "commit": "ef3d2c500963a6a20a72ea2af5f3825fea4d3a75",

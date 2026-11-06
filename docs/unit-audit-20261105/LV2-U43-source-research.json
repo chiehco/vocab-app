@@ -1,0 +1,157 @@
+{
+  "baseCheckpoint": "7ff55408250827184e243d2a83f31ca77088c3ee",
+  "methods": [
+    {
+      "scope": "Seventeen principal-parts candidates",
+      "retrieval": "Direct Collins Word forms actually read for all17; dial US regional note explicitly applies to the displayed US form.",
+      "evidenceFile": "VERIFIED-LV2-U43-VERB-FORMS-SOURCES.json"
+    },
+    {
+      "scope": "Storm, thunder, fog, bar, chopstick, universe, promise, admit, encourage, encouragement, measure, measurement, petrol, alien, confess, discourage, discouragement, disagreement, lengthen, consent, instruct, instruction, defeat, admission, under",
+      "retrieval": "Direct primary Collins definition and construction sections actually read. Word types are separated; reviewer constructions and Chinese paraphrases are not represented as verbatim dictionary quotes.",
+      "urls": [
+        "https://www.collinsdictionary.com/dictionary/english/storm",
+        "https://www.collinsdictionary.com/dictionary/english/thunder",
+        "https://www.collinsdictionary.com/dictionary/english/fog",
+        "https://www.collinsdictionary.com/dictionary/english/bar",
+        "https://www.collinsdictionary.com/dictionary/english/chopstick",
+        "https://www.collinsdictionary.com/dictionary/english/universe",
+        "https://www.collinsdictionary.com/dictionary/english/promise",
+        "https://www.collinsdictionary.com/dictionary/english/admit",
+        "https://www.collinsdictionary.com/dictionary/english/encourage",
+        "https://www.collinsdictionary.com/dictionary/english/encouragement",
+        "https://www.collinsdictionary.com/dictionary/english/measure",
+        "https://www.collinsdictionary.com/dictionary/english/measurement",
+        "https://www.collinsdictionary.com/dictionary/english/petrol",
+        "https://www.collinsdictionary.com/dictionary/english/alien",
+        "https://www.collinsdictionary.com/dictionary/english/confess",
+        "https://www.collinsdictionary.com/dictionary/english/discourage",
+        "https://www.collinsdictionary.com/dictionary/english/discouragement",
+        "https://www.collinsdictionary.com/dictionary/english/disagreement",
+        "https://www.collinsdictionary.com/dictionary/english/lengthen",
+        "https://www.collinsdictionary.com/dictionary/english/consent",
+        "https://www.collinsdictionary.com/dictionary/english/instruct",
+        "https://www.collinsdictionary.com/dictionary/english/instruction",
+        "https://www.collinsdictionary.com/dictionary/english/defeat",
+        "https://www.collinsdictionary.com/dictionary/english/admission",
+        "https://www.collinsdictionary.com/dictionary/english/under"
+      ]
+    },
+    {
+      "scope": "Fog grass/moss; petrol petroleum; alien property-transfer verb; instruction computing",
+      "retrieval": "Direct Collins subordinate entries actually read. Preserve grass after mowing, Scottish moss, archaic petroleum, rare alien verb and computing command; rare does not mean nonexistent.",
+      "urls": [
+        "https://www.collinsdictionary.com/dictionary/english/fog",
+        "https://www.collinsdictionary.com/dictionary/english/petrol",
+        "https://www.collinsdictionary.com/dictionary/english/alien",
+        "https://www.collinsdictionary.com/dictionary/english/instruction"
+      ]
+    },
+    {
+      "scope": "Hurricane numerical threshold and regional terminology",
+      "retrieval": "Direct NOAA Ocean Prediction Center glossary actually read: one-minute sustained surface wind threshold64 knots or greater. Initial NHC page returned403 and is not used as proof.",
+      "urls": [
+        "https://ocean.weather.gov/product_description/keyterm.php"
+      ]
+    },
+    {
+      "scope": "Long actual cloze adjective, adverb and verb",
+      "retrieval": "Direct Merriam-Webster entry/examples actually read; its Adverb examples include last long and all night long. Fixed as long as and in common constituent analyses remain pending.",
+      "urls": [
+        "https://www.merriam-webster.com/dictionary/long"
+      ]
+    },
+    {
+      "scope": "Run low on",
+      "retrieval": "Official Cambridge English and Traditional Chinese search excerpts actually read. Direct open returned403; not represented as full-page retrieval.",
+      "urls": [
+        "https://dictionary.cambridge.org/dictionary/english/be-get-run-low-on",
+        "https://dictionary.cambridge.org/dictionary/english-chinese-traditional/be-get-run-low-on"
+      ]
+    },
+    {
+      "scope": "Promise official exam",
+      "retrieval": "Direct CEEC full Q8 and final answer C read; hotel item kept distinct from library and original AI computer-room practices.",
+      "urls": [
+        "https://www.ceec.edu.tw/files/file_pool/1/0o051427482769341323/02-113%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%A7%91%E5%AE%9A%E7%A8%BF.pdf",
+        "https://www.ceec.edu.tw/files/file_pool/1/0o051427843482078305/02-113%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf"
+      ]
+    },
+    {
+      "scope": "Visible Chinese measurement/measure distinction",
+      "retrieval": "Direct Collins measurement noun definition and measure instrument/standard subordinate noun definitions actually read. Chinese hero field explicitly labels the separate measure senses; no whole-headword POS/status expansion.",
+      "urls": [
+        "https://www.collinsdictionary.com/dictionary/english/measurement",
+        "https://www.collinsdictionary.com/dictionary/english/measure"
+      ]
+    }
+  ],
+  "retainedPending": [
+    {
+      "ids": [
+        "EX1a8f1bfb"
+      ],
+      "field": "sensePos",
+      "reason": "As long as is a fixed subordinating phrase, but only long is blanked. Preserve the project classification pending an explicit constituent-POS convention."
+    },
+    {
+      "ids": [
+        "EX94bd20e9",
+        "EX97dcd830"
+      ],
+      "field": "sensePos",
+      "reason": "In common is variously classified by dictionary phrase placement; preserve the existing adj. and adj./n. analyses rather than forcing phrase function onto a single cloze word."
+    },
+    {
+      "ids": [
+        "W001942"
+      ],
+      "field": "meaningZh",
+      "reason": "Universe galaxy summary not directly supported by the opened Collins entry. Do not delete or declare nonexistent from one dictionary absence."
+    },
+    {
+      "ids": [
+        "W001703"
+      ],
+      "field": "meaningZh",
+      "reason": "Rapid steep summary still requires an exact historical adjective source; retain pending rather than deleting a potentially old sense."
+    },
+    {
+      "ids": [
+        "EXa70fbf4a",
+        "EX3a4057ad",
+        "EX50f90c64",
+        "EXae3e4283",
+        "EX9840c2f1",
+        "EX94bd20e9"
+      ],
+      "field": "sentenceZh",
+      "reason": "English kinship terms do not specify elder/younger or paternal/maternal distinctions. Preserve existing textbook convention pending context; do not mechanically enumerate relatives."
+    },
+    {
+      "ids": [
+        "EX117b8dbb"
+      ],
+      "field": "sentenceZh",
+      "reason": "Memorial may denote various commemorative places/objects. Current Chinese memorial hall is narrower but not contradicted by an established source; retain as optional source-context precision."
+    },
+    {
+      "ids": [
+        "W001308",
+        "W006037"
+      ],
+      "field": "meaningZh",
+      "reason": "Inherited reward summary remains a precise source question distinct from the verified encourage/encouragement basic senses; do not turn the whole word reviewed."
+    },
+    {
+      "ids": [
+        "EX5384e71a",
+        "EREVIEW20260830_W001682"
+      ],
+      "field": "source_status",
+      "reason": "Library and computer-room sentences are distinct from the official hotel Q8. Preserve their draft/needs_check states and exact English while independently verifying the official sense."
+    }
+  ],
+  "originalPrintBoundary": "Original images, source JSON, printed labels, English, questions and order stay unchanged. Display Chinese is reviewer paraphrase of inspected print, with explicit qualifications of regional/general terms. No formal identity fabricated.",
+  "sourceCandidatesNotWholeWordApproval": true
+}

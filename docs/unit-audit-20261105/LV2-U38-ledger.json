@@ -1,6 +1,6 @@
 {
   "unit": "LV2-U38",
-  "state": "text_checkpoint_complete_literal_image_followups_locally_accepted_new_head_ci_pending",
+  "state": "text_checkpoint_complete_literal_image_followups_app_and_own_ci_accepted",
   "baseCheckpoint": "ccec8402668d2c6ee27226a2b30d94d9ecaea21e",
   "updatedAt": "2026-11-06T19:52:24.763Z",
   "scope": {
@@ -166,7 +166,7 @@
     }
   },
   "imageFollowups": {
-    "state": "locally_accepted_new_image_checkpoint_ci_pending",
+    "state": "app_saved_and_own_image_checkpoint_ci_success",
     "pendingGenerationCalls": 0,
     "confirmedLiteralMismatch": "Resolved by exact generosity pair; original text-checkpoint observation retained in imageFollowupsHistorical.",
     "knownLiteralQuantityGap": "Resolved by exact playground pair; original text-checkpoint observation retained in imageFollowupsHistorical.",
@@ -178,7 +178,30 @@
     "resolvedWords": [
       "generosity",
       "playground"
-    ]
+    ],
+    "consumerIntegrationCi": {
+      "commit": "7ff55408250827184e243d2a83f31ca77088c3ee",
+      "run": 42283703235,
+      "job": 128118970362,
+      "url": "https://github.com/chiehco/vocab-app/actions/runs/42283703235/job/128118970362",
+      "status": "completed",
+      "conclusion": "success",
+      "checkoutShaReadFromFullLog": true,
+      "testFiles": 233,
+      "tests": 1903,
+      "pythonBatches": [
+        14,
+        7,
+        78,
+        3,
+        10
+      ],
+      "lint": "success",
+      "typecheck": "success",
+      "build": "success",
+      "buildLogCompletedAtUtc": "2026-11-06T20:11:49.1798035Z",
+      "jobCompletedAtUtc": "2026-11-06T20:11:53Z"
+    }
   },
   "retainedRealSenses": [
     "mop rare grimace noun",

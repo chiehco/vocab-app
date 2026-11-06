@@ -1,5 +1,5 @@
 {
-  "state": "literal_actor_quantity_repaired_locally_accepted_new_head_ci_pending",
+  "state": "literal_image_followups_app_saved_and_own_consumer_ci_success",
   "learningItemId": "LI-LV2U41-V025",
   "wordId": "W001261",
   "word": "discover",
@@ -48,7 +48,7 @@
   },
   "generationScope": "Local Windows generation was not started; verified producer Git asset was used without regeneration.",
   "resolution": {
-    "state": "exact_consumer_locally_accepted_new_head_ci_pending",
+    "state": "accepted_own_consumer_ci_success",
     "assetCommit": "248c092f13c969123b0cd98102dd4d459112479f",
     "oldPath": "wordbeast/s/W001261.webp",
     "oldSha256": "55f6e97791d73e0a4c308827ae5a584cc93204bc2e098b8759ee8d26c56c6fc6",
@@ -59,7 +59,31 @@
     "normalAppReopened": true,
     "savedVerified": true,
     "progressTablesPreserved": 14,
-    "evidence": "LV2-U38-U41-image-repairs.json"
+    "evidence": "LV2-U38-U41-image-repairs.json",
+    "consumerIntegrationCommit": "7ff55408250827184e243d2a83f31ca77088c3ee"
   },
-  "currentAssetRegistry": "src/features/vocabulary/auditedWordIllustrations.json exact default override; existing S-grade ID and independent practice registry retained."
+  "currentAssetRegistry": "src/features/vocabulary/auditedWordIllustrations.json exact default override; existing S-grade ID and independent practice registry retained.",
+  "consumerIntegrationCi": {
+    "commit": "7ff55408250827184e243d2a83f31ca77088c3ee",
+    "run": 42283703235,
+    "job": 128118970362,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42283703235/job/128118970362",
+    "status": "completed",
+    "conclusion": "success",
+    "checkoutShaReadFromFullLog": true,
+    "testFiles": 233,
+    "tests": 1903,
+    "pythonBatches": [
+      14,
+      7,
+      78,
+      3,
+      10
+    ],
+    "lint": "success",
+    "typecheck": "success",
+    "build": "success",
+    "buildLogCompletedAtUtc": "2026-11-06T20:11:49.1798035Z",
+    "jobCompletedAtUtc": "2026-11-06T20:11:53Z"
+  }
 }

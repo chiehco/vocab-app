@@ -1,6 +1,6 @@
 {
   "scope": "Exact current repository curriculum catalogue, not a publisher edition table of contents or an inferred numeric range.",
-  "checkedAtUtc": "2026-11-06T19:52:24.773Z",
+  "checkedAtUtc": "2026-11-06T21:02:45.018Z",
   "basis": {
     "model": "src/features/direct/model.ts",
     "catalog": "src/features/vocabulary/textbookCatalog.ts",
@@ -79,9 +79,10 @@
     41,
     42
   ],
-  "currentAuditUnits": [],
+  "currentAuditUnits": [
+    43
+  ],
   "notYetAuditedUnits": [
-    43,
     44,
     45,
     46,
@@ -722,8 +723,8 @@
       "curriculumPath": "src/features/direct/curriculumLV2Unit43.json",
       "registeredInModel": true,
       "deliveryMode": "text_only",
-      "auditStatus": "not_audited_in_this_full_audit",
-      "ledger": null,
+      "auditStatus": "audit_after_complete_pending_checkpoint_own_ci_source_limits_retained",
+      "ledger": "docs/unit-audit-20261105/LV2-U43-ledger.json",
       "ownCi": null
     },
     {
@@ -941,7 +942,7 @@
   },
   "releaseGate": {
     "wholeRegisteredLvReady": false,
-    "reason": "U43–U50 remain unaudited. Three U38/U41 image consumers are locally accepted and await their new integration-head CI. U42 enter/entry direction, U26 source readability and edition boundary remain explicit.",
+    "reason": "U43 needs its own new-head CI; registered U44–U50 remain unaudited. The three exact U38/U41 image consumers have actual App/persistence and their own7ff5540 CI acceptance. U42 direction, U26 and edition-boundary limitations remain explicit.",
     "mainMerged": false,
     "deployed": false
   },
@@ -950,7 +951,8 @@
       38,
       41
     ],
-    "state": "locally_accepted_new_head_ci_pending",
+    "state": "app_saved_and_exact_head_ci_success",
+    "commit": "7ff55408250827184e243d2a83f31ca77088c3ee",
     "evidence": "LV2-U38-U41-image-repairs.json"
   }
 }
