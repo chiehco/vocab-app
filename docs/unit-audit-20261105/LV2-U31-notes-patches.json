@@ -1,0 +1,133 @@
+{
+  "unit": "LV2-U31",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "baseCheckpoint": "0fdb2155318c0fcd8899772a6b04fd32ae5dae49",
+  "patches": [
+    {
+      "dataset": "notes",
+      "key": "noteId",
+      "id": "NXb9b5968e",
+      "before": {
+        "noteId": "NXb9b5968e",
+        "word": "distance",
+        "noteType": "phrase",
+        "title": "be within walking distance of...",
+        "content": "距離…走幾步路就到了。",
+        "status": "approved"
+      },
+      "after": {
+        "content": "在步行可達的距離內。"
+      },
+      "reason": "Refine walking distance without asserting that it is only a few steps.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/walking-distance"
+    },
+    {
+      "dataset": "notes",
+      "key": "noteId",
+      "id": "NX383f23f3",
+      "before": {
+        "noteId": "NX383f23f3",
+        "word": "wed",
+        "noteType": "usage",
+        "title": "the newlyweds",
+        "content": "新婚夫婦（恆用複數，帶定冠詞）。",
+        "status": "approved"
+      },
+      "after": {
+        "content": "新婚夫婦；此處採 the newlyweds 的複數片語。newlywed 本身為可數名詞，可用單數，常用複數。"
+      },
+      "reason": "Qualify the overabsolute always-plural/definite-article rule while preserving the printed phrase.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/newlywed"
+    },
+    {
+      "dataset": "notes",
+      "key": "noteId",
+      "id": "NXeec70d45",
+      "before": {
+        "noteId": "NXeec70d45",
+        "word": "trademark",
+        "noteType": "phrase",
+        "title": "register a trademark",
+        "content": "：商標。register a trademark。",
+        "status": "approved"
+      },
+      "after": {
+        "content": "註冊商標。"
+      },
+      "reason": "Restore the missing meaning of register in this exact phrase; preserve title, type and status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/trademark"
+    },
+    {
+      "dataset": "notes",
+      "key": "noteId",
+      "id": "NXc2fadce7",
+      "before": {
+        "noteId": "NXc2fadce7",
+        "word": "confidence",
+        "noteType": "usage",
+        "title": "confidence",
+        "content": "have confidence in ...；lose confidence in ...。",
+        "status": "approved"
+      },
+      "after": {
+        "content": "have confidence in ...：對……有信心；lose confidence in ...：對……失去信心。"
+      },
+      "reason": "Add the missing paired Chinese without changing the existing English constructions.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/confidence"
+    },
+    {
+      "dataset": "notes",
+      "key": "noteId",
+      "id": "NX99ea6a00",
+      "before": {
+        "noteId": "NX99ea6a00",
+        "word": "respectful",
+        "noteType": "usage",
+        "title": "respectful",
+        "content": "be respectful to sb；be respectful of sth；Respectfully yours, ...。",
+        "status": "approved"
+      },
+      "after": {
+        "content": "be respectful to sb：尊重某人；be respectful of sth：對某事物持尊重態度；Respectfully yours, ...：敬上（正式書信結尾）。"
+      },
+      "reason": "Make the existing three phrases comprehensible in Chinese; these examples do not impose exclusive to/of argument rules.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/respectful; scripts/sources/LV2Unit31.json; original p276 actually viewed"
+    },
+    {
+      "dataset": "notes",
+      "key": "noteId",
+      "id": "NX96d0b5f4",
+      "before": {
+        "noteId": "NX96d0b5f4",
+        "word": "degree",
+        "noteType": "usage",
+        "title": "degrees",
+        "content": "度（原書註：非 0 degree）。",
+        "status": "approved"
+      },
+      "after": {
+        "content": "表示溫度「零度」時寫 0 degrees。"
+      },
+      "reason": "Limit the printed plural rule to a temperature noun phrase; do not declare attributive zero-degree wrong.",
+      "evidence": "scripts/sources/LV2Unit31.json; original p279 actually viewed; https://www.collinsdictionary.com/dictionary/english/degree"
+    },
+    {
+      "dataset": "notes",
+      "key": "noteId",
+      "id": "NX37477442",
+      "before": {
+        "noteId": "NX37477442",
+        "word": "tricky",
+        "noteType": "usage",
+        "title": "put sb on the spot",
+        "content": "讓某人出糗／下不了臺。",
+        "status": "approved"
+      },
+      "after": {
+        "content": "使某人為難／難堪，例如迫使其回答難以回答的問題。"
+      },
+      "reason": "Refine the idiom without asserting that it always means public humiliation.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/put-someone-on-the-spot"
+    }
+  ]
+}
