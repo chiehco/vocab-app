@@ -797,5 +797,26 @@ class AuditWriteBoundaryTests(unittest.TestCase):
                 wrong = copy.deepcopy(p); wrong['before'] = {}
                 with self.assertRaises(AssertionError): audit.validate_patch_shape(wrong)
 
+    def test_either_note_preserves_identity_and_is_idempotent(self):
+        p = audit.read(audit.ROOT / 'docs/unit-audit-20261105/LV1-U10-either-note-followup.json')['patches'][0]
+        audit.validate_patch_shape(p)
+        row = copy.deepcopy(p['before'])
+        self.assertTrue(audit.apply_to_row(row, p))
+        self.assertEqual(row, {**p['before'], **p['after']})
+        self.assertFalse(audit.apply_to_row(row, p))
+
+    def test_either_note_rejects_unverified_content_or_identity(self):
+        p = audit.read(audit.ROOT / 'docs/unit-audit-20261105/LV1-U10-either-note-followup.json')['patches'][0]
+        for field in ('title', 'word', 'noteType', 'status', 'noteId', 'content'):
+            wrong = copy.deepcopy(p)
+            wrong['before'][field] = 'unverified'
+            with self.subTest(field=field):
+                with self.assertRaises(AssertionError): audit.validate_patch_shape(wrong)
+        for updates in ({'content': 'unverified'}, {**p['after'], 'status': 'draft'}):
+            wrong = copy.deepcopy(p); wrong['after'] = updates
+            with self.assertRaises(AssertionError): audit.validate_patch_shape(wrong)
+        wrong = copy.deepcopy(p); wrong['id'] = 'NXunknown'
+        with self.assertRaises(AssertionError): audit.validate_patch_shape(wrong)
+
 if __name__ == "__main__":
     unittest.main()

@@ -115,12 +115,16 @@ import u24Carrot from '../../docs/unit-audit-20261105/LV1-U24-carrot-definition.
 import u25 from '../../docs/unit-audit-20261105/LV1-U25-patches.json';
 import u25Forms from '../../docs/unit-audit-20261105/LV1-U25-verified-forms-patches.json';
 import verifiedU25Forms from '../../docs/unit-audit-20261105/VERIFIED-U25-VERB-FORMS-SOURCES.json';
+import eitherNote from '../../docs/unit-audit-20261105/LV1-U10-either-note-followup.json';
+import verifiedEitherNote from '../../docs/unit-audit-20261105/VERIFIED-U10-EITHER-NOTE-SOURCES.json';
 
 type Row = Record<string, unknown>;
 type Patch = {dataset:string; key:string; id:string; before:Row; after:Row; reason:string; evidence:string};
 const patches:Patch[]=[...u1.patches,...u2.patches,...pig.patches,...u3.patches,...u3Remaining.patches,...u4.patches,...u5.patches,...u6.patches,...u6Syntax.patches,...examSources.patches,...u7.patches,...u7Hints.patches,...lexicalSources.patches,...catDefinition.patches,...u7VerifiedExams.patches,...u8.patches,...demandVisible.patches,...u9.patches,...u8Hints.patches,...translations.patches,...forms.patches,...u10.patches,...u11.patches,...u11Usage.patches,...u12.patches,...u12Usage.patches,...u13.patches,...u13Definition.patches,...followupForms.patches,...u14.patches,...u14Translation.patches,...u15.patches,...u15Usage.patches,...u16.patches,...u16Forms.patches,...wordingFollowup.patches];
 
 patches.push(...dieNote.patches,...u17.patches,...u17Forms.patches,...u17Definition.patches,...u18.patches,...u18Forms.patches,...u18Translations.patches,...u19.patches,...u19Forms.patches,...u20.patches,...u20Forms.patches,...u21.patches,...u21Forms.patches,...integratedU05U06.patches,...integratedU07.patches,...integratedU08U09.patches,...integratedU10.patches,...integratedU11.patches,...integratedU12.patches,...integratedU13.patches,...integratedU14.patches,...integratedU15.patches,...u22.patches,...u22Translation.patches,...u22Forms.patches,...u23.patches,...u23Translation.patches,...u23Forms.patches,...u24.patches,...u24Forms.patches,...u24Followup.patches,...u24Carrot.patches,...u25.patches,...u25Forms.patches);
+
+patches.push(...eitherNote.patches);
 
 export function restoreRecordedAuditPatch(name:string,row:Row,patch:Patch):void{
  assert.ok(patch.reason&&patch.evidence,'each audit correction needs recorded evidence');
@@ -141,7 +145,7 @@ export function restoreRecordedAuditPatch(name:string,row:Row,patch:Patch):void{
    assert.deepEqual(patch.before,{sentenceEn:fact.sentenceEn,sentenceZh:fact.before});assert.deepEqual(patch.after,{sentenceZh:fact.after});}
  }
  if(name==='notes'||Object.hasOwn(patch.after,'content')){
-  assert.equal(name,'notes');const fact=[...verifiedNotes.facts,...verifiedU24Notes.facts].find(f=>f.noteId===patch.id);assert.ok(fact,'only exact verified note content may change');
+  assert.equal(name,'notes');const fact=[...verifiedNotes.facts,...verifiedU24Notes.facts,...verifiedEitherNote.facts].find(f=>f.noteId===patch.id);assert.ok(fact,'only exact verified note content may change');
   assert.deepEqual(patch.before,fact.before);assert.deepEqual(patch.after,fact.after);
   assert.deepEqual(Object.keys(patch.after),['content']);
  }

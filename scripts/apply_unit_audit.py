@@ -57,6 +57,15 @@ def validate_patch_shape(patch):
     if "examEvidence" in patch["after"]:
         assert patch["dataset"] == "senses", "Exam-source evidence belongs to the sense row"
     if patch['dataset'] == 'notes' or 'content' in patch['after']:
+        if patch['id'] == 'NX0fad7e32':
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-U10-EITHER-NOTE-SOURCES.json')['facts']
+            assert len(facts) == 1 and facts[0]['noteId'] == 'NX0fad7e32'
+            fact = facts[0]
+            assert fact['before'] == {'noteId': 'NX0fad7e32', 'word': 'either', 'noteType': 'grammar', 'title': 'either 作代名詞的動詞一致', 'content': 'either + 單數動詞；either of + 複數名詞 + 複數動詞。', 'status': 'approved'}
+            assert patch['dataset'] == 'notes' and patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact U10 either note and content required'
+            assert set(patch['after']) == {'content'} and fact['after']['content'] == 'either 單獨作主詞時接單數動詞；either of + 複數名詞／代名詞作主詞時，正式寫作採單數動詞，較口語的用法也可採複數動詞。'
+            assert fact['evidence'] == 'https://www.oxfordlearnersdictionaries.com/definition/american_english/either_1'
+            return
         if patch['id'] == 'NXe49d83a6':
             facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-U24-NOTE-SOURCES.json')['facts']
             assert len(facts) == 1 and facts[0]['noteId'] == 'NXe49d83a6'

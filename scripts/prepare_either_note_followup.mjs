@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import {readFileSync,writeFileSync} from 'node:fs';
+const read=path=>JSON.parse(readFileSync(path,'utf8'));
+const out='docs/unit-audit-20261105/';
+assert(read(out+'LV1-U10-patches.json').patches.some(p=>p.dataset==='words'&&p.id==='W000258'));
+assert(read('src/features/vocabulary/auditedWordIllustrations.json').some(r=>r.reviewId==='LV1-U10-62'&&r.officialWordId==='W000258'));
+const before={noteId:'NX0fad7e32',word:'either',noteType:'grammar',title:'either 作代名詞的動詞一致',content:'either + 單數動詞；either of + 複數名詞 + 複數動詞。',status:'approved'};
+assert.deepEqual(read('public/data/v1/notes.json').find(n=>n.noteId===before.noteId),before);
+const after={content:'either 單獨作主詞時接單數動詞；either of + 複數名詞／代名詞作主詞時，正式寫作採單數動詞，較口語的用法也可採複數動詞。'};
+const reason='Correct the inherited always-plural rule for this existing LV1 U10 word. Preserve the note identity, title, type, status, and all examples.';
+const evidence='https://www.oxfordlearnersdictionaries.com/definition/american_english/either_1';
+const fact={noteId:before.noteId,wordId:'W000258',sourceCardId:'LV1-U10-62',before,after,reason,evidence,sourceState:'direct_official_dictionary_page_lines108-109'};
+writeFileSync(out+'VERIFIED-U10-EITHER-NOTE-SOURCES.json',JSON.stringify({scope:'Exactly one existing LV1 U10 note content field; no other note, example, or curriculum change.',facts:[fact]},null,2)+'\n');
+writeFileSync(out+'LV1-U10-either-note-followup.json',JSON.stringify({baseCommit:'29cfc684d7a11b07f09988c478d30358830f1951',baseCheckpoint:'c02b5784a8d06b96ab3ecc8fd1e8c6d4d6899e16',patches:[{dataset:'notes',key:'noteId',id:before.noteId,before,after,reason,evidence}]},null,2)+'\n');
+console.log(JSON.stringify({noteId:before.noteId,sourceCardId:fact.sourceCardId,contentFieldsChanged:1,examplesChanged:false}));
