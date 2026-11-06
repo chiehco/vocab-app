@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-05T19:38:45.747Z",
+  "updatedAt": "2026-11-06T12:35:10.681Z",
   "items": [
     {
       "id": "LV1-U01-30",
@@ -687,6 +687,52 @@
         "wordId": "W000046",
         "word": "arrive"
       }
+    },
+    {
+      "id": "GENERAL-W003446-image-pair",
+      "word": "generosity",
+      "wordId": "W003446",
+      "observedInUnit": "LV2-U38",
+      "state": "pixel_review_complete_image_edit_not_started",
+      "classification": "confirmed_literal_recipient_count_mismatch",
+      "reason": "Original1024px image gives one apple to each of two friends; English says both apples to a friend. Preserve the exact English/Chinese caption and old asset; a future minimal image correction must show both apples given to one friend.",
+      "repoPath": "public/wordbeast/a/W003446.webp",
+      "oldSha256": "3077fa8f9c844484d2f119f995ae1cc91cab7f01bd3857aeddbb380fe3d041da",
+      "originalDimensions": [
+        1024,
+        1024
+      ],
+      "caption": "Doudou shows generosity by giving both apples to a friend.\n\n豆豆把兩顆蘋果都送給朋友，展現慷慨。",
+      "generationState": "not_started",
+      "pendingGenerationCalls": 0,
+      "newAssetAvailable": false,
+      "productPairChanged": false,
+      "oldAssetRetained": true,
+      "evidence": "docs/unit-audit-20261105/validation/LV2-U38-image-followups.json",
+      "updatedAt": "2026-11-06T12:35:10.680Z"
+    },
+    {
+      "id": "LV1-U09-27-image-quantity",
+      "word": "playground",
+      "wordId": "W001638",
+      "observedInUnit": "LV2-U38",
+      "state": "pixel_review_complete_image_edit_not_started",
+      "classification": "core_alignment_with_literal_quantity_gap",
+      "reason": "One child is swinging while the second stands cheering; actual caption uses plural kids are swinging. Preserve the core playground/happy action, exact caption and original1254px asset. No whole-theme mismatch is asserted.",
+      "repoPath": "public/wordbeast/lv1-reviewed/LV1-U09-27-39abaecad0fa.webp",
+      "oldSha256": "2a11198019d75bd6c145a98ac9a5e0a661e5bf6070867b17d093b4ae1aa2b407",
+      "originalDimensions": [
+        1254,
+        1254
+      ],
+      "caption": "The kids are swinging happily on the playground.\n\n孩子們在遊樂場開心地盪鞦韆。",
+      "generationState": "not_started",
+      "pendingGenerationCalls": 0,
+      "newAssetAvailable": false,
+      "productPairChanged": false,
+      "oldAssetRetained": true,
+      "evidence": "docs/unit-audit-20261105/validation/LV2-U38-image-followups.json",
+      "updatedAt": "2026-11-06T12:35:10.681Z"
     }
   ],
   "sourceFormResearchCoverage": {

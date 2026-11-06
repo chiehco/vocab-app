@@ -1,0 +1,29 @@
+{
+  "unit": "LV2-U38",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "baseCheckpoint": "ccec8402668d2c6ee27226a2b30d94d9ecaea21e",
+  "scope": "One additional English definition field after the first accepted reopens; original57-row receipt and all source/general first-pass artifacts retained.",
+  "patches": [
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000609",
+      "before": {
+        "meaningEn": "(adv.) no more than; (adj.) the single one; (conj.) but; with nevertheless the final result; in the final outcome",
+        "word": "only",
+        "pos": "adv./adj./conj.",
+        "posAll": [
+          "adv.",
+          "adj.",
+          "conj."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningEn": "(adv.) no more than; merely. (adj.) the single one, or emphatically the best. (conj.) but or except that. Separately, only to + verb introduces a subsequent, often unexpected result."
+      },
+      "reason": "Separate the inherited unexpected-result construction only to + verb from conjunction only=but, and preserve the directly attested emphatic best adjective. All formal identities/POS/status and practice wording remain unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/only; existing unchanged note NXbed06ea4 distinguishes only to + verb from purpose."
+    }
+  ]
+}

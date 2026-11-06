@@ -1,0 +1,75 @@
+{
+  "unit": "LV2-U38",
+  "frontend": {
+    "first": {
+      "files": 25,
+      "tests": 304,
+      "passed": 304,
+      "failed": 0,
+      "exitCode": 0
+    },
+    "finalAfterOnlyFollowup": {
+      "files": 7,
+      "tests": 167,
+      "passed": 167,
+      "failed": 0,
+      "exitCode": 0
+    },
+    "scope": "Original U38 text, new audit, common exact inverse/seed/recovered integration and both unchanged image suites included. Earlier original/audit suites in the first25-file pass retained.",
+    "originalLocalTimeout": 5000,
+    "maxWorkers": 1
+  },
+  "python": {
+    "first": 66,
+    "final": 66,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "lint": {
+    "exitCode": 0,
+    "warningsRetained": true
+  },
+  "typecheck": {
+    "exitCode": 0
+  },
+  "build": {
+    "exitCode": 0
+  },
+  "recoveredDraftCheck": {
+    "exitCode": 0
+  },
+  "recoveredIntegrationCheck": {
+    "exitCode": 0
+  },
+  "logs": [
+    {
+      "file": "LV2-U38-regression-first.txt",
+      "sha256": "b342a2441f04ef1493e49ed58b3e601f49647a6da26b750b42015cb43e1c4d6b"
+    },
+    {
+      "file": "LV2-U38-regression-final.txt",
+      "sha256": "2747672cf8f120cdc8e1c454a170f8bea99bcb4ffe57f87892abf9fe657bd72d"
+    },
+    {
+      "file": "LV2-U38-python-first.txt",
+      "sha256": "ad6b90824858c87b0fedba0dd16356edbd331b56ab71ba2d906fb77d79708b0c"
+    },
+    {
+      "file": "LV2-U38-python-final.txt",
+      "sha256": "0348a4bf401c22956a67efbb53015e2fc03d1f63045259143b3a1bf244188fb4"
+    },
+    {
+      "file": "LV2-U38-lint-final.txt",
+      "sha256": "4164fbbbb32cb922d4092e4e61bfd38be928f4cddd879e26faa13a1ac4c9eb4c"
+    },
+    {
+      "file": "LV2-U38-typecheck-final.txt",
+      "sha256": "da91f4c430838409de74534c4d8bed41445d7c7283163b2a63c446dde034587b"
+    },
+    {
+      "file": "LV2-U38-build-final.txt",
+      "sha256": "b1137b4fb1d4640ac5a7cda571c41b51db42ee03d12c6bb53d344825121f3df4"
+    }
+  ],
+  "ownNewCommitCi": "pending"
+}

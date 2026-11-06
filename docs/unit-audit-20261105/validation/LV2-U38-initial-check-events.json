@@ -1,0 +1,63 @@
+{
+  "unit": "LV2-U38",
+  "beforeCapture": {
+    "acceptedSource": 149,
+    "acceptedGeneral": 67,
+    "examples": 104,
+    "failedUnacceptedBatches": 0
+  },
+  "firstFrontend": {
+    "files": 25,
+    "tests": 304,
+    "passed": 304,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "finalFrontend": {
+    "files": 7,
+    "tests": 167,
+    "passed": 167,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "helperAndTransportEvents": [
+    {
+      "stage": "prepare execution",
+      "outcome": "Caught missing new original Unit38Text path in the private runner before applying any data or starting tests. Added Unit38Text and Unit38Audit explicitly, retaining earlier tests and5000ms timeout.",
+      "productChangedByFailure": false
+    },
+    {
+      "stage": "read-only helper inspection",
+      "outcome": "One quoted inline Node inspection failed and one guessed prior helper filename was absent. Replaced with a private literal script; no product mutation or capture was repeated."
+    },
+    {
+      "stage": "only UI followup result transport",
+      "outcome": "The direct native CLI command omitted explicit UTF-8 console setup; its returned JSON was corrupted during shell redirection and was rejected by JSON.parse. The app operation completed and screenshots exist, but that result was not accepted. Preserve it and capture only this one word again after the in-flight persistence operation finishes, with explicit UTF-8 and a distinct screenshot path. Product data unchanged by this transport issue.",
+      "productChangedByFailure": false
+    }
+  ],
+  "onlyFollowup": {
+    "separateManifest": true,
+    "original57RowReceiptPreserved": true,
+    "failedReplayStoppedBeforeWrite": true,
+    "noopInstallerHashUnchanged": true,
+    "exactOneNewFieldApplied": true,
+    "unacceptedCliTransportResultRetained": true,
+    "explicitUtf8OneCardRetryAccepted": true,
+    "otherAcceptedCapturesNotRepeated": true
+  },
+  "normalInstaller": {
+    "actualTransitions": 2,
+    "all14TablesExactBoth": true,
+    "beforeApplyNativeSnapshots": true
+  },
+  "browserReopen": {
+    "exitCode": 1,
+    "onlyOneOpenAttempt": true,
+    "actualNeutralStateProbePassed": true,
+    "readbackAnd14TablesPassed": true
+  },
+  "originalLocalTimeout": 5000,
+  "timeoutRaised": false,
+  "hashFixturesChanged": false
+}
