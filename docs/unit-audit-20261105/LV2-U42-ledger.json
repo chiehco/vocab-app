@@ -1,8 +1,8 @@
 {
   "unit": "LV2-U42",
-  "state": "local_checkpoint_complete_direction_and_rare_source_pending_new_head_ci_pending",
+  "state": "own_ci_success_direction_and_rare_source_pending",
   "baseCheckpoint": "ef3d2c500963a6a20a72ea2af5f3825fea4d3a75",
-  "updatedAt": "2026-11-06T18:57:44.613Z",
+  "updatedAt": "2026-11-06T19:52:24.771Z",
   "scope": {
     "learningItems": 149,
     "vocabulary": 92,
@@ -252,8 +252,9 @@
     "enterEntryDirection": "validation/LV2-U42-image-review.json",
     "confirmedReversal": false,
     "candidateDelivery": "validation/LV2-U38-U41-delivery-review.json",
-    "u41Discover": "Candidate fetched and hash/spec/pixels verified; exact consumer integration and App acceptance pending.",
-    "u38": "Two candidates fetched and hash/spec/pixels verified; exact consumer integration and App acceptance pending."
+    "u41Discover": "Exact discover consumer locally accepted in the separate image followup; new image-checkpoint CI pending.",
+    "u38": "Both consumers locally accepted in the separate image followup; new image-checkpoint CI pending.",
+    "resolution": "LV2-U38-U41-image-repairs.json"
   },
   "priorCheckpointFullCi": {
     "commit": "ef3d2c500963a6a20a72ea2af5f3825fea4d3a75",
@@ -278,7 +279,26 @@
     "jobCompletedAtUtc": "2026-11-06T17:58:21Z"
   },
   "newCheckpointFullCi": {
-    "state": "pending_this_new_commit"
+    "commit": "fe95d729aee53a84ac697839d785d21aa7374fa9",
+    "run": 42275729271,
+    "job": 128091458489,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42275729271/job/128091458489",
+    "status": "completed",
+    "conclusion": "success",
+    "checkoutShaReadFromFullLog": true,
+    "testFiles": 232,
+    "tests": 1897,
+    "pythonBatches": [
+      14,
+      7,
+      78,
+      10
+    ],
+    "lint": "success",
+    "typecheck": "success",
+    "build": "success",
+    "buildLogCompletedAtUtc": "2026-11-06T19:11:10.3845699Z",
+    "jobCompletedAtUtc": "2026-11-06T19:11:14Z"
   },
   "releaseReconciliation": {
     "mainCommit": "0f4eb27961571ce393a1f1a2bc63f1d558bef1fb",

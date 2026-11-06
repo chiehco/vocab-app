@@ -1,8 +1,8 @@
 {
   "unit": "LV2-U38",
-  "state": "local_text_checkpoint_complete_image_followups_pending_commit_push_own_ci",
+  "state": "text_checkpoint_complete_literal_image_followups_locally_accepted_new_head_ci_pending",
   "baseCheckpoint": "ccec8402668d2c6ee27226a2b30d94d9ecaea21e",
-  "updatedAt": "2026-11-06T12:41:49.414Z",
+  "updatedAt": "2026-11-06T19:52:24.763Z",
   "scope": {
     "learningItems": 149,
     "vocabulary": 86,
@@ -166,13 +166,19 @@
     }
   },
   "imageFollowups": {
-    "state": "not_generated_or_integrated",
+    "state": "locally_accepted_new_image_checkpoint_ci_pending",
     "pendingGenerationCalls": 0,
-    "confirmedLiteralMismatch": "generosity / W003446: both apples to one friend versus one each to two friends, original1024px retained.",
-    "knownLiteralQuantityGap": "playground / W001638: one active swinging child, original1254px retained; core playground/happy scene aligns.",
+    "confirmedLiteralMismatch": "Resolved by exact generosity pair; original text-checkpoint observation retained in imageFollowupsHistorical.",
+    "knownLiteralQuantityGap": "Resolved by exact playground pair; original text-checkpoint observation retained in imageFollowupsHistorical.",
     "evidence": "validation/LV2-U38-image-followups.json",
     "inCentralFollowupQueue": true,
-    "doNotCountAsWholeUnitImagePass": true
+    "doNotCountAsWholeUnitImagePass": true,
+    "resolution": "LV2-U38-U41-image-repairs.json",
+    "discoverLiteralActorQuantityPending": false,
+    "resolvedWords": [
+      "generosity",
+      "playground"
+    ]
   },
   "retainedRealSenses": [
     "mop rare grimace noun",
@@ -428,5 +434,14 @@
     "deployed": false,
     "levelReleaseWorkSeparate": true,
     "frozenHistoricalCandidate": "3106a39dea97360a62a2db4d8e98300724d94fdb"
+  },
+  "imageFollowupsHistorical": {
+    "state": "not_generated_or_integrated",
+    "pendingGenerationCalls": 0,
+    "confirmedLiteralMismatch": "generosity / W003446: both apples to one friend versus one each to two friends, original1024px retained.",
+    "knownLiteralQuantityGap": "playground / W001638: one active swinging child, original1254px retained; core playground/happy scene aligns.",
+    "evidence": "validation/LV2-U38-image-followups.json",
+    "inCentralFollowupQueue": true,
+    "doNotCountAsWholeUnitImagePass": true
   }
 }

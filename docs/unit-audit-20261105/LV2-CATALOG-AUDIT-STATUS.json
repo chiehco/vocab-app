@@ -1,6 +1,6 @@
 {
   "scope": "Exact current repository curriculum catalogue, not a publisher edition table of contents or an inferred numeric range.",
-  "checkedAtUtc": "2026-11-06T18:57:44.613Z",
+  "checkedAtUtc": "2026-11-06T19:52:24.773Z",
   "basis": {
     "model": "src/features/direct/model.ts",
     "catalog": "src/features/vocabulary/textbookCatalog.ts",
@@ -76,11 +76,10 @@
     38,
     39,
     40,
-    41
-  ],
-  "currentAuditUnits": [
+    41,
     42
   ],
+  "currentAuditUnits": [],
   "notYetAuditedUnits": [
     43,
     44,
@@ -675,9 +674,30 @@
       "curriculumPath": "src/features/direct/curriculumLV2Unit42.json",
       "registeredInModel": true,
       "deliveryMode": "text_only",
-      "auditStatus": "audit_after_complete_pending_checkpoint_own_ci_direction_pending",
-      "ledger": "docs/unit-audit-20261105/LV2-U42-ledger.json",
-      "ownCi": null
+      "auditStatus": "own_checkpoint_full_ci_success_retained_uncertainties",
+      "ledger": "LV2-U42-ledger.json",
+      "ownCi": {
+        "commit": "fe95d729aee53a84ac697839d785d21aa7374fa9",
+        "run": 42275729271,
+        "job": 128091458489,
+        "url": "https://github.com/chiehco/vocab-app/actions/runs/42275729271/job/128091458489",
+        "status": "completed",
+        "conclusion": "success",
+        "checkoutShaReadFromFullLog": true,
+        "testFiles": 232,
+        "tests": 1897,
+        "pythonBatches": [
+          14,
+          7,
+          78,
+          10
+        ],
+        "lint": "success",
+        "typecheck": "success",
+        "build": "success",
+        "buildLogCompletedAtUtc": "2026-11-06T19:11:10.3845699Z",
+        "jobCompletedAtUtc": "2026-11-06T19:11:14Z"
+      }
     },
     {
       "unit": 43,
@@ -921,8 +941,16 @@
   },
   "releaseGate": {
     "wholeRegisteredLvReady": false,
-    "reason": "U42 needs its own pushed-head CI; U43 and later registered units remain unaudited. U38 two image repairs, U41 discover quantity and U42 enter/entry direction remain explicit. U26 and edition-boundary limitations retained.",
+    "reason": "U43–U50 remain unaudited. Three U38/U41 image consumers are locally accepted and await their new integration-head CI. U42 enter/entry direction, U26 source readability and edition boundary remain explicit.",
     "mainMerged": false,
     "deployed": false
+  },
+  "currentImageFollowup": {
+    "units": [
+      38,
+      41
+    ],
+    "state": "locally_accepted_new_head_ci_pending",
+    "evidence": "LV2-U38-U41-image-repairs.json"
   }
 }

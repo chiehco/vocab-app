@@ -1,0 +1,33 @@
+{
+  "state": "local_required_checks_passed_new_head_ci_pending",
+  "originalVitestTimeoutMs": 5000,
+  "workers": 1,
+  "regression": {
+    "finalTargetedFiles": 4,
+    "finalTargetedTests": 76,
+    "otherRequiredSuccessfulFiles": 9,
+    "otherSuccessfulTests": 143,
+    "uniqueFilesAcrossAcceptedRuns": 13,
+    "uniqueTestsAcrossAcceptedRuns": 219,
+    "singleCombinedRun": false,
+    "earlierFailuresPreserved": true
+  },
+  "pythonExactImageBoundaryTests": 3,
+  "lint": "success",
+  "typecheck": "success",
+  "build": "success",
+  "sourceDraftCheck": "success",
+  "sourceIntegrationCheck": "success",
+  "publishedImageHttp": {
+    "base": "http://127.0.0.1:5179",
+    "images": 726,
+    "passed": 726,
+    "galleryExactMatch": true,
+    "failures": []
+  },
+  "fullRegistryAndSingleGalleryInverse": true,
+  "unrelatedHistoricalHashesUnchanged": true,
+  "newHeadCi": {
+    "state": "pending_this_new_commit"
+  }
+}

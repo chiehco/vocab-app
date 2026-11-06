@@ -8,6 +8,7 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from urllib.request import urlopen
 from PIL import Image
+from lv2_image_repair_guards import exact_published_image_expectation
 
 root = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser()
@@ -17,6 +18,7 @@ args = parser.parse_args()
 cards = json.loads((root/'src/features/vocabulary/lv1ReviewedImages.json').read_text(encoding='utf-8'))
 audit = {x['id']: x for x in json.loads((root/'scripts/approvals/lv1-images-20260922.json').read_text(encoding='utf-8'))}
 
+image_repairs = json.loads((root/'docs/unit-audit-20261105/LV2-U38-U41-image-repairs.json').read_text(encoding='utf-8'))
 
 def verify(card):
     try:
@@ -32,7 +34,7 @@ def verify(card):
                     time.sleep(attempt + 1)
         else:
             raise last_error
-        expected = audit[card['id']]
+        expected = exact_published_image_expectation(card, audit[card['id']], image_repairs)
         assert hashlib.sha256(data).hexdigest() == expected['publishedImageSha256'], 'Hash mismatch'
         with Image.open(io.BytesIO(data)) as image:
             image.load()

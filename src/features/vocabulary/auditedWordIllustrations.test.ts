@@ -1,9 +1,10 @@
+import {beforeU38U41GeneralRepairs} from './lv2ImageRepairs.testSupport';
 import u39Evidence from '../../../docs/unit-audit-20261105/LV2-U39-original-image-review.json';
 import u30Evidence from '../../../docs/unit-audit-20261105/LV2-U30-original-image-review.json';
 import {createHash} from 'node:crypto';
 import {readFileSync} from 'node:fs';
 import {expect,it} from 'vitest';
-import cards from './auditedWordIllustrations.json';
+import currentCards from './auditedWordIllustrations.json';
 import evidence from '../../../docs/unit-audit-20261105/LV1-U03-original-image-review.json';
 import u4Evidence from '../../../docs/unit-audit-20261105/LV1-U04-original-image-review.json';
 import u5Evidence from '../../../docs/unit-audit-20261105/LV1-U05-original-image-review.json';
@@ -27,6 +28,9 @@ import words from '../../../public/data/v1/words.json';
 import {approvedCurriculumIllustration,approvedWordIllustration,approvedLV1Images,approvedCurriculumCard} from './approvedCurriculum';
 import {getWordBeastAsset} from '../wordbeast/wordBeastAssets';
 
+// Validate/reverse the newest exact layer once, then run the unchanged historical
+// boundary tests (including their intentionally altered older fixtures).
+const cards=beforeU38U41GeneralRepairs(currentCards);
 const particularAuditRow={reviewId:'LI-LV2U30-V035',officialWordId:'W001616',aliases:['particular'],illustration:{path:'wordbeast/audited-20261105/LV2-U30-W001616-1ceb569d4c35.webp',captionEn:'Doudou picks out the particular shell with white spots.',captionZh:'豆豆挑出那個有白點的特定貝殼。'}};
 const trustAuditRow={reviewId:'LI-LV2U39-V002',officialWordId:'W001933',aliases:['trust'],illustration:{path:'wordbeast/s/W001933.webp',captionEn:'The new clerk was trusted with the keys to the safe.',captionZh:'新來的店員被託付保險箱的鑰匙。'}};
 function registryBeforeU39(value:typeof cards){expect(value).toHaveLength(334);expect(value.filter(c=>c.reviewId===trustAuditRow.reviewId)).toEqual([trustAuditRow]);return value.filter(c=>c.reviewId!==trustAuditRow.reviewId);}

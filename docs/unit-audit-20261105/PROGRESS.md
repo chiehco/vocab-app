@@ -221,3 +221,9 @@ U08-92未發布原稿沒有對應單元卡；實際路由顯示person第一張�
 ## U16 checkpoint
 
 完整範圍、精確before/after、逐卡回開、25三態、原始逾時與效能修復見LV1-U16-ledger.json、三份U16 manifest、validation/U16-*.json與各receipt。教材原轉錄與原始固定hash均保留；本批五筆早期小修另有各自明確範圍，未把來源查證當整詞批准。
+
+## LV2 U38 / U41 圖片補修 checkpoint
+
+已接入 generosity、playground、discover 三張已交付 WebP，保留原圖、原核准雜湊及全部原圖說。一般卡三張／七例句、既有 LV1-U09-27 單元卡與靜態圖庫均已實際回開看圖；三個 LV2 教材入口仍為純文字。正常 App 更新及同 profile 關閉重開後，3,329 筆資料讀回、14 張進度表及三張新圖一致。精確前後配對、回復工具、失敗與恢復紀錄見 LV2-U38-U41-image-repairs.json 與 validation；這次新 head CI 待提交後驗證，未合併或部署 main。
+
+U42 fe95d729 的完整 CI 42275729271 / job128091458489 成功：232 檔／1897 測試，Python14／7／78／10，lint、typecheck、build 全過。enter／entry 方向及其他來源疑義仍保留。下一單元為 U43 storm，尚未開始本輪逐卡取證。

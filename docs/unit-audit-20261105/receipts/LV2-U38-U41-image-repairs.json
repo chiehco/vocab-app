@@ -1,0 +1,39 @@
+{
+  "state": "exact_pairs_locally_accepted_pending_new_head_ci",
+  "baseCheckpoint": "fe95d729aee53a84ac697839d785d21aa7374fa9",
+  "assetCommit": "248c092f13c969123b0cd98102dd4d459112479f",
+  "generalDefaultRowsAdded": 2,
+  "publishedUnitPathsChanged": 1,
+  "galleryImageSourcesChanged": 1,
+  "formalDataRowsChanged": 0,
+  "originalAssetsRetained": 3,
+  "newImmutableAssets": 3,
+  "captionFieldsChanged": 0,
+  "independentExamplePairsChanged": 0,
+  "normalAppInstaller": true,
+  "savedReadbackRows": 3329,
+  "progressTablesExact": 14,
+  "actualScreensViewed": 5,
+  "postCloseCardsVerified": 3,
+  "recovery": {
+    "tool": "scripts/integrate_lv2_u38_u41_images.mjs",
+    "check": "--check",
+    "apply": "--apply",
+    "reverse": "--revert",
+    "scope": "Only exact two general rows, one playground unit path and one gallery src. Original and new assets retained; no formal data written.",
+    "inMemoryExactInverseVerified": true,
+    "filesystemRevertExecuted": false
+  },
+  "publication": {
+    "branch": "content/unit-audit-20261105",
+    "mainMerged": false,
+    "deployed": false,
+    "wholeLevelReleaseSeparate": true
+  },
+  "validation": [
+    "validation/LV2-U38-U41-image-reopens.json",
+    "validation/LV2-U38-U41-image-persistence.json",
+    "validation/LV2-U38-U41-image-pixel-review.json",
+    "validation/LV2-U38-U41-image-local-checks.json"
+  ]
+}

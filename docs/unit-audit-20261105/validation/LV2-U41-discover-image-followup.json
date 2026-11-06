@@ -1,5 +1,5 @@
 {
-  "state": "literal_actor_quantity_gap_confirmed_at_original_size_not_repaired",
+  "state": "literal_actor_quantity_repaired_locally_accepted_new_head_ci_pending",
   "learningItemId": "LI-LV2U41-V025",
   "wordId": "W001261",
   "word": "discover",
@@ -23,8 +23,8 @@
     "method": 6
   },
   "generationStarted": false,
-  "installationStarted": false,
-  "appAfterAcceptance": false,
+  "installationStarted": true,
+  "appAfterAcceptance": true,
   "technicalBoundary": "The existing image-edit input on the Windows execution environment has an already-observed path parsing failure. A supported image-input environment is required for the candidate; this item has not been submitted or retried. The separate U38 candidates are not regenerated or replaced.",
   "sourceCurriculumRemainsTextOnly": true,
   "generalDictionaryPairOnly": true,
@@ -38,5 +38,28 @@
     "sameAssetAndCaption": true,
     "scope": "This existing shared general image is also present on released main. The observed issue is one visible worker versus plural workers; no evidence of practice-data corruption or a whole-topic mismatch.",
     "mainModified": false
-  }
+  },
+  "originalObservation": {
+    "state": "literal_actor_quantity_gap_confirmed_at_original_size_not_repaired",
+    "generationStarted": false,
+    "installationStarted": false,
+    "appAfterAcceptance": false,
+    "technicalBoundary": "The existing image-edit input on the Windows execution environment has an already-observed path parsing failure. A supported image-input environment is required for the candidate; this item has not been submitted or retried. The separate U38 candidates are not regenerated or replaced."
+  },
+  "generationScope": "Local Windows generation was not started; verified producer Git asset was used without regeneration.",
+  "resolution": {
+    "state": "exact_consumer_locally_accepted_new_head_ci_pending",
+    "assetCommit": "248c092f13c969123b0cd98102dd4d459112479f",
+    "oldPath": "wordbeast/s/W001261.webp",
+    "oldSha256": "55f6e97791d73e0a4c308827ae5a584cc93204bc2e098b8759ee8d26c56c6fc6",
+    "path": "wordbeast/lv2-reviewed/LV2-U41-discover-f9a557414b67.webp",
+    "sha256": "f9a557414b67a06be314e669763ea7bd1e2333e71aac842a9bb03eb6168212b1",
+    "oldAssetRetained": true,
+    "captionsUnchanged": true,
+    "normalAppReopened": true,
+    "savedVerified": true,
+    "progressTablesPreserved": 14,
+    "evidence": "LV2-U38-U41-image-repairs.json"
+  },
+  "currentAssetRegistry": "src/features/vocabulary/auditedWordIllustrations.json exact default override; existing S-grade ID and independent practice registry retained."
 }

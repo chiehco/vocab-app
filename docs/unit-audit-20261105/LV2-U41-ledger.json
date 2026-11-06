@@ -1,8 +1,8 @@
 {
   "unit": "LV2-U41",
-  "state": "text_checkpoint_own_ci_success_discover_image_detail_still_pending",
+  "state": "text_checkpoint_complete_literal_image_followups_locally_accepted_new_head_ci_pending",
   "baseCheckpoint": "8febac6a2ee1138e6f9cea1ef064b78abac67a57",
-  "updatedAt": "2026-11-06T17:39:30.735Z",
+  "updatedAt": "2026-11-06T19:52:24.766Z",
   "scope": {
     "learningItems": 151,
     "vocabulary": 89,
@@ -353,10 +353,16 @@
   ],
   "imageFollowups": {
     "discover": "validation/LV2-U41-discover-image-followup.json",
-    "discoverLiteralActorQuantityPending": true,
-    "u38": "Two candidates await verified Git delivery/integration/App validation; no regeneration.",
-    "discoverDelivery": "Candidate 248c092f13c969123b0cd98102dd4d459112479f fetched with exact hash/spec/pixel verification; consumer integration and App acceptance pending. No local generation.",
-    "deliveryReview": "validation/LV2-U38-U41-delivery-review.json"
+    "discoverLiteralActorQuantityPending": false,
+    "u38": "Both U38 image consumers locally accepted; separate image checkpoint CI pending.",
+    "discoverDelivery": "Verified producer asset installed, actual consumer reopened and saved; no local regeneration.",
+    "deliveryReview": "validation/LV2-U38-U41-delivery-review.json",
+    "state": "locally_accepted_new_image_checkpoint_ci_pending",
+    "resolution": "LV2-U38-U41-image-repairs.json",
+    "doNotCountAsWholeUnitImagePass": true,
+    "resolvedWords": [
+      "discover"
+    ]
   },
   "priorCheckpointFullCi": {
     "commit": "8febac6a2ee1138e6f9cea1ef064b78abac67a57",
@@ -430,5 +436,12 @@
     "deployed": false,
     "wholeLevelReleaseSeparate": true,
     "frozenHistoricalCandidate": "3106a39dea97360a62a2db4d8e98300724d94fdb"
+  },
+  "imageFollowupsHistorical": {
+    "discover": "validation/LV2-U41-discover-image-followup.json",
+    "discoverLiteralActorQuantityPending": true,
+    "u38": "Two candidates await verified Git delivery/integration/App validation; no regeneration.",
+    "discoverDelivery": "Candidate 248c092f13c969123b0cd98102dd4d459112479f fetched with exact hash/spec/pixel verification; consumer integration and App acceptance pending. No local generation.",
+    "deliveryReview": "validation/LV2-U38-U41-delivery-review.json"
   }
 }
