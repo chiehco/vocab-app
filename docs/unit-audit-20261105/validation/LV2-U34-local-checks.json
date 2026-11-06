@@ -1,0 +1,55 @@
+{
+  "unit": "LV2-U34",
+  "frontend": {
+    "files": 18,
+    "tests": 186,
+    "failures": 0,
+    "exitCode": 0,
+    "maxWorkers": 1,
+    "testTimeout": 5000,
+    "scope": "src/db; original U34 text; new U34 audit; U33/U32 audits; recovered integration; both image regressions"
+  },
+  "python": {
+    "tests": 57,
+    "exitCode": 0
+  },
+  "lint": {
+    "exitCode": 0,
+    "existingWarningsRetained": true
+  },
+  "typecheck": {
+    "exitCode": 0
+  },
+  "build": {
+    "exitCode": 0
+  },
+  "recoveredDraftCheck": {
+    "exitCode": 0
+  },
+  "recoveredIntegrationCheck": {
+    "exitCode": 0
+  },
+  "logs": {
+    "regression": {
+      "file": "LV2-U34-regression-first.txt",
+      "sha256": "f684db206879e0f07390f632588193a1dadf374d38b928bdd48c245555c8a1a1"
+    },
+    "python": {
+      "file": "LV2-U34-python-first.txt",
+      "sha256": "ecc5d561fa05e87ff7edd4b1c09f660787006efec2e940adb7564ad166f4fd6f"
+    },
+    "lint": {
+      "file": "LV2-U34-lint-final.txt",
+      "sha256": "59c49425d529ea00e5d2d1e1e3f564d3c253ab884e5b5ab77b15c5d3244e8bb5"
+    },
+    "typecheck": {
+      "file": "LV2-U34-typecheck-final.txt",
+      "sha256": "0d93be78e4da5c0077681c4d834163661d59ddd24a0477595fb70ec25d5a5ea8"
+    },
+    "build": {
+      "file": "LV2-U34-build-final.txt",
+      "sha256": "c344f05f052afde9647bdbaac9da289db73bb9b72870d004bb5518e4e6d7ea21"
+    }
+  },
+  "scope": "Actual local process exits. Own remote CI still required."
+}

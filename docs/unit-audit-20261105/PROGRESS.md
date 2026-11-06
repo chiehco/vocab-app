@@ -2,19 +2,23 @@
 
 ## 目前狀態
 
-更新：2026-11-06T07:30:49.947Z。LV2 U33 的159教材項（93詞彙66文法）、69唯一正式詞92例句及73筆記已逐項核讀；10頁原稿20半頁、14張既有一般卡圖片已實看。159教材項、69一般卡／92例句及13搭配頁均after回開零差異。9非空提示吻合、83空提示保留，9新三態在兩面板共18處顯示一致，6條筆記實際可見。7筆空提示例句的新POS由保存資料讀回核實，現行UI不顯示其raw POS標籤，未冒稱7個標籤目視完成。
+更新：2026-11-06T08:22:05.994Z。LV2 U34 的158教材項（88詞彙70文法）、62一般卡112例句108筆記已逐項讀核；9頁原稿18半頁及22張一般卡圖實看。教材158項、一般卡62張112例句與16搭配頁after已回開，13個三態在兩面板共26處核對，6筆記可見，23非空提示與89空提示均保留其界線。8個原空提示例句的更正POS已保存讀回，但現行UI不顯示其raw POS標籤；6句head的非空提示與POS標籤實際可見。
 
-主補丁50列89欄，另9個真缺鍵三態、6條筆記、1句中文，共66正式操作105欄、58唯一資料列；教材118列224欄包含52個已見印字相關詞（33映射、19未映射）與66構式中文。3個既有未映射主詞及19相關詞皆保留null ID。7句實際POS錯標與2提示依句精確化分列；其餘多為補足印字義或縮小過廣摘要，不稱全部原資料錯誤。原詞頭POS／狀態、英句／cloze／答案及其餘7870句中文不變；shoot的wedding photos只移除婚紗限定，改結婚照。crow鳥／雞啼與mankind／humankind維持既有共用身份。
+主補丁45列83欄，另13真缺鍵三態與6筆記，共64操作102欄、57唯一正式資料列；教材117列210欄，含47個印字相關詞（21有正式ID、26保留null ID）及70構式中文。8句挖空詞POS確錯已修，6句head混合POS和提示依句縮限；其餘多為已印字義補足或廣義摘要精確化，不稱全部為原錯。6090詞頭POS與狀態、7871原英中句/cloze/答案、全部圖及caption、原始教材與舊hash基準不變。
 
-111學測Q30 B sensation官方題幹／選項／答案文字層已實讀；EX083418d7自行車練習不是原題引用。strike標準struck與受影響義stricken分清；divine神學家、crow鐵撬、teen古義等有據罕義保留。rooster兩義、writer記錄器、sensible教材耐用等六項不確定保留，14圖及caption未改。
+106學測Q35的官方選項J healing、題幹及答案已實讀；healing在healing power修飾power，明示實際詞形功能與heal動詞身份邊界，獨立膝傷練習不是考題引用。medical醫師、barber人名、quarrel鑿子、post舊副詞等有據義保留並分列；quarrel兩種三態附美式限定。stamp列印器、final結局及兩句親屬譯法仍待更精確依據，不擴為整詞通過。push仍為重木門，preference藍莓圖說不混成茶例句，未發布電梯素材未接入。
 
-首輪18檔182測試有3失敗，定位到condition／shock歷史三態還原順序與新crow負向測試選錯來源列。只逆向允許的新欄位、保留兩個原hash並補負向保護後，兩檔64測試全過；最終覆蓋聯集18檔183測試，不冒稱單次18檔全過。Python55項、lint/typecheck/build及兩項教材check實際退出0，原本機5000ms未調高。正常App更新14表完整相同；同profile關閉重開後14表（含時間戳）仍精確相同，2786列保存內容讀回零差異。SVG初始快照逾時後只probe已開瀏覽器及原生讀回，未再次open。
+本機18檔186測試及Python57項通過，原5000ms與單worker未放寬；lint/typecheck/build及兩個教材check退碼0。一般卡首批遇navigation context中斷且無接受結果，保留失敗後只重試該未完成批次，158教材取證未重跑。正常App更新前後14進度表完全相同；同profile關閉重開後14表連時間戳完全相同，2837列保存內容讀回零差異。390寬medical手機樣本無水平溢出，未宣稱實體手機驗收。
 
-U32精確085af670d4206cb1109d2ded1f2a1c05b52e9c22的CI42175546158／job127753041954全成功：222檔1804測試、Python14/7/52/10，build於06:46:42 UTC完成。U33新提交自己的CI仍待提交後核實。
+U33精確3c696fed0a9a84cf39a543297ecad076d192a085的CI42181563200/job127772135324成功：223檔1813測試、Python14/7/55/10及build，07:43:49 UTC完成。U34新提交需自己的CI終態。
 
-已唯讀核遠端main 0f4eb27961571ce393a1f1a2bc63f1d558bef1fb，共同基底2c2035c07a4e5d1980097dcf4e8ab03f8a5873bb，審核基準ahead7／behind2。四份正式資料的main唯一新增欄是NX0fad7e32，審核現值及兩份manifest before／after完全相同，未來apply／beforeUnitAudit只能執行一次。U33共105欄皆與main精確before相符。已記main新增LF規則、Deploy-default tests (5s)、單worker、未發布U12電梯素材build排除守衛；未合併或以舊設定覆蓋。area兩個共享LV1 hint只在審核分支精確修正，發布工作線另行按ID對帳。
+已對帳main 0f4eb27961571ce393a1f1a2bc63f1d558bef1fb與merge-base 2c2035c07a4e5d1980097dcf4e8ab03f8a5873bb：基底審核ahead8/behind2。main唯一正式資料差異either/NX0fad7e32已與審核現值及before/after完全相同，未來apply及逆向還原只執行一次，兩份歷史及負向保護保留。U34全部102欄均與main精確before相符，19欄共享LV1已逐ID記錄。正式main的LF規則、Deploy-default tests(5s)、單worker及build排除未發布U12素材守衛必須保留；本輪沒有merge或部署。
 
-接續LV2 U34 pizza／W001635（教材第300頁），不操作main或部署；下一次發布依完整LV範圍準備、驗證與正式站驗收。
+下一單元LV2 U35 mirror/W001554，教材第309頁，沿現行順序續查。
+
+## U34 checkpoint
+
+精確範圍見LV2-U34-ledger、三份formal manifests及curriculum manifest；source-review與validation保留來源、真缺鍵還原、實際回開、持久性及main交接證據。Receipts保留套用當時applied_not_ui_verified狀態，後續驗收另由reopen-summary記錄，不倒改歷史。
 
 ## U33 checkpoint
 

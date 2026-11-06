@@ -1,0 +1,36 @@
+{
+  "unit": "LV2-U34",
+  "frontendFirstRun": {
+    "files": 18,
+    "tests": 186,
+    "failures": 0,
+    "exitCode": 0
+  },
+  "python": {
+    "tests": 57,
+    "failures": 0,
+    "exitCode": 0
+  },
+  "otherEvents": [
+    {
+      "phase": "Private guard preparation",
+      "result": "One preparation script stopped at a missing saved-verifier anchor after earlier explicit guard steps completed.",
+      "resolution": "Inspected completed files, finished only the missing verifier import step, and passed regression and exact inverse checks. No blind rerun of prior mutations."
+    },
+    {
+      "phase": "General-card after UI first batch",
+      "result": "The first batch stopped on its first card with locator.evaluateAll execution context destroyed during navigation; no batch result was accepted.",
+      "resolution": "Preserved the failure log, inspected the actual browser snapshot, then retried only the unaccepted general-card batch. All source158 accepted captures retained."
+    },
+    {
+      "phase": "Browser persistence reopen",
+      "exitCode": 1,
+      "onlyOneOpenAttempt": true,
+      "result": "The normal open call created the browser but its initial snapshot failed; the read-only state probe established the resulting state.",
+      "resolution": "The same profile, neutral URL, all14 native progress tables and saved content were read without a second open, profile deletion or timeout increase."
+    }
+  ],
+  "originalLocalTestTimeout": 5000,
+  "timeoutRaised": false,
+  "originalHashFixturesChanged": false
+}
