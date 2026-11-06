@@ -1,0 +1,19 @@
+{
+  "scope": "14 selected files including original unit text, new audit and shared historical guards",
+  "timeoutMs": 5000,
+  "passedFiles": 13,
+  "failedFiles": 1,
+  "passedTests": 163,
+  "failedTests": 1,
+  "file": "src/features/direct/lv2Unit29Audit.test.ts",
+  "line": 18,
+  "diagnosis": "The new negative test changed an unpatched first row and expected the per-patch inverse to throw. Unlisted changes are rejected by the immutable full historical hash. The corrected test mutates a real recorded patch ID for the throw check and separately retains the unlisted-ID hash rejection.",
+  "fix": "No product changes, no fixture reset or timeout increase. Both recorded and unlisted identity protections are asserted.",
+  "rawLogSha256": "03e6e6e1ddd23149d21eb183786357a5456fcdf7d79cc444b7106ab0e0528289",
+  "retry": {
+    "files": 14,
+    "tests": 164,
+    "conclusion": "passed",
+    "timeoutMs": 5000
+  }
+}

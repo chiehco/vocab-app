@@ -1,3 +1,5 @@
+import currentCurriculum from './curriculumLV2Unit29.json';
+import {lv2Unit29BeforeAudit} from './lv2Unit29Audit.testSupport';
 import 'fake-indexeddb/auto';
 import {afterEach,beforeEach,expect,it,vi} from 'vitest';
 import source from '../../../scripts/sources/LV2Unit29.json';
@@ -28,7 +30,7 @@ it('keeps checked original heads, printed numbers, content pages and the next un
 });
 it('preserves printed supplements, articles, capitalization and use pages',()=>{
  expect(vocabulary.slice(41).map(i=>[i.displayWord,i.sourcePage,i.printedLabel])).toEqual(source.related.map(r=>[r.word,r.sourcePage,r.printedLabel]));
- expect(unit.items.filter(i=>i.kind==='grammar').map(i=>[i.pattern,i.sourcePage])).toEqual(source.usage.map(r=>[r.label,r.sourcePage]));
+ expect(lv2Unit29BeforeAudit(currentCurriculum).learningItems.filter(i=>i.kind==='grammar').map(i=>[i.pattern,i.sourcePage])).toEqual(source.usage.map(r=>[r.label,r.sourcePage]));
  for(const word of ["industries", "indirect", "incomplete", "realities", "bases", "divorced", "separated", "naturalist", "unnatural", "man-made", "tear-gas", "unlikely", "detailed", "unequal"]) expect(vocabulary.find(i=>i.displayWord===word)?.officialWordId).toBeNull();
 });
 it('uses existing official identities and keeps 14 unmapped supplements pending',()=>{
@@ -38,7 +40,7 @@ it('uses existing official identities and keeps 14 unmapped supplements pending'
   expect(word.word===row.word||word.wordVariants.includes(row.word)).toBe(true);
  }
  expect(vocabulary.filter(i=>!i.officialWordId)).toHaveLength(14);expect(vocabulary.filter(i=>i.meaningSource==='unmapped_supplement')).toHaveLength(14);
- expect(vocabulary.filter(i=>i.meaningSource==='unmapped_supplement').every(i=>i.targetMeaningZh==='教材補充詞；義項待核對。')).toBe(true);
+ expect(lv2Unit29BeforeAudit(currentCurriculum).learningItems.filter(i=>i.meaningSource==='unmapped_supplement').every(i=>i.targetMeaningZh==='教材補充詞；義項待核對。')).toBe(true);
 });
 it('adopts no pictures, running examples, sense IDs or textbook questions',()=>{
  expect(unit.deliveryMode).toBe('text_only');expect(unit.questions).toEqual([]);expect(practiceIds(unit.items)).toEqual([]);
@@ -92,4 +94,11 @@ it('registers the printed LV2 unit while preserving formal LV3 and LV4 entries',
  expect(textbookUnits.find(u=>u.level==='LV2'&&u.unit===29)).toMatchObject({volume:'LV2',track:'7000',publisher:'ivy',partial:false});
  expect(textbookUnits.filter(u=>u.level==='LV3').map(u=>u.unit)).toEqual([1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]);
  expect(textbookUnits.filter(u=>u.level==='LV4').map(u=>u.unit)).toEqual(Array.from({ length: 24 }, (_, i) => i + 1));
+});
+
+it('keeps current14 printed meanings and POS separate from pending formal identities',()=>{
+ const expected=[{"word":"industries","meaning":"industry 的複數形式","pos":""},{"word":"indirect","meaning":"間接的","pos":"adj."},{"word":"incomplete","meaning":"不完全的","pos":"adj."},{"word":"realities","meaning":"reality 的複數形式","pos":""},{"word":"bases","meaning":"basis 的複數形式","pos":""},{"word":"divorced","meaning":"離婚的","pos":"adj."},{"word":"separated","meaning":"分居的","pos":"adj."},{"word":"naturalist","meaning":"（文學等）自然主義者","pos":"n."},{"word":"unnatural","meaning":"不自然的","pos":"adj."},{"word":"man-made","meaning":"人造的","pos":"adj."},{"word":"tear-gas","meaning":"用催淚瓦斯攻擊","pos":"v."},{"word":"unlikely","meaning":"不太可能的","pos":"adj."},{"word":"detailed","meaning":"詳細的","pos":"adj."},{"word":"unequal","meaning":"不平等的","pos":"adj."}];
+ expect(unit.items).toEqual(currentCurriculum.learningItems);
+ for(const row of expected)expect(vocabulary.find(i=>i.displayWord===row.word)).toMatchObject({targetMeaningZh:row.meaning,chapterMeaningsZh:row.meaning,sensePos:row.pos,officialWordId:null,officialSenseId:null,meaningSource:'unmapped_supplement',practiceMode:'read_only'});
+ expect(unit.items.find(i=>i.learningItemId==='LI-LV2U29-G023')?.pattern).toBe('It is likely that... = S + be likely to V');
 });

@@ -1,3 +1,8 @@
+import lv2u29 from '../../docs/unit-audit-20261105/LV2-U29-patches.json';
+import lv2u29Forms from '../../docs/unit-audit-20261105/LV2-U29-verified-forms-patches.json';
+import lv2u29FormSources from '../../docs/unit-audit-20261105/VERIFIED-LV2-U29-VERB-FORMS-SOURCES.json';
+import lv2u29Notes from '../../docs/unit-audit-20261105/LV2-U29-notes-patches.json';
+import lv2u29Translations from '../../docs/unit-audit-20261105/LV2-U29-translations-patches.json';
 import lv2u28 from '../../docs/unit-audit-20261105/LV2-U28-patches.json';
 import lv2u28Forms from '../../docs/unit-audit-20261105/LV2-U28-verified-forms-patches.json';
 import lv2u28FormSources from '../../docs/unit-audit-20261105/VERIFIED-LV2-U28-VERB-FORMS-SOURCES.json';
@@ -298,7 +303,7 @@ it('reverses only36 integrated U07 fields and protects every other exact word fi
  const prior=new Set([...originalSources.facts,...followupSources.facts,...u16FormSources.facts,...u17FormSources.facts,...u18FormSources.facts,...u19FormSources.facts,...u20FormSources.facts,...u21FormSources.facts,...integratedU05U06Sources.facts].map(f=>f.wordId));
  expect(integratedU07Sources.facts.every(f=>!prior.has(f.wordId))).toBe(true);
  const words:Row[]=JSON.parse(readFileSync('public/data/v1/words.json','utf8'));
- for(const p of integratedU07.patches){const row=structuredClone(words.find(w=>w.wordId===p.id)!);const original={...row};delete original.verbForms;restoreRecordedAuditPatch('words',row,p);expect(row).toEqual(original);expect(row).not.toHaveProperty('verbForms');
+ for(const p of integratedU07.patches){const row=structuredClone(words.find(w=>w.wordId===p.id)!);if(["W001523"].includes(p.id))restoreRecordedAuditPatch('words',row,lv2u29.patches.find(q=>q.dataset==='words'&&q.id===p.id)!);const original={...row};delete original.verbForms;restoreRecordedAuditPatch('words',row,p);expect(row).toEqual(original);expect(row).not.toHaveProperty('verbForms');
   for(const key of ['base','past','pastParticiple','sourceRef','status']){const wrong=structuredClone(p);(wrong.after.verbForms as Row)[key]='unverified';expect(()=>restoreRecordedAuditPatch('words',{...original,...wrong.after},wrong)).toThrow();}
   for(const key of ['word','pos','status','meaningZh','meaningEn','usagePattern'])expect(()=>restoreRecordedAuditPatch('words',{...original,...p.after,[key]:'unrecorded'},p)).toThrow();
   expect(()=>restoreRecordedAuditPatch('words',{...original,...p.after},{...p,before:{verbForms:null}})).toThrow();
@@ -310,7 +315,7 @@ it('reverses only49 integrated U08-U09 fields and protects every other exact wor
  const prior=new Set([...originalSources.facts,...followupSources.facts,...u16FormSources.facts,...u17FormSources.facts,...u18FormSources.facts,...u19FormSources.facts,...u20FormSources.facts,...u21FormSources.facts,...integratedU05U06Sources.facts,...integratedU07Sources.facts].map(f=>f.wordId));
  expect(integratedU08U09Sources.facts.every(f=>!prior.has(f.wordId))).toBe(true);
  const words:Row[]=JSON.parse(readFileSync('public/data/v1/words.json','utf8'));
- for(const p of integratedU08U09.patches){const row=structuredClone(words.find(w=>w.wordId===p.id)!);const original={...row};delete original.verbForms;restoreRecordedAuditPatch('words',row,p);expect(row).toEqual(original);expect(row).not.toHaveProperty('verbForms');
+ for(const p of integratedU08U09.patches){const row=structuredClone(words.find(w=>w.wordId===p.id)!);if(["W001307","W000677"].includes(p.id))restoreRecordedAuditPatch('words',row,lv2u29.patches.find(q=>q.dataset==='words'&&q.id===p.id)!);const original={...row};delete original.verbForms;restoreRecordedAuditPatch('words',row,p);expect(row).toEqual(original);expect(row).not.toHaveProperty('verbForms');
   for(const key of ['base','past','pastParticiple','sourceRef','status']){const wrong=structuredClone(p);(wrong.after.verbForms as Row)[key]='unverified';expect(()=>restoreRecordedAuditPatch('words',{...original,...wrong.after},wrong)).toThrow();}
   for(const key of ['word','pos','status','meaningZh','meaningEn','usagePattern'])expect(()=>restoreRecordedAuditPatch('words',{...original,...p.after,[key]:'unrecorded'},p)).toThrow();
   expect(()=>restoreRecordedAuditPatch('words',{...original,...p.after},{...p,before:{verbForms:null}})).toThrow();
@@ -558,6 +563,53 @@ it('keeps record and part historical form fingerprints through only exact U28 co
   const p=lv2u28.patches.find(q=>q.dataset==='words'&&q.id===id)!;const form=forms.find(q=>q.id===id)!;const row=structuredClone(words.find(w=>w.wordId===id)!);
   expect(()=>restoreRecordedAuditPatch('words',structuredClone(row),form)).toThrow();
   expect(()=>restoreRecordedAuditPatch('words',{...row,meaningZh:'unverified'},p)).toThrow();
+  const drift={...row,unlistedField:'unverified'};restoreRecordedAuditPatch('words',drift,p);expect(()=>restoreRecordedAuditPatch('words',drift,form)).toThrow();
+  restoreRecordedAuditPatch('words',row,p);restoreRecordedAuditPatch('words',row,form);expect(row).not.toHaveProperty('verbForms');
+ }
+});
+
+it('reverses only22 exact LV2 U29 sourced form keys and rejects all other row drift',()=>{
+ expect(lv2u29FormSources.facts).toHaveLength(22);
+ const words:Row[]=JSON.parse(readFileSync('public/data/v1/words.json','utf8'));
+ for(const p of lv2u29Forms.patches){
+  const row=structuredClone(words.find(w=>w.wordId===p.id)!);
+  const fact=lv2u29FormSources.facts.find(f=>f.wordId===p.id)!;
+  restoreRecordedAuditPatch('words',row,p);expect(row).toEqual(fact.nonFormRow);expect(row).not.toHaveProperty('verbForms');
+  for(const key of ['base','past','pastParticiple','sourceRef','status']){
+   const wrong=structuredClone(p);(wrong.after.verbForms as Row)[key]='unverified';
+   expect(()=>restoreRecordedAuditPatch('words',{...fact.nonFormRow,...wrong.after},wrong)).toThrow();
+  }
+  for(const key of ['word','pos','status','meaningZh','meaningEn','usagePattern'])expect(()=>restoreRecordedAuditPatch('words',{...fact.nonFormRow,...p.after,[key]:'unrecorded'},p)).toThrow();
+  expect(()=>restoreRecordedAuditPatch('words',{...fact.nonFormRow,...p.after},{...p,before:{verbForms:null}})).toThrow();
+ }
+});
+
+
+
+
+it('limits two LV2 U29 notes to exact full-row guards to content only',()=>{
+ expect(lv2u29Notes.patches).toHaveLength(2);
+ for(const p of lv2u29Notes.patches){const row:Row={...p.before,...p.after};restoreRecordedAuditPatch('notes',row,p);expect(row).toEqual(p.before);
+  for(const field of ['word','status','noteType','noteId']){expect(()=>restoreRecordedAuditPatch('notes',{...p.before,...p.after,[field]:'unrecorded'},p)).toThrow();expect(()=>restoreRecordedAuditPatch('notes',{...p.before,...p.after},{...p,before:{...p.before,[field]:'unrecorded'}})).toThrow();}
+  for(const field of ['title','content','status'])expect(()=>restoreRecordedAuditPatch('notes',{...p.before,...p.after,[field]:'unverified'},{...p,after:{...p.after,[field]:'unverified'}})).toThrow();
+  expect(()=>restoreRecordedAuditPatch('notes',{...p.before,...p.after},{...p,id:'NXunknown'})).toThrow();
+ }
+});
+
+
+it('keeps U29 translations limited to exact original English and one Chinese string',()=>{
+ for(const p of lv2u29Translations.patches){const row:Row={...p.before,...p.after};restoreRecordedAuditPatch('examples',row,p);expect(row).toEqual(p.before);
+  for(const key of ['word','sentenceEn','blankSentence','answer'])expect(()=>restoreRecordedAuditPatch('examples',{...p.before,...p.after,[key]:'unrecorded'},p)).toThrow();
+  for(const key of ['sentenceZh','sentenceEn','status','sensePos'])expect(()=>restoreRecordedAuditPatch('examples',{...p.before,...p.after,[key]:'unverified'},{...p,after:{...p.after,[key]:'unverified'}})).toThrow();
+  expect(()=>restoreRecordedAuditPatch('examples',{...p.before,...p.after},{...p,id:'EXunknown'})).toThrow();
+ }
+});
+it('keeps manage empty and price old form fingerprints through only exact U29 inverses',()=>{
+ const words:Row[]=JSON.parse(readFileSync('public/data/v1/words.json','utf8'));
+ for(const[id,forms]of [['W001523',integratedU07.patches],['W001307',integratedU08U09.patches],['W000677',integratedU08U09.patches]] as const){
+  const p=lv2u29.patches.find(q=>q.dataset==='words'&&q.id===id)!,form=forms.find(q=>q.id===id)!,row=structuredClone(words.find(w=>w.wordId===id)!);
+  expect(()=>restoreRecordedAuditPatch('words',structuredClone(row),form)).toThrow();
+  const field=Object.keys(p.after)[0];expect(()=>restoreRecordedAuditPatch('words',{...row,[field]:'unverified'},p)).toThrow();
   const drift={...row,unlistedField:'unverified'};restoreRecordedAuditPatch('words',drift,p);expect(()=>restoreRecordedAuditPatch('words',drift,form)).toThrow();
   restoreRecordedAuditPatch('words',row,p);restoreRecordedAuditPatch('words',row,form);expect(row).not.toHaveProperty('verbForms');
  }
