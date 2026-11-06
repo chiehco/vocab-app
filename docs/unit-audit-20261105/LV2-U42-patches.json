@@ -1,0 +1,1161 @@
+{
+  "unit": "LV2-U42",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "baseCheckpoint": "ef3d2c500963a6a20a72ea2af5f3825fea4d3a75",
+  "scope": "Exact fields only. Preserve all formal identities/POS/status, practice English/cloze/answers and empty hints. One precise Chinese deadline boundary, twelve actual cloze POS, five context hints and three separately verified exam senses. Many word/pattern refinements clarify scope rather than mean that every previous sense was wrong.",
+  "patches": [
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001976",
+      "before": {
+        "usagePattern": "the wheel of a car; turn the wheel; behind the wheel",
+        "word": "wheel",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "usagePattern": "the steering wheel; turn the wheel; behind the wheel"
+      },
+      "reason": "Make the first car-wheel phrase explicitly a steering wheel so its unchanged Chinese is unambiguous. Printed p372 independently distinguishes wheels and steering wheels.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/wheel"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001494",
+      "before": {
+        "meaningZh": "最近的",
+        "word": "latest",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "最新的；最近的"
+      },
+      "reason": "Include the primary latest/up-to-date sense explicitly, as printed on p372.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/latest"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001288",
+      "before": {
+        "meaningZh": "賺得；獲得；博得；歐州科學研究網",
+        "meaningEn": "acquire or deserve by one's efforts or actions",
+        "usagePattern": "earn + N; earn to V",
+        "usagePatternZh": "賺取……／贏得……；賺錢以做……",
+        "word": "earn",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningZh": "（動詞）賺得；獲得；博得；（另有大寫縮寫 EARN）歐洲學術研究網",
+        "meaningEn": "acquire or deserve by one's efforts or actions; separate uppercase acronym EARN: European Academic Research Network.",
+        "usagePattern": "earn money; earn a living; earn respect",
+        "usagePatternZh": "賺錢；謀生；贏得尊重"
+      },
+      "reason": "Separate the historical uppercase network acronym from the lexical verb, correct 歐州, and replace the misleading generic earn-to construction.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/earn; https://www.rfc-editor.org/rfc/rfc1580.html"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001583",
+      "before": {
+        "meaningEn": "a sign of assent or salutation or command; the act of nodding the head",
+        "usagePattern": "nod + N; nod to V; a/the nod",
+        "usagePatternZh": "點頭表示某事；點頭去做某事；該次點頭",
+        "word": "nod",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningEn": "(v.) to lower and raise the head to signal agreement, recognition or a greeting; to let the head droop through drowsiness; to sway. (n.) a brief movement of the head, a signal of agreement, or a short sleep.",
+        "usagePattern": "nod one's head; nod in agreement; give sb a nod",
+        "usagePatternZh": "點頭；點頭同意；向某人點頭示意"
+      },
+      "reason": "Supply the existing verb alongside nouns and use explicit, paired constructions. Retain inherited drowsiness and swaying meanings.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/nod"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001433",
+      "before": {
+        "meaningZh": "臀部；薔薇果；憂鬱；熟悉內情的",
+        "word": "hip",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（名詞）臀部／髖部；薔薇果；（通常用複數的另一名詞義）憂鬱；（另有非正式形容詞用法）熟悉內情的"
+      },
+      "reason": "Preserve both real homograph nouns, including melancholy, and label the informal adjective separately from the formal noun.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/hip; https://en.langenscheidt.com/english-german/hip"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001493",
+      "before": {
+        "meaningZh": "膝蓋；舔；一圈；下襬",
+        "usagePattern": "a/the lap; lap of N",
+        "usagePatternZh": "一圈／該圈；……的一圈",
+        "word": "lap",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningZh": "（名詞）人坐著時的大腿部；一圈；（罕見衣物義）下襬；（另有動詞用法）舔",
+        "usagePattern": "on sb's lap; a lap of the track; the lap of a coat",
+        "usagePatternZh": "在某人的大腿上；繞跑道一圈；（罕見）外套的下襬"
+      },
+      "reason": "Distinguish lap from the knee joint, retain the attested rare garment meaning, and separate licking as a verb.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/lap"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001337",
+      "before": {
+        "meaningZh": "眉毛；眉；額；睫毛",
+        "meaningEn": "the arch of hair above each eye; the part of the face above the eyes",
+        "word": "eyebrow/brow",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningZh": "（eyebrow）眉毛；（brow）眉毛／眉額",
+        "meaningEn": "(n.) the line of hair above each eye. The existing variant brow also means the forehead."
+      },
+      "reason": "Keep the official eyebrow/brow identity and forehead meaning; correct the different body-part gloss 睫毛 using the explicit above-eye versus eyelid-edge distinction.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/eyebrow; https://www.collinsdictionary.com/dictionary/english/brow; https://dictionary.cambridge.org/dictionary/english/eyebrow; https://dictionary.cambridge.org/dictionary/english/eyelash"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001421",
+      "before": {
+        "meaningZh": "健身房；體育館；健身室；運動場；+體育館",
+        "word": "gymnasium/gym",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningZh": "健身房；體育館；健身室；運動場"
+      },
+      "reason": "Remove only the exact duplicated +體育館 artifact. Preserve the other inherited senses and existing gymnasium/gym identity.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/gymnasium"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001782",
+      "before": {
+        "meaningZh": "羞恥；羞愧；恥辱；使羞愧",
+        "word": "shame",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（名詞）羞恥；羞愧；恥辱；可惜的事／遺憾；（動詞）使羞愧"
+      },
+      "reason": "Include the printed and practiced what-a-shame pity sense while preserving shame and the existing verb.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/shame"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001141",
+      "before": {
+        "meaningZh": "鏈；枷鎖；束縛；用鐵練鎖住",
+        "word": "chain",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（名詞）鏈；枷鎖；束縛；連鎖店；（動詞）用鐵鍊鎖住"
+      },
+      "reason": "Correct 練 to 鍊 and expose the chain-of-businesses sense already used in the unchanged example.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/chain"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001449",
+      "before": {
+        "meaningZh": "影像；肖像；想象；圖像",
+        "word": "image",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "影像；肖像；想象；圖像；形象；意象"
+      },
+      "reason": "Add the public-image and literary-image senses printed on p375 without deleting any existing gloss.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/image"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001777",
+      "before": {
+        "meaningZh": "獨立件；抽印本；分開的；各別的",
+        "word": "separate",
+        "pos": "adj./v.",
+        "posAll": [
+          "adj.",
+          "v."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（形容詞）分開的；各別的；（動詞）（使）分開；（另有名詞用法）獨立件；抽印本"
+      },
+      "reason": "Include the existing separate verb visibly while preserving the distinct adjective and genuine separate-item/offprint nouns.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/separate"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001846",
+      "before": {
+        "meaningZh": "鋼；鋼製品；鋼鐵；堅硬",
+        "meaningEn": "a strong hard metal made mainly of iron and carbon, widely used for making tools, vehicles, and buildings",
+        "word": "steel",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（名詞）鋼；鋼製品；鋼鐵；堅硬；（動詞）使堅強；steel oneself：使自己做好心理準備",
+        "meaningEn": "a strong hard metal made mainly of iron and carbon, widely used for making tools, vehicles, and buildings; (v.) to make hard or determined; steel oneself means to prepare mentally for something difficult or unpleasant."
+      },
+      "reason": "Add the printed existing lexical verb and reflexive preparation meaning; retain material and hardness nouns.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/steel"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001476",
+      "before": {
+        "meaningZh": "鐵；熨斗；鐵器；堅強",
+        "word": "iron",
+        "pos": "n./v./adj.",
+        "posAll": [
+          "n.",
+          "v.",
+          "adj."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（名詞）鐵；熨斗；鐵器；（形容詞）堅強的；（動詞）熨燙"
+      },
+      "reason": "Include the existing ironing verb used by the unchanged daily cloze; formal headword POS remains intact.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/iron"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001856",
+      "before": {
+        "meaningEn": "to extend one's body or limbs to full length; a continuous area or period of something",
+        "usagePatternZh": "伸展；一綿延的……；伸展雙腿",
+        "word": "stretch",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningEn": "(v.) to extend the body, limbs or another object; to extend over an area or distance. (n.) a continuous area, length or period of something.",
+        "usagePatternZh": "伸展；一段／一片……；伸展雙腿"
+      },
+      "reason": "Expose noun and verb scope and make a-stretch-of Chinese cover the beach, road and time senses accurately.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/stretch"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001960",
+      "before": {
+        "meaningEn": "a choice that is made by counting the number of people in favor of each alternative; the opinion of a group as determined by voting",
+        "usagePattern": "vote + N; vote to V; a/the vote",
+        "usagePatternZh": "投票給……；投票決定做……；選票",
+        "word": "vote",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningEn": "(n.) an expressed choice in an election or decision, or the act of deciding by such choices. (v.) to express a choice, choose by voting, or decide something by a vote.",
+        "usagePattern": "vote for N; vote against N; take a vote on N",
+        "usagePatternZh": "投票支持……；投票反對……；針對……投票表決"
+      },
+      "reason": "Include the existing verb and replace generic constructions with three precise, paired vote patterns.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/vote"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001859",
+      "before": {
+        "meaningZh": "鬥爭；努力；奮鬥；掙扎",
+        "meaningEn": "to try very hard to do something that is difficult; (n.) a great effort to achieve or resist something",
+        "word": "struggle",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（名詞）鬥爭；努力；奮鬥；掙扎；難事；（動詞）努力；奮鬥；掙扎",
+        "meaningEn": "(v.) to try very hard to do something difficult or to fight against a difficulty. (n.) a great effort, a difficult contest, or something that is difficult to do."
+      },
+      "reason": "Retain all inherited senses and include the actually printed difficult-task noun.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/struggle"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001314",
+      "before": {
+        "meaningZh": "入口；進入點；入場；入學",
+        "meaningEn": "the door, gate, or passage through which you enter a place; the act of entering",
+        "word": "entrance",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "入口；進入點；入場；入學；進入許可／權利",
+        "meaningEn": "the door, gate, or passage through which you enter a place; the act of entering; permission or the right to enter a place."
+      },
+      "reason": "Include the printed admission/right sense as a noun; do not add the separate entrance-enrapture verb or forms.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/entrance"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001004",
+      "before": {
+        "meaningZh": "缺席的；不在的；缺乏的；漫不經心的",
+        "word": "absent",
+        "pos": "adj./v.",
+        "posAll": [
+          "adj.",
+          "v."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（形容詞）缺席的；不在的；缺乏的；漫不經心的；（動詞）absent oneself：使自己缺席"
+      },
+      "reason": "Expose the existing reflexive lexical verb without confusing its form or pronunciation with the adjective.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/absent"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001218",
+      "before": {
+        "meaningZh": "湧流；趨勢；流；流通的",
+        "word": "current",
+        "pos": "adj./n.",
+        "posAll": [
+          "adj.",
+          "n."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（形容詞）當前的；現行的；流通的；（名詞）湧流；趨勢；流"
+      },
+      "reason": "Add the actual current adjective prominently while preserving the separate flow/trend nouns.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/current"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002664",
+      "before": {
+        "meaningEn": "hold back to a later time; act of putting off to a future time",
+        "usagePattern": "postpone + N; postpone to V; a/the postpone",
+        "usagePatternZh": "延遲……；延遲以……；延期",
+        "word": "postpone",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningEn": "(v.) to delay an event or action until a later time; to place something after another in order of importance.",
+        "usagePattern": "postpone + N/V-ing; postpone N until/to + time",
+        "usagePatternZh": "延後某事／做某事；把某事延至某個時間"
+      },
+      "reason": "Correct the generic postpone-to-V and a/the-postpone patterns; no new noun headword or invented practice sentence.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/postpone"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002844",
+      "before": {
+        "meaningEn": "a stolen base; an instance in which a base runner advances safely during the delivery of a pitch (without the help of a hit or walk or pa...; take without the owner's consent",
+        "usagePattern": "steal + N; steal to V",
+        "usagePatternZh": "偷竊某物；偷偷地去做某事",
+        "word": "steal",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningEn": "(v.) to take something without permission; to use another person’s ideas without acknowledgment; to move secretly or quietly; in baseball, to advance a base by stealing. Separate noun use: an act of theft or, in baseball, a stolen base.",
+        "usagePattern": "steal N from sb; steal an idea; steal away",
+        "usagePatternZh": "從某人那裡偷取某物；剽竊想法；悄悄離開"
+      },
+      "reason": "Replace the literal truncated baseball fragment with complete, sourced definitions, preserving the real baseball noun separately from the formal verb.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/steal"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003869",
+      "before": {
+        "usagePattern": "a/the robber; robber of N",
+        "usagePatternZh": "強盜；……的搶劫者",
+        "word": "robber",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "usagePattern": "a robber; an armed robber; a bank robber",
+        "usagePatternZh": "搶劫者；持械搶劫者；銀行搶匪"
+      },
+      "reason": "Contextual refinement of generic patterns; no claim that every old robber-of phrase is ungrammatical.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/robber"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003750",
+      "before": {
+        "usagePattern": "a/the plumber; plumber of N",
+        "usagePatternZh": "一位水管工人；……的水管工人",
+        "word": "plumber",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "usagePattern": "a plumber; call a plumber; work as a plumber",
+        "usagePatternZh": "水管工人；請水管工人；擔任水管工人"
+      },
+      "reason": "Use concrete noun constructions instead of the generic plumber-of placeholder.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/plumber"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001035",
+      "before": {
+        "meaningZh": "角；角度；角落；釣魚",
+        "usagePattern": "at an angle; from a different angle; a wide/sharp angle",
+        "usagePatternZh": "傾斜地；從不同的角度；鈍角／銳角",
+        "word": "angle",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（名詞）角；角度；角落；（另有動詞用法）釣魚",
+        "usagePattern": "at an angle; from a different angle; a right angle",
+        "usagePatternZh": "傾斜地；從不同的角度；直角"
+      },
+      "reason": "Keep the real fishing verb separate from the formal noun; do not equate every wide angle with an obtuse angle.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/angle"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002648",
+      "before": {
+        "meaningEn": "an unfortunate development",
+        "usagePattern": "pity + N; pity to V; a/the pity",
+        "usagePatternZh": "憐憫……；憐憫以……；遺憾的事",
+        "word": "pity",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningEn": "(n.) sympathy for someone who is suffering, or an unfortunate or disappointing situation. (v.) to feel sorry for someone.",
+        "usagePattern": "feel pity for sb; pity sb; it is a pity that + clause",
+        "usagePatternZh": "同情某人；憐憫某人；……真可惜"
+      },
+      "reason": "Supply the existing sympathy noun and verb, and replace the misleading pity-to-V pattern with attested constructions.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/pity"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001509",
+      "before": {
+        "meaningZh": "環；連結物；鏈接；火把",
+        "word": "link",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（名詞）環；連結物；鏈接；（舊用名詞）火把；（動詞）連結"
+      },
+      "reason": "Preserve the independently attested historical torch noun while including the existing linking verb.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/link"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003517",
+      "before": {
+        "meaningZh": "想像的；虛構的",
+        "word": "imaginative",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningZh": "有想像力的；想像的；虛構的"
+      },
+      "reason": "Add the primary creative-person/idea adjective, preserving the attested produced-by-imagination sense rather than calling it nonexistent.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/imaginative"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003516",
+      "before": {
+        "meaningEn": "(mathematics) a number of the form a+bi where a and b are real numbers and i is the square root of -1; not based on fact; unreal",
+        "word": "imaginary",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningEn": "(adj.) existing only in the imagination; not real; in mathematics, involving imaginary numbers. Separate mathematical noun use: an imaginary number."
+      },
+      "reason": "Separate the formal adjective from the inherited mathematical noun and replace the overly broad unqualified a+bi fragment. Preserve the mathematical sense.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/imaginary"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002531",
+      "before": {
+        "meaningZh": "獎牌；勳章；授勳予",
+        "word": "medal",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（名詞）獎牌；勳章；（另有動詞用法）授勳予"
+      },
+      "reason": "Retain the real medal-awarding verb but distinguish it from the noun-only formal headword; do not add forms.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/medal"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002536",
+      "before": {
+        "meaningZh": "心智的；精神病的；心理的；頦的",
+        "word": "mental",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "心智的；（舊用）精神病的；心理的；（解剖）頦的"
+      },
+      "reason": "Retain both mind and anatomical chin senses with visible scope, preserving the old illness adjective with its dictionary register.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/mental"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W006055",
+      "before": {
+        "meaningZh": "調整；使適應於；校準；適應於；調節",
+        "meaningEn": "(v.) to change something slightly to make it more suitable, accurate, or effective; to gradually become familiar with a new situation; (n.) a small change made to something",
+        "usagePattern": "adjust to + N; adjust + N; make an adjustment to + N",
+        "usagePatternZh": "適應……；調整……；對某事做出調整",
+        "word": "adjustment",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningZh": "（名詞）調整；校準；適應；調節；（相關動詞 adjust）使適應於；適應於",
+        "meaningEn": "(n.) a small change made to improve suitability or accuracy; the act or process of adapting to a new situation. Related verb adjust: to change something or become accustomed to something.",
+        "usagePattern": "make an adjustment to N; an adjustment in N; adjustment to N",
+        "usagePatternZh": "對……作調整；……方面的調整；對……的適應"
+      },
+      "reason": "Keep the official adjustment noun identity and explicitly label related adjust wording; use noun constructions throughout.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/adjustment"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002873",
+      "before": {
+        "meaningZh": "頂點；最高階層；最高級會議；政府首腦的",
+        "meaningEn": "a meeting of heads of governments; reach the summit (of a mountain)",
+        "usagePattern": "a/the summit; summit of N",
+        "usagePatternZh": "頂峰；……的頂峰",
+        "word": "summit",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningZh": "（名詞）山頂；頂點；最高階層；最高級會議；（另有修飾用法）政府首腦的",
+        "meaningEn": "(n.) the top of a mountain or the highest point, level or rank; a meeting of heads of government or other high officials. Separate modifier use: relating to such a meeting.",
+        "usagePattern": "the summit of a mountain; reach the summit; a summit meeting",
+        "usagePatternZh": "山頂；登上頂峰；高峰會議"
+      },
+      "reason": "Restore the printed summit noun and retain the real government-meeting modifier distinctly.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/summit"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005380",
+      "before": {
+        "meaningEn": "a feeling of intense anger; (classical mythology) the hideous snake-haired monsters (usually three in number) who pursued unpunished criminals",
+        "word": "fury",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningEn": "(n.) intense anger or violent force; a fiercely angry person. In classical mythology, the Furies are goddesses who punish wrongdoers."
+      },
+      "reason": "Retain the anger/person and genuine mythological meanings while clarifying the capitalized plural Furies.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/fury"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000675",
+      "before": {
+        "meaningZh": "（名詞）現在；禮品；（動詞）瞄準；贈送；呈現；介紹；（形容詞）現在的",
+        "meaningEn": "(n.) the period of time that is happening now; a gift given to someone; (adj.) existing, happening, or being dealt with right now; (v.) to give, show, introduce or formally offer something; to aim a weapon.",
+        "word": "present",
+        "pos": "adj./n./v.",
+        "posAll": [
+          "adj.",
+          "n.",
+          "v."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（名詞）現在；禮品；（動詞）瞄準；贈送；呈現；介紹；（形容詞）現在的；在場的／出席的",
+        "meaningEn": "(n.) the period of time that is happening now; a gift given to someone; (adj.) existing, happening, or being dealt with right now; (v.) to give, show, introduce or formally offer something; to aim a weapon.; (adj.) being in the place in question, rather than absent."
+      },
+      "reason": "Include the actually printed opposite of absent without losing any existing noun, verb or adjective meanings.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/present"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXb396ba9b",
+      "before": {
+        "sensePos": "n.",
+        "word": "crowd",
+        "sentenceEn": "Fans crowded around the singer, hoping to get his autograph.",
+        "sentenceZh": "歌迷們擠在那位歌手身邊，希望能拿到他的簽名。",
+        "blankSentence": "Fans _____ around the singer, hoping to get his autograph.",
+        "answer": "crowded"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Actual cloze function in the complete unchanged sentence, supported by the dictionary. Empty hints stay empty.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/crowd"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXfe579ad3",
+      "before": {
+        "sensePos": "n.",
+        "word": "delay",
+        "sentenceEn": "He decided to delay his trip until the weather improved.",
+        "sentenceZh": "他決定將旅行延後，直到天氣好轉。",
+        "blankSentence": "He decided to _____ his trip until the weather improved.",
+        "answer": "delay"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Actual cloze function in the complete unchanged sentence, supported by the dictionary. Empty hints stay empty.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/delay"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX3f1c12d9",
+      "before": {
+        "sensePos": "n.",
+        "word": "chain",
+        "sentenceEn": "He chained his bike to the fence outside the convenience store.",
+        "sentenceZh": "他把腳踏車用鏈條鎖在便利商店外的圍欄上。",
+        "blankSentence": "He _____ his bike to the fence outside the convenience store.",
+        "answer": "chained"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Actual cloze function in the complete unchanged sentence, supported by the dictionary. Empty hints stay empty.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/chain"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXc293debb",
+      "before": {
+        "sensePos": "adj.",
+        "word": "separate",
+        "sentenceEn": "The teacher asked the students to separate the recyclables from the trash.",
+        "sentenceZh": "老師要求學生把可回收物與垃圾分開。",
+        "blankSentence": "The teacher asked the students to _____ the recyclables from the trash.",
+        "answer": "separate"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Actual cloze function in the complete unchanged sentence, supported by the dictionary. Empty hints stay empty.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/separate"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX3602d73e",
+      "before": {
+        "sensePos": "n.",
+        "word": "iron",
+        "sentenceEn": "Before the job interview, he carefully ironed his white shirt.",
+        "sentenceZh": "面試前，他仔細熨燙了自己的白襯衫。",
+        "blankSentence": "Before the job interview, he carefully _____ his white shirt.",
+        "answer": "ironed"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Actual cloze function in the complete unchanged sentence, supported by the dictionary. Empty hints stay empty.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/iron"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX7cb63ae3",
+      "before": {
+        "sensePos": "v.",
+        "word": "stretch",
+        "sentenceEn": "There is a quiet stretch of beach just beyond the hotel.",
+        "sentenceZh": "飯店再過去有一段安靜的海灘。",
+        "blankSentence": "There is a quiet _____ of beach just beyond the hotel.",
+        "answer": "stretch"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Actual cloze function in the complete unchanged sentence, supported by the dictionary. Empty hints stay empty.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/stretch"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX4b5710a2",
+      "before": {
+        "sensePos": "n.",
+        "word": "peak",
+        "sentenceEn": "Sales of ice cream usually peak in the hottest weeks of summer.",
+        "sentenceZh": "冰淇淋的銷量通常在夏天最熱的幾週達到最高點。",
+        "blankSentence": "Sales of ice cream usually _____ in the hottest weeks of summer.",
+        "answer": "peak"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Actual cloze function in the complete unchanged sentence, supported by the dictionary. Empty hints stay empty.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/peak"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1db3c0b4",
+      "before": {
+        "sensePos": "n.",
+        "word": "expert",
+        "sentenceEn": "My uncle is an expert cook who can make delicious dumplings in no time.",
+        "sentenceZh": "我叔叔是位廚藝高超的廚師，能很快做出好吃的水餃。",
+        "blankSentence": "My uncle is an _____ cook who can make delicious dumplings in no time.",
+        "answer": "expert"
+      },
+      "after": {
+        "sensePos": "adj."
+      },
+      "reason": "Actual cloze function in the complete unchanged sentence, supported by the dictionary. Empty hints stay empty.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/expert"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX85e6d95a",
+      "before": {
+        "sensePos": "n.",
+        "word": "struggle",
+        "sentenceEn": "She struggled to open the heavy door while carrying all her grocery bags.",
+        "sentenceZh": "她提著所有的雜貨袋，費力地想打開那扇沉重的門。",
+        "blankSentence": "She _____ to open the heavy door while carrying all her grocery bags.",
+        "answer": "struggled"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Actual cloze function in the complete unchanged sentence, supported by the dictionary. Empty hints stay empty.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/struggle"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXbedb835b",
+      "before": {
+        "sensePos": "n.",
+        "word": "struggle",
+        "sentenceEn": "Many students struggle to balance their studies with part-time jobs after school.",
+        "sentenceZh": "許多學生在課後打工與課業之間掙扎著取得平衡。",
+        "blankSentence": "Many students _____ to balance their studies with part-time jobs after school.",
+        "answer": "struggle"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Actual cloze function in the complete unchanged sentence, supported by the dictionary. Empty hints stay empty.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/struggle"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX79967822",
+      "before": {
+        "sensePos": "adj.",
+        "word": "current",
+        "sentenceEn": "A strong current in the river swept the boat downstream.",
+        "sentenceZh": "河裡強勁的水流把船沖向下游。",
+        "blankSentence": "A strong ______ in the river swept the boat downstream.",
+        "answer": "current"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Actual cloze function in the complete unchanged sentence, supported by the dictionary. Empty hints stay empty.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/current"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX3999d06a",
+      "before": {
+        "sensePos": "n.",
+        "word": "retreat",
+        "sentenceEn": "Facing heavy losses, the troops were forced to retreat from the battlefield.",
+        "sentenceZh": "面對慘重的損失，部隊被迫從戰場撤退。",
+        "blankSentence": "Facing heavy losses, the troops were forced to _____ from the battlefield.",
+        "answer": "retreat"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Actual cloze function in the complete unchanged sentence, supported by the dictionary. Empty hints stay empty.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/retreat"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX19c3a84c",
+      "before": {
+        "meaningHint": "許可；告別；請假；休假",
+        "word": "leave",
+        "sentenceEn": "John left for Hong Kong yesterday.",
+        "sentenceZh": "約翰昨天動身前往香港。",
+        "blankSentence": "John _____ for Hong Kong yesterday.",
+        "answer": "left"
+      },
+      "after": {
+        "meaningHint": "動身前往（leave for）"
+      },
+      "reason": "Narrow the existing broad noun-heavy hint to this exact cloze sense; preserve all original practice wording.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/leave"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX26e3adf5",
+      "before": {
+        "meaningHint": "許可；告別；請假；休假",
+        "word": "leave",
+        "sentenceEn": "Ian left the door open, so that I could come in.",
+        "sentenceZh": "伊恩讓門開著，這樣我才能進來。",
+        "blankSentence": "Ian _____ the door open, so that I could come in.",
+        "answer": "left"
+      },
+      "after": {
+        "meaningHint": "使……保持某狀態（leave the door open：讓門開著）"
+      },
+      "reason": "Narrow the existing broad noun-heavy hint to this exact cloze sense; preserve all original practice wording.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/leave"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX9fdb726b",
+      "before": {
+        "meaningHint": "許可；告別；請假；休假",
+        "word": "leave",
+        "sentenceEn": "I'll take leave to attend my sister's wedding.",
+        "sentenceZh": "我會請假去參加妹妹的婚禮。",
+        "blankSentence": "I'll take _____ to attend my sister's wedding.",
+        "answer": "leave"
+      },
+      "after": {
+        "meaningHint": "休假（take leave：請假）"
+      },
+      "reason": "Narrow the existing broad noun-heavy hint to this exact cloze sense; preserve all original practice wording.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/leave"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXd23413d2",
+      "before": {
+        "meaningHint": "許可；告別；請假；休假",
+        "word": "leave",
+        "sentenceEn": "I left my cellphone in the office.",
+        "sentenceZh": "我把手機留在辦公室裡了。",
+        "blankSentence": "I _____ my cellphone in the office.",
+        "answer": "left"
+      },
+      "after": {
+        "meaningHint": "留下；遺留"
+      },
+      "reason": "Narrow the existing broad noun-heavy hint to this exact cloze sense; preserve all original practice wording.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/leave"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXf310a725",
+      "before": {
+        "meaningHint": "許可；告別；請假；休假",
+        "word": "leave",
+        "sentenceEn": "As soon as Molly left the room, her baby cried.",
+        "sentenceZh": "茉莉一離開房間，她的小寶寶就哭了。",
+        "blankSentence": "As soon as Molly _____ the room, her baby cried.",
+        "answer": "left"
+      },
+      "after": {
+        "meaningHint": "離開"
+      },
+      "reason": "Narrow the existing broad noun-heavy hint to this exact cloze sense; preserve all original practice wording.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/leave"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXbf4b15ea",
+      "before": {
+        "exampleId": "EXbf4b15ea",
+        "word": "later",
+        "sensePos": "adv.",
+        "meaningHint": "晚於（no later than：最遲不超過）",
+        "exampleType": "textbook",
+        "sentenceEn": "The article must be submitted no later than May 31st.",
+        "sentenceZh": "這篇文章得在 5 月 31 日前遞交。",
+        "blankSentence": "The article must be submitted no _____ than May 31st.",
+        "answer": "later",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "sentenceZh": "這篇文章最遲須於 5 月 31 日遞交。"
+      },
+      "reason": "Clarify no-later-than includes the named date; do not invent an exact submission hour. English and deadline date remain unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/no%2Fnot%20later%20than"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001234-1",
+      "before": {
+        "senseId": "W001234-1",
+        "wordId": "W001234",
+        "word": "delay",
+        "senseOrder": 1,
+        "sensePos": "v.",
+        "meaningZh": "延緩、拖慢",
+        "isExamSense": true,
+        "examEvidence": "學測115 文意選填Q24",
+        "answerForms": [
+          "delay"
+        ],
+        "note": "考點：使某事發生得更慢",
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed",
+        "examEvidence": "學測115 文意選填Q24；大考中心原題與官方答案已核，答案 D：delay",
+        "note": "考點：延緩、拖慢。已核大考中心原題（午睡與年齡相關的腦部萎縮）及官方答案 D；現有切花例句為另寫練習，非原題逐字引文，該例句維持 draft。"
+      },
+      "reason": "Verify only this existing sense from the complete official passage, option and answer. Separate practice wording/status and all headword states remain unchanged.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0q054532302653501476/02-115%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7.pdf; https://www.ceec.edu.tw/files/file_pool/1/0q040594609847120321/02-115%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001218-1",
+      "before": {
+        "senseId": "W001218-1",
+        "wordId": "W001218",
+        "word": "current",
+        "senseOrder": 1,
+        "sensePos": "adj.",
+        "meaningZh": "現今的、最新的",
+        "isExamSense": true,
+        "examEvidence": "學測110 文意選填Q34",
+        "answerForms": [
+          "current"
+        ],
+        "note": "考點：形容詞義，非「水流」",
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed",
+        "examEvidence": "學測110 文意選填Q34；大考中心原題與官方答案已核，答案 H：current",
+        "note": "考點：現今的、近期的，非水流。已核大考中心原題及官方答案 H；現有 app 深色模式例句為另寫練習，非原題逐字引文，該例句維持 draft。"
+      },
+      "reason": "Verify only this existing sense from the complete official passage, option and answer. Separate practice wording/status and all headword states remain unchanged.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0l069608312283063557/110%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%20.pdf; https://www.ceec.edu.tw/files/file_pool/1/0l069608703462801602/110%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W002672-1",
+      "before": {
+        "senseId": "W002672-1",
+        "wordId": "W002672",
+        "word": "presence",
+        "senseOrder": 1,
+        "sensePos": "n.",
+        "meaningZh": "存在",
+        "isExamSense": true,
+        "examEvidence": "學測109 文意選填Q36",
+        "answerForms": [
+          "presence"
+        ],
+        "note": "考點：the presence of 某物存在著",
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed",
+        "examEvidence": "學測109 文意選填Q36；大考中心原題與官方答案已核，答案 J：presence",
+        "note": "考點：存在。已核大考中心原題及官方參考答案 J；現有廚房螞蟻例句為另寫練習，非原題逐字引文，該例句維持 draft。"
+      },
+      "reason": "Verify only this existing sense from the complete official passage, option and answer. Separate practice wording/status and all headword states remain unchanged.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0k050359836694452838/02-109%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7-%E5%AE%9A%E7%A8%BF.pdf; https://www.ceec.edu.tw/files/file_pool/1/0K018689241635770142/02-109%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E5%8F%83%E8%80%83%E7%AD%94%E6%A1%88.pdf"
+    }
+  ]
+}

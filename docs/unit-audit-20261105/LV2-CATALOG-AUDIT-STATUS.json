@@ -1,6 +1,6 @@
 {
   "scope": "Exact current repository curriculum catalogue, not a publisher edition table of contents or an inferred numeric range.",
-  "checkedAtUtc": "2026-11-06T17:39:30.735Z",
+  "checkedAtUtc": "2026-11-06T18:57:44.613Z",
   "basis": {
     "model": "src/features/direct/model.ts",
     "catalog": "src/features/vocabulary/textbookCatalog.ts",
@@ -75,13 +75,13 @@
     37,
     38,
     39,
-    40
-  ],
-  "currentAuditUnits": [
+    40,
     41
   ],
+  "currentAuditUnits": [
+    42
+  ],
   "notYetAuditedUnits": [
-    42,
     43,
     44,
     45,
@@ -627,9 +627,30 @@
       "curriculumPath": "src/features/direct/curriculumLV2Unit41.json",
       "registeredInModel": true,
       "deliveryMode": "text_only",
-      "auditStatus": "audit_after_complete_pending_checkpoint_own_ci_image_detail_followup",
+      "auditStatus": "audit_checkpoint_own_ci_success_discover_image_detail_pending",
       "ledger": "docs/unit-audit-20261105/LV2-U41-ledger.json",
-      "ownCi": null
+      "ownCi": {
+        "commit": "ef3d2c500963a6a20a72ea2af5f3825fea4d3a75",
+        "run": 42263857470,
+        "job": 128050492541,
+        "url": "https://github.com/chiehco/vocab-app/actions/runs/42263857470/job/128050492541",
+        "status": "completed",
+        "conclusion": "success",
+        "checkoutShaReadFromFullLog": true,
+        "testFiles": 231,
+        "tests": 1887,
+        "pythonBatches": [
+          14,
+          7,
+          75,
+          10
+        ],
+        "lint": "success",
+        "typecheck": "success",
+        "build": "success",
+        "buildLogCompletedAtUtc": "2026-11-06T17:58:15.3258498Z",
+        "jobCompletedAtUtc": "2026-11-06T17:58:21Z"
+      }
     },
     {
       "unit": 42,
@@ -654,8 +675,8 @@
       "curriculumPath": "src/features/direct/curriculumLV2Unit42.json",
       "registeredInModel": true,
       "deliveryMode": "text_only",
-      "auditStatus": "not_audited_in_this_full_audit",
-      "ledger": null,
+      "auditStatus": "audit_after_complete_pending_checkpoint_own_ci_direction_pending",
+      "ledger": "docs/unit-audit-20261105/LV2-U42-ledger.json",
       "ownCi": null
     },
     {
@@ -900,7 +921,7 @@
   },
   "releaseGate": {
     "wholeRegisteredLvReady": false,
-    "reason": "U41 needs its own new pushed-head CI; later registered units remain unaudited. U38 two image repairs and U41 discover actor quantity remain explicit. U26 and edition-boundary limitations retained.",
+    "reason": "U42 needs its own pushed-head CI; U43 and later registered units remain unaudited. U38 two image repairs, U41 discover quantity and U42 enter/entry direction remain explicit. U26 and edition-boundary limitations retained.",
     "mainMerged": false,
     "deployed": false
   }
