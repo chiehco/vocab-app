@@ -2,21 +2,21 @@
 
 ## 目前狀態
 
-更新：2026-11-06T09:21:16.598Z。LV2 U35 的151教材項（99詞彙52文法）、78一般卡112例句73筆記已逐項讀核；9頁原稿18半頁及25張一般卡圖實看。教材151項、一般卡78張112例句及13搭配頁after已回開，20三態於兩面板共40處核對，8筆記和兩句中文精確化可見。19非空提示與93空提示保留界線；10個空提示例句的新POS已保存讀回，現行UI仍不渲染其raw POS標籤，不誤稱標籤可見。
+更新：2026-11-06T10:13:04.418Z。LV2 U36 的142教材項（84詞彙58文法）、62一般卡65例句67筆記已逐項讀核；9頁原稿18半頁及16張一般卡圖實看。教材142項、一般卡62張65例句及29搭配頁after回開零差異。11個真缺鍵三態於字卡／字義兩面板共22處核對，8筆記可見；3個非空提示與62空提示保留。5例句raw POS已保存讀回，空提示例句現行UI不渲染POS標籤，未填空提示來製造可見性。
 
-主補丁63列99欄，另20真缺鍵三態、8筆記、2中譯，共93操作129欄、77唯一正式資料列；教材110列229欄，含58印字相關詞（39有ID、19保留null）與52構式中文。多數為依本句縮限或補足字典／印字覆蓋，不稱全部原錯。6090詞頭POS與狀態、7871英文/cloze/答案、其餘7869中文、原始教材及舊hash均保留；兩句僅移除science fair的未明限制及澄清by Friday含截止當日。prince/princess、fireman/firewoman、cockroach/roach及gasoline/gas邊界保留。
+主補丁41列92欄，另11三態與8筆記，共60操作111欄、52唯一正式資料列；教材102列183欄，含43印字相關詞（21有ID、22保持null）、58構式解釋及fry單數規則的明示字典限定。多數是覆蓋與精確化，不稱全部原錯。6090詞頭POS與狀態、7871英中/cloze/答案、原教材英文／順序／題目及舊hash保留；全部16圖與caption不變，沒有生成或發布圖。
 
-spread語音形容詞、instinct罕見形容詞、dental齒音、notebook期票簿、script法律正本等有據義分列保留。roach「使成凹狀」、spider設圈套者、master母機、wrinkle妙計等仍待更精確來源，不擴為整詞通過。fluid倒液體圖說與plans are fluid獨立例句不混綁；25圖及caption均不變。p313上半頁稍糊的限制已明記。
+cola/coke的可樂、燃料與俚語分列，colon的韻律／解剖複數cola與標點colon、貨幣colón清楚分界；Hamburg保留為相關地名。leaf花瓣、puppy舊貶義、purple帝位、Pan神名、arouse不及物醒來、spoon of sugar與backpack及物構式皆保留有據用法。onion使落淚、vocation職業群體／才能、favorite幸運兒等精確來源仍待核，不刪除來製造通過。原頁局部稍糊和靜態圖無法證實日期／意圖的限制均保留。
 
-首輪19檔249過2失敗已保留：act舊三態非詞形hash需先精確逆向U35英文釋義，新chalk測試誤要求未寫入字樣。修復兩檔70測試全過，增加act負向保護，不改舊fixture；其餘17檔原結果保留。Python60、lint/typecheck/build及兩個教材check全過，原5000ms不放寬。明確安裝呼叫前已持有新雜湊；該次冪等呼叫及同profile關閉重開的14表連時間戳完全一致，未宣稱觀察到先前雜湊轉換，2908列保存資料零差異；390寬master樣本無水平溢出，未宣稱實體手機。
+本機21檔269測試、Python62、lint/typecheck/build及兩個教材check全過，原5000ms限制不變。更新前先在中立頁保存14表，本次已實際觀察U35→U36內容雜湊轉換，14表逐欄不變；同profile關閉重開亦完全一致，2958列保存讀回零差異。390寬cola/coke樣本無水平溢出，未宣稱實體手機。U35精確557e8363的225檔1829測試及全套CI成功另已保存；U36新提交仍須自己的完整CI。
 
-U34精確7cf39a4abfe0a96f844ae358e97b830f4210e470的CI42187264727/job127790463907全成功：224檔1820測試、Python14/7/57/10及build，08:36:53 UTC完成。U35新提交需自己的完整CI，不引用舊版代替。
+main維持0f4eb279，merge-base 2c2035c0；U36全部111欄對上main的精確before，其中2欄共享LV1，沒有正式內容衝突。either筆記兩manifest只執行一次及正式站LF／5sjob／單worker／未發布電梯asset的build排除守衛保留，不自行合併或部署。現有24接入單元仍是U27–U50；U27–U35各自CI成功，U36待新headCI，U37–U50未做本輪全面審核。U26既有小字來源延後與版本末界未知另列，不猜缺號。
 
-已重新fetch並逐ID對帳main 0f4eb279與merge-base 2c2035c：基底審核ahead9/behind2。唯一main資料差異either/NX0fad7e32已相同；未來兩manifest只執行一次，歷史及負向保護皆留。U35的129欄在main均為精確before，11欄共享LV1已記。正式站LF規則、Deploy-default tests(5s)、單worker及build排除未發布U12素材守衛必須保留；沒有merge或部署。
+下一單元 LV2 U37：fee/W001349，第327頁，沿現行母清單續查。
 
-現行教材母清單與model/source逐項一致，24接入單元為U27–U50，最後現有U50/melody。U27–U34各自完整CI成功、U35本機完成待新CI、U36–U50待本輪全面審核。既有U26/p226 firm小字待辨、未接入，另列來源限制，不猜造缺號；未核版本目錄，U50不是已證實的全冊末單元。詳見LV2-CATALOG-AUDIT-STATUS.json。
+## U36 checkpoint
 
-下一單元LV2 U36 leaf/W001499，教材第318頁，按現行順序續查。
+精確before/after、來源、原圖核對與待確認項見LV2-U36-ledger.json、source-review、source-research、四份manifest及receipts。五句POS、三態真缺鍵刪除還原、8筆記全列guard、22未映射補詞與原placeholder歷史均有負向保護；pot／beat原三態hash只先逆向精確U36主欄位，不重置基線。
 
 ## U35 checkpoint
 

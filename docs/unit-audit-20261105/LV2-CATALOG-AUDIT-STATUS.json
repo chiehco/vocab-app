@@ -1,6 +1,6 @@
 {
   "scope": "Exact current repository curriculum catalogue, not a publisher edition table of contents or an inferred numeric range.",
-  "checkedAtUtc": "2026-11-06T09:21:16.727Z",
+  "checkedAtUtc": "2026-11-06T10:13:04.271Z",
   "basis": {
     "model": "src/features/direct/model.ts",
     "catalog": "src/features/vocabulary/textbookCatalog.ts",
@@ -69,13 +69,13 @@
     31,
     32,
     33,
-    34
-  ],
-  "currentAuditUnits": [
+    34,
     35
   ],
+  "currentAuditUnits": [
+    36
+  ],
   "notYetAuditedUnits": [
-    36,
     37,
     38,
     39,
@@ -382,9 +382,15 @@
       "curriculumPath": "src/features/direct/curriculumLV2Unit35.json",
       "registeredInModel": true,
       "deliveryMode": "text_only",
-      "auditStatus": "current_audit_after_complete_pending_checkpoint_own_ci",
+      "auditStatus": "audit_checkpoint_own_ci_success",
       "ledger": "docs/unit-audit-20261105/LV2-U35-ledger.json",
-      "ownCi": null
+      "ownCi": {
+        "commit": "557e8363d272ff26bd3cdda41f58dc1c53a86e14",
+        "run": 42194666961,
+        "job": 127814800194,
+        "url": "https://github.com/chiehco/vocab-app/actions/runs/42194666961/job/127814800194",
+        "conclusion": "success"
+      }
     },
     {
       "unit": 36,
@@ -409,7 +415,7 @@
       "curriculumPath": "src/features/direct/curriculumLV2Unit36.json",
       "registeredInModel": true,
       "deliveryMode": "text_only",
-      "auditStatus": "not_audited_in_this_full_audit",
+      "auditStatus": "current_audit_after_complete_pending_checkpoint_own_ci",
       "ledger": null,
       "ownCi": null
     },
@@ -817,7 +823,7 @@
   },
   "releaseGate": {
     "wholeRegisteredLvReady": false,
-    "reason": "U35 still requires its own pushed checkpoint CI; registered U36–U50 have not undergone this full audit. Known U26 source deferral and edition-boundary limits must remain explicit.",
+    "reason": "The current audit unit still requires its own pushed checkpoint CI; later registered units have not undergone this full audit. Known U26 source deferral and edition-boundary limits remain explicit.",
     "mainMerged": false,
     "deployed": false
   }

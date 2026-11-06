@@ -1,0 +1,55 @@
+{
+  "unit": "LV2-U36",
+  "frontend": {
+    "files": 21,
+    "tests": 269,
+    "failed": 0,
+    "exitCode": 0,
+    "originalLocalTimeout": 5000,
+    "maxWorkers": 1,
+    "scope": "Original U36 text and new audit, original U35/U34/U33 and earlier unit guards, common exact inverse/seed, recovered integration and both image baselines."
+  },
+  "python": {
+    "tests": 62,
+    "exitCode": 0
+  },
+  "lint": {
+    "exitCode": 0,
+    "existingWarningsRetained": true
+  },
+  "typecheck": {
+    "exitCode": 0
+  },
+  "build": {
+    "exitCode": 0
+  },
+  "recoveredDraftCheck": {
+    "exitCode": 0
+  },
+  "recoveredIntegrationCheck": {
+    "exitCode": 0
+  },
+  "logs": {
+    "regression": {
+      "file": "LV2-U36-regression-first.txt",
+      "sha256": "d14606d42be7bb9358b831d6398ff0ab61246e796c31aff2a66287c7811d1734"
+    },
+    "python": {
+      "file": "LV2-U36-python-first.txt",
+      "sha256": "d69c9aabb29e1272890857a9866814691eeca30bbe27eee48567ba4d39288fec"
+    },
+    "lint": {
+      "file": "LV2-U36-lint-final.txt",
+      "sha256": "421e8a0086798803e9ead4e9ef4a030453b42f3fe788f24ffdea9bebe7514714"
+    },
+    "typecheck": {
+      "file": "LV2-U36-typecheck-final.txt",
+      "sha256": "da91f4c430838409de74534c4d8bed41445d7c7283163b2a63c446dde034587b"
+    },
+    "build": {
+      "file": "LV2-U36-build-final.txt",
+      "sha256": "6a518251664c0945a0033e0e1e47034e775fef1ba6bd37546190b22a898f9503"
+    }
+  },
+  "scope": "Actual local results. The new pushed commit still requires its own complete CI."
+}
