@@ -1,0 +1,45 @@
+{
+  "unit": "LV2-U33",
+  "frontendFirstRun": {
+    "files": 18,
+    "tests": 182,
+    "passed": 179,
+    "failures": 3,
+    "failedFiles": 2,
+    "exitCode": 1,
+    "causes": [
+      "U13 condition historical form fingerprint now needs exact inverse of the new U33 meaningZh.",
+      "U15 shock historical form fingerprint now needs exact inverse of new U33 meaningEn and meaningZh.",
+      "New source negative test selected the main crow instead of its related-word occurrence."
+    ],
+    "resolution": "Reverse only the recorded U33 exact-after fields before old form restoration; preserve both original fingerprints. Add negative checks for wrong allowed-after and unrelated field drift. Select the source row by related role and exact ID."
+  },
+  "frontendRepair": {
+    "files": 2,
+    "tests": 64,
+    "failures": 0,
+    "exitCode": 0,
+    "originalAssertionsRetained": true,
+    "newBoundaryNegativeTest": true
+  },
+  "python": {
+    "tests": 55,
+    "failures": 0,
+    "exitCode": 0
+  },
+  "otherEvents": [
+    {
+      "phase": "Private UI evidence verifier",
+      "result": "Expected non-empty hint count8 was a tally error; actual9 existed before and after. A private generated Chinese literal was incorrectly encoded.",
+      "resolution": "Enumerated all exact example IDs, confirmed9 non-empty and83 empty hints unchanged, repaired the verifier literal, and passed all checks; no product content changed."
+    },
+    {
+      "phase": "Browser persistence reopen",
+      "result": "One open call created the browser, but its initial SVG snapshot exceeded30000ms and exited1.",
+      "resolution": "Read-only probe found the same URL complete and both existing databases; native progress/content reads passed. No second open or timeout increase."
+    }
+  ],
+  "originalLocalTestTimeout": 5000,
+  "timeoutRaised": false,
+  "originalHashFixturesChanged": false
+}

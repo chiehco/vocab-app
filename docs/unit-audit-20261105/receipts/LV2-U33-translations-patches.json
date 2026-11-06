@@ -1,0 +1,59 @@
+{
+  "manifest": "docs/unit-audit-20261105/LV2-U33-translations-patches.json",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "checkedAt": "2026-11-06T07:05:22.821774+00:00",
+  "changeCount": 1,
+  "changes": [
+    {
+      "dataset": "examples",
+      "id": "EX7e879a02",
+      "before": {
+        "exampleId": "EX7e879a02",
+        "word": "shoot",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "The photographer will shoot the wedding photos in the garden next Saturday.",
+        "sentenceZh": "攝影師下週六將在花園裡拍攝婚紗照。",
+        "blankSentence": "The photographer will _____ the wedding photos in the garden next Saturday.",
+        "answer": "shoot",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EX7e879a02",
+        "word": "shoot",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "The photographer will shoot the wedding photos in the garden next Saturday.",
+        "sentenceZh": "攝影師下週六將在花園裡拍攝結婚照。",
+        "blankSentence": "The photographer will _____ the wedding photos in the garden next Saturday.",
+        "answer": "shoot",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "reason": "Remove the dress-specific restriction from wedding photos without changing English, time, location or photographic action; a precision refinement, not a proven major error.",
+      "evidence": "https://dictionary.cambridge.org/us/dictionary/english-chinese-traditional/retouch"
+    }
+  ],
+  "masterTouched": false,
+  "sentencesChanged": true,
+  "englishSentencesChanged": false,
+  "imagesChanged": false,
+  "sourceHashesBefore": {
+    "words.json": "f3c84813c96d2350b10c519a1b4692f0a13c3124b625edb66193e4c7d4c3ec9c",
+    "senses.json": "dd7925d9946fa2921cc15015b1cbfcf14a46379e8cec9f7b26d8f3cc03026250",
+    "examples.json": "bd0ea5989efd639d642411c68c2d50e5e1e572ac0628d734426d6196dd38df92",
+    "meta.json": "847ae2206a8dd41ea6d6ab1d79471ada6ea7023a19ebedb86d34e59de44f6958",
+    "sa-pack.json": "c06707463a5bf5a4e49e210600d8291b89d018db716a5c9996e188e58b912408"
+  },
+  "sourceHashesAfter": {
+    "words.json": "f3c84813c96d2350b10c519a1b4692f0a13c3124b625edb66193e4c7d4c3ec9c",
+    "senses.json": "dd7925d9946fa2921cc15015b1cbfcf14a46379e8cec9f7b26d8f3cc03026250",
+    "examples.json": "e6206359264080aa0f11f3658d27668895654fb88d224b200b2c6f694b8db1ce",
+    "meta.json": "a23ee89f419ebfbce76d49774dfc1ed6046de40e0732022ce9a9d31c1bd304fd",
+    "sa-pack.json": "13322fb149fc87b6d2163119cb2f4fd6dc1e556f5371ceef0fc12f38dc5d2a4c"
+  },
+  "state": "applied_not_ui_verified"
+}
