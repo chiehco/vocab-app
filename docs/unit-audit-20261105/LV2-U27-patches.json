@@ -1,0 +1,1265 @@
+{
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "priorCheckpoint": "2c2035c07a4e5d1980097dcf4e8ab03f8a5873bb",
+  "unit": "LV2-U27",
+  "scope": "77 formal words,130 examples,96 notes,90 vocabulary and66 grammar source items. Exact fields only; existing English/Chinese example sentences, blanks, answers, headword POS/status and all art remain unchanged. Improvements include coverage and precision, not only errors.",
+  "patches": [
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001666",
+      "before": {
+        "meaningZh": "驕傲；自尊心；自豪；精華"
+      },
+      "after": {
+        "meaningZh": "（名詞）驕傲；自尊心；自豪；精華；（動詞）以……為榮"
+      },
+      "reason": "Supply the already listed reflexive verb while retaining all original noun meanings.",
+      "evidence": "scripts/sources/LV2Unit27.json; source page234 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001407",
+      "before": {
+        "usagePatternZh": "治理國家／州；受某人治理"
+      },
+      "after": {
+        "usagePatternZh": "治理國家／州；受……治理／支配"
+      },
+      "reason": "The by-complement may be a rule or factor, not only a person.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/govern"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001896",
+      "before": {
+        "meaningEn": "one of the periods that a school or university year is divided into; a word or expression that has a particular meaning in a specific subject",
+        "meaningZh": "術語；專有名詞；期限；學期"
+      },
+      "after": {
+        "meaningEn": "(n.) a period into which a school or university year is divided, or a word or expression with a particular subject-specific meaning; (v.) to call or name something.",
+        "meaningZh": "（名詞）術語；專有名詞；期限；學期；（動詞）稱為"
+      },
+      "reason": "Restore the existing naming verb; keep all noun coverage.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/term"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001514",
+      "before": {
+        "meaningZh": "地方性的；當地的；局部的；鄉土的"
+      },
+      "after": {
+        "meaningZh": "（形容詞）地方性的；當地的；局部的；鄉土的；（名詞）當地人"
+      },
+      "reason": "Supply the local-resident noun targeted by locals in the unchanged example.",
+      "evidence": "scripts/sources/LV2Unit27.json; source page235 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001153",
+      "before": {
+        "meaningEn": "weedy annual native to Europe but widely distributed as a weed especially in wheat; a board game for two players who move their 16 pieces according to specific rules; the object is to checkmate the opponent's king",
+        "usagePattern": "a/the chess; chess of N",
+        "usagePatternZh": "一盤／那盤西洋棋；……的西洋棋"
+      },
+      "after": {
+        "meaningEn": "(n., game) a board game for two players, each starting with sixteen pieces, whose object is to checkmate the opposing king; (n., botany) a weedy annual native to Europe, especially found in wheat.",
+        "usagePattern": "play chess; a game of chess; a chessboard",
+        "usagePatternZh": "下西洋棋；一盤西洋棋；西洋棋棋盤"
+      },
+      "reason": "The botanical homograph is explicitly supported by WordNet3.0 as attributed to Princeton on Wordnik; retain it separately. Teach the game without an unrestricted a chess template.",
+      "evidence": "https://www.wordnik.com/words/chess; source page236"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001102",
+      "before": {
+        "meaningEn": "(n.) a flat, thin piece of wood or other hard material, often used for a particular purpose, such as a noticeboard; (v.) to get on a plane, ship, train, or bus",
+        "meaningZh": "（名詞）木板；甲板；膳食；會議桌；佈告欄；（動詞）登上交通工具"
+      },
+      "after": {
+        "meaningEn": "(n.) a flat piece of wood or other hard material, a noticeboard, a committee that manages an organization, or meals provided for payment; (v.) to get on a plane, ship, train, or bus.",
+        "meaningZh": "（名詞）木板；甲板；膳食；會議桌；佈告欄；董事會；（動詞）登上交通工具"
+      },
+      "reason": "Add the managing-committee meaning actually printed and exemplified on p236. Preserve the earlier U24 forms and full-row fixture through an exact later inverse.",
+      "evidence": "scripts/sources/LV2Unit27.json; source page236 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001392",
+      "before": {
+        "meaningEn": "food that is discarded (as from a kitchen); a receptacle where waste can be discarded",
+        "meaningZh": "垃圾；廢物；無用資訊",
+        "usagePattern": "a/the garbage; garbage of N",
+        "usagePatternZh": "垃圾；……的垃圾"
+      },
+      "after": {
+        "meaningEn": "Waste material, especially discarded food; useless information; also, a receptacle for waste.",
+        "meaningZh": "垃圾；廢物；無用資訊；（另有容器義）垃圾桶",
+        "usagePattern": "take out the garbage; a garbage can",
+        "usagePatternZh": "倒垃圾；一個垃圾桶"
+      },
+      "reason": "Retain the genuine receptacle definition explicitly listed under Princeton WordNet3.0 on Wordnik; distinguish the mass waste noun from a countable container.",
+      "evidence": "https://www.wordnik.com/words/garbage; source page236"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001199",
+      "before": {
+        "meaningEn": "the power to make people or things do what you want; a device used to operate a machine"
+      },
+      "after": {
+        "meaningEn": "(n.) power to direct or regulate people or things, or a device that operates a machine; (v.) to direct, regulate, or restrain someone or something."
+      },
+      "reason": "Restore the already listed verb, keeping both existing noun meanings.",
+      "evidence": "scripts/sources/LV2Unit27.json; source page238 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001508",
+      "before": {
+        "meaningZh": "界限；邊界；限度；極限"
+      },
+      "after": {
+        "meaningZh": "（名詞）界限；邊界；限度；極限；（動詞）限制"
+      },
+      "reason": "Supply the existing limiting verb without removing any noun meaning.",
+      "evidence": "scripts/sources/LV2Unit27.json; source page238 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001678",
+      "before": {
+        "meaningZh": "生產品；物產；後代；產生"
+      },
+      "after": {
+        "meaningZh": "（動詞）生產；產生；（名詞）農產品；生產品；物產；後代"
+      },
+      "reason": "Supply the common fresh-produce noun and production verb; retain inherited additional noun coverage.",
+      "evidence": "scripts/sources/LV2Unit27.json; source page238 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001056",
+      "before": {
+        "meaningEn": "the ability to think about and listen to something or someone else, or the act of doing this; special care or notice given to someone or something",
+        "meaningZh": "注意；注意力；引起注意信號"
+      },
+      "after": {
+        "meaningEn": "The act or ability of concentrating on someone or something; care or notice given; a signal to attract notice; a formal upright military posture.",
+        "meaningZh": "注意；注意力；引起注意信號；立正（姿勢）"
+      },
+      "reason": "Supply the stand-at/to-attention meaning actually printed on p239, preserving the existing concentration meanings.",
+      "evidence": "scripts/sources/LV2Unit27.json; source page239 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001990",
+      "before": {
+        "meaningEn": "on the inside",
+        "meaningZh": "內部；裏頭；在內部；在內心裏",
+        "usagePattern": "V + within; within + N/V-ing",
+        "usagePatternZh": "在……之內；在……之內"
+      },
+      "after": {
+        "meaningEn": "(prep.) inside the boundaries, extent, or limits of something, or before a stated period ends; (adv.) in or into the interior.",
+        "meaningZh": "（介系詞）在……之內；（副詞）在內部；裡頭；在內心裡",
+        "usagePattern": "within an hour; within reach; from within",
+        "usagePatternZh": "一小時之內；伸手可及的範圍內；從內部"
+      },
+      "reason": "Restore the listed preposition and use concrete time, extent and adverb constructions instead of an unrestricted V-ing complement.",
+      "evidence": "scripts/sources/LV2Unit27.json; source page240 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001031",
+      "before": {
+        "meaningEn": "Alt. of Amongst",
+        "usagePattern": "among + N/V-ing",
+        "usagePatternZh": "在……之中"
+      },
+      "after": {
+        "meaningEn": "Surrounded by, included in, or part of a group of people or things.",
+        "usagePattern": "among friends; among the trees",
+        "usagePatternZh": "在朋友當中；在樹叢之中"
+      },
+      "reason": "Replace the non-self-contained Alt. of Amongst reference with the same defined sense and concrete plural complements.",
+      "evidence": "https://dictionary.cambridge.org/grammar/british-grammar/among-and-amongst"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001864",
+      "before": {
+        "meaningEn": "of so extreme a degree or extent; to so extreme a degree",
+        "meaningZh": "如此的；這樣的",
+        "usagePattern": "a/the such; such of N; be such",
+        "usagePatternZh": "這樣的；……之類的；是這樣的"
+      },
+      "after": {
+        "meaningEn": "(adj.) of that kind or so great a degree; (pron.) a person or thing of that kind; (also adv.) to such a degree or in such a way.",
+        "meaningZh": "（形容詞）如此的；這樣的；（代名詞）這樣的人／事物；（另有副詞用法）到如此程度；以這種方式",
+        "usagePattern": "such a bright rainbow; such people; such as N",
+        "usagePatternZh": "如此明亮的一道彩虹；這樣的人們；例如……"
+      },
+      "reason": "Preserve genuine pronoun and adverb uses separately from formal adj./pron.; replace a/the such and unrestricted such of N. The cloze POS convention is not certified as the only analysis.",
+      "evidence": "https://www.merriam-webster.com/dictionary/such"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001047",
+      "before": {
+        "meaningZh": "軍隊；陸軍"
+      },
+      "after": {
+        "meaningZh": "軍隊；陸軍；大群"
+      },
+      "reason": "Supply the already defined large-group noun printed as an army of reporters.",
+      "evidence": "scripts/sources/LV2Unit27.json; source page241 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001180",
+      "before": {
+        "meaningEn": "an order to do something; also, control over a group of people or a situation"
+      },
+      "after": {
+        "meaningEn": "(n.) an order, control over people or a situation, mastery of a skill or language, or a military unit under a commander; (v.) to order, direct, or exercise authority over."
+      },
+      "reason": "Restore the existing commanding verb and preserve the military-unit and mastery nouns.",
+      "evidence": "scripts/sources/LV2Unit27.json; source page241 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001591",
+      "before": {
+        "usagePattern": "obey + N; obey to V",
+        "usagePatternZh": "服從某人；服從命令去做某事"
+      },
+      "after": {
+        "usagePattern": "obey the law; obey an order",
+        "usagePatternZh": "遵守法律；服從命令"
+      },
+      "reason": "Teach actual object constructions instead of an unsupported bare obey to V template.",
+      "evidence": "scripts/sources/LV2Unit27.json; source page242 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001106",
+      "before": {
+        "meaningZh": "邊緣；邊境；邊界；花壇"
+      },
+      "after": {
+        "meaningZh": "（名詞）邊緣；邊境；邊界；花壇；（動詞）與……接壤"
+      },
+      "reason": "Supply the existing bordering verb targeted by borders, retaining all original nouns.",
+      "evidence": "scripts/sources/LV2Unit27.json; source page242 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001869",
+      "before": {
+        "meaningZh": "跑龍套角色；冗員；特級品；特大號"
+      },
+      "after": {
+        "meaningZh": "（形容詞）極好的；超級的；（副詞）非常；（另有名詞用法）跑龍套角色；冗員；特級品；特大號"
+      },
+      "reason": "Restore common adjective/adverb meanings while retaining the genuine supernumerary and grade/size nouns explicitly supported by Merriam-Webster.",
+      "evidence": "https://www.merriam-webster.com/dictionary/super"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001870",
+      "before": {
+        "usagePattern": "a/the supper; supper of N",
+        "usagePatternZh": "一頓／這頓晚餐；……的晚餐"
+      },
+      "after": {
+        "usagePattern": "have supper; cook supper",
+        "usagePatternZh": "吃晚餐；做晚餐"
+      },
+      "reason": "Use concrete meal combinations; the existing light-meal and social-gathering meanings remain unchanged.",
+      "evidence": "scripts/sources/LV2Unit27.json; source page242 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003619",
+      "before": {
+        "meaningZh": "手冊；指南；手的；手動的"
+      },
+      "after": {
+        "meaningZh": "（名詞）手冊；指南；（形容詞）手的；手動的；體力的"
+      },
+      "reason": "Add the physical-labor adjective actually printed with manual labor on p234.",
+      "evidence": "scripts/sources/LV2Unit27.json; source page234 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005755",
+      "before": {
+        "meaningZh": "爲王；爲君；當政；統治"
+      },
+      "after": {
+        "meaningZh": "（名詞）統治時期；（動詞）為王；為君；當政；統治"
+      },
+      "reason": "Supply the reign-period noun used in the unchanged emperor example.",
+      "evidence": "scripts/sources/LV2Unit27.json; source page234 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004898",
+      "before": {
+        "meaningEn": "station where transport vehicles load or unload passengers or goods; a contact on an electrical device (such as a battery) at which electric current enters or leaves",
+        "meaningZh": "終端機；終點；末端；極限",
+        "usagePattern": "a/the terminal; terminal of N; be terminal",
+        "usagePatternZh": "一個終端；……的終點；末期的"
+      },
+      "after": {
+        "meaningEn": "(n.) a transport station or passenger building, an electrical connection point, or a device for entering and displaying computer data; (adj.) at an end or final, or leading to death.",
+        "meaningZh": "（名詞）終端機；終點；末端；極限；（形容詞）末端的；末期的；致命的",
+        "usagePattern": "an airport terminal; a computer terminal; terminal illness",
+        "usagePatternZh": "機場航廈；電腦終端機；末期疾病"
+      },
+      "reason": "Retain transport and electrical nouns; supply the existing computer noun and adjective, including the printed 末期的.",
+      "evidence": "https://www.merriam-webster.com/dictionary/terminal"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002224",
+      "before": {
+        "usagePatternZh": "過去十年來；數十年之久"
+      },
+      "after": {
+        "usagePatternZh": "過去十年來；數十年的……"
+      },
+      "reason": "Keep the of-complement instead of omitting it from the Chinese phrase.",
+      "evidence": "https://www.merriam-webster.com/dictionary/decade"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001134",
+      "before": {
+        "meaningZh": "原因；目標；引起；使產生",
+        "usagePatternZh": "造成……（損害／問題）；導致某人做……；為了正當理由"
+      },
+      "after": {
+        "meaningZh": "（名詞）原因；目標；理念；事業；（動詞）引起；使產生",
+        "usagePatternZh": "造成……（損害／問題）；導致某人做……；為了正當的事業／有意義的目標"
+      },
+      "reason": "A good cause is a worthy aim or undertaking, not merely a reason. Preserve the existing cause/result verb and noun.",
+      "evidence": "https://www.merriam-webster.com/dictionary/cause"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005789",
+      "before": {
+        "meaningEn": "worthless material that is to be disposed of; attack strongly",
+        "meaningZh": "廢物；垃圾；胡說",
+        "usagePattern": "a/the rubbish; rubbish of N",
+        "usagePatternZh": "一堆垃圾／該垃圾；……的垃圾"
+      },
+      "after": {
+        "meaningEn": "(n.) worthless discarded material or nonsense; (v., British) to criticize harshly or attack verbally.",
+        "meaningZh": "（名詞）廢物；垃圾；胡說；（另有英式動詞用法）貶斥；嚴厲批評",
+        "usagePattern": "throw away rubbish; talk rubbish",
+        "usagePatternZh": "丟垃圾；說胡話"
+      },
+      "reason": "Keep the genuine British attack-verb meaning separately from formal noun POS and avoid an unrestricted count-noun template.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/rubbish"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000952",
+      "before": {
+        "meaningEn": "a road, path, or route used for traveling from one place to another; a particular manner, style, or method of doing something",
+        "meaningZh": "路；路線；路途；方法"
+      },
+      "after": {
+        "meaningEn": "A road, path, or route for travel; a particular method, manner, or style of doing something; a respect or aspect.",
+        "meaningZh": "路；路線；路途；方法；方式；方面"
+      },
+      "reason": "Add the aspect/respect meaning actually used by in a way; preserve road and method coverage.",
+      "evidence": "https://www.merriam-webster.com/dictionary/way"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000427",
+      "before": {
+        "usagePattern": "it is important that/to V; important to sb",
+        "usagePatternZh": "對……很重要，應該 + 原形動詞；對某人很重要"
+      },
+      "after": {
+        "usagePattern": "it is important to V; it is important that + clause; important to sb",
+        "usagePatternZh": "做……很重要；……很重要（that 子句）；對某人很重要"
+      },
+      "reason": "Pair a finite that-clause and an infinitive separately; do not translate them with a misleading literal 原形動詞 instruction.",
+      "evidence": "https://www.merriam-webster.com/dictionary/important"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000225",
+      "before": {
+        "usagePatternZh": "與名詞不同"
+      },
+      "after": {
+        "usagePatternZh": "與……不同"
+      },
+      "reason": "Replace the literal 名詞 placeholder. The formal summary is already corrected and is not rewritten.",
+      "evidence": "https://www.merriam-webster.com/dictionary/different"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002679",
+      "before": {
+        "meaningEn": "something that is made or grown to be sold; a result produced by a process",
+        "usagePattern": "a new product; product of N（乘積）",
+        "usagePatternZh": "新產品；……的乘積"
+      },
+      "after": {
+        "meaningEn": "Something made or grown to be sold; a result of a process; the number or expression obtained by multiplication.",
+        "usagePattern": "a new product; the product of three and four",
+        "usagePatternZh": "新產品；三與四的乘積"
+      },
+      "reason": "Supply the already listed mathematical noun and identify the multiplication operands concretely.",
+      "evidence": "https://www.merriam-webster.com/dictionary/product"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003776",
+      "before": {
+        "meaningZh": "能生產的；有生產價值的；多產的；產出性的"
+      },
+      "after": {
+        "meaningZh": "能生產的；有生產價值的；多產的；產出性的；富有成效的"
+      },
+      "reason": "Supply the effectiveness sense used by both unchanged examples, without deleting inherited meanings.",
+      "evidence": "https://www.merriam-webster.com/dictionary/productive"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003620",
+      "before": {
+        "meaningEn": "(v.) to make goods in large quantities using machines in a factory; (n.) the making of such goods"
+      },
+      "after": {
+        "meaningEn": "(v.) to make goods in quantity, especially with machinery; also to invent or fabricate; (n.) the making of goods or a manufactured article."
+      },
+      "reason": "Retain the genuine fabrication verb and manufactured-product noun in addition to the production process.",
+      "evidence": "https://www.merriam-webster.com/dictionary/manufacture"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004074",
+      "before": {
+        "meaningEn": "the act of being present (at a meeting or event etc.); the frequency with which a person is present",
+        "usagePattern": "an/the attendance; attendance of N",
+        "usagePatternZh": "出席；……的出席人數"
+      },
+      "after": {
+        "meaningEn": "The act or fact of attending something or someone; the people or number of people present; the frequency with which a person attends.",
+        "usagePattern": "regular attendance; attendance at a meeting",
+        "usagePatternZh": "規律出席；出席會議"
+      },
+      "reason": "Restore the already listed attendance-count noun and use concrete mass-noun combinations.",
+      "evidence": "https://www.merriam-webster.com/dictionary/attendance"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005076",
+      "before": {
+        "meaningEn": "someone who waits on or tends to or attends to the needs of another; a person who is present and participates in a meeting",
+        "meaningZh": "隨從；侍者；出席者；侍候的",
+        "usagePattern": "an/the attendant; attendant of N",
+        "usagePatternZh": "一位隨從；……的隨從"
+      },
+      "after": {
+        "meaningEn": "(n.) a person who serves or cares for another, or is present at a meeting; (also adj.) accompanying, waiting upon, or following in order to perform service, or following as a consequence.",
+        "meaningZh": "（名詞）隨從；侍者；出席者；（另有形容詞用法）侍候的；伴隨的",
+        "usagePattern": "a flight attendant; attendant problems",
+        "usagePatternZh": "一位空服員；伴隨而來的問題"
+      },
+      "reason": "Retain the genuine service adjective as well as attendant-consequence usage; formal noun POS remains unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/attendant"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005056",
+      "before": {
+        "meaningZh": "聖歌；讚美詩",
+        "usagePattern": "an/the anthem; anthem of N",
+        "usagePatternZh": "一首聖歌；……的聖歌"
+      },
+      "after": {
+        "meaningZh": "聖歌；讚美詩；國歌；校歌",
+        "usagePattern": "a national anthem; a school anthem",
+        "usagePatternZh": "一首國歌；一首校歌"
+      },
+      "reason": "Supply nation/school loyalty songs already defined in English; preserve the hymn meanings.",
+      "evidence": "scripts/sources/LV2Unit27.json; source page239 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005549",
+      "before": {
+        "meaningEn": "impressiveness in scale or proportion",
+        "meaningZh": "最高權威；威嚴；王權；雄偉",
+        "usagePattern": "a/the majesty; majesty of N",
+        "usagePatternZh": "該威嚴；……的威嚴"
+      },
+      "after": {
+        "meaningEn": "Great impressiveness or splendour; sovereign power, authority, or dignity; Majesty is used when addressing or referring to reigning monarchs and their consorts.",
+        "meaningZh": "最高權威；威嚴；王權；雄偉；（尊稱）陛下",
+        "usagePattern": "Your Majesty; the majesty of the mountains",
+        "usagePatternZh": "陛下；群山的雄偉"
+      },
+      "reason": "Restore the royal-address noun already present in notes and preserve splendour and sovereign authority.",
+      "evidence": "https://www.merriam-webster.com/dictionary/majesty"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003683",
+      "before": {
+        "usagePattern": "an/the obedience; obedience of N",
+        "usagePatternZh": "一項服從／該項服從；……的服從"
+      },
+      "after": {
+        "usagePattern": "obedience to rules; show obedience",
+        "usagePatternZh": "服從規則；表現服從"
+      },
+      "reason": "Use natural uncountable constructions rather than an unrestricted an obedience template.",
+      "evidence": "scripts/sources/LV2Unit27.json; source page242 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003684",
+      "before": {
+        "usagePatternZh": "服從N；順從的N（孩子／狗／學生）"
+      },
+      "after": {
+        "usagePatternZh": "服從……；順從的孩子／狗／學生"
+      },
+      "reason": "Translate the to-complement and the stated attributive alternatives naturally.",
+      "evidence": "scripts/sources/LV2Unit27.json; source page242 actually viewed"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXf9cf5ea0",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "Eating too much fast food can result in serious health problems.",
+        "blankSentence": "Eating too much fast food can _____ in serious health problems.",
+        "answer": "result"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Classify the actual target in its complete unchanged sentence, not the first headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/result"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXa655cd5c",
+      "before": {
+        "sensePos": "adj.",
+        "sentenceEn": "Tourists often ask the locals for advice on which restaurants serve the best food.",
+        "blankSentence": "Tourists often ask the _____ for advice on which restaurants serve the best food.",
+        "answer": "locals"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Classify the actual target in its complete unchanged sentence, not the first headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/local"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXbf2b9c5f",
+      "before": {
+        "sensePos": "v.",
+        "sentenceEn": "The local farmers' market is popular as it offers a variety of fresh seasonal produce to people in the community.",
+        "blankSentence": "The local farmers' market is popular as it offers a variety of fresh seasonal _____ to people in the community.",
+        "answer": "produce"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Classify the actual target in its complete unchanged sentence, not the first headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/produce"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX29b841f0",
+      "before": {
+        "sensePos": "adj.",
+        "sentenceEn": "Many young people choose to serve in the military after graduation.",
+        "blankSentence": "Many young people choose to serve in the _____ after graduation.",
+        "answer": "military"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Classify the actual target in its complete unchanged sentence, not the first headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/military"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXc271442e",
+      "before": {
+        "sensePos": "adj.",
+        "sentenceEn": "His father works for the military and often travels abroad.",
+        "blankSentence": "His father works for the _____ and often travels abroad.",
+        "answer": "military"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Classify the actual target in its complete unchanged sentence, not the first headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/military"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX5e9c32e8",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "France borders several countries, including Germany and Spain.",
+        "blankSentence": "France _____ several countries, including Germany and Spain.",
+        "answer": "borders"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Classify the actual target in its complete unchanged sentence, not the first headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/border"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX43162970",
+      "before": {
+        "sensePos": "adj.",
+        "sentenceEn": "\"This new phone is super fast and easy to use,\" said the salesman with a big smile.",
+        "blankSentence": "\"This new phone is _____ fast and easy to use,\" said the salesman with a big smile.",
+        "answer": "super"
+      },
+      "after": {
+        "sensePos": "adv."
+      },
+      "reason": "Classify the actual target in its complete unchanged sentence, not the first headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/super"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXba0d7aac",
+      "before": {
+        "sensePos": "adj.",
+        "sentenceEn": "My little sister thinks strawberry ice cream is super delicious.",
+        "blankSentence": "My little sister thinks strawberry ice cream is _____ delicious.",
+        "answer": "super"
+      },
+      "after": {
+        "sensePos": "adv."
+      },
+      "reason": "Classify the actual target in its complete unchanged sentence, not the first headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/super"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX8891b037",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "Silence reigned in the classroom during the test.",
+        "blankSentence": "Silence _____ in the classroom during the test.",
+        "answer": "reigned"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Classify the actual target in its complete unchanged sentence, not the first headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/reign"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX131203a2",
+      "before": {
+        "meaningHint": "路；路線；路途；方法",
+        "sentenceEn": "Keep on trying. Let nothing stand in your way.",
+        "blankSentence": "Keep on trying. Let nothing stand in your _____.",
+        "answer": "way"
+      },
+      "after": {
+        "meaningHint": "阻礙；妨礙（stand in one's way）"
+      },
+      "reason": "Narrow an inherited mixed hint to the actual unchanged cloze context; empty hints are not filled.",
+      "evidence": "https://www.merriam-webster.com/dictionary/way"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX33fa6904",
+      "before": {
+        "meaningHint": "路；路線；路途；方法",
+        "sentenceEn": "You need to get used to the way he talks.",
+        "blankSentence": "You need to get used to the _____ he talks.",
+        "answer": "way"
+      },
+      "after": {
+        "meaningHint": "方式；作風"
+      },
+      "reason": "Narrow an inherited mixed hint to the actual unchanged cloze context; empty hints are not filled.",
+      "evidence": "https://www.merriam-webster.com/dictionary/way"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX437b8ac2",
+      "before": {
+        "meaningHint": "路；路線；路途；方法",
+        "sentenceEn": "Ted didn't know which way to go.",
+        "blankSentence": "Ted didn't know which _____ to go.",
+        "answer": "way"
+      },
+      "after": {
+        "meaningHint": "方向；路"
+      },
+      "reason": "Narrow an inherited mixed hint to the actual unchanged cloze context; empty hints are not filled.",
+      "evidence": "https://www.merriam-webster.com/dictionary/way"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX7ef3620f",
+      "before": {
+        "meaningHint": "路；路線；路途；方法",
+        "sentenceEn": "I ran into Jenny on my way to the post office.",
+        "blankSentence": "I ran into Jenny on my _____ to the post office.",
+        "answer": "way"
+      },
+      "after": {
+        "meaningHint": "途中（on one's way to：在前往……的途中）"
+      },
+      "reason": "Narrow an inherited mixed hint to the actual unchanged cloze context; empty hints are not filled.",
+      "evidence": "https://www.merriam-webster.com/dictionary/way"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX864b1ba0",
+      "before": {
+        "meaningHint": "路；路線；路途；方法",
+        "sentenceEn": "What you said is right in a way.",
+        "blankSentence": "What you said is right in a _____.",
+        "answer": "way"
+      },
+      "after": {
+        "meaningHint": "方面（in a way：就某方面而言）"
+      },
+      "reason": "Narrow an inherited mixed hint to the actual unchanged cloze context; empty hints are not filled.",
+      "evidence": "https://www.merriam-webster.com/dictionary/way"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXd14788cc",
+      "before": {
+        "meaningHint": "路；路線；路途；方法",
+        "sentenceEn": "We tried to think of some ways to fix the problem.",
+        "blankSentence": "We tried to think of some _____ to fix the problem.",
+        "answer": "ways"
+      },
+      "after": {
+        "meaningHint": "方法；辦法"
+      },
+      "reason": "Narrow an inherited mixed hint to the actual unchanged cloze context; empty hints are not filled.",
+      "evidence": "https://www.merriam-webster.com/dictionary/way"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX89ce0b42",
+      "before": {
+        "meaningHint": "重要的；有地位的；大量的；顯要的",
+        "sentenceEn": "It is important for you to pay attention in class.",
+        "blankSentence": "It is _____ for you to pay attention in class.",
+        "answer": "important"
+      },
+      "after": {
+        "meaningHint": "重要的"
+      },
+      "reason": "Narrow an inherited mixed hint to the actual unchanged cloze context; empty hints are not filled.",
+      "evidence": "https://www.merriam-webster.com/dictionary/important"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX97252352",
+      "before": {
+        "meaningHint": "重要的；有地位的；大量的；顯要的",
+        "sentenceEn": "You are so important to me. Don't ever forget that.",
+        "blankSentence": "You are so _____ to me. Don't ever forget that.",
+        "answer": "important"
+      },
+      "after": {
+        "meaningHint": "重要的"
+      },
+      "reason": "Narrow an inherited mixed hint to the actual unchanged cloze context; empty hints are not filled.",
+      "evidence": "https://www.merriam-webster.com/dictionary/important"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX980198a9",
+      "before": {
+        "meaningHint": "重要的；有地位的；大量的；顯要的",
+        "sentenceEn": "What the teacher has just said is really important.",
+        "blankSentence": "What the teacher has just said is really _____.",
+        "answer": "important"
+      },
+      "after": {
+        "meaningHint": "重要的"
+      },
+      "reason": "Narrow an inherited mixed hint to the actual unchanged cloze context; empty hints are not filled.",
+      "evidence": "https://www.merriam-webster.com/dictionary/important"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX825be5b6",
+      "before": {
+        "status": "draft",
+        "sentenceEn": "The temple was built in the eighteenth century.",
+        "sentenceZh": "這座廟建於十八世紀。",
+        "blankSentence": "The temple was built in the eighteenth _____.",
+        "answer": "century"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Check this exact practice sentence, Chinese, cloze and answer. Official-exam wording is claimed only where separately compared with official evidence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/century"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX7c34aa70",
+      "before": {
+        "status": "draft",
+        "sentenceEn": "This factory produces electric cars.",
+        "sentenceZh": "這間工廠生產電動車。",
+        "blankSentence": "This factory _____ electric cars.",
+        "answer": "produces"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Check this exact practice sentence, Chinese, cloze and answer. Official-exam wording is claimed only where separately compared with official evidence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/produce"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX8013c6df",
+      "before": {
+        "status": "draft",
+        "sentenceEn": "The stall by the station sells fresh local produce every morning.",
+        "sentenceZh": "車站旁的攤子每天早上都賣新鮮的本地農產品。",
+        "blankSentence": "The stall by the station sells fresh local _____ every morning.",
+        "answer": "produce"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Check this exact practice sentence, Chinese, cloze and answer. Official-exam wording is claimed only where separately compared with official evidence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/produce"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX23234982",
+      "before": {
+        "status": "draft",
+        "sentenceEn": "Can you describe the man you saw?",
+        "sentenceZh": "你能描述一下你看到的那個男人嗎？",
+        "blankSentence": "Can you _____ the man you saw?",
+        "answer": "describe"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Check this exact practice sentence, Chinese, cloze and answer. Official-exam wording is claimed only where separately compared with official evidence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/describe"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX44908969",
+      "before": {
+        "status": "draft",
+        "sentenceEn": "I am used to getting up early now.",
+        "sentenceZh": "我現在習慣早起了。",
+        "blankSentence": "I am _____ to getting up early now.",
+        "answer": "used"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Check this exact practice sentence, Chinese, cloze and answer. Official-exam wording is claimed only where separately compared with official evidence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/used"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX00d8f432",
+      "before": {
+        "status": "draft",
+        "sentenceEn": "We had never seen such a bright rainbow before.",
+        "sentenceZh": "我們以前從未見過如此明亮的彩虹。",
+        "blankSentence": "We had never seen _____ a bright rainbow before.",
+        "answer": "such"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Check this exact practice sentence, Chinese, cloze and answer. Official-exam wording is claimed only where separately compared with official evidence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/such"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX202868b6",
+      "before": {
+        "status": "draft",
+        "sentenceEn": "The heavy rain caused several accidents on the highway.",
+        "sentenceZh": "大雨在高速公路上造成好幾起事故。",
+        "blankSentence": "The heavy rain _____ several accidents on the highway.",
+        "answer": "caused"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Check this exact practice sentence, Chinese, cloze and answer. Official-exam wording is claimed only where separately compared with official evidence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/cause"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX8e12a2d4",
+      "before": {
+        "status": "draft",
+        "sentenceEn": "He learned to cook out of necessity after moving abroad.",
+        "sentenceZh": "他出國後出於需要學會了做菜。",
+        "blankSentence": "He learned to cook out of _____ after moving abroad.",
+        "answer": "necessity"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Check this exact practice sentence, Chinese, cloze and answer. Official-exam wording is claimed only where separately compared with official evidence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/necessity"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX26f566df",
+      "before": {
+        "status": "draft",
+        "sentenceEn": "The puppy sat obediently and waited for its treat.",
+        "sentenceZh": "小狗順從地坐好，等著牠的零食。",
+        "blankSentence": "The puppy sat _____ and waited for its treat.",
+        "answer": "obediently"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Check this exact practice sentence, Chinese, cloze and answer. Official-exam wording is claimed only where separately compared with official evidence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/obedient"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001678-1",
+      "before": {
+        "examEvidence": "學測114 詞彙題Q2",
+        "note": "考點：名詞義，重音在前",
+        "status": "draft",
+        "wordId": "W001678",
+        "word": "produce",
+        "sensePos": "n.",
+        "isExamSense": true,
+        "answerForms": [
+          "produce"
+        ]
+      },
+      "after": {
+        "examEvidence": "學測114 詞彙題Q2，答案A=produce；https://www.ceec.edu.tw/files/file_pool/1/0p056425554473267580/02-114%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E9%A1%8C.pdf；https://www.ceec.edu.tw/files/file_pool/1/0p051545433631383724/02-114%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf",
+        "note": "官方試題與答案文字已核實：農夫市集提供在地居民各種新鮮當季農產品。 EXbf2b9c5f matches the filled original question after straight/curly apostrophe and whitespace normalization. EX8013c6df is a separate station-stall practice sentence; do not claim it is Q2. 只認證本考點來源，非整詞所有欄位。",
+        "status": "reviewed"
+      },
+      "reason": "Verify only this official sense source, preserving answer forms, headword POS and practice text.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0p056425554473267580/02-114%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E9%A1%8C.pdf; https://www.ceec.edu.tw/files/file_pool/1/0p051545433631383724/02-114%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W002573-1",
+      "before": {
+        "examEvidence": "學測111 文意選填Q22",
+        "note": "考點：out of necessity 出於需要",
+        "status": "draft",
+        "wordId": "W002573",
+        "word": "necessity",
+        "sensePos": "n.",
+        "isExamSense": true,
+        "answerForms": [
+          "necessity"
+        ]
+      },
+      "after": {
+        "examEvidence": "學測111 文意選填Q22，答案I=necessity；https://www.ceec.edu.tw/files/file_pool/1/0m053357638065462325/02-111%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7.pdf；https://www.ceec.edu.tw/files/file_pool/1/0m052625594764853905/02-111%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88..pdf",
+        "note": "官方試題與答案文字已核實：電影特技工作因拍攝危險動作的需要逐漸出現；out of necessity表示出於需要。 EX8e12a2d4 cooking after moving abroad is a separate practice sentence, not the original stunt-work passage. 只認證本考點來源，非整詞所有欄位。",
+        "status": "reviewed"
+      },
+      "reason": "Verify only this official sense source, preserving answer forms, headword POS and practice text.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0m053357638065462325/02-111%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7.pdf; https://www.ceec.edu.tw/files/file_pool/1/0m052625594764853905/02-111%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88..pdf"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W003684-1",
+      "before": {
+        "meaningZh": "順從地",
+        "examEvidence": "學測110 詞彙題Q3",
+        "note": "考點：obediently 副詞",
+        "status": "draft",
+        "wordId": "W003684",
+        "word": "obedient",
+        "sensePos": "adv.",
+        "isExamSense": true,
+        "answerForms": [
+          "obediently"
+        ]
+      },
+      "after": {
+        "meaningZh": "（obediently）順從地",
+        "examEvidence": "學測110 詞彙題Q3，答案A=obediently；https://www.ceec.edu.tw/files/file_pool/1/0l069608312283063557/110%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%20.pdf；https://www.ceec.edu.tw/files/file_pool/1/0l069608703462801602/110%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf",
+        "note": "官方試題與答案文字已核實：狗聽到主人呼喚後搖尾巴，順從地跟著她走出房間。 This is the derived adverb obediently, not an adverb POS for the headword obedient. EX26f566df puppy/treat sentence is separate practice. 只認證本考點來源，非整詞所有欄位。",
+        "status": "reviewed"
+      },
+      "reason": "Verify only this official sense source, preserving answer forms, headword POS and practice text.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0l069608312283063557/110%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%20.pdf; https://www.ceec.edu.tw/files/file_pool/1/0l069608703462801602/110%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001199-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：控制；管理；剋制；控制器",
+        "wordId": "W001199",
+        "word": "control",
+        "sensePos": "n.",
+        "meaningZh": "控制",
+        "isExamSense": false,
+        "examEvidence": null
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "本義已對照詞典、現有完整例句及適用的圖說；保留詞頭其他義項、詞性與來源界線，本義核對不代表整詞所有欄位通過。"
+      },
+      "reason": "Review the exact already-separated non-exam sense; do not expand its meaning or claim an official source.",
+      "evidence": "https://www.merriam-webster.com/dictionary/control"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001199-2",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：控制；管理；剋制；控制器",
+        "wordId": "W001199",
+        "word": "control",
+        "sensePos": "v.",
+        "meaningZh": "控制",
+        "isExamSense": false,
+        "examEvidence": null
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "本義已對照詞典、現有完整例句及適用的圖說；保留詞頭其他義項、詞性與來源界線，本義核對不代表整詞所有欄位通過。"
+      },
+      "reason": "Review the exact already-separated non-exam sense; do not expand its meaning or claim an official source.",
+      "evidence": "https://www.merriam-webster.com/dictionary/control"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001106-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：邊緣；邊境；邊界；花壇",
+        "wordId": "W001106",
+        "word": "border",
+        "sensePos": "n.",
+        "meaningZh": "邊界；邊緣",
+        "isExamSense": false,
+        "examEvidence": null
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "本義已對照詞典、現有完整例句及適用的圖說；保留詞頭其他義項、詞性與來源界線，本義核對不代表整詞所有欄位通過。"
+      },
+      "reason": "Review the exact already-separated non-exam sense; do not expand its meaning or claim an official source.",
+      "evidence": "https://www.merriam-webster.com/dictionary/border"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001106-2",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：邊緣；邊境；邊界；花壇",
+        "wordId": "W001106",
+        "word": "border",
+        "sensePos": "v.",
+        "meaningZh": "與…接壤",
+        "isExamSense": false,
+        "examEvidence": null
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "本義已對照詞典、現有完整例句及適用的圖說；保留詞頭其他義項、詞性與來源界線，本義核對不代表整詞所有欄位通過。"
+      },
+      "reason": "Review the exact already-separated non-exam sense; do not expand its meaning or claim an official source.",
+      "evidence": "https://www.merriam-webster.com/dictionary/border"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001134-1",
+      "before": {
+        "status": "needs_check",
+        "note": "另有：理念（志業），需要可加列｜待拆分；主表字義：原因；目標；引起；使產生",
+        "wordId": "W001134",
+        "word": "cause",
+        "sensePos": "n.",
+        "meaningZh": "原因",
+        "isExamSense": false,
+        "examEvidence": null
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "本義已對照詞典、現有完整例句及適用的圖說；保留詞頭其他義項、詞性與來源界線，本義核對不代表整詞所有欄位通過。"
+      },
+      "reason": "Review the exact already-separated non-exam sense; do not expand its meaning or claim an official source.",
+      "evidence": "https://www.merriam-webster.com/dictionary/cause"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001134-2",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：原因；目標；引起；使產生",
+        "wordId": "W001134",
+        "word": "cause",
+        "sensePos": "v.",
+        "meaningZh": "造成；引起",
+        "isExamSense": false,
+        "examEvidence": null
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "本義已對照詞典、現有完整例句及適用的圖說；保留詞頭其他義項、詞性與來源界線，本義核對不代表整詞所有欄位通過。"
+      },
+      "reason": "Review the exact already-separated non-exam sense; do not expand its meaning or claim an official source.",
+      "evidence": "https://www.merriam-webster.com/dictionary/cause"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001678-2",
+      "before": {
+        "status": "draft",
+        "note": "既有通用例句使用之義項",
+        "wordId": "W001678",
+        "word": "produce",
+        "sensePos": "v.",
+        "meaningZh": "生產",
+        "isExamSense": false,
+        "examEvidence": null
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "本義已對照詞典、現有完整例句及適用的圖說；保留詞頭其他義項、詞性與來源界線，本義核對不代表整詞所有欄位通過。"
+      },
+      "reason": "Review the exact already-separated non-exam sense; do not expand its meaning or claim an official source.",
+      "evidence": "https://www.merriam-webster.com/dictionary/produce"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W003684-2",
+      "before": {
+        "status": "needs_check",
+        "note": "2026-08-30 圖說對應的基本形義項；與既有考題的衍生詞形分開，非新增考題證據。",
+        "wordId": "W003684",
+        "word": "obedient",
+        "sensePos": "adj.",
+        "meaningZh": "聽話的",
+        "isExamSense": false,
+        "examEvidence": null
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "本義已對照詞典、現有完整例句及適用的圖說；保留詞頭其他義項、詞性與來源界線，本義核對不代表整詞所有欄位通過。"
+      },
+      "reason": "Review the exact already-separated non-exam sense; do not expand its meaning or claim an official source.",
+      "evidence": "https://www.merriam-webster.com/dictionary/obedient"
+    }
+  ]
+}

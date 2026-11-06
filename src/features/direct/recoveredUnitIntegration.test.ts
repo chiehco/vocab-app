@@ -1,3 +1,5 @@
+import currentLV2Unit27 from './curriculumLV2Unit27.json';
+import {lv2Unit27BeforeAudit} from './lv2Unit27Audit.testSupport';
 import { createHash } from 'node:crypto';
 import { readFileSync, readdirSync } from 'node:fs';
 import { expect, it } from 'vitest';
@@ -83,6 +85,10 @@ it('retains historical curriculum and question identities with the audited cubes
     if(old.templateId === 'TEXTBOOK-LV1-U21'){
       expect(retained.items).toEqual(currentUnit21.learningItems);
       priorItems=unit21BeforeAudit(currentUnit21).learningItems;
+    }
+    if(old.templateId === 'TEXTBOOK-LV2-U27'){
+      expect(retained.items).toEqual(currentLV2Unit27.learningItems);
+      priorItems=lv2Unit27BeforeAudit(currentLV2Unit27).learningItems;
     }
     expect(hash(priorItems), old.templateId).toBe(old.itemsHash);
     const originalQuestions = structuredClone(priorPractice?.questions ?? retained.questions);

@@ -1,0 +1,282 @@
+{
+  "unit": "LV2-U27",
+  "checkpointAt": "2026-11-06T00:06:44.639Z",
+  "priorCheckpoint": "2c2035c07a4e5d1980097dcf4e8ab03f8a5873bb",
+  "priorCheckpointFullCi": {
+    "commit": "2c2035c07a4e5d1980097dcf4e8ab03f8a5873bb",
+    "run": 42127396217,
+    "job": 127594974745,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42127396217/job/127594974745",
+    "status": "completed",
+    "conclusion": "success",
+    "checkoutShaMatched": true,
+    "testFiles": 216,
+    "tests": 1759,
+    "python": [
+      14,
+      7,
+      37,
+      10
+    ],
+    "steps": [
+      {
+        "name": "Set up job",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/checkout@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/setup-node@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm ci",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm ci --prefix services/pageviews-cloudflare",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm test --prefix services/pageviews-cloudflare",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/setup-python@v5",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m pip install openpyxl==3.1.5 Pillow==12.0.0",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m unittest discover -s scripts -p 'test_apply_lv3_*.py'",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m unittest discover -s scripts -p 'test_apply_lv4_*.py'",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m unittest discover -s scripts -p 'test_apply_unit_audit.py'",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m unittest discover -s scripts -p 'test_build_sa_pack_lv5_legacy.py'",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python scripts/prepare_recovered_unit_drafts.py --check",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python scripts/integrate_recovered_units.py --check",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm run lint",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm run typecheck",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm run test -- --maxWorkers=1 --testTimeout=15000",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm run build",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/setup-python@v5",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/setup-node@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/checkout@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Complete job",
+        "conclusion": "success"
+      }
+    ],
+    "logEvidence": [
+      "2026-11-05T23:09:28.0938310Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +2c2035c07a4e5d1980097dcf4e8ab03f8a5873bb:refs/remotes/origin/content/unit-audit-20261105",
+      "2026-11-05T23:09:38.5275745Z  * [new ref]         2c2035c07a4e5d1980097dcf4e8ab03f8a5873bb -> origin/content/unit-audit-20261105",
+      "2026-11-05T23:09:39.4217480Z 2c2035c07a4e5d1980097dcf4e8ab03f8a5873bb",
+      "2026-11-05T23:10:29.6768538Z Ran 14 tests in 24.619s",
+      "2026-11-05T23:10:47.9474650Z Ran 7 tests in 18.056s",
+      "2026-11-05T23:11:19.8540942Z Ran 37 tests in 31.766s",
+      "2026-11-05T23:11:20.0299475Z Ran 10 tests in 0.093s",
+      "2026-11-05T23:25:46.6692928Z  Test Files  216 passed (216)",
+      "2026-11-05T23:25:46.6703067Z       Tests  1759 passed (1759)",
+      "2026-11-05T23:26:28.5243385Z ✓ built in 3.02s"
+    ]
+  },
+  "newCheckpointFullCi": {
+    "status": "pending_exact_head_after_commit"
+  },
+  "state": "precise_corrections_saved_actual_app_and_local_checks_passed_with_explicit_remaining_limits",
+  "scope": {
+    "learningItems": 156,
+    "vocabulary": 90,
+    "grammar": 66,
+    "formalWords": 77,
+    "examples": 130,
+    "notes": 96,
+    "unmapped": 13,
+    "sourcePhotos": 9,
+    "generalImages": 28
+  },
+  "counts": {
+    "mainRows": 76,
+    "mainFields": 131,
+    "notes": 8,
+    "newFormKeys": 20,
+    "formalPatchRows": 104,
+    "formalFields": 159,
+    "curriculumRows": 91,
+    "curriculumFields": 128,
+    "printedGlosses": 13,
+    "printedPos": 12,
+    "grammarExplanations": 66,
+    "dictionarySnapshots": 12,
+    "clozePos": 9,
+    "hintsRefined": 9,
+    "practiceStatuses": 9,
+    "senseStatuses": 11,
+    "officialExamSources": 3
+  },
+  "manifests": [
+    "LV2-U27-patches.json",
+    "LV2-U27-notes-patches.json",
+    "LV2-U27-verified-forms-patches.json",
+    "LV2-U27-curriculum-patches.json"
+  ],
+  "evidence": {
+    "sources": "LV2-U27-source-research.json",
+    "pixels": "LV2-U27-original-review.json",
+    "actualApp": "validation/LV2-U27-reopen-summary.json",
+    "exactInverse": "validation/LV2-U27-exact-inverse.json"
+  },
+  "localValidation": {
+    "state": "passed",
+    "recordedAt": "2026-11-06T00:06:44.637Z",
+    "checks": [
+      {
+        "tests": 58,
+        "exitCode": 0,
+        "files": 6,
+        "log": "LV2-U27-regression-initial.txt",
+        "check": "initial-regression",
+        "logSha256": "61e43e8413b4de082514f2b563a472671f4c3459e9699a849d26299559f7178d"
+      },
+      {
+        "exitCode": 0,
+        "log": "LV2-U27-regression-remaining.txt",
+        "check": "remaining-regression",
+        "logSha256": "7896c70f037e1bb78412a9c297802239e656228a66673c846040e2b45519ffec"
+      },
+      {
+        "exitCode": 0,
+        "log": "LV2-U27-python-final.txt",
+        "check": "python",
+        "logSha256": "c6e6fc5c30e27a47e22d7d1f132ab2fa6567da96545833976215201ff02fbf0c"
+      },
+      {
+        "exitCode": 0,
+        "log": "LV2-U27-lint-checkpoint.txt",
+        "check": "lint",
+        "logSha256": "ded3fcbfd5e24e55b739991140f41c99e155c49d0a2e0cead6755211bacc7ba7"
+      },
+      {
+        "exitCode": 0,
+        "log": "LV2-U27-typecheck.txt",
+        "check": "typecheck",
+        "logSha256": "da91f4c430838409de74534c4d8bed41445d7c7283163b2a63c446dde034587b"
+      },
+      {
+        "exitCode": 0,
+        "log": "LV2-U27-build.txt",
+        "check": "build",
+        "logSha256": "6e904f619216ec23c4807b6ac720c49674108c6d0e4ca63b870be6f48b240d3b"
+      }
+    ],
+    "maxWorkers": 1,
+    "timeoutMs": 5000,
+    "defaultTimeoutUnchanged": true,
+    "pythonTests": 39,
+    "initialRegression": {
+      "files": 6,
+      "tests": 58
+    },
+    "remainingRegression": {
+      "files": 9,
+      "tests": 89
+    },
+    "totalVitest": {
+      "files": 15,
+      "tests": 147
+    },
+    "history": "Original historical hashes retained. The U24 board non-form fixture is restored only through the exact later U27 board coverage patch, with mutation negatives. No global hash reset."
+  },
+  "preserved": {
+    "allFormalExampleEnglishChineseBlanksAnswers": true,
+    "headwordPosAndWholeWordStatuses": true,
+    "rawSourceAndOriginalCurriculumHashes": true,
+    "allArtAndExactPairs": true,
+    "textOnlyReadOnly": true,
+    "nullMappings": 13,
+    "progressTables": 14
+  },
+  "pending": [
+    {
+      "fields": [
+        "outcome 出口",
+        "description 說明書",
+        "important 大量的",
+        "producer 發生器",
+        "decade 十／一組十個"
+      ],
+      "state": "exact scope still unverified; original values and whole-word statuses retained"
+    },
+    {
+      "exampleId": "EX00d8f432",
+      "field": "sensePos",
+      "state": "such retained adj. under the existing traditional project analysis; dictionary also has an adverb analysis, so not certified as the only classification"
+    },
+    {
+      "words": [
+        "year",
+        "century",
+        "used",
+        "way"
+      ],
+      "field": "isExamSense",
+      "state": "Existing example-based exam flags are not newly verified official questions; only the three explicit CEEC sources above are verified."
+    },
+    {
+      "sourcePage": 242,
+      "field": "caution phonetic transcription",
+      "state": "Apparent printed phonetic problem remains unadopted; no speculative phonetic correction."
+    },
+    {
+      "scope": "13 unmapped supplements",
+      "state": "Printed glosses and12 explicit POS now displayed; formal mappings remain null and punch in POS remains blank."
+    }
+  ],
+  "next": {
+    "key": "7000.ivy.LV2.28",
+    "first": "diet",
+    "state": "not_started"
+  },
+  "deployment": "No merge, deployment, PR or publication-mode change."
+}
