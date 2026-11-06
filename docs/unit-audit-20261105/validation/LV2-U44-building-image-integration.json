@@ -237,6 +237,22 @@
       "images": 726,
       "passed": 726,
       "galleryExact": true
+    },
+    "finalHistoricalStateAlignment": {
+      "files": 6,
+      "tests": 64,
+      "originalTimeoutMs": 5000,
+      "workers": 1,
+      "typecheck": "success",
+      "lint": "success",
+      "includes": [
+        "original U44 text",
+        "U44 audit",
+        "common recovered-unit historical hash",
+        "new building image test",
+        "earlier3 image tests",
+        "original LV1 image history"
+      ]
     }
   },
   "pixelProof": {
@@ -251,5 +267,6 @@
       1254,
       1254
     ]
-  }
+  },
+  "finalHistoricalStateAlignmentEvidence": "validation/LV2-U44-building-history-test-alignment.json"
 }

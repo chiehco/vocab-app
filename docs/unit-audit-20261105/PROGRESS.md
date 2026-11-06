@@ -8,7 +8,7 @@ building 新1254平方WebP已從d866085e精確接入，一般W001115、LV1-U09-0
 
 相同profile正常關閉重開後三入口新圖雜湊正確，3446筆已核資料讀回零差異。14表中13張逐位元相同；settings僅正常導覽的learning:last-location.updatedAt改變，位置、其餘欄位及所有學習／自訂資料相同，未寫回改時間戳湊相同。前後原始快照hash與精確比較見validation/LV2-U44-building-image-integration.json。修改前後畫面不同路徑保存；after畫面目前是重開後像素，初次after與重開後不冒稱兩套獨立凍結截圖。
 
-必要前端9檔110項（原5000ms、單worker）與Python5項負向／精確保護全過，lint/typecheck/build成功。原圖片與圖庫歷史hash保留，以精確building逆向後再核早期三圖及726張基準；舊三圖工具在新層存在時禁止反向寫入覆蓋。首輪沙箱SSRcache rename EPERM在斷言前停止，正常環境同限制重跑成功；首輪before路徑查詢字串誤比與瀏覽器重開快照逾時均保留真實恢復證據。最後追加固定清單雜湊後，3檔43項精確圖片測試與lint再驗通過（與前9檔重疊，不相加）；726張本機發布圖片與圖庫位元核對全過。這次圖片整合新head仍需自己的完整CI，尚未合併／部署。
+必要前端9檔110項（原5000ms、單worker）與Python5項負向／精確保護全過，lint/typecheck/build成功。原圖片與圖庫歷史hash保留，以精確building逆向後再核早期三圖及726張基準；舊三圖工具在新層存在時禁止反向寫入覆蓋。首輪沙箱SSRcache rename EPERM在斷言前停止，正常環境同限制重跑成功；首輪before路徑查詢字串誤比與瀏覽器重開快照逾時均保留真實恢復證據。最後追加固定清單雜湊後，3檔43項精確圖片測試與lint再驗通過（與前9檔重疊，不相加）；726張本機發布圖片與圖庫位元核對全過。U44原審核測試仍以目前candidateExists=false讀待修狀態，已精確對到保留的originalStateAtTextCheckpoint，原false斷言與失敗證據不刪。最終6檔64項（含原text/audit、共用歷史與圖片）及typecheck/lint再驗成功；這些檔案與前測重疊不相加。這次圖片整合新head仍需自己的完整CI，尚未合併／部署。
 
 U45 debate／W001229／p400 持續中：155教材項、80一般卡147例句before均保存，102詞彙及53構式全文已讀，400–408頁18半頁及409上半邊界已看；40張一般圖仍待本輪像素審核。find載入中圖說已精確補取證，只替換該筆before結果，保留原失敗畫面；U45尚無產品補丁或after通過。接續按序U45–U50，不因圖片小checkpoint跳過。main0f4eb279、either單次套用及LF／原5秒CI／單worker／未發布電梯build排除邊界維持；U26、版本末界及既有來源疑義仍保留。
 

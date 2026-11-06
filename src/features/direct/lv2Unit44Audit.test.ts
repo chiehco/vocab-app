@@ -56,7 +56,7 @@ it('preserves real rare senses while making headword scope and paired constructi
  expect(words.find(w=>w.wordId==='W001227')?.meaningZh).toContain('另詞 date');expect(words.find(w=>w.wordId==='W001227')?.meaningZh).not.toContain('DOS內部命令');
  expect(current.learningItems.find(i=>i.learningItemId==='LI-LV2U44-G012')?.explanationZh).toContain('不代表所有');expect(current.learningItems.find(i=>i.learningItemId==='LI-LV2U44-G026')?.pattern).toBe("as be one's custom");expect(notes.patches.every(p=>Object.keys(p.after).join()==='content')).toBe(true);
 });
-it('keeps official pizza item evidence separate from the sofa practice and leaves repair pending',()=>{
+it('keeps official pizza item evidence separate from the sofa practice and preserves the historical pending repair snapshot',()=>{
  const deliver=formal.patches.find(p=>p.id==='W001236-1')!;expect(deliver.after.examEvidence).toContain('B delivered');expect(deliver.after.note).toContain('非原題逐字引文');expect(formal.patches.some(p=>p.id==='EX4035dd7f')).toBe(false);
- expect(imageReview.candidateExists).toBe(false);expect(imageReview.attempt.generationStarted).toBe(false);expect(imageReview.attempt.denied).toBe(false);expect(imageReview.oldAssetAndBindingsPreserved).toBe(true);
+ expect(imageReview.originalStateAtTextCheckpoint.state).toBe('confirmed_repair_pending_supported_image_input');expect(imageReview.originalStateAtTextCheckpoint.candidateExists).toBe(false);expect(imageReview.originalStateAtTextCheckpoint.generationStarted).toBe(false);expect(imageReview.attempt.generationStarted).toBe(false);expect(imageReview.attempt.denied).toBe(false);expect(imageReview.oldAssetAndBindingsPreserved).toBe(true);
 });

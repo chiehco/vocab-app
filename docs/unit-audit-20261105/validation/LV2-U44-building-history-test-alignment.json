@@ -1,0 +1,28 @@
+{
+  "baseImageIntegrationCommit": "942a1b58308d04f1646dace66341dc2fd85a007e",
+  "problem": "Original U44 audit test still read current candidateExists=false after the followup document gained the accepted candidate. Align that exact historical assertion with originalStateAtTextCheckpoint, whose original false values and technical failure are preserved.",
+  "changed": "Only the historical test projection; no fixture hashes, original literal assertions, product files, images, captions or data changed.",
+  "localFinalVerification": {
+    "files": 6,
+    "tests": 64,
+    "originalTimeoutMs": 5000,
+    "workers": 1,
+    "typecheck": "success",
+    "lint": "success",
+    "includes": [
+      "original U44 text",
+      "U44 audit",
+      "common recovered-unit historical hash",
+      "new building image test",
+      "earlier3 image tests",
+      "original LV1 image history"
+    ]
+  },
+  "firstImageHeadCiAtObservation": {
+    "commit": "942a1b58308d04f1646dace66341dc2fd85a007e",
+    "run": 42312151812,
+    "job": 128215970661,
+    "state": "in_progress_not_claimed_success"
+  },
+  "newExactHeadCi": "pending_after_push"
+}
