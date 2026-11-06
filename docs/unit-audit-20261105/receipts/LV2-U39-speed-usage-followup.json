@@ -1,0 +1,97 @@
+{
+  "manifest": "docs/unit-audit-20261105/LV2-U39-speed-usage-followup.json",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "checkedAt": "2026-11-06T14:00:44.381600+00:00",
+  "changeCount": 1,
+  "changes": [
+    {
+      "dataset": "words",
+      "id": "W001833",
+      "before": {
+        "wordId": "W001833",
+        "word": "speed",
+        "wordVariants": [
+          "speed"
+        ],
+        "level": "LV2",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "速率；速度；迅速；加速",
+        "meaningEn": "the rate at which someone or something moves or travels; to move or increase in speed",
+        "usagePattern": "the speed limit; at high/full speed; speed up",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "speed",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "速限；以高速／全速；加速（speed up 的過去式／過去分詞常用 speeded up；快速行進常用 sped；兩種詞形須依用法選擇）",
+        "verbForms": {
+          "base": "speed",
+          "past": "sped / speeded",
+          "pastParticiple": "sped / speeded",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/speed",
+          "status": "approved"
+        }
+      },
+      "after": {
+        "wordId": "W001833",
+        "word": "speed",
+        "wordVariants": [
+          "speed"
+        ],
+        "level": "LV2",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "速率；速度；迅速；加速",
+        "meaningEn": "the rate at which someone or something moves or travels; to move or increase in speed",
+        "usagePattern": "the speed limit; at high/full speed; speed up",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "speed",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "速限；以高速／全速；加速（speed up 的過去式／過去分詞常用 speeded up，快速行進常用 sped，兩種詞形須依用法選擇）",
+        "verbForms": {
+          "base": "speed",
+          "past": "sped / speeded",
+          "pastParticiple": "sped / speeded",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/speed",
+          "status": "approved"
+        }
+      },
+      "reason": "Replace only the two internal parenthetical semicolons with commas so the existing parser has exactly3 English/Chinese groups. Preserve all usage qualifications, forms, formal identity/POS/status and practice sentences.",
+      "evidence": "src/features/vocabulary/usagePattern.ts buildUsagePatternItems; actual U39 usage reopen failed on W001833 with3 English/5 Chinese; https://www.collinsdictionary.com/dictionary/english/speed"
+    }
+  ],
+  "masterTouched": false,
+  "sentencesChanged": false,
+  "englishSentencesChanged": false,
+  "imagesChanged": false,
+  "sourceHashesBefore": {
+    "words.json": "fa054fc85787ae2fcf451467ef8bdcdbf39795a6d185349d8f65852a1095bbff",
+    "senses.json": "b2ec34bbb2fdebbd4738683b7b1b9930f440bb86058d6d9ff24c0a577f24a89b",
+    "examples.json": "18433df20c7faa021d368ca7a5fa9fa653782e13def8b272ef76cc66d61a5546",
+    "meta.json": "1881c5867aa918e0eb099ed49f384351b562f019c4e277b34fe315fce0eff5e9",
+    "sa-pack.json": "08546706272abd4b4efe8f2320b117fc7638c5d208c9f72462ab0142bdbb4a2e"
+  },
+  "sourceHashesAfter": {
+    "words.json": "3cb1e08b8d5e98003c28890bf81a445ae55bb338e455f06531442f52030d5aaa",
+    "senses.json": "b2ec34bbb2fdebbd4738683b7b1b9930f440bb86058d6d9ff24c0a577f24a89b",
+    "examples.json": "18433df20c7faa021d368ca7a5fa9fa653782e13def8b272ef76cc66d61a5546",
+    "meta.json": "621783371a4d25a8ba064636a46f43381444d6479d18e8a7051e5448ab8705ae",
+    "sa-pack.json": "b441cb8800509526d1ffd5a6b77b8abb00a2d12fd6ad8fcdbc82ece6e49764ed"
+  },
+  "state": "applied_and_ui_reopened_verified",
+  "originalApplyReceiptState": "applied_not_ui_verified",
+  "validation": "validation/LV2-U39-reopen-summary.json"
+}

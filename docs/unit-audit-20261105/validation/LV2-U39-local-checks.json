@@ -1,0 +1,99 @@
+{
+  "unit": "LV2-U39",
+  "frontend": {
+    "first": {
+      "files": 27,
+      "tests": 324,
+      "passed": 323,
+      "failed": 1,
+      "exitCode": 1,
+      "failure": "U12 integrated police form fixture needed only the exact later U39 meaningEn inverse."
+    },
+    "policeExactRetry": {
+      "files": 1,
+      "tests": 77,
+      "passed": 77,
+      "failed": 0,
+      "exitCode": 0
+    },
+    "final": {
+      "files": 7,
+      "tests": 173,
+      "passed": 173,
+      "failed": 0,
+      "exitCode": 0
+    },
+    "scope": "Original U39 text, new audit, common exact inverse, seed, recovered integration and both old-image suites included. Other original/audit suites in the initial27-file pass retained.",
+    "originalLocalTimeout": 5000,
+    "maxWorkers": 1
+  },
+  "python": {
+    "first": 68,
+    "afterSpeedInitial": {
+      "tests": 69,
+      "errors": 2,
+      "reason": "New identity precondition incorrectly applied to existing partial translation fixtures; narrowed to explicit full identity guards without changing those fixtures or assertions."
+    },
+    "final": {
+      "tests": 69,
+      "passed": 69,
+      "errors": 0,
+      "exitCode": 0
+    }
+  },
+  "lint": {
+    "exitCode": 0,
+    "warningsRetained": true
+  },
+  "typecheck": {
+    "exitCode": 0
+  },
+  "build": {
+    "exitCode": 0
+  },
+  "recoveredDraftCheck": {
+    "exitCode": 0
+  },
+  "recoveredIntegrationCheck": {
+    "exitCode": 0
+  },
+  "logs": [
+    {
+      "file": "LV2-U39-regression-first.txt",
+      "sha256": "318df81ae0800eb4977acedaca7b27d2ffe5e4c27f3a04173c72c82d07973991"
+    },
+    {
+      "file": "LV2-U39-regression-police-retry2.txt",
+      "sha256": "75cbf68c7f6cccaa744409c92af322edbfd4ece06238725562481115a21988c7"
+    },
+    {
+      "file": "LV2-U39-regression-final.txt",
+      "sha256": "40fda4cb9328ab2e17cbe0e29efb2dc34a417cc10e4289720c2958a1b39d3319"
+    },
+    {
+      "file": "LV2-U39-python-first.txt",
+      "sha256": "91b03e42bed309bf0ba363f2407b361c83bef993ad4601c18d0912020693b54f"
+    },
+    {
+      "file": "LV2-U39-python-after-speed.txt",
+      "sha256": "88f9faa61351ae4b2f5a248f5fd65cb75b384baf053edcc912c0707fed51f4bb"
+    },
+    {
+      "file": "LV2-U39-python-after-speed-retry1.txt",
+      "sha256": "bf3138380fa8b6658fbb92fc4e47564705130c01e26641a397b770a11b11c4c5"
+    },
+    {
+      "file": "LV2-U39-lint-final.txt",
+      "sha256": "4feab2602b273fefd2dbe1de0af4db2ca8b91c313e0d992d24774fdc0746b940"
+    },
+    {
+      "file": "LV2-U39-typecheck-final.txt",
+      "sha256": "da91f4c430838409de74534c4d8bed41445d7c7283163b2a63c446dde034587b"
+    },
+    {
+      "file": "LV2-U39-build-final.txt",
+      "sha256": "83ba33d5c5dd791cd830395665ceab2f4ecd9fdcef1dfc6d6e89c7e53cbcaf52"
+    }
+  ],
+  "ownNewCommitCi": "pending"
+}

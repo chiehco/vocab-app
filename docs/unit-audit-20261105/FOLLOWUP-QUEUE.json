@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T12:35:10.681Z",
+  "updatedAt": "2026-11-06T14:04:49.293Z",
   "items": [
     {
       "id": "LV1-U01-30",
@@ -693,7 +693,7 @@
       "word": "generosity",
       "wordId": "W003446",
       "observedInUnit": "LV2-U38",
-      "state": "pixel_review_complete_image_edit_not_started",
+      "state": "candidate_png_reported_ready_local_transfer_metadata_blocked_not_integrated",
       "classification": "confirmed_literal_recipient_count_mismatch",
       "reason": "Original1024px image gives one apple to each of two friends; English says both apples to a friend. Preserve the exact English/Chinese caption and old asset; a future minimal image correction must show both apples given to one friend.",
       "repoPath": "public/wordbeast/a/W003446.webp",
@@ -703,20 +703,29 @@
         1024
       ],
       "caption": "Doudou shows generosity by giving both apples to a friend.\n\n豆豆把兩顆蘋果都送給朋友，展現慷慨。",
-      "generationState": "not_started",
+      "generationState": "candidate_png_available_no_duplicate_local_generation",
       "pendingGenerationCalls": 0,
-      "newAssetAvailable": false,
+      "newAssetAvailable": true,
       "productPairChanged": false,
       "oldAssetRetained": true,
       "evidence": "docs/unit-audit-20261105/validation/LV2-U38-image-followups.json",
-      "updatedAt": "2026-11-06T12:35:10.680Z"
+      "updatedAt": "2026-11-06T14:04:49.293Z",
+      "acceptedGenerationCalls": 0,
+      "uncertainOutcome": false,
+      "toolBlockerEvidence": "docs/unit-audit-20261105/validation/LV2-U38-image-tool-blocker.json",
+      "localGenerationCallsAccepted": 0,
+      "localPendingGenerationCalls": 0,
+      "pendingGenerationCallScope": "Current Windows environment only; candidate preparation does not imply a completed generation.",
+      "handoffAccepted": true,
+      "candidateEvidence": "docs/unit-audit-20261105/validation/LV2-U38-candidate-retrieval-blocker.json",
+      "newAssetAvailableScope": "Reported candidate PNG only; no verified publication WebP locally installed or integrated."
     },
     {
       "id": "LV1-U09-27-image-quantity",
       "word": "playground",
       "wordId": "W001638",
       "observedInUnit": "LV2-U38",
-      "state": "pixel_review_complete_image_edit_not_started",
+      "state": "candidate_png_reported_ready_local_transfer_metadata_blocked_not_integrated",
       "classification": "core_alignment_with_literal_quantity_gap",
       "reason": "One child is swinging while the second stands cheering; actual caption uses plural kids are swinging. Preserve the core playground/happy action, exact caption and original1254px asset. No whole-theme mismatch is asserted.",
       "repoPath": "public/wordbeast/lv1-reviewed/LV1-U09-27-39abaecad0fa.webp",
@@ -726,13 +735,22 @@
         1254
       ],
       "caption": "The kids are swinging happily on the playground.\n\n孩子們在遊樂場開心地盪鞦韆。",
-      "generationState": "not_started",
+      "generationState": "candidate_png_available_no_duplicate_local_generation",
       "pendingGenerationCalls": 0,
-      "newAssetAvailable": false,
+      "newAssetAvailable": true,
       "productPairChanged": false,
       "oldAssetRetained": true,
       "evidence": "docs/unit-audit-20261105/validation/LV2-U38-image-followups.json",
-      "updatedAt": "2026-11-06T12:35:10.681Z"
+      "updatedAt": "2026-11-06T14:04:49.293Z",
+      "acceptedGenerationCalls": 0,
+      "uncertainOutcome": false,
+      "toolBlockerEvidence": "docs/unit-audit-20261105/validation/LV2-U38-image-tool-blocker.json",
+      "localGenerationCallsAccepted": 0,
+      "localPendingGenerationCalls": 0,
+      "pendingGenerationCallScope": "Current Windows environment only; candidate preparation does not imply a completed generation.",
+      "handoffAccepted": true,
+      "candidateEvidence": "docs/unit-audit-20261105/validation/LV2-U38-candidate-retrieval-blocker.json",
+      "newAssetAvailableScope": "Reported candidate PNG only; no verified publication WebP locally installed or integrated."
     }
   ],
   "sourceFormResearchCoverage": {

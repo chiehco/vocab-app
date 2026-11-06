@@ -1,0 +1,11 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const read=p=>JSON.parse(fs.readFileSync(p,'utf8')),path='docs/unit-audit-20261105/LV2-U39-speed-usage-followup.json',row=read('public/data/v1/words.json').find(w=>w.wordId==='W001833');
+assert(row);assert.equal(row.word,'speed');
+const before='速限；以高速／全速；加速（speed up 的過去式／過去分詞常用 speeded up；快速行進常用 sped；兩種詞形須依用法選擇）';
+const after='速限；以高速／全速；加速（speed up 的過去式／過去分詞常用 speeded up，快速行進常用 sped，兩種詞形須依用法選擇）';
+assert.equal(row.usagePatternZh,before,'Do not regenerate over the applied followup');
+assert.equal(row.usagePattern.split(/[;；]/).length,3);assert.equal(before.split(/[;；]/).length,5);assert.equal(after.split(/[;；]/).length,3);
+const manifest={unit:'LV2-U39',baseCommit:'29cfc684d7a11b07f09988c478d30358830f1951',baseCheckpoint:'4e71e3a822d401b7b4f2042a7c3689a7d85cfdd2',scope:'One exact followup to the newly introduced U39 speed usage explanation. Original source data was3/3; the first U39 draft was3/5 and hid all Chinese. Retain the original68-row apply receipt and sourced form guards.',patches:[{dataset:'words',key:'wordId',id:row.wordId,before:structuredClone(row),after:{usagePatternZh:after},reason:'Replace only the two internal parenthetical semicolons with commas so the existing parser has exactly3 English/Chinese groups. Preserve all usage qualifications, forms, formal identity/POS/status and practice sentences.',evidence:'src/features/vocabulary/usagePattern.ts buildUsagePatternItems; actual U39 usage reopen failed on W001833 with3 English/5 Chinese; https://www.collinsdictionary.com/dictionary/english/speed'}]};
+if(fs.existsSync(path))assert.deepEqual(read(path),manifest,'Retain the exact original followup');else fs.writeFileSync(path,JSON.stringify(manifest,null,2)+'\n');
+console.log(JSON.stringify({prepared:true,rows:1,fields:1,englishGroups:3,chineseGroups:3,productApplied:false}));

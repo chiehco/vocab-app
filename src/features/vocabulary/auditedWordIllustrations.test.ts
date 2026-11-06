@@ -1,3 +1,4 @@
+import u39Evidence from '../../../docs/unit-audit-20261105/LV2-U39-original-image-review.json';
 import u30Evidence from '../../../docs/unit-audit-20261105/LV2-U30-original-image-review.json';
 import {createHash} from 'node:crypto';
 import {readFileSync} from 'node:fs';
@@ -27,35 +28,40 @@ import {approvedCurriculumIllustration,approvedWordIllustration,approvedLV1Image
 import {getWordBeastAsset} from '../wordbeast/wordBeastAssets';
 
 const particularAuditRow={reviewId:'LI-LV2U30-V035',officialWordId:'W001616',aliases:['particular'],illustration:{path:'wordbeast/audited-20261105/LV2-U30-W001616-1ceb569d4c35.webp',captionEn:'Doudou picks out the particular shell with white spots.',captionZh:'豆豆挑出那個有白點的特定貝殼。'}};
-function registryBeforeU30(value:typeof cards){
+const trustAuditRow={reviewId:'LI-LV2U39-V002',officialWordId:'W001933',aliases:['trust'],illustration:{path:'wordbeast/s/W001933.webp',captionEn:'The new clerk was trusted with the keys to the safe.',captionZh:'新來的店員被託付保險箱的鑰匙。'}};
+function registryBeforeU39(value:typeof cards){expect(value).toHaveLength(334);expect(value.filter(c=>c.reviewId===trustAuditRow.reviewId)).toEqual([trustAuditRow]);return value.filter(c=>c.reviewId!==trustAuditRow.reviewId);}
+function registryBeforeU30(current:typeof cards){
+ const value=registryBeforeU39(current);
  expect(value).toHaveLength(333);
  expect(value.filter(c=>c.reviewId===particularAuditRow.reviewId)).toEqual([particularAuditRow]);
  return value.filter(c=>c.reviewId!==particularAuditRow.reviewId);
 }
 
 it('binds the explicitly reviewed general-card repairs to exact images and captions',()=>{
- expect(cards).toHaveLength(333);
- expect(cards.filter(c=>c.reviewId.startsWith('LV1-U03-'))).toHaveLength(18);
- expect(cards.filter(c=>c.reviewId.startsWith('LV1-U04-'))).toHaveLength(19);
- expect(cards.filter(c=>c.reviewId.startsWith('LV1-U05-'))).toHaveLength(4);
- expect(cards.filter(c=>c.reviewId.startsWith('LV1-U06-'))).toHaveLength(12);
- expect(cards.filter(c=>c.reviewId.startsWith('LV1-U07-'))).toHaveLength(29);
- expect(cards.filter(c=>c.reviewId.startsWith('LV1-U08-'))).toHaveLength(35);
- expect(cards.filter(c=>c.reviewId.startsWith('LV1-U09-'))).toHaveLength(18);
- expect(cards.filter(c=>c.reviewId.startsWith('LV1-U10-'))).toHaveLength(28);
- expect(cards.filter(c=>c.reviewId.startsWith('LV1-U11-'))).toHaveLength(28);
- expect(cards.filter(c=>c.reviewId.startsWith('LV1-U12-'))).toHaveLength(27);
- expect(cards.filter(c=>c.reviewId.startsWith('LV1-U13-'))).toHaveLength(34);
- expect(cards.filter(c=>c.reviewId.startsWith('LV1-U14-'))).toHaveLength(34);
- expect(cards.filter(c=>c.reviewId.startsWith('LV1-U15-'))).toHaveLength(42);
- expect(cards.filter(c=>c.reviewId==='LI-LV1U17-V027')).toHaveLength(1);
- expect(new Set(cards.map(c=>c.officialWordId)).size).toBe(333);
+ const historical=registryBeforeU39(cards);
+ expect(new Set(cards.map(c=>c.officialWordId)).size).toBe(334);
+ expect(historical).toHaveLength(333);
+ expect(historical.filter(c=>c.reviewId.startsWith('LV1-U03-'))).toHaveLength(18);
+ expect(historical.filter(c=>c.reviewId.startsWith('LV1-U04-'))).toHaveLength(19);
+ expect(historical.filter(c=>c.reviewId.startsWith('LV1-U05-'))).toHaveLength(4);
+ expect(historical.filter(c=>c.reviewId.startsWith('LV1-U06-'))).toHaveLength(12);
+ expect(historical.filter(c=>c.reviewId.startsWith('LV1-U07-'))).toHaveLength(29);
+ expect(historical.filter(c=>c.reviewId.startsWith('LV1-U08-'))).toHaveLength(35);
+ expect(historical.filter(c=>c.reviewId.startsWith('LV1-U09-'))).toHaveLength(18);
+ expect(historical.filter(c=>c.reviewId.startsWith('LV1-U10-'))).toHaveLength(28);
+ expect(historical.filter(c=>c.reviewId.startsWith('LV1-U11-'))).toHaveLength(28);
+ expect(historical.filter(c=>c.reviewId.startsWith('LV1-U12-'))).toHaveLength(27);
+ expect(historical.filter(c=>c.reviewId.startsWith('LV1-U13-'))).toHaveLength(34);
+ expect(historical.filter(c=>c.reviewId.startsWith('LV1-U14-'))).toHaveLength(34);
+ expect(historical.filter(c=>c.reviewId.startsWith('LV1-U15-'))).toHaveLength(42);
+ expect(historical.filter(c=>c.reviewId==='LI-LV1U17-V027')).toHaveLength(1);
+ expect(new Set(historical.map(c=>c.officialWordId)).size).toBe(333);
 });
 
 const reviewGroup=(id:string)=>id.startsWith('LI-')?id.split('-')[1]:id.split('-').slice(0,2).join('-');
 it.each([...new Set(cards.map(c=>reviewGroup(c.reviewId)))])('binds every explicitly reviewed general-card repair in %s',(group)=>{
  for(const card of cards.filter(c=>reviewGroup(c.reviewId)===group)){
-  const proof=[...evidence.cards,...u4Evidence.cards,...u5Evidence.cards,...u6Evidence.cards,...u7Evidence.cards,...u8Evidence.cards,...u9Evidence.cards,...u10Evidence.cards,...u11Evidence.cards,...u12Evidence.cards,...u13Evidence.cards,...u14Evidence.cards,...u15Evidence.cards,...u17Evidence.cards,...u18Evidence.cards,...u20Evidence.cards,...u30Evidence.cards].find(c=>c.id===card.reviewId)!;
+  const proof=[...evidence.cards,...u4Evidence.cards,...u5Evidence.cards,...u6Evidence.cards,...u7Evidence.cards,...u8Evidence.cards,...u9Evidence.cards,...u10Evidence.cards,...u11Evidence.cards,...u12Evidence.cards,...u13Evidence.cards,...u14Evidence.cards,...u15Evidence.cards,...u17Evidence.cards,...u18Evidence.cards,...u20Evidence.cards,...u30Evidence.cards,...u39Evidence.cards].find(c=>c.id===card.reviewId)!;
   expect(proof.pixelReview).toContain('actually viewed original');
   expect(proof.observation).toBeTruthy();
   expect(createHash('sha256').update(readFileSync('public/'+card.illustration.path)).digest('hex')).toBe(proof.publishedImageSha256);
@@ -192,3 +198,6 @@ it('rejects altered U30 pairs before reconstructing the immutable earlier regist
  expect(()=>registryBeforeU30(cards.filter(c=>c.reviewId!==particularAuditRow.reviewId))).toThrow();
  const previous=structuredClone(cards);previous[0].illustration.captionEn='unrecorded';expect(createHash('sha256').update(JSON.stringify(registryBeforeU30(previous))).digest('hex')).not.toBe('5bed66e484106d29474ba2da5704276c856b7af27cff72cb28c2e363f85efd70');
 });
+
+it('binds only trust’s retained keys image and independent exercise without publishing a U39 image',()=>{expect(createHash('sha256').update(JSON.stringify(registryBeforeU39(cards))).digest('hex')).toBe(u39Evidence.priorAuditedCardsSha256);const pair=approvedWordIllustration('trust','W001933')!;expect(pair).toEqual(trustAuditRow.illustration);expect(approvedWordIllustration('trust','W999999')).toBeUndefined();expect(approvedCurriculumIllustration('wrong-word','/'+pair.path)).toBeUndefined();expect(approvedCurriculumIllustration('trust','/'+pair.path+'?v=test')).toEqual(pair);expect(getWordBeastAsset('W001933','trust')).toContain(pair.path);expect(publishedUnits.some(c=>c.officialWordId==='W001933')).toBe(false);expect(createHash('sha256').update(readFileSync('public/'+pair.path)).digest('hex')).toBe(u39Evidence.cards[0].publishedImageSha256);});
+it('rejects any altered U39 pair or other historical pair before restoring the333-row registry',()=>{for(const field of ['reviewId','officialWordId','aliases']){const bad=structuredClone(cards);(bad.find(c=>c.reviewId===trustAuditRow.reviewId)! as Record<string,unknown>)[field]='invented';expect(()=>registryBeforeU39(bad)).toThrow();}for(const field of ['path','captionEn','captionZh']){const bad=structuredClone(cards);(bad.find(c=>c.reviewId===trustAuditRow.reviewId)!.illustration as Record<string,unknown>)[field]='invented';expect(()=>registryBeforeU39(bad)).toThrow();}const extra=structuredClone(cards);(extra.find(c=>c.reviewId===trustAuditRow.reviewId)! as Record<string,unknown>).unrecorded='x';expect(()=>registryBeforeU39(extra)).toThrow();const old=structuredClone(cards);old[0].illustration.captionZh='invented';expect(createHash('sha256').update(JSON.stringify(registryBeforeU39(old))).digest('hex')).not.toBe(u39Evidence.priorAuditedCardsSha256);expect(()=>registryBeforeU39(cards.filter(c=>c.reviewId!==trustAuditRow.reviewId))).toThrow();});
