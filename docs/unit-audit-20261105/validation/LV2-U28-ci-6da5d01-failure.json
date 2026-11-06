@@ -1,0 +1,173 @@
+{
+  "commit": "6da5d016643b8efeca31969178225570eca55ae7",
+  "run": 42142642154,
+  "job": 127646458534,
+  "status": "completed",
+  "conclusion": "failure",
+  "url": "https://github.com/chiehco/vocab-app/actions/runs/42142642154/job/127646458534",
+  "completedAt": "2026-11-06T01:29:05Z",
+  "checkoutShaMatches": true,
+  "vitest": {
+    "filesPassed": 217,
+    "filesFailed": 1,
+    "filesTotal": 218,
+    "testsPassed": 1768,
+    "testsFailed": 1,
+    "testsTotal": 1769
+  },
+  "python": [
+    14,
+    7,
+    41,
+    10
+  ],
+  "build": "skipped",
+  "steps": [
+    {
+      "completed_at": "2026-11-06T01:15:56Z",
+      "conclusion": "success",
+      "name": "Set up job",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:16:07Z",
+      "conclusion": "success",
+      "name": "Run actions/checkout@v4",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:16:09Z",
+      "conclusion": "success",
+      "name": "Run actions/setup-node@v4",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:16:14Z",
+      "conclusion": "success",
+      "name": "Run npm ci",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:16:22Z",
+      "conclusion": "success",
+      "name": "Run npm ci --prefix services/pageviews-cloudflare",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:16:23Z",
+      "conclusion": "success",
+      "name": "Run npm test --prefix services/pageviews-cloudflare",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:16:23Z",
+      "conclusion": "success",
+      "name": "Run actions/setup-python@v5",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:16:29Z",
+      "conclusion": "success",
+      "name": "Run python -m pip install openpyxl==3.1.5 Pillow==12.0.0",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:16:52Z",
+      "conclusion": "success",
+      "name": "Run python -m unittest discover -s scripts -p 'test_apply_lv3_*.py'",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:17:08Z",
+      "conclusion": "success",
+      "name": "Run python -m unittest discover -s scripts -p 'test_apply_lv4_*.py'",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:17:37Z",
+      "conclusion": "success",
+      "name": "Run python -m unittest discover -s scripts -p 'test_apply_unit_audit.py'",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:17:37Z",
+      "conclusion": "success",
+      "name": "Run python -m unittest discover -s scripts -p 'test_build_sa_pack_lv5_legacy.py'",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:17:38Z",
+      "conclusion": "success",
+      "name": "Run python scripts/prepare_recovered_unit_drafts.py --check",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:17:39Z",
+      "conclusion": "success",
+      "name": "Run python scripts/integrate_recovered_units.py --check",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:17:39Z",
+      "conclusion": "success",
+      "name": "Run npm run lint",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:18:11Z",
+      "conclusion": "success",
+      "name": "Run npm run typecheck",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:29:02Z",
+      "conclusion": "failure",
+      "name": "Run npm run test -- --maxWorkers=1 --testTimeout=15000",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:29:02Z",
+      "conclusion": "skipped",
+      "name": "Run npm run build",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:29:02Z",
+      "conclusion": "skipped",
+      "name": "Post Run actions/setup-python@v5",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:29:02Z",
+      "conclusion": "skipped",
+      "name": "Post Run actions/setup-node@v4",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:29:02Z",
+      "conclusion": "success",
+      "name": "Post Run actions/checkout@v4",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:29:02Z",
+      "conclusion": "success",
+      "name": "Complete job",
+      "status": "completed"
+    }
+  ],
+  "rawLog": {
+    "path": "output/unit-audit-20261105/LV2-U28-ci-42142642154.log",
+    "sha256": "2ca14349da9d0db758c6e61150275b83d4f2a5a935965eb96bdcafc30060eb70"
+  },
+  "failure": {
+    "file": "src/features/direct/lv2Unit28Text.test.ts",
+    "line": 41,
+    "column": 117,
+    "test": "uses existing official identities and keeps 7 unmapped supplements pending",
+    "assertion": "targetMeaningZh === '教材補充詞；義項待核對。' for all meaningSource=unmapped_supplement",
+    "diagnosis": "The seven identities, source labels and count remain unchanged. Precisely verified printed display meanings replaced only the placeholders; the old assertion needs the existing exact historical inverse. No product-data rollback or fixture reset is needed.",
+    "frozenCandidateAffected": false,
+    "frozenCandidate": "3106a39dea97360a62a2db4d8e98300724d94fdb"
+  }
+}

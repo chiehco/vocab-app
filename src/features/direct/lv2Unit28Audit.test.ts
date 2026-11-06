@@ -23,3 +23,13 @@ it('rejects unverified after values and retains identity, mapping, order, questi
  const mode=structuredClone(current);mode.template.deliveryMode='changed';expect(hash(restore(mode))).not.toBe(corrections.beforeHash);
  const extra=structuredClone(current);extra.learningItems.push(extra.learningItems[0]);expect(()=>restore(extra)).toThrow();
 });
+it('rejects altered printed meanings and invented mappings for each of the seven supplements',()=>{
+ for(const suffix of ['V043','V044','V045','V049','V051','V057','V074']){
+  const id='LI-LV2U28-'+suffix;
+  for(const field of ['targetMeaningZh','chapterMeaningsZh']){
+   const bad=structuredClone(current);(bad.learningItems.find(i=>i.learningItemId===id)! as Record<string,unknown>)[field]='unverified';expect(()=>restore(bad)).toThrow();
+  }
+  const mapped=structuredClone(current);mapped.learningItems.find(i=>i.learningItemId===id)!.officialWordId='invented';expect(hash(restore(mapped))).not.toBe(corrections.beforeHash);
+  const changedSource=structuredClone(current);changedSource.learningItems.find(i=>i.learningItemId===id)!.meaningSource='invented';expect(hash(restore(changedSource))).not.toBe(corrections.beforeHash);
+ }
+});

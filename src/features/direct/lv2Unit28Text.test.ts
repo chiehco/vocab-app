@@ -12,6 +12,8 @@ import {progressDb} from '../../db/progressDb';
 import {ensureContentAvailable,refreshInstalledContent} from '../../db/seed';
 import {siegeUnitWords} from '../siege/model';
 import {gradeFlashcard} from '../../checkin/recordActivity';
+import current from './curriculumLV2Unit28.json';
+import {lv2Unit28BeforeAudit} from './lv2Unit28Audit.testSupport';
 const unit=findUnit(28,'LV2')!;const vocabulary=unit.items.filter(i=>i.kind==='vocabulary');
 beforeEach(async()=>{await Promise.all([...contentDb.tables,...progressDb.tables].map(t=>t.clear()));});
 afterEach(()=>vi.unstubAllGlobals());
@@ -31,14 +33,30 @@ it('preserves printed supplements, articles, capitalization and use pages',()=>{
  expect(unit.items.filter(i=>i.kind==='grammar').map(i=>[i.pattern,i.sourcePage])).toEqual(source.usage.map(r=>[r.label,r.sourcePage]));
  for(const word of ["environmentalist", "lay emphasis / stress on...", "materialism", "recording", "unusual", "turn... down", "personalities"]) expect(vocabulary.find(i=>i.displayWord===word)?.officialWordId).toBeNull();
 });
-it('uses existing official identities and keeps 7 unmapped supplements pending',()=>{
+it('uses existing identities and preserves the historical seven pending supplement clues',()=>{
  for(const [index,row] of [...source.headwords,...source.related].entries()) {
   expect(vocabulary[index].officialWordId).toBe(row.officialWordId);if(!row.officialWordId)continue;
   const word=pack.words.find(w=>w.wordId===row.officialWordId)!;expect(word.word).toBe(row.officialWord);
   expect(word.word===row.word||word.wordVariants.includes(row.word)).toBe(true);
  }
  expect(vocabulary.filter(i=>!i.officialWordId)).toHaveLength(7);expect(vocabulary.filter(i=>i.meaningSource==='unmapped_supplement')).toHaveLength(7);
- expect(vocabulary.filter(i=>i.meaningSource==='unmapped_supplement').every(i=>i.targetMeaningZh==='教材補充詞；義項待核對。')).toBe(true);
+ const historical=lv2Unit28BeforeAudit(current).learningItems.filter(i=>i.kind==='vocabulary');
+ expect(historical.filter(i=>i.meaningSource==='unmapped_supplement')).toHaveLength(7);
+ expect(historical.filter(i=>i.meaningSource==='unmapped_supplement').every(i=>i.targetMeaningZh==='教材補充詞；義項待核對。')).toBe(true);
+});
+it('shows only the exact seven printed supplement meanings without promoting their identities',()=>{
+ const expected=[
+  ['LI-LV2U28-V043','環境保護論者','n.'],
+  ['LI-LV2U28-V044','強調……',''],
+  ['LI-LV2U28-V045','唯物主義','n.'],
+  ['LI-LV2U28-V049','唱片；錄音帶；錄影帶','n.'],
+  ['LI-LV2U28-V051','不尋常的；非凡的','adj.'],
+  ['LI-LV2U28-V057','拒絕……',''],
+  ['LI-LV2U28-V074','personality 的複數形式',''],
+ ];
+ expect(unit.items).toEqual(current.learningItems);
+ expect(vocabulary.filter(i=>i.meaningSource==='unmapped_supplement').map(i=>[i.learningItemId,i.targetMeaningZh,i.sensePos])).toEqual(expected);
+ for(const [id,meaning]of expected)expect(vocabulary.find(i=>i.learningItemId===id)).toMatchObject({targetMeaningZh:meaning,chapterMeaningsZh:meaning,officialWordId:null,officialSenseId:null,meaningSource:'unmapped_supplement',practiceMode:'read_only',review:'source_checked_text_only'});
 });
 it('adopts no pictures, running examples, sense IDs or textbook questions',()=>{
  expect(unit.deliveryMode).toBe('text_only');expect(unit.questions).toEqual([]);expect(practiceIds(unit.items)).toEqual([]);

@@ -1,0 +1,210 @@
+{
+  "recordedAt": "2026-11-06T01:40:49.226Z",
+  "priorCheckpoint": "6da5d016643b8efeca31969178225570eca55ae7",
+  "problem": "The legacy text test required the original pending placeholder after seven precise printed display meanings were restored. The source labels, identities and counts were already correct.",
+  "change": "Keep the exact original placeholder assertion on lv2Unit28BeforeAudit(current), which first checks all84 exact after rows. Separately assert all seven current printed values, source/POS/null-ID/read_only boundaries, and mutation negatives for meanings and mappings.",
+  "originalHistoricalHash": "9db988f684d56d7c05e85befd2fd2509fdf7489ab1d42ca2da07238b6b994851",
+  "originalHistoricalHashChanged": false,
+  "wholeUnitInverseRows": 84,
+  "currentPrintedSupplements": [
+    {
+      "learningItemId": "LI-LV2U28-V043",
+      "displayWord": "environmentalist",
+      "targetMeaningZh": "環境保護論者",
+      "sensePos": "n.",
+      "officialWordId": null,
+      "officialSenseId": null,
+      "meaningSource": "unmapped_supplement",
+      "practiceMode": "read_only"
+    },
+    {
+      "learningItemId": "LI-LV2U28-V044",
+      "displayWord": "lay emphasis / stress on...",
+      "targetMeaningZh": "強調……",
+      "sensePos": "",
+      "officialWordId": null,
+      "officialSenseId": null,
+      "meaningSource": "unmapped_supplement",
+      "practiceMode": "read_only"
+    },
+    {
+      "learningItemId": "LI-LV2U28-V045",
+      "displayWord": "materialism",
+      "targetMeaningZh": "唯物主義",
+      "sensePos": "n.",
+      "officialWordId": null,
+      "officialSenseId": null,
+      "meaningSource": "unmapped_supplement",
+      "practiceMode": "read_only"
+    },
+    {
+      "learningItemId": "LI-LV2U28-V049",
+      "displayWord": "recording",
+      "targetMeaningZh": "唱片；錄音帶；錄影帶",
+      "sensePos": "n.",
+      "officialWordId": null,
+      "officialSenseId": null,
+      "meaningSource": "unmapped_supplement",
+      "practiceMode": "read_only"
+    },
+    {
+      "learningItemId": "LI-LV2U28-V051",
+      "displayWord": "unusual",
+      "targetMeaningZh": "不尋常的；非凡的",
+      "sensePos": "adj.",
+      "officialWordId": null,
+      "officialSenseId": null,
+      "meaningSource": "unmapped_supplement",
+      "practiceMode": "read_only"
+    },
+    {
+      "learningItemId": "LI-LV2U28-V057",
+      "displayWord": "turn... down",
+      "targetMeaningZh": "拒絕……",
+      "sensePos": "",
+      "officialWordId": null,
+      "officialSenseId": null,
+      "meaningSource": "unmapped_supplement",
+      "practiceMode": "read_only"
+    },
+    {
+      "learningItemId": "LI-LV2U28-V074",
+      "displayWord": "personalities",
+      "targetMeaningZh": "personality 的複數形式",
+      "sensePos": "",
+      "officialWordId": null,
+      "officialSenseId": null,
+      "meaningSource": "unmapped_supplement",
+      "practiceMode": "read_only"
+    }
+  ],
+  "local": {
+    "state": "passed",
+    "files": 6,
+    "tests": 62,
+    "maxWorkers": 1,
+    "timeoutMs": 5000,
+    "defaultTimeoutUnchanged": true,
+    "checks": [
+      {
+        "log": {
+          "path": "output/unit-audit-20261105/LV2-U28-ci-fix-regression.txt",
+          "sha256": "9a9d37bbbc9b4e459ced98f83c9e7d6bac63b901b49892a4f603fa665d63fa12"
+        },
+        "exitCode": 0,
+        "check": "original-timeout-regression"
+      },
+      {
+        "log": {
+          "path": "output/unit-audit-20261105/LV2-U28-ci-fix-lint.txt",
+          "sha256": "f84a14cedaa842873669b6f58a9e49236f8762fa3623e3777cf19b69133fe6fc"
+        },
+        "exitCode": 0,
+        "check": "lint"
+      },
+      {
+        "log": {
+          "path": "output/unit-audit-20261105/LV2-U28-ci-fix-typecheck.txt",
+          "sha256": "0d93be78e4da5c0077681c4d834163661d59ddd24a0477595fb70ec25d5a5ea8"
+        },
+        "exitCode": 0,
+        "check": "typecheck"
+      },
+      {
+        "log": {
+          "path": "output/unit-audit-20261105/LV2-U28-ci-fix-build.txt",
+          "sha256": "4fd1fe6a7e98e7627b1ba1d3d20d722f68040c66133ae523caf80b24d0c5251c"
+        },
+        "exitCode": 0,
+        "check": "build"
+      }
+    ],
+    "pythonCodeUnchanged": true,
+    "unchangedPythonSuitePassedInPriorCI": 41
+  },
+  "productData": {
+    "priorCheckpoint": "6da5d016643b8efeca31969178225570eca55ae7",
+    "hashMethod": "SHA-256 of JSON.stringify(parsed object), preserving property order",
+    "products": [
+      {
+        "path": "public/data/v1/words.json",
+        "sha256OfParsedJson": "caec2cc7c0e8e75fd3de10722824851980246b3f1585a41c1b24870f1a686449",
+        "unchanged": true
+      },
+      {
+        "path": "public/data/v1/senses.json",
+        "sha256OfParsedJson": "d3936d8c85abc903e30b1e05bb38d71818142d69710ae6112e7f7f2d57b049d1",
+        "unchanged": true
+      },
+      {
+        "path": "public/data/v1/examples.json",
+        "sha256OfParsedJson": "aa6a0623ab7d38c074abbd735b1a9f67f82cbd5ebf32f94ac48aefa60d4892a4",
+        "unchanged": true
+      },
+      {
+        "path": "public/data/v1/notes.json",
+        "sha256OfParsedJson": "38b301b1d1233e4a8e0feb36cb4a20a5ead2c90a2263ab422293472119c268b0",
+        "unchanged": true
+      },
+      {
+        "path": "public/data/v1/relations.json",
+        "sha256OfParsedJson": "64067a3cae1e44dbf4b05daf04b7cdbcff1a0e719d32052270aa6553c84d3c4b",
+        "unchanged": true
+      },
+      {
+        "path": "public/data/v1/morphemes.json",
+        "sha256OfParsedJson": "2e8bc13457a4b4a8ef010534003205749cb2e6ba93c4fe0e04a399a110e1f76d",
+        "unchanged": true
+      },
+      {
+        "path": "public/data/v1/exam_priority.json",
+        "sha256OfParsedJson": "8a9f94298ee4c76c5896d9e01147a689cebd3f272a5469da0fe0f121e4f138fb",
+        "unchanged": true
+      },
+      {
+        "path": "public/data/v1/media.json",
+        "sha256OfParsedJson": "82f8bcd1c91f15870af7b7e6ad115bbc337fa8af237251b91eadd0ee3c55c92a",
+        "unchanged": true
+      },
+      {
+        "path": "public/data/v1/meta.json",
+        "sha256OfParsedJson": "33658afdee6df30d95d67b799d758c7230b30defb92114cc22836097cc493737",
+        "unchanged": true
+      },
+      {
+        "path": "public/data/v1/sa-pack.json",
+        "sha256OfParsedJson": "fa79618958925d5a1c2b46cca46d93e872a57480b776be80e573ed57e597e488",
+        "unchanged": true
+      },
+      {
+        "path": "src/features/direct/curriculumLV2Unit28.json",
+        "sha256OfParsedJson": "8f385d6b15a6c1b7f51237244de5da50b8a30388c666dbf55a3f6af13f446dc6",
+        "unchanged": true
+      },
+      {
+        "path": "src/features/direct/curriculumLV2Unit29.json",
+        "sha256OfParsedJson": "da0ac4f9fa8a851ed3976f61c33e002391c02299acf9592d7a4adb7c3b2604da",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/sources/LV2Unit28.json",
+        "sha256OfParsedJson": "d670d48766ac47a3ea4c2ac4622ade8672287023b9ea586a4d7b3a0ef405045c",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/sources/LV2Unit29.json",
+        "sha256OfParsedJson": "ec49ab051ed70d448ab400990c231b1b318fc43d5d4e2184b8257e9d6a1d7a1b",
+        "unchanged": true
+      }
+    ],
+    "historicalU28CurriculumHashUnchanged": "9db988f684d56d7c05e85befd2fd2509fdf7489ab1d42ca2da07238b6b994851",
+    "printedPatchesStillExactly84": 84,
+    "frozenCandidateStillAncestor": true,
+    "U29BeforeEvidenceRemainsApplicable": true
+  },
+  "appEvidence": "Existing U28 after reopens2476-row readback and U29 before evidence remain applicable because all product/source JSON is unchanged.",
+  "failedCi": "validation/LV2-U28-ci-6da5d01-failure.json",
+  "newFullCi": "pending exact new head after commit",
+  "frozenCandidate": "3106a39dea97360a62a2db4d8e98300724d94fdb",
+  "frozenCandidateAffectedByThisTestFailure": false
+}
