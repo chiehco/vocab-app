@@ -1,6 +1,6 @@
 {
   "scope": "Exact current repository curriculum catalogue, not a publisher edition table of contents or an inferred numeric range.",
-  "checkedAtUtc": "2026-11-06T10:13:04.271Z",
+  "checkedAtUtc": "2026-11-06T11:20:56.587Z",
   "basis": {
     "model": "src/features/direct/model.ts",
     "catalog": "src/features/vocabulary/textbookCatalog.ts",
@@ -70,13 +70,13 @@
     32,
     33,
     34,
-    35
-  ],
-  "currentAuditUnits": [
+    35,
     36
   ],
+  "currentAuditUnits": [
+    37
+  ],
   "notYetAuditedUnits": [
-    37,
     38,
     39,
     40,
@@ -415,9 +415,15 @@
       "curriculumPath": "src/features/direct/curriculumLV2Unit36.json",
       "registeredInModel": true,
       "deliveryMode": "text_only",
-      "auditStatus": "current_audit_after_complete_pending_checkpoint_own_ci",
-      "ledger": null,
-      "ownCi": null
+      "auditStatus": "audit_checkpoint_own_ci_success",
+      "ledger": "docs/unit-audit-20261105/LV2-U36-ledger.json",
+      "ownCi": {
+        "commit": "30d92061398c2b45aec095881138de90a54bb290",
+        "run": 42201011223,
+        "job": 127836010205,
+        "url": "https://github.com/chiehco/vocab-app/actions/runs/42201011223/job/127836010205",
+        "conclusion": "success"
+      }
     },
     {
       "unit": 37,
@@ -442,8 +448,8 @@
       "curriculumPath": "src/features/direct/curriculumLV2Unit37.json",
       "registeredInModel": true,
       "deliveryMode": "text_only",
-      "auditStatus": "not_audited_in_this_full_audit",
-      "ledger": null,
+      "auditStatus": "current_audit_after_complete_pending_checkpoint_own_ci",
+      "ledger": "docs/unit-audit-20261105/LV2-U37-ledger.json",
       "ownCi": null
     },
     {

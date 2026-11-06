@@ -1,0 +1,51 @@
+{
+  "unit": "LV2-U37",
+  "firstFrontend": {
+    "files": 23,
+    "passedFiles": 22,
+    "failedFiles": 1,
+    "tests": 287,
+    "passed": 286,
+    "failed": 1,
+    "exitCode": 1
+  },
+  "repair": {
+    "files": 1,
+    "tests": 71,
+    "passed": 71,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "negativeTestFailureAndFix": "New negative test placed its expected throw only around the final form inverse; the stricter immutable status guard correctly rejected drift at the earlier U37 word inverse. The expected-throw scope now covers both exact inverses. No production guard or baseline was relaxed.",
+  "beforeCapture": {
+    "failedUnacceptedBatches": 2,
+    "reason": "Execution context destroyed during navigation; results not accepted. Unfinished general-card ranges resumed after a neutral full-load exact-route readiness step; accepted source and earlier general batches not repeated.",
+    "acceptedSource": 156,
+    "acceptedGeneral": 80,
+    "missingFields": 0
+  },
+  "beforeCaptureEvidenceRetained": true,
+  "privateVerificationHelper": {
+    "first": {
+      "exitCode": 1,
+      "reason": "Private copied verifier retained curriculumLV2Unit36 path, so lookup of U37 IDs failed after all UI and formal checks. No product mutation or repeated captures."
+    },
+    "repair": {
+      "exactPath": "curriculumLV2Unit37.json",
+      "checksRetained": true
+    }
+  },
+  "normalInstaller": {
+    "beforeApplyNativeSnapshot": true,
+    "actualOldToNewTransition": true,
+    "all14TablesExact": true
+  },
+  "browserReopen": {
+    "exitCode": 1,
+    "onlyOneOpenAttempt": true,
+    "actualStateVerifiedByReadOnlyProbe": true
+  },
+  "originalLocalTimeout": 5000,
+  "timeoutRaised": false,
+  "hashFixturesChanged": false
+}
