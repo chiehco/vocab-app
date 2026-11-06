@@ -1,0 +1,30 @@
+{
+  "unit": "LV2-U32",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "baseCheckpoint": "caf8c0bcd5f7d5996b15be71e555f7cf3628d3c4",
+  "patches": [
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX89f990dc",
+      "before": {
+        "exampleId": "EX89f990dc",
+        "word": "barely",
+        "sensePos": "adv.",
+        "meaningHint": "幾乎不、勉強才（考點：接近於沒有）",
+        "exampleType": "exam",
+        "sentenceEn": "After paying the rent, he barely had enough left for food.",
+        "sentenceZh": "付完房租後，他幾乎沒剩什麼錢買食物。",
+        "blankSentence": "After paying the rent, he _____ had enough left for food.",
+        "answer": "barely",
+        "difficulty": "LV3",
+        "status": "reviewed"
+      },
+      "after": {
+        "sentenceZh": "付完房租後，他剩下的錢勉強夠買食物。"
+      },
+      "reason": "Preserve the barely-enough threshold: the money was only just sufficient. This is precision refinement of an independent practice sentence, not an exam-original replacement.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/barely"
+    }
+  ]
+}

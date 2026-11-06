@@ -1,0 +1,29 @@
+{
+  "unit": "LV2-U32",
+  "frontendFirstRun": {
+    "files": 20,
+    "tests": 216,
+    "failures": 0,
+    "exitCode": 0
+  },
+  "pythonFirstRun": {
+    "tests": 52,
+    "failures": 0,
+    "exitCode": 0
+  },
+  "otherEvents": [
+    {
+      "phase": "read-only shell inspection",
+      "result": "An inline Node command was truncated by shell quoting and produced a syntax error before execution; no product write occurred.",
+      "resolution": "Read the bounded files with literal file commands."
+    },
+    {
+      "phase": "browser persistence reopen",
+      "result": "The single open call created the browser, but the initial SVG snapshot exceeded30000ms and exited1.",
+      "resolution": "A read-only probe found the same URL complete and both databases present; native progress/content reads succeeded. No repeated open or timeout increase."
+    }
+  ],
+  "originalLocalTestTimeout": 5000,
+  "timeoutRaised": false,
+  "originalHashFixturesChanged": false
+}
