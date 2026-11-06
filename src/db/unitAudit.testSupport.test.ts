@@ -1,3 +1,8 @@
+import lv2u40Visible from '../../docs/unit-audit-20261105/LV2-U40-visible-pos-followup.json';
+import lv2u40 from '../../docs/unit-audit-20261105/LV2-U40-patches.json';
+import lv2u40Forms from '../../docs/unit-audit-20261105/LV2-U40-verified-forms-patches.json';
+import lv2u40FormSources from '../../docs/unit-audit-20261105/VERIFIED-LV2-U40-VERB-FORMS-SOURCES.json';
+import lv2u40Notes from '../../docs/unit-audit-20261105/LV2-U40-notes-patches.json';
 import {buildUsagePatternItems} from '../features/vocabulary/usagePattern';
 import lv2u39Speed from '../../docs/unit-audit-20261105/LV2-U39-speed-usage-followup.json';
 import lv2u39 from '../../docs/unit-audit-20261105/LV2-U39-patches.json';
@@ -348,7 +353,7 @@ it('reverses only36 integrated U07 fields and protects every other exact word fi
  const prior=new Set([...originalSources.facts,...followupSources.facts,...u16FormSources.facts,...u17FormSources.facts,...u18FormSources.facts,...u19FormSources.facts,...u20FormSources.facts,...u21FormSources.facts,...integratedU05U06Sources.facts].map(f=>f.wordId));
  expect(integratedU07Sources.facts.every(f=>!prior.has(f.wordId))).toBe(true);
  const words:Row[]=JSON.parse(readFileSync('public/data/v1/words.json','utf8'));
- for(const p of integratedU07.patches){const row=structuredClone(words.find(w=>w.wordId===p.id)!);if(p.id==='W000672')restoreRecordedAuditPatch('words',row,lv2u38.patches.find(q=>q.dataset==='words'&&q.id===p.id)!);if(p.id==='W000732')restoreRecordedAuditPatch('words',row,lv2u37.patches.find(q=>q.dataset==='words'&&q.id===p.id)!);if(p.id==='W000008')restoreRecordedAuditPatch('words',row,lv2u35.patches.find(q=>q.dataset==='words'&&q.id===p.id)!);if(["W001523"].includes(p.id))restoreRecordedAuditPatch('words',row,lv2u29.patches.find(q=>q.dataset==='words'&&q.id===p.id)!);const original={...row};delete original.verbForms;restoreRecordedAuditPatch('words',row,p);expect(row).toEqual(original);expect(row).not.toHaveProperty('verbForms');
+ for(const p of integratedU07.patches){const row=structuredClone(words.find(w=>w.wordId===p.id)!);if(['W001768','W000041'].includes(p.id))restoreRecordedAuditPatch('words',row,lv2u40.patches.find(q=>q.dataset==='words'&&q.id===p.id)!);if(p.id==='W000672')restoreRecordedAuditPatch('words',row,lv2u38.patches.find(q=>q.dataset==='words'&&q.id===p.id)!);if(p.id==='W000732')restoreRecordedAuditPatch('words',row,lv2u37.patches.find(q=>q.dataset==='words'&&q.id===p.id)!);if(p.id==='W000008')restoreRecordedAuditPatch('words',row,lv2u35.patches.find(q=>q.dataset==='words'&&q.id===p.id)!);if(["W001523"].includes(p.id))restoreRecordedAuditPatch('words',row,lv2u29.patches.find(q=>q.dataset==='words'&&q.id===p.id)!);const original={...row};delete original.verbForms;restoreRecordedAuditPatch('words',row,p);expect(row).toEqual(original);expect(row).not.toHaveProperty('verbForms');
   for(const key of ['base','past','pastParticiple','sourceRef','status']){const wrong=structuredClone(p);(wrong.after.verbForms as Row)[key]='unverified';expect(()=>restoreRecordedAuditPatch('words',{...original,...wrong.after},wrong)).toThrow();}
   for(const key of ['word','pos','status','meaningZh','meaningEn','usagePattern'])expect(()=>restoreRecordedAuditPatch('words',{...original,...p.after,[key]:'unrecorded'},p)).toThrow();
   expect(()=>restoreRecordedAuditPatch('words',{...original,...p.after},{...p,before:{verbForms:null}})).toThrow();
@@ -503,6 +508,7 @@ it('reverses only7 exact U24 sourced form keys and rejects all other row drift',
  for(const p of u24Forms.patches){
   const row=structuredClone(words.find(w=>w.wordId===p.id)!);
   const fact=u24FormSources.facts.find(f=>f.wordId===p.id)!;
+  if(p.id==='W001581')restoreRecordedAuditPatch('words',row,lv2u40.patches.find(q=>q.dataset==='words'&&q.id===p.id)!);
   if(p.id==='W001102')restoreRecordedAuditPatch('words',row,lv2u27.patches.find(q=>q.dataset==='words'&&q.id===p.id)!);
   restoreRecordedAuditPatch('words',row,p);expect(row).toEqual(fact.nonFormRow);expect(row).not.toHaveProperty('verbForms');
   for(const key of ['base','past','pastParticiple','sourceRef','status']){
@@ -1035,3 +1041,49 @@ it('limits six LV2 U39 notes to exact full-row content guards',()=>{
 });
 
 it('keeps the exact speed usage followup paired and restores its original form guard',()=>{const words:Row[]=JSON.parse(readFileSync('public/data/v1/words.json','utf8')),p=lv2u39Speed.patches[0],row=structuredClone(words.find(w=>w.wordId===p.id)!);expect(lv2u39Speed.patches).toHaveLength(1);expect(p.id).toBe('W001833');expect(Object.keys(p.after)).toEqual(['usagePatternZh']);expect(p.after.usagePatternZh).toBe('速限；以高速／全速；加速（speed up 的過去式／過去分詞常用 speeded up，快速行進常用 sped，兩種詞形須依用法選擇）');expect(buildUsagePatternItems(row.usagePattern as string,row.usagePatternZh as string).filter(i=>i.chinese)).toHaveLength(3);expect(buildUsagePatternItems(p.before.usagePattern,p.before.usagePatternZh).filter(i=>i.chinese)).toHaveLength(0);for(const field of ['wordId','word','status','pos','posAll','usagePattern','usagePatternZh','verbForms'])expect(()=>restoreRecordedAuditPatch('words',{...row,[field]:'unverified'},p)).toThrow();expect(()=>restoreRecordedAuditPatch('words',structuredClone(row),{...p,id:'W999999'})).toThrow();restoreRecordedAuditPatch('words',row,p);expect(row).toEqual(p.before);restoreRecordedAuditPatch('words',row,lv2u39Forms.patches.find(q=>q.id===p.id)!);expect(row).not.toHaveProperty('verbForms');});
+
+it('reverses only11 exact LV2 U40 sourced form keys and rejects all other row drift',()=>{
+ expect(lv2u40FormSources.facts).toHaveLength(11);
+ const words:Row[]=JSON.parse(readFileSync('public/data/v1/words.json','utf8'));
+ for(const p of lv2u40Forms.patches){
+  const row=structuredClone(words.find(w=>w.wordId===p.id)!);if(p.id==='W001178')restoreRecordedAuditPatch('words',row,lv2u40Visible.patches.find(q=>q.id===p.id)!);
+  const fact=lv2u40FormSources.facts.find(f=>f.wordId===p.id)!;
+  restoreRecordedAuditPatch('words',row,p);expect(row).toEqual(fact.nonFormRow);expect(row).not.toHaveProperty('verbForms');
+  for(const key of ['base','past','pastParticiple','sourceRef','status']){
+   const wrong=structuredClone(p);(wrong.after.verbForms as Row)[key]='unverified';
+   expect(()=>restoreRecordedAuditPatch('words',{...fact.nonFormRow,...wrong.after},wrong)).toThrow();
+  }
+  for(const key of ['word','pos','status','meaningZh','meaningEn','usagePattern'])expect(()=>restoreRecordedAuditPatch('words',{...fact.nonFormRow,...p.after,[key]:'unrecorded'},p)).toThrow();
+  expect(()=>restoreRecordedAuditPatch('words',{...fact.nonFormRow,...p.after},{...p,before:{verbForms:null}})).toThrow();
+ }
+});
+
+
+
+
+it('limits eight LV2 U40 notes to exact full-row content guards',()=>{
+ expect(lv2u40Notes.patches).toHaveLength(8);
+ for(const p of lv2u40Notes.patches){const row:Row={...p.before,...p.after};restoreRecordedAuditPatch('notes',row,p);expect(row).toEqual(p.before);
+  for(const field of ['word','status','noteType','noteId']){expect(()=>restoreRecordedAuditPatch('notes',{...p.before,...p.after,[field]:'unrecorded'},p)).toThrow();expect(()=>restoreRecordedAuditPatch('notes',{...p.before,...p.after},{...p,before:{...p.before,[field]:'unrecorded'}})).toThrow();}
+  for(const field of ['title','content','status'])expect(()=>restoreRecordedAuditPatch('notes',{...p.before,...p.after,[field]:'unverified'},{...p,after:{...p.after,[field]:'unverified'}})).toThrow();
+  expect(()=>restoreRecordedAuditPatch('notes',{...p.before,...p.after},{...p,id:'NXunknown'})).toThrow();
+ }
+});
+
+it('preserves the three old sourced form fixtures through only their exact U40 field inverse',()=>{
+ const words:Row[]=JSON.parse(readFileSync('public/data/v1/words.json','utf8'));
+ for(const id of ['W001768','W000041','W001581']){
+  const p=lv2u40.patches.find(p=>p.dataset==='words'&&p.id===id)!,old=id==='W001581'?u24Forms.patches.find(p=>p.id===id)!:integratedU07.patches.find(p=>p.id===id)!;
+  const row=structuredClone(words.find(w=>w.wordId===id)!);
+  for(const field of Object.keys(p.after)){const bad=structuredClone(row);bad[field]='unverified';expect(()=>restoreRecordedAuditPatch('words',bad,p)).toThrow();}
+  const drift=structuredClone(row);drift.status='unrecorded';expect(()=>{restoreRecordedAuditPatch('words',drift,p);restoreRecordedAuditPatch('words',drift,old);}).toThrow();
+  restoreRecordedAuditPatch('words',row,p);restoreRecordedAuditPatch('words',row,old);expect(row).not.toHaveProperty('verbForms');
+ }
+});
+
+it('keeps two visible U40 noun-verb boundaries reversible before the unchanged form fact',()=>{
+ const words:Row[]=JSON.parse(readFileSync('public/data/v1/words.json','utf8'));expect(lv2u40Visible.patches).toHaveLength(2);expect(lv2u40Visible.patches.map(p=>p.id)).toEqual(['W001178','W001562']);
+ expect(lv2u40Visible.patches[0].after.meaningZh).toBe('（動詞）（使）聯合；（使）結合；（另有名詞用法）（企業的）聯合；聯合收割機');
+ expect(lv2u40Visible.patches[1].after.meaningZh).toBe('（名詞）有柄大杯；臉；苦讀者；（另有動詞用法，尤美式）給……拍照');
+ for(const p of lv2u40Visible.patches){const row=structuredClone(words.find(w=>w.wordId===p.id)!);expect(Object.keys(p.after)).toEqual(['meaningZh']);for(const field of Object.keys(p.before))expect(()=>restoreRecordedAuditPatch('words',{...row,[field]:'unverified'},p)).toThrow();expect(()=>restoreRecordedAuditPatch('words',structuredClone(row),{...p,id:'W999999'})).toThrow();restoreRecordedAuditPatch('words',row,p);expect(row).toEqual(p.before);if(p.id==='W001178'){restoreRecordedAuditPatch('words',row,lv2u40Forms.patches.find(q=>q.id===p.id)!);expect(row).not.toHaveProperty('verbForms');}}
+});

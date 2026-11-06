@@ -1,6 +1,6 @@
 {
   "unit": "LV2-U39",
-  "state": "local_checkpoint_complete_pending_commit_push_own_ci",
+  "state": "pushed_checkpoint_own_ci_success",
   "baseCheckpoint": "4e71e3a822d401b7b4f2042a7c3689a7d85cfdd2",
   "updatedAt": "2026-11-06T14:14:33.183Z",
   "scope": {
@@ -362,7 +362,27 @@
     "jobCompletedAtUtc": "2026-11-06T12:56:55Z"
   },
   "newCheckpointFullCi": {
-    "state": "pending_this_new_commit"
+    "commit": "ca15841e96b26d1c5000d0beadad926e1423f345",
+    "run": 42232615701,
+    "job": 127942024815,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42232615701/job/127942024815",
+    "status": "completed",
+    "conclusion": "success",
+    "checkoutShaReadFromFullLog": true,
+    "testFiles": 229,
+    "tests": 1865,
+    "pythonBatches": [
+      14,
+      7,
+      69,
+      10
+    ],
+    "lint": "success",
+    "typecheck": "success",
+    "build": "success",
+    "buildLogCompletedAtUtc": "2026-11-06T14:31:26.4746829Z",
+    "jobCompletedAtUtc": "2026-11-06T14:31:30Z",
+    "logParsingNote": "Initial local reader did not strip literal caret escape sequences and stopped before writing a terminal result. Same saved complete log decoded without changing CI or tests."
   },
   "releaseReconciliation": {
     "mainCommit": "0f4eb27961571ce393a1f1a2bc63f1d558bef1fb",

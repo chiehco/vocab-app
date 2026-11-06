@@ -1,6 +1,6 @@
 {
   "scope": "Exact current repository curriculum catalogue, not a publisher edition table of contents or an inferred numeric range.",
-  "checkedAtUtc": "2026-11-06T14:14:33.183Z",
+  "checkedAtUtc": "2026-11-06T16:04:05.153Z",
   "basis": {
     "model": "src/features/direct/model.ts",
     "catalog": "src/features/vocabulary/textbookCatalog.ts",
@@ -73,13 +73,13 @@
     35,
     36,
     37,
-    38
-  ],
-  "currentAuditUnits": [
+    38,
     39
   ],
+  "currentAuditUnits": [
+    40
+  ],
   "notYetAuditedUnits": [
-    40,
     41,
     42,
     43,
@@ -530,9 +530,31 @@
       "curriculumPath": "src/features/direct/curriculumLV2Unit39.json",
       "registeredInModel": true,
       "deliveryMode": "text_only",
-      "auditStatus": "audit_after_complete_pending_checkpoint_own_ci",
+      "auditStatus": "audit_checkpoint_own_ci_success",
       "ledger": "docs/unit-audit-20261105/LV2-U39-ledger.json",
-      "ownCi": null
+      "ownCi": {
+        "commit": "ca15841e96b26d1c5000d0beadad926e1423f345",
+        "run": 42232615701,
+        "job": 127942024815,
+        "url": "https://github.com/chiehco/vocab-app/actions/runs/42232615701/job/127942024815",
+        "status": "completed",
+        "conclusion": "success",
+        "checkoutShaReadFromFullLog": true,
+        "testFiles": 229,
+        "tests": 1865,
+        "pythonBatches": [
+          14,
+          7,
+          69,
+          10
+        ],
+        "lint": "success",
+        "typecheck": "success",
+        "build": "success",
+        "buildLogCompletedAtUtc": "2026-11-06T14:31:26.4746829Z",
+        "jobCompletedAtUtc": "2026-11-06T14:31:30Z",
+        "logParsingNote": "Initial local reader did not strip literal caret escape sequences and stopped before writing a terminal result. Same saved complete log decoded without changing CI or tests."
+      }
     },
     {
       "unit": 40,
@@ -557,8 +579,8 @@
       "curriculumPath": "src/features/direct/curriculumLV2Unit40.json",
       "registeredInModel": true,
       "deliveryMode": "text_only",
-      "auditStatus": "not_audited_in_this_full_audit",
-      "ledger": null,
+      "auditStatus": "audit_after_complete_pending_checkpoint_own_ci",
+      "ledger": "docs/unit-audit-20261105/LV2-U40-ledger.json",
       "ownCi": null
     },
     {
@@ -857,7 +879,7 @@
   },
   "releaseGate": {
     "wholeRegisteredLvReady": false,
-    "reason": "U39 still needs its new pushed-head CI; later registered units remain unaudited, U38 two image repairs await integration and actual App verification. U26/source-edition boundary remains explicit.",
+    "reason": "U40 needs its new pushed-head CI; later registered units remain unaudited. U38 two image candidates await verified asset delivery/integration/App validation. U26 and edition-boundary limits remain explicit.",
     "mainMerged": false,
     "deployed": false
   }
