@@ -1,3 +1,5 @@
+import current from './curriculumLV2Unit41.json';
+import {lv2Unit41BeforeAudit} from './lv2Unit41Audit.testSupport';
 import 'fake-indexeddb/auto';
 import {afterEach,beforeEach,expect,it,vi} from 'vitest';
 import source from '../../../scripts/sources/LV2Unit41.json';
@@ -38,7 +40,7 @@ it('uses existing official identities and keeps 15 unmapped supplements pending'
   expect(word.word===row.word||word.wordVariants.includes(row.word)).toBe(true);
  }
  expect(vocabulary.filter(i=>!i.officialWordId)).toHaveLength(15);expect(vocabulary.filter(i=>i.meaningSource==='unmapped_supplement')).toHaveLength(15);
- expect(vocabulary.filter(i=>i.meaningSource==='unmapped_supplement').every(i=>i.targetMeaningZh==='教材補充詞；義項待核對。')).toBe(true);
+ expect(lv2Unit41BeforeAudit(current).learningItems.filter(i=>i.meaningSource==='unmapped_supplement').every(i=>i.targetMeaningZh==='教材補充詞；義項待核對。')).toBe(true);
 });
 it('adopts no pictures, running examples, sense IDs or textbook questions',()=>{
  expect(unit.deliveryMode).toBe('text_only');expect(unit.questions).toEqual([]);expect(practiceIds(unit.items)).toEqual([]);

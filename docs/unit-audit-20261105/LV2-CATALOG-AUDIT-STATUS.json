@@ -1,6 +1,6 @@
 {
   "scope": "Exact current repository curriculum catalogue, not a publisher edition table of contents or an inferred numeric range.",
-  "checkedAtUtc": "2026-11-06T16:04:05.153Z",
+  "checkedAtUtc": "2026-11-06T17:39:30.735Z",
   "basis": {
     "model": "src/features/direct/model.ts",
     "catalog": "src/features/vocabulary/textbookCatalog.ts",
@@ -74,13 +74,13 @@
     36,
     37,
     38,
-    39
-  ],
-  "currentAuditUnits": [
+    39,
     40
   ],
+  "currentAuditUnits": [
+    41
+  ],
   "notYetAuditedUnits": [
-    41,
     42,
     43,
     44,
@@ -579,9 +579,30 @@
       "curriculumPath": "src/features/direct/curriculumLV2Unit40.json",
       "registeredInModel": true,
       "deliveryMode": "text_only",
-      "auditStatus": "audit_after_complete_pending_checkpoint_own_ci",
+      "auditStatus": "audit_checkpoint_own_ci_success",
       "ledger": "docs/unit-audit-20261105/LV2-U40-ledger.json",
-      "ownCi": null
+      "ownCi": {
+        "commit": "8febac6a2ee1138e6f9cea1ef064b78abac67a57",
+        "run": 42249242236,
+        "job": 127999561855,
+        "url": "https://github.com/chiehco/vocab-app/actions/runs/42249242236/job/127999561855",
+        "status": "completed",
+        "conclusion": "success",
+        "checkoutShaReadFromFullLog": true,
+        "testFiles": 230,
+        "tests": 1876,
+        "pythonBatches": [
+          14,
+          7,
+          72,
+          10
+        ],
+        "lint": "success",
+        "typecheck": "success",
+        "build": "success",
+        "buildLogCompletedAtUtc": "2026-11-06T16:20:39.0119792Z",
+        "jobCompletedAtUtc": "2026-11-06T16:20:43Z"
+      }
     },
     {
       "unit": 41,
@@ -606,8 +627,8 @@
       "curriculumPath": "src/features/direct/curriculumLV2Unit41.json",
       "registeredInModel": true,
       "deliveryMode": "text_only",
-      "auditStatus": "not_audited_in_this_full_audit",
-      "ledger": null,
+      "auditStatus": "audit_after_complete_pending_checkpoint_own_ci_image_detail_followup",
+      "ledger": "docs/unit-audit-20261105/LV2-U41-ledger.json",
       "ownCi": null
     },
     {
@@ -879,7 +900,7 @@
   },
   "releaseGate": {
     "wholeRegisteredLvReady": false,
-    "reason": "U40 needs its new pushed-head CI; later registered units remain unaudited. U38 two image candidates await verified asset delivery/integration/App validation. U26 and edition-boundary limits remain explicit.",
+    "reason": "U41 needs its own new pushed-head CI; later registered units remain unaudited. U38 two image repairs and U41 discover actor quantity remain explicit. U26 and edition-boundary limitations retained.",
     "mainMerged": false,
     "deployed": false
   }
