@@ -1,0 +1,49 @@
+{
+  "state": "passed",
+  "recordedAt": "2026-11-06T01:13:43.289Z",
+  "checks": [
+    {
+      "exitCode": 0,
+      "files": 6,
+      "log": "LV2-U28-regression-initial.txt",
+      "tests": 53,
+      "check": "initial-regression",
+      "logSha256": "5416771961bfa62898f2374a9d61f5682ba08d3e1383c310f64c8fb76cf27240"
+    },
+    {
+      "exitCode": 0,
+      "log": "LV2-U28-regression-remaining.txt",
+      "check": "remaining-regression",
+      "logSha256": "d392b2e362771283f28a7106de0e8a79b19d7ef8b2ee88320709f425b33ae107"
+    },
+    {
+      "exitCode": 0,
+      "log": "LV2-U28-python-final.txt",
+      "check": "python",
+      "logSha256": "d5a808b5a153d9688588fe21cdaf5c9d3435dfa088f93a9b8bed3433c479b2b4"
+    },
+    {
+      "exitCode": 0,
+      "log": "LV2-U28-lint.txt",
+      "check": "lint",
+      "logSha256": "963d8b8c005a3de15b88ef4bbab13135ef06da1241814a429299a616cb039d77"
+    },
+    {
+      "exitCode": 0,
+      "log": "LV2-U28-typecheck.txt",
+      "check": "typecheck",
+      "logSha256": "0d93be78e4da5c0077681c4d834163661d59ddd24a0477595fb70ec25d5a5ea8"
+    },
+    {
+      "exitCode": 0,
+      "log": "LV2-U28-build.txt",
+      "check": "build",
+      "logSha256": "1bb3cd80edaf105cdc205ef2dcbf1a94a8d976af234a3033cb145b2b7646dd92"
+    }
+  ],
+  "maxWorkers": 1,
+  "timeoutMs": 5000,
+  "defaultTimeoutUnchanged": true,
+  "pythonTests": 41,
+  "history": "The earlier record and part full-row form fingerprints are preserved. Only exact later U28 patches are reversed before the earlier fixtures, with mutation negatives. All historical hashes remain fixed."
+}

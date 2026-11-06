@@ -1,0 +1,284 @@
+{
+  "unit": "LV2-U28",
+  "checkpointAt": "2026-11-06T01:13:43.292Z",
+  "priorCheckpoint": "3106a39dea97360a62a2db4d8e98300724d94fdb",
+  "priorCheckpointFullCi": {
+    "commit": "3106a39dea97360a62a2db4d8e98300724d94fdb",
+    "run": 42134574577,
+    "job": 127619339445,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42134574577/job/127619339445",
+    "status": "completed",
+    "conclusion": "success",
+    "checkoutShaMatched": true,
+    "testFiles": 217,
+    "tests": 1764,
+    "python": [
+      14,
+      7,
+      39,
+      10
+    ],
+    "steps": [
+      {
+        "name": "Set up job",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/checkout@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/setup-node@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm ci",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm ci --prefix services/pageviews-cloudflare",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm test --prefix services/pageviews-cloudflare",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/setup-python@v5",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m pip install openpyxl==3.1.5 Pillow==12.0.0",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m unittest discover -s scripts -p 'test_apply_lv3_*.py'",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m unittest discover -s scripts -p 'test_apply_lv4_*.py'",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m unittest discover -s scripts -p 'test_apply_unit_audit.py'",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m unittest discover -s scripts -p 'test_build_sa_pack_lv5_legacy.py'",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python scripts/prepare_recovered_unit_drafts.py --check",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python scripts/integrate_recovered_units.py --check",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm run lint",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm run typecheck",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm run test -- --maxWorkers=1 --testTimeout=15000",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm run build",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/setup-python@v5",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/setup-node@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/checkout@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Complete job",
+        "conclusion": "success"
+      }
+    ],
+    "buildSummaryAt": "2026-11-06T00:24:27.9605021Z",
+    "completedAt": "2026-11-06T00:24:32Z",
+    "fullDecodedLogActuallyRead": true,
+    "logSha256": "9df6124c7cbff6b9b99e48d9c49423da006ac410a64a3f35b8f82a03edcb83ab",
+    "recordedAt": "2026-11-06T00:30:05.705Z"
+  },
+  "newCheckpointFullCi": {
+    "status": "pending_exact_head_after_commit"
+  },
+  "state": "exact_corrections_saved_actual_app_and_local_checks_passed_with_explicit_remaining_limits",
+  "scope": {
+    "sourceItems": 157,
+    "vocabulary": 92,
+    "grammar": 65,
+    "mappedVocabularyOccurrences": 85,
+    "formalWords": 84,
+    "examples": 154,
+    "hintLabels": 37,
+    "emptyHintsPreserved": 117,
+    "notesRead": 91,
+    "usagePages": 21,
+    "changedNotesActuallyVisible": 3,
+    "newFormCards": 17,
+    "newFormPanels": 34,
+    "sourcePhotos": 10,
+    "sourceReadableHalves": 20,
+    "generalImages": 34,
+    "unpicturedGeneralCards": 50,
+    "savedRows": 2476,
+    "progressTables": 14
+  },
+  "counts": {
+    "mainRows": 66,
+    "mainFields": 123,
+    "wordRows": 40,
+    "clozePos": 2,
+    "hintsRefined": 6,
+    "practiceStatuses": 10,
+    "senseRows": 9,
+    "officialExamSources": 4,
+    "notes": 3,
+    "noteFields": 4,
+    "newFormKeys": 17,
+    "formalPatchRows": 86,
+    "formalFields": 144,
+    "curriculumRows": 84,
+    "curriculumFields": 107,
+    "printedGlosses": 7,
+    "printedPos": 4,
+    "grammarExplanations": 65,
+    "dictionarySnapshots": 11,
+    "countabilityQualifications": 1
+  },
+  "manifests": [
+    "LV2-U28-patches.json",
+    "LV2-U28-notes-patches.json",
+    "LV2-U28-verified-forms-patches.json",
+    "LV2-U28-curriculum-patches.json"
+  ],
+  "evidence": {
+    "sources": "LV2-U28-source-research.json",
+    "pixels": "LV2-U28-original-review.json",
+    "actualApp": "validation/LV2-U28-reopen-summary.json",
+    "exactInverse": "validation/LV2-U28-exact-inverse.json"
+  },
+  "localValidation": {
+    "state": "passed",
+    "recordedAt": "2026-11-06T01:13:43.289Z",
+    "checks": [
+      {
+        "exitCode": 0,
+        "files": 6,
+        "log": "LV2-U28-regression-initial.txt",
+        "tests": 53,
+        "check": "initial-regression",
+        "logSha256": "5416771961bfa62898f2374a9d61f5682ba08d3e1383c310f64c8fb76cf27240"
+      },
+      {
+        "exitCode": 0,
+        "log": "LV2-U28-regression-remaining.txt",
+        "check": "remaining-regression",
+        "logSha256": "d392b2e362771283f28a7106de0e8a79b19d7ef8b2ee88320709f425b33ae107"
+      },
+      {
+        "exitCode": 0,
+        "log": "LV2-U28-python-final.txt",
+        "check": "python",
+        "logSha256": "d5a808b5a153d9688588fe21cdaf5c9d3435dfa088f93a9b8bed3433c479b2b4"
+      },
+      {
+        "exitCode": 0,
+        "log": "LV2-U28-lint.txt",
+        "check": "lint",
+        "logSha256": "963d8b8c005a3de15b88ef4bbab13135ef06da1241814a429299a616cb039d77"
+      },
+      {
+        "exitCode": 0,
+        "log": "LV2-U28-typecheck.txt",
+        "check": "typecheck",
+        "logSha256": "0d93be78e4da5c0077681c4d834163661d59ddd24a0477595fb70ec25d5a5ea8"
+      },
+      {
+        "exitCode": 0,
+        "log": "LV2-U28-build.txt",
+        "check": "build",
+        "logSha256": "1bb3cd80edaf105cdc205ef2dcbf1a94a8d976af234a3033cb145b2b7646dd92"
+      }
+    ],
+    "maxWorkers": 1,
+    "timeoutMs": 5000,
+    "defaultTimeoutUnchanged": true,
+    "pythonTests": 41,
+    "history": "The earlier record and part full-row form fingerprints are preserved. Only exact later U28 patches are reversed before the earlier fixtures, with mutation negatives. All historical hashes remain fixed."
+  },
+  "preserved": {
+    "formalExampleEnglishChineseBlanksAnswers": true,
+    "headwordPosAndWholeWordStatuses": true,
+    "rawSourceAndOriginalCurriculumHashes": true,
+    "allArtAndExactPairs": true,
+    "textOnlyReadOnly": true,
+    "nullMappings": 7,
+    "progressTables": 14,
+    "frozenReleasePreflightCheckpoint": "3106a39dea97360a62a2db4d8e98300724d94fdb"
+  },
+  "pending": [
+    {
+      "word": "album",
+      "field": "meaningZh 白色物",
+      "state": "Exact scope unverified; original value retained. Latin etymology alone does not prove a general English white-substance sense."
+    },
+    {
+      "word": "recorder",
+      "field": "meaningZh 宏錄製器",
+      "state": "Exact computing terminology unverified; original value retained alongside sourced device/person/instrument/judge uses."
+    },
+    {
+      "word": "similar",
+      "field": "meaningZh 相似的東西",
+      "state": "Exact noun-source scope remains unverified; no deletion or whole-word certification."
+    },
+    {
+      "id": "EX8b78e3c6",
+      "word": "private",
+      "reason": "in private adjective/noun idiom classification needs direct project convention; do not auto-change",
+      "field": "sensePos",
+      "state": "Existing project analysis retained pending a fixed word-level classification convention."
+    },
+    {
+      "id": "EXeef45951",
+      "word": "due",
+      "reason": "due to compound preposition versus word-level adjective analysis, same because-of granularity boundary",
+      "field": "sensePos",
+      "state": "Existing project analysis retained pending a fixed word-level classification convention."
+    },
+    {
+      "scope": "Existing example-based exam flags",
+      "state": "environment/material/create/thus flags are not newly certified official questions. The four specific CEEC entries above and earlier verified secret/part sources are independent."
+    },
+    {
+      "scope": "Seven unmapped supplements",
+      "state": "Printed meanings and four explicit POS restored; formal IDs remain null and the other three POS remain empty."
+    },
+    {
+      "scope": "Source transcription",
+      "state": "Raw source and all English constructions remain unchanged; material countability is explicitly labelled dictionary supplement. The printed secret singular teaching convention is retained."
+    }
+  ],
+  "next": {
+    "key": "7000.ivy.LV2.29",
+    "first": "verify current source order on entry",
+    "state": "not_started"
+  },
+  "deployment": "No merge, deployment, PR or publication-mode change."
+}
