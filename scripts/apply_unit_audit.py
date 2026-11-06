@@ -75,6 +75,9 @@ LV2_U41_NOTE_IDS = set('NXcc6e3da7 NXd66ae71e'.split())
 LV2_U42_FORM_IDS = set('W001213 W001234 W001288 W001583 W001782 W001141 W001777 W001846 W001476 W001856 W001960 W001626 W001859 W001004 W002664 W002844 W002648 W001509 W003858'.split())
 LV2_U42_NOTE_IDS = set('NX758ac21a NXc90a2b74 NXce04400b NXe2070817 NXb1bdd317 NXdcd9fae6 NX7cd0fd68'.split())
 LV2_U42_TRANSLATION_IDS = {'EXbf4b15ea'}
+LV2_U44_FORM_IDS = set('W001236 W001015 W001111 W001131 W001738 W001948 W001022 W001888 W001367 W001481 W002079 W001592 W004318 W003857 W002951 W003465 W004503'.split())
+LV2_U44_NOTE_IDS = set('NX8d1ff33e NX8dc31b62 NXf93cd878'.split())
+LV2_U44_TRANSLATION_IDS = set('EXfe7adb4e EXddf05900 EXe95ee4e3'.split())
 LV2_U43_FORM_IDS = set('W001851 W001906 W001368 W001070 W001682 W001260 W001013 W001308 W001539 W001249 W003632 W002956 W003185 W003302 W003594 W004213 W003547'.split())
 LV2_U43_NOTE_IDS = set('NX8db57c8a NX4d3c3d3a NX3ea61efe NXec541beb NXf1035eb9'.split())
 LV2_U43_TRANSLATION_IDS = {'EXb4e6bb31'}
@@ -107,6 +110,13 @@ def validate_patch_shape(patch):
             fact = next(f for f in facts if f['noteId'] == patch['id'])
             assert patch['dataset'] == 'notes' and patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U30 full-note source guards required'
             assert set(patch['after']) == ({'title','content'} if patch['id'] == 'NXf728e282' else {'content'}), 'Only exact U30 note content may change'
+            return
+        if patch['id'] in LV2_U44_NOTE_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U44-NOTE-SOURCES.json')['facts']
+            assert len(facts) == 3 and {f['noteId'] for f in facts} == LV2_U44_NOTE_IDS
+            fact = next(f for f in facts if f['noteId'] == patch['id'])
+            assert patch['dataset'] == 'notes' and patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U44 full-note source guards required'
+            assert set(patch['after']) == {'content'}, 'Only exact U44 note content may change'
             return
         if patch['id'] in LV2_U43_NOTE_IDS:
             facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U43-NOTE-SOURCES.json')['facts']
@@ -235,6 +245,13 @@ def validate_patch_shape(patch):
         assert patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact note content, word, title, type and status guards required'
         assert set(patch['after']) == {'content'}, 'No note identity, title, type or status change'
         assert fact['after']['content'] == fact['before']['content'].replace('腦部創傷','頭部傷勢'), 'Only the verified duplicate translation is editable'
+    if 'verbForms' in patch['after'] and patch['id'] in LV2_U44_FORM_IDS:
+        facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U44-VERB-FORMS-SOURCES.json')['facts']
+        assert len(facts) == 17 and {f['wordId'] for f in facts} == LV2_U44_FORM_IDS
+        assert patch['dataset'] == 'words' and patch['before'] == {'verbForms': ABSENT} and set(patch['after']) == {'verbForms'}
+        fact = next(f for f in facts if f['wordId'] == patch['id'])
+        assert patch['after']['verbForms'] == fact['verbForms'], 'Exact U44 forms and source required'
+        return
     if 'verbForms' in patch['after'] and patch['id'] in LV2_U43_FORM_IDS:
         facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U43-VERB-FORMS-SOURCES.json')['facts']
         assert len(facts) == 17 and {f['wordId'] for f in facts} == LV2_U43_FORM_IDS
@@ -425,6 +442,13 @@ def validate_patch_shape(patch):
         fact = next(f for f in facts if f['wordId'] == patch['id'])
         assert patch['after']['verbForms'] == fact['verbForms'], 'Unverified principal parts or source'
     if 'sentenceZh' in patch['after']:
+        if patch['id'] in LV2_U44_TRANSLATION_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U44-TRANSLATION-SOURCES.json')['facts']
+            assert patch['dataset'] == 'examples' and len(facts) == 3 and {f['exampleId'] for f in facts} == LV2_U44_TRANSLATION_IDS
+            fact = next(f for f in facts if f['exampleId'] == patch['id'])
+            assert patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U44 headword, English, blank, answer and Chinese guards required'
+            assert set(patch['after']) == {'sentenceZh'}
+            return
         if patch['id'] in LV2_U43_TRANSLATION_IDS:
             facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U43-TRANSLATION-SOURCES.json')['facts']
             assert patch['dataset'] == 'examples' and len(facts) == 1 and {f['exampleId'] for f in facts} == LV2_U43_TRANSLATION_IDS
@@ -505,6 +529,12 @@ def apply_to_row(row, patch):
         assert row[patch['key']] == patch['id'], 'Exact recorded row identity required'
     if 'verbForms' in patch['after']:
         assert row['word'] == patch['after']['verbForms']['base'] and 'v.' in row['pos'], 'Forms belong only to this existing verb'
+        if patch['id'] in LV2_U44_FORM_IDS:
+            fact = next(f for f in read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U44-VERB-FORMS-SOURCES.json')['facts'] if f['wordId'] == patch['id'])
+            assert 'v.' in row['posAll'], 'Exact lexical verb POS required for U44 forms'
+            non_form = {k: v for k, v in row.items() if k != 'verbForms'}
+            digest = hashlib.sha256(json.dumps(non_form, ensure_ascii=False, separators=(',', ':')).encode('utf-8')).hexdigest()
+            assert digest == fact['nonFormRowSha256'], 'Exact LV2 U44 non-form row guard changed'
         if patch['id'] in LV2_U43_FORM_IDS:
             fact = next(f for f in read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U43-VERB-FORMS-SOURCES.json')['facts'] if f['wordId'] == patch['id'])
             non_form = {k: v for k, v in row.items() if k != 'verbForms'}

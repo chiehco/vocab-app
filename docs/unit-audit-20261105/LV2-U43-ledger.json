@@ -1,8 +1,8 @@
 {
   "unit": "LV2-U43",
-  "state": "local_checkpoint_complete_source_limits_retained_own_new_head_ci_pending",
+  "state": "checkpoint_own_ci_success_source_limits_retained",
   "baseCheckpoint": "7ff55408250827184e243d2a83f31ca77088c3ee",
-  "updatedAt": "2026-11-06T21:02:45.018Z",
+  "updatedAt": "2026-11-06T22:15:59.391Z",
   "scope": {
     "learningItems": 155,
     "vocabulary": 103,
@@ -313,7 +313,27 @@
     "jobCompletedAtUtc": "2026-11-06T20:11:53Z"
   },
   "newCheckpointFullCi": {
-    "state": "pending_this_new_commit"
+    "commit": "b74edddcfa69c1e1ed12ef6178487509fdc46431",
+    "run": 42293684131,
+    "job": 128153311034,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42293684131/job/128153311034",
+    "status": "completed",
+    "conclusion": "success",
+    "checkoutShaReadFromFullLog": true,
+    "testFiles": 234,
+    "tests": 1914,
+    "pythonBatches": [
+      14,
+      7,
+      81,
+      3,
+      10
+    ],
+    "lint": "success",
+    "typecheck": "success",
+    "build": "success",
+    "buildLogCompletedAtUtc": "2026-11-06T21:22:16.1897862Z",
+    "jobCompletedAtUtc": "2026-11-06T21:22:20Z"
   },
   "releaseReconciliation": {
     "mainCommit": "0f4eb27961571ce393a1f1a2bc63f1d558bef1fb",
