@@ -854,14 +854,56 @@
       "additionalUnit": "LV2-U44",
       "wordId": "W001115",
       "learningItemId": "LI-LV2U44-V013",
-      "state": "confirmed_image_repair_pending_supported_input",
-      "observation": "Native1254 roof has closed dome without a visible telescope; original English/Chinese retained.",
+      "state": "locally_integrated_reopened_saved_pending_exact_image_checkpoint_ci",
+      "observation": "Exact delivered telescope image integrated; all3 consumers reopened and saved. Own new-head CI pending.",
       "evidence": "validation/LV2-U44-building-image-followup.json",
       "generationStarted": false,
-      "candidateExists": false,
+      "candidateExists": true,
       "technicalError": "AbsolutePathBuf deserialized without a base path at line 1 column 151",
       "denied": false,
-      "next": "Provide supported-input minimal candidate; verify historical unit/gallery and general consumers independently, integrate with exact guards, then actual App/persistence acceptance."
+      "next": "Read exact image integration head full CI; continue U45.",
+      "historicalTextCheckpoint": {
+        "state": "confirmed_image_repair_pending_supported_input",
+        "observation": "Native1254 roof has closed dome without a visible telescope; original English/Chinese retained.",
+        "generationStarted": false,
+        "candidateExists": false,
+        "technicalError": "AbsolutePathBuf deserialized without a base path at line 1 column 151"
+      },
+      "localGenerationStarted": false,
+      "currentResolution": {
+        "assetCommit": "d866085e76aeec6b05c1d87346221d5fe22ffbd4",
+        "newPath": "wordbeast/lv2-reviewed/LV2-U44-building-60c34c741c62.webp",
+        "newSha256": "60c34c741c62e77dccf4fa37f9fcbbfc2b40b705787f18da76c1563954e53e4e",
+        "originalRetained": true,
+        "captionsUnchanged": true,
+        "actualConsumersReopened": 3,
+        "contentRowsReadBack": 3446,
+        "progressEvidence": [
+          {
+            "phase": "after",
+            "tables": 14,
+            "learningAndCustomDataUnchanged": true,
+            "nativeSnapshotHash": "2a2a7cb52ba9170ff3e8e2e2191325cee239f473657b9fc6cdd16354370213fe",
+            "beforeNativeSnapshotHash": "086d16fabe5047205c30f4ab483532095c4433e0113caf73c0dd26360618429a",
+            "exactUnchangedTables": 13,
+            "ordinaryUiDifference": "Only learning:last-location.updatedAt changed after actual navigation; all other settings fields/rows exact.",
+            "normalizedExactMatch": true
+          },
+          {
+            "phase": "afterReopen",
+            "tables": 14,
+            "learningAndCustomDataUnchanged": true,
+            "nativeSnapshotHash": "16ed498e40ddf3041f15c6610b39f9fa99d8278c5805165c491b45618cf79188",
+            "beforeNativeSnapshotHash": "086d16fabe5047205c30f4ab483532095c4433e0113caf73c0dd26360618429a",
+            "exactUnchangedTables": 13,
+            "ordinaryUiDifference": "Only learning:last-location.updatedAt changed after actual navigation; all other settings fields/rows exact.",
+            "normalizedExactMatch": true
+          }
+        ],
+        "generatedInThisExecutor": false,
+        "validation": "validation/LV2-U44-building-image-integration.json",
+        "ownIntegrationCi": "pending_exact_new_commit"
+      }
     }
   ],
   "sourceFormResearchCoverage": {

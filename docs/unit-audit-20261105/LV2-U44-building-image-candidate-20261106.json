@@ -1,0 +1,43 @@
+{
+  "state": "candidate_asset_ready_for_desktop_integration",
+  "baseCommit": "bef14d267b348c73b5627b3d213399134df2badd",
+  "unit": "LV2-U44",
+  "word": "building",
+  "wordId": "W001115",
+  "learningItemId": "LI-LV2U44-V013",
+  "sharedSourceCardId": "LV1-U09-04",
+  "originalRepoPath": "public/wordbeast/lv1-reviewed/LV1-U09-04-a9e06429c10e.webp",
+  "originalSha256": "e6f1f487b84df2bdf76f609cd607c19b4306f6984ae5ca748628eb995962a1ba",
+  "captionEn": "The new science building has a big telescope on the roof.",
+  "captionZh": "新的科學大樓屋頂上有一座大望遠鏡。",
+  "repoPath": "public/wordbeast/lv2-reviewed/LV2-U44-building-60c34c741c62.webp",
+  "sha256": "60c34c741c62e77dccf4fa37f9fcbbfc2b40b705787f18da76c1563954e53e4e",
+  "gitBlobSha1": "43cef14886f1ca86508c425fc50dfe882ce9c02f",
+  "bytes": 95278,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "format": "WebP",
+  "mode": "RGB",
+  "quality": 85,
+  "method": 6,
+  "generatedPngSha256": "00575eb5c8e572cd0d1a41f4b036f09f32c6352aa5ba09e2284239666769c591",
+  "methodDescription": "Built-in image_gen edit succeeded on the first cloud attempt, followed by WebP format encoding. No CLI/API fallback.",
+  "generationPrompt": "Use case: precise-object-edit\nAsset type: square vocabulary-card watercolor illustration.\nInput image: the supplied building-original.webp is the edit target.\nPrimary request: change only the closed observatory on the science building's roof. Open its dome slit wide enough to visibly show one large, recognizable astronomical telescope, with a long telescope tube, clear circular lens opening, and plausible mounted support on the rooftop inside the opened dome. The telescope points upward into the sky and must be plainly identifiable, rather than hidden inside the dome. This should clearly illustrate “The new science building has a big telescope on the roof.”\nConstraints: preserve the original watercolor science building, atom emblem, olive Doudou character holding rolled plans, every existing limb and facial feature, trees, paper texture, perspective, soft muted olive/beige/blue-gray palette, lighting, square framing, and whitespace. Keep all non-rooftop regions unchanged as closely as possible. Do not add text, characters, limbs, or unrelated objects. Do not change the caption or replace the building. Opaque paper background.",
+  "cloudPixelReview": "Final WebP independently inspected. Open rooftop dome visibly contains one upward-pointing astronomical telescope with recognizable tube, circular lens and mounted support. Original building, atom emblem, Doudou holding plans, plants, perspective and watercolor composition remain visually consistent. Minor generative texture variation exists outside the roof, so preservation is not pixel-identical.",
+  "originalAssetUnmodified": true,
+  "captionsUnmodified": true,
+  "codeAndBindingsChanged": false,
+  "mainChanged": false,
+  "deployed": false,
+  "appAcceptance": false,
+  "integrationRequirements": [
+    "Fetch into the consuming executor, verify hashes/specifications and inspect actual image pixels.",
+    "Resolve the general building consumer and independently check the historical LV1-U09-04 unit and gallery consumers against their exact unchanged captions.",
+    "Preserve the original immutable image and source approval evidence, and apply exact guarded bindings only.",
+    "Keep LV2 source curriculum text_only/read_only.",
+    "Reopen actual App cards after normal update, verify displayed image and captions, saved state and unchanged progress tables.",
+    "Run relevant regression, lint, typecheck, build and exact new-commit CI before acceptance."
+  ]
+}

@@ -1,5 +1,6 @@
 import {beforeU38PlaygroundPair} from './lv2ImageRepairs.testSupport';
 import imageRepairs from '../../../docs/unit-audit-20261105/LV2-U38-U41-image-repairs.json';
+import buildingRepair from '../../../docs/unit-audit-20261105/LV2-U44-building-image-repair.json';
 import {beforeU25Pairs} from './u25Pairs.testSupport';
 import {beforeU23Pairs} from './u23Pairs.testSupport';
 import { describe, expect, it } from 'vitest';
@@ -35,7 +36,8 @@ describe('reviewed LV1 image-only release', () => {
     for (const card of cards.filter(c=>c.unit===unit)) {
       const record = audit.find(a => a.id === card.id)!;
       expect(record).toBeDefined();
-      if(card.id==='LV1-U09-27'){expect(card).toEqual(imageRepairs.playground.after);expect(record).toEqual(imageRepairs.playground.originalApproval);expect(hash(readFileSync('public/'+card.illustration.path))).toBe(imageRepairs.playground.replacementImageSha256);expect(hash(readFileSync('public/'+imageRepairs.playground.before.illustration.path))).toBe(record.publishedImageSha256);}else expect(hash(readFileSync('public/' + card.illustration.path))).toBe(record.publishedImageSha256);
+      if(card.id==='LV1-U09-04'){expect(card).toEqual(buildingRepair.after);expect(record).toEqual(buildingRepair.originalApproval);expect(hash(readFileSync('public/'+card.illustration.path))).toBe(buildingRepair.replacementImageSha256);expect(hash(readFileSync('public/'+buildingRepair.before.illustration.path))).toBe(record.publishedImageSha256);}
+      else if(card.id==='LV1-U09-27'){expect(card).toEqual(imageRepairs.playground.after);expect(record).toEqual(imageRepairs.playground.originalApproval);expect(hash(readFileSync('public/'+card.illustration.path))).toBe(imageRepairs.playground.replacementImageSha256);expect(hash(readFileSync('public/'+imageRepairs.playground.before.illustration.path))).toBe(record.publishedImageSha256);}else expect(hash(readFileSync('public/' + card.illustration.path))).toBe(record.publishedImageSha256);
       expect(hash(card.illustration.captionEn + '\n' + card.illustration.captionZh)).toBe(record.textSha256);
       const src = '/' + card.illustration.path + '?v=test';
       expect(approvedCurriculumIllustration(card.displayWord, src)).toEqual(card.illustration);

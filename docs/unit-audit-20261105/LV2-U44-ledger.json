@@ -1,8 +1,8 @@
 {
   "unit": "LV2-U44",
-  "state": "text_and_saved_content_accepted_building_image_pending_own_new_head_ci_pending",
+  "state": "text_checkpoint_ci_success_building_local_reopened_saved_image_checkpoint_ci_pending",
   "baseCheckpoint": "b74edddcfa69c1e1ed12ef6178487509fdc46431",
-  "updatedAt": "2026-11-06T22:35:54.977Z",
+  "updatedAt": "2026-11-06T23:25:37.903Z",
   "scope": {
     "learningItems": 161,
     "vocabulary": 102,
@@ -46,14 +46,17 @@
     "sourceEnglishOrderLabelsQuestionsAndReadOnlyModePreserved": true,
     "unmappedIdsRemainNull": 14,
     "sourceImagesAndRunningExamplesAdopted": 0,
-    "all26OldImageBytesBindingsAndCaptionsPreserved": true,
-    "wholeImageAcceptance": false,
+    "wholeImageAcceptance": true,
     "originalHashFixturesChanged": false,
     "formsRequireExistingLexicalV": true,
     "noFormsInventedForNounOnlyChartParagraphOrModalWill": true,
     "deliverOfficial111Q1VerifiedSeparateSofaPracticeEnglishPreserved": true,
     "rareUpsetMetalToolFairArchaicNounWorthyNounPreciousRestrictedAdverbAndCouponSpecimenRetained": true,
-    "dataDateCommandVisibleHeadwordQualification": true
+    "dataDateCommandVisibleHeadwordQualification": true,
+    "textCheckpointHadAll26OldImageBytesBindingsAndCaptionsPreserved": true,
+    "all26OldImageBytesAndCaptionsPreserved": true,
+    "onlyLaterImageBindingChange": "LV1-U09-04 path; exact general/unit/gallery consumers",
+    "wholeImageAcceptanceScope": "Local previously inspected26 plus repaired building; integration head CI still pending, no deployment."
   },
   "verification": {
     "reopens": {
@@ -198,18 +201,14 @@
       "newHeadOwnCi": "pending_this_new_commit"
     },
     "afterPixels": "validation/LV2-U44-after-pixel-review.json",
-    "limits": "All161 source items,87 general cards and129 complete examples were reopened and field-compared. All26 unchanged image previews and representative after/mobile pixels were viewed; building remains a confirmed pending repair. Not every screenshot was manually reread or every retained rare gloss newly certified."
+    "limits": "All161 source items,87 general cards and129 complete examples were reopened and field-compared. All26 unchanged image previews and representative after/mobile pixels were viewed; building remains a confirmed pending repair. Not every screenshot was manually reread or every retained rare gloss newly certified.",
+    "laterBuildingImageIntegration": {
+      "evidence": "validation/LV2-U44-building-image-integration.json",
+      "localAppAndSavedAccepted": true,
+      "ownNewHeadCiPending": true
+    }
   },
   "retainedPending": [
-    {
-      "ids": [
-        "LI-LV2U44-V013",
-        "W001115",
-        "LV1-U09-04"
-      ],
-      "field": "image",
-      "reason": "At native1254 size, rooftop has a closed observatory dome and no visible big telescope. One built-in edit attempt failed at Windows path deserialization before generation; no candidate exists. Exact repair handoff is retained separately."
-    },
     {
       "ids": [
         "EXe5f73d0e"
@@ -261,16 +260,59 @@
     }
   ],
   "imageFollowups": {
-    "confirmedPending": [
-      "building"
-    ],
+    "confirmedPending": [],
     "evidence": "validation/LV2-U44-building-image-followup.json",
     "generationStarted": false,
-    "candidateExists": false,
+    "candidateExists": true,
     "technicalFailureBeforeGeneration": true,
     "denied": false,
     "notAnApprovalBlocker": true,
-    "previousU38U41RepairsRemainAccepted": true
+    "previousU38U41RepairsRemainAccepted": true,
+    "originalTextCheckpoint": {
+      "confirmedPending": [
+        "building"
+      ],
+      "generationStarted": false,
+      "candidateExists": false,
+      "technicalFailureBeforeGeneration": true
+    },
+    "currentResolution": {
+      "assetCommit": "d866085e76aeec6b05c1d87346221d5fe22ffbd4",
+      "newPath": "wordbeast/lv2-reviewed/LV2-U44-building-60c34c741c62.webp",
+      "newSha256": "60c34c741c62e77dccf4fa37f9fcbbfc2b40b705787f18da76c1563954e53e4e",
+      "originalRetained": true,
+      "captionsUnchanged": true,
+      "actualConsumersReopened": 3,
+      "contentRowsReadBack": 3446,
+      "progressEvidence": [
+        {
+          "phase": "after",
+          "tables": 14,
+          "learningAndCustomDataUnchanged": true,
+          "nativeSnapshotHash": "2a2a7cb52ba9170ff3e8e2e2191325cee239f473657b9fc6cdd16354370213fe",
+          "beforeNativeSnapshotHash": "086d16fabe5047205c30f4ab483532095c4433e0113caf73c0dd26360618429a",
+          "exactUnchangedTables": 13,
+          "ordinaryUiDifference": "Only learning:last-location.updatedAt changed after actual navigation; all other settings fields/rows exact.",
+          "normalizedExactMatch": true
+        },
+        {
+          "phase": "afterReopen",
+          "tables": 14,
+          "learningAndCustomDataUnchanged": true,
+          "nativeSnapshotHash": "16ed498e40ddf3041f15c6610b39f9fa99d8278c5805165c491b45618cf79188",
+          "beforeNativeSnapshotHash": "086d16fabe5047205c30f4ab483532095c4433e0113caf73c0dd26360618429a",
+          "exactUnchangedTables": 13,
+          "ordinaryUiDifference": "Only learning:last-location.updatedAt changed after actual navigation; all other settings fields/rows exact.",
+          "normalizedExactMatch": true
+        }
+      ],
+      "generatedInThisExecutor": false,
+      "validation": "validation/LV2-U44-building-image-integration.json",
+      "ownIntegrationCi": "pending_exact_new_commit"
+    },
+    "newIntegrationCi": {
+      "state": "pending_exact_new_commit"
+    }
   },
   "priorCheckpointFullCi": {
     "commit": "b74edddcfa69c1e1ed12ef6178487509fdc46431",
@@ -296,7 +338,27 @@
     "jobCompletedAtUtc": "2026-11-06T21:22:20Z"
   },
   "newCheckpointFullCi": {
-    "state": "pending_this_new_commit"
+    "commit": "bef14d267b348c73b5627b3d213399134df2badd",
+    "run": 42306062567,
+    "job": 128195538342,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42306062567/job/128195538342",
+    "status": "completed",
+    "conclusion": "success",
+    "checkoutShaReadFromFullLog": true,
+    "testFiles": 235,
+    "tests": 1926,
+    "pythonBatches": [
+      14,
+      7,
+      84,
+      3,
+      10
+    ],
+    "lint": "success",
+    "typecheck": "success",
+    "build": "success",
+    "buildLogCompletedAtUtc": "2026-11-06T22:54:29.0224499Z",
+    "jobCompletedAtUtc": "2026-11-06T22:54:33Z"
   },
   "releaseReconciliation": {
     "mainCommit": "0f4eb27961571ce393a1f1a2bc63f1d558bef1fb",
@@ -326,5 +388,52 @@
     "deployed": false,
     "wholeLevelReleaseSeparate": true,
     "frozenHistoricalCandidate": "3106a39dea97360a62a2db4d8e98300724d94fdb"
-  }
+  },
+  "resolvedImageFollowups": [
+    {
+      "historicalIssue": {
+        "ids": [
+          "LI-LV2U44-V013",
+          "W001115",
+          "LV1-U09-04"
+        ],
+        "field": "image",
+        "reason": "At native1254 size, rooftop has a closed observatory dome and no visible big telescope. One built-in edit attempt failed at Windows path deserialization before generation; no candidate exists. Exact repair handoff is retained separately."
+      },
+      "currentResolution": {
+        "assetCommit": "d866085e76aeec6b05c1d87346221d5fe22ffbd4",
+        "newPath": "wordbeast/lv2-reviewed/LV2-U44-building-60c34c741c62.webp",
+        "newSha256": "60c34c741c62e77dccf4fa37f9fcbbfc2b40b705787f18da76c1563954e53e4e",
+        "originalRetained": true,
+        "captionsUnchanged": true,
+        "actualConsumersReopened": 3,
+        "contentRowsReadBack": 3446,
+        "progressEvidence": [
+          {
+            "phase": "after",
+            "tables": 14,
+            "learningAndCustomDataUnchanged": true,
+            "nativeSnapshotHash": "2a2a7cb52ba9170ff3e8e2e2191325cee239f473657b9fc6cdd16354370213fe",
+            "beforeNativeSnapshotHash": "086d16fabe5047205c30f4ab483532095c4433e0113caf73c0dd26360618429a",
+            "exactUnchangedTables": 13,
+            "ordinaryUiDifference": "Only learning:last-location.updatedAt changed after actual navigation; all other settings fields/rows exact.",
+            "normalizedExactMatch": true
+          },
+          {
+            "phase": "afterReopen",
+            "tables": 14,
+            "learningAndCustomDataUnchanged": true,
+            "nativeSnapshotHash": "16ed498e40ddf3041f15c6610b39f9fa99d8278c5805165c491b45618cf79188",
+            "beforeNativeSnapshotHash": "086d16fabe5047205c30f4ab483532095c4433e0113caf73c0dd26360618429a",
+            "exactUnchangedTables": 13,
+            "ordinaryUiDifference": "Only learning:last-location.updatedAt changed after actual navigation; all other settings fields/rows exact.",
+            "normalizedExactMatch": true
+          }
+        ],
+        "generatedInThisExecutor": false,
+        "validation": "validation/LV2-U44-building-image-integration.json",
+        "ownIntegrationCi": "pending_exact_new_commit"
+      }
+    }
+  ]
 }

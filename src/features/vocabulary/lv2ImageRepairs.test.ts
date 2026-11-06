@@ -2,6 +2,8 @@ import examplePairs from './approvedExampleImages.json';
 import {expect,it} from 'vitest';
 import {createHash} from 'node:crypto';
 import {readFileSync} from 'node:fs';
+import {beforeBuildingGallery} from '../../../scripts/building_image_repair_guard.mjs';
+import buildingProof from '../../../docs/unit-audit-20261105/LV2-U44-building-image-repair.json';
 import general from './auditedWordIllustrations.json';
 import published from './lv1ReviewedImages.json';
 import approvals from '../../../scripts/approvals/lv1-images-20260922.json';
@@ -39,4 +41,4 @@ it('preserves all formal content independent practice mappings and source-only c
  for(const [unit,id,wordId]of [[unit38,'LI-LV2U38-V069','W003446'],[unit38,'LI-LV2U38-V007','W001638'],[unit41,'LI-LV2U41-V025','W001261']] as const){expect(unit.template.deliveryMode).toBe('text_only');const item=unit.learningItems.find(r=>r.learningItemId===id)!;expect(item).toBeDefined();expect(item.officialWordId).toBe(wordId);expect(item.practiceMode).toBe('read_only');expect(item).not.toHaveProperty('illustration');expect(item).not.toHaveProperty('originalExample');}
 });
 
-it('changes only the exact public-gallery image source and retains every other byte after normalization',()=>{const raw=readFileSync(proof.gallery.path,'utf8').replace(/\r\n/g,'\n');expect(createHash('sha256').update(raw).digest('hex')).toBe(proof.gallery.afterNormalizedSha256);expect(raw.split(proof.gallery.afterNeedle)).toHaveLength(2);const old=raw.replace(proof.gallery.afterNeedle,proof.gallery.beforeNeedle);expect(createHash('sha256').update(old).digest('hex')).toBe(proof.gallery.beforeNormalizedSha256);expect(raw).toContain('id="LV1-U09-27"');});
+it('changes only the exact public-gallery image source and retains every other byte after normalization',()=>{const raw=beforeBuildingGallery(readFileSync(proof.gallery.path,'utf8'),buildingProof);expect(createHash('sha256').update(raw).digest('hex')).toBe(proof.gallery.afterNormalizedSha256);expect(raw.split(proof.gallery.afterNeedle)).toHaveLength(2);const old=raw.replace(proof.gallery.afterNeedle,proof.gallery.beforeNeedle);expect(createHash('sha256').update(old).digest('hex')).toBe(proof.gallery.beforeNormalizedSha256);expect(raw).toContain('id="LV1-U09-27"');});

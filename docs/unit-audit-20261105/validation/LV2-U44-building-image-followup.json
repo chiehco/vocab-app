@@ -27,11 +27,74 @@
     "referencePath": "public/wordbeast/lv1-reviewed/LV1-U09-04-a9e06429c10e.webp",
     "referencePathType": "Absolute Windows path supplied to tool; public handoff uses the exact repository-relative target."
   },
-  "state": "confirmed_repair_pending_supported_image_input",
-  "candidateExists": false,
+  "state": "locally_integrated_reopened_saved_pending_exact_image_checkpoint_ci",
+  "candidateExists": true,
   "oldAssetAndBindingsPreserved": true,
   "noSameParameterRetry": true,
   "noCliFallbackAuthorizedOrUsed": true,
   "doesNotBlockIndependentTextWork": true,
-  "repairSpecification": "Minimal precise-object edit: preserve the entire watercolor science building, atom emblem, olive Doudou holding plans, trees, paper texture, perspective and palette. Open the existing observatory dome slit and show one large recognizable astronomical telescope mounted on the rooftop, with tube, lens opening and plausible mount visible. Keep1254 square. No text, extra characters or extra limbs. Captions remain unchanged."
+  "repairSpecification": "Minimal precise-object edit: preserve the entire watercolor science building, atom emblem, olive Doudou holding plans, trees, paper texture, perspective and palette. Open the existing observatory dome slit and show one large recognizable astronomical telescope mounted on the rooftop, with tube, lens opening and plausible mount visible. Keep1254 square. No text, extra characters or extra limbs. Captions remain unchanged.",
+  "originalStateAtTextCheckpoint": {
+    "state": "confirmed_repair_pending_supported_image_input",
+    "candidateExists": false,
+    "generationStarted": false
+  },
+  "resolution": {
+    "assetCommit": "d866085e76aeec6b05c1d87346221d5fe22ffbd4",
+    "newPath": "wordbeast/lv2-reviewed/LV2-U44-building-60c34c741c62.webp",
+    "newSha256": "60c34c741c62e77dccf4fa37f9fcbbfc2b40b705787f18da76c1563954e53e4e",
+    "originalRetained": true,
+    "captionsUnchanged": true,
+    "actualConsumersReopened": 3,
+    "contentRowsReadBack": 3446,
+    "progressEvidence": [
+      {
+        "phase": "after",
+        "tables": 14,
+        "learningAndCustomDataUnchanged": true,
+        "nativeSnapshotHash": "2a2a7cb52ba9170ff3e8e2e2191325cee239f473657b9fc6cdd16354370213fe",
+        "beforeNativeSnapshotHash": "086d16fabe5047205c30f4ab483532095c4433e0113caf73c0dd26360618429a",
+        "exactUnchangedTables": 13,
+        "ordinaryUiDifference": "Only learning:last-location.updatedAt changed after actual navigation; all other settings fields/rows exact.",
+        "normalizedExactMatch": true
+      },
+      {
+        "phase": "afterReopen",
+        "tables": 14,
+        "learningAndCustomDataUnchanged": true,
+        "nativeSnapshotHash": "16ed498e40ddf3041f15c6610b39f9fa99d8278c5805165c491b45618cf79188",
+        "beforeNativeSnapshotHash": "086d16fabe5047205c30f4ab483532095c4433e0113caf73c0dd26360618429a",
+        "exactUnchangedTables": 13,
+        "ordinaryUiDifference": "Only learning:last-location.updatedAt changed after actual navigation; all other settings fields/rows exact.",
+        "normalizedExactMatch": true
+      }
+    ],
+    "generatedInThisExecutor": false,
+    "validation": "validation/LV2-U44-building-image-integration.json",
+    "ownIntegrationCi": "pending_exact_new_commit",
+    "localChecks": {
+      "vitestFiles": 9,
+      "vitestTests": 110,
+      "localOriginalTimeoutMs": 5000,
+      "workerCount": 1,
+      "pythonTests": 5,
+      "lint": "success",
+      "typecheck": "success",
+      "build": "success",
+      "oldThreeRepairCheck": "success",
+      "newExactBuildingCheck": "success",
+      "finalExactGuardSubset": {
+        "files": 3,
+        "tests": 43,
+        "originalTimeoutMs": 5000,
+        "workerCount": 1,
+        "note": "After adding fixed hashes for the unchanged-file and independent-example lists; subset overlaps the earlier9files110 and is not added to that total."
+      },
+      "allPublishedAssets": {
+        "images": 726,
+        "passed": 726,
+        "galleryExact": true
+      }
+    }
+  }
 }

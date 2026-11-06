@@ -1,6 +1,6 @@
 {
   "scope": "Exact current repository curriculum catalogue, not a publisher edition table of contents or an inferred numeric range.",
-  "checkedAtUtc": "2026-11-06T22:35:54.977Z",
+  "checkedAtUtc": "2026-11-06T23:25:37.903Z",
   "basis": {
     "model": "src/features/direct/model.ts",
     "catalog": "src/features/vocabulary/textbookCatalog.ts",
@@ -775,7 +775,33 @@
       "deliveryMode": "text_only",
       "auditStatus": "text_after_complete_building_image_and_own_ci_pending",
       "ledger": "docs/unit-audit-20261105/LV2-U44-ledger.json",
-      "ownCi": null
+      "ownCi": {
+        "commit": "bef14d267b348c73b5627b3d213399134df2badd",
+        "run": 42306062567,
+        "job": 128195538342,
+        "url": "https://github.com/chiehco/vocab-app/actions/runs/42306062567/job/128195538342",
+        "status": "completed",
+        "conclusion": "success",
+        "checkoutShaReadFromFullLog": true,
+        "testFiles": 235,
+        "tests": 1926,
+        "pythonBatches": [
+          14,
+          7,
+          84,
+          3,
+          10
+        ],
+        "lint": "success",
+        "typecheck": "success",
+        "build": "success",
+        "buildLogCompletedAtUtc": "2026-11-06T22:54:29.0224499Z",
+        "jobCompletedAtUtc": "2026-11-06T22:54:33Z"
+      },
+      "imageFollowup": {
+        "state": "locally_integrated_reopened_saved_pending_exact_image_checkpoint_ci",
+        "evidence": "validation/LV2-U44-building-image-integration.json"
+      }
     },
     {
       "unit": 45,
@@ -964,7 +990,7 @@
   },
   "releaseGate": {
     "wholeRegisteredLvReady": false,
-    "reason": "U44 text/App/persistence accepted but its own new-head CI and exact shared building telescope image repair remain pending; registered U45–U50 remain unaudited. U38/U41 exact repaired consumers and U43 own CI are successful. U42 direction, U26 and edition-boundary limitations remain.",
+    "reason": "U44 text checkpoint own full CI successful; exact building repair locally reopened/saved, new image checkpoint CI pending. U45 before155/80/147 retained and review in progress; U46–U50 unaudited. U42 direction, U26 and edition-boundary limits retained.",
     "mainMerged": false,
     "deployed": false
   },

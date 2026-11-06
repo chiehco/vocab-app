@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
+import {beforeBuildingRegistry,beforeBuildingGallery} from './building_image_repair_guard.mjs';
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8')),hash=v=>createHash('sha256').update(JSON.stringify(v)).digest('hex'),sha=b=>createHash('sha256').update(b).digest('hex');
 const proof=read('docs/unit-audit-20261105/LV2-U38-U41-image-repairs.json'),mode=process.argv.includes('--apply')?'apply':process.argv.includes('--revert')?'revert':'check';
 assert.equal(proof.assetCommit,'248c092f13c969123b0cd98102dd4d459112479f');assert.deepEqual(proof.generalRows,[{"reviewId":"LI-LV2U38-V069","officialWordId":"W003446","aliases":["generosity"],"illustration":{"path":"wordbeast/lv2-reviewed/LV2-U38-generosity-fdecea42d13a.webp","captionEn":"Doudou shows generosity by giving both apples to a friend.","captionZh":"豆豆把兩顆蘋果都送給朋友，展現慷慨。"}},{"reviewId":"LI-LV2U41-V025","officialWordId":"W001261","aliases":["discover"],"illustration":{"path":"wordbeast/lv2-reviewed/LV2-U41-discover-f9a557414b67.webp","captionEn":"While digging, the workers unexpectedly discover a buried treasure chest.","captionZh":"工人挖土時，意外發現埋在地下的寶箱。"}}]);
@@ -9,6 +10,11 @@ assert.deepEqual(proof.cards.map(({word,officialWordId,originalPath,originalImag
 for(const a of proof.cards){assert.equal(sha(fs.readFileSync('public/'+a.originalPath)),a.originalImageSha256);assert.equal(sha(fs.readFileSync('public/'+a.publishedPath)),a.publishedImageSha256);}
 const gp='src/features/vocabulary/auditedWordIllustrations.json',up='src/features/vocabulary/lv1ReviewedImages.json',ap='scripts/approvals/lv1-images-20260922.json',hp='public/wordbeast/lv1-reviewed/index.html';
 let general=read(gp),units=read(up),gallery=fs.readFileSync(hp,'utf8').replace(/\r\n/g,'\n');assert.equal(hash(read(ap)),proof.approvalRegistryHash,'Original approval file is immutable');
+const buildingProof=read('docs/unit-audit-20261105/LV2-U44-building-image-repair.json');
+if(units.some(c=>c.id==='LV1-U09-04'&&c.illustration.path===buildingProof.after.illustration.path)){
+ assert.equal(mode,'check','Later building repair must be explicitly reverted first; do not overwrite its layer');
+ units=beforeBuildingRegistry(units,buildingProof);gallery=beforeBuildingGallery(gallery,buildingProof);
+}
 assert.equal(proof.gallery.path,hp);assert.equal(proof.gallery.beforeNeedle,"src=\"LV1-U09-27-39abaecad0fa.webp\"");assert.equal(proof.gallery.afterNeedle,"src=\"../lv2-reviewed/LV2-U38-playground-a6b345e0f778.webp\"");assert.equal(proof.gallery.beforeNormalizedSha256,'4a9c57f3767103f159ffd6f378f514e7469f25397132910c134a34def096b01d');assert.equal(proof.gallery.afterNormalizedSha256,'bd56ce03fc8e337210467ac7bcd4231796e569a1a0d3b0f432c4bf3b118d9c44');
 const state=(actual,before,after)=>{assert(actual===before||actual===after,'Unrecorded changes must be reconciled, never overwritten');return actual===after?'after':'before';};
 const states=[state(hash(general),proof.generalRegistryBeforeHash,proof.generalRegistryAfterHash),state(hash(units),proof.publishedRegistryBeforeHash,proof.publishedRegistryAfterHash),state(sha(gallery),proof.gallery.beforeNormalizedSha256,proof.gallery.afterNormalizedSha256)];
