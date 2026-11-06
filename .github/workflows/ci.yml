@@ -33,3 +33,17 @@ jobs:
       - run: npm run typecheck
       - run: npm run test -- --maxWorkers=1 --testTimeout=15000
       - run: npm run build
+  default-test:
+    name: Deploy-default tests (5s)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run test
+      - run: npm run build
+        env:
+          VITE_ASSET_REVISION: ${{ github.sha }}

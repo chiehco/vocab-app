@@ -1,10 +1,39 @@
-import { defineConfig } from "vite";
+import { defineConfig } from "vitest/config";
+import type { Plugin } from "vite";
+import { readFile, rm } from "node:fs/promises";
+import { resolve, sep } from "node:path";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import { VitePWA } from "vite-plugin-pwa";
 
+function withholdRetainedSourcePair(): Plugin {
+  let projectRoot = "";
+  // This retained elevator pairing is explicitly outside the public card registry.
+  // Keep its source bytes and review history; withhold only the Pages artifact.
+  const asset = "wordbeast/lv1-reviewed/LV1-U12-31-275c827e2d7a.webp";
+  return {
+    name: "withhold-retained-source-pair",
+    apply: "build",
+    configResolved(config) { projectRoot = config.root; },
+    async writeBundle(options) {
+      const registries = await Promise.all([
+        "auditedWordIllustrations", "approvedExampleImages", "lv1ReviewedImages",
+      ].map(async name => JSON.parse(await readFile(resolve(projectRoot,
+        `src/features/vocabulary/${name}.json`), "utf8")) as Array<{ illustration?: { path?: string } }>));
+      if (registries.flat().some(row => row.illustration?.path === asset)) {
+        throw new Error("The retained source pairing now has a public registration; review its build exclusion.");
+      }
+      if (!options.dir) throw new Error("An explicit build output directory is required.");
+      const outputRoot = resolve(options.dir), target = resolve(outputRoot, asset);
+      if (!target.startsWith(outputRoot + sep)) throw new Error("Asset exclusion escaped the build output.");
+      await rm(target, { force: true });
+    },
+  };
+}
+
 export default defineConfig({
   base: "./",
+  test: { maxWorkers: 1 },
   plugins: [
     react(),
     tailwindcss(),
@@ -76,5 +105,6 @@ export default defineConfig({
         ],
       },
     }),
+    withholdRetainedSourcePair(),
   ],
 });
