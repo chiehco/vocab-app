@@ -2,19 +2,25 @@
 
 ## 目前狀態
 
-更新：2026-11-06T08:22:05.994Z。LV2 U34 的158教材項（88詞彙70文法）、62一般卡112例句108筆記已逐項讀核；9頁原稿18半頁及22張一般卡圖實看。教材158項、一般卡62張112例句與16搭配頁after已回開，13個三態在兩面板共26處核對，6筆記可見，23非空提示與89空提示均保留其界線。8個原空提示例句的更正POS已保存讀回，但現行UI不顯示其raw POS標籤；6句head的非空提示與POS標籤實際可見。
+更新：2026-11-06T09:21:16.598Z。LV2 U35 的151教材項（99詞彙52文法）、78一般卡112例句73筆記已逐項讀核；9頁原稿18半頁及25張一般卡圖實看。教材151項、一般卡78張112例句及13搭配頁after已回開，20三態於兩面板共40處核對，8筆記和兩句中文精確化可見。19非空提示與93空提示保留界線；10個空提示例句的新POS已保存讀回，現行UI仍不渲染其raw POS標籤，不誤稱標籤可見。
 
-主補丁45列83欄，另13真缺鍵三態與6筆記，共64操作102欄、57唯一正式資料列；教材117列210欄，含47個印字相關詞（21有正式ID、26保留null ID）及70構式中文。8句挖空詞POS確錯已修，6句head混合POS和提示依句縮限；其餘多為已印字義補足或廣義摘要精確化，不稱全部為原錯。6090詞頭POS與狀態、7871原英中句/cloze/答案、全部圖及caption、原始教材與舊hash基準不變。
+主補丁63列99欄，另20真缺鍵三態、8筆記、2中譯，共93操作129欄、77唯一正式資料列；教材110列229欄，含58印字相關詞（39有ID、19保留null）與52構式中文。多數為依本句縮限或補足字典／印字覆蓋，不稱全部原錯。6090詞頭POS與狀態、7871英文/cloze/答案、其餘7869中文、原始教材及舊hash均保留；兩句僅移除science fair的未明限制及澄清by Friday含截止當日。prince/princess、fireman/firewoman、cockroach/roach及gasoline/gas邊界保留。
 
-106學測Q35的官方選項J healing、題幹及答案已實讀；healing在healing power修飾power，明示實際詞形功能與heal動詞身份邊界，獨立膝傷練習不是考題引用。medical醫師、barber人名、quarrel鑿子、post舊副詞等有據義保留並分列；quarrel兩種三態附美式限定。stamp列印器、final結局及兩句親屬譯法仍待更精確依據，不擴為整詞通過。push仍為重木門，preference藍莓圖說不混成茶例句，未發布電梯素材未接入。
+spread語音形容詞、instinct罕見形容詞、dental齒音、notebook期票簿、script法律正本等有據義分列保留。roach「使成凹狀」、spider設圈套者、master母機、wrinkle妙計等仍待更精確來源，不擴為整詞通過。fluid倒液體圖說與plans are fluid獨立例句不混綁；25圖及caption均不變。p313上半頁稍糊的限制已明記。
 
-本機18檔186測試及Python57項通過，原5000ms與單worker未放寬；lint/typecheck/build及兩個教材check退碼0。一般卡首批遇navigation context中斷且無接受結果，保留失敗後只重試該未完成批次，158教材取證未重跑。正常App更新前後14進度表完全相同；同profile關閉重開後14表連時間戳完全相同，2837列保存內容讀回零差異。390寬medical手機樣本無水平溢出，未宣稱實體手機驗收。
+首輪19檔249過2失敗已保留：act舊三態非詞形hash需先精確逆向U35英文釋義，新chalk測試誤要求未寫入字樣。修復兩檔70測試全過，增加act負向保護，不改舊fixture；其餘17檔原結果保留。Python60、lint/typecheck/build及兩個教材check全過，原5000ms不放寬。明確安裝呼叫前已持有新雜湊；該次冪等呼叫及同profile關閉重開的14表連時間戳完全一致，未宣稱觀察到先前雜湊轉換，2908列保存資料零差異；390寬master樣本無水平溢出，未宣稱實體手機。
 
-U33精確3c696fed0a9a84cf39a543297ecad076d192a085的CI42181563200/job127772135324成功：223檔1813測試、Python14/7/55/10及build，07:43:49 UTC完成。U34新提交需自己的CI終態。
+U34精確7cf39a4abfe0a96f844ae358e97b830f4210e470的CI42187264727/job127790463907全成功：224檔1820測試、Python14/7/57/10及build，08:36:53 UTC完成。U35新提交需自己的完整CI，不引用舊版代替。
 
-已對帳main 0f4eb27961571ce393a1f1a2bc63f1d558bef1fb與merge-base 2c2035c07a4e5d1980097dcf4e8ab03f8a5873bb：基底審核ahead8/behind2。main唯一正式資料差異either/NX0fad7e32已與審核現值及before/after完全相同，未來apply及逆向還原只執行一次，兩份歷史及負向保護保留。U34全部102欄均與main精確before相符，19欄共享LV1已逐ID記錄。正式main的LF規則、Deploy-default tests(5s)、單worker及build排除未發布U12素材守衛必須保留；本輪沒有merge或部署。
+已重新fetch並逐ID對帳main 0f4eb279與merge-base 2c2035c：基底審核ahead9/behind2。唯一main資料差異either/NX0fad7e32已相同；未來兩manifest只執行一次，歷史及負向保護皆留。U35的129欄在main均為精確before，11欄共享LV1已記。正式站LF規則、Deploy-default tests(5s)、單worker及build排除未發布U12素材守衛必須保留；沒有merge或部署。
 
-下一單元LV2 U35 mirror/W001554，教材第309頁，沿現行順序續查。
+現行教材母清單與model/source逐項一致，24接入單元為U27–U50，最後現有U50/melody。U27–U34各自完整CI成功、U35本機完成待新CI、U36–U50待本輪全面審核。既有U26/p226 firm小字待辨、未接入，另列來源限制，不猜造缺號；未核版本目錄，U50不是已證實的全冊末單元。詳見LV2-CATALOG-AUDIT-STATUS.json。
+
+下一單元LV2 U36 leaf/W001499，教材第318頁，按現行順序續查。
+
+## U35 checkpoint
+
+範圍、精確before/after、來源與未決項見LV2-U35-ledger、四份formal manifests及curriculum manifest。source-review及validation保留真缺鍵刪鍵還原、重開、持久性、失敗修復與main交接。Receipts仍保留套用當時applied_not_ui_verified狀態，驗收另記，未倒改歷史。
 
 ## U34 checkpoint
 

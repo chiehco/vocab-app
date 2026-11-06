@@ -1,0 +1,26 @@
+{
+  "initialNormalInstaller": {
+    "words": 6090,
+    "examples": 7871,
+    "internalAll14TablesExact": true,
+    "nativeBeforeMatchesInstallerBefore": true,
+    "measuredInvocation": "idempotent; expected content already installed before capture",
+    "contentHashTransitionObserved": false,
+    "measurementLimit": "The App already held the exact expected U35 hash before this explicit seedContentIfNeeded invocation. This proves its idempotent progress preservation, not the earlier hash transition. Do not infer a pre-update14-table snapshot from this capture.",
+    "sha256": "509dd7484712d430d53abd8f7092252d2520c6aed8c0ec1b7c701744d5bffd46",
+    "contentHashBefore": "cf498dd026410aacb510dcf3ff2a5c0a2bdf4efe4c864144cf121d2838e1922c",
+    "contentHashAfter": "cf498dd026410aacb510dcf3ff2a5c0a2bdf4efe4c864144cf121d2838e1922c"
+  },
+  "neutralBrowserCloseReopen": {
+    "all14TablesExact": true,
+    "sha256": "b7ec633f4a4a53659c44b3625bc1279f388fd540123ea400316bfd85a14f4352",
+    "allFieldsIncludingResumeTimestamp": true
+  },
+  "savedContent": {
+    "rows": 2908,
+    "failures": 0,
+    "contentHash": "cf498dd026410aacb510dcf3ff2a5c0a2bdf4efe4c864144cf121d2838e1922c",
+    "readbackEqualBeforeAndAfterClose": true
+  },
+  "scope": "No progress field omitted or normalized. Complete saved rows and changed raw POS checked, including the10 tags hidden by the empty-hint UI rule."
+}

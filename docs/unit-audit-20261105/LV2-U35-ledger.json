@@ -1,0 +1,447 @@
+{
+  "unit": "LV2-U35",
+  "state": "local_checkpoint_complete_pending_commit_push_and_own_ci",
+  "baseCheckpoint": "7cf39a4abfe0a96f844ae358e97b830f4210e470",
+  "updatedAt": "2026-11-06T09:21:16.598Z",
+  "scope": {
+    "learningItems": 151,
+    "vocabulary": 99,
+    "grammar": 52,
+    "formalOccurrences": 80,
+    "formalWords": 78,
+    "examples": 112,
+    "notes": 73,
+    "unmapped": 19,
+    "originalContentPages": 9,
+    "readableHalves": 18,
+    "generalImages": 25,
+    "deliveryMode": "text_only",
+    "practiceMode": "read_only"
+  },
+  "corrections": {
+    "mainRows": 63,
+    "mainFields": 99,
+    "forms": 20,
+    "notes": 8,
+    "translations": 2,
+    "formalOperations": 93,
+    "formalFields": 129,
+    "uniqueFormalRows": 77,
+    "curriculumRows": 110,
+    "curriculumFields": 229,
+    "actualClozePosCorrections": 10,
+    "nonEmptyHintRefinements": 7,
+    "practiceStatuses": 2,
+    "senseRows": 6,
+    "wordCoverageRows": 38,
+    "printedRelatedWords": 58,
+    "mappedPrintedRelatedWords": 39,
+    "unmappedPrintedSupplements": 19,
+    "interpretation": "Most changes supply verified coverage or refine valid broad summaries; do not call all fields original errors or whole-word approval."
+  },
+  "originalBoundaries": {
+    "all6090HeadwordPosStatusesPreserved": true,
+    "all7871EnglishClozeAnswersPreserved": true,
+    "allOther7869ChinesePreserved": true,
+    "exactChineseExceptions": [
+      "EX8f9c8240",
+      "EX7f41ed99"
+    ],
+    "formalIdentitiesInvented": 0,
+    "rawSourceHash": "945559090c3effc54e561ff8ad92426ad7d9c9f0db22580a23cac93e16db88eb",
+    "sourceEnglishPatternsQuestionsAndOrderPreserved": true,
+    "unmappedSourceRetained": true,
+    "combinedIdentityBoundariesPreserved": true,
+    "globalDefaultMeaningVsPrintedSenseDistinguished": true,
+    "imagesAndCaptionsUnchanged": true,
+    "oldHashFixturesChanged": false,
+    "sourceRunningExamplesAdopted": 0
+  },
+  "verification": {
+    "reopens": {
+      "state": "actual_app_after_reopens_verified",
+      "sourceItems": 151,
+      "sourceVocabulary": 99,
+      "sourceGrammar": 52,
+      "generalCards": 78,
+      "examples": 112,
+      "nonEmptyHintsVisible": 19,
+      "emptyHintsPreserved": 93,
+      "newForms": 20,
+      "bothFormPanelsChecked": 40,
+      "usagePages": 13,
+      "changedNotesVisible": 8,
+      "exactChineseRefinements": 2,
+      "sourceImagesAdopted": 0,
+      "generalImagesChecked": 25,
+      "unchangedImageBindings": 25,
+      "allFormalIdentitiesRetained": true,
+      "uiMismatches": 0,
+      "rawPosVisibility": {
+        "tenCorrectedNullHintTagsNotRendered": true,
+        "completeSentencesReopened": true,
+        "nativeSavedPosReadbackRequired": true
+      }
+    },
+    "inverse": "validation/LV2-U35-exact-inverse.json",
+    "localChecks": {
+      "unit": "LV2-U35",
+      "frontend": {
+        "originalFiles": 19,
+        "firstRunPassed": 249,
+        "firstRunFailed": 2,
+        "repairedFiles": 2,
+        "repairPassed": 70,
+        "allOriginalFailuresResolved": true,
+        "newActNegativeCase": 1,
+        "originalLocalTimeout": 5000,
+        "maxWorkers": 1,
+        "scope": "Original U35 text, new audit, common historical/inverse/seed guards, earlier unit text/audits, recovered integration and both image baselines. The17 unaffected first-run files remain passed; only affected files repeated."
+      },
+      "python": {
+        "tests": 60,
+        "exitCode": 0
+      },
+      "lint": {
+        "exitCode": 0,
+        "existingWarningsRetained": true
+      },
+      "typecheck": {
+        "exitCode": 0
+      },
+      "build": {
+        "exitCode": 0
+      },
+      "recoveredDraftCheck": {
+        "exitCode": 0
+      },
+      "recoveredIntegrationCheck": {
+        "exitCode": 0
+      },
+      "logs": {
+        "regressionFirst": {
+          "file": "LV2-U35-regression-first.txt",
+          "sha256": "9fa2960f097f99443efbb33baacd8c9e1abcfb4b79cd3de34802cbc58c8b8c63"
+        },
+        "regressionRepair": {
+          "file": "LV2-U35-regression-repair.txt",
+          "sha256": "b1b79af1e198eb8b99697c524ef46ba2790770627836c98622ddf50f50a113b9"
+        },
+        "python": {
+          "file": "LV2-U35-python-first.txt",
+          "sha256": "7304f4abea10fb55a6be93def6fc1d9bccbc4b385a2c3a4786c2ede71c5b0abb"
+        },
+        "lint": {
+          "file": "LV2-U35-lint-final.txt",
+          "sha256": "a2047ba496f6b309c61e363fb30cf237711952142a840cfa186588fe1eb40daa"
+        },
+        "typecheck": {
+          "file": "LV2-U35-typecheck-final.txt",
+          "sha256": "da91f4c430838409de74534c4d8bed41445d7c7283163b2a63c446dde034587b"
+        },
+        "build": {
+          "file": "LV2-U35-build-final.txt",
+          "sha256": "d76379af2c37624217d5fb90e7ec1c3e95412d7c0e7340701f95e8b3c62dc168"
+        }
+      },
+      "scope": "Actual local process results. Own complete remote CI is required after push."
+    },
+    "persistence": "validation/LV2-U35-persistence-summary.json",
+    "pixelsActuallyViewed": {
+      "source": [
+        "LI-LV2U35-G016",
+        "LI-LV2U35-G038"
+      ],
+      "general": [
+        "arrangement meaning",
+        "master mobile meaning"
+      ],
+      "limits": "Representative after pixels plus all automated full-field reopens; not a claim that every new screenshot was visually reread."
+    }
+  },
+  "retainedVerifiedMeanings": [
+    {
+      "word": "spread",
+      "sense": "phonetics adjective",
+      "url": "https://www.collinsdictionary.com/dictionary/english/spread",
+      "retrieval": "Direct dictionary adjective definition",
+      "action": "Separate visibly from the current noun/verb headword without changing its POS."
+    },
+    {
+      "word": "instinct",
+      "sense": "postpositive adjective with, filled or charged with",
+      "url": "https://www.collinsdictionary.com/dictionary/english/instinct",
+      "retrieval": "Direct rare adjective definition",
+      "action": "Keep the noun and visibly separate the genuine adjective."
+    },
+    {
+      "word": "dental",
+      "sense": "phonetics noun, dental sound",
+      "url": "https://www.collinsdictionary.com/dictionary/english/dental",
+      "retrieval": "Direct noun definition",
+      "action": "Retain separately from the adjective headword."
+    },
+    {
+      "word": "notebook",
+      "sense": "register of notes of hand or promissory notes",
+      "url": "https://www.collinsdictionary.com/dictionary/english/notebook",
+      "retrieval": "Direct dictionary definition",
+      "action": "Retain 期票簿; add the actual notebook-computer sense supported by existing use."
+    },
+    {
+      "word": "script",
+      "sense": "original legal document",
+      "url": "https://www.collinsdictionary.com/dictionary/english/script",
+      "retrieval": "Direct dictionary legal noun definition",
+      "action": "Retain 正本 alongside performance script and writing verb."
+    },
+    {
+      "word": "tourist",
+      "sense": "adjective of tourists",
+      "url": "https://www.collinsdictionary.com/dictionary/english/tourist",
+      "retrieval": "Direct adjective definition",
+      "action": "Retain visibly separate from the noun headword."
+    },
+    {
+      "word": "camel",
+      "sense": "nautical device or pontoon used to raise vessels or wrecks",
+      "url": "https://www.collinsdictionary.com/dictionary/english/camel",
+      "retrieval": "Direct nautical definition",
+      "action": "Retain 打撈浮筒."
+    },
+    {
+      "word": "panic",
+      "sense": "adjective relating to sudden often groundless fear",
+      "url": "https://www.merriam-webster.com/dictionary/panic",
+      "retrieval": "Direct adjective definition",
+      "action": "Qualify the inherited groundless wording to fear, rather than any unrelated unreasoned act."
+    },
+    {
+      "word": "roach",
+      "sense": "fish, insect abbreviation, hairstyle, cannabis end and arching/clipping verb",
+      "url": "https://www.collinsdictionary.com/dictionary/english/roach",
+      "retrieval": "Direct homograph and verb sections; cross-checked direct MW",
+      "action": "Label the homographs in English; do not transfer fish or other roach meanings to cockroach."
+    },
+    {
+      "word": "fireman",
+      "sense": "stoker and firefighter",
+      "url": "https://www.collinsdictionary.com/dictionary/english/fireman",
+      "retrieval": "Direct dictionary noun sections",
+      "action": "Retain both; a separate inherited children-game definition is retained with limited evidence, not certified as a direct original-host reading."
+    }
+  ],
+  "retainedPending": [
+    {
+      "word": "roach",
+      "field": "meaningZh",
+      "value": "使成凹狀",
+      "reason": "Direct sources establish other arching/clipping verbs but not this exact Chinese gloss; preserve pending precise evidence."
+    },
+    {
+      "word": "spider",
+      "field": "meaningZh",
+      "value": "設圈套者",
+      "reason": "Preserve the inherited rare meaning pending precise evidence; concise replacement English is newly sourced coverage, not a recovered missing original tail."
+    },
+    {
+      "word": "master",
+      "field": "meaningZh",
+      "value": "母機",
+      "reason": "No precise primary support obtained in this round; preserve pending."
+    },
+    {
+      "word": "wrinkle",
+      "field": "meaningZh",
+      "value": "妙計／方法／技巧",
+      "reason": "A search match in unrelated footer text is not evidence for this sense. Preserve pending exact support."
+    },
+    {
+      "word": "castle",
+      "field": "meaningZh",
+      "value": "盤踞於",
+      "reason": "Direct dictionary supports castle and chess/fortifying verbs but not this exact Chinese rendering."
+    },
+    {
+      "word": "fireman",
+      "field": "meaningEn",
+      "reason": "The inherited children-game sense has attributed WordNet search excerpts only. The attempted secondary host returned500; no full original-publisher reading claimed."
+    },
+    {
+      "field": "sensePos",
+      "exampleId": "EX654fa0e2",
+      "reason": "Froze solid may be analysed through resultative adjective or adverb conventions. Retain existing adjective; do not mechanically reclassify."
+    },
+    {
+      "field": "sentenceZh",
+      "reason": "Kinship age/branch and old Prince Charles/Queen Elizabeth textbook context remain source-context limitations, not grounds for invented rewrites."
+    }
+  ],
+  "priorCheckpointFullCi": {
+    "commit": "7cf39a4abfe0a96f844ae358e97b830f4210e470",
+    "run": 42187264727,
+    "job": 127790463907,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42187264727/job/127790463907",
+    "status": "completed",
+    "conclusion": "success",
+    "checkoutShaReadFromFullLog": true,
+    "testFiles": 224,
+    "tests": 1820,
+    "pythonBatches": [
+      14,
+      7,
+      57,
+      10
+    ],
+    "lint": "success",
+    "typecheck": "success",
+    "build": "success",
+    "buildLogCompletedAtUtc": "2026-11-06T08:36:53.8209646Z",
+    "jobCompletedAtUtc": "2026-11-06T08:36:58Z"
+  },
+  "newCheckpointFullCi": {
+    "state": "pending_this_new_commit"
+  },
+  "sharedFormalLV1Fields": [
+    {
+      "dataset": "words",
+      "id": "W000836",
+      "word": "student",
+      "field": "usagePatternZh",
+      "before": "大學/高中學生；+ 名詞的學生",
+      "after": "大學／高中學生；研習……的人／……的學生",
+      "main": "大學/高中學生；+ 名詞的學生",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W000008",
+      "word": "act",
+      "field": "meaningEn",
+      "before": "(v.) to do something, or to behave in a particular way; (n.) something that a person does; a formal law passed by a government",
+      "after": "(v.) to do something, or to behave in a particular way; (n.) something that a person does; a formal law passed by a government; also (v.), to perform a role; (n.), a main division of a play.",
+      "main": "(v.) to do something, or to behave in a particular way; (n.) something that a person does; a formal law passed by a government",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W000009",
+      "word": "action",
+      "field": "usagePatternZh",
+      "before": "採取行動；將某事物付諸行動；對名詞採取行動",
+      "after": "採取行動；將某事物付諸行動；對……採取行動",
+      "main": "採取行動；將某事物付諸行動；對名詞採取行動",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX349d22d8",
+      "word": "student",
+      "field": "meaningHint",
+      "before": "學生；研究者；學者",
+      "after": "學生",
+      "main": "學生；研究者；學者",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX02e43b03",
+      "word": "action",
+      "field": "meaningHint",
+      "before": "行動；活動；動作；作用",
+      "after": "行動",
+      "main": "行動；活動；動作；作用",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX81b84686",
+      "word": "feel",
+      "field": "meaningHint",
+      "before": "感覺；覺得；觸摸；以為",
+      "after": "氣氛；風格（have a ... feel to it）",
+      "main": "感覺；覺得；觸摸；以為",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EXa603a289",
+      "word": "feel",
+      "field": "meaningHint",
+      "before": "感覺；覺得；觸摸；以為",
+      "after": "想要（feel like V-ing）",
+      "main": "感覺；覺得；觸摸；以為",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EXb2b1db96",
+      "word": "feel",
+      "field": "meaningHint",
+      "before": "感覺；覺得；觸摸；以為",
+      "after": "感到",
+      "main": "感覺；覺得；觸摸；以為",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EXd6d9fbe8",
+      "word": "feel",
+      "field": "meaningHint",
+      "before": "感覺；覺得；觸摸；以為",
+      "after": "觸感",
+      "main": "感覺；覺得；觸摸；以為",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EXdf1cdf07",
+      "word": "feel",
+      "field": "meaningHint",
+      "before": "感覺；覺得；觸摸；以為",
+      "after": "觸摸；摸到",
+      "main": "感覺；覺得；觸摸；以為",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX7f41ed99",
+      "word": "student",
+      "field": "sentenceZh",
+      "before": "班上每個學生都必須在星期五前交報告。",
+      "after": "班上每個學生都必須最遲在星期五交報告。",
+      "main": "班上每個學生都必須在星期五前交報告。",
+      "classification": "main_matches_exact_before"
+    }
+  ],
+  "releaseReconciliation": {
+    "record": "validation/LV2-U35-main-shared-comparison.json",
+    "main": "0f4eb27961571ce393a1f1a2bc63f1d558bef1fb",
+    "mergeBase": "2c2035c07a4e5d1980097dcf4e8ab03f8a5873bb",
+    "branchDivergence": {
+      "auditAhead": 9,
+      "auditBehind": 2
+    },
+    "mainChangedFormalFields": 1,
+    "alreadySameInAudit": 1,
+    "u35FieldsMatchMainBefore": 129,
+    "sharedLV1Fields": 11,
+    "eitherMustExecuteOnce": true,
+    "mainConfigurationGuardsMustBeRetained": true
+  },
+  "next": {
+    "level": "LV2",
+    "unit": 36,
+    "first": "leaf",
+    "wordId": "W001499",
+    "sourcePage": 318,
+    "action": "Continue source and actual App review in order."
+  },
+  "publication": {
+    "branch": "content/unit-audit-20261105",
+    "mainMerged": false,
+    "deployed": false,
+    "levelReleaseWorkSeparate": true,
+    "frozenHistoricalCandidate": "3106a39dea97360a62a2db4d8e98300724d94fdb"
+  }
+}

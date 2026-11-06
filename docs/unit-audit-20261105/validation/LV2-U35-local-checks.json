@@ -1,0 +1,62 @@
+{
+  "unit": "LV2-U35",
+  "frontend": {
+    "originalFiles": 19,
+    "firstRunPassed": 249,
+    "firstRunFailed": 2,
+    "repairedFiles": 2,
+    "repairPassed": 70,
+    "allOriginalFailuresResolved": true,
+    "newActNegativeCase": 1,
+    "originalLocalTimeout": 5000,
+    "maxWorkers": 1,
+    "scope": "Original U35 text, new audit, common historical/inverse/seed guards, earlier unit text/audits, recovered integration and both image baselines. The17 unaffected first-run files remain passed; only affected files repeated."
+  },
+  "python": {
+    "tests": 60,
+    "exitCode": 0
+  },
+  "lint": {
+    "exitCode": 0,
+    "existingWarningsRetained": true
+  },
+  "typecheck": {
+    "exitCode": 0
+  },
+  "build": {
+    "exitCode": 0
+  },
+  "recoveredDraftCheck": {
+    "exitCode": 0
+  },
+  "recoveredIntegrationCheck": {
+    "exitCode": 0
+  },
+  "logs": {
+    "regressionFirst": {
+      "file": "LV2-U35-regression-first.txt",
+      "sha256": "9fa2960f097f99443efbb33baacd8c9e1abcfb4b79cd3de34802cbc58c8b8c63"
+    },
+    "regressionRepair": {
+      "file": "LV2-U35-regression-repair.txt",
+      "sha256": "b1b79af1e198eb8b99697c524ef46ba2790770627836c98622ddf50f50a113b9"
+    },
+    "python": {
+      "file": "LV2-U35-python-first.txt",
+      "sha256": "7304f4abea10fb55a6be93def6fc1d9bccbc4b385a2c3a4786c2ede71c5b0abb"
+    },
+    "lint": {
+      "file": "LV2-U35-lint-final.txt",
+      "sha256": "a2047ba496f6b309c61e363fb30cf237711952142a840cfa186588fe1eb40daa"
+    },
+    "typecheck": {
+      "file": "LV2-U35-typecheck-final.txt",
+      "sha256": "da91f4c430838409de74534c4d8bed41445d7c7283163b2a63c446dde034587b"
+    },
+    "build": {
+      "file": "LV2-U35-build-final.txt",
+      "sha256": "d76379af2c37624217d5fb90e7ec1c3e95412d7c0e7340701f95e8b3c62dc168"
+    }
+  },
+  "scope": "Actual local process results. Own complete remote CI is required after push."
+}

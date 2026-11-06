@@ -1,0 +1,91 @@
+{
+  "manifest": "docs/unit-audit-20261105/LV2-U35-translations-patches.json",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "checkedAt": "2026-11-06T09:02:22.742580+00:00",
+  "changeCount": 2,
+  "changes": [
+    {
+      "dataset": "examples",
+      "id": "EX8f9c8240",
+      "before": {
+        "exampleId": "EX8f9c8240",
+        "word": "task",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "Finishing the science project within two days turned out to be a difficult task for the students.",
+        "sentenceZh": "要在兩天內完成科展作業，對學生來說是一項困難的任務。",
+        "blankSentence": "Finishing the science project within two days turned out to be a difficult _____ for the students.",
+        "answer": "task",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EX8f9c8240",
+        "word": "task",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "Finishing the science project within two days turned out to be a difficult task for the students.",
+        "sentenceZh": "要在兩天內完成科學專題，對學生來說是一項困難的任務。",
+        "blankSentence": "Finishing the science project within two days turned out to be a difficult _____ for the students.",
+        "answer": "task",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "reason": "Science project does not specify participation in a science fair; remove the unsupported fair restriction while preserving every English field.",
+      "evidence": "https://www.merriam-webster.com/dictionary/project"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX7f41ed99",
+      "before": {
+        "exampleId": "EX7f41ed99",
+        "word": "student",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "Every student in the class must hand in the report by Friday.",
+        "sentenceZh": "班上每個學生都必須在星期五前交報告。",
+        "blankSentence": "Every _____ in the class must hand in the report by Friday.",
+        "answer": "student",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EX7f41ed99",
+        "word": "student",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "Every student in the class must hand in the report by Friday.",
+        "sentenceZh": "班上每個學生都必須最遲在星期五交報告。",
+        "blankSentence": "Every _____ in the class must hand in the report by Friday.",
+        "answer": "student",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Clarify that by Friday does not exclude Friday. This is a deadline-boundary precision refinement, not a claim that every colloquial Chinese reading of the prior translation was wrong.",
+      "evidence": "https://dictionary.cambridge.org/us/dictionary/learner-english/by"
+    }
+  ],
+  "masterTouched": false,
+  "sentencesChanged": true,
+  "englishSentencesChanged": false,
+  "imagesChanged": false,
+  "sourceHashesBefore": {
+    "words.json": "f310bdfb4fd6aa831fd673576197e33cb268da3cb01d96751e11b457da4c0d1b",
+    "senses.json": "99219e38e75755bf3e25cc123cd3805b31215e50cda5411e56b7f2da5893273c",
+    "examples.json": "7f5ddec2c5d1b2a78b9afa9c10b0494dfb0d3f3313260a963d2e6a7c3a8d724b",
+    "meta.json": "c0cf802a87df29ee69eff2cf7d3c6efebed17d3516714cdbf83d756bbf5c3976",
+    "sa-pack.json": "2cd0439991f782caa650884048066c30a601d63ab8fcd0b33add95116d9acbdc"
+  },
+  "sourceHashesAfter": {
+    "words.json": "f310bdfb4fd6aa831fd673576197e33cb268da3cb01d96751e11b457da4c0d1b",
+    "senses.json": "99219e38e75755bf3e25cc123cd3805b31215e50cda5411e56b7f2da5893273c",
+    "examples.json": "af8f92cf7402ab50e54c6ab12fb2fe3e4910d7bbfc4b2448d4fb0e0af703a068",
+    "meta.json": "c0c7c54776851d1fe03fed547cef39836e271f59c57978d557f840876335f103",
+    "sa-pack.json": "543de839a80d30502e57e02a97c0126be9e25fa5407be4c3a1fa4da4a00d7c2a"
+  },
+  "state": "applied_not_ui_verified"
+}

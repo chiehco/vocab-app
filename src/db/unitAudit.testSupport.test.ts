@@ -1,3 +1,8 @@
+import lv2u35 from '../../docs/unit-audit-20261105/LV2-U35-patches.json';
+import lv2u35Forms from '../../docs/unit-audit-20261105/LV2-U35-verified-forms-patches.json';
+import lv2u35FormSources from '../../docs/unit-audit-20261105/VERIFIED-LV2-U35-VERB-FORMS-SOURCES.json';
+import lv2u35Notes from '../../docs/unit-audit-20261105/LV2-U35-notes-patches.json';
+import lv2u35Translations from '../../docs/unit-audit-20261105/LV2-U35-translations-patches.json';
 import lv2u34Forms from '../../docs/unit-audit-20261105/LV2-U34-verified-forms-patches.json';
 import lv2u34FormSources from '../../docs/unit-audit-20261105/VERIFIED-LV2-U34-VERB-FORMS-SOURCES.json';
 import lv2u34Notes from '../../docs/unit-audit-20261105/LV2-U34-notes-patches.json';
@@ -324,7 +329,7 @@ it('reverses only36 integrated U07 fields and protects every other exact word fi
  const prior=new Set([...originalSources.facts,...followupSources.facts,...u16FormSources.facts,...u17FormSources.facts,...u18FormSources.facts,...u19FormSources.facts,...u20FormSources.facts,...u21FormSources.facts,...integratedU05U06Sources.facts].map(f=>f.wordId));
  expect(integratedU07Sources.facts.every(f=>!prior.has(f.wordId))).toBe(true);
  const words:Row[]=JSON.parse(readFileSync('public/data/v1/words.json','utf8'));
- for(const p of integratedU07.patches){const row=structuredClone(words.find(w=>w.wordId===p.id)!);if(["W001523"].includes(p.id))restoreRecordedAuditPatch('words',row,lv2u29.patches.find(q=>q.dataset==='words'&&q.id===p.id)!);const original={...row};delete original.verbForms;restoreRecordedAuditPatch('words',row,p);expect(row).toEqual(original);expect(row).not.toHaveProperty('verbForms');
+ for(const p of integratedU07.patches){const row=structuredClone(words.find(w=>w.wordId===p.id)!);if(p.id==='W000008')restoreRecordedAuditPatch('words',row,lv2u35.patches.find(q=>q.dataset==='words'&&q.id===p.id)!);if(["W001523"].includes(p.id))restoreRecordedAuditPatch('words',row,lv2u29.patches.find(q=>q.dataset==='words'&&q.id===p.id)!);const original={...row};delete original.verbForms;restoreRecordedAuditPatch('words',row,p);expect(row).toEqual(original);expect(row).not.toHaveProperty('verbForms');
   for(const key of ['base','past','pastParticiple','sourceRef','status']){const wrong=structuredClone(p);(wrong.after.verbForms as Row)[key]='unverified';expect(()=>restoreRecordedAuditPatch('words',{...original,...wrong.after},wrong)).toThrow();}
   for(const key of ['word','pos','status','meaningZh','meaningEn','usagePattern'])expect(()=>restoreRecordedAuditPatch('words',{...original,...p.after,[key]:'unrecorded'},p)).toThrow();
   expect(()=>restoreRecordedAuditPatch('words',{...original,...p.after},{...p,before:{verbForms:null}})).toThrow();
@@ -829,4 +834,49 @@ it('limits six LV2 U34 notes to exact full-row content guards',()=>{
   for(const field of ['title','content','status'])expect(()=>restoreRecordedAuditPatch('notes',{...p.before,...p.after,[field]:'unverified'},{...p,after:{...p.after,[field]:'unverified'}})).toThrow();
   expect(()=>restoreRecordedAuditPatch('notes',{...p.before,...p.after},{...p,id:'NXunknown'})).toThrow();
  }
+});
+
+it('reverses only20 exact LV2 U35 sourced form keys and rejects all other row drift',()=>{
+ expect(lv2u35FormSources.facts).toHaveLength(20);
+ const words:Row[]=JSON.parse(readFileSync('public/data/v1/words.json','utf8'));
+ for(const p of lv2u35Forms.patches){
+  const row=structuredClone(words.find(w=>w.wordId===p.id)!);
+  const fact=lv2u35FormSources.facts.find(f=>f.wordId===p.id)!;
+  restoreRecordedAuditPatch('words',row,p);expect(row).toEqual(fact.nonFormRow);expect(row).not.toHaveProperty('verbForms');
+  for(const key of ['base','past','pastParticiple','sourceRef','status']){
+   const wrong=structuredClone(p);(wrong.after.verbForms as Row)[key]='unverified';
+   expect(()=>restoreRecordedAuditPatch('words',{...fact.nonFormRow,...wrong.after},wrong)).toThrow();
+  }
+  for(const key of ['word','pos','status','meaningZh','meaningEn','usagePattern'])expect(()=>restoreRecordedAuditPatch('words',{...fact.nonFormRow,...p.after,[key]:'unrecorded'},p)).toThrow();
+  expect(()=>restoreRecordedAuditPatch('words',{...fact.nonFormRow,...p.after},{...p,before:{verbForms:null}})).toThrow();
+ }
+});
+
+
+
+
+it('limits eight LV2 U35 notes to exact full-row content guards',()=>{
+ expect(lv2u35Notes.patches).toHaveLength(8);
+ for(const p of lv2u35Notes.patches){const row:Row={...p.before,...p.after};restoreRecordedAuditPatch('notes',row,p);expect(row).toEqual(p.before);
+  for(const field of ['word','status','noteType','noteId']){expect(()=>restoreRecordedAuditPatch('notes',{...p.before,...p.after,[field]:'unrecorded'},p)).toThrow();expect(()=>restoreRecordedAuditPatch('notes',{...p.before,...p.after},{...p,before:{...p.before,[field]:'unrecorded'}})).toThrow();}
+  for(const field of ['title','content','status'])expect(()=>restoreRecordedAuditPatch('notes',{...p.before,...p.after,[field]:'unverified'},{...p,after:{...p.after,[field]:'unverified'}})).toThrow();
+  expect(()=>restoreRecordedAuditPatch('notes',{...p.before,...p.after},{...p,id:'NXunknown'})).toThrow();
+ }
+});
+
+it('keeps U35 translations limited to exact original English and two Chinese string',()=>{
+ for(const p of lv2u35Translations.patches){const row:Row={...p.before,...p.after};restoreRecordedAuditPatch('examples',row,p);expect(row).toEqual(p.before);
+  for(const key of ['word','sentenceEn','blankSentence','answer'])expect(()=>restoreRecordedAuditPatch('examples',{...p.before,...p.after,[key]:'unrecorded'},p)).toThrow();
+  for(const key of ['sentenceZh','sentenceEn','status','sensePos'])expect(()=>restoreRecordedAuditPatch('examples',{...p.before,...p.after,[key]:'unverified'},{...p,after:{...p.after,[key]:'unverified'}})).toThrow();
+  expect(()=>restoreRecordedAuditPatch('examples',{...p.before,...p.after},{...p,id:'EXunknown'})).toThrow();
+ }
+});
+
+it('preserves the original act form-row hash through only the exact U35 definition inverse',()=>{
+ const words:Row[]=JSON.parse(readFileSync('public/data/v1/words.json','utf8'));
+ const row=structuredClone(words.find(w=>w.wordId==='W000008')!);
+ const p=lv2u35.patches.find(q=>q.dataset==='words'&&q.id==='W000008')!,form=integratedU07.patches.find(q=>q.id==='W000008')!;
+ const wrong=structuredClone(row);wrong.meaningEn='unverified';expect(()=>restoreRecordedAuditPatch('words',wrong,p)).toThrow();
+ const other=structuredClone(row);other.usagePattern='unrecorded';restoreRecordedAuditPatch('words',other,p);expect(()=>restoreRecordedAuditPatch('words',other,form)).toThrow();
+ restoreRecordedAuditPatch('words',row,p);expect(row).toHaveProperty('verbForms');restoreRecordedAuditPatch('words',row,form);expect(row).not.toHaveProperty('verbForms');
 });
