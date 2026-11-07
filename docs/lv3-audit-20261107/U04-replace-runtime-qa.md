@@ -4,7 +4,7 @@ Date: 2026-11-07. Image integration commit: ca4cb389d35e09ed2c3547bbed0232709e43
 
 ## Actual browser results
 
-A new isolated Chrome profile was created exclusively for this test. The U04 before/after preservation profile and real-user browser data were not opened. The existing development server was reused. No application code or source data was edited, and no commit was made. The QA browser is closed.
+A new isolated Chrome profile was created exclusively for this test. The U04 before/after preservation profile and real-user browser data were not opened. The existing development server was reused. No application code or source data was edited during browser verification. The QA browser is closed.
 
 - Ordinary card `#/word/W002723`: the actual image shows Doudou fitting a new wooden wheel to a wooden cart, with the broken wheel on the ground. English: “Doudou replaces the cart's broken wheel with a new one.” Chinese: “豆豆把推車的破輪子換成新的。” Both exact captions passed automated assertions and visual inspection.
 - Actual image-clue quiz `#/quiz?group=05f4b3cd-7a16-4083-b07e-7ac05d62c5a0`: a disposable one-word group was created and populated through the normal visible UI, then its practice link and 看圖喚名 option were used. The real question displayed the same new wheel image and exact Chinese caption, with 換成 highlighted. Replace was selected and submitted through the normal two-click answer flow. The UI reported a correct answer and +5 coins. This is actual consumer coverage, not a resolver-only test.
@@ -21,7 +21,7 @@ All three ordinary/quiz/reopened captures fetched the actual displayed image URL
 - SHA-256: `cebee8173ee9d2a633e68212669b6c47178dbbe17cd9a2c69ee7b83e937fe40c`.
 - Existing `public/wordbeast/s/W002723.webp` remained present, SHA-256 `20fad955973dbaad0769663d62e354571894d5dd5d6ba035fa70a71aa216f8a3`.
 
-This worker made no sentence or draft-example edits. The two draft examples are not asserted as runtime image consumers by this report.
+Browser verification made no sentence or draft-example edits. The two draft examples are not asserted as runtime image consumers by this report.
 
 ## Disposable progress and normal changes
 
@@ -31,7 +31,7 @@ One correct normal image-quiz answer created one replace quiz-stat row (asked 1,
 
 ## Coverage limits
 
-The dynamic `#/wordbeast` daily route was opened, but selected retain (1/9), not replace, with no target-selection entry observed. Its selection and clock were not modified. Replace on this dynamic consumer is not runtime-verified; shared resolver coverage, if established separately, must remain labeled static. No static unit suite was rerun by this worker. SRS review and arena consumers were not exercised. No production deployment, offline-PWA or physical-phone acceptance is claimed.
+The dynamic `#/wordbeast` daily route was opened, but selected retain (1/9), not replace, with no target-selection entry observed. Its selection and clock were not modified. Replace on this dynamic consumer is not runtime-verified; shared resolver coverage, if established separately, must remain labeled static. No static unit suite was rerun as part of this browser verification. SRS review and arena consumers were not exercised. No production deployment, offline-PWA or physical-phone acceptance is claimed.
 
 ## Evidence
 
