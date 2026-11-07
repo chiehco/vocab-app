@@ -1,4 +1,5 @@
-import {lv3AfterUnit1File} from './lv3Audit.testSupport';
+import {auditContract, auditHash, isAuditUnitStep, loadLV3Chain, lv3AfterUnit1PublishedText} from './lv3Audit.testSupport';
+import lv3Checkpoint from '../../../docs/lv3-audit-20261107/U01-checkpoint.json';
 import {lv3Unit1BeforeAudit} from './lv3Unit1Audit.testSupport';
 import {lv2Unit50BeforeAudit} from './lv2Unit50Audit.testSupport';
 import currentLV2Unit50 from './curriculumLV2Unit50.json';
@@ -87,6 +88,32 @@ function stable(value: unknown): unknown {
 }
 const hash = (value: unknown) => createHash('sha256').update(JSON.stringify(stable(value))).digest('hex');
 
+// All 131 direct JSON files belong to the authenticated checkpoint. Only four
+// have later audited changes; rereading the complete migration proof for each
+// of the other 127 files adds no coverage. Their actual bytes remain guarded.
+function historicalDirectProjection() {
+  const chain = loadLV3Chain();
+  expect(auditHash(lv3Checkpoint)).toBe('6008609dda537f69ef0880d6482c713b1e6e75ec0fa8c3a4af71cdee9b08e4f0');
+  const guards: Record<string, string> = lv3Checkpoint.inputs;
+  const paths = Object.keys(guards).filter(path => path.startsWith('src/features/direct/') && path.endsWith('.json')).sort();
+  const changed = new Set(chain.slice(1).filter(step => step.entry.status === 'committed').filter(isAuditUnitStep)
+    .flatMap(step => Object.keys(auditContract(step.manifest).files)).filter(path => paths.includes(path)));
+  expect([...changed].sort()).toEqual([
+    'src/features/direct/curriculumLV3Unit4.json', 'src/features/direct/curriculumLV3Unit5.json',
+    'src/features/direct/curriculumLV3Unit6.json', 'src/features/direct/curriculumUnit2.json',
+  ]);
+  expect(paths).toHaveLength(131);
+  expect(paths.filter(path => !changed.has(path))).toHaveLength(127);
+  const project = (path: string, actualText: string) => {
+    if (!paths.includes(path)) throw new Error('Unregistered out-of-domain direct JSON path');
+    const text = actualText.replace(/\r\n/g, '\n');
+    if (changed.has(path)) return JSON.parse(lv3AfterUnit1PublishedText(path, text));
+    expect(createHash('sha256').update(text).digest('hex'), `Unchanged checkpoint bytes: ${path}`).toBe(guards[path]);
+    return JSON.parse(text);
+  };
+  return {paths, project};
+}
+
 it('retains historical curriculum and question identities with the audited cubes gloss addition', () => {
   const existing = new Map<string, {items: unknown[]; questions: unknown[]}>();
   const installed = new Map<string, {items: unknown[]; questions: unknown[]}>();
@@ -101,10 +128,14 @@ it('retains historical curriculum and question identities with the audited cubes
       {items: row.items, questions: (row.questions ?? []) as unknown[]});
   };
   const dir = new URL('./', import.meta.url);
-  for (const file of readdirSync(dir).filter(name => name.endsWith('.json'))) {
-    const current = JSON.parse(readFileSync(new URL(file, dir), 'utf8'));
+  const {paths, project} = historicalDirectProjection();
+  const files = readdirSync(dir).filter(name => name.endsWith('.json'));
+  expect(files.map(file => 'src/features/direct/' + file).sort(), 'No missing or out-of-domain JSON files').toEqual(paths);
+  for (const file of files) {
+    const text = readFileSync(new URL(file, dir), 'utf8');
+    const current = JSON.parse(text);
     record(current, installed);
-    record(lv3AfterUnit1File('src/features/direct/'+file,current));
+    record(project('src/features/direct/' + file, text));
   }
   expect(baseline.previousUnits).toHaveLength(124);
   for (const old of baseline.previousUnits) {
@@ -247,6 +278,16 @@ it('retains historical curriculum and question identities with the audited cubes
     expect(hash(originalQuestions), old.templateId).toBe(old.questionsHash);
     expect(findUnit(old.templateId)?.items).toEqual(installed.get(old.templateId)!.items);
   }
+});
+
+it('rejects unknown changed-file bytes, unchanged-file bytes, and out-of-domain direct files', () => {
+  const {project} = historicalDirectProjection();
+  for (const path of ['src/features/direct/curriculumLV3Unit6.json', 'src/features/direct/curriculumLV1Unit16.json']) {
+    const text = readFileSync(path, 'utf8');
+    expect(() => project(path, text + ' ')).toThrow();
+    expect(() => project(path, JSON.stringify({...JSON.parse(text), unrecordedField: true}) + '\n')).toThrow();
+  }
+  expect(() => project('src/features/direct/unrecorded.json', '{}\n')).toThrow(/out-of-domain/);
 });
 
 it.each([

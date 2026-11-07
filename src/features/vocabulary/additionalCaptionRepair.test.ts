@@ -36,6 +36,8 @@ const cards=structuredClone(publishedCards);
 const candidateIndex=cards.findIndex(r=>r.id===c.id);
 expect(cards[candidateIndex]).toEqual(c.before);
 cards[candidateIndex]=structuredClone(c.after);
+const projected=['words','examples','senses','notes','meta','sa-pack'].map(name=>'public/data/v1/'+name+'.json');
+const independent=['scripts/approvals/lv1-images-20260922.json','src/features/vocabulary/auditedWordIllustrations.json','src/features/vocabulary/approvedExampleImages.json','docs/unit-audit-20261105/validation/LV2-U46-praise-before-repair.json','docs/unit-audit-20261105/validation/LV2-U46-image-review-before-praise.json'];
 
 it('retains the independent original approval image English and broader science-project source boundary',()=>{
  validateAdditionalProof(proof);expect(approvals.find(r=>r.id===c.id)).toEqual(c.originalApproval);expect(c.after.illustration.path).toBe(c.before.illustration.path);expect(c.after.illustration.captionEn).toBe(c.before.illustration.captionEn);expect(c.after.illustration.captionZh).toBe('她需要額外的時間才能完成她的科學專題。');expect(bytesHash('public/'+c.after.illustration.path)).toBe(c.imageSha256);expect(c.dimensions).toEqual([1254,1254]);expect(additionalHash(c.before.illustration.captionEn+'\n'+c.before.illustration.captionZh)).toBe(c.originalApproval.textSha256);expect(c.sourceEvidence.retrieval).toBe('direct_primary_dictionary_definition');expect(c.sourceEvidence.unsuccessfulSource.result).toContain('403');
@@ -43,20 +45,22 @@ it('retains the independent original approval image English and broader science-
  const migration=loadLV3Chain().find(step=>'migrationId' in step.manifest)?.manifest;
  if(!migration||!('beforeInputs' in migration))throw new Error('Missing authenticated migration input domain');
  const domain=new Set(Object.keys(migration.beforeInputs));expect(domain.size).toBe(144);
- const projected=['words','examples','senses','notes','meta','sa-pack'].map(name=>'public/data/v1/'+name+'.json');
- const independent=['scripts/approvals/lv1-images-20260922.json','src/features/vocabulary/auditedWordIllustrations.json','src/features/vocabulary/approvedExampleImages.json','docs/unit-audit-20261105/validation/LV2-U46-praise-before-repair.json','docs/unit-audit-20261105/validation/LV2-U46-image-review-before-praise.json'];
  expect(proof.unchangedFiles.filter(f=>domain.has(f.path)).map(f=>f.path).sort()).toEqual([...projected].sort());
  expect(proof.unchangedFiles.filter(f=>!domain.has(f.path)).map(f=>f.path).sort()).toEqual([...independent].sort());
  expect(proof.unchangedFiles).toHaveLength(11);
- for(const f of proof.unchangedFiles){
-  const current=readFileSync(f.path,'utf8').replace(/\r\n/g,'\n');
-  const retained=f.path==='src/features/vocabulary/auditedWordIllustrations.json'
-   ? beforeImageRegistryText(current) : current;
-  const text=domain.has(f.path)?lv3AfterUnit1PublishedText(f.path,retained):retained;
-  expect(createHash('sha256').update(lv3Unit1BeforePublishedText(f.path,text)).digest('hex'),f.path).toBe(f.lfNormalizedSha256);
- }
  expect(proof.unchangedFiles.find(f=>f.path==='src/features/vocabulary/approvedExampleImages.json')).toMatchObject({"sha256":"cb10a47f664cba5d897488972f6144b84f9285903170aa07bab8663f224dd753","lfNormalizedSha256":"030d8c1de76182f6a5cdf5340e84ddc8112cd0f54c998b9ffbef189259e2c12a"});
  expect(proof.crossPlatformTextChecksum.allOriginalRawSha256ValuesRetained).toBe(true);
+});
+// Each independent file keeps its own actual read, strict inverse and original
+// hash assertion. No proof cache or timeout is changed by separating the cases.
+it.each(proof.unchangedFiles)('authenticates the exact retained approval file $path',f=>{
+ validateAdditionalProof(proof);
+ expect(projected.includes(f.path)||independent.includes(f.path)).toBe(true);
+ const current=readFileSync(f.path,'utf8').replace(/\r\n/g,'\n');
+ const retained=f.path==='src/features/vocabulary/auditedWordIllustrations.json'
+  ? beforeImageRegistryText(current) : current;
+ const text=projected.includes(f.path)?lv3AfterUnit1PublishedText(f.path,retained):retained;
+ expect(createHash('sha256').update(lv3Unit1BeforePublishedText(f.path,text)).digest('hex'),f.path).toBe(f.lfNormalizedSha256);
 });
 it('restores exactly one Chinese caption before all old registry hashes',()=>{
  const old=beforeAdditionalRegistry(cards,proof);expect(old).toHaveLength(726);expect(additionalHash(old)).toBe(c.registry.beforeHash);expect(old.find(r=>r.id===c.id)).toEqual(c.before);expect(cards.find(r=>r.id===c.id)).toEqual(c.after);expect(()=>beforeAdditionalRegistry(old,proof)).toThrow();

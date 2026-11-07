@@ -2,13 +2,17 @@ import { describe, expect, it } from 'vitest';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { createElement } from 'react';
 import pack from '../../../public/data/v1/sa-pack.json';
+import { lv3AfterUnitFile } from '../direct/lv3Audit.testSupport';
 import rows from './illustrationCaptions.json';
 import { getIllustrationCaption } from './illustrationCaptions';
 import StudyIllustration from './StudyIllustration';
 
+let historicalPack: typeof pack | undefined;
+const beforeMediaMigration = () => historicalPack ??= lv3AfterUnitFile('LV3-U05', 'public/data/v1/sa-pack.json', pack);
+
 describe('image caption pairs', () => {
-  it('covers every installed approved scenario caption without reusing embedded English', () => {
-    const sources = pack.media.filter(m => m.status === 'approved' && m.imageType === 'scenario' && m.captionZh);
+  it('covers all 742 original approved scenario captions at the authenticated pre-migration checkpoint', () => {
+    const sources = beforeMediaMigration().media.filter(m => m.status === 'approved' && m.imageType === 'scenario' && m.captionZh);
     expect(sources).toHaveLength(742);
     expect(rows).toHaveLength(sources.length);
     expect(new Set(rows.map(r => r.captionZh)).size).toBe(rows.length);
@@ -21,6 +25,23 @@ describe('image caption pairs', () => {
       const embeddedEnglish = source.captionZh.split('\n').find(s => /^[A-Za-z]/.test(s));
       if (embeddedEnglish) expect(pair.en).not.toBe(embeddedEnglish.trim());
     }
+  });
+  it('preserves every original source and gives all 302 added scenario captions an exact Chinese-only fallback', () => {
+    const current = lv3AfterUnitFile('LV3-U06', 'public/data/v1/sa-pack.json', pack);
+    const before = beforeMediaMigration().media;
+    const originalIds = new Set(before.map(source => source.assetId));
+    for (const source of before) expect(current.media.find(row => row.assetId === source.assetId)).toEqual(source);
+    const sources = current.media.filter(source => source.status === 'approved' && source.imageType === 'scenario' && source.captionZh);
+    expect(sources).toHaveLength(1044);
+    const additions = sources.filter(source => !originalIds.has(source.assetId));
+    expect(additions).toHaveLength(302);
+    for (const source of additions) {
+      expect(rows.some(row => row.captionZh === source.captionZh)).toBe(false);
+      expect(getIllustrationCaption(source.captionZh)).toEqual({ en: '', zh: source.captionZh });
+    }
+    const unknown = structuredClone(pack);
+    unknown.media[0].captionZh += ' unrecorded';
+    expect(() => lv3AfterUnitFile('LV3-U06', 'public/data/v1/sa-pack.json', unknown)).toThrow(/drift/);
   });
   it('never pairs a changed or unknown caption with unrelated English', () => {
     expect(getIllustrationCaption('新的圖說')).toEqual({ en: '', zh: '新的圖說' });

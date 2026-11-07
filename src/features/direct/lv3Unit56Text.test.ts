@@ -2,6 +2,8 @@ import 'fake-indexeddb/auto';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import source5 from '../../../scripts/sources/LV3Unit5.json';
 import source6 from '../../../scripts/sources/LV3Unit6.json';
+import curriculum6 from './curriculumLV3Unit6.json';
+import { lv3AfterUnitFile } from './lv3Audit.testSupport';
 import pack from '../../../public/data/v1/sa-pack.json';
 import { allQuestions, findUnit, REVISION, templateGroup, validGroup } from './model';
 import { groupWordIds, resolveGroupWords } from './groupScope';
@@ -32,8 +34,19 @@ for (const [source, count, usageCount, mappedCount] of [
       expect(vocabulary.slice(0, 45).map(i => i.displayWord)).toEqual(source.headwordOrder);
       expect(vocabulary.slice(45).map(i => [i.displayWord, i.sourcePage, i.printedLabel]))
         .toEqual(source.related.map(i => [i.word, i.sourcePage, i.printedLabel]));
-      expect(unit.items.filter(i => i.kind === 'grammar').map(i => [i.pattern, i.sourcePage]))
+      // G015 corrects a retained import omission. Authenticate the complete
+      // current runtime document, then compare its exact historical projection.
+      const delivered = { ...curriculum6, learningItems: unit.items };
+      const originalItems = source.unit === 6
+        ? lv3AfterUnitFile('starter-media-actual-names-v1', 'src/features/direct/curriculumLV3Unit6.json', delivered).learningItems
+        : unit.items;
+      expect(originalItems.filter(i => i.kind === 'grammar').map(i => [i.pattern, i.sourcePage]))
         .toEqual(source.usage.map(i => [i.label, i.sourcePage]));
+      if (source.unit === 6) {
+        const unknown = structuredClone(delivered);
+        unknown.learningItems.find(item => item.learningItemId === 'LI-LV3U06-G015')!.pattern += ' unrecorded';
+        expect(() => lv3AfterUnitFile('starter-media-actual-names-v1', 'src/features/direct/curriculumLV3Unit6.json', unknown)).toThrow(/drift/);
+      }
       expect(new Set(unit.items.map(i => i.learningItemId)).size).toBe(count + usageCount);
       expect(vocabulary.filter(i => !i.officialWordId).map(i => i.displayWord))
         .toEqual(rows.filter(i => !i.officialWordId).map(i => i.word));
