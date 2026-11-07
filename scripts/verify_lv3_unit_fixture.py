@@ -21,6 +21,36 @@ import apply_lv3_unit_audit as audit
 import lv3_audit_pipeline as pipeline
 
 
+def fixture_unit_index(entries, manifest):
+    """Find one ordinary unit after the caller authenticates the typed chain."""
+    audit.require(manifest.get('schemaVersion') == 2, 'Fixture requires an ordinary schema-2 unit')
+    unit = manifest.get('unit')
+    audit.require(isinstance(unit, str) and unit, 'Missing fixture unit identity')
+    matches = [i for i, entry in enumerate(entries)
+               if entry.get('kind') != 'migration' and entry.get('unit') == unit]
+    audit.require(len(matches) == 1, 'Missing or duplicate ordinary fixture unit')
+    index = matches[0]
+    entry = entries[index]
+    audit.require(set(entry) == {'unit', 'path', 'manifestHash', 'status'},
+                  'Invalid ordinary fixture entry')
+    audit.require(entry['manifestHash'] == audit.node_hash(manifest), 'Fixture manifest chain mismatch')
+    audit.require(entry['status'] in {'prepared', 'committed'}, 'Unknown fixture entry status')
+    return index
+
+
+def fixture_parent_checkpoint(entries, manifest):
+    """Retain the immediate committed predecessor, including a typed migration."""
+    index = fixture_unit_index(entries, manifest)
+    audit.require(index > 0, 'Fixture unit has no predecessor')
+    parent = entries[index - 1]
+    identity = pipeline.media_migration.identity(parent)
+    audit.require(isinstance(identity, str) and identity, 'Missing fixture predecessor identity')
+    audit.require(parent['status'] == 'committed', 'Fixture predecessor is not committed')
+    audit.require(manifest.get('parentManifestHash') == parent['manifestHash'],
+                  'Fixture predecessor manifest mismatch')
+    return identity
+
+
 class RealUnitFixtureTests(base.U02RealFixtureTests):
     __unittest_skip__ = False
 
@@ -37,13 +67,12 @@ class RealUnitFixtureTests(base.U02RealFixtureTests):
         audit.require(audit.node_hash(cls.scope) == summary['scopeHash'], 'Sealed scope changed')
         audit.require(set(cls.capture) == audit.input_paths(base.ROOT), 'Capture domain changed')
         _, _, loaded = pipeline.load_chain(base.ROOT)
-        index = next(i for i, (e, _, _) in enumerate(loaded) if e['unit'] == cls.manifest['unit'])
-        cls.parent_unit = loaded[index - 1][0]['unit']
+        cls.parent_checkpoint = fixture_parent_checkpoint([entry for entry, _, _ in loaded], cls.manifest)
         cls.temporary = tempfile.TemporaryDirectory(prefix='lv3-unit-real-fixture-')
         cls.addClassCleanup(cls.temporary.cleanup)
         cls.fixture = Path(cls.temporary.name) / 'worktree'
         audit.require(not cls.fixture.resolve().is_relative_to(base.ROOT.resolve()), 'TEMP must be outside repository')
-        pipeline.project_checkpoint(base.ROOT, cls.fixture, target=cls.parent_unit)
+        pipeline.project_checkpoint(base.ROOT, cls.fixture, target=cls.parent_checkpoint)
         for path, digest in cls.capture.items():
             audit.require(audit.file_hash(cls.fixture / path) == digest, 'Independent before drift: ' + path)
         shutil.copytree(base.ROOT / pipeline.DOCS, cls.fixture / pipeline.DOCS)
@@ -54,7 +83,7 @@ class RealUnitFixtureTests(base.U02RealFixtureTests):
 
     def commit_fixture_entry(self):
         chain = audit.read_json(self.fixture / pipeline.CHAIN)
-        next(e for e in chain['entries'] if e['unit'] == self.manifest['unit'])['status'] = 'committed'
+        chain['entries'][fixture_unit_index(chain['entries'], self.manifest)]['status'] = 'committed'
         audit.dump(self.fixture / pipeline.CHAIN, chain)
 
     def test_02_real_apply_idempotence_and_single_shared_file_write(self):
@@ -92,7 +121,7 @@ class RealUnitFixtureTests(base.U02RealFixtureTests):
         self.assertEqual(inverse, before_docs)
         self.commit_fixture_entry()
         projected = Path(self.temporary.name) / 'normalized-parent'
-        pipeline.project_checkpoint(self.fixture, projected, target=self.parent_unit)
+        pipeline.project_checkpoint(self.fixture, projected, target=self.parent_checkpoint)
         for path in self.inputs:
             self.assertEqual((projected / path).read_bytes().replace(b'\r\n', b'\n'),
                              original[path].replace(b'\r\n', b'\n'), path)
