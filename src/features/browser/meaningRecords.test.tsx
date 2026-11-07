@@ -8,6 +8,67 @@ const word = {wordId:'W999101',word:'zztest',pos:'n./v.',posAll:['n.','v.'],mean
 const sense = (id:number,pos='n.',overrides:Partial<SenseRecord>={}) => ({senseId:`W999101-${id}`,wordId:word.wordId,word:word.word,senseOrder:id,sensePos:pos,meaningZh:`字義${id}`,status:'reviewed',answerForms:[],isExamSense:false,examEvidence:null,note:null,...overrides} as SenseRecord);
 const render = (senses:SenseRecord[],record=word) => renderToStaticMarkup(<RecordedMeanings word={record} senses={senses}/>);
 
+const wageForms = {base:'wage',past:'waged',pastParticiple:'waged',sourceRef:'https://www.collinsdictionary.com/dictionary/english/wage',status:'approved'};
+const wage = {...word,wordId:'W002976',word:'wage(s)',wordVariants:['wage','wages'],status:'draft',verbForms:wageForms};
+
+it('renders only the audited wage forms under the retained wage(s) display',()=>{
+ expect(trustedVerbForms(wage)).toBe(wageForms);
+ const html=render([],wage);
+ expect(html).toContain('wage');expect(html).toContain('waged');
+ expect(html).not.toContain('動詞三態尚未收錄');
+});
+it.each<[string,Partial<WordRecord>]>([
+ ['wrong ID',{wordId:'W999101'}],
+ ['wrong display',{word:'wages'}],
+ ['case-changed display',{word:'Wage(s)'}],
+ ['missing variants',{wordVariants:undefined}],
+ ['missing plural',{wordVariants:['wage']}],
+ ['wrong variants',{wordVariants:['wage','fake']}],
+ ['duplicate variants',{wordVariants:['wage','wage']}],
+ ['extra variant',{wordVariants:['wage','wages','fake']}],
+ ['reordered variants',{wordVariants:['wages','wage']}],
+ ['private word',{distributionScope:'private_only'}],
+ ['restricted word',{distributionScope:'restricted'}],
+ ['inactive word',{active:false}],
+ ['rejected word',{status:'rejected'}],
+ ['unknown word status',{status:'unknown'}],
+])('rejects wage records with %s',(label,overrides)=>{
+ expect(trustedVerbForms({...wage,...overrides})).toBeUndefined();
+});
+it.each<[string,Partial<NonNullable<WordRecord['verbForms']>>]>([
+ ['display base',{base:'wage(s)'}],
+ ['plural base',{base:'wages'}],
+ ['case-changed base',{base:'Wage'}],
+ ['wrong past',{past:'wages'}],
+ ['wrong participle',{pastParticiple:'waging'}],
+ ['empty past',{past:''}],
+ ['fake source',{sourceRef:'https://example.com/wage'}],
+ ['lookalike source',{sourceRef:'https://www.collinsdictionary.com.evil.test/dictionary/english/wage'}],
+ ['wrong entry',{sourceRef:'https://www.collinsdictionary.com/dictionary/english/wages'}],
+ ['unverified conjugation source',{sourceRef:'https://www.collinsdictionary.com/conjugation/english/wage'}],
+ ['empty source',{sourceRef:' '}],
+ ['draft verification',{status:'draft'}],
+ ['reviewed but not approved',{status:'reviewed'}],
+ ['unknown verification',{status:'verified'}],
+])('rejects wage forms with %s',(label,overrides)=>{
+ expect(trustedVerbForms({...wage,verbForms:{...wageForms,...overrides}})).toBeUndefined();
+});
+it('does not let malformed special identities fall back to matching display/base',()=>{
+ for(const record of [
+  {...wage,verbForms:{...wageForms,base:'wage(s)',sourceRef:'fake'}},
+  {...wage,wordId:'OTHER',verbForms:{...wageForms,base:'wage(s)'}},
+  {...wage,word:'wage'},
+  {...wage,wordId:'OTHER',word:'WAGE(S)',verbForms:{...wageForms,base:'WAGE(S)'}},
+ ]) expect(trustedVerbForms(record)).toBeUndefined();
+});
+it('keeps ordinary base matching and never trusts arbitrary word variants',()=>{
+ const forms={base:'ZZTEST',past:'zztested',pastParticiple:'zztested',sourceRef:'synthetic:verified',status:'reviewed'};
+ expect(trustedVerbForms({...word,verbForms:forms})).toBe(forms);
+ expect(trustedVerbForms({...word,wordVariants:['wage','wages'],verbForms:wageForms})).toBeUndefined();
+ for(const overrides of [{active:false},{distributionScope:'private_only'},{status:'rejected'}])
+  expect(trustedVerbForms({...word,...overrides,verbForms:forms})).toBeUndefined();
+});
+
 it('shows all recorded senses across POS without exam/default selection or source mutation',()=>{
  const rows=[sense(1,'v.',{isExamSense:true}),sense(2)];const before=JSON.stringify(rows);
  const html=render(rows);expect(html).toContain('字義1');expect(html).toContain('字義2');

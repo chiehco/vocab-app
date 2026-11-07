@@ -39,9 +39,19 @@ export function linkedSenseLabel(word: WordRecord, senses: SenseRecord[], senseI
 
 export function trustedVerbForms(word: WordRecord) {
   const forms = word.verbForms;
-  return isPublicContent(word) && forms && ['approved', 'reviewed'].includes(forms.status)
-    && [forms.base, forms.past, forms.pastParticiple, forms.sourceRef].every(value => typeof value === 'string' && value.trim())
-    && forms.base.toLowerCase() === word.word.toLowerCase() ? forms : undefined;
+  if (!isPublicContent(word) || !forms || !['approved', 'reviewed'].includes(forms.status)
+    || ![forms.base, forms.past, forms.pastParticiple, forms.sourceRef].every(value => typeof value === 'string' && value.trim())) return undefined;
+  // U05-VOC-288 verified the verb wage under the retained noun display wage(s).
+  // Reserve both identities so malformed records cannot fall through to base == display.
+  if (word.wordId === 'W002976' || word.word.toLowerCase() === 'wage(s)') {
+    return word.wordId === 'W002976' && word.word === 'wage(s)'
+      && Array.isArray(word.wordVariants) && word.wordVariants.length === 2
+      && word.wordVariants[0] === 'wage' && word.wordVariants[1] === 'wages'
+      && forms.base === 'wage' && forms.past === 'waged' && forms.pastParticiple === 'waged'
+      && forms.status === 'approved'
+      && forms.sourceRef === 'https://www.collinsdictionary.com/dictionary/english/wage' ? forms : undefined;
+  }
+  return forms.base.toLowerCase() === word.word.toLowerCase() ? forms : undefined;
 }
 
 export function hasVerbMeaning(word: WordRecord, senses: SenseRecord[]) {
