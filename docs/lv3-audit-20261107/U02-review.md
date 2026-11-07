@@ -7,7 +7,7 @@
 - [U02-patches.json](U02-patches.json) 已封存為 ready，37 列修正已實際套用，六個產品檔的語意與位元組雜湊已核對。封存 manifest canonical SHA-256：`3ca25889cb2154233e88b1c543a818a2999e76ed7959bc892633f807490a6c24`。
 - 37 列分為：23 words、5 examples、1 note、1 curriculum learningItem、7 grammarQuestions。共 64 個精準欄位位置；以整個 options 陣列等頂層欄位計算則是 57 欄。這不是新增 37 張字卡。
 - 四個來源檔為 `public/data/v1/words.json`、`examples.json`、`notes.json` 與 `src/features/direct/curriculumUnit2.json`；另同步衍生 `public/data/v1/meta.json`、`sa-pack.json`。同一 curriculum 檔包含 learningItems 和 grammarQuestions 兩個容器。
-- U02 套用後的 178 教材項／116 一般卡桌面瀏覽器驗收已完成，詳見 [runtime QA](U02-runtime-qa.md)。合併後驗證仍在收尾，最終 LV3 全套回歸尚待批次完成後執行；尚不宣稱推送、部署或正式站通過。
+- U02 套用後的 178 教材項／116 一般卡桌面瀏覽器驗收已完成，詳見 [runtime QA](U02-runtime-qa.md)。合併後 focused 37項、Python 32項、強制TypeScript、lint及build均已通過，詳見 [integrated validation](U02-validation.md)。最終 LV3 全套回歸尚待批次完成後執行；尚不宣稱推送、部署或正式站通過。
 
 ## 已完成的審查覆蓋
 
@@ -70,7 +70,8 @@ G10 management 的「教材所示／通常」原已有限定；allow／permissiv
 - fixture 已驗證六檔寫入、精確反向還原、冪等、第二次替換失敗回復及來源漂移拒絕。首次 harness-only 失敗與修正後重跑均保留記錄，沒有抹除失敗。
 - 後續實際工作樹交易已套用37列，六檔語意與位元組雜湊核對符合封存值；這不取代瀏覽器或完整整合驗證。
 - 桌面瀏覽器已逐張重開178教材項／116一般卡，核對37列／57個執行中欄位、26詞條頁籤及7題實際文法作答分支。48個圖片呈現成功載入，測試作答關閉重開後完整保留，詳見 [runtime QA](U02-runtime-qa.md)。
-- **Pending：** 合併後 scoped 驗證的最終報告與整個LV3批次的完整回歸。實際手機、離線PWA與歷史SRS遷移不在本輪桌面驗收範圍。
+- 合併後 scoped 驗證已通過：原命令focused 8檔37項、Python 11＋13＋8項、強制TypeScript、lint、build；全部舊expected hashes保留，原失敗及修補記錄見 [integrated validation](U02-validation.md)。Lint仍有既有與本機QA script warnings。
+- **Pending：** 整個LV3批次的完整回歸及正式發布驗收。實際手機、離線PWA與歷史SRS遷移不在本輪桌面驗收範圍。
 - **未聲稱：** U02正式發布、正式站驗收、實體手機驗收。U01的原G33仍屬另一待處理項目，本輪未改。
 
 教材原創例句、正式例句、填空、文法題幹、正解與各種既有 IDs 保留；未改母表、SRS或學習紀錄。字典英文釋義與干擾選項確有上述窄幅修改，因此不能概括為「所有英文未改」。

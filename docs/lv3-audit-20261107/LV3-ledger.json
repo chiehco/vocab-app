@@ -37,7 +37,7 @@
       "itemCount": 178,
       "vocabularyCount": 138,
       "grammarCount": 40,
-      "status": "text_applied_runtime_verified_scoped_validation_in_progress",
+      "status": "reviewed_locally_with_retained_source_questions",
       "imageRepairsVerified": [
         "permissible W005669"
       ],
@@ -47,7 +47,11 @@
       "manifest": "U02-patches.json",
       "review": "U02-review.md",
       "runtimeQa": "U02-runtime-qa.md",
-      "validation": "Actual 37-row six-file application and desktop card reopening verified; merged scoped checks in progress; final LV3 full-suite release checks remain required."
+      "validation": "U02-validation.md",
+      "retainedQuestions": [
+        "achieve W002009 bridge image has no verified original caption"
+      ],
+      "releaseValidation": "Final low-load complete LV3 suite, release and deployed-version checks remain required; no physical-device claim."
     },
     {
       "unit": 4,
@@ -55,7 +59,14 @@
       "itemCount": 183,
       "vocabularyCount": 122,
       "grammarCount": 61,
-      "status": "source_vocabulary_grammar_and_image_review_in_progress"
+      "status": "before_runtime_complete_preparing_sourced_corrections",
+      "beforeCoverage": {
+        "curriculumCards": 183,
+        "uniqueGeneralCards": 106,
+        "visibleTabs": 379,
+        "reachableGeneralImages": 30
+      },
+      "pendingImageRepair": "replace W002723 versioned candidate visually verified; integration and actual consumer QA pending"
     },
     {
       "unit": 5,
