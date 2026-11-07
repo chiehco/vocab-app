@@ -10,7 +10,7 @@
 - Exactly one final general-registry row was appended: `LV3-GENERAL-W002185-20261107`, W002185, alias confirm. The preceding 339 ordered rows remain identical.
 - Original EN/ZH captions are copied from the exact confirm + complete Chinese-caption source row. No independent caption ID exists. AX88b4f3dd remains unchanged. Original image, formal examples, media and caption-source files are retained.
 - All four references remain without authored illustration or originalExample: LI-LV3U05-V034, LI-LV6U08-V060, LI-LV6U14-V072, LI-LIVEABC_BASICU05-V011. The LiveABC source is the array in `src/features/direct/liveabcBasic.json`, not a curriculum-prefixed filename.
-- This is agent visual review under the comprehensive repair task, not manual user approval or publication acceptance. No curriculum, SRS, source workbook, source manifest, sa-pack or builder changes are included.
+- Local visual review under the authorized comprehensive repair task; this is not manual user sign-off or publication acceptance. No curriculum, SRS, source workbook, source manifest, sa-pack or builder changes are included.
 
 ## Strict inverse and historical compatibility
 
@@ -37,4 +37,4 @@ Rollback: apply only the verified confirm inverse to the current registry; write
 - Negative cases cover every top-level proof field, mapping identity/path/caption fields, raw formatting, duplicate keys/rows, property/row order, unrelated mutation, source/candidate asset mutation, and repeated inverse. CRLF behavior is explicitly checked.
 - Resolver tests cover general illustration, versioned gallery asset URL, exact Chinese image clue, wrong word/ID/path rejection and no textbook binding.
 - Focused oxlint passed. `git diff --check` passed. Original image and old proof/guard files compare unchanged against the exact base.
-- Full suite, project compile/build, browser/reopen/cache-update acceptance and physical-device checks were intentionally not run here. Parent owns merged-head validation and actual app consumer acceptance. No push or deployment performed.
+- Full suite, project compile/build, browser/reopen/cache-update acceptance and physical-device checks were intentionally not run here. Merged-head validation and actual app consumer acceptance remain required. No push or deployment performed.
