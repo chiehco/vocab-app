@@ -1,0 +1,85 @@
+{
+  "manifest": "docs/unit-audit-20261105/LV2-U45-wicked-usage-followup.json",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "checkedAt": "2026-11-06T23:55:27.448604+00:00",
+  "changeCount": 1,
+  "changes": [
+    {
+      "dataset": "words",
+      "id": "W002995",
+      "before": {
+        "wordId": "W002995",
+        "word": "wicked",
+        "wordVariants": [
+          "wicked"
+        ],
+        "level": "LV3",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "壞的；邪惡的；缺德的；刻毒的",
+        "meaningEn": "morally bad in principle or practice",
+        "usagePattern": "be wicked; wicked + N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "wicked",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "邪惡的……（修飾名詞）"
+      },
+      "after": {
+        "wordId": "W002995",
+        "word": "wicked",
+        "wordVariants": [
+          "wicked"
+        ],
+        "level": "LV3",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "壞的；邪惡的；缺德的；刻毒的",
+        "meaningEn": "morally bad in principle or practice",
+        "usagePattern": "be wicked; wicked + N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "wicked",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "是邪惡的；邪惡的……（修飾名詞）"
+      },
+      "reason": "Both predicative and attributive uses must have their Chinese counterpart; the actual parser omits all Chinese when group counts differ.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/wicked"
+    }
+  ],
+  "masterTouched": false,
+  "sentencesChanged": false,
+  "englishSentencesChanged": false,
+  "imagesChanged": false,
+  "sourceHashesBefore": {
+    "words.json": "a73d388069153286d5e0e55b2b69eab4055b4ac3c7bbda29ad437dd1a327b10e",
+    "senses.json": "c56b0e289947bd491ee83301fc2c2c27d29ff57ff48134b5150803f189f36b8e",
+    "examples.json": "537431965a59367265d3dcc718255d987c0a1f32c68e739c4f57af2ccbfa0811",
+    "meta.json": "e3062b0c2677910a558457d6de3505e94dbfd476a8cecae4900d70524241d6ee",
+    "sa-pack.json": "4438781fe854efc8b32c4efeb1cbc59ed85a132be1f1b4977e4df5fe48c4e7d0"
+  },
+  "sourceHashesAfter": {
+    "words.json": "ef1bdaccb772807a3a478c99c8813b099ac757faeda85f368e48203e8b82aa40",
+    "senses.json": "c56b0e289947bd491ee83301fc2c2c27d29ff57ff48134b5150803f189f36b8e",
+    "examples.json": "537431965a59367265d3dcc718255d987c0a1f32c68e739c4f57af2ccbfa0811",
+    "meta.json": "16f5a7695fc8c9b9199c2b705af97c028ea7547f4c56f0c7fba8721bac4330d3",
+    "sa-pack.json": "8f1e7f3f1841c3f179b80ecb4e94ecb6b9d1f177a5f498795cf7d05b43912cbd"
+  },
+  "state": "applied_not_ui_verified",
+  "acceptance": {
+    "state": "actual_app_reopened_saved_and_persistence_verified",
+    "reopenSummary": "validation/LV2-U45-reopen-summary.json",
+    "persistence": "validation/LV2-U45-persistence-summary.json",
+    "executionStatePreserved": "applied_not_ui_verified"
+  }
+}

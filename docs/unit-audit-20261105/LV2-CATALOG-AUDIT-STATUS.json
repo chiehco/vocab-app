@@ -1,6 +1,6 @@
 {
   "scope": "Exact current repository curriculum catalogue, not a publisher edition table of contents or an inferred numeric range.",
-  "checkedAtUtc": "2026-11-06T23:25:37.903Z",
+  "checkedAtUtc": "2026-11-07T00:37:34.515Z",
   "basis": {
     "model": "src/features/direct/model.ts",
     "catalog": "src/features/vocabulary/textbookCatalog.ts",
@@ -78,13 +78,13 @@
     40,
     41,
     42,
-    43
-  ],
-  "currentAuditUnits": [
+    43,
     44
   ],
+  "currentAuditUnits": [
+    45
+  ],
   "notYetAuditedUnits": [
-    45,
     46,
     47,
     48,
@@ -773,7 +773,7 @@
       "curriculumPath": "src/features/direct/curriculumLV2Unit44.json",
       "registeredInModel": true,
       "deliveryMode": "text_only",
-      "auditStatus": "text_after_complete_building_image_and_own_ci_pending",
+      "auditStatus": "text_and_repaired_image_own_ci_success_source_limits_retained",
       "ledger": "docs/unit-audit-20261105/LV2-U44-ledger.json",
       "ownCi": {
         "commit": "bef14d267b348c73b5627b3d213399134df2badd",
@@ -801,6 +801,29 @@
       "imageFollowup": {
         "state": "locally_integrated_reopened_saved_pending_exact_image_checkpoint_ci",
         "evidence": "validation/LV2-U44-building-image-integration.json"
+      },
+      "imageRepairOwnCi": {
+        "commit": "45edea0bb42fb0cac16f10fc6468574e1225e109",
+        "run": 42312987204,
+        "job": 128218688089,
+        "url": "https://github.com/chiehco/vocab-app/actions/runs/42312987204/job/128218688089",
+        "status": "completed",
+        "conclusion": "success",
+        "checkoutShaReadFromFullLog": true,
+        "pythonBatches": [
+          14,
+          7,
+          84,
+          5,
+          10
+        ],
+        "jobCompletedAtUtc": "2026-11-06T23:53:37Z",
+        "testFiles": 236,
+        "tests": 1930,
+        "lint": "success",
+        "typecheck": "success",
+        "build": "success",
+        "buildLogCompletedAtUtc": "2026-11-06T23:53:32.4850601Z"
       }
     },
     {
@@ -826,8 +849,8 @@
       "curriculumPath": "src/features/direct/curriculumLV2Unit45.json",
       "registeredInModel": true,
       "deliveryMode": "text_only",
-      "auditStatus": "not_audited_in_this_full_audit",
-      "ledger": null,
+      "auditStatus": "after_and_local_checks_complete_own_ci_pending",
+      "ledger": "docs/unit-audit-20261105/LV2-U45-ledger.json",
       "ownCi": null
     },
     {
@@ -990,7 +1013,7 @@
   },
   "releaseGate": {
     "wholeRegisteredLvReady": false,
-    "reason": "U44 text checkpoint own full CI successful; exact building repair locally reopened/saved, new image checkpoint CI pending. U45 before155/80/147 retained and review in progress; U46–U50 unaudited. U42 direction, U26 and edition-boundary limits retained.",
+    "reason": "U45 actual App/persistence and local checks are accepted, but its own new-head CI remains pending. Registered U46–U50 are not yet audited. U44 building repair has its own successful repaired-head CI; retained source limits, U42 direction, U26 and edition-boundary limitations remain.",
     "mainMerged": false,
     "deployed": false
   },

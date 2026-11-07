@@ -1,0 +1,117 @@
+{
+  "unit": "LV2-U45",
+  "state": "local_required_checks_passed_own_new_head_ci_pending",
+  "frontend": {
+    "initial": {
+      "files": 8,
+      "passedFiles": 5,
+      "failedFiles": 3,
+      "passedTests": 197,
+      "failedTests": 4
+    },
+    "repairs": [
+      {
+        "scope": "Historical curriculum projection used an undefined unit variable in the new U45 branch.",
+        "resolution": "Use the actual old.templateId and assert installed learningItems equal the current U45 items before precise inverse; original historical hashes retained."
+      },
+      {
+        "scope": "Prepared wicked Chinese had one group while unchanged English contains two.",
+        "resolution": "A separately recorded one-field followup restores both real Chinese pairs. Initial receipt and failure remain; no parser assertion removed."
+      }
+    ],
+    "originalLocalTimeoutMs": 5000,
+    "maxWorkers": 1,
+    "originalUnitText": {
+      "tests": 9,
+      "passed": true,
+      "firstFailures": "Two original5000ms initializer/progress tests exceeded the original limit in the first grouped run.",
+      "isolatedFullFilePassed": true,
+      "implementationOrTimeoutChanged": false,
+      "rootCauseNotEstablished": true
+    },
+    "repairedOtherSevenFiles": {
+      "files": 7,
+      "tests": 193,
+      "passed": true
+    },
+    "interpretation": "The final complete text file and seven other files are disjoint. Initial failed and repeated runs are retained as history, not added to the passing count."
+  },
+  "python": {
+    "tests": 87,
+    "passed": true,
+    "initialInfrastructureFailure": "Sandbox default temporary directory raised WinError5 in setUp and cleanup; 87 tests reported174 infrastructure errors. This was not an assertion result or an approval denial.",
+    "resolution": "Same tests and assertions executed with tempfile.tempdir pointing only to a verified workspace child directory.",
+    "testOrProductionSemanticsChanged": false,
+    "finalStrengthening": {
+      "scope": "The existing U45 eighteen-form boundary test additionally rejects past=found, pastParticiple=found and base=find for lexical found.",
+      "focusedUpdatedMethodPassed": true,
+      "testsRun": 1,
+      "overlapsFull87Method": true,
+      "notAddedAsAn88thTest": true,
+      "productionCodeChanged": false
+    }
+  },
+  "lint": {
+    "exitCode": 0
+  },
+  "typecheck": {
+    "exitCode": 0
+  },
+  "build": {
+    "exitCode": 0
+  },
+  "sourceDraftCheck": {
+    "exitCode": 0
+  },
+  "sourceIntegrationCheck": {
+    "exitCode": 0
+  },
+  "originalFixtureHashesReset": false,
+  "logs": [
+    {
+      "file": "LV2-U45-regression-first.txt",
+      "sha256": "55d345cb0b1face7e5fdc547588aeec9b12471f011234a62981b91eca67efcac"
+    },
+    {
+      "file": "LV2-U45-regression-repair.txt",
+      "sha256": "13a957431f5357b5a33bbad7c731868d3fac57e898154013914471a375de5577"
+    },
+    {
+      "file": "LV2-U45-original-timeout-isolated.txt",
+      "sha256": "709f3895d2ecd87fdd18759d798283d3bfe25039de353962130cfcd07bfd5736"
+    },
+    {
+      "file": "LV2-U45-python-boundaries.txt",
+      "sha256": "0962ea1ae01df1774fcc571d8b7c586024412b36fa26675f31e342160e06bc0a"
+    },
+    {
+      "file": "LV2-U45-python-boundaries-workspace.txt",
+      "sha256": "ef5bb0b035955747fab8b4d72cea3846b64bceda1d03048d1f33ffc404169d71"
+    },
+    {
+      "file": "LV2-U45-found-mixed-negative.txt",
+      "sha256": "1d2552f5c1e0d492302f749d656d80419e81bec3de0d03e2d459125a6ef64124"
+    },
+    {
+      "file": "LV2-U45-lint-final.txt",
+      "sha256": "dd26112f846e6da3a49d4852e6c76ea0c480423f32a9bb63db6d0af5ad62d72a"
+    },
+    {
+      "file": "LV2-U45-typecheck-final.txt",
+      "sha256": "da91f4c430838409de74534c4d8bed41445d7c7283163b2a63c446dde034587b"
+    },
+    {
+      "file": "LV2-U45-build-final.txt",
+      "sha256": "8b433ba558171e934d06d28836ffc9fb3357e131ce5ddb7935e62e04ed9b6961"
+    },
+    {
+      "file": "LV2-U45-prepare_recovered_unit_drafts-check.txt",
+      "sha256": "d6d7741173c224aa9e21319463e29d093f7a6b5b2c917285fcce897774633706"
+    },
+    {
+      "file": "LV2-U45-integrate_recovered_units-check.txt",
+      "sha256": "fb56fc69296e4f184379c178cb0a1f55305038cc7aef18bdc9c8cc905fbfc142"
+    }
+  ],
+  "newHeadOwnCi": "pending_this_new_commit"
+}

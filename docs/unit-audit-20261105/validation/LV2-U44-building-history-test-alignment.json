@@ -24,5 +24,52 @@
     "job": 128215970661,
     "state": "in_progress_not_claimed_success"
   },
-  "newExactHeadCi": "pending_after_push"
+  "newExactHeadCi": {
+    "commit": "45edea0bb42fb0cac16f10fc6468574e1225e109",
+    "run": 42312987204,
+    "job": 128218688089,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42312987204/job/128218688089",
+    "status": "completed",
+    "conclusion": "success",
+    "checkoutShaReadFromFullLog": true,
+    "pythonBatches": [
+      14,
+      7,
+      84,
+      5,
+      10
+    ],
+    "jobCompletedAtUtc": "2026-11-06T23:53:37Z",
+    "testFiles": 236,
+    "tests": 1930,
+    "lint": "success",
+    "typecheck": "success",
+    "build": "success",
+    "buildLogCompletedAtUtc": "2026-11-06T23:53:32.4850601Z"
+  },
+  "firstImageHeadCiFinal": {
+    "commit": "942a1b58308d04f1646dace66341dc2fd85a007e",
+    "run": 42312151812,
+    "job": 128215970661,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42312151812/job/128215970661",
+    "status": "completed",
+    "conclusion": "failure",
+    "checkoutShaReadFromFullLog": true,
+    "pythonBatches": [
+      14,
+      7,
+      84,
+      5,
+      10
+    ],
+    "jobCompletedAtUtc": "2026-11-06T23:44:55Z",
+    "testFilesPassed": 235,
+    "testFilesFailed": 1,
+    "testsPassed": 1929,
+    "testsFailed": 1,
+    "build": "skipped",
+    "failure": "U44 old text-checkpoint test still asserted current candidateExists=false after the candidate had been integrated.",
+    "repairCommit": "45edea0bb42fb0cac16f10fc6468574e1225e109",
+    "historicalAssertionPreserved": true
+  }
 }

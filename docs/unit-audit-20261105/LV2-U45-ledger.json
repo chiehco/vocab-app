@@ -1,0 +1,364 @@
+{
+  "unit": "LV2-U45",
+  "state": "actual_app_saved_and_local_checks_complete_own_new_head_ci_pending",
+  "baseBeforeCaptureCheckpoint": "bef14d267b348c73b5627b3d213399134df2badd",
+  "integrationBaseCheckpoint": "45edea0bb42fb0cac16f10fc6468574e1225e109",
+  "updatedAt": "2026-11-07T00:37:34.515Z",
+  "scope": {
+    "learningItems": 155,
+    "vocabulary": 102,
+    "grammar": 53,
+    "formalOccurrences": 81,
+    "formalWords": 80,
+    "examples": 147,
+    "notes": 85,
+    "unmappedOccurrences": 21,
+    "contentPages": 9,
+    "nextBoundaryTopOnly": 409,
+    "sourceInspectionHalves": 19,
+    "generalImages": 40,
+    "deliveryMode": "text_only",
+    "practiceMode": "read_only"
+  },
+  "corrections": {
+    "mainRows": 60,
+    "forms": 18,
+    "notes": 5,
+    "wickedChinesePairFollowup": 1,
+    "formalOperations": 84,
+    "formalFields": 126,
+    "uniqueFormalRows": 70,
+    "uniqueFormalFields": 125,
+    "curriculumRows": 114,
+    "curriculumFields": 207,
+    "actualClozePosCorrections": 5,
+    "nonEmptyHintRefinements": 3,
+    "practiceChinesePrecisionChanges": 2,
+    "individuallyReviewedAuthoredPractices": 6,
+    "individuallyReviewedSenses": 11,
+    "interpretation": "Operations include contextual narrowing, explicit supported alternate senses, Chinese precision, individually checked practice/sense statuses and printed display explanations. They are not a count of originally wrong cards."
+  },
+  "boundaries": {
+    "all6090HeadwordIdsPosAndStatusesPreserved": true,
+    "all7871PracticeEnglishClozeAnswersPreserved": true,
+    "exactChineseOnlyIds": [
+      "EX530970a6",
+      "EXf834964d"
+    ],
+    "allOtherChinesePreserved": true,
+    "rawSourceHash": "69502b6322e37fa485e6c5c63848ce4f57269e7d96f3bfe1e6e861ec455811b5",
+    "sourceEnglishOrderLabelsQuestionsAndReadOnlyModePreserved": true,
+    "unmappedIdsRemainNull": 21,
+    "sourceImagesAndRunningExamplesAdopted": 0,
+    "all40ExistingImageBytesBindingsAndCaptionsPreserved": true,
+    "originalHashFixturesChanged": false,
+    "formsRequireExistingLexicalV": true,
+    "foundLexicalFormsVisiblySeparateFromFindInflection": true,
+    "generalFoundImageStillFindingBerriesSeparateFromTextOnlyFoundEstablishment": true,
+    "noFormsForNounOnlyPoundPartnerDevilOrMouse": true,
+    "fourOfficialExamItemsAndAnswersVerifiedAuthoredPracticeKeptSeparate": true,
+    "supportedRareSensesRetained": true
+  },
+  "verification": {
+    "reopens": {
+      "state": "actual_app_after_reopens_verified_source_limits_retained",
+      "sourceItems": 155,
+      "sourceVocabulary": 102,
+      "sourceGrammar": 53,
+      "formalOccurrences": 81,
+      "generalCards": 80,
+      "examples": 147,
+      "nonEmptyHintsVisible": 40,
+      "emptyHintsPreserved": 107,
+      "newForms": 18,
+      "bothFormPanelsChecked": 36,
+      "usagePages": 14,
+      "automatedUsageResults": 8,
+      "completedCapturesIndependentlyComparedAtNativeSize": 6,
+      "manualRecoveryDoesNotClaimRawDomText": true,
+      "changedNotesVisible": 5,
+      "sourceImagesAdopted": 0,
+      "generalImagesChecked": 40,
+      "unchangedImageAssets": 40,
+      "unchangedImageBindings": 40,
+      "confirmedNewImageRepairPending": [],
+      "uiMismatches": 0,
+      "usageTabRetryCountFromAutomatedResults": 0,
+      "interruptedSixCaptureRetryCountsNotRecovered": true,
+      "rawPosVisibility": {
+        "fiveCorrectedPosSaved": true,
+        "emptyHintTagsMayNotRender": true,
+        "completeSentencesReopened": true,
+        "nativeSavedPosReadbackRequired": true
+      },
+      "manualUsageComparisonEvidence": "validation/LV2-U45-usage-recovery.json",
+      "retainedFoundContrastNoteActuallyReopened": true
+    },
+    "exactInverse": "validation/LV2-U45-exact-inverse.json",
+    "persistence": "validation/LV2-U45-persistence-summary.json",
+    "localChecks": {
+      "unit": "LV2-U45",
+      "state": "local_required_checks_passed_own_new_head_ci_pending",
+      "frontend": {
+        "initial": {
+          "files": 8,
+          "passedFiles": 5,
+          "failedFiles": 3,
+          "passedTests": 197,
+          "failedTests": 4
+        },
+        "repairs": [
+          {
+            "scope": "Historical curriculum projection used an undefined unit variable in the new U45 branch.",
+            "resolution": "Use the actual old.templateId and assert installed learningItems equal the current U45 items before precise inverse; original historical hashes retained."
+          },
+          {
+            "scope": "Prepared wicked Chinese had one group while unchanged English contains two.",
+            "resolution": "A separately recorded one-field followup restores both real Chinese pairs. Initial receipt and failure remain; no parser assertion removed."
+          }
+        ],
+        "originalLocalTimeoutMs": 5000,
+        "maxWorkers": 1,
+        "originalUnitText": {
+          "tests": 9,
+          "passed": true,
+          "firstFailures": "Two original5000ms initializer/progress tests exceeded the original limit in the first grouped run.",
+          "isolatedFullFilePassed": true,
+          "implementationOrTimeoutChanged": false,
+          "rootCauseNotEstablished": true
+        },
+        "repairedOtherSevenFiles": {
+          "files": 7,
+          "tests": 193,
+          "passed": true
+        },
+        "interpretation": "The final complete text file and seven other files are disjoint. Initial failed and repeated runs are retained as history, not added to the passing count."
+      },
+      "python": {
+        "tests": 87,
+        "passed": true,
+        "initialInfrastructureFailure": "Sandbox default temporary directory raised WinError5 in setUp and cleanup; 87 tests reported174 infrastructure errors. This was not an assertion result or an approval denial.",
+        "resolution": "Same tests and assertions executed with tempfile.tempdir pointing only to a verified workspace child directory.",
+        "testOrProductionSemanticsChanged": false,
+        "finalStrengthening": {
+          "scope": "The existing U45 eighteen-form boundary test additionally rejects past=found, pastParticiple=found and base=find for lexical found.",
+          "focusedUpdatedMethodPassed": true,
+          "testsRun": 1,
+          "overlapsFull87Method": true,
+          "notAddedAsAn88thTest": true,
+          "productionCodeChanged": false
+        }
+      },
+      "lint": {
+        "exitCode": 0
+      },
+      "typecheck": {
+        "exitCode": 0
+      },
+      "build": {
+        "exitCode": 0
+      },
+      "sourceDraftCheck": {
+        "exitCode": 0
+      },
+      "sourceIntegrationCheck": {
+        "exitCode": 0
+      },
+      "originalFixtureHashesReset": false,
+      "logs": [
+        {
+          "file": "LV2-U45-regression-first.txt",
+          "sha256": "55d345cb0b1face7e5fdc547588aeec9b12471f011234a62981b91eca67efcac"
+        },
+        {
+          "file": "LV2-U45-regression-repair.txt",
+          "sha256": "13a957431f5357b5a33bbad7c731868d3fac57e898154013914471a375de5577"
+        },
+        {
+          "file": "LV2-U45-original-timeout-isolated.txt",
+          "sha256": "709f3895d2ecd87fdd18759d798283d3bfe25039de353962130cfcd07bfd5736"
+        },
+        {
+          "file": "LV2-U45-python-boundaries.txt",
+          "sha256": "0962ea1ae01df1774fcc571d8b7c586024412b36fa26675f31e342160e06bc0a"
+        },
+        {
+          "file": "LV2-U45-python-boundaries-workspace.txt",
+          "sha256": "ef5bb0b035955747fab8b4d72cea3846b64bceda1d03048d1f33ffc404169d71"
+        },
+        {
+          "file": "LV2-U45-found-mixed-negative.txt",
+          "sha256": "1d2552f5c1e0d492302f749d656d80419e81bec3de0d03e2d459125a6ef64124"
+        },
+        {
+          "file": "LV2-U45-lint-final.txt",
+          "sha256": "dd26112f846e6da3a49d4852e6c76ea0c480423f32a9bb63db6d0af5ad62d72a"
+        },
+        {
+          "file": "LV2-U45-typecheck-final.txt",
+          "sha256": "da91f4c430838409de74534c4d8bed41445d7c7283163b2a63c446dde034587b"
+        },
+        {
+          "file": "LV2-U45-build-final.txt",
+          "sha256": "8b433ba558171e934d06d28836ffc9fb3357e131ce5ddb7935e62e04ed9b6961"
+        },
+        {
+          "file": "LV2-U45-prepare_recovered_unit_drafts-check.txt",
+          "sha256": "d6d7741173c224aa9e21319463e29d093f7a6b5b2c917285fcce897774633706"
+        },
+        {
+          "file": "LV2-U45-integrate_recovered_units-check.txt",
+          "sha256": "fb56fc69296e4f184379c178cb0a1f55305038cc7aef18bdc9c8cc905fbfc142"
+        }
+      ],
+      "newHeadOwnCi": "pending_this_new_commit"
+    },
+    "afterPixels": "validation/LV2-U45-after-pixel-review.json",
+    "navigation": "validation/LV2-U45-navigation-events.json",
+    "limits": "All155 source items,80 general cards and147 complete examples were reopened and field-compared. All40 unchanged image previews and representative after/mobile screens were actually viewed. Not every after screenshot was manually reread; invisible image facts and specifically pending inherited glosses are not certified."
+  },
+  "retainedPending": [
+    {
+      "ids": [
+        "EX3ef1ac3c"
+      ],
+      "field": "sensePos",
+      "reason": "Retain the earlier near predicate-complement convention pending; its hint was already precisely corrected."
+    },
+    {
+      "ids": [
+        "W001534"
+      ],
+      "field": "rare Chinese 對手",
+      "reason": "Common mate friend/spouse/assistant/chess senses have positive evidence; exact inherited 對手 translation remains retained pending specific support."
+    },
+    {
+      "ids": [
+        "W001823"
+      ],
+      "field": "meaningZh 付給／溶解",
+      "reason": "Common solve problem definition and principal parts verified; exact inherited historical payment/dissolution glosses not established by the read modern page. Do not claim nonexistent or delete."
+    },
+    {
+      "ids": [
+        "W000006"
+      ],
+      "field": "meaningZh 往國外的",
+      "reason": "Abroad has a genuine postpositive adjective for circulation/open/wide-area uses, but exact inherited 往國外的 not proved; keep precise pending boundary."
+    },
+    {
+      "ids": [
+        "W001382-1",
+        "W001382-2",
+        "W000082-1",
+        "W000082-2"
+      ],
+      "field": "official exam provenance",
+      "reason": "Legacy approved exam flags cite existing practice IDs, not identifiable official papers. Do not misrepresent new CEEC verification."
+    },
+    {
+      "ids": [
+        "NX9c9b617f"
+      ],
+      "field": "related tokens context",
+      "reason": "Horizon/seaside/resort may come from a retained source context. Do not delete without precise mapping."
+    },
+    {
+      "ids": [
+        "W005448"
+      ],
+      "field": "Chinese 令人難忘的",
+      "reason": "Imposing adjective English grand/impressive is corrected, but exact inherited unforgettable gloss is not independently certified or erased."
+    },
+    {
+      "ids": [
+        "LI-LV2U45-V018"
+      ],
+      "field": "image/source sense boundary",
+      "reason": "General found includes lexical founding and find inflection. Existing image/caption illustrates finding berries only; U45 source found is lexical establishment in text-only mode. No claim image explains establishing, and no image added to curriculum."
+    }
+  ],
+  "imageFollowups": {
+    "confirmedNewRepairPending": [],
+    "legacyFoundSenseBoundaryRetained": true,
+    "buildingPreviousRepairOwnCi": {
+      "commit": "45edea0bb42fb0cac16f10fc6468574e1225e109",
+      "run": 42312987204,
+      "job": 128218688089,
+      "url": "https://github.com/chiehco/vocab-app/actions/runs/42312987204/job/128218688089",
+      "status": "completed",
+      "conclusion": "success",
+      "checkoutShaReadFromFullLog": true,
+      "pythonBatches": [
+        14,
+        7,
+        84,
+        5,
+        10
+      ],
+      "jobCompletedAtUtc": "2026-11-06T23:53:37Z",
+      "testFiles": 236,
+      "tests": 1930,
+      "lint": "success",
+      "typecheck": "success",
+      "build": "success",
+      "buildLogCompletedAtUtc": "2026-11-06T23:53:32.4850601Z"
+    }
+  },
+  "priorCheckpointFullCi": {
+    "commit": "45edea0bb42fb0cac16f10fc6468574e1225e109",
+    "run": 42312987204,
+    "job": 128218688089,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42312987204/job/128218688089",
+    "status": "completed",
+    "conclusion": "success",
+    "checkoutShaReadFromFullLog": true,
+    "pythonBatches": [
+      14,
+      7,
+      84,
+      5,
+      10
+    ],
+    "jobCompletedAtUtc": "2026-11-06T23:53:37Z",
+    "testFiles": 236,
+    "tests": 1930,
+    "lint": "success",
+    "typecheck": "success",
+    "build": "success",
+    "buildLogCompletedAtUtc": "2026-11-06T23:53:32.4850601Z"
+  },
+  "newCheckpointFullCi": {
+    "state": "pending_this_new_commit"
+  },
+  "releaseReconciliation": {
+    "mainCommit": "0f4eb27961571ce393a1f1a2bc63f1d558bef1fb",
+    "mergeBase": "2c2035c07a4e5d1980097dcf4e8ab03f8a5873bb",
+    "formalFieldsCompared": 126,
+    "mainChangesNotAlreadySame": 0,
+    "wickedIntermediateLayerPreciselyReconciled": true,
+    "eitherManifestExecutionOnce": true,
+    "retainMainGuards": [
+      "audit JSON LF rules",
+      "Deploy-default original5s job",
+      "vite single worker",
+      "build-only unpublished LV1-U12 elevator asset exclusion"
+    ],
+    "mainMerged": false,
+    "deployed": false
+  },
+  "next": {
+    "level": "LV2",
+    "unit": 46,
+    "first": "instant",
+    "wordId": "W001467",
+    "sourcePage": 409
+  },
+  "publication": {
+    "branch": "content/unit-audit-20261105",
+    "mainMerged": false,
+    "deployed": false,
+    "wholeLevelReleaseSeparate": true,
+    "frozenHistoricalCandidate": "3106a39dea97360a62a2db4d8e98300724d94fdb"
+  }
+}

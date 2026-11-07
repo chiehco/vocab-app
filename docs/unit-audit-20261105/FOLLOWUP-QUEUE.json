@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T22:35:54.977Z",
+  "updatedAt": "2026-11-07T00:02:11.540Z",
   "items": [
     {
       "id": "LV1-U01-30",
@@ -854,7 +854,7 @@
       "additionalUnit": "LV2-U44",
       "wordId": "W001115",
       "learningItemId": "LI-LV2U44-V013",
-      "state": "locally_integrated_reopened_saved_pending_exact_image_checkpoint_ci",
+      "state": "integrated_reopened_saved_exact_repaired_head_ci_success",
       "observation": "Exact delivered telescope image integrated; all3 consumers reopened and saved. Own new-head CI pending.",
       "evidence": "validation/LV2-U44-building-image-followup.json",
       "generationStarted": false,
@@ -903,6 +903,54 @@
         "generatedInThisExecutor": false,
         "validation": "validation/LV2-U44-building-image-integration.json",
         "ownIntegrationCi": "pending_exact_new_commit"
+      },
+      "finalIntegrationCi": {
+        "commit": "45edea0bb42fb0cac16f10fc6468574e1225e109",
+        "run": 42312987204,
+        "job": 128218688089,
+        "url": "https://github.com/chiehco/vocab-app/actions/runs/42312987204/job/128218688089",
+        "status": "completed",
+        "conclusion": "success",
+        "checkoutShaReadFromFullLog": true,
+        "pythonBatches": [
+          14,
+          7,
+          84,
+          5,
+          10
+        ],
+        "jobCompletedAtUtc": "2026-11-06T23:53:37Z",
+        "testFiles": 236,
+        "tests": 1930,
+        "lint": "success",
+        "typecheck": "success",
+        "build": "success",
+        "buildLogCompletedAtUtc": "2026-11-06T23:53:32.4850601Z"
+      },
+      "firstIntegrationCi": {
+        "commit": "942a1b58308d04f1646dace66341dc2fd85a007e",
+        "run": 42312151812,
+        "job": 128215970661,
+        "url": "https://github.com/chiehco/vocab-app/actions/runs/42312151812/job/128215970661",
+        "status": "completed",
+        "conclusion": "failure",
+        "checkoutShaReadFromFullLog": true,
+        "pythonBatches": [
+          14,
+          7,
+          84,
+          5,
+          10
+        ],
+        "jobCompletedAtUtc": "2026-11-06T23:44:55Z",
+        "testFilesPassed": 235,
+        "testFilesFailed": 1,
+        "testsPassed": 1929,
+        "testsFailed": 1,
+        "build": "skipped",
+        "failure": "U44 old text-checkpoint test still asserted current candidateExists=false after the candidate had been integrated.",
+        "repairCommit": "45edea0bb42fb0cac16f10fc6468574e1225e109",
+        "historicalAssertionPreserved": true
       }
     }
   ],

@@ -1,8 +1,8 @@
 {
   "unit": "LV2-U44",
-  "state": "text_checkpoint_ci_success_building_local_reopened_saved_image_checkpoint_ci_pending",
+  "state": "text_and_building_image_reopened_saved_own_ci_success_source_limits_retained",
   "baseCheckpoint": "b74edddcfa69c1e1ed12ef6178487509fdc46431",
-  "updatedAt": "2026-11-06T23:25:37.903Z",
+  "updatedAt": "2026-11-07T00:02:11.534Z",
   "scope": {
     "learningItems": 161,
     "vocabulary": 102,
@@ -308,10 +308,77 @@
       ],
       "generatedInThisExecutor": false,
       "validation": "validation/LV2-U44-building-image-integration.json",
-      "ownIntegrationCi": "pending_exact_new_commit"
+      "ownIntegrationCi": {
+        "commit": "45edea0bb42fb0cac16f10fc6468574e1225e109",
+        "run": 42312987204,
+        "job": 128218688089,
+        "url": "https://github.com/chiehco/vocab-app/actions/runs/42312987204/job/128218688089",
+        "status": "completed",
+        "conclusion": "success",
+        "checkoutShaReadFromFullLog": true,
+        "pythonBatches": [
+          14,
+          7,
+          84,
+          5,
+          10
+        ],
+        "jobCompletedAtUtc": "2026-11-06T23:53:37Z",
+        "testFiles": 236,
+        "tests": 1930,
+        "lint": "success",
+        "typecheck": "success",
+        "build": "success",
+        "buildLogCompletedAtUtc": "2026-11-06T23:53:32.4850601Z"
+      }
     },
     "newIntegrationCi": {
-      "state": "pending_exact_new_commit"
+      "commit": "45edea0bb42fb0cac16f10fc6468574e1225e109",
+      "run": 42312987204,
+      "job": 128218688089,
+      "url": "https://github.com/chiehco/vocab-app/actions/runs/42312987204/job/128218688089",
+      "status": "completed",
+      "conclusion": "success",
+      "checkoutShaReadFromFullLog": true,
+      "pythonBatches": [
+        14,
+        7,
+        84,
+        5,
+        10
+      ],
+      "jobCompletedAtUtc": "2026-11-06T23:53:37Z",
+      "testFiles": 236,
+      "tests": 1930,
+      "lint": "success",
+      "typecheck": "success",
+      "build": "success",
+      "buildLogCompletedAtUtc": "2026-11-06T23:53:32.4850601Z"
+    },
+    "firstIntegrationCi": {
+      "commit": "942a1b58308d04f1646dace66341dc2fd85a007e",
+      "run": 42312151812,
+      "job": 128215970661,
+      "url": "https://github.com/chiehco/vocab-app/actions/runs/42312151812/job/128215970661",
+      "status": "completed",
+      "conclusion": "failure",
+      "checkoutShaReadFromFullLog": true,
+      "pythonBatches": [
+        14,
+        7,
+        84,
+        5,
+        10
+      ],
+      "jobCompletedAtUtc": "2026-11-06T23:44:55Z",
+      "testFilesPassed": 235,
+      "testFilesFailed": 1,
+      "testsPassed": 1929,
+      "testsFailed": 1,
+      "build": "skipped",
+      "failure": "U44 old text-checkpoint test still asserted current candidateExists=false after the candidate had been integrated.",
+      "repairCommit": "45edea0bb42fb0cac16f10fc6468574e1225e109",
+      "historicalAssertionPreserved": true
     }
   },
   "priorCheckpointFullCi": {
@@ -432,7 +499,29 @@
         ],
         "generatedInThisExecutor": false,
         "validation": "validation/LV2-U44-building-image-integration.json",
-        "ownIntegrationCi": "pending_exact_new_commit"
+        "ownIntegrationCi": {
+          "commit": "45edea0bb42fb0cac16f10fc6468574e1225e109",
+          "run": 42312987204,
+          "job": 128218688089,
+          "url": "https://github.com/chiehco/vocab-app/actions/runs/42312987204/job/128218688089",
+          "status": "completed",
+          "conclusion": "success",
+          "checkoutShaReadFromFullLog": true,
+          "pythonBatches": [
+            14,
+            7,
+            84,
+            5,
+            10
+          ],
+          "jobCompletedAtUtc": "2026-11-06T23:53:37Z",
+          "testFiles": 236,
+          "tests": 1930,
+          "lint": "success",
+          "typecheck": "success",
+          "build": "success",
+          "buildLogCompletedAtUtc": "2026-11-06T23:53:32.4850601Z"
+        }
       }
     }
   ]
