@@ -1,3 +1,4 @@
+import {lv3AfterUnitPublishedText} from '../direct/lv3Audit.testSupport';
 import {expect,it} from 'vitest';
 import {readFileSync,readdirSync} from 'node:fs';
 import {beforeLV3ConfirmText,validateLV3ConfirmProof,validateLV3ConfirmAsset,confirmBytesHash} from '../../../scripts/lv3_confirm_image_guard.mjs';
@@ -31,7 +32,16 @@ it('pins proof, source and candidate assets, original captions/media and histori
  for(const key of Object.keys(proof)){const bad=structuredClone(proof) as Record<string,unknown>;bad[key]='unverified';expect(()=>validateLV3ConfirmProof(bad)).toThrow();}
  for(const asset of proof.assets){const bytes=readFileSync(asset.path);validateLV3ConfirmAsset(bytes,asset);const bad=Buffer.from(bytes);bad[bad.length-1]^=1;expect(()=>validateLV3ConfirmAsset(bad,asset)).toThrow(/asset drift/);expect(bytes.subarray(0,4).toString()).toBe('RIFF');expect(bytes.subarray(8,12).toString()).toBe('WEBP');}
  expect(readFileSync(proof.assets[1].path)).toHaveLength(57484);
- for(const file of proof.unchangedFiles)expect(confirmBytesHash(readFileSync(file.path,'utf8').replace(/\r\n/g,'\n')),file.path).toBe(file.lfSha256);
+ // The confirm proof predates U05 text edits. Authenticate and reverse only
+ // the recorded examples delta; keep every original proof hash unchanged.
+ for(const file of proof.unchangedFiles){
+  const currentText=readFileSync(file.path,'utf8').replace(/\r\n/g,'\n');
+  const text=file.path==='public/data/v1/examples.json'
+   ?lv3AfterUnitPublishedText('LV3-U04',file.path,currentText):currentText;
+  expect(confirmBytesHash(text),file.path).toBe(file.lfSha256);
+  if(file.path==='public/data/v1/examples.json')
+   expect(()=>lv3AfterUnitPublishedText('LV3-U04',file.path,currentText+' ')).toThrow(/drift/);
+ }
  expect(confirmBytesHash(JSON.stringify(JSON.parse(readFileSync(proof.candidateManifestPath,'utf8'))))).toBe(proof.candidateManifestHash);
  expect(captions.filter(c=>c.word==='confirm'&&c.captionZh===proof.row.illustration.captionZh)).toEqual([proof.captionSource]);
  expect(media).toContainEqual(proof.media);expect(proof.review.manualUserApproved).toBe(false);expect(proof.review.publicationReady).toBe(false);
