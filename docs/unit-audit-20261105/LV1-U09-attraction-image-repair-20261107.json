@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "createdAtUtc": "2026-11-07T21:47:45Z",
+  "repository": "chiehco/vocab-app",
+  "baseCommit": "99883751926bd6cb4feff70daff56c07afc130cb",
+  "candidateBranch": "assets/lv1-attraction-20261107",
+  "state": "candidate_asset_only_visual_qa_passed_not_integrated",
+  "word": "attraction",
+  "wordId": "W003081",
+  "sourceCardId": "LV1-U09-62",
+  "captionEn": "The main attraction at the night market is definitely the food.",
+  "captionZh": "夜市最吸引人的絕對是美食。",
+  "captionSource": {
+    "path": "docs/unit-audit-20261105/LV1-U09-ledger.json",
+    "gitBlobSha": "43011326ccf95f5688de0d79190c31fe55ab4e3b",
+    "matchedBy": "cards[61], id=LV1-U09-62, officialWordId=W003081",
+    "unchanged": true
+  },
+  "scope": {
+    "originalAssetsRetained": true,
+    "captionsUnchanged": true,
+    "mappingsUnchanged": true,
+    "mainUntouched": true,
+    "deployed": false,
+    "appConsumerAcceptance": "Not run. This isolated candidate is not connected to any app consumer."
+  },
+  "source": {
+    "path": "public/wordbeast/audited-20261105/LV1-U09-62-e3a141c7a766.webp",
+    "sha256": "58ea5c6aa13d086f4b422cf50d4122a3191babdb85c753c661ef381b41f9a647",
+    "gitBlobSha": "8f8bcc7886e463a73a433c9420e4a66fe1f13ea9",
+    "bytes": 224980,
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "retained": true,
+    "observation": "The central green character has a bent skewer-holding arm, a natural viewer-right hanging arm, and an erroneous third dangling arm with a tiny hand in the narrow viewer-left gap between the body and the stall post."
+  },
+  "candidate": {
+    "path": "public/wordbeast/lv1-reviewed/W003081-attraction-v2-3fc80dd19b36.webp",
+    "sha256": "3fc80dd19b36c698552dc530d1f3becee61867478774bf99d13f3c4f203a5079",
+    "gitBlobSha": "7bc237b5c7853d3fddffd0b93bb73c2790240cfb",
+    "bytes": 366450,
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "generatedPngSha256": "37176dc0fa5fd766668057f58b881713f34076384c1261d83ec586e5ce7b2938"
+  },
+  "generation": {
+    "tool": "built-in image_gen.imagegen",
+    "acceptedCalls": 1,
+    "pendingCalls": 0,
+    "uncertainOutcome": false,
+    "semanticEditing": "Only imagegen was used for visual editing.",
+    "encoding": "ImageMagick: generated PNG to WebP, quality 95, method 6; no crop or resize."
+  },
+  "promptPath": "docs/unit-audit-20261105/prompts/W003081-attraction-v2-20261107.txt",
+  "promptSha256": "c8e111f0521a7059d7b693de6b09fa1fda234631d5a35382a5bd4c75ac5dd18b",
+  "visualQa": {
+    "sourceActuallyViewed": true,
+    "generatedPngActuallyViewed": true,
+    "finalWebpActuallyViewed": true,
+    "mainCharacterArms": 2,
+    "extraViewerLeftArmAndTinyHandRemoved": true,
+    "chestSkewerHoldingArmRetained": true,
+    "naturalViewerRightArmRetained": true,
+    "totalCharacters": 4,
+    "skewerFoodBalls": 3,
+    "nightMarketFoodAndStallsRetained": true,
+    "lanternsCanopyAndPostsRetained": true,
+    "watercolorAndCompositionRetained": true,
+    "visibleText": false,
+    "result": "pass",
+    "observation": "The narrow gap to the viewer-left of the main character now shows background pavement and a clean body outline. The chest arm still holds the three-ball skewer. The viewer-right hanging arm remains. Four green characters, foreground food, lanterns and night-market composition are preserved. Generative rendering introduces minor texture differences, so preservation is visual and semantic rather than pixel-identical."
+  },
+  "verification": {
+    "sourceSha256MatchedRequested": true,
+    "candidateDecodePassed": true,
+    "dimensionsPreserved": true,
+    "buildLintAndUnitTests": "Not run for this isolated asset-only candidate. No source code, data, caption or mapping is changed.",
+    "deploymentWorkflow": "Inspected .github/workflows/deploy.yml at the base commit. Deploys on main only; no main ref update or workflow dispatch is part of this change."
+  },
+  "handoff": {
+    "requiresSourceShaRecheckBeforeMapping": true,
+    "preserveAllOriginalCaptions": true,
+    "preserveOriginalAssets": true,
+    "requiresActualConsumerVisualAcceptance": true,
+    "requiresIntegrationHeadChecks": true,
+    "publicationNotAuthorizedByThisCandidateManifest": true
+  }
+}
