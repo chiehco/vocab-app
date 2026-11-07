@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "createdAtUtc": "2026-11-07T19:16:31Z",
+  "repository": "chiehco/vocab-app",
+  "baseCommit": "99883751926bd6cb4feff70daff56c07afc130cb",
+  "candidateBranch": "assets/lv3-puppet-20261107",
+  "state": "candidate_asset_only_visual_qa_passed_not_integrated",
+  "scope": {
+    "originalAssetsRetained": true,
+    "captionsUnchanged": true,
+    "mappingsUnchanged": true,
+    "mainUntouched": true,
+    "deployed": false,
+    "appConsumerAcceptance": "Not run. This isolated candidate is not connected to any app consumer."
+  },
+  "generation": {
+    "tool": "built-in image_gen.imagegen",
+    "acceptedCalls": 1,
+    "pendingCalls": 0,
+    "uncertainOutcome": false,
+    "semanticEditing": "Only imagegen was used for visual editing.",
+    "encoding": "ImageMagick: generated PNG to WebP, quality 95, method 6; no crop or resize."
+  },
+  "word": "puppet",
+  "wordId": "W002690",
+  "captionEn": "The craftsperson carves a wooden head and adds clothing to make a hand puppet.",
+  "captionZh": "師傅雕刻木製偶頭，再套上衣服，做成能用手操控的戲偶。",
+  "captionSource": {
+    "path": "src/features/wordbeast/illustrationCaptions.json",
+    "gitBlobSha": "5b8e7273e0d45a88b060da9a24a9065edbcf524c",
+    "matchedBy": "word=puppet",
+    "unchanged": true
+  },
+  "source": {
+    "path": "public/wordbeast/s/W002690.webp",
+    "sha256": "f4e1c2904f359226c61a9475101dc492dc1b1410a4836b29cfcecf6b1df005a0",
+    "gitBlobSha": "6168120affa7033222d8d9e41595fb905c5eb109",
+    "dimensions": [
+      1024,
+      1024
+    ],
+    "retained": true,
+    "observation": "Original craftsperson has two hands carving a wooden head plus an erroneous third arm extending diagonally to the completed red-clothed hand puppet."
+  },
+  "candidate": {
+    "path": "public/wordbeast/lv3-reviewed/W002690-puppet-v2-8a3480a548f0.webp",
+    "sha256": "8a3480a548f04c0a5fd4f89606eddab205f4656e3b3d1eaeae5ce550e9ea2bca",
+    "bytes": 653992,
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "generatedPngSha256": "d78bc106ee7f22bdae46846f89d445323d625ad438504e4cc7356847c22e35c0"
+  },
+  "promptPath": "docs/unit-audit-20261105/prompts/W002690-puppet-v2-20261107.txt",
+  "visualQa": {
+    "sourceActuallyViewed": true,
+    "generatedPngActuallyViewed": true,
+    "finalWebpActuallyViewed": true,
+    "craftspersonArms": 2,
+    "craftspersonHands": 2,
+    "oneHandHoldsChisel": true,
+    "otherHandSupportsWoodenHead": true,
+    "erroneousThirdArmRemoved": true,
+    "completedPuppetOnVisibleWoodenStand": true,
+    "continuousSupportRodAndStableBase": true,
+    "standBaseRestingOnTheaterLedge": true,
+    "puppetFloating": false,
+    "watercolorWorkshopAndCompositionRetained": true,
+    "visibleText": false,
+    "result": "pass",
+    "observation": "The elderly green craftsperson has exactly two arms and hands: one holds the carving chisel, and one supports the wooden head. The completed red-clothed hand puppet is physically supported by a visible vertical wooden rod and rectangular base resting on the stage ledge. The diagonal third green arm is absent."
+  },
+  "handoff": {
+    "requiresSourceShaRecheckBeforeMapping": true,
+    "preserveAllOriginalCaptions": true,
+    "preserveOriginalAssets": true,
+    "requiresActualConsumerVisualAcceptance": true,
+    "requiresIntegrationHeadChecks": true,
+    "publicationNotAuthorizedByThisCandidateManifest": true
+  }
+}
