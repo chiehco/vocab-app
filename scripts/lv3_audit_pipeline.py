@@ -139,6 +139,56 @@ def verified_u06_pattern_erratum(manifest, patch):
         for record in records)
 
 
+def verified_u07_pattern_erratum(manifest, patch):
+    """Only the reviewed U07-G036 book erratum, paired with its explanation.
+
+    Bind the exact row and both reviewed sources on the pattern field. These
+    recorded checks do not claim that metadata itself proves a source was read.
+    """
+    before = {
+        "learningItemId": "LI-LV3U07-G036",
+        "kind": "grammar",
+        "sourcePage": 69,
+        "pattern": "crop, copped, cropped（原書三態；第二態印刷拼寫待裁決）",
+        "explanationZh": "教材用法標記；例句與教材題目尚未提供。",
+        "review": "source_checked_text_only",
+        "practiceMode": "read_only"
+    }
+    after = {
+        "explanationZh": "crop 的正確三態為 crop, cropped, cropped。教材 p69 原書第二態印作 copped，屬拼字誤植，不是 crop 的正確過去式。",
+        "pattern": "crop, cropped, cropped（三態；原書第二態 copped 為誤植）"
+    }
+    if not (manifest['unit'] == 'LV3-U07'
+            and patch['dataset'] == 'curriculum'
+            and patch['path'] == 'src/features/direct/curriculumLV3Unit7.json'
+            and patch['key'] == 'learningItemId' and patch['id'] == 'LI-LV3U07-G036'
+            and patch['before'] == before and patch['after'] == after):
+        return False
+    records = patch.get('fieldEvidence', {}).get('pattern')
+    if not isinstance(records, list):
+        return False
+    for record in records:
+        if not isinstance(record, dict) or not isinstance(record.get('sources'), list):
+            continue
+        sources = [s for s in record['sources'] if isinstance(s, dict)]
+        photo = any(s.get('type') == 'textbook_photo'
+                    and s.get('manifest') == 'scripts/sources/LV3Unit7.json'
+                    and s.get('file') == '20260815_092552.jpg' and s.get('page') == 69
+                    and s.get('sha256') == 'a50bf1194b4b624fec6fd98cf6d5cfe345cfeec5186421443d54d7acfa735ed4'
+                    and s.get('pixelsViewed') is True
+                    and s.get('printedText') == 'crop, copped, cropped'
+                    for s in sources)
+        dictionary = any(s.get('type') == 'dictionary'
+                         and s.get('url') == 'https://www.collinsdictionary.com/dictionary/english/crop'
+                         and s.get('retrieval') == 'direct open succeeded'
+                         and s.get('evidenceText') == 'Word forms: plural, 3rd person singular present tense crops , present participle cropping , past tense, past participle cropped'
+                         and s.get('supports') == 'crop past tense and past participle are both cropped'
+                         for s in sources)
+        if photo and dictionary:
+            return True
+    return False
+
+
 def validate_manifest(manifest, scope=None):
     if manifest.get('schemaVersion') == 1:
         v1.validate_manifest(manifest)
@@ -218,6 +268,8 @@ def validate_manifest(manifest, scope=None):
                               {'sensePos', 'targetMeaningZh', 'chapterMeaningsZh', 'meaningSource'})
             if kind == 'grammar' and verified_u06_pattern_erratum(manifest, p):
                 allowed_fields = {'pattern'}
+            if kind == 'grammar' and verified_u07_pattern_erratum(manifest, p):
+                allowed_fields = {'pattern', 'explanationZh'}
             if 'meaningSource' in p['after']:
                 require(p['after']['meaningSource'] in {'textbook_source_review', 'textbook_and_dictionary_review'},
                         'Invalid reviewed meaning source')

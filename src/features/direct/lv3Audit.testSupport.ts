@@ -100,6 +100,47 @@ function verifiedU06PatternErratum(m:AuditManifest,p:AuditPatch){
  });
 }
 
+// Only U07-G036's reviewed book erratum, paired with its exact explanation.
+// Bind the recorded photo and direct dictionary check to the same pattern finding.
+export function verifiedU07PatternErratum(m:AuditManifest,p:AuditPatch){
+ const before:Row={
+  "learningItemId": "LI-LV3U07-G036",
+  "kind": "grammar",
+  "sourcePage": 69,
+  "pattern": "crop, copped, cropped（原書三態；第二態印刷拼寫待裁決）",
+  "explanationZh": "教材用法標記；例句與教材題目尚未提供。",
+  "review": "source_checked_text_only",
+  "practiceMode": "read_only"
+};
+ const after:Row={
+  "explanationZh": "crop 的正確三態為 crop, cropped, cropped。教材 p69 原書第二態印作 copped，屬拼字誤植，不是 crop 的正確過去式。",
+  "pattern": "crop, cropped, cropped（三態；原書第二態 copped 為誤植）"
+};
+ if(m.unit!=='LV3-U07'||p.dataset!=='curriculum'
+  ||p.path!=='src/features/direct/curriculumLV3Unit7.json'||p.key!=='learningItemId'||p.id!=='LI-LV3U07-G036'
+  ||Object.keys(p.before).length!==Object.keys(before).length
+  ||!Object.entries(before).every(([key,value])=>p.before[key]===value)
+  ||Object.keys(p.after).length!==Object.keys(after).length
+  ||!Object.entries(after).every(([key,value])=>p.after[key]===value))return false;
+ const records=p.fieldEvidence?.pattern;
+ return Array.isArray(records)&&records.some(record=>{
+  if(typeof record!=='object'||record===null)return false;
+  const sources=(record as {sources?:unknown}).sources;
+  if(!Array.isArray(sources))return false;
+  const objects=sources.filter((s):s is Row=>typeof s==='object'&&s!==null&&!Array.isArray(s));
+  const photo=objects.some(s=>s.type==='textbook_photo'&&s.manifest==='scripts/sources/LV3Unit7.json'
+   &&s.file==='20260815_092552.jpg'&&s.page===69
+   &&s.sha256==='a50bf1194b4b624fec6fd98cf6d5cfe345cfeec5186421443d54d7acfa735ed4'
+   &&s.pixelsViewed===true&&s.printedText==='crop, copped, cropped');
+  const dictionary=objects.some(s=>s.type==='dictionary'
+   &&s.url==='https://www.collinsdictionary.com/dictionary/english/crop'
+   &&s.retrieval==='direct open succeeded'
+   &&s.evidenceText==='Word forms: plural, 3rd person singular present tense crops , present participle cropping , past tense, past participle cropped'
+   &&s.supports==='crop past tense and past participle are both cropped');
+  return photo&&dictionary;
+ });
+}
+
 export function validateAuditScope(m:AuditManifest,scope:AuditScope):void {
  const keys=(value:object)=>Object.keys(value).sort();
  const sameKeys=(value:object,expected:string[])=>assert.deepEqual(keys(value),[...expected].sort(),'unknown or missing contract fields');
@@ -150,6 +191,7 @@ export function validateAuditScope(m:AuditManifest,scope:AuditScope):void {
    assert.ok(p.before.kind==='grammar'||p.before.kind==='vocabulary','unknown curriculum kind');
    fields=p.before.kind==='grammar'?['explanationZh']:['sensePos','targetMeaningZh','chapterMeaningsZh','meaningSource'];
    if(p.before.kind==='grammar'&&verifiedU06PatternErratum(m,p))fields=['pattern'];
+   if(p.before.kind==='grammar'&&verifiedU07PatternErratum(m,p))fields=['pattern','explanationZh'];
    if(Object.hasOwn(p.after,'meaningSource'))assert.ok(['textbook_source_review','textbook_and_dictionary_review'].includes(p.after.meaningSource as string),'invalid reviewed meaning source');
    for(const [field,value]of Object.entries(p.after).filter(([field])=>fields.includes(field))){
     assert.ok(typeof value==='string'&&value.trim(),'invalid curriculum scalar');
