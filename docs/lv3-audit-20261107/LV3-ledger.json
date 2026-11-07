@@ -59,7 +59,7 @@
       "itemCount": 183,
       "vocabularyCount": 122,
       "grammarCount": 61,
-      "status": "before_runtime_complete_preparing_sourced_corrections",
+      "status": "applied_locally_after_validation_in_progress",
       "beforeCoverage": {
         "curriculumCards": 183,
         "uniqueGeneralCards": 106,
@@ -70,7 +70,14 @@
         "replace W002723"
       ],
       "imageRuntimeQa": "U04-replace-runtime-qa.md",
-      "imageValidation": "Ordinary card and actual image-clue quiz, exact HTTP bytes and close/reopen passed. 390px desktop responsive subset passed; no physical-phone, offline or production claim."
+      "imageValidation": "Ordinary card and actual image-clue quiz, exact HTTP bytes and close/reopen passed. 390px desktop responsive subset passed; no physical-phone, offline or production claim.",
+      "manifest": "U04-patches.json",
+      "review": "U04-review.md",
+      "application": "U04-application.json",
+      "fixtureValidation": "U04-fixture-validation.md",
+      "fieldCount": 173,
+      "rowCount": 79,
+      "validation": "TEMP fixtures and actual application hashes passed; after runtime, scoped regression and whole-project compile/build are in progress. Final full LV3 suite and release validation remain required."
     },
     {
       "unit": 5,

@@ -1,14 +1,20 @@
 # LV3 U04 全面檢查與修正審閱報告
 
-日期：2026-11-07。此報告記錄教材、正式字庫、例句、註記及圖片的審閱結果，以及文字修正套用前的驗證邊界。
+日期：2026-11-07。此報告記錄教材、正式字庫、例句、註記及圖片的審閱結果，以及文字修正從封存、隔離驗證到本機套用的狀態與驗證邊界。
 
 ## 目前交付狀態
 
-文字修正已整理為 **173 欄、79 筆資料列**，manifest 已封存且 readiness 為 ready，chain 狀態為 prepared。**截至本報告建立時，U04 文字修正尚未套用至主樹；隔離暫存 fixture 驗證仍在進行，未宣稱通過。** replace 圖片的既有整合與瀏覽器驗收為另一個已完成範圍，不代表這批文字修正已套用。
+文字修正 **173 欄、79 筆資料列**已依同一封存 manifest 完成本機實際套用，寫入 6 個產品檔案；備份與全部 after hash 已驗證，138 個範圍外輸入保持不變，chain 與交易 receipt 均為 committed。重複套用回報 already_applied，產品寫入為 0。這裡的 committed 指修正鏈／交易狀態，不等同 Git 提交或發布。
+
+隔離 fixture 驗證已通過：實際 Python suite 9/9、receipt/artifact checks 2/2，TypeScript／Python 對 79 列與 6 檔的正向／逆向結果一致。**全卡 after／重開驗證，以及 scoped／full compile、lint、build 仍在進行，本報告不宣稱通過。尚未推送發布，實體手機未驗。** replace 圖片的既有整合與瀏覽器驗收仍是另列的已完成範圍，不能替代本次文字套用後驗收。
+
+封存階段歷史：2026-11-07 初稿記錄 manifest readiness=ready、chain=prepared，當時尚未主樹套用、隔離 fixture 正在進行。其 before 證據仍保留；目前進展依下列 fixture 與實際套用紀錄更新，未改寫來源裁示。
 
 - [U04 修正 manifest](U04-patches.json)
 - [U04 核准範圍](U04-scope.json)
 - [U04 套用前擷取紀錄](U04-before-capture.json)
+- [U04 隔離 fixture 驗證結果](U04-fixture-validation.md)
+- [U04 本機實際套用紀錄](U04-application.json)
 - [修正鏈狀態](chain.json)
 - [replace 圖片執行期驗收](U04-replace-runtime-qa.md)
 - [驗證流程](PIPELINE.md)及[流程擴充說明](PIPELINE-EXTENSION.md)
@@ -31,7 +37,7 @@ U04 canonical manifest hash：cbd33aa366048230b645bb45560892bc50380704f6b0273f27
 | notes | 3 | 3 |
 | 合計 | 173 | 79 |
 
-逐欄草稿核對結果為 0 before 漂移、0 重覆欄位、0 noop、0 來源缺口；完整 beforeRow 和被較保守裁示取代的初稿均有保留。這是內容及來源核對結果，不等於 fixture、主樹套用或發布驗收通過。
+逐欄草稿核對結果為 0 before 漂移、0 重覆欄位、0 noop、0 來源缺口；完整 beforeRow 和被較保守裁示取代的初稿均有保留。這是封存前內容及來源核對結果。後續 fixture 與主樹實際套用已另有上列證據；仍不能據此宣稱全卡 after 或發布驗收通過。
 
 ## 教材與練習邊界
 
@@ -100,11 +106,11 @@ replace 新圖已整合，實際一般字卡、看圖喚名題、正常作答、
 | 42 | 20260815_092146.jpg | 3b147c04bbfb1b2d951b5e9f4ec5cce7e97b82255e55ff29880364abf67ec574 |
 | 43 邊界 | 20260815_092155.jpg | eb6870cf10493695615342d7c4b07543f6b15f7fe7e1d8d3a13100dbfe785b07 |
 
-## 後續驗證與交付條件
+## 已完成驗證與後續交付條件
 
-1. 完成隔離 fixture 驗證，記錄成功、失敗與未執行項目，不提前填寫 pass。
-2. 套用前再次確認 sealed manifest、scope、before 及 chain 一致；成功套用後核對 173 欄、79 rows 與範圍外資料不變。
-3. 對文字修正執行必要靜態檢查、瀏覽器 after 驗證及既有資料保存核對。before 覆蓋與 replace 圖片單獨驗收不能替代這一步。
-4. 完成需要的提交、批次發布及正式站版本驗證後，再記錄其完成狀態。此報告建立時未宣稱 U04 文字已提交或正式上線。
+1. 隔離 fixture 已完成：Python 9/9、receipt/artifact 2/2、TypeScript／Python parity 1/1；79 列與 6 檔正逆向相符。其他 focused 檢查與刻意略過項目詳見[fixture 報告](U04-fixture-validation.md)。該報告的「未主樹套用」描述限定於當次隔離測試，不是目前狀態。
+2. 主樹實際套用已完成：4 個來源 JSON 加上 metadata／study pack，共 6 檔；備份、after hash 與 138 個未變輸入已驗證，冪等重跑寫入 0。詳見[application 紀錄](U04-application.json)。173 欄與 79 列範圍不變。
+3. 全卡 after／重開與 scoped／full compile、lint、build 正在進行，結果仍待回填。before 覆蓋及 replace 圖片的單獨驗收不能替代這一步；既有資料保存亦須按實際完成範圍陳述。
+4. 必要驗證完成後，再記錄 Git 提交、分批推送發布及正式站版本驗證。現在尚未推送發布，也未完成實體手機驗收，不以本機套用成功代替這些交付條件。
 
 完整逐欄核准內容以[封存 manifest](U04-patches.json)及[scope](U04-scope.json)為準。本機研究記錄包括 U04-accepted-proposals-draft.json、u04-vocabulary-review.json、u04-dictionary-verification.json、u04-verb-forms-verification.json、u04-grammar-review.json 與 u04-supplement-proposals.json；這些檔名僅供稽核定位，不是公開下載連結。
