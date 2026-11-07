@@ -3,7 +3,7 @@
   "unit": "LV3-U02",
   "baseline": "99883751926bd6cb4feff70daff56c07afc130cb",
   "parentManifestHash": "317ab4353c8a462071ab98efb9604f7f26d67f427ffe6c7d24b5a71a768b5309",
-  "readiness": "pending_independent_before_capture",
+  "readiness": "ready",
   "scope": "U02-scope.json",
   "scopeHash": "4ca0c047c5cc68f98e338133ce98bd4c0ad941e05cdef6d8dc0f9d6664932052",
   "collections": {
@@ -2840,8 +2840,29 @@
     "contentHash": "b0f48221b359e57c2d3de471f297a49e0e26c521a16113dd388aab4a1e2394d6",
     "houseSourceSha256": "98fa208835caf7184acc95f26dcff56ace23ba281ff8d4b9b8c37e18e407be14"
   },
-  "derivedAfter": null,
-  "afterMeta": null,
+  "derivedAfter": {
+    "public/data/v1/sa-pack.json": "3867cfe90aaad6145500a12613566815b86373d539d240917397d8ee04506770",
+    "public/data/v1/meta.json": "4f8ca5a42cc821689635e4b015d92271b1e4e2d05eb551c244742518eddd3938"
+  },
+  "afterMeta": {
+    "schemaVersion": 2,
+    "generatedAt": "2026-11-07T14:07:58Z",
+    "sourceFile": "萬詞譜母表_SA義項清理整合_20260904.xlsx",
+    "counts": {
+      "words": 6090,
+      "senses": 772,
+      "examples": 7871,
+      "relations": 40,
+      "morphemes": 3798,
+      "media": 1177,
+      "notes": 4290,
+      "examPriority": 3792,
+      "hooks": 0
+    },
+    "wordsHash": "d8c07476e2d1403dca57b80e6c79f46ae969b871c20f7f2e94a3138f9f57a3b8",
+    "contentHash": "2c290e414336a47e155e41e92298d5ed31a55b26c81b7c188305323ae24d89fb",
+    "houseSourceSha256": "98fa208835caf7184acc95f26dcff56ace23ba281ff8d4b9b8c37e18e407be14"
+  },
   "beforePackMeta": {
     "schemaVersion": 2,
     "generatedAt": "2026-11-07T13:10:12Z",

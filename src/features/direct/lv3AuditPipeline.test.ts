@@ -33,7 +33,7 @@ it('rejects scope escalation and duplicate patches',()=>{
  const good=fixture();good.manifest.patches.push(structuredClone(good.manifest.patches[0]));
  assert.throws(()=>validateAuditScope(good.manifest,good.scope));
 });
-it('preserves the pinned U01 chain anchor and keeps U02 prepared',()=>{
+it('preserves the pinned U01 chain anchor and registered U02 step',()=>{
  const chain=loadLV3Chain();assert.equal(chain[0].entry.unit,'LV3-U01');
  assert.equal(chain[0].entry.manifestHash,'317ab4353c8a462071ab98efb9604f7f26d67f427ffe6c7d24b5a71a768b5309');
  const u2=chain.find(x=>x.entry.unit==='LV3-U02');assert.ok(u2);

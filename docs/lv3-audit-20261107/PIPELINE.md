@@ -28,7 +28,7 @@ TS src/features/direct/lv3Audit.testSupport.ts provides:
 
 ## Gate before U02 application
 
-U02-patches.json currently has readiness=pending_independent_before_capture, derivedAfter=null and afterMeta=null. run_v2 rejects it before staging or product writes.
+U02-patches.json is now sealed with readiness=ready and exact derivedAfter/afterMeta values following the independent 144-path capture. Its chain entry remains prepared because no product worktree has been applied. The original pending-capture gate was verified to reject application before sealing. See U02-before-capture.json and U02-fixture-validation.md.
 
 After the parent explicitly clears the full-run/capture gate:
 1. Supply seal_step with the independently recorded complete input-path/hash map. It must cover input_paths(root) exactly and match both current inputs and the manifest's immutable before guards.
@@ -40,10 +40,10 @@ After the parent explicitly clears the full-run/capture gate:
 
 ## Deferred checks
 
-Not yet run: original U01 Python fixture tests; full U02 sealing/build/apply/rollback integration fixture tests; U01/LV1/LV2 historical suites; cross-language 37-row before/after checkpoint parity; full project typecheck/lint/build/Vitest; browser checks.
+Completed: real U01 Python fixture tests; U02 temporary seal/apply/idempotence/rollback/drift/checkpoint fixtures; cross-language 37-row document and six-file raw inverse parity. Still not run: the full historical/default suite, full project typecheck/lint/build/Vitest, or browser after-QA. No product worktree was applied.
 
 The U01 recoveredUnitIntegration/additionalCaptionRepair fixes from 5e81e51 were cherry-picked as 1a79ad8. Their raw callers now receive lv3AfterUnit1PublishedText first, and historical curriculum reads receive lv3AfterUnit1File first. Original hashes and the recorded initial full-suite failures remain unchanged. Two direct dictionary checkpoint callers also use the shared later-step projection.
 
-Already checked after review fixes: 13 small synthetic Python tests; 7 small TypeScript pipeline tests; 3 focused historical projection files with 16 tests; and focused TypeScript diagnostics for seven changed files. These are not a full project pass. A real U01 integration-fixture test simulating exact-after bytes with an uncommitted receipt is added but remains deferred with the Python fixture suite.
+Already checked after review fixes: 13 small synthetic Python tests; 7 small TypeScript pipeline tests; 3 focused historical projection files with 16 tests; and focused TypeScript diagnostics for seven changed files. These are not a full project pass. The real U01 integration-fixture test simulating exact-after bytes with an uncommitted receipt subsequently passed in the complete 11-test fixture run. The final real U02 suite passed 7/7; final small-plus-real TS parity passed 8/8. See U02-fixture-validation.md for the retained first-run harness failure and successful full rerun.
 
 Recovery checks precede all preflight results, including dry-run and already-applied. Idempotent --apply still acquires the exclusive lock and inspects pending receipts. The synthetic crash-window tests independently cover pending-only, stale-lock-only and combined states; none may report clean success or modify the persisted state. TS scope validation now mirrors Python per-dataset fields, collection contracts, exact scoped values, option protections and form evidence.

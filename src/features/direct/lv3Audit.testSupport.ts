@@ -215,12 +215,12 @@ export function lv3AfterUnit1File<T>(path:string,value:T):T {
  return out;
 }
 
-/** Exact raw-byte successor projection before the unchanged U01 raw helper. */
-export function lv3AfterUnit1PublishedText(path:string,text:string):string {
+/** Strict one-step raw projection, also used for cross-language fixture parity. */
+export function inversePublishedAuditStep(m:AuditManifest,scope:AuditScope,path:string,text:string):string {
+ validateAuditScope(m,scope);
  assert.equal(text,text.replace(/\r\n/g,'\n'),'caller must normalize CRLF first');
  const digest=(s:string)=>createHash('sha256').update(s).digest('hex');
  let out=text;
- for(const {manifest:m} of stableChain().filter(x=>x.entry.status==='committed'&&x.entry.unit!=='LV3-U01').reverse()){
   const c=auditContract(m),guard=c.files[path];
   if(guard){
    assert.equal(digest(out),guard.afterByteHash,'unknown raw after drift');
@@ -248,6 +248,16 @@ export function lv3AfterUnit1PublishedText(path:string,text:string):string {
    }
    assert.equal(digest(out),m.derivedBefore[path],'wrong derived before hash');
   }
+
+ return out;
+}
+
+/** Exact raw-byte successor projection before the unchanged U01 raw helper. */
+export function lv3AfterUnit1PublishedText(path:string,text:string):string {
+ assert.equal(text,text.replace(/\r\n/g,'\n'),'caller must normalize CRLF first');
+ let out=text;
+ for(const {manifest,scope} of stableChain().filter(x=>x.entry.status==='committed'&&x.entry.unit!=='LV3-U01').reverse()){
+  assert.ok(scope);out=inversePublishedAuditStep(manifest,scope,path,out);
  }
  return out;
 }
