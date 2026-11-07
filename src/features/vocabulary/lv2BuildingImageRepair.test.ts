@@ -1,3 +1,5 @@
+import {beforeLV3GeneralImages} from '../../../scripts/lv3_image_repair_guard.mjs';
+import lv3ImageProof from '../../../docs/unit-audit-20261105/LV3-bank-permissible-image-repairs.json';
 import {expect,it} from 'vitest';
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
@@ -14,7 +16,7 @@ import unit44 from '../direct/curriculumLV2Unit44.json';
 import {approvedWordIllustration,approvedCurriculumIllustration,approvedLV1Images} from './approvedCurriculum';
 import {getWordBeastAsset} from '../wordbeast/wordBeastAssets';
 import {resolveWordImageClue} from '../../quiz/imageClue';
-const general=beforePraiseGeneral(currentGeneral,praiseProof);
+const general=beforePraiseGeneral(beforeLV3GeneralImages(currentGeneral,lv3ImageProof),praiseProof);
 const sha=(p:string)=>createHash('sha256').update(readFileSync(p)).digest('hex');
 it('keeps original assets approvals and independent practice while repairing only the telescope picture',()=>{
  validateBuildingProof(proof);expect(sha('public/'+proof.before.illustration.path)).toBe(proof.originalImageSha256);expect(sha('public/'+proof.after.illustration.path)).toBe(proof.replacementImageSha256);

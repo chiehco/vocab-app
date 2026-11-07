@@ -1,3 +1,5 @@
+import {beforeLV3GeneralImages} from '../../../scripts/lv3_image_repair_guard.mjs';
+import lv3ImageProof from '../../../docs/unit-audit-20261105/LV3-bank-permissible-image-repairs.json';
 import {expect,it} from 'vitest';
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
@@ -7,7 +9,8 @@ import history from '../../../docs/unit-audit-20261105/validation/LV2-U46-praise
 import oldImages from '../../../docs/unit-audit-20261105/validation/LV2-U46-image-review-before-praise.json';
 import followup from '../../../docs/unit-audit-20261105/validation/LV2-U46-praise-image-followup.json';
 import images from '../../../docs/unit-audit-20261105/validation/LV2-U46-image-review.json';
-import current from './auditedWordIllustrations.json';
+import currentImages from './auditedWordIllustrations.json';
+const current=beforeLV3GeneralImages(currentImages,lv3ImageProof);
 import published from './lv1ReviewedImages.json';
 import examplePairs from './approvedExampleImages.json';
 import examples from '../../../public/data/v1/examples.json';

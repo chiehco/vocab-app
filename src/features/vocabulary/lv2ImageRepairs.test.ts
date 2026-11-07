@@ -1,3 +1,5 @@
+import {beforeLV3GeneralImages} from '../../../scripts/lv3_image_repair_guard.mjs';
+import lv3ImageProof from '../../../docs/unit-audit-20261105/LV3-bank-permissible-image-repairs.json';
 import examplePairs from './approvedExampleImages.json';
 import {expect,it} from 'vitest';
 import {createHash} from 'node:crypto';
@@ -17,7 +19,7 @@ import {beforeU38U41GeneralRepairs,beforeU38PlaygroundPair} from './lv2ImageRepa
 import {approvedWordIllustration,approvedCurriculumIllustration} from './approvedCurriculum';
 import {getWordBeastAsset} from '../wordbeast/wordBeastAssets';
 import {resolveWordImageClue} from '../../quiz/imageClue';
-const general=beforePraiseGeneral(currentGeneral,praiseProof);
+const general=beforePraiseGeneral(beforeLV3GeneralImages(currentGeneral,lv3ImageProof),praiseProof);
 const hash=(v:unknown)=>createHash('sha256').update(JSON.stringify(v)).digest('hex');
 const bytesHash=(p:string)=>createHash('sha256').update(readFileSync(p)).digest('hex');
 const known={generosity:'fdecea42d13a9b79b6012df71a7e80a6efbb2be56d095be6303f5fb5d769dd79',playground:'a6b345e0f778db7542e02e6381d03444fcac0517551f2c2494b296e64ee8fd7f',discover:'f9a557414b67a06be314e669763ea7bd1e2333e71aac842a9bb03eb6168212b1'};

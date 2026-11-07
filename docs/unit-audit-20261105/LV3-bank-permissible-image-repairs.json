@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "baseCommit": "39a8f4f3d829eb4546edbfa8ef255b312706aac5",
+  "assetCommit": "1107d15d45008d33a01dd09430d31852f4f71e41",
+  "registryPath": "src/features/vocabulary/auditedWordIllustrations.json",
+  "beforeHash": "d9905ded7a45f66015643b401ad1b57d6e8dcb44142218cf131710e99a91dc6a",
+  "afterHash": "5e816a6dd36e42e7ffd293f9d46900c94159cb5138fba52c0b617f0a25e615bc",
+  "beforeLength": 337,
+  "afterLength": 338,
+  "bankBefore": {
+    "reviewId": "LV1-U14-37",
+    "officialWordId": "W000061",
+    "aliases": [
+      "bank"
+    ],
+    "illustration": {
+      "path": "wordbeast/audited-20261105/LV1-U14-37-21952a2bb4d4.webp",
+      "captionEn": "The children sat on the river bank and watched the boats go by.",
+      "captionZh": "孩子們坐在河岸邊看船隻經過。"
+    }
+  },
+  "bankAfter": {
+    "reviewId": "LV1-U14-37",
+    "officialWordId": "W000061",
+    "aliases": [
+      "bank"
+    ],
+    "illustration": {
+      "path": "wordbeast/lv3-reviewed/W000061-bank-v2-9bd9d7283b45.webp",
+      "captionEn": "The children sat on the river bank and watched the boats go by.",
+      "captionZh": "孩子們坐在河岸邊看船隻經過。"
+    }
+  },
+  "permissible": {
+    "reviewId": "LV3-GENERAL-W005669-20261107",
+    "officialWordId": "W005669",
+    "aliases": [
+      "permissible"
+    ],
+    "illustration": {
+      "path": "wordbeast/lv3-reviewed/W005669-permissible-v2-a5af5eaebfa9.webp",
+      "captionEn": "The gate is open, and it is permissible for Doudou to pass through.",
+      "captionZh": "大門敞開，豆豆獲准通過。"
+    }
+  },
+  "assets": [
+    {
+      "word": "bank",
+      "wordId": "W000061",
+      "source": {
+        "path": "public/wordbeast/audited-20261105/LV1-U14-37-21952a2bb4d4.webp",
+        "sha256": "3aa8063075e210b8a15eecec5f0d387628c980c8b0a3fd3ba706323af27e3446",
+        "gitBlobSha": "9bbb60def85c8395f3906840379d66df9ece1f75",
+        "dimensions": [
+          1254,
+          1254
+        ]
+      },
+      "candidate": {
+        "path": "public/wordbeast/lv3-reviewed/W000061-bank-v2-9bd9d7283b45.webp",
+        "sha256": "9bd9d7283b458d811690c5c0c2c6dd7b9134e887344eb6919e881e67d5c8f01a",
+        "bytes": 300346,
+        "dimensions": [
+          1254,
+          1254
+        ],
+        "generatedPngSha256": "4d7098b8d352f455378eaf4bbd1092960a2e8be172f22f3633655d082ed5a29e"
+      }
+    },
+    {
+      "word": "permissible",
+      "wordId": "W005669",
+      "source": {
+        "path": "public/wordbeast/s/W005669.webp",
+        "sha256": "8fcee26cc539a47de0455fa4c0148b0d20566bc026cc9a121ce7e7a3683c3638",
+        "gitBlobSha": "cc48cdba8f5c34ce1f9463cd722e1506c169512e",
+        "dimensions": [
+          1024,
+          1024
+        ]
+      },
+      "candidate": {
+        "path": "public/wordbeast/lv3-reviewed/W005669-permissible-v2-a5af5eaebfa9.webp",
+        "sha256": "a5af5eaebfa9058347db55aa708d3c0bf01dc4481bee4000a11661667d5a467d",
+        "bytes": 381248,
+        "dimensions": [
+          1254,
+          1254
+        ],
+        "generatedPngSha256": "2fd26cbca9aeae73d37d898b734dc66a14adc91121c727396919d5bdf774671a"
+      }
+    }
+  ],
+  "candidateManifest": {
+    "path": "docs/unit-audit-20261105/validation/LV3-bank-permissible-image-candidates-20261107.json",
+    "timestampCorrection": {
+      "originalClaim": "2026-11-07T21:36:00Z",
+      "validCreatedAtUtc": "2026-11-07T13:36:00Z",
+      "assetCommitTimeUtc": "2026-11-07T13:38:59Z",
+      "explanation": "Parent reviewer confirmed the original 21:36:00Z claim records local +08:00 time mislabeled Z; corrected to 13:36:00Z. The original candidate manifest remains immutable. Independently recorded Git commit time is 21:38:59+08:00 = 13:38:59Z and is not used as generation time."
+    },
+    "normalizedJsonSha256": "e1adf067374b2acf0f95c7a7b0fd4e72eaf39065dbc7e490069c1a8de31d747f"
+  },
+  "review": {
+    "authorization": "User-directed comprehensive unit audit and correction; not manual user approval of these image/caption pairs.",
+    "sourceAndCandidatePixels": "Independently viewed by parent reviewer after SHA-256 verification.",
+    "manualUserApproved": false,
+    "newGenerationStarted": false,
+    "actualConsumerVisualAcceptance": "pending",
+    "publicationReady": false
+  },
+  "unchangedFiles": [
+    {
+      "path": "src/features/wordbeast/illustrationCaptions.json",
+      "normalizedJsonSha256": "4aea5cbf88bc5d28f6d848d1f4d18ae63cc16957dde66f406a8f55a6a5a9a2f3"
+    },
+    {
+      "path": "src/features/vocabulary/lv1ReviewedImages.json",
+      "normalizedJsonSha256": "b3a497c0ce67d1a5c3ceef12bbbac06e20694e32c40f6fd60c40d7286b3a4c82"
+    },
+    {
+      "path": "src/features/vocabulary/approvedExampleImages.json",
+      "normalizedJsonSha256": "694f76fd00970cb7550bc106035458f22739fe2a249bc63942cf8aa470c819c8"
+    },
+    {
+      "path": "public/data/v1/media.json",
+      "normalizedJsonSha256": "82f8bcd1c91f15870af7b7e6ad115bbc337fa8af237251b91eadd0ee3c55c92a"
+    }
+  ]
+}

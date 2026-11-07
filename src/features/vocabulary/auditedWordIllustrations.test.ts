@@ -1,3 +1,5 @@
+import {beforeLV3GeneralImages} from '../../../scripts/lv3_image_repair_guard.mjs';
+import lv3ImageProof from '../../../docs/unit-audit-20261105/LV3-bank-permissible-image-repairs.json';
 import {beforeU38U41GeneralRepairs} from './lv2ImageRepairs.testSupport';
 import {beforePraiseGeneral} from '../../../scripts/praise_image_repair_guard.mjs';
 import praiseProof from '../../../docs/unit-audit-20261105/LV2-U46-praise-image-repair.json';
@@ -32,7 +34,7 @@ import {getWordBeastAsset} from '../wordbeast/wordBeastAssets';
 
 // Validate/reverse the newest exact layer once, then run the unchanged historical
 // boundary tests (including their intentionally altered older fixtures).
-const cards=beforeU38U41GeneralRepairs(beforePraiseGeneral(currentCards,praiseProof));
+const cards=beforeU38U41GeneralRepairs(beforePraiseGeneral(beforeLV3GeneralImages(currentCards,lv3ImageProof),praiseProof));
 const particularAuditRow={reviewId:'LI-LV2U30-V035',officialWordId:'W001616',aliases:['particular'],illustration:{path:'wordbeast/audited-20261105/LV2-U30-W001616-1ceb569d4c35.webp',captionEn:'Doudou picks out the particular shell with white spots.',captionZh:'豆豆挑出那個有白點的特定貝殼。'}};
 const trustAuditRow={reviewId:'LI-LV2U39-V002',officialWordId:'W001933',aliases:['trust'],illustration:{path:'wordbeast/s/W001933.webp',captionEn:'The new clerk was trusted with the keys to the safe.',captionZh:'新來的店員被託付保險箱的鑰匙。'}};
 function registryBeforeU39(value:typeof cards){expect(value).toHaveLength(334);expect(value.filter(c=>c.reviewId===trustAuditRow.reviewId)).toEqual([trustAuditRow]);return value.filter(c=>c.reviewId!==trustAuditRow.reviewId);}
@@ -80,11 +82,13 @@ it.each([...new Set(cards.map(c=>reviewGroup(c.reviewId)))])('binds every explic
   }else expect(card.illustration).toMatchObject({captionEn:proof.captionEn,captionZh:proof.captionZh});
   const word=words.find(w=>w.wordId===card.officialWordId)!;
   expect(word).toBeDefined();
-  expect(approvedWordIllustration(word.word,word.wordId)).toEqual(card.illustration);
-  expect(getWordBeastAsset(word.wordId,word.word)).toContain(card.illustration.path);
+  // Historical bytes/captions above stay frozen; current resolver follows the exact validated newer layer.
+  const currentCard=currentCards.find(c=>c.reviewId===card.reviewId)!;
+  expect(approvedWordIllustration(word.word,word.wordId)).toEqual(currentCard.illustration);
+  expect(getWordBeastAsset(word.wordId,word.word)).toContain(currentCard.illustration.path);
   expect(approvedWordIllustration(word.word,'W999999')).toBeUndefined();
-  expect(approvedCurriculumIllustration(word.word,'/'+card.illustration.path+'?v=test')).toEqual(card.illustration);
-  expect(approvedCurriculumIllustration('wrong-word','/'+card.illustration.path)).toBeUndefined();
+  expect(approvedCurriculumIllustration(word.word,'/'+currentCard.illustration.path+'?v=test')).toEqual(currentCard.illustration);
+  expect(approvedCurriculumIllustration('wrong-word','/'+currentCard.illustration.path)).toBeUndefined();
  }
 });
 
