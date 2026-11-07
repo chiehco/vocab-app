@@ -6,7 +6,7 @@
 
 文字修正 **173 欄、79 筆資料列**已依同一封存 manifest 完成本機實際套用，寫入 6 個產品檔案；備份與全部 after hash 已驗證，138 個範圍外輸入保持不變，chain 與交易 receipt 均為 committed。重複套用回報 already_applied，產品寫入為 0。這裡的 committed 指修正鏈／交易狀態，不等同 Git 提交或發布。
 
-隔離 fixture 驗證已通過：實際 Python suite 9/9、receipt/artifact checks 2/2，TypeScript／Python 對 79 列與 6 檔的正向／逆向結果一致。**全卡 after／重開驗證，以及 scoped／full compile、lint、build 仍在進行，本報告不宣稱通過。尚未推送發布，實體手機未驗。** replace 圖片的既有整合與瀏覽器驗收仍是另列的已完成範圍，不能替代本次文字套用後驗收。
+隔離 fixture 驗證已通過：實際 Python suite 9/9、receipt/artifact checks 2/2，TypeScript／Python 對 79 列與 6 檔的正向／逆向結果一致。**2026-11-07 UTC，U04 本機逐單元審閱與驗收已完成：全卡 after、同一隔離 profile 重開、scoped tests、強制全專案 TypeScript、lint 與 build 均有最終通過證據。尚未推送發布，實體手機未驗。** replace 圖片的既有整合與瀏覽器驗收仍是另列的已完成範圍，本次文字套用後驗收則另有下列完整紀錄。
 
 封存階段歷史：2026-11-07 初稿記錄 manifest readiness=ready、chain=prepared，當時尚未主樹套用、隔離 fixture 正在進行。其 before 證據仍保留；目前進展依下列 fixture 與實際套用紀錄更新，未改寫來源裁示。
 
@@ -15,6 +15,8 @@
 - [U04 套用前擷取紀錄](U04-before-capture.json)
 - [U04 隔離 fixture 驗證結果](U04-fixture-validation.md)
 - [U04 本機實際套用紀錄](U04-application.json)
+- [U04 實際套用後靜態驗證](U04-validation.md)
+- [U04 全卡及重開執行期驗收](U04-runtime-qa.md)
 - [修正鏈狀態](chain.json)
 - [replace 圖片執行期驗收](U04-replace-runtime-qa.md)
 - [驗證流程](PIPELINE.md)及[流程擴充說明](PIPELINE-EXTENSION.md)
@@ -37,7 +39,7 @@ U04 canonical manifest hash：cbd33aa366048230b645bb45560892bc50380704f6b0273f27
 | notes | 3 | 3 |
 | 合計 | 173 | 79 |
 
-逐欄草稿核對結果為 0 before 漂移、0 重覆欄位、0 noop、0 來源缺口；完整 beforeRow 和被較保守裁示取代的初稿均有保留。這是封存前內容及來源核對結果。後續 fixture 與主樹實際套用已另有上列證據；仍不能據此宣稱全卡 after 或發布驗收通過。
+逐欄草稿核對結果為 0 before 漂移、0 重覆欄位、0 noop、0 來源缺口；完整 beforeRow 和被較保守裁示取代的初稿均有保留。這是封存前內容及來源核對結果。後續 fixture、主樹實際套用與全卡 after 已另有上列證據；仍不能據此宣稱正式發布、實體手機或全部來源問題已解決。
 
 ## 教材與練習邊界
 
@@ -82,6 +84,12 @@ G017 的原書斜線分組仍待釐清；保留原標記，不擅自發明平行
 
 ## 圖片與瀏覽器檢查
 
+本次文字套用後已完成 173/173 runtime 欄位、79 列核對；183/183 教材卡、106/106 一般字卡與全部 379 個實際頁籤皆重新開啟。147 組修正欄位的值可在畫面文字找到，另 26 個 meaningSource 僅屬 runtime metadata；這是值存在的證據，不表示畫面有 147 個獨立標示欄位。
+
+30/30 一般字卡圖均成功載入；只有 replace 改圖，其餘 29 張原圖路徑與 HTTP 位元組 hash 不變。390×844 桌面窄視窗子集涵蓋 10 routes、18 views，正常捲動後沒有橫向溢位或取樣文字持續遮擋。同一原隔離 profile 關閉重開後，導覽前的資料筆數、內容 metadata、進度表值及儲存狀態相符，並可正常回到保存路線。
+
+第一次 after 檢查曾看到 starter 字庫的 75 欄舊值，原始失敗記錄保留；之後完成正常啟動同步才取得一致結果。不能宣稱更新按鈕造成更新，也不能保證一重開立即取得新字庫。詳見[執行期時序、驗收與限制](U04-runtime-qa.md)。最終重開核對沒有再跑全部逐列 hash，且此 profile 的 SRS／quiz／reward 表為空，不能等同真實使用者既有學習資料遷移驗收。
+
 套用前瀏覽器覆蓋 183 張教材卡、106 張一般字卡、379 個可見頁籤及 30 張可到達圖片。這是 before 檢查範圍，不能當作文字套用後驗收。
 
 replace 新圖已整合，實際一般字卡、看圖喚名題、正常作答、關閉重開與 390×844 桌面窄視窗子集均已檢查。圖片顯示豆豆替木推車更換破輪；實際回傳位元組的 SHA-256 為 cebee8173ee9d2a633e68212669b6c47178dbbe17cd9a2c69ee7b83e937fe40c。重開後測試進度保留；教材 replace 卡仍無圖片。詳見[完整 replace 執行期報告](U04-replace-runtime-qa.md)。
@@ -110,7 +118,8 @@ replace 新圖已整合，實際一般字卡、看圖喚名題、正常作答、
 
 1. 隔離 fixture 已完成：Python 9/9、receipt/artifact 2/2、TypeScript／Python parity 1/1；79 列與 6 檔正逆向相符。其他 focused 檢查與刻意略過項目詳見[fixture 報告](U04-fixture-validation.md)。該報告的「未主樹套用」描述限定於當次隔離測試，不是目前狀態。
 2. 主樹實際套用已完成：4 個來源 JSON 加上 metadata／study pack，共 6 檔；備份、after hash 與 138 個未變輸入已驗證，冪等重跑寫入 0。詳見[application 紀錄](U04-application.json)。173 欄與 79 列範圍不變。
-3. 全卡 after／重開與 scoped／full compile、lint、build 正在進行，結果仍待回填。before 覆蓋及 replace 圖片的單獨驗收不能替代這一步；既有資料保存亦須按實際完成範圍陳述。
-4. 必要驗證完成後，再記錄 Git 提交、分批推送發布及正式站版本驗證。現在尚未推送發布，也未完成實體手機驗收，不以本機套用成功代替這些交付條件。
+3. 實際套用後靜態檢查完成：27 個 TypeScript 測試檔、172 個 unique tests 都有最終通過證據，沒有 skipped tests。這是原始執行加針對性獨立重跑的合併證據，**不是一次全合跑 172 tests 全綠**。原始 timeout、checkpoint assertion 與中間失敗記錄均保留；未提高 timeout 或弱化歷史 hash 期望。Python 48 tests 通過；強制全專案 tsc、lint、build exit code 均為 0。Lint 162 warnings 與 build 的 plugin-timing／large-chunk warnings 保留，未隱藏。完整時序見[靜態驗證報告](U04-validation.md)。
+4. 全卡 after、正常窄視窗捲動及同 profile 重開完成，詳見[執行期報告](U04-runtime-qa.md)。本機 U04 審閱完成不等於未知義、罕義、edit 圖動作、G017 來源斜線或所有考題原始來源都已解決；上述保留裁示仍有效。
+5. 下一單元依註冊順序為 **U05**。整個 LV3 最後仍需完整測試套件與批次發布驗收；本輪沒有跑完整 2000-plus Vitest suite。尚未推送發布，不宣稱正式站、離線／PWA、實體手機或真實使用者 SRS 遷移驗收通過。
 
 完整逐欄核准內容以[封存 manifest](U04-patches.json)及[scope](U04-scope.json)為準。本機研究記錄包括 U04-accepted-proposals-draft.json、u04-vocabulary-review.json、u04-dictionary-verification.json、u04-verb-forms-verification.json、u04-grammar-review.json 與 u04-supplement-proposals.json；這些檔名僅供稽核定位，不是公開下載連結。
