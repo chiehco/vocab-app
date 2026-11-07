@@ -2,6 +2,8 @@
 
 Scope: local app at http://127.0.0.1:5186, baseline 99883751926bd6cb4feff70daff56c07afc130cb and the 28 rows in U01-patches.json. Product images were not changed. No production publish or real-user browser/database access was performed by this QA.
 
+Subsequent image acceptance: this is the earlier text-only checkpoint. The bank issue below was later repaired and verified on its ordinary card and image-clue quiz. Current image results and remaining consumer limits are in [U01–U02 image runtime QA](U01-U02-image-runtime-qa.md).
+
 ## Results
 
 - Before and after reopening: all 176 curriculum cards (123 vocabulary + 53 grammar) and all 99 distinct corresponding general cards were opened, with exact DOM text and image metadata recorded.

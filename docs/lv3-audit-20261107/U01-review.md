@@ -32,7 +32,7 @@ No word IDs, word POS/status, original example English/Chinese sentences, cloze 
 
 1. **G33:** The first authored sentence says most repairs were paid for by donations; it does not identify local residents as the donors. The following sentence/rationale therefore overclaims. This remains a pending logic issue. No donor identity was invented and no English premise was rewritten.
 2. **G02 / NX9f92593f:** The original heading says `with`/`in`, while its examples use `Without unity` and `In unity`. This source discrepancy is recorded without declaring `with unity` ungrammatical or silently changing the source.
-3. **Bank illustration:** A proposed replacement image has not been successfully saved. The reported generated output is an empty file. No new bank image, image mapping or approval is included in this text patch.
+3. **Bank illustration resolved after the text checkpoint:** The versioned replacement now shows two seated shore characters and two boats. The original asset and exact caption are retained. The ordinary card and actual image-clue quiz were reopened and verified; see [image runtime acceptance](U01-U02-image-runtime-qa.md). This does not add an illustration to the authored U01 exercise.
 4. **Other source pages:** Supplemental formal-note pages outside U01 p1–10, including the `stay` p95 reference, remain independently unverified where relevant.
 5. **Coverage limits:** A single question per pattern does not test all alternatives. Examples include G28 `with fright`, G39 `healthy`, G43 `meat processing`, G48 `lie`, and G53 `career woman`.
 6. **besides historical material:** The truncated historical English meaning has not been reconstructed. Only the supported additive Chinese usage clarification was changed.
