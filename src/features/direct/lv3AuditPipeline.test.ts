@@ -86,8 +86,8 @@ it('guards the latest committed checkpoint and exact historical U02 while reject
  assert.equal(lv3AfterUnitPublishedText(latest.entry.unit,meta,text),text);
  const historical=lv3AfterUnitPublishedText('LV3-U02',meta,text);
  assert.equal(createHash('sha256').update(historical).digest('hex'),u2.manifest.derivedAfter![meta]);
- assert.throws(()=>lv3AfterUnitPublishedText(latest.entry.unit,meta,text+' '),/raw drift/);
- assert.throws(()=>lv3AfterUnitPublishedText('LV3-U02',meta,text+' '),/(raw|derived).*drift/);
+ assert.throws(()=>lv3AfterUnitPublishedText(latest.entry.unit,meta,text+' '),/raw drift|migration unchanged input drift/);
+ assert.throws(()=>lv3AfterUnitPublishedText('LV3-U02',meta,text+' '),/(raw|derived).*drift|migration unchanged input drift/);
 });
 it('reverses successive same-file changes only in the recorded order',()=>{
  const path='public/data/v1/notes.json';

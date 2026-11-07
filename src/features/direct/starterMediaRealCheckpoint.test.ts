@@ -74,8 +74,8 @@ describe.skipIf(mode===undefined)('real sealed starter media checkpoint',()=>{
   if(mode==='committed')assert.deepEqual(maps(migrationTexts).normalized,m.afterInputs);
   assert.equal(paths.filter(p=>m.beforeRawInputs[p]===m.afterRawInputs[p]).length,142);
   const checkpointTexts=directCurrent?current:migrationTexts;
-  const before={...checkpointTexts,[BUILDER]:proof.texts.beforeBuilder,[PACK]:proof.texts.beforePack};
-  const after={...checkpointTexts,[BUILDER]:proof.texts.afterBuilder,[PACK]:proof.texts.afterPack};
+  const before:Record<string,string>={...checkpointTexts,[BUILDER]:proof.texts.beforeBuilder,[PACK]:proof.texts.beforePack};
+  const after:Record<string,string>={...checkpointTexts,[BUILDER]:proof.texts.afterBuilder,[PACK]:proof.texts.afterPack};
   const pythonBefore:Maps=JSON.parse(read(`${evidence}/observed-before.json`));
   const pythonAfter:Maps=JSON.parse(read(`${evidence}/observed-after.json`));
   if(directCurrent){assert.deepEqual(maps(before),pythonBefore);assert.deepEqual(maps(after),pythonAfter);}

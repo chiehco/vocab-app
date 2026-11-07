@@ -2,7 +2,7 @@
 
 ## Current status
 
-Candidate TypeScript validation passed. Main committed validation remains pending. Python TEMP validation is not TypeScript validation, and candidate fixtures are not evidence of an applied main checkout.
+Candidate TypeScript validation passed. The real committed-checkpoint integration test also passed, but the wider focused guard run failed and is not accepted as a final pass. Python TEMP validation is not TypeScript validation, and candidate fixtures are not evidence of an applied main checkout.
 
 ## Sealed inputs
 
@@ -35,6 +35,6 @@ Both modes authenticate the descriptor, four raw fixtures, exact source selectio
 - Initial candidate attempt: the real candidate test passed, but two prepared-checkpoint cases failed because their mocked chain retained a migration whose predecessor had been marked prepared. The overall attempt failed. Log: `output/lv3-audit-20261107/starter-media-ts-candidate/run-20261108-022751.log` (301.20 seconds). This log remains unchanged.
 - The prepared-checkpoint negative test now isolates the real prefix ending at its selected target, so the intended uncommitted-target assertion is reached without an unrelated invalid migration predecessor. Tail identity explicitly discriminates ordinary units from migrations. Current-tail positive controls remain.
 - Final candidate run: **2 files passed; 3 tests passed, 2 committed-only tests skipped; 17.47 seconds**. Log: `output/lv3-audit-20261107/starter-media-ts-candidate/run-20261108-023354.log`. Complete observed maps: `output/lv3-audit-20261107/starter-media-ts-candidate/observed.json`.
-- Main committed TypeScript run: not run.
-- Final TypeScript compilation: not run.
+- Initial main committed focused run: **5 files failed, 2 passed; 8 tests failed, 27 passed; 209.37 seconds**. Log: `output/lv3-audit-20261107/starter-media-ts-committed/run-20261108-024437.log`. The real-checkpoint integration tests passed and saved complete observed maps to `output/lv3-audit-20261107/starter-media-ts-committed/observed.json`. Seven existing guard tests exceeded their unchanged 5-second timeout. Repeated full migration validation was observed in these execution paths; performance diagnosis is still in progress, and its contribution has not yet been isolated by benchmark. One audit-pipeline negative assertion rejected the correct earlier `migration unchanged input drift` error because its expected message only covered the old raw/derived guard. Its two message matchers now also accept that precise migration error; all other assertions remain unchanged. No timeout, expected hash, or data guard has been relaxed. Final corrected run pending.
+- Initial forced TypeScript compilation: failed with index-signature errors in the new integration test's before/after maps. Log: `output/lv3-audit-20261107/starter-media-ts-committed/forced-tsc-20261108-024835.log`. The maps now have explicit `Record<string,string>` annotations, with no permissive cast. Final compilation pending.
 - Build: not run.
