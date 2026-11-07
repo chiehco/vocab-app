@@ -1,6 +1,6 @@
 {
   "unit": "LV3-U06",
-  "state": "applied_awaiting_runtime_and_technical_validation",
+  "state": "reviewed_locally_with_retained_source_questions",
   "applicationTarget": "actual LV3 audit worktree on content/lv3-unit-audit-20261107, not TEMP fixture or the main branch",
   "preparedAtCommit": "1250c580ace4db731e95c4fb7b66704fafb371f5",
   "manifestHash": "c59130eba2f8aeae6f0012dbdf1b052f3663dbbdebfcf875d183fddfd0730581",
@@ -141,10 +141,103 @@
     "originalFullRunResultStillUnsuccessful": true,
     "rerunDuringActualApplication": false
   },
-  "runtimeAfter": "pending full-card after validation",
-  "technicalValidation": "pending final scoped technical checks",
+  "runtimeAfter": "completed_locally_in_retained_starter_qa_profile_with_explicit_boundaries",
+  "technicalValidation": "completed_scoped_final_runs_with_preserved_failure_history",
   "release": "not published",
   "physicalPhone": "not tested",
   "evidenceDirectory": "output/lv3-audit-20261107/u06-main-application-20261107T203122Z",
-  "summary": "The official applier wrote the six approved files in the actual LV3 audit worktree once. Actual after hashes, six raw backups, 138 unchanged raw/LF inputs, one committed receipt, idempotent zero writes, current 144 guards, and the immediate migration-parent normalized 144-input reconstruction passed. Full-card runtime after QA and final technical validation remain pending."
+  "summary": "The six-file text transaction remains committed and was not repeated. Full-card after runtime and final scoped technical validation completed locally with explicit starter-profile, DOM/metadata and persistence boundaries. The separate puppet replacement passed ordinary-card, normal image-quiz and reopen checks. Retained source questions remain open; this is not publication or physical-device acceptance.",
+  "applicationCommit": "e11780b4b33cfb688a3a2e96151536e0fb3936f5",
+  "runtimeAfterReport": "U06-runtime-qa.md",
+  "runtimeReportCommit": "f43f3ec96d0abc305b386594726646e76a5dc65f",
+  "technicalValidationReport": "U06-validation.md",
+  "runtimeCoverage": {
+    "curriculumCards": 134,
+    "uniqueGeneralCards": 82,
+    "tabPages": 282,
+    "runtimeFields": 144,
+    "domMatchedFields": 124,
+    "metadataOnlyMeaningSourceFields": 20,
+    "newVerbForms": 13,
+    "reachableImages": 24,
+    "screenshots": 574,
+    "responsiveRoutes": 13,
+    "responsiveViews": 33
+  },
+  "runtimeBoundary": "Isolated retained starter QA profile only. Curriculum is browser-imported JSON learningItems, not a ContentDB table. Installed words/examples/notes and complete HTTP sources were compared separately; no full-pack installation claim. Existing confirm rows match the read-only snapshots by JSON serialization, not physical IndexedDB-file bytes. Normal background synchronization installed the update without pressing an update control. One intentional puppet quiz added +5 (wallet 5 to 10); close/reopen preserved it without duplicate rewards.",
+  "imageRuntime": {
+    "changedImage": "puppet W002690",
+    "sha256": "8a3480a548f04c0a5fd4f89606eddab205f4656e3b3d1eaeae5ce550e9ea2bca",
+    "unchangedImages": 23,
+    "originalCaptionsUnchanged": 24,
+    "originalEnglishCaptionGaps": [
+      "profit",
+      "constant",
+      "warn"
+    ],
+    "surfaces": [
+      "ordinary general card",
+      "one normal image quiz",
+      "browser reopen"
+    ],
+    "boundary": "Separate image integration; not an additional field or file in the historical six-file text transaction."
+  },
+  "technicalResults": {
+    "vitest": {
+      "files": 28,
+      "passed": 368,
+      "total": 368,
+      "durationSeconds": 145.12,
+      "skipped": 0,
+      "timeoutMs": 5000
+    },
+    "python": {
+      "modules": 8,
+      "passedMethods": 123,
+      "totalMethods": 123,
+      "durationSeconds": 404.349,
+      "wageSubcasesWithinOneMethod": 31
+    },
+    "forcedWholeProjectTscExit": 0,
+    "lintExit": 0,
+    "lintWarnings": 419,
+    "changedTestFilesWithoutWarnings": 5,
+    "buildExit": 0,
+    "sourceAndDistPackSha256": "f92450744cde5a7a9475130593da3f17296a519052004cfba8258cbfefbefb25",
+    "distPuppetEqualsSource": true,
+    "scope": "Scoped tests, not all project tests."
+  },
+  "technicalValidationHistory": {
+    "first28FileRun": "352/355; initial failures retained",
+    "threeCallerExactRepair": "20/20 focused tests passed after exact caller repairs",
+    "second28FileRun": "356/357; one 5.623-second timeout against unchanged 5000ms boundary",
+    "unchangedFocusedRun": "6/6 at the same 5000ms boundary; retained as narrow evidence, not a substitute for the full selection",
+    "finalRepair": "Split 11 independent file-hash checks into named cases; did not change timeout, cache, or coverage.",
+    "final28FileRun": "368/368; no product changes or repeated application"
+  },
+  "finalEvidenceStability": {
+    "rawAndLfInputs": 144,
+    "manifestScopeReceiptUnchanged": true,
+    "beforeArtifacts": 719,
+    "afterArtifacts": 795,
+    "bothIndexesAndAllRecordedHashesVerified": true
+  },
+  "retainedQuestions": [
+    "p56 source usage and source note retain historical ingestion errors; runtime includes the printed for, but the two source errata remain explicit and source inputs unchanged.",
+    "Rare-sense questions for owl, visual, drastic, leopard, headquarters and visible remain unresolved; no destructive deletion.",
+    "35 of 36 formal notes have original-page provenance outside U06; only sneaker is directly located on U06 p55.",
+    "Original English captions remain missing for profit, constant and warn; existing Chinese captions are retained.",
+    "29 optional grammar explanations and optional auto cleanup were not adopted.",
+    "koala has no image; miss retains a valid general longing illustration without a curriculum-specific image binding."
+  ],
+  "untested": [
+    "physical phone",
+    "full-pack installed profile",
+    "offline matrix",
+    "SRS scheduling",
+    "arena selection",
+    "forced daily selection",
+    "other untested practice modes",
+    "production deployment"
+  ]
 }

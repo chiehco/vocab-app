@@ -127,7 +127,7 @@
       "itemCount": 134,
       "vocabularyCount": 105,
       "grammarCount": 29,
-      "status": "applied_awaiting_runtime_and_technical_validation",
+      "status": "reviewed_locally_with_retained_source_questions",
       "manifest": "U06-patches.json",
       "scope": "U06-scope.json",
       "beforeCapture": "U06-before-capture.json",
@@ -136,14 +136,46 @@
       "rowCount": 56,
       "newVerbFormRows": 13,
       "parentCheckpoint": "starter-media-actual-names-v1",
-      "validation": "Actually applied six approved files in the LV3 audit worktree; the main branch remains unpublished for this batch. Six after raw/LF hashes and raw backups, 138 unchanged raw/LF inputs, committed receipt, zero-write idempotence with no new receipt, current 144-input checkpoint, and immediate migration-parent 144 normalized-input reconstruction passed. Full-card runtime after and final scoped technical validation are pending. Not published or phone-validated.",
+      "validation": "Actual six-file text application, original transaction backups, zero-write repeat, 138 unchanged inputs and 144 checkpoint guards remain verified. Final same 28-file Vitest run: 368/368, 145.12s, no skips, unchanged 5-second timeout. One Python run: 8 modules, 123/123 unittest methods, 404.349s; the wage method includes 31 subcases, not an additional method count. Final forced whole-project tsc, lint and build exit 0. Lint reports 419 warnings; the five changed test files have none. Source/dist sa-pack hashes match and dist puppet equals source. This is scoped validation, not the complete project test suite. All 144 raw/LF inputs, committed manifest/scope/receipt, 719 before and 795 after files and both indexes remain verified.",
       "fixtureValidation": "U06-fixture-validation.md",
       "fixtureEvidence": "Nine distinct methods have passing evidence: eight from the original 8/9 run, plus one complete focused method after exact harness repair; not a single-run 9/9 or full rerun. TypeScript parity 1/1 passed.",
       "preparationCheckpoint": {
         "status": "prepared_ready_fixture_validated",
         "validation": "Final dry-run has zero writes; all 144 raw/LF inputs and 719 frozen before artifacts are unchanged. U06 remains prepared/ready in product before state, not applied, released, or deployed."
       },
-      "application": "U06-application.json"
+      "application": "U06-application.json",
+      "review": "U06-review.md",
+      "runtimeQa": "U06-runtime-qa.md",
+      "technicalValidation": "U06-validation.md",
+      "imageRepairsVerified": [
+        "puppet W002690"
+      ],
+      "imageRuntimeQa": "U06-runtime-qa.md",
+      "runtimeValidation": "134 browser-imported curriculum cards, 82 general cards and 282 tab pages checked. All 144 changed values match runtime; 124 match DOM text and 20 meaningSource fields are metadata only. All 24 images decoded; only puppet changed, with 24 original captions preserved. Normal puppet image quiz +5 and close/reopen passed in the retained starter QA profile.",
+      "runtimeBoundary": "Isolated retained starter QA profile only. Curriculum is browser-imported JSON learningItems, not a ContentDB table. Installed words/examples/notes and complete HTTP sources were compared separately; no full-pack installation claim. Existing confirm rows match the read-only snapshots by JSON serialization, not physical IndexedDB-file bytes. Normal background synchronization installed the update without pressing an update control. One intentional puppet quiz added +5 (wallet 5 to 10); close/reopen preserved it without duplicate rewards.",
+      "retainedQuestions": [
+        "p56 source usage and source note retain historical ingestion errors; runtime includes the printed for, but the two source errata remain explicit and source inputs unchanged.",
+        "Rare-sense questions for owl, visual, drastic, leopard, headquarters and visible remain unresolved; no destructive deletion.",
+        "35 of 36 formal notes have original-page provenance outside U06; only sneaker is directly located on U06 p55.",
+        "Original English captions remain missing for profit, constant and warn; existing Chinese captions are retained.",
+        "29 optional grammar explanations and optional auto cleanup were not adopted.",
+        "koala has no image; miss retains a valid general longing illustration without a curriculum-specific image binding."
+      ],
+      "releaseValidation": "LV3 batch publication remains on hold until remaining units and release/deployed-version checks complete. No full-pack installed, physical-phone, offline, SRS or arena acceptance claim.",
+      "afterCoverage": {
+        "curriculumCards": 134,
+        "uniqueGeneralCards": 82,
+        "tabPages": 282,
+        "runtimeFields": 144,
+        "domMatchedFields": 124,
+        "metadataOnlyMeaningSourceFields": 20,
+        "newVerbForms": 13,
+        "reachableImages": 24,
+        "screenshots": 574,
+        "responsiveRoutes": 13,
+        "responsiveViews": 33
+      },
+      "technicalFailureHistory": "Initial 352/355, exact three-caller repair 20/20, second 356/357 with a 5.623-second timeout, unchanged focused 6/6 at 5000ms, then 11 independent hash checks split into named cases and final same 28 files 368/368. Original failures retained; no timeout/cache/coverage relaxation."
     },
     {
       "unit": 7,
