@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "createdAtUtc": "2026-11-07",
+  "repository": "chiehco/vocab-app",
+  "baseCommit": "99883751926bd6cb4feff70daff56c07afc130cb",
+  "candidateBranch": "assets/lv3-replace-20261107",
+  "state": "candidate_asset_only_visual_qa_passed_not_integrated",
+  "scope": {
+    "originalAssetsRetained": true,
+    "captionsUnchanged": true,
+    "mappingsUnchanged": true,
+    "mainUntouched": true,
+    "deployed": false,
+    "appConsumerAcceptance": "Not run. This isolated candidate is not connected to any app consumer."
+  },
+  "generation": {
+    "tool": "built-in image_gen.imagegen",
+    "acceptedCalls": 1,
+    "pendingCalls": 0,
+    "uncertainOutcome": false,
+    "semanticEditing": "Only imagegen was used for visual editing.",
+    "encoding": "ImageMagick 7.1.1-43: generated PNG to WebP, quality 95, method 6; no crop or resize."
+  },
+  "word": "replace",
+  "wordId": "W002723",
+  "captionEn": "Doudou replaces the cart's broken wheel with a new one.",
+  "captionZh": "豆豆把推車的破輪子換成新的。",
+  "captionSource": {
+    "path": "src/features/wordbeast/illustrationCaptions.json",
+    "gitBlobSha": "5b8e7273e0d45a88b060da9a24a9065edbcf524c",
+    "matchedBy": "word=replace",
+    "unchanged": true
+  },
+  "source": {
+    "path": "public/wordbeast/s/W002723.webp",
+    "sha256": "20fad955973dbaad0769663d62e354571894d5dd5d6ba035fa70a71aa216f8a3",
+    "gitBlobSha": "7504cde6a4bb3804c7156851272ca8e180044900",
+    "dimensions": [
+      1024,
+      1024
+    ],
+    "observation": "Original depicts characters changing hallway lightbulbs, not a cart wheel.",
+    "retained": true
+  },
+  "supportingReference": {
+    "path": "public/wordbeast/audited-20261105/LV1-U14-37-21952a2bb4d4.webp",
+    "sha256": "3aa8063075e210b8a15eecec5f0d387628c980c8b0a3fd3ba706323af27e3446",
+    "role": "Doudou character identity and watercolor style reference",
+    "dimensions": [
+      1254,
+      1254
+    ]
+  },
+  "candidate": {
+    "path": "public/wordbeast/lv3-reviewed/W002723-replace-v2-cebee8173ee9.webp",
+    "sha256": "cebee8173ee9d2a633e68212669b6c47178dbbe17cd9a2c69ee7b83e937fe40c",
+    "bytes": 609410,
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "generatedPngSha256": "32a957b86f6d1beb58d14a02c4f402ca70e3b24f6a4f76e0eb3486f3eec32556"
+  },
+  "promptPath": "docs/unit-audit-20261105/prompts/W002723-replace-v2-20261107.txt",
+  "visualQa": {
+    "sourceActuallyViewed": true,
+    "supportingReferenceActuallyViewed": true,
+    "generatedPngActuallyViewed": true,
+    "finalWebpActuallyViewed": true,
+    "characters": 1,
+    "twoShortCurvedAntennae": true,
+    "detachedBrokenGrayWheel": true,
+    "intactNewWheelBeingFittedToAxle": true,
+    "cartSupportedOnBlock": true,
+    "watercolorAndIvoryPaperRetained": true,
+    "visibleText": false,
+    "result": "pass",
+    "observation": "A single green Doudou kneels with both hands on a complete warm-brown wheel being fitted on the cart axle. The removed gray wheel has a broken rim and snapped spokes in the foreground. One other cart wheel remains visible. The original hallway and lightbulbs are absent."
+  },
+  "handoff": {
+    "requiresSourceShaRecheckBeforeMapping": true,
+    "preserveAllOriginalCaptions": true,
+    "preserveOriginalAssets": true,
+    "requiresActualConsumerVisualAcceptance": true,
+    "requiresIntegrationHeadChecks": true,
+    "publicationNotAuthorizedByThisCandidateManifest": true
+  }
+}
