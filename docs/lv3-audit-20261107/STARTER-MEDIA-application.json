@@ -1,0 +1,73 @@
+{
+  "status": "main_applied_verified_chain_committed_runtime_and_ts_after_pending",
+  "baseHead": "3bb93dcbd00cb85ba335d7e678c603e030da3656",
+  "manifestHash": "88ba19b48f296fc26b7abdac6468bc1dc26f474523ac78b309aabfed0456578b",
+  "parentManifestHash": "f7ad8f7a18f1b52eeb0be70ae233648de464032ed4819ad7f42cc9f6dc84de77",
+  "existingMigrationReceiptsBefore": 0,
+  "unexpectedFailures": [],
+  "runtimeAfter": "pending",
+  "typescriptAfter": "pending",
+  "mainApply": {
+    "state": "applied",
+    "files": [
+      "public/data/v1/sa-pack.json",
+      "scripts/build_sa_pack.py"
+    ],
+    "mediaAdded": 382,
+    "productWrites": 2,
+    "receipt": "output/lv3-audit-20261107/transactions/20261107T184016929302Z/transaction.json"
+  },
+  "receipt": "output/lv3-audit-20261107/transactions/20261107T184016929302Z/transaction.json",
+  "receiptState": "committed",
+  "backupAndResultHashes": {
+    "public/data/v1/sa-pack.json": {
+      "beforeRawSha256": "28874ebee1562eae9cc1fc71534d87e470094cad268e2af3f43a209724bf8add",
+      "beforeNormalizedSha256": "28874ebee1562eae9cc1fc71534d87e470094cad268e2af3f43a209724bf8add",
+      "afterRawSha256": "c198a371ad72a5f8d8b7d013bd9cc8b2b97c29ecc3fd56abbe2e785f7a19a3e8",
+      "afterNormalizedSha256": "c198a371ad72a5f8d8b7d013bd9cc8b2b97c29ecc3fd56abbe2e785f7a19a3e8"
+    },
+    "scripts/build_sa_pack.py": {
+      "beforeRawSha256": "ce7fa30c583fe2171d439675a3068fc77a027012a04ff3de732dd25605e61c83",
+      "beforeNormalizedSha256": "7b5bf780f51451d39bc3762c027c67243dfafeed5817f3edccc23cbaabb8f3ee",
+      "afterRawSha256": "6bf7f32ccb3b8937e78027814fffd58339d3876f7594aa40890ef0b2aad96d0e",
+      "afterNormalizedSha256": "5412a3da52e222fc7a67908276dc3834153d85412a0fe1a3c70adcce5da43edc"
+    }
+  },
+  "afterPackRawSha256": "c198a371ad72a5f8d8b7d013bd9cc8b2b97c29ecc3fd56abbe2e785f7a19a3e8",
+  "afterPackNormalizedSha256": "c198a371ad72a5f8d8b7d013bd9cc8b2b97c29ecc3fd56abbe2e785f7a19a3e8",
+  "afterStarterContentHash": "sa:dfd6834da6d08dbb81d90244086fba7e997ffd6bffe48cdbb8668a39b3b22bbc",
+  "beforeStarterContentHash": "sa:d455a7ca10769a701e3e0c85a1cb9abb40354715307a13737d8b2b39e570f00d",
+  "after144NormalizedMatch": true,
+  "after144RawMatch": true,
+  "unchangedOtherInputCount": 142,
+  "sourceMediaRawUnchanged": true,
+  "fullMetaRawUnchanged": true,
+  "mediaBefore": 746,
+  "mediaAfter": 1128,
+  "deltaCount": 382,
+  "deltaStatuses": {
+    "approved": 316,
+    "draft": 52,
+    "needs_redraw": 14
+  },
+  "wordCount": 5779,
+  "wordIdsAndOrderUnchanged": true,
+  "repeat": {
+    "state": "already_applied",
+    "files": [
+      "public/data/v1/sa-pack.json",
+      "scripts/build_sa_pack.py"
+    ],
+    "mediaAdded": 382,
+    "productWrites": 0
+  },
+  "chainStatus": "committed",
+  "chainOldEntriesUnchanged": true,
+  "current144CheckpointGuardsPassed": true,
+  "verifiedAt": "2026-11-07T18:42:34.586032+00:00",
+  "mainU05Inverse144RawAndNormalizedPassed": true,
+  "olderCheckpointEvidence": "Prior real TEMP U04/U02/U01 projections; original immutable normalized/fixture contracts retained",
+  "syntheticSuiteRerun": false,
+  "fullSuiteRerun": false,
+  "commitPerformedByApplyCommand": false
+}

@@ -99,7 +99,7 @@ def build_sa_pack(data_dir: Path, curriculum_dir: Path | None = None) -> dict:
     morphemes = [row for row in read_json(data_dir / "morphemes.json") if row.get("word") in actual_names]
     notes = [row for row in read_json(data_dir / "notes.json") if row.get("word") in actual_names]
     # Curriculum pictures/captions are supplied by their reviewed registry, not old dictionary media.
-    media = [row for row in read_json(data_dir / "media.json") if row.get("targetWord") in selected_names]
+    media = [row for row in read_json(data_dir / "media.json") if row.get("targetWord") in actual_names]
 
     datasets = {
         "words": words,

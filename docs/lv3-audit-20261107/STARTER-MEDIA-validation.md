@@ -1,5 +1,7 @@
 # Starter media migration: prepared registration and dry-run
 
+**Current status:** real product application is verified and the typed migration entry is committed. Runtime after-QA and TypeScript after-application validation remain pending at this checkpoint. The sections below distinguish registration, prior TEMP validation and real main application.
+
 ## Status at this checkpoint
 
 The bounded starter media migration is **registered as prepared, not applied**.
@@ -96,7 +98,7 @@ The same candidate passed real-data validation in an external temporary fixture:
   Actual raw backups and receipt hashes were checked.
 - Applied-but-prepared projection was rejected. After promotion of the TEMP entry
   only, U05/U04/U02/U01 projections passed their original guards.
-- The U05 inverse matched all144 raw and normalized entries of the independent
+- The U05 inverse matched all 144 raw and normalized entries of the independent
   capture in that exact-byte TEMP copy. Older checkpoints retain their original
   normalized/fixture contracts; this is not a claim of reconstructed historical
   original-CRLF bytes. Legacy137/144 guards remain unchanged.
@@ -118,3 +120,35 @@ additional source gap rather than a previously verified DOM failure.
 This registration phase did not rerun the synthetic16 suite, the whole test suite,
 TypeScript tests, a build or browser after-QA. Other validation phases must retain
 their own identities/results rather than being attributed to this dry-run.
+
+
+## Real main-product application checkpoint
+
+This later checkpoint supersedes the prepared-only status above; the earlier
+registration and TEMP sections remain historical evidence. The migration was
+applied by the standard applier, never by copying an after fixture over products.
+
+- Application base: `3bb93dcbd00cb85ba335d7e678c603e030da3656`.
+- Manifest: `88ba19b48f296fc26b7abdac6468bc1dc26f474523ac78b309aabfed0456578b`.
+- Actual receipt: `output/lv3-audit-20261107/transactions/20261107T184016929302Z/transaction.json` (state committed).
+- Product writes: exactly two, builder and starter pack. Repeated apply: zero.
+- All 144 actual after raw/normalized hashes matched; the other 142 inputs remained
+  byte-identical. Both real backups matched their original raw/normalized guards
+  and receipt hashes. Source media and full metadata remained unchanged.
+- Media: 746 -> 1,128, exact ordered 382-row delta with original statuses: 316 approved,
+  52 draft and 14 needs_redraw. Word IDs/order and 5,779-word count remained fixed.
+- New starter contentHash: `sa:dfd6834da6d08dbb81d90244086fba7e997ffd6bffe48cdbb8668a39b3b22bbc`.
+- New pack raw SHA-256: `c198a371ad72a5f8d8b7d013bd9cc8b2b97c29ecc3fd56abbe2e785f7a19a3e8`.
+- Only the same typed entry changed prepared -> committed; old entries and
+  historical manifests/guards were unchanged. Current main 144 checkpoint guards
+  and one actual-main U05 inverse passed. That inverse matched all 144 captured
+  raw/normalized bytes. Earlier U04/U02/U01 real TEMP projections remain separate
+  evidence under their original normalized/fixture contracts.
+- No unexpected apply or verification failures occurred; no automatic retry was
+  used. The second standard invocation was performed only after independently
+  verified after state and proved already_applied with zero writes/no new receipt.
+
+See `STARTER-MEDIA-application.json` for the real receipt identity and exact backup
+hashes. Runtime after-QA and TypeScript after-application validation are still
+pending at this checkpoint. No synthetic/full suite was rerun, no Git commit was
+created, and no push/publication occurred in this operation.
