@@ -1,8 +1,8 @@
 # Starter media migration: prepared registration and dry-run
 
-**Current status:** real product application is verified and the typed migration entry is committed. Runtime after-QA and TypeScript after-application validation remain pending at this checkpoint. The sections below distinguish registration, prior TEMP validation and real main application.
+**Current status:** real product application, runtime after-QA and scoped technical validation are complete. The typed migration is committed. See [runtime QA](STARTER-MEDIA-runtime-qa.md), [final TypeScript/compile/lint/build validation](STARTER-MEDIA-TS-validation.md) and [application receipt summary](STARTER-MEDIA-application.json). Earlier sections retain their historical phase status, not current pending gates.
 
-## Status at this checkpoint
+## Historical prepared-registration checkpoint
 
 The bounded starter media migration is **registered as prepared, not applied**.
 The product builder and starter pack remain at the committed U05 checkpoint.
@@ -108,7 +108,7 @@ approved count is not a claim that 316 images were newly visually reviewed again
 every curriculum sense. Draft/needs_redraw records remain source records, not new
 UI approvals.
 
-## Remaining gates
+## Historical remaining gates at registration
 
 Real application, its own receipts/backups and committed-chain promotion are still
 pending. Runtime after-QA must cover normal starter update detection, existing
@@ -149,6 +149,11 @@ applied by the standard applier, never by copying an after fixture over products
   verified after state and proved already_applied with zero writes/no new receipt.
 
 See `STARTER-MEDIA-application.json` for the real receipt identity and exact backup
-hashes. Runtime after-QA and TypeScript after-application validation are still
-pending at this checkpoint. No synthetic/full suite was rerun, no Git commit was
+hashes. Runtime after-QA and TypeScript validation were pending at this application checkpoint; both later completed as recorded below. No synthetic/full suite was rerun, no Git commit was
 created, and no push/publication occurred in this operation.
+
+## Final local closure
+
+Application commit 0844941720cf8679b081f38247a3c95a2b8b5296 retained the exact two-file transaction and every original hash above. Runtime report commit 71e5490927699b1cf7a35db255ba1a09f0b8bccb and technical report commit 30ed97b92cec8a465e8cddce0ce96e9847291586 complete the scoped after gates. Original seven-file command: 35/35; separate complete direct-helper run: 52/52; final forced typecheck, lint and build exit 0 (lint 310 warning lines, zero errors). No existing timeout was raised; all failed attempts remain.
+
+Six Chinese captions are restored. Failed-update content/progress preservation passed; recovery occurred automatically after interception removal and reload, before the intended manual retry. This is not proof of first successful manual retry or offline-PWA behavior. Six absent original English captions and lengthen visual ambiguity remain. The 316 approved additions were not all newly visually reviewed. Full-project suite, physical phone and production/release remain outside scope.

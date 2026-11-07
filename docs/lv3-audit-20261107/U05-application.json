@@ -1,6 +1,6 @@
 {
   "unit": "LV3-U05",
-  "state": "applied_and_verified_locally",
+  "state": "reviewed_locally_with_retained_source_questions",
   "manifestHash": "f7ad8f7a18f1b52eeb0be70ae233648de464032ed4819ad7f42cc9f6dc84de77",
   "fieldCount": 146,
   "rowCount": 56,
@@ -34,7 +34,15 @@
   "runtimeAfter": "completed_locally_with_documented_wage_ui_fix_and_existing_caption_gaps",
   "release": "not published",
   "physicalPhone": "not tested",
-  "builderBoundary": "Original builder and media selection preserved. The known starter caption gap is pending a separate migration.",
+  "builderBoundary": "This historical U05 text transaction preserved the original builder and pack. A later separate starter-media migration applied two files and restored the six Chinese captions; see STARTER-MEDIA-application.json. The afterHashes above remain the original U05 text checkpoint, not current migration hashes.",
   "runtimeAfterReport": "U05-runtime-qa.md",
-  "technicalValidationReport": "U05-validation.md"
+  "technicalValidationReport": "U05-validation.md",
+  "laterStarterMediaMigration": {
+    "application": "STARTER-MEDIA-application.json",
+    "runtime": "STARTER-MEDIA-runtime-qa.md",
+    "technical": "STARTER-MEDIA-TS-validation.md",
+    "state": "applied_and_validated_locally",
+    "applicationCommit": "0844941720cf8679b081f38247a3c95a2b8b5296",
+    "retainedQuestions": "Six original English captions remain absent; lengthen visual clue remains insufficient."
+  }
 }

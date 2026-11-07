@@ -11,7 +11,7 @@
 - confirm圖片已本機整合於4b4f1ee，且限定範圍的執行期驗收完成。見[圖片整合報告](../unit-audit-20261105/LV3-confirm-image-integration-20261107.md)與[confirm runtime QA](U05-confirm-runtime-qa.md)。一般卡、實際看圖題及正常答對+5、關閉重開、四個教材引用邊界、390px畫面均通過。daily自然選到retain而非confirm，不強制改排；confirm的daily、SRS、arena及offline未驗，不能稱所有consumer全面通過。
 - 文字actual-after已完成，見[U05 runtime QA](U05-runtime-qa.md)（報告提交7e5f0ec）：158教材／90一般卡／318分頁及146個runtime值核對完成。初次DOM值出現為125/126，保留失敗證據；wage UI精確修正38da992後，同一profile窄驗缺少的1/1通過。20項meaningSource為metadata，未冒稱可見UI。
 - 限定技術驗收已完成，見[U05 validation](U05-validation.md)：32個TS檔／271個unique tests有最終通過證據，分批及窄驗執行，不是單一combined run；Python65 methods含wage31 subcases。最終63項受影響測試與force whole-project tsc exit 0；lint／build exit 0，但最後type-only annotation與lint/build版本差異按報告保留。測試補強提交80ddf47；最終typing修正及技術報告已提交於90bb66c644335e2e2b295254cc469a42e37a45fe。144 inputs、138 guards、6份after與備份均通過，未重套產品。
-- starter-media migration支援已整合於30f9611，實際migration尚未seal/apply；六筆starter中文caption缺口仍未修。本文件不把其他完成事項算成這項修復。
+- 獨立starter-media migration已實際套用2檔並完成本機runtime與限定技術驗收，提交0844941720cf8679b081f38247a3c95a2b8b5296。六筆starter中文caption已恢復；六筆原英文缺漏及lengthen視覺弱仍保留，不能稱整單元所有來源問題已解決。
 
 ## 審查母數與保護範圍
 
@@ -57,7 +57,7 @@ p43–51為Unit05內容，p52為空白筆記頁，p53已是Unit06邊界。11張�
 | 52 | 空白筆記頁 | 6c234a79855574359122b26069fe6ef1609dea22a52b8faeaed5d8c9a03bf432 |
 | 53 | U06邊界 | 2bee5185dc3858d1b4d468be44bb0d7fa0f26d3e42d0ec2fc332e625291f6ed5 |
 
-## 圖句審查與兩類圖說缺口
+## 圖句審查與兩類圖說缺口（原始發現及後續恢復）
 
 33張現有圖片皆有像素及詞義／原圖說對照，包含共享表面與教材引用範圍。這不等於新增人工美術批准，也不將未看過的其他單元素材算入通過數。
 
@@ -91,10 +91,21 @@ p43–51為Unit05內容，p52為空白筆記頁，p53已是Unit06邊界。11張�
 
 主要詞典證據：[engage](https://www.collinsdictionary.com/dictionary/english/engage)、[appointment](https://www.collinsdictionary.com/dictionary/english/appointment)、[wage](https://www.collinsdictionary.com/dictionary/english/wage)、[closet](https://www.collinsdictionary.com/dictionary/english/closet)、[portion](https://www.collinsdictionary.com/dictionary/english/portion)、[spill](https://www.collinsdictionary.com/dictionary/english/spill)。讀取方式逐來源記錄；Cambridge部分頁403／Oxford部分頁404或403，只使用已記錄的出版社搜尋摘要，沒有冒稱完整頁已讀。earn wages的補充搭配亦明確保留搜尋證據限制。
 
+## 獨立starter-media遷移最終結果
+
+此後續步驟與U05文字交易分開。U05文字提交8f830a1e98ecc5cd2922842b45a2762e794b06b2仍為146欄／56列；原pack SHA256 28874ebee1562eae9cc1fc71534d87e470094cad268e2af3f43a209724bf8add保留為歷史checkpoint，不以現行pack覆寫。
+
+- 遷移manifest：88ba19b48f296fc26b7abdac6468bc1dc26f474523ac78b309aabfed0456578b；交易20261107T184016929302Z已committed。實際只寫builder與starter pack兩檔，重跑0寫入，142項其他輸入不變。見[遷移套用紀錄](STARTER-MEDIA-application.json)及[驗證歷程](STARTER-MEDIA-validation.md)。
+- 現行pack SHA256：c198a371ad72a5f8d8b7d013bd9cc8b2b97c29ecc3fd56abbe2e785f7a19a3e8。媒體746→1128；382筆新增保留316 approved／52 draft／14 needs_redraw，不代表316張都新經目視審核。原746列及全部非media內容不變。
+- [遷移runtime](STARTER-MEDIA-runtime-qa.md)於71e5490927699b1cf7a35db255ba1a09f0b8bccb保存：六筆中文圖說恢復，沒有虛構英文；33張圖的URL、位元組與雜湊不變。失敗更新全庫、metadata與進度保持不變；移除503攔截後，重載觸發背景自動恢復，發生於預定手動重試之前，不能說首次手動重試成功。原confirm +5、群組、QA設定及進度於重開保留；完整full-profile不變。
+- [最終限定技術驗收](STARTER-MEDIA-TS-validation.md)於30ed97b92cec8a465e8cddce0ce96e9847291586保存：原7檔命令一次35/35通過，另完整direct helper 52/52通過；forced tsc、lint、build皆exit 0，lint有310 warning lines、0 errors。未提高既有timeouts，所有初次／中間失敗保留，未跑全專案完整suite。
+
+以上更新原before／文字after階段的六筆starter中文缺口狀態；原始缺口與失敗證據保留，不改寫成當時已通過。六筆原EN缺漏與lengthen視覺弱仍待確認。無發布、實體手機或offline-PWA通過宣稱。
+
 ## 尚未完成與不宣稱的範圍
 
-- U05文字已ready seal、dry-run 0 writes、TEMP fixture及單次本機apply；actual-after全卡runtime及限定技術驗收完成。完整全專案測試套件未執行，starter-caption migration尚未seal/apply，不能稱整單元所有問題已解決。
-- wage(s)精確契約支援與confirm限定runtime驗收已完成；starter媒體集合migration支援已整合於30f9611，實際migration尚未seal/apply，六筆starter圖說缺口仍保留。
+- U05文字已ready seal、dry-run 0 writes、TEMP fixture及單次本機apply；actual-after全卡runtime及限定技術驗收完成。完整全專案測試套件未執行；獨立starter-caption migration已套用並完成限定驗收，但仍保留原英文與視覺來源問題。
+- wage(s)精確契約支援、confirm限定runtime及獨立starter媒體migration驗收已完成；六筆原英文caption缺漏與lengthen視覺弱未因中文圖說恢復而解決。
 - lengthen視覺線索不足與六筆原英文caption缺漏仍保留。
 - confirm的daily自然選到retain，未覆蓋confirm；SRS、arena、offline未驗。390px為桌面瀏覽器responsive檢查，不是手機測試；重開持久化使用專用QA狀態，不是真使用者SRS遷移。未聲稱完成Safari／Firefox、正式站或發布驗收。
-- 此次僅更新審查文件，不更動accepted草稿、產品資料、chain或ledger。上述apply狀態來自獨立交易證據；報告更新本身不代表Git commit或發布完成。
+- 本次收尾僅更新審查文件與U05 ledger狀態，不更動accepted草稿、產品資料或chain。上述apply狀態來自獨立交易證據；報告更新本身不代表發布完成。

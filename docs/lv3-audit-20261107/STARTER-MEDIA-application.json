@@ -1,12 +1,12 @@
 {
-  "status": "main_applied_verified_chain_committed_runtime_and_ts_after_pending",
+  "status": "main_applied_chain_committed_runtime_and_scoped_technical_validation_complete",
   "baseHead": "3bb93dcbd00cb85ba335d7e678c603e030da3656",
   "manifestHash": "88ba19b48f296fc26b7abdac6468bc1dc26f474523ac78b309aabfed0456578b",
   "parentManifestHash": "f7ad8f7a18f1b52eeb0be70ae233648de464032ed4819ad7f42cc9f6dc84de77",
   "existingMigrationReceiptsBefore": 0,
   "unexpectedFailures": [],
-  "runtimeAfter": "pending",
-  "typescriptAfter": "pending",
+  "runtimeAfter": "completed_locally_with_automatic_recovery_limitation",
+  "typescriptAfter": "completed_original_seven_file_command_35_tests_and_direct_52_tests",
   "mainApply": {
     "state": "applied",
     "files": [
@@ -69,5 +69,23 @@
   "olderCheckpointEvidence": "Prior real TEMP U04/U02/U01 projections; original immutable normalized/fixture contracts retained",
   "syntheticSuiteRerun": false,
   "fullSuiteRerun": false,
-  "commitPerformedByApplyCommand": false
+  "commitPerformedByApplyCommand": false,
+  "runtimeAfterReport": "STARTER-MEDIA-runtime-qa.md",
+  "technicalValidationReport": "STARTER-MEDIA-TS-validation.md",
+  "applicationCommit": "0844941720cf8679b081f38247a3c95a2b8b5296",
+  "runtimeReportCommit": "71e5490927699b1cf7a35db255ba1a09f0b8bccb",
+  "technicalReportCommit": "30ed97b92cec8a465e8cddce0ce96e9847291586",
+  "finalValidation": {
+    "originalCommandFiles": 7,
+    "originalCommandTestsPassed": 35,
+    "directHelperTestsPassed": 52,
+    "forcedTypecheckExit": 0,
+    "lintExit": 0,
+    "lintWarningLines": 310,
+    "lintErrorLines": 0,
+    "buildExit": 0,
+    "fullProjectSuiteRun": false,
+    "recovery": "Controlled 503 failure preserved every installed content/progress row and metadata. After removing interception, reload/background update recovered before the intended retry; first successful manual retry was not demonstrated.",
+    "limits": "No physical-phone, offline-PWA, production or release claim. Added approved status is not new visual review of all 316 images."
+  }
 }
