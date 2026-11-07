@@ -76,5 +76,44 @@ class FixtureIdentityTests(unittest.TestCase):
         self.assertEqual((self.entries, self.manifest), before)
 
 
+class FixtureWritePathTests(unittest.TestCase):
+    def make_manifest(self, unit):
+        curriculum = 'curriculumUnit2.json' if unit == 'LV3-U02' else 'curriculumLV3Unit' + str(int(unit[-2:])) + '.json'
+        source = {'public/data/v1/words.json', 'public/data/v1/examples.json', 'src/features/direct/' + curriculum}
+        if unit != 'LV3-U07':
+            source.add('public/data/v1/notes.json')
+        return {'unit': unit, 'files': dict.fromkeys(source),
+                'derivedAfter': dict.fromkeys(fixture.pipeline.DERIVED)}
+
+    def test_registered_five_and_original_six_file_shapes_are_exact(self):
+        for unit in ['LV3-U02', 'LV3-U04', 'LV3-U05', 'LV3-U06', 'LV3-U07']:
+            with self.subTest(unit=unit):
+                manifest = self.make_manifest(unit)
+                paths = fixture.fixture_expected_write_paths(manifest)
+                self.assertEqual(paths, set(manifest['files']) | {'public/data/v1/meta.json', 'public/data/v1/sa-pack.json'})
+                self.assertEqual(len(paths), 5 if unit == 'LV3-U07' else 6)
+                self.assertEqual('public/data/v1/notes.json' in paths, unit != 'LV3-U07')
+
+    def test_missing_extra_or_wrong_source_path_fails(self):
+        for unit in ['LV3-U06', 'LV3-U07']:
+            for mode in ['missing', 'extra', 'wrong']:
+                with self.subTest(unit=unit, mode=mode):
+                    manifest = self.make_manifest(unit)
+                    if mode in ['missing', 'wrong']:
+                        del manifest['files']['public/data/v1/words.json']
+                    if mode in ['extra', 'wrong']:
+                        manifest['files']['public/data/v1/senses.json'] = None
+                    with self.assertRaisesRegex(ValueError, 'Unexpected real-fixture source paths'):
+                        fixture.fixture_expected_write_paths(manifest)
+
+    def test_unknown_units_and_derived_path_drift_fail(self):
+        manifest = self.make_manifest('LV3-U07')
+        with self.assertRaisesRegex(ValueError, 'Unregistered real-fixture write shape'):
+            fixture.fixture_expected_write_paths({**manifest, 'unit': 'LV3-U08'})
+        for paths in [{'public/data/v1/meta.json'}, fixture.pipeline.DERIVED | {'public/data/v1/notes.json'}]:
+            with self.subTest(paths=paths), self.assertRaisesRegex(ValueError, 'Unexpected real-fixture derived paths'):
+                fixture.fixture_expected_write_paths({**manifest, 'derivedAfter': dict.fromkeys(paths)})
+
+
 if __name__ == '__main__':
     unittest.main()

@@ -3,9 +3,9 @@
 Usage: python scripts/verify_lv3_unit_fixture.py --unit U04 --capture PATH
 Requires an independently captured before-map and its sealed summary. Not part
 of default test discovery; existing default coverage remains unchanged.
-Current reusable scope: six affected files including changed examples.json,
-with an untouched senses.json. Other unit shapes require adapting the inherited
-dry-run count and drift target checks before claiming coverage.
+Current registered fixture shapes: U02/U04/U05/U06 have six affected files;
+U07 has five with notes.json unchanged. Exact source and derived paths are
+checked independently of observed writes. senses.json remains the drift target.
 """
 from __future__ import annotations
 import argparse
@@ -51,6 +51,26 @@ def fixture_parent_checkpoint(entries, manifest):
     return identity
 
 
+def fixture_expected_write_paths(manifest):
+    """Exact registered shapes for the real fixture, independent of observed writes."""
+    curricula = {
+        'LV3-U02': 'src/features/direct/curriculumUnit2.json',
+        'LV3-U04': 'src/features/direct/curriculumLV3Unit4.json',
+        'LV3-U05': 'src/features/direct/curriculumLV3Unit5.json',
+        'LV3-U06': 'src/features/direct/curriculumLV3Unit6.json',
+        'LV3-U07': 'src/features/direct/curriculumLV3Unit7.json',
+    }
+    unit = manifest.get('unit')
+    audit.require(unit in curricula, 'Unregistered real-fixture write shape')
+    source = {'public/data/v1/words.json', 'public/data/v1/examples.json', curricula[unit]}
+    if unit != 'LV3-U07':
+        source.add('public/data/v1/notes.json')
+    audit.require(set(manifest['files']) == source, 'Unexpected real-fixture source paths')
+    audit.require(set(manifest['derivedAfter']) == pipeline.DERIVED,
+                  'Unexpected real-fixture derived paths')
+    return source | pipeline.DERIVED
+
+
 class RealUnitFixtureTests(base.U02RealFixtureTests):
     __unittest_skip__ = False
 
@@ -85,6 +105,22 @@ class RealUnitFixtureTests(base.U02RealFixtureTests):
         chain = audit.read_json(self.fixture / pipeline.CHAIN)
         chain['entries'][fixture_unit_index(chain['entries'], self.manifest)]['status'] = 'committed'
         audit.dump(self.fixture / pipeline.CHAIN, chain)
+
+    def test_01_real_seal_and_dry_run_do_not_change_inputs(self):
+        expected_paths = fixture_expected_write_paths(self.manifest)
+        snapshot = self.snapshot()
+        sealed = pipeline.seal_step(self.fixture, self.fixture / base.MANIFEST, self.capture)
+        self.assertEqual(sealed['readiness'], 'ready')
+        self.assertEqual(sealed['files'], self.manifest['files'])
+        self.assertEqual(sealed['afterMeta']['contentHash'], self.manifest['afterMeta']['contentHash'])
+        self.assertEqual(sealed['afterMeta']['wordsHash'], self.manifest['afterMeta']['wordsHash'])
+        self.assert_snapshot(snapshot)
+        result = audit.run(self.fixture, self.fixture / base.MANIFEST)
+        self.assertEqual(result['state'], 'dry_run')
+        self.assertEqual(result['productWrites'], 0)
+        self.assertEqual(set(result['files']), expected_paths)
+        self.assertEqual(len(result['files']), len(expected_paths))
+        self.assert_snapshot(snapshot)
 
     def test_02_real_apply_idempotence_and_single_shared_file_write(self):
         original = self.snapshot()
