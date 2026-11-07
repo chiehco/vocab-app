@@ -4,7 +4,8 @@
 
 ## 目前狀態
 
-- 146欄／56列文字候選已完成 ready seal，並實際 dry-run 通過、0 writes；主產品尚未 apply。TEMP fixture 驗證剛開始，不能稱其已通過。
+- 146欄／56列文字已完成ready seal、dry-run 0 writes及單次本機實際apply，共6個檔案。交易20261107T171403761440Z已committed；6份after hash、備份與138項未變輸入已核對，chain已committed。再次執行回報already_applied、0 writes。見[U05 application](U05-application.json)。
+- TEMP fixture驗證與主產品apply分開：隔離fixture的Python 9/9、TypeScript 1/1通過，見[fixture validation](U05-fixture-validation.md)。這不代替實際apply後全卡瀏覽器及compile驗收；這兩項仍待完成。
 - 已存在的封存證據：[U05 patches](U05-patches.json)、[U05 scope](U05-scope.json)、[U05 before capture](U05-before-capture.json)。Ready manifest hash：f7ad8f7a18f1b52eeb0be70ae233648de464032ed4819ad7f42cc9f6dc84de77。
 - 第一次準備程序曾在 verified forms 契約安全拒絕，當次沒有建立候選輸出或寫入產品。W002976正式詞頭為wage(s)，可信動詞原形為wage，三態為wage–waged–waged。精確契約支援現已整合至主工作分支48749c8：31個雙端cases通過，獨立檢查中的原fallback反例被拒絕。不改詞頭、不填假base、不放寬其他guard；首次失敗證據保留。
 - confirm圖片已本機整合於4b4f1ee，且限定範圍的執行期驗收完成。見[圖片整合報告](../unit-audit-20261105/LV3-confirm-image-integration-20261107.md)與[confirm runtime QA](U05-confirm-runtime-qa.md)。一般卡、實際看圖題及正常答對+5、關閉重開、四個教材引用邊界、390px畫面均通過。daily自然選到retain而非confirm，不強制改排；confirm的daily、SRS、arena及offline未驗，不能稱所有consumer全面通過。
@@ -34,7 +35,7 @@
 - 4筆notes分別釐清apart from排除／包含義、將decade標題改為中性年數換算、補trick的戲弄缺字、去除wardrobe孤立分類字。後兩項不冒稱來自U05原照片。
 - W006057-2的sense note屬歷史待辦與主表摘錄，本輪明確 deferred_optional_cleanup，保留原值。不是待修詞義硬錯，不擴builder，也不宣稱sense拆分已完成。
 
-11筆新三態為apologize、appeal、confirm、detect、engage、honor、portion、request、shorten、spill、wage；來源逐詞核得，不以規則推估。spill保留spilled／spilt；其他拼字異體依來源記錄。舊16筆三態保留，本輪未重新查證。wage保留在146欄候選；精確契約支援已接入並完成ready seal，主產品尚未apply。
+11筆新三態為apologize、appeal、confirm、detect、engage、honor、portion、request、shorten、spill、wage；來源逐詞核得，不以規則推估。spill保留spilled／spilt；其他拼字異體依來源記錄。舊16筆三態保留，本輪未重新查證。wage保留在146欄；精確契約支援已接入，ready seal及本機實際apply已完成。
 
 ## 教材來源與照片指紋
 
@@ -90,8 +91,8 @@ p43–51為Unit05內容，p52為空白筆記頁，p53已是Unit06邊界。11張�
 
 ## 尚未完成與不宣稱的範圍
 
-- U05文字manifest已ready seal、dry-run為0 writes；TEMP fixture正在驗證，主產品apply及套用後驗收尚未完成，不連結尚未存在的validation。
+- U05文字已ready seal、dry-run 0 writes、TEMP fixture通過及單次本機apply；實際apply後全卡瀏覽器與compile驗收尚待完成。不能稱整單元所有問題已解決。
 - wage(s)精確契約支援與confirm限定runtime驗收已完成；starter媒體集合migration仍隔離開發、未apply，六筆starter圖說缺口仍保留。
 - lengthen視覺線索不足與六筆原英文caption缺漏仍保留。
 - confirm的daily自然選到retain，未覆蓋confirm；SRS、arena、offline未驗。390px為桌面瀏覽器responsive檢查，不是手機測試；重開持久化使用專用QA狀態，不是真使用者SRS遷移。未聲稱完成Safari／Firefox、正式站或發布驗收。
-- 不更動accepted草稿、產品資料、chain或ledger，不因報告完成而視為已commit或已發布。
+- 此次僅更新審查文件，不更動accepted草稿、產品資料、chain或ledger。上述apply狀態來自獨立交易證據；報告更新本身不代表Git commit或發布完成。
