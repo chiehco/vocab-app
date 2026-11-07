@@ -1,3 +1,4 @@
+import {beforeU07CaptionText} from './lv3U07ImageCaptionRepair.testSupport';
 import {beforePuppetText,beforePuppetImages} from './lv3PuppetImageRepair.testSupport';
 import {lv3AfterUnitPublishedText} from '../direct/lv3Audit.testSupport';
 import {expect,it} from 'vitest';
@@ -39,7 +40,8 @@ it('pins proof, source and candidate assets, original captions/media and histori
  for(const file of proof.unchangedFiles){
   const currentText=readFileSync(file.path,'utf8').replace(/\r\n/g,'\n');
   const text=file.path==='public/data/v1/examples.json'
-   ?lv3AfterUnitPublishedText('LV3-U04',file.path,currentText):currentText;
+   ?lv3AfterUnitPublishedText('LV3-U04',file.path,currentText)
+   :file.path==='src/features/wordbeast/illustrationCaptions.json'?beforeU07CaptionText(currentText):currentText;
   expect(confirmBytesHash(text),file.path).toBe(file.lfSha256);
   if(file.path==='public/data/v1/examples.json')
    expect(()=>lv3AfterUnitPublishedText('LV3-U04',file.path,currentText+' ')).toThrow(/drift/);

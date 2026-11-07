@@ -1,3 +1,4 @@
+import {beforeU07CaptionText} from './lv3U07ImageCaptionRepair.testSupport';
 import {expect,it} from 'vitest';
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
@@ -18,7 +19,10 @@ it('retains exact source and candidate bytes and unchanged media captions and pu
  validateLV3ImageProof(proof);
  for(const item of proof.assets)for(const asset of [item.source,item.candidate])expect(sha(asset.path)).toBe(asset.sha256);
  for(const item of proof.assets){const bytes=readFileSync(item.candidate.path);expect(bytes.length).toBe(item.candidate.bytes);expect(bytes.subarray(0,4).toString()).toBe('RIFF');expect(bytes.subarray(8,12).toString()).toBe('WEBP');}
- for(const file of proof.unchangedFiles)expect(lv3ImageHash(JSON.parse(readFileSync(file.path,'utf8')))).toBe(file.normalizedJsonSha256);
+ for(const file of proof.unchangedFiles){
+  const text=readFileSync(file.path,'utf8');
+  expect(lv3ImageHash(JSON.parse(file.path==='src/features/wordbeast/illustrationCaptions.json'?beforeU07CaptionText(text):text))).toBe(file.normalizedJsonSha256);
+ }
  expect(lv3ImageHash(JSON.parse(readFileSync(proof.candidateManifest.path,'utf8')))).toBe(proof.candidateManifest.normalizedJsonSha256);
  expect(proof.candidateManifest.timestampCorrection.validCreatedAtUtc).toBe('2026-11-07T13:36:00Z');expect(proof.candidateManifest.timestampCorrection.assetCommitTimeUtc).toBe('2026-11-07T13:38:59Z');
  expect(proof.review.manualUserApproved).toBe(false);expect(proof.review.publicationReady).toBe(false);

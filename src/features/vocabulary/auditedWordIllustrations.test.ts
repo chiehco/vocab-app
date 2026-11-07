@@ -85,7 +85,9 @@ it.each([...new Set(cards.map(c=>reviewGroup(c.reviewId)))])('binds every explic
   const word=words.find(w=>w.wordId===card.officialWordId)!;
   expect(word).toBeDefined();
   // Historical bytes/captions above stay frozen; current resolver follows the exact validated newer layer.
-  const currentCard=currentCards.find(c=>c.reviewId===card.reviewId)!;
+  // The full imported registry was authenticated by beforeReplaceImages above.
+  // Its U07 attraction path is current; the projected row remains historical evidence.
+  const currentCard=currentCardsWithReplace.find(c=>c.reviewId===card.reviewId)!;
   expect(approvedWordIllustration(word.word,word.wordId)).toEqual(currentCard.illustration);
   expect(getWordBeastAsset(word.wordId,word.word)).toContain(currentCard.illustration.path);
   expect(approvedWordIllustration(word.word,'W999999')).toBeUndefined();

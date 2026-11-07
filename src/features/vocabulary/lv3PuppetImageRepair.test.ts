@@ -1,3 +1,4 @@
+import {beforeU07RegistryText,beforeU07Images,beforeU07CaptionText} from './lv3U07ImageCaptionRepair.testSupport';
 import {loadLV3Chain,lv3AfterUnitPublishedText} from '../direct/lv3Audit.testSupport';
 import {expect,it} from 'vitest';
 import {readFileSync,readdirSync} from 'node:fs';
@@ -9,13 +10,14 @@ import replaceProof from '../../../docs/unit-audit-20261105/LV3-replace-image-re
 import {beforeLV3ConfirmText} from '../../../scripts/lv3_confirm_image_guard.mjs';
 import confirmProof from '../../../docs/unit-audit-20261105/LV3-confirm-image-repair.json';
 import previousProof from '../../../docs/unit-audit-20261105/LV3-bank-permissible-image-repairs.json';
-import current from './auditedWordIllustrations.json';
+import published from './auditedWordIllustrations.json';
+const current=beforeU07Images(published);
 import captions from '../wordbeast/illustrationCaptions.json';
 import media from '../../../public/data/v1/media.json';
 import {approvedWordIllustration,approvedCurriculumIllustration,approvedCurriculumCard} from './approvedCurriculum';
 import {getWordBeastAsset} from '../wordbeast/wordBeastAssets';
 import {resolveWordImageClue} from '../../quiz/imageClue';
-const raw=()=>readFileSync(proof.registryPath,'utf8').replace(/\r\n/g,'\n');
+const raw=()=>beforeU07RegistryText(readFileSync(proof.registryPath,'utf8'));
 it('validates exact raw bytes before reversing only puppet and preserves all historical inverse hashes',()=>{
  const text=raw(),beforeText=beforeLV3PuppetText(text,proof),before=JSON.parse(beforeText);
  expect(before).toEqual(proof.before);expect(current).toEqual(proof.after);expect(current.slice(0,-1)).toEqual(before);
@@ -46,10 +48,12 @@ it('pins proof, source and candidate assets, original captions/media and histori
  for(const file of proof.unchangedFiles){
   const currentText=readFileSync(file.path,'utf8').replace(/\r\n/g,'\n');
   const text=projected.includes(file.path)
-   ?lv3AfterUnitPublishedText('starter-media-actual-names-v1',file.path,currentText):currentText;
+   ?lv3AfterUnitPublishedText('starter-media-actual-names-v1',file.path,currentText)
+   :file.path==='src/features/wordbeast/illustrationCaptions.json'?beforeU07CaptionText(currentText):currentText;
   expect(puppetBytesHash(text),file.path).toBe(file.lfSha256);
   if(projected.includes(file.path))
    expect(()=>lv3AfterUnitPublishedText('starter-media-actual-names-v1',file.path,currentText+' ')).toThrow(/drift/);
+  else if(file.path==='src/features/wordbeast/illustrationCaptions.json')expect(()=>beforeU07CaptionText(currentText+' ')).toThrow(/drift/);
   else expect(puppetBytesHash(currentText+' ')).not.toBe(file.lfSha256);
  }
 
