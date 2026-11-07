@@ -5,11 +5,13 @@
 ## 目前狀態
 
 - 146欄／56列文字已完成ready seal、dry-run 0 writes及單次本機實際apply，共6個檔案。交易20261107T171403761440Z已committed；6份after hash、備份與138項未變輸入已核對，chain已committed。再次執行回報already_applied、0 writes。見[U05 application](U05-application.json)。
-- TEMP fixture驗證與主產品apply分開：隔離fixture的Python 9/9、TypeScript 1/1通過，見[fixture validation](U05-fixture-validation.md)。這不代替實際apply後全卡瀏覽器及compile驗收；這兩項仍待完成。
+- TEMP fixture驗證與主產品apply分開：隔離fixture的Python 9/9、TypeScript 1/1通過，見[fixture validation](U05-fixture-validation.md)。這與實際apply後驗收分開；後續全卡瀏覽器及限定技術驗收已完成，見下列獨立報告。
 - 已存在的封存證據：[U05 patches](U05-patches.json)、[U05 scope](U05-scope.json)、[U05 before capture](U05-before-capture.json)。Ready manifest hash：f7ad8f7a18f1b52eeb0be70ae233648de464032ed4819ad7f42cc9f6dc84de77。
 - 第一次準備程序曾在 verified forms 契約安全拒絕，當次沒有建立候選輸出或寫入產品。W002976正式詞頭為wage(s)，可信動詞原形為wage，三態為wage–waged–waged。精確契約支援現已整合至主工作分支48749c8：31個雙端cases通過，獨立檢查中的原fallback反例被拒絕。不改詞頭、不填假base、不放寬其他guard；首次失敗證據保留。
 - confirm圖片已本機整合於4b4f1ee，且限定範圍的執行期驗收完成。見[圖片整合報告](../unit-audit-20261105/LV3-confirm-image-integration-20261107.md)與[confirm runtime QA](U05-confirm-runtime-qa.md)。一般卡、實際看圖題及正常答對+5、關閉重開、四個教材引用邊界、390px畫面均通過。daily自然選到retain而非confirm，不強制改排；confirm的daily、SRS、arena及offline未驗，不能稱所有consumer全面通過。
-- starter-media migration仍在隔離開發、未apply；六筆starter中文caption缺口仍未修。本文件不把其他完成事項算成這項修復。
+- 文字actual-after已完成，見[U05 runtime QA](U05-runtime-qa.md)（報告提交7e5f0ec）：158教材／90一般卡／318分頁及146個runtime值核對完成。初次DOM值出現為125/126，保留失敗證據；wage UI精確修正38da992後，同一profile窄驗缺少的1/1通過。20項meaningSource為metadata，未冒稱可見UI。
+- 限定技術驗收已完成，見[U05 validation](U05-validation.md)：32個TS檔／271個unique tests有最終通過證據，分批及窄驗執行，不是單一combined run；Python65 methods含wage31 subcases。最終63項受影響測試與force whole-project tsc exit 0；lint／build exit 0，但最後type-only annotation與lint/build版本差異按報告保留。測試補強提交80ddf47；最終typing修正及技術報告已提交於90bb66c644335e2e2b295254cc469a42e37a45fe。144 inputs、138 guards、6份after與備份均通過，未重套產品。
+- starter-media migration支援已整合於30f9611，實際migration尚未seal/apply；六筆starter中文caption缺口仍未修。本文件不把其他完成事項算成這項修復。
 
 ## 審查母數與保護範圍
 
@@ -91,8 +93,8 @@ p43–51為Unit05內容，p52為空白筆記頁，p53已是Unit06邊界。11張�
 
 ## 尚未完成與不宣稱的範圍
 
-- U05文字已ready seal、dry-run 0 writes、TEMP fixture通過及單次本機apply；實際apply後全卡瀏覽器與compile驗收尚待完成。不能稱整單元所有問題已解決。
-- wage(s)精確契約支援與confirm限定runtime驗收已完成；starter媒體集合migration仍隔離開發、未apply，六筆starter圖說缺口仍保留。
+- U05文字已ready seal、dry-run 0 writes、TEMP fixture及單次本機apply；actual-after全卡runtime及限定技術驗收完成。完整全專案測試套件未執行，starter-caption migration尚未seal/apply，不能稱整單元所有問題已解決。
+- wage(s)精確契約支援與confirm限定runtime驗收已完成；starter媒體集合migration支援已整合於30f9611，實際migration尚未seal/apply，六筆starter圖說缺口仍保留。
 - lengthen視覺線索不足與六筆原英文caption缺漏仍保留。
 - confirm的daily自然選到retain，未覆蓋confirm；SRS、arena、offline未驗。390px為桌面瀏覽器responsive檢查，不是手機測試；重開持久化使用專用QA狀態，不是真使用者SRS遷移。未聲稱完成Safari／Firefox、正式站或發布驗收。
 - 此次僅更新審查文件，不更動accepted草稿、產品資料、chain或ledger。上述apply狀態來自獨立交易證據；報告更新本身不代表Git commit或發布完成。
