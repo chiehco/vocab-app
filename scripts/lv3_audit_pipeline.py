@@ -81,6 +81,24 @@ def validate_curriculum_identity(unit, path, document):
             row.get('learningItemId', '')), 'Unit curriculum item namespace mismatch')
 
 
+def verified_wage_forms(p, f):
+    """Bounded U05-VOC-288 evidence, never general wordVariants lemmatization."""
+    return (p['dataset'] == 'words' and p['id'] == 'W002976'
+            and p['before'].get('wordId') == 'W002976'
+            and p['before'].get('word') == 'wage(s)'
+            and p['before'].get('wordVariants') == ['wage', 'wages']
+            and f.get('base') == 'wage' and f.get('past') == 'waged'
+            and f.get('pastParticiple') == 'waged'
+            and f.get('sourceRef') == 'https://www.collinsdictionary.com/dictionary/english/wage'
+            and any(isinstance(source, dict)
+                    and source.get('url') == f['sourceRef']
+                    and source.get('type') == 'independent_dictionary_verification'
+                    and source.get('verification') == 'direct_dictionary_entry_read'
+                    and source.get('findingId') == 'U05-VOC-288'
+                    for record in p['fieldEvidence'].get('verbForms', [])
+                    for source in record['sources']))
+
+
 def validate_manifest(manifest, scope=None):
     if manifest.get('schemaVersion') == 1:
         v1.validate_manifest(manifest)
@@ -189,7 +207,8 @@ def validate_manifest(manifest, scope=None):
         if 'verbForms' in p['after']:
             f = p['after']['verbForms']
             require(set(f) == {'base', 'past', 'pastParticiple', 'sourceRef', 'status'}
-                    and f['base'] == p['before']['word'] and f['status'] == 'approved'
+                    and (f['base'] == p['before']['word'] or verified_wage_forms(p, f))
+                    and f['status'] == 'approved'
                     and f['sourceRef'] in {'https://www.collinsdictionary.com/dictionary/english/' + f['base'],
                                           'https://www.collinsdictionary.com/conjugation/english/' + f['base']}
                     and any(isinstance(source, dict) and source.get('url') == f['sourceRef']

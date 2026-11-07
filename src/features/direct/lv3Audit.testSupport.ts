@@ -47,6 +47,20 @@ function validateCurriculumIdentity(unit:string,path:string,value:unknown):void 
  }
 }
 
+// Bounded U05-VOC-288 evidence, never general wordVariants lemmatization.
+function verifiedWageForms(p:AuditPatch,f:Row){
+ return p.dataset==='words'&&p.id==='W002976'&&p.before.wordId==='W002976'
+  &&p.before.word==='wage(s)'&&JSON.stringify(p.before.wordVariants)===JSON.stringify(['wage','wages'])
+  &&f.base==='wage'&&f.past==='waged'&&f.pastParticiple==='waged'
+  &&f.sourceRef==='https://www.collinsdictionary.com/dictionary/english/wage'
+  &&(p.fieldEvidence?.verbForms??[]).some(record=>(record as {sources:unknown[]}).sources.some(source=>{
+   if(typeof source!=='object'||source===null)return false;
+   const s=source as Row;
+   return s.url===f.sourceRef&&s.type==='independent_dictionary_verification'
+    &&s.verification==='direct_dictionary_entry_read'&&s.findingId==='U05-VOC-288';
+  }));
+}
+
 export function validateAuditScope(m:AuditManifest,scope:AuditScope):void {
  const keys=(value:object)=>Object.keys(value).sort();
  const sameKeys=(value:object,expected:string[])=>assert.deepEqual(keys(value),[...expected].sort(),'unknown or missing contract fields');
@@ -126,7 +140,7 @@ export function validateAuditScope(m:AuditManifest,scope:AuditScope):void {
   }
   if(Object.hasOwn(p.after,'verbForms')){
    const f=p.after.verbForms as Row;sameKeys(f,['base','past','pastParticiple','sourceRef','status']);
-   assert.equal(f.base,p.before.word);assert.equal(f.status,'approved');
+   assert.ok(f.base===p.before.word||verifiedWageForms(p,f),'invalid verified forms base');assert.equal(f.status,'approved');
    assert.ok(['https://www.collinsdictionary.com/dictionary/english/'+f.base,'https://www.collinsdictionary.com/conjugation/english/'+f.base].includes(f.sourceRef as string),'invalid verified forms source');
    assert.ok((p.fieldEvidence.verbForms??[]).some(record=>(record as {sources:unknown[]}).sources.some(source=>typeof source==='object'&&source!==null&&(source as Row).url===f.sourceRef)),'forms source lacks evidence');
   }
