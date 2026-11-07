@@ -32,7 +32,7 @@ it.each<[string,Partial<WordRecord>]>([
  ['inactive word',{active:false}],
  ['rejected word',{status:'rejected'}],
  ['unknown word status',{status:'unknown'}],
-])('rejects wage records with %s',(label,overrides)=>{
+])('rejects wage records with %s',(_label,overrides)=>{
  expect(trustedVerbForms({...wage,...overrides})).toBeUndefined();
 });
 it.each<[string,Partial<NonNullable<WordRecord['verbForms']>>]>([
@@ -50,7 +50,7 @@ it.each<[string,Partial<NonNullable<WordRecord['verbForms']>>]>([
  ['draft verification',{status:'draft'}],
  ['reviewed but not approved',{status:'reviewed'}],
  ['unknown verification',{status:'verified'}],
-])('rejects wage forms with %s',(label,overrides)=>{
+])('rejects wage forms with %s',(_label,overrides)=>{
  expect(trustedVerbForms({...wage,verbForms:{...wageForms,...overrides}})).toBeUndefined();
 });
 it('does not let malformed special identities fall back to matching display/base',()=>{

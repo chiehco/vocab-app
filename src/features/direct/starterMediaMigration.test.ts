@@ -6,6 +6,12 @@ import {join} from 'node:path';
 import {auditHash,reverseFileAuditSteps,type AuditManifest,type AuditScope} from './lv3Audit.testSupport';
 import {BUILDER,PACK,MIGRATION_ID,migrationByteHash as digest,validateStarterMediaMigration,inverseStarterMediaMigrationRaw,inverseStarterMediaMigrationNormalized,type StarterMediaMigration} from './starterMediaMigration.testSupport';
 
+type MigrationPackFixture = {
+ meta:{counts:{words:number;media:number};wordsHash:string;contentHash:string};
+ words:{wordId:string;word:string}[];
+ media:{targetWord:string;status:string}[];
+};
+
 function fixture(crlf=false){
  const media=[{targetWord:'cat',status:'pending'},{targetWord:'dog',status:'pending'},{targetWord:'outside',status:'approved'}];
  const meta={contentHash:'full:source',wordsHash:'source',counts:{media:3}};
@@ -107,7 +113,7 @@ describe('bounded starter media migration',()=>{
   }
  });
  it('rejects fully rehashed reordered dataset and source row keys',()=>{
-  for(const reorder of [(p:Record<string,any>)=>({meta:p.meta,media:p.media,words:p.words}),(p:Record<string,any>)=>({...p,media:p.media.map((r:Record<string,unknown>)=>Object.fromEntries(Object.entries(r).reverse()))})]){
+  for(const reorder of [(p:MigrationPackFixture)=>({meta:p.meta,media:p.media,words:p.words}),(p:MigrationPackFixture)=>({...p,media:p.media.map((r:Record<string,unknown>)=>Object.fromEntries(Object.entries(r).reverse()))})]){
    const f=fixture(),pack=reorder(JSON.parse(f.values.afterPack));pack.meta.contentHash='sa:'+digest(JSON.stringify({sourceHash:f.m.beforeMeta.contentHash,datasets:Object.fromEntries(Object.entries(pack).filter(([key])=>key!=='meta'))}));
    const text=JSON.stringify(pack)+'\n';f.docs[f.m.fixtures.afterPack.path]=text;f.m.fixtures.afterPack.sha256=digest(text);f.m.afterInputs[PACK]=f.m.afterRawInputs[PACK]=digest(text);f.m.afterPackMeta=pack.meta;
    expect(()=>validateStarterMediaMigration(f.m,f.load)).toThrow(/serialized result/);
