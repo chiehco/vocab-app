@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "createdAtUtc": "2026-11-07T21:36:00Z",
+  "repository": "chiehco/vocab-app",
+  "baseCommit": "99883751926bd6cb4feff70daff56c07afc130cb",
+  "candidateBranch": "assets/lv3-bank-permissible-20261107",
+  "state": "candidate_assets_only_visual_qa_passed_not_integrated",
+  "scope": {
+    "originalAssetsRetained": true,
+    "captionsUnchanged": true,
+    "mappingsUnchanged": true,
+    "mainUntouched": true,
+    "deployed": false,
+    "appConsumerAcceptance": "Not run; main workstream must bind and reopen actual consumers."
+  },
+  "generation": {
+    "tool": "built-in image_gen.imagegen",
+    "acceptedCalls": 2,
+    "pendingCalls": 0,
+    "uncertainOutcome": false,
+    "semanticEditing": "Only imagegen was used for visual editing.",
+    "encoding": "ImageMagick 7.1.1-43: PNG to WebP, quality 95, method 6; no crop or resize."
+  },
+  "items": [
+    {
+      "word": "bank",
+      "wordId": "W000061",
+      "captionEn": "The children sat on the river bank and watched the boats go by.",
+      "source": {
+        "path": "public/wordbeast/audited-20261105/LV1-U14-37-21952a2bb4d4.webp",
+        "sha256": "3aa8063075e210b8a15eecec5f0d387628c980c8b0a3fd3ba706323af27e3446",
+        "gitBlobSha": "9bbb60def85c8395f3906840379d66df9ece1f75",
+        "dimensions": [
+          1254,
+          1254
+        ]
+      },
+      "candidate": {
+        "path": "public/wordbeast/lv3-reviewed/W000061-bank-v2-9bd9d7283b45.webp",
+        "sha256": "9bd9d7283b458d811690c5c0c2c6dd7b9134e887344eb6919e881e67d5c8f01a",
+        "bytes": 300346,
+        "dimensions": [
+          1254,
+          1254
+        ],
+        "generatedPngSha256": "4d7098b8d352f455378eaf4bbd1092960a2e8be172f22f3633655d082ed5a29e"
+      },
+      "promptPath": "docs/unit-audit-20261105/prompts/W000061-bank-v2-20261107.txt",
+      "inputRoles": [
+        "Original bank illustration: edit target."
+      ],
+      "visualQa": {
+        "sourceActuallyViewed": true,
+        "generatedPngActuallyViewed": true,
+        "finalWebpActuallyViewed": true,
+        "shoreChildrenSeated": 2,
+        "sailboats": 2,
+        "boatPassengers": 2,
+        "eachAddedCharacterHasTwoAntennae": true,
+        "originalCompositionRetained": true,
+        "watercolorAndIvoryPaperRetained": true,
+        "visibleText": false,
+        "result": "pass"
+      }
+    },
+    {
+      "word": "permissible",
+      "wordId": "W005669",
+      "captionEn": "The gate is open, and it is permissible for Doudou to pass through.",
+      "source": {
+        "path": "public/wordbeast/s/W005669.webp",
+        "sha256": "8fcee26cc539a47de0455fa4c0148b0d20566bc026cc9a121ce7e7a3683c3638",
+        "gitBlobSha": "cc48cdba8f5c34ce1f9463cd722e1506c169512e",
+        "dimensions": [
+          1024,
+          1024
+        ]
+      },
+      "candidate": {
+        "path": "public/wordbeast/lv3-reviewed/W005669-permissible-v2-a5af5eaebfa9.webp",
+        "sha256": "a5af5eaebfa9058347db55aa708d3c0bf01dc4481bee4000a11661667d5a467d",
+        "bytes": 381248,
+        "dimensions": [
+          1254,
+          1254
+        ],
+        "generatedPngSha256": "2fd26cbca9aeae73d37d898b734dc66a14adc91121c727396919d5bdf774671a"
+      },
+      "promptPath": "docs/unit-audit-20261105/prompts/W005669-permissible-v2-20261107.txt",
+      "inputRoles": [
+        "Original permissible factory illustration: incorrect edit target to replace.",
+        "Original bank illustration: supporting Doudou character and watercolor style reference."
+      ],
+      "visualQa": {
+        "sourceActuallyViewed": true,
+        "generatedPngActuallyViewed": true,
+        "finalWebpActuallyViewed": true,
+        "paleBlueGateOpen": true,
+        "characters": 2,
+        "passingThrough": 1,
+        "holdingGate": 1,
+        "twoAntennaePerCharacter": true,
+        "lightIvoryPaperAndWatercolor": true,
+        "factoryElementsRetained": false,
+        "visibleText": false,
+        "result": "pass"
+      }
+    }
+  ],
+  "handoff": {
+    "requiresSourceShaRecheckBeforeMapping": true,
+    "preserveAllOriginalCaptions": true,
+    "preserveOriginalAssets": true,
+    "requiresActualConsumerVisualAcceptance": true,
+    "requiresIntegrationHeadChecks": true,
+    "publicationNotAuthorizedByThisCandidateManifest": true
+  }
+}
