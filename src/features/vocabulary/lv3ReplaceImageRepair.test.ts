@@ -1,3 +1,4 @@
+import {beforePuppetText} from './lv3PuppetImageRepair.testSupport';
 import {beforeLV3ConfirmText} from '../../../scripts/lv3_confirm_image_guard.mjs';
 import confirmProof from '../../../docs/unit-audit-20261105/LV3-confirm-image-repair.json';
 import {expect,it} from 'vitest';
@@ -14,7 +15,7 @@ import unit from '../direct/curriculumLV3Unit4.json';
 import {approvedWordIllustration,approvedCurriculumIllustration,approvedCurriculumCard} from './approvedCurriculum';
 import {getWordBeastAsset} from '../wordbeast/wordBeastAssets';
 import {resolveWordImageClue} from '../../quiz/imageClue';
-const raw=()=>beforeLV3ConfirmText(readFileSync(proof.registryPath,'utf8'),confirmProof);
+const raw=()=>beforeLV3ConfirmText(beforePuppetText(readFileSync(proof.registryPath,'utf8')),confirmProof);
 const current=JSON.parse(raw()) as typeof currentWithConfirm;
 it('strictly validates complete current raw bytes before reversing only the appended replace mapping',()=>{
  const text=raw(),beforeText=beforeLV3ReplaceText(text,proof),before=JSON.parse(beforeText);

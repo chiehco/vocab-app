@@ -1,3 +1,4 @@
+import {beforePuppetText,beforePuppetImages} from './lv3PuppetImageRepair.testSupport';
 import {lv3AfterUnitPublishedText} from '../direct/lv3Audit.testSupport';
 import {expect,it} from 'vitest';
 import {readFileSync,readdirSync} from 'node:fs';
@@ -7,13 +8,14 @@ import {beforeLV3GeneralImages,lv3ImageHash} from '../../../scripts/lv3_image_re
 import proof from '../../../docs/unit-audit-20261105/LV3-confirm-image-repair.json';
 import replaceProof from '../../../docs/unit-audit-20261105/LV3-replace-image-repair.json';
 import previousProof from '../../../docs/unit-audit-20261105/LV3-bank-permissible-image-repairs.json';
-import current from './auditedWordIllustrations.json';
+import published from './auditedWordIllustrations.json';
+const current=beforePuppetImages(published);
 import captions from '../wordbeast/illustrationCaptions.json';
 import media from '../../../public/data/v1/media.json';
 import {approvedWordIllustration,approvedCurriculumIllustration,approvedCurriculumCard} from './approvedCurriculum';
 import {getWordBeastAsset} from '../wordbeast/wordBeastAssets';
 import {resolveWordImageClue} from '../../quiz/imageClue';
-const raw=()=>readFileSync(proof.registryPath,'utf8').replace(/\r\n/g,'\n');
+const raw=()=>beforePuppetText(readFileSync(proof.registryPath,'utf8'));
 it('validates exact raw bytes before reversing only confirm and preserves all historical inverse hashes',()=>{
  const text=raw(),beforeText=beforeLV3ConfirmText(text,proof),before=JSON.parse(beforeText);
  expect(before).toEqual(proof.before);expect(current).toEqual(proof.after);expect(current.slice(0,-1)).toEqual(before);
