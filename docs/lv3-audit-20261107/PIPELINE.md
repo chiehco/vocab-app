@@ -1,5 +1,7 @@
 # LV3 audit pipeline: implementation checkpoint
 
+Current update: U02 has since been applied in the product worktree and its verified chain entry is committed. See [U02 review](U02-review.md) and [runtime QA](U02-runtime-qa.md). The implementation-stage statements below retain their original before-application context; they are not the current product state.
+
 This branch changes infrastructure and audit documents only. Product data and U01-patches.json remain byte-for-byte unchanged in Git. U02 is a prepared 37-row candidate, not an applied correction.
 
 ## Immutable history

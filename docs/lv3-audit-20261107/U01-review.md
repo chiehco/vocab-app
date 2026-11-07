@@ -30,7 +30,7 @@ No word IDs, word POS/status, original example English/Chinese sentences, cloze 
 
 ## Pending and preserved
 
-1. **G33:** The first authored sentence says most repairs were paid for by donations; it does not identify local residents as the donors. The following sentence/rationale therefore overclaims. This remains a pending logic issue. No donor identity was invented and no English premise was rewritten.
+1. **G33:** The first authored sentence says most repairs were paid for by donations; it does not identify local residents as the donors. The following sentence/rationale therefore overclaims. This remains a pending logic issue. No donor identity was invented and no English premise was rewritten. Per the retained-source decision, an unapplied discussion draft for the second sentence is `The project was _____ funded by donations.` with the intended answer `mainly`; the matching draft rationale would explain that most funding comes from donations, not identify residents. This draft still requires source/context review, including the repairs/project scope, and is not an approved or applied replacement. The original stem and all four rationales remain unchanged.
 2. **G02 / NX9f92593f:** The original heading says `with`/`in`, while its examples use `Without unity` and `In unity`. This source discrepancy is recorded without declaring `with unity` ungrammatical or silently changing the source.
 3. **Bank illustration resolved after the text checkpoint:** The versioned replacement now shows two seated shore characters and two boats. The original asset and exact caption are retained. The ordinary card and actual image-clue quiz were reopened and verified; see [image runtime acceptance](U01-U02-image-runtime-qa.md). This does not add an illustration to the authored U01 exercise.
 4. **Other source pages:** Supplemental formal-note pages outside U01 p1–10, including the `stay` p95 reference, remain independently unverified where relevant.
@@ -39,11 +39,13 @@ No word IDs, word POS/status, original example English/Chinese sentences, cloze 
 7. **painting sentence:** The time-modifier ambiguity remains an optional clarity issue; the original English and Chinese sentences were preserved.
 8. **jealous image:** Its visual concept can fit jealousy, but the selected caption has not been conclusively established. Do not treat conceptual fit as approval of a specific image-caption pairing.
 9. **Image-sense and binding limits:** The 13 general-card images for other senses remain on their existing bindings. The 82 curriculum vocabulary entries without image bindings remain without bindings. No whole-unit illustration completion or blanket content approval is claimed.
-10. **Remaining release work:** Full regression, UI after-capture, publication and deployed-version verification are separate stages.
+10. **Remaining release work:** Scoped local text/image UI after-capture is complete in the linked reports. Final LV3 full regression, publication and deployed-version verification remain separate stages.
 
-## Application checks
+## Original U01 application checkpoint
 
-`scripts/apply_lv3_unit_audit.py` currently supports only the five U01 datasets and this U01 baseline. Its filename allows future extension; it does not yet cover all LV3 units. It defaults to a staged dry run. It fixes the allowed dataset paths/keys/fields, verifies complete before rows and whole-dataset hashes, rejects mixed states and unknown drift, checks 137 unchanged inputs and the existing metadata/pack, and builds the updated metadata/pack in isolation before product writes.
+The following records the original U01 stage. The later strict multi-unit chain is documented in [PIPELINE.md](PIPELINE.md); this historical scope description is not the current CLI limit.
+
+At that stage, `scripts/apply_lv3_unit_audit.py` supported only the five U01 datasets and this U01 baseline. Its filename allows future extension; it does not yet cover all LV3 units. It defaults to a staged dry run. It fixes the allowed dataset paths/keys/fields, verifies complete before rows and whole-dataset hashes, rejects mixed states and unknown drift, checks 137 unchanged inputs and the existing metadata/pack, and builds the updated metadata/pack in isolation before product writes.
 
 Ten isolated-fixture checks passed: complete-before-row rejection, path traversal rejection, duplicate-patch rejection, protected-status rejection, unrelated dataset drift rejection, mixed-state rejection, dry-run zero writes, injected second-file failure rollback, successful application with idempotent reapplication, and final manifest hashes.
 

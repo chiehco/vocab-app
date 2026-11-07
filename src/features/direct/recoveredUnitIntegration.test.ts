@@ -89,18 +89,23 @@ const hash = (value: unknown) => createHash('sha256').update(JSON.stringify(stab
 
 it('retains historical curriculum and question identities with the audited cubes gloss addition', () => {
   const existing = new Map<string, {items: unknown[]; questions: unknown[]}>();
-  const record = (value: unknown) => {
-    if (Array.isArray(value)) { value.forEach(record); return; }
+  const installed = new Map<string, {items: unknown[]; questions: unknown[]}>();
+  const record = (value: unknown, target = existing) => {
+    if (Array.isArray(value)) { value.forEach(v => record(v, target)); return; }
     if (!value || typeof value !== 'object') return;
     const row = value as Record<string, unknown>;
     const template = row.template as {templateId: string} | undefined;
-    if (template && Array.isArray(row.learningItems)) existing.set(template.templateId,
+    if (template && Array.isArray(row.learningItems)) target.set(template.templateId,
       {items: row.learningItems, questions: (row.questions ?? row.grammarQuestions ?? []) as unknown[]});
-    else if (typeof row.templateId === 'string' && Array.isArray(row.items)) existing.set(row.templateId,
+    else if (typeof row.templateId === 'string' && Array.isArray(row.items)) target.set(row.templateId,
       {items: row.items, questions: (row.questions ?? []) as unknown[]});
   };
   const dir = new URL('./', import.meta.url);
-  for (const file of readdirSync(dir).filter(name => name.endsWith('.json'))) record(lv3AfterUnit1File('src/features/direct/'+file,JSON.parse(readFileSync(new URL(file, dir), 'utf8'))));
+  for (const file of readdirSync(dir).filter(name => name.endsWith('.json'))) {
+    const current = JSON.parse(readFileSync(new URL(file, dir), 'utf8'));
+    record(current, installed);
+    record(lv3AfterUnit1File('src/features/direct/'+file,current));
+  }
   expect(baseline.previousUnits).toHaveLength(124);
   for (const old of baseline.previousUnits) {
     const retained = existing.get(old.templateId)!;
@@ -240,7 +245,7 @@ it('retains historical curriculum and question identities with the audited cubes
       delete option!.meaningZh;
     }
     expect(hash(originalQuestions), old.templateId).toBe(old.questionsHash);
-    expect(findUnit(old.templateId)?.items).toEqual(retained.items);
+    expect(findUnit(old.templateId)?.items).toEqual(installed.get(old.templateId)!.items);
   }
 });
 

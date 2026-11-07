@@ -51,7 +51,10 @@ it('does not attach these pictures to distinct U01 and U02 authored exercises',(
 });
 
 it('keeps the unrelated static LV1 gallery unchanged and proves these pairs are absent',()=>{
- expect(published.filter(r=>['W000061','W005669'].includes(r.officialWordId))).toEqual([]);
+ expect(published.filter(r=>typeof r.officialWordId==='string'&&['W000061','W005669'].includes(r.officialWordId))).toEqual([]);
  const gallery=readFileSync('public/wordbeast/lv1-reviewed/index.html','utf8');
- for(const term of ['LV1-U14-37','W005669',proof.bankBefore.illustration.captionEn,proof.permissible.illustration.captionEn])expect(gallery).not.toContain(term);
+ for(const term of ['LV1-U14-37','W005669',proof.bankBefore.illustration.captionEn,proof.permissible.illustration.captionEn]){
+  if(typeof term!=='string'||!term.length)throw new Error('Exact retained image caption must be a nonempty string');
+  expect(gallery).not.toContain(term);
+ }
 });

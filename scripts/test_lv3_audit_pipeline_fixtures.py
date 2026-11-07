@@ -36,16 +36,14 @@ class U02RealFixtureTests(unittest.TestCase):
         audit.require(hashlib.sha256(CAPTURE.read_bytes()).hexdigest() == summary['captureFileSha256'],
                       'Independent capture artifact changed')
         audit.require(set(cls.capture) == audit.input_paths(ROOT), 'Capture domain changed')
-        for path, digest in cls.capture.items():
-            audit.require(audit.file_hash(ROOT / path) == digest, 'Repository before input drift: ' + path)
         cls.temporary = tempfile.TemporaryDirectory(prefix='lv3-u02-real-fixture-')
         cls.addClassCleanup(cls.temporary.cleanup)
         cls.fixture = Path(cls.temporary.name) / 'worktree'
-        cls.fixture.mkdir()
-        for path in audit.input_paths(ROOT):
-            destination = cls.fixture / path
-            destination.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copyfile(ROOT / path, destination)
+        # Strict committed-chain inverse into TEMP, retaining all original guards.
+        pipeline.project_checkpoint(ROOT, cls.fixture, target='LV3-U01')
+        for path, digest in cls.capture.items():
+            audit.require(audit.file_hash(cls.fixture / path) == digest,
+                          'Projected before input drift: ' + path)
         shutil.copytree(ROOT / pipeline.DOCS, cls.fixture / pipeline.DOCS)
         cls.original = {p.relative_to(cls.fixture).as_posix(): p.read_bytes()
                         for p in cls.fixture.rglob('*') if p.is_file()}
@@ -225,6 +223,15 @@ class U02RealFixtureTests(unittest.TestCase):
         audit.dump(OUTPUT / 'checkpoint-projection.json',
                    {'restoredInputCount': len(anchor['inputs']), 'originalU01UnchangedGuards': 137,
                     'u01DatasetAfterHashesPreserved': True, 'status': 'passed'})
+
+    def test_08_after_state_checkpoint_caller_rejects_unknown_bytes(self):
+        self.apply_fixture()
+        path = self.fixture / 'public/data/v1/senses.json'
+        path.write_bytes(path.read_bytes() + b' ')
+        snapshot = self.snapshot()
+        with self.assertRaisesRegex(ValueError, 'Input drift'):
+            pipeline.project_checkpoint(self.fixture, Path(self.temporary.name) / 'tampered-projection')
+        self.assert_snapshot(snapshot)
 
 
 if __name__ == '__main__':
