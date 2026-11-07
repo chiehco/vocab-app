@@ -1,3 +1,4 @@
+import {lv2Unit49BeforeFormalAudit} from './lv2Unit49Audit.testSupport';
 import {expect,it} from 'vitest';
 import {createHash} from 'node:crypto';
 import {readFileSync} from 'node:fs';
@@ -15,7 +16,7 @@ import research from '../../../docs/unit-audit-20261105/LV2-U48-source-research.
 import imageReview from '../../../docs/unit-audit-20261105/validation/LV2-U48-image-review.json';
 type Row=Record<string,unknown>;
 const hash=(v:unknown)=>createHash('sha256').update(JSON.stringify(v)).digest('hex');
-const data=(name:string)=>JSON.parse(readFileSync('public/data/v1/'+name+'.json','utf8')) as Row[];
+const data=(name:string)=>lv2Unit49BeforeFormalAudit(name,JSON.parse(readFileSync('public/data/v1/'+name+'.json','utf8'))) as Row[];
 it('checks exact 112 printed corrections before restoring the complete historical unit',()=>{
  expect(current.learningItems).toHaveLength(152);expect(corrections.patches).toHaveLength(112);expect(hash(current)).toBe(corrections.afterHash);
  expect(hash(lv2Unit48BeforeAudit(current))).toBe(corrections.beforeHash);expect(hash(JSON.parse(readFileSync(corrections.sourcePath,'utf8')))).toBe(corrections.sourceHash);
@@ -32,14 +33,14 @@ it('keeps twelve null identities and all text-only boundaries while restoring pr
 });
 it('restores only seventy exact formal operations and rejects recorded-field and identity drift',()=>{
  expect([...main.patches,...notes.patches,...forms.patches]).toHaveLength(70);
- for(const[name,proof]of Object.entries(inverse.datasets)){const rows=data(name);expect(hash(rows)).toBe(proof.afterHash);expect(hash(lv2Unit48BeforeFormalAudit(name,rows))).toBe(proof.beforeHash);}
+ for(const[name,proof]of Object.entries(inverse.datasets)){const rows=data(name);expect(hash(rows)).toBe(proof.afterHash);expect(hash(lv2Unit48BeforeFormalAudit(name,rows,'u48_checkpoint'))).toBe(proof.beforeHash);}
  const currentRows=Object.fromEntries(['words','senses','examples','notes'].map(name=>[name,data(name)]));
  // Check every recorded after field directly, without reparsing and cloning
  // the whole payload for every malformed row. The positive whole-pack hashes
  // above and unrecorded-field hash below still cover all rows and fields.
  for(const p of main.patches){const row=currentRows[p.dataset].find(r=>r[p.key]===p.id)!;for(const key of Object.keys(p.after))expect(()=>restoreRecordedAuditPatch(p.dataset,{...row,[key]:'unrecorded'},p)).toThrow();}
- for(const name of Object.keys(currentRows)){const p=[...main.patches,...notes.patches,...forms.patches].find(p=>p.dataset===name)!;const row=currentRows[name].find(r=>r[p.key]===p.id)!;row[p.key]='unrecorded';expect(()=>lv2Unit48BeforeFormalAudit(name,currentRows[name])).toThrow();}
- const extra=data('words');extra[0].meaningZh='unrecorded';expect(hash(lv2Unit48BeforeFormalAudit('words',extra))).not.toBe(inverse.datasets.words.beforeHash);
+ for(const name of Object.keys(currentRows)){const p=[...main.patches,...notes.patches,...forms.patches].find(p=>p.dataset===name)!;const row=currentRows[name].find(r=>r[p.key]===p.id)!;row[p.key]='unrecorded';expect(()=>lv2Unit48BeforeFormalAudit(name,currentRows[name],'u48_checkpoint')).toThrow();}
+ const extra=data('words');extra[0].meaningZh='unrecorded';expect(hash(lv2Unit48BeforeFormalAudit('words',extra,'u48_checkpoint'))).not.toBe(inverse.datasets.words.beforeHash);
  expect(inverse.headwordIdentityPosAndStatusAll6090Unchanged).toBe(true);expect(inverse.practiceEnglishClozeAnswerAll7871Unchanged).toBe(true);
 });
 it('limits six POS corrections to actual cloze targets and preserves all empty hints',()=>{

@@ -1,6 +1,6 @@
 {
   "scope": "Exact current repository curriculum catalogue, not a publisher edition table of contents or an inferred numeric range.",
-  "checkedAtUtc": "2026-11-07T03:30:24.843Z",
+  "checkedAtUtc": "2026-11-07T04:25:25.300Z",
   "basis": {
     "model": "src/features/direct/model.ts",
     "catalog": "src/features/vocabulary/textbookCatalog.ts",
@@ -81,13 +81,14 @@
     43,
     44,
     45,
-    46
-  ],
-  "currentAuditUnits": [
+    46,
+    47,
     48
   ],
+  "currentAuditUnits": [
+    49
+  ],
   "notYetAuditedUnits": [
-    49,
     50
   ],
   "rows": [
@@ -973,7 +974,7 @@
       "curriculumPath": "src/features/direct/curriculumLV2Unit47.json",
       "registeredInModel": true,
       "deliveryMode": "text_only",
-      "auditStatus": "after_saved_exact_own_ci_success",
+      "auditStatus": "after_saved_and_own_ci_success",
       "ledger": "docs/unit-audit-20261105/LV2-U47-ledger.json",
       "ownCi": {
         "commit": "9217586a3387586942423275d68231daf812b4c3",
@@ -1030,9 +1031,32 @@
       "curriculumPath": "src/features/direct/curriculumLV2Unit48.json",
       "registeredInModel": true,
       "deliveryMode": "text_only",
-      "auditStatus": "after_saved_local_checks_complete_own_ci_pending",
+      "auditStatus": "after_saved_and_own_ci_success",
       "ledger": "docs/unit-audit-20261105/LV2-U48-ledger.json",
-      "ownCi": null
+      "ownCi": {
+        "commit": "7b258e1b0d9c5d3f76049b0761b75f0a4ad43519",
+        "run": 42334384411,
+        "job": 128287894621,
+        "url": "https://github.com/chiehco/vocab-app/actions/runs/42334384411/job/128287894621",
+        "status": "completed",
+        "conclusion": "success",
+        "checkoutShaReadFromFullLog": true,
+        "testFiles": 241,
+        "tests": 1979,
+        "pythonBatches": [
+          14,
+          7,
+          96,
+          5,
+          10
+        ],
+        "lint": "success",
+        "typecheck": "success",
+        "build": "success",
+        "buildLogCompletedAtUtc": "2026-11-07T03:49:20.0387259Z",
+        "jobCompletedAtUtc": "2026-11-07T03:49:25Z",
+        "source": "Complete exact-head CI checkout, all steps and full test/build log actually read. Not a preceding-head substitute."
+      }
     },
     {
       "unit": 49,
@@ -1058,8 +1082,8 @@
       "curriculumPath": "src/features/direct/curriculumLV2Unit49.json",
       "registeredInModel": true,
       "deliveryMode": "text_only",
-      "auditStatus": "not_audited_in_this_full_audit",
-      "ledger": null,
+      "auditStatus": "after_saved_local_checks_complete_own_ci_pending",
+      "ledger": "docs/unit-audit-20261105/LV2-U49-ledger.json",
       "ownCi": null
     },
     {
@@ -1113,7 +1137,7 @@
   },
   "releaseGate": {
     "wholeRegisteredLvReady": false,
-    "reason": "U47 own CI succeeded. U48 App/persistence and local checks accepted, exact new head CI pending. U49–U50 remain unaudited. Retain U42, U26 and edition-boundary limitations.",
+    "reason": "U48 exact own CI succeeded. U49 App/persistence and local checks accepted, its new head CI pending. U50 remains unaudited. Retain U42, U26 and edition-boundary limitations.",
     "mainMerged": false,
     "deployed": false
   },

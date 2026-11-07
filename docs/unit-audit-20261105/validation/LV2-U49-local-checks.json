@@ -1,0 +1,88 @@
+{
+  "unit": "LV2-U49",
+  "state": "local_required_checks_passed_own_new_head_ci_pending",
+  "frontend": {
+    "files": 10,
+    "tests": 227,
+    "passed": true,
+    "originalLocalTimeoutMs": 5000,
+    "maxWorkers": 1,
+    "firstRunPassed": true,
+    "finalRunRepeatedOnlyAfterTwoDefinitionSeparatorChanges": true,
+    "includes": [
+      "original U49 text",
+      "new U49 audit",
+      "original U48/U47 checkpoint hashes with exact U49/U48 projections",
+      "recovered historical integration",
+      "unitAudit source and inverse guards",
+      "seed",
+      "lv1ReviewedImages",
+      "auditedWordIllustrations",
+      "lv2PraiseImageRepair"
+    ]
+  },
+  "python": {
+    "tests": 99,
+    "passed": true,
+    "workspaceOnlyTemporaryDirectory": true,
+    "evidence": "Final console chunk of real complete run preserved; earlier dot progress streamed to tool. No assertion failure."
+  },
+  "lint": {
+    "exitCode": 0
+  },
+  "typecheck": {
+    "exitCode": 0
+  },
+  "build": {
+    "exitCode": 0,
+    "largeChunkWarningNonblocking": true
+  },
+  "sourceDraftCheck": {
+    "exitCode": 0
+  },
+  "sourceIntegrationCheck": {
+    "exitCode": 0
+  },
+  "historicalFixtureHashesReset": false,
+  "timeoutIncreased": false,
+  "toolRecovery": {
+    "operation": "Read-only14-table browser snapshot",
+    "first": "npm resolved exec px and failed to determine executable before invoking browser; no browser or data action executed.",
+    "recovery": "Used the verified existing cached Playwright CLI once, obtained actual readonly14-table snapshot. Failure output retained privately; no profile reset."
+  },
+  "draftRefinement": "One newly drafted or pattern replaced an explanatory otherwise token with explicit imperative V ..., or + clause before frontend checks. Actual initial after pixels then exposed two missing separators in newly written capital/milestone definitions. Both were guarded and corrected, followed by a new successful227-test run, lint/typecheck/build/source checks, normal App update and exact two-card reopens; original before and first receipts retained. No original example changed.",
+  "logs": [
+    {
+      "file": "LV2-U49-regression-first.txt",
+      "sha256": "b5ce4fd059fef1cd4a24b1ad0c6549ad213796e805c0bebab565013d356e06e5"
+    },
+    {
+      "file": "LV2-U49-regression-final.txt",
+      "sha256": "51440c19d9a8111c7cad615a1b39eaf00333716429e3d75639d74c2e29aab9fc"
+    },
+    {
+      "file": "LV2-U49-python-boundaries.txt",
+      "sha256": "c73de30e7e91ea0eef2ebdfb320ae4d3d9bf3b8aa86bd5c8cd03cf31ce3eae37"
+    },
+    {
+      "file": "LV2-U49-lint-final.txt",
+      "sha256": "520255fbcdd0b601329176ff59cdec27199e1216a11e034aa0675ea533c261b4"
+    },
+    {
+      "file": "LV2-U49-typecheck-final.txt",
+      "sha256": "0d93be78e4da5c0077681c4d834163661d59ddd24a0477595fb70ec25d5a5ea8"
+    },
+    {
+      "file": "LV2-U49-build-final.txt",
+      "sha256": "fb87c114abe896efab182764abcc8493d7115cd0895380113040188861c1714c"
+    },
+    {
+      "file": "LV2-U49-prepare_recovered_unit_drafts-check.txt",
+      "sha256": "de98448ebf9803278533e50a4959ae987fb489682759393fb4a40f162f8d62d3"
+    },
+    {
+      "file": "LV2-U49-integrate_recovered_units-check.txt",
+      "sha256": "16a949cba64b31891edbac15dab0007dfc5e48721605cd1960b7fa9df69a3c61"
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "manifest": "docs/unit-audit-20261105/LV2-U49-notes-patches.json",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "checkedAt": "2026-11-07T04:03:13.160183+00:00",
+  "changeCount": 5,
+  "changes": [
+    {
+      "dataset": "notes",
+      "id": "NX56368adb",
+      "before": {
+        "noteId": "NX56368adb",
+        "word": "kilogram",
+        "noteType": "usage",
+        "title": "kilograms = 2 kilos = 2 kg",
+        "content": "公斤。",
+        "status": "approved"
+      },
+      "after": {
+        "noteId": "NX56368adb",
+        "word": "kilogram",
+        "noteType": "usage",
+        "title": "2 kilograms = 2 kilos = 2 kg",
+        "content": "2 公斤。",
+        "status": "approved"
+      },
+      "reason": "Original source photo442 explicitly includes the initial number. Restore only that exact missing number and matching Chinese; full note identity/type/status guarded.",
+      "evidence": "https://www.nist.gov/pml/owm/metric-si-prefixes"
+    },
+    {
+      "dataset": "notes",
+      "id": "NXc9ca2c13",
+      "before": {
+        "noteId": "NXc9ca2c13",
+        "word": "meter",
+        "noteType": "usage",
+        "title": "meters = 10 m",
+        "content": "公尺。",
+        "status": "approved"
+      },
+      "after": {
+        "noteId": "NXc9ca2c13",
+        "word": "meter",
+        "noteType": "usage",
+        "title": "10 meters = 10 m",
+        "content": "10 公尺。",
+        "status": "approved"
+      },
+      "reason": "Original source photo442 explicitly includes the initial number. Restore only that exact missing number and matching Chinese; full note identity/type/status guarded.",
+      "evidence": "https://www.nist.gov/pml/owm/metric-si-prefixes"
+    },
+    {
+      "dataset": "notes",
+      "id": "NX2c88b1fd",
+      "before": {
+        "noteId": "NX2c88b1fd",
+        "word": "centimeter",
+        "noteType": "usage",
+        "title": "centimeters = 10 cm",
+        "content": "公分。",
+        "status": "approved"
+      },
+      "after": {
+        "noteId": "NX2c88b1fd",
+        "word": "centimeter",
+        "noteType": "usage",
+        "title": "10 centimeters = 10 cm",
+        "content": "10 公分。",
+        "status": "approved"
+      },
+      "reason": "Original source photo442 explicitly includes the initial number. Restore only that exact missing number and matching Chinese; full note identity/type/status guarded.",
+      "evidence": "https://www.nist.gov/pml/owm/metric-si-prefixes"
+    },
+    {
+      "dataset": "notes",
+      "id": "NX8408afd8",
+      "before": {
+        "noteId": "NX8408afd8",
+        "word": "terror",
+        "noteType": "usage",
+        "title": "terror",
+        "content": "in terror；the terror of ...。",
+        "status": "approved"
+      },
+      "after": {
+        "noteId": "NX8408afd8",
+        "word": "terror",
+        "noteType": "usage",
+        "title": "terror",
+        "content": "in terror：驚恐地；the terror of ...：對……的極度恐懼（依上下文也可指令……害怕的人或事）。",
+        "status": "approved"
+      },
+      "reason": "Add Chinese explanation to the actual existing constructions, preserving note metadata.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/terror"
+    },
+    {
+      "dataset": "notes",
+      "id": "NXbe2bec4c",
+      "before": {
+        "noteId": "NXbe2bec4c",
+        "word": "penalty",
+        "noteType": "usage",
+        "title": "penalty",
+        "content": "the death penalty。",
+        "status": "approved"
+      },
+      "after": {
+        "noteId": "NXbe2bec4c",
+        "word": "penalty",
+        "noteType": "usage",
+        "title": "penalty",
+        "content": "the death penalty：死刑。",
+        "status": "approved"
+      },
+      "reason": "Explain the existing dictionary phrase; no legal advice, sentence or metadata change.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/penalty"
+    }
+  ],
+  "masterTouched": false,
+  "sentencesChanged": false,
+  "englishSentencesChanged": false,
+  "imagesChanged": false,
+  "sourceHashesBefore": {
+    "words.json": "d194c835439f0424939f7a110f8ce526fada61ffa1bf649576c9f38ddad3ae3c",
+    "senses.json": "c3f2934d3016c44e2d0421eacebb177a6aa77e472c321a5a950e34ffdb0ae0a0",
+    "examples.json": "f23125c243b75740e25c99217d4a774b29c632fe8f85f91047215c7a820b213b",
+    "meta.json": "35376100af812e55d2ab85c79729812351aa8c975f6c21cea6508e54a73899bb",
+    "sa-pack.json": "1a9d28514785ce6fc7f58d5ee0e99fb67e6ea3067242a8533b2592a491fbe35b"
+  },
+  "sourceHashesAfter": {
+    "words.json": "d194c835439f0424939f7a110f8ce526fada61ffa1bf649576c9f38ddad3ae3c",
+    "senses.json": "c3f2934d3016c44e2d0421eacebb177a6aa77e472c321a5a950e34ffdb0ae0a0",
+    "examples.json": "f23125c243b75740e25c99217d4a774b29c632fe8f85f91047215c7a820b213b",
+    "meta.json": "a531ff4c66cfa59bb160e1dfff3585bd1dc0ee91efcf10376b1664e1b12afde0",
+    "sa-pack.json": "90c7fe4a7c7f62102cc6d5e610e4d54bbe5223125adc41ac464377a5af98e292"
+  },
+  "state": "applied_not_ui_verified",
+  "acceptance": {
+    "state": "actual_text_reopened_saved_and_persistence_verified",
+    "reopenSummary": "validation/LV2-U49-reopen-summary.json",
+    "persistence": "validation/LV2-U49-persistence-summary.json",
+    "executionStatePreserved": "applied_not_ui_verified"
+  }
+}
