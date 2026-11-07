@@ -181,8 +181,11 @@ class U02RealFixtureTests(unittest.TestCase):
         extra = self.fixture / 'src/features/direct/unregistered-test.json'
         extra.write_text('{}\n', encoding='utf8')
         self.extra_paths.append(extra)
-        with self.assertRaisesRegex(ValueError, 'Input set changed'):
+        snapshot = self.snapshot()
+        with self.assertRaisesRegex(ValueError, r'^(?:Input set changed or missing guards|Migration requires original 144-input domain)$'):
             self.apply_fixture()
+        self.assert_snapshot(snapshot)
+        self.assertFalse((self.fixture / 'output/lv3-audit-20261107/transactions').exists())
         self.assertEqual(extra.read_text(encoding='utf8'), '{}\n')
 
     def test_06_exact_after_pending_receipt_never_reports_clean(self):
