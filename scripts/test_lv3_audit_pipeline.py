@@ -10,7 +10,7 @@ import lv3_audit_pipeline as p
 def fixture():
     path = 'src/features/direct/curriculumUnit2.json'
     documents = {path: {'template': {'unchanged': True},
-                       'learningItems': [{'learningItemId': 'LI-1', 'explanationZh': 'old'}],
+                       'learningItems': [{'learningItemId': 'LI-1', 'kind': 'grammar', 'explanationZh': 'old'}],
                        'grammarQuestions': [{'questionId': 'Q-1', 'targetMeaningZh': 'old'}]}}
     after = copy.deepcopy(documents)
     after[path]['learningItems'][0]['explanationZh'] = 'new'

@@ -29,6 +29,24 @@ export function auditContract(m:AuditManifest):{collections:Record<string,Collec
   files:Object.fromEntries(Object.values(m.datasets).map(d=>[d.path,{beforeHash:d.beforeHash,afterHash:d.afterHash}]))};
 }
 
+function newUnitNumber(unit:string):number|null {
+ assert.match(unit,/^LV3-U[0-9]{2}$/,'invalid unit identity');
+ const number=Number(unit.slice(-2));assert.ok([1,2].includes(number)||(number>=4&&number<=24),'unregistered unit identity');
+ return number>=4?number:null;
+}
+function validateCurriculumIdentity(unit:string,path:string,value:unknown):void {
+ const number=newUnitNumber(unit);if(number===null)return;
+ assert.equal(path,`src/features/direct/curriculumLV3Unit${number}.json`,'unit curriculum path mismatch');
+ const document=value as Row,template=document.template as Row;
+ assert.ok(template);assert.equal(template.templateId,'TEXTBOOK-'+unit,'unit curriculum template mismatch');
+ assert.equal(template.level,'LV3');assert.equal(template.unit,number);
+ const items=document.learningItems as Row[];assert.ok(Array.isArray(items)&&items.length);
+ for(const row of items){
+  const suffix=row.kind==='vocabulary'?'V':row.kind==='grammar'?'G':null;
+  assert.ok(suffix&&new RegExp(`^LI-LV3U${String(number).padStart(2,'0')}-${suffix}[0-9]{3}$`).test(String(row.learningItemId)),'unit curriculum item namespace mismatch');
+ }
+}
+
 export function validateAuditScope(m:AuditManifest,scope:AuditScope):void {
  const keys=(value:object)=>Object.keys(value).sort();
  const sameKeys=(value:object,expected:string[])=>assert.deepEqual(keys(value),[...expected].sort(),'unknown or missing contract fields');
@@ -49,6 +67,8 @@ export function validateAuditScope(m:AuditManifest,scope:AuditScope):void {
   }else{
    assert.ok(name==='curriculum'||name==='grammarQuestions','unsupported collection');
    assert.ok(col.path.startsWith('src/features/direct/curriculum')&&col.path.endsWith('.json'),'invalid curriculum path');
+   const number=newUnitNumber(m.unit);
+   if(number!==null){assert.equal(col.path,`src/features/direct/curriculumLV3Unit${number}.json`,'unit curriculum path mismatch');assert.equal(name,'curriculum','new-unit question schema unsupported');}
    assert.equal(col.key,name==='curriculum'?'learningItemId':'questionId');
    assert.equal(col.rowsField,name==='curriculum'?'learningItems':'grammarQuestions');
   }
@@ -60,7 +80,7 @@ export function validateAuditScope(m:AuditManifest,scope:AuditScope):void {
  const allowed=new Map(scope.rows.map(r=>[r.dataset+':'+r.id,r]));
  assert.equal(allowed.size,scope.rows.length,'duplicate scope row');assert.ok(m.patches.length&&m.patches.length===allowed.size,'scope row set mismatch');
  const seen=new Set<string>();
- const protectedKeys=new Set(['status','wordId','exampleId','noteId','learningItemId','questionId','word','wordVariants','sentenceEn','originalExample','stem','answer']);
+ const protectedKeys=new Set(['status','wordId','exampleId','noteId','learningItemId','questionId','word','wordVariants','sentenceEn','originalExample','originalExamples','kind','review','practiceMode','stem','answer']);
  const allowedFields:Record<string,string[]>={
   words:['meaningZh','meaningEn','usagePattern','usagePatternZh','verbForms','pos','posAll'],
   examples:['sensePos','meaningHint'],notes:['title','content'],curriculum:['explanationZh'],grammarQuestions:['targetMeaningZh','options']
@@ -72,7 +92,17 @@ export function validateAuditScope(m:AuditManifest,scope:AuditScope):void {
   assert.ok(col);assert.equal(p.path,col.path);assert.equal(p.key,col.key);
   assert.ok(p.before&&typeof p.before==='object'&&!Array.isArray(p.before));assert.equal(p.before[p.key],p.id);
   assert.equal(auditHash(p.before),r.beforeHash);assert.deepEqual(p.after,r.after,'exact scope values required');
-  assert.ok(Object.keys(p.after).length&&Object.keys(p.after).every(k=>allowedFields[p.dataset]?.includes(k)&&!protectedKeys.has(k)),'disallowed after field');
+  let fields=allowedFields[p.dataset];
+  if(p.dataset==='curriculum'){
+   assert.ok(p.before.kind==='grammar'||p.before.kind==='vocabulary','unknown curriculum kind');
+   fields=p.before.kind==='grammar'?['explanationZh']:['sensePos','targetMeaningZh','chapterMeaningsZh','meaningSource'];
+   if(Object.hasOwn(p.after,'meaningSource'))assert.ok(['textbook_source_review','textbook_and_dictionary_review'].includes(p.after.meaningSource as string),'invalid reviewed meaning source');
+   for(const [field,value]of Object.entries(p.after).filter(([field])=>fields.includes(field))){
+    assert.ok(typeof value==='string'&&value.trim(),'invalid curriculum scalar');
+    assert.ok(p.fieldEvidence?.[field]?.length,'missing curriculum field source');
+   }
+  }
+  assert.ok(Object.keys(p.after).length&&Object.keys(p.after).every(k=>fields?.includes(k)&&!protectedKeys.has(k)),'disallowed after field');
   assert.ok(Object.entries(p.after).some(([k,v])=>!Object.hasOwn(p.before,k)||auditHash(p.before[k])!==auditHash(v)),'no-op patch');
   assert.ok(typeof p.reason==='string'&&p.reason.trim()&&p.fieldEvidence&&Object.keys(p.fieldEvidence).length,'missing evidence');
   for(const records of Object.values(p.fieldEvidence)){
@@ -156,6 +186,7 @@ export function projectAuditStep(m:AuditManifest,documents:Record<string,unknown
  if(m.schemaVersion===2){assert.ok(scope);validateAuditScope(m,scope);}
  const c=auditContract(m),out=structuredClone(documents);
  assert.deepEqual(Object.keys(documents).sort(),Object.keys(c.files).sort(),'incomplete document set');
+ for(const [name,col]of Object.entries(c.collections))if(['curriculum','grammarQuestions'].includes(name))validateCurriculumIdentity(m.unit,col.path,documents[col.path]);
  for(const [path,g]of Object.entries(c.files))assert.equal(auditHash(documents[path]),g[inverse?'afterHash':'beforeHash'],'unknown whole-file drift');
  for(const p of inverse?[...m.patches].reverse():m.patches){
   const col=c.collections[p.dataset],rr=rows(out[col.path],col),indices=rr.flatMap((r,i)=>r[p.key]===p.id?[i]:[]);
@@ -188,22 +219,42 @@ function reverseRows<T>(m:AuditManifest,dataset:string,value:T,allowMissing:bool
  return out;
 }
 
-export function lv3AfterUnit1Rows<T>(dataset:string,value:T,options:{allowMissing?:boolean}={}):T {
- const name=dataset.replace(/\.json$/,''),later=stableChain().filter(x=>x.entry.status==='committed'&&x.entry.unit!=='LV3-U01');
- let copy=structuredClone(value);
- for(const x of later.reverse())copy=reverseRows(x.manifest,name,copy,options.allowMissing??false);
- return copy;
+function checkpoint(afterUnit:string){
+ const chain=stableChain(),committed=chain.filter(x=>x.entry.status==='committed');
+ const positions=committed.flatMap((x,i)=>x.entry.unit===afterUnit?[i]:[]);
+ assert.equal(positions.length,1,'unknown or uncommitted checkpoint');
+ const index=positions[0],anchor=read('U01-checkpoint.json') as {inputs:Record<string,string>};
+ const bytes={...anchor.inputs},semantic:Record<string,string>={};
+ for(const step of committed.slice(0,index+1)){
+  for(const [path,g]of Object.entries(auditContract(step.manifest).files)){
+   semantic[path]=g.afterHash;if(g.afterByteHash)bytes[path]=g.afterByteHash;
+  }
+  Object.assign(bytes,step.manifest.derivedAfter??{});
+ }
+ const later=committed.slice(index+1);
+ for(const step of later)for(const [path,g]of Object.entries(auditContract(step.manifest).files))if(!semantic[path])semantic[path]=g.beforeHash;
+ return {later,bytes,semantic};
 }
 
+export function lv3AfterUnitRows<T>(afterUnit:string,dataset:string,value:T,options:{allowMissing?:boolean}={}):T {
+ const name=dataset.replace(/\.json$/,''),{later}=checkpoint(afterUnit);
+ let copy=structuredClone(value);
+ for(const x of [...later].reverse())copy=reverseRows(x.manifest,name,copy,options.allowMissing??false);
+ return copy;
+}
+export function lv3AfterUnit1Rows<T>(dataset:string,value:T,options:{allowMissing?:boolean}={}):T {
+ return lv3AfterUnitRows('LV3-U01',dataset,value,options);
+}
 export function lv3BeforeAudit<T>(dataset:string,value:T,options:{allowMissing?:boolean}={}):T {
  return lv3Unit1BeforeAudit(dataset,lv3AfterUnit1Rows(dataset,value,options),options);
 }
 
-export function lv3AfterUnit1File<T>(path:string,value:T):T {
+export function reverseFileAuditSteps<T>(steps:{manifest:AuditManifest;scope?:AuditScope}[],path:string,value:T):T {
  let out=structuredClone(value);
- const later=stableChain().filter(x=>x.entry.status==='committed'&&x.entry.unit!=='LV3-U01');
- for(const {manifest} of later.reverse()){
+ for(const {manifest,scope} of [...steps].reverse()){
+  if(manifest.schemaVersion===2){assert.ok(scope);validateAuditScope(manifest,scope);}
   const c=auditContract(manifest),guard=c.files[path];if(!guard)continue;
+  for(const [name,col]of Object.entries(auditContract(manifest).collections))if(col.path===path&&['curriculum','grammarQuestions'].includes(name))validateCurriculumIdentity(manifest.unit,path,out);
   assert.equal(auditHash(out),guard.afterHash,'unknown whole-file drift');
   for(const p of [...manifest.patches].reverse().filter(p=>p.path===path)){
    const rr=rows(out,c.collections[p.dataset]),indices=rr.flatMap((r,i)=>r[p.key]===p.id?[i]:[]);
@@ -214,6 +265,22 @@ export function lv3AfterUnit1File<T>(path:string,value:T):T {
  }
  return out;
 }
+export function lv3AfterUnitFile<T>(afterUnit:string,path:string,value:T):T {
+ const state=checkpoint(afterUnit),out=reverseFileAuditSteps(state.later,path,value);
+ if(state.semantic[path])assert.equal(auditHash(out),state.semantic[path],'target checkpoint semantic drift');
+ else if(state.bytes[path]){
+  // Authenticate exact original formatting before comparing parsed untouched data.
+  const raw=readFileSync(new URL('../../../'+path,import.meta.url),'utf8').replace(/\r\n/g,'\n');
+  const digest=createHash('sha256').update(raw).digest('hex');
+  assert.equal(digest,state.bytes[path],'target checkpoint byte drift');
+  assert.deepEqual(out,JSON.parse(raw),'target checkpoint semantic drift');
+ }
+ return out;
+}
+export function lv3AfterUnit1File<T>(path:string,value:T):T {
+ return lv3AfterUnitFile('LV3-U01',path,value);
+}
+
 
 /** Strict one-step raw projection, also used for cross-language fixture parity. */
 export function inversePublishedAuditStep(m:AuditManifest,scope:AuditScope,path:string,text:string):string {
@@ -225,6 +292,7 @@ export function inversePublishedAuditStep(m:AuditManifest,scope:AuditScope,path:
   if(guard){
    assert.equal(digest(out),guard.afterByteHash,'unknown raw after drift');
    const value=JSON.parse(out);assert.equal(auditHash(value),guard.afterHash);
+   for(const [name,col]of Object.entries(c.collections))if(col.path===path&&['curriculum','grammarQuestions'].includes(name))validateCurriculumIdentity(m.unit,path,value);
    for(const p of [...m.patches].reverse().filter(p=>p.path===path)){
     const rr=rows(value,c.collections[p.dataset]),indexes=rr.flatMap((r,i)=>r[p.key]===p.id?[i]:[]);
     assert.equal(indexes.length,1);assert.deepEqual(rr[indexes[0]],{...p.before,...p.after});rr[indexes[0]]=structuredClone(p.before);
@@ -252,12 +320,17 @@ export function inversePublishedAuditStep(m:AuditManifest,scope:AuditScope,path:
  return out;
 }
 
-/** Exact raw-byte successor projection before the unchanged U01 raw helper. */
-export function lv3AfterUnit1PublishedText(path:string,text:string):string {
+/** Raw projection checks the selected target even when the successor list is empty. */
+export function lv3AfterUnitPublishedText(afterUnit:string,path:string,text:string):string {
  assert.equal(text,text.replace(/\r\n/g,'\n'),'caller must normalize CRLF first');
+ const state=checkpoint(afterUnit);
  let out=text;
- for(const {manifest,scope} of stableChain().filter(x=>x.entry.status==='committed'&&x.entry.unit!=='LV3-U01').reverse()){
+ for(const {manifest,scope} of [...state.later].reverse()){
   assert.ok(scope);out=inversePublishedAuditStep(manifest,scope,path,out);
  }
+ if(state.bytes[path])assert.equal(createHash('sha256').update(out).digest('hex'),state.bytes[path],'target checkpoint raw drift');
  return out;
+}
+export function lv3AfterUnit1PublishedText(path:string,text:string):string {
+ return lv3AfterUnitPublishedText('LV3-U01',path,text);
 }

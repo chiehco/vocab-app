@@ -1,10 +1,11 @@
 import assert from 'node:assert/strict';
 import {it} from 'vitest';
-import {auditHash,projectAuditStep,validateAuditScope,loadLV3Chain,type AuditManifest,type AuditScope,type AuditPatch} from './lv3Audit.testSupport';
+import {readFileSync} from 'node:fs';
+import {auditHash,lv3AfterUnitFile,lv3AfterUnitPublishedText,reverseFileAuditSteps,projectAuditStep,validateAuditScope,loadLV3Chain,type AuditManifest,type AuditScope,type AuditPatch} from './lv3Audit.testSupport';
 
 function fixture(){
  const path='src/features/direct/curriculumUnit2.json' as const;
- const before={[path]:{template:{unchanged:true},learningItems:[{learningItemId:'LI-1',explanationZh:'old'}],grammarQuestions:[{questionId:'Q-1',targetMeaningZh:'old'}]}};
+ const before={[path]:{template:{unchanged:true},learningItems:[{learningItemId:'LI-1',kind:'grammar',explanationZh:'old'}],grammarQuestions:[{questionId:'Q-1',targetMeaningZh:'old'}]}};
  const after=structuredClone(before);after[path].learningItems[0].explanationZh='new';after[path].grammarQuestions[0].targetMeaningZh='new';
  const collections={curriculum:{path,rowsField:'learningItems',key:'learningItemId'},grammarQuestions:{path,rowsField:'grammarQuestions',key:'questionId'}};
  const patches:AuditPatch[]=[
@@ -65,4 +66,70 @@ it('requires exact scoped POS transitions and supported form-source evidence',()
  (item.after.verbForms as Record<string,unknown>).sourceRef='https://unverified.invalid/forms';
  formScope.rows.find(r=>r.dataset===item.dataset&&r.id===item.id)!.after=structuredClone(item.after);forms.scopeHash=auditHash(formScope);
  assert.throws(()=>validateAuditScope(forms,formScope),/forms source/);
+});
+
+it('guards the selected latest U02 checkpoint with no successors and rejects unknown targets',()=>{
+ const path='public/data/v1/notes.json',value=JSON.parse(readFileSync(path,'utf8'));
+ assert.deepEqual(lv3AfterUnitFile('LV3-U02',path,value),value);
+ const bad=structuredClone(value);bad[0].unlisted=true;
+ assert.throws(()=>lv3AfterUnitFile('LV3-U02',path,bad),/drift/);
+ assert.throws(()=>lv3AfterUnitFile('LV3-U04',path,value),/uncommitted checkpoint/);
+ const meta='public/data/v1/meta.json',text=readFileSync(meta,'utf8').replace(/\r\n/g,'\n');
+ assert.equal(lv3AfterUnitPublishedText('LV3-U02',meta,text),text);
+ assert.throws(()=>lv3AfterUnitPublishedText('LV3-U02',meta,text+' '),/raw drift/);
+});
+it('reverses successive same-file changes only in the recorded order',()=>{
+ const path='public/data/v1/notes.json';
+ const first=fixture(),second=fixture();
+ const before=[{noteId:'N1',content:'old'}],middle=[{noteId:'N1',content:'middle'}],latest=[{noteId:'N1',content:'latest'}];
+ for(const [step,unit,old,next]of [[first,'LV3-U02',before,middle],[second,'LV3-U04',middle,latest]] as const){
+  step.manifest.unit=unit;step.scope.unit=unit;
+  const patch={...step.manifest.patches[0],dataset:'notes',path,key:'noteId',id:'N1',before:old[0],after:{content:next[0].content}};
+  step.manifest.patches=[patch];step.manifest.collections={notes:{path,key:'noteId',rowsField:null}};
+  step.scope.collections=structuredClone(step.manifest.collections);
+  step.scope.rows=[{dataset:'notes',id:'N1',beforeHash:auditHash(old[0]),after:patch.after}];
+  step.manifest.scopeHash=auditHash(step.scope);
+  step.manifest.files={[path]:{beforeHash:auditHash(old),afterHash:auditHash(next),beforeByteHash:'0'.repeat(64),afterByteHash:'1'.repeat(64)}};
+ }
+ const steps=[{manifest:first.manifest,scope:first.scope},{manifest:second.manifest,scope:second.scope}];
+ assert.deepEqual(reverseFileAuditSteps([steps[1]],path,latest),middle);
+ assert.deepEqual(reverseFileAuditSteps(steps,path,latest),before);
+ assert.throws(()=>reverseFileAuditSteps([...steps].reverse(),path,latest),/drift/);
+ const bad=[{...latest[0],unknown:true}];assert.throws(()=>reverseFileAuditSteps(steps,path,bad),/drift/);
+});
+it('rejects rehashed new-unit cross-unit curriculum paths',()=>{
+ const {manifest,scope}=fixture();manifest.unit='LV3-U04';scope.unit='LV3-U04';manifest.scopeHash=auditHash(scope);
+ assert.throws(()=>validateAuditScope(manifest,scope),/unit curriculum path mismatch/);
+});
+it('rejects rehashed new-unit template and item namespace drift during application',()=>{
+ const path='src/features/direct/curriculumLV3Unit4.json';
+ const original=JSON.parse(readFileSync(path,'utf8'));
+ for(const mode of ['template','namespace']){
+  const {manifest,scope}=fixture(),value=structuredClone(original);
+  manifest.unit='LV3-U04';scope.unit=manifest.unit;
+  if(mode==='template')value.template.unit=5;
+  else value.learningItems[0].learningItemId='LI-LV3U05-V001';
+  const before=value.learningItems[0],after={targetMeaningZh:'reviewed synthetic meaning'};
+  const patch={...manifest.patches[0],dataset:'curriculum',path,key:'learningItemId',id:before.learningItemId,before,after,
+   fieldEvidence:{targetMeaningZh:[{proposal:'test',reason:'test',sources:['test']}]}};
+  manifest.patches=[patch];manifest.collections={curriculum:{path,key:'learningItemId',rowsField:'learningItems'}};
+  scope.collections=structuredClone(manifest.collections);scope.rows=[{dataset:'curriculum',id:patch.id,beforeHash:auditHash(before),after}];
+  manifest.scopeHash=auditHash(scope);manifest.files={[path]:{beforeHash:auditHash(value),afterHash:'0'.repeat(64),beforeByteHash:'0'.repeat(64),afterByteHash:'1'.repeat(64)}};
+  assert.throws(()=>projectAuditStep(manifest,{[path]:value},false,scope));
+ }
+});
+it('limits vocabulary meaningSource values and prevents grammar/vocabulary field crossover',()=>{
+ for(const [kind,field,value,valid]of [
+  ['vocabulary','meaningSource','textbook_source_review',true],
+  ['vocabulary','meaningSource','textbook_and_dictionary_review',true],
+  ['vocabulary','meaningSource','textbook_transcription',false],
+  ['vocabulary','explanationZh','wrong kind',false],
+  ['grammar','sensePos','v.',false],
+  ['vocabulary','review','approved',false],
+ ] as const){
+  const {manifest,scope}=fixture(),patch=manifest.patches[0];patch.before.kind=kind;
+  patch.after={[field]:value};patch.fieldEvidence={[field]:[{sources:['test'],reason:'test',proposal:'test'}]};
+  scope.rows[0].beforeHash=auditHash(patch.before);scope.rows[0].after=structuredClone(patch.after);manifest.scopeHash=auditHash(scope);
+  if(valid)validateAuditScope(manifest,scope);else assert.throws(()=>validateAuditScope(manifest,scope));
+ }
 });

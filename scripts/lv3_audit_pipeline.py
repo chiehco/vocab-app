@@ -9,6 +9,7 @@ from contextlib import contextmanager
 import hashlib
 import json
 import os
+import re
 from pathlib import Path
 import subprocess
 import tempfile
@@ -55,6 +56,31 @@ def contract(manifest):
     return v1_adapter(manifest) if manifest.get('schemaVersion') == 1 else manifest
 
 
+def new_unit_number(unit):
+    require(isinstance(unit, str) and re.fullmatch(r'LV3-U[0-9]{2}', unit), 'Invalid unit identity')
+    number = int(unit[-2:])
+    require(number in {1, 2} or 4 <= number <= 24, 'Unregistered unit identity')
+    return number if number >= 4 else None
+
+
+def validate_curriculum_identity(unit, path, document):
+    number = new_unit_number(unit)
+    if number is None:
+        return  # Existing U01/U02 immutable contracts retain historical naming.
+    require(path == f'src/features/direct/curriculumLV3Unit{number}.json', 'Unit curriculum path mismatch')
+    template = document.get('template', {})
+    require(template.get('templateId') == 'TEXTBOOK-' + unit
+            and template.get('level') == 'LV3' and template.get('unit') == number,
+            'Unit curriculum template mismatch')
+    items = document.get('learningItems')
+    require(isinstance(items, list) and items, 'Missing unit curriculum items')
+    for row in items:
+        suffix = {'vocabulary': 'V', 'grammar': 'G'}.get(row.get('kind'))
+        require(suffix is not None and re.fullmatch(
+            r'LI-LV3U' + str(number).zfill(2) + '-' + suffix + r'[0-9]{3}',
+            row.get('learningItemId', '')), 'Unit curriculum item namespace mismatch')
+
+
 def validate_manifest(manifest, scope=None):
     if manifest.get('schemaVersion') == 1:
         v1.validate_manifest(manifest)
@@ -84,6 +110,10 @@ def validate_manifest(manifest, scope=None):
             require(name in {'curriculum', 'grammarQuestions'}, 'Unsupported collection')
             require(col['path'].startswith('src/features/direct/curriculum')
                     and col['path'].endswith('.json'), 'Invalid curriculum path')
+            number = new_unit_number(manifest['unit'])
+            if number is not None:
+                require(col['path'] == f'src/features/direct/curriculumLV3Unit{number}.json', 'Unit curriculum path mismatch')
+                require(name == 'curriculum', 'New-unit question schema unsupported')
             require((col['key'], col['rowsField']) ==
                     (('learningItemId', 'learningItems') if name == 'curriculum'
                      else ('questionId', 'grammarQuestions')), 'Wrong curriculum collection')
@@ -101,7 +131,8 @@ def validate_manifest(manifest, scope=None):
     require(manifest['patches'] and len(manifest['patches']) == len(allowed), 'Scope row set mismatch')
     seen = set()
     hard_protected = {'status', 'wordId', 'exampleId', 'noteId', 'learningItemId', 'questionId',
-                      'word', 'wordVariants', 'sentenceEn', 'originalExample', 'stem', 'answer'}
+                      'word', 'wordVariants', 'sentenceEn', 'originalExample', 'originalExamples',
+                      'kind', 'review', 'practiceMode', 'stem', 'answer'}
     field_allow = {
         'words': {'meaningZh', 'meaningEn', 'usagePattern', 'usagePatternZh', 'verbForms', 'pos', 'posAll'},
         'examples': {'sensePos', 'meaningHint'},
@@ -121,7 +152,19 @@ def validate_manifest(manifest, scope=None):
                 'Invalid complete before row')
         require(sha(p['before']) == allowed[ident]['beforeHash']
                 and p['after'] == allowed[ident]['after'], 'Exact row scope mismatch')
-        require(p['after'] and set(p['after']) <= field_allow[p['dataset']]
+        allowed_fields = field_allow[p['dataset']]
+        if p['dataset'] == 'curriculum':
+            kind = p['before'].get('kind')
+            require(kind in {'grammar', 'vocabulary'}, 'Unknown curriculum kind')
+            allowed_fields = ({'explanationZh'} if kind == 'grammar' else
+                              {'sensePos', 'targetMeaningZh', 'chapterMeaningsZh', 'meaningSource'})
+            if 'meaningSource' in p['after']:
+                require(p['after']['meaningSource'] in {'textbook_source_review', 'textbook_and_dictionary_review'},
+                        'Invalid reviewed meaning source')
+            for field in set(p['after']) & allowed_fields:
+                require(isinstance(p['after'][field], str) and p['after'][field].strip(), 'Invalid curriculum scalar')
+                require(p['fieldEvidence'].get(field), 'Missing curriculum field source')
+        require(p['after'] and set(p['after']) <= allowed_fields
                 and not (set(p['after']) & hard_protected), 'Disallowed after field')
         require(any(k not in p['before'] or p['before'][k] != x for k, x in p['after'].items()),
                 'No-op patch')
@@ -159,6 +202,9 @@ def prepare_step(manifest, documents, scope=None, inverse=False):
     validate_manifest(manifest, scope)
     c = contract(manifest)
     require(set(documents) == set(c['files']), 'Incomplete physical document set')
+    for name, col in c['collections'].items():
+        if name in {'curriculum', 'grammarQuestions'}:
+            validate_curriculum_identity(manifest['unit'], col['path'], documents[col['path']])
     start, end = ('afterHash', 'beforeHash') if inverse else ('beforeHash', 'afterHash')
     for path, value in documents.items():
         require(sha(value) == c['files'][path][start], f'Unknown whole-file drift: {path}')
@@ -279,6 +325,18 @@ def verify_inputs(root, manifest, side):
             require(v1.file_hash(safe_path(root, path)) == digest, f'Derived input drift: {path}')
 
 
+def verify_checkpoint(root, manifest, anchor):
+    """Validate the selected checkpoint even when no successor must be reversed."""
+    root = Path(root)
+    if manifest['unit'] == 'LV3-U01':
+        require(set(anchor['inputs']) == v1.input_paths(root), 'Anchor input set changed')
+        for path, digest in anchor['inputs'].items():
+            require(v1.file_hash(safe_path(root, path)) == digest, f'Anchor input drift: {path}')
+    else:
+        require(known_state(root, manifest) == 'after', 'Current tree is not checkpoint after state')
+        verify_inputs(root, manifest, 'after')
+
+
 def project_checkpoint(root, destination, target='LV3-U01'):
     """Copy into a new empty temporary fixture and reverse committed successors.
 
@@ -293,14 +351,7 @@ def project_checkpoint(root, destination, target='LV3-U01'):
     targets = [i for i, x in enumerate(committed) if x[0]['unit'] == target]
     require(len(targets) == 1, 'Unknown checkpoint target')
     tail = committed[targets[0] + 1:]
-    if tail:
-        _, head, _ = committed[-1]
-        require(known_state(root, head) == 'after', 'Current tree is not committed chain head')
-        verify_inputs(root, head, 'after')
-    else:
-        require(set(anchor['inputs']) == v1.input_paths(root), 'Anchor input set changed')
-        for path, digest in anchor['inputs'].items():
-            require(v1.file_hash(safe_path(root, path)) == digest, f'Anchor input drift: {path}')
+    verify_checkpoint(root, committed[-1][1], anchor)
     destination.mkdir(parents=True)
     for path in v1.input_paths(root):
         target_path = safe_path(destination, path)
@@ -330,10 +381,7 @@ def project_checkpoint(root, destination, target='LV3-U01'):
         module['build_sa_pack'](destination / 'public/data/v1', destination / 'src/features/direct')
         require(read_json(destination / v1.DERIVED[1])['meta'] == manifest['beforePackMeta'], 'Before pack metadata mismatch')
         verify_inputs(destination, manifest, 'before')
-    if target == 'LV3-U01':
-        require(set(anchor['inputs']) == v1.input_paths(destination), 'Projected anchor input set changed')
-        for path, digest in anchor['inputs'].items():
-            require(v1.file_hash(safe_path(destination, path)) == digest, f'Projected anchor drift: {path}')
+    verify_checkpoint(destination, committed[targets[0]][1], anchor)
     assert_recovery_clear(root)
     return destination
 

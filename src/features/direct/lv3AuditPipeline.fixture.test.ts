@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {readFileSync,writeFileSync} from 'node:fs';
 import {it} from 'vitest';
-import {auditHash,loadLV3Chain,projectAuditStep,inversePublishedAuditStep,lv3AfterUnit1File,lv3AfterUnit1PublishedText} from './lv3Audit.testSupport';
+import {auditHash,loadLV3Chain,projectAuditStep,inversePublishedAuditStep,lv3AfterUnit1File,lv3AfterUnit1PublishedText,lv3AfterUnitFile,lv3AfterUnitPublishedText} from './lv3Audit.testSupport';
 
 // Opt-in real parity requires the independent capture, sealed manifest and
 // Python-applied TEMP fixture artifacts. Default full suites do not fabricate it.
@@ -17,10 +17,10 @@ it.runIf(process.env.LV3_PIPELINE_FIXTURE_PARITY==='1')('matches all 37 Python f
  const paths=Object.keys(manifest.files!);assert.equal(paths.length,4);assert.equal(expected.physicalFileCount,4);
  const before=Object.fromEntries(paths.map(p=>[p,lv3AfterUnit1File(p,read(p))]));
  if(step.entry.status==='committed')for(const p of paths){
-  const current=read(p);assert.equal(auditHash(current),manifest.files![p].afterHash);
+  const current=lv3AfterUnitFile('LV3-U02',p,read(p));assert.equal(auditHash(current),manifest.files![p].afterHash);
   const tampered=structuredClone(current);
   if(Array.isArray(tampered))tampered[0].unrecordedField=true;else tampered.unrecordedField=true;
-  assert.throws(()=>lv3AfterUnit1File(p,tampered),/whole-file drift/);
+  assert.throws(()=>lv3AfterUnitFile('LV3-U02',p,tampered),/drift/);
  }
  const pythonAfter=Object.fromEntries(paths.map(p=>[p,read(output+'applied-fixture/'+p)]));
  const after=projectAuditStep(manifest,before,false,scope);
@@ -38,7 +38,7 @@ it.runIf(process.env.LV3_PIPELINE_FIXTURE_PARITY==='1')('matches all 37 Python f
   const text=normalized(output+'applied-fixture/'+path);
   const restored=inversePublishedAuditStep(manifest,scope,path,text);
   assert.equal(restored,lv3AfterUnit1PublishedText(path,normalized(path)),'exact original normalized bytes: '+path);
-  if(step.entry.status==='committed')assert.throws(()=>lv3AfterUnit1PublishedText(path,normalized(path)+' '),/after drift/);
+  if(step.entry.status==='committed')assert.throws(()=>lv3AfterUnitPublishedText('LV3-U02',path,normalized(path)+' '),/drift/);
   if(expected.derivedBefore[path]){
    assert.equal(rawHash(restored),expected.derivedBefore[path],path);
    assert.equal(rawHash(text),expected.derivedAfter[path],path);
