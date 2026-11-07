@@ -105,6 +105,40 @@ def verified_wage_forms(p, f):
                     for source in record['sources']))
 
 
+def verified_u06_pattern_erratum(manifest, patch):
+    """Only the reviewed U06-G015 transcription correction, not general pattern editing.
+
+    The complete row and directly viewed photo record are bound by the sealed
+    scope. The source marker alone is not proof that an image was inspected.
+    """
+    before = {
+        "learningItemId": "LI-LV3U06-G015",
+        "kind": "grammar",
+        "sourcePage": 56,
+        "pattern": "be not cut out sth（原書星號註記）",
+        "explanationZh": "教材用法標記；例句與教材題目尚未提供。",
+        "review": "source_checked_text_only",
+        "practiceMode": "read_only"
+    }
+    if not (manifest['unit'] == 'LV3-U06'
+            and patch['dataset'] == 'curriculum'
+            and patch['path'] == 'src/features/direct/curriculumLV3Unit6.json'
+            and patch['key'] == 'learningItemId' and patch['id'] == 'LI-LV3U06-G015'
+            and patch['before'] == before and patch['after'] == {"pattern": "be not cut out for sth（原書星號註記）"}):
+        return False
+    records = patch.get('fieldEvidence', {}).get('pattern')
+    return isinstance(records, list) and any(
+        isinstance(record, dict) and isinstance(record.get('sources'), list)
+        and any(isinstance(source, dict)
+                and source.get('type') == 'textbook_photo'
+                and source.get('file') == '20260815_092400.jpg'
+                and source.get('page') == 56
+                and source.get('sha256') == '5708b6a8ae64904b56e5912d6771122ec2aa1e273d1a358ea1b59c352b8ff900'
+                and source.get('directlyViewedDuringCuration') is True
+                for source in record['sources'])
+        for record in records)
+
+
 def validate_manifest(manifest, scope=None):
     if manifest.get('schemaVersion') == 1:
         v1.validate_manifest(manifest)
@@ -182,6 +216,8 @@ def validate_manifest(manifest, scope=None):
             require(kind in {'grammar', 'vocabulary'}, 'Unknown curriculum kind')
             allowed_fields = ({'explanationZh'} if kind == 'grammar' else
                               {'sensePos', 'targetMeaningZh', 'chapterMeaningsZh', 'meaningSource'})
+            if kind == 'grammar' and verified_u06_pattern_erratum(manifest, p):
+                allowed_fields = {'pattern'}
             if 'meaningSource' in p['after']:
                 require(p['after']['meaningSource'] in {'textbook_source_review', 'textbook_and_dictionary_review'},
                         'Invalid reviewed meaning source')

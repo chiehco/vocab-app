@@ -69,6 +69,37 @@ function verifiedWageForms(p:AuditPatch,f:Row){
   }));
 }
 
+// Only the reviewed U06-G015 transcription correction; all other patterns remain protected.
+// A sealed scope binds the exact row/evidence, not a claim that metadata proves an image read.
+function verifiedU06PatternErratum(m:AuditManifest,p:AuditPatch){
+ const before:Row={
+  "learningItemId": "LI-LV3U06-G015",
+  "kind": "grammar",
+  "sourcePage": 56,
+  "pattern": "be not cut out sth（原書星號註記）",
+  "explanationZh": "教材用法標記；例句與教材題目尚未提供。",
+  "review": "source_checked_text_only",
+  "practiceMode": "read_only"
+};
+ if(m.unit!=='LV3-U06'||p.dataset!=='curriculum'
+  ||p.path!=='src/features/direct/curriculumLV3Unit6.json'||p.key!=='learningItemId'||p.id!=='LI-LV3U06-G015'
+  ||Object.keys(p.before).length!==Object.keys(before).length
+  ||!Object.entries(before).every(([key,value])=>p.before[key]===value)
+  ||Object.keys(p.after).length!==1||p.after.pattern!=="be not cut out for sth（原書星號註記）")return false;
+ const records=p.fieldEvidence?.pattern;
+ return Array.isArray(records)&&records.some(record=>{
+  if(typeof record!=='object'||record===null)return false;
+  const sources=(record as {sources?:unknown}).sources;
+  return Array.isArray(sources)&&sources.some(source=>{
+   if(typeof source!=='object'||source===null)return false;
+   const s=source as Row;
+   return s.type==='textbook_photo'&&s.file==='20260815_092400.jpg'&&s.page===56
+    &&s.sha256==='5708b6a8ae64904b56e5912d6771122ec2aa1e273d1a358ea1b59c352b8ff900'
+    &&s.directlyViewedDuringCuration===true;
+  });
+ });
+}
+
 export function validateAuditScope(m:AuditManifest,scope:AuditScope):void {
  const keys=(value:object)=>Object.keys(value).sort();
  const sameKeys=(value:object,expected:string[])=>assert.deepEqual(keys(value),[...expected].sort(),'unknown or missing contract fields');
@@ -118,6 +149,7 @@ export function validateAuditScope(m:AuditManifest,scope:AuditScope):void {
   if(p.dataset==='curriculum'){
    assert.ok(p.before.kind==='grammar'||p.before.kind==='vocabulary','unknown curriculum kind');
    fields=p.before.kind==='grammar'?['explanationZh']:['sensePos','targetMeaningZh','chapterMeaningsZh','meaningSource'];
+   if(p.before.kind==='grammar'&&verifiedU06PatternErratum(m,p))fields=['pattern'];
    if(Object.hasOwn(p.after,'meaningSource'))assert.ok(['textbook_source_review','textbook_and_dictionary_review'].includes(p.after.meaningSource as string),'invalid reviewed meaning source');
    for(const [field,value]of Object.entries(p.after).filter(([field])=>fields.includes(field))){
     assert.ok(typeof value==='string'&&value.trim(),'invalid curriculum scalar');
