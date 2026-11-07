@@ -19,3 +19,18 @@ export function buildUsagePatternItems(
     chinese: hasAlignedChinese ? chineseItems[index] : undefined,
   }));
 }
+
+export function buildUsagePatternDisplay(
+  english?: string | null,
+  chinese?: string | null,
+): { items: UsagePatternItem[]; unalignedChinese?: string } {
+  const items = buildUsagePatternItems(english, chinese);
+  const chineseCount = splitPattern(chinese).length;
+  return {
+    items,
+    // Preserve the source as one independent note. Unequal lengths do not establish pairs.
+    unalignedChinese: items.length > 0 && chineseCount > 0 && items.length !== chineseCount
+      ? chinese?.trim()
+      : undefined,
+  };
+}
