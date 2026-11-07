@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "createdAtUtc": "2026-11-07T16:23:53Z",
+  "repository": "chiehco/vocab-app",
+  "baseCommit": "99883751926bd6cb4feff70daff56c07afc130cb",
+  "candidateBranch": "assets/lv3-confirm-20261107",
+  "state": "candidate_asset_only_visual_qa_passed_not_integrated",
+  "scope": {
+    "originalAssetsRetained": true,
+    "captionsUnchanged": true,
+    "mappingsUnchanged": true,
+    "mainUntouched": true,
+    "deployed": false,
+    "appConsumerAcceptance": "Not run. This isolated candidate is not connected to any app consumer."
+  },
+  "generation": {
+    "tool": "built-in image_gen.imagegen",
+    "acceptedCalls": 2,
+    "pendingCalls": 0,
+    "uncertainOutcome": false,
+    "semanticEditing": "Only imagegen was used for visual editing.",
+    "encoding": "ImageMagick: generated PNG to WebP, quality 95, method 6; no crop or resize.",
+    "sequence": [
+      {
+        "iteration": 1,
+        "editTarget": "public/wordbeast/a/W002185.webp",
+        "promptPath": "docs/unit-audit-20261105/prompts/W002185-confirm-v2-20261107.txt",
+        "outputPngSha256": "be65ab6c2839e15636775152e079873f18da6698cdef11ae739abc790a95c476",
+        "selection": "Not selected: assembled puzzle was clear, but eyes were closed and floor plane ambiguous."
+      },
+      {
+        "iteration": 2,
+        "editTargetPngSha256": "be65ab6c2839e15636775152e079873f18da6698cdef11ae739abc790a95c476",
+        "promptPath": "docs/unit-audit-20261105/prompts/W002185-confirm-v2-refinement-20261107.txt",
+        "outputPngSha256": "4df7caec9981bf5a6aca4578324de1ec4f2f89c974435a9e108144d4836c10e3",
+        "selection": "Selected: open eyes and clearly flat coplanar puzzle."
+      }
+    ]
+  },
+  "word": "confirm",
+  "wordId": "W002185",
+  "captionEn": "The puzzle piece fits perfectly, confirming that Doudou has placed it correctly.",
+  "captionZh": "拼圖正好吻合，豆豆確認這一塊放對了。",
+  "captionSource": {
+    "path": "src/features/wordbeast/illustrationCaptions.json",
+    "gitBlobSha": "5b8e7273e0d45a88b060da9a24a9065edbcf524c",
+    "matchedBy": "word=confirm",
+    "unchanged": true
+  },
+  "source": {
+    "path": "public/wordbeast/a/W002185.webp",
+    "sha256": "a77d2e67e070921bf85de53fed7460441bc0124c46257ac016a04762643bcc9c",
+    "gitBlobSha": "f1ba5ea0f22c6d0832b3eec4f6338c6f372cd247",
+    "dimensions": [
+      1024,
+      1024
+    ],
+    "retained": true,
+    "observation": "Original Doudou holds a loose piece over an empty central slot, so placement is not yet completed."
+  },
+  "candidate": {
+    "path": "public/wordbeast/lv3-reviewed/W002185-confirm-v2-99268c449270.webp",
+    "sha256": "99268c4492700f1d99c51c8b03143dd1aebf704f45451feb90202a4360f29d2d",
+    "bytes": 57484,
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "generatedPngSha256": "4df7caec9981bf5a6aca4578324de1ec4f2f89c974435a9e108144d4836c10e3"
+  },
+  "visualQa": {
+    "sourceActuallyViewed": true,
+    "bothGeneratedPngsActuallyViewed": true,
+    "finalWebpActuallyViewed": true,
+    "characters": 1,
+    "twoShortCurvedAntennae": true,
+    "openEyesLookingTowardPuzzle": true,
+    "puzzlePieces": 3,
+    "centralPieceFullyInsertedBetweenBothNeighbors": true,
+    "piecesFlatAndCoplanar": true,
+    "emptySlots": 0,
+    "looseOrHeldPieces": 0,
+    "handsEmpty": true,
+    "watercolorAndIvoryPaperRetained": true,
+    "visibleText": false,
+    "result": "pass",
+    "observation": "Three pale-blue puzzle pieces lie flat in a shallow oblique view on the ground. The middle piece fully fills the center and joins both neighbors along two closed interlocking seams. One green Doudou has open dot eyes directed toward the assembled puzzle and empty hands."
+  },
+  "handoff": {
+    "requiresSourceShaRecheckBeforeMapping": true,
+    "preserveAllOriginalCaptions": true,
+    "preserveOriginalAssets": true,
+    "requiresActualConsumerVisualAcceptance": true,
+    "requiresIntegrationHeadChecks": true,
+    "publicationNotAuthorizedByThisCandidateManifest": true
+  }
+}
