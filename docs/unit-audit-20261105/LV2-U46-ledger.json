@@ -1,8 +1,8 @@
 {
   "unit": "LV2-U46",
-  "state": "text_saved_local_checks_complete_praise_image_pending_own_new_head_ci_pending",
+  "state": "text_own_ci_success_praise_reopened_saved_local_checks_passed_new_image_ci_pending",
   "baseBeforeCaptureCheckpoint": "cb72da3d31e85b5aa11e9b08f6e34ff8d188ec24",
-  "updatedAt": "2026-11-07T01:32:20.747Z",
+  "updatedAt": "2026-11-07T02:08:47.211Z",
   "scope": {
     "learningItems": 160,
     "vocabulary": 100,
@@ -195,7 +195,16 @@
     },
     "afterPixels": "validation/LV2-U46-after-pixel-review.json",
     "navigation": "validation/LV2-U46-navigation-events.json",
-    "limits": "All160 source items,83 general cards and135 complete examples were reopened and field-compared. All36 before image previews, praise/undoubtedly native assets and representative after/mobile screens were actually viewed. Not every after screenshot was manually reread. Praise image repair is still pending."
+    "limits": "All160 source items,83 general cards and135 complete examples were reopened and field-compared. All36 before image previews, praise/undoubtedly native assets and representative after/mobile screens were actually viewed. Not every after screenshot was manually reread. Praise image repair is still pending.",
+    "originalTextCheckpointScope": "Original text-checkpoint reopens and image-boundary fields below retain their historical values. Current praise resolution is a separate, later guarded image checkpoint.",
+    "praiseImageRepair": {
+      "evidence": "validation/LV2-U46-praise-image-integration.json",
+      "localChecks": "validation/LV2-U46-praise-local-checks.json",
+      "appRepairAccepted": true,
+      "originalAssetRetained": true,
+      "publicationReady": false,
+      "newImageHeadCi": "pending_this_new_commit"
+    }
   },
   "retainedPending": [
     {
@@ -268,14 +277,23 @@
     }
   ],
   "imageFollowups": {
-    "confirmedNewRepairPending": [
-      "praise/W001659"
-    ],
-    "evidence": "validation/LV2-U46-praise-image-followup.json",
+    "originalStateAtTextCheckpoint": {
+      "confirmedNewRepairPending": [
+        "praise/W001659"
+      ],
+      "evidence": "validation/LV2-U46-praise-image-followup.json",
+      "oldAssetRetained": true,
+      "candidateCreated": false,
+      "appRepairAccepted": false,
+      "duplicateLocalGenerationProhibited": true
+    },
+    "confirmedNewRepairPending": [],
+    "evidence": "validation/LV2-U46-praise-image-integration.json",
     "oldAssetRetained": true,
-    "candidateCreated": false,
-    "appRepairAccepted": false,
-    "duplicateLocalGenerationProhibited": true
+    "candidateCreated": true,
+    "appRepairAccepted": true,
+    "publicationReady": false,
+    "newImageHeadCi": "pending_this_new_commit"
   },
   "priorCheckpointFullCi": {
     "commit": "cb72da3d31e85b5aa11e9b08f6e34ff8d188ec24",
@@ -302,7 +320,28 @@
     "source": "Complete exact-head CI checkout, all steps and full test/build log actually read. Not a preceding-head substitute."
   },
   "newCheckpointFullCi": {
-    "state": "pending_this_new_commit"
+    "commit": "952ffe7df0a2ede8e84933690785ed455a7cdab6",
+    "run": 42324723495,
+    "job": 128257242876,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42324723495/job/128257242876",
+    "status": "completed",
+    "conclusion": "success",
+    "checkoutShaReadFromFullLog": true,
+    "testFiles": 238,
+    "tests": 1955,
+    "pythonBatches": [
+      14,
+      7,
+      90,
+      5,
+      10
+    ],
+    "lint": "success",
+    "typecheck": "success",
+    "build": "success",
+    "buildLogCompletedAtUtc": "2026-11-07T01:43:52.3002619Z",
+    "jobCompletedAtUtc": "2026-11-07T01:43:56Z",
+    "source": "Complete exact-head CI checkout, all steps and full test/build log actually read. Not a preceding-head substitute."
   },
   "releaseReconciliation": {
     "mainCommit": "0f4eb27961571ce393a1f1a2bc63f1d558bef1fb",
@@ -332,6 +371,7 @@
     "deployed": false,
     "wholeLevelReleaseSeparate": true,
     "wholeUnitImageApproval": false,
-    "frozenHistoricalCandidate": "3106a39dea97360a62a2db4d8e98300724d94fdb"
+    "frozenHistoricalCandidate": "3106a39dea97360a62a2db4d8e98300724d94fdb",
+    "scope": "Praise literal quantity repair is accepted locally. No blanket approval of all meanings, images or whole LV2 publication."
   }
 }

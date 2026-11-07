@@ -7,8 +7,9 @@ import corrections from '../../../docs/unit-audit-20261105/LV2-U46-curriculum-pa
 import formal from '../../../docs/unit-audit-20261105/LV2-U46-patches.json';
 import forms from '../../../docs/unit-audit-20261105/LV2-U46-verified-forms-patches.json';
 import notes from '../../../docs/unit-audit-20261105/LV2-U46-notes-patches.json';
-import images from '../../../docs/unit-audit-20261105/validation/LV2-U46-image-review.json';
-import praise from '../../../docs/unit-audit-20261105/validation/LV2-U46-praise-image-followup.json';
+// These assertions describe the exact text checkpoint before the later image repair.
+import images from '../../../docs/unit-audit-20261105/validation/LV2-U46-image-review-before-praise.json';
+import praise from '../../../docs/unit-audit-20261105/validation/LV2-U46-praise-before-repair.json';
 import {lv2Unit46BeforeAudit as restore} from './lv2Unit46Audit.testSupport';
 import {buildUsagePatternItems} from '../vocabulary/usagePattern';
 type Row=Record<string,unknown>;

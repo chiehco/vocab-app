@@ -4,13 +4,16 @@ import {createHash} from 'node:crypto';
 import {beforeBuildingRegistry,beforeBuildingGallery,validateBuildingProof,buildingHash} from '../../../scripts/building_image_repair_guard.mjs';
 import proof from '../../../docs/unit-audit-20261105/LV2-U44-building-image-repair.json';
 import published from './lv1ReviewedImages.json';
-import general from './auditedWordIllustrations.json';
+import currentGeneral from './auditedWordIllustrations.json';
+import {beforePraiseGeneral} from '../../../scripts/praise_image_repair_guard.mjs';
+import praiseProof from '../../../docs/unit-audit-20261105/LV2-U46-praise-image-repair.json';
 import examplePairs from './approvedExampleImages.json';
 import approvals from '../../../scripts/approvals/lv1-images-20260922.json';
 import unit44 from '../direct/curriculumLV2Unit44.json';
 import {approvedWordIllustration,approvedCurriculumIllustration,approvedLV1Images} from './approvedCurriculum';
 import {getWordBeastAsset} from '../wordbeast/wordBeastAssets';
 import {resolveWordImageClue} from '../../quiz/imageClue';
+const general=beforePraiseGeneral(currentGeneral,praiseProof);
 const sha=(p:string)=>createHash('sha256').update(readFileSync(p)).digest('hex');
 it('keeps original assets approvals and independent practice while repairing only the telescope picture',()=>{
  validateBuildingProof(proof);expect(sha('public/'+proof.before.illustration.path)).toBe(proof.originalImageSha256);expect(sha('public/'+proof.after.illustration.path)).toBe(proof.replacementImageSha256);
