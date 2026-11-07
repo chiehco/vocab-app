@@ -127,7 +127,7 @@
       "itemCount": 134,
       "vocabularyCount": 105,
       "grammarCount": 29,
-      "status": "prepared_ready_fixture_validated",
+      "status": "applied_awaiting_runtime_and_technical_validation",
       "manifest": "U06-patches.json",
       "scope": "U06-scope.json",
       "beforeCapture": "U06-before-capture.json",
@@ -136,9 +136,14 @@
       "rowCount": 56,
       "newVerbFormRows": 13,
       "parentCheckpoint": "starter-media-actual-names-v1",
-      "validation": "Final dry-run has zero writes; all 144 raw/LF inputs and 719 frozen before artifacts are unchanged. U06 remains prepared/ready in product before state, not applied, released, or deployed.",
+      "validation": "Actually applied six approved files in the LV3 audit worktree; the main branch remains unpublished for this batch. Six after raw/LF hashes and raw backups, 138 unchanged raw/LF inputs, committed receipt, zero-write idempotence with no new receipt, current 144-input checkpoint, and immediate migration-parent 144 normalized-input reconstruction passed. Full-card runtime after and final scoped technical validation are pending. Not published or phone-validated.",
       "fixtureValidation": "U06-fixture-validation.md",
-      "fixtureEvidence": "Nine distinct methods have passing evidence: eight from the original 8/9 run, plus one complete focused method after exact harness repair; not a single-run 9/9 or full rerun. TypeScript parity 1/1 passed."
+      "fixtureEvidence": "Nine distinct methods have passing evidence: eight from the original 8/9 run, plus one complete focused method after exact harness repair; not a single-run 9/9 or full rerun. TypeScript parity 1/1 passed.",
+      "preparationCheckpoint": {
+        "status": "prepared_ready_fixture_validated",
+        "validation": "Final dry-run has zero writes; all 144 raw/LF inputs and 719 frozen before artifacts are unchanged. U06 remains prepared/ready in product before state, not applied, released, or deployed."
+      },
+      "application": "U06-application.json"
     },
     {
       "unit": 7,

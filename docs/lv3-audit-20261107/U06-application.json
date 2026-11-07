@@ -1,0 +1,150 @@
+{
+  "unit": "LV3-U06",
+  "state": "applied_awaiting_runtime_and_technical_validation",
+  "applicationTarget": "actual LV3 audit worktree on content/lv3-unit-audit-20261107, not TEMP fixture or the main branch",
+  "preparedAtCommit": "1250c580ace4db731e95c4fb7b66704fafb371f5",
+  "manifestHash": "c59130eba2f8aeae6f0012dbdf1b052f3663dbbdebfcf875d183fddfd0730581",
+  "scopeHash": "e00d9e122b980f9452f2c3be0d4ea10fc5549f37e044622e2d96342d98a9290d",
+  "parentCheckpoint": {
+    "kind": "migration",
+    "migrationId": "starter-media-actual-names-v1",
+    "manifestHash": "88ba19b48f296fc26b7abdac6468bc1dc26f474523ac78b309aabfed0456578b"
+  },
+  "fieldCount": 144,
+  "rowCount": 56,
+  "newVerbFormRows": 13,
+  "productWrites": 6,
+  "receipt": "output/lv3-audit-20261107/transactions/20261107T203251310580Z/transaction.json",
+  "receiptCreatedAtUtc": "2026-11-07T20:32:51.310580+00:00",
+  "receiptState": "committed",
+  "afterHashes": {
+    "public/data/v1/examples.json": "e3013480fbd3d227daa603a4eb7fa48c8f7af56ae3a19ceac771d581f6dc41cc",
+    "public/data/v1/meta.json": "d7a706a28c472e1a4ddba73e10693547c625a3875d7e9d9de7ded8996a1241d0",
+    "public/data/v1/notes.json": "00b6df916a469155023b6f39264addac49015874ef4d83b2ea5818afbaa664bf",
+    "public/data/v1/sa-pack.json": "f92450744cde5a7a9475130593da3f17296a519052004cfba8258cbfefbefb25",
+    "public/data/v1/words.json": "c056edf2f248d49fe670a314405a64f49db25402948f0b535b12c340077cfd69",
+    "src/features/direct/curriculumLV3Unit6.json": "eda2bebd963d6e6b3606984071c644de378d163d9b2a7a92d195d499c81d9e40"
+  },
+  "afterLfHashes": {
+    "public/data/v1/examples.json": "e3013480fbd3d227daa603a4eb7fa48c8f7af56ae3a19ceac771d581f6dc41cc",
+    "public/data/v1/meta.json": "d7a706a28c472e1a4ddba73e10693547c625a3875d7e9d9de7ded8996a1241d0",
+    "public/data/v1/notes.json": "00b6df916a469155023b6f39264addac49015874ef4d83b2ea5818afbaa664bf",
+    "public/data/v1/sa-pack.json": "f92450744cde5a7a9475130593da3f17296a519052004cfba8258cbfefbefb25",
+    "public/data/v1/words.json": "c056edf2f248d49fe670a314405a64f49db25402948f0b535b12c340077cfd69",
+    "src/features/direct/curriculumLV3Unit6.json": "eda2bebd963d6e6b3606984071c644de378d163d9b2a7a92d195d499c81d9e40"
+  },
+  "beforeBackupsVerified": true,
+  "rawAndLfBackupsMatchIndependentCapture": 6,
+  "unchangedRawAndLfInputsVerified": 138,
+  "inputDomain": 144,
+  "currentCheckpointGuardsVerified": 144,
+  "chainStatus": "committed",
+  "readiness": "ready",
+  "repeat": {
+    "state": "already_applied",
+    "patchCount": 56,
+    "files": [
+      "public/data/v1/examples.json",
+      "public/data/v1/meta.json",
+      "public/data/v1/notes.json",
+      "public/data/v1/sa-pack.json",
+      "public/data/v1/words.json",
+      "src/features/direct/curriculumLV3Unit6.json"
+    ],
+    "productWrites": 0
+  },
+  "repeatReceiptCountUnchanged": true,
+  "u06ReceiptCount": 1,
+  "repeatInputSnapshotsUnchanged": 144,
+  "recoveryClear": true,
+  "immediateMigrationParentProjection": {
+    "normalizedInputsEqualIndependentCapture": 144,
+    "temporaryOnly": true,
+    "sourceInputsUnchanged": 144,
+    "boundary": "Normalized LF reconstruction; exact raw before bytes are retained in all six actual transaction backups."
+  },
+  "invariants": {
+    "fullSourceRowsExactlyApproved": true,
+    "allDataRowCountsAndOrderedIdsUnchanged": true,
+    "originalSentencesStatusesAndCaptionsUnchanged": true,
+    "protectedOriginalPackFieldsChecked": 85437,
+    "starterMediaRowsUnchanged": 1128,
+    "newVerbFormsObjects": 13,
+    "newVerbFormsStatusBoundary": "The 13 new verbForms objects contain approved status; every original row.status is unchanged.",
+    "sourceIngestionBuilderAndSensesUnchanged": true,
+    "excelAndSrsNotModified": true
+  },
+  "beforeCapture": {
+    "captureFileSha256": "1b346d84081f545734d3c1372d23d250e5f681a82f33c8c1006f281235baf58b",
+    "frozenIndexSha256": "04f0c33ad57e3e207a24ea73ff605d04f7069c50fda45a02ef2979fc9f8b6036",
+    "frozenArtifactsUnchanged": 719
+  },
+  "acceptedAndScopeUnchanged": true,
+  "postapplicationVerifierHistory": {
+    "firstRun": "failed on an overly broad nested-list length assumption for the approved rocket posAll change; actual transaction remained committed and chain stayed prepared",
+    "correction": "Only the exact sealed-manifest word posAll before/after values are accepted; all original logs and verifier versions retained. No product or production-guard change and no application retry.",
+    "exactApprovedPosAllChanges": [
+      {
+        "wordId": "W002744",
+        "field": "posAll",
+        "before": [
+          "n."
+        ],
+        "after": [
+          "n.",
+          "v."
+        ],
+        "source": "exact ready manifest patch"
+      },
+      {
+        "wordId": "W002835",
+        "field": "posAll",
+        "before": [
+          "n."
+        ],
+        "after": [
+          "n.",
+          "v."
+        ],
+        "source": "exact ready manifest patch"
+      },
+      {
+        "wordId": "W004576",
+        "field": "posAll",
+        "before": [
+          "adj."
+        ],
+        "after": [
+          "adj.",
+          "n."
+        ],
+        "source": "exact ready manifest patch"
+      },
+      {
+        "wordId": "W005239",
+        "field": "posAll",
+        "before": [
+          "adj."
+        ],
+        "after": [
+          "adj.",
+          "n."
+        ],
+        "source": "exact ready manifest patch"
+      }
+    ],
+    "evidence": "postapply-harness-correction.json"
+  },
+  "fixtureHistory": {
+    "report": "U06-fixture-validation.md",
+    "evidence": "Nine distinct methods have passing evidence: eight from the original 8/9 run, plus one complete focused method after exact harness repair; not a single-run 9/9 or full rerun. TypeScript parity 1/1 passed.",
+    "originalFullRunResultStillUnsuccessful": true,
+    "rerunDuringActualApplication": false
+  },
+  "runtimeAfter": "pending full-card after validation",
+  "technicalValidation": "pending final scoped technical checks",
+  "release": "not published",
+  "physicalPhone": "not tested",
+  "evidenceDirectory": "output/lv3-audit-20261107/u06-main-application-20261107T203122Z",
+  "summary": "The official applier wrote the six approved files in the actual LV3 audit worktree once. Actual after hashes, six raw backups, 138 unchanged raw/LF inputs, one committed receipt, idempotent zero writes, current 144 guards, and the immediate migration-parent normalized 144-input reconstruction passed. Full-card runtime after QA and final technical validation remain pending."
+}
