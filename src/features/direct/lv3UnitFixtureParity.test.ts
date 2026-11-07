@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {readFileSync,writeFileSync} from 'node:fs';
 import {it} from 'vitest';
-import {auditHash,loadLV3Chain,projectAuditStep,inversePublishedAuditStep,lv3AfterUnitFile,lv3AfterUnitPublishedText} from './lv3Audit.testSupport';
+import {isAuditUnitStep,auditHash,loadLV3Chain,projectAuditStep,inversePublishedAuditStep,lv3AfterUnitFile,lv3AfterUnitPublishedText} from './lv3Audit.testSupport';
 
 // Explicit opt-in: requires the independent before capture and Python TEMP outputs.
 // Default suites retain their original coverage and do not fabricate these artifacts.
@@ -15,8 +15,8 @@ it.runIf(Boolean(process.env.LV3_UNIT_FIXTURE_PARITY))('matches every row and no
  const rawHash=(s:string)=>createHash('sha256').update(s).digest('hex');
  const expected=read(output+'python-parity.json') as {manifestHash:string;patchCount:number;physicalFileCount:number;afterHashes:Record<string,string>;normalizedBeforeHashes:Record<string,string>};
  const chain=loadLV3Chain(),index=chain.findIndex(x=>x.entry.unit===`LV3-${unit}`);
- assert.ok(index>0); const {manifest,scope}=chain[index];assert.ok(scope);
- const parent=chain[index-1].entry.unit;
+ assert.ok(index>0); const step=chain[index];assert.ok(isAuditUnitStep(step));const {manifest,scope}=step;assert.ok(scope);
+ const parent=chain[index-1].entry.unit??chain[index-1].entry.migrationId;assert.ok(parent);
  assert.equal(auditHash(manifest),expected.manifestHash);
  assert.equal(manifest.patches.length,expected.patchCount);
  const paths=Object.keys(manifest.files!);

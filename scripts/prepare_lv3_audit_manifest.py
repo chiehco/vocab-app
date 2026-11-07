@@ -41,7 +41,7 @@ def compile_candidate(root, unit, accepted, capture):
     p.verify_checkpoint(root, parent, anchor)
     ledger = p.read_json(root / p.DOCS / 'LV3-ledger.json')
     catalog = {'LV3-U' + str(x['unit']).zfill(2): x['source'] for x in ledger['units']}
-    p.require(unit in catalog and unit not in {e['unit'] for e, _, _ in chain}, 'Unknown or duplicate unit')
+    p.require(unit in catalog and unit not in {e.get('unit') for e, _, _ in chain}, 'Unknown or duplicate unit')
     p.require(accepted.get('unit', '').replace(' ', '-') == unit, 'Accepted unit mismatch')
     p.require(not any(accepted.get(k) for k in ('conflicts','noops','sourceGaps')), 'Unresolved proposal findings')
     p.validate_curriculum_identity(unit, catalog[unit], p.read_json(p.safe_path(root, catalog[unit])))

@@ -290,7 +290,8 @@ def run(root, manifest_path, apply=False):
     import lv3_audit_pipeline as pipeline
     pipeline.assert_recovery_clear(root)
     manifest = read_json(Path(manifest_path))
-    runner = pipeline.run_v2 if manifest.get('schemaVersion') == 2 else _run_v1
+    runner = (pipeline.media_migration.run if manifest.get('schemaVersion') == 3
+              else pipeline.run_v2 if manifest.get('schemaVersion') == 2 else _run_v1)
     result = runner(root, manifest_path, False)
     if not apply:
         pipeline.assert_recovery_clear(root)

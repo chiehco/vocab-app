@@ -16,6 +16,7 @@ import tempfile
 import shutil
 
 import apply_lv3_unit_audit as v1
+import lv3_starter_media_migration as media_migration
 
 DOCS = 'docs/lv3-audit-20261107'
 CHAIN = DOCS + '/chain.json'
@@ -260,10 +261,10 @@ def load_chain(root):
     root = Path(root)
     chain = read_json(safe_path(root, CHAIN))
     require(set(chain) == {'schemaVersion', 'baseline', 'anchor', 'anchorHash', 'entries'}
-            and chain['schemaVersion'] == 1 and chain['baseline'] == v1.BASELINE, 'Invalid chain')
+            and chain['schemaVersion'] in {1, 2} and chain['baseline'] == v1.BASELINE, 'Invalid chain')
     entries = chain['entries']
     require(entries and entries[0]['unit'] == 'LV3-U01', 'Missing U01 chain anchor')
-    require(len({e['unit'] for e in entries}) == len(entries), 'Duplicate chain unit')
+    require(len({media_migration.identity(e) for e in entries}) == len(entries), 'Duplicate chain unit')
     anchor = read_json(safe_path(root, DOCS + '/' + chain['anchor']))
     require(sha(anchor) == chain['anchorHash'] == U01_ANCHOR_HASH
             and anchor['baseline'] == v1.BASELINE, 'Anchor mismatch')
@@ -277,14 +278,30 @@ def load_chain(root):
     prepared_seen = False
     loaded = []
     for entry in entries:
-        require(set(entry) == {'unit', 'path', 'manifestHash', 'status'}, 'Unknown chain entry')
+        migration_entry = entry.get('kind') == 'migration'
+        require(set(entry) == ({'kind', 'migrationId', 'path', 'manifestHash', 'status'} if migration_entry
+                               else {'unit', 'path', 'manifestHash', 'status'}), 'Unknown chain entry')
+        require(not migration_entry or chain['schemaVersion'] == 2, 'Migration needs typed chain envelope')
         require(entry['status'] in {'committed', 'prepared'}, 'Unknown chain status')
         require(not prepared_seen or entry['status'] == 'prepared', 'Committed chain gap')
         prepared_seen |= entry['status'] == 'prepared'
         manifest = read_json(safe_path(root, DOCS + '/' + entry['path']))
-        require(sha(manifest) == entry['manifestHash'] and manifest.get('unit') == entry['unit'],
+        require(sha(manifest) == entry['manifestHash'] and
+                (manifest.get('migrationId') if migration_entry else manifest.get('unit')) == media_migration.identity(entry),
                 'Manifest chain hash/identity mismatch')
         scope = None
+        if migration_entry:
+            require(media_migration.is_migration(manifest), 'Wrong migration schema')
+            require(loaded and loaded[-1][0].get('unit') == 'LV3-U05'
+                    and loaded[-1][0]['status'] == 'committed', 'Migration must immediately follow committed U05')
+            require(manifest['parentManifestHash'] == previous, 'Broken migration parent chain')
+            require(previous_inputs is not None, 'Predecessor checkpoint not finalized')
+            media_migration.validate(manifest, set(anchor['inputs']), previous_inputs)
+            media_migration.verified_fixtures(root, manifest)
+            previous_inputs = dict(manifest['afterInputs'])
+            loaded.append((entry, manifest, None))
+            previous = entry['manifestHash']
+            continue
         if manifest['schemaVersion'] == 2:
             require(manifest['parentManifestHash'] == previous, 'Broken parent chain')
             scope = read_json(safe_path(root, DOCS + '/' + manifest['scope']))
@@ -324,6 +341,8 @@ def load_chain(root):
 
 def known_state(root, manifest):
     """Classify a single exact step; unchanged files are checked separately."""
+    if media_migration.is_migration(manifest):
+        return media_migration.known_state(root, manifest)
     c = contract(manifest)
     possible = {'before', 'after'}
     for path, guard in c['files'].items():
@@ -338,6 +357,8 @@ def known_state(root, manifest):
 
 
 def verify_inputs(root, manifest, side):
+    if media_migration.is_migration(manifest):
+        return media_migration.verify_inputs(root, manifest, side)
     expected = v1.input_paths(root)
     changed = set(contract(manifest)['files'])
     require(set(manifest['unchangedInputs']) == expected - changed - DERIVED,
@@ -354,7 +375,7 @@ def verify_inputs(root, manifest, side):
 def verify_checkpoint(root, manifest, anchor):
     """Validate the selected checkpoint even when no successor must be reversed."""
     root = Path(root)
-    if manifest['unit'] == 'LV3-U01':
+    if manifest.get('unit') == 'LV3-U01':
         require(set(anchor['inputs']) == v1.input_paths(root), 'Anchor input set changed')
         for path, digest in anchor['inputs'].items():
             require(v1.file_hash(safe_path(root, path)) == digest, f'Anchor input drift: {path}')
@@ -374,7 +395,7 @@ def project_checkpoint(root, destination, target='LV3-U01'):
             'Projection destination must be new and distinct')
     _, anchor, loaded = load_chain(root)
     committed = [x for x in loaded if x[0]['status'] == 'committed']
-    targets = [i for i, x in enumerate(committed) if x[0]['unit'] == target]
+    targets = [i for i, x in enumerate(committed) if media_migration.identity(x[0]) == target]
     require(len(targets) == 1, 'Unknown checkpoint target')
     tail = committed[targets[0] + 1:]
     verify_checkpoint(root, committed[-1][1], anchor)
@@ -384,6 +405,9 @@ def project_checkpoint(root, destination, target='LV3-U01'):
         target_path.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(safe_path(root, path), target_path)
     for _, manifest, scope in reversed(tail):
+        if media_migration.is_migration(manifest):
+            media_migration.inverse(root, destination, manifest)
+            continue
         require(known_state(destination, manifest) == 'after', 'Inverse chain state mismatch')
         verify_inputs(destination, manifest, 'after')
         documents = {p: read_json(safe_path(destination, p)) for p in manifest['files']}

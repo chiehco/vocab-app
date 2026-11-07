@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {it} from 'vitest';
 import {readFileSync} from 'node:fs';
-import {auditHash,lv3AfterUnitFile,lv3AfterUnitPublishedText,reverseFileAuditSteps,projectAuditStep,validateAuditScope,loadLV3Chain,type AuditManifest,type AuditScope,type AuditPatch} from './lv3Audit.testSupport';
+import {isAuditUnitStep,auditHash,lv3AfterUnitFile,lv3AfterUnitPublishedText,reverseFileAuditSteps,projectAuditStep,validateAuditScope,loadLV3Chain,type AuditManifest,type AuditScope,type AuditPatch} from './lv3Audit.testSupport';
 
 function fixture(){
  const path='src/features/direct/curriculumUnit2.json' as const;
@@ -36,7 +36,7 @@ it('rejects scope escalation and duplicate patches',()=>{
  assert.throws(()=>validateAuditScope(good.manifest,good.scope));
 });
 it('preserves the pinned U01 chain anchor and registered U02 step',()=>{
- const chain=loadLV3Chain();assert.equal(chain[0].entry.unit,'LV3-U01');
+ const chain=loadLV3Chain().filter(isAuditUnitStep);assert.equal(chain[0].entry.unit,'LV3-U01');
  assert.equal(chain[0].entry.manifestHash,'317ab4353c8a462071ab98efb9604f7f26d67f427ffe6c7d24b5a71a768b5309');
  const u2=chain.find(x=>x.entry.unit==='LV3-U02');assert.ok(u2);
  // This test follows readiness without hardcoding the future application state.
@@ -58,7 +58,7 @@ it('rejects changed collection contracts even when rehashed in scope',()=>{
  }
 });
 it('requires exact scoped POS transitions and supported form-source evidence',()=>{
- const step=loadLV3Chain().find(x=>x.entry.unit==='LV3-U02')!;
+ const step=loadLV3Chain().filter(isAuditUnitStep).find(x=>x.entry.unit==='LV3-U02')!;
  const m=structuredClone(step.manifest),scope=structuredClone(step.scope!);
  const pos=m.patches.find(p=>p.id==='W002947')!;pos.after.pos='n.';
  assert.throws(()=>validateAuditScope(m,scope),/exact scope values/);
@@ -70,7 +70,7 @@ it('requires exact scoped POS transitions and supported form-source evidence',()
 });
 
 it('guards the latest committed checkpoint and exact historical U02 while rejecting unknown targets',()=>{
- const chain=loadLV3Chain(),committed=chain.filter(x=>x.entry.status==='committed');
+ const chain=loadLV3Chain().filter(isAuditUnitStep),committed=chain.filter(x=>x.entry.status==='committed');
  const latest=committed[committed.length-1],u2=committed.find(x=>x.entry.unit==='LV3-U02');
  assert.ok(latest);assert.ok(u2);
  const path='public/data/v1/notes.json',value=JSON.parse(readFileSync(path,'utf8'));

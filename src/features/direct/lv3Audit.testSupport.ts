@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {readFileSync} from 'node:fs';
 import {lv3Unit1BeforeAudit} from './lv3Unit1Audit.testSupport';
+import {BUILDER,PACK,MIGRATION_ID,validateStarterMediaMigration,inverseStarterMediaMigrationNormalized,type StarterMediaMigration} from './starterMediaMigration.testSupport';
 
 type Row = Record<string, unknown>;
 type Collection = {path:string; rowsField:string|null; key:string};
@@ -9,7 +10,11 @@ type FileGuard = {beforeHash:string;afterHash:string;beforeByteHash?:string;afte
 export type AuditPatch = {dataset:string;path:string;key:string;id:string;before:Row;after:Row;reason:string;evidence?:unknown[];fieldEvidence?:Record<string,unknown[]>};
 export type AuditManifest = {beforeMeta?:Row;beforePackMeta?:Row;afterMeta?:Row|null;unchangedInputs?:Record<string,string>;derivedBefore?:Record<string,string>;derivedAfter?:Record<string,string>|null;readiness?:string;schemaVersion:number;unit:string;baseline:string;parentManifestHash?:string;scope?:string;scopeHash?:string;collections?:Record<string,Collection>;files?:Record<string,FileGuard>;datasets?:Record<string,FileGuard&Collection>;patches:AuditPatch[]};
 export type AuditScope = {schemaVersion:number;unit:string;baseline:string;collections:Record<string,Collection>;rows:{dataset:string;id:string;beforeHash:string;after:Row}[]};
-type Entry = {unit:string;path:string;manifestHash:string;status:'committed'|'prepared'};
+type Entry = {unit?:string;kind?:'migration';migrationId?:string;path:string;manifestHash:string;status:'committed'|'prepared'};
+type Manifest=AuditManifest|StarterMediaMigration;
+const isMigration=(m:Manifest):m is StarterMediaMigration=>m.schemaVersion===3;
+export const isAuditUnitStep=(step:{entry:Entry;manifest:Manifest;scope?:AuditScope}):step is {entry:Entry&{unit:string};manifest:AuditManifest;scope:AuditScope|undefined}=>!isMigration(step.manifest)&&typeof step.entry.unit==='string';
+const migrationLoad=(path:string)=>{assert.ok(path&&!path.includes('..')&&!path.includes('\\')&&!path.includes(':')&&!path.startsWith('/'));return readFileSync(new URL('../../../'+path,import.meta.url),'utf8');};
 const BASELINE='99883751926bd6cb4feff70daff56c07afc130cb';
 const U01_ANCHOR_HASH='6008609dda537f69ef0880d6482c713b1e6e75ec0fa8c3a4af71cdee9b08e4f0';
 const U01_MANIFEST_HASH='317ab4353c8a462071ab98efb9604f7f26d67f427ffe6c7d24b5a71a768b5309';
@@ -154,9 +159,9 @@ export function validateAuditScope(m:AuditManifest,scope:AuditScope):void {
 
 export function loadLV3Chain(){
  const chain=read('chain.json') as {schemaVersion:number;baseline:string;anchor:string;anchorHash:string;entries:Entry[]};
- assert.equal(chain.schemaVersion,1);assert.equal(chain.baseline,BASELINE);
+ assert.ok([1,2].includes(chain.schemaVersion));assert.equal(chain.baseline,BASELINE);
  assert.equal(chain.entries[0]?.unit,'LV3-U01');
- assert.equal(new Set(chain.entries.map(e=>e.unit)).size,chain.entries.length);
+ assert.equal(new Set(chain.entries.map(e=>e.kind==='migration'?e.migrationId:e.unit)).size,chain.entries.length);
  const anchor=read(chain.anchor) as {inputs:Record<string,string>};assert.equal(auditHash(anchor),chain.anchorHash);assert.equal(chain.anchorHash,U01_ANCHOR_HASH);
  assert.equal(chain.entries[0].manifestHash,U01_MANIFEST_HASH);assert.equal(chain.entries[0].status,'committed');
  const ledger=read('LV3-ledger.json') as {units:{unit:number;source:string}[]};
@@ -164,10 +169,19 @@ export function loadLV3Chain(){
  let previousInputs:Record<string,string>|null={...anchor.inputs};
  const derived=['public/data/v1/meta.json','public/data/v1/sa-pack.json'];
  let previous:string|undefined,prepared=false;
- return chain.entries.map(e=>{
+ return chain.entries.map((e,index)=>{
   assert.ok(e.status==='committed'||e.status==='prepared');
   assert.ok(!prepared||e.status==='prepared','committed chain gap');prepared ||= e.status==='prepared';
-  const manifest=read(e.path) as AuditManifest;
+  const candidate=read(e.path) as Manifest;
+  if(e.kind==='migration'){
+   assert.equal(chain.schemaVersion,2);assert.deepEqual(Object.keys(e).sort(),['kind','migrationId','path','manifestHash','status'].sort());
+   assert.equal(e.migrationId,MIGRATION_ID);assert.equal(chain.entries[index-1]?.unit,'LV3-U05','migration position');assert.equal(chain.entries[index-1]?.status,'committed','migration predecessor must be committed');
+   assert.ok(isMigration(candidate));assert.equal(auditHash(candidate),e.manifestHash);assert.equal(candidate.parentManifestHash,previous);assert.ok(previousInputs);
+   validateStarterMediaMigration(candidate,migrationLoad,previousInputs);previousInputs={...candidate.afterInputs};previous=e.manifestHash;
+   return {entry:e,manifest:candidate,scope:undefined};
+  }
+  assert.equal(e.kind,undefined,'unknown chain kind');assert.deepEqual(Object.keys(e).sort(),['unit','path','manifestHash','status'].sort(),'unknown chain entry fields');assert.ok(e.unit);assert.ok(!isMigration(candidate),'untyped migration');
+  const manifest=candidate;
   assert.equal(auditHash(manifest),e.manifestHash);assert.equal(manifest.unit,e.unit);assert.equal(manifest.baseline,BASELINE);
   let scope:AuditScope|undefined;
   if(manifest.schemaVersion===2){
@@ -239,25 +253,27 @@ function reverseRows<T>(m:AuditManifest,dataset:string,value:T,allowMissing:bool
 
 function checkpoint(afterUnit:string){
  const chain=stableChain(),committed=chain.filter(x=>x.entry.status==='committed');
- const positions=committed.flatMap((x,i)=>x.entry.unit===afterUnit?[i]:[]);
+ const positions=committed.flatMap((x,i)=>(x.entry.unit??x.entry.migrationId)===afterUnit?[i]:[]);
  assert.equal(positions.length,1,'unknown or uncommitted checkpoint');
  const index=positions[0],anchor=read('U01-checkpoint.json') as {inputs:Record<string,string>};
  const bytes={...anchor.inputs},semantic:Record<string,string>={};
  for(const step of committed.slice(0,index+1)){
+  if(isMigration(step.manifest)){Object.assign(bytes,step.manifest.afterInputs);const proof=validateStarterMediaMigration(step.manifest,migrationLoad);semantic[BUILDER]=auditHash(proof.texts.afterBuilder.replace(/\r\n/g,'\n'));continue;}
   for(const [path,g]of Object.entries(auditContract(step.manifest).files)){
    semantic[path]=g.afterHash;if(g.afterByteHash)bytes[path]=g.afterByteHash;
   }
   Object.assign(bytes,step.manifest.derivedAfter??{});
+  if(step.manifest.derivedAfter?.[PACK])delete semantic[PACK];
  }
  const later=committed.slice(index+1);
- for(const step of later)for(const [path,g]of Object.entries(auditContract(step.manifest).files))if(!semantic[path])semantic[path]=g.beforeHash;
+ for(const step of later){if(isMigration(step.manifest)){const proof=validateStarterMediaMigration(step.manifest,migrationLoad);if(!semantic[BUILDER])semantic[BUILDER]=auditHash(proof.texts.beforeBuilder.replace(/\r\n/g,'\n'));continue;}for(const [path,g]of Object.entries(auditContract(step.manifest).files))if(!semantic[path])semantic[path]=g.beforeHash;}
  return {later,bytes,semantic};
 }
 
 export function lv3AfterUnitRows<T>(afterUnit:string,dataset:string,value:T,options:{allowMissing?:boolean}={}):T {
  const name=dataset.replace(/\.json$/,''),{later}=checkpoint(afterUnit);
  let copy=structuredClone(value);
- for(const x of [...later].reverse())copy=reverseRows(x.manifest,name,copy,options.allowMissing??false);
+ for(const x of [...later].reverse())if(!isMigration(x.manifest))copy=reverseRows(x.manifest,name,copy,options.allowMissing??false);
  return copy;
 }
 export function lv3AfterUnit1Rows<T>(dataset:string,value:T,options:{allowMissing?:boolean}={}):T {
@@ -267,10 +283,18 @@ export function lv3BeforeAudit<T>(dataset:string,value:T,options:{allowMissing?:
  return lv3Unit1BeforeAudit(dataset,lv3AfterUnit1Rows(dataset,value,options),options);
 }
 
-export function reverseFileAuditSteps<T>(steps:{manifest:AuditManifest;scope?:AuditScope}[],path:string,value:T):T {
+export function reverseFileAuditSteps<T>(steps:{manifest:Manifest;scope?:AuditScope}[],path:string,value:T,loadMigration=migrationLoad):T {
  let out=structuredClone(value);
  for(const {manifest,scope} of [...steps].reverse()){
+  if(isMigration(manifest)){
+   if(path===PACK){const proof=validateStarterMediaMigration(manifest,loadMigration);assert.deepEqual(out,proof.after,'migration whole pack drift');const pack=out as Row;for(const d of [...manifest.delta].reverse()){assert.deepEqual((pack.media as Row[])[d.afterIndex],d.row);(pack.media as Row[]).splice(d.afterIndex,1);}pack.meta=structuredClone(manifest.beforePackMeta);assert.deepEqual(pack,proof.before,'migration semantic inverse');}
+   else if(path===BUILDER){assert.equal(typeof out,'string');out=inverseStarterMediaMigrationNormalized(manifest,path,out as string,loadMigration) as T;}
+   continue;
+  }
   if(manifest.schemaVersion===2){assert.ok(scope);validateAuditScope(manifest,scope);}
+  if(manifest.schemaVersion===2&&(path===PACK||path==='public/data/v1/meta.json')){
+   assert.ok(scope);const text=JSON.stringify(out,null,path===PACK?undefined:2)+'\n';out=JSON.parse(inversePublishedAuditStep(manifest,scope,path,text)) as T;continue;
+  }
   const c=auditContract(manifest),guard=c.files[path];if(!guard)continue;
   for(const [name,col]of Object.entries(auditContract(manifest).collections))if(col.path===path&&['curriculum','grammarQuestions'].includes(name))validateCurriculumIdentity(manifest.unit,path,out);
   assert.equal(auditHash(out),guard.afterHash,'unknown whole-file drift');
@@ -287,11 +311,14 @@ export function lv3AfterUnitFile<T>(afterUnit:string,path:string,value:T):T {
  const state=checkpoint(afterUnit),out=reverseFileAuditSteps(state.later,path,value);
  if(state.semantic[path])assert.equal(auditHash(out),state.semantic[path],'target checkpoint semantic drift');
  else if(state.bytes[path]){
+  if(path===PACK||path==='public/data/v1/meta.json'){
+   const raw=JSON.stringify(out,null,path===PACK?undefined:2)+'\n';assert.equal(createHash('sha256').update(raw).digest('hex'),state.bytes[path],'target checkpoint derived drift');return out;
+  }
   // Authenticate exact original formatting before comparing parsed untouched data.
   const raw=readFileSync(new URL('../../../'+path,import.meta.url),'utf8').replace(/\r\n/g,'\n');
   const digest=createHash('sha256').update(raw).digest('hex');
   assert.equal(digest,state.bytes[path],'target checkpoint byte drift');
-  assert.deepEqual(out,JSON.parse(raw),'target checkpoint semantic drift');
+  assert.deepEqual(out,path===BUILDER?raw:JSON.parse(raw),'target checkpoint semantic drift');
  }
  return out;
 }
@@ -344,6 +371,7 @@ export function lv3AfterUnitPublishedText(afterUnit:string,path:string,text:stri
  const state=checkpoint(afterUnit);
  let out=text;
  for(const {manifest,scope} of [...state.later].reverse()){
+  if(isMigration(manifest)){out=inverseStarterMediaMigrationNormalized(manifest,path,out,migrationLoad);continue;}
   assert.ok(scope);out=inversePublishedAuditStep(manifest,scope,path,out);
  }
  if(state.bytes[path])assert.equal(createHash('sha256').update(out).digest('hex'),state.bytes[path],'target checkpoint raw drift');

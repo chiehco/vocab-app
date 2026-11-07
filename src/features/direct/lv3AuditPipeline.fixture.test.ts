@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {readFileSync,writeFileSync} from 'node:fs';
 import {it} from 'vitest';
-import {auditHash,loadLV3Chain,projectAuditStep,inversePublishedAuditStep,lv3AfterUnit1File,lv3AfterUnit1PublishedText,lv3AfterUnitFile,lv3AfterUnitPublishedText} from './lv3Audit.testSupport';
+import {isAuditUnitStep,auditHash,loadLV3Chain,projectAuditStep,inversePublishedAuditStep,lv3AfterUnit1File,lv3AfterUnit1PublishedText,lv3AfterUnitFile,lv3AfterUnitPublishedText} from './lv3Audit.testSupport';
 
 // Opt-in real parity requires the independent capture, sealed manifest and
 // Python-applied TEMP fixture artifacts. Default full suites do not fabricate it.
@@ -12,7 +12,7 @@ it.runIf(process.env.LV3_PIPELINE_FIXTURE_PARITY==='1')('matches all 37 Python f
  const normalized=(p:string)=>readFileSync(p,'utf8').replace(/\r\n/g,'\n');
  const rawHash=(s:string)=>createHash('sha256').update(s).digest('hex');
  const expected=read(output+'python-parity.json') as {manifestHash:string;patchCount:number;physicalFileCount:number;beforeHashes:Record<string,string>;afterHashes:Record<string,string>;inverseHashes:Record<string,string>;inverseByteHashes:Record<string,string>;derivedBefore:Record<string,string>;derivedAfter:Record<string,string>};
- const step=loadLV3Chain().find(x=>x.entry.unit==='LV3-U02');assert.ok(step?.scope);
+ const step=loadLV3Chain().filter(isAuditUnitStep).find(x=>x.entry.unit==='LV3-U02');assert.ok(step?.scope);
  const {manifest,scope}=step;assert.equal(auditHash(manifest),expected.manifestHash);assert.equal(manifest.patches.length,37);assert.equal(expected.patchCount,37);
  const paths=Object.keys(manifest.files!);assert.equal(paths.length,4);assert.equal(expected.physicalFileCount,4);
  const before=Object.fromEntries(paths.map(p=>[p,lv3AfterUnit1File(p,read(p))]));
