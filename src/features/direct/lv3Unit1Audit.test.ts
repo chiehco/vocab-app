@@ -4,7 +4,7 @@ import {readFileSync} from 'node:fs';
 import {expect,it} from 'vitest';
 import manifest from '../../../docs/lv3-audit-20261107/U01-patches.json';
 import {lv3Unit1BeforeAudit,lv3Unit1Patches,lv3Unit1BeforePublishedText} from './lv3Unit1Audit.testSupport';
-import {lv3AfterUnit1File} from './lv3Audit.testSupport';
+import {lv3AfterUnit1File,lv3AfterUnit1PublishedText} from './lv3Audit.testSupport';
 
 type Row=Record<string,unknown>;
 const paths:Record<string,string>={words:'public/data/v1/words.json',senses:'public/data/v1/senses.json',examples:'public/data/v1/examples.json',notes:'public/data/v1/notes.json',curriculum:'src/features/direct/curriculum.json',grammarQuestions:'src/features/direct/grammarQuestions.json'};
@@ -92,13 +92,13 @@ it('retains original cloze reconstruction and exact authored question identities
 
 it('preserves independent raw publication guards and rejects metadata or formatting drift',()=>{
  for(const name of ['meta','sa-pack']){
-  const path='public/data/v1/'+name+'.json',raw=readFileSync(path,'utf8').replace(/\r\n/g,'\n');
+  const path='public/data/v1/'+name+'.json',raw=lv3AfterUnit1PublishedText(path,readFileSync(path,'utf8').replace(/\r\n/g,'\n'));
   const value=JSON.parse(raw),meta=name==='meta'?value:value.meta;
   meta.generatedAt='unrecorded';
   expect(()=>lv3Unit1BeforePublishedText(path,JSON.stringify(value,null,name==='sa-pack'?undefined:2)+'\n')).toThrow('metadata');
   expect(()=>lv3Unit1BeforePublishedText(path,raw+' ')).toThrow('formatting');
  }
- const path='public/data/v1/sa-pack.json',raw=readFileSync(path,'utf8').replace(/\r\n/g,'\n');
+ const path='public/data/v1/sa-pack.json',raw=lv3AfterUnit1PublishedText(path,readFileSync(path,'utf8').replace(/\r\n/g,'\n'));
  const value=JSON.parse(raw),old=lv3Unit1BeforePublishedText(path,raw);
  value.words[0].unrecordedField=true;
  expect(lv3Unit1BeforePublishedText(path,JSON.stringify(value)+'\n')).not.toBe(old);

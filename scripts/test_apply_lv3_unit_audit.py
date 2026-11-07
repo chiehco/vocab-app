@@ -209,6 +209,27 @@ class U01AuditApplierTests(unittest.TestCase):
         self.assertEqual(exact_inverse(self.manifest, after), self.before)
         self.assert_inputs_unchanged()
 
+    def test_11_exact_after_with_uncommitted_receipt_requires_recovery(self):
+        audit.run(self.fixture, self.fixture / MANIFEST, apply=True)
+        tx_root = self.fixture / 'output/lv3-audit-20261107/transactions'
+        receipt_path = next(tx_root.glob('*/transaction.json'))
+        receipt = audit.read_json(receipt_path)
+        receipt['state'] = 'pending'
+        audit.dump(receipt_path, receipt)
+        # Equivalent persisted state to a crash after final replace and before
+        # receipt commit. No process is actually killed and no product is used.
+        snapshot = {p: (self.fixture / p).read_bytes() for p in self.original_bytes}
+        for apply in [False, True]:
+            with self.assertRaisesRegex(ValueError, 'Pending transaction'):
+                audit.run(self.fixture, self.fixture / MANIFEST, apply=apply)
+        (tx_root / 'apply.lock').write_text('{"pid":999999}', encoding='utf8')
+        for apply in [False, True]:
+            with self.assertRaisesRegex(ValueError, 'lock exists'):
+                audit.run(self.fixture, self.fixture / MANIFEST, apply=apply)
+        for path, content in snapshot.items():
+            self.assertEqual((self.fixture / path).read_bytes(), content)
+        self.assertEqual(audit.read_json(receipt_path)['state'], 'pending')
+
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)

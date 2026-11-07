@@ -138,6 +138,48 @@ class PurePipelineTests(unittest.TestCase):
                     self.fail('pending transaction entered')
             self.assertEqual(receipt.read_text(encoding='utf-8'), '{"state":"pending"}')
 
+    def test_final_replace_before_receipt_crash_blocks_dry_run_and_reapply(self):
+        # Reproduce durable bytes after the last replace, without executing or
+        # killing a product transaction. The pending receipt is never promoted.
+        for pending, stale_lock in [(True, False), (False, True), (True, True)]:
+            with self.subTest(pending=pending, stale_lock=stale_lock), tempfile.TemporaryDirectory(prefix='lv3-crash-state-') as temp:
+                root = Path(temp)
+                product = root / 'tiny-product.json'
+                replacement = root / 'tiny-product.tmp'
+                replacement.write_bytes(b'{"state":"exact-after"}\n')
+                p.os.replace(replacement, product)
+                manifest = root / 'manifest.json'
+                manifest.write_text('{"schemaVersion":1}', encoding='utf8')
+                tx = root / 'output/lv3-audit-20261107/transactions'
+                tx.mkdir(parents=True)
+                if pending:
+                    receipt = tx / 'interrupted/transaction.json'
+                    receipt.parent.mkdir()
+                    receipt.write_text('{"state":"pending"}', encoding='utf8')
+                if stale_lock:
+                    (tx / 'apply.lock').write_text('{"pid":999999}', encoding='utf8')
+                snapshot = {f: f.read_bytes() for f in root.rglob('*') if f.is_file()}
+                with patch.object(p.v1, '_run_v1', return_value={'state': 'already_applied', 'productWrites': 0}) as runner:
+                    for apply in [False, True]:
+                        with self.assertRaisesRegex(ValueError, 'recovery|Pending'):
+                            p.v1.run(root, manifest, apply=apply)
+                    runner.assert_not_called()
+                self.assertEqual({f: f.read_bytes() for f in root.rglob('*') if f.is_file()}, snapshot)
+
+    def test_idempotent_apply_still_rechecks_under_exclusive_lock(self):
+        with tempfile.TemporaryDirectory(prefix='lv3-idempotent-lock-') as temp:
+            root = Path(temp)
+            manifest = root / 'manifest.json'
+            manifest.write_text('{"schemaVersion":1}', encoding='utf8')
+            calls = []
+            def runner(root_arg, path_arg, apply):
+                calls.append(apply)
+                self.assertEqual((root / 'output/lv3-audit-20261107/transactions/apply.lock').exists(), apply)
+                return {'state': 'already_applied', 'productWrites': 0}
+            with patch.object(p.v1, '_run_v1', side_effect=runner):
+                self.assertEqual(p.v1.run(root, manifest, apply=True)['productWrites'], 0)
+            self.assertEqual(calls, [False, True])
+
     def test_v1_guard_remains_narrow(self):
         m = p.read_json(Path(__file__).resolve().parents[1] / p.DOCS / 'U01-patches.json')
         m['patches'][0]['after']['pos'] = 'adj.'

@@ -288,11 +288,15 @@ def run(root, manifest_path, apply=False):
     # Preflight remains read-only. Acquire an exclusive lock only after validation,
     # then repeat validation under the lock to close concurrent preflight races.
     import lv3_audit_pipeline as pipeline
+    pipeline.assert_recovery_clear(root)
     manifest = read_json(Path(manifest_path))
     runner = pipeline.run_v2 if manifest.get('schemaVersion') == 2 else _run_v1
     result = runner(root, manifest_path, False)
-    if not apply or result['state'] == 'already_applied':
+    if not apply:
+        pipeline.assert_recovery_clear(root)
         return result
+    # Even exact-after idempotent requests must acquire the lock and inspect
+    # pending receipts. Product bytes alone cannot prove a transaction committed.
     with pipeline.transaction_lock(root):
         return runner(root, manifest_path, True)
 

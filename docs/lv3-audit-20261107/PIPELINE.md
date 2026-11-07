@@ -42,6 +42,8 @@ After the parent explicitly clears the full-run/capture gate:
 
 Not yet run: original U01 Python fixture tests; full U02 sealing/build/apply/rollback integration fixture tests; U01/LV1/LV2 historical suites; cross-language 37-row before/after checkpoint parity; full project typecheck/lint/build/Vitest; browser checks.
 
-The original-tree U01 recoveredUnitIntegration/additionalCaptionRepair fixes are being prepared separately. Merge them without changing their expected hashes. Their U01-only raw helper must receive lv3AfterUnit1PublishedText(path,text) first; their curriculum input must receive lv3AfterUnit1File(path,value) first where later units can affect it.
+The U01 recoveredUnitIntegration/additionalCaptionRepair fixes from 5e81e51 were cherry-picked as 1a79ad8. Their raw callers now receive lv3AfterUnit1PublishedText first, and historical curriculum reads receive lv3AfterUnit1File first. Original hashes and the recorded initial full-suite failures remain unchanged. Two direct dictionary checkpoint callers also use the shared later-step projection.
 
-Already checked at this checkpoint: 11 small synthetic Python tests, 4 small TypeScript pipeline tests, Python AST/syntax, and focused diagnostics for the new TS files. These are not a full project pass.
+Already checked after review fixes: 13 small synthetic Python tests; 7 small TypeScript pipeline tests; 3 focused historical projection files with 16 tests; and focused TypeScript diagnostics for seven changed files. These are not a full project pass. A real U01 integration-fixture test simulating exact-after bytes with an uncommitted receipt is added but remains deferred with the Python fixture suite.
+
+Recovery checks precede all preflight results, including dry-run and already-applied. Idempotent --apply still acquires the exclusive lock and inspects pending receipts. The synthetic crash-window tests independently cover pending-only, stale-lock-only and combined states; none may report clean success or modify the persisted state. TS scope validation now mirrors Python per-dataset fields, collection contracts, exact scoped values, option protections and form evidence.

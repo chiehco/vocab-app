@@ -1,3 +1,4 @@
+import {lv3AfterUnit1File} from './lv3Audit.testSupport';
 import {lv3Unit1BeforeAudit} from './lv3Unit1Audit.testSupport';
 import {lv2Unit50BeforeAudit} from './lv2Unit50Audit.testSupport';
 import currentLV2Unit50 from './curriculumLV2Unit50.json';
@@ -99,7 +100,7 @@ it('retains historical curriculum and question identities with the audited cubes
       {items: row.items, questions: (row.questions ?? []) as unknown[]});
   };
   const dir = new URL('./', import.meta.url);
-  for (const file of readdirSync(dir).filter(name => name.endsWith('.json'))) record(JSON.parse(readFileSync(new URL(file, dir), 'utf8')));
+  for (const file of readdirSync(dir).filter(name => name.endsWith('.json'))) record(lv3AfterUnit1File('src/features/direct/'+file,JSON.parse(readFileSync(new URL(file, dir), 'utf8'))));
   expect(baseline.previousUnits).toHaveLength(124);
   for (const old of baseline.previousUnits) {
     const retained = existing.get(old.templateId)!;

@@ -285,6 +285,7 @@ def project_checkpoint(root, destination, target='LV3-U01'):
     No source writes. Prepared steps cannot be projected as applied steps.
     """
     root, destination = Path(root), Path(destination)
+    assert_recovery_clear(root)
     require(destination.resolve() != root.resolve() and not destination.exists(),
             'Projection destination must be new and distinct')
     _, anchor, loaded = load_chain(root)
@@ -333,7 +334,17 @@ def project_checkpoint(root, destination, target='LV3-U01'):
         require(set(anchor['inputs']) == v1.input_paths(destination), 'Projected anchor input set changed')
         for path, digest in anchor['inputs'].items():
             require(v1.file_hash(safe_path(destination, path)) == digest, f'Projected anchor drift: {path}')
+    assert_recovery_clear(root)
     return destination
+
+
+def assert_recovery_clear(root):
+    """Recovery state takes precedence over dry-run and idempotent success."""
+    tx = safe_path(Path(root).resolve(), 'output/lv3-audit-20261107/transactions')
+    require(not (tx / 'apply.lock').exists(), 'Audit transaction lock exists; recovery required')
+    if tx.exists():
+        for receipt in tx.glob('*/transaction.json'):
+            require(read_json(receipt).get('state') != 'pending', 'Pending transaction requires recovery')
 
 
 @contextmanager
@@ -466,6 +477,7 @@ def seal_step(root, manifest_path, before_capture):
     returned candidate, update its chain hash, and explicitly run the applier.
     """
     root, manifest_path = Path(root).resolve(), Path(manifest_path).resolve()
+    assert_recovery_clear(root)
     _, _, chain = load_chain(root)
     matches = [x for x in chain if (root / DOCS / x[0]['path']).resolve() == manifest_path]
     require(len(matches) == 1, 'Unregistered seal target')
@@ -518,4 +530,5 @@ def seal_step(root, manifest_path, before_capture):
     require(v1.input_paths(root) == paths, 'Concurrent input-set change during seal')
     for path, digest in before_capture.items():
         require(v1.file_hash(safe_path(root, path)) == digest, f'Concurrent capture input change: {path}')
+    assert_recovery_clear(root)
     return candidate

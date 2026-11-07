@@ -6,9 +6,9 @@ import {lv3Unit1BeforeAudit} from './lv3Unit1Audit.testSupport';
 type Row = Record<string, unknown>;
 type Collection = {path:string; rowsField:string|null; key:string};
 type FileGuard = {beforeHash:string;afterHash:string;beforeByteHash?:string;afterByteHash?:string;beforeFixture?:string};
-export type AuditPatch = {dataset:string;path:string;key:string;id:string;before:Row;after:Row;reason:string;fieldEvidence?:Record<string,unknown[]>};
-export type AuditManifest = {beforeMeta?:Row;beforePackMeta?:Row;unchangedInputs?:Record<string,string>;derivedBefore?:Record<string,string>;derivedAfter?:Record<string,string>|null;readiness?:string;schemaVersion:number;unit:string;baseline:string;parentManifestHash?:string;scope?:string;scopeHash?:string;collections?:Record<string,Collection>;files?:Record<string,FileGuard>;datasets?:Record<string,FileGuard&Collection>;patches:AuditPatch[]};
-export type AuditScope = {unit:string;baseline:string;collections:Record<string,Collection>;rows:{dataset:string;id:string;beforeHash:string;after:Row}[]};
+export type AuditPatch = {dataset:string;path:string;key:string;id:string;before:Row;after:Row;reason:string;evidence?:unknown[];fieldEvidence?:Record<string,unknown[]>};
+export type AuditManifest = {beforeMeta?:Row;beforePackMeta?:Row;afterMeta?:Row|null;unchangedInputs?:Record<string,string>;derivedBefore?:Record<string,string>;derivedAfter?:Record<string,string>|null;readiness?:string;schemaVersion:number;unit:string;baseline:string;parentManifestHash?:string;scope?:string;scopeHash?:string;collections?:Record<string,Collection>;files?:Record<string,FileGuard>;datasets?:Record<string,FileGuard&Collection>;patches:AuditPatch[]};
+export type AuditScope = {schemaVersion:number;unit:string;baseline:string;collections:Record<string,Collection>;rows:{dataset:string;id:string;beforeHash:string;after:Row}[]};
 type Entry = {unit:string;path:string;manifestHash:string;status:'committed'|'prepared'};
 const BASELINE='99883751926bd6cb4feff70daff56c07afc130cb';
 const U01_ANCHOR_HASH='6008609dda537f69ef0880d6482c713b1e6e75ec0fa8c3a4af71cdee9b08e4f0';
@@ -30,36 +30,79 @@ export function auditContract(m:AuditManifest):{collections:Record<string,Collec
 }
 
 export function validateAuditScope(m:AuditManifest,scope:AuditScope):void {
+ const keys=(value:object)=>Object.keys(value).sort();
+ const sameKeys=(value:object,expected:string[])=>assert.deepEqual(keys(value),[...expected].sort(),'unknown or missing contract fields');
+ const requireDigest=(value:unknown)=>assert.ok(typeof value==='string'&&/^[a-f0-9]{64}$/.test(value),'invalid digest');
+ sameKeys(m,['schemaVersion','unit','baseline','parentManifestHash','readiness','scope','scopeHash','collections','files','patches','unchangedInputs','derivedBefore','beforeMeta','beforePackMeta','derivedAfter','afterMeta']);
  assert.equal(m.schemaVersion,2);assert.equal(m.baseline,BASELINE);
  assert.equal(auditHash(scope),m.scopeHash,'scope hash mismatch');
- assert.equal(scope.unit,m.unit);assert.equal(scope.baseline,BASELINE);
- assert.deepEqual(m.collections,scope.collections);
+ assert.equal(scope.schemaVersion,1);assert.equal(scope.unit,m.unit);assert.equal(scope.baseline,BASELINE);
+ assert.deepEqual(m.collections,scope.collections,'collection scope mismatch');
  const contracts=auditContract(m);
- assert.deepEqual(Object.keys(contracts.files).sort(),[...new Set(Object.values(contracts.collections).map(c=>c.path))].sort());
+ assert.deepEqual(keys(contracts.files),[...new Set(Object.values(contracts.collections).map(c=>c.path))].sort(),'physical file set mismatch');
+ const globalCollections:Record<string,{path:string;key:string}>={words:{path:'public/data/v1/words.json',key:'wordId'},examples:{path:'public/data/v1/examples.json',key:'exampleId'},notes:{path:'public/data/v1/notes.json',key:'noteId'}};
+ const safeRelative=(path:string)=>assert.ok(path&&!path.includes('\\')&&!path.includes(':')&&!path.startsWith('/')&&!path.split('/').includes('..'),'unsafe path');
+ for(const [name,col]of Object.entries(contracts.collections)){
+  sameKeys(col,['path','key','rowsField']);safeRelative(col.path);
+  if(globalCollections[name]){
+   assert.equal(col.path,globalCollections[name].path);assert.equal(col.key,globalCollections[name].key);assert.equal(col.rowsField,null,'global rows must be root array');
+  }else{
+   assert.ok(name==='curriculum'||name==='grammarQuestions','unsupported collection');
+   assert.ok(col.path.startsWith('src/features/direct/curriculum')&&col.path.endsWith('.json'),'invalid curriculum path');
+   assert.equal(col.key,name==='curriculum'?'learningItemId':'questionId');
+   assert.equal(col.rowsField,name==='curriculum'?'learningItems':'grammarQuestions');
+  }
+ }
+ for(const [path,g]of Object.entries(contracts.files)){
+  safeRelative(path);sameKeys(g,['beforeHash','afterHash','beforeByteHash','afterByteHash',...(Object.hasOwn(g,'beforeFixture')?['beforeFixture']:[])]);
+  for(const h of [g.beforeHash,g.afterHash,g.beforeByteHash,g.afterByteHash])requireDigest(h);
+ }
  const allowed=new Map(scope.rows.map(r=>[r.dataset+':'+r.id,r]));
- assert.equal(allowed.size,scope.rows.length,'duplicate scope row');assert.equal(m.patches.length,allowed.size);
+ assert.equal(allowed.size,scope.rows.length,'duplicate scope row');assert.ok(m.patches.length&&m.patches.length===allowed.size,'scope row set mismatch');
  const seen=new Set<string>();
  const protectedKeys=new Set(['status','wordId','exampleId','noteId','learningItemId','questionId','word','wordVariants','sentenceEn','originalExample','stem','answer']);
+ const allowedFields:Record<string,string[]>={
+  words:['meaningZh','meaningEn','usagePattern','usagePatternZh','verbForms','pos','posAll'],
+  examples:['sensePos','meaningHint'],notes:['title','content'],curriculum:['explanationZh'],grammarQuestions:['targetMeaningZh','options']
+ };
  for(const p of m.patches){
+  sameKeys(p,['dataset','path','key','id','before','after','reason','evidence','fieldEvidence']);
   const id=p.dataset+':'+p.id,r=allowed.get(id),col=contracts.collections[p.dataset];
   assert.ok(r&&!seen.has(id),'duplicate or unscoped row');seen.add(id);
-  assert.equal(p.path,col.path);assert.equal(p.key,col.key);assert.equal(p.before[p.key],p.id);
+  assert.ok(col);assert.equal(p.path,col.path);assert.equal(p.key,col.key);
+  assert.ok(p.before&&typeof p.before==='object'&&!Array.isArray(p.before));assert.equal(p.before[p.key],p.id);
   assert.equal(auditHash(p.before),r.beforeHash);assert.deepEqual(p.after,r.after,'exact scope values required');
-  assert.ok(Object.keys(p.after).length&&Object.keys(p.after).every(k=>!protectedKeys.has(k)),'protected field');
-  assert.ok(p.reason.trim()&&p.fieldEvidence&&Object.keys(p.fieldEvidence).length,'missing evidence');
-  if(p.after.options){
+  assert.ok(Object.keys(p.after).length&&Object.keys(p.after).every(k=>allowedFields[p.dataset]?.includes(k)&&!protectedKeys.has(k)),'disallowed after field');
+  assert.ok(Object.entries(p.after).some(([k,v])=>!Object.hasOwn(p.before,k)||auditHash(p.before[k])!==auditHash(v)),'no-op patch');
+  assert.ok(typeof p.reason==='string'&&p.reason.trim()&&p.fieldEvidence&&Object.keys(p.fieldEvidence).length,'missing evidence');
+  for(const records of Object.values(p.fieldEvidence)){
+   assert.ok(Array.isArray(records)&&records.length,'missing field source');
+   for(const record of records){
+    const r=record as {sources?:unknown[];reason?:string;proposal?:string};
+    assert.ok(Array.isArray(r.sources)&&r.sources.length&&r.reason&&r.proposal,'missing field source');
+   }
+  }
+  if(Object.hasOwn(p.after,'options')){
    const old=p.before.options as Row[],next=p.after.options as Row[];
-   assert.equal(old.length,4);assert.equal(next.length,4);
+   assert.ok(Array.isArray(old)&&Array.isArray(next));assert.equal(old.length,4);assert.equal(next.length,4);
    assert.deepEqual(next.map(o=>o.id),old.map(o=>o.id),'option identities/order');
    assert.equal(new Set(next.map(o=>o.text)).size,4);
    for(let i=0;i<4;i++){
-    assert.deepEqual(Object.keys(next[i]).sort(),Object.keys(old[i]).sort());
+    assert.deepEqual(keys(next[i]),keys(old[i]));
     for(const k of Object.keys(old[i]).filter(k=>!['text','rationaleZh'].includes(k)))assert.deepEqual(next[i][k],old[i][k]);
+    for(const k of ['text','rationaleZh'])assert.ok(typeof next[i][k]==='string'&&(next[i][k] as string).trim(),'invalid option content');
     if(old[i].id===p.before.answer)assert.equal(next[i].text,old[i].text,'correct answer text');
    }
   }
+  if(Object.hasOwn(p.after,'verbForms')){
+   const f=p.after.verbForms as Row;sameKeys(f,['base','past','pastParticiple','sourceRef','status']);
+   assert.equal(f.base,p.before.word);assert.equal(f.status,'approved');
+   assert.ok(['https://www.collinsdictionary.com/dictionary/english/'+f.base,'https://www.collinsdictionary.com/conjugation/english/'+f.base].includes(f.sourceRef as string),'invalid verified forms source');
+   assert.ok((p.fieldEvidence.verbForms??[]).some(record=>(record as {sources:unknown[]}).sources.some(source=>typeof source==='object'&&source!==null&&(source as Row).url===f.sourceRef)),'forms source lacks evidence');
+  }
  }
 }
+
 
 export function loadLV3Chain(){
  const chain=read('chain.json') as {schemaVersion:number;baseline:string;anchor:string;anchorHash:string;entries:Entry[]};

@@ -1,4 +1,4 @@
-import {lv3Unit1BeforeAudit} from './lv3Unit1Audit.testSupport';
+import {lv3BeforeAudit} from './lv3Audit.testSupport';
 import {expect,it} from 'vitest';
 import {createHash} from 'node:crypto';
 import {readFileSync} from 'node:fs';
@@ -16,7 +16,7 @@ import research from '../../../docs/unit-audit-20261105/LV2-U50-source-research.
 import imageReview from '../../../docs/unit-audit-20261105/validation/LV2-U50-image-review.json';
 type Row=Record<string,unknown>;
 const hash=(v:unknown)=>createHash('sha256').update(JSON.stringify(v)).digest('hex');
-const data=(n:string)=>lv3Unit1BeforeAudit(n,JSON.parse(readFileSync('public/data/v1/'+n+'.json','utf8'))) as Row[];
+const data=(n:string)=>lv3BeforeAudit(n,JSON.parse(readFileSync('public/data/v1/'+n+'.json','utf8'))) as Row[];
 it('guards120 exact printed corrections and all160 original items without replacing a historical fixture',()=>{
  expect(current.learningItems).toHaveLength(160);expect(corrections.patches).toHaveLength(120);expect(hash(current)).toBe(corrections.afterHash);expect(hash(lv2Unit50BeforeAudit(current))).toBe(corrections.beforeHash);expect(hash(JSON.parse(readFileSync(corrections.sourcePath,'utf8')))).toBe(corrections.sourceHash);
  for(const p of corrections.patches){const bad=structuredClone(current),row=bad.learningItems.find(i=>i.learningItemId===p.id)! as Row;for(const k of Object.keys(p.after)){const old=row[k];row[k]='unrecorded';expect(()=>lv2Unit50BeforeAudit(bad)).toThrow();row[k]=old;}}
