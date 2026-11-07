@@ -2,7 +2,7 @@
 
 ## Current status
 
-Candidate TypeScript validation passed. The real committed-checkpoint integration test also passed, but the wider focused guard run failed and is not accepted as a final pass. Python TEMP validation is not TypeScript validation, and candidate fixtures are not evidence of an applied main checkout.
+Candidate TypeScript validation passed. After the reviewed performance and precise caller-domain corrections, the original seven-file committed command passed all 35 tests, and the separate complete direct-helper run passed all 52 tests. Earlier failed attempts remain recorded below. Final compilation, lint and build results are recorded separately; Python TEMP validation and candidate fixtures are not substitutes for main committed validation.
 
 ## Sealed inputs
 
@@ -28,13 +28,36 @@ Both modes authenticate the descriptor, four raw fixtures, exact source selectio
 - Raw forensic migration restoration and LF-normalized published historical restoration are separate claims. Published-text results are compared with Python's normalized projection maps, not mislabeled as raw historical bytes.
 - No synthetic suite or full-project suite is implied by this focused test.
 - No browser, phone, offline, publication or deployment result is implied.
-- Final typed code still requires compilation. Test execution and compilation logs will be retained without overwriting failed attempts.
+- Test execution and compilation logs are retained without overwriting failed attempts.
 
 ## Results
 
 - Initial candidate attempt: the real candidate test passed, but two prepared-checkpoint cases failed because their mocked chain retained a migration whose predecessor had been marked prepared. The overall attempt failed. Log: `output/lv3-audit-20261107/starter-media-ts-candidate/run-20261108-022751.log` (301.20 seconds). This log remains unchanged.
 - The prepared-checkpoint negative test now isolates the real prefix ending at its selected target, so the intended uncommitted-target assertion is reached without an unrelated invalid migration predecessor. Tail identity explicitly discriminates ordinary units from migrations. Current-tail positive controls remain.
 - Final candidate run: **2 files passed; 3 tests passed, 2 committed-only tests skipped; 17.47 seconds**. Log: `output/lv3-audit-20261107/starter-media-ts-candidate/run-20261108-023354.log`. Complete observed maps: `output/lv3-audit-20261107/starter-media-ts-candidate/observed.json`.
-- Initial main committed focused run: **5 files failed, 2 passed; 8 tests failed, 27 passed; 209.37 seconds**. Log: `output/lv3-audit-20261107/starter-media-ts-committed/run-20261108-024437.log`. The real-checkpoint integration tests passed and saved complete observed maps to `output/lv3-audit-20261107/starter-media-ts-committed/observed.json`. Seven existing guard tests exceeded their unchanged 5-second timeout. Repeated full migration validation was observed in these execution paths; performance diagnosis is still in progress, and its contribution has not yet been isolated by benchmark. One audit-pipeline negative assertion rejected the correct earlier `migration unchanged input drift` error because its expected message only covered the old raw/derived guard. Its two message matchers now also accept that precise migration error; all other assertions remain unchanged. No timeout, expected hash, or data guard has been relaxed. Final corrected run pending.
-- Initial forced TypeScript compilation: failed with index-signature errors in the new integration test's before/after maps. Log: `output/lv3-audit-20261107/starter-media-ts-committed/forced-tsc-20261108-024835.log`. The maps now have explicit `Record<string,string>` annotations, with no permissive cast. Final compilation pending.
-- Build: not run.
+- Initial main committed focused run: **5 files failed, 2 passed; 8 tests failed, 27 passed; 209.37 seconds**. Log: `output/lv3-audit-20261107/starter-media-ts-committed/run-20261108-024437.log`. The real-checkpoint integration tests passed and saved complete observed maps to `output/lv3-audit-20261107/starter-media-ts-committed/observed.json`. Seven existing guard tests exceeded their unchanged 5-second timeout. Repeated full migration validation was observed in these execution paths; at that stage performance diagnosis was still in progress and its contribution had not yet been isolated by benchmark. One audit-pipeline negative assertion rejected the correct earlier `migration unchanged input drift` error because its expected message only covered the old raw/derived guard. Its two message matchers now also accept that precise migration error; all other assertions remain unchanged. No timeout, expected hash, or data guard has been relaxed. Subsequent corrected-run evidence is recorded below.
+- Initial forced TypeScript compilation: failed with index-signature errors in the new integration test's before/after maps. Log: `output/lv3-audit-20261107/starter-media-ts-committed/forced-tsc-20261108-024835.log`. The maps now have explicit `Record<string,string>` annotations, with no permissive cast. Subsequent final compilation results are recorded below.
+
+## Final runtime evidence and intermediate attempts
+
+The exact original seven files and committed-state command were retained. The successful run was not assembled from individually successful files or mixed commands. All paths below use `output/lv3-audit-20261107/starter-media-cache-validation/` unless otherwise specified.
+
+- `focused-first.log`: 28 passed, 1 failed, 20 skipped. Structurally equivalent clone cache reuse failed; deterministic encoding replaced V8 encoding after a strict plain-JSON gate. The assertion was retained.
+- `focused-second.log`: 29 passed, 20 unrelated cases skipped.
+- `seven-first.log`: 33 passed, 2 timeout failures; 103.43 seconds.
+- `direct-full-first.log`: 49 direct tests passed; 6.80 seconds.
+- `direct-full-buffer.log`: **52 direct tests passed; 4.90 seconds**, including Buffer/string parity, CRLF and invalid UTF-8 checks.
+- `seven-buffer.log`: 34 passed, 1 caption timeout; 52.54 seconds.
+- `seven-controlled-once.log`: 34 passed, 1 caption timeout; 71.07 seconds. This distinct comparison explicitly added `--maxWorkers=1`; it is not the successful original-command run.
+- `seven-caller-domain-once.log`: **7 files passed, 35 tests passed; 56.59 seconds**, using the original command without a worker override or timeout change. The caption file took 4.706 seconds; this is a whole-file duration, not a measured individual test-body duration.
+
+The safe proof reuse and bounded caption routing are documented in `PIPELINE-STARTER-MEDIA-PERFORMANCE.md`. Each validation still reads and hashes six actual dependencies. No operation-scoped snapshot was added. All original expected checksums, data guards and 5-second existing test limits remain. Original and intermediate `observed.json` results were archived with SHA-256 records before later runs overwrote the normal output path; the initial committed observation is retained as `observed-before-rerun.original.json` with its matching `.sha256` record. The final observation is retained as `observed-after-caller-domain.original.json` with its matching `.sha256` record.
+
+## Final typed-code and product checks
+
+- Final forced compilation first attempt: failed only because `reverseFileAuditSteps` inferred its default Buffer loader parameter too narrowly for the existing string fixture loaders. Log: `output/lv3-audit-20261107/starter-media-ts-committed/final-forced-tsc-20261108-032247.log`. The correction imports the existing `MigrationLoader` type and annotates that parameter as `string | Buffer` through that contract. No cast, permissive type, runtime statement or guard changed. The runtime code is identical to the separately recorded successful 35-test and 52-test runs.
+- Final read-only state check: all 144 current raw and normalized hashes match the sealed after maps; 142 unchanged inputs and exactly two changed product files match the committed transaction receipt. The current chain ends in the committed migration. Evidence: `output/lv3-audit-20261107/starter-media-ts-committed/final-read-only-state.json`. No reapply occurred.
+- Pack raw SHA-256: `c198a371ad72a5f8d8b7d013bd9cc8b2b97c29ecc3fd56abbe2e785f7a19a3e8`; content hash: `sa:dfd6834da6d08dbb81d90244086fba7e997ffd6bffe48cdbb8668a39b3b22bbc`.
+- Corrected final forced compilation: **passed, exit 0**, using `tsc -b --force`. Log: `output/lv3-audit-20261107/starter-media-ts-committed/final-forced-tsc-20261108-032418.log`. This covers the final typed code, including the explicit loader annotation and new integration test.
+- Final lint: **passed with warnings, exit 0**, using `npm run lint`; 310 warning lines and zero error lines. Warnings are in retained output diagnostic scripts and five pre-existing audit preparation/checkpoint scripts, not new product changes. These files were not changed. Log: `output/lv3-audit-20261107/starter-media-ts-committed/final-lint-20261108-032527.log`.
+- Final build: **passed, exit 0**, using `npm run build` (`tsc -b && vite build`). Log: `output/lv3-audit-20261107/starter-media-ts-committed/final-build-20261108-032539.log`. Vite transformed 713 modules; PWA generation produced 268 precache entries and the service worker. The build reported plugin timing and large-chunk warnings. Source and `dist/data/v1/sa-pack.json` both retain the exact sealed pack raw SHA-256 above. A successful build is not a browser/offline or deployment claim.

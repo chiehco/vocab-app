@@ -4,7 +4,7 @@ import {beforeLV3ReplaceText} from '../../../scripts/lv3_replace_image_guard.mjs
 import replaceProof from '../../../docs/unit-audit-20261105/LV3-replace-image-repair.json';
 import {beforeLV3GeneralImages} from '../../../scripts/lv3_image_repair_guard.mjs';
 import imageProof from '../../../docs/unit-audit-20261105/LV3-bank-permissible-image-repairs.json';
-import {lv3AfterUnit1PublishedText} from '../direct/lv3Audit.testSupport';
+import {loadLV3Chain,lv3AfterUnit1PublishedText} from '../direct/lv3Audit.testSupport';
 import {lv3Unit1BeforePublishedText} from '../direct/lv3Unit1Audit.testSupport';
 import {expect,it} from 'vitest';
 import {readFileSync} from 'node:fs';
@@ -38,11 +38,21 @@ cards[candidateIndex]=structuredClone(c.after);
 
 it('retains the independent original approval image English and broader science-project source boundary',()=>{
  validateAdditionalProof(proof);expect(approvals.find(r=>r.id===c.id)).toEqual(c.originalApproval);expect(c.after.illustration.path).toBe(c.before.illustration.path);expect(c.after.illustration.captionEn).toBe(c.before.illustration.captionEn);expect(c.after.illustration.captionZh).toBe('她需要額外的時間才能完成她的科學專題。');expect(bytesHash('public/'+c.after.illustration.path)).toBe(c.imageSha256);expect(c.dimensions).toEqual([1254,1254]);expect(additionalHash(c.before.illustration.captionEn+'\n'+c.before.illustration.captionZh)).toBe(c.originalApproval.textSha256);expect(c.sourceEvidence.retrieval).toBe('direct_primary_dictionary_definition');expect(c.sourceEvidence.unsuccessfulSource.result).toContain('403');
+ // Authenticate the exact text-audit domain before routing the independently guarded files.
+ const migration=loadLV3Chain().find(step=>'migrationId' in step.manifest)?.manifest;
+ if(!migration||!('beforeInputs' in migration))throw new Error('Missing authenticated migration input domain');
+ const domain=new Set(Object.keys(migration.beforeInputs));expect(domain.size).toBe(144);
+ const projected=['words','examples','senses','notes','meta','sa-pack'].map(name=>'public/data/v1/'+name+'.json');
+ const independent=['scripts/approvals/lv1-images-20260922.json','src/features/vocabulary/auditedWordIllustrations.json','src/features/vocabulary/approvedExampleImages.json','docs/unit-audit-20261105/validation/LV2-U46-praise-before-repair.json','docs/unit-audit-20261105/validation/LV2-U46-image-review-before-praise.json'];
+ expect(proof.unchangedFiles.filter(f=>domain.has(f.path)).map(f=>f.path).sort()).toEqual([...projected].sort());
+ expect(proof.unchangedFiles.filter(f=>!domain.has(f.path)).map(f=>f.path).sort()).toEqual([...independent].sort());
+ expect(proof.unchangedFiles).toHaveLength(11);
  for(const f of proof.unchangedFiles){
   const current=readFileSync(f.path,'utf8').replace(/\r\n/g,'\n');
   const retained=f.path==='src/features/vocabulary/auditedWordIllustrations.json'
    ? beforeImageRegistryText(current) : current;
-  expect(createHash('sha256').update(lv3Unit1BeforePublishedText(f.path,lv3AfterUnit1PublishedText(f.path,retained))).digest('hex'),f.path).toBe(f.lfNormalizedSha256);
+  const text=domain.has(f.path)?lv3AfterUnit1PublishedText(f.path,retained):retained;
+  expect(createHash('sha256').update(lv3Unit1BeforePublishedText(f.path,text)).digest('hex'),f.path).toBe(f.lfNormalizedSha256);
  }
  expect(proof.unchangedFiles.find(f=>f.path==='src/features/vocabulary/approvedExampleImages.json')).toMatchObject({"sha256":"cb10a47f664cba5d897488972f6144b84f9285903170aa07bab8663f224dd753","lfNormalizedSha256":"030d8c1de76182f6a5cdf5340e84ddc8112cd0f54c998b9ffbef189259e2c12a"});
  expect(proof.crossPlatformTextChecksum.allOriginalRawSha256ValuesRetained).toBe(true);

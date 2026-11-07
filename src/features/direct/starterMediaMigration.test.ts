@@ -1,6 +1,6 @@
 import {describe,it,expect} from 'vitest';
 import {execFileSync} from 'node:child_process';
-import {mkdtempSync,readFileSync,rmSync} from 'node:fs';
+import {mkdtempSync,readFileSync,rmSync,writeFileSync,statSync,utimesSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {auditHash,reverseFileAuditSteps,type AuditManifest,type AuditScope} from './lv3Audit.testSupport';
@@ -119,4 +119,136 @@ describe('bounded starter media migration',()=>{
    expect(()=>validateStarterMediaMigration(f.m,f.load)).toThrow(/serialized result/);
   }
  });
+});
+
+
+describe('content-authenticated migration proof cache',()=>{
+ it('reuses only an immutable proof while rereading every actual dependency',()=>{
+  const f=fixture(),reads:string[]=[];
+  const load=(p:string)=>{reads.push(p);return f.load(p);};
+  const first=validateStarterMediaMigration(f.m,load,f.m.beforeInputs);
+  reads.length=0;
+  const second=validateStarterMediaMigration(structuredClone(f.m),load,{...f.m.beforeInputs});
+  expect(second).toBe(first);expect(reads).toHaveLength(6);
+  expect(Object.isFrozen(first)).toBe(true);expect(Object.isFrozen(first.before)).toBe(true);
+  expect(Object.isFrozen(f.m)).toBe(false);expect(Object.isFrozen(f.m.delta[0].row)).toBe(false);
+  expect(first.before.meta).not.toBe(f.m.beforePackMeta);expect(first.after.meta).not.toBe(f.m.afterPackMeta);
+  expect(()=>{(first.before.words as Record<string,unknown>[])[0].word='poison';}).toThrow();
+  expect(inverseStarterMediaMigrationRaw(f.m,PACK,f.values.afterPack,load)).toBe(f.values.beforePack);
+  expect(inverseStarterMediaMigrationRaw(f.m,PACK,f.values.afterPack,load)).toBe(f.values.beforePack);
+ });
+ it.each(['delta','undefined delta field','metadata','unknown field','domain','parent adjacency','fixture raw','source raw','priority raw','actual input','unchanged input'])('rejects %s mutation after a warm hit',fault=>{
+  const f=fixture();validateStarterMediaMigration(f.m,f.load);validateStarterMediaMigration(f.m,f.load);
+  if(fault==='delta')f.m.delta[0].sourceIndex++;
+  if(fault==='undefined delta field')Object.assign(f.m.delta[0],{unexpected:undefined});
+  if(fault==='metadata')f.m.beforeMeta.contentHash='changed';
+  if(fault==='unknown field')Object.assign(f.m,{unexpected:undefined});
+  if(fault==='domain')delete f.m.afterInputs['other/0.json'];
+  if(fault==='fixture raw')f.docs[f.m.fixtures.beforePack.path]+=' ';
+  if(fault==='source raw')f.docs['public/data/v1/media.json']+=' ';
+  if(fault==='priority raw')f.docs['public/data/v1/exam_priority.json']+=' ';
+  const attempt=()=>{
+   if(fault==='actual input')return inverseStarterMediaMigrationRaw(f.m,PACK,f.values.afterPack+' ',f.load);
+   if(fault==='unchanged input')return inverseStarterMediaMigrationRaw(f.m,'other/0.json','changed',f.load);
+   return validateStarterMediaMigration(f.m,f.load,fault==='parent adjacency'?{...f.m.beforeInputs,[PACK]:'0'.repeat(64)}:undefined);
+  };
+  expect(attempt).toThrow();
+ });
+ it('invalidates changed manifest guard content instead of trusting object identity',()=>{
+  const f=fixture(),first=validateStarterMediaMigration(f.m,f.load);
+  f.m.parentManifestHash='b'.repeat(64);
+  const second=validateStarterMediaMigration(f.m,f.load);expect(second).not.toBe(first);
+  for(const map of [f.m.beforeInputs,f.m.afterInputs,f.m.beforeRawInputs,f.m.afterRawInputs])map['other/0.json']=digest('new');
+  expect(validateStarterMediaMigration(f.m,f.load)).not.toBe(second);
+  expect(()=>inverseStarterMediaMigrationRaw(f.m,'other/0.json','same',f.load)).toThrow();
+ });
+ it('rechecks changed bytes at the same filesystem path and mtime after a hit',()=>{
+  const f=fixture(),directory=mkdtempSync(join(tmpdir(),'migration-cache-'));
+  try{
+   const path=join(directory,'fixture.json'),key=f.m.fixtures.afterPack.path;
+   writeFileSync(path,f.docs[key]);const stamp=statSync(path);
+   const load=(p:string)=>p===key?readFileSync(path,'utf8'):f.load(p);
+   validateStarterMediaMigration(f.m,load);validateStarterMediaMigration(f.m,load);
+   writeFileSync(path,f.docs[key].replace('dog','fog'));utimesSync(path,stamp.atime,stamp.mtime);
+   expect(()=>validateStarterMediaMigration(f.m,load)).toThrow(/raw hash/);
+  }finally{rmSync(directory,{recursive:true,force:true});}
+ });
+ it('rejects fully rehashed noncanonical fixtures after a warm hit',()=>{
+  for(const mutate of [(s:string)=>s+' ',(s:string)=>s.replace('{','{"media":[],')]){
+   const f=fixture();validateStarterMediaMigration(f.m,f.load);validateStarterMediaMigration(f.m,f.load);
+   const text=mutate(f.values.afterPack);f.docs[f.m.fixtures.afterPack.path]=text;
+   f.m.fixtures.afterPack.sha256=digest(text);f.m.afterInputs[PACK]=f.m.afterRawInputs[PACK]=digest(text);
+   expect(()=>validateStarterMediaMigration(f.m,f.load)).toThrow(/canonical/);
+  }
+ });
+});
+
+
+describe('migration cache plain JSON boundary',()=>{
+ it.each(['symbol key','symbol value','prototype','array extra','array symbol','array hole','hidden property','accessor','undefined','nonfinite','cycle'])('rejects %s identically cold and warm without invoking getters',fault=>{
+  for(const warm of [false,true]){
+   const f=fixture();
+   // Distinct valid parent values ensure the cold case cannot hit an earlier proof.
+   f.m.parentManifestHash=(warm?'c':'d').repeat(64);
+   if(warm){validateStarterMediaMigration(f.m,f.load);validateStarterMediaMigration(f.m,f.load);}
+   let getterCalls=0;
+   const row=f.m.delta[0].row;
+   if(fault==='symbol key')Object.defineProperty(row,Symbol('unexpected'),{value:'extra',enumerable:true});
+   if(fault==='symbol value')row.unexpected=Symbol('extra');
+   if(fault==='prototype')Object.setPrototypeOf(row,{unexpected:'extra'});
+   if(fault==='array extra')Object.assign(f.m.delta,{unexpected:'extra'});
+   if(fault==='array symbol')Object.defineProperty(f.m.delta,Symbol('unexpected'),{value:'extra',enumerable:true});
+   if(fault==='array hole')f.m.delta.length++;
+   if(fault==='hidden property')Object.defineProperty(row,'hidden',{value:'extra'});
+   if(fault==='accessor')Object.defineProperty(row,'getter',{get(){getterCalls++;return 'extra';},enumerable:true});
+   if(fault==='undefined')row.unexpected=undefined;
+   if(fault==='nonfinite')row.unexpected=NaN;
+   if(fault==='cycle')row.unexpected=row;
+   expect(()=>validateStarterMediaMigration(f.m,f.load)).toThrow(/non-JSON/);
+   expect(getterCalls).toBe(0);
+  }
+ });
+ it.each(['status','dataset order','source row order'])('rejects fully rehashed %s changes after a warm hit',fault=>{
+  const f=fixture();validateStarterMediaMigration(f.m,f.load);validateStarterMediaMigration(f.m,f.load);
+  let pack=JSON.parse(f.values.afterPack) as MigrationPackFixture;
+  if(fault==='status')pack.media[1].status='approved';
+  if(fault==='dataset order')pack={meta:pack.meta,media:pack.media,words:pack.words};
+  if(fault==='source row order')pack.media=pack.media.map(row=>Object.fromEntries(Object.entries(row).reverse()) as typeof row);
+  pack.meta.contentHash='sa:'+digest(JSON.stringify({sourceHash:f.m.beforeMeta.contentHash,datasets:Object.fromEntries(Object.entries(pack).filter(([key])=>key!=='meta'))}));
+  const text=JSON.stringify(pack)+'\n';f.docs[f.m.fixtures.afterPack.path]=text;
+  f.m.fixtures.afterPack.sha256=digest(text);f.m.afterInputs[PACK]=f.m.afterRawInputs[PACK]=digest(text);f.m.afterPackMeta=pack.meta;
+  expect(()=>validateStarterMediaMigration(f.m,f.load)).toThrow();
+ });
+});
+
+
+describe('migration proof byte loader',()=>{
+ it('shares authenticated proof for identical string and Buffer bytes and rejects mutated buffers',()=>{
+  const f=fixture(true),proof=validateStarterMediaMigration(f.m,f.load);
+  const load=(p:string)=>Buffer.from(f.load(p),'utf8');
+  expect(validateStarterMediaMigration(f.m,load)).toBe(proof);
+  expect(inverseStarterMediaMigrationRaw(f.m,BUILDER,f.values.afterBuilder,load)).toBe(f.values.beforeBuilder);
+  expect(inverseStarterMediaMigrationNormalized(f.m,PACK,f.values.afterPack,load)).toBe(f.values.beforePack);
+  for(const path of [f.m.fixtures.afterPack.path,'public/data/v1/media.json','public/data/v1/exam_priority.json']){
+   expect(()=>validateStarterMediaMigration(f.m,p=>p===path?Buffer.concat([load(p),Buffer.from(' ')]):load(p))).toThrow();
+  }
+ });
+ it('normalizes only CRLF in Buffer sources and authenticates raw fixtures independently',()=>{
+  const f=fixture(),first=validateStarterMediaMigration(f.m,f.load);
+  const path='public/data/v1/media.json';f.docs[path]=f.docs[path].replace(/\n/g,'\r\n');
+  const load=(p:string)=>Buffer.from(f.load(p),'utf8');
+  const next=validateStarterMediaMigration(f.m,load);expect(next).not.toBe(first);expect(next.before).toEqual(first.before);
+  f.docs[path]=f.docs[path].replace(/\r\n/g,'\r');expect(()=>validateStarterMediaMigration(f.m,load)).toThrow(/source guard/);
+ });
+});
+
+
+it('rejects malformed UTF-8 Buffer sources after pure byte CRLF normalization',()=>{
+ const f=fixture(),path='public/data/v1/media.json';validateStarterMediaMigration(f.m,f.load);
+ const bad=Buffer.from(f.docs[path].replace(/\n/g,'\r\n'));bad[bad.indexOf('cat')]=255;
+ const normalized=Buffer.from(bad.toString('latin1').replace(/\r\n/g,'\n'),'latin1');
+ for(const map of [f.m.beforeInputs,f.m.afterInputs])map[path]=digest(normalized);
+ for(const map of [f.m.beforeRawInputs,f.m.afterRawInputs])map[path]=digest(bad);
+ f.m.sourceMediaHash=digest(normalized);
+ expect(()=>validateStarterMediaMigration(f.m,p=>p===path?bad:Buffer.from(f.load(p)))).toThrow(/encoded data|encoding/i);
 });

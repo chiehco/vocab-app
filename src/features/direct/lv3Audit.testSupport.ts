@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {readFileSync} from 'node:fs';
 import {lv3Unit1BeforeAudit} from './lv3Unit1Audit.testSupport';
-import {BUILDER,PACK,MIGRATION_ID,validateStarterMediaMigration,inverseStarterMediaMigrationNormalized,type StarterMediaMigration} from './starterMediaMigration.testSupport';
+import {BUILDER,PACK,MIGRATION_ID,validateStarterMediaMigration,inverseStarterMediaMigrationNormalized,type StarterMediaMigration,type MigrationLoader} from './starterMediaMigration.testSupport';
 
 type Row = Record<string, unknown>;
 type Collection = {path:string; rowsField:string|null; key:string};
@@ -14,7 +14,7 @@ type Entry = {unit?:string;kind?:'migration';migrationId?:string;path:string;man
 type Manifest=AuditManifest|StarterMediaMigration;
 const isMigration=(m:Manifest):m is StarterMediaMigration=>m.schemaVersion===3;
 export const isAuditUnitStep=(step:{entry:Entry;manifest:Manifest;scope?:AuditScope}):step is {entry:Entry&{unit:string};manifest:AuditManifest;scope:AuditScope|undefined}=>!isMigration(step.manifest)&&typeof step.entry.unit==='string';
-const migrationLoad=(path:string)=>{assert.ok(path&&!path.includes('..')&&!path.includes('\\')&&!path.includes(':')&&!path.startsWith('/'));return readFileSync(new URL('../../../'+path,import.meta.url),'utf8');};
+const migrationLoad=(path:string)=>{assert.ok(path&&!path.includes('..')&&!path.includes('\\')&&!path.includes(':')&&!path.startsWith('/'));return readFileSync(new URL('../../../'+path,import.meta.url));};
 const BASELINE='99883751926bd6cb4feff70daff56c07afc130cb';
 const U01_ANCHOR_HASH='6008609dda537f69ef0880d6482c713b1e6e75ec0fa8c3a4af71cdee9b08e4f0';
 const U01_MANIFEST_HASH='317ab4353c8a462071ab98efb9604f7f26d67f427ffe6c7d24b5a71a768b5309';
@@ -283,7 +283,7 @@ export function lv3BeforeAudit<T>(dataset:string,value:T,options:{allowMissing?:
  return lv3Unit1BeforeAudit(dataset,lv3AfterUnit1Rows(dataset,value,options),options);
 }
 
-export function reverseFileAuditSteps<T>(steps:{manifest:Manifest;scope?:AuditScope}[],path:string,value:T,loadMigration=migrationLoad):T {
+export function reverseFileAuditSteps<T>(steps:{manifest:Manifest;scope?:AuditScope}[],path:string,value:T,loadMigration:MigrationLoader=migrationLoad):T {
  let out=structuredClone(value);
  for(const {manifest,scope} of [...steps].reverse()){
   if(isMigration(manifest)){
