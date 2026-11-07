@@ -4,6 +4,7 @@ import {readFileSync} from 'node:fs';
 import {expect,it} from 'vitest';
 import manifest from '../../../docs/lv3-audit-20261107/U01-patches.json';
 import {lv3Unit1BeforeAudit,lv3Unit1Patches,lv3Unit1BeforePublishedText} from './lv3Unit1Audit.testSupport';
+import {lv3AfterUnit1File} from './lv3Audit.testSupport';
 
 type Row=Record<string,unknown>;
 const paths:Record<string,string>={words:'public/data/v1/words.json',senses:'public/data/v1/senses.json',examples:'public/data/v1/examples.json',notes:'public/data/v1/notes.json',curriculum:'src/features/direct/curriculum.json',grammarQuestions:'src/features/direct/grammarQuestions.json'};
@@ -11,7 +12,7 @@ const paths:Record<string,string>={words:'public/data/v1/words.json',senses:'pub
 // They supplement, and do not replace, any LV1/LV2 historical fixtures.
 const checkpoint:Record<string,string>={words:'df0980b25d68203e1cdcdd89554c854763ea9ea9b517e57e0aab51f689b1523f',senses:'3aa3604943243a98042914453bc34d86896c2daf40baa03b275bd548da847e56',examples:'84f406a3f2dffd9394536c2ce6baa96f21f605a0008f4ca64426dec08ce357cc',notes:'ea1a679d1d6531f96df4645aa098ffb3ec8456a347349a50054550f3b5685a71',curriculum:'bc32356e19ffdcd5f6a460304da0d83af8e8af0167941ed7009f4a72328487a0',grammarQuestions:'fe57e3ed98394c04cda1db8cfd183507992f738b771c4b108636a38398692934'};
 const hash=(value:unknown)=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
-const read=(name:string)=>JSON.parse(readFileSync(paths[name],'utf8'));
+const read=(name:string)=>lv3AfterUnit1File(paths[name],JSON.parse(readFileSync(paths[name],'utf8')));
 const rowsOf=(name:string,value:unknown)=>(name==='curriculum'?(value as Row).learningItems:value) as Row[];
 const wrap=(name:string,rows:Row[])=>name==='curriculum'?{learningItems:rows}:rows;
 

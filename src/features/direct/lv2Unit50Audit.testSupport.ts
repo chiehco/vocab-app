@@ -1,4 +1,4 @@
-import {lv3Unit1BeforeAudit} from './lv3Unit1Audit.testSupport';
+import {lv3BeforeAudit} from './lv3Audit.testSupport';
 import {expect} from 'vitest';
 import current from './curriculumLV2Unit50.json';
 import corrections from '../../../docs/unit-audit-20261105/LV2-U50-curriculum-patches.json';
@@ -15,7 +15,7 @@ export function lv2Unit50BeforeAudit(value:typeof current){
 // Project only the exact U50 edits away for preceding checkpoint assertions.
 // The original U47 hashes remain unchanged and still cover every other field.
 export function lv2Unit50BeforeFormalAudit<T>(dataset:string,value:T,projection:'current'|'u50_checkpoint'='current'):T{
- const copy=projection==='current'?lv3Unit1BeforeAudit(dataset,value):structuredClone(value);
+ const copy=projection==='current'?lv3BeforeAudit(dataset,value):structuredClone(value);
  if(!Array.isArray(copy))return copy;
  for(const p of [...main.patches,...notes.patches,...forms.patches].reverse().filter(p=>p.dataset===dataset)){
   const matches=(copy as Record<string,unknown>[]).filter(row=>row[p.key]===p.id);

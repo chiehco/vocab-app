@@ -1,0 +1,583 @@
+{
+  "schemaVersion": 1,
+  "unit": "LV3-U02",
+  "baseline": "99883751926bd6cb4feff70daff56c07afc130cb",
+  "collections": {
+    "examples": {
+      "path": "public/data/v1/examples.json",
+      "key": "exampleId",
+      "rowsField": null
+    },
+    "words": {
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "rowsField": null
+    },
+    "curriculum": {
+      "path": "src/features/direct/curriculumUnit2.json",
+      "key": "learningItemId",
+      "rowsField": "learningItems"
+    },
+    "notes": {
+      "path": "public/data/v1/notes.json",
+      "key": "noteId",
+      "rowsField": null
+    },
+    "grammarQuestions": {
+      "path": "src/features/direct/curriculumUnit2.json",
+      "key": "questionId",
+      "rowsField": "grammarQuestions"
+    }
+  },
+  "rows": [
+    {
+      "dataset": "examples",
+      "id": "EX01ff61fe",
+      "beforeHash": "3b073a2819f7e3951c4c2e9b1b47dfe821ee337a22a80ee9ac81c0fbc0fa60a1",
+      "after": {
+        "sensePos": "v."
+      }
+    },
+    {
+      "dataset": "examples",
+      "id": "EX53417c85",
+      "beforeHash": "09adc28e01139a4622d5f74b5f915f38e41dfb43efcdf412eba21c0133f4afd3",
+      "after": {
+        "sensePos": "n."
+      }
+    },
+    {
+      "dataset": "examples",
+      "id": "EX75b85a8b",
+      "beforeHash": "96b8dc8c22f55dc55c00e911e105a0f7ec641d8e22a6da47f160ca94d4422e67",
+      "after": {
+        "sensePos": "n."
+      }
+    },
+    {
+      "dataset": "examples",
+      "id": "EXd9fdd217",
+      "beforeHash": "aa8bc9379dd37084afb08de11f3cf99af19442c60a731fd60a5d60398670b52b",
+      "after": {
+        "sensePos": "n."
+      }
+    },
+    {
+      "dataset": "examples",
+      "id": "EX475236f0",
+      "beforeHash": "89efffccc749b29775c2d4bed67518a815435d58904a434abd7d12735ce2916b",
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "電腦圖像；畫面（本句使用複數 graphics）"
+      }
+    },
+    {
+      "dataset": "words",
+      "id": "W002947",
+      "beforeHash": "14df62ed7025465c0d4c442e451c82d9bb8dd52cdf4b7be4b912abf023fc991d",
+      "after": {
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ]
+      }
+    },
+    {
+      "dataset": "words",
+      "id": "W004676",
+      "beforeHash": "0a328529bea2b4c858dbd3398345a96fb50c76b79467836a7ea11c6f99230322",
+      "after": {
+        "usagePattern": "prohibit N/V-ing; prohibit sb from V-ing",
+        "usagePatternZh": "禁止某事／做某事；禁止某人做某事",
+        "verbForms": {
+          "base": "prohibit",
+          "past": "prohibited",
+          "pastParticiple": "prohibited",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/prohibit",
+          "status": "approved"
+        }
+      }
+    },
+    {
+      "dataset": "curriculum",
+      "id": "LI-LV3U02-G15",
+      "beforeHash": "56bc7ee1b672fa893e4a319fc437b60e2ed6bce413d1f787bb926775658a3661",
+      "after": {
+        "explanationZh": "這些名詞可表示優點或強項；依上下文選擇適合的搭配。"
+      }
+    },
+    {
+      "dataset": "notes",
+      "id": "NXe643167a",
+      "beforeHash": "a26103297942e1784b4c6feb0fdb77f60f1c271065ef0257085d7830325dc026",
+      "after": {
+        "title": "hate + V-ing / hate to V",
+        "content": "hate 可接 V-ing 或 to V，常都表示討厭做某事；V-ing 較著重活動本身，to V 較著重動作的選擇或結果。would/should hate 後用 to V。"
+      }
+    },
+    {
+      "dataset": "words",
+      "id": "W002428",
+      "beforeHash": "d28d597d0bc63ec07d162af18290fff2741f15b594c19065dfadea253901832f",
+      "after": {
+        "meaningZh": "想像；想像力"
+      }
+    },
+    {
+      "dataset": "words",
+      "id": "W002093",
+      "beforeHash": "7c351f9c95dc97d6fb3a5bdc9aec2b3dd82a532ab9d15244aee231c3f14b1614",
+      "after": {
+        "usagePattern": "bore + N; bore sb with N; a/the bore",
+        "usagePatternZh": "使……感到厭煩／鑽孔；以某事使某人厭煩；令人厭煩的人或事物",
+        "verbForms": {
+          "base": "bore",
+          "past": "bored",
+          "pastParticiple": "bored",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/bore",
+          "status": "approved"
+        }
+      }
+    },
+    {
+      "dataset": "words",
+      "id": "W005075",
+      "beforeHash": "929111e26dfe36a4092f897c4d6b9e0df2625981503c6119d8cb914f1504291f",
+      "after": {
+        "usagePattern": "attain + N; attain to N",
+        "usagePatternZh": "達到／獲得……；達到某種境界或狀態",
+        "meaningEn": "to gain with effort; reach a point in time, or a certain state or level",
+        "verbForms": {
+          "base": "attain",
+          "past": "attained",
+          "pastParticiple": "attained",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/attain",
+          "status": "approved"
+        }
+      }
+    },
+    {
+      "dataset": "words",
+      "id": "W003091",
+      "beforeHash": "925f1f069ac588ba0d540da17b7e0d5a510034964b38d5de650fd6753990d953",
+      "after": {
+        "usagePattern": "bankrupt + N; go bankrupt; a/the bankrupt",
+        "usagePatternZh": "使……破產；破產；破產者",
+        "verbForms": {
+          "base": "bankrupt",
+          "past": "bankrupted",
+          "pastParticiple": "bankrupted",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/bankrupt",
+          "status": "approved"
+        }
+      }
+    },
+    {
+      "dataset": "words",
+      "id": "W003400",
+      "beforeHash": "17c3109dc7b17781a1e9c102edf708d50f7a5c6c0024780588e56cf709dcadf6",
+      "after": {
+        "usagePattern": "feedback on N; feedback from sb",
+        "usagePatternZh": "對某事的回饋；來自某人的回饋"
+      }
+    },
+    {
+      "dataset": "words",
+      "id": "W002429",
+      "beforeHash": "2fbadd2768406ea43b32c72424bb4624f47ad8d3faec7a538a4ce06fb9d89b82",
+      "after": {
+        "usagePatternZh": "立即的行動／回應；最親近的家人；迫切的需求"
+      }
+    },
+    {
+      "dataset": "words",
+      "id": "W003045",
+      "beforeHash": "860670731fc29b4aa47923db59444284dc4bfd5f795c151d6e7932de96a25aca",
+      "after": {
+        "usagePattern": "analyze + N",
+        "usagePatternZh": "分析／細察／分解……",
+        "verbForms": {
+          "base": "analyze",
+          "past": "analyzed",
+          "pastParticiple": "analyzed",
+          "sourceRef": "https://www.collinsdictionary.com/conjugation/english/analyze",
+          "status": "approved"
+        }
+      }
+    },
+    {
+      "dataset": "words",
+      "id": "W002917",
+      "beforeHash": "422c23e70bf0034dd1105bdbe6c83e9711533f5a4c645126499be8cfa70760a3",
+      "after": {
+        "meaningZh": "（名詞）木材；木料；（動詞）用木材建造"
+      }
+    },
+    {
+      "dataset": "words",
+      "id": "W003011",
+      "beforeHash": "275a11c3ac00f28abcbe2faf4d4e607fd94eb5aefb600e8aa432b5c3d83ab6ee",
+      "after": {
+        "meaningZh": "（形容詞）學院的；學術的；不切實際的；（名詞）大學教師／學者；大學生"
+      }
+    },
+    {
+      "dataset": "words",
+      "id": "W006045",
+      "beforeHash": "67ece7e561dfbe1325818facf204912c2b63a4a16828df7495817bfd669ff2bb",
+      "after": {
+        "usagePattern": "a great achievement; a sense of achievement; achieve a goal (related verb)",
+        "usagePatternZh": "巨大的成就；成就感；達成目標（相關動詞用法）",
+        "meaningEn": "(n.) something that has been achieved successfully, especially by skill or hard work"
+      }
+    },
+    {
+      "dataset": "words",
+      "id": "W006054",
+      "beforeHash": "8163d29d299f5c51b85a9eca5ebb60ad367efe196b0e50db9e1459a2fcede0bc",
+      "after": {
+        "meaningZh": "完成；達到；實現；成就",
+        "meaningEn": "(n.) something that has been achieved successfully through effort or skill"
+      }
+    },
+    {
+      "dataset": "words",
+      "id": "W002009",
+      "beforeHash": "ce067a405e33cf32d88370c3f420ed8c96f6606a33dada149efda180c3e56562",
+      "after": {
+        "meaningZh": "完成；達到；如願以償；成就（動詞）",
+        "meaningEn": "(v.) to successfully complete something or gain something, usually by effort",
+        "verbForms": {
+          "base": "achieve",
+          "past": "achieved",
+          "pastParticiple": "achieved",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/achieve",
+          "status": "approved"
+        }
+      }
+    },
+    {
+      "dataset": "words",
+      "id": "W002314",
+      "beforeHash": "04b661e877df46b080ea5ca8c37ca59b605769258c8af8a1102097dd1bce3e6f",
+      "after": {
+        "verbForms": {
+          "base": "fake",
+          "past": "faked",
+          "pastParticiple": "faked",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/fake",
+          "status": "approved"
+        }
+      }
+    },
+    {
+      "dataset": "words",
+      "id": "W002633",
+      "beforeHash": "c0a4adde29a6b9edebc18548a92ee54892ae120855e4a40a3be8e68db3400b02",
+      "after": {
+        "verbForms": {
+          "base": "perform",
+          "past": "performed",
+          "pastParticiple": "performed",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/perform",
+          "status": "approved"
+        }
+      }
+    },
+    {
+      "dataset": "words",
+      "id": "W002674",
+      "beforeHash": "8353092ccd4ec5a89ef5834037fbc2505dacba7218c4331bb520bd38750a50a4",
+      "after": {
+        "verbForms": {
+          "base": "prevent",
+          "past": "prevented",
+          "pastParticiple": "prevented",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/prevent",
+          "status": "approved"
+        }
+      }
+    },
+    {
+      "dataset": "words",
+      "id": "W002724",
+      "beforeHash": "5d5e96f9137f20de691f66b98836c5fd76eb7fd4d56264d380b6fb8e8ab64d5d",
+      "after": {
+        "verbForms": {
+          "base": "represent",
+          "past": "represented",
+          "pastParticiple": "represented",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/represent",
+          "status": "approved"
+        }
+      }
+    },
+    {
+      "dataset": "words",
+      "id": "W002959",
+      "beforeHash": "8f16543ad010e61d68c96ae9e88825da80c7865b1ceb833012f3a53ca7373aad",
+      "after": {
+        "verbForms": {
+          "base": "vary",
+          "past": "varied",
+          "pastParticiple": "varied",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/vary",
+          "status": "approved"
+        }
+      }
+    },
+    {
+      "dataset": "words",
+      "id": "W003298",
+      "beforeHash": "51d10492b82526ba5bc607f203ceca8096eddcc91387db9449f537d1fe54a2c5",
+      "after": {
+        "verbForms": {
+          "base": "disadvantage",
+          "past": "disadvantaged",
+          "pastParticiple": "disadvantaged",
+          "sourceRef": "https://www.collinsdictionary.com/conjugation/english/disadvantage",
+          "status": "approved"
+        }
+      }
+    },
+    {
+      "dataset": "words",
+      "id": "W003325",
+      "beforeHash": "9beef62f8b631389cd0e6a7e65c58d867bc4b017425718c7187af9487f6c52ac",
+      "after": {
+        "verbForms": {
+          "base": "drill",
+          "past": "drilled",
+          "pastParticiple": "drilled",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/drill",
+          "status": "approved"
+        }
+      }
+    },
+    {
+      "dataset": "words",
+      "id": "W003924",
+      "beforeHash": "451555d3f31003ecab9bbea391e1df7d63b80cf830f70ae192b4d35d19272448",
+      "after": {
+        "verbForms": {
+          "base": "strengthen",
+          "past": "strengthened",
+          "pastParticiple": "strengthened",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/strengthen",
+          "status": "approved"
+        }
+      }
+    },
+    {
+      "dataset": "words",
+      "id": "W004084",
+      "beforeHash": "e188584c2cadbab3e45b30bf7309d870d8f888c5b36c13e3d04fd029f1642d5a",
+      "after": {
+        "verbForms": {
+          "base": "ban",
+          "past": "banned",
+          "pastParticiple": "banned",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/ban",
+          "status": "approved"
+        }
+      }
+    },
+    {
+      "dataset": "grammarQuestions",
+      "id": "GRAM-LV3U02-02",
+      "beforeHash": "0e7db12f588f2f3e49837a18c9cf7fb2ca2d8163c8548c003d3a17e25c1af70f",
+      "after": {
+        "options": [
+          {
+            "id": "A",
+            "text": "smoked",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "B",
+            "text": "to smoke",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "C",
+            "text": "smoking",
+            "rationaleZh": "此處用動名詞smoking表示吸菸這項活動，作allow的受詞。"
+          },
+          {
+            "id": "D",
+            "text": "to smoking",
+            "rationaleZh": "to smoking不是本句allow所接的正確結構。"
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "grammarQuestions",
+      "id": "GRAM-LV3U02-05",
+      "beforeHash": "052ccb102c0ebc8a5046be51c615e785553f99fb53baf198852d2f53381b90ed",
+      "after": {
+        "options": [
+          {
+            "id": "A",
+            "text": "to consent",
+            "rationaleZh": "所有格the speaker’s後不能直接接不定詞to consent。"
+          },
+          {
+            "id": "B",
+            "text": "consented",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "C",
+            "text": "consents",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "D",
+            "text": "consent",
+            "rationaleZh": "所有格後此處要表示同意的名詞consent。"
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "grammarQuestions",
+      "id": "GRAM-LV3U02-19",
+      "beforeHash": "26cb217e0aa86aa40c4c28c88a887fa71d2aa875b2fb7cfc3b1e668b1fac09eb",
+      "after": {
+        "options": [
+          {
+            "id": "A",
+            "text": "by",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "B",
+            "text": "to",
+            "rationaleZh": "a solution to a problem為固定搭配。"
+          },
+          {
+            "id": "C",
+            "text": "onto",
+            "rationaleZh": "onto通常表示移動到某表面，不表示本句問題與解決方法的關係。"
+          },
+          {
+            "id": "D",
+            "text": "on",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "grammarQuestions",
+      "id": "GRAM-LV3U02-22",
+      "beforeHash": "d811a80834776d0d2bee8749acbda6755dae1870ceeb144d6b5e1f99579c7b80",
+      "after": {
+        "options": [
+          {
+            "id": "A",
+            "text": "be damaged",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "B",
+            "text": "to damage",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "C",
+            "text": "being damaged",
+            "rationaleZh": "from後用動名詞，labels是被雨損壞，故用being damaged。"
+          },
+          {
+            "id": "D",
+            "text": "to be damaged",
+            "rationaleZh": "介詞from後不能直接接不定詞to be damaged；此處被動動名詞形式為being damaged。"
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "grammarQuestions",
+      "id": "GRAM-LV3U02-40",
+      "beforeHash": "1c3a4bdf36baf17e27e02629b7a2d3ec6fb37d2bbb7742d6267bf62a5d4f688f",
+      "after": {
+        "options": [
+          {
+            "id": "A",
+            "text": "We walked downtown after lunch.",
+            "rationaleZh": "本句downtown作副詞，表示往市中心，walked後直接接downtown即可。"
+          },
+          {
+            "id": "B",
+            "text": "We walked downtown to after lunch.",
+            "rationaleZh": "after lunch已是時間介詞片語，前面不能再直接加to。"
+          },
+          {
+            "id": "C",
+            "text": "We walked at to downtown after lunch.",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "D",
+            "text": "We walked for to downtown after lunch.",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "grammarQuestions",
+      "id": "GRAM-LV3U02-15",
+      "beforeHash": "00103ba75cb8a6613d4931e9a6fa3e5a50527eefbe18345611411a8fc6af5c78",
+      "after": {
+        "targetMeaningZh": "這些名詞可表示優點或強項；依上下文選擇適合的搭配。"
+      }
+    },
+    {
+      "dataset": "grammarQuestions",
+      "id": "GRAM-LV3U02-21",
+      "beforeHash": "63ec864729f8b20b9c8576017a2f18e3fa48d7f17800a0c944419c6cd6e92dd3",
+      "after": {
+        "options": [
+          {
+            "id": "A",
+            "text": "timberses",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "B",
+            "text": "a lumber",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "C",
+            "text": "many lumber",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "D",
+            "text": "timber",
+            "rationaleZh": "此處用不可數名詞timber，其他選項的數量或複數形式不合適。"
+          }
+        ]
+      }
+    }
+  ],
+  "protectedFields": [
+    "status",
+    "wordId",
+    "exampleId",
+    "noteId",
+    "learningItemId",
+    "questionId",
+    "word",
+    "wordVariants",
+    "sentenceEn",
+    "originalExample",
+    "stem",
+    "answer"
+  ],
+  "note": "Exact accepted rows/values only; not a global permission to change POS or note titles."
+}

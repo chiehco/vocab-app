@@ -1,5 +1,6 @@
-"""Fail-closed, reversible LV3 data audit applier, currently scoped to U01 only.
-The filename is extensible; no other LV3 unit is currently supported. Default is a staged dry run.
+"""Fail-closed, reversible LV3 data audit applier.
+V1 preserves the exact U01 contract; registered V2 steps use the file-aware pipeline.
+Default is a staged dry run.
 
 Each file is atomically replaced; the multi-file transaction has a durable backup
 and exception rollback, not a claim of OS-level multi-file atomicity. A crash
@@ -189,6 +190,7 @@ def stage_outputs(root, stage, staged, state, manifest):
         h.update((data / name).read_bytes().replace(b'\r\n', b'\n'))
     meta['contentHash'] = h.hexdigest()
     dump(data / 'meta.json', meta)
+    require(file_hash(stage / BUILDER) == manifest['unchangedInputs'][BUILDER], 'Unchecked staged builder')
     spec = importlib.util.spec_from_file_location('lv3_staged_pack_builder', stage / BUILDER)
     module = importlib.util.module_from_spec(spec)
     # Avoid pycache writes and execute only the input-hash-checked repository builder.
@@ -204,7 +206,7 @@ def stage_outputs(root, stage, staged, state, manifest):
         require(new_pack == old_pack, 'Applied pack drift')
 
 
-def run(root, manifest_path, apply=False):
+def _run_v1(root, manifest_path, apply=False):
     root = Path(root).resolve()
     manifest_path = Path(manifest_path).resolve()
     require(manifest_path.is_relative_to(root / 'docs'), 'Manifest must reside under repository docs')
@@ -263,11 +265,16 @@ def run(root, manifest_path, apply=False):
                 completed.append(relative)
             for relative in writes:
                 require(safe_path(root, relative).read_bytes() == (stage / relative).read_bytes(), 'Post-write mismatch')
+            require(input_paths(root) == paths, 'Concurrent input-set change after writes')
+            for relative in paths - set(writes):
+                require(safe_path(root, relative).read_bytes() == initial[relative], f'Concurrent untouched input change: {relative}')
             receipt['state'] = 'committed'
             dump(tx / 'transaction.json', receipt)
         except BaseException:
             for relative in reversed(completed):
                 target = safe_path(root, relative)
+                require(target.read_bytes() == (stage / relative).read_bytes(),
+                        'Concurrent edit during rollback; leave pending for recovery')
                 restore = target.with_name(target.name + '.lv3-restore-' + token + '.tmp')
                 restore.write_bytes(initial[relative])
                 os.replace(restore, target)
@@ -275,6 +282,19 @@ def run(root, manifest_path, apply=False):
             dump(tx / 'transaction.json', receipt)
             raise
         return {**result, 'state': 'applied', 'productWrites': len(writes), 'receipt': (tx / 'transaction.json').relative_to(root).as_posix()}
+
+
+def run(root, manifest_path, apply=False):
+    # Preflight remains read-only. Acquire an exclusive lock only after validation,
+    # then repeat validation under the lock to close concurrent preflight races.
+    import lv3_audit_pipeline as pipeline
+    manifest = read_json(Path(manifest_path))
+    runner = pipeline.run_v2 if manifest.get('schemaVersion') == 2 else _run_v1
+    result = runner(root, manifest_path, False)
+    if not apply or result['state'] == 'already_applied':
+        return result
+    with pipeline.transaction_lock(root):
+        return runner(root, manifest_path, True)
 
 
 def main():

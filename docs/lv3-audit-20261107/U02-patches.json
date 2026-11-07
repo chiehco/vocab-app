@@ -1,0 +1,2861 @@
+{
+  "schemaVersion": 2,
+  "unit": "LV3-U02",
+  "baseline": "99883751926bd6cb4feff70daff56c07afc130cb",
+  "parentManifestHash": "317ab4353c8a462071ab98efb9604f7f26d67f427ffe6c7d24b5a71a768b5309",
+  "readiness": "pending_independent_before_capture",
+  "scope": "U02-scope.json",
+  "scopeHash": "4ca0c047c5cc68f98e338133ce98bd4c0ad941e05cdef6d8dc0f9d6664932052",
+  "collections": {
+    "examples": {
+      "path": "public/data/v1/examples.json",
+      "key": "exampleId",
+      "rowsField": null
+    },
+    "words": {
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "rowsField": null
+    },
+    "curriculum": {
+      "path": "src/features/direct/curriculumUnit2.json",
+      "key": "learningItemId",
+      "rowsField": "learningItems"
+    },
+    "notes": {
+      "path": "public/data/v1/notes.json",
+      "key": "noteId",
+      "rowsField": null
+    },
+    "grammarQuestions": {
+      "path": "src/features/direct/curriculumUnit2.json",
+      "key": "questionId",
+      "rowsField": "grammarQuestions"
+    }
+  },
+  "files": {
+    "public/data/v1/examples.json": {
+      "beforeHash": "0938d677a6e225b0dcdfc9a3ae20c16aff2bac4219736fe375b4a60afb7880f7",
+      "afterHash": "a517d3f3b9945a7952c395be2869595fd38caaf1f2f0a267bcac2f3d62ec061c",
+      "beforeByteHash": "e06fa89d709e1bae4abd8cd4054ca7fff7719ba5ad44e00067eb6593a391a6c2",
+      "afterByteHash": "4df2958f5fa9ae6e02cfed59673af0e14e7e3899b473ec1f3316bc70de3523c6"
+    },
+    "public/data/v1/words.json": {
+      "beforeHash": "6e61047d9edd53132c1a2b1e6cd2f06b809ed76c0d32e0cbb62be91690eb71f6",
+      "afterHash": "1bcf59863a612f351957041a9ee91c37998c35542bc494d2e6513330d5263b3d",
+      "beforeByteHash": "80b7f273463070e97da37823f79d87fb2ca0dacc7b81587d915f77623d44b992",
+      "afterByteHash": "d8c07476e2d1403dca57b80e6c79f46ae969b871c20f7f2e94a3138f9f57a3b8"
+    },
+    "src/features/direct/curriculumUnit2.json": {
+      "beforeHash": "f6a6f9a298a8be130f0e307ac8c79908aa064655f0245b916bddbc18f1292b3a",
+      "afterHash": "78fd8da7ab8bdfa46e3a7bbbecb80d16c148d04534deb1a874b3972df2d3403d",
+      "beforeByteHash": "db26f5dad3ef205e7bd68c94c7fc3dfa92d73f81529ccd51c293dd5c34f5c850",
+      "afterByteHash": "34d7df39da9e96cb95af4372d44a8c73a0e6b862597636343eed6e2c54c6dd35"
+    },
+    "public/data/v1/notes.json": {
+      "beforeHash": "224a2e710cdcb17dcd35851ad4f178e6250be5239172592a9b8ab0b72030edee",
+      "afterHash": "acb97486417218594b0745d83bfda772a9811c83321e259dd5331b6dafdb199c",
+      "beforeByteHash": "24f6af02856ccabc622407f0b901a25cdf4d462d795dcf846211a21167fe100c",
+      "afterByteHash": "ffce78d6d7b5b111a584318d4cd7d3862868e4d00a6bedae6990f73b505885ea"
+    }
+  },
+  "patches": [
+    {
+      "dataset": "examples",
+      "path": "public/data/v1/examples.json",
+      "key": "exampleId",
+      "id": "EX01ff61fe",
+      "before": {
+        "exampleId": "EX01ff61fe",
+        "word": "fake",
+        "sensePos": "adj.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "He faked a smile so his friends wouldn't notice how upset he really was.",
+        "sentenceZh": "他擠出笑容假裝沒事，不想讓朋友發現他其實很難過。",
+        "blankSentence": "He _____ a smile so his friends wouldn't notice how upset he really was.",
+        "answer": "faked",
+        "difficulty": "LV3",
+        "status": "reviewed"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "faked 為本句過去式動詞，不是形容詞。",
+      "evidence": [
+        "https://dictionary.cambridge.org/us/dictionary/english/fake"
+      ],
+      "fieldEvidence": {
+        "sensePos": [
+          {
+            "proposal": "u02-source-review.json#/findings/0",
+            "reason": "faked 為本句過去式動詞，不是形容詞。",
+            "sources": [
+              "https://dictionary.cambridge.org/us/dictionary/english/fake"
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "examples",
+      "path": "public/data/v1/examples.json",
+      "key": "exampleId",
+      "id": "EX53417c85",
+      "before": {
+        "exampleId": "EX53417c85",
+        "word": "accomplishment",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "Finishing the marathon gave him a great sense of accomplishment.",
+        "sentenceZh": "完成馬拉松賽讓他獲得極大的成就感。",
+        "blankSentence": "Finishing the marathon gave him a great sense of _____.",
+        "answer": "accomplishment",
+        "difficulty": "LV4",
+        "status": "reviewed"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "a sense of accomplishment 中 accomplishment 是名詞。",
+      "evidence": [
+        "https://dictionary.cambridge.org/dictionary/learner-english/accomplishment"
+      ],
+      "fieldEvidence": {
+        "sensePos": [
+          {
+            "proposal": "u02-source-review.json#/findings/1",
+            "reason": "a sense of accomplishment 中 accomplishment 是名詞。",
+            "sources": [
+              "https://dictionary.cambridge.org/dictionary/learner-english/accomplishment"
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "examples",
+      "path": "public/data/v1/examples.json",
+      "key": "exampleId",
+      "id": "EX75b85a8b",
+      "before": {
+        "exampleId": "EX75b85a8b",
+        "word": "achievement",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "Winning the school speech contest was a great achievement for him.",
+        "sentenceZh": "贏得校內演講比賽對他來說是一項了不起的成就。",
+        "blankSentence": "Winning the school speech contest was a great _____ for him.",
+        "answer": "achievement",
+        "difficulty": "LV3",
+        "status": "reviewed"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "a great achievement 是名詞片語。",
+      "evidence": [
+        "https://dictionary.cambridge.org/us/dictionary/english/achievement"
+      ],
+      "fieldEvidence": {
+        "sensePos": [
+          {
+            "proposal": "u02-source-review.json#/findings/2",
+            "reason": "a great achievement 是名詞片語。",
+            "sources": [
+              "https://dictionary.cambridge.org/us/dictionary/english/achievement"
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "examples",
+      "path": "public/data/v1/examples.json",
+      "key": "exampleId",
+      "id": "EXd9fdd217",
+      "before": {
+        "exampleId": "EXd9fdd217",
+        "word": "normal",
+        "sensePos": "adj.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "After the storm passed, life in the town slowly returned to normal.",
+        "sentenceZh": "暴風雨過後，小鎮的生活漸漸恢復正常。",
+        "blankSentence": "After the storm passed, life in the town slowly returned to _____.",
+        "answer": "normal",
+        "difficulty": "LV3",
+        "status": "reviewed"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "return to normal 中 normal 指正常狀態。",
+      "evidence": [
+        "https://www.oxfordlearnersdictionaries.com/definition/english/normal_2"
+      ],
+      "fieldEvidence": {
+        "sensePos": [
+          {
+            "proposal": "u02-source-review.json#/findings/3",
+            "reason": "return to normal 中 normal 指正常狀態。",
+            "sources": [
+              "https://www.oxfordlearnersdictionaries.com/definition/english/normal_2"
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "examples",
+      "path": "public/data/v1/examples.json",
+      "key": "exampleId",
+      "id": "EX475236f0",
+      "before": {
+        "exampleId": "EX475236f0",
+        "word": "graphic",
+        "sensePos": "adj.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "The new game has amazing graphics that look almost real.",
+        "sentenceZh": "這款新遊戲的畫面幾乎逼真到像現實一樣。",
+        "blankSentence": "The new game has amazing _____ that look almost real.",
+        "answer": "graphics",
+        "difficulty": "LV5",
+        "status": "reviewed"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "電腦圖像；畫面（本句使用複數 graphics）"
+      },
+      "reason": "graphics 指電腦圖像，並非形容詞 graphic。保留英文、answer及ID。 避免電腦畫面例句被當成本單元形容詞「生動的」義。",
+      "evidence": [
+        "https://dictionary.cambridge.org/dictionary/english/graphics"
+      ],
+      "fieldEvidence": {
+        "sensePos": [
+          {
+            "proposal": "u02-source-review.json#/findings/4",
+            "reason": "graphics 指電腦圖像，並非形容詞 graphic。保留英文、answer及ID。",
+            "sources": [
+              "https://dictionary.cambridge.org/dictionary/english/graphics"
+            ],
+            "beforePresent": true
+          }
+        ],
+        "meaningHint": [
+          {
+            "proposal": "u02-source-review.json#/findings/5",
+            "reason": "避免電腦畫面例句被當成本單元形容詞「生動的」義。",
+            "sources": [
+              "https://dictionary.cambridge.org/dictionary/english/graphics"
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W002947",
+      "before": {
+        "wordId": "W002947",
+        "word": "underlying",
+        "wordVariants": [
+          "underlying"
+        ],
+        "level": "LV3",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "在下面的；優先的；基礎的；放在下面的",
+        "meaningEn": "forming the basic or hidden part of something and important to it, even though not immediately obvious",
+        "usagePattern": "underlying cause/reason; underlying problem/issue; underlying assumption",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "underlying",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "潛在原因或理由；潛在問題或議題；潛在假設"
+      },
+      "after": {
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ]
+      },
+      "reason": "單獨詞頭 underlying 及現有全部搭配是形容詞，動詞原形為 underlie；另核 posAll 同步，不改ID。 Corroborates source-review finding 7. The inflected participle of underlie also exists, but current row definition and patterns are adjective uses. Corroborates source-review finding 7. The inflected participle of underlie also exists, but current row definition and patterns are adjective uses.",
+      "evidence": [
+        "https://www.oxfordlearnersdictionaries.com/us/definition/english/underlying",
+        "https://www.collinsdictionary.com/dictionary/english/underlying"
+      ],
+      "fieldEvidence": {
+        "pos": [
+          {
+            "proposal": "u02-source-review.json#/findings/6",
+            "reason": "單獨詞頭 underlying 及現有全部搭配是形容詞，動詞原形為 underlie；另核 posAll 同步，不改ID。",
+            "sources": [
+              "https://www.oxfordlearnersdictionaries.com/us/definition/english/underlying"
+            ],
+            "beforePresent": true
+          },
+          {
+            "proposal": "u02-dictionary-verification.json#/items/13/changes/0",
+            "reason": "Corroborates source-review finding 7. The inflected participle of underlie also exists, but current row definition and patterns are adjective uses.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/underlying",
+                "evidenceParaphrase": "COBUILD labels both hidden/basic and below-the-surface senses adjective, with adjective + noun examples for causes, problems and rock."
+              }
+            ],
+            "beforePresent": true
+          }
+        ],
+        "posAll": [
+          {
+            "proposal": "u02-dictionary-verification.json#/items/13/changes/1",
+            "reason": "Corroborates source-review finding 7. The inflected participle of underlie also exists, but current row definition and patterns are adjective uses.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/underlying",
+                "evidenceParaphrase": "COBUILD labels both hidden/basic and below-the-surface senses adjective, with adjective + noun examples for causes, problems and rock."
+              }
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W004676",
+      "before": {
+        "wordId": "W004676",
+        "word": "prohibit",
+        "wordVariants": [
+          "prohibit"
+        ],
+        "level": "LV5",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "禁止；阻止",
+        "meaningEn": "command against",
+        "usagePattern": "prohibit + N; prohibit to V",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "prohibit",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "禁止……；禁止去……"
+      },
+      "after": {
+        "usagePattern": "prohibit N/V-ing; prohibit sb from V-ing",
+        "usagePatternZh": "禁止某事／做某事；禁止某人做某事",
+        "verbForms": {
+          "base": "prohibit",
+          "past": "prohibited",
+          "pastParticiple": "prohibited",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/prohibit",
+          "status": "approved"
+        }
+      },
+      "reason": "prohibit to V 模板錯誤；教材G03與正式權威搭配均支持名詞／動名詞及from結構。 與修正後英文用法逐一對齊。 Collins explicitly records past and past participle.",
+      "evidence": [
+        "https://our-languages.canada.ca/en/writing-tips-plus/prohibit-from",
+        "https://www.collinsdictionary.com/dictionary/english/prohibit"
+      ],
+      "fieldEvidence": {
+        "usagePattern": [
+          {
+            "proposal": "u02-source-review.json#/findings/7",
+            "reason": "prohibit to V 模板錯誤；教材G03與正式權威搭配均支持名詞／動名詞及from結構。",
+            "sources": [
+              "https://our-languages.canada.ca/en/writing-tips-plus/prohibit-from"
+            ],
+            "beforePresent": true
+          }
+        ],
+        "usagePatternZh": [
+          {
+            "proposal": "u02-source-review.json#/findings/8",
+            "reason": "與修正後英文用法逐一對齊。",
+            "sources": [
+              "https://our-languages.canada.ca/en/writing-tips-plus/prohibit-from"
+            ],
+            "beforePresent": true
+          }
+        ],
+        "verbForms": [
+          {
+            "proposal": "u02-verb-forms-verification.json#/items/13",
+            "reason": "Collins explicitly records past and past participle.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/prohibit",
+                "evidenceParaphrase": "COBUILD Word forms explicitly labels prohibited as both past tense and past participle."
+              }
+            ],
+            "beforePresent": false
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "curriculum",
+      "path": "src/features/direct/curriculumUnit2.json",
+      "key": "learningItemId",
+      "id": "LI-LV3U02-G15",
+      "before": {
+        "learningItemId": "LI-LV3U02-G15",
+        "kind": "grammar",
+        "sourcePage": 13,
+        "pattern": "strength / advantage / strong point / forte",
+        "explanationZh": "這些名詞可表示優點或強项；依上下文選擇適合的搭配。",
+        "practiceMode": "grammar_choice",
+        "review": "content_reviewed"
+      },
+      "after": {
+        "explanationZh": "這些名詞可表示優點或強項；依上下文選擇適合的搭配。"
+      },
+      "reason": "修正唯一簡體字「项」，不改英文或涵義。 簡繁混字強项→強項。",
+      "evidence": [],
+      "fieldEvidence": {
+        "explanationZh": [
+          {
+            "proposal": "u02-source-review.json#/findings/11",
+            "reason": "修正唯一簡體字「项」，不改英文或涵義。",
+            "sources": [
+              {
+                "file": "src/features/direct/curriculumUnit2.json",
+                "sha256": "a1386da5d8523c7034ca006a1dac8a798d183039620ed16ba51d0d98b3229753"
+              }
+            ],
+            "beforePresent": true
+          },
+          {
+            "proposal": "u02-grammar-review.json#/proposals/12",
+            "reason": "簡繁混字強项→強項。",
+            "sources": [
+              {
+                "file": "src/features/direct/curriculumUnit2.json",
+                "sha256": "a1386da5d8523c7034ca006a1dac8a798d183039620ed16ba51d0d98b3229753",
+                "reviewRecord": "u02-grammar-review.json#/rows/14",
+                "basis": "B forte唯一表示強項，weakness/shortcoming/disadvantage為反向概念；兩個教學說明欄有強项字形錯誤。"
+              }
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "notes",
+      "path": "public/data/v1/notes.json",
+      "key": "noteId",
+      "id": "NXe643167a",
+      "before": {
+        "noteId": "NXe643167a",
+        "word": "hate",
+        "noteType": "grammar",
+        "title": "hate + V-ing = hate to V",
+        "content": "討厭／厭惡做……。",
+        "status": "approved"
+      },
+      "after": {
+        "title": "hate + V-ing / hate to V",
+        "content": "hate 可接 V-ing 或 to V，常都表示討厭做某事；V-ing 較著重活動本身，to V 較著重動作的選擇或結果。would/should hate 後用 to V。"
+      },
+      "reason": "等號過度簡化；兩者均可但重點、would/should等搭配有差別。 補充限制避免視為所有語境任意互換。",
+      "evidence": [
+        "https://dictionary.cambridge.org/grammar/british-grammar/verbs-followed-by-ing-or-infinitive"
+      ],
+      "fieldEvidence": {
+        "title": [
+          {
+            "proposal": "u02-source-review.json#/findings/13",
+            "reason": "等號過度簡化；兩者均可但重點、would/should等搭配有差別。",
+            "sources": [
+              "https://dictionary.cambridge.org/grammar/british-grammar/verbs-followed-by-ing-or-infinitive"
+            ],
+            "beforePresent": true
+          }
+        ],
+        "content": [
+          {
+            "proposal": "u02-source-review.json#/findings/14",
+            "reason": "補充限制避免視為所有語境任意互換。",
+            "sources": [
+              "https://dictionary.cambridge.org/grammar/british-grammar/verbs-followed-by-ing-or-infinitive"
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W002428",
+      "before": {
+        "wordId": "W002428",
+        "word": "imagination",
+        "wordVariants": [
+          "imagination"
+        ],
+        "level": "LV3",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "想像；聽覺；想像力",
+        "meaningEn": "the ability to form new ideas or pictures in your mind of things that are not real or not present",
+        "usagePattern": "use one's imagination; a vivid/rich imagination",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "imagination",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "發揮想像力；生動／豐富的想像力"
+      },
+      "after": {
+        "meaningZh": "想像；想像力"
+      },
+      "reason": "聽覺 is not supported by the reviewed senses; remove only that item.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/imagination"
+      ],
+      "fieldEvidence": {
+        "meaningZh": [
+          {
+            "proposal": "u02-dictionary-verification.json#/items/0/changes/0",
+            "reason": "聽覺 is not supported by the reviewed senses; remove only that item.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/imagination",
+                "evidenceParaphrase": "British and American entries define forming mental images, creativity, imagined things and resourcefulness; none identifies the auditory faculty."
+              }
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W002093",
+      "before": {
+        "wordId": "W002093",
+        "word": "bore",
+        "wordVariants": [
+          "bore"
+        ],
+        "level": "LV3",
+        "pos": "v./n.",
+        "posAll": [
+          "v.",
+          "n."
+        ],
+        "meaningZh": "令人討厭的人；激浪；槍膛；孔",
+        "meaningEn": "a person who evokes boredom; diameter of a tube or gun barrel",
+        "usagePattern": "bore + N; bore to V; a/the bore",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "bore",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "使……感到厭煩；令人無聊以致去做某事；令人討厭的人事物"
+      },
+      "after": {
+        "usagePattern": "bore + N; bore sb with N; a/the bore",
+        "usagePatternZh": "使……感到厭煩／鑽孔；以某事使某人厭煩；令人厭煩的人或事物",
+        "verbForms": {
+          "base": "bore",
+          "past": "bored",
+          "pastParticiple": "bored",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/bore",
+          "status": "approved"
+        }
+      },
+      "reason": "Keep every existing rare meaning unchanged. The bare bore to V is not a basic verb complement pattern; a bore to V may occur in a noun construction, and purpose infinitives are not categorically banned. Keep every existing rare meaning unchanged. The bare bore to V is not a basic verb complement pattern; a bore to V may occur in a noun construction, and purpose infinitives are not categorically banned. Keep bore-bored-bored; do not confuse with bear-bore-borne.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/bore"
+      ],
+      "fieldEvidence": {
+        "usagePattern": [
+          {
+            "proposal": "u02-dictionary-verification.json#/items/1/changes/0",
+            "reason": "Keep every existing rare meaning unchanged. The bare bore to V is not a basic verb complement pattern; a bore to V may occur in a noun construction, and purpose infinitives are not categorically banned.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/bore",
+                "evidenceParaphrase": "COBUILD gives verb + noun and verb + noun + with; the noun covers boring people/situations. British entries separately attest holes, gun barrels and tidal waves."
+              }
+            ],
+            "beforePresent": true
+          }
+        ],
+        "usagePatternZh": [
+          {
+            "proposal": "u02-dictionary-verification.json#/items/1/changes/1",
+            "reason": "Keep every existing rare meaning unchanged. The bare bore to V is not a basic verb complement pattern; a bore to V may occur in a noun construction, and purpose infinitives are not categorically banned.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/bore",
+                "evidenceParaphrase": "COBUILD gives verb + noun and verb + noun + with; the noun covers boring people/situations. British entries separately attest holes, gun barrels and tidal waves."
+              }
+            ],
+            "beforePresent": true
+          }
+        ],
+        "verbForms": [
+          {
+            "proposal": "u02-verb-forms-verification.json#/items/1",
+            "reason": "Keep bore-bored-bored; do not confuse with bear-bore-borne.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/bore",
+                "evidenceParaphrase": "COBUILD headword Word forms labels bored as past tense and past participle; the Automotive Engineering verb entry also separately lists (past) bored and (perfect) bored. This is lexical bore, not the past of bear."
+              }
+            ],
+            "beforePresent": false
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W005075",
+      "before": {
+        "wordId": "W005075",
+        "word": "attain",
+        "wordVariants": [
+          "attain"
+        ],
+        "level": "LV6",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "達到；獲得",
+        "meaningEn": "to gain with effort; reach a point in time, or a certain state or level; the act of achieving an aim; arrival at a new stage",
+        "usagePattern": "attain + N; attain to V; an/the attain",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "attain",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）；括號詞拆分：原詞頭 attain(ment)",
+        "status": "draft",
+        "usagePatternZh": "達到某目標；達到去做某事；一項成就"
+      },
+      "after": {
+        "usagePattern": "attain + N; attain to N",
+        "usagePatternZh": "達到／獲得……；達到某種境界或狀態",
+        "meaningEn": "to gain with effort; reach a point in time, or a certain state or level",
+        "verbForms": {
+          "base": "attain",
+          "past": "attained",
+          "pastParticiple": "attained",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/attain",
+          "status": "approved"
+        }
+      },
+      "reason": "Preserve attain to N; correct the false noun template an/the attain. The minimal meaningEn split now removes nominal family fragments into the audit record. Preserve attain to N; correct the false noun template an/the attain. The minimal meaningEn split now removes nominal family fragments into the audit record. Keep both existing verb glosses verbatim. The nominal act/arrival fragments are inherited from the combined attain(ment) row, not additional verb senses. Attainment attests the nominal act of achieving; archive both removed fragments without automatically inserting them in another product row. Collins explicitly records past and past participle.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/attain",
+        "https://www.collinsdictionary.com/dictionary/english/attainment"
+      ],
+      "fieldEvidence": {
+        "usagePattern": [
+          {
+            "proposal": "u02-dictionary-verification.json#/items/2/changes/0",
+            "reason": "Preserve attain to N; correct the false noun template an/the attain. The minimal meaningEn split now removes nominal family fragments into the audit record.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/attain",
+                "evidenceParaphrase": "Listed as a verb: transitive achieving/reaching, and intransitive often followed by to, illustrated by attaining glory."
+              },
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/attainment",
+                "evidenceParaphrase": "COBUILD labels attainment a noun for the achieving of an aim; British entry includes the act of achieving."
+              }
+            ],
+            "beforePresent": true
+          }
+        ],
+        "usagePatternZh": [
+          {
+            "proposal": "u02-dictionary-verification.json#/items/2/changes/1",
+            "reason": "Preserve attain to N; correct the false noun template an/the attain. The minimal meaningEn split now removes nominal family fragments into the audit record.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/attain",
+                "evidenceParaphrase": "Listed as a verb: transitive achieving/reaching, and intransitive often followed by to, illustrated by attaining glory."
+              },
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/attainment",
+                "evidenceParaphrase": "COBUILD labels attainment a noun for the achieving of an aim; British entry includes the act of achieving."
+              }
+            ],
+            "beforePresent": true
+          }
+        ],
+        "meaningEn": [
+          {
+            "proposal": "u02-dictionary-verification.json#/items/2/changes/2",
+            "reason": "Keep both existing verb glosses verbatim. The nominal act/arrival fragments are inherited from the combined attain(ment) row, not additional verb senses. Attainment attests the nominal act of achieving; archive both removed fragments without automatically inserting them in another product row.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/attain",
+                "evidenceParaphrase": "Listed as a verb: transitive achieving/reaching, and intransitive often followed by to, illustrated by attaining glory."
+              },
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/attainment",
+                "evidenceParaphrase": "COBUILD labels attainment a noun for the achieving of an aim; British entry includes the act of achieving."
+              }
+            ],
+            "beforePresent": true
+          }
+        ],
+        "verbForms": [
+          {
+            "proposal": "u02-verb-forms-verification.json#/items/14",
+            "reason": "Collins explicitly records past and past participle.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/attain",
+                "evidenceParaphrase": "COBUILD Word forms explicitly labels attained as both past tense and past participle."
+              }
+            ],
+            "beforePresent": false
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W003091",
+      "before": {
+        "wordId": "W003091",
+        "word": "bankrupt",
+        "wordVariants": [
+          "bankrupt"
+        ],
+        "level": "LV4",
+        "pos": "adj./v./n.",
+        "posAll": [
+          "adj.",
+          "v.",
+          "n."
+        ],
+        "meaningZh": "破產者；破產的；使破產",
+        "meaningEn": "someone who has insufficient assets to cover their debts; reduce to bankruptcy",
+        "usagePattern": "bankrupt + N; bankrupt to V; a/the bankrupt",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "bankrupt",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "破產的……；破產以至於……；一位破產者"
+      },
+      "after": {
+        "usagePattern": "bankrupt + N; go bankrupt; a/the bankrupt",
+        "usagePatternZh": "使……破產；破產；破產者",
+        "verbForms": {
+          "base": "bankrupt",
+          "past": "bankrupted",
+          "pastParticiple": "bankrupted",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/bankrupt",
+          "status": "approved"
+        }
+      },
+      "reason": "Verb + N must not be translated as the adjective phrase 破產的……; the replacement isolates the three parts of speech. No claim that every purpose infinitive is impossible. Verb + N must not be translated as the adjective phrase 破產的……; the replacement isolates the three parts of speech. No claim that every purpose infinitive is impossible. Collins explicitly records past and past participle.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/bankrupt"
+      ],
+      "fieldEvidence": {
+        "usagePattern": [
+          {
+            "proposal": "u02-dictionary-verification.json#/items/3/changes/0",
+            "reason": "Verb + N must not be translated as the adjective phrase 破產的……; the replacement isolates the three parts of speech. No claim that every purpose infinitive is impossible.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/bankrupt",
+                "evidenceParaphrase": "COBUILD has noun bankrupt, adjective in go bankrupt, and verb meaning cause a person or organization to become bankrupt."
+              }
+            ],
+            "beforePresent": true
+          }
+        ],
+        "usagePatternZh": [
+          {
+            "proposal": "u02-dictionary-verification.json#/items/3/changes/1",
+            "reason": "Verb + N must not be translated as the adjective phrase 破產的……; the replacement isolates the three parts of speech. No claim that every purpose infinitive is impossible.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/bankrupt",
+                "evidenceParaphrase": "COBUILD has noun bankrupt, adjective in go bankrupt, and verb meaning cause a person or organization to become bankrupt."
+              }
+            ],
+            "beforePresent": true
+          }
+        ],
+        "verbForms": [
+          {
+            "proposal": "u02-verb-forms-verification.json#/items/8",
+            "reason": "Collins explicitly records past and past participle.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/bankrupt",
+                "evidenceParaphrase": "COBUILD Word forms explicitly labels bankrupted as both past tense and past participle."
+              }
+            ],
+            "beforePresent": false
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W003400",
+      "before": {
+        "wordId": "W003400",
+        "word": "feedback",
+        "wordVariants": [
+          "feedback"
+        ],
+        "level": "LV4",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "反饋；反應",
+        "meaningEn": "the process in which part of the output of a system is returned to its input in order to regulate its further output; response to an inquiry or experiment",
+        "usagePattern": "a/the feedback; feedback of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "feedback",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "一則反饋／該反饋；某方面的反饋"
+      },
+      "after": {
+        "usagePattern": "feedback on N; feedback from sb",
+        "usagePatternZh": "對某事的回饋；來自某人的回饋"
+      },
+      "reason": "This is a beginner-safe opinion-feedback pattern, not a ban on technical count uses or technical feedback of a signal. All technical meanings remain. This is a beginner-safe opinion-feedback pattern, not a ban on technical count uses or technical feedback of a signal. All technical meanings remain.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/feedback"
+      ],
+      "fieldEvidence": {
+        "usagePattern": [
+          {
+            "proposal": "u02-dictionary-verification.json#/items/4/changes/0",
+            "reason": "This is a beginner-safe opinion-feedback pattern, not a ban on technical count uses or technical feedback of a signal. All technical meanings remain.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/feedback",
+                "evidenceParaphrase": "COBUILD labels ordinary evaluative feedback uncountable and illustrates feedback on work and feedback from a boss."
+              }
+            ],
+            "beforePresent": true
+          }
+        ],
+        "usagePatternZh": [
+          {
+            "proposal": "u02-dictionary-verification.json#/items/4/changes/1",
+            "reason": "This is a beginner-safe opinion-feedback pattern, not a ban on technical count uses or technical feedback of a signal. All technical meanings remain.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/feedback",
+                "evidenceParaphrase": "COBUILD labels ordinary evaluative feedback uncountable and illustrates feedback on work and feedback from a boss."
+              }
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W002429",
+      "before": {
+        "wordId": "W002429",
+        "word": "immediate",
+        "wordVariants": [
+          "immediate"
+        ],
+        "level": "LV3",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "立即的；直接的；接近的",
+        "meaningEn": "happening or done without delay; nearest in time, place, or relationship to someone or something",
+        "usagePattern": "immediate + N (action/response/family/need)",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "immediate",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "立即的行動／回應／家人／需求"
+      },
+      "after": {
+        "usagePatternZh": "立即的行動／回應；最親近的家人；迫切的需求"
+      },
+      "reason": "Avoid 直系親屬 as the sole gloss because siblings are included.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/immediate"
+      ],
+      "fieldEvidence": {
+        "usagePatternZh": [
+          {
+            "proposal": "u02-dictionary-verification.json#/items/6/changes/0",
+            "reason": "Avoid 直系親屬 as the sole gloss because siblings are included.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/immediate",
+                "evidenceParaphrase": "COBUILD identifies immediate family as closest relatives, including parents, children and siblings; immediate also means needing prompt attention."
+              }
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W003045",
+      "before": {
+        "wordId": "W003045",
+        "word": "analyze",
+        "wordVariants": [
+          "analyze"
+        ],
+        "level": "LV4",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "分析；細察；分解",
+        "meaningEn": "consider in detail and subject to an analysis in order to discover essential features or meaning; make a mathematical, chemical, or grammatical analysis of; break down into components or essential features",
+        "usagePattern": "analyze + N; analyze to V",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "analyze",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "分析……；分析以進行……"
+      },
+      "after": {
+        "usagePattern": "analyze + N",
+        "usagePatternZh": "分析／細察／分解……",
+        "verbForms": {
+          "base": "analyze",
+          "past": "analyzed",
+          "pastParticiple": "analyzed",
+          "sourceRef": "https://www.collinsdictionary.com/conjugation/english/analyze",
+          "status": "approved"
+        }
+      },
+      "reason": "Remove unsupported bare infinitive complement as a teaching template; purpose-to clauses after an object remain possible. Remove unsupported bare infinitive complement as a teaching template; purpose-to clauses after an object remain possible. Preserve American spelling analyze/analyzed; do not substitute analyse/analysed.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/analyze",
+        "https://www.collinsdictionary.com/conjugation/english/analyze"
+      ],
+      "fieldEvidence": {
+        "usagePattern": [
+          {
+            "proposal": "u02-dictionary-verification.json#/items/7/changes/0",
+            "reason": "Remove unsupported bare infinitive complement as a teaching template; purpose-to clauses after an object remain possible.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/analyze",
+                "evidenceParaphrase": "American entry explicitly labels analyze a transitive verb and defines examining or separating a thing into parts."
+              }
+            ],
+            "beforePresent": true
+          }
+        ],
+        "usagePatternZh": [
+          {
+            "proposal": "u02-dictionary-verification.json#/items/7/changes/1",
+            "reason": "Remove unsupported bare infinitive complement as a teaching template; purpose-to clauses after an object remain possible.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/analyze",
+                "evidenceParaphrase": "American entry explicitly labels analyze a transitive verb and defines examining or separating a thing into parts."
+              }
+            ],
+            "beforePresent": true
+          }
+        ],
+        "verbForms": [
+          {
+            "proposal": "u02-verb-forms-verification.json#/items/7",
+            "reason": "Preserve American spelling analyze/analyzed; do not substitute analyse/analysed.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/analyze",
+                "evidenceParaphrase": "Dictionary Word forms explicitly lists analyzed; the conjugation table separately labels Past Participle analyzed and Past (all persons) analyzed."
+              },
+              {
+                "url": "https://www.collinsdictionary.com/conjugation/english/analyze",
+                "evidenceExcerpt": "Past Participle: analyzed; Past: I analyzed"
+              }
+            ],
+            "beforePresent": false
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W002917",
+      "before": {
+        "wordId": "W002917",
+        "word": "timber",
+        "wordVariants": [
+          "timber"
+        ],
+        "level": "LV3",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "木材；木料；用木材建造",
+        "meaningEn": "a beam made of wood; a post made of wood",
+        "usagePattern": "a/the timber; timber of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "timber",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "木材；……的木材"
+      },
+      "after": {
+        "meaningZh": "（名詞）木材；木料；（動詞）用木材建造"
+      },
+      "reason": "Verified real verb, so preserve 用木材建造 and label it rather than delete. Noun a timber is valid for an individual structural piece. Optional sense labeling only: do not force expansion of the original headword POS. The current core POS may remain, while the verified additional sense is retained and labeled. This differs from underlying, whose current adjective definition and patterns support a required v. to adj. correction.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/timber"
+      ],
+      "fieldEvidence": {
+        "meaningZh": [
+          {
+            "proposal": "u02-dictionary-verification.json#/items/8/changes/2",
+            "reason": "Verified real verb, so preserve 用木材建造 and label it rather than delete. Noun a timber is valid for an individual structural piece. Optional sense labeling only: do not force expansion of the original headword POS. The current core POS may remain, while the verified additional sense is retained and labeled. This differs from underlying, whose current adjective definition and patterns support a required v. to adj. correction.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/timber",
+                "evidenceParaphrase": "British entry includes a transitive timber verb; American entry explicitly includes providing, building or propping with timbers."
+              }
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W003011",
+      "before": {
+        "wordId": "W003011",
+        "word": "academic",
+        "wordVariants": [
+          "academic"
+        ],
+        "level": "LV4",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "學院的；學術的；不切實際的；大學生",
+        "meaningEn": "relating to schools, colleges, universities, or studying, rather than to practical skills; not connected to a real, practical situation",
+        "usagePattern": "academic + N (year/performance/subject); an academic career",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "academic",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "學年、學業表現或學科；學術生涯"
+      },
+      "after": {
+        "meaningZh": "（形容詞）學院的；學術的；不切實際的；（名詞）大學教師／學者；大學生"
+      },
+      "reason": "大學生 is a real attested sense. Preserve it, label noun, and include the usual teacher/scholar reading. Do not call the student sense wrong merely because less common. Optional sense labeling only: do not force expansion of the original headword POS. The current core POS may remain, while the verified additional sense is retained and labeled. This differs from underlying, whose current adjective definition and patterns support a required v. to adj. correction.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/academic"
+      ],
+      "fieldEvidence": {
+        "meaningZh": [
+          {
+            "proposal": "u02-dictionary-verification.json#/items/9/changes/2",
+            "reason": "大學生 is a real attested sense. Preserve it, label noun, and include the usual teacher/scholar reading. Do not call the student sense wrong merely because less common. Optional sense labeling only: do not force expansion of the original headword POS. The current core POS may remain, while the verified additional sense is retained and labeled. This differs from underlying, whose current adjective definition and patterns support a required v. to adj. correction.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/academic",
+                "evidenceParaphrase": "COBUILD noun denotes university teaching/research staff; American Random House entry noun sense 8 explicitly includes a student or teacher at a college or university."
+              }
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W006045",
+      "before": {
+        "wordId": "W006045",
+        "word": "achievement",
+        "wordVariants": [
+          "achievement"
+        ],
+        "level": "LV3",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "完成；達到；如願以償；成就；功業",
+        "meaningEn": "(v.) to successfully complete something or gain something, usually by effort; (n.) something that has been achieved successfully, especially by skill or hard work",
+        "usagePattern": "achieve a goal; a great/sense of achievement",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "achieve",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）；由 achieve(ment) 拆分，沿用原列合併釋義，待人工拆義。",
+        "status": "draft",
+        "usagePatternZh": "達成目標；巨大的成就／成就感"
+      },
+      "after": {
+        "usagePattern": "a great achievement; a sense of achievement; achieve a goal (related verb)",
+        "usagePatternZh": "巨大的成就；成就感；達成目標（相關動詞用法）",
+        "meaningEn": "(n.) something that has been achieved successfully, especially by skill or hard work"
+      },
+      "reason": "Preserves the related verb phrase but labels it explicitly; expands ambiguous slash shorthand. Preserves the related verb phrase but labels it explicitly; expands ambiguous slash shorthand. Keep the existing result-noun gloss verbatim; the removed infinitive gloss is the related verb achieve. Achievement also has a process noun sense, but no expansion is needed to fix this contamination.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/achievement",
+        "https://www.oxfordlearnersdictionaries.com/definition/english/achievement",
+        "https://www.collinsdictionary.com/dictionary/english/achieve"
+      ],
+      "fieldEvidence": {
+        "usagePattern": [
+          {
+            "proposal": "u02-dictionary-verification.json#/items/10/changes/0",
+            "reason": "Preserves the related verb phrase but labels it explicitly; expands ambiguous slash shorthand.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/achievement",
+                "evidenceParaphrase": "COBUILD gives a countable successful accomplishment and an uncountable process; its example uses a great achievement."
+              },
+              {
+                "url": "https://www.oxfordlearnersdictionaries.com/definition/english/achievement",
+                "evidenceParaphrase": "Indexed entry illustrates a sense of achievement as a feeling of pride.",
+                "access": "search-index"
+              },
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/achieve",
+                "evidenceParaphrase": "British entry labels achieve a verb meaning successfully concluding or gaining through effort."
+              }
+            ],
+            "beforePresent": true
+          }
+        ],
+        "usagePatternZh": [
+          {
+            "proposal": "u02-dictionary-verification.json#/items/10/changes/1",
+            "reason": "Preserves the related verb phrase but labels it explicitly; expands ambiguous slash shorthand.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/achievement",
+                "evidenceParaphrase": "COBUILD gives a countable successful accomplishment and an uncountable process; its example uses a great achievement."
+              },
+              {
+                "url": "https://www.oxfordlearnersdictionaries.com/definition/english/achievement",
+                "evidenceParaphrase": "Indexed entry illustrates a sense of achievement as a feeling of pride.",
+                "access": "search-index"
+              },
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/achieve",
+                "evidenceParaphrase": "British entry labels achieve a verb meaning successfully concluding or gaining through effort."
+              }
+            ],
+            "beforePresent": true
+          }
+        ],
+        "meaningEn": [
+          {
+            "proposal": "u02-dictionary-verification.json#/items/10/changes/2",
+            "reason": "Keep the existing result-noun gloss verbatim; the removed infinitive gloss is the related verb achieve. Achievement also has a process noun sense, but no expansion is needed to fix this contamination.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/achievement",
+                "evidenceParaphrase": "COBUILD gives a countable successful accomplishment and an uncountable process; its example uses a great achievement."
+              },
+              {
+                "url": "https://www.oxfordlearnersdictionaries.com/definition/english/achievement",
+                "evidenceParaphrase": "Indexed entry illustrates a sense of achievement as a feeling of pride.",
+                "access": "search-index"
+              },
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/achieve",
+                "evidenceParaphrase": "British entry labels achieve a verb meaning successfully concluding or gaining through effort."
+              }
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W006054",
+      "before": {
+        "wordId": "W006054",
+        "word": "accomplishment",
+        "wordVariants": [
+          "accomplishment"
+        ],
+        "level": "LV4",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "完成；達到；實現；使完美；成就",
+        "meaningEn": "(v.) to succeed in doing or finishing something; (n.) something that has been achieved successfully through effort or skill",
+        "usagePattern": "accomplish a goal/task; a sense of accomplishment; a great accomplishment",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "accomplish",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）；由 accomplish(ment) 拆分，沿用原列合併釋義，待人工拆義。",
+        "status": "draft",
+        "usagePatternZh": "完成目標／任務；成就感；偉大的成就"
+      },
+      "after": {
+        "meaningZh": "完成；達到；實現；成就",
+        "meaningEn": "(n.) something that has been achieved successfully through effort or skill"
+      },
+      "reason": "Minimum Chinese removal is 使完美, a verified accomplish verb sense rather than an accomplishment noun sense. 完成／達到／實現 may denote the nominal act. The meaningEn split retains the correct noun fragment verbatim. Related-verb usage can remain when explicitly labeled. Keep the existing result-noun gloss verbatim; the removed infinitive gloss belongs to accomplish. The valid act-of-completion noun sense is not rejected, merely absent from this minimum edit.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/accomplishment",
+        "https://www.collinsdictionary.com/dictionary/english/accomplish"
+      ],
+      "fieldEvidence": {
+        "meaningZh": [
+          {
+            "proposal": "u02-dictionary-verification.json#/items/11/changes/0",
+            "reason": "Minimum Chinese removal is 使完美, a verified accomplish verb sense rather than an accomplishment noun sense. 完成／達到／實現 may denote the nominal act. The meaningEn split retains the correct noun fragment verbatim. Related-verb usage can remain when explicitly labeled.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/accomplishment",
+                "evidenceParaphrase": "British entry includes the act of carrying out/achieving and something successfully completed, plus skills or social graces."
+              },
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/accomplish",
+                "evidenceParaphrase": "COBUILD and British entries label accomplish a verb meaning successfully doing or completing something."
+              }
+            ],
+            "beforePresent": true
+          }
+        ],
+        "meaningEn": [
+          {
+            "proposal": "u02-dictionary-verification.json#/items/11/changes/1",
+            "reason": "Keep the existing result-noun gloss verbatim; the removed infinitive gloss belongs to accomplish. The valid act-of-completion noun sense is not rejected, merely absent from this minimum edit.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/accomplishment",
+                "evidenceParaphrase": "British entry includes the act of carrying out/achieving and something successfully completed, plus skills or social graces."
+              },
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/accomplish",
+                "evidenceParaphrase": "COBUILD and British entries label accomplish a verb meaning successfully doing or completing something."
+              }
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W002009",
+      "before": {
+        "wordId": "W002009",
+        "word": "achieve",
+        "wordVariants": [
+          "achieve"
+        ],
+        "level": "LV3",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "完成；達到；如願以償；成就；功業",
+        "meaningEn": "(v.) to successfully complete something or gain something, usually by effort; (n.) something that has been achieved successfully, especially by skill or hard work",
+        "usagePattern": "achieve a goal; a great/sense of achievement",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "achieve",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）；括號詞拆分：原詞頭 achieve(ment)",
+        "status": "reviewed",
+        "usagePatternZh": "達成目標；巨大的成就／成就感"
+      },
+      "after": {
+        "meaningZh": "完成；達到；如願以償；成就（動詞）",
+        "meaningEn": "(v.) to successfully complete something or gain something, usually by effort",
+        "verbForms": {
+          "base": "achieve",
+          "past": "achieved",
+          "pastParticiple": "achieved",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/achieve",
+          "status": "approved"
+        }
+      },
+      "reason": "Remove noun-only 功業; retain 成就 as an explicitly marked Chinese verb. Keep the correct existing verb meaningEn fragment; archive the achievement noun fragment. Keep the existing verb gloss verbatim; the removed noun gloss describes achievement rather than a noun sense of achieve. Collins explicitly records past and past participle.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/achieve",
+        "https://www.collinsdictionary.com/dictionary/english/achievement"
+      ],
+      "fieldEvidence": {
+        "meaningZh": [
+          {
+            "proposal": "u02-dictionary-verification.json#/items/12/changes/0",
+            "reason": "Remove noun-only 功業; retain 成就 as an explicitly marked Chinese verb. Keep the correct existing verb meaningEn fragment; archive the achievement noun fragment.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/achieve",
+                "evidenceParaphrase": "British entry labels achieve a transitive verb for successfully completing or gaining through effort; its noun derivative is achiever, not a noun achieve."
+              },
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/achievement",
+                "evidenceParaphrase": "COBUILD distinguishes a countable successful accomplishment and an uncountable act/process."
+              }
+            ],
+            "beforePresent": true
+          }
+        ],
+        "meaningEn": [
+          {
+            "proposal": "u02-dictionary-verification.json#/items/12/changes/1",
+            "reason": "Keep the existing verb gloss verbatim; the removed noun gloss describes achievement rather than a noun sense of achieve.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/achieve",
+                "evidenceParaphrase": "British entry labels achieve a transitive verb for successfully completing or gaining through effort; its noun derivative is achiever, not a noun achieve."
+              },
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/achievement",
+                "evidenceParaphrase": "COBUILD distinguishes a countable successful accomplishment and an uncountable act/process."
+              }
+            ],
+            "beforePresent": true
+          }
+        ],
+        "verbForms": [
+          {
+            "proposal": "u02-verb-forms-verification.json#/items/0",
+            "reason": "Collins explicitly records past and past participle.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/achieve",
+                "evidenceParaphrase": "COBUILD Word forms explicitly labels achieved as both past tense and past participle."
+              }
+            ],
+            "beforePresent": false
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W002314",
+      "before": {
+        "wordId": "W002314",
+        "word": "fake",
+        "wordVariants": [
+          "fake"
+        ],
+        "level": "LV3",
+        "pos": "adj./v./n.",
+        "posAll": [
+          "adj.",
+          "v.",
+          "n."
+        ],
+        "meaningZh": "假貨；欺騙；詭計；假的",
+        "meaningEn": "(adj.) not real or genuine, but made to look like the real thing; (v.) to make something false seem genuine, or to pretend to feel or have something that is not true; (n.) a copy of something valuable that is made in order to deceive people",
+        "usagePattern": "a fake ID; fake news; fake a smile",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "fake",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "一張假證件；假新聞；假裝微笑"
+      },
+      "after": {
+        "verbForms": {
+          "base": "fake",
+          "past": "faked",
+          "pastParticiple": "faked",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/fake",
+          "status": "approved"
+        }
+      },
+      "reason": "Collins explicitly records past and past participle.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/fake"
+      ],
+      "fieldEvidence": {
+        "verbForms": [
+          {
+            "proposal": "u02-verb-forms-verification.json#/items/2",
+            "reason": "Collins explicitly records past and past participle.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/fake",
+                "evidenceParaphrase": "COBUILD Word forms explicitly labels faked as both past tense and past participle."
+              }
+            ],
+            "beforePresent": false
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W002633",
+      "before": {
+        "wordId": "W002633",
+        "word": "perform",
+        "wordVariants": [
+          "perform"
+        ],
+        "level": "LV3",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "進行；履行；完成；執行",
+        "meaningEn": "to do a piece of work or carry out a task; to entertain an audience by singing, dancing, acting, etc.",
+        "usagePattern": "perform a task/duty; perform on stage",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "perform",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "執行任務／職責；在舞台上表演"
+      },
+      "after": {
+        "verbForms": {
+          "base": "perform",
+          "past": "performed",
+          "pastParticiple": "performed",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/perform",
+          "status": "approved"
+        }
+      },
+      "reason": "Collins explicitly records past and past participle.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/perform"
+      ],
+      "fieldEvidence": {
+        "verbForms": [
+          {
+            "proposal": "u02-verb-forms-verification.json#/items/3",
+            "reason": "Collins explicitly records past and past participle.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/perform",
+                "evidenceParaphrase": "COBUILD Word forms explicitly labels performed as both past tense and past participle."
+              }
+            ],
+            "beforePresent": false
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W002674",
+      "before": {
+        "wordId": "W002674",
+        "word": "prevent",
+        "wordVariants": [
+          "prevent"
+        ],
+        "level": "LV3",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "預防；防止；阻止；妨礙",
+        "meaningEn": "to keep something from happening or to stop someone from doing something",
+        "usagePattern": "prevent + N + from + V-ing; prevent + N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "prevent",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "防止某人做某事；預防……"
+      },
+      "after": {
+        "verbForms": {
+          "base": "prevent",
+          "past": "prevented",
+          "pastParticiple": "prevented",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/prevent",
+          "status": "approved"
+        }
+      },
+      "reason": "Collins explicitly records past and past participle.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/prevent"
+      ],
+      "fieldEvidence": {
+        "verbForms": [
+          {
+            "proposal": "u02-verb-forms-verification.json#/items/4",
+            "reason": "Collins explicitly records past and past participle.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/prevent",
+                "evidenceParaphrase": "COBUILD Word forms explicitly labels prevented as both past tense and past participle."
+              }
+            ],
+            "beforePresent": false
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W002724",
+      "before": {
+        "wordId": "W002724",
+        "word": "represent",
+        "wordVariants": [
+          "represent"
+        ],
+        "level": "LV3",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "表現；表示；描繪；講述",
+        "meaningEn": "to speak or act officially for another person or group of people; to be a sign, symbol, or an expression of something",
+        "usagePattern": "represent + N; represent sb at/in N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "represent",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "代表……；在……代表某人"
+      },
+      "after": {
+        "verbForms": {
+          "base": "represent",
+          "past": "represented",
+          "pastParticiple": "represented",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/represent",
+          "status": "approved"
+        }
+      },
+      "reason": "Collins explicitly records past and past participle.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/represent"
+      ],
+      "fieldEvidence": {
+        "verbForms": [
+          {
+            "proposal": "u02-verb-forms-verification.json#/items/5",
+            "reason": "Collins explicitly records past and past participle.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/represent",
+                "evidenceParaphrase": "COBUILD Word forms explicitly labels represented as both past tense and past participle."
+              }
+            ],
+            "beforePresent": false
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W002959",
+      "before": {
+        "wordId": "W002959",
+        "word": "vary",
+        "wordVariants": [
+          "vary"
+        ],
+        "level": "LV3",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "改變；使多樣化；變化；有不同",
+        "meaningEn": "to be different or to change according to the situation",
+        "usagePattern": "vary from A to B; vary depending on/with N; vary in N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "vary",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "從A到B變化；視某事而定；在某方面有差異"
+      },
+      "after": {
+        "verbForms": {
+          "base": "vary",
+          "past": "varied",
+          "pastParticiple": "varied",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/vary",
+          "status": "approved"
+        }
+      },
+      "reason": "Collins explicitly records past and past participle.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/vary"
+      ],
+      "fieldEvidence": {
+        "verbForms": [
+          {
+            "proposal": "u02-verb-forms-verification.json#/items/6",
+            "reason": "Collins explicitly records past and past participle.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/vary",
+                "evidenceParaphrase": "COBUILD Word forms explicitly labels varied as both past tense and past participle."
+              }
+            ],
+            "beforePresent": false
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W003298",
+      "before": {
+        "wordId": "W003298",
+        "word": "disadvantage",
+        "wordVariants": [
+          "disadvantage"
+        ],
+        "level": "LV4",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "缺點；不利；壞處",
+        "meaningEn": "(n.) a factor that makes someone or something less good, useful, or likely to succeed; (v.) to put someone in a less favorable position",
+        "usagePattern": "at a disadvantage; the advantages and disadvantages of; put sb at a disadvantage",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "disadvantage",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "處於劣勢；……的優缺點；使某人處於劣勢"
+      },
+      "after": {
+        "verbForms": {
+          "base": "disadvantage",
+          "past": "disadvantaged",
+          "pastParticiple": "disadvantaged",
+          "sourceRef": "https://www.collinsdictionary.com/conjugation/english/disadvantage",
+          "status": "approved"
+        }
+      },
+      "reason": "Collins explicitly records past and past participle.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/disadvantage",
+        "https://www.collinsdictionary.com/conjugation/english/disadvantage"
+      ],
+      "fieldEvidence": {
+        "verbForms": [
+          {
+            "proposal": "u02-verb-forms-verification.json#/items/9",
+            "reason": "Collins explicitly records past and past participle.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/disadvantage",
+                "evidenceParaphrase": "Dictionary Word forms explicitly lists disadvantaged; the conjugation table separately labels Past Participle disadvantaged and Past (all persons) disadvantaged."
+              },
+              {
+                "url": "https://www.collinsdictionary.com/conjugation/english/disadvantage",
+                "evidenceExcerpt": "Past Participle: disadvantaged; Past: I disadvantaged"
+              }
+            ],
+            "beforePresent": false
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W003325",
+      "before": {
+        "wordId": "W003325",
+        "word": "drill",
+        "wordVariants": [
+          "drill"
+        ],
+        "level": "LV4",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "鑽孔機；鑽子；播種機；粗斜紋布",
+        "meaningEn": "(n.) a tool for making holes; repeated exercise or practice such as a fire drill (v.) to make a hole with a drill; to teach by repeated practice",
+        "usagePattern": "a fire drill; an electric drill; drill a hole; drill sb in sth",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "drill",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "消防演習；電鑽；鑽孔；訓練某人某事"
+      },
+      "after": {
+        "verbForms": {
+          "base": "drill",
+          "past": "drilled",
+          "pastParticiple": "drilled",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/drill",
+          "status": "approved"
+        }
+      },
+      "reason": "Collins explicitly records past and past participle.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/drill"
+      ],
+      "fieldEvidence": {
+        "verbForms": [
+          {
+            "proposal": "u02-verb-forms-verification.json#/items/10",
+            "reason": "Collins explicitly records past and past participle.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/drill",
+                "evidenceParaphrase": "COBUILD Word forms explicitly labels drilled as both past tense and past participle."
+              }
+            ],
+            "beforePresent": false
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W003924",
+      "before": {
+        "wordId": "W003924",
+        "word": "strengthen",
+        "wordVariants": [
+          "strengthen"
+        ],
+        "level": "LV4",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "加強；變堅固；變強；股票上漲",
+        "meaningEn": "to make something stronger, more effective, or more powerful",
+        "usagePattern": "strengthen + N (ties/relationship/economy); strengthen muscles",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "strengthen",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "加強……；增強肌肉"
+      },
+      "after": {
+        "verbForms": {
+          "base": "strengthen",
+          "past": "strengthened",
+          "pastParticiple": "strengthened",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/strengthen",
+          "status": "approved"
+        }
+      },
+      "reason": "Collins explicitly records past and past participle.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/strengthen"
+      ],
+      "fieldEvidence": {
+        "verbForms": [
+          {
+            "proposal": "u02-verb-forms-verification.json#/items/11",
+            "reason": "Collins explicitly records past and past participle.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/strengthen",
+                "evidenceParaphrase": "COBUILD Word forms explicitly labels strengthened as both past tense and past participle."
+              }
+            ],
+            "beforePresent": false
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W004084",
+      "before": {
+        "wordId": "W004084",
+        "word": "ban",
+        "wordVariants": [
+          "ban"
+        ],
+        "level": "LV5",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "禁令；禁止；取締",
+        "meaningEn": "n. an official rule that says something is not allowed; v. to officially say that something must not be done",
+        "usagePattern": "a ban on N; ban N from V-ing",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "ban",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "對……的禁令；禁止某人做某事"
+      },
+      "after": {
+        "verbForms": {
+          "base": "ban",
+          "past": "banned",
+          "pastParticiple": "banned",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/ban",
+          "status": "approved"
+        }
+      },
+      "reason": "Collins explicitly records past and past participle.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/ban"
+      ],
+      "fieldEvidence": {
+        "verbForms": [
+          {
+            "proposal": "u02-verb-forms-verification.json#/items/12",
+            "reason": "Collins explicitly records past and past participle.",
+            "sources": [
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/ban",
+                "evidenceParaphrase": "COBUILD Word forms explicitly labels banned as both past tense and past participle."
+              }
+            ],
+            "beforePresent": false
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "grammarQuestions",
+      "path": "src/features/direct/curriculumUnit2.json",
+      "key": "questionId",
+      "id": "GRAM-LV3U02-02",
+      "before": {
+        "questionId": "GRAM-LV3U02-02",
+        "learningItemId": "LI-LV3U02-G02",
+        "sourceType": "new_grammar_authored",
+        "targetWord": "allow sb to V / allow V-ing",
+        "targetMeaningZh": "allow與permit有相近接法；有人作受詞時接to V，直接接活動用V-ing。",
+        "stem": "The hostel does not allow _____ in the shared kitchen.",
+        "options": [
+          {
+            "id": "A",
+            "text": "smoked",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "B",
+            "text": "to smoke",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "C",
+            "text": "smoking",
+            "rationaleZh": "此處沒有人的受詞，allow後直接用動名詞smoking。"
+          },
+          {
+            "id": "D",
+            "text": "smoke",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          }
+        ],
+        "answer": "C"
+      },
+      "after": {
+        "options": [
+          {
+            "id": "A",
+            "text": "smoked",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "B",
+            "text": "to smoke",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "C",
+            "text": "smoking",
+            "rationaleZh": "此處用動名詞smoking表示吸菸這項活動，作allow的受詞。"
+          },
+          {
+            "id": "D",
+            "text": "to smoking",
+            "rationaleZh": "to smoking不是本句allow所接的正確結構。"
+          }
+        ]
+      },
+      "reason": "移除可作名詞的smoke；保留題幹與C正解。 對新干擾項給具體理由。 不誤稱沒有人的受詞就只能接動名詞。",
+      "evidence": [
+        "https://dictionary.cambridge.org/dictionary/english/smoke"
+      ],
+      "fieldEvidence": {
+        "options[D].text": [
+          {
+            "proposal": "u02-grammar-review.json#/proposals/0",
+            "reason": "移除可作名詞的smoke；保留題幹與C正解。",
+            "sources": [
+              {
+                "url": "https://dictionary.cambridge.org/dictionary/english/smoke",
+                "basis": "搜尋索引確認smoke有名詞詞性；頁面open回403，未聲稱全文讀取。"
+              },
+              {
+                "file": "src/features/direct/curriculumUnit2.json",
+                "sha256": "a1386da5d8523c7034ca006a1dac8a798d183039620ed16ba51d0d98b3229753",
+                "reviewRecord": "u02-grammar-review.json#/rows/1",
+                "basis": "C smoking正確，但D smoke可作不可數名詞煙霧，allow可接受詞名詞；存在合理替代答案，原解釋把無人的受詞誤推為只能用動名詞。"
+              }
+            ],
+            "beforePresent": true
+          }
+        ],
+        "options[D].rationaleZh": [
+          {
+            "proposal": "u02-grammar-review.json#/proposals/1",
+            "reason": "對新干擾項給具體理由。",
+            "sources": [
+              {
+                "url": "https://dictionary.cambridge.org/dictionary/english/smoke",
+                "basis": "搜尋索引確認smoke有名詞詞性；頁面open回403，未聲稱全文讀取。"
+              },
+              {
+                "file": "src/features/direct/curriculumUnit2.json",
+                "sha256": "a1386da5d8523c7034ca006a1dac8a798d183039620ed16ba51d0d98b3229753",
+                "reviewRecord": "u02-grammar-review.json#/rows/1",
+                "basis": "C smoking正確，但D smoke可作不可數名詞煙霧，allow可接受詞名詞；存在合理替代答案，原解釋把無人的受詞誤推為只能用動名詞。"
+              }
+            ],
+            "beforePresent": true
+          }
+        ],
+        "options[C].rationaleZh": [
+          {
+            "proposal": "u02-grammar-review.json#/proposals/2",
+            "reason": "不誤稱沒有人的受詞就只能接動名詞。",
+            "sources": [
+              {
+                "url": "https://dictionary.cambridge.org/dictionary/english/smoke",
+                "basis": "搜尋索引確認smoke有名詞詞性；頁面open回403，未聲稱全文讀取。"
+              },
+              {
+                "file": "src/features/direct/curriculumUnit2.json",
+                "sha256": "a1386da5d8523c7034ca006a1dac8a798d183039620ed16ba51d0d98b3229753",
+                "reviewRecord": "u02-grammar-review.json#/rows/1",
+                "basis": "C smoking正確，但D smoke可作不可數名詞煙霧，allow可接受詞名詞；存在合理替代答案，原解釋把無人的受詞誤推為只能用動名詞。"
+              }
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "grammarQuestions",
+      "path": "src/features/direct/curriculumUnit2.json",
+      "key": "questionId",
+      "id": "GRAM-LV3U02-05",
+      "before": {
+        "questionId": "GRAM-LV3U02-05",
+        "learningItemId": "LI-LV3U02-G05",
+        "sourceType": "new_grammar_authored",
+        "targetWord": "without sb's permission / consent / agreement",
+        "targetMeaningZh": "without後可接某人的許可或同意；所有格放在名詞之前。",
+        "stem": "The interview was published without the speaker's _____.",
+        "options": [
+          {
+            "id": "A",
+            "text": "consenting",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "B",
+            "text": "consented",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "C",
+            "text": "consents",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "D",
+            "text": "consent",
+            "rationaleZh": "所有格後此處要表示同意的名詞consent。"
+          }
+        ],
+        "answer": "D"
+      },
+      "after": {
+        "options": [
+          {
+            "id": "A",
+            "text": "to consent",
+            "rationaleZh": "所有格the speaker’s後不能直接接不定詞to consent。"
+          },
+          {
+            "id": "B",
+            "text": "consented",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "C",
+            "text": "consents",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "D",
+            "text": "consent",
+            "rationaleZh": "所有格後此處要表示同意的名詞consent。"
+          }
+        ]
+      },
+      "reason": "移除可接受的所有格動名詞consenting。 解釋新選項的結構錯誤。",
+      "evidence": [
+        "https://our-languages.canada.ca/en/writing-tips-plus/possessive-with-gerunds"
+      ],
+      "fieldEvidence": {
+        "options[A].text": [
+          {
+            "proposal": "u02-grammar-review.json#/proposals/3",
+            "reason": "移除可接受的所有格動名詞consenting。",
+            "sources": [
+              {
+                "url": "https://our-languages.canada.ca/en/writing-tips-plus/possessive-with-gerunds",
+                "basis": "已讀官方全文：所有格可作動名詞邏輯主詞。"
+              },
+              {
+                "file": "src/features/direct/curriculumUnit2.json",
+                "sha256": "a1386da5d8523c7034ca006a1dac8a798d183039620ed16ba51d0d98b3229753",
+                "reviewRecord": "u02-grammar-review.json#/rows/4",
+                "basis": "D consent正確，但A consenting可在所有格後組成動名詞結構，without the speaker’s consenting可成立，不能判錯。"
+              }
+            ],
+            "beforePresent": true
+          }
+        ],
+        "options[A].rationaleZh": [
+          {
+            "proposal": "u02-grammar-review.json#/proposals/4",
+            "reason": "解釋新選項的結構錯誤。",
+            "sources": [
+              {
+                "url": "https://our-languages.canada.ca/en/writing-tips-plus/possessive-with-gerunds",
+                "basis": "已讀官方全文：所有格可作動名詞邏輯主詞。"
+              },
+              {
+                "file": "src/features/direct/curriculumUnit2.json",
+                "sha256": "a1386da5d8523c7034ca006a1dac8a798d183039620ed16ba51d0d98b3229753",
+                "reviewRecord": "u02-grammar-review.json#/rows/4",
+                "basis": "D consent正確，但A consenting可在所有格後組成動名詞結構，without the speaker’s consenting可成立，不能判錯。"
+              }
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "grammarQuestions",
+      "path": "src/features/direct/curriculumUnit2.json",
+      "key": "questionId",
+      "id": "GRAM-LV3U02-19",
+      "before": {
+        "questionId": "GRAM-LV3U02-19",
+        "learningItemId": "LI-LV3U02-G19",
+        "sourceType": "new_grammar_authored",
+        "targetWord": "a solution to a problem",
+        "targetMeaningZh": "表示某問題的解決方法時，solution通常與介詞to搭配。",
+        "stem": "The students proposed a solution _____ the noise problem.",
+        "options": [
+          {
+            "id": "A",
+            "text": "by",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "B",
+            "text": "to",
+            "rationaleZh": "a solution to a problem為固定搭配。"
+          },
+          {
+            "id": "C",
+            "text": "of",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "D",
+            "text": "on",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          }
+        ],
+        "answer": "B"
+      },
+      "after": {
+        "options": [
+          {
+            "id": "A",
+            "text": "by",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "B",
+            "text": "to",
+            "rationaleZh": "a solution to a problem為固定搭配。"
+          },
+          {
+            "id": "C",
+            "text": "onto",
+            "rationaleZh": "onto通常表示移動到某表面，不表示本句問題與解決方法的關係。"
+          },
+          {
+            "id": "D",
+            "text": "on",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          }
+        ]
+      },
+      "reason": "避開solution of的語域爭議；屬風險消除，不宣稱原of絕對錯誤。 保留題幹及B答案。",
+      "evidence": [
+        "https://dictionary.cambridge.org/grammar/british-grammar/prepositions-solution",
+        "https://www.collinsdictionary.com/dictionary/english/solution-of-problems"
+      ],
+      "fieldEvidence": {
+        "options[C].text": [
+          {
+            "proposal": "u02-grammar-review.json#/proposals/5",
+            "reason": "避開solution of的語域爭議；屬風險消除，不宣稱原of絕對錯誤。",
+            "sources": [
+              {
+                "url": "https://dictionary.cambridge.org/grammar/british-grammar/prepositions-solution",
+                "basis": "搜尋索引明示教學搭配solution to，反對of/for。"
+              },
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/solution-of-problems",
+                "basis": "搜尋回傳完整collocation頁內容，所附語料顯示solution of problems存在；非此題完全等價的直接證明。"
+              },
+              {
+                "file": "src/features/direct/curriculumUnit2.json",
+                "sha256": "a1386da5d8523c7034ca006a1dac8a798d183039620ed16ba51d0d98b3229753",
+                "reviewRecord": "u02-grammar-review.json#/rows/18",
+                "basis": "B to是教材與Cambridge教學語法推薦搭配；C of另有正式語料用法，語域判定不宜寫成全盤不合法。保守移除有爭議干擾選項，原題尚列風險而非確認雙解。"
+              }
+            ],
+            "beforePresent": true
+          }
+        ],
+        "options[C].rationaleZh": [
+          {
+            "proposal": "u02-grammar-review.json#/proposals/6",
+            "reason": "保留題幹及B答案。",
+            "sources": [
+              {
+                "url": "https://dictionary.cambridge.org/grammar/british-grammar/prepositions-solution",
+                "basis": "搜尋索引明示教學搭配solution to，反對of/for。"
+              },
+              {
+                "url": "https://www.collinsdictionary.com/dictionary/english/solution-of-problems",
+                "basis": "搜尋回傳完整collocation頁內容，所附語料顯示solution of problems存在；非此題完全等價的直接證明。"
+              },
+              {
+                "file": "src/features/direct/curriculumUnit2.json",
+                "sha256": "a1386da5d8523c7034ca006a1dac8a798d183039620ed16ba51d0d98b3229753",
+                "reviewRecord": "u02-grammar-review.json#/rows/18",
+                "basis": "B to是教材與Cambridge教學語法推薦搭配；C of另有正式語料用法，語域判定不宜寫成全盤不合法。保守移除有爭議干擾選項，原題尚列風險而非確認雙解。"
+              }
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "grammarQuestions",
+      "path": "src/features/direct/curriculumUnit2.json",
+      "key": "questionId",
+      "id": "GRAM-LV3U02-22",
+      "before": {
+        "questionId": "GRAM-LV3U02-22",
+        "learningItemId": "LI-LV3U02-G22",
+        "sourceType": "new_grammar_authored",
+        "targetWord": "prevent sb/sth from N or V-ing",
+        "targetMeaningZh": "prevent後接受詞，再接from與名詞或動名詞；被動動作可用being加過去分詞。",
+        "stem": "The cover prevents the labels from _____ by rain.",
+        "options": [
+          {
+            "id": "A",
+            "text": "be damaged",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "B",
+            "text": "to damage",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "C",
+            "text": "being damaged",
+            "rationaleZh": "from後用動名詞，labels是被雨損壞，故用being damaged。"
+          },
+          {
+            "id": "D",
+            "text": "damage",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          }
+        ],
+        "answer": "C"
+      },
+      "after": {
+        "options": [
+          {
+            "id": "A",
+            "text": "be damaged",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "B",
+            "text": "to damage",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "C",
+            "text": "being damaged",
+            "rationaleZh": "from後用動名詞，labels是被雨損壞，故用being damaged。"
+          },
+          {
+            "id": "D",
+            "text": "to be damaged",
+            "rationaleZh": "介詞from後不能直接接不定詞to be damaged；此處被動動名詞形式為being damaged。"
+          }
+        ]
+      },
+      "reason": "避開教材N結構下damage的名詞解析爭議。 只改題目干擾項，不更改教材來源pattern。",
+      "evidence": [
+        "https://dictionary.cambridge.org/dictionary/english/prevent"
+      ],
+      "fieldEvidence": {
+        "options[D].text": [
+          {
+            "proposal": "u02-grammar-review.json#/proposals/7",
+            "reason": "避開教材N結構下damage的名詞解析爭議。",
+            "sources": [
+              {
+                "url": "https://dictionary.cambridge.org/dictionary/english/prevent",
+                "basis": "搜尋索引支持prevent something from happening；open回403，未據此否定教材N結構。"
+              },
+              {
+                "file": "src/features/direct/curriculumUnit2.json",
+                "sha256": "a1386da5d8523c7034ca006a1dac8a798d183039620ed16ba51d0d98b3229753",
+                "reviewRecord": "u02-grammar-review.json#/rows/21",
+                "basis": "C being damaged清楚表示標籤被雨損壞；D damage具有名詞解析風險且與教材N模式相衝突。教材照片確實列N/V-ing，保留來源pattern，僅提出換干擾項；不宣稱一般prevent from N已獲字典全面證實。"
+              }
+            ],
+            "beforePresent": true
+          }
+        ],
+        "options[D].rationaleZh": [
+          {
+            "proposal": "u02-grammar-review.json#/proposals/8",
+            "reason": "只改題目干擾項，不更改教材來源pattern。",
+            "sources": [
+              {
+                "url": "https://dictionary.cambridge.org/dictionary/english/prevent",
+                "basis": "搜尋索引支持prevent something from happening；open回403，未據此否定教材N結構。"
+              },
+              {
+                "file": "src/features/direct/curriculumUnit2.json",
+                "sha256": "a1386da5d8523c7034ca006a1dac8a798d183039620ed16ba51d0d98b3229753",
+                "reviewRecord": "u02-grammar-review.json#/rows/21",
+                "basis": "C being damaged清楚表示標籤被雨損壞；D damage具有名詞解析風險且與教材N模式相衝突。教材照片確實列N/V-ing，保留來源pattern，僅提出換干擾項；不宣稱一般prevent from N已獲字典全面證實。"
+              }
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "grammarQuestions",
+      "path": "src/features/direct/curriculumUnit2.json",
+      "key": "questionId",
+      "id": "GRAM-LV3U02-40",
+      "before": {
+        "questionId": "GRAM-LV3U02-40",
+        "learningItemId": "LI-LV3U02-G40",
+        "sourceType": "new_grammar_authored",
+        "targetWord": "downtown作副詞不加to",
+        "targetMeaningZh": "downtown表示往市區時本身是副詞，移動動詞後不再加to。",
+        "stem": "Which sentence correctly describes traveling to the city center?",
+        "options": [
+          {
+            "id": "A",
+            "text": "We walked downtown after lunch.",
+            "rationaleZh": "downtown已表示往市中心，前面不再加to。"
+          },
+          {
+            "id": "B",
+            "text": "We walked to downtown after lunch.",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "C",
+            "text": "We walked at to downtown after lunch.",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "D",
+            "text": "We walked for to downtown after lunch.",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          }
+        ],
+        "answer": "A"
+      },
+      "after": {
+        "options": [
+          {
+            "id": "A",
+            "text": "We walked downtown after lunch.",
+            "rationaleZh": "本句downtown作副詞，表示往市中心，walked後直接接downtown即可。"
+          },
+          {
+            "id": "B",
+            "text": "We walked downtown to after lunch.",
+            "rationaleZh": "after lunch已是時間介詞片語，前面不能再直接加to。"
+          },
+          {
+            "id": "C",
+            "text": "We walked at to downtown after lunch.",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "D",
+            "text": "We walked for to downtown after lunch.",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          }
+        ]
+      },
+      "reason": "移除to downtown可作名詞目的地的競爭解析；改為明確多餘to。此干擾項偏容易，但不改原stem或正解。 新B的錯誤在多餘to，不把downtown名詞用法判錯。 精準限定本句副詞用法。",
+      "evidence": [
+        "https://dictionary.cambridge.org/dictionary/english/downtown",
+        "https://www.oxfordlearnersdictionaries.com/us/definition/english/downtown_3"
+      ],
+      "fieldEvidence": {
+        "options[B].text": [
+          {
+            "proposal": "u02-grammar-review.json#/proposals/9",
+            "reason": "移除to downtown可作名詞目的地的競爭解析；改為明確多餘to。此干擾項偏容易，但不改原stem或正解。",
+            "sources": [
+              {
+                "url": "https://dictionary.cambridge.org/dictionary/english/downtown",
+                "basis": "搜尋索引確認美式不可數名詞；頁面open回403。"
+              },
+              {
+                "url": "https://www.oxfordlearnersdictionaries.com/us/definition/english/downtown_3",
+                "basis": "搜尋索引確認downtown名詞詞條。"
+              },
+              {
+                "file": "src/features/direct/curriculumUnit2.json",
+                "sha256": "a1386da5d8523c7034ca006a1dac8a798d183039620ed16ba51d0d98b3229753",
+                "reviewRecord": "u02-grammar-review.json#/rows/39",
+                "basis": "A downtown作副詞正確；B to downtown可取downtown美式名詞讀法，題幹未限定詞性，不能無條件判錯。保守換B，不動原stem；解釋加上本句作副詞的限定。"
+              }
+            ],
+            "beforePresent": true
+          }
+        ],
+        "options[B].rationaleZh": [
+          {
+            "proposal": "u02-grammar-review.json#/proposals/10",
+            "reason": "新B的錯誤在多餘to，不把downtown名詞用法判錯。",
+            "sources": [
+              {
+                "url": "https://dictionary.cambridge.org/dictionary/english/downtown",
+                "basis": "搜尋索引確認美式不可數名詞；頁面open回403。"
+              },
+              {
+                "url": "https://www.oxfordlearnersdictionaries.com/us/definition/english/downtown_3",
+                "basis": "搜尋索引確認downtown名詞詞條。"
+              },
+              {
+                "file": "src/features/direct/curriculumUnit2.json",
+                "sha256": "a1386da5d8523c7034ca006a1dac8a798d183039620ed16ba51d0d98b3229753",
+                "reviewRecord": "u02-grammar-review.json#/rows/39",
+                "basis": "A downtown作副詞正確；B to downtown可取downtown美式名詞讀法，題幹未限定詞性，不能無條件判錯。保守換B，不動原stem；解釋加上本句作副詞的限定。"
+              }
+            ],
+            "beforePresent": true
+          }
+        ],
+        "options[A].rationaleZh": [
+          {
+            "proposal": "u02-grammar-review.json#/proposals/11",
+            "reason": "精準限定本句副詞用法。",
+            "sources": [
+              {
+                "url": "https://dictionary.cambridge.org/dictionary/english/downtown",
+                "basis": "搜尋索引確認美式不可數名詞；頁面open回403。"
+              },
+              {
+                "url": "https://www.oxfordlearnersdictionaries.com/us/definition/english/downtown_3",
+                "basis": "搜尋索引確認downtown名詞詞條。"
+              },
+              {
+                "file": "src/features/direct/curriculumUnit2.json",
+                "sha256": "a1386da5d8523c7034ca006a1dac8a798d183039620ed16ba51d0d98b3229753",
+                "reviewRecord": "u02-grammar-review.json#/rows/39",
+                "basis": "A downtown作副詞正確；B to downtown可取downtown美式名詞讀法，題幹未限定詞性，不能無條件判錯。保守換B，不動原stem；解釋加上本句作副詞的限定。"
+              }
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "grammarQuestions",
+      "path": "src/features/direct/curriculumUnit2.json",
+      "key": "questionId",
+      "id": "GRAM-LV3U02-15",
+      "before": {
+        "questionId": "GRAM-LV3U02-15",
+        "learningItemId": "LI-LV3U02-G15",
+        "sourceType": "new_grammar_authored",
+        "targetWord": "strength / advantage / strong point / forte",
+        "targetMeaningZh": "這些名詞可表示優點或強项；依上下文選擇適合的搭配。",
+        "stem": "Which expression means a person's strong point?",
+        "options": [
+          {
+            "id": "A",
+            "text": "weakness",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "B",
+            "text": "forte",
+            "rationaleZh": "forte指強項；其餘表示缺點或弱點。"
+          },
+          {
+            "id": "C",
+            "text": "shortcoming",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "D",
+            "text": "disadvantage",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          }
+        ],
+        "answer": "B"
+      },
+      "after": {
+        "targetMeaningZh": "這些名詞可表示優點或強項；依上下文選擇適合的搭配。"
+      },
+      "reason": "簡繁混字強项→強項。",
+      "evidence": [],
+      "fieldEvidence": {
+        "targetMeaningZh": [
+          {
+            "proposal": "u02-grammar-review.json#/proposals/13",
+            "reason": "簡繁混字強项→強項。",
+            "sources": [
+              {
+                "file": "src/features/direct/curriculumUnit2.json",
+                "sha256": "a1386da5d8523c7034ca006a1dac8a798d183039620ed16ba51d0d98b3229753",
+                "reviewRecord": "u02-grammar-review.json#/rows/14",
+                "basis": "B forte唯一表示強項，weakness/shortcoming/disadvantage為反向概念；兩個教學說明欄有強项字形錯誤。"
+              }
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "grammarQuestions",
+      "path": "src/features/direct/curriculumUnit2.json",
+      "key": "questionId",
+      "id": "GRAM-LV3U02-21",
+      "before": {
+        "questionId": "GRAM-LV3U02-21",
+        "learningItemId": "LI-LV3U02-G21",
+        "sourceType": "new_grammar_authored",
+        "targetWord": "timber / lumber不可數",
+        "targetMeaningZh": "表示木材的timber、lumber可作不可數集合名詞，數量可用pieces of等方式表達。",
+        "stem": "The shed was built with recycled _____.",
+        "options": [
+          {
+            "id": "A",
+            "text": "timberses",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "B",
+            "text": "a lumber",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "C",
+            "text": "many lumber",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "D",
+            "text": "timber",
+            "rationaleZh": "此處用不可數名詞timber，其他選项的數量或複數形式不合適。"
+          }
+        ],
+        "answer": "D"
+      },
+      "after": {
+        "options": [
+          {
+            "id": "A",
+            "text": "timberses",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "B",
+            "text": "a lumber",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "C",
+            "text": "many lumber",
+            "rationaleZh": "此選項不符合本題的句法或語意。"
+          },
+          {
+            "id": "D",
+            "text": "timber",
+            "rationaleZh": "此處用不可數名詞timber，其他選項的數量或複數形式不合適。"
+          }
+        ]
+      },
+      "reason": "選项→選項。",
+      "evidence": [],
+      "fieldEvidence": {
+        "options[D].rationaleZh": [
+          {
+            "proposal": "u02-grammar-review.json#/proposals/14",
+            "reason": "選项→選項。",
+            "sources": [
+              {
+                "file": "src/features/direct/curriculumUnit2.json",
+                "sha256": "a1386da5d8523c7034ca006a1dac8a798d183039620ed16ba51d0d98b3229753",
+                "reviewRecord": "u02-grammar-review.json#/rows/20",
+                "basis": "D timber為不可數木材；a lumber/many lumber及timberses在此不成立。不能由此否認timbers在梁柱義可數；現說明已有木材限定。正解理由有選项字形錯誤。"
+              }
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    }
+  ],
+  "unchangedInputs": {
+    "public/data/v1/exam_priority.json": "afeddc9f393f59665fd8a72a11e71c771c139c66214a6962cb442e75709f54f5",
+    "public/data/v1/hooks.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "public/data/v1/media.json": "ee130840a1a7467271243b550dfa89ed4f266f9518b4c270aa33cfd1de8112a5",
+    "public/data/v1/morphemes.json": "e60331dfd54d3aa90c253eae86cebb8057af0786e125207db9c695b842e90433",
+    "public/data/v1/relations.json": "b2562fe33f212b32d426daa948d77789df6b27c941a000d32c7863f0b9c92828",
+    "public/data/v1/senses.json": "958cfe0c9a2185d45dfb3f596c9a7483373a5e9d69dce39e416ecf60a0fb7822",
+    "scripts/build_sa_pack.py": "7b5bf780f51451d39bc3762c027c67243dfafeed5817f3edccc23cbaabb8f3ee",
+    "src/features/direct/choiceOptions.json": "131580eebadea156da84eb93082d0288549688a7937a13b00a6ac2f95bb48786",
+    "src/features/direct/curriculum.json": "aa33e61779d74aed3e4af7cc8f684f4391e275ea915b1a0c8758ce6ff8f198a2",
+    "src/features/direct/curriculumLV1Unit16.json": "45d36a932f463b8d13d9f4f9c1951f6530672b88b782e863b1e7ae35c10da4fe",
+    "src/features/direct/curriculumLV1Unit17.json": "cc9d6e310032ec6c858d985459b1dcae3e3c2495889acd6eb2eb6a18c71ad18e",
+    "src/features/direct/curriculumLV1Unit18.json": "2b240c49b82610427f071bf31ba381055d7f5987da4fb577f15aef297f8822d1",
+    "src/features/direct/curriculumLV1Unit19.json": "e1081192bac4726c34e197814afcd734edf70cbc2e4f6558d83136529d4b24a3",
+    "src/features/direct/curriculumLV1Unit20.json": "c91f10085b3348f6ca3b1b3b8ce3152a6892eb344036789916c736c0df0dc9da",
+    "src/features/direct/curriculumLV1Unit21.json": "81fd3cf3e5ba39a4576821150a1d95211e002f147f37d7648ba44ee688ed5322",
+    "src/features/direct/curriculumLV2Unit27.json": "4cbc56e6d99057c4eb722d419d35176d7033cf7e379f97a3d659b386869c834e",
+    "src/features/direct/curriculumLV2Unit28.json": "e5b4bfbdbff15308c2f3641610ce6fecc9f3d4b41dd50d710413e57150882ffa",
+    "src/features/direct/curriculumLV2Unit29.json": "ba10bd3b014e1c823ee0f497e588f9fe6a71477615b0f736dfa228ff4d4096e2",
+    "src/features/direct/curriculumLV2Unit30.json": "7dd24fc23035d572d3664c1212654e157a3574c031c5ed99886d0b1c7c976f64",
+    "src/features/direct/curriculumLV2Unit31.json": "5e1d5ab229d14e285fe2647ad6f240f3a727ab0ba3b34dcb5742296919fec5ff",
+    "src/features/direct/curriculumLV2Unit32.json": "03134ebd4e8df98aa9c2d759a6c887f97556922a3d42b75afa35c196e1e4b2bf",
+    "src/features/direct/curriculumLV2Unit33.json": "69cf3c8f42da88f7c8e4f7bc033d7ad3e49a095a28d9c81af2a9e2e1b8818c81",
+    "src/features/direct/curriculumLV2Unit34.json": "8051bba4ed96ac77bc706280d971515f848e3062b5a868b00d35b2ab07e6563a",
+    "src/features/direct/curriculumLV2Unit35.json": "8777bc098ee7f5f6c0c82df5114b5271238d21b0366dfa0b8af687f1b27a77ec",
+    "src/features/direct/curriculumLV2Unit36.json": "d431677ba4ed26f95b0a3c4c9c71e480c7fee26bfd5f1265c6dabfd22bd9ab7b",
+    "src/features/direct/curriculumLV2Unit37.json": "ee3ab7de32cb2046dbd41d8dad98830bd52e2b1f4242f7d614abf624f5b1edb9",
+    "src/features/direct/curriculumLV2Unit38.json": "78e24e94aa2825366c694477bbce156df52ccb935fa70d4e3b67fa425dfb5201",
+    "src/features/direct/curriculumLV2Unit39.json": "7abf3d04d1d048c585184fdab32edcbff4927b7ee7ef863c9d141e1dfaea5650",
+    "src/features/direct/curriculumLV2Unit40.json": "105144085bad902fa3380aa04e39a5fb33f8c8cbbbc91ac4ad2d201723ef6dc3",
+    "src/features/direct/curriculumLV2Unit41.json": "3d6e16a279dfb3eb0862c5cb8883577ffd652ba29c141dc581fc33a47ca85eeb",
+    "src/features/direct/curriculumLV2Unit42.json": "05d8069dd0a76f554b86e96bf1db34771e5c662b78d954aa41c1713e163ba1e1",
+    "src/features/direct/curriculumLV2Unit43.json": "2ec5443ace981a5f70c4bf39f6b8f11eb18a5e54879befc0561befd0bfda6949",
+    "src/features/direct/curriculumLV2Unit44.json": "9e543f3fb8a93370bf812e5973cd89fb1767a1dfae344e69583d1ceae896534f",
+    "src/features/direct/curriculumLV2Unit45.json": "bf9a497dab35d44e8f19b42c39d06dd7a4073f732d2ebfef30fac3a061516b59",
+    "src/features/direct/curriculumLV2Unit46.json": "ec470129e210b3236f026ee439ad25261b036a3b002ccf02ebbf34b6ad768566",
+    "src/features/direct/curriculumLV2Unit47.json": "d9306c7a8d479ac94d7b8aaba3feef1a018fff0543d535ea2fe7918871ba2175",
+    "src/features/direct/curriculumLV2Unit48.json": "643aef515175539ea12a4ad5e59c981863fc31126c1e74b280d2afc7c0a778c7",
+    "src/features/direct/curriculumLV2Unit49.json": "efa430fbc840f4391c38aaaa23814628a64f2ca2c39c2f340f6aaebcd8faadde",
+    "src/features/direct/curriculumLV2Unit50.json": "0000bb2a184cd3a28d7abbca27d676a69ffed4039bc0bb099d2a591c85de622c",
+    "src/features/direct/curriculumLV3Unit10.json": "33f5b2a6408cc94573a705cecf1a8a9887a9db878e84e56ac3ad26feefd6c4ff",
+    "src/features/direct/curriculumLV3Unit11.json": "3a86a3ad8f1138f1bc8dea123db0644f2c1412fcff219fed730241632c92e1de",
+    "src/features/direct/curriculumLV3Unit12.json": "70e236bc4322124a25d05ba757d0b9d38b02046bf6e2d56d7591d55251ec14ef",
+    "src/features/direct/curriculumLV3Unit13.json": "64d9279685e275af4af0377a35199f125e7b1c34c75a5c8d3b78b77b5a011b86",
+    "src/features/direct/curriculumLV3Unit14.json": "0096598297d9853524954bf651dd86b43b4d37cd330dd08008d7547af5a6f067",
+    "src/features/direct/curriculumLV3Unit15.json": "dd8506b9cd8138f4d9ec2fe188e764c55f7f0f64ad40c4254a966dad32c8df22",
+    "src/features/direct/curriculumLV3Unit16.json": "f31b9ef714bd5c791f8b9eaab7500b41ae9897c29ecc279b5c81f1bad134a358",
+    "src/features/direct/curriculumLV3Unit17.json": "a4d55f89e80323229210caa270a9b353be0bec3c1b5b4e2dec6902ae9b3f35a1",
+    "src/features/direct/curriculumLV3Unit18.json": "b2f53a9db6ea2e6521a89f0f07fcbd0cf9f6530b52ed4e430962c54585296833",
+    "src/features/direct/curriculumLV3Unit19.json": "4facbd0a9f9a1f9d74a47323b6b4bb3ed6a33a5a79dbba356a30a1caa60586ec",
+    "src/features/direct/curriculumLV3Unit20.json": "c6197f6ab0a797cdb4647b245b19444f402d12cb8fc2ff3c979ade0b466f152d",
+    "src/features/direct/curriculumLV3Unit21.json": "e81d81a4866af752e48e9fa5f64bd135c7bdd46f9b45ccafb6000673cee2e41e",
+    "src/features/direct/curriculumLV3Unit22.json": "e9796be7c4db1ae18b59c3ba7a2c1d3e19a31b6edf34253dec906294d51c88fd",
+    "src/features/direct/curriculumLV3Unit23.json": "f8349a1de985166528d80a403ac686be3c9ce052706d7d6625bb0687d74a3d3c",
+    "src/features/direct/curriculumLV3Unit24.json": "db8f46b1abb4a26d06cf830a4fdba582c3450ad915ee4a0f4a06648c6095ab59",
+    "src/features/direct/curriculumLV3Unit4.json": "9f512f4b28ec17344316f2d239ad8612de96810c079d11d77fda7935ea6ff273",
+    "src/features/direct/curriculumLV3Unit5.json": "a82ca97048fe871ba04109eb22db395cb12a0f2151b21980805ce525a2fad04d",
+    "src/features/direct/curriculumLV3Unit6.json": "641902ed126fd34a584a2c4713a26dee3ad25a99d1556a05043d2341a4163a88",
+    "src/features/direct/curriculumLV3Unit7.json": "8237eb85bfc029320b024ef67edb552dbe22529ed434ef382f2cafa06c33bdd4",
+    "src/features/direct/curriculumLV3Unit8.json": "2d9c5f0fbeea66af08526ad4a3e9ec1a6a74f9cc45e6ce5aacb62a481b517d3e",
+    "src/features/direct/curriculumLV3Unit9.json": "36b891b9aee51a08b0449fc7ab24b2bf032d595b42cc78327463bc258625c988",
+    "src/features/direct/curriculumLV4Unit1.json": "a8dd86c0205d251aa0ee813a91a873f31fec97d562621c5aa48268fdcf794990",
+    "src/features/direct/curriculumLV4Unit10.json": "bb3fd43bac55f368ed1a04c5dab71560bcae90df9b9746822f7b9914b8dbc5c2",
+    "src/features/direct/curriculumLV4Unit11.json": "01d502d8b01b74a0669bf785861c2c048e8be480672444889a9e71933cd8c799",
+    "src/features/direct/curriculumLV4Unit12.json": "fbb1160d30151aa28ade0d75cc3ecd8e7d0d2c0f4b1734cee5e2f9b64c8ae3d6",
+    "src/features/direct/curriculumLV4Unit13.json": "3de424f45535a517dde40472929570ba4d6e8855ec8593fcc236d47a02b63f3f",
+    "src/features/direct/curriculumLV4Unit14.json": "66e8cde10fb314a1e8db49d0a5f4b9dddb1e359e027165b4e2fcbf4f62e3806f",
+    "src/features/direct/curriculumLV4Unit15.json": "98131ed6513ca94e9296561d19ca9a039b602d5cd9d0f1f207e718a2d9ef8bee",
+    "src/features/direct/curriculumLV4Unit16.json": "d9afe6ef09a56af1c0cc0e46e71e14d8a64b7af7af62be07678e22d15ef28d14",
+    "src/features/direct/curriculumLV4Unit17.json": "e87ee842d6a1490941ee2a2087eaceec57bd14007e9644c3e96c2a874973beb8",
+    "src/features/direct/curriculumLV4Unit18.json": "65d6ed5e05d0da710ef4b6aa564427b8f6ec7cb500bad0bbf4d92268bc47bfbe",
+    "src/features/direct/curriculumLV4Unit19.json": "115d49543bb7395fb0e796310a1caa927aad35e9bc41e6a7e30eea50141c9e62",
+    "src/features/direct/curriculumLV4Unit2.json": "fb82b241e8876abdfaa8b9e59943f16ce29c116e6ed56a653590d39fb6e97bfc",
+    "src/features/direct/curriculumLV4Unit20.json": "d33023fd91d8fbdfc66d341ebba79d46900c482e98ca2f2b754a579b4fe026cd",
+    "src/features/direct/curriculumLV4Unit21.json": "32f886115c9c5c8cd87fa09ce1fecce9527c0f37739cd818b7577584a2e635e5",
+    "src/features/direct/curriculumLV4Unit22.json": "26f839e3c4d9a8bd9e9a9ee6caf2a4d6756c7f0b4050a200eac88f773a826022",
+    "src/features/direct/curriculumLV4Unit23.json": "46d07e157175676a48fd6705b82553c7b1f705ee81356fe9405fb35cbf7581ca",
+    "src/features/direct/curriculumLV4Unit24.json": "052ef4539a37b5e735e54005c14a2e250dfb87e9c546c5f868aef3dc9ee9ac64",
+    "src/features/direct/curriculumLV4Unit3.json": "07076a44eeeba329ca8f30eacae7bf5d82d64dcd248c731555f3a906b477f700",
+    "src/features/direct/curriculumLV4Unit4.json": "dec54dad531c93df7b3fcc58c1ccdf19a29c3c4b0c1e669970fc68b414db0a68",
+    "src/features/direct/curriculumLV4Unit5.json": "a3da6d39cad69b07058b08a347b92e6e86e15a2b8fe855b81f06cec7549ebda8",
+    "src/features/direct/curriculumLV4Unit6.json": "783596335a7eaa8aa81767ec885d6b0a0dd8c77fdafe99a6b30b952d484df157",
+    "src/features/direct/curriculumLV4Unit7.json": "770f932e789398c434f50e7229fcad773a142ed83a8910a48f2ccd5a38149e43",
+    "src/features/direct/curriculumLV4Unit8.json": "3e0fcafbd42afdf75c9945913d3cbadeb181cd7ea1d3f4ebc9edb0e8e85a0c93",
+    "src/features/direct/curriculumLV4Unit9.json": "c52eab402247089a06ff793564fa6b641c21388762e570b36b3e812f2d4324f0",
+    "src/features/direct/curriculumLV5Unit1.json": "374d80055beb10add3bbc2785cbbb11b3ed4aa04970c63a4a8b827f2dc70ff01",
+    "src/features/direct/curriculumLV5Unit10.json": "be2fd6191d23af6c4ac487323c93812ebf0e2ed9e078c892c22f3ea8f336a350",
+    "src/features/direct/curriculumLV5Unit11.json": "28651800330fb7ea62979bbca747e46e02cf83724b9ca91af8f9d5b0d854bd0e",
+    "src/features/direct/curriculumLV5Unit12.json": "0602bdeb8ea042ee966d5f0f357247fb0435a52976fa80e58ed506a49afa83e0",
+    "src/features/direct/curriculumLV5Unit13.json": "4e388c2de221ecb271b065347910843879a04c85587713db1fc3cf253be095db",
+    "src/features/direct/curriculumLV5Unit14.json": "25f20fb3317ea3158e1f502e39f2f5bb0df39543d59d7967b21883496cb054dd",
+    "src/features/direct/curriculumLV5Unit15.json": "42ccfcbc36c078a1d538aca7b7b5b2157a29e29269173f2ad8dbd449fed61022",
+    "src/features/direct/curriculumLV5Unit16.json": "72764740a62f5ec995f1e28ba1790d54584bee7a5da3db51453b296cae094eaf",
+    "src/features/direct/curriculumLV5Unit18.json": "1a2fd36ce374f5122f29b94439aa08a92106d6bbee6498959cba233c258680b6",
+    "src/features/direct/curriculumLV5Unit22.json": "396072287b98f6a206c35eef081a2490e2484c5c6fd64ecde9990121ac6212f3",
+    "src/features/direct/curriculumLV5Unit25.json": "c6f4fee16b88efc6a497aa60ca150062b85c1372fbf3c2da0f200cc1e469bb2f",
+    "src/features/direct/curriculumLV5Unit3.json": "04707b78ad185cefe54455fe493ee975d4e4ce5871a10a191a0a26f09c124023",
+    "src/features/direct/curriculumLV5Unit4.json": "1bb6b3198f9f2b00548cd816c592854c728e4a5710e58b033fda9ea2a1e4c626",
+    "src/features/direct/curriculumLV5Unit5.json": "f6b590298f207774f0d23927ecab6922270182b8590d3eb8809aacbde2e7e74c",
+    "src/features/direct/curriculumLV5Unit6.json": "20507e98bb65b885815a5a4084031260d6d383488ed80f0ffb62e7d9a32abaf4",
+    "src/features/direct/curriculumLV5Unit7.json": "382600743d21159d89287cde405521d65ac34ddd6a9c07d854bcb396896cbd8f",
+    "src/features/direct/curriculumLV5Unit8.json": "aa57dadb052006b666cd6d974fd889b3f68b0fae026d39fddcb2895faeae2584",
+    "src/features/direct/curriculumLV5Unit9.json": "2ad95e828eaa5c227ecda4d82e9dbabf5e4373f2546fa7d50c81d3f5c9bf058f",
+    "src/features/direct/curriculumLV6Unit1.json": "f3f34181d5b40cc22871bd8502fc645a0e4b9cf96180d63bd88fcf56b02e562f",
+    "src/features/direct/curriculumLV6Unit10.json": "ba888a15c2d7c85df8c345dc9528efbb2e17c761c991ee1b738fd3974b073e53",
+    "src/features/direct/curriculumLV6Unit11.json": "0fcc8e662a0cd3bb842078267f13c420806d39a6e6968b6816abb88f93b299cb",
+    "src/features/direct/curriculumLV6Unit12.json": "295e8a7b49da0c6182aa161046d5a96d710133b06526465de36da0eb83e25cd7",
+    "src/features/direct/curriculumLV6Unit13.json": "141cd4c8c51e0f5b5c88c91cf33dfc0db9e43c0456238dbe3a5a8cd102d57c5f",
+    "src/features/direct/curriculumLV6Unit14.json": "e7c0add8b613ccd41128ad09a3a541a334f54aabdf608e397676746469d5ee35",
+    "src/features/direct/curriculumLV6Unit15.json": "478489d8fdebcf8a2502720e71eeb5594395aaa4db8dd09579bed367640a08eb",
+    "src/features/direct/curriculumLV6Unit16.json": "f4725223bfc405c826c2dffcc3f0522b94b1b8fda4f8c226bd8b02dba4fd077e",
+    "src/features/direct/curriculumLV6Unit17.json": "ba249cc52b2eb461a4b2b1a81e26e53c4ea6b35ebf33b8c047220f3d1df983c1",
+    "src/features/direct/curriculumLV6Unit18.json": "39cb0f006fc455629c516dc3aa287625bd6fb8f04997d0ccd09af2867bc3bbab",
+    "src/features/direct/curriculumLV6Unit19.json": "28cc4a3500a238b2e8437082fdcbbbb7ecfc8ea3ef0eb00c1be61886a829f6ca",
+    "src/features/direct/curriculumLV6Unit2.json": "3283befae35b6e12f46db13003a9dee1d4a4532c71a97ce80d14cb1ac87084fa",
+    "src/features/direct/curriculumLV6Unit20.json": "1ab7e0c9bc9156f546d702647cf1a91a7e57d45af45960a2e15d064668a976c8",
+    "src/features/direct/curriculumLV6Unit21.json": "68bd149729a9eb2e9d68420adfa6a78b197ffe9e5038cb279fa06013d6abd821",
+    "src/features/direct/curriculumLV6Unit22.json": "78091d698cc22c4056c687402651e93e2e1099cffdc0ede7f3a99356bd0ebc73",
+    "src/features/direct/curriculumLV6Unit23.json": "a80848cb2b2e2a0d07ea061d3cb95f8b1fa545173482c9680edcc6c67a5c2259",
+    "src/features/direct/curriculumLV6Unit24.json": "8a808eaedcaa484240389783843eee1bf141a63b6280a3baee0ea7649ed64970",
+    "src/features/direct/curriculumLV6Unit25.json": "5a6b3247a5f63d68334acdfd61842b1e0363967d4fd0d2c5e3b7a2b92ce4c4bc",
+    "src/features/direct/curriculumLV6Unit3.json": "9aa119fa69c5bf8c6fd4d7cf09782957f68e8aa9c15a4dbfa38becce121134d4",
+    "src/features/direct/curriculumLV6Unit4.json": "47d256c9fb0bbcacb6ef4f34ee29e88b52a6b553d093582bd114903e30d39846",
+    "src/features/direct/curriculumLV6Unit5.json": "8b6abfca9e5b6df716d706e2bebf22a5de2be802ec6af174caf927f5c4e1b3e4",
+    "src/features/direct/curriculumLV6Unit6.json": "1c7cb8eee10f747e4e55ea64b7d2456b53326e8dca063a9bd0c963588e602c86",
+    "src/features/direct/curriculumLV6Unit7.json": "5c9231c9b569fa2393e876b72cb19a5af6bf5719205af1b61ddfd52ab8d2621e",
+    "src/features/direct/curriculumLV6Unit8.json": "8210173529f3f8021c7d3d0cf9a743b50430d2fa6ef7eb07abe1b0f697fa7a29",
+    "src/features/direct/curriculumLV6Unit9.json": "4a2d6977c87b3fcf2b4e9e2bfddbbe2cd3d43482e38e8fd35deee97db5321e57",
+    "src/features/direct/glossary.json": "dbe5ccb293274d7fcbbba3cf16145e408db96799d79c19f927b3f779d5a6d3e9",
+    "src/features/direct/grammarQuestions.json": "b50b30086e650207460daeca4b81461f4b7494b3f34c2cbf2b669158ab30fbf0",
+    "src/features/direct/liveabcBasic.json": "e94e01f8394f51aca82894f4f20af4b8b582663438165d86537963c0e22d5b09",
+    "src/features/direct/optionContextRationalesLV4Unit20.json": "51f95520046518ba6a65cb0ae8f43e255c2d293620d8e0ba6731c89d0d11a501",
+    "src/features/direct/optionContextRationalesLV4Unit20Batch2.json": "28f0bbf39147df3e591617c1130a37cada4c6c26f551da92e41ed6b4cd77f997",
+    "src/features/direct/optionContextRationalesLV4Unit20Batch3.json": "3154b275d194ceb993b1d21424edf93011afcf499feea0a3ecc5528c14d444a8",
+    "src/features/direct/practiceTextRevisionsLV4Unit20.json": "978ce6e84ec098a2ccd98c4fa750847a7922a8d79c9ee937f8270a69ed616206",
+    "src/features/direct/practiceVariantsLV4Unit17.json": "3360cc54bec10479da09a0d69a5b6e1285ec3302f62f5360c6a97fabc89b0b4a",
+    "src/features/direct/questions.json": "fbe87ceeb27375bcd4b2291cb0cbc192292995bef36b5977d2a4965f8bda0ce8",
+    "src/features/direct/wordCatalog.json": "eb0eba4ad2ae66769b9f9b8c0b02473da76fae00ea6d287e96d58552a681d268",
+    "src/features/vocabulary/lv1ReviewedImages.json": "c05fd8e028538f870108e2ee11e43e3e076e385ba55337fbbe42a5e06ccd833d"
+  },
+  "derivedBefore": {
+    "public/data/v1/meta.json": "ece43917bf3e8b60728e684f3c9f6db192e9a753ca1a40ce6b12429ae1c94afb",
+    "public/data/v1/sa-pack.json": "390d9417818eb52368e7096ce82e7bff4b278203a05f6a1e97920da8525d1185"
+  },
+  "beforeMeta": {
+    "schemaVersion": 2,
+    "generatedAt": "2026-11-07T13:10:12Z",
+    "sourceFile": "萬詞譜母表_SA義項清理整合_20260904.xlsx",
+    "counts": {
+      "words": 6090,
+      "senses": 772,
+      "examples": 7871,
+      "relations": 40,
+      "morphemes": 3798,
+      "media": 1177,
+      "notes": 4290,
+      "examPriority": 3792,
+      "hooks": 0
+    },
+    "wordsHash": "80b7f273463070e97da37823f79d87fb2ca0dacc7b81587d915f77623d44b992",
+    "contentHash": "b0f48221b359e57c2d3de471f297a49e0e26c521a16113dd388aab4a1e2394d6",
+    "houseSourceSha256": "98fa208835caf7184acc95f26dcff56ace23ba281ff8d4b9b8c37e18e407be14"
+  },
+  "derivedAfter": null,
+  "afterMeta": null,
+  "beforePackMeta": {
+    "schemaVersion": 2,
+    "generatedAt": "2026-11-07T13:10:12Z",
+    "counts": {
+      "words": 5779,
+      "senses": 771,
+      "examples": 7436,
+      "relations": 31,
+      "morphemes": 3696,
+      "notes": 4111,
+      "media": 746,
+      "examPriority": 3613
+    },
+    "wordsHash": "sa:98e1bc2d924ecee64954b2f414670899370baa9adf5c755407cdb7baeb3daff0",
+    "contentHash": "sa:a70dd26368cd050fb71945a3efeaa98ce0fa2efa34c134a27ec23f6c7a4dcb17"
+  }
+}

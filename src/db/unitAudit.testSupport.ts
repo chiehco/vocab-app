@@ -1,4 +1,4 @@
-import {lv3Unit1BeforeAudit} from '../features/direct/lv3Unit1Audit.testSupport';
+import {lv3BeforeAudit} from '../features/direct/lv3Audit.testSupport';
 import lv2u45Wicked from '../../docs/unit-audit-20261105/LV2-U45-wicked-usage-followup.json';
 import lv2u41Usage from '../../docs/unit-audit-20261105/LV2-U41-usage-followup.json';
 import lv2u40Visible from '../../docs/unit-audit-20261105/LV2-U40-visible-pos-followup.json';
@@ -318,7 +318,7 @@ export function restoreRecordedAuditPatch(name:string,row:Row,patch:Patch):void{
 // field before reversing only that field for the old-release comparison.
 export function beforeUnitAudit<T>(dataset:string, value:T):T {
   const name=dataset.replace(/\.json$/,'');
-  const copy=Array.isArray(value)?lv3Unit1BeforeAudit(name,value,{allowMissing:true}):structuredClone(value);
+  const copy=Array.isArray(value)?lv3BeforeAudit(name,value,{allowMissing:true}):structuredClone(value);
   if(name==='sa-pack'){
     const pack=copy as Row;
     const meta=pack.meta as Row;

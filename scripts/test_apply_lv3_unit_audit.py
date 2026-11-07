@@ -14,6 +14,7 @@ import unittest
 from unittest.mock import patch
 
 import apply_lv3_unit_audit as audit
+import lv3_audit_pipeline as pipeline
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = 'docs/lv3-audit-20261107/U01-patches.json'
@@ -57,8 +58,11 @@ def exact_inverse(manifest, current):
 class U01AuditApplierTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        cls.projection_temp = tempfile.TemporaryDirectory(prefix='lv3-u01-projection-')
+        cls.addClassCleanup(cls.projection_temp.cleanup)
+        checkpoint = pipeline.project_checkpoint(ROOT, Path(cls.projection_temp.name) / 'checkpoint')
         cls.manifest = audit.read_json(ROOT / MANIFEST)
-        cls.current_after = {name: audit.read_json(ROOT / spec[0])
+        cls.current_after = {name: audit.read_json(checkpoint / spec[0])
                              for name, spec in audit.SPECS.items()}
         cls.before = exact_inverse(cls.manifest, cls.current_after)
         cls.temporary = tempfile.TemporaryDirectory(prefix='lv3-u01-unittest-')
@@ -67,7 +71,7 @@ class U01AuditApplierTests(unittest.TestCase):
         for relative in audit.input_paths(ROOT) | {MANIFEST}:
             target = cls.fixture / relative
             target.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copyfile(ROOT / relative, target)
+            shutil.copyfile((ROOT if relative == MANIFEST else checkpoint) / relative, target)
         for name, value in cls.before.items():
             audit.dump(cls.fixture / audit.SPECS[name][0], value)
         audit.dump(cls.fixture / audit.DERIVED[0], BEFORE_META)
