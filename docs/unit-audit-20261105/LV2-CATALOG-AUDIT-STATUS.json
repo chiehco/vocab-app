@@ -1,6 +1,6 @@
 {
   "scope": "Exact current repository curriculum catalogue, not a publisher edition table of contents or an inferred numeric range.",
-  "checkedAtUtc": "2026-11-07T00:37:34.515Z",
+  "checkedAtUtc": "2026-11-07T01:32:20.747Z",
   "basis": {
     "model": "src/features/direct/model.ts",
     "catalog": "src/features/vocabulary/textbookCatalog.ts",
@@ -82,10 +82,9 @@
     44
   ],
   "currentAuditUnits": [
-    45
+    46
   ],
   "notYetAuditedUnits": [
-    46,
     47,
     48,
     49,
@@ -849,9 +848,32 @@
       "curriculumPath": "src/features/direct/curriculumLV2Unit45.json",
       "registeredInModel": true,
       "deliveryMode": "text_only",
-      "auditStatus": "after_and_local_checks_complete_own_ci_pending",
+      "auditStatus": "after_local_checks_and_exact_head_ci_success",
       "ledger": "docs/unit-audit-20261105/LV2-U45-ledger.json",
-      "ownCi": null
+      "ownCi": {
+        "commit": "cb72da3d31e85b5aa11e9b08f6e34ff8d188ec24",
+        "run": 42319761185,
+        "job": 128241186866,
+        "url": "https://github.com/chiehco/vocab-app/actions/runs/42319761185/job/128241186866",
+        "status": "completed",
+        "conclusion": "success",
+        "checkoutShaReadFromFullLog": true,
+        "testFiles": 237,
+        "tests": 1943,
+        "pythonBatches": [
+          14,
+          7,
+          87,
+          5,
+          10
+        ],
+        "lint": "success",
+        "typecheck": "success",
+        "build": "success",
+        "buildLogCompletedAtUtc": "2026-11-07T00:58:16.1883663Z",
+        "jobCompletedAtUtc": "2026-11-07T00:58:22Z",
+        "source": "Complete exact-head CI checkout, all steps and full test/build log actually read. Not a preceding-head substitute."
+      }
     },
     {
       "unit": 46,
@@ -876,8 +898,8 @@
       "curriculumPath": "src/features/direct/curriculumLV2Unit46.json",
       "registeredInModel": true,
       "deliveryMode": "text_only",
-      "auditStatus": "not_audited_in_this_full_audit",
-      "ledger": null,
+      "auditStatus": "text_after_local_checks_complete_image_and_own_ci_pending",
+      "ledger": "docs/unit-audit-20261105/LV2-U46-ledger.json",
       "ownCi": null
     },
     {
@@ -1013,7 +1035,7 @@
   },
   "releaseGate": {
     "wholeRegisteredLvReady": false,
-    "reason": "U45 actual App/persistence and local checks are accepted, but its own new-head CI remains pending. Registered U46–U50 are not yet audited. U44 building repair has its own successful repaired-head CI; retained source limits, U42 direction, U26 and edition-boundary limitations remain.",
+    "reason": "U46 text App/persistence and local checks accepted; praise image repair and this new head CI remain pending. U47–U50 remain unaudited. Retain U42 direction, U26 and edition-boundary limitations; do not infer whole-level release readiness.",
     "mainMerged": false,
     "deployed": false
   },

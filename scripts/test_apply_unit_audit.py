@@ -53,7 +53,15 @@ class AuditWriteBoundaryTests(unittest.TestCase):
             audit.write_json(evidence_dir / name, audit.read(audit.ROOT / 'docs/unit-audit-20261105' / name))
         for name in ['VERIFIED-LV2-U45-VERB-FORMS-SOURCES.json','VERIFIED-LV2-U45-NOTE-SOURCES.json','VERIFIED-LV2-U45-TRANSLATION-SOURCES.json']:
             audit.write_json(evidence_dir / name, audit.read(audit.ROOT / 'docs/unit-audit-20261105' / name))
+        for name in ['VERIFIED-LV2-U46-VERB-FORMS-SOURCES.json','VERIFIED-LV2-U46-NOTE-SOURCES.json','VERIFIED-LV2-U46-TRANSLATION-SOURCES.json']:
+            audit.write_json(evidence_dir / name, audit.read(audit.ROOT / 'docs/unit-audit-20261105' / name))
         self.integrated_words = audit.read(audit.ROOT / 'public/data/v1/words.json')
+        u46 = audit.read(audit.ROOT / 'docs/unit-audit-20261105/LV2-U46-patches.json')['patches']
+        for recorded in [p for p in u46 if p['dataset'] == 'words']:
+            row = next(w for w in self.integrated_words if w['wordId'] == recorded['id'])
+            for key, value in recorded['after'].items():
+                self.assertEqual(row[key], value)
+                row[key] = recorded['before'][key]
         usage45 = audit.read(audit.ROOT / 'docs/unit-audit-20261105/LV2-U45-wicked-usage-followup.json')['patches']
         for recorded in usage45:
             row = next(w for w in self.integrated_words if w['wordId'] == recorded['id'])
@@ -2209,6 +2217,90 @@ class AuditWriteBoundaryTests(unittest.TestCase):
         facts = audit.read(self.root / 'docs/unit-audit-20261105/VERIFIED-LV2-U45-TRANSLATION-SOURCES.json')['facts']
         self.assertEqual(len(facts), 2)
         self.assertEqual({f['exampleId'] for f in facts}, audit.LV2_U45_TRANSLATION_IDS)
+        with patch.object(audit, 'ROOT', self.root):
+            for f in facts:
+                p = {'dataset':'examples','key':'exampleId','id':f['exampleId'],'before':f['before'],'after':f['after'],'reason':f['reason'],'evidence':f['evidence']}
+                audit.validate_patch_shape(p)
+                row = copy.deepcopy(f['before'])
+                self.assertTrue(audit.apply_to_row(row,p))
+                self.assertFalse(audit.apply_to_row(row,p))
+                for field in f['before']:
+                    if field in f['after']: continue
+                    wrong = copy.deepcopy(row); wrong[field] = 'unrecorded'
+                    with self.assertRaises(AssertionError): audit.apply_to_row(wrong,p)
+                    wrong = copy.deepcopy(p); wrong['before'][field] = 'unrecorded'
+                    with self.assertRaises(AssertionError): audit.validate_patch_shape(wrong)
+                for field in ['sentenceZh','sentenceEn','status','sensePos']:
+                    wrong = copy.deepcopy(p); wrong['after'][field] = 'unverified'
+                    with self.assertRaises(AssertionError): audit.validate_patch_shape(wrong)
+                wrong = copy.deepcopy(p); wrong['id'] = 'EXunknown'
+                with self.assertRaises(AssertionError): audit.validate_patch_shape(wrong)
+
+    def test_lv2_u46_forms_exact_scope_non_form_guards_and_true_absence(self):
+        facts = audit.read(self.root / 'docs/unit-audit-20261105/VERIFIED-LV2-U46-VERB-FORMS-SOURCES.json')['facts']
+        self.assertEqual(len(facts), 21)
+        self.assertEqual({f['wordId'] for f in facts}, audit.LV2_U46_FORM_IDS)
+        with patch.object(audit, 'ROOT', self.root):
+            for fact in facts:
+                original = copy.deepcopy(fact['nonFormRow'])
+                self.assertIn('v.', original['posAll'])
+                p = {'dataset':'words','key':'wordId','id':fact['wordId'],'before':{'verbForms':{'$absent':True}},'after':{'verbForms':fact['verbForms']},'reason':'Exact sourced LV2 U46 form','evidence':fact['verbForms']['sourceRef']}
+                audit.validate_patch_shape(p)
+                row = copy.deepcopy(original)
+                self.assertTrue(audit.apply_to_row(row, p))
+                self.assertFalse(audit.apply_to_row(row, p))
+                self.assertEqual({k:v for k,v in row.items() if k != 'verbForms'}, original)
+                del row['verbForms']
+                self.assertEqual(row, original)
+                for field in ['word','pos','status','meaningZh','meaningEn','usagePattern']:
+                    wrong = copy.deepcopy(original); wrong[field] = 'unrecorded'
+                    with self.assertRaises(AssertionError): audit.apply_to_row(wrong, p)
+                for existing in [None, {'base':fact['word'],'past':'custom'}]:
+                    with self.assertRaises(AssertionError): audit.apply_to_row({**original,'verbForms':existing},p)
+                for field in ['base','past','pastParticiple','sourceRef','status']:
+                    wrong = copy.deepcopy(p); wrong['after']['verbForms'][field] = 'unverified'
+                    with self.assertRaises(AssertionError): audit.validate_patch_shape(wrong)
+                if fact['word'] == 'better':
+                    for field in ['past', 'pastParticiple']:
+                        for comparator in ['good', 'well', 'best']:
+                            mixed = copy.deepcopy(p); mixed['after']['verbForms'][field] = comparator
+                            with self.assertRaises(AssertionError): audit.validate_patch_shape(mixed)
+                    mixed = copy.deepcopy(p); mixed['after']['verbForms']['base'] = 'good'
+                    with self.assertRaises(AssertionError): audit.validate_patch_shape(mixed)
+                for identity in ['W999999','W000139','W001536','W000754','W001324']:
+                    wrong = copy.deepcopy(p); wrong['id'] = identity
+                    with self.assertRaises(AssertionError): audit.validate_patch_shape(wrong)
+                wrong = copy.deepcopy(p); wrong['before'] = {}
+                with self.assertRaises(AssertionError): audit.validate_patch_shape(wrong)
+
+    def test_lv2_u46_notes_content_only_is_exact_and_every_other_field_is_guarded(self):
+        facts = audit.read(self.root / 'docs/unit-audit-20261105/VERIFIED-LV2-U46-NOTE-SOURCES.json')['facts']
+        self.assertEqual(len(facts), 3)
+        self.assertEqual({f['noteId'] for f in facts}, audit.LV2_U46_NOTE_IDS)
+        with patch.object(audit, 'ROOT', self.root):
+            for fact in facts:
+                p = {'dataset':'notes','key':'noteId','id':fact['noteId'],'before':fact['before'],'after':fact['after'],'reason':fact['reason'],'evidence':fact['evidence']}
+                audit.validate_patch_shape(p)
+                row = copy.deepcopy(fact['before'])
+                self.assertTrue(audit.apply_to_row(row,p))
+                self.assertFalse(audit.apply_to_row(row,p))
+                for field in fact['before']:
+                    if field in fact['after']: continue
+                    wrong = copy.deepcopy(row); wrong[field] = 'unrecorded'
+                    with self.assertRaises(AssertionError): audit.apply_to_row(wrong,p)
+                    wrong = copy.deepcopy(p); wrong['before'][field] = 'unrecorded'
+                    with self.assertRaises(AssertionError): audit.validate_patch_shape(wrong)
+                for field in ['title','content','status','noteType','word']:
+                    wrong = copy.deepcopy(p); wrong['after'][field] = 'unverified'
+                    with self.assertRaises(AssertionError): audit.validate_patch_shape(wrong)
+                wrong = copy.deepcopy(p); wrong['id'] = 'NXunknown'
+                with self.assertRaises(AssertionError): audit.validate_patch_shape(wrong)
+
+
+    def test_lv2_u46_translation_exact_full_row_and_chinese_only(self):
+        facts = audit.read(self.root / 'docs/unit-audit-20261105/VERIFIED-LV2-U46-TRANSLATION-SOURCES.json')['facts']
+        self.assertEqual(len(facts), 1)
+        self.assertEqual({f['exampleId'] for f in facts}, audit.LV2_U46_TRANSLATION_IDS)
         with patch.object(audit, 'ROOT', self.root):
             for f in facts:
                 p = {'dataset':'examples','key':'exampleId','id':f['exampleId'],'before':f['before'],'after':f['after'],'reason':f['reason'],'evidence':f['evidence']}

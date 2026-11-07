@@ -1,0 +1,337 @@
+{
+  "unit": "LV2-U46",
+  "state": "text_saved_local_checks_complete_praise_image_pending_own_new_head_ci_pending",
+  "baseBeforeCaptureCheckpoint": "cb72da3d31e85b5aa11e9b08f6e34ff8d188ec24",
+  "updatedAt": "2026-11-07T01:32:20.747Z",
+  "scope": {
+    "learningItems": 160,
+    "vocabulary": 100,
+    "grammar": 60,
+    "formalOccurrences": 83,
+    "formalWords": 83,
+    "examples": 135,
+    "notes": 86,
+    "unmappedOccurrences": 17,
+    "contentPages": 9,
+    "nextBoundaryTopOnly": 418,
+    "sourceInspectionHalves": 19,
+    "generalImages": 36,
+    "deliveryMode": "text_only",
+    "practiceMode": "read_only"
+  },
+  "corrections": {
+    "mainRows": 55,
+    "forms": 21,
+    "notes": 3,
+    "formalOperations": 79,
+    "formalFields": 122,
+    "uniqueFormalRows": 70,
+    "uniqueFormalFields": 122,
+    "curriculumRows": 120,
+    "curriculumFields": 216,
+    "actualClozePosCorrections": 9,
+    "nonEmptyHintRefinements": 6,
+    "practiceChinesePrecisionChanges": 1,
+    "individuallyReviewedAuthoredPractices": 5,
+    "individuallyReviewedSenses": 8,
+    "interpretation": "Contextual narrowing, supported meanings, visible related-word scope, Chinese precision, individually checked statuses and printed display explanations. These are not79 originally wrong cards."
+  },
+  "boundaries": {
+    "all6090HeadwordIdsPosAndStatusesPreserved": true,
+    "all7871PracticeEnglishClozeAnswersPreserved": true,
+    "exactChineseOnlyIds": [
+      "EX42f1a935"
+    ],
+    "allOtherChinesePreserved": true,
+    "rawSourceHash": "e802291a56f836ac1db1e78c4793455b3ff9e415bfe2e266bd32a63f77dc3020",
+    "sourceEnglishOrderLabelsQuestionsAndReadOnlyModePreserved": true,
+    "unmappedIdsRemainNull": 17,
+    "sourceImagesAndRunningExamplesAdopted": 0,
+    "all36ExistingImageBytesBindingsAndCaptionsPreserved": true,
+    "originalHashFixturesChanged": false,
+    "formsRequireExistingLexicalV": true,
+    "betterLexicalVerbVisiblySeparateFromGoodWellComparatives": true,
+    "noFormsForFormalNonVerbMatureServiceExact": true,
+    "curtainConjugationBothHeadingsRead": true,
+    "cancelUsFormAndBritishVariantQualified": true,
+    "twoOfficialExamItemsAndAnswersVerifiedAuthoredPracticeKeptSeparate": true,
+    "supportedRareSensesRetained": true
+  },
+  "verification": {
+    "reopens": {
+      "state": "actual_app_after_reopens_verified_source_and_image_limits_retained",
+      "sourceItems": 160,
+      "sourceVocabulary": 100,
+      "sourceGrammar": 60,
+      "formalOccurrences": 83,
+      "generalCards": 83,
+      "examples": 135,
+      "nonEmptyHintsVisible": 19,
+      "emptyHintsPreserved": 116,
+      "newForms": 21,
+      "bothFormPanelsChecked": 42,
+      "usagePages": 20,
+      "automatedUsageResults": 20,
+      "changedNotesVisible": 3,
+      "sourceImagesAdopted": 0,
+      "generalImagesChecked": 36,
+      "unchangedImageAssets": 36,
+      "unchangedImageBindings": 36,
+      "confirmedNewImageRepairPending": [
+        "praise/W001659"
+      ],
+      "imageRepairAccepted": false,
+      "uiMismatches": 0,
+      "usageTabRetryCountFromAutomatedResults": 0,
+      "rawPosVisibility": {
+        "nineCorrectedPosSaved": true,
+        "emptyHintTagsMayNotRender": true,
+        "completeSentencesReopened": true,
+        "nativeSavedPosReadbackRequired": true
+      }
+    },
+    "exactInverse": "validation/LV2-U46-exact-inverse.json",
+    "persistence": "validation/LV2-U46-persistence-summary.json",
+    "localChecks": {
+      "unit": "LV2-U46",
+      "state": "local_required_checks_passed_own_new_head_ci_pending",
+      "frontend": {
+        "files": 8,
+        "tests": 206,
+        "passed": true,
+        "originalLocalTimeoutMs": 5000,
+        "maxWorkers": 1,
+        "groups": [
+          {
+            "files": 6,
+            "tests": 172,
+            "includes": [
+              "original U46 text",
+              "new U46 audit",
+              "recovered historical integration",
+              "unitAudit source and inverse guards",
+              "seed",
+              "reviewed images"
+            ]
+          },
+          {
+            "files": 2,
+            "tests": 34,
+            "includes": [
+              "auditedWordIllustrations",
+              "lv2BuildingImageRepair"
+            ]
+          }
+        ],
+        "selectionHistory": "The initial invocation named two nonexistent wordbeast test paths. Vitest ran six existing selected files; the two correctly located vocabulary test files were then run separately. Counts are disjoint; no omitted test is claimed."
+      },
+      "python": {
+        "tests": 90,
+        "passed": true,
+        "initial": {
+          "passed": 89,
+          "failed": 1,
+          "reason": "The new U46 form boundary method incorrectly expected 11 sourced forms; the exact source manifest and production allowlist contain 21."
+        },
+        "repair": "Correct the new count assertion to 21. Keep full identity equality, exact forms/source/status, lexical-better comparative rejection, non-form guards, null/custom rejection, true absent deletion and outside-scope negative cases.",
+        "workspaceOnlyTemporaryDirectory": true,
+        "assertionsOrAllowlistBroadened": false
+      },
+      "lint": {
+        "exitCode": 0
+      },
+      "typecheck": {
+        "exitCode": 0
+      },
+      "build": {
+        "exitCode": 0
+      },
+      "sourceDraftCheck": {
+        "exitCode": 0
+      },
+      "sourceIntegrationCheck": {
+        "exitCode": 0
+      },
+      "originalFixtureHashesReset": false,
+      "logs": [
+        {
+          "file": "LV2-U46-regression-first.txt",
+          "sha256": "9b8354cc1323efa76569f131928054c1273f8c948ad27f21e3b645636090594c"
+        },
+        {
+          "file": "LV2-U46-image-regression.txt",
+          "sha256": "282dfee81456b35bb3155e125ada99f06ced61fb17dc89d6d99e4ebff4ad8719"
+        },
+        {
+          "file": "LV2-U46-python-boundaries.txt",
+          "sha256": "3cdeb7099abf7fd27f6d19a76f2804f65d63ca0eee1dac7ceff26aea407863cc"
+        },
+        {
+          "file": "LV2-U46-python-boundaries-final.txt",
+          "sha256": "5ac6b91663555d09854d20d18c36d8a5a03fcc295e99e693ee45275075af708c"
+        },
+        {
+          "file": "LV2-U46-lint-final.txt",
+          "sha256": "9f018744f6351d0f7de76160f4cc2f49cd0f3cc45a78a817b2c46fcdb8856e97"
+        },
+        {
+          "file": "LV2-U46-typecheck-final.txt",
+          "sha256": "0d93be78e4da5c0077681c4d834163661d59ddd24a0477595fb70ec25d5a5ea8"
+        },
+        {
+          "file": "LV2-U46-build-final.txt",
+          "sha256": "9cb8743cfb12b968fd6bcdcb626ab435110c0a35c6032dad4106704520efae56"
+        },
+        {
+          "file": "LV2-U46-prepare_recovered_unit_drafts-check.txt",
+          "sha256": "de98448ebf9803278533e50a4959ae987fb489682759393fb4a40f162f8d62d3"
+        },
+        {
+          "file": "LV2-U46-integrate_recovered_units-check.txt",
+          "sha256": "16a949cba64b31891edbac15dab0007dfc5e48721605cd1960b7fa9df69a3c61"
+        }
+      ],
+      "newHeadOwnCi": "pending_this_new_commit"
+    },
+    "afterPixels": "validation/LV2-U46-after-pixel-review.json",
+    "navigation": "validation/LV2-U46-navigation-events.json",
+    "limits": "All160 source items,83 general cards and135 complete examples were reopened and field-compared. All36 before image previews, praise/undoubtedly native assets and representative after/mobile screens were actually viewed. Not every after screenshot was manually reread. Praise image repair is still pending."
+  },
+  "retainedPending": [
+    {
+      "ids": [
+        "EXd61e53d7"
+      ],
+      "field": "sensePos",
+      "reason": "All of a sudden is an adverbial idiom while the cloze is only sudden. Preserve current field pending consistent component-vs-phrase convention; do not certify adjective as unique analysis."
+    },
+    {
+      "ids": [
+        "W001466"
+      ],
+      "field": "rare 建議 gloss",
+      "reason": "Instance request/demand and historical motive senses are genuine. Exact inherited 建議 not independently established; retain rather than delete or falsely approve."
+    },
+    {
+      "ids": [
+        "W001532"
+      ],
+      "field": "mat 粗糙的",
+      "reason": "Mat has a genuine matt variant and tangled-layer noun. Exact rough gloss and POS still need precise matching; retain."
+    },
+    {
+      "ids": [
+        "W002339"
+      ],
+      "field": "追補者",
+      "reason": "Common follower and mechanical follower are supported. Exact inherited 追補者 spelling/translation not proved; not silently changed to a guessed word."
+    },
+    {
+      "ids": [
+        "W004658"
+      ],
+      "field": "premature 早產兒",
+      "reason": "Premature adjective positively verified; exact independent noun usage retained pending primary evidence, not deleted."
+    },
+    {
+      "ids": [
+        "W001779-1",
+        "W001779-2",
+        "W000082-1",
+        "W000082-2"
+      ],
+      "field": "legacy approved exam provenance",
+      "reason": "Existing approved flags cite practice IDs rather than an identifiable official item. This round does not newly certify them as official-source evidence."
+    },
+    {
+      "ids": [
+        "W001536",
+        "W000754",
+        "W001324"
+      ],
+      "field": "verbForms scope",
+      "reason": "Mature/service/exact have verb uses but formal headword POS lacks v.; preserve formal POS and absent verbForms here rather than extend the exact v.-scoped write allowance."
+    },
+    {
+      "ids": [
+        "W001053"
+      ],
+      "field": "asleep 熟睡地",
+      "reason": "Retain possible adverb analysis and inherited alternate senses; do not mechanically erase due formal adj. scope."
+    },
+    {
+      "ids": [
+        "W003338"
+      ],
+      "field": "economy 整體",
+      "reason": "Whole/order historical sense may exist; current common economic/resource senses do not establish exact gloss. Retain pending rather than claim nonexistent."
+    }
+  ],
+  "imageFollowups": {
+    "confirmedNewRepairPending": [
+      "praise/W001659"
+    ],
+    "evidence": "validation/LV2-U46-praise-image-followup.json",
+    "oldAssetRetained": true,
+    "candidateCreated": false,
+    "appRepairAccepted": false,
+    "duplicateLocalGenerationProhibited": true
+  },
+  "priorCheckpointFullCi": {
+    "commit": "cb72da3d31e85b5aa11e9b08f6e34ff8d188ec24",
+    "run": 42319761185,
+    "job": 128241186866,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42319761185/job/128241186866",
+    "status": "completed",
+    "conclusion": "success",
+    "checkoutShaReadFromFullLog": true,
+    "testFiles": 237,
+    "tests": 1943,
+    "pythonBatches": [
+      14,
+      7,
+      87,
+      5,
+      10
+    ],
+    "lint": "success",
+    "typecheck": "success",
+    "build": "success",
+    "buildLogCompletedAtUtc": "2026-11-07T00:58:16.1883663Z",
+    "jobCompletedAtUtc": "2026-11-07T00:58:22Z",
+    "source": "Complete exact-head CI checkout, all steps and full test/build log actually read. Not a preceding-head substitute."
+  },
+  "newCheckpointFullCi": {
+    "state": "pending_this_new_commit"
+  },
+  "releaseReconciliation": {
+    "mainCommit": "0f4eb27961571ce393a1f1a2bc63f1d558bef1fb",
+    "mergeBase": "2c2035c07a4e5d1980097dcf4e8ab03f8a5873bb",
+    "formalFieldsCompared": 122,
+    "mainChangesNotAlreadySame": 0,
+    "eitherManifestExecutionOnce": true,
+    "retainMainGuards": [
+      "audit JSON LF rules",
+      "Deploy-default original5s job",
+      "vite single worker",
+      "build-only unpublished LV1-U12 elevator asset exclusion"
+    ],
+    "mainMerged": false,
+    "deployed": false
+  },
+  "next": {
+    "level": "LV2",
+    "unit": 47,
+    "first": "survive",
+    "wordId": "W001877",
+    "sourcePage": 418
+  },
+  "publication": {
+    "branch": "content/unit-audit-20261105",
+    "mainMerged": false,
+    "deployed": false,
+    "wholeLevelReleaseSeparate": true,
+    "wholeUnitImageApproval": false,
+    "frozenHistoricalCandidate": "3106a39dea97360a62a2db4d8e98300724d94fdb"
+  }
+}
