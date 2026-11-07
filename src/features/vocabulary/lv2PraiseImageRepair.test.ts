@@ -9,7 +9,9 @@ import history from '../../../docs/unit-audit-20261105/validation/LV2-U46-praise
 import oldImages from '../../../docs/unit-audit-20261105/validation/LV2-U46-image-review-before-praise.json';
 import followup from '../../../docs/unit-audit-20261105/validation/LV2-U46-praise-image-followup.json';
 import images from '../../../docs/unit-audit-20261105/validation/LV2-U46-image-review.json';
-import currentImages from './auditedWordIllustrations.json';
+import currentImagesWithReplace from './auditedWordIllustrations.json';
+import {beforeReplaceImages} from './lv3ReplaceImageRepair.testSupport';
+const currentImages=beforeReplaceImages(currentImagesWithReplace);
 const current=beforeLV3GeneralImages(currentImages,lv3ImageProof);
 import published from './lv1ReviewedImages.json';
 import examplePairs from './approvedExampleImages.json';

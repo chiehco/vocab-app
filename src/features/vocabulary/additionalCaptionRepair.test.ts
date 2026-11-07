@@ -1,3 +1,5 @@
+import {beforeLV3ReplaceText} from '../../../scripts/lv3_replace_image_guard.mjs';
+import replaceProof from '../../../docs/unit-audit-20261105/LV3-replace-image-repair.json';
 import {beforeLV3GeneralImages} from '../../../scripts/lv3_image_repair_guard.mjs';
 import imageProof from '../../../docs/unit-audit-20261105/LV3-bank-permissible-image-repairs.json';
 import {lv3AfterUnit1PublishedText} from '../direct/lv3Audit.testSupport';
@@ -14,6 +16,7 @@ import {approvedWordIllustration,approvedCurriculumIllustration,approvedLV1Image
 import {getWordBeastAsset} from '../wordbeast/wordBeastAssets';
 import {resolveWordImageClue} from '../../quiz/imageClue';
 function beforeImageRegistryText(text:string):string {
+ text=beforeLV3ReplaceText(text,replaceProof);
  const rows=JSON.parse(text);
  if(text!==JSON.stringify(rows,null,2)+'\n')throw new Error('Unknown current image registry raw-byte drift');
  return JSON.stringify(beforeLV3GeneralImages(rows,imageProof),null,2)+'\n';

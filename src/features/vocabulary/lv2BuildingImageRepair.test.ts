@@ -7,7 +7,9 @@ import {beforeBuildingRegistry,beforeBuildingGallery,validateBuildingProof,build
 import proof from '../../../docs/unit-audit-20261105/LV2-U44-building-image-repair.json';
 import currentPublished from './lv1ReviewedImages.json';
 const published=currentPublished;
-import currentGeneral from './auditedWordIllustrations.json';
+import currentGeneralWithReplace from './auditedWordIllustrations.json';
+import {beforeReplaceImages} from './lv3ReplaceImageRepair.testSupport';
+const currentGeneral=beforeReplaceImages(currentGeneralWithReplace);
 import {beforePraiseGeneral} from '../../../scripts/praise_image_repair_guard.mjs';
 import praiseProof from '../../../docs/unit-audit-20261105/LV2-U46-praise-image-repair.json';
 import examplePairs from './approvedExampleImages.json';

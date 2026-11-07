@@ -8,7 +8,9 @@ import u30Evidence from '../../../docs/unit-audit-20261105/LV2-U30-original-imag
 import {createHash} from 'node:crypto';
 import {readFileSync} from 'node:fs';
 import {expect,it} from 'vitest';
-import currentCards from './auditedWordIllustrations.json';
+import currentCardsWithReplace from './auditedWordIllustrations.json';
+import {beforeReplaceImages} from './lv3ReplaceImageRepair.testSupport';
+const currentCards=beforeReplaceImages(currentCardsWithReplace);
 import evidence from '../../../docs/unit-audit-20261105/LV1-U03-original-image-review.json';
 import u4Evidence from '../../../docs/unit-audit-20261105/LV1-U04-original-image-review.json';
 import u5Evidence from '../../../docs/unit-audit-20261105/LV1-U05-original-image-review.json';
