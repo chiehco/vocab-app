@@ -183,7 +183,7 @@
       "itemCount": 153,
       "vocabularyCount": 100,
       "grammarCount": 53,
-      "status": "prepared_ready_awaiting_application_review",
+      "status": "applied_awaiting_after_qa",
       "manifest": "U07-patches.json",
       "scope": "U07-scope.json",
       "beforeCapture": "U07-before-capture.json",
@@ -193,8 +193,13 @@
       "rowCount": 64,
       "newVerbFormRows": 20,
       "parentCheckpoint": "LV3-U06",
-      "validation": "Single full run: 9/9 real OS TEMP fixture methods, 1/1 TypeScript parity, 11/11 small fixture-identity/path tests. First method01 six-file expectation failure retained. Independent 171-field/64-row verification and all six ancestor projections passed. Main U07 text not applied.",
-      "fixtureValidation": "U07-fixture-validation.md"
+      "validation": "Applied exactly five files once. Actual independent 171-field/64-row and complete-document verification, 41 starter rows, 20 new/9 retained forms, five raw backups, 139 unchanged inputs, current 144 guards, zero-write repeat with one unchanged receipt, and direct U06 parent 144 normalized inverse passed. Runtime after and scoped technical QA pending. Not published.",
+      "fixtureValidation": "U07-fixture-validation.md",
+      "application": "U07-application.json",
+      "preparationCheckpoint": {
+        "status": "prepared_ready_awaiting_application_review",
+        "validation": "Single full run: 9/9 real OS TEMP fixture methods, 1/1 TypeScript parity, 11/11 small fixture-identity/path tests. First method01 six-file expectation failure retained. Independent 171-field/64-row verification and all six ancestor projections passed. Main U07 text not applied."
+      }
     },
     {
       "unit": 8,

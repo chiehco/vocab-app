@@ -1,0 +1,114 @@
+{
+  "unit": "LV3-U07",
+  "state": "applied_awaiting_after_qa",
+  "applicationTarget": "actual LV3 audit worktree, not TEMP fixture",
+  "preparedAtCommit": "4bceb7bd057a46eb6902a8bbd7b321007bf9ac98",
+  "manifestHash": "40530f567c4bc3f8f51e592748503fcc6585b11f1698a2c6a4e5bad2be20c0ac",
+  "scopeHash": "2d976360eace86bcc313f40b1edf74264d78ab11ff17e1ea420d1abeea548da9",
+  "parentCheckpoint": {
+    "kind": "ordinary",
+    "unit": "LV3-U06",
+    "manifestHash": "c59130eba2f8aeae6f0012dbdf1b052f3663dbbdebfcf875d183fddfd0730581"
+  },
+  "fieldCount": 171,
+  "rowCount": 64,
+  "newVerbFormRows": 20,
+  "preservedVerbFormRows": 9,
+  "starterAffectedRows": 41,
+  "starterMediaRowsUnchanged": 1128,
+  "productWrites": 5,
+  "receipt": "output/lv3-audit-20261107/transactions/20261107T230053068849Z/transaction.json",
+  "receiptCreatedAtUtc": "2026-11-07T23:00:53.068849+00:00",
+  "receiptState": "committed",
+  "afterHashes": {
+    "public/data/v1/examples.json": "5670545a419667d13c3fe6d73a2fe5646e6bb3a82951e546f600039f1d5bfb1b",
+    "public/data/v1/meta.json": "d5339fee0cab04eec6e0258dd830b1849ef2e147f082d5e94e57204799de79b3",
+    "public/data/v1/sa-pack.json": "8da05cd9cbadc91fb188781b787acf52f7534cc3fb6b3e35e36200e2af786f72",
+    "public/data/v1/words.json": "3cf559acfacaa9f475544ef8b1325eee0e9dbb94a6fe10f84d75954d147daf0f",
+    "src/features/direct/curriculumLV3Unit7.json": "5f69e130e4c37dfa45ba7aa926081fd396e35a8ee1ed97d2e0522ad25841ce8c"
+  },
+  "afterLfHashes": {
+    "public/data/v1/examples.json": "5670545a419667d13c3fe6d73a2fe5646e6bb3a82951e546f600039f1d5bfb1b",
+    "public/data/v1/meta.json": "d5339fee0cab04eec6e0258dd830b1849ef2e147f082d5e94e57204799de79b3",
+    "public/data/v1/sa-pack.json": "8da05cd9cbadc91fb188781b787acf52f7534cc3fb6b3e35e36200e2af786f72",
+    "public/data/v1/words.json": "3cf559acfacaa9f475544ef8b1325eee0e9dbb94a6fe10f84d75954d147daf0f",
+    "src/features/direct/curriculumLV3Unit7.json": "5f69e130e4c37dfa45ba7aa926081fd396e35a8ee1ed97d2e0522ad25841ce8c"
+  },
+  "beforeBackupsVerified": true,
+  "rawAndLfBackupsMatchIndependentCapture": 5,
+  "unchangedRawAndLfInputsVerified": 139,
+  "inputDomain": 144,
+  "currentCheckpointGuardsVerified": 144,
+  "chainStatus": "committed",
+  "readiness": "ready",
+  "repeat": {
+    "state": "already_applied",
+    "patchCount": 64,
+    "files": [
+      "public/data/v1/examples.json",
+      "public/data/v1/meta.json",
+      "public/data/v1/sa-pack.json",
+      "public/data/v1/words.json",
+      "src/features/direct/curriculumLV3Unit7.json"
+    ],
+    "productWrites": 0
+  },
+  "repeatReceiptCountUnchanged": true,
+  "u07ReceiptCount": 1,
+  "repeatInputSnapshotsUnchanged": 144,
+  "recoveryClear": true,
+  "immediateU06ParentProjection": {
+    "status": "passed",
+    "target": "LV3-U06",
+    "parentManifestHash": "c59130eba2f8aeae6f0012dbdf1b052f3663dbbdebfcf875d183fddfd0730581",
+    "normalizedInputsEqualIndependentBefore": 144,
+    "mainInputsUnchanged": 144,
+    "mainChainStillPrepared": true,
+    "temporaryCopyOnlyPromotion": true,
+    "evidence": "u06-parent-projected-inputs.json",
+    "retainedTempLocator": "u06-parent-temp-locator.json",
+    "boundary": "Direct U06 parent only. LF-normalized reconstruction; exact raw before bytes are separately preserved in the five actual transaction backups. Prior nine-method and six-ancestor gates were not rerun."
+  },
+  "invariants": {
+    "independentAllFieldsAndCompleteRowsVerified": true,
+    "completeSourceDocuments": 3,
+    "allOriginalCountsOrderedIdsSentencesStatusesBlanksAnswersUnchanged": true,
+    "protectedOriginalFieldsChecked": 146455,
+    "allStarterDatasetsMatchIndependentAcceptedExpected": true,
+    "notesAndSensesRawUnchanged": true,
+    "historicalSourceOutside144DomainRawAndLfUnchanged": true,
+    "newVerbFormsStatusBoundary": "Only newly approved verbForms objects have new approved status. Every original record status is unchanged.",
+    "excelAndSrsNotModified": true
+  },
+  "beforeCapture": {
+    "captureFileSha256": "36b407b463112f944e058e56c0920dcbf2ef87177e74845506d66afe050be247",
+    "frozenIndexSha256": "90d70213941e3defa38d58fa346f7462b8197826ff88572fae609a87f09856d6",
+    "frozenArtifactsUnchanged": 804
+  },
+  "canonicalAndScopeUnchanged": true,
+  "fixtureHistory": {
+    "report": "U07-fixture-validation.md",
+    "singleFullRunPassedMethods": 9,
+    "smallPassedMethods": 11,
+    "typeScriptParityTests": 1,
+    "priorSixAncestorsPassed": true,
+    "rerunDuringActualApplication": false,
+    "originalFailuresPreserved": true
+  },
+  "runtimeAfter": "pending",
+  "technicalValidation": "pending scoped final QA",
+  "release": "not published",
+  "physicalPhone": "not tested",
+  "evidenceDirectory": "output/lv3-audit-20261107/u07-main-application-20261107-v1",
+  "evidence": {
+    "preflight": "output/lv3-audit-20261107/u07-main-application-20261107-v1/01-preflight-process.json",
+    "officialApply": "output/lv3-audit-20261107/u07-main-application-20261107-v1/02-official-apply-command.json",
+    "postapply": "output/lv3-audit-20261107/u07-main-application-20261107-v1/postapply-verification.json",
+    "rawBackups": "output/lv3-audit-20261107/u07-main-application-20261107-v1/verified-five-backups.json",
+    "forms": "output/lv3-audit-20261107/u07-main-application-20261107-v1/verb-forms-verification.json",
+    "starterRows": "output/lv3-audit-20261107/u07-main-application-20261107-v1/starter-41-row-verification.json",
+    "repeat": "output/lv3-audit-20261107/u07-main-application-20261107-v1/repeat-verification.json",
+    "parentProjection": "output/lv3-audit-20261107/u07-main-application-20261107-v1/u06-parent-projection.json"
+  },
+  "summary": "The official applier wrote exactly five U07 text files once. All independent content, original protected records, receipt/backup hashes, unchanged inputs, current guards, idempotence and direct ordinary U06 inverse checks passed before committing only the U07 chain status. Runtime after QA and scoped technical validation remain pending."
+}
