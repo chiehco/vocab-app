@@ -1,3 +1,5 @@
+import additionalProof from '../../../docs/unit-audit-20261105/LV1-U08-additional-caption-review.json';
+import {beforeAdditionalRegistry,beforeAdditionalGallery} from '../../../scripts/additional_caption_guard.mjs';
 import examplePairs from './approvedExampleImages.json';
 import {expect,it} from 'vitest';
 import {createHash} from 'node:crypto';
@@ -7,7 +9,8 @@ import buildingProof from '../../../docs/unit-audit-20261105/LV2-U44-building-im
 import currentGeneral from './auditedWordIllustrations.json';
 import {beforePraiseGeneral} from '../../../scripts/praise_image_repair_guard.mjs';
 import praiseProof from '../../../docs/unit-audit-20261105/LV2-U46-praise-image-repair.json';
-import published from './lv1ReviewedImages.json';
+import currentPublished from './lv1ReviewedImages.json';
+const published=beforeAdditionalRegistry(currentPublished,additionalProof);
 import approvals from '../../../scripts/approvals/lv1-images-20260922.json';
 import proof from '../../../docs/unit-audit-20261105/LV2-U38-U41-image-repairs.json';
 import unit38 from '../direct/curriculumLV2Unit38.json';
@@ -44,4 +47,4 @@ it('preserves all formal content independent practice mappings and source-only c
  for(const [unit,id,wordId]of [[unit38,'LI-LV2U38-V069','W003446'],[unit38,'LI-LV2U38-V007','W001638'],[unit41,'LI-LV2U41-V025','W001261']] as const){expect(unit.template.deliveryMode).toBe('text_only');const item=unit.learningItems.find(r=>r.learningItemId===id)!;expect(item).toBeDefined();expect(item.officialWordId).toBe(wordId);expect(item.practiceMode).toBe('read_only');expect(item).not.toHaveProperty('illustration');expect(item).not.toHaveProperty('originalExample');}
 });
 
-it('changes only the exact public-gallery image source and retains every other byte after normalization',()=>{const raw=beforeBuildingGallery(readFileSync(proof.gallery.path,'utf8'),buildingProof);expect(createHash('sha256').update(raw).digest('hex')).toBe(proof.gallery.afterNormalizedSha256);expect(raw.split(proof.gallery.afterNeedle)).toHaveLength(2);const old=raw.replace(proof.gallery.afterNeedle,proof.gallery.beforeNeedle);expect(createHash('sha256').update(old).digest('hex')).toBe(proof.gallery.beforeNormalizedSha256);expect(raw).toContain('id="LV1-U09-27"');});
+it('changes only the exact public-gallery image source and retains every other byte after normalization',()=>{const raw=beforeBuildingGallery(beforeAdditionalGallery(readFileSync(proof.gallery.path,'utf8'),additionalProof),buildingProof);expect(createHash('sha256').update(raw).digest('hex')).toBe(proof.gallery.afterNormalizedSha256);expect(raw.split(proof.gallery.afterNeedle)).toHaveLength(2);const old=raw.replace(proof.gallery.afterNeedle,proof.gallery.beforeNeedle);expect(createHash('sha256').update(old).digest('hex')).toBe(proof.gallery.beforeNormalizedSha256);expect(raw).toContain('id="LV1-U09-27"');});

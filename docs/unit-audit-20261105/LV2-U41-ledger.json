@@ -466,5 +466,35 @@
     "u38": "Two candidates await verified Git delivery/integration/App validation; no regeneration.",
     "discoverDelivery": "Candidate 248c092f13c969123b0cd98102dd4d459112479f fetched with exact hash/spec/pixel verification; consumer integration and App acceptance pending. No local generation.",
     "deliveryReview": "validation/LV2-U38-U41-delivery-review.json"
+  },
+  "imageFollowupResolution": {
+    "state": "later_exact_three_asset_integration_app_saved_and_own_ci_success",
+    "commit": "7ff55408250827184e243d2a83f31ca77088c3ee",
+    "ownCi": {
+      "commit": "7ff55408250827184e243d2a83f31ca77088c3ee",
+      "run": 42283703235,
+      "job": 128118970362,
+      "url": "https://github.com/chiehco/vocab-app/actions/runs/42283703235/job/128118970362",
+      "status": "completed",
+      "conclusion": "success",
+      "checkoutShaReadFromFullLog": true,
+      "testFiles": 233,
+      "tests": 1903,
+      "pythonBatches": [
+        14,
+        7,
+        78,
+        3,
+        10
+      ],
+      "lint": "success",
+      "typecheck": "success",
+      "build": "success",
+      "buildLogCompletedAtUtc": "2026-11-06T20:11:49.1798035Z",
+      "jobCompletedAtUtc": "2026-11-06T20:11:53Z"
+    },
+    "evidence": "validation/LV2-U38-U41-image-reopens.json",
+    "persistence": "validation/LV2-U38-U41-image-persistence.json",
+    "historicalPendingValuesRetained": true
   }
 }

@@ -1,6 +1,6 @@
 {
   "unit": "LV2-U49",
-  "state": "text_actual_reopens_saved_local_checks_complete_own_new_head_ci_pending",
+  "state": "actual_app_saved_local_and_exact_own_head_ci_success",
   "baseBeforeCaptureCheckpoint": "7b258e1b0d9c5d3f76049b0761b75f0a4ad43519",
   "integrationBaseCheckpoint": "7b258e1b0d9c5d3f76049b0761b75f0a4ad43519",
   "updatedAt": "2026-11-07T04:25:25.300Z",
@@ -239,7 +239,31 @@
     "source": "Complete exact-head CI checkout, all steps and full test/build log actually read. Not a preceding-head substitute."
   },
   "newCheckpointFullCi": {
-    "state": "pending_this_new_commit"
+    "commit": "0c90eed71b3ce0297949c9c52d90b15beb888572",
+    "run": 42338497091,
+    "job": 128300726151,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42338497091/job/128300726151",
+    "status": "completed",
+    "conclusion": "success",
+    "checkoutShaReadFromFullLog": true,
+    "remoteFrontendTimeoutMs": 15000,
+    "localOriginalTimeoutMs": 5000,
+    "remoteDoesNotReplaceDefaultFiveSecondReleaseJob": true,
+    "testFiles": 242,
+    "tests": 1989,
+    "pythonBatches": [
+      14,
+      7,
+      99,
+      5,
+      10
+    ],
+    "lint": "success",
+    "typecheck": "success",
+    "build": "success",
+    "buildLogCompletedAtUtc": "2026-11-07T04:43:56.1879200Z",
+    "jobCompletedAtUtc": "2026-11-07T04:44:01Z",
+    "source": "Complete exact-head CI checkout, all steps and full test/build log actually read. Not a preceding-head substitute."
   },
   "releaseReconciliation": {
     "mainCommit": "0f4eb27961571ce393a1f1a2bc63f1d558bef1fb",

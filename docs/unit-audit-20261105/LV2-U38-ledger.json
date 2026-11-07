@@ -466,5 +466,35 @@
     "evidence": "validation/LV2-U38-image-followups.json",
     "inCentralFollowupQueue": true,
     "doNotCountAsWholeUnitImagePass": true
+  },
+  "imageFollowupResolution": {
+    "state": "later_exact_three_asset_integration_app_saved_and_own_ci_success",
+    "commit": "7ff55408250827184e243d2a83f31ca77088c3ee",
+    "ownCi": {
+      "commit": "7ff55408250827184e243d2a83f31ca77088c3ee",
+      "run": 42283703235,
+      "job": 128118970362,
+      "url": "https://github.com/chiehco/vocab-app/actions/runs/42283703235/job/128118970362",
+      "status": "completed",
+      "conclusion": "success",
+      "checkoutShaReadFromFullLog": true,
+      "testFiles": 233,
+      "tests": 1903,
+      "pythonBatches": [
+        14,
+        7,
+        78,
+        3,
+        10
+      ],
+      "lint": "success",
+      "typecheck": "success",
+      "build": "success",
+      "buildLogCompletedAtUtc": "2026-11-06T20:11:49.1798035Z",
+      "jobCompletedAtUtc": "2026-11-06T20:11:53Z"
+    },
+    "evidence": "validation/LV2-U38-U41-image-reopens.json",
+    "persistence": "validation/LV2-U38-U41-image-persistence.json",
+    "historicalPendingValuesRetained": true
   }
 }

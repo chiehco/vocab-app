@@ -1,9 +1,12 @@
+import additionalProof from '../../../docs/unit-audit-20261105/LV1-U08-additional-caption-review.json';
+import {beforeAdditionalRegistry,beforeAdditionalGallery} from '../../../scripts/additional_caption_guard.mjs';
 import {expect,it} from 'vitest';
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {beforeBuildingRegistry,beforeBuildingGallery,validateBuildingProof,buildingHash} from '../../../scripts/building_image_repair_guard.mjs';
 import proof from '../../../docs/unit-audit-20261105/LV2-U44-building-image-repair.json';
-import published from './lv1ReviewedImages.json';
+import currentPublished from './lv1ReviewedImages.json';
+const published=beforeAdditionalRegistry(currentPublished,additionalProof);
 import currentGeneral from './auditedWordIllustrations.json';
 import {beforePraiseGeneral} from '../../../scripts/praise_image_repair_guard.mjs';
 import praiseProof from '../../../docs/unit-audit-20261105/LV2-U46-praise-image-repair.json';
@@ -29,7 +32,7 @@ it('restores only the exact later row before all older published history checks'
  for(const key of ['before','after','originalApproval','replacementImageSha256','publishedRegistryBeforeHash','gallery','unchangedFiles','independentExamplePairsBefore']){const bad=structuredClone(proof) as Record<string,unknown>;bad[key]='unverified';expect(()=>validateBuildingProof(bad)).toThrow();}
 });
 it('changes just one gallery source and rejects captions unrelated bytes and source identity drift',()=>{
- const raw=readFileSync(proof.gallery.path,'utf8');expect(buildingHash(beforeBuildingGallery(raw,proof))).toBe(proof.gallery.beforeNormalizedSha256);
+ const raw=beforeAdditionalGallery(readFileSync(proof.gallery.path,'utf8'),additionalProof);expect(buildingHash(beforeBuildingGallery(raw,proof))).toBe(proof.gallery.beforeNormalizedSha256);
  expect(()=>beforeBuildingGallery(raw.replace('The new science building','A different building'),proof)).toThrow();expect(()=>beforeBuildingGallery(raw+'unrecorded',proof)).toThrow();expect(()=>beforeBuildingGallery(raw.replace('LV1-U09-04','LV1-U09-99'),proof)).toThrow();
 });
 it('resolves the three consumers precisely and keeps LV2 read-only text without a forged image exercise',()=>{

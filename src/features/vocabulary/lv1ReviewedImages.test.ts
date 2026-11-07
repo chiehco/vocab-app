@@ -1,3 +1,5 @@
+import additionalProof from '../../../docs/unit-audit-20261105/LV1-U08-additional-caption-review.json';
+import {beforeAdditionalRegistry} from '../../../scripts/additional_caption_guard.mjs';
 import {beforeU38PlaygroundPair} from './lv2ImageRepairs.testSupport';
 import imageRepairs from '../../../docs/unit-audit-20261105/LV2-U38-U41-image-repairs.json';
 import buildingRepair from '../../../docs/unit-audit-20261105/LV2-U44-building-image-repair.json';
@@ -17,7 +19,7 @@ import { getWordBeastAsset } from '../wordbeast/wordBeastAssets';
 import { resolveWordImageClue } from '../../quiz/imageClue';
 
 const hash = (bytes: string | Buffer) => createHash('sha256').update(bytes).digest('hex');
-const latestPublishedCards=cards;
+const latestPublishedCards=beforeAdditionalRegistry(cards,additionalProof);
 
 describe('reviewed LV1 image-only release', () => {
   it('contains exactly the reviewed scope and preserves every final image and caption hash', () => {
@@ -38,7 +40,8 @@ describe('reviewed LV1 image-only release', () => {
       expect(record).toBeDefined();
       if(card.id==='LV1-U09-04'){expect(card).toEqual(buildingRepair.after);expect(record).toEqual(buildingRepair.originalApproval);expect(hash(readFileSync('public/'+card.illustration.path))).toBe(buildingRepair.replacementImageSha256);expect(hash(readFileSync('public/'+buildingRepair.before.illustration.path))).toBe(record.publishedImageSha256);}
       else if(card.id==='LV1-U09-27'){expect(card).toEqual(imageRepairs.playground.after);expect(record).toEqual(imageRepairs.playground.originalApproval);expect(hash(readFileSync('public/'+card.illustration.path))).toBe(imageRepairs.playground.replacementImageSha256);expect(hash(readFileSync('public/'+imageRepairs.playground.before.illustration.path))).toBe(record.publishedImageSha256);}else expect(hash(readFileSync('public/' + card.illustration.path))).toBe(record.publishedImageSha256);
-      expect(hash(card.illustration.captionEn + '\n' + card.illustration.captionZh)).toBe(record.textSha256);
+      if(card.id===additionalProof.core.id){expect(card).toEqual(additionalProof.core.after);expect(record).toEqual(additionalProof.core.originalApproval);expect(hash(additionalProof.core.before.illustration.captionEn+'\n'+additionalProof.core.before.illustration.captionZh)).toBe(record.textSha256);expect(hash(card.illustration.captionEn+'\n'+card.illustration.captionZh)).toBe(hash(additionalProof.core.after.illustration.captionEn+'\n'+additionalProof.core.after.illustration.captionZh));}
+      else expect(hash(card.illustration.captionEn + '\n' + card.illustration.captionZh)).toBe(record.textSha256);
       const src = '/' + card.illustration.path + '?v=test';
       expect(approvedCurriculumIllustration(card.displayWord, src)).toEqual(card.illustration);
       expect(resolveWordImageClue(card.displayWord, src, 'unrelated old caption')?.text).toBe(card.illustration.captionZh);

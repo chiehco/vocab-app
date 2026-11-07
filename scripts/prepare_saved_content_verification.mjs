@@ -54,6 +54,7 @@ paths.push('LV2-U46-patches.json','LV2-U46-notes-patches.json','LV2-U46-verified
 paths.push('LV2-U47-patches.json','LV2-U47-notes-patches.json','LV2-U47-verified-forms-patches.json');
 paths.push('LV2-U48-patches.json','LV2-U48-notes-patches.json','LV2-U48-verified-forms-patches.json');
 paths.push('LV2-U49-patches.json','LV2-U49-notes-patches.json','LV2-U49-verified-forms-patches.json');
+paths.push('LV2-U50-patches.json','LV2-U50-notes-patches.json','LV2-U50-verified-forms-patches.json');
 const expected={};
 for(const path of paths)for(const p of read('docs/unit-audit-20261105/'+path).patches){
  const key=p.dataset+':'+p.id;

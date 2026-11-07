@@ -1,0 +1,705 @@
+{
+  "unit": "LV2-U50",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "baseCheckpoint": "0c90eed71b3ce0297949c9c52d90b15beb888572",
+  "beforeCaptureCheckpoint": "0c90eed71b3ce0297949c9c52d90b15beb888572",
+  "scope": "Five actual-cloze verb POS corrections, five individual authored practice reviews, five limited sense reviews and thirty lexical/usage rows. No practice English/Chinese/cloze/answers or headword POS/status changes.",
+  "patches": [
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001117",
+      "before": {
+        "meaningZh": "負擔；重載；擔子；責任"
+      },
+      "after": {
+        "meaningZh": "（名詞）負擔；重載；擔子；責任；（動詞）使負重；使承受負擔"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/burden",
+      "reason": "Current complete entry and applicable primary definition/original printed label compared. Restore the selected meaning/construction and visibly distinguish supported inherited other-POS senses. Preserve formal headword POS/status and every original practice.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001409",
+      "before": {
+        "meaningZh": "逐漸的；漸增的；彌撒升階聖歌"
+      },
+      "after": {
+        "meaningZh": "（形容詞）逐漸的；漸增的；平緩的；（另有名詞用法）彌撒升階聖歌"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/gradual; https://www.merriam-webster.com/dictionary/gradual",
+      "reason": "The Mass chant noun is genuine and retained separately; restore printed gentle-slope adjective, keep formal adj.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001080",
+      "before": {
+        "meaningZh": "鬍鬚；抓住鬍鬚；公開反對"
+      },
+      "after": {
+        "meaningZh": "（名詞）鬍鬚；（另有動詞用法）抓住鬍鬚；公開反對"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/beard",
+      "reason": "Current complete entry and applicable primary definition/original printed label compared. Restore the selected meaning/construction and visibly distinguish supported inherited other-POS senses. Preserve formal headword POS/status and every original practice.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001935",
+      "before": {
+        "meaningEn": "conduit consisting of a long hollow object (usually cylindrical) used to hold and conduct objects or liquids or gases; electronic device consisting of a system of electrodes arranged in an evacuated glass or metal envelope",
+        "meaningZh": "管；軟管；隧道；把...裝管",
+        "usagePattern": "a/the tube; tube of N",
+        "usagePatternZh": "管子；一管……"
+      },
+      "after": {
+        "meaningEn": "A long hollow cylinder used to carry liquids or gases or hold things; a soft container squeezed to release its contents; an electronic tube. In British English, an underground railway or its tunnel; informally in American English, the television. Separate verb: put into or provide with a tube.",
+        "meaningZh": "（名詞）管；軟管；隧道；（英式）地鐵；（美式口語，the tube）電視；（另有動詞用法）把……裝管",
+        "usagePattern": "a tube of N; a test tube; watch the tube",
+        "usagePatternZh": "一條／一管……；試管；（美式口語）看電視"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/tube",
+      "reason": "Current complete entry and applicable primary definition/original printed label compared. Restore the selected meaning/construction and visibly distinguish supported inherited other-POS senses. Preserve formal headword POS/status and every original practice.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001420",
+      "before": {
+        "meaningEn": "a weapon that discharges a missile at high velocity (especially from a metal tube or barrel); the discharge of a firearm as signal or as a salute in military ceremonies",
+        "meaningZh": "槍",
+        "usagePattern": "gun + N; gun to V; a/the gun",
+        "usagePatternZh": "持槍做某事；用槍射擊；一把槍／該把槍"
+      },
+      "after": {
+        "meaningEn": "Noun: a weapon that fires bullets or other projectiles; also its firing as a signal or salute. Verb: shoot with a gun, especially in gun down; also make an engine accelerate.",
+        "meaningZh": "（名詞）槍；（動詞）開槍射擊",
+        "usagePattern": "aim a gun at N; gun sb down; gun an engine",
+        "usagePatternZh": "把槍瞄準……；開槍將某人射倒；加大油門"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/gun",
+      "reason": "Current complete entry and applicable primary definition/original printed label compared. Restore the selected meaning/construction and visibly distinguish supported inherited other-POS senses. Preserve formal headword POS/status and every original practice.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001210",
+      "before": {
+        "meaningEn": "(criminal law) an act punishable by law; usually considered an evil act; an evil act not necessarily punishable by law",
+        "usagePattern": "a/the crime; crime of N",
+        "usagePatternZh": "一樁／那樁罪行；……的罪行"
+      },
+      "after": {
+        "meaningEn": "An act prohibited by law; criminal activity generally; a serious wrong or evil act. Informally, an act considered foolish, senseless or shameful.",
+        "usagePattern": "commit a crime; a crime against N; prevent crime",
+        "usagePatternZh": "犯罪；侵害……的罪行；預防犯罪"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/crime",
+      "reason": "Current complete entry and applicable primary definition/original printed label compared. Restore the selected meaning/construction and visibly distinguish supported inherited other-POS senses. Preserve formal headword POS/status and every original practice.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001674",
+      "before": {
+        "usagePattern": "a/the prison; prison of N",
+        "usagePatternZh": "一座／這座監獄；……的監獄"
+      },
+      "after": {
+        "usagePattern": "in prison; put sb in prison; a prison sentence",
+        "usagePatternZh": "坐牢；把某人關進監獄；監禁刑期"
+      },
+      "evidence": "original-textbook-photo:p450",
+      "reason": "Current complete entry and applicable primary definition/original printed label compared. Restore the selected meaning/construction and visibly distinguish supported inherited other-POS senses. Preserve formal headword POS/status and every original practice.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001675",
+      "before": {
+        "meaningEn": "a person who is confined; especially a prisoner of war"
+      },
+      "after": {
+        "meaningEn": "A person kept in prison or otherwise held captive, including a prisoner of war."
+      },
+      "evidence": "original-textbook-photo:p450",
+      "reason": "Restore general prisoner rather than privileging prisoner-of-war as the main meaning.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001884",
+      "before": {
+        "meaningZh": "開關；電閘；轉換；軟枝"
+      },
+      "after": {
+        "meaningZh": "（名詞）開關；電閘；轉換；軟枝；（動詞）切換；調換；打開或關閉"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/switch",
+      "reason": "Current complete entry and applicable primary definition/original printed label compared. Restore the selected meaning/construction and visibly distinguish supported inherited other-POS senses. Preserve formal headword POS/status and every original practice.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001191",
+      "before": {
+        "meaningEn": "the act of acknowledging that someone has an occasion for celebration; (usually plural) an expression of pleasure at the success or good fortune of another; an expression of approval and commendation; the act of acknowledging that someon...",
+        "usagePattern": "a/the congratulation; congratulation of N",
+        "usagePatternZh": "一聲／那聲祝賀；對……的祝賀"
+      },
+      "after": {
+        "meaningEn": "The act of congratulating; usually plural congratulations: expressions of pleasure or good wishes offered to someone for an achievement or happy event.",
+        "usagePattern": "congratulations on N/V-ing; offer/send congratulations to sb",
+        "usagePatternZh": "因……而祝賀；向某人致賀"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/congratulations",
+      "reason": "Replace visibly truncated repetition while retaining the act noun and ordinary plural expression. Formal congratulation(s) alias identity remains unchanged; displayed source headword is congratulations.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001640",
+      "before": {
+        "meaningEn": "on the positive side or higher end of a scale; involving advantage or good",
+        "meaningZh": "加上；加；外加；正的",
+        "usagePattern": "a/the plus; plus of N; be plus",
+        "usagePatternZh": "該優勢；……的優勢；為正數"
+      },
+      "after": {
+        "meaningEn": "Preposition: added to; in addition to. Noun: a plus sign, an advantage or an additional benefit. Adjective: positive, or slightly above a stated amount or grade.",
+        "meaningZh": "（介系詞）加上；以及；（名詞）加號；好處；優勢；（形容詞）正的；高於……的",
+        "usagePattern": "A plus B; a plus sign; a definite plus; a grade of A plus",
+        "usagePatternZh": "A 加 B／A 加上 B；加號；明確的優勢；A 加的成績"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/plus",
+      "reason": "Current complete entry and applicable primary definition/original printed label compared. Restore the selected meaning/construction and visibly distinguish supported inherited other-POS senses. Preserve formal headword POS/status and every original practice.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001441",
+      "before": {
+        "meaningZh": "低下的；謙遜的；粗陋的；使...卑下"
+      },
+      "after": {
+        "meaningZh": "（形容詞）低下的；謙遜的；粗陋的；（另有動詞用法）使……卑下"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/humble",
+      "reason": "Current complete entry and applicable primary definition/original printed label compared. Restore the selected meaning/construction and visibly distinguish supported inherited other-POS senses. Preserve formal headword POS/status and every original practice.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001109",
+      "before": {
+        "meaningEn": "a part of a tree that grows out from the trunk; a local office or shop that is part of a larger organization",
+        "meaningZh": "樹枝；支店；支流；分部",
+        "usagePattern": "a branch of N; open a new branch",
+        "usagePatternZh": "……的分支／分店；開設新分店"
+      },
+      "after": {
+        "meaningEn": "Noun: a part of a tree growing from the trunk; a local office or division of an organization, or a smaller stream. Verb: divide from a main line; in branch out, start new activities.",
+        "meaningZh": "（名詞）樹枝；支店；支流；分部；（動詞）分岔；拓展活動",
+        "usagePattern": "a branch of N; branch off from N; branch out",
+        "usagePatternZh": "……的分支／分店；從……分岔；拓展新活動"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/branch",
+      "reason": "Current complete entry and applicable primary definition/original printed label compared. Restore the selected meaning/construction and visibly distinguish supported inherited other-POS senses. Preserve formal headword POS/status and every original practice.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001110",
+      "before": {
+        "meaningZh": "商標；牌子；烙印；打烙印於"
+      },
+      "after": {
+        "meaningZh": "（名詞）商標；牌子；烙印；（另有動詞用法）打烙印於"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/brand",
+      "reason": "Current complete entry and applicable primary definition/original printed label compared. Restore the selected meaning/construction and visibly distinguish supported inherited other-POS senses. Preserve formal headword POS/status and every original practice.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001447",
+      "before": {
+        "usagePattern": "ignore + N; ignore to V",
+        "usagePatternZh": "忽視某事；疏忽去做某事"
+      },
+      "after": {
+        "usagePattern": "ignore N; ignore a warning; ignore sb",
+        "usagePatternZh": "忽視某事；無視警告；不理會某人"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/ignore",
+      "reason": "Current complete entry and applicable primary definition/original printed label compared. Restore the selected meaning/construction and visibly distinguish supported inherited other-POS senses. Preserve formal headword POS/status and every original practice.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001512",
+      "before": {
+        "meaningEn": "large and complicated reddish-brown glandular organ located in the upper right portion of the abdominal cavity; secretes bile and functio...; liver of an animal used as meat"
+      },
+      "after": {
+        "meaningEn": "A large organ in the abdomen that produces bile and performs important metabolic functions; also an animal liver used as food. Separate agent noun from live: a person who lives in a specified way or place, a resident."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/liver",
+      "reason": "Remove truncated copied fragment, preserve directly attested person/resident homograph. This is lexical content, not medical guidance.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001136",
+      "before": {
+        "meaningZh": "單元；細胞；電池",
+        "meaningEn": "the smallest basic unit of a living thing; a device that produces electricity; a small room where a prisoner is kept"
+      },
+      "after": {
+        "meaningZh": "單元；細胞；電池；牢房；（口語）手機",
+        "meaningEn": "the smallest basic unit of a living thing; a device that produces electricity; a small room where a prisoner is kept. Informally, cell also means a mobile phone."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/cell",
+      "reason": "Current complete entry and applicable primary definition/original printed label compared. Restore the selected meaning/construction and visibly distinguish supported inherited other-POS senses. Preserve formal headword POS/status and every original practice.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002846",
+      "before": {
+        "meaningEn": "a steep place (as on a hill); devote (oneself) fully to",
+        "meaningZh": "浸漬；懸崖；險峻的；陡峭的",
+        "usagePattern": "be steep; steep + N",
+        "usagePatternZh": "表現得陡峭；陡峭的山坡"
+      },
+      "after": {
+        "meaningEn": "Adjective: having a sharply rising or falling slope; informally, excessively high, especially of a price. Separate noun: a steep slope. Separate verb: soak something in liquid or imbue it with a quality.",
+        "meaningZh": "（形容詞）險峻的；陡峭的；（另有名詞用法）懸崖／陡坡；（另有動詞用法）浸漬",
+        "usagePattern": "a steep hill/slope; be steep; a steep price",
+        "usagePatternZh": "陡峭的山丘／斜坡；陡峭；高昂的價格"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/steep",
+      "reason": "Restore missing selected adjective while preserving real soaking verb and slope noun; do not expand formal adj.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002942",
+      "before": {
+        "meaningZh": "歌曲；主旋律；心情；聲調"
+      },
+      "after": {
+        "meaningZh": "（名詞）歌曲；主旋律；心情；聲調；（動詞）調音；調整"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/tune",
+      "reason": "Current complete entry and applicable primary definition/original printed label compared. Restore the selected meaning/construction and visibly distinguish supported inherited other-POS senses. Preserve formal headword POS/status and every original practice.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003108",
+      "before": {
+        "meaningZh": "捆綁物；結合；債券；契約"
+      },
+      "after": {
+        "meaningZh": "（名詞）捆綁物；結合；債券；契約；（動詞）建立關係；黏合"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/bond",
+      "reason": "Current complete entry and applicable primary definition/original printed label compared. Restore the selected meaning/construction and visibly distinguish supported inherited other-POS senses. Preserve formal headword POS/status and every original practice.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005449",
+      "before": {
+        "meaningEn": "lock up or confine, in or as in a jail; confine as if in a prison; he does not let them go out without a chaperone\"; putting someone in prison or in jail as lawful punishment; the act of confining someone in a prison (or as if in a prison)",
+        "usagePattern": "imprison + N; imprison to V; an/the imprison",
+        "usagePatternZh": "監禁某人；監禁以做某事；一次監禁"
+      },
+      "after": {
+        "meaningEn": "To put someone in prison or keep them confined as if in prison. Related noun imprisonment is the state or act of being confined.",
+        "usagePattern": "imprison sb; be imprisoned for N; be imprisoned in N",
+        "usagePatternZh": "監禁某人；因……被監禁；被囚禁於……"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/imprison",
+      "reason": "Current complete entry and applicable primary definition/original printed label compared. Restore the selected meaning/construction and visibly distinguish supported inherited other-POS senses. Preserve formal headword POS/status and every original practice.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002451",
+      "before": {
+        "meaningEn": "a correctional institution used to detain persons who are in the lawful custody of the government (either accused persons awaiting trial...",
+        "usagePattern": "jail + N; jail to V; a/the jail",
+        "usagePatternZh": "將……收監；監禁以進行某事；監獄"
+      },
+      "after": {
+        "meaningEn": "Noun: a place where people are kept while awaiting trial or serving a prison sentence. Verb: put someone in jail.",
+        "usagePattern": "in jail; jail sb; be jailed for N",
+        "usagePatternZh": "在獄中／坐牢；將某人收監；因……而被監禁"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/jail",
+      "reason": "Current complete entry and applicable primary definition/original printed label compared. Restore the selected meaning/construction and visibly distinguish supported inherited other-POS senses. Preserve formal headword POS/status and every original practice.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005034",
+      "before": {
+        "meaningEn": "an announcement that usually advises or warns the public of some threat; giving advice",
+        "meaningZh": "顧問的；諮詢的；勸告的；忠告的"
+      },
+      "after": {
+        "meaningEn": "Adjective: giving advice or having the function of advising. Separate noun: an official report, statement or warning, often about weather or other hazards.",
+        "meaningZh": "（形容詞）顧問的；諮詢的；勸告的；忠告的；（另有名詞用法）公告；警報"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/advisory",
+      "reason": "Current complete entry and applicable primary definition/original printed label compared. Restore the selected meaning/construction and visibly distinguish supported inherited other-POS senses. Preserve formal headword POS/status and every original practice.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003909",
+      "before": {
+        "meaningEn": "(adj.) not currently used and kept available in case it is needed; (v.) to make something, especially time, available for someone; (v.) to not harm or destroy someone or something",
+        "meaningZh": "剩餘；備用品；備件；備用零件"
+      },
+      "after": {
+        "meaningEn": "(adj.) not currently used and kept available in case it is needed; (v.) to make something, especially time, available for someone; (v.) to not harm or destroy someone or something; (n.) an extra item kept ready as a replacement.",
+        "meaningZh": "（形容詞）剩餘的；備用的；空閒的；（名詞）備用品；備件；備用零件；（動詞）撥出（時間）；饒恕"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/spare",
+      "reason": "Current complete entry and applicable primary definition/original printed label compared. Restore the selected meaning/construction and visibly distinguish supported inherited other-POS senses. Preserve formal headword POS/status and every original practice.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002594",
+      "before": {
+        "meaningEn": "a fertilizer that is derived from animal or vegetable matter; relating or belonging to the class of chemical compounds having a carbon basis"
+      },
+      "after": {
+        "meaningEn": "Adjective: relating to living things or bodily organs; of carbon-based chemical compounds; grown or produced under organic farming methods; also forming an organized whole or being fundamental. Separate noun: an organic substance, such as a fertilizer of animal or plant origin."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/organic",
+      "reason": "The original adjective entry leads with a fertilizer noun and omits most selected meanings. Retain the real noun separately and do not equate the everyday farming sense with every chemical carbon compound.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002029",
+      "before": {
+        "meaningEn": "spiritual being attendant upon God; invests in a theatrical production"
+      },
+      "after": {
+        "meaningEn": "Noun: a spiritual messenger or attendant of God; a guardian spirit; a very kind person. Informally, a financial backer of a venture, especially a theatrical production."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/angel",
+      "reason": "Retain theatrical backer meaning as a person noun; the copied invests verb is not the selected noun definition.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005397",
+      "before": {
+        "meaningEn": "the soccer or hockey player assigned to protect the goal; the defensive position on an ice hockey or soccer or lacrosse team who stands in front of the goal and tries to prevent opposing players..."
+      },
+      "after": {
+        "meaningEn": "A player whose job in games such as soccer, hockey or lacrosse is to guard the goal and stop the opposing team from scoring."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/goalkeeper",
+      "reason": "Current complete entry and applicable primary definition/original printed label compared. Restore the selected meaning/construction and visibly distinguish supported inherited other-POS senses. Preserve formal headword POS/status and every original practice.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004250",
+      "before": {
+        "meaningEn": "any member of the Creek Confederacy (especially the Muskogee) formerly living in Georgia and Alabama but now chiefly in Oklahoma"
+      },
+      "after": {
+        "meaningEn": "A small stream or river, especially in American usage; in British usage, a narrow inlet or bay. Separate capitalized Creek: a member of the Creek Confederacy of Indigenous North American peoples, or their language."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/creek",
+      "reason": "Current lowercase geographical entry contains only the capitalized people definition. Restore printed stream and inherited bay, preserving the proper-name meaning separately.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005116",
+      "before": {
+        "meaningZh": "小溪；容忍"
+      },
+      "after": {
+        "meaningZh": "（名詞）小溪；（另有動詞用法，常用於否定句）容忍"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/brook",
+      "reason": "Current complete entry and applicable primary definition/original printed label compared. Restore the selected meaning/construction and visibly distinguish supported inherited other-POS senses. Preserve formal headword POS/status and every original practice.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX5987c528",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/burden",
+      "reason": "Read complete unchanged sentence, cloze and answer: actual lexical verb, not the headword mixed/first noun or adjective.",
+      "classification": "actual_cloze_part_of_speech"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX364d779e",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/switch",
+      "reason": "Read complete unchanged sentence, cloze and answer: actual lexical verb, not the headword mixed/first noun or adjective.",
+      "classification": "actual_cloze_part_of_speech"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXbdf1389c",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/flow",
+      "reason": "Read complete unchanged sentence, cloze and answer: actual lexical verb, not the headword mixed/first noun or adjective.",
+      "classification": "actual_cloze_part_of_speech"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX28ca1d0b",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/bond",
+      "reason": "Read complete unchanged sentence, cloze and answer: actual lexical verb, not the headword mixed/first noun or adjective.",
+      "classification": "actual_cloze_part_of_speech"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX71283ae0",
+      "before": {
+        "sensePos": "adj."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/spare",
+      "reason": "Read complete unchanged sentence, cloze and answer: actual lexical verb, not the headword mixed/first noun or adjective.",
+      "classification": "actual_cloze_part_of_speech"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX138a46d0",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/advice",
+      "reason": "Only this complete authored practice reviewed; not an official-exam quotation or whole-card certification.",
+      "classification": "individual_authored_practice_review"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX37f05e19",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/principle",
+      "reason": "Only this complete authored practice reviewed; not an official-exam quotation or whole-card certification.",
+      "classification": "individual_authored_practice_review"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXd2b5ba8e",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/advise",
+      "reason": "Only this complete authored practice reviewed; not an official-exam quotation or whole-card certification.",
+      "classification": "individual_authored_practice_review"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXbe89d854",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/forth",
+      "reason": "Only this complete authored practice reviewed; not an official-exam quotation or whole-card certification.",
+      "classification": "individual_authored_practice_review"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXdb0a5afa",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/modest",
+      "reason": "Only this complete authored practice reviewed; not an official-exam quotation or whole-card certification.",
+      "classification": "individual_authored_practice_review"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001379-1",
+      "before": {
+        "status": "draft",
+        "note": "考點：bring forth 提出想法"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-07：直接讀113學測印刷第3頁風中電話21–30完整段落、十選項及官方答案23=J brought forth，指構想被提出。forth 本身是副詞；EXbe89d854委員會減少食物浪費是另寫練習，不是原題。"
+      },
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0o051427482769341323/02-113%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%A7%91%E5%AE%9A%E7%A8%BF.pdf; https://www.ceec.edu.tw/files/file_pool/1/0o051427843482078305/02-113%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf",
+      "reason": "Exact official context/options/answer read; keep answerForms and sense ID.",
+      "classification": "limited_exam_sense_review"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W003654-1",
+      "before": {
+        "status": "draft",
+        "note": "考點：數量不多，非「謙虛」"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-07：直接讀110學測印刷第3頁運動31–40完整段落、十選項及官方答案31=J modest，指不大的運動量，不是謙虛。EXdb0a5afa步行句為另寫練習；本次是語言來源審核，不是對所有人的醫療建議。"
+      },
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0l069608312283063557/110%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%20.pdf; https://www.ceec.edu.tw/files/file_pool/1/0l069608703462801602/110%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf",
+      "reason": "Exact official context/options/answer read; do not conflate authored practice with source quotation.",
+      "classification": "limited_exam_sense_review"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W003909-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：剩餘；備用品；備件；備用零件"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-07：本既有義項及完整字卡例句已依詞典核讀；備用／空閒形容詞、撥出／饒恕動詞、備用品名詞分列，保留整詞狀態、ID 與答案欄。"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/spare",
+      "reason": "Only existing sense reviewed; no new identity or whole-word approval.",
+      "classification": "limited_sense_review"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W003909-2",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：剩餘；備用品；備件；備用零件"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-07：本既有義項及完整字卡例句已依詞典核讀；備用／空閒形容詞、撥出／饒恕動詞、備用品名詞分列，保留整詞狀態、ID 與答案欄。"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/spare",
+      "reason": "Only existing sense reviewed; no new identity or whole-word approval.",
+      "classification": "limited_sense_review"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W003909-3",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：剩餘；備用品；備件；備用零件"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-07：本既有義項及完整字卡例句已依詞典核讀；備用／空閒形容詞、撥出／饒恕動詞、備用品名詞分列，保留整詞狀態、ID 與答案欄。"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/spare",
+      "reason": "Only existing sense reviewed; no new identity or whole-word approval.",
+      "classification": "limited_sense_review"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001854",
+      "before": {
+        "meaningZh": "水流；小河；流出；趨勢"
+      },
+      "after": {
+        "meaningZh": "（名詞）水流；小河；趨勢；（動詞）流出；流動；串流播放／傳送（影音）"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/stream",
+      "reason": "Original page454 and current English/usage already include online sound/video streaming. Direct primary definition explicitly confirms send or receive sound/video continuously over the internet. Make that selected existing meaning visible in Chinese while retaining every inherited Chinese meaning and all current verbForms/English/status/identity.",
+      "classification": "selected_existing_sense_visible_summary_completion"
+    }
+  ]
+}

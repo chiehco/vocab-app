@@ -1,3 +1,4 @@
+import {lv2Unit50BeforeFormalAudit} from './lv2Unit50Audit.testSupport';
 import {expect,it} from 'vitest';
 import {createHash} from 'node:crypto';
 import {readFileSync} from 'node:fs';
@@ -15,7 +16,7 @@ import research from '../../../docs/unit-audit-20261105/LV2-U49-source-research.
 import imageReview from '../../../docs/unit-audit-20261105/validation/LV2-U49-image-review.json';
 type Row=Record<string,unknown>;
 const hash=(v:unknown)=>createHash('sha256').update(JSON.stringify(v)).digest('hex');
-const data=(n:string)=>JSON.parse(readFileSync('public/data/v1/'+n+'.json','utf8')) as Row[];
+const data=(n:string)=>lv2Unit50BeforeFormalAudit(n,JSON.parse(readFileSync('public/data/v1/'+n+'.json','utf8'))) as Row[];
 it('checks115 exact printed corrections and all historical155 items without resetting a fixture',()=>{
  expect(current.learningItems).toHaveLength(155);expect(corrections.patches).toHaveLength(115);expect(hash(current)).toBe(corrections.afterHash);expect(hash(lv2Unit49BeforeAudit(current))).toBe(corrections.beforeHash);expect(hash(JSON.parse(readFileSync(corrections.sourcePath,'utf8')))).toBe(corrections.sourceHash);
  for(const p of corrections.patches){const bad=structuredClone(current),row=bad.learningItems.find(i=>i.learningItemId===p.id)! as Row;for(const k of Object.keys(p.after)){const old=row[k];row[k]='unrecorded';expect(()=>lv2Unit49BeforeAudit(bad)).toThrow();row[k]=old;}}
@@ -29,10 +30,10 @@ it('keeps ten null identities and textbook/dictionary boundaries while explainin
 });
 it('restores only82 exact formal operations and rejects each recorded-field or identity drift',()=>{
  const all=[...main.patches,...notes.patches,...forms.patches];expect(all).toHaveLength(82);
- const rows=Object.fromEntries(['words','senses','examples','notes'].map(n=>[n,data(n)]));for(const[n,proof]of Object.entries(inverse.datasets)){expect(hash(rows[n])).toBe(proof.afterHash);expect(hash(lv2Unit49BeforeFormalAudit(n,rows[n]))).toBe(proof.beforeHash);}
+ const rows=Object.fromEntries(['words','senses','examples','notes'].map(n=>[n,data(n)]));for(const[n,proof]of Object.entries(inverse.datasets)){expect(hash(rows[n])).toBe(proof.afterHash);expect(hash(lv2Unit49BeforeFormalAudit(n,rows[n],'u49_checkpoint'))).toBe(proof.beforeHash);}
  for(const p of all){const row=rows[p.dataset].find(r=>r[p.key]===p.id)!;for(const k of Object.keys(p.after))expect(()=>restoreRecordedAuditPatch(p.dataset,{...row,[k]:'unrecorded'},p)).toThrow();}
- for(const n of Object.keys(rows)){const p=all.find(p=>p.dataset===n)!,row=rows[n].find(r=>r[p.key]===p.id)!;row[p.key]='unrecorded';expect(()=>lv2Unit49BeforeFormalAudit(n,rows[n])).toThrow();}
- const extra=data('words');extra[0].meaningZh='unrecorded';expect(hash(lv2Unit49BeforeFormalAudit('words',extra))).not.toBe(inverse.datasets.words.beforeHash);
+ for(const n of Object.keys(rows)){const p=all.find(p=>p.dataset===n)!,row=rows[n].find(r=>r[p.key]===p.id)!;row[p.key]='unrecorded';expect(()=>lv2Unit49BeforeFormalAudit(n,rows[n],'u49_checkpoint')).toThrow();}
+ const extra=data('words');extra[0].meaningZh='unrecorded';expect(hash(lv2Unit49BeforeFormalAudit('words',extra,'u49_checkpoint'))).not.toBe(inverse.datasets.words.beforeHash);
  expect(inverse.headwordIdentityPosAndStatusAll6090Unchanged).toBe(true);expect(inverse.practiceEnglishClozeAnswerAll7871Unchanged).toBe(true);
 });
 it('limits eight actual cloze POS and five existing hint refinements without filling empty hints',()=>{
