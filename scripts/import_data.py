@@ -133,6 +133,15 @@ def parse_words(ws):
          image_word_id, usage_pattern_zh) = (list(r) + [None] * 16)[:16]
         if word is None:
             continue
+        # Known source-summary contamination, not a display override. Stop before
+        # writing any bundle so an old workbook cannot silently restore it.
+        if word == "interact" and meaning_zh and any(
+            text in meaning_zh for text in ("幕間劇", "幕間休息")
+        ):
+            raise SystemExit(
+                "錯誤：interact 的 meaning_zh 混入幕間名詞義；請先修正最新母表"
+                " input_words_單字主表.meaning_zh，保留 word_id 與審核狀態。"
+            )
         if word in seen:
             raise SystemExit(
                 f"錯誤：單字「{word}」在 input_words 中重複出現（{seen[word]} 與 {word_id}）。"
