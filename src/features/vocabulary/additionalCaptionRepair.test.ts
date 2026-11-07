@@ -1,3 +1,4 @@
+import {lv3Unit1BeforePublishedText} from '../direct/lv3Unit1Audit.testSupport';
 import {expect,it} from 'vitest';
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
@@ -18,7 +19,7 @@ cards[candidateIndex]=structuredClone(c.after);
 
 it('retains the independent original approval image English and broader science-project source boundary',()=>{
  validateAdditionalProof(proof);expect(approvals.find(r=>r.id===c.id)).toEqual(c.originalApproval);expect(c.after.illustration.path).toBe(c.before.illustration.path);expect(c.after.illustration.captionEn).toBe(c.before.illustration.captionEn);expect(c.after.illustration.captionZh).toBe('她需要額外的時間才能完成她的科學專題。');expect(bytesHash('public/'+c.after.illustration.path)).toBe(c.imageSha256);expect(c.dimensions).toEqual([1254,1254]);expect(additionalHash(c.before.illustration.captionEn+'\n'+c.before.illustration.captionZh)).toBe(c.originalApproval.textSha256);expect(c.sourceEvidence.retrieval).toBe('direct_primary_dictionary_definition');expect(c.sourceEvidence.unsuccessfulSource.result).toContain('403');
- for(const f of proof.unchangedFiles)expect(createHash('sha256').update(readFileSync(f.path,'utf8').replace(/\r\n/g,'\n')).digest('hex')).toBe(f.lfNormalizedSha256);
+ for(const f of proof.unchangedFiles)expect(createHash('sha256').update(lv3Unit1BeforePublishedText(f.path,readFileSync(f.path,'utf8').replace(/\r\n/g,'\n'))).digest('hex')).toBe(f.lfNormalizedSha256);
  expect(proof.unchangedFiles.find(f=>f.path==='src/features/vocabulary/approvedExampleImages.json')).toMatchObject({"sha256":"cb10a47f664cba5d897488972f6144b84f9285903170aa07bab8663f224dd753","lfNormalizedSha256":"030d8c1de76182f6a5cdf5340e84ddc8112cd0f54c998b9ffbef189259e2c12a"});
  expect(proof.crossPlatformTextChecksum.allOriginalRawSha256ValuesRetained).toBe(true);
 });

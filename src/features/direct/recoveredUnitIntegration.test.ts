@@ -1,3 +1,4 @@
+import {lv3Unit1BeforeAudit} from './lv3Unit1Audit.testSupport';
 import {lv2Unit50BeforeAudit} from './lv2Unit50Audit.testSupport';
 import currentLV2Unit50 from './curriculumLV2Unit50.json';
 import {lv2Unit49BeforeAudit} from './lv2Unit49Audit.testSupport';
@@ -108,6 +109,7 @@ it('retains historical curriculum and question identities with the audited cubes
     // The real installed units remain checked below; no unit or old hash is omitted.
     const priorPractice = old.templateId === 'LV4-U20' ? releasedUnit20BeforePracticeRevision() : undefined;
     let priorItems=priorPractice?.learningItems ?? retained.items;
+    if(old.templateId==='TEXTBOOK-LV3-U01')priorItems=lv3Unit1BeforeAudit('curriculum',{learningItems:retained.items}).learningItems;
     if(old.templateId === 'TEXTBOOK-LV1-U16'){
       expect(retained.items).toEqual(currentUnit16.learningItems);
       priorItems=unit16BeforeAudit(currentUnit16).learningItems;

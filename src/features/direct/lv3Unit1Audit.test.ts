@@ -3,7 +3,7 @@ import {createHash} from 'node:crypto';
 import {readFileSync} from 'node:fs';
 import {expect,it} from 'vitest';
 import manifest from '../../../docs/lv3-audit-20261107/U01-patches.json';
-import {lv3Unit1BeforeAudit,lv3Unit1Patches} from './lv3Unit1Audit.testSupport';
+import {lv3Unit1BeforeAudit,lv3Unit1Patches,lv3Unit1BeforePublishedText} from './lv3Unit1Audit.testSupport';
 
 type Row=Record<string,unknown>;
 const paths:Record<string,string>={words:'public/data/v1/words.json',senses:'public/data/v1/senses.json',examples:'public/data/v1/examples.json',notes:'public/data/v1/notes.json',curriculum:'src/features/direct/curriculum.json',grammarQuestions:'src/features/direct/grammarQuestions.json'};
@@ -87,4 +87,18 @@ it('retains original cloze reconstruction and exact authored question identities
  for(const row of curriculum.learningItems){const e=row.originalExample;if(e)expect(e.blankSentence.replace('_____',e.answer)).toBe(e.sentenceEn);}
  const grammar=read('grammarQuestions');
  for(const p of lv3Unit1Patches.filter(p=>p.dataset==='grammarQuestions')){const row=grammar.find((r:Row)=>r[p.key]===p.id);expect(row[p.key]).toBe(p.before[p.key]);expect(row.options.filter((o:Row)=>o.id===row.answer)).toHaveLength(1);expect(new Set(row.options.map((o:Row)=>o.text)).size).toBe(row.options.length);}
+});
+
+it('preserves independent raw publication guards and rejects metadata or formatting drift',()=>{
+ for(const name of ['meta','sa-pack']){
+  const path='public/data/v1/'+name+'.json',raw=readFileSync(path,'utf8').replace(/\r\n/g,'\n');
+  const value=JSON.parse(raw),meta=name==='meta'?value:value.meta;
+  meta.generatedAt='unrecorded';
+  expect(()=>lv3Unit1BeforePublishedText(path,JSON.stringify(value,null,name==='sa-pack'?undefined:2)+'\n')).toThrow('metadata');
+  expect(()=>lv3Unit1BeforePublishedText(path,raw+' ')).toThrow('formatting');
+ }
+ const path='public/data/v1/sa-pack.json',raw=readFileSync(path,'utf8').replace(/\r\n/g,'\n');
+ const value=JSON.parse(raw),old=lv3Unit1BeforePublishedText(path,raw);
+ value.words[0].unrecordedField=true;
+ expect(lv3Unit1BeforePublishedText(path,JSON.stringify(value)+'\n')).not.toBe(old);
 });
