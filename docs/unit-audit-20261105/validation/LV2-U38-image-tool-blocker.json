@@ -1,0 +1,60 @@
+{
+  "observedInUnit": "LV2-U38",
+  "updatedAtUtc": "2026-11-06T13:44:07.291Z",
+  "state": "exact_edit_handoff_ready_input_parser_blocked_no_accepted_generation",
+  "tool": "image_gen.imagegen",
+  "attemptedOperation": {
+    "word": "generosity",
+    "wordId": "W003446",
+    "input": "public/wordbeast/a/W003446.webp",
+    "inputType": "local_absolute_Windows_path",
+    "error": "AbsolutePathBuf deserialized without a base path at line 1 column 1374",
+    "elapsedSeconds": 0,
+    "acceptedGeneration": false,
+    "jobId": null,
+    "pending": false,
+    "uncertainOutcome": false,
+    "permissionDenial": false
+  },
+  "unattemptedOperation": {
+    "word": "playground",
+    "wordId": "W001638",
+    "reason": "No duplicate call submitted while the same local-reference input parser is unsupported."
+  },
+  "apiCliFallbackUsed": false,
+  "knownPaymentBlock": false,
+  "specificationBlock": false,
+  "oldAssetsRetained": true,
+  "productPairsChanged": false,
+  "jobs": [
+    {
+      "id": "GENERAL-W003446-image-pair",
+      "word": "generosity",
+      "wordId": "W003446",
+      "repoPath": "public/wordbeast/a/W003446.webp",
+      "sha256": "3077fa8f9c844484d2f119f995ae1cc91cab7f01bd3857aeddbb380fe3d041da",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "caption": "Doudou shows generosity by giving both apples to a friend.\n\n豆豆把兩顆蘋果都送給朋友，展現慷慨。",
+      "target": "Exactly two characters. Both existing blue apples are given to one friend; remove the other recipient, preserve giver, basket, paper, style and native1024-square canvas.",
+      "publication": "Keep original master PNG, RGB WebP quality85 method6 without resizing, versioned new path. Preserve old asset/caption and exact rollback. Reopen only the corresponding general/unit entry after integration; U38 remains text_only."
+    },
+    {
+      "id": "LV1-U09-27-image-quantity",
+      "word": "playground",
+      "wordId": "W001638",
+      "repoPath": "public/wordbeast/lv1-reviewed/LV1-U09-27-39abaecad0fa.webp",
+      "sha256": "2a11198019d75bd6c145a98ac9a5e0a661e5bf6070867b17d093b4ae1aa2b407",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "caption": "The kids are swinging happily on the playground.\n\n孩子們在遊樂場開心地盪鞦韆。",
+      "target": "Both existing children actively swing on two swings, preserving playground, slide, watercolor style and native1254-square canvas. No extra children.",
+      "publication": "Keep original master PNG, RGB WebP quality85 method6 without resizing, versioned new path. Preserve old asset/caption and exact rollback. Reopen only the corresponding general/unit entry after integration; U38 remains text_only."
+    }
+  ],
+  "handoff": "A supported local-reference environment can generate these two exact edits; no accepted or uncertain pending generation exists to duplicate."
+}

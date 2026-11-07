@@ -1,0 +1,21 @@
+{
+  "unit": "LV2-U45",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "scope": "The initial U45 regression identified that wicked retains two English constructions but the first prepared Chinese revision supplied only the attributive construction. Preserve that failed check and restore both exact semantic pairs; do not alter English or reset the original word baseline.",
+  "patches": [
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002995",
+      "before": {
+        "usagePattern": "be wicked; wicked + N",
+        "usagePatternZh": "邪惡的……（修飾名詞）"
+      },
+      "after": {
+        "usagePatternZh": "是邪惡的；邪惡的……（修飾名詞）"
+      },
+      "reason": "Both predicative and attributive uses must have their Chinese counterpart; the actual parser omits all Chinese when group counts differ.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/wicked"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "initialNormalInstaller": {
+    "words": 6090,
+    "examples": 7871,
+    "internalAll14TablesExact": true,
+    "nativeBeforeMatchesInstallerBefore": true,
+    "sha256": "176b71804ad26ffd7688991fa9b99653d19ee6af4e553b55db69106821f4f51b",
+    "contentHashBefore": "c58b78fa394cec6a3820910aa50cd4972fc2e5a2487509aaa135b2bb7b7e4b84",
+    "contentHashAfter": "51c81d20f8e5fd305607b387c056688f4f2cb68ab3aaa8eb842d60bcc052aadf"
+  },
+  "neutralBrowserCloseReopen": {
+    "all14TablesExact": true,
+    "sha256": "1e6edd489e411ec80fd10db84d3d1a76ffe8f087282d50ae898228232aeaaac4",
+    "allFieldsIncludingResumeTimestamp": true
+  },
+  "savedContent": {
+    "rows": 2837,
+    "failures": 0,
+    "contentHash": "51c81d20f8e5fd305607b387c056688f4f2cb68ab3aaa8eb842d60bcc052aadf",
+    "readbackEqualBeforeAndAfterClose": true
+  },
+  "reopenAccessEvent": {
+    "phase": "Browser persistence reopen",
+    "exitCode": 1,
+    "onlyOneOpenAttempt": true,
+    "result": "The normal open call created the browser but its initial snapshot failed; the read-only state probe established the resulting state.",
+    "resolution": "The same profile, neutral URL, all14 native progress tables and saved content were read without a second open, profile deletion or timeout increase."
+  },
+  "scope": "No progress field is omitted, normalized away or reset."
+}

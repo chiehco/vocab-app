@@ -1,0 +1,23 @@
+{
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "unit": "LV2-U29",
+  "patches": [
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX70528bd1",
+      "before": {
+        "word": "fulfill",
+        "sentenceEn": "She saved for years to fulfill her dream of opening a bookshop.",
+        "blankSentence": "She saved for years to _____ her dream of opening a bookshop.",
+        "answer": "fulfill",
+        "sentenceZh": "她存了好幾年的錢，實現開書店的夢想。"
+      },
+      "after": {
+        "sentenceZh": "為了實現開書店的夢想，她存了好幾年的錢。"
+      },
+      "reason": "The to-infinitive expresses purpose; remove the extra assertion that the dream was actually fulfilled. Same established principle as EX66703666, preserve the complete English/cloze/answer and headword statuses.",
+      "evidence": "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2/infinitive-purpose"
+    }
+  ]
+}

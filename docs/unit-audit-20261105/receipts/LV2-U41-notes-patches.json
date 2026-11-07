@@ -1,0 +1,73 @@
+{
+  "manifest": "docs/unit-audit-20261105/LV2-U41-notes-patches.json",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "checkedAt": "2026-11-06T16:39:41.878136+00:00",
+  "changeCount": 2,
+  "changes": [
+    {
+      "dataset": "notes",
+      "id": "NXcc6e3da7",
+      "before": {
+        "noteId": "NXcc6e3da7",
+        "word": "smooth",
+        "noteType": "grammar",
+        "title": "smooth out...",
+        "content": "把（衣服或紙張等的皺摺）用平。",
+        "status": "approved"
+      },
+      "after": {
+        "noteId": "NXcc6e3da7",
+        "word": "smooth",
+        "noteType": "grammar",
+        "title": "smooth out...",
+        "content": "把（衣服或紙張等的皺摺）弄平、撫平。",
+        "status": "approved"
+      },
+      "reason": "Correct 用平 to the actually intended smooth-out action; keep immutable title/type/status and original print.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/smooth"
+    },
+    {
+      "dataset": "notes",
+      "id": "NXd66ae71e",
+      "before": {
+        "noteId": "NXd66ae71e",
+        "word": "royal",
+        "noteType": "phrase",
+        "title": "the royal road to sth",
+        "content": "很容易達成某事物。",
+        "status": "approved"
+      },
+      "after": {
+        "noteId": "NXd66ae71e",
+        "word": "royal",
+        "noteType": "phrase",
+        "title": "the royal road to sth",
+        "content": "達成某目標的容易、直接方法；the royal road to sth 為名詞片語。",
+        "status": "approved"
+      },
+      "reason": "Express the royal-road noun phrase rather than a complete assertion that the goal is already achieved.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/royal-road"
+    }
+  ],
+  "masterTouched": false,
+  "sentencesChanged": false,
+  "englishSentencesChanged": false,
+  "imagesChanged": false,
+  "sourceHashesBefore": {
+    "words.json": "f2abc326683b6e8e02f7af46aa34139d3c8dccc319d5383ed161998a247f8b54",
+    "senses.json": "411a5c5232d7d811e0404abde999d1184b525b56e3d92a9102342a0d974b5ed4",
+    "examples.json": "57d30ae4122edee5efc0d36f1e7fe1f13816c5b0078a4b8bc041afdbc6dcf2cb",
+    "meta.json": "9d22692898ff74df1a67431b044aafbc0b6de4843e7ee4fe221cae39a42fb1ab",
+    "sa-pack.json": "5af6dc416757d49b1091daba386e992dc50b467264ad9049ec9e0090eca83021"
+  },
+  "sourceHashesAfter": {
+    "words.json": "f2abc326683b6e8e02f7af46aa34139d3c8dccc319d5383ed161998a247f8b54",
+    "senses.json": "411a5c5232d7d811e0404abde999d1184b525b56e3d92a9102342a0d974b5ed4",
+    "examples.json": "57d30ae4122edee5efc0d36f1e7fe1f13816c5b0078a4b8bc041afdbc6dcf2cb",
+    "meta.json": "a50c9d8a51081fd0a39f9c84cff4e6d1343ea57d4ae72453e1edd4a15750f68c",
+    "sa-pack.json": "bff95fcda756a36be78f7a7b01f53936493fe90e6c6af0ebe3a31acf36fe59f7"
+  },
+  "state": "applied_and_ui_reopened_verified",
+  "originalApplyReceiptState": "applied_not_ui_verified",
+  "validation": "validation/LV2-U41-reopen-summary.json"
+}

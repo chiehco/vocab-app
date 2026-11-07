@@ -1,0 +1,43 @@
+{
+  "unit": "LV2-U30",
+  "failures": [
+    {
+      "phase": "Python entry invocation",
+      "result": "ModuleNotFoundError when invoked as -m unittest from the repository root",
+      "fix": "Use the existing direct-script entry point; no source guard was relaxed."
+    },
+    {
+      "phase": "first direct Python47",
+      "result": "44 passed,3 errors; temporary test evidence directory omitted the three new U30 source files",
+      "fix": "Add only the three exact evidence files to the temporary fixture; all47 passed."
+    },
+    {
+      "phase": "first frontend regression",
+      "result": "179 passed,2 failed in auditedWordIllustrations historical registry hashes",
+      "fix": "Validate and remove only the exact newly added particular row before comparing the unchanged U18/U20 historical hashes; add negative coverage for changed identity/path/captions/extra fields and retain the complete prior332-card hash."
+    },
+    {
+      "phase": "typecheck and build",
+      "result": "TS6133 unused lv2u30 import in the new test setup",
+      "fix": "Remove the unused import; actual typecheck and build exits both0."
+    },
+    {
+      "phase": "first16 usage-page evidence log",
+      "result": "The browser completed the read-only checks, but the shell log had damaged Chinese encoding and could not be accepted as JSON.",
+      "fix": "Preserve the original failed log. Set the console encoding explicitly to UTF8 and repeat only the16 evidence captures; the clean result parsed and all exact note strings matched."
+    },
+    {
+      "phase": "new UI evidence comparison",
+      "result": "The courage image-index excerpt is explicitly a captionless-image observation, not a caption string.",
+      "fix": "Check this exact original captionless observation plus an unchanged full hero and exact image binding. All39 captioned pairs are still checked, and no missing-caption rule is broadly ignored."
+    },
+    {
+      "phase": "neutral browser reopen",
+      "result": "Browser created successfully, then the initial SVG snapshot timed out at30000ms.",
+      "fix": "A read-only probe confirmed the existing page at readyState complete. Read all14 native tables and2613 saved rows in that same reopened profile; no second open or timeout increase."
+    }
+  ],
+  "originalTimeout": 5000,
+  "timeoutRaised": false,
+  "originalHashFixturesChanged": false
+}

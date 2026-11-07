@@ -1,0 +1,150 @@
+{
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "unit": "LV2-U27",
+  "patches": [
+    {
+      "dataset": "notes",
+      "key": "noteId",
+      "id": "NXa9825fa6",
+      "before": {
+        "noteId": "NXa9825fa6",
+        "word": "term",
+        "noteType": "phrase",
+        "title": "in the short term / run ＝ in the long term / run",
+        "content": "短期來看； 從長遠來看",
+        "status": "approved"
+      },
+      "after": {
+        "title": "in the short term / run；in the long term / run"
+      },
+      "reason": "The printed p235 phrases are separate short/long alternatives, not equal. Correct only the wrong equality separator, retaining both phrases and existing Chinese.",
+      "evidence": "scripts/sources/LV2Unit27.json; source page235 actually viewed"
+    },
+    {
+      "dataset": "notes",
+      "key": "noteId",
+      "id": "NXba46cf7b",
+      "before": {
+        "noteId": "NXba46cf7b",
+        "word": "trash",
+        "noteType": "usage",
+        "title": "a piece of...",
+        "content": "trash / garbage / rubbish / litter 皆表「垃圾」且均為不可數；表一件／個垃圾須用 。",
+        "status": "approved"
+      },
+      "after": {
+        "content": "trash / garbage / rubbish / litter 表「垃圾」時均為不可數；表一件／個垃圾須與 a piece of 並用。"
+      },
+      "reason": "Restore the visibly truncated measure phrase; the exact a piece of wording is printed on p236.",
+      "evidence": "scripts/sources/LV2Unit27.json; source page236 actually viewed"
+    },
+    {
+      "dataset": "notes",
+      "key": "noteId",
+      "id": "NXd54e07b2",
+      "before": {
+        "noteId": "NXd54e07b2",
+        "word": "among",
+        "noteType": "usage",
+        "title": "between vs among",
+        "content": "between 用於兩者之間；among 用於三者以上之間。",
+        "status": "approved"
+      },
+      "after": {
+        "content": "between 著重可區分個體之間的關係，也可涉及三者以上；among 著重處於群體之中或被包圍，不能只以數量區分。"
+      },
+      "reason": "Qualify the printed numerical teaching rule using the directly read dictionary usage guide.",
+      "evidence": "https://www.merriam-webster.com/dictionary/between"
+    },
+    {
+      "dataset": "notes",
+      "key": "noteId",
+      "id": "NXa83db220",
+      "before": {
+        "noteId": "NXa83db220",
+        "word": "attendant",
+        "noteType": "phrase",
+        "title": "flight attendant",
+        "content": "：服務生。flight attendant；attend。",
+        "status": "approved"
+      },
+      "after": {
+        "content": "空服員。"
+      },
+      "reason": "Flight attendant specifically serves aircraft passengers, not a generic waiter.",
+      "evidence": "https://dictionary.cambridge.org/dictionary/english/flight-attendant"
+    },
+    {
+      "dataset": "notes",
+      "key": "noteId",
+      "id": "NX2c6cb1d6",
+      "before": {
+        "noteId": "NX2c6cb1d6",
+        "word": "reign",
+        "noteType": "usage",
+        "title": "reign 補充",
+        "content": "nostalgic",
+        "status": "approved"
+      },
+      "after": {
+        "content": "nostalgic 是另一形容詞，意為「懷舊的」；不是 reign 的釋義。"
+      },
+      "reason": "Keep the cross-reference identity while making the separate word boundary explicit.",
+      "evidence": "https://www.merriam-webster.com/dictionary/nostalgic"
+    },
+    {
+      "dataset": "notes",
+      "key": "noteId",
+      "id": "NXd8aa860b",
+      "before": {
+        "noteId": "NXd8aa860b",
+        "word": "reign",
+        "noteType": "phrase",
+        "title": "be nostalgic about...",
+        "content": "片：reign over...、be nostalgic about...",
+        "status": "approved"
+      },
+      "after": {
+        "content": "懷念……；對……懷舊。"
+      },
+      "reason": "Supply the actual titled phrase meaning rather than repeating two unrelated phrases.",
+      "evidence": "https://www.merriam-webster.com/dictionary/nostalgic"
+    },
+    {
+      "dataset": "notes",
+      "key": "noteId",
+      "id": "NXde82b413",
+      "before": {
+        "noteId": "NXde82b413",
+        "word": "reign",
+        "noteType": "phrase",
+        "title": "reign over...",
+        "content": "片：reign over...、be nostalgic about...",
+        "status": "approved"
+      },
+      "after": {
+        "content": "統治……。"
+      },
+      "reason": "Supply the actual reign-over phrase meaning; do not rewrite its word mapping or title.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/reign"
+    },
+    {
+      "dataset": "notes",
+      "key": "noteId",
+      "id": "NX3d756fb4",
+      "before": {
+        "noteId": "NX3d756fb4",
+        "word": "government",
+        "noteType": "phrase",
+        "title": "central / local government",
+        "content": "中央／地方政府〔皆不可數〕",
+        "status": "approved"
+      },
+      "after": {
+        "content": "中央／地方政府；government 指一個或一屆政府時可數，指統治制度或方式時通常不可數。"
+      },
+      "reason": "Clarify countability by sense; retain the recoverable printed blanket label in before evidence. Official Oxford search excerpt checked; direct page403, no full-page-read claim.",
+      "evidence": "https://www.oxfordlearnersdictionaries.com/us/definition/american_english/government"
+    }
+  ]
+}

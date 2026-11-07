@@ -1,0 +1,132 @@
+{
+  "checkedAtUtc": "2026-11-06T19:42:01.163Z",
+  "mainCommit": "0f4eb27961571ce393a1f1a2bc63f1d558bef1fb",
+  "auditBaseCheckpoint": "fe95d729aee53a84ac697839d785d21aa7374fa9",
+  "scope": "Read-only exact consumer-ID comparison; no merge or whole-file replacement.",
+  "rows": [
+    {
+      "kind": "general",
+      "officialWordId": "W003446",
+      "before": {
+        "$absent": true
+      },
+      "after": {
+        "reviewId": "LI-LV2U38-V069",
+        "officialWordId": "W003446",
+        "aliases": [
+          "generosity"
+        ],
+        "illustration": {
+          "path": "wordbeast/lv2-reviewed/LV2-U38-generosity-fdecea42d13a.webp",
+          "captionEn": "Doudou shows generosity by giving both apples to a friend.",
+          "captionZh": "豆豆把兩顆蘋果都送給朋友，展現慷慨。"
+        }
+      },
+      "main": {
+        "$absent": true
+      },
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "kind": "general",
+      "officialWordId": "W001261",
+      "before": {
+        "$absent": true
+      },
+      "after": {
+        "reviewId": "LI-LV2U41-V025",
+        "officialWordId": "W001261",
+        "aliases": [
+          "discover"
+        ],
+        "illustration": {
+          "path": "wordbeast/lv2-reviewed/LV2-U41-discover-f9a557414b67.webp",
+          "captionEn": "While digging, the workers unexpectedly discover a buried treasure chest.",
+          "captionZh": "工人挖土時，意外發現埋在地下的寶箱。"
+        }
+      },
+      "main": {
+        "$absent": true
+      },
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "kind": "published_pair",
+      "id": "LV1-U09-27",
+      "before": {
+        "id": "LV1-U09-27",
+        "unit": 9,
+        "displayWord": "playground",
+        "officialWordId": "W001638",
+        "aliases": [
+          "playground"
+        ],
+        "illustration": {
+          "path": "wordbeast/lv1-reviewed/LV1-U09-27-39abaecad0fa.webp",
+          "captionEn": "The kids are swinging happily on the playground.",
+          "captionZh": "孩子們在遊樂場開心地盪鞦韆。"
+        }
+      },
+      "after": {
+        "id": "LV1-U09-27",
+        "unit": 9,
+        "displayWord": "playground",
+        "officialWordId": "W001638",
+        "aliases": [
+          "playground"
+        ],
+        "illustration": {
+          "path": "wordbeast/lv2-reviewed/LV2-U38-playground-a6b345e0f778.webp",
+          "captionEn": "The kids are swinging happily on the playground.",
+          "captionZh": "孩子們在遊樂場開心地盪鞦韆。"
+        }
+      },
+      "main": {
+        "id": "LV1-U09-27",
+        "unit": 9,
+        "displayWord": "playground",
+        "officialWordId": "W001638",
+        "aliases": [
+          "playground"
+        ],
+        "illustration": {
+          "path": "wordbeast/lv1-reviewed/LV1-U09-27-39abaecad0fa.webp",
+          "captionEn": "The kids are swinging happily on the playground.",
+          "captionZh": "孩子們在遊樂場開心地盪鞦韆。"
+        }
+      },
+      "classification": "main_matches_exact_before"
+    }
+  ],
+  "originalAssets": [
+    {
+      "word": "generosity",
+      "path": "wordbeast/a/W003446.webp",
+      "sha256": "3077fa8f9c844484d2f119f995ae1cc91cab7f01bd3857aeddbb380fe3d041da",
+      "expected": "3077fa8f9c844484d2f119f995ae1cc91cab7f01bd3857aeddbb380fe3d041da"
+    },
+    {
+      "word": "playground",
+      "path": "wordbeast/lv1-reviewed/LV1-U09-27-39abaecad0fa.webp",
+      "sha256": "2a11198019d75bd6c145a98ac9a5e0a661e5bf6070867b17d093b4ae1aa2b407",
+      "expected": "2a11198019d75bd6c145a98ac9a5e0a661e5bf6070867b17d093b4ae1aa2b407"
+    },
+    {
+      "word": "discover",
+      "path": "wordbeast/s/W001261.webp",
+      "sha256": "55f6e97791d73e0a4c308827ae5a584cc93204bc2e098b8759ee8d26c56c6fc6",
+      "expected": "55f6e97791d73e0a4c308827ae5a584cc93204bc2e098b8759ee8d26c56c6fc6"
+    }
+  ],
+  "originalApprovalMatches": true,
+  "issues": [],
+  "releaseRequirements": [
+    "Reconcile both added general rows and the one shared LV1 published pair by exact ID; do not copy the cumulative registry over main.",
+    "Preserve original approval evidence and all old binary assets.",
+    "Keep main audit-JSON LF attributes, Deploy-default 5s job, Vite single-worker configuration and build-only unpublished U12 elevator exclusion.",
+    "Retain this batch CI addition for the three pure Python image-expectation boundary tests.",
+    "Keep the duplicate either-note manifests executed/inverted only once."
+  ],
+  "mainMerged": false,
+  "deployed": false
+}

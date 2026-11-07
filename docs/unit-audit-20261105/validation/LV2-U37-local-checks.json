@@ -1,0 +1,73 @@
+{
+  "unit": "LV2-U37",
+  "frontend": {
+    "first": {
+      "files": 23,
+      "passedFiles": 22,
+      "failedFiles": 1,
+      "tests": 287,
+      "passed": 286,
+      "failed": 1,
+      "exitCode": 1
+    },
+    "repair": {
+      "files": 1,
+      "tests": 71,
+      "passed": 71,
+      "failed": 0,
+      "exitCode": 0
+    },
+    "originalLocalTimeout": 5000,
+    "maxWorkers": 1,
+    "scope": "Original U37 text plus new audit, common inverse/seed, recovered integration, earlier original text/audit and unchanged image hash guards.",
+    "failure": "New negative test placed its expected throw only around the final form inverse; the stricter immutable status guard correctly rejected drift at the earlier U37 word inverse. The expected-throw scope now covers both exact inverses. No production guard or baseline was relaxed."
+  },
+  "python": {
+    "tests": 64,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "lint": {
+    "exitCode": 0,
+    "warningsRetained": true
+  },
+  "typecheck": {
+    "exitCode": 0
+  },
+  "build": {
+    "exitCode": 0
+  },
+  "recoveredDraftCheck": {
+    "exitCode": 0
+  },
+  "recoveredIntegrationCheck": {
+    "exitCode": 0
+  },
+  "logs": [
+    {
+      "file": "LV2-U37-regression-first.txt",
+      "sha256": "64d0387ad07bd30ca5125622badd0507e0db988d3356f538f8c1bcb9f2945c19"
+    },
+    {
+      "file": "LV2-U37-regression-repair.txt",
+      "sha256": "ee1592add0d4fc9ebf7dc2f8ea21878046443dd2cacf20d47240f683d20a061c"
+    },
+    {
+      "file": "LV2-U37-python-first.txt",
+      "sha256": "349ce8b59afb9a01a0a3ae7c04b444c7cbe52b3747ae3fe9a46a849fc8434049"
+    },
+    {
+      "file": "LV2-U37-lint-final.txt",
+      "sha256": "a718ab8093781206ff4a0825e499cce5201e54519b52bfb884a78e3159554455"
+    },
+    {
+      "file": "LV2-U37-typecheck-final.txt",
+      "sha256": "da91f4c430838409de74534c4d8bed41445d7c7283163b2a63c446dde034587b"
+    },
+    {
+      "file": "LV2-U37-build-final.txt",
+      "sha256": "68ea1ba60a7be10f7073d118441385145caf8c65cbe94f22d31cbc329e4ff04d"
+    }
+  ],
+  "ownNewCommitCi": "pending"
+}

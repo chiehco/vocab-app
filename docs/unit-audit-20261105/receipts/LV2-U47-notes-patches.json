@@ -1,0 +1,121 @@
+{
+  "manifest": "docs/unit-audit-20261105/LV2-U47-notes-patches.json",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "checkedAt": "2026-11-07T02:22:02.713258+00:00",
+  "changeCount": 4,
+  "changes": [
+    {
+      "dataset": "notes",
+      "id": "NX6eecafb1",
+      "before": {
+        "noteId": "NX6eecafb1",
+        "word": "somewhat",
+        "noteType": "grammar",
+        "title": "somewhat 的位置",
+        "content": "使用 somewhat 時，該字常置於形容詞與副詞之間，修飾該形容詞或副詞。",
+        "status": "approved"
+      },
+      "after": {
+        "noteId": "NX6eecafb1",
+        "word": "somewhat",
+        "noteType": "grammar",
+        "title": "somewhat 的位置",
+        "content": "somewhat 常置於所修飾的形容詞或副詞之前，表示「有點、稍微」，如 somewhat different／somewhat more difficult。",
+        "status": "approved"
+      },
+      "reason": "Correct before adjective/adverb, not between adjective and adverb; preserve title/type/status.",
+      "evidence": "https://www.merriam-webster.com/dictionary/somewhat"
+    },
+    {
+      "dataset": "notes",
+      "id": "NX13355b91",
+      "before": {
+        "noteId": "NX13355b91",
+        "word": "respond",
+        "noteType": "grammar",
+        "title": "respond that...",
+        "content": "回答／應為……。",
+        "status": "approved"
+      },
+      "after": {
+        "noteId": "NX13355b91",
+        "word": "respond",
+        "noteType": "grammar",
+        "title": "respond that...",
+        "content": "respond that...：回答／回應說……。",
+        "status": "approved"
+      },
+      "reason": "Correct the exact clause construction Chinese, preserve title/type/status and English.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/respond"
+    },
+    {
+      "dataset": "notes",
+      "id": "NXfbff21c4",
+      "before": {
+        "noteId": "NXfbff21c4",
+        "word": "apparent",
+        "noteType": "usage",
+        "title": "apparent",
+        "content": "It is apparent that ...。",
+        "status": "approved"
+      },
+      "after": {
+        "noteId": "NXfbff21c4",
+        "word": "apparent",
+        "noteType": "usage",
+        "title": "apparent",
+        "content": "It is apparent that ...：很明顯……。",
+        "status": "approved"
+      },
+      "reason": "Supply Chinese explanation of the existing construction, no new example.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/apparent"
+    },
+    {
+      "dataset": "notes",
+      "id": "NX2d0d9d33",
+      "before": {
+        "noteId": "NX2d0d9d33",
+        "word": "characteristic",
+        "noteType": "usage",
+        "title": "characteristic of",
+        "content": "be characteristic of …：是…的特徵。",
+        "status": "approved"
+      },
+      "after": {
+        "noteId": "NX2d0d9d33",
+        "word": "characteristic",
+        "noteType": "usage",
+        "title": "characteristic of",
+        "content": "be characteristic of …：是……所特有的；是……的典型特徵。",
+        "status": "approved"
+      },
+      "reason": "Clarify the adjective characteristic of construction while retaining English and the former typical-feature sense.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/characteristic"
+    }
+  ],
+  "masterTouched": false,
+  "sentencesChanged": false,
+  "englishSentencesChanged": false,
+  "imagesChanged": false,
+  "sourceHashesBefore": {
+    "words.json": "d6c16066d8864cf16a38e22af8fba865224410319bb7ca6c1c04913b23cf4cd0",
+    "senses.json": "d72aae3b609cea3be6ac126ac14515ed74581882c2c71d85df879cd6eff87895",
+    "examples.json": "2551cb53828fdc85fac3705e3abf6538dec6195ea454a726daa23d31f254d4b0",
+    "meta.json": "fc026bd8062c0c743f5f91ce3ec12e33041ad03ba2a8b95819fbf97459e19e6d",
+    "sa-pack.json": "d56c0abed6c102c259ca3ed24bdeae1ff38bcdacd06a654951deb9ffa664e554"
+  },
+  "sourceHashesAfter": {
+    "words.json": "d6c16066d8864cf16a38e22af8fba865224410319bb7ca6c1c04913b23cf4cd0",
+    "senses.json": "d72aae3b609cea3be6ac126ac14515ed74581882c2c71d85df879cd6eff87895",
+    "examples.json": "2551cb53828fdc85fac3705e3abf6538dec6195ea454a726daa23d31f254d4b0",
+    "meta.json": "1236a43109c18541ac1af06b03eec294be04b9807fb85ba2e8bc69d17159cff4",
+    "sa-pack.json": "a9cc52ff6ac1e8277916c717edb8b6cb76e5be454d41c5aa14208e8291e6e1f5"
+  },
+  "state": "applied_not_ui_verified",
+  "acceptance": {
+    "state": "actual_text_reopened_saved_and_persistence_verified",
+    "reopenSummary": "validation/LV2-U47-reopen-summary.json",
+    "persistence": "validation/LV2-U47-persistence-summary.json",
+    "executionStatePreserved": "applied_not_ui_verified"
+  }
+}

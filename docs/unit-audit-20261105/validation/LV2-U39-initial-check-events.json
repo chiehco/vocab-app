@@ -1,0 +1,109 @@
+{
+  "unit": "LV2-U39",
+  "beforeCapture": {
+    "events": [
+      {
+        "stage": "general before1–28",
+        "accepted": false,
+        "error": "Execution context was destroyed, most likely because of a navigation",
+        "firstWordScreenshotsExist": true,
+        "noBatchResultAccepted": true,
+        "initialProbe": {
+          "url": "http://127.0.0.1:5179/#/word/W001933",
+          "readyState": "interactive",
+          "headings": []
+        },
+        "probe": {
+          "prior": {
+            "url": "http://127.0.0.1:5179/#/word/W001933",
+            "readyState": "complete"
+          },
+          "neutral": {
+            "url": "http://127.0.0.1:5179/favicon.svg",
+            "readyState": "complete"
+          },
+          "url": "http://127.0.0.1:5179/#/word/W001933",
+          "readyState": "complete",
+          "headings": [
+            "trust"
+          ]
+        },
+        "repair": "Initial read-only probe found interactive/no headings, so the readiness guard stopped without launching a retry. A fresh neutral-page/full-load probe then actually reached trust/complete. Retain failed log and first-word screenshots; repeat only unfinished range with full readyState and distinct paths. Accepted157 source items not repeated.",
+        "timeoutChanged": false
+      }
+    ]
+  },
+  "frontend": {
+    "first": {
+      "files": 27,
+      "tests": 324,
+      "passed": 323,
+      "failed": 1,
+      "exitCode": 1,
+      "failure": "U12 integrated police form fixture needed only the exact later U39 meaningEn inverse."
+    },
+    "policeExactRetry": {
+      "files": 1,
+      "tests": 77,
+      "passed": 77,
+      "failed": 0,
+      "exitCode": 0
+    },
+    "final": {
+      "files": 7,
+      "tests": 173,
+      "passed": 173,
+      "failed": 0,
+      "exitCode": 0
+    },
+    "scope": "Original U39 text, new audit, common exact inverse, seed, recovered integration and both old-image suites included. Other original/audit suites in the initial27-file pass retained.",
+    "originalLocalTimeout": 5000,
+    "maxWorkers": 1
+  },
+  "python": {
+    "first": 68,
+    "afterSpeedInitial": {
+      "tests": 69,
+      "errors": 2,
+      "reason": "New identity precondition incorrectly applied to existing partial translation fixtures; narrowed to explicit full identity guards without changing those fixtures or assertions."
+    },
+    "final": {
+      "tests": 69,
+      "passed": 69,
+      "errors": 0,
+      "exitCode": 0
+    }
+  },
+  "helperEvents": [
+    {
+      "action": "First police test retry shell parse",
+      "result": "PowerShell parser rejected command before execution; no edit/test ran."
+    },
+    {
+      "action": "Second police test retry",
+      "result": "Sandbox cache rename EPERM before any test loaded; no tests ran. Normal authorized environment retry77 passed."
+    },
+    {
+      "action": "Speed usage actual first reopen",
+      "result": "After trust partial screenshot, speed failed3 English/5 Chinese. No39-card usage result accepted. Original snapshot speed was3/3; failure introduced in this draft, preserved."
+    },
+    {
+      "action": "First independent speed apply",
+      "result": "Missing baseCommit metadata stopped before receipt/product write. Exact full before rechecked; metadata added, retry changed only one usagePatternZh field."
+    },
+    {
+      "action": "Speed installer",
+      "result": "Second real contentHash transition, all14 full progress tables exactly unchanged."
+    },
+    {
+      "action": "One normal browser reopen",
+      "exitCode": 1,
+      "result": "Browser launched once; CLI initial snapshot timed out at30000ms. Subsequent actual neutral URL/readyState complete,14-table equality and3166-row readback accepted. No duplicate open, profile deletion or timeout increase."
+    }
+  ],
+  "sourceAndGeneralAfterNotRepeated": true,
+  "usageRetryUsesDistinctScreenshotNames": true,
+  "libraryCandidateRetrieval": "validation/LV2-U38-candidate-retrieval-blocker.json",
+  "baselineHashesReset": false,
+  "timeoutRaised": false
+}

@@ -1,0 +1,33 @@
+{
+  "priorCheckpoint": "7ff55408250827184e243d2a83f31ca77088c3ee",
+  "facts": [
+    {
+      "exampleId": "EXb4e6bb31",
+      "before": {
+        "exampleId": "EXb4e6bb31",
+        "word": "admission",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "Children under six get free admission to the science museum.",
+        "sentenceZh": "六歲以下的兒童可免費進入科學博物館。",
+        "blankSentence": "Children under six get free _____ to the science museum.",
+        "answer": "admission",
+        "difficulty": "LV4",
+        "status": "reviewed"
+      },
+      "after": {
+        "sentenceZh": "未滿六歲的兒童可免費進入科學博物館。"
+      },
+      "reason": "Under six excludes children who have already turned six; remove the inclusive Chinese boundary ambiguity without changing English.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/under",
+      "retrieval": "Direct Collins under age/amount definition actually read; age strictly less than the boundary. Chinese is reviewer paraphrase.",
+      "pairedCaptionSearch": {
+        "paths": "Tracked src and scripts/approvals",
+        "exactEnglishMatches": 0,
+        "noteSentenceMatches": 0,
+        "captionInvented": false
+      }
+    }
+  ]
+}

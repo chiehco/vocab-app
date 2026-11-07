@@ -1,0 +1,964 @@
+{
+  "unit": "LV2-U49",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "baseCheckpoint": "7b258e1b0d9c5d3f76049b0761b75f0a4ad43519",
+  "beforeCaptureCheckpoint": "7b258e1b0d9c5d3f76049b0761b75f0a4ad43519",
+  "scope": "Eight actual-cloze POS corrections, five existing hint refinements, one even-chance Chinese correction, four individually reviewed authored practices, five limited sense/note reviews including exact official noun/verb source separation, thirty-nine lexical/usage rows. Preserve all formal headword IDs/POS/status and every original practice English/cloze/answer.",
+  "patches": [
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001921",
+      "before": {
+        "meaningZh": "軌跡；足跡；徑跡；小道"
+      },
+      "after": {
+        "meaningZh": "（名詞）軌跡；足跡；徑跡；小道；跑道；鐵軌；音軌；（動詞）追蹤；留下（泥等的）足跡"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/track",
+      "reason": "Complete current entry and primary definitions compared. Correct the selected lexical meaning or construction; preserve headword identity/POS/status, supported inherited senses and all original practices.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001491",
+      "before": {
+        "meaningZh": "小路；巷；弄；單行道"
+      },
+      "after": {
+        "meaningZh": "小路；巷；弄；車道"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/lane",
+      "reason": "A marked strip of a road for one line of traffic is a 車道; it does not mean the entire road must be one-way. Keep narrow-road meanings.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001567",
+      "before": {
+        "meaningEn": "the people who live in a nation or country; (separate capitalized proper name, Nation) United States prohibitionist who raided saloons and destroyed bottles of liquor with a hatchet (1846-1911)"
+      },
+      "after": {
+        "meaningEn": "A country considered with its social and political organization; a people sharing a territory, history or culture; the people of a country. Separate capitalized proper name Nation: the United States prohibitionist Carrie Nation (1846–1911)."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/nation",
+      "reason": "Complete current entry and primary definitions compared. Correct the selected lexical meaning or construction; preserve headword identity/POS/status, supported inherited senses and all original practices.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001042",
+      "before": {
+        "meaningEn": "a feeling of craving something",
+        "usagePattern": "an/the appetite; appetite of N",
+        "usagePatternZh": "一個胃口／那個胃口；對……的慾望"
+      },
+      "after": {
+        "meaningEn": "A desire for food; also a strong desire or liking for something.",
+        "usagePattern": "have a good appetite; an appetite for N",
+        "usagePatternZh": "胃口好；對……的強烈慾望／喜好"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/appetite",
+      "reason": "Complete current entry and primary definitions compared. Correct the selected lexical meaning or construction; preserve headword identity/POS/status, supported inherited senses and all original practices.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001470",
+      "before": {
+        "meaningZh": "工具；手段；儀器"
+      },
+      "after": {
+        "meaningZh": "工具；手段；儀器；樂器"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/instrument",
+      "reason": "Complete current entry and primary definitions compared. Correct the selected lexical meaning or construction; preserve headword identity/POS/status, supported inherited senses and all original practices.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001344",
+      "before": {
+        "meaningEn": "(geology) a crack in the earth's crust resulting from the displacement of one side with respect to the other",
+        "usagePattern": "fault + N; fault to V; a/the fault",
+        "usagePatternZh": "挑剔……；挑剔去做某事；過錯／缺點"
+      },
+      "after": {
+        "meaningEn": "Noun: responsibility for a mistake, a defect or weakness, or an error. In geology, a break in rock along which displacement has occurred. Verb: criticize someone or something for a shortcoming.",
+        "usagePattern": "be at fault; find fault with N; fault sb for N/V-ing",
+        "usagePatternZh": "有過錯；挑剔／找……的毛病；因……而批評某人"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/fault",
+      "reason": "Complete current entry and primary definitions compared. Correct the selected lexical meaning or construction; preserve headword identity/POS/status, supported inherited senses and all original practices.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001925",
+      "before": {
+        "meaningZh": "圈套；陷阱；詭計；存水彎"
+      },
+      "after": {
+        "meaningZh": "（名詞）圈套；陷阱；詭計；存水彎；（動詞）捕捉；困住"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/trap",
+      "reason": "Add the selected trapping verb, retain the inherited plumbing noun without falsely treating an unsuccessful find as disproof.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001030",
+      "before": {
+        "meaningZh": "完全地；總而言之"
+      },
+      "after": {
+        "meaningZh": "完全地；總共；總而言之"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/altogether",
+      "reason": "Complete current entry and primary definitions compared. Correct the selected lexical meaning or construction; preserve headword identity/POS/status, supported inherited senses and all original practices.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001363",
+      "before": {
+        "meaningEn": "(adj.) having a smooth, level surface with no curves, slopes, or lumps; (n.) a set of rooms for living in, usually on one floor of a building, especially in British English; (adv.) exactly, with no more and no less",
+        "meaningZh": "（形容詞）平坦的；單調的；無力的；淺的；（名詞，英式）公寓；（副詞，時間後）整整、恰好"
+      },
+      "after": {
+        "meaningEn": "(adj.) having a smooth, level surface with no curves, slopes, or lumps; (n.) a set of rooms for living in, usually on one floor of a building, especially in British English; (adv.) exactly, with no more and no less A flat tire has lost air.",
+        "meaningZh": "（形容詞）平坦的；單調的；無力的；淺的；（輪胎）洩氣的；（名詞，英式）公寓；（副詞，時間後）整整、恰好"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/flat",
+      "reason": "Complete current entry and primary definitions compared. Correct the selected lexical meaning or construction; preserve headword identity/POS/status, supported inherited senses and all original practices.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001388",
+      "before": {
+        "meaningZh": "官能；職務；功能；函數",
+        "usagePatternZh": "充當某職務；運作正常／良好；……的功能"
+      },
+      "after": {
+        "meaningZh": "（名詞）官能；職務；功能；函數；（動詞）運作；起作用；充當",
+        "usagePatternZh": "充當……／起……作用；運作正常／良好；……的功能"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/function",
+      "reason": "Complete current entry and primary definitions compared. Correct the selected lexical meaning or construction; preserve headword identity/POS/status, supported inherited senses and all original practices.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001130",
+      "before": {
+        "meaningEn": "(n.) the city where a country's government is based; money or property used to start or run a business; a large letter such as A, B, or C used at the beginning of a sentence or name; (adj.) relating to or punishable by death",
+        "meaningZh": "首都；大寫字母；資本；首都的"
+      },
+      "after": {
+        "meaningEn": "(n.) the city where a country's government is based; money or property used to start or run a business; a large letter such as A, B, or C used at the beginning of a sentence or name; (adj.) relating to or punishable by death. As an adjective, capital also describes an uppercase letter.",
+        "meaningZh": "（名詞）首都；大寫字母；資本；（形容詞）首都的；大寫的；（刑罰）死刑的"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/capital; https://dictionary.cambridge.org/dictionary/english/capital",
+      "reason": "Cambridge actual official search excerpt explicitly labels capital adjective LETTER; its direct page returned403 and is not claimed read. Collins death adjective and noun meanings separately read.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001650",
+      "before": {
+        "meaningZh": "港口；埠；艙門；避風港"
+      },
+      "after": {
+        "meaningZh": "港口；埠；艙門；避風港；（電腦）連接埠"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/port",
+      "reason": "Complete current entry and primary definitions compared. Correct the selected lexical meaning or construction; preserve headword identity/POS/status, supported inherited senses and all original practices.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001171",
+      "before": {
+        "meaningZh": "海岸；滑坡；沿海岸而行"
+      },
+      "after": {
+        "meaningZh": "（名詞）海岸；（美式，供滑行的）斜坡；（另有動詞用法）沿海岸而行"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/coast",
+      "reason": "Collins explicitly supports the American sliding slope noun and sailing-along-coast verb. Distinguish their scope without deleting either or expanding formal n.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001791",
+      "before": {
+        "meaningZh": "海岸；海濱；斜撐柱；把...送上岸"
+      },
+      "after": {
+        "meaningZh": "（名詞）海岸；海濱；斜撐柱；（另有動詞用法）把……移上岸"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/shore",
+      "reason": "The support beam and move/drag a boat ashore verb both exist in Collins; visibly separate from current formal noun.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001574",
+      "before": {
+        "meaningZh": "針；尖；用針縫；縫紉"
+      },
+      "after": {
+        "meaningZh": "（名詞）針；尖；（另有動詞用法）用針縫；縫紉"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/needle",
+      "reason": "The sew/work-with-a-needle verbs are real; mark separately rather than deleting or changing formal n.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001878",
+      "before": {
+        "meaningEn": "a small amount of liquid food; the act of swallowing",
+        "usagePattern": "swallow + N; swallow to V; a/the swallow",
+        "usagePatternZh": "吞下某物；吞嚥以做某事；燕子／吞嚥"
+      },
+      "after": {
+        "meaningEn": "Verb: pass food or drink through the mouth and throat into the stomach; accept or believe something, or suppress a feeling. Noun: an act or amount swallowed; the passage from mouth to stomach; also an insect-eating bird with long pointed wings.",
+        "usagePattern": "swallow food; swallow one’s pride; take a swallow of N",
+        "usagePatternZh": "吞下食物；放下自尊／忍氣吞聲；喝一口……"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/swallow; https://www.merriam-webster.com/dictionary/swallow",
+      "reason": "Restore selected verb and bird meaning while keeping the directly supported mouth-to-stomach passage noun; remove generic swallow to V construction.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001411",
+      "before": {
+        "meaningEn": "a metric unit of weight equal to one thousandth of a kilogram; Danish physician and bacteriologist who developed a method of staining bacteria to distinguish among them (1853-1938)",
+        "usagePattern": "a/the gram; gram of N",
+        "usagePatternZh": "公克；若幹公克的……"
+      },
+      "after": {
+        "meaningEn": "A metric unit of mass equal to one thousandth of a kilogram; also certain pulse plants or their seeds, including mung beans and chickpeas. Separate capitalized proper-name reference in the inherited entry: the Danish bacteriologist Hans Christian Gram (1853–1938).",
+        "usagePattern": "one gram of N; N grams of N",
+        "usagePatternZh": "一公克的……；若干公克的……"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/gram",
+      "reason": "Metric and pulse senses read in primary definitions. Keep inherited capitalized biographical reference explicitly separate; this batch does not newly certify that biography. Correct 幹→干 in 若干.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001137",
+      "before": {
+        "meaningZh": "釐米"
+      },
+      "after": {
+        "meaningZh": "公分；釐米"
+      },
+      "evidence": "https://www.nist.gov/pml/owm/metric-si-prefixes",
+      "reason": "Complete current entry and primary definitions compared. Correct the selected lexical meaning or construction; preserve headword identity/POS/status, supported inherited senses and all original practices.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001898",
+      "before": {
+        "meaningEn": "a radical who employs terror as a political weapon; usually organizes with other terrorists in small cells; often uses religion as a cove...",
+        "meaningZh": "恐怖分子；恐怖份子；恐怖主義",
+        "usagePattern": "be terrorist; terrorist + N",
+        "usagePatternZh": "是恐怖主義的；恐怖主義的……"
+      },
+      "after": {
+        "meaningEn": "Adjective: relating to terrorism or terrorists. Separate noun: a person who uses violence or threats to pursue political aims, or who terrorizes others.",
+        "meaningZh": "（形容詞）恐怖主義的；恐怖分子的；（另有名詞用法）恐怖分子／恐怖份子",
+        "usagePattern": "a terrorist attack; a terrorist threat; a terrorist organization",
+        "usagePatternZh": "恐怖攻擊；恐怖威脅；恐怖組織"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/terrorist",
+      "reason": "Current adj. entry only has a visibly truncated noun explanation. Restore the attested adjective and retain the genuine noun separately; no guessed missing tail or headword POS/status change.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001897",
+      "before": {
+        "usagePattern": "a/the terrorism; terrorism of N",
+        "usagePatternZh": "恐怖主義；……的恐怖主義"
+      },
+      "after": {
+        "usagePattern": "an act of terrorism; fight against terrorism; combat terrorism",
+        "usagePatternZh": "恐怖主義行為；對抗恐怖主義；打擊恐怖主義"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/terrorist",
+      "reason": "Use the actually read printed constructions, retaining the previously repaired complete English and all inherited Chinese senses.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001058",
+      "before": {
+        "meaningZh": "可利用的；可獲得的；有效的；可得的"
+      },
+      "after": {
+        "meaningZh": "可利用的；可獲得的；有效的；可得的；（人）有空的"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/available",
+      "reason": "Complete current entry and primary definitions compared. Correct the selected lexical meaning or construction; preserve headword identity/POS/status, supported inherited senses and all original practices.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001586",
+      "before": {
+        "meaningEn": "A negative connective or particle, introducing the second; member or clause of a negative proposition, following neither, or not,",
+        "meaningZh": "也不；也沒有；或非",
+        "usagePattern": "nor + clause",
+        "usagePatternZh": "也不加上子句"
+      },
+      "after": {
+        "meaningEn": "A conjunction continuing a negative statement or introducing the second alternative after neither. Separate technical uppercase NOR refers to a logical operation whose result is true only when neither input is true.",
+        "meaningZh": "（連接詞）也不；也沒有；（另有邏輯運算 NOR）或非",
+        "usagePattern": "neither A nor B; nor + auxiliary/be/modal + subject",
+        "usagePatternZh": "既不 A 也不 B；也不……（否定子句倒裝）"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/nor; https://www.collinsdictionary.com/dictionary/english/nor-circuit",
+      "reason": "Replace truncated connective definition and retain the real technical NOR meaning with explicit separation.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001691",
+      "before": {
+        "meaningEn": "(v.) to make someone suffer for doing something wrong; (n.) a penalty for wrongdoing",
+        "meaningZh": "處罰；懲罰；嚴厲對待；刑罰；罰"
+      },
+      "after": {
+        "meaningEn": "Verb: impose a penalty on someone for wrongdoing; treat someone or something harshly. Related noun punishment: the act of punishing, a penalty, or harsh treatment.",
+        "meaningZh": "（動詞）處罰；懲罰；嚴厲對待；（相關名詞 punishment）刑罰；罰"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/punish; https://www.collinsdictionary.com/dictionary/english/punishment",
+      "reason": "Complete current entry and primary definitions compared. Correct the selected lexical meaning or construction; preserve headword identity/POS/status, supported inherited senses and all original practices.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W006042",
+      "before": {
+        "meaningEn": "(v.) to make someone suffer for doing something wrong; (n.) a penalty for wrongdoing",
+        "usagePattern": "punish sb for sth; punish sb by doing sth; a severe punishment",
+        "usagePatternZh": "因某事懲罰某人；以某種方式懲罰某人；嚴厲的懲罰"
+      },
+      "after": {
+        "meaningEn": "Noun: the act of punishing or state of being punished; a penalty for wrongdoing; also harsh or damaging treatment.",
+        "usagePattern": "punishment for N/V-ing; receive a punishment; impose a punishment on sb",
+        "usagePatternZh": "因……而受到的處罰；受到處罰；對某人施加處罰"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/punishment",
+      "reason": "Replace copied punish verb definition/constructions with sourced noun meanings, retaining genuine harsh-treatment meaning.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001351",
+      "before": {
+        "meaningEn": "a member of a learned society; an informal form of address for a man",
+        "meaningZh": "男人；朋友；同事；同伴的",
+        "usagePattern": "a/the fellow; fellow of N",
+        "usagePatternZh": "一個傢伙；……的同伴"
+      },
+      "after": {
+        "meaningEn": "An informal word for a man or person; a companion or colleague; a member of a learned society; at some colleges, a governing/teaching member or a scholar supported by a fellowship. A graduate student with a fellowship is one particular sense, not every research fellow.",
+        "meaningZh": "（名詞）男人；朋友；同事；學會會員；（特定大學制度）研究員／獎學金研究生；（另有形容詞用法）同伴的",
+        "usagePattern": "a fellow of a learned society; a research fellow; fellow students",
+        "usagePatternZh": "學術團體的會員；研究員；（形容詞）同學"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/fellow",
+      "reason": "Source graduate-student meaning is genuine but restricted. Preserve it and distinguish other college/research senses and the real adjective.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001414",
+      "before": {
+        "usagePatternZh": "向某人打招呼（帶有某事物）；熱情地向某人打招呼；受到……迎接"
+      },
+      "after": {
+        "usagePatternZh": "（以某物）向某人打招呼／迎接某人；熱情地向某人打招呼；受到……迎接／以……回應"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/greet",
+      "reason": "Complete current entry and primary definitions compared. Correct the selected lexical meaning or construction; preserve headword identity/POS/status, supported inherited senses and all original practices.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005237",
+      "before": {
+        "meaningZh": "缺點；缺損；缺陷",
+        "usagePatternZh": "……的缺陷；製造缺陷；背叛……"
+      },
+      "after": {
+        "meaningZh": "（名詞）缺點；缺損；缺陷；（動詞）叛離；投奔敵方",
+        "usagePatternZh": "……的缺陷；製造缺陷；投奔／叛逃到……"
+      },
+      "evidence": "https://www.collinsdictionary.com/us/dictionary/english/defect",
+      "reason": "Complete current entry and primary definitions compared. Correct the selected lexical meaning or construction; preserve headword identity/POS/status, supported inherited senses and all original practices.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003434",
+      "before": {
+        "meaningZh": "功能的；機能的；官能的"
+      },
+      "after": {
+        "meaningZh": "功能的；機能的；官能的；實用的；運作正常的"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/functional",
+      "reason": "Complete current entry and primary definitions compared. Correct the selected lexical meaning or construction; preserve headword identity/POS/status, supported inherited senses and all original practices.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003128",
+      "before": {
+        "meaningEn": "a conservative advocate of capitalism; a person who invests capital in a business (especially a large business)",
+        "meaningZh": "資本家；資本主義者；資本主義的",
+        "usagePattern": "a/the capitalist; capitalist of N",
+        "usagePatternZh": "該資本家；……的資本家"
+      },
+      "after": {
+        "meaningEn": "Noun: a person who owns or invests capital in a business; a supporter of capitalism. Separate adjective: relating to capitalists or capitalism.",
+        "meaningZh": "（名詞）資本家；資本主義者；（另有形容詞用法）資本主義的",
+        "usagePattern": "a capitalist; a capitalist system",
+        "usagePatternZh": "一名資本家／資本主義支持者；（形容詞）資本主義制度"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/capitalist",
+      "reason": "Complete current entry and primary definitions compared. Correct the selected lexical meaning or construction; preserve headword identity/POS/status, supported inherited senses and all original practices.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003127",
+      "before": {
+        "meaningZh": "首都；大寫字母；資本；首都的；資本主義",
+        "usagePatternZh": "資本主義對抗社會主義；籌措資本；資本主義制度"
+      },
+      "after": {
+        "meaningZh": "資本主義；（相關詞 capital 的名詞義）首都；大寫字母；資本；（相關詞 capital 的形容詞義）首都的",
+        "usagePatternZh": "資本主義與社會主義之比較；（相關名詞 capital）籌措資本；（相關形容詞 capitalist）資本主義制度"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/capitalism; https://www.collinsdictionary.com/dictionary/english/capital; https://www.collinsdictionary.com/dictionary/english/capitalist",
+      "reason": "The copied capital glosses are real meanings of a different headword. Keep them explicitly as related-word material and place capitalism first.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002386",
+      "before": {
+        "meaningZh": "港；避難所；庇護；藏匿"
+      },
+      "after": {
+        "meaningZh": "（名詞）港；避難所；（動詞）庇護；藏匿；懷有（想法／情緒）"
+      },
+      "evidence": "https://www.collinsdictionary.com/us/dictionary/english/harbor",
+      "reason": "Complete current entry and primary definitions compared. Correct the selected lexical meaning or construction; preserve headword identity/POS/status, supported inherited senses and all original practices.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002910",
+      "before": {
+        "meaningZh": "線；絲；纖維；線索",
+        "usagePattern": "thread + N; thread to V; a/the thread",
+        "usagePatternZh": "穿線；穿線以……；線"
+      },
+      "after": {
+        "meaningZh": "（名詞）線；絲；纖維；線索；（動詞）穿線；穿過",
+        "usagePattern": "thread a needle; thread N through N; a thread of N",
+        "usagePatternZh": "穿針／把線穿入針眼；把……穿過……；一縷／一絲……"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/thread",
+      "reason": "Complete current entry and primary definitions compared. Correct the selected lexical meaning or construction; preserve headword identity/POS/status, supported inherited senses and all original practices.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004546",
+      "before": {
+        "meaningEn": "an important event or stage in the life, progress, or development of a person or thing"
+      },
+      "after": {
+        "meaningEn": "an important event or stage in the life, progress, or development of a person or thing. Also a stone beside a road marking distances."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/milestone",
+      "reason": "Complete current entry and primary definitions compared. Correct the selected lexical meaning or construction; preserve headword identity/POS/status, supported inherited senses and all original practices.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003949",
+      "before": {
+        "meaningEn": "a person who inspires fear or dread; a very troublesome child",
+        "usagePattern": "a/the terror; terror of N",
+        "usagePatternZh": "一陣恐懼；……的恐怖"
+      },
+      "after": {
+        "meaningEn": "Extreme fear; a person or thing that causes such fear; informally, an especially troublesome or unpleasant person or child.",
+        "usagePattern": "in terror; a terror of N; a terror to sb",
+        "usagePatternZh": "驚恐地；對……的極度恐懼；令某人害怕／頭痛的人或事"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/terror",
+      "reason": "Complete current entry and primary definitions compared. Correct the selected lexical meaning or construction; preserve headword identity/POS/status, supported inherited senses and all original practices.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004899",
+      "before": {
+        "usagePatternZh": "恐嚇某人；害怕某事；擔心……"
+      },
+      "after": {
+        "usagePatternZh": "使某人極度害怕／嚇壞某人；非常害怕某事；極度害怕……"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/terrify",
+      "reason": "Complete current entry and primary definitions compared. Correct the selected lexical meaning or construction; preserve headword identity/POS/status, supported inherited senses and all original practices.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004610",
+      "before": {
+        "meaningZh": "參加者；參與者；有份的；參加的"
+      },
+      "after": {
+        "meaningZh": "（名詞）參加者；參與者；（另有形容詞用法）有份的；參加的"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/participate",
+      "reason": "Collins directly lists derived participant as adjective and noun. Do not remove the real adjective; distinguish it from formal n.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005909",
+      "before": {
+        "meaningZh": "符號化；用符號表現；採用象徵；使用符號",
+        "usagePattern": "symbolize + N; symbolize to V",
+        "usagePatternZh": "象徵某事物；象徵去做某事"
+      },
+      "after": {
+        "meaningZh": "象徵；符號化；用符號表現；採用象徵；使用符號",
+        "usagePattern": "symbolize N; symbolize peace/freedom",
+        "usagePatternZh": "象徵……；象徵和平／自由"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/symbolize",
+      "reason": "Complete current entry and primary definitions compared. Correct the selected lexical meaning or construction; preserve headword identity/POS/status, supported inherited senses and all original practices.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000434",
+      "before": {
+        "usagePatternZh": "有趣的；覺得某事有趣；一個有趣的名詞"
+      },
+      "after": {
+        "usagePatternZh": "有趣的；覺得某事有趣；有趣的……"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/interesting",
+      "reason": "Complete current entry and primary definitions compared. Correct the selected lexical meaning or construction; preserve headword identity/POS/status, supported inherited senses and all original practices.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000611",
+      "before": {
+        "meaningEn": "a state in northwestern United States on the Pacific; a room in a hospital equipped for the performance of surgical operations",
+        "usagePattern": "or + clause",
+        "usagePatternZh": "或者……（子句）"
+      },
+      "after": {
+        "meaningEn": "Conjunction: connects alternatives, possibilities or choices; may also introduce a correction or consequence. Separate uppercase abbreviation OR: Oregon, a U.S. state, or an operating room in a hospital.",
+        "usagePattern": "A or B; either A or B; V ..., or + clause",
+        "usagePatternZh": "A 或 B；不是 A 就是 B／A、B 擇一；否則……（子句）"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/or",
+      "reason": "The selected conjunction currently has only two uppercase abbreviation definitions. Restore conjunction and retain both real OR expansions explicitly; context determines whether alternatives exclude each other.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX8759c5e8",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "adj."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/trapped",
+      "reason": "Actual complete sentence/cloze/answer read. Apply contextual adjective, noun or lexical verb classification only; original English/cloze/answer unchanged.",
+      "classification": "actual_cloze_part_of_speech"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX0560cc04",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/function",
+      "reason": "Actual complete sentence/cloze/answer read. Apply contextual adjective, noun or lexical verb classification only; original English/cloze/answer unchanged.",
+      "classification": "actual_cloze_part_of_speech"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXf8811287",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/function",
+      "reason": "Actual complete sentence/cloze/answer read. Apply contextual adjective, noun or lexical verb classification only; original English/cloze/answer unchanged.",
+      "classification": "actual_cloze_part_of_speech"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX2c8a3186",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "adj."
+      },
+      "evidence": "https://dictionary.cambridge.org/dictionary/english/capital",
+      "reason": "Actual complete sentence/cloze/answer read. Apply contextual adjective, noun or lexical verb classification only; original English/cloze/answer unchanged.",
+      "classification": "actual_cloze_part_of_speech"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX4e66b156",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/man",
+      "reason": "Actual complete sentence/cloze/answer read. Apply contextual adjective, noun or lexical verb classification only; original English/cloze/answer unchanged.",
+      "classification": "actual_cloze_part_of_speech"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX75d64919",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/man",
+      "reason": "Actual complete sentence/cloze/answer read. Apply contextual adjective, noun or lexical verb classification only; original English/cloze/answer unchanged.",
+      "classification": "actual_cloze_part_of_speech"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX943d872c",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/man",
+      "reason": "Actual complete sentence/cloze/answer read. Apply contextual adjective, noun or lexical verb classification only; original English/cloze/answer unchanged.",
+      "classification": "actual_cloze_part_of_speech"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXb758201e",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/man",
+      "reason": "Actual complete sentence/cloze/answer read. Apply contextual adjective, noun or lexical verb classification only; original English/cloze/answer unchanged.",
+      "classification": "actual_cloze_part_of_speech"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX4e66b156",
+      "before": {
+        "meaningHint": "男人；人類；人；為...配備人手"
+      },
+      "after": {
+        "meaningHint": "人類（man 作人類總稱）"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/man",
+      "reason": "Narrow the existing nonempty mixed/broad hint to the actual cloze meaning; do not populate any empty hint.",
+      "classification": "contextual_hint_precision"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX75d64919",
+      "before": {
+        "meaningHint": "男人；人類；人；為...配備人手"
+      },
+      "after": {
+        "meaningHint": "人；每個人（every man）"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/man",
+      "reason": "Narrow the existing nonempty mixed/broad hint to the actual cloze meaning; do not populate any empty hint.",
+      "classification": "contextual_hint_precision"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX943d872c",
+      "before": {
+        "meaningHint": "男人；人類；人；為...配備人手"
+      },
+      "after": {
+        "meaningHint": "操作；負責操控（設備）"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/man",
+      "reason": "Narrow the existing nonempty mixed/broad hint to the actual cloze meaning; do not populate any empty hint.",
+      "classification": "contextual_hint_precision"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXb758201e",
+      "before": {
+        "meaningHint": "男人；人類；人；為...配備人手"
+      },
+      "after": {
+        "meaningHint": "男人"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/man",
+      "reason": "Narrow the existing nonempty mixed/broad hint to the actual cloze meaning; do not populate any empty hint.",
+      "classification": "contextual_hint_precision"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX8468c530",
+      "before": {
+        "meaningHint": "相等的"
+      },
+      "after": {
+        "meaningHint": "成敗各半的（even chance）"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/even",
+      "reason": "Narrow the existing nonempty mixed/broad hint to the actual cloze meaning; do not populate any empty hint.",
+      "classification": "contextual_hint_precision"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX8468c530",
+      "before": {
+        "word": "even",
+        "sentenceEn": "Gordy thought he had an even chance of winning.",
+        "blankSentence": "Gordy thought he had an _____ chance of winning.",
+        "answer": "even",
+        "sentenceZh": "高迪認為自己也有同等獲勝的機會。",
+        "status": "approved"
+      },
+      "after": {
+        "sentenceZh": "高迪認為自己獲勝與否的機會各半。"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/even",
+      "reason": "Direct primary even chance definition says occurrence is no more likely than non-occurrence. Remove the added comparison with other people. Preserve original English, answer, cloze, POS and status.",
+      "classification": "translation_meaning_correction"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX35e48c28",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/function",
+      "reason": "Only this authored practice: complete English/Chinese/cloze/answer/contextual POS checked. Oil-lamp and dove examples are independent practices, not quotations from the official onion passage.",
+      "classification": "individual_authored_practice_review"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXee842a10",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/symbol",
+      "reason": "Only this authored practice: complete English/Chinese/cloze/answer/contextual POS checked. Oil-lamp and dove examples are independent practices, not quotations from the official onion passage.",
+      "classification": "individual_authored_practice_review"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX8baf88bc",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "evidence": "https://www.nist.gov/pml/owm/metric-si-prefixes",
+      "reason": "Only this authored practice: complete English/Chinese/cloze/answer/contextual POS checked. Oil-lamp and dove examples are independent practices, not quotations from the official onion passage.",
+      "classification": "individual_authored_practice_review"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXe4997436",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/or",
+      "reason": "Only this authored practice: complete English/Chinese/cloze/answer/contextual POS checked. Oil-lamp and dove examples are independent practices, not quotations from the official onion passage.",
+      "classification": "individual_authored_practice_review"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001388-1",
+      "before": {
+        "status": "draft",
+        "examEvidence": "學測106 文意選填Q37；學測115 文意選填Q22",
+        "note": "考點：function as N"
+      },
+      "after": {
+        "status": "reviewed",
+        "examEvidence": "學測106 文意選填Q37",
+        "note": "2026-11-07：106學測原題31–40完整段落、十選項與答案37=D functioned 已讀，洋蔥充當陪葬供品，支持本動詞義。115學測22=G function 指腦部功能，為名詞，不能當成本動詞義的證據；保留在來源核查紀錄，不虛構新義項ID。EX35e48c28油燈為獨立改寫練習，非原題。"
+      },
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0j076574214786979208/02-106%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf; https://www.ceec.edu.tw/files/file_pool/1/0j076574215321858235/02-106%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88.pdf; https://www.ceec.edu.tw/files/file_pool/1/0q054532302653501476/02-115%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7.pdf; https://www.ceec.edu.tw/files/file_pool/1/0q040594609847120321/02-115%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf",
+      "reason": "Separate independently verified verb and noun official contexts instead of falsely certifying both as the same verb sense. Preserve answerForms and IDs.",
+      "classification": "limited_exam_sense_review"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001885-1",
+      "before": {
+        "status": "draft",
+        "note": "考點：a symbol of 代表某抽象概念"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-07：106學測31–40完整洋蔥段落、十選項及官方答案33=I symbols 已讀，指永生的象徵。EXee842a10鴿子與和平為獨立改寫練習，非原題引句；僅本義與來源核查。"
+      },
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0j076574214786979208/02-106%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf; https://www.ceec.edu.tw/files/file_pool/1/0j076574215321858235/02-106%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88.pdf",
+      "reason": "Exact official noun context and answer read; maintain authored practice boundary.",
+      "classification": "limited_exam_sense_review"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000198-1",
+      "before": {
+        "status": "needs_check",
+        "note": "另有：鄉下，需要可加列｜待拆分；主表字義：國家；鄉村；地區；故鄉"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-07：本義為國家；已核完整既有練習及詞典。country 另有鄉村／地區義，本次不新增義項ID或把本義審核擴為所有詞義。"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/country",
+      "reason": "Review the existing country nation sense only; no fabricated split identities.",
+      "classification": "limited_sense_review"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000518-1",
+      "before": {
+        "note": "待拆分；主表字義：男人；人類；人；為...配備人手"
+      },
+      "after": {
+        "note": "2026-11-07：本名詞義含男人／人類；人類總稱為既有用法，保留原練習，不新增或刪義。"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/man",
+      "reason": "Remove obsolete work-note fragments while retaining real noun and verb meanings, original status and identities.",
+      "classification": "limited_sense_note"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000518-2",
+      "before": {
+        "note": "罕用，建議刪列｜待拆分；主表字義：男人；人類；人；為...配備人手"
+      },
+      "after": {
+        "note": "2026-11-07：本動詞義為配置人員／負責操作，已讀詞典 man a place or machine 的定義；罕見不是刪除依據。"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/man",
+      "reason": "Remove obsolete work-note fragments while retaining real noun and verb meanings, original status and identities.",
+      "classification": "limited_sense_note"
+    }
+  ]
+}

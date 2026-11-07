@@ -1,3 +1,4 @@
+import corrections from '../../../docs/unit-audit-20261105/LV2-U27-curriculum-patches.json';
 import 'fake-indexeddb/auto';
 import {afterEach,beforeEach,expect,it,vi} from 'vitest';
 import source from '../../../scripts/sources/LV2Unit27.json';
@@ -39,14 +40,14 @@ it('preserves printed supplements, articles, capitalization and use pages',()=>{
  expect(unit.items.filter(i=>i.kind==='grammar').map(i=>[i.pattern,i.sourcePage])).toEqual(source.usage.map(r=>[r.label,r.sourcePage]));
  for(const word of ["prideful", "periodic", "periodical", "terminate", "midterm", "pandemic", "approaches", "punch in", "limited", "militant", "troops", "disobey", "extremely"]) expect(vocabulary.find(i=>i.displayWord===word)?.officialWordId).toBeNull();
 });
-it('uses existing official identities and keeps 13 unmapped supplements pending',()=>{
+it('uses existing official identities and keeps 13 source-gloss supplements unmapped',()=>{
  for(const [index,row] of [...source.headwords,...source.related].entries()) {
   expect(vocabulary[index].officialWordId).toBe(row.officialWordId);if(!row.officialWordId)continue;
   const word=pack.words.find(w=>w.wordId===row.officialWordId)!;expect(word.word).toBe(row.officialWord);
   expect(word.word===row.word||word.wordVariants.includes(row.word)).toBe(true);
  }
  expect(vocabulary.filter(i=>!i.officialWordId)).toHaveLength(13);expect(vocabulary.filter(i=>i.meaningSource==='unmapped_supplement')).toHaveLength(13);
- expect(vocabulary.filter(i=>i.meaningSource==='unmapped_supplement').every(i=>i.targetMeaningZh==='教材補充詞；義項待核對。')).toBe(true);
+ for(const item of vocabulary.filter(i=>i.meaningSource==='unmapped_supplement')){const p=corrections.patches.find(p=>p.id===item.learningItemId)!;expect(item.targetMeaningZh).toBe(p.after.targetMeaningZh);expect(item.chapterMeaningsZh).toBe(p.after.chapterMeaningsZh);expect(item.officialWordId).toBeNull();expect(item.practiceMode).toBe('read_only');}
 });
 it('adopts no pictures, running examples, sense IDs or textbook questions',()=>{
  expect(unit.deliveryMode).toBe('text_only');expect(unit.questions).toEqual([]);expect(practiceIds(unit.items)).toEqual([]);

@@ -1,0 +1,99 @@
+{
+  "manifest": "docs/unit-audit-20261105/LV2-U44-notes-patches.json",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "checkedAt": "2026-11-06T21:56:44.252770+00:00",
+  "changeCount": 3,
+  "changes": [
+    {
+      "dataset": "notes",
+      "id": "NX8d1ff33e",
+      "before": {
+        "noteId": "NX8d1ff33e",
+        "word": "worth",
+        "noteType": "grammar",
+        "title": "金額's／時間's + worth of sth",
+        "content": "價值若干金額的某事物／需花費若干時間的某事物。若金額為阿拉伯數字，則不加「s」。",
+        "status": "approved"
+      },
+      "after": {
+        "noteId": "NX8d1ff33e",
+        "word": "worth",
+        "noteType": "grammar",
+        "title": "金額's／時間's + worth of sth",
+        "content": "表示值若干金額或相當於若干時間的數量。可用 six dollars' worth of…、a week's worth of…；教材另列 $1,000 worth of… 的數字符號寫法。原稿省略撇號的說明只對其示例，不擴張成所有數字所有格的禁則；時間長短與單複數仍須依實際詞組判斷。",
+        "status": "approved"
+      },
+      "reason": "Correct the copied s/apostrophe ambiguity using the viewed printed example and direct dictionary worth constructions, while retaining immutable title and source transcription.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/worth"
+    },
+    {
+      "dataset": "notes",
+      "id": "NX8dc31b62",
+      "before": {
+        "noteId": "NX8dc31b62",
+        "word": "custom",
+        "noteType": "usage",
+        "title": "as be one's custom",
+        "content": "是某人的習慣。依原書字樣抄錄。",
+        "status": "approved"
+      },
+      "after": {
+        "noteId": "NX8dc31b62",
+        "word": "custom",
+        "noteType": "usage",
+        "title": "as be one's custom",
+        "content": "是某人的習慣。標題保留教材的 be 原形標記；完整句子須依主詞與時態使用 as is／was one's custom，例如 as was her custom。",
+        "status": "approved"
+      },
+      "reason": "Explain the inflected construction without overwriting the deliberately transcribed original title.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/custom"
+    },
+    {
+      "dataset": "notes",
+      "id": "NXf93cd878",
+      "before": {
+        "noteId": "NXf93cd878",
+        "word": "alike",
+        "noteType": "grammar",
+        "title": "A and B alike = both A and B",
+        "content": "A 以及 B。",
+        "status": "approved"
+      },
+      "after": {
+        "noteId": "NXf93cd878",
+        "word": "alike",
+        "noteType": "grammar",
+        "title": "A and B alike = both A and B",
+        "content": "A 和 B 兩者都……；對 A 和 B 同樣地。alike 在此強調兩者皆然，依完整句意翻譯。",
+        "status": "approved"
+      },
+      "reason": "Make the both/equally scope visible; this is a precision improvement, not a claim that bare A and B is always incorrect.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/alike"
+    }
+  ],
+  "masterTouched": false,
+  "sentencesChanged": false,
+  "englishSentencesChanged": false,
+  "imagesChanged": false,
+  "sourceHashesBefore": {
+    "words.json": "f92f2f0b51a137c65dd1cd26b01be92b5c9cc3cb5e7900e1b03db513290fad98",
+    "senses.json": "fb025402173b5d54d495f13d34f8afc302ebe9f4c09145a3065a07438e531770",
+    "examples.json": "5595d71d879f90d1a5e33868fc67ef4a4f8e0a54edeedb9d5f7a43cc09c5155a",
+    "meta.json": "440393c81700b35e02053eac26f3db057b7c36a7563e4575a219f122e756d08d",
+    "sa-pack.json": "244434b8e6e7aa9a08a23b296b5507f4e000b4ffe03c839bbbcc5603d67c5a41"
+  },
+  "sourceHashesAfter": {
+    "words.json": "f92f2f0b51a137c65dd1cd26b01be92b5c9cc3cb5e7900e1b03db513290fad98",
+    "senses.json": "fb025402173b5d54d495f13d34f8afc302ebe9f4c09145a3065a07438e531770",
+    "examples.json": "5595d71d879f90d1a5e33868fc67ef4a4f8e0a54edeedb9d5f7a43cc09c5155a",
+    "meta.json": "124d7546427c4cf60e4ae9901aa1d177b0002c62acece981be267a67e96fa995",
+    "sa-pack.json": "6fe30fbe5e1ac8f9752e3c0c6bb5d1adef5f177e45b8abe0d405dda4c5eacdfd"
+  },
+  "state": "applied_not_ui_verified",
+  "acceptance": {
+    "state": "actual_app_text_reopened_and_saved_verified_building_image_separate_pending",
+    "reopenSummary": "validation/LV2-U44-reopen-summary.json",
+    "persistence": "validation/LV2-U44-persistence-summary.json",
+    "executionStatePreserved": "applied_not_ui_verified"
+  }
+}

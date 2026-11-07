@@ -1,0 +1,110 @@
+{
+  "unit": "LV2-U44",
+  "state": "final_local_checks_passed_original_limits_retained_own_new_head_ci_pending",
+  "python": {
+    "tests": 84,
+    "exitCode": 0,
+    "temporaryDirectory": "Dedicated workspace test directory; no production semantics or assertion changes."
+  },
+  "frontend": {
+    "initial": {
+      "files": 16,
+      "passedFiles": 14,
+      "failedFiles": 2,
+      "passedTests": 260,
+      "failedTests": 2
+    },
+    "buildHistoricalGuardRepair": {
+      "scope": "W000125 meaningZh only is reversed through the exact recorded U44 patch before the unchanged older integrated form fact.",
+      "oldFactHashChanged": false,
+      "newNegativeCompanion": true,
+      "correctedFocusedRun": {
+        "files": 5,
+        "passedFiles": 4,
+        "passedTests": 124,
+        "remainingFailure": "U42 original5s starter test"
+      }
+    },
+    "u42OriginalTimeout": {
+      "firstTwoRuns": "5015ms and5012ms exceeded original5000ms; retained failures.",
+      "singleTest": {
+        "exitCode": 0,
+        "tests": 1,
+        "testDurationMs": 3140
+      },
+      "completeFile": {
+        "exitCode": 0,
+        "tests": 9
+      },
+      "implementationOrTimeoutChanged": false,
+      "rootCauseNotEstablished": "Isolated test and complete file passed without code or timeout changes; no unsupported claim of a specific resource cause."
+    },
+    "interruptedPrematureRetry": {
+      "reason": "PowerShell parser error prevented the intended edit; the prematurely started retry was stopped before the actual helper fix. No active Vitest process remained before corrected retry.",
+      "accepted": false
+    },
+    "interpretation": "Sequential overlapping regression runs. All initially failing assertions were rechecked under original limits; counts are not added as independent tests.",
+    "originalUnitTextAndNewAuditIncluded": true,
+    "sharedHistoricalImageProgressSeedProtectionIncluded": true,
+    "originalLocalTimeout": 5000,
+    "maxWorkers": 1
+  },
+  "lint": {
+    "exitCode": 0
+  },
+  "typecheck": {
+    "exitCode": 0
+  },
+  "build": {
+    "exitCode": 0
+  },
+  "sourceDraftCheck": {
+    "exitCode": 0
+  },
+  "sourceIntegrationCheck": {
+    "exitCode": 0
+  },
+  "logs": [
+    {
+      "file": "LV2-U44-python-checks.txt",
+      "sha256": "dcbbef548d1d25c1785ed1fd5124cb4966cd17986989d82672d0275a6a5b111e"
+    },
+    {
+      "file": "LV2-U44-regression-first.txt",
+      "sha256": "b830ebe1ca8ff6fd501c055f1398387822e19adadbc8a2c8e23d2d73a8c016b7"
+    },
+    {
+      "file": "LV2-U44-regression-repair.txt",
+      "sha256": "41b3723fff080101df42727d96f2a78b6e1b41cbc1f5227a23e187af8bc03bae"
+    },
+    {
+      "file": "LV2-U44-regression-repair-applied.txt",
+      "sha256": "b4c467a99aff51ec3165d949e3f678fab19d0019e75d312b5f81fc4599e8b076"
+    },
+    {
+      "file": "LV2-U44-u42-original-timeout-recheck.txt",
+      "sha256": "0d9ea17e77f5551e4b1ebcf57115025699782bbe4ce7c6da0c18e10e2de2466c"
+    },
+    {
+      "file": "LV2-U44-lint-final.txt",
+      "sha256": "398365422ec5d29d1b742a2a9e3b6c8a4333d731de70a70a8140b78d1231587d"
+    },
+    {
+      "file": "LV2-U44-typecheck-final.txt",
+      "sha256": "0d93be78e4da5c0077681c4d834163661d59ddd24a0477595fb70ec25d5a5ea8"
+    },
+    {
+      "file": "LV2-U44-build-final.txt",
+      "sha256": "f3b78a7d63e2c62e5ca84eba05605e61c14c2d5a336230aced87144f000d8316"
+    },
+    {
+      "file": "LV2-U44-prepare_recovered_unit_drafts-check.txt",
+      "sha256": "de98448ebf9803278533e50a4959ae987fb489682759393fb4a40f162f8d62d3"
+    },
+    {
+      "file": "LV2-U44-integrate_recovered_units-check.txt",
+      "sha256": "16a949cba64b31891edbac15dab0007dfc5e48721605cd1960b7fa9df69a3c61"
+    }
+  ],
+  "newHeadOwnCi": "pending_this_new_commit"
+}

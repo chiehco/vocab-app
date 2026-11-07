@@ -1,0 +1,71 @@
+{
+  "wordId": "W001659",
+  "sourceLearningItemId": "LI-LV2U46-V008",
+  "originalPath": "public/wordbeast/a/W001659.webp",
+  "originalSha256": "1292ab2ed0e282791f766f4ff13bb36a8200598bf93596b74658a732389238d1",
+  "originalDimensions": [
+    1024,
+    1024
+  ],
+  "captionSource": "src/features/wordbeast/illustrationCaptions.json",
+  "captionEn": "Doudou offers flowers in praise of a friend, who bows happily.",
+  "captionZh": "豆豆送花稱讚朋友，朋友開心地鞠躬。",
+  "observation": "Native1024 image actually viewed: one blue flower head on one stem offered by left character; right character bows. English flowers is plural.",
+  "target": "Minimal edit: preserve original canvas, paper, watercolour, both characters and bow; add one matching blue flower with separate visible stem so the same offering hand clearly holds two flowers. Keep both captions and every other binding unchanged.",
+  "attempt": {
+    "tool": "built-in image_gen",
+    "at": "2026-11-07T01:08:15.373Z",
+    "referencedImagePath": "<repo>/public/wordbeast/a/W001659.webp",
+    "result": "AbsolutePathBuf deserialized without a base path at line1 column1066",
+    "elapsedSeconds": 0,
+    "generationStarted": false,
+    "candidateCreated": false,
+    "denied": false,
+    "status": "technical_input_path_parse_error",
+    "sameParametersRetried": false
+  },
+  "productAssetChanged": false,
+  "consumerVerified": "Actual general W001659 hero loaded original asset and exact captions. U46 curriculum remains text_only/read_only; no image binding is added there. Any other consumers require exact search before future asset integration.",
+  "appRepairAccepted": true,
+  "publicationReady": false,
+  "candidateCoordination": {
+    "state": "candidate_integrated_app_reopened_exact_own_ci_success",
+    "duplicateLocalGenerationStarted": false
+  },
+  "productPairChanged": true,
+  "originalAssetUnmodified": true,
+  "currentResolution": {
+    "state": "actual_pair_reopened_saved_exact_own_image_head_ci_success",
+    "assetCommit": "7d65154fc716ce4900bdce4d7756e76563e8cb8a",
+    "path": "wordbeast/lv2-reviewed/LV2-U46-praise-3627b1c737c1.webp",
+    "sha256": "3627b1c737c1faa273653217b6636643d2af5b1f6ba6ebaed93f51e653d1d78f",
+    "oldAssetRetained": true,
+    "captionsUnchanged": true,
+    "formalDataUnchanged": true,
+    "evidence": "validation/LV2-U46-praise-image-integration.json",
+    "newHeadCi": {
+      "commit": "d73d26d76e6337ff6dc7e539ded3157ae5f8a347",
+      "run": 42327840585,
+      "job": 128267185911,
+      "url": "https://github.com/chiehco/vocab-app/actions/runs/42327840585/job/128267185911",
+      "status": "completed",
+      "conclusion": "success",
+      "checkoutShaReadFromFullLog": true,
+      "testFiles": 239,
+      "tests": 1960,
+      "pythonBatches": [
+        14,
+        7,
+        90,
+        5,
+        10
+      ],
+      "lint": "success",
+      "typecheck": "success",
+      "build": "success",
+      "buildLogCompletedAtUtc": "2026-11-07T02:20:41.0791166Z",
+      "jobCompletedAtUtc": "2026-11-07T02:20:45Z",
+      "source": "Complete exact-head CI checkout, all steps and full test/build log actually read. Not a preceding-head substitute."
+    }
+  }
+}

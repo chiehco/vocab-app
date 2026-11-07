@@ -1,0 +1,150 @@
+{
+  "afterNavigation": {
+    "failedBatch": 1,
+    "acceptedCardsFromFailedBatch": 0,
+    "acceptedSourceItemsPreserved": 161,
+    "error": "locator.allTextContents: Execution context was destroyed, most likely because of a navigation",
+    "readOnlyProbe": "LV2-U44-general-failure-probe.json",
+    "observedAfterFailure": {
+      "url": "http://127.0.0.1:5179/#/word/W001051",
+      "heading": "article",
+      "readyState": "complete",
+      "navigationType": "reload",
+      "serviceWorkerControlled": false,
+      "serviceWorkerRegistrations": 0
+    },
+    "rootCauseNotEstablished": true,
+    "recovery": "Only stop loading when a document is still loading; require DOMContentLoaded, then retain exact App hash navigation, all content assertions and original timeouts. Existing completed page is reused.",
+    "partialScreensPreservedIn": "u44-general-first-interrupted/",
+    "noProductChange": true,
+    "noProgressDatabaseWrite": true,
+    "noAcceptedSourceRecapture": true,
+    "captionLoadingSample": {
+      "word": "identical",
+      "id": "LI-LV2U44-V102",
+      "initialImageBytesLoaded": true,
+      "initialHeroTextStillLoading": true,
+      "initialCaptionNotAccepted": true,
+      "originalBatchAndScreenshotPreserved": true,
+      "recovery": "One exact card re-open with both original captions explicitly visible before hero capture. All forms/definition/example/image checks and timeouts retained.",
+      "productChanges": false
+    },
+    "probeTextSerializationLimit": "Standalone diagnostic command did not set UTF8 console output; its mainText encoding is not treated as a product-text observation. Accepted capture scripts use UTF8 and actual screenshots show correct Chinese.",
+    "finalRecovery": {
+      "acceptedGeneralCards": 87,
+      "examples": 129,
+      "unacceptedIdenticalCaptionLoadingSampleRetained": true,
+      "oneExactIdenticalRecaptureAccepted": true,
+      "source161NotRepeated": true,
+      "productChanges": 0,
+      "profileNotDeleted": true,
+      "timeoutLimitsUnchanged": true,
+      "all26OldImageBytesBindingsAndExistingHeroCaptionsCompared": true
+    },
+    "legacyHelperEntryRecoveryFlag": "Raw entryRecovery.stoppedPendingLoadingOnceBeforeAnyCard is an inherited constant, not an observed count. The final helper stops only when document.readyState is loading, and requires DOMContentLoaded."
+  },
+  "beforeNavigation": {
+    "acceptedSourceItems": 161,
+    "acceptedGeneralCards": 0,
+    "firstGeneralBatchExecutedBeforeRouteChange": false,
+    "failure": "Initial document.readyState completion wait timed out30000ms before any general-card navigation",
+    "actualProbe": {
+      "route": "LI-LV2U44-G059",
+      "readyState": "complete",
+      "mainPresent": true,
+      "images": 0
+    },
+    "originalLog": "lv2-u44-general-before-1.txt",
+    "probeLog": "lv2-u44-before-navigation-probe.txt",
+    "recovery": "Only unaccepted general captures; actual App main, exact URL/headword, forms, definitions, examples and loaded-image assertions retained. No unrelated document-load wait or timeout increase.",
+    "productChanges": 0,
+    "sourceBeforeNotRepeated": true,
+    "secondHelperAttempt": {
+      "acceptedGeneralCards": 0,
+      "failedWait": "URL hash comparison omitted the # prefix",
+      "actualHash": "#/word/W001843",
+      "expectedHashMistake": "/word/W001843",
+      "actualWordHeading": "standard",
+      "readyState": "complete",
+      "rawFailure": "lv2-u44-general-before-recovery-1.txt",
+      "readOnlyProbe": "lv2-u44-route-guard-probe.txt",
+      "productChanges": 0,
+      "correction": "Correct only URL comparison prefix; all image/form/definition/example assertions and original timeout unchanged."
+    },
+    "thirdHelperAttempt": {
+      "acceptedGeneralCards": 0,
+      "failedOperation": "main locator visibility wait blocked on a pending root navigation",
+      "route": "#/word/W001843",
+      "rawFailure": "lv2-u44-general-before-route-checked-1.txt",
+      "diagnostic": "lv2-u44-pending-navigation-diagnostic.txt",
+      "domMainAndHeadingPresent": true
+    },
+    "minimalRecovery": {
+      "action": "One window.stop on the task browser page",
+      "rawResult": "lv2-u44-stop-pending-load.txt",
+      "mainVisibilityWaitWithin3000MsPassed": true,
+      "expectedStandardHeading": true,
+      "profileNotDeleted": true,
+      "browserNotRestarted": true,
+      "progressDatabaseWritten": false,
+      "productChanges": 0
+    },
+    "finalRecovery": {
+      "method": "Same-call stop pending loading before first card; then existing App hash navigation and noWaitAfter button actions, all content assertions retained.",
+      "acceptedCards": 87,
+      "exampleComparisons": 129,
+      "allFormsAndDefinitionsMatch": true,
+      "timeoutLimitsUnchanged": true,
+      "rootCauseNotEstablished": true,
+      "noServiceWorkerRegistrationsObserved": true
+    }
+  },
+  "regression": {
+    "initial": {
+      "files": 16,
+      "passedFiles": 14,
+      "failedFiles": 2,
+      "passedTests": 260,
+      "failedTests": 2
+    },
+    "buildHistoricalGuardRepair": {
+      "scope": "W000125 meaningZh only is reversed through the exact recorded U44 patch before the unchanged older integrated form fact.",
+      "oldFactHashChanged": false,
+      "newNegativeCompanion": true,
+      "correctedFocusedRun": {
+        "files": 5,
+        "passedFiles": 4,
+        "passedTests": 124,
+        "remainingFailure": "U42 original5s starter test"
+      }
+    },
+    "u42OriginalTimeout": {
+      "firstTwoRuns": "5015ms and5012ms exceeded original5000ms; retained failures.",
+      "singleTest": {
+        "exitCode": 0,
+        "tests": 1,
+        "testDurationMs": 3140
+      },
+      "completeFile": {
+        "exitCode": 0,
+        "tests": 9
+      },
+      "implementationOrTimeoutChanged": false,
+      "rootCauseNotEstablished": "Isolated test and complete file passed without code or timeout changes; no unsupported claim of a specific resource cause."
+    },
+    "interruptedPrematureRetry": {
+      "reason": "PowerShell parser error prevented the intended edit; the prematurely started retry was stopped before the actual helper fix. No active Vitest process remained before corrected retry.",
+      "accepted": false
+    },
+    "interpretation": "Sequential overlapping regression runs. All initially failing assertions were rechecked under original limits; counts are not added as independent tests.",
+    "originalUnitTextAndNewAuditIncluded": true,
+    "sharedHistoricalImageProgressSeedProtectionIncluded": true,
+    "originalLocalTimeout": 5000,
+    "maxWorkers": 1
+  },
+  "explicitInstallerAlreadyCurrent": true,
+  "implicitHmrUpdateTransitionNotInstrumented": true,
+  "originalLocalTimeoutMs": 5000,
+  "noProfileDeletion": true,
+  "allFailedAndInterruptedEvidencePreserved": true
+}

@@ -1,0 +1,676 @@
+{
+  "unit": "LV2-U48",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "baseCheckpoint": "9217586a3387586942423275d68231daf812b4c3",
+  "beforeCaptureCheckpoint": "9217586a3387586942423275d68231daf812b4c3",
+  "scope": "Six actual-cloze POS corrections, one age-boundary Chinese precision, five individually reviewed authored practices, ten limited sense reviews plus one unrelated sense-note fragment, twenty precise lexical/usage rows. Preserve all formal headword IDs/POS/status and every original practice English/cloze/answer.",
+  "patches": [
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W006044",
+      "before": {
+        "meaningEn": "to express something in speech or writing; the government of a nation or one of its administrative divisions; the condition of someone or something at a particular time; a spoken or written declaration",
+        "meaningZh": "州；狀態；情形；國家；陳述",
+        "usagePattern": "state that + 子句; the state of N; make a statement",
+        "usagePatternZh": "陳述……；……的狀態；發表聲明"
+      },
+      "after": {
+        "meaningEn": "Noun: a spoken or written declaration or account of facts or opinions; a formal announcement; a document showing money paid into and taken out of an account.",
+        "meaningZh": "陳述；聲明；說明；（銀行等的）對帳單",
+        "usagePattern": "make a statement; a statement about N; a bank statement",
+        "usagePatternZh": "發表聲明；關於……的陳述；銀行對帳單"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/statement",
+      "reason": "Current English and Chinese mix in state geography/condition and state-verb constructions. Replace those with sourced statement noun meanings; formal n. remains, separate genuine British statement verb is not denied or adopted.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001154",
+      "before": {
+        "meaningZh": "領袖；酋長；長官；主要部分"
+      },
+      "after": {
+        "meaningZh": "（名詞）領袖；酋長；長官；主要部分；（形容詞）主要的；首要的"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/chief; https://www.merriam-webster.com/dictionary/chief",
+      "reason": "Supply the selected adjective sense while preserving all four original noun glosses; MW directly supports the principal part noun.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001222",
+      "before": {
+        "meaningEn": "(n.) a series of events that happens again and again in the same order; (v.) to happen again and again in a repeating pattern",
+        "meaningZh": "週期；循環；自行車；一段時間"
+      },
+      "after": {
+        "meaningEn": "Noun: a sequence of events or processes that repeats in the same order; one complete sequence or period; a bicycle. Verb: ride a bicycle, or move through a repeating sequence.",
+        "meaningZh": "（名詞）週期；循環；自行車；一段時間；（動詞）騎自行車；循環"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/cycle",
+      "reason": "Primary definitions and complete current entry actually compared. Correct the selected lexical scope/construction while preserving formal IDs, headword POS/status and supported inherited senses.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001067",
+      "before": {
+        "meaningEn": "a state in which different things exist in equal or correct amounts; an amount of money that remains in a bank account",
+        "meaningZh": "平衡；差額；相等；稱"
+      },
+      "after": {
+        "meaningEn": "Noun: steadiness, a state of appropriate proportions, or the amount remaining in an account. Verb: keep or make something steady; give things appropriate proportions; weigh one consideration against another.",
+        "meaningZh": "平衡；差額；相等；稱；（動詞）使平衡；權衡"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/balance",
+      "reason": "Primary definitions and complete current entry actually compared. Correct the selected lexical scope/construction while preserving formal IDs, headword POS/status and supported inherited senses.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001373",
+      "before": {
+        "meaningZh": "力量；武力；勢力；影響力"
+      },
+      "after": {
+        "meaningZh": "（名詞）力量；武力；勢力；影響力；（動詞）強迫；強行推動"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/force",
+      "reason": "Primary definitions and complete current entry actually compared. Correct the selected lexical scope/construction while preserving formal IDs, headword POS/status and supported inherited senses.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001667",
+      "before": {
+        "meaningZh": "祭司；牧師；神父；神質人員"
+      },
+      "after": {
+        "meaningZh": "祭司；牧師；神父；神職人員"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/priest; https://dict.revised.moe.edu.tw/dictView.jsp?ID=131505&la=0&powerMode=0",
+      "reason": "Only change 質→職 in the last gloss. MOE exact 神職人員 entry and Collins Christian/non-Christian clergy definitions directly read.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001826",
+      "before": {
+        "meaningEn": "the immaterial part of a person; the actuating cause of an individual life; deep feeling or emotion",
+        "meaningZh": "靈魂；心靈；精神；精髓"
+      },
+      "after": {
+        "meaningEn": "The spiritual or immaterial part of a person; the life-giving principle; deep feeling or emotion; the essential character of something; also a person, as in not a soul.",
+        "meaningZh": "靈魂；心靈；精神；精髓；（指人）人"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/soul",
+      "reason": "Primary definitions and complete current entry actually compared. Correct the selected lexical scope/construction while preserving formal IDs, headword POS/status and supported inherited senses.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001890",
+      "before": {
+        "meaningZh": "稅；稅款；重負；會費"
+      },
+      "after": {
+        "meaningZh": "稅；稅款；重負；會費；（動詞）向……課稅"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/tax",
+      "reason": "Primary definitions and complete current entry actually compared. Correct the selected lexical scope/construction while preserving formal IDs, headword POS/status and supported inherited senses.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001007",
+      "before": {
+        "meaningZh": "報告；解釋；估價；理由"
+      },
+      "after": {
+        "meaningZh": "（名詞）報告；估價；理由；帳戶；（動詞）解釋（account for）；占（數量或比例）"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/account; https://www.collinsdictionary.com/dictionary/english/account-for",
+      "reason": "Primary definitions and complete current entry actually compared. Correct the selected lexical scope/construction while preserving formal IDs, headword POS/status and supported inherited senses.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001504",
+      "before": {
+        "meaningZh": "自由主義者；慷慨的；不拘泥的；寬大的"
+      },
+      "after": {
+        "meaningZh": "（形容詞）慷慨的；不拘泥的；寬大的；開明的；大量的；（另有名詞用法）自由主義者"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/liberal",
+      "reason": "Primary definitions and complete current entry actually compared. Correct the selected lexical scope/construction while preserving formal IDs, headword POS/status and supported inherited senses.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001460",
+      "before": {
+        "usagePatternZh": "指出子句；指出某事"
+      },
+      "after": {
+        "usagePatternZh": "顯示／表明……（that 子句）；指出某事"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/indicate",
+      "reason": "Primary definitions and complete current entry actually compared. Correct the selected lexical scope/construction while preserving formal IDs, headword POS/status and supported inherited senses.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001205",
+      "before": {
+        "meaningZh": "法院；庭院；奉承；獻殷勤"
+      },
+      "after": {
+        "meaningZh": "（名詞）法院；庭院；球場；（另有動詞用法）奉承；獻殷勤"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/court",
+      "reason": "Make the current selected noun and already inherited genuine verb glosses visibly distinct. Formal n. and source vt./vi. transcription remain independent; no whole-card verbForms added.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004034",
+      "before": {
+        "meaningEn": "a positive feeling of liking",
+        "meaningZh": "影響；病；喜愛；情感",
+        "usagePattern": "an/the affection; affection of N",
+        "usagePatternZh": "喜愛；……的喜愛"
+      },
+      "after": {
+        "meaningEn": "Fondness, love or tenderness toward someone or something; emotion or feeling. Other noun senses include a pathological condition or disease, and the act of affecting or influencing.",
+        "meaningZh": "喜愛；情感；（病理學）病；（另義）影響",
+        "usagePattern": "affection for N; with affection; show affection",
+        "usagePatternZh": "對……的喜愛；深情地；表達感情"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/affection",
+      "reason": "Keep the real disease and influencing senses rather than deleting them; put common affection first and replace the generic of-target with actual for/with constructions.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005792",
+      "before": {
+        "meaningEn": "an act of honor or courteous recognition; a formal military gesture of respect",
+        "usagePattern": "salute + N; salute to V; a/the salute",
+        "usagePatternZh": "向……行禮；向……行禮去表示敬意；一次敬禮／該敬禮"
+      },
+      "after": {
+        "meaningEn": "Verb: greet or show respect with a formal gesture; publicly express admiration for someone or something. Noun: such a gesture or expression of respect, including a ceremonial firing of guns.",
+        "usagePattern": "salute sb; salute sb for sth; in salute; a salute to N",
+        "usagePatternZh": "向某人敬禮；因某事向某人致敬；以敬禮致意；向……致敬"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/salute",
+      "reason": "The generic salute to V is not the complement represented by the Chinese. Use directly read noun/verb constructions without changing source running examples.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003646",
+      "before": {
+        "meaningEn": "a person appointed to a high office in the government; a diplomat representing one government to another; ranks below ambassador",
+        "meaningZh": "部長；牧師；公使；服侍"
+      },
+      "after": {
+        "meaningEn": "Noun: a member of the clergy, especially in a Protestant church; a senior government official; a diplomatic representative below an ambassador. The separate verb minister means give service, care or help.",
+        "meaningZh": "（名詞）部長；牧師；公使；（另有動詞用法）服侍"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/minister",
+      "reason": "Restore the selected church noun omitted by the current English; retain public-office/diplomatic and genuine serve verb meanings, without changing formal n. or adding verbForms.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004233",
+      "before": {
+        "meaningEn": "a person serving a sentence in a jail or prison; a person who has been convicted of a criminal offense",
+        "usagePattern": "convict + N; convict to V; a/the convict",
+        "usagePatternZh": "判決某人有罪；判決某人做某事；一名罪犯"
+      },
+      "after": {
+        "meaningEn": "Verb: find someone guilty of a crime in a court of law. Noun: a person found guilty of a crime, especially one serving a prison sentence.",
+        "usagePattern": "convict sb of N/V-ing; be convicted of N; a convicted criminal; a convict",
+        "usagePatternZh": "判某人犯有……罪；被判犯有……罪；已定罪的罪犯；一名囚犯"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/convict",
+      "reason": "Supply the existing selected verb; replace invented convict to V with actual of constructions.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002800",
+      "before": {
+        "meaningEn": "estrangement from god; an act that is regarded by theologians as a transgression of God's will",
+        "usagePattern": "sin + N; sin to V; a/the sin",
+        "usagePatternZh": "犯下某罪；犯罪去做某事；一項罪行"
+      },
+      "after": {
+        "meaningEn": "Noun: an act or state regarded as breaking divine or moral law; also an offence against accepted standards. Verb: commit such an act or behave wrongly.",
+        "usagePattern": "commit a sin; sin against N; a sin of N",
+        "usagePatternZh": "犯罪／犯下罪過；違背……而犯罪；……之罪"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/sin",
+      "reason": "Replace generic sin + N and sin to V with the directly attested intransitive verb and noun constructions; retain religious and broader wrongdoing senses.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003159",
+      "before": {
+        "meaningZh": "代碼；密碼；法規；法典",
+        "usagePattern": "a code of conduct; write/break code",
+        "usagePatternZh": "行為準則；編寫／破解程式碼"
+      },
+      "after": {
+        "meaningZh": "（名詞）代碼；密碼；法規；法典；（動詞）編碼；寫程式",
+        "usagePattern": "a code of conduct; write code; break a code",
+        "usagePatternZh": "行為準則；編寫程式碼；破解密碼"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/code",
+      "reason": "Separate writing computer code from breaking a secret code; preserve both original noun and verb scope.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003194",
+      "before": {
+        "meaningZh": "保守的；守舊的；有保存力的；防腐劑"
+      },
+      "after": {
+        "meaningZh": "（形容詞）保守的；守舊的；有保存力的；（名詞）保守者；（較少見名詞義）防腐劑"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/conservative",
+      "reason": "Collins explicitly retains the less common preservative adjective/noun and labels an American version archaic; keep it while supplying the selected common person noun. Do not claim the whole dictionary labels it archaic.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004525",
+      "before": {
+        "meaningEn": "means of maintenance of a family or group; the unauthorized interference in a legal action by a person having no interest in it (as by helping one party with money or otherwise to...",
+        "usagePattern": "a/the maintenance; maintenance of N",
+        "usagePatternZh": "維護；……的保持"
+      },
+      "after": {
+        "meaningEn": "Keeping something in good condition through care and repair; preserving an existing state; financial support for living expenses. A separate legal sense is assistance in another person’s lawsuit by someone with no interest in it, formerly treated as unlawful.",
+        "usagePattern": "routine maintenance; maintenance of N; pay maintenance",
+        "usagePatternZh": "例行維修保養；……的維持／維護；支付扶養費"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/maintenance",
+      "reason": "Replace visibly truncated English with concise sourced definitions, restoring upkeep and preserving financial support and the separate legal-interference meaning. Formerly unlawful is the source qualification, not present-day legal advice.",
+      "classification": "lexical_scope_or_usage_correction"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX76f5b9d3",
+      "before": {
+        "sensePos": "v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/statement",
+      "reason": "Complete original sentence, actual cloze and answer compared; noun object/complement versus lexical verb function is unambiguous. Do not change English/cloze/answer.",
+      "classification": "actual_cloze_part_of_speech"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX30907e1b",
+      "before": {
+        "sensePos": "adj."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/chief",
+      "reason": "Complete original sentence, actual cloze and answer compared; noun object/complement versus lexical verb function is unambiguous. Do not change English/cloze/answer.",
+      "classification": "actual_cloze_part_of_speech"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXf5b3f6ba",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/force",
+      "reason": "Complete original sentence, actual cloze and answer compared; noun object/complement versus lexical verb function is unambiguous. Do not change English/cloze/answer.",
+      "classification": "actual_cloze_part_of_speech"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXcf6f8163",
+      "before": {
+        "sensePos": "v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/saw",
+      "reason": "Complete original sentence, actual cloze and answer compared; noun object/complement versus lexical verb function is unambiguous. Do not change English/cloze/answer.",
+      "classification": "actual_cloze_part_of_speech"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX423238d9",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/account-for",
+      "reason": "Complete original sentence, actual cloze and answer compared; noun object/complement versus lexical verb function is unambiguous. Do not change English/cloze/answer.",
+      "classification": "actual_cloze_part_of_speech"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX6ba3105a",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/code",
+      "reason": "Complete original sentence, actual cloze and answer compared; noun object/complement versus lexical verb function is unambiguous. Do not change English/cloze/answer.",
+      "classification": "actual_cloze_part_of_speech"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX5b300da2",
+      "before": {
+        "word": "free",
+        "sentenceEn": "The museum offers free admission to children under six years old.",
+        "blankSentence": "The museum offers _____ admission to children under six years old.",
+        "answer": "free",
+        "sentenceZh": "這間博物館提供六歲以下兒童免費入場。",
+        "status": "reviewed"
+      },
+      "after": {
+        "sentenceZh": "這間博物館提供未滿六歲兒童免費入場。"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/under",
+      "reason": "Under six excludes children who have already reached six. Remove the inclusive Chinese boundary ambiguity without changing original English, target, answer or POS.",
+      "classification": "translation_boundary_precision"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX0a1d6a79",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/affect",
+      "reason": "Only this unchanged authored practice: English, Chinese, cloze, answer and contextual POS checked. The witnesses account practice is adapted; official107 Q36 concerns competing fortune-cookie origin stories, not witnesses. No claim of original exam quotation.",
+      "classification": "individual_authored_practice_review"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXfd663461",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/maintain",
+      "reason": "Only this unchanged authored practice: English, Chinese, cloze, answer and contextual POS checked. The witnesses account practice is adapted; official107 Q36 concerns competing fortune-cookie origin stories, not witnesses. No claim of original exam quotation.",
+      "classification": "individual_authored_practice_review"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXb0bcd9af",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/lay",
+      "reason": "Only this unchanged authored practice: English, Chinese, cloze, answer and contextual POS checked. The witnesses account practice is adapted; official107 Q36 concerns competing fortune-cookie origin stories, not witnesses. No claim of original exam quotation.",
+      "classification": "individual_authored_practice_review"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXdd6b335b",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/effect",
+      "reason": "Only this unchanged authored practice: English, Chinese, cloze, answer and contextual POS checked. The witnesses account practice is adapted; official107 Q36 concerns competing fortune-cookie origin stories, not witnesses. No claim of original exam quotation.",
+      "classification": "individual_authored_practice_review"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX234a5fc9",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0j076574893317534748/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf; https://www.ceec.edu.tw/files/file_pool/1/0j076574893773665710/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf",
+      "reason": "Only this unchanged authored practice: English, Chinese, cloze, answer and contextual POS checked. The witnesses account practice is adapted; official107 Q36 concerns competing fortune-cookie origin stories, not witnesses. No claim of original exam quotation.",
+      "classification": "individual_authored_practice_review"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W006044-2",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：州；狀態；情形；國家；陳述"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-07：Statement noun declaration, not state geography or condition. 已核本義項與既有練習／詞典定義，僅本義；不擴為整詞所有罕義或官方考題認證。"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/statement",
+      "reason": "Statement noun declaration, not state geography or condition.",
+      "classification": "limited_sense_review"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001067-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：平衡；差額；相等；稱"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-07：Separate balance noun steadiness/account amount and verb make steady. 已核本義項與既有練習／詞典定義，僅本義；不擴為整詞所有罕義或官方考題認證。"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/balance",
+      "reason": "Separate balance noun steadiness/account amount and verb make steady.",
+      "classification": "limited_sense_review"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001067-2",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：平衡；差額；相等；稱"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-07：Separate balance noun steadiness/account amount and verb make steady. 已核本義項與既有練習／詞典定義，僅本義；不擴為整詞所有罕義或官方考題認證。"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/balance",
+      "reason": "Separate balance noun steadiness/account amount and verb make steady.",
+      "classification": "limited_sense_review"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001160-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：拍手；拍手聲；霹靂聲；花柳病"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-07：Separate clap verb applaud and noun clapping/thunder; retain unrelated genuine slang at headword. 已核本義項與既有練習／詞典定義，僅本義；不擴為整詞所有罕義或官方考題認證。"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/clap",
+      "reason": "Separate clap verb applaud and noun clapping/thunder; retain unrelated genuine slang at headword.",
+      "classification": "limited_sense_review"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001160-2",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：拍手；拍手聲；霹靂聲；花柳病"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-07：Separate clap verb applaud and noun clapping/thunder; retain unrelated genuine slang at headword. 已核本義項與既有練習／詞典定義，僅本義；不擴為整詞所有罕義或官方考題認證。"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/clap",
+      "reason": "Separate clap verb applaud and noun clapping/thunder; retain unrelated genuine slang at headword.",
+      "classification": "limited_sense_review"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001296-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：結果；影響；效果；印象"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-07：Effect noun result and genuine formal verb bring about; rarity is not grounds for deletion. 已核本義項與既有練習／詞典定義，僅本義；不擴為整詞所有罕義或官方考題認證。"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/effect",
+      "reason": "Effect noun result and genuine formal verb bring about; rarity is not grounds for deletion.",
+      "classification": "limited_sense_review"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001296-2",
+      "before": {
+        "status": "needs_check",
+        "note": "罕用，建議刪列｜待拆分；主表字義：結果；影響；效果；印象"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-07：Effect noun result and genuine formal verb bring about; rarity is not grounds for deletion. 已核本義項與既有練習／詞典定義，僅本義；不擴為整詞所有罕義或官方考題認證。"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/effect",
+      "reason": "Effect noun result and genuine formal verb bring about; rarity is not grounds for deletion.",
+      "classification": "limited_sense_review"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W003159-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：代碼；密碼；法規；法典"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-07：Code noun secret/system/rules and verb encode/program; original headword retained. 已核本義項與既有練習／詞典定義，僅本義；不擴為整詞所有罕義或官方考題認證。"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/code",
+      "reason": "Code noun secret/system/rules and verb encode/program; original headword retained.",
+      "classification": "limited_sense_review"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W003159-2",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：代碼；密碼；法規；法典"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-07：Code noun secret/system/rules and verb encode/program; original headword retained. 已核本義項與既有練習／詞典定義，僅本義；不擴為整詞所有罕義或官方考題認證。"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/code",
+      "reason": "Code noun secret/system/rules and verb encode/program; original headword retained.",
+      "classification": "limited_sense_review"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001007-1",
+      "before": {
+        "status": "draft",
+        "note": "考點：對事件的描述，非「帳戶」"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-07：已讀107學測文意選填31–40完整幸運餅乾起源段落、十選項及官方答案Q36=A account，指另一種說法／陳述。EX234a5fc9兩名目擊者為改寫練習，非原題引句；僅本義與來源核查，不擴為整詞認證。"
+      },
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0j076574893317534748/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf; https://www.ceec.edu.tw/files/file_pool/1/0j076574893773665710/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf",
+      "reason": "Exact official context and answer read, preserve authored-example/source boundary.",
+      "classification": "limited_exam_sense_review"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001844-1",
+      "before": {
+        "note": "2026-11-05：核對此既有義項、正式詞性及可用英中練習句；enjoyment 為名詞，state 主表已保留 v./n.。僅本義項核查，不擴為整詞、其他罕義或官方考題來源認證。"
+      },
+      "after": {
+        "note": "2026-11-05：核對此既有義項、正式詞性及可用英中練習句；state 主表已保留 v./n.。僅本義項核查，不擴為整詞、其他罕義或官方考題來源認證。"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/state",
+      "reason": "Remove only an unrelated copied enjoyment fragment; preserve meaning, status, answerForms, exam flag and remaining old note.",
+      "classification": "unrelated_note_fragment"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "state": "passed",
+  "recordedAt": "2026-11-06T00:06:44.637Z",
+  "checks": [
+    {
+      "tests": 58,
+      "exitCode": 0,
+      "files": 6,
+      "log": "LV2-U27-regression-initial.txt",
+      "check": "initial-regression",
+      "logSha256": "61e43e8413b4de082514f2b563a472671f4c3459e9699a849d26299559f7178d"
+    },
+    {
+      "exitCode": 0,
+      "log": "LV2-U27-regression-remaining.txt",
+      "check": "remaining-regression",
+      "logSha256": "7896c70f037e1bb78412a9c297802239e656228a66673c846040e2b45519ffec"
+    },
+    {
+      "exitCode": 0,
+      "log": "LV2-U27-python-final.txt",
+      "check": "python",
+      "logSha256": "c6e6fc5c30e27a47e22d7d1f132ab2fa6567da96545833976215201ff02fbf0c"
+    },
+    {
+      "exitCode": 0,
+      "log": "LV2-U27-lint-checkpoint.txt",
+      "check": "lint",
+      "logSha256": "ded3fcbfd5e24e55b739991140f41c99e155c49d0a2e0cead6755211bacc7ba7"
+    },
+    {
+      "exitCode": 0,
+      "log": "LV2-U27-typecheck.txt",
+      "check": "typecheck",
+      "logSha256": "da91f4c430838409de74534c4d8bed41445d7c7283163b2a63c446dde034587b"
+    },
+    {
+      "exitCode": 0,
+      "log": "LV2-U27-build.txt",
+      "check": "build",
+      "logSha256": "6e904f619216ec23c4807b6ac720c49674108c6d0e4ca63b870be6f48b240d3b"
+    }
+  ],
+  "maxWorkers": 1,
+  "timeoutMs": 5000,
+  "defaultTimeoutUnchanged": true,
+  "pythonTests": 39,
+  "initialRegression": {
+    "files": 6,
+    "tests": 58
+  },
+  "remainingRegression": {
+    "files": 9,
+    "tests": 89
+  },
+  "totalVitest": {
+    "files": 15,
+    "tests": 147
+  },
+  "history": "Original historical hashes retained. The U24 board non-form fixture is restored only through the exact later U27 board coverage patch, with mutation negatives. No global hash reset."
+}

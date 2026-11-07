@@ -1,0 +1,87 @@
+{
+  "manifest": "execution-only: LV2-U43-measurement-visible-patch.json",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "checkedAt": "2026-11-06T20:27:30.018454+00:00",
+  "changeCount": 1,
+  "changes": [
+    {
+      "dataset": "words",
+      "id": "W006041",
+      "before": {
+        "wordId": "W006041",
+        "word": "measurement",
+        "wordVariants": [
+          "measurement"
+        ],
+        "level": "LV2",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "尺寸；量度器；量度標準；測量；度量",
+        "meaningEn": "(n.) the process of finding a size or amount, or the numerical result of that process. (Related word measure) to find the size, length, or amount of something; as a noun, an action taken to achieve a result.",
+        "usagePattern": "take measurements of N; measurement of N; accurate measurements",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "measure",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）；由 measure(ment) 拆分，沿用原列合併釋義，待人工拆義。",
+        "status": "draft",
+        "usagePatternZh": "測量……的尺寸；對……的測量；精確的測量結果"
+      },
+      "after": {
+        "wordId": "W006041",
+        "word": "measurement",
+        "wordVariants": [
+          "measurement"
+        ],
+        "level": "LV2",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "（measurement）尺寸；測量；度量；（另詞 measure 的名詞義）量度器；量度標準",
+        "meaningEn": "(n.) the process of finding a size or amount, or the numerical result of that process. (Related word measure) to find the size, length, or amount of something; as a noun, an action taken to achieve a result.",
+        "usagePattern": "take measurements of N; measurement of N; accurate measurements",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "measure",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）；由 measure(ment) 拆分，沿用原列合併釋義，待人工拆義。",
+        "status": "draft",
+        "usagePatternZh": "測量……的尺寸；對……的測量；精確的測量結果"
+      },
+      "reason": "Make the same verified measurement/measure distinction visible in the Chinese hero field. The instrument/standard senses belong to the separately identified noun measure; retain those real senses with an explicit headword label, rather than treating them as measurement or deleting them.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/measurement; https://www.collinsdictionary.com/dictionary/english/measure"
+    }
+  ],
+  "masterTouched": false,
+  "sentencesChanged": false,
+  "englishSentencesChanged": false,
+  "imagesChanged": false,
+  "sourceHashesBefore": {
+    "words.json": "082f3441933a320708e3e88dcb9cb333971f46d84490974ae3bccda5412e436c",
+    "senses.json": "90fe2825a3f8e4011eb8567cba9846738a6fe246419a2a638b011fe0b667106d",
+    "examples.json": "894d0476ee4cf042fd2f883cbd034b02a5da41228b2e6219273aa06e14cfe456",
+    "meta.json": "334e0a1bfe16f9268aeaa0003a2762f0b5283a00a8a8855ceba8d040bc3ee1a1",
+    "sa-pack.json": "97e99f0e122e9f52a0316392d6eb1c0631fe2d728aadb6f09d268b6b9a11182b"
+  },
+  "sourceHashesAfter": {
+    "words.json": "ae596e8b39a14d00e05a5b486648a9ac4f796104eed4464ca119b2a897756e10",
+    "senses.json": "90fe2825a3f8e4011eb8567cba9846738a6fe246419a2a638b011fe0b667106d",
+    "examples.json": "894d0476ee4cf042fd2f883cbd034b02a5da41228b2e6219273aa06e14cfe456",
+    "meta.json": "9f4f09f0e0c7a9135459f18f2195491b29bae46ec1d3775ec1742bfaa1a69b91",
+    "sa-pack.json": "d172aac74eaf140b18e68756a2d6fea26c3717b7f87a4a82862e62f9715e9ce7"
+  },
+  "state": "applied_not_ui_verified",
+  "acceptance": {
+    "state": "actual_app_reopened_and_saved_verified",
+    "reopenSummary": "validation/LV2-U43-reopen-summary.json",
+    "persistence": "validation/LV2-U43-persistence-summary.json",
+    "executionStatePreserved": "applied_not_ui_verified"
+  },
+  "finalDeclarativeManifest": "LV2-U43-patches.json",
+  "doNotApplyAgain": true
+}

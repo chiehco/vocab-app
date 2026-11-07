@@ -1,0 +1,112 @@
+{
+  "commit": "a0ce2de14c050686aedefe58a05255163e55ad34",
+  "run": 42157023759,
+  "job": 127693498542,
+  "url": "https://github.com/chiehco/vocab-app/actions/runs/42157023759/job/127693498542",
+  "status": "completed",
+  "conclusion": "success",
+  "checkoutShaMatched": true,
+  "testFiles": 219,
+  "tests": 1779,
+  "python": [
+    14,
+    7,
+    44,
+    10
+  ],
+  "steps": [
+    {
+      "name": "Set up job",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/checkout@v4",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/setup-node@v4",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run npm ci",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run npm ci --prefix services/pageviews-cloudflare",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run npm test --prefix services/pageviews-cloudflare",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/setup-python@v5",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run python -m pip install openpyxl==3.1.5 Pillow==12.0.0",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run python -m unittest discover -s scripts -p 'test_apply_lv3_*.py'",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run python -m unittest discover -s scripts -p 'test_apply_lv4_*.py'",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run python -m unittest discover -s scripts -p 'test_apply_unit_audit.py'",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run python -m unittest discover -s scripts -p 'test_build_sa_pack_lv5_legacy.py'",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run python scripts/prepare_recovered_unit_drafts.py --check",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run python scripts/integrate_recovered_units.py --check",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run npm run lint",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run npm run typecheck",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run npm run test -- --maxWorkers=1 --testTimeout=15000",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run npm run build",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Run actions/setup-python@v5",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Run actions/setup-node@v4",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Run actions/checkout@v4",
+      "conclusion": "success"
+    },
+    {
+      "name": "Complete job",
+      "conclusion": "success"
+    }
+  ],
+  "buildSummaryAt": "2026-11-06T03:44:55.6855693Z",
+  "completedAt": "2026-11-06T03:45:01Z",
+  "fullDecodedLogActuallyRead": true,
+  "logSha256": "24765125c9b99115b9c45e92c45e98890904bf3bd54ce4c1c60867d5b5fbe8be",
+  "recordedAt": "2026-11-06T03:59:48.338Z"
+}

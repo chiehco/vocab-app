@@ -1,0 +1,94 @@
+{
+  "unit": "LV2-U46",
+  "scope": "Separate praise image integration after the successful text checkpoint",
+  "state": "local_required_checks_passed_own_new_image_head_ci_pending",
+  "frontend": {
+    "files": 8,
+    "tests": 101,
+    "passed": true,
+    "originalLocalTimeoutMs": 5000,
+    "maxWorkers": 1,
+    "includes": [
+      "new praise exact binding and negative cases",
+      "original U46 text",
+      "U46 historical audit using unchanged snapshots",
+      "recovered historical integration",
+      "audited images",
+      "prior three-image repairs",
+      "building repair",
+      "LV1 reviewed images"
+    ]
+  },
+  "lint": {
+    "exitCode": 0
+  },
+  "typecheck": {
+    "exitCode": 0
+  },
+  "build": {
+    "exitCode": 0
+  },
+  "sourceChecks": [
+    {
+      "check": "prepare_recovered_unit_drafts",
+      "exitCode": 0
+    },
+    {
+      "check": "integrate_recovered_units",
+      "exitCode": 0
+    }
+  ],
+  "imageGuard": {
+    "passed": true,
+    "exactInverseTo336Rows": true,
+    "oldImageAndAll17NonImageHashesRetained": true
+  },
+  "firstAttempt": {
+    "testsExecuted": 0,
+    "reason": "Sandbox SSR cache rename EPERM before test import; same original5s suite passed in the full execution environment.",
+    "denied": false,
+    "assertionsRelaxed": false
+  },
+  "commandSelectionHistory": "Two source checks were initially named with a nonexistent .mjs extension; neither executed. Both actual .py --check commands subsequently exited0.",
+  "logs": [
+    {
+      "file": "LV2-U46-praise-regression-first.txt",
+      "sha256": "b724d84656ce2ead0a63994716f655fe719749fb7ec8953e6a9fdd122b190b3a"
+    },
+    {
+      "file": "LV2-U46-praise-regression-final.txt",
+      "sha256": "542c4e7190375b5657805d3f0215682445403213aa76d17250faf9306627187f"
+    },
+    {
+      "file": "LV2-U46-praise-typecheck-first.txt",
+      "sha256": "9573b15b8962546eef421982bf01ddcb60370f6d16f40de9ffb29123c3d543b8"
+    },
+    {
+      "file": "LV2-U46-praise-lint.txt",
+      "sha256": "dbc5f0e3711115230a271733214ebad40d725bd01aee8656b064f1e5779b98d3"
+    },
+    {
+      "file": "LV2-U46-praise-typecheck.txt",
+      "sha256": "0d93be78e4da5c0077681c4d834163661d59ddd24a0477595fb70ec25d5a5ea8"
+    },
+    {
+      "file": "LV2-U46-praise-build.txt",
+      "sha256": "14644588680b2302846b785b9289b53237ce1c500b005131ff43041de4776275"
+    },
+    {
+      "file": "LV2-U46-praise-prepare_recovered_unit_drafts-check.txt",
+      "sha256": "de98448ebf9803278533e50a4959ae987fb489682759393fb4a40f162f8d62d3"
+    },
+    {
+      "file": "LV2-U46-praise-integrate_recovered_units-check.txt",
+      "sha256": "16a949cba64b31891edbac15dab0007dfc5e48721605cd1960b7fa9df69a3c61"
+    }
+  ],
+  "ownNewImageHeadCi": "pending_this_new_commit",
+  "publicationReady": false,
+  "typecheckRepair": {
+    "firstExitCode": 2,
+    "reason": "New JavaScript guard lacked a TypeScript declaration; downstream historical projections lost their original row types.",
+    "repair": "Add a generic .d.mts declaration returning the same row type. Runtime validation, data, original hashes and assertions unchanged."
+  }
+}

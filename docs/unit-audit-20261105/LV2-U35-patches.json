@@ -1,0 +1,956 @@
+{
+  "unit": "LV2-U35",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "baseCheckpoint": "7cf39a4abfe0a96f844ae358e97b830f4210e470",
+  "scope": "Exact before/after fields only; all English/cloze/answers/translations and every formal headword POS/status remain unchanged in this main manifest. Generation does not apply or verify the App.",
+  "patches": [
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001840",
+      "before": {
+        "meaningZh": "傳播；散佈；伸展；雙唇展開的",
+        "meaningEn": "(v.) to affect a larger area or more people gradually; to open or arrange something over a wide area; (n.) a soft food that is spread on bread"
+      },
+      "after": {
+        "meaningZh": "（動詞）傳播；散佈；伸展；塗抹；（名詞）擴散；抹醬；（另有語音學形容詞用法）雙唇展開的",
+        "meaningEn": "(v.) to affect a larger area or more people gradually; to open or arrange something over a wide area; (n.) a soft food that is spread on bread; also (n.), the act or process of spreading; separate phonetics adjective use, with the lips extended laterally."
+      },
+      "reason": "Supply printed verb/noun coverage and label the genuine phonetics adjective without expanding headword POS. Retain both the spread noun and genuine phonetics use.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/spread; https://www.collinsdictionary.com/dictionary/english/spread"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001798",
+      "before": {
+        "meaningEn": "a word used for misbehaving children"
+      },
+      "after": {
+        "meaningEn": "foolish, childish, or lacking good judgment; used of people, ideas, actions, or things, and sometimes in reproaching a child."
+      },
+      "reason": "Replace a children-only metalinguistic fragment with the actual adjective meaning.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/silly"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001245",
+      "before": {
+        "meaningZh": "沙漠；應得的賞罰；功勞；沙漠的"
+      },
+      "after": {
+        "meaningZh": "（名詞）沙漠；應得的賞罰；功勞；（動詞）遺棄；拋棄；擅離職守；（另有形容詞用法）沙漠的"
+      },
+      "reason": "Supply the printed and practiced verb; preserve desert/deserts and the separate adjective.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/desert"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001751",
+      "before": {
+        "meaningZh": "沙；沙子；沙灘；光陰"
+      },
+      "after": {
+        "meaningZh": "沙；沙子；沙灘；光陰；（動詞）用砂紙磨光；打磨"
+      },
+      "reason": "Make the existing sanded-table verb meaning visible while retaining the inherited nouns.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/sand"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001172",
+      "before": {
+        "meaningEn": "any of numerous chiefly nocturnal insects; some are domestic pests; a roll of hair brushed back from the forehead; the butt of a marijuana cigarette"
+      },
+      "after": {
+        "meaningEn": "cockroach, or roach in its insect sense: a chiefly nocturnal insect, sometimes a household pest; separate roach noun senses include a freshwater fish, a roll of hair brushed back from the forehead, and the butt of a cannabis cigarette."
+      },
+      "reason": "Separate real roach homographs from the cockroach synonym. Preserve the inherited Chinese verb summary for finer terminology review, not whole-word certification.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/roach; https://www.merriam-webster.com/dictionary/roach"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001835",
+      "before": {
+        "meaningEn": "predatory arachnid with eight legs, two poison fangs, two feelers, and usually two silk-spinning organs at the back end of the body; they..."
+      },
+      "after": {
+        "meaningEn": "an eight-legged, silk-producing arachnid; many kinds catch insects in webs; also, a hub or mechanical part with radiating spokes or arms."
+      },
+      "reason": "Replace a visibly truncated animal definition with sourced concise coverage, retaining all Chinese rare meanings for their own review. This is a new definition, not a claim to recover the missing original tail.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/spider"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001510",
+      "before": {
+        "meaningZh": "液體；流體；流音；液體的",
+        "meaningEn": "a substance, such as water, that flows freely and is not a solid or a gas"
+      },
+      "after": {
+        "meaningZh": "（名詞）液體；流體；（語音學）流音；（另有形容詞用法）液體的",
+        "meaningEn": "a substance, such as water, that flows freely and is not a solid or a gas; also (n., phonetics), a liquid consonant; separate adjective use, in liquid form."
+      },
+      "reason": "Separate the genuine adjective from the n.-only headword; keep the phonetics noun and original examples. Cover the retained phonetics noun and printed adjective without changing headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/liquid; https://www.collinsdictionary.com/dictionary/english/liquid"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001103",
+      "before": {
+        "meaningEn": "(v.) to heat a liquid until it bubbles and turns to steam, or to cook food in boiling water; (n.) a painful, swollen spot on the skin filled with pus"
+      },
+      "after": {
+        "meaningEn": "(v.) to heat a liquid until it bubbles and turns to steam, or to cook food in boiling water; (n.) a painful, swollen spot on the skin filled with pus; also (n.), the state or action of boiling, as in bring to a boil."
+      },
+      "reason": "Supply the actually printed boiling noun alongside the genuine skin-lesion noun.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/boil"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001133",
+      "before": {
+        "meaningZh": "城堡；象棋中的車；置於城堡中；盤踞於"
+      },
+      "after": {
+        "meaningZh": "（名詞）城堡；象棋中的車；（另有動詞用法）置於城堡中；盤踞於"
+      },
+      "reason": "Separate retained verb coverage from the n.-only headword, without removing rare senses.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/castle"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001142",
+      "before": {
+        "meaningEn": "a soft whitish calcite; a pure flat white with little reflectance",
+        "usagePattern": "chalk + N; chalk to V; a/the chalk",
+        "usagePatternZh": "用粉筆寫……；用粉筆做……；一支粉筆"
+      },
+      "after": {
+        "meaningEn": "a soft whitish calcite; a pure flat white with little reflectance; also a stick or piece of writing material made from chalk or a similar substance; (v.) to write or draw with chalk.",
+        "usagePattern": "a piece of chalk; chalk sth on a blackboard; coloured chalks",
+        "usagePatternZh": "一根粉筆；用粉筆在黑板上寫／畫……；各色粉筆"
+      },
+      "reason": "Supply the actual writing verb and distinguish the usual mass-material construction from countable sticks/colours; remove a generic infinitive template.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/chalk"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001097",
+      "before": {
+        "meaningEn": "sheet of slate; for writing with chalk"
+      },
+      "after": {
+        "meaningEn": "a dark, smooth board or surface, made of slate or another suitable material, for writing or drawing on with chalk."
+      },
+      "reason": "Broaden the slate-only fragment to the actual ordinary definition while retaining slate as a genuine material.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/blackboard"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001588",
+      "before": {
+        "meaningZh": "筆記本；手冊；期票簿"
+      },
+      "after": {
+        "meaningZh": "筆記本；手冊；期票簿；筆記型電腦"
+      },
+      "reason": "Supply the computer sense already present in English; preserve the genuine promissory-note register.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/notebook"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001899",
+      "before": {
+        "meaningEn": "the main written or printed words of a book, document, etc., as distinct from notes, pictures, etc.; a book or piece of writing used for studying a subject",
+        "meaningZh": "文本；正文；課文；主題"
+      },
+      "after": {
+        "meaningEn": "the main written or printed words of a book, document, etc., as distinct from notes, pictures, etc.; a book or piece of writing used for studying a subject; also a short written message sent by phone.",
+        "meaningZh": "文本；正文；課文；主題；簡訊"
+      },
+      "reason": "Supply the actually printed countable text-message noun. Supply the printed noun sense without adding a texting verb to the n.-only headword.",
+      "evidence": "Original content p312 actually viewed; https://www.collinsdictionary.com/dictionary/english/text; Original content p312 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001692",
+      "before": {
+        "meaningEn": "the contractile aperture in the center of the iris of the eye; resembles a large black dot"
+      },
+      "after": {
+        "meaningEn": "a student at a school, or a learner studying under a teacher or expert; also, the opening in the centre of the iris that admits light into the eye."
+      },
+      "reason": "Supply the two printed learner meanings while preserving the eye meaning and all inherited Chinese senses.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/pupil"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001889",
+      "before": {
+        "meaningEn": "a piece of work that must be done, especially one that is difficult or takes a lot of effort",
+        "meaningZh": "工作；任務；作業；困難的工作"
+      },
+      "after": {
+        "meaningEn": "a piece of work that must be done, especially one that is difficult or takes a lot of effort; also (v.), to assign someone a particular job or duty, especially be tasked with doing something.",
+        "meaningZh": "工作；任務；作業；困難的工作；（動詞）分配任務；指派工作"
+      },
+      "reason": "Cover the printed and already recorded lexical verb. Separate the task verb from its noun meanings.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/task; https://www.collinsdictionary.com/dictionary/english/task"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001839",
+      "before": {
+        "meaningEn": "a particular place; a small mark on a surface",
+        "meaningZh": "污點；地點；斑點；點"
+      },
+      "after": {
+        "meaningEn": "a particular place; a small mark on a surface; also (v.), to notice, recognize, or identify someone or something.",
+        "meaningZh": "污點；地點；斑點；點；（動詞）認出；注意到"
+      },
+      "reason": "Supply the actually printed recognition verb. Make the existing n./v. identity reflect its printed verb meaning.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/spot; https://www.collinsdictionary.com/dictionary/english/spot"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001419",
+      "before": {
+        "meaningZh": "引導者；導遊；指南；路標",
+        "usagePattern": "a guide to + N; guide + O + to V",
+        "usagePatternZh": "……的指南；引導某人去……"
+      },
+      "after": {
+        "meaningZh": "引導者；導遊；指南；路標；（動詞）引導；帶……參觀；指導",
+        "usagePattern": "a guide to N; guide sb around a place; guide sb to a place",
+        "usagePatternZh": "……的指南；帶某人參觀某處；引導某人到某處"
+      },
+      "reason": "Supply printed verb coverage and precise paired constructions instead of a generic object-to-infinitive template.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/guide"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001475",
+      "before": {
+        "meaningEn": "the act of making someone known to another person by name; a section at the beginning of a book or talk that explains what it is about",
+        "meaningZh": "介紹；傳入；採用；初步"
+      },
+      "after": {
+        "meaningEn": "the act of making someone known to another person by name; a section at the beginning of a book or talk that explains what it is about; also the act of bringing something new into use.",
+        "meaningZh": "介紹；傳入；採用；初步；引言；序"
+      },
+      "reason": "Cover the product/system introduction meaning actually printed and present in the existing pattern. Supply the printed book-opening noun sense.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/introduce; original content p315 actually viewed; Original content p315 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001048",
+      "before": {
+        "meaningEn": "to plan or organize something in advance; to put things in a neat or particular order; a plan made in advance, or the way things are organized",
+        "meaningZh": "安排；排列；達成協議；重排；整齊"
+      },
+      "after": {
+        "meaningEn": "to plan or organize something in advance; to put things in a neat or particular order; the related noun arrangement means a plan made in advance or the way things are organized.",
+        "meaningZh": "安排；排列；達成協議；重排；使整齊"
+      },
+      "reason": "Label the inherited noun fragment as the related arrangement, rather than a meaning of arrange; preserve the real verb meanings.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/arrange"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W006033",
+      "before": {
+        "meaningEn": "to plan or organize something in advance; to put things in a neat or particular order; a plan made in advance, or the way things are organized",
+        "usagePattern": "arrange to V; make arrangements for N; arrange N (meeting/flowers)",
+        "usagePatternZh": "安排去做……；為某事做安排；安排某事（會議／花藝）"
+      },
+      "after": {
+        "meaningEn": "a plan or preparation for something to happen, often plural arrangements; an agreement; the way things are placed or organized; an adaptation of a piece of music.",
+        "usagePattern": "make arrangements for N; an arrangement of N; by prior arrangement",
+        "usagePatternZh": "為……做安排；……的排列／布置；經事先安排"
+      },
+      "reason": "Replace copied arrange verb definitions and patterns with the actual noun meanings; retain all Chinese meanings.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/arrangement"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001195",
+      "before": {
+        "usagePattern": "keep/stay/maintain (in) contact with N; contact + N (v.)",
+        "usagePatternZh": "與……保持聯繫；聯絡……"
+      },
+      "after": {
+        "usagePattern": "keep/stay in contact with N; maintain contact with N; contact N",
+        "usagePatternZh": "與……保持聯絡；維持與……的聯繫；聯絡……"
+      },
+      "reason": "Split the optional in template so it no longer licenses stay contact or maintain in contact.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/contact"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001357",
+      "before": {
+        "meaningZh": "救火隊員；消防隊員；司爐；女消隊防員；女消防員",
+        "meaningEn": "play in which children pretend to put out a fire; a member of a fire department who tries to extinguish fires"
+      },
+      "after": {
+        "meaningZh": "救火隊員；消防隊員；司爐；女消防隊員；女消防員",
+        "meaningEn": "fireman/firewoman: a male/female firefighter; fireman also means a worker who tends a furnace or boiler; a separate legacy noun use refers to children pretending to put out a fire."
+      },
+      "reason": "Correct the transposed Chinese characters, cover both actual headwords and the stoker, and preserve the legacy game sense. The game is supported here only by WordNet-attributed search excerpts; no claim of direct Princeton-page verification.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/fireman; https://www.collinsdictionary.com/dictionary/english/firewoman; WordNet-attributed search excerpt: https://www.freedictionary.org/?Query=fireman"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W006008",
+      "before": {
+        "meaningEn": "a slight depression in the smoothness of a surface; a minor difficulty",
+        "meaningZh": "皺紋；妙計；方法；技巧",
+        "usagePattern": "wrinkle + N; wrinkle to V; a/the wrinkle",
+        "usagePatternZh": "弄皺……；wrinkle 後接 to 不定詞；該皺紋"
+      },
+      "after": {
+        "meaningEn": "a slight depression in the smoothness of a surface; a minor difficulty; also (v.), to form or make folds or lines in skin, cloth, or paper.",
+        "meaningZh": "皺紋；妙計；方法；技巧；（動詞）起皺；使起皺",
+        "usagePattern": "wrinkle (up) one's nose; wrinkles in N; wrinkled skin",
+        "usagePatternZh": "皺起鼻子；……的皺褶；有皺紋的皮膚"
+      },
+      "reason": "Supply the printed verb while preserving the existing difficulty noun and Chinese trick/method senses. Make the real verb visible. Use attested constructions rather than an unqualified to-infinitive pattern.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/wrinkle; https://www.collinsdictionary.com/dictionary/english/wrinkle; https://www.collinsdictionary.com/dictionary/english/wrinkle"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002613",
+      "before": {
+        "meaningZh": "恐慌；驚慌；驚慌的；沒有理由的",
+        "meaningEn": "a sudden overwhelming fear that makes people unable to think or act calmly"
+      },
+      "after": {
+        "meaningZh": "（名詞）恐慌；驚慌；（動詞）驚慌失措；使驚慌；（另有形容詞用法）驚慌的；（指恐懼等）突然而常無充分理由的",
+        "meaningEn": "a sudden overwhelming fear that makes people unable to think or act calmly; (v.) to feel or cause sudden overwhelming fear; separate adjective use, arising from panic or resembling extreme sudden and often groundless fear."
+      },
+      "reason": "Preserve and qualify the real adjective: groundlessness belongs to the intense sudden fear state, not every situation or generic absence of a reason. Cover the verb and bounded adjective instead of deleting them.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/panic; https://www.merriam-webster.com/dictionary/panic; https://www.collinsdictionary.com/dictionary/english/panic; https://www.merriam-webster.com/dictionary/panic"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004397",
+      "before": {
+        "meaningZh": "液體；分泌液；流體；流動的"
+      },
+      "after": {
+        "meaningZh": "（名詞）液體；分泌液；流體；（形容詞）流動的；（計畫等）未定的；可變動的"
+      },
+      "reason": "Supply the actual changeable-plans adjective used by the existing practice, keeping the pouring image caption separate.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/fluid"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002106",
+      "before": {
+        "meaningEn": "a hollow globule of gas (e.g., air or carbon dioxide); an impracticable and illusory idea",
+        "usagePattern": "bubble + N; bubble to V; a/the bubble",
+        "usagePatternZh": "使冒泡……；冒泡以致去做某事；氣泡"
+      },
+      "after": {
+        "meaningEn": "a hollow globule of gas (e.g., air or carbon dioxide); an impracticable and illusory idea; also (v.), to form or move in bubbles.",
+        "usagePattern": "blow bubbles; water bubbles; bubble with excitement",
+        "usagePatternZh": "吹泡泡；水冒泡；興奮不已"
+      },
+      "reason": "Supply the printed bubbling verb while retaining the real illusory-idea noun. Replace generic infinitive/article templates with specific noun and verb constructions.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/bubble; https://www.collinsdictionary.com/dictionary/english/bubble"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001051",
+      "before": {
+        "meaningEn": "nonfictional prose forming an independent part of a publication; one of a class of artifacts"
+      },
+      "after": {
+        "meaningEn": "nonfictional prose forming an independent part of a publication; one of a class of artifacts; also (grammar), a determiner such as a, an, or the."
+      },
+      "reason": "Supply the grammar noun already present in Chinese.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/article"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004770",
+      "before": {
+        "meaningEn": "a written version of a play or other dramatic composition; used in preparing for a performance; a particular orthography or writing system",
+        "meaningZh": "手跡；手稿；正本；手寫體",
+        "usagePattern": "script + N; script to V; a/the script",
+        "usagePatternZh": "編寫……腳本；編寫腳本去……；一份／該手稿"
+      },
+      "after": {
+        "meaningEn": "a written version of a play or other dramatic composition; used in preparing for a performance; a particular orthography or writing system; also (v.), to write the script for a film, play, or programme; also (n., law), an original or principal document.",
+        "meaningZh": "手跡；手稿；正本；手寫體；劇本；廣播稿；（動詞）編寫腳本",
+        "usagePattern": "a film/radio script; write a script; script a play",
+        "usagePatternZh": "電影劇本／廣播稿；撰寫腳本；編寫戲劇腳本"
+      },
+      "reason": "Retain and distinguish the actual writing verb and legal original-document noun. Supply the printed drama/broadcast noun and visibly separate the verb. Replace the generic to-infinitive template with specific source-aligned constructions.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/script; https://www.collinsdictionary.com/dictionary/english/script; https://www.collinsdictionary.com/dictionary/english/script"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000836",
+      "before": {
+        "usagePatternZh": "大學/高中學生；+ 名詞的學生"
+      },
+      "after": {
+        "usagePatternZh": "大學／高中學生；研習……的人／……的學生"
+      },
+      "reason": "Translate the noun placeholder as actual Chinese while preserving the two English patterns.",
+      "evidence": "Original content p312 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001531",
+      "before": {
+        "meaningEn": "a person who has control or authority over people, animals, or things; a person with great skill in a particular activity; an advanced university degree",
+        "meaningZh": "主人；碩士；大師；母機"
+      },
+      "after": {
+        "meaningEn": "a person who has control or authority over people, animals, or things; a person with great skill in a particular activity; an advanced university degree; (v.) to learn or control something thoroughly; separate adjective use, highly skilled, as in a master craftsman.",
+        "meaningZh": "主人；碩士；大師；母機；（動詞）精通；掌握；（另有形容詞用法）熟練的"
+      },
+      "reason": "Supply the existing lexical verb and the adjective used in the carpenter practice. Keep the original n./v. headword and retained machine noun; label the real adjective separately.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/master; https://www.collinsdictionary.com/dictionary/english/master"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000008",
+      "before": {
+        "meaningEn": "(v.) to do something, or to behave in a particular way; (n.) something that a person does; a formal law passed by a government"
+      },
+      "after": {
+        "meaningEn": "(v.) to do something, or to behave in a particular way; (n.) something that a person does; a formal law passed by a government; also (v.), to perform a role; (n.), a main division of a play."
+      },
+      "reason": "Cover the unchanged existing theater practices, not just general action and legislation.",
+      "evidence": "Original content p312 actually viewed; existing approved theater examples"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000009",
+      "before": {
+        "usagePatternZh": "採取行動；將某事物付諸行動；對名詞採取行動"
+      },
+      "after": {
+        "usagePatternZh": "採取行動；將某事物付諸行動；對……採取行動"
+      },
+      "reason": "Render the existing noun placeholder naturally without changing English or examples.",
+      "evidence": "Existing exact construction action against N"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002634",
+      "before": {
+        "meaningZh": "施行；工作情況；成績；行爲"
+      },
+      "after": {
+        "meaningZh": "施行；工作情況；成績；行爲；表演；表現"
+      },
+      "reason": "Supply both meanings used by the complete existing examples; keep the inherited execution/conduct meanings.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/performance"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003546",
+      "before": {
+        "meaningZh": "本能；直覺；充滿着的",
+        "meaningEn": "inborn pattern of behavior often responsive to specific stimuli; (followed by 'with')deeply filled or permeated"
+      },
+      "after": {
+        "meaningZh": "（名詞）本能；直覺；（另有罕見形容詞用法，常與 with 並用）充滿著……的",
+        "meaningEn": "(n.) inborn behavior or intuitive understanding; separate rare adjective use, usually followed by with: filled or imbued with something."
+      },
+      "reason": "Keep and visibly qualify the genuine postpositive adjective rather than deleting it from the n.-only headword.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/instinct"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002923",
+      "before": {
+        "meaningZh": "觀光客；旅行者；旅遊的",
+        "meaningEn": "a person who is traveling or visiting a place for pleasure"
+      },
+      "after": {
+        "meaningZh": "（名詞）觀光客；旅行者；（另有形容詞用法）旅遊的",
+        "meaningEn": "a person who is traveling or visiting a place for pleasure; separate adjective use, of or for tourists or tourist-class accommodation."
+      },
+      "reason": "Keep the genuine adjective distinct from the ordinary noun headword. Retain the already inherited adjective instead of treating it as a noun meaning.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/tourist; https://www.collinsdictionary.com/dictionary/english/tourist"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005240",
+      "before": {
+        "meaningZh": "牙齒的；牙的；齒的；齒音",
+        "meaningEn": "relating to the teeth or to dentistry, the branch of medicine concerned with the care of teeth"
+      },
+      "after": {
+        "meaningZh": "（形容詞）牙齒的；牙的；齒的；（另有語音學名詞用法）齒音",
+        "meaningEn": "relating to the teeth or to dentistry, the branch of medicine concerned with the care of teeth; separate phonetics noun use: a dental consonant."
+      },
+      "reason": "Separate the genuine consonant noun from the adj.-only headword. Preserve the real noun instead of deleting it.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/dental; https://www.collinsdictionary.com/dictionary/english/dental"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002774",
+      "before": {
+        "usagePattern": "scream + N; scream to V; a/the scream",
+        "usagePatternZh": "尖叫出某事；尖叫著去做某事；一聲尖叫"
+      },
+      "after": {
+        "usagePattern": "scream with pain; scream at sb; let out a scream",
+        "usagePatternZh": "痛得尖叫；對某人尖叫；發出尖叫聲"
+      },
+      "reason": "Use specific noun/verb constructions instead of a generic infinitive template.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/scream"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002358",
+      "before": {
+        "meaningZh": "汽油；氣體；瓦斯；煤氣",
+        "meaningEn": "fuel used to power engines such as car engines; a substance, such as air, that is not solid or liquid and can spread freely to fill any space"
+      },
+      "after": {
+        "meaningZh": "（gasoline；gas 美式用語）汽油；（gas）氣體；瓦斯；煤氣",
+        "meaningEn": "gasoline, or gas in American English: fuel for motor vehicles; gas also means a substance that is neither solid nor liquid, including gaseous fuels used for cooking or heating."
+      },
+      "reason": "Separate the physical gas meanings from the gasoline synonym without changing the combined formal identity.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/gas"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX2f652593",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "The novel's plot mirrors the author's own difficult childhood experiences.",
+        "blankSentence": "The novel's plot _____ the author's own difficult childhood experiences.",
+        "answer": "mirrors"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Correct the actual cloze word in the complete unchanged sentence; keep empty hints and headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/mirror"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXdc241387",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "The soldier was punished for deserting his post during the night watch.",
+        "blankSentence": "The soldier was punished for _____ his post during the night watch.",
+        "answer": "deserting"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Correct the actual cloze word in the complete unchanged sentence; keep empty hints and headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/desert"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX9d0b9eb7",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "He sanded the wooden table until its surface felt completely smooth.",
+        "blankSentence": "He _____ the wooden table until its surface felt completely smooth.",
+        "answer": "sanded"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Correct the actual cloze word in the complete unchanged sentence; keep empty hints and headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/sand"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX5ee688b0",
+      "before": {
+        "sensePos": "v.",
+        "sentenceEn": "The doctor said the boil on his arm needed to be treated quickly.",
+        "blankSentence": "The doctor said the _____ on his arm needed to be treated quickly.",
+        "answer": "boil"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Correct the actual cloze word in the complete unchanged sentence; keep empty hints and headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/boil"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXbe51427f",
+      "before": {
+        "sensePos": "v.",
+        "sentenceEn": "She made all the arrangements for her sister's wedding.",
+        "blankSentence": "She made all the _____ for her sister's wedding.",
+        "answer": "arrangements"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Correct the actual cloze word in the complete unchanged sentence; keep empty hints and headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/arrangement"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX15c98fc9",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "Please contact me by email if you have any questions.",
+        "blankSentence": "Please _____ me by email if you have any questions.",
+        "answer": "contact"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Correct the actual cloze word in the complete unchanged sentence; keep empty hints and headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/contact"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX542f90f6",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "Remember to brush your teeth twice a day to keep them healthy.",
+        "blankSentence": "Remember to _____ your teeth twice a day to keep them healthy.",
+        "answer": "brush"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Correct the actual cloze word in the complete unchanged sentence; keep empty hints and headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/brush"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX2c5eb5e0",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "Don't panic if you make a small mistake during your speech; just stay calm.",
+        "blankSentence": "Don't _____ if you make a small mistake during your speech; just stay calm.",
+        "answer": "panic"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Correct the actual cloze word in the complete unchanged sentence; keep empty hints and headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/panic"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX87f29a88",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "Our travel plans are still fluid, so we might change the schedule.",
+        "blankSentence": "Our travel plans are still _____, so we might change the schedule.",
+        "answer": "fluid"
+      },
+      "after": {
+        "sensePos": "adj."
+      },
+      "reason": "Correct the actual cloze word in the complete unchanged sentence; keep empty hints and headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/fluid"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX0b2105ba",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "My grandfather was a master carpenter who built beautiful furniture by hand.",
+        "blankSentence": "My grandfather was a _____ carpenter who built beautiful furniture by hand.",
+        "answer": "master"
+      },
+      "after": {
+        "sensePos": "adj."
+      },
+      "reason": "Use the directly attested skilled adjective in master carpenter, as in Collins master craftsman. This is a dictionary-supported classification, not a claim that noun-attributive analysis is impossible.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/master"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX349d22d8",
+      "before": {
+        "meaningHint": "學生；研究者；學者",
+        "sentenceEn": "All students should do their homework carefully.",
+        "blankSentence": "All _____ should do their homework carefully.",
+        "answer": "students"
+      },
+      "after": {
+        "meaningHint": "學生"
+      },
+      "reason": "Narrow an already non-empty broad hint to the actual complete sentence; do not fill empty hints.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/student"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX02e43b03",
+      "before": {
+        "meaningHint": "行動；活動；動作；作用",
+        "sentenceEn": "Let's take action before it is too late.",
+        "blankSentence": "Let's take _____ before it is too late.",
+        "answer": "action"
+      },
+      "after": {
+        "meaningHint": "行動"
+      },
+      "reason": "Narrow an already non-empty broad hint to the actual complete sentence; do not fill empty hints.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/action"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX81b84686",
+      "before": {
+        "meaningHint": "感覺；覺得；觸摸；以為",
+        "sentenceEn": "The new restaurant has a Mediterranean feel to it.",
+        "blankSentence": "The new restaurant has a Mediterranean _____ to it.",
+        "answer": "feel"
+      },
+      "after": {
+        "meaningHint": "氣氛；風格（have a ... feel to it）"
+      },
+      "reason": "Narrow an already non-empty broad hint to the actual complete sentence; do not fill empty hints.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/feel"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXa603a289",
+      "before": {
+        "meaningHint": "感覺；覺得；觸摸；以為",
+        "sentenceEn": "Do you feel like going to the movies tonight?",
+        "blankSentence": "Do you _____ like going to the movies tonight?",
+        "answer": "feel"
+      },
+      "after": {
+        "meaningHint": "想要（feel like V-ing）"
+      },
+      "reason": "Narrow an already non-empty broad hint to the actual complete sentence; do not fill empty hints.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/feel"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXb2b1db96",
+      "before": {
+        "meaningHint": "感覺；覺得；觸摸；以為",
+        "sentenceEn": "I feel encouraged when I hear those words.",
+        "blankSentence": "I _____ encouraged when I hear those words.",
+        "answer": "feel"
+      },
+      "after": {
+        "meaningHint": "感到"
+      },
+      "reason": "Narrow an already non-empty broad hint to the actual complete sentence; do not fill empty hints.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/feel"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXd6d9fbe8",
+      "before": {
+        "meaningHint": "感覺；覺得；觸摸；以為",
+        "sentenceEn": "Natalie loves the feel of soft wool on her skin.",
+        "blankSentence": "Natalie loves the _____ of soft wool on her skin.",
+        "answer": "feel"
+      },
+      "after": {
+        "meaningHint": "觸感"
+      },
+      "reason": "Narrow an already non-empty broad hint to the actual complete sentence; do not fill empty hints.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/feel"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXdf1cdf07",
+      "before": {
+        "meaningHint": "感覺；覺得；觸摸；以為",
+        "sentenceEn": "I felt her hand in the darkness.",
+        "blankSentence": "I _____ her hand in the darkness.",
+        "answer": "felt"
+      },
+      "after": {
+        "meaningHint": "觸摸；摸到"
+      },
+      "reason": "Narrow an already non-empty broad hint to the actual complete sentence; do not fill empty hints.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/feel"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX2d909bc3",
+      "before": {
+        "status": "draft",
+        "sentenceEn": "Camels can live in the desert for days without water.",
+        "blankSentence": "Camels can live in the _____ for days without water.",
+        "answer": "desert"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Verify this independent practice meaning and full English/Chinese sentence without claiming original official-exam provenance.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/desert"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX380f46d8",
+      "before": {
+        "status": "draft",
+        "sentenceEn": "We had ice cream for dessert after dinner.",
+        "blankSentence": "We had ice cream for _____ after dinner.",
+        "answer": "dessert"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Verify this independent practice meaning and full English/Chinese sentence without claiming original official-exam provenance.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/dessert"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001840-1",
+      "before": {
+        "note": "待拆分；主表字義：傳播；散佈；伸展；雙唇展開的",
+        "status": "needs_check"
+      },
+      "after": {
+        "note": "已核此既有 v. 義項的詞典正文；現有英中練習依實際挖空詞分別核對。本義核對不代表其他義、詞頭詞性或整詞全部通過。來源：https://www.collinsdictionary.com/dictionary/english/spread",
+        "status": "reviewed"
+      },
+      "reason": "Replace stale split-pending notes only for the exact sourced sense; keep whole-word status and all other identities.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/spread"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001840-2",
+      "before": {
+        "note": "待拆分；主表字義：傳播；散佈；伸展；雙唇展開的",
+        "status": "needs_check"
+      },
+      "after": {
+        "note": "已核此既有 n. 義項的詞典正文；現有練習未專門示範本義，保留其各自詞性及原句，不捏造本義例句。本義核對不代表其他義、詞頭詞性或整詞全部通過。來源：https://www.collinsdictionary.com/dictionary/english/spread",
+        "status": "reviewed"
+      },
+      "reason": "Replace stale split-pending notes only for the exact sourced sense; keep whole-word status and all other identities.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/spread"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001419-1",
+      "before": {
+        "note": "待拆分；主表字義：引導者；導遊；指南；路標",
+        "status": "needs_check"
+      },
+      "after": {
+        "note": "已核此既有 n. 義項的詞典正文；現有英中練習依實際挖空詞分別核對。本義核對不代表其他義、詞頭詞性或整詞全部通過。來源：https://www.collinsdictionary.com/dictionary/english/guide",
+        "status": "reviewed"
+      },
+      "reason": "Replace stale split-pending notes only for the exact sourced sense; keep whole-word status and all other identities.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/guide"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001419-2",
+      "before": {
+        "note": "待拆分；主表字義：引導者；導遊；指南；路標",
+        "status": "needs_check"
+      },
+      "after": {
+        "note": "已核此既有 v. 義項的詞典正文；現有練習未專門示範本義，保留其各自詞性及原句，不捏造本義例句。本義核對不代表其他義、詞頭詞性或整詞全部通過。來源：https://www.collinsdictionary.com/dictionary/english/guide",
+        "status": "reviewed"
+      },
+      "reason": "Replace stale split-pending notes only for the exact sourced sense; keep whole-word status and all other identities.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/guide"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001114-1",
+      "before": {
+        "note": "待拆分；主表字義：刷子；毛筆；爭吵；刷",
+        "status": "needs_check"
+      },
+      "after": {
+        "note": "已核此既有 n. 義項的詞典正文；現有英中練習依實際挖空詞分別核對。本義核對不代表其他義、詞頭詞性或整詞全部通過。來源：https://www.collinsdictionary.com/dictionary/english/brush",
+        "status": "reviewed"
+      },
+      "reason": "Replace stale split-pending notes only for the exact sourced sense; keep whole-word status and all other identities.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/brush"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001114-2",
+      "before": {
+        "note": "待拆分；主表字義：刷子；毛筆；爭吵；刷",
+        "status": "needs_check"
+      },
+      "after": {
+        "note": "已核此既有 v. 義項的詞典正文；現有英中練習依實際挖空詞分別核對。本義核對不代表其他義、詞頭詞性或整詞全部通過。來源：https://www.collinsdictionary.com/dictionary/english/brush",
+        "status": "reviewed"
+      },
+      "reason": "Replace stale split-pending notes only for the exact sourced sense; keep whole-word status and all other identities.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/brush"
+    }
+  ]
+}

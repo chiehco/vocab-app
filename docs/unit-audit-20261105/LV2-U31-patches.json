@@ -1,0 +1,884 @@
+{
+  "unit": "LV2-U31",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "baseCheckpoint": "0fdb2155318c0fcd8899772a6b04fd32ae5dae49",
+  "scope": "Only exact formal fields; all selected original rows compared with the saved before snapshot. No product application by this generator.",
+  "patches": [
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001793",
+      "before": {
+        "meaningEn": "not open",
+        "usagePattern": "shut + N; shut to V; be shut",
+        "usagePatternZh": "關閉某物；關上以……；關閉的"
+      },
+      "after": {
+        "meaningEn": "(v.) to close something, or to move into a closed position; (adj.) not open.",
+        "usagePattern": "shut the door; shut down; be shut",
+        "usagePatternZh": "關上門；（工廠、企業等）關閉／停業；關著的"
+      },
+      "reason": "Restore the existing verb and remove the misleading generic shut-to-infinitive template; retain the adjective.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/shut"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001334",
+      "before": {
+        "meaningEn": "(v.) to say or show what you think or feel; (adj.) done or delivered very quickly; (n.) a fast train, bus, or delivery service",
+        "meaningZh": "快車；快遞；專使；明確的"
+      },
+      "after": {
+        "meaningEn": "(v.) to say or show what you think or feel; (adj.) done or delivered very quickly; (n.) a fast train, bus, or delivery service; also (adv.), by a fast or special delivery service; the adjective can mean explicitly stated, and the noun can mean a specially sent messenger.",
+        "meaningZh": "快車；快遞；專使；明確的；（動詞）表達；（形容詞）快速的／快遞的；（副詞）以快遞方式"
+      },
+      "reason": "Keep the genuine explicit and messenger senses and label the adverb separately. Cover the actual express-delivery construction and existing verb/adverb without deleting inherited senses.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/express; https://www.collinsdictionary.com/dictionary/english/express"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001335",
+      "before": {
+        "meaningZh": "表達；表現；詞語；措辭"
+      },
+      "after": {
+        "meaningZh": "表達；表現；詞語；措辭；表情"
+      },
+      "reason": "Cover the facial-expression sense actually used in the unchanged examples.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/expression"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001633",
+      "before": {
+        "meaningZh": "慣用語；詞組；成語；措詞"
+      },
+      "after": {
+        "meaningZh": "慣用語；詞組；成語；措詞；（動詞）以言語表達；措辭"
+      },
+      "reason": "Separate the existing phrasing verb from phrase nouns.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/phrase"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001516",
+      "before": {
+        "meaningEn": "the fact of no longer having something or having less of it than before; a defeat in a game, contest, or war",
+        "meaningZh": "損失；遺失；失敗；輸"
+      },
+      "after": {
+        "meaningEn": "the fact of no longer having something or having less of it than before; a defeat in a game, contest, or war; also, the death of a relative or friend.",
+        "meaningZh": "損失；遺失；失敗；輸；（親友的）去世；喪失"
+      },
+      "reason": "Cover the explicitly printed bereavement noun while preserving defeat and deprivation. Cover the printed loss-of-person sense.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/loss; https://www.collinsdictionary.com/dictionary/english/loss"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001378",
+      "before": {
+        "meaningZh": "從前的；前者的；起形成作用的人(或物)；模型"
+      },
+      "after": {
+        "meaningZh": "（形容詞）從前的；前者的；（另有名詞用法）起形成作用的人(或物)；模型"
+      },
+      "reason": "Mark the independently verified forming-person/tool noun separately; the exact inherited 模型 translation remains pending, not newly approved.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/former"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001395",
+      "before": {
+        "meaningEn": "to come together in a group, or to bring people or things together",
+        "meaningZh": "集合；聚集；漸增；使聚集"
+      },
+      "after": {
+        "meaningEn": "to come together in a group, or to bring people or things together; also, to collect information or evidence.",
+        "meaningZh": "集合；聚集；漸增；使聚集；收集；蒐集"
+      },
+      "reason": "Cover the printed information-collection verb while retaining gathering together. Cover the information-collection verb; do not remove gradual accumulation.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/gather; https://www.collinsdictionary.com/dictionary/english/gather"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001728",
+      "before": {
+        "meaningEn": "n. a feeling that someone or something is important and deserves to be admired; v. to admire someone because of their qualities or achievements",
+        "meaningZh": "尊敬；尊重；問候；注意"
+      },
+      "after": {
+        "meaningEn": "n. a feeling that someone or something is important and deserves to be admired; v. to admire someone because of their qualities or achievements; also (n.), a particular aspect or detail; (v.), to show consideration for someone's wishes, rights, or opinions.",
+        "meaningZh": "尊敬；尊重；問候；注意；（名詞）方面"
+      },
+      "reason": "Distinguish consideration from admiration and cover the printed in-this-respect noun. Preserve greetings/respects and add the printed aspect sense.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/respect; https://www.collinsdictionary.com/dictionary/english/respect"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001922",
+      "before": {
+        "meaningZh": "貿易；商業；交易；生意"
+      },
+      "after": {
+        "meaningZh": "貿易；商業；交易；生意；手藝；職業；（動詞）買賣；交換"
+      },
+      "reason": "Cover the skilled-occupation example and real verbs, independently of the barter illustration caption.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/trade"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001120",
+      "before": {
+        "meaningEn": "a person engaged in commercial or industrial business (especially an owner or executive)"
+      },
+      "after": {
+        "meaningEn": "A person, especially a man, engaged in commercial or industrial business, especially as an owner or executive."
+      },
+      "reason": "Qualify the existing general definition using the source male/female contrast; not a claim that the older person wording was universally invalid.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/businessman"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001750",
+      "before": {
+        "meaningEn": "a small part of something intended as representative of the whole; all or part of a natural object that is collected and preserved as an example of its class",
+        "usagePattern": "sample + N; sample to V; a/the sample",
+        "usagePatternZh": "品嘗／體驗某物；品嘗以……；樣品／樣本"
+      },
+      "after": {
+        "meaningEn": "a small part of something intended as representative of the whole; all or part of a natural object that is collected and preserved as an example of its class; also (v.), to taste a small amount of food or drink, to try an experience briefly, or to take a representative sample.",
+        "usagePattern": "a sample of N; sample food; a random sample",
+        "usagePatternZh": "……的樣本；品嘗食物；隨機樣本"
+      },
+      "reason": "Restore the existing lexical verb. Replace the unsupported generic sample-to-infinitive pattern with actual noun and verb constructions.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/sample; https://www.collinsdictionary.com/dictionary/english/sample"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001913",
+      "before": {
+        "meaningEn": "slices of bread that have been toasted; a celebrity who receives much acclaim and attention",
+        "usagePattern": "toast + N; toast to V; a/the toast",
+        "usagePatternZh": "烤……；舉杯慶祝……；吐司／乾杯"
+      },
+      "after": {
+        "meaningEn": "slices of bread that have been toasted; a celebrity who receives much acclaim and attention; also (n.), an expression of good wishes accompanied by a drink; (v.), to brown bread with heat or drink to someone's health or success.",
+        "usagePattern": "a slice/piece of toast; propose a toast to sb; toast sb with wine",
+        "usagePatternZh": "一片吐司；向某人舉杯祝酒；用葡萄酒向某人敬酒"
+      },
+      "reason": "Keep the genuine admired-celebrity noun and distinguish bread from a spoken toast. Distinguish uncountable bread from countable good-wishes toast; remove the misleading article/to-V template.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/toast; scripts/sources/LV2Unit31.json; original printed pages271–280 actually viewed; https://www.collinsdictionary.com/dictionary/english/toast"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001140",
+      "before": {
+        "meaningEn": "grass whose starchy grains are used as food: wheat; rice; rye; oats; maize; buckwheat; millet; a breakfast food prepared from grain"
+      },
+      "after": {
+        "meaningEn": "(n.) A grain-producing crop such as wheat, oats, corn, or rice, the grain itself, or a breakfast food made from grain; (separate adjective use) relating to grain or such crops."
+      },
+      "reason": "Preserve crop, grain, breakfast-food and genuine adjective uses; remove the botanical list that incorrectly includes buckwheat among grasses.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/cereal"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001208",
+      "before": {
+        "meaningEn": "the best people or things in a group; the part of milk containing the butterfat",
+        "meaningZh": "乳酪；奶油；面霜；乳油"
+      },
+      "after": {
+        "meaningEn": "the best people or things in a group; the part of milk containing the butterfat; also (n.), a preparation applied to the skin; (adj.), yellowish-white in colour.",
+        "meaningZh": "乳酪；奶油；面霜；乳油；（形容詞）乳白色的；（比喻）精華"
+      },
+      "reason": "Retain milk-fat and best-of-group meanings; add the printed skin and colour senses. Add printed colour and best-of-group coverage; inherited 乳酪 remains pending and is not deleted.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/cream; https://www.collinsdictionary.com/dictionary/english/cream"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001689",
+      "before": {
+        "meaningEn": "any of various soft thick unsweetened baked dishes; (British) the dessert course of a meal ('pud' is used informally)"
+      },
+      "after": {
+        "meaningEn": "any of various soft thick unsweetened baked dishes; (British) the dessert course of a meal ('pud' is used informally); also, a cooked sweet dish, or a soft sweet dessert such as custard."
+      },
+      "reason": "Keep genuine savoury dishes and the British dessert-course sense.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/pudding"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001971",
+      "before": {
+        "meaningEn": "to measure how heavy someone or something is by using a scale",
+        "meaningZh": "稱...重量；衡量；把...壓彎；考慮",
+        "usagePattern": "weigh + N(kg); weigh the pros and cons; weigh in on N",
+        "usagePatternZh": "稱重……公斤；權衡利弊；對……發表意見"
+      },
+      "after": {
+        "meaningEn": "to measure how heavy someone or something is by using a scale; also, to have a particular weight, or to consider something carefully before deciding.",
+        "meaningZh": "稱...重量；衡量；把...壓彎；考慮；重達；重量為",
+        "usagePattern": "weigh N on a scale; weigh + number + kg; weigh the pros and cons; weigh in on N",
+        "usagePatternZh": "用秤稱某物的重量；重量為……公斤；權衡利弊；對……發表意見"
+      },
+      "reason": "Separate measuring an object from having a weight, and retain consideration. Cover the unchanged weighs-kg example. Separate transitive measurement from intransitive weight; preserve the existing weigh-in phrase.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/weigh; https://www.collinsdictionary.com/dictionary/english/weigh; https://www.collinsdictionary.com/dictionary/english/weigh"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001233",
+      "before": {
+        "meaningEn": "the amount or level of something; an academic title given by a college or university"
+      },
+      "after": {
+        "meaningEn": "the amount or level of something; an academic title given by a college or university; also, a unit used to measure temperature or angles."
+      },
+      "reason": "Cover the actual temperature example and printed unit.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/degree"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001931",
+      "before": {
+        "meaningEn": "(n.) something done to deceive or outwit someone; (v.) to deceive someone in a clever way",
+        "meaningZh": "（名詞）詭計；欺詐；謀略；惡作劇；（動詞）欺騙"
+      },
+      "after": {
+        "meaningEn": "(n.) something done to deceive or outwit someone; (v.) to deceive someone in a clever way; also (n.), a clever way of doing something or a skilful action performed to entertain.",
+        "meaningZh": "（名詞）詭計；欺詐；謀略；惡作劇；（動詞）欺騙；（名詞）訣竅；技巧；把戲"
+      },
+      "reason": "Retain deception and approved forms while covering the printed method/knack noun. Cover the printed non-deceptive skill/method sense.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/trick; https://www.collinsdictionary.com/dictionary/english/trick"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002001",
+      "before": {
+        "meaningEn": "an injury to living tissue (especially an injury involving a cut or break in the skin); a casualty to military personnel resulting from combat",
+        "usagePattern": "wound + N; wound to V; a/the wound",
+        "usagePatternZh": "造成……傷口；受傷去做某事；一個／那道傷口"
+      },
+      "after": {
+        "meaningEn": "an injury to living tissue (especially an injury involving a cut or break in the skin); a casualty to military personnel resulting from combat; also (v.), to cause a physical injury or deeply hurt someone's feelings.",
+        "usagePattern": "wound sb; a deep wound; rub salt into the wound",
+        "usagePatternZh": "使某人受傷；深深的傷口；在傷口上灑鹽／雪上加霜"
+      },
+      "reason": "Keep injury/combat nouns and distinguish the lexical injury verb from wind/wound. Replace the misleading generic wound-to-infinitive phrase with actual injury constructions.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/wound; scripts/sources/LV2Unit31.json; original printed pages271–280 actually viewed; https://www.collinsdictionary.com/dictionary/english/wound"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000175",
+      "before": {
+        "meaningZh": "結束；完結；靠近的；親近的",
+        "usagePatternZh": "接近名詞；親密的朋友；關閉 + 名詞（門/商店/會議）"
+      },
+      "after": {
+        "meaningZh": "結束；完結；靠近的；親近的；（動詞）關閉；（副詞）靠近地",
+        "usagePatternZh": "靠近……；親密的朋友；關閉（門／商店）或結束（會議）"
+      },
+      "reason": "Make the already present shut verb visible without changing the shared headword classes or existing precise hints. Keep the same three English constructions and correct the Chinese closing-a-meeting sense.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/close; https://www.collinsdictionary.com/dictionary/english/close"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002692",
+      "before": {
+        "meaningEn": "a sum of money spoken of as the contents of a money purse; a small bag for carrying money",
+        "meaningZh": "錢包；小錢袋；金錢；募捐款",
+        "usagePattern": "a/the purse; purse of N",
+        "usagePatternZh": "錢包；……的錢包"
+      },
+      "after": {
+        "meaningEn": "a sum of money spoken of as the contents of a money purse; a small bag for carrying money; also (US), a handbag.",
+        "meaningZh": "錢包；小錢袋；金錢；募捐款；（美式）手提包",
+        "usagePattern": "carry a purse; the public purse",
+        "usagePatternZh": "攜帶手提包／錢包；公款"
+      },
+      "reason": "Cover the specifically printed US handbag sense while retaining money/funds. Do not replace the genuine money-bag or funds senses. Replace the generic purse-of-N translation, which incorrectly makes every such phrase a bag.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/purse; https://www.collinsdictionary.com/dictionary/english/purse; https://www.collinsdictionary.com/dictionary/english/purse"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001270",
+      "before": {
+        "meaningEn": "an army unit large enough to sustain combat; the act or process of dividing",
+        "usagePattern": "a/the division; division of N",
+        "usagePatternZh": "部門／分歧；……的分工"
+      },
+      "after": {
+        "meaningEn": "an army unit large enough to sustain combat; the act or process of dividing; also, the arithmetic operation of dividing one number by another, or a department of an organization.",
+        "usagePattern": "division of labour; a sales division; do division",
+        "usagePatternZh": "分工；銷售部門；做除法"
+      },
+      "reason": "Retain the genuine military unit and splitting senses. Give concrete noun constructions without translating every division-of phrase as division of labour.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/division; https://www.collinsdictionary.com/dictionary/english/division"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000343",
+      "before": {
+        "meaningEn": "to obtain or receive something; to reach or come into a particular state; to cause someone or something to do or become something",
+        "meaningZh": "得到；獲得；變成；使得",
+        "usagePattern": "get + adj.; get to + V; get used to N/V-ing",
+        "usagePatternZh": "變得+形容詞；開始+動詞原形；習慣於名詞/動名詞"
+      },
+      "after": {
+        "meaningEn": "to obtain or receive something; to reach or come into a particular state; to cause someone or something to do or become something; also, to arrive somewhere, understand something, or become ill.",
+        "meaningZh": "得到；獲得；變成；使得；到達；理解；（疾病）患上",
+        "usagePattern": "get + adj.; get to + V; get to + place; get used to N/V-ing",
+        "usagePatternZh": "變得……；有機會／得以做……（依語境也可指漸漸開始）；到達某地；習慣於……"
+      },
+      "reason": "Cover the actual arrival, understanding and catching-a-cold examples without rewriting them. Keep receive/become/cause while adding meanings used in the current examples. Qualify get-to-V instead of asserting that it always means start; distinguish get-to-place.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/get; https://www.collinsdictionary.com/dictionary/english/get; https://www.collinsdictionary.com/dictionary/english/get"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002988",
+      "before": {
+        "meaningEn": "having been taken in marriage",
+        "usagePattern": "wed + N; wed to V",
+        "usagePatternZh": "與某人結婚；與某人結婚以做某事"
+      },
+      "after": {
+        "meaningEn": "(v.) To marry someone, to become married, or to join people in marriage; often journalistic or old-fashioned.",
+        "usagePattern": "wed sb; be wed to sb",
+        "usagePatternZh": "與某人結婚；與某人結為夫妻"
+      },
+      "reason": "Replace the bare adjectival fragment with the selected verb and remove the misleading wed-to-infinitive pattern.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/wed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004738",
+      "before": {
+        "meaningZh": "重新開始；取回；恢復；再開始"
+      },
+      "after": {
+        "meaningZh": "重新開始；取回；恢復；再開始；（名詞）履歷；簡歷"
+      },
+      "reason": "Cover the existing CV noun separately from the restart verb, preserving identity and both classes.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/resume"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004412",
+      "before": {
+        "meaningZh": "聚集；集中；採集；富集"
+      },
+      "after": {
+        "meaningZh": "聚集；集中；採集；富集；集會；聚會"
+      },
+      "reason": "Cover the existing countable occasion and actual examples; inherited other senses remain.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/gathering"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002934",
+      "before": {
+        "meaningZh": "狡猾的；機敏的"
+      },
+      "after": {
+        "meaningZh": "狡猾的；機敏的；棘手的；難處理的"
+      },
+      "reason": "Cover the actual difficult-task examples and puzzle caption; keep the deceptive-person sense.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/tricky"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003186",
+      "before": {
+        "meaningEn": "a feeling of trust (in someone or something); a state of confident hopefulness that events will be favorable",
+        "meaningZh": "信心；可靠",
+        "usagePattern": "a/the confidence; confidence of N",
+        "usagePatternZh": "某種信心／該信心；對……的信心"
+      },
+      "after": {
+        "meaningEn": "a feeling of trust (in someone or something); a state of confident hopefulness that events will be favorable; also, a feeling of certainty in one's own abilities.",
+        "meaningZh": "信心；可靠；自信；信任",
+        "usagePattern": "have confidence in N; lose confidence in N; with confidence",
+        "usagePatternZh": "對……有信心；對……失去信心；有信心地"
+      },
+      "reason": "Restore self-confidence without deleting trust in others. Preserve inherited 可靠 pending exact translation evidence. Replace generic article/of constructions with actual confidence-in patterns.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/confidence; https://www.collinsdictionary.com/dictionary/english/confidence; https://www.collinsdictionary.com/dictionary/english/confidence"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005933",
+      "before": {
+        "meaningEn": "a formally registered symbol identifying the manufacturer or distributor of a product; register the trademark of"
+      },
+      "after": {
+        "meaningEn": "(n.) A name or symbol identifying a product's manufacturer or distributor, or a characteristic associated with a person or thing; (separate verb use) to label with or register as a trademark."
+      },
+      "reason": "Label the independently verified verb separately; not every trademark is already registered. Keep formal noun POS unchanged.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/trademark"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003852",
+      "before": {
+        "meaningEn": "characterized by socially or conventionally acceptable morals"
+      },
+      "after": {
+        "meaningEn": "characterized by socially or conventionally acceptable morals; also, worthy of respect, good enough or acceptable, or fairly large in amount."
+      },
+      "reason": "Preserve the existing moral sense and the genuine adequate-amount adjective; inherited noun translation stays pending.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/respectable"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001310",
+      "before": {
+        "meaningEn": "a person, group, or country that opposes and tries to harm another"
+      },
+      "after": {
+        "meaningEn": "a person, group, or country that opposes and tries to harm another; also, something that harms or prevents the success of something else."
+      },
+      "reason": "Cover the actual pollution example and printed laziness use without restricting the noun to people or armies.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/enemy"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXeabcff8e",
+      "before": {
+        "sensePos": "v.",
+        "sentenceEn": "He sent the package by express delivery so it would arrive the next day.",
+        "blankSentence": "He sent the package by _____ delivery so it would arrive the next day.",
+        "answer": "express"
+      },
+      "after": {
+        "sensePos": "adj."
+      },
+      "reason": "Classify only the actual cloze target in its complete unchanged sentence; preserve the formal headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/express"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXcb2891da",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "She phrased her complaint politely so as not to upset the manager.",
+        "blankSentence": "She _____ her complaint politely so as not to upset the manager.",
+        "answer": "phrased"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Classify only the actual cloze target in its complete unchanged sentence; preserve the formal headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/phrase"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX4be45d67",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "This tie doesn't match your shirt very well.",
+        "blankSentence": "This tie doesn't _____ your shirt very well.",
+        "answer": "match"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Classify only the actual cloze target in its complete unchanged sentence; preserve the formal headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/match"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX5fdc0b57",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "We should respect other people's opinions even if we disagree with them.",
+        "blankSentence": "We should _____ other people's opinions even if we disagree with them.",
+        "answer": "respect"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Classify only the actual cloze target in its complete unchanged sentence; preserve the formal headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/respect"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX8940fb56",
+      "before": {
+        "sensePos": "adj.",
+        "sentenceEn": "We watched a funny commercial for a new phone during the TV show.",
+        "blankSentence": "We watched a funny _____ for a new phone during the TV show.",
+        "answer": "commercial"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Classify only the actual cloze target in its complete unchanged sentence; preserve the formal headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/commercial"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX43e3591f",
+      "before": {
+        "sensePos": "adj.",
+        "sentenceEn": "Many people associate the color red with excitement, danger, or passion.",
+        "blankSentence": "Many people _____ the color red with excitement, danger, or passion.",
+        "answer": "associate"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Classify only the actual cloze target in its complete unchanged sentence; preserve the formal headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/associate"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXacf989e4",
+      "before": {
+        "sensePos": "adj.",
+        "sentenceEn": "Mr. Lin introduced me to several of his business associates at the dinner.",
+        "blankSentence": "Mr. Lin introduced me to several of his business _____ at the dinner.",
+        "answer": "associates"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Classify only the actual cloze target in its complete unchanged sentence; preserve the formal headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/associate"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXf9f08ca0",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "Too much sunlight can damage your skin if you don't wear sunscreen.",
+        "blankSentence": "Too much sunlight can _____ your skin if you don't wear sunscreen.",
+        "answer": "damage"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Classify only the actual cloze target in its complete unchanged sentence; preserve the formal headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/damage"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX63b77d47",
+      "before": {
+        "meaningHint": "方法、手段（考點：a means to 達成目的的方法，單複數同形）",
+        "sentenceEn": "For many villagers, the river is still the only means of transport.",
+        "blankSentence": "For many villagers, the river is still the only _____ of transport.",
+        "answer": "means"
+      },
+      "after": {
+        "meaningHint": "方法、手段（交通方式）"
+      },
+      "reason": "Refine only the nonempty hint to the actual unchanged sentence; broad valid headword meanings are not all errors.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/means"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1981033a",
+      "before": {
+        "meaningHint": "得到；獲得；變成；使得",
+        "sentenceEn": "Jay got a new scooter the day before yesterday.",
+        "blankSentence": "Jay _____ a new scooter the day before yesterday.",
+        "answer": "got"
+      },
+      "after": {
+        "meaningHint": "得到；取得（如車輛）"
+      },
+      "reason": "Refine only the nonempty hint to the actual unchanged sentence; broad valid headword meanings are not all errors.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/get"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX285fdbfc",
+      "before": {
+        "meaningHint": "得到；獲得；變成；使得",
+        "sentenceEn": "Dan got to the department store five minutes after it closed.",
+        "blankSentence": "Dan _____ to the department store five minutes after it closed.",
+        "answer": "got"
+      },
+      "after": {
+        "meaningHint": "到達（get to + 地點）"
+      },
+      "reason": "Refine only the nonempty hint to the actual unchanged sentence; broad valid headword meanings are not all errors.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/get"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX2c838de8",
+      "before": {
+        "meaningHint": "得到；獲得；變成；使得",
+        "sentenceEn": "Sean got his mother mad because he didn't clean his room.",
+        "blankSentence": "Sean _____ his mother mad because he didn't clean his room.",
+        "answer": "got"
+      },
+      "after": {
+        "meaningHint": "使……變得（get sb + adj.）"
+      },
+      "reason": "Refine only the nonempty hint to the actual unchanged sentence; broad valid headword meanings are not all errors.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/get"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX626337d8",
+      "before": {
+        "meaningHint": "得到；獲得；變成；使得",
+        "sentenceEn": "Mickey told a joke, but no one got it.",
+        "blankSentence": "Mickey told a joke, but no one _____ it.",
+        "answer": "got"
+      },
+      "after": {
+        "meaningHint": "理解；聽懂"
+      },
+      "reason": "Refine only the nonempty hint to the actual unchanged sentence; broad valid headword meanings are not all errors.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/get"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX94d3c166",
+      "before": {
+        "meaningHint": "得到；獲得；變成；使得",
+        "sentenceEn": "Tommy thinks he got a cold from his sister.",
+        "blankSentence": "Tommy thinks he _____ a cold from his sister.",
+        "answer": "got"
+      },
+      "after": {
+        "meaningHint": "患上；染上（感冒）"
+      },
+      "reason": "Refine only the nonempty hint to the actual unchanged sentence; broad valid headword meanings are not all errors.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/get"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX9fc672f2",
+      "before": {
+        "meaningHint": "得到；獲得；變成；使得",
+        "sentenceEn": "Wendy got her friend a cup of tea.",
+        "blankSentence": "Wendy _____ her friend a cup of tea.",
+        "answer": "got"
+      },
+      "after": {
+        "meaningHint": "為……取得（get sb sth）"
+      },
+      "reason": "Refine only the nonempty hint to the actual unchanged sentence; broad valid headword meanings are not all errors.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/get"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXa27d1772",
+      "before": {
+        "meaningHint": "得到；獲得；變成；使得",
+        "sentenceEn": "After walking for 45 minutes, Jack got a bit tired.",
+        "blankSentence": "After walking for 45 minutes, Jack _____ a bit tired.",
+        "answer": "got"
+      },
+      "after": {
+        "meaningHint": "變得（疲累）"
+      },
+      "reason": "Refine only the nonempty hint to the actual unchanged sentence; broad valid headword meanings are not all errors.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/get"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXbd1a35c7",
+      "before": {
+        "meaningHint": "得到；獲得；變成；使得",
+        "sentenceEn": "Nancy got a lot of great gifts for her birthday.",
+        "blankSentence": "Nancy _____ a lot of great gifts for her birthday.",
+        "answer": "got"
+      },
+      "after": {
+        "meaningHint": "收到（禮物）"
+      },
+      "reason": "Refine only the nonempty hint to the actual unchanged sentence; broad valid headword meanings are not all errors.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/get"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXc48763e5",
+      "before": {
+        "meaningHint": "得到；獲得；變成；使得",
+        "sentenceEn": "Wendy got a cup of tea for her friend.",
+        "blankSentence": "Wendy _____ a cup of tea for her friend.",
+        "answer": "got"
+      },
+      "after": {
+        "meaningHint": "為……取得（get sth for sb）"
+      },
+      "reason": "Refine only the nonempty hint to the actual unchanged sentence; broad valid headword meanings are not all errors.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/get"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXd144fb02",
+      "before": {
+        "meaningHint": "得到；獲得；變成；使得",
+        "sentenceEn": "Melvin gets home from the office at 7:30 p.m. every day.",
+        "blankSentence": "Melvin _____ home from the office at 7:30 p.m. every day.",
+        "answer": "gets"
+      },
+      "after": {
+        "meaningHint": "到達（get home：到家）"
+      },
+      "reason": "Refine only the nonempty hint to the actual unchanged sentence; broad valid headword meanings are not all errors.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/get"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX59c1630b",
+      "before": {
+        "status": "draft",
+        "sentenceEn": "Students should show respect to their teachers.",
+        "blankSentence": "Students should show _____ to their teachers.",
+        "answer": "respect"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "The complete independent practice sentence and translation have been checked; this is not an original-exam attribution.",
+      "evidence": "Complete unchanged practice and https://www.collinsdictionary.com/dictionary/english/respect"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXfc8db742",
+      "before": {
+        "status": "draft",
+        "sentenceEn": "Her eyes are so expressive that words are often unnecessary.",
+        "blankSentence": "Her eyes are so _____ that words are often unnecessary.",
+        "answer": "expressive"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "The complete independent practice sentence and translation have been checked; this is not an original-exam attribution.",
+      "evidence": "Complete unchanged practice and https://www.collinsdictionary.com/dictionary/english/expressive"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W003072-1",
+      "before": {
+        "note": "待拆分；主表字義：同伴；夥伴；關聯的事物；使聯合",
+        "status": "needs_check"
+      },
+      "after": {
+        "note": "已核此既有 adj. 義項及完整例句；副職稱、工作夥伴與聯想／交往分列，保留整詞狀態。來源：https://www.collinsdictionary.com/dictionary/english/associate",
+        "status": "reviewed"
+      },
+      "reason": "Verify only the three already separated senses; remove stale split-pending wording.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/associate"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W003072-2",
+      "before": {
+        "note": "待拆分；主表字義：同伴；夥伴；關聯的事物；使聯合",
+        "status": "needs_check"
+      },
+      "after": {
+        "note": "已核此既有 n. 義項及完整例句；副職稱、工作夥伴與聯想／交往分列，保留整詞狀態。來源：https://www.collinsdictionary.com/dictionary/english/associate",
+        "status": "reviewed"
+      },
+      "reason": "Verify only the three already separated senses; remove stale split-pending wording.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/associate"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W003072-3",
+      "before": {
+        "note": "待拆分；主表字義：同伴；夥伴；關聯的事物；使聯合",
+        "status": "needs_check"
+      },
+      "after": {
+        "note": "已核此既有 v. 義項及完整例句；副職稱、工作夥伴與聯想／交往分列，保留整詞狀態。來源：https://www.collinsdictionary.com/dictionary/english/associate",
+        "status": "reviewed"
+      },
+      "reason": "Verify only the three already separated senses; remove stale split-pending wording.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/associate"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000343-1",
+      "before": {
+        "note": "另有：變得（get tired）、理解，需要可加列｜待拆分；主表字義：得到；獲得；變成；使得"
+      },
+      "after": {
+        "note": "已核既有得到／拿到義；字卡另含變得、到達、理解、患病等語境。這不新增義項 ID，也不宣稱整詞全部義項通過。來源：https://www.collinsdictionary.com/dictionary/english/get"
+      },
+      "reason": "Replace stale split-pending wording after checking actual get constructions.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/get"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W002307-1",
+      "before": {
+        "examEvidence": "學測108 詞彙題Q7",
+        "note": "考點：能傳達情感或訊息",
+        "status": "draft"
+      },
+      "after": {
+        "examEvidence": "學測108 詞彙題Q7，印刷第1頁，B＝expressive；官方試題：https://www.ceec.edu.tw/files/file_pool/1/0j196548669826315609/01-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf；官方答案：https://www.ceec.edu.tw/files/file_pool/1/0j196548660460294627/02-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88.pdf",
+        "note": "已實讀官方 PDF 文字層的題幹、四選項與答案：沉默也能傳達不同意或缺乏興趣。EXd5209937 與填入答案後的原題逐字比對（空白正規化）一致；其餘眼神練習為另寫情境。只核此義項來源，不認證整詞。",
+        "status": "reviewed"
+      },
+      "reason": "Record exact official question and answer, independently of the dictionary sense.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0j196548669826315609/01-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf; https://www.ceec.edu.tw/files/file_pool/1/0j196548660460294627/02-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88.pdf"
+    }
+  ]
+}

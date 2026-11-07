@@ -1,0 +1,53 @@
+{
+  "state": "local_checks_and_exact_consumer_head_ci_success",
+  "originalVitestTimeoutMs": 5000,
+  "workers": 1,
+  "regression": {
+    "finalTargetedFiles": 4,
+    "finalTargetedTests": 76,
+    "otherRequiredSuccessfulFiles": 9,
+    "otherSuccessfulTests": 143,
+    "uniqueFilesAcrossAcceptedRuns": 13,
+    "uniqueTestsAcrossAcceptedRuns": 219,
+    "singleCombinedRun": false,
+    "earlierFailuresPreserved": true
+  },
+  "pythonExactImageBoundaryTests": 3,
+  "lint": "success",
+  "typecheck": "success",
+  "build": "success",
+  "sourceDraftCheck": "success",
+  "sourceIntegrationCheck": "success",
+  "publishedImageHttp": {
+    "base": "http://127.0.0.1:5179",
+    "images": 726,
+    "passed": 726,
+    "galleryExactMatch": true,
+    "failures": []
+  },
+  "fullRegistryAndSingleGalleryInverse": true,
+  "unrelatedHistoricalHashesUnchanged": true,
+  "newHeadCi": {
+    "commit": "7ff55408250827184e243d2a83f31ca77088c3ee",
+    "run": 42283703235,
+    "job": 128118970362,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42283703235/job/128118970362",
+    "status": "completed",
+    "conclusion": "success",
+    "checkoutShaReadFromFullLog": true,
+    "testFiles": 233,
+    "tests": 1903,
+    "pythonBatches": [
+      14,
+      7,
+      78,
+      3,
+      10
+    ],
+    "lint": "success",
+    "typecheck": "success",
+    "build": "success",
+    "buildLogCompletedAtUtc": "2026-11-06T20:11:49.1798035Z",
+    "jobCompletedAtUtc": "2026-11-06T20:11:53Z"
+  }
+}

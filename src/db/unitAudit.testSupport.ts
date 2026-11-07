@@ -1,3 +1,8 @@
+import lv2u45Wicked from '../../docs/unit-audit-20261105/LV2-U45-wicked-usage-followup.json';
+import lv2u41Usage from '../../docs/unit-audit-20261105/LV2-U41-usage-followup.json';
+import lv2u40Visible from '../../docs/unit-audit-20261105/LV2-U40-visible-pos-followup.json';
+import lv2u39Speed from '../../docs/unit-audit-20261105/LV2-U39-speed-usage-followup.json';
+import lv2u38Only from '../../docs/unit-audit-20261105/LV2-U38-only-definition-followup.json';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
@@ -118,36 +123,188 @@ import verifiedU25Forms from '../../docs/unit-audit-20261105/VERIFIED-U25-VERB-F
 import eitherNote from '../../docs/unit-audit-20261105/LV1-U10-either-note-followup.json';
 import verifiedEitherNote from '../../docs/unit-audit-20261105/VERIFIED-U10-EITHER-NOTE-SOURCES.json';
 
+import lv2u27 from '../../docs/unit-audit-20261105/LV2-U27-patches.json';
+import lv2u27Forms from '../../docs/unit-audit-20261105/LV2-U27-verified-forms-patches.json';
+import verifiedLV2U27Forms from '../../docs/unit-audit-20261105/VERIFIED-LV2-U27-VERB-FORMS-SOURCES.json';
+import lv2u27Notes from '../../docs/unit-audit-20261105/LV2-U27-notes-patches.json';
+import verifiedLV2U27Notes from '../../docs/unit-audit-20261105/VERIFIED-LV2-U27-NOTE-SOURCES.json';
+
+import lv2u28 from '../../docs/unit-audit-20261105/LV2-U28-patches.json';
+import lv2u28Forms from '../../docs/unit-audit-20261105/LV2-U28-verified-forms-patches.json';
+import verifiedLV2U28Forms from '../../docs/unit-audit-20261105/VERIFIED-LV2-U28-VERB-FORMS-SOURCES.json';
+import lv2u28Notes from '../../docs/unit-audit-20261105/LV2-U28-notes-patches.json';
+import verifiedLV2U28Notes from '../../docs/unit-audit-20261105/VERIFIED-LV2-U28-NOTE-SOURCES.json';
+
+import lv2u29 from '../../docs/unit-audit-20261105/LV2-U29-patches.json';
+import lv2u29Forms from '../../docs/unit-audit-20261105/LV2-U29-verified-forms-patches.json';
+import verifiedLV2U29Forms from '../../docs/unit-audit-20261105/VERIFIED-LV2-U29-VERB-FORMS-SOURCES.json';
+import lv2u29Notes from '../../docs/unit-audit-20261105/LV2-U29-notes-patches.json';
+import verifiedLV2U29Notes from '../../docs/unit-audit-20261105/VERIFIED-LV2-U29-NOTE-SOURCES.json';
+import lv2u29Translations from '../../docs/unit-audit-20261105/LV2-U29-translations-patches.json';
+import verifiedLV2U29Translations from '../../docs/unit-audit-20261105/VERIFIED-LV2-U29-TRANSLATION-SOURCES.json';
+import lv2u30 from '../../docs/unit-audit-20261105/LV2-U30-patches.json';
+import lv2u30Forms from '../../docs/unit-audit-20261105/LV2-U30-verified-forms-patches.json';
+import verifiedLV2U30Forms from '../../docs/unit-audit-20261105/VERIFIED-LV2-U30-VERB-FORMS-SOURCES.json';
+import lv2u30Notes from '../../docs/unit-audit-20261105/LV2-U30-notes-patches.json';
+import verifiedLV2U30Notes from '../../docs/unit-audit-20261105/VERIFIED-LV2-U30-NOTE-SOURCES.json';
+import lv2u30Translations from '../../docs/unit-audit-20261105/LV2-U30-translations-patches.json';
+import verifiedLV2U30Translations from '../../docs/unit-audit-20261105/VERIFIED-LV2-U30-TRANSLATION-SOURCES.json';
+
+import lv2u31 from '../../docs/unit-audit-20261105/LV2-U31-patches.json';
+import lv2u31Forms from '../../docs/unit-audit-20261105/LV2-U31-verified-forms-patches.json';
+import verifiedLV2U31Forms from '../../docs/unit-audit-20261105/VERIFIED-LV2-U31-VERB-FORMS-SOURCES.json';
+import lv2u31Notes from '../../docs/unit-audit-20261105/LV2-U31-notes-patches.json';
+import verifiedLV2U31Notes from '../../docs/unit-audit-20261105/VERIFIED-LV2-U31-NOTE-SOURCES.json';
+
+import lv2u32 from '../../docs/unit-audit-20261105/LV2-U32-patches.json';
+import lv2u32Forms from '../../docs/unit-audit-20261105/LV2-U32-verified-forms-patches.json';
+import verifiedLV2U32Forms from '../../docs/unit-audit-20261105/VERIFIED-LV2-U32-VERB-FORMS-SOURCES.json';
+import lv2u32Notes from '../../docs/unit-audit-20261105/LV2-U32-notes-patches.json';
+import verifiedLV2U32Notes from '../../docs/unit-audit-20261105/VERIFIED-LV2-U32-NOTE-SOURCES.json';
+import lv2u32Translations from '../../docs/unit-audit-20261105/LV2-U32-translations-patches.json';
+import verifiedLV2U32Translations from '../../docs/unit-audit-20261105/VERIFIED-LV2-U32-TRANSLATION-SOURCES.json';
+import lv2u33 from '../../docs/unit-audit-20261105/LV2-U33-patches.json';
+import lv2u33Forms from '../../docs/unit-audit-20261105/LV2-U33-verified-forms-patches.json';
+import verifiedLV2U33Forms from '../../docs/unit-audit-20261105/VERIFIED-LV2-U33-VERB-FORMS-SOURCES.json';
+import lv2u33Notes from '../../docs/unit-audit-20261105/LV2-U33-notes-patches.json';
+import verifiedLV2U33Notes from '../../docs/unit-audit-20261105/VERIFIED-LV2-U33-NOTE-SOURCES.json';
+import lv2u33Translations from '../../docs/unit-audit-20261105/LV2-U33-translations-patches.json';
+import verifiedLV2U33Translations from '../../docs/unit-audit-20261105/VERIFIED-LV2-U33-TRANSLATION-SOURCES.json';
+import lv2u34 from '../../docs/unit-audit-20261105/LV2-U34-patches.json';
+import lv2u34Forms from '../../docs/unit-audit-20261105/LV2-U34-verified-forms-patches.json';
+import verifiedLV2U34Forms from '../../docs/unit-audit-20261105/VERIFIED-LV2-U34-VERB-FORMS-SOURCES.json';
+import lv2u34Notes from '../../docs/unit-audit-20261105/LV2-U34-notes-patches.json';
+import verifiedLV2U34Notes from '../../docs/unit-audit-20261105/VERIFIED-LV2-U34-NOTE-SOURCES.json';
+import lv2u35 from '../../docs/unit-audit-20261105/LV2-U35-patches.json';
+import lv2u35Forms from '../../docs/unit-audit-20261105/LV2-U35-verified-forms-patches.json';
+import verifiedLV2U35Forms from '../../docs/unit-audit-20261105/VERIFIED-LV2-U35-VERB-FORMS-SOURCES.json';
+import lv2u35Notes from '../../docs/unit-audit-20261105/LV2-U35-notes-patches.json';
+import verifiedLV2U35Notes from '../../docs/unit-audit-20261105/VERIFIED-LV2-U35-NOTE-SOURCES.json';
+import lv2u35Translations from '../../docs/unit-audit-20261105/LV2-U35-translations-patches.json';
+import verifiedLV2U35Translations from '../../docs/unit-audit-20261105/VERIFIED-LV2-U35-TRANSLATION-SOURCES.json';
+import lv2u36 from '../../docs/unit-audit-20261105/LV2-U36-patches.json';
+import lv2u36Forms from '../../docs/unit-audit-20261105/LV2-U36-verified-forms-patches.json';
+import verifiedLV2U36Forms from '../../docs/unit-audit-20261105/VERIFIED-LV2-U36-VERB-FORMS-SOURCES.json';
+import lv2u36Notes from '../../docs/unit-audit-20261105/LV2-U36-notes-patches.json';
+import verifiedLV2U36Notes from '../../docs/unit-audit-20261105/VERIFIED-LV2-U36-NOTE-SOURCES.json';
+import lv2u37 from '../../docs/unit-audit-20261105/LV2-U37-patches.json';
+import lv2u37Forms from '../../docs/unit-audit-20261105/LV2-U37-verified-forms-patches.json';
+import verifiedLV2U37Forms from '../../docs/unit-audit-20261105/VERIFIED-LV2-U37-VERB-FORMS-SOURCES.json';
+import lv2u37Notes from '../../docs/unit-audit-20261105/LV2-U37-notes-patches.json';
+import verifiedLV2U37Notes from '../../docs/unit-audit-20261105/VERIFIED-LV2-U37-NOTE-SOURCES.json';
+import lv2u38 from '../../docs/unit-audit-20261105/LV2-U38-patches.json';
+import lv2u38Forms from '../../docs/unit-audit-20261105/LV2-U38-verified-forms-patches.json';
+import verifiedLV2U38Forms from '../../docs/unit-audit-20261105/VERIFIED-LV2-U38-VERB-FORMS-SOURCES.json';
+import lv2u38Notes from '../../docs/unit-audit-20261105/LV2-U38-notes-patches.json';
+import verifiedLV2U38Notes from '../../docs/unit-audit-20261105/VERIFIED-LV2-U38-NOTE-SOURCES.json';
+import lv2u39 from '../../docs/unit-audit-20261105/LV2-U39-patches.json';
+import lv2u39Forms from '../../docs/unit-audit-20261105/LV2-U39-verified-forms-patches.json';
+import verifiedLV2U39Forms from '../../docs/unit-audit-20261105/VERIFIED-LV2-U39-VERB-FORMS-SOURCES.json';
+import lv2u39Notes from '../../docs/unit-audit-20261105/LV2-U39-notes-patches.json';
+import verifiedLV2U39Notes from '../../docs/unit-audit-20261105/VERIFIED-LV2-U39-NOTE-SOURCES.json';
+import lv2u40 from '../../docs/unit-audit-20261105/LV2-U40-patches.json';
+import lv2u40Forms from '../../docs/unit-audit-20261105/LV2-U40-verified-forms-patches.json';
+import verifiedLV2U40Forms from '../../docs/unit-audit-20261105/VERIFIED-LV2-U40-VERB-FORMS-SOURCES.json';
+import lv2u40Notes from '../../docs/unit-audit-20261105/LV2-U40-notes-patches.json';
+import verifiedLV2U40Notes from '../../docs/unit-audit-20261105/VERIFIED-LV2-U40-NOTE-SOURCES.json';
+import lv2u41 from '../../docs/unit-audit-20261105/LV2-U41-patches.json';
+import lv2u41Forms from '../../docs/unit-audit-20261105/LV2-U41-verified-forms-patches.json';
+import verifiedLV2U41Forms from '../../docs/unit-audit-20261105/VERIFIED-LV2-U41-VERB-FORMS-SOURCES.json';
+import lv2u41Notes from '../../docs/unit-audit-20261105/LV2-U41-notes-patches.json';
+import verifiedLV2U41Notes from '../../docs/unit-audit-20261105/VERIFIED-LV2-U41-NOTE-SOURCES.json';
+import lv2u42 from '../../docs/unit-audit-20261105/LV2-U42-patches.json';
+import lv2u42Forms from '../../docs/unit-audit-20261105/LV2-U42-verified-forms-patches.json';
+import verifiedLV2U42Forms from '../../docs/unit-audit-20261105/VERIFIED-LV2-U42-VERB-FORMS-SOURCES.json';
+import lv2u42Notes from '../../docs/unit-audit-20261105/LV2-U42-notes-patches.json';
+import verifiedLV2U42Notes from '../../docs/unit-audit-20261105/VERIFIED-LV2-U42-NOTE-SOURCES.json';
+import verifiedLV2U42Translations from '../../docs/unit-audit-20261105/VERIFIED-LV2-U42-TRANSLATION-SOURCES.json';
+import lv2u43 from '../../docs/unit-audit-20261105/LV2-U43-patches.json';
+import lv2u43Forms from '../../docs/unit-audit-20261105/LV2-U43-verified-forms-patches.json';
+import verifiedLV2U43Forms from '../../docs/unit-audit-20261105/VERIFIED-LV2-U43-VERB-FORMS-SOURCES.json';
+import lv2u43Notes from '../../docs/unit-audit-20261105/LV2-U43-notes-patches.json';
+import verifiedLV2U43Notes from '../../docs/unit-audit-20261105/VERIFIED-LV2-U43-NOTE-SOURCES.json';
+import verifiedLV2U43Translations from '../../docs/unit-audit-20261105/VERIFIED-LV2-U43-TRANSLATION-SOURCES.json';
+import lv2u44 from '../../docs/unit-audit-20261105/LV2-U44-patches.json';
+import lv2u44Forms from '../../docs/unit-audit-20261105/LV2-U44-verified-forms-patches.json';
+import verifiedLV2U44Forms from '../../docs/unit-audit-20261105/VERIFIED-LV2-U44-VERB-FORMS-SOURCES.json';
+import lv2u44Notes from '../../docs/unit-audit-20261105/LV2-U44-notes-patches.json';
+import verifiedLV2U44Notes from '../../docs/unit-audit-20261105/VERIFIED-LV2-U44-NOTE-SOURCES.json';
+import verifiedLV2U44Translations from '../../docs/unit-audit-20261105/VERIFIED-LV2-U44-TRANSLATION-SOURCES.json';
+import lv2u45 from '../../docs/unit-audit-20261105/LV2-U45-patches.json';
+import lv2u45Forms from '../../docs/unit-audit-20261105/LV2-U45-verified-forms-patches.json';
+import verifiedLV2U45Forms from '../../docs/unit-audit-20261105/VERIFIED-LV2-U45-VERB-FORMS-SOURCES.json';
+import lv2u45Notes from '../../docs/unit-audit-20261105/LV2-U45-notes-patches.json';
+import verifiedLV2U45Notes from '../../docs/unit-audit-20261105/VERIFIED-LV2-U45-NOTE-SOURCES.json';
+import verifiedLV2U45Translations from '../../docs/unit-audit-20261105/VERIFIED-LV2-U45-TRANSLATION-SOURCES.json';
+import lv2u46 from '../../docs/unit-audit-20261105/LV2-U46-patches.json';
+import lv2u46Forms from '../../docs/unit-audit-20261105/LV2-U46-verified-forms-patches.json';
+import verifiedLV2U46Forms from '../../docs/unit-audit-20261105/VERIFIED-LV2-U46-VERB-FORMS-SOURCES.json';
+import lv2u46Notes from '../../docs/unit-audit-20261105/LV2-U46-notes-patches.json';
+import verifiedLV2U46Notes from '../../docs/unit-audit-20261105/VERIFIED-LV2-U46-NOTE-SOURCES.json';
+import verifiedLV2U46Translations from '../../docs/unit-audit-20261105/VERIFIED-LV2-U46-TRANSLATION-SOURCES.json';
+import lv2u47 from '../../docs/unit-audit-20261105/LV2-U47-patches.json';
+import lv2u47Forms from '../../docs/unit-audit-20261105/LV2-U47-verified-forms-patches.json';
+import verifiedLV2U47Forms from '../../docs/unit-audit-20261105/VERIFIED-LV2-U47-VERB-FORMS-SOURCES.json';
+import lv2u47Notes from '../../docs/unit-audit-20261105/LV2-U47-notes-patches.json';
+import verifiedLV2U47Notes from '../../docs/unit-audit-20261105/VERIFIED-LV2-U47-NOTE-SOURCES.json';
+import verifiedLV2U47Translations from '../../docs/unit-audit-20261105/VERIFIED-LV2-U47-TRANSLATION-SOURCES.json';
+import lv2u48 from '../../docs/unit-audit-20261105/LV2-U48-patches.json';
+import lv2u48Forms from '../../docs/unit-audit-20261105/LV2-U48-verified-forms-patches.json';
+import verifiedLV2U48Forms from '../../docs/unit-audit-20261105/VERIFIED-LV2-U48-VERB-FORMS-SOURCES.json';
+import lv2u48Notes from '../../docs/unit-audit-20261105/LV2-U48-notes-patches.json';
+import verifiedLV2U48Notes from '../../docs/unit-audit-20261105/VERIFIED-LV2-U48-NOTE-SOURCES.json';
+import verifiedLV2U48Translations from '../../docs/unit-audit-20261105/VERIFIED-LV2-U48-TRANSLATION-SOURCES.json';
+import lv2u49 from '../../docs/unit-audit-20261105/LV2-U49-patches.json';
+import lv2u49Forms from '../../docs/unit-audit-20261105/LV2-U49-verified-forms-patches.json';
+import verifiedLV2U49Forms from '../../docs/unit-audit-20261105/VERIFIED-LV2-U49-VERB-FORMS-SOURCES.json';
+import lv2u49Notes from '../../docs/unit-audit-20261105/LV2-U49-notes-patches.json';
+import verifiedLV2U49Notes from '../../docs/unit-audit-20261105/VERIFIED-LV2-U49-NOTE-SOURCES.json';
+import verifiedLV2U49Translations from '../../docs/unit-audit-20261105/VERIFIED-LV2-U49-TRANSLATION-SOURCES.json';
+import lv2u50 from '../../docs/unit-audit-20261105/LV2-U50-patches.json';
+import lv2u50Forms from '../../docs/unit-audit-20261105/LV2-U50-verified-forms-patches.json';
+import verifiedLV2U50Forms from '../../docs/unit-audit-20261105/VERIFIED-LV2-U50-VERB-FORMS-SOURCES.json';
+import lv2u50Notes from '../../docs/unit-audit-20261105/LV2-U50-notes-patches.json';
+import verifiedLV2U50Notes from '../../docs/unit-audit-20261105/VERIFIED-LV2-U50-NOTE-SOURCES.json';
+import verifiedLV2U50Translations from '../../docs/unit-audit-20261105/VERIFIED-LV2-U50-TRANSLATION-SOURCES.json';
 type Row = Record<string, unknown>;
 type Patch = {dataset:string; key:string; id:string; before:Row; after:Row; reason:string; evidence:string};
 const patches:Patch[]=[...u1.patches,...u2.patches,...pig.patches,...u3.patches,...u3Remaining.patches,...u4.patches,...u5.patches,...u6.patches,...u6Syntax.patches,...examSources.patches,...u7.patches,...u7Hints.patches,...lexicalSources.patches,...catDefinition.patches,...u7VerifiedExams.patches,...u8.patches,...demandVisible.patches,...u9.patches,...u8Hints.patches,...translations.patches,...forms.patches,...u10.patches,...u11.patches,...u11Usage.patches,...u12.patches,...u12Usage.patches,...u13.patches,...u13Definition.patches,...followupForms.patches,...u14.patches,...u14Translation.patches,...u15.patches,...u15Usage.patches,...u16.patches,...u16Forms.patches,...wordingFollowup.patches];
 
-patches.push(...dieNote.patches,...u17.patches,...u17Forms.patches,...u17Definition.patches,...u18.patches,...u18Forms.patches,...u18Translations.patches,...u19.patches,...u19Forms.patches,...u20.patches,...u20Forms.patches,...u21.patches,...u21Forms.patches,...integratedU05U06.patches,...integratedU07.patches,...integratedU08U09.patches,...integratedU10.patches,...integratedU11.patches,...integratedU12.patches,...integratedU13.patches,...integratedU14.patches,...integratedU15.patches,...u22.patches,...u22Translation.patches,...u22Forms.patches,...u23.patches,...u23Translation.patches,...u23Forms.patches,...u24.patches,...u24Forms.patches,...u24Followup.patches,...u24Carrot.patches,...u25.patches,...u25Forms.patches);
+patches.push(...dieNote.patches,...u17.patches,...u17Forms.patches,...u17Definition.patches,...u18.patches,...u18Forms.patches,...u18Translations.patches,...u19.patches,...u19Forms.patches,...u20.patches,...u20Forms.patches,...u21.patches,...u21Forms.patches,...integratedU05U06.patches,...integratedU07.patches,...integratedU08U09.patches,...integratedU10.patches,...integratedU11.patches,...integratedU12.patches,...integratedU13.patches,...integratedU14.patches,...integratedU15.patches,...u22.patches,...u22Translation.patches,...u22Forms.patches,...u23.patches,...u23Translation.patches,...u23Forms.patches,...u24.patches,...u24Forms.patches,...u24Followup.patches,...u24Carrot.patches,...u25.patches,...u25Forms.patches,...lv2u27.patches,...lv2u27Notes.patches,...lv2u27Forms.patches,...lv2u28.patches,...lv2u28Notes.patches,...lv2u28Forms.patches,...lv2u29.patches,...lv2u29Notes.patches,...lv2u29Translations.patches,...lv2u29Forms.patches,...lv2u30.patches,...lv2u30Notes.patches,...lv2u30Translations.patches,...lv2u30Forms.patches,...lv2u31.patches,...lv2u31Notes.patches,...lv2u31Forms.patches,...lv2u32.patches,...lv2u32Notes.patches,...lv2u32Forms.patches,...lv2u32Translations.patches,...lv2u33.patches,...lv2u33Notes.patches,...lv2u33Forms.patches,...lv2u33Translations.patches,...lv2u34.patches,...lv2u34Notes.patches,...lv2u34Forms.patches,...lv2u35.patches,...lv2u35Notes.patches,...lv2u35Forms.patches,...lv2u35Translations.patches,...lv2u36.patches,...lv2u36Notes.patches,...lv2u36Forms.patches,...lv2u37.patches,...lv2u37Notes.patches,...lv2u37Forms.patches,...lv2u38.patches,...lv2u38Notes.patches,...lv2u38Forms.patches,...lv2u38Only.patches,...lv2u39.patches,...lv2u39Notes.patches,...lv2u39Forms.patches,...lv2u39Speed.patches,...lv2u40.patches,...lv2u40Notes.patches,...lv2u40Forms.patches,...lv2u40Visible.patches,...lv2u41.patches,...lv2u41Notes.patches,...lv2u41Forms.patches,...lv2u41Usage.patches,...lv2u42.patches,...lv2u42Notes.patches,...lv2u42Forms.patches,...lv2u43.patches,...lv2u43Notes.patches,...lv2u43Forms.patches,...lv2u44.patches,...lv2u44Notes.patches,...lv2u44Forms.patches,...lv2u45.patches,...lv2u45Notes.patches,...lv2u45Forms.patches,...lv2u45Wicked.patches,...lv2u46.patches,...lv2u46Notes.patches,...lv2u46Forms.patches,...lv2u47.patches,...lv2u47Notes.patches,...lv2u47Forms.patches,...lv2u48.patches,...lv2u48Notes.patches,...lv2u48Forms.patches,...lv2u49.patches,...lv2u49Notes.patches,...lv2u49Forms.patches,...lv2u50.patches,...lv2u50Notes.patches,...lv2u50Forms.patches);
 
-patches.push(...eitherNote.patches);
+// The LV1 production follow-up and LV2 U32 record the same physical note edit.
+// Require identical targets, values and evidence, then reverse that edit once.
+assert.equal(eitherNote.patches.length,1);
+assert.equal(lv2u32Notes.patches.length,1);
+assert.equal(eitherNote.patches[0].id,'NX0fad7e32');
+for(const key of ['dataset','key','id','before','after','evidence'] as const){
+  assert.deepEqual(eitherNote.patches[0][key],lv2u32Notes.patches[0][key],`shared either patch ${key} must agree`);
+}
+
 
 export function restoreRecordedAuditPatch(name:string,row:Row,patch:Patch):void{
  assert.ok(patch.reason&&patch.evidence,'each audit correction needs recorded evidence');
+ if(Object.hasOwn(patch.before,patch.key))assert.equal(row[patch.key],patch.id,'exact recorded row identity required');
  for(const [key,after]of Object.entries(patch.after))assert.deepEqual(row[key],after,`${name}:${patch.id}:${key}`);
  for(const [key,before]of Object.entries(patch.before))if(!Object.hasOwn(patch.after,key))assert.deepEqual(row[key],before,'immutable source guard changed');
  if(Object.hasOwn(patch.after,'verbForms')){
   assert.equal(name,'words');
-  const fact=[...verifiedForms.facts,...verifiedFollowupForms.facts,...verifiedU16Forms.facts,...verifiedU17Forms.facts,...verifiedU18Forms.facts,...verifiedU19Forms.facts,...verifiedU20Forms.facts,...verifiedU21Forms.facts,...verifiedIntegratedU05U06.facts,...verifiedIntegratedU07.facts,...verifiedIntegratedU08U09.facts,...verifiedIntegratedU10.facts,...verifiedIntegratedU11.facts,...verifiedIntegratedU12.facts,...verifiedIntegratedU13.facts,...verifiedIntegratedU14.facts,...verifiedIntegratedU15.facts,...verifiedU22Forms.facts,...verifiedU23Forms.facts,...verifiedU24Forms.facts,...verifiedU25Forms.facts].find(f=>f.wordId===patch.id);assert.ok(fact,'only source-verified verbs may acquire forms');
+  const fact=[...verifiedForms.facts,...verifiedFollowupForms.facts,...verifiedU16Forms.facts,...verifiedU17Forms.facts,...verifiedU18Forms.facts,...verifiedU19Forms.facts,...verifiedU20Forms.facts,...verifiedU21Forms.facts,...verifiedIntegratedU05U06.facts,...verifiedIntegratedU07.facts,...verifiedIntegratedU08U09.facts,...verifiedIntegratedU10.facts,...verifiedIntegratedU11.facts,...verifiedIntegratedU12.facts,...verifiedIntegratedU13.facts,...verifiedIntegratedU14.facts,...verifiedIntegratedU15.facts,...verifiedU22Forms.facts,...verifiedU23Forms.facts,...verifiedU24Forms.facts,...verifiedU25Forms.facts,...verifiedLV2U27Forms.facts,...verifiedLV2U28Forms.facts,...verifiedLV2U29Forms.facts,...verifiedLV2U30Forms.facts,...verifiedLV2U31Forms.facts,...verifiedLV2U32Forms.facts,...verifiedLV2U33Forms.facts,...verifiedLV2U34Forms.facts,...verifiedLV2U35Forms.facts,...verifiedLV2U36Forms.facts,...verifiedLV2U37Forms.facts,...verifiedLV2U38Forms.facts,...verifiedLV2U39Forms.facts,...verifiedLV2U40Forms.facts,...verifiedLV2U41Forms.facts,...verifiedLV2U42Forms.facts,...verifiedLV2U43Forms.facts,...verifiedLV2U44Forms.facts,...verifiedLV2U45Forms.facts,...verifiedLV2U46Forms.facts,...verifiedLV2U47Forms.facts,...verifiedLV2U48Forms.facts,...verifiedLV2U49Forms.facts,...verifiedLV2U50Forms.facts].find(f=>f.wordId===patch.id);assert.ok(fact,'only source-verified verbs may acquire forms');
   assert.deepEqual(patch.after,{verbForms:fact.verbForms});assert.deepEqual(patch.before,{verbForms:{$absent:true}});
-  const integratedFact=[...verifiedIntegratedU05U06.facts,...verifiedIntegratedU07.facts,...verifiedIntegratedU08U09.facts,...verifiedIntegratedU10.facts,...verifiedIntegratedU11.facts,...verifiedIntegratedU12.facts,...verifiedIntegratedU13.facts,...verifiedIntegratedU14.facts,...verifiedIntegratedU15.facts,...verifiedU22Forms.facts,...verifiedU23Forms.facts,...verifiedU24Forms.facts,...verifiedU25Forms.facts].find(f=>f.wordId===patch.id);
+  const integratedFact=[...verifiedIntegratedU05U06.facts,...verifiedIntegratedU07.facts,...verifiedIntegratedU08U09.facts,...verifiedIntegratedU10.facts,...verifiedIntegratedU11.facts,...verifiedIntegratedU12.facts,...verifiedIntegratedU13.facts,...verifiedIntegratedU14.facts,...verifiedIntegratedU15.facts,...verifiedU22Forms.facts,...verifiedU23Forms.facts,...verifiedU24Forms.facts,...verifiedU25Forms.facts,...verifiedLV2U27Forms.facts,...verifiedLV2U28Forms.facts,...verifiedLV2U29Forms.facts,...verifiedLV2U30Forms.facts,...verifiedLV2U31Forms.facts,...verifiedLV2U32Forms.facts,...verifiedLV2U33Forms.facts,...verifiedLV2U34Forms.facts,...verifiedLV2U35Forms.facts,...verifiedLV2U36Forms.facts,...verifiedLV2U37Forms.facts,...verifiedLV2U38Forms.facts,...verifiedLV2U39Forms.facts,...verifiedLV2U40Forms.facts,...verifiedLV2U41Forms.facts,...verifiedLV2U42Forms.facts,...verifiedLV2U43Forms.facts,...verifiedLV2U44Forms.facts,...verifiedLV2U45Forms.facts,...verifiedLV2U46Forms.facts,...verifiedLV2U47Forms.facts,...verifiedLV2U48Forms.facts,...verifiedLV2U49Forms.facts,...verifiedLV2U50Forms.facts].find(f=>f.wordId===patch.id);
   if(integratedFact){const nonForm={...row};delete nonForm.verbForms;assert.equal(createHash('sha256').update(JSON.stringify(nonForm)).digest('hex'),integratedFact.nonFormRowSha256,'integrated non-form row guard changed');}
  }
  if(Object.hasOwn(patch.after,'sentenceZh')){
   assert.equal(name,'examples');
-  const u22Fact=[...verifiedU22Translations.facts,...verifiedU23Translations.facts].find(f=>f.exampleId===patch.id);
+  const u22Fact=[...verifiedU22Translations.facts,...verifiedU23Translations.facts,...verifiedLV2U29Translations.facts,...verifiedLV2U30Translations.facts,...verifiedLV2U32Translations.facts,...verifiedLV2U33Translations.facts,...verifiedLV2U35Translations.facts,...verifiedLV2U42Translations.facts,...verifiedLV2U43Translations.facts,...verifiedLV2U44Translations.facts,...verifiedLV2U45Translations.facts,...verifiedLV2U46Translations.facts,...verifiedLV2U47Translations.facts,...verifiedLV2U48Translations.facts,...verifiedLV2U49Translations.facts,...verifiedLV2U50Translations.facts].find(f=>f.exampleId===patch.id);
   if(u22Fact){assert.deepEqual(patch.before,u22Fact.before);assert.deepEqual(patch.after,u22Fact.after);}
   else{const fact=[...verifiedTranslations.facts,...verifiedU18Translations.facts].find(f=>f.exampleId===patch.id);assert.ok(fact,'only exact verified translations may change');
    assert.deepEqual(patch.before,{sentenceEn:fact.sentenceEn,sentenceZh:fact.before});assert.deepEqual(patch.after,{sentenceZh:fact.after});}
  }
  if(name==='notes'||Object.hasOwn(patch.after,'content')){
-  assert.equal(name,'notes');const fact=[...verifiedNotes.facts,...verifiedU24Notes.facts,...verifiedEitherNote.facts].find(f=>f.noteId===patch.id);assert.ok(fact,'only exact verified note content may change');
+  assert.equal(name,'notes');const fact=[...verifiedNotes.facts,...verifiedU24Notes.facts,...verifiedEitherNote.facts,...verifiedLV2U27Notes.facts,...verifiedLV2U28Notes.facts,...verifiedLV2U29Notes.facts,...verifiedLV2U30Notes.facts,...verifiedLV2U31Notes.facts,...verifiedLV2U32Notes.facts,...verifiedLV2U33Notes.facts,...verifiedLV2U34Notes.facts,...verifiedLV2U35Notes.facts,...verifiedLV2U36Notes.facts,...verifiedLV2U37Notes.facts,...verifiedLV2U38Notes.facts,...verifiedLV2U39Notes.facts,...verifiedLV2U40Notes.facts,...verifiedLV2U41Notes.facts,...verifiedLV2U42Notes.facts,...verifiedLV2U43Notes.facts,...verifiedLV2U44Notes.facts,...verifiedLV2U45Notes.facts,...verifiedLV2U46Notes.facts,...verifiedLV2U47Notes.facts,...verifiedLV2U48Notes.facts,...verifiedLV2U49Notes.facts,...verifiedLV2U50Notes.facts].find(f=>f.noteId===patch.id);assert.ok(fact,'only exact verified note content may change');
   assert.deepEqual(patch.before,fact.before);assert.deepEqual(patch.after,fact.after);
-  assert.deepEqual(Object.keys(patch.after),['content']);
+  assert.deepEqual(Object.keys(patch.after),['NXa9825fa6','NX2b7e8109'].includes(patch.id)?['title']:(patch.id==='NXd8cde86b'||patch.id==='NXf728e282'||['NX56368adb','NXc9ca2c13','NX2c88b1fd'].includes(patch.id))?['title','content']:['content']);
  }
  for(const key of Object.keys(patch.after)){
   assert.ok(Object.hasOwn(patch.before,key),'old value must be explicit');

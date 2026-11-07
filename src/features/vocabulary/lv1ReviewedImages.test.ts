@@ -1,3 +1,6 @@
+import {beforeU38PlaygroundPair} from './lv2ImageRepairs.testSupport';
+import imageRepairs from '../../../docs/unit-audit-20261105/LV2-U38-U41-image-repairs.json';
+import buildingRepair from '../../../docs/unit-audit-20261105/LV2-U44-building-image-repair.json';
 import {beforeU25Pairs} from './u25Pairs.testSupport';
 import {beforeU23Pairs} from './u23Pairs.testSupport';
 import { describe, expect, it } from 'vitest';
@@ -14,6 +17,7 @@ import { getWordBeastAsset } from '../wordbeast/wordBeastAssets';
 import { resolveWordImageClue } from '../../quiz/imageClue';
 
 const hash = (bytes: string | Buffer) => createHash('sha256').update(bytes).digest('hex');
+const latestPublishedCards=cards;
 
 describe('reviewed LV1 image-only release', () => {
   it('contains exactly the reviewed scope and preserves every final image and caption hash', () => {
@@ -32,7 +36,8 @@ describe('reviewed LV1 image-only release', () => {
     for (const card of cards.filter(c=>c.unit===unit)) {
       const record = audit.find(a => a.id === card.id)!;
       expect(record).toBeDefined();
-      expect(hash(readFileSync('public/' + card.illustration.path))).toBe(record.publishedImageSha256);
+      if(card.id==='LV1-U09-04'){expect(card).toEqual(buildingRepair.after);expect(record).toEqual(buildingRepair.originalApproval);expect(hash(readFileSync('public/'+card.illustration.path))).toBe(buildingRepair.replacementImageSha256);expect(hash(readFileSync('public/'+buildingRepair.before.illustration.path))).toBe(record.publishedImageSha256);}
+      else if(card.id==='LV1-U09-27'){expect(card).toEqual(imageRepairs.playground.after);expect(record).toEqual(imageRepairs.playground.originalApproval);expect(hash(readFileSync('public/'+card.illustration.path))).toBe(imageRepairs.playground.replacementImageSha256);expect(hash(readFileSync('public/'+imageRepairs.playground.before.illustration.path))).toBe(record.publishedImageSha256);}else expect(hash(readFileSync('public/' + card.illustration.path))).toBe(record.publishedImageSha256);
       expect(hash(card.illustration.captionEn + '\n' + card.illustration.captionZh)).toBe(record.textSha256);
       const src = '/' + card.illustration.path + '?v=test';
       expect(approvedCurriculumIllustration(card.displayWord, src)).toEqual(card.illustration);
@@ -183,6 +188,7 @@ describe('reviewed LV1 image-only release', () => {
 });
 
 it('changes only the two exact U22 pairs while preserving original assets captions and every other row',()=>{
+ const cards=beforeU38PlaygroundPair(latestPublishedCards);
  const proof=JSON.parse(readFileSync('docs/unit-audit-20261105/LV1-U22-exact-pair-review.json','utf8'));
  const ids=new Set(['LV1-U22-04','LV1-U22-46']);
  expect(hash(JSON.stringify(beforeU23Pairs(cards,'cards').filter(c=>!ids.has(c.id))))).toBe(proof.unchangedCardRowsSha256);
@@ -212,6 +218,7 @@ it('changes only the two exact U22 pairs while preserving original assets captio
 });
 
 it('repairs only the exact U23 trophy pair and two Chinese captions while retaining all other historical rows',()=>{
+ const cards=beforeU38PlaygroundPair(latestPublishedCards);
  const proof=JSON.parse(readFileSync('docs/unit-audit-20261105/LV1-U23-exact-pair-review.json','utf8'));const ids=new Set(['LV1-U23-50','LV1-U23-84','LV1-U23-97']);
  expect(hash(JSON.stringify(beforeU25Pairs(cards,'cards').filter(c=>!ids.has(c.id))))).toBe(proof.unchangedCardRowsSha256);expect(hash(JSON.stringify(beforeU25Pairs(audit,'approvals').filter(c=>!ids.has(c.id))))).toBe(proof.unchangedApprovalRowsSha256);
  expect(beforeU23Pairs(cards,'cards')).toHaveLength(726);expect(beforeU23Pairs(audit,'approvals')).toHaveLength(726);
@@ -228,6 +235,7 @@ it('repairs only the exact U23 trophy pair and two Chinese captions while retain
 });
 
 it('repairs only the U25 wake clock and preserves both formal examples and every other pair',()=>{
+ const cards=beforeU38PlaygroundPair(latestPublishedCards);
  const proof=JSON.parse(readFileSync('docs/unit-audit-20261105/LV1-U25-exact-pair-review.json','utf8')),c=proof.changes[0];
  expect(proof.changes.map((x:{id:string})=>x.id)).toEqual(['LV1-U25-31']);expect(hash(JSON.stringify(cards.filter(x=>x.id!==c.id)))).toBe(proof.unchangedCardRowsSha256);expect(hash(JSON.stringify(audit.filter(x=>x.id!==c.id)))).toBe(proof.unchangedApprovalRowsSha256);
  const now=cards.find(x=>x.id===c.id)!;expect(now).toEqual(c.after.card);expect(now.illustration.captionEn).toBe(c.before.card.illustration.captionEn);expect(now.illustration.captionZh).toBe(c.before.card.illustration.captionZh);

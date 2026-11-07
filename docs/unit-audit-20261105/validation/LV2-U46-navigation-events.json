@@ -1,0 +1,90 @@
+{
+  "unit": "LV2-U46",
+  "before": {
+    "sourceItemsAccepted": 160,
+    "generalCardsAccepted": 83,
+    "examples": 135,
+    "partialFirstAccepted": 4,
+    "remainingAcceptedBatches": [
+      24,
+      28,
+      27
+    ],
+    "failuresRetained": [
+      {
+        "scope": "Initial general entry",
+        "result": "No card accepted before main timeout."
+      },
+      {
+        "scope": "Readback attempt",
+        "result": "Four complete rows retained before V005 execution context destruction; later rows were not assumed complete."
+      },
+      {
+        "scope": "Original server full-reload",
+        "result": "Captured Vite WebSocket connected at00:56:21.645Z, full-reload at00:56:21.646Z and document request at00:56:21.676Z; no service-worker controller."
+      },
+      {
+        "scope": "Stable-server first24 raw console capture",
+        "result": "Chinese was mangled by shell external stdout encoding; the invalid raw JSON was retained and not accepted. A correctly encoded live readback supplied all24 accepted values."
+      }
+    ],
+    "recovery": {
+      "port": 5179,
+      "previousPid": 26228,
+      "newPid": 5332,
+      "isolatedPrivateServerConfig": true,
+      "hmrDisabledOnlyInPrivateConfig": true,
+      "trackedProductConfigChanged": false,
+      "otherServersTouched": false,
+      "progressDatabaseCleared": false,
+      "browserProfileDeleted": false,
+      "normalProductUpdateRequiredAndObserved": true,
+      "timeoutIncreased": false
+    }
+  },
+  "after": {
+    "sourceItemsAccepted": 160,
+    "generalCardsAccepted": 83,
+    "liveFieldComparison": "validation/LV2-U46-reopen-summary.json",
+    "noFailedRowSilentlyAccepted": true
+  },
+  "logs": [
+    {
+      "file": "output/playwright/unit-audit/lv2-u46-general-before-1.txt",
+      "sha256": "319465ad71e73a8dd02d9f347a13fb74f3528ec574a408b70ac4154fe2d5c446"
+    },
+    {
+      "file": "output/playwright/unit-audit/lv2-u46-general-before-resume-1.txt",
+      "sha256": "50ea4e7bb2f41312821b3285dc59a0302aae98ab6bf57c479b0c95f6db3b740d"
+    },
+    {
+      "file": "output/playwright/unit-audit/lv2-u46-general-before-readback-1.txt",
+      "sha256": "943104f692c52c5f2843e3945ccbd378a20356b2184c5404a0610da475b6039c"
+    },
+    {
+      "file": "output/playwright/unit-audit/lv2-u46-general-before-readback-5.txt",
+      "sha256": "20b147827ddb4c3bdf708bae5360129ee69123cab25ddc165d572550078f816c"
+    },
+    {
+      "file": "output/playwright/unit-audit/lv2-u46-general-before-readback-5-diag.txt",
+      "sha256": "32bfc04193398e9c85b9e0ccd3d5ba6e77064c566496065e910bd8f0d35c03e7"
+    },
+    {
+      "file": "output/playwright/unit-audit/lv2-u46-general-before-stable-5.txt",
+      "sha256": "8397a944b0d6ec082f743605662bbcea8516d5e18c14eb7fc05dbf6a7199dde3"
+    },
+    {
+      "file": "output/playwright/unit-audit/lv2-u46-general-before-unicode-5.txt",
+      "sha256": "de2cd9fe3463e0c0275f7606442550cc3e05a7a8735aa6c8a730c4711e32e2fb"
+    },
+    {
+      "file": "output/playwright/unit-audit/lv2-u46-general-before-stable-29.txt",
+      "sha256": "79fdfbf15f6a97ca32a9e0bda8295b17e1378340ae4ad0eafaa3b098c2a34cb2"
+    },
+    {
+      "file": "output/playwright/unit-audit/lv2-u46-general-before-stable-57.txt",
+      "sha256": "7784d1fb8c8ec8f6dc889a00173efc96fe34df1d290441e9bd01bd547616bb00"
+    }
+  ],
+  "scope": "Raw captures remain local evidence. Completed screenshots may exist from interrupted attempts, but only explicitly accepted field results count. A shared screenshot filename is not evidence of two frozen versions; phase-specific before/final paths are separate."
+}

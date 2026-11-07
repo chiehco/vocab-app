@@ -1,0 +1,99 @@
+{
+  "manifest": "docs/unit-audit-20261105/LV2-U46-notes-patches.json",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "checkedAt": "2026-11-07T01:12:20.887134+00:00",
+  "changeCount": 3,
+  "changes": [
+    {
+      "dataset": "notes",
+      "id": "NX98d75279",
+      "before": {
+        "noteId": "NX98d75279",
+        "word": "sleep",
+        "noteType": "phrase",
+        "title": "go to sleep",
+        "content": "去睡覺（sleep 為名詞）= go to bed。",
+        "status": "approved"
+      },
+      "after": {
+        "noteId": "NX98d75279",
+        "word": "sleep",
+        "noteType": "phrase",
+        "title": "go to sleep",
+        "content": "go to sleep：入睡、睡著（sleep 為名詞）；go to bed：上床準備睡覺，兩者不必然表示同一時刻。",
+        "status": "approved"
+      },
+      "reason": "Distinguish the act of going to bed from falling asleep; retain title and original English tokens.",
+      "evidence": "https://www.merriam-webster.com/dictionary/go%20to%20sleep; https://www.merriam-webster.com/dictionary/go%20to%20bed"
+    },
+    {
+      "dataset": "notes",
+      "id": "NXd2830254",
+      "before": {
+        "noteId": "NXd2830254",
+        "word": "maturity",
+        "noteType": "usage",
+        "title": "maturity",
+        "content": "reach maturity。",
+        "status": "approved"
+      },
+      "after": {
+        "noteId": "NXd2830254",
+        "word": "maturity",
+        "noteType": "usage",
+        "title": "maturity",
+        "content": "reach maturity：達到成熟期。",
+        "status": "approved"
+      },
+      "reason": "Supply Chinese for the existing exact phrase without changing the title or English.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/maturity"
+    },
+    {
+      "dataset": "notes",
+      "id": "NX5216704f",
+      "before": {
+        "noteId": "NX5216704f",
+        "word": "populate",
+        "noteType": "phrase",
+        "title": "a densely/sparsely populated city",
+        "content": "：居住於（常用被動）。a densely/sparsely populated city；population、populous。",
+        "status": "approved"
+      },
+      "after": {
+        "noteId": "NX5216704f",
+        "word": "populate",
+        "noteType": "phrase",
+        "title": "a densely/sparsely populated city",
+        "content": "a densely/sparsely populated city：人口稠密／稀少的城市。populate 意為居住於，常用被動；相關名詞 population、形容詞 populous。",
+        "status": "approved"
+      },
+      "reason": "Explain both alternatives in the existing title and preserve the related-word tokens.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/populate"
+    }
+  ],
+  "masterTouched": false,
+  "sentencesChanged": false,
+  "englishSentencesChanged": false,
+  "imagesChanged": false,
+  "sourceHashesBefore": {
+    "words.json": "951295322256093d56a94ceff9738328ac2df084c1f9b3b26720e008a264bfd0",
+    "senses.json": "ca298adb46f8a957337a47950df5eeed1d3079ae656d3cce4307b835f8937de2",
+    "examples.json": "c16314107c6a105cb2cb52d2b6d912aba49ee75ae7568b2c6199d3e861e2efbc",
+    "meta.json": "e1316ecc8fc1a5d5b1c90af1f7a2e577a4f5f4709685fe5a053c9f14ace45ea4",
+    "sa-pack.json": "77f87da830e0ab863c43532449d7ca31ceede74c3a5bdd5ce8ced2f4c1d2cf44"
+  },
+  "sourceHashesAfter": {
+    "words.json": "951295322256093d56a94ceff9738328ac2df084c1f9b3b26720e008a264bfd0",
+    "senses.json": "ca298adb46f8a957337a47950df5eeed1d3079ae656d3cce4307b835f8937de2",
+    "examples.json": "c16314107c6a105cb2cb52d2b6d912aba49ee75ae7568b2c6199d3e861e2efbc",
+    "meta.json": "c5ea1eced06415b31609a1fe3e037de07f26005bcc11c6bb4c84cc172a40bea6",
+    "sa-pack.json": "d7dd47bef3b4a9e9bb5358bae78a82761cc7cc75da05203d3575a76990ffca57"
+  },
+  "state": "applied_not_ui_verified",
+  "acceptance": {
+    "state": "actual_text_reopened_saved_and_persistence_verified_image_followup_separate",
+    "reopenSummary": "validation/LV2-U46-reopen-summary.json",
+    "persistence": "validation/LV2-U46-persistence-summary.json",
+    "executionStatePreserved": "applied_not_ui_verified"
+  }
+}

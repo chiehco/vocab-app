@@ -1,0 +1,158 @@
+{
+  "commit": "6ac5925877d4f5bfc1efb4d3c10822b1ba914077",
+  "run": 42145601150,
+  "job": 127656192696,
+  "url": "https://github.com/chiehco/vocab-app/actions/runs/42145601150/job/127656192696",
+  "status": "completed",
+  "conclusion": "success",
+  "checkoutShaMatched": true,
+  "testFiles": 218,
+  "tests": 1771,
+  "python": [
+    14,
+    7,
+    41,
+    10
+  ],
+  "steps": [
+    {
+      "completed_at": "2026-11-06T01:42:24Z",
+      "conclusion": "success",
+      "name": "Set up job",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:42:35Z",
+      "conclusion": "success",
+      "name": "Run actions/checkout@v4",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:42:37Z",
+      "conclusion": "success",
+      "name": "Run actions/setup-node@v4",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:42:41Z",
+      "conclusion": "success",
+      "name": "Run npm ci",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:42:48Z",
+      "conclusion": "success",
+      "name": "Run npm ci --prefix services/pageviews-cloudflare",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:42:49Z",
+      "conclusion": "success",
+      "name": "Run npm test --prefix services/pageviews-cloudflare",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:42:49Z",
+      "conclusion": "success",
+      "name": "Run actions/setup-python@v5",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:42:50Z",
+      "conclusion": "success",
+      "name": "Run python -m pip install openpyxl==3.1.5 Pillow==12.0.0",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:43:11Z",
+      "conclusion": "success",
+      "name": "Run python -m unittest discover -s scripts -p 'test_apply_lv3_*.py'",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:43:24Z",
+      "conclusion": "success",
+      "name": "Run python -m unittest discover -s scripts -p 'test_apply_lv4_*.py'",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:43:45Z",
+      "conclusion": "success",
+      "name": "Run python -m unittest discover -s scripts -p 'test_apply_unit_audit.py'",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:43:45Z",
+      "conclusion": "success",
+      "name": "Run python -m unittest discover -s scripts -p 'test_build_sa_pack_lv5_legacy.py'",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:43:46Z",
+      "conclusion": "success",
+      "name": "Run python scripts/prepare_recovered_unit_drafts.py --check",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:43:46Z",
+      "conclusion": "success",
+      "name": "Run python scripts/integrate_recovered_units.py --check",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:43:46Z",
+      "conclusion": "success",
+      "name": "Run npm run lint",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:44:14Z",
+      "conclusion": "success",
+      "name": "Run npm run typecheck",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:52:33Z",
+      "conclusion": "success",
+      "name": "Run npm run test -- --maxWorkers=1 --testTimeout=15000",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:53:03Z",
+      "conclusion": "success",
+      "name": "Run npm run build",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:53:03Z",
+      "conclusion": "success",
+      "name": "Post Run actions/setup-python@v5",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:53:03Z",
+      "conclusion": "success",
+      "name": "Post Run actions/setup-node@v4",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:53:03Z",
+      "conclusion": "success",
+      "name": "Post Run actions/checkout@v4",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-06T01:53:03Z",
+      "conclusion": "success",
+      "name": "Complete job",
+      "status": "completed"
+    }
+  ],
+  "buildSummaryAt": "2026-11-06T01:53:01.6859763Z",
+  "completedAt": "2026-11-06T01:53:05Z",
+  "fullLogReadAndKeySectionsVerified": true,
+  "logSha256": "7069b22d0a1a32a108b15708a298e4fb1d4d0dd307d52001d738a88fc0e3db9b",
+  "recordedAt": "2026-11-06T02:08:25.478Z",
+  "historicalFailurePreserved": "validation/LV2-U28-ci-6da5d01-failure.json",
+  "productDataUnchangedByFix": true
+}

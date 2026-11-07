@@ -1,3 +1,51 @@
+import {lv2Unit50BeforeAudit} from './lv2Unit50Audit.testSupport';
+import currentLV2Unit50 from './curriculumLV2Unit50.json';
+import {lv2Unit49BeforeAudit} from './lv2Unit49Audit.testSupport';
+import currentLV2Unit49 from './curriculumLV2Unit49.json';
+import {lv2Unit48BeforeAudit} from './lv2Unit48Audit.testSupport';
+import currentLV2Unit48 from './curriculumLV2Unit48.json';
+import {lv2Unit47BeforeAudit} from './lv2Unit47Audit.testSupport';
+import currentLV2Unit47 from './curriculumLV2Unit47.json';
+import {lv2Unit46BeforeAudit} from './lv2Unit46Audit.testSupport';
+import currentLV2Unit46 from './curriculumLV2Unit46.json';
+import {lv2Unit45BeforeAudit} from './lv2Unit45Audit.testSupport';
+import currentLV2Unit45 from './curriculumLV2Unit45.json';
+import {lv2Unit44BeforeAudit} from './lv2Unit44Audit.testSupport';
+import currentLV2Unit44 from './curriculumLV2Unit44.json';
+import currentLV2Unit43 from './curriculumLV2Unit43.json';
+import {lv2Unit43BeforeAudit} from './lv2Unit43Audit.testSupport';
+import currentLV2Unit42 from './curriculumLV2Unit42.json';
+import {lv2Unit42BeforeAudit} from './lv2Unit42Audit.testSupport';
+import currentLV2Unit41 from './curriculumLV2Unit41.json';
+import {lv2Unit41BeforeAudit} from './lv2Unit41Audit.testSupport';
+import currentLV2Unit40 from './curriculumLV2Unit40.json';
+import {lv2Unit40BeforeAudit} from './lv2Unit40Audit.testSupport';
+import currentLV2Unit39 from './curriculumLV2Unit39.json';
+import {lv2Unit39BeforeAudit} from './lv2Unit39Audit.testSupport';
+import currentLV2Unit38 from './curriculumLV2Unit38.json';
+import {lv2Unit38BeforeAudit} from './lv2Unit38Audit.testSupport';
+import currentLV2Unit37 from './curriculumLV2Unit37.json';
+import {lv2Unit37BeforeAudit} from './lv2Unit37Audit.testSupport';
+import currentLV2Unit36 from './curriculumLV2Unit36.json';
+import {lv2Unit36BeforeAudit} from './lv2Unit36Audit.testSupport';
+import currentLV2Unit35 from './curriculumLV2Unit35.json';
+import {lv2Unit35BeforeAudit} from './lv2Unit35Audit.testSupport';
+import currentLV2Unit34 from './curriculumLV2Unit34.json';
+import {lv2Unit34BeforeAudit} from './lv2Unit34Audit.testSupport';
+import currentLV2Unit33 from './curriculumLV2Unit33.json';
+import {lv2Unit33BeforeAudit} from './lv2Unit33Audit.testSupport';
+import currentLV2Unit32 from './curriculumLV2Unit32.json';
+import {lv2Unit32BeforeAudit} from './lv2Unit32Audit.testSupport';
+import currentLV2Unit31 from './curriculumLV2Unit31.json';
+import {lv2Unit31BeforeAudit} from './lv2Unit31Audit.testSupport';
+import currentLV2Unit30 from './curriculumLV2Unit30.json';
+import {lv2Unit30BeforeAudit} from './lv2Unit30Audit.testSupport';
+import currentLV2Unit29 from './curriculumLV2Unit29.json';
+import {lv2Unit29BeforeAudit} from './lv2Unit29Audit.testSupport';
+import currentLV2Unit28 from './curriculumLV2Unit28.json';
+import {lv2Unit28BeforeAudit} from './lv2Unit28Audit.testSupport';
+import currentLV2Unit27 from './curriculumLV2Unit27.json';
+import {lv2Unit27BeforeAudit} from './lv2Unit27Audit.testSupport';
 import { createHash } from 'node:crypto';
 import { readFileSync, readdirSync } from 'node:fs';
 import { expect, it } from 'vitest';
@@ -83,6 +131,96 @@ it('retains historical curriculum and question identities with the audited cubes
     if(old.templateId === 'TEXTBOOK-LV1-U21'){
       expect(retained.items).toEqual(currentUnit21.learningItems);
       priorItems=unit21BeforeAudit(currentUnit21).learningItems;
+    }
+    if(old.templateId === 'TEXTBOOK-LV2-U43'){
+      expect(retained.items).toEqual(currentLV2Unit43.learningItems);
+      priorItems=lv2Unit43BeforeAudit(currentLV2Unit43).learningItems;
+    }
+    if(old.templateId==='TEXTBOOK-LV2-U44'){
+      expect(retained.items).toEqual(currentLV2Unit44.learningItems);
+      priorItems=lv2Unit44BeforeAudit(currentLV2Unit44).learningItems;
+    }else if(old.templateId==='TEXTBOOK-LV2-U50'){
+      expect(retained.items).toEqual(currentLV2Unit50.learningItems);
+      priorItems=lv2Unit50BeforeAudit(currentLV2Unit50).learningItems;
+    }else if(old.templateId==='TEXTBOOK-LV2-U49'){
+      expect(retained.items).toEqual(currentLV2Unit49.learningItems);
+      priorItems=lv2Unit49BeforeAudit(currentLV2Unit49).learningItems;
+    }else if(old.templateId==='TEXTBOOK-LV2-U48'){
+      expect(retained.items).toEqual(currentLV2Unit48.learningItems);
+      priorItems=lv2Unit48BeforeAudit(currentLV2Unit48).learningItems;
+    }else if(old.templateId==='TEXTBOOK-LV2-U47'){
+      expect(retained.items).toEqual(currentLV2Unit47.learningItems);
+      priorItems=lv2Unit47BeforeAudit(currentLV2Unit47).learningItems;
+    }else if(old.templateId==='TEXTBOOK-LV2-U46'){
+      expect(retained.items).toEqual(currentLV2Unit46.learningItems);
+      priorItems=lv2Unit46BeforeAudit(currentLV2Unit46).learningItems;
+    }else if(old.templateId==='TEXTBOOK-LV2-U45'){
+      expect(retained.items).toEqual(currentLV2Unit45.learningItems);
+      priorItems=lv2Unit45BeforeAudit(currentLV2Unit45).learningItems;
+    }
+    if(old.templateId === 'TEXTBOOK-LV2-U42'){
+      expect(retained.items).toEqual(currentLV2Unit42.learningItems);
+      priorItems=lv2Unit42BeforeAudit(currentLV2Unit42).learningItems;
+    }
+    if(old.templateId === 'TEXTBOOK-LV2-U41'){
+      expect(retained.items).toEqual(currentLV2Unit41.learningItems);
+      priorItems=lv2Unit41BeforeAudit(currentLV2Unit41).learningItems;
+    }
+    if(old.templateId === 'TEXTBOOK-LV2-U40'){
+      expect(retained.items).toEqual(currentLV2Unit40.learningItems);
+      priorItems=lv2Unit40BeforeAudit(currentLV2Unit40).learningItems;
+    }
+    if(old.templateId === 'TEXTBOOK-LV2-U39'){
+      expect(retained.items).toEqual(currentLV2Unit39.learningItems);
+      priorItems=lv2Unit39BeforeAudit(currentLV2Unit39).learningItems;
+    }
+    if(old.templateId === 'TEXTBOOK-LV2-U38'){
+      expect(retained.items).toEqual(currentLV2Unit38.learningItems);
+      priorItems=lv2Unit38BeforeAudit(currentLV2Unit38).learningItems;
+    }
+    if(old.templateId === 'TEXTBOOK-LV2-U37'){
+      expect(retained.items).toEqual(currentLV2Unit37.learningItems);
+      priorItems=lv2Unit37BeforeAudit(currentLV2Unit37).learningItems;
+    }
+    if(old.templateId === 'TEXTBOOK-LV2-U36'){
+      expect(retained.items).toEqual(currentLV2Unit36.learningItems);
+      priorItems=lv2Unit36BeforeAudit(currentLV2Unit36).learningItems;
+    }
+    if(old.templateId === 'TEXTBOOK-LV2-U35'){
+      expect(retained.items).toEqual(currentLV2Unit35.learningItems);
+      priorItems=lv2Unit35BeforeAudit(currentLV2Unit35).learningItems;
+    }
+    if(old.templateId === 'TEXTBOOK-LV2-U34'){
+      expect(retained.items).toEqual(currentLV2Unit34.learningItems);
+      priorItems=lv2Unit34BeforeAudit(currentLV2Unit34).learningItems;
+    }
+    if(old.templateId === 'TEXTBOOK-LV2-U33'){
+      expect(retained.items).toEqual(currentLV2Unit33.learningItems);
+      priorItems=lv2Unit33BeforeAudit(currentLV2Unit33).learningItems;
+    }
+    if(old.templateId === 'TEXTBOOK-LV2-U32'){
+      expect(retained.items).toEqual(currentLV2Unit32.learningItems);
+      priorItems=lv2Unit32BeforeAudit(currentLV2Unit32).learningItems;
+    }
+    if(old.templateId === 'TEXTBOOK-LV2-U31'){
+      expect(retained.items).toEqual(currentLV2Unit31.learningItems);
+      priorItems=lv2Unit31BeforeAudit(currentLV2Unit31).learningItems;
+    }
+    if(old.templateId === 'TEXTBOOK-LV2-U30'){
+      expect(retained.items).toEqual(currentLV2Unit30.learningItems);
+      priorItems=lv2Unit30BeforeAudit(currentLV2Unit30).learningItems;
+    }
+    if(old.templateId === 'TEXTBOOK-LV2-U29'){
+      expect(retained.items).toEqual(currentLV2Unit29.learningItems);
+      priorItems=lv2Unit29BeforeAudit(currentLV2Unit29).learningItems;
+    }
+    if(old.templateId === 'TEXTBOOK-LV2-U28'){
+      expect(retained.items).toEqual(currentLV2Unit28.learningItems);
+      priorItems=lv2Unit28BeforeAudit(currentLV2Unit28).learningItems;
+    }
+    if(old.templateId === 'TEXTBOOK-LV2-U27'){
+      expect(retained.items).toEqual(currentLV2Unit27.learningItems);
+      priorItems=lv2Unit27BeforeAudit(currentLV2Unit27).learningItems;
     }
     expect(hash(priorItems), old.templateId).toBe(old.itemsHash);
     const originalQuestions = structuredClone(priorPractice?.questions ?? retained.questions);

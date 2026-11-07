@@ -1,6 +1,7 @@
 import {readFileSync} from 'node:fs';
 import {expect,it} from 'vitest';
 import patch from '../../docs/unit-audit-20261105/LV1-U10-either-note-followup.json';
+import lv2Patch from '../../docs/unit-audit-20261105/LV2-U32-notes-patches.json';
 import {beforeUnitAudit,restoreRecordedAuditPatch} from './unitAudit.testSupport';
 
 const read=(file:string)=>JSON.parse(readFileSync(`public/data/v1/${file}.json`,'utf8'));
@@ -19,4 +20,15 @@ it('cannot hide a stale rule or unrelated title/status edits through reversal',(
     const row={...change.before,...change.after,...changes};
     expect(()=>restoreRecordedAuditPatch('notes',row,change)).toThrow();
   }
+});
+
+it('reconciles shared LV1 and LV2 either evidence without reversing the edit twice',()=>{
+  expect(lv2Patch.patches).toHaveLength(1);
+  for(const key of ['dataset','key','id','before','after','evidence'] as const){
+    expect(lv2Patch.patches[0][key]).toEqual(change[key]);
+  }
+  const current={...change.before,...change.after};
+  expect(beforeUnitAudit('notes',[current])).toEqual([change.before]);
+  expect(()=>beforeUnitAudit('notes',[change.before])).toThrow();
+  expect(()=>beforeUnitAudit('notes',[{...current,title:'unrecorded'}])).toThrow();
 });

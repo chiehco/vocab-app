@@ -37,6 +37,67 @@ INTEGRATED_U15_FORM_IDS = set('W000625 W000593 W000069 W000451 W004579 W000846 W
 U22_FORM_IDS = set('W000149 W000915 W000167 W004858 W000196 W000788 W000165 W000641 W001771 W001521 W001450 W000818 W000089 W001081 W003261 W000917 W000860'.split())
 U23_FORM_IDS = set('W000157 W004048 W000938 W001711 W000680 W000619 W002616 W000435 W000470 W001197 W002720 W004199 W000240 W005329 W000321 W001931 W004266 W000106 W001501 W000542 W000837 W000512 W000462'.split())
 U25_FORM_IDS = set('W000437 W000760 W000629 W000281 W000797 W000150 W000132 W000192 W000285 W000182 W000912 W000521 W000290 W000178 W002053 W000221 W000282 W000647 W000708 W000245 W000051 W000777 W000096 W000649'.split())
+LV2_U27_FORM_IDS = set('W001666 W001407 W001896 W001732 W001926 W001966 W001199 W001508 W001678 W001055 W001243 W001180 W001591 W001106 W005755 W001134 W004130 W004361 W003620 W004280'.split())
+LV2_U27_NOTE_IDS = set('NXa9825fa6 NXba46cf7b NXd54e07b2 NXa83db220 NX2c6cb1d6 NXd8aa860b NXde82b413 NX3d756fb4'.split())
+LV2_U28_FORM_IDS = set('W001253 W001005 W001714 W001718 W001239 W001841 W001043 W001209 W001100 W001144 W001151 W001463 W004365 W004139 W001958 W002278 W005823'.split())
+LV2_U28_NOTE_IDS = set('NX62b7cbda NX2b7e8109 NXd8cde86b'.split())
+LV2_U29_FORM_IDS = set('W001875 W001196 W001256 W001074 W001802 W001273 W001529 W001487 W001506 W001342 W001860 W001247 W001317 W001677 W002595 W005456 W003017 W003433 W005627 W005319 W001956 W003141'.split())
+LV2_U29_NOTE_IDS = {'NX0d98cee1', 'NX25c9d6d8'}
+LV2_U29_TRANSLATION_IDS = {'EX70528bd1'}
+LV2_U30_FORM_IDS = set('W001147 W001702 W001032 W001872 W001557 W001622 W001725 W001724 W001303 W004691 W001719 W004269 W001361 W002535 W002085 W003220 W001855'.split())
+LV2_U30_NOTE_IDS = set('NX83e68c77 NXf728e282 NXe79fed17 NX6643d443'.split())
+LV2_U30_TRANSLATION_IDS = {'EXc43d3286'}
+LV2_U31_FORM_IDS = set('W001793 W001334 W001633 W001391 W001203 W001395 W001728 W001922 W001750 W001913 W001971 W002001 W003689 W003072 W002988 W004738 W001150 W001224 W002387'.split())
+LV2_U31_NOTE_IDS = set('NXb9b5968e NX383f23f3 NXeec70d45 NXc2fadce7 NX99ea6a00 NX96d0b5f4 NX37477442'.split())
+LV2_U32_FORM_IDS = set('W001263 W001092 W001246 W001862 W001755 W001709 W001733 W001758 W001187 W001186 W001814 W001965 W001328 W001614 W001174 W001375'.split())
+LV2_U32_NOTE_IDS = {'NX0fad7e32'}
+LV2_U32_TRANSLATION_IDS = {'EX89f990dc'}
+LV2_U33_FORM_IDS = set('W001858 W001183 W001241 W001789 W001380 W001629 W001775 W004671 W005019'.split())
+LV2_U33_NOTE_IDS = set('NX35429df1 NX3204c2e2 NXa68aed24 NXefd629d5 NX91342fab NX026336f2'.split())
+LV2_U33_TRANSLATION_IDS = {'EX7e879a02'}
+LV2_U34_FORM_IDS = set('W001664 W001665 W001842 W001606 W001079 W001190 W001347 W001662 W001216 W001712 W003800 W002396 W005775'.split())
+LV2_U34_NOTE_IDS = set('NX1891237a NX61227341 NX021525c6 NX88bb93ad NX2ed0850d NX93aa8a68'.split())
+LV2_U35_FORM_IDS = set('W001554 W001840 W001245 W001751 W001103 W001142 W001889 W001839 W001419 W001474 W001048 W001195 W001114 W006008 W002613 W003007 W002774 W002106 W004770 W001531'.split())
+LV2_U35_NOTE_IDS = set('NX004a89b0 NXe5a10091 NX569bbb1f NX90000969 NXe6e07a9e NX29d6eaf2 NX96783ed5 NX03672b11'.split())
+LV2_U35_TRANSLATION_IDS = set('EX8f9c8240 EX7f41ed99'.split())
+LV2_U36_FORM_IDS = set('W001752 W001387 W001327 W001838 W001073 W001345 W001061 W004911 W004062 W002297 W004117'.split())
+LV2_U36_NOTE_IDS = set('NXb5218ad2 NX761ebfe8 NX553ecf54 NX6b5ebd1b NXb17ecbea NXdb05c999 NX84b8a316 NX05692603'.split())
+LV2_U37_FORM_IDS = set('W001416 W001685 W001753 W001282 W001132 W001432 W001360 W001867 W001881 W001874 W001478 W003262 W003442 W005164 W002882'.split())
+LV2_U37_NOTE_IDS = set('NXfb24cca5 NX8059dead NXdf661ddf NX429a0317 NX7f29c0cf NXd46872b7 NXef8c5002 NXf3845411'.split())
+LV2_U38_FORM_IDS = set('W001763 W001767 W001149 W001883 W001807 W001880 W001559 W001760 W001401 W001619 W001848 W003798 W001928 W001687'.split())
+LV2_U38_NOTE_IDS = set('NX9efa5279 NX6332474d NX95e7319e NXed8e694b NX5d240eda NXd392d12a NX35edc8a3'.split())
+LV2_U39_FORM_IDS = set('W001933 W001833 W001847 W001464 W001442 W001065 W001477 W001071 W001177 W001444 W002360 W002715 W005566 W004717 W002753 W003486'.split())
+LV2_U39_NOTE_IDS = set('NX554f6cfa NX2f9fc58a NXad9cde20 NX8c3269d8 NX4be467e5 NX13b37950'.split())
+LV2_U40_FORM_IDS = set('W001178 W001555 W001544 W001513 W001945 W001276 W001672 W001811 W001084 W002187 W001827'.split())
+LV2_U40_NOTE_IDS = set('NX14318671 NXb5b3d3a0 NXb770d991 NX105d195e NXdaa9a2ac NX079b5d1a NX09ee37e9 NXf7b2419d'.split())
+LV2_U41_FORM_IDS = set('W001796 W001059 W001269 W001266 W001808 W001810 W001089 W002446 W003271 W003377 W001018'.split())
+LV2_U41_NOTE_IDS = set('NXcc6e3da7 NXd66ae71e'.split())
+LV2_U42_FORM_IDS = set('W001213 W001234 W001288 W001583 W001782 W001141 W001777 W001846 W001476 W001856 W001960 W001626 W001859 W001004 W002664 W002844 W002648 W001509 W003858'.split())
+LV2_U42_NOTE_IDS = set('NX758ac21a NXc90a2b74 NXce04400b NXe2070817 NXb1bdd317 NXdcd9fae6 NX7cd0fd68'.split())
+LV2_U42_TRANSLATION_IDS = {'EXbf4b15ea'}
+LV2_U50_FORM_IDS = set('W001117 W001119 W001420 W001884 W001109 W001447 W001365 W002942 W003108 W005449 W002451 W002016 W003909'.split())
+LV2_U50_NOTE_IDS = set('NXfb4625ba NX22694370 NX5f9433b2 NXabfcf5f2 NXfcc30c0c NX9840deef'.split())
+LV2_U49_FORM_IDS = set('W001921 W001344 W001925 W001388 W001123 W001878 W001615 W001691 W001414 W005237 W002386 W002910 W004359 W004899 W005909'.split())
+LV2_U49_NOTE_IDS = set('NX56368adb NXc9ca2c13 NX2c88b1fd NX8408afd8 NXbe2bec4c'.split())
+LV2_U49_TRANSLATION_IDS = set('EX8468c530'.split())
+LV2_U48_FORM_IDS = set('W001044 W001222 W001067 W001373 W001165 W001660 W001754 W001890 W001007 W001160 W001520 W001460 W001497 W003815 W001296 W005792 W004233 W002800 W003159 W005060'.split())
+LV2_U48_NOTE_IDS = set('NX7b71fbe1 NXb2caaaa9 NXfb5da64d NX48e5c186 NX88d579c9 NXa1b3969a NX6b2a0b38'.split())
+LV2_U48_TRANSLATION_IDS = set('EX5b300da2'.split())
+LV2_U47_FORM_IDS = set('W001877 W001198 W001304 W001293 W001741 W001348 W001098 W001644 W002404 W002479 W002980'.split())
+LV2_U47_NOTE_IDS = set('NX6eecafb1 NX13355b91 NXfbff21c4 NX2d0d9d33'.split())
+LV2_U47_TRANSLATION_IDS = set('EX216e683f EXd7d7f502'.split())
+LV2_U46_FORM_IDS = set('W001219 W001659 W001127 W001272 W001024 W001453 W001680 W001274 W001021 W001734 W001329 W001780 W001060 W001684 W003245 W002349 W001090 W005705 W003761 W005690 W001866'.split())
+LV2_U46_NOTE_IDS = set('NX98d75279 NXd2830254 NX5216704f'.split())
+LV2_U46_TRANSLATION_IDS = set('EX42f1a935'.split())
+LV2_U45_FORM_IDS = set('W001229 W001046 W001912 W001534 W001696 W001651 W001652 W001979 W001382 W001465 W001425 W001823 W006025 W003307 W004339 W002943 W005113 W003851'.split())
+LV2_U45_NOTE_IDS = set('NX4b45827f NX4bf9ab89 NX67fad847 NXa9ac412b NXb9ccadae'.split())
+LV2_U45_TRANSLATION_IDS = set('EXf834964d EX530970a6'.split())
+LV2_U44_FORM_IDS = set('W001236 W001015 W001111 W001131 W001738 W001948 W001022 W001888 W001367 W001481 W002079 W001592 W004318 W003857 W002951 W003465 W004503'.split())
+LV2_U44_NOTE_IDS = set('NX8d1ff33e NX8dc31b62 NXf93cd878'.split())
+LV2_U44_TRANSLATION_IDS = set('EXfe7adb4e EXddf05900 EXe95ee4e3'.split())
+LV2_U43_FORM_IDS = set('W001851 W001906 W001368 W001070 W001682 W001260 W001013 W001308 W001539 W001249 W003632 W002956 W003185 W003302 W003594 W004213 W003547'.split())
+LV2_U43_NOTE_IDS = set('NX8db57c8a NX4d3c3d3a NX3ea61efe NXec541beb NXf1035eb9'.split())
+LV2_U43_TRANSLATION_IDS = {'EXb4e6bb31'}
 U24_FORM_IDS = set('W002174 W000943 W001102 W000575 W001581 W000657 W000642'.split())
 U23_TRANSLATION_IDS = {'EXff6b330f', 'EXf7d6aec6', 'EXe50e7d1f'}
 U22_TRANSLATION_IDS = {'EX93dc7fe9'}
@@ -51,7 +112,10 @@ def validate_patch_shape(patch):
     assert patch.get("reason") and patch.get("evidence")
     assert isinstance(patch.get("before"), dict) and isinstance(patch.get("after"), dict)
     assert patch["after"], "Empty correction"
-    assert set(patch["after"]) <= EDITABLE_FIELDS | {'verbForms', 'sentenceZh', 'content'}, "Unlisted editable field"
+    allowed = EDITABLE_FIELDS | {'verbForms', 'sentenceZh', 'content'}
+    if patch["dataset"] == "notes" and patch["id"] in {"NXa9825fa6", "NX2b7e8109", "NXd8cde86b", "NXf728e282", "NX56368adb", "NXc9ca2c13", "NX2c88b1fd"}:
+        allowed |= {"title"}
+    assert set(patch["after"]) <= allowed, "Unlisted editable field"
     assert set(patch["after"]) <= set(patch["before"]), "Every after field needs an explicit before value"
     assert patch["key"] not in patch["after"], "Row identity cannot change"
     if "examEvidence" in patch["after"]:
@@ -65,6 +129,175 @@ def validate_patch_shape(patch):
             assert patch['dataset'] == 'notes' and patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact U10 either note and content required'
             assert set(patch['after']) == {'content'} and fact['after']['content'] == 'either 單獨作主詞時接單數動詞；either of + 複數名詞／代名詞作主詞時，正式寫作採單數動詞，較口語的用法也可採複數動詞。'
             assert fact['evidence'] == 'https://www.oxfordlearnersdictionaries.com/definition/american_english/either_1'
+            return
+        if patch['id'] in LV2_U30_NOTE_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U30-NOTE-SOURCES.json')['facts']
+            assert len(facts) == 4 and {f['noteId'] for f in facts} == LV2_U30_NOTE_IDS
+            fact = next(f for f in facts if f['noteId'] == patch['id'])
+            assert patch['dataset'] == 'notes' and patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U30 full-note source guards required'
+            assert set(patch['after']) == ({'title','content'} if patch['id'] == 'NXf728e282' else {'content'}), 'Only exact U30 note content may change'
+            return
+        if patch['id'] in LV2_U50_NOTE_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U50-NOTE-SOURCES.json')['facts']
+            assert len(facts) == 6 and {f['noteId'] for f in facts} == LV2_U50_NOTE_IDS
+            fact = next(f for f in facts if f['noteId'] == patch['id'])
+            assert patch['dataset'] == 'notes' and patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U50 full-note source guards required'
+            assert set(patch['after']) == {'content'}, 'Only exact U50 note content may change'
+            return
+        if patch['id'] in LV2_U49_NOTE_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U49-NOTE-SOURCES.json')['facts']
+            assert len(facts) == 5 and {f['noteId'] for f in facts} == LV2_U49_NOTE_IDS
+            fact = next(f for f in facts if f['noteId'] == patch['id'])
+            assert patch['dataset'] == 'notes' and patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U49 full-note source guards required'
+            assert set(patch['after']) == ({'title','content'} if patch['id'] in {'NX56368adb','NXc9ca2c13','NX2c88b1fd'} else {'content'}), 'Only exact U49 note content may change'
+            return
+        if patch['id'] in LV2_U48_NOTE_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U48-NOTE-SOURCES.json')['facts']
+            assert len(facts) == 7 and {f['noteId'] for f in facts} == LV2_U48_NOTE_IDS
+            fact = next(f for f in facts if f['noteId'] == patch['id'])
+            assert patch['dataset'] == 'notes' and patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U48 full-note source guards required'
+            assert set(patch['after']) == {'content'}, 'Only exact U48 note content may change'
+            return
+        if patch['id'] in LV2_U47_NOTE_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U47-NOTE-SOURCES.json')['facts']
+            assert len(facts) == 4 and {f['noteId'] for f in facts} == LV2_U47_NOTE_IDS
+            fact = next(f for f in facts if f['noteId'] == patch['id'])
+            assert patch['dataset'] == 'notes' and patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U47 full-note source guards required'
+            assert set(patch['after']) == {'content'}, 'Only exact U47 note content may change'
+            return
+        if patch['id'] in LV2_U46_NOTE_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U46-NOTE-SOURCES.json')['facts']
+            assert len(facts) == 3 and {f['noteId'] for f in facts} == LV2_U46_NOTE_IDS
+            fact = next(f for f in facts if f['noteId'] == patch['id'])
+            assert patch['dataset'] == 'notes' and patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U46 full-note source guards required'
+            assert set(patch['after']) == {'content'}, 'Only exact U46 note content may change'
+            return
+        if patch['id'] in LV2_U45_NOTE_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U45-NOTE-SOURCES.json')['facts']
+            assert len(facts) == 5 and {f['noteId'] for f in facts} == LV2_U45_NOTE_IDS
+            fact = next(f for f in facts if f['noteId'] == patch['id'])
+            assert patch['dataset'] == 'notes' and patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U45 full-note source guards required'
+            assert set(patch['after']) == {'content'}, 'Only exact U45 note content may change'
+            return
+        if patch['id'] in LV2_U44_NOTE_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U44-NOTE-SOURCES.json')['facts']
+            assert len(facts) == 3 and {f['noteId'] for f in facts} == LV2_U44_NOTE_IDS
+            fact = next(f for f in facts if f['noteId'] == patch['id'])
+            assert patch['dataset'] == 'notes' and patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U44 full-note source guards required'
+            assert set(patch['after']) == {'content'}, 'Only exact U44 note content may change'
+            return
+        if patch['id'] in LV2_U43_NOTE_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U43-NOTE-SOURCES.json')['facts']
+            assert len(facts) == 5 and {f['noteId'] for f in facts} == LV2_U43_NOTE_IDS
+            fact = next(f for f in facts if f['noteId'] == patch['id'])
+            assert patch['dataset'] == 'notes' and patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U43 full-note source guards required'
+            assert set(patch['after']) == {'content'}, 'Only exact U43 note content may change'
+            return
+        if patch['id'] in LV2_U42_NOTE_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U42-NOTE-SOURCES.json')['facts']
+            assert len(facts) == 7 and {f['noteId'] for f in facts} == LV2_U42_NOTE_IDS
+            fact = next(f for f in facts if f['noteId'] == patch['id'])
+            assert patch['dataset'] == 'notes' and patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U42 full-note source guards required'
+            assert set(patch['after']) == {'content'}, 'Only exact U42 note content may change'
+            return
+        if patch['id'] in LV2_U41_NOTE_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U41-NOTE-SOURCES.json')['facts']
+            assert len(facts) == 2 and {f['noteId'] for f in facts} == LV2_U41_NOTE_IDS
+            fact = next(f for f in facts if f['noteId'] == patch['id'])
+            assert patch['dataset'] == 'notes' and patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U41 full-note source guards required'
+            assert set(patch['after']) == {'content'}, 'Only exact U41 note content may change'
+            return
+        if patch['id'] in LV2_U40_NOTE_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U40-NOTE-SOURCES.json')['facts']
+            assert len(facts) == 8 and {f['noteId'] for f in facts} == LV2_U40_NOTE_IDS
+            fact = next(f for f in facts if f['noteId'] == patch['id'])
+            assert patch['dataset'] == 'notes' and patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U40 full-note source guards required'
+            assert set(patch['after']) == {'content'}, 'Only exact U40 note content may change'
+            return
+        if patch['id'] in LV2_U39_NOTE_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U39-NOTE-SOURCES.json')['facts']
+            assert len(facts) == 6 and {f['noteId'] for f in facts} == LV2_U39_NOTE_IDS
+            fact = next(f for f in facts if f['noteId'] == patch['id'])
+            assert patch['dataset'] == 'notes' and patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U39 full-note source guards required'
+            assert set(patch['after']) == {'content'}, 'Only exact U39 note content may change'
+            return
+        if patch['id'] in LV2_U38_NOTE_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U38-NOTE-SOURCES.json')['facts']
+            assert len(facts) == 7 and {f['noteId'] for f in facts} == LV2_U38_NOTE_IDS
+            fact = next(f for f in facts if f['noteId'] == patch['id'])
+            assert patch['dataset'] == 'notes' and patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U38 full-note source guards required'
+            assert set(patch['after']) == {'content'}, 'Only exact U38 note content may change'
+            return
+        if patch['id'] in LV2_U37_NOTE_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U37-NOTE-SOURCES.json')['facts']
+            assert len(facts) == 8 and {f['noteId'] for f in facts} == LV2_U37_NOTE_IDS
+            fact = next(f for f in facts if f['noteId'] == patch['id'])
+            assert patch['dataset'] == 'notes' and patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U37 full-note source guards required'
+            assert set(patch['after']) == {'content'}, 'Only exact U37 note content may change'
+            return
+        if patch['id'] in LV2_U36_NOTE_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U36-NOTE-SOURCES.json')['facts']
+            assert len(facts) == 8 and {f['noteId'] for f in facts} == LV2_U36_NOTE_IDS
+            fact = next(f for f in facts if f['noteId'] == patch['id'])
+            assert patch['dataset'] == 'notes' and patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U36 full-note source guards required'
+            assert set(patch['after']) == {'content'}, 'Only exact U36 note content may change'
+            return
+        if patch['id'] in LV2_U35_NOTE_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U35-NOTE-SOURCES.json')['facts']
+            assert len(facts) == 8 and {f['noteId'] for f in facts} == LV2_U35_NOTE_IDS
+            fact = next(f for f in facts if f['noteId'] == patch['id'])
+            assert patch['dataset'] == 'notes' and patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U35 full-note source guards required'
+            assert set(patch['after']) == {'content'}, 'Only exact U35 note content may change'
+            return
+        if patch['id'] in LV2_U34_NOTE_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U34-NOTE-SOURCES.json')['facts']
+            assert len(facts) == 6 and {f['noteId'] for f in facts} == LV2_U34_NOTE_IDS
+            fact = next(f for f in facts if f['noteId'] == patch['id'])
+            assert patch['dataset'] == 'notes' and patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U34 full-note source guards required'
+            assert set(patch['after']) == {'content'}, 'Only exact U34 note content may change'
+            return
+        if patch['id'] in LV2_U33_NOTE_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U33-NOTE-SOURCES.json')['facts']
+            assert len(facts) == 6 and {f['noteId'] for f in facts} == LV2_U33_NOTE_IDS
+            fact = next(f for f in facts if f['noteId'] == patch['id'])
+            assert patch['dataset'] == 'notes' and patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U33 full-note source guards required'
+            assert set(patch['after']) == {'content'}, 'Only exact U33 note content may change'
+            return
+        if patch['id'] in LV2_U32_NOTE_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U32-NOTE-SOURCES.json')['facts']
+            assert len(facts) == 1 and {f['noteId'] for f in facts} == LV2_U32_NOTE_IDS
+            fact = next(f for f in facts if f['noteId'] == patch['id'])
+            assert patch['dataset'] == 'notes' and patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U32 full-note source guards required'
+            assert set(patch['after']) == {'content'}, 'Only exact U32 note content may change'
+            return
+        if patch['id'] in LV2_U31_NOTE_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U31-NOTE-SOURCES.json')['facts']
+            assert len(facts) == 7 and {f['noteId'] for f in facts} == LV2_U31_NOTE_IDS
+            fact = next(f for f in facts if f['noteId'] == patch['id'])
+            assert patch['dataset'] == 'notes' and patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U31 full-note source guards required'
+            assert set(patch['after']) == {'content'}, 'Only exact U31 note content may change'
+            return
+        if patch['id'] in LV2_U29_NOTE_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U29-NOTE-SOURCES.json')['facts']
+            assert len(facts) == 2 and {f['noteId'] for f in facts} == LV2_U29_NOTE_IDS
+            fact = next(f for f in facts if f['noteId'] == patch['id'])
+            assert patch['dataset'] == 'notes' and patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U29 full-note source guards required'
+            assert set(patch['after']) == {'content'}, 'Only exact U29 note content may change'
+            return
+        if patch['id'] in LV2_U28_NOTE_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U28-NOTE-SOURCES.json')['facts']
+            assert len(facts) == 3 and {f['noteId'] for f in facts} == LV2_U28_NOTE_IDS
+            fact = next(f for f in facts if f['noteId'] == patch['id'])
+            assert patch['dataset'] == 'notes' and patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U28 full-note source guards required'
+            expected = {'title'} if patch['id'] == 'NX2b7e8109' else {'title', 'content'} if patch['id'] == 'NXd8cde86b' else {'content'}
+            assert set(patch['after']) == expected, 'Only two exact U28 titles may change'
+            return
+        if patch['id'] in LV2_U27_NOTE_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U27-NOTE-SOURCES.json')['facts']
+            assert len(facts) == 8 and {f['noteId'] for f in facts} == LV2_U27_NOTE_IDS
+            fact = next(f for f in facts if f['noteId'] == patch['id'])
+            assert patch['dataset'] == 'notes' and patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U27 note and source guards required'
+            assert set(patch['after']) == ({'title'} if patch['id'] == 'NXa9825fa6' else {'content'}), 'Title editable only for the individually verified term note'
             return
         if patch['id'] == 'NXe49d83a6':
             facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-U24-NOTE-SOURCES.json')['facts']
@@ -80,8 +313,169 @@ def validate_patch_shape(patch):
         assert patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact note content, word, title, type and status guards required'
         assert set(patch['after']) == {'content'}, 'No note identity, title, type or status change'
         assert fact['after']['content'] == fact['before']['content'].replace('腦部創傷','頭部傷勢'), 'Only the verified duplicate translation is editable'
+    if 'verbForms' in patch['after'] and patch['id'] in LV2_U50_FORM_IDS:
+        facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U50-VERB-FORMS-SOURCES.json')['facts']
+        assert len(facts) == 13 and {f['wordId'] for f in facts} == LV2_U50_FORM_IDS
+        assert patch['dataset'] == 'words' and patch['before'] == {'verbForms': ABSENT} and set(patch['after']) == {'verbForms'}
+        fact = next(f for f in facts if f['wordId'] == patch['id'])
+        assert patch['after']['verbForms'] == fact['verbForms'], 'Exact U50 forms and source required'
+        return
+    if 'verbForms' in patch['after'] and patch['id'] in LV2_U49_FORM_IDS:
+        facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U49-VERB-FORMS-SOURCES.json')['facts']
+        assert len(facts) == 15 and {f['wordId'] for f in facts} == LV2_U49_FORM_IDS
+        assert patch['dataset'] == 'words' and patch['before'] == {'verbForms': ABSENT} and set(patch['after']) == {'verbForms'}
+        fact = next(f for f in facts if f['wordId'] == patch['id'])
+        assert patch['after']['verbForms'] == fact['verbForms'], 'Exact U49 forms and source required'
+        return
+    if 'verbForms' in patch['after'] and patch['id'] in LV2_U48_FORM_IDS:
+        facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U48-VERB-FORMS-SOURCES.json')['facts']
+        assert len(facts) == 20 and {f['wordId'] for f in facts} == LV2_U48_FORM_IDS
+        assert patch['dataset'] == 'words' and patch['before'] == {'verbForms': ABSENT} and set(patch['after']) == {'verbForms'}
+        fact = next(f for f in facts if f['wordId'] == patch['id'])
+        assert patch['after']['verbForms'] == fact['verbForms'], 'Exact U48 forms and source required'
+        return
+    if 'verbForms' in patch['after'] and patch['id'] in LV2_U47_FORM_IDS:
+        facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U47-VERB-FORMS-SOURCES.json')['facts']
+        assert len(facts) == 11 and {f['wordId'] for f in facts} == LV2_U47_FORM_IDS
+        assert patch['dataset'] == 'words' and patch['before'] == {'verbForms': ABSENT} and set(patch['after']) == {'verbForms'}
+        fact = next(f for f in facts if f['wordId'] == patch['id'])
+        assert patch['after']['verbForms'] == fact['verbForms'], 'Exact U47 forms and source required'
+        return
+    if 'verbForms' in patch['after'] and patch['id'] in LV2_U46_FORM_IDS:
+        facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U46-VERB-FORMS-SOURCES.json')['facts']
+        assert len(facts) == 21 and {f['wordId'] for f in facts} == LV2_U46_FORM_IDS
+        assert patch['dataset'] == 'words' and patch['before'] == {'verbForms': ABSENT} and set(patch['after']) == {'verbForms'}
+        fact = next(f for f in facts if f['wordId'] == patch['id'])
+        assert patch['after']['verbForms'] == fact['verbForms'], 'Exact U46 forms and source required'
+        return
+    if 'verbForms' in patch['after'] and patch['id'] in LV2_U45_FORM_IDS:
+        facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U45-VERB-FORMS-SOURCES.json')['facts']
+        assert len(facts) == 18 and {f['wordId'] for f in facts} == LV2_U45_FORM_IDS
+        assert patch['dataset'] == 'words' and patch['before'] == {'verbForms': ABSENT} and set(patch['after']) == {'verbForms'}
+        fact = next(f for f in facts if f['wordId'] == patch['id'])
+        assert patch['after']['verbForms'] == fact['verbForms'], 'Exact U45 forms and source required'
+        return
+    if 'verbForms' in patch['after'] and patch['id'] in LV2_U44_FORM_IDS:
+        facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U44-VERB-FORMS-SOURCES.json')['facts']
+        assert len(facts) == 17 and {f['wordId'] for f in facts} == LV2_U44_FORM_IDS
+        assert patch['dataset'] == 'words' and patch['before'] == {'verbForms': ABSENT} and set(patch['after']) == {'verbForms'}
+        fact = next(f for f in facts if f['wordId'] == patch['id'])
+        assert patch['after']['verbForms'] == fact['verbForms'], 'Exact U44 forms and source required'
+        return
+    if 'verbForms' in patch['after'] and patch['id'] in LV2_U43_FORM_IDS:
+        facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U43-VERB-FORMS-SOURCES.json')['facts']
+        assert len(facts) == 17 and {f['wordId'] for f in facts} == LV2_U43_FORM_IDS
+        assert patch['dataset'] == 'words' and patch['before'] == {'verbForms': ABSENT} and set(patch['after']) == {'verbForms'}
+        fact = next(f for f in facts if f['wordId'] == patch['id'])
+        assert patch['after']['verbForms'] == fact['verbForms'], 'Exact U43 forms and source required'
+        return
+    if 'verbForms' in patch['after'] and patch['id'] in LV2_U42_FORM_IDS:
+        facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U42-VERB-FORMS-SOURCES.json')['facts']
+        assert len(facts) == 19 and {f['wordId'] for f in facts} == LV2_U42_FORM_IDS
+        assert patch['dataset'] == 'words' and patch['before'] == {'verbForms': ABSENT} and set(patch['after']) == {'verbForms'}
+        fact = next(f for f in facts if f['wordId'] == patch['id'])
+        assert patch['after']['verbForms'] == fact['verbForms'], 'Exact U42 forms and source required'
+        return
+    if 'verbForms' in patch['after'] and patch['id'] in LV2_U41_FORM_IDS:
+        facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U41-VERB-FORMS-SOURCES.json')['facts']
+        assert len(facts) == 11 and {f['wordId'] for f in facts} == LV2_U41_FORM_IDS
+        assert patch['dataset'] == 'words' and patch['before'] == {'verbForms': ABSENT} and set(patch['after']) == {'verbForms'}
+        fact = next(f for f in facts if f['wordId'] == patch['id'])
+        assert patch['after']['verbForms'] == fact['verbForms'], 'Exact U41 forms and source required'
+        return
+    if 'verbForms' in patch['after'] and patch['id'] in LV2_U40_FORM_IDS:
+        facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U40-VERB-FORMS-SOURCES.json')['facts']
+        assert len(facts) == 11 and {f['wordId'] for f in facts} == LV2_U40_FORM_IDS
+        assert patch['dataset'] == 'words' and patch['before'] == {'verbForms': ABSENT} and set(patch['after']) == {'verbForms'}
+        fact = next(f for f in facts if f['wordId'] == patch['id'])
+        assert patch['after']['verbForms'] == fact['verbForms'], 'Exact U40 forms and source required'
+        return
+    if 'verbForms' in patch['after'] and patch['id'] in LV2_U39_FORM_IDS:
+        facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U39-VERB-FORMS-SOURCES.json')['facts']
+        assert len(facts) == 16 and {f['wordId'] for f in facts} == LV2_U39_FORM_IDS
+        assert patch['dataset'] == 'words' and patch['before'] == {'verbForms': ABSENT} and set(patch['after']) == {'verbForms'}
+        fact = next(f for f in facts if f['wordId'] == patch['id'])
+        assert patch['after']['verbForms'] == fact['verbForms'], 'Exact U39 forms and source required'
+        return
+    if 'verbForms' in patch['after'] and patch['id'] in LV2_U38_FORM_IDS:
+        facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U38-VERB-FORMS-SOURCES.json')['facts']
+        assert len(facts) == 14 and {f['wordId'] for f in facts} == LV2_U38_FORM_IDS
+        assert patch['dataset'] == 'words' and patch['before'] == {'verbForms': ABSENT} and set(patch['after']) == {'verbForms'}
+        fact = next(f for f in facts if f['wordId'] == patch['id'])
+        assert patch['after']['verbForms'] == fact['verbForms'], 'Exact U38 forms and source required'
+        return
+    if 'verbForms' in patch['after'] and patch['id'] in LV2_U37_FORM_IDS:
+        facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U37-VERB-FORMS-SOURCES.json')['facts']
+        assert len(facts) == 15 and {f['wordId'] for f in facts} == LV2_U37_FORM_IDS
+        assert patch['dataset'] == 'words' and patch['before'] == {'verbForms': ABSENT} and set(patch['after']) == {'verbForms'}
+        fact = next(f for f in facts if f['wordId'] == patch['id'])
+        assert patch['after']['verbForms'] == fact['verbForms'], 'Exact U37 forms and source required'
+        return
+    if 'verbForms' in patch['after'] and patch['id'] in LV2_U36_FORM_IDS:
+        facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U36-VERB-FORMS-SOURCES.json')['facts']
+        assert len(facts) == 11 and {f['wordId'] for f in facts} == LV2_U36_FORM_IDS
+        assert patch['dataset'] == 'words' and patch['before'] == {'verbForms': ABSENT} and set(patch['after']) == {'verbForms'}
+        fact = next(f for f in facts if f['wordId'] == patch['id'])
+        assert patch['after']['verbForms'] == fact['verbForms'], 'Exact U36 forms and source required'
+        return
+    if 'verbForms' in patch['after'] and patch['id'] in LV2_U35_FORM_IDS:
+        facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U35-VERB-FORMS-SOURCES.json')['facts']
+        assert len(facts) == 20 and {f['wordId'] for f in facts} == LV2_U35_FORM_IDS
+        assert patch['dataset'] == 'words' and patch['before'] == {'verbForms': ABSENT} and set(patch['after']) == {'verbForms'}
+        fact = next(f for f in facts if f['wordId'] == patch['id'])
+        assert patch['after']['verbForms'] == fact['verbForms'], 'Exact U35 forms and source required'
+        return
+    if 'verbForms' in patch['after'] and patch['id'] in LV2_U34_FORM_IDS:
+        facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U34-VERB-FORMS-SOURCES.json')['facts']
+        assert len(facts) == 13 and {f['wordId'] for f in facts} == LV2_U34_FORM_IDS
+        assert patch['dataset'] == 'words' and patch['before'] == {'verbForms': ABSENT} and set(patch['after']) == {'verbForms'}
+        fact = next(f for f in facts if f['wordId'] == patch['id'])
+        assert patch['after']['verbForms'] == fact['verbForms'], 'Exact U34 forms and source required'
+        return
+    if 'verbForms' in patch['after'] and patch['id'] in LV2_U33_FORM_IDS:
+        facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U33-VERB-FORMS-SOURCES.json')['facts']
+        assert len(facts) == 9 and {f['wordId'] for f in facts} == LV2_U33_FORM_IDS
+        assert patch['dataset'] == 'words' and patch['before'] == {'verbForms': ABSENT} and set(patch['after']) == {'verbForms'}
+        fact = next(f for f in facts if f['wordId'] == patch['id'])
+        assert patch['after']['verbForms'] == fact['verbForms'], 'Exact U33 forms and source required'
+        return
+    if 'verbForms' in patch['after'] and patch['id'] in LV2_U32_FORM_IDS:
+        facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U32-VERB-FORMS-SOURCES.json')['facts']
+        assert len(facts) == 16 and {f['wordId'] for f in facts} == LV2_U32_FORM_IDS
+        assert patch['dataset'] == 'words' and patch['before'] == {'verbForms': ABSENT} and set(patch['after']) == {'verbForms'}
+        fact = next(f for f in facts if f['wordId'] == patch['id'])
+        assert patch['after']['verbForms'] == fact['verbForms'], 'Exact U32 forms and source required'
+        return
+    if 'verbForms' in patch['after'] and patch['id'] in LV2_U31_FORM_IDS:
+        facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U31-VERB-FORMS-SOURCES.json')['facts']
+        assert len(facts) == 19 and {f['wordId'] for f in facts} == LV2_U31_FORM_IDS
+        assert patch['dataset'] == 'words' and patch['before'] == {'verbForms': ABSENT} and set(patch['after']) == {'verbForms'}
+        fact = next(f for f in facts if f['wordId'] == patch['id'])
+        assert patch['after']['verbForms'] == fact['verbForms'], 'Exact U31 forms and source required'
+        return
+    if 'verbForms' in patch['after'] and patch['id'] in LV2_U30_FORM_IDS:
+        facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U30-VERB-FORMS-SOURCES.json')['facts']
+        assert len(facts) == 17 and {f['wordId'] for f in facts} == LV2_U30_FORM_IDS
+        assert patch['dataset'] == 'words' and patch['before'] == {'verbForms': ABSENT} and set(patch['after']) == {'verbForms'}
+        fact = next(f for f in facts if f['wordId'] == patch['id'])
+        assert patch['after']['verbForms'] == fact['verbForms'], 'Exact U30 forms and source required'
+        return
+    if 'verbForms' in patch['after'] and patch['id'] in LV2_U29_FORM_IDS:
+        facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U29-VERB-FORMS-SOURCES.json')['facts']
+        assert len(facts) == 22 and {f['wordId'] for f in facts} == LV2_U29_FORM_IDS
+        assert patch['dataset'] == 'words' and patch['before'] == {'verbForms': ABSENT} and set(patch['after']) == {'verbForms'}
+        fact = next(f for f in facts if f['wordId'] == patch['id'])
+        assert patch['after']['verbForms'] == fact['verbForms'], 'Exact U29 forms and source required'
+        return
+    if 'verbForms' in patch['after'] and patch['id'] in LV2_U28_FORM_IDS:
+        facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U28-VERB-FORMS-SOURCES.json')['facts']
+        assert len(facts) == 17 and {f['wordId'] for f in facts} == LV2_U28_FORM_IDS
+        assert patch['dataset'] == 'words' and patch['before'] == {'verbForms': ABSENT} and set(patch['after']) == {'verbForms'}
+        fact = next(f for f in facts if f['wordId'] == patch['id'])
+        assert patch['after']['verbForms'] == fact['verbForms'], 'Exact U28 forms and source required'
+        return
     if 'verbForms' in patch['after']:
-        assert patch['dataset'] == 'words' and patch['id'] in FORM_IDS | FOLLOWUP_FORM_IDS | U16_FORM_IDS | U17_FORM_IDS | U18_FORM_IDS | U19_FORM_IDS | U20_FORM_IDS | U21_FORM_IDS | INTEGRATED_U05_U06_FORM_IDS | INTEGRATED_U07_FORM_IDS | INTEGRATED_U08_U09_FORM_IDS | INTEGRATED_U10_FORM_IDS | INTEGRATED_U11_FORM_IDS | INTEGRATED_U12_FORM_IDS | INTEGRATED_U13_FORM_IDS | INTEGRATED_U14_FORM_IDS | INTEGRATED_U15_FORM_IDS | U22_FORM_IDS | U23_FORM_IDS | U24_FORM_IDS | U25_FORM_IDS, 'Only individually verified existing verbs may acquire principal parts'
+        assert patch['dataset'] == 'words' and patch['id'] in FORM_IDS | FOLLOWUP_FORM_IDS | U16_FORM_IDS | U17_FORM_IDS | U18_FORM_IDS | U19_FORM_IDS | U20_FORM_IDS | U21_FORM_IDS | INTEGRATED_U05_U06_FORM_IDS | INTEGRATED_U07_FORM_IDS | INTEGRATED_U08_U09_FORM_IDS | INTEGRATED_U10_FORM_IDS | INTEGRATED_U11_FORM_IDS | INTEGRATED_U12_FORM_IDS | INTEGRATED_U13_FORM_IDS | INTEGRATED_U14_FORM_IDS | INTEGRATED_U15_FORM_IDS | U22_FORM_IDS | U23_FORM_IDS | U24_FORM_IDS | U25_FORM_IDS | LV2_U27_FORM_IDS, 'Only individually verified existing verbs may acquire principal parts'
         assert patch['before'] == {'verbForms': ABSENT} and set(patch['after']) == {'verbForms'}, 'Only an explicitly absent verbForms field may be added'
         facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-VERB-FORMS-SOURCES.json')['facts']
         assert len(facts) == 31 and {f['wordId'] for f in facts} == FORM_IDS
@@ -146,6 +540,10 @@ def validate_patch_shape(patch):
         u25 = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-U25-VERB-FORMS-SOURCES.json')['facts']
         assert len(u25) == 24 and {f['wordId'] for f in u25} == U25_FORM_IDS
         assert not (earlier_ids | U22_FORM_IDS | U23_FORM_IDS | U24_FORM_IDS) & U25_FORM_IDS, 'Keep the exact sourced U25 scope separate'
+        lv2_u27 = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U27-VERB-FORMS-SOURCES.json')['facts']
+        assert len(lv2_u27) == 20 and {f['wordId'] for f in lv2_u27} == LV2_U27_FORM_IDS
+        assert not (earlier_ids | U22_FORM_IDS | U23_FORM_IDS | U24_FORM_IDS | U25_FORM_IDS) & LV2_U27_FORM_IDS
+        facts += lv2_u27
         facts += u25
         facts += u24
         facts += u23
@@ -154,6 +552,97 @@ def validate_patch_shape(patch):
         fact = next(f for f in facts if f['wordId'] == patch['id'])
         assert patch['after']['verbForms'] == fact['verbForms'], 'Unverified principal parts or source'
     if 'sentenceZh' in patch['after']:
+        if patch['id'] in LV2_U49_TRANSLATION_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U49-TRANSLATION-SOURCES.json')['facts']
+            assert patch['dataset'] == 'examples' and len(facts) == 1 and {f['exampleId'] for f in facts} == LV2_U49_TRANSLATION_IDS
+            fact = next(f for f in facts if f['exampleId'] == patch['id'])
+            assert patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U49 headword, English, blank, answer and Chinese guards required'
+            assert set(patch['after']) == {'sentenceZh'}
+            return
+        if patch['id'] in LV2_U48_TRANSLATION_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U48-TRANSLATION-SOURCES.json')['facts']
+            assert patch['dataset'] == 'examples' and len(facts) == 1 and {f['exampleId'] for f in facts} == LV2_U48_TRANSLATION_IDS
+            fact = next(f for f in facts if f['exampleId'] == patch['id'])
+            assert patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U48 headword, English, blank, answer and Chinese guards required'
+            assert set(patch['after']) == {'sentenceZh'}
+            return
+        if patch['id'] in LV2_U47_TRANSLATION_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U47-TRANSLATION-SOURCES.json')['facts']
+            assert patch['dataset'] == 'examples' and len(facts) == 2 and {f['exampleId'] for f in facts} == LV2_U47_TRANSLATION_IDS
+            fact = next(f for f in facts if f['exampleId'] == patch['id'])
+            assert patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U47 headword, English, blank, answer and Chinese guards required'
+            assert set(patch['after']) == {'sentenceZh'}
+            return
+        if patch['id'] in LV2_U46_TRANSLATION_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U46-TRANSLATION-SOURCES.json')['facts']
+            assert patch['dataset'] == 'examples' and len(facts) == 1 and {f['exampleId'] for f in facts} == LV2_U46_TRANSLATION_IDS
+            fact = next(f for f in facts if f['exampleId'] == patch['id'])
+            assert patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U46 headword, English, blank, answer and Chinese guards required'
+            assert set(patch['after']) == {'sentenceZh'}
+            return
+        if patch['id'] in LV2_U45_TRANSLATION_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U45-TRANSLATION-SOURCES.json')['facts']
+            assert patch['dataset'] == 'examples' and len(facts) == 2 and {f['exampleId'] for f in facts} == LV2_U45_TRANSLATION_IDS
+            fact = next(f for f in facts if f['exampleId'] == patch['id'])
+            assert patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U45 headword, English, blank, answer and Chinese guards required'
+            assert set(patch['after']) == {'sentenceZh'}
+            return
+        if patch['id'] in LV2_U44_TRANSLATION_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U44-TRANSLATION-SOURCES.json')['facts']
+            assert patch['dataset'] == 'examples' and len(facts) == 3 and {f['exampleId'] for f in facts} == LV2_U44_TRANSLATION_IDS
+            fact = next(f for f in facts if f['exampleId'] == patch['id'])
+            assert patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U44 headword, English, blank, answer and Chinese guards required'
+            assert set(patch['after']) == {'sentenceZh'}
+            return
+        if patch['id'] in LV2_U43_TRANSLATION_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U43-TRANSLATION-SOURCES.json')['facts']
+            assert patch['dataset'] == 'examples' and len(facts) == 1 and {f['exampleId'] for f in facts} == LV2_U43_TRANSLATION_IDS
+            fact = next(f for f in facts if f['exampleId'] == patch['id'])
+            assert patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U43 headword, English, blank, answer and Chinese guards required'
+            assert set(patch['after']) == {'sentenceZh'}
+            return
+        if patch['id'] in LV2_U42_TRANSLATION_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U42-TRANSLATION-SOURCES.json')['facts']
+            assert patch['dataset'] == 'examples' and len(facts) == 1 and {f['exampleId'] for f in facts} == LV2_U42_TRANSLATION_IDS
+            fact = next(f for f in facts if f['exampleId'] == patch['id'])
+            assert patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U42 headword, English, blank, answer and Chinese guards required'
+            assert set(patch['after']) == {'sentenceZh'}
+            return
+        if patch['id'] in LV2_U35_TRANSLATION_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U35-TRANSLATION-SOURCES.json')['facts']
+            assert patch['dataset'] == 'examples' and len(facts) == 2 and {f['exampleId'] for f in facts} == LV2_U35_TRANSLATION_IDS
+            fact = next(f for f in facts if f['exampleId'] == patch['id'])
+            assert patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U35 headword, English, blank, answer and Chinese guards required'
+            assert set(patch['after']) == {'sentenceZh'}
+            return
+        if patch['id'] in LV2_U33_TRANSLATION_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U33-TRANSLATION-SOURCES.json')['facts']
+            assert patch['dataset'] == 'examples' and len(facts) == 1 and {f['exampleId'] for f in facts} == LV2_U33_TRANSLATION_IDS
+            fact = next(f for f in facts if f['exampleId'] == patch['id'])
+            assert patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U33 headword, English, blank, answer and Chinese guards required'
+            assert set(patch['after']) == {'sentenceZh'}
+            return
+        if patch['id'] in LV2_U32_TRANSLATION_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U32-TRANSLATION-SOURCES.json')['facts']
+            assert patch['dataset'] == 'examples' and len(facts) == 1 and {f['exampleId'] for f in facts} == LV2_U32_TRANSLATION_IDS
+            fact = next(f for f in facts if f['exampleId'] == patch['id'])
+            assert patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U32 headword, English, blank, answer and Chinese guards required'
+            assert set(patch['after']) == {'sentenceZh'}
+            return
+        if patch['id'] in LV2_U30_TRANSLATION_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U30-TRANSLATION-SOURCES.json')['facts']
+            assert patch['dataset'] == 'examples' and len(facts) == 1 and {f['exampleId'] for f in facts} == LV2_U30_TRANSLATION_IDS
+            fact = next(f for f in facts if f['exampleId'] == patch['id'])
+            assert patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U30 headword, English, blank, answer and Chinese guards required'
+            assert set(patch['after']) == {'sentenceZh'}
+            return
+        if patch['id'] in LV2_U29_TRANSLATION_IDS:
+            facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U29-TRANSLATION-SOURCES.json')['facts']
+            assert patch['dataset'] == 'examples' and len(facts) == 1 and {f['exampleId'] for f in facts} == LV2_U29_TRANSLATION_IDS
+            fact = next(f for f in facts if f['exampleId'] == patch['id'])
+            assert patch['before'] == fact['before'] and patch['after'] == fact['after'], 'Exact LV2 U29 headword, English, blank, answer and Chinese guards required'
+            assert set(patch['after']) == {'sentenceZh'}
+            return
         if patch['id'] in U23_TRANSLATION_IDS:
             facts = read(ROOT / 'docs/unit-audit-20261105/VERIFIED-U23-TRANSLATION-SOURCES.json')['facts']
             assert patch['dataset'] == 'examples' and len(facts) == 3 and {f['exampleId'] for f in facts} == U23_TRANSLATION_IDS
@@ -181,8 +670,137 @@ def validate_patch_shape(patch):
 
 def apply_to_row(row, patch):
     """Validate guards even for idempotent rows; missing optional keys stay distinct from null."""
+    if patch['key'] in patch['before']:
+        assert row[patch['key']] == patch['id'], 'Exact recorded row identity required'
     if 'verbForms' in patch['after']:
         assert row['word'] == patch['after']['verbForms']['base'] and 'v.' in row['pos'], 'Forms belong only to this existing verb'
+        if patch['id'] in LV2_U50_FORM_IDS:
+            fact = next(f for f in read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U50-VERB-FORMS-SOURCES.json')['facts'] if f['wordId'] == patch['id'])
+            assert 'v.' in row['posAll'], 'Exact lexical verb POS required for U50 forms'
+            non_form = {k: v for k, v in row.items() if k != 'verbForms'}
+            digest = hashlib.sha256(json.dumps(non_form, ensure_ascii=False, separators=(',', ':')).encode('utf-8')).hexdigest()
+            assert digest == fact['nonFormRowSha256'], 'Exact LV2 U50 non-form row guard changed'
+        if patch['id'] in LV2_U49_FORM_IDS:
+            fact = next(f for f in read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U49-VERB-FORMS-SOURCES.json')['facts'] if f['wordId'] == patch['id'])
+            assert 'v.' in row['posAll'], 'Exact lexical verb POS required for U49 forms'
+            non_form = {k: v for k, v in row.items() if k != 'verbForms'}
+            digest = hashlib.sha256(json.dumps(non_form, ensure_ascii=False, separators=(',', ':')).encode('utf-8')).hexdigest()
+            assert digest == fact['nonFormRowSha256'], 'Exact LV2 U49 non-form row guard changed'
+        if patch['id'] in LV2_U48_FORM_IDS:
+            fact = next(f for f in read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U48-VERB-FORMS-SOURCES.json')['facts'] if f['wordId'] == patch['id'])
+            assert 'v.' in row['posAll'], 'Exact lexical verb POS required for U48 forms'
+            non_form = {k: v for k, v in row.items() if k != 'verbForms'}
+            digest = hashlib.sha256(json.dumps(non_form, ensure_ascii=False, separators=(',', ':')).encode('utf-8')).hexdigest()
+            assert digest == fact['nonFormRowSha256'], 'Exact LV2 U48 non-form row guard changed'
+        if patch['id'] in LV2_U47_FORM_IDS:
+            fact = next(f for f in read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U47-VERB-FORMS-SOURCES.json')['facts'] if f['wordId'] == patch['id'])
+            assert 'v.' in row['posAll'], 'Exact lexical verb POS required for U47 forms'
+            non_form = {k: v for k, v in row.items() if k != 'verbForms'}
+            digest = hashlib.sha256(json.dumps(non_form, ensure_ascii=False, separators=(',', ':')).encode('utf-8')).hexdigest()
+            assert digest == fact['nonFormRowSha256'], 'Exact LV2 U47 non-form row guard changed'
+        if patch['id'] in LV2_U46_FORM_IDS:
+            fact = next(f for f in read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U46-VERB-FORMS-SOURCES.json')['facts'] if f['wordId'] == patch['id'])
+            assert 'v.' in row['posAll'], 'Exact lexical verb POS required for U46 forms'
+            non_form = {k: v for k, v in row.items() if k != 'verbForms'}
+            digest = hashlib.sha256(json.dumps(non_form, ensure_ascii=False, separators=(',', ':')).encode('utf-8')).hexdigest()
+            assert digest == fact['nonFormRowSha256'], 'Exact LV2 U46 non-form row guard changed'
+        if patch['id'] in LV2_U45_FORM_IDS:
+            fact = next(f for f in read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U45-VERB-FORMS-SOURCES.json')['facts'] if f['wordId'] == patch['id'])
+            assert 'v.' in row['posAll'], 'Exact lexical verb POS required for U45 forms'
+            non_form = {k: v for k, v in row.items() if k != 'verbForms'}
+            digest = hashlib.sha256(json.dumps(non_form, ensure_ascii=False, separators=(',', ':')).encode('utf-8')).hexdigest()
+            assert digest == fact['nonFormRowSha256'], 'Exact LV2 U45 non-form row guard changed'
+        if patch['id'] in LV2_U44_FORM_IDS:
+            fact = next(f for f in read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U44-VERB-FORMS-SOURCES.json')['facts'] if f['wordId'] == patch['id'])
+            assert 'v.' in row['posAll'], 'Exact lexical verb POS required for U44 forms'
+            non_form = {k: v for k, v in row.items() if k != 'verbForms'}
+            digest = hashlib.sha256(json.dumps(non_form, ensure_ascii=False, separators=(',', ':')).encode('utf-8')).hexdigest()
+            assert digest == fact['nonFormRowSha256'], 'Exact LV2 U44 non-form row guard changed'
+        if patch['id'] in LV2_U43_FORM_IDS:
+            fact = next(f for f in read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U43-VERB-FORMS-SOURCES.json')['facts'] if f['wordId'] == patch['id'])
+            non_form = {k: v for k, v in row.items() if k != 'verbForms'}
+            digest = hashlib.sha256(json.dumps(non_form, ensure_ascii=False, separators=(',', ':')).encode('utf-8')).hexdigest()
+            assert digest == fact['nonFormRowSha256'], 'Exact LV2 U43 non-form row guard changed'
+        if patch['id'] in LV2_U42_FORM_IDS:
+            fact = next(f for f in read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U42-VERB-FORMS-SOURCES.json')['facts'] if f['wordId'] == patch['id'])
+            non_form = {k: v for k, v in row.items() if k != 'verbForms'}
+            digest = hashlib.sha256(json.dumps(non_form, ensure_ascii=False, separators=(',', ':')).encode('utf-8')).hexdigest()
+            assert digest == fact['nonFormRowSha256'], 'Exact LV2 U42 non-form row guard changed'
+        if patch['id'] in LV2_U41_FORM_IDS:
+            fact = next(f for f in read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U41-VERB-FORMS-SOURCES.json')['facts'] if f['wordId'] == patch['id'])
+            non_form = {k: v for k, v in row.items() if k != 'verbForms'}
+            digest = hashlib.sha256(json.dumps(non_form, ensure_ascii=False, separators=(',', ':')).encode('utf-8')).hexdigest()
+            assert digest == fact['nonFormRowSha256'], 'Exact LV2 U41 non-form row guard changed'
+        if patch['id'] in LV2_U40_FORM_IDS:
+            fact = next(f for f in read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U40-VERB-FORMS-SOURCES.json')['facts'] if f['wordId'] == patch['id'])
+            non_form = {k: v for k, v in row.items() if k != 'verbForms'}
+            digest = hashlib.sha256(json.dumps(non_form, ensure_ascii=False, separators=(',', ':')).encode('utf-8')).hexdigest()
+            assert digest == fact['nonFormRowSha256'], 'Exact LV2 U40 non-form row guard changed'
+        if patch['id'] in LV2_U39_FORM_IDS:
+            fact = next(f for f in read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U39-VERB-FORMS-SOURCES.json')['facts'] if f['wordId'] == patch['id'])
+            non_form = {k: v for k, v in row.items() if k != 'verbForms'}
+            digest = hashlib.sha256(json.dumps(non_form, ensure_ascii=False, separators=(',', ':')).encode('utf-8')).hexdigest()
+            assert digest == fact['nonFormRowSha256'], 'Exact LV2 U39 non-form row guard changed'
+        if patch['id'] in LV2_U38_FORM_IDS:
+            fact = next(f for f in read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U38-VERB-FORMS-SOURCES.json')['facts'] if f['wordId'] == patch['id'])
+            non_form = {k: v for k, v in row.items() if k != 'verbForms'}
+            digest = hashlib.sha256(json.dumps(non_form, ensure_ascii=False, separators=(',', ':')).encode('utf-8')).hexdigest()
+            assert digest == fact['nonFormRowSha256'], 'Exact LV2 U38 non-form row guard changed'
+        if patch['id'] in LV2_U37_FORM_IDS:
+            fact = next(f for f in read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U37-VERB-FORMS-SOURCES.json')['facts'] if f['wordId'] == patch['id'])
+            non_form = {k: v for k, v in row.items() if k != 'verbForms'}
+            digest = hashlib.sha256(json.dumps(non_form, ensure_ascii=False, separators=(',', ':')).encode('utf-8')).hexdigest()
+            assert digest == fact['nonFormRowSha256'], 'Exact LV2 U37 non-form row guard changed'
+        if patch['id'] in LV2_U36_FORM_IDS:
+            fact = next(f for f in read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U36-VERB-FORMS-SOURCES.json')['facts'] if f['wordId'] == patch['id'])
+            non_form = {k: v for k, v in row.items() if k != 'verbForms'}
+            digest = hashlib.sha256(json.dumps(non_form, ensure_ascii=False, separators=(',', ':')).encode('utf-8')).hexdigest()
+            assert digest == fact['nonFormRowSha256'], 'Exact LV2 U36 non-form row guard changed'
+        if patch['id'] in LV2_U35_FORM_IDS:
+            fact = next(f for f in read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U35-VERB-FORMS-SOURCES.json')['facts'] if f['wordId'] == patch['id'])
+            non_form = {k: v for k, v in row.items() if k != 'verbForms'}
+            digest = hashlib.sha256(json.dumps(non_form, ensure_ascii=False, separators=(',', ':')).encode('utf-8')).hexdigest()
+            assert digest == fact['nonFormRowSha256'], 'Exact LV2 U35 non-form row guard changed'
+        if patch['id'] in LV2_U34_FORM_IDS:
+            fact = next(f for f in read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U34-VERB-FORMS-SOURCES.json')['facts'] if f['wordId'] == patch['id'])
+            non_form = {k: v for k, v in row.items() if k != 'verbForms'}
+            digest = hashlib.sha256(json.dumps(non_form, ensure_ascii=False, separators=(',', ':')).encode('utf-8')).hexdigest()
+            assert digest == fact['nonFormRowSha256'], 'Exact LV2 U34 non-form row guard changed'
+        if patch['id'] in LV2_U33_FORM_IDS:
+            fact = next(f for f in read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U33-VERB-FORMS-SOURCES.json')['facts'] if f['wordId'] == patch['id'])
+            non_form = {k: v for k, v in row.items() if k != 'verbForms'}
+            digest = hashlib.sha256(json.dumps(non_form, ensure_ascii=False, separators=(',', ':')).encode('utf-8')).hexdigest()
+            assert digest == fact['nonFormRowSha256'], 'Exact LV2 U33 non-form row guard changed'
+        if patch['id'] in LV2_U32_FORM_IDS:
+            fact = next(f for f in read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U32-VERB-FORMS-SOURCES.json')['facts'] if f['wordId'] == patch['id'])
+            non_form = {k: v for k, v in row.items() if k != 'verbForms'}
+            digest = hashlib.sha256(json.dumps(non_form, ensure_ascii=False, separators=(',', ':')).encode('utf-8')).hexdigest()
+            assert digest == fact['nonFormRowSha256'], 'Exact LV2 U32 non-form row guard changed'
+        if patch['id'] in LV2_U31_FORM_IDS:
+            fact = next(f for f in read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U31-VERB-FORMS-SOURCES.json')['facts'] if f['wordId'] == patch['id'])
+            non_form = {k: v for k, v in row.items() if k != 'verbForms'}
+            digest = hashlib.sha256(json.dumps(non_form, ensure_ascii=False, separators=(',', ':')).encode('utf-8')).hexdigest()
+            assert digest == fact['nonFormRowSha256'], 'Exact LV2 U31 non-form row guard changed'
+        if patch['id'] in LV2_U30_FORM_IDS:
+            fact = next(f for f in read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U30-VERB-FORMS-SOURCES.json')['facts'] if f['wordId'] == patch['id'])
+            non_form = {k: v for k, v in row.items() if k != 'verbForms'}
+            digest = hashlib.sha256(json.dumps(non_form, ensure_ascii=False, separators=(',', ':')).encode('utf-8')).hexdigest()
+            assert digest == fact['nonFormRowSha256'], 'Exact LV2 U30 non-form row guard changed'
+        if patch['id'] in LV2_U29_FORM_IDS:
+            fact = next(f for f in read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U29-VERB-FORMS-SOURCES.json')['facts'] if f['wordId'] == patch['id'])
+            non_form = {k: v for k, v in row.items() if k != 'verbForms'}
+            digest = hashlib.sha256(json.dumps(non_form, ensure_ascii=False, separators=(',', ':')).encode('utf-8')).hexdigest()
+            assert digest == fact['nonFormRowSha256'], 'Exact LV2 U29 non-form row guard changed'
+        if patch['id'] in LV2_U28_FORM_IDS:
+            fact = next(f for f in read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U28-VERB-FORMS-SOURCES.json')['facts'] if f['wordId'] == patch['id'])
+            non_form = {k: v for k, v in row.items() if k != 'verbForms'}
+            digest = hashlib.sha256(json.dumps(non_form, ensure_ascii=False, separators=(',', ':')).encode('utf-8')).hexdigest()
+            assert digest == fact['nonFormRowSha256'], 'Exact LV2 U28 non-form row guard changed'
+        if patch['id'] in LV2_U27_FORM_IDS:
+            fact = next(f for f in read(ROOT / 'docs/unit-audit-20261105/VERIFIED-LV2-U27-VERB-FORMS-SOURCES.json')['facts'] if f['wordId'] == patch['id'])
+            non_form = {k: v for k, v in row.items() if k != 'verbForms'}
+            digest = hashlib.sha256(json.dumps(non_form, ensure_ascii=False, separators=(',', ':')).encode('utf-8')).hexdigest()
+            assert digest == fact['nonFormRowSha256'], 'Exact LV2 U27 non-form row guard changed'
         if patch['id'] in U25_FORM_IDS:
             fact = next(f for f in read(ROOT / 'docs/unit-audit-20261105/VERIFIED-U25-VERB-FORMS-SOURCES.json')['facts'] if f['wordId'] == patch['id'])
             non_form = {k: v for k, v in row.items() if k != 'verbForms'}

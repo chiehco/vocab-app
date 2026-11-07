@@ -1,0 +1,143 @@
+{
+  "manifest": "docs/unit-audit-20261105/LV2-U45-notes-patches.json",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "checkedAt": "2026-11-06T23:52:22.214266+00:00",
+  "changeCount": 5,
+  "changes": [
+    {
+      "dataset": "notes",
+      "id": "NX4b45827f",
+      "before": {
+        "noteId": "NX4b45827f",
+        "word": "regular",
+        "noteType": "grammar",
+        "title": "regular 與 regularly",
+        "content": "regular 是形容詞，修飾名詞；regularly 是副詞，修飾動詞。例：Regular exercise helps people sleep better, so Mia exercises regularly.",
+        "status": "approved"
+      },
+      "after": {
+        "noteId": "NX4b45827f",
+        "word": "regular",
+        "noteType": "grammar",
+        "title": "regular 與 regularly",
+        "content": "regular 在 regular exercise 中是修飾名詞的形容詞；regularly 是修飾動詞的副詞。regular 另可作名詞「常客」。例：Regular exercise helps people sleep better, so Mia exercises regularly.",
+        "status": "approved"
+      },
+      "reason": "Qualify the existing adjective/adverb comparison and retain its exact original English while acknowledging the common noun.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/regular"
+    },
+    {
+      "dataset": "notes",
+      "id": "NX4bf9ab89",
+      "before": {
+        "noteId": "NX4bf9ab89",
+        "word": "insistence",
+        "noteType": "phrase",
+        "title": "at sb's insistence",
+        "content": "：堅持；at sb's insistence；insistence on sth；insist (on)。",
+        "status": "approved"
+      },
+      "after": {
+        "noteId": "NX4bf9ab89",
+        "word": "insistence",
+        "noteType": "phrase",
+        "title": "at sb's insistence",
+        "content": "at sb's insistence：在某人的堅持要求下。insistence on sth：對某事的堅持。相關動詞 insist on…：堅持……。",
+        "status": "approved"
+      },
+      "reason": "Explain the agent of insistence and its on-complement clearly; retain all original related construction tokens.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/insistence"
+    },
+    {
+      "dataset": "notes",
+      "id": "NX67fad847",
+      "before": {
+        "noteId": "NX67fad847",
+        "word": "find",
+        "noteType": "phrase",
+        "title": "find out...",
+        "content": "找到……。",
+        "status": "approved"
+      },
+      "after": {
+        "noteId": "NX67fad847",
+        "word": "find",
+        "noteType": "phrase",
+        "title": "find out...",
+        "content": "查明；弄清楚（資訊或事實）。",
+        "status": "approved"
+      },
+      "reason": "Clarify this legacy duplicate phrase note independently of the already-correct other find note.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/find-out"
+    },
+    {
+      "dataset": "notes",
+      "id": "NXa9ac412b",
+      "before": {
+        "noteId": "NXa9ac412b",
+        "word": "insist",
+        "noteType": "grammar",
+        "title": "insist that...",
+        "content": "堅稱……。",
+        "status": "approved"
+      },
+      "after": {
+        "noteId": "NXa9ac412b",
+        "word": "insist",
+        "noteType": "grammar",
+        "title": "insist that...",
+        "content": "堅稱……（表示認定某事為真時，that 從句使用符合語境的正常時態）。若表示堅持要求做某事，則用 that S (should) + 原形動詞；兩種語意須分開。",
+        "status": "approved"
+      },
+      "reason": "Distinguish asserting a fact from demanding an action; English construction/title remains unchanged.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/insist"
+    },
+    {
+      "dataset": "notes",
+      "id": "NXb9ccadae",
+      "before": {
+        "noteId": "NXb9ccadae",
+        "word": "broaden",
+        "noteType": "phrase",
+        "title": "broaden one's horizons",
+        "content": "片：broaden one's horizons",
+        "status": "approved"
+      },
+      "after": {
+        "noteId": "NXb9ccadae",
+        "word": "broaden",
+        "noteType": "phrase",
+        "title": "broaden one's horizons",
+        "content": "broaden one's horizons：開闊眼界；增廣見識。",
+        "status": "approved"
+      },
+      "reason": "Add the sourced Chinese explanation to the existing English-only phrase note.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/broaden"
+    }
+  ],
+  "masterTouched": false,
+  "sentencesChanged": false,
+  "englishSentencesChanged": false,
+  "imagesChanged": false,
+  "sourceHashesBefore": {
+    "words.json": "2e3132e76fd9a29f0b849958d967a23a0664b183e050586142ea64c8b870d6ca",
+    "senses.json": "c56b0e289947bd491ee83301fc2c2c27d29ff57ff48134b5150803f189f36b8e",
+    "examples.json": "537431965a59367265d3dcc718255d987c0a1f32c68e739c4f57af2ccbfa0811",
+    "meta.json": "ee02a262385fbe8a297e60ca670283b223b81b1b606df2a114a5f62fa13abbe4",
+    "sa-pack.json": "acc19fa08afde0359b0950d85f3b64c7b167f51c1177a2e3b53f4bb9faadf02e"
+  },
+  "sourceHashesAfter": {
+    "words.json": "2e3132e76fd9a29f0b849958d967a23a0664b183e050586142ea64c8b870d6ca",
+    "senses.json": "c56b0e289947bd491ee83301fc2c2c27d29ff57ff48134b5150803f189f36b8e",
+    "examples.json": "537431965a59367265d3dcc718255d987c0a1f32c68e739c4f57af2ccbfa0811",
+    "meta.json": "929022bfec8bdbc546cda9d897357576c476283e450ab0625eeb2137bb1bdd85",
+    "sa-pack.json": "36b636f5564404b1eb082da774d3cb1f353f969e5cc90b24835a66b94ff6faac"
+  },
+  "state": "applied_not_ui_verified",
+  "acceptance": {
+    "state": "actual_app_reopened_saved_and_persistence_verified",
+    "reopenSummary": "validation/LV2-U45-reopen-summary.json",
+    "persistence": "validation/LV2-U45-persistence-summary.json",
+    "executionStatePreserved": "applied_not_ui_verified"
+  }
+}

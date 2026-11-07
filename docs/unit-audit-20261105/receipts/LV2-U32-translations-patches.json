@@ -1,0 +1,59 @@
+{
+  "manifest": "docs\\unit-audit-20261105\\LV2-U32-translations-patches.json",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "checkedAt": "2026-11-06T06:19:52.903598+00:00",
+  "changeCount": 1,
+  "changes": [
+    {
+      "dataset": "examples",
+      "id": "EX89f990dc",
+      "before": {
+        "exampleId": "EX89f990dc",
+        "word": "barely",
+        "sensePos": "adv.",
+        "meaningHint": "幾乎不、勉強才（考點：接近於沒有）",
+        "exampleType": "exam",
+        "sentenceEn": "After paying the rent, he barely had enough left for food.",
+        "sentenceZh": "付完房租後，他幾乎沒剩什麼錢買食物。",
+        "blankSentence": "After paying the rent, he _____ had enough left for food.",
+        "answer": "barely",
+        "difficulty": "LV3",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EX89f990dc",
+        "word": "barely",
+        "sensePos": "adv.",
+        "meaningHint": "幾乎不、勉強才（考點：接近於沒有）",
+        "exampleType": "exam",
+        "sentenceEn": "After paying the rent, he barely had enough left for food.",
+        "sentenceZh": "付完房租後，他剩下的錢勉強夠買食物。",
+        "blankSentence": "After paying the rent, he _____ had enough left for food.",
+        "answer": "barely",
+        "difficulty": "LV3",
+        "status": "reviewed"
+      },
+      "reason": "Preserve the barely-enough threshold: the money was only just sufficient. This is precision refinement of an independent practice sentence, not an exam-original replacement.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/barely"
+    }
+  ],
+  "masterTouched": false,
+  "sentencesChanged": true,
+  "englishSentencesChanged": false,
+  "imagesChanged": false,
+  "sourceHashesBefore": {
+    "words.json": "922c23a0c6d842c999431ca2da70ef1535abef835c2afb9aed17cdf5b84dc45b",
+    "senses.json": "947e76f9b05cd5c59488ce48c2a20ecfe99ae4a00ffbacf74cfd6f445ad03489",
+    "examples.json": "67a69a09f6064eb324a12f46e79b7193049b6c59940f04aa6a55ca674697eb11",
+    "meta.json": "dc73ad0502ac7c9c851cd94edabe63e759011f02e41480a26e1ba885ce27a3be",
+    "sa-pack.json": "854488ab4294c006db7340b5a064b98d44aac5a7920c2a76287a0451749755dd"
+  },
+  "sourceHashesAfter": {
+    "words.json": "922c23a0c6d842c999431ca2da70ef1535abef835c2afb9aed17cdf5b84dc45b",
+    "senses.json": "947e76f9b05cd5c59488ce48c2a20ecfe99ae4a00ffbacf74cfd6f445ad03489",
+    "examples.json": "796b2741265f8f6fe742dcbe58bd980deb67723df11c3cc83e604e58f544203d",
+    "meta.json": "2bdef7b8f9d1a30d558dc2eaf0e7c3d0a37bbf53c672854280d84888cf9577f3",
+    "sa-pack.json": "9c56ad510fd86774165d74eb086c07e79c54fab705aba9dfdd6f5e199f9cbda6"
+  },
+  "state": "applied_not_ui_verified"
+}

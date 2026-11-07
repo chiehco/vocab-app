@@ -1,0 +1,177 @@
+{
+  "unit": "LV2-U41",
+  "python": {
+    "tests": 75,
+    "exitCode": 0,
+    "initialSandboxTempSetupErrors": 148,
+    "initialSandboxRunNotSemanticValidation": true,
+    "firstNormalEnvironmentPass": 74
+  },
+  "frontend": {
+    "interruptedRun": {
+      "actualObservedTimeoutFailures": 2,
+      "file": "lv2Unit28Text.test.ts",
+      "terminalSummary": false,
+      "executionEnvironmentDisconnected": true
+    },
+    "completeRetry": {
+      "files": 31,
+      "passed": 364,
+      "failed": 1,
+      "tests": 365,
+      "exitCode": 1,
+      "failure": "New test looked for host without using its existing combined formal headword variants."
+    },
+    "locatorRetry": {
+      "files": 4,
+      "passed": 105,
+      "failed": 0
+    },
+    "finalAfterTypeFix": {
+      "files": 4,
+      "passed": 105,
+      "failed": 0
+    },
+    "other30FilesRetainedPassed": true,
+    "originalUnit41TextNewAuditAndSharedHistoryIncluded": true,
+    "originalLocalTimeout": 5000,
+    "maxWorkers": 1,
+    "finalAfterUsageFollowup": {
+      "files": 4,
+      "passed": 106,
+      "failed": 0,
+      "originalTimeout": 5000,
+      "maxWorkers": 1
+    }
+  },
+  "typecheck": {
+    "initialExitCode": 2,
+    "initialFailure": "Test-only copied U40 conditional/name and unused import, plus a dynamic before-record key type.",
+    "finalExitCode": 0,
+    "productDataChangedForThisFix": false
+  },
+  "lint": {
+    "exitCode": 0
+  },
+  "build": {
+    "exitCode": 0
+  },
+  "sourceDraftCheck": {
+    "exitCode": 0
+  },
+  "sourceIntegrationCheck": {
+    "exitCode": 0
+  },
+  "logs": [
+    {
+      "file": "LV2-U41-python-first.txt",
+      "sha256": "462b5c27a8098ea4bd1f714e192766a0d483b2542315a9f46f49b5561e322092"
+    },
+    {
+      "file": "LV2-U41-python-env-retry.txt",
+      "sha256": "37d2c2d264fa4444cb536b86338c5f9aaf64f272377259812dba7bce303e6610"
+    },
+    {
+      "file": "LV2-U41-regression-env-retry.txt",
+      "sha256": "307211b7b4c422263b19d4130316b023d1ea895f36cb933d7adae5cf4aa06e44"
+    },
+    {
+      "file": "LV2-U41-regression-reconnect-retry.txt",
+      "sha256": "9f598b673313baa5fcb2ba9cf5bc176574a3b7a1fac53274ed8ba1eed7c6bdd3"
+    },
+    {
+      "file": "LV2-U41-regression-locator-fix.txt",
+      "sha256": "0c637108bd277ae0fd6cd10c6d0a5ccf55c84323dfd31722562152b50e7d7ff4"
+    },
+    {
+      "file": "LV2-U41-regression-type-fix.txt",
+      "sha256": "f5ee31c7b632c9914852c916c3152f78897ddea55bd38b8884f55827b10aed8d"
+    },
+    {
+      "file": "LV2-U41-lint-final.txt",
+      "sha256": "903df59b3e6dc8aa9eea111b71944d58dc30e47c5f3874ce1a5f349604e3c7b6"
+    },
+    {
+      "file": "LV2-U41-typecheck-final.txt",
+      "sha256": "c41a59323f663bc69d32d4dfc2858e9522322aa8d245f66e741f067784d92e4a"
+    },
+    {
+      "file": "LV2-U41-lint-type-fix.txt",
+      "sha256": "abd6df2288dc3ce9e61b574c954dc935926cbc174faa8caea3ef0a52f0e1ed55"
+    },
+    {
+      "file": "LV2-U41-typecheck-type-fix.txt",
+      "sha256": "0d93be78e4da5c0077681c4d834163661d59ddd24a0477595fb70ec25d5a5ea8"
+    },
+    {
+      "file": "LV2-U41-build-type-fix.txt",
+      "sha256": "44cdfea084fa73a18332d808923ecdf1d995f9adb9f8195e7219dc277b3bf0eb"
+    },
+    {
+      "file": "LV2-U41-prepare_recovered_unit_drafts-type-fix-check.txt",
+      "sha256": "de98448ebf9803278533e50a4959ae987fb489682759393fb4a40f162f8d62d3"
+    },
+    {
+      "file": "LV2-U41-integrate_recovered_units-type-fix-check.txt",
+      "sha256": "16a949cba64b31891edbac15dab0007dfc5e48721605cd1960b7fa9df69a3c61"
+    },
+    {
+      "file": "LV2-U41-python-usage-final.txt",
+      "sha256": "a9467b3a942015c0ba2823aed71993a87c5ecc26c53497a84cb83bcac823081d"
+    },
+    {
+      "file": "LV2-U41-regression-usage-final.txt",
+      "sha256": "21d7ed0f960824c55100480c06e58d4c065bf719192d67c6040950d8eb11b90f"
+    },
+    {
+      "file": "LV2-U41-lint-usage-final.txt",
+      "sha256": "618e97b0ec83ed7ec9ceb2a37e133d1824ec4b7b9c07092010f921260a2b4aa6"
+    },
+    {
+      "file": "LV2-U41-typecheck-usage-final.txt",
+      "sha256": "0d93be78e4da5c0077681c4d834163661d59ddd24a0477595fb70ec25d5a5ea8"
+    },
+    {
+      "file": "LV2-U41-build-usage-final.txt",
+      "sha256": "a871bf7eaea603303c4afcc23622b362522d7a3b1e07439c03347294b48a3190"
+    },
+    {
+      "file": "LV2-U41-prepare_recovered_unit_drafts-usage-final-check.txt",
+      "sha256": "de98448ebf9803278533e50a4959ae987fb489682759393fb4a40f162f8d62d3"
+    },
+    {
+      "file": "LV2-U41-integrate_recovered_units-usage-final-check.txt",
+      "sha256": "16a949cba64b31891edbac15dab0007dfc5e48721605cd1960b7fa9df69a3c61"
+    }
+  ],
+  "newHeadOwnCi": {
+    "commit": "ef3d2c500963a6a20a72ea2af5f3825fea4d3a75",
+    "run": 42263857470,
+    "job": 128050492541,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42263857470/job/128050492541",
+    "status": "completed",
+    "conclusion": "success",
+    "checkoutShaReadFromFullLog": true,
+    "testFiles": 231,
+    "tests": 1887,
+    "pythonBatches": [
+      14,
+      7,
+      75,
+      10
+    ],
+    "lint": "success",
+    "typecheck": "success",
+    "build": "success",
+    "buildLogCompletedAtUtc": "2026-11-06T17:58:15.3258498Z",
+    "jobCompletedAtUtc": "2026-11-06T17:58:21Z"
+  },
+  "usageFollowup": {
+    "rows": 7,
+    "fields": 13,
+    "sourceGuardsNegativeTest": true,
+    "initialApplyMetadataFailure": "Missing baseCommit rejected before any product write; same historical anchor supplied and separate retry succeeded.",
+    "originalApplyFailureLogRetained": true,
+    "normalInstallerProgressTablesExact": 14
+  }
+}

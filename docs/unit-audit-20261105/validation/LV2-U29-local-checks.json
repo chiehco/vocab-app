@@ -1,0 +1,55 @@
+{
+  "recordedAt": "2026-11-06T03:01:30.563Z",
+  "regression": {
+    "files": 14,
+    "tests": 164,
+    "timeoutMs": 5000,
+    "conclusion": "passed",
+    "includes": [
+      "original lv2Unit29Text",
+      "new lv2Unit29Audit",
+      "unitAudit source and inverse guards",
+      "recoveredUnitIntegration old hashes",
+      "lv6MainIntegration",
+      "lv4NotesConfirmation",
+      "both image scopes",
+      "seed",
+      "starter pack",
+      "U27/U28 text and audit"
+    ]
+  },
+  "python": {
+    "tests": 44,
+    "conclusion": "passed"
+  },
+  "checks": [
+    {
+      "exitCode": 0,
+      "log": "LV2-U29-regression-final.txt",
+      "timeoutMs": 5000,
+      "command": "14 selected regression files"
+    },
+    {
+      "exitCode": 0,
+      "log": "LV2-U29-python-final.txt",
+      "command": "test_apply_unit_audit.py"
+    },
+    {
+      "exitCode": 0,
+      "log": "LV2-U29-lint-final.txt",
+      "command": "npm run lint"
+    },
+    {
+      "exitCode": 0,
+      "log": "LV2-U29-typecheck-final.txt",
+      "command": "npm run typecheck"
+    },
+    {
+      "exitCode": 0,
+      "log": "LV2-U29-build-final.txt",
+      "command": "npm run build"
+    }
+  ],
+  "initialFailurePreserved": "validation/LV2-U29-initial-regression-failure.json",
+  "testTimeoutIncreased": false
+}

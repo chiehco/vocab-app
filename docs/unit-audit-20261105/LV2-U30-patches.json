@@ -1,0 +1,755 @@
+{
+  "unit": "LV2-U30",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "baseCheckpoint": "a0ce2de14c050686aedefe58a05255163e55ad34",
+  "scope": "Exact formal fields only; current source data and all selected rows checked before writing.",
+  "patches": [
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001052",
+      "before": {
+        "meaningEn": "a person who makes paintings, drawings, or other works of art",
+        "meaningZh": "藝術家；畫家"
+      },
+      "after": {
+        "meaningEn": "a person who makes paintings, drawings, or other works of art; also, a performer such as a musician, actor, or dancer.",
+        "meaningZh": "藝術家；畫家；藝術表演者；藝人"
+      },
+      "reason": "Cover the explicitly printed performer sense without changing the existing visual-artist meaning. Cover the printed performer noun.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/artist; https://www.collinsdictionary.com/dictionary/english/artist"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001339",
+      "before": {
+        "meaningEn": "an act that fails; an event that does not accomplish its intended purpose"
+      },
+      "after": {
+        "meaningEn": "an act that fails; an event that does not accomplish its intended purpose; also, the state of not succeeding, or a person or thing that does not succeed."
+      },
+      "reason": "Preserve countable failure-person/event and uncountable failure distinctions actually printed.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/failure"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001147",
+      "before": {
+        "meaningEn": "(v.) to ask an amount of money for something; to formally accuse someone of a crime; (n.) the amount of money charged for something; (in charge of) responsible for managing or looking after something",
+        "meaningZh": "指控；費用；衝鋒；電荷"
+      },
+      "after": {
+        "meaningEn": "(v.) to ask an amount of money for something; to formally accuse someone of a crime; (n.) the amount of money charged for something; (in charge of) responsible for managing or looking after something; also (v.), to supply a battery with electrical energy.",
+        "meaningZh": "指控；費用；衝鋒；電荷；（動詞）收費；充電；指控"
+      },
+      "reason": "Restore the explicitly printed electrical-charging verb. Separate the existing fee/charge nouns from the printed verbs.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/charge; https://www.collinsdictionary.com/dictionary/english/charge"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001526",
+      "before": {
+        "meaningEn": "the way in which something is done or happens; a person's way of behaving toward others"
+      },
+      "after": {
+        "meaningEn": "the way in which something is done or happens; a person's way of behaving toward others; plural manners also refers to polite social behavior."
+      },
+      "reason": "Cover the printed plural politeness noun explicitly.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/manner"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001702",
+      "before": {
+        "meaningZh": "排；行；山脈；範圍"
+      },
+      "after": {
+        "meaningZh": "排；行；山脈；範圍；（動詞）在某範圍內變動；涵蓋"
+      },
+      "reason": "Include the printed and actual finite range-from verb, preserving existing noun meanings.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/range"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001697",
+      "before": {
+        "meaningEn": "how good or bad something is, or a distinctive characteristic that a person or thing has",
+        "meaningZh": "品質；特性；才能；優質的"
+      },
+      "after": {
+        "meaningEn": "how good or bad something is, or a distinctive characteristic that a person or thing has; also (adj.), of superior quality.",
+        "meaningZh": "品質；特性；才能；（另有形容詞用法）優質的"
+      },
+      "reason": "Label the genuine adjective independently of noun qualities. Keep all inherited meanings and make the adjective boundary visible.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/quality; https://www.collinsdictionary.com/dictionary/english/quality"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001698",
+      "before": {
+        "meaningEn": "an adequate or large amount; the concept that something has a magnitude and can be represented in mathematical expressions by a constant or a variable",
+        "usagePattern": "a/the quantity; quantity of N",
+        "usagePatternZh": "一個／這個數量；……的數量"
+      },
+      "after": {
+        "meaningEn": "an adequate or large amount; the concept that something has a magnitude and can be represented in mathematical expressions by a constant or a variable; more generally, an amount or number of something.",
+        "usagePattern": "a large/small quantity of N; in large quantities",
+        "usagePatternZh": "大量／少量的……；大量地／大批地"
+      },
+      "reason": "Add the ordinary printed amount sense without deleting the inherited mathematical sense. Replace the generic article template with the directly printed quantity construction.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/quantity; scripts/sources/LV2Unit30.json; original pages262–270 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001872",
+      "before": {
+        "meaningEn": "to express approval of or give help to someone or something because you want them to succeed; to provide someone with money or the things they need to live"
+      },
+      "after": {
+        "meaningEn": "to express approval of or give help to someone or something because you want them to succeed; to provide someone with money or the things they need to live; also (n.), help, approval, or financial assistance."
+      },
+      "reason": "Separate the printed support noun from the existing verbs.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/support"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001557",
+      "before": {
+        "meaningEn": "a small copy of something, showing what it looks like or how it works; a particular type or design of a product; a person whose job is to wear and show new clothes",
+        "meaningZh": "模型；模範；模特兒；模範的"
+      },
+      "after": {
+        "meaningEn": "a small copy of something, showing what it looks like or how it works; a particular type or design of a product; a person whose job is to wear and show new clothes; also (v.), to design or shape something following an example, or to take someone as an example to imitate.",
+        "meaningZh": "模型；模範；模特兒；模範的；（動詞）仿照……製作；以……為榜樣"
+      },
+      "reason": "Cover the printed modeling-after verb while preserving all noun meanings. Cover the actual printed modeling verb.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/model; https://www.collinsdictionary.com/dictionary/english/model"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001622",
+      "before": {
+        "meaningZh": "模範；典型；式樣；樣品"
+      },
+      "after": {
+        "meaningZh": "模範；典型；式樣；樣品；模式；圖案；（動詞）仿照"
+      },
+      "reason": "Supply the printed pattern noun and genuine patterned-after verb; do not delete the verb.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/pattern"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001829",
+      "before": {
+        "meaningZh": "南方人；男風；向南方的；來自南方的"
+      },
+      "after": {
+        "meaningZh": "（形容詞）南方的；向南方的；來自南方的；（修飾風）從南方吹來的；（另有名詞 Southern）南方人"
+      },
+      "reason": "Correct the inherited 男風 character/word-class confusion using the explicitly defined wind adjective, preserving the genuine capitalized Southern noun rather than approving a generic wind noun.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/southern"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001981",
+      "before": {
+        "meaningZh": "全部；全體；整體；完全之體系"
+      },
+      "after": {
+        "meaningZh": "全部；全體；整體；完全之體系；（形容詞）整個的；完整的"
+      },
+      "reason": "Make the printed adjective visible alongside the existing noun summary.",
+      "evidence": "scripts/sources/LV2Unit30.json; original pages262–270 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001579",
+      "before": {
+        "meaningEn": "any bundle of nerve fibers running to various organs and tissues of the body",
+        "usagePattern": "a/the nerve; nerve of N",
+        "usagePatternZh": "該神經；……的神經"
+      },
+      "after": {
+        "meaningEn": "any bundle of nerve fibers running to various organs and tissues of the body; also, courage or boldness needed for something difficult or dangerous.",
+        "usagePattern": "have the nerve to V; get on sb's nerves; nerve damage",
+        "usagePatternZh": "有勇氣做……；使某人心煩；神經受損"
+      },
+      "reason": "Cover the directly printed and dictionary-supported courage noun. Use the actual printed courage/annoyance constructions while retaining anatomy.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/nerve; scripts/sources/LV2Unit30.json; original pages262–270 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001580",
+      "before": {
+        "usagePattern": "be nervous; nervous + N",
+        "usagePatternZh": "感到緊張；緊張的……"
+      },
+      "after": {
+        "usagePattern": "be nervous about N; the nervous system",
+        "usagePatternZh": "對……感到緊張不安；神經系統"
+      },
+      "reason": "Distinguish anxious and anatomical adjective uses.",
+      "evidence": "scripts/sources/LV2Unit30.json; original pages262–270 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001616",
+      "before": {
+        "meaningZh": "一項(或條、點)；個別項目；詳細說明；特別的"
+      },
+      "after": {
+        "meaningZh": "（另有名詞用法，常用 particulars）一項（或條、點）；個別項目；詳細說明；（形容詞）特別的；特定的；挑剔的"
+      },
+      "reason": "Make the existing noun meanings and the printed specific/fussy adjective distinct; preserve headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/particular"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001794",
+      "before": {
+        "meaningZh": "驚跳；驚避；膽怯的；畏縮的",
+        "usagePattern": "be shy of N; shy away from N; a shy smile",
+        "usagePatternZh": "對某物感到害羞；迴避某物；害羞的微笑",
+        "meaningEn": "feeling nervous or uncomfortable around other people, especially people one does not know well; easily frightened away"
+      },
+      "after": {
+        "meaningZh": "（形容詞）害羞的；膽怯的；畏縮的；（另有動詞用法）驚跳；驚避",
+        "usagePattern": "be shy; a shy smile; shy away from N (verb phrase)",
+        "usagePatternZh": "害羞；害羞的微笑；（動詞片語）迴避……",
+        "meaningEn": "feeling nervous or uncomfortable around other people, especially people one does not know well; easily frightened away; also (v., especially of a horse), to move back suddenly when frightened."
+      },
+      "reason": "Cover the actual adjective without deleting the genuine frightened-starting verb or conflating their patterns. Label the inherited frightened-starting verb independently.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/shy; https://www.collinsdictionary.com/dictionary/english/shy"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005614",
+      "before": {
+        "meaningEn": "an instance of something occurring",
+        "usagePattern": "an/the occurrence; occurrence of N",
+        "usagePatternZh": "該事件；……的發生"
+      },
+      "after": {
+        "meaningEn": "an instance of something occurring; also, the act or process of something happening.",
+        "usagePattern": "a common occurrence; the occurrence of N",
+        "usagePatternZh": "常見的事；……的發生"
+      },
+      "reason": "Cover the printed uncountable occurrence sense as well as an event. Distinguish a countable event from the happening of something.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/occurrence; scripts/sources/LV2Unit30.json; original pages262–270 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004240",
+      "before": {
+        "meaningEn": "a reciprocal relation between two or more things; a statistical relation between two or more variables such that systematic changes in the value of one variable are accompanied by systema...",
+        "usagePattern": "a/the correlation; correlation of N",
+        "usagePatternZh": "一種相關性；……之間的關聯"
+      },
+      "after": {
+        "meaningEn": "A mutual relationship between two or more things; in statistics, a relation in which changes in one variable are associated with changes in another.",
+        "usagePattern": "a correlation between A and B; a strong correlation",
+        "usagePatternZh": "A 與 B 之間的相關性；強相關"
+      },
+      "reason": "Replace the visibly truncated definition with a complete sourced paraphrase preserving general and statistical meanings, without implying causation.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/correlation"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005553",
+      "before": {
+        "meaningEn": "producing at a rate that barely covers production costs",
+        "usagePattern": "be marginal; marginal + N",
+        "usagePatternZh": "邊緣的；邊緣的……"
+      },
+      "after": {
+        "meaningEn": "producing at a rate that barely covers production costs; also, at or relating to a margin, or small and not very important.",
+        "usagePattern": "marginal land; a marginal improvement; marginal notes",
+        "usagePatternZh": "邊際土地；些微的改善；頁邊註記"
+      },
+      "reason": "Add the printed margin sense while retaining the genuine economic sense. Use concrete supported border/degree constructions; retain the inherited uncertain Chinese 緣的 in the summary.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/marginal; https://www.collinsdictionary.com/dictionary/english/marginal"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001982",
+      "before": {
+        "meaningEn": "which person, used as object",
+        "usagePattern": "a/the whom; whom of N",
+        "usagePatternZh": "那位……；誰的……"
+      },
+      "after": {
+        "meaningEn": "The object form of who, used in formal questions or relative clauses as the object of a verb or preposition.",
+        "usagePattern": "to whom; the person whom + clause",
+        "usagePatternZh": "對誰／向誰；關係子句中作受詞的 whom"
+      },
+      "reason": "Replace the fabricated a/the whom and whom of N templates with actual object-pronoun constructions.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/whom"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000970",
+      "before": {
+        "meaningEn": "which person or people",
+        "usagePattern": "a/the who; who of N",
+        "usagePatternZh": "who 前接冠詞；who 後接 of 名詞"
+      },
+      "after": {
+        "meaningEn": "Which person or people, used in questions; also a relative pronoun introducing a clause about a person or group of people.",
+        "usagePattern": "who + verb ...?; a person who + clause",
+        "usagePatternZh": "誰……？；……的人（who 引導關係子句）"
+      },
+      "reason": "Replace fabricated article/of templates and restore the actual printed relative-pronoun function.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/who"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002535",
+      "before": {
+        "meaningEn": "sewing that repairs a worn or torn hole (especially in a garment); heal or recover",
+        "usagePattern": "mend + N; mend to V",
+        "usagePatternZh": "修補……；修補以做……"
+      },
+      "after": {
+        "meaningEn": "To repair something broken, damaged, or torn; to heal or recover from illness or injury.",
+        "usagePattern": "mend a hole; mend a friendship; mend one's ways",
+        "usagePatternZh": "縫補破洞；修復友誼；改過自新"
+      },
+      "reason": "Replace the noun fragment in the existing verb definition and the unsupported generic mend to V construction; keep repair/healing concepts.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/mend"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002085",
+      "before": {
+        "meaningEn": "draw blood; get or extort (money or other possessions) from someone",
+        "usagePattern": "bleed + N; bleed to V",
+        "usagePatternZh": "流血……；流血以致去做某事"
+      },
+      "after": {
+        "meaningEn": "To lose blood from the body; also, to draw blood or cause bleeding, or figuratively to extort money or other possessions from someone.",
+        "usagePattern": "bleed heavily; bleed to death; bleed sb dry",
+        "usagePatternZh": "大量出血；因失血而死；（比喻）榨乾某人的錢財"
+      },
+      "reason": "Supply the main bleeding verb while preserving genuine causative and extortion meanings; replace the fabricated generic bleed to V pattern.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/bleed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003220",
+      "before": {
+        "meaningEn": "a proposition obtained by conversion; carry on a conversation",
+        "meaningZh": "相反的事物；倒；逆向；相反的",
+        "usagePattern": "converse + N; converse to V",
+        "usagePatternZh": "相反的某事物；反過來做某事"
+      },
+      "after": {
+        "meaningEn": "(v., formal) to talk with someone; (separate noun or adjective homograph) a reversed proposition or the opposite; opposite or reversed.",
+        "meaningZh": "（動詞）交談；（另有名詞／形容詞用法）相反的事物；倒；逆向；相反的",
+        "usagePattern": "converse with sb; converse in English",
+        "usagePatternZh": "與某人交談；用英語交談"
+      },
+      "reason": "Restore the printed talking verb while retaining the genuine reverse/opposite homograph; replace the unrelated transitive generic templates.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/converse"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002087",
+      "before": {
+        "meaningEn": "cover with blood; having or covered with or accompanied by blood"
+      },
+      "after": {
+        "meaningEn": "(adj.) having, covered with, or accompanied by blood; (separate verb use) to cover or stain with blood."
+      },
+      "reason": "Recast the adjective definition while keeping the genuine cover-with-blood verb explicitly separate.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/bloody"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003955",
+      "before": {
+        "meaningEn": "people who are fearful and cautious; showing fear and lack of confidence"
+      },
+      "after": {
+        "meaningEn": "(adj.) fearful and cautious; showing fear or a lack of confidence."
+      },
+      "reason": "Make the inherited fearful-person concept grammatical as the selected adjective rather than a bare noun fragment.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/timid"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004728",
+      "before": {
+        "meaningEn": "the act of paying for the use of something (as an apartment or house or car); available to rent or lease",
+        "meaningZh": "租費；租金收入；租賃的；收取租金的"
+      },
+      "after": {
+        "meaningEn": "(n.) the act of renting, money paid or received as rent, or property available for rent; (adj.) of or available for rent.",
+        "meaningZh": "租費；租金收入；租賃；（另有形容詞用法）租賃的；收取租金的"
+      },
+      "reason": "Preserve genuine rent-income and rent-available meanings while labeling the adjective separately.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/rental"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000202",
+      "before": {
+        "meaningEn": "an adult female of cattle, kept on farms for its milk or meat; the female of certain other large animals, such as the elephant or whale",
+        "meaningZh": "母牛；母獸；威脅"
+      },
+      "after": {
+        "meaningEn": "an adult female of cattle, kept on farms for its milk or meat; the female of certain other large animals, such as the elephant or whale; also (separate verb), to frighten or intimidate someone with threats.",
+        "meaningZh": "母牛；母獸；（另有動詞用法）威脅；恐嚇"
+      },
+      "reason": "Retain the genuine intimidation homograph independently of the female-animal noun. Label the genuine intimidation verb without changing headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/cow; https://www.collinsdictionary.com/dictionary/english/cow"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001104",
+      "before": {
+        "meaningEn": "any of the hard parts that form the skeleton of a person or animal's body",
+        "meaningZh": "骨頭；骨；骨製品；剔骨"
+      },
+      "after": {
+        "meaningEn": "any of the hard parts that form the skeleton of a person or animal's body; also (separate verb), to remove bones from meat or fish.",
+        "meaningZh": "骨頭；骨；骨製品；（另有動詞用法）剔骨"
+      },
+      "reason": "Retain the inherited deboning verb explicitly separate from the skeleton/material noun. Label the inherited genuine verb rather than deleting it or expanding headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/bone; https://www.collinsdictionary.com/dictionary/english/bone"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1c8c6c9b",
+      "before": {
+        "sensePos": "v.",
+        "sentenceEn": "As the team leader, she is in charge of planning the annual trip.",
+        "blankSentence": "As the team leader, she is in _____ of planning the annual trip.",
+        "answer": "charge"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Classify the exact cloze target in its full unchanged sentence, not the headword default.",
+      "evidence": "Complete unchanged sentence and printed/dictionary construction"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX0e84336c",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "Ticket prices range from three hundred to eight hundred dollars depending on the seat.",
+        "blankSentence": "Ticket prices _____ from three hundred to eight hundred dollars depending on the seat.",
+        "answer": "range"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Classify the exact cloze target in its full unchanged sentence, not the headword default.",
+      "evidence": "Complete unchanged sentence and printed/dictionary construction"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX02cf1816",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "The cost of the repairs amounted to five thousand dollars.",
+        "blankSentence": "The cost of the repairs _____ to five thousand dollars.",
+        "answer": "amounted"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Classify the exact cloze target in its full unchanged sentence, not the headword default.",
+      "evidence": "Complete unchanged sentence and printed/dictionary construction"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXc4517663",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "He works two jobs to support his family.",
+        "blankSentence": "He works two jobs to _____ his family.",
+        "answer": "support"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Classify the exact cloze target in its full unchanged sentence, not the headword default.",
+      "evidence": "Complete unchanged sentence and printed/dictionary construction"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXcadcdb64",
+      "before": {
+        "sensePos": "v.",
+        "sentenceEn": "The mechanic said my bike was beyond repair and needed to be replaced.",
+        "blankSentence": "The mechanic said my bike was beyond _____ and needed to be replaced.",
+        "answer": "repair"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Classify the exact cloze target in its full unchanged sentence, not the headword default.",
+      "evidence": "Complete unchanged sentence and printed/dictionary construction"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1138f0f5",
+      "before": {
+        "sensePos": "v.",
+        "sentenceEn": "The rent for this apartment is due at the end of every month.",
+        "blankSentence": "The _____ for this apartment is due at the end of every month.",
+        "answer": "rent"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Classify the exact cloze target in its full unchanged sentence, not the headword default.",
+      "evidence": "Complete unchanged sentence and printed/dictionary construction"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXc0093ffc",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "Sales at the small bookstore declined after a large chain opened nearby.",
+        "blankSentence": "Sales at the small bookstore _____ after a large chain opened nearby.",
+        "answer": "declined"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Classify the exact cloze target in its full unchanged sentence, not the headword default.",
+      "evidence": "Complete unchanged sentence and printed/dictionary construction"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXcb617f7e",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "The old temple is located west of the river.",
+        "blankSentence": "The old temple is located _____ of the river.",
+        "answer": "west"
+      },
+      "after": {
+        "sensePos": "adv."
+      },
+      "reason": "Classify the exact cloze target in its full unchanged sentence, not the headword default.",
+      "evidence": "https://www.oxfordlearnersdictionaries.com/definition/english/west_3"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXf4f608c5",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "The coach stressed the importance of teamwork during every practice.",
+        "blankSentence": "The coach _____ the importance of teamwork during every practice.",
+        "answer": "stressed"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Classify the exact cloze target in its full unchanged sentence, not the headword default.",
+      "evidence": "Complete unchanged sentence and printed/dictionary construction"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX0767a866",
+      "before": {
+        "meaningHint": "範圍涵蓋（考點：range from A to B）",
+        "sentenceEn": "Ticket prices range from two hundred to two thousand dollars.",
+        "blankSentence": "Ticket prices _____ from two hundred to two thousand dollars.",
+        "answer": "range",
+        "status": "draft"
+      },
+      "after": {
+        "meaningHint": "在……之間變動（range from A to B）",
+        "status": "reviewed"
+      },
+      "reason": "Refine the hint to this exact sentence; mixed valid headword meanings are not all errors. The complete independently written practice sentence has now been checked; do not claim it is the official original.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/range; Actual complete practice sentence and separately verified official source"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX3616f669",
+      "before": {
+        "meaningHint": "母牛；母獸；威脅",
+        "sentenceEn": "Can you teach me how to milk a cow?",
+        "blankSentence": "Can you teach me how to milk a _____?",
+        "answer": "cow"
+      },
+      "after": {
+        "meaningHint": "母牛"
+      },
+      "reason": "Refine the hint to this exact sentence; mixed valid headword meanings are not all errors.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/cow"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX3beaf7d6",
+      "before": {
+        "meaningHint": "母牛；母獸；威脅",
+        "sentenceEn": "A herd of cows is eating grass over there.",
+        "blankSentence": "A herd of _____ is eating grass over there.",
+        "answer": "cows"
+      },
+      "after": {
+        "meaningHint": "母牛"
+      },
+      "reason": "Refine the hint to this exact sentence; mixed valid headword meanings are not all errors.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/cow"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXac41bada",
+      "before": {
+        "status": "draft",
+        "sentenceEn": "The museum is worth visiting, particularly on weekday mornings when it is quiet.",
+        "blankSentence": "The museum is worth visiting, _____ on weekday mornings when it is quiet.",
+        "answer": "particularly"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "The complete independently written practice sentence has now been checked; do not claim it is the official original.",
+      "evidence": "Actual complete practice sentence and separately verified official source"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001622-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：模範；典型；式樣；樣品"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "已核此既有n.義項及完整例句／印字搭配；保留其他詞性、罕義與整詞狀態。來源：https://www.collinsdictionary.com/dictionary/english/pattern"
+      },
+      "reason": "Verify only this separated noun/verb sense; remove unsupported deletion instructions without deleting genuine meanings.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/pattern"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001622-2",
+      "before": {
+        "status": "needs_check",
+        "note": "罕用，建議刪列｜待拆分；主表字義：模範；典型；式樣；樣品"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "已核此既有v.義項及完整例句／印字搭配；保留其他詞性、罕義與整詞狀態。來源：https://www.collinsdictionary.com/dictionary/english/pattern"
+      },
+      "reason": "Verify only this separated noun/verb sense; remove unsupported deletion instructions without deleting genuine meanings.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/pattern"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001855-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：壓力；緊迫；強調；重音"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "已核此既有n.義項及完整例句／印字搭配；保留其他詞性、罕義與整詞狀態。來源：https://www.collinsdictionary.com/dictionary/english/stress"
+      },
+      "reason": "Verify only this separated noun/verb sense; remove unsupported deletion instructions without deleting genuine meanings.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/stress"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001855-2",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：壓力；緊迫；強調；重音"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "已核此既有v.義項及完整例句／印字搭配；保留其他詞性、罕義與整詞狀態。來源：https://www.collinsdictionary.com/dictionary/english/stress"
+      },
+      "reason": "Verify only this separated noun/verb sense; remove unsupported deletion instructions without deleting genuine meanings.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/stress"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001702-1",
+      "before": {
+        "examEvidence": "學測109 文意選填Q40",
+        "note": "考點：range from A to B",
+        "status": "draft"
+      },
+      "after": {
+        "examEvidence": "學測109 Q40，印刷第3頁，G＝range；官方試題：https://www.ceec.edu.tw/files/file_pool/1/0k050359836694452838/02-109%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7-%E5%AE%9A%E7%A8%BF.pdf；官方答案：https://www.ceec.edu.tw/files/file_pool/1/0K018689241635770142/02-109%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E5%8F%83%E8%80%83%E7%AD%94%E6%A1%88.pdf",
+        "note": "已實讀官方題幹、選項與答案。酒窩塑造方法從化妝到手術的不同方式，range from...to...是動詞；EX0767a866票價句是另寫練習，不是原題。 只核此既有義項來源，非整詞或所有例句通過。",
+        "status": "reviewed"
+      },
+      "reason": "Record exact official source and word-family limits; derived particularly remains visibly qualified.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0k050359836694452838/02-109%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7-%E5%AE%9A%E7%A8%BF.pdf; https://www.ceec.edu.tw/files/file_pool/1/0K018689241635770142/02-109%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E5%8F%83%E8%80%83%E7%AD%94%E6%A1%88.pdf"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001616-1",
+      "before": {
+        "examEvidence": "學測108 詞彙題Q8",
+        "note": "考點：particularly 副詞用法",
+        "status": "draft",
+        "meaningZh": "尤其、特別是"
+      },
+      "after": {
+        "examEvidence": "學測108 Q8，印刷第1頁，A＝particularly；官方試題：https://www.ceec.edu.tw/files/file_pool/1/0j196548669826315609/01-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf；官方答案：https://www.ceec.edu.tw/files/file_pool/1/0j196548660460294627/02-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88.pdf",
+        "note": "已實讀官方題幹、選項與答案。電視節目為兒童設計，尤其是未滿五歲者；正式答案是衍生副詞particularly，不是particular本身的新增adv.。EXac41bada博物館句是另寫練習，非原題。 只核此既有義項來源，非整詞或所有例句通過。",
+        "status": "reviewed",
+        "meaningZh": "（衍生副詞 particularly）尤其、特別是"
+      },
+      "reason": "Record exact official source and word-family limits; derived particularly remains visibly qualified.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0j196548669826315609/01-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf; https://www.ceec.edu.tw/files/file_pool/1/0j196548660460294627/02-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88.pdf"
+    }
+  ]
+}
