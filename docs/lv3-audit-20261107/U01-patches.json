@@ -1,0 +1,1254 @@
+{
+  "schemaVersion": 1,
+  "unit": "LV3-U01",
+  "baseline": "99883751926bd6cb4feff70daff56c07afc130cb",
+  "hashFormat": "sha256 of UTF-8 Node JSON.stringify(dataset)",
+  "datasets": {
+    "words": {
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "beforeHash": "df0980b25d68203e1cdcdd89554c854763ea9ea9b517e57e0aab51f689b1523f",
+      "afterHash": "6e61047d9edd53132c1a2b1e6cd2f06b809ed76c0d32e0cbb62be91690eb71f6"
+    },
+    "examples": {
+      "path": "public/data/v1/examples.json",
+      "key": "exampleId",
+      "beforeHash": "84f406a3f2dffd9394536c2ce6baa96f21f605a0008f4ca64426dec08ce357cc",
+      "afterHash": "0938d677a6e225b0dcdfc9a3ae20c16aff2bac4219736fe375b4a60afb7880f7"
+    },
+    "notes": {
+      "path": "public/data/v1/notes.json",
+      "key": "noteId",
+      "beforeHash": "ea1a679d1d6531f96df4645aa098ffb3ec8456a347349a50054550f3b5685a71",
+      "afterHash": "224a2e710cdcb17dcd35851ad4f178e6250be5239172592a9b8ab0b72030edee"
+    },
+    "curriculum": {
+      "path": "src/features/direct/curriculum.json",
+      "key": "learningItemId",
+      "rowsField": "learningItems",
+      "beforeHash": "bc32356e19ffdcd5f6a460304da0d83af8e8af0167941ed7009f4a72328487a0",
+      "afterHash": "0dd29c0990eeac81f384acfe6351a9736dfe7052b7b29a06ab43e3e3f40e9aaa"
+    },
+    "grammarQuestions": {
+      "path": "src/features/direct/grammarQuestions.json",
+      "key": "questionId",
+      "beforeHash": "fe57e3ed98394c04cda1db8cfd183507992f738b771c4b108636a38398692934",
+      "afterHash": "1f15979c660885bc2ef36bed1395ec5ab2697c38eb7c2b060950d7ee60351cf5"
+    }
+  },
+  "patches": [
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W002240",
+      "before": {
+        "wordId": "W002240",
+        "word": "determine",
+        "wordVariants": [
+          "determine"
+        ],
+        "level": "LV3",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "決定；決心",
+        "meaningEn": "to find out the facts about something by investigation or calculation; to decide firmly to do something",
+        "usagePattern": "determine the cause of; be determined to V",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "determine",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "決定……的原因；決心做某事"
+      },
+      "after": {
+        "meaningZh": "決定；決心；確定；查明",
+        "usagePatternZh": "查明……的原因；決心做某事",
+        "verbForms": {
+          "base": "determine",
+          "past": "determined",
+          "pastParticiple": "determined",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/determine",
+          "status": "approved"
+        }
+      },
+      "reason": "Individually source-checked dictionary correction; preserve unrelated meanings, IDs, POS and review status. Explicit Collins Word forms independently checked; add only these verified forms.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/determine"
+      ]
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W002699",
+      "before": {
+        "wordId": "W002699",
+        "word": "rate",
+        "wordVariants": [
+          "rate"
+        ],
+        "level": "LV3",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "比率；率；速度；價格",
+        "meaningEn": "(n.) a measure of how fast something happens or how often something occurs; an amount of money charged or paid for something; (v.) to judge the quality or value of someone or something",
+        "usagePattern": "heart/birth rate; at this rate; rate sth highly",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "rate",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "心跳率／出生率；照這種速度；高度評價某事物"
+      },
+      "after": {
+        "meaningZh": "（名詞）比率；率；速度；價格；（動詞）評估；評定",
+        "verbForms": {
+          "base": "rate",
+          "past": "rated",
+          "pastParticiple": "rated",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/rate",
+          "status": "approved"
+        }
+      },
+      "reason": "Individually source-checked dictionary correction; preserve unrelated meanings, IDs, POS and review status. Explicit Collins Word forms independently checked; add only these verified forms.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/rate"
+      ]
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W002656",
+      "before": {
+        "wordId": "W002656",
+        "word": "politics",
+        "wordVariants": [
+          "politics"
+        ],
+        "level": "LV3",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "政治；政治學；政見；政治活動；精明的",
+        "meaningEn": "social relations involving intrigue to gain authority or power; the study of government of states and other political units; marked by artful prudence, expedience, and shrewdness; smoothly agreeable and courteous with a degree of sophist...",
+        "usagePattern": "a/the politics; politics of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "politics",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "政治；……的政治"
+      },
+      "after": {
+        "meaningZh": "政治；政治學；政見；政治活動；（另詞 politic 的形容詞義）精明的",
+        "meaningEn": "activities and beliefs concerned with government or power; the study of government; power relations within an organization; (separate adjective politic) prudent, shrewd or tactful",
+        "usagePattern": "study politics; local politics; the politics of N",
+        "usagePatternZh": "研究政治學；地方政治；……的政治／權力關係"
+      },
+      "reason": "Individually source-checked dictionary correction; preserve unrelated meanings, IDs, POS and review status.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/politics",
+        "https://www.collinsdictionary.com/dictionary/english/politic"
+      ]
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W002677",
+      "before": {
+        "wordId": "W002677",
+        "word": "process",
+        "wordVariants": [
+          "process"
+        ],
+        "level": "LV3",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "程式；進行；過程；加工",
+        "meaningEn": "(n.) a series of actions or steps taken to achieve a particular result; (v.) to treat or prepare something using a particular method",
+        "usagePattern": "in the process of N; the process of Ving; process information",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "process",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "在……的過程中；……的過程；處理資訊"
+      },
+      "after": {
+        "meaningZh": "（名詞）程式；進行；過程；（動詞）處理；加工",
+        "verbForms": {
+          "base": "process",
+          "past": "processed",
+          "pastParticiple": "processed",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/process",
+          "status": "approved"
+        }
+      },
+      "reason": "Individually source-checked dictionary correction; preserve unrelated meanings, IDs, POS and review status. Explicit Collins Word forms independently checked; add only these verified forms.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/process"
+      ]
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W002905",
+      "before": {
+        "wordId": "W002905",
+        "word": "terrific",
+        "wordVariants": [
+          "terrific"
+        ],
+        "level": "LV3",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "非常好的；極端的；可怕的",
+        "meaningEn": "very great or intense; causing extreme terror",
+        "usagePattern": "be terrific; terrific + N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "terrific",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "很棒的；極好的……"
+      },
+      "after": {
+        "meaningEn": "(informal) very good or excellent; very great or intense; (archaic) causing terror"
+      },
+      "reason": "Individually source-checked dictionary correction; preserve unrelated meanings, IDs, POS and review status.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/terrific"
+      ]
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W002455",
+      "before": {
+        "wordId": "W002455",
+        "word": "jealous",
+        "wordVariants": [
+          "jealous"
+        ],
+        "level": "LV3",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "嫉妒的；羨慕的；留心的；戒備的",
+        "meaningEn": "suspicious or unduly suspicious or fearful of being displaced by a rival",
+        "usagePattern": "be jealous; jealous + N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "jealous",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "感到嫉妒；嫉妒的……"
+      },
+      "after": {
+        "meaningEn": "unhappy because someone else has a quality, possession or advantage one wants; fearful of losing someone's affection to a rival; protective or watchful of one's rights or possessions"
+      },
+      "reason": "Individually source-checked dictionary correction; preserve unrelated meanings, IDs, POS and review status.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/jealous"
+      ]
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W002348",
+      "before": {
+        "wordId": "W002348",
+        "word": "fright",
+        "wordVariants": [
+          "fright"
+        ],
+        "level": "LV3",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "驚駭；喫驚；驚嚇",
+        "meaningEn": "an emotion experienced in anticipation of some specific pain or danger (usually accompanied by a desire to flee or fight); cause fear in",
+        "usagePattern": "a/the fright; fright of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "fright",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "一個／該驚嚇；……的驚嚇"
+      },
+      "after": {
+        "meaningEn": "(noun) sudden fear or something that causes a scare; (poetic or archaic verb) to frighten",
+        "usagePattern": "give sb a fright; in/with fright; stage fright",
+        "usagePatternZh": "嚇某人一跳；驚恐地；怯場"
+      },
+      "reason": "Individually source-checked dictionary correction; preserve unrelated meanings, IDs, POS and review status.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/fright"
+      ]
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W002449",
+      "before": {
+        "wordId": "W002449",
+        "word": "invitation",
+        "wordVariants": [
+          "invitation"
+        ],
+        "level": "LV3",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "邀請；請柬；引誘；招待",
+        "meaningEn": "a request (spoken or written) to participate or be present or take part in something; a tempting allurement",
+        "usagePattern": "an/the invitation; invitation of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "invitation",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "一個／那個邀請；……的邀請"
+      },
+      "after": {
+        "usagePattern": "an invitation to N/to V; accept an invitation; at the invitation of sb",
+        "usagePatternZh": "參加……／做……的邀請；接受邀請；應某人邀請"
+      },
+      "reason": "Individually source-checked dictionary correction; preserve unrelated meanings, IDs, POS and review status.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/invitation"
+      ]
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W002081",
+      "before": {
+        "wordId": "W002081",
+        "word": "besides",
+        "wordVariants": [
+          "besides"
+        ],
+        "level": "LV3",
+        "pos": "adv./prep.",
+        "posAll": [
+          "adv.",
+          "prep."
+        ],
+        "meaningZh": "除……之外；而且；此外；（古副詞義）在旁邊",
+        "meaningEn": "making an additional point; anyway; besides, we can't afford it\"; in addition; At the side of; on one side of.; Aside from; out of the regular course or order of; in a",
+        "usagePattern": "Besides, + clause; besides + N/V-ing",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "besides",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "此外，……；除……之外"
+      },
+      "after": {
+        "usagePatternZh": "此外，……；除……之外還……"
+      },
+      "reason": "Individually source-checked dictionary correction; preserve unrelated meanings, IDs, POS and review status.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/besides"
+      ]
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W002127",
+      "before": {
+        "wordId": "W002127",
+        "word": "captain",
+        "wordVariants": [
+          "captain"
+        ],
+        "level": "LV3",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "船長；指揮官；海軍上校；首領",
+        "meaningEn": "the leader of a team; the person in charge of a ship or aircraft",
+        "usagePattern": "the captain of the team; the ship's captain; team captain",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "captain",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "隊長；船長；隊長"
+      },
+      "after": {
+        "meaningZh": "船長；隊長；機長；指揮官；海軍上校；首領"
+      },
+      "reason": "Individually source-checked dictionary correction; preserve unrelated meanings, IDs, POS and review status.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/captain"
+      ]
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W005955",
+      "before": {
+        "wordId": "W005955",
+        "word": "unify",
+        "wordVariants": [
+          "unify"
+        ],
+        "level": "LV6",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "統一；使成一體",
+        "meaningEn": "become one",
+        "usagePattern": "unify + N; unify to V",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "unify",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "統一某事物；統一去做某事"
+      },
+      "after": {
+        "meaningEn": "to bring different parts together into one whole, or to become joined as one",
+        "usagePattern": "unify N; unify N with N; unify into N",
+        "usagePatternZh": "統一／整合某事物；使某事物與另一事物合一；合併成……",
+        "verbForms": {
+          "base": "unify",
+          "past": "unified",
+          "pastParticiple": "unified",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/unify",
+          "status": "approved"
+        }
+      },
+      "reason": "Individually source-checked dictionary correction; preserve unrelated meanings, IDs, POS and review status. Explicit Collins Word forms independently checked; add only these verified forms.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/unify"
+      ]
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W003283",
+      "before": {
+        "wordId": "W003283",
+        "word": "determination",
+        "wordVariants": [
+          "determination"
+        ],
+        "level": "LV4",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "決心；果斷；判定；測定",
+        "meaningEn": "the act of determining the properties of something, usually by research or calculation; the quality of being determined to do or achieve something; firmness of purpose",
+        "usagePattern": "a/the determination; determination of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "determination",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "一項決心；……的測定"
+      },
+      "after": {
+        "usagePattern": "determination to V; show determination; determination of N",
+        "usagePatternZh": "做……的決心；展現決心；……的判定／測定"
+      },
+      "reason": "Individually source-checked dictionary correction; preserve unrelated meanings, IDs, POS and review status.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/determination"
+      ]
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W002708",
+      "before": {
+        "wordId": "W002708",
+        "word": "recognize",
+        "wordVariants": [
+          "recognize"
+        ],
+        "level": "LV3",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "認出；認可；承認；公認",
+        "meaningEn": "to know someone or something because you have seen, heard, or experienced them before; to accept officially that something is true, exists, or is valid",
+        "usagePattern": "recognize sb/sth; recognize that + clause; be recognized as N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "recognize",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "認出某人／某物；承認……；被公認為……"
+      },
+      "after": {
+        "verbForms": {
+          "base": "recognize",
+          "past": "recognized",
+          "pastParticiple": "recognized",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/recognize",
+          "status": "approved"
+        }
+      },
+      "reason": "Explicit Collins Word forms independently checked; add only these verified forms.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/recognize"
+      ]
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W002504",
+      "before": {
+        "wordId": "W002504",
+        "word": "locate",
+        "wordVariants": [
+          "locate"
+        ],
+        "level": "LV3",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "找出；設於；位於；定居",
+        "meaningEn": "to find the exact position of someone or something; to be situated or set up in a particular place (usually passive: be located)",
+        "usagePattern": "locate + N (find); be located in/near N; locate a business in N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "locate",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "找出某物；位於某處；將企業設於某處"
+      },
+      "after": {
+        "verbForms": {
+          "base": "locate",
+          "past": "located",
+          "pastParticiple": "located",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/locate",
+          "status": "approved"
+        }
+      },
+      "reason": "Explicit Collins Word forms independently checked; add only these verified forms.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/locate"
+      ]
+    },
+    {
+      "dataset": "examples",
+      "path": "public/data/v1/examples.json",
+      "key": "exampleId",
+      "id": "EXfc096fb9",
+      "before": {
+        "exampleId": "EXfc096fb9",
+        "word": "rate",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "Most reviewers rated the new phone highly for its camera quality.",
+        "sentenceZh": "大多數評論者都對這款新手機的相機品質評價很高。",
+        "blankSentence": "Most reviewers _____ the new phone highly for its camera quality.",
+        "answer": "rated",
+        "difficulty": "LV3",
+        "status": "reviewed"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "rated is the verb predicate in the unchanged sentence, not a noun.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/rate"
+      ]
+    },
+    {
+      "dataset": "examples",
+      "path": "public/data/v1/examples.json",
+      "key": "exampleId",
+      "id": "EX0a6cdbb9",
+      "before": {
+        "exampleId": "EX0a6cdbb9",
+        "word": "body",
+        "sensePos": "n.",
+        "meaningHint": "身體；人；屍體；主要部分",
+        "exampleType": "textbook",
+        "sentenceEn": "Companies often take people's body temperature because of COVID-19.",
+        "sentenceZh": "由於新冠肺炎，各公司經常量大家的體溫。",
+        "blankSentence": "Companies often take people's _____ temperature because of COVID-19.",
+        "answer": "body",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "meaningHint": "身體"
+      },
+      "reason": "Exact original sentence uses physical body, not person/corpse/main part. Preserve both original languages and cloze.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/body"
+      ]
+    },
+    {
+      "dataset": "examples",
+      "path": "public/data/v1/examples.json",
+      "key": "exampleId",
+      "id": "EXd10ef9a3",
+      "before": {
+        "exampleId": "EXd10ef9a3",
+        "word": "body",
+        "sensePos": "n.",
+        "meaningHint": "身體；人；屍體；主要部分",
+        "exampleType": "textbook",
+        "sentenceEn": "Harriet wasn't happy with her body, so she decided to lose weight.",
+        "sentenceZh": "哈莉特不滿意自己的身體，因此決定減重。",
+        "blankSentence": "Harriet wasn't happy with her _____, so she decided to lose weight.",
+        "answer": "body",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "meaningHint": "身體"
+      },
+      "reason": "Exact original sentence uses physical body, not person/corpse/main part. Preserve both original languages and cloze.",
+      "evidence": [
+        "https://www.collinsdictionary.com/dictionary/english/body"
+      ]
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W004070",
+      "before": {
+        "wordId": "W004070",
+        "word": "asset",
+        "wordVariants": [
+          "asset"
+        ],
+        "level": "LV5",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "資產；有益的東西",
+        "meaningEn": "a useful or valuable quality",
+        "usagePattern": "an/the asset; asset of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "asset",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "資產；……的資產"
+      },
+      "after": {
+        "meaningEn": "a useful or valuable quality; something valuable, such as money or property, owned by a person or organization"
+      },
+      "reason": "English summary lacks financial/property sense in unit target.",
+      "evidence": [
+        "https://dictionary.cambridge.org/dictionary/english/asset"
+      ]
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W003392",
+      "before": {
+        "wordId": "W003392",
+        "word": "fantastic",
+        "wordVariants": [
+          "fantastic"
+        ],
+        "level": "LV4",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "奇妙的；稀奇的；空想的",
+        "meaningEn": "extremely good or enjoyable; not real, existing only in stories or the imagination",
+        "usagePattern": "a fantastic idea/time; look/sound fantastic",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "fantastic",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "很棒的想法或時光；看起來或聽起來很棒"
+      },
+      "after": {
+        "meaningZh": "很棒的；奇妙的；稀奇的；空想的"
+      },
+      "reason": "Add ordinary positive sense used by both formal examples, preserve all other senses.",
+      "evidence": [
+        "https://dictionary.cambridge.org/dictionary/english/fantastic?topic=extremely-good"
+      ]
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W004867",
+      "before": {
+        "wordId": "W004867",
+        "word": "sturdy",
+        "wordVariants": [
+          "sturdy"
+        ],
+        "level": "LV5",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "強健的；健全的；羊暈倒病；羊蹣跚病",
+        "meaningEn": "substantially made or constructed",
+        "usagePattern": "be sturdy; sturdy + N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "sturdy",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "堅固的；堅固的……"
+      },
+      "after": {
+        "meaningZh": "（形容詞）強健的；健全的；堅固的；（方言／畜牧名詞）羊暈倒病；羊蹣跚病"
+      },
+      "reason": "Rare disease meaning is real noun, not adjective. Preserve and label; add structural-strength sense used by shelf sentence.",
+      "evidence": [
+        "https://www.dsl.ac.uk/entry/snd/sturdy_n1",
+        "https://dictionary.cambridge.org/dictionary/english/sturdy"
+      ]
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W001724",
+      "before": {
+        "wordId": "W001724",
+        "word": "rent",
+        "wordVariants": [
+          "rent"
+        ],
+        "level": "LV2",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "租金；房租；出租物；裂縫",
+        "meaningEn": "(v.) to pay money regularly to use something that belongs to someone else; (n.) the money paid regularly for the use of a place",
+        "usagePattern": "rent an apartment; rent sth from sb; rent out; pay the rent; the rent is due",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "rent",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "租公寓；向某人租用某物；出租；付租金；租金到期",
+        "verbForms": {
+          "base": "rent",
+          "past": "rented",
+          "pastParticiple": "rented",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/rent",
+          "status": "approved"
+        }
+      },
+      "after": {
+        "meaningZh": "（名詞）租金；房租；出租物；裂縫；（動詞）租用；出租"
+      },
+      "reason": "Table n./v. and formal example rent apartments require Chinese verb meaning; retain noun senses.",
+      "evidence": [
+        "https://dictionary.cambridge.org/dictionary/english/rent"
+      ]
+    },
+    {
+      "dataset": "grammarQuestions",
+      "path": "src/features/direct/grammarQuestions.json",
+      "key": "questionId",
+      "id": "ORIG-GRAMMAR-LV3U01-12",
+      "before": {
+        "questionId": "ORIG-GRAMMAR-LV3U01-12",
+        "learningItemId": "LI-DRAFT-LV3-U01-G12",
+        "sourcePage": 3,
+        "sourceType": "new_grammar_authored",
+        "targetWord": "at any rate",
+        "targetMeaningZh": "用於轉折或收束，表示無論如何。",
+        "stem": "We may not finish today. At any _____, we must lock the workshop before leaving.",
+        "options": [
+          {
+            "id": "A",
+            "text": "ratio",
+            "rationaleZh": "不符合本題指定用法。at any rate是「無論如何」的固定用語，不能以相關數量名詞替換。"
+          },
+          {
+            "id": "B",
+            "text": "speed",
+            "rationaleZh": "不符合本題指定用法。at any rate是「無論如何」的固定用語，不能以相關數量名詞替換。"
+          },
+          {
+            "id": "C",
+            "text": "price",
+            "rationaleZh": "不符合本題指定用法。at any rate是「無論如何」的固定用語，不能以相關數量名詞替換。"
+          },
+          {
+            "id": "D",
+            "text": "rate",
+            "rationaleZh": "正解。at any rate是「無論如何」的固定用語，不能以相關數量名詞替換。"
+          }
+        ],
+        "answer": "D",
+        "review": "self_reviewed_basic_practice_not_gsat_calibrated",
+        "autoSrsUpdate": false,
+        "firstAttemptEvidence": true
+      },
+      "after": {
+        "options": [
+          {
+            "id": "A",
+            "text": "ratio",
+            "rationaleZh": "不符合本題指定用法。at any rate表示「無論如何」；其他選項不構成本題要考的固定片語。"
+          },
+          {
+            "id": "B",
+            "text": "speed",
+            "rationaleZh": "不符合本題指定用法。at any rate表示「無論如何」；其他選項不構成本題要考的固定片語。"
+          },
+          {
+            "id": "C",
+            "text": "amount",
+            "rationaleZh": "不符合本題指定用法。at any rate表示「無論如何」；其他選項不構成本題要考的固定片語。"
+          },
+          {
+            "id": "D",
+            "text": "rate",
+            "rationaleZh": "正解。at any rate表示「無論如何」；其他選項不構成本題要考的固定片語。"
+          }
+        ]
+      },
+      "reason": "At any price is a valid idiom, competing with intended at any rate. Replacing only distractor avoids changing English stem or intended answer. Synchronize rationale with disambiguated options; no change to target or stem.",
+      "evidence": [
+        "20260815_091426.jpg sha256:a452c97da7d214812f8557e34a8c50a3ddcc210688c76dfb8d080e2c57aa7345",
+        "grammar_rows.txt (current baseline row, exact text)"
+      ]
+    },
+    {
+      "dataset": "grammarQuestions",
+      "path": "src/features/direct/grammarQuestions.json",
+      "key": "questionId",
+      "id": "ORIG-GRAMMAR-LV3U01-16",
+      "before": {
+        "questionId": "ORIG-GRAMMAR-LV3U01-16",
+        "learningItemId": "LI-DRAFT-LV3-U01-G16",
+        "sourcePage": 4,
+        "sourceType": "new_grammar_authored",
+        "targetWord": "a golden opportunity",
+        "targetMeaningZh": "表示難得的良機。",
+        "stem": "The free internship offered a _____ opportunity to learn from skilled engineers.",
+        "options": [
+          {
+            "id": "A",
+            "text": "wooden",
+            "rationaleZh": "不符合本題指定用法。a golden opportunity指難得的良機；其他選项沒有此固定意義。"
+          },
+          {
+            "id": "B",
+            "text": "silvered",
+            "rationaleZh": "不符合本題指定用法。a golden opportunity指難得的良機；其他選项沒有此固定意義。"
+          },
+          {
+            "id": "C",
+            "text": "copper",
+            "rationaleZh": "不符合本題指定用法。a golden opportunity指難得的良機；其他選项沒有此固定意義。"
+          },
+          {
+            "id": "D",
+            "text": "golden",
+            "rationaleZh": "正解。a golden opportunity指難得的良機；其他選项沒有此固定意義。"
+          }
+        ],
+        "answer": "D",
+        "review": "self_reviewed_basic_practice_not_gsat_calibrated",
+        "autoSrsUpdate": false,
+        "firstAttemptEvidence": true
+      },
+      "after": {
+        "options": [
+          {
+            "id": "A",
+            "text": "wooden",
+            "rationaleZh": "不符合本題指定用法。a golden opportunity指難得的良機；其他選項沒有此固定意義。"
+          },
+          {
+            "id": "B",
+            "text": "silvered",
+            "rationaleZh": "不符合本題指定用法。a golden opportunity指難得的良機；其他選項沒有此固定意義。"
+          },
+          {
+            "id": "C",
+            "text": "copper",
+            "rationaleZh": "不符合本題指定用法。a golden opportunity指難得的良機；其他選項沒有此固定意義。"
+          },
+          {
+            "id": "D",
+            "text": "golden",
+            "rationaleZh": "正解。a golden opportunity指難得的良機；其他選項沒有此固定意義。"
+          }
+        ]
+      },
+      "reason": "Traditional Chinese consistency; target golden opportunity confirmed on p4.",
+      "evidence": [
+        "20260815_091434.jpg sha256:c61abd4a0b8a5c366599d77771d216f240f9ab3370585be79c4a63f455bb56be"
+      ]
+    },
+    {
+      "dataset": "curriculum",
+      "path": "src/features/direct/curriculum.json",
+      "key": "learningItemId",
+      "id": "LI-DRAFT-LV3-U01-G35",
+      "before": {
+        "learningItemId": "LI-DRAFT-LV3-U01-G35",
+        "kind": "grammar",
+        "sourcePage": 9,
+        "pattern": "besides / beside",
+        "explanationZh": "besides有除外或此外義；beside表示在旁邊。",
+        "practiceMode": "study_note_only"
+      },
+      "after": {
+        "explanationZh": "besides作介詞表示「除……之外還」，作副詞表示「此外、而且」；beside表示「在……旁邊」。"
+      },
+      "reason": "p9 Besides math, Lucy is good at music includes math and music; 除外 alone is misleading.",
+      "evidence": [
+        "20260815_091505.jpg sha256:016a8b58d64a3c42e5679a5e3a88d615e0e7f8a42b8f3cc5f9fd770dd9c37c21"
+      ]
+    },
+    {
+      "dataset": "grammarQuestions",
+      "path": "src/features/direct/grammarQuestions.json",
+      "key": "questionId",
+      "id": "ORIG-GRAMMAR-LV3U01-35",
+      "before": {
+        "questionId": "ORIG-GRAMMAR-LV3U01-35",
+        "learningItemId": "LI-DRAFT-LV3-U01-G35",
+        "sourcePage": 9,
+        "sourceType": "new_grammar_authored",
+        "targetWord": "besides / beside",
+        "targetMeaningZh": "besides有除外或此外義；beside表示在旁邊。",
+        "stem": "The spare chair is _____ the window, directly next to it.",
+        "options": [
+          {
+            "id": "A",
+            "text": "additionally",
+            "rationaleZh": "不符合本題指定用法。beside是介詞「在旁邊」；besides或兩個副詞不表示此處的位置。"
+          },
+          {
+            "id": "B",
+            "text": "moreover",
+            "rationaleZh": "不符合本題指定用法。beside是介詞「在旁邊」；besides或兩個副詞不表示此處的位置。"
+          },
+          {
+            "id": "C",
+            "text": "beside",
+            "rationaleZh": "正解。beside是介詞「在旁邊」；besides或兩個副詞不表示此處的位置。"
+          },
+          {
+            "id": "D",
+            "text": "besides",
+            "rationaleZh": "不符合本題指定用法。beside是介詞「在旁邊」；besides或兩個副詞不表示此處的位置。"
+          }
+        ],
+        "answer": "C",
+        "review": "self_reviewed_basic_practice_not_gsat_calibrated",
+        "autoSrsUpdate": false,
+        "firstAttemptEvidence": true
+      },
+      "after": {
+        "targetMeaningZh": "besides作介詞表示「除……之外還」，作副詞表示「此外、而且」；beside表示「在……旁邊」。"
+      },
+      "reason": "Keep question target explanation synchronized; beside cloze unchanged.",
+      "evidence": [
+        "20260815_091505.jpg sha256:016a8b58d64a3c42e5679a5e3a88d615e0e7f8a42b8f3cc5f9fd770dd9c37c21"
+      ]
+    },
+    {
+      "dataset": "notes",
+      "path": "public/data/v1/notes.json",
+      "key": "noteId",
+      "id": "NX395cc75d",
+      "before": {
+        "noteId": "NX395cc75d",
+        "word": "union",
+        "noteType": "phrase",
+        "title": "a trade union",
+        "content": "商會。",
+        "status": "approved"
+      },
+      "after": {
+        "content": "工會（英式英語常用 trade union；美式英語常用 labor union）。"
+      },
+      "reason": "Original p1 photo does say 商會, so faithful transcription but textbook semantic error. Current G03 correctly defines trade union as 工會 and uses factory workers negotiating working conditions. Preserve historical source quotation separately.",
+      "evidence": [
+        "20260815_091407.jpg sha256:c018187bb9b0f8a1f1fdf1f99c256411d1fd5cc116f541670f0f379f561ada9a"
+      ]
+    },
+    {
+      "dataset": "notes",
+      "path": "public/data/v1/notes.json",
+      "key": "noteId",
+      "id": "NX2070e66e",
+      "before": {
+        "noteId": "NX2070e66e",
+        "word": "unique",
+        "noteType": "phrase",
+        "title": "be unique to + 地方",
+        "content": "為某地方所獨有。同義說法：be native to + 地方；be indigenous to + 地方。",
+        "status": "approved"
+      },
+      "after": {
+        "content": "be unique to + 地方表示「為某地所獨有」。be native to / be indigenous to表示「原生於某地」，不一定表示只在該地存在，不能一律視為同義。"
+      },
+      "reason": "p5 source photo visually confirms the erroneous equivalence. Current G47 explicitly rejects exclusivity inferred from native to. This is a textbook semantic correction, not an OCR correction.",
+      "evidence": [
+        "20260815_091439.jpg sha256:f55bac57d1bd6dfa788fbecd439cda4d17f39a1eff0eef7dcfca1959bf576f3d"
+      ]
+    },
+    {
+      "dataset": "notes",
+      "path": "public/data/v1/notes.json",
+      "key": "noteId",
+      "id": "NX81489320",
+      "before": {
+        "noteId": "NX81489320",
+        "word": "stay",
+        "noteType": "phrase",
+        "title": "stay + adj.",
+        "content": "保持……。例：Where did you stay while you were in Paris?（此句實為 stay at/in，非 stay+adj，書頁該條例句另見 p.95）",
+        "status": "approved"
+      },
+      "after": {
+        "content": "stay + 形容詞表示「保持某種狀態」。"
+      },
+      "reason": "Existing note itself acknowledges example mismatch. Exact sentence asks lodging location and contains no adjective complement. Remove mismatched example without changing original example assets. p95 source not inspected.",
+      "evidence": [
+        "notes.json (current baseline row, exact text)"
+      ]
+    }
+  ],
+  "pending": [
+    "G33 donation identity/context unresolved; original English premise unchanged.",
+    "G02 source heading with/in differs from Without unity example; no correction applied.",
+    "besides meaningEn contains unresolved historical/truncated material; preserved."
+  ],
+  "constraints": [
+    "No IDs, word POS/status, original example sentences, SRS or mother workbook changes.",
+    "Only listed fields and complete-row exact-before matching are allowed.",
+    "Review metadata does not confer whole-unit approval."
+  ],
+  "unchangedInputs": {
+    "public/data/v1/exam_priority.json": "afeddc9f393f59665fd8a72a11e71c771c139c66214a6962cb442e75709f54f5",
+    "public/data/v1/hooks.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "public/data/v1/media.json": "ee130840a1a7467271243b550dfa89ed4f266f9518b4c270aa33cfd1de8112a5",
+    "public/data/v1/morphemes.json": "e60331dfd54d3aa90c253eae86cebb8057af0786e125207db9c695b842e90433",
+    "public/data/v1/relations.json": "b2562fe33f212b32d426daa948d77789df6b27c941a000d32c7863f0b9c92828",
+    "public/data/v1/senses.json": "958cfe0c9a2185d45dfb3f596c9a7483373a5e9d69dce39e416ecf60a0fb7822",
+    "scripts/build_sa_pack.py": "7b5bf780f51451d39bc3762c027c67243dfafeed5817f3edccc23cbaabb8f3ee",
+    "src/features/direct/choiceOptions.json": "131580eebadea156da84eb93082d0288549688a7937a13b00a6ac2f95bb48786",
+    "src/features/direct/curriculumLV1Unit16.json": "45d36a932f463b8d13d9f4f9c1951f6530672b88b782e863b1e7ae35c10da4fe",
+    "src/features/direct/curriculumLV1Unit17.json": "cc9d6e310032ec6c858d985459b1dcae3e3c2495889acd6eb2eb6a18c71ad18e",
+    "src/features/direct/curriculumLV1Unit18.json": "2b240c49b82610427f071bf31ba381055d7f5987da4fb577f15aef297f8822d1",
+    "src/features/direct/curriculumLV1Unit19.json": "e1081192bac4726c34e197814afcd734edf70cbc2e4f6558d83136529d4b24a3",
+    "src/features/direct/curriculumLV1Unit20.json": "c91f10085b3348f6ca3b1b3b8ce3152a6892eb344036789916c736c0df0dc9da",
+    "src/features/direct/curriculumLV1Unit21.json": "81fd3cf3e5ba39a4576821150a1d95211e002f147f37d7648ba44ee688ed5322",
+    "src/features/direct/curriculumLV2Unit27.json": "4cbc56e6d99057c4eb722d419d35176d7033cf7e379f97a3d659b386869c834e",
+    "src/features/direct/curriculumLV2Unit28.json": "e5b4bfbdbff15308c2f3641610ce6fecc9f3d4b41dd50d710413e57150882ffa",
+    "src/features/direct/curriculumLV2Unit29.json": "ba10bd3b014e1c823ee0f497e588f9fe6a71477615b0f736dfa228ff4d4096e2",
+    "src/features/direct/curriculumLV2Unit30.json": "7dd24fc23035d572d3664c1212654e157a3574c031c5ed99886d0b1c7c976f64",
+    "src/features/direct/curriculumLV2Unit31.json": "5e1d5ab229d14e285fe2647ad6f240f3a727ab0ba3b34dcb5742296919fec5ff",
+    "src/features/direct/curriculumLV2Unit32.json": "03134ebd4e8df98aa9c2d759a6c887f97556922a3d42b75afa35c196e1e4b2bf",
+    "src/features/direct/curriculumLV2Unit33.json": "69cf3c8f42da88f7c8e4f7bc033d7ad3e49a095a28d9c81af2a9e2e1b8818c81",
+    "src/features/direct/curriculumLV2Unit34.json": "8051bba4ed96ac77bc706280d971515f848e3062b5a868b00d35b2ab07e6563a",
+    "src/features/direct/curriculumLV2Unit35.json": "8777bc098ee7f5f6c0c82df5114b5271238d21b0366dfa0b8af687f1b27a77ec",
+    "src/features/direct/curriculumLV2Unit36.json": "d431677ba4ed26f95b0a3c4c9c71e480c7fee26bfd5f1265c6dabfd22bd9ab7b",
+    "src/features/direct/curriculumLV2Unit37.json": "ee3ab7de32cb2046dbd41d8dad98830bd52e2b1f4242f7d614abf624f5b1edb9",
+    "src/features/direct/curriculumLV2Unit38.json": "78e24e94aa2825366c694477bbce156df52ccb935fa70d4e3b67fa425dfb5201",
+    "src/features/direct/curriculumLV2Unit39.json": "7abf3d04d1d048c585184fdab32edcbff4927b7ee7ef863c9d141e1dfaea5650",
+    "src/features/direct/curriculumLV2Unit40.json": "105144085bad902fa3380aa04e39a5fb33f8c8cbbbc91ac4ad2d201723ef6dc3",
+    "src/features/direct/curriculumLV2Unit41.json": "3d6e16a279dfb3eb0862c5cb8883577ffd652ba29c141dc581fc33a47ca85eeb",
+    "src/features/direct/curriculumLV2Unit42.json": "05d8069dd0a76f554b86e96bf1db34771e5c662b78d954aa41c1713e163ba1e1",
+    "src/features/direct/curriculumLV2Unit43.json": "2ec5443ace981a5f70c4bf39f6b8f11eb18a5e54879befc0561befd0bfda6949",
+    "src/features/direct/curriculumLV2Unit44.json": "9e543f3fb8a93370bf812e5973cd89fb1767a1dfae344e69583d1ceae896534f",
+    "src/features/direct/curriculumLV2Unit45.json": "bf9a497dab35d44e8f19b42c39d06dd7a4073f732d2ebfef30fac3a061516b59",
+    "src/features/direct/curriculumLV2Unit46.json": "ec470129e210b3236f026ee439ad25261b036a3b002ccf02ebbf34b6ad768566",
+    "src/features/direct/curriculumLV2Unit47.json": "d9306c7a8d479ac94d7b8aaba3feef1a018fff0543d535ea2fe7918871ba2175",
+    "src/features/direct/curriculumLV2Unit48.json": "643aef515175539ea12a4ad5e59c981863fc31126c1e74b280d2afc7c0a778c7",
+    "src/features/direct/curriculumLV2Unit49.json": "efa430fbc840f4391c38aaaa23814628a64f2ca2c39c2f340f6aaebcd8faadde",
+    "src/features/direct/curriculumLV2Unit50.json": "0000bb2a184cd3a28d7abbca27d676a69ffed4039bc0bb099d2a591c85de622c",
+    "src/features/direct/curriculumLV3Unit10.json": "33f5b2a6408cc94573a705cecf1a8a9887a9db878e84e56ac3ad26feefd6c4ff",
+    "src/features/direct/curriculumLV3Unit11.json": "3a86a3ad8f1138f1bc8dea123db0644f2c1412fcff219fed730241632c92e1de",
+    "src/features/direct/curriculumLV3Unit12.json": "70e236bc4322124a25d05ba757d0b9d38b02046bf6e2d56d7591d55251ec14ef",
+    "src/features/direct/curriculumLV3Unit13.json": "64d9279685e275af4af0377a35199f125e7b1c34c75a5c8d3b78b77b5a011b86",
+    "src/features/direct/curriculumLV3Unit14.json": "0096598297d9853524954bf651dd86b43b4d37cd330dd08008d7547af5a6f067",
+    "src/features/direct/curriculumLV3Unit15.json": "dd8506b9cd8138f4d9ec2fe188e764c55f7f0f64ad40c4254a966dad32c8df22",
+    "src/features/direct/curriculumLV3Unit16.json": "f31b9ef714bd5c791f8b9eaab7500b41ae9897c29ecc279b5c81f1bad134a358",
+    "src/features/direct/curriculumLV3Unit17.json": "a4d55f89e80323229210caa270a9b353be0bec3c1b5b4e2dec6902ae9b3f35a1",
+    "src/features/direct/curriculumLV3Unit18.json": "b2f53a9db6ea2e6521a89f0f07fcbd0cf9f6530b52ed4e430962c54585296833",
+    "src/features/direct/curriculumLV3Unit19.json": "4facbd0a9f9a1f9d74a47323b6b4bb3ed6a33a5a79dbba356a30a1caa60586ec",
+    "src/features/direct/curriculumLV3Unit20.json": "c6197f6ab0a797cdb4647b245b19444f402d12cb8fc2ff3c979ade0b466f152d",
+    "src/features/direct/curriculumLV3Unit21.json": "e81d81a4866af752e48e9fa5f64bd135c7bdd46f9b45ccafb6000673cee2e41e",
+    "src/features/direct/curriculumLV3Unit22.json": "e9796be7c4db1ae18b59c3ba7a2c1d3e19a31b6edf34253dec906294d51c88fd",
+    "src/features/direct/curriculumLV3Unit23.json": "f8349a1de985166528d80a403ac686be3c9ce052706d7d6625bb0687d74a3d3c",
+    "src/features/direct/curriculumLV3Unit24.json": "db8f46b1abb4a26d06cf830a4fdba582c3450ad915ee4a0f4a06648c6095ab59",
+    "src/features/direct/curriculumLV3Unit4.json": "9f512f4b28ec17344316f2d239ad8612de96810c079d11d77fda7935ea6ff273",
+    "src/features/direct/curriculumLV3Unit5.json": "a82ca97048fe871ba04109eb22db395cb12a0f2151b21980805ce525a2fad04d",
+    "src/features/direct/curriculumLV3Unit6.json": "641902ed126fd34a584a2c4713a26dee3ad25a99d1556a05043d2341a4163a88",
+    "src/features/direct/curriculumLV3Unit7.json": "8237eb85bfc029320b024ef67edb552dbe22529ed434ef382f2cafa06c33bdd4",
+    "src/features/direct/curriculumLV3Unit8.json": "2d9c5f0fbeea66af08526ad4a3e9ec1a6a74f9cc45e6ce5aacb62a481b517d3e",
+    "src/features/direct/curriculumLV3Unit9.json": "36b891b9aee51a08b0449fc7ab24b2bf032d595b42cc78327463bc258625c988",
+    "src/features/direct/curriculumLV4Unit1.json": "a8dd86c0205d251aa0ee813a91a873f31fec97d562621c5aa48268fdcf794990",
+    "src/features/direct/curriculumLV4Unit10.json": "bb3fd43bac55f368ed1a04c5dab71560bcae90df9b9746822f7b9914b8dbc5c2",
+    "src/features/direct/curriculumLV4Unit11.json": "01d502d8b01b74a0669bf785861c2c048e8be480672444889a9e71933cd8c799",
+    "src/features/direct/curriculumLV4Unit12.json": "fbb1160d30151aa28ade0d75cc3ecd8e7d0d2c0f4b1734cee5e2f9b64c8ae3d6",
+    "src/features/direct/curriculumLV4Unit13.json": "3de424f45535a517dde40472929570ba4d6e8855ec8593fcc236d47a02b63f3f",
+    "src/features/direct/curriculumLV4Unit14.json": "66e8cde10fb314a1e8db49d0a5f4b9dddb1e359e027165b4e2fcbf4f62e3806f",
+    "src/features/direct/curriculumLV4Unit15.json": "98131ed6513ca94e9296561d19ca9a039b602d5cd9d0f1f207e718a2d9ef8bee",
+    "src/features/direct/curriculumLV4Unit16.json": "d9afe6ef09a56af1c0cc0e46e71e14d8a64b7af7af62be07678e22d15ef28d14",
+    "src/features/direct/curriculumLV4Unit17.json": "e87ee842d6a1490941ee2a2087eaceec57bd14007e9644c3e96c2a874973beb8",
+    "src/features/direct/curriculumLV4Unit18.json": "65d6ed5e05d0da710ef4b6aa564427b8f6ec7cb500bad0bbf4d92268bc47bfbe",
+    "src/features/direct/curriculumLV4Unit19.json": "115d49543bb7395fb0e796310a1caa927aad35e9bc41e6a7e30eea50141c9e62",
+    "src/features/direct/curriculumLV4Unit2.json": "fb82b241e8876abdfaa8b9e59943f16ce29c116e6ed56a653590d39fb6e97bfc",
+    "src/features/direct/curriculumLV4Unit20.json": "d33023fd91d8fbdfc66d341ebba79d46900c482e98ca2f2b754a579b4fe026cd",
+    "src/features/direct/curriculumLV4Unit21.json": "32f886115c9c5c8cd87fa09ce1fecce9527c0f37739cd818b7577584a2e635e5",
+    "src/features/direct/curriculumLV4Unit22.json": "26f839e3c4d9a8bd9e9a9ee6caf2a4d6756c7f0b4050a200eac88f773a826022",
+    "src/features/direct/curriculumLV4Unit23.json": "46d07e157175676a48fd6705b82553c7b1f705ee81356fe9405fb35cbf7581ca",
+    "src/features/direct/curriculumLV4Unit24.json": "052ef4539a37b5e735e54005c14a2e250dfb87e9c546c5f868aef3dc9ee9ac64",
+    "src/features/direct/curriculumLV4Unit3.json": "07076a44eeeba329ca8f30eacae7bf5d82d64dcd248c731555f3a906b477f700",
+    "src/features/direct/curriculumLV4Unit4.json": "dec54dad531c93df7b3fcc58c1ccdf19a29c3c4b0c1e669970fc68b414db0a68",
+    "src/features/direct/curriculumLV4Unit5.json": "a3da6d39cad69b07058b08a347b92e6e86e15a2b8fe855b81f06cec7549ebda8",
+    "src/features/direct/curriculumLV4Unit6.json": "783596335a7eaa8aa81767ec885d6b0a0dd8c77fdafe99a6b30b952d484df157",
+    "src/features/direct/curriculumLV4Unit7.json": "770f932e789398c434f50e7229fcad773a142ed83a8910a48f2ccd5a38149e43",
+    "src/features/direct/curriculumLV4Unit8.json": "3e0fcafbd42afdf75c9945913d3cbadeb181cd7ea1d3f4ebc9edb0e8e85a0c93",
+    "src/features/direct/curriculumLV4Unit9.json": "c52eab402247089a06ff793564fa6b641c21388762e570b36b3e812f2d4324f0",
+    "src/features/direct/curriculumLV5Unit1.json": "374d80055beb10add3bbc2785cbbb11b3ed4aa04970c63a4a8b827f2dc70ff01",
+    "src/features/direct/curriculumLV5Unit10.json": "be2fd6191d23af6c4ac487323c93812ebf0e2ed9e078c892c22f3ea8f336a350",
+    "src/features/direct/curriculumLV5Unit11.json": "28651800330fb7ea62979bbca747e46e02cf83724b9ca91af8f9d5b0d854bd0e",
+    "src/features/direct/curriculumLV5Unit12.json": "0602bdeb8ea042ee966d5f0f357247fb0435a52976fa80e58ed506a49afa83e0",
+    "src/features/direct/curriculumLV5Unit13.json": "4e388c2de221ecb271b065347910843879a04c85587713db1fc3cf253be095db",
+    "src/features/direct/curriculumLV5Unit14.json": "25f20fb3317ea3158e1f502e39f2f5bb0df39543d59d7967b21883496cb054dd",
+    "src/features/direct/curriculumLV5Unit15.json": "42ccfcbc36c078a1d538aca7b7b5b2157a29e29269173f2ad8dbd449fed61022",
+    "src/features/direct/curriculumLV5Unit16.json": "72764740a62f5ec995f1e28ba1790d54584bee7a5da3db51453b296cae094eaf",
+    "src/features/direct/curriculumLV5Unit18.json": "1a2fd36ce374f5122f29b94439aa08a92106d6bbee6498959cba233c258680b6",
+    "src/features/direct/curriculumLV5Unit22.json": "396072287b98f6a206c35eef081a2490e2484c5c6fd64ecde9990121ac6212f3",
+    "src/features/direct/curriculumLV5Unit25.json": "c6f4fee16b88efc6a497aa60ca150062b85c1372fbf3c2da0f200cc1e469bb2f",
+    "src/features/direct/curriculumLV5Unit3.json": "04707b78ad185cefe54455fe493ee975d4e4ce5871a10a191a0a26f09c124023",
+    "src/features/direct/curriculumLV5Unit4.json": "1bb6b3198f9f2b00548cd816c592854c728e4a5710e58b033fda9ea2a1e4c626",
+    "src/features/direct/curriculumLV5Unit5.json": "f6b590298f207774f0d23927ecab6922270182b8590d3eb8809aacbde2e7e74c",
+    "src/features/direct/curriculumLV5Unit6.json": "20507e98bb65b885815a5a4084031260d6d383488ed80f0ffb62e7d9a32abaf4",
+    "src/features/direct/curriculumLV5Unit7.json": "382600743d21159d89287cde405521d65ac34ddd6a9c07d854bcb396896cbd8f",
+    "src/features/direct/curriculumLV5Unit8.json": "aa57dadb052006b666cd6d974fd889b3f68b0fae026d39fddcb2895faeae2584",
+    "src/features/direct/curriculumLV5Unit9.json": "2ad95e828eaa5c227ecda4d82e9dbabf5e4373f2546fa7d50c81d3f5c9bf058f",
+    "src/features/direct/curriculumLV6Unit1.json": "f3f34181d5b40cc22871bd8502fc645a0e4b9cf96180d63bd88fcf56b02e562f",
+    "src/features/direct/curriculumLV6Unit10.json": "ba888a15c2d7c85df8c345dc9528efbb2e17c761c991ee1b738fd3974b073e53",
+    "src/features/direct/curriculumLV6Unit11.json": "0fcc8e662a0cd3bb842078267f13c420806d39a6e6968b6816abb88f93b299cb",
+    "src/features/direct/curriculumLV6Unit12.json": "295e8a7b49da0c6182aa161046d5a96d710133b06526465de36da0eb83e25cd7",
+    "src/features/direct/curriculumLV6Unit13.json": "141cd4c8c51e0f5b5c88c91cf33dfc0db9e43c0456238dbe3a5a8cd102d57c5f",
+    "src/features/direct/curriculumLV6Unit14.json": "e7c0add8b613ccd41128ad09a3a541a334f54aabdf608e397676746469d5ee35",
+    "src/features/direct/curriculumLV6Unit15.json": "478489d8fdebcf8a2502720e71eeb5594395aaa4db8dd09579bed367640a08eb",
+    "src/features/direct/curriculumLV6Unit16.json": "f4725223bfc405c826c2dffcc3f0522b94b1b8fda4f8c226bd8b02dba4fd077e",
+    "src/features/direct/curriculumLV6Unit17.json": "ba249cc52b2eb461a4b2b1a81e26e53c4ea6b35ebf33b8c047220f3d1df983c1",
+    "src/features/direct/curriculumLV6Unit18.json": "39cb0f006fc455629c516dc3aa287625bd6fb8f04997d0ccd09af2867bc3bbab",
+    "src/features/direct/curriculumLV6Unit19.json": "28cc4a3500a238b2e8437082fdcbbbb7ecfc8ea3ef0eb00c1be61886a829f6ca",
+    "src/features/direct/curriculumLV6Unit2.json": "3283befae35b6e12f46db13003a9dee1d4a4532c71a97ce80d14cb1ac87084fa",
+    "src/features/direct/curriculumLV6Unit20.json": "1ab7e0c9bc9156f546d702647cf1a91a7e57d45af45960a2e15d064668a976c8",
+    "src/features/direct/curriculumLV6Unit21.json": "68bd149729a9eb2e9d68420adfa6a78b197ffe9e5038cb279fa06013d6abd821",
+    "src/features/direct/curriculumLV6Unit22.json": "78091d698cc22c4056c687402651e93e2e1099cffdc0ede7f3a99356bd0ebc73",
+    "src/features/direct/curriculumLV6Unit23.json": "a80848cb2b2e2a0d07ea061d3cb95f8b1fa545173482c9680edcc6c67a5c2259",
+    "src/features/direct/curriculumLV6Unit24.json": "8a808eaedcaa484240389783843eee1bf141a63b6280a3baee0ea7649ed64970",
+    "src/features/direct/curriculumLV6Unit25.json": "5a6b3247a5f63d68334acdfd61842b1e0363967d4fd0d2c5e3b7a2b92ce4c4bc",
+    "src/features/direct/curriculumLV6Unit3.json": "9aa119fa69c5bf8c6fd4d7cf09782957f68e8aa9c15a4dbfa38becce121134d4",
+    "src/features/direct/curriculumLV6Unit4.json": "47d256c9fb0bbcacb6ef4f34ee29e88b52a6b553d093582bd114903e30d39846",
+    "src/features/direct/curriculumLV6Unit5.json": "8b6abfca9e5b6df716d706e2bebf22a5de2be802ec6af174caf927f5c4e1b3e4",
+    "src/features/direct/curriculumLV6Unit6.json": "1c7cb8eee10f747e4e55ea64b7d2456b53326e8dca063a9bd0c963588e602c86",
+    "src/features/direct/curriculumLV6Unit7.json": "5c9231c9b569fa2393e876b72cb19a5af6bf5719205af1b61ddfd52ab8d2621e",
+    "src/features/direct/curriculumLV6Unit8.json": "8210173529f3f8021c7d3d0cf9a743b50430d2fa6ef7eb07abe1b0f697fa7a29",
+    "src/features/direct/curriculumLV6Unit9.json": "4a2d6977c87b3fcf2b4e9e2bfddbbe2cd3d43482e38e8fd35deee97db5321e57",
+    "src/features/direct/curriculumUnit2.json": "db26f5dad3ef205e7bd68c94c7fc3dfa92d73f81529ccd51c293dd5c34f5c850",
+    "src/features/direct/glossary.json": "dbe5ccb293274d7fcbbba3cf16145e408db96799d79c19f927b3f779d5a6d3e9",
+    "src/features/direct/liveabcBasic.json": "e94e01f8394f51aca82894f4f20af4b8b582663438165d86537963c0e22d5b09",
+    "src/features/direct/optionContextRationalesLV4Unit20.json": "51f95520046518ba6a65cb0ae8f43e255c2d293620d8e0ba6731c89d0d11a501",
+    "src/features/direct/optionContextRationalesLV4Unit20Batch2.json": "28f0bbf39147df3e591617c1130a37cada4c6c26f551da92e41ed6b4cd77f997",
+    "src/features/direct/optionContextRationalesLV4Unit20Batch3.json": "3154b275d194ceb993b1d21424edf93011afcf499feea0a3ecc5528c14d444a8",
+    "src/features/direct/practiceTextRevisionsLV4Unit20.json": "978ce6e84ec098a2ccd98c4fa750847a7922a8d79c9ee937f8270a69ed616206",
+    "src/features/direct/practiceVariantsLV4Unit17.json": "3360cc54bec10479da09a0d69a5b6e1285ec3302f62f5360c6a97fabc89b0b4a",
+    "src/features/direct/questions.json": "fbe87ceeb27375bcd4b2291cb0cbc192292995bef36b5977d2a4965f8bda0ce8",
+    "src/features/direct/wordCatalog.json": "eb0eba4ad2ae66769b9f9b8c0b02473da76fae00ea6d287e96d58552a681d268",
+    "src/features/vocabulary/lv1ReviewedImages.json": "c05fd8e028538f870108e2ee11e43e3e076e385ba55337fbbe42a5e06ccd833d"
+  },
+  "derivedBefore": {
+    "public/data/v1/meta.json": "afe176a122eb58b1c27ad98c8ad7afacef76274d52f8aa77f56c00883cbc804b",
+    "public/data/v1/sa-pack.json": "acc533ece7be25ea94d13480cc7599b5f9db3f298ea94f5b0101c55a51188724"
+  }
+}

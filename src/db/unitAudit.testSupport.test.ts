@@ -1,3 +1,4 @@
+import {lv3Unit1BeforeAudit} from '../features/direct/lv3Unit1Audit.testSupport';
 import lv2u50 from '../../docs/unit-audit-20261105/LV2-U50-patches.json';
 import lv2u50Forms from '../../docs/unit-audit-20261105/LV2-U50-verified-forms-patches.json';
 import lv2u50FormSources from '../../docs/unit-audit-20261105/VERIFIED-LV2-U50-VERB-FORMS-SOURCES.json';
@@ -709,7 +710,7 @@ it('keeps manage empty and price old form fingerprints through only exact U29 in
 
 it('reverses only17 exact LV2 U30 sourced form keys and rejects all other row drift',()=>{
  expect(lv2u30FormSources.facts).toHaveLength(17);
- const words:Row[]=JSON.parse(readFileSync('public/data/v1/words.json','utf8'));
+ const words:Row[]=lv3Unit1BeforeAudit('words',JSON.parse(readFileSync('public/data/v1/words.json','utf8')));
  for(const p of lv2u30Forms.patches){
   const row=structuredClone(words.find(w=>w.wordId===p.id)!);
   if(p.id==='W001361'){const later=lv2u32.patches.find(q=>q.dataset==='words'&&q.id===p.id)!;restoreRecordedAuditPatch('words',row,later);}

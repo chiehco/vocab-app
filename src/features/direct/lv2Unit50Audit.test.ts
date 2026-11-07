@@ -1,3 +1,4 @@
+import {lv3Unit1BeforeAudit} from './lv3Unit1Audit.testSupport';
 import {expect,it} from 'vitest';
 import {createHash} from 'node:crypto';
 import {readFileSync} from 'node:fs';
@@ -15,7 +16,7 @@ import research from '../../../docs/unit-audit-20261105/LV2-U50-source-research.
 import imageReview from '../../../docs/unit-audit-20261105/validation/LV2-U50-image-review.json';
 type Row=Record<string,unknown>;
 const hash=(v:unknown)=>createHash('sha256').update(JSON.stringify(v)).digest('hex');
-const data=(n:string)=>JSON.parse(readFileSync('public/data/v1/'+n+'.json','utf8')) as Row[];
+const data=(n:string)=>lv3Unit1BeforeAudit(n,JSON.parse(readFileSync('public/data/v1/'+n+'.json','utf8'))) as Row[];
 it('guards120 exact printed corrections and all160 original items without replacing a historical fixture',()=>{
  expect(current.learningItems).toHaveLength(160);expect(corrections.patches).toHaveLength(120);expect(hash(current)).toBe(corrections.afterHash);expect(hash(lv2Unit50BeforeAudit(current))).toBe(corrections.beforeHash);expect(hash(JSON.parse(readFileSync(corrections.sourcePath,'utf8')))).toBe(corrections.sourceHash);
  for(const p of corrections.patches){const bad=structuredClone(current),row=bad.learningItems.find(i=>i.learningItemId===p.id)! as Row;for(const k of Object.keys(p.after)){const old=row[k];row[k]='unrecorded';expect(()=>lv2Unit50BeforeAudit(bad)).toThrow();row[k]=old;}}
@@ -28,10 +29,10 @@ it('retains11 null identities and raw source boundaries while explaining60 const
  expect(current.learningItems.find(i=>i.learningItemId==='LI-LV2U50-V091')?.targetMeaningZh).toContain('教材印字');expect(current.learningItems.find(i=>i.learningItemId==='LI-LV2U50-V096')?.sensePos).toBe('adj.');expect(current.learningItems.find(i=>i.learningItemId==='LI-LV2U50-G019')?.explanationZh).toContain('burst–burst–burst');
 });
 it('reverses only64 precise formal operations and rejects recorded-field or identity drift',()=>{
- const all=[...main.patches,...notes.patches,...forms.patches];expect(all).toHaveLength(64);const rows=Object.fromEntries(['words','senses','examples','notes'].map(n=>[n,data(n)]));for(const[n,proof]of Object.entries(inverse.datasets)){expect(hash(rows[n])).toBe(proof.afterHash);expect(hash(lv2Unit50BeforeFormalAudit(n,rows[n]))).toBe(proof.beforeHash);}
+ const all=[...main.patches,...notes.patches,...forms.patches];expect(all).toHaveLength(64);const rows=Object.fromEntries(['words','senses','examples','notes'].map(n=>[n,data(n)]));for(const[n,proof]of Object.entries(inverse.datasets)){expect(hash(rows[n])).toBe(proof.afterHash);expect(hash(lv2Unit50BeforeFormalAudit(n,rows[n],'u50_checkpoint'))).toBe(proof.beforeHash);}
  for(const p of all){const row=rows[p.dataset].find(r=>r[p.key]===p.id)!;for(const k of Object.keys(p.after))expect(()=>restoreRecordedAuditPatch(p.dataset,{...row,[k]:'unrecorded'},p)).toThrow();}
- for(const n of Object.keys(rows)){const p=all.find(p=>p.dataset===n)!,row=rows[n].find(r=>r[p.key]===p.id)!;row[p.key]='unrecorded';expect(()=>lv2Unit50BeforeFormalAudit(n,rows[n])).toThrow();}
- const extra=data('words');extra[0].meaningZh='unrecorded';expect(hash(lv2Unit50BeforeFormalAudit('words',extra))).not.toBe(inverse.datasets.words.beforeHash);expect(inverse.headwordIdentityPosAndStatusAll6090Unchanged).toBe(true);expect(inverse.practiceEnglishClozeAnswerAll7871Unchanged).toBe(true);
+ for(const n of Object.keys(rows)){const p=all.find(p=>p.dataset===n)!,row=rows[n].find(r=>r[p.key]===p.id)!;row[p.key]='unrecorded';expect(()=>lv2Unit50BeforeFormalAudit(n,rows[n],'u50_checkpoint')).toThrow();}
+ const extra=data('words');extra[0].meaningZh='unrecorded';expect(hash(lv2Unit50BeforeFormalAudit('words',extra,'u50_checkpoint'))).not.toBe(inverse.datasets.words.beforeHash);expect(inverse.headwordIdentityPosAndStatusAll6090Unchanged).toBe(true);expect(inverse.practiceEnglishClozeAnswerAll7871Unchanged).toBe(true);
 });
 it('limits five lexical verb cloze changes and five practice reviews without changing hints or any sentence',()=>{
  expect(main.patches.filter(p=>p.dataset==='examples'&&'sensePos'in p.after).map(p=>[p.id,p.after.sensePos])).toEqual([['EX5987c528','v.'],['EX364d779e','v.'],['EXbdf1389c','v.'],['EX28ca1d0b','v.'],['EX71283ae0','v.']]);
