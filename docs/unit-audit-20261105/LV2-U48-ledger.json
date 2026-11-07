@@ -1,0 +1,273 @@
+{
+  "unit": "LV2-U48",
+  "state": "text_actual_reopens_saved_local_checks_complete_own_new_head_ci_pending",
+  "baseBeforeCaptureCheckpoint": "9217586a3387586942423275d68231daf812b4c3",
+  "integrationBaseCheckpoint": "9217586a3387586942423275d68231daf812b4c3",
+  "updatedAt": "2026-11-07T03:30:24.843Z",
+  "scope": {
+    "learningItems": 152,
+    "vocabulary": 86,
+    "grammar": 66,
+    "formalOccurrences": 74,
+    "formalWords": 74,
+    "examples": 100,
+    "notes": 82,
+    "unmappedOccurrences": 12,
+    "contentPages": 9,
+    "nextBoundaryTopOnly": 436,
+    "sourceInspectionHalves": 19,
+    "generalImages": 17,
+    "deliveryMode": "text_only",
+    "practiceMode": "read_only"
+  },
+  "corrections": {
+    "mainRows": 43,
+    "forms": 20,
+    "notes": 7,
+    "formalOperations": 70,
+    "formalFields": 100,
+    "uniqueFormalRows": 60,
+    "uniqueFormalFields": 100,
+    "curriculumRows": 112,
+    "curriculumFields": 215,
+    "actualClozePosCorrections": 6,
+    "hintChanges": 0,
+    "practiceChinesePrecisionChanges": 1,
+    "individuallyReviewedAuthoredPractices": 5,
+    "limitedSenseRows": 11,
+    "interpretation": "Supported missing forms, field repairs and source-specific explanations; not70 originally wrong cards."
+  },
+  "boundaries": {
+    "all6090HeadwordIdsPosAndStatusesPreserved": true,
+    "all7871PracticeEnglishClozeAnswersPreserved": true,
+    "exactChineseOnlyIds": [
+      "EX5b300da2"
+    ],
+    "allOtherChinesePreserved": true,
+    "rawSourceHash": "27c3a51be43551a34ba71fb8fbbda101cd309e0b0fd5583ec638d889ad8e099c",
+    "sourceEnglishOrderLabelsQuestionsAndReadOnlyModePreserved": true,
+    "unmappedOfficialIdsRemainNull": 12,
+    "unmappedOriginalTextLexemeRefsPreserved": true,
+    "sourceImagesAndRunningExamplesAdopted": 0,
+    "all17ExistingImageBytesBindingsAndCaptionsPreserved": true,
+    "originalHashFixturesChanged": false,
+    "formsRequireExistingLexicalV": true,
+    "noWholeCardFormsForFormalCourtMinisterBicycleBike": true,
+    "formalAdverbDownstairsUpstairsNotMistakenForV": true,
+    "sawCuttingVerbSeparateFromSee": true,
+    "laySeparateFromLie": true,
+    "official107AccountFullContextAndAnswerReadAuthoredPracticeKeptSeparate": true,
+    "supportedRareSensesRetained": true
+  },
+  "verification": {
+    "reopens": {
+      "state": "actual_app_after_reopens_verified_source_and_image_limits_retained",
+      "sourceItems": 152,
+      "sourceVocabulary": 86,
+      "sourceGrammar": 66,
+      "formalOccurrences": 74,
+      "generalCards": 74,
+      "examples": 100,
+      "nonEmptyHintsVisible": 14,
+      "emptyHintsPreserved": 86,
+      "newForms": 20,
+      "bothFormPanelsChecked": 40,
+      "usagePages": 16,
+      "changedNotesVisible": 7,
+      "sourceImagesAdopted": 0,
+      "generalImagesChecked": 17,
+      "unchangedImageAssets": 17,
+      "confirmedNewImageRepairPending": [],
+      "newImageRepairs": 0,
+      "uiMismatches": 0,
+      "rawPosVisibility": {
+        "sixCorrectedPosSaved": true,
+        "emptyHintTagsMayNotRender": true,
+        "completeSentencesReopened": true,
+        "nativeSavedPosReadbackRequired": true
+      }
+    },
+    "exactInverse": "validation/LV2-U48-exact-inverse.json",
+    "persistence": "validation/LV2-U48-persistence-summary.json",
+    "localChecks": {
+      "unit": "LV2-U48",
+      "state": "local_required_checks_passed_own_new_head_ci_pending",
+      "frontend": {
+        "files": 9,
+        "tests": 217,
+        "passed": true,
+        "originalLocalTimeoutMs": 5000,
+        "maxWorkers": 1,
+        "includes": [
+          "original U48 text",
+          "new U48 audit",
+          "original U47 audit with precise U48-only historical projection",
+          "recovered historical integration",
+          "unitAudit source and inverse guards",
+          "seed",
+          "lv1ReviewedImages",
+          "auditedWordIllustrations",
+          "lv2PraiseImageRepair"
+        ],
+        "expandedFirst": {
+          "passed": 216,
+          "failed": 1,
+          "reason": "New formal negative test repeatedly parsed and cloned whole datasets for every malformed row and exceeded original5000ms at5528ms.",
+          "repair": "Load each dataset once, directly validate every recorded after-field rejection, and validate missing-identity rejection for every dataset. Preserve positive whole-dataset exact inverses and unrecorded-field hashes. No timeout, fixture, product or write-guard change."
+        }
+      },
+      "python": {
+        "tests": 96,
+        "passed": true,
+        "workspaceOnlyTemporaryDirectory": true,
+        "first": {
+          "passed": 95,
+          "failed": 1,
+          "reason": "New count assertion was10 instead of the20 exact source facts. Corrected the count only; all source/write restrictions and data remained unchanged."
+        }
+      },
+      "lint": {
+        "exitCode": 0
+      },
+      "typecheck": {
+        "exitCode": 0
+      },
+      "build": {
+        "exitCode": 0,
+        "largeChunkWarningNonblocking": true
+      },
+      "sourceDraftCheck": {
+        "exitCode": 0
+      },
+      "sourceIntegrationCheck": {
+        "exitCode": 0
+      },
+      "historicalU47HashesUnchanged": true,
+      "originalFixtureHashesReset": false,
+      "timeoutIncreased": false,
+      "logs": [
+        {
+          "file": "LV2-U48-regression-first.txt",
+          "sha256": "3cdcccaadc6721804d52e98d22af243c8f27bd59ca1eb4a38062f679a31ac9e6"
+        },
+        {
+          "file": "LV2-U48-regression-expanded-first.txt",
+          "sha256": "3224f8a616d3a40eb3143e4e1bc8e8945ce8d599a896c33bd8f76b365fbe1d16"
+        },
+        {
+          "file": "LV2-U48-regression-final.txt",
+          "sha256": "04a8a56fa0b25cb72a44849891dc93785b0e245edefe831991c768caa9cc5558"
+        },
+        {
+          "file": "LV2-U48-python-boundaries-first.txt",
+          "sha256": "8879f57f5824de45220284ff144c040e9e942ad01a8cd9e77d23f2b58e115fae"
+        },
+        {
+          "file": "LV2-U48-python-boundaries.txt",
+          "sha256": "5fabb0aafb4b9f7f1f8f3c3398a01b4fe7b00c5403b00fc646623cb38320780e"
+        },
+        {
+          "file": "LV2-U48-lint-final.txt",
+          "sha256": "350c3aa72a4a66c6687eba05fdf8895bbd78c792312c8e233629302da3bbd438"
+        },
+        {
+          "file": "LV2-U48-typecheck-final.txt",
+          "sha256": "0d93be78e4da5c0077681c4d834163661d59ddd24a0477595fb70ec25d5a5ea8"
+        },
+        {
+          "file": "LV2-U48-build-final.txt",
+          "sha256": "1e6657795c2fbf1cf01c20af2e364484b1f82874f3f81aed91719bca2960e8c0"
+        },
+        {
+          "file": "LV2-U48-prepare_recovered_unit_drafts-check.txt",
+          "sha256": "de98448ebf9803278533e50a4959ae987fb489682759393fb4a40f162f8d62d3"
+        },
+        {
+          "file": "LV2-U48-integrate_recovered_units-check.txt",
+          "sha256": "16a949cba64b31891edbac15dab0007dfc5e48721605cd1960b7fa9df69a3c61"
+        }
+      ]
+    },
+    "afterPixels": "validation/LV2-U48-after-pixel-review.json",
+    "limits": "Every152 source item,74 general card and100 complete example reopened and compared. All17 image previews and two native originals, plus representative after/mobile screens actually viewed. Not every after screenshot manually reread. Empty-hint POS may not render as a practice tag; native saved-data readback verifies six corrections."
+  },
+  "retainedPending": [
+    {
+      "word": "snail",
+      "reason": "Spiral cam and sluggish-person senses directly supported. Exact inherited 腦筋遲鈍 and gather-snails English fragment not independently certified by the primary pages read; retain rather than delete."
+    },
+    {
+      "word": "tax/account/liberty",
+      "reason": "Inherited 會費/估價/冒失 precise low-frequency glosses remain without new whole-word certification."
+    },
+    {
+      "word": "billion",
+      "reason": "Numeral/determiner versus noun component tagging follows existing convention; leave current n. and English unchanged."
+    },
+    {
+      "word": "court/bicycle-bike/minister",
+      "reason": "Printed verb senses are real, but current formal headwords are n. only or a double headword. Preserve formal POS and no whole-card forms; printed related meaning remains source-specific."
+    }
+  ],
+  "imageFollowups": {
+    "confirmedNewRepairPending": [],
+    "newAssetGenerationOrBindingChange": false
+  },
+  "priorCheckpointFullCi": {
+    "commit": "9217586a3387586942423275d68231daf812b4c3",
+    "run": 42331044286,
+    "job": 128277383402,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42331044286/job/128277383402",
+    "status": "completed",
+    "conclusion": "success",
+    "checkoutShaReadFromFullLog": true,
+    "testFiles": 240,
+    "tests": 1969,
+    "pythonBatches": [
+      14,
+      7,
+      93,
+      5,
+      10
+    ],
+    "lint": "success",
+    "typecheck": "success",
+    "build": "success",
+    "buildLogCompletedAtUtc": "2026-11-07T03:04:55.9400895Z",
+    "jobCompletedAtUtc": "2026-11-07T03:05:00Z",
+    "source": "Complete exact-head CI checkout, all steps and full test/build log actually read. Not a preceding-head substitute."
+  },
+  "newCheckpointFullCi": {
+    "state": "pending_this_new_commit"
+  },
+  "releaseReconciliation": {
+    "mainCommit": "0f4eb27961571ce393a1f1a2bc63f1d558bef1fb",
+    "mergeBase": "2c2035c07a4e5d1980097dcf4e8ab03f8a5873bb",
+    "formalFieldsCompared": 100,
+    "mainChangesNotAlreadySame": 0,
+    "eitherManifestExecutionOnce": true,
+    "retainMainGuards": [
+      "audit JSON LF rules",
+      "Deploy-default original5s job",
+      "vite single worker",
+      "build-only unpublished LV1-U12 elevator asset exclusion"
+    ],
+    "mainMerged": false,
+    "deployed": false
+  },
+  "next": {
+    "level": "LV2",
+    "unit": 49,
+    "first": "track",
+    "wordId": "W001921",
+    "sourcePage": 436
+  },
+  "publication": {
+    "branch": "content/unit-audit-20261105",
+    "mainMerged": false,
+    "deployed": false,
+    "wholeLevelReleaseSeparate": true,
+    "wholeUnitImageApproval": false,
+    "frozenHistoricalCandidate": "3106a39dea97360a62a2db4d8e98300724d94fdb"
+  }
+}

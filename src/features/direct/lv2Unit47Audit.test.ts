@@ -3,6 +3,7 @@ import {createHash} from 'node:crypto';
 import {readFileSync} from 'node:fs';
 import current from './curriculumLV2Unit47.json';
 import {lv2Unit47BeforeAudit} from './lv2Unit47Audit.testSupport';
+import {lv2Unit48BeforeFormalAudit} from './lv2Unit48Audit.testSupport';
 import corrections from '../../../docs/unit-audit-20261105/LV2-U47-curriculum-patches.json';
 import main from '../../../docs/unit-audit-20261105/LV2-U47-patches.json';
 import notes from '../../../docs/unit-audit-20261105/LV2-U47-notes-patches.json';
@@ -28,7 +29,7 @@ it('retains ten null identities read-only boundaries and exact printed scoped me
 });
 it('reverses only the recorded formal fields and preserves every other row in all four datasets',()=>{
  const ps=[...main.patches,...notes.patches,...forms.patches] as unknown as {dataset:string,key:string,id:string,before:Row,after:Row}[];expect(ps).toHaveLength(58);
- for(const [name,proof]of Object.entries(inverse.datasets)){const data=JSON.parse(readFileSync('public/data/v1/'+name+'.json','utf8')) as Row[];expect(hash(data)).toBe(proof.afterHash);
+ for(const [name,proof]of Object.entries(inverse.datasets)){const data=lv2Unit48BeforeFormalAudit(name,JSON.parse(readFileSync('public/data/v1/'+name+'.json','utf8'))) as Row[];expect(hash(data)).toBe(proof.afterHash);
   for(const p of [...ps].reverse().filter(p=>p.dataset===name)){const r=data.find(r=>r[p.key]===p.id)!;for(const[k,v]of Object.entries(p.after)){expect(r[k]).toEqual(v);if(JSON.stringify(p.before[k])===JSON.stringify({$absent:true}))delete r[k];else r[k]=structuredClone(p.before[k]);}}
   expect(hash(data)).toBe(proof.beforeHash);
  }
@@ -41,7 +42,7 @@ it('keeps four actual-target POS changes separate from defensible pop and little
  for(const p of main.patches.filter(p=>p.dataset==='examples'))expect(Object.keys(p.after).every(k=>['sensePos','meaningHint','status','sentenceZh'].includes(k))).toBe(true);
 });
 it('requires eleven lexical verb forms and preserves the formal non-verb panel boundary',()=>{
- const words=JSON.parse(readFileSync('public/data/v1/words.json','utf8')) as Row[];expect(forms.patches).toHaveLength(11);
+ const words=lv2Unit48BeforeFormalAudit('words',JSON.parse(readFileSync('public/data/v1/words.json','utf8'))) as Row[];expect(forms.patches).toHaveLength(11);
  for(const fact of formSources.facts){const row=words.find(w=>w.wordId===fact.wordId)!;expect(row.verbForms).toEqual(fact.verbForms);expect((row.posAll as string[])).toContain('v.');const copy={...row};delete copy.verbForms;expect(hash(copy)).toBe(fact.nonFormRowSha256);expect(fact.evidence[0].retrieval).toBe('direct_dictionary_word_forms');}
  for(const word of ['pop','soil','till'])expect(words.find(w=>w.word===word)).not.toHaveProperty('verbForms');
 });

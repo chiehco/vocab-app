@@ -1,0 +1,46 @@
+{
+  "state": "explicit_normal_update_and_same_profile_neutral_page_persistence_verified",
+  "explicitNormalInstallerTransitions": 1,
+  "explicitNormalInstallerAll14TablesExact": true,
+  "initialFullSnapshotEqualsInstallerBefore": true,
+  "initialInstallerBeforeHash": "4482299b9cb89aca7dd0cee5300f44b7ff7dfc35f04a6477dae5983c7966cd9d",
+  "initialInstallerAfterHash": "4482299b9cb89aca7dd0cee5300f44b7ff7dfc35f04a6477dae5983c7966cd9d",
+  "previousCheckpointContentHash": "787e57c664b661c63c57bb0937248a358c05be9a8f03c546948f1c00a560b45a",
+  "explicitInstallerContentHashBefore": "787e57c664b661c63c57bb0937248a358c05be9a8f03c546948f1c00a560b45a",
+  "newContentHash": "18f9c46d8fd69dee13e3decfbcef7d254a663c81d6dcd6a01596ad278ebc84bf",
+  "implicitHmrTransitionClaimed": false,
+  "all14TablesExactBeforeAndAfterBrowserClose": true,
+  "beforeCloseHash": "877d182d84f4da9c37e7d1cbca67a4838c735bedc7ff9b58829a9f99f9874a48",
+  "afterCloseHash": "877d182d84f4da9c37e7d1cbca67a4838c735bedc7ff9b58829a9f99f9874a48",
+  "allFieldsIncludingResumeTimestamp": true,
+  "ordinaryNavigationDifference": {
+    "onlyRow": "settings/learning:last-location",
+    "all13OtherTablesAndAllOtherSettingsRowsExact": true,
+    "before": {
+      "href": "/word/W005203",
+      "title": "corpse",
+      "position": 1,
+      "total": 1,
+      "updatedAt": 1794019889619
+    },
+    "after": {
+      "href": "/word/W004525",
+      "title": "maintenance",
+      "position": 1,
+      "total": 1,
+      "updatedAt": 1794022061196
+    },
+    "reason": "Actual U48 textbook navigation legitimately updated the resume destination/position/time; no data was written back to force equality."
+  },
+  "savedRows": 3694,
+  "savedRowsAfterClose": 3694,
+  "savedFailures": 0,
+  "readbackEqualBeforeAndAfterClose": true,
+  "normalProfileReused": true,
+  "oneCloseAndOneOpenAttempt": true,
+  "reopenExit": 1,
+  "reopenReadOnlyProbeComplete": true,
+  "noProfileDeletionOrTimeoutIncrease": true,
+  "initialSnapshotTimeoutOnOpen": true,
+  "scope": "This verifies the existing audit browser profile. Exact14-table comparisons cover the observed normal installer transition and neutral-page close/reopen; ordinary source-page resume navigation is reported separately. No production-site or unrelated browser profile data is claimed."
+}
