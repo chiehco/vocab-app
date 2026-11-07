@@ -1,6 +1,6 @@
 {
   "scope": "Exact current repository curriculum catalogue, not a publisher edition table of contents or an inferred numeric range.",
-  "checkedAtUtc": "2026-11-07T02:08:47.211Z",
+  "checkedAtUtc": "2026-11-07T02:46:52.873Z",
   "basis": {
     "model": "src/features/direct/model.ts",
     "catalog": "src/features/vocabulary/textbookCatalog.ts",
@@ -899,7 +899,7 @@
       "curriculumPath": "src/features/direct/curriculumLV2Unit46.json",
       "registeredInModel": true,
       "deliveryMode": "text_only",
-      "auditStatus": "text_own_ci_success_praise_app_saved_local_checks_passed_image_ci_pending",
+      "auditStatus": "text_and_praise_after_saved_exact_own_ci_success",
       "ledger": "docs/unit-audit-20261105/LV2-U46-ledger.json",
       "ownCi": {
         "commit": "952ffe7df0a2ede8e84933690785ed455a7cdab6",
@@ -925,7 +925,31 @@
         "jobCompletedAtUtc": "2026-11-07T01:43:56Z",
         "source": "Complete exact-head CI checkout, all steps and full test/build log actually read. Not a preceding-head substitute."
       },
-      "imageFollowup": "validation/LV2-U46-praise-image-integration.json"
+      "imageFollowup": "validation/LV2-U46-praise-image-integration.json",
+      "ownImageCi": {
+        "commit": "d73d26d76e6337ff6dc7e539ded3157ae5f8a347",
+        "run": 42327840585,
+        "job": 128267185911,
+        "url": "https://github.com/chiehco/vocab-app/actions/runs/42327840585/job/128267185911",
+        "status": "completed",
+        "conclusion": "success",
+        "checkoutShaReadFromFullLog": true,
+        "testFiles": 239,
+        "tests": 1960,
+        "pythonBatches": [
+          14,
+          7,
+          90,
+          5,
+          10
+        ],
+        "lint": "success",
+        "typecheck": "success",
+        "build": "success",
+        "buildLogCompletedAtUtc": "2026-11-07T02:20:41.0791166Z",
+        "jobCompletedAtUtc": "2026-11-07T02:20:45Z",
+        "source": "Complete exact-head CI checkout, all steps and full test/build log actually read. Not a preceding-head substitute."
+      }
     },
     {
       "unit": 47,
@@ -950,8 +974,8 @@
       "curriculumPath": "src/features/direct/curriculumLV2Unit47.json",
       "registeredInModel": true,
       "deliveryMode": "text_only",
-      "auditStatus": "before_app_and_text_source_review_complete_images_and_primary_checks_in_progress_no_product_patch",
-      "ledger": null,
+      "auditStatus": "after_saved_local_checks_complete_own_ci_pending",
+      "ledger": "docs/unit-audit-20261105/LV2-U47-ledger.json",
       "ownCi": null,
       "beforeScope": {
         "learningItems": 139,
@@ -1067,13 +1091,13 @@
   },
   "releaseGate": {
     "wholeRegisteredLvReady": false,
-    "reason": "U46 text own CI succeeded; praise image repair is accepted in App with exact historical guards and local checks, and requires its new integration head CI. U47 has complete before/text/source reading but remains in audit; U48–U50 not audited. Retain U42, U26 and edition-boundary limitations.",
+    "reason": "U46 text and praise own CI succeeded. U47 complete App/persistence and local checks accepted, exact new head CI pending. U48–U50 remain unaudited. Retain U42, U26 and edition-boundary limitations.",
     "mainMerged": false,
     "deployed": false
   },
   "currentImageFollowup": {
     "unit": 46,
-    "state": "app_saved_local_checks_passed_own_image_head_ci_pending",
+    "state": "app_saved_and_exact_own_image_head_ci_success",
     "evidence": "LV2-U46-praise-image-repair.json",
     "priorCompletedFollowup": {
       "units": [
@@ -1083,6 +1107,31 @@
       "state": "app_saved_and_exact_head_ci_success",
       "commit": "7ff55408250827184e243d2a83f31ca77088c3ee",
       "evidence": "LV2-U38-U41-image-repairs.json"
+    },
+    "commit": "d73d26d76e6337ff6dc7e539ded3157ae5f8a347",
+    "ownCi": {
+      "commit": "d73d26d76e6337ff6dc7e539ded3157ae5f8a347",
+      "run": 42327840585,
+      "job": 128267185911,
+      "url": "https://github.com/chiehco/vocab-app/actions/runs/42327840585/job/128267185911",
+      "status": "completed",
+      "conclusion": "success",
+      "checkoutShaReadFromFullLog": true,
+      "testFiles": 239,
+      "tests": 1960,
+      "pythonBatches": [
+        14,
+        7,
+        90,
+        5,
+        10
+      ],
+      "lint": "success",
+      "typecheck": "success",
+      "build": "success",
+      "buildLogCompletedAtUtc": "2026-11-07T02:20:41.0791166Z",
+      "jobCompletedAtUtc": "2026-11-07T02:20:45Z",
+      "source": "Complete exact-head CI checkout, all steps and full test/build log actually read. Not a preceding-head substitute."
     }
   }
 }

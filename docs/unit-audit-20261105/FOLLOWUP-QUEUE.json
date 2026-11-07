@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T02:08:47.211Z",
+  "updatedAt": "2026-11-07T02:46:52.873Z",
   "items": [
     {
       "id": "LV1-U01-30",
@@ -958,7 +958,7 @@
       "word": "praise",
       "wordId": "W001659",
       "learningItemId": "LI-LV2U46-V008",
-      "state": "new_asset_integrated_actual_app_reopened_saved_local_checks_passed_own_ci_pending",
+      "state": "app_saved_and_exact_own_image_head_ci_success",
       "repoPath": "public/wordbeast/a/W001659.webp",
       "oldSha256": "1292ab2ed0e282791f766f4ff13bb36a8200598bf93596b74658a732389238d1",
       "dimensions": [
@@ -977,7 +977,7 @@
       "sameFailedParametersNotRetried": true,
       "duplicateGenerationNotStarted": true,
       "evidence": "validation/LV2-U46-praise-image-integration.json",
-      "next": "Track this new integration commit own full CI. Whole LV2 publication remains separate; continue U47 through U50.",
+      "next": "Image repair accepted with exact own CI. Whole LV2 release remains separate; preserve original snapshots and source-only boundaries.",
       "originalStateAtTextCheckpoint": {
         "state": "confirmed_literal_quantity_gap_original_retained_candidate_awaited",
         "generationStarted": false,
@@ -988,7 +988,31 @@
       "publicationReady": false,
       "newRepoPath": "public/wordbeast/lv2-reviewed/LV2-U46-praise-3627b1c737c1.webp",
       "newSha256": "3627b1c737c1faa273653217b6636643d2af5b1f6ba6ebaed93f51e653d1d78f",
-      "assetCommit": "7d65154fc716ce4900bdce4d7756e76563e8cb8a"
+      "assetCommit": "7d65154fc716ce4900bdce4d7756e76563e8cb8a",
+      "ownCi": {
+        "commit": "d73d26d76e6337ff6dc7e539ded3157ae5f8a347",
+        "run": 42327840585,
+        "job": 128267185911,
+        "url": "https://github.com/chiehco/vocab-app/actions/runs/42327840585/job/128267185911",
+        "status": "completed",
+        "conclusion": "success",
+        "checkoutShaReadFromFullLog": true,
+        "testFiles": 239,
+        "tests": 1960,
+        "pythonBatches": [
+          14,
+          7,
+          90,
+          5,
+          10
+        ],
+        "lint": "success",
+        "typecheck": "success",
+        "build": "success",
+        "buildLogCompletedAtUtc": "2026-11-07T02:20:41.0791166Z",
+        "jobCompletedAtUtc": "2026-11-07T02:20:45Z",
+        "source": "Complete exact-head CI checkout, all steps and full test/build log actually read. Not a preceding-head substitute."
+      }
     }
   ],
   "sourceFormResearchCoverage": {

@@ -29,13 +29,13 @@
   "appRepairAccepted": true,
   "publicationReady": false,
   "candidateCoordination": {
-    "state": "candidate_integrated_app_reopened_own_ci_pending",
+    "state": "candidate_integrated_app_reopened_exact_own_ci_success",
     "duplicateLocalGenerationStarted": false
   },
   "productPairChanged": true,
   "originalAssetUnmodified": true,
   "currentResolution": {
-    "state": "actual_local_pair_reopened_saved_own_new_image_head_ci_pending",
+    "state": "actual_pair_reopened_saved_exact_own_image_head_ci_success",
     "assetCommit": "7d65154fc716ce4900bdce4d7756e76563e8cb8a",
     "path": "wordbeast/lv2-reviewed/LV2-U46-praise-3627b1c737c1.webp",
     "sha256": "3627b1c737c1faa273653217b6636643d2af5b1f6ba6ebaed93f51e653d1d78f",
@@ -43,6 +43,29 @@
     "captionsUnchanged": true,
     "formalDataUnchanged": true,
     "evidence": "validation/LV2-U46-praise-image-integration.json",
-    "newHeadCi": "pending_this_new_commit"
+    "newHeadCi": {
+      "commit": "d73d26d76e6337ff6dc7e539ded3157ae5f8a347",
+      "run": 42327840585,
+      "job": 128267185911,
+      "url": "https://github.com/chiehco/vocab-app/actions/runs/42327840585/job/128267185911",
+      "status": "completed",
+      "conclusion": "success",
+      "checkoutShaReadFromFullLog": true,
+      "testFiles": 239,
+      "tests": 1960,
+      "pythonBatches": [
+        14,
+        7,
+        90,
+        5,
+        10
+      ],
+      "lint": "success",
+      "typecheck": "success",
+      "build": "success",
+      "buildLogCompletedAtUtc": "2026-11-07T02:20:41.0791166Z",
+      "jobCompletedAtUtc": "2026-11-07T02:20:45Z",
+      "source": "Complete exact-head CI checkout, all steps and full test/build log actually read. Not a preceding-head substitute."
+    }
   }
 }

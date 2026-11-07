@@ -138,11 +138,35 @@
   "formalFilesAndCurriculumAllRecordedByteHashesUnchanged": true,
   "appRepairAccepted": true,
   "publicationReady": false,
-  "publicationReason": "Whole LV2 release remains separate and U47–U50 audit plus release gates are incomplete. This new image integration head also needs its own full CI.",
-  "newHeadOwnCi": "pending_this_new_commit",
+  "publicationReason": "Exact own image integration CI succeeded. Whole LV2 release remains separate; U47 new head CI and U48–U50 audit plus release gates remain incomplete.",
+  "newHeadOwnCi": {
+    "commit": "d73d26d76e6337ff6dc7e539ded3157ae5f8a347",
+    "run": 42327840585,
+    "job": 128267185911,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42327840585/job/128267185911",
+    "status": "completed",
+    "conclusion": "success",
+    "checkoutShaReadFromFullLog": true,
+    "testFiles": 239,
+    "tests": 1960,
+    "pythonBatches": [
+      14,
+      7,
+      90,
+      5,
+      10
+    ],
+    "lint": "success",
+    "typecheck": "success",
+    "build": "success",
+    "buildLogCompletedAtUtc": "2026-11-07T02:20:41.0791166Z",
+    "jobCompletedAtUtc": "2026-11-07T02:20:45Z",
+    "source": "Complete exact-head CI checkout, all steps and full test/build log actually read. Not a preceding-head substitute."
+  },
   "finalPostcloseNavigationRetainsAll13OtherTablesAndOtherSettingsRows": true,
   "presentationLimits": [
     "The existing fixed bottom navigation covers a strip of some full-page screenshots. A separate normally scrolled1000×1100 viewport screenshot clearly shows the whole general illustration and captions after close/reopen. No UI was hidden or restyled.",
     "The existing atlas thumbnail crops much of this small lower-centered composition. Its exact new URL, successful1024px load and unchanged crop behavior are verified; a two-flower count is not claimed from the tiny cropped thumbnail. The native candidate, general viewport and ordinary-unit scene clearly show both flowers."
-  ]
+  ],
+  "historicalFileHashesScope": "Unchanged formal-file hashes are the point-in-time d73d26d image checkpoint, not a restriction against later explicitly guarded U47 corrections."
 }

@@ -2,7 +2,7 @@
   "unit": "LV2-U46",
   "word": "praise",
   "wordId": "W001659",
-  "state": "actual_local_pair_reopened_saved_own_new_image_head_ci_pending",
+  "state": "actual_pair_reopened_saved_exact_own_image_head_ci_success",
   "baseCommit": "952ffe7df0a2ede8e84933690785ed455a7cdab6",
   "assetCommit": "7d65154fc716ce4900bdce4d7756e76563e8cb8a",
   "row": {
@@ -204,5 +204,28 @@
   "progressAndSavedAcceptance": "validation/LV2-U46-praise-image-integration.json",
   "appRepairAccepted": true,
   "publicationReady": false,
-  "newHeadCi": "pending_this_new_commit"
+  "newHeadCi": {
+    "commit": "d73d26d76e6337ff6dc7e539ded3157ae5f8a347",
+    "run": 42327840585,
+    "job": 128267185911,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42327840585/job/128267185911",
+    "status": "completed",
+    "conclusion": "success",
+    "checkoutShaReadFromFullLog": true,
+    "testFiles": 239,
+    "tests": 1960,
+    "pythonBatches": [
+      14,
+      7,
+      90,
+      5,
+      10
+    ],
+    "lint": "success",
+    "typecheck": "success",
+    "build": "success",
+    "buildLogCompletedAtUtc": "2026-11-07T02:20:41.0791166Z",
+    "jobCompletedAtUtc": "2026-11-07T02:20:45Z",
+    "source": "Complete exact-head CI checkout, all steps and full test/build log actually read. Not a preceding-head substitute."
+  }
 }

@@ -1,0 +1,361 @@
+{
+  "unit": "LV2-U47",
+  "state": "text_actual_reopens_saved_local_checks_complete_own_new_head_ci_pending",
+  "baseBeforeCaptureCheckpoint": "952ffe7df0a2ede8e84933690785ed455a7cdab6",
+  "integrationBaseCheckpoint": "d73d26d76e6337ff6dc7e539ded3157ae5f8a347",
+  "updatedAt": "2026-11-07T02:46:52.873Z",
+  "scope": {
+    "learningItems": 139,
+    "vocabulary": 98,
+    "grammar": 41,
+    "formalOccurrences": 88,
+    "formalWords": 86,
+    "examples": 143,
+    "notes": 72,
+    "unmappedOccurrences": 10,
+    "contentPages": 9,
+    "nextBoundaryTopOnly": 427,
+    "sourceInspectionHalves": 19,
+    "generalImages": 37,
+    "deliveryMode": "text_only",
+    "practiceMode": "read_only"
+  },
+  "corrections": {
+    "mainRows": 43,
+    "forms": 11,
+    "notes": 4,
+    "formalOperations": 58,
+    "formalFields": 84,
+    "uniqueFormalRows": 52,
+    "uniqueFormalFields": 84,
+    "curriculumRows": 98,
+    "curriculumFields": 222,
+    "actualClozePosCorrections": 4,
+    "nonEmptyHintRefinements": 6,
+    "practiceChinesePrecisionChanges": 2,
+    "individuallyReviewedAuthoredPractices": 4,
+    "limitedSenseRows": 7,
+    "interpretation": "Context-specific corrections, supported meanings, visible related-word scope, Chinese precision, individually checked statuses and printed display explanations; not58 originally wrong cards."
+  },
+  "boundaries": {
+    "all6090HeadwordIdsPosAndStatusesPreserved": true,
+    "all7871PracticeEnglishClozeAnswersPreserved": true,
+    "exactChineseOnlyIds": [
+      "EX216e683f",
+      "EXd7d7f502"
+    ],
+    "allOtherChinesePreserved": true,
+    "rawSourceHash": "d144b031f3f241b051574e1064bebe5a415be6841932745202bbe8f005d295d8",
+    "sourceEnglishOrderLabelsQuestionsAndReadOnlyModePreserved": true,
+    "unmappedOfficialIdsRemainNull": 10,
+    "unmappedOriginalTextLexemeRefsPreserved": true,
+    "sourceImagesAndRunningExamplesAdopted": 0,
+    "all37ExistingImageBytesBindingsAndCaptionsPreserved": true,
+    "originalHashFixturesChanged": false,
+    "formsRequireExistingLexicalV": true,
+    "noWholeCardFormsForFormalPopSoilTill": true,
+    "properDerivedAdverbVisible": true,
+    "employmentNounAndRelatedEmployVerbSeparated": true,
+    "threeOfficialExamContextsAndAnswersReadAuthoredPracticeKeptSeparate": true,
+    "supportedRareSensesRetained": true
+  },
+  "verification": {
+    "reopens": {
+      "state": "actual_app_after_reopens_verified_source_and_image_limits_retained",
+      "sourceItems": 139,
+      "sourceVocabulary": 98,
+      "sourceGrammar": 41,
+      "formalOccurrences": 88,
+      "generalCards": 86,
+      "examples": 143,
+      "nonEmptyHintsVisible": 21,
+      "emptyHintsPreserved": 122,
+      "newForms": 11,
+      "bothFormPanelsChecked": 22,
+      "usagePages": 16,
+      "automatedUsageResults": 16,
+      "changedNotesVisible": 4,
+      "sourceImagesAdopted": 0,
+      "generalImagesChecked": 37,
+      "unchangedImageAssets": 37,
+      "unchangedImageBindings": 37,
+      "confirmedNewImageRepairPending": [],
+      "newImageRepairs": 0,
+      "uiMismatches": 0,
+      "usageTabRetryCountFromAutomatedResults": 0,
+      "rawPosVisibility": {
+        "fourCorrectedPosSaved": true,
+        "emptyHintTagsMayNotRender": true,
+        "completeSentencesReopened": true,
+        "nativeSavedPosReadbackRequired": true
+      },
+      "priorPraiseRepair": "Separate d73d26d own full CI succeeded; no U47 asset/binding change."
+    },
+    "exactInverse": "validation/LV2-U47-exact-inverse.json",
+    "persistence": "validation/LV2-U47-persistence-summary.json",
+    "localChecks": {
+      "unit": "LV2-U47",
+      "state": "local_required_checks_passed_own_new_head_ci_pending",
+      "frontend": {
+        "files": 8,
+        "tests": 208,
+        "passed": true,
+        "originalLocalTimeoutMs": 5000,
+        "maxWorkers": 1,
+        "includes": [
+          "original U47 text",
+          "new U47 audit",
+          "recovered historical integration",
+          "unitAudit source and inverse guards",
+          "seed",
+          "reviewed images",
+          "auditedWordIllustrations",
+          "lv2PraiseImageRepair"
+        ],
+        "first": {
+          "passed": 207,
+          "failed": 1,
+          "reason": "The new negative boundary assertion incorrectly required the textual lexemeRef of an unmapped supplement to be null. Official IDs were already null; original lexemeRef malaria was correct."
+        },
+        "repair": "Compare exact historical textual lexemeRef while retaining null official IDs, unmapped meaningSource and original raw source. No product change or relaxed official-identity boundary.",
+        "additionalRetest": {
+          "files": 1,
+          "tests": 6,
+          "overlaps208": true,
+          "passed": true,
+          "reason": "After the final typecheck-only fix, verify Object.hasOwn absence assertions for illustration/originalExample."
+        },
+        "praiseStatusRetest": {
+          "files": 1,
+          "tests": 5,
+          "overlaps208": true,
+          "passed": true,
+          "reason": "After recording exact d73d26d own CI success, recheck retained immutable pending snapshots and current praise accepted/publication-false status.",
+          "log": {
+            "file": "LV2-U47-praise-ci-status-regression.txt",
+            "sha256": "e21fd8b0d1209bd114890d578ede7d172faec29f5bb99a45f931a7a5bb5c9d20"
+          }
+        }
+      },
+      "python": {
+        "tests": 93,
+        "passed": true,
+        "workspaceOnlyTemporaryDirectory": true,
+        "scope": "Existing90 and three new U47 exact source/form/note/translation boundary tests; full null/custom/wrong-identity/value/source/status and outside-scope negatives retained."
+      },
+      "typecheckHistory": {
+        "firstExit": 2,
+        "reason": "New audit test directly accessed illustration/originalExample properties absent from inferred JSON types.",
+        "repair": "Use Object.hasOwn absence assertions; no product fields, original assertions, source meanings or fixtures changed."
+      },
+      "lint": {
+        "exitCode": 0
+      },
+      "typecheck": {
+        "exitCode": 0
+      },
+      "build": {
+        "exitCode": 0,
+        "largeChunkWarningNonblocking": true
+      },
+      "sourceDraftCheck": {
+        "exitCode": 0
+      },
+      "sourceIntegrationCheck": {
+        "exitCode": 0
+      },
+      "originalFixtureHashesReset": false,
+      "timeoutIncreased": false,
+      "logs": [
+        {
+          "file": "LV2-U47-regression-first.txt",
+          "sha256": "de88ef2ba4ff6a6c0490cb7e0c8f6cef7a1bf742b76db70938d96579b25ab896"
+        },
+        {
+          "file": "LV2-U47-regression-final.txt",
+          "sha256": "e4272503715bc787a1f641581aad7a7437d99e6283e7ec959abc2a7a1f8ac823"
+        },
+        {
+          "file": "LV2-U47-python-boundaries.txt",
+          "sha256": "625a48d1d1d0537e85654d31e65f578318c123bebec60fb5cc0a39220540763c"
+        },
+        {
+          "file": "LV2-U47-typecheck-first.txt",
+          "sha256": "45ec28d4f2df85a2c468e483658d565888f5ae2d232165dedebad5a316dc8a17"
+        },
+        {
+          "file": "LV2-U47-audit-absence-check.txt",
+          "sha256": "83b0496190bb9fff9f5a6c69be5e00adf945ae254bf024bbab47ff06b38fb033"
+        },
+        {
+          "file": "LV2-U47-lint-final.txt",
+          "sha256": "b7a3d5fe3513c864a9e0e33967e86757d39a2f8c0c34eea86a0e602d00eda3c8"
+        },
+        {
+          "file": "LV2-U47-typecheck-final.txt",
+          "sha256": "da91f4c430838409de74534c4d8bed41445d7c7283163b2a63c446dde034587b"
+        },
+        {
+          "file": "LV2-U47-build-final.txt",
+          "sha256": "e523652822b3e2178abe3b684d115236202007c0cafeb1b85e72e452b53584a7"
+        },
+        {
+          "file": "LV2-U47-prepare_recovered_unit_drafts-check.txt",
+          "sha256": "d6d7741173c224aa9e21319463e29d093f7a6b5b2c917285fcce897774633706"
+        },
+        {
+          "file": "LV2-U47-integrate_recovered_units-check.txt",
+          "sha256": "fb56fc69296e4f184379c178cb0a1f55305038cc7aef18bdc9c8cc905fbfc142"
+        }
+      ]
+    },
+    "afterPixels": "validation/LV2-U47-after-pixel-review.json",
+    "postClose": "validation/LV2-U47-post-close-reopen.json",
+    "limits": "Every139 source item,86 general card and143 complete example was reopened and field-compared. All37 image previews and two native originals, plus representative after/mobile screens, were actually viewed. Not every after screenshot was manually reread. Empty-hint POS may not render as a practice tag; native saved-data readback verifies the four corrections."
+  },
+  "retainedPending": [
+    {
+      "ids": [
+        "EXca52587a"
+      ],
+      "field": "sensePos",
+      "reason": "a little more time component classification depends on project quantifier/degree convention; preserve current adj. and original sentence."
+    },
+    {
+      "ids": [
+        "W001439"
+      ],
+      "field": "exact inherited gloss",
+      "reason": "Exact 無限的 not established by this round primary evidence; retain without certifying."
+    },
+    {
+      "ids": [
+        "W001938"
+      ],
+      "field": "exact inherited gloss",
+      "reason": "Exact 象徵性的 historical scope still needs precise evidence; retain."
+    },
+    {
+      "ids": [
+        "W001654"
+      ],
+      "field": "exact inherited gloss",
+      "reason": "Exact legal 不確定權 not located in read source; find law no match does not prove nonexistent. Retain."
+    },
+    {
+      "ids": [
+        "W001876"
+      ],
+      "field": "exact inherited gloss",
+      "reason": "Standalone survival natural-selection/evolution gloss remains inherited; primary reading establishes living/enduring and count/modifier senses, not that exact biological equivalence."
+    },
+    {
+      "ids": [
+        "thus"
+      ],
+      "field": "legacy approved exam provenance",
+      "reason": "Existing approved flag points to a library practice rather than an identified official item; retain existing status, no new official-source certification."
+    },
+    {
+      "ids": [
+        "pop",
+        "soil",
+        "till"
+      ],
+      "field": "formal POS and whole-card verb panel",
+      "reason": "Keep existing formal non-verb scope and absent forms, despite textbook lexical verb uses. Printed pop forms are explained independently."
+    },
+    {
+      "ids": [
+        "EX3f500b2b"
+      ],
+      "field": "cousin kinship specificity",
+      "reason": "Inherited 表哥 and local MRT setting remain author choices; no blind kinship enumeration or English rewrite."
+    }
+  ],
+  "imageFollowups": {
+    "confirmedNewRepairPending": [],
+    "newAssetGenerationOrBindingChange": false,
+    "priorPraiseSeparateCi": {
+      "commit": "d73d26d76e6337ff6dc7e539ded3157ae5f8a347",
+      "run": 42327840585,
+      "job": 128267185911,
+      "url": "https://github.com/chiehco/vocab-app/actions/runs/42327840585/job/128267185911",
+      "status": "completed",
+      "conclusion": "success",
+      "checkoutShaReadFromFullLog": true,
+      "testFiles": 239,
+      "tests": 1960,
+      "pythonBatches": [
+        14,
+        7,
+        90,
+        5,
+        10
+      ],
+      "lint": "success",
+      "typecheck": "success",
+      "build": "success",
+      "buildLogCompletedAtUtc": "2026-11-07T02:20:41.0791166Z",
+      "jobCompletedAtUtc": "2026-11-07T02:20:45Z",
+      "source": "Complete exact-head CI checkout, all steps and full test/build log actually read. Not a preceding-head substitute."
+    }
+  },
+  "priorCheckpointFullCi": {
+    "commit": "d73d26d76e6337ff6dc7e539ded3157ae5f8a347",
+    "run": 42327840585,
+    "job": 128267185911,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42327840585/job/128267185911",
+    "status": "completed",
+    "conclusion": "success",
+    "checkoutShaReadFromFullLog": true,
+    "testFiles": 239,
+    "tests": 1960,
+    "pythonBatches": [
+      14,
+      7,
+      90,
+      5,
+      10
+    ],
+    "lint": "success",
+    "typecheck": "success",
+    "build": "success",
+    "buildLogCompletedAtUtc": "2026-11-07T02:20:41.0791166Z",
+    "jobCompletedAtUtc": "2026-11-07T02:20:45Z",
+    "source": "Complete exact-head CI checkout, all steps and full test/build log actually read. Not a preceding-head substitute."
+  },
+  "newCheckpointFullCi": {
+    "state": "pending_this_new_commit"
+  },
+  "releaseReconciliation": {
+    "mainCommit": "0f4eb27961571ce393a1f1a2bc63f1d558bef1fb",
+    "mergeBase": "2c2035c07a4e5d1980097dcf4e8ab03f8a5873bb",
+    "formalFieldsCompared": 84,
+    "mainChangesNotAlreadySame": 0,
+    "eitherManifestExecutionOnce": true,
+    "retainMainGuards": [
+      "audit JSON LF rules",
+      "Deploy-default original5s job",
+      "vite single worker",
+      "build-only unpublished LV1-U12 elevator asset exclusion"
+    ],
+    "mainMerged": false,
+    "deployed": false
+  },
+  "next": {
+    "level": "LV2",
+    "unit": 48,
+    "first": "state",
+    "wordId": "W001844",
+    "sourcePage": 427
+  },
+  "publication": {
+    "branch": "content/unit-audit-20261105",
+    "mainMerged": false,
+    "deployed": false,
+    "wholeLevelReleaseSeparate": true,
+    "wholeUnitImageApproval": false,
+    "frozenHistoricalCandidate": "3106a39dea97360a62a2db4d8e98300724d94fdb"
+  }
+}
