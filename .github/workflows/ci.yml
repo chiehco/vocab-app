@@ -24,6 +24,10 @@ jobs:
           python-version: '3.11'
       - run: python -m pip install openpyxl==3.1.5 Pillow==12.0.0
       - run: python -m unittest discover -s scripts -p 'test_apply_lv3_*.py'
+      - name: LV3 pipeline small guards (no private capture)
+        run: |
+          python -m unittest discover -s scripts -p 'test_lv3_audit_pipeline.py'
+          python -m unittest discover -s scripts -p 'test_prepare_lv3_audit_manifest.py'
       - run: python -m unittest discover -s scripts -p 'test_apply_lv4_*.py'
       - run: python -m unittest discover -s scripts -p 'test_apply_unit_audit.py'
       - run: python -m unittest discover -s scripts -p 'test_lv2_image_repair_guards.py'
