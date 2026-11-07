@@ -1,10 +1,12 @@
+import {beforeLV3ConfirmText} from '../../../scripts/lv3_confirm_image_guard.mjs';
+import confirmProof from '../../../docs/unit-audit-20261105/LV3-confirm-image-repair.json';
 import {expect,it} from 'vitest';
 import {readFileSync} from 'node:fs';
 import {beforeLV3ReplaceText,validateLV3ReplaceProof,validateLV3ReplaceAsset,replaceBytesHash} from '../../../scripts/lv3_replace_image_guard.mjs';
 import {beforeLV3GeneralImages,lv3ImageHash} from '../../../scripts/lv3_image_repair_guard.mjs';
 import proof from '../../../docs/unit-audit-20261105/LV3-replace-image-repair.json';
 import previousProof from '../../../docs/unit-audit-20261105/LV3-bank-permissible-image-repairs.json';
-import current from './auditedWordIllustrations.json';
+import currentWithConfirm from './auditedWordIllustrations.json';
 import captions from '../wordbeast/illustrationCaptions.json';
 import examples from '../../../public/data/v1/examples.json';
 import media from '../../../public/data/v1/media.json';
@@ -12,7 +14,8 @@ import unit from '../direct/curriculumLV3Unit4.json';
 import {approvedWordIllustration,approvedCurriculumIllustration,approvedCurriculumCard} from './approvedCurriculum';
 import {getWordBeastAsset} from '../wordbeast/wordBeastAssets';
 import {resolveWordImageClue} from '../../quiz/imageClue';
-const raw=()=>readFileSync(proof.registryPath,'utf8').replace(/\r\n/g,'\n');
+const raw=()=>beforeLV3ConfirmText(readFileSync(proof.registryPath,'utf8'),confirmProof);
+const current=JSON.parse(raw()) as typeof currentWithConfirm;
 it('strictly validates complete current raw bytes before reversing only the appended replace mapping',()=>{
  const text=raw(),beforeText=beforeLV3ReplaceText(text,proof),before=JSON.parse(beforeText);
  expect(before).toEqual(proof.before);expect(current).toEqual(proof.after);expect(current.slice(0,-1)).toEqual(before);
