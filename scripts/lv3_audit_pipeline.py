@@ -82,7 +82,11 @@ def validate_curriculum_identity(unit, path, document):
 
 
 def verified_wage_forms(p, f):
-    """Bounded U05-VOC-288 evidence, never general wordVariants lemmatization."""
+    """Match the reviewed U05-VOC-288 record, not live website contents.
+
+    The sealed manifest binds these evidence bytes; URL/metadata alone cannot
+    establish that a dictionary was read. Never generalize wordVariants.
+    """
     return (p['dataset'] == 'words' and p['id'] == 'W002976'
             and p['before'].get('wordId') == 'W002976'
             and p['before'].get('word') == 'wage(s)'
@@ -95,6 +99,7 @@ def verified_wage_forms(p, f):
                     and source.get('type') == 'independent_dictionary_verification'
                     and source.get('verification') == 'direct_dictionary_entry_read'
                     and source.get('findingId') == 'U05-VOC-288'
+                    and source.get('quote') == 'past tense, past participle waged; recompense, return, or yield; to wage war against a nation'
                     for record in p['fieldEvidence'].get('verbForms', [])
                     for source in record['sources']))
 
@@ -207,7 +212,9 @@ def validate_manifest(manifest, scope=None):
         if 'verbForms' in p['after']:
             f = p['after']['verbForms']
             require(set(f) == {'base', 'past', 'pastParticiple', 'sourceRef', 'status'}
-                    and (f['base'] == p['before']['word'] or verified_wage_forms(p, f))
+                    and (verified_wage_forms(p, f)
+                         if p['id'] == 'W002976' or p['before'].get('word') == 'wage(s)'
+                         else f['base'] == p['before']['word'])
                     and f['status'] == 'approved'
                     and f['sourceRef'] in {'https://www.collinsdictionary.com/dictionary/english/' + f['base'],
                                           'https://www.collinsdictionary.com/conjugation/english/' + f['base']}

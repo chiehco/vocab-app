@@ -47,7 +47,9 @@ function validateCurriculumIdentity(unit:string,path:string,value:unknown):void 
  }
 }
 
-// Bounded U05-VOC-288 evidence, never general wordVariants lemmatization.
+// Match the reviewed U05-VOC-288 record, not live website contents.
+// The sealed manifest binds these evidence bytes; metadata is not proof of a web read.
+// Never generalize wordVariants lemmatization.
 function verifiedWageForms(p:AuditPatch,f:Row){
  return p.dataset==='words'&&p.id==='W002976'&&p.before.wordId==='W002976'
   &&p.before.word==='wage(s)'&&JSON.stringify(p.before.wordVariants)===JSON.stringify(['wage','wages'])
@@ -57,7 +59,8 @@ function verifiedWageForms(p:AuditPatch,f:Row){
    if(typeof source!=='object'||source===null)return false;
    const s=source as Row;
    return s.url===f.sourceRef&&s.type==='independent_dictionary_verification'
-    &&s.verification==='direct_dictionary_entry_read'&&s.findingId==='U05-VOC-288';
+    &&s.verification==='direct_dictionary_entry_read'&&s.findingId==='U05-VOC-288'
+    &&s.quote==='past tense, past participle waged; recompense, return, or yield; to wage war against a nation';
   }));
 }
 
@@ -140,7 +143,8 @@ export function validateAuditScope(m:AuditManifest,scope:AuditScope):void {
   }
   if(Object.hasOwn(p.after,'verbForms')){
    const f=p.after.verbForms as Row;sameKeys(f,['base','past','pastParticiple','sourceRef','status']);
-   assert.ok(f.base===p.before.word||verifiedWageForms(p,f),'invalid verified forms base');assert.equal(f.status,'approved');
+   assert.ok(p.id==='W002976'||p.before.word==='wage(s)'
+    ?verifiedWageForms(p,f):f.base===p.before.word,'invalid verified forms base');assert.equal(f.status,'approved');
    assert.ok(['https://www.collinsdictionary.com/dictionary/english/'+f.base,'https://www.collinsdictionary.com/conjugation/english/'+f.base].includes(f.sourceRef as string),'invalid verified forms source');
    assert.ok((p.fieldEvidence.verbForms??[]).some(record=>(record as {sources:unknown[]}).sources.some(source=>typeof source==='object'&&source!==null&&(source as Row).url===f.sourceRef)),'forms source lacks evidence');
   }
