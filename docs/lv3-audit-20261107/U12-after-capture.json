@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "unit": "LV3-U12",
+  "stage": "after_runtime_qa",
+  "status": "complete_local_after_capture_release_blocked",
+  "head": "c4c463b17d2c3a06588d5a3ad99cb472504f5909",
+  "time": "2026-11-08T21:07:15.061Z",
+  "applicationCommit": "a71e8c1562994858d3133264f20549c2ab7ce57d",
+  "coverage": {
+    "curriculum": 182,
+    "vocabulary": 119,
+    "grammar": 63,
+    "general": 96,
+    "nullId": 22,
+    "tabCards": 96,
+    "tabPages": 324,
+    "curriculumExact": true,
+    "generalExact": true,
+    "tabExact": true,
+    "images": 27,
+    "uniqueImages": 27,
+    "screenshots": 1184
+  },
+  "formalCounts": {
+    "words": 96,
+    "examples": 119,
+    "notes": 41,
+    "senses": 18,
+    "media": 19
+  },
+  "responsive": {
+    "routes": 55,
+    "views": 130,
+    "baselineRoutes": 53,
+    "baselineViews": 125,
+    "addedCurrentLongest": [
+      "LI-LV3U12-P126-graduate",
+      "W002128"
+    ]
+  },
+  "verification": "output/playwright/lv3-u12/after-preparation/after-verification.json",
+  "sourceDocuments": "output/playwright/lv3-u12/after-preparation/frozen-source-documents.json",
+  "sourceInventory": "output/playwright/lv3-u12/after-preparation/source-inventory-v2.json",
+  "routes": "output/playwright/lv3-u12/after-preparation/routes.json",
+  "captionExpectations": "output/playwright/lv3-u12/after-preparation/frozen-caption-expectations.json",
+  "independentExpected": {
+    "path": "output/lv3-audit-20261107/u12-source-review/independent-expected-after-v2.json",
+    "bytes": 13024865,
+    "sha256": "12a33e20dd6a53f8a8b6823606dace6e54658e22a2c72aa5de2380458389fce2"
+  },
+  "snapshots": [
+    {
+      "stage": "initial",
+      "path": "output/playwright/lv3-u12/after-preparation/after-initial-state.json",
+      "bytes": 16408474,
+      "sha256": "f5887c473cd7a0ecf12af74e7e7f74d3aaf1cd132a6079f7b3f3c8921c2a3b46"
+    },
+    {
+      "stage": "settled",
+      "path": "output/playwright/lv3-u12/after-preparation/after-settled-state.json",
+      "bytes": 16408474,
+      "sha256": "d5c1c43889ce5347d5ce85611a648d03c5d9fbafe041c9a371572497b6e876e1"
+    },
+    {
+      "stage": "ready",
+      "path": "output/playwright/lv3-u12/after-preparation/after-ready-state-v2.json",
+      "bytes": 16419229,
+      "sha256": "7e80ed40fc9d49ab79fceb16a50f1187e7258af7b80c0c123cbdbdc73ad168e1"
+    },
+    {
+      "stage": "pre-close",
+      "path": "output/playwright/lv3-u12/after-preparation/after-pre-close-state.json",
+      "bytes": 16419229,
+      "sha256": "0ceab397c439568620094177153bf71fd65fced42643ba55d2f611e1f2d0c3c5"
+    },
+    {
+      "stage": "reopen",
+      "path": "output/playwright/lv3-u12/after-preparation/after-reopen-state.json",
+      "bytes": 16419229,
+      "sha256": "a4a824acd5964d0b87fbfb40d2865e902c952556a60c2463b4cf000ec3950bf0"
+    },
+    {
+      "stage": "final",
+      "path": "output/playwright/lv3-u12/after-preparation/after-final-state.json",
+      "bytes": 16419229,
+      "sha256": "9e45538ec24a34b0a9f198981191cdacd2c13fb81512a58c6cb04cf1259e86e8"
+    }
+  ],
+  "changedFields": {
+    "count": 127,
+    "failures": 0,
+    "evidence": "output/playwright/lv3-u12/after-preparation/changed-fields-dom-check.json",
+    "metadataOnly": "Five examples.sensePos with null meaningHint do not render their labels. Curriculum meaningSource/chapterMeaningsZh are metadata; actual visible fields separately verified."
+  },
+  "visual": {
+    "general96": true,
+    "activeImages27": true,
+    "responsive130selectedViews": true,
+    "curriculum": {
+      "path": "output/playwright/lv3-u12/after-preparation/curriculum-visual-review/card-area-review-result.json",
+      "bytes": 108225,
+      "sha256": "4278bfe0777701493bc59d5d87eb0d0ebbf5018ce13be6d1193785b1111396dc"
+    },
+    "evidence": "output/playwright/lv3-u12/after-preparation/actual-visual-review.json"
+  },
+  "state": {
+    "contentStores": 9,
+    "progressStores": 14,
+    "groups": 2,
+    "reviews": 2,
+    "wallet": 10,
+    "dailyCap": 15,
+    "onlyPermittedMutation": "learning:last-location navigation bookmarks; no group/answer/SRS/reward changes",
+    "fullSourceReadiness": "output/playwright/lv3-u12/after-preparation/after-readiness-v2.json"
+  },
+  "preservation": {
+    "tracked": 5017,
+    "historical": 11349,
+    "originalPhotosAndExcel": 14,
+    "productInputs": 144,
+    "beforeSealEntries": 1658,
+    "registrySourceFiles": 19,
+    "failures": 0
+  },
+  "startupObservation": "Initial and first settled snapshots were taken while normal bootstrap was still loading and remained stale. The original failed readiness is retained. Ordinary navigation/wait completed the normal refresh; full independent 8 collections/26565 rows, pack/meta and 9 content stores were checked before any card capture. No internal refresh, DB/storage injection or clearing.",
+  "releaseBlockers": [
+    "Latest full 218 files / 3521 tests: 3507 pass, 10 fail, 4 existing opt-in skips. Four stale assertions later fixed test-only; both complete consumers 16/16 pass. No full218 rerun claimed.",
+    "Six original 5000ms timeouts remain; whole lint retains three generated Three.js hook errors.",
+    "No physical phone, audio, PWA/offline or deployed acceptance. No push/deploy.",
+    "No new art approval; unknown rare senses, null IDs, read_only, exam claims and phonetics remain source-review boundaries."
+  ],
+  "failures": []
+}
