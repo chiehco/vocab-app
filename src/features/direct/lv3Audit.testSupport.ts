@@ -40,13 +40,19 @@ function newUnitNumber(unit:string):number|null {
  const number=Number(unit.slice(-2));assert.ok([1,2].includes(number)||(number>=4&&number<=24),'unregistered unit identity');
  return number>=4?number:null;
 }
-function validateCurriculumIdentity(unit:string,path:string,value:unknown):void {
+export function validateCurriculumIdentity(unit:string,path:string,value:unknown):void {
  const number=newUnitNumber(unit);if(number===null)return;
  assert.equal(path,`src/features/direct/curriculumLV3Unit${number}.json`,'unit curriculum path mismatch');
  const document=value as Row,template=document.template as Row;
  assert.ok(template);assert.equal(template.templateId,'TEXTBOOK-'+unit,'unit curriculum template mismatch');
  assert.equal(template.level,'LV3');assert.equal(template.unit,number);
  const items=document.learningItems as Row[];assert.ok(Array.isArray(items)&&items.length);
+ // U12 uses original page/slug IDs. Bind the entire ordered identity matrix.
+ if(number===12){
+  const identity=items.map(row=>[row.learningItemId,row.kind,row.sourcePage]);
+  assert.equal(auditHash(identity),'9db01d5dc830b3fa779690e87dd99f8520994691283f941aea60f28ab43271da','U12 original curriculum identity mismatch');
+  return;
+ }
  for(const row of items){
   const suffix=row.kind==='vocabulary'?'V':row.kind==='grammar'?'G':null;
   assert.ok(suffix&&new RegExp(`^LI-LV3U${String(number).padStart(2,'0')}-${suffix}[0-9]{3}$`).test(String(row.learningItemId)),'unit curriculum item namespace mismatch');
@@ -961,6 +967,106 @@ export function verifiedU11DebutForms(m:AuditManifest,p:AuditPatch){
 
 
 
+// Exact source-reviewed U12 pattern patch; no runtime mutable output dependency.
+const U12_PATTERN_PATCH:AuditPatch=JSON.parse(String.raw`{
+  "dataset": "curriculum",
+  "path": "src/features/direct/curriculumLV3Unit12.json",
+  "key": "learningItemId",
+  "id": "LI-LV3U12-P126-G5f07b0a1c417",
+  "before": {
+    "learningItemId": "LI-LV3U12-P126-G5f07b0a1c417",
+    "kind": "grammar",
+    "sourcePage": 126,
+    "pattern": "shake sb's fist",
+    "explanationZh": "揮舞拳頭（表示十分生氣）",
+    "review": "source_checked_text_only",
+    "practiceMode": "read_only"
+  },
+  "after": {
+    "pattern": "shake one's fist (at sb)",
+    "explanationZh": "（向某人）揮舞自己的拳頭，表示生氣或威嚇；one's 隨主詞變化。原書片語寫 sb's fist，同頁例句實際指主詞自己的拳頭。"
+  },
+  "reason": "保留原書措辭差異，依同頁his與詞典your指主詞自己的拳頭，以one's消除sb's可能指別人的歧義。 保留原書措辭差異，依同頁his與詞典your指主詞自己的拳頭，以one's消除sb's可能指別人的歧義。",
+  "evidence": [
+    "https://www.collinsdictionary.com/us/dictionary/english/shake"
+  ],
+  "fieldEvidence": {
+    "pattern": [
+      {
+        "proposal": "U12-GRM-044",
+        "originFindingIds": [
+          "U12-GRM-044"
+        ],
+        "reason": "保留原書措辭差異，依同頁his與詞典your指主詞自己的拳頭，以one's消除sb's可能指別人的歧義。",
+        "sources": [
+          {
+            "type": "textbook_photo",
+            "manifest": "scripts/sources/LV3Unit12.json",
+            "file": "20260815_101336.jpg",
+            "sha256": "c838f9048ba4a0d5875bae334ff2c9b160200cfa1e69e89029b41157e4bde471",
+            "page": 126,
+            "pixelsViewed": true,
+            "viewedPath": "output\\lv3-audit-20261107\\u12-source-review\\grammar\\page-126-upright.png",
+            "viewMethod": "Original photo proportionally resized and rotated clockwise for inspection; no OCR used.",
+            "printedText": "shake sb's fist；揮舞拳頭（表示十分生氣）",
+            "additionalSourceObservation": "同頁driver例句為shook his fist at，所有格his指該driver。"
+          },
+          {
+            "url": "https://www.collinsdictionary.com/us/dictionary/english/shake",
+            "locator": "COBUILD sense5, lines268–272",
+            "evidenceText": "If you shake your fist",
+            "summaryZh": "主詞因生氣而向對方揮動自己的拳頭，所有格與動作主詞相應，at後接對象。",
+            "type": "dictionary",
+            "publisher": "Collins",
+            "retrievedAt": "2026-11-08",
+            "verification": "direct_open_and_body_inspection_succeeded",
+            "translation": "Reviewer paraphrase, not a copied textbook example"
+          }
+        ],
+        "beforePresent": true
+      }
+    ],
+    "explanationZh": [
+      {
+        "proposal": "U12-GRM-044",
+        "originFindingIds": [
+          "U12-GRM-044"
+        ],
+        "reason": "保留原書措辭差異，依同頁his與詞典your指主詞自己的拳頭，以one's消除sb's可能指別人的歧義。",
+        "sources": [
+          {
+            "type": "textbook_photo",
+            "manifest": "scripts/sources/LV3Unit12.json",
+            "file": "20260815_101336.jpg",
+            "sha256": "c838f9048ba4a0d5875bae334ff2c9b160200cfa1e69e89029b41157e4bde471",
+            "page": 126,
+            "pixelsViewed": true,
+            "viewedPath": "output\\lv3-audit-20261107\\u12-source-review\\grammar\\page-126-upright.png",
+            "viewMethod": "Original photo proportionally resized and rotated clockwise for inspection; no OCR used.",
+            "printedText": "shake sb's fist；揮舞拳頭（表示十分生氣）",
+            "additionalSourceObservation": "同頁driver例句為shook his fist at，所有格his指該driver。"
+          },
+          {
+            "url": "https://www.collinsdictionary.com/us/dictionary/english/shake",
+            "locator": "COBUILD sense5, lines268–272",
+            "evidenceText": "If you shake your fist",
+            "summaryZh": "主詞因生氣而向對方揮動自己的拳頭，所有格與動作主詞相應，at後接對象。",
+            "type": "dictionary",
+            "publisher": "Collins",
+            "retrievedAt": "2026-11-08",
+            "verification": "direct_open_and_body_inspection_succeeded",
+            "translation": "Reviewer paraphrase, not a copied textbook example"
+          }
+        ],
+        "beforePresent": true
+      }
+    ]
+  }
+}`);
+export function verifiedU12PatternPatch(m:AuditManifest,p:AuditPatch){
+ return m.unit==='LV3-U12'&&p.dataset==='curriculum'&&isDeepStrictEqual(p,U12_PATTERN_PATCH);
+}
+
 export function validateAuditScope(m:AuditManifest,scope:AuditScope):void {
  const keys=(value:object)=>Object.keys(value).sort();
  const sameKeys=(value:object,expected:string[])=>assert.deepEqual(keys(value),[...expected].sort(),'unknown or missing contract fields');
@@ -1013,6 +1119,10 @@ export function validateAuditScope(m:AuditManifest,scope:AuditScope):void {
   if(republicFact)fields=['sentenceEn','sentenceZh','blankSentence'];
   if(verifiedU11ReviewPatch(m,p,'examples'))fields=['sentenceZh'];
   if(p.dataset==='curriculum'){
+   if(m.unit==='LV3-U12'){
+    assert.ok(p.fieldEvidence!==null&&typeof p.fieldEvidence==='object'&&!Array.isArray(p.fieldEvidence),'invalid U12 field evidence object');
+    if(Object.hasOwn(p.fieldEvidence,'pattern')||Object.hasOwn(p.after,'pattern'))assert.ok(verifiedU12PatternPatch(m,p),'incomplete U12 pattern contract');
+   }
    if(m.unit==='LV3-U11'&&Object.hasOwn(p.fieldEvidence??{},'pattern'))assert.ok(verifiedU11ReviewPatch(m,p,'curriculum'),'incomplete U11 pattern contract');
    if(m.unit==='LV3-U09'&&Object.hasOwn(p.fieldEvidence??{},'pattern'))assert.ok(verifiedU09PatternErratum(m,p),'incomplete U09 pattern contract');
    assert.ok(p.before.kind==='grammar'||p.before.kind==='vocabulary','unknown curriculum kind');
@@ -1021,6 +1131,7 @@ export function validateAuditScope(m:AuditManifest,scope:AuditScope):void {
    if(p.before.kind==='grammar'&&verifiedU07PatternErratum(m,p))fields=['pattern','explanationZh'];
    if(p.before.kind==='grammar'&&verifiedU09PatternErratum(m,p))fields=['pattern','explanationZh'];
    if(p.before.kind==='grammar'&&verifiedU11ReviewPatch(m,p,'curriculum'))fields=['pattern','explanationZh'];
+   if(p.before.kind==='grammar'&&verifiedU12PatternPatch(m,p))fields=['pattern','explanationZh'];
    if(Object.hasOwn(p.after,'meaningSource'))assert.ok(['textbook_source_review','textbook_and_dictionary_review'].includes(p.after.meaningSource as string),'invalid reviewed meaning source');
    for(const [field,value]of Object.entries(p.after).filter(([field])=>fields.includes(field))){
     assert.ok(typeof value==='string'&&value.trim(),'invalid curriculum scalar');

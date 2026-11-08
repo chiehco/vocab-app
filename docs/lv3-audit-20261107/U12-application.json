@@ -1,0 +1,140 @@
+{
+  "unit": "LV3-U12",
+  "state": "applied_awaiting_technical_runtime",
+  "preparedAtCommit": "50972aa77844e0539b6ef74a8735e37682e04273",
+  "manifestHash": "d9881716bc3d8ca5b9b00adce5b1df7b0af4f6ee33d50a1a83754f88db0669cd",
+  "scopeHash": "9b96a483a4fc1e958eafd97bad9fd99e5b2f17f1df62dd17019992c7833e76c8",
+  "chainStatus": "committed",
+  "fieldCount": 127,
+  "rowCount": 50,
+  "changedSourceDocuments": 3,
+  "readonlyDocuments": 3,
+  "productWrites": 5,
+  "singleWritePaths": [
+    "public/data/v1/examples.json",
+    "public/data/v1/meta.json",
+    "public/data/v1/sa-pack.json",
+    "public/data/v1/words.json",
+    "src/features/direct/curriculumLV3Unit12.json"
+  ],
+  "receipt": "output/lv3-audit-20261107/transactions/20261108T193711318090Z/transaction.json",
+  "receiptState": "committed",
+  "zeroWriteRepeat": true,
+  "newRepeatReceipts": 0,
+  "rawBackupsVerified": 5,
+  "unchangedInputsVerified": 139,
+  "inputCount": 144,
+  "meta": {
+    "schemaVersion": 2,
+    "generatedAt": "2026-11-08T18:18:39Z",
+    "sourceFile": "萬詞譜母表_SA義項清理整合_20260904.xlsx",
+    "counts": {
+      "words": 6090,
+      "senses": 772,
+      "examples": 7871,
+      "relations": 40,
+      "morphemes": 3798,
+      "media": 1177,
+      "notes": 4290,
+      "examPriority": 3792,
+      "hooks": 0
+    },
+    "wordsHash": "22668b0db30a95c14298c05f54a1e70f1be35771078fae27df5b7e48f045f12f",
+    "contentHash": "1125b5fd9257d1c6a4c27417a031bb687bce9320cf314e48874f5e3800f1b839",
+    "houseSourceSha256": "98fa208835caf7184acc95f26dcff56ace23ba281ff8d4b9b8c37e18e407be14"
+  },
+  "packMeta": {
+    "schemaVersion": 2,
+    "generatedAt": "2026-11-08T18:18:39Z",
+    "counts": {
+      "words": 5779,
+      "senses": 771,
+      "examples": 7436,
+      "relations": 31,
+      "morphemes": 3696,
+      "notes": 4111,
+      "media": 1128,
+      "examPriority": 3613
+    },
+    "wordsHash": "sa:0a3a99c99f06f1d5d4aa067d821f832ab1cf208411d53491886042fb80829b51",
+    "contentHash": "sa:261b7af26d9c43f00711fa0c8fd18302bf85194bbe7d9fc8eb2ec6216533072f"
+  },
+  "changedPaths": {
+    "public/data/v1/examples.json": {
+      "rawSha256": "717d379c8d06087af82a597e1b448302ab5afe92efbcb2581cf8684e3c77441c",
+      "lfSha256": "717d379c8d06087af82a597e1b448302ab5afe92efbcb2581cf8684e3c77441c",
+      "bytes": 3669971
+    },
+    "public/data/v1/meta.json": {
+      "rawSha256": "629734c39216aaf9f254409547e9a25cb9647fb4880d81d32b3f1233487ca23a",
+      "lfSha256": "629734c39216aaf9f254409547e9a25cb9647fb4880d81d32b3f1233487ca23a",
+      "bytes": 597
+    },
+    "public/data/v1/sa-pack.json": {
+      "rawSha256": "acb11472e9d9a9c238402b91dbddc4df1a3fbe4128071b2a00cd645ad8eb5114",
+      "lfSha256": "acb11472e9d9a9c238402b91dbddc4df1a3fbe4128071b2a00cd645ad8eb5114",
+      "bytes": 10582726
+    },
+    "public/data/v1/words.json": {
+      "rawSha256": "22668b0db30a95c14298c05f54a1e70f1be35771078fae27df5b7e48f045f12f",
+      "lfSha256": "22668b0db30a95c14298c05f54a1e70f1be35771078fae27df5b7e48f045f12f",
+      "bytes": 4730412
+    },
+    "src/features/direct/curriculumLV3Unit12.json": {
+      "rawSha256": "5eb3776edfff6751c427930d4109df5e2161459b66574d673b76e2dc9d13445e",
+      "lfSha256": "5eb3776edfff6751c427930d4109df5e2161459b66574d673b76e2dc9d13445e",
+      "bytes": 87969
+    }
+  },
+  "independentExpectedAfter": "output/lv3-audit-20261107/u12-source-review/independent-expected-after-v2.json",
+  "fixtureMethods": 9,
+  "fixtureReceipts": 5,
+  "fixtureRawBackups": 25,
+  "ancestorProjections": 11,
+  "ancestorLfHashes": 1584,
+  "directParentProjection": "LV3-U11",
+  "directParentLfHashes": 144,
+  "pythonTsParity": true,
+  "sourceExpectedMatches": true,
+  "starter": {
+    "intersection": {
+      "words": {
+        "rows": 39,
+        "fields": 113,
+        "absentFields": 0,
+        "absentIds": []
+      },
+      "examples": {
+        "rows": 5,
+        "fields": 5,
+        "absentFields": 0,
+        "absentIds": []
+      },
+      "notes": {
+        "rows": 0,
+        "fields": 0,
+        "absentFields": 0,
+        "absentIds": []
+      }
+    },
+    "rows": 44,
+    "fields": 118,
+    "media": 1128,
+    "allNonMetaCollectionsAndOrderEqual": true
+  },
+  "starterMediaUnchanged": 1128,
+  "originalBeforeCaptureUnchanged": true,
+  "runtimeAfter": "pending",
+  "technicalQa": "pending",
+  "sourceQuestions": [
+    "17 rare/mixed-sense questions retained: area, dark, fate, operator, silence, slip, survival, basement, grab, holy, hesitation, ingredient, innocence, cuisine, recession, resident, referee.",
+    "22 null-ID/read-only entries remain; no invented IDs or practice content.",
+    "Forecast, limit and graduation have no original English captions; artwork approval unchanged.",
+    "Phonetics, syllables, stress and formal-exam provenance remain unverified.",
+    "Original review statuses and textbook horn/trumpet comparison remain attributed, not newly certified."
+  ],
+  "physicalPhone": "not tested",
+  "release": "not published",
+  "localClosed": false,
+  "evidenceDirectory": "output/lv3-audit-20261107/u12-integration/application/resume-v2"
+}

@@ -75,6 +75,13 @@ def validate_curriculum_identity(unit, path, document):
             'Unit curriculum template mismatch')
     items = document.get('learningItems')
     require(isinstance(items, list) and items, 'Missing unit curriculum items')
+    # U12 predates the numeric V/G namespace. Preserve its complete ordered
+    # identity/kind/page matrix, never authorize a new ID or broaden other units.
+    if number == 12:
+        identity = [[row.get('learningItemId'), row.get('kind'), row.get('sourcePage')] for row in items]
+        require(sha(identity) == '9db01d5dc830b3fa779690e87dd99f8520994691283f941aea60f28ab43271da',
+                'U12 original curriculum identity mismatch')
+        return
     for row in items:
         suffix = {'vocabulary': 'V', 'grammar': 'G'}.get(row.get('kind'))
         require(suffix is not None and re.fullmatch(
@@ -1032,6 +1039,107 @@ def verified_u11_debut_forms(manifest, patch):
     return (manifest.get('unit') == 'LV3-U11' and patch.get('dataset') == 'words'
             and patch.get('id') == 'W004264' and _u11_json_equal(patch, _U11_DEBUT_PATCH))
 
+# Exact source-reviewed U12 pattern patch. Mutable output is never read at runtime.
+_U12_PATTERN_PATCH = json.loads(r'''{
+  "dataset": "curriculum",
+  "path": "src/features/direct/curriculumLV3Unit12.json",
+  "key": "learningItemId",
+  "id": "LI-LV3U12-P126-G5f07b0a1c417",
+  "before": {
+    "learningItemId": "LI-LV3U12-P126-G5f07b0a1c417",
+    "kind": "grammar",
+    "sourcePage": 126,
+    "pattern": "shake sb's fist",
+    "explanationZh": "揮舞拳頭（表示十分生氣）",
+    "review": "source_checked_text_only",
+    "practiceMode": "read_only"
+  },
+  "after": {
+    "pattern": "shake one's fist (at sb)",
+    "explanationZh": "（向某人）揮舞自己的拳頭，表示生氣或威嚇；one's 隨主詞變化。原書片語寫 sb's fist，同頁例句實際指主詞自己的拳頭。"
+  },
+  "reason": "保留原書措辭差異，依同頁his與詞典your指主詞自己的拳頭，以one's消除sb's可能指別人的歧義。 保留原書措辭差異，依同頁his與詞典your指主詞自己的拳頭，以one's消除sb's可能指別人的歧義。",
+  "evidence": [
+    "https://www.collinsdictionary.com/us/dictionary/english/shake"
+  ],
+  "fieldEvidence": {
+    "pattern": [
+      {
+        "proposal": "U12-GRM-044",
+        "originFindingIds": [
+          "U12-GRM-044"
+        ],
+        "reason": "保留原書措辭差異，依同頁his與詞典your指主詞自己的拳頭，以one's消除sb's可能指別人的歧義。",
+        "sources": [
+          {
+            "type": "textbook_photo",
+            "manifest": "scripts/sources/LV3Unit12.json",
+            "file": "20260815_101336.jpg",
+            "sha256": "c838f9048ba4a0d5875bae334ff2c9b160200cfa1e69e89029b41157e4bde471",
+            "page": 126,
+            "pixelsViewed": true,
+            "viewedPath": "output\\lv3-audit-20261107\\u12-source-review\\grammar\\page-126-upright.png",
+            "viewMethod": "Original photo proportionally resized and rotated clockwise for inspection; no OCR used.",
+            "printedText": "shake sb's fist；揮舞拳頭（表示十分生氣）",
+            "additionalSourceObservation": "同頁driver例句為shook his fist at，所有格his指該driver。"
+          },
+          {
+            "url": "https://www.collinsdictionary.com/us/dictionary/english/shake",
+            "locator": "COBUILD sense5, lines268–272",
+            "evidenceText": "If you shake your fist",
+            "summaryZh": "主詞因生氣而向對方揮動自己的拳頭，所有格與動作主詞相應，at後接對象。",
+            "type": "dictionary",
+            "publisher": "Collins",
+            "retrievedAt": "2026-11-08",
+            "verification": "direct_open_and_body_inspection_succeeded",
+            "translation": "Reviewer paraphrase, not a copied textbook example"
+          }
+        ],
+        "beforePresent": true
+      }
+    ],
+    "explanationZh": [
+      {
+        "proposal": "U12-GRM-044",
+        "originFindingIds": [
+          "U12-GRM-044"
+        ],
+        "reason": "保留原書措辭差異，依同頁his與詞典your指主詞自己的拳頭，以one's消除sb's可能指別人的歧義。",
+        "sources": [
+          {
+            "type": "textbook_photo",
+            "manifest": "scripts/sources/LV3Unit12.json",
+            "file": "20260815_101336.jpg",
+            "sha256": "c838f9048ba4a0d5875bae334ff2c9b160200cfa1e69e89029b41157e4bde471",
+            "page": 126,
+            "pixelsViewed": true,
+            "viewedPath": "output\\lv3-audit-20261107\\u12-source-review\\grammar\\page-126-upright.png",
+            "viewMethod": "Original photo proportionally resized and rotated clockwise for inspection; no OCR used.",
+            "printedText": "shake sb's fist；揮舞拳頭（表示十分生氣）",
+            "additionalSourceObservation": "同頁driver例句為shook his fist at，所有格his指該driver。"
+          },
+          {
+            "url": "https://www.collinsdictionary.com/us/dictionary/english/shake",
+            "locator": "COBUILD sense5, lines268–272",
+            "evidenceText": "If you shake your fist",
+            "summaryZh": "主詞因生氣而向對方揮動自己的拳頭，所有格與動作主詞相應，at後接對象。",
+            "type": "dictionary",
+            "publisher": "Collins",
+            "retrievedAt": "2026-11-08",
+            "verification": "direct_open_and_body_inspection_succeeded",
+            "translation": "Reviewer paraphrase, not a copied textbook example"
+          }
+        ],
+        "beforePresent": true
+      }
+    ]
+  }
+}''')
+
+def verified_u12_pattern_patch(manifest, patch):
+    return (manifest.get('unit') == 'LV3-U12' and patch.get('dataset') == 'curriculum'
+            and _u11_json_equal(patch, _U12_PATTERN_PATCH))
+
 def validate_manifest(manifest, scope=None):
     if manifest.get('schemaVersion') == 1:
         v1.validate_manifest(manifest)
@@ -1114,6 +1222,10 @@ def validate_manifest(manifest, scope=None):
         if verified_u11_review_patch(manifest, p, 'examples'):
             allowed_fields = {'sentenceZh'}
         if p['dataset'] == 'curriculum':
+            if manifest['unit'] == 'LV3-U12':
+                require(isinstance(p.get('fieldEvidence'), dict), 'Invalid U12 field evidence object')
+                if 'pattern' in p['fieldEvidence'] or 'pattern' in p['after']:
+                    require(verified_u12_pattern_patch(manifest, p), 'Incomplete U12 pattern contract')
             if manifest['unit'] == 'LV3-U11' and 'pattern' in p.get('fieldEvidence', {}):
                 require(verified_u11_review_patch(manifest, p, 'curriculum'), 'Incomplete U11 pattern contract')
             if manifest['unit'] == 'LV3-U09' and 'pattern' in p.get('fieldEvidence', {}):
@@ -1129,6 +1241,8 @@ def validate_manifest(manifest, scope=None):
             if kind == 'grammar' and verified_u09_pattern_erratum(manifest, p):
                 allowed_fields = {'pattern', 'explanationZh'}
             if kind == 'grammar' and verified_u11_review_patch(manifest, p, 'curriculum'):
+                allowed_fields = {'pattern', 'explanationZh'}
+            if kind == 'grammar' and verified_u12_pattern_patch(manifest, p):
                 allowed_fields = {'pattern', 'explanationZh'}
             if 'meaningSource' in p['after']:
                 require(p['after']['meaningSource'] in {'textbook_source_review', 'textbook_and_dictionary_review'},

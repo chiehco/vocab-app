@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "unit": "LV3-U12",
+  "stage": "before_runtime_qa",
+  "status": "complete_before_capture_with_existing_release_blockers",
+  "head": "50972aa77844e0539b6ef74a8735e37682e04273",
+  "time": "2026-11-08T18:05:10.987Z",
+  "coverage": {
+    "curriculum": 182,
+    "vocabulary": 119,
+    "grammar": 63,
+    "general": 96,
+    "nullId": 22,
+    "tabCards": 96,
+    "tabPages": 324,
+    "curriculumExact": true,
+    "generalExact": true,
+    "tabExact": true,
+    "images": 27,
+    "uniqueImages": 27,
+    "screenshots": 1173
+  },
+  "formalCounts": {
+    "words": 96,
+    "examples": 119,
+    "notes": 41,
+    "senses": 18,
+    "media": 19
+  },
+  "verification": "output/playwright/lv3-u12/before-verification.json",
+  "sourceDocuments": "output/playwright/lv3-u12/frozen-source-documents.json",
+  "sourceInventory": "output/playwright/lv3-u12/source-inventory-v2.json",
+  "routes": "output/playwright/lv3-u12/routes.json",
+  "captionExpectations": "output/playwright/lv3-u12/frozen-caption-expectations.json",
+  "snapshots": [
+    {
+      "stage": "initial",
+      "path": "output/playwright/lv3-u12/before-initial-state.json",
+      "bytes": 16408529,
+      "sha256": "68028b45814147a8c5d9f92788af096a8ae5660b243e068bb693f57043e37fd8"
+    },
+    {
+      "stage": "settled",
+      "path": "output/playwright/lv3-u12/before-settled-state.json",
+      "bytes": 16408529,
+      "sha256": "29f3c14118f9d1a24fc235ea7f996a9a26d6222556501d211efa1f852cc9b7ea"
+    },
+    {
+      "stage": "pre-close",
+      "path": "output/playwright/lv3-u12/before-pre-close-state.json",
+      "bytes": 16408488,
+      "sha256": "4680da70a2b356a4a5a66b8de7512f0d7fa273192fa58bcaf5dd05b7e21b6d3c"
+    },
+    {
+      "stage": "reopen",
+      "path": "output/playwright/lv3-u12/before-reopen-state.json",
+      "bytes": 16408488,
+      "sha256": "7749398b21c95fb59b1f217cf3b5ea7ebd96d5ec4f6e3e0de23247b3d21dca09"
+    },
+    {
+      "stage": "final",
+      "path": "output/playwright/lv3-u12/before-final-state.json",
+      "bytes": 16408488,
+      "sha256": "ae58f38f46300d1fa0d87b8bbce01ba42d8559d942429ed345be6738a6cbb211"
+    }
+  ],
+  "baseline": {
+    "stage": "initial",
+    "path": "output/playwright/lv3-u12/before-initial-state.json",
+    "bytes": 16408529,
+    "sha256": "68028b45814147a8c5d9f92788af096a8ae5660b243e068bb693f57043e37fd8"
+  },
+  "predecessor": {
+    "stage": "final",
+    "path": "output/playwright/lv3-u11/after-preparation/resume-v1/attempts/u11-run-01-after-final-state-mw83xt4u-krs1cu/result.json",
+    "bytes": 16408593,
+    "sha256": "fef37dcab7bff35c92712cf67c4dbdcb3b51e62e6461ab2681a5d898162fa1c5",
+    "provenance": {
+      "path": "output/playwright/lv3-u11/after-preparation/resume-v1/attempts/u11-run-01-after-final-state-mw83xt4u-krs1cu/provenance.json",
+      "bytes": 958,
+      "sha256": "08b3d36ac1c4f935a1df941341999d8ecbe578d79ce66dac4173f40425b5bdf2"
+    }
+  },
+  "fieldClassification": {
+    "values": 3113,
+    "verbatim": 1883,
+    "normalizedOnly": 0,
+    "notFound": 1230
+  },
+  "visualReview": "output/playwright/lv3-u12/actual-visual-review.json",
+  "report": "docs/lv3-audit-20261107/U12-before-qa.md",
+  "sealPath": "output/playwright/lv3-u12/before-seal-index.json",
+  "technicalGateAllPassed": false,
+  "limits": [
+    "Local BEFORE runtime evidence only, not semantic correctness or artwork approval. Source spelling/POS/senses/examples/phonetics/exam claims remain subject to separate source review.",
+    "Desktop Chromium; 390x844 responsive emulation is not physical-phone QA. No audio playback, installed PWA, offline, Safari/Firefox, deployment or full-project Vitest certification.",
+    "Initial 1280x720 full-page captures preserve fixed-nav overlap. Supplemental 1280x1800 ordinary-scroll viewports and 390px scroll checkpoints provide readable evidence without hiding UI.",
+    "Actual visual review is scoped in actual-visual-review.json: 182 curriculum card-region crops by coordinator, 96 general cards on 16 half-scale sheets, all 27 original image viewport files, 125 selected responsive views on 32 original-pixel sheets. Captured does not mean every captured pixel was visually inspected.",
+    "Existing release blockers remain: exact 51 files / 1767 tests = 1760 pass, 3 unchanged 5000ms timeouts, 4 original opt-in skips. Timeouts: db whole-pack 6728.5637ms, caller invariant 5598.914ms, U05 full six-file 5209.9239ms. Whole lint retains U09/U10 generated Three.js useMultisampledRTT hook errors; U56/puppet latest pass does not erase earlier intermittency. U11 scoped 70/70 is not whole-project clearance. No timeout/assert/data/cache changes. No push/deploy."
+  ]
+}
