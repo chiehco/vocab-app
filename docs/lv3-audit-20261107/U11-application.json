@@ -1,0 +1,145 @@
+{
+  "unit": "LV3-U11",
+  "state": "applied_awaiting_technical_runtime",
+  "preparedAtCommit": "e5cec9ea2dbc816441dcb6238f743ad79e4b689c",
+  "manifestHash": "8e3c3edc8f76deceeba55c3ee909bfff9960980e8d96c5ca8ad364a700ac0377",
+  "scopeHash": "71d015e70a30b7f921b5d815e2a361344c76a964634f478660b0fad4c1dd9d60",
+  "chainStatus": "committed",
+  "fieldCount": 497,
+  "rowCount": 213,
+  "changedSourceDocuments": 4,
+  "readonlyDocuments": 2,
+  "productWrites": 6,
+  "singleWritePaths": [
+    "public/data/v1/examples.json",
+    "public/data/v1/meta.json",
+    "public/data/v1/notes.json",
+    "public/data/v1/sa-pack.json",
+    "public/data/v1/words.json",
+    "src/features/direct/curriculumLV3Unit11.json"
+  ],
+  "receipt": "output/lv3-audit-20261107/transactions/20261108T161139664668Z/transaction.json",
+  "receiptState": "committed",
+  "zeroWriteRepeat": true,
+  "newRepeatReceipts": 0,
+  "rawBackupsVerified": 6,
+  "unchangedInputsVerified": 138,
+  "inputCount": 144,
+  "meta": {
+    "schemaVersion": 2,
+    "generatedAt": "2026-11-08T11:34:13Z",
+    "sourceFile": "萬詞譜母表_SA義項清理整合_20260904.xlsx",
+    "counts": {
+      "words": 6090,
+      "senses": 772,
+      "examples": 7871,
+      "relations": 40,
+      "morphemes": 3798,
+      "media": 1177,
+      "notes": 4290,
+      "examPriority": 3792,
+      "hooks": 0
+    },
+    "wordsHash": "72c0096501369c084210d05fc1c59f8a5a4179f5dbb2ce1ef4290cedce67b998",
+    "contentHash": "869999202ea17c55f3862033cb91355058da006566df741a27e455da4a4ac240",
+    "houseSourceSha256": "98fa208835caf7184acc95f26dcff56ace23ba281ff8d4b9b8c37e18e407be14"
+  },
+  "packMeta": {
+    "schemaVersion": 2,
+    "generatedAt": "2026-11-08T11:34:13Z",
+    "counts": {
+      "words": 5779,
+      "senses": 771,
+      "examples": 7436,
+      "relations": 31,
+      "morphemes": 3696,
+      "notes": 4111,
+      "media": 1128,
+      "examPriority": 3613
+    },
+    "wordsHash": "sa:7518973081df9c383fd05cc7c0795fe826aeb855e934ad143244cfe272bce902",
+    "contentHash": "sa:f5d2af01a308a51d6f45de249fe0d1339ed2617edb77ed9bc5c8195db765be39"
+  },
+  "changedPaths": {
+    "public/data/v1/examples.json": {
+      "rawSha256": "9834d0517eb211ec6b8dd5875381a824128384aea5742015d65ee5bd7b5b9921",
+      "lfSha256": "9834d0517eb211ec6b8dd5875381a824128384aea5742015d65ee5bd7b5b9921",
+      "bytes": 3669971
+    },
+    "public/data/v1/meta.json": {
+      "rawSha256": "7cf7cfe296cf66f31593310435fd0043d526f81ffdf715af0d0443464b4ec238",
+      "lfSha256": "7cf7cfe296cf66f31593310435fd0043d526f81ffdf715af0d0443464b4ec238",
+      "bytes": 597
+    },
+    "public/data/v1/notes.json": {
+      "rawSha256": "00b457233c2aa7485fd58449bf83ad4f06230cf2734736f8a640967775f2cb8a",
+      "lfSha256": "00b457233c2aa7485fd58449bf83ad4f06230cf2734736f8a640967775f2cb8a",
+      "bytes": 926460
+    },
+    "public/data/v1/sa-pack.json": {
+      "rawSha256": "e0ca3d74e32f45f9b6f5e04161aa452ac152c79526a7e38d1567778aa753c86f",
+      "lfSha256": "e0ca3d74e32f45f9b6f5e04161aa452ac152c79526a7e38d1567778aa753c86f",
+      "bytes": 10575285
+    },
+    "public/data/v1/words.json": {
+      "rawSha256": "72c0096501369c084210d05fc1c59f8a5a4179f5dbb2ce1ef4290cedce67b998",
+      "lfSha256": "72c0096501369c084210d05fc1c59f8a5a4179f5dbb2ce1ef4290cedce67b998",
+      "bytes": 4721399
+    },
+    "src/features/direct/curriculumLV3Unit11.json": {
+      "rawSha256": "551dc51599aaaa94b90f0d99548cabe05973a90344810475b9431df4f0b0f1c1",
+      "lfSha256": "551dc51599aaaa94b90f0d99548cabe05973a90344810475b9431df4f0b0f1c1",
+      "bytes": 103082
+    }
+  },
+  "independentExpectedAfter": "output/lv3-audit-20261107/u11-source-review/independent-expected-after-v4.json",
+  "fixtureMethods": 9,
+  "fixtureReceipts": 5,
+  "fixtureRawBackups": 30,
+  "ancestorProjections": 10,
+  "ancestorLfHashes": 1440,
+  "directParentProjection": "LV3-U10",
+  "directParentLfHashes": 144,
+  "pythonTsParity": true,
+  "sourceExpectedMatches": true,
+  "starter": {
+    "intersection": {
+      "words": {
+        "rows": 37,
+        "fields": 88,
+        "absentFields": 0,
+        "absentIds": []
+      },
+      "examples": {
+        "rows": 8,
+        "fields": 8,
+        "absentFields": 0,
+        "absentIds": []
+      },
+      "notes": {
+        "rows": 1,
+        "fields": 1,
+        "absentFields": 0,
+        "absentIds": []
+      }
+    },
+    "rows": 46,
+    "fields": 97,
+    "media": 1128,
+    "allNonMetaCollectionsAndOrderEqual": true
+  },
+  "starterMediaUnchanged": 1128,
+  "originalBeforeCaptureUnchanged": true,
+  "runtimeAfter": "pending",
+  "technicalQa": "pending",
+  "sourceQuestions": [
+    "Ten rare/mixed senses remain unconfirmed; dumb hereditary-causation and foggy specific-cause/slow-response English definitions remain unchanged pending source verification.",
+    "All 24 null-ID/read_only entries, original review statuses, unknown formal-exam source claims and unverified phonetics remain unchanged.",
+    "Nine active-image English captions are originally absent. All 78 no-active words are permitted by current specification; no confirmed image/sentence mismatch requires new artwork.",
+    "Existing U56/puppet five-second failures and original whole-lint failure remain LV3 release blockers. BEFORE is not AFTER, phone/PWA/offline acceptance or publication."
+  ],
+  "physicalPhone": "not tested",
+  "release": "not published",
+  "localClosed": false,
+  "evidenceDirectory": "output/lv3-audit-20261107/u11-integration/application"
+}
