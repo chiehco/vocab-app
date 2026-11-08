@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "unit": "LV3-U11",
+  "stage": "before_runtime_qa",
+  "status": "complete_before_capture_with_existing_release_blockers",
+  "head": "4974ea2af37aaaab8449059ff9e7ea519b0cdf99",
+  "time": "2026-11-08T10:29:03.016Z",
+  "coverage": {
+    "curriculum": 212,
+    "vocabulary": 137,
+    "grammar": 75,
+    "general": 112,
+    "nullId": 24,
+    "tabCards": 112,
+    "tabPages": 384,
+    "curriculumExact": true,
+    "generalExact": true,
+    "tabExact": true,
+    "images": 34,
+    "uniqueImages": 34,
+    "screenshots": 1034
+  },
+  "formalCounts": {
+    "words": 112,
+    "examples": 146,
+    "notes": 59,
+    "senses": 15,
+    "media": 26
+  },
+  "verification": "output/playwright/lv3-u11/before-verification.json",
+  "sourceDocuments": "output/playwright/lv3-u11/frozen-source-documents.json",
+  "sourceInventory": "output/playwright/lv3-u11/source-inventory-v2.json",
+  "routes": "output/playwright/lv3-u11/routes.json",
+  "captionExpectations": "output/playwright/lv3-u11/frozen-caption-expectations.json",
+  "snapshots": [
+    {
+      "stage": "initial",
+      "path": "output/playwright/lv3-u11/before-initial-state.json",
+      "bytes": 16398532,
+      "sha256": "a3863e748bd3b6a3b7ed40786c831c444134d8f84acdf74c74427b0c3930e251"
+    },
+    {
+      "stage": "settled",
+      "path": "output/playwright/lv3-u11/before-settled-state.json",
+      "bytes": 16398532,
+      "sha256": "10be9ae33e9727523086256ced87d56dad876206812347cd976b9f79682e8a52"
+    },
+    {
+      "stage": "pre-close",
+      "path": "output/playwright/lv3-u11/before-pre-close-state.json",
+      "bytes": 16398544,
+      "sha256": "df4d10bd4182de6e1928078db038a53fb6040afa894e8998c117a1166f6378e3"
+    },
+    {
+      "stage": "reopen",
+      "path": "output/playwright/lv3-u11/before-reopen-state.json",
+      "bytes": 16398530,
+      "sha256": "d4f886a5cdeb591b8add71e1feeb3743716ea026c3606784764c207295a6dd16"
+    },
+    {
+      "stage": "final",
+      "path": "output/playwright/lv3-u11/before-final-state.json",
+      "bytes": 16398544,
+      "sha256": "25926592556db2ec90ce7e8663ed42e8e91b54e58ff71a208780bd3071ac3a4c"
+    }
+  ],
+  "baseline": {
+    "stage": "final",
+    "path": "output/playwright/lv3-u10/after-preparation/after-final-state.json",
+    "bytes": 16398546,
+    "sha256": "cfaa65e34072472ebea4f6999f41520e4fa4ee9d2229df409cd8ba165beef5c6"
+  },
+  "fieldClassification": {
+    "values": 3777,
+    "verbatim": 2258,
+    "normalizedOnly": 0,
+    "notFound": 1519
+  },
+  "report": "docs/lv3-audit-20261107/U11-before-qa.md",
+  "sealPath": "output/playwright/lv3-u11/before-seal-index.json",
+  "technicalGateAllPassed": false,
+  "limits": [
+    "Browser desktop Chromium only; 390x844 is responsive emulation, not a physical phone. Safari/Firefox, installed PWA, offline cold start not tested.",
+    "No group creation, practice, answers, image questions, SRS/reward changes or database injection. Only navigation bookmark learning:last-location may change.",
+    "Source DOM observations distinguish literal text matches from metadata-only or not-rendered fields; no blanket claim that every metadata field appears on screen.",
+    "Existing U56 and puppet original 5-second test timeouts and whole lint failure remain release blockers. No build/test rerun, commit, push or deployment performed.",
+    "This is a pre-correction capture, not confirmation of semantic/source accuracy or image approval. U11 source review is separate.",
+    "Transient navigation-context failure in curriculum batch 03 was retained; separate retry completed all 20 routes. Partial first-attempt screenshots remain as evidence.",
+    "Initial source-inventory.json had empty notes/media joins; source-inventory-v2.json is authoritative, joining notes.word and media.targetWord against uniquely mapped formal spellings."
+  ]
+}

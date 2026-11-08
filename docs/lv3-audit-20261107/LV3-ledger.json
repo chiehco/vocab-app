@@ -477,7 +477,60 @@
       "itemCount": 212,
       "vocabularyCount": 137,
       "grammarCount": 75,
-      "status": "not_started"
+      "status": "source_reviewed_before_captured_not_applied",
+      "beforeQa": "U11-before-qa.md",
+      "beforeCapture": "U11-before-capture.json",
+      "review": "U11-source-review.md",
+      "beforeCoverage": {
+        "curriculumCards": 212,
+        "vocabulary": 137,
+        "grammar": 75,
+        "generalCards": 112,
+        "tabPages": 384,
+        "nullIdRows": 24,
+        "formalRows": 358,
+        "screenshots": 1034,
+        "responsiveRoutes": 40,
+        "responsiveViews": 134,
+        "activeImageWords": 34,
+        "distinctImages": 34,
+        "fullSnapshots": 5
+      },
+      "currentStep": "Complete source review and BEFORE capture independently verified. Final candidate v2 has 497 fields / 213 rows; source-backed grammar-pattern and translation exceptions require narrow Python/TypeScript guards before compilation. No U11 product application yet. Existing U56/puppet original 5-second and whole-lint release blockers remain.",
+      "candidateFields": 497,
+      "candidateRows": 213,
+      "candidateNewVerbFormRows": 28,
+      "sourceEvidence": {
+        "index": "output/lv3-audit-20261107/u11-source-review/final-source-index-v2.json",
+        "sha256": "741f1f23f0128a6e7a709b37bd985a678cc4779388847b636790ee10f4832ff2",
+        "candidate": "output\\lv3-audit-20261107\\u11-source-review\\accepted-proposals-merged-v2.json",
+        "candidateRawSha256": "b4f61f69bdd3a01031a127681cd274eb5e3c5777cad94edf84362eaf12dbed5b",
+        "independentExpected": "output\\lv3-audit-20261107\\u11-source-review\\independent-expected-after-v3.json",
+        "expectedRawSha256": "04288a66e7c415fcb25e41878e04fee86a8c796ca8aad2a6643388feaebf2ff9",
+        "sourceArtifacts": 144,
+        "changedSourceDatasets": [
+          "curriculum",
+          "words",
+          "examples",
+          "notes"
+        ],
+        "readOnlySourceDatasets": [
+          "senses",
+          "media"
+        ]
+      },
+      "beforeEvidenceSeal": {
+        "path": "output/playwright/lv3-u11/before-seal-index.json",
+        "artifacts": 1355,
+        "externalDocuments": 2,
+        "sha256": "7de65979ef68b3b2099b3dfac1b8c5e5af40ec4952fd4b25ac8ce5901c3af6b9"
+      },
+      "retainedQuestions": [
+        "Ten rare/mixed senses remain unconfirmed; dumb hereditary-causation and foggy specific-cause/slow-response English definitions remain unchanged pending source verification.",
+        "All 24 null-ID/read_only entries, original review statuses, unknown formal-exam source claims and unverified phonetics remain unchanged.",
+        "Nine active-image English captions are originally absent. All 78 no-active words are permitted by current specification; no confirmed image/sentence mismatch requires new artwork.",
+        "Existing U56/puppet five-second failures and original whole-lint failure remain LV3 release blockers. BEFORE is not AFTER, phone/PWA/offline acceptance or publication."
+      ]
     },
     {
       "unit": 12,
