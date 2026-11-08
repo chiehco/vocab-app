@@ -229,7 +229,7 @@
       "itemCount": 147,
       "vocabularyCount": 98,
       "grammarCount": 49,
-      "status": "applied_awaiting_after_qa",
+      "status": "reviewed_locally_with_retained_source_and_runtime_gaps",
       "beforeQa": "U08-before-qa.md",
       "beforeCapture": "U08-before-capture.json",
       "beforeCoverage": {
@@ -241,10 +241,11 @@
         "responsiveViews": 48,
         "activeImages": 22
       },
-      "currentStep": "Scoped technical QA passed; full-card runtime reopen verification pending.",
+      "currentStep": "Local U08 review/apply/technical/runtime checkpoint complete with retained limits; continue U09. LV3 publication pending.",
       "retainedQuestions": [
         "protect/purify/substantial lack original English captions; chew lacks both captions and uses a three-frame literal-chewing image with a separate metaphorical example. Preserve pending provenance/visual-context review.",
-        "suspicious singular-cookie wording was optional, not a demonstrated contradiction, and was not adopted; original image/captions remain."
+        "suspicious singular-cookie wording was optional, not a demonstrated contradiction, and was not adopted; original image/captions remain.",
+        "All 98 curriculum example fallbacks and 16 null-ID fallbacks remain; image-question/practice, physical-phone and full offline acceptance are not established."
       ],
       "manifest": "U08-patches.json",
       "scope": "U08-scope.json",
@@ -254,7 +255,7 @@
       "fieldCount": 258,
       "rowCount": 87,
       "newVerbFormRows": 19,
-      "validation": "Five files applied once; independent expected-after, retained nine-method fixtures, Python/TS parity, seven ancestors, receipt/raw backups, 139 unchanged inputs, zero-write idempotence and direct U07 inverse passed. Runtime and scoped technical QA pending. No publication.",
+      "validation": "Independent application/rollback/zero-write repeat and seven ancestors passed; final scoped 277 tests, forced TypeScript and build passed; full-card runtime and sampled layout/Back/reopen passed. Retained source gaps and lint warnings are documented. No publication.",
       "technicalValidation": "U08-technical-validation.md",
       "technicalCoverage": {
         "focusedFiles": 17,
@@ -265,6 +266,29 @@
         "fullProjectVitest": false,
         "wholeLintWarnings": 786,
         "changedTestLintWarnings": 0
+      },
+      "runtimeQa": "U08-runtime-qa.md",
+      "afterCapture": "U08-after-capture.json",
+      "completionValidation": "U08-validation.md",
+      "afterCoverage": {
+        "curriculum": 147,
+        "general": 81,
+        "tabPages": 278,
+        "fields": 258,
+        "rows": 87,
+        "directVisible": 129,
+        "renderedVerbFormSubsets": 19,
+        "mirrors": 54,
+        "metadataOnly": 56,
+        "images": 22,
+        "responsiveRoutes": 21,
+        "responsiveViews": 59,
+        "backAndReopen": true
+      },
+      "runtimeEvidenceSeal": {
+        "path": "output/playwright/lv3-u08/after/after-seal-index-v2.json",
+        "artifacts": 904,
+        "sha256": "d1e03a345affc74fa8d9b4f1ef5abb50fcbbad9b29a59aa7801415eafc1d9273"
       }
     },
     {
