@@ -14,7 +14,9 @@ import puppetProof from '../../../docs/unit-audit-20261105/LV3-puppet-image-repa
 import confirmProof from '../../../docs/unit-audit-20261105/LV3-confirm-image-repair.json';
 import replaceProof from '../../../docs/unit-audit-20261105/LV3-replace-image-repair.json';
 import bankProof from '../../../docs/unit-audit-20261105/LV3-bank-permissible-image-repairs.json';
-import registry from './auditedWordIllustrations.json';
+import publishedRegistry from './auditedWordIllustrations.json';
+import { beforePersuasiveImages, beforePersuasiveText } from './lv3PersuasiveImageRepair.testSupport';
+const registry = beforePersuasiveImages(publishedRegistry);
 import captions from '../wordbeast/illustrationCaptions.json';
 import words from '../../../public/data/v1/words.json';
 import examples from '../../../public/data/v1/examples.json';
@@ -66,7 +68,7 @@ it.each(proof.protectedFiles)('retains U06 checkpoint or direct original bytes f
 });
 
 it('replaces one existing attraction path without appending, then preserves puppet-confirm-replace-bank history', () => {
-  const current = lf(proof.registry.path);
+  const current = beforePersuasiveText(lf(proof.registry.path));
   const before = beforeLV3U07RegistryText(current, proof);
   expect(registry).toHaveLength(341);
   expect(registry.filter(row => row.reviewId === 'LV1-U09-62')).toEqual([proof.registry.after]);
@@ -74,13 +76,13 @@ it('replaces one existing attraction path without appending, then preserves pupp
   expect(registry[proof.registry.index]).toEqual(proof.registry.after);
   expect(proof.registry.index).toBe(128);
   expect(JSON.parse(before)[128]).toEqual(proof.registry.before);
-  expect(beforeU07Images(registry)).toEqual(puppetProof.after);
+  expect(beforeU07Images(publishedRegistry)).toEqual(puppetProof.after);
   expect(u07ImageBytesHash(before)).toBe(puppetProof.afterLfSha256);
   expect(beforeLV3U07RegistryText(current.replace(/\n/g, '\r\n'), proof)).toBe(before);
   expect({ ...proof.registry.after, illustration: { ...proof.registry.after.illustration, path: proof.registry.before.illustration.path } }).toEqual(proof.registry.before);
   const old = beforeLV3ReplaceText(beforeLV3ConfirmText(beforeLV3PuppetText(before, puppetProof), confirmProof), replaceProof);
   expect(lv3ImageHash(beforeLV3GeneralImages(JSON.parse(old), bankProof))).toBe('d9905ded7a45f66015643b401ad1b57d6e8dcb44142218cf131710e99a91dc6a');
-  const drift = structuredClone(registry); drift[0].aliases.push('unrecorded');
+  const drift = structuredClone(publishedRegistry); drift[0].aliases.push('unrecorded');
   expect(() => beforeU07Images(drift)).toThrow(/Imported registry/);
 });
 
@@ -102,7 +104,8 @@ it('changes only the exact observation English token and restores every old raw 
 });
 
 it.each(['registry', 'captions'] as const)('rejects all unknown %s raw, identity, ordering, caption and unrelated drift', key => {
-  const delta = proof[key], text = lf(delta.path);
+  const delta = proof[key], raw = lf(delta.path);
+  const text = key === 'registry' ? beforePersuasiveText(raw) : raw;
   const inverse = key === 'registry' ? beforeLV3U07RegistryText : beforeLV3U07CaptionText;
   const rows = JSON.parse(text) as Record<string, unknown>[];
   const field = key === 'registry' ? 'reviewId' : 'word';
