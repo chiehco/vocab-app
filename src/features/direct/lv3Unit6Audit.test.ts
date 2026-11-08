@@ -72,11 +72,18 @@ it('authenticates all 144 accepted U06 fields and 56 complete actual-after rows'
 it('authenticates all six actual published files and all 31 affected starter rows', () => {
   const expected = {...Object.fromEntries(Object.entries(manifest.files!).map(([path, guard]) => [path, guard.afterByteHash])), ...manifest.derivedAfter};
   assert.equal(Object.keys(expected).length, 6);
+  // Reuse only this test's fully authenticated raw projection; no shared mutable cache.
+  let publishedPack: string | undefined;
   for (const [path, digest] of Object.entries(expected)) {
     const text = lv3AfterUnitPublishedText(unit, path, readFileSync(path, 'utf8').replace(/\r\n/g, '\n'));
     assert.equal(createHash('sha256').update(text).digest('hex'), digest, path);
+    if (path === 'public/data/v1/sa-pack.json') publishedPack = text;
   }
-  const pack = after<Record<string, Row[]>>('public/data/v1/sa-pack.json');
+  assert.ok(publishedPack, 'complete authenticated historical pack required');
+  const pack = JSON.parse(publishedPack) as Record<string, Row[]>;
+  // Fixed semantic anchor from the raw U07-before backup, independently matching
+  // U06's existing sealed after-byte hash before this optimization.
+  assert.equal(auditHash(pack), '2d1530af3c457ff87b7efd67e4898593949409dfc9f0b355f1e4dbfc07e89014', 'complete U06 starter semantic checkpoint');
   const publicPatches = manifest.patches.filter(patch => patch.dataset !== 'curriculum');
   assert.equal(publicPatches.length, 31);
   for (const patch of publicPatches) assert.deepEqual(one(pack[patch.dataset], patch.key, patch.id), {...patch.before, ...patch.after}, patch.id);
