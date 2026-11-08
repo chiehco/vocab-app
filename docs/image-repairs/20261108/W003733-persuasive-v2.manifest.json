@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "createdAtUtc": "2026-11-08T04:31:19Z",
+  "repository": "chiehco/vocab-app",
+  "baseCommit": "99883751926bd6cb4feff70daff56c07afc130cb",
+  "candidateBranch": "assets/persuasive-20261108",
+  "state": "candidate_asset_only_visual_qa_passed_not_integrated",
+  "word": "persuasive",
+  "wordId": "W003733",
+  "captionEn": "Doudou's practical demonstration is persuasive, and a friend opens an umbrella too.",
+  "captionSource": "Task-supplied original sentence; no caption files changed.",
+  "scope": {
+    "originalAssetsRetained": true,
+    "captionsUnchanged": true,
+    "mappingsUnchanged": true,
+    "mainUntouched": true,
+    "deployed": false,
+    "appConsumerAcceptance": "Not run. This isolated candidate is not connected to any app consumer."
+  },
+  "source": {
+    "path": "public/wordbeast/a/W003733.webp",
+    "sha256": "b0eebf77d0bb4c3249d35bb9bb3dadc40529329e589c8678d66fc66b4c2e7381",
+    "gitBlobSha": "7f6f785c84bd25fd5a9f10f582e0ea1d8069864c",
+    "bytes": 21596,
+    "dimensions": [
+      1024,
+      1024
+    ],
+    "retained": true,
+    "observation": "Left Doudou holds an open blue umbrella while the right friend holds a closed, downward-pointing blue umbrella."
+  },
+  "candidate": {
+    "path": "public/wordbeast/candidates-20261108/W003733-persuasive-v2-da5d07815314.webp",
+    "sha256": "da5d078153142abfcbdbfadfc330c86bf8e5823067af53050dbd438e8d71d6d4",
+    "gitBlobSha": "406813d78f5930c4ea93e312e8618811169747a0",
+    "bytes": 58956,
+    "dimensions": [
+      1024,
+      1024
+    ],
+    "generatedPngSha256": "bba683950145d1fbecb0bfe8eb55ce385c97e08395b740b009b5654eab886828",
+    "generatedPngDimensions": [
+      1254,
+      1254
+    ]
+  },
+  "generation": {
+    "tool": "built-in image_gen.imagegen",
+    "acceptedCalls": 1,
+    "pendingCalls": 0,
+    "uncertainOutcome": false,
+    "semanticEditing": "Only imagegen was used for visual editing.",
+    "encoding": "ImageMagick: generated PNG downscaled proportionally to original 1024x1024 dimensions, then encoded WebP at quality 95, method 6. No crop."
+  },
+  "promptPath": "docs/image-repairs/20261108/W003733-persuasive-v2.prompt.txt",
+  "promptSha256": "503b517562d0a2cf78da5256a12e102ee83c2ad26b1504dc50a6c6df155eebf2",
+  "visualQa": {
+    "sourceActuallyViewed": true,
+    "generatedPngActuallyViewed": true,
+    "finalWebpActuallyViewed": true,
+    "totalCharacters": 2,
+    "totalUmbrellas": 2,
+    "rightUmbrellaFullyOpen": true,
+    "rightUmbrellaUprightWithNaturalGrip": true,
+    "rightFriendFaceAndOtherExtendedArmRetained": true,
+    "leftDemonstrationUnchanged": true,
+    "centralSeedlingRetained": true,
+    "watercolorAndCompositionRetained": true,
+    "visibleText": false,
+    "result": "pass",
+    "observation": "The right friend holds a fully open blue umbrella overhead, connected to its hand by a continuous shaft with a hooked handle below. The closed umbrella is gone. Both characters retain two arms, their expressions and positions, and the seedling and rainy beige-paper watercolor scene remain. Generative rendering introduces minor texture differences, so preservation is visual and semantic rather than pixel-identical."
+  },
+  "verification": {
+    "sourceSha256MatchedRequested": true,
+    "sourceGitBlobMatchesBaseCommit": true,
+    "candidateDecodePassed": true,
+    "dimensionsPreserved": true,
+    "buildLintAndUnitTests": "Not run locally for this isolated asset-only candidate. No source code, data, caption or mapping is changed. GitHub CI status is checked separately after push.",
+    "deploymentWorkflow": "Inspected deploy.yml at the base commit: deployment is guarded to main. No main ref update or workflow dispatch is part of this candidate."
+  },
+  "handoff": {
+    "requiresSourceShaRecheckBeforeMapping": true,
+    "preserveAllOriginalCaptions": true,
+    "preserveOriginalAssets": true,
+    "requiresActualConsumerVisualAcceptance": true,
+    "requiresIntegrationHeadChecks": true,
+    "publicationNotAuthorizedByThisCandidateManifest": true
+  }
+}
