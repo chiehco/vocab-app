@@ -91,14 +91,17 @@ it('retains original cloze reconstruction and exact authored question identities
 });
 
 it('preserves independent raw publication guards and rejects metadata or formatting drift',()=>{
+ // Reuse each immutable, fully authenticated raw projection within this test.
+ const published=new Map<string,string>();
  for(const name of ['meta','sa-pack']){
   const path='public/data/v1/'+name+'.json',raw=lv3AfterUnit1PublishedText(path,readFileSync(path,'utf8').replace(/\r\n/g,'\n'));
+  published.set(path,raw);
   const value=JSON.parse(raw),meta=name==='meta'?value:value.meta;
   meta.generatedAt='unrecorded';
   expect(()=>lv3Unit1BeforePublishedText(path,JSON.stringify(value,null,name==='sa-pack'?undefined:2)+'\n')).toThrow('metadata');
   expect(()=>lv3Unit1BeforePublishedText(path,raw+' ')).toThrow('formatting');
  }
- const path='public/data/v1/sa-pack.json',raw=lv3AfterUnit1PublishedText(path,readFileSync(path,'utf8').replace(/\r\n/g,'\n'));
+ const path='public/data/v1/sa-pack.json',raw=published.get(path)!;
  const value=JSON.parse(raw),old=lv3Unit1BeforePublishedText(path,raw);
  value.words[0].unrecordedField=true;
  expect(lv3Unit1BeforePublishedText(path,JSON.stringify(value)+'\n')).not.toBe(old);
