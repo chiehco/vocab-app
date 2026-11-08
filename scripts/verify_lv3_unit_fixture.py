@@ -4,7 +4,7 @@ Usage: python scripts/verify_lv3_unit_fixture.py --unit U04 --capture PATH
 Requires an independently captured before-map and its sealed summary. Not part
 of default test discovery; existing default coverage remains unchanged.
 Current registered fixture shapes: U02/U04/U05/U06/U09 have six affected files;
-U07/U08 have five with notes.json unchanged. Exact source and derived paths are
+U07/U08/U10 have five with notes.json unchanged. Exact source and derived paths are
 checked independently of observed writes. senses.json remains the drift target.
 """
 from __future__ import annotations
@@ -61,11 +61,12 @@ def fixture_expected_write_paths(manifest):
         'LV3-U07': 'src/features/direct/curriculumLV3Unit7.json',
         'LV3-U08': 'src/features/direct/curriculumLV3Unit8.json',
         'LV3-U09': 'src/features/direct/curriculumLV3Unit9.json',
+        'LV3-U10': 'src/features/direct/curriculumLV3Unit10.json',
     }
     unit = manifest.get('unit')
     audit.require(unit in curricula, 'Unregistered real-fixture write shape')
     source = {'public/data/v1/words.json', 'public/data/v1/examples.json', curricula[unit]}
-    if unit not in {'LV3-U07', 'LV3-U08'}:
+    if unit not in {'LV3-U07', 'LV3-U08', 'LV3-U10'}:
         source.add('public/data/v1/notes.json')
     audit.require(set(manifest['files']) == source, 'Unexpected real-fixture source paths')
     audit.require(set(manifest['derivedAfter']) == pipeline.DERIVED,
