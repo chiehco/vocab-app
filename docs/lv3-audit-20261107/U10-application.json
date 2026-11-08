@@ -1,0 +1,119 @@
+{
+  "unit": "LV3-U10",
+  "state": "applied_awaiting_after_qa",
+  "preparedAtCommit": "cdc412acf1b192eeb5d76d32ff7972ad69e745df",
+  "manifestHash": "3c1e39cf0dc6b99871cc0c66b471ddf5c0fba27a2ab116803caed4d1ad43d091",
+  "scopeHash": "d913904fe008310c6d0e2de3bb556aaecf63e09d733b1f1f28fff00f3f03380e",
+  "chainStatus": "committed",
+  "fieldCount": 407,
+  "rowCount": 166,
+  "productWrites": 5,
+  "receipt": "output/lv3-audit-20261107/transactions/20261108T085543809128Z/transaction.json",
+  "receiptState": "committed",
+  "zeroWriteRepeat": true,
+  "rawBackupsVerified": 5,
+  "unchangedInputsVerified": 139,
+  "inputCount": 144,
+  "meta": {
+    "schemaVersion": 2,
+    "generatedAt": "2026-11-08T07:58:43Z",
+    "sourceFile": "萬詞譜母表_SA義項清理整合_20260904.xlsx",
+    "counts": {
+      "words": 6090,
+      "senses": 772,
+      "examples": 7871,
+      "relations": 40,
+      "morphemes": 3798,
+      "media": 1177,
+      "notes": 4290,
+      "examPriority": 3792,
+      "hooks": 0
+    },
+    "wordsHash": "53b1ec6c9156cc400e5137a0e8fe43ce71cff204c926219d4b7ddf85f3fc64ce",
+    "contentHash": "86dd84e7e3c7b6d0a9881e444c68641417296ef1eb86784b7c0ff96db136c8eb",
+    "houseSourceSha256": "98fa208835caf7184acc95f26dcff56ace23ba281ff8d4b9b8c37e18e407be14"
+  },
+  "packMeta": {
+    "schemaVersion": 2,
+    "generatedAt": "2026-11-08T07:58:43Z",
+    "counts": {
+      "words": 5779,
+      "senses": 771,
+      "examples": 7436,
+      "relations": 31,
+      "morphemes": 3696,
+      "notes": 4111,
+      "media": 1128,
+      "examPriority": 3613
+    },
+    "wordsHash": "sa:d54e7bf05505dace64aacfe87dfe309ec8fd029fb2243cec410d8f86239c3bff",
+    "contentHash": "sa:43952f1d5726c3ec7786a68fca596b43f19889edb9707d859f7d2981b03a1cb3"
+  },
+  "changedPaths": {
+    "public/data/v1/examples.json": {
+      "rawSha256": "3d71ee3c0bbcb826441cbe39235f504520b71320d29d4de3ac0806767e9e0e2d",
+      "lfSha256": "3d71ee3c0bbcb826441cbe39235f504520b71320d29d4de3ac0806767e9e0e2d",
+      "bytes": 3669966
+    },
+    "public/data/v1/meta.json": {
+      "rawSha256": "bb3395bc420a1245cb89a77ff6ff29b96ce10d0ce8e4eb54fae956dc66a0e18c",
+      "lfSha256": "bb3395bc420a1245cb89a77ff6ff29b96ce10d0ce8e4eb54fae956dc66a0e18c",
+      "bytes": 597
+    },
+    "public/data/v1/sa-pack.json": {
+      "rawSha256": "edfb53d95272be56004e5acc7ba738934e341b0cd26a7327fe8258f365e2474b",
+      "lfSha256": "edfb53d95272be56004e5acc7ba738934e341b0cd26a7327fe8258f365e2474b",
+      "bytes": 10568382
+    },
+    "public/data/v1/words.json": {
+      "rawSha256": "53b1ec6c9156cc400e5137a0e8fe43ce71cff204c926219d4b7ddf85f3fc64ce",
+      "lfSha256": "53b1ec6c9156cc400e5137a0e8fe43ce71cff204c926219d4b7ddf85f3fc64ce",
+      "bytes": 4713058
+    },
+    "src/features/direct/curriculumLV3Unit10.json": {
+      "rawSha256": "d82871e4f9729409082e06506d0bf39ff3f7fdd325a72d1cf59bf88921b0ffa3",
+      "lfSha256": "d82871e4f9729409082e06506d0bf39ff3f7fdd325a72d1cf59bf88921b0ffa3",
+      "bytes": 93744
+    }
+  },
+  "independentExpectedAfter": "output/lv3-audit-20261107/u10-source-review/independent-expected-after-v1.json",
+  "fixtureMethods": 9,
+  "fixtureReceipts": 5,
+  "fixtureRawBackups": 25,
+  "ancestorProjections": 9,
+  "ancestorLfHashes": 1296,
+  "pythonTsParity": true,
+  "sourceExpectedMatches": true,
+  "starter": {
+    "datasets": {
+      "words": {
+        "fields": 61,
+        "rows": 26,
+        "absentFields": 0,
+        "absentRowIds": []
+      },
+      "examples": {
+        "fields": 22,
+        "rows": 11,
+        "absentFields": 0,
+        "absentRowIds": []
+      },
+      "notes": {
+        "fields": 0,
+        "rows": 0,
+        "absentFields": 0,
+        "absentRowIds": []
+      }
+    },
+    "allNonMetaDatasetsEqual": true,
+    "mediaUnchanged": 1128,
+    "absentProposals": 0
+  },
+  "starterMediaUnchanged": 1128,
+  "sourceRefs": 0,
+  "originalBeforeCaptureUnchanged": true,
+  "runtimeAfter": "pending",
+  "technicalQa": "pending",
+  "release": "not published",
+  "evidenceDirectory": "output/lv3-audit-20261107/u10-integration"
+}
