@@ -175,6 +175,379 @@ export function verifiedU08DiscomfortForms(m:AuditManifest,p:AuditPatch,f:Row){
   });
 }
 
+// Only these three reviewed U09 rows. Inline public records preserve source review;
+// metadata alone is not proof that the source was read. No runtime output references.
+const U09_REVIEW_PATCHES:AuditPatch[]=JSON.parse(String.raw`[
+  {
+    "dataset": "curriculum",
+    "path": "src/features/direct/curriculumLV3Unit9.json",
+    "key": "learningItemId",
+    "id": "LI-LV3U09-G023",
+    "before": {
+      "learningItemId": "LI-LV3U09-G023",
+      "kind": "grammar",
+      "sourcePage": 86,
+      "pattern": "-ior結尾的形容詞表比較，不與than並用，與to並用",
+      "explanationZh": "教材用法標記；例句與教材題目尚未提供。",
+      "review": "source_checked_text_only",
+      "practiceMode": "read_only"
+    },
+    "after": {
+      "explanationZh": "superior、inferior、senior、junior 表比較時接 to，不接 than。原書說「若干」以 -ior 結尾的形容詞，並未說所有此字尾的形容詞都表示比較。",
+      "pattern": "若干以 -ior 結尾的形容詞有比較級意味，與 to 並用，不與 than 並用"
+    },
+    "reason": "以逐頁目視的本列用法與中文解釋補足目前相同的流程占位文字；這是來源支援的教學內容補足，不把未收錄例句或題目宣稱成已提供。 原書說「若干」以 -ior 結尾的形容詞，轉錄遺漏限定語而擴張規則。本次補回「若干」並保留原提醒句形式，比v1改寫為四詞片語更小且更忠實來源；explanationZh既有四詞說明維持不變。這是轉錄範圍錯誤，並非原書本身錯誤。",
+    "evidence": [],
+    "fieldEvidence": {
+      "explanationZh": [
+        {
+          "proposal": "U09-GRM-G023-EXPLANATION",
+          "originFindingIds": [
+            "U09-GRM-G023-EXPLANATION"
+          ],
+          "reason": "以逐頁目視的本列用法與中文解釋補足目前相同的流程占位文字；這是來源支援的教學內容補足，不把未收錄例句或題目宣稱成已提供。",
+          "sources": [
+            {
+              "type": "textbook_photo",
+              "manifest": "scripts/sources/LV3Unit9.json",
+              "file": "20260815_093134.jpg",
+              "page": 86,
+              "sha256": "ef68d8b51419564bf3336fca8c020b82a85bf116318e9a28863e3222a48b5847",
+              "printedLevel": "Level 3",
+              "printedUnit": "Unit 09",
+              "pageType": "content",
+              "pixelsViewed": true,
+              "viewMethod": "EXIF orientation applied and resized proportionally to 1600px; directly viewed complete page pixels, no OCR substitution",
+              "verifiedAt": "2026-11-08T04:30:20.781690+00:00",
+              "verification": "direct_visual_page_header_footer_and_relevant_blocks_checked",
+              "locator": "superior 10 用法",
+              "printedText": "英文中若干以 -ior 結尾的形容詞有比較級的意味，但不可與 than 並用，只可與介詞 to 並用（如上述片語）。"
+            }
+          ],
+          "beforePresent": true
+        }
+      ],
+      "pattern": [
+        {
+          "proposal": "U09-GRM-G023-PATTERN",
+          "originFindingIds": [
+            "U09-GRM-G023-PATTERN"
+          ],
+          "reason": "原書說「若干」以 -ior 結尾的形容詞，轉錄遺漏限定語而擴張規則。本次補回「若干」並保留原提醒句形式，比v1改寫為四詞片語更小且更忠實來源；explanationZh既有四詞說明維持不變。這是轉錄範圍錯誤，並非原書本身錯誤。",
+          "sources": [
+            {
+              "type": "textbook_photo",
+              "manifest": "scripts/sources/LV3Unit9.json",
+              "file": "20260815_093134.jpg",
+              "page": 86,
+              "sha256": "ef68d8b51419564bf3336fca8c020b82a85bf116318e9a28863e3222a48b5847",
+              "printedLevel": "Level 3",
+              "printedUnit": "Unit 09",
+              "pageType": "content",
+              "pixelsViewed": true,
+              "viewMethod": "EXIF orientation applied and resized proportionally to 1600px; directly viewed complete page pixels, no OCR substitution",
+              "verifiedAt": "2026-11-08T04:30:20.781690+00:00",
+              "verification": "direct_visual_page_header_footer_and_relevant_blocks_checked",
+              "locator": "superior 10 用法",
+              "printedText": "英文中若干以 -ior 結尾的形容詞有比較級的意味，但不可與 than 並用，只可與介詞 to 並用（如上述片語）。"
+            }
+          ],
+          "beforePresent": true
+        }
+      ]
+    }
+  },
+  {
+    "dataset": "curriculum",
+    "path": "src/features/direct/curriculumLV3Unit9.json",
+    "key": "learningItemId",
+    "id": "LI-LV3U09-G055",
+    "before": {
+      "learningItemId": "LI-LV3U09-G055",
+      "kind": "grammar",
+      "sourcePage": 92,
+      "pattern": "top the charts（chart用在唱片語中恆用複數）",
+      "explanationZh": "教材用法標記；例句與教材題目尚未提供。",
+      "review": "source_checked_text_only",
+      "practiceMode": "read_only"
+    },
+    "after": {
+      "explanationZh": "top the charts 表示登上排行榜冠軍；本片語用複數 charts。原書的限制是「在上列片語中」，不是所有唱片或排行榜語境。",
+      "pattern": "top the charts（此片語中的 charts 用複數）"
+    },
+    "reason": "以逐頁目視的本列用法與中文解釋補足目前相同的流程占位文字；這是來源支援的教學內容補足，不把未收錄例句或題目宣稱成已提供。 原頁明寫「在上列片語中恆用複數」；現值「用在唱片語中」是誤轉錄並擴大限制。修復為只指 top the charts 片語，不誤指所有音樂排行榜語境。",
+    "evidence": [],
+    "fieldEvidence": {
+      "explanationZh": [
+        {
+          "proposal": "U09-GRM-G055-EXPLANATION",
+          "originFindingIds": [
+            "U09-GRM-G055-EXPLANATION"
+          ],
+          "reason": "以逐頁目視的本列用法與中文解釋補足目前相同的流程占位文字；這是來源支援的教學內容補足，不把未收錄例句或題目宣稱成已提供。",
+          "sources": [
+            {
+              "type": "textbook_photo",
+              "manifest": "scripts/sources/LV3Unit9.json",
+              "file": "20260815_093256.jpg",
+              "page": 92,
+              "sha256": "b92c972fa24cce6c0a51ede16172f015eb710275fc7c14b588aef2c383154176",
+              "printedLevel": "Level 3",
+              "printedUnit": "Unit 09",
+              "pageType": "content",
+              "pixelsViewed": true,
+              "viewMethod": "EXIF orientation applied and resized proportionally to 1600px; directly viewed complete page pixels, no OCR substitution",
+              "verifiedAt": "2026-11-08T04:30:20.781690+00:00",
+              "verification": "direct_visual_page_header_footer_and_relevant_blocks_checked",
+              "locator": "release 25 星號 top the charts 註記",
+              "printedText": "top the charts 登上排行榜冠軍；chart 圖表（此處指「排行榜」，在上列片語中恆用複數）"
+            }
+          ],
+          "beforePresent": true
+        }
+      ],
+      "pattern": [
+        {
+          "proposal": "U09-GRM-G055-PATTERN",
+          "originFindingIds": [
+            "U09-GRM-G055-PATTERN"
+          ],
+          "reason": "原頁明寫「在上列片語中恆用複數」；現值「用在唱片語中」是誤轉錄並擴大限制。修復為只指 top the charts 片語，不誤指所有音樂排行榜語境。",
+          "sources": [
+            {
+              "type": "textbook_photo",
+              "manifest": "scripts/sources/LV3Unit9.json",
+              "file": "20260815_093256.jpg",
+              "page": 92,
+              "sha256": "b92c972fa24cce6c0a51ede16172f015eb710275fc7c14b588aef2c383154176",
+              "printedLevel": "Level 3",
+              "printedUnit": "Unit 09",
+              "pageType": "content",
+              "pixelsViewed": true,
+              "viewMethod": "EXIF orientation applied and resized proportionally to 1600px; directly viewed complete page pixels, no OCR substitution",
+              "verifiedAt": "2026-11-08T04:30:20.781690+00:00",
+              "verification": "direct_visual_page_header_footer_and_relevant_blocks_checked",
+              "locator": "release 25 星號 top the charts 註記",
+              "printedText": "top the charts 登上排行榜冠軍；chart 圖表（此處指「排行榜」，在上列片語中恆用複數）"
+            }
+          ],
+          "beforePresent": true
+        }
+      ]
+    }
+  },
+  {
+    "dataset": "examples",
+    "path": "public/data/v1/examples.json",
+    "key": "exampleId",
+    "id": "EXc9bfeeee",
+    "before": {
+      "exampleId": "EXc9bfeeee",
+      "word": "republic",
+      "sensePos": "n.",
+      "meaningHint": null,
+      "exampleType": "daily",
+      "sentenceEn": "France has been a republic since the late eighteenth century.",
+      "sentenceZh": "法國自十八世紀晚期以來一直是共和國。",
+      "blankSentence": "France has been a _____ since the late eighteenth century.",
+      "answer": "republic",
+      "difficulty": "LV3",
+      "status": "reviewed"
+    },
+    "after": {
+      "sentenceEn": "France first became a republic in the late eighteenth century.",
+      "sentenceZh": "法國在十八世紀晚期首次成為共和國。",
+      "blankSentence": "France first became a _____ in the late eighteenth century."
+    },
+    "reason": "原句 has been ... since 暗示自十八世紀晚期起連續維持共和政體，與中間曾有第二帝國的官方史料衝突。法國國民議會直接明示1792年首次宣告共和，故將連續狀態改為首次成立事件，保留原句十八世紀晚期的歷史資訊、France、republic及原答案。這是史實修正，並非配合圖片改句。 原句 has been ... since 暗示自十八世紀晚期起連續維持共和政體，與中間曾有第二帝國的官方史料衝突。法國國民議會直接明示1792年首次宣告共和，故將連續狀態改為首次成立事件，保留原句十八世紀晚期的歷史資訊、France、republic及原答案。這是史實修正，並非配合圖片改句。 原句 has been ... since 暗示自十八世紀晚期起連續維持共和政體，與中間曾有第二帝國的官方史料衝突。法國國民議會直接明示1792年首次宣告共和，故將連續狀態改為首次成立事件，保留原句十八世紀晚期的歷史資訊、France、republic及原答案。這是史實修正，並非配合圖片改句。",
+    "evidence": [
+      "https://www.assemblee-nationale.fr/dyn/docs/RAPPANR5L17B1479.raw",
+      "https://www.elysee.fr/la-presidence/la-constitution-du-5-fructidor-an-iii-22-aout-1795",
+      "https://www.elysee.fr/en/french-presidency/electing-presidents-of-the-french-republic"
+    ],
+    "fieldEvidence": {
+      "sentenceEn": [
+        {
+          "proposal": "U09-GRM-EX-EXc9bfeeee-SENTENCEEN",
+          "originFindingIds": [
+            "U09-GRM-EX-EXc9bfeeee-SENTENCEEN"
+          ],
+          "reason": "原句 has been ... since 暗示自十八世紀晚期起連續維持共和政體，與中間曾有第二帝國的官方史料衝突。法國國民議會直接明示1792年首次宣告共和，故將連續狀態改為首次成立事件，保留原句十八世紀晚期的歷史資訊、France、republic及原答案。這是史實修正，並非配合圖片改句。",
+          "sources": [
+            {
+              "type": "existing_formal_record",
+              "path": "public/data/v1/examples.json",
+              "sha256": "01871d83187e7afa5d4ab76fb812a7c5b8dd468da77c4a06ee0f079a56a64c2c",
+              "key": "exampleId",
+              "id": "EXc9bfeeee",
+              "verification": "exact_primary_key_and_complete_row_read",
+              "retrievedAt": "2026-11-08T04:30:20.781690+00:00"
+            },
+            {
+              "sourceId": "U09-FACT-FRANCE-FIRST-1792",
+              "type": "official_history",
+              "publisher": "Assemblée nationale",
+              "title": "Rapport no 1479 concernant l’organisation des élections en France, Tome I",
+              "url": "https://www.assemblee-nationale.fr/dyn/docs/RAPPANR5L17B1479.raw",
+              "locator": "Tome I, historical discussion of suffrage, paragraph beginning Le 21 septembre 1792; rendered text line 929",
+              "publishedDate": "2025-05-28",
+              "retrievedAt": "2026-11-08",
+              "verification": "direct_open_and_find_of_full_official_document_succeeded; exact_sentence_read",
+              "evidenceText": "Le 21 septembre 1792, au lendemain de la victoire de Valmy, la Convention nationale proclamera pour la première fois en France la République."
+            },
+            {
+              "sourceId": "U09-FACT-FRANCE-FOUNDATION-1792",
+              "type": "official_constitution_archive",
+              "publisher": "Élysée",
+              "title": "La Constitution du 5 fructidor an III (22 août 1795)",
+              "url": "https://www.elysee.fr/la-presidence/la-constitution-du-5-fructidor-an-iii-22-aout-1795",
+              "locator": "Article 372; rendered text line 461",
+              "documentDate": "1795-08-22",
+              "retrievedAt": "2026-11-08",
+              "verification": "direct_open_and_find_of_official_archived_constitution_succeeded; Article_372_read",
+              "evidenceText": "L'ère française commence au 22 septembre 1792, jour de la fondation de la République."
+            },
+            {
+              "sourceId": "U09-FACT-FRANCE-REPUBLIC",
+              "type": "official_history",
+              "title": "Élysée: Electing presidents of the French Republic",
+              "url": "https://www.elysee.fr/en/french-presidency/electing-presidents-of-the-french-republic",
+              "locator": "Under the 3rd Republic, lines 14–16",
+              "retrievedAt": "2026-11-08",
+              "verification": "direct_open_and_body_inspection_succeeded",
+              "publisher": "Élysée",
+              "evidenceText": "After the twenty years of the Second Empire, the situation had changed hugely: the republicans, who had proclaimed the Republic in September 1870"
+            }
+          ],
+          "beforePresent": true
+        }
+      ],
+      "sentenceZh": [
+        {
+          "proposal": "U09-GRM-EX-EXc9bfeeee-SENTENCEZH",
+          "originFindingIds": [
+            "U09-GRM-EX-EXc9bfeeee-SENTENCEZH"
+          ],
+          "reason": "原句 has been ... since 暗示自十八世紀晚期起連續維持共和政體，與中間曾有第二帝國的官方史料衝突。法國國民議會直接明示1792年首次宣告共和，故將連續狀態改為首次成立事件，保留原句十八世紀晚期的歷史資訊、France、republic及原答案。這是史實修正，並非配合圖片改句。",
+          "sources": [
+            {
+              "type": "existing_formal_record",
+              "path": "public/data/v1/examples.json",
+              "sha256": "01871d83187e7afa5d4ab76fb812a7c5b8dd468da77c4a06ee0f079a56a64c2c",
+              "key": "exampleId",
+              "id": "EXc9bfeeee",
+              "verification": "exact_primary_key_and_complete_row_read",
+              "retrievedAt": "2026-11-08T04:30:20.781690+00:00"
+            },
+            {
+              "sourceId": "U09-FACT-FRANCE-FIRST-1792",
+              "type": "official_history",
+              "publisher": "Assemblée nationale",
+              "title": "Rapport no 1479 concernant l’organisation des élections en France, Tome I",
+              "url": "https://www.assemblee-nationale.fr/dyn/docs/RAPPANR5L17B1479.raw",
+              "locator": "Tome I, historical discussion of suffrage, paragraph beginning Le 21 septembre 1792; rendered text line 929",
+              "publishedDate": "2025-05-28",
+              "retrievedAt": "2026-11-08",
+              "verification": "direct_open_and_find_of_full_official_document_succeeded; exact_sentence_read",
+              "evidenceText": "Le 21 septembre 1792, au lendemain de la victoire de Valmy, la Convention nationale proclamera pour la première fois en France la République."
+            },
+            {
+              "sourceId": "U09-FACT-FRANCE-FOUNDATION-1792",
+              "type": "official_constitution_archive",
+              "publisher": "Élysée",
+              "title": "La Constitution du 5 fructidor an III (22 août 1795)",
+              "url": "https://www.elysee.fr/la-presidence/la-constitution-du-5-fructidor-an-iii-22-aout-1795",
+              "locator": "Article 372; rendered text line 461",
+              "documentDate": "1795-08-22",
+              "retrievedAt": "2026-11-08",
+              "verification": "direct_open_and_find_of_official_archived_constitution_succeeded; Article_372_read",
+              "evidenceText": "L'ère française commence au 22 septembre 1792, jour de la fondation de la République."
+            },
+            {
+              "sourceId": "U09-FACT-FRANCE-REPUBLIC",
+              "type": "official_history",
+              "title": "Élysée: Electing presidents of the French Republic",
+              "url": "https://www.elysee.fr/en/french-presidency/electing-presidents-of-the-french-republic",
+              "locator": "Under the 3rd Republic, lines 14–16",
+              "retrievedAt": "2026-11-08",
+              "verification": "direct_open_and_body_inspection_succeeded",
+              "publisher": "Élysée",
+              "evidenceText": "After the twenty years of the Second Empire, the situation had changed hugely: the republicans, who had proclaimed the Republic in September 1870"
+            }
+          ],
+          "beforePresent": true
+        }
+      ],
+      "blankSentence": [
+        {
+          "proposal": "U09-GRM-EX-EXc9bfeeee-BLANKSENTENCE",
+          "originFindingIds": [
+            "U09-GRM-EX-EXc9bfeeee-BLANKSENTENCE"
+          ],
+          "reason": "原句 has been ... since 暗示自十八世紀晚期起連續維持共和政體，與中間曾有第二帝國的官方史料衝突。法國國民議會直接明示1792年首次宣告共和，故將連續狀態改為首次成立事件，保留原句十八世紀晚期的歷史資訊、France、republic及原答案。這是史實修正，並非配合圖片改句。",
+          "sources": [
+            {
+              "type": "existing_formal_record",
+              "path": "public/data/v1/examples.json",
+              "sha256": "01871d83187e7afa5d4ab76fb812a7c5b8dd468da77c4a06ee0f079a56a64c2c",
+              "key": "exampleId",
+              "id": "EXc9bfeeee",
+              "verification": "exact_primary_key_and_complete_row_read",
+              "retrievedAt": "2026-11-08T04:30:20.781690+00:00"
+            },
+            {
+              "sourceId": "U09-FACT-FRANCE-FIRST-1792",
+              "type": "official_history",
+              "publisher": "Assemblée nationale",
+              "title": "Rapport no 1479 concernant l’organisation des élections en France, Tome I",
+              "url": "https://www.assemblee-nationale.fr/dyn/docs/RAPPANR5L17B1479.raw",
+              "locator": "Tome I, historical discussion of suffrage, paragraph beginning Le 21 septembre 1792; rendered text line 929",
+              "publishedDate": "2025-05-28",
+              "retrievedAt": "2026-11-08",
+              "verification": "direct_open_and_find_of_full_official_document_succeeded; exact_sentence_read",
+              "evidenceText": "Le 21 septembre 1792, au lendemain de la victoire de Valmy, la Convention nationale proclamera pour la première fois en France la République."
+            },
+            {
+              "sourceId": "U09-FACT-FRANCE-FOUNDATION-1792",
+              "type": "official_constitution_archive",
+              "publisher": "Élysée",
+              "title": "La Constitution du 5 fructidor an III (22 août 1795)",
+              "url": "https://www.elysee.fr/la-presidence/la-constitution-du-5-fructidor-an-iii-22-aout-1795",
+              "locator": "Article 372; rendered text line 461",
+              "documentDate": "1795-08-22",
+              "retrievedAt": "2026-11-08",
+              "verification": "direct_open_and_find_of_official_archived_constitution_succeeded; Article_372_read",
+              "evidenceText": "L'ère française commence au 22 septembre 1792, jour de la fondation de la République."
+            },
+            {
+              "sourceId": "U09-FACT-FRANCE-REPUBLIC",
+              "type": "official_history",
+              "title": "Élysée: Electing presidents of the French Republic",
+              "url": "https://www.elysee.fr/en/french-presidency/electing-presidents-of-the-french-republic",
+              "locator": "Under the 3rd Republic, lines 14–16",
+              "retrievedAt": "2026-11-08",
+              "verification": "direct_open_and_body_inspection_succeeded",
+              "publisher": "Élysée",
+              "evidenceText": "After the twenty years of the Second Empire, the situation had changed hugely: the republicans, who had proclaimed the Republic in September 1870"
+            }
+          ],
+          "beforePresent": true
+        }
+      ]
+    }
+  }
+]`);
+function verifiedU09ReviewPatch(m:AuditManifest,p:AuditPatch,dataset:string){
+ return m.unit==='LV3-U09'&&p.dataset===dataset
+  &&U09_REVIEW_PATCHES.some(expected=>expected.dataset===dataset&&isDeepStrictEqual(p,expected));
+}
+export function verifiedU09PatternErratum(m:AuditManifest,p:AuditPatch){
+ return verifiedU09ReviewPatch(m,p,'curriculum');
+}
+export function verifiedU09RepublicFact(m:AuditManifest,p:AuditPatch){
+ return verifiedU09ReviewPatch(m,p,'examples');
+}
+
 export function validateAuditScope(m:AuditManifest,scope:AuditScope):void {
  const keys=(value:object)=>Object.keys(value).sort();
  const sameKeys=(value:object,expected:string[])=>assert.deepEqual(keys(value),[...expected].sort(),'unknown or missing contract fields');
@@ -221,18 +594,22 @@ export function validateAuditScope(m:AuditManifest,scope:AuditScope):void {
   assert.ok(p.before&&typeof p.before==='object'&&!Array.isArray(p.before));assert.equal(p.before[p.key],p.id);
   assert.equal(auditHash(p.before),r.beforeHash);assert.deepEqual(p.after,r.after,'exact scope values required');
   let fields=allowedFields[p.dataset];
+  const republicFact=verifiedU09RepublicFact(m,p);
+  if(republicFact)fields=['sentenceEn','sentenceZh','blankSentence'];
   if(p.dataset==='curriculum'){
+   if(m.unit==='LV3-U09'&&Object.hasOwn(p.fieldEvidence??{},'pattern'))assert.ok(verifiedU09PatternErratum(m,p),'incomplete U09 pattern contract');
    assert.ok(p.before.kind==='grammar'||p.before.kind==='vocabulary','unknown curriculum kind');
    fields=p.before.kind==='grammar'?['explanationZh']:['sensePos','targetMeaningZh','chapterMeaningsZh','meaningSource'];
    if(p.before.kind==='grammar'&&verifiedU06PatternErratum(m,p))fields=['pattern'];
    if(p.before.kind==='grammar'&&verifiedU07PatternErratum(m,p))fields=['pattern','explanationZh'];
+   if(p.before.kind==='grammar'&&verifiedU09PatternErratum(m,p))fields=['pattern','explanationZh'];
    if(Object.hasOwn(p.after,'meaningSource'))assert.ok(['textbook_source_review','textbook_and_dictionary_review'].includes(p.after.meaningSource as string),'invalid reviewed meaning source');
    for(const [field,value]of Object.entries(p.after).filter(([field])=>fields.includes(field))){
     assert.ok(typeof value==='string'&&value.trim(),'invalid curriculum scalar');
     assert.ok(p.fieldEvidence?.[field]?.length,'missing curriculum field source');
    }
   }
-  assert.ok(Object.keys(p.after).length&&Object.keys(p.after).every(k=>fields?.includes(k)&&!protectedKeys.has(k)),'disallowed after field');
+  assert.ok(Object.keys(p.after).length&&Object.keys(p.after).every(k=>fields?.includes(k)&&(!protectedKeys.has(k)||(republicFact&&k==='sentenceEn'))),'disallowed after field');
   assert.ok(Object.entries(p.after).some(([k,v])=>!Object.hasOwn(p.before,k)||auditHash(p.before[k])!==auditHash(v)),'no-op patch');
   assert.ok(typeof p.reason==='string'&&p.reason.trim()&&p.fieldEvidence&&Object.keys(p.fieldEvidence).length,'missing evidence');
   for(const records of Object.values(p.fieldEvidence)){

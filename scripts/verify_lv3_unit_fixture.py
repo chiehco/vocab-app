@@ -3,7 +3,7 @@
 Usage: python scripts/verify_lv3_unit_fixture.py --unit U04 --capture PATH
 Requires an independently captured before-map and its sealed summary. Not part
 of default test discovery; existing default coverage remains unchanged.
-Current registered fixture shapes: U02/U04/U05/U06 have six affected files;
+Current registered fixture shapes: U02/U04/U05/U06/U09 have six affected files;
 U07/U08 have five with notes.json unchanged. Exact source and derived paths are
 checked independently of observed writes. senses.json remains the drift target.
 """
@@ -60,6 +60,7 @@ def fixture_expected_write_paths(manifest):
         'LV3-U06': 'src/features/direct/curriculumLV3Unit6.json',
         'LV3-U07': 'src/features/direct/curriculumLV3Unit7.json',
         'LV3-U08': 'src/features/direct/curriculumLV3Unit8.json',
+        'LV3-U09': 'src/features/direct/curriculumLV3Unit9.json',
     }
     unit = manifest.get('unit')
     audit.require(unit in curricula, 'Unregistered real-fixture write shape')
