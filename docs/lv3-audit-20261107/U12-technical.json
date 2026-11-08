@@ -1,0 +1,111 @@
+{
+  "unit": "LV3-U12",
+  "status": "completed_with_release_blockers_runtime_pending",
+  "applicationCommit": "a71e8c1562994858d3133264f20549c2ab7ce57d",
+  "originalFullRun": {
+    "head": "a71e8c1562994858d3133264f20549c2ab7ce57d",
+    "files": 218,
+    "tests": 3521,
+    "passed": 3507,
+    "failed": 10,
+    "originalOptInSkipped": 4,
+    "source": "output/lv3-audit-20261107/u12-technical-execution-v1/FINAL-REPORT.json",
+    "artifactIndexSha256": "586ed1e230b9d0ad8cee76547f1472dbfa8609ad43be0f949d24ea8a18acff09"
+  },
+  "python": {
+    "modules": 13,
+    "methods": 1176,
+    "passed": 1176
+  },
+  "testOnlyFollowup": {
+    "files": 2,
+    "tests": 16,
+    "passed": 16,
+    "failed": 0,
+    "skipped": 0,
+    "maxDurationMs": 4087.7821,
+    "source": "output/lv3-audit-20261107/u12-technical-testonly-v2/FINAL-REPORT.json",
+    "artifactIndexSha256": "4e4508f5bdd42062229e45d2f31c8c6365285c2450da9a5c9803aa1c2a7677fb",
+    "allActualConsumersIncluded": true,
+    "originalFourHistoricalAssertionsPreservedThroughAuthenticatedInverse": true,
+    "notARerunOf218": true
+  },
+  "testOnlyChangedPaths": [
+    "src/features/direct/recoveredUnit12History.testSupport.ts",
+    "src/features/direct/recoveredUnitIntegration.test.ts",
+    "src/features/direct/recoveredUnitDrafts.test.ts"
+  ],
+  "tsc": "passed_both_rounds",
+  "diffCheck": "passed_both_rounds",
+  "changedLint": "passed_three_test_only_files_not_whole_lint",
+  "wholeLint": {
+    "status": "failed",
+    "observedErrorCount": 3,
+    "observedBeforeU12Build": true,
+    "retainedGeneratedUnits": [
+      "U09",
+      "U10",
+      "U11"
+    ],
+    "rule": "react-hooks/rules-of-hooks",
+    "symbol": "useMultisampledRTT",
+    "notRerunAfterTestOnlyFix": true
+  },
+  "remainingTimeouts": [
+    {
+      "gate": "db whole-pack",
+      "milliseconds": 8233.0396
+    },
+    {
+      "gate": "db caller invariance",
+      "milliseconds": 6726.8668
+    },
+    {
+      "gate": "LV2 U48 exact operations",
+      "milliseconds": 5771.1746
+    },
+    {
+      "gate": "U05 six published files",
+      "milliseconds": 6679.5518
+    },
+    {
+      "gate": "LV4 notes all datasets",
+      "milliseconds": 11595.162
+    },
+    {
+      "gate": "puppet repair",
+      "milliseconds": 6701.0763
+    }
+  ],
+  "timeoutMsUnchanged": 5000,
+  "timeoutsNotRerunAfterTestOnlyFix": true,
+  "U12GuardTests": {
+    "passed": 284,
+    "total": 284
+  },
+  "lv123MainIntegration": {
+    "passed": 3,
+    "total": 3
+  },
+  "U56": {
+    "passed": 10,
+    "total": 10,
+    "historicalIntermittencyNotDeclaredResolved": true
+  },
+  "build": {
+    "status": "passed",
+    "files": 2405,
+    "artifactIndexSha256": "338688cc2bca93f1b859cac3a1d9e4230405a6c6167521aa82d6079453b71f41",
+    "fullCompiledCurriculum": "passed",
+    "compiledAsset": "index-CiSqDQMT.js",
+    "compiledRawSha256": "a31bb5fd6368af94419985a9fa281919a42c96471733359b114e1d1e374c8484",
+    "allBuildRawFilesReverifiedAfterTestOnlyFix": true,
+    "runtimeSourcesUnchangedAfterTestOnlyFix": true
+  },
+  "product144RawAndLfUnchangedAfterTestOnlyFix": true,
+  "protectedOriginalPins": 4999,
+  "release": "blocked_no_push_no_deploy",
+  "fullProjectVitest": false,
+  "physicalPhoneAudioPwaOffline": "not accepted",
+  "afterRuntime": "pending"
+}

@@ -1,3 +1,4 @@
+import {recoveredUnit12OriginalItems} from './recoveredUnit12History.testSupport';
 import { describe, expect, it } from 'vitest';
 import source12 from '../../../scripts/drafts/recovered-units/LV3Unit12.source.json';
 import source18 from '../../../scripts/drafts/recovered-units/LV3Unit18.source.json';
@@ -106,7 +107,8 @@ describe('historical recovered-page drafts and accepted candidate integration', 
   it('keeps historical draft review state while registering accepted text candidates only', () => {
     for (const { source, draft } of units) {
       const accepted = findUnit(source.unit, source.level)!;
-      expect(accepted.items).toEqual(draft.learningItems);
+      const originalItems=source.level==='LV3'&&source.unit===12?recoveredUnit12OriginalItems(accepted.items):accepted.items;
+      expect(originalItems).toEqual(draft.learningItems);
       expect(accepted.questions).toEqual([]);
       expect(accepted.deliveryMode).toBe('text_only');
     }

@@ -1,3 +1,4 @@
+import {recoveredUnit12OriginalItems} from './recoveredUnit12History.testSupport';
 import {auditContract, auditHash, isAuditUnitStep, loadLV3Chain, lv3AfterUnit1PublishedText} from './lv3Audit.testSupport';
 import lv3Checkpoint from '../../../docs/lv3-audit-20261107/U01-checkpoint.json';
 import {lv3Unit1BeforeAudit} from './lv3Unit1Audit.testSupport';
@@ -88,9 +89,9 @@ function stable(value: unknown): unknown {
 }
 const hash = (value: unknown) => createHash('sha256').update(JSON.stringify(stable(value))).digest('hex');
 
-// All 131 direct JSON files belong to the authenticated checkpoint. Nine
+// All 131 direct JSON files belong to the authenticated checkpoint. Ten
 // have later audited changes; rereading the complete migration proof for each
-// of the other 122 files adds no coverage. Their actual bytes remain guarded.
+// of the other 121 files adds no coverage. Their actual bytes remain guarded.
 function historicalDirectProjection() {
   const chain = loadLV3Chain();
   expect(auditHash(lv3Checkpoint)).toBe('6008609dda537f69ef0880d6482c713b1e6e75ec0fa8c3a4af71cdee9b08e4f0');
@@ -101,13 +102,14 @@ function historicalDirectProjection() {
   expect([...changed].sort()).toEqual([
     'src/features/direct/curriculumLV3Unit10.json',
     'src/features/direct/curriculumLV3Unit11.json',
+    'src/features/direct/curriculumLV3Unit12.json',
     'src/features/direct/curriculumLV3Unit4.json', 'src/features/direct/curriculumLV3Unit5.json',
     'src/features/direct/curriculumLV3Unit6.json', 'src/features/direct/curriculumLV3Unit7.json',
     'src/features/direct/curriculumLV3Unit8.json', 'src/features/direct/curriculumLV3Unit9.json',
     'src/features/direct/curriculumUnit2.json',
   ]);
   expect(paths).toHaveLength(131);
-  expect(paths.filter(path => !changed.has(path))).toHaveLength(122);
+  expect(paths.filter(path => !changed.has(path))).toHaveLength(121);
   const project = (path: string, actualText: string) => {
     if (!paths.includes(path)) throw new Error('Unregistered out-of-domain direct JSON path');
     const text = actualText.replace(/\r\n/g, '\n');
@@ -286,12 +288,15 @@ it('retains historical curriculum and question identities with the audited cubes
 
 it('rejects unknown changed-file bytes, unchanged-file bytes, and out-of-domain direct files', () => {
   const {project} = historicalDirectProjection();
-  for (const path of ['src/features/direct/curriculumLV3Unit10.json', 'src/features/direct/curriculumLV3Unit6.json', 'src/features/direct/curriculumLV1Unit16.json']) {
+  for (const path of ['src/features/direct/curriculumLV3Unit12.json', 'src/features/direct/curriculumLV3Unit10.json', 'src/features/direct/curriculumLV3Unit6.json', 'src/features/direct/curriculumLV1Unit16.json']) {
     const text = readFileSync(path, 'utf8');
     expect(() => project(path, text + ' ')).toThrow();
     expect(() => project(path, JSON.stringify({...JSON.parse(text), unrecordedField: true}) + '\n')).toThrow();
   }
   expect(() => project('src/features/direct/unrecorded.json', '{}\n')).toThrow(/out-of-domain/);
+  const changedCallerItems=structuredClone(pack12.learningItems);
+  changedCallerItems[0].targetMeaningZh='unrecorded';
+  expect(()=>recoveredUnit12OriginalItems(changedCallerItems)).toThrow(/Installed U12 items differ/);
 });
 
 it.each([
@@ -314,5 +319,6 @@ it.each([
   expect(unit.questions).toEqual([]);
   expect(pack.releaseReview).toMatchObject({requiresSeparateDataRelease: true, senseApprovalChange: false, artworkAdopted: false});
   const historical = JSON.parse(readFileSync(new URL(`../../../scripts/drafts/recovered-units/${unit.level}Unit${unit.unit}.curriculum.json`, import.meta.url), 'utf8'));
-  expect(unit.items).toEqual(historical.learningItems);
+  const originalItems=unit.level==='LV3'&&unit.unit===12?recoveredUnit12OriginalItems(unit.items):unit.items;
+  expect(originalItems).toEqual(historical.learningItems);
 });
