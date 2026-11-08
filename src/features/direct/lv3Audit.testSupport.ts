@@ -1221,7 +1221,10 @@ export function lv3AfterUnitFile<T>(afterUnit:string,path:string,value:T):T {
   const raw=readFileSync(new URL('../../../'+path,import.meta.url),'utf8').replace(/\r\n/g,'\n');
   const digest=createHash('sha256').update(raw).digest('hex');
   assert.equal(digest,state.bytes[path],'target checkpoint byte drift');
-  assert.deepEqual(out,path===BUILDER?raw:JSON.parse(raw),'target checkpoint semantic drift');
+  const target=path===BUILDER?raw:JSON.parse(raw);
+  // Same strict comparison, with a short negative diagnostic before constructing a full array diff.
+  if(path!==BUILDER)assert.ok(isDeepStrictEqual(out,target),'target checkpoint semantic drift');
+  assert.deepEqual(out,target,'target checkpoint semantic drift');
  }
  return out;
 }

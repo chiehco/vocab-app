@@ -1,0 +1,552 @@
+{
+  "schemaVersion": 1,
+  "unit": "LV3-U11",
+  "status": "completed_with_release_blockers",
+  "createdAtUtc": "2026-11-08T17:06:06.903176+00:00",
+  "baseCommit": "78b6f95da79ae7ec665a4a26bb5909d486e14ed6",
+  "conclusion": "Technical checks completed, not all green and not publication approval. Browser AFTER is separate and has not been performed by this worker.",
+  "firstRun": {
+    "directory": "output/lv3-audit-20261107/u11-technical-resume-20261108",
+    "actualFiles": 75,
+    "intendedFiles": 51,
+    "tests": 4812,
+    "passed": 4792,
+    "failed": 16,
+    "originalOptInSkipped": 4,
+    "extraCandidateCollectionFailures": 4,
+    "scopeError": "Vitest positional filters matched retained output candidate copies. Complete original command, logs, JSON,213 TS2353 diagnostics and failure evidence are preserved.",
+    "correctiveEvidence": "FINAL-REPORT-scope-addendum.json"
+  },
+  "v2": {
+    "directory": "output/lv3-audit-20261107/u11-technical-execution-v2-20261109",
+    "files": 51,
+    "tests": 1767,
+    "passed": 1760,
+    "failed": 3,
+    "originalOptInSkipped": 4,
+    "noOutputCandidateFiles": true,
+    "verifiedByDiscoveryAndActualResults": true,
+    "fullProjectCoverage": false,
+    "U11": {
+      "tests": 70,
+      "passed": 70,
+      "failed": 0,
+      "originalInstancesRetained": 54,
+      "newStrictEquivalenceCases": 12,
+      "newFullSourceControls": 4
+    },
+    "checks": {
+      "tsc": {
+        "command": [
+          "node",
+          "node_modules/typescript/bin/tsc",
+          "-b",
+          "--force",
+          "--noEmit"
+        ],
+        "exitCode": 0,
+        "seconds": 55.813,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "changed-lint": {
+        "command": [
+          "node",
+          "node_modules/oxlint/bin/oxlint",
+          "src/features/direct/lv3Audit.testSupport.ts",
+          "src/features/direct/lv3Unit11Text.test.ts",
+          "src/db/recoveredUnitUpdate.test.ts",
+          "src/db/unitAudit.testSupport.ts",
+          "src/db/unitAudit.testSupport.test.ts",
+          "src/features/siege/model.test.ts",
+          "src/features/direct/recoveredUnitIntegration.test.ts"
+        ],
+        "exitCode": 0,
+        "seconds": 0.16,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "diff-check": {
+        "command": [
+          "git",
+          "--git-dir=C:/Users/USER/Documents/Codex/lv2-release-20261107/.git/worktrees/lv3-unit-audit-20261107",
+          "--work-tree=C:\\Users\\USER\\Documents\\Codex\\lv3-unit-audit-20261107",
+          "diff",
+          "--check"
+        ],
+        "exitCode": 0,
+        "seconds": 0.142,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrSha256": "3745a7e6f2bf92112bd32483f2c9338f3d59a2fedc248b07b30a924cd51b777c"
+      },
+      "exact-discovery": {
+        "command": [
+          "C:\\Users\\USER\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+          "-B",
+          "C:\\Users\\USER\\Documents\\Codex\\lv3-unit-audit-20261107\\output\\lv3-audit-20261107\\u11-technical-execution-v2-20261109\\exact-scope-runner-final.py",
+          "discover",
+          "--parent-approved-integrated-v2"
+        ],
+        "exitCode": 0,
+        "seconds": 2.806,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "exact-run": {
+        "command": [
+          "C:\\Users\\USER\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+          "-B",
+          "C:\\Users\\USER\\Documents\\Codex\\lv3-unit-audit-20261107\\output\\lv3-audit-20261107\\u11-technical-execution-v2-20261109\\exact-scope-runner-final.py",
+          "run",
+          "--parent-approved-integrated-v2"
+        ],
+        "exitCode": 1,
+        "seconds": 371.441,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "whole-lint": {
+        "command": [
+          "node",
+          "node_modules/oxlint/bin/oxlint"
+        ],
+        "exitCode": 1,
+        "seconds": 26.364,
+        "stdoutSha256": "f1930d7a435ff323fa400e24904757ac92eb12cbe6a5a54a9ee1a1178a46706f",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "build": {
+        "command": [
+          "node",
+          "node_modules/vite/bin/vite.js",
+          "build",
+          "--outDir",
+          "C:\\Users\\USER\\Documents\\Codex\\lv3-unit-audit-20261107\\output\\lv3-audit-20261107\\u11-technical-execution-v2-20261109\\production-dist"
+        ],
+        "exitCode": 0,
+        "seconds": 99.637,
+        "stdoutSha256": "ce87fdce084b1e9eca25069963ac937437c0c34d47b0a3026213564e61d29f5d",
+        "stderrSha256": "f7ac71b398b8ca39dfb2abc7f1e39a6c48a89079338c57065988d89067b1f87c"
+      },
+      "verify-product-build": {
+        "command": [
+          "node",
+          "C:\\Users\\USER\\Documents\\Codex\\lv3-unit-audit-20261107\\output\\lv3-audit-20261107\\u11-technical-execution-v2-20261109\\verify-product-build.mjs"
+        ],
+        "exitCode": 0,
+        "seconds": 4.723,
+        "stdoutSha256": "1a65e9c8f048e20433c275020abe89d523d3f541ce62e603425c76de7ac23256",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "parity-discovery": {
+        "exitCode": 0,
+        "seconds": 2.3185115000233054,
+        "command": [
+          "node",
+          "node_modules/vitest/vitest.mjs",
+          "list",
+          "--config",
+          "C:\\Users\\USER\\Documents\\Codex\\lv3-unit-audit-20261107\\output\\lv3-audit-20261107\\u11-technical-execution-v2-20261109\\parity.config.ts",
+          "--filesOnly",
+          "--json=C:\\Users\\USER\\Documents\\Codex\\lv3-unit-audit-20261107\\output\\lv3-audit-20261107\\u11-technical-execution-v2-20261109\\parity-discovery.json"
+        ],
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "parity-run": {
+        "exitCode": 0,
+        "seconds": 5.370084699941799,
+        "command": [
+          "node",
+          "node_modules/vitest/vitest.mjs",
+          "run",
+          "--config",
+          "C:\\Users\\USER\\Documents\\Codex\\lv3-unit-audit-20261107\\output\\lv3-audit-20261107\\u11-technical-execution-v2-20261109\\parity.config.ts",
+          "--reporter=default",
+          "--reporter=json",
+          "--outputFile=C:\\Users\\USER\\Documents\\Codex\\lv3-unit-audit-20261107\\output\\lv3-audit-20261107\\u11-technical-execution-v2-20261109\\parity-results.json"
+        ],
+        "stdoutSha256": "91c037323d54a959798bbfa285e9cc51bfc785bd109fd4b00e703c2f5dbbd33e",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "failures": [
+      {
+        "file": "src/db/unitAudit.testSupport.test.ts",
+        "title": "reverses only recorded starter corrections while retaining the old whole-pack fixture",
+        "milliseconds": 6728.563699999999,
+        "messages": [
+          "Error: STACK_TRACE_ERROR\n    at task (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1784:27)\n    at Object.<anonymous> (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1817:16)\n    at Object.<anonymous> (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1563:28)\n    at chain (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:599:14)\n    at C:/Users/USER/Documents/Codex/lv3-unit-audit-20261107/src/db/unitAudit.testSupport.test.ts:200:1\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at VitestModuleEvaluator._runInlinedModule (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vitest/dist/module-evaluator.js:206:4)\n    at VitestModuleRunner.directRequest (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1259:59)\n    at VitestModuleRunner.cachedRequest (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1166:73)\n    at VitestModuleRunner.import (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1120:10)"
+        ]
+      },
+      {
+        "file": "src/db/unitAudit.testSupport.test.ts",
+        "title": "keeps the caller pack untouched when restoring sealed historical media",
+        "milliseconds": 5598.913999999997,
+        "messages": [
+          "Error: STACK_TRACE_ERROR\n    at task (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1784:27)\n    at Object.<anonymous> (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1817:16)\n    at Object.<anonymous> (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1563:28)\n    at chain (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:599:14)\n    at C:/Users/USER/Documents/Codex/lv3-unit-audit-20261107/src/db/unitAudit.testSupport.test.ts:1515:1\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at VitestModuleEvaluator._runInlinedModule (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vitest/dist/module-evaluator.js:206:4)\n    at VitestModuleRunner.directRequest (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1259:59)\n    at VitestModuleRunner.cachedRequest (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1166:73)\n    at VitestModuleRunner.import (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1120:10)"
+        ]
+      },
+      {
+        "file": "src/features/direct/lv3Unit5Audit.test.ts",
+        "title": "authenticates all 56 actual U05 after rows and all six published files",
+        "milliseconds": 5209.9239,
+        "messages": [
+          "Error: STACK_TRACE_ERROR\n    at task (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1784:27)\n    at Object.<anonymous> (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1817:16)\n    at Object.<anonymous> (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1563:28)\n    at chain (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:599:14)\n    at C:/Users/USER/Documents/Codex/lv3-unit-audit-20261107/src/features/direct/lv3Unit5Audit.test.ts:12:1\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at VitestModuleEvaluator._runInlinedModule (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vitest/dist/module-evaluator.js:206:4)\n    at VitestModuleRunner.directRequest (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1259:59)\n    at VitestModuleRunner.cachedRequest (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1166:73)\n    at VitestModuleRunner.import (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1120:10)"
+        ]
+      }
+    ],
+    "originalOptInSkipIdentities": [
+      {
+        "path": "src/features/direct/lv3AuditPipeline.fixture.test.ts",
+        "title": "matches all 37 Python fixture changes and six exact raw inverses in TypeScript"
+      },
+      {
+        "path": "src/features/direct/lv3UnitFixtureParity.test.ts",
+        "title": "matches every row and normalized published byte in a real unit fixture"
+      },
+      {
+        "path": "src/features/direct/starterMediaRealCheckpoint.test.ts",
+        "title": "real sealed starter media checkpoint authenticates the real descriptor, four raw fixtures and all 144 captured inputs"
+      },
+      {
+        "path": "src/features/direct/starterMediaRealCheckpoint.test.ts",
+        "title": "real sealed starter media checkpoint rejects the actually applied migration when its registration is only prepared"
+      }
+    ],
+    "selectedTimings": [
+      {
+        "file": "C:/Users/USER/Documents/Codex/lv3-unit-audit-20261107/src/features/direct/lv3Unit11Text.test.ts",
+        "title": "rejects whole U11 senses order drift without mutating the caller",
+        "status": "passed",
+        "milliseconds": 64.28869999999733
+      },
+      {
+        "file": "C:/Users/USER/Documents/Codex/lv3-unit-audit-20261107/src/features/direct/lv3Unit11Text.test.ts",
+        "title": "rejects whole U11 media order drift without mutating the caller",
+        "status": "passed",
+        "milliseconds": 87.02120000000286
+      },
+      {
+        "file": "C:/Users/USER/Documents/Codex/lv3-unit-audit-20261107/src/features/direct/lv3Unit56Text.test.ts",
+        "title": "LV3 U5 checked text delivery fresh install resolves every existing mapping without a full-data fallback",
+        "status": "passed",
+        "milliseconds": 3233.8334
+      },
+      {
+        "file": "C:/Users/USER/Documents/Codex/lv3-unit-audit-20261107/src/features/direct/lv3Unit56Text.test.ts",
+        "title": "LV3 U6 checked text delivery fresh install resolves every existing mapping without a full-data fallback",
+        "status": "passed",
+        "milliseconds": 3327.9796000000006
+      },
+      {
+        "file": "C:/Users/USER/Documents/Codex/lv3-unit-audit-20261107/src/features/direct/lv3Unit56Text.test.ts",
+        "title": "updating the starter resolves both new units and retains progress and personal groups",
+        "status": "passed",
+        "milliseconds": 3936.282299999999
+      },
+      {
+        "file": "C:/Users/USER/Documents/Codex/lv3-unit-audit-20261107/src/features/vocabulary/lv3PuppetImageRepair.test.ts",
+        "title": "pins proof, source and candidate assets, original captions/media and historical proofs and guards",
+        "status": "passed",
+        "milliseconds": 4962.3412
+      }
+    ]
+  },
+  "productAndBuild": {
+    "status": "passed",
+    "completeIndependentSourceDocuments": 6,
+    "fields": 497,
+    "rows": 213,
+    "starterChanges": [
+      {
+        "dataset": "words",
+        "rows": 37,
+        "fields": 88
+      },
+      {
+        "dataset": "examples",
+        "rows": 8,
+        "fields": 8
+      },
+      {
+        "dataset": "notes",
+        "rows": 1,
+        "fields": 1
+      }
+    ],
+    "standaloneJSONByteMatches": 5,
+    "exactCompleteCompiledCurriculumMatches": 1,
+    "assets": [
+      {
+        "path": "public/wordbeast/a/W003733.webp",
+        "sha256": "b0eebf77d0bb4c3249d35bb9bb3dadc40529329e589c8678d66fc66b4c2e7381"
+      },
+      {
+        "path": "public/wordbeast/candidates-20261108/W003733-persuasive-v2-da5d07815314.webp",
+        "sha256": "da5d078153142abfcbdbfadfc330c86bf8e5823067af53050dbd438e8d71d6d4"
+      }
+    ],
+    "noASTFallbackOrTokenOnlySubstitute": true
+  },
+  "exactParity": {
+    "status": "passed",
+    "exitCode": 0,
+    "oldTestFixturesReportAllByteUnchanged": true,
+    "helperHashes": {
+      "src/features/direct/lv3Audit.testSupport.ts": "9e57be6d323c08e02b98ac63252e50bdc4d9400d7f40a6d69b5106a46a74e3b5",
+      "src/db/unitAudit.testSupport.ts": "e7d91e0f95848bc89e83f567436c82be63e0810ba0e836f04b828da8757a3ef2"
+    },
+    "assertionCallsRetained": 14,
+    "originalTimeoutUnchanged": true,
+    "testSummary": {
+      "numTotalTests": 1,
+      "numPassedTests": 1,
+      "numFailedTests": 0,
+      "numPendingTests": 0
+    },
+    "newReport": {
+      "status": "passed",
+      "manifestHash": "8e3c3edc8f76deceeba55c3ee909bfff9960980e8d96c5ca8ad364a700ac0377",
+      "patchCount": 213,
+      "exactRawInverseFiles": 6,
+      "pythonAfterEqualsTypeScriptAfter": true,
+      "allBeforeAfterInverseHashesMatch": true,
+      "unknownRawDriftRejected": true,
+      "worktreeApplication": false
+    },
+    "noProductWrites": true
+  },
+  "integrity": {
+    "product144Unchanged": true,
+    "productHashes": {
+      "public/data/v1/exam_priority.json": "25408e1d71eed8bde6a7102cdae5a3ea04fa2621de6241cbfd21a9466295d2da",
+      "public/data/v1/examples.json": "9834d0517eb211ec6b8dd5875381a824128384aea5742015d65ee5bd7b5b9921",
+      "public/data/v1/hooks.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+      "public/data/v1/media.json": "301530d43b31e3dec1d001ef7c50b67539552d8a2d22e74c4a8026cff6026c89",
+      "public/data/v1/meta.json": "7cf7cfe296cf66f31593310435fd0043d526f81ffdf715af0d0443464b4ec238",
+      "public/data/v1/morphemes.json": "1f8e2d4d4c9deb98efd541c358fc42956564a5c2f2370aaf8e83ed59f9f4702f",
+      "public/data/v1/notes.json": "00b457233c2aa7485fd58449bf83ad4f06230cf2734736f8a640967775f2cb8a",
+      "public/data/v1/relations.json": "86dfb53de9cfacb1740058699da888181cf4d753e64ec92d51be4f4a7448a3dc",
+      "public/data/v1/sa-pack.json": "e0ca3d74e32f45f9b6f5e04161aa452ac152c79526a7e38d1567778aa753c86f",
+      "public/data/v1/senses.json": "13ce0c10308ba74134ede9117245bb85d10ec42eb2997968f3b044332e725ea4",
+      "public/data/v1/words.json": "72c0096501369c084210d05fc1c59f8a5a4179f5dbb2ce1ef4290cedce67b998",
+      "scripts/build_sa_pack.py": "6bf7f32ccb3b8937e78027814fffd58339d3876f7594aa40890ef0b2aad96d0e",
+      "src/features/direct/choiceOptions.json": "d31800b695c4e7d35a5a942c6a15f4ac8a22eecdd59530c6bc59fae6b366809a",
+      "src/features/direct/curriculum.json": "aa33e61779d74aed3e4af7cc8f684f4391e275ea915b1a0c8758ce6ff8f198a2",
+      "src/features/direct/curriculumLV1Unit16.json": "88e42f01f9f6bc15b6be5d403b82a7e61b6baf8e7e192bd538c489c1c3f660aa",
+      "src/features/direct/curriculumLV1Unit17.json": "536bbf56ff8807394877a7af176cf85f015229cbfa098b2a3ba81653bb3b68f4",
+      "src/features/direct/curriculumLV1Unit18.json": "e316407786fa6199f2cec8267b974bcdf12bd8aacb3fb06bdc59bdc217c0104e",
+      "src/features/direct/curriculumLV1Unit19.json": "6787000a23754bc08868c5b7fbdd4ebce982dd936023043c729d921751fbf426",
+      "src/features/direct/curriculumLV1Unit20.json": "ed2a29f49111ad22888d4cefbf95b743c384ee60f748e348dd7c7cc468133943",
+      "src/features/direct/curriculumLV1Unit21.json": "f3be41817d3fd913ed82116cff5bcb9bcedb4e3c58b3418ffd76ae028033bc5a",
+      "src/features/direct/curriculumLV2Unit27.json": "e5e694d1c18f7f2b77cf365c9351a56811a46c1b605aaab786daab89c23e6be1",
+      "src/features/direct/curriculumLV2Unit28.json": "af4c405b412a7a7b1ad2da3d6c45aa5044c118027d16fb0ad7c18133d7a7f370",
+      "src/features/direct/curriculumLV2Unit29.json": "6773f5067d839e8d00fdcacf0c7c8cf1b69ccb6fa7ea0a114957acd3f8a9a9a1",
+      "src/features/direct/curriculumLV2Unit30.json": "174bb43280df500e4cac381f76bf6b3f007946781a3b05641dcffb6fe92d0c3f",
+      "src/features/direct/curriculumLV2Unit31.json": "9d4883b3223ce13e938eadc1377d21612ef843dd295640de0cb47ab536ef0e1c",
+      "src/features/direct/curriculumLV2Unit32.json": "c6e9b1b01c23b035921a7924b89810cebeabed951ba7dc8fe204ec6e10568553",
+      "src/features/direct/curriculumLV2Unit33.json": "fdee8ddbb60f55e64143627cd060783b559a1f29298e04691071872867dffda3",
+      "src/features/direct/curriculumLV2Unit34.json": "048dd9c0c899768e7c01d825a1ccdb8a492bcc38f7a17aaab2e360e46f3685d5",
+      "src/features/direct/curriculumLV2Unit35.json": "0c1a779953b1004562368e01435c25c9dbdaee480de005022caf6aa5cf45cd43",
+      "src/features/direct/curriculumLV2Unit36.json": "dcdd500ac06c5a5bef6e1b0e18a6a707c224bffe1c6ffbc51cf0c460c808a51a",
+      "src/features/direct/curriculumLV2Unit37.json": "839d36cabb8461174f70433f287a734df6cab64df4ae3bb58df0e4cea9bab408",
+      "src/features/direct/curriculumLV2Unit38.json": "0ba8acb516b86cfdf7e1cf53ddc3f0587419ad48972f0ebf3ddc443ad6578ef1",
+      "src/features/direct/curriculumLV2Unit39.json": "9591a5b2da93b30e241110773c4d779165b235c13d1403233204719745ccfc20",
+      "src/features/direct/curriculumLV2Unit40.json": "92e0b9b26066822d1860898f1f685e7cc3c1edf7e99e103b31ee1e05af6bc9ca",
+      "src/features/direct/curriculumLV2Unit41.json": "c4737b767f9d6d29b2fd1cefbe9e15db89f1beb9b61363b741332fdbe24924a0",
+      "src/features/direct/curriculumLV2Unit42.json": "4bf823e18a0a3937ac94ade2c63b7f9addc91acf0a5cc24748013b7a8818c8b7",
+      "src/features/direct/curriculumLV2Unit43.json": "4529c20ed018261641169676cbad1f007a7789b2bd55f9d534f2402d18a25f87",
+      "src/features/direct/curriculumLV2Unit44.json": "4e5205428971706281f046be2699edbfb62bd8c2f6f4d70426727025d37c3bbb",
+      "src/features/direct/curriculumLV2Unit45.json": "692a3020ad1fe63a5f8a6b81dd7d12f0213a9e5ef3f1da52b44582f88c7114e8",
+      "src/features/direct/curriculumLV2Unit46.json": "cbe17097cff5dabe97ff00fc2d21031dedf47d9b91743e17a3761362122dc326",
+      "src/features/direct/curriculumLV2Unit47.json": "812076ef4674bd78a201ed38820a9e5a7abe12858f234e84664c21ae13683651",
+      "src/features/direct/curriculumLV2Unit48.json": "64cc0762ac11323f18360aab49500a27f28838b6618cdf7f044ad0183ee756a3",
+      "src/features/direct/curriculumLV2Unit49.json": "116cab1afef978f5708b5bf63bc7099584cb0c270c5f78ecf53930fdd171aaca",
+      "src/features/direct/curriculumLV2Unit50.json": "f9111d03d090384f958914b80f8fab782c7ac7396d509486eaa95b212a153c4a",
+      "src/features/direct/curriculumLV3Unit10.json": "d82871e4f9729409082e06506d0bf39ff3f7fdd325a72d1cf59bf88921b0ffa3",
+      "src/features/direct/curriculumLV3Unit11.json": "551dc51599aaaa94b90f0d99548cabe05973a90344810475b9431df4f0b0f1c1",
+      "src/features/direct/curriculumLV3Unit12.json": "41dd99db99db60b33190993f6e30ea7205be4b3c8cff35d8fc0279fc4ddc34fe",
+      "src/features/direct/curriculumLV3Unit13.json": "8ae4d26dc313cd885c44d39c225eab3e0a4dd14afb7268391249411f66218372",
+      "src/features/direct/curriculumLV3Unit14.json": "161a48f81edfe9ca96cd97ff7afb1c38300d1854fbaaf2ad9b4031219b3362ce",
+      "src/features/direct/curriculumLV3Unit15.json": "34891663cee92fdec7df2a212790dcb33b3f6421538aa523349408a581d603fe",
+      "src/features/direct/curriculumLV3Unit16.json": "0d75c844840d5f9a9a8e1e9510aa1c574d2714882ad271dee214cd47cf7d71e6",
+      "src/features/direct/curriculumLV3Unit17.json": "0522118550a8c1faf7903abcc1c056dde321410a0dbdd3269dd759b600881c65",
+      "src/features/direct/curriculumLV3Unit18.json": "940bafd7ed4e0c137c065aa11519e46f3920fc0eeea9437cd0e9fdfa70108ee5",
+      "src/features/direct/curriculumLV3Unit19.json": "5db8becaa554b2cba8fc96f5ee4e9b103ad73a483e293300b563a563f80c1932",
+      "src/features/direct/curriculumLV3Unit20.json": "0aca5644c22cf7cacc1992eadb24ade25944051e3530d0266b1622deb29ad609",
+      "src/features/direct/curriculumLV3Unit21.json": "e36b83b44425f644b0d85661cd794ce457c83062bf900daf476e7024bd9deeb4",
+      "src/features/direct/curriculumLV3Unit22.json": "f00e41d5e6937fe612a9257c46f2bd13f787b87942095ff6ee47a17f54f3e304",
+      "src/features/direct/curriculumLV3Unit23.json": "55f3cc1046176315aa88b89657386fd57d2980e4299ff99bbb4b8f6727fd8c9c",
+      "src/features/direct/curriculumLV3Unit24.json": "f47d53f348c2187cdd2a45e883576538a37f4d942a0a523ea055a89c67d870b8",
+      "src/features/direct/curriculumLV3Unit4.json": "f1c62911e7505192d90a5431211b0ec1c3bf19d8c817ea379d0c5c3c2ea1b708",
+      "src/features/direct/curriculumLV3Unit5.json": "710f142b1ecd1fe7ac6c3d9e0ce41aef02d8174a15d347952d4e0db05b97ef0e",
+      "src/features/direct/curriculumLV3Unit6.json": "eda2bebd963d6e6b3606984071c644de378d163d9b2a7a92d195d499c81d9e40",
+      "src/features/direct/curriculumLV3Unit7.json": "5f69e130e4c37dfa45ba7aa926081fd396e35a8ee1ed97d2e0522ad25841ce8c",
+      "src/features/direct/curriculumLV3Unit8.json": "2cebe0d0cff3f4746f4683c6e5389dce37de146fa4466581451544736cfa3e2e",
+      "src/features/direct/curriculumLV3Unit9.json": "f753d88cdf09515c31ce2ac670819e61a1250d09c65faaf9b5efe3fcbf08816e",
+      "src/features/direct/curriculumLV4Unit1.json": "e6119bcd857ac0dd37eac184994756397bf45447c09fb368b9146c9fbea5aa9e",
+      "src/features/direct/curriculumLV4Unit10.json": "7dc8cf88bae89d95586e0b1531f867bbb5eb27ad3bda5bd04b1082d676f9624c",
+      "src/features/direct/curriculumLV4Unit11.json": "bf5c8471b3d1ff30d09fb280bcb589716faf4c4f2f0d2c6d17d96ba7facf318c",
+      "src/features/direct/curriculumLV4Unit12.json": "38016d3af5efa7b6e0516b7d1c08a7cccba76e5010bed355f9575c3282a8fe01",
+      "src/features/direct/curriculumLV4Unit13.json": "899093d20181ad5881b5be253ba410898951d76ec27c1f4bf537da36651c1f20",
+      "src/features/direct/curriculumLV4Unit14.json": "3a1e73160c4a98ae9c5e0c675a205f362151c4f26a4f5ac458cd3b88ee733c89",
+      "src/features/direct/curriculumLV4Unit15.json": "3507126997447a63736b17b94c0c9acf4b5e62f778cf71471cdad52e361977b9",
+      "src/features/direct/curriculumLV4Unit16.json": "f697d102d9611db2943f9a78a5df47f6c3afdeada31df8d9d6c32ed060ebf61a",
+      "src/features/direct/curriculumLV4Unit17.json": "3b69d94e5d99a4616e4f8aeadbb72abd1040c9cec18e97cc1ac4803e6897933a",
+      "src/features/direct/curriculumLV4Unit18.json": "304871c3672cb38ddbb235addd278e15ea38534285b497fb402679e90e575332",
+      "src/features/direct/curriculumLV4Unit19.json": "e69a95414ea8b753918e246b34ea82aa257d3a0c6777baa40d8d5edce31092b8",
+      "src/features/direct/curriculumLV4Unit2.json": "1617e262a35d29c718cdf6c6fda90ad2ee03fa7c7b9fb78c822b4b8ffef9b368",
+      "src/features/direct/curriculumLV4Unit20.json": "62090801e0f517884d75735adff16a91cdd9dc8fb7f4b1f4475bb4cbf962decc",
+      "src/features/direct/curriculumLV4Unit21.json": "d647c7114af93c3ffc85ef2742c7de8c9a3206e0e9152713a9f4f14385efb851",
+      "src/features/direct/curriculumLV4Unit22.json": "342b47f02b8bdaa593494008b625a1371a460161bd767c58dab8abbf29208752",
+      "src/features/direct/curriculumLV4Unit23.json": "a60e1a41a28466eeb39d731b8777be984dd74794eb8210e7ec8640a19c69ffc0",
+      "src/features/direct/curriculumLV4Unit24.json": "afd3274722727234d7517cd9598f1592fea7be64f91668a8a698764025984131",
+      "src/features/direct/curriculumLV4Unit3.json": "47a1a430e5dd93fa5aee423c83aed0764608f674ff0ecc78b0fc2d531461f69d",
+      "src/features/direct/curriculumLV4Unit4.json": "134e56f0d366c79561f5ca0ce9e0136262968c88e3f140f549dee402f4e1d3b6",
+      "src/features/direct/curriculumLV4Unit5.json": "e61fb5310ced98190d19a7d0b05365816d202a3077739028651691876fb3e25e",
+      "src/features/direct/curriculumLV4Unit6.json": "df7b97be039c5f29bd38f415292511b97952786e9dbfaf5fae00518ae127eafa",
+      "src/features/direct/curriculumLV4Unit7.json": "56f3529d0bb6ff9d7cc248f757579d087d9d39c46cfa33ba5b53bb4ca5ad05a1",
+      "src/features/direct/curriculumLV4Unit8.json": "cbb04be3eedd55042e1593f9bc6f88d8e0df3dd64f4229a6ba559266513de0ec",
+      "src/features/direct/curriculumLV4Unit9.json": "f121229dd7cee8246b0cccaf613f16921ef6e52adc007eec59a07b13b408467d",
+      "src/features/direct/curriculumLV5Unit1.json": "25eb1f1383880c254ab5898caa76d861f9c4d03ed02e9c69a214616e613e6e99",
+      "src/features/direct/curriculumLV5Unit10.json": "008506674067c9e2b8e9dc2d47d002eda752608df23d8914c9d5b4075a25856b",
+      "src/features/direct/curriculumLV5Unit11.json": "eaef992217d39567bdaf536dd916887a3829f1508cc17c62399bbea55c48cee5",
+      "src/features/direct/curriculumLV5Unit12.json": "2cc2cfd9358608248aff6264ad2731d18f2ee238cca5bfdc9bad7f8ecf2a90a8",
+      "src/features/direct/curriculumLV5Unit13.json": "88a47c7f9395094787787fccc1853037029bf0dae63e02d60a76778233567040",
+      "src/features/direct/curriculumLV5Unit14.json": "6fa2f9d81fa607380c9528bf8859cce7a0b112059bb8c8d8e61550515e4cba3a",
+      "src/features/direct/curriculumLV5Unit15.json": "b578a4e4cddf080e37c77bdd1276d3e3997fcc3612afc0babf4181aacc0232a2",
+      "src/features/direct/curriculumLV5Unit16.json": "9bbf382fc49a9121c8748bec2786c762502373fe15ff572a0c370439894ba452",
+      "src/features/direct/curriculumLV5Unit18.json": "bfd0ae63948b68c464901126a646655f6f7e1ea5889ed6c69a283819f8412b1a",
+      "src/features/direct/curriculumLV5Unit22.json": "7ef33afbd33d48d86e469d7ec8b2cfed7a261e8d162447b6e2b364aeb8229669",
+      "src/features/direct/curriculumLV5Unit25.json": "6084c2b8111b3c272cbc431d10998d51416184f90cf81ed7fd2c43ec3a02cee2",
+      "src/features/direct/curriculumLV5Unit3.json": "c1441a17173cd07c2ef390b4d1e93afd4aa2dea4d764dce42d660ad8b967ea63",
+      "src/features/direct/curriculumLV5Unit4.json": "d6a9542a15023163af8a35df8d985e709603da6a3f0c2c30fead23a2913b4291",
+      "src/features/direct/curriculumLV5Unit5.json": "7a4debb14ded711c01e2268b7c32e1c2ec17c0efddd2df048a2b777972c1283c",
+      "src/features/direct/curriculumLV5Unit6.json": "281807f6095eb2df5bcdbefd6192f3afa539b35eeda5af81f4f0d029495dd06d",
+      "src/features/direct/curriculumLV5Unit7.json": "62cd259705e0b527207eada57b1a1976e349a1f6fbad06bf57c6deb7d6d593c7",
+      "src/features/direct/curriculumLV5Unit8.json": "b6cf5b026ec6306da03eced59030a6a86c77d61133bb5bf5537173b2545c3169",
+      "src/features/direct/curriculumLV5Unit9.json": "15b9268bede161a51c6cb4890a5f2b1ba7a6ec714670b8a88005afb19f46d5d6",
+      "src/features/direct/curriculumLV6Unit1.json": "2f9917b7547f4a1c34d8483687815067476eee26be6987287f7d23aa956e42fa",
+      "src/features/direct/curriculumLV6Unit10.json": "d548ce0aa461fea6791d5ddc3f96dd547440ac6ffa71f9acb2335bad63be75b8",
+      "src/features/direct/curriculumLV6Unit11.json": "84d3f9980af48651b1f0fbd6ee42eb79118ef70d68af5acb31af60c42dd9ec6d",
+      "src/features/direct/curriculumLV6Unit12.json": "7e92e8acf5574c65c4d663343e241b40fc287f788ff243ff6555ef572bea3c24",
+      "src/features/direct/curriculumLV6Unit13.json": "7f86e2e71ee95bfa6ce550339e08ed40dfd83a0fa0d988bc9cda3d75ee61924e",
+      "src/features/direct/curriculumLV6Unit14.json": "1d860762305406cd3963af9dab0c0226669c1f35f33327dfbcddcd255cc5146d",
+      "src/features/direct/curriculumLV6Unit15.json": "73a03030535c4c8892a6107cfcca4373e7006a7c33be022471bcff57e7769cfd",
+      "src/features/direct/curriculumLV6Unit16.json": "fa789a367a6b97bd409ab18f225d5cc7d70322171d0f7fc5bc8cab1f2633c76e",
+      "src/features/direct/curriculumLV6Unit17.json": "456a3806fd89e44cfc679c828fff247f9a3f56596fd845b36eec743c16876dd8",
+      "src/features/direct/curriculumLV6Unit18.json": "a67bece3b643ca01556b097745a8dfe5a0b1370c5d35b2cb235c68938dce7de3",
+      "src/features/direct/curriculumLV6Unit19.json": "d86fbbf6ae3d845ce0b155a5878725b171bff9ae5838bd9a105ec88badd31519",
+      "src/features/direct/curriculumLV6Unit2.json": "1b0a4749b35217ec3b39589be5e8036efe592f4ee989758917ec17063191c25f",
+      "src/features/direct/curriculumLV6Unit20.json": "5a93b253358fea8e2cc7fde0ff0243a84da7c7521fa9f4daa60b7f0e9ff98a38",
+      "src/features/direct/curriculumLV6Unit21.json": "d64927d7a2b2a2501787b8f9f24e747d3f210b9bba3bf254e47b4edf45f2c69d",
+      "src/features/direct/curriculumLV6Unit22.json": "7ca1bbdb2f7a39c6b5507e68b9b3dd7ef25cde0fdd6335fe00098ef4f94d12eb",
+      "src/features/direct/curriculumLV6Unit23.json": "f768479dc0f298fdf1585d540e375ff0df68e00a81591d1c1ad0a84faa958f43",
+      "src/features/direct/curriculumLV6Unit24.json": "ee6d9905df7050054eeb03ff18c7f6b69f218eaa49653b6cfca5aa09bac8332b",
+      "src/features/direct/curriculumLV6Unit25.json": "6d3bf89a59982236b8148baeff6e9c7bd191d82f1522149fef018ce57e78c481",
+      "src/features/direct/curriculumLV6Unit3.json": "140a096b5201cce80d709dfa40abe1b0f2d5842c651cb88449e01f732cee9a51",
+      "src/features/direct/curriculumLV6Unit4.json": "b76d0320c3f781fb0e6f304f15fa4710d7fe2e9ad50795b91dedec95997412e0",
+      "src/features/direct/curriculumLV6Unit5.json": "5bb6b34c69b3901fff3ec73a836376857580d87fa2f9368c7f1882a6e4ca962b",
+      "src/features/direct/curriculumLV6Unit6.json": "015298e71c84f52ed50f99f4330b84e2b73ce82538b5322f33d66c043e4979bb",
+      "src/features/direct/curriculumLV6Unit7.json": "fd14ad2a840f75a8e8f371ffb6b6471bffd5d7db1438a76a8f78b04b297a1870",
+      "src/features/direct/curriculumLV6Unit8.json": "6f0835f073a800f1add282a202acbb3280bfb07a9bc1936db3b54dcdcf137234",
+      "src/features/direct/curriculumLV6Unit9.json": "44136ce9d38ca29c098cb4fd01fc0f4ac1f2d039663d4d76da00d2716eec3fb3",
+      "src/features/direct/curriculumUnit2.json": "34d7df39da9e96cb95af4372d44a8c73a0e6b862597636343eed6e2c54c6dd35",
+      "src/features/direct/glossary.json": "7f9c5f8a29b55074e52cc70859606b6539949f15eeb3dfe47a09ec4ada138766",
+      "src/features/direct/grammarQuestions.json": "b50b30086e650207460daeca4b81461f4b7494b3f34c2cbf2b669158ab30fbf0",
+      "src/features/direct/liveabcBasic.json": "65dd7609f47b8aed9e03345cbe5cbbb45a41f42ed061649e14b2c4a6602799fb",
+      "src/features/direct/optionContextRationalesLV4Unit20.json": "7c04c7b936ee57f055bcd6d8493a44376436388f951dbf7c5f3330d66a0800aa",
+      "src/features/direct/optionContextRationalesLV4Unit20Batch2.json": "308d2b4dffcc16c786f395788aee9a672f6f2b6582df4bcd73a4971a308232fa",
+      "src/features/direct/optionContextRationalesLV4Unit20Batch3.json": "901c80eb1e5a4b8cacc525ea5601183e03b3219fa670c8bfe39cfa600b01f988",
+      "src/features/direct/practiceTextRevisionsLV4Unit20.json": "6bddcb5b1dd6fb1f29a6440c35fe383b9f60b4524ace619481c47666ff81cb10",
+      "src/features/direct/practiceVariantsLV4Unit17.json": "ba98649240d887703b2b6950181d5ce8925f0e8da5e874d523e07cce295702fb",
+      "src/features/direct/questions.json": "994b4a6052f2d01bcdca974cf597f07a559ef746e13455cab2bcab4880b1d4ae",
+      "src/features/direct/wordCatalog.json": "eb0eba4ad2ae66769b9f9b8c0b02473da76fae00ea6d287e96d58552a681d268",
+      "src/features/vocabulary/lv1ReviewedImages.json": "ebe92eedf1e982b1de7ec58cbfc1dd7586c7338aee55d1b1580d9df61624e71f"
+    },
+    "protectedFilesBeforeFinalDocs": 17548,
+    "unexpectedChanges": [],
+    "authorizedTrackedFileCount": 7,
+    "authorizedTrackedFiles": {
+      "src/db/recoveredUnitUpdate.test.ts": "91e4305b986e0f51d55445568167938bba8860e5acd3b2f0fc5690685c9d74d1",
+      "src/db/unitAudit.testSupport.ts": "e7d91e0f95848bc89e83f567436c82be63e0810ba0e836f04b828da8757a3ef2",
+      "src/db/unitAudit.testSupport.test.ts": "78076021572b6f7f843ac0ebdecaf0919fa3771c10c5d8e2ea862494b7f48e8b",
+      "src/features/direct/lv3Audit.testSupport.ts": "9e57be6d323c08e02b98ac63252e50bdc4d9400d7f40a6d69b5106a46a74e3b5",
+      "src/features/direct/lv3Unit11Text.test.ts": "1ad95a1394d86c5f335fee229371ca92228ec01039ef22ccd86800bf06e29e3d",
+      "src/features/direct/recoveredUnitIntegration.test.ts": "4aac0eb33179e8e7f6022452f804a99b729ce7bad500ccb9fd2dfc3c8dee5897",
+      "src/features/siege/model.test.ts": "abb245ac205dd1f1eb826c089f8ba6546073d846193fac159281f4b9280ede7f"
+    },
+    "fixedIndependentSourceEvidenceCount": 227,
+    "originalAssertionsPreserved": true,
+    "originalDataAndNegativeCasesPreserved": true,
+    "originalTimeoutsPreserved": true,
+    "defaultTestTimeoutMs": 5000,
+    "existingExplicitTimeoutsNotChanged": true,
+    "fullFreshInstallUpdateBodiesPreserved": true,
+    "oldReportsNotOverwritten": true,
+    "notes": "Historical expectations use authenticated projections; assertions and full original timed bodies were not removed, split or shrunk. Only six approved integrated changes plus the previously applied recovery integration adaptation are present."
+  },
+  "releaseBlockers": {
+    "currentFailed5000msTests": [
+      {
+        "file": "src/db/unitAudit.testSupport.test.ts",
+        "title": "reverses only recorded starter corrections while retaining the old whole-pack fixture",
+        "milliseconds": 6728.563699999999,
+        "messages": [
+          "Error: STACK_TRACE_ERROR\n    at task (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1784:27)\n    at Object.<anonymous> (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1817:16)\n    at Object.<anonymous> (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1563:28)\n    at chain (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:599:14)\n    at C:/Users/USER/Documents/Codex/lv3-unit-audit-20261107/src/db/unitAudit.testSupport.test.ts:200:1\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at VitestModuleEvaluator._runInlinedModule (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vitest/dist/module-evaluator.js:206:4)\n    at VitestModuleRunner.directRequest (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1259:59)\n    at VitestModuleRunner.cachedRequest (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1166:73)\n    at VitestModuleRunner.import (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1120:10)"
+        ]
+      },
+      {
+        "file": "src/db/unitAudit.testSupport.test.ts",
+        "title": "keeps the caller pack untouched when restoring sealed historical media",
+        "milliseconds": 5598.913999999997,
+        "messages": [
+          "Error: STACK_TRACE_ERROR\n    at task (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1784:27)\n    at Object.<anonymous> (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1817:16)\n    at Object.<anonymous> (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1563:28)\n    at chain (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:599:14)\n    at C:/Users/USER/Documents/Codex/lv3-unit-audit-20261107/src/db/unitAudit.testSupport.test.ts:1515:1\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at VitestModuleEvaluator._runInlinedModule (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vitest/dist/module-evaluator.js:206:4)\n    at VitestModuleRunner.directRequest (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1259:59)\n    at VitestModuleRunner.cachedRequest (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1166:73)\n    at VitestModuleRunner.import (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1120:10)"
+        ]
+      },
+      {
+        "file": "src/features/direct/lv3Unit5Audit.test.ts",
+        "title": "authenticates all 56 actual U05 after rows and all six published files",
+        "milliseconds": 5209.9239,
+        "messages": [
+          "Error: STACK_TRACE_ERROR\n    at task (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1784:27)\n    at Object.<anonymous> (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1817:16)\n    at Object.<anonymous> (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1563:28)\n    at chain (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:599:14)\n    at C:/Users/USER/Documents/Codex/lv3-unit-audit-20261107/src/features/direct/lv3Unit5Audit.test.ts:12:1\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at VitestModuleEvaluator._runInlinedModule (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vitest/dist/module-evaluator.js:206:4)\n    at VitestModuleRunner.directRequest (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1259:59)\n    at VitestModuleRunner.cachedRequest (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1166:73)\n    at VitestModuleRunner.import (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1120:10)"
+        ]
+      }
+    ],
+    "wholeLintErrors": [
+      "output/lv3-audit-20261107/u10-final-technical-20261108/production-dist/assets/createTownScene-BJzyjbnk.js:4225:48187: error react-hooks(rules-of-hooks): React Hook \"useMultisampledRTT\" is called in function \"Anonymous\" that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word \"use\".",
+      "output/lv3-audit-20261107/u09-final-technical-20261108/production-dist/assets/createTownScene-ClS0rRm4.js:4225:48187: error react-hooks(rules-of-hooks): React Hook \"useMultisampledRTT\" is called in function \"Anonymous\" that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word \"use\"."
+    ],
+    "uncuredIntermittentFailures": [
+      "U56 original fresh-install and update5000ms failures remain recorded. Latest10/10 pass does not establish a targeted robust performance fix.",
+      "Puppet original5000ms proof failures remain recorded. Latest proof4962ms passed with about38ms headroom; no robust performance repair is established."
+    ],
+    "noBlindRetries": true,
+    "noTimeoutIncrease": true,
+    "noLintConfigurationChange": true
+  },
+  "reuse": {
+    "pythonNineTempAndIndependentSourceEvidence": "Reused under unchanged product,source andPython-script identities.",
+    "typeScriptExactU11Parity": "Revalidated once against changed helper using a new isolated copy/report destination,14 originalassert calls,original5000ms,exact1-file discovery. Original fixture/expected/test/success report bytes unchanged."
+  },
+  "artifacts": {
+    "finalHandoff": "output/lv3-audit-20261107/u11-technical-execution-v2-20261109/FINAL-HANDOFF.json",
+    "artifactIndex": "output/lv3-audit-20261107/u11-technical-execution-v2-20261109/artifact-index.json",
+    "discovery": "output/lv3-audit-20261107/u11-technical-execution-v2-20261109/discovery-verified.json",
+    "actualScope": "output/lv3-audit-20261107/u11-technical-execution-v2-20261109/run-scope-verification.json",
+    "resultJSON": "output/lv3-audit-20261107/u11-technical-execution-v2-20261109/results.json",
+    "productBuild": "output/lv3-audit-20261107/u11-technical-execution-v2-20261109/product-build-verification.json",
+    "newParity": "output/lv3-audit-20261107/u11-technical-execution-v2-20261109/parity-final-verification.json",
+    "integrity": "output/lv3-audit-20261107/u11-technical-execution-v2-20261109/final-integrity.json"
+  },
+  "workflow": {
+    "ledgerChanged": false,
+    "applicationReportChanged": false,
+    "committedByThisWorker": false,
+    "pushed": false,
+    "deployed": false,
+    "browserAfter": "not performed",
+    "physicalPhone": "not tested"
+  }
+}

@@ -1,4 +1,4 @@
-import {lv3BeforeAudit} from '../features/direct/lv3Audit.testSupport';
+import {lv3BeforeAudit,lv3AfterUnitFile} from '../features/direct/lv3Audit.testSupport';
 import lv2u45Wicked from '../../docs/unit-audit-20261105/LV2-U45-wicked-usage-followup.json';
 import lv2u41Usage from '../../docs/unit-audit-20261105/LV2-U41-usage-followup.json';
 import lv2u40Visible from '../../docs/unit-audit-20261105/LV2-U40-visible-pos-followup.json';
@@ -328,7 +328,14 @@ export function beforeUnitAudit<T>(dataset:string, value:T):T {
     const sha=(v:unknown)=>createHash('sha256').update(JSON.stringify(v)).digest('hex');
     assert.equal(meta.wordsHash,'sa:'+sha(pack.words),'starter wordsHash must describe its saved rows');
     assert.equal(meta.contentHash,'sa:'+sha({sourceHash:fullMeta.contentHash,datasets}),'starter contentHash must describe its saved rows and full source');
+    // Authenticate the complete current pack and reverse the registered migration
+    // through the existing strict chain. U05 is the sealed pre-migration checkpoint.
+    const beforeMediaMigration=lv3AfterUnitFile('LV3-U05','public/data/v1/sa-pack.json',pack) as Row;
     for(const [key,rows]of Object.entries(datasets))pack[key]=beforeUnitAudit(key,rows);
+    // Only media and its count belong to that migration. Keep the row-audit inverse
+    // and the independently pinned historical whole-pack expectation unchanged.
+    pack.media=structuredClone(beforeMediaMigration.media);
+    (meta.counts as Row).media=((beforeMediaMigration.meta as Row).counts as Row).media;
     // Exact pre-audit starter metadata from base commit 29cfc684; outer historical
     // fixtures, counts, identities and all other fields remain unchanged.
     Object.assign(meta,{generatedAt:'2026-10-26T06:21:08Z',wordsHash:'sa:b4368e734b16cb960a2a5cebf391cb0882a239c3db59ce4339d34af2ec876f4f',contentHash:'sa:a1be9813d37281f0719656c3234557b8288c12d7f7b1f5ad378786314bb5dddd'});

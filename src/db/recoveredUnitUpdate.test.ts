@@ -15,6 +15,15 @@ import { exportProgress, validateBackup } from '../backup/backup';
 import { claimDailyCheckIn, presentRewardRound, awardAnswer } from '../features/rewards/store';
 import { purchaseAndPlace } from '../features/town/decorations/store';
 import {beforeUnitAudit} from './unitAudit.testSupport';
+import assert from 'node:assert/strict';
+import {lv3AfterUnitPublishedText} from '../features/direct/lv3Audit.testSupport';
+
+// Restore only historical media from the authenticated complete pre-migration pack.
+// All existing old words/collections and original timed update bodies remain unchanged.
+const historicMediaPackPath='public/data/v1/sa-pack.json';
+const historicMediaCurrentRaw=readFileSync(historicMediaPackPath,'utf8').replace(/\r\n/g,'\n');
+assert.deepEqual(JSON.parse(historicMediaCurrentRaw),pack,'imported current pack must equal current raw bytes');
+const historicMediaPack=JSON.parse(lv3AfterUnitPublishedText('LV3-U05',historicMediaPackPath,historicMediaCurrentRaw)) as typeof pack;
 
 const additional = new Set(baseline.additionalWordIds);
 const oldWords = pack.words.filter(w => !additional.has(w.wordId));
@@ -27,6 +36,7 @@ const oldPack = {...pack, meta: baseline.starterMeta, words: oldWords,
   morphemes: pack.morphemes.filter(row => oldNames.has(row.word)),
   notes: pack.notes.filter(row => oldNames.has(row.word)),
   examPriorities: pack.examPriorities.filter(row => oldIds.has(row.wordId)),
+  media: historicMediaPack.media,
 };
 function stable(value: unknown): unknown {
   if (Array.isArray(value)) return value.map(stable);
@@ -113,3 +123,11 @@ it.each(['starter','full'])('keeps all 14 nonempty progress tables on normal %s 
   expect(await contentDb.words.bulkGet(baseline.additionalWordIds)).not.toContain(undefined);
   expect(await snapshot()).toEqual(before);
 }, 30000);
+
+it('authenticates the whole current pack before restoring all historical media and rejects unknown raw bytes',()=>{
+  expect(oldPack.media).toEqual(historicMediaPack.media);
+  expect(oldPack.media).toHaveLength(baseline.datasets.find(d=>d.name==='media')!.count);
+  expect(pack.media).toHaveLength(1128);
+  expect(()=>lv3AfterUnitPublishedText('LV3-U05',historicMediaPackPath,historicMediaCurrentRaw+' ')).toThrow(/drift/);
+  expect(JSON.parse(historicMediaCurrentRaw)).toEqual(pack);
+});

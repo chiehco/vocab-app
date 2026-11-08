@@ -1,6 +1,8 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
+import { readFileSync } from 'node:fs';
+import { lv3AfterUnitFile } from '../direct/lv3Audit.testSupport';
 import { eligibleWords, scriptJson, siegeUnitWords } from './model';
-import { curriculumUnits } from '../direct/model';
+import { curriculumUnits, type LearningItem } from '../direct/model';
 import { lv1ReviewedGroups } from '../direct/lv1ReviewedGroups';
 import type { WordRecord } from '../../db/types';
 
@@ -21,13 +23,24 @@ describe('siege unit scope', () => {
     { unit: 5, reading: 112, pending: 20, before: 109, playable: 90, excluded: ['CONSOLIDATE', 'WINNER'], retained: [] },
     { unit: 6, reading: 105, pending: 20, before: 103, playable: 85, excluded: ['LOST', 'CHEETAH'], retained: ['practically', 'warning'] },
   ])('excludes pending supplement clues from LV3 Unit $unit while retaining textbook reading', ({ unit, reading, pending, before, playable, excluded, retained }) => {
-    const source = curriculumUnits.find(u => u.level === 'LV3' && u.unit === unit)!;
+    // Keep the historical pending-supplement fixture, authenticated by the sealed audit chain.
+    const path = `src/features/direct/curriculumLV3Unit${unit}.json`;
+    const historical = lv3AfterUnitFile('LV3-U02', path, JSON.parse(readFileSync(path, 'utf8')));
+    const source = { ...curriculumUnits.find(u => u.level === 'LV3' && u.unit === unit)!, items: historical.learningItems as LearningItem[] };
     const vocabulary = source.items.filter(i => i.kind === 'vocabulary');
     expect(vocabulary).toHaveLength(reading);
     expect(vocabulary.filter(i => i.meaningSource === 'unmapped_supplement')).toHaveLength(pending);
     expect(eligibleWords(vocabulary.map(i => [i.displayWord ?? '', i.targetMeaningZh ?? '']))).toHaveLength(before);
 
-    const words = siegeUnitWords('LV3', unit, []);
+    // Exercise the real siege selector with only its unit lookup replaced for this historical case.
+    const historicalUnits = curriculumUnits.map(u => u.level === 'LV3' && u.unit === unit ? source : u);
+    const lookup = vi.spyOn(curriculumUnits, 'find').mockImplementation((predicate, thisArg) => historicalUnits.find(predicate, thisArg));
+    let words: ReturnType<typeof siegeUnitWords>;
+    try {
+      words = siegeUnitWords('LV3', unit, []);
+    } finally {
+      lookup.mockRestore();
+    }
     expect(words).toHaveLength(playable);
     expect(words.some(([, meaning]) => meaning === '教材補充詞；義項待核對。')).toBe(false);
     for (const spelling of excluded) expect(words.some(([word]) => word === spelling)).toBe(false);

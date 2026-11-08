@@ -393,7 +393,8 @@ it('reverses only36 integrated U07 fields and protects every other exact word fi
  expect(integratedU07Sources.facts).toHaveLength(36);
  const prior=new Set([...originalSources.facts,...followupSources.facts,...u16FormSources.facts,...u17FormSources.facts,...u18FormSources.facts,...u19FormSources.facts,...u20FormSources.facts,...u21FormSources.facts,...integratedU05U06Sources.facts].map(f=>f.wordId));
  expect(integratedU07Sources.facts.every(f=>!prior.has(f.wordId))).toBe(true);
- const words:Row[]=JSON.parse(readFileSync('public/data/v1/words.json','utf8'));
+ // Project authenticated LV3 edits away before testing the original LV1/LV2 form contract.
+ const words:Row[]=lv3BeforeAudit('words',JSON.parse(readFileSync('public/data/v1/words.json','utf8')));
  for(const p of integratedU07.patches){const row=structuredClone(words.find(w=>w.wordId===p.id)!);if(p.id==='W000476')restoreRecordedAuditPatch('words',row,lv2u45.patches.find(q=>q.dataset==='words'&&q.id===p.id)!);if(['W001768','W000041'].includes(p.id))restoreRecordedAuditPatch('words',row,lv2u40.patches.find(q=>q.dataset==='words'&&q.id===p.id)!);if(p.id==='W000672')restoreRecordedAuditPatch('words',row,lv2u38.patches.find(q=>q.dataset==='words'&&q.id===p.id)!);if(p.id==='W000732')restoreRecordedAuditPatch('words',row,lv2u37.patches.find(q=>q.dataset==='words'&&q.id===p.id)!);if(p.id==='W000008')restoreRecordedAuditPatch('words',row,lv2u35.patches.find(q=>q.dataset==='words'&&q.id===p.id)!);if(["W001523"].includes(p.id))restoreRecordedAuditPatch('words',row,lv2u29.patches.find(q=>q.dataset==='words'&&q.id===p.id)!);const original={...row};delete original.verbForms;restoreRecordedAuditPatch('words',row,p);expect(row).toEqual(original);expect(row).not.toHaveProperty('verbForms');
   for(const key of ['base','past','pastParticiple','sourceRef','status']){const wrong=structuredClone(p);(wrong.after.verbForms as Row)[key]='unverified';expect(()=>restoreRecordedAuditPatch('words',{...original,...wrong.after},wrong)).toThrow();}
   for(const key of ['word','pos','status','meaningZh','meaningEn','usagePattern'])expect(()=>restoreRecordedAuditPatch('words',{...original,...p.after,[key]:'unrecorded'},p)).toThrow();
@@ -405,7 +406,8 @@ it('reverses only49 integrated U08-U09 fields and protects every other exact wor
  expect(integratedU08U09Sources.facts).toHaveLength(49);
  const prior=new Set([...originalSources.facts,...followupSources.facts,...u16FormSources.facts,...u17FormSources.facts,...u18FormSources.facts,...u19FormSources.facts,...u20FormSources.facts,...u21FormSources.facts,...integratedU05U06Sources.facts,...integratedU07Sources.facts].map(f=>f.wordId));
  expect(integratedU08U09Sources.facts.every(f=>!prior.has(f.wordId))).toBe(true);
- const words:Row[]=JSON.parse(readFileSync('public/data/v1/words.json','utf8'));
+ // Project authenticated LV3 edits away before testing the original LV1/LV2 form contract.
+ const words:Row[]=lv3BeforeAudit('words',JSON.parse(readFileSync('public/data/v1/words.json','utf8')));
  for(const p of integratedU08U09.patches){const row=structuredClone(words.find(w=>w.wordId===p.id)!);if(p.id==='W000169')restoreRecordedAuditPatch('words',row,lv2u45.patches.find(q=>q.dataset==='words'&&q.id===p.id)!);if(p.id==='W000125')restoreRecordedAuditPatch('words',row,lv2u44.patches.find(q=>q.dataset==='words'&&q.id===p.id)!);if(["W001307","W000677"].includes(p.id))restoreRecordedAuditPatch('words',row,lv2u29.patches.find(q=>q.dataset==='words'&&q.id===p.id)!);const original={...row};delete original.verbForms;restoreRecordedAuditPatch('words',row,p);expect(row).toEqual(original);expect(row).not.toHaveProperty('verbForms');
   for(const key of ['base','past','pastParticiple','sourceRef','status']){const wrong=structuredClone(p);(wrong.after.verbForms as Row)[key]='unverified';expect(()=>restoreRecordedAuditPatch('words',{...original,...wrong.after},wrong)).toThrow();}
   for(const key of ['word','pos','status','meaningZh','meaningEn','usagePattern'])expect(()=>restoreRecordedAuditPatch('words',{...original,...p.after,[key]:'unrecorded'},p)).toThrow();
@@ -465,7 +467,8 @@ it('reverses only18 integrated U14 fields and protects every other exact word fi
  expect(integratedU14Sources.facts).toHaveLength(18);
  const prior=new Set([...originalSources.facts,...followupSources.facts,...u16FormSources.facts,...u17FormSources.facts,...u18FormSources.facts,...u19FormSources.facts,...u20FormSources.facts,...u21FormSources.facts,...integratedU05U06Sources.facts,...integratedU07Sources.facts,...integratedU08U09Sources.facts,...integratedU10Sources.facts,...integratedU11Sources.facts,...integratedU12Sources.facts,...integratedU13Sources.facts].map(f=>f.wordId));
  expect(integratedU14Sources.facts.every(f=>!prior.has(f.wordId))).toBe(true);
- const words:Row[]=JSON.parse(readFileSync('public/data/v1/words.json','utf8'));
+ // Project authenticated LV3 edits away before testing the original LV1/LV2 form contract.
+ const words:Row[]=lv3BeforeAudit('words',JSON.parse(readFileSync('public/data/v1/words.json','utf8')));
  for(const p of integratedU14.patches){const row=structuredClone(words.find(w=>w.wordId===p.id)!);const original={...row};delete original.verbForms;restoreRecordedAuditPatch('words',row,p);expect(row).toEqual(original);expect(row).not.toHaveProperty('verbForms');
   for(const key of ['base','past','pastParticiple','sourceRef','status']){const wrong=structuredClone(p);(wrong.after.verbForms as Row)[key]='unverified';expect(()=>restoreRecordedAuditPatch('words',{...original,...wrong.after},wrong)).toThrow();}
   for(const key of ['word','pos','status','meaningZh','meaningEn','usagePattern'])expect(()=>restoreRecordedAuditPatch('words',{...original,...p.after,[key]:'unrecorded'},p)).toThrow();
@@ -1131,7 +1134,8 @@ it('keeps two visible U40 noun-verb boundaries reversible before the unchanged f
 
 it('reverses only11 exact LV2 U41 sourced form keys and rejects all other row drift',()=>{
  expect(lv2u41FormSources.facts).toHaveLength(11);
- const words:Row[]=JSON.parse(readFileSync('public/data/v1/words.json','utf8'));
+ // Project authenticated LV3 edits away before testing the original LV1/LV2 form contract.
+ const words:Row[]=lv3BeforeAudit('words',JSON.parse(readFileSync('public/data/v1/words.json','utf8')));
  for(const p of lv2u41Forms.patches){
   const row=structuredClone(words.find(w=>w.wordId===p.id)!);
   const fact=lv2u41FormSources.facts.find(f=>f.wordId===p.id)!;
@@ -1282,7 +1286,8 @@ it('reverses the exact visible U44 build scope before the unchanged older form f
 
 it('reverses only18 exact LV2 U45 sourced form keys and rejects all other row drift',()=>{
  expect(lv2u45FormSources.facts).toHaveLength(18);
- const words:Row[]=JSON.parse(readFileSync('public/data/v1/words.json','utf8'));
+ // Project authenticated LV3 edits away before testing the original LV1/LV2 form contract.
+ const words:Row[]=lv3BeforeAudit('words',JSON.parse(readFileSync('public/data/v1/words.json','utf8')));
  for(const p of lv2u45Forms.patches){
   const row=structuredClone(words.find(w=>w.wordId===p.id)!);
   const fact=lv2u45FormSources.facts.find(f=>f.wordId===p.id)!;
@@ -1504,4 +1509,31 @@ it('limits six LV2 U50 notes to exact full-row content guards',()=>{
   for(const field of ['title','content','status'])expect(()=>restoreRecordedAuditPatch('notes',{...p.before,...p.after,[field]:'unverified'},{...p,after:{...p.after,[field]:'unverified'}})).toThrow();
   expect(()=>restoreRecordedAuditPatch('notes',{...p.before,...p.after},{...p,id:'NXunknown'})).toThrow();
  }
+});
+
+
+it('keeps the caller pack untouched when restoring sealed historical media',()=>{
+ const pack=JSON.parse(readFileSync('public/data/v1/sa-pack.json','utf8'));
+ const saved=JSON.stringify(pack);
+ const restored=beforeUnitAudit('sa-pack',pack);
+ expect(JSON.stringify(pack)).toBe(saved);
+ expect(restored).not.toBe(pack);
+ expect(restored.media).not.toBe(pack.media);
+ expect(createHash('sha256').update(JSON.stringify(stable(restored))).digest('hex')).toBe(starterBaseline.publicFiles.find(f=>f.name==='sa-pack.json')!.payloadHash);
+});
+
+it('rejects self-consistent media drift before historical migration projection',()=>{
+ const pack=JSON.parse(readFileSync('public/data/v1/sa-pack.json','utf8'));
+ pack.media[0]={...pack.media[0],caption:'Unrecorded media caption'};
+ const fullMeta=JSON.parse(readFileSync('public/data/v1/meta.json','utf8'));
+ const datasets=Object.fromEntries(['words','senses','examples','relations','morphemes','notes','examPriorities','media'].map(k=>[k,pack[k]]));
+ // A recomputed live contentHash must not authorize an unrecorded media row.
+ pack.meta.contentHash='sa:'+createHash('sha256').update(JSON.stringify({sourceHash:fullMeta.contentHash,datasets})).digest('hex');
+ expect(()=>beforeUnitAudit('sa-pack',pack)).toThrow();
+});
+
+it('rejects unrecorded pack metadata outside the sealed media migration',()=>{
+ const pack=JSON.parse(readFileSync('public/data/v1/sa-pack.json','utf8'));
+ pack.meta.counts.words+=1;
+ expect(()=>beforeUnitAudit('sa-pack',pack)).toThrow();
 });
