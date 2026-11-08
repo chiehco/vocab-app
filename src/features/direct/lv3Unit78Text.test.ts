@@ -3,6 +3,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import source7 from '../../../scripts/sources/LV3Unit7.json';
 import source8 from '../../../scripts/sources/LV3Unit8.json';
 import curriculum7 from './curriculumLV3Unit7.json';
+import curriculum8 from './curriculumLV3Unit8.json';
 import { lv3AfterUnitFile } from './lv3Audit.testSupport';
 import pack from '../../../public/data/v1/sa-pack.json';
 import { allQuestions, findUnit, REVISION, templateGroup, validGroup } from './model';
@@ -14,6 +15,7 @@ import { contentDb } from '../../db/contentDb';
 import { progressDb } from '../../db/progressDb';
 import { ensureContentAvailable, refreshInstalledContent } from '../../db/seed';
 import { gradeFlashcard } from '../../checkin/recordActivity';
+import { trustedVerbForms } from '../browser/meaningRecords';
 
 beforeEach(async () => {
   await Promise.all([...contentDb.tables, ...progressDb.tables].map(table => table.clear()));
@@ -25,6 +27,14 @@ afterEach(() => vi.unstubAllGlobals());
 function originalU7Items() {
   return lv3AfterUnitFile('LV3-U06', 'src/features/direct/curriculumLV3Unit7.json',
     { ...curriculum7, learningItems: findUnit(7, 'LV3')!.items }).learningItems;
+}
+
+
+// Authenticate all current U08 rows and template metadata before restoring the
+// original source checkpoint. Current data still drives installs and updates.
+function originalU8Items() {
+  return lv3AfterUnitFile('LV3-U07', 'src/features/direct/curriculumLV3Unit8.json',
+    { ...curriculum8, learningItems: findUnit(8, 'LV3')!.items }).learningItems;
 }
 
 for (const [source, count, usageCount, mappedCount] of [
@@ -41,7 +51,7 @@ for (const [source, count, usageCount, mappedCount] of [
       expect(vocabulary.slice(0, 45).map(i => i.displayWord)).toEqual(source.headwordOrder);
       expect(vocabulary.slice(45).map(i => [i.displayWord, i.sourcePage, i.printedLabel]))
         .toEqual(source.related.map(i => [i.word, i.sourcePage, i.printedLabel]));
-      const originalItems = source.unit === 7 ? originalU7Items() : unit.items;
+      const originalItems = source.unit === 7 ? originalU7Items() : originalU8Items();
       expect(originalItems.filter(i => i.kind === 'grammar').map(i => [i.pattern, i.sourcePage]))
         .toEqual(source.usage.map(i => [i.label, i.sourcePage]));
       expect(new Set(unit.items.map(i => i.learningItemId)).size).toBe(count + usageCount);
@@ -50,8 +60,8 @@ for (const [source, count, usageCount, mappedCount] of [
     });
 
     it('keeps original dictionary identity, explicit variants and meaning provenance', () => {
-      const originalVocabulary = source.unit === 7
-        ? originalU7Items().filter(i => i.kind === 'vocabulary') : vocabulary;
+      const originalVocabulary = (source.unit === 7 ? originalU7Items() : originalU8Items())
+        .filter(i => i.kind === 'vocabulary');
       for (const [index, row] of rows.entries()) {
         const item = vocabulary[index];
         expect(item.officialWordId).toBe(row.officialWordId);
@@ -96,7 +106,7 @@ for (const [source, count, usageCount, mappedCount] of [
 
 it('retains omitted heads, printed pages and the two distinct suspect blocks', () => {
   const u7 = originalU7Items();
-  const u8 = findUnit(8, 'LV3')!.items;
+  const u8 = originalU8Items();
   expect(u7.find(i => i.displayWord === 'historian')).toMatchObject({sourceRole:'unnumbered_headword',sourcePage:64});
   expect(u7.find(i => i.displayWord === 'vacant')).toMatchObject({sourceRole:'unnumbered_headword',sourcePage:66});
   expect(u7.find(i => i.displayWord === 'copilot')?.sourceRole).toBe('printed_related_word');
@@ -138,6 +148,74 @@ it('keeps the current reviewed crop correction and provenance while rejecting un
   unknownUnpatched.learningItems.find(i => i.displayWord === 'historian')!.sourcePage = 999;
   expect(() => lv3AfterUnitFile('LV3-U06', 'src/features/direct/curriculumLV3Unit7.json', unknownUnpatched))
     .toThrow(/drift/);
+});
+
+
+it('keeps current U08 source corrections and rejects unknown full-document drift', () => {
+  const path = 'src/features/direct/curriculumLV3Unit8.json';
+  const delivered = { ...curriculum8, learningItems: findUnit(8, 'LV3')!.items };
+  expect(lv3AfterUnitFile('LV3-U08', path, delivered)).toEqual(delivered);
+  expect(delivered.learningItems.find(i => i.learningItemId === 'LI-LV3U08-V039'))
+    .toMatchObject({
+      targetMeaningZh: '燃料；添加燃料；激起（憤怒等）',
+      chapterMeaningsZh: '燃料；添加燃料；激起（憤怒等）',
+      sourcePage: 81, review: 'source_checked_text_only', practiceMode: 'read_only',
+    });
+  expect(delivered.learningItems.find(i => i.displayWord === 'protect')).toMatchObject({
+    officialWordId: 'W001685', sensePos: 'vt.', targetMeaningZh: '保護；防護',
+    meaningSource: 'textbook_source_review',
+  });
+  const originalUnmappedWords = source8.related.filter(i => !i.officialWordId).map(i => i.word);
+  expect(originalUnmappedWords).toHaveLength(14);
+  const reviewedSupplements = delivered.learningItems.filter(i => originalUnmappedWords.includes(i.displayWord ?? ''));
+  expect(reviewedSupplements.map(i => i.displayWord)).toEqual(originalUnmappedWords);
+  expect(reviewedSupplements.every(i => i.officialWordId === null
+    && i.meaningSource === 'textbook_source_review' && i.targetMeaningZh
+    && i.targetMeaningZh !== '教材補充詞；義項待核對。' && i.practiceMode === 'read_only')).toBe(true);
+  for (const [id, pattern, clarification] of [
+    ['LI-LV3U08-G007', 'be native to + 地方', '並不表示只在該地存在'],
+    ['LI-LV3U08-G008', 'be unique to + 地方', '三者不可一概互換'],
+    ['LI-LV3U08-G009', 'be indigenous to + 地方', '原生不必然是該地所獨有'],
+  ]) {
+    const item = delivered.learningItems.find(i => i.learningItemId === id)!;
+    expect(item).toMatchObject({ pattern, sourcePage: 73, practiceMode: 'read_only' });
+    expect(item.explanationZh).toContain(clarification);
+  }
+  const unknownMeaning = structuredClone(delivered);
+  unknownMeaning.learningItems.find(i => i.learningItemId === 'LI-LV3U08-V039')!.targetMeaningZh += ' unrecorded';
+  const unknownProvenance = structuredClone(delivered);
+  unknownProvenance.learningItems.find(i => i.displayWord === 'protect')!.meaningSource = 'existing_dictionary';
+  const unknownExplanation = structuredClone(delivered);
+  unknownExplanation.learningItems.find(i => i.learningItemId === 'LI-LV3U08-G007')!.explanationZh += ' unrecorded';
+  const unknownUnpatched = structuredClone(delivered);
+  unknownUnpatched.learningItems.find(i => i.displayWord === 'protection')!.sourcePage = 999;
+  const unknownTemplate = { ...delivered, template: { ...delivered.template, unrecorded: true } };
+  for (const unknown of [unknownMeaning, unknownProvenance, unknownExplanation, unknownUnpatched, unknownTemplate]) {
+    expect(() => lv3AfterUnitFile('LV3-U07', path, unknown)).toThrow(/drift/);
+  }
+});
+
+it('retains U08 ordinary-card rare meanings, verified forms and corrected example POS', () => {
+  const morale = pack.words.find(w => w.wordId === 'W005581')!;
+  expect(morale).toMatchObject({ word: 'morale', meaningZh: '士氣；道德' });
+  expect(findUnit(8, 'LV3')!.items.find(i => i.displayWord === 'morale')?.targetMeaningZh).toBe('士氣');
+  const fuel = pack.words.find(w => w.wordId === 'W002350')!;
+  expect(trustedVerbForms(fuel)).toEqual({
+    base: 'fuel', past: 'fueled / fuelled', pastParticiple: 'fueled / fuelled',
+    sourceRef: 'https://www.collinsdictionary.com/dictionary/english/fuel', status: 'approved',
+  });
+  const discomfort = pack.words.find(w => w.wordId === 'W005269')!;
+  expect(trustedVerbForms(discomfort)).toEqual({
+    base: 'discomfort', past: 'discomforted', pastParticiple: 'discomforted',
+    sourceRef: 'https://www.oxfordlearnersdictionaries.com/definition/english/discomfort_2', status: 'approved',
+  });
+  expect(pack.words.find(w => w.wordId === 'W002136')?.usagePattern).toBe('the cattle; two/many cattle; cattle of N');
+  expect(pack.examples.find(e => e.exampleId === 'EXc280e310')).toMatchObject({
+    word: 'ad', sensePos: 'n.',
+    sentenceEn: 'I saw an ad for a used bicycle in the local newspaper yesterday.',
+    blankSentence: 'I saw an _____ for a used bicycle in the local newspaper yesterday.',
+    answer: 'ad', status: 'reviewed',
+  });
 });
 
 it('updating the starter resolves both new units and retains progress and personal groups', async () => {
