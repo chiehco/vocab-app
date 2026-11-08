@@ -4,7 +4,7 @@ Usage: python scripts/verify_lv3_unit_fixture.py --unit U04 --capture PATH
 Requires an independently captured before-map and its sealed summary. Not part
 of default test discovery; existing default coverage remains unchanged.
 Current registered fixture shapes: U02/U04/U05/U06 have six affected files;
-U07 has five with notes.json unchanged. Exact source and derived paths are
+U07/U08 have five with notes.json unchanged. Exact source and derived paths are
 checked independently of observed writes. senses.json remains the drift target.
 """
 from __future__ import annotations
@@ -59,16 +59,31 @@ def fixture_expected_write_paths(manifest):
         'LV3-U05': 'src/features/direct/curriculumLV3Unit5.json',
         'LV3-U06': 'src/features/direct/curriculumLV3Unit6.json',
         'LV3-U07': 'src/features/direct/curriculumLV3Unit7.json',
+        'LV3-U08': 'src/features/direct/curriculumLV3Unit8.json',
     }
     unit = manifest.get('unit')
     audit.require(unit in curricula, 'Unregistered real-fixture write shape')
     source = {'public/data/v1/words.json', 'public/data/v1/examples.json', curricula[unit]}
-    if unit != 'LV3-U07':
+    if unit not in {'LV3-U07', 'LV3-U08'}:
         source.add('public/data/v1/notes.json')
     audit.require(set(manifest['files']) == source, 'Unexpected real-fixture source paths')
     audit.require(set(manifest['derivedAfter']) == pipeline.DERIVED,
                   'Unexpected real-fixture derived paths')
     return source | pipeline.DERIVED
+
+
+SUMMARY = None
+
+
+def fixture_summary_path(root, unit, summary=None):
+    """Keep legacy summary default; explicit summaries remain within repo docs."""
+    root = Path(root).resolve()
+    target = Path(summary) if summary is not None else Path(pipeline.DOCS) / (unit + '-before-capture.json')
+    if not target.is_absolute():
+        target = root / target
+    target = target.resolve()
+    audit.require(target.is_relative_to(root / 'docs'), 'Fixture summary must reside under repository docs')
+    return target
 
 
 class RealUnitFixtureTests(base.U02RealFixtureTests):
@@ -79,7 +94,7 @@ class RealUnitFixtureTests(base.U02RealFixtureTests):
         cls.manifest = audit.read_json(base.ROOT / base.MANIFEST)
         audit.require(cls.manifest['readiness'] == 'ready', 'Seal gate not complete')
         cls.scope = audit.read_json(base.ROOT / pipeline.DOCS / cls.manifest['scope'])
-        summary = audit.read_json(base.ROOT / pipeline.DOCS / (UNIT + '-before-capture.json'))
+        summary = audit.read_json(fixture_summary_path(base.ROOT, UNIT, SUMMARY))
         cls.capture = audit.read_json(base.CAPTURE)
         audit.require(hashlib.sha256(base.CAPTURE.read_bytes()).hexdigest() == summary['captureFileSha256'],
                       'Independent capture artifact changed')
@@ -222,15 +237,17 @@ class RealUnitFixtureTests(base.U02RealFixtureTests):
 
 
 def main():
-    global UNIT
+    global UNIT, SUMMARY
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--unit', required=True)
     parser.add_argument('--capture', type=Path, required=True)
+    parser.add_argument('--summary', type=Path, help='Explicit sealed summary under repository docs; default is UNIT-before-capture.json')
     parser.add_argument('--test', nargs='+', help='Optional exact test methods for a focused rerun')
     args = parser.parse_args()
     import re
     audit.require(re.fullmatch(r'U\d{2}', args.unit), 'Unit must be U followed by two digits')
     UNIT = args.unit
+    SUMMARY = args.summary
     base.MANIFEST = pipeline.DOCS + '/' + UNIT + '-patches.json'
     base.CAPTURE = args.capture.resolve()
     base.OUTPUT = base.ROOT / 'output/lv3-audit-20261107' / (UNIT.lower() + '-validation')

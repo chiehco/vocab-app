@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import {isDeepStrictEqual} from 'node:util';
 import {createHash} from 'node:crypto';
 import {readFileSync} from 'node:fs';
 import {lv3Unit1BeforeAudit} from './lv3Unit1Audit.testSupport';
@@ -141,6 +142,39 @@ export function verifiedU07PatternErratum(m:AuditManifest,p:AuditPatch){
  });
 }
 
+// Bind only the reviewed U08-VOC-252 Oxford record, not live website contents.
+// Recorded evidence is not itself proof of a source read; no general Oxford allowance.
+export function verifiedU08DiscomfortForms(m:AuditManifest,p:AuditPatch,f:Row){
+ const source={
+  "publisher": "Oxford University Press",
+  "dictionary": "Oxford Advanced Learner’s Dictionary",
+  "url": "https://www.oxfordlearnersdictionaries.com/definition/english/discomfort_2",
+  "retrievedDate": "2026-11-08",
+  "method": "direct_open",
+  "contentType": "text/html",
+  "locator": "Verb Forms, L110–115",
+  "exactExcerpts": [
+    {
+      "text": "past simple discomforted",
+      "locator": "L113"
+    },
+    {
+      "text": "past participle discomforted",
+      "locator": "L114"
+    }
+  ],
+  "interpretation": "Past simple and past participle are separately and explicitly labelled.",
+  "findingId": "U08-VOC-252"
+};
+ return m.unit==='LV3-U08'&&p.dataset==='words'&&p.path==='public/data/v1/words.json'
+  &&p.key==='wordId'&&p.id==='W005269'&&p.before.wordId==='W005269'&&p.before.word==='discomfort'
+  &&isDeepStrictEqual(f,{"base": "discomfort", "past": "discomforted", "pastParticiple": "discomforted", "sourceRef": "https://www.oxfordlearnersdictionaries.com/definition/english/discomfort_2", "status": "approved"})
+  &&(p.fieldEvidence?.verbForms??[]).some(record=>{
+   const sources=(record as {sources?:unknown[]}).sources;
+   return Array.isArray(sources)&&sources.some(s=>isDeepStrictEqual(s,source));
+  });
+}
+
 export function validateAuditScope(m:AuditManifest,scope:AuditScope):void {
  const keys=(value:object)=>Object.keys(value).sort();
  const sameKeys=(value:object,expected:string[])=>assert.deepEqual(keys(value),[...expected].sort(),'unknown or missing contract fields');
@@ -224,7 +258,7 @@ export function validateAuditScope(m:AuditManifest,scope:AuditScope):void {
    const f=p.after.verbForms as Row;sameKeys(f,['base','past','pastParticiple','sourceRef','status']);
    assert.ok(p.id==='W002976'||p.before.word==='wage(s)'
     ?verifiedWageForms(p,f):f.base===p.before.word,'invalid verified forms base');assert.equal(f.status,'approved');
-   assert.ok(['https://www.collinsdictionary.com/dictionary/english/'+f.base,'https://www.collinsdictionary.com/conjugation/english/'+f.base].includes(f.sourceRef as string),'invalid verified forms source');
+   assert.ok(verifiedU08DiscomfortForms(m,p,f)||['https://www.collinsdictionary.com/dictionary/english/'+f.base,'https://www.collinsdictionary.com/conjugation/english/'+f.base].includes(f.sourceRef as string),'invalid verified forms source');
    assert.ok((p.fieldEvidence.verbForms??[]).some(record=>(record as {sources:unknown[]}).sources.some(source=>typeof source==='object'&&source!==null&&(source as Row).url===f.sourceRef)),'forms source lacks evidence');
   }
  }

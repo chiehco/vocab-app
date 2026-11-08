@@ -189,6 +189,43 @@ def verified_u07_pattern_erratum(manifest, patch):
     return False
 
 
+def verified_u08_discomfort_forms(manifest, p, f):
+    """Bind only the reviewed U08-VOC-252 Oxford record, not live website contents.
+
+    Evidence records preserve the independent review; metadata alone is not proof
+    of a source read. No other Oxford entry or inferred verb form is admitted.
+    """
+    expected_source = json.loads(r'''{
+    "publisher": "Oxford University Press",
+    "dictionary": "Oxford Advanced Learner’s Dictionary",
+    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/discomfort_2",
+    "retrievedDate": "2026-11-08",
+    "method": "direct_open",
+    "contentType": "text/html",
+    "locator": "Verb Forms, L110–115",
+    "exactExcerpts": [
+        {
+            "text": "past simple discomforted",
+            "locator": "L113"
+        },
+        {
+            "text": "past participle discomforted",
+            "locator": "L114"
+        }
+    ],
+    "interpretation": "Past simple and past participle are separately and explicitly labelled.",
+    "findingId": "U08-VOC-252"
+}''')
+    return (manifest.get('unit') == 'LV3-U08'
+            and p.get('dataset') == 'words' and p.get('path') == 'public/data/v1/words.json'
+            and p.get('key') == 'wordId' and p.get('id') == 'W005269'
+            and p['before'].get('wordId') == 'W005269' and p['before'].get('word') == 'discomfort'
+            and f == {'base': 'discomfort', 'past': 'discomforted', 'pastParticiple': 'discomforted', 'sourceRef': 'https://www.oxfordlearnersdictionaries.com/definition/english/discomfort_2', 'status': 'approved'}
+            and any(source == expected_source
+                    for record in p.get('fieldEvidence', {}).get('verbForms', [])
+                    for source in record.get('sources', [])))
+
+
 def validate_manifest(manifest, scope=None):
     if manifest.get('schemaVersion') == 1:
         v1.validate_manifest(manifest)
@@ -305,8 +342,9 @@ def validate_manifest(manifest, scope=None):
                          if p['id'] == 'W002976' or p['before'].get('word') == 'wage(s)'
                          else f['base'] == p['before']['word'])
                     and f['status'] == 'approved'
-                    and f['sourceRef'] in {'https://www.collinsdictionary.com/dictionary/english/' + f['base'],
-                                          'https://www.collinsdictionary.com/conjugation/english/' + f['base']}
+                    and (verified_u08_discomfort_forms(manifest, p, f)
+                         or f['sourceRef'] in {'https://www.collinsdictionary.com/dictionary/english/' + f['base'],
+                                          'https://www.collinsdictionary.com/conjugation/english/' + f['base']})
                     and any(isinstance(source, dict) and source.get('url') == f['sourceRef']
                             for record in p['fieldEvidence'].get('verbForms', [])
                             for source in record['sources']),
