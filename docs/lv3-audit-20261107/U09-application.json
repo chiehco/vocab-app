@@ -1,0 +1,104 @@
+{
+  "unit": "LV3-U09",
+  "state": "applied_awaiting_after_qa",
+  "preparedAtCommit": "258adf0977e1c9a7514a2a8308bd83300c28b02c",
+  "manifestHash": "27e20dcde2fbae896fc65ab21ab143ff4edc4e391ad63de6496fa76556136bcc",
+  "scopeHash": "cab3f42c23f67172d05346aefd4238f92798b8a29bb6b47883240f77326525a7",
+  "chainStatus": "committed",
+  "fieldCount": 394,
+  "rowCount": 183,
+  "productWrites": 6,
+  "receipt": "output/lv3-audit-20261107/transactions/20261108T061857181350Z/transaction.json",
+  "receiptState": "committed",
+  "zeroWriteRepeat": true,
+  "rawBackupsVerified": 6,
+  "unchangedInputsVerified": 138,
+  "inputCount": 144,
+  "meta": {
+    "schemaVersion": 2,
+    "generatedAt": "2026-11-08T05:32:49Z",
+    "sourceFile": "萬詞譜母表_SA義項清理整合_20260904.xlsx",
+    "counts": {
+      "words": 6090,
+      "senses": 772,
+      "examples": 7871,
+      "relations": 40,
+      "morphemes": 3798,
+      "media": 1177,
+      "notes": 4290,
+      "examPriority": 3792,
+      "hooks": 0
+    },
+    "wordsHash": "bafd1873641fa7d83b4944dacfc1b34fb096239e629919d9d4d3664ee77bdd55",
+    "contentHash": "d513ffe01f90f55a7f898b8628ece3c0e7d1333d62985fcd3e8224056706ff3c",
+    "houseSourceSha256": "98fa208835caf7184acc95f26dcff56ace23ba281ff8d4b9b8c37e18e407be14"
+  },
+  "packMeta": {
+    "schemaVersion": 2,
+    "generatedAt": "2026-11-08T05:32:49Z",
+    "counts": {
+      "words": 5779,
+      "senses": 771,
+      "examples": 7436,
+      "relations": 31,
+      "morphemes": 3696,
+      "notes": 4111,
+      "media": 1128,
+      "examPriority": 3613
+    },
+    "wordsHash": "sa:787d7a3c21914e817181c97eb75dca9222a2ec33155f9fff7604d786110ad39a",
+    "contentHash": "sa:d33e98b1567c9f81a570ec3f423152f1ae45af92ac3261fa58c43b7e59cb0ce2"
+  },
+  "changedPaths": {
+    "public/data/v1/examples.json": {
+      "rawSha256": "6d254c474607bdcb989fa20b93a202f9245813f155e765a65027f21e40cbad59",
+      "lfSha256": "6d254c474607bdcb989fa20b93a202f9245813f155e765a65027f21e40cbad59",
+      "bytes": 3669947
+    },
+    "public/data/v1/meta.json": {
+      "rawSha256": "b3abdad9e0e57ec48eb5e9562b1ba62f497c12f99a949574bc76a7c72b9ed03b",
+      "lfSha256": "b3abdad9e0e57ec48eb5e9562b1ba62f497c12f99a949574bc76a7c72b9ed03b",
+      "bytes": 597
+    },
+    "public/data/v1/notes.json": {
+      "rawSha256": "7107e9049b90b344d5dbdbb9c4108c6871ad8e0646d01aeb2ca228bf34f27c34",
+      "lfSha256": "7107e9049b90b344d5dbdbb9c4108c6871ad8e0646d01aeb2ca228bf34f27c34",
+      "bytes": 926454
+    },
+    "public/data/v1/sa-pack.json": {
+      "rawSha256": "3549404fbcc98dafeece5ac4486bfe0c973bae7c160ac24c2dc0484fce18ca7c",
+      "lfSha256": "3549404fbcc98dafeece5ac4486bfe0c973bae7c160ac24c2dc0484fce18ca7c",
+      "bytes": 10564971
+    },
+    "public/data/v1/words.json": {
+      "rawSha256": "bafd1873641fa7d83b4944dacfc1b34fb096239e629919d9d4d3664ee77bdd55",
+      "lfSha256": "bafd1873641fa7d83b4944dacfc1b34fb096239e629919d9d4d3664ee77bdd55",
+      "bytes": 4708982
+    },
+    "src/features/direct/curriculumLV3Unit9.json": {
+      "rawSha256": "f753d88cdf09515c31ce2ac670819e61a1250d09c65faaf9b5efe3fcbf08816e",
+      "lfSha256": "f753d88cdf09515c31ce2ac670819e61a1250d09c65faaf9b5efe3fcbf08816e",
+      "bytes": 83730
+    }
+  },
+  "independentExpectedAfter": "output/lv3-audit-20261107/u09-source-review/independent-expected-after-source-inline-v3.json",
+  "fixtureMethods": 9,
+  "fixtureReceipts": 5,
+  "fixtureRawBackups": 30,
+  "ancestorProjections": 8,
+  "ancestorLfHashes": 1152,
+  "pythonTsParity": true,
+  "sourceExpectedMatches": true,
+  "starterChangedRows": 56,
+  "starterChangedFields": 120,
+  "starterMediaUnchanged": 1128,
+  "supportingSources": "source-manifest-revision-v2.json",
+  "supportingSourcesSha256": "60ef9ccdeaa259865e67531cc3a4635ea7032445f7fc21d3850b8d453614782e",
+  "sourceRefs": 60,
+  "sourceUniquePointers": 22,
+  "originalBeforeCaptureUnchanged": true,
+  "runtimeAfter": "pending",
+  "technicalQa": "pending",
+  "release": "not published",
+  "evidenceDirectory": "output/lv3-audit-20261107/u09-integration"
+}
