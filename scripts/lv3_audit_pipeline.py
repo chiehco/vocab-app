@@ -607,6 +607,431 @@ def verified_u09_republic_fact(manifest, patch):
     return _verified_u09_review_patch(manifest, patch, 'examples')
 
 
+
+# Only three source-reviewed U11 patches; never read mutable output at runtime.
+_U11_REVIEW_PATCHES = json.loads(r'''[
+  {
+    "dataset": "curriculum",
+    "path": "src/features/direct/curriculumLV3Unit11.json",
+    "key": "learningItemId",
+    "id": "LI-LV3U11-G001",
+    "before": {
+      "learningItemId": "LI-LV3U11-G001",
+      "kind": "grammar",
+      "sourcePage": 107,
+      "pattern": "forever 之後亦可加 a day（原書誇大用法註記）",
+      "explanationZh": "教材用法標記；例句與教材題目尚未提供。",
+      "review": "source_checked_text_only",
+      "practiceMode": "read_only"
+    },
+    "after": {
+      "explanationZh": "forever and a day 是誇大說法，表示永遠、長長久久；原書註記只寫加 a day，同頁例句顯示完整片語含 and。",
+      "pattern": "forever and a day（誇大用法）"
+    },
+    "reason": "依原書同頁完整例句補回 and，保留誇大用法與原書註記差異。 依原書同頁完整例句補回 and，保留誇大用法與原書註記差異。",
+    "evidence": [],
+    "fieldEvidence": {
+      "explanationZh": [
+        {
+          "proposal": "U11-GRM-G001",
+          "originFindingIds": [
+            "U11-GRM-G001"
+          ],
+          "reason": "依原書同頁完整例句補回 and，保留誇大用法與原書註記差異。",
+          "sources": [
+            {
+              "type": "textbook_photo",
+              "manifest": "scripts/sources/LV3Unit11.json",
+              "file": "20260815_101032.jpg",
+              "sha256": "cf76ed44cc90e2660588faa3cd443d200366ed419bf32991e2d1fcfb7f5bc8aa",
+              "page": 107,
+              "printedLevel": "Level 3",
+              "printedUnit": "Unit 11",
+              "printedText": "I'll love you forever and a day.；我會永遠愛你，而且還多愛你一天。",
+              "pixelsViewed": true,
+              "viewMethod": "Original photo pixels viewed in proportional 1600px preview, rotated 90 degrees clockwise; no OCR substituted."
+            }
+          ],
+          "beforePresent": true
+        }
+      ],
+      "pattern": [
+        {
+          "proposal": "U11-GRM-G001",
+          "originFindingIds": [
+            "U11-GRM-G001"
+          ],
+          "reason": "依原書同頁完整例句補回 and，保留誇大用法與原書註記差異。",
+          "sources": [
+            {
+              "type": "textbook_photo",
+              "manifest": "scripts/sources/LV3Unit11.json",
+              "file": "20260815_101032.jpg",
+              "sha256": "cf76ed44cc90e2660588faa3cd443d200366ed419bf32991e2d1fcfb7f5bc8aa",
+              "page": 107,
+              "printedLevel": "Level 3",
+              "printedUnit": "Unit 11",
+              "printedText": "I'll love you forever and a day.；我會永遠愛你，而且還多愛你一天。",
+              "pixelsViewed": true,
+              "viewMethod": "Original photo pixels viewed in proportional 1600px preview, rotated 90 degrees clockwise; no OCR substituted."
+            }
+          ],
+          "beforePresent": true
+        }
+      ]
+    }
+  },
+  {
+    "dataset": "curriculum",
+    "path": "src/features/direct/curriculumLV3Unit11.json",
+    "key": "learningItemId",
+    "id": "LI-LV3U11-G050",
+    "before": {
+      "learningItemId": "LI-LV3U11-G050",
+      "kind": "grammar",
+      "sourcePage": 114,
+      "pattern": "impress sb with sth = impress sth on / upon sb",
+      "explanationZh": "教材用法標記；例句與教材題目尚未提供。",
+      "review": "source_checked_text_only",
+      "practiceMode": "read_only"
+    },
+    "after": {
+      "explanationZh": "原書把兩種搭配並列為同義，學習時須區分：impress sb with sth 指以某事物使某人讚賞、留下深刻印象；impress sth on / upon sb 指向某人強調某事的重要性，使其銘記。",
+      "pattern": "impress sb with sth；impress sth on / upon sb（用法辨析）"
+    },
+    "reason": "保留原教材兩搭配，依詞典分開語義，避免等號暗示任意互換。 保留原教材兩搭配，依詞典分開語義，避免等號暗示任意互換。",
+    "evidence": [
+      "https://dictionary.cambridge.org/dictionary/english/impress",
+      "https://dictionary.cambridge.org/dictionary/english/impress-on-upon"
+    ],
+    "fieldEvidence": {
+      "explanationZh": [
+        {
+          "proposal": "U11-GRM-G050",
+          "originFindingIds": [
+            "U11-GRM-G050"
+          ],
+          "reason": "保留原教材兩搭配，依詞典分開語義，避免等號暗示任意互換。",
+          "sources": [
+            {
+              "type": "textbook_photo",
+              "manifest": "scripts/sources/LV3Unit11.json",
+              "file": "20260815_101130.jpg",
+              "sha256": "3dcc30eaaf9bb0f3170f3f342253ecfc56f238222c6055cc63055f035c8403a8",
+              "page": 114,
+              "printedLevel": "Level 3",
+              "printedUnit": "Unit 11",
+              "printedText": "impress sb with sth = impress sth on / upon sb；The teacher impressed the importance of honesty upon the class.",
+              "pixelsViewed": true,
+              "viewMethod": "Original photo pixels viewed in proportional 1600px preview, rotated 90 degrees clockwise; no OCR substituted."
+            },
+            {
+              "url": "https://dictionary.cambridge.org/dictionary/english/impress",
+              "title": "Cambridge Dictionary: impress",
+              "quote": "to cause someone to admire or respect you",
+              "checked": "2026-11-08",
+              "supports": "impress sb with sth 的讚賞義"
+            },
+            {
+              "url": "https://dictionary.cambridge.org/dictionary/english/impress-on-upon",
+              "title": "Cambridge Dictionary: impress something on/upon someone",
+              "quote": "to make someone understand or be familiar with the importance or value of something",
+              "checked": "2026-11-08",
+              "supports": "impress sth on/upon sb 的強調重要性義"
+            }
+          ],
+          "beforePresent": true
+        }
+      ],
+      "pattern": [
+        {
+          "proposal": "U11-GRM-G050",
+          "originFindingIds": [
+            "U11-GRM-G050"
+          ],
+          "reason": "保留原教材兩搭配，依詞典分開語義，避免等號暗示任意互換。",
+          "sources": [
+            {
+              "type": "textbook_photo",
+              "manifest": "scripts/sources/LV3Unit11.json",
+              "file": "20260815_101130.jpg",
+              "sha256": "3dcc30eaaf9bb0f3170f3f342253ecfc56f238222c6055cc63055f035c8403a8",
+              "page": 114,
+              "printedLevel": "Level 3",
+              "printedUnit": "Unit 11",
+              "printedText": "impress sb with sth = impress sth on / upon sb；The teacher impressed the importance of honesty upon the class.",
+              "pixelsViewed": true,
+              "viewMethod": "Original photo pixels viewed in proportional 1600px preview, rotated 90 degrees clockwise; no OCR substituted."
+            },
+            {
+              "url": "https://dictionary.cambridge.org/dictionary/english/impress",
+              "title": "Cambridge Dictionary: impress",
+              "quote": "to cause someone to admire or respect you",
+              "checked": "2026-11-08",
+              "supports": "impress sb with sth 的讚賞義"
+            },
+            {
+              "url": "https://dictionary.cambridge.org/dictionary/english/impress-on-upon",
+              "title": "Cambridge Dictionary: impress something on/upon someone",
+              "quote": "to make someone understand or be familiar with the importance or value of something",
+              "checked": "2026-11-08",
+              "supports": "impress sth on/upon sb 的強調重要性義"
+            }
+          ],
+          "beforePresent": true
+        }
+      ]
+    }
+  },
+  {
+    "dataset": "examples",
+    "path": "public/data/v1/examples.json",
+    "key": "exampleId",
+    "id": "EXa746dcc7",
+    "before": {
+      "exampleId": "EXa746dcc7",
+      "word": "trace",
+      "sensePos": "n.",
+      "meaningHint": null,
+      "exampleType": "exam",
+      "sentenceEn": "Some ships in the Bermuda Triangle were reported to have disappeared without a trace.",
+      "sentenceZh": "據報導，有些船隻在百慕達三角洲消失得無影無蹤。",
+      "blankSentence": "Some ships in the Bermuda Triangle were reported to have disappeared without a ______.",
+      "answer": "trace",
+      "difficulty": "LV3",
+      "status": "reviewed"
+    },
+    "after": {
+      "sentenceZh": "據報導，有些船隻在百慕達三角地帶消失得無影無蹤。"
+    },
+    "reason": "修正 Triangle 地理名稱誤譯為三角洲，不改英文或原句報導語氣。",
+    "evidence": [
+      "https://oceanservice.noaa.gov/facts/bermudatri.html"
+    ],
+    "fieldEvidence": {
+      "sentenceZh": [
+        {
+          "proposal": "U11-EX-BERMUDA",
+          "originFindingIds": [
+            "U11-EX-BERMUDA"
+          ],
+          "reason": "修正 Triangle 地理名稱誤譯為三角洲，不改英文或原句報導語氣。",
+          "sources": [
+            {
+              "type": "official_reference",
+              "url": "https://oceanservice.noaa.gov/facts/bermudatri.html",
+              "excerpt": "a region in the western part of the North Atlantic Ocean",
+              "summary": "Bermuda Triangle 指北大西洋海域而非河口三角洲；原句 reported/alleged 語氣維持。",
+              "readDate": "2026-11-08"
+            },
+            {
+              "url": "https://oceanservice.noaa.gov/facts/bermudatri.html",
+              "title": "What is the Bermuda Triangle?",
+              "retrieval": "Direct open of exact .html URL, not search snippet. Returned 30 body lines.",
+              "locator": "Heading and lead L4–5; context L15–18",
+              "excerpt": "a region in the western part of the North Atlantic Ocean",
+              "interpretation": "Confirms an ocean region, not a river delta. Supports changing 三角洲 to 三角地帶 only. Does not independently certify Chinese wording or supernatural claims. L16 says no evidence of unusually frequent mysterious disappearances; no change to the original attributed/reported English sentence is proposed."
+            }
+          ],
+          "beforePresent": true
+        }
+      ]
+    }
+  }
+]''')
+
+def _u11_json_equal(left, right):
+    """JSON equality matching JS strict values, including bool versus number."""
+    if isinstance(left, bool) or isinstance(right, bool):
+        return type(left) is type(right) and left == right
+    if isinstance(left, dict) and isinstance(right, dict):
+        return left.keys() == right.keys() and all(_u11_json_equal(left[key], right[key]) for key in left)
+    if isinstance(left, list) and isinstance(right, list):
+        return len(left) == len(right) and all(_u11_json_equal(a, b) for a, b in zip(left, right))
+    return left == right
+
+
+def verified_u11_review_patch(manifest, patch, dataset):
+    return (manifest.get('unit') == 'LV3-U11' and patch.get('dataset') == dataset
+            and any(_u11_json_equal(patch, expected) for expected in _U11_REVIEW_PATCHES if expected['dataset'] == dataset))
+
+
+# Exact source-reviewed U11 debut patch only; never read mutable output at runtime.
+_U11_DEBUT_PATCH = json.loads(r'''{
+  "dataset": "words",
+  "path": "public/data/v1/words.json",
+  "key": "wordId",
+  "id": "W004264",
+  "before": {
+    "wordId": "W004264",
+    "word": "debut",
+    "wordVariants": [
+      "debut"
+    ],
+    "level": "LV5",
+    "pos": "n.",
+    "posAll": [
+      "n."
+    ],
+    "meaningZh": "初次登臺；開張",
+    "meaningEn": "a person's first public appearance or performance",
+    "usagePattern": "make one's debut; debut as/in + role",
+    "syllables": null,
+    "stressPattern": null,
+    "phoneticUs": null,
+    "familyKey": "debut",
+    "isCore": true,
+    "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+    "status": "reviewed",
+    "usagePatternZh": "初次登台；以……角色初次亮相"
+  },
+  "after": {
+    "pos": "n./v.",
+    "posAll": [
+      "n.",
+      "v."
+    ],
+    "meaningZh": "（名詞）初次登臺；開張；（動詞）首次亮相；初次登場",
+    "meaningEn": "(n.) a first public appearance or performance; (v.) to appear or perform publicly for the first time.",
+    "verbForms": {
+      "base": "debut",
+      "past": "debuted",
+      "pastParticiple": "debuted",
+      "sourceRef": "https://www.dictionary.com/browse/debuted",
+      "status": "approved"
+    }
+  },
+  "reason": "補齊本次教材及既有例句已用到的詞性／義項，保留其他既有義；不替換原例句或擅自核准整詞。 補齊本次教材及既有例句已用到的詞性／義項，保留其他既有義；不替換原例句或擅自核准整詞。 補齊本次教材及既有例句已用到的詞性／義項，保留其他既有義；不替換原例句或擅自核准整詞。 補齊本次教材及既有例句已用到的詞性／義項，保留其他既有義；不替換原例句或擅自核准整詞。 Supplement all retained and added senses with directly opened dictionary-body evidence; keep sealed afterValue unchanged. 直接詞典已列原形、過去式與過去分詞；補齊現有動詞義的三態，不以規則推算。",
+  "evidence": [
+    "https://www.collinsdictionary.com/dictionary/english/debut",
+    "https://www.dictionary.com/browse/debuted"
+  ],
+  "fieldEvidence": {
+    "pos": [
+      {
+        "proposal": "U11-WORD-DEBUT",
+        "originFindingIds": [
+          "U11-WORD-DEBUT"
+        ],
+        "reason": "補齊本次教材及既有例句已用到的詞性／義項，保留其他既有義；不替換原例句或擅自核准整詞。",
+        "sources": [
+          {
+            "type": "dictionary",
+            "url": "https://www.collinsdictionary.com/dictionary/english/debut",
+            "excerpt": "verb (intransitive); to make a debut",
+            "summary": "名詞首次公開亮相；動詞首次登場。原例句 The new phone will debut 使用動詞。",
+            "locator": "Collins British sense 3, lines 283–287",
+            "verification": "web_text_direct_or_indexed_dictionary_text_read",
+            "readDate": "2026-11-08"
+          }
+        ],
+        "beforePresent": true
+      }
+    ],
+    "posAll": [
+      {
+        "proposal": "U11-WORD-DEBUT",
+        "originFindingIds": [
+          "U11-WORD-DEBUT"
+        ],
+        "reason": "補齊本次教材及既有例句已用到的詞性／義項，保留其他既有義；不替換原例句或擅自核准整詞。",
+        "sources": [
+          {
+            "type": "dictionary",
+            "url": "https://www.collinsdictionary.com/dictionary/english/debut",
+            "excerpt": "verb (intransitive); to make a debut",
+            "summary": "名詞首次公開亮相；動詞首次登場。原例句 The new phone will debut 使用動詞。",
+            "locator": "Collins British sense 3, lines 283–287",
+            "verification": "web_text_direct_or_indexed_dictionary_text_read",
+            "readDate": "2026-11-08"
+          }
+        ],
+        "beforePresent": true
+      }
+    ],
+    "meaningZh": [
+      {
+        "proposal": "U11-WORD-DEBUT",
+        "originFindingIds": [
+          "U11-WORD-DEBUT"
+        ],
+        "reason": "補齊本次教材及既有例句已用到的詞性／義項，保留其他既有義；不替換原例句或擅自核准整詞。",
+        "sources": [
+          {
+            "type": "dictionary",
+            "url": "https://www.collinsdictionary.com/dictionary/english/debut",
+            "excerpt": "verb (intransitive); to make a debut",
+            "summary": "名詞首次公開亮相；動詞首次登場。原例句 The new phone will debut 使用動詞。",
+            "locator": "Collins British sense 3, lines 283–287",
+            "verification": "web_text_direct_or_indexed_dictionary_text_read",
+            "readDate": "2026-11-08"
+          }
+        ],
+        "beforePresent": true
+      }
+    ],
+    "meaningEn": [
+      {
+        "proposal": "U11-WORD-DEBUT",
+        "originFindingIds": [
+          "U11-WORD-DEBUT"
+        ],
+        "reason": "補齊本次教材及既有例句已用到的詞性／義項，保留其他既有義；不替換原例句或擅自核准整詞。 Supplement all retained and added senses with directly opened dictionary-body evidence; keep sealed afterValue unchanged.",
+        "sources": [
+          {
+            "type": "dictionary",
+            "url": "https://www.collinsdictionary.com/dictionary/english/debut",
+            "excerpt": "verb (intransitive); to make a debut",
+            "summary": "名詞首次公開亮相；動詞首次登場。原例句 The new phone will debut 使用動詞。",
+            "locator": "Collins British sense 3, lines 283–287",
+            "verification": "web_text_direct_or_indexed_dictionary_text_read",
+            "readDate": "2026-11-08"
+          },
+          {
+            "url": "https://www.collinsdictionary.com/dictionary/english/debut",
+            "locator": "COBUILD countable noun L224–226",
+            "excerpt": "first public performance",
+            "sense": "noun public first appearance",
+            "interpretation": "Retains first public appearance or performance.",
+            "retrieval": "Direct web open of dictionary body, followed by open/find within the same body; not a search-result snippet."
+          },
+          {
+            "url": "https://www.collinsdictionary.com/dictionary/english/debut",
+            "locator": "British English sense3 L283–287",
+            "excerpt": "to make a debut",
+            "sense": "verb first appearance",
+            "interpretation": "Added intransitive verb explicitly defined.",
+            "retrieval": "Direct web open of dictionary body, followed by open/find within the same body; not a search-result snippet."
+          }
+        ],
+        "beforePresent": true
+      }
+    ],
+    "verbForms": [
+      {
+        "proposal": "U11-FORMS-W004264",
+        "originFindingIds": [
+          "U11-FORMS-W004264"
+        ],
+        "reason": "直接詞典已列原形、過去式與過去分詞；補齊現有動詞義的三態，不以規則推算。",
+        "sources": [
+          {
+            "word": "debut",
+            "url": "https://www.dictionary.com/browse/debuted",
+            "excerpt": "debuted; past participle; of debut; past tense form; of debut",
+            "location": "L11-33"
+          }
+        ],
+        "beforePresent": false
+      }
+    ]
+  }
+}''')
+
+def verified_u11_debut_forms(manifest, patch):
+    return (manifest.get('unit') == 'LV3-U11' and patch.get('dataset') == 'words'
+            and patch.get('id') == 'W004264' and _u11_json_equal(patch, _U11_DEBUT_PATCH))
+
 def validate_manifest(manifest, scope=None):
     if manifest.get('schemaVersion') == 1:
         v1.validate_manifest(manifest)
@@ -678,11 +1103,19 @@ def validate_manifest(manifest, scope=None):
                 'Invalid complete before row')
         require(sha(p['before']) == allowed[ident]['beforeHash']
                 and p['after'] == allowed[ident]['after'], 'Exact row scope mismatch')
+        if manifest['unit'] == 'LV3-U11':
+            require(isinstance(p.get('fieldEvidence'), dict), 'Invalid U11 field evidence object')
+        if manifest['unit'] == 'LV3-U11' and p['dataset'] == 'words' and p['id'] == 'W004264':
+            require(verified_u11_debut_forms(manifest, p), 'Incomplete U11 debut contract')
         allowed_fields = field_allow[p['dataset']]
         republic_fact = verified_u09_republic_fact(manifest, p)
         if republic_fact:
             allowed_fields = {'sentenceEn', 'sentenceZh', 'blankSentence'}
+        if verified_u11_review_patch(manifest, p, 'examples'):
+            allowed_fields = {'sentenceZh'}
         if p['dataset'] == 'curriculum':
+            if manifest['unit'] == 'LV3-U11' and 'pattern' in p.get('fieldEvidence', {}):
+                require(verified_u11_review_patch(manifest, p, 'curriculum'), 'Incomplete U11 pattern contract')
             if manifest['unit'] == 'LV3-U09' and 'pattern' in p.get('fieldEvidence', {}):
                 require(verified_u09_pattern_erratum(manifest, p), 'Incomplete U09 pattern contract')
             kind = p['before'].get('kind')
@@ -694,6 +1127,8 @@ def validate_manifest(manifest, scope=None):
             if kind == 'grammar' and verified_u07_pattern_erratum(manifest, p):
                 allowed_fields = {'pattern', 'explanationZh'}
             if kind == 'grammar' and verified_u09_pattern_erratum(manifest, p):
+                allowed_fields = {'pattern', 'explanationZh'}
+            if kind == 'grammar' and verified_u11_review_patch(manifest, p, 'curriculum'):
                 allowed_fields = {'pattern', 'explanationZh'}
             if 'meaningSource' in p['after']:
                 require(p['after']['meaningSource'] in {'textbook_source_review', 'textbook_and_dictionary_review'},
@@ -732,6 +1167,7 @@ def validate_manifest(manifest, scope=None):
                          else f['base'] == p['before']['word'])
                     and f['status'] == 'approved'
                     and (verified_u08_discomfort_forms(manifest, p, f)
+                         or verified_u11_debut_forms(manifest, p)
                          or f['sourceRef'] in {'https://www.collinsdictionary.com/dictionary/english/' + f['base'],
                                           'https://www.collinsdictionary.com/conjugation/english/' + f['base']})
                     and any(isinstance(source, dict) and source.get('url') == f['sourceRef']

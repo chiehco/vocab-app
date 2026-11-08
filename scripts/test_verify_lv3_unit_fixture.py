@@ -110,6 +110,8 @@ class FixtureWritePathTests(unittest.TestCase):
     def test_unknown_units_and_derived_path_drift_fail(self):
         manifest = self.make_manifest('LV3-U07')
         with self.assertRaisesRegex(ValueError, 'Unregistered real-fixture write shape'):
+            fixture.fixture_expected_write_paths({**manifest, 'unit': 'LV3-U99'})
+        with self.assertRaisesRegex(ValueError, 'Unexpected real-fixture source paths'):
             fixture.fixture_expected_write_paths({**manifest, 'unit': 'LV3-U11'})
         for paths in [{'public/data/v1/meta.json'}, fixture.pipeline.DERIVED | {'public/data/v1/notes.json'}]:
             with self.subTest(paths=paths), self.assertRaisesRegex(ValueError, 'Unexpected real-fixture derived paths'):
@@ -173,12 +175,12 @@ class U08FixtureWritePathTests(unittest.TestCase):
                     fixture.fixture_expected_write_paths(manifest)
 
     def test_unknown_or_wrong_unit_cannot_reuse_u08_shape(self):
-        for unit in ['LV3-U11', 'LV3-U99', 'U08', None]:
+        for unit in ['LV3-U99', 'U08', None]:
             with self.subTest(unit=unit):
                 manifest = {**self.make_manifest(), 'unit': unit}
                 with self.assertRaisesRegex(ValueError, 'Unregistered real-fixture write shape'):
                     fixture.fixture_expected_write_paths(manifest)
-        for unit in ['LV3-U02', 'LV3-U04', 'LV3-U05', 'LV3-U06', 'LV3-U07', 'LV3-U09', 'LV3-U10']:
+        for unit in ['LV3-U02', 'LV3-U04', 'LV3-U05', 'LV3-U06', 'LV3-U07', 'LV3-U09', 'LV3-U10', 'LV3-U11']:
             with self.subTest(unit=unit):
                 manifest = {**self.make_manifest(), 'unit': unit}
                 with self.assertRaisesRegex(ValueError, 'Unexpected real-fixture source paths'):
@@ -242,12 +244,12 @@ class U09FixtureWritePathTests(unittest.TestCase):
                     fixture.fixture_expected_write_paths(manifest)
 
     def test_unknown_or_wrong_unit_cannot_reuse_u09_shape(self):
-        for unit in ['LV3-U11', 'LV3-U99', 'U09', None]:
+        for unit in ['LV3-U99', 'U09', None]:
             with self.subTest(unit=unit):
                 manifest = {**self.make_manifest(), 'unit': unit}
                 with self.assertRaisesRegex(ValueError, 'Unregistered real-fixture write shape'):
                     fixture.fixture_expected_write_paths(manifest)
-        for unit in ['LV3-U02', 'LV3-U04', 'LV3-U05', 'LV3-U06', 'LV3-U07', 'LV3-U08', 'LV3-U10']:
+        for unit in ['LV3-U02', 'LV3-U04', 'LV3-U05', 'LV3-U06', 'LV3-U07', 'LV3-U08', 'LV3-U10', 'LV3-U11']:
             with self.subTest(unit=unit):
                 manifest = {**self.make_manifest(), 'unit': unit}
                 with self.assertRaisesRegex(ValueError, 'Unexpected real-fixture source paths'):
@@ -311,12 +313,81 @@ class U10FixtureWritePathTests(unittest.TestCase):
                     fixture.fixture_expected_write_paths(manifest)
 
     def test_unknown_or_wrong_unit_cannot_reuse_u10_shape(self):
-        for unit in ['LV3-U11', 'LV3-U99', 'U10', None]:
+        for unit in ['LV3-U99', 'U10', None]:
             with self.subTest(unit=unit):
                 manifest = {**self.make_manifest(), 'unit': unit}
                 with self.assertRaisesRegex(ValueError, 'Unregistered real-fixture write shape'):
                     fixture.fixture_expected_write_paths(manifest)
-        for unit in ['LV3-U02', 'LV3-U04', 'LV3-U05', 'LV3-U06', 'LV3-U07', 'LV3-U08', 'LV3-U09']:
+        for unit in ['LV3-U02', 'LV3-U04', 'LV3-U05', 'LV3-U06', 'LV3-U07', 'LV3-U08', 'LV3-U09', 'LV3-U11']:
+            with self.subTest(unit=unit):
+                manifest = {**self.make_manifest(), 'unit': unit}
+                with self.assertRaisesRegex(ValueError, 'Unexpected real-fixture source paths'):
+                    fixture.fixture_expected_write_paths(manifest)
+
+
+class U11FixtureWritePathTests(unittest.TestCase):
+    # Literal reviewed write contract, never inferred from actual writes.
+    SOURCES = {'public/data/v1/words.json', 'public/data/v1/examples.json',
+               'src/features/direct/curriculumLV3Unit11.json', 'public/data/v1/notes.json'}
+    DERIVED = {'public/data/v1/meta.json', 'public/data/v1/sa-pack.json'}
+
+    def make_manifest(self):
+        return {'unit': 'LV3-U11', 'files': dict.fromkeys(self.SOURCES),
+                'derivedAfter': dict.fromkeys(self.DERIVED)}
+
+    def test_exact_six_paths_and_input_immutability(self):
+        manifest = self.make_manifest()
+        before = copy.deepcopy(manifest)
+        self.assertEqual(fixture.fixture_expected_write_paths(manifest),
+                         self.SOURCES | self.DERIVED)
+        self.assertEqual(len(fixture.fixture_expected_write_paths(manifest)), 6)
+        self.assertEqual(manifest, before)
+
+    def test_each_missing_source_is_rejected(self):
+        for path in self.SOURCES:
+            with self.subTest(path=path):
+                manifest = self.make_manifest()
+                del manifest['files'][path]
+                with self.assertRaisesRegex(ValueError, 'Unexpected real-fixture source paths'):
+                    fixture.fixture_expected_write_paths(manifest)
+
+    def test_extra_media_senses_or_other_unit_source_is_rejected(self):
+        for path in ['public/data/v1/media.json', 'public/data/v1/senses.json',
+                     'src/features/direct/curriculumLV3Unit7.json']:
+            with self.subTest(path=path):
+                manifest = self.make_manifest()
+                manifest['files'][path] = None
+                with self.assertRaisesRegex(ValueError, 'Unexpected real-fixture source paths'):
+                    fixture.fixture_expected_write_paths(manifest)
+
+    def test_same_count_wrong_source_is_rejected(self):
+        for original in self.SOURCES:
+            with self.subTest(original=original):
+                manifest = self.make_manifest()
+                del manifest['files'][original]
+                manifest['files']['public/data/v1/media.json'] = None
+                with self.assertRaisesRegex(ValueError, 'Unexpected real-fixture source paths'):
+                    fixture.fixture_expected_write_paths(manifest)
+
+    def test_missing_extra_and_same_count_wrong_derived_paths_are_rejected(self):
+        cases = [self.DERIVED - {path} for path in self.DERIVED]
+        cases += [self.DERIVED | {'public/data/v1/notes.json'}]
+        cases += [(self.DERIVED - {path}) | {'public/data/v1/media.json'}
+                  for path in self.DERIVED]
+        for paths in cases:
+            with self.subTest(paths=paths):
+                manifest = self.make_manifest()
+                manifest['derivedAfter'] = dict.fromkeys(paths)
+                with self.assertRaisesRegex(ValueError, 'Unexpected real-fixture derived paths'):
+                    fixture.fixture_expected_write_paths(manifest)
+
+    def test_unknown_or_wrong_unit_cannot_reuse_u11_shape(self):
+        for unit in ['LV3-U99', 'U11', None]:
+            with self.subTest(unit=unit):
+                manifest = {**self.make_manifest(), 'unit': unit}
+                with self.assertRaisesRegex(ValueError, 'Unregistered real-fixture write shape'):
+                    fixture.fixture_expected_write_paths(manifest)
+        for unit in ['LV3-U02', 'LV3-U04', 'LV3-U05', 'LV3-U06', 'LV3-U07', 'LV3-U08', 'LV3-U09', 'LV3-U10']:
             with self.subTest(unit=unit):
                 manifest = {**self.make_manifest(), 'unit': unit}
                 with self.assertRaisesRegex(ValueError, 'Unexpected real-fixture source paths'):

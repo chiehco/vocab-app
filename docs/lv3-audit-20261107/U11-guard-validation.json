@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "unit": "LV3-U11",
+  "date": "2026-11-08",
+  "status": "main_guard_registered_product_unapplied",
+  "baseHead": "e540db2f76add2af7f979e746b34c60cee2a607c",
+  "exactExceptions": [
+    {
+      "id": "LI-LV3U11-G001",
+      "dataset": "curriculum",
+      "fields": [
+        "pattern",
+        "explanationZh"
+      ]
+    },
+    {
+      "id": "LI-LV3U11-G050",
+      "dataset": "curriculum",
+      "fields": [
+        "pattern",
+        "explanationZh"
+      ]
+    },
+    {
+      "id": "EXa746dcc7",
+      "dataset": "examples",
+      "fields": [
+        "sentenceZh"
+      ]
+    },
+    {
+      "id": "W004264",
+      "dataset": "words",
+      "fields": [
+        "pos",
+        "posAll",
+        "meaningZh",
+        "meaningEn",
+        "verbForms"
+      ],
+      "sourceRef": "https://www.dictionary.com/browse/debuted"
+    }
+  ],
+  "binding": "Exact unit, dataset, complete before row, all after fields, reason, evidence and fieldEvidence including sources.",
+  "preserved": {
+    "priorGuardsAndU09Constants": true,
+    "generalFieldAndCollinsAllowlist": true,
+    "originalFixtureMethodsAndAssertions": 33,
+    "unchangedFullTEMPMethods": 9,
+    "fullTEMPMethodsRun": false,
+    "u10ExactFivePaths": true
+  },
+  "tests": {
+    "python": 1055,
+    "typescript": 1046,
+    "sharedReviewCases": 252,
+    "sharedDebutCases": 170,
+    "candidateFixtureMethods": 39,
+    "mainFixtureSmoke": 39,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "completeCandidateResultsReusedAfterExactIdentityCheck": true
+  },
+  "compilerCompatibility": {
+    "fields": 497,
+    "rows": 213,
+    "fullDocuments": 6,
+    "changedSourceDocuments": 4,
+    "readonlySourceDocuments": 2,
+    "fullBeforeDocuments": 6,
+    "exactPatchSemanticAndSerializedBytes": 4,
+    "forwardInverseChangedDocuments": 4,
+    "mainProductWrites": 0,
+    "manifestStatus": "isolated_pending_only_not_registered_sealed_or_applied"
+  },
+  "captureAdapter": {
+    "inputs": 144,
+    "rawLFAndByteLengthsVerified": true,
+    "usesOriginalSealedLFDigests": true,
+    "productNewlineChanges": false,
+    "rawRecoveryDistinctFromLFProjection": true,
+    "initialRawVsLFRejectionPreserved": true
+  },
+  "registeredFileHashes": {
+    "scripts/lv3_audit_pipeline.py": "9da86d5fb0bd6a17a9404ed57696be82fda38261e1b0a254cc0458319f9d04fe",
+    "src/features/direct/lv3Audit.testSupport.ts": "7582d900072a7c49307143294df57f36e4b9e742bcd9c6619e453a30e7783045",
+    "scripts/verify_lv3_unit_fixture.py": "42b7f01279346e6e747f496287565d05900ff93b860ad67bc611675936484fcd",
+    "scripts/test_verify_lv3_unit_fixture.py": "249eab8cca9bff5e4202022cf2fddc997f307ce50363d464520aa9dbcf4f8b9f",
+    "scripts/test_lv3_u11_review.py": "bff0a996501c156625aaf3212fb37b022d2f63562232aa8531e678b3b28e5d15",
+    "scripts/fixtures/lv3_u11_review_cases.json": "9afddf25d519724a4e97ea381cb97a0f91fcf2c2dff351482828b1a4b26f2512",
+    "src/features/direct/lv3U11ReviewGuard.test.ts": "6b4a4ba8f14dbcc9af98beed22c0a0388d6a69fa3af6d9d6b03cca40ecb69e6b",
+    "scripts/test_lv3_u11_debut.py": "6d5f13b4d214f69ce42ab8185c55629613927b4d7f54162ed8867d172f4e50af",
+    "scripts/fixtures/lv3_u11_debut_cases.json": "4c7c8c5245a8f7faa7fed0d182da2b83d99ac25122f2feea006cbc3d8c816c5e",
+    "src/features/direct/lv3U11DebutGuard.test.ts": "a13d71655ecdf16fd61810c55e9cce667563b46ac202010d37dbeab5152f5f1f"
+  },
+  "evidence": {
+    "registration": "output/lv3-audit-20261107/u11-integration/main-guard-registration/final-index.json",
+    "fixedCandidate": "output/lv3-audit-20261107/u11-integration/final-candidate-proof-v4/final-index.json",
+    "compiler": "output/lv3-audit-20261107/u11-integration/compatibility-proof-v4/final-index.json"
+  },
+  "pending": [
+    "Main manifest registration and seal",
+    "Nine full TEMP transaction methods",
+    "Ten-ancestor 144-domain projections",
+    "Six raw backups, transaction and zero-write repeat verification",
+    "Product application and AFTER verification"
+  ],
+  "releaseBlockers": [
+    "U56/puppet original 5000ms timeout",
+    "Whole-project lint"
+  ],
+  "technicalGateAllPassed": false,
+  "notPerformed": [
+    "full TEMP",
+    "product apply",
+    "build",
+    "typecheck",
+    "browser",
+    "commit",
+    "push",
+    "deploy"
+  ]
+}
