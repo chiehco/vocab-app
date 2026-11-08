@@ -2,6 +2,8 @@ import 'fake-indexeddb/auto';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import source7 from '../../../scripts/sources/LV3Unit7.json';
 import source8 from '../../../scripts/sources/LV3Unit8.json';
+import curriculum7 from './curriculumLV3Unit7.json';
+import { lv3AfterUnitFile } from './lv3Audit.testSupport';
 import pack from '../../../public/data/v1/sa-pack.json';
 import { allQuestions, findUnit, REVISION, templateGroup, validGroup } from './model';
 import { groupWordIds, resolveGroupWords } from './groupScope';
@@ -18,6 +20,13 @@ beforeEach(async () => {
 });
 afterEach(() => vi.unstubAllGlobals());
 
+// Authenticate the complete current runtime document before restoring U07's
+// original printed text/provenance. Install and progress tests use current data.
+function originalU7Items() {
+  return lv3AfterUnitFile('LV3-U06', 'src/features/direct/curriculumLV3Unit7.json',
+    { ...curriculum7, learningItems: findUnit(7, 'LV3')!.items }).learningItems;
+}
+
 for (const [source, count, usageCount, mappedCount] of [
   [source7, 100, 53, 84], [source8, 98, 49, 81],
 ] as const) {
@@ -32,7 +41,8 @@ for (const [source, count, usageCount, mappedCount] of [
       expect(vocabulary.slice(0, 45).map(i => i.displayWord)).toEqual(source.headwordOrder);
       expect(vocabulary.slice(45).map(i => [i.displayWord, i.sourcePage, i.printedLabel]))
         .toEqual(source.related.map(i => [i.word, i.sourcePage, i.printedLabel]));
-      expect(unit.items.filter(i => i.kind === 'grammar').map(i => [i.pattern, i.sourcePage]))
+      const originalItems = source.unit === 7 ? originalU7Items() : unit.items;
+      expect(originalItems.filter(i => i.kind === 'grammar').map(i => [i.pattern, i.sourcePage]))
         .toEqual(source.usage.map(i => [i.label, i.sourcePage]));
       expect(new Set(unit.items.map(i => i.learningItemId)).size).toBe(count + usageCount);
       expect(vocabulary.filter(i => !i.officialWordId).map(i => i.displayWord))
@@ -40,6 +50,8 @@ for (const [source, count, usageCount, mappedCount] of [
     });
 
     it('keeps original dictionary identity, explicit variants and meaning provenance', () => {
+      const originalVocabulary = source.unit === 7
+        ? originalU7Items().filter(i => i.kind === 'vocabulary') : vocabulary;
       for (const [index, row] of rows.entries()) {
         const item = vocabulary[index];
         expect(item.officialWordId).toBe(row.officialWordId);
@@ -47,9 +59,13 @@ for (const [source, count, usageCount, mappedCount] of [
         const official = pack.words.find(w => w.wordId === row.officialWordId)!;
         expect(official.word).toBe(row.officialWord);
         expect(official.word === row.word || official.wordVariants.includes(row.word)).toBe(true);
-        expect(item.meaningSource).toBe(index < 45 ? 'textbook_transcription' : 'existing_dictionary');
+        expect(originalVocabulary[index].meaningSource).toBe(index < 45 ? 'textbook_transcription' : 'existing_dictionary');
       }
-      expect(vocabulary.filter(i => i.meaningSource === 'unmapped_supplement')
+      const originalUnmapped = originalVocabulary.filter(i => i.meaningSource === 'unmapped_supplement');
+      const sourceUnmapped = source.related.filter(i => !i.officialWordId);
+      expect(sourceUnmapped.length).toBeGreaterThan(0);
+      expect(originalUnmapped.map(i => i.displayWord)).toEqual(sourceUnmapped.map(i => i.word));
+      expect(originalUnmapped
         .every(i => !i.officialWordId && i.targetMeaningZh === '教材補充詞；義項待核對。')).toBe(true);
     });
 
@@ -79,7 +95,7 @@ for (const [source, count, usageCount, mappedCount] of [
 }
 
 it('retains omitted heads, printed pages and the two distinct suspect blocks', () => {
-  const u7 = findUnit(7, 'LV3')!.items;
+  const u7 = originalU7Items();
   const u8 = findUnit(8, 'LV3')!.items;
   expect(u7.find(i => i.displayWord === 'historian')).toMatchObject({sourceRole:'unnumbered_headword',sourcePage:64});
   expect(u7.find(i => i.displayWord === 'vacant')).toMatchObject({sourceRole:'unnumbered_headword',sourcePage:66});
@@ -97,6 +113,31 @@ it('retains omitted heads, printed pages and the two distinct suspect blocks', (
   expect(u8.find(i => i.displayWord === 'advertising')?.sourceRole).toBe('printed_related_word');
   expect(u8.find(i => i.displayWord === 'conscience')?.printedLabel).toBe('衍');
   expect(u8.find(i => i.displayWord === 'element')).toMatchObject({sourcePage:82,printedNumber:36,chapterMeaningsZh:'要素'});
+});
+
+it('keeps the current reviewed crop correction and provenance while rejecting unknown drift', () => {
+  const delivered = { ...curriculum7, learningItems: findUnit(7, 'LV3')!.items };
+  expect(delivered.learningItems.find(i => i.learningItemId === 'LI-LV3U07-G036'))
+    .toMatchObject({
+      pattern: 'crop, cropped, cropped（三態；原書第二態 copped 為誤植）',
+      sourcePage: 69, review: 'source_checked_text_only', practiceMode: 'read_only',
+    });
+  expect(delivered.learningItems.find(i => i.displayWord === 'rally')).toMatchObject({
+    officialWordId: 'W004703', meaningSource: 'textbook_and_dictionary_review',
+    review: 'source_checked_text_only', practiceMode: 'read_only',
+  });
+  const unknownPattern = structuredClone(delivered);
+  unknownPattern.learningItems.find(i => i.learningItemId === 'LI-LV3U07-G036')!.pattern += ' unrecorded';
+  expect(() => lv3AfterUnitFile('LV3-U06', 'src/features/direct/curriculumLV3Unit7.json', unknownPattern))
+    .toThrow(/drift/);
+  const unknownProvenance = structuredClone(delivered);
+  unknownProvenance.learningItems.find(i => i.displayWord === 'rally')!.meaningSource = 'existing_dictionary';
+  expect(() => lv3AfterUnitFile('LV3-U06', 'src/features/direct/curriculumLV3Unit7.json', unknownProvenance))
+    .toThrow(/drift/);
+  const unknownUnpatched = structuredClone(delivered);
+  unknownUnpatched.learningItems.find(i => i.displayWord === 'historian')!.sourcePage = 999;
+  expect(() => lv3AfterUnitFile('LV3-U06', 'src/features/direct/curriculumLV3Unit7.json', unknownUnpatched))
+    .toThrow(/drift/);
 });
 
 it('updating the starter resolves both new units and retains progress and personal groups', async () => {
