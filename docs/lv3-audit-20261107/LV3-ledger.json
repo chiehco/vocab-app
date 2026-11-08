@@ -297,7 +297,7 @@
       "itemCount": 171,
       "vocabularyCount": 108,
       "grammarCount": 63,
-      "status": "applied_awaiting_after_qa",
+      "status": "reviewed_locally_with_retained_source_and_runtime_gaps",
       "beforeQa": "U09-before-qa.md",
       "beforeCapture": "U09-before-capture.json",
       "beforeCoverage": {
@@ -313,7 +313,7 @@
         "screenshots": 610,
         "sealedArtifacts": 805
       },
-      "currentStep": "Six files applied in one verified transaction. Independent expected-after, retained nine-method fixtures, parity, eight ancestors, raw backups, 138 unchanged inputs, starter words/examples/notes, zero-write repeat and direct U08 inverse passed. Technical and runtime AFTER pending; not published.",
+      "currentStep": "Local U09 source/apply/technical/runtime checkpoint complete with retained limits; continue U10. LV3 publication pending.",
       "manifest": "U09-patches.json",
       "scope": "U09-scope.json",
       "sealedCapture": "U09-sealed-capture.json",
@@ -321,7 +321,59 @@
       "review": "U09-source-review.md",
       "fieldCount": 394,
       "rowCount": 183,
-      "newVerbFormRows": 16
+      "newVerbFormRows": 16,
+      "validation": "Independent 394-field/183-row application, nine retained transaction fixtures, parity, eight ancestors, raw backups and zero-write repeat passed. All 469 selected tests have successful retained evidence after documented local test corrections, not a single green run. Full-card runtime, sampled layout and normal Back/reopen passed.",
+      "technicalValidation": "U09-technical-validation.md",
+      "technicalCoverage": {
+        "focusedFiles": 36,
+        "selectedTests": 469,
+        "initialPassedTests": 465,
+        "initialFailedTests": 4,
+        "passedTestsAcrossRetainedRuns": 469,
+        "singleAllGreenRun": false,
+        "unresolvedFailedTests": 0,
+        "forcedTypeScript": true,
+        "productionBuild": true,
+        "fullProjectVitest": false,
+        "wholeLintWarnings": 1035,
+        "changedTestLintWarnings": 0
+      },
+      "runtimeQa": "U09-runtime-qa.md",
+      "afterCapture": "U09-after-capture.json",
+      "completionValidation": "U09-validation.md",
+      "afterCoverage": {
+        "curriculum": 171,
+        "general": 81,
+        "tabPages": 278,
+        "fields": 394,
+        "rows": 183,
+        "directVisible": 241,
+        "renderedVerbFormSubsets": 16,
+        "mirrors": 64,
+        "metadataOnly": 73,
+        "images": 21,
+        "responsiveRoutes": 51,
+        "responsiveViews": 96,
+        "screenshots": 765,
+        "fullSnapshots": 7,
+        "backAndReopen": true
+      },
+      "runtimeEvidenceSeal": {
+        "path": "output/playwright/lv3-u09/after/after-seal-index.json",
+        "artifacts": 1199,
+        "sha256": "a87ef8cd04a8327ba4052ea08c0a6234f13700c1efe88fc0699afe694cd51675"
+      },
+      "runtimeStatsAddendum": {
+        "path": "output/lv3-audit-20261107/u09-runtime-stats-addendum.json",
+        "bytes": 12209,
+        "sha256": "a110b7c37fc322e8fd0d4b44e49b3cdb2ae4b1b6d8ce70f491384b724771cce8"
+      },
+      "retainedQuestions": [
+        "All 108 curriculum example fallbacks and 27 null-ID/read-only cases remain pending original-source confirmation; no textbook examples, questions or IDs were invented.",
+        "The 60 no-active-image cases are allowed by current specification. quote and release retain missing original English captions; Chinese captions remain.",
+        "sculpture lacks direct past/past-participle evidence; inferior noun and old needs_check/rare notes remain. Formal exam sources and pronunciation are not newly certified.",
+        "Image-question/practice, physical phones, production PWA, full offline behavior, full-project Vitest and full-LV3 release acceptance remain unestablished."
+      ]
     },
     {
       "unit": 10,

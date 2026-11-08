@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "unit": "LV3-U09",
+  "stage": "after_runtime_verified_not_published",
+  "status": "passed",
+  "head": "4181d4859a838117cc29d70f54e05b410ec74848",
+  "time": "2026-11-08T07:16:15.297Z",
+  "verification": {
+    "path": "output/playwright/lv3-u09/after/after-verification.json",
+    "sha256": "bad9c2f5bdace5f6d61126f9051e4027fe19f80fe32ded8c86ab263ab6a4f728"
+  },
+  "coverage": {
+    "curriculum": 171,
+    "vocabulary": 108,
+    "grammar": 63,
+    "generalCards": 81,
+    "tabPages": 278,
+    "changedFields": 394,
+    "changedRows": 183,
+    "selectedFormalRows": 254,
+    "selectedFormalCollections": {
+      "words": 81,
+      "examples": 115,
+      "notes": 30,
+      "senses": 13,
+      "media": 15
+    },
+    "changedInstalledRows": 56,
+    "changedInstalledFields": 120,
+    "installedTables": 8,
+    "contentStores": 9,
+    "progressStores": 14,
+    "fullSnapshots": 7,
+    "responsiveRoutes": 51,
+    "responsiveViews": 96,
+    "responsiveScreenshots": 202,
+    "totalScreenshots": 765,
+    "reopenedGeneralCards": 8,
+    "reopenedGeneralTabPages": 28,
+    "reopenedCurriculum": 4,
+    "activeImages": 21,
+    "noActiveImages": 60,
+    "nullIdCurriculum": 27
+  },
+  "fieldClassification": {
+    "direct_visible": 241,
+    "metadata_only": 73,
+    "metadata_shared_mirror": 64,
+    "rendered_subset": 16
+  },
+  "installedPackMeta": {
+    "schemaVersion": 2,
+    "generatedAt": "2026-11-08T05:32:49Z",
+    "counts": {
+      "words": 5779,
+      "senses": 771,
+      "examples": 7436,
+      "relations": 31,
+      "morphemes": 3696,
+      "notes": 4111,
+      "media": 1128,
+      "examPriority": 3613
+    },
+    "wordsHash": "sa:787d7a3c21914e817181c97eb75dca9222a2ec33155f9fff7604d786110ad39a",
+    "contentHash": "sa:d33e98b1567c9f81a570ec3f423152f1ae45af92ac3261fa58c43b7e59cb0ce2"
+  },
+  "sessionEvidence": {
+    "close": {
+      "path": "output/playwright/lv3-u09/after/browser-close-final.txt",
+      "sha256": "2835f0271b65f7473e0f9a9339a796532f5ce64ffaf0220ab316e64bfd1a2a98"
+    },
+    "sessions": {
+      "path": "output/playwright/lv3-u09/after/browser-sessions-final.txt",
+      "sha256": "a60b7b33b5cc6e22debf07e57517adc8e59c693ffe1c05c5694641ac5f3740cb"
+    },
+    "consoleBeforeClose": {
+      "path": "output/playwright/lv3-u09/after/browser-console-before-close.txt",
+      "sha256": "6c8000c60e0cbdd12e58800569cef998a9308908e41cbbe693e0a61dba596916"
+    },
+    "consoleAfterReopen": {
+      "path": "output/playwright/lv3-u09/after/browser-console-final.txt",
+      "sha256": "6c8000c60e0cbdd12e58800569cef998a9308908e41cbbe693e0a61dba596916"
+    }
+  },
+  "snapshots": [
+    {
+      "stage": "initial",
+      "path": "output/playwright/lv3-u09/after/after-initial-state.json",
+      "sha256": "0e1efee7f94c6634cb822b6c16f05eca15148c94c09659cc95d3a2dc00c801da"
+    },
+    {
+      "stage": "post-update",
+      "path": "output/playwright/lv3-u09/after/after-post-update-state.json",
+      "sha256": "a18b05788dec2413afca23958469f014d9d3b70b53cc24cc64c79af690215086"
+    },
+    {
+      "stage": "post-cards",
+      "path": "output/playwright/lv3-u09/after/after-post-cards-state.json",
+      "sha256": "a77348bc371665a6964f2bdc9c0c8360c11c34f2ed33d0ff9e55e02e0ff3c35c"
+    },
+    {
+      "stage": "post-layout",
+      "path": "output/playwright/lv3-u09/after/after-post-layout-state.json",
+      "sha256": "e412f1292d0cbf07ee3c177cd9ac6a432a92384b9e0c64aa8a8b3f82929b3271"
+    },
+    {
+      "stage": "pre-close",
+      "path": "output/playwright/lv3-u09/after/after-pre-close-state.json",
+      "sha256": "8910607e85866ae7a7703d5807baae9dc8c659929e7e33be8de08db519cb1ca8"
+    },
+    {
+      "stage": "reopen",
+      "path": "output/playwright/lv3-u09/after/after-reopen-state.json",
+      "sha256": "c3a5e864b16ad7bf36d8746bfcf4c09815c46027b2136a04d550dfb2c23988dc"
+    },
+    {
+      "stage": "final",
+      "path": "output/playwright/lv3-u09/after/after-final-state.json",
+      "sha256": "9c54a3e47272932b9a0863999e1d11633d632aef385a27c1e9a3eb720640f4f1"
+    }
+  ],
+  "report": {
+    "path": "docs/lv3-audit-20261107/U09-runtime-qa.md",
+    "sha256": "f417d393daf77cc3bcfc651d1f0358a65edc6677e5a460c62a0d19f91860748a"
+  },
+  "sealPath": "output/playwright/lv3-u09/after/after-seal-index.json",
+  "limits": [
+    "390x844 desktop emulation, not physical-phone acceptance",
+    "Responsive checks cover recorded samples and ordinary scrolling, not every pixel at every possible position",
+    "No production deployment, PWA/offline, full-LV3 or full-pack acceptance",
+    "No group creation, answers, rewards, SRS, image-question runs, DB injection or clearing",
+    "All 108 curriculum example fallbacks remain pending; 27 null-ID cases retain read-only fallback",
+    "60 no-active-image cases are permitted by current specification, not fabricated images",
+    "241 fields have direct DOM evidence; 16 verb-form records expose only base/past/pastParticiple; 64 mirrors and 73 metadata-only fields are not claimed directly rendered",
+    "Only the separately approved W003733 persuasive image differs from original U09 BEFORE; original captions and source image retained"
+  ]
+}
