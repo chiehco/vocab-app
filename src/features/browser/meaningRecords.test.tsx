@@ -104,3 +104,68 @@ it('only labels an exact public sense belonging to this word',()=>{
  const rows=[sense(1)];expect(linkedSenseLabel(word,rows,rows[0].senseId)).toBe('n. 字義1');expect(linkedSenseLabel(word,rows,'missing')).toBeUndefined();
  expect(linkedSenseLabel(word,[sense(1,'n.',{active:false})],rows[0].senseId)).toBeUndefined();
 });
+
+const groomForms = {base:'groom',past:'groomed',pastParticiple:'groomed',sourceRef:'https://www.collinsdictionary.com/dictionary/english/groom',status:'approved'};
+const groom = {...word,wordId:'W003112',word:'bridegroom/groom',wordVariants:['bridegroom','groom'],status:'draft',verbForms:groomForms};
+
+it('renders only the approved groom forms under the retained bridegroom/groom display',()=>{
+ const before=JSON.stringify(groom);
+ expect(trustedVerbForms(groom)).toBe(groomForms);
+ const html=render([],groom);
+ expect(html).toContain('<dd>groom</dd>');
+ expect(html.match(/<dd>groomed<\/dd>/g)).toHaveLength(2);
+ expect(html).not.toContain('recorded-forms-missing');
+ expect(JSON.stringify(groom)).toBe(before);
+});
+it.each<[string,Partial<WordRecord>]>([
+ ['wrong ID',{wordId:'OTHER'}],
+ ['wrong display',{word:'groom'}],
+ ['case-changed display',{word:'Bridegroom/groom'}],
+ ['missing variants',{wordVariants:undefined}],
+ ['missing bridegroom',{wordVariants:['groom']}],
+ ['wrong variants',{wordVariants:['bridegroom','fake']}],
+ ['duplicate variants',{wordVariants:['groom','groom']}],
+ ['extra variant',{wordVariants:['bridegroom','groom','fake']}],
+ ['reordered variants',{wordVariants:['groom','bridegroom']}],
+ ['private word',{distributionScope:'private_only'}],
+ ['restricted word',{distributionScope:'restricted'}],
+ ['inactive word',{active:false}],
+ ['rejected word',{status:'rejected'}],
+ ['unknown word status',{status:'unknown'}],
+])('rejects groom records with %s',(_label,overrides)=>{
+ expect(trustedVerbForms({...groom,...overrides})).toBeUndefined();
+});
+it.each<[string,Partial<NonNullable<WordRecord['verbForms']>>]>([
+ ['display base',{base:'bridegroom/groom'}],
+ ['noun base',{base:'bridegroom'}],
+ ['case-changed base',{base:'Groom'}],
+ ['wrong past',{past:'grooms'}],
+ ['wrong participle',{pastParticiple:'grooming'}],
+ ['empty past',{past:''}],
+ ['empty participle',{pastParticiple:' '}],
+ ['fake source',{sourceRef:'https://example.com/groom'}],
+ ['lookalike source',{sourceRef:'https://www.collinsdictionary.com.evil.test/dictionary/english/groom'}],
+ ['wrong entry',{sourceRef:'https://www.collinsdictionary.com/dictionary/english/bridegroom'}],
+ ['unverified conjugation source',{sourceRef:'https://www.collinsdictionary.com/conjugation/english/groom'}],
+ ['empty source',{sourceRef:' '}],
+ ['draft verification',{status:'draft'}],
+ ['reviewed but not approved',{status:'reviewed'}],
+ ['unknown verification',{status:'verified'}],
+])('rejects groom forms with %s',(_label,overrides)=>{
+ const record={...groom,verbForms:{...groomForms,...overrides}};
+ expect(trustedVerbForms(record)).toBeUndefined();
+ expect(render([],record)).toContain('recorded-forms-missing');
+});
+it('rejects malformed groom forms and reserved identities without ordinary-match fallthrough',()=>{
+ for(const record of [
+  {...groom,verbForms:undefined},
+  {...groom,verbForms:{...groomForms,past:null} as unknown as WordRecord['verbForms']},
+  {...groom,verbForms:{...groomForms,base:42} as unknown as WordRecord['verbForms']},
+  {...groom,wordVariants:'bridegroom/groom' as unknown as string[]},
+  {...groom,verbForms:{...groomForms,base:'bridegroom/groom'}},
+  {...groom,wordId:'OTHER',verbForms:{...groomForms,base:'bridegroom/groom'}},
+  {...groom,wordId:'OTHER',word:'BRIDEGROOM/GROOM',verbForms:{...groomForms,base:'BRIDEGROOM/GROOM'}},
+  {...groom,word:'groom'},
+  {...word,wordVariants:['bridegroom','groom'],verbForms:groomForms},
+ ]) expect(trustedVerbForms(record)).toBeUndefined();
+});

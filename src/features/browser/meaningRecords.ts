@@ -51,6 +51,16 @@ export function trustedVerbForms(word: WordRecord) {
       && forms.status === 'approved'
       && forms.sourceRef === 'https://www.collinsdictionary.com/dictionary/english/wage' ? forms : undefined;
   }
+  // U13 verified groom under the retained merged bridegroom/groom entry.
+  // Reserve both identities, as for wage(s), before ordinary base matching.
+  if (word.wordId === 'W003112' || word.word.toLowerCase() === 'bridegroom/groom') {
+    return word.wordId === 'W003112' && word.word === 'bridegroom/groom'
+      && Array.isArray(word.wordVariants) && word.wordVariants.length === 2
+      && word.wordVariants[0] === 'bridegroom' && word.wordVariants[1] === 'groom'
+      && forms.base === 'groom' && forms.past === 'groomed' && forms.pastParticiple === 'groomed'
+      && forms.status === 'approved'
+      && forms.sourceRef === 'https://www.collinsdictionary.com/dictionary/english/groom' ? forms : undefined;
+  }
   return forms.base.toLowerCase() === word.word.toLowerCase() ? forms : undefined;
 }
 
