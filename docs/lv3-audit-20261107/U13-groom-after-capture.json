@@ -1,0 +1,220 @@
+{
+  "schemaVersion": 1,
+  "unit": "LV3-U13",
+  "stage": "groom_fixed_after_runtime_qa",
+  "status": "complete_fixed_runtime_with_existing_release_blockers",
+  "runtimeAcceptanceComplete": true,
+  "groomDefectResolved": true,
+  "releaseAccepted": false,
+  "head": "8a74a626ae7d68c7d6bac7c4fd265d2bf2ff1abf",
+  "time": "2026-11-09T02:58:49.853Z",
+  "priorBlockedPhase": {
+    "status": "blocked_after_phase_groom_forms_suppressed",
+    "seal": {
+      "path": "output/playwright/lv3-u13/after-preparation/after-seal-index.json",
+      "bytes": 263507,
+      "sha256": "ac2245c323e7e399b31158457a140e8e3a658cd4eb65321e2654c7ab27cb87a1"
+    },
+    "reports": [
+      "docs/lv3-audit-20261107/U13-after-capture.json",
+      "docs/lv3-audit-20261107/U13-after-qa.md"
+    ],
+    "unchanged": true
+  },
+  "coverage": {
+    "curriculum": 185,
+    "vocabulary": 112,
+    "grammar": 73,
+    "general": 89,
+    "nullId": 19,
+    "tabCards": 89,
+    "tabPages": 294,
+    "images": 28,
+    "responsiveRoutes": 64,
+    "responsiveViews": 145,
+    "responsiveCheckpoints": 318,
+    "regressionSurfaces": 10
+  },
+  "changes": {
+    "sourceRows": 189,
+    "sourceFields": 451,
+    "sourceChangedByRendererFix": 0,
+    "rendererProductionLines": 10
+  },
+  "independentVerification": {
+    "path": "output/playwright/lv3-u13/groom-fixed-after-v1/independent-verification-1794192959946.json",
+    "bytes": 193405,
+    "sha256": "fd58b2969151c9e730fd1d3c7ebb487c2f57a0de2332e315d085dce2d473663f"
+  },
+  "independentSupplement": {
+    "path": "output/playwright/lv3-u13/groom-fixed-after-v1/independent-fixed-supplement-1794192960411.json",
+    "bytes": 154263,
+    "sha256": "0c4153adb7615d1570720406f9a4c96313dbdbe52b9da5e772be0dda6a629ad9"
+  },
+  "sourceFixVerification": {
+    "path": "output/lv3-audit-20261107/u13-groom-display-fix-v1/verification.json",
+    "bytes": 2920,
+    "sha256": "c3a94dcce4092fc3299ae88e1ae76cfdc5b93f11bd479e6d53f43ec84d495190"
+  },
+  "sourceFixCommitVerification": {
+    "path": "output/lv3-audit-20261107/u13-groom-display-fix-v1/commit-verification.json",
+    "bytes": 1447,
+    "sha256": "96ffc054076920b93e62f0debc3aadd8c514357cdd5e5dba8762954b20edcba0"
+  },
+  "servedSourceVerification": {
+    "path": "output/playwright/lv3-u13/groom-fixed-after-v1/served-source-preflight.json",
+    "bytes": 912,
+    "sha256": "90063a75eaa3ef38315d377d1d41448122a5e5a9bb8319ccbfe20782b75c8db9"
+  },
+  "finalServedRendererVerification": {
+    "path": "output/playwright/lv3-u13/groom-fixed-after-v1/final-served-renderer.json",
+    "bytes": 188,
+    "sha256": "eba5afaae6e4a9dbc50009b8f95830c207d1a79cf5620be64c0a6fdc197005d0"
+  },
+  "finalFixSourcePins": {
+    "path": "output/playwright/lv3-u13/groom-fixed-after-v1/independent-fixed-source-final-1794192984087.json",
+    "bytes": 1944,
+    "sha256": "e52293ba8db05ee9694fddce796fc84c1d593b3907dc5cecd5214d99424d6c8d"
+  },
+  "expectedAfter": {
+    "path": "output/playwright/lv3-u13/groom-fixed-after-v1/independent-expected-after-v2.json",
+    "bytes": 39924240,
+    "sha256": "b04535fb760caa0d40c28aa9d9e895a6996f8bf9432f5453590d8f158f09ca17"
+  },
+  "visualReview": {
+    "path": "output/playwright/lv3-u13/groom-fixed-after-v1/actual-visual-review.json",
+    "bytes": 4078,
+    "sha256": "37498ce7e0e37b248e4936ed0a286158150195ceb252d913e413846a7e02cb55"
+  },
+  "visualEquivalence": {
+    "path": "output/playwright/lv3-u13/groom-fixed-after-v1/visual-equivalence-map.json",
+    "bytes": 646085,
+    "sha256": "5a99fb51742358d6e607dde68a21ae31d7d7dfc0b05856b9cae5c5b1a49e663b"
+  },
+  "visualCounts": {
+    "curriculum": {
+      "total": 185,
+      "reused": 183,
+      "requiresActualInspection": 2
+    },
+    "general": {
+      "total": 89,
+      "reused": 87,
+      "requiresActualInspection": 2
+    },
+    "images": {
+      "total": 28,
+      "reused": 28,
+      "requiresActualInspection": 0
+    },
+    "responsive": {
+      "total": 318,
+      "reused": 283,
+      "requiresActualInspection": 35
+    },
+    "regression": {
+      "total": 10,
+      "reused": 0,
+      "requiresActualInspection": 10
+    }
+  },
+  "preservation": {
+    "protectedFiles": 36552,
+    "seals": [
+      {
+        "seal": "output/playwright/lv3-u13/before-seal-index.json",
+        "count": 1653,
+        "failures": []
+      },
+      {
+        "seal": "output/playwright/lv3-u12/after-preparation/after-seal-index.json",
+        "count": 1681,
+        "failures": []
+      },
+      {
+        "seal": "output/playwright/lv3-u13/after-preparation/after-seal-index.json",
+        "count": 1776,
+        "failures": []
+      }
+    ],
+    "productInputs": 144,
+    "failures": 0
+  },
+  "snapshots": [
+    {
+      "stage": "initial",
+      "path": "output/playwright/lv3-u13/groom-fixed-after-v1/after-initial-state.json",
+      "bytes": 16430063,
+      "sha256": "f38b324a41e39cbc106491945c73b0df035da05e863b364a2ba9cc9c6ef685d3"
+    },
+    {
+      "stage": "ready",
+      "path": "output/playwright/lv3-u13/groom-fixed-after-v1/after-ready-state.json",
+      "bytes": 16430077,
+      "sha256": "39baafaaf386f35448ac324d5aab55742ff95dd0a65a46df4c784be4c2701489"
+    },
+    {
+      "stage": "settled",
+      "path": "output/playwright/lv3-u13/groom-fixed-after-v1/after-settled-state.json",
+      "bytes": 16430077,
+      "sha256": "d6469d5cbff7d8a881f04e5c0e2473562f8a8757f503cb9a328100dc2b354708"
+    },
+    {
+      "stage": "pre-close",
+      "path": "output/playwright/lv3-u13/groom-fixed-after-v1/after-pre-close-state.json",
+      "bytes": 16430077,
+      "sha256": "e90b24b02970856d2b1fe23743d1e767cdeb618e25f5df6890f70bb51a720ae1"
+    },
+    {
+      "stage": "reopen",
+      "path": "output/playwright/lv3-u13/groom-fixed-after-v1/after-reopen-state.json",
+      "bytes": 16430063,
+      "sha256": "9e503a15d9580764bea8afaf46dbb8a141c3f41673ddb3252282b67a3781c7b2"
+    },
+    {
+      "stage": "final",
+      "path": "output/playwright/lv3-u13/groom-fixed-after-v1/after-final-state.json",
+      "bytes": 16430077,
+      "sha256": "063436a63c06d00a904cb7b1bad51442936fa69f640c072657ad10400b4595ba"
+    }
+  ],
+  "baseline": {
+    "stage": "sealed-before-final",
+    "path": "output/playwright/lv3-u13/before-final-state.json",
+    "bytes": 16419226,
+    "sha256": "e59d226e217b96404caaeb7366dc62719e223cda31f3dd968b09950ae0382e15"
+  },
+  "predecessor": {
+    "stage": "blocked-after-final",
+    "path": "output/playwright/lv3-u13/after-preparation/after-final-state.json",
+    "bytes": 16430077,
+    "sha256": "f2578dc070bf2f40fef004b9d349a8651c6c2d17fb0a30418018cdc0c2021000"
+  },
+  "fieldClassification": {
+    "values": 3360,
+    "verbatim": 1987,
+    "normalizedOnly": 0,
+    "notFound": 1373
+  },
+  "changedFieldClassification": {
+    "literal_in_DOM_not_distinct_field_proof": 295,
+    "not_literal_in_captured_DOM_metadata_or_transformed": 112,
+    "structured_value_not_literal_DOM_check": 44
+  },
+  "transformedFieldChecks": {
+    "checked": 89,
+    "metadata": 67,
+    "failures": 0
+  },
+  "technicalGateAllPassed": false,
+  "limits": [
+    "Local Chrome-channel Chromium and 390x844 desktop emulation; no physical-phone, audio, PWA/offline, other-browser or deployed acceptance.",
+    "Visual reuse is supported only by the recorded one-to-one exact full PNG bytes or decoded RGBA pixels against previously actually reviewed immutable images; review scope remains the explicit original crop. All nonidentical/new primary captures were actually inspected.",
+    "Not every pixel in all294 tab screenshots was inspected. Sticky tabs/navigation can obscure individual scroll checkpoints; normal scrolling and separate centered-text checks establish vertical reachability. Static vertical captures do not independently establish horizontal morpheme-rail swipe access.",
+    "Nullable images, supplemental linkage, missing examples and unverified source/phonetic/exam claims remain. No new artwork or release approval.",
+    "Original blocked phase and its defect/failures remain unchanged; this is a separately named fixed pass."
+  ],
+  "verification": "output/playwright/lv3-u13/groom-fixed-after-v1/independent-verification-1794192959946.json",
+  "report": "docs/lv3-audit-20261107/U13-groom-after-qa.md",
+  "sealPath": "output/playwright/lv3-u13/groom-fixed-after-v1/after-seal-index.json"
+}

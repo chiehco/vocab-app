@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 1,
+  "unit": "LV3-U13",
+  "stage": "after_runtime_qa",
+  "status": "blocked_after_phase_groom_forms_suppressed",
+  "head": "069b123e89258390001c1e0c585249100a10131c",
+  "time": "2026-11-09T02:16:05.227Z",
+  "runtimeAcceptanceComplete": false,
+  "blockers": [
+    {
+      "id": "groom-forms-suppressed",
+      "wordId": "W003112",
+      "word": "bridegroom/groom",
+      "linkedCurriculum": [
+        "LI-LV3U13-V102",
+        "LI-LV3U13-V103"
+      ],
+      "description": "Approved groom/groomed/groomed data is installed, but general cards and linked curriculum cards display missing forms. Renderer equality guard rejects the base against the combined display word.",
+      "source": "src/features/browser/meaningRecords.ts:55",
+      "evidence": "output/playwright/lv3-u13/after-preparation/independent-transformed-dom-1794190265696.json"
+    }
+  ],
+  "transformedVerification": {
+    "path": "output/playwright/lv3-u13/after-preparation/independent-transformed-dom-1794190265696.json",
+    "bytes": 44352,
+    "sha256": "783fc3a3c15e01dde2e5b547a05fea22c050feec5505033a617b550e6cb73759"
+  },
+  "navigationSupplement": {
+    "path": "output/playwright/lv3-u13/after-preparation/independent-navigation-checkpoints-caveat-1794190328147.json",
+    "bytes": 92672,
+    "sha256": "230b5ab1ca2d79e96f396b914a01518bdcba99a78fb0e3bb5e55141fc6f1a587"
+  },
+  "coverage": {
+    "curriculum": 185,
+    "vocabulary": 112,
+    "grammar": 73,
+    "general": 89,
+    "nullId": 19,
+    "tabCards": 89,
+    "tabPages": 294,
+    "images": 28,
+    "responsiveRoutes": 58,
+    "responsiveViews": 131,
+    "responsiveCheckpoints": 285
+  },
+  "formalCounts": {
+    "words": 89,
+    "examples": 129,
+    "notes": 47,
+    "senses": 14,
+    "media": 20
+  },
+  "changes": {
+    "rows": 189,
+    "fields": 451,
+    "fieldCounts": {
+      "literal_in_DOM_not_distinct_field_proof": 295,
+      "not_literal_in_captured_DOM_metadata_or_transformed": 112,
+      "structured_value_not_literal_DOM_check": 44
+    }
+  },
+  "independentVerification": {
+    "path": "output/playwright/lv3-u13/after-preparation/independent-verification-1794190210032.json",
+    "bytes": 193229,
+    "sha256": "3703d92f37c239cc02cfa59756a04eaf3358d3603563853e66204b440a153e09"
+  },
+  "expectedAfter": {
+    "path": "output/playwright/lv3-u13/after-preparation/independent-expected-after-v2.json",
+    "bytes": 39924240,
+    "sha256": "b04535fb760caa0d40c28aa9d9e895a6996f8bf9432f5453590d8f158f09ca17"
+  },
+  "visualReview": {
+    "desktop": {
+      "path": "output/playwright/lv3-u13/after-preparation/actual-visual-review-desktop-v2.json",
+      "bytes": 3829,
+      "sha256": "e8c6ed925beb2725e6e72d582f196ac0f524358c572a555ae81b853e1cf9c00c"
+    },
+    "responsive": {
+      "path": "output/playwright/lv3-u13/after-preparation/actual-visual-review-responsive.json",
+      "bytes": 1744,
+      "sha256": "b39f586f111a7522b81c3133aedd648655b89099aee75dbc60515fdefce8e7de"
+    }
+  },
+  "preservation": {
+    "count": 32352,
+    "failures": 0,
+    "seals": [
+      {
+        "seal": "output/playwright/lv3-u13/before-seal-index.json",
+        "count": 1653,
+        "failures": []
+      },
+      {
+        "seal": "output/playwright/lv3-u12/after-preparation/after-seal-index.json",
+        "count": 1681,
+        "failures": []
+      }
+    ],
+    "productInputs": 144
+  },
+  "snapshots": [
+    {
+      "stage": "initial",
+      "path": "output/playwright/lv3-u13/after-preparation/after-initial-state.json",
+      "bytes": 16419212,
+      "sha256": "c4277517cd0cadf4a55e134973cd09d19c1b5aa2d9dee7e37533c0d690c78131"
+    },
+    {
+      "stage": "ready",
+      "path": "output/playwright/lv3-u13/after-preparation/after-ready-state.json",
+      "bytes": 16430077,
+      "sha256": "773d5b54e386719c3aa90739eb692ffafb544cc9853c5d1d84d4002146b235dd"
+    },
+    {
+      "stage": "settled",
+      "path": "output/playwright/lv3-u13/after-preparation/after-settled-state.json",
+      "bytes": 16430077,
+      "sha256": "0345551b3715fae5638ff756353afe58bd62c4987199e3b31683587a2e3591d2"
+    },
+    {
+      "stage": "pre-close",
+      "path": "output/playwright/lv3-u13/after-preparation/after-pre-close-state.json",
+      "bytes": 16430077,
+      "sha256": "9525f4b9ff387cdf4d4a613881497239e9492bf230254a50c7dfd0968c95494c"
+    },
+    {
+      "stage": "reopen",
+      "path": "output/playwright/lv3-u13/after-preparation/after-reopen-state.json",
+      "bytes": 16430063,
+      "sha256": "af38c9eb7e0e0ded612b934d80cab0b942a2a63c041e7bcd34d19efc55030e1f"
+    },
+    {
+      "stage": "final",
+      "path": "output/playwright/lv3-u13/after-preparation/after-final-state.json",
+      "bytes": 16430077,
+      "sha256": "f2578dc070bf2f40fef004b9d349a8651c6c2d17fb0a30418018cdc0c2021000"
+    }
+  ],
+  "baseline": {
+    "stage": "before-final",
+    "path": "output/playwright/lv3-u13/before-final-state.json",
+    "bytes": 16419226,
+    "sha256": "e59d226e217b96404caaeb7366dc62719e223cda31f3dd968b09950ae0382e15"
+  },
+  "predecessor": {
+    "stage": "final",
+    "path": "output/playwright/lv3-u12/after-preparation/after-final-state.json",
+    "bytes": 16419229,
+    "sha256": "9e45538ec24a34b0a9f198981191cdacd2c13fb81512a58c6cb04cf1259e86e8"
+  },
+  "technicalReport": "docs/lv3-audit-20261107/U13-technical.json",
+  "technicalGateAllPassed": false,
+  "limits": [
+    "Local Chromium/Chrome-channel runtime and390x844 desktop emulation; no physical phone, audio, PWA/offline, other-browser or deployed acceptance.",
+    "All185 curriculum and89 general main-card rectangles and28 image rectangles actually viewed, not all294 tab screenshots or every desktop viewport pixel. All285 captured responsive scroll checkpoints actually viewed.",
+    "Sticky navigation/tabs can cover individual checkpoints; normal scrolling and separate centered-text checks establish reachability. Horizontal morpheme rails retain partially offscreen sidecards; horizontal swipe accessibility was not independently established.",
+    "No new art approval, source-semantic completeness, phonetic/exam-claim certification, practice/SRS/reward validation or release acceptance. U13 runtime acceptance is incomplete because approved groom forms are suppressed.",
+    "Initial normal-bootstrap staleness, original failed verifier, stale-heading locator failure and bounded retry-path correction are retained, not overwritten."
+  ],
+  "verification": "output/playwright/lv3-u13/after-preparation/independent-verification-1794190210032.json",
+  "sourceDocuments": "output/playwright/lv3-u13/after-preparation/frozen-source-documents.json",
+  "sourceInventory": "output/playwright/lv3-u13/after-preparation/source-inventory-v2.json",
+  "routes": "output/playwright/lv3-u13/after-preparation/routes-v2.json",
+  "captionExpectations": "output/playwright/lv3-u13/after-preparation/frozen-caption-expectations.json",
+  "fieldClassification": {
+    "values": 3360,
+    "verbatim": 1985,
+    "normalizedOnly": 0,
+    "notFound": 1375
+  },
+  "report": "docs/lv3-audit-20261107/U13-after-qa.md",
+  "sealPath": "output/playwright/lv3-u13/after-preparation/after-seal-index.json"
+}
