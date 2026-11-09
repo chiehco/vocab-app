@@ -774,7 +774,50 @@
       "itemCount": 145,
       "vocabularyCount": 92,
       "grammarCount": 53,
-      "status": "not_started"
+      "status": "reviewed_locally_with_retained_source_and_technical_release_blockers",
+      "manifest": "U14-patches.json",
+      "sourceReview": "U14-source-review.md",
+      "sourceCorrections": [
+        "U14-source-review-correction-v2.md",
+        "U14-source-provenance-correction-v3.md"
+      ],
+      "application": "U14-application.json",
+      "technicalQa": "completed_with_release_blockers",
+      "runtimeAfter": "complete_qualified_runtime_with_existing_release_blockers",
+      "release": "not published",
+      "localClosed": true,
+      "technical": "U14-technical.json",
+      "technicalValidation": "U14-technical-validation.md",
+      "validation": "U14-validation.md",
+      "after": "U14-after-capture.json",
+      "afterQa": "U14-after-qa.md",
+      "technicalCoverage": {
+        "originalFiles": 224,
+        "originalTests": 5201,
+        "originalPassed": 5186,
+        "originalFailed": 11,
+        "originalSkipped": 4,
+        "originalTimeouts": 9,
+        "recurringTimeouts": 7,
+        "newTimeoutIdentities": 2,
+        "historicalAssertionFailures": 2,
+        "testOnlyFollowupTests": 26,
+        "testOnlyFollowupPassed": 26,
+        "testOnlyFollowupFailed": 0,
+        "testOnlyFollowupSkipped": 0,
+        "pythonModulesPassed": 15,
+        "pythonMethodsPassed": 2821,
+        "wholeLint": "Not rerun; three prior generated Three.js hook errors remain.",
+        "fullProjectVitest": false,
+        "fullReleaseAccepted": false
+      },
+      "retainedQualifications": [
+        "Promotion helper lacked a preexecution byte pin; exact resulting state and both ancestor domains were independently verified.",
+        "Four corrected example POS values are stored but not printed when meaningHint is null; original strict visibility failures remain.",
+        "Initial AFTER snapshot retained asynchronous old pack; captures began only after settled exact readiness.",
+        "Rare/mixed meanings, artwork-caption and morpheme-rail questions remain; no new artwork approval."
+      ],
+      "independentClosing": "output/lv3-audit-20261107/u14-closing/independent-closing-supplement.json"
     },
     {
       "unit": 15,

@@ -1,0 +1,220 @@
+{
+  "unit": "LV3-U14",
+  "state": "technical_completed_with_retained_release_blockers",
+  "applicationCommit": "1e2980618e620ea327acbcb87ad7f2cacda06d9d",
+  "historicalConsumerFixCommit": "1e555ffdc7d44cbbb098938c81b28372e5d4f067",
+  "originalExactScope": {
+    "files": 224,
+    "total": 5201,
+    "passed": 5186,
+    "failed": 11,
+    "skipped": 4,
+    "failures": [
+      {
+        "path": "src/db/unitAudit.testSupport.test.ts",
+        "title": "reverses only recorded starter corrections while retaining the old whole-pack fixture",
+        "classification": "5000ms_timeout",
+        "durationMs": 9055.7357,
+        "sameU13TimeoutIdentity": true
+      },
+      {
+        "path": "src/db/unitAudit.testSupport.test.ts",
+        "title": "keeps the caller pack untouched when restoring sealed historical media",
+        "classification": "5000ms_timeout",
+        "durationMs": 7543.675600000002,
+        "sameU13TimeoutIdentity": true
+      },
+      {
+        "path": "src/features/direct/lv2Unit48Audit.test.ts",
+        "title": "restores only seventy exact formal operations and rejects recorded-field and identity drift",
+        "classification": "5000ms_timeout",
+        "durationMs": 5029.8899,
+        "sameU13TimeoutIdentity": true
+      },
+      {
+        "path": "src/features/direct/lv3Unit1Audit.test.ts",
+        "title": "preserves independent raw publication guards and rejects metadata or formatting drift",
+        "classification": "5000ms_timeout",
+        "durationMs": 5271.4568,
+        "sameU13TimeoutIdentity": false
+      },
+      {
+        "path": "src/features/direct/lv3Unit5Audit.test.ts",
+        "title": "authenticates all 56 actual U05 after rows and all six published files",
+        "classification": "5000ms_timeout",
+        "durationMs": 6165.835800000001,
+        "sameU13TimeoutIdentity": true
+      },
+      {
+        "path": "src/features/direct/lv3Unit6Audit.test.ts",
+        "title": "authenticates all six actual published files and all 31 affected starter rows",
+        "classification": "5000ms_timeout",
+        "durationMs": 6208.0544,
+        "sameU13TimeoutIdentity": true
+      },
+      {
+        "path": "src/features/direct/lv4NotesConfirmation.test.ts",
+        "title": "keeps every public content dataset, including the5779-word starter, exactly unchanged",
+        "classification": "5000ms_timeout",
+        "durationMs": 11531.174799999997,
+        "sameU13TimeoutIdentity": true
+      },
+      {
+        "path": "src/features/direct/recoveredUnitIntegration.test.ts",
+        "title": "retains historical curriculum and question identities with the audited cubes gloss addition",
+        "classification": "historical_domain_assertion",
+        "durationMs": 1085.3045000000002,
+        "sameU13TimeoutIdentity": true
+      },
+      {
+        "path": "src/features/direct/recoveredUnitIntegration.test.ts",
+        "title": "rejects unknown changed-file bytes, unchanged-file bytes, and out-of-domain direct files",
+        "classification": "historical_domain_assertion",
+        "durationMs": 258.9225999999999,
+        "sameU13TimeoutIdentity": false
+      },
+      {
+        "path": "src/features/wordbeast/illustrationCaptions.test.ts",
+        "title": "image caption pairs covers all 742 original approved scenario captions at the authenticated pre-migration checkpoint",
+        "classification": "5000ms_timeout",
+        "durationMs": 5304.967900000001,
+        "sameU13TimeoutIdentity": false
+      },
+      {
+        "path": "src/features/vocabulary/lv3PuppetImageRepair.test.ts",
+        "title": "pins proof, source and candidate assets, original captions/media and historical proofs and guards",
+        "classification": "5000ms_timeout",
+        "durationMs": 6815.242900000001,
+        "sameU13TimeoutIdentity": true
+      }
+    ],
+    "originalFailureEvidenceRetained": true,
+    "source": "output/lv3-audit-20261107/u14-technical-preparation/execution-v1/vitest-results.json",
+    "scopeVerification": "output/lv3-audit-20261107/u14-technical-preparation/execution-v1/vitest-scope-verification.json",
+    "timeoutMessageSource": "output/lv3-audit-20261107/u14-technical-preparation/execution-v1/failure-classification-v1.json"
+  },
+  "timeoutComparison": {
+    "originalU13Identities": 8,
+    "U14Timeouts": 9,
+    "sameU13Identities": 7,
+    "newIdentities": [
+      "src/features/direct/lv3Unit1Audit.test.ts: preserves independent raw publication guards and rejects metadata or formatting drift",
+      "src/features/wordbeast/illustrationCaptions.test.ts: image caption pairs covers all 742 original approved scenario captions at the authenticated pre-migration checkpoint"
+    ],
+    "priorRecoveredIdentity": "Originally timed out in U13; U14 original phase stopped at a domain assertion, then passed in separate complete-file follow-up. This does not clear the nine untouched U14 timeouts."
+  },
+  "python": {
+    "modules": 15,
+    "methods": 2821,
+    "passed": true,
+    "skipped": 0
+  },
+  "forcedBothTypeScriptConfigs": "passed_original_and_followup",
+  "changedCodeLint": "passed_original_and_followup",
+  "freshBuild": {
+    "commit": "1e2980618e620ea327acbcb87ad7f2cacda06d9d",
+    "directory": "output/lv3-audit-20261107/u14-technical-preparation/execution-v1/production-dist",
+    "files": 2405,
+    "indexSha256": "462868d2051c6e2bd2f22d7c2f1a74d2f2e3394ad73f36ec7960b068cbe1826c",
+    "completeCompiledCurriculum": [
+      {
+        "file": "index-BV0FpZAS.js",
+        "sha256": "7f7832c3eb64aa64fc237f462a749998b2f09a91a5d492454b47c097ddc625a2",
+        "curriculumSemanticSha256": "bd9bdef4941d747826f50b4b4f79277c893daa264638d01819dc4d1619483100",
+        "start": 6363404,
+        "end": 6409666
+      }
+    ],
+    "sourceDocuments": 6,
+    "publishedByteCopies": 11
+  },
+  "historicalCorrection": {
+    "file": "src/features/direct/recoveredUnitIntegration.test.ts",
+    "changes": [
+      "Add only curriculumLV3Unit14.json to explicit changed-domain whitelist",
+      "Change unchanged-file count120 to119 and explanatory Eleven/Twelve comments"
+    ],
+    "retained": [
+      "Original checkpoint6008609dda537f69ef0880d6482c713b1e6e75ec0fa8c3a4af71cdee9b08e4f0",
+      "All131 direct JSON files",
+      "All124 historical curriculum units and original expected hashes",
+      "Changed/unchanged/out-of-domain negative assertions",
+      "Existing strict lv3AfterUnit1PublishedText projection"
+    ],
+    "independentReview": {
+      "path": "output/lv3-audit-20261107/u14-independent-consumers/recovered-consumer-proposal-review-v1.json",
+      "sha256": "2fa6409990f83c627ed3af1aaefe2f690ec194e02735352f5ddb8dfde41fa0a9"
+    }
+  },
+  "separateFollowup": {
+    "commit": "1e555ffdc7d44cbbb098938c81b28372e5d4f067",
+    "files": [
+      "src/features/direct/lv3Unit14History.test.ts",
+      "src/features/direct/lv3Unit14Text.test.ts",
+      "src/features/direct/recoveredUnitIntegration.test.ts"
+    ],
+    "total": 26,
+    "passed": 26,
+    "failed": 0,
+    "skipped": 0,
+    "vitestExit": 0,
+    "lintExit": 0,
+    "typecheckExit": 0,
+    "protectedInputs": 5038,
+    "protectedInputsUnchanged": true,
+    "originalRunFilesUnchanged": true,
+    "existingBuildFilesVerified": 2405,
+    "existingBuildIndexSha256": "462868d2051c6e2bd2f22d7c2f1a74d2f2e3394ad73f36ec7960b068cbe1826c",
+    "existingBuildReusedNotRebuilt": true,
+    "failures": []
+  },
+  "protectedOriginalInputs": 5038,
+  "originalProtectedInputsUnchanged": true,
+  "promotionProvenanceLimit": "The promotion helper lacked an independently captured preexecution pin. Its later retained hash and independently verified main state do not retroactively prove preexecution identity. Main acceptance remains qualified; do not claim every helper was prepinned.",
+  "releaseLimits": [
+    "No whole-project success",
+    "Existing whole-lint generatedThree failures not rerun",
+    "No physical phone/audio/PWA/offline/practice/rewards/release acceptance",
+    "Production build warns about chunks over500kB; no settings changed",
+    "AFTER browser review and independent final closure remain pending; ledger not promoted by this technical report.",
+    "No push or deployment. LV3 remains unpublished until authorized complete-LV batch release gates pass."
+  ],
+  "evidence": {
+    "output/lv3-audit-20261107/u14-technical-preparation/execution-v1/technical-results-v1.json": {
+      "sha256": "dbd3420ed262c7b485e59ca3bb1f63da718f611a395226e0befaa555cd482f4c"
+    },
+    "output/lv3-audit-20261107/u14-technical-preparation/execution-v1/summary-all.json": {
+      "sha256": "a6d0fc3fc89077061e9e0f3fb06a63bf3db8e4df7425f97575943b50beb410c5"
+    },
+    "output/lv3-audit-20261107/u14-technical-preparation/execution-v1/vitest-results.json": {
+      "sha256": "7b125c5cd26c0d66a2eb761a70996ae2c338e27428b00fce2d691a1f1f9cf787"
+    },
+    "output/lv3-audit-20261107/u14-technical-preparation/execution-v1/vitest-scope-verification.json": {
+      "sha256": "7fdf80912471d3997ca894576358c2781f784eb0d1870b45234518b235318afe"
+    },
+    "output/lv3-audit-20261107/u14-technical-preparation/execution-v1/failure-classification-v1.json": {
+      "sha256": "969d38d5ff850beabdd3c2ffb325f5e8ab65ec1a77f127bb5034948c9ac0b81f"
+    },
+    "output/lv3-audit-20261107/u14-technical-preparation/execution-v1/python-results.json": {
+      "sha256": "717cdbf4d86523d66d351dc9e4cd5032d105c0af41e67d4d07a4fe1c312eebc6"
+    },
+    "output/lv3-audit-20261107/u14-technical-preparation/execution-v1/product-build-verification.json": {
+      "sha256": "b3a9b335d923f5dbab4fe82e3815272db894e1e1225f7cce8f9ceaaf49da6c58"
+    },
+    "output/lv3-audit-20261107/u14-technical-preparation/execution-v1/build-artifact-index.json": {
+      "sha256": "462868d2051c6e2bd2f22d7c2f1a74d2f2e3394ad73f36ec7960b068cbe1826c"
+    },
+    "output/lv3-audit-20261107/u14-technical-preparation/followup-v1/fix-checkpoint.json": {
+      "sha256": "9275dff27c92672eb17a34f316bb7bfcc5ef8bd4013a9ee18e641b807f307839"
+    },
+    "output/lv3-audit-20261107/u14-technical-preparation/followup-v1/approved-inputs.json": {
+      "sha256": "d5546b494ac551f35ad126de4df6bdea85fba4cf2831c821655d8320c4ce8c6e"
+    },
+    "output/lv3-audit-20261107/u14-technical-preparation/followup-v1/summary.json": {
+      "sha256": "a69a601b0d61f817dcffd7d079fd6bf8688dfa5f328fc9845801c42d2da50462"
+    },
+    "output/lv3-audit-20261107/u14-technical-preparation/followup-v1/vitest-results.json": {
+      "sha256": "d88cb4684a62b9b67a2e17a8b57959e8c17a3820cf14cc5835192a175b2847dd"
+    }
+  }
+}

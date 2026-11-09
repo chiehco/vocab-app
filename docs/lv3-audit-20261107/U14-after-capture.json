@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "unit": "LV3-U14",
+  "stage": "after_runtime_qa",
+  "status": "complete_with_retained_source_and_renderer_limits",
+  "head": "1e555ffdc7d44cbbb098938c81b28372e5d4f067",
+  "time": "2026-11-09T08:26:11.771Z",
+  "coverage": {
+    "curriculum": 145,
+    "vocabulary": 92,
+    "grammar": 53,
+    "general": 68,
+    "nullId": 24,
+    "tabCards": 68,
+    "tabPages": 224,
+    "curriculumExact": true,
+    "generalExact": true,
+    "tabExact": true,
+    "images": 19,
+    "screenshots": 639
+  },
+  "responsive": {
+    "routes": 46,
+    "views": 94,
+    "checkpoints": 200
+  },
+  "formalCounts": {
+    "words": 68,
+    "examples": 99,
+    "notes": 25,
+    "senses": 12,
+    "media": 14
+  },
+  "actualPixelReview": {
+    "curriculum": 145,
+    "tabs": 224,
+    "responsiveCheckpoints": 200,
+    "generalWords": 68,
+    "imagesExactPriorReviewedByteReuse": 19
+  },
+  "receipts": [
+    {
+      "path": "output/playwright/lv3-u14-after-v1/curriculum-pixel-review-001-027.json",
+      "bytes": 28772,
+      "sha256": "d1a1f4af006770a159c2ff43a5f38c44fd3cc6ecb5c562d24cae826fcf2602ca"
+    },
+    {
+      "path": "output/playwright/lv3-u14-after-v1/curriculum-pixel-review-028-073.json",
+      "bytes": 48163,
+      "sha256": "17170669d93eebb0014c0704d00090751f273028c10e0960edf6b104b50f667d"
+    },
+    {
+      "path": "output/playwright/lv3-u14-after-v1/tab-pixel-review-001-075.json",
+      "bytes": 101371,
+      "sha256": "604e029975b55d63f6fd56efb722bb8722b70f11b8a8bd2cab50119924890643"
+    },
+    {
+      "path": "output/playwright/lv3-u14-after-v1/responsive-pixel-review-001-025.json",
+      "bytes": 44212,
+      "sha256": "7f8f8baf7c277cea330e5382e8cae7159446d0fc4ca9a9aec564af0535c91714"
+    },
+    {
+      "path": "output/playwright/lv3-u14-after-v1/responsive-pixel-review-026-050.json",
+      "bytes": 48377,
+      "sha256": "97bb03037bb40965760d2ef43a9b26e1228c7a9e30e98c227e61a8f363e4c4ef"
+    }
+  ],
+  "verification": "output/playwright/lv3-u14-after-v1/after-verification.json",
+  "actualReview": "output/playwright/lv3-u14-after-v1/actual-review-coverage.json",
+  "state": "output/playwright/lv3-u14-after-v1/state-preservation.json",
+  "render": "output/playwright/lv3-u14-after-v1/source-render-verification.json",
+  "examplePosQualification": "output/playwright/lv3-u14-after-v1/example-pos-display-qualification.json",
+  "imageReuse": "output/playwright/lv3-u14-after-v1/image-byte-reuse.json",
+  "preservation": "output/playwright/lv3-u14-after-v1/closing-pin-verification.json",
+  "release": "output/playwright/lv3-u14-after-v1/capture-release.json",
+  "build": {
+    "root": "output/lv3-audit-20261107/u14-technical-preparation/execution-v1/production-dist",
+    "pin": {
+      "path": "output/lv3-audit-20261107/u14-technical-preparation/execution-v1/build-artifact-index.json",
+      "bytes": 365414,
+      "sha256": "462868d2051c6e2bd2f22d7c2f1a74d2f2e3394ad73f36ec7960b068cbe1826c"
+    },
+    "originalCommit": "1e298061",
+    "policy": "Reused exact bytes, not rebuilt at test-only1e555ffd. Parent authorization and independent raw recheck."
+  },
+  "lifecycle": {
+    "normalBack": true,
+    "normalCloseReopen": true,
+    "browserClosed": true,
+    "contentStores": 9,
+    "progressStores": 14,
+    "learnerDataUnchangedExceptOrdinaryBookmark": true
+  },
+  "qualifications": [
+    "Four example sensePos values are correct in source and installed data but existing renderer omits POS when meaningHint is null. Strict visibility failures remain in source-render-verification.json; no hints invented or global renderer changed.",
+    "Initial asynchronous old-pack readiness snapshot failed; no card capture began until settled readiness passed. Final readiness and all post-settled Content stores pass.",
+    "Fade artwork shows an arm bruise while caption describes a blue leaf; forecast caption is Chinese only; cook has no resolved artwork despite legacy caption. These are retained source/artwork limits, not newly approved artwork.",
+    "Undoubtedly root border/horizontal rail limitations persist. Horizontal swipe, audio, practice, physical devices and learner-setting interactions were not tested.",
+    "Cupboard cup-to-occupation/occupy root association is questionable and confirmed already present in BEFORE pixels. Retained unresolved without silent correction.",
+    "Original technical run has 11 failures and 4 opt-in skips. Separate history fix follow-up passed; whole-project success and release readiness are not claimed. LV3 remains unpublished."
+  ],
+  "failuresPreserved": [
+    "output/playwright/lv3-u14-after-v1/release-preflight-v1-failure.json",
+    "output/playwright/lv3-u14-after-v1/after-readiness-initial.json",
+    "output/playwright/lv3-u14-after-v1/source-render-verification.json"
+  ],
+  "rawScreenshotCountMeaning": "639 original PNGs: 145 curriculum, 68 general, 224 tabs, 200 responsive checkpoints, Back and reopened card. Captured count is not an independent actual-review count.",
+  "productEditsByBrowserWorker": 0,
+  "releaseApproved": false
+}
