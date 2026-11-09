@@ -1,0 +1,779 @@
+{
+  "schemaVersion": 1,
+  "unit": "LV3-U15",
+  "stage": "before_runtime_qa",
+  "status": "complete_before_capture_with_retained_limits",
+  "head": "a9a022efbd691562519ad13a1e3cefbb0a67c59f",
+  "time": "2026-11-09T09:34:37.576Z",
+  "coverage": {
+    "curriculum": 168,
+    "vocabulary": 122,
+    "grammar": 46,
+    "general": 88,
+    "nullId": 33,
+    "tabCards": 88,
+    "tabPages": 295,
+    "curriculumExact": true,
+    "generalExact": true,
+    "tabExact": true,
+    "images": 19,
+    "screenshots": 774,
+    "mappedOccurrences": 89,
+    "uniqueGeneralWords": 88,
+    "responsiveRoutes": 56,
+    "responsiveViews": 108,
+    "responsiveCheckpoints": 221,
+    "originalRawScreenshots": 774,
+    "settledRetryScreenshots": 2
+  },
+  "formalCounts": {
+    "words": 88,
+    "examples": 96,
+    "notes": 43,
+    "senses": 11,
+    "media": 12
+  },
+  "productInputCount": 144,
+  "readiness": "All 8 installed collections / 26565 rows and 250 selected linked rows matched frozen source before captures.",
+  "state": "9 Content and 14 Progress stores, local/session storage unchanged except ordinary navigation bookmark, including retry. Normal Back, close/reopen passed; browser closed.",
+  "receipts": [
+    {
+      "path": "output/playwright/lv3-u15/curriculum-pixel-review-001-042.json",
+      "bytes": 40979,
+      "sha256": "221ad9761a49e0515d8b8218bfeba8fc52996f57bf9eea7580dfc7922d1a15cb"
+    },
+    {
+      "path": "output/playwright/lv3-u15/curriculum-pixel-review-043-084.json",
+      "bytes": 41786,
+      "sha256": "8a5057b4a7bc04b374d19c063652d8fb9e6a8975ea5fe64278f1c0fe98d69264"
+    },
+    {
+      "path": "output/playwright/lv3-u15/image-pixel-review-001-005.json",
+      "bytes": 13139,
+      "sha256": "4a0cade9e1d0b42690a29aefb20c5d25c2d0a3618b53428bc8f2b2256d14bceb"
+    },
+    {
+      "path": "output/playwright/lv3-u15/responsive-pixel-review-001-056.json",
+      "bytes": 92982,
+      "sha256": "41b30f22568034cc26540235b13baa9b4715331099584a83c7ebb60144916ab4"
+    },
+    {
+      "path": "output/playwright/lv3-u15/tab-pixel-review-001-050.json",
+      "bytes": 121602,
+      "sha256": "1c798e8c68727998247c3897ab40f14aa1a0b2fab2a24ac53d4e6931412a755b"
+    },
+    {
+      "path": "output/playwright/lv3-u15/tab-pixel-review-051-099.json",
+      "bytes": 110965,
+      "sha256": "9298fdca8e45986ea4654989d3120b7566e22eaf4f162c679e4e28ffb7410201"
+    },
+    {
+      "path": "output/playwright/lv3-u15/tab-pixel-review-settled-retry-v1.json",
+      "bytes": 2955,
+      "sha256": "1d211c93e190be5e57edb5bd3840f59032a4ff46b627610c9f3ac0e6d24eca68"
+    }
+  ],
+  "verification": "output/playwright/lv3-u15/v2-before-verification.json",
+  "originalFailedVerification": "output/playwright/lv3-u15/before-verification.json",
+  "retryVerification": "output/playwright/lv3-u15/settled-retry-state-verification.json",
+  "mainPixelMapping": "output/playwright/lv3-u15/actual-general-main-review.json",
+  "preservation": "output/playwright/lv3-u15/closing-preservation.json",
+  "worktreeContext": "output/playwright/lv3-u15/closing-worktree-context.json",
+  "retainedFailures": [
+    "Original verifier used a wrong null-card placeholder literal and wrong photo hash field; separate v2 corrects the checker against actual source/UI contract. Original outputs retained.",
+    "Readiness checker v1 referenced wrong prior-seal schema; separate v2 passed.",
+    "Contact-sheet helper first lacked PIL under py -3, then default encoding failed; same pinned helper succeeded with existing runtime Python -X utf8.",
+    "Original two raw desktop tab captures were blank despite populated DOM. Separately pinned normal re-open/settled capture shows content with unchanged source; no product fix or root-cause claim."
+  ],
+  "limits": [
+    "LV3 remains unpublished. This is a BEFORE baseline, not source completion, new artwork approval, whole-project test success or release approval.",
+    "33 null-ID curriculum items remain unlinked/read-only; unknown meanings, examples, forms and mixed source meanings remain unresolved pending source review.",
+    "Bury bulb identity is uncertain; farther comparison with yesterday is not visually provable; complaint, whip and vigorous captions are Chinese-only; researcher illustration style lacks visible antennae. No approval statuses changed.",
+    "Information and researcher third root tiles clip at the right edge of their internal horizontal rail. Horizontal swiping remains untested. Curriculum level-picker also extends beyond the right edge.",
+    "Sticky bars can cover text in individual responsive checkpoints; adjacent scroll checkpoints expose it. Only 390x844 desktop portrait emulation was tested, not physical devices or landscape.",
+    "DOM, hashes and runtime state checks do not substitute for actual pixels. Original two blank tab screenshots remain failed evidence; separate settled retry is the usable visibility evidence.",
+    "Brow V076 maps W001337 eyebrow/brow. Two eyelash/lash source examples occur in the source inventory but do not render in that word meaning tab.",
+    "Existing example POS with null meaningHint renderer limitations, historical source/art questions and release blockers remain; no invented hints or artwork approvals."
+  ],
+  "independentRetryAndGlyphReview": {
+    "receipts": [
+      {
+        "path": "output/playwright/lv3-u15/tab-pixel-review-settled-retry-v1.json",
+        "sha256": "1d211c93e190be5e57edb5bd3840f59032a4ff46b627610c9f3ac0e6d24eca68",
+        "document": {
+          "phase": "U15 BEFORE separate settled-retry-v1 independent pixel review",
+          "reviewer": "review_u15_before_tabs",
+          "result": "PASS for visibility of these two retry panels only; original blank captures remain FAILED evidence.",
+          "method": "Both raw full-height PNG files actually opened using view_image; capture.json read separately as supporting evidence, never substituted for pixels.",
+          "items": [
+            {
+              "id": "W000493",
+              "tabIndex": 2,
+              "tab": "搭配",
+              "path": "output/playwright/lv3-u15/settled-retry-v1/W000493-2.png",
+              "sha256": "5f39a0e1f3be66c98050d9ef1628fe1606e901deb9dffb1e6507b38a9026575d",
+              "originalFailedPath": "output/playwright/lv3-u15/before-tab-W000493-2.png",
+              "originalFailedSha256": "dea7d54d62d71766c73a5f82916d482ea041b39254d16c364abce1748d7899f5",
+              "timestamp": "2026-11-09T09:28:09.378Z",
+              "actualRawPixelsViewed": true,
+              "observation": "All three collocations and nine notes fully visible through dossier footer; no blank panel or fixed-footer overlap."
+            },
+            {
+              "id": "W000666",
+              "tabIndex": 1,
+              "tab": "字義",
+              "path": "output/playwright/lv3-u15/settled-retry-v1/W000666-1.png",
+              "sha256": "4ef955330ab42afba110002ede687559a6ca1d0b33b1d7dd97ebe685e51d8f75",
+              "originalFailedPath": "output/playwright/lv3-u15/before-tab-W000666-1.png",
+              "originalFailedSha256": "16b26a68d1194ab2d66147a4a378dcaf46abe0d73a6d8878b6fda4269397900f",
+              "timestamp": "2026-11-09T09:28:13.741Z",
+              "actualRawPixelsViewed": true,
+              "observation": "English definition, Chinese meanings, both complete bilingual examples and frequency section fully visible through dossier footer; no blank panel or fixed-footer overlap."
+            }
+          ],
+          "captureJson": {
+            "path": "output/playwright/lv3-u15/settled-retry-v1/capture.json",
+            "sha256": "b4f0965a389e1dae40860ce21c1f859788b4b9858bafbca94046484ef288f159"
+          },
+          "closeLog": {
+            "path": "output/playwright/lv3-u15/settled-retry-v1/close.log",
+            "sha256": "998519b23f5af8e0060cbcf08aead30dbbf9055f83cda81d9e12c6e1c3aa39ed",
+            "text": "Browser 'lv3-u15-before-audit' closed\n\n"
+          },
+          "originalReceiptPreserved": {
+            "path": "output/playwright/lv3-u15/tab-pixel-review-001-050.json",
+            "sha256": "1c798e8c68727998247c3897ab40f14aa1a0b2fab2a24ac53d4e6931412a755b"
+          },
+          "limits": [
+            "No browser interaction or product/learner writes by this reviewer.",
+            "No source or artwork approval. Like retains simplified equivalence notes beside more nuanced notes; this receipt certifies visibility, not semantic correction.",
+            "No independent certification of 87/88 main-image equality or poverty raw review: those are browser-worker reports outside this receipt.",
+            "Settling procedure and no product changes are capture-worker provenance; independent review here checks resulting pixels and recorded capture identities."
+          ]
+        }
+      },
+      {
+        "path": "output/playwright/lv3-u15/tab-pixel-clipping-clarification-v1.json",
+        "sha256": "3a80c668cf1c85ec978c2e4928df09ae955af1cba3f8505679a54b61a970dcc5",
+        "document": {
+          "phase": "U15 BEFORE tab pixel clipping clarification v1",
+          "originalReceiptSha256": "1c798e8c68727998247c3897ab40f14aa1a0b2fab2a24ac53d4e6931412a755b",
+          "resolvedByActualFullRawView": [
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W001285-1.png",
+              "sha256": "5ae88e004c15cc48107f15625ebf1d2a4c0c281a4d6004ac59e12f9a591ba26c",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-010.png",
+              "currentRawSha256": "5ae88e004c15cc48107f15625ebf1d2a4c0c281a4d6004ac59e12f9a591ba26c"
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002106-1.png",
+              "sha256": "f67e1988c7f5cf990c7f0657203c5d391585a4d303abc074b5186485a3461513",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-021.png",
+              "currentRawSha256": "f67e1988c7f5cf990c7f0657203c5d391585a4d303abc074b5186485a3461513"
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002501-2.png",
+              "sha256": "eac2acf96c1fb0586d536231e6ea966f21a350dac86c4319be35d1ff7e9d9b3d",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-050.png",
+              "currentRawSha256": "eac2acf96c1fb0586d536231e6ea966f21a350dac86c4319be35d1ff7e9d9b3d"
+            }
+          ],
+          "resolvedObservation": "Full raw images actually opened: full headings and left labels/content intact. Bubble and lively opened in this follow-up; dull in original review.",
+          "additionalLongSheetDisplayCandidatesNotIndividuallyRawReopened": [
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002118-2.png",
+              "sha256": "7742605fda4f4412b65f7e22d570c71a46c32ef22b4bc671ca579f053f7a10c8",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-023.png",
+              "currentRawSha256": "7742605fda4f4412b65f7e22d570c71a46c32ef22b4bc671ca579f053f7a10c8"
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002148-0.png",
+              "sha256": "dd7000878302585ed25d2a81c6e31ec8c9ced6b1511135bfc2c1306b30352a33",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-024.png",
+              "currentRawSha256": "dd7000878302585ed25d2a81c6e31ec8c9ced6b1511135bfc2c1306b30352a33"
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002148-1.png",
+              "sha256": "29406ca6d4ad32dfc686dc6103e9c06a19304985dc67b009e1c5b4745d6f5b83",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-024.png",
+              "currentRawSha256": "29406ca6d4ad32dfc686dc6103e9c06a19304985dc67b009e1c5b4745d6f5b83"
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002175-0.png",
+              "sha256": "491c5cfab836a3e0d5a34c42e88fcd2ba99d2e7196a2f87a887166f7305841db",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-026.png",
+              "currentRawSha256": "491c5cfab836a3e0d5a34c42e88fcd2ba99d2e7196a2f87a887166f7305841db"
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002175-1.png",
+              "sha256": "594e31ffecbba98e7fec53c7b7fa4c4c01376d4d229465e6afd0191c2c23c7f5",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-026.png",
+              "currentRawSha256": "594e31ffecbba98e7fec53c7b7fa4c4c01376d4d229465e6afd0191c2c23c7f5"
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002175-2.png",
+              "sha256": "ac6776fda0c820f4a09e0a5e887f32580f4e066e7b27e45f8ff591e8e12b39a3",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-027.png",
+              "currentRawSha256": "ac6776fda0c820f4a09e0a5e887f32580f4e066e7b27e45f8ff591e8e12b39a3"
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002180-0.png",
+              "sha256": "ef5c488dbdd526c21ce478b04921e62ad21fbbc89f669506a291b06540ea11bf",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-027.png",
+              "currentRawSha256": "ef5c488dbdd526c21ce478b04921e62ad21fbbc89f669506a291b06540ea11bf"
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002180-1.png",
+              "sha256": "c47be1d7b74fa2abb3f3433ab291126e71b44a578c280ad2bf6c1d9575a254d7",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-027.png",
+              "currentRawSha256": "c47be1d7b74fa2abb3f3433ab291126e71b44a578c280ad2bf6c1d9575a254d7"
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002191-1.png",
+              "sha256": "6b0d54d89e5db897b5d9b2ba812252e767faa7bc4036808f753957de457c7f0a",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-030.png",
+              "currentRawSha256": "6b0d54d89e5db897b5d9b2ba812252e767faa7bc4036808f753957de457c7f0a"
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002191-2.png",
+              "sha256": "6b4d9a98010dd3bf9f71e139ce30930f88abfcd1b9cc378dbc131a8403ca8077",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-030.png",
+              "currentRawSha256": "6b4d9a98010dd3bf9f71e139ce30930f88abfcd1b9cc378dbc131a8403ca8077"
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002214-1.png",
+              "sha256": "fcf27d7f5bfa3d5bafa05133e443ada3143874314e2e5be185ebfbdc469492dc",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-032.png",
+              "currentRawSha256": "fcf27d7f5bfa3d5bafa05133e443ada3143874314e2e5be185ebfbdc469492dc"
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002214-2.png",
+              "sha256": "1e9a59bc480fce511c9cbb85e11771ca5e58d1c11919281b31543392837791d6",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-032.png",
+              "currentRawSha256": "1e9a59bc480fce511c9cbb85e11771ca5e58d1c11919281b31543392837791d6"
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002221-1.png",
+              "sha256": "ffa5a41b79be78ba09502839bf81b15537c4ef3afe732f82e479a6447f8463e5",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-033.png",
+              "currentRawSha256": "ffa5a41b79be78ba09502839bf81b15537c4ef3afe732f82e479a6447f8463e5"
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002269-1.png",
+              "sha256": "a9eb46a5609ffb551953c9a887c965d883564c0fecb762ebd51859603fd7687c",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-035.png",
+              "currentRawSha256": "a9eb46a5609ffb551953c9a887c965d883564c0fecb762ebd51859603fd7687c"
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002272-1.png",
+              "sha256": "eae80e8b107763924efe30a875c03dbb69b6f82aaa3df056881bd05993c5daff",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-036.png",
+              "currentRawSha256": "eae80e8b107763924efe30a875c03dbb69b6f82aaa3df056881bd05993c5daff"
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002272-2.png",
+              "sha256": "6869753342302c019ea4d846ec9591da90bb2156e734d5b2c750baef60426f90",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-036.png",
+              "currentRawSha256": "6869753342302c019ea4d846ec9591da90bb2156e734d5b2c750baef60426f90"
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002372-1.png",
+              "sha256": "29e46fcd32a245f93285b7ca00a9ac220db3109093954c3b09e71ee484fe2f77",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-041.png",
+              "currentRawSha256": "29e46fcd32a245f93285b7ca00a9ac220db3109093954c3b09e71ee484fe2f77"
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002482-0.png",
+              "sha256": "07d766d39c1bedfd678eab4a1bccf52d61eddf62ef695a75c603f1155501bc82",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-047.png",
+              "currentRawSha256": "07d766d39c1bedfd678eab4a1bccf52d61eddf62ef695a75c603f1155501bc82"
+            }
+          ],
+          "supplementalCropScope": "Sheets009,010,018,020,021,029,042,048,050 actually opened as shorter native-scale copies. Many apparent missing initial characters became visible. Exact pixel mapping of all150 original sheets to raw crops passed.",
+          "status": "No confirmed raw clipping defect. Presentation-dependent glyph omissions remain an inspection limitation for listed additional candidates; do not claim universal glyph clearance. Original failed/qualified receipts unchanged.",
+          "limits": [
+            "Candidates describe questionable tool displays, not established browser defects.",
+            "No browser rerun or product modification.",
+            "Nonlisted sheets were actually reviewed but this is not a new all-glyph OCR or rendering certification."
+          ]
+        }
+      },
+      {
+        "path": "output/playwright/lv3-u15/tab-pixel-clipping-clarification-v2.json",
+        "sha256": "fb9f3d9c24afb57a9d0b0b4d0f086f94dbcc88f050fcb3c467c76386d0fe6269",
+        "document": {
+          "phase": "U15 BEFORE raw clipping clarification addendum v2",
+          "method": "All18 exact candidates from v1 actually opened as full raw screenshots with view_image in nine batches of two; no DOM/hash substitution for viewing.",
+          "result": "All18 identified raw-image inspection gaps closed; targeted leftmost-character concerns not reproduced in raw images.",
+          "items": [
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002118-2.png",
+              "sha256": "7742605fda4f4412b65f7e22d570c71a46c32ef22b4bc671ca579f053f7a10c8",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-023.png",
+              "currentRawSha256": "7742605fda4f4412b65f7e22d570c71a46c32ef22b4bc671ca579f053f7a10c8",
+              "actualFullRawImageViewed": true,
+              "outcome": "Questioned leftmost heading characters visibly intact; no clipping confirmed.",
+              "observation": "Bury heading, both collocations and footer intact."
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002148-0.png",
+              "sha256": "dd7000878302585ed25d2a81c6e31ec8c9ced6b1511135bfc2c1306b30352a33",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-024.png",
+              "currentRawSha256": "dd7000878302585ed25d2a81c6e31ec8c9ced6b1511135bfc2c1306b30352a33",
+              "actualFullRawImageViewed": true,
+              "outcome": "Questioned leftmost heading characters visibly intact; no clipping confirmed.",
+              "observation": "Chin heading, noun gloss, image placeholder, status and footer intact."
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002148-1.png",
+              "sha256": "29406ca6d4ad32dfc686dc6103e9c06a19304985dc67b009e1c5b4745d6f5b83",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-024.png",
+              "currentRawSha256": "29406ca6d4ad32dfc686dc6103e9c06a19304985dc67b009e1c5b4745d6f5b83",
+              "actualFullRawImageViewed": true,
+              "outcome": "Questioned leftmost heading characters visibly intact; no clipping confirmed.",
+              "observation": "Chin heading, full English definition and Chinese gloss intact."
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002175-0.png",
+              "sha256": "491c5cfab836a3e0d5a34c42e88fcd2ba99d2e7196a2f87a887166f7305841db",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-026.png",
+              "currentRawSha256": "491c5cfab836a3e0d5a34c42e88fcd2ba99d2e7196a2f87a887166f7305841db",
+              "actualFullRawImageViewed": true,
+              "outcome": "Questioned leftmost heading characters visibly intact; no clipping confirmed.",
+              "observation": "Comma heading, gloss and placeholder intact."
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002175-1.png",
+              "sha256": "594e31ffecbba98e7fec53c7b7fa4c4c01376d4d229465e6afd0191c2c23c7f5",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-026.png",
+              "currentRawSha256": "594e31ffecbba98e7fec53c7b7fa4c4c01376d4d229465e6afd0191c2c23c7f5",
+              "actualFullRawImageViewed": true,
+              "outcome": "Questioned leftmost heading characters visibly intact; no clipping confirmed.",
+              "observation": "Comma heading, punctuation/butterfly definition and Chinese gloss intact."
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002175-2.png",
+              "sha256": "ac6776fda0c820f4a09e0a5e887f32580f4e066e7b27e45f8ff591e8e12b39a3",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-027.png",
+              "currentRawSha256": "ac6776fda0c820f4a09e0a5e887f32580f4e066e7b27e45f8ff591e8e12b39a3",
+              "actualFullRawImageViewed": true,
+              "outcome": "Questioned leftmost heading characters visibly intact; no clipping confirmed.",
+              "observation": "Comma heading and both collocations intact."
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002180-0.png",
+              "sha256": "ef5c488dbdd526c21ce478b04921e62ad21fbbc89f669506a291b06540ea11bf",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-027.png",
+              "currentRawSha256": "ef5c488dbdd526c21ce478b04921e62ad21fbbc89f669506a291b06540ea11bf",
+              "actualFullRawImageViewed": true,
+              "outcome": "Questioned leftmost heading characters visibly intact; no clipping confirmed.",
+              "observation": "Complain heading, missing-form notice, placeholder and bilingual example intact."
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002180-1.png",
+              "sha256": "c47be1d7b74fa2abb3f3433ab291126e71b44a578c280ad2bf6c1d9575a254d7",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-027.png",
+              "currentRawSha256": "c47be1d7b74fa2abb3f3433ab291126e71b44a578c280ad2bf6c1d9575a254d7",
+              "actualFullRawImageViewed": true,
+              "outcome": "Questioned leftmost heading characters visibly intact; no clipping confirmed.",
+              "observation": "Complain heading, definition, missing-form notice, both examples and frequency intact."
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002191-1.png",
+              "sha256": "6b0d54d89e5db897b5d9b2ba812252e767faa7bc4036808f753957de457c7f0a",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-030.png",
+              "currentRawSha256": "6b0d54d89e5db897b5d9b2ba812252e767faa7bc4036808f753957de457c7f0a",
+              "actualFullRawImageViewed": true,
+              "outcome": "Questioned leftmost heading characters visibly intact; no clipping confirmed.",
+              "observation": "Continent heading, landmass definition and Chinese gloss intact."
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002191-2.png",
+              "sha256": "6b4d9a98010dd3bf9f71e139ce30930f88abfcd1b9cc378dbc131a8403ca8077",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-030.png",
+              "currentRawSha256": "6b4d9a98010dd3bf9f71e139ce30930f88abfcd1b9cc378dbc131a8403ca8077",
+              "actualFullRawImageViewed": true,
+              "outcome": "Questioned leftmost heading characters visibly intact; no clipping confirmed.",
+              "observation": "Continent heading and both collocations intact."
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002214-1.png",
+              "sha256": "fcf27d7f5bfa3d5bafa05133e443ada3143874314e2e5be185ebfbdc469492dc",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-032.png",
+              "currentRawSha256": "fcf27d7f5bfa3d5bafa05133e443ada3143874314e2e5be185ebfbdc469492dc",
+              "actualFullRawImageViewed": true,
+              "outcome": "Questioned leftmost heading characters visibly intact; no clipping confirmed.",
+              "observation": "Cruel heading, definition, both bilingual examples and frequency intact."
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002214-2.png",
+              "sha256": "1e9a59bc480fce511c9cbb85e11771ca5e58d1c11919281b31543392837791d6",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-032.png",
+              "currentRawSha256": "1e9a59bc480fce511c9cbb85e11771ca5e58d1c11919281b31543392837791d6",
+              "actualFullRawImageViewed": true,
+              "outcome": "Questioned leftmost heading characters visibly intact; no clipping confirmed.",
+              "observation": "Cruel heading and both collocations intact."
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002221-1.png",
+              "sha256": "ffa5a41b79be78ba09502839bf81b15537c4ef3afe732f82e479a6447f8463e5",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-033.png",
+              "currentRawSha256": "ffa5a41b79be78ba09502839bf81b15537c4ef3afe732f82e479a6447f8463e5",
+              "actualFullRawImageViewed": true,
+              "outcome": "Questioned leftmost heading characters visibly intact; no clipping confirmed.",
+              "observation": "Database heading, definition and Chinese gloss intact."
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002269-1.png",
+              "sha256": "a9eb46a5609ffb551953c9a887c965d883564c0fecb762ebd51859603fd7687c",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-035.png",
+              "currentRawSha256": "a9eb46a5609ffb551953c9a887c965d883564c0fecb762ebd51859603fd7687c",
+              "actualFullRawImageViewed": true,
+              "outcome": "Questioned leftmost heading characters visibly intact; no clipping confirmed.",
+              "observation": "Drunk heading, definition, both bilingual examples and frequency intact."
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002272-1.png",
+              "sha256": "eae80e8b107763924efe30a875c03dbb69b6f82aaa3df056881bd05993c5daff",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-036.png",
+              "currentRawSha256": "eae80e8b107763924efe30a875c03dbb69b6f82aaa3df056881bd05993c5daff",
+              "actualFullRawImageViewed": true,
+              "outcome": "Questioned leftmost heading characters visibly intact; no clipping confirmed.",
+              "observation": "Dumpling heading, dough/dessert definition and Chinese gloss intact."
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002272-2.png",
+              "sha256": "6869753342302c019ea4d846ec9591da90bb2156e734d5b2c750baef60426f90",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-036.png",
+              "currentRawSha256": "6869753342302c019ea4d846ec9591da90bb2156e734d5b2c750baef60426f90",
+              "actualFullRawImageViewed": true,
+              "outcome": "Questioned leftmost heading characters visibly intact; no clipping confirmed.",
+              "observation": "Dumpling heading and both collocations intact."
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002372-1.png",
+              "sha256": "29e46fcd32a245f93285b7ca00a9ac220db3109093954c3b09e71ee484fe2f77",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-041.png",
+              "currentRawSha256": "29e46fcd32a245f93285b7ca00a9ac220db3109093954c3b09e71ee484fe2f77",
+              "actualFullRawImageViewed": true,
+              "outcome": "Questioned leftmost heading characters visibly intact; no clipping confirmed.",
+              "observation": "Grassy heading, English definition and Chinese gloss intact."
+            },
+            {
+              "path": "output/playwright/lv3-u15/before-tab-W002482-0.png",
+              "sha256": "07d766d39c1bedfd678eab4a1bccf52d61eddf62ef695a75c603f1155501bc82",
+              "crop": [
+                350,
+                0,
+                930,
+                3016
+              ],
+              "scale": 1,
+              "sheet": "output/playwright/lv3-u15/visual-tabs/sheet-047.png",
+              "currentRawSha256": "07d766d39c1bedfd678eab4a1bccf52d61eddf62ef695a75c603f1155501bc82",
+              "actualFullRawImageViewed": true,
+              "outcome": "Questioned leftmost heading characters visibly intact; no clipping confirmed.",
+              "observation": "Laughter heading, Chinese gloss, placeholder and bilingual example intact."
+            }
+          ],
+          "remainingCandidatesInThisDomain": [],
+          "priorClarification": {
+            "path": "output/playwright/lv3-u15/tab-pixel-clipping-clarification-v1.json",
+            "sha256": "3a80c668cf1c85ec978c2e4928df09ae955af1cba3f8505679a54b61a970dcc5"
+          },
+          "originalReceipt": {
+            "path": "output/playwright/lv3-u15/tab-pixel-review-001-050.json",
+            "sha256": "1c798e8c68727998247c3897ab40f14aa1a0b2fab2a24ac53d4e6931412a755b"
+          },
+          "limits": [
+            "Scoped to the18 explicit candidate captures, not every glyph in the entire project or other viewport/device.",
+            "No source/semantic/artwork approvals. Existing mixed senses and missing-form notices remain unchanged.",
+            "Original blank like/poor phase remains failed, with separate settled retry receipt.",
+            "No browser/product/learner changes; original receipts unmodified."
+          ]
+        }
+      }
+    ],
+    "lifecycleActualPixelReview": {
+      "reviewer": "capture_u15_before_runtime",
+      "images": [
+        {
+          "path": "output/playwright/lv3-u15/before-history-back.png",
+          "sha256": "0cb2994f766a0f57ba34e6a6c4a642c45efa3195b015377ae0b3b17b96ad37b0"
+        },
+        {
+          "path": "output/playwright/lv3-u15/before-reopened-card.png",
+          "sha256": "0d37c38556faffb4e2a946f6ef39875eea65be6b5e44c213f037fe08305c91b7"
+        }
+      ],
+      "finding": "Both raw images actually viewed: dislike meaning panel complete and no footer obstruction. Meaning tab was explicitly reselected after Back/reopen; automatic tab restoration was not asserted."
+    },
+    "qualification": "Original failed captures, original clipping uncertainty and all subsequent exact-scope clarification receipts are preserved. Later raw views resolve only their explicitly listed targets."
+  }
+}

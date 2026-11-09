@@ -1,4 +1,5 @@
 import 'fake-indexeddb/auto';
+import {originalUnit15Items} from './lv3Unit15History.testSupport';
 import {afterEach,beforeEach,expect,it,vi} from 'vitest';
 import source from '../../../scripts/sources/LV3Unit15.json';
 import pack from '../../../public/data/v1/sa-pack.json';
@@ -45,8 +46,10 @@ it('uses existing official identities and keeps 31 unmapped supplements pending'
   const word=pack.words.find(w=>w.wordId===row.officialWordId)!;expect(word.word).toBe(row.officialWord);
   expect(word.word===row.word||word.wordVariants.includes(row.word)).toBe(true);
  }
- expect(vocabulary.filter(i=>!i.officialWordId)).toHaveLength(33);expect(vocabulary.filter(i=>i.meaningSource==='unmapped_supplement')).toHaveLength(31);
- expect(vocabulary.filter(i=>i.meaningSource==='unmapped_supplement').every(i=>i.targetMeaningZh==='教材補充詞；義項待核對。')).toBe(true);
+ expect(vocabulary.filter(i=>!i.officialWordId)).toHaveLength(33);
+ const originalVocabulary=originalUnit15Items(unit.items).filter(i=>i.kind==='vocabulary');
+ expect(originalVocabulary.filter(i=>i.meaningSource==='unmapped_supplement')).toHaveLength(31);
+ expect(originalVocabulary.filter(i=>i.meaningSource==='unmapped_supplement').every(i=>i.targetMeaningZh==='教材補充詞；義項待核對。')).toBe(true);
 });
 it('adopts no pictures, running examples, sense IDs or textbook questions',()=>{
  expect(unit.deliveryMode).toBe('text_only');expect(unit.questions).toEqual([]);expect(practiceIds(unit.items)).toEqual([]);

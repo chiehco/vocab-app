@@ -1,0 +1,120 @@
+{
+  "status": "application_repeat_and_all_main_ancestors_passed",
+  "unit": "LV3-U15",
+  "at": "2026-11-09T14:14:27.728350+00:00",
+  "head": "a9a022efbd691562519ad13a1e3cefbb0a67c59f",
+  "manifestHash": "ea47e7996badeefcf011baf14a5e43d098cd392b948c73e6612f50a8241af015",
+  "fields": 389,
+  "rows": 151,
+  "sourceDocumentsCompared": 6,
+  "mainProductWrites": 5,
+  "exactChangedPaths": [
+    "public/data/v1/examples.json",
+    "public/data/v1/meta.json",
+    "public/data/v1/sa-pack.json",
+    "public/data/v1/words.json",
+    "src/features/direct/curriculumLV3Unit15.json"
+  ],
+  "unchangedInputs": 139,
+  "newReceipts": 1,
+  "rawBackupsVerified": 5,
+  "repeatProductWrites": 0,
+  "repeatReplacementCalls": 0,
+  "repeatNewReceipts": 0,
+  "mainAncestorCount": 14,
+  "mainAncestorHashChecks": 2016,
+  "directParentEqualsIndependentBefore": true,
+  "u01OriginalGuards": 137,
+  "immutableFinalPinChecks": 7946,
+  "originalFourteenReceiptsPreserved": true,
+  "chainOnlyU15Promoted": true,
+  "ledgerRawUnchanged": true,
+  "evidence": [
+    {
+      "path": "output/lv3-audit-20261107/u15-technical-preparation/main-receipt-v1.json",
+      "sha256": "8937a6a9a69f061cf2c22677cec6d8825ffa362db58850bad966e661d5a2d1b5",
+      "bytes": 2018
+    },
+    {
+      "path": "output/lv3-audit-20261107/u15-technical-preparation/main-content-v1.json",
+      "sha256": "0c4eea9ee205f8c8cdbf539102d3bac24687a4e4430d8c6d69b5dc9a8320c1c5",
+      "bytes": 103250
+    },
+    {
+      "path": "output/lv3-audit-20261107/u15-technical-preparation/main-repeat-v1.json",
+      "sha256": "3fde3c67f3f67c7f0447d711cee6d69482afada193a3ff3e1620e994e1238e2e",
+      "bytes": 164
+    },
+    {
+      "path": "output/lv3-audit-20261107/u15-technical-preparation/main-ancestors-recovered-v3.json",
+      "sha256": "21b17548a6ece1b9558fc73e610737be0e2e5bebc7578b7bd7139d20089cba16",
+      "bytes": 502565
+    },
+    {
+      "path": "output/lv3-audit-20261107/u15-integration/application-v1/main-apply-result.json",
+      "sha256": "6fef36cdf2e301165cd8fa65fc1eb597727ca0195847210d7f2e1a17e46b4432",
+      "bytes": 368
+    },
+    {
+      "path": "output/lv3-audit-20261107/u15-integration/application-v1/main-apply-calls.json",
+      "sha256": "ae0f7c3e9b7f72441082374b6398b76b9745b6a0e951ead0da2c6b703eea3354",
+      "bytes": 1527
+    },
+    {
+      "path": "output/lv3-audit-20261107/u15-integration/application-v1/main-apply-observation.json",
+      "sha256": "cb3d63b90ece17a84251ed123aa4a4a12c8a503c7cda75cb586862d303ac7151",
+      "bytes": 573
+    },
+    {
+      "path": "output/lv3-audit-20261107/u15-integration/application-v1/main-repeat-result.json",
+      "sha256": "5197ce24640bdca561bf0a36b38635bde9fc292c5c2e78cfbce6ea9c0093686a",
+      "bytes": 281
+    },
+    {
+      "path": "output/lv3-audit-20261107/u15-integration/application-v1/main-repeat-calls.json",
+      "sha256": "4a5015f70420c470608808236f7d2d430edf3a46bece4caf0ea85b0d652b4d27",
+      "bytes": 29
+    },
+    {
+      "path": "output/lv3-audit-20261107/u15-integration/application-v1/promotion-result-v1.json",
+      "sha256": "f0407e85d7bb236a7b60afc6e2e2392e3ac8e2ac70ddf7501da0c3001bf55f68",
+      "bytes": 441
+    }
+  ],
+  "receipt": "output/lv3-audit-20261107/transactions/20261109T122606967856Z/transaction.json",
+  "limits": [
+    "No final technical suites/build/AFTER runtime/closing or commit in this phase.",
+    "Existing release, timeout, generated lint, artwork and device limits remain.",
+    "Original cp950 pre-method failure and unexecuted observer v1 wrong-unit static rejection are preserved. Versioned corrected helpers and promotion were pinned before execution."
+  ],
+  "ancestorRecovery": "Original MAIN v1 interrupted without final report. Recovery v3 independently validates 12 retained trees plus separately projected U13 and U14; original partial U13 and failed retained13 recovery are preserved; all 14 domains are rechecked.",
+  "activeProcesses": [],
+  "trackedDifferencesSinceBootstrap": {
+    "docs/lv3-audit-20261107/chain.json": {
+      "before": "1fc476ac7e196161c882f6d18ed4fa8a7836b251d69e19b07d186a2925dbdf91",
+      "after": "79eec01ecbb16f569af778ed0a017f4fe6f7fe351bd730f4648489c3e7b7f902"
+    },
+    "public/data/v1/examples.json": {
+      "before": "6ec481d3d66a8ba0f07f2a01376de4b87be9b20c430cbc803ebd649fb4d47cd5",
+      "after": "5456838448e14b966b2f2d06e58ee62fe677a523db7bb38a4e97aa0a0e727ed7"
+    },
+    "public/data/v1/meta.json": {
+      "before": "66b7a7c22215ae412dee1a78857ed66aeff62dc4aed381e41c3c517345a154bb",
+      "after": "1153d6ab872f31752574c3db69f4e6e2076ec757191cdc381cb471265f27a9fb"
+    },
+    "public/data/v1/sa-pack.json": {
+      "before": "69da6d708ef02f0397730e9cfb3aa50806f51ef4948bf83845f7cd704d81f599",
+      "after": "d814a4e9d749b132ff6ea9b927d5721e3b938b49a21641cc60c51914da00c32b"
+    },
+    "public/data/v1/words.json": {
+      "before": "826633648e09c29896f3b30a68c70b9fc9edd0b281512571eabb326b16bccb69",
+      "after": "021e9700351bc967002f75df1fb153b0cc0de5d76b0568b9c6e55e698a3b5ea7"
+    },
+    "src/features/direct/curriculumLV3Unit15.json": {
+      "before": "34891663cee92fdec7df2a212790dcb33b3f6421538aa523349408a581d603fe",
+      "after": "d891d89e5602cb88861c554604033ac4646e208631003953d53a3bd73933da2b"
+    }
+  },
+  "trackedDifferenceScopeExact": true,
+  "gitStatus": " M docs/lv3-audit-20261107/chain.json\n M public/data/v1/examples.json\n M public/data/v1/meta.json\n M public/data/v1/sa-pack.json\n M public/data/v1/words.json\n M scripts/test_verify_lv3_unit_fixture.py\n M scripts/verify_lv3_unit_fixture.py\n M src/features/direct/curriculumLV3Unit15.json\n M src/features/direct/lv3Unit15Text.test.ts\n M src/features/direct/recoveredUnitIntegration.test.ts\n?? .playwright-cli/\n?? docs/lv3-audit-20261107/U09-review.md\n?? docs/lv3-audit-20261107/U15-before-capture.json\n?? docs/lv3-audit-20261107/U15-before-qa.md\n?? docs/lv3-audit-20261107/U15-patches.json\n?? docs/lv3-audit-20261107/U15-scope.json\n?? docs/lv3-audit-20261107/U15-sealed-capture.json\n?? docs/lv3-audit-20261107/U15-source-review.md\n?? output/\n?? scripts/__pycache__/\n?? src/features/direct/lv3Unit15History.test.ts\n?? src/features/direct/lv3Unit15History.testSupport.ts\n"
+}
