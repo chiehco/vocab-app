@@ -1,0 +1,266 @@
+{
+  "unit": "LV3-U15",
+  "state": "technical_recovery_completed_with_retained_release_blockers",
+  "applicationCommit": "bc5733b25d36ada57bd1bfb3b180941be3e11b8f",
+  "originalExactScope": {
+    "files": 224,
+    "total": 5208,
+    "passed": 5194,
+    "failed": 10,
+    "skipped": 4,
+    "failures": [
+      {
+        "path": "src/db/unitAudit.testSupport.test.ts",
+        "title": "reverses only recorded starter corrections while retaining the old whole-pack fixture",
+        "classification": "5000ms_timeout",
+        "durationMs": 9130.7463,
+        "sameU14TimeoutIdentity": true,
+        "exactJsonFailureMessages": [
+          "Error: STACK_TRACE_ERROR\n    at task (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1784:27)\n    at Object.<anonymous> (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1817:16)\n    at Object.<anonymous> (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1563:28)\n    at chain (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:599:14)\n    at C:/Users/USER/Documents/Codex/lv3-unit-audit-20261107/src/db/unitAudit.testSupport.test.ts:200:1\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at VitestModuleEvaluator._runInlinedModule (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vitest/dist/module-evaluator.js:206:4)\n    at VitestModuleRunner.directRequest (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1259:59)\n    at VitestModuleRunner.cachedRequest (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1166:73)\n    at VitestModuleRunner.import (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1120:10)"
+        ],
+        "stderrError": "Error: Test timed out in 5000ms."
+      },
+      {
+        "path": "src/db/unitAudit.testSupport.test.ts",
+        "title": "keeps the caller pack untouched when restoring sealed historical media",
+        "classification": "5000ms_timeout",
+        "durationMs": 8093.763599999998,
+        "sameU14TimeoutIdentity": true,
+        "exactJsonFailureMessages": [
+          "Error: STACK_TRACE_ERROR\n    at task (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1784:27)\n    at Object.<anonymous> (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1817:16)\n    at Object.<anonymous> (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1563:28)\n    at chain (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:599:14)\n    at C:/Users/USER/Documents/Codex/lv3-unit-audit-20261107/src/db/unitAudit.testSupport.test.ts:1515:1\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at VitestModuleEvaluator._runInlinedModule (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vitest/dist/module-evaluator.js:206:4)\n    at VitestModuleRunner.directRequest (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1259:59)\n    at VitestModuleRunner.cachedRequest (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1166:73)\n    at VitestModuleRunner.import (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1120:10)"
+        ],
+        "stderrError": "Error: Test timed out in 5000ms."
+      },
+      {
+        "path": "src/features/direct/lv2Unit48Audit.test.ts",
+        "title": "restores only seventy exact formal operations and rejects recorded-field and identity drift",
+        "classification": "5000ms_timeout",
+        "durationMs": 5276.4378,
+        "sameU14TimeoutIdentity": true,
+        "exactJsonFailureMessages": [
+          "Error: STACK_TRACE_ERROR\n    at task (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1784:27)\n    at Object.<anonymous> (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1817:16)\n    at Object.<anonymous> (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1563:28)\n    at chain (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:599:14)\n    at C:/Users/USER/Documents/Codex/lv3-unit-audit-20261107/src/features/direct/lv2Unit48Audit.test.ts:34:1\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at VitestModuleEvaluator._runInlinedModule (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vitest/dist/module-evaluator.js:206:4)\n    at VitestModuleRunner.directRequest (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1259:59)\n    at VitestModuleRunner.cachedRequest (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1166:73)\n    at VitestModuleRunner.import (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1120:10)"
+        ],
+        "stderrError": "Error: Test timed out in 5000ms."
+      },
+      {
+        "path": "src/features/direct/lv3Unit19Text.test.ts",
+        "title": "fresh starter resolves all 78 mapped identities in a complete 150-item group",
+        "classification": "5000ms_timeout",
+        "durationMs": 5009.398000000001,
+        "sameU14TimeoutIdentity": false,
+        "exactJsonFailureMessages": [
+          "Error: STACK_TRACE_ERROR\n    at task (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1784:27)\n    at Object.<anonymous> (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1817:16)\n    at Object.<anonymous> (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1563:28)\n    at chain (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:599:14)\n    at C:/Users/USER/Documents/Codex/lv3-unit-audit-20261107/src/features/direct/lv3Unit19Text.test.ts:48:1\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at VitestModuleEvaluator._runInlinedModule (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vitest/dist/module-evaluator.js:206:4)\n    at VitestModuleRunner.directRequest (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1259:59)\n    at VitestModuleRunner.cachedRequest (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1166:73)\n    at VitestModuleRunner.import (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1120:10)"
+        ],
+        "stderrError": "Error: Test timed out in 5000ms."
+      },
+      {
+        "path": "src/features/direct/lv3Unit1Audit.test.ts",
+        "title": "preserves independent raw publication guards and rejects metadata or formatting drift",
+        "classification": "5000ms_timeout",
+        "durationMs": 5495.065499999999,
+        "sameU14TimeoutIdentity": true,
+        "exactJsonFailureMessages": [
+          "Error: STACK_TRACE_ERROR\n    at task (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1784:27)\n    at Object.<anonymous> (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1817:16)\n    at Object.<anonymous> (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1563:28)\n    at chain (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:599:14)\n    at C:/Users/USER/Documents/Codex/lv3-unit-audit-20261107/src/features/direct/lv3Unit1Audit.test.ts:93:1\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at VitestModuleEvaluator._runInlinedModule (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vitest/dist/module-evaluator.js:206:4)\n    at VitestModuleRunner.directRequest (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1259:59)\n    at VitestModuleRunner.cachedRequest (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1166:73)\n    at VitestModuleRunner.import (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1120:10)"
+        ],
+        "stderrError": "Error: Test timed out in 5000ms."
+      },
+      {
+        "path": "src/features/direct/lv3Unit5Audit.test.ts",
+        "title": "authenticates all 56 actual U05 after rows and all six published files",
+        "classification": "5000ms_timeout",
+        "durationMs": 8148.056999999999,
+        "sameU14TimeoutIdentity": true,
+        "exactJsonFailureMessages": [
+          "Error: STACK_TRACE_ERROR\n    at task (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1784:27)\n    at Object.<anonymous> (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1817:16)\n    at Object.<anonymous> (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1563:28)\n    at chain (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:599:14)\n    at C:/Users/USER/Documents/Codex/lv3-unit-audit-20261107/src/features/direct/lv3Unit5Audit.test.ts:12:1\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at VitestModuleEvaluator._runInlinedModule (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vitest/dist/module-evaluator.js:206:4)\n    at VitestModuleRunner.directRequest (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1259:59)\n    at VitestModuleRunner.cachedRequest (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1166:73)\n    at VitestModuleRunner.import (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1120:10)"
+        ],
+        "stderrError": "Error: Test timed out in 5000ms."
+      },
+      {
+        "path": "src/features/direct/lv3Unit6Audit.test.ts",
+        "title": "authenticates all six actual published files and all 31 affected starter rows",
+        "classification": "5000ms_timeout",
+        "durationMs": 7148.642600000001,
+        "sameU14TimeoutIdentity": true,
+        "exactJsonFailureMessages": [
+          "Error: STACK_TRACE_ERROR\n    at task (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1784:27)\n    at Object.<anonymous> (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1817:16)\n    at Object.<anonymous> (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1563:28)\n    at chain (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:599:14)\n    at C:/Users/USER/Documents/Codex/lv3-unit-audit-20261107/src/features/direct/lv3Unit6Audit.test.ts:72:1\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at VitestModuleEvaluator._runInlinedModule (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vitest/dist/module-evaluator.js:206:4)\n    at VitestModuleRunner.directRequest (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1259:59)\n    at VitestModuleRunner.cachedRequest (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1166:73)\n    at VitestModuleRunner.import (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1120:10)"
+        ],
+        "stderrError": "Error: Test timed out in 5000ms."
+      },
+      {
+        "path": "src/features/direct/lv4NotesConfirmation.test.ts",
+        "title": "keeps every public content dataset, including the5779-word starter, exactly unchanged",
+        "classification": "5000ms_timeout",
+        "durationMs": 12297.991200000004,
+        "sameU14TimeoutIdentity": true,
+        "exactJsonFailureMessages": [
+          "Error: STACK_TRACE_ERROR\n    at task (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1784:27)\n    at Object.<anonymous> (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1817:16)\n    at Object.<anonymous> (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1563:28)\n    at chain (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:599:14)\n    at C:/Users/USER/Documents/Codex/lv3-unit-audit-20261107/src/features/direct/lv4NotesConfirmation.test.ts:46:1\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at VitestModuleEvaluator._runInlinedModule (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vitest/dist/module-evaluator.js:206:4)\n    at VitestModuleRunner.directRequest (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1259:59)\n    at VitestModuleRunner.cachedRequest (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1166:73)\n    at VitestModuleRunner.import (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1120:10)"
+        ],
+        "stderrError": "Error: Test timed out in 5000ms."
+      },
+      {
+        "path": "src/features/direct/recoveredUnitIntegration.test.ts",
+        "title": "retains historical curriculum and question identities with the audited cubes gloss addition",
+        "classification": "5000ms_timeout",
+        "durationMs": 5830.3382,
+        "sameU14TimeoutIdentity": false,
+        "exactJsonFailureMessages": [
+          "Error: STACK_TRACE_ERROR\n    at task (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1784:27)\n    at Object.<anonymous> (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1817:16)\n    at Object.<anonymous> (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1563:28)\n    at chain (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:599:14)\n    at C:/Users/USER/Documents/Codex/lv3-unit-audit-20261107/src/features/direct/recoveredUnitIntegration.test.ts:126:1\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at VitestModuleEvaluator._runInlinedModule (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vitest/dist/module-evaluator.js:206:4)\n    at VitestModuleRunner.directRequest (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1259:59)\n    at VitestModuleRunner.cachedRequest (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1166:73)\n    at VitestModuleRunner.import (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1120:10)"
+        ],
+        "stderrError": "Error: Test timed out in 5000ms."
+      },
+      {
+        "path": "src/features/vocabulary/lv3PuppetImageRepair.test.ts",
+        "title": "pins proof, source and candidate assets, original captions/media and historical proofs and guards",
+        "classification": "5000ms_timeout",
+        "durationMs": 7564.416400000001,
+        "sameU14TimeoutIdentity": true,
+        "exactJsonFailureMessages": [
+          "Error: STACK_TRACE_ERROR\n    at task (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1784:27)\n    at Object.<anonymous> (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1817:16)\n    at Object.<anonymous> (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:1563:28)\n    at chain (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/@vitest/runner/dist/chunk-artifact.js:599:14)\n    at C:/Users/USER/Documents/Codex/lv3-unit-audit-20261107/src/features/vocabulary/lv3PuppetImageRepair.test.ts:34:1\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at VitestModuleEvaluator._runInlinedModule (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vitest/dist/module-evaluator.js:206:4)\n    at VitestModuleRunner.directRequest (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1259:59)\n    at VitestModuleRunner.cachedRequest (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1166:73)\n    at VitestModuleRunner.import (file:///C:/Users/USER/Documents/Codex/lv2-release-20261107/node_modules/vite/dist/node/module-runner.js:1120:10)"
+        ],
+        "stderrError": "Error: Test timed out in 5000ms."
+      }
+    ],
+    "originalFailureEvidenceRetained": true,
+    "originalTimeoutMs": 5000,
+    "source": "output/lv3-audit-20261107/u15-technical-preparation/execution-v1/vitest-results.json",
+    "scopeVerification": "output/lv3-audit-20261107/u15-technical-preparation/execution-v1/vitest-scope-verification.json",
+    "timeoutMessageSource": "output/lv3-audit-20261107/u15-technical-preparation/execution-v1/failure-classification-v1.json",
+    "rerun": false
+  },
+  "interruption": {
+    "originalRun": "output/lv3-audit-20261107/u15-technical-preparation/execution-v1",
+    "status": "Interrupted during the fifteenth Python module; never relabeled as complete",
+    "originalFullPythonResultAbsent": true,
+    "originalCompletePythonModules": 14,
+    "originalCompletePythonMethods": 2464,
+    "lastModule": "test_lv3_u14_review",
+    "partialLogRetained": "output/lv3-audit-20261107/u15-technical-preparation/execution-v1/test_lv3_u14_review.log",
+    "resumeVerification": "No original Python process remained after reboot. Exact protected bytes, HEAD, plan, complete verbose method identities and current discovery were verified before recovery.",
+    "originalRunFilesUnchanged": true
+  },
+  "recovery": {
+    "directory": "output/lv3-audit-20261107/u15-technical-preparation/execution-recovery-v2",
+    "planIndependentAcceptance": "output/lv3-audit-20261107/u15-independent-recovery/plan-acceptance-v1.json",
+    "finalIndependentAcceptance": {
+      "path": "output/lv3-audit-20261107/u15-independent-recovery/technical-recovery-acceptance-v1.json",
+      "sha256": "5f674363500d1274aa592d8bd6e2c830d8f25dfd11c194d571fdab1e7aa1cbbc",
+      "status": "qualified ACCEPTED; AFTER still separate"
+    },
+    "fullInterruptedModuleRerunOnly": true,
+    "passedRecoveryCommands": 6,
+    "newOutputDirectory": true,
+    "preservedPreparationIssue": "First helper rejected singular unittest footer Ran 1 test. Failed helper retained; exact plural handling fix and strengthened no-skip/plan-pin version independently reviewed before test execution. No original log or test was changed."
+  },
+  "python": {
+    "modules": 15,
+    "methods": 2829,
+    "originalCompleteModules": 14,
+    "originalCompleteMethods": 2464,
+    "recoveredModule": "test_lv3_u14_review",
+    "recoveredMethods": 365,
+    "passed": true,
+    "skipped": 0,
+    "qualification": "Combined original 14 complete modules, independently matched method-for-method to discovery, with one complete recovered module. Not a new full 15-module rerun."
+  },
+  "forcedBothTypeScriptConfigs": "passed_in_recovery",
+  "changedCodeLint": "passed_in_recovery",
+  "freshBuild": {
+    "commit": "bc5733b25d36ada57bd1bfb3b180941be3e11b8f",
+    "directory": "output/lv3-audit-20261107/u15-technical-preparation/execution-recovery-v2/production-dist",
+    "files": 2405,
+    "indexSha256": "b7f55a985aeed8b625016c41a8f588105059334c3f724ca78b764089f5d8742e",
+    "completeCompiledCurriculum": [
+      {
+        "file": "index-CT7nVBu_.js",
+        "sha256": "d0ad26d8dcff561f663378544f1bfde243e74c2a4b9e3746a8a0562f2c8ab6e5",
+        "curriculumSemanticSha256": "ca53066eb01945a03543b5e3c500cd14e49e32ec9c79eac276c2cd5c046b414e",
+        "start": 6409670,
+        "end": 6466359
+      }
+    ],
+    "curriculumCards": 168,
+    "sourceDocuments": 6,
+    "publishedByteCopies": 11
+  },
+  "protectedOriginalInputs": 5052,
+  "originalProtectedInputsUnchanged": true,
+  "releaseLimits": [
+    "Original 224-file run is not all green: ten original 5000ms timeouts remain release blockers.",
+    "Existing whole-lint generated bundle findings were not rerun or cleared. Changed-code lint does not replace whole-lint.",
+    "No whole-project success, AFTER browser acceptance, physical phone/audio/PWA/offline/practice/rewards or release acceptance.",
+    "Source, meaning, artwork, caption, root-rail and example POS display limitations remain open.",
+    "Vite large-chunk warnings retained; no build settings changed.",
+    "Ledger unchanged by this technical work. No product edits, push or deployment."
+  ],
+  "evidence": {
+    "output/lv3-audit-20261107/u15-technical-preparation/execution-v1/execution-approved-inputs.json": {
+      "sha256": "c0e4dc052d0e482cfbd6dfd10b912d424ce5643b245a0f9d67caebbb5a764a31"
+    },
+    "output/lv3-audit-20261107/u15-technical-preparation/execution-v1/preexecution-command-pins.json": {
+      "sha256": "aa22c3bb9467747866159841a3c1fc2933261d3fd4003157ef10cf425c14b177"
+    },
+    "output/lv3-audit-20261107/u15-technical-preparation/execution-v1/vitest-results.json": {
+      "sha256": "7b6ec8d9fc0ab75d0e0b182816f8a01d1f180409abcfe364ae08b9271bbda94b"
+    },
+    "output/lv3-audit-20261107/u15-technical-preparation/execution-v1/vitest-scope-verification.json": {
+      "sha256": "ad9400d2c958b7a3fe7526a9ad3363cf7de4bbed43789fbc0fe958621ff8ad42"
+    },
+    "output/lv3-audit-20261107/u15-technical-preparation/execution-v1/vitest-status.json": {
+      "sha256": "5275ea8f41cca1a87543a9337bd8cbe618d1a9d09574d77670bb91188762da9e"
+    },
+    "output/lv3-audit-20261107/u15-technical-preparation/execution-v1/failure-classification-v1.json": {
+      "sha256": "b38e071b0dd7b9e67b6ef3e8bc7da8423adc13c8b154489f229a24d53c6602d2"
+    },
+    "output/lv3-audit-20261107/u15-technical-preparation/execution-v1/python-stdout.log": {
+      "sha256": "1e6c004bff80b55e92a9650e003b47abe84391907219852b4529e170a93c9b9d"
+    },
+    "output/lv3-audit-20261107/u15-technical-preparation/execution-v1/test_lv3_u14_review.log": {
+      "sha256": "0eff1f5b8f5f463974f2cf21d2800514371484d2f434ef8614bafe3420a9087d"
+    },
+    "output/lv3-audit-20261107/u15-technical-preparation/execution-recovery-v2/recover.py": {
+      "sha256": "a5f809d8df8bbac106d93e458d8fe309446ac5bbcfbca39348f0cd0ee436e433"
+    },
+    "output/lv3-audit-20261107/u15-technical-preparation/execution-recovery-v2/recovery-plan.json": {
+      "sha256": "da9bc3465eaedbde7ffe77ab4affd0a676acb15fa4be65ab1ae18a3fdce7dfd8"
+    },
+    "output/lv3-audit-20261107/u15-technical-preparation/execution-recovery-v2/recovery-preexecution-pins.json": {
+      "sha256": "305d560a856318e9ad24604f2d1dea78c2b96f0f8af764aa887be40d28789acb"
+    },
+    "output/lv3-audit-20261107/u15-technical-preparation/execution-recovery-v2/recovery-completion.json": {
+      "sha256": "fb9a900eae673ff3a019dfb0963c85fff8dcd3e7789d917120e9f5267160c5d7"
+    },
+    "output/lv3-audit-20261107/u15-technical-preparation/execution-recovery-v2/python-combined-results.json": {
+      "sha256": "478594ae3e59741260611b3329f42254671cf618d3b8dcb17bd2d6a5293aa503"
+    },
+    "output/lv3-audit-20261107/u15-technical-preparation/execution-recovery-v2/python-recovered-module.json": {
+      "sha256": "3d3bda95d5140ae9c5d4f539767e7197d5a00b7ba2b918c7bb919eed0fe547b8"
+    },
+    "output/lv3-audit-20261107/u15-technical-preparation/execution-recovery-v2/product-build-verification.json": {
+      "sha256": "a84d603609aae9f0d74c333ba0ef9bef16f1fc45eb79a2b44cfc03bf4e8d7074"
+    },
+    "output/lv3-audit-20261107/u15-technical-preparation/execution-recovery-v2/build-artifact-index.json": {
+      "sha256": "b7f55a985aeed8b625016c41a8f588105059334c3f724ca78b764089f5d8742e"
+    },
+    "output/lv3-audit-20261107/u15-technical-preparation/execution-recovery-v2/summary-typecheck.json": {
+      "sha256": "3c624c16c8982f11498aa87496cf40c75fa83f8b5505bd29d4b93ecd572f1028"
+    },
+    "output/lv3-audit-20261107/u15-technical-preparation/execution-recovery-v2/summary-lint.json": {
+      "sha256": "a3bcde2e270e168fb92cef6f454afa32869200adee49804271857954b7a42896"
+    },
+    "output/lv3-audit-20261107/u15-technical-preparation/execution-recovery-v2/summary-build.json": {
+      "sha256": "4d5584efa5023baeaad9fcfb1a5c789fa63a218a29d748c8657132d1718a17a6"
+    },
+    "output/lv3-audit-20261107/u15-technical-preparation/execution-recovery-v2/summary-verify-build.json": {
+      "sha256": "7ea9397b83a736f3466c49200e11c4ad5428ac5935cf251831198886425da841"
+    },
+    "output/lv3-audit-20261107/u15-independent-recovery/plan-acceptance-v1.json": {
+      "sha256": "fec4ec431816ab62ee1b4b45b45398718c72b3aa491d5d982fc1ef2946b0e7b8"
+    },
+    "output/lv3-audit-20261107/u15-independent-recovery/technical-recovery-acceptance-v1.json": {
+      "sha256": "5f674363500d1274aa592d8bd6e2c830d8f25dfd11c194d571fdab1e7aa1cbbc"
+    },
+    "output/lv3-audit-20261107/u15-independent-recovery/build-review-recovery-v1.json": {
+      "sha256": "6d71df0647cd058f6d0b13deb21792a28ff09e277b4d2a4d00e109108ca1664d"
+    }
+  }
+}
