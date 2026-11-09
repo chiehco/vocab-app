@@ -1,0 +1,340 @@
+{
+  "schemaVersion": 1,
+  "unit": "LV3-U15",
+  "stage": "image_batch1_local_runtime_QA",
+  "status": "qualified_with_retained_limits_not_unit_complete_not_deployed",
+  "time": "2026-11-09T19:23:49.492Z",
+  "baseHead": "b10483a4a4b57e77de928951935c54b77c6ffce1",
+  "wipNotCommitted": true,
+  "words": [
+    {
+      "id": "W002550",
+      "word": "mobile",
+      "exampleId": "EXbd5c45ec",
+      "asset": {
+        "path": "wordbeast/lv3-u15-examples/mobile-EXbd5c45ec-7d824f964d2c.webp",
+        "captionEn": "Because her job requires a lot of travel, she leads a very mobile lifestyle.",
+        "captionZh": "因為她的工作經常需要出差，所以過著相當機動的生活。"
+      },
+      "example": {
+        "exampleId": "EXbd5c45ec",
+        "word": "mobile",
+        "sensePos": "adj.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "Because her job requires a lot of travel, she leads a very mobile lifestyle.",
+        "sentenceZh": "因為她的工作經常需要出差，所以過著相當機動的生活。",
+        "blankSentence": "Because her job requires a lot of travel, she leads a very _____ lifestyle.",
+        "answer": "mobile",
+        "difficulty": "LV3",
+        "status": "reviewed"
+      },
+      "otherExamplesNotCovered": [
+        {
+          "exampleId": "EXf9de37a7",
+          "word": "mobile",
+          "sensePos": "adj.",
+          "meaningHint": null,
+          "exampleType": "exam",
+          "sentenceEn": "Nowadays, most students use a mobile phone to look up new words.",
+          "sentenceZh": "現在大部分學生都用行動電話查生字。",
+          "blankSentence": "Nowadays, most students use a _____ phone to look up new words.",
+          "answer": "mobile",
+          "difficulty": "LV3",
+          "status": "reviewed"
+        }
+      ]
+    },
+    {
+      "id": "W002971",
+      "word": "vivid",
+      "exampleId": "EX64803248",
+      "asset": {
+        "path": "wordbeast/lv3-u15-examples/vivid-EX64803248-0d094f26540c.webp",
+        "captionEn": "I still have a vivid memory of my first day at school.",
+        "captionZh": "我對上學第一天仍有鮮明的記憶。"
+      },
+      "example": {
+        "exampleId": "EX64803248",
+        "word": "vivid",
+        "sensePos": "adj.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "I still have a vivid memory of my first day at school.",
+        "sentenceZh": "我對上學第一天仍有鮮明的記憶。",
+        "blankSentence": "I still have a _____ memory of my first day at school.",
+        "answer": "vivid",
+        "difficulty": "LV3",
+        "status": "reviewed"
+      },
+      "otherExamplesNotCovered": [
+        {
+          "exampleId": "EX7af84320",
+          "word": "vivid",
+          "sensePos": "adj.",
+          "meaningHint": null,
+          "exampleType": "exam",
+          "sentenceEn": "The writer used vivid details to describe the beauty of the mountain.",
+          "sentenceZh": "作者用生動的細節描述了那座山的美。",
+          "blankSentence": "The writer used _____ details to describe the beauty of the mountain.",
+          "answer": "vivid",
+          "difficulty": "LV3",
+          "status": "reviewed"
+        }
+      ]
+    },
+    {
+      "id": "W002180",
+      "word": "complain",
+      "exampleId": "EX42ed4857",
+      "asset": {
+        "path": "wordbeast/lv3-u15-examples/complain-EX42ed4857-0b5974da7eb4.webp",
+        "captionEn": "Several customers complained to the manager about the long waiting time at the restaurant.",
+        "captionZh": "好幾位顧客向經理抱怨這間餐廳等待的時間太長。"
+      },
+      "example": {
+        "exampleId": "EX42ed4857",
+        "word": "complain",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "Several customers complained to the manager about the long waiting time at the restaurant.",
+        "sentenceZh": "好幾位顧客向經理抱怨這間餐廳等待的時間太長。",
+        "blankSentence": "Several customers _____ to the manager about the long waiting time at the restaurant.",
+        "answer": "complained",
+        "difficulty": "LV3",
+        "status": "reviewed"
+      },
+      "otherExamplesNotCovered": [
+        {
+          "exampleId": "EXb5645b4e",
+          "word": "complain",
+          "sensePos": "v.",
+          "meaningHint": null,
+          "exampleType": "daily",
+          "sentenceEn": "My little brother always complains about doing his homework after dinner.",
+          "sentenceZh": "我弟弟晚餐後總是抱怨要寫功課。",
+          "blankSentence": "My little brother always _____ about doing his homework after dinner.",
+          "answer": "complains",
+          "difficulty": "LV3",
+          "status": "reviewed"
+        }
+      ]
+    }
+  ],
+  "sourceAndBuild": {
+    "protectedFiles": 5080,
+    "buildFiles": 2408,
+    "pins": {
+      "path": "output/playwright/lv3-u15-images-batch1-v1/preflight-input-pins.json",
+      "bytes": 1192558,
+      "sha256": "67eb95bdd992cd63ba5039fb8316107f06f59a0c50b4569a9dac17b3d8f3e7d7"
+    },
+    "independentAcceptance": {
+      "path": "output/lv3-audit-20261107/u15-image-integration-batch1/independent-qualified-acceptance-v1.json",
+      "bytes": 26427,
+      "sha256": "48cc7911fb049b41d0daba40dbe419c9a6145e821e10eaf0a79347620647dda1"
+    }
+  },
+  "runtime": {
+    "time": "2026-11-09T19:22:34.808Z",
+    "status": "QUALIFIED_RUNTIME_PASS",
+    "baseHead": "b10483a4a4b57e77de928951935c54b77c6ffce1",
+    "wipNotCommitted": true,
+    "sourceChecks": [
+      {
+        "id": "W002550",
+        "word": "mobile",
+        "exampleId": "EXbd5c45ec",
+        "online": {
+          "tabsExact": true,
+          "mainImage": true,
+          "mainCaption": true,
+          "meaningUnchanged": true,
+          "selectedExamplePresent": true,
+          "otherExamplesPresent": true,
+          "decoded": true
+        },
+        "reopened": {
+          "tabsExact": true,
+          "mainImage": true,
+          "mainCaption": true,
+          "meaningUnchanged": true,
+          "selectedExamplePresent": true,
+          "otherExamplesPresent": true,
+          "decoded": true
+        },
+        "thumbnail": true,
+        "offline": true
+      },
+      {
+        "id": "W002971",
+        "word": "vivid",
+        "exampleId": "EX64803248",
+        "online": {
+          "tabsExact": true,
+          "mainImage": true,
+          "mainCaption": true,
+          "meaningUnchanged": true,
+          "selectedExamplePresent": true,
+          "otherExamplesPresent": true,
+          "decoded": true
+        },
+        "reopened": {
+          "tabsExact": true,
+          "mainImage": true,
+          "mainCaption": true,
+          "meaningUnchanged": true,
+          "selectedExamplePresent": true,
+          "otherExamplesPresent": true,
+          "decoded": true
+        },
+        "thumbnail": true,
+        "offline": true
+      },
+      {
+        "id": "W002180",
+        "word": "complain",
+        "exampleId": "EX42ed4857",
+        "online": {
+          "tabsExact": true,
+          "mainImage": true,
+          "mainCaption": true,
+          "meaningUnchanged": true,
+          "selectedExamplePresent": true,
+          "otherExamplesPresent": true,
+          "decoded": true
+        },
+        "reopened": {
+          "tabsExact": true,
+          "mainImage": true,
+          "mainCaption": true,
+          "meaningUnchanged": true,
+          "selectedExamplePresent": true,
+          "otherExamplesPresent": true,
+          "decoded": true
+        },
+        "thumbnail": true,
+        "offline": true
+      }
+    ],
+    "curriculum": [
+      {
+        "id": "LI-LV3U15-V005",
+        "textUnchanged": true,
+        "inlineImageCount": 0,
+        "meaningPending": true
+      },
+      {
+        "id": "LI-LV3U15-V007",
+        "textUnchanged": true,
+        "inlineImageCount": 0,
+        "meaningPending": true
+      },
+      {
+        "id": "LI-LV3U15-V015",
+        "textUnchanged": true,
+        "inlineImageCount": 0,
+        "meaningPending": true
+      }
+    ],
+    "responsive": {
+      "routes": 6,
+      "views": 15,
+      "checkpoints": 31,
+      "routeSet": true,
+      "viewSets": true,
+      "viewport": true,
+      "overflow": 0,
+      "occlusion": [],
+      "scrollComplete": true
+    },
+    "backPass": true,
+    "statePass": true,
+    "offlineRestored": true,
+    "protectedCount": 5080,
+    "buildCount": 2408,
+    "protectedFailures": [],
+    "buildFailures": [],
+    "failures": [],
+    "limitations": [
+      "Only selected first example for each of3 words; second examples unillustrated.",
+      "U15 curriculum no inline illustration and example-pending retained.",
+      "Not deployed, not whole-unit completion, not physical handset or audio.",
+      "Independent pre-browser test receipt has2 timeouts; no full-green claim.",
+      "Actual pixel review receipts required separately."
+    ]
+  },
+  "initialFailure": {
+    "path": "output/playwright/lv3-u15-images-batch1-v1/verification.json",
+    "bytes": 5090,
+    "sha256": "090891b0efe936591d93695cc53f8510c91d06b3b6212e652753d8994df7d120"
+  },
+  "initialFailureExplanation": "Initial persistent-profile update toast obscured six sampled mobile footer positions. Original failed evidence preserved. Normal close/reopen activated the staged update; no cache/profile/DB clearing or fabricated state. Supplemental same-build capture has zero occlusion.",
+  "screenshots": {
+    "rawCount": 96,
+    "initialOnline": 18,
+    "initialResponsive": 31,
+    "lifecycle": 16,
+    "reopenedResponsive": 31
+  },
+  "pixelReviews": [
+    {
+      "path": "output/playwright/lv3-u15-images-batch1-v1/pixel-review-online.json",
+      "bytes": 14179,
+      "sha256": "0f3f1e6b6cadfe4d591f4889488de7ac46ae632dfef856bbe1b85ac3779e1458"
+    },
+    {
+      "path": "output/playwright/lv3-u15-images-batch1-v1/pixel-review-lifecycle.json",
+      "bytes": 9810,
+      "sha256": "1780214a437e403af449afde90aba14e960e8d56ef0f1189b154ecb11f78ce9c"
+    },
+    {
+      "path": "output/playwright/lv3-u15-images-batch1-v1/pixel-review-responsive-initial.json",
+      "bytes": 11737,
+      "sha256": "032cf7122b1463a8db457fcaf2791b36e8c8eed1accb2fa7f446fd34ef542b99"
+    },
+    {
+      "path": "output/playwright/lv3-u15-images-batch1-v1/pixel-review-responsive-reopened.json",
+      "bytes": 27054,
+      "sha256": "cc88e252512cc77e5e9ded78bfd61b4874c4af58baffde9b74563d8557960cb8"
+    }
+  ],
+  "dataProtection": {
+    "path": "output/playwright/lv3-u15-images-batch1-v1/state-check-before-state-pre-close-state-reopen-state-final-state-postresponsive-state.json",
+    "bytes": 1883,
+    "sha256": "7ed94e55e9320e2dee6ae632ded93f2e17ecff57f52028cab6fc0ac090907691"
+  },
+  "previousSeal": {
+    "time": "2026-11-09T19:21:06.980Z",
+    "oldSealSha256": "1b524393bb2929bf66b8a647bbb8594772b895555a1a103beac6e5801cf6d04f",
+    "count": 1469,
+    "failures": [],
+    "pass": true
+  },
+  "finalProfile": {
+    "time": "2026-11-09T19:22:50.9368802Z",
+    "profile": "C:/Users/USER/Documents/Codex/qa-profiles/lv3-u05-confirm-20261107-independent",
+    "profileOwners": [],
+    "browserClosed": true,
+    "preview": {
+      "ProcessId": 22052,
+      "Name": "node.exe",
+      "CommandLine": "\"C:\\nvm4w\\nodejs\\node.exe\" node_modules/vite/bin/vite.js preview --host 127.0.0.1 --port 5186 --strictPort --outDir output/lv3-audit-20261107/u15-image-integration-batch1/execution-v1/production-dist"
+    },
+    "previewRetained": true,
+    "origin": "http://127.0.0.1:5186",
+    "offlineRestored": true
+  },
+  "limitations": [
+    "Only selected first example of mobile/vivid/complain is illustrated; other three original examples remain unillustrated.",
+    "U15 curriculum entries remain text-only with example-pending; not claimed repaired or complete.",
+    "Browse thumbnails map to correct assets but object-fit crop cuts mobile luggage/workcase, vivid adult remembering figure, complain empty-table/lower scene. Main card scenes are complete. Thumbnail semantic completeness is not passed.",
+    "Initial update toast obscuration remains a captured lifecycle UX limitation; it naturally disappears on normal profile reopen.",
+    "Existing curriculum level picker rightmost button clipped in its internal horizontal rail; no horizontal-swipe claim.",
+    "Independent pre-browser full tests retain two timeouts; not a full-green claim.",
+    "No physical phone, audio, deployment or whole-unit acceptance.",
+    "All prior U15 text/source/meaning-review limitations remain. Only this fixed image WIP and its three general-card consumers were tested."
+  ],
+  "next": "Parent independent review, then next image integration batch; retain original profile and same-origin preview."
+}

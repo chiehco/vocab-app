@@ -1,3 +1,4 @@
+import { beforeU15ExampleImageSource } from './lv3U15ExampleImages.testSupport';
 import { expect, it } from 'vitest';
 import { readFileSync, readdirSync } from 'node:fs';
 import { createElement } from 'react';
@@ -56,7 +57,8 @@ it.each(proof.protectedFiles)('retains U06 checkpoint or direct original bytes f
   validateLV3U07ImageProof(proof);
   const current = lf(file.path);
   expect(projected.includes(file.path) || independent.includes(file.path)).toBe(true);
-  const before = projected.includes(file.path) ? lv3AfterUnitPublishedText('LV3-U06', file.path, current) : current;
+  const before = projected.includes(file.path) ? lv3AfterUnitPublishedText('LV3-U06', file.path, current)
+    : file.path === 'src/features/vocabulary/approvedCurriculum.ts' ? beforeU15ExampleImageSource(file.path, current) : current;
   expect(u07ImageBytesHash(before)).toBe(file.lfSha256);
   if (projected.includes(file.path)) {
     expect(file.projection).toBe('LV3-U06');

@@ -6,6 +6,7 @@ import lv1Images from './lv1ReviewedImages.json';
 import lv3Unit2 from '../direct/curriculumUnit2.json';
 import lv3Review from './lv3ApprovedReview.json';
 import exampleImages from './approvedExampleImages.json';
+import u15ExampleImages from './lv3U15ExampleImages.json';
 import auditedWordImages from './auditedWordIllustrations.json';
 
 export interface ApprovedCurriculumCard {
@@ -57,6 +58,8 @@ export function approvedWordIllustration(word: string, wordId: string) {
     ?? approvedLV1Images(word, wordId)[0]?.illustration
     // Exact example/caption approval does not approve every sense of a word.
     ?? exampleImages.find(card => card.officialWordId === wordId
+      && card.word === word.trim().toLowerCase())?.illustration
+    ?? u15ExampleImages.find(card => card.officialWordId === wordId
       && card.word === word.trim().toLowerCase())?.illustration;
 }
 
@@ -83,5 +86,7 @@ export function approvedCurriculumIllustration(word: string, src: string) {
     ?? auditedWordImages.find(card => card.aliases.includes(word.trim().toLowerCase())
       && path.endsWith('/' + card.illustration.path))?.illustration
     ?? exampleImages.find(card => card.word === word.trim().toLowerCase()
+      && path.endsWith('/' + card.illustration.path))?.illustration
+    ?? u15ExampleImages.find(card => card.word === word.trim().toLowerCase()
       && path.endsWith('/' + card.illustration.path))?.illustration;
 }

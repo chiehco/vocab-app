@@ -1,3 +1,4 @@
+import { beforeU15ExampleImageSource } from './lv3U15ExampleImages.testSupport';
 import { expect, it } from 'vitest';
 import { readFileSync, readdirSync } from 'node:fs';
 import { createElement } from 'react';
@@ -53,7 +54,9 @@ it.each(proof.protectedInputDomain)('retains the U08 checkpoint bytes of $path',
 });
 
 it.each(proof.independentFiles)('retains exact independent source bytes of $path', file => {
-  expect(persuasiveImageHash(lf(file.path))).toBe(file.lfSha256);
+  const current = lf(file.path);
+  const before = file.path === 'src/features/vocabulary/approvedCurriculum.ts' ? beforeU15ExampleImageSource(file.path, current) : current;
+  expect(persuasiveImageHash(before)).toBe(file.lfSha256);
 });
 
 it('adds exactly one pair and reverses to every existing U07 and puppet registry row', () => {

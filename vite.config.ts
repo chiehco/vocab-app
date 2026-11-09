@@ -17,7 +17,7 @@ function withholdRetainedSourcePair(): Plugin {
     configResolved(config) { projectRoot = config.root; },
     async writeBundle(options) {
       const registries = await Promise.all([
-        "auditedWordIllustrations", "approvedExampleImages", "lv1ReviewedImages",
+        "auditedWordIllustrations", "approvedExampleImages", "lv1ReviewedImages", "lv3U15ExampleImages",
       ].map(async name => JSON.parse(await readFile(resolve(projectRoot,
         `src/features/vocabulary/${name}.json`), "utf8")) as Array<{ illustration?: { path?: string } }>));
       if (registries.flat().some(row => row.illustration?.path === asset)) {
