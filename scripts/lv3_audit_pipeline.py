@@ -1140,6 +1140,760 @@ def verified_u12_pattern_patch(manifest, patch):
     return (manifest.get('unit') == 'LV3-U12' and patch.get('dataset') == 'curriculum'
             and _u11_json_equal(patch, _U12_PATTERN_PATCH))
 
+# Exact U13 source candidate patches. No mutable output dependency.
+_U13_PATTERN_PATCHES = json.loads(r'''[
+  {
+    "dataset": "curriculum",
+    "path": "src/features/direct/curriculumLV3Unit13.json",
+    "key": "learningItemId",
+    "id": "LI-LV3U13-G024",
+    "before": {
+      "learningItemId": "LI-LV3U13-G024",
+      "kind": "grammar",
+      "sourcePage": 134,
+      "pattern": "mankind 與 man 均表人類，為不可數集合名詞，前不置 a 或 the，與單數動詞並用",
+      "explanationZh": "教材用法標記；例句與教材題目尚未提供。",
+      "review": "source_checked_text_only",
+      "practiceMode": "read_only"
+    },
+    "after": {
+      "explanationZh": "本頁談泛指整體「人類」的 mankind 與 man：此用法不加 a 或 the，搭配單數動詞。限制只適用本章人類義，不能套用到 man 指一名男子的可數用法。",
+      "pattern": "mankind 與 man 在本章泛指整體人類時，不加 a 或 the，與單數動詞並用"
+    },
+    "reason": "以實際目視教材的本列用法補足流程占位文字；必要時明示教材概括與直接字典的範圍差異，不採用原書完整例句、不改 pattern 或核准狀態。 直接詞典與原照片交叉核對後，窄化教材絕對化用法，與同列explanationZh一起修正；保留完整原pattern及來源差異，不新增例句、ID或核准。",
+    "evidence": [
+      "https://www.collinsdictionary.com/dictionary/english/man",
+      "https://www.collinsdictionary.com/dictionary/english/mankind"
+    ],
+    "fieldEvidence": {
+      "explanationZh": [
+        {
+          "proposal": "U13-SOURCE-LI-LV3U13-G024",
+          "originFindingIds": [
+            "U13-SOURCE-LI-LV3U13-G024"
+          ],
+          "reason": "以實際目視教材的本列用法補足流程占位文字；必要時明示教材概括與直接字典的範圍差異，不採用原書完整例句、不改 pattern 或核准狀態。",
+          "sources": [
+            {
+              "type": "textbook_photo",
+              "file": "20260815_101443.jpg",
+              "page": 134,
+              "sha256": "3da899a3c39d9959bcd6027329d67db3d955fe17d21f9e08d090ec60cc93907d",
+              "verification": "pixels_displayed_and_visually_read",
+              "excerpt": "mankind 及 man 均表「人類」，視作集合名詞，不可數，且之前不置任何冠詞（a 或 the），與單數動詞並用。",
+              "excerptNormalization": "Printed words transcribed from displayed pixels. Line breaks, spacing and comma glyphs normalized; pronunciation/footnote markers omitted. This field is not the candidate editorial text.",
+              "printedExcerpt": "mankind 及 man 均表「人類」，視作集合名詞，不可數，且之前不置任何冠詞（a 或 the），與單數動詞並用。",
+              "editorialSummary": "本頁談泛指整體「人類」的 mankind 與 man：此用法不加 a 或 the，搭配單數動詞。限制只適用本章人類義，不能套用到 man 指一名男子的可數用法。",
+              "editorialSummaryStatus": "Source review synthesis, not verbatim quotation or new user approval."
+            },
+            {
+              "type": "dictionary",
+              "url": "https://www.collinsdictionary.com/dictionary/english/man",
+              "verification": "direct_page_read",
+              "claim": "Distinguishes human-race use from countable adult-male use.",
+              "evidenceArtifact": "coordinator/grammar-dictionary-raw-v2.json"
+            },
+            {
+              "type": "dictionary",
+              "url": "https://www.collinsdictionary.com/dictionary/english/mankind",
+              "verification": "direct_page_read",
+              "claim": "Uncountable collective human-race use.",
+              "evidenceArtifact": "coordinator/grammar-dictionary-raw-v1.json"
+            }
+          ],
+          "beforePresent": true
+        }
+      ],
+      "pattern": [
+        {
+          "proposal": "U13-SOURCE-LI-LV3U13-G024",
+          "originFindingIds": [
+            "U13-SOURCE-LI-LV3U13-G024"
+          ],
+          "reason": "直接詞典與原照片交叉核對後，窄化教材絕對化用法，與同列explanationZh一起修正；保留完整原pattern及來源差異，不新增例句、ID或核准。",
+          "sources": [
+            {
+              "type": "textbook_photo",
+              "file": "20260815_101443.jpg",
+              "page": 134,
+              "sha256": "3da899a3c39d9959bcd6027329d67db3d955fe17d21f9e08d090ec60cc93907d",
+              "verification": "pixels_displayed_and_visually_read",
+              "excerpt": "mankind 及 man 均表「人類」，視作集合名詞，不可數，且之前不置任何冠詞（a 或 the），與單數動詞並用。",
+              "excerptNormalization": "Printed words transcribed from displayed pixels. Line breaks, spacing and comma glyphs normalized; pronunciation/footnote markers omitted. This field is not the candidate editorial text.",
+              "printedExcerpt": "mankind 及 man 均表「人類」，視作集合名詞，不可數，且之前不置任何冠詞（a 或 the），與單數動詞並用。",
+              "editorialSummary": "mankind 與 man 在本章泛指整體人類時，不加 a 或 the，與單數動詞並用",
+              "editorialSummaryStatus": "Source review synthesis, not verbatim quotation or new user approval."
+            },
+            {
+              "type": "dictionary",
+              "url": "https://www.collinsdictionary.com/dictionary/english/man",
+              "verification": "direct_page_read",
+              "claim": "Distinguishes human-race use from countable adult-male use.",
+              "evidenceArtifact": "coordinator/grammar-dictionary-raw-v2.json"
+            },
+            {
+              "type": "dictionary",
+              "url": "https://www.collinsdictionary.com/dictionary/english/mankind",
+              "verification": "direct_page_read",
+              "claim": "Uncountable collective human-race use.",
+              "evidenceArtifact": "coordinator/grammar-dictionary-raw-v1.json"
+            }
+          ],
+          "beforePresent": true
+        }
+      ]
+    }
+  },
+  {
+    "dataset": "curriculum",
+    "path": "src/features/direct/curriculumLV3Unit13.json",
+    "key": "learningItemId",
+    "id": "LI-LV3U13-G025",
+    "before": {
+      "learningItemId": "LI-LV3U13-G025",
+      "kind": "grammar",
+      "sourcePage": 134,
+      "pattern": "human being 為可數名詞，單數 a human being，複數 human beings（前不置 the）",
+      "explanationZh": "教材用法標記；例句與教材題目尚未提供。",
+      "review": "source_checked_text_only",
+      "practiceMode": "read_only"
+    },
+    "after": {
+      "explanationZh": "human being 是可數名詞，單數可說 a human being，複數為 human beings。教材「前不置 the」只宜理解為泛指人類；特指已知的一群人時仍可用 the，不是複數名詞一律禁用 the。",
+      "pattern": "human being 為可數名詞，單數 a human being，複數 human beings；泛指複數不加 the，特指時可加 the"
+    },
+    "reason": "以實際目視教材的本列用法補足流程占位文字；必要時明示教材概括與直接字典的範圍差異，不採用原書完整例句、不改 pattern 或核准狀態。 直接詞典與原照片交叉核對後，窄化教材絕對化用法，與同列explanationZh一起修正；保留完整原pattern及來源差異，不新增例句、ID或核准。",
+    "evidence": [
+      "https://www.collinsdictionary.com/dictionary/english/human-being",
+      "https://www.collinsdictionary.com/dictionary/english/the"
+    ],
+    "fieldEvidence": {
+      "explanationZh": [
+        {
+          "proposal": "U13-SOURCE-LI-LV3U13-G025",
+          "originFindingIds": [
+            "U13-SOURCE-LI-LV3U13-G025"
+          ],
+          "reason": "以實際目視教材的本列用法補足流程占位文字；必要時明示教材概括與直接字典的範圍差異，不採用原書完整例句、不改 pattern 或核准狀態。",
+          "sources": [
+            {
+              "type": "textbook_photo",
+              "file": "20260815_101443.jpg",
+              "page": 134,
+              "sha256": "3da899a3c39d9959bcd6027329d67db3d955fe17d21f9e08d090ec60cc93907d",
+              "verification": "pixels_displayed_and_visually_read",
+              "excerpt": "human being 亦表「人類」，卻是可數名詞，單數為 a human being，複數則為 human beings（之前不置 the）。",
+              "excerptNormalization": "Printed words transcribed from displayed pixels. Line breaks, spacing and comma glyphs normalized; pronunciation/footnote markers omitted. This field is not the candidate editorial text.",
+              "printedExcerpt": "human being 亦表「人類」，卻是可數名詞，單數為 a human being，複數則為 human beings（之前不置 the）。",
+              "editorialSummary": "human being 是可數名詞，單數可說 a human being，複數為 human beings。教材「前不置 the」只宜理解為泛指人類；特指已知的一群人時仍可用 the，不是複數名詞一律禁用 the。",
+              "editorialSummaryStatus": "Source review synthesis, not verbatim quotation or new user approval."
+            },
+            {
+              "type": "dictionary",
+              "url": "https://www.collinsdictionary.com/dictionary/english/human-being",
+              "verification": "direct_page_read",
+              "claim": "Countable noun with plural human beings.",
+              "evidenceArtifact": "coordinator/grammar-dictionary-raw-v1.json"
+            },
+            {
+              "type": "dictionary",
+              "url": "https://www.collinsdictionary.com/dictionary/english/the",
+              "verification": "direct_page_read",
+              "claim": "Definite determiner can identify an already mentioned or specified group.",
+              "evidenceArtifact": "coordinator/grammar-dictionary-raw-v3.json"
+            }
+          ],
+          "beforePresent": true
+        }
+      ],
+      "pattern": [
+        {
+          "proposal": "U13-SOURCE-LI-LV3U13-G025",
+          "originFindingIds": [
+            "U13-SOURCE-LI-LV3U13-G025"
+          ],
+          "reason": "直接詞典與原照片交叉核對後，窄化教材絕對化用法，與同列explanationZh一起修正；保留完整原pattern及來源差異，不新增例句、ID或核准。",
+          "sources": [
+            {
+              "type": "textbook_photo",
+              "file": "20260815_101443.jpg",
+              "page": 134,
+              "sha256": "3da899a3c39d9959bcd6027329d67db3d955fe17d21f9e08d090ec60cc93907d",
+              "verification": "pixels_displayed_and_visually_read",
+              "excerpt": "human being 亦表「人類」，卻是可數名詞，單數為 a human being，複數則為 human beings（之前不置 the）。",
+              "excerptNormalization": "Printed words transcribed from displayed pixels. Line breaks, spacing and comma glyphs normalized; pronunciation/footnote markers omitted. This field is not the candidate editorial text.",
+              "printedExcerpt": "human being 亦表「人類」，卻是可數名詞，單數為 a human being，複數則為 human beings（之前不置 the）。",
+              "editorialSummary": "human being 為可數名詞，單數 a human being，複數 human beings；泛指複數不加 the，特指時可加 the",
+              "editorialSummaryStatus": "Source review synthesis, not verbatim quotation or new user approval."
+            },
+            {
+              "type": "dictionary",
+              "url": "https://www.collinsdictionary.com/dictionary/english/human-being",
+              "verification": "direct_page_read",
+              "claim": "Countable noun with plural human beings.",
+              "evidenceArtifact": "coordinator/grammar-dictionary-raw-v1.json"
+            },
+            {
+              "type": "dictionary",
+              "url": "https://www.collinsdictionary.com/dictionary/english/the",
+              "verification": "direct_page_read",
+              "claim": "Definite determiner can identify an already mentioned or specified group.",
+              "evidenceArtifact": "coordinator/grammar-dictionary-raw-v3.json"
+            }
+          ],
+          "beforePresent": true
+        }
+      ]
+    }
+  },
+  {
+    "dataset": "curriculum",
+    "path": "src/features/direct/curriculumLV3Unit13.json",
+    "key": "learningItemId",
+    "id": "LI-LV3U13-G026",
+    "before": {
+      "learningItemId": "LI-LV3U13-G026",
+      "kind": "grammar",
+      "sourcePage": 134,
+      "pattern": "humankind 與 mankind 意思及用法完全相同",
+      "explanationZh": "教材用法標記；例句與教材題目尚未提供。",
+      "review": "source_checked_text_only",
+      "practiceMode": "read_only"
+    },
+    "after": {
+      "explanationZh": "本章 humankind 與 mankind 都指整體人類、作不可數名詞。教材稱意思及用法「完全相同」是本章概括；實際用詞仍有語用差異，mankind 的泛指用法有人避免使用。",
+      "pattern": "humankind 與 mankind 在本章都指整體人類，作不可數名詞"
+    },
+    "reason": "以實際目視教材的本列用法補足流程占位文字；必要時明示教材概括與直接字典的範圍差異，不採用原書完整例句、不改 pattern 或核准狀態。 直接詞典與原照片交叉核對後，窄化教材絕對化用法，與同列explanationZh一起修正；保留完整原pattern及來源差異，不新增例句、ID或核准。",
+    "evidence": [
+      "https://www.collinsdictionary.com/dictionary/english/mankind",
+      "https://www.collinsdictionary.com/dictionary/english/humankind"
+    ],
+    "fieldEvidence": {
+      "explanationZh": [
+        {
+          "proposal": "U13-SOURCE-LI-LV3U13-G026",
+          "originFindingIds": [
+            "U13-SOURCE-LI-LV3U13-G026"
+          ],
+          "reason": "以實際目視教材的本列用法補足流程占位文字；必要時明示教材概括與直接字典的範圍差異，不採用原書完整例句、不改 pattern 或核准狀態。",
+          "sources": [
+            {
+              "type": "textbook_photo",
+              "file": "20260815_101443.jpg",
+              "page": 134,
+              "sha256": "3da899a3c39d9959bcd6027329d67db3d955fe17d21f9e08d090ec60cc93907d",
+              "verification": "pixels_displayed_and_visually_read",
+              "excerpt": "humankind 與 mankind 意思及用法完全相同。",
+              "excerptNormalization": "Printed words transcribed from displayed pixels. Line breaks, spacing and comma glyphs normalized; pronunciation/footnote markers omitted. This field is not the candidate editorial text.",
+              "printedExcerpt": "humankind 與 mankind 意思及用法完全相同。",
+              "editorialSummary": "本章 humankind 與 mankind 都指整體人類、作不可數名詞。教材稱意思及用法「完全相同」是本章概括；實際用詞仍有語用差異，mankind 的泛指用法有人避免使用。",
+              "editorialSummaryStatus": "Source review synthesis, not verbatim quotation or new user approval."
+            },
+            {
+              "type": "dictionary",
+              "url": "https://www.collinsdictionary.com/dictionary/english/mankind",
+              "verification": "direct_page_read",
+              "claim": "Collective meaning and usage objection noted.",
+              "evidenceArtifact": "coordinator/grammar-dictionary-raw-v1.json"
+            },
+            {
+              "type": "dictionary",
+              "url": "https://www.collinsdictionary.com/dictionary/english/humankind",
+              "verification": "direct_page_read",
+              "claim": "Collective uncountable human-race meaning.",
+              "evidenceArtifact": "coordinator/grammar-dictionary-raw-v1.json"
+            }
+          ],
+          "beforePresent": true
+        }
+      ],
+      "pattern": [
+        {
+          "proposal": "U13-SOURCE-LI-LV3U13-G026",
+          "originFindingIds": [
+            "U13-SOURCE-LI-LV3U13-G026"
+          ],
+          "reason": "直接詞典與原照片交叉核對後，窄化教材絕對化用法，與同列explanationZh一起修正；保留完整原pattern及來源差異，不新增例句、ID或核准。",
+          "sources": [
+            {
+              "type": "textbook_photo",
+              "file": "20260815_101443.jpg",
+              "page": 134,
+              "sha256": "3da899a3c39d9959bcd6027329d67db3d955fe17d21f9e08d090ec60cc93907d",
+              "verification": "pixels_displayed_and_visually_read",
+              "excerpt": "humankind 與 mankind 意思及用法完全相同。",
+              "excerptNormalization": "Printed words transcribed from displayed pixels. Line breaks, spacing and comma glyphs normalized; pronunciation/footnote markers omitted. This field is not the candidate editorial text.",
+              "printedExcerpt": "humankind 與 mankind 意思及用法完全相同。",
+              "editorialSummary": "humankind 與 mankind 在本章都指整體人類，作不可數名詞",
+              "editorialSummaryStatus": "Source review synthesis, not verbatim quotation or new user approval."
+            },
+            {
+              "type": "dictionary",
+              "url": "https://www.collinsdictionary.com/dictionary/english/mankind",
+              "verification": "direct_page_read",
+              "claim": "Collective meaning and usage objection noted.",
+              "evidenceArtifact": "coordinator/grammar-dictionary-raw-v1.json"
+            },
+            {
+              "type": "dictionary",
+              "url": "https://www.collinsdictionary.com/dictionary/english/humankind",
+              "verification": "direct_page_read",
+              "claim": "Collective uncountable human-race meaning.",
+              "evidenceArtifact": "coordinator/grammar-dictionary-raw-v1.json"
+            }
+          ],
+          "beforePresent": true
+        }
+      ]
+    }
+  },
+  {
+    "dataset": "curriculum",
+    "path": "src/features/direct/curriculumLV3Unit13.json",
+    "key": "learningItemId",
+    "id": "LI-LV3U13-G031",
+    "before": {
+      "learningItemId": "LI-LV3U13-G031",
+      "kind": "grammar",
+      "sourcePage": 135,
+      "pattern": "yell 多指生氣時所發出的大吼聲",
+      "explanationZh": "教材用法標記；例句與教材題目尚未提供。",
+      "review": "source_checked_text_only",
+      "practiceMode": "read_only"
+    },
+    "after": {
+      "explanationZh": "教材以生氣時的大吼說明 yell，但這不是唯一情境；yell 也可表示興奮或疼痛時大喊。",
+      "pattern": "yell 指大聲喊叫；本頁以生氣時的大吼為例"
+    },
+    "reason": "以實際目視教材的本列用法補足流程占位文字；必要時明示教材概括與直接字典的範圍差異，不採用原書完整例句、不改 pattern 或核准狀態。 直接詞典與原照片交叉核對後，窄化教材絕對化用法，與同列explanationZh一起修正；保留完整原pattern及來源差異，不新增例句、ID或核准。",
+    "evidence": [
+      "https://www.collinsdictionary.com/dictionary/english/yell"
+    ],
+    "fieldEvidence": {
+      "explanationZh": [
+        {
+          "proposal": "U13-SOURCE-LI-LV3U13-G031",
+          "originFindingIds": [
+            "U13-SOURCE-LI-LV3U13-G031"
+          ],
+          "reason": "以實際目視教材的本列用法補足流程占位文字；必要時明示教材概括與直接字典的範圍差異，不採用原書完整例句、不改 pattern 或核准狀態。",
+          "sources": [
+            {
+              "type": "textbook_photo",
+              "file": "20260815_101448.jpg",
+              "page": 135,
+              "sha256": "43b3a3c07ad43bbce12204f50fcc98364d5378468066e256c2be9a3f115dd426",
+              "verification": "pixels_displayed_and_visually_read",
+              "excerpt": "yell 則多指生氣時所發出的大吼聲。",
+              "excerptNormalization": "Printed words transcribed from displayed pixels. Line breaks, spacing and comma glyphs normalized; pronunciation/footnote markers omitted. This field is not the candidate editorial text.",
+              "printedExcerpt": "yell 則多指生氣時所發出的大吼聲。",
+              "editorialSummary": "教材以生氣時的大吼說明 yell，但這不是唯一情境；yell 也可表示興奮或疼痛時大喊。",
+              "editorialSummaryStatus": "Source review synthesis, not verbatim quotation or new user approval."
+            },
+            {
+              "type": "dictionary",
+              "url": "https://www.collinsdictionary.com/dictionary/english/yell",
+              "verification": "direct_page_read",
+              "claim": "Anger, excitement and pain are possible contexts.",
+              "evidenceArtifact": "coordinator/grammar-dictionary-raw-v2.json"
+            }
+          ],
+          "beforePresent": true
+        }
+      ],
+      "pattern": [
+        {
+          "proposal": "U13-SOURCE-LI-LV3U13-G031",
+          "originFindingIds": [
+            "U13-SOURCE-LI-LV3U13-G031"
+          ],
+          "reason": "直接詞典與原照片交叉核對後，窄化教材絕對化用法，與同列explanationZh一起修正；保留完整原pattern及來源差異，不新增例句、ID或核准。",
+          "sources": [
+            {
+              "type": "textbook_photo",
+              "file": "20260815_101448.jpg",
+              "page": 135,
+              "sha256": "43b3a3c07ad43bbce12204f50fcc98364d5378468066e256c2be9a3f115dd426",
+              "verification": "pixels_displayed_and_visually_read",
+              "excerpt": "yell 則多指生氣時所發出的大吼聲。",
+              "excerptNormalization": "Printed words transcribed from displayed pixels. Line breaks, spacing and comma glyphs normalized; pronunciation/footnote markers omitted. This field is not the candidate editorial text.",
+              "printedExcerpt": "yell 則多指生氣時所發出的大吼聲。",
+              "editorialSummary": "yell 指大聲喊叫；本頁以生氣時的大吼為例",
+              "editorialSummaryStatus": "Source review synthesis, not verbatim quotation or new user approval."
+            },
+            {
+              "type": "dictionary",
+              "url": "https://www.collinsdictionary.com/dictionary/english/yell",
+              "verification": "direct_page_read",
+              "claim": "Anger, excitement and pain are possible contexts.",
+              "evidenceArtifact": "coordinator/grammar-dictionary-raw-v2.json"
+            }
+          ],
+          "beforePresent": true
+        }
+      ]
+    }
+  },
+  {
+    "dataset": "curriculum",
+    "path": "src/features/direct/curriculumLV3Unit13.json",
+    "key": "learningItemId",
+    "id": "LI-LV3U13-G051",
+    "before": {
+      "learningItemId": "LI-LV3U13-G051",
+      "kind": "grammar",
+      "sourcePage": 138,
+      "pattern": "hint 作及物動詞須接 that 子句作受詞；作不及物動詞與 at 並用",
+      "explanationZh": "教材用法標記；例句與教材題目尚未提供。",
+      "review": "source_checked_text_only",
+      "practiceMode": "read_only"
+    },
+    "after": {
+      "explanationZh": "本頁介紹 hint that + 子句與 hint at + 名詞兩種搭配，均表示暗示。教材「須接 that 子句」不表示連接詞 that 必須寫出；實際用例中 that 可省略。",
+      "pattern": "hint (that) + 子句；hint at + 名詞，表示暗示"
+    },
+    "reason": "以實際目視教材的本列用法補足流程占位文字；必要時明示教材概括與直接字典的範圍差異，不採用原書完整例句、不改 pattern 或核准狀態。 直接詞典與原照片交叉核對後，窄化教材絕對化用法，與同列explanationZh一起修正；保留完整原pattern及來源差異，不新增例句、ID或核准。",
+    "evidence": [
+      "https://www.collinsdictionary.com/dictionary/english/hint"
+    ],
+    "fieldEvidence": {
+      "explanationZh": [
+        {
+          "proposal": "U13-SOURCE-LI-LV3U13-G051",
+          "originFindingIds": [
+            "U13-SOURCE-LI-LV3U13-G051"
+          ],
+          "reason": "以實際目視教材的本列用法補足流程占位文字；必要時明示教材概括與直接字典的範圍差異，不採用原書完整例句、不改 pattern 或核准狀態。",
+          "sources": [
+            {
+              "type": "textbook_photo",
+              "file": "20260815_101507.jpg",
+              "page": 138,
+              "sha256": "ecce3fe63ab2d241e2fde332dc88ac7dc6039b6ee333c05dc17de11fa331ea78",
+              "verification": "pixels_displayed_and_visually_read",
+              "excerpt": "hint 作及物動詞時，須接 that 子句作受詞；若作不及物動詞時，與介詞 at 並用。",
+              "excerptNormalization": "Printed words transcribed from displayed pixels. Line breaks, spacing and comma glyphs normalized; pronunciation/footnote markers omitted. This field is not the candidate editorial text.",
+              "printedExcerpt": "hint 作及物動詞時，須接 that 子句作受詞；若作不及物動詞時，與介詞 at 並用。",
+              "editorialSummary": "本頁介紹 hint that + 子句與 hint at + 名詞兩種搭配，均表示暗示。教材「須接 that 子句」不表示連接詞 that 必須寫出；實際用例中 that 可省略。",
+              "editorialSummaryStatus": "Source review synthesis, not verbatim quotation or new user approval."
+            },
+            {
+              "type": "dictionary",
+              "url": "https://www.collinsdictionary.com/dictionary/english/hint",
+              "verification": "direct_page_read",
+              "claim": "Direct verb examples include both overt that and omitted that, and hint at.",
+              "evidenceArtifact": "coordinator/grammar-dictionary-raw-v1.json"
+            }
+          ],
+          "beforePresent": true
+        }
+      ],
+      "pattern": [
+        {
+          "proposal": "U13-SOURCE-LI-LV3U13-G051",
+          "originFindingIds": [
+            "U13-SOURCE-LI-LV3U13-G051"
+          ],
+          "reason": "直接詞典與原照片交叉核對後，窄化教材絕對化用法，與同列explanationZh一起修正；保留完整原pattern及來源差異，不新增例句、ID或核准。",
+          "sources": [
+            {
+              "type": "textbook_photo",
+              "file": "20260815_101507.jpg",
+              "page": 138,
+              "sha256": "ecce3fe63ab2d241e2fde332dc88ac7dc6039b6ee333c05dc17de11fa331ea78",
+              "verification": "pixels_displayed_and_visually_read",
+              "excerpt": "hint 作及物動詞時，須接 that 子句作受詞；若作不及物動詞時，與介詞 at 並用。",
+              "excerptNormalization": "Printed words transcribed from displayed pixels. Line breaks, spacing and comma glyphs normalized; pronunciation/footnote markers omitted. This field is not the candidate editorial text.",
+              "printedExcerpt": "hint 作及物動詞時，須接 that 子句作受詞；若作不及物動詞時，與介詞 at 並用。",
+              "editorialSummary": "hint (that) + 子句；hint at + 名詞，表示暗示",
+              "editorialSummaryStatus": "Source review synthesis, not verbatim quotation or new user approval."
+            },
+            {
+              "type": "dictionary",
+              "url": "https://www.collinsdictionary.com/dictionary/english/hint",
+              "verification": "direct_page_read",
+              "claim": "Direct verb examples include both overt that and omitted that, and hint at.",
+              "evidenceArtifact": "coordinator/grammar-dictionary-raw-v1.json"
+            }
+          ],
+          "beforePresent": true
+        }
+      ]
+    }
+  }
+]''')
+_U13_PATTERN_IDS = frozenset(p['id'] for p in _U13_PATTERN_PATCHES)
+
+def verified_u13_pattern_patch(manifest, patch):
+    return (manifest.get('unit') == 'LV3-U13' and patch.get('dataset') == 'curriculum'
+            and any(_u11_json_equal(patch, expected) for expected in _U13_PATTERN_PATCHES))
+
+
+# Only this complete source-reviewed U13 groom patch permits its existing variant base.
+_U13_GROOM_PATCH = json.loads(r'''{
+  "dataset": "words",
+  "path": "public/data/v1/words.json",
+  "key": "wordId",
+  "id": "W003112",
+  "before": {
+    "wordId": "W003112",
+    "word": "bridegroom/groom",
+    "wordVariants": [
+      "bridegroom",
+      "groom"
+    ],
+    "level": "LV4",
+    "pos": "n.",
+    "posAll": [
+      "n."
+    ],
+    "meaningZh": "新郎；馬伕；男僕；餵馬",
+    "meaningEn": "a man who has recently been married; a man participant in his own marriage ceremony; a man participant in his own marriage ceremony; a man who has recently been married",
+    "usagePattern": "a/the bridegroom; bridegroom of N",
+    "syllables": null,
+    "stressPattern": null,
+    "phoneticUs": null,
+    "familyKey": "bridegroom",
+    "isCore": true,
+    "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+    "status": "draft",
+    "usagePatternZh": "該新郎；……的新郎"
+  },
+  "after": {
+    "pos": "n./v.",
+    "posAll": [
+      "n.",
+      "v."
+    ],
+    "meaningEn": "(n., bridegroom or groom) a man who is getting married or has just married; (n., groom) a person who tends horses, or an archaic male servant; (v., groom) to clean and brush an animal or make an appearance neat.",
+    "usagePattern": "the bride and groom; groom a horse",
+    "usagePatternZh": "新娘與新郎；替馬梳洗",
+    "verbForms": {
+      "base": "groom",
+      "past": "groomed",
+      "pastParticiple": "groomed",
+      "sourceRef": "https://www.collinsdictionary.com/dictionary/english/groom",
+      "status": "approved"
+    }
+  },
+  "reason": "bridegroom 僅新郎；groom 另有馬伕／男僕名詞與梳洗動詞，合併詞條需標示各自範圍。 bridegroom 僅新郎；groom 另有馬伕／男僕名詞與梳洗動詞，合併詞條需標示各自範圍。 原重複的新郎定義合併一次，補 groom 原已收馬伕／男僕及梳洗動詞；中文餵馬作動詞之精確性另留待查。 正文 bride and groom 與 groom an animal；不把所有 groom 義項等同 bridegroom。 正文 bride and groom 與 groom an animal；不把所有 groom 義項等同 bridegroom。 補缺的可信三態；僅 groom 動詞適用，若是合併 bridegroom/groom 詞條。",
+  "evidence": [
+    "https://www.collinsdictionary.com/dictionary/english/groom",
+    "https://www.collinsdictionary.com/dictionary/english/bridegroom",
+    "https://www.collinsdictionary.com/conjugation/english/groom"
+  ],
+  "fieldEvidence": {
+    "pos": [
+      {
+        "proposal": "U13-GENERAL-W003112",
+        "originFindingIds": [
+          "U13-GENERAL-W003112"
+        ],
+        "reason": "bridegroom 僅新郎；groom 另有馬伕／男僕名詞與梳洗動詞，合併詞條需標示各自範圍。",
+        "sources": [
+          {
+            "type": "dictionary",
+            "url": "https://www.collinsdictionary.com/dictionary/english/groom",
+            "verification": "direct_dictionary_body_read",
+            "readDate": "2026-11-08",
+            "claim": "bridegroom 僅新郎；groom 另有馬伕／男僕名詞與梳洗動詞，合併詞條需標示各自範圍。",
+            "evidenceArtifacts": [
+              {
+                "artifact": "output/lv3-audit-20261107/u13-source/general/detail3-raw.json",
+                "sha256": "4a950e3489e1550168fc9b853d8169aa7bc2ed3009493a1f1681387f3a8c1461"
+              },
+              {
+                "artifact": "output/lv3-audit-20261107/u13-source/general/web8-raw.json",
+                "sha256": "7229ad8222cea50fc69e6c5ada48a874e7b632818a586a3ac559d76a36c07a7b"
+              }
+            ]
+          }
+        ],
+        "beforePresent": true
+      }
+    ],
+    "posAll": [
+      {
+        "proposal": "U13-GENERAL-W003112",
+        "originFindingIds": [
+          "U13-GENERAL-W003112"
+        ],
+        "reason": "bridegroom 僅新郎；groom 另有馬伕／男僕名詞與梳洗動詞，合併詞條需標示各自範圍。",
+        "sources": [
+          {
+            "type": "dictionary",
+            "url": "https://www.collinsdictionary.com/dictionary/english/groom",
+            "verification": "direct_dictionary_body_read",
+            "readDate": "2026-11-08",
+            "claim": "bridegroom 僅新郎；groom 另有馬伕／男僕名詞與梳洗動詞，合併詞條需標示各自範圍。",
+            "evidenceArtifacts": [
+              {
+                "artifact": "output/lv3-audit-20261107/u13-source/general/detail3-raw.json",
+                "sha256": "4a950e3489e1550168fc9b853d8169aa7bc2ed3009493a1f1681387f3a8c1461"
+              },
+              {
+                "artifact": "output/lv3-audit-20261107/u13-source/general/web8-raw.json",
+                "sha256": "7229ad8222cea50fc69e6c5ada48a874e7b632818a586a3ac559d76a36c07a7b"
+              }
+            ]
+          }
+        ],
+        "beforePresent": true
+      }
+    ],
+    "meaningEn": [
+      {
+        "proposal": "U13-GENERAL-W003112",
+        "originFindingIds": [
+          "U13-GENERAL-W003112"
+        ],
+        "reason": "原重複的新郎定義合併一次，補 groom 原已收馬伕／男僕及梳洗動詞；中文餵馬作動詞之精確性另留待查。",
+        "sources": [
+          {
+            "type": "dictionary",
+            "url": "https://www.collinsdictionary.com/dictionary/english/groom",
+            "verification": "direct_dictionary_body_read",
+            "readDate": "2026-11-08",
+            "claim": "原重複的新郎定義合併一次，補 groom 原已收馬伕／男僕及梳洗動詞；中文餵馬作動詞之精確性另留待查。",
+            "evidenceArtifacts": [
+              {
+                "artifact": "output/lv3-audit-20261107/u13-source/general/detail3-raw.json",
+                "sha256": "4a950e3489e1550168fc9b853d8169aa7bc2ed3009493a1f1681387f3a8c1461"
+              },
+              {
+                "artifact": "output/lv3-audit-20261107/u13-source/general/web8-raw.json",
+                "sha256": "7229ad8222cea50fc69e6c5ada48a874e7b632818a586a3ac559d76a36c07a7b"
+              }
+            ]
+          },
+          {
+            "type": "dictionary",
+            "url": "https://www.collinsdictionary.com/dictionary/english/bridegroom",
+            "verification": "direct_dictionary_body_read",
+            "readDate": "2026-11-08",
+            "claim": "原重複的新郎定義合併一次，補 groom 原已收馬伕／男僕及梳洗動詞；中文餵馬作動詞之精確性另留待查。",
+            "evidenceArtifacts": [
+              {
+                "artifact": "output/lv3-audit-20261107/u13-source/general/web8-raw.json",
+                "sha256": "7229ad8222cea50fc69e6c5ada48a874e7b632818a586a3ac559d76a36c07a7b"
+              }
+            ]
+          }
+        ],
+        "beforePresent": true
+      }
+    ],
+    "usagePattern": [
+      {
+        "proposal": "U13-GENERAL-W003112",
+        "originFindingIds": [
+          "U13-GENERAL-W003112"
+        ],
+        "reason": "正文 bride and groom 與 groom an animal；不把所有 groom 義項等同 bridegroom。",
+        "sources": [
+          {
+            "type": "dictionary",
+            "url": "https://www.collinsdictionary.com/dictionary/english/groom",
+            "verification": "direct_dictionary_body_read",
+            "readDate": "2026-11-08",
+            "claim": "正文 bride and groom 與 groom an animal；不把所有 groom 義項等同 bridegroom。",
+            "evidenceArtifacts": [
+              {
+                "artifact": "output/lv3-audit-20261107/u13-source/general/detail3-raw.json",
+                "sha256": "4a950e3489e1550168fc9b853d8169aa7bc2ed3009493a1f1681387f3a8c1461"
+              },
+              {
+                "artifact": "output/lv3-audit-20261107/u13-source/general/web8-raw.json",
+                "sha256": "7229ad8222cea50fc69e6c5ada48a874e7b632818a586a3ac559d76a36c07a7b"
+              }
+            ]
+          }
+        ],
+        "beforePresent": true
+      }
+    ],
+    "usagePatternZh": [
+      {
+        "proposal": "U13-GENERAL-W003112",
+        "originFindingIds": [
+          "U13-GENERAL-W003112"
+        ],
+        "reason": "正文 bride and groom 與 groom an animal；不把所有 groom 義項等同 bridegroom。",
+        "sources": [
+          {
+            "type": "dictionary",
+            "url": "https://www.collinsdictionary.com/dictionary/english/groom",
+            "verification": "direct_dictionary_body_read",
+            "readDate": "2026-11-08",
+            "claim": "正文 bride and groom 與 groom an animal；不把所有 groom 義項等同 bridegroom。",
+            "evidenceArtifacts": [
+              {
+                "artifact": "output/lv3-audit-20261107/u13-source/general/detail3-raw.json",
+                "sha256": "4a950e3489e1550168fc9b853d8169aa7bc2ed3009493a1f1681387f3a8c1461"
+              },
+              {
+                "artifact": "output/lv3-audit-20261107/u13-source/general/web8-raw.json",
+                "sha256": "7229ad8222cea50fc69e6c5ada48a874e7b632818a586a3ac559d76a36c07a7b"
+              }
+            ]
+          }
+        ],
+        "beforePresent": true
+      }
+    ],
+    "verbForms": [
+      {
+        "proposal": "U13-GENERAL-W003112",
+        "originFindingIds": [
+          "U13-GENERAL-W003112"
+        ],
+        "reason": "補缺的可信三態；僅 groom 動詞適用，若是合併 bridegroom/groom 詞條。",
+        "sources": [
+          {
+            "type": "dictionary",
+            "url": "https://www.collinsdictionary.com/dictionary/english/groom",
+            "verification": "direct_dictionary_body_read",
+            "readDate": "2026-11-08",
+            "claim": "可信詞典明列的動詞詞形；不從規則猜生成。approved 僅為既有資料契約的詞形技術狀態，不是新美術／例句／使用者裁示。",
+            "evidenceArtifacts": [
+              {
+                "artifact": "output/lv3-audit-20261107/u13-source/general/detail3-raw.json",
+                "sha256": "4a950e3489e1550168fc9b853d8169aa7bc2ed3009493a1f1681387f3a8c1461"
+              },
+              {
+                "artifact": "output/lv3-audit-20261107/u13-source/general/web8-raw.json",
+                "sha256": "7229ad8222cea50fc69e6c5ada48a874e7b632818a586a3ac559d76a36c07a7b"
+              }
+            ]
+          },
+          {
+            "type": "dictionary_conjugation",
+            "url": "https://www.collinsdictionary.com/conjugation/english/groom",
+            "verification": "direct_conjugation_body_read",
+            "claim": "表內 Past 與 Past Participle 直接查讀。",
+            "evidenceArtifacts": [
+              {
+                "artifact": "output/lv3-audit-20261107/u13-source/general/conjugations-raw.json",
+                "sha256": "83df022a96ce93181db009a09f1fd93551d5f9d4d1833d46bf4d2b293262b947"
+              },
+              {
+                "artifact": "output/lv3-audit-20261107/u13-source/general/conjugations2-raw.json",
+                "sha256": "a65adee5aad3a34491a4e517c60ab7bf2997a07464087483e04c545cb0446e19"
+              }
+            ]
+          }
+        ],
+        "beforePresent": false
+      }
+    ]
+  }
+}''')
+def verified_u13_groom_patch(manifest, patch):
+    return (manifest.get('unit') == 'LV3-U13' and patch.get('dataset') == 'words'
+            and _u11_json_equal(patch, _U13_GROOM_PATCH))
+
+
 def validate_manifest(manifest, scope=None):
     if manifest.get('schemaVersion') == 1:
         v1.validate_manifest(manifest)
@@ -1213,6 +1967,8 @@ def validate_manifest(manifest, scope=None):
                 and p['after'] == allowed[ident]['after'], 'Exact row scope mismatch')
         if manifest['unit'] == 'LV3-U11':
             require(isinstance(p.get('fieldEvidence'), dict), 'Invalid U11 field evidence object')
+        if manifest['unit'] == 'LV3-U13' and p['dataset'] == 'words' and p['id'] == 'W003112':
+            require(verified_u13_groom_patch(manifest, p), 'Incomplete U13 groom contract')
         if manifest['unit'] == 'LV3-U11' and p['dataset'] == 'words' and p['id'] == 'W004264':
             require(verified_u11_debut_forms(manifest, p), 'Incomplete U11 debut contract')
         allowed_fields = field_allow[p['dataset']]
@@ -1222,6 +1978,11 @@ def validate_manifest(manifest, scope=None):
         if verified_u11_review_patch(manifest, p, 'examples'):
             allowed_fields = {'sentenceZh'}
         if p['dataset'] == 'curriculum':
+            if manifest['unit'] == 'LV3-U13':
+                require(isinstance(p.get('fieldEvidence'), dict), 'Invalid U13 field evidence object')
+                if (p['id'] in _U13_PATTERN_IDS or p['before'].get('learningItemId') in _U13_PATTERN_IDS
+                        or 'pattern' in p['fieldEvidence'] or 'pattern' in p['after']):
+                    require(verified_u13_pattern_patch(manifest, p), 'Incomplete U13 pattern contract')
             if manifest['unit'] == 'LV3-U12':
                 require(isinstance(p.get('fieldEvidence'), dict), 'Invalid U12 field evidence object')
                 if 'pattern' in p['fieldEvidence'] or 'pattern' in p['after']:
@@ -1243,6 +2004,8 @@ def validate_manifest(manifest, scope=None):
             if kind == 'grammar' and verified_u11_review_patch(manifest, p, 'curriculum'):
                 allowed_fields = {'pattern', 'explanationZh'}
             if kind == 'grammar' and verified_u12_pattern_patch(manifest, p):
+                allowed_fields = {'pattern', 'explanationZh'}
+            if kind == 'grammar' and verified_u13_pattern_patch(manifest, p):
                 allowed_fields = {'pattern', 'explanationZh'}
             if 'meaningSource' in p['after']:
                 require(p['after']['meaningSource'] in {'textbook_source_review', 'textbook_and_dictionary_review'},
@@ -1278,7 +2041,7 @@ def validate_manifest(manifest, scope=None):
             require(set(f) == {'base', 'past', 'pastParticiple', 'sourceRef', 'status'}
                     and (verified_wage_forms(p, f)
                          if p['id'] == 'W002976' or p['before'].get('word') == 'wage(s)'
-                         else f['base'] == p['before']['word'])
+                         else verified_u13_groom_patch(manifest, p) or f['base'] == p['before']['word'])
                     and f['status'] == 'approved'
                     and (verified_u08_discomfort_forms(manifest, p, f)
                          or verified_u11_debut_forms(manifest, p)

@@ -1,0 +1,143 @@
+{
+  "unit": "LV3-U13",
+  "state": "applied_awaiting_technical_runtime",
+  "preparedAtCommit": "ca979d511abe75ab2e6524f50be49e6169b17d73",
+  "manifestHash": "a0c057b9b97622b7a29382f15f1c9854dcb102c35333e3a647d5159415b822e1",
+  "scopeHash": "f655e2f249661f4b46495f976fb6456e7ecd4742fb2b6f27043c72a45e37e176",
+  "chainStatus": "committed",
+  "fieldCount": 451,
+  "rowCount": 189,
+  "changedSourceDocuments": 3,
+  "readonlyDocuments": 3,
+  "productWrites": 5,
+  "singleWritePaths": [
+    "public/data/v1/examples.json",
+    "public/data/v1/meta.json",
+    "public/data/v1/sa-pack.json",
+    "public/data/v1/words.json",
+    "src/features/direct/curriculumLV3Unit13.json"
+  ],
+  "receipt": "output/lv3-audit-20261107/transactions/20261109T001400300471Z/transaction.json",
+  "receiptState": "committed",
+  "zeroWriteRepeat": true,
+  "newRepeatReceipts": 0,
+  "rawBackupsVerified": 5,
+  "unchangedInputsVerified": 139,
+  "inputCount": 144,
+  "meta": {
+    "schemaVersion": 2,
+    "generatedAt": "2026-11-08T21:51:21Z",
+    "sourceFile": "萬詞譜母表_SA義項清理整合_20260904.xlsx",
+    "counts": {
+      "words": 6090,
+      "senses": 772,
+      "examples": 7871,
+      "relations": 40,
+      "morphemes": 3798,
+      "media": 1177,
+      "notes": 4290,
+      "examPriority": 3792,
+      "hooks": 0
+    },
+    "wordsHash": "aa2797157bdc70d173ae7042ea90f888496d6449142887936332d79209392e8f",
+    "contentHash": "7e314385750a4dedf0821dab03b450ea21f4bd05ccd0f1d9d0e5155b910f5d05",
+    "houseSourceSha256": "98fa208835caf7184acc95f26dcff56ace23ba281ff8d4b9b8c37e18e407be14"
+  },
+  "packMeta": {
+    "schemaVersion": 2,
+    "generatedAt": "2026-11-08T21:51:21Z",
+    "counts": {
+      "words": 5779,
+      "senses": 771,
+      "examples": 7436,
+      "relations": 31,
+      "morphemes": 3696,
+      "notes": 4111,
+      "media": 1128,
+      "examPriority": 3613
+    },
+    "wordsHash": "sa:7b0fd6dbdc7dbe23d9234e581eefd259bed39751717d8a3ed45015aba35dbe03",
+    "contentHash": "sa:fe3a1986749bba0431c04094c39e68c7344b9d84ffa231e1da1b3986cf982c69"
+  },
+  "changedPaths": {
+    "public/data/v1/examples.json": {
+      "rawSha256": "f85bdb4a5a8f90b3d08643614a1589fbb92443db55c4d52827083a0d8ed502dd",
+      "lfSha256": "f85bdb4a5a8f90b3d08643614a1589fbb92443db55c4d52827083a0d8ed502dd",
+      "bytes": 3669969
+    },
+    "public/data/v1/meta.json": {
+      "rawSha256": "39d77c4d20c9e692d98575dd99ca76358e9b9144c71c177368970a90bc07b83e",
+      "lfSha256": "39d77c4d20c9e692d98575dd99ca76358e9b9144c71c177368970a90bc07b83e",
+      "bytes": 597
+    },
+    "public/data/v1/sa-pack.json": {
+      "rawSha256": "d545d52bd64c394d89eb29395bc939a98329b1912b21edcb3f813525b86f8f57",
+      "lfSha256": "d545d52bd64c394d89eb29395bc939a98329b1912b21edcb3f813525b86f8f57",
+      "bytes": 10590157
+    },
+    "public/data/v1/words.json": {
+      "rawSha256": "aa2797157bdc70d173ae7042ea90f888496d6449142887936332d79209392e8f",
+      "lfSha256": "aa2797157bdc70d173ae7042ea90f888496d6449142887936332d79209392e8f",
+      "bytes": 4739473
+    },
+    "src/features/direct/curriculumLV3Unit13.json": {
+      "rawSha256": "715362aff45a58394b049a1a3b5b7c7d721950a2c0cb50a53da44042a7d375ae",
+      "lfSha256": "715362aff45a58394b049a1a3b5b7c7d721950a2c0cb50a53da44042a7d375ae",
+      "bytes": 88555
+    }
+  },
+  "independentExpectedAfter": "output/lv3-audit-20261107/u13-source/independent-expected-after-v2.json",
+  "fixtureMethods": 9,
+  "fixtureReceipts": 5,
+  "fixtureRawBackups": 25,
+  "ancestorProjections": 12,
+  "ancestorLfHashes": 1728,
+  "originalU01Guards": 137,
+  "directParentProjection": "LV3-U12",
+  "directParentLfHashes": 144,
+  "pythonTsParity": true,
+  "sourceExpectedMatches": true,
+  "starter": {
+    "intersection": {
+      "words": {
+        "rows": 43,
+        "fields": 124,
+        "absentFields": 0,
+        "absentIds": []
+      },
+      "examples": {
+        "rows": 6,
+        "fields": 6,
+        "absentFields": 0,
+        "absentIds": []
+      },
+      "notes": {
+        "rows": 0,
+        "fields": 0,
+        "absentFields": 0,
+        "absentIds": []
+      }
+    },
+    "rows": 49,
+    "fields": 130,
+    "media": 1128,
+    "allNonMetaCollectionsAndOrderEqual": true
+  },
+  "starterMediaUnchanged": 1128,
+  "originalBeforeCaptureUnchanged": true,
+  "runtimeAfter": "pending",
+  "technicalQa": "pending",
+  "sourceQuestions": [
+    "Seventeen rare/mixed-sense questions remain for cast, doughnut, wipe, spin, reputation, boredom, passionate, romantic, scar, boring, bridegroom/groom, suggest, rush, arouse, present, scream and jet; full details remain in u13-source/general/retained-pending-v1.json.",
+    "The pimple note headed console/consolation remains a possible misattachment; no replacement ID was invented. Reputation/repute cross-word information is retained.",
+    "All 19 null IDs, original review labels and read_only modes remain. Designer purse has no printed POS abbreviation. No new sentences, formal senses or textbook practice content were invented.",
+    "General die campfire and plot land illustrations retain their general meanings; they do not depict textbook dice/story meanings. No artwork, caption, mapping, image-question approval or media status was changed.",
+    "Rotate and reputation retain missing English captions. Heal retains its literal-backslash caption issue.",
+    "Phonetics, syllables, stress and historical exam provenance remain unverified. Excel staging/page inconsistencies remain historical source questions, with workbook unchanged."
+  ],
+  "physicalPhone": "not tested",
+  "release": "not published",
+  "localClosed": false,
+  "evidenceDirectory": "output/lv3-audit-20261107/u13-technical-preparation",
+  "consumerIntegration": "output/lv3-audit-20261107/u13-technical-preparation/post-application-v1/consumer-integration-result.json"
+}

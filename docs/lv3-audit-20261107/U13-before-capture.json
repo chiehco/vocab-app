@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "unit": "LV3-U13",
+  "stage": "before_runtime_qa",
+  "status": "complete_before_capture_with_existing_release_blockers",
+  "head": "ca979d511abe75ab2e6524f50be49e6169b17d73",
+  "time": "2026-11-08T21:33:14.093Z",
+  "coverage": {
+    "curriculum": 185,
+    "vocabulary": 112,
+    "grammar": 73,
+    "general": 89,
+    "nullId": 19,
+    "tabCards": 89,
+    "tabPages": 294,
+    "curriculumExact": true,
+    "generalExact": true,
+    "tabExact": true,
+    "images": 28,
+    "uniqueImages": 28,
+    "screenshots": 1133
+  },
+  "formalCounts": {
+    "words": 89,
+    "examples": 129,
+    "notes": 47,
+    "senses": 14,
+    "media": 20
+  },
+  "verification": "output/playwright/lv3-u13/before-verification.json",
+  "sourceDocuments": "output/playwright/lv3-u13/frozen-source-documents.json",
+  "sourceInventory": "output/playwright/lv3-u13/source-inventory-v2.json",
+  "routes": "output/playwright/lv3-u13/routes.json",
+  "captionExpectations": "output/playwright/lv3-u13/frozen-caption-expectations.json",
+  "snapshots": [
+    {
+      "stage": "initial",
+      "path": "output/playwright/lv3-u13/before-initial-state.json",
+      "bytes": 16419215,
+      "sha256": "9d7f0898690a8e1daba50395364397087c4adbcc65dba6ed3abf435b52d3fe82"
+    },
+    {
+      "stage": "settled",
+      "path": "output/playwright/lv3-u13/before-settled-state.json",
+      "bytes": 16419215,
+      "sha256": "7971401418101eebb1d66fd2fb1a36b11245caff53d12242948b6f1b58525689"
+    },
+    {
+      "stage": "pre-close",
+      "path": "output/playwright/lv3-u13/before-pre-close-state.json",
+      "bytes": 16419226,
+      "sha256": "7ebad05996ff4fe81779388defc0188c2648462aabfc50770c429c8991548329"
+    },
+    {
+      "stage": "reopen",
+      "path": "output/playwright/lv3-u13/before-reopen-state.json",
+      "bytes": 16419212,
+      "sha256": "5189cebdd84734c7903fb6612928c37bc3e8b629b0b798fd5210c83b57293aa0"
+    },
+    {
+      "stage": "final",
+      "path": "output/playwright/lv3-u13/before-final-state.json",
+      "bytes": 16419226,
+      "sha256": "e59d226e217b96404caaeb7366dc62719e223cda31f3dd968b09950ae0382e15"
+    }
+  ],
+  "baseline": {
+    "stage": "initial",
+    "path": "output/playwright/lv3-u13/before-initial-state.json",
+    "bytes": 16419215,
+    "sha256": "9d7f0898690a8e1daba50395364397087c4adbcc65dba6ed3abf435b52d3fe82"
+  },
+  "predecessor": {
+    "stage": "final",
+    "path": "output/playwright/lv3-u12/after-preparation/after-final-state.json",
+    "bytes": 16419229,
+    "sha256": "9e45538ec24a34b0a9f198981191cdacd2c13fb81512a58c6cb04cf1259e86e8"
+  },
+  "fieldClassification": {
+    "values": 3196,
+    "verbatim": 1897,
+    "normalizedOnly": 0,
+    "notFound": 1299
+  },
+  "visualReview": "output/playwright/lv3-u13/actual-visual-review.json",
+  "report": "docs/lv3-audit-20261107/U13-before-qa.md",
+  "sealPath": "output/playwright/lv3-u13/before-seal-index.json",
+  "technicalGateAllPassed": false,
+  "limits": [
+    "Local BEFORE evidence only; source semantics and proposed changes are reviewed separately. Existing release blockers are not cleared. No technical tests, push or deployment by this worker.",
+    "Desktop Chromium and 390x844 responsive emulation, not physical phone, audio, PWA/offline or other-browser QA.",
+    "Initial 1280x720 full-page screenshots preserve fixed-footer overlap. Separate 1280x1800 centered viewports show main cards fully reachable. Pixel review covers the exact recorded crops/checkpoints, not every captured pixel.",
+    "No new artwork or caption approval. Existing nullable selections, Chinese-only captions, source metadata-only fields and source-review caveats retained."
+  ]
+}
