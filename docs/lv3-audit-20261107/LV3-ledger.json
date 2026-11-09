@@ -825,7 +825,30 @@
       "itemCount": 168,
       "vocabularyCount": 122,
       "grammarCount": 46,
-      "status": "not_started"
+      "status": "reviewed_locally_with_retained_source_image_and_release_gaps",
+      "manifest": "U15-patches.json",
+      "sourceReview": "U15-source-review.md",
+      "application": "U15-application.json",
+      "technical": "U15-technical.json",
+      "after": "U15-after-capture.json",
+      "afterQa": "U15-after-qa.md",
+      "imageQa": "U15-image-batch2-runtime-qa.json",
+      "validation": "U15-validation.md",
+      "localReviewCheckpoint": true,
+      "comprehensiveComplete": false,
+      "release": "not published",
+      "supportedFieldChanges": 389,
+      "changedRows": 151,
+      "selectedExampleImagesAdded": 30,
+      "missingPrimaryImagesWithoutSourceExamples": 39,
+      "otherReviewedExamplesNotIllustrated": 30,
+      "retainedQualifications": [
+        "31 mapped curriculum entrances remain without inline images and retain pending examples; different senses are not treated as illustrated.",
+        "33 null-ID curriculum rows and 21 meaning questions remain.",
+        "Two example POS labels remain invisible; root rails and thumbnail crops retain prior limits.",
+        "Original 224-file test phase retains 10 timeouts and 4 skips; whole-lint limits remain.",
+        "No actual phone, audio, whole-unit or release acceptance."
+      ]
     },
     {
       "unit": 16,

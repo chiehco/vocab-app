@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { useLiveQuery } from 'dexie-react-hooks';
-import registry from './lv3U15ExampleImages.json';
+import allRegistry from './lv3U15ExampleImages.json';
 import batch from '../../../docs/lv3-audit-20261107/U15-example-images-batch1.json';
 import sourceProof from '../../../docs/lv3-audit-20261107/U15-example-images-resolver-integration.json';
 import examples from '../../../public/data/v1/examples.json';
@@ -23,11 +23,12 @@ vi.mock('../../hooks/useCardPronunciation', () => ({ useCardPronunciation: vi.fn
 vi.mock('../wordbeast/useIllustrationMedia', () => ({ useIllustrationMedia: vi.fn() }));
 beforeEach(() => vi.clearAllMocks());
 afterEach(() => vi.unstubAllGlobals());
+const registry = allRegistry.filter(row => batch.items.some(item => item.registryRow.exampleId === row.exampleId));
 const hash = (value: string | Buffer) => createHash('sha256').update(value).digest('hex');
 const normalize = (value: string) => value.replace(/\r\n/g, '\n');
 const escape = (value: string) => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#x27;');
 
-it('contains exactly the accepted first three U15 primary example images, not all thirty', () => {
+it('preserves exactly the originally accepted first three U15 primary images within the expanded registry', () => {
   expect(registry).toEqual(batch.items.map(item => item.registryRow));
   expect(registry.map(row => [row.officialWordId, row.word, row.exampleId])).toEqual([
     ['W002550', 'mobile', 'EXbd5c45ec'], ['W002971', 'vivid', 'EX64803248'], ['W002180', 'complain', 'EX42ed4857'],
