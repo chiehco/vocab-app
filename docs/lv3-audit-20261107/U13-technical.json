@@ -1,0 +1,167 @@
+{
+  "unit": "LV3-U13",
+  "state": "completed_with_release_blockers",
+  "applicationCommit": "1d899286c0e9305bab4923c8f0f9d03375deb089",
+  "originalExactScope": {
+    "total": 3603,
+    "passed": 3590,
+    "failed": 9,
+    "skipped": 4,
+    "failures": [
+      {
+        "path": "src/db/unitAudit.testSupport.test.ts",
+        "title": "reverses only recorded starter corrections while retaining the old whole-pack fixture",
+        "classification": "5000ms_timeout",
+        "priorU12Classification": "5000ms_timeout",
+        "durationMs": 8371.1252,
+        "priorTimeoutIdentity": true
+      },
+      {
+        "path": "src/db/unitAudit.testSupport.test.ts",
+        "title": "reverses only22 integrated U15 fields and protects every other exact word field",
+        "classification": "historical_consumer_assertion",
+        "priorU12Classification": null,
+        "durationMs": 126.82529999999679,
+        "priorTimeoutIdentity": false
+      },
+      {
+        "path": "src/db/unitAudit.testSupport.test.ts",
+        "title": "keeps the caller pack untouched when restoring sealed historical media",
+        "classification": "5000ms_timeout",
+        "priorU12Classification": "5000ms_timeout",
+        "durationMs": 7026.144500000002,
+        "priorTimeoutIdentity": true
+      },
+      {
+        "path": "src/features/direct/lv2Unit48Audit.test.ts",
+        "title": "restores only seventy exact formal operations and rejects recorded-field and identity drift",
+        "classification": "5000ms_timeout",
+        "priorU12Classification": "5000ms_timeout",
+        "durationMs": 6309.0906,
+        "priorTimeoutIdentity": true
+      },
+      {
+        "path": "src/features/direct/lv3Unit5Audit.test.ts",
+        "title": "authenticates all 56 actual U05 after rows and all six published files",
+        "classification": "5000ms_timeout",
+        "priorU12Classification": "5000ms_timeout",
+        "durationMs": 7121.981099999999,
+        "priorTimeoutIdentity": true
+      },
+      {
+        "path": "src/features/direct/lv3Unit6Audit.test.ts",
+        "title": "authenticates all six actual published files and all 31 affected starter rows",
+        "classification": "5000ms_timeout",
+        "priorU12Classification": null,
+        "durationMs": 5853.462300000001,
+        "priorTimeoutIdentity": false
+      },
+      {
+        "path": "src/features/direct/lv4NotesConfirmation.test.ts",
+        "title": "keeps every public content dataset, including the5779-word starter, exactly unchanged",
+        "classification": "5000ms_timeout",
+        "priorU12Classification": "5000ms_timeout",
+        "durationMs": 10899.017099999997,
+        "priorTimeoutIdentity": true
+      },
+      {
+        "path": "src/features/direct/recoveredUnitIntegration.test.ts",
+        "title": "retains historical curriculum and question identities with the audited cubes gloss addition",
+        "classification": "5000ms_timeout",
+        "priorU12Classification": "assertion_mismatch",
+        "durationMs": 5188.4253,
+        "priorTimeoutIdentity": false
+      },
+      {
+        "path": "src/features/vocabulary/lv3PuppetImageRepair.test.ts",
+        "title": "pins proof, source and candidate assets, original captions/media and historical proofs and guards",
+        "classification": "5000ms_timeout",
+        "priorU12Classification": "5000ms_timeout",
+        "durationMs": 7834.864100000001,
+        "priorTimeoutIdentity": true
+      }
+    ],
+    "priorTimeoutsRecurring": 6,
+    "newTimeoutIdentities": 2,
+    "timeoutsUnchanged": 5000
+  },
+  "originalFullTestFiles": 76,
+  "originalEvidence": "output/lv3-audit-20261107/u13-technical-preparation/execution-v1",
+  "python": {
+    "modules": 14,
+    "methods": 2448,
+    "passed": true,
+    "skipped": 0
+  },
+  "u13ConsumerTestsPassed": 20,
+  "u13ReviewGuardTestsPassed": 1272,
+  "originalPassedStages": [
+    "discovery",
+    "python",
+    "typecheck",
+    "changed-code-lint",
+    "build",
+    "verify-build"
+  ],
+  "targetedFollowup": {
+    "file": "src/db/unitAudit.testSupport.test.ts",
+    "tests": 116,
+    "passed": 114,
+    "failed": 2,
+    "skipped": 0,
+    "noTimeoutOverrides": true,
+    "failures": [
+      {
+        "path": "src/db/unitAudit.testSupport.test.ts",
+        "title": "reverses only recorded starter corrections while retaining the old whole-pack fixture",
+        "classification": "5000ms_timeout",
+        "durationMs": 7969.1227
+      },
+      {
+        "path": "src/db/unitAudit.testSupport.test.ts",
+        "title": "keeps the caller pack untouched when restoring sealed historical media",
+        "classification": "5000ms_timeout",
+        "durationMs": 6227.299200000001
+      }
+    ],
+    "u15HistoricalGuardPassed": true,
+    "u15DurationMs": 1101.6749999999993,
+    "typecheck": "passed",
+    "changedTestLint": "passed",
+    "testDelta": "One line: authenticate and project the complete words document through existing lv3BeforeAudit before testing original U15 form contract. All22 rows, hashes, prior inverse steps and negative assertions retained.",
+    "evidence": "output/lv3-audit-20261107/u13-technical-preparation/technical-testonly-v2"
+  },
+  "integrity": {
+    "protectedPins": 5016,
+    "onlyOriginalPinDelta": "src/db/unitAudit.testSupport.test.ts",
+    "productInputsIdentical": 144,
+    "buildArtifactsIdentical": 2405,
+    "buildRebuilt": false,
+    "astVerificationRerun": false
+  },
+  "productionBuild": "output/lv3-audit-20261107/u13-technical-preparation/execution-v1/production-dist",
+  "originalBuildVerification": "output/lv3-audit-20261107/u13-technical-preparation/execution-v1/product-build-verification.json",
+  "buildRebuiltAfterTestOnlyChange": false,
+  "astVerificationRepeated": false,
+  "wholeLint": "Not rerun; prior three generatedThree errors remain. Changed-code lint passes do not clear them.",
+  "sourceQuestions": [
+    "Seventeen rare/mixed-sense questions remain for cast, doughnut, wipe, spin, reputation, boredom, passionate, romantic, scar, boring, bridegroom/groom, suggest, rush, arouse, present, scream and jet; full details remain in u13-source/general/retained-pending-v1.json.",
+    "The pimple note headed console/consolation remains a possible misattachment; no replacement ID was invented. Reputation/repute cross-word information is retained.",
+    "All 19 null IDs, original review labels and read_only modes remain. Designer purse has no printed POS abbreviation. No new sentences, formal senses or textbook practice content were invented.",
+    "General die campfire and plot land illustrations retain their general meanings; they do not depict textbook dice/story meanings. No artwork, caption, mapping, image-question approval or media status was changed.",
+    "Rotate and reputation retain missing English captions. Heal retains its literal-backslash caption issue.",
+    "Phonetics, syllables, stress and historical exam provenance remain unverified. Excel staging/page inconsistencies remain historical source questions, with workbook unchanged."
+  ],
+  "runtimeAfter": "pending",
+  "physicalPhone": "not tested",
+  "release": "not published",
+  "localClosed": false,
+  "remainingLimits": [
+    "All eight original technical-run timeout identities remain recorded. Only the two whole-file follow-up timeout cases were rerun, and both still fail at5000ms.",
+    "Original76-file result is not rewritten; follow-up does not establish a full76-file pass.",
+    "AFTER browser acceptance remains pending. Physical phone,audio,PWA/offline,real practice/SRS/rewards and production release remain unverified.",
+    "Prior U12 full218-file result and later separate corrections remain historical evidence; no whole-project pass claimed.",
+    "No performance candidates,timeout increases,expected-hash replacement,skips or suppressed negatives.",
+    "No push or deployment."
+  ]
+}
