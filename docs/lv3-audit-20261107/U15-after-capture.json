@@ -1,0 +1,371 @@
+{
+  "schemaVersion": 1,
+  "unit": "LV3-U15",
+  "stage": "after_fixed_text_verb_form_runtime_qa",
+  "status": "qualified_checkpoint_with_retained_limits",
+  "comprehensiveUnitComplete": false,
+  "releaseApproved": false,
+  "head": "089952117526edfed5b04a726eb68aff44fcaa4a",
+  "time": "2026-11-09T18:15:32.536Z",
+  "runtime": {
+    "mode": "production-preview",
+    "origin": "http://127.0.0.1:5186",
+    "profile": "C:/Users/USER/Documents/Codex/qa-profiles/lv3-u05-confirm-20261107-independent",
+    "profileClosed": true,
+    "previewServiceLeftRunning": {
+      "time": "2026-11-09T18:14:35.6953188Z",
+      "origin": "http://127.0.0.1:5186",
+      "leftRunningForNextPhase": true,
+      "process": {
+        "ProcessId": 1964,
+        "Name": "node.exe",
+        "ExecutablePath": "C:\\nvm4w\\nodejs\\node.exe",
+        "CommandLine": "\"C:\\nvm4w\\nodejs\\node.exe\" node_modules/vite/bin/vite.js preview --host 127.0.0.1 --port 5186 --strictPort --outDir output/lv3-audit-20261107/u15-technical-preparation/execution-recovery-v2/production-dist"
+      }
+    },
+    "servedBuild": {
+      "path": "output/playwright/lv3-u15-after-v1/production-preview-served-verification.json",
+      "bytes": 1403,
+      "sha256": "eff6e040c1c17bda26dd61b4d966f08c081ee288a906d7fbde412305db059d71"
+    }
+  },
+  "coverage": {
+    "curriculum": 168,
+    "general": 88,
+    "tabCards": 88,
+    "tabPages": 295,
+    "curriculumExact": true,
+    "generalExact": true,
+    "tabsExact": true,
+    "vocabulary": 122,
+    "grammar": 46,
+    "mappedOccurrences": 89,
+    "nullId": 33,
+    "activeImages": 19,
+    "emptyPrimaryImages": 69,
+    "formWords": 33,
+    "newFormWords": 23,
+    "formSurfaces": 133,
+    "responsiveBaselineRoutes": 56,
+    "responsiveBaselineViews": 108,
+    "responsiveBaselineCheckpoints": 224,
+    "responsiveSupplementalRoutes": 1,
+    "responsiveSupplementalViews": 1,
+    "responsiveSupplementalCheckpoints": 3,
+    "responsiveTotalRoutes": 57,
+    "responsiveTotalViews": 109,
+    "responsiveTotalCheckpoints": 227,
+    "rawScreenshots": 780
+  },
+  "verification": {
+    "status": "LIMITED",
+    "newRegressionFailures": [],
+    "backPassed": true,
+    "reopenPassed": true,
+    "finalInstalledReadiness": "PASS",
+    "progressStores": 14,
+    "contentStores": 9,
+    "states": [
+      {
+        "stage": "initial",
+        "contentStores": 9,
+        "progressStores": 14,
+        "progressChanges": [],
+        "settingsEqual": true,
+        "localStorageEqual": true,
+        "sessionStorageEqual": true,
+        "contentEqualSettled": false
+      },
+      {
+        "stage": "settled",
+        "contentStores": 9,
+        "progressStores": 14,
+        "progressChanges": [],
+        "settingsEqual": true,
+        "localStorageEqual": true,
+        "sessionStorageEqual": true,
+        "contentEqualSettled": true
+      },
+      {
+        "stage": "preview-initial",
+        "contentStores": 9,
+        "progressStores": 14,
+        "progressChanges": [],
+        "settingsEqual": true,
+        "localStorageEqual": true,
+        "sessionStorageEqual": true,
+        "contentEqualSettled": true
+      },
+      {
+        "stage": "preview-settled",
+        "contentStores": 9,
+        "progressStores": 14,
+        "progressChanges": [],
+        "settingsEqual": true,
+        "localStorageEqual": true,
+        "sessionStorageEqual": true,
+        "contentEqualSettled": true
+      },
+      {
+        "stage": "pre-close",
+        "contentStores": 9,
+        "progressStores": 14,
+        "progressChanges": [],
+        "settingsEqual": true,
+        "localStorageEqual": true,
+        "sessionStorageEqual": true,
+        "contentEqualSettled": true
+      },
+      {
+        "stage": "reopen",
+        "contentStores": 9,
+        "progressStores": 14,
+        "progressChanges": [],
+        "settingsEqual": true,
+        "localStorageEqual": true,
+        "sessionStorageEqual": true,
+        "contentEqualSettled": true
+      },
+      {
+        "stage": "final",
+        "contentStores": 9,
+        "progressStores": 14,
+        "progressChanges": [],
+        "settingsEqual": true,
+        "localStorageEqual": true,
+        "sessionStorageEqual": true,
+        "contentEqualSettled": true
+      }
+    ],
+    "strictExampleVisibility": [
+      {
+        "id": "EX3930a790",
+        "word": "crash",
+        "expected": "v.",
+        "sentenceEn": "The car crashed into a tree on the icy road.",
+        "meaningHint": null,
+        "found": true,
+        "labels": [
+          "例句"
+        ],
+        "visible": false,
+        "qualification": "Stored source verified separately by full installed equality; no invented meaning hint or suppressed visibility failure.",
+        "strictVisibilityStatus": "FAIL",
+        "status": "LIMITED_KNOWN_RENDERER",
+        "regression": false,
+        "beforeLabels": [
+          "例句"
+        ],
+        "basis": "Frozen BEFORE example sentence and labels; exact POS token match; DOM text is not pixel visibility."
+      },
+      {
+        "id": "EX78fe791f",
+        "word": "drunk",
+        "expected": "n.",
+        "sentenceEn": "The bartender refused to serve the noisy drunk any more beer.",
+        "meaningHint": null,
+        "found": true,
+        "labels": [
+          "例句"
+        ],
+        "visible": false,
+        "qualification": "Stored source verified separately by full installed equality; no invented meaning hint or suppressed visibility failure.",
+        "strictVisibilityStatus": "FAIL",
+        "status": "LIMITED_KNOWN_RENDERER",
+        "regression": false,
+        "beforeLabels": [
+          "例句"
+        ],
+        "basis": "Frozen BEFORE example sentence and labels; exact POS token match; DOM text is not pixel visibility."
+      }
+    ],
+    "additionalLongestResolved": {
+      "id": "LI-LV3U15-G014",
+      "verification": {
+        "path": "output/playwright/lv3-u15-after-v1/responsive-extra-g014-verification.json",
+        "bytes": 1087,
+        "sha256": "b4a51411175d5f03d89cb27ed3803f977e0ff372b7776e0bcf94d8cd4265ff48"
+      }
+    }
+  },
+  "preservation": {
+    "productAndProtectedChecks": 5204,
+    "productAndProtectedFailures": 0,
+    "buildChecks": 2405,
+    "buildFailures": 0,
+    "beforeMembersAndDocs": 1461,
+    "beforeFailures": 0
+  },
+  "pixelReviewReceipts": [
+    {
+      "path": "output/playwright/lv3-u15-after-v1/pixel-review-curriculum-a.json",
+      "bytes": 15352,
+      "sha256": "5aea65507874e2035c0ba55546cc434745608d0f60fd0b9acf7eeca356fb75c5"
+    },
+    {
+      "path": "output/playwright/lv3-u15-after-v1/pixel-review-curriculum-a-encoding-supplement.json",
+      "bytes": 1313,
+      "sha256": "1809ac91e96d97ee8a2d9eab0d03593fc367f0a4dc77394ea17a3c23437b27ae"
+    },
+    {
+      "path": "output/playwright/lv3-u15-after-v1/pixel-review-curriculum-b.json",
+      "bytes": 17738,
+      "sha256": "08e49c0285c803ad79749cce2d792d662c7bb18f452d2129020c426b4a71e4b9"
+    },
+    {
+      "path": "output/playwright/lv3-u15-after-v1/pixel-review-general.json",
+      "bytes": 15664,
+      "sha256": "230576eadb4ea8e7f54f16f4a5c0f3fe634e26f7537d4e42294b8c1a1e598164"
+    },
+    {
+      "path": "output/playwright/lv3-u15-after-v1/pixel-review-tabs-a.json",
+      "bytes": 46823,
+      "sha256": "41e8d4a643552d4eaf5558a3c87c6f10d85390d7c1c7c8db45b441e32e07df3a"
+    },
+    {
+      "path": "output/playwright/lv3-u15-after-v1/pixel-review-tabs-b.json",
+      "bytes": 53319,
+      "sha256": "1a1229a52ce801c2f3725b1be608732874d34f9e8f7ec6a1dfd4481c09e9548a"
+    },
+    {
+      "path": "output/playwright/lv3-u15-after-v1/pixel-review-responsive-a.json",
+      "bytes": 20787,
+      "sha256": "a3d8401b886bdb6f64fe9ce4f2658fc15a5fe9d38091f9deb7dfd97991d9205f"
+    },
+    {
+      "path": "output/playwright/lv3-u15-after-v1/pixel-review-responsive-b.json",
+      "bytes": 6584,
+      "sha256": "73a5234273f3af3b7343261b7a11ca04c726dc483c0fb826da8af587ba48e3f3"
+    },
+    {
+      "path": "output/playwright/lv3-u15-after-v1/pixel-review-lifecycle.json",
+      "bytes": 711,
+      "sha256": "31af632de41c605b6673c507702c48b3eae063e472b86d984a62fbd474b5ff65"
+    },
+    {
+      "path": "output/playwright/lv3-u15-after-v1/responsive-extra-g014-verification.json",
+      "bytes": 1087,
+      "sha256": "b4a51411175d5f03d89cb27ed3803f977e0ff372b7776e0bcf94d8cd4265ff48"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "output/playwright/lv3-u15-after-v1/after-verification.json",
+      "bytes": 5776,
+      "sha256": "512ec544f61eb6a682328a7028dc3ffb57e9a295f4ef5302585eb4532cdabd26"
+    },
+    {
+      "path": "output/playwright/lv3-u15-after-v1/v3-strengthened-checks.json",
+      "bytes": 84292,
+      "sha256": "1f8703591aca4ddaf355974172bfce288855090100309212765faafe3c11c04e"
+    },
+    {
+      "path": "output/playwright/lv3-u15-after-v1/source-render-verification.json",
+      "bytes": 70355,
+      "sha256": "a0415d7139e236252688d2314f373696895f517820bef345c8d8735b5ce0181e"
+    },
+    {
+      "path": "output/playwright/lv3-u15-after-v1/image-caption-consumer-checks.json",
+      "bytes": 13013,
+      "sha256": "ea3a1851993f7ca1e2868a78cf1c4e563a615b41918651f35c28d6a63b850139"
+    },
+    {
+      "path": "output/playwright/lv3-u15-after-v1/responsive-verification.json",
+      "bytes": 319,
+      "sha256": "205635faaa7ce5fe8dfee07e06604615a7f4d4531a7d922530507c32788d15fa"
+    },
+    {
+      "path": "output/playwright/lv3-u15-after-v1/state-preservation.json",
+      "bytes": 1972,
+      "sha256": "0fc56758047cee8935e15f3a8ff91175829cd459992e8ec839703c44c2741420"
+    },
+    {
+      "path": "output/playwright/lv3-u15-after-v1/installed-readiness-final.json",
+      "bytes": 23453,
+      "sha256": "def5b0365413a0463e208b61261e5bdc17c30f90700d950675c4a3d5c1af7019"
+    },
+    {
+      "path": "output/playwright/lv3-u15-after-v1/preservation-end.json",
+      "bytes": 714773,
+      "sha256": "a8b046cfef9ce4a674c975a5af178372ce603ee39373e716157d8efc5be0eefd"
+    },
+    {
+      "path": "output/playwright/lv3-u15-after-v1/before-seal-preservation-end.json",
+      "bytes": 150440,
+      "sha256": "1134f8cfbe63376da3b30e54025fddb42ea627a0edff3ecd34796b87a939947e"
+    },
+    {
+      "path": "output/playwright/lv3-u15-after-v1/capture-release.json",
+      "bytes": 4030,
+      "sha256": "7539c52bdb263c28a818beb9c53874349b6182897ff98875d6c8981fa6ad3ec8"
+    },
+    {
+      "path": "output/playwright/lv3-u15-after-v1/pre-responsive-longest.json",
+      "bytes": 1069,
+      "sha256": "17e0455de37764697ee438243542bffa0a153ed9578b63718c8c96cb593a4cc0"
+    },
+    {
+      "path": "output/playwright/lv3-u15-after-v1/profile-close-verification.json",
+      "bytes": 185,
+      "sha256": "9888c625dfa1957826c68cb0906ffb112afdc1f1d1cbd6c2865fb8ab31addf01"
+    },
+    {
+      "path": "output/playwright/lv3-u15-after-v1/preview-final-state.json",
+      "bytes": 480,
+      "sha256": "8a4cee03097fbd4973efe79208ba40f67411429ea7c739a95e7a27aa7c108854"
+    },
+    {
+      "path": "output/playwright/lv3-u15-after-v1/pixel-coverage-verification.json",
+      "bytes": 823,
+      "sha256": "4363a0ba90650b06a6292ac834556b132d11f069e6d3bbee268ac28dfab1f00d"
+    }
+  ],
+  "missingImages": {
+    "inventory": {
+      "path": "output/lv3-audit-20261107/u15-missing-images-v1/inventory.json",
+      "bytes": 135567,
+      "sha256": "babf5a44a5a035149c4c733a5dc0bee1fba3d21fa1738385de2b190481af4917"
+    },
+    "emptyGeneralCards": 69,
+    "withReviewedExampleSources": 30,
+    "withoutExampleSources": 39,
+    "exampleRows": 60,
+    "productImageChangesThisCheckpoint": 0,
+    "nextPhase": "Use separate image candidate/integration phase; do not overwrite this fixed-version checkpoint."
+  },
+  "external": {
+    "technicalAcceptance": {
+      "path": "output/lv3-audit-20261107/u15-independent-recovery/technical-recovery-acceptance-v1.json",
+      "bytes": 5422,
+      "sha256": "5f674363500d1274aa592d8bd6e2c830d8f25dfd11c194d571fdab1e7aa1cbbc"
+    },
+    "beforeSeal": {
+      "path": "output/playwright/lv3-u15/before-seal-index.json",
+      "bytes": 217500,
+      "sha256": "a6d8305ab068050a7ef1975c7eadbd476feec765bb45a03b28ef18009ea15730"
+    },
+    "missingImageInventory": {
+      "path": "output/lv3-audit-20261107/u15-missing-images-v1/inventory.json",
+      "bytes": 135567,
+      "sha256": "babf5a44a5a035149c4c733a5dc0bee1fba3d21fa1738385de2b190481af4917"
+    },
+    "sourceApplication": {
+      "path": "docs/lv3-audit-20261107/U15-application.json",
+      "bytes": 6310,
+      "sha256": "34b53f5acb7bea8e6a4082aec69d9a81fb7715265483f62b1f868b40c4373920"
+    }
+  },
+  "limitations": [
+    "Qualified checkpoint for the fixed text/verb-form version only. U15 comprehensive audit, missing artwork, remaining source questions and LV3 release are NOT complete.",
+    "Crash EX3930a790 v. and drunk EX78fe791f n. are stored correctly and their sentences render, but sentence-level POS labels remain invisible with null meaningHint. Strict visibility FAIL; unchanged BEFORE renderer limitation, not new regression.",
+    "69 general cards have no active primary image. Separate inventory identifies30 with reviewed example sources (60 source examples),39 without example sources. No new artwork was integrated in this checkpoint; one-primary-image resolver does not imply every example is illustrated. Private unseen assets are not ruled out.",
+    "33 null-ID curriculum items remain unlinked/read-only. Existing example-pending placeholders,21 source meaning questions and source/artwork questions remain; no review markers were merely deleted.",
+    "Bury bulb identity, farther comparison with yesterday and researcher antennae/style remain qualified; complaint/whip/vigorous English captions remain empty. No new artwork approval inferred.",
+    "Information/researcher third root tile clips inside its horizontal rail; curriculum level picker clips at right; horizontal swipe untested. Appreciate -ate summary ellipsis is present in BEFORE. Sticky bars obscure some individual scroll positions, but adjacent captured positions expose content.",
+    "Only desktop portrait390x844 responsive emulation; no physical-phone, landscape, audio, deployment, production-site or offline verification in this checkpoint.",
+    "Original dev navigation timeouts, blank startup and stale initial pack retained. Production preview success does not explain or fix dev startup. Curriculum/general JSON fields were read before auditSettle, PNG after settle; exact simultaneous timing is not claimed.",
+    "Content/Progress checks cover store names and rows plus local/session storage, not full IDB index/keyPath schema. Normal learning:last-location navigation bookmark is the sole allowed progress-setting difference.",
+    "Original technical test limits remain:10 Vitest5000ms timeouts,4 opt-in skips, whole-project lint/source/artwork/device/release limits. No blanket green test claim."
+  ],
+  "nextStep": "Parent independent checkpoint verification and documentation commit, then separate authorized image integration/recheck phase; do not mark U15 or LV3 complete."
+}
