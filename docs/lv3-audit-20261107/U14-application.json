@@ -1,0 +1,119 @@
+{
+  "status": "application_repeat_and_all_main_ancestors_passed",
+  "unit": "LV3-U14",
+  "at": "2026-11-09T06:54:27.478010+00:00",
+  "head": "abf73c3cbd4cb7c8b6abf8ffdbcc7def234a8e97",
+  "manifestHash": "e3080ef0d462df6de42fb680739bc80e77e23c0bc8eead947ca71ad932f86449",
+  "fields": 348,
+  "rows": 144,
+  "sourceDocumentsCompared": 6,
+  "mainProductWrites": 5,
+  "exactChangedPaths": [
+    "public/data/v1/examples.json",
+    "public/data/v1/meta.json",
+    "public/data/v1/sa-pack.json",
+    "public/data/v1/words.json",
+    "src/features/direct/curriculumLV3Unit14.json"
+  ],
+  "unchangedInputs": 139,
+  "newReceipts": 1,
+  "rawBackupsVerified": 5,
+  "repeatProductWrites": 0,
+  "repeatReplacementCalls": 0,
+  "repeatNewReceipts": 0,
+  "mainAncestorCount": 13,
+  "mainAncestorHashChecks": 1872,
+  "directParentEqualsIndependentBefore": true,
+  "u01OriginalGuards": 137,
+  "immutableFinalPinChecks": 5232,
+  "originalThirteenReceiptsPreserved": true,
+  "chainOnlyU14Promoted": true,
+  "ledgerRawUnchanged": true,
+  "evidence": [
+    {
+      "path": "output/lv3-audit-20261107/u14-technical-preparation/main-receipt-v1.json",
+      "sha256": "30f25f236417e3b170c9839d2f94a963e6ab57e70fd03a55d2367f9e75b777cc",
+      "bytes": 2018
+    },
+    {
+      "path": "output/lv3-audit-20261107/u14-technical-preparation/main-content-v1.json",
+      "sha256": "db8396af328f055dd478945389e26da67551728f11f22c1ec2b0520ae2d9591b",
+      "bytes": 92978
+    },
+    {
+      "path": "output/lv3-audit-20261107/u14-technical-preparation/main-repeat-v1.json",
+      "sha256": "3fde3c67f3f67c7f0447d711cee6d69482afada193a3ff3e1620e994e1238e2e",
+      "bytes": 164
+    },
+    {
+      "path": "output/lv3-audit-20261107/u14-technical-preparation/main-ancestors-v1.json",
+      "sha256": "55f67fc3b80b40ac41d6e0730fe323c96dc07fafe9a259ccd8fefb5ff81d65d9",
+      "bytes": 236515
+    },
+    {
+      "path": "output/lv3-audit-20261107/u14-integration/application-v1/main-apply-result.json",
+      "sha256": "35a655b15c4a64556faa06d41f30df8020018e5793eba8db826a2c2b68c8cb5e",
+      "bytes": 368
+    },
+    {
+      "path": "output/lv3-audit-20261107/u14-integration/application-v1/main-apply-calls.json",
+      "sha256": "3959b863224cc72e98696a1381b97d88947c30c0007b16fb82f6999e2c003641",
+      "bytes": 1527
+    },
+    {
+      "path": "output/lv3-audit-20261107/u14-integration/application-v1/main-apply-observation.json",
+      "sha256": "43a658c48811b1767abc8a7ac23a2e73e1193672b71eaa12d21105ed98a49569",
+      "bytes": 573
+    },
+    {
+      "path": "output/lv3-audit-20261107/u14-integration/application-v1/main-repeat-result.json",
+      "sha256": "5f1ef7e640d9d33795f3537228289d83cd8a72d88f64d9d5a6a6f04ec2aafbf0",
+      "bytes": 281
+    },
+    {
+      "path": "output/lv3-audit-20261107/u14-integration/application-v1/main-repeat-calls.json",
+      "sha256": "4a5015f70420c470608808236f7d2d430edf3a46bece4caf0ea85b0d652b4d27",
+      "bytes": 29
+    },
+    {
+      "path": "output/lv3-audit-20261107/u14-integration/application-v1/promotion-result-v1.json",
+      "sha256": "7f1401162e8ca6cb6efa1f43204f259ff6aa9633e5b760b47b9820c8fb16d127",
+      "bytes": 441
+    }
+  ],
+  "receipt": "output/lv3-audit-20261107/transactions/20261109T055649843926Z/transaction.json",
+  "limits": [
+    "No final technical suites/build/AFTER runtime/closing or commit in this phase.",
+    "Existing release, timeout, generated lint, artwork and device limits remain.",
+    "Promotion helper lacked a separate preexecution hash pin; exact chain effect independently checked and retrospective provenance preserved in application-v1/promotion-helper-retrospective-pin-v1.json."
+  ],
+  "activeProcesses": [],
+  "trackedDifferencesSinceBootstrap": {
+    "docs/lv3-audit-20261107/chain.json": {
+      "before": "fbb66f6ce27d8037ec861835dfe060c18e939fec358c6c96c1127b53394dce7c",
+      "after": "1fc476ac7e196161c882f6d18ed4fa8a7836b251d69e19b07d186a2925dbdf91"
+    },
+    "public/data/v1/examples.json": {
+      "before": "f85bdb4a5a8f90b3d08643614a1589fbb92443db55c4d52827083a0d8ed502dd",
+      "after": "6ec481d3d66a8ba0f07f2a01376de4b87be9b20c430cbc803ebd649fb4d47cd5"
+    },
+    "public/data/v1/meta.json": {
+      "before": "39d77c4d20c9e692d98575dd99ca76358e9b9144c71c177368970a90bc07b83e",
+      "after": "66b7a7c22215ae412dee1a78857ed66aeff62dc4aed381e41c3c517345a154bb"
+    },
+    "public/data/v1/sa-pack.json": {
+      "before": "d545d52bd64c394d89eb29395bc939a98329b1912b21edcb3f813525b86f8f57",
+      "after": "69da6d708ef02f0397730e9cfb3aa50806f51ef4948bf83845f7cd704d81f599"
+    },
+    "public/data/v1/words.json": {
+      "before": "aa2797157bdc70d173ae7042ea90f888496d6449142887936332d79209392e8f",
+      "after": "826633648e09c29896f3b30a68c70b9fc9edd0b281512571eabb326b16bccb69"
+    },
+    "src/features/direct/curriculumLV3Unit14.json": {
+      "before": "161a48f81edfe9ca96cd97ff7afb1c38300d1854fbaaf2ad9b4031219b3362ce",
+      "after": "e8bc5fe24d2c6e28cc61e1648e197e260558b1acc9299bfb4e8138747e9a2f6d"
+    }
+  },
+  "trackedDifferenceScopeExact": true,
+  "gitStatus": " M docs/lv3-audit-20261107/chain.json\n M public/data/v1/examples.json\n M public/data/v1/meta.json\n M public/data/v1/sa-pack.json\n M public/data/v1/words.json\n M scripts/lv3_audit_pipeline.py\n M scripts/test_verify_lv3_unit_fixture.py\n M scripts/verify_lv3_unit_fixture.py\n M src/features/direct/curriculumLV3Unit14.json\n M src/features/direct/lv3Audit.testSupport.ts\n M src/features/direct/lv3Unit14Text.test.ts\n?? .playwright-cli/\n?? docs/lv3-audit-20261107/U09-review.md\n?? docs/lv3-audit-20261107/U14-before-capture.json\n?? docs/lv3-audit-20261107/U14-before-qa.md\n?? docs/lv3-audit-20261107/U14-patches.json\n?? docs/lv3-audit-20261107/U14-scope.json\n?? docs/lv3-audit-20261107/U14-sealed-capture.json\n?? docs/lv3-audit-20261107/U14-source-provenance-correction-v3.md\n?? docs/lv3-audit-20261107/U14-source-review-correction-v2.md\n?? docs/lv3-audit-20261107/U14-source-review.md\n?? output/\n?? scripts/__pycache__/\n?? scripts/fixtures/lv3_u14_review_cases.json\n?? scripts/test_lv3_u14_review.py\n?? src/features/direct/lv3U14ReviewGuard.test.ts\n?? src/features/direct/lv3Unit14History.test.ts\n?? src/features/direct/lv3Unit14History.testSupport.ts\n"
+}

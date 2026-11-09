@@ -1,3 +1,4 @@
+import {originalUnit14Items} from './lv3Unit14History.testSupport';
 import 'fake-indexeddb/auto';
 import { afterEach,beforeEach,expect,it,vi } from 'vitest';
 import source from '../../../scripts/sources/LV3Unit14.json';
@@ -32,13 +33,16 @@ it('keeps 44 original boxes, numbered 1–26, nine content pages and the actual 
  expect(new Set(unit.items.map(i=>i.learningItemId)).size).toBe(145);
 });
 it('preserves the printed supplement articles, hyphens, source pages and every use marker',()=>{
+ const originalItems=originalUnit14Items(unit.items);
+ const vocabulary=originalItems.filter(i=>i.kind==='vocabulary');
  expect(vocabulary.slice(44).map(i=>[i.displayWord,i.sourcePage,i.printedLabel])).toEqual(source.related.map(r=>[r.word,r.sourcePage,r.printedLabel]));
- expect(unit.items.filter(i=>i.kind==='grammar').map(i=>[i.pattern,i.sourcePage])).toEqual(source.usage.map(r=>[r.label,r.sourcePage]));
+ expect(originalItems.filter(i=>i.kind==='grammar').map(i=>[i.pattern,i.sourcePage])).toEqual(source.usage.map(r=>[r.label,r.sourcePage]));
  for(const word of ['a disk drive','a rice cooker','air-conditioner']) expect(vocabulary.find(i=>i.displayWord===word)?.officialWordId).toBeNull();
  expect(vocabulary.find(i=>i.displayWord==='doubtless')).toMatchObject({sourcePage:145,sourceRole:'unnumbered_headword',officialWordId:null,chapterMeaningsZh:'無疑地；必定地'});
  expect(vocabulary.find(i=>i.displayWord==='brunch')).toMatchObject({sourcePage:151,printedNumber:26});
 });
 it('maps only existing dictionary identities and leaves 22 unmapped supplements pending',()=>{
+ const vocabulary=originalUnit14Items(unit.items).filter(i=>i.kind==='vocabulary');
  for(const [index,row] of [...source.headwords,...source.related].entries()) {
   expect(vocabulary[index].officialWordId).toBe(row.officialWordId);if(!row.officialWordId)continue;
   const word=pack.words.find(w=>w.wordId===row.officialWordId)!;

@@ -1894,6 +1894,187 @@ def verified_u13_groom_patch(manifest, patch):
             and _u11_json_equal(patch, _U13_GROOM_PATCH))
 
 
+# Exact source-reviewed U14 doubtless qualifications; never read mutable output at runtime.
+_U14_PATTERN_PATCHES = json.loads(r'''[
+  {
+    "dataset": "curriculum",
+    "path": "src/features/direct/curriculumLV3Unit14.json",
+    "key": "learningItemId",
+    "id": "LI-LV3U14-G020",
+    "before": {
+      "learningItemId": "LI-LV3U14-G020",
+      "kind": "grammar",
+      "sourcePage": 145,
+      "pattern": "doubtless 雖有表形容詞的字尾 -less，但為副詞",
+      "explanationZh": "教材用法標記；例句與教材題目尚未提供。",
+      "review": "source_checked_text_only",
+      "practiceMode": "read_only"
+    },
+    "after": {
+      "explanationZh": "本章 doubtless 作副詞，不能只因字尾 -less 就判作形容詞；字典另收形容詞用法，因此不是所有情況都只能作副詞。",
+      "pattern": "doubtless 在本章作副詞，不由 -less 字尾單獨判斷詞性"
+    },
+    "reason": "Replace placeholder with supported explanation, explicitly distinguishing textbook scope from dictionary qualifications. Preserve original examples, IDs and approval states. Narrow the printed generalization to this chapter, retaining original printed pattern in beforeRow and source evidence.",
+    "evidence": [
+      "https://www.collinsdictionary.com/dictionary/english/doubtless"
+    ],
+    "fieldEvidence": {
+      "explanationZh": [
+        {
+          "proposal": "U14-SOURCE-LI-LV3U14-G020",
+          "originFindingIds": [
+            "U14-SOURCE-LI-LV3U14-G020"
+          ],
+          "reason": "Replace placeholder with supported explanation, explicitly distinguishing textbook scope from dictionary qualifications. Preserve original examples, IDs and approval states.",
+          "sources": [
+            {
+              "type": "textbook_photo",
+              "file": "20260815_104805.jpg",
+              "page": 145,
+              "sha256": "3120afcbda322102d9daf7143458d8bfb3c9ca6939d821afc3c8db8c2fbecee0",
+              "verification": "pixels_displayed_and_visually_read",
+              "printedExcerpt": "doubtless",
+              "editorialSummary": "本章 doubtless 作副詞，不能只因字尾 -less 就判作形容詞；字典另收形容詞用法，因此不是所有情況都只能作副詞。",
+              "excerptNormalization": "Exact short English word or contiguous phrase actually visible on the cited original page; no punctuation, IPA or prose reconstruction. Whitespace/line breaks only may be collapsed. normalizedSourceSummary is a separate editorial reconstruction and is not a quotation.",
+              "normalizedSourceSummary": "doubtless 雖有表形容詞的字尾 -less，但為副詞"
+            },
+            {
+              "type": "dictionary",
+              "url": "https://www.collinsdictionary.com/dictionary/english/doubtless",
+              "verification": "direct_page_read",
+              "claim": "Dictionary also records adjective usage.",
+              "evidenceArtifact": "coordinator/grammar-dictionary-raw-v1.json"
+            }
+          ],
+          "beforePresent": true
+        }
+      ],
+      "pattern": [
+        {
+          "proposal": "U14-SOURCE-LI-LV3U14-G020",
+          "originFindingIds": [
+            "U14-SOURCE-LI-LV3U14-G020"
+          ],
+          "reason": "Narrow the printed generalization to this chapter, retaining original printed pattern in beforeRow and source evidence.",
+          "sources": [
+            {
+              "type": "textbook_photo",
+              "file": "20260815_104805.jpg",
+              "page": 145,
+              "sha256": "3120afcbda322102d9daf7143458d8bfb3c9ca6939d821afc3c8db8c2fbecee0",
+              "verification": "pixels_displayed_and_visually_read",
+              "printedExcerpt": "doubtless",
+              "editorialSummary": "本章 doubtless 作副詞，不能只因字尾 -less 就判作形容詞；字典另收形容詞用法，因此不是所有情況都只能作副詞。",
+              "excerptNormalization": "Exact short English word or contiguous phrase actually visible on the cited original page; no punctuation, IPA or prose reconstruction. Whitespace/line breaks only may be collapsed. normalizedSourceSummary is a separate editorial reconstruction and is not a quotation.",
+              "normalizedSourceSummary": "doubtless 雖有表形容詞的字尾 -less，但為副詞"
+            },
+            {
+              "type": "dictionary",
+              "url": "https://www.collinsdictionary.com/dictionary/english/doubtless",
+              "verification": "direct_page_read",
+              "claim": "Dictionary also records adjective usage.",
+              "evidenceArtifact": "coordinator/grammar-dictionary-raw-v1.json"
+            }
+          ],
+          "beforePresent": true
+        }
+      ]
+    }
+  },
+  {
+    "dataset": "curriculum",
+    "path": "src/features/direct/curriculumLV3Unit14.json",
+    "key": "learningItemId",
+    "id": "LI-LV3U14-G021",
+    "before": {
+      "learningItemId": "LI-LV3U14-G021",
+      "kind": "grammar",
+      "sourcePage": 145,
+      "pattern": "doubtless = doubtlessly = undoubtedly = without (a) doubt = certainly",
+      "explanationZh": "教材用法標記；例句與教材題目尚未提供。",
+      "review": "source_checked_text_only",
+      "practiceMode": "read_only"
+    },
+    "after": {
+      "explanationZh": "教材將這些表達並列為「無疑、必定」的近義說法；doubtless 也可表示「很可能、想必」，不是在所有語境都與 undoubtedly 或 certainly 完全相同。",
+      "pattern": "doubtless、doubtlessly、undoubtedly、without (a) doubt、certainly 的本章近義比較"
+    },
+    "reason": "Replace placeholder with supported explanation, explicitly distinguishing textbook scope from dictionary qualifications. Preserve original examples, IDs and approval states. Narrow the printed generalization to this chapter, retaining original printed pattern in beforeRow and source evidence.",
+    "evidence": [
+      "https://www.collinsdictionary.com/dictionary/english/doubtless"
+    ],
+    "fieldEvidence": {
+      "explanationZh": [
+        {
+          "proposal": "U14-SOURCE-LI-LV3U14-G021",
+          "originFindingIds": [
+            "U14-SOURCE-LI-LV3U14-G021"
+          ],
+          "reason": "Replace placeholder with supported explanation, explicitly distinguishing textbook scope from dictionary qualifications. Preserve original examples, IDs and approval states.",
+          "sources": [
+            {
+              "type": "textbook_photo",
+              "file": "20260815_104805.jpg",
+              "page": 145,
+              "sha256": "3120afcbda322102d9daf7143458d8bfb3c9ca6939d821afc3c8db8c2fbecee0",
+              "verification": "pixels_displayed_and_visually_read",
+              "printedExcerpt": "doubtlessly",
+              "editorialSummary": "教材將這些表達並列為「無疑、必定」的近義說法；doubtless 也可表示「很可能、想必」，不是在所有語境都與 undoubtedly 或 certainly 完全相同。",
+              "excerptNormalization": "Exact short English word or contiguous phrase actually visible on the cited original page; no punctuation, IPA or prose reconstruction. Whitespace/line breaks only may be collapsed. normalizedSourceSummary is a separate editorial reconstruction and is not a quotation.",
+              "normalizedSourceSummary": "doubtless = doubtlessly = undoubtedly = without (a) doubt = certainly"
+            },
+            {
+              "type": "dictionary",
+              "url": "https://www.collinsdictionary.com/dictionary/english/doubtless",
+              "verification": "direct_page_read",
+              "claim": "Doubtless may express probability rather than absolute certainty.",
+              "evidenceArtifact": "coordinator/grammar-dictionary-raw-v1.json"
+            }
+          ],
+          "beforePresent": true
+        }
+      ],
+      "pattern": [
+        {
+          "proposal": "U14-SOURCE-LI-LV3U14-G021",
+          "originFindingIds": [
+            "U14-SOURCE-LI-LV3U14-G021"
+          ],
+          "reason": "Narrow the printed generalization to this chapter, retaining original printed pattern in beforeRow and source evidence.",
+          "sources": [
+            {
+              "type": "textbook_photo",
+              "file": "20260815_104805.jpg",
+              "page": 145,
+              "sha256": "3120afcbda322102d9daf7143458d8bfb3c9ca6939d821afc3c8db8c2fbecee0",
+              "verification": "pixels_displayed_and_visually_read",
+              "printedExcerpt": "doubtlessly",
+              "editorialSummary": "教材將這些表達並列為「無疑、必定」的近義說法；doubtless 也可表示「很可能、想必」，不是在所有語境都與 undoubtedly 或 certainly 完全相同。",
+              "excerptNormalization": "Exact short English word or contiguous phrase actually visible on the cited original page; no punctuation, IPA or prose reconstruction. Whitespace/line breaks only may be collapsed. normalizedSourceSummary is a separate editorial reconstruction and is not a quotation.",
+              "normalizedSourceSummary": "doubtless = doubtlessly = undoubtedly = without (a) doubt = certainly"
+            },
+            {
+              "type": "dictionary",
+              "url": "https://www.collinsdictionary.com/dictionary/english/doubtless",
+              "verification": "direct_page_read",
+              "claim": "Doubtless may express probability rather than absolute certainty.",
+              "evidenceArtifact": "coordinator/grammar-dictionary-raw-v1.json"
+            }
+          ],
+          "beforePresent": true
+        }
+      ]
+    }
+  }
+]''')
+_U14_PATTERN_IDS = frozenset(p['id'] for p in _U14_PATTERN_PATCHES)
+
+
+def verified_u14_pattern_patch(manifest, patch):
+    return (manifest.get('unit') == 'LV3-U14' and patch.get('dataset') == 'curriculum'
+            and any(_u11_json_equal(patch, expected) for expected in _U14_PATTERN_PATCHES))
+
+
 def validate_manifest(manifest, scope=None):
     if manifest.get('schemaVersion') == 1:
         v1.validate_manifest(manifest)
@@ -1978,6 +2159,11 @@ def validate_manifest(manifest, scope=None):
         if verified_u11_review_patch(manifest, p, 'examples'):
             allowed_fields = {'sentenceZh'}
         if p['dataset'] == 'curriculum':
+            if manifest['unit'] == 'LV3-U14':
+                require(isinstance(p.get('fieldEvidence'), dict), 'Invalid U14 field evidence object')
+                if (p['id'] in _U14_PATTERN_IDS or p['before'].get('learningItemId') in _U14_PATTERN_IDS
+                        or 'pattern' in p['fieldEvidence'] or 'pattern' in p['after']):
+                    require(verified_u14_pattern_patch(manifest, p), 'Incomplete U14 pattern contract')
             if manifest['unit'] == 'LV3-U13':
                 require(isinstance(p.get('fieldEvidence'), dict), 'Invalid U13 field evidence object')
                 if (p['id'] in _U13_PATTERN_IDS or p['before'].get('learningItemId') in _U13_PATTERN_IDS
@@ -2006,6 +2192,8 @@ def validate_manifest(manifest, scope=None):
             if kind == 'grammar' and verified_u12_pattern_patch(manifest, p):
                 allowed_fields = {'pattern', 'explanationZh'}
             if kind == 'grammar' and verified_u13_pattern_patch(manifest, p):
+                allowed_fields = {'pattern', 'explanationZh'}
+            if kind == 'grammar' and verified_u14_pattern_patch(manifest, p):
                 allowed_fields = {'pattern', 'explanationZh'}
             if 'meaningSource' in p['after']:
                 require(p['after']['meaningSource'] in {'textbook_source_review', 'textbook_and_dictionary_review'},

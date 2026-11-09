@@ -65,11 +65,12 @@ def fixture_expected_write_paths(manifest):
         'LV3-U11': 'src/features/direct/curriculumLV3Unit11.json',
         'LV3-U12': 'src/features/direct/curriculumLV3Unit12.json',
         'LV3-U13': 'src/features/direct/curriculumLV3Unit13.json',
+        'LV3-U14': 'src/features/direct/curriculumLV3Unit14.json',
     }
     unit = manifest.get('unit')
     audit.require(unit in curricula, 'Unregistered real-fixture write shape')
     source = {'public/data/v1/words.json', 'public/data/v1/examples.json', curricula[unit]}
-    if unit not in {'LV3-U07', 'LV3-U08', 'LV3-U10', 'LV3-U12', 'LV3-U13'}:
+    if unit not in {'LV3-U07', 'LV3-U08', 'LV3-U10', 'LV3-U12', 'LV3-U13', 'LV3-U14'}:
         source.add('public/data/v1/notes.json')
     audit.require(set(manifest['files']) == source, 'Unexpected real-fixture source paths')
     audit.require(set(manifest['derivedAfter']) == pipeline.DERIVED,
