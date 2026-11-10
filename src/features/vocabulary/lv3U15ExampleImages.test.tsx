@@ -1,3 +1,4 @@
+import { beforeU16ExampleImageSource } from './lv3U16ExampleImages.testSupport';
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
@@ -122,7 +123,7 @@ it('keeps the historical source proof immutable and reverses only the exact reco
   }
   for (const file of sourceProof.files) {
     const current = normalize(readFileSync(file.path, 'utf8'));
-    expect(hash(current)).toBe(file.afterLfSha256);
+    expect(hash(beforeU16ExampleImageSource(file.path, current))).toBe(file.afterLfSha256);
     expect(beforeU15ExampleImageSource(file.path, current)).toBe(file.beforeText);
     expect(hash(file.beforeText)).toBe(file.beforeLfSha256);
     expect(beforeU15ExampleImageSource(file.path, current.replace(/\n/g, '\r\n'))).toBe(file.beforeText);

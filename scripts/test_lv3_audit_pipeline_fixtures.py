@@ -171,13 +171,30 @@ class U02RealFixtureTests(unittest.TestCase):
         self.assertFalse((self.fixture / 'output/lv3-audit-20261107/transactions').exists())
 
     def test_05_unchanged_input_and_input_set_drift_fail_closed(self):
-        path = 'public/data/v1/senses.json'
+        # U16 legitimately changes senses; use an actually unchanged input.
+        is_u16 = self.manifest.get('unit') == 'LV3-U16'
+        path = 'public/data/v1/relations.json' if is_u16 else 'public/data/v1/senses.json'
+        if is_u16:
+            self.assertNotIn(path, {pipeline.media_migration.MEDIA, pipeline.media_migration.PRIORITY})
+            self.assertIn(path, self.manifest['unchangedInputs'])
+            self.assertNotIn(path, self.manifest['files'])
         (self.fixture / path).write_bytes(self.original[path] + b' ')
         snapshot = self.snapshot()
         with self.assertRaisesRegex(ValueError, 'Input drift'):
             self.apply_fixture()
         self.assert_snapshot(snapshot)
         (self.fixture / path).write_bytes(self.original[path])
+        if is_u16:
+            # Preserve explicit rejection coverage for the newly changed senses file.
+            changed = 'public/data/v1/senses.json'
+            self.assertIn(changed, self.manifest['files'])
+            (self.fixture / changed).write_bytes(self.original[changed] + b' ')
+            changed_snapshot = self.snapshot()
+            with self.assertRaisesRegex(ValueError, r'^Unknown or mixed before/after state$'):
+                self.apply_fixture()
+            self.assert_snapshot(changed_snapshot)
+            self.assertFalse((self.fixture / 'output/lv3-audit-20261107/transactions').exists())
+            (self.fixture / changed).write_bytes(self.original[changed])
         extra = self.fixture / 'src/features/direct/unregistered-test.json'
         extra.write_text('{}\n', encoding='utf8')
         self.extra_paths.append(extra)

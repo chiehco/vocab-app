@@ -54,6 +54,8 @@ def compile_candidate(root, unit, accepted, capture):
         'curriculum': {'path':catalog[unit],'key':'learningItemId','rowsField':'learningItems'},
         'grammarQuestions': {'path':catalog[unit],'key':'questionId','rowsField':'grammarQuestions'},
     }
+    if unit == 'LV3-U16':
+        contracts['senses'] = {'path':'public/data/v1/senses.json','key':'senseId','rowsField':None}
     documents, collections, patches, seen = {}, {}, {}, set()
     before_rows = accepted.get('beforeRows', {})
     for item in proposals:

@@ -2075,6 +2075,9 @@ def verified_u14_pattern_patch(manifest, patch):
             and any(_u11_json_equal(patch, expected) for expected in _U14_PATTERN_PATCHES))
 
 
+from lv3_u16_review_guard import verified as verified_u16_review_patch, RESERVED as _U16_RESERVED
+
+
 def validate_manifest(manifest, scope=None):
     if manifest.get('schemaVersion') == 1:
         v1.validate_manifest(manifest)
@@ -2095,6 +2098,8 @@ def validate_manifest(manifest, scope=None):
     allowed_roots = {'words': ('public/data/v1/words.json', 'wordId'),
                      'examples': ('public/data/v1/examples.json', 'exampleId'),
                      'notes': ('public/data/v1/notes.json', 'noteId')}
+    if manifest['unit'] == 'LV3-U16':
+        allowed_roots['senses'] = ('public/data/v1/senses.json', 'senseId')
     for name, col in collections.items():
         require(set(col) == {'path', 'key', 'rowsField'}, 'Unknown collection keys')
         if name in allowed_roots:
@@ -2131,6 +2136,7 @@ def validate_manifest(manifest, scope=None):
         'words': {'meaningZh', 'meaningEn', 'usagePattern', 'usagePatternZh', 'verbForms', 'pos', 'posAll'},
         'examples': {'sensePos', 'meaningHint'},
         'notes': {'title', 'content'},
+        'senses': set(),
         'curriculum': {'explanationZh'},
         'grammarQuestions': {'targetMeaningZh', 'options'},
     }
@@ -2152,7 +2158,14 @@ def validate_manifest(manifest, scope=None):
             require(verified_u13_groom_patch(manifest, p), 'Incomplete U13 groom contract')
         if manifest['unit'] == 'LV3-U11' and p['dataset'] == 'words' and p['id'] == 'W004264':
             require(verified_u11_debut_forms(manifest, p), 'Incomplete U11 debut contract')
+        if manifest['unit'] == 'LV3-U16':
+            require(isinstance(p.get('fieldEvidence'), dict), 'Invalid U16 field evidence object')
+        u16_exact = verified_u16_review_patch(manifest, p)
+        if manifest['unit'] == 'LV3-U16' and ((p['dataset'], p['id']) in _U16_RESERVED or p['dataset'] == 'senses' or 'status' in p['after'] or 'status' in p['fieldEvidence'] or 'pattern' in p['after'] or 'pattern' in p['fieldEvidence']):
+            require(u16_exact, 'Incomplete U16 exact review contract')
         allowed_fields = field_allow[p['dataset']]
+        if u16_exact and p['dataset'] in {'examples', 'senses'}:
+            allowed_fields = set(p['after'])
         republic_fact = verified_u09_republic_fact(manifest, p)
         if republic_fact:
             allowed_fields = {'sentenceEn', 'sentenceZh', 'blankSentence'}
@@ -2195,6 +2208,8 @@ def validate_manifest(manifest, scope=None):
                 allowed_fields = {'pattern', 'explanationZh'}
             if kind == 'grammar' and verified_u14_pattern_patch(manifest, p):
                 allowed_fields = {'pattern', 'explanationZh'}
+            if kind == 'grammar' and u16_exact:
+                allowed_fields = {'pattern', 'explanationZh'}
             if 'meaningSource' in p['after']:
                 require(p['after']['meaningSource'] in {'textbook_source_review', 'textbook_and_dictionary_review'},
                         'Invalid reviewed meaning source')
@@ -2203,7 +2218,7 @@ def validate_manifest(manifest, scope=None):
                 require(p['fieldEvidence'].get(field), 'Missing curriculum field source')
         require(p['after'] and set(p['after']) <= allowed_fields
                 and not (set(p['after']) & (hard_protected - {'sentenceEn'}
-                         if republic_fact else hard_protected)), 'Disallowed after field')
+                         if republic_fact else hard_protected - {'status'} if u16_exact else hard_protected)), 'Disallowed after field')
         require(any(k not in p['before'] or p['before'][k] != x for k, x in p['after'].items()),
                 'No-op patch')
         require(isinstance(p['reason'], str) and p['reason'].strip()

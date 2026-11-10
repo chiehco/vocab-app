@@ -1,4 +1,5 @@
 import 'fake-indexeddb/auto';
+import {originalUnit16Items} from './lv3Unit16History.testSupport';
 import {afterEach,beforeEach,expect,it,vi} from 'vitest';
 import source from '../../../scripts/sources/LV3Unit16.json';
 import pack from '../../../public/data/v1/sa-pack.json';
@@ -31,7 +32,7 @@ it('keeps 45 original boxes, numbered 1–30, eleven content pages, Notes and th
 });
 it('preserves printed supplements, articles, capitalization and use pages',()=>{
  expect(vocabulary.slice(45).map(i=>[i.displayWord,i.sourcePage,i.printedLabel])).toEqual(source.related.map(r=>[r.word,r.sourcePage,r.printedLabel]));
- expect(unit.items.filter(i=>i.kind==='grammar').map(i=>[i.pattern,i.sourcePage])).toEqual(source.usage.map(r=>[r.label,r.sourcePage]));
+ expect(originalUnit16Items(unit.items).filter(i=>i.kind==='grammar').map(i=>[i.pattern,i.sourcePage])).toEqual(source.usage.map(r=>[r.label,r.sourcePage]));
  for(const word of ['the Statue of Liberty','a tearjerker','a blockbuster','Siamese twins','X-ray','blow up...']) expect(vocabulary.find(i=>i.displayWord===word)?.officialWordId).toBeNull();
  expect(vocabulary.find(i=>i.displayWord==='living')).toMatchObject({sourcePage:165,sourceRole:'main',officialWordId:null,chapterMeaningsZh:'生計；活著的；現在的'});
  expect(vocabulary.find(i=>i.displayWord==='beam')).toMatchObject({sourcePage:171,sensePos:'vt./vi./n.',chapterMeaningsZh:'播送；廣播；高興地微笑（與介詞 at 並用）；愉快的微笑；光束'});
@@ -42,8 +43,10 @@ it('uses existing official identities and keeps 33 unmapped supplements pending'
   const word=pack.words.find(w=>w.wordId===row.officialWordId)!;expect(word.word).toBe(row.officialWord);
   expect(word.word===row.word||word.wordVariants.includes(row.word)).toBe(true);
  }
- expect(vocabulary.filter(i=>!i.officialWordId)).toHaveLength(38);expect(vocabulary.filter(i=>i.meaningSource==='unmapped_supplement')).toHaveLength(33);
- expect(vocabulary.filter(i=>i.meaningSource==='unmapped_supplement').every(i=>i.targetMeaningZh==='教材補充詞；義項待核對。')).toBe(true);
+ expect(vocabulary.filter(i=>!i.officialWordId)).toHaveLength(38);
+ const originalVocabulary=originalUnit16Items(unit.items).filter(i=>i.kind==='vocabulary');
+ expect(originalVocabulary.filter(i=>i.meaningSource==='unmapped_supplement')).toHaveLength(33);
+ expect(originalVocabulary.filter(i=>i.meaningSource==='unmapped_supplement').every(i=>i.targetMeaningZh==='教材補充詞；義項待核對。')).toBe(true);
 });
 it('adopts no pictures, running examples, sense IDs or textbook questions',()=>{
  expect(unit.deliveryMode).toBe('text_only');expect(unit.questions).toEqual([]);expect(practiceIds(unit.items)).toEqual([]);

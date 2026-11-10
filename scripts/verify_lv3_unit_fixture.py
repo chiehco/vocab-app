@@ -67,12 +67,15 @@ def fixture_expected_write_paths(manifest):
         'LV3-U13': 'src/features/direct/curriculumLV3Unit13.json',
         'LV3-U14': 'src/features/direct/curriculumLV3Unit14.json',
         'LV3-U15': 'src/features/direct/curriculumLV3Unit15.json',
+        'LV3-U16': 'src/features/direct/curriculumLV3Unit16.json',
     }
     unit = manifest.get('unit')
     audit.require(unit in curricula, 'Unregistered real-fixture write shape')
     source = {'public/data/v1/words.json', 'public/data/v1/examples.json', curricula[unit]}
     if unit not in {'LV3-U07', 'LV3-U08', 'LV3-U10', 'LV3-U12', 'LV3-U13', 'LV3-U14', 'LV3-U15'}:
         source.add('public/data/v1/notes.json')
+    if unit == 'LV3-U16':
+        source.add('public/data/v1/senses.json')
     audit.require(set(manifest['files']) == source, 'Unexpected real-fixture source paths')
     audit.require(set(manifest['derivedAfter']) == pipeline.DERIVED,
                   'Unexpected real-fixture derived paths')
@@ -227,6 +230,38 @@ class RealUnitFixtureTests(base.U02RealFixtureTests):
     def test_08_after_state_checkpoint_caller_rejects_unknown_bytes(self):
         self.apply_fixture()
         self.commit_fixture_entry()
+        if self.manifest.get('unit') == 'LV3-U16':
+            # Relations is unchanged and is not an earlier migration source. Test both.
+            tx = self.fixture / 'output/lv3-audit-20261107/transactions'
+            def transaction_bytes():
+                return {p.relative_to(tx).as_posix(): p.read_bytes()
+                        for p in tx.rglob('*') if p.is_file()}
+            receipts_before = transaction_bytes()
+            chain_before = (self.fixture / pipeline.CHAIN).read_bytes()
+            for relative, error in [
+                    ('public/data/v1/relations.json', 'Input drift'),
+                    ('public/data/v1/senses.json', r'^Unknown or mixed before/after state$')]:
+                with self.subTest(path=relative):
+                    if relative.endswith('relations.json'):
+                        self.assertNotIn(relative, {pipeline.media_migration.MEDIA, pipeline.media_migration.PRIORITY})
+                        self.assertIn(relative, self.manifest['unchangedInputs'])
+                        self.assertNotIn(relative, self.manifest['files'])
+                    else:
+                        self.assertIn(relative, self.manifest['files'])
+                    path = self.fixture / relative
+                    original = path.read_bytes()
+                    path.write_bytes(original + b' ')
+                    snapshot = self.snapshot()
+                    with patch.object(pipeline.os, 'replace', wraps=pipeline.os.replace) as replacements:
+                        with self.assertRaisesRegex(ValueError, error):
+                            pipeline.project_checkpoint(
+                                self.fixture, Path(self.temporary.name) / ('tampered-' + path.stem + '-projection'))
+                        replacements.assert_not_called()
+                    self.assert_snapshot(snapshot)
+                    self.assertEqual(transaction_bytes(), receipts_before)
+                    self.assertEqual((self.fixture / pipeline.CHAIN).read_bytes(), chain_before)
+                    path.write_bytes(original)
+            return
         path = self.fixture / 'public/data/v1/senses.json'
         path.write_bytes(path.read_bytes() + b' ')
         snapshot = self.snapshot()

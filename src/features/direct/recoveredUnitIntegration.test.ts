@@ -89,9 +89,9 @@ function stable(value: unknown): unknown {
 }
 const hash = (value: unknown) => createHash('sha256').update(JSON.stringify(stable(value))).digest('hex');
 
-// All 131 direct JSON files belong to the authenticated checkpoint. Thirteen
+// All 131 direct JSON files belong to the authenticated checkpoint. Fourteen
 // have later audited changes; rereading the complete migration proof for each
-// of the other 118 files adds no coverage. Their actual bytes remain guarded.
+// of the other 117 files adds no coverage. Their actual bytes remain guarded.
 function historicalDirectProjection() {
   const chain = loadLV3Chain();
   expect(auditHash(lv3Checkpoint)).toBe('6008609dda537f69ef0880d6482c713b1e6e75ec0fa8c3a4af71cdee9b08e4f0');
@@ -106,13 +106,14 @@ function historicalDirectProjection() {
     'src/features/direct/curriculumLV3Unit13.json',
     'src/features/direct/curriculumLV3Unit14.json',
     'src/features/direct/curriculumLV3Unit15.json',
+    'src/features/direct/curriculumLV3Unit16.json',
     'src/features/direct/curriculumLV3Unit4.json', 'src/features/direct/curriculumLV3Unit5.json',
     'src/features/direct/curriculumLV3Unit6.json', 'src/features/direct/curriculumLV3Unit7.json',
     'src/features/direct/curriculumLV3Unit8.json', 'src/features/direct/curriculumLV3Unit9.json',
     'src/features/direct/curriculumUnit2.json',
   ]);
   expect(paths).toHaveLength(131);
-  expect(paths.filter(path => !changed.has(path))).toHaveLength(118);
+  expect(paths.filter(path => !changed.has(path))).toHaveLength(117);
   const project = (path: string, actualText: string) => {
     if (!paths.includes(path)) throw new Error('Unregistered out-of-domain direct JSON path');
     const text = actualText.replace(/\r\n/g, '\n');

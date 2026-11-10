@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {readFileSync,writeFileSync} from 'node:fs';
 import {it} from 'vitest';
+import {unitFixtureOutputDirectory} from './lv3UnitFixtureRun.testSupport';
 import {isAuditUnitStep,auditHash,loadLV3Chain,projectAuditStep,inversePublishedAuditStep,lv3AfterUnitFile,lv3AfterUnitPublishedText} from './lv3Audit.testSupport';
 
 // Explicit opt-in: requires the independent before capture and Python TEMP outputs.
@@ -9,7 +10,7 @@ import {isAuditUnitStep,auditHash,loadLV3Chain,projectAuditStep,inversePublished
 it.runIf(Boolean(process.env.LV3_UNIT_FIXTURE_PARITY))('matches every row and normalized published byte in a real unit fixture',()=>{
  const unit=process.env.LV3_UNIT_FIXTURE_PARITY!;
  assert.match(unit,/^U\d{2}$/);
- const output=`output/lv3-audit-20261107/${unit.toLowerCase()}-validation/`;
+ const output=unitFixtureOutputDirectory(unit,process.env.LV3_UNIT_FIXTURE_RUN);
  const read=(p:string)=>JSON.parse(readFileSync(p,'utf8'));
  const normalized=(p:string)=>readFileSync(p,'utf8').replace(/\r\n/g,'\n');
  const rawHash=(s:string)=>createHash('sha256').update(s).digest('hex');
