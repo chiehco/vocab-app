@@ -24579,7 +24579,10 @@ for(const dataset of ['senses','media'] as const) {
     const reordered=original.map(row=>Object.fromEntries(Object.entries(row).reverse()));
     const snapshot=structuredClone(reordered);
     expect(reordered).toHaveLength(original.length);
-    expect(lv3AfterUnitFile('LV3-U11',d.path,reordered)).toEqual(original);
+    const raw=readFileSync(new URL('../../../'+d.path,import.meta.url),'utf8').replace(/\r\n/g,'\n');
+    const expectedAtU11=JSON.parse(lv3AfterUnitPublishedText('LV3-U11',d.path,raw));
+    expect(auditHash(expectedAtU11)).toBe(d.afterHash);
+    expect(lv3AfterUnitFile('LV3-U11',d.path,reordered)).toEqual(expectedAtU11);
     expect(reordered).toEqual(snapshot);
     expect(Object.keys(reordered[0])).toEqual(Object.keys(snapshot[0]));
   });
@@ -24593,4 +24596,28 @@ for(const dataset of ['senses','media'] as const) {
     expect(unknown).toEqual(snapshot);
     expect(Object.hasOwn(unknown[0],'unrecordedUndefined')).toBe(true);
   });
+}
+
+// Additional complete-document strictness controls: caller is checked before
+// structuredClone can erase prototype, symbol, or array custom-property drift.
+for(const dataset of ['senses','media'] as const){
+ for(const kind of ['prototype','symbol','nan','negative-zero','sparse-array','array-property','nested-undefined'] as const){
+  it(`rejects complete U11 ${dataset} ${kind} without changing the supplied object`,()=>{
+   const d=u11Fixture.documents.find(d=>d.dataset===dataset)!;
+   const unknown=structuredClone(u11CurrentDocuments[dataset]) as U11Row[];
+   if(kind==='prototype')Object.setPrototypeOf(unknown[0],null);
+   if(kind==='symbol')unknown[0][Symbol('unrecorded') as unknown as string]=true;
+   if(kind==='nan')unknown[0].unrecordedNumber=NaN;
+   if(kind==='negative-zero')unknown[0].unrecordedNumber=-0;
+   if(kind==='sparse-array')delete unknown[0];
+   if(kind==='array-property')Object.assign(unknown,{unrecordedArrayProperty:true});
+   if(kind==='nested-undefined')unknown[0].unrecordedNested={extra:undefined};
+   const first=unknown[0],prototype=first&&Object.getPrototypeOf(first);
+   const keys=first&&Reflect.ownKeys(first),rootKeys=Reflect.ownKeys(unknown);
+   expect(()=>lv3AfterUnitFile('LV3-U11',d.path,unknown)).toThrow(/drift/);
+   expect(unknown[0]).toBe(first);
+   expect(Reflect.ownKeys(unknown)).toEqual(rootKeys);
+   if(first){expect(Object.getPrototypeOf(first)).toBe(prototype);expect(Reflect.ownKeys(first)).toEqual(keys);}
+  });
+ }
 }

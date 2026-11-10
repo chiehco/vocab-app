@@ -23,7 +23,7 @@ beforeEach(() => vi.clearAllMocks());
 afterEach(() => vi.unstubAllGlobals());
 const registry = allRegistry.filter(row => batch.items.some(item => item.registryRow.exampleId === row.exampleId));
 const hash = (value: string | Buffer) => createHash('sha256').update(value).digest('hex');
-const escape = (value: string) => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#x32;');
+const escape = (value: string) => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#x27;');
 
 it('contains exactly the32 U16 candidate bindings', () => {
  expect(allRegistry).toEqual(batch.items.map(item => item.registryRow));

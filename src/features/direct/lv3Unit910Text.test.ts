@@ -239,20 +239,21 @@ it('uses all source-reviewed U09 siege clues after the isolated historical test 
 });
 
 it('retains the reviewed ordinary-card forms, rare meaning and all four starter note corrections', () => {
-  expect(trustedVerbForms(pack.words.find(w => w.wordId === 'W002345')!)).toEqual({
+  const historicalPack = lv3AfterUnitFile('LV3-U10', 'public/data/v1/sa-pack.json', pack);
+  expect(trustedVerbForms(historicalPack.words.find(w => w.wordId === 'W002345')!)).toEqual({
     base: 'freeze', past: 'froze', pastParticiple: 'frozen',
     sourceRef: 'https://www.collinsdictionary.com/dictionary/english/freeze', status: 'approved',
   });
-  expect(trustedVerbForms(pack.words.find(w => w.wordId === 'W003883')!)).toBeUndefined();
-  expect(pack.words.find(w => w.wordId === 'W002435')).toMatchObject({
+  expect(trustedVerbForms(historicalPack.words.find(w => w.wordId === 'W003883')!)).toBeUndefined();
+  expect(historicalPack.words.find(w => w.wordId === 'W002435')).toMatchObject({
     word: 'inferior', pos: 'adj./n.', meaningEn: 'lower in quality, status, or rank; a person of lower rank or position',
   });
-  expect(pack.senses.filter(sense => sense.wordId === 'W002435').map(sense => [sense.senseId, sense.status]))
+  expect(historicalPack.senses.filter(sense => sense.wordId === 'W002435').map(sense => [sense.senseId, sense.status]))
     .toEqual([['W002435-1', 'needs_check'], ['W002435-2', 'needs_check']]);
-  expect(pack.senses.find(sense => sense.senseId === 'W002435-2')).toMatchObject({
+  expect(historicalPack.senses.find(sense => sense.senseId === 'W002435-2')).toMatchObject({
     sensePos: 'n.', meaningZh: '部屬', note: '罕用，建議刪列｜待拆分；主表字義：次等的；較差的；下方的；下級的',
   });
-  expect(pack.examples.find(e => e.exampleId === 'EXc9bfeeee')).toMatchObject({
+  expect(historicalPack.examples.find(e => e.exampleId === 'EXc9bfeeee')).toMatchObject({
     sentenceEn: 'France first became a republic in the late eighteenth century.',
     sentenceZh: '法國在十八世紀晚期首次成為共和國。',
     blankSentence: 'France first became a _____ in the late eighteenth century.',
@@ -264,7 +265,7 @@ it('retains the reviewed ordinary-card forms, rare meaning and all four starter 
     ['NXb496cc4b', 'stop to V 表示「停下原本的事，轉去做另一件事」；stop V-ing 表示「停止做某事」，也可指停止習慣或長期活動。例：We stopped to rest.／We stopped walking.'],
     ['NXe18069f9', 'come to a halt 表示停下來；grind to a halt 指逐漸變慢直到停下或停擺，用於車輛時可帶緩慢且有噪音的意思。兩者不是在所有語境都完全等同。'],
   ]) {
-    expect(pack.notes.find(note => note.noteId === noteId)).toMatchObject({ content, status: 'approved' });
+    expect(historicalPack.notes.find(note => note.noteId === noteId)).toMatchObject({ content, status: 'approved' });
   }
 });
 

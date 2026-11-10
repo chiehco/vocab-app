@@ -1,4 +1,4 @@
-import {lv3BeforeAudit} from '../features/direct/lv3Audit.testSupport';
+import {lv3BeforeAudit,lv3AfterUnitRows} from '../features/direct/lv3Audit.testSupport';
 import lv2u50 from '../../docs/unit-audit-20261105/LV2-U50-patches.json';
 import lv2u50Forms from '../../docs/unit-audit-20261105/LV2-U50-verified-forms-patches.json';
 import lv2u50FormSources from '../../docs/unit-audit-20261105/VERIFIED-LV2-U50-VERB-FORMS-SOURCES.json';
@@ -1536,4 +1536,46 @@ it('rejects unrecorded pack metadata outside the sealed media migration',()=>{
  const pack=JSON.parse(readFileSync('public/data/v1/sa-pack.json','utf8'));
  pack.meta.counts.words+=1;
  expect(()=>beforeUnitAudit('sa-pack',pack)).toThrow();
+});
+
+
+// Small row-only ownership controls exercise reverseRows through its public owner.
+// Repeated projection detects aliases into the private cached manifest.before rows.
+function u16OwnedRowsFixture(){
+ const path='docs/lv3-audit-20261107/U16-patches.json';
+ const raw=readFileSync(path,'utf8');
+ const manifest=JSON.parse(raw) as {patches:{dataset:string;id:string;before:Row;after:Row}[]};
+ const patches=manifest.patches.filter(p=>p.dataset==='words').slice(-2).reverse();
+ expect(patches).toHaveLength(2);expect(new Set(patches.map(p=>p.id)).size).toBe(2);
+ const sentinel:Row={wordId:'W-ownership-sentinel',nested:{values:['untouched']}};
+ const caller=[...patches.map(p=>structuredClone({...p.before,...p.after})),sentinel];
+ const expected=[...patches.map(p=>structuredClone(p.before)),structuredClone(sentinel)];
+ return {path,raw,caller,expected};
+}
+it('owns small U16 reverse-row buffers on success without changing caller or source manifest',()=>{
+ const f=u16OwnedRowsFixture(),snapshot=structuredClone(f.caller);
+ const result=lv3AfterUnitRows('LV3-U15','words',f.caller,{allowMissing:true});
+ expect(result).toEqual(f.expected);expect(f.caller).toEqual(snapshot);
+ expect(result).not.toBe(f.caller);
+ for(let i=0;i<result.length;i++)expect(result[i]).not.toBe(f.caller[i]);
+ expect(readFileSync(f.path,'utf8')).toBe(f.raw);
+});
+it('keeps caller and cached before rows intact when a later U16 reverse-row patch fails',()=>{
+ const f=u16OwnedRowsFixture();f.caller[1].unrecordedLateFailure=true;
+ const snapshot=structuredClone(f.caller);
+ expect(()=>lv3AfterUnitRows('LV3-U15','words',f.caller,{allowMissing:true})).toThrow(/exact audited row required/);
+ expect(f.caller).toEqual(snapshot);expect(readFileSync(f.path,'utf8')).toBe(f.raw);
+ const clean=u16OwnedRowsFixture();
+ expect(lv3AfterUnitRows('LV3-U15','words',clean.caller,{allowMissing:true})).toEqual(clean.expected);
+});
+it('does not alias returned U16 restored rows or untouched nested values into caller or cached manifest',()=>{
+ const f=u16OwnedRowsFixture(),snapshot=structuredClone(f.caller);
+ const result=lv3AfterUnitRows('LV3-U15','words',f.caller,{allowMissing:true});
+ result[0].ownershipProbe={nested:['changed']};
+ (result[2].nested as {values:string[]}).values.push('changed');
+ result.reverse();
+ expect(f.caller).toEqual(snapshot);expect(readFileSync(f.path,'utf8')).toBe(f.raw);
+ const again=lv3AfterUnitRows('LV3-U15','words',f.caller,{allowMissing:true});
+ expect(again).toEqual(f.expected);
+ expect(again[0]).not.toBe(result[2]);
 });

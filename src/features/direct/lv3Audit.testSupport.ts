@@ -2705,7 +2705,9 @@ export function projectAuditStep(m:AuditManifest,documents:Record<string,unknown
 
 /** Row-level compatibility for historical fixtures; untouched drift stays visible. */
 function reverseRows<T>(m:AuditManifest,dataset:string,value:T,allowMissing:boolean):T {
- const c=auditContract(m),col=c.collections[dataset],out=structuredClone(value);
+ // Private only: outer caller cloned this buffer or created it with JSON.parse.
+ // Preserve row checks and cloned restoration rows; never accept borrowed input.
+ const c=auditContract(m),col=c.collections[dataset],out=value;
  if(!col)return out;
  assert.equal(col.rowsField,null,'use physical-file projection for curriculum documents');
  const rr=rows(out,col);
@@ -2777,7 +2779,27 @@ export function reverseFileAuditSteps<T>(steps:{manifest:Manifest;scope?:AuditSc
  return out;
 }
 export function lv3AfterUnitFile<T>(afterUnit:string,path:string,value:T):T {
- const state=checkpoint(afterUnit),out=reverseFileAuditSteps(state.later,path,value);
+ const state=checkpoint(afterUnit);
+ assert.ok(Object.hasOwn(state.bytes,path)||Object.hasOwn(state.semantic,path),'unknown checkpoint path');
+ assert.ok(path&&!path.startsWith('/')&&!path.includes('\\')&&!path.includes(':')&&!path.split('/').includes('..'),'unsafe checkpoint path');
+ let input=value,authenticatedTarget:T|undefined;
+ // Strictly compare the original caller BEFORE any clone for every registered
+ // JSON input, including unchanged media. Authentication below still checks
+ // the raw chain, inverse row guards and target byte/semantic hashes.
+ if(path!==BUILDER){
+  assert.ok(path.endsWith('.json'),'unsupported checkpoint document');
+  const raw=readFileSync(new URL('../../../'+path,import.meta.url),'utf8').replace(/\r\n/g,'\n');
+  const current=JSON.parse(raw) as T;
+  assert.ok(isDeepStrictEqual(value,current),'unknown whole-file strict semantic drift');
+  input=current;
+  if(state.later.some(step=>!isMigration(step.manifest)&&Object.hasOwn(auditContract(step.manifest).files,path))
+    &&path!==PACK&&path!=='public/data/v1/meta.json'){
+   const projected=publishedTextAtCheckpoint(state,path,raw);
+   authenticatedTarget=JSON.parse(projected) as T;
+  }
+ }
+ const out=reverseFileAuditSteps(state.later,path,input);
+ if(authenticatedTarget!==undefined)assert.ok(isDeepStrictEqual(out,authenticatedTarget),'authenticated whole-file inverse drift');
  if(state.semantic[path])assert.equal(auditHash(out),state.semantic[path],'target checkpoint semantic drift');
  else if(state.bytes[path]){
   if(path===PACK||path==='public/data/v1/meta.json'){
@@ -2841,7 +2863,12 @@ export function inversePublishedAuditStep(m:AuditManifest,scope:AuditScope,path:
 /** Raw projection checks the selected target even when the successor list is empty. */
 export function lv3AfterUnitPublishedText(afterUnit:string,path:string,text:string):string {
  assert.equal(text,text.replace(/\r\n/g,'\n'),'caller must normalize CRLF first');
- const state=checkpoint(afterUnit);
+ return publishedTextAtCheckpoint(checkpoint(afterUnit),path,text);
+}
+// Private, synchronous operation-local reuse only. Public entrypoints always
+// create a fresh checkpoint; no state or proof survives a public operation.
+function publishedTextAtCheckpoint(state:ReturnType<typeof checkpoint>,path:string,text:string):string {
+ assert.equal(text,text.replace(/\r\n/g,'\n'),'caller must normalize CRLF first');
  let out=text;
  for(const {manifest,scope} of [...state.later].reverse()){
   if(isMigration(manifest)){out=inverseStarterMediaMigrationNormalized(manifest,path,out,migrationLoad);continue;}
