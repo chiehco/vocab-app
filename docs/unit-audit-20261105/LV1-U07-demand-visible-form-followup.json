@@ -1,0 +1,19 @@
+{
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "scope": "One visible meaning field on the already source-verified demanding sense; no global UI or headword POS change.",
+  "patches": [
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W003270-1",
+      "before": {
+        "meaningZh": "（人）要求嚴格的；（活動）費力的、吃力的"
+      },
+      "after": {
+        "meaningZh": "（demanding，衍生形容詞）（人）要求嚴格的；（活動）費力的、吃力的"
+      },
+      "reason": "The existing UI displays meaningZh but not the long explanatory note. Make the derived adjective visibly explicit without changing the demand headword POS, answer form, identity or practice sentence.",
+      "evidence": "Verified CEEC107 Q7 D demanding and CEEC110 Q36 E demanding; see LV1-U07-verified-exam-source-followup.json. Actual hero previously showed demand / adj. without the hidden note explaining the form."
+    }
+  ]
+}

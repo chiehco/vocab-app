@@ -1,0 +1,1206 @@
+{
+  "unit": "LV2-U38",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "baseCheckpoint": "ccec8402668d2c6ee27226a2b30d94d9ecaea21e",
+  "scope": "Exact fields only; all practice English/Chinese/cloze/answers, formal headword POS and whole-word statuses preserved. Empty hints retained. Generation is not App after verification.",
+  "patches": [
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001364",
+      "before": {
+        "meaningEn": "a journey made by aircraft; the action of flying through the air; an act of running away from danger",
+        "word": "flight",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningEn": "a journey made by aircraft; the action of flying through the air; an act of running away from danger; also the distance travelled through the air, as by a projectile."
+      },
+      "reason": "Retain the real projectile-distance noun; inherited 飛躍 remains a separate precision limit.",
+      "evidence": "https://www.merriam-webster.com/dictionary/flight"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001638",
+      "before": {
+        "meaningZh": "運動場；操場；度假勝地；活動場所",
+        "word": "playground",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "遊樂場；運動場；操場；度假勝地；活動場所"
+      },
+      "reason": "Supply the missing children-play-area meaning already present in the English and actual caption; retain broader existing nouns.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/playground"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001883",
+      "before": {
+        "meaningZh": "搖擺；振幅；音律；節奏",
+        "word": "swing",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（名詞）鞦韆；搖擺；振幅；音律；節奏；（動詞）擺動；揮動"
+      },
+      "reason": "Include the actual swing seat and arm-swing verb; preserve all inherited noun coverage.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/swing"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001807",
+      "before": {
+        "meaningEn": "a small flat rectangular piece of glass on which specimens can be mounted for microscopic study; (geology) the descent of a large mass of earth or rocks or snow etc.",
+        "word": "slide",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "status": "draft",
+        "usagePattern": "slide + N; slide to V; a/the slide",
+        "usagePatternZh": "滑動某物；滑動以……；溜滑梯／幻燈片"
+      },
+      "after": {
+        "meaningEn": "(n.) a playground structure with a smooth sloping surface for sliding down; a small glass plate for microscope specimens; a photographic transparency; a downward movement of earth, rocks or snow. (v.) to move smoothly along a surface, make something move this way, or gradually fall in value or amount.",
+        "usagePattern": "go down a slide; slide sth across/along sth; prices slide",
+        "usagePatternZh": "滑下溜滑梯；使某物沿著／滑過某處；價格下跌"
+      },
+      "reason": "Supply the actual printed playground and verb meanings while retaining the real microscope plate and geological nouns. Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/slide; Actually viewed original pp327–335 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001769",
+      "before": {
+        "meaningZh": "蹺蹺板；蹺蹺板遊戲；起伏交替的動作；上下或前後搖動的",
+        "meaningEn": "a plaything consisting of a board balanced on a fulcrum; the board is ridden up and down by children at either end; move up and down as if on a seesaw",
+        "word": "seesaw",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft",
+        "usagePattern": "a/the seesaw; seesaw of N",
+        "usagePatternZh": "蹺蹺板；某處的蹺蹺板"
+      },
+      "after": {
+        "meaningZh": "（名詞）蹺蹺板；蹺蹺板遊戲；起伏交替的動作；（另有形容詞用法）上下或前後搖動的；（另有動詞用法）上下搖動；反覆變動",
+        "meaningEn": "(n.) a playground board balanced in the middle with a child at each end, or alternating movement. Separate adjective use: moving up and down or back and forth. Separate verb use: to move up and down or fluctuate.",
+        "usagePattern": "play on a seesaw; a seesaw movement; seesaw between A and B",
+        "usagePatternZh": "玩蹺蹺板；上下或反覆的動作；在 A 和 B 之間反覆變動"
+      },
+      "reason": "Keep the directly attested adjective and verb visibly separate from the noun-only formal headword. Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/seesaw; Actually viewed original pp327–335 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001880",
+      "before": {
+        "meaningZh": "掃除；打掃；肅清；視野",
+        "meaningEn": "to clean a surface with a broom; to move or spread quickly across an area",
+        "word": "sweep",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（動詞）掃除；打掃；肅清；席捲；（另有名詞用法）打掃；範圍；視野",
+        "meaningEn": "(v.) to clean with a broom, clear away, or move rapidly over an area. Separate noun use: an act of sweeping, a range, extent or broad stretch."
+      },
+      "reason": "Separate the real scope/range noun from the verb headword; retain 視野 as a narrower inherited Chinese precision limit.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/sweep"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001559",
+      "before": {
+        "meaningZh": "拖把；鬼臉；用拖把洗擦；擦",
+        "meaningEn": "cleaning implement consisting of absorbent material fastened to a handle; for cleaning floors; to wash or wipe with or as if with a mop",
+        "word": "mop",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "status": "draft",
+        "usagePattern": "mop + N; mop to V; a/the mop",
+        "usagePatternZh": "用拖把擦拭某物；用拖把拖地；拖把"
+      },
+      "after": {
+        "meaningZh": "（名詞）拖把；（動詞）用拖把洗擦；擦；（另有罕見名詞用法）鬼臉",
+        "meaningEn": "(n.) an absorbent cleaning tool on a handle; (v.) to clean or wipe with or as with a mop. Separate rare noun use: a grimace.",
+        "usagePattern": "mop the floor; mop sth up; mop one's brow",
+        "usagePatternZh": "拖地；把……擦乾／吸乾；擦額頭"
+      },
+      "reason": "Retain the real rare grimace noun with its register instead of deleting it. Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/mop; Actually viewed original pp327–335 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001760",
+      "before": {
+        "meaningEn": "n. the number of points that someone gets in a game, test, or competition; v. to get a point or points in a game or test",
+        "word": "score",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningEn": "(n.) points in a game or test; a cut or notch; twenty or approximately twenty items. (v.) to win points, grade a test, or cut a mark. In know the score, the score refers to the true situation."
+      },
+      "reason": "Supply the actual printed grading/truth and retained notch/twenty meanings. Collins explicitly supports approximately twenty; the original 左右 wording is not treated as an error.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/score"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001892",
+      "before": {
+        "meaningZh": "淚滴；眼淚；撕；扯",
+        "word": "tear",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（名詞）淚滴；眼淚；裂口；（動詞）撕；扯"
+      },
+      "reason": "Include the existing ripped-hole noun already in the English. Preserve the separate pronunciations and leave a single generic forms panel absent pending visible scope.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/tear"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001608",
+      "before": {
+        "meaningEn": "a picture made using paint; the activity of covering a wall or object with paint",
+        "word": "painting",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningEn": "a picture made using paint; the activity or art of making such pictures; also the activity of covering a wall or object with paint."
+      },
+      "reason": "Include the art activity used in the printed countability distinction as well as wall painting.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/painting"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001281",
+      "before": {
+        "meaningZh": "圖畫；製圖；拉；繪圖",
+        "word": "drawing",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（名詞）圖畫；製圖；繪圖；（相關動詞 draw 的動名詞／現在分詞亦可表）拉"
+      },
+      "reason": "Preserve the inherited pulling gloss through its actual related draw form, separate from the art noun.",
+      "evidence": "https://www.merriam-webster.com/dictionary/drawing; https://www.collinsdictionary.com/dictionary/english/draw"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001207",
+      "before": {
+        "meaningZh": "蠟筆；蠟筆畫；以蠟筆作畫",
+        "meaningEn": "writing implement consisting of a colored stick of composition wax used for writing and drawing; write, draw, or trace with a crayon",
+        "word": "crayon",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft",
+        "usagePattern": "a/the crayon; crayon of N",
+        "usagePatternZh": "一支／那支蠟筆；……的蠟筆"
+      },
+      "after": {
+        "meaningZh": "（名詞）蠟筆；蠟筆畫；（另有動詞用法）以蠟筆作畫",
+        "meaningEn": "(n.) a stick of coloured wax or similar material used for drawing, or a picture made with crayons. Separate verb use: to draw or colour with crayons.",
+        "usagePattern": "a box of crayons; draw with crayons; a crayon drawing",
+        "usagePatternZh": "一盒蠟筆；用蠟筆畫畫；蠟筆畫"
+      },
+      "reason": "Separate the directly verified verb from the noun-only formal headword. Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/crayon; Actually viewed original pp327–335 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001561",
+      "before": {
+        "usagePattern": "a/the motorcycle; motorcycle of N",
+        "usagePatternZh": "機車；……的機車",
+        "word": "motorcycle",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "usagePattern": "ride a motorcycle; a motorcycle engine; a motorcycle helmet",
+        "usagePatternZh": "騎機車；機車引擎；機車安全帽"
+      },
+      "reason": "Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "Actually viewed original pp327–335 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001759",
+      "before": {
+        "meaningEn": "child's two-wheeled vehicle operated by foot",
+        "word": "scooter",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft",
+        "usagePattern": "a/the scooter; scooter of N",
+        "usagePatternZh": "踏板車／小型摩托車；某人的踏板車"
+      },
+      "after": {
+        "meaningEn": "a small light motorcycle with a low seat and footboard; also a small vehicle with a narrow board and handlebar, moved by pushing against the ground with one foot.",
+        "usagePattern": "ride a scooter; a motor scooter; a kick scooter",
+        "usagePatternZh": "騎小型機車／滑板車；小型摩托車；腳蹬滑板車"
+      },
+      "reason": "Supply the printed motor-scooter meaning absent from the old child-vehicle-only English; dictionary definition has no universal 50–250 cc boundary. Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/scooter; Actually viewed original pp327–335 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001312",
+      "before": {
+        "meaningZh": "引擎；發動機；機車；安裝發動機於",
+        "meaningEn": "a machine that converts energy into mechanical motion in order to power a vehicle or device; a railway locomotive",
+        "word": "engine",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（名詞）引擎；發動機；（鐵路）機車；（另有動詞用法）安裝發動機於",
+        "meaningEn": "(n.) a machine that converts energy into mechanical motion to power a vehicle or device; a railway locomotive. Separate verb use: to equip with engines."
+      },
+      "reason": "Retain and visibly separate the directly attested equip-with-engines verb.",
+      "evidence": "https://www.merriam-webster.com/dictionary/engine"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001585",
+      "before": {
+        "meaningZh": "麪條；笨蛋",
+        "meaningEn": "a long, thin strip of pasta or dough, usually cooked in soup or boiling water",
+        "word": "noodle",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "麪條；（非正式用法）笨蛋",
+        "meaningEn": "a long thin strip of dough cooked as food; separately and informally, a foolish person."
+      },
+      "reason": "Retain the real foolish-person noun rather than deleting it.",
+      "evidence": "https://www.merriam-webster.com/dictionary/noodle"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001928",
+      "before": {
+        "meaningEn": "accumulated wealth in the form of money or jewels etc.; any possession that is highly valued by its owner",
+        "word": "treasure",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "status": "draft",
+        "usagePattern": "treasure + N; treasure to V; a/the treasure",
+        "usagePatternZh": "珍視某物；珍視去做某事；寶藏"
+      },
+      "after": {
+        "meaningEn": "(n.) valuable money, jewels or possessions, or something highly valued; (v.) to value something greatly and keep it carefully.",
+        "usagePattern": "treasure a memory; a treasured possession; a treasure chest",
+        "usagePatternZh": "珍藏一段回憶；珍愛的物品；寶箱"
+      },
+      "reason": "Supply the printed cherish verb while preserving wealth and valued possessions. Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/treasure; Actually viewed original pp327–335 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001289",
+      "before": {
+        "meaningZh": "耳環；耳飾；耳飾（earring的複數）",
+        "usagePattern": "an/the earring; earring of N",
+        "usagePatternZh": "一隻耳環；……的耳環",
+        "word": "earring(s)",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningZh": "耳環；耳飾（單數 earring；複數 earrings）",
+        "usagePattern": "a pair of earrings; wear earrings; gold earrings",
+        "usagePatternZh": "一對耳環；戴耳環；金耳環"
+      },
+      "reason": "Clarify singular/plural metadata without changing the combined earring(s) formal identity or its existing variants.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/earring"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001397",
+      "before": {
+        "meaningEn": "willing to give and share unstintingly; not petty in character and mind",
+        "word": "generous",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "status": "draft",
+        "usagePattern": "be generous; generous + N",
+        "usagePatternZh": "顯得慷慨；慷慨的……"
+      },
+      "after": {
+        "meaningEn": "willing to give or share more than expected; kind and magnanimous; also larger or more plentiful than usual.",
+        "usagePattern": "be generous to sb; It is generous of sb to V; a generous amount of N",
+        "usagePatternZh": "對某人慷慨／寬大；某人做某事很慷慨／寬宏大量；大量的……"
+      },
+      "reason": "Include the real quantity sense without losing the printed magnanimous-person meaning. Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/generous; Actually viewed original pp327–335 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001290",
+      "before": {
+        "usagePattern": "an/the earthquake; earthquake of N",
+        "usagePatternZh": "一場地震；……的地震",
+        "word": "earthquake",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "usagePattern": "an earthquake strikes; an earthquake of magnitude N; earthquake damage",
+        "usagePatternZh": "地震發生；規模為……的地震；地震造成的損害"
+      },
+      "reason": "Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "Actually viewed original pp327–335 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001124",
+      "before": {
+        "meaningZh": "日曆；日程表；列入表中",
+        "meaningEn": "a chart showing the days, weeks, and months of a year; a schedule of planned events",
+        "word": "calendar",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（名詞）日曆；日程表；（另有動詞用法）列入表中",
+        "meaningEn": "(n.) a chart showing the days, weeks and months of a year, or a schedule of events. Separate verb use: to enter an event in a calendar or schedule."
+      },
+      "reason": "Separate the directly supported scheduling verb from the noun-only formal headword.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/calendar"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001252",
+      "before": {
+        "usagePattern": "a/the diary; diary of N",
+        "usagePatternZh": "一本／那本日記；……的日記",
+        "word": "diary",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "usagePattern": "keep a diary; write in one's diary; a diary entry",
+        "usagePatternZh": "記日記；在日記簿中寫作；一則日記"
+      },
+      "reason": "Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "Actually viewed original pp327–335 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001480",
+      "before": {
+        "meaningEn": "a periodical dedicated to a particular subject; a record book as a physical object",
+        "word": "journal",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft",
+        "usagePattern": "a/the journal; journal of N",
+        "usagePatternZh": "一份期刊／該份期刊；……的期刊"
+      },
+      "after": {
+        "meaningEn": "a periodical on a particular subject, a daily or weekly newspaper, or a written account of personal activities; in engineering, the part of a shaft or axle that turns in a bearing.",
+        "usagePattern": "keep a journal; write in a journal; an academic journal",
+        "usagePatternZh": "記日誌／日記；在日誌中寫作；學術期刊"
+      },
+      "reason": "Retain the real engineering journal and newspaper nouns while making the printed personal-record meaning explicit. Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/journal; Actually viewed original pp327–335 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001401",
+      "before": {
+        "usagePattern": "glue + N; glue to V; a/the glue",
+        "usagePatternZh": "黏著某物；黏貼到某處；膠水",
+        "word": "glue",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "usagePattern": "glue A to/onto B; be glued to sth; a tube of glue",
+        "usagePatternZh": "把 A 黏到 B 上；被黏在……上／目不轉睛地看……；一管膠水"
+      },
+      "reason": "Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "Actually viewed original pp327–335 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001619",
+      "before": {
+        "meaningZh": "麪糰；麪食；漿糊；糊狀物",
+        "usagePatternZh": "將某事物黏貼在某事物上；複製與貼上；番茄醬",
+        "word": "paste",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（名詞）麪糰；麪食；漿糊；糊狀物；（動詞）黏貼；貼上",
+        "usagePatternZh": "將某物黏貼在某物上；複製與貼上；濃縮番茄糊"
+      },
+      "reason": "Supply the actual adhesive/computer verb and distinguish concentrated tomato paste from generic sauce; inherited 麪糰／麪食 remain recorded precision limits.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/paste; https://www.collinsdictionary.com/dictionary/english/tomato-paste"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001848",
+      "before": {
+        "meaningZh": "棍；棒；刺；枯枝",
+        "meaningEn": "(v.) to become fixed or attached to something, or to continue doing what you have decided to do; (n.) a long, thin piece of wood",
+        "word": "stick",
+        "pos": "v./n.",
+        "posAll": [
+          "v.",
+          "n."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（動詞）黏住；黏貼；刺；扎；（名詞）棍；棒；枯枝",
+        "meaningEn": "(v.) to become attached or fixed, attach something, pierce with a pointed object, or continue a decided course; (n.) a long thin piece of wood."
+      },
+      "reason": "Supply the actual adhesive/piercing verbs while retaining every recorded noun.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/stick"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001028",
+      "before": {
+        "meaningEn": "without other people; by yourself",
+        "meaningZh": "孤獨的；單獨的；獨自的；獨自地",
+        "word": "alone",
+        "pos": "adv./adj.",
+        "posAll": [
+          "adv.",
+          "adj."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningEn": "without other people or by oneself; placed after a noun or pronoun, only that person or thing.",
+        "meaningZh": "孤獨的；單獨的；獨自的；獨自地；（置於名詞／代名詞後）僅；只有"
+      },
+      "reason": "Supply the actually printed postpositive only use without removing the existing isolation meanings.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/alone"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002021",
+      "before": {
+        "meaningEn": "a company that owns and operates aircraft, providing scheduled flights for passengers or cargo",
+        "word": "airline",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningEn": "a company that owns and operates aircraft, providing scheduled flights for passengers or cargo; also an air transport route or a system of air transport including its equipment, routes and staff."
+      },
+      "reason": "Retain the real route/system coverage; equipment is qualified as part of the transport system, not independently recertified as any airline object.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/airline; https://www.merriam-webster.com/dictionary/airline"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002290",
+      "before": {
+        "meaningEn": "determined or actuated by emotion rather than reason; of more than usual emotion",
+        "word": "emotional",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "status": "draft",
+        "usagePattern": "be emotional; emotional + N",
+        "usagePatternZh": "情緒化的；情感上的……"
+      },
+      "after": {
+        "meaningEn": "relating to feelings or emotions; showing or causing strong feelings; sometimes guided more by emotion than reason.",
+        "usagePattern": "emotional support; an emotional response; become emotional",
+        "usagePatternZh": "情感上的支持；情緒反應；變得情緒激動"
+      },
+      "reason": "Include the neutral emotion-related sense instead of defining all emotional things as irrational. Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/emotional; Actually viewed original pp327–335 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004244",
+      "before": {
+        "meaningZh": "腐敗；墮落；貪污；論誤",
+        "meaningEn": "decay of matter (as by rot or oxidation); moral perversion; impairment of virtue and moral principles",
+        "word": "corruption",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft",
+        "usagePattern": "a/the corruption; corruption of N",
+        "usagePatternZh": "一種腐敗；……的墮落"
+      },
+      "after": {
+        "meaningZh": "腐敗；墮落；貪污；訛誤",
+        "meaningEn": "dishonest or illegal conduct involving power or office; moral decay or physical decay; also the spoiling or damaging of a text or data.",
+        "usagePattern": "political corruption; fight corruption; corruption of a text",
+        "usagePatternZh": "政治貪腐；打擊貪腐；文本的訛誤／損壞"
+      },
+      "reason": "Correct the exact 論誤→訛誤 character and supply supported bribery/text damage coverage; retain decay and moral meanings. Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "https://www.merriam-webster.com/dictionary/corruption; https://dict.revised.moe.edu.tw/dictView.jsp?ID=146683&la=0&powerMode=0; Actually viewed original pp327–335 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005501",
+      "before": {
+        "usagePattern": "a/the landslide; landslide of N",
+        "usagePatternZh": "該山崩；……的山崩",
+        "word": "landslide",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "usagePattern": "a landslide blocks a road; a landslide victory",
+        "usagePatternZh": "山崩阻斷道路；壓倒性勝利"
+      },
+      "reason": "Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "Actually viewed original pp327–335 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002579",
+      "before": {
+        "usagePattern": "a/the novelist; novelist of N",
+        "usagePatternZh": "一位小說家；某部作品的小說家",
+        "word": "novelist",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "usagePattern": "a famous novelist; an aspiring novelist; a novelist's work",
+        "usagePatternZh": "著名小說家；有志成為小說家的人；小說家的作品"
+      },
+      "reason": "Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "Actually viewed original pp327–335 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005929",
+      "before": {
+        "meaningEn": "so lacking in interest as to cause mental weariness",
+        "usagePattern": "be tiresome; tiresome + N",
+        "usagePatternZh": "是累人的；累人的……",
+        "word": "tiresome",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningEn": "annoying or boring, or causing tiredness or weariness.",
+        "usagePattern": "a tiresome task; find sth tiresome; tiresome behaviour",
+        "usagePatternZh": "煩人／累人的工作；覺得某事煩人；令人厭煩的行為"
+      },
+      "reason": "Clarify the cause of annoyance/weariness, separate from a person feeling tired or weary.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/tiresome"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000672",
+      "before": {
+        "usagePatternZh": "有能力做原形動詞；掌權；核能",
+        "word": "power",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "usagePatternZh": "有能力／權力做某事；掌權；核能"
+      },
+      "reason": "Replace the literal 原形動詞 placeholder with the actual construction meaning; preserve the existing approved forms and every other field.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/power"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000835",
+      "before": {
+        "usagePatternZh": "強風/氣味/咖啡；一個有力的論點；身體強壯",
+        "word": "strong",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "usagePatternZh": "強風／濃烈氣味／濃咖啡；有力的論點；身體強壯"
+      },
+      "reason": "Refine the actual intensity collocations without changing the English or practice sentences.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/strong"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002684",
+      "before": {
+        "meaningEn": "facts, documents, or other information that show something is true",
+        "word": "proof",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningEn": "facts, documents, or other information that show something is true; also a test of whether an article or substance meets the required quality."
+      },
+      "reason": "Retain the directly supported testing noun already present in Chinese.",
+      "evidence": "https://www.merriam-webster.com/dictionary/proof"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003922",
+      "before": {
+        "meaningZh": "小氣的；吝嗇的；缺乏的；有刺的",
+        "meaningEn": "unwilling to spend",
+        "word": "stingy",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningZh": "（讀音 /ˈstɪndʒi/）小氣的；吝嗇的；缺乏的；（另一讀音 /ˈstɪŋi/，非正式）有刺的（指會刺痛、能蜇人的）",
+        "meaningEn": "(/ˈstɪndʒi/) unwilling to give or spend, or insufficient in amount. A separate informal adjective (/ˈstɪŋi/) means stinging or capable of stinging."
+      },
+      "reason": "Retain the two actually attested homographs with visible pronunciation/meaning boundaries; do not treat the second as ordinary physical thorns.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/stingy"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002854",
+      "before": {
+        "usagePatternZh": "暴風雨天氣；激烈的關係／會議",
+        "word": "stormy",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "usagePatternZh": "暴風雨天氣；風波不斷的關係／充滿爭吵的會議"
+      },
+      "reason": "Refine the existing relationship/meeting collocation rather than treating 激烈 as a whole-word error.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/stormy"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002990",
+      "before": {
+        "meaningEn": "happening or produced once a week; a magazine or newspaper published once a week",
+        "word": "weekly",
+        "pos": "adj./adv./n.",
+        "posAll": [
+          "adj.",
+          "adv.",
+          "n."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningEn": "(adj.) happening or produced once a week; (adv.) once a week or every week; (n.) a magazine or newspaper published weekly."
+      },
+      "reason": "Include the actual paid-weekly adverb alongside the already recorded adjective and noun.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/weekly"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003874",
+      "before": {
+        "meaningEn": "covered with or consisting of rust",
+        "word": "rusty",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningEn": "covered with rust or rust-coloured; out of practice through lack of use; also, in a separate American sense, restive or stubborn."
+      },
+      "reason": "Supply the real out-of-practice meaning and preserve the directly attested stubborn sense. Do not invent an obsolete label where the dictionary does not give one.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/rusty"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002847",
+      "before": {
+        "meaningZh": "粘的；有粘性的；頑固的",
+        "word": "sticky",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "粘的；有粘性的；（天氣）悶熱的；（非正式）棘手的；頑固的"
+      },
+      "reason": "Supply two actual existing English/practice meanings; inherited 頑固的 remains a precise source limitation rather than being deleted.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/sticky"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX575fe768",
+      "before": {
+        "sensePos": "n.",
+        "word": "search",
+        "sentenceEn": "He searched his backpack twice but still couldn't find his keys.",
+        "sentenceZh": "他把背包翻找了兩遍，還是找不到鑰匙。",
+        "blankSentence": "He _____ his backpack twice but still couldn't find his keys.",
+        "answer": "searched"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Narrow the actual cloze target function in the complete unchanged sentence; keep the whole-headword POS and empty hints.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/search"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX51af2d26",
+      "before": {
+        "sensePos": "n.",
+        "word": "swing",
+        "sentenceEn": "He likes to swing his arms while walking quickly to school.",
+        "sentenceZh": "他喜歡快步走去學校時大力擺動手臂。",
+        "blankSentence": "He likes to _____ his arms while walking quickly to school.",
+        "answer": "swing"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Narrow the actual cloze target function in the complete unchanged sentence; keep the whole-headword POS and empty hints.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/swing"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1a4fc946",
+      "before": {
+        "sensePos": "n.",
+        "word": "score",
+        "sentenceEn": "The forward scored the winning goal in the last minute of the soccer match.",
+        "sentenceZh": "那位前鋒在足球賽最後一分鐘踢進致勝一球。",
+        "blankSentence": "The forward _____ the winning goal in the last minute of the soccer match.",
+        "answer": "scored"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Narrow the actual cloze target function in the complete unchanged sentence; keep the whole-headword POS and empty hints.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/score"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1b48363c",
+      "before": {
+        "sensePos": "v.",
+        "word": "tear",
+        "sentenceEn": "She was so moved by the film that tears rolled down her cheeks.",
+        "sentenceZh": "她被這部電影深深感動，眼淚順著臉頰滑落。",
+        "blankSentence": "She was so moved by the film that _____ rolled down her cheeks.",
+        "answer": "tears"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Narrow the actual cloze target function in the complete unchanged sentence; keep the whole-headword POS and empty hints.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/tear"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX82fa3771",
+      "before": {
+        "sensePos": "v.",
+        "word": "stick",
+        "sentenceEn": "The dog ran into the yard and picked up a stick.",
+        "sentenceZh": "那隻狗跑進院子裡撿起了一根樹枝。",
+        "blankSentence": "The dog ran into the yard and picked up a _____.",
+        "answer": "stick"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Narrow the actual cloze target function in the complete unchanged sentence; keep the whole-headword POS and empty hints.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/stick"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX66e1f137",
+      "before": {
+        "sensePos": "adv./adj./conj.",
+        "word": "only",
+        "sentenceEn": "Only 10 people came to the party, but 50 were invited.",
+        "sentenceZh": "來參加派對的人只有 10 個，但邀請了 50 個人。",
+        "blankSentence": "_____ 10 people came to the party, but 50 were invited.",
+        "answer": "Only",
+        "meaningHint": "唯一的；僅有的；最佳的；只有"
+      },
+      "after": {
+        "sensePos": "adv.",
+        "meaningHint": "只有；僅僅"
+      },
+      "reason": "Narrow the actual cloze target function in the complete unchanged sentence; keep the whole-headword POS and empty hints. Refine an existing non-empty hint to the actual cloze sense; no new hint is filled and no practice wording changes.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/only; https://www.collinsdictionary.com/dictionary/english/only"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX72a2afe9",
+      "before": {
+        "sensePos": "adv./adj./conj.",
+        "word": "only",
+        "sentenceEn": "Randy wanted to ask Sally out, only he was too shy.",
+        "sentenceZh": "藍迪想要約莎莉出去，但他太害羞了。",
+        "blankSentence": "Randy wanted to ask Sally out, _____ he was too shy.",
+        "answer": "only",
+        "meaningHint": "唯一的；僅有的；最佳的；只有"
+      },
+      "after": {
+        "sensePos": "conj.",
+        "meaningHint": "只是；但是"
+      },
+      "reason": "Narrow the actual cloze target function in the complete unchanged sentence; keep the whole-headword POS and empty hints. Refine an existing non-empty hint to the actual cloze sense; no new hint is filled and no practice wording changes.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/only; https://www.collinsdictionary.com/dictionary/english/only"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXc3e45672",
+      "before": {
+        "sensePos": "adv./adj./conj.",
+        "word": "only",
+        "sentenceEn": "The only student in the class that knew the answer was Peter.",
+        "sentenceZh": "彼得是班上唯一一個知道答案的學生。",
+        "blankSentence": "The _____ student in the class that knew the answer was Peter.",
+        "answer": "only",
+        "meaningHint": "唯一的；僅有的；最佳的；只有"
+      },
+      "after": {
+        "sensePos": "adj.",
+        "meaningHint": "唯一的"
+      },
+      "reason": "Narrow the actual cloze target function in the complete unchanged sentence; keep the whole-headword POS and empty hints. Refine an existing non-empty hint to the actual cloze sense; no new hint is filled and no practice wording changes.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/only; https://www.collinsdictionary.com/dictionary/english/only"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX4dbe84ff",
+      "before": {
+        "meaningHint": "追求（考點：pursue a career 從事、追求某目標）",
+        "word": "pursue",
+        "sentenceEn": "He left his hometown to pursue a career in marine biology.",
+        "sentenceZh": "他離開家鄉去追求海洋生物學的事業。",
+        "blankSentence": "He left his hometown to _____ a career in marine biology.",
+        "answer": "pursue",
+        "status": "draft"
+      },
+      "after": {
+        "meaningHint": "從事；追求（pursue a career：發展職涯）",
+        "status": "reviewed"
+      },
+      "reason": "Refine an existing non-empty hint to the actual cloze sense; no new hint is filled and no practice wording changes. Verify the independent practice meaning and grammar; preserve its English and keep it explicitly separate from the official original question.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/pursue; https://www.collinsdictionary.com/dictionary/english/pursue"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXd8632341",
+      "before": {
+        "meaningHint": "熱愛、熱情（考點：投入一生的愛好）",
+        "word": "passion",
+        "sentenceEn": "Cooking is not just her job; it is her lifelong passion.",
+        "sentenceZh": "烹飪不只是她的工作，更是她一生的熱愛。",
+        "blankSentence": "Cooking is not just her job; it is her lifelong _____.",
+        "answer": "passion",
+        "status": "draft"
+      },
+      "after": {
+        "meaningHint": "熱愛；熱衷的事物",
+        "status": "reviewed"
+      },
+      "reason": "Refine an existing non-empty hint to the actual cloze sense; no new hint is filled and no practice wording changes. Verify the independent practice meaning and grammar; preserve its English and keep it explicitly separate from the official original question.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/passion; https://www.collinsdictionary.com/dictionary/english/passion"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXc393ce6c",
+      "before": {
+        "meaningHint": "黏的（考點：黏手、不易清除）",
+        "word": "sticky",
+        "sentenceEn": "The children's fingers were sticky with melted candy.",
+        "sentenceZh": "孩子們的手指沾滿融化的糖果，黏答答的。",
+        "blankSentence": "The children's fingers were _____ with melted candy.",
+        "answer": "sticky",
+        "status": "draft"
+      },
+      "after": {
+        "meaningHint": "黏的",
+        "status": "reviewed"
+      },
+      "reason": "Refine an existing non-empty hint to the actual cloze sense; no new hint is filled and no practice wording changes. Verify the independent practice meaning and grammar; preserve its English and keep it explicitly separate from the official original question.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/sticky; https://www.collinsdictionary.com/dictionary/english/sticky"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX8b3fc8f3",
+      "before": {
+        "meaningHint": "發電（power plant發電廠）",
+        "word": "power",
+        "sentenceEn": "We paid a visit to the power plant yesterday.",
+        "sentenceZh": "我們昨天去參觀發電廠。",
+        "blankSentence": "We paid a visit to the _____ plant yesterday.",
+        "answer": "power"
+      },
+      "after": {
+        "meaningHint": "電力（power plant：發電廠）"
+      },
+      "reason": "Refine an existing non-empty hint to the actual cloze sense; no new hint is filled and no practice wording changes.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/power"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W003798-1",
+      "before": {
+        "examEvidence": "學測106 詞彙題Q2",
+        "note": "考點：pursue a career 從事、追求某目標",
+        "status": "draft",
+        "wordId": "W003798",
+        "word": "pursue",
+        "sensePos": "v.",
+        "meaningZh": "追求",
+        "isExamSense": true,
+        "answerForms": [
+          "pursue"
+        ]
+      },
+      "after": {
+        "examEvidence": "106學測詞彙Q2，印刷第1頁，A pursue；試題：https://www.ceec.edu.tw/files/file_pool/1/0j076574214786979208/02-106%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf；答案：https://www.ceec.edu.tw/files/file_pool/1/0j076574215321858235/02-106%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88.pdf",
+        "note": "已實讀官方完整題意與答案。EX0507b794 對應填入答案後的官方原句，標點／空白正規化；EX4dbe84ff 是獨立海洋生物學情境，不冒稱原題。 本義核對不代表整詞通過。",
+        "status": "reviewed"
+      },
+      "reason": "Resolve only this exact draft sense using the full official question plus answer. For115 the official PDF was downloaded and its text actually extracted after browser fetch failed; no PDF pixel inspection claimed.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0j076574214786979208/02-106%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf; https://www.ceec.edu.tw/files/file_pool/1/0j076574215321858235/02-106%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88.pdf"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W002620-1",
+      "before": {
+        "examEvidence": "學測115 詞彙題Q7",
+        "note": "考點：投入一生的愛好",
+        "status": "draft",
+        "wordId": "W002620",
+        "word": "passion",
+        "sensePos": "n.",
+        "meaningZh": "熱愛、熱情",
+        "isExamSense": true,
+        "answerForms": [
+          "passion"
+        ]
+      },
+      "after": {
+        "examEvidence": "115學測詞彙Q7，印刷第1頁，C passion；試題：https://www.ceec.edu.tw/files/file_pool/1/0q054532302653501476/02-115%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7.pdf；答案：https://www.ceec.edu.tw/files/file_pool/1/0q040594609847120321/02-115%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf",
+        "note": "已實讀官方完整題意與答案。EX5b445652 對應填入答案後的官方原句，標點／連字與空白正規化；EXd8632341 是獨立烹飪情境，不冒稱原題。 本義核對不代表整詞通過。",
+        "status": "reviewed"
+      },
+      "reason": "Resolve only this exact draft sense using the full official question plus answer. For115 the official PDF was downloaded and its text actually extracted after browser fetch failed; no PDF pixel inspection claimed.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0q054532302653501476/02-115%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7.pdf; https://www.ceec.edu.tw/files/file_pool/1/0q040594609847120321/02-115%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W002847-1",
+      "before": {
+        "examEvidence": "學測112 詞彙題Q1",
+        "note": "考點：黏手、不易清除",
+        "status": "draft",
+        "wordId": "W002847",
+        "word": "sticky",
+        "sensePos": "adj.",
+        "meaningZh": "黏的",
+        "isExamSense": true,
+        "answerForms": [
+          "sticky"
+        ]
+      },
+      "after": {
+        "examEvidence": "112學測詞彙Q1，印刷第1頁，A sticky；試題：https://www.ceec.edu.tw/files/file_pool/1/0n045359274947649605/02-112%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7.pdf；答案：https://www.ceec.edu.tw/files/file_pool/1/0n045359936769376687/02-112%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88.pdf",
+        "note": "已實讀官方完整題意與答案。官方題意是巴士座位下難清除的口香糖。既有 EX527e9a1e 芒果與 EXc393ce6c 糖果情境都是獨立例句，不是該原題。 本義核對不代表整詞通過。",
+        "status": "reviewed"
+      },
+      "reason": "Resolve only this exact draft sense using the full official question plus answer. For115 the official PDF was downloaded and its text actually extracted after browser fetch failed; no PDF pixel inspection claimed.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0n045359274947649605/02-112%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7.pdf; https://www.ceec.edu.tw/files/file_pool/1/0n045359936769376687/02-112%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88.pdf"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000609-1",
+      "before": {
+        "note": "考點：Only + 副詞片語置句首時倒裝",
+        "wordId": "W000609",
+        "word": "only",
+        "sensePos": "adv.",
+        "meaningZh": "只；僅僅",
+        "isExamSense": true,
+        "answerForms": []
+      },
+      "after": {
+        "note": "only 修飾主詞時不倒裝，例如既有 EXd4d75e97 的 Only three tickets。句首 only after／when／then 等限制副詞語才可能引出主詞與助動詞倒裝；不能把主詞前的 only 一概套用。既有來源只是例句，未另確認為某年度官方考題。"
+      },
+      "reason": "Correct the specific mismatch between the existing subject-only example and a blanket inversion note; preserve source flags and formal identity.",
+      "evidence": "https://learnenglish.britishcouncil.org/free-resources/grammar/c1/inversion-after-negative-adverbials; https://www.collinsdictionary.com/dictionary/english/only"
+    }
+  ]
+}

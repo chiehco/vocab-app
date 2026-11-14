@@ -1,0 +1,33 @@
+
+> vocab-app@0.0.0 test
+> vitest run src/db/lv6MainIntegration.test.ts src/features/direct/lv4NotesConfirmation.test.ts src/db/unitAudit.testSupport.test.ts --maxWorkers=1 --testTimeout=30000
+
+
+ RUN  v4.1.9 <repo>
+
+ ❯ src/db/unitAudit.testSupport.test.ts (4 tests | 1 failed) 1493ms
+   × reverses only recorded starter corrections while retaining the old whole-pack fixture 845ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/db/unitAudit.testSupport.test.ts > reverses only recorded starter corrections while retaining the old whole-pack fixture
+AssertionError: expected 'fb75cd8f2ffc8c7e2198c8b25a315ea824174…' to be 'b6c6a71455ee39ae45d2451cf7b3cfd410c52…' // Object.is equality
+
+Expected: "b6c6a71455ee39ae45d2451cf7b3cfd410c529dffcebdbcef78ce9301de6e0cd"
+Received: "fb75cd8f2ffc8c7e2198c8b25a315ea82417458b4ce51cb9d998b41f0d591293"
+
+ ❯ src/db/unitAudit.testSupport.test.ts:47:17
+     45|  const restored=beforeUnitAudit('sa-pack.json',pack);
+     46|  const actual=createHash('sha256').update(JSON.stringify(stable(restor…
+     47|  expect(actual).toBe(starterBaseline.publicFiles.find(f=>f.name==='sa-…
+       |                 ^
+     48|  const column=structuredClone(pack);column.examples[0].sentenceEn='Unr…
+     49|  expect(()=>beforeUnitAudit('sa-pack',column)).toThrow('contentHash');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  1 failed | 7 passed (8)
+   Start at  13:53:56
+   Duration  30.68s (transform 9.97s, setup 0ms, import 22.53s, tests 7.32s, environment 0ms)

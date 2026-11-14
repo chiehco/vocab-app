@@ -1,0 +1,4356 @@
+{
+  "sourceCommit": "b5144bc12ebd35a9083ee80de055a748cf973981",
+  "examplesBlobSha": "e133b703845ec3241b3421e13a7bb3d562b4252f",
+  "sourceCatalog": "source-catalog.json",
+  "status": "Candidates only. Not applied or whole-card approval.",
+  "unit": "LV1-U01",
+  "coverage": {
+    "wordsRead": 38,
+    "examplesActuallyRead": 206,
+    "displayedHints": 153,
+    "emptyHintsAccepted": 53,
+    "emptyHintTypes": {
+      "exam": 29,
+      "daily": 24
+    },
+    "hintProposals": 133,
+    "missingOrIncompatibleContextHints": 34,
+    "mixedOrOverbroadHintRefinements": 99,
+    "posProposals": 82,
+    "posConventionPending": 6,
+    "translationProposals": 5,
+    "translationHighConfidenceTextSupportedCandidates": 5,
+    "translationNeedsOriginalContext": 0,
+    "kinshipContextChecksNoPatch": 5,
+    "clozeAnswerReconstructionFailures": 0,
+    "repoOrStatusChanged": false
+  },
+  "candidates": [
+    {
+      "exampleId": "EX09604f7c",
+      "wordId": "W000044",
+      "word": "arm",
+      "before": {
+        "meaningHint": "手臂；袖子；狹長港灣；武器"
+      },
+      "after": {
+        "meaningHint": "武裝；配備武器"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "現提示沒有清楚覆蓋本句所用的義／慣用組合；只補此句所需義，不擴寫詞頭定義。",
+      "sentenceEn": "The general armed his troops with sophisticated weapons.",
+      "blankSentence": "The general _____ his troops with sophisticated weapons.",
+      "answer": "armed",
+      "sourceRefs": [
+        "S001"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX1cc5c9cb",
+      "wordId": "W000044",
+      "word": "arm",
+      "before": {
+        "meaningHint": "手臂；袖子；狹長港灣；武器"
+      },
+      "after": {
+        "meaningHint": "手臂"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "There is a cut on my arm.",
+      "blankSentence": "There is a cut on my _____.",
+      "answer": "arm",
+      "sourceRefs": [
+        "S001"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXbb894e44",
+      "wordId": "W000044",
+      "word": "arm",
+      "before": {
+        "meaningHint": "手臂；袖子；狹長港灣；武器"
+      },
+      "after": {
+        "meaningHint": "雙臂（with open arms：熱情地）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。 arms 為複數名詞；with open arms 通常表熱情歡迎。中文「張開雙臂歡迎」也可表此意，不擅改譯文。",
+      "sentenceEn": "Mr. Johnson welcomed me with open arms.",
+      "blankSentence": "Mr. Johnson welcomed me with open _____.",
+      "answer": "arms",
+      "sourceRefs": [
+        "S001"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX261b0ae7",
+      "wordId": "W000056",
+      "word": "bad",
+      "before": {
+        "meaningHint": "壞的；壞；壞地"
+      },
+      "after": {
+        "meaningHint": "不良的"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "The rain has had a very bad effect on the crops.",
+      "blankSentence": "The rain has had a very _____ effect on the crops.",
+      "answer": "bad",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX36aa1fcd",
+      "wordId": "W000056",
+      "word": "bad",
+      "before": {
+        "meaningHint": "壞的；壞；壞地"
+      },
+      "after": {
+        "meaningHint": "不擅長的（be bad at）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Kevin is really bad at math.",
+      "blankSentence": "Kevin is really _____ at math.",
+      "answer": "bad",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX5abd6cd9",
+      "wordId": "W000056",
+      "word": "bad",
+      "before": {
+        "meaningHint": "壞的；壞；壞地"
+      },
+      "after": {
+        "meaningHint": "不好的（bad mood：壞心情）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Don't talk to Bill when he's in a bad mood.",
+      "blankSentence": "Don't talk to Bill when he's in a _____ mood.",
+      "answer": "bad",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXb79c150c",
+      "wordId": "W000056",
+      "word": "bad",
+      "before": {
+        "meaningHint": "壞的；壞；壞地"
+      },
+      "after": {
+        "meaningHint": "變質的（go bad：變質）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "The milk will go bad if you leave it outside too long.",
+      "blankSentence": "The milk will go _____ if you leave it outside too long.",
+      "answer": "bad",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX39df495f",
+      "wordId": "W000057",
+      "word": "bag",
+      "before": {
+        "meaningHint": "袋子；袋狀物；使膨大；裝袋"
+      },
+      "after": {
+        "meaningHint": "袋子"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "The heavy bottles fell through the bottom of the plastic bag.",
+      "blankSentence": "The heavy bottles fell through the bottom of the plastic _____.",
+      "answer": "bag",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXc27b5707",
+      "wordId": "W000057",
+      "word": "bag",
+      "before": {
+        "meaningHint": "袋子；袋狀物；使膨大；裝袋"
+      },
+      "after": {
+        "meaningHint": "袋子"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Josephine brought a shopping bag with her to the supermarket.",
+      "blankSentence": "Josephine brought a shopping _____ with her to the supermarket.",
+      "answer": "bag",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX0a6cdbb9",
+      "wordId": "W000101",
+      "word": "body",
+      "before": {
+        "meaningHint": "身體；人；屍體；主要部分"
+      },
+      "after": {
+        "meaningHint": "身體"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。 body 在 body temperature 中為名詞前置修飾語，不因修飾 temperature 改成形容詞。",
+      "sentenceEn": "Companies often take people's body temperature because of COVID-19.",
+      "blankSentence": "Companies often take people's _____ temperature because of COVID-19.",
+      "answer": "body",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXd10ef9a3",
+      "wordId": "W000101",
+      "word": "body",
+      "before": {
+        "meaningHint": "身體；人；屍體；主要部分"
+      },
+      "after": {
+        "meaningHint": "身體；身材"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Harriet wasn't happy with her body, so she decided to lose weight.",
+      "blankSentence": "Harriet wasn't happy with her _____, so she decided to lose weight.",
+      "answer": "body",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX1b7a2558",
+      "wordId": "W000102",
+      "word": "book",
+      "before": {
+        "meaningHint": "書；書籍；帳簿；名冊"
+      },
+      "after": {
+        "meaningHint": "預訂"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "現提示沒有清楚覆蓋本句所用的義／慣用組合；只補此句所需義，不擴寫詞頭定義。",
+      "sentenceEn": "I'd like to book a room for three nights, please.",
+      "blankSentence": "I'd like to _____ a room for three nights, please.",
+      "answer": "book",
+      "sourceRefs": [
+        "S003"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXa7b5cd71",
+      "wordId": "W000102",
+      "word": "book",
+      "before": {
+        "meaningHint": "書；書籍；帳簿；名冊"
+      },
+      "after": {
+        "meaningHint": "預訂（be fully booked：已被訂滿）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "現提示沒有清楚覆蓋本句所用的義／慣用組合；只補此句所需義，不擴寫詞頭定義。 booked 為 be + 過去分詞；Cambridge 將 fully booked 餐廳例列於 book 動詞下，本案可收斂為 v.；不是名詞 book。",
+      "sentenceEn": "The restaurant was fully booked, so Tammy couldn't make a reservation.",
+      "blankSentence": "The restaurant was fully _____, so Tammy couldn't make a reservation.",
+      "answer": "booked",
+      "sourceRefs": [
+        "S003"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXc9642f97",
+      "wordId": "W000102",
+      "word": "book",
+      "before": {
+        "meaningHint": "書；書籍；帳簿；名冊"
+      },
+      "after": {
+        "meaningHint": "書（hit the books：用功讀書）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "現提示沒有清楚覆蓋本句所用的義／慣用組合；只補此句所需義，不擴寫詞頭定義。",
+      "sentenceEn": "I have to hit the books tonight, so I can't go to the movies with you.",
+      "blankSentence": "I have to hit the _____ tonight, so I can't go to the movies with you.",
+      "answer": "books",
+      "sourceRefs": [
+        "S003",
+        "S017"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX222ee765",
+      "wordId": "W000114",
+      "word": "boy",
+      "before": {
+        "meaningHint": "男孩；少年；兒子"
+      },
+      "after": {
+        "meaningHint": "男孩"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Karen thought the boy was rude for yelling at her.",
+      "blankSentence": "Karen thought the _____ was rude for yelling at her.",
+      "answer": "boy",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX3629697f",
+      "wordId": "W000114",
+      "word": "boy",
+      "before": {
+        "meaningHint": "男孩；少年；兒子"
+      },
+      "after": {
+        "meaningHint": "男孩"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "When Raymond was a young boy, he wanted to be a doctor.",
+      "blankSentence": "When Raymond was a young _____, he wanted to be a doctor.",
+      "answer": "boy",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX71e10988",
+      "wordId": "W000114",
+      "word": "boy",
+      "before": {
+        "meaningHint": "男孩；少年；兒子"
+      },
+      "after": {
+        "meaningHint": "男孩；兒子（mama's boy：媽寶）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Ken is a mama's boy who can't make a decision on his own.",
+      "blankSentence": "Ken is a mama's _____ who can't make a decision on his own.",
+      "answer": "boy",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX3cf4d74f",
+      "wordId": "W000133",
+      "word": "buy",
+      "before": {
+        "meaningHint": "買；獲得；購買；買得的東西"
+      },
+      "after": {
+        "meaningHint": "購買"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Lori bought her mother an expensive purse.",
+      "blankSentence": "Lori _____ her mother an expensive purse.",
+      "answer": "bought",
+      "sourceRefs": [
+        "S004"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX9a9ad215",
+      "wordId": "W000133",
+      "word": "buy",
+      "before": {
+        "meaningHint": "買；獲得；購買；買得的東西"
+      },
+      "after": {
+        "meaningHint": "購買"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "When housing prices fall, it is a good time to buy.",
+      "blankSentence": "When housing prices fall, it is a good time to _____.",
+      "answer": "buy",
+      "sourceRefs": [
+        "S004"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXd4646735",
+      "wordId": "W000133",
+      "word": "buy",
+      "before": {
+        "meaningHint": "買；獲得；購買；買得的東西"
+      },
+      "after": {
+        "meaningHint": "買得的東西（a good buy：值得買的東西）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "The salesman told Sally that the stock was a good buy now.",
+      "blankSentence": "The salesman told Sally that the stock was a good _____ now.",
+      "answer": "buy",
+      "sourceRefs": [
+        "S004"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXe5de19d7",
+      "wordId": "W000133",
+      "word": "buy",
+      "before": {
+        "meaningHint": "買；獲得；購買；買得的東西"
+      },
+      "after": {
+        "meaningHint": "購買"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Lori bought an expensive purse for her mother.",
+      "blankSentence": "Lori _____ an expensive purse for her mother.",
+      "answer": "bought",
+      "sourceRefs": [
+        "S004"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXf51560c7",
+      "wordId": "W000133",
+      "word": "buy",
+      "before": {
+        "meaningHint": "買；獲得；購買；買得的東西"
+      },
+      "after": {
+        "meaningHint": "相信；接受（說法）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "現提示沒有清楚覆蓋本句所用的義／慣用組合；只補此句所需義，不擴寫詞頭定義。",
+      "sentenceEn": "Tim didn't buy Charlie's excuse for being late.",
+      "blankSentence": "Tim didn't _____ Charlie's excuse for being late.",
+      "answer": "buy",
+      "sourceRefs": [
+        "S004"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX08642c3f",
+      "wordId": "W000135",
+      "word": "cake",
+      "before": {
+        "meaningHint": "蛋糕；塊；餅；使結塊"
+      },
+      "after": {
+        "meaningHint": "蛋糕"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Evelyn's mother taught her how to make a delicious cake.",
+      "blankSentence": "Evelyn's mother taught her how to make a delicious _____.",
+      "answer": "cake",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXbb26859b",
+      "wordId": "W000135",
+      "word": "cake",
+      "before": {
+        "meaningHint": "蛋糕；塊；餅；使結塊"
+      },
+      "after": {
+        "meaningHint": "蛋糕（a piece of cake：輕而易舉的事）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "現提示沒有清楚覆蓋本句所用的義／慣用組合；只補此句所需義，不擴寫詞頭定義。",
+      "sentenceEn": "Most of the students thought the test was a piece of cake.",
+      "blankSentence": "Most of the students thought the test was a piece of _____.",
+      "answer": "cake",
+      "sourceRefs": [
+        "S005"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXde7c6849",
+      "wordId": "W000135",
+      "word": "cake",
+      "before": {
+        "meaningHint": "蛋糕；塊；餅；使結塊"
+      },
+      "after": {
+        "meaningHint": "蛋糕"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Tony bought a big chocolate birthday cake for his girlfriend.",
+      "blankSentence": "Tony bought a big chocolate birthday _____ for his girlfriend.",
+      "answer": "cake",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX92e7f6ee",
+      "wordId": "W000161",
+      "word": "chicken",
+      "before": {
+        "meaningHint": "小雞；雞肉"
+      },
+      "after": {
+        "meaningHint": "雞肉"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Gordon hates pork and beef, but he eats a lot of chicken.",
+      "blankSentence": "Gordon hates pork and beef, but he eats a lot of _____.",
+      "answer": "chicken",
+      "sourceRefs": [
+        "S006"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXb3488a5b",
+      "wordId": "W000161",
+      "word": "chicken",
+      "before": {
+        "meaningHint": "小雞；雞肉"
+      },
+      "after": {
+        "meaningHint": "雞"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "現提示沒有清楚覆蓋本句所用的義／慣用組合；只補此句所需義，不擴寫詞頭定義。",
+      "sentenceEn": "The farmer owns many chickens and sells eggs to customers.",
+      "blankSentence": "The farmer owns many _____ and sells eggs to customers.",
+      "answer": "chickens",
+      "sourceRefs": [
+        "S006"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX29c337b8",
+      "wordId": "W000175",
+      "word": "close",
+      "before": {
+        "meaningHint": "關閉；打烊"
+      },
+      "after": {
+        "meaningHint": "打烊"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。 現值 v.／關閉；打烊 已能表達本句；建議只保留打烊屬精確化，不再宣稱舊詞性錯誤未修。",
+      "sentenceEn": "The store will close early today because of the coming typhoon.",
+      "blankSentence": "The store will ______ early today because of the coming typhoon.",
+      "answer": "close",
+      "sourceRefs": [
+        "S007"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX336b5411",
+      "wordId": "W000175",
+      "word": "close",
+      "before": {
+        "meaningHint": "結束；完結；靠近的；親近的"
+      },
+      "after": {
+        "meaningHint": "結束；完結"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "They left the gym before the close of the game.",
+      "blankSentence": "They left the gym before the _____ of the game.",
+      "answer": "close",
+      "sourceRefs": [
+        "S007"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX361c9dec",
+      "wordId": "W000175",
+      "word": "close",
+      "before": {
+        "meaningHint": "結束；完結；靠近的；親近的"
+      },
+      "after": {
+        "meaningHint": "親近的"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Bill is a close friend of mine.",
+      "blankSentence": "Bill is a _____ friend of mine.",
+      "answer": "close",
+      "sourceRefs": [
+        "S007"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX4cc44eae",
+      "wordId": "W000175",
+      "word": "close",
+      "before": {
+        "meaningHint": "結束；完結；靠近的；親近的"
+      },
+      "after": {
+        "meaningHint": "關閉"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "現提示沒有清楚覆蓋本句所用的義／慣用組合；只補此句所需義，不擴寫詞頭定義。",
+      "sentenceEn": "It started to rain, so I closed all the windows.",
+      "blankSentence": "It started to rain, so I _____ all the windows.",
+      "answer": "closed",
+      "sourceRefs": [
+        "S007"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXf09276e3",
+      "wordId": "W000175",
+      "word": "close",
+      "before": {
+        "meaningHint": "結束；完結；靠近的；親近的"
+      },
+      "after": {
+        "meaningHint": "關閉；結束營業"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "They closed the store due to poor sales.",
+      "blankSentence": "They _____ the store due to poor sales.",
+      "answer": "closed",
+      "sourceRefs": [
+        "S007"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXf3047307",
+      "wordId": "W000175",
+      "word": "close",
+      "before": {
+        "meaningHint": "結束；完結；靠近的；親近的"
+      },
+      "after": {
+        "meaningHint": "靠近的"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Tina's home is close to a big park.",
+      "blankSentence": "Tina's home is _____ to a big park.",
+      "answer": "close",
+      "sourceRefs": [
+        "S007"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXf63059bf",
+      "wordId": "W000175",
+      "word": "close",
+      "before": {
+        "meaningHint": "結束；完結；靠近的；親近的"
+      },
+      "after": {
+        "meaningHint": "結束"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "The movie closed with the woman falling in love and moving to New York.",
+      "blankSentence": "The movie _____ with the woman falling in love and moving to New York.",
+      "answer": "closed",
+      "sourceRefs": [
+        "S007"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXffa00af8",
+      "wordId": "W000175",
+      "word": "close",
+      "before": {
+        "meaningHint": "結束；完結；靠近的；親近的"
+      },
+      "after": {
+        "meaningHint": "接近；差一點（come close to）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "現提示沒有清楚覆蓋本句所用的義／慣用組合；只補此句所需義，不擴寫詞頭定義。",
+      "sentenceEn": "We came close to winning the contest.",
+      "blankSentence": "We came _____ to winning the contest.",
+      "answer": "close",
+      "sourceRefs": [
+        "S007"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX20de6436",
+      "wordId": "W000205",
+      "word": "cry",
+      "before": {
+        "meaningHint": "叫聲；哭聲；大叫；哭"
+      },
+      "after": {
+        "meaningHint": "哭"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "The sad movie made many people cry.",
+      "blankSentence": "The sad movie made many people _____.",
+      "answer": "cry",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX4faa5e9a",
+      "wordId": "W000205",
+      "word": "cry",
+      "before": {
+        "meaningHint": "叫聲；哭聲；大叫；哭"
+      },
+      "after": {
+        "meaningHint": "哭（cry over spilt milk：為無法挽回的事懊悔）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。 crying 在 no use crying ... 結構仍為動詞 -ing 形式；不是詞彙名詞 cry。譯文同時保有直譯與成語，不另改。",
+      "sentenceEn": "It's no use crying over spilt milk.",
+      "blankSentence": "It's no use _____ over spilt milk.",
+      "answer": "crying",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX7e85913e",
+      "wordId": "W000205",
+      "word": "cry",
+      "before": {
+        "meaningHint": "叫聲；哭聲；大叫；哭"
+      },
+      "after": {
+        "meaningHint": "哭"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "The baby is crying loudly because she's hungry.",
+      "blankSentence": "The baby is _____ loudly because she's hungry.",
+      "answer": "crying",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX936298fa",
+      "wordId": "W000205",
+      "word": "cry",
+      "before": {
+        "meaningHint": "叫聲；哭聲；大叫；哭"
+      },
+      "after": {
+        "meaningHint": "大叫（cry out：喊叫）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "The soldier cried out for help.",
+      "blankSentence": "The soldier _____ out for help.",
+      "answer": "cried",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXa46e6d08",
+      "wordId": "W000205",
+      "word": "cry",
+      "before": {
+        "meaningHint": "叫聲；哭聲；大叫；哭"
+      },
+      "after": {
+        "meaningHint": "叫聲"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Sandy let out a cry of pain when she was hit.",
+      "blankSentence": "Sandy let out a _____ of pain when she was hit.",
+      "answer": "cry",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXd8ee2e03",
+      "wordId": "W000205",
+      "word": "cry",
+      "before": {
+        "meaningHint": "叫聲；哭聲；大叫；哭"
+      },
+      "after": {
+        "meaningHint": "大叫"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "“I've found my purse!” cried Anna.",
+      "blankSentence": "“I've found my purse!” _____ Anna.",
+      "answer": "cried",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX3f803351",
+      "wordId": "W000209",
+      "word": "dance",
+      "before": {
+        "meaningHint": "跳舞；舞蹈；舞會"
+      },
+      "after": {
+        "meaningHint": "跳舞"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Victor never learned how to dance the tango.",
+      "blankSentence": "Victor never learned how to _____ the tango.",
+      "answer": "dance",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX952c7b01",
+      "wordId": "W000209",
+      "word": "dance",
+      "before": {
+        "meaningHint": "跳舞；舞蹈；舞會"
+      },
+      "after": {
+        "meaningHint": "跳舞"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Fred doesn't like to dance, which bothers his girlfriend.",
+      "blankSentence": "Fred doesn't like to _____, which bothers his girlfriend.",
+      "answer": "dance",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX9f9099b9",
+      "wordId": "W000209",
+      "word": "dance",
+      "before": {
+        "meaningHint": "跳舞；舞蹈；舞會"
+      },
+      "after": {
+        "meaningHint": "舞會"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Gilbert asked Helen to the dance, but she told him no.",
+      "blankSentence": "Gilbert asked Helen to the _____, but she told him no.",
+      "answer": "dance",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXa0ac30ff",
+      "wordId": "W000209",
+      "word": "dance",
+      "before": {
+        "meaningHint": "跳舞；舞蹈；舞會"
+      },
+      "after": {
+        "meaningHint": "一支舞"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Quentin asked Lucy to save the last dance for him.",
+      "blankSentence": "Quentin asked Lucy to save the last _____ for him.",
+      "answer": "dance",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXe6f930cd",
+      "wordId": "W000209",
+      "word": "dance",
+      "before": {
+        "meaningHint": "跳舞；舞蹈；舞會"
+      },
+      "after": {
+        "meaningHint": "舞蹈"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "There are many different dances, such as the twist.",
+      "blankSentence": "There are many different _____, such as the twist.",
+      "answer": "dances",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX03bcde5c",
+      "wordId": "W000248",
+      "word": "duck",
+      "before": {
+        "meaningHint": "鴨子；沒入水中；閃避；猛按...入水"
+      },
+      "after": {
+        "meaningHint": "低頭閃避"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "I ducked down when Tom threw a ball at me.",
+      "blankSentence": "I _____ down when Tom threw a ball at me.",
+      "answer": "ducked",
+      "sourceRefs": [
+        "S008"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX2dc24c5a",
+      "wordId": "W000248",
+      "word": "duck",
+      "before": {
+        "meaningHint": "鴨子；沒入水中；閃避；猛按...入水"
+      },
+      "after": {
+        "meaningHint": "鴨子"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Ducks were swimming peacefully in the pond.",
+      "blankSentence": "_____ were swimming peacefully in the pond.",
+      "answer": "Ducks",
+      "sourceRefs": [
+        "S008"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX3bc804ee",
+      "wordId": "W000248",
+      "word": "duck",
+      "before": {
+        "meaningHint": "鴨子；沒入水中；閃避；猛按...入水"
+      },
+      "after": {
+        "meaningHint": "低下（頭）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "現提示沒有清楚覆蓋本句所用的義／慣用組合；只補此句所需義，不擴寫詞頭定義。",
+      "sentenceEn": "The tall man had to duck his head when he walked through the door.",
+      "blankSentence": "The tall man had to _____ his head when he walked through the door.",
+      "answer": "duck",
+      "sourceRefs": [
+        "S008"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX058ec2a4",
+      "wordId": "W000251",
+      "word": "ear",
+      "before": {
+        "meaningHint": "耳朵；傾聽；聽覺；穗"
+      },
+      "after": {
+        "meaningHint": "耳朵"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Some people wear hats in winter so their ears don't get cold.",
+      "blankSentence": "Some people wear hats in winter so their _____ don't get cold.",
+      "answer": "ears",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXbb77edb6",
+      "wordId": "W000251",
+      "word": "ear",
+      "before": {
+        "meaningHint": "耳朵；傾聽；聽覺；穗"
+      },
+      "after": {
+        "meaningHint": "耳朵（be all ears：全神貫注地聽）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Paul was all ears when Sherry talked about herself.",
+      "blankSentence": "Paul was all _____ when Sherry talked about herself.",
+      "answer": "ears",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX1bc3637f",
+      "wordId": "W000265",
+      "word": "enough",
+      "before": {
+        "meaningHint": "充足；夠；很多；充足的"
+      },
+      "after": {
+        "meaningHint": "足夠的錢"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。 pays him enough 可按「足夠的錢」分析作名詞性用法，也有 pay enough 的程度分析；此資料只容傳統 adj./n.，應先定分類慣例，暫不強改 POS。",
+      "sentenceEn": "Ron wants a job that pays him enough to live comfortably.",
+      "blankSentence": "Ron wants a job that pays him _____ to live comfortably.",
+      "answer": "enough",
+      "sourceRefs": [
+        "S009",
+        "S010"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX37a9e424",
+      "wordId": "W000265",
+      "word": "enough",
+      "before": {
+        "meaningHint": "充足；夠；很多；充足的"
+      },
+      "after": {
+        "meaningHint": "夠；足夠地"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Yesterday, it was hot enough to fry an egg on the street.",
+      "blankSentence": "Yesterday, it was hot _____ to fry an egg on the street.",
+      "answer": "enough",
+      "sourceRefs": [
+        "S009",
+        "S010"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX511ba8c4",
+      "wordId": "W000265",
+      "word": "enough",
+      "before": {
+        "meaningHint": "充足；夠；很多；充足的"
+      },
+      "after": {
+        "meaningHint": "足夠的量（can't get enough of：怎樣都不嫌多）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。 enough 為 get 的名詞性補語；Cambridge 可稱 pronoun，傳統教材可收 n.。暫不把整串詞性替換為猜測的新標籤。",
+      "sentenceEn": "Joy can't get enough of Hello Kitty items.",
+      "blankSentence": "Joy can't get _____ of Hello Kitty items.",
+      "answer": "enough",
+      "sourceRefs": [
+        "S009",
+        "S010"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX8b61ff18",
+      "wordId": "W000265",
+      "word": "enough",
+      "before": {
+        "meaningHint": "充足；夠；很多；充足的"
+      },
+      "after": {
+        "meaningHint": "足夠的"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。 enough water 為名詞前的限定語；determiner 與傳統 adj. 分法待確認，hint 可獨立縮為足夠的。",
+      "sentenceEn": "Tanya didn't have enough water on the hike, so she was thirsty.",
+      "blankSentence": "Tanya didn't have _____ water on the hike, so she was thirsty.",
+      "answer": "enough",
+      "sourceRefs": [
+        "S009",
+        "S010"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX9d8a3bec",
+      "wordId": "W000265",
+      "word": "enough",
+      "before": {
+        "meaningHint": "充足；夠；很多；充足的"
+      },
+      "after": {
+        "meaningHint": "（strangely enough）說來奇怪"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "現提示沒有清楚覆蓋本句所用的義／慣用組合；只補此句所需義，不擴寫詞頭定義。 strangely enough 為句子評述慣用組合，enough 不表示錢／物品很多；詞性為副詞，hint 應說明整個組合。",
+      "sentenceEn": "Greg is rich, but strangely enough, he isn't happy.",
+      "blankSentence": "Greg is rich, but strangely _____, he isn't happy.",
+      "answer": "enough",
+      "sourceRefs": [
+        "S009",
+        "S010"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX04e799fa",
+      "wordId": "W000286",
+      "word": "eye",
+      "before": {
+        "meaningHint": "眼睛；視力；看；注視"
+      },
+      "after": {
+        "meaningHint": "留意；照看（keep an eye on）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Trevor asked his brother to keep an eye on his backpack.",
+      "blankSentence": "Trevor asked his brother to keep an _____ on his backpack.",
+      "answer": "eye",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX0fb3c3d8",
+      "wordId": "W000286",
+      "word": "eye",
+      "before": {
+        "meaningHint": "眼睛；視力；看；注視"
+      },
+      "after": {
+        "meaningHint": "眼睛"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Louise felt sad, and there were tears in her eyes.",
+      "blankSentence": "Louise felt sad, and there were tears in her _____.",
+      "answer": "eyes",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXa97c45e0",
+      "wordId": "W000286",
+      "word": "eye",
+      "before": {
+        "meaningHint": "眼睛；視力；看；注視"
+      },
+      "after": {
+        "meaningHint": "鑑賞力；眼光（have an eye for）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "現提示沒有清楚覆蓋本句所用的義／慣用組合；只補此句所需義，不擴寫詞頭定義。",
+      "sentenceEn": "Nancy always looks great because she has an eye for fashion.",
+      "blankSentence": "Nancy always looks great because she has an _____ for fashion.",
+      "answer": "eye",
+      "sourceRefs": [
+        "S011"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX05feb623",
+      "wordId": "W000287",
+      "word": "face",
+      "before": {
+        "meaningHint": "臉；面容；正面；外觀"
+      },
+      "after": {
+        "meaningHint": "（in the face of）面對；面臨"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "現提示沒有清楚覆蓋本句所用的義／慣用組合；只補此句所需義，不擴寫詞頭定義。",
+      "sentenceEn": "What would you do in the face of such a problem?",
+      "blankSentence": "What would you do in the _____ of such a problem?",
+      "answer": "face",
+      "sourceRefs": [
+        "S012",
+        "S018"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX10e4e849",
+      "wordId": "W000287",
+      "word": "face",
+      "before": {
+        "meaningHint": "臉；面容；正面；外觀"
+      },
+      "after": {
+        "meaningHint": "面向"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "現提示沒有清楚覆蓋本句所用的義／慣用組合；只補此句所需義，不擴寫詞頭定義。",
+      "sentenceEn": "Please give me a room that faces the sea.",
+      "blankSentence": "Please give me a room that _____ the sea.",
+      "answer": "faces",
+      "sourceRefs": [
+        "S012"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX4ff569c8",
+      "wordId": "W000287",
+      "word": "face",
+      "before": {
+        "meaningHint": "臉；面容；正面；外觀"
+      },
+      "after": {
+        "meaningHint": "面對（be faced with：面臨）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "現提示沒有清楚覆蓋本句所用的義／慣用組合；只補此句所需義，不擴寫詞頭定義。 cloze 挖的是第二句 be faced with 裡的 faced，不是第一句 face；兩者在此皆動詞。",
+      "sentenceEn": "Stay calm when you face a problem. = Stay calm when you're faced with a problem.",
+      "blankSentence": "Stay calm when you face a problem. = Stay calm when you're _____ with a problem.",
+      "answer": "faced",
+      "sourceRefs": [
+        "S012"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX5d8ed80c",
+      "wordId": "W000287",
+      "word": "face",
+      "before": {
+        "meaningHint": "臉；面容；正面；外觀"
+      },
+      "after": {
+        "meaningHint": "（建築物的）一面"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "The southern face of Grant's house gets the most sun.",
+      "blankSentence": "The southern _____ of Grant's house gets the most sun.",
+      "answer": "face",
+      "sourceRefs": [
+        "S012"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXa33d0704",
+      "wordId": "W000287",
+      "word": "face",
+      "before": {
+        "meaningHint": "臉；面容；正面；外觀"
+      },
+      "after": {
+        "meaningHint": "臉；表情"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Although Jane was sad, she tried to put on a happy face.",
+      "blankSentence": "Although Jane was sad, she tried to put on a happy _____.",
+      "answer": "face",
+      "sourceRefs": [
+        "S012"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXa6c8e4e7",
+      "wordId": "W000287",
+      "word": "face",
+      "before": {
+        "meaningHint": "臉；面容；正面；外觀"
+      },
+      "after": {
+        "meaningHint": "面子（lose face：丟臉）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "現提示沒有清楚覆蓋本句所用的義／慣用組合；只補此句所需義，不擴寫詞頭定義。",
+      "sentenceEn": "David lost face when his friends found out he had lied.",
+      "blankSentence": "David lost _____ when his friends found out he had lied.",
+      "answer": "face",
+      "sourceRefs": [
+        "S012",
+        "S025"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXcdb16b6e",
+      "wordId": "W000287",
+      "word": "face",
+      "before": {
+        "meaningHint": "臉；面容；正面；外觀"
+      },
+      "after": {
+        "meaningHint": "面孔"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Kelly knew some of the faces at the party.",
+      "blankSentence": "Kelly knew some of the _____ at the party.",
+      "answer": "faces",
+      "sourceRefs": [
+        "S012"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX0c003d7c",
+      "wordId": "W000340",
+      "word": "game",
+      "before": {
+        "meaningHint": "比賽；玩耍；比分；得勝"
+      },
+      "after": {
+        "meaningHint": "遊戲"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Poker is a card game that people around the world play.",
+      "blankSentence": "Poker is a card _____ that people around the world play.",
+      "answer": "game",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX42a5574c",
+      "wordId": "W000340",
+      "word": "game",
+      "before": {
+        "meaningHint": "比賽；玩耍；比分；得勝"
+      },
+      "after": {
+        "meaningHint": "比賽"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Ian and his friends watched the basketball game on TV.",
+      "blankSentence": "Ian and his friends watched the basketball _____ on TV.",
+      "answer": "game",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX949f8948",
+      "wordId": "W000340",
+      "word": "game",
+      "before": {
+        "meaningHint": "比賽；玩耍；比分；得勝"
+      },
+      "after": {
+        "meaningHint": "一場比賽；一局"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Kathy's team was unhappy because they lost the first game.",
+      "blankSentence": "Kathy's team was unhappy because they lost the first _____.",
+      "answer": "game",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX548ee7dd",
+      "wordId": "W000347",
+      "word": "girl",
+      "before": {
+        "meaningHint": "女孩；少女；女傭"
+      },
+      "after": {
+        "meaningHint": "女兒"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "現提示沒有清楚覆蓋本句所用的義／慣用組合；只補此句所需義，不擴寫詞頭定義。",
+      "sentenceEn": "Lisa and Tom have four girls but no sons.",
+      "blankSentence": "Lisa and Tom have four _____ but no sons.",
+      "answer": "girls",
+      "sourceRefs": [
+        "S013"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX81da11bd",
+      "wordId": "W000347",
+      "word": "girl",
+      "before": {
+        "meaningHint": "女孩；少女；女傭"
+      },
+      "after": {
+        "meaningHint": "女孩"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "At the age of 35, Arlene hates to be called a “girl.”",
+      "blankSentence": "At the age of 35, Arlene hates to be called a “_____.”",
+      "answer": "girl",
+      "sourceRefs": [
+        "S013"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX0374a593",
+      "wordId": "W000353",
+      "word": "go",
+      "before": {
+        "meaningHint": "去；走；達到；運轉"
+      },
+      "after": {
+        "meaningHint": "去"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Roger went to the bakery to buy some bread.",
+      "blankSentence": "Roger _____ to the bakery to buy some bread.",
+      "answer": "went",
+      "sourceRefs": [
+        "S014",
+        "S015"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX0cbfb9e5",
+      "wordId": "W000353",
+      "word": "go",
+      "before": {
+        "meaningHint": "去；走；達到；運轉"
+      },
+      "after": {
+        "meaningHint": "變成"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "現提示沒有清楚覆蓋本句所用的義／慣用組合；只補此句所需義，不擴寫詞頭定義。",
+      "sentenceEn": "The milk has gone sour.",
+      "blankSentence": "The milk has _____ sour.",
+      "answer": "gone",
+      "sourceRefs": [
+        "S014",
+        "S015"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX269933c3",
+      "wordId": "W000353",
+      "word": "go",
+      "before": {
+        "meaningHint": "去；走；達到；運轉"
+      },
+      "after": {
+        "meaningHint": "去；從事（go camping：露營）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Owen likes to go camping on weekends.",
+      "blankSentence": "Owen likes to _____ camping on weekends.",
+      "answer": "go",
+      "sourceRefs": [
+        "S014",
+        "S015"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX4815b4c7",
+      "wordId": "W000353",
+      "word": "go",
+      "before": {
+        "meaningHint": "去；走；達到；運轉"
+      },
+      "after": {
+        "meaningHint": "嘗試（have a go at：試一試）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "現提示沒有清楚覆蓋本句所用的義／慣用組合；只補此句所需義，不擴寫詞頭定義。",
+      "sentenceEn": "I'll have a go at fixing the machine myself.",
+      "blankSentence": "I'll have a _____ at fixing the machine myself.",
+      "answer": "go",
+      "sourceRefs": [
+        "S014",
+        "S015"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX4b0f9c2b",
+      "wordId": "W000353",
+      "word": "go",
+      "before": {
+        "meaningHint": "去；走；達到；運轉"
+      },
+      "after": {
+        "meaningHint": "走"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Julia went down the stairs instead of taking the elevator.",
+      "blankSentence": "Julia _____ down the stairs instead of taking the elevator.",
+      "answer": "went",
+      "sourceRefs": [
+        "S014",
+        "S015"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX5a15ca64",
+      "wordId": "W000353",
+      "word": "go",
+      "before": {
+        "meaningHint": "去；走；達到；運轉"
+      },
+      "after": {
+        "meaningHint": "出發；離開"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Derrick asked his wife if she was ready to go yet.",
+      "blankSentence": "Derrick asked his wife if she was ready to _____ yet.",
+      "answer": "go",
+      "sourceRefs": [
+        "S014",
+        "S015"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX78128d0f",
+      "wordId": "W000353",
+      "word": "go",
+      "before": {
+        "meaningHint": "去；走；達到；運轉"
+      },
+      "after": {
+        "meaningHint": "進行"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "現提示沒有清楚覆蓋本句所用的義／慣用組合；只補此句所需義，不擴寫詞頭定義。",
+      "sentenceEn": "Everything is going well here.",
+      "blankSentence": "Everything is _____ well here.",
+      "answer": "going",
+      "sourceRefs": [
+        "S014",
+        "S015"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX9bca66be",
+      "wordId": "W000353",
+      "word": "go",
+      "before": {
+        "meaningHint": "去；走；達到；運轉"
+      },
+      "after": {
+        "meaningHint": "去（go for a walk：去散步）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Lucy likes to go for a walk after dinner.",
+      "blankSentence": "Lucy likes to _____ for a walk after dinner.",
+      "answer": "go",
+      "sourceRefs": [
+        "S014",
+        "S015"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXcee8d1c6",
+      "wordId": "W000353",
+      "word": "go",
+      "before": {
+        "meaningHint": "去；走；達到；運轉"
+      },
+      "after": {
+        "meaningHint": "去（go on a trip：去旅行）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "James went on a long trip to Canada.",
+      "blankSentence": "James _____ on a long trip to Canada.",
+      "answer": "went",
+      "sourceRefs": [
+        "S014",
+        "S015"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX12efbd6e",
+      "wordId": "W000383",
+      "word": "head",
+      "before": {
+        "meaningHint": "頭；頭腦；領袖；腦袋"
+      },
+      "after": {
+        "meaningHint": "頭腦"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Robert has many thoughts in his head.",
+      "blankSentence": "Robert has many thoughts in his _____.",
+      "answer": "head",
+      "sourceRefs": [
+        "S016"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX4b266bd8",
+      "wordId": "W000383",
+      "word": "head",
+      "before": {
+        "meaningHint": "頭；頭腦；領袖；腦袋"
+      },
+      "after": {
+        "meaningHint": "主管；負責人"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Who is the head of this department?",
+      "blankSentence": "Who is the _____ of this department?",
+      "answer": "head",
+      "sourceRefs": [
+        "S016"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX544057bc",
+      "wordId": "W000383",
+      "word": "head",
+      "before": {
+        "meaningHint": "頭；頭腦；領袖；腦袋"
+      },
+      "after": {
+        "meaningHint": "領導；管理"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "現提示沒有清楚覆蓋本句所用的義／慣用組合；只補此句所需義，不擴寫詞頭定義。",
+      "sentenceEn": "Mr. Thomas heads a department of 55 people.",
+      "blankSentence": "Mr. Thomas _____ a department of 55 people.",
+      "answer": "heads",
+      "sourceRefs": [
+        "S016"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX5a761d0c",
+      "wordId": "W000383",
+      "word": "head",
+      "before": {
+        "meaningHint": "頭；頭腦；領袖；腦袋"
+      },
+      "after": {
+        "meaningHint": "頭"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Trevor nodded his head while Bart talked to him.",
+      "blankSentence": "Trevor nodded his _____ while Bart talked to him.",
+      "answer": "head",
+      "sourceRefs": [
+        "S016"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX8912d962",
+      "wordId": "W000383",
+      "word": "head",
+      "before": {
+        "meaningHint": "頭；頭腦；領袖；腦袋"
+      },
+      "after": {
+        "meaningHint": "頭腦（keep your head：保持冷靜）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。 cloze 挖 keep your head 的 head，後句 lose your head 是未挖空例；維持名詞，提示加保持冷靜語境即可。",
+      "sentenceEn": "Whatever happens, keep your head. Don't lose your head.",
+      "blankSentence": "Whatever happens, keep your _____. Don't lose your head.",
+      "answer": "head",
+      "sourceRefs": [
+        "S016"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXf4c21606",
+      "wordId": "W000383",
+      "word": "head",
+      "before": {
+        "meaningHint": "頭；頭腦；領袖；腦袋"
+      },
+      "after": {
+        "meaningHint": "前往"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "現提示沒有清楚覆蓋本句所用的義／慣用組合；只補此句所需義，不擴寫詞頭定義。",
+      "sentenceEn": "Let's head for the beach this weekend.",
+      "blankSentence": "Let's _____ for the beach this weekend.",
+      "answer": "head",
+      "sourceRefs": [
+        "S016"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX7f165df6",
+      "wordId": "W000453",
+      "word": "kid",
+      "before": {
+        "meaningHint": "小山羊；小山羊肉；小孩；欺騙"
+      },
+      "after": {
+        "meaningHint": "小孩"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "After her husband left, Addison raised her three kids alone.",
+      "blankSentence": "After her husband left, Addison raised her three _____ alone.",
+      "answer": "kids",
+      "sourceRefs": [
+        "S020"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXc817bbde",
+      "wordId": "W000453",
+      "word": "kid",
+      "before": {
+        "meaningHint": "小山羊；小山羊肉；小孩；欺騙"
+      },
+      "after": {
+        "meaningHint": "開玩笑；逗弄"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "現提示沒有清楚覆蓋本句所用的義／慣用組合；只補此句所需義，不擴寫詞頭定義。",
+      "sentenceEn": "I'm not kidding you! I really won the lottery!",
+      "blankSentence": "I'm not _____ you! I really won the lottery!",
+      "answer": "kidding",
+      "sourceRefs": [
+        "S020"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXe5ab4f7d",
+      "wordId": "W000453",
+      "word": "kid",
+      "before": {
+        "meaningHint": "小山羊；小山羊肉；小孩；欺騙"
+      },
+      "after": {
+        "meaningHint": "開玩笑"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "現提示沒有清楚覆蓋本句所用的義／慣用組合；只補此句所需義，不擴寫詞頭定義。",
+      "sentenceEn": "Don't be so serious. I was just kidding.",
+      "blankSentence": "Don't be so serious. I was just _____.",
+      "answer": "kidding",
+      "sourceRefs": [
+        "S020"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX1fde1fe5",
+      "wordId": "W000460",
+      "word": "knee",
+      "before": {
+        "meaningHint": "膝；膝蓋；膝行；用膝蓋碰"
+      },
+      "after": {
+        "meaningHint": "膝蓋（fall to one's knees：跪下）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "The thief fell to his knees and begged the victim for forgiveness.",
+      "blankSentence": "The thief fell to his _____ and begged the victim for forgiveness.",
+      "answer": "knees",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX69738d2a",
+      "wordId": "W000460",
+      "word": "knee",
+      "before": {
+        "meaningHint": "膝；膝蓋；膝行；用膝蓋碰"
+      },
+      "after": {
+        "meaningHint": "用膝蓋撞"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Sean accidentally kneed Rodney in the face.",
+      "blankSentence": "Sean accidentally _____ Rodney in the face.",
+      "answer": "kneed",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX9317ace5",
+      "wordId": "W000460",
+      "word": "knee",
+      "before": {
+        "meaningHint": "膝；膝蓋；膝行；用膝蓋碰"
+      },
+      "after": {
+        "meaningHint": "膝蓋"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "The little girl sat on her dad's knee.",
+      "blankSentence": "The little girl sat on her dad's _____.",
+      "answer": "knee",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXb3c30719",
+      "wordId": "W000460",
+      "word": "knee",
+      "before": {
+        "meaningHint": "膝；膝蓋；膝行；用膝蓋碰"
+      },
+      "after": {
+        "meaningHint": "膝蓋（get down on one's knees：跪下）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "The thief got down on his knees and begged the victim for forgiveness.",
+      "blankSentence": "The thief got down on his _____ and begged the victim for forgiveness.",
+      "answer": "knees",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXbe690af6",
+      "wordId": "W000460",
+      "word": "knee",
+      "before": {
+        "meaningHint": "膝；膝蓋；膝行；用膝蓋碰"
+      },
+      "after": {
+        "meaningHint": "膝蓋"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "As Harry gets older, he's having more problems with his knees.",
+      "blankSentence": "As Harry gets older, he's having more problems with his _____.",
+      "answer": "knees",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX41941fdf",
+      "wordId": "W000473",
+      "word": "laugh",
+      "before": {
+        "meaningHint": "笑；笑聲；大笑；以笑表示"
+      },
+      "after": {
+        "meaningHint": "笑；笑聲"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "After a short silence, Harry broke into a laugh.",
+      "blankSentence": "After a short silence, Harry broke into a _____.",
+      "answer": "laugh",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX89768c1c",
+      "wordId": "W000473",
+      "word": "laugh",
+      "before": {
+        "meaningHint": "笑；笑聲；大笑；以笑表示"
+      },
+      "after": {
+        "meaningHint": "嘲笑（laugh at）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "現提示沒有清楚覆蓋本句所用的義／慣用組合；只補此句所需義，不擴寫詞頭定義。",
+      "sentenceEn": "Don't laugh at Joe just because he is fat.",
+      "blankSentence": "Don't _____ at Joe just because he is fat.",
+      "answer": "laugh",
+      "sourceRefs": [
+        "S021"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX9411c52f",
+      "wordId": "W000473",
+      "word": "laugh",
+      "before": {
+        "meaningHint": "笑；笑聲；大笑；以笑表示"
+      },
+      "after": {
+        "meaningHint": "笑"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Ginny laughed at the ridiculous story that Dan told her.",
+      "blankSentence": "Ginny _____ at the ridiculous story that Dan told her.",
+      "answer": "laughed",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXb3af3804",
+      "wordId": "W000473",
+      "word": "laugh",
+      "before": {
+        "meaningHint": "笑；笑聲；大笑；以笑表示"
+      },
+      "after": {
+        "meaningHint": "笑"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "After a short silence, Harry burst out laughing.",
+      "blankSentence": "After a short silence, Harry burst out _____.",
+      "answer": "laughing",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXef8e1217",
+      "wordId": "W000473",
+      "word": "laugh",
+      "before": {
+        "meaningHint": "笑；笑聲；大笑；以笑表示"
+      },
+      "after": {
+        "meaningHint": "笑"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "I'd like to know what you are laughing about.",
+      "blankSentence": "I'd like to know what you are _____ about.",
+      "answer": "laughing",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX41ee93a3",
+      "wordId": "W000482",
+      "word": "leg",
+      "before": {
+        "meaningHint": "腿；假腿；路程；走"
+      },
+      "after": {
+        "meaningHint": "腿"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Susan hurt her leg when she went jogging.",
+      "blankSentence": "Susan hurt her _____ when she went jogging.",
+      "answer": "leg",
+      "sourceRefs": [
+        "S022"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXec837901",
+      "wordId": "W000482",
+      "word": "leg",
+      "before": {
+        "meaningHint": "腿；假腿；路程；走"
+      },
+      "after": {
+        "meaningHint": "（桌子的）腳"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "現提示沒有清楚覆蓋本句所用的義／慣用組合；只補此句所需義，不擴寫詞頭定義。",
+      "sentenceEn": "We're going to throw that table away because one of the legs is broken.",
+      "blankSentence": "We're going to throw that table away because one of the _____ is broken.",
+      "answer": "legs",
+      "sourceRefs": [
+        "S022"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX3019c563",
+      "wordId": "W000489",
+      "word": "library",
+      "before": {
+        "meaningHint": "圖書館；藏書；庫"
+      },
+      "after": {
+        "meaningHint": "圖書館"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Thomas went to the library to borrow some books.",
+      "blankSentence": "Thomas went to the _____ to borrow some books.",
+      "answer": "library",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX3cd7fb0d",
+      "wordId": "W000502",
+      "word": "long",
+      "before": {
+        "meaningHint": "長的；長久的；冗長的；做多頭的"
+      },
+      "after": {
+        "meaningHint": "長的（時間）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Josh saw a long movie yesterday.",
+      "blankSentence": "Josh saw a _____ movie yesterday.",
+      "answer": "long",
+      "sourceRefs": [
+        "S023",
+        "S024"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX3d9e3963",
+      "wordId": "W000502",
+      "word": "long",
+      "before": {
+        "meaningHint": "長的；長久的；冗長的；做多頭的"
+      },
+      "after": {
+        "meaningHint": "長久地"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Their fight didn't last long—only ten minutes.",
+      "blankSentence": "Their fight didn't last _____—only ten minutes.",
+      "answer": "long",
+      "sourceRefs": [
+        "S023",
+        "S024"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX5480c5d3",
+      "wordId": "W000502",
+      "word": "long",
+      "before": {
+        "meaningHint": "長的；長久的；冗長的；做多頭的"
+      },
+      "after": {
+        "meaningHint": "渴望"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "現提示沒有清楚覆蓋本句所用的義／慣用組合；只補此句所需義，不擴寫詞頭定義。 cloze 挖第一個 long（long to ...），不是第二個 long for；均表渴望的動詞。",
+      "sentenceEn": "I long to have a chance to talk to Mandy. = I long for a chance to talk to Mandy.",
+      "blankSentence": "I _____ to have a chance to talk to Mandy. = I long for a chance to talk to Mandy.",
+      "answer": "long",
+      "sourceRefs": [
+        "S023",
+        "S024"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX952dbbde",
+      "wordId": "W000502",
+      "word": "long",
+      "before": {
+        "meaningHint": "長的；長久的；冗長的；做多頭的"
+      },
+      "after": {
+        "meaningHint": "整段時間；自始至終（all night long：整晚）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Sharon's baby cried all night long last night.",
+      "blankSentence": "Sharon's baby cried all night _____ last night.",
+      "answer": "long",
+      "sourceRefs": [
+        "S023",
+        "S024"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXdd821463",
+      "wordId": "W000502",
+      "word": "long",
+      "before": {
+        "meaningHint": "長的；長久的；冗長的；做多頭的"
+      },
+      "after": {
+        "meaningHint": "長的（長度）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Your hair is too long; you need to have it cut.",
+      "blankSentence": "Your hair is too _____; you need to have it cut.",
+      "answer": "long",
+      "sourceRefs": [
+        "S023",
+        "S024"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX4e66b156",
+      "wordId": "W000518",
+      "word": "man",
+      "before": {
+        "meaningHint": "男人；人類；人；為...配備人手"
+      },
+      "after": {
+        "meaningHint": "人類"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Man is the cleverest creature on earth.",
+      "blankSentence": "_____ is the cleverest creature on earth.",
+      "answer": "Man",
+      "sourceRefs": [
+        "S026"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX75d64919",
+      "wordId": "W000518",
+      "word": "man",
+      "before": {
+        "meaningHint": "男人；人類；人；為...配備人手"
+      },
+      "after": {
+        "meaningHint": "人"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "It is every man's right to be free.",
+      "blankSentence": "It is every _____'s right to be free.",
+      "answer": "man",
+      "sourceRefs": [
+        "S026"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX943d872c",
+      "wordId": "W000518",
+      "word": "man",
+      "before": {
+        "meaningHint": "男人；人類；人；為...配備人手"
+      },
+      "after": {
+        "meaningHint": "操作（設備）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "現提示沒有清楚覆蓋本句所用的義／慣用組合；只補此句所需義，不擴寫詞頭定義。",
+      "sentenceEn": "George was the only one who knew how to man the equipment.",
+      "blankSentence": "George was the only one who knew how to _____ the equipment.",
+      "answer": "man",
+      "sourceRefs": [
+        "S026"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXb758201e",
+      "wordId": "W000518",
+      "word": "man",
+      "before": {
+        "meaningHint": "男人；人類；人；為...配備人手"
+      },
+      "after": {
+        "meaningHint": "男人"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Everyone agrees that Liam is a nice man.",
+      "blankSentence": "Everyone agrees that Liam is a nice _____.",
+      "answer": "man",
+      "sourceRefs": [
+        "S026"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX48558a5c",
+      "wordId": "W000589",
+      "word": "nose",
+      "before": {
+        "meaningHint": "鼻子；突出部分；嗅覺；嗅到"
+      },
+      "after": {
+        "meaningHint": "鼻子"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "The mother told her child not to pick his nose in public.",
+      "blankSentence": "The mother told her child not to pick his _____ in public.",
+      "answer": "nose",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX6078cde0",
+      "wordId": "W000589",
+      "word": "nose",
+      "before": {
+        "meaningHint": "鼻子；突出部分；嗅覺；嗅到"
+      },
+      "after": {
+        "meaningHint": "鼻子"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Do you have a runny nose?",
+      "blankSentence": "Do you have a runny _____?",
+      "answer": "nose",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX74ff38e2",
+      "wordId": "W000589",
+      "word": "nose",
+      "before": {
+        "meaningHint": "鼻子；突出部分；嗅覺；嗅到"
+      },
+      "after": {
+        "meaningHint": "鼻子"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "The little boy wiped his nose with a handkerchief.",
+      "blankSentence": "The little boy wiped his _____ with a handkerchief.",
+      "answer": "nose",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX1c06cb2e",
+      "wordId": "W000610",
+      "word": "open",
+      "before": {
+        "meaningHint": "公開；戶外；空曠；開著的"
+      },
+      "after": {
+        "meaningHint": "打開"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "現提示沒有清楚覆蓋本句所用的義／慣用組合；只補此句所需義，不擴寫詞頭定義。",
+      "sentenceEn": "It was hot in the room, so Jason opened a window.",
+      "blankSentence": "It was hot in the room, so Jason _____ a window.",
+      "answer": "opened",
+      "sourceRefs": [
+        "S027"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX205751bd",
+      "wordId": "W000610",
+      "word": "open",
+      "before": {
+        "meaningHint": "公開；戶外；空曠；開著的"
+      },
+      "after": {
+        "meaningHint": "營業中的"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "The store is not open today.",
+      "blankSentence": "The store is not _____ today.",
+      "answer": "open",
+      "sourceRefs": [
+        "S027"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX221ecf9a",
+      "wordId": "W000610",
+      "word": "open",
+      "before": {
+        "meaningHint": "公開；戶外；空曠；開著的"
+      },
+      "after": {
+        "meaningHint": "開放的（open to the public：對外開放的）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "The library is open to the public.",
+      "blankSentence": "The library is _____ to the public.",
+      "answer": "open",
+      "sourceRefs": [
+        "S027"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX868233be",
+      "wordId": "W000610",
+      "word": "open",
+      "before": {
+        "meaningHint": "公開；戶外；空曠；開著的"
+      },
+      "after": {
+        "meaningHint": "開始營業"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "現提示沒有清楚覆蓋本句所用的義／慣用組合；只補此句所需義，不擴寫詞頭定義。",
+      "sentenceEn": "That store opens at eight in the morning and closes at ten at night.",
+      "blankSentence": "That store _____ at eight in the morning and closes at ten at night.",
+      "answer": "opens",
+      "sourceRefs": [
+        "S027"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXd409876a",
+      "wordId": "W000610",
+      "word": "open",
+      "before": {
+        "meaningHint": "公開；戶外；空曠；開著的"
+      },
+      "after": {
+        "meaningHint": "開著的"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "The window is wide open.",
+      "blankSentence": "The window is wide _____.",
+      "answer": "open",
+      "sourceRefs": [
+        "S027"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXea0cd347",
+      "wordId": "W000610",
+      "word": "open",
+      "before": {
+        "meaningHint": "公開；戶外；空曠；開著的"
+      },
+      "after": {
+        "meaningHint": "開始"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "現提示沒有清楚覆蓋本句所用的義／慣用組合；只補此句所需義，不擴寫詞頭定義。",
+      "sentenceEn": "The manager opened the meeting with a speech.",
+      "blankSentence": "The manager _____ the meeting with a speech.",
+      "answer": "opened",
+      "sourceRefs": [
+        "S027"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXbd0f3e2b",
+      "wordId": "W000646",
+      "word": "pig",
+      "before": {
+        "meaningHint": "豬；豬肉；貪婪的人；豬一樣的人"
+      },
+      "after": {
+        "meaningHint": "豬"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "In fact, pigs are very clever and like to be clean.",
+      "blankSentence": "In fact, _____ are very clever and like to be clean.",
+      "answer": "pigs",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX15273a1a",
+      "wordId": "W000750",
+      "word": "sell",
+      "before": {
+        "meaningHint": "賣；背叛；銷售；出賣"
+      },
+      "after": {
+        "meaningHint": "賣；銷售"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Martin sold his old cellphone to Jerry at a cheap price.",
+      "blankSentence": "Martin _____ his old cellphone to Jerry at a cheap price.",
+      "answer": "sold",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX786dde69",
+      "wordId": "W000750",
+      "word": "sell",
+      "before": {
+        "meaningHint": "賣；背叛；銷售；出賣"
+      },
+      "after": {
+        "meaningHint": "賣；銷售"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Martin sold Jerry his old cellphone at a cheap price.",
+      "blankSentence": "Martin _____ Jerry his old cellphone at a cheap price.",
+      "answer": "sold",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX882b3fa1",
+      "wordId": "W000768",
+      "word": "short",
+      "before": {
+        "meaningHint": "短的；近的；矮的；短期的"
+      },
+      "after": {
+        "meaningHint": "矮的"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "I'm too short to reach the top of the shelf.",
+      "blankSentence": "I'm too _____ to reach the top of the shelf.",
+      "answer": "short",
+      "sourceRefs": [
+        "S028"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX95037b3b",
+      "wordId": "W000768",
+      "word": "short",
+      "before": {
+        "meaningHint": "短的；近的；矮的；短期的"
+      },
+      "after": {
+        "meaningHint": "短的（時間）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Winter is coming, and the days are getting shorter.",
+      "blankSentence": "Winter is coming, and the days are getting _____.",
+      "answer": "shorter",
+      "sourceRefs": [
+        "S028"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXb621c99b",
+      "wordId": "W000768",
+      "word": "short",
+      "before": {
+        "meaningHint": "短的；近的；矮的；短期的"
+      },
+      "after": {
+        "meaningHint": "不足的（short on：缺乏）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "現提示沒有清楚覆蓋本句所用的義／慣用組合；只補此句所需義，不擴寫詞頭定義。",
+      "sentenceEn": "Since Ben was a bit short on time, he had to hurry.",
+      "blankSentence": "Since Ben was a bit _____ on time, he had to hurry.",
+      "answer": "short",
+      "sourceRefs": [
+        "S028"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXc6b9ac54",
+      "wordId": "W000768",
+      "word": "short",
+      "before": {
+        "meaningHint": "短的；近的；矮的；短期的"
+      },
+      "after": {
+        "meaningHint": "縮略的（be short for：是……的縮寫）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "現提示沒有清楚覆蓋本句所用的義／慣用組合；只補此句所需義，不擴寫詞頭定義。",
+      "sentenceEn": "“Info” is short for “information.”",
+      "blankSentence": "“Info” is _____ for “information.”",
+      "answer": "short",
+      "sourceRefs": [
+        "S028"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXe5f73d0e",
+      "wordId": "W000768",
+      "word": "short",
+      "before": {
+        "meaningHint": "短的；近的；矮的；短期的"
+      },
+      "after": {
+        "meaningHint": "（in short）簡言之"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "現提示沒有清楚覆蓋本句所用的義／慣用組合；只補此句所需義，不擴寫詞頭定義。 in short 全片語作摘要語。Cambridge 標 idiom 而非單字 short 的詞性；暫不強行將現 adj. 改成 adv./n.，hint 可獨立補慣用語義。",
+      "sentenceEn": "In short, smoking does harm to your health.",
+      "blankSentence": "In _____, smoking does harm to your health.",
+      "answer": "short",
+      "sourceRefs": [
+        "S028",
+        "S019"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX1fd2cabc",
+      "wordId": "W000794",
+      "word": "smile",
+      "before": {
+        "meaningHint": "微笑；喜色；笑容；覺得好笑"
+      },
+      "after": {
+        "meaningHint": "微笑；笑容"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Claire always wears a smile.",
+      "blankSentence": "Claire always wears a _____.",
+      "answer": "smile",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX342240ab",
+      "wordId": "W000794",
+      "word": "smile",
+      "before": {
+        "meaningHint": "微笑；喜色；笑容；覺得好笑"
+      },
+      "after": {
+        "meaningHint": "微笑"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "The baby girl smiled at her nanny.",
+      "blankSentence": "The baby girl _____ at her nanny.",
+      "answer": "smiled",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX6705fc71",
+      "wordId": "W000794",
+      "word": "smile",
+      "before": {
+        "meaningHint": "微笑；喜色；笑容；覺得好笑"
+      },
+      "after": {
+        "meaningHint": "微笑；笑容"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "The baby girl gave her nanny a smile.",
+      "blankSentence": "The baby girl gave her nanny a _____.",
+      "answer": "smile",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXcd9a4d0a",
+      "wordId": "W000794",
+      "word": "smile",
+      "before": {
+        "meaningHint": "微笑；喜色；笑容；覺得好笑"
+      },
+      "after": {
+        "meaningHint": "微笑；笑容"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Claire always has a smile on her face.",
+      "blankSentence": "Claire always has a _____ on her face.",
+      "answer": "smile",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX2fea3b61",
+      "wordId": "W000983",
+      "word": "woman",
+      "before": {
+        "meaningHint": "女人；婦女；女僕；女用的"
+      },
+      "after": {
+        "meaningHint": "女人；女子"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "舊提示有本句可用的義，但同時混入其他義項／詞性；僅收斂至本句，不表示舊提示全部錯。",
+      "sentenceEn": "Robert thought Donna was the most beautiful woman he'd ever seen.",
+      "blankSentence": "Robert thought Donna was the most beautiful _____ he'd ever seen.",
+      "answer": "woman",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX09604f7c",
+      "wordId": "W000044",
+      "word": "arm",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 armed 在本句表示「武裝；配備武器」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "The general armed his troops with sophisticated weapons.",
+      "blankSentence": "The general _____ his troops with sophisticated weapons.",
+      "answer": "armed",
+      "sourceRefs": [
+        "S001"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX1cc5c9cb",
+      "wordId": "W000044",
+      "word": "arm",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 arm 在本句表示「手臂」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "There is a cut on my arm.",
+      "blankSentence": "There is a cut on my _____.",
+      "answer": "arm",
+      "sourceRefs": [
+        "S001"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXbb894e44",
+      "wordId": "W000044",
+      "word": "arm",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "arms 為複數名詞；with open arms 通常表熱情歡迎。中文「張開雙臂歡迎」也可表此意，不擅改譯文。",
+      "sentenceEn": "Mr. Johnson welcomed me with open arms.",
+      "blankSentence": "Mr. Johnson welcomed me with open _____.",
+      "answer": "arms",
+      "sourceRefs": [
+        "S001"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX1b7a2558",
+      "wordId": "W000102",
+      "word": "book",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 book 在本句表示「預訂」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "I'd like to book a room for three nights, please.",
+      "blankSentence": "I'd like to _____ a room for three nights, please.",
+      "answer": "book",
+      "sourceRefs": [
+        "S003"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXa7b5cd71",
+      "wordId": "W000102",
+      "word": "book",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "booked 為 be + 過去分詞；Cambridge 將 fully booked 餐廳例列於 book 動詞下，本案可收斂為 v.；不是名詞 book。",
+      "sentenceEn": "The restaurant was fully booked, so Tammy couldn't make a reservation.",
+      "blankSentence": "The restaurant was fully _____, so Tammy couldn't make a reservation.",
+      "answer": "booked",
+      "sourceRefs": [
+        "S003"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXc9642f97",
+      "wordId": "W000102",
+      "word": "book",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 books 在本句表示「書（hit the books：用功讀書）」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "I have to hit the books tonight, so I can't go to the movies with you.",
+      "blankSentence": "I have to hit the _____ tonight, so I can't go to the movies with you.",
+      "answer": "books",
+      "sourceRefs": [
+        "S003",
+        "S017"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX3cf4d74f",
+      "wordId": "W000133",
+      "word": "buy",
+      "before": {
+        "sensePos": "v./n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 bought 在本句表示「購買」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Lori bought her mother an expensive purse.",
+      "blankSentence": "Lori _____ her mother an expensive purse.",
+      "answer": "bought",
+      "sourceRefs": [
+        "S004"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX9a9ad215",
+      "wordId": "W000133",
+      "word": "buy",
+      "before": {
+        "sensePos": "v./n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 buy 在本句表示「購買」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "When housing prices fall, it is a good time to buy.",
+      "blankSentence": "When housing prices fall, it is a good time to _____.",
+      "answer": "buy",
+      "sourceRefs": [
+        "S004"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXd4646735",
+      "wordId": "W000133",
+      "word": "buy",
+      "before": {
+        "sensePos": "v./n."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 buy 在本句表示「買得的東西（a good buy：值得買的東西）」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "The salesman told Sally that the stock was a good buy now.",
+      "blankSentence": "The salesman told Sally that the stock was a good _____ now.",
+      "answer": "buy",
+      "sourceRefs": [
+        "S004"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXe5de19d7",
+      "wordId": "W000133",
+      "word": "buy",
+      "before": {
+        "sensePos": "v./n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 bought 在本句表示「購買」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Lori bought an expensive purse for her mother.",
+      "blankSentence": "Lori _____ an expensive purse for her mother.",
+      "answer": "bought",
+      "sourceRefs": [
+        "S004"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXf51560c7",
+      "wordId": "W000133",
+      "word": "buy",
+      "before": {
+        "sensePos": "v./n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 buy 在本句表示「相信；接受（說法）」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Tim didn't buy Charlie's excuse for being late.",
+      "blankSentence": "Tim didn't _____ Charlie's excuse for being late.",
+      "answer": "buy",
+      "sourceRefs": [
+        "S004"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX20de6436",
+      "wordId": "W000205",
+      "word": "cry",
+      "before": {
+        "sensePos": "v./n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 cry 在本句表示「哭」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "The sad movie made many people cry.",
+      "blankSentence": "The sad movie made many people _____.",
+      "answer": "cry",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX4faa5e9a",
+      "wordId": "W000205",
+      "word": "cry",
+      "before": {
+        "sensePos": "v./n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "crying 在 no use crying ... 結構仍為動詞 -ing 形式；不是詞彙名詞 cry。譯文同時保有直譯與成語，不另改。",
+      "sentenceEn": "It's no use crying over spilt milk.",
+      "blankSentence": "It's no use _____ over spilt milk.",
+      "answer": "crying",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX7e85913e",
+      "wordId": "W000205",
+      "word": "cry",
+      "before": {
+        "sensePos": "v./n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 crying 在本句表示「哭」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "The baby is crying loudly because she's hungry.",
+      "blankSentence": "The baby is _____ loudly because she's hungry.",
+      "answer": "crying",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX936298fa",
+      "wordId": "W000205",
+      "word": "cry",
+      "before": {
+        "sensePos": "v./n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 cried 在本句表示「大叫（cry out：喊叫）」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "The soldier cried out for help.",
+      "blankSentence": "The soldier _____ out for help.",
+      "answer": "cried",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXa46e6d08",
+      "wordId": "W000205",
+      "word": "cry",
+      "before": {
+        "sensePos": "v./n."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 cry 在本句表示「叫聲」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Sandy let out a cry of pain when she was hit.",
+      "blankSentence": "Sandy let out a _____ of pain when she was hit.",
+      "answer": "cry",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXd8ee2e03",
+      "wordId": "W000205",
+      "word": "cry",
+      "before": {
+        "sensePos": "v./n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 cried 在本句表示「大叫」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "“I've found my purse!” cried Anna.",
+      "blankSentence": "“I've found my purse!” _____ Anna.",
+      "answer": "cried",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX3f803351",
+      "wordId": "W000209",
+      "word": "dance",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 dance 在本句表示「跳舞」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Victor never learned how to dance the tango.",
+      "blankSentence": "Victor never learned how to _____ the tango.",
+      "answer": "dance",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX952c7b01",
+      "wordId": "W000209",
+      "word": "dance",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 dance 在本句表示「跳舞」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Fred doesn't like to dance, which bothers his girlfriend.",
+      "blankSentence": "Fred doesn't like to _____, which bothers his girlfriend.",
+      "answer": "dance",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX9f9099b9",
+      "wordId": "W000209",
+      "word": "dance",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 dance 在本句表示「舞會」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Gilbert asked Helen to the dance, but she told him no.",
+      "blankSentence": "Gilbert asked Helen to the _____, but she told him no.",
+      "answer": "dance",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXa0ac30ff",
+      "wordId": "W000209",
+      "word": "dance",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 dance 在本句表示「一支舞」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Quentin asked Lucy to save the last dance for him.",
+      "blankSentence": "Quentin asked Lucy to save the last _____ for him.",
+      "answer": "dance",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXe6f930cd",
+      "wordId": "W000209",
+      "word": "dance",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 dances 在本句表示「舞蹈」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "There are many different dances, such as the twist.",
+      "blankSentence": "There are many different _____, such as the twist.",
+      "answer": "dances",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX03bcde5c",
+      "wordId": "W000248",
+      "word": "duck",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 ducked 在本句表示「低頭閃避」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "I ducked down when Tom threw a ball at me.",
+      "blankSentence": "I _____ down when Tom threw a ball at me.",
+      "answer": "ducked",
+      "sourceRefs": [
+        "S008"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX2dc24c5a",
+      "wordId": "W000248",
+      "word": "duck",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 Ducks 在本句表示「鴨子」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Ducks were swimming peacefully in the pond.",
+      "blankSentence": "_____ were swimming peacefully in the pond.",
+      "answer": "Ducks",
+      "sourceRefs": [
+        "S008"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX3bc804ee",
+      "wordId": "W000248",
+      "word": "duck",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 duck 在本句表示「低下（頭）」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "The tall man had to duck his head when he walked through the door.",
+      "blankSentence": "The tall man had to _____ his head when he walked through the door.",
+      "answer": "duck",
+      "sourceRefs": [
+        "S008"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX37a9e424",
+      "wordId": "W000265",
+      "word": "enough",
+      "before": {
+        "sensePos": "adv./adj./n."
+      },
+      "after": {
+        "sensePos": "adv."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 enough 在本句表示「夠；足夠地」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Yesterday, it was hot enough to fry an egg on the street.",
+      "blankSentence": "Yesterday, it was hot _____ to fry an egg on the street.",
+      "answer": "enough",
+      "sourceRefs": [
+        "S009",
+        "S010"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX9d8a3bec",
+      "wordId": "W000265",
+      "word": "enough",
+      "before": {
+        "sensePos": "adv./adj./n."
+      },
+      "after": {
+        "sensePos": "adv."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "strangely enough 為句子評述慣用組合，enough 不表示錢／物品很多；詞性為副詞，hint 應說明整個組合。",
+      "sentenceEn": "Greg is rich, but strangely enough, he isn't happy.",
+      "blankSentence": "Greg is rich, but strangely _____, he isn't happy.",
+      "answer": "enough",
+      "sourceRefs": [
+        "S009",
+        "S010"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX05feb623",
+      "wordId": "W000287",
+      "word": "face",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 face 在本句表示「（in the face of）面對；面臨」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "What would you do in the face of such a problem?",
+      "blankSentence": "What would you do in the _____ of such a problem?",
+      "answer": "face",
+      "sourceRefs": [
+        "S012",
+        "S018"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX10e4e849",
+      "wordId": "W000287",
+      "word": "face",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 faces 在本句表示「面向」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Please give me a room that faces the sea.",
+      "blankSentence": "Please give me a room that _____ the sea.",
+      "answer": "faces",
+      "sourceRefs": [
+        "S012"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX4ff569c8",
+      "wordId": "W000287",
+      "word": "face",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 挖的是第二句 be faced with 裡的 faced，不是第一句 face；兩者在此皆動詞。",
+      "sentenceEn": "Stay calm when you face a problem. = Stay calm when you're faced with a problem.",
+      "blankSentence": "Stay calm when you face a problem. = Stay calm when you're _____ with a problem.",
+      "answer": "faced",
+      "sourceRefs": [
+        "S012"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX5d8ed80c",
+      "wordId": "W000287",
+      "word": "face",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 face 在本句表示「（建築物的）一面」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "The southern face of Grant's house gets the most sun.",
+      "blankSentence": "The southern _____ of Grant's house gets the most sun.",
+      "answer": "face",
+      "sourceRefs": [
+        "S012"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXa33d0704",
+      "wordId": "W000287",
+      "word": "face",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 face 在本句表示「臉；表情」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Although Jane was sad, she tried to put on a happy face.",
+      "blankSentence": "Although Jane was sad, she tried to put on a happy _____.",
+      "answer": "face",
+      "sourceRefs": [
+        "S012"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXa6c8e4e7",
+      "wordId": "W000287",
+      "word": "face",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 face 在本句表示「面子（lose face：丟臉）」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "David lost face when his friends found out he had lied.",
+      "blankSentence": "David lost _____ when his friends found out he had lied.",
+      "answer": "face",
+      "sourceRefs": [
+        "S012",
+        "S025"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXcdb16b6e",
+      "wordId": "W000287",
+      "word": "face",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 faces 在本句表示「面孔」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Kelly knew some of the faces at the party.",
+      "blankSentence": "Kelly knew some of the _____ at the party.",
+      "answer": "faces",
+      "sourceRefs": [
+        "S012"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX0374a593",
+      "wordId": "W000353",
+      "word": "go",
+      "before": {
+        "sensePos": "v./n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 went 在本句表示「去」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Roger went to the bakery to buy some bread.",
+      "blankSentence": "Roger _____ to the bakery to buy some bread.",
+      "answer": "went",
+      "sourceRefs": [
+        "S014",
+        "S015"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX0cbfb9e5",
+      "wordId": "W000353",
+      "word": "go",
+      "before": {
+        "sensePos": "v./n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 gone 在本句表示「變成」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "The milk has gone sour.",
+      "blankSentence": "The milk has _____ sour.",
+      "answer": "gone",
+      "sourceRefs": [
+        "S014",
+        "S015"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX269933c3",
+      "wordId": "W000353",
+      "word": "go",
+      "before": {
+        "sensePos": "v./n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 go 在本句表示「去；從事（go camping：露營）」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Owen likes to go camping on weekends.",
+      "blankSentence": "Owen likes to _____ camping on weekends.",
+      "answer": "go",
+      "sourceRefs": [
+        "S014",
+        "S015"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX4815b4c7",
+      "wordId": "W000353",
+      "word": "go",
+      "before": {
+        "sensePos": "v./n."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 go 在本句表示「嘗試（have a go at：試一試）」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "I'll have a go at fixing the machine myself.",
+      "blankSentence": "I'll have a _____ at fixing the machine myself.",
+      "answer": "go",
+      "sourceRefs": [
+        "S014",
+        "S015"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX4b0f9c2b",
+      "wordId": "W000353",
+      "word": "go",
+      "before": {
+        "sensePos": "v./n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 went 在本句表示「走」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Julia went down the stairs instead of taking the elevator.",
+      "blankSentence": "Julia _____ down the stairs instead of taking the elevator.",
+      "answer": "went",
+      "sourceRefs": [
+        "S014",
+        "S015"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX5a15ca64",
+      "wordId": "W000353",
+      "word": "go",
+      "before": {
+        "sensePos": "v./n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 go 在本句表示「出發；離開」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Derrick asked his wife if she was ready to go yet.",
+      "blankSentence": "Derrick asked his wife if she was ready to _____ yet.",
+      "answer": "go",
+      "sourceRefs": [
+        "S014",
+        "S015"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX78128d0f",
+      "wordId": "W000353",
+      "word": "go",
+      "before": {
+        "sensePos": "v./n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 going 在本句表示「進行」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Everything is going well here.",
+      "blankSentence": "Everything is _____ well here.",
+      "answer": "going",
+      "sourceRefs": [
+        "S014",
+        "S015"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX9bca66be",
+      "wordId": "W000353",
+      "word": "go",
+      "before": {
+        "sensePos": "v./n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 go 在本句表示「去（go for a walk：去散步）」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Lucy likes to go for a walk after dinner.",
+      "blankSentence": "Lucy likes to _____ for a walk after dinner.",
+      "answer": "go",
+      "sourceRefs": [
+        "S014",
+        "S015"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXcee8d1c6",
+      "wordId": "W000353",
+      "word": "go",
+      "before": {
+        "sensePos": "v./n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 went 在本句表示「去（go on a trip：去旅行）」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "James went on a long trip to Canada.",
+      "blankSentence": "James _____ on a long trip to Canada.",
+      "answer": "went",
+      "sourceRefs": [
+        "S014",
+        "S015"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX12efbd6e",
+      "wordId": "W000383",
+      "word": "head",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 head 在本句表示「頭腦」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Robert has many thoughts in his head.",
+      "blankSentence": "Robert has many thoughts in his _____.",
+      "answer": "head",
+      "sourceRefs": [
+        "S016"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX4b266bd8",
+      "wordId": "W000383",
+      "word": "head",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 head 在本句表示「主管；負責人」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Who is the head of this department?",
+      "blankSentence": "Who is the _____ of this department?",
+      "answer": "head",
+      "sourceRefs": [
+        "S016"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX544057bc",
+      "wordId": "W000383",
+      "word": "head",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 heads 在本句表示「領導；管理」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Mr. Thomas heads a department of 55 people.",
+      "blankSentence": "Mr. Thomas _____ a department of 55 people.",
+      "answer": "heads",
+      "sourceRefs": [
+        "S016"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX5a761d0c",
+      "wordId": "W000383",
+      "word": "head",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 head 在本句表示「頭」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Trevor nodded his head while Bart talked to him.",
+      "blankSentence": "Trevor nodded his _____ while Bart talked to him.",
+      "answer": "head",
+      "sourceRefs": [
+        "S016"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX8912d962",
+      "wordId": "W000383",
+      "word": "head",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 挖 keep your head 的 head，後句 lose your head 是未挖空例；維持名詞，提示加保持冷靜語境即可。",
+      "sentenceEn": "Whatever happens, keep your head. Don't lose your head.",
+      "blankSentence": "Whatever happens, keep your _____. Don't lose your head.",
+      "answer": "head",
+      "sourceRefs": [
+        "S016"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXf4c21606",
+      "wordId": "W000383",
+      "word": "head",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 head 在本句表示「前往」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Let's head for the beach this weekend.",
+      "blankSentence": "Let's _____ for the beach this weekend.",
+      "answer": "head",
+      "sourceRefs": [
+        "S016"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX7f165df6",
+      "wordId": "W000453",
+      "word": "kid",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 kids 在本句表示「小孩」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "After her husband left, Addison raised her three kids alone.",
+      "blankSentence": "After her husband left, Addison raised her three _____ alone.",
+      "answer": "kids",
+      "sourceRefs": [
+        "S020"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXc817bbde",
+      "wordId": "W000453",
+      "word": "kid",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 kidding 在本句表示「開玩笑；逗弄」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "I'm not kidding you! I really won the lottery!",
+      "blankSentence": "I'm not _____ you! I really won the lottery!",
+      "answer": "kidding",
+      "sourceRefs": [
+        "S020"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXe5ab4f7d",
+      "wordId": "W000453",
+      "word": "kid",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 kidding 在本句表示「開玩笑」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Don't be so serious. I was just kidding.",
+      "blankSentence": "Don't be so serious. I was just _____.",
+      "answer": "kidding",
+      "sourceRefs": [
+        "S020"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX1fde1fe5",
+      "wordId": "W000460",
+      "word": "knee",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 knees 在本句表示「膝蓋（fall to one's knees：跪下）」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "The thief fell to his knees and begged the victim for forgiveness.",
+      "blankSentence": "The thief fell to his _____ and begged the victim for forgiveness.",
+      "answer": "knees",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX69738d2a",
+      "wordId": "W000460",
+      "word": "knee",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 kneed 在本句表示「用膝蓋撞」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Sean accidentally kneed Rodney in the face.",
+      "blankSentence": "Sean accidentally _____ Rodney in the face.",
+      "answer": "kneed",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX9317ace5",
+      "wordId": "W000460",
+      "word": "knee",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 knee 在本句表示「膝蓋」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "The little girl sat on her dad's knee.",
+      "blankSentence": "The little girl sat on her dad's _____.",
+      "answer": "knee",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXb3c30719",
+      "wordId": "W000460",
+      "word": "knee",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 knees 在本句表示「膝蓋（get down on one's knees：跪下）」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "The thief got down on his knees and begged the victim for forgiveness.",
+      "blankSentence": "The thief got down on his _____ and begged the victim for forgiveness.",
+      "answer": "knees",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXbe690af6",
+      "wordId": "W000460",
+      "word": "knee",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 knees 在本句表示「膝蓋」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "As Harry gets older, he's having more problems with his knees.",
+      "blankSentence": "As Harry gets older, he's having more problems with his _____.",
+      "answer": "knees",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX41941fdf",
+      "wordId": "W000473",
+      "word": "laugh",
+      "before": {
+        "sensePos": "v./n."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 laugh 在本句表示「笑；笑聲」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "After a short silence, Harry broke into a laugh.",
+      "blankSentence": "After a short silence, Harry broke into a _____.",
+      "answer": "laugh",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX89768c1c",
+      "wordId": "W000473",
+      "word": "laugh",
+      "before": {
+        "sensePos": "v./n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 laugh 在本句表示「嘲笑（laugh at）」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Don't laugh at Joe just because he is fat.",
+      "blankSentence": "Don't _____ at Joe just because he is fat.",
+      "answer": "laugh",
+      "sourceRefs": [
+        "S021"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX9411c52f",
+      "wordId": "W000473",
+      "word": "laugh",
+      "before": {
+        "sensePos": "v./n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 laughed 在本句表示「笑」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Ginny laughed at the ridiculous story that Dan told her.",
+      "blankSentence": "Ginny _____ at the ridiculous story that Dan told her.",
+      "answer": "laughed",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXb3af3804",
+      "wordId": "W000473",
+      "word": "laugh",
+      "before": {
+        "sensePos": "v./n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 laughing 在本句表示「笑」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "After a short silence, Harry burst out laughing.",
+      "blankSentence": "After a short silence, Harry burst out _____.",
+      "answer": "laughing",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXef8e1217",
+      "wordId": "W000473",
+      "word": "laugh",
+      "before": {
+        "sensePos": "v./n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 laughing 在本句表示「笑」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "I'd like to know what you are laughing about.",
+      "blankSentence": "I'd like to know what you are _____ about.",
+      "answer": "laughing",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX3cd7fb0d",
+      "wordId": "W000502",
+      "word": "long",
+      "before": {
+        "sensePos": "adj./adv./v."
+      },
+      "after": {
+        "sensePos": "adj."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 long 在本句表示「長的（時間）」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Josh saw a long movie yesterday.",
+      "blankSentence": "Josh saw a _____ movie yesterday.",
+      "answer": "long",
+      "sourceRefs": [
+        "S023",
+        "S024"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX3d9e3963",
+      "wordId": "W000502",
+      "word": "long",
+      "before": {
+        "sensePos": "adj./adv./v."
+      },
+      "after": {
+        "sensePos": "adv."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 long 在本句表示「長久地」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Their fight didn't last long—only ten minutes.",
+      "blankSentence": "Their fight didn't last _____—only ten minutes.",
+      "answer": "long",
+      "sourceRefs": [
+        "S023",
+        "S024"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX5480c5d3",
+      "wordId": "W000502",
+      "word": "long",
+      "before": {
+        "sensePos": "adj./adv./v."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 挖第一個 long（long to ...），不是第二個 long for；均表渴望的動詞。",
+      "sentenceEn": "I long to have a chance to talk to Mandy. = I long for a chance to talk to Mandy.",
+      "blankSentence": "I _____ to have a chance to talk to Mandy. = I long for a chance to talk to Mandy.",
+      "answer": "long",
+      "sourceRefs": [
+        "S023",
+        "S024"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX952dbbde",
+      "wordId": "W000502",
+      "word": "long",
+      "before": {
+        "sensePos": "adj./adv./v."
+      },
+      "after": {
+        "sensePos": "adv."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 long 在本句表示「整段時間；自始至終（all night long：整晚）」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Sharon's baby cried all night long last night.",
+      "blankSentence": "Sharon's baby cried all night _____ last night.",
+      "answer": "long",
+      "sourceRefs": [
+        "S023",
+        "S024"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXdd821463",
+      "wordId": "W000502",
+      "word": "long",
+      "before": {
+        "sensePos": "adj./adv./v."
+      },
+      "after": {
+        "sensePos": "adj."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 long 在本句表示「長的（長度）」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Your hair is too long; you need to have it cut.",
+      "blankSentence": "Your hair is too _____; you need to have it cut.",
+      "answer": "long",
+      "sourceRefs": [
+        "S023",
+        "S024"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX4e66b156",
+      "wordId": "W000518",
+      "word": "man",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 Man 在本句表示「人類」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Man is the cleverest creature on earth.",
+      "blankSentence": "_____ is the cleverest creature on earth.",
+      "answer": "Man",
+      "sourceRefs": [
+        "S026"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX75d64919",
+      "wordId": "W000518",
+      "word": "man",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 man 在本句表示「人」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "It is every man's right to be free.",
+      "blankSentence": "It is every _____'s right to be free.",
+      "answer": "man",
+      "sourceRefs": [
+        "S026"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX943d872c",
+      "wordId": "W000518",
+      "word": "man",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 man 在本句表示「操作（設備）」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "George was the only one who knew how to man the equipment.",
+      "blankSentence": "George was the only one who knew how to _____ the equipment.",
+      "answer": "man",
+      "sourceRefs": [
+        "S026"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXb758201e",
+      "wordId": "W000518",
+      "word": "man",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 man 在本句表示「男人」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Everyone agrees that Liam is a nice man.",
+      "blankSentence": "Everyone agrees that Liam is a nice _____.",
+      "answer": "man",
+      "sourceRefs": [
+        "S026"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX1c06cb2e",
+      "wordId": "W000610",
+      "word": "open",
+      "before": {
+        "sensePos": "adj./v."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 opened 在本句表示「打開」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "It was hot in the room, so Jason opened a window.",
+      "blankSentence": "It was hot in the room, so Jason _____ a window.",
+      "answer": "opened",
+      "sourceRefs": [
+        "S027"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX205751bd",
+      "wordId": "W000610",
+      "word": "open",
+      "before": {
+        "sensePos": "adj./v."
+      },
+      "after": {
+        "sensePos": "adj."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 open 在本句表示「營業中的」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "The store is not open today.",
+      "blankSentence": "The store is not _____ today.",
+      "answer": "open",
+      "sourceRefs": [
+        "S027"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX221ecf9a",
+      "wordId": "W000610",
+      "word": "open",
+      "before": {
+        "sensePos": "adj./v."
+      },
+      "after": {
+        "sensePos": "adj."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 open 在本句表示「開放的（open to the public：對外開放的）」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "The library is open to the public.",
+      "blankSentence": "The library is _____ to the public.",
+      "answer": "open",
+      "sourceRefs": [
+        "S027"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX868233be",
+      "wordId": "W000610",
+      "word": "open",
+      "before": {
+        "sensePos": "adj./v."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 opens 在本句表示「開始營業」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "That store opens at eight in the morning and closes at ten at night.",
+      "blankSentence": "That store _____ at eight in the morning and closes at ten at night.",
+      "answer": "opens",
+      "sourceRefs": [
+        "S027"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXd409876a",
+      "wordId": "W000610",
+      "word": "open",
+      "before": {
+        "sensePos": "adj./v."
+      },
+      "after": {
+        "sensePos": "adj."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 open 在本句表示「開著的」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "The window is wide open.",
+      "blankSentence": "The window is wide _____.",
+      "answer": "open",
+      "sourceRefs": [
+        "S027"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXea0cd347",
+      "wordId": "W000610",
+      "word": "open",
+      "before": {
+        "sensePos": "adj./v."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 opened 在本句表示「開始」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "The manager opened the meeting with a speech.",
+      "blankSentence": "The manager _____ the meeting with a speech.",
+      "answer": "opened",
+      "sourceRefs": [
+        "S027"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXbd0f3e2b",
+      "wordId": "W000646",
+      "word": "pig",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 pigs 在本句表示「豬」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "In fact, pigs are very clever and like to be clean.",
+      "blankSentence": "In fact, _____ are very clever and like to be clean.",
+      "answer": "pigs",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX1fd2cabc",
+      "wordId": "W000794",
+      "word": "smile",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 smile 在本句表示「微笑；笑容」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Claire always wears a smile.",
+      "blankSentence": "Claire always wears a _____.",
+      "answer": "smile",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX342240ab",
+      "wordId": "W000794",
+      "word": "smile",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 smiled 在本句表示「微笑」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "The baby girl smiled at her nanny.",
+      "blankSentence": "The baby girl _____ at her nanny.",
+      "answer": "smiled",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX6705fc71",
+      "wordId": "W000794",
+      "word": "smile",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 smile 在本句表示「微笑；笑容」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "The baby girl gave her nanny a smile.",
+      "blankSentence": "The baby girl gave her nanny a _____.",
+      "answer": "smile",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXcd9a4d0a",
+      "wordId": "W000794",
+      "word": "smile",
+      "before": {
+        "sensePos": "n./v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "classification": "narrow_mixed_context_pos",
+      "reason": "cloze 目標 smile 在本句表示「微笑；笑容」，按此語境核對，不套用詞頭所有義項。",
+      "sentenceEn": "Claire always has a smile on her face.",
+      "blankSentence": "Claire always has a _____ on her face.",
+      "answer": "smile",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX87094be8",
+      "wordId": "W000044",
+      "word": "arm",
+      "before": {
+        "sentenceZh": "她上星期打籃球時摔斷了手臂。"
+      },
+      "after": {
+        "sentenceZh": "她上星期打籃球時手臂骨折了。"
+      },
+      "classification": "unsupported_added_cause",
+      "reason": "原文只有 broke her arm，未說跌倒；「摔斷」新增受傷原因。",
+      "sentenceEn": "She broke her arm while playing basketball last week.",
+      "blankSentence": "She broke her _____ while playing basketball last week.",
+      "answer": "arm",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX261b0ae7",
+      "wordId": "W000056",
+      "word": "bad",
+      "before": {
+        "sentenceZh": "那場雨對農作物造成了不好的影響。"
+      },
+      "after": {
+        "sentenceZh": "那場雨對農作物造成了非常不好的影響。"
+      },
+      "classification": "omitted_explicit_degree",
+      "reason": "very 明示程度，現「不好的」漏掉。",
+      "sentenceEn": "The rain has had a very bad effect on the crops.",
+      "blankSentence": "The rain has had a very _____ effect on the crops.",
+      "answer": "bad",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX83c5a106",
+      "wordId": "W000482",
+      "word": "leg",
+      "before": {
+        "sentenceZh": "大衛下課打籃球時摔斷了腿。"
+      },
+      "after": {
+        "sentenceZh": "大衛下課打籃球時腿骨折了。"
+      },
+      "classification": "unsupported_added_cause",
+      "reason": "原文只有 broke his leg，未說跌倒；「摔斷」新增原因。",
+      "sentenceEn": "David broke his leg while playing basketball at recess.",
+      "blankSentence": "David broke his _____ while playing basketball at recess.",
+      "answer": "leg",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXd17a79ac",
+      "wordId": "W000482",
+      "word": "leg",
+      "before": {
+        "sentenceZh": "這趟班機有兩段航程，中途在東京轉機一次。"
+      },
+      "after": {
+        "sentenceZh": "這趟班機有兩段航程，中途在東京停留。"
+      },
+      "classification": "overrestricted_translation",
+      "reason": "stopover 為中途停留，不保證換機；現「轉機一次」新增換機。",
+      "sentenceEn": "This flight has two legs, with a stopover in Tokyo.",
+      "blankSentence": "This flight has two _____, with a stopover in Tokyo.",
+      "answer": "legs",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXe5241c86",
+      "wordId": "W000768",
+      "word": "short",
+      "before": {
+        "sentenceZh": "我弟弟個子雖矮，但籃球打得很好。"
+      },
+      "after": {
+        "sentenceZh": "我弟弟個子雖然相當矮，但籃球打得很好。"
+      },
+      "classification": "omitted_explicit_degree",
+      "reason": "quite short 的 quite 明示程度；最小補「相當」，暫保留現有弟弟稱謂，年齡問題另列語境待確認。",
+      "sentenceEn": "My brother is quite short, but he is very good at basketball.",
+      "blankSentence": "My brother is quite _____, but he is very good at basketball.",
+      "answer": "short",
+      "sourceRefs": [],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    }
+  ],
+  "deferred": [
+    {
+      "kind": "POS convention",
+      "exampleId": "EX1bc3637f",
+      "word": "enough",
+      "reason": "pays him enough 可按「足夠的錢」分析作名詞性用法，也有 pay enough 的程度分析；此資料只容傳統 adj./n.，應先定分類慣例，暫不強改 POS。",
+      "after": null
+    },
+    {
+      "kind": "POS convention",
+      "exampleId": "EX41165e07",
+      "word": "enough",
+      "reason": "enough time 為名詞前的限定語；Cambridge 稱 determiner，傳統教材可稱 adj.。現 adj. 不直接判錯，暫待專案慣例。",
+      "after": null
+    },
+    {
+      "kind": "POS convention",
+      "exampleId": "EX511ba8c4",
+      "word": "enough",
+      "reason": "enough 為 get 的名詞性補語；Cambridge 可稱 pronoun，傳統教材可收 n.。暫不把整串詞性替換為猜測的新標籤。",
+      "after": null
+    },
+    {
+      "kind": "POS convention",
+      "exampleId": "EX8b61ff18",
+      "word": "enough",
+      "reason": "enough water 為名詞前的限定語；determiner 與傳統 adj. 分法待確認，hint 可獨立縮為足夠的。",
+      "after": null
+    },
+    {
+      "kind": "POS convention",
+      "exampleId": "EX1a8f1bfb",
+      "word": "long",
+      "reason": "cloze 只有 long，as long as 整體引入條件。整片語可作連接詞用法，不能因此把單字 long 自動標 conj.；也不能只套長短形容詞義。保留 POS 待確認，空 hint 不補。",
+      "after": null
+    },
+    {
+      "kind": "POS convention",
+      "exampleId": "EXe5f73d0e",
+      "word": "short",
+      "reason": "in short 全片語作摘要語。Cambridge 標 idiom 而非單字 short 的詞性；暫不強行將現 adj. 改成 adv./n.，hint 可獨立補慣用語義。",
+      "after": null
+    }
+  ],
+  "candidateFieldCount": 220,
+  "deferredCount": 6,
+  "sharedCandidates": [],
+  "uniqueCandidateFieldCount": 220
+}

@@ -1,0 +1,1100 @@
+{
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "priorCheckpoint": "3106a39dea97360a62a2db4d8e98300724d94fdb",
+  "unit": "LV2-U28",
+  "scope": "84 unique formal words,154 examples,91 notes,92 vocabulary and65 grammar items. Exact coverage/precision corrections; all example sentences, blanks, answers, headword POS/status and images remain unchanged.",
+  "patches": [
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001253",
+      "before": {
+        "meaningEn": "the food and drink that a person or animal regularly eats; (v.) to eat less or special food in order to lose weight",
+        "meaningZh": "日常飲食；議會；照規定飲食；忌食"
+      },
+      "after": {
+        "meaningEn": "(n.) the food and drink regularly consumed, or a prescribed way of eating; also a formal deliberative assembly; (v.) to eat less or special food to control weight.",
+        "meaningZh": "（名詞）日常飲食；節食；議會；（動詞）照規定飲食；忌食"
+      },
+      "reason": "Distinguish the genuine assembly noun from eating and dieting; preserve every inherited meaning.",
+      "evidence": "https://www.merriam-webster.com/dictionary/diet"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001315",
+      "before": {
+        "meaningEn": "the natural world, or a particular place, together with all the conditions that affect the plants, animals, and people living there",
+        "meaningZh": "環境；外界；圍繞"
+      },
+      "after": {
+        "meaningEn": "The surroundings and conditions affecting people, animals, plants, or things; also, the act or state of surrounding.",
+        "meaningZh": "環境；外界；（另有名詞用法）圍繞的行為或狀態"
+      },
+      "reason": "Retain the act-of-surrounding noun explicitly attributed to Century/GNU, not just the natural-world sense.",
+      "evidence": "https://www.wordnik.com/words/environment"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001099",
+      "before": {
+        "meaningZh": "空格；空白；空白的；空虛的"
+      },
+      "after": {
+        "meaningZh": "（名詞）空格；空白；（形容詞）空白的；空虛的；茫然的"
+      },
+      "reason": "Supply the blank-look adjective in the unchanged sentence; retain all inherited meanings.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/blank"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001535",
+      "before": {
+        "meaningEn": "the substance from which something is made; information, ideas, or facts used to create something such as a book, article, or lesson; cloth or fabric used for making clothes or other items",
+        "meaningZh": "材料；物資；素材；布料"
+      },
+      "after": {
+        "meaningEn": "(n.) a substance from which something is made; information or ideas used to create a work; cloth or fabric; supplies needed for an activity; (also adj.) relating to physical things rather than the mind.",
+        "meaningZh": "（名詞）材料；物資；素材；布料；（另有形容詞用法）物質的"
+      },
+      "reason": "Restore the adjective explicitly taught in material comforts, keeping the formal noun POS and all noun senses.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/material"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001711",
+      "before": {
+        "meaningZh": "（名詞）記錄；紀錄；履歷；檔案；審判記錄；（動詞）記錄；錄製"
+      },
+      "after": {
+        "meaningZh": "（名詞）記錄；紀錄；履歷；檔案；審判記錄；唱片；（動詞）記錄；錄製"
+      },
+      "reason": "Add the phonograph-record noun printed on p244. Preserve the U23 form fixture using only this exact later inverse.",
+      "evidence": "scripts/sources/LV2Unit28.json; pages243–252 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001766",
+      "before": {
+        "meaningEn": "a self-contained part of a larger composition (written or musical); a very thin slice (of tissue or mineral or other substance) for examination under a microscope"
+      },
+      "after": {
+        "meaningEn": "A part or division of a larger whole, area, newspaper, or written or musical composition; also, a very thin slice of tissue, mineral, or another substance for microscopic examination."
+      },
+      "reason": "Restore the already listed general part/area meaning without deleting the microscopic-slice meaning.",
+      "evidence": "scripts/sources/LV2Unit28.json; pages243–252 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001718",
+      "before": {
+        "meaningZh": "被拒之人；被棄之物；不合格品；次品"
+      },
+      "after": {
+        "meaningZh": "（動詞）拒絕；否決；（另有名詞用法）被拒之人；被棄之物；不合格品；次品"
+      },
+      "reason": "The formal verb and all examples require refusing; retain the genuine reject nouns separately.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/reject"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001714",
+      "before": {
+        "meaningEn": "to say firmly that you will not do or accept something",
+        "meaningZh": "拒絕；謝絕；廢物；扔掉的"
+      },
+      "after": {
+        "meaningEn": "(v.) to say firmly that one will not do or accept something; (also n.) waste or discarded material; (also adj.) rejected, discarded, or worthless.",
+        "meaningZh": "（動詞）拒絕；謝絕；（另有名詞用法）廢物；（另有形容詞用法）扔掉的"
+      },
+      "reason": "Retain the genuine refuse noun and adjective with explicit POS boundaries; do not expand the formal headword POS.",
+      "evidence": "https://www.wordnik.com/words/refuse"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001239",
+      "before": {
+        "usagePattern": "deny + N; deny to V",
+        "usagePatternZh": "否認……／拒絕給予……；拒絕做……"
+      },
+      "after": {
+        "usagePattern": "deny N/V-ing; deny that + clause; deny sb sth",
+        "usagePatternZh": "否認……／否認做……；否認……（that 子句）；拒絕給某人某物"
+      },
+      "reason": "Replace deny to V with the directly attested noun, gerund, that-clause, and double-object patterns.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/deny"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001279",
+      "before": {
+        "meaningZh": "戲劇；戲劇藝術"
+      },
+      "after": {
+        "meaningZh": "戲劇；戲劇藝術；劇情片；戲劇性"
+      },
+      "reason": "Add the actually printed movie meaning and the emotional/dramatic quality already defined in English.",
+      "evidence": "scripts/sources/LV2Unit28.json; pages243–252 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001841",
+      "before": {
+        "meaningZh": "階段；舞臺；場所；戲劇"
+      },
+      "after": {
+        "meaningZh": "（名詞）階段；舞臺；場所；戲劇；（動詞）上演；舉辦"
+      },
+      "reason": "Supply the existing organizing/presenting verb; preserve all noun meanings.",
+      "evidence": "scripts/sources/LV2Unit28.json; pages243–252 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001146",
+      "before": {
+        "meaningEn": "the inherent complex of attributes that determines a persons moral and ethical actions and reactions; an actor's portrayal of someone in a play",
+        "usagePattern": "a/the character; character of N",
+        "usagePatternZh": "一個角色；……的性格"
+      },
+      "after": {
+        "meaningEn": "The qualities determining a person's moral and ethical actions; a person or portrayal in a story or play; also a written or printed letter, number, or symbol.",
+        "usagePattern": "a character in a play; Chinese characters; a person of good character",
+        "usagePatternZh": "戲劇中的角色；中文字；品德高尚的人"
+      },
+      "reason": "Supply the written-symbol meaning taught in the source and separate the concrete noun uses.",
+      "evidence": "scripts/sources/LV2Unit28.json; pages243–252 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001836",
+      "before": {
+        "meaningEn": "a person's mind, feelings, and character, as opposed to their physical body; the part of a person believed by some to continue existing after death; enthusiasm and energy for something",
+        "meaningZh": "精神；心靈；靈魂；態度"
+      },
+      "after": {
+        "meaningEn": "A person's mind, feelings, and character as distinct from the body; a soul believed to survive death, or a ghost; enthusiasm and energy; (plural spirits) mood or feelings.",
+        "meaningZh": "精神；心靈；靈魂；態度；鬼魂；（複數 spirits）心情；情緒"
+      },
+      "reason": "Supply the ghost and plural-mood meanings explicitly printed, retaining the inherited meanings.",
+      "evidence": "scripts/sources/LV2Unit28.json; pages243–252 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001043",
+      "before": {
+        "meaningEn": "to make a formal request for something; to put something into practical use; to be relevant to a situation",
+        "usagePattern": "apply for N (a job); apply to sb/sth",
+        "usagePatternZh": "申請……（工作）；適用於……／向某人或某機構申請"
+      },
+      "after": {
+        "meaningEn": "To make a formal request; to put something into practical use; to be relevant to a situation; to spread or put a substance on a surface.",
+        "usagePattern": "apply for a job; apply to sb/sth; apply A to B",
+        "usagePatternZh": "應徵工作；適用於某人／某事；把 A 運用到 B／把 A 塗抹在 B 上"
+      },
+      "reason": "Restore the listed applying-a-substance meaning and its two-object pattern.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/apply"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001631",
+      "before": {
+        "meaningEn": "relating or belonging to a particular person rather than to anyone else, or affecting someone's private life; relating to grammatical person (the speaker, the person spoken to, or others)",
+        "meaningZh": "私人的；涉及隱私的；有人性的；人稱的"
+      },
+      "after": {
+        "meaningEn": "Relating or belonging to an individual or private life; performed by the person concerned; relating to human beings as distinct from things; relating to grammatical person.",
+        "meaningZh": "私人的；涉及隱私的；親自的；（與物相對）人的；人稱的"
+      },
+      "reason": "Qualify the genuine human-versus-things sense rather than presenting it as humane; retain grammatical person.",
+      "evidence": "https://www.wordnik.com/words/personal; https://www.collinsdictionary.com/dictionary/english/personal"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001632",
+      "before": {
+        "usagePattern": "have a N personality; personality traits; a TV personality",
+        "usagePatternZh": "具有……的性格；人格特質；電視名人"
+      },
+      "after": {
+        "usagePattern": "have a cheerful personality; personality traits; a TV personality",
+        "usagePatternZh": "具有開朗的個性；人格特質；電視名人"
+      },
+      "reason": "Replace the misleading have a N personality template with the adjective construction.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/personality"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001091",
+      "before": {
+        "usagePattern": "V + beyond; beyond + N/V-ing",
+        "usagePatternZh": "超越……；超越……／做……"
+      },
+      "after": {
+        "usagePattern": "beyond one's control; beyond description; beyond the hill",
+        "usagePatternZh": "超過某人能控制的範圍；難以形容；在山的另一邊"
+      },
+      "reason": "Use the concrete source constructions rather than the generic 超越做 placeholder.",
+      "evidence": "scripts/sources/LV2Unit28.json; pages243–252 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001019",
+      "before": {
+        "meaningEn": "Abreast; opposite to; facing; towards; as, against the; mouth of a river; -- in this sense often preceded by over."
+      },
+      "after": {
+        "meaningEn": "In opposition to or not in agreement with; in contact with or leaning on; also opposite to or facing."
+      },
+      "reason": "Cover the unchanged opposition/contact examples and retain the facing sense. This is a supported paraphrase, not a guessed restoration of the malformed river example.",
+      "evidence": "https://www.wordnik.com/words/against"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001144",
+      "before": {
+        "meaningEn": "(n.) a television or radio station; a route through which information or things pass (v.) to direct something toward a particular purpose",
+        "usagePattern": "a TV channel; a channel of communication; channel N into/toward",
+        "usagePatternZh": "電視頻道；溝通管道；將……引導至／投入"
+      },
+      "after": {
+        "meaningEn": "(n.) a sea passage or navigable waterway, a television/radio station, or a route for information or things; (v.) to direct something toward a purpose.",
+        "usagePattern": "a TV channel; a channel of communication; channel A into B",
+        "usagePatternZh": "電視頻道；溝通管道；把 A 引入／專注於 B"
+      },
+      "reason": "Restore the already listed sea passage and complete the channel-into complement.",
+      "evidence": "scripts/sources/LV2Unit28.json; pages243–252 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001151",
+      "before": {
+        "meaningEn": "a cry or shout of approval; give encouragement to",
+        "usagePattern": "cheer + N; cheer to V; a/the cheer",
+        "usagePatternZh": "為……歡呼；歡呼著去做……；一陣歡呼聲"
+      },
+      "after": {
+        "meaningEn": "(n.) a shout of approval or encouragement; happiness or good spirits; (v.) to shout approval or encouragement, or to make someone happier.",
+        "usagePattern": "cheer for a team; cheer sb up; a loud cheer",
+        "usagePatternZh": "為隊伍加油；使某人振作；一陣響亮的歡呼聲"
+      },
+      "reason": "Separate the existing noun and verb uses; replace the misleading cheer to V pattern.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/cheer"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003528",
+      "before": {
+        "meaningEn": "have as a part, be made up out of; consider as part of something"
+      },
+      "after": {
+        "meaningEn": "Used before mentioning a person or thing that is part of a larger group or whole."
+      },
+      "reason": "Define the formal preposition rather than copying a finite include-verb definition.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/including"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000935",
+      "before": {
+        "usagePatternZh": "通常做……；通常是……"
+      },
+      "after": {
+        "usagePatternZh": "通常做……；通常不……"
+      },
+      "reason": "Restore the missing negation in the second existing not usually pair only.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/usually"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001025",
+      "before": {
+        "meaningEn": "one or more recordings issued together; originally released on 12-inch phonograph records (usually with attractive record covers) and lat...",
+        "meaningZh": "粘貼簿；唱片套；白色物",
+        "usagePattern": "an/the album; album of N",
+        "usagePatternZh": "一張專輯／那張專輯；……的專輯"
+      },
+      "after": {
+        "meaningEn": "One or more recordings issued together; originally released on 12-inch phonograph records (usually with attractive record covers) and later on cassette audiotape and compact disc; also, a book for collecting photographs, pictures, or other items.",
+        "meaningZh": "粘貼簿；唱片套；白色物；專輯；相簿",
+        "usagePattern": "release an album; a photo album",
+        "usagePatternZh": "發行專輯；相簿"
+      },
+      "reason": "Restore the exact WordNet-attributed truncated tail and add the source photo-book meaning. 白色物 remains unverified and preserved, not silently removed.",
+      "evidence": "https://www.wordnik.com/words/album"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001284",
+      "before": {
+        "meaningEn": "(adj.) required to be paid or done by a set time; (adj.) expected to happen or arrive at a particular time; (due to) because of; caused by",
+        "meaningZh": "應得的東西；應付款；到期的；應得的",
+        "usagePattern": "be due (to V); the payment is due; due to + N",
+        "usagePatternZh": "預定要做……；款項到期；由於……"
+      },
+      "after": {
+        "meaningEn": "(adj.) required to be paid or done by a set time, expected at a particular time, or deserved; (adv.) directly in a specified direction; (n.) what is owed or deserved; (plural dues) regular membership fees; due to means because of.",
+        "meaningZh": "（名詞）應得的東西；應付款；（複數 dues）會費；（形容詞）到期的；應得的；預定的；（副詞）正對某方向",
+        "usagePattern": "be due to V; payment is due; due to N; due north; pay dues",
+        "usagePatternZh": "預定做……；款項到期；由於……；正北方；繳會費"
+      },
+      "reason": "Restore the explicitly printed direction adverb and membership-fee noun. Due-to word-level POS analysis remains pending.",
+      "evidence": "scripts/sources/LV2Unit28.json; pages243–252 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001463",
+      "before": {
+        "meaningZh": "影響力；權力；勢力；影響"
+      },
+      "after": {
+        "meaningZh": "（名詞）影響力；權力；勢力；影響；（動詞）影響"
+      },
+      "reason": "Make the already separated noun and verb meanings visible without changing headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/influence"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003935",
+      "before": {
+        "meaningEn": "the environmental condition; the area in which something exists or lives; extend on all sides of simultaneously; encircle; envelop completely",
+        "meaningZh": "環境；周圍的事物；周圍的",
+        "usagePattern": "a/the surroundings; surroundings of N",
+        "usagePatternZh": "周遭環境；……的環境"
+      },
+      "after": {
+        "meaningEn": "The conditions, circumstances, objects, or area around a person or thing.",
+        "meaningZh": "（複數名詞）周遭環境；周圍的事物",
+        "usagePattern": "familiar surroundings; natural surroundings",
+        "usagePatternZh": "熟悉的周遭環境；自然環境"
+      },
+      "reason": "Remove the accidentally imported surround verbs from this plural noun; preserve the full original values in the patch.",
+      "evidence": "https://www.merriam-webster.com/dictionary/surroundings"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002709",
+      "before": {
+        "meaningEn": "equipment for making records; a barrister or solicitor who serves as part-time judge in towns or boroughs",
+        "meaningZh": "記錄員；錄音機；記錄器；宏錄製器",
+        "usagePattern": "a/the recorder; recorder of N",
+        "usagePatternZh": "一台錄音機；……的記錄員"
+      },
+      "after": {
+        "meaningEn": "A person or device that records information or sound; a flute-like wind instrument; also, in England and Wales, a barrister or solicitor serving as a part-time judge.",
+        "meaningZh": "記錄員；錄音機；記錄器；宏錄製器；直笛；（英格蘭及威爾斯）兼職法官",
+        "usagePattern": "a voice recorder; play the recorder; a court recorder",
+        "usagePatternZh": "錄音機；吹直笛；法庭記錄員"
+      },
+      "reason": "Retain the genuine judge and existing macro-recording summary; add the directly supported person/instrument uses. Exact macro terminology remains pending.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/recorder"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003013",
+      "before": {
+        "usagePattern": "an/the acceptance; acceptance of N",
+        "usagePatternZh": "一項接受；……的接受"
+      },
+      "after": {
+        "usagePattern": "acceptance of an offer; social acceptance",
+        "usagePatternZh": "接受提議；社會接納"
+      },
+      "reason": "Use concrete constructions while preserving the contract-law meaning.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/acceptance"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002265",
+      "before": {
+        "meaningZh": "戲劇性的；生動的"
+      },
+      "after": {
+        "meaningZh": "戲劇性的；生動的；顯著的；引人注目的"
+      },
+      "reason": "Supply the striking/impressive meaning already defined and supported by the official source.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/dramatic"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003138",
+      "before": {
+        "meaningZh": "特性；特徵；特色；特性的",
+        "usagePatternZh": "……的特性；是……的特徵"
+      },
+      "after": {
+        "meaningZh": "特性；特徵；特色；特性的；典型的",
+        "usagePatternZh": "……的特性；是……所特有的"
+      },
+      "reason": "Supply the printed typical adjective and distinguish its of-complement from the noun.",
+      "evidence": "scripts/sources/LV2Unit28.json; pages243–252 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004139",
+      "before": {
+        "meaningZh": "描繪...的特性；刻劃...的性格"
+      },
+      "after": {
+        "meaningZh": "描繪……的特性；刻劃……的性格；以……為特徵"
+      },
+      "reason": "Supply the printed characteristic-feature meaning already defined in English.",
+      "evidence": "scripts/sources/LV2Unit28.json; pages243–252 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003879",
+      "before": {
+        "usagePattern": "a/the scenery; scenery of N",
+        "usagePatternZh": "風景；……的景色"
+      },
+      "after": {
+        "usagePattern": "enjoy the scenery; stage scenery",
+        "usagePatternZh": "欣賞風景；舞臺佈景"
+      },
+      "reason": "Use attested uncountable constructions for both meanings.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/scenery"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001958",
+      "before": {
+        "meaningEn": "the things that can be seen from a particular place; an opinion or way of thinking about something",
+        "meaningZh": "視野；風景；見解；視力"
+      },
+      "after": {
+        "meaningEn": "(n.) things visible from a place, or an opinion or way of thinking; (v.) to look at, consider, or regard someone or something in a particular way.",
+        "meaningZh": "（名詞）視野；風景；見解；視力；（動詞）觀看；看待"
+      },
+      "reason": "Restore the already listed view A as B verb without dropping the inherited nouns.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/view"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002278",
+      "before": {
+        "usagePattern": "educate + N; educate to V",
+        "usagePatternZh": "教育某人；受教育去做某事"
+      },
+      "after": {
+        "usagePattern": "educate children; educate people about N",
+        "usagePatternZh": "教育兒童；教育人們了解……"
+      },
+      "reason": "Give educate its explicit learner object and avoid translating an active verb as 受教育.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/educate"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005823",
+      "before": {
+        "meaningZh": "單一化；簡單化",
+        "usagePattern": "simplify + N; simplify to V",
+        "usagePatternZh": "簡化某事；simplify 後接 to 不定詞"
+      },
+      "after": {
+        "meaningZh": "單一化；簡單化；簡化",
+        "usagePattern": "simplify a process; simplify an equation",
+        "usagePatternZh": "簡化流程；化簡方程式"
+      },
+      "reason": "Use directly supported process and mathematical objects rather than simplify to V.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/simplify"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005822",
+      "before": {
+        "usagePattern": "a/the simplicity; simplicity of N",
+        "usagePatternZh": "該單純；……的單純"
+      },
+      "after": {
+        "usagePattern": "the simplicity of N; simplicity of design",
+        "usagePatternZh": "……的簡單／單純；設計的簡潔"
+      },
+      "reason": "Replace the literal 該單純 with natural concrete noun constructions; retain the subtlety/naivety English meaning.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/simplicity"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002205",
+      "before": {
+        "meaningEn": "a person who grows or makes or invents things",
+        "meaningZh": "上帝；創造者；創作者"
+      },
+      "after": {
+        "meaningEn": "A person who grows, makes, or invents things; especially Creator, God.",
+        "meaningZh": "（Creator）上帝；創造者；創作者"
+      },
+      "reason": "Make the capitalized divine sense explicit without changing the formal headword.",
+      "evidence": "https://www.merriam-webster.com/dictionary/creator"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005877",
+      "before": {
+        "meaningEn": "a narrow channel of the sea joining two larger bodies of water; narrow",
+        "meaningZh": "海峽；困境；困難的；窘迫的"
+      },
+      "after": {
+        "meaningEn": "(n.) a narrow sea passage joining larger bodies of water; (usually plural straits) a difficult situation; (also adj.) narrow, strict, difficult, or tight.",
+        "meaningZh": "（名詞）海峽；困境；（另有形容詞用法）困難的；窘迫的"
+      },
+      "reason": "Retain the genuine adjective and distress senses separately; formal noun POS remains unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/strait"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004629",
+      "before": {
+        "meaningEn": "group of people willing to obey orders; the department responsible for hiring and training and placing employees and for setting policies for personnel management",
+        "usagePattern": "a/the personnel; personnel of N",
+        "usagePatternZh": "全體人員；……的人事部門"
+      },
+      "after": {
+        "meaningEn": "The people employed by an organization; also, the department concerned with hiring, training, and managing employees.",
+        "usagePattern": "military personnel; the personnel department",
+        "usagePatternZh": "軍事人員；人事部門"
+      },
+      "reason": "Replace the unnecessarily restricted orders-only definition and unrestricted a personnel template.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/personnel"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000628",
+      "before": {
+        "meaningZh": "部分；局部；零件；要素",
+        "usagePattern": "part of N; take part in N; play a part in N",
+        "usagePatternZh": "名詞的一部分；參加名詞；在名詞中扮演角色"
+      },
+      "after": {
+        "meaningZh": "（名詞）部分；局部；零件；要素；角色；（動詞）分開；分離",
+        "usagePattern": "part of N; take part in N; play a part in N; play the part of N",
+        "usagePatternZh": "……的一部分；參與……；在……中發揮作用；扮演……的角色"
+      },
+      "reason": "Supply the separating verb and character role, with context-specific hints below. Preserve the earlier form fixture through an exact later inverse.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/part"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX146d7249",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "He gave me a blank look when I asked him about the accident.",
+        "blankSentence": "He gave me a _____ look when I asked him about the accident.",
+        "answer": "blank"
+      },
+      "after": {
+        "sensePos": "adj."
+      },
+      "reason": "Classify the actual target in its complete unchanged sentence.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/blank"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX753353b2",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "Her teacher's encouragement influenced her decision to study science.",
+        "blankSentence": "Her teacher's encouragement _____ her decision to study science.",
+        "answer": "influenced"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Classify the actual target in its complete unchanged sentence.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/influence"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1ed7569b",
+      "before": {
+        "meaningHint": "反對；倚靠",
+        "sentenceEn": "Several students voted against the proposed rule.",
+        "blankSentence": "Several students voted _____ the proposed rule.",
+        "answer": "against",
+        "status": "draft",
+        "sentenceZh": "幾位學生投票反對這項提議的規定。"
+      },
+      "after": {
+        "meaningHint": "反對",
+        "status": "reviewed"
+      },
+      "reason": "Narrow the existing hint to this actual cloze context; this is not a claim that all broad hints were errors. Review only this exact practice sentence, translation, blank and answer; no official-source claim follows from practice review.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/against; https://www.collinsdictionary.com/dictionary/english/against"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX0f650d50",
+      "before": {
+        "meaningHint": "部分；局部；零件；要素",
+        "sentenceEn": "The clouds parted, and the sun began to shine.",
+        "blankSentence": "The clouds _____, and the sun began to shine.",
+        "answer": "parted"
+      },
+      "after": {
+        "meaningHint": "分開；散開"
+      },
+      "reason": "Narrow the existing hint to this actual cloze context; this is not a claim that all broad hints were errors.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/part"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXa14c2189",
+      "before": {
+        "meaningHint": "部分；局部；零件；要素",
+        "sentenceEn": "Sophie played the part of Cinderella.",
+        "blankSentence": "Sophie played the _____ of Cinderella.",
+        "answer": "part"
+      },
+      "after": {
+        "meaningHint": "角色（play the part of）"
+      },
+      "reason": "Narrow the existing hint to this actual cloze context; this is not a claim that all broad hints were errors.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/part"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXbad6b4ea",
+      "before": {
+        "meaningHint": "部分；局部；零件；要素",
+        "sentenceEn": "I don't like the first part of the novel.",
+        "blankSentence": "I don't like the first _____ of the novel.",
+        "answer": "part"
+      },
+      "after": {
+        "meaningHint": "部分"
+      },
+      "reason": "Narrow the existing hint to this actual cloze context; this is not a claim that all broad hints were errors.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/part"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXd717592f",
+      "before": {
+        "meaningHint": "部分；局部；零件；要素",
+        "sentenceEn": "The part you want is quite hard to get.",
+        "blankSentence": "The _____ you want is quite hard to get.",
+        "answer": "part"
+      },
+      "after": {
+        "meaningHint": "零件"
+      },
+      "reason": "Narrow the existing hint to this actual cloze context; this is not a claim that all broad hints were errors.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/part"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXe4a6b27c",
+      "before": {
+        "meaningHint": "部分；局部；零件；要素",
+        "sentenceEn": "How many students took part in the speech contest?",
+        "blankSentence": "How many students took _____ in the speech contest?",
+        "answer": "part"
+      },
+      "after": {
+        "meaningHint": "參與（take part in）"
+      },
+      "reason": "Narrow the existing hint to this actual cloze context; this is not a claim that all broad hints were errors.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/part"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXef7b48d5",
+      "before": {
+        "status": "draft",
+        "sentenceEn": "Plastic bags do great harm to the environment.",
+        "sentenceZh": "塑膠袋對環境造成很大的傷害。",
+        "blankSentence": "Plastic bags do great harm to the _____.",
+        "answer": "environment"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Review only this exact practice sentence, translation, blank and answer; no official-source claim follows from practice review.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/environment"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX9a9f5126",
+      "before": {
+        "status": "draft",
+        "sentenceEn": "She accepted the invitation with a smile.",
+        "sentenceZh": "她微笑著接受了邀請。",
+        "blankSentence": "She _____ the invitation with a smile.",
+        "answer": "accepted"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Review only this exact practice sentence, translation, blank and answer; no official-source claim follows from practice review.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/accept"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX8b8e6c5a",
+      "before": {
+        "status": "draft",
+        "sentenceEn": "She rejected his offer politely.",
+        "sentenceZh": "她禮貌地拒絕了他的提議。",
+        "blankSentence": "She _____ his offer politely.",
+        "answer": "rejected"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Review only this exact practice sentence, translation, blank and answer; no official-source claim follows from practice review.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/reject"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX63620898",
+      "before": {
+        "status": "draft",
+        "sentenceEn": "The artist used old bottles to create a huge sculpture.",
+        "sentenceZh": "那位藝術家用舊瓶子創作了一座巨大的雕塑。",
+        "blankSentence": "The artist used old bottles to _____ a huge sculpture.",
+        "answer": "create"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Review only this exact practice sentence, translation, blank and answer; no official-source claim follows from practice review.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/create"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX4df01657",
+      "before": {
+        "status": "draft",
+        "sentenceEn": "The train is due at eight, but it has already been delayed twice.",
+        "sentenceZh": "這班火車預定八點到，但已經誤點兩次了。",
+        "blankSentence": "The train is _____ at eight, but it has already been delayed twice.",
+        "answer": "due"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Review only this exact practice sentence, translation, blank and answer; no official-source claim follows from practice review.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/due"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX7f87c2c0",
+      "before": {
+        "status": "draft",
+        "sentenceEn": "Cutting out sugary drinks brought a dramatic change in his health.",
+        "sentenceZh": "戒掉含糖飲料讓他的健康有了顯著的改變。",
+        "blankSentence": "Cutting out sugary drinks brought a _____ change in his health.",
+        "answer": "dramatic"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Review only this exact practice sentence, translation, blank and answer; no official-source claim follows from practice review.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/dramatic"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXbaacbc98",
+      "before": {
+        "status": "draft",
+        "sentenceEn": "For many hikers, the mountain holds a deep spiritual meaning.",
+        "sentenceZh": "對許多登山者而言，這座山有著深刻的精神意義。",
+        "blankSentence": "For many hikers, the mountain holds a deep _____ meaning.",
+        "answer": "spiritual"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Review only this exact practice sentence, translation, blank and answer; no official-source claim follows from practice review.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/spiritual"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXea04b9f8",
+      "before": {
+        "status": "draft",
+        "sentenceEn": "Teenagers often want more privacy as they grow older.",
+        "sentenceZh": "青少年長大後通常會想要更多隱私。",
+        "blankSentence": "Teenagers often want more _____ as they grow older.",
+        "answer": "privacy"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Review only this exact practice sentence, translation, blank and answer; no official-source claim follows from practice review.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/privacy"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXbc3cee74",
+      "before": {
+        "status": "draft",
+        "sentenceEn": "The novel is regarded as the writer's greatest creation.",
+        "sentenceZh": "這部小說被視為這位作家最偉大的創作。",
+        "blankSentence": "The novel is regarded as the writer's greatest _____.",
+        "answer": "creation"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Review only this exact practice sentence, translation, blank and answer; no official-source claim follows from practice review.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/creation"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001284-1",
+      "before": {
+        "examEvidence": "學測113 詞彙題Q3",
+        "note": "考點：be due 表預定時間",
+        "status": "draft",
+        "wordId": "W001284",
+        "word": "due",
+        "sensePos": "adj.",
+        "isExamSense": true,
+        "answerForms": [
+          "due"
+        ]
+      },
+      "after": {
+        "examEvidence": "學測113 詞彙題Q3，答案B=due；https://www.ceec.edu.tw/files/file_pool/1/0o051427482769341323/02-113%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%A7%91%E5%AE%9A%E7%A8%BF.pdf；https://www.ceec.edu.tw/files/file_pool/1/0o051427843482078305/02-113%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf",
+        "note": "官方試題與答案文字已核實：詢問下一班公車預定何時到達，說話者已等待超過三十分鐘。 The bus example matches the filled original after curly/straight apostrophe normalization. EX4df01657 eight-o’clock train is separate practice; do not call it Q3. 僅認證本考點來源，不代表整詞通過。",
+        "status": "reviewed"
+      },
+      "reason": "Verify only this exact official sense source; preserve headword POS, answer forms and practice text.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0o051427482769341323/02-113%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%A7%91%E5%AE%9A%E7%A8%BF.pdf; https://www.ceec.edu.tw/files/file_pool/1/0o051427843482078305/02-113%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W003772-1",
+      "before": {
+        "examEvidence": "學測108 詞彙題Q1",
+        "note": "考點：個人不受打擾的空間",
+        "status": "draft",
+        "wordId": "W003772",
+        "word": "privacy",
+        "sensePos": "n.",
+        "isExamSense": true,
+        "answerForms": [
+          "privacy"
+        ]
+      },
+      "after": {
+        "examEvidence": "學測108 詞彙題Q1，答案C=privacy；https://www.ceec.edu.tw/files/file_pool/1/0j196548669826315609/01-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf；https://www.ceec.edu.tw/files/file_pool/1/0j196548660460294627/02-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88.pdf",
+        "note": "官方試題與答案文字已核實：巴比重視在家裡的隱私，要求父母未經同意不要翻動他的東西。 EX51c319b9 matches the filled original after whitespace normalization. The changing-clothes and teenagers examples are separate practice. 僅認證本考點來源，不代表整詞通過。",
+        "status": "reviewed"
+      },
+      "reason": "Verify only this exact official sense source; preserve headword POS, answer forms and practice text.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0j196548669826315609/01-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf; https://www.ceec.edu.tw/files/file_pool/1/0j196548660460294627/02-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88.pdf"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W003913-1",
+      "before": {
+        "examEvidence": "學測106 文意選填Q32",
+        "note": "考點：非物質的意義",
+        "status": "draft",
+        "wordId": "W003913",
+        "word": "spiritual",
+        "sensePos": "adj.",
+        "isExamSense": true,
+        "answerForms": [
+          "spiritual"
+        ]
+      },
+      "after": {
+        "examEvidence": "學測106 文意選填Q32，答案G=spiritual；https://www.ceec.edu.tw/files/file_pool/1/0j076574214786979208/02-106%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf；https://www.ceec.edu.tw/files/file_pool/1/0j076574215321858235/02-106%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88.pdf",
+        "note": "官方試題與答案文字已核實：古埃及人不只把洋蔥當食物或藥材，還認為它有關於永生的宗教／精神意義。 Mountain/hikers EXbaacbc98 and the priest/meditation examples are separate practice, not the onion passage. Spiritual is not restricted to only the religious sense. 僅認證本考點來源，不代表整詞通過。",
+        "status": "reviewed"
+      },
+      "reason": "Verify only this exact official sense source; preserve headword POS, answer forms and practice text.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0j076574214786979208/02-106%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf; https://www.ceec.edu.tw/files/file_pool/1/0j076574215321858235/02-106%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88.pdf"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W002265-1",
+      "before": {
+        "meaningZh": "顯著的、劇烈的",
+        "examEvidence": "學測115 文意選填Q28",
+        "note": "考點：變化幅度很大，非「戲劇的」",
+        "status": "draft",
+        "wordId": "W002265",
+        "word": "dramatic",
+        "sensePos": "adj.",
+        "isExamSense": true,
+        "answerForms": [
+          "dramatic"
+        ]
+      },
+      "after": {
+        "meaningZh": "顯著的、引人注目的",
+        "examEvidence": "學測115 文意選填Q28，答案I=dramatic；https://www.ceec.edu.tw/files/file_pool/1/0q054532302653501476/02-115%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7.pdf；https://www.ceec.edu.tw/files/file_pool/1/0Q020545788179667774/02-115%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E5%8F%83%E8%80%83%E7%AD%94%E6%A1%88.pdf",
+        "note": "官方試題與答案文字已核實：介紹午睡益處，說即使五分鐘午睡也可能帶來令人驚訝的顯著效益；本題不是戲劇演出的意思。 Sugary-drink health change EX7f87c2c0, weather change and online-shopping examples are separate practice, not the napping passage. 僅認證本考點來源，不代表整詞通過。",
+        "status": "reviewed"
+      },
+      "reason": "Verify only this exact official sense source; preserve headword POS, answer forms and practice text.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0q054532302653501476/02-115%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7.pdf; https://www.ceec.edu.tw/files/file_pool/1/0Q020545788179667774/02-115%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E5%8F%83%E8%80%83%E7%AD%94%E6%A1%88.pdf"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001099-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：空格；空白；空白的；空虛的",
+        "wordId": "W001099",
+        "word": "blank",
+        "sensePos": "adj.",
+        "meaningZh": "空白的",
+        "isExamSense": false,
+        "examEvidence": null
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "本義已對照完整例句及詞典；保留詞頭其他義項、詞性與來源界線，不代表整詞所有欄位通過。"
+      },
+      "reason": "Review the exact already-separated non-exam sense only.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/blank"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001099-2",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：空格；空白；空白的；空虛的",
+        "wordId": "W001099",
+        "word": "blank",
+        "sensePos": "n.",
+        "meaningZh": "空格",
+        "isExamSense": false,
+        "examEvidence": null
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "本義已對照完整例句及詞典；保留詞頭其他義項、詞性與來源界線，不代表整詞所有欄位通過。"
+      },
+      "reason": "Review the exact already-separated non-exam sense only.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/blank"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001463-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：影響力；權力；勢力；影響",
+        "wordId": "W001463",
+        "word": "influence",
+        "sensePos": "n.",
+        "meaningZh": "影響力；影響",
+        "isExamSense": false,
+        "examEvidence": null
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "本義已對照完整例句及詞典；保留詞頭其他義項、詞性與來源界線，不代表整詞所有欄位通過。"
+      },
+      "reason": "Review the exact already-separated non-exam sense only.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/influence"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001463-2",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：影響力；權力；勢力；影響",
+        "wordId": "W001463",
+        "word": "influence",
+        "sensePos": "v.",
+        "meaningZh": "影響",
+        "isExamSense": false,
+        "examEvidence": null
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "本義已對照完整例句及詞典；保留詞頭其他義項、詞性與來源界線，不代表整詞所有欄位通過。"
+      },
+      "reason": "Review the exact already-separated non-exam sense only.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/influence"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001907-1",
+      "before": {
+        "note": "高頻考點：轉折詞填空，與 therefore/hence 同義",
+        "wordId": "W001907",
+        "word": "thus",
+        "sensePos": "adv.",
+        "meaningZh": "因此；所以",
+        "isExamSense": true,
+        "examEvidence": "既有例句 EX04b28025",
+        "status": "approved"
+      },
+      "after": {
+        "note": "表示結果的連接副詞，與 therefore／hence 同義；現有來源僅為庫中例句，不另宣稱官方考題來源已核。"
+      },
+      "reason": "Replace the misleading contrast-connector label while preserving existing exam flag and status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/thus"
+    }
+  ]
+}

@@ -1,0 +1,1136 @@
+{
+  "unit": "LV2-U45",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "baseCheckpoint": "bef14d267b348c73b5627b3d213399134df2badd",
+  "integrationCheckpoint": "45edea0bb42fb0cac16f10fc6468574e1225e109",
+  "scope": "Exact source-backed fields only: five actual-cloze POS corrections, three existing-hint refinements, two Chinese precision changes, six individually reviewed authored practices and eleven individually reviewed senses. No English/blank/answer or formal headword identity/POS/status changes; no empty-hint filling. Retain rare senses and provenance limits.",
+  "patches": [
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W006032",
+      "before": {
+        "meaningZh": "提出理由；爭論；辯論；主張",
+        "meaningEn": "(v.) to disagree with someone, sometimes in an angry way; to give reasons to support an opinion; (n.) argument: a reason given to support an idea, or a disagreement between people.",
+        "usagePattern": "argue with sb about/over N; argue that S+V; have an argument with sb",
+        "usagePatternZh": "與某人爭論某事；主張……；與某人爭吵"
+      },
+      "after": {
+        "meaningZh": "（名詞）提出的理由；論據；爭論；辯論；主張",
+        "meaningEn": "Noun argument: reasons supporting an opinion, or a disagreement between people. Related verb argue: to disagree with someone, sometimes angrily, or give reasons supporting an opinion.",
+        "usagePattern": "have an argument with sb about/over N; an argument for/against N; the argument that S+V",
+        "usagePatternZh": "與某人就某事爭論；支持／反對……的論據；認為……的論點"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/argument",
+      "reason": "Clarify the supported meaning/POS or actual paired construction while preserving formal headword POS/status, alternate senses and exact before. Scope labels distinguish related words rather than deleting them."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001163",
+      "before": {
+        "meaningEn": "an acquaintance that you go to school with"
+      },
+      "after": {
+        "meaningEn": "A person who is in the same class as you at school or college."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/classmate",
+      "reason": "Clarify the supported meaning/POS or actual paired construction while preserving formal headword POS/status, alternate senses and exact before. Scope labels distinguish related words rather than deleting them."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001912",
+      "before": {
+        "meaningZh": "頭銜；名稱；標題；書名"
+      },
+      "after": {
+        "meaningZh": "（名詞）頭銜；名稱；標題；書名；（動詞）為……加上標題；命名"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/title",
+      "reason": "Clarify the supported meaning/POS or actual paired construction while preserving formal headword POS/status, alternate senses and exact before. Scope labels distinguish related words rather than deleting them."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001534",
+      "before": {
+        "meaningZh": "配偶；對手；助手；(象棋)將死"
+      },
+      "after": {
+        "meaningZh": "（名詞）朋友；同伴；配偶；對手；助手；（象棋）將死；（動詞，動物）交配；使交配"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/mate",
+      "reason": "Clarify the supported meaning/POS or actual paired construction while preserving formal headword POS/status, alternate senses and exact before. Scope labels distinguish related words rather than deleting them."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001651",
+      "before": {
+        "meaningZh": "姿勢；姿態；裝模作樣；僞裝"
+      },
+      "after": {
+        "meaningZh": "（名詞）姿勢；姿態；（動詞）造成（問題或威脅）；擺姿勢；裝模作樣；偽裝"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/pose",
+      "reason": "Clarify the supported meaning/POS or actual paired construction while preserving formal headword POS/status, alternate senses and exact before. Scope labels distinguish related words rather than deleting them."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001652",
+      "before": {
+        "meaningZh": "位置；地位；身分；形勢",
+        "meaningEn": "the place where a person or thing is located; a job or rank within an organization; a person's opinion or attitude on an issue"
+      },
+      "after": {
+        "meaningZh": "（名詞）位置；地位；身分；形勢；立場；職務；（動詞）放置；安置",
+        "meaningEn": "Noun: a location, situation, job or rank, or an opinion on an issue. Verb: put someone or something in a particular place or arrangement."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/position",
+      "reason": "Clarify the supported meaning/POS or actual paired construction while preserving formal headword POS/status, alternate senses and exact before. Scope labels distinguish related words rather than deleting them."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001979",
+      "before": {
+        "meaningZh": "耳語；密談；謠傳；沙沙聲"
+      },
+      "after": {
+        "meaningZh": "（名詞）耳語；密談；謠傳；沙沙聲；（動詞）低聲說；耳語"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/whisper",
+      "reason": "Clarify the supported meaning/POS or actual paired construction while preserving formal headword POS/status, alternate senses and exact before. Scope labels distinguish related words rather than deleting them."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001157",
+      "before": {
+        "meaningZh": "中國；瓷器；中國的",
+        "meaningEn": "a large country in East Asia with the largest population in the world; a hard, white material made from baked clay, used to make cups, plates, and other objects"
+      },
+      "after": {
+        "meaningZh": "（國名 China）中國；（小寫 china）瓷器；（另詞 Chinese 的形容詞義）中國的",
+        "meaningEn": "China is a country in East Asia. Lowercase china is porcelain, especially cups, plates and similar household objects made from it. The related adjective Chinese means relating to China, its people, languages or culture."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/china; https://www.collinsdictionary.com/dictionary/english/chinese",
+      "reason": "Clarify the supported meaning/POS or actual paired construction while preserving formal headword POS/status, alternate senses and exact before. Scope labels distinguish related words rather than deleting them."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001705",
+      "before": {
+        "meaningZh": "鼠；卑鄙的人；破壞者；變節者",
+        "usagePattern": "a/the rat; rat of N",
+        "usagePatternZh": "一隻／這隻老鼠；……的老鼠"
+      },
+      "after": {
+        "meaningZh": "鼠；卑鄙的人；破壞者（罷工語境指破壞罷工者）；變節者；（髮型用品）髮墊",
+        "usagePattern": "a rat; smell a rat",
+        "usagePatternZh": "一隻老鼠；察覺有詐"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/rat; https://www.collinsdictionary.com/dictionary/english/scab",
+      "reason": "Clarify the supported meaning/POS or actual paired construction while preserving formal headword POS/status, alternate senses and exact before. Scope labels distinguish related words rather than deleting them."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001382",
+      "before": {
+        "meaningZh": "建立；創立；鑄造；find的過去式和過去分詞"
+      },
+      "after": {
+        "meaningZh": "（動詞原形 found）建立；創立；鑄造；（另為 find 的過去式和過去分詞 found）找到；發現"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/found",
+      "reason": "Clarify the supported meaning/POS or actual paired construction while preserving formal headword POS/status, alternate senses and exact before. Scope labels distinguish related words rather than deleting them."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001465",
+      "before": {
+        "usagePattern": "insist on N/V-ing; insist that S (+ should) + V",
+        "usagePatternZh": "堅持……；堅持主詞（應該）……"
+      },
+      "after": {
+        "usagePattern": "insist on N/V-ing; insist that S + finite verb (assertion); insist that S (should) + base verb (demand)",
+        "usagePatternZh": "堅持……；堅稱……（陳述事實，從句依語境用正常時態）；堅持要求……（should 可省略，接原形動詞）"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/insist",
+      "reason": "Clarify the supported meaning/POS or actual paired construction while preserving formal headword POS/status, alternate senses and exact before. Scope labels distinguish related words rather than deleting them."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001923",
+      "before": {
+        "meaningZh": "傳說；傳統；交付；慣例",
+        "meaningEn": "a custom, belief, or way of doing something that has existed for a long time among a particular group of people"
+      },
+      "after": {
+        "meaningZh": "傳說；傳統；（法律用語）交付；慣例",
+        "meaningEn": "A long-established custom, belief or practice passed between people or generations; in law, delivery or transfer of movable property."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/tradition",
+      "reason": "Clarify the supported meaning/POS or actual paired construction while preserving formal headword POS/status, alternate senses and exact before. Scope labels distinguish related words rather than deleting them."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001717",
+      "before": {
+        "meaningZh": "規則的；常例的；有秩序的；整齊的"
+      },
+      "after": {
+        "meaningZh": "（形容詞）規則的；常例的；有秩序的；整齊的；（名詞）常客；經常參加者"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/regular",
+      "reason": "Clarify the supported meaning/POS or actual paired construction while preserving formal headword POS/status, alternate senses and exact before. Scope labels distinguish related words rather than deleting them."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001730",
+      "before": {
+        "meaningZh": "有責任的；負責的；責任重大的；應負責任的",
+        "meaningEn": "having the duty to do or take care of something; being the cause of something"
+      },
+      "after": {
+        "meaningZh": "有責任的；負責的；責任重大的；應負責任的；可靠的",
+        "meaningEn": "Having a duty to care for something, being the cause of something, or behaving sensibly so that other people can rely on you."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/responsible",
+      "reason": "Clarify the supported meaning/POS or actual paired construction while preserving formal headword POS/status, alternate senses and exact before. Scope labels distinguish related words rather than deleting them."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001425",
+      "before": {
+        "meaningZh": "柄；把手；把柄；柄狀物",
+        "meaningEn": "n. the part of an object that you hold in your hand in order to carry, move, or use it; v. to deal with a problem, situation, or person"
+      },
+      "after": {
+        "meaningZh": "（名詞）柄；把手；把柄；柄狀物；（動詞）處理；搬動；用手觸拿",
+        "meaningEn": "Noun: the part of an object held when carrying, moving or using it. Verb: deal with a problem, situation or person, or touch and move something with the hands."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/handle",
+      "reason": "Clarify the supported meaning/POS or actual paired construction while preserving formal headword POS/status, alternate senses and exact before. Scope labels distinguish related words rather than deleting them."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W006025",
+      "before": {
+        "meaningZh": "需要",
+        "meaningEn": null,
+        "usagePattern": null,
+        "usagePatternZh": null
+      },
+      "after": {
+        "meaningZh": "需要；要求",
+        "meaningEn": "To need something, or demand that something be done or provided.",
+        "usagePattern": "require N; require sb to V; require that S (should) + base verb; require V-ing",
+        "usagePatternZh": "需要……；要求某人做……；要求……（should 可省略，接原形動詞）；需要被……（主動形式表被動意義）"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/require",
+      "reason": "Clarify the supported meaning/POS or actual paired construction while preserving formal headword POS/status, alternate senses and exact before. Scope labels distinguish related words rather than deleting them."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003307",
+      "before": {
+        "meaningEn": "a disagreement or argument about something important; coming into conflict with",
+        "usagePattern": "dispute + N; dispute to V; a/the dispute",
+        "usagePatternZh": "爭論某事；爭論去做……；一場爭端"
+      },
+      "after": {
+        "meaningEn": "Noun: a disagreement or argument. Verb: question the truth or validity of something, or argue over a matter.",
+        "usagePattern": "dispute N; dispute with sb over N; be in dispute",
+        "usagePatternZh": "質疑／對……提出異議；與某人就……爭論；有爭議"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/dispute",
+      "reason": "Clarify the supported meaning/POS or actual paired construction while preserving formal headword POS/status, alternate senses and exact before. Scope labels distinguish related words rather than deleting them."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004339",
+      "before": {
+        "usagePattern": "entitle + N; entitle to V",
+        "usagePatternZh": "賦予……權利；有權做……"
+      },
+      "after": {
+        "usagePattern": "entitle sb to N; entitle sb to V; be entitled + title",
+        "usagePatternZh": "使某人有權獲得……；使某人有權做……；題名為……"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/entitle",
+      "reason": "Clarify the supported meaning/POS or actual paired construction while preserving formal headword POS/status, alternate senses and exact before. Scope labels distinguish related words rather than deleting them."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001617",
+      "before": {
+        "usagePattern": "business partner; partner with N; life partner",
+        "usagePatternZh": "商業夥伴；與……合作；人生伴侶"
+      },
+      "after": {
+        "usagePattern": "a business partner; a life partner",
+        "usagePatternZh": "商業夥伴／合夥人；人生伴侶"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/partner",
+      "reason": "Clarify the supported meaning/POS or actual paired construction while preserving formal headword POS/status, alternate senses and exact before. Scope labels distinguish related words rather than deleting them."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000169",
+      "before": {
+        "meaningZh": "班級；階級；種類；課",
+        "meaningEn": "a group of students who are taught together; a lesson in a particular subject; a group of people or things of the same type"
+      },
+      "after": {
+        "meaningZh": "（名詞）班級；階級；種類；課；（動詞）把……歸類",
+        "meaningEn": "Noun: students taught together, a lesson in a subject, or people or things of the same type. Verb: classify someone or something as belonging to a group."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/class",
+      "reason": "Clarify the supported meaning/POS or actual paired construction while preserving formal headword POS/status, alternate senses and exact before. Scope labels distinguish related words rather than deleting them."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002241",
+      "before": {
+        "meaningZh": "魔鬼；折磨；戲弄",
+        "meaningEn": "an evil supernatural being; a word used in exclamations of confusion",
+        "usagePattern": "a/the devil; devil of N",
+        "usagePatternZh": "該魔鬼；……的惡魔"
+      },
+      "after": {
+        "meaningZh": "（名詞）魔鬼；（另有動詞用法，美式非正式）折磨；戲弄",
+        "meaningEn": "Noun: an evil supernatural spirit, or an informal way of describing a person. Related verb, especially US informal: annoy, torment or tease someone.",
+        "usagePattern": "the Devil; a poor devil",
+        "usagePatternZh": "魔鬼／撒旦（常大寫）；可憐的傢伙（非正式）"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/devil",
+      "reason": "Clarify the supported meaning/POS or actual paired construction while preserving formal headword POS/status, alternate senses and exact before. Scope labels distinguish related words rather than deleting them."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002665",
+      "before": {
+        "meaningEn": "ceramic ware made from clay and baked in a kiln; the craft of making earthenware"
+      },
+      "after": {
+        "meaningEn": "Objects made from clay and hardened by firing; the craft of making them; as a countable noun, a factory or place where pottery is made."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/pottery",
+      "reason": "Clarify the supported meaning/POS or actual paired construction while preserving formal headword POS/status, alternate senses and exact before. Scope labels distinguish related words rather than deleting them."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002995",
+      "before": {
+        "usagePatternZh": "邪惡的；邪惡的某人"
+      },
+      "after": {
+        "usagePatternZh": "邪惡的……（修飾名詞）"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/wicked",
+      "reason": "Clarify the supported meaning/POS or actual paired construction while preserving formal headword POS/status, alternate senses and exact before. Scope labels distinguish related words rather than deleting them."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005466",
+      "before": {
+        "usagePattern": "an/the insistence; insistence of N",
+        "usagePatternZh": "一種堅持；對……的堅持"
+      },
+      "after": {
+        "usagePattern": "at sb's insistence; insistence on N/V-ing; insistence that S+V",
+        "usagePatternZh": "在某人的堅持要求下；對……／做……的堅持；堅持認為／要求……（依句意判斷）"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/insistence",
+      "reason": "Clarify the supported meaning/POS or actual paired construction while preserving formal headword POS/status, alternate senses and exact before. Scope labels distinguish related words rather than deleting them."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001161",
+      "before": {
+        "meaningZh": "古典作品；傑作；大藝術家；第一流的",
+        "meaningEn": "(adj.) of high quality and lasting value; typical of its kind (n.) a work of lasting importance"
+      },
+      "after": {
+        "meaningZh": "（形容詞）第一流的；經典的；（名詞）古典作品；傑作；典範；大藝術家",
+        "meaningEn": "Adjective: excellent and of lasting value, or typical of its kind. Noun: a work or thing regarded as a lasting example of excellence; also an outstanding author or artist."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/classic",
+      "reason": "Clarify the supported meaning/POS or actual paired construction while preserving formal headword POS/status, alternate senses and exact before. Scope labels distinguish related words rather than deleting them."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005113",
+      "before": {
+        "usagePattern": "broaden + N; broaden to V",
+        "usagePatternZh": "拓寬……；拓寬以……"
+      },
+      "after": {
+        "usagePattern": "broaden one's horizons; broaden knowledge; broaden into N",
+        "usagePatternZh": "開闊眼界；增廣知識；拓展到……領域"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/broaden",
+      "reason": "Clarify the supported meaning/POS or actual paired construction while preserving formal headword POS/status, alternate senses and exact before. Scope labels distinguish related words rather than deleting them."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005108",
+      "before": {
+        "meaningZh": "寬度；違背；違犯；未遵守"
+      },
+      "after": {
+        "meaningZh": "（breadth）寬度；廣度；（另詞 breach）違背；違犯；未遵守"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/breadth; https://www.collinsdictionary.com/dictionary/english/breach",
+      "reason": "Clarify the supported meaning/POS or actual paired construction while preserving formal headword POS/status, alternate senses and exact before. Scope labels distinguish related words rather than deleting them."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000973",
+      "before": {
+        "meaningZh": "寬的；廣闊的；普遍的；寬闊的",
+        "meaningEn": "measuring a large distance from one side to the other; covering a large range of subjects or people"
+      },
+      "after": {
+        "meaningZh": "（形容詞）寬的；廣闊的；普遍的；寬闊的；（副詞）廣泛地；充分地；完全地",
+        "meaningEn": "Adjective: extending a long distance from side to side, or covering a large range. Adverb: over a large area or to a full extent, as in wide open."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/wide",
+      "reason": "Clarify the supported meaning/POS or actual paired construction while preserving formal headword POS/status, alternate senses and exact before. Scope labels distinguish related words rather than deleting them."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003686",
+      "before": {
+        "meaningZh": "目的；目標；宗旨；賓格"
+      },
+      "after": {
+        "meaningZh": "（名詞）目的；目標；宗旨；（文法）賓格；（形容詞）客觀的"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/objective",
+      "reason": "Clarify the supported meaning/POS or actual paired construction while preserving formal headword POS/status, alternate senses and exact before. Scope labels distinguish related words rather than deleting them."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000476",
+      "before": {
+        "meaningZh": "鉛；鉛條；領導；超前量",
+        "meaningEn": "(v.) to guide or direct a person, group, or activity; to result in a particular situation or event; (n.) an advantage that one competitor has over another in a race or contest"
+      },
+      "after": {
+        "meaningZh": "（動詞 /liːd/）領導；帶領；導致；（名詞 /liːd/）領導；超前量；（金屬名詞 /led/）鉛；鉛條",
+        "meaningEn": "Verb /liːd/: guide or direct, or result in a situation or event. Noun /liːd/: leadership or an advantage in a race or contest. The separate metal noun /led/ means the heavy grey metal lead."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/lead",
+      "reason": "Clarify the supported meaning/POS or actual paired construction while preserving formal headword POS/status, alternate senses and exact before. Scope labels distinguish related words rather than deleting them."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000477",
+      "before": {
+        "meaningEn": "a person who leads or is in charge of a group, team, or country"
+      },
+      "after": {
+        "meaningEn": "A person who leads or directs a group; in music, a conductor or principal violinist depending on regional usage. Chiefly British, a newspaper editorial."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/leader",
+      "reason": "Clarify the supported meaning/POS or actual paired construction while preserving formal headword POS/status, alternate senses and exact before. Scope labels distinguish related words rather than deleting them."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003851",
+      "before": {
+        "meaningZh": "決定；分解；決心；使分解"
+      },
+      "after": {
+        "meaningZh": "（動詞）解決；決定；分解；使分解；（名詞）決心"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/resolve",
+      "reason": "Clarify the supported meaning/POS or actual paired construction while preserving formal headword POS/status, alternate senses and exact before. Scope labels distinguish related words rather than deleting them."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005448",
+      "before": {
+        "meaningEn": "compel to behave in a certain way; impose something unpleasant"
+      },
+      "after": {
+        "meaningEn": "Adjective: impressive in appearance, size or manner; grand or stately. Related verb impose: compel someone to behave in a certain way or force something unpleasant on them."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/imposing",
+      "reason": "Clarify the supported meaning/POS or actual paired construction while preserving formal headword POS/status, alternate senses and exact before. Scope labels distinguish related words rather than deleting them."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXb8000a13",
+      "before": {
+        "exampleId": "EXb8000a13",
+        "word": "debate",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "My parents often debate about which restaurant to choose for dinner.",
+        "sentenceZh": "我父母常常為了晚餐要選哪間餐廳而爭論。",
+        "blankSentence": "My parents often _____ about which restaurant to choose for dinner.",
+        "answer": "debate",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/debate",
+      "reason": "The actual cloze target in this complete sentence has the indicated noun, verb or adjective function; English/cloze/answer remain immutable."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX245f0260",
+      "before": {
+        "exampleId": "EX245f0260",
+        "word": "evil",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "The villain in the movie plans an evil scheme to destroy the city.",
+        "sentenceZh": "電影裡的反派策劃了一個邪惡的陰謀想摧毀這座城市。",
+        "blankSentence": "The villain in the movie plans an _____ scheme to destroy the city.",
+        "answer": "evil",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "after": {
+        "sensePos": "adj."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/evil",
+      "reason": "The actual cloze target in this complete sentence has the indicated noun, verb or adjective function; English/cloze/answer remain immutable."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXae9f3be5",
+      "before": {
+        "exampleId": "EXae9f3be5",
+        "word": "regular",
+        "sensePos": "adj.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "He has become a regular at the coffee shop near his office.",
+        "sentenceZh": "他已經成為他辦公室附近那家咖啡店的常客。",
+        "blankSentence": "He has become a _____ at the coffee shop near his office.",
+        "answer": "regular",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/regular",
+      "reason": "The actual cloze target in this complete sentence has the indicated noun, verb or adjective function; English/cloze/answer remain immutable."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXb3d5bac5",
+      "before": {
+        "exampleId": "EXb3d5bac5",
+        "word": "classic",
+        "sensePos": "adj.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "That little black dress is a classic; you can wear it almost anywhere.",
+        "sentenceZh": "那件黑色小洋裝是經典款，你幾乎到哪裡都能穿。",
+        "blankSentence": "That little black dress is a _____; you can wear it almost anywhere.",
+        "answer": "classic",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/classic",
+      "reason": "The actual cloze target in this complete sentence has the indicated noun, verb or adjective function; English/cloze/answer remain immutable."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX7298b4ef",
+      "before": {
+        "exampleId": "EX7298b4ef",
+        "word": "objective",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "She stayed objective when judging the singing contest.",
+        "sentenceZh": "她在評判歌唱比賽時保持客觀。",
+        "blankSentence": "She stayed _____ when judging the singing contest.",
+        "answer": "objective",
+        "difficulty": "LV4",
+        "status": "reviewed"
+      },
+      "after": {
+        "sensePos": "adj."
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/objective",
+      "reason": "The actual cloze target in this complete sentence has the indicated noun, verb or adjective function; English/cloze/answer remain immutable."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX135d15b5",
+      "before": {
+        "exampleId": "EX135d15b5",
+        "word": "side",
+        "sensePos": "n.",
+        "meaningHint": "旁邊；側；方面；脅",
+        "exampleType": "textbook",
+        "sentenceEn": "There is a lake on the other side of the park.",
+        "sentenceZh": "公園的另一邊有座湖。",
+        "blankSentence": "There is a lake on the other _____ of the park.",
+        "answer": "side",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "meaningHint": "另一邊（on the other side of）"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/side",
+      "reason": "Narrow only an existing nonempty mixed hint to the exact contextual idiom. Do not change English or fill empty hints."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX943ebe34",
+      "before": {
+        "exampleId": "EX943ebe34",
+        "word": "side",
+        "sensePos": "n.",
+        "meaningHint": "旁邊；側；方面；脅",
+        "exampleType": "textbook",
+        "sentenceEn": "George took sides with Linda in the argument.",
+        "sentenceZh": "喬治在這次爭論中支持琳達。",
+        "blankSentence": "George took _____ with Linda in the argument.",
+        "answer": "sides",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "meaningHint": "表明支持某一方（take sides with）"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/side",
+      "reason": "Narrow only an existing nonempty mixed hint to the exact contextual idiom. Do not change English or fill empty hints."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXc2703746",
+      "before": {
+        "exampleId": "EXc2703746",
+        "word": "side",
+        "sensePos": "n.",
+        "meaningHint": "旁邊；側；方面；脅",
+        "exampleType": "textbook",
+        "sentenceEn": "The scared little girl would not leave her mom's side.",
+        "sentenceZh": "受驚嚇的小女孩不願離開她媽媽身邊。",
+        "blankSentence": "The scared little girl would not leave her mom's _____.",
+        "answer": "side",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "meaningHint": "身邊（leave sb's side）"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/side",
+      "reason": "Narrow only an existing nonempty mixed hint to the exact contextual idiom. Do not change English or fill empty hints."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXf834964d",
+      "before": {
+        "exampleId": "EXf834964d",
+        "word": "ancient",
+        "sensePos": "adj.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "Archaeologists discovered ancient pottery buried deep beneath the desert sand.",
+        "sentenceZh": "考古學家在沙漠深處發現了古代的陶器。",
+        "blankSentence": "Archaeologists discovered _____ pottery buried deep beneath the desert sand.",
+        "answer": "ancient",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "after": {
+        "sentenceZh": "考古學家發現了深埋在沙漠沙層下的古代陶器。"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/beneath",
+      "reason": "Deep beneath the desert sand describes burial depth below the sand, not merely a location deep inside a desert; preserve the English."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX530970a6",
+      "before": {
+        "exampleId": "EX530970a6",
+        "word": "objective",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "Our main objective is to reduce carbon emissions by 2030.",
+        "sentenceZh": "我們的主要目標是在2030年前減少碳排放。",
+        "blankSentence": "Our main _____ is to reduce carbon emissions by 2030.",
+        "answer": "objective",
+        "difficulty": "LV4",
+        "status": "reviewed"
+      },
+      "after": {
+        "sentenceZh": "我們的主要目標是最遲於2030年減少碳排放。"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/by",
+      "reason": "Clarify by2030 as no later than2030 rather than strictly before that year; preserve our and the unspecified reduction amount, with no new deadline hour/date or English change."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX61cfac3a",
+      "before": {
+        "exampleId": "EX61cfac3a",
+        "word": "argue",
+        "sensePos": "v.",
+        "meaningHint": "主張、認為（考點：argue that 提出看法，非「吵架」）",
+        "exampleType": "exam",
+        "sentenceEn": "Some scientists argue that the data is still too limited to draw conclusions.",
+        "sentenceZh": "有些科學家主張這些數據仍太有限，不足以下結論。",
+        "blankSentence": "Some scientists _____ that the data is still too limited to draw conclusions.",
+        "answer": "argue",
+        "difficulty": "LV2",
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/argue",
+      "reason": "This existing complete English/Chinese/cloze/answer/POS was individually checked. It is authored practice, not a claim of verbatim official examination text or whole-word approval."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX67bc7049",
+      "before": {
+        "exampleId": "EX67bc7049",
+        "word": "pose",
+        "sensePos": "n.",
+        "meaningHint": "姿勢（考點：名詞義，adopt/strike a pose 擺姿勢）",
+        "exampleType": "exam",
+        "sentenceEn": "The dancer held a difficult pose for almost a minute.",
+        "sentenceZh": "那位舞者維持一個高難度姿勢將近一分鐘。",
+        "blankSentence": "The dancer held a difficult _____ for almost a minute.",
+        "answer": "pose",
+        "difficulty": "LV2",
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/pose",
+      "reason": "This existing complete English/Chinese/cloze/answer/POS was individually checked. It is authored practice, not a claim of verbatim official examination text or whole-word approval."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX00e036ac",
+      "before": {
+        "exampleId": "EX00e036ac",
+        "word": "ancient",
+        "sensePos": "adj.",
+        "meaningHint": "古老的",
+        "exampleType": "daily",
+        "sentenceEn": "We visited an ancient temple in Tainan.",
+        "sentenceZh": "我們參觀了台南一座古老的廟宇。",
+        "blankSentence": "We visited an _____ temple in Tainan.",
+        "answer": "ancient",
+        "difficulty": "LV2",
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/ancient",
+      "reason": "This existing complete English/Chinese/cloze/answer/POS was individually checked. It is authored practice, not a claim of verbatim official examination text or whole-word approval."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXabcf8435",
+      "before": {
+        "exampleId": "EXabcf8435",
+        "word": "insist",
+        "sensePos": "v.",
+        "meaningHint": "堅持（考點：insist on V-ing）",
+        "exampleType": "exam",
+        "sentenceEn": "He insisted on paying for dinner even though it was my birthday.",
+        "sentenceZh": "即使是我的生日，他還是堅持要付晚餐錢。",
+        "blankSentence": "He _____ on paying for dinner even though it was my birthday.",
+        "answer": "insisted",
+        "difficulty": "LV2",
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/insist",
+      "reason": "This existing complete English/Chinese/cloze/answer/POS was individually checked. It is authored practice, not a claim of verbatim official examination text or whole-word approval."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX8cd0054b",
+      "before": {
+        "exampleId": "EX8cd0054b",
+        "word": "requirement",
+        "sensePos": "n.",
+        "meaningHint": "必修規定、必要條件（考點：course requirements）",
+        "exampleType": "exam",
+        "sentenceEn": "Two years of a foreign language is a requirement for graduation.",
+        "sentenceZh": "修習兩年外語是畢業的必要條件。",
+        "blankSentence": "Two years of a foreign language is a _____ for graduation.",
+        "answer": "requirement",
+        "difficulty": "LV2",
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/requirement",
+      "reason": "This existing complete English/Chinese/cloze/answer/POS was individually checked. It is authored practice, not a claim of verbatim official examination text or whole-word approval."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXb21e2ddd",
+      "before": {
+        "exampleId": "EXb21e2ddd",
+        "word": "custom",
+        "sensePos": "n.",
+        "meaningHint": "習俗",
+        "exampleType": "exam",
+        "sentenceEn": "Giving red envelopes is a Chinese New Year custom.",
+        "sentenceZh": "發紅包是農曆新年的習俗。",
+        "blankSentence": "Giving red envelopes is a Chinese New Year _____.",
+        "answer": "custom",
+        "difficulty": "LV2",
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/custom",
+      "reason": "This existing complete English/Chinese/cloze/answer/POS was individually checked. It is authored practice, not a claim of verbatim official examination text or whole-word approval."
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001046-1",
+      "before": {
+        "senseId": "W001046-1",
+        "wordId": "W001046",
+        "word": "argue",
+        "senseOrder": 1,
+        "sensePos": "v.",
+        "meaningZh": "主張、認為",
+        "isExamSense": true,
+        "examEvidence": "學測110 文意選填Q35",
+        "answerForms": [
+          "argue"
+        ],
+        "note": "考點：argue that 提出看法，非「吵架」",
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed",
+        "examEvidence": "學測110 英文Q35；官方完整題目／選項與參考答案表已核：D argue",
+        "note": "2026-11-06：運動與疼痛的論述；argue that 表主張／辯稱，既有研究者練習為另寫。 保留原練習英文及來源界線，本義查核不代表整詞通過。"
+      },
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0l069608312283063557/110%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%20.pdf; https://www.ceec.edu.tw/files/file_pool/1/0L023548973411182211/02-110%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E5%8F%83%E8%80%83%E7%AD%94%E6%A1%88.pdf",
+      "reason": "Full official item/context and options plus official answer table actually read; separate existing authored practice from original quotation."
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001651-1",
+      "before": {
+        "senseId": "W001651-1",
+        "wordId": "W001651",
+        "word": "pose",
+        "senseOrder": 1,
+        "sensePos": "n.",
+        "meaningZh": "姿勢",
+        "isExamSense": true,
+        "examEvidence": "學測112 詞彙題Q2",
+        "answerForms": [
+          "pose"
+        ],
+        "note": "考點：名詞義，adopt/strike a pose 擺姿勢",
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed",
+        "examEvidence": "學測112 英文Q2；官方完整題目／選項與參考答案表已核：C pose",
+        "note": "2026-11-06：原題為模特兒 Jesse 拍攝時擺優雅姿勢，名詞義；既有舞者練習為另寫。 保留原練習英文及來源界線，本義查核不代表整詞通過。"
+      },
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0n045359274947649605/02-112%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7.pdf; https://www.ceec.edu.tw/files/file_pool/1/0N015546416633213720/02-112%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E5%8F%83%E8%80%83%E7%AD%94%E6%A1%88.pdf",
+      "reason": "Full official item/context and options plus official answer table actually read; separate existing authored practice from original quotation."
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001465-1",
+      "before": {
+        "senseId": "W001465-1",
+        "wordId": "W001465",
+        "word": "insist",
+        "senseOrder": 1,
+        "sensePos": "v.",
+        "meaningZh": "堅持",
+        "isExamSense": true,
+        "examEvidence": "學測108 文意選填Q32",
+        "answerForms": [
+          "insisted"
+        ],
+        "note": "考點：insist on V-ing",
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed",
+        "examEvidence": "學測108 英文Q32；官方完整題目／選項與答案表已核：E insisted",
+        "note": "2026-11-06：原文為父親堅持去市場，insisted on going；既有字庫句非原文逐字引述。 保留原練習英文及來源界線，本義查核不代表整詞通過。"
+      },
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0j196548669826315609/01-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf; https://www.ceec.edu.tw/files/file_pool/1/0j196548660460294627/02-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88.pdf",
+      "reason": "Full official item/context and options plus official answer table actually read; separate existing authored practice from original quotation."
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001727-1",
+      "before": {
+        "senseId": "W001727-1",
+        "wordId": "W001727",
+        "word": "requirement",
+        "senseOrder": 1,
+        "sensePos": "n.",
+        "meaningZh": "必修規定、必要條件",
+        "isExamSense": true,
+        "examEvidence": "學測107 詞彙題Q2",
+        "answerForms": [
+          "requirements"
+        ],
+        "note": "考點：course requirements",
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed",
+        "examEvidence": "學測107 英文Q2；官方完整題目／選項與答案表已核：A requirements",
+        "note": "2026-11-06：原題為大學課程的期末報告與口頭報告要求；既有畢業條件練習為另寫。 保留原練習英文及來源界線，本義查核不代表整詞通過。"
+      },
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0j076574893317534748/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf; https://www.ceec.edu.tw/files/file_pool/1/0j076574893773665710/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf",
+      "reason": "Full official item/context and options plus official answer table actually read; separate existing authored practice from original quotation."
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001717-1",
+      "before": {
+        "senseId": "W001717-1",
+        "wordId": "W001717",
+        "word": "regular",
+        "senseOrder": 1,
+        "sensePos": "adj.",
+        "meaningZh": "規律的；定期的；一般的",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：規則的；常例的；有秩序的；整齊的",
+        "status": "needs_check"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-06：此既有義項已依完整例句與詞典分列義核對。保留其他義、ID、answerForms、整詞詞性與狀態。 regular 的常客名詞為一般用法，不因少見而建議刪除。"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/regular",
+      "reason": "Review only this existing individual sense. Remove the stale pending-split or rare-delete advice; do not certify all other meanings."
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001717-2",
+      "before": {
+        "senseId": "W001717-2",
+        "wordId": "W001717",
+        "word": "regular",
+        "senseOrder": 2,
+        "sensePos": "n.",
+        "meaningZh": "常客",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "罕用，建議刪列｜待拆分；主表字義：規則的；常例的；有秩序的；整齊的",
+        "status": "needs_check"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-06：此既有義項已依完整例句與詞典分列義核對。保留其他義、ID、answerForms、整詞詞性與狀態。 regular 的常客名詞為一般用法，不因少見而建議刪除。"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/regular",
+      "reason": "Review only this existing individual sense. Remove the stale pending-split or rare-delete advice; do not certify all other meanings."
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000546-1",
+      "before": {
+        "senseId": "W000546-1",
+        "wordId": "W000546",
+        "word": "modern",
+        "senseOrder": 1,
+        "sensePos": "adj.",
+        "meaningZh": "現代的",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：現代人；有思想的人；現代的；時髦的",
+        "status": "needs_check"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-06：此既有義項已依完整例句與詞典分列義核對。保留其他義、ID、answerForms、整詞詞性與狀態。"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/modern",
+      "reason": "Review only this existing individual sense. Remove the stale pending-split or rare-delete advice; do not certify all other meanings."
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W003686-1",
+      "before": {
+        "senseId": "W003686-1",
+        "wordId": "W003686",
+        "word": "objective",
+        "senseOrder": 1,
+        "sensePos": "n.",
+        "meaningZh": "目標",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：目的；目標；宗旨；賓格",
+        "status": "needs_check"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-06：此既有義項已依完整例句與詞典分列義核對。保留其他義、ID、answerForms、整詞詞性與狀態。"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/objective",
+      "reason": "Review only this existing individual sense. Remove the stale pending-split or rare-delete advice; do not certify all other meanings."
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W003686-2",
+      "before": {
+        "senseId": "W003686-2",
+        "wordId": "W003686",
+        "word": "objective",
+        "senseOrder": 2,
+        "sensePos": "adj.",
+        "meaningZh": "客觀的",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：目的；目標；宗旨；賓格",
+        "status": "needs_check"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-06：此既有義項已依完整例句與詞典分列義核對。保留其他義、ID、answerForms、整詞詞性與狀態。"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/objective",
+      "reason": "Review only this existing individual sense. Remove the stale pending-split or rare-delete advice; do not certify all other meanings."
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W003851-1",
+      "before": {
+        "senseId": "W003851-1",
+        "wordId": "W003851",
+        "word": "resolve",
+        "senseOrder": 1,
+        "sensePos": "v.",
+        "meaningZh": "解決；下定決心",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：決定；分解；決心；使分解",
+        "status": "needs_check"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-06：此既有義項已依完整例句與詞典分列義核對。保留其他義、ID、answerForms、整詞詞性與狀態。"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/resolve",
+      "reason": "Review only this existing individual sense. Remove the stale pending-split or rare-delete advice; do not certify all other meanings."
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W003851-2",
+      "before": {
+        "senseId": "W003851-2",
+        "wordId": "W003851",
+        "word": "resolve",
+        "senseOrder": 2,
+        "sensePos": "n.",
+        "meaningZh": "決心",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：決定；分解；決心；使分解",
+        "status": "needs_check"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-06：此既有義項已依完整例句與詞典分列義核對。保留其他義、ID、answerForms、整詞詞性與狀態。"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/resolve",
+      "reason": "Review only this existing individual sense. Remove the stale pending-split or rare-delete advice; do not certify all other meanings."
+    }
+  ]
+}

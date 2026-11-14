@@ -1,0 +1,96 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const root='docs/unit-audit-20261105/',out='output/unit-audit-20261105/',prior='4e71e3a822d401b7b4f2042a7c3689a7d85cfdd2',read=p=>JSON.parse(fs.readFileSync(p,'utf8')),write=(p,v)=>fs.writeFileSync(p,JSON.stringify(v,null,2)+'\n');
+const snapshot=read(out+'LV2-U39-source-before.json'),source=read(out+'LV2-U39-full-source.json'),data=Object.fromEntries(['words','examples','senses'].map(k=>[k,read('public/data/v1/'+k+'.json')])),patches=[];
+const collins=w=>'https://www.collinsdictionary.com/dictionary/english/'+encodeURIComponent(w),rowFor=name=>{const c=source.find(c=>c.word===name);assert(c?.wordData,name);return c.wordData;};
+function add(dataset,id,after,reason,evidence,guards=[]){const key={words:'wordId',examples:'exampleId',senses:'senseId'}[dataset],row=data[dataset].find(r=>r[key]===id),old=snapshot[dataset].find(r=>r[key]===id);assert(row,id);assert.deepEqual(row,old);after=Object.fromEntries(Object.entries(after).filter(([k,v])=>JSON.stringify(row[k])!==JSON.stringify(v)));if(!Object.keys(after).length)return;const identityGuards={words:['word','pos','posAll','status'],examples:['word','sentenceEn','sentenceZh','blankSentence','answer'],senses:['wordId','word','sensePos','meaningZh','isExamSense','answerForms']}[dataset];const before=Object.fromEntries([...new Set([...Object.keys(after),...identityGuards,...guards])].map(k=>{assert(Object.hasOwn(row,k));return[k,row[k]];})),existing=patches.find(p=>p.dataset===dataset&&p.id===id);if(existing){Object.assign(existing.before,before);Object.assign(existing.after,after);existing.reason+=' '+reason;existing.evidence+='; '+evidence;}else patches.push({dataset,key,id,before,after,reason,evidence});}
+const word=(name,after,reason,evidence=collins(name))=>add('words',rowFor(name).wordId,after,reason,evidence),patterns=(name,en,zh,evidence)=>word(name,{usagePattern:en,usagePatternZh:zh},'Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.',evidence??'Actually viewed original pp345–353 and existing dictionary/practice fields.'),moreEn=(name,tail,reason,evidence=collins(name))=>word(name,{meaningEn:rowFor(name).meaningEn.replace(/[.;]\s*$/,'')+'; '+tail+'.'},reason,evidence);
+word('thirsty',{meaningEn:'feeling a need to drink; having a strong desire for something; also dry or lacking moisture, as soil.'},'Retain the directly supported dry-land adjective as well as desire and thirst.');
+word('trust',{meaningZh:'（動詞）信任；信賴；相信；受託；（名詞）信任；信託'},'Include the financial trust noun already defined in English; do not confuse trustee and settlor.');
+patterns('trust','trust sb with sth; trust sb to V; put/have trust in sb/sth','把某物／某事託付給某人；信任某人會做某事；信任某人／某事');
+word('neighbor',{meaningZh:'（名詞）鄰居；（另有動詞用法）鄰接；毗鄰而居；友好相處',meaningEn:rowFor('neighbor').meaningEn+'; separate verb use: to live nearby or associate on friendly terms.'},'Preserve the directly attested friendly-relations verb with a visible boundary from the noun-only headword.');
+word('wild',{meaningZh:'（名詞）荒野；荒地；（形容詞）野生的；野性的；野蠻的；（另有副詞用法）野生地；不受控制地',meaningEn:'(adj.) living or growing naturally without human cultivation, or uncontrolled and violent. (n.) natural surroundings away from human control, especially in the wild; remote regions in the wilds. Separate adverb use: in a natural or uncontrolled way.'},'Clarify the actual noun in the wild and preserve adjective/adverb uses without changing formal headword POS.','https://dictionary.cambridge.org/dictionary/english/wild');
+word('highway',{meaningZh:'公路；大道；大路；（比喻）直達目的的途徑；捷徑',meaningEn:rowFor('highway').meaningEn+'; figuratively, a direct path or course to an objective.'},'The inherited direct-route metaphor is supported and qualified, not deleted.');
+word('speed',{usagePatternZh:'速限；以高速／全速；加速（speed up 的過去式／過去分詞常用 speeded up；快速行進常用 sped；兩種詞形須依用法選擇）'},'Keep both directly listed forms and make the source usage qualification visible.');
+word('fox',{meaningZh:'（名詞）狐狸；狡猾的人；（另有動詞用法）奸狡地行動；使／（書頁等）生斑',meaningEn:rowFor('fox').meaningEn+'; separate verb uses include acting cunningly and causing or developing discoloured spots on paper.'},'Keep the real book-foxing verb with its sense boundary.');
+word('wolf',{meaningZh:'（名詞）狼；殘忍貪婪之人；（比喻）極度窮困；（另有動詞用法）狼吞虎嚥',meaningEn:'a wild canine animal; figuratively a cruel or greedy person, or poverty as in keep the wolf from the door. Separate verb use: to eat greedily. Separate capitalized proper name Wolf: Hugo Wolf, Austrian composer (1860–1903).'},'Retain the real animal, figurative, verb and capitalized composer meanings separately.');
+word('giraffe',{meaningZh:'長頸鹿；（天文，the Giraffe）鹿豹座',meaningEn:rowFor('giraffe').meaningEn+'; the Giraffe is also the constellation Camelopardalis.'},'Retain the supported constellation with its capitalization/domain.','https://www.collinsdictionary.com/us/word-lists/star-constellations');
+word('goat',{meaningZh:'山羊；替罪羊；（非正式）色鬼',meaningEn:rowFor('goat').meaningEn+'; also a scapegoat, or informally a lecherous man.'},'Keep both directly attested figurative nouns and label register.');
+word('hippopotamus',{meaningEn:'a large thick-skinned African mammal that lives in or near water, informally called a hippo. Separate capitalized place name Hippo: the ancient North African town near present-day Annaba.'},'Separate the real Hippo place name from the animal; leave inherited ipecac alias pending exact historical evidence.','https://www.collinsdictionary.com/dictionary/english/hippo');
+word('panda',{meaningEn:'a giant panda, a black-and-white bamboo-eating mammal of China; panda can also refer to the red or lesser panda.'},'Replace a literal truncated fragment with complete supported animal definitions; preserve both recorded pandas.');
+word('ape',{meaningZh:'無尾猿；（另有動詞用法）模仿；應用程式評價'},'Add the actually printed and verified verb while preserving the unrelated inherited acronym claim as pending; keep noun-only formal POS.');
+word('grape',{meaningEn:rowFor('grape').meaningEn+'; also the vine bearing these fruits.'},'Include the real vine noun already present in Chinese.');
+word('peach',{meaningEn:'the peach tree or its soft juicy fruit; a pale pinkish-orange colour; informally, an especially pleasing or attractive person or thing.',meaningZh:'桃子；桃樹；桃色；（非正式）美人兒；討人喜歡的人或物'},'Repair the dangling English fragment while retaining tree, colour and informal person meanings.');
+word('pear',{meaningEn:rowFor('pear').meaningEn+'; also the tree bearing this fruit.'},'Restore the directly supported tree noun; keep inherited 梨木 separately pending exact dictionary scope.');
+word('guava',{meaningEn:'a tropical tree of the genus Psidium, especially P. guajava, or its edible round fruit with many hard seeds.'},'Replace duplicate tree descriptions with both plant and fruit senses without requiring all cultivars to have yellow skin.');
+word('step',{meaningZh:'（名詞）步驟；步；步幅；腳步聲；階梯；舞步；措施；（動詞）跨步；踩；踏',meaningEn:rowFor('step').meaningEn+'; also a stair, a dance movement or a measure taken; as a verb, to move a foot or put it on something.'},'Include the actually printed lexical verb and related noun senses already used by the constructions.');
+word('ink',{meaningZh:'（名詞）墨水；墨汁；（動詞）塗墨水於；（非正式）簽署',meaningEn:rowFor('ink').meaningEn+'; as a verb, to mark or cover with ink, or informally sign an agreement.'},'Retain the cephalopod fluid and add the printed agreement verb.');
+patterns('ink','write in ink; ink a deal; ink sth','用墨水書寫；簽署協議；在某物上塗墨水');
+word('policeman',{meaningZh:'（policeman）男警察；警官；（實驗室）澱帚；（cop，另有動詞用法）抓住',meaningEn:'policeman: a male police officer; cop: an informal word for a police officer. Separate laboratory noun policeman: a rubber-tipped instrument for removing solids from glassware. Separate verb cop: to catch or take.'},'Preserve the laboratory scraper and separate the combined formal identity’s cop verb; do not change word, aliases or headword POS.','https://www.collinsdictionary.com/dictionary/english/policeman; https://www.collinsdictionary.com/dictionary/english/cop; https://www.merriam-webster.com/dictionary/policeman');
+word('hunt',{meaningEn:'(v.) to pursue wild animals, track someone, or search for something. (n.) an act of hunting or searching, or the area in which a hunt takes place.'},'Keep the directly supported hunting-area noun with the other current meanings.');
+word('hunter',{meaningEn:'a person who hunts or searches for something; also an animal, especially a dog, trained for hunting.'},'Retain the real hunting-dog and seeker nouns, not just the person hunting animals.');
+word('bun',{meaningZh:'小麵包；（醫學縮寫 BUN）血液尿素氮',meaningEn:rowFor('bun').meaningEn+'; separately, capitalized BUN abbreviates blood urea nitrogen.'},'Retain the real medical acronym and visibly distinguish its capitalization.','https://www.collinsdictionary.com/us/dictionary/english/bun');
+word('barbecue',{meaningZh:'（名詞）烤肉；燒烤食物；烤肉聚會；烤肉架；（動詞）燒烤',meaningEn:'(n.) an outdoor cooking event, the grill used for it, or food cooked this way. (v.) to cook food over an outdoor grill or fire.'},'Include the printed equipment and verb; do not limit the word to a whole carcass or sauce.');
+patterns('barbecue','have a barbecue; cook on a barbecue; barbecue meat/vegetables','舉辦烤肉聚會；在烤肉架上烹調；燒烤肉類／蔬菜');
+patterns('pork','roast pork; a slice of pork','烤豬肉；一片豬肉');
+word('forest',{meaningZh:'（名詞）森林；林區；（另有動詞用法）在……植樹',meaningEn:rowFor('forest').meaningEn+'; separate verb use: to plant an area with trees.'},'Keep the supported afforestation verb visibly separate from noun-only formal POS.');
+patterns('comb','a comb; comb one’s hair; comb an area for sth','一把梳子；梳頭髮；在某區域仔細搜尋某物');
+word('hurry',{meaningEn:'(n.) a state of needing to act quickly. (v.) to move or act quickly, urge someone to do so, or send someone or something quickly.'},'The old English had only a noun; include both existing printed verb uses.');
+word('thirst',{meaningEn:'(n.) a need to drink or a strong desire for something. Separate verb use: to feel thirst or strongly desire something, often thirst for/after.'},'Separate the inherited verb wording from the noun-only formal headword while adding the recorded desire noun.');
+patterns('thirst','quench one’s thirst; a thirst for knowledge; thirst for/after sth','解渴；求知慾；渴望某事物（另有動詞用法）');
+word('trustee',{meaningZh:'受託人；理事',meaningEn:rowFor('trustee').meaningEn+'; also a member of the board administering an institution. The person creating the trust is the settlor or trustor.'},'Remove the confirmed reversal 委託者, preserving recipient trustee and board-member meanings.','https://www.collinsdictionary.com/dictionary/english/trustee; https://www.collinsdictionary.com/dictionary/english/settlor');
+word('neighborhood',{meaningZh:'附近；鄰近；社區；鄰里居民'},'Include the local area and people meanings already explicit in both actual examples and English.');
+word('wilderness',{meaningZh:'荒野；荒地；（比喻）雜亂的大量事物',meaningEn:'a natural uncultivated region; a large tangled mass or collection. In the political phrase in the wilderness, being out of influence. Separate proper name the Wilderness: the Virginia region associated with Civil War battles.'},'Restore the missing core and collection senses while preserving the true political and geographical meanings.');
+word('wildlife',{usagePatternZh:'保護野生動植物；……的野生動植物；當地野生動植物'},'Keep animals and plants consistently in all three actual construction translations.');
+word('release',{meaningEn:'(v.) to set free, let out, discharge, free from an obligation, or make a film/product public. (n.) the act of releasing, a released product, or relief after tension.'},'Include the existing noun and discharge/obligation meanings instead of only two verb senses.');
+word('cunning',{meaningZh:'（形容詞）狡猾的；巧妙的；（美式）可愛的；（名詞）狡猾；狡詐',meaningEn:'(adj.) clever or skilful, often in deception; in US use, cute or delicately attractive. (n.) skill or craftiness, especially in deceiving.'},'Correct the duplicated 狡猾的的 and make the actual noun and real US cute adjective clear.');
+word('mimic',{meaningZh:'（動詞）模仿；（名詞）效顰者；模仿者；（另有形容詞用法）模仿的；摹擬的',meaningEn:rowFor('mimic').meaningEn+'; separate adjective use: imitative or simulated.'},'Include the missing lexical verb while retaining the real related adjective.');
+patterns('mimic','mimic sb’s voice; a talented mimic; a mimic battle','模仿某人的聲音；有才華的模仿者；模擬戰鬥（形容詞用法）');
+word('monkey',{meaningZh:'（名詞）猴子；（廣義）猿；打樁錘；淘氣的人；（另有動詞用法）胡鬧',meaningEn:rowFor('monkey').meaningEn+'; more broadly a primate; a mischievous person; a pile-driver ram. Separate informal verb use, especially monkey around: to fool about.'},'Keep the attested machine and broader primate nouns; clarify the previously bare 淘氣 gloss.','https://www.dictionary.com/browse/monkey');
+word('gorilla',{meaningZh:'大猩猩；（貶義）殘暴的男人；（俚語）歹徒',meaningEn:rowFor('gorilla').meaningEn+'; figuratively a brutish person, or slang for a thug.'},'Retain the attested human and thug senses with their register.');
+word('grapefruit',{meaningZh:'葡萄柚'},'Correct only the definite 軸→柚 transcription error; original print and MOE agree.','https://dict.revised.moe.edu.tw/dictView.jsp?ID=26394&la=1&powerMode=0');
+word('berry',{meaningZh:'（名詞）漿果；（另有動詞用法）採集漿果',meaningEn:rowFor('berry').meaningEn+'; separate verb use: to gather berries.'},'Preserve the real gathering verb and show it separately from the noun-only headword.');
+word('juicy',{meaningZh:'多汁液的；多水分的；（故事、八卦等）生動有趣的',meaningEn:rowFor('juicy').meaningEn+'; informally of stories or gossip, vividly interesting or sensational.'},'Include the recorded lively-story sense; retain the inherited sexually attractive adjective rather than erase it.');
+word('melon',{meaningZh:'瓜；甜瓜；（美式俚語）紅利；分配的利益或贓物',meaningEn:rowFor('melon').meaningEn+'; in US slang, profits, extra dividends or spoils for distribution, especially cut a melon.'},'Keep the actual slang profit/spoils sense with its construction and register.');
+word('police',{meaningEn:rowFor('police').meaningEn+'; as a verb, to keep order in, patrol, or supervise compliance.'},'Include the formal verb already reflected in approved forms and Chinese.');
+word('primitive',{meaningZh:'（形容詞）原始的；上古的；簡陋的；（另有名詞用法）原始人；早期藝術家',meaningEn:rowFor('primitive').meaningEn+'; separate noun uses include an early person and an early or untrained artist.'},'Retain the true artist/person nouns separately from adjective-only formal POS.');
+word('pepper',{meaningEn:rowFor('pepper').meaningEn+'; also the seasoning made from peppercorns, and the fruit or plant of capsicums, including sweet/bell peppers.'},'Include the actual powder and bell-pepper senses, retaining the original pepper plant and inherited 花椒 pending exact breadth.');
+patterns('pepper','salt and pepper; a green/red pepper; ground black pepper','鹽和胡椒粉；一顆青椒／紅椒；黑胡椒粉');
+word('mint',{meaningZh:'（名詞）薄荷；造幣廠；（非正式）鉅額；（另有動詞用法）鑄造',meaningEn:rowFor('mint').meaningEn+'; also a coin-producing establishment, informally a fortune; separate verb use: to make coins.'},'Keep all current noun and verb meanings with visible boundaries; the old English was herb-only.');
+patterns('mint','mint sauce; the Royal Mint; make a mint','薄荷醬；皇家造幣廠；賺大錢（非正式）');
+word('rush',{meaningEn:rowFor('rush').meaningEn+'; also a strong or rapid flow, and a separate plant noun for grasslike marsh plants such as Juncus.'},'Preserve the directly supported rush-plant noun and flow coverage.');
+word('hasten',{meaningEn:'to make something happen sooner or move faster; to hurry, including hasten to do or say something.'},'Include the actual transitive acceleration sense as well as moving quickly.');
+for(const[name,en,zh]of [
+ ['fox','a fox; a cunning fox; foxes','一隻狐狸；狡猾的狐狸；狐狸的複數'],
+ ['wolf','a pack of wolves; wolf down food; keep the wolf from the door','一群狼；狼吞虎嚥地吃東西（動詞）；勉強維持生計'],
+ ['giraffe','a giraffe; a giraffe’s long neck','一隻長頸鹿；長頸鹿的長脖子'],
+ ['zebra','a zebra; a zebra’s stripes','一隻斑馬；斑馬的條紋'],
+ ['goat','a goat; a herd of goats; goat’s milk','一隻山羊；一群山羊；山羊奶'],
+ ['hippopotamus','a hippopotamus; hippopotamuses; a hippo','一隻河馬；河馬的複數；河馬的非正式簡稱'],
+ ['panda','a giant panda; a red panda','一隻大熊貓；一隻小熊貓'],
+ ['ape','an ape; ape sb’s behaviour','一隻猿；模仿某人的行為（另有動詞用法）'],
+ ['papaya','a papaya; a slice/piece of papaya','一個木瓜；一片／一塊木瓜'],
+ ['peach','a peach; a peach tree; peach-coloured','一顆桃子；一棵桃樹；桃色的'],
+ ['guava','a guava; a guava tree','一顆番石榴；一棵番石榴樹'],
+ ['mango','a ripe mango; mangos/mangoes','一顆熟芒果；芒果的兩種複數'],
+ ['watermelon','a watermelon; a slice of watermelon','一顆西瓜；一片西瓜'],
+ ['bakery','at a bakery; buy bread at the bakery','在麵包店；在麵包店買麵包'],
+ ['bun','a hamburger bun; a dozen buns','一個漢堡麵包；一打小圓麵包'],
+ ['trustee','a trustee; a board of trustees','一名受託人／理事；理事會'],
+ ['wilderness','in the wilderness; a wilderness area; a wilderness of sth','在荒野；一片荒野地區；雜亂的一大堆事物'],
+ ['freeway','on a freeway; a freeway exit','在高速公路上；高速公路出口'],
+ ['cunning','a cunning plan; show cunning','巧妙／狡猾的計畫；展現狡黠'],
+ ['chimpanzee','a chimpanzee; a group of chimpanzees','一隻黑猩猩；一群黑猩猩'],
+ ['gorilla','a gorilla; a group of gorillas','一隻大猩猩；一群大猩猩'],
+ ['grapefruit','a grapefruit; half a grapefruit','一顆葡萄柚；半顆葡萄柚'],
+ ['berry','fresh berries; a bowl of berries','新鮮莓果；一碗莓果'],
+ ['juicy','juicy fruit; juicy gossip','多汁的水果；有趣／聳動的八卦'],
+ ['haste','in haste; make haste','匆忙地；趕快']
+])patterns(name,en,zh);
+for(const[id,pos]of Object.entries({EXae3bf712:'n.',EXe657083b:'v.',EX5bee4666:'v.',EX4b304221:'v.',EX3524e77d:'v.'}))add('examples',id,{sensePos:pos},'Identify the actual cloze word in its unchanged full sentence; leave its null hint untouched.',id==='EXae3bf712'?'https://dictionary.cambridge.org/dictionary/english/wild':'Complete unchanged sentence and directly read Collins verb/noun definitions.');
+for(const[id,pos,hint]of [['EX3f803351','v.','跳（舞）'],['EX952c7b01','v.','跳舞'],['EX9f9099b9','n.','舞會'],['EXa0ac30ff','n.','一支舞'],['EXe6f930cd','n.','舞蹈種類']])add('examples',id,{sensePos:pos,meaningHint:hint},'Narrow mixed POS and a pre-existing broad hint to the actual cloze use; this does not label every old meaning incorrect.',collins('dance'));
+add('examples','EX649313d0',{meaningHint:'相信……的存在（believe in）'},'Precision of an existing hint for the Santa-existence context; English and answer unchanged.',collins('believe'));
+const paper='https://www.ceec.edu.tw/files/file_pool/1/0j196548669826315609/01-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf',answer='https://www.ceec.edu.tw/files/file_pool/1/0j196548660460294627/02-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88.pdf';
+add('senses','W001933-1',{examEvidence:'108學測英文文意選填Q36，印刷第3頁，C trusted；試題：'+paper+'；答案：'+answer,note:'已核官方完整健忘父親段落及答案，be trusted with 指被信任而託付秘密。既有 EX85a06a75 的新店員／保險箱鑰匙是獨立例句，不冒稱原題。此精確考義不代表整詞通過。',status:'reviewed'},'Resolve this draft sense from full official passage and answer while preserving the independent exercise and its status.',paper+'; '+answer);
+write(root+'LV2-U39-patches.json',{unit:'LV2-U39',baseCommit:'29cfc684d7a11b07f09988c478d30358830f1951',baseCheckpoint:prior,scope:'Exact fields only. Formal headword POS/status, practice English/Chinese/cloze/answers and empty hints remain unchanged. These manifests are drafts until actual application and App after.',patches});
+console.log(JSON.stringify({rows:patches.length,fields:patches.reduce((n,p)=>n+Object.keys(p.after).length,0),productApplied:false}));

@@ -1,0 +1,1486 @@
+{
+  "unit": "LV2-U39",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "baseCheckpoint": "4e71e3a822d401b7b4f2042a7c3689a7d85cfdd2",
+  "scope": "Exact fields only. Formal headword POS/status, practice English/Chinese/cloze/answers and empty hints remain unchanged. These manifests are drafts until actual application and App after.",
+  "patches": [
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001903",
+      "before": {
+        "meaningEn": "feeling a need to drink something; having a strong desire for something",
+        "word": "thirsty",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningEn": "feeling a need to drink; having a strong desire for something; also dry or lacking moisture, as soil."
+      },
+      "reason": "Retain the directly supported dry-land adjective as well as desire and thirst.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/thirsty"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001933",
+      "before": {
+        "meaningZh": "信任；信賴；相信；受託",
+        "word": "trust",
+        "pos": "v./n.",
+        "posAll": [
+          "v.",
+          "n."
+        ],
+        "status": "reviewed",
+        "usagePattern": "trust + N; trust sb to V; put/have trust in N",
+        "usagePatternZh": "信任某人；信任某人去做某事；信任某人"
+      },
+      "after": {
+        "meaningZh": "（動詞）信任；信賴；相信；受託；（名詞）信任；信託",
+        "usagePattern": "trust sb with sth; trust sb to V; put/have trust in sb/sth",
+        "usagePatternZh": "把某物／某事託付給某人；信任某人會做某事；信任某人／某事"
+      },
+      "reason": "Include the financial trust noun already defined in English; do not confuse trustee and settlor. Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/trust; Actually viewed original pp345–353 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001576",
+      "before": {
+        "meaningZh": "鄰居；鄰接；毗鄰而居；友好",
+        "meaningEn": "a person who lives or is located near another person or place; a country or place that is near or next to another",
+        "word": "neighbor",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（名詞）鄰居；（另有動詞用法）鄰接；毗鄰而居；友好相處",
+        "meaningEn": "a person who lives or is located near another person or place; a country or place that is near or next to another; separate verb use: to live nearby or associate on friendly terms."
+      },
+      "reason": "Preserve the directly attested friendly-relations verb with a visible boundary from the noun-only headword.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/neighbor"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001984",
+      "before": {
+        "meaningZh": "荒野；荒地；野性的；野蠻的",
+        "meaningEn": "living or growing in natural conditions, not tamed or cultivated by people; a natural area of land that is not farmed or built on",
+        "word": "wild",
+        "pos": "adj./adv./n.",
+        "posAll": [
+          "adj.",
+          "adv.",
+          "n."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（名詞）荒野；荒地；（形容詞）野生的；野性的；野蠻的；（另有副詞用法）野生地；不受控制地",
+        "meaningEn": "(adj.) living or growing naturally without human cultivation, or uncontrolled and violent. (n.) natural surroundings away from human control, especially in the wild; remote regions in the wilds. Separate adverb use: in a natural or uncontrolled way."
+      },
+      "reason": "Clarify the actual noun in the wild and preserve adjective/adverb uses without changing formal headword POS.",
+      "evidence": "https://dictionary.cambridge.org/dictionary/english/wild"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001431",
+      "before": {
+        "meaningZh": "公路；大道；捷徑；大路",
+        "meaningEn": "a main road, especially one that connects towns or cities",
+        "word": "highway",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "公路；大道；大路；（比喻）直達目的的途徑；捷徑",
+        "meaningEn": "a main road, especially one that connects towns or cities; figuratively, a direct path or course to an objective."
+      },
+      "reason": "The inherited direct-route metaphor is supported and qualified, not deleted.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/highway"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001833",
+      "before": {
+        "usagePatternZh": "最高速限；以高速／全速；加速",
+        "word": "speed",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "usagePatternZh": "速限；以高速／全速；加速（speed up 的過去式／過去分詞常用 speeded up；快速行進常用 sped；兩種詞形須依用法選擇）"
+      },
+      "reason": "Keep both directly listed forms and make the source usage qualification visible.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/speed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001383",
+      "before": {
+        "meaningZh": "狐狸；狡猾的人；奸狡地行動；(書頁)生斑",
+        "meaningEn": "a wild animal related to the dog, with reddish-brown fur, a pointed face, and a bushy tail; a person who is clever and good at tricking others",
+        "word": "fox",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "reviewed",
+        "usagePattern": "a sly/cunning fox; as clever as a fox",
+        "usagePatternZh": "狡猾的狐狸；像狐狸一樣聰明"
+      },
+      "after": {
+        "meaningZh": "（名詞）狐狸；狡猾的人；（另有動詞用法）奸狡地行動；使／（書頁等）生斑",
+        "meaningEn": "a wild animal related to the dog, with reddish-brown fur, a pointed face, and a bushy tail; a person who is clever and good at tricking others; separate verb uses include acting cunningly and causing or developing discoloured spots on paper.",
+        "usagePattern": "a fox; a cunning fox; foxes",
+        "usagePatternZh": "一隻狐狸；狡猾的狐狸；狐狸的複數"
+      },
+      "reason": "Keep the real book-foxing verb with its sense boundary. Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/fox; Actually viewed original pp345–353 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001991",
+      "before": {
+        "meaningZh": "狼；殘忍貪婪之人；極度窮困；狼吞虎嚥",
+        "meaningEn": "any of various predatory carnivorous canine mammals of North America and Eurasia that usually hunt in packs; Austrian composer (1860-1903)",
+        "word": "wolf",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft",
+        "usagePattern": "a/the wolf; wolf of N",
+        "usagePatternZh": "一隻／那隻狼；……的狼"
+      },
+      "after": {
+        "meaningZh": "（名詞）狼；殘忍貪婪之人；（比喻）極度窮困；（另有動詞用法）狼吞虎嚥",
+        "meaningEn": "a wild canine animal; figuratively a cruel or greedy person, or poverty as in keep the wolf from the door. Separate verb use: to eat greedily. Separate capitalized proper name Wolf: Hugo Wolf, Austrian composer (1860–1903).",
+        "usagePattern": "a pack of wolves; wolf down food; keep the wolf from the door",
+        "usagePatternZh": "一群狼；狼吞虎嚥地吃東西（動詞）；勉強維持生計"
+      },
+      "reason": "Retain the real animal, figurative, verb and capitalized composer meanings separately. Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/wolf; Actually viewed original pp345–353 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001400",
+      "before": {
+        "meaningZh": "長頸鹿；鹿豹座",
+        "meaningEn": "tallest living quadruped; having a spotted coat and small horns and very long neck and legs; of savannahs of tropical Africa",
+        "word": "giraffe",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft",
+        "usagePattern": "a/the giraffe; giraffe of N",
+        "usagePatternZh": "長頸鹿；……的長頸鹿"
+      },
+      "after": {
+        "meaningZh": "長頸鹿；（天文，the Giraffe）鹿豹座",
+        "meaningEn": "tallest living quadruped; having a spotted coat and small horns and very long neck and legs; of savannahs of tropical Africa; the Giraffe is also the constellation Camelopardalis.",
+        "usagePattern": "a giraffe; a giraffe’s long neck",
+        "usagePatternZh": "一隻長頸鹿；長頸鹿的長脖子"
+      },
+      "reason": "Retain the supported constellation with its capitalization/domain. Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/us/word-lists/star-constellations; Actually viewed original pp345–353 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001403",
+      "before": {
+        "meaningZh": "山羊；替罪羊；色鬼",
+        "meaningEn": "any of numerous agile ruminants related to sheep but having a beard and straight horns",
+        "word": "goat",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft",
+        "usagePattern": "a/the goat; goat of N",
+        "usagePatternZh": "山羊；……的山羊"
+      },
+      "after": {
+        "meaningZh": "山羊；替罪羊；（非正式）色鬼",
+        "meaningEn": "any of numerous agile ruminants related to sheep but having a beard and straight horns; also a scapegoat, or informally a lecherous man.",
+        "usagePattern": "a goat; a herd of goats; goat’s milk",
+        "usagePatternZh": "一隻山羊；一群山羊；山羊奶"
+      },
+      "reason": "Keep both directly attested figurative nouns and label register. Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/goat; Actually viewed original pp345–353 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001434",
+      "before": {
+        "meaningEn": "massive thick-skinned herbivorous animal living in or around rivers of tropical Africa; an ancient Numidian town in northwestern Africa adjoining present-day Annaba in northeastern Algeria",
+        "word": "hippopotamus/hippo",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft",
+        "usagePattern": "a/the hippopotamus; hippopotamus of N",
+        "usagePatternZh": "一隻河馬／該隻河馬；……的河馬"
+      },
+      "after": {
+        "meaningEn": "a large thick-skinned African mammal that lives in or near water, informally called a hippo. Separate capitalized place name Hippo: the ancient North African town near present-day Annaba.",
+        "usagePattern": "a hippopotamus; hippopotamuses; a hippo",
+        "usagePatternZh": "一隻河馬；河馬的複數；河馬的非正式簡稱"
+      },
+      "reason": "Separate the real Hippo place name from the animal; leave inherited ipecac alias pending exact historical evidence. Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/hippo; Actually viewed original pp345–353 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001612",
+      "before": {
+        "meaningEn": "large black-and-white herbivorous mammal of bamboo forests of China and Tibet; in some classifications considered a member of the bear fa...",
+        "word": "panda",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft",
+        "usagePattern": "a/the panda; panda of N",
+        "usagePatternZh": "該貓熊；……的貓熊"
+      },
+      "after": {
+        "meaningEn": "a giant panda, a black-and-white bamboo-eating mammal of China; panda can also refer to the red or lesser panda.",
+        "usagePattern": "a giant panda; a red panda",
+        "usagePatternZh": "一隻大熊貓；一隻小熊貓"
+      },
+      "reason": "Replace a literal truncated fragment with complete supported animal definitions; preserve both recorded pandas. Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/panda; Actually viewed original pp345–353 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001040",
+      "before": {
+        "meaningZh": "無尾猿；應用程式評價",
+        "word": "ape",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft",
+        "usagePattern": "an/the ape; ape of N",
+        "usagePatternZh": "一隻猿／那隻猿；……的猿"
+      },
+      "after": {
+        "meaningZh": "無尾猿；（另有動詞用法）模仿；應用程式評價",
+        "usagePattern": "an ape; ape sb’s behaviour",
+        "usagePatternZh": "一隻猿；模仿某人的行為（另有動詞用法）"
+      },
+      "reason": "Add the actually printed and verified verb while preserving the unrelated inherited acronym claim as pending; keep noun-only formal POS. Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/ape; Actually viewed original pp345–353 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001413",
+      "before": {
+        "meaningEn": "a small, round, juicy fruit, usually green or purple, that grows in bunches on a vine",
+        "word": "grape",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningEn": "a small, round, juicy fruit, usually green or purple, that grows in bunches on a vine; also the vine bearing these fruits."
+      },
+      "reason": "Include the real vine noun already present in Chinese.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/grape"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001625",
+      "before": {
+        "meaningEn": "cultivated in temperate regions; downy juicy fruit with sweet yellowish or whitish flesh",
+        "meaningZh": "桃子；桃樹；桃色；美人兒",
+        "word": "peach",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft",
+        "usagePattern": "a/the peach; peach of N",
+        "usagePatternZh": "該桃子；……的桃子"
+      },
+      "after": {
+        "meaningEn": "the peach tree or its soft juicy fruit; a pale pinkish-orange colour; informally, an especially pleasing or attractive person or thing.",
+        "meaningZh": "桃子；桃樹；桃色；（非正式）美人兒；討人喜歡的人或物",
+        "usagePattern": "a peach; a peach tree; peach-coloured",
+        "usagePatternZh": "一顆桃子；一棵桃樹；桃色的"
+      },
+      "reason": "Repair the dangling English fragment while retaining tree, colour and informal person meanings. Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/peach; Actually viewed original pp345–353 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001627",
+      "before": {
+        "meaningEn": "a sweet juicy fruit that is narrow at the top and wide at the bottom",
+        "word": "pear",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningEn": "a sweet juicy fruit that is narrow at the top and wide at the bottom; also the tree bearing this fruit."
+      },
+      "reason": "Restore the directly supported tree noun; keep inherited 梨木 separately pending exact dictionary scope.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/pear"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001417",
+      "before": {
+        "meaningEn": "small tropical shrubby tree bearing small yellowish fruit; small tropical American shrubby tree; widely cultivated in warm regions for its sweet globular yellow fruit",
+        "word": "guava",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft",
+        "usagePattern": "a/the guava; guava of N",
+        "usagePatternZh": "一顆芭樂／該顆芭樂；……的芭樂"
+      },
+      "after": {
+        "meaningEn": "a tropical tree of the genus Psidium, especially P. guajava, or its edible round fruit with many hard seeds.",
+        "usagePattern": "a guava; a guava tree",
+        "usagePatternZh": "一顆番石榴；一棵番石榴樹"
+      },
+      "reason": "Replace duplicate tree descriptions with both plant and fruit senses without requiring all cultivars to have yellow skin. Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/guava; Actually viewed original pp345–353 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001847",
+      "before": {
+        "meaningZh": "步驟；步；步幅；腳步聲",
+        "meaningEn": "a movement made by lifting your foot and putting it down in a different place, or one of a series of actions you take in order to achieve something",
+        "word": "step",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（名詞）步驟；步；步幅；腳步聲；階梯；舞步；措施；（動詞）跨步；踩；踏",
+        "meaningEn": "a movement made by lifting your foot and putting it down in a different place, or one of a series of actions you take in order to achieve something; also a stair, a dance movement or a measure taken; as a verb, to move a foot or put it on something."
+      },
+      "reason": "Include the actually printed lexical verb and related noun senses already used by the constructions.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/step"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001464",
+      "before": {
+        "meaningZh": "墨水；墨汁；塗墨水於；簽署",
+        "meaningEn": "a liquid used for printing or writing or drawing; dark protective fluid ejected into the water by cuttlefish and other cephalopods",
+        "word": "ink",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "status": "draft",
+        "usagePattern": "ink + N; ink to V; an/the ink",
+        "usagePatternZh": "以墨水書寫某物；用墨水簽署；一瓶墨水／該瓶墨水"
+      },
+      "after": {
+        "meaningZh": "（名詞）墨水；墨汁；（動詞）塗墨水於；（非正式）簽署",
+        "meaningEn": "a liquid used for printing or writing or drawing; dark protective fluid ejected into the water by cuttlefish and other cephalopods; as a verb, to mark or cover with ink, or informally sign an agreement.",
+        "usagePattern": "write in ink; ink a deal; ink sth",
+        "usagePatternZh": "用墨水書寫；簽署協議；在某物上塗墨水"
+      },
+      "reason": "Retain the cephalopod fluid and add the printed agreement verb. Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/ink; Actually viewed original pp345–353 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001645",
+      "before": {
+        "meaningZh": "警察；澱帚；警官；抓住",
+        "meaningEn": "a member of the police force whose job is to make sure people obey the law and to protect people and property",
+        "word": "policeman/cop",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（policeman）男警察；警官；（實驗室）澱帚；（cop，另有動詞用法）抓住",
+        "meaningEn": "policeman: a male police officer; cop: an informal word for a police officer. Separate laboratory noun policeman: a rubber-tipped instrument for removing solids from glassware. Separate verb cop: to catch or take."
+      },
+      "reason": "Preserve the laboratory scraper and separate the combined formal identity’s cop verb; do not change word, aliases or headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/policeman; https://www.collinsdictionary.com/dictionary/english/cop; https://www.merriam-webster.com/dictionary/policeman"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001442",
+      "before": {
+        "meaningEn": "to chase and kill wild animals for food or sport; to search carefully for something you want to find",
+        "word": "hunt",
+        "pos": "v./n.",
+        "posAll": [
+          "v.",
+          "n."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningEn": "(v.) to pursue wild animals, track someone, or search for something. (n.) an act of hunting or searching, or the area in which a hunt takes place."
+      },
+      "reason": "Keep the directly supported hunting-area noun with the other current meanings.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/hunt"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001443",
+      "before": {
+        "meaningEn": "a person who hunts wild animals",
+        "word": "hunter",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningEn": "a person who hunts or searches for something; also an animal, especially a dog, trained for hunting."
+      },
+      "reason": "Retain the real hunting-dog and seeker nouns, not just the person hunting animals.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/hunter"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001116",
+      "before": {
+        "meaningZh": "小麪包；血液尿素氮",
+        "meaningEn": "small rounded bread either plain or sweet",
+        "word": "bun",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft",
+        "usagePattern": "a/the bun; bun of N",
+        "usagePatternZh": "一個小圓麵包；……的小圓麵包"
+      },
+      "after": {
+        "meaningZh": "小麵包；（醫學縮寫 BUN）血液尿素氮",
+        "meaningEn": "small rounded bread either plain or sweet; separately, capitalized BUN abbreviates blood urea nitrogen.",
+        "usagePattern": "a hamburger bun; a dozen buns",
+        "usagePatternZh": "一個漢堡麵包；一打小圓麵包"
+      },
+      "reason": "Retain the real medical acronym and visibly distinguish its capitalization. Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/us/dictionary/english/bun; Actually viewed original pp345–353 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001071",
+      "before": {
+        "meaningZh": "烤肉；燒烤",
+        "meaningEn": "meat that has been barbecued or grilled in a highly seasoned sauce; a cookout in which food is cooked over an open fire; especially a whole animal carcass roasted on a spit",
+        "word": "barbecue",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "status": "draft",
+        "usagePattern": "barbecue + N; barbecue to V; a/the barbecue",
+        "usagePatternZh": "燒烤……；烤肉以……；一場烤肉野餐"
+      },
+      "after": {
+        "meaningZh": "（名詞）烤肉；燒烤食物；烤肉聚會；烤肉架；（動詞）燒烤",
+        "meaningEn": "(n.) an outdoor cooking event, the grill used for it, or food cooked this way. (v.) to cook food over an outdoor grill or fire.",
+        "usagePattern": "have a barbecue; cook on a barbecue; barbecue meat/vegetables",
+        "usagePatternZh": "舉辦烤肉聚會；在烤肉架上烹調；燒烤肉類／蔬菜"
+      },
+      "reason": "Include the printed equipment and verb; do not limit the word to a whole carcass or sauce. Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/barbecue; Actually viewed original pp345–353 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001649",
+      "before": {
+        "usagePattern": "a/the pork; pork of N",
+        "usagePatternZh": "該豬肉；……的豬肉",
+        "word": "pork",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "usagePattern": "roast pork; a slice of pork",
+        "usagePatternZh": "烤豬肉；一片豬肉"
+      },
+      "reason": "Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "Actually viewed original pp345–353 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001374",
+      "before": {
+        "meaningZh": "森林；林區；植樹於",
+        "meaningEn": "a large area of land that is thickly covered with trees",
+        "word": "forest",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（名詞）森林；林區；（另有動詞用法）在……植樹",
+        "meaningEn": "a large area of land that is thickly covered with trees; separate verb use: to plant an area with trees."
+      },
+      "reason": "Keep the supported afforestation verb visibly separate from noun-only formal POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/forest"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001177",
+      "before": {
+        "usagePattern": "comb + N; comb to V; a/the comb",
+        "usagePatternZh": "梳理……；梳頭以做……；一把／那把梳子",
+        "word": "comb",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "usagePattern": "a comb; comb one’s hair; comb an area for sth",
+        "usagePatternZh": "一把梳子；梳頭髮；在某區域仔細搜尋某物"
+      },
+      "reason": "Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "Actually viewed original pp345–353 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001444",
+      "before": {
+        "meaningEn": "a condition of urgency making it necessary to hurry",
+        "word": "hurry",
+        "pos": "v./n.",
+        "posAll": [
+          "v.",
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningEn": "(n.) a state of needing to act quickly. (v.) to move or act quickly, urge someone to do so, or send someone or something quickly."
+      },
+      "reason": "The old English had only a noun; include both existing printed verb uses.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/hurry"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002909",
+      "before": {
+        "meaningEn": "a physiological need to drink; feel the need to drink",
+        "word": "thirst",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft",
+        "usagePattern": "a/the thirst; thirst of N",
+        "usagePatternZh": "口渴；對……的渴望"
+      },
+      "after": {
+        "meaningEn": "(n.) a need to drink or a strong desire for something. Separate verb use: to feel thirst or strongly desire something, often thirst for/after.",
+        "usagePattern": "quench one’s thirst; a thirst for knowledge; thirst for/after sth",
+        "usagePatternZh": "解渴；求知慾；渴望某事物（另有動詞用法）"
+      },
+      "reason": "Separate the inherited verb wording from the noun-only formal headword while adding the recorded desire noun. Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/thirst; Actually viewed original pp345–353 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005943",
+      "before": {
+        "meaningZh": "受託人；理事；委託者",
+        "meaningEn": "a person (or institution) to whom legal title to property is entrusted to use for another's benefit",
+        "word": "trustee",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft",
+        "usagePattern": "a/the trustee; trustee of N",
+        "usagePatternZh": "一位受託人／該受託人；……的受託人"
+      },
+      "after": {
+        "meaningZh": "受託人；理事",
+        "meaningEn": "a person (or institution) to whom legal title to property is entrusted to use for another's benefit; also a member of the board administering an institution. The person creating the trust is the settlor or trustor.",
+        "usagePattern": "a trustee; a board of trustees",
+        "usagePatternZh": "一名受託人／理事；理事會"
+      },
+      "reason": "Remove the confirmed reversal 委託者, preserving recipient trustee and board-member meanings. Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/trustee; https://www.collinsdictionary.com/dictionary/english/settlor; Actually viewed original pp345–353 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002575",
+      "before": {
+        "meaningZh": "附近；鄰近",
+        "word": "neighborhood",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "附近；鄰近；社區；鄰里居民"
+      },
+      "reason": "Include the local area and people meanings already explicit in both actual examples and English.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/neighborhood"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005000",
+      "before": {
+        "meaningZh": "荒野；荒地；大量",
+        "meaningEn": "(politics) a state of disfavor; a wooded region in northeastern Virginia near Spotsylvania where bloody but inconclusive battles were fought in the American Civil War",
+        "word": "wilderness",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft",
+        "usagePattern": "a/the wilderness; wilderness of N",
+        "usagePatternZh": "該荒野；……之荒野"
+      },
+      "after": {
+        "meaningZh": "荒野；荒地；（比喻）雜亂的大量事物",
+        "meaningEn": "a natural uncultivated region; a large tangled mass or collection. In the political phrase in the wilderness, being out of influence. Separate proper name the Wilderness: the Virginia region associated with Civil War battles.",
+        "usagePattern": "in the wilderness; a wilderness area; a wilderness of sth",
+        "usagePatternZh": "在荒野；一片荒野地區；雜亂的一大堆事物"
+      },
+      "reason": "Restore the missing core and collection senses while preserving the true political and geographical meanings. Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/wilderness; Actually viewed original pp345–353 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005001",
+      "before": {
+        "usagePatternZh": "保護野生動物；……之野生動物；當地野生動物",
+        "word": "wildlife",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "usagePatternZh": "保護野生動植物；……的野生動植物；當地野生動植物"
+      },
+      "reason": "Keep animals and plants consistently in all three actual construction translations.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/wildlife"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002715",
+      "before": {
+        "meaningEn": "to allow someone or something to be free; to make a new product, film, or piece of information available to the public",
+        "word": "release",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningEn": "(v.) to set free, let out, discharge, free from an obligation, or make a film/product public. (n.) the act of releasing, a released product, or relief after tension."
+      },
+      "reason": "Include the existing noun and discharge/obligation meanings instead of only two verb senses.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/release"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003251",
+      "before": {
+        "meaningZh": "狡猾的；巧妙的；可愛的；狡猾的的",
+        "meaningEn": "crafty artfulness (especially in deception); attractive especially by means of smallness or prettiness or quaintness",
+        "word": "cunning",
+        "pos": "adj./n.",
+        "posAll": [
+          "adj.",
+          "n."
+        ],
+        "status": "draft",
+        "usagePattern": "a/the cunning; cunning of N; be cunning",
+        "usagePatternZh": "某種狡猾／該狡猾；……的狡猾；狡猾的"
+      },
+      "after": {
+        "meaningZh": "（形容詞）狡猾的；巧妙的；（美式）可愛的；（名詞）狡猾；狡詐",
+        "meaningEn": "(adj.) clever or skilful, often in deception; in US use, cute or delicately attractive. (n.) skill or craftiness, especially in deceiving.",
+        "usagePattern": "a cunning plan; show cunning",
+        "usagePatternZh": "巧妙／狡猾的計畫；展現狡黠"
+      },
+      "reason": "Correct the duplicated 狡猾的的 and make the actual noun and real US cute adjective clear. Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/cunning; Actually viewed original pp345–353 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005566",
+      "before": {
+        "meaningZh": "模仿的；摹擬的；效顰者；模仿者",
+        "meaningEn": "someone who mimics (especially an actor or actress); imitate (a person or manner), especially for satirical effect",
+        "word": "mimic",
+        "pos": "v./n.",
+        "posAll": [
+          "v.",
+          "n."
+        ],
+        "status": "draft",
+        "usagePattern": "mimic + N; mimic to V; a/the mimic",
+        "usagePatternZh": "模仿……；模仿以去做……；該模仿者"
+      },
+      "after": {
+        "meaningZh": "（動詞）模仿；（名詞）效顰者；模仿者；（另有形容詞用法）模仿的；摹擬的",
+        "meaningEn": "someone who mimics (especially an actor or actress); imitate (a person or manner), especially for satirical effect; separate adjective use: imitative or simulated.",
+        "usagePattern": "mimic sb’s voice; a talented mimic; a mimic battle",
+        "usagePatternZh": "模仿某人的聲音；有才華的模仿者；模擬戰鬥（形容詞用法）"
+      },
+      "reason": "Include the missing lexical verb while retaining the real related adjective. Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/mimic; Actually viewed original pp345–353 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000549",
+      "before": {
+        "meaningZh": "猴子；猿；打樁錘；淘氣",
+        "meaningEn": "any of various long-tailed primates (excluding the prosimians)",
+        "word": "monkey",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningZh": "（名詞）猴子；（廣義）猿；打樁錘；淘氣的人；（另有動詞用法）胡鬧",
+        "meaningEn": "any of various long-tailed primates (excluding the prosimians); more broadly a primate; a mischievous person; a pile-driver ram. Separate informal verb use, especially monkey around: to fool about."
+      },
+      "reason": "Keep the attested machine and broader primate nouns; clarify the previously bare 淘氣 gloss.",
+      "evidence": "https://www.dictionary.com/browse/monkey"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005399",
+      "before": {
+        "meaningZh": "大猩猩；殘暴的男人；歹徒",
+        "meaningEn": "largest anthropoid ape; terrestrial and vegetarian; of forests of central west Africa",
+        "word": "gorilla",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft",
+        "usagePattern": "a/the gorilla; gorilla of N",
+        "usagePatternZh": "一隻大猩猩；……的大猩猩"
+      },
+      "after": {
+        "meaningZh": "大猩猩；（貶義）殘暴的男人；（俚語）歹徒",
+        "meaningEn": "largest anthropoid ape; terrestrial and vegetarian; of forests of central west Africa; figuratively a brutish person, or slang for a thug.",
+        "usagePattern": "a gorilla; a group of gorillas",
+        "usagePatternZh": "一隻大猩猩；一群大猩猩"
+      },
+      "reason": "Retain the attested human and thug senses with their register. Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/gorilla; Actually viewed original pp345–353 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005401",
+      "before": {
+        "meaningZh": "葡萄軸",
+        "word": "grapefruit",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft",
+        "usagePattern": "a/the grapefruit; grapefruit of N",
+        "usagePatternZh": "一顆葡萄柚；……的葡萄柚"
+      },
+      "after": {
+        "meaningZh": "葡萄柚",
+        "usagePattern": "a grapefruit; half a grapefruit",
+        "usagePatternZh": "一顆葡萄柚；半顆葡萄柚"
+      },
+      "reason": "Correct only the definite 軸→柚 transcription error; original print and MOE agree. Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=26394&la=1&powerMode=0; Actually viewed original pp345–353 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002080",
+      "before": {
+        "meaningZh": "漿果；採集漿果",
+        "meaningEn": "any of numerous small and pulpy edible fruits; used as desserts or in making jams and jellies and preserves",
+        "word": "berry",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft",
+        "usagePattern": "a/the berry; berry of N",
+        "usagePatternZh": "漿果；……的漿果"
+      },
+      "after": {
+        "meaningZh": "（名詞）漿果；（另有動詞用法）採集漿果",
+        "meaningEn": "any of numerous small and pulpy edible fruits; used as desserts or in making jams and jellies and preserves; separate verb use: to gather berries.",
+        "usagePattern": "fresh berries; a bowl of berries",
+        "usagePatternZh": "新鮮莓果；一碗莓果"
+      },
+      "reason": "Preserve the real gathering verb and show it separately from the noun-only headword. Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/berry; Actually viewed original pp345–353 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002463",
+      "before": {
+        "meaningZh": "多汁液的；生動的；多水分的",
+        "meaningEn": "full of juice; having strong sexual appeal",
+        "word": "juicy",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "status": "draft",
+        "usagePattern": "be juicy; juicy + N",
+        "usagePatternZh": "多汁的；多汁的……"
+      },
+      "after": {
+        "meaningZh": "多汁液的；多水分的；（故事、八卦等）生動有趣的",
+        "meaningEn": "full of juice; having strong sexual appeal; informally of stories or gossip, vividly interesting or sensational.",
+        "usagePattern": "juicy fruit; juicy gossip",
+        "usagePatternZh": "多汁的水果；有趣／聳動的八卦"
+      },
+      "reason": "Include the recorded lively-story sense; retain the inherited sexually attractive adjective rather than erase it. Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/juicy; Actually viewed original pp345–353 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002533",
+      "before": {
+        "meaningZh": "瓜；甜瓜；紅利；贓物",
+        "meaningEn": "any of numerous fruits of the gourd family having a hard rind and sweet juicy flesh; any of various fruit of cucurbitaceous vines including: muskmelons; watermelons; cantaloupes; cucumbers",
+        "word": "melon",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningZh": "瓜；甜瓜；（美式俚語）紅利；分配的利益或贓物",
+        "meaningEn": "any of numerous fruits of the gourd family having a hard rind and sweet juicy flesh; any of various fruit of cucurbitaceous vines including: muskmelons; watermelons; cantaloupes; cucumbers; in US slang, profits, extra dividends or spoils for distribution, especially cut a melon."
+      },
+      "reason": "Keep the actual slang profit/spoils sense with its construction and register.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/melon"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000662",
+      "before": {
+        "meaningEn": "the official organization whose job is to enforce the law, keep order, and catch criminals",
+        "word": "police",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningEn": "the official organization whose job is to enforce the law, keep order, and catch criminals; as a verb, to keep order in, patrol, or supervise compliance."
+      },
+      "reason": "Include the formal verb already reflected in approved forms and Chinese.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/police"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003770",
+      "before": {
+        "meaningZh": "原始人；早期藝術家；原始的；上古的",
+        "meaningEn": "belonging to a very early stage of development; simple, basic, or old-fashioned",
+        "word": "primitive",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（形容詞）原始的；上古的；簡陋的；（另有名詞用法）原始人；早期藝術家",
+        "meaningEn": "belonging to a very early stage of development; simple, basic, or old-fashioned; separate noun uses include an early person and an early or untrained artist."
+      },
+      "reason": "Retain the true artist/person nouns separately from adjective-only formal POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/primitive"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002632",
+      "before": {
+        "meaningEn": "climber having dark red berries (peppercorns) when fully ripe; southern India and Sri Lanka; naturalized in northern Burma and Assam",
+        "word": "pepper",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft",
+        "usagePattern": "a/the pepper; pepper of N",
+        "usagePatternZh": "胡椒；……的胡椒"
+      },
+      "after": {
+        "meaningEn": "climber having dark red berries (peppercorns) when fully ripe; southern India and Sri Lanka; naturalized in northern Burma and Assam; also the seasoning made from peppercorns, and the fruit or plant of capsicums, including sweet/bell peppers.",
+        "usagePattern": "salt and pepper; a green/red pepper; ground black pepper",
+        "usagePatternZh": "鹽和胡椒粉；一顆青椒／紅椒；黑胡椒粉"
+      },
+      "reason": "Include the actual powder and bell-pepper senses, retaining the original pepper plant and inherited 花椒 pending exact breadth. Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/pepper; Actually viewed original pp345–353 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004550",
+      "before": {
+        "meaningZh": "薄荷；造幣廠；鉅額；鑄造",
+        "meaningEn": "any north temperate plant of the genus Mentha with aromatic leaves and small mauve flowers; any member of the mint family of plants",
+        "word": "mint",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft",
+        "usagePattern": "a/the mint; mint of N",
+        "usagePatternZh": "一座造幣廠；……的造幣廠"
+      },
+      "after": {
+        "meaningZh": "（名詞）薄荷；造幣廠；（非正式）鉅額；（另有動詞用法）鑄造",
+        "meaningEn": "any north temperate plant of the genus Mentha with aromatic leaves and small mauve flowers; any member of the mint family of plants; also a coin-producing establishment, informally a fortune; separate verb use: to make coins.",
+        "usagePattern": "mint sauce; the Royal Mint; make a mint",
+        "usagePatternZh": "薄荷醬；皇家造幣廠；賺大錢（非正式）"
+      },
+      "reason": "Keep all current noun and verb meanings with visible boundaries; the old English was herb-only. Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/mint; Actually viewed original pp345–353 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002753",
+      "before": {
+        "meaningEn": "v. to move or do something very quickly, often because there is little time; n. a situation of hurrying, or a sudden strong feeling",
+        "word": "rush",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningEn": "v. to move or do something very quickly, often because there is little time; n. a situation of hurrying, or a sudden strong feeling; also a strong or rapid flow, and a separate plant noun for grasslike marsh plants such as Juncus."
+      },
+      "reason": "Preserve the directly supported rush-plant noun and flow coverage.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/rush"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003486",
+      "before": {
+        "meaningEn": "act or move at high speed; move fast",
+        "word": "hasten",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningEn": "to make something happen sooner or move faster; to hurry, including hasten to do or say something."
+      },
+      "reason": "Include the actual transitive acceleration sense as well as moving quickly.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/hasten"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002004",
+      "before": {
+        "usagePattern": "a/the zebra; zebra of N",
+        "usagePatternZh": "一隻／那隻斑馬；……的斑馬",
+        "word": "zebra",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "usagePattern": "a zebra; a zebra’s stripes",
+        "usagePatternZh": "一隻斑馬；斑馬的條紋"
+      },
+      "reason": "Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "Actually viewed original pp345–353 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001613",
+      "before": {
+        "usagePattern": "a/the papaya; papaya of N",
+        "usagePatternZh": "該木瓜；……的木瓜",
+        "word": "papaya",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "usagePattern": "a papaya; a slice/piece of papaya",
+        "usagePatternZh": "一個木瓜；一片／一塊木瓜"
+      },
+      "reason": "Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "Actually viewed original pp345–353 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001525",
+      "before": {
+        "usagePattern": "a/the mango; mango of N",
+        "usagePatternZh": "芒果；……的芒果",
+        "word": "mango",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "usagePattern": "a ripe mango; mangos/mangoes",
+        "usagePatternZh": "一顆熟芒果；芒果的兩種複數"
+      },
+      "reason": "Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "Actually viewed original pp345–353 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001967",
+      "before": {
+        "usagePattern": "a/the watermelon; watermelon of N",
+        "usagePatternZh": "西瓜；……的西瓜",
+        "word": "watermelon",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "usagePattern": "a watermelon; a slice of watermelon",
+        "usagePatternZh": "一顆西瓜；一片西瓜"
+      },
+      "reason": "Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "Actually viewed original pp345–353 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001066",
+      "before": {
+        "usagePattern": "a/the bakery; bakery of N",
+        "usagePatternZh": "一家麵包店；……的麵包店",
+        "word": "bakery",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "usagePattern": "at a bakery; buy bread at the bakery",
+        "usagePatternZh": "在麵包店；在麵包店買麵包"
+      },
+      "reason": "Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "Actually viewed original pp345–353 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005377",
+      "before": {
+        "usagePattern": "a/the freeway; freeway of N",
+        "usagePatternZh": "一條高速公路；……的高速公路",
+        "word": "freeway",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "usagePattern": "on a freeway; a freeway exit",
+        "usagePatternZh": "在高速公路上；高速公路出口"
+      },
+      "reason": "Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "Actually viewed original pp345–353 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005156",
+      "before": {
+        "usagePattern": "a/the chimpanzee; chimpanzee of N",
+        "usagePatternZh": "黑猩猩；……的黑猩猩",
+        "word": "chimpanzee",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "usagePattern": "a chimpanzee; a group of chimpanzees",
+        "usagePatternZh": "一隻黑猩猩；一群黑猩猩"
+      },
+      "reason": "Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "Actually viewed original pp345–353 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003485",
+      "before": {
+        "usagePattern": "a/the haste; haste of N",
+        "usagePatternZh": "該匆忙；……的匆忙",
+        "word": "haste",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "usagePattern": "in haste; make haste",
+        "usagePatternZh": "匆忙地；趕快"
+      },
+      "reason": "Use specific paired constructions instead of a generic or semantically misleading template; keep all formal identities, POS and whole-word status.",
+      "evidence": "Actually viewed original pp345–353 and existing dictionary/practice fields."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXae3bf712",
+      "before": {
+        "sensePos": "adj.",
+        "word": "wild",
+        "sentenceEn": "The children love watching birds and rabbits living in the wild.",
+        "sentenceZh": "孩子們喜歡觀察生活在野外的鳥類和兔子。",
+        "blankSentence": "The children love watching birds and rabbits living in the _____.",
+        "answer": "wild"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Identify the actual cloze word in its unchanged full sentence; leave its null hint untouched.",
+      "evidence": "https://dictionary.cambridge.org/dictionary/english/wild"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXe657083b",
+      "before": {
+        "sensePos": "n.",
+        "word": "speed",
+        "sentenceEn": "The cyclist had to speed up to catch the green light.",
+        "sentenceZh": "那位騎自行車的人必須加速才能趕上綠燈。",
+        "blankSentence": "The cyclist had to _____ up to catch the green light.",
+        "answer": "speed"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Identify the actual cloze word in its unchanged full sentence; leave its null hint untouched.",
+      "evidence": "Complete unchanged sentence and directly read Collins verb/noun definitions."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX5bee4666",
+      "before": {
+        "sensePos": "n.",
+        "word": "jam",
+        "sentenceEn": "The printer jammed just as I tried to print my report.",
+        "sentenceZh": "印表機在我想列印報告時卡住了。",
+        "blankSentence": "The printer _____ just as I tried to print my report.",
+        "answer": "jammed"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Identify the actual cloze word in its unchanged full sentence; leave its null hint untouched.",
+      "evidence": "Complete unchanged sentence and directly read Collins verb/noun definitions."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX4b304221",
+      "before": {
+        "sensePos": "n.",
+        "word": "gesture",
+        "sentenceEn": "He gestured toward the empty seat, inviting her to sit down.",
+        "sentenceZh": "他朝空位比了個手勢，邀請她坐下。",
+        "blankSentence": "He _____ toward the empty seat, inviting her to sit down.",
+        "answer": "gestured"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Identify the actual cloze word in its unchanged full sentence; leave its null hint untouched.",
+      "evidence": "Complete unchanged sentence and directly read Collins verb/noun definitions."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX3524e77d",
+      "before": {
+        "sensePos": "n.",
+        "word": "rush",
+        "sentenceEn": "Firefighters rushed to the scene as soon as they received the emergency call.",
+        "sentenceZh": "消防員一接到緊急電話就立刻趕往現場。",
+        "blankSentence": "Firefighters _____ to the scene as soon as they received the emergency call.",
+        "answer": "rushed"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Identify the actual cloze word in its unchanged full sentence; leave its null hint untouched.",
+      "evidence": "Complete unchanged sentence and directly read Collins verb/noun definitions."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX3f803351",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "跳舞；舞蹈；舞會",
+        "word": "dance",
+        "sentenceEn": "Victor never learned how to dance the tango.",
+        "sentenceZh": "維克多從未學過如何跳探戈舞。",
+        "blankSentence": "Victor never learned how to _____ the tango.",
+        "answer": "dance"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "跳（舞）"
+      },
+      "reason": "Narrow mixed POS and a pre-existing broad hint to the actual cloze use; this does not label every old meaning incorrect.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/dance"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX952c7b01",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "跳舞；舞蹈；舞會",
+        "word": "dance",
+        "sentenceEn": "Fred doesn't like to dance, which bothers his girlfriend.",
+        "sentenceZh": "佛萊德不喜歡跳舞，這點讓他女友很困擾。",
+        "blankSentence": "Fred doesn't like to _____, which bothers his girlfriend.",
+        "answer": "dance"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "跳舞"
+      },
+      "reason": "Narrow mixed POS and a pre-existing broad hint to the actual cloze use; this does not label every old meaning incorrect.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/dance"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX9f9099b9",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "跳舞；舞蹈；舞會",
+        "word": "dance",
+        "sentenceEn": "Gilbert asked Helen to the dance, but she told him no.",
+        "sentenceZh": "吉爾伯特邀海倫去舞會，但她拒絕了他。",
+        "blankSentence": "Gilbert asked Helen to the _____, but she told him no.",
+        "answer": "dance"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "舞會"
+      },
+      "reason": "Narrow mixed POS and a pre-existing broad hint to the actual cloze use; this does not label every old meaning incorrect.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/dance"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXa0ac30ff",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "跳舞；舞蹈；舞會",
+        "word": "dance",
+        "sentenceEn": "Quentin asked Lucy to save the last dance for him.",
+        "sentenceZh": "昆丁請露西和他跳最後一支舞。",
+        "blankSentence": "Quentin asked Lucy to save the last _____ for him.",
+        "answer": "dance"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "一支舞"
+      },
+      "reason": "Narrow mixed POS and a pre-existing broad hint to the actual cloze use; this does not label every old meaning incorrect.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/dance"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXe6f930cd",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "跳舞；舞蹈；舞會",
+        "word": "dance",
+        "sentenceEn": "There are many different dances, such as the twist.",
+        "sentenceZh": "有許多不同種類的舞蹈，例如扭扭舞。",
+        "blankSentence": "There are many different _____, such as the twist.",
+        "answer": "dances"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "舞蹈種類"
+      },
+      "reason": "Narrow mixed POS and a pre-existing broad hint to the actual cloze use; this does not label every old meaning incorrect.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/dance"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX649313d0",
+      "before": {
+        "meaningHint": "相信",
+        "word": "believe",
+        "sentenceEn": "Michael doesn't believe in Santa Claus.",
+        "sentenceZh": "麥可不相信有聖誕老公公。",
+        "blankSentence": "Michael doesn't _____ in Santa Claus.",
+        "answer": "believe"
+      },
+      "after": {
+        "meaningHint": "相信……的存在（believe in）"
+      },
+      "reason": "Precision of an existing hint for the Santa-existence context; English and answer unchanged.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/believe"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001933-1",
+      "before": {
+        "examEvidence": "學測108 文意選填Q36",
+        "note": "考點：be trusted with 被託付某事",
+        "status": "draft",
+        "wordId": "W001933",
+        "word": "trust",
+        "sensePos": "v.",
+        "meaningZh": "信任、託付",
+        "isExamSense": true,
+        "answerForms": [
+          "trusted"
+        ]
+      },
+      "after": {
+        "examEvidence": "108學測英文文意選填Q36，印刷第3頁，C trusted；試題：https://www.ceec.edu.tw/files/file_pool/1/0j196548669826315609/01-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf；答案：https://www.ceec.edu.tw/files/file_pool/1/0j196548660460294627/02-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88.pdf",
+        "note": "已核官方完整健忘父親段落及答案，be trusted with 指被信任而託付秘密。既有 EX85a06a75 的新店員／保險箱鑰匙是獨立例句，不冒稱原題。此精確考義不代表整詞通過。",
+        "status": "reviewed"
+      },
+      "reason": "Resolve this draft sense from full official passage and answer while preserving the independent exercise and its status.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0j196548669826315609/01-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf; https://www.ceec.edu.tw/files/file_pool/1/0j196548660460294627/02-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88.pdf"
+    }
+  ]
+}

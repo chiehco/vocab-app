@@ -1,0 +1,9 @@
+import assert from 'node:assert/strict';
+import {readFileSync,writeFileSync} from 'node:fs';
+const read=p=>JSON.parse(readFileSync(p,'utf8')),words=read('public/data/v1/words.json'),candidates=read('output/unit-audit-20261105/U21-source-form-facts.json');
+const ids='W000815 W000958 W000929 W000264 W001992 W004194 W003357 W001844 W001285'.split(' ');
+const facts=ids.map(id=>{const x=candidates.find(c=>c.wordId===id),row=words.find(w=>w.wordId===id);assert.ok(x&&row);assert.equal(x.researchStatus,'verified_candidate');assert.ok(row.pos.split('/').includes('v.'));assert.ok(!Object.hasOwn(row,'verbForms'));assert.equal(x.proposedVerbForms.base,row.word);assert.ok(x.evidence.length);return{wordId:id,word:row.word,verbForms:{...x.proposedVerbForms,status:'approved'},evidence:x.evidence,restriction:x.homographAndVariantRestrictions,researchFile:x.researchFile,verification:'Current key genuinely absent, existing formal verb and exact sourced principal parts checked. No whole-word approval.'};});
+assert.equal(new Set(facts.map(f=>f.wordId)).size,9);
+writeFileSync('docs/unit-audit-20261105/VERIFIED-U21-VERB-FORMS-SOURCES.json',JSON.stringify({baseCheckpoint:'00d3229f9b2ccc541ef42a6c336223af99a72f04',researchCommit:'e2d3f0fed929a17670af00ed1989fc9469426d8c',scope:'9 exact existing U21 verbs only. Existing earlier forms remain unchanged; all selected bases exactly match their formal headwords.',facts},null,2)+'\n');
+const patches=facts.map(f=>({dataset:'words',key:'wordId',id:f.wordId,before:{verbForms:{$absent:true}},after:{verbForms:f.verbForms},reason:'Add only the exact verified principal parts to a genuinely absent key; reverse by deletion, not null.',evidence:f.evidence.map(e=>e.url).join(' ; ')}));
+writeFileSync('docs/unit-audit-20261105/LV1-U21-verified-forms-patches.json',JSON.stringify({baseCommit:'29cfc684d7a11b07f09988c478d30358830f1951',unit:'LV1-U21',patches},null,2)+'\n');console.log(JSON.stringify({facts:facts.length}));

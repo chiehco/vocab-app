@@ -1,0 +1,99 @@
+{
+  "unit": "LV2-U48",
+  "state": "local_required_checks_passed_own_new_head_ci_pending",
+  "frontend": {
+    "files": 9,
+    "tests": 217,
+    "passed": true,
+    "originalLocalTimeoutMs": 5000,
+    "maxWorkers": 1,
+    "includes": [
+      "original U48 text",
+      "new U48 audit",
+      "original U47 audit with precise U48-only historical projection",
+      "recovered historical integration",
+      "unitAudit source and inverse guards",
+      "seed",
+      "lv1ReviewedImages",
+      "auditedWordIllustrations",
+      "lv2PraiseImageRepair"
+    ],
+    "expandedFirst": {
+      "passed": 216,
+      "failed": 1,
+      "reason": "New formal negative test repeatedly parsed and cloned whole datasets for every malformed row and exceeded original5000ms at5528ms.",
+      "repair": "Load each dataset once, directly validate every recorded after-field rejection, and validate missing-identity rejection for every dataset. Preserve positive whole-dataset exact inverses and unrecorded-field hashes. No timeout, fixture, product or write-guard change."
+    }
+  },
+  "python": {
+    "tests": 96,
+    "passed": true,
+    "workspaceOnlyTemporaryDirectory": true,
+    "first": {
+      "passed": 95,
+      "failed": 1,
+      "reason": "New count assertion was10 instead of the20 exact source facts. Corrected the count only; all source/write restrictions and data remained unchanged."
+    }
+  },
+  "lint": {
+    "exitCode": 0
+  },
+  "typecheck": {
+    "exitCode": 0
+  },
+  "build": {
+    "exitCode": 0,
+    "largeChunkWarningNonblocking": true
+  },
+  "sourceDraftCheck": {
+    "exitCode": 0
+  },
+  "sourceIntegrationCheck": {
+    "exitCode": 0
+  },
+  "historicalU47HashesUnchanged": true,
+  "originalFixtureHashesReset": false,
+  "timeoutIncreased": false,
+  "logs": [
+    {
+      "file": "LV2-U48-regression-first.txt",
+      "sha256": "3cdcccaadc6721804d52e98d22af243c8f27bd59ca1eb4a38062f679a31ac9e6"
+    },
+    {
+      "file": "LV2-U48-regression-expanded-first.txt",
+      "sha256": "3224f8a616d3a40eb3143e4e1bc8e8945ce8d599a896c33bd8f76b365fbe1d16"
+    },
+    {
+      "file": "LV2-U48-regression-final.txt",
+      "sha256": "04a8a56fa0b25cb72a44849891dc93785b0e245edefe831991c768caa9cc5558"
+    },
+    {
+      "file": "LV2-U48-python-boundaries-first.txt",
+      "sha256": "8879f57f5824de45220284ff144c040e9e942ad01a8cd9e77d23f2b58e115fae"
+    },
+    {
+      "file": "LV2-U48-python-boundaries.txt",
+      "sha256": "5fabb0aafb4b9f7f1f8f3c3398a01b4fe7b00c5403b00fc646623cb38320780e"
+    },
+    {
+      "file": "LV2-U48-lint-final.txt",
+      "sha256": "350c3aa72a4a66c6687eba05fdf8895bbd78c792312c8e233629302da3bbd438"
+    },
+    {
+      "file": "LV2-U48-typecheck-final.txt",
+      "sha256": "0d93be78e4da5c0077681c4d834163661d59ddd24a0477595fb70ec25d5a5ea8"
+    },
+    {
+      "file": "LV2-U48-build-final.txt",
+      "sha256": "1e6657795c2fbf1cf01c20af2e364484b1f82874f3f81aed91719bca2960e8c0"
+    },
+    {
+      "file": "LV2-U48-prepare_recovered_unit_drafts-check.txt",
+      "sha256": "de98448ebf9803278533e50a4959ae987fb489682759393fb4a40f162f8d62d3"
+    },
+    {
+      "file": "LV2-U48-integrate_recovered_units-check.txt",
+      "sha256": "16a949cba64b31891edbac15dab0007dfc5e48721605cd1960b7fa9df69a3c61"
+    }
+  ]
+}

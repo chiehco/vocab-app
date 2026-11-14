@@ -1,0 +1,730 @@
+{
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "unit": "LV1-U16",
+  "scope": "All 79 text-only vocabulary items, 57 usage items, 65 linked general cards and 104 formal examples read; this manifest changes only exact evidenced dictionary fields.",
+  "originalSentencesPreserved": true,
+  "patches": [
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXec24ee4c",
+      "before": {
+        "sensePos": "adj."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Read the complete unchanged sentence and actual cloze target: distinguish a safe/address/kind nouns from rowed/mistook/typed/sorting verbs. Preserve the headword POS and every English/Chinese sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/safe ; unchanged sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX138191eb",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Read the complete unchanged sentence and actual cloze target: distinguish a safe/address/kind nouns from rowed/mistook/typed/sorting verbs. Preserve the headword POS and every English/Chinese sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/row ; unchanged sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXffaa9ccd",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Read the complete unchanged sentence and actual cloze target: distinguish a safe/address/kind nouns from rowed/mistook/typed/sorting verbs. Preserve the headword POS and every English/Chinese sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/mistake ; unchanged sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX8eb374df",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Read the complete unchanged sentence and actual cloze target: distinguish a safe/address/kind nouns from rowed/mistook/typed/sorting verbs. Preserve the headword POS and every English/Chinese sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/type ; unchanged sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX50089233",
+      "before": {
+        "sensePos": "v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Read the complete unchanged sentence and actual cloze target: distinguish a safe/address/kind nouns from rowed/mistook/typed/sorting verbs. Preserve the headword POS and every English/Chinese sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/address ; unchanged sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX5fb70a28",
+      "before": {
+        "sensePos": "adj."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Read the complete unchanged sentence and actual cloze target: distinguish a safe/address/kind nouns from rowed/mistook/typed/sorting verbs. Preserve the headword POS and every English/Chinese sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/kind ; unchanged sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXabdae499",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Read the complete unchanged sentence and actual cloze target: distinguish a safe/address/kind nouns from rowed/mistook/typed/sorting verbs. Preserve the headword POS and every English/Chinese sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/sort ; unchanged sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1c9d6bdf",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "愛；戀愛；愛情；愛好"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "喜愛"
+      },
+      "reason": "Narrow the existing composite POS and nonempty mixed hint to this sentence. This precision refinement does not classify all inherited meanings as false and does not fill empty hints.",
+      "evidence": "https://www.merriam-webster.com/dictionary/love ; complete sentence and cloze."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX2d05faef",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "愛；戀愛；愛情；愛好"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "喜愛"
+      },
+      "reason": "Narrow the existing composite POS and nonempty mixed hint to this sentence. This precision refinement does not classify all inherited meanings as false and does not fill empty hints.",
+      "evidence": "https://www.merriam-webster.com/dictionary/love ; complete sentence and cloze."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX5ed4dbc2",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "愛；戀愛；愛情；愛好"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "喜愛"
+      },
+      "reason": "Narrow the existing composite POS and nonempty mixed hint to this sentence. This precision refinement does not classify all inherited meanings as false and does not fill empty hints.",
+      "evidence": "https://www.merriam-webster.com/dictionary/love ; complete sentence and cloze."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX5fa5c434",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "愛；戀愛；愛情；愛好"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "愛情（love at first sight：一見鍾情）"
+      },
+      "reason": "Narrow the existing composite POS and nonempty mixed hint to this sentence. This precision refinement does not classify all inherited meanings as false and does not fill empty hints.",
+      "evidence": "https://www.merriam-webster.com/dictionary/love ; complete sentence and cloze."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX67553255",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "愛；戀愛；愛情；愛好"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "愛情（fall in love with：愛上）"
+      },
+      "reason": "Narrow the existing composite POS and nonempty mixed hint to this sentence. This precision refinement does not classify all inherited meanings as false and does not fill empty hints.",
+      "evidence": "https://www.merriam-webster.com/dictionary/love ; complete sentence and cloze."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXc90fa874",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "愛；戀愛；愛情；愛好"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "愛；愛情"
+      },
+      "reason": "Narrow the existing composite POS and nonempty mixed hint to this sentence. This precision refinement does not classify all inherited meanings as false and does not fill empty hints.",
+      "evidence": "https://www.merriam-webster.com/dictionary/love ; complete sentence and cloze."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXaa9da5fc",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Read this authored practice sentence, Chinese, cloze reconstruction and answer; it is not certified as a quotation from an official examination.",
+      "evidence": "https://www.merriam-webster.com/dictionary/visit ; full bilingual sentence."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX8d523d45",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Read this authored practice sentence, Chinese, cloze reconstruction and answer; it is not certified as a quotation from an official examination.",
+      "evidence": "https://www.merriam-webster.com/dictionary/risky ; full bilingual sentence."
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000463-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：知道；瞭解；認識；確信"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：已逐句核對本義、原英中練習句、實際挖空詞及答案；僅本義項與練習資料核對，不擴及整詞全部義項。"
+      },
+      "reason": "Review this existing non-exam sense against the complete unchanged practice context without promoting whole-word status.",
+      "evidence": "https://www.merriam-webster.com/dictionary/know"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000464-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：知識；學問；認識；知道"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：已逐句核對本義、原英中練習句、實際挖空詞及答案；僅本義項與練習資料核對，不擴及整詞全部義項。"
+      },
+      "reason": "Review this existing non-exam sense against the complete unchanged practice context without promoting whole-word status.",
+      "evidence": "https://www.merriam-webster.com/dictionary/knowledge"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000940-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：拜訪；訪問；遊覽；視察"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：已逐句核對本義、原英中練習句、實際挖空詞及答案；僅本義項與練習資料核對，不擴及整詞全部義項。"
+      },
+      "reason": "Review this existing non-exam sense against the complete unchanged practice context without promoting whole-word status.",
+      "evidence": "https://www.merriam-webster.com/dictionary/visit"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000940-2",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：拜訪；訪問；遊覽；視察"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：已逐句核對本義、原英中練習句、實際挖空詞及答案；僅本義項與練習資料核對，不擴及整詞全部義項。"
+      },
+      "reason": "Review this existing non-exam sense against the complete unchanged practice context without promoting whole-word status.",
+      "evidence": "https://www.merriam-webster.com/dictionary/visit"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001012-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：住址；演說；舉止；靈巧"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：已逐句核對本義、原英中練習句、實際挖空詞及答案；僅本義項與練習資料核對，不擴及整詞全部義項。"
+      },
+      "reason": "Review this existing non-exam sense against the complete unchanged practice context without promoting whole-word status.",
+      "evidence": "https://www.merriam-webster.com/dictionary/address"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001012-2",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：住址；演說；舉止；靈巧"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：已逐句核對本義、原英中練習句、實際挖空詞及答案；僅本義項與練習資料核對，不擴及整詞全部義項。"
+      },
+      "reason": "Review this existing non-exam sense against the complete unchanged practice context without promoting whole-word status.",
+      "evidence": "https://www.merriam-webster.com/dictionary/address"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W004751-1",
+      "before": {
+        "status": "draft",
+        "note": "考點：可能導致損失或受傷",
+        "examEvidence": "學測111 文意選填Q21"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "已實讀111學測英文印刷第3頁文意選填Q21上下文、C risky選項及官方答案Q21=C。題目說一般演員不宜執行太危險的特技；現有懸崖練習句另寫，並非原題引用。",
+        "examEvidence": [
+          {
+            "year": 111,
+            "question": 21,
+            "answer": "C",
+            "form": "risky",
+            "partOfSpeech": "adj.",
+            "meaningZh": "危險的；有風險的",
+            "questionUrl": "https://www.ceec.edu.tw/files/file_pool/1/0m053357638065462325/02-111%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7.pdf",
+            "answerUrl": "https://www.ceec.edu.tw/files/file_pool/1/0m052625594764853905/02-111%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88..pdf",
+            "verification": "direct_official_question_and_answer_text_read",
+            "printedPage": 3
+          }
+        ]
+      },
+      "reason": "Verify only this exact examination sense against the official full passage, option and answer. Keep the authored practice and whole-word status.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0m053357638065462325/02-111%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7.pdf ; https://www.ceec.edu.tw/files/file_pool/1/0m052625594764853905/02-111%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88..pdf"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000367",
+      "before": {
+        "usagePatternZh": "猜（那）……；猜猜看；猜一猜；作出猜測"
+      },
+      "after": {
+        "usagePatternZh": "猜測……（that 子句）；猜猜看；猜一猜；作出猜測"
+      },
+      "reason": "The conjunction that is not the demonstrative 那. Preserve all four corresponding English groups.",
+      "evidence": "https://www.merriam-webster.com/dictionary/guess"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000170",
+      "before": {
+        "meaningEn": "free from dirt or marks; to remove dirt from something by washing or wiping it",
+        "meaningZh": "乾淨的；清白的；簡潔的；清潔地",
+        "usagePatternZh": "清理 + 名詞（房間/房子）；清理乾淨；保持某物乾淨"
+      },
+      "after": {
+        "meaningEn": "free from dirt or marks; to remove dirt from something by washing or wiping it; (adv.) completely or entirely; (n.) an act of cleaning.",
+        "meaningZh": "（形容詞）乾淨的；清白的；簡潔的；（動詞）清潔；清理；（副詞）徹底地；完全地；（名詞）清潔；清掃",
+        "usagePatternZh": "清理房間／房子；清理乾淨；使某物保持乾淨"
+      },
+      "reason": "Restore already formal verb/adverb/noun categories. The original textbook p142 explicitly uses clean as 徹底地 and an act of cleaning; no original running example is adopted.",
+      "evidence": "https://www.merriam-webster.com/dictionary/clean"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000891",
+      "before": {
+        "meaningEn": "receptacle that holds odds and ends (as sewing materials); put (things or places) in order",
+        "meaningZh": "椅子的背罩；裝雜物的容器；整齊的；有條理的"
+      },
+      "after": {
+        "meaningEn": "(n.) receptacle that holds odds and ends (as sewing materials); (v.) put (things or places) in order; (adj.) neat and orderly; (n., furnishings) a decorative cover protecting part of a chair or sofa",
+        "meaningZh": "（另列名詞用法）椅子的背罩；裝雜物的容器；（形容詞）整齊的；有條理的；（動詞）整理"
+      },
+      "reason": "Preserve both genuine inherited noun meanings separately from the formal adj./v.; add the missing adjective and organizing verb without changing headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/tidy"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000906",
+      "before": {
+        "meaningZh": "工具；機牀；傀儡；用工具加工",
+        "usagePatternZh": "名詞的工具；把某事物當作工具使用"
+      },
+      "after": {
+        "meaningZh": "（名詞）工具；機牀；傀儡；（另列動詞用法）用工具加工",
+        "usagePatternZh": "用來做……的工具；把某物當作工具使用"
+      },
+      "reason": "Label rather than delete the inherited tooling verb; explain the actual noun construction.",
+      "evidence": "https://www.merriam-webster.com/dictionary/tool"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000734",
+      "before": {
+        "meaningEn": "not likely to cause or suffer harm, injury, or damage",
+        "meaningZh": "保險箱；冷藏室；安全的；可靠的",
+        "usagePatternZh": "保護A安全；免於名詞；保險箱"
+      },
+      "after": {
+        "meaningEn": "not likely to cause or suffer harm, injury, or damage; (n.) a strong lockable box or cabinet for valuable things.",
+        "meaningZh": "（名詞）保險箱；（原摘要名詞對應，精確來源待核）冷藏室；（形容詞）安全的；可靠的",
+        "usagePatternZh": "保護某人或某物安全；免受……；保險箱"
+      },
+      "reason": "Restore the actual a-safe noun and keep the inherited cold-storage gloss explicitly pending, without deleting or certifying it.",
+      "evidence": "https://www.merriam-webster.com/dictionary/safe"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000210",
+      "before": {
+        "usagePatternZh": "對某人/某事物危險；危險 + 名詞；對主詞來說做某事很危險"
+      },
+      "after": {
+        "usagePatternZh": "對某人／某物有危險；危險的……；做……很危險"
+      },
+      "reason": "Make each of three construction translations meaningful instead of confusing subject tokens with a supplied person.",
+      "evidence": "https://www.merriam-webster.com/dictionary/dangerous"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000140",
+      "before": {
+        "meaningZh": "蓋子；帽子；戴帽子；覆蓋",
+        "usagePatternZh": "棒球帽；戴上帽子；限制支出"
+      },
+      "after": {
+        "meaningZh": "（名詞）蓋子；帽子；上限；（動詞）戴帽子；覆蓋；設定上限",
+        "usagePatternZh": "棒球帽；蓋上蓋子／戴上帽子（依物件）；支出上限"
+      },
+      "reason": "A cap on spending is a noun limit; putting the cap on may concern a lid or hat. Preserve both supported senses.",
+      "evidence": "https://www.merriam-webster.com/dictionary/cap"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000745",
+      "before": {
+        "meaningEn": "a place where you can sit, such as a chair or a space on a bus, train, or in a theater",
+        "meaningZh": "座；座位；位子；席位",
+        "usagePatternZh": "找個座位；預訂座位；窗邊/走道座位"
+      },
+      "after": {
+        "meaningEn": "a place where you can sit, such as a chair or a space on a bus, train, or in a theater; (v.) to arrange for someone to sit, or to have room for a stated number of seated people.",
+        "meaningZh": "（名詞）座；座位；位子；席位；（動詞）使就座；可容納……人就座",
+        "usagePatternZh": "坐下；預訂座位；靠窗／靠走道座位"
+      },
+      "reason": "Restore the existing verb whose explicit source facts are independently retained, preserving the original seat noun.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/seat"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000729",
+      "before": {
+        "usagePatternZh": "連續；划船"
+      },
+      "after": {
+        "usagePatternZh": "成一排／連續地（依上下文）；划船"
+      },
+      "reason": "Keep the physical-line and consecutive senses in one corresponding in-a-row group; do not add a third Chinese group.",
+      "evidence": "https://www.merriam-webster.com/dictionary/row"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000098",
+      "before": {
+        "meaningEn": "a powerful stroke with the fist or a weapon; an impact (as from a collision)",
+        "meaningZh": "吹；打擊；毆打；花開"
+      },
+      "after": {
+        "meaningEn": "(n.) a powerful stroke with the fist or a weapon; an impact (as from a collision); (v.) to move air or make air move; (separate verb sense) to bloom or cause to bloom",
+        "meaningZh": "（動詞）吹；（另列名詞用法）打擊；毆打；（另一動詞義）花開"
+      },
+      "reason": "Keep every inherited strike/collision and flowering sense. Add missing ordinary verb meaning without expanding formal POS or claiming rare meanings false.",
+      "evidence": "https://www.ahdictionary.com/word/search.html?q=blow"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000660",
+      "before": {
+        "meaningEn": "a small pouch inside a garment for carrying small articles; a supply of money",
+        "meaningZh": "口袋；錢袋；錢；容器"
+      },
+      "after": {
+        "meaningEn": "a small pouch inside a garment for carrying small articles; a supply of money; (v.) to put something into a pocket or take it for oneself.",
+        "meaningZh": "（名詞）口袋；錢袋；錢；容器；（動詞）把……放進口袋；據為己有"
+      },
+      "reason": "Add the already formal verb beside every inherited noun meaning.",
+      "evidence": "https://www.merriam-webster.com/dictionary/pocket"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000737",
+      "before": {
+        "meaningEn": "a white substance used to flavor or preserve food, made mainly of sodium chloride",
+        "meaningZh": "鹽；風趣；刺激；含鹽的",
+        "usagePatternZh": "在名詞上加鹽；鹽與胡椒；一點鹽"
+      },
+      "after": {
+        "meaningEn": "a white substance used to flavor or preserve food, made mainly of sodium chloride; (v.) to add salt to or preserve with salt; (adj.) containing salt or preserved with salt.",
+        "meaningZh": "（名詞）鹽；風趣；刺激；（動詞）加鹽；用鹽醃製；（形容詞）含鹽的；用鹽醃製的",
+        "usagePatternZh": "把鹽加進……；鹽與胡椒；一小撮鹽"
+      },
+      "reason": "Restore existing verb/adjective senses printed on textbook p147 while retaining the inherited figurative nouns.",
+      "evidence": "https://www.merriam-webster.com/dictionary/salt"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000463",
+      "before": {
+        "usagePatternZh": "了解名詞；知道如何原形動詞；認識名詞"
+      },
+      "after": {
+        "usagePatternZh": "知道／了解……；知道如何做……；逐漸認識／了解……"
+      },
+      "reason": "Explain know-how-to and get-to-know without literal 原形動詞 or noun tokens.",
+      "evidence": "https://www.merriam-webster.com/dictionary/know"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000464",
+      "before": {
+        "usagePatternZh": "名詞的知識；具備知識；據我所知"
+      },
+      "after": {
+        "usagePatternZh": "對……的知識／了解；具備知識；據我所知"
+      },
+      "reason": "Translate the three exact existing construction groups.",
+      "evidence": "https://www.merriam-webster.com/dictionary/knowledge"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000926",
+      "before": {
+        "meaningZh": "類型；樣式；典型；榜樣",
+        "usagePatternZh": "一種名詞；打字名詞；血型"
+      },
+      "after": {
+        "meaningZh": "（名詞）類型；樣式；典型；榜樣；（動詞）打字",
+        "usagePatternZh": "一種……；把……打成文字；血型"
+      },
+      "reason": "Restore the typed-report verb already in English and formal POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/type"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005831",
+      "before": {
+        "meaningZh": "泥濘的；潮溼的；粗心的",
+        "usagePatternZh": "粗心大意的；粗心大意的……"
+      },
+      "after": {
+        "meaningZh": "凌亂的；邋遢的；粗心的；泥濘的；潮溼的",
+        "usagePatternZh": "凌亂／邋遢／馬虎（依上下文）；凌亂或粗心的……"
+      },
+      "reason": "Add the existing English untidy sense without removing genuine muddy/wet senses.",
+      "evidence": "https://www.merriam-webster.com/dictionary/sloppy"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001756",
+      "before": {
+        "meaningEn": "cause fear in; cause to lose courage",
+        "usagePattern": "be scared; scared + N",
+        "usagePatternZh": "感到害怕；害怕的某人"
+      },
+      "after": {
+        "meaningEn": "feeling frightened or worried (adjective); related base verb scare: cause fear in; cause to lose courage",
+        "usagePattern": "be scared of N; be scared to V; be scared that + clause",
+        "usagePatternZh": "害怕……；害怕做……；擔心……（that 子句）"
+      },
+      "reason": "Correct the adjective experiencer direction; preserve the entire old causative phrase explicitly as related base verb scare.",
+      "evidence": "https://dictionary.cambridge.org/dictionary/english/scared ; https://dictionary.cambridge.org/dictionary/english/scaring"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000507",
+      "before": {
+        "usagePatternZh": "愛上名詞；喜歡去原形動詞/動名詞"
+      },
+      "after": {
+        "usagePatternZh": "愛上某人或某物；喜愛做……"
+      },
+      "reason": "Preserve both constructions without translating grammar notation as words.",
+      "evidence": "https://www.merriam-webster.com/dictionary/love"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000088",
+      "before": {
+        "meaningEn": "At the side of; on one side of.; Aside from; out of the regular course or order of; in a"
+      },
+      "after": {
+        "meaningEn": "At the side of; on one side of.; Aside from; out of the regular course or order of; in a state of deviation from; out of."
+      },
+      "reason": "Append only the demonstrably missing Webster 1913 tail, keeping all inherited spatial and deviation senses. This transcription is not an inspection of the original printed dictionary page.",
+      "evidence": "https://www.gutenberg.org/cache/epub/660/pg660-images.html ; https://www.ahdictionary.com/word/search.html?q=beside"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002081",
+      "before": {
+        "meaningZh": "除...之外；而且；此外；在旁邊",
+        "usagePattern": "V + besides; besides + N/V-ing",
+        "usagePatternZh": "動詞加上此外；除了……之外加上名詞或動名詞"
+      },
+      "after": {
+        "meaningZh": "除……之外；而且；此外；（古副詞義）在旁邊",
+        "usagePattern": "Besides, + clause; besides + N/V-ing",
+        "usagePatternZh": "此外，……；除……之外"
+      },
+      "reason": "Keep the historically supported spatial adverb with its obsolete register. The incomplete English legacy fragment remains explicitly unresolved; do not guess a whole-field replacement.",
+      "evidence": "https://www.gutenberg.org/cache/epub/660/pg660-images.html ; https://www.ahdictionary.com/word/search.html?q=besides"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005678",
+      "before": {
+        "usagePattern": "a/the pickpocket; pickpocket of N",
+        "usagePatternZh": "一名扒手；……的扒手"
+      },
+      "after": {
+        "usagePattern": "a pickpocket; watch out for pickpockets",
+        "usagePatternZh": "一名扒手；提防扒手"
+      },
+      "reason": "Replace the unhelpful generic of-N template with ordinary existing noun constructions.",
+      "evidence": "https://www.merriam-webster.com/dictionary/pickpocket"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001845",
+      "before": {
+        "usagePattern": "a/the steak; steak of N",
+        "usagePatternZh": "牛排；……的肉排"
+      },
+      "after": {
+        "usagePattern": "a beef/fish steak; cook a steak",
+        "usagePatternZh": "牛排／魚排；烹調一份肉排"
+      },
+      "reason": "Use the already present animal/fish slice senses in clear noun constructions.",
+      "evidence": "https://www.merriam-webster.com/dictionary/steak"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004820",
+      "before": {
+        "meaningZh": "母豬；懶胖女人；播種；散佈"
+      },
+      "after": {
+        "meaningZh": "（名詞 /saʊ/）母豬；（歷史貶稱，原譯「懶」待核）懶胖女人；（動詞 /soʊ/）播種；散佈"
+      },
+      "reason": "Preserve every original gloss, separate the two pronunciations, and qualify the unresolved laziness restriction and derogatory register. Do not certify the whole word.",
+      "evidence": "https://www.merriam-webster.com/dictionary/sow ; https://www.gutenberg.org/cache/epub/5402/pg5402.html ; https://wehd.com/farmer/Sow.html"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002516",
+      "before": {
+        "usagePattern": "a/the magician; magician of N",
+        "usagePatternZh": "魔術師；……的魔術師"
+      },
+      "after": {
+        "usagePattern": "a magician; perform magic tricks",
+        "usagePatternZh": "一名魔術師；表演魔術"
+      },
+      "reason": "Replace the generic magician-of-N pattern with a concrete ordinary usage.",
+      "evidence": "https://www.merriam-webster.com/dictionary/magician"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001012",
+      "before": {
+        "meaningZh": "住址；演說；舉止；靈巧"
+      },
+      "after": {
+        "meaningZh": "（名詞）住址；演說；舉止；靈巧；（動詞）處理；對……演說；在信件寫上地址／寄給……"
+      },
+      "reason": "Retain the inherited noun senses and restore already formal dealing-with/speaking/writing-an-address verbs.",
+      "evidence": "https://www.merriam-webster.com/dictionary/address"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000455",
+      "before": {
+        "usagePatternZh": "對某人友善；一種 + 名詞；各種 + 名詞"
+      },
+      "after": {
+        "usagePatternZh": "對某人親切；一種……；各種……"
+      },
+      "reason": "Translate the actual kindness and category patterns without literal noun placeholders.",
+      "evidence": "https://www.merriam-webster.com/dictionary/kind"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001825",
+      "before": {
+        "meaningZh": "種類；方式；品質；態度"
+      },
+      "after": {
+        "meaningZh": "（名詞）種類；方式；品質；態度；（動詞）整理；分類"
+      },
+      "reason": "Restore the existing sorting verb without deleting inherited nouns.",
+      "evidence": "https://www.merriam-webster.com/dictionary/sort"
+    }
+  ]
+}

@@ -8,6 +8,7 @@ import starter from '../../../public/data/v1/sa-pack.json';
 import { findUnit, templateGroup } from './model';
 import { groupWordIds } from './groupScope';
 import { textbookUnits } from '../vocabulary/textbookCatalog';
+import {beforeUnitAudit} from '../../db/unitAudit.testSupport';
 
 function stable(value: unknown): unknown {
   if (Array.isArray(value)) return value.map(stable);
@@ -44,7 +45,7 @@ it('records physical-book confirmation of blank p22 without claiming a new photo
 
 it('keeps every public content dataset, including the5779-word starter, exactly unchanged', () => {
   for (const file of baseline.publicFiles) {
-    expect(hash(JSON.parse(readFileSync(`public/data/v1/${file.name}`, 'utf8'))),file.name).toBe(file.payloadHash);
+    expect(hash(beforeUnitAudit(file.name,JSON.parse(readFileSync(`public/data/v1/${file.name}`, 'utf8')))),file.name).toBe(file.payloadHash);
   }
   expect(starter.words).toHaveLength(5779);
 });

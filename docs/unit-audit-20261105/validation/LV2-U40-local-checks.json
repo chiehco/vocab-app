@@ -1,0 +1,101 @@
+{
+  "unit": "LV2-U40",
+  "python": {
+    "first": {
+      "tests": 71,
+      "exitCode": 0
+    },
+    "final": {
+      "tests": 72,
+      "exitCode": 0
+    }
+  },
+  "frontend": {
+    "initial": {
+      "files": 29,
+      "tests": 344,
+      "passed": 342,
+      "failed": 2,
+      "exitCode": 1,
+      "failure": "Standalone historical U07/U24 form fixtures still saw later U40 fields. Whole-pack original fixture was not reset."
+    },
+    "exactPriorFormRetry": {
+      "files": 1,
+      "tests": 81,
+      "passed": 81,
+      "failed": 0
+    },
+    "final": {
+      "files": 3,
+      "tests": 99,
+      "failed": 0,
+      "exitCode": 0
+    },
+    "initialOther28FilesRetainedPassed": true,
+    "originalU40TextAndNewAuditIncluded": true,
+    "originalLocalTimeout": 5000,
+    "maxWorkers": 1
+  },
+  "lint": {
+    "exitCode": 0
+  },
+  "typecheck": {
+    "exitCode": 0
+  },
+  "build": {
+    "exitCode": 0
+  },
+  "sourceDraftCheck": {
+    "exitCode": 0
+  },
+  "sourceIntegrationCheck": {
+    "exitCode": 0
+  },
+  "logs": [
+    {
+      "file": "LV2-U40-python-first.txt",
+      "sha256": "c4e61b3c4d3a23e4289e66d2c7146a057dc7e7e137ebcb5d7acd995100c5527c"
+    },
+    {
+      "file": "LV2-U40-regression-first.txt",
+      "sha256": "db76f79a7ef4be26dcfc87ad72ac8620eee28fc9f85b653a84c1f12f91084dab"
+    },
+    {
+      "file": "LV2-U40-prior-form-retry.txt",
+      "sha256": "9bca0816317cea66360cb8fa8005c93d7990af6f28a14bfb97aacf2c78f6de88"
+    },
+    {
+      "file": "LV2-U40-python-final.txt",
+      "sha256": "eef7577861801e9e36388af58becda2acb38ed1b91d82c591c66831fad30a3a8"
+    },
+    {
+      "file": "LV2-U40-regression-final.txt",
+      "sha256": "6eca7c39dc4013110681339d7dffd1c3ace9f445d7624e49843171d7cb0247f6"
+    },
+    {
+      "file": "LV2-U40-lint-final.txt",
+      "sha256": "99011246ae2020ed006c3d080185d3edfbe7954699befa13f2ede57cfad6c4da"
+    },
+    {
+      "file": "LV2-U40-typecheck-final.txt",
+      "sha256": "da91f4c430838409de74534c4d8bed41445d7c7283163b2a63c446dde034587b"
+    },
+    {
+      "file": "LV2-U40-build-final.txt",
+      "sha256": "1cb97c42f5ae0d947534a5a3e31aa3f926e682ec8c5c4433408f3d15728b8256"
+    },
+    {
+      "file": "LV2-U40-lint-after-followup.txt",
+      "sha256": "3e3d63692e51723b5ece21b34eae973f696b5efafbbc9f5840a936119380bd4a"
+    },
+    {
+      "file": "LV2-U40-typecheck-after-followup.txt",
+      "sha256": "da91f4c430838409de74534c4d8bed41445d7c7283163b2a63c446dde034587b"
+    },
+    {
+      "file": "LV2-U40-build-after-followup.txt",
+      "sha256": "1881f566f8e5f2bee6603472f6f640d09a7d2873769f815519515ce0bf7d5c78"
+    }
+  ],
+  "ownNewHeadCi": "pending"
+}

@@ -2,11 +2,13 @@ import "fake-indexeddb/auto";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { contentDb } from "./contentDb";
 import { progressDb } from "./progressDb";
-import { ensureContentAvailable, refreshInstalledContent, seedContentIfNeeded } from "./seed";
+import { ensureContentAvailable, refreshInstalledContent, seedContentIfNeeded, updateDictionaryContent } from "./seed";
+import { correctExample } from './exampleCorrections';
 import { gradeFlashcard } from "../checkin/recordActivity";
 import { getCardState, getKnownWords } from "./progressIdentity";
 import { exportProgress } from "../backup/backup";
 import type { WordRecord } from "./types";
+import type { ExampleRecord } from './types';
 
 function bundle(hash: string, caption: string): Record<string, unknown> {
   return {
@@ -50,7 +52,7 @@ function serve(data: Record<string, unknown>, unavailable?: string) {
 beforeEach(async () => {
   await Promise.all([...contentDb.tables, ...progressDb.tables].map((table) => table.clear()));
 });
-afterEach(() => vi.unstubAllGlobals());
+afterEach(() => {vi.unstubAllGlobals();vi.restoreAllMocks();});
 
 it("相同字表、相同圖片筆數但說明更新時重匯內容，完整保留獨立進度", async () => {
   serve(bundle("old", "舊說明"));
@@ -171,4 +173,52 @@ it("改名內容更新失敗仍可使用舊卡，重試與重載後沿用原進�
   expect(await getKnownWords()).toEqual(["enjoy"]);
   expect(await getCardState("enjoy")).toEqual(before.cardStates[0]);
   expect((await exportProgress()).data).toEqual(before);
+});
+
+it('atomically replaces changed rows, deletes removed rows and optional fields, and leaves identical rows unwritten',async()=>{
+  const oldData=renamedBundle('delta-old','enjoy');
+  const base=(oldData['words.json'] as WordRecord[])[0];
+  const changed:WordRecord={...base,wordId:'Wchanged',word:'test',verbForms:{base:'test',past:'tested',pastParticiple:'tested',sourceRef:'test source',status:'approved'}};
+  oldData['words.json']=[base,{...base,wordId:'Wremoved',word:'removed'},changed];
+  const legacy:ExampleRecord={exampleId:'EX2a49d40d',word:'passage',sensePos:'n.',meaningHint:null,exampleType:'daily',sentenceEn:'A legacy passage.',sentenceZh:'舊內容',blankSentence:'A legacy _____.',answer:'passage',difficulty:'LV1',status:'draft'};
+  oldData['examples.json']=[legacy];
+  Object.assign((oldData['meta.json'] as {counts:Record<string,number>}).counts,{words:3,examples:1});
+  serve(oldData);await seedContentIfNeeded();
+  await progressDb.settings.put({key:'fontScale',value:1.15});const progress=await Promise.all(progressDb.tables.map(t=>t.toArray()));
+  const put=vi.spyOn(contentDb.words,'bulkPut'),remove=vi.spyOn(contentDb.words,'bulkDelete');
+  const next=structuredClone(oldData);(next['meta.json'] as {contentHash:string}).contentHash='delta-new';
+  const revised:WordRecord={...changed,meaningZh:'已修正'};delete revised.verbForms;
+  next['words.json']=[base,revised,{...base,wordId:'Wadded',word:'added'}];
+  const corrected=correctExample(legacy)!;next['examples.json']=[corrected];
+  serve(next);await seedContentIfNeeded();
+  expect(put).toHaveBeenCalledTimes(1);expect(put.mock.calls[0][0]).toEqual([revised,{...base,wordId:'Wadded',word:'added'}]);
+  expect(remove).toHaveBeenCalledWith(['Wremoved']);
+  expect(await contentDb.words.get('Wremoved')).toBeUndefined();expect(await contentDb.words.get('Wchanged')).toEqual(revised);
+  expect(await contentDb.words.get('Wchanged')).not.toHaveProperty('verbForms');
+  expect(await contentDb.examples.toCollection().raw().toArray()).toEqual([corrected]);
+  expect((await contentDb.meta.get('current'))?.contentHash).toBe('delta-new');
+  expect(await Promise.all(progressDb.tables.map(t=>t.toArray()))).toEqual(progress);
+  put.mockRestore();remove.mockRestore();
+});
+
+it('rolls back every delta and metadata when any content table rejects a row',async()=>{
+  const oldData=renamedBundle('rollback-old','enjoy');serve(oldData);await seedContentIfNeeded();
+  const before=await Promise.all(contentDb.tables.map(t=>t.toCollection().raw().toArray()));
+  const bad=renamedBundle('rollback-new','renamed');
+  bad['media.json']=[{status:'approved',captionZh:'Missing primary key'}];
+  serve(bad);await expect(updateDictionaryContent()).rejects.toThrow();
+  expect(await Promise.all(contentDb.tables.map(t=>t.toCollection().raw().toArray()))).toEqual(before);
+});
+
+it.each(['changed then original','original then changed'] as const)('retains last-write-wins for repeated incoming keys: %s',async(order)=>{
+  const oldData=renamedBundle('duplicate-old','enjoy');serve(oldData);await seedContentIfNeeded();
+  const original=(oldData['words.json'] as WordRecord[])[0],changed={...original,meaningZh:'A changed value'};
+  const next=structuredClone(oldData);(next['meta.json'] as {contentHash:string}).contentHash='duplicate-new';
+  next['words.json']=order==='changed then original'?[changed,original]:[original,changed];
+  (next['meta.json'] as {counts:Record<string,number>}).counts.words=2;
+  const put=vi.spyOn(contentDb.words,'bulkPut');serve(next);await seedContentIfNeeded();
+  const expected=order==='changed then original'?original:changed;
+  expect(await contentDb.words.get(original.wordId)).toEqual(expected);
+  if(order==='changed then original')expect(put).not.toHaveBeenCalled();else expect(put).toHaveBeenCalledWith([changed]);
+  expect((await contentDb.meta.get('current'))?.contentHash).toBe('duplicate-new');
 });

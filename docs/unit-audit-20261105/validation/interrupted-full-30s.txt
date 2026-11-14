@@ -1,0 +1,11 @@
+
+> vocab-app@0.0.0 test
+> vitest run --maxWorkers=2 --testTimeout=30000
+
+
+ RUN  v4.1.9 <repo>
+
+ ??src/features/vocabulary/liveabcIntegration.test.ts (8 tests | 1 failed) 1457ms
+   ? preserves the former Ivy identities, adds three accepted units and retains all full public datasets 308ms
+ ??src/db/recoveredUnitUpdate.test.ts (3 tests | 1 failed) 15798ms
+   ? adds exactly the 51 existing IDs while retaining every original starter payload in order 173ms

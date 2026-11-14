@@ -1,0 +1,17 @@
+import {readFileSync,writeFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+const read=p=>JSON.parse(readFileSync(p,'utf8')),write=(p,v)=>writeFileSync(p,JSON.stringify(v,null,2)+'\n');
+const sha=p=>createHash('sha256').update(readFileSync(p)).digest('hex');
+const id='LV1-U09-48',oldPath='wordbeast/lv1-reviewed/LV1-U09-48-03228c824656.webp',newPath='wordbeast/lv1-reviewed/LV1-U09-48-d977221ac63f.webp';
+const expected='ea1d0935bcb61952b4384200a5c2ff67c17c5d8063a60f445b14031a02dcb287';
+if(sha('public/'+newPath)!==expected||sha('public/'+oldPath)!=='df64699d33e98ef60c7b96019496d2fe4b4d582a739726b08d3b82b5dcb9e3e6')throw Error('Unexpected asset bytes');
+const manifestPath='src/features/vocabulary/lv1ReviewedImages.json',cards=read(manifestPath),card=cards.find(c=>c.id===id);
+if(card.illustration.path!==oldPath||card.illustration.captionEn!=='There was a flu outbreak at home, so everyone stayed in bed.')throw Error('Unexpected current pair');
+const approvalsPath='scripts/approvals/lv1-images-20260922.json',approvals=read(approvalsPath),record=approvals.find(c=>c.id===id);
+const proofPath='docs/unit-audit-20261105/LV1-U09-outbreak-review.json';
+const proof={id,officialWordId:card.officialWordId,state:'locally_integrated_not_ui_verified',unchangedCaption:structuredClone(card.illustration),previousApproval:structuredClone(record),originalAsset:{path:oldPath,sha256:sha('public/'+oldPath),retained:true},newAsset:{path:newPath,sha256:expected,dimensions:[1254,1254],sizeBytes:129842,assetCommit:'7af8faf8eba1d3408490864f718707cfc0baff74',gitBlob:'d61364218ccf44c621396227ea757e260df81184'},pixelReview:{state:'agent actually viewed original compressed replacement WebP in this environment',observation:'All three remaining characters lie under covers on a bed or sleeping mats. The former sole standing character is removed; room, doorway, sick-bed context and watercolor style remain.'},scope:'Only the displayed household everyone-in-bed pair; other formal outbreak examples remain unchanged and are not claimed independently illustrated.',uiVerification:null};
+write(proofPath,proof);record.previousApproval=proof.previousApproval;
+Object.assign(record,{sourceImage:newPath.split('/').pop(),sourceImageSha256:expected,publishedImageSha256:expected,approvalSource:proofPath,approvalSha256:sha(proofPath),repairBasis:'User-authorized correction of a confirmed literal everyone-in-bed mismatch; not a new per-image user approval.'});
+card.illustration.path=newPath;write(manifestPath,cards);write(approvalsPath,approvals);
+const indexPath='public/wordbeast/lv1-reviewed/index.html',html=readFileSync(indexPath,'utf8'),oldName=oldPath.split('/').pop();if(html.split(oldName).length!==2)throw Error('Unexpected static overview occurrence');writeFileSync(indexPath,html.replace(oldName,newPath.split('/').pop()));
+console.log(JSON.stringify({id,state:proof.state,oldAssetRetained:true,captionUnchanged:true}));

@@ -1,0 +1,2619 @@
+{
+  "manifest": "docs\\unit-audit-20261105\\LV1-U17-patches.json",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "checkedAt": "2026-11-05T14:28:41.243312+00:00",
+  "changeCount": 59,
+  "changes": [
+    {
+      "dataset": "examples",
+      "id": "EX1cea6f14",
+      "before": {
+        "exampleId": "EX1cea6f14",
+        "word": "third",
+        "sensePos": "adj.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "About a third of the students in this class have visited Japan before.",
+        "sentenceZh": "這班大約三分之一的學生以前去過日本。",
+        "blankSentence": "About a _____ of the students in this class have visited Japan before.",
+        "answer": "third",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EX1cea6f14",
+        "word": "third",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "About a third of the students in this class have visited Japan before.",
+        "sentenceZh": "這班大約三分之一的學生以前去過日本。",
+        "blankSentence": "About a _____ of the students in this class have visited Japan before.",
+        "answer": "third",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "confirmed_error: a third of the students中，a限定分數名詞third，of片語補述集合。 confirmed_error: a third of the students中，a限定分數名詞third，of片語補述集合。",
+      "evidence": "https://www.merriam-webster.com/dictionary/third ; https://www.merriam-webster.com/dictionary/third"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX299cbc81",
+      "before": {
+        "exampleId": "EX299cbc81",
+        "word": "email",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "Can you email me the photos from the trip when you get home?",
+        "sentenceZh": "你回到家後可以把旅行的照片用電子郵件寄給我嗎？",
+        "blankSentence": "Can you _____ me the photos from the trip when you get home?",
+        "answer": "email",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EX299cbc81",
+        "word": "email",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "Can you email me the photos from the trip when you get home?",
+        "sentenceZh": "你回到家後可以把旅行的照片用電子郵件寄給我嗎？",
+        "blankSentence": "Can you _____ me the photos from the trip when you get home?",
+        "answer": "email",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "confirmed_error: Can you email me中email是情態動詞後的主要動詞，受詞為me與photos。 confirmed_error: Can you email me中email是情態動詞後的主要動詞，受詞為me與photos。",
+      "evidence": "https://www.merriam-webster.com/dictionary/email ; https://www.merriam-webster.com/dictionary/email"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX29ab06ce",
+      "before": {
+        "exampleId": "EX29ab06ce",
+        "word": "sentence",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "The judge sentenced the man to five years in prison.",
+        "sentenceZh": "法官判處這名男子五年徒刑。",
+        "blankSentence": "The judge _____ the man to five years in prison.",
+        "answer": "sentenced",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EX29ab06ce",
+        "word": "sentence",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "The judge sentenced the man to five years in prison.",
+        "sentenceZh": "法官判處這名男子五年徒刑。",
+        "blankSentence": "The judge _____ the man to five years in prison.",
+        "answer": "sentenced",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "confirmed_error: The judge sentenced the man中sentenced是過去式及物謂語。 confirmed_error: The judge sentenced the man中sentenced是過去式及物謂語。",
+      "evidence": "https://www.merriam-webster.com/dictionary/sentence ; https://www.merriam-webster.com/dictionary/sentence"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX658a3532",
+      "before": {
+        "exampleId": "EX658a3532",
+        "word": "photograph/photo",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "The tourists were photographing the old castle from every angle.",
+        "sentenceZh": "遊客們從各個角度為這座古堡拍照。",
+        "blankSentence": "The tourists were _____ the old castle from every angle.",
+        "answer": "photographing",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EX658a3532",
+        "word": "photograph/photo",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "The tourists were photographing the old castle from every angle.",
+        "sentenceZh": "遊客們從各個角度為這座古堡拍照。",
+        "blankSentence": "The tourists were _____ the old castle from every angle.",
+        "answer": "photographing",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "confirmed_error: were photographing the old castle為進行式謂語，非照片名詞。 confirmed_error: were photographing the old castle為進行式謂語，非照片名詞。",
+      "evidence": "https://www.merriam-webster.com/dictionary/photograph ; https://www.merriam-webster.com/dictionary/photograph"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX6c18a48c",
+      "before": {
+        "exampleId": "EX6c18a48c",
+        "word": "picture",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "I can't picture myself living in such a big city.",
+        "sentenceZh": "我無法想像自己住在這麼大的城市裡。",
+        "blankSentence": "I can't _____ myself living in such a big city.",
+        "answer": "picture",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EX6c18a48c",
+        "word": "picture",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "I can't picture myself living in such a big city.",
+        "sentenceZh": "我無法想像自己住在這麼大的城市裡。",
+        "blankSentence": "I can't _____ myself living in such a big city.",
+        "answer": "picture",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "confirmed_error: can't picture myself living中picture是想像的及物動詞。 confirmed_error: can't picture myself living中picture是想像的及物動詞。",
+      "evidence": "https://www.merriam-webster.com/dictionary/picture ; https://www.merriam-webster.com/dictionary/picture"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX7195fc6a",
+      "before": {
+        "exampleId": "EX7195fc6a",
+        "word": "coat",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "Workers coated the old fence with a fresh layer of white paint.",
+        "sentenceZh": "工人們在舊籬笆上塗了一層新的白漆。",
+        "blankSentence": "Workers _____ the old fence with a fresh layer of white paint.",
+        "answer": "coated",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EX7195fc6a",
+        "word": "coat",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "Workers coated the old fence with a fresh layer of white paint.",
+        "sentenceZh": "工人們在舊籬笆上塗了一層新的白漆。",
+        "blankSentence": "Workers _____ the old fence with a fresh layer of white paint.",
+        "answer": "coated",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "confirmed_error: Workers coated the old fence中coated是過去式謂語。 confirmed_error: Workers coated the old fence中coated是過去式謂語。",
+      "evidence": "https://www.merriam-webster.com/dictionary/coat ; https://www.merriam-webster.com/dictionary/coat"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX7e36be76",
+      "before": {
+        "exampleId": "EX7e36be76",
+        "word": "ring",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "The phone rang three times before she finally picked it up.",
+        "sentenceZh": "電話響了三聲之後她才終於接起來。",
+        "blankSentence": "The phone _____ three times before she finally picked it up.",
+        "answer": "rang",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EX7e36be76",
+        "word": "ring",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "The phone rang three times before she finally picked it up.",
+        "sentenceZh": "電話響了三聲之後她才終於接起來。",
+        "blankSentence": "The phone _____ three times before she finally picked it up.",
+        "answer": "rang",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "confirmed_error: The phone rang中rang是響起的過去式謂語。 confirmed_error: The phone rang中rang是響起的過去式謂語。",
+      "evidence": "https://www.merriam-webster.com/dictionary/ring ; https://www.merriam-webster.com/dictionary/ring"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX845bc672",
+      "before": {
+        "exampleId": "EX845bc672",
+        "word": "fat",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "The puppy grew fat after eating too many treats.",
+        "sentenceZh": "這隻小狗因為吃太多零食而變胖了。",
+        "blankSentence": "The puppy grew _____ after eating too many treats.",
+        "answer": "fat",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EX845bc672",
+        "word": "fat",
+        "sensePos": "adj.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "The puppy grew fat after eating too many treats.",
+        "sentenceZh": "這隻小狗因為吃太多零食而變胖了。",
+        "blankSentence": "The puppy grew _____ after eating too many treats.",
+        "answer": "fat",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "confirmed_error: grew fat中fat為描述puppy變胖的主詞補語，非脂肪名詞。 confirmed_error: grew fat中fat為描述puppy變胖的主詞補語，非脂肪名詞。",
+      "evidence": "https://www.merriam-webster.com/dictionary/fat ; https://www.merriam-webster.com/dictionary/fat"
+    },
+    {
+      "dataset": "examples",
+      "id": "EXba46b75a",
+      "before": {
+        "exampleId": "EXba46b75a",
+        "word": "brown",
+        "sensePos": "adj.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "Brown the onions in a pan before adding the meat.",
+        "sentenceZh": "先把洋蔥在鍋中炒至焦黃，再加入肉。",
+        "blankSentence": "_____ the onions in a pan before adding the meat.",
+        "answer": "Brown",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EXba46b75a",
+        "word": "brown",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "Brown the onions in a pan before adding the meat.",
+        "sentenceZh": "先把洋蔥在鍋中炒至焦黃，再加入肉。",
+        "blankSentence": "_____ the onions in a pan before adding the meat.",
+        "answer": "Brown",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "confirmed_error: Brown the onions是祈使句，Brown為使洋蔥炒成棕色的動詞。 confirmed_error: Brown the onions是祈使句，Brown為使洋蔥炒成棕色的動詞。",
+      "evidence": "https://www.merriam-webster.com/dictionary/brown ; https://www.merriam-webster.com/dictionary/brown"
+    },
+    {
+      "dataset": "examples",
+      "id": "EXce637511",
+      "before": {
+        "exampleId": "EXce637511",
+        "word": "first",
+        "sensePos": "adv.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "She was nervous the first time she gave a speech in public.",
+        "sentenceZh": "她第一次在公開場合演講時感到很緊張。",
+        "blankSentence": "She was nervous the _____ time she gave a speech in public.",
+        "answer": "first",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EXce637511",
+        "word": "first",
+        "sensePos": "adj.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "She was nervous the first time she gave a speech in public.",
+        "sentenceZh": "她第一次在公開場合演講時感到很緊張。",
+        "blankSentence": "She was nervous the _____ time she gave a speech in public.",
+        "answer": "first",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "confirmed_error: the first time中first修飾名詞time；整個時間片語的副詞功能不等於first本身為副詞。 confirmed_error: the first time中first修飾名詞time；整個時間片語的副詞功能不等於first本身為副詞。",
+      "evidence": "https://www.merriam-webster.com/dictionary/first ; https://www.merriam-webster.com/dictionary/first"
+    },
+    {
+      "dataset": "examples",
+      "id": "EXdff7520f",
+      "before": {
+        "exampleId": "EXdff7520f",
+        "word": "present",
+        "sensePos": "adj.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "My sister gave me a nice present for my birthday.",
+        "sentenceZh": "我妹妹送了我一份不錯的生日禮物。",
+        "blankSentence": "My sister gave me a nice _____ for my birthday.",
+        "answer": "present",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EXdff7520f",
+        "word": "present",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "My sister gave me a nice present for my birthday.",
+        "sentenceZh": "我妹妹送了我一份不錯的生日禮物。",
+        "blankSentence": "My sister gave me a nice _____ for my birthday.",
+        "answer": "present",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "confirmed_error: gave me a nice present中present為a nice修飾的禮物名詞。 confirmed_error: gave me a nice present中present為a nice修飾的禮物名詞。",
+      "evidence": "https://www.merriam-webster.com/dictionary/present ; https://www.merriam-webster.com/dictionary/present"
+    },
+    {
+      "dataset": "words",
+      "id": "W000111",
+      "before": {
+        "wordId": "W000111",
+        "word": "bow",
+        "wordVariants": [
+          "bow"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "弓；眼睛框；用弓拉琴；彎成弓形",
+        "meaningEn": "a knot with two loops and loose ends; used to tie shoelaces; a slightly curved piece of resilient wood with taut horsehair strands; used in playing certain stringed instruments",
+        "usagePattern": "bow to sb; take a bow; a bow and arrow",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "bow",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "向某人鞠躬；鞠躬謝幕；弓箭"
+      },
+      "after": {
+        "wordId": "W000111",
+        "word": "bow",
+        "wordVariants": [
+          "bow"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "弓；眼鏡框；用弓拉琴；彎成弓形",
+        "meaningEn": "a knot with two loops and loose ends; used to tie shoelaces; a slightly curved piece of resilient wood with taut horsehair strands; used in playing certain stringed instruments",
+        "usagePattern": "bow to sb; take a bow; a bow and arrow",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "bow",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "向某人鞠躬；鞠躬謝幕；弓箭"
+      },
+      "reason": "confirmed_error: 只改眼睛→眼鏡，保留實存鏡框罕義。 confirmed_error: 只改眼睛→眼鏡，保留實存鏡框罕義。",
+      "evidence": "https://www.merriam-webster.com/dictionary/bow ; https://www.merriam-webster.com/dictionary/bow"
+    },
+    {
+      "dataset": "words",
+      "id": "W003512",
+      "before": {
+        "wordId": "W003512",
+        "word": "ignorance",
+        "wordVariants": [
+          "ignorance"
+        ],
+        "level": "LV4",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "無知；愚味；不知情；愚昧",
+        "meaningEn": "the lack of knowledge or education",
+        "usagePattern": "an/the ignorance; ignorance of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "ignorance",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "無知／該無知；對……的無知"
+      },
+      "after": {
+        "wordId": "W003512",
+        "word": "ignorance",
+        "wordVariants": [
+          "ignorance"
+        ],
+        "level": "LV4",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "無知；愚昧；不知情；愚昧",
+        "meaningEn": "the lack of knowledge or education",
+        "usagePattern": "an/the ignorance; ignorance of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "ignorance",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "無知／該無知；對……的無知"
+      },
+      "reason": "confirmed_error: 愚味是愚昧誤字；最小字元更正，不另合併現有重複義。 confirmed_error: 愚味是愚昧誤字；最小字元更正，不另合併現有重複義。",
+      "evidence": "https://www.merriam-webster.com/dictionary/ignorance ; https://www.merriam-webster.com/dictionary/ignorance"
+    },
+    {
+      "dataset": "words",
+      "id": "W000643",
+      "before": {
+        "wordId": "W000643",
+        "word": "picture",
+        "wordVariants": [
+          "picture"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "圖畫；照片；景色；美麗如畫的人(或物)",
+        "meaningEn": "(n.) a drawing, painting, or photograph of someone or something; (v.) to imagine something clearly in your mind",
+        "usagePattern": "take a picture; draw/paint a picture; picture N doing sth",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "picture",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "拍照；畫圖/作畫；圖片顯示名詞正在做某事"
+      },
+      "after": {
+        "wordId": "W000643",
+        "word": "picture",
+        "wordVariants": [
+          "picture"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "圖畫；照片；景色；美麗如畫的人(或物)",
+        "meaningEn": "(n.) a drawing, painting, or photograph of someone or something; (v.) to imagine something clearly in your mind",
+        "usagePattern": "take a picture; draw/paint a picture; picture N doing sth",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "picture",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "拍照；畫圖/作畫；想像某人／某物正在做某事"
+      },
+      "reason": "confirmed_error: 第三段英式picture N doing sth是動詞想像，不是圖片顯示；前兩段保留。 confirmed_error: 第三段英式picture N doing sth是動詞想像，不是圖片顯示；前兩段保留。",
+      "evidence": "https://www.merriam-webster.com/dictionary/picture ; https://www.merriam-webster.com/dictionary/picture"
+    },
+    {
+      "dataset": "words",
+      "id": "W000030",
+      "before": {
+        "wordId": "W000030",
+        "word": "am/a.m.",
+        "wordVariants": [
+          "am",
+          "a.m."
+        ],
+        "level": "LV1",
+        "pos": "adv.",
+        "posAll": [
+          "adv."
+        ],
+        "meaningZh": "上午",
+        "meaningEn": "before noon",
+        "usagePattern": "V + am",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "am",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "在上午做某事"
+      },
+      "after": {
+        "wordId": "W000030",
+        "word": "am/a.m.",
+        "wordVariants": [
+          "am",
+          "a.m."
+        ],
+        "level": "LV1",
+        "pos": "adv.",
+        "posAll": [
+          "adv."
+        ],
+        "meaningZh": "上午",
+        "meaningEn": "before noon",
+        "usagePattern": "time + a.m.",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "am",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "上午＋時間（例如：上午10點）"
+      },
+      "reason": "confirmed_error: 單獨V + 時間縮寫不能表達既定時刻，應接時間；此處只修形式，不變更縮寫映射。 confirmed_error: 單獨V + 時間縮寫不能表達既定時刻，應接時間；此處只修形式，不變更縮寫映射。 confirmed_error: 既有「做某事」對應的是錯誤V模板，修正為指定時刻的中文模式；屬同一搭配修正的中文配套，不是新增錯誤字卡。",
+      "evidence": "https://www.merriam-webster.com/dictionary/am ; https://www.chicagomanualofstyle.org/qanda/data/faq/topics/Numbers/faq0029.html ; https://www.merriam-webster.com/dictionary/am ; https://www.chicagomanualofstyle.org/qanda/data/faq/topics/Numbers/faq0029.html ; https://www.merriam-webster.com/dictionary/am ; https://www.chicagomanualofstyle.org/qanda/data/faq/topics/Numbers/faq0029.html"
+    },
+    {
+      "dataset": "words",
+      "id": "W000659",
+      "before": {
+        "wordId": "W000659",
+        "word": "pm/p.m.",
+        "wordVariants": [
+          "pm",
+          "p.m."
+        ],
+        "level": "LV1",
+        "pos": "adv.",
+        "posAll": [
+          "adv."
+        ],
+        "meaningZh": "下午",
+        "meaningEn": "after noon",
+        "usagePattern": "V + pm",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "pm",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "在下午做某事"
+      },
+      "after": {
+        "wordId": "W000659",
+        "word": "pm/p.m.",
+        "wordVariants": [
+          "pm",
+          "p.m."
+        ],
+        "level": "LV1",
+        "pos": "adv.",
+        "posAll": [
+          "adv."
+        ],
+        "meaningZh": "下午",
+        "meaningEn": "after noon",
+        "usagePattern": "time + p.m.",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "pm",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "下午／晚上＋時間（例如：晚上10點）"
+      },
+      "reason": "confirmed_error: 單獨V + 時間縮寫不能表達既定時刻，應接時間；此處只修形式，不變更縮寫映射。 confirmed_error: 單獨V + 時間縮寫不能表達既定時刻，應接時間；此處只修形式，不變更縮寫映射。 confirmed_error: 既有「做某事」對應的是錯誤V模板，修正為指定時刻的中文模式；屬同一搭配修正的中文配套，不是新增錯誤字卡。p.m.是正午後時段，中文依時刻譯下午或晚上。",
+      "evidence": "https://www.merriam-webster.com/dictionary/pm ; https://www.chicagomanualofstyle.org/qanda/data/faq/topics/Numbers/faq0029.html ; https://www.merriam-webster.com/dictionary/pm ; https://www.chicagomanualofstyle.org/qanda/data/faq/topics/Numbers/faq0029.html ; https://www.merriam-webster.com/dictionary/pm ; https://www.chicagomanualofstyle.org/qanda/data/faq/topics/Numbers/faq0029.html"
+    },
+    {
+      "dataset": "words",
+      "id": "W001897",
+      "before": {
+        "wordId": "W001897",
+        "word": "terrorism",
+        "wordVariants": [
+          "terrorism"
+        ],
+        "level": "LV3",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "恐怖主義；恐怖統治；恐怖狀態；脅迫",
+        "meaningEn": "the calculated use of violence (or the threat of violence) against civilians in order to attain goals that are political or religious or...",
+        "usagePattern": "a/the terrorism; terrorism of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "terrorism",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "恐怖主義；……的恐怖主義"
+      },
+      "after": {
+        "wordId": "W001897",
+        "word": "terrorism",
+        "wordVariants": [
+          "terrorism"
+        ],
+        "level": "LV3",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "恐怖主義；恐怖統治；恐怖狀態；脅迫",
+        "meaningEn": "the calculated use of violence (or the threat of violence) against civilians in order to attain goals that are political or religious or ideological in nature; this is done through intimidation or coercion or instilling fear",
+        "usagePattern": "a/the terrorism; terrorism of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "terrorism",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "恐怖主義；……的恐怖主義"
+      },
+      "reason": "confirmed_error: 以現存完整前綴比對可讀詞典原文，恢復省略號後的尾段；來源是可讀的相同定義，不主張已查明原匯入站。 confirmed_error: 以現存完整前綴比對可讀詞典原文，恢復省略號後的尾段；來源是可讀的相同定義，不主張已查明原匯入站。",
+      "evidence": "https://www.vocabulary.com/dictionary/terrorism ; https://www.vocabulary.com/dictionary/terrorism"
+    },
+    {
+      "dataset": "words",
+      "id": "W003450",
+      "before": {
+        "wordId": "W003450",
+        "word": "gifted",
+        "wordVariants": [
+          "gifted"
+        ],
+        "level": "LV4",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "有天才的",
+        "meaningEn": "give qualities or abilities to; give as a present; make a gift of",
+        "usagePattern": "be gifted; gifted + N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "gifted",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "有天賦的；有天賦的……"
+      },
+      "after": {
+        "wordId": "W003450",
+        "word": "gifted",
+        "wordVariants": [
+          "gifted"
+        ],
+        "level": "LV4",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "有天才的",
+        "meaningEn": "(adj.) having exceptional natural talent; (gift, v.; gifted is its past tense and past participle) give qualities or abilities to; give as a present; make a gift of",
+        "usagePattern": "be gifted; gifted + N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "gifted",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "有天賦的；有天賦的……"
+      },
+      "reason": "confirmed_error: 本卡adj有天才的完全缺失，現英解全是gift動詞。補本卡形容詞並標明原動詞詞源／變化，不刪真實動詞義。 confirmed_error: 本卡adj有天才的完全缺失，現英解全是gift動詞。補本卡形容詞並標明原動詞詞源／變化，不刪真實動詞義。",
+      "evidence": "https://www.merriam-webster.com/dictionary/gifted ; https://www.merriam-webster.com/dictionary/gifted"
+    },
+    {
+      "dataset": "words",
+      "id": "W000338",
+      "before": {
+        "wordId": "W000338",
+        "word": "funny",
+        "wordVariants": [
+          "funny"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "好笑的；有趣的；滑稽的；滑稽人物",
+        "meaningEn": "experiencing odd bodily sensations",
+        "usagePattern": "be/look funny; a funny story/joke",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "funny",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "很好笑／看起來滑稽；好笑的故事／笑話"
+      },
+      "after": {
+        "wordId": "W000338",
+        "word": "funny",
+        "wordVariants": [
+          "funny"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "好笑的；有趣的；滑稽的；滑稽人物",
+        "meaningEn": "amusing or odd; experiencing odd bodily sensations",
+        "usagePattern": "be/look funny; a funny story/joke",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "funny",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "很好笑／看起來滑稽；好笑的故事／笑話"
+      },
+      "reason": "optional_precision: 原文不舒服義真實，不刪；補教材好笑／奇怪義以免中英文僅局部對應。 optional_precision: 原文不舒服義真實，不刪；補教材好笑／奇怪義以免中英文僅局部對應。",
+      "evidence": "https://www.merriam-webster.com/dictionary/funny ; https://www.merriam-webster.com/dictionary/funny"
+    },
+    {
+      "dataset": "words",
+      "id": "W003707",
+      "before": {
+        "wordId": "W003707",
+        "word": "overcoat",
+        "wordVariants": [
+          "overcoat"
+        ],
+        "level": "LV4",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "外套大衣",
+        "meaningEn": "an additional protective coating (as of paint or varnish)",
+        "usagePattern": "an/the overcoat; overcoat of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "overcoat",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "一件外套／該外套；……的外套"
+      },
+      "after": {
+        "wordId": "W003707",
+        "word": "overcoat",
+        "wordVariants": [
+          "overcoat"
+        ],
+        "level": "LV4",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "外套大衣",
+        "meaningEn": "a warm outer coat worn over other clothing; an additional protective coating (as of paint or varnish)",
+        "usagePattern": "an/the overcoat; overcoat of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "overcoat",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "一件外套／該外套；……的外套"
+      },
+      "reason": "optional_precision: 原英文保護塗層義真實；只補本課大衣義。 optional_precision: 原英文保護塗層義真實；只補本課大衣義。",
+      "evidence": "https://www.merriam-webster.com/dictionary/overcoat ; https://www.merriam-webster.com/dictionary/overcoat"
+    },
+    {
+      "dataset": "words",
+      "id": "W002808",
+      "before": {
+        "wordId": "W002808",
+        "word": "skinny",
+        "wordVariants": [
+          "skinny"
+        ],
+        "level": "LV3",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "似皮的；極瘦的；少的；小氣的",
+        "meaningEn": "confidential information about a topic or person; of or relating to or resembling skin",
+        "usagePattern": "be skinny; skinny + N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "skinny",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "表現得極瘦；極瘦的人"
+      },
+      "after": {
+        "wordId": "W002808",
+        "word": "skinny",
+        "wordVariants": [
+          "skinny"
+        ],
+        "level": "LV3",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "似皮的；極瘦的；少的；小氣的",
+        "meaningEn": "very thin; confidential information about a topic or person; of or relating to or resembling skin",
+        "usagePattern": "be skinny; skinny + N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "skinny",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "很瘦；瘦的／細長的……"
+      },
+      "reason": "optional_precision: 原名詞內幕及似皮形容詞皆真實；只補本課瘦義，不依主POS刪義。 optional_precision: 原名詞內幕及似皮形容詞皆真實；只補本課瘦義，不依主POS刪義。 optional_precision: be skinny是狀態，不必譯成表現得；skinny + N也非一概指人。",
+      "evidence": "https://www.merriam-webster.com/dictionary/skinny ; https://www.merriam-webster.com/dictionary/skinny ; https://www.merriam-webster.com/dictionary/skinny"
+    },
+    {
+      "dataset": "words",
+      "id": "W003771",
+      "before": {
+        "wordId": "W003771",
+        "word": "priority",
+        "wordVariants": [
+          "priority"
+        ],
+        "level": "LV4",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "優先權；優先；優先級",
+        "meaningEn": "preceding in time",
+        "usagePattern": "a/the priority; priority of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "priority",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "優先事項；……的優先權"
+      },
+      "after": {
+        "wordId": "W003771",
+        "word": "priority",
+        "wordVariants": [
+          "priority"
+        ],
+        "level": "LV4",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "優先權；優先；優先級",
+        "meaningEn": "the state of coming earlier in time; precedence in importance or entitlement; something to be dealt with before other things",
+        "usagePattern": "a/the priority; priority of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "priority",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "優先事項；……的優先權"
+      },
+      "reason": "optional_precision: 前後次序義真實，但現英解缺本卡優先權／優先事項。 optional_precision: 前後次序義真實，但現英解缺本卡優先權／優先事項。",
+      "evidence": "https://www.merriam-webster.com/dictionary/priority ; https://www.merriam-webster.com/dictionary/priority"
+    },
+    {
+      "dataset": "words",
+      "id": "W004656",
+      "before": {
+        "wordId": "W004656",
+        "word": "prejudice",
+        "wordVariants": [
+          "prejudice"
+        ],
+        "level": "LV5",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "偏見；成見；侵害；使存偏見",
+        "meaningEn": "disadvantage by prejudice; influence (somebody's) opinion in advance",
+        "usagePattern": "prejudice + N; prejudice to V; a/the prejudice",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "prejudice",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "對……有偏見；對……有偏見以……；一種偏見"
+      },
+      "after": {
+        "wordId": "W004656",
+        "word": "prejudice",
+        "wordVariants": [
+          "prejudice"
+        ],
+        "level": "LV5",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "偏見；成見；侵害；使存偏見",
+        "meaningEn": "(n.) an opinion formed without adequate knowledge, especially an unfair bias; harm or disadvantage; (v.) disadvantage by prejudice; influence (somebody's) opinion in advance",
+        "usagePattern": "prejudice against N; prejudice sb against N; prejudice sb's interests",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "prejudice",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "對……的偏見；使某人對……產生偏見；損害某人的利益"
+      },
+      "reason": "optional_precision: 原動詞義真實，補中文偏見／侵害所對應名詞義。 optional_precision: 原動詞義真實，補中文偏見／侵害所對應名詞義。 optional_precision: prejudice to V未指出可穩定使用的搭配；改成明確名詞／動詞搭配，保留其他義。 optional_precision: 與建議的英語搭配逐一對齊，需成對採納。",
+      "evidence": "https://www.merriam-webster.com/dictionary/prejudice ; https://www.merriam-webster.com/dictionary/prejudice ; https://www.merriam-webster.com/dictionary/prejudice ; https://www.merriam-webster.com/dictionary/prejudice"
+    },
+    {
+      "dataset": "words",
+      "id": "W000746",
+      "before": {
+        "wordId": "W000746",
+        "word": "second",
+        "wordVariants": [
+          "second"
+        ],
+        "level": "LV1",
+        "pos": "adj./n./adv.",
+        "posAll": [
+          "adj.",
+          "n.",
+          "adv."
+        ],
+        "meaningZh": "秒；瞬間；第二名；支持者",
+        "meaningEn": "(n.) a unit of time equal to one sixtieth of a minute; a very brief moment; (adj.) coming immediately after the first in order or position",
+        "usagePattern": "a second (a moment); the second N; wait a second",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "second",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "一秒鐘（一會兒）；第二個名詞；等一下"
+      },
+      "after": {
+        "wordId": "W000746",
+        "word": "second",
+        "wordVariants": [
+          "second"
+        ],
+        "level": "LV1",
+        "pos": "adj./n./adv.",
+        "posAll": [
+          "adj.",
+          "n.",
+          "adv."
+        ],
+        "meaningZh": "（名詞）秒；瞬間；第二名；支持者；（形容詞）第二的；（副詞）第二地",
+        "meaningEn": "(n.) a unit of time equal to one sixtieth of a minute; a very brief moment; (adj.) coming immediately after the first in order or position; (adv.) in second place; (n.) a person who assists or supports another.",
+        "usagePattern": "a second (a moment); the second N; wait a second",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "second",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "一秒鐘（一會兒）；第二個……；等一下"
+      },
+      "reason": "Restore the existing adjective/adverb and retain the genuine supporter noun. Preserve headword POS. Restore the existing adjective/adverb and retain the genuine supporter noun. Preserve headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/second ; https://www.merriam-webster.com/dictionary/second"
+    },
+    {
+      "dataset": "words",
+      "id": "W000173",
+      "before": {
+        "wordId": "W000173",
+        "word": "climb",
+        "wordVariants": [
+          "climb"
+        ],
+        "level": "LV1",
+        "pos": "v./n.",
+        "posAll": [
+          "v.",
+          "n."
+        ],
+        "meaningZh": "攀登；上升；爬；爬升",
+        "meaningEn": "to move up, over, or through something using your feet and often your hands, especially something high or steep; to rise",
+        "usagePattern": "climb a mountain/tree/ladder; climb up/down; a steep climb",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "climb",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "爬山/樹/梯子；往上/下爬；陡峭的爬升"
+      },
+      "after": {
+        "wordId": "W000173",
+        "word": "climb",
+        "wordVariants": [
+          "climb"
+        ],
+        "level": "LV1",
+        "pos": "v./n.",
+        "posAll": [
+          "v.",
+          "n."
+        ],
+        "meaningZh": "攀登；上升；爬；爬升",
+        "meaningEn": "to move up, over, or through something using your feet and often your hands, especially something high or steep; to rise; (n.) an act of climbing or going up.",
+        "usagePattern": "climb a mountain/tree/ladder; climb up/down; a steep climb",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "climb",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "爬山/樹/梯子；往上/下爬；陡峭的爬升"
+      },
+      "reason": "Add the already formal noun shown by a steep climb without deleting either verb sense. Add the already formal noun shown by a steep climb without deleting either verb sense.",
+      "evidence": "https://www.merriam-webster.com/dictionary/climb ; https://www.merriam-webster.com/dictionary/climb"
+    },
+    {
+      "dataset": "words",
+      "id": "W000346",
+      "before": {
+        "wordId": "W000346",
+        "word": "gift",
+        "wordVariants": [
+          "gift"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "禮物；贈予；天才；賦予",
+        "meaningEn": "something that you give to someone, for example as a present; a natural ability to do something well",
+        "usagePattern": "a gift for sb; have a gift for N/V-ing; a birthday gift",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "gift",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "給某人的禮物；對名詞/動名詞有天賦；生日禮物"
+      },
+      "after": {
+        "wordId": "W000346",
+        "word": "gift",
+        "wordVariants": [
+          "gift"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "（名詞）禮物；贈予；天才；（另列動詞用法）賦予",
+        "meaningEn": "something that you give to someone, for example as a present; a natural ability to do something well",
+        "usagePattern": "a gift for sb; have a gift for N/V-ing; a birthday gift",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "gift",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "給某人的禮物；有……的天賦／有做……的天賦；生日禮物"
+      },
+      "reason": "Label the genuine related verb rather than delete it; explain the exact talent construction without literal grammar tokens. Label the genuine related verb rather than delete it; explain the exact talent construction without literal grammar tokens.",
+      "evidence": "https://www.merriam-webster.com/dictionary/gift ; https://www.merriam-webster.com/dictionary/gift"
+    },
+    {
+      "dataset": "words",
+      "id": "W000675",
+      "before": {
+        "wordId": "W000675",
+        "word": "present",
+        "wordVariants": [
+          "present"
+        ],
+        "level": "LV1",
+        "pos": "adj./n./v.",
+        "posAll": [
+          "adj.",
+          "n.",
+          "v."
+        ],
+        "meaningZh": "現在；禮品；瞄準；現在的",
+        "meaningEn": "(n.) the period of time that is happening now; a gift given to someone; (adj.) existing, happening, or being dealt with right now",
+        "usagePattern": "at present; the present situation; a present for N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "present",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "目前；當前情況；給名詞的禮物"
+      },
+      "after": {
+        "wordId": "W000675",
+        "word": "present",
+        "wordVariants": [
+          "present"
+        ],
+        "level": "LV1",
+        "pos": "adj./n./v.",
+        "posAll": [
+          "adj.",
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（名詞）現在；禮品；（動詞）瞄準；贈送；呈現；介紹；（形容詞）現在的",
+        "meaningEn": "(n.) the period of time that is happening now; a gift given to someone; (adj.) existing, happening, or being dealt with right now; (v.) to give, show, introduce or formally offer something; to aim a weapon.",
+        "usagePattern": "at present; the present situation; a present for N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "present",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "目前；當前情況；給某人的禮物"
+      },
+      "reason": "Restore the formal verb missing from the summary and preserve the verified aiming sense. Restore the formal verb missing from the summary and preserve the verified aiming sense.",
+      "evidence": "https://www.merriam-webster.com/dictionary/present ; https://www.merriam-webster.com/dictionary/present"
+    },
+    {
+      "dataset": "words",
+      "id": "W000446",
+      "before": {
+        "wordId": "W000446",
+        "word": "joy",
+        "wordVariants": [
+          "joy"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "歡喜；樂事；高興；使快樂",
+        "meaningEn": "a feeling of great happiness",
+        "usagePattern": "with joy; bring joy to sb",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "joy",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "充滿喜悅；給某人帶來喜悅"
+      },
+      "after": {
+        "wordId": "W000446",
+        "word": "joy",
+        "wordVariants": [
+          "joy"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "（名詞）歡喜；樂事；高興；（古及物動詞用法）使快樂",
+        "meaningEn": "a feeling of great happiness; something that brings happiness; (archaic transitive verb) to gladden.",
+        "usagePattern": "with joy; bring joy to sb",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "joy",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "充滿喜悅；給某人帶來喜悅"
+      },
+      "reason": "Keep the genuine historical causative verb explicitly separate from the noun. Do not expand headword POS. Keep the genuine historical causative verb explicitly separate from the noun. Do not expand headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/joy ; https://www.merriam-webster.com/dictionary/joy"
+    },
+    {
+      "dataset": "words",
+      "id": "W000752",
+      "before": {
+        "wordId": "W000752",
+        "word": "sentence",
+        "wordVariants": [
+          "sentence"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "句子；命題；宣判；判決",
+        "meaningEn": "(n.) a group of words that expresses a complete statement, question, or command; (v.) to officially state the punishment given to someone found guilty of a crime",
+        "usagePattern": "a complete sentence; sentence sb to N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "sentence",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "完整句子；判某人……刑"
+      },
+      "after": {
+        "wordId": "W000752",
+        "word": "sentence",
+        "wordVariants": [
+          "sentence"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（名詞）句子；命題；判決；（動詞）宣判；判刑",
+        "meaningEn": "(n.) a group of words that expresses a complete statement, question, or command; (v.) to officially state the punishment given to someone found guilty of a crime; (n.) a punishment formally ordered by a court.",
+        "usagePattern": "a complete sentence; sentence sb to N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "sentence",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "完整句子；判某人……刑"
+      },
+      "reason": "Add the punishment noun printed in the textbook; retain the proposition and sentencing verb. Add the punishment noun printed in the textbook; retain the proposition and sentencing verb.",
+      "evidence": "https://www.merriam-webster.com/dictionary/sentence ; https://www.merriam-webster.com/dictionary/sentence"
+    },
+    {
+      "dataset": "words",
+      "id": "W000179",
+      "before": {
+        "wordId": "W000179",
+        "word": "coat",
+        "wordVariants": [
+          "coat"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "外套；外面覆蓋；給...穿外套",
+        "meaningEn": "(n.) an outer piece of clothing with sleeves, worn to keep warm; a layer of a substance that covers a surface; (v.) to cover something with a thin layer of a substance",
+        "usagePattern": "put on/take off a coat; a coat of paint; coat N with N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "coat",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "穿上/脫下外套；一層油漆；用名詞覆蓋名詞"
+      },
+      "after": {
+        "wordId": "W000179",
+        "word": "coat",
+        "wordVariants": [
+          "coat"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（名詞）外套；外面覆蓋的一層；（動詞）給……穿外套；塗覆",
+        "meaningEn": "(n.) an outer piece of clothing with sleeves, worn to keep warm; a layer of a substance that covers a surface; (v.) to cover something with a thin layer of a substance",
+        "usagePattern": "put on/take off a coat; a coat of paint; coat N with N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "coat",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "穿上／脫下外套；一層油漆；把某物塗在另一物的表面"
+      },
+      "reason": "The already formal coating verb appears in the exact source coat A with B and formal coated example. The already formal coating verb appears in the exact source coat A with B and formal coated example.",
+      "evidence": "https://www.merriam-webster.com/dictionary/coat ; https://www.merriam-webster.com/dictionary/coat"
+    },
+    {
+      "dataset": "words",
+      "id": "W000441",
+      "before": {
+        "wordId": "W000441",
+        "word": "jacket",
+        "wordVariants": [
+          "jacket"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "夾克；外套；護套；給...穿夾克",
+        "meaningEn": "a short coat; an outer wrapping or casing",
+        "usagePattern": "wear/put on a jacket; a life jacket",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "jacket",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "穿／穿上外套；救生衣"
+      },
+      "after": {
+        "wordId": "W000441",
+        "word": "jacket",
+        "wordVariants": [
+          "jacket"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "（名詞）夾克；外套；護套；（另列動詞用法）給……穿夾克",
+        "meaningEn": "a short coat; an outer wrapping or casing; (related verb) to put a jacket or protective covering on.",
+        "usagePattern": "wear/put on a jacket; a life jacket",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "jacket",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "穿／穿上外套；救生衣"
+      },
+      "reason": "Keep the inherited casing noun and jacket verb explicitly labeled; no headword POS change. Keep the inherited casing noun and jacket verb explicitly labeled; no headword POS change.",
+      "evidence": "https://www.merriam-webster.com/dictionary/jacket ; https://www.merriam-webster.com/dictionary/jacket"
+    },
+    {
+      "dataset": "words",
+      "id": "W000515",
+      "before": {
+        "wordId": "W000515",
+        "word": "mail",
+        "wordVariants": [
+          "mail"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "郵件；郵政；郵遞；盔甲",
+        "meaningEn": "the bags of letters and packages that are transported by the postal service; the system whereby messages are transmitted via the post office",
+        "usagePattern": "send N by mail; check one's mail; in the mail",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "mail",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "郵寄……；查看郵件；正在郵寄途中"
+      },
+      "after": {
+        "wordId": "W000515",
+        "word": "mail",
+        "wordVariants": [
+          "mail"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（名詞）郵件；郵政；郵遞；盔甲；（動詞）郵寄",
+        "meaningEn": "the bags of letters and packages that are transported by the postal service; the system whereby messages are transmitted via the post office; (v., chiefly US) to send by post; (separate noun) armor made from metal links or plates.",
+        "usagePattern": "send N by mail; check one's mail; in the mail",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "mail",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "郵寄……；查看郵件；正在郵寄途中"
+      },
+      "reason": "Restore the formal mailing verb while retaining genuine separate armor noun. Restore the formal mailing verb while retaining genuine separate armor noun.",
+      "evidence": "https://www.merriam-webster.com/dictionary/mail ; https://www.merriam-webster.com/dictionary/mail"
+    },
+    {
+      "dataset": "words",
+      "id": "W000261",
+      "before": {
+        "wordId": "W000261",
+        "word": "email",
+        "wordVariants": [
+          "email"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "電子信函",
+        "meaningEn": "(n.) a message sent electronically over the internet; (v.) to send someone such a message",
+        "usagePattern": "send/receive an email; check one's email; email sb sth; reply to an email",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "email",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "發送/接收電子郵件；查看某人的電子郵件；給某人發電子郵件；回覆電子郵件"
+      },
+      "after": {
+        "wordId": "W000261",
+        "word": "email",
+        "wordVariants": [
+          "email"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（名詞）電子信函；（動詞）寄電子郵件",
+        "meaningEn": "(n.) a message sent electronically over the internet; (v.) to send someone such a message",
+        "usagePattern": "send/receive an email; check one's email; email sb sth; reply to an email",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "email",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "發送／接收電子郵件；查看自己的電子郵件；寄電子郵件給某人；回覆電子郵件"
+      },
+      "reason": "Add the already formal email verb rather than describe only the electronic-message noun. Add the already formal email verb rather than describe only the electronic-message noun.",
+      "evidence": "https://www.merriam-webster.com/dictionary/email ; https://www.merriam-webster.com/dictionary/email"
+    },
+    {
+      "dataset": "words",
+      "id": "W000796",
+      "before": {
+        "wordId": "W000796",
+        "word": "snake",
+        "wordVariants": [
+          "snake"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "蛇；陰險的人；曲折行進；迂迴",
+        "meaningEn": "limbless scaly elongate reptile; some are venomous; a deceitful or treacherous person",
+        "usagePattern": "a snake bite; a poisonous snake",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "snake",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "蛇咬傷；毒蛇"
+      },
+      "after": {
+        "wordId": "W000796",
+        "word": "snake",
+        "wordVariants": [
+          "snake"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（名詞）蛇；陰險的人；（動詞）曲折行進；迂迴",
+        "meaningEn": "limbless scaly elongate reptile; some are venomous; a deceitful or treacherous person; (v.) to move or extend along a winding course.",
+        "usagePattern": "a snake bite; a poisonous snake",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "snake",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "蛇咬傷；毒蛇"
+      },
+      "reason": "Restore the already formal winding verb from the original p155 constructions; keep both inherited nouns. Restore the already formal winding verb from the original p155 constructions; keep both inherited nouns.",
+      "evidence": "https://www.merriam-webster.com/dictionary/snake ; https://www.merriam-webster.com/dictionary/snake"
+    },
+    {
+      "dataset": "words",
+      "id": "W000789",
+      "before": {
+        "wordId": "W000789",
+        "word": "slim",
+        "wordVariants": [
+          "slim"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "瘦的；苗條的；微小的；稀少的",
+        "meaningEn": "take off weight; being of delicate or slender build",
+        "usagePattern": "stay/get slim; a slim chance",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "slim",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "保持／變得苗條；渺小的機會"
+      },
+      "after": {
+        "wordId": "W000789",
+        "word": "slim",
+        "wordVariants": [
+          "slim"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "瘦的；苗條的；微小的；稀少的",
+        "meaningEn": "(adj.) slender; very small in amount or likelihood; (related verb) take off weight; being of delicate or slender build",
+        "usagePattern": "stay/get slim; a slim chance",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "slim",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "保持／變得苗條；機會很小"
+      },
+      "reason": "Retain the genuine slimming verb and restore the selected adjective and slim-chance meaning. Retain the genuine slimming verb and restore the selected adjective and slim-chance meaning.",
+      "evidence": "https://www.merriam-webster.com/dictionary/slim ; https://www.merriam-webster.com/dictionary/slim"
+    },
+    {
+      "dataset": "words",
+      "id": "W000337",
+      "before": {
+        "wordId": "W000337",
+        "word": "fun",
+        "wordVariants": [
+          "fun"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "樂趣；玩笑；娛樂；開玩笑",
+        "meaningEn": "pleasure, enjoyment, or light-hearted amusement",
+        "usagePattern": "have fun; for fun; make fun of sb",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "fun",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "玩得開心；為了好玩；取笑某人"
+      },
+      "after": {
+        "wordId": "W000337",
+        "word": "fun",
+        "wordVariants": [
+          "fun"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "（名詞）樂趣；玩笑；娛樂；（另列動詞用法）開玩笑",
+        "meaningEn": "pleasure, enjoyment, or light-hearted amusement; (adj.) enjoyable or amusing; (related verb) to joke or play.",
+        "usagePattern": "have fun; for fun; make fun of sb",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "fun",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "玩得開心；為了好玩；取笑某人"
+      },
+      "reason": "Keep the genuine related verb and explain the adjective printed in the textbook without changing formal POS. Keep the genuine related verb and explain the adjective printed in the textbook without changing formal POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/fun ; https://www.merriam-webster.com/dictionary/fun"
+    },
+    {
+      "dataset": "words",
+      "id": "W000137",
+      "before": {
+        "wordId": "W000137",
+        "word": "camera",
+        "wordVariants": [
+          "camera"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "照相機；攝影機；密談室；暗箱",
+        "meaningEn": "a piece of equipment used for taking photographs or making films or videos",
+        "usagePattern": "take a picture with a camera; a digital camera; a security camera",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "camera",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "用相機拍照；數位相機；監控攝影機"
+      },
+      "after": {
+        "wordId": "W000137",
+        "word": "camera",
+        "wordVariants": [
+          "camera"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "照相機；攝影機；（法律）法官的私人辦公室；暗箱",
+        "meaningEn": "a piece of equipment used for taking photographs or making films or videos",
+        "usagePattern": "take a picture with a camera; a digital camera; a security camera",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "camera",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "用相機拍照；數位相機；監控攝影機"
+      },
+      "reason": "Qualify the independently verified camera² room noun, rather than remove it as unrelated. Qualify the independently verified camera² room noun, rather than remove it as unrelated.",
+      "evidence": "https://www.dictionary.com/browse/camera ; U17-RARE-SUMMARY-VERIFICATION.json ; https://www.dictionary.com/browse/camera ; U17-RARE-SUMMARY-VERIFICATION.json"
+    },
+    {
+      "dataset": "words",
+      "id": "W000639",
+      "before": {
+        "wordId": "W000639",
+        "word": "photograph/photo",
+        "wordVariants": [
+          "photograph",
+          "photo"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "相片；照片；逼真的描繪；照相",
+        "meaningEn": "a picture made using a camera; to take a picture of someone or something with a camera",
+        "usagePattern": "take a photograph of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "photograph",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "拍攝 + 名詞的照片"
+      },
+      "after": {
+        "wordId": "W000639",
+        "word": "photograph/photo",
+        "wordVariants": [
+          "photograph",
+          "photo"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（名詞）相片；照片；（photograph 的比喻義）逼真的描繪；（動詞）照相",
+        "meaningEn": "a picture made using a camera; to take a picture of someone or something with a camera",
+        "usagePattern": "take a photograph of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "photograph",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "拍攝 + 名詞的照片"
+      },
+      "reason": "The historical figurative noun is verified for photograph; do not automatically extend it to the alternate photo head. Preserve the existing formal combined head. The historical figurative noun is verified for photograph; do not automatically extend it to the alternate photo head. Preserve the existing formal combined head.",
+      "evidence": "U17-RARE-SUMMARY-VERIFICATION.json ; Webster scan printed p1625 ; U17-RARE-SUMMARY-VERIFICATION.json ; Webster scan printed p1625"
+    },
+    {
+      "dataset": "words",
+      "id": "W000506",
+      "before": {
+        "wordId": "W000506",
+        "word": "loud",
+        "wordVariants": [
+          "loud"
+        ],
+        "level": "LV1",
+        "pos": "adv./adj.",
+        "posAll": [
+          "adv.",
+          "adj."
+        ],
+        "meaningZh": "大聲的；不斷的；喧吵的；高聲地",
+        "meaningEn": "characterized by or producing sound of great volume or intensity",
+        "usagePattern": "a loud noise/voice; be loud; speak/laugh loudly",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "loud",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "巨大的聲響／響亮的聲音；很大聲；大聲說話／笑"
+      },
+      "after": {
+        "wordId": "W000506",
+        "word": "loud",
+        "wordVariants": [
+          "loud"
+        ],
+        "level": "LV1",
+        "pos": "adv./adj.",
+        "posAll": [
+          "adv.",
+          "adj."
+        ],
+        "meaningZh": "大聲的；（表達意見等）反覆而強烈的；喧吵的；高聲地",
+        "meaningEn": "characterized by or producing sound of great volume or intensity",
+        "usagePattern": "a loud noise/voice; be loud; speak/laugh loud",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "loud",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "巨大的聲響／響亮的聲音；很大聲；大聲說話／笑"
+      },
+      "reason": "Qualify the persistent-emphatic opinion sense and use the existing formal loud adverb rather than silently switching the head to loudly. Qualify the persistent-emphatic opinion sense and use the existing formal loud adverb rather than silently switching the head to loudly.",
+      "evidence": "https://www.wordsmyth.net/?ent=loud ; https://www.collinsdictionary.com/dictionary/english/loud ; https://www.wordsmyth.net/?ent=loud ; https://www.collinsdictionary.com/dictionary/english/loud"
+    },
+    {
+      "dataset": "words",
+      "id": "W001655",
+      "before": {
+        "wordId": "W001655",
+        "word": "post",
+        "wordVariants": [
+          "post"
+        ],
+        "level": "LV2",
+        "pos": "n./v./adv.",
+        "posAll": [
+          "n.",
+          "v.",
+          "adv."
+        ],
+        "meaningZh": "柱；杆；準星；郵件",
+        "meaningEn": "mail delivered or collected; to put up a notice or share information in public, such as online",
+        "usagePattern": "post + N (online); a post office; by post",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "post",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "在網路上貼出……；郵局；郵寄"
+      },
+      "after": {
+        "wordId": "W001655",
+        "word": "post",
+        "wordVariants": [
+          "post"
+        ],
+        "level": "LV2",
+        "pos": "n./v./adv.",
+        "posAll": [
+          "n.",
+          "v.",
+          "adv."
+        ],
+        "meaningZh": "（名詞）柱；杆；準星；郵件；（動詞）郵寄；張貼；發布",
+        "meaningEn": "mail delivered or collected; to put up a notice or share information in public, such as online",
+        "usagePattern": "post + N (online); a post office; by post",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "post",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "在網路上貼出……；郵局；郵寄"
+      },
+      "reason": "Retain every inherited noun and add the existing posting and mailing verbs. Retain every inherited noun and add the existing posting and mailing verbs.",
+      "evidence": "https://www.merriam-webster.com/dictionary/post ; https://www.merriam-webster.com/dictionary/post"
+    },
+    {
+      "dataset": "words",
+      "id": "W001764",
+      "before": {
+        "wordId": "W001764",
+        "word": "secondary",
+        "wordVariants": [
+          "secondary"
+        ],
+        "level": "LV2",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "中級的；中等的；次要的；第二的",
+        "meaningEn": "the defensive football players who line up behind the linemen; being of second rank or importance or value; not direct or immediate",
+        "usagePattern": "be secondary; secondary + N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "secondary",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "是次要的；次要的某物／中等的某物"
+      },
+      "after": {
+        "wordId": "W001764",
+        "word": "secondary",
+        "wordVariants": [
+          "secondary"
+        ],
+        "level": "LV2",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "中級的；中等的；次要的；第二的",
+        "meaningEn": "(n., American football) the defensive football players who line up behind the linemen; (adj.) being of second rank or importance or value; not direct or immediate",
+        "usagePattern": "be secondary; secondary + N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "secondary",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "是次要的；次要的某物／中等的某物"
+      },
+      "reason": "Label, rather than delete, the genuine football noun which is separate from the formal adjective. Label, rather than delete, the genuine football noun which is separate from the formal adjective.",
+      "evidence": "https://www.merriam-webster.com/dictionary/secondary ; https://www.merriam-webster.com/dictionary/secondary"
+    },
+    {
+      "dataset": "words",
+      "id": "W000109",
+      "before": {
+        "wordId": "W000109",
+        "word": "bottle",
+        "wordVariants": [
+          "bottle"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "瓶子；酒瓶；裝瓶；抑制",
+        "meaningEn": "(n.) a container, usually made of glass or plastic, with a narrow neck, used for holding liquids; the amount of liquid that a bottle holds; (v.) to put a liquid into bottles",
+        "usagePattern": "a bottle of N; bottled water; a baby's bottle",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "bottle",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "一瓶名詞；瓶裝水；嬰兒的奶瓶"
+      },
+      "after": {
+        "wordId": "W000109",
+        "word": "bottle",
+        "wordVariants": [
+          "bottle"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "瓶子；酒瓶；裝瓶；抑制",
+        "meaningEn": "(n.) a container, usually made of glass or plastic, with a narrow neck, used for holding liquids; the amount of liquid that a bottle holds; (v.) to put a liquid into bottles",
+        "usagePattern": "a bottle of N; bottled water; a baby's bottle",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "bottle",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "一瓶……；瓶裝水；嬰兒的奶瓶"
+      },
+      "reason": "Remove literal noun-token wording from a bottle of N while preserving all three groups. Remove literal noun-token wording from a bottle of N while preserving all three groups.",
+      "evidence": "https://www.merriam-webster.com/dictionary/bottle ; https://www.merriam-webster.com/dictionary/bottle"
+    },
+    {
+      "dataset": "words",
+      "id": "W003740",
+      "before": {
+        "wordId": "W003740",
+        "word": "photography",
+        "wordVariants": [
+          "photography"
+        ],
+        "level": "LV4",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "攝影；攝影術；照相術",
+        "meaningEn": "the act of taking and printing photographs; the process of producing images of objects on photosensitive surfaces",
+        "usagePattern": "a/the photography; photography of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "photography",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "攝影；……的攝影"
+      },
+      "after": {
+        "wordId": "W003740",
+        "word": "photography",
+        "wordVariants": [
+          "photography"
+        ],
+        "level": "LV4",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "攝影；攝影術；照相術",
+        "meaningEn": "the act of taking and printing photographs; the process of producing images of objects on photosensitive surfaces",
+        "usagePattern": "photography; the photography of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "photography",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "攝影；……的攝影"
+      },
+      "reason": "Do not imply that uncountable photography normally takes an indefinite article. Do not imply that uncountable photography normally takes an indefinite article.",
+      "evidence": "https://www.merriam-webster.com/dictionary/photography ; https://www.merriam-webster.com/dictionary/photography"
+    },
+    {
+      "dataset": "words",
+      "id": "W005122",
+      "before": {
+        "wordId": "W005122",
+        "word": "caffeine",
+        "wordVariants": [
+          "caffeine"
+        ],
+        "level": "LV6",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "咖啡因；咖啡鹼",
+        "meaningEn": "a bitter alkaloid found in coffee and tea that is responsible for their stimulating effects",
+        "usagePattern": "a/the caffeine; caffeine of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "caffeine",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "咖啡因；……的咖啡因"
+      },
+      "after": {
+        "wordId": "W005122",
+        "word": "caffeine",
+        "wordVariants": [
+          "caffeine"
+        ],
+        "level": "LV6",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "咖啡因；咖啡鹼",
+        "meaningEn": "a bitter alkaloid found in coffee and tea that is responsible for their stimulating effects",
+        "usagePattern": "caffeine; contain caffeine",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "caffeine",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "咖啡因；含有咖啡因"
+      },
+      "reason": "Use the existing mass noun in clear constructions. Use the existing mass noun in clear constructions.",
+      "evidence": "https://www.merriam-webster.com/dictionary/caffeine ; https://www.merriam-webster.com/dictionary/caffeine"
+    },
+    {
+      "dataset": "examples",
+      "id": "EXf9081357",
+      "before": {
+        "exampleId": "EXf9081357",
+        "word": "second",
+        "sensePos": "n./adj.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "Wait a second, I need to grab my umbrella.",
+        "sentenceZh": "等一下，我需要去拿我的雨傘。",
+        "blankSentence": "Wait a _____, I need to grab my umbrella.",
+        "answer": "second",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EXf9081357",
+        "word": "second",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "Wait a second, I need to grab my umbrella.",
+        "sentenceZh": "等一下，我需要去拿我的雨傘。",
+        "blankSentence": "Wait a _____, I need to grab my umbrella.",
+        "answer": "second",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Narrow an existing composite POS or mixed nonempty hint to the unchanged wait-a-second / phone / answers context. Do not fill any empty hint. Narrow an existing composite POS or mixed nonempty hint to the unchanged wait-a-second / phone / answers context. Do not fill any empty hint.",
+      "evidence": "https://www.merriam-webster.com/dictionary/second ; https://www.merriam-webster.com/dictionary/second"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX96488501",
+      "before": {
+        "exampleId": "EX96488501",
+        "word": "wrong",
+        "sensePos": "adj.",
+        "meaningHint": "錯誤的；不對勁的",
+        "exampleType": "textbook",
+        "sentenceEn": "There's something wrong with Becky's phone.",
+        "sentenceZh": "貝琪的電話出了點問題。",
+        "blankSentence": "There's something _____ with Becky's phone.",
+        "answer": "wrong",
+        "difficulty": "LV2",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EX96488501",
+        "word": "wrong",
+        "sensePos": "adj.",
+        "meaningHint": "不對勁的；有問題的",
+        "exampleType": "textbook",
+        "sentenceEn": "There's something wrong with Becky's phone.",
+        "sentenceZh": "貝琪的電話出了點問題。",
+        "blankSentence": "There's something _____ with Becky's phone.",
+        "answer": "wrong",
+        "difficulty": "LV2",
+        "status": "approved"
+      },
+      "reason": "Narrow an existing composite POS or mixed nonempty hint to the unchanged wait-a-second / phone / answers context. Do not fill any empty hint. Narrow an existing composite POS or mixed nonempty hint to the unchanged wait-a-second / phone / answers context. Do not fill any empty hint.",
+      "evidence": "https://www.merriam-webster.com/dictionary/wrong ; https://www.merriam-webster.com/dictionary/wrong"
+    },
+    {
+      "dataset": "examples",
+      "id": "EXec450963",
+      "before": {
+        "exampleId": "EXec450963",
+        "word": "wrong",
+        "sensePos": "adj.",
+        "meaningHint": "錯誤的；不對勁的",
+        "exampleType": "textbook",
+        "sentenceEn": "Most of the answers he wrote were wrong.",
+        "sentenceZh": "他寫的答案大部分是錯的。",
+        "blankSentence": "Most of the answers he wrote were _____.",
+        "answer": "wrong",
+        "difficulty": "LV2",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EXec450963",
+        "word": "wrong",
+        "sensePos": "adj.",
+        "meaningHint": "錯誤的；不正確的",
+        "exampleType": "textbook",
+        "sentenceEn": "Most of the answers he wrote were wrong.",
+        "sentenceZh": "他寫的答案大部分是錯的。",
+        "blankSentence": "Most of the answers he wrote were _____.",
+        "answer": "wrong",
+        "difficulty": "LV2",
+        "status": "approved"
+      },
+      "reason": "Narrow an existing composite POS or mixed nonempty hint to the unchanged wait-a-second / phone / answers context. Do not fill any empty hint. Narrow an existing composite POS or mixed nonempty hint to the unchanged wait-a-second / phone / answers context. Do not fill any empty hint.",
+      "evidence": "https://www.merriam-webster.com/dictionary/wrong ; https://www.merriam-webster.com/dictionary/wrong"
+    },
+    {
+      "dataset": "examples",
+      "id": "EXda67eaf4",
+      "before": {
+        "exampleId": "EXda67eaf4",
+        "word": "gift",
+        "sensePos": "n.",
+        "meaningHint": "禮物",
+        "exampleType": "basic",
+        "sentenceEn": "He gave me a lovely gift on my birthday.",
+        "sentenceZh": "他在我生日時送了我一份很棒的禮物。",
+        "blankSentence": "He gave me a lovely _____ on my birthday.",
+        "answer": "gift",
+        "difficulty": "LV1",
+        "status": "draft"
+      },
+      "after": {
+        "exampleId": "EXda67eaf4",
+        "word": "gift",
+        "sensePos": "n.",
+        "meaningHint": "禮物",
+        "exampleType": "basic",
+        "sentenceEn": "He gave me a lovely gift on my birthday.",
+        "sentenceZh": "他在我生日時送了我一份很棒的禮物。",
+        "blankSentence": "He gave me a lovely _____ on my birthday.",
+        "answer": "gift",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Read the complete authored practice, Chinese, cloze and answer. The exam exercise label is not certified as an official question quotation. Read the complete authored practice, Chinese, cloze and answer. The exam exercise label is not certified as an official question quotation.",
+      "evidence": "https://www.merriam-webster.com/dictionary/gift ; https://www.merriam-webster.com/dictionary/gift"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX5b4e27ea",
+      "before": {
+        "exampleId": "EX5b4e27ea",
+        "word": "word",
+        "sensePos": "n.",
+        "meaningHint": "用字",
+        "exampleType": "exam",
+        "sentenceEn": "Try not to repeat the same word in every sentence of your essay.",
+        "sentenceZh": "盡量不要在作文的每個句子裡重複同一個字。",
+        "blankSentence": "Try not to repeat the same _____ in every sentence of your essay.",
+        "answer": "word",
+        "difficulty": "LV2",
+        "status": "draft"
+      },
+      "after": {
+        "exampleId": "EX5b4e27ea",
+        "word": "word",
+        "sensePos": "n.",
+        "meaningHint": "用字",
+        "exampleType": "exam",
+        "sentenceEn": "Try not to repeat the same word in every sentence of your essay.",
+        "sentenceZh": "盡量不要在作文的每個句子裡重複同一個字。",
+        "blankSentence": "Try not to repeat the same _____ in every sentence of your essay.",
+        "answer": "word",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "reason": "Read the complete authored practice, Chinese, cloze and answer. The exam exercise label is not certified as an official question quotation. Read the complete authored practice, Chinese, cloze and answer. The exam exercise label is not certified as an official question quotation.",
+      "evidence": "https://www.merriam-webster.com/dictionary/word ; https://www.merriam-webster.com/dictionary/word"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX55bde99e",
+      "before": {
+        "exampleId": "EX55bde99e",
+        "word": "send",
+        "sensePos": "v.",
+        "meaningHint": "寄送",
+        "exampleType": "daily",
+        "sentenceEn": "The shop sent me an email to confirm my order.",
+        "sentenceZh": "店家寄了一封電子郵件跟我確認訂單。",
+        "blankSentence": "The shop _____ me an email to confirm my order.",
+        "answer": "sent",
+        "difficulty": "LV1",
+        "status": "draft"
+      },
+      "after": {
+        "exampleId": "EX55bde99e",
+        "word": "send",
+        "sensePos": "v.",
+        "meaningHint": "寄送",
+        "exampleType": "daily",
+        "sentenceEn": "The shop sent me an email to confirm my order.",
+        "sentenceZh": "店家寄了一封電子郵件跟我確認訂單。",
+        "blankSentence": "The shop _____ me an email to confirm my order.",
+        "answer": "sent",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Read the complete authored practice, Chinese, cloze and answer. The exam exercise label is not certified as an official question quotation. Read the complete authored practice, Chinese, cloze and answer. The exam exercise label is not certified as an official question quotation.",
+      "evidence": "https://www.merriam-webster.com/dictionary/send ; https://www.merriam-webster.com/dictionary/send"
+    },
+    {
+      "dataset": "senses",
+      "id": "W000314-1",
+      "before": {
+        "senseId": "W000314-1",
+        "wordId": "W000314",
+        "word": "first",
+        "senseOrder": 1,
+        "sensePos": "n.",
+        "meaningZh": "第一名；首位",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：首先；第一；優先；第一的",
+        "status": "needs_check"
+      },
+      "after": {
+        "senseId": "W000314-1",
+        "wordId": "W000314",
+        "word": "first",
+        "senseOrder": 1,
+        "sensePos": "n.",
+        "meaningZh": "第一名；首位",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "2026-11-05：逐句核對本義、實際挖空詞與既有英中練習；僅本義的核查，不等於整詞全部義項或官方考題來源認證。",
+        "status": "reviewed"
+      },
+      "reason": "Review this existing non-exam sense against the unchanged examples and source definitions. Review this existing non-exam sense against the unchanged examples and source definitions.",
+      "evidence": "https://www.merriam-webster.com/dictionary/first ; https://www.merriam-webster.com/dictionary/first"
+    },
+    {
+      "dataset": "senses",
+      "id": "W000314-2",
+      "before": {
+        "senseId": "W000314-2",
+        "wordId": "W000314",
+        "word": "first",
+        "senseOrder": 2,
+        "sensePos": "adv.",
+        "meaningZh": "首先；最先",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：首先；第一；優先；第一的",
+        "status": "needs_check"
+      },
+      "after": {
+        "senseId": "W000314-2",
+        "wordId": "W000314",
+        "word": "first",
+        "senseOrder": 2,
+        "sensePos": "adv.",
+        "meaningZh": "首先；最先",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "2026-11-05：逐句核對本義、實際挖空詞與既有英中練習；僅本義的核查，不等於整詞全部義項或官方考題來源認證。",
+        "status": "reviewed"
+      },
+      "reason": "Review this existing non-exam sense against the unchanged examples and source definitions. Review this existing non-exam sense against the unchanged examples and source definitions.",
+      "evidence": "https://www.merriam-webster.com/dictionary/first ; https://www.merriam-webster.com/dictionary/first"
+    },
+    {
+      "dataset": "senses",
+      "id": "W000314-3",
+      "before": {
+        "senseId": "W000314-3",
+        "wordId": "W000314",
+        "word": "first",
+        "senseOrder": 3,
+        "sensePos": "adj.",
+        "meaningZh": "第一的；最初的",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：首先；第一；優先；第一的",
+        "status": "needs_check"
+      },
+      "after": {
+        "senseId": "W000314-3",
+        "wordId": "W000314",
+        "word": "first",
+        "senseOrder": 3,
+        "sensePos": "adj.",
+        "meaningZh": "第一的；最初的",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "2026-11-05：逐句核對本義、實際挖空詞與既有英中練習；僅本義的核查，不等於整詞全部義項或官方考題來源認證。",
+        "status": "reviewed"
+      },
+      "reason": "Review this existing non-exam sense against the unchanged examples and source definitions. Review this existing non-exam sense against the unchanged examples and source definitions.",
+      "evidence": "https://www.merriam-webster.com/dictionary/first ; https://www.merriam-webster.com/dictionary/first"
+    },
+    {
+      "dataset": "senses",
+      "id": "W000746-1",
+      "before": {
+        "senseId": "W000746-1",
+        "wordId": "W000746",
+        "word": "second",
+        "senseOrder": 1,
+        "sensePos": "adj.",
+        "meaningZh": "第二的",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：秒；瞬間；第二名；支持者",
+        "status": "needs_check"
+      },
+      "after": {
+        "senseId": "W000746-1",
+        "wordId": "W000746",
+        "word": "second",
+        "senseOrder": 1,
+        "sensePos": "adj.",
+        "meaningZh": "第二的",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "2026-11-05：逐句核對本義、實際挖空詞與既有英中練習；僅本義的核查，不等於整詞全部義項或官方考題來源認證。",
+        "status": "reviewed"
+      },
+      "reason": "Review this existing non-exam sense against the unchanged examples and source definitions. Review this existing non-exam sense against the unchanged examples and source definitions.",
+      "evidence": "https://www.merriam-webster.com/dictionary/second ; https://www.merriam-webster.com/dictionary/second"
+    },
+    {
+      "dataset": "senses",
+      "id": "W000746-2",
+      "before": {
+        "senseId": "W000746-2",
+        "wordId": "W000746",
+        "word": "second",
+        "senseOrder": 2,
+        "sensePos": "n.",
+        "meaningZh": "秒；片刻",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：秒；瞬間；第二名；支持者",
+        "status": "needs_check"
+      },
+      "after": {
+        "senseId": "W000746-2",
+        "wordId": "W000746",
+        "word": "second",
+        "senseOrder": 2,
+        "sensePos": "n.",
+        "meaningZh": "秒；片刻",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "2026-11-05：逐句核對本義、實際挖空詞與既有英中練習；僅本義的核查，不等於整詞全部義項或官方考題來源認證。",
+        "status": "reviewed"
+      },
+      "reason": "Review this existing non-exam sense against the unchanged examples and source definitions. Review this existing non-exam sense against the unchanged examples and source definitions.",
+      "evidence": "https://www.merriam-webster.com/dictionary/second ; https://www.merriam-webster.com/dictionary/second"
+    },
+    {
+      "dataset": "senses",
+      "id": "W000746-3",
+      "before": {
+        "senseId": "W000746-3",
+        "wordId": "W000746",
+        "word": "second",
+        "senseOrder": 3,
+        "sensePos": "adv.",
+        "meaningZh": "（名次）第二",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：秒；瞬間；第二名；支持者",
+        "status": "needs_check"
+      },
+      "after": {
+        "senseId": "W000746-3",
+        "wordId": "W000746",
+        "word": "second",
+        "senseOrder": 3,
+        "sensePos": "adv.",
+        "meaningZh": "（名次）第二",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "2026-11-05：逐句核對本義、實際挖空詞與既有英中練習；僅本義的核查，不等於整詞全部義項或官方考題來源認證。",
+        "status": "reviewed"
+      },
+      "reason": "Review this existing non-exam sense against the unchanged examples and source definitions. Review this existing non-exam sense against the unchanged examples and source definitions.",
+      "evidence": "https://www.merriam-webster.com/dictionary/second ; https://www.merriam-webster.com/dictionary/second"
+    },
+    {
+      "dataset": "senses",
+      "id": "W000751-1",
+      "before": {
+        "senseId": "W000751-1",
+        "wordId": "W000751",
+        "word": "send",
+        "senseOrder": 1,
+        "sensePos": "v.",
+        "meaningZh": "寄送；派遣",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：發送；使進入；寄；派遣",
+        "status": "needs_check"
+      },
+      "after": {
+        "senseId": "W000751-1",
+        "wordId": "W000751",
+        "word": "send",
+        "senseOrder": 1,
+        "sensePos": "v.",
+        "meaningZh": "寄送；派遣",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "2026-11-05：逐句核對本義、實際挖空詞與既有英中練習；僅本義的核查，不等於整詞全部義項或官方考題來源認證。",
+        "status": "reviewed"
+      },
+      "reason": "Review this existing non-exam sense against the unchanged examples and source definitions. Review this existing non-exam sense against the unchanged examples and source definitions.",
+      "evidence": "https://www.merriam-webster.com/dictionary/send ; https://www.merriam-webster.com/dictionary/send"
+    },
+    {
+      "dataset": "senses",
+      "id": "W000643-1",
+      "before": {
+        "senseId": "W000643-1",
+        "wordId": "W000643",
+        "word": "picture",
+        "senseOrder": 1,
+        "sensePos": "n.",
+        "meaningZh": "圖片；照片",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：圖畫；照片；景色；美麗如畫的人(或物)",
+        "status": "needs_check"
+      },
+      "after": {
+        "senseId": "W000643-1",
+        "wordId": "W000643",
+        "word": "picture",
+        "senseOrder": 1,
+        "sensePos": "n.",
+        "meaningZh": "圖片；照片",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "2026-11-05：逐句核對本義、實際挖空詞與既有英中練習；僅本義的核查，不等於整詞全部義項或官方考題來源認證。",
+        "status": "reviewed"
+      },
+      "reason": "Review this existing non-exam sense against the unchanged examples and source definitions. Review this existing non-exam sense against the unchanged examples and source definitions.",
+      "evidence": "https://www.merriam-webster.com/dictionary/picture ; https://www.merriam-webster.com/dictionary/picture"
+    },
+    {
+      "dataset": "senses",
+      "id": "W000643-2",
+      "before": {
+        "senseId": "W000643-2",
+        "wordId": "W000643",
+        "word": "picture",
+        "senseOrder": 2,
+        "sensePos": "v.",
+        "meaningZh": "想像",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：圖畫；照片；景色；美麗如畫的人(或物)",
+        "status": "needs_check"
+      },
+      "after": {
+        "senseId": "W000643-2",
+        "wordId": "W000643",
+        "word": "picture",
+        "senseOrder": 2,
+        "sensePos": "v.",
+        "meaningZh": "想像",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "2026-11-05：逐句核對本義、實際挖空詞與既有英中練習；僅本義的核查，不等於整詞全部義項或官方考題來源認證。",
+        "status": "reviewed"
+      },
+      "reason": "Review this existing non-exam sense against the unchanged examples and source definitions. Review this existing non-exam sense against the unchanged examples and source definitions.",
+      "evidence": "https://www.merriam-webster.com/dictionary/picture ; https://www.merriam-webster.com/dictionary/picture"
+    }
+  ],
+  "masterTouched": false,
+  "sentencesChanged": false,
+  "englishSentencesChanged": false,
+  "imagesChanged": false,
+  "sourceHashesBefore": {
+    "words.json": "70eb0bab4e75117e2cc605b6b241185f8355da2a4232c1f055cf1642e5ddb24c",
+    "senses.json": "0a1f3bf143215c7239d3d8c8f0afaccc16b022611394f1cb8bc8ae4841325caa",
+    "examples.json": "bfc003347b92fab8c2178f5e1b4b0cc84d7878b0c2c58109d5f1e7e4a130c9ba",
+    "meta.json": "788cc123bfc3483cbc650796d94dc7d8ba1380b9cca6ec61190656fba3fd17eb",
+    "sa-pack.json": "8e823cc37f13b5d3f6874bd9f740d1dfd3095be2fa7827f324c91b0c5f67d10c"
+  },
+  "sourceHashesAfter": {
+    "words.json": "25678202dde099f1ebbf8a881a2eb854ca2e59dfb28e27178367c46148880074",
+    "senses.json": "b95a4fc3beaea3e845510525c35880586e519aad71d292a7948efe6f3cd272ae",
+    "examples.json": "d9d7fac8bc909132c6a104eb572e8405159fa20bb97ee8599fe00d464106240b",
+    "meta.json": "26f6ae4e01dc09866d9e7b8a98dbaef7abdbd51d73c04c52228e923139adee7e",
+    "sa-pack.json": "ad146804a2b6777567dd566a76961a237b8220b813f9757a7eeda2d25949705e"
+  },
+  "state": "saved_and_actual_ui_reopened_with_explicit_field_visibility_boundary",
+  "validationAt": "2026-11-05T14:48:55.368Z",
+  "validationEvidence": "validation/U17-saved-final.json"
+}

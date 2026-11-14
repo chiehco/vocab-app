@@ -1,0 +1,205 @@
+{
+  "manifest": "docs/unit-audit-20261105/LV2-U37-notes-patches.json",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "checkedAt": "2026-11-06T10:58:57.557592+00:00",
+  "changeCount": 8,
+  "changes": [
+    {
+      "dataset": "notes",
+      "id": "NXfb24cca5",
+      "before": {
+        "noteId": "NXfb24cca5",
+        "word": "shark",
+        "noteType": "phrase",
+        "title": "shark finning",
+        "content": "shark finning：割鯊魚身，割取鯊魚。",
+        "status": "approved"
+      },
+      "after": {
+        "noteId": "NXfb24cca5",
+        "word": "shark",
+        "noteType": "phrase",
+        "title": "shark finning",
+        "content": "割鰭棄身：割取鯊魚的魚鰭，再把其餘身體丟回海中；不是一般在整隻鯊魚上岸後才去除魚鰭的處理。",
+        "status": "approved"
+      },
+      "reason": "Correct the concrete fin/body distinction using the directly read NOAA glossary; preserve the raw printed source transcription.",
+      "evidence": "https://www.fisheries.noaa.gov/new-england-mid-atlantic/sustainable-fisheries/glossary-shark-fisheries-management"
+    },
+    {
+      "dataset": "notes",
+      "id": "NX8059dead",
+      "before": {
+        "noteId": "NX8059dead",
+        "word": "weather",
+        "noteType": "usage",
+        "title": "weather 與 climate",
+        "content": "climate 指某個地區的氣候，是可數名詞，可加冠詞 a 或用複數；weather 泛指天氣，是不可數名詞，絕對不可加冠詞 a 或用複數。",
+        "status": "approved"
+      },
+      "after": {
+        "noteId": "NX8059dead",
+        "word": "weather",
+        "noteType": "usage",
+        "title": "weather 與 climate",
+        "content": "climate 指某地長期的氣候，可指一種地區氣候（可數），也可概括使用（不可數）。weather 泛指某時某地的天氣，日常通常不可數，不說 a weather；但固定用語 in all weathers 等可用複數，不能一概說絕對沒有複數。",
+        "status": "approved"
+      },
+      "reason": "Retain the useful climate/weather distinction without absolute countability rules contradicted by direct dictionary variable-noun and in-all-weathers evidence.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/climate; https://www.collinsdictionary.com/dictionary/english/weather"
+    },
+    {
+      "dataset": "notes",
+      "id": "NXdf661ddf",
+      "before": {
+        "noteId": "NXdf661ddf",
+        "word": "walk",
+        "noteType": "phrase",
+        "title": "a ten-minute walk",
+        "content": "分鐘的腳程。",
+        "status": "approved"
+      },
+      "after": {
+        "noteId": "NXdf661ddf",
+        "word": "walk",
+        "noteType": "phrase",
+        "title": "a ten-minute walk",
+        "content": "10 分鐘的步行路程；步行約 10 分鐘可到的距離。",
+        "status": "approved"
+      },
+      "reason": "Restore the explicit ten in the existing a ten-minute walk title instead of leaving only 分鐘.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/walk"
+    },
+    {
+      "dataset": "notes",
+      "id": "NX429a0317",
+      "before": {
+        "noteId": "NX429a0317",
+        "word": "cashier",
+        "noteType": "phrase",
+        "title": "an automated teller machine",
+        "content": "詞族／相關：cash、teller、an automated teller machine、a cash register",
+        "status": "approved"
+      },
+      "after": {
+        "noteId": "NX429a0317",
+        "word": "cashier",
+        "noteType": "phrase",
+        "title": "an automated teller machine",
+        "content": "an automated teller machine（ATM）：自動提款機。相關詞：cash（現金）、teller（銀行櫃員）、a cash register（收銀機）。",
+        "status": "approved"
+      },
+      "reason": "Supply the actual term translation while preserving the whole related-word list.",
+      "evidence": "Existing related-term list and standard expansion of ATM; this is a reviewer translation, not a new textbook quotation."
+    },
+    {
+      "dataset": "notes",
+      "id": "NX7f29c0cf",
+      "before": {
+        "noteId": "NX7f29c0cf",
+        "word": "cashier",
+        "noteType": "phrase",
+        "title": "a cash register",
+        "content": "詞族／相關：cash、teller、an automated teller machine、a cash register",
+        "status": "approved"
+      },
+      "after": {
+        "noteId": "NX7f29c0cf",
+        "word": "cashier",
+        "noteType": "phrase",
+        "title": "a cash register",
+        "content": "a cash register：收銀機。相關詞：cash（現金）、teller（銀行櫃員）、an automated teller machine（自動提款機）。",
+        "status": "approved"
+      },
+      "reason": "Supply the actual title translation while preserving the related-word list.",
+      "evidence": "Existing related-term list; reviewer Chinese translation, not a new textbook quotation."
+    },
+    {
+      "dataset": "notes",
+      "id": "NXd46872b7",
+      "before": {
+        "noteId": "NXd46872b7",
+        "word": "run",
+        "noteType": "phrase",
+        "title": "run into...（撞上人／物）",
+        "content": "撞上……。書頁「run into... 與……不期而遇；撞上……」的後半義。既有列 126 只涵蓋「偶遇」義",
+        "status": "approved"
+      },
+      "after": {
+        "noteId": "NXd46872b7",
+        "word": "run",
+        "noteType": "phrase",
+        "title": "run into...（撞上人／物）",
+        "content": "撞上某人或物；與 run into sb 表示「偶然遇見某人」的另一用法區分。",
+        "status": "approved"
+      },
+      "reason": "Keep the collision meaning and remove the internal row-number explanation from the learner note.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/run"
+    },
+    {
+      "dataset": "notes",
+      "id": "NXef8c5002",
+      "before": {
+        "noteId": "NXef8c5002",
+        "word": "swim",
+        "noteType": "phrase",
+        "title": "sink or swim",
+        "content": "sink or swim：自生自滅，載浮載沉。",
+        "status": "approved"
+      },
+      "after": {
+        "noteId": "NXef8c5002",
+        "word": "swim",
+        "noteType": "phrase",
+        "title": "sink or swim",
+        "content": "字面是沉下去或游起來；慣用語表示只能靠自己努力成功，否則就失敗，常譯「自生自滅」或「載浮載沉」。",
+        "status": "approved"
+      },
+      "reason": "Retain both inherited Chinese renderings while explaining the actual idiom rather than only literal buoyancy.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/sink-or-swim"
+    },
+    {
+      "dataset": "notes",
+      "id": "NXf3845411",
+      "before": {
+        "noteId": "NXf3845411",
+        "word": "luck",
+        "noteType": "phrase",
+        "title": "by luck",
+        "content": "只是運氣好",
+        "status": "approved"
+      },
+      "after": {
+        "noteId": "NXf3845411",
+        "word": "luck",
+        "noteType": "phrase",
+        "title": "by luck",
+        "content": "靠運氣；碰巧。若原句另有 only，才把「只因運氣好」的限制一併譯出。",
+        "status": "approved"
+      },
+      "reason": "Distinguish luck from an extra only; preserve the original printed construction and independent practice.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/luck"
+    }
+  ],
+  "masterTouched": false,
+  "sentencesChanged": false,
+  "englishSentencesChanged": false,
+  "imagesChanged": false,
+  "sourceHashesBefore": {
+    "words.json": "5550db76bf36944ef9c9058976a6c7c233bbe00029cd1c70236d0efbabf9fda5",
+    "senses.json": "345699bf257a96dda498702c68a300c6d397dc690e32c850e142998d02c5b382",
+    "examples.json": "7b4002695c69d8707aa29de85ec1419fca4fb02330fb21f0e90582e820ecf3f8",
+    "meta.json": "52726fffe3341f5c298400db679d4fe24ff9a1a3d4dfff96edbcd35e032aad47",
+    "sa-pack.json": "4b6054e74c31d0f55f495406ce802e9d4ba253936fe8ded9d81c752639b9ed54"
+  },
+  "sourceHashesAfter": {
+    "words.json": "5550db76bf36944ef9c9058976a6c7c233bbe00029cd1c70236d0efbabf9fda5",
+    "senses.json": "345699bf257a96dda498702c68a300c6d397dc690e32c850e142998d02c5b382",
+    "examples.json": "7b4002695c69d8707aa29de85ec1419fca4fb02330fb21f0e90582e820ecf3f8",
+    "meta.json": "0a6278c98e1a5764943079e5fe57553a0d9a6f1c261f4b97427ad0ab7e3c7ea2",
+    "sa-pack.json": "9ce1d0fd4e9dfd1198e1ca4b264e2241c98b01944e348742227bed20233522e6"
+  },
+  "state": "applied_and_ui_reopened_verified",
+  "originalApplyReceiptState": "applied_not_ui_verified",
+  "validation": "validation/LV2-U37-reopen-summary.json"
+}

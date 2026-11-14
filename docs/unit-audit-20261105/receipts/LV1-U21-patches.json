@@ -1,0 +1,1495 @@
+{
+  "manifest": "docs\\unit-audit-20261105\\LV1-U21-patches.json",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "checkedAt": "2026-11-05T17:12:55.516597+00:00",
+  "changeCount": 33,
+  "changes": [
+    {
+      "dataset": "examples",
+      "id": "EX197147ce",
+      "before": {
+        "exampleId": "EX197147ce",
+        "word": "today",
+        "sensePos": "adv.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "Today's students have much easier access to information than before.",
+        "sentenceZh": "現今的學生比以前更容易取得資訊。",
+        "blankSentence": "_____'s students have much easier access to information than before.",
+        "answer": "Today",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EX197147ce",
+        "word": "today",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "Today's students have much easier access to information than before.",
+        "sentenceZh": "現今的學生比以前更容易取得資訊。",
+        "blankSentence": "_____'s students have much easier access to information than before.",
+        "answer": "Today",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "The actual cloze is a noun: possessive Today in Today's students, or the story creature after a. Keep all original sentence, answer and headword fields. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/today ; "
+    },
+    {
+      "dataset": "examples",
+      "id": "EXcfc617d3",
+      "before": {
+        "exampleId": "EXcfc617d3",
+        "word": "giant",
+        "sensePos": "adj.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "In the old story, a brave boy defeated a giant to save his village.",
+        "sentenceZh": "在這個古老的故事裡，一位勇敢的男孩打敗了巨人，拯救了他的村莊。",
+        "blankSentence": "In the old story, a brave boy defeated a _____ to save his village.",
+        "answer": "giant",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EXcfc617d3",
+        "word": "giant",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "In the old story, a brave boy defeated a giant to save his village.",
+        "sentenceZh": "在這個古老的故事裡，一位勇敢的男孩打敗了巨人，拯救了他的村莊。",
+        "blankSentence": "In the old story, a brave boy defeated a _____ to save his village.",
+        "answer": "giant",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "The actual cloze is a noun: possessive Today in Today's students, or the story creature after a. Keep all original sentence, answer and headword fields. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/giant ; "
+    },
+    {
+      "dataset": "examples",
+      "id": "EX103522a0",
+      "before": {
+        "exampleId": "EX103522a0",
+        "word": "interested",
+        "sensePos": "adj.",
+        "meaningHint": "感興趣的；有利害關係的；有股份的；偏私的",
+        "exampleType": "textbook",
+        "sentenceEn": "I'm interested in the magazine you're reading.",
+        "sentenceZh": "我對你在看的那本雜誌有興趣。",
+        "blankSentence": "I'm _____ in the magazine you're reading.",
+        "answer": "interested",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EX103522a0",
+        "word": "interested",
+        "sensePos": "adj.",
+        "meaningHint": "感興趣的",
+        "exampleType": "textbook",
+        "sentenceEn": "I'm interested in the magazine you're reading.",
+        "sentenceZh": "我對你在看的那本雜誌有興趣。",
+        "blankSentence": "I'm _____ in the magazine you're reading.",
+        "answer": "interested",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "reason": "Narrow the inherited mixed hint to this unchanged sentence. Other legitimate interested meanings remain on the headword; empty hints are not filled. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/interested ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W000903",
+      "before": {
+        "wordId": "W000903",
+        "word": "tomorrow",
+        "wordVariants": [
+          "tomorrow"
+        ],
+        "level": "LV1",
+        "pos": "adv./n.",
+        "posAll": [
+          "adv.",
+          "n."
+        ],
+        "meaningZh": "明天；未來；未來地",
+        "meaningEn": "the day after today; the near future",
+        "usagePattern": "tomorrow morning; by tomorrow; see sb tomorrow",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "tomorrow",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "明天早上；明天以前；明天見某人"
+      },
+      "after": {
+        "wordId": "W000903",
+        "word": "tomorrow",
+        "wordVariants": [
+          "tomorrow"
+        ],
+        "level": "LV1",
+        "pos": "adv./n.",
+        "posAll": [
+          "adv.",
+          "n."
+        ],
+        "meaningZh": "明天；未來；未來地",
+        "meaningEn": "the day after today; the near future",
+        "usagePattern": "tomorrow morning; by tomorrow; see sb tomorrow",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "tomorrow",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "明天早上；最遲明天（不晚於明天）；明天見某人"
+      },
+      "reason": "Clarify the inclusive deadline expressed by by, rather than suggest tomorrow is excluded. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/by ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W000370",
+      "before": {
+        "wordId": "W000370",
+        "word": "habit",
+        "wordVariants": [
+          "habit"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "習慣；嗜好；習性；使穿衣",
+        "meaningEn": "something that you do often and regularly, sometimes without thinking about it; a usual way of behaving",
+        "usagePattern": "be in the habit of Ving; form/break a habit",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "habit",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "養成做……的習慣；形成/打破習慣"
+      },
+      "after": {
+        "wordId": "W000370",
+        "word": "habit",
+        "wordVariants": [
+          "habit"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "（名詞）習慣；嗜好；習性；（另列文學動詞用法）使穿衣",
+        "meaningEn": "something that you do often and regularly, sometimes without thinking about it; a usual way of behaving; (related literary verb) to clothe or dress.",
+        "usagePattern": "be in the habit of Ving; form/break a habit",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "habit",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "有做……的習慣；養成／戒掉習慣"
+      },
+      "reason": "Keep the genuine literary clothing verb separate from the formal noun. Being in a habit describes having it, not forming it. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/habit ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W000958",
+      "before": {
+        "wordId": "W000958",
+        "word": "weekend",
+        "wordVariants": [
+          "weekend"
+        ],
+        "level": "LV2",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "週末；週末休假",
+        "meaningEn": "a time period usually extending from Friday night through Sunday; more loosely defined as any period of successive days including one and...; spend the weekend",
+        "usagePattern": "weekend + N; weekend to V; a/the weekend",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "weekend",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "週末的……；weekend 後接不定詞；一個週末／那個週末"
+      },
+      "after": {
+        "wordId": "W000958",
+        "word": "weekend",
+        "wordVariants": [
+          "weekend"
+        ],
+        "level": "LV2",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "週末；週末休假",
+        "meaningEn": "a time period usually extending from Friday night through Sunday; more loosely defined as any period of successive days including one and only one Sunday; spend the weekend",
+        "usagePattern": "on/at the weekend; spend the weekend; weekend in/at N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "weekend",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "在週末（on 美式／at 英式）；度過週末；在某地度週末（動詞）"
+      },
+      "reason": "Restore only the exactly matched missing tail; replace unsupported weekend-to-V with its real intransitive place construction. ",
+      "evidence": "https://www.vocabulary.com/dictionary/weekend ; https://www.merriam-webster.com/dictionary/weekend ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W000901",
+      "before": {
+        "wordId": "W000901",
+        "word": "toilet",
+        "wordVariants": [
+          "toilet"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "廁所；梳妝；打扮；上廁所",
+        "meaningEn": "a room or building equipped with one or more toilets; a plumbing fixture for defecation and urination",
+        "usagePattern": "go to the toilet; flush the toilet; toilet paper",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "toilet",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "去上廁所；沖馬桶；衛生紙"
+      },
+      "after": {
+        "wordId": "W000901",
+        "word": "toilet",
+        "wordVariants": [
+          "toilet"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "（名詞）馬桶；廁所；梳妝；打扮；（另列動詞用法）上廁所",
+        "meaningEn": "a room or building equipped with one or more toilets; a plumbing fixture for defecation and urination; (n.) dressing and grooming oneself; (related v.) to use the toilet.",
+        "usagePattern": "go to the toilet; flush the toilet; toilet paper",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "toilet",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "去上廁所；沖馬桶；衛生紙"
+      },
+      "reason": "Restore the printed fixture meaning, preserving real dressing/grooming and separate verb uses without expanding the selected noun. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/toilet ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W000993",
+      "before": {
+        "wordId": "W000993",
+        "word": "yard",
+        "wordVariants": [
+          "yard"
+        ],
+        "level": "LV2",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "碼；庭院；工場；堆置場",
+        "meaningEn": "a unit of length equal to 3 feet; defined as 91.44 centimeters; originally taken to be the average length of a stride; the enclosed land around a house or other building",
+        "usagePattern": "a/the yard; yard of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "yard",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "一個庭院／那個庭院；……的庭院"
+      },
+      "after": {
+        "wordId": "W000993",
+        "word": "yard",
+        "wordVariants": [
+          "yard"
+        ],
+        "level": "LV2",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "碼；庭院；工場；堆置場",
+        "meaningEn": "a unit of length equal to 3 feet; defined as 91.44 centimeters; originally taken to be the average length of a stride; the enclosed land around a house or other building",
+        "usagePattern": "in the yard; a yard of cloth; fifty yards away",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "yard",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "在院子裡；一碼布；五十碼遠"
+      },
+      "reason": "Separate yard as a length from yard as a space; the old yard-of-N Chinese forced both into a courtyard. ",
+      "evidence": "Original p184–185 pixels actually viewed, including fifty yards away; inherited exact 3-foot definition retained ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W000483",
+      "before": {
+        "wordId": "W000483",
+        "word": "lemon",
+        "wordVariants": [
+          "lemon"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "檸檬；檸檬樹；檸檬色",
+        "meaningEn": "yellow oval fruit with juicy acidic flesh; a small evergreen tree that originated in Asia but is widely cultivated for its fruit",
+        "usagePattern": "lemon juice; a slice of lemon",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "lemon",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "檸檬汁；一片檸檬"
+      },
+      "after": {
+        "wordId": "W000483",
+        "word": "lemon",
+        "wordVariants": [
+          "lemon"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "檸檬；檸檬樹；檸檬色；（口語）瑕疵品",
+        "meaningEn": "yellow oval fruit with juicy acidic flesh; a small evergreen tree that originated in Asia but is widely cultivated for its fruit; an unsatisfactory or defective product.",
+        "usagePattern": "lemon juice; a slice of lemon",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "lemon",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "檸檬汁；一片檸檬"
+      },
+      "reason": "Restore the genuine defective-product noun printed in the TV example; retain all fruit/tree/color meanings. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/lemon ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W000360",
+      "before": {
+        "wordId": "W000360",
+        "word": "grass",
+        "wordVariants": [
+          "grass"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "草；草原；牧場；禾本",
+        "meaningEn": "narrow-leaved green herbage: grown as lawns; used as pasture for grazing animals; cut and dried as hay; German writer of novels and poetry and plays (born 1927)",
+        "usagePattern": "on the grass; cut the grass; a blade of grass",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "grass",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "在草地上；割草；一片草葉"
+      },
+      "after": {
+        "wordId": "W000360",
+        "word": "grass",
+        "wordVariants": [
+          "grass"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "草；草原；牧場；禾本",
+        "meaningEn": "narrow-leaved green herbage: grown as lawns; used as pasture for grazing animals; cut and dried as hay; (separate capitalized proper name, Grass) German writer of novels and poetry and plays (born 1927)",
+        "usagePattern": "on the grass; cut the grass; a blade of grass",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "grass",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "在草地上；割草；一片草葉"
+      },
+      "reason": "The biographical definition is a real separate capitalized entry, not an ordinary plant meaning. Preserve its exact inherited wording with that boundary. ",
+      "evidence": "https://www.vocabulary.com/dictionary/Grass ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W006028",
+      "before": {
+        "wordId": "W006028",
+        "word": "enjoyment",
+        "wordVariants": [
+          "enjoyment"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "享受；喜歡；欣賞；享有；享樂",
+        "meaningEn": "(v.) to get pleasure or satisfaction from something; (n.) the feeling of pleasure that something gives you",
+        "usagePattern": "enjoyment of N; for enjoyment; bring/give enjoyment",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "enjoy",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）；由 enjoy(ment) 拆分，沿用原列合併釋義，待人工拆義。",
+        "status": "draft",
+        "usagePatternZh": "享受……的樂趣；為了娛樂；帶來樂趣"
+      },
+      "after": {
+        "wordId": "W006028",
+        "word": "enjoyment",
+        "wordVariants": [
+          "enjoyment"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "（名詞）樂趣；享受；享有；（相關動詞 enjoy）喜歡；欣賞；享樂",
+        "meaningEn": "(related verb enjoy) to get pleasure or satisfaction from something; (n.) the feeling of pleasure that something gives you; (n.) possession and use of a benefit or right.",
+        "usagePattern": "enjoyment of N; for enjoyment; bring/give enjoyment",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "enjoy",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）；由 enjoy(ment) 拆分，沿用原列合併釋義，待人工拆義。",
+        "status": "draft",
+        "usagePatternZh": "享受……的樂趣；為了娛樂；帶來樂趣"
+      },
+      "reason": "Separate enjoyment/n. from the inherited enjoy/v. explanation and retain the real possession/use meaning. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/enjoyment ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W000198",
+      "before": {
+        "wordId": "W000198",
+        "word": "country",
+        "wordVariants": [
+          "country"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "國家；鄉村；地區；故鄉",
+        "meaningEn": "a nation with its own government and territory; a rural area away from cities",
+        "usagePattern": "developing/developed country; in the country; all over the country",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "country",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "發展中/已開發國家；在國內；全國各地"
+      },
+      "after": {
+        "wordId": "W000198",
+        "word": "country",
+        "wordVariants": [
+          "country"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "國家；鄉村；地區；故鄉",
+        "meaningEn": "a nation with its own government and territory; a rural area away from cities",
+        "usagePattern": "developing/developed country; in the country; all over the country",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "country",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "發展中／已開發國家；在鄉下；全國各地"
+      },
+      "reason": "The country in this construction is the rural area, directly matching the unchanged grandparents sentence. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/country ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W000103",
+      "before": {
+        "wordId": "W000103",
+        "word": "bored",
+        "wordVariants": [
+          "bored"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "無聊的；煩人的；無趣的",
+        "meaningEn": "feeling tired and unhappy because something is not interesting or because one has nothing to do",
+        "usagePattern": "be bored with N; bored to death; get bored",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "bored",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "對名詞感到厭倦；無聊到死；覺得無聊"
+      },
+      "after": {
+        "wordId": "W000103",
+        "word": "bored",
+        "wordVariants": [
+          "bored"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "感到無聊的；感到厭煩的",
+        "meaningEn": "feeling tired and unhappy because something is not interesting or because one has nothing to do",
+        "usagePattern": "be bored with N; bored to death; get bored",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "bored",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "對名詞感到厭倦；無聊到死；覺得無聊"
+      },
+      "reason": "Correct the feeling-versus-causing direction. The unchanged English already describes the experiencer, unlike boring. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/bored ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W000104",
+      "before": {
+        "wordId": "W000104",
+        "word": "boring",
+        "wordVariants": [
+          "boring"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "煩人的；無聊的；無趣的；成孔期",
+        "meaningEn": "the act of drilling a hole in the earth in the hope of producing petroleum; so lacking in interest as to cause mental weariness",
+        "usagePattern": "be boring; a boring class/story",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "boring",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "很無聊；無聊的課／故事"
+      },
+      "after": {
+        "wordId": "W000104",
+        "word": "boring",
+        "wordVariants": [
+          "boring"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "煩人的；無聊的；無趣的；成孔期",
+        "meaningEn": "(related noun boring) the act of drilling a hole in the earth in the hope of producing petroleum; (adj.) so lacking in interest as to cause mental weariness",
+        "usagePattern": "be boring; a boring class/story",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "boring",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "很無聊；無聊的課／故事"
+      },
+      "reason": "The drilling definition is a genuine noun. Label it separately from the formal adjective; the exact inherited Chinese 成孔期 remains unresolved rather than silently deleted. ",
+      "evidence": "https://www.wordnik.com/words/boring ; https://www.merriam-webster.com/dictionary/boring ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W002676",
+      "before": {
+        "wordId": "W002676",
+        "word": "probable",
+        "wordVariants": [
+          "probable"
+        ],
+        "level": "LV3",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "很可能的；大概的；可信的；很有希望的候選人",
+        "meaningEn": "an applicant likely to be chosen; likely but not certain to be or become true or real",
+        "usagePattern": "be probable; probable + N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "probable",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "很可能的；很可能的……"
+      },
+      "after": {
+        "wordId": "W002676",
+        "word": "probable",
+        "wordVariants": [
+          "probable"
+        ],
+        "level": "LV3",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "（形容詞）很可能的；大概的；可信的；（另列名詞用法）很有希望的候選人",
+        "meaningEn": "(related noun) an applicant likely to be chosen; (adj.) likely but not certain to be or become true or real",
+        "usagePattern": "be probable; probable + N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "probable",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "很可能的；很可能的……"
+      },
+      "reason": "The likely-candidate noun is real; label it separately without expanding formal adj. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/probable ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W005940",
+      "before": {
+        "wordId": "W005940",
+        "word": "trillion",
+        "wordVariants": [
+          "trillion"
+        ],
+        "level": "LV6",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "大量；兆",
+        "meaningEn": "the number that is represented as a one followed by 18 zeros; the number that is represented as a one followed by 12 zeros",
+        "usagePattern": "a/the trillion; trillion of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "trillion",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "一兆；數兆的……"
+      },
+      "after": {
+        "wordId": "W005940",
+        "word": "trillion",
+        "wordVariants": [
+          "trillion"
+        ],
+        "level": "LV6",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "大量；兆",
+        "meaningEn": "the number represented by one followed by 12 zeros (10^12); formerly in Britain, the number represented by one followed by 18 zeros (10^18); an indefinitely large number",
+        "usagePattern": "one/two trillion + plural noun; trillions of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "trillion",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "一／兩兆……；數兆的……"
+      },
+      "reason": "Distinguish the two genuine number scales, with the modern 10^12 primary and the old British 10^18 explicitly historical. Fix singular/plural constructions. ",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/trillion ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W001970",
+      "before": {
+        "wordId": "W001970",
+        "word": "weekday",
+        "wordVariants": [
+          "weekday"
+        ],
+        "level": "LV3",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "週日；平日；工作日",
+        "meaningEn": "any day except Sunday (and sometimes except Saturday)",
+        "usagePattern": "a/the weekday; weekday of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "weekday",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "平日；……的平日"
+      },
+      "after": {
+        "wordId": "W001970",
+        "word": "weekday",
+        "wordVariants": [
+          "weekday"
+        ],
+        "level": "LV3",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "平日；工作日（通常週一至週五；亦可指除週日外的日子）",
+        "meaningEn": "any day except Sunday (and sometimes except Saturday)",
+        "usagePattern": "on weekdays; a weekday morning",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "weekday",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "在平日；平日的早晨"
+      },
+      "reason": "Preserve both attested scopes while avoiding bare 週日, easily read as Sunday, which the definition excludes. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/weekday ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W004194",
+      "before": {
+        "wordId": "W004194",
+        "word": "comprehend",
+        "wordVariants": [
+          "comprehend"
+        ],
+        "level": "LV5",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "理解；包括",
+        "meaningEn": "get the meaning of something; to become aware of through the senses",
+        "usagePattern": "comprehend + N; comprehend to V",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "comprehend",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "理解……；理解去做……"
+      },
+      "after": {
+        "wordId": "W004194",
+        "word": "comprehend",
+        "wordVariants": [
+          "comprehend"
+        ],
+        "level": "LV5",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "理解；包括",
+        "meaningEn": "get the meaning of something; to become aware of through the senses; to include or contain within a scope.",
+        "usagePattern": "comprehend + N; comprehend what/why/how S + V",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "comprehend",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "理解……；理解……是什麼／為何／如何"
+      },
+      "reason": "Preserve the less common including meaning and replace unsupported comprehend-to-V with attested noun/clause complements. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/comprehend ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W003357",
+      "before": {
+        "wordId": "W003357",
+        "word": "enlarge",
+        "wordVariants": [
+          "enlarge"
+        ],
+        "level": "LV4",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "擴大；增大；詳述；腫大；肥大",
+        "meaningEn": "make larger; become larger or bigger; the state of being enlarged; a photographic print that has been enlarged",
+        "usagePattern": "enlarge + N; enlarge to V; an/the enlarge",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "enlarge",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）；括號詞拆分：原詞頭 enlarge(ment)",
+        "status": "draft",
+        "usagePatternZh": "擴大……；擴大以至於……；一項擴大／該擴大"
+      },
+      "after": {
+        "wordId": "W003357",
+        "word": "enlarge",
+        "wordVariants": [
+          "enlarge"
+        ],
+        "level": "LV4",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "擴大；增大；詳述；腫大；肥大",
+        "meaningEn": "make larger; become larger or bigger; (related noun enlargement) the state of being enlarged; a photographic print that has been enlarged",
+        "usagePattern": "enlarge a photograph; enlarge on/upon N; become enlarged",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "enlarge",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）；括號詞拆分：原詞頭 enlarge(ment)",
+        "status": "draft",
+        "usagePatternZh": "放大照片；詳述……；變大／腫大"
+      },
+      "reason": "Keep the real enlargement noun definitions separately; enlarge is the formal verb, not an/the-enlarge noun. Preserve its elaboration meaning. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/enlarge ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W002484",
+      "before": {
+        "wordId": "W002484",
+        "word": "lawn",
+        "wordVariants": [
+          "lawn"
+        ],
+        "level": "LV3",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "草地；草坪；上等細麻布；細篩",
+        "meaningEn": "a field of cultivated and mowed grass",
+        "usagePattern": "a/the lawn; lawn of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "lawn",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "草坪；……的草坪"
+      },
+      "after": {
+        "wordId": "W002484",
+        "word": "lawn",
+        "wordVariants": [
+          "lawn"
+        ],
+        "level": "LV3",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "草地；草坪；（布料）上等細麻布；（陶瓷）細篩",
+        "meaningEn": "a field of cultivated and mowed grass; (separate fabric noun) a fine, light linen or cotton fabric; (ceramics) a fine sieve used for glaze slip.",
+        "usagePattern": "mow the lawn; cotton/linen lawn",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "lawn",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "修剪草坪；棉製／麻製細布"
+      },
+      "reason": "Retain both rare meanings. The fine sieve is explicitly recorded in Century as reprinted by Wordnik; the original Century page was not inspected. ",
+      "evidence": "https://www.wordnik.com/words/lawn ; https://www.merriam-webster.com/dictionary/lawn ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W001567",
+      "before": {
+        "wordId": "W001567",
+        "word": "nation",
+        "wordVariants": [
+          "nation"
+        ],
+        "level": "LV2",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "國家；民族",
+        "meaningEn": "the people who live in a nation or country; United States prohibitionist who raided saloons and destroyed bottles of liquor with a hatchet (1846-1911)",
+        "usagePattern": "a/the nation; nation of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "nation",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "國家／民族；……的國家／民族"
+      },
+      "after": {
+        "wordId": "W001567",
+        "word": "nation",
+        "wordVariants": [
+          "nation"
+        ],
+        "level": "LV2",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "國家；民族",
+        "meaningEn": "the people who live in a nation or country; (separate capitalized proper name, Nation) United States prohibitionist who raided saloons and destroyed bottles of liquor with a hatchet (1846-1911)",
+        "usagePattern": "a/the nation; nation of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "nation",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "國家／民族；……的國家／民族"
+      },
+      "reason": "Preserve the genuine historical person as a separate capitalized entry rather than a national-group definition. Both curriculum occurrences remain mapped to the same unchanged formal identity. ",
+      "evidence": "https://www.vocabulary.com/dictionary/Nation ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W002770",
+      "before": {
+        "wordId": "W002770",
+        "word": "scientific",
+        "wordVariants": [
+          "scientific"
+        ],
+        "level": "LV3",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "科學的；系統的；符合科學規律的；科學記數法",
+        "meaningEn": "relating to science or the methods used in science; based on careful testing and evidence rather than guessing",
+        "usagePattern": "scientific research/evidence; the scientific method",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "scientific",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "科學研究／證據；科學方法"
+      },
+      "after": {
+        "wordId": "W002770",
+        "word": "scientific",
+        "wordVariants": [
+          "scientific"
+        ],
+        "level": "LV3",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "科學的；系統的；符合科學規律的；（片語 scientific notation）科學記數法",
+        "meaningEn": "relating to science or the methods used in science; based on careful testing and evidence rather than guessing",
+        "usagePattern": "scientific research/evidence; the scientific method",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "scientific",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "科學研究／證據；科學方法"
+      },
+      "reason": "Scientific notation is a real noun phrase; label the phrase instead of teaching the adjective alone as that noun. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/scientific%20notation ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W001285",
+      "before": {
+        "wordId": "W001285",
+        "word": "dull",
+        "wordVariants": [
+          "dull"
+        ],
+        "level": "LV2",
+        "pos": "adj./v.",
+        "posAll": [
+          "adj.",
+          "v."
+        ],
+        "meaningZh": "鈍的；無趣的；呆滯的；陰暗的",
+        "meaningEn": "(adj.) lacking a sharp edge; uninteresting; not bright or lively. (v.) to make or become less sharp, bright, sensitive or intense.",
+        "usagePattern": "a dull knife; a dull lecture; dull the pain",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "dull",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "鈍刀；無趣的講課；減輕疼痛"
+      },
+      "after": {
+        "wordId": "W001285",
+        "word": "dull",
+        "wordVariants": [
+          "dull"
+        ],
+        "level": "LV2",
+        "pos": "adj./v.",
+        "posAll": [
+          "adj.",
+          "v."
+        ],
+        "meaningZh": "鈍的；無趣的；呆滯的；陰暗的；（動詞）使變鈍；減弱",
+        "meaningEn": "(adj.) lacking a sharp edge; uninteresting; not bright or lively. (v.) to make or become less sharp, bright, sensitive or intense.",
+        "usagePattern": "a dull knife; a dull lecture; dull the pain",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "dull",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "鈍刀；無趣的講課；減輕疼痛"
+      },
+      "reason": "Restore the already formal verb in Chinese, retaining its adjective senses and unchanged knife image. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/dull ; "
+    },
+    {
+      "dataset": "examples",
+      "id": "EXaf4a2711",
+      "before": {
+        "exampleId": "EXaf4a2711",
+        "word": "each",
+        "sensePos": "adj.",
+        "meaningHint": "每一個",
+        "exampleType": "daily",
+        "sentenceEn": "Each student received a map of the park.",
+        "sentenceZh": "每位學生都拿到一張公園地圖。",
+        "blankSentence": "_____ student received a map of the park.",
+        "answer": "Each",
+        "difficulty": "LV1",
+        "status": "draft"
+      },
+      "after": {
+        "exampleId": "EXaf4a2711",
+        "word": "each",
+        "sensePos": "adj.",
+        "meaningHint": "每一個",
+        "exampleType": "daily",
+        "sentenceEn": "Each student received a map of the park.",
+        "sentenceZh": "每位學生都拿到一張公園地圖。",
+        "blankSentence": "_____ student received a map of the park.",
+        "answer": "Each",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Read the existing English/Chinese and reconstruct its exact cloze. This authored practice is not certified as an official question. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/each ; "
+    },
+    {
+      "dataset": "examples",
+      "id": "EX72b66721",
+      "before": {
+        "exampleId": "EX72b66721",
+        "word": "both",
+        "sensePos": "pron.",
+        "meaningHint": "兩者都",
+        "exampleType": "daily",
+        "sentenceEn": "Both of my sisters enjoy playing basketball.",
+        "sentenceZh": "我的兩個姊妹都喜歡打籃球。",
+        "blankSentence": "_____ of my sisters enjoy playing basketball.",
+        "answer": "Both",
+        "difficulty": "LV1",
+        "status": "draft"
+      },
+      "after": {
+        "exampleId": "EX72b66721",
+        "word": "both",
+        "sensePos": "pron.",
+        "meaningHint": "兩者都",
+        "exampleType": "daily",
+        "sentenceEn": "Both of my sisters enjoy playing basketball.",
+        "sentenceZh": "我的兩個姊妹都喜歡打籃球。",
+        "blankSentence": "_____ of my sisters enjoy playing basketball.",
+        "answer": "Both",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Read the existing English/Chinese and reconstruct its exact cloze. This authored practice is not certified as an official question. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/both ; "
+    },
+    {
+      "dataset": "examples",
+      "id": "EX55f5d9b8",
+      "before": {
+        "exampleId": "EX55f5d9b8",
+        "word": "cheap",
+        "sensePos": "adj.",
+        "meaningHint": "便宜的",
+        "exampleType": "basic",
+        "sentenceEn": "The night market sells cheap and delicious food.",
+        "sentenceZh": "夜市賣便宜又好吃的食物。",
+        "blankSentence": "The night market sells _____ and delicious food.",
+        "answer": "cheap",
+        "difficulty": "LV1",
+        "status": "draft"
+      },
+      "after": {
+        "exampleId": "EX55f5d9b8",
+        "word": "cheap",
+        "sensePos": "adj.",
+        "meaningHint": "便宜的",
+        "exampleType": "basic",
+        "sentenceEn": "The night market sells cheap and delicious food.",
+        "sentenceZh": "夜市賣便宜又好吃的食物。",
+        "blankSentence": "The night market sells _____ and delicious food.",
+        "answer": "cheap",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Read the existing English/Chinese and reconstruct its exact cloze. This authored practice is not certified as an official question. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/cheap ; "
+    },
+    {
+      "dataset": "examples",
+      "id": "EX3a15d774",
+      "before": {
+        "exampleId": "EX3a15d774",
+        "word": "huge",
+        "sensePos": "adj.",
+        "meaningHint": "巨大的",
+        "exampleType": "basic",
+        "sentenceEn": "They live in a huge house near the lake.",
+        "sentenceZh": "他們住在湖邊一棟很大的房子裡。",
+        "blankSentence": "They live in a _____ house near the lake.",
+        "answer": "huge",
+        "difficulty": "LV2",
+        "status": "draft"
+      },
+      "after": {
+        "exampleId": "EX3a15d774",
+        "word": "huge",
+        "sensePos": "adj.",
+        "meaningHint": "巨大的",
+        "exampleType": "basic",
+        "sentenceEn": "They live in a huge house near the lake.",
+        "sentenceZh": "他們住在湖邊一棟很大的房子裡。",
+        "blankSentence": "They live in a _____ house near the lake.",
+        "answer": "huge",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "reason": "Read the existing English/Chinese and reconstruct its exact cloze. This authored practice is not certified as an official question. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/huge ; "
+    },
+    {
+      "dataset": "examples",
+      "id": "EXab97c02a",
+      "before": {
+        "exampleId": "EXab97c02a",
+        "word": "enormous",
+        "sensePos": "adj.",
+        "meaningHint": "巨大的（考點：程度極大，可修飾抽象名詞）",
+        "exampleType": "exam",
+        "sentenceEn": "It took enormous patience to teach my grandfather to use a smartphone.",
+        "sentenceZh": "教爺爺用智慧型手機需要極大的耐心。",
+        "blankSentence": "It took _____ patience to teach my grandfather to use a smartphone.",
+        "answer": "enormous",
+        "difficulty": "LV4",
+        "status": "draft"
+      },
+      "after": {
+        "exampleId": "EXab97c02a",
+        "word": "enormous",
+        "sensePos": "adj.",
+        "meaningHint": "巨大的（考點：程度極大，可修飾抽象名詞）",
+        "exampleType": "exam",
+        "sentenceEn": "It took enormous patience to teach my grandfather to use a smartphone.",
+        "sentenceZh": "教爺爺用智慧型手機需要極大的耐心。",
+        "blankSentence": "It took _____ patience to teach my grandfather to use a smartphone.",
+        "answer": "enormous",
+        "difficulty": "LV4",
+        "status": "reviewed"
+      },
+      "reason": "Read the existing English/Chinese and reconstruct its exact cloze. This authored practice is not certified as an official question. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/enormous ; "
+    },
+    {
+      "dataset": "senses",
+      "id": "W000469-1",
+      "before": {
+        "senseId": "W000469-1",
+        "wordId": "W000469",
+        "word": "large",
+        "senseOrder": 1,
+        "sensePos": "adj.",
+        "meaningZh": "大的",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：大的；大量的；寬大的；廣博的",
+        "status": "needs_check"
+      },
+      "after": {
+        "senseId": "W000469-1",
+        "wordId": "W000469",
+        "word": "large",
+        "senseOrder": 1,
+        "sensePos": "adj.",
+        "meaningZh": "大的",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "2026-11-05：核對此既有義項、正式詞性及可用英中練習句；enjoyment 為名詞，state 主表已保留 v./n.。僅本義項核查，不擴為整詞、其他罕義或官方考題來源認證。",
+        "status": "reviewed"
+      },
+      "reason": "Check the individual existing non-examination sense and update stale splitting/POS notes; keep whole-word status. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/large ; "
+    },
+    {
+      "dataset": "senses",
+      "id": "W000264-1",
+      "before": {
+        "senseId": "W000264-1",
+        "wordId": "W000264",
+        "word": "enjoy",
+        "senseOrder": 1,
+        "sensePos": "v.",
+        "meaningZh": "享受；喜歡",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：享受；喜歡；欣賞；享有；享樂",
+        "status": "needs_check"
+      },
+      "after": {
+        "senseId": "W000264-1",
+        "wordId": "W000264",
+        "word": "enjoy",
+        "senseOrder": 1,
+        "sensePos": "v.",
+        "meaningZh": "享受；喜歡",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "2026-11-05：核對此既有義項、正式詞性及可用英中練習句；enjoyment 為名詞，state 主表已保留 v./n.。僅本義項核查，不擴為整詞、其他罕義或官方考題來源認證。",
+        "status": "reviewed"
+      },
+      "reason": "Check the individual existing non-examination sense and update stale splitting/POS notes; keep whole-word status. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/enjoy ; "
+    },
+    {
+      "dataset": "senses",
+      "id": "W006028-2",
+      "before": {
+        "senseId": "W006028-2",
+        "wordId": "W006028",
+        "word": "enjoyment",
+        "senseOrder": 2,
+        "sensePos": "n.",
+        "meaningZh": "（enjoyment）樂趣",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：享受；喜歡；欣賞；享有；享樂",
+        "status": "needs_check"
+      },
+      "after": {
+        "senseId": "W006028-2",
+        "wordId": "W006028",
+        "word": "enjoyment",
+        "senseOrder": 2,
+        "sensePos": "n.",
+        "meaningZh": "（enjoyment）樂趣",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "2026-11-05：核對此既有義項、正式詞性及可用英中練習句；enjoyment 為名詞，state 主表已保留 v./n.。僅本義項核查，不擴為整詞、其他罕義或官方考題來源認證。",
+        "status": "reviewed"
+      },
+      "reason": "Check the individual existing non-examination sense and update stale splitting/POS notes; keep whole-word status. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/enjoyment ; "
+    },
+    {
+      "dataset": "senses",
+      "id": "W001844-1",
+      "before": {
+        "senseId": "W001844-1",
+        "wordId": "W001844",
+        "word": "state",
+        "senseOrder": 1,
+        "sensePos": "v.",
+        "meaningZh": "陳述；聲明",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "state 另有名詞「州；狀態」，主表詞性未列，建議加列｜待拆分；主表字義：州；狀態；情形；國家；陳述",
+        "status": "needs_check"
+      },
+      "after": {
+        "senseId": "W001844-1",
+        "wordId": "W001844",
+        "word": "state",
+        "senseOrder": 1,
+        "sensePos": "v.",
+        "meaningZh": "陳述；聲明",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "2026-11-05：核對此既有義項、正式詞性及可用英中練習句；enjoyment 為名詞，state 主表已保留 v./n.。僅本義項核查，不擴為整詞、其他罕義或官方考題來源認證。",
+        "status": "reviewed"
+      },
+      "reason": "Check the individual existing non-examination sense and update stale splitting/POS notes; keep whole-word status. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/state ; "
+    },
+    {
+      "dataset": "senses",
+      "id": "W003358-1",
+      "before": {
+        "senseId": "W003358-1",
+        "wordId": "W003358",
+        "word": "enormous",
+        "senseOrder": 1,
+        "sensePos": "adj.",
+        "meaningZh": "巨大的",
+        "isExamSense": true,
+        "examEvidence": "學測114 詞彙題Q7",
+        "answerForms": [
+          "enormous"
+        ],
+        "note": "考點：程度極大，可修飾抽象名詞",
+        "status": "draft"
+      },
+      "after": {
+        "senseId": "W003358-1",
+        "wordId": "W003358",
+        "word": "enormous",
+        "senseOrder": 1,
+        "sensePos": "adj.",
+        "meaningZh": "巨大的",
+        "isExamSense": true,
+        "examEvidence": "學測114（2025）英文詞彙Q7；選項D enormous，官方答案Q7=D；試題印刷第1頁。試題：https://www.ceec.edu.tw/files/file_pool/1/0p056425554473267580/02-114%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E9%A1%8C.pdf；答案：https://www.ceec.edu.tw/files/file_pool/1/0P020599726139811147/114%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E5%8F%83%E8%80%83%E7%AD%94%E6%A1%88.pdf",
+        "answerForms": [
+          "enormous"
+        ],
+        "note": "2026-11-05：直接讀取官方試題及答案，enormous 修飾 courage，支持程度極大的抽象用法。EX5816c977 與原題填入正解後完整句子相符；EXab97c02a 的教祖父用手機句是另寫練習，並非本題原句。僅此考點與來源核實，不擴為整詞批准。",
+        "status": "reviewed"
+      },
+      "reason": "Match the full official courage context and answer D; distinguish the matching original sentence from separate authored practice. ",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0p056425554473267580/02-114%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E9%A1%8C.pdf ; https://www.ceec.edu.tw/files/file_pool/1/0P020599726139811147/114%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E5%8F%83%E8%80%83%E7%AD%94%E6%A1%88.pdf ; "
+    }
+  ],
+  "masterTouched": false,
+  "sentencesChanged": false,
+  "englishSentencesChanged": false,
+  "imagesChanged": false,
+  "sourceHashesBefore": {
+    "words.json": "d25a81cc84d66fdfbad0bd2cf6972bffb4de7fc37d2a4c927f21f34f83c90e01",
+    "senses.json": "22228e5bbca7540f5f0630c9ae8a2df611febacef254c693bfb71f10fc1091f3",
+    "examples.json": "1bc1d21e9a03cfd6f56df7fa5dd5eec3833e007a689d209e784acaf9d839ee0c",
+    "meta.json": "ac3c435ba7cbb15094843c2e06a9a8695138d6355dbb4dedf0766ad191b71a87",
+    "sa-pack.json": "1e077a6b37e0a7c0c1f8b462287028e4e0fe8d9cfc9f57c4d6fd958de5d096e6"
+  },
+  "sourceHashesAfter": {
+    "words.json": "ec1d9138b6aed925f2ea9cec33c14b9d4e43917aeb6087631872928a6ded5739",
+    "senses.json": "fa34af207654c4bf57466bea38d8bf347690b1dd791c552a2bffd1464a02b36b",
+    "examples.json": "628c6c37c6850dc9e41e2598d435cda1e26a5780f2c27d2d9ff9f8bc0b5e0265",
+    "meta.json": "b89319077e23aef048696c4ca9eac3714737b40d53dead452be34bfdad301a27",
+    "sa-pack.json": "601107d76d035dae60648d3fd60f5b88e1e1c31d8eed410f8bdc734263493968"
+  },
+  "state": "saved_and_actual_ui_reopened_with_explicit_field_visibility_boundary",
+  "validationAt": "2026-11-05T17:32:17.433Z",
+  "validationEvidence": "validation/U21-saved-final.json"
+}

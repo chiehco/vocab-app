@@ -1,0 +1,558 @@
+{
+  "task": "逐單元全面檢查與修正",
+  "unit": "LV1-U01",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "reviewer": "Codex agent; user-authorized direct correction on 2026-11-05",
+  "reviewBoundary": "圖片與單元圖說38組逐張UI目視。一般字卡206例句逐句文字核對；修改後須重新開卡。字典摘要與動詞三態的剩餘缺口另外保留，不以圖句通過整列核准。",
+  "patches": [
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX2a494d00",
+      "before": {
+        "sensePos": "n.",
+        "meaningHint": null
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "負責；值勤"
+      },
+      "reason": "原句 man the information desk 的實際用法為 v.；只修正詞性與同義中文提示，不改中英原句或答案。",
+      "evidence": "https://www.merriam-webster.com/simple/man"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1348ee89",
+      "before": {
+        "sensePos": "adj.",
+        "meaningHint": "長的、久的"
+      },
+      "after": {
+        "sensePos": "adv.",
+        "meaningHint": "長久地"
+      },
+      "reason": "原句 lasted so long 的實際用法為 adv.；只修正詞性與同義中文提示，不改中英原句或答案。",
+      "evidence": "https://www.merriam-webster.com/dictionary/long"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX4df73b60",
+      "before": {
+        "sensePos": "adj.",
+        "meaningHint": "短的；近的；矮的；短期的"
+      },
+      "after": {
+        "sensePos": "adv.",
+        "meaningHint": "突然地"
+      },
+      "reason": "原句 stopped short 的實際用法為 adv.；只修正詞性與同義中文提示，不改中英原句或答案。",
+      "evidence": "https://www.merriam-webster.com/dictionary/short"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX41608a4f",
+      "before": {
+        "sensePos": "n.",
+        "meaningHint": null
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "前往"
+      },
+      "reason": "原句 we head straight 的實際用法為 v.；只修正詞性與同義中文提示，不改中英原句或答案。",
+      "evidence": "https://www.merriam-webster.com/dictionary/head"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX96c9fbe3",
+      "before": {
+        "sensePos": "n.",
+        "meaningHint": null
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "面對"
+      },
+      "reason": "原句 face heavy pressure 的實際用法為 v.；只修正詞性與同義中文提示，不改中英原句或答案。",
+      "evidence": "https://www.merriam-webster.com/dictionary/face"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX63cc9246",
+      "before": {
+        "sensePos": "n.",
+        "meaningHint": null
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "預訂"
+      },
+      "reason": "原句 booked a hotel room 的實際用法為 v.；只修正詞性與同義中文提示，不改中英原句或答案。",
+      "evidence": "https://www.merriam-webster.com/dictionary/book"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXbe9611b1",
+      "before": {
+        "sensePos": "adj.",
+        "meaningHint": null
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "開放；開始營業"
+      },
+      "reason": "原句 will open to the public 的實際用法為 v.；只修正詞性與同義中文提示，不改中英原句或答案。",
+      "evidence": "https://www.merriam-webster.com/dictionary/open"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX29c337b8",
+      "before": {
+        "sensePos": "adj.",
+        "meaningHint": null
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "關閉；打烊"
+      },
+      "reason": "原句 will close early 的實際用法為 v.；只修正詞性與同義中文提示，不改中英原句或答案。",
+      "evidence": "https://www.merriam-webster.com/dictionary/close"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX467de9ce",
+      "before": {
+        "sensePos": "n.",
+        "meaningHint": null
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "配備"
+      },
+      "reason": "原句 to arm the police 的實際用法為 v.；只修正詞性與同義中文提示，不改中英原句或答案。",
+      "evidence": "https://www.merriam-webster.com/dictionary/arm"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX2dad6de6",
+      "before": {
+        "sensePos": "v.",
+        "meaningHint": null
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "划算的東西"
+      },
+      "reason": "原句 a good buy 的實際用法為 n.；只修正詞性與同義中文提示，不改中英原句或答案。",
+      "evidence": "https://scrabble.m-w.com/dictionary/buy"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX0daa64cc",
+      "before": {
+        "sensePos": "n.",
+        "meaningHint": null
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "躲避"
+      },
+      "reason": "原句 ducked behind the wall 的實際用法為 v.；只修正詞性與同義中文提示，不改中英原句或答案。",
+      "evidence": "https://scrabble.merriam.com/finder/duck"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX41165e07",
+      "before": {
+        "sensePos": "adv.",
+        "meaningHint": null
+      },
+      "after": {
+        "sensePos": "adj.",
+        "meaningHint": "足夠的"
+      },
+      "reason": "原句 enough time 的實際用法為 adj.；只修正詞性與同義中文提示，不改中英原句或答案。",
+      "evidence": "https://www.merriam-webster.com/simple/enough"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXa383ab98",
+      "before": {
+        "sensePos": "n.",
+        "meaningHint": null
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "微笑"
+      },
+      "reason": "原句 smiled warmly 的實際用法為 v.；只修正詞性與同義中文提示，不改中英原句或答案。",
+      "evidence": "https://www.merriam-webster.com/dictionary/smile"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXaea96c52",
+      "before": {
+        "sensePos": "n.",
+        "meaningHint": null
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "開玩笑"
+      },
+      "reason": "原句 just kidding 的實際用法為 v.；只修正詞性與同義中文提示，不改中英原句或答案。",
+      "evidence": "https://dictionary.cambridge.org/dictionary/english/kid?topic=not-believable"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXbb2f537f",
+      "before": {
+        "sensePos": "v.",
+        "meaningHint": null
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "舞會"
+      },
+      "reason": "原句 to a dance 的實際用法為 n.；只修正詞性與同義中文提示，不改中英原句或答案。",
+      "evidence": "https://www.merriam-webster.com/dictionary/dance"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1348ee89",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "已逐句核對詞義、詞性、英中對應與填空還原；為代理內容核對，非使用者新增美術批准。",
+      "evidence": "https://www.merriam-webster.com/dictionary/long"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX0a076afb",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "已逐句核對詞義、詞性、英中對應與填空還原；為代理內容核對，非使用者新增美術批准。",
+      "evidence": "https://www.merriam-webster.com/dictionary/go"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXbe0840b9",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "已逐句核對詞義、詞性、英中對應與填空還原；為代理內容核對，非使用者新增美術批准。",
+      "evidence": "https://www.merriam-webster.com/dictionary/short"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000518-1",
+      "before": {
+        "status": "needs_check",
+        "meaningZh": "男人；人類",
+        "sensePos": "n."
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "核對本義項詞性、中文釋義、既有例句及詞典用法；只審本 senseId，未批准整列原始摘要或所有圖句。",
+      "evidence": "https://www.merriam-webster.com/dictionary/man"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000518-2",
+      "before": {
+        "status": "needs_check",
+        "meaningZh": "配置人員",
+        "sensePos": "v."
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "核對本義項詞性、中文釋義、既有例句及詞典用法；只審本 senseId，未批准整列原始摘要或所有圖句。",
+      "evidence": "https://www.merriam-webster.com/dictionary/man"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000353-1",
+      "before": {
+        "status": "needs_check",
+        "meaningZh": "去；前往",
+        "sensePos": "v."
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "核對本義項詞性、中文釋義、既有例句及詞典用法；只審本 senseId，未批准整列原始摘要或所有圖句。",
+      "evidence": "https://www.merriam-webster.com/dictionary/go"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000353-2",
+      "before": {
+        "status": "needs_check",
+        "meaningZh": "嘗試（have a go）",
+        "sensePos": "n."
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "核對本義項詞性、中文釋義、既有例句及詞典用法；只審本 senseId，未批准整列原始摘要或所有圖句。",
+      "evidence": "https://www.merriam-webster.com/dictionary/go"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000502-1",
+      "before": {
+        "status": "needs_check",
+        "meaningZh": "長的；長久的",
+        "sensePos": "adj."
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "核對本義項詞性、中文釋義、既有例句及詞典用法；只審本 senseId，未批准整列原始摘要或所有圖句。",
+      "evidence": "https://www.merriam-webster.com/dictionary/long"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000502-2",
+      "before": {
+        "status": "needs_check",
+        "meaningZh": "長久地",
+        "sensePos": "adv."
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "核對本義項詞性、中文釋義、既有例句及詞典用法；只審本 senseId，未批准整列原始摘要或所有圖句。",
+      "evidence": "https://www.merriam-webster.com/dictionary/long"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000502-3",
+      "before": {
+        "status": "needs_check",
+        "meaningZh": "渴望（long for）",
+        "sensePos": "v."
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "核對本義項詞性、中文釋義、既有例句及詞典用法；只審本 senseId，未批准整列原始摘要或所有圖句。",
+      "evidence": "https://www.merriam-webster.com/dictionary/long"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000383-1",
+      "before": {
+        "status": "needs_check",
+        "meaningZh": "頭；領袖",
+        "sensePos": "n."
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "核對本義項詞性、中文釋義、既有例句及詞典用法；只審本 senseId，未批准整列原始摘要或所有圖句。",
+      "evidence": "https://www.merriam-webster.com/dictionary/head"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000383-2",
+      "before": {
+        "status": "needs_check",
+        "meaningZh": "前往；帶領",
+        "sensePos": "v."
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "核對本義項詞性、中文釋義、既有例句及詞典用法；只審本 senseId，未批准整列原始摘要或所有圖句。",
+      "evidence": "https://www.merriam-webster.com/dictionary/head"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000610-1",
+      "before": {
+        "status": "needs_check",
+        "meaningZh": "開著的；公開的",
+        "sensePos": "adj."
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "核對本義項詞性、中文釋義、既有例句及詞典用法；只審本 senseId，未批准整列原始摘要或所有圖句。",
+      "evidence": "https://www.merriam-webster.com/dictionary/open"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000610-2",
+      "before": {
+        "status": "needs_check",
+        "meaningZh": "打開",
+        "sensePos": "v."
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "核對本義項詞性、中文釋義、既有例句及詞典用法；只審本 senseId，未批准整列原始摘要或所有圖句。",
+      "evidence": "https://www.merriam-webster.com/dictionary/open"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000175-1",
+      "before": {
+        "status": "needs_check",
+        "meaningZh": "接近的；親近的",
+        "sensePos": "adj."
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "核對本義項詞性、中文釋義、既有例句及詞典用法；只審本 senseId，未批准整列原始摘要或所有圖句。",
+      "evidence": "https://www.merriam-webster.com/dictionary/close"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000175-2",
+      "before": {
+        "status": "needs_check",
+        "meaningZh": "靠近地",
+        "sensePos": "adv."
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "核對本義項詞性、中文釋義、既有例句及詞典用法；只審本 senseId，未批准整列原始摘要或所有圖句。",
+      "evidence": "https://www.merriam-webster.com/dictionary/close"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000175-3",
+      "before": {
+        "status": "needs_check",
+        "meaningZh": "關閉；結束",
+        "sensePos": "v."
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "核對本義項詞性、中文釋義、既有例句及詞典用法；只審本 senseId，未批准整列原始摘要或所有圖句。",
+      "evidence": "https://www.merriam-webster.com/dictionary/close"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000175-4",
+      "before": {
+        "status": "needs_check",
+        "meaningZh": "結尾",
+        "sensePos": "n."
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "核對本義項詞性、中文釋義、既有例句及詞典用法；只審本 senseId，未批准整列原始摘要或所有圖句。",
+      "evidence": "https://www.merriam-webster.com/dictionary/close"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000265-1",
+      "before": {
+        "status": "needs_check",
+        "meaningZh": "足夠地",
+        "sensePos": "adv."
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "核對本義項詞性、中文釋義、既有例句及詞典用法；只審本 senseId，未批准整列原始摘要或所有圖句。",
+      "evidence": "https://www.merriam-webster.com/dictionary/enough"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000265-2",
+      "before": {
+        "status": "needs_check",
+        "meaningZh": "足夠的",
+        "sensePos": "adj."
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "核對本義項詞性、中文釋義、既有例句及詞典用法；只審本 senseId，未批准整列原始摘要或所有圖句。",
+      "evidence": "https://www.merriam-webster.com/dictionary/enough"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000265-3",
+      "before": {
+        "status": "needs_check",
+        "meaningZh": "足夠",
+        "sensePos": "n."
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "核對本義項詞性、中文釋義、既有例句及詞典用法；只審本 senseId，未批准整列原始摘要或所有圖句。",
+      "evidence": "https://www.merriam-webster.com/dictionary/enough"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000101-1",
+      "before": {
+        "status": "needs_check",
+        "meaningZh": "身體",
+        "sensePos": "n."
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "核對本義項詞性、中文釋義、既有例句及詞典用法；只審本 senseId，未批准整列原始摘要或所有圖句。",
+      "evidence": "https://www.merriam-webster.com/dictionary/body"
+    }
+  ]
+}

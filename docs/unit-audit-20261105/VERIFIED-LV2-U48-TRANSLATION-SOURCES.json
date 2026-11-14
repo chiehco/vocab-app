@@ -1,0 +1,27 @@
+{
+  "priorCheckpoint": "9217586a3387586942423275d68231daf812b4c3",
+  "facts": [
+    {
+      "exampleId": "EX5b300da2",
+      "before": {
+        "word": "free",
+        "sentenceEn": "The museum offers free admission to children under six years old.",
+        "blankSentence": "The museum offers _____ admission to children under six years old.",
+        "answer": "free",
+        "sentenceZh": "這間博物館提供六歲以下兒童免費入場。",
+        "status": "reviewed"
+      },
+      "after": {
+        "sentenceZh": "這間博物館提供未滿六歲兒童免費入場。"
+      },
+      "reason": "Under six excludes children who have already reached six. Remove the inclusive Chinese boundary ambiguity without changing original English, target, answer or POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/under",
+      "retrieval": "Complete unchanged English/Chinese and primary under age-boundary definition directly read. Chinese 未滿 removes inclusive ambiguity; no English/POS/answer/status change.",
+      "pairedCaptionSearch": {
+        "exactEnglishTrackedMatches": [],
+        "exactEnglishNoteMatches": [],
+        "captionInvented": false
+      }
+    }
+  ]
+}

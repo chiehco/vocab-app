@@ -1,0 +1,48 @@
+{
+  "observedAt": "2026-11-05T18:49:41.640Z",
+  "phase": "before",
+  "card": "W000035",
+  "word": "answer",
+  "failedOperation": "Navigation waited for load and timed out after30000ms",
+  "failedExitCode": 1,
+  "serviceStatus": 200,
+  "existingPage": {
+    "readyState": "complete",
+    "word": "answer",
+    "imageLoaded": true,
+    "imageDimensions": [
+      1254,
+      1254
+    ],
+    "navigationDurationMs": 2089.9
+  },
+  "rootCause": "Exact transient delayed operation not identified; current service/page/image are available.",
+  "recovery": "Before navigation failure was confirmed complete before one retry. The same28 before cards passed with unchanged timeouts, then28 exact absent keys were written and all after/UI/DB/regression checks passed. The precise transient cause remains unidentified; no product data had been changed at failure.",
+  "originalEvidence": "output/playwright/unit-audit/U12-integrated-before.txt",
+  "diagnosticEvidence": "output/playwright/unit-audit/U12-timeout-diagnostic.txt",
+  "beforeRetry": {
+    "completedAt": "2026-11-05T18:51:24.596Z",
+    "cards": 28,
+    "bothPanelsAbsent": true,
+    "timeoutUnchanged": true,
+    "state": "passed"
+  },
+  "initialProductFieldsWritten": 0,
+  "initialScreenshotsWritten": 0,
+  "finalState": "known_failure_retried_once_then_exact_patch_and_complete_after_validation_passed",
+  "afterValidation": {
+    "completedAt": "2026-11-05T18:59:00.799Z",
+    "cards": 28,
+    "bothPanelDisplays": 56,
+    "unchangedExamples": 54,
+    "unchangedImages": 28,
+    "savedRows": 2087,
+    "progressTablesUnchanged": 14,
+    "localFiles": 11,
+    "localTests": 93,
+    "pythonTests": 27,
+    "allCommandExitsZero": true,
+    "browserNavigationTimeoutMs": 30000,
+    "localTestTimeoutMs": 5000
+  }
+}

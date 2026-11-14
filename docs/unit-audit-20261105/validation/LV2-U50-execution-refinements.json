@@ -1,0 +1,81 @@
+{
+  "canonicalManifests": [
+    "LV2-U50-patches.json",
+    "LV2-U50-notes-patches.json",
+    "LV2-U50-verified-forms-patches.json"
+  ],
+  "canonicalNetOperations": 64,
+  "canonicalNetFields": 97,
+  "actualExecutionChangedRows": 66,
+  "executionReceipts": [
+    {
+      "file": "receipts/LV2-U50-patches.json",
+      "changedRows": 44
+    },
+    {
+      "file": "receipts/LV2-U50-notes-patches.json",
+      "changedRows": 6
+    },
+    {
+      "file": "receipts/LV2-U50-verified-forms-patches.json",
+      "changedRows": 13
+    },
+    {
+      "file": "receipts/LV2-U50-stream-summary-refinement.json",
+      "changedRows": 1
+    },
+    {
+      "file": "receipts/LV2-U50-definition-separators-refinement.json",
+      "changedRows": 2
+    }
+  ],
+  "stream": {
+    "exactPatch": {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001854",
+      "before": {
+        "meaningZh": "水流；小河；流出；趨勢"
+      },
+      "after": {
+        "meaningZh": "（名詞）水流；小河；趨勢；（動詞）流出；流動；串流播放／傳送（影音）"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/stream",
+      "reason": "Original page454 and current English/usage already include online sound/video streaming. Direct primary definition explicitly confirms send or receive sound/video continuously over the internet. Make that selected existing meaning visible in Chinese while retaining every inherited Chinese meaning and all current verbForms/English/status/identity.",
+      "classification": "selected_existing_sense_visible_summary_completion"
+    },
+    "doNotRegisterAgain": true
+  },
+  "definitionSeparators": {
+    "patches": [
+      {
+        "dataset": "words",
+        "key": "wordId",
+        "id": "W001136",
+        "before": {
+          "meaningEn": "the smallest basic unit of a living thing; a device that produces electricity; a small room where a prisoner is kept Informally, cell also means a mobile phone."
+        },
+        "after": {
+          "meaningEn": "the smallest basic unit of a living thing; a device that produces electricity; a small room where a prisoner is kept. Informally, cell also means a mobile phone."
+        },
+        "reason": "Actual final pixels exposed a missing separator in a newly authored definition; retain exact original source before and all practice sentences.",
+        "evidence": "https://www.collinsdictionary.com/dictionary/english/cell"
+      },
+      {
+        "dataset": "words",
+        "key": "wordId",
+        "id": "W003909",
+        "before": {
+          "meaningEn": "(adj.) not currently used and kept available in case it is needed; (v.) to make something, especially time, available for someone; (v.) to not harm or destroy someone or something (n.) an extra item kept ready as a replacement."
+        },
+        "after": {
+          "meaningEn": "(adj.) not currently used and kept available in case it is needed; (v.) to make something, especially time, available for someone; (v.) to not harm or destroy someone or something; (n.) an extra item kept ready as a replacement."
+        },
+        "reason": "Actual final pixels exposed a missing separator in a newly authored definition; retain exact original source before and all practice sentences.",
+        "evidence": "https://www.collinsdictionary.com/dictionary/english/spare"
+      }
+    ],
+    "doNotRegisterAgain": true
+  },
+  "explanation": "Canonical main/notes/forms chain contains each final field once. Separate stream and separator receipts record actual incremental executions, preserve earlier before/after/source hashes, and must never be added as duplicate operations to apply or inverse chains."
+}

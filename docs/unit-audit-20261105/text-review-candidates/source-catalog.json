@@ -1,0 +1,1840 @@
+{
+  "title": "LV1 U01–U07 text review source catalog",
+  "sourceCommit": "b5144bc12ebd35a9083ee80de055a748cf973981",
+  "examplesBlobSha": "e133b703845ec3241b3421e13a7bb3d562b4252f",
+  "status": "Candidates only. Not applied or whole-card approval.",
+  "applicationRules": [
+    "Read each latest exampleId and full sentence before applying. Exact before values must still match; reconcile shared-word changes rather than overwrite them.",
+    "Apply only evidence-supported fields. Preserve English, cloze, answer, status and all unrelated fields unless an independently justified change is explicitly recorded.",
+    "Do not fill intentionally empty daily or exam hints. Broad but applicable hints are refinements, not wholly incorrect entries.",
+    "Mixed POS reductions describe the actual cloze token, not removal of headword senses. Keep unresolved phrase, determiner and contraction conventions.",
+    "Translation candidates require context review. Preserve original-source quotations and their attribution; never label a corrected translation as a verbatim original. Do not mechanically rewrite kinship terms.",
+    "Reopen affected cards and exact illustration-caption routes after saving. Maintain exact before/after recovery, historical baselines and unaffected regression assertions."
+  ],
+  "uniqueCandidateFields": 950,
+  "sharedCandidateReferences": 11,
+  "unitIndex": [
+    {
+      "unit": "LV1-U01",
+      "candidateFile": "LV1-U01-candidates.json",
+      "uniqueCandidateFieldCount": 220,
+      "sharedCandidateReferences": 0,
+      "deferredCount": 6
+    },
+    {
+      "unit": "LV1-U02",
+      "candidateFile": "LV1-U02-candidates.json",
+      "uniqueCandidateFieldCount": 191,
+      "sharedCandidateReferences": 0,
+      "deferredCount": 4
+    },
+    {
+      "unit": "LV1-U03",
+      "candidateFile": "LV1-U03-candidates.json",
+      "uniqueCandidateFieldCount": 138,
+      "sharedCandidateReferences": 0,
+      "deferredCount": 15
+    },
+    {
+      "unit": "LV1-U04",
+      "candidateFile": "LV1-U04-candidates.json",
+      "uniqueCandidateFieldCount": 181,
+      "sharedCandidateReferences": 0,
+      "deferredCount": 2
+    },
+    {
+      "unit": "LV1-U05",
+      "candidateFile": "LV1-U05-candidates.json",
+      "uniqueCandidateFieldCount": 41,
+      "sharedCandidateReferences": 0,
+      "deferredCount": 2
+    },
+    {
+      "unit": "LV1-U06",
+      "candidateFile": "LV1-U06-candidates.json",
+      "uniqueCandidateFieldCount": 146,
+      "sharedCandidateReferences": 0,
+      "deferredCount": 0
+    },
+    {
+      "unit": "LV1-U07",
+      "candidateFile": "LV1-U07-candidates.json",
+      "uniqueCandidateFieldCount": 33,
+      "sharedCandidateReferences": 11,
+      "deferredCount": 1
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "S001",
+      "url": "https://dictionary.cambridge.org/us/dictionary/english/arm",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "arm 動詞可指提供武器。"
+    },
+    {
+      "sourceId": "S002",
+      "url": "https://dictionary.cambridge.org/grammar/british-grammar/as-long-as-and-so-long-as",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "檢得片語用法頁；單一 cloze long 詞性不能直接以整片語功能代替。"
+    },
+    {
+      "sourceId": "S003",
+      "url": "https://dictionary.cambridge.org/dictionary/english/book?topic=groups-and-collections-of-things",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "book 動詞為預訂；be fully booked 被列在動詞用法下，含餐廳訂滿例。"
+    },
+    {
+      "sourceId": "S004",
+      "url": "https://dictionary.cambridge.org/dictionary/english/buy",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "檢得 buy verb (BELIEVE)，支持相信說法之義。"
+    },
+    {
+      "sourceId": "S005",
+      "url": "https://dictionary.cambridge.org/dictionary/english/piece-of-cake",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "a piece of cake 表輕而易舉的事。"
+    },
+    {
+      "sourceId": "S006",
+      "url": "https://dictionary.cambridge.org/uk/dictionary/english/chicken",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "chicken 是飼養以取肉／蛋的雞，並不限幼雞；頁面導覽為烏克蘭語，定義本文為英文。"
+    },
+    {
+      "sourceId": "S007",
+      "url": "https://dictionary.cambridge.org/us/dictionary/english/close-to",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "close to 可表示 almost，支持 come close to 的差一點之義；不單憑整片語決定 cloze 詞性。"
+    },
+    {
+      "sourceId": "S008",
+      "url": "https://dictionary.cambridge.org/dictionary/english/duck",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "duck 動詞可指迅速低頭／降低上半身，字典含避門框例。"
+    },
+    {
+      "sourceId": "S009",
+      "url": "https://dictionary.cambridge.org/grammar/british-grammar/enough",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "Enough 可分限定詞、代名詞、副詞；strangely enough 有副詞例。傳統 adj./n. 分法是否保留依專案詞性規格。"
+    },
+    {
+      "sourceId": "S010",
+      "url": "https://dictionary.cambridge.org/dictionary/english/enough",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "enough 通常表所需的量／程度；strangely enough 不直譯為很多。"
+    },
+    {
+      "sourceId": "S011",
+      "url": "https://dictionary.cambridge.org/dictionary/english/have-an-eye-for",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "have an eye for 指擅於察覺／有鑑賞力。"
+    },
+    {
+      "sourceId": "S012",
+      "url": "https://dictionary.cambridge.org/us/dictionary/learner-english/face",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "動詞可指面向，也可指面對問題；被動形式仍屬動詞。"
+    },
+    {
+      "sourceId": "S013",
+      "url": "https://dictionary.cambridge.org/dictionary/english/girl",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "girl 可指女兒。"
+    },
+    {
+      "sourceId": "S014",
+      "url": "https://dictionary.cambridge.org/dictionary/english/go",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "go 可作 become 類動詞，也可作嘗試之名詞。"
+    },
+    {
+      "sourceId": "S015",
+      "url": "https://dictionary.cambridge.org/us/dictionary/english/go?topic=advantage-and-disadvantage",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "go verb (DEVELOP) 可指進行；字典有 interview went well 同構例。"
+    },
+    {
+      "sourceId": "S016",
+      "url": "https://dictionary.cambridge.org/dictionary/english/head?q=head_1",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "動詞有往某方向前進及領導組織兩義。"
+    },
+    {
+      "sourceId": "S017",
+      "url": "https://dictionary.cambridge.org/dictionary/english/hit-the-books",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "hit the books 表用功讀書。"
+    },
+    {
+      "sourceId": "S018",
+      "url": "https://dictionary.cambridge.org/dictionary/english/in-the-face-of",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "in the face of 指面臨／遭遇不利情況，亦可表儘管。"
+    },
+    {
+      "sourceId": "S019",
+      "url": "https://dictionary.cambridge.org/dictionary/english/in-short",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "in short 為簡言之之慣用語；來源只標整片語 idiom，不強行為單一 short 指派詞性。"
+    },
+    {
+      "sourceId": "S020",
+      "url": "https://dictionary.cambridge.org/dictionary/english/kid",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "動詞可指開玩笑，並非只指欺騙。"
+    },
+    {
+      "sourceId": "S021",
+      "url": "https://dictionary.cambridge.org/dictionary/english/laugh-at?topic=laughing-and-smiling",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "laugh at 有嘲笑、表示不值得認真看待等義。"
+    },
+    {
+      "sourceId": "S022",
+      "url": "https://dictionary.cambridge.org/dictionary/english/leg",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "leg 可指支撐家具等物體的腳。"
+    },
+    {
+      "sourceId": "S023",
+      "url": "https://dictionary.cambridge.org/us/dictionary/english/long",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "檢得 long verb WANT；其他檢索摘要提供 want something very much。"
+    },
+    {
+      "sourceId": "S024",
+      "url": "https://dictionary.cambridge.org/dictionary/english/all-day-week-year-etc-long",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "all night long 指整晚，頁面明列 long adverb。"
+    },
+    {
+      "sourceId": "S025",
+      "url": "https://dictionary.cambridge.org/dictionary/english/lose?topic=failing-and-doing-badly",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "檢得 lose face 表因行為失去別人尊重。"
+    },
+    {
+      "sourceId": "S026",
+      "url": "https://dictionary.cambridge.org/dictionary/english/man",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "動詞表示在場操作設備或負責值勤。"
+    },
+    {
+      "sourceId": "S027",
+      "url": "https://dictionary.cambridge.org/dictionary/english/open",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "open 有開始、開業以及開放可使用等動詞／形容詞義。"
+    },
+    {
+      "sourceId": "S028",
+      "url": "https://dictionary.cambridge.org/dictionary/english/short",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "short for 表簡稱／縮寫；short of/on 表不足。"
+    },
+    {
+      "sourceId": "S029",
+      "url": "https://dictionary.cambridge.org/dictionary/english/stopover",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "stopover 為旅途中停留，定義不要求換飛機。"
+    },
+    {
+      "sourceId": "S030",
+      "url": "https://dictionary.cambridge.org/dictionary/english/spill-the-beans",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "spill the beans 表洩密。"
+    },
+    {
+      "sourceId": "S031",
+      "url": "https://dictionary.cambridge.org/dictionary/english/in-the-same-boat",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "in the same boat 指面臨相同困境。"
+    },
+    {
+      "sourceId": "S032",
+      "url": "https://dictionary.cambridge.org/dictionary/english/boss-around?q=to+boss+around",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "boss around 表惱人地命令、使喚。"
+    },
+    {
+      "sourceId": "S033",
+      "url": "https://dictionary.cambridge.org/dictionary/english/bread-and-butter",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "bread and butter 可指生計來源。"
+    },
+    {
+      "sourceId": "S034",
+      "url": "https://dictionary.cambridge.org/dictionary/english/big-cheese?q=Big+Cheese",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "big cheese 指組織中有影響力的重要人物。"
+    },
+    {
+      "sourceId": "S035",
+      "url": "https://dictionary.cambridge.org/dictionary/english/cross-fingers",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "cross your fingers／keep your fingers crossed 指祈求事情如願。"
+    },
+    {
+      "sourceId": "S036",
+      "url": "https://dictionary.cambridge.org/dictionary/english/enclosure",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "enclosure 在動物園語境為圍起來的區域，不只是圍欄本體。"
+    },
+    {
+      "sourceId": "S037",
+      "url": "https://dictionary.cambridge.org/dictionary/english/filmed",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "film 動詞為拍攝動態影像，並不一概限院線電影。"
+    },
+    {
+      "sourceId": "S038",
+      "url": "https://dictionary.cambridge.org/dictionary/english/finger",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "finger 動詞可指用手指觸摸；字典例句也是摸項鍊。"
+    },
+    {
+      "sourceId": "S039",
+      "url": "https://dictionary.cambridge.org/dictionary/english/foot-the-bill",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "foot the bill 指支付費用。"
+    },
+    {
+      "sourceId": "S040",
+      "url": "https://dictionary.cambridge.org/dictionary/english/hand",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "動詞可指遞給；另檢得 hand in 繳交。"
+    },
+    {
+      "sourceId": "S041",
+      "url": "https://dictionary.cambridge.org/us/dictionary/english/hand-down?topic=announcing-informing-and-stating",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "hand down 可指傳給家中較年輕的人；字典含項鍊代傳例。"
+    },
+    {
+      "sourceId": "S042",
+      "url": "https://dictionary.cambridge.org/dictionary/english/hard",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "hard 可作副詞表示努力地。"
+    },
+    {
+      "sourceId": "S043",
+      "url": "https://dictionary.cambridge.org/dictionary/english/hard",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "雨雪下得大時 hard 為副詞。"
+    },
+    {
+      "sourceId": "S044",
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/english/hot_1",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "Oxford 區分熱門及脾氣易怒等義；hot temper 指容易發怒。"
+    },
+    {
+      "sourceId": "S045",
+      "url": "https://dictionary.cambridge.org/dictionary/english/make",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "make 有使／讓之使役動詞用法。"
+    },
+    {
+      "sourceId": "S046",
+      "url": "https://dictionary.cambridge.org/dictionary/english/make",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "make it to 可指成功抵達；字典有趕到機場的同構例。"
+    },
+    {
+      "sourceId": "S047",
+      "url": "https://dictionary.cambridge.org/dictionary/english/movie",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "movie 的電影義已檢得；此檢索未充分核實 at the movies 的場所義，場所義另列待覆核。"
+    },
+    {
+      "sourceId": "S048",
+      "url": "https://dictionary.cambridge.org/us/dictionary/spanish-english/cine",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "雙語字典檢得 movie 在帶 the 的複數形式可表 cinema；非直接檢得單語 at the movies 詞條。"
+    },
+    {
+      "sourceId": "S049",
+      "url": "https://dictionary.cambridge.org/us/dictionary/english/pie-in-the-sky",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "pie in the sky 指很難實現的美好想法。"
+    },
+    {
+      "sourceId": "S050",
+      "url": "https://dictionary.cambridge.org/us/dictionary/english/reason-with",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "reason with 指與人講理，試圖以理由說服。"
+    },
+    {
+      "sourceId": "S051",
+      "url": "https://dictionary.cambridge.org/dictionary/english/reason",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "reason 動詞有推理／根據情況作判斷的用法。"
+    },
+    {
+      "sourceId": "S052",
+      "url": "https://dictionary.cambridge.org/dictionary/english/ship",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "ship 動詞可涵蓋海運、航空、鐵路、公路運送，不限船運。"
+    },
+    {
+      "sourceId": "S053",
+      "url": "https://dictionary.cambridge.org/dictionary/english/stop",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "stop 可作阻止之動詞，也可作停止之名詞。"
+    },
+    {
+      "sourceId": "S054",
+      "url": "https://dictionary.cambridge.org/dictionary/english/stop-by",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "stop by 指短暫順道拜訪。"
+    },
+    {
+      "sourceId": "S055",
+      "url": "https://dictionary.cambridge.org/dictionary/english/stop-in",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "stop in 可指短暫順道拜訪；另有英式留在家義，非本句。"
+    },
+    {
+      "sourceId": "S056",
+      "url": "https://dictionary.cambridge.org/dictionary/english/story",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "story 有新聞報導、樓層等名詞義，並有 three-story house 類例。"
+    },
+    {
+      "sourceId": "S057",
+      "url": "https://dictionary.cambridge.org/dictionary/english/sun?q=sun_1",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "sun 動詞可指曬太陽，及物與不及物用法均有。"
+    },
+    {
+      "sourceId": "S058",
+      "url": "https://www.collinsdictionary.com/us/dictionary/english/cup-of-tea",
+      "verification": "web_open_page_read",
+      "finding": "L216–243：cup of tea 可指合乎喜好／適合的事物。"
+    },
+    {
+      "sourceId": "S059",
+      "url": "https://www.dictionary.com/browse/ones-cup-of-tea",
+      "verification": "web_open_page_read",
+      "finding": "L9–13：one’s cup of tea 為合乎某人喜好之慣用語。"
+    },
+    {
+      "sourceId": "S060",
+      "url": "https://dictionary.cambridge.org/dictionary/essential-british-english/turn-something-down?q=turn-down",
+      "verification": "web_search_result_retrieved_and_read",
+      "finding": "turn something down 表調低聲音或熱度，不是關掉。"
+    },
+    {
+      "sourceId": "S061",
+      "url": "https://www.merriam-webster.com/dictionary/dog",
+      "verification": "opened_definition",
+      "finding": "名詞的家犬義，與人／追蹤的其他義分開。"
+    },
+    {
+      "sourceId": "S062",
+      "url": "https://www.merriam-webster.com/dictionary/big",
+      "verification": "opened_definition",
+      "finding": "形容詞包含尺寸大、重要及年齡較大（big brother），非副詞大量。"
+    },
+    {
+      "sourceId": "S063",
+      "url": "https://dictionary.cambridge.org/dictionary/english/small",
+      "verification": "search_snippet_verified",
+      "finding": "實際搜尋回傳 Cambridge small 的 YOUNG 形容詞義與幼小兒童解釋；直接開頁 403，不冒稱全文核到。"
+    },
+    {
+      "sourceId": "S064",
+      "url": "https://www.merriam-webster.com/dictionary/small",
+      "verification": "opened_definition",
+      "finding": "形容詞尺寸小及輕微；副詞可表示以小的方式；複數 smalls 可指小型產品。"
+    },
+    {
+      "sourceId": "S065",
+      "url": "https://www.merriam-webster.com/dictionary/love",
+      "verification": "opened_definition",
+      "finding": "名詞指愛情／情感；動詞可指喜歡活動，條目並列 love to play 與 love playing。"
+    },
+    {
+      "sourceId": "S066",
+      "url": "https://www.merriam-webster.com/dictionary/pen",
+      "verification": "opened_definition",
+      "finding": "noun (2) 指使用墨水的書寫工具；verb (2) 指寫，例 pen a letter。"
+    },
+    {
+      "sourceId": "S067",
+      "url": "https://www.merriam-webster.com/dictionary/pencil",
+      "verification": "opened_definition",
+      "finding": "名詞第3a義為供書寫繪畫的固體筆芯工具；與畫筆／化妝筆義分開。"
+    },
+    {
+      "sourceId": "S068",
+      "url": "https://www.merriam-webster.com/dictionary/fruit",
+      "verification": "opened_definition",
+      "finding": "名詞分可食果實與行動的成果。"
+    },
+    {
+      "sourceId": "S069",
+      "url": "https://www.merriam-webster.com/dictionary/apple%20of%20one's%20eye",
+      "verification": "opened_definition",
+      "finding": "名詞片語意指高度珍愛的人或事物。"
+    },
+    {
+      "sourceId": "S070",
+      "url": "https://www.merriam-webster.com/dictionary/apple",
+      "verification": "opened_definition",
+      "finding": "名詞為蘋果，另外連結 apple of one’s eye。"
+    },
+    {
+      "sourceId": "S071",
+      "url": "https://www.merriam-webster.com/dictionary/say",
+      "verification": "opened_definition",
+      "finding": "動詞包含用言語表達、陳述意見或判斷。"
+    },
+    {
+      "sourceId": "S072",
+      "url": "https://www.merriam-webster.com/dictionary/only",
+      "verification": "opened_definition",
+      "finding": "分形容詞唯一、副詞僅僅、連接詞但／只是。"
+    },
+    {
+      "sourceId": "S073",
+      "url": "https://www.merriam-webster.com/dictionary/tree",
+      "verification": "opened_definition",
+      "finding": "名詞樹木，與樹狀圖及木料分開。"
+    },
+    {
+      "sourceId": "S074",
+      "url": "https://www.merriam-webster.com/dictionary/bee",
+      "verification": "opened_definition",
+      "finding": "名詞昆蟲義，與聚會義分開。"
+    },
+    {
+      "sourceId": "S075",
+      "url": "https://www.collinsdictionary.com/dictionary/english/milk-and-honey",
+      "verification": "opened_definition",
+      "finding": "milk and honey 指滿足且富足的生活情況。"
+    },
+    {
+      "sourceId": "S076",
+      "url": "https://www.merriam-webster.com/dictionary/honey",
+      "verification": "opened_definition",
+      "finding": "名詞蜂蜜、受疼愛的人及甜美等義分開。"
+    },
+    {
+      "sourceId": "S077",
+      "url": "https://www.merriam-webster.com/dictionary/car",
+      "verification": "opened_definition",
+      "finding": "名詞含 automobile 義及鐵路車廂等其他義。"
+    },
+    {
+      "sourceId": "S078",
+      "url": "https://www.merriam-webster.com/dictionary/bus",
+      "verification": "opened_definition",
+      "finding": "名詞載客公車義與電路匯流排義分開。"
+    },
+    {
+      "sourceId": "S079",
+      "url": "https://www.merriam-webster.com/dictionary/desk",
+      "verification": "opened_definition",
+      "finding": "名詞供讀寫的桌子及服務櫃檯分開。"
+    },
+    {
+      "sourceId": "S080",
+      "url": "https://www.merriam-webster.com/dictionary/table",
+      "verification": "opened_definition",
+      "finding": "名詞桌子與資料表分開。"
+    },
+    {
+      "sourceId": "S081",
+      "url": "https://www.merriam-webster.com/dictionary/chair",
+      "verification": "opened_definition",
+      "finding": "名詞椅子／主席分開；動詞可指主持。"
+    },
+    {
+      "sourceId": "S082",
+      "url": "https://www.merriam-webster.com/dictionary/rain",
+      "verification": "opened_definition",
+      "finding": "名詞雨，複數 rains 特指雨季；動詞下雨。"
+    },
+    {
+      "sourceId": "S083",
+      "url": "https://www.merriam-webster.com/dictionary/when%20it%20rains,%20it%20pours",
+      "verification": "opened_definition",
+      "finding": "諺語指一件壞事發生時其他壞事也接連發生。"
+    },
+    {
+      "sourceId": "S084",
+      "url": "https://www.merriam-webster.com/dictionary/next%20to",
+      "verification": "opened_definition",
+      "finding": "介詞片語有緊鄰、緊接及比較義；只挖 next 時不把整個片語詞性直接硬套。"
+    },
+    {
+      "sourceId": "S085",
+      "url": "https://www.merriam-webster.com/dictionary/next",
+      "verification": "opened_definition",
+      "finding": "形容詞緊接的；副詞接著／下一次；亦有介詞。"
+    },
+    {
+      "sourceId": "S086",
+      "url": "https://www.merriam-webster.com/dictionary/gate",
+      "verification": "opened_definition",
+      "finding": "名詞大門／出入口，另有機場出發或到達區義。"
+    },
+    {
+      "sourceId": "S087",
+      "url": "https://www.merriam-webster.com/dictionary/window",
+      "verification": "opened_definition",
+      "finding": "名詞建築物的窗戶與辦事窗口等義分開。"
+    },
+    {
+      "sourceId": "S088",
+      "url": "https://www.merriam-webster.com/dictionary/cup",
+      "verification": "opened_definition",
+      "finding": "名詞飲用容器，與獎杯等義分開。"
+    },
+    {
+      "sourceId": "S089",
+      "url": "https://www.merriam-webster.com/dictionary/old",
+      "verification": "opened_definition",
+      "finding": "形容詞含年老、使用已久、以前的，及指定歲數的用法。"
+    },
+    {
+      "sourceId": "S090",
+      "url": "https://www.merriam-webster.com/dictionary/young",
+      "verification": "opened_definition",
+      "finding": "形容詞年輕或帶年輕特徵；名詞年輕人或幼小動物。"
+    },
+    {
+      "sourceId": "S091",
+      "url": "https://www.merriam-webster.com/dictionary/new",
+      "verification": "opened_definition",
+      "finding": "形容詞新的、不熟悉的，以及剛進入某環境的。"
+    },
+    {
+      "sourceId": "S092",
+      "url": "https://www.merriam-webster.com/dictionary/cute",
+      "verification": "opened_definition",
+      "finding": "形容詞可指外表可愛，與機靈、故作聰明等義分開。"
+    },
+    {
+      "sourceId": "S093",
+      "url": "https://www.merriam-webster.com/dictionary/hen",
+      "verification": "opened_definition",
+      "finding": "雌雞，廣義亦可指雌鳥。"
+    },
+    {
+      "sourceId": "S094",
+      "url": "https://www.merriam-webster.com/dictionary/egg",
+      "verification": "opened_definition",
+      "finding": "名詞鳥蛋或食用蛋；與煽動的動詞分開。"
+    },
+    {
+      "sourceId": "S095",
+      "url": "https://www.merriam-webster.com/dictionary/insect",
+      "verification": "opened_definition",
+      "finding": "名詞昆蟲義與貶稱人的義分開。"
+    },
+    {
+      "sourceId": "S096",
+      "url": "https://www.merriam-webster.com/dictionary/busy",
+      "verification": "opened_definition",
+      "finding": "形容詞正忙於活動，與熱鬧及動詞使忙分開。"
+    },
+    {
+      "sourceId": "S097",
+      "url": "https://www.merriam-webster.com/dictionary/now",
+      "verification": "opened_definition",
+      "finding": "副詞現在／立即；另有名詞現在這一刻，因此介詞後的分類需保留慣例限制。"
+    },
+    {
+      "sourceId": "S098",
+      "url": "https://www.merriam-webster.com/dictionary/get",
+      "verification": "opened_definition",
+      "finding": "動詞得到、拿來、感染、使處於狀態、理解、變得等義。到達義另以 Oxford 實際搜尋結果佐證。"
+    },
+    {
+      "sourceId": "S099",
+      "url": "https://www.oxfordlearnersdictionaries.com/us/definition/english/get",
+      "verification": "search_snippet_verified",
+      "finding": "實際搜尋回傳 Oxford get 的 arrive 分節，並解釋 get 可指理解笑話。"
+    },
+    {
+      "sourceId": "S100",
+      "url": "https://www.merriam-webster.com/dictionary/family",
+      "verification": "opened_definition",
+      "finding": "名詞家人／家庭，亦可指子女；與氏族及其他分類義分開。"
+    },
+    {
+      "sourceId": "S101",
+      "url": "https://www.merriam-webster.com/dictionary/start%20a%20family",
+      "verification": "opened_definition",
+      "finding": "固定片語指開始生育子女。"
+    },
+    {
+      "sourceId": "S102",
+      "url": "https://www.merriam-webster.com/dictionary/father",
+      "verification": "opened_definition",
+      "finding": "名詞男性家長，與祖先、神父等義分開。"
+    },
+    {
+      "sourceId": "S103",
+      "url": "https://www.merriam-webster.com/dictionary/mother",
+      "verification": "opened_definition",
+      "finding": "名詞女性家長；與修女院長及動詞分開。"
+    },
+    {
+      "sourceId": "S104",
+      "url": "https://www.merriam-webster.com/dictionary/sister",
+      "verification": "opened_definition",
+      "finding": "具有共同父母的女性手足，未指明長幼。"
+    },
+    {
+      "sourceId": "S105",
+      "url": "https://www.merriam-webster.com/dictionary/grandmother",
+      "verification": "opened_definition",
+      "finding": "父親或母親的母親，未限定父系。"
+    },
+    {
+      "sourceId": "S106",
+      "url": "https://www.merriam-webster.com/dictionary/pull%20up%20a%20chair",
+      "verification": "opened_definition",
+      "finding": "片語意為把椅子移近別人以坐在旁邊。"
+    },
+    {
+      "sourceId": "S107",
+      "url": "https://www.merriam-webster.com/dictionary/grandfather",
+      "verification": "opened_definition",
+      "finding": "父親或母親的父親，未限定父系。"
+    },
+    {
+      "sourceId": "S108",
+      "url": "https://www.merriam-webster.com/dictionary/uncle",
+      "verification": "opened_definition",
+      "finding": "父母的兄弟或姨姑等的丈夫，未限定父系及排行。"
+    },
+    {
+      "sourceId": "S109",
+      "url": "https://www.merriam-webster.com/dictionary/come",
+      "verification": "opened_definition",
+      "finding": "動詞方向移動及到訪；固定片語 come up with、come across、come from 另核各自條目。"
+    },
+    {
+      "sourceId": "S110",
+      "url": "https://www.merriam-webster.com/dictionary/come%20up%20with",
+      "verification": "opened_definition",
+      "finding": "片語動詞指想出／提出解決辦法或想法。"
+    },
+    {
+      "sourceId": "S111",
+      "url": "https://www.merriam-webster.com/dictionary/come%20across",
+      "verification": "opened_definition",
+      "finding": "片語動詞指偶然遇到或發現。"
+    },
+    {
+      "sourceId": "S112",
+      "url": "https://www.merriam-webster.com/dictionary/come%20from",
+      "verification": "opened_definition",
+      "finding": "片語動詞表源自或來自某地。"
+    },
+    {
+      "sourceId": "S113",
+      "url": "https://www.merriam-webster.com/dictionary/television",
+      "verification": "opened_definition",
+      "finding": "名詞電視裝置、電視播送媒介及節目；本句不涉轉移向量。"
+    },
+    {
+      "sourceId": "S114",
+      "url": "https://www.merriam-webster.com/dictionary/food",
+      "verification": "opened_definition",
+      "finding": "名詞食物／營養來源，亦有供心智吸收之材料的比喻義，條目例 food for thought。"
+    },
+    {
+      "sourceId": "S115",
+      "url": "https://www.merriam-webster.com/dictionary/clock",
+      "verification": "opened_definition",
+      "finding": "名詞為計時裝置；around the clock 的全天候義另核片語，不採襪子繡花等同形異義。"
+    },
+    {
+      "sourceId": "S116",
+      "url": "https://www.merriam-webster.com/dictionary/around%20the%20clock",
+      "verification": "opened_definition",
+      "finding": "固定片語指持續整日與整夜。"
+    },
+    {
+      "sourceId": "S117",
+      "url": "https://www.merriam-webster.com/dictionary/hour",
+      "verification": "opened_definition",
+      "finding": "名詞可表六十分鐘時間單位，與特定時刻／時機等義分開。"
+    },
+    {
+      "sourceId": "S118",
+      "url": "https://www.merriam-webster.com/dictionary/minute",
+      "verification": "opened_definition",
+      "finding": "名詞有六十分之一小時、短時間，以及複數 minutes 的正式會議紀錄義（noun 4c），不等同一般備忘錄。"
+    },
+    {
+      "sourceId": "S119",
+      "url": "https://www.merriam-webster.com/dictionary/or%20else",
+      "verification": "opened_definition",
+      "finding": "固定片語可表否則的結果，也可表示另一種可能。"
+    },
+    {
+      "sourceId": "S120",
+      "url": "https://dictionary.cambridge.org/us/dictionary/english/else",
+      "verification": "search_snippet_verified",
+      "finding": "實際搜尋結果 Cambridge 將 else 列副詞，包含 anything else 等用法；直接開頁 403，僅主張已核搜尋回傳的定義。"
+    },
+    {
+      "sourceId": "S121",
+      "url": "https://www.merriam-webster.com/dictionary/nice",
+      "verification": "opened_definition",
+      "finding": "形容詞有令人愉快、討喜，以及友善等不同語境；不套用精細或品格正派等其他義。"
+    },
+    {
+      "sourceId": "S122",
+      "url": "https://www.merriam-webster.com/dictionary/road",
+      "verification": "opened_definition",
+      "finding": "名詞道路，以及抽象途徑；hit the road 的出發義另核片語條目。"
+    },
+    {
+      "sourceId": "S123",
+      "url": "https://www.merriam-webster.com/dictionary/hit%20the%20road",
+      "verification": "opened_definition",
+      "finding": "固定片語指出發、離開。"
+    },
+    {
+      "sourceId": "S124",
+      "url": "https://www.merriam-webster.com/dictionary/street",
+      "verification": "opened_definition",
+      "finding": "名詞街道／馬路，非本句街區或形容詞義。"
+    },
+    {
+      "sourceId": "S125",
+      "url": "https://www.merriam-webster.com/dictionary/student",
+      "verification": "opened_definition",
+      "finding": "名詞學校學生，與專門研究某事者義分開。"
+    },
+    {
+      "sourceId": "S126",
+      "url": "https://www.merriam-webster.com/dictionary/teacher",
+      "verification": "opened_definition",
+      "finding": "名詞從事教學者，數學老師句不限定導師職務。"
+    },
+    {
+      "sourceId": "S127",
+      "url": "https://www.merriam-webster.com/dictionary/teach",
+      "verification": "opened_definition",
+      "finding": "動詞教授知識／技能或從事教學，句內分 teach science、teach how to drive、learn how to teach。"
+    },
+    {
+      "sourceId": "S128",
+      "url": "https://www.merriam-webster.com/dictionary/shooting%20star",
+      "verification": "opened_definition",
+      "finding": "名詞流星，並非恆星或星形物。"
+    },
+    {
+      "sourceId": "S129",
+      "url": "https://www.merriam-webster.com/dictionary/star",
+      "verification": "opened_definition",
+      "finding": "名詞恆星與知名演員；verb 1–2 分不及物擔任主角與及物由某主演。shooting star 另核獨立詞條。"
+    },
+    {
+      "sourceId": "S130",
+      "url": "https://www.merriam-webster.com/dictionary/hundred",
+      "verification": "opened_definition",
+      "finding": "名詞一百、複數 hundreds 的大量，另列形容詞；專案數詞標註慣例未知，不強改。"
+    },
+    {
+      "sourceId": "S131",
+      "url": "https://www.merriam-webster.com/dictionary/thousand",
+      "verification": "opened_definition",
+      "finding": "名詞一千或大量，另列形容詞；專案數詞標註慣例未知，不強改。"
+    },
+    {
+      "sourceId": "S132",
+      "url": "https://www.merriam-webster.com/dictionary/box",
+      "verification": "opened_definition",
+      "finding": "名詞盒／箱；動詞把東西裝入盒箱（verb 1），與一巴掌等義分開。"
+    },
+    {
+      "sourceId": "S133",
+      "url": "https://www.merriam-webster.com/dictionary/bird",
+      "verification": "opened_definition",
+      "finding": "名詞鳥類；kill two birds with one stone 為固定譬喻，另核片語。"
+    },
+    {
+      "sourceId": "S134",
+      "url": "https://www.merriam-webster.com/dictionary/kill%20two%20birds%20with%20one%20stone",
+      "verification": "opened_definition",
+      "finding": "慣用語指一次行動達成兩件事。"
+    },
+    {
+      "sourceId": "S135",
+      "url": "https://www.merriam-webster.com/dictionary/again",
+      "verification": "opened_definition",
+      "finding": "副詞另一次／反覆發生，與回原處等義分開。"
+    },
+    {
+      "sourceId": "S136",
+      "url": "https://dictionary.cambridge.org/dictionary/english/thing",
+      "verification": "search_snippet_verified",
+      "finding": "實際搜尋回傳 Cambridge thing 的 REASON 分節及 for one thing：引介理由。"
+    },
+    {
+      "sourceId": "S137",
+      "url": "https://www.merriam-webster.com/dictionary/first%20thing",
+      "verification": "opened_definition",
+      "finding": "片語意為先於其他事、立即或一大早。"
+    },
+    {
+      "sourceId": "S138",
+      "url": "https://www.merriam-webster.com/dictionary/thing",
+      "verification": "opened_definition",
+      "finding": "名詞事件、活動、具體物件、理由等；for one thing 與 first thing 用法另核來源。"
+    },
+    {
+      "sourceId": "S139",
+      "url": "https://www.merriam-webster.com/dictionary/money",
+      "verification": "opened_definition",
+      "finding": "名詞用作交易的錢；本句非財富總量或一筆特定款項。"
+    },
+    {
+      "sourceId": "S140",
+      "url": "https://www.merriam-webster.com/dictionary/place",
+      "verification": "opened_definition",
+      "finding": "名詞地方、住所與名次；動詞置放或提出訂單（verb 1–2）。take place 及 place importance on 另核片語。"
+    },
+    {
+      "sourceId": "S141",
+      "url": "https://www.merriam-webster.com/dictionary/take%20place",
+      "verification": "opened_definition",
+      "finding": "固定片語指發生／舉行；只挖 place 時仍是名詞成分。"
+    },
+    {
+      "sourceId": "S142",
+      "url": "https://dictionary.cambridge.org/dictionary/english/place-emphasis-importance-etc-on",
+      "verification": "search_snippet_verified",
+      "finding": "實際搜尋回傳 Cambridge 片語定義及例句，place importance on 表賦予重要性／重視。直接開頁先前 403，不冒稱全文已開。"
+    },
+    {
+      "sourceId": "S143",
+      "url": "https://www.merriam-webster.com/dictionary/color",
+      "verification": "opened_definition",
+      "finding": "名詞顏色／色彩；動詞給予顏色、染色，亦有對圖畫著色的不及物用法。頁面明列 colors her hair。"
+    },
+    {
+      "sourceId": "S144",
+      "url": "https://www.merriam-webster.com/dictionary/blue",
+      "verification": "opened_definition",
+      "finding": "形容詞藍色的、沮喪的；名詞藍色及天空。out of the blue 的整體慣用義另核。"
+    },
+    {
+      "sourceId": "S145",
+      "url": "https://www.merriam-webster.com/dictionary/out%20of%20the%20blue",
+      "verification": "opened_definition",
+      "finding": "整個片語意為出乎意料地；不可把 blue 單詞詞性改成副詞。"
+    },
+    {
+      "sourceId": "S146",
+      "url": "https://www.merriam-webster.com/dictionary/red",
+      "verification": "opened_definition",
+      "finding": "形容詞紅色、臉紅；名詞紅色與紅色顏料，與紅腫／流血無關。"
+    },
+    {
+      "sourceId": "S147",
+      "url": "https://www.merriam-webster.com/dictionary/yellow",
+      "verification": "opened_definition",
+      "finding": "形容詞黃色的、名詞黃色；動詞可指變黃或使變黃（verb 1–2）。"
+    },
+    {
+      "sourceId": "S148",
+      "url": "https://www.merriam-webster.com/dictionary/green",
+      "verification": "opened_definition",
+      "finding": "形容詞綠色的、環保的、嫉妒的；名詞綠色與草地；動詞使成綠色／綠化。"
+    },
+    {
+      "sourceId": "S149",
+      "url": "https://www.merriam-webster.com/dictionary/will",
+      "verification": "opened_definition",
+      "finding": "助動詞將來；名詞意願、決心（noun 2–4）與遺囑（noun 1），不能只按詞頭的將／意願套全部句子。"
+    },
+    {
+      "sourceId": "S150",
+      "url": "https://www.merriam-webster.com/dictionary/at%20will",
+      "verification": "opened_definition",
+      "finding": "固定片語意為按自己的意願／隨意。"
+    },
+    {
+      "sourceId": "S151",
+      "url": "https://www.merriam-webster.com/dictionary/I'll",
+      "verification": "opened_definition",
+      "finding": "contraction 為 I will 或 I shall，挖空整個 I’ll 包含代名詞與助動詞。"
+    },
+    {
+      "sourceId": "S152",
+      "url": "https://www.merriam-webster.com/dictionary/can",
+      "verification": "opened_definition",
+      "finding": "助動詞能力及允許（aux 1–2），名詞食品飲料容器（noun 1），動詞將食品密封在罐或瓶保存（verb 1）。"
+    },
+    {
+      "sourceId": "S153",
+      "url": "https://www.merriam-webster.com/dictionary/cannot",
+      "verification": "opened_definition",
+      "finding": "auxiliary verb，等於 can not；提示需要保留否定。"
+    },
+    {
+      "sourceId": "S154",
+      "url": "https://www.merriam-webster.com/dictionary/from%20time%20to%20time",
+      "verification": "opened_definition",
+      "finding": "固定片語表偶爾。"
+    },
+    {
+      "sourceId": "S155",
+      "url": "https://www.merriam-webster.com/dictionary/in%20time",
+      "verification": "opened_definition",
+      "finding": "本句固定片語表足夠早而能趕上，亦即及時。"
+    },
+    {
+      "sourceId": "S156",
+      "url": "https://www.merriam-webster.com/dictionary/take%20one's%20time",
+      "verification": "opened_definition",
+      "finding": "固定片語表從容、不急。"
+    },
+    {
+      "sourceId": "S157",
+      "url": "https://www.merriam-webster.com/dictionary/time",
+      "verification": "opened_definition",
+      "finding": "名詞時間、時機及重複事件次數（noun 9）；動詞安排時間（verb 3）。各時間固定片語另核。"
+    },
+    {
+      "sourceId": "S158",
+      "url": "https://www.merriam-webster.com/dictionary/for%20the%20time%20being",
+      "verification": "opened_definition",
+      "finding": "固定片語表目前／暫時。"
+    },
+    {
+      "sourceId": "S159",
+      "url": "https://www.merriam-webster.com/dictionary/on%20time",
+      "verification": "opened_definition",
+      "finding": "固定片語表按預定時間／準時。"
+    },
+    {
+      "sourceId": "S160",
+      "url": "https://www.merriam-webster.com/dictionary/in%20no%20time",
+      "verification": "opened_definition",
+      "finding": "固定片語表很快。"
+    },
+    {
+      "sourceId": "S161",
+      "url": "https://www.merriam-webster.com/dictionary/take",
+      "verification": "opened_definition",
+      "finding": "動詞取得／帶走、帶領、乘坐交通工具（10b）及花費時間（10e）；give and take 另核動詞片語。"
+    },
+    {
+      "sourceId": "S162",
+      "url": "https://www.dictionary.com/browse/give-and-take",
+      "verification": "search_snippet_verified",
+      "finding": "實際搜尋回傳 Dictionary.com 的 Collins 來源動詞義為互相作出讓步；不是只用同形名詞當動詞證據。"
+    },
+    {
+      "sourceId": "S163",
+      "url": "https://www.merriam-webster.com/dictionary/aunt",
+      "verification": "opened_definition",
+      "finding": "父母的姊妹或叔伯舅等的妻子，並未限定母系阿姨。"
+    },
+    {
+      "sourceId": "S164",
+      "url": "https://www.merriam-webster.com/dictionary/soon",
+      "verification": "opened_definition",
+      "finding": "副詞不久、很快；相比只說晚點，明示較短等待。"
+    },
+    {
+      "sourceId": "S165",
+      "url": "https://www.merriam-webster.com/dictionary/down",
+      "verification": "opened_definition",
+      "finding": "介詞可指沿著／通過某區域；walk down the street 不是越過街道。"
+    },
+    {
+      "sourceId": "S166",
+      "url": "https://www.merriam-webster.com/dictionary/by",
+      "verification": "opened_definition",
+      "finding": "時間介詞有不晚於、截至之義，含所指截止時間。"
+    },
+    {
+      "sourceId": "S167",
+      "url": "https://www.merriam-webster.com/dictionary/weekend",
+      "verification": "opened_definition",
+      "finding": "名詞一週末的時間，通常星期六、星期日，不等於整個上一週。"
+    },
+    {
+      "sourceId": "S168",
+      "url": "https://www.merriam-webster.com/dictionary/brother",
+      "verification": "opened_definition",
+      "finding": "共同父母的男性手足，未指明長幼。"
+    },
+    {
+      "sourceId": "S169",
+      "url": "https://dictionary.cambridge.org/dictionary/english/give",
+      "verification": "search_result_excerpt",
+      "finding": "to offer something to someone or provide them with it, especially without asking for any payment; give verb (PROVIDE)",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S170",
+      "url": "https://dictionary.cambridge.org/dictionary/english/give-in",
+      "verification": "search_result_excerpt",
+      "finding": "to accept that you have been defeated and agree to stop competing or fighting",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S171",
+      "url": "https://dictionary.cambridge.org/dictionary/essential-british-english/give",
+      "verification": "search_result_excerpt",
+      "finding": "to provide someone with something; Do you give money to charity?",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S172",
+      "url": "https://dictionary.cambridge.org/grammar/british-grammar/in-the-way-or-on-the-way",
+      "verification": "search_result_excerpt",
+      "finding": "in the way: occupies space needed for movement/action; on the way: route, direction or path to somewhere",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S173",
+      "url": "https://dictionary.cambridge.org/grammar/british-grammar/way",
+      "verification": "search_result_excerpt",
+      "finding": "As a noun the most common meanings of way are method or style, route, direction, road and distance.",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S174",
+      "url": "https://dictionary.cambridge.org/dictionary/english/in-a-way",
+      "verification": "search_result_excerpt",
+      "finding": "considered in a particular manner",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S175",
+      "url": "https://www.collinsdictionary.com/dictionary/english/even",
+      "verification": "search_result_excerpt",
+      "finding": "If there is an even chance that something will happen, it is no more likely that it will happen than it will not happen.",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S176",
+      "url": "https://dictionary.cambridge.org/dictionary/english/think?q=Think",
+      "verification": "search_result_excerpt",
+      "finding": "to have a particular idea, belief or opinion; to consider something in your mind",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S177",
+      "url": "https://dictionary.cambridge.org/dictionary/learner-english/own",
+      "verification": "search_result_excerpt",
+      "finding": "I'll have a home of my own (= home belonging only to me) someday. If you do something on your own, you do it without any help from other people.",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S178",
+      "url": "https://dictionary.cambridge.org/dictionary/english/life",
+      "verification": "search_result_excerpt",
+      "finding": "the period between birth and death, or the experience or state of being alive; WAY OF LIVING; anything that is alive",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S179",
+      "url": "https://dictionary.cambridge.org/dictionary/essential-british-english/life",
+      "verification": "search_result_excerpt",
+      "finding": "living things, such as animals and plants",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S180",
+      "url": "https://dictionary.cambridge.org/dictionary/english/one-another",
+      "verification": "search_result_excerpt",
+      "finding": "pronoun; each other",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S181",
+      "url": "https://dictionary.cambridge.org/dictionary/english/how",
+      "verification": "search_result_excerpt",
+      "finding": "in what way or state, to what amount or degree, or for what reason",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S182",
+      "url": "https://dictionary.cambridge.org/us/dictionary/english/how-come?topic=question-words-and-expressions",
+      "verification": "search_result_excerpt",
+      "finding": "infml why did something happen",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S183",
+      "url": "https://dictionary.cambridge.org/us/dictionary/english/sorry",
+      "verification": "search_result_excerpt",
+      "finding": "feeling bad because you have caused trouble or difficulty to someone else",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S184",
+      "url": "https://dictionary.cambridge.org/dictionary/english/eat?topic=admitting-and-confessing",
+      "verification": "search_result_excerpt",
+      "finding": "to put or take food into the mouth, chew it, and swallow it",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S185",
+      "url": "https://dictionary.cambridge.org/uk/dictionary/english/eat-out",
+      "verification": "search_result_excerpt",
+      "finding": "to eat in a restaurant",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S186",
+      "url": "https://dictionary.cambridge.org/dictionary/english/become",
+      "verification": "search_result_excerpt",
+      "finding": "to start to be",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S187",
+      "url": "https://dictionary.cambridge.org/dictionary/english/tell?topic=accepting-and-agreeing",
+      "verification": "search_result_excerpt",
+      "finding": "to say something to someone, often giving them information or instructions; to know or recognize",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S188",
+      "url": "https://dictionary.cambridge.org/dictionary/english/ask",
+      "verification": "search_result_excerpt",
+      "finding": "ask verb (QUESTION OR REQUEST); ask verb (INVITE)",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S189",
+      "url": "https://learnenglish.britishcouncil.org/comment/207872",
+      "verification": "search_result_excerpt",
+      "finding": "Most of the time, the agent is not mentioned, but if important, the agent can be mentioned using the preposition by.",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S190",
+      "url": "https://dictionary.cambridge.org/dictionary/essential-british-english/reunion",
+      "verification": "search_result_excerpt",
+      "finding": "an occasion when people who have not met each other for a long time meet again",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S191",
+      "url": "https://www.collinsdictionary.com/dictionary/english/at-the-most",
+      "verification": "search_result_excerpt",
+      "finding": "at the very limit; not more than",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S192",
+      "url": "https://www.merriam-webster.com/dictionary/most",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "形容詞為數量／程度最多或大多數；副詞構成最高級；代名詞為大部分。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S193",
+      "url": "https://dictionary.cambridge.org/dictionary/english/least",
+      "verification": "search_result_excerpt",
+      "finding": "less than anything or anyone else; the smallest amount or number",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S194",
+      "url": "https://dictionary.cambridge.org/dictionary/english/at-least",
+      "verification": "search_result_excerpt",
+      "finding": "At (the very) least means not less than",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S195",
+      "url": "https://dictionary.cambridge.org/dictionary/english/front",
+      "verification": "search_result_excerpt",
+      "finding": "the part that faces forward; in a position close to the most forward part",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S196",
+      "url": "https://dictionary.cambridge.org/dictionary/english/back?topic=knowledge-and-awareness",
+      "verification": "search_result_excerpt",
+      "finding": "back adverb RETURN; to (cause to) move backwards",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S197",
+      "url": "https://www.merriam-webster.com/dictionary/behind%20one%27s%20back",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "without one’s knowledge，例 talking about me behind my back。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S198",
+      "url": "https://www.merriam-webster.com/dictionary/back",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "名詞後部，明列 the back of the head；身體背部。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S199",
+      "url": "https://dictionary.cambridge.org/dictionary/english/show",
+      "verification": "search_result_excerpt",
+      "finding": "show 表證實／顯示；名詞 TV show；此摘要另列節目。",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S200",
+      "url": "https://dictionary.cambridge.org/dictionary/english/show?q=showed",
+      "verification": "search_result_excerpt",
+      "finding": "make an artist’s work available for the public to see；show a movie 為放映。",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S201",
+      "url": "https://dictionary.cambridge.org/dictionary/english/show-up",
+      "verification": "search_result_excerpt",
+      "finding": "to arrive for a gathering or event",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S202",
+      "url": "https://www.collinsdictionary.com/dictionary/english/house",
+      "verification": "search_result_excerpt",
+      "finding": "動詞同義列 contain, keep, hold；accommodate, provide shelter for。",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S203",
+      "url": "https://www.merriam-webster.com/dictionary/call",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "動詞呼喊、要求來到／出席、召開會議；call up 電話聯絡；名詞為喊聲或通話。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S204",
+      "url": "https://www.collinsdictionary.com/dictionary/english/call-off",
+      "verification": "search_result_excerpt",
+      "finding": "If you call off an event that has been planned, you cancel it.",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S205",
+      "url": "https://dictionary.cambridge.org/dictionary/english/call",
+      "verification": "search_result_excerpt",
+      "finding": "call verb NAME；call verb PHONE；call a meeting 例句。",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S206",
+      "url": "https://dictionary.cambridge.org/dictionary/learner-english/leave",
+      "verification": "search_result_excerpt",
+      "finding": "leave verb GO AWAY；leave verb REMAIN",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S207",
+      "url": "https://dictionary.cambridge.org/dictionary/english/leave",
+      "verification": "search_result_excerpt",
+      "finding": "time allowed away from work for a holiday or illness",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S208",
+      "url": "https://dictionary.cambridge.org/dictionary/english/school",
+      "verification": "search_result_excerpt",
+      "finding": "school noun EDUCATION；魚或海洋生物成群；動詞 to teach a child。",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S209",
+      "url": "https://www.merriam-webster.com/dictionary/course",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "名詞為路線、課程、過程或一道菜；動詞為沿路徑快速流動／移動。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S210",
+      "url": "https://dictionary.cambridge.org/dictionary/english/while",
+      "verification": "search_result_excerpt",
+      "finding": "while noun LENGTH OF TIME；連接詞 ALTHOUGH；compared with the fact that; but。",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S211",
+      "url": "https://dictionary.cambridge.org/us/dictionary/english/while-away",
+      "verification": "search_result_excerpt",
+      "finding": "to spend time in a relaxed way because you have nothing to do or are waiting",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S212",
+      "url": "https://dictionary.cambridge.org/dictionary/english/part",
+      "verification": "search_result_excerpt",
+      "finding": "part noun SEPARATE PIECE；戲劇角色；part verb SEPARATE。",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S213",
+      "url": "https://www.merriam-webster.com/dictionary/take%20part",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "to be involved in some activity; participate",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S214",
+      "url": "https://dictionary.cambridge.org/dictionary/english/end",
+      "verification": "search_result_excerpt",
+      "finding": "end noun LAST POINT；end verb FINISH",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S215",
+      "url": "https://dictionary.cambridge.org/dictionary/english/end-up",
+      "verification": "search_result_excerpt",
+      "finding": "to finally be in a particular place or situation",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S216",
+      "url": "https://dictionary.cambridge.org/dictionary/english/start",
+      "verification": "search_result_excerpt",
+      "finding": "start verb BEGIN；start noun BEGINNING",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S217",
+      "url": "https://www.merriam-webster.com/dictionary/feel",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "動詞觸摸、感覺／感受；名詞觸感，或典型氛圍／特質。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S218",
+      "url": "https://dictionary.cambridge.org/dictionary/english/feel-like",
+      "verification": "search_result_excerpt",
+      "finding": "to have a wish for something, or to want to do something, at a particular moment",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S219",
+      "url": "https://www.merriam-webster.com/dictionary/number",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "數量總數；a number of 為不確定的數量。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S220",
+      "url": "https://dictionary.cambridge.org/dictionary/english/contact-number",
+      "verification": "search_result_excerpt",
+      "finding": "a phone number for a person or a company",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S221",
+      "url": "https://dictionary.cambridge.org/dictionary/english/number",
+      "verification": "search_result_excerpt",
+      "finding": "to give something a number in a series and usually write this number on it",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S222",
+      "url": "https://www.merriam-webster.com/dictionary/follow",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "跟隨、沿行、遵照／服從；亦指理解思路或邏輯。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S223",
+      "url": "https://dictionary.cambridge.org/dictionary/english/turn",
+      "verification": "search_result_excerpt",
+      "finding": "turn verb BECOME；輪流做事的機會或責任。",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S224",
+      "url": "https://dictionary.cambridge.org/dictionary/english/turn",
+      "verification": "search_result_excerpt",
+      "finding": "turn verb GO AROUND；turned to me 轉身例。",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S225",
+      "url": "https://dictionary.cambridge.org/dictionary/english/problem",
+      "verification": "search_result_excerpt",
+      "finding": "something that causes difficulty or is hard to deal with",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S226",
+      "url": "https://dictionary.cambridge.org/dictionary/english/question",
+      "verification": "search_result_excerpt",
+      "finding": "question noun 可表 doubt；動詞 ASK。",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S227",
+      "url": "https://dictionary.cambridge.org/dictionary/english/hold",
+      "verification": "search_result_excerpt",
+      "finding": "此例動詞指以手或身體支持／抱住；取持 grasp 的名詞結構。",
+      "limitation": "實際讀到 Cambridge 搜尋摘要，非 MW 直接擷取；摘要包含 hold hand、hold a meeting、took hold of my arm。"
+    },
+    {
+      "sourceId": "S228",
+      "url": "https://www.merriam-webster.com/dictionary/hold%20on",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "to await something; broadly wait",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S229",
+      "url": "https://www.merriam-webster.com/dictionary/fact",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "事實為實際存在／發生之事；或真實的資訊。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S230",
+      "url": "https://www.merriam-webster.com/dictionary/as%20a%20matter%20of%20fact",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "in fact; actually",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S231",
+      "url": "https://dictionary.cambridge.org/dictionary/learner-english/keep-up",
+      "verification": "search_result_excerpt",
+      "finding": "move at the same speed as someone moving forward, so you stay level",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S232",
+      "url": "https://dictionary.cambridge.org/dictionary/english/keep",
+      "verification": "search_result_excerpt",
+      "finding": "If you keep animals, you own and take care of them",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S233",
+      "url": "https://www.merriam-webster.com/dictionary/keep%20on",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "continue happening, doing something or working",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S234",
+      "url": "https://www.merriam-webster.com/dictionary/keep",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "保有；使某人事物保持既定狀態。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S235",
+      "url": "https://dictionary.cambridge.org/dictionary/english/keep?topic=secrecy-and-privacy",
+      "verification": "search_result_excerpt",
+      "finding": "cost of providing food, heating, and other necessary things for someone",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S236",
+      "url": "https://www.merriam-webster.com/dictionary/put",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "place in a specified position，例 put the book on the table。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S237",
+      "url": "https://www.merriam-webster.com/dictionary/put%20up%20with",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "endure or tolerate",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S238",
+      "url": "https://www.merriam-webster.com/dictionary/put%20down",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "動詞義 5a：put in writing。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S239",
+      "url": "https://www.merriam-webster.com/dictionary/bring",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "攜帶帶來；造成某結果，並明列 The medicine brought immediate relief。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S240",
+      "url": "https://www.merriam-webster.com/dictionary/bring%20up",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "through nurturing care and education bring a person to maturity",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S241",
+      "url": "https://www.merriam-webster.com/dictionary/group",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "動詞 assign to a group; classify，例 children grouped by age。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S242",
+      "url": "https://www.merriam-webster.com/dictionary/in%20case",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "as a precaution against an event；if",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S243",
+      "url": "https://www.merriam-webster.com/dictionary/case",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "名詞情況；警方調查的案子；動詞裝入盒／套內。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S244",
+      "url": "https://www.merriam-webster.com/dictionary/point",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "名詞討論中的重點；幾何上零維度的位置；分數單位；動詞以手指指示或使對準某方向。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S245",
+      "url": "https://www.merriam-webster.com/dictionary/point%20of%20view",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "考量／評估事物的角度或立場",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S246",
+      "url": "https://www.merriam-webster.com/dictionary/point%20out",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "提及重要事物／指出，例 point our mistake out。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S247",
+      "url": "https://www.merriam-webster.com/dictionary/area",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "概念或活動範圍／領域；同義字 region。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S248",
+      "url": "https://www.merriam-webster.com/dictionary/let",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "allow/permit；祈使式可用以提出請求或建議。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S249",
+      "url": "https://www.merriam-webster.com/dictionary/let%20alone",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "not to mention；更遑論，例買不起車，更別說豪華轎車。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S250",
+      "url": "https://www.merriam-webster.com/dictionary/side",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "在旁的空間；相對的方位或立場。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S251",
+      "url": "https://www.merriam-webster.com/dictionary/take%20sides",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "同意或支持其中一人／一方而不支持另一方",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S252",
+      "url": "https://www.merriam-webster.com/dictionary/try",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "動詞付出努力、嘗試，或測試；名詞 an effort/attempt。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S253",
+      "url": "https://www.merriam-webster.com/dictionary/try%20on",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "put on a garment in order to test the fit",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S254",
+      "url": "https://www.merriam-webster.com/dictionary/water",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "動詞澆水；分泌液體如唾液，mouth watered 指流口水。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S255",
+      "url": "https://www.merriam-webster.com/dictionary/line",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "名詞為線或排成一列的人物；動詞在某處沿線排列，或排成列。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S256",
+      "url": "https://dictionary.cambridge.org/dictionary/english/line-up",
+      "verification": "search_result_excerpt",
+      "finding": "to arrange people or things in a row or to stand in a row",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S257",
+      "url": "https://www.merriam-webster.com/dictionary/fit",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "形容詞 physically and mentally sound / healthy，不等於體型。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S258",
+      "url": "https://www.merriam-webster.com/dictionary/sit",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "臀部承重的坐姿；亦可與 down 組合表示坐下。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S259",
+      "url": "https://www.merriam-webster.com/dictionary/run",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "動詞跑、逃跑；機械正常運作；經營或管理商店、旅館、餐廳等。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S260",
+      "url": "https://www.merriam-webster.com/dictionary/run%20out",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "供應品被用盡、耗盡，含汽油用完的例句。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S261",
+      "url": "https://www.merriam-webster.com/dictionary/run%20into",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "偶然遇到某人。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S262",
+      "url": "https://www.merriam-webster.com/dictionary/hear",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "以耳感知聲音；聽說而獲悉；收到某人來訊（hear from）。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S263",
+      "url": "https://www.merriam-webster.com/dictionary/interested",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "注意力被吸引、對事物感興趣；另有利害關係的不同義。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S264",
+      "url": "https://www.merriam-webster.com/dictionary/listen",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "留心聲音；例為聽音樂，並不必然含聽從命令義。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S265",
+      "url": "https://dictionary.cambridge.org/dictionary/english/power",
+      "verification": "search_result_excerpt",
+      "finding": "power noun (ELECTRICITY)：電力，尤其考慮使用或生產時。",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    },
+    {
+      "sourceId": "S266",
+      "url": "https://www.merriam-webster.com/dictionary/possible",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "能力或容量範圍內可辦到的；字典列 come as quickly／soon as possible。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S267",
+      "url": "https://www.merriam-webster.com/dictionary/service",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "為他人做的工作或協助、益處。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S268",
+      "url": "https://www.merriam-webster.com/dictionary/meet",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "第一次遇見或認識；在某處碰面；偶遇；符合、滿足某要求。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S269",
+      "url": "https://www.merriam-webster.com/dictionary/appear",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "出現在視線中、到場；似乎、看來。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S270",
+      "url": "https://www.merriam-webster.com/dictionary/action",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "採取的行動、付諸實行或主動作為。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S271",
+      "url": "https://www.merriam-webster.com/dictionary/leader",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "帶領、引導他人的人。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S272",
+      "url": "https://www.merriam-webster.com/dictionary/carry",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "持著或支撐著物品而移動，例含提行李。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S273",
+      "url": "https://www.merriam-webster.com/dictionary/carry%20out",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "執行計畫或將事情完成。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S274",
+      "url": "https://www.merriam-webster.com/dictionary/carry%20on",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "繼續做某事、經營或進行。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S275",
+      "url": "https://www.merriam-webster.com/dictionary/aloud",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "現代主要義為出聲、可以聽見；另列的大聲義標為 archaic。字典含讀故事的例句。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S276",
+      "url": "https://www.merriam-webster.com/dictionary/bear",
+      "verification": "opened_dictionary_page_excerpt",
+      "finding": "帶有特徵或作為識別的名字；未指定名字如何製作於物件上。",
+      "limitation": "已實際擷取並閱讀所列詞義段落；未宣稱通讀網頁其他條目或原教材全文。"
+    },
+    {
+      "sourceId": "S277",
+      "url": "https://dictionary.cambridge.org/us/dictionary/learner-english/bear?q=bear_2",
+      "verification": "search_result_excerpt",
+      "finding": "帶有或顯示特定名字、圖畫或符號；未指定刻印技法。",
+      "limitation": "實際查得搜尋索引摘要；不宣稱已讀來源全文。Cambridge 直接頁面擷取曾回 403。"
+    }
+  ]
+}

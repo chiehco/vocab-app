@@ -1,0 +1,72 @@
+{
+  "unit": "LV1-U24",
+  "state": "passed",
+  "recordedAt": "2026-11-05T22:27:59.587Z",
+  "checks": [
+    {
+      "exitCode": 0,
+      "check": "regression"
+    },
+    {
+      "exitCode": 0,
+      "check": "python"
+    },
+    {
+      "exitCode": 0,
+      "check": "lint"
+    },
+    {
+      "exitCode": 0,
+      "check": "typecheck"
+    },
+    {
+      "exitCode": 0,
+      "check": "build"
+    }
+  ],
+  "originalLocalTestTimeoutPreserved": true,
+  "maxWorkers": 1,
+  "regression": {
+    "files": 11,
+    "passed": 140,
+    "total": 140
+  },
+  "pythonBoundaryTests": 36,
+  "writerFinalLintExitCode": 0,
+  "lintWarning": "Only the pre-existing unused curriculum variable in save_u16_audit_checkpoint.mjs; unchanged.",
+  "build": {
+    "seconds": 16.7,
+    "pwaPrecacheEntries": 268
+  },
+  "logs": [
+    {
+      "path": "output/unit-audit-20261105/U24-complete-regression.txt",
+      "sha256": "2385ad318bf037f253013c1083a5671fec2c3e239e14ae6b45f4c5b44e51060d"
+    },
+    {
+      "path": "output/unit-audit-20261105/U24-complete-python-retry.txt",
+      "sha256": "c18ae250393496cc8c6148a4a7bec203e2c5ee1aa3cebe1a71af98a8aa15c572"
+    },
+    {
+      "path": "output/unit-audit-20261105/U24-lint.txt",
+      "sha256": "888a42f6c7f512ba1e82976cdd04c02535dff24230cd962d095590259218b3ed"
+    },
+    {
+      "path": "output/unit-audit-20261105/U24-final-writer-lint.txt",
+      "sha256": "ccabb7869f4cb42e101c297b8547ee1f73b0920624a413ad76fd804b17f8dd29"
+    },
+    {
+      "path": "output/unit-audit-20261105/U24-typecheck.txt",
+      "sha256": "da91f4c430838409de74534c4d8bed41445d7c7283163b2a63c446dde034587b"
+    },
+    {
+      "path": "output/unit-audit-20261105/U24-build.txt",
+      "sha256": "5993b15a174aa16cba0a3ad9a5b15f568ad3d445393fa5482caa0d403581ac60"
+    }
+  ],
+  "operationRecovery": {
+    "initialRunnerExitCode": 1,
+    "reason": "PowerShell treated native unittest progress on stderr as an invocation error before a terminal result could be captured. No matching Python process remained; rerun obtained the complete36-test OK and native exit0. No test assertion or timeout was weakened."
+  },
+  "scope": "Final saved content after the two usage/note fields and single carrot definition correction; earlier139-test success retained as earlier worktree evidence."
+}

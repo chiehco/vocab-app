@@ -1,0 +1,898 @@
+{
+  "sourceCommit": "b5144bc12ebd35a9083ee80de055a748cf973981",
+  "examplesBlobSha": "e133b703845ec3241b3421e13a7bb3d562b4252f",
+  "sourceCatalog": "source-catalog.json",
+  "status": "Candidates only. Not applied or whole-card approval.",
+  "unit": "LV1-U05",
+  "coverage": {
+    "unitMembershipExamplesRead": 171,
+    "uniqueExampleIdsWithinUnit": 171,
+    "examplesWithDisplayedHint": 129,
+    "examplesWithoutDisplayedHint": 42,
+    "emptyHintsByType": {
+      "exam": 23,
+      "daily": 19
+    },
+    "hintProposals": 39,
+    "hintProposalClasses": {
+      "narrow_mixed_or_overbroad_hint": 33,
+      "missing_or_incompatible_context_sense": 6
+    },
+    "translationProposals": 3,
+    "posProposals": 1,
+    "posConventionLimitedRows": [
+      "EX66bd8991",
+      "EX738b244e"
+    ],
+    "clozeReconstructionFailures": [],
+    "repoOrStatusChanged": false
+  },
+  "candidates": [
+    {
+      "exampleId": "EX1d46c915",
+      "wordId": "W000348",
+      "word": "give",
+      "before": {
+        "meaningHint": "彈性；適應性；給；授予"
+      },
+      "after": {
+        "meaningHint": "給"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "給予書本；移除彈性、適應性與授予等不適用提示。",
+      "sentenceEn": "Give me that book over there.",
+      "blankSentence": "_____ me that book over there.",
+      "answer": "Give",
+      "sourceRefs": [
+        "S169"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXbe6bd70b",
+      "wordId": "W000348",
+      "word": "give",
+      "before": {
+        "meaningHint": "彈性；適應性；給；授予"
+      },
+      "after": {
+        "meaningHint": "給"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "給予書本，不是名詞 give 的彈性或適應性。",
+      "sentenceEn": "Give that book over there to me.",
+      "blankSentence": "_____ that book over there to me.",
+      "answer": "Give",
+      "sourceRefs": [
+        "S169"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX8cdbc20d",
+      "wordId": "W000348",
+      "word": "give",
+      "before": {
+        "meaningHint": "彈性；適應性；給；授予"
+      },
+      "after": {
+        "meaningHint": "屈服（give in）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "give in to fate 指向命運屈服，原提示沒有片語義。",
+      "sentenceEn": "Never give in to fate.",
+      "blankSentence": "Never _____ in to fate.",
+      "answer": "give",
+      "sourceRefs": [
+        "S170"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXd9f2c0a8",
+      "wordId": "W000348",
+      "word": "give",
+      "before": {
+        "meaningHint": "彈性；適應性；給；授予"
+      },
+      "after": {
+        "meaningHint": "捐獻"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "gave to charity 是捐獻，將過廣的給予與非本句義縮為捐獻。",
+      "sentenceEn": "Uncle Tom gave generously to the charity.",
+      "blankSentence": "Uncle Tom _____ generously to the charity.",
+      "answer": "gave",
+      "sourceRefs": [
+        "S171"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX131203a2",
+      "wordId": "W000952",
+      "word": "way",
+      "before": {
+        "meaningHint": "路；路線；路途；方法"
+      },
+      "after": {
+        "meaningHint": "阻礙（stand in your way）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "stand in your way 是阻礙進展；本句非具體道路或方法。",
+      "sentenceEn": "Keep on trying. Let nothing stand in your way.",
+      "blankSentence": "Keep on trying. Let nothing stand in your _____.",
+      "answer": "way",
+      "sourceRefs": [
+        "S172"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX33fa6904",
+      "wordId": "W000952",
+      "word": "way",
+      "before": {
+        "meaningHint": "路；路線；路途；方法"
+      },
+      "after": {
+        "meaningHint": "方式；風格"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "the way he talks 指說話方式，不是路線或路途。",
+      "sentenceEn": "You need to get used to the way he talks.",
+      "blankSentence": "You need to get used to the _____ he talks.",
+      "answer": "way",
+      "sourceRefs": [
+        "S173"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX437b8ac2",
+      "wordId": "W000952",
+      "word": "way",
+      "before": {
+        "meaningHint": "路；路線；路途；方法"
+      },
+      "after": {
+        "meaningHint": "方向；路線"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "which way to go 指行進方向。",
+      "sentenceEn": "Ted didn't know which way to go.",
+      "blankSentence": "Ted didn't know which _____ to go.",
+      "answer": "way",
+      "sourceRefs": [
+        "S173"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX7ef3620f",
+      "wordId": "W000952",
+      "word": "way",
+      "before": {
+        "meaningHint": "路；路線；路途；方法"
+      },
+      "after": {
+        "meaningHint": "途中（on my way）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "on my way to 指前往郵局途中。",
+      "sentenceEn": "I ran into Jenny on my way to the post office.",
+      "blankSentence": "I ran into Jenny on my _____ to the post office.",
+      "answer": "way",
+      "sourceRefs": [
+        "S172"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX864b1ba0",
+      "wordId": "W000952",
+      "word": "way",
+      "before": {
+        "meaningHint": "路；路線；路途；方法"
+      },
+      "after": {
+        "meaningHint": "在某方面（in a way）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "in a way 表某種角度／方面，不是具體路線或方法。",
+      "sentenceEn": "What you said is right in a way.",
+      "blankSentence": "What you said is right in a _____.",
+      "answer": "way",
+      "sourceRefs": [
+        "S174"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXd14788cc",
+      "wordId": "W000952",
+      "word": "way",
+      "before": {
+        "meaningHint": "路；路線；路途；方法"
+      },
+      "after": {
+        "meaningHint": "方法"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "ways to fix the problem 指解決方法。",
+      "sentenceEn": "We tried to think of some ways to fix the problem.",
+      "blankSentence": "We tried to think of some _____ to fix the problem.",
+      "answer": "ways",
+      "sourceRefs": [
+        "S173"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX8468c530",
+      "wordId": "W000270",
+      "word": "even",
+      "before": {
+        "meaningHint": "相等的"
+      },
+      "after": {
+        "meaningHint": "（機會）各半的"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "an even chance of winning 指獲勝與未獲勝可能性相等，不是與其他人同等機會。",
+      "sentenceEn": "Gordy thought he had an even chance of winning.",
+      "blankSentence": "Gordy thought he had an _____ chance of winning.",
+      "answer": "even",
+      "sourceRefs": [
+        "S175"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX0cfd29f2",
+      "wordId": "W000881",
+      "word": "think",
+      "before": {
+        "meaningHint": "想；考慮；想起；想像"
+      },
+      "after": {
+        "meaningHint": "思考"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "受噪音干擾而無法思考，不是想起或想像。",
+      "sentenceEn": "It was so noisy outside that I couldn't think.",
+      "blankSentence": "It was so noisy outside that I couldn't _____.",
+      "answer": "think",
+      "sourceRefs": [
+        "S176"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX2d5795d5",
+      "wordId": "W000881",
+      "word": "think",
+      "before": {
+        "meaningHint": "想；考慮；想起；想像"
+      },
+      "after": {
+        "meaningHint": "認為"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "think that 表看法或判斷；縮明本句義，不聲稱廣義的想完全錯誤。",
+      "sentenceEn": "I think that this is an exceptional case.",
+      "blankSentence": "I _____ that this is an exceptional case.",
+      "answer": "think",
+      "sourceRefs": [
+        "S176"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXf862e7b6",
+      "wordId": "W000881",
+      "word": "think",
+      "before": {
+        "meaningHint": "想；考慮；想起；想像"
+      },
+      "after": {
+        "meaningHint": "思考；構思"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "thinking about 新小說的故事指思考構思，不是回想。",
+      "sentenceEn": "Jessica is thinking about the story for her new novel.",
+      "blankSentence": "Jessica is _____ about the story for her new novel.",
+      "answer": "thinking",
+      "sourceRefs": [
+        "S176"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX66bd8991",
+      "wordId": "W000618",
+      "word": "own",
+      "before": {
+        "meaningHint": "自己的；嫡親的；同胞的；擁有"
+      },
+      "after": {
+        "meaningHint": "自己的（of his own）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "of his own 指飛機歸他所有，不是嫡親、同胞或動詞。",
+      "sentenceEn": "Believe it or not, the guy has a plane of his own.",
+      "blankSentence": "Believe it or not, the guy has a plane of his _____.",
+      "answer": "own",
+      "sourceRefs": [
+        "S177"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX738b244e",
+      "wordId": "W000618",
+      "word": "own",
+      "before": {
+        "meaningHint": "自己的；嫡親的；同胞的；擁有"
+      },
+      "after": {
+        "meaningHint": "獨立；靠自己（on your own）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "on your own 在此表示沒有他人協助，原提示未明示此義。",
+      "sentenceEn": "From now on, you'll have to be on your own.",
+      "blankSentence": "From now on, you'll have to be on your _____.",
+      "answer": "own",
+      "sourceRefs": [
+        "S177"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX1ef2a386",
+      "wordId": "W000491",
+      "word": "life",
+      "before": {
+        "meaningHint": "生活；生命；人生；世事"
+      },
+      "after": {
+        "meaningHint": "生命；人命"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "洪水奪走人的生命。",
+      "sentenceEn": "The flood claimed 20 lives.",
+      "blankSentence": "The flood claimed 20 _____.",
+      "answer": "lives",
+      "sourceRefs": [
+        "S178"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX484c0a28",
+      "wordId": "W000491",
+      "word": "life",
+      "before": {
+        "meaningHint": "生活；生命；人生；世事"
+      },
+      "after": {
+        "meaningHint": "人生"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "以旅程比喻人生。",
+      "sentenceEn": "Life is a long journey.",
+      "blankSentence": "_____ is a long journey.",
+      "answer": "Life",
+      "sourceRefs": [
+        "S178"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXd3ecd81b",
+      "wordId": "W000491",
+      "word": "life",
+      "before": {
+        "meaningHint": "生活；生命；人生；世事"
+      },
+      "after": {
+        "meaningHint": "生活"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "lead a simple life 指過簡樸生活。",
+      "sentenceEn": "Aunt Joyce leads a simple life in the country.",
+      "blankSentence": "Aunt Joyce leads a simple _____ in the country.",
+      "answer": "life",
+      "sourceRefs": [
+        "S178"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXfbb83fab",
+      "wordId": "W000491",
+      "word": "life",
+      "before": {
+        "meaningHint": "生活；生命；人生；世事"
+      },
+      "after": {
+        "meaningHint": "生命；生物"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "指其他星球存在生命／生物。",
+      "sentenceEn": "Joy thinks there is life on other planets.",
+      "blankSentence": "Joy thinks there is _____ on other planets.",
+      "answer": "life",
+      "sourceRefs": [
+        "S178"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX9cc28ae9",
+      "wordId": "W000491",
+      "word": "life",
+      "before": {
+        "meaningHint": "生活；生命；人生；世事"
+      },
+      "after": {
+        "meaningHint": "生物"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "沙漠幾乎沒有生物；生命可涵蓋此義，此提案只縮為 living things，不把原提示全部判錯。",
+      "sentenceEn": "There is almost no life at all in that desert.",
+      "blankSentence": "There is almost no _____ at all in that desert.",
+      "answer": "life",
+      "sourceRefs": [
+        "S179"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXc9f38e8a",
+      "wordId": "W000034",
+      "word": "another",
+      "before": {
+        "meaningHint": "另外的；再一的；不同的；又一個"
+      },
+      "after": {
+        "meaningHint": "彼此（one another）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "one another 是互相、彼此，原提示列另一個／不同的而缺片語義。",
+      "sentenceEn": "They gave one another presents at Christmas.",
+      "blankSentence": "They gave one _____ presents at Christmas.",
+      "answer": "another",
+      "sourceRefs": [
+        "S180"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX2db95048",
+      "wordId": "W000417",
+      "word": "how",
+      "before": {
+        "meaningHint": "如何；怎樣；多少；多麼"
+      },
+      "after": {
+        "meaningHint": "多麼"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "感嘆句 How well 表程度。",
+      "sentenceEn": "How well the girl sings!",
+      "blankSentence": "_____ well the girl sings!",
+      "answer": "How",
+      "sourceRefs": [
+        "S181"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX75a3e081",
+      "wordId": "W000417",
+      "word": "how",
+      "before": {
+        "meaningHint": "如何；怎樣；多少；多麼"
+      },
+      "after": {
+        "meaningHint": "如何"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "詢問考試表現如何。",
+      "sentenceEn": "How did Martin do on the test last week?",
+      "blankSentence": "_____ did Martin do on the test last week?",
+      "answer": "How",
+      "sourceRefs": [
+        "S181"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX8d287ff1",
+      "wordId": "W000417",
+      "word": "how",
+      "before": {
+        "meaningHint": "如何；怎樣；多少；多麼"
+      },
+      "after": {
+        "meaningHint": "為什麼（how come）"
+      },
+      "classification": "missing_or_incompatible_context_sense",
+      "reason": "how come 問原因，非方法、數量或感嘆程度。",
+      "sentenceEn": "How come the little boy is crying?",
+      "blankSentence": "_____ come the little boy is crying?",
+      "answer": "How",
+      "sourceRefs": [
+        "S182"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXe57b781c",
+      "wordId": "W000810",
+      "word": "sorry",
+      "before": {
+        "meaningHint": "難過的；悲哀的；遺憾的"
+      },
+      "after": {
+        "meaningHint": "抱歉的；歉疚的"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "因自己做錯事／忘記事情而感到歉疚；原提示遺憾可涵蓋廣義悔意，此處只精確化，非斷言原提示沒有本句義。",
+      "sentenceEn": "Ricky was sorry that he broke Vicky's toy.",
+      "blankSentence": "Ricky was _____ that he broke Vicky's toy.",
+      "answer": "sorry",
+      "sourceRefs": [
+        "S183"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXec3b0d95",
+      "wordId": "W000810",
+      "word": "sorry",
+      "before": {
+        "meaningHint": "難過的；悲哀的；遺憾的"
+      },
+      "after": {
+        "meaningHint": "抱歉的；歉疚的"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "因自己做錯事／忘記事情而感到歉疚；原提示遺憾可涵蓋廣義悔意，此處只精確化，非斷言原提示沒有本句義。",
+      "sentenceEn": "Nancy felt sorry about forgetting Bob's birthday.",
+      "blankSentence": "Nancy felt _____ about forgetting Bob's birthday.",
+      "answer": "sorry",
+      "sourceRefs": [
+        "S183"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX25254478",
+      "wordId": "W000256",
+      "word": "eat",
+      "before": {
+        "meaningHint": "喫；腐蝕"
+      },
+      "after": {
+        "meaningHint": "吃"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "早餐是食物，排除腐蝕義。",
+      "sentenceEn": "Dean ate breakfast quickly and then left home.",
+      "blankSentence": "Dean _____ breakfast quickly and then left home.",
+      "answer": "ate",
+      "sourceRefs": [
+        "S184"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX5a97a9fa",
+      "wordId": "W000256",
+      "word": "eat",
+      "before": {
+        "meaningHint": "喫；腐蝕"
+      },
+      "after": {
+        "meaningHint": "吃飯"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "time to eat 是用餐，排除腐蝕義。",
+      "sentenceEn": "Barbara told her kids it was time to eat.",
+      "blankSentence": "Barbara told her kids it was time to _____.",
+      "answer": "eat",
+      "sourceRefs": [
+        "S184"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX99937b0a",
+      "wordId": "W000256",
+      "word": "eat",
+      "before": {
+        "meaningHint": "喫；腐蝕"
+      },
+      "after": {
+        "meaningHint": "外出用餐（eat out）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "eat out 是外出／在餐廳用餐，排除腐蝕義並明示片語。",
+      "sentenceEn": "Ian doesn't eat out often because it's expensive.",
+      "blankSentence": "Ian doesn't _____ out often because it's expensive.",
+      "answer": "eat",
+      "sourceRefs": [
+        "S185"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX854b43af",
+      "wordId": "W000074",
+      "word": "become",
+      "before": {
+        "meaningHint": "變成；變得；適合"
+      },
+      "after": {
+        "meaningHint": "變得"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "become healthy 表狀態改變，非適合義。",
+      "sentenceEn": "Gloria decided to exercise and become healthy.",
+      "blankSentence": "Gloria decided to exercise and _____ healthy.",
+      "answer": "become",
+      "sourceRefs": [
+        "S186"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX89d9d5b5",
+      "wordId": "W000074",
+      "word": "become",
+      "before": {
+        "meaningHint": "變成；變得；適合"
+      },
+      "after": {
+        "meaningHint": "成為"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "become an actor 表成為演員，非適合義。",
+      "sentenceEn": "Oscar became an actor after graduating from college.",
+      "blankSentence": "Oscar _____ an actor after graduating from college.",
+      "answer": "became",
+      "sourceRefs": [
+        "S186"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX5d63c3a9",
+      "wordId": "W000864",
+      "word": "tell",
+      "before": {
+        "meaningHint": "告訴；說；吩咐；斷定"
+      },
+      "after": {
+        "meaningHint": "看出；辨知"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "could tell that 指察知事實，不是說話或吩咐。",
+      "sentenceEn": "Sally could tell that her boss was mad.",
+      "blankSentence": "Sally could _____ that her boss was mad.",
+      "answer": "tell",
+      "sourceRefs": [
+        "S187"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXade293fa",
+      "wordId": "W000864",
+      "word": "tell",
+      "before": {
+        "meaningHint": "告訴；說；吩咐；斷定"
+      },
+      "after": {
+        "meaningHint": "告訴"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "向他人告知事情，排除吩咐或辨知。",
+      "sentenceEn": "Clark told his daughter about her grandfather.",
+      "blankSentence": "Clark _____ his daughter about her grandfather.",
+      "answer": "told",
+      "sourceRefs": [
+        "S187"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXfb103858",
+      "wordId": "W000864",
+      "word": "tell",
+      "before": {
+        "meaningHint": "告訴；說；吩咐；斷定"
+      },
+      "after": {
+        "meaningHint": "告訴"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "向他人告知事情，排除吩咐或辨知。",
+      "sentenceEn": "Roy told his mom he wanted to be a doctor.",
+      "blankSentence": "Roy _____ his mom he wanted to be a doctor.",
+      "answer": "told",
+      "sourceRefs": [
+        "S187"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX6b5356e3",
+      "wordId": "W000049",
+      "word": "ask",
+      "before": {
+        "meaningHint": "問；要求；邀請；需要"
+      },
+      "after": {
+        "meaningHint": "邀請（ask out）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "邀對方出外共進晚餐。",
+      "sentenceEn": "Willy finally asked Fiona out to dinner.",
+      "blankSentence": "Willy finally _____ Fiona out to dinner.",
+      "answer": "asked",
+      "sourceRefs": [
+        "S188"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX926b61ea",
+      "wordId": "W000049",
+      "word": "ask",
+      "before": {
+        "meaningHint": "問；要求；邀請；需要"
+      },
+      "after": {
+        "meaningHint": "請求"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "請父親買腳踏車，非詢問或邀約。",
+      "sentenceEn": "Bobby asked his father to buy him a bike.",
+      "blankSentence": "Bobby _____ his father to buy him a bike.",
+      "answer": "asked",
+      "sourceRefs": [
+        "S188"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX9cc12495",
+      "wordId": "W000049",
+      "word": "ask",
+      "before": {
+        "meaningHint": "問；要求；邀請；需要"
+      },
+      "after": {
+        "meaningHint": "請求；尋求（ask for）"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "向同事尋求協助。",
+      "sentenceEn": "Carmen asked for help from her coworker.",
+      "blankSentence": "Carmen _____ for help from her coworker.",
+      "answer": "asked",
+      "sourceRefs": [
+        "S188"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXd296fda7",
+      "wordId": "W000049",
+      "word": "ask",
+      "before": {
+        "meaningHint": "問；要求；邀請；需要"
+      },
+      "after": {
+        "meaningHint": "詢問"
+      },
+      "classification": "narrow_mixed_or_overbroad_hint",
+      "reason": "詢問是否能提早回家。",
+      "sentenceEn": "Roger asked his teacher if he could go home early.",
+      "blankSentence": "Roger _____ his teacher if he could go home early.",
+      "answer": "asked",
+      "sourceRefs": [
+        "S188"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EX8468c530",
+      "wordId": "W000270",
+      "word": "even",
+      "before": {
+        "sentenceZh": "高迪認為自己也有同等獲勝的機會。"
+      },
+      "after": {
+        "sentenceZh": "高迪認為自己獲勝與否的機會各半。"
+      },
+      "classification": "translation_meaning_correction",
+      "reason": "原文 even chance 指成敗各半；原譯「自己也有同等」新增與他人比較之義。",
+      "sentenceEn": "Gordy thought he had an even chance of winning.",
+      "blankSentence": "Gordy thought he had an _____ chance of winning.",
+      "answer": "even",
+      "sourceRefs": [
+        "S175"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    },
+    {
+      "exampleId": "EXc9f38e8a",
+      "wordId": "W000034",
+      "word": "another",
+      "before": {
+        "sensePos": "adj./pron."
+      },
+      "after": {
+        "sensePos": "pron."
+      },
+      "classification": "actual_cloze_part_of_speech",
+      "reason": "實際 cloze another 位於 reciprocal pronoun one another；不是修飾後方 presents 的形容詞。",
+      "sentenceEn": "They gave one another presents at Christmas.",
+      "blankSentence": "They gave one _____ presents at Christmas.",
+      "answer": "another",
+      "sourceRefs": [
+        "S180"
+      ],
+      "disposition": "review_then_apply_if_latest_before_matches"
+    }
+  ],
+  "deferred": [
+    {
+      "exampleId": "EX933b6a03",
+      "wordId": "W000933",
+      "word": "use",
+      "before": {
+        "sentenceZh": "學校鼓勵學生在閱讀英文文章時使用字典。"
+      },
+      "after": {
+        "sentenceZh": "鼓勵學生在閱讀英文文章時使用字典。"
+      },
+      "classification": "translation_meaning_correction",
+      "reason": "原文被動句沒有施事者；原譯新增「學校」。依原句直接對讀及被動句可不提施事者的語法說明，僅移除新增主體。",
+      "sentenceEn": "Students are encouraged to use dictionaries when reading English articles.",
+      "blankSentence": "Students are encouraged to _____ dictionaries when reading English articles.",
+      "answer": "use",
+      "sourceRefs": [
+        "S189"
+      ],
+      "disposition": "deferred_source_or_context_review"
+    },
+    {
+      "exampleId": "EX5414b4e3",
+      "wordId": "W000362",
+      "word": "great",
+      "before": {
+        "sentenceZh": "在同學會上再次見到所有老朋友真是太棒了。"
+      },
+      "after": {
+        "sentenceZh": "在重聚時再次見到所有老朋友真是太棒了。"
+      },
+      "classification": "translation_meaning_correction",
+      "reason": "reunion 未限定同學；原譯同學會過度限縮，可是朋友或其他群體的重聚。",
+      "sentenceEn": "It was great to see all my old friends again at the reunion.",
+      "blankSentence": "It was _____ to see all my old friends again at the reunion.",
+      "answer": "great",
+      "sourceRefs": [
+        "S190"
+      ],
+      "disposition": "deferred_source_or_context_review"
+    }
+  ],
+  "candidateFieldCount": 41,
+  "deferredCount": 2,
+  "sharedCandidates": [],
+  "uniqueCandidateFieldCount": 41
+}

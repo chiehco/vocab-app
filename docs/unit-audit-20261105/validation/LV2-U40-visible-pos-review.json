@@ -1,0 +1,104 @@
+{
+  "state": "two_visible_summary_followups_saved_both_entries_reopened_and_pixels_verified",
+  "originalManifestsReceiptsAndCapturesRetained": true,
+  "facts": [
+    {
+      "wordId": "W001178",
+      "sourceItemId": "LI-LV2U40-V002",
+      "beforeScreenshotSha256": "6dfc2869e5a42473c970666471ebbeca6b260c3a8efc49dcdd0aa72f8121109a",
+      "beforePixelsActuallyViewed": true,
+      "observation": "Formal hero shows v. and the unchanged noun summaries 企業的聯合／聯合收割機 without a visible noun boundary.",
+      "patch": {
+        "dataset": "words",
+        "key": "wordId",
+        "id": "W001178",
+        "before": {
+          "wordId": "W001178",
+          "word": "combine",
+          "wordVariants": [
+            "combine"
+          ],
+          "level": "LV2",
+          "pos": "v.",
+          "posAll": [
+            "v."
+          ],
+          "meaningZh": "(使)聯合；(使)結合；(企業的)聯合；聯合收割機",
+          "meaningEn": "to join two or more things together to form a single thing; separate noun uses: an association of organizations, or a combine harvester.",
+          "usagePattern": "combine A with B; combine N and N",
+          "syllables": null,
+          "stressPattern": null,
+          "phoneticUs": null,
+          "familyKey": "combine",
+          "isCore": true,
+          "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+          "status": "reviewed",
+          "usagePatternZh": "結合 A 與 B；結合……與……",
+          "verbForms": {
+            "base": "combine",
+            "past": "combined",
+            "pastParticiple": "combined",
+            "sourceRef": "https://www.collinsdictionary.com/dictionary/english/combine",
+            "status": "approved"
+          }
+        },
+        "after": {
+          "meaningZh": "（動詞）（使）聯合；（使）結合；（另有名詞用法）（企業的）聯合；聯合收割機"
+        },
+        "reason": "Actual post-apply hero screenshot still showed a mixed noun/verb Chinese summary under one formal POS. Add visible sense boundaries only; keep formal headword POS/status and every recorded sense.",
+        "evidence": "Actual U40 after hero screenshot; https://www.collinsdictionary.com/dictionary/english/combine"
+      },
+      "afterPixelsActuallyViewed": true,
+      "afterSavedReadback": true,
+      "afterScreenshotSha256": "709fc70d51d1765944121c2f035025d1fad9a083100b5e8adcb3624d6365502a",
+      "bothEntryReopensVerified": true,
+      "afterMeaningZh": "（動詞）（使）聯合；（使）結合；（另有名詞用法）（企業的）聯合；聯合收割機"
+    },
+    {
+      "wordId": "W001562",
+      "sourceItemId": "LI-LV2U40-V011",
+      "beforeScreenshotSha256": "78d8416b04294b4afdf9ed0f87982f663859775e664c366e6d157be18ce0a63b",
+      "beforePixelsActuallyViewed": true,
+      "observation": "Formal hero shows n. and the unchanged verb summary 給...拍照 without a visible verb boundary. Exact 苦讀者 noun remains pending and is retained.",
+      "patch": {
+        "dataset": "words",
+        "key": "wordId",
+        "id": "W001562",
+        "before": {
+          "wordId": "W001562",
+          "word": "mug",
+          "wordVariants": [
+            "mug"
+          ],
+          "level": "LV2",
+          "pos": "n.",
+          "posAll": [
+            "n."
+          ],
+          "meaningZh": "有柄大杯；臉；苦讀者；給...拍照",
+          "meaningEn": "(n.) a large drinking cup with a handle, or the amount it holds; informally, a face. Separate US verb use: to photograph a person, especially for identification; British mug up means to study intensively.",
+          "usagePattern": "a mug; a mug of tea",
+          "syllables": null,
+          "stressPattern": null,
+          "phoneticUs": null,
+          "familyKey": "mug",
+          "isCore": true,
+          "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+          "status": "draft",
+          "usagePatternZh": "一個馬克杯；一馬克杯茶"
+        },
+        "after": {
+          "meaningZh": "（名詞）有柄大杯；臉；苦讀者；（另有動詞用法，尤美式）給……拍照"
+        },
+        "reason": "Actual post-apply hero screenshot still showed a mixed noun/verb Chinese summary under one formal POS. Add visible sense boundaries only; keep formal headword POS/status and every recorded sense.",
+        "evidence": "Actual U40 after hero screenshot; https://www.collinsdictionary.com/dictionary/english/mug"
+      },
+      "afterPixelsActuallyViewed": true,
+      "afterSavedReadback": true,
+      "afterScreenshotSha256": "7bf9f07cbb50582fbcb75c55772a5a849c4e6cf7c076157b0bad2d9b2d8a3b1c",
+      "bothEntryReopensVerified": true,
+      "afterMeaningZh": "（名詞）有柄大杯；臉；苦讀者；（另有動詞用法，尤美式）給……拍照"
+    }
+  ],
+  "limits": "Before here means the first U40 after screen, not the immutable pre-audit baseline. Each later followup screenshot uses a distinct name; no retaken after image is presented as an old before pixel."
+}

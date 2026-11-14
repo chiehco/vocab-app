@@ -1,0 +1,3786 @@
+{
+  "manifest": "docs\\unit-audit-20261105\\LV1-U15-patches.json",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "checkedAt": "2026-11-05T12:18:20.610825+00:00",
+  "changeCount": 86,
+  "changes": [
+    {
+      "dataset": "examples",
+      "id": "EX0f357693",
+      "before": {
+        "exampleId": "EX0f357693",
+        "word": "notice",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "There is a notice on the board about tomorrow's fire drill.",
+        "sentenceZh": "佈告欄上有一則關於明天消防演習的通知。",
+        "blankSentence": "There is a _____ on the board about tomorrow's fire drill.",
+        "answer": "notice",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EX0f357693",
+        "word": "notice",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "There is a notice on the board about tomorrow's fire drill.",
+        "sentenceZh": "佈告欄上有一則關於明天消防演習的通知。",
+        "blankSentence": "There is a _____ on the board about tomorrow's fire drill.",
+        "answer": "notice",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Read the entire unchanged English/Chinese and actual cloze target. Distinguish the notice/quiet/new-low/high nouns, bent-low/flying-high adverbs, and actual warming/drying/tasting/experiencing/starring verbs. Surprised/shocked emotion complements use the project participial-adjective analysis here; this is not a claim that passive analyses never exist. Headword POS remains unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/notice ; actual complete sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX01115ccb",
+      "before": {
+        "exampleId": "EX01115ccb",
+        "word": "low",
+        "sensePos": "adj./adv./n.",
+        "meaningHint": "低點；低價；低；牛叫聲",
+        "exampleType": "textbook",
+        "sentenceEn": "The pound has reached a new low against the dollar.",
+        "sentenceZh": "英鎊兌美元的匯率創新低。",
+        "blankSentence": "The pound has reached a new _____ against the dollar.",
+        "answer": "low",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EX01115ccb",
+        "word": "low",
+        "sensePos": "n.",
+        "meaningHint": "低點",
+        "exampleType": "textbook",
+        "sentenceEn": "The pound has reached a new low against the dollar.",
+        "sentenceZh": "英鎊兌美元的匯率創新低。",
+        "blankSentence": "The pound has reached a new _____ against the dollar.",
+        "answer": "low",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "reason": "Read the entire unchanged English/Chinese and actual cloze target. Distinguish the notice/quiet/new-low/high nouns, bent-low/flying-high adverbs, and actual warming/drying/tasting/experiencing/starring verbs. Surprised/shocked emotion complements use the project participial-adjective analysis here; this is not a claim that passive analyses never exist. Headword POS remains unchanged. Narrow this existing nonempty mixed hint to the actual sentence sense; most are precision improvements rather than false headword senses. Empty hints are not treated as missing.",
+      "evidence": "https://www.merriam-webster.com/dictionary/low ; actual complete sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX06e02b74",
+      "before": {
+        "exampleId": "EX06e02b74",
+        "word": "low",
+        "sensePos": "adj./adv./n.",
+        "meaningHint": "低點；低價；低；牛叫聲",
+        "exampleType": "textbook",
+        "sentenceEn": "The worker bent low to check the machine.",
+        "sentenceZh": "這名工人低下身來去檢查機器。",
+        "blankSentence": "The worker bent _____ to check the machine.",
+        "answer": "low",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EX06e02b74",
+        "word": "low",
+        "sensePos": "adv.",
+        "meaningHint": "低低地；俯低身子",
+        "exampleType": "textbook",
+        "sentenceEn": "The worker bent low to check the machine.",
+        "sentenceZh": "這名工人低下身來去檢查機器。",
+        "blankSentence": "The worker bent _____ to check the machine.",
+        "answer": "low",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "reason": "Read the entire unchanged English/Chinese and actual cloze target. Distinguish the notice/quiet/new-low/high nouns, bent-low/flying-high adverbs, and actual warming/drying/tasting/experiencing/starring verbs. Surprised/shocked emotion complements use the project participial-adjective analysis here; this is not a claim that passive analyses never exist. Headword POS remains unchanged. Narrow this existing nonempty mixed hint to the actual sentence sense; most are precision improvements rather than false headword senses. Empty hints are not treated as missing.",
+      "evidence": "https://www.merriam-webster.com/dictionary/low ; actual complete sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX9000a0d0",
+      "before": {
+        "exampleId": "EX9000a0d0",
+        "word": "low",
+        "sensePos": "adj./adv./n.",
+        "meaningHint": "低點；低價；低；牛叫聲",
+        "exampleType": "textbook",
+        "sentenceEn": "Paul has a low voice and cannot sing the high notes.",
+        "sentenceZh": "保羅的聲音低沉，沒辦法唱高音。",
+        "blankSentence": "Paul has a _____ voice and cannot sing the high notes.",
+        "answer": "low",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EX9000a0d0",
+        "word": "low",
+        "sensePos": "adj.",
+        "meaningHint": "低的（音高）",
+        "exampleType": "textbook",
+        "sentenceEn": "Paul has a low voice and cannot sing the high notes.",
+        "sentenceZh": "保羅的聲音低沉，沒辦法唱高音。",
+        "blankSentence": "Paul has a _____ voice and cannot sing the high notes.",
+        "answer": "low",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "reason": "Read the entire unchanged English/Chinese and actual cloze target. Distinguish the notice/quiet/new-low/high nouns, bent-low/flying-high adverbs, and actual warming/drying/tasting/experiencing/starring verbs. Surprised/shocked emotion complements use the project participial-adjective analysis here; this is not a claim that passive analyses never exist. Headword POS remains unchanged. Narrow this existing nonempty mixed hint to the actual sentence sense; most are precision improvements rather than false headword senses. Empty hints are not treated as missing.",
+      "evidence": "https://www.merriam-webster.com/dictionary/low ; actual complete sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX9028a180",
+      "before": {
+        "exampleId": "EX9028a180",
+        "word": "low",
+        "sensePos": "adj./adv./n.",
+        "meaningHint": "低點；低價；低；牛叫聲",
+        "exampleType": "textbook",
+        "sentenceEn": "The price of the watch is low.",
+        "sentenceZh": "這只手錶的價格很低。",
+        "blankSentence": "The price of the watch is _____.",
+        "answer": "low",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EX9028a180",
+        "word": "low",
+        "sensePos": "adj.",
+        "meaningHint": "低的（價格）",
+        "exampleType": "textbook",
+        "sentenceEn": "The price of the watch is low.",
+        "sentenceZh": "這只手錶的價格很低。",
+        "blankSentence": "The price of the watch is _____.",
+        "answer": "low",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "reason": "Read the entire unchanged English/Chinese and actual cloze target. Distinguish the notice/quiet/new-low/high nouns, bent-low/flying-high adverbs, and actual warming/drying/tasting/experiencing/starring verbs. Surprised/shocked emotion complements use the project participial-adjective analysis here; this is not a claim that passive analyses never exist. Headword POS remains unchanged. Narrow this existing nonempty mixed hint to the actual sentence sense; most are precision improvements rather than false headword senses. Empty hints are not treated as missing.",
+      "evidence": "https://www.merriam-webster.com/dictionary/low ; actual complete sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EXa8201d5b",
+      "before": {
+        "exampleId": "EXa8201d5b",
+        "word": "low",
+        "sensePos": "adj./adv./n.",
+        "meaningHint": "低點；低價；低；牛叫聲",
+        "exampleType": "textbook",
+        "sentenceEn": "The children are talking in low voices.",
+        "sentenceZh": "孩子們正小聲地講話。",
+        "blankSentence": "The children are talking in _____ voices.",
+        "answer": "low",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EXa8201d5b",
+        "word": "low",
+        "sensePos": "adj.",
+        "meaningHint": "低聲的；小聲的",
+        "exampleType": "textbook",
+        "sentenceEn": "The children are talking in low voices.",
+        "sentenceZh": "孩子們正小聲地講話。",
+        "blankSentence": "The children are talking in _____ voices.",
+        "answer": "low",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "reason": "Read the entire unchanged English/Chinese and actual cloze target. Distinguish the notice/quiet/new-low/high nouns, bent-low/flying-high adverbs, and actual warming/drying/tasting/experiencing/starring verbs. Surprised/shocked emotion complements use the project participial-adjective analysis here; this is not a claim that passive analyses never exist. Headword POS remains unchanged. Narrow this existing nonempty mixed hint to the actual sentence sense; most are precision improvements rather than false headword senses. Empty hints are not treated as missing.",
+      "evidence": "https://www.merriam-webster.com/dictionary/low ; actual complete sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EXbd3dfcfb",
+      "before": {
+        "exampleId": "EXbd3dfcfb",
+        "word": "low",
+        "sensePos": "adj./adv./n.",
+        "meaningHint": "低點；低價；低；牛叫聲",
+        "exampleType": "textbook",
+        "sentenceEn": "Jason was in a low mood because he failed the math test.",
+        "sentenceZh": "傑森數學考試不及格，所以心情低落。",
+        "blankSentence": "Jason was in a _____ mood because he failed the math test.",
+        "answer": "low",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EXbd3dfcfb",
+        "word": "low",
+        "sensePos": "adj.",
+        "meaningHint": "低落的（情緒）",
+        "exampleType": "textbook",
+        "sentenceEn": "Jason was in a low mood because he failed the math test.",
+        "sentenceZh": "傑森數學考試不及格，所以心情低落。",
+        "blankSentence": "Jason was in a _____ mood because he failed the math test.",
+        "answer": "low",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "reason": "Read the entire unchanged English/Chinese and actual cloze target. Distinguish the notice/quiet/new-low/high nouns, bent-low/flying-high adverbs, and actual warming/drying/tasting/experiencing/starring verbs. Surprised/shocked emotion complements use the project participial-adjective analysis here; this is not a claim that passive analyses never exist. Headword POS remains unchanged. Narrow this existing nonempty mixed hint to the actual sentence sense; most are precision improvements rather than false headword senses. Empty hints are not treated as missing.",
+      "evidence": "https://www.merriam-webster.com/dictionary/low ; actual complete sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EXc693cc96",
+      "before": {
+        "exampleId": "EXc693cc96",
+        "word": "low",
+        "sensePos": "adj./adv./n.",
+        "meaningHint": "低點；低價；低；牛叫聲",
+        "exampleType": "textbook",
+        "sentenceEn": "Fruits are usually low in protein.",
+        "sentenceZh": "水果的蛋白質含量通常很低。",
+        "blankSentence": "Fruits are usually _____ in protein.",
+        "answer": "low",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EXc693cc96",
+        "word": "low",
+        "sensePos": "adj.",
+        "meaningHint": "含量低的（low in）",
+        "exampleType": "textbook",
+        "sentenceEn": "Fruits are usually low in protein.",
+        "sentenceZh": "水果的蛋白質含量通常很低。",
+        "blankSentence": "Fruits are usually _____ in protein.",
+        "answer": "low",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "reason": "Read the entire unchanged English/Chinese and actual cloze target. Distinguish the notice/quiet/new-low/high nouns, bent-low/flying-high adverbs, and actual warming/drying/tasting/experiencing/starring verbs. Surprised/shocked emotion complements use the project participial-adjective analysis here; this is not a claim that passive analyses never exist. Headword POS remains unchanged. Narrow this existing nonempty mixed hint to the actual sentence sense; most are precision improvements rather than false headword senses. Empty hints are not treated as missing.",
+      "evidence": "https://www.merriam-webster.com/dictionary/low ; actual complete sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EXa0a4a549",
+      "before": {
+        "exampleId": "EXa0a4a549",
+        "word": "surprise",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "Everyone was surprised when the shy student won first prize in the contest.",
+        "sentenceZh": "當那位害羞的學生在比賽中獲得第一名時，大家都感到很驚訝。",
+        "blankSentence": "Everyone was _____ when the shy student won first prize in the contest.",
+        "answer": "surprised",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EXa0a4a549",
+        "word": "surprise",
+        "sensePos": "adj.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "Everyone was surprised when the shy student won first prize in the contest.",
+        "sentenceZh": "當那位害羞的學生在比賽中獲得第一名時，大家都感到很驚訝。",
+        "blankSentence": "Everyone was _____ when the shy student won first prize in the contest.",
+        "answer": "surprised",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Read the entire unchanged English/Chinese and actual cloze target. Distinguish the notice/quiet/new-low/high nouns, bent-low/flying-high adverbs, and actual warming/drying/tasting/experiencing/starring verbs. Surprised/shocked emotion complements use the project participial-adjective analysis here; this is not a claim that passive analyses never exist. Headword POS remains unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/surprise ; actual complete sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX5a115532",
+      "before": {
+        "exampleId": "EX5a115532",
+        "word": "shock",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "I was shocked to hear that my best friend was moving to another country.",
+        "sentenceZh": "聽到我最好的朋友要搬到另一個國家，我感到很震驚。",
+        "blankSentence": "I was _____ to hear that my best friend was moving to another country.",
+        "answer": "shocked",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EX5a115532",
+        "word": "shock",
+        "sensePos": "adj.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "I was shocked to hear that my best friend was moving to another country.",
+        "sentenceZh": "聽到我最好的朋友要搬到另一個國家，我感到很震驚。",
+        "blankSentence": "I was _____ to hear that my best friend was moving to another country.",
+        "answer": "shocked",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "reason": "Read the entire unchanged English/Chinese and actual cloze target. Distinguish the notice/quiet/new-low/high nouns, bent-low/flying-high adverbs, and actual warming/drying/tasting/experiencing/starring verbs. Surprised/shocked emotion complements use the project participial-adjective analysis here; this is not a claim that passive analyses never exist. Headword POS remains unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/shock ; actual complete sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX7de08a11",
+      "before": {
+        "exampleId": "EX7de08a11",
+        "word": "quiet",
+        "sensePos": "adj.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "I enjoy the quiet of early mornings before everyone wakes up.",
+        "sentenceZh": "我喜歡大家醒來之前清晨的寧靜。",
+        "blankSentence": "I enjoy the _____ of early mornings before everyone wakes up.",
+        "answer": "quiet",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EX7de08a11",
+        "word": "quiet",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "I enjoy the quiet of early mornings before everyone wakes up.",
+        "sentenceZh": "我喜歡大家醒來之前清晨的寧靜。",
+        "blankSentence": "I enjoy the _____ of early mornings before everyone wakes up.",
+        "answer": "quiet",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Read the entire unchanged English/Chinese and actual cloze target. Distinguish the notice/quiet/new-low/high nouns, bent-low/flying-high adverbs, and actual warming/drying/tasting/experiencing/starring verbs. Surprised/shocked emotion complements use the project participial-adjective analysis here; this is not a claim that passive analyses never exist. Headword POS remains unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/quiet ; actual complete sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EXb58e463f",
+      "before": {
+        "exampleId": "EXb58e463f",
+        "word": "warm",
+        "sensePos": "adj.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "Please warm up the leftovers in the microwave before you eat them.",
+        "sentenceZh": "吃之前請先用微波爐把剩菜加熱一下。",
+        "blankSentence": "Please _____ up the leftovers in the microwave before you eat them.",
+        "answer": "warm",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EXb58e463f",
+        "word": "warm",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "Please warm up the leftovers in the microwave before you eat them.",
+        "sentenceZh": "吃之前請先用微波爐把剩菜加熱一下。",
+        "blankSentence": "Please _____ up the leftovers in the microwave before you eat them.",
+        "answer": "warm",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "reason": "Read the entire unchanged English/Chinese and actual cloze target. Distinguish the notice/quiet/new-low/high nouns, bent-low/flying-high adverbs, and actual warming/drying/tasting/experiencing/starring verbs. Surprised/shocked emotion complements use the project participial-adjective analysis here; this is not a claim that passive analyses never exist. Headword POS remains unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/warm ; actual complete sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX73731b8f",
+      "before": {
+        "exampleId": "EX73731b8f",
+        "word": "dry",
+        "sensePos": "adj.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "She hung the towels outside to dry in the warm afternoon sun.",
+        "sentenceZh": "她把毛巾掛在外面，讓溫暖的午後陽光曬乾。",
+        "blankSentence": "She hung the towels outside to _____ in the warm afternoon sun.",
+        "answer": "dry",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EX73731b8f",
+        "word": "dry",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "She hung the towels outside to dry in the warm afternoon sun.",
+        "sentenceZh": "她把毛巾掛在外面，讓溫暖的午後陽光曬乾。",
+        "blankSentence": "She hung the towels outside to _____ in the warm afternoon sun.",
+        "answer": "dry",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Read the entire unchanged English/Chinese and actual cloze target. Distinguish the notice/quiet/new-low/high nouns, bent-low/flying-high adverbs, and actual warming/drying/tasting/experiencing/starring verbs. Surprised/shocked emotion complements use the project participial-adjective analysis here; this is not a claim that passive analyses never exist. Headword POS remains unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/dry ; actual complete sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EXa95d0cce",
+      "before": {
+        "exampleId": "EXa95d0cce",
+        "word": "taste",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "This homemade cake tastes even better than the one from the bakery.",
+        "sentenceZh": "這個自製蛋糕嚐起來比麵包店賣的還好吃。",
+        "blankSentence": "This homemade cake ______ even better than the one from the bakery.",
+        "answer": "tastes",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EXa95d0cce",
+        "word": "taste",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "This homemade cake tastes even better than the one from the bakery.",
+        "sentenceZh": "這個自製蛋糕嚐起來比麵包店賣的還好吃。",
+        "blankSentence": "This homemade cake ______ even better than the one from the bakery.",
+        "answer": "tastes",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Read the entire unchanged English/Chinese and actual cloze target. Distinguish the notice/quiet/new-low/high nouns, bent-low/flying-high adverbs, and actual warming/drying/tasting/experiencing/starring verbs. Surprised/shocked emotion complements use the project participial-adjective analysis here; this is not a claim that passive analyses never exist. Headword POS remains unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/taste ; actual complete sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX1c926256",
+      "before": {
+        "exampleId": "EX1c926256",
+        "word": "experience",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "I experienced heavy snow for the first time when I visited Japan.",
+        "sentenceZh": "我去日本時第一次經歷了大雪。",
+        "blankSentence": "I _____ heavy snow for the first time when I visited Japan.",
+        "answer": "experienced",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EX1c926256",
+        "word": "experience",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "I experienced heavy snow for the first time when I visited Japan.",
+        "sentenceZh": "我去日本時第一次經歷了大雪。",
+        "blankSentence": "I _____ heavy snow for the first time when I visited Japan.",
+        "answer": "experienced",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Read the entire unchanged English/Chinese and actual cloze target. Distinguish the notice/quiet/new-low/high nouns, bent-low/flying-high adverbs, and actual warming/drying/tasting/experiencing/starring verbs. Surprised/shocked emotion complements use the project participial-adjective analysis here; this is not a claim that passive analyses never exist. Headword POS remains unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/experience ; actual complete sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX0682b2ef",
+      "before": {
+        "exampleId": "EX0682b2ef",
+        "word": "small",
+        "sensePos": "adj./n./adv.",
+        "meaningHint": "小的；少的；小型的；低微的",
+        "exampleType": "textbook",
+        "sentenceEn": "When he was small, Ted lived in France for a while.",
+        "sentenceZh": "泰德年幼時曾在法國住了一陣子。",
+        "blankSentence": "When he was _____, Ted lived in France for a while.",
+        "answer": "small",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EX0682b2ef",
+        "word": "small",
+        "sensePos": "adj.",
+        "meaningHint": "年幼的",
+        "exampleType": "textbook",
+        "sentenceEn": "When he was small, Ted lived in France for a while.",
+        "sentenceZh": "泰德年幼時曾在法國住了一陣子。",
+        "blankSentence": "When he was _____, Ted lived in France for a while.",
+        "answer": "small",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "reason": "Read the entire unchanged English/Chinese and actual cloze target. Distinguish the notice/quiet/new-low/high nouns, bent-low/flying-high adverbs, and actual warming/drying/tasting/experiencing/starring verbs. Surprised/shocked emotion complements use the project participial-adjective analysis here; this is not a claim that passive analyses never exist. Headword POS remains unchanged. Narrow this existing nonempty mixed hint to the actual sentence sense; most are precision improvements rather than false headword senses. Empty hints are not treated as missing.",
+      "evidence": "https://www.merriam-webster.com/dictionary/small ; actual complete sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX0dde3852",
+      "before": {
+        "exampleId": "EX0dde3852",
+        "word": "small",
+        "sensePos": "adj./n./adv.",
+        "meaningHint": "小的；少的；小型的；低微的",
+        "exampleType": "textbook",
+        "sentenceEn": "The car is really small; only two people can fit in it.",
+        "sentenceZh": "這輛車真的很小，只有 2 個人能坐進去。",
+        "blankSentence": "The car is really _____; only two people can fit in it.",
+        "answer": "small",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EX0dde3852",
+        "word": "small",
+        "sensePos": "adj.",
+        "meaningHint": "小的",
+        "exampleType": "textbook",
+        "sentenceEn": "The car is really small; only two people can fit in it.",
+        "sentenceZh": "這輛車真的很小，只有 2 個人能坐進去。",
+        "blankSentence": "The car is really _____; only two people can fit in it.",
+        "answer": "small",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "reason": "Read the entire unchanged English/Chinese and actual cloze target. Distinguish the notice/quiet/new-low/high nouns, bent-low/flying-high adverbs, and actual warming/drying/tasting/experiencing/starring verbs. Surprised/shocked emotion complements use the project participial-adjective analysis here; this is not a claim that passive analyses never exist. Headword POS remains unchanged. Narrow this existing nonempty mixed hint to the actual sentence sense; most are precision improvements rather than false headword senses. Empty hints are not treated as missing.",
+      "evidence": "https://www.merriam-webster.com/dictionary/small ; actual complete sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX37cbd628",
+      "before": {
+        "exampleId": "EX37cbd628",
+        "word": "small",
+        "sensePos": "adj./n./adv.",
+        "meaningHint": "小的；少的；小型的；低微的",
+        "exampleType": "textbook",
+        "sentenceEn": "It was just a small mistake, so it was easily fixed.",
+        "sentenceZh": "這只是個小錯誤，可以很輕易地解決。",
+        "blankSentence": "It was just a _____ mistake, so it was easily fixed.",
+        "answer": "small",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EX37cbd628",
+        "word": "small",
+        "sensePos": "adj.",
+        "meaningHint": "小的；輕微的",
+        "exampleType": "textbook",
+        "sentenceEn": "It was just a small mistake, so it was easily fixed.",
+        "sentenceZh": "這只是個小錯誤，可以很輕易地解決。",
+        "blankSentence": "It was just a _____ mistake, so it was easily fixed.",
+        "answer": "small",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "reason": "Read the entire unchanged English/Chinese and actual cloze target. Distinguish the notice/quiet/new-low/high nouns, bent-low/flying-high adverbs, and actual warming/drying/tasting/experiencing/starring verbs. Surprised/shocked emotion complements use the project participial-adjective analysis here; this is not a claim that passive analyses never exist. Headword POS remains unchanged. Narrow this existing nonempty mixed hint to the actual sentence sense; most are precision improvements rather than false headword senses. Empty hints are not treated as missing.",
+      "evidence": "https://www.merriam-webster.com/dictionary/small ; actual complete sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX12f39287",
+      "before": {
+        "exampleId": "EX12f39287",
+        "word": "young",
+        "sensePos": "adj./n.",
+        "meaningHint": "年輕的；無經驗的；朝氣蓬勃的；青年們",
+        "exampleType": "textbook",
+        "sentenceEn": "When she was young, Jennifer wanted to become a singer.",
+        "sentenceZh": "珍妮佛小時候想成為一名歌手。",
+        "blankSentence": "When she was _____, Jennifer wanted to become a singer.",
+        "answer": "young",
+        "difficulty": "LV2",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EX12f39287",
+        "word": "young",
+        "sensePos": "adj.",
+        "meaningHint": "年幼的；年輕的",
+        "exampleType": "textbook",
+        "sentenceEn": "When she was young, Jennifer wanted to become a singer.",
+        "sentenceZh": "珍妮佛小時候想成為一名歌手。",
+        "blankSentence": "When she was _____, Jennifer wanted to become a singer.",
+        "answer": "young",
+        "difficulty": "LV2",
+        "status": "approved"
+      },
+      "reason": "Read the entire unchanged English/Chinese and actual cloze target. Distinguish the notice/quiet/new-low/high nouns, bent-low/flying-high adverbs, and actual warming/drying/tasting/experiencing/starring verbs. Surprised/shocked emotion complements use the project participial-adjective analysis here; this is not a claim that passive analyses never exist. Headword POS remains unchanged. Narrow this existing nonempty mixed hint to the actual sentence sense; most are precision improvements rather than false headword senses. Empty hints are not treated as missing.",
+      "evidence": "https://www.merriam-webster.com/dictionary/young ; actual complete sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX2459400c",
+      "before": {
+        "exampleId": "EX2459400c",
+        "word": "young",
+        "sensePos": "adj./n.",
+        "meaningHint": "年輕的；無經驗的；朝氣蓬勃的；青年們",
+        "exampleType": "textbook",
+        "sentenceEn": "Benjamin is almost 75, but he is still young at heart.",
+        "sentenceZh": "班傑明年近 75，但仍保有一顆年輕的心。",
+        "blankSentence": "Benjamin is almost 75, but he is still _____ at heart.",
+        "answer": "young",
+        "difficulty": "LV2",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EX2459400c",
+        "word": "young",
+        "sensePos": "adj.",
+        "meaningHint": "年輕的（young at heart：心態年輕）",
+        "exampleType": "textbook",
+        "sentenceEn": "Benjamin is almost 75, but he is still young at heart.",
+        "sentenceZh": "班傑明年近 75，但仍保有一顆年輕的心。",
+        "blankSentence": "Benjamin is almost 75, but he is still _____ at heart.",
+        "answer": "young",
+        "difficulty": "LV2",
+        "status": "approved"
+      },
+      "reason": "Read the entire unchanged English/Chinese and actual cloze target. Distinguish the notice/quiet/new-low/high nouns, bent-low/flying-high adverbs, and actual warming/drying/tasting/experiencing/starring verbs. Surprised/shocked emotion complements use the project participial-adjective analysis here; this is not a claim that passive analyses never exist. Headword POS remains unchanged. Narrow this existing nonempty mixed hint to the actual sentence sense; most are precision improvements rather than false headword senses. Empty hints are not treated as missing.",
+      "evidence": "https://www.merriam-webster.com/dictionary/young ; actual complete sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EXa84405bf",
+      "before": {
+        "exampleId": "EXa84405bf",
+        "word": "young",
+        "sensePos": "adj./n.",
+        "meaningHint": "年輕的；無經驗的；朝氣蓬勃的；青年們",
+        "exampleType": "textbook",
+        "sentenceEn": "Brian thought the colorful shirt looked too young for him.",
+        "sentenceZh": "布萊恩覺得這件鮮豔的襯衫在他身上看起來太過年輕。",
+        "blankSentence": "Brian thought the colorful shirt looked too _____ for him.",
+        "answer": "young",
+        "difficulty": "LV2",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EXa84405bf",
+        "word": "young",
+        "sensePos": "adj.",
+        "meaningHint": "適合年輕人的；顯得年輕的",
+        "exampleType": "textbook",
+        "sentenceEn": "Brian thought the colorful shirt looked too young for him.",
+        "sentenceZh": "布萊恩覺得這件鮮豔的襯衫在他身上看起來太過年輕。",
+        "blankSentence": "Brian thought the colorful shirt looked too _____ for him.",
+        "answer": "young",
+        "difficulty": "LV2",
+        "status": "approved"
+      },
+      "reason": "Read the entire unchanged English/Chinese and actual cloze target. Distinguish the notice/quiet/new-low/high nouns, bent-low/flying-high adverbs, and actual warming/drying/tasting/experiencing/starring verbs. Surprised/shocked emotion complements use the project participial-adjective analysis here; this is not a claim that passive analyses never exist. Headword POS remains unchanged. Narrow this existing nonempty mixed hint to the actual sentence sense; most are precision improvements rather than false headword senses. Empty hints are not treated as missing.",
+      "evidence": "https://www.merriam-webster.com/dictionary/young ; actual complete sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX2632041c",
+      "before": {
+        "exampleId": "EX2632041c",
+        "word": "high",
+        "sensePos": "adj./adv./n.",
+        "meaningHint": "高度；高處；高的；高級的",
+        "exampleType": "textbook",
+        "sentenceEn": "New York City has many high buildings.",
+        "sentenceZh": "紐約市有很多高樓。",
+        "blankSentence": "New York City has many _____ buildings.",
+        "answer": "high",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EX2632041c",
+        "word": "high",
+        "sensePos": "adj.",
+        "meaningHint": "高的",
+        "exampleType": "textbook",
+        "sentenceEn": "New York City has many high buildings.",
+        "sentenceZh": "紐約市有很多高樓。",
+        "blankSentence": "New York City has many _____ buildings.",
+        "answer": "high",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "reason": "Read the entire unchanged English/Chinese and actual cloze target. Distinguish the notice/quiet/new-low/high nouns, bent-low/flying-high adverbs, and actual warming/drying/tasting/experiencing/starring verbs. Surprised/shocked emotion complements use the project participial-adjective analysis here; this is not a claim that passive analyses never exist. Headword POS remains unchanged. Narrow this existing nonempty mixed hint to the actual sentence sense; most are precision improvements rather than false headword senses. Empty hints are not treated as missing.",
+      "evidence": "https://www.merriam-webster.com/dictionary/high ; actual complete sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EXa4890815",
+      "before": {
+        "exampleId": "EXa4890815",
+        "word": "high",
+        "sensePos": "adj./adv./n.",
+        "meaningHint": "高度；高處；高的；高級的",
+        "exampleType": "textbook",
+        "sentenceEn": "Guavas are high in Vitamin C.",
+        "sentenceZh": "芭樂含有豐富的維生素 C。",
+        "blankSentence": "Guavas are _____ in Vitamin C.",
+        "answer": "high",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EXa4890815",
+        "word": "high",
+        "sensePos": "adj.",
+        "meaningHint": "含量高的（high in）",
+        "exampleType": "textbook",
+        "sentenceEn": "Guavas are high in Vitamin C.",
+        "sentenceZh": "芭樂含有豐富的維生素 C。",
+        "blankSentence": "Guavas are _____ in Vitamin C.",
+        "answer": "high",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "reason": "Read the entire unchanged English/Chinese and actual cloze target. Distinguish the notice/quiet/new-low/high nouns, bent-low/flying-high adverbs, and actual warming/drying/tasting/experiencing/starring verbs. Surprised/shocked emotion complements use the project participial-adjective analysis here; this is not a claim that passive analyses never exist. Headword POS remains unchanged. Narrow this existing nonempty mixed hint to the actual sentence sense; most are precision improvements rather than false headword senses. Empty hints are not treated as missing.",
+      "evidence": "https://www.merriam-webster.com/dictionary/high ; actual complete sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EXf3829cf6",
+      "before": {
+        "exampleId": "EXf3829cf6",
+        "word": "high",
+        "sensePos": "adj./adv./n.",
+        "meaningHint": "高度；高處；高的；高級的",
+        "exampleType": "textbook",
+        "sentenceEn": "House prices in this area reached a new high this year.",
+        "sentenceZh": "這地區的房價今年創新高。",
+        "blankSentence": "House prices in this area reached a new _____ this year.",
+        "answer": "high",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EXf3829cf6",
+        "word": "high",
+        "sensePos": "n.",
+        "meaningHint": "高點；新高",
+        "exampleType": "textbook",
+        "sentenceEn": "House prices in this area reached a new high this year.",
+        "sentenceZh": "這地區的房價今年創新高。",
+        "blankSentence": "House prices in this area reached a new _____ this year.",
+        "answer": "high",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "reason": "Read the entire unchanged English/Chinese and actual cloze target. Distinguish the notice/quiet/new-low/high nouns, bent-low/flying-high adverbs, and actual warming/drying/tasting/experiencing/starring verbs. Surprised/shocked emotion complements use the project participial-adjective analysis here; this is not a claim that passive analyses never exist. Headword POS remains unchanged. Narrow this existing nonempty mixed hint to the actual sentence sense; most are precision improvements rather than false headword senses. Empty hints are not treated as missing.",
+      "evidence": "https://www.merriam-webster.com/dictionary/high ; actual complete sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EXf6a4f301",
+      "before": {
+        "exampleId": "EXf6a4f301",
+        "word": "high",
+        "sensePos": "adj./adv./n.",
+        "meaningHint": "高度；高處；高的；高級的",
+        "exampleType": "textbook",
+        "sentenceEn": "A bird is flying high in the sky.",
+        "sentenceZh": "有隻鳥在空中高飛。",
+        "blankSentence": "A bird is flying _____ in the sky.",
+        "answer": "high",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EXf6a4f301",
+        "word": "high",
+        "sensePos": "adv.",
+        "meaningHint": "在高處；高高地",
+        "exampleType": "textbook",
+        "sentenceEn": "A bird is flying high in the sky.",
+        "sentenceZh": "有隻鳥在空中高飛。",
+        "blankSentence": "A bird is flying _____ in the sky.",
+        "answer": "high",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "reason": "Read the entire unchanged English/Chinese and actual cloze target. Distinguish the notice/quiet/new-low/high nouns, bent-low/flying-high adverbs, and actual warming/drying/tasting/experiencing/starring verbs. Surprised/shocked emotion complements use the project participial-adjective analysis here; this is not a claim that passive analyses never exist. Headword POS remains unchanged. Narrow this existing nonempty mixed hint to the actual sentence sense; most are precision improvements rather than false headword senses. Empty hints are not treated as missing.",
+      "evidence": "https://www.merriam-webster.com/dictionary/high ; actual complete sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX0a686c91",
+      "before": {
+        "exampleId": "EX0a686c91",
+        "word": "star",
+        "sensePos": "n./v.",
+        "meaningHint": "星；恆星；星形物；運氣",
+        "exampleType": "textbook",
+        "sentenceEn": "When Reggie looked up, he saw a shooting star.",
+        "sentenceZh": "雷吉往上看時，看到一顆流星。",
+        "blankSentence": "When Reggie looked up, he saw a shooting _____.",
+        "answer": "star",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EX0a686c91",
+        "word": "star",
+        "sensePos": "n.",
+        "meaningHint": "星（shooting star：流星）",
+        "exampleType": "textbook",
+        "sentenceEn": "When Reggie looked up, he saw a shooting star.",
+        "sentenceZh": "雷吉往上看時，看到一顆流星。",
+        "blankSentence": "When Reggie looked up, he saw a shooting _____.",
+        "answer": "star",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "reason": "Read the entire unchanged English/Chinese and actual cloze target. Distinguish the notice/quiet/new-low/high nouns, bent-low/flying-high adverbs, and actual warming/drying/tasting/experiencing/starring verbs. Surprised/shocked emotion complements use the project participial-adjective analysis here; this is not a claim that passive analyses never exist. Headword POS remains unchanged. Narrow this existing nonempty mixed hint to the actual sentence sense; most are precision improvements rather than false headword senses. Empty hints are not treated as missing.",
+      "evidence": "https://www.merriam-webster.com/dictionary/star ; actual complete sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX784b8df6",
+      "before": {
+        "exampleId": "EX784b8df6",
+        "word": "star",
+        "sensePos": "n./v.",
+        "meaningHint": "星；恆星；星形物；運氣",
+        "exampleType": "textbook",
+        "sentenceEn": "The TV show stars some famous actors.",
+        "sentenceZh": "這檔電視節目由一些知名演員主演。",
+        "blankSentence": "The TV show _____ some famous actors.",
+        "answer": "stars",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EX784b8df6",
+        "word": "star",
+        "sensePos": "v.",
+        "meaningHint": "由……主演；使擔任主角",
+        "exampleType": "textbook",
+        "sentenceEn": "The TV show stars some famous actors.",
+        "sentenceZh": "這檔電視節目由一些知名演員主演。",
+        "blankSentence": "The TV show _____ some famous actors.",
+        "answer": "stars",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "reason": "Read the entire unchanged English/Chinese and actual cloze target. Distinguish the notice/quiet/new-low/high nouns, bent-low/flying-high adverbs, and actual warming/drying/tasting/experiencing/starring verbs. Surprised/shocked emotion complements use the project participial-adjective analysis here; this is not a claim that passive analyses never exist. Headword POS remains unchanged. Narrow this existing nonempty mixed hint to the actual sentence sense; most are precision improvements rather than false headword senses. Empty hints are not treated as missing.",
+      "evidence": "https://www.merriam-webster.com/dictionary/star ; actual complete sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EXa1a894aa",
+      "before": {
+        "exampleId": "EXa1a894aa",
+        "word": "star",
+        "sensePos": "n./v.",
+        "meaningHint": "星；恆星；星形物；運氣",
+        "exampleType": "textbook",
+        "sentenceEn": "Lady Gaga starred in A Star is Born.",
+        "sentenceZh": "女神卡卡主演《一個巨星的誕生》。",
+        "blankSentence": "Lady Gaga _____ in A Star is Born.",
+        "answer": "starred",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EXa1a894aa",
+        "word": "star",
+        "sensePos": "v.",
+        "meaningHint": "主演",
+        "exampleType": "textbook",
+        "sentenceEn": "Lady Gaga starred in A Star is Born.",
+        "sentenceZh": "女神卡卡主演《一個巨星的誕生》。",
+        "blankSentence": "Lady Gaga _____ in A Star is Born.",
+        "answer": "starred",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "reason": "Read the entire unchanged English/Chinese and actual cloze target. Distinguish the notice/quiet/new-low/high nouns, bent-low/flying-high adverbs, and actual warming/drying/tasting/experiencing/starring verbs. Surprised/shocked emotion complements use the project participial-adjective analysis here; this is not a claim that passive analyses never exist. Headword POS remains unchanged. Narrow this existing nonempty mixed hint to the actual sentence sense; most are precision improvements rather than false headword senses. Empty hints are not treated as missing.",
+      "evidence": "https://www.merriam-webster.com/dictionary/star ; actual complete sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EXdd5d588b",
+      "before": {
+        "exampleId": "EXdd5d588b",
+        "word": "star",
+        "sensePos": "n./v.",
+        "meaningHint": "星；恆星；星形物；運氣",
+        "exampleType": "textbook",
+        "sentenceEn": "Hal's favorite movie star is Lily Collins.",
+        "sentenceZh": "海爾最喜歡的影星是莉莉・柯林斯。",
+        "blankSentence": "Hal's favorite movie _____ is Lily Collins.",
+        "answer": "star",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EXdd5d588b",
+        "word": "star",
+        "sensePos": "n.",
+        "meaningHint": "明星（movie star：影星）",
+        "exampleType": "textbook",
+        "sentenceEn": "Hal's favorite movie star is Lily Collins.",
+        "sentenceZh": "海爾最喜歡的影星是莉莉・柯林斯。",
+        "blankSentence": "Hal's favorite movie _____ is Lily Collins.",
+        "answer": "star",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "reason": "Read the entire unchanged English/Chinese and actual cloze target. Distinguish the notice/quiet/new-low/high nouns, bent-low/flying-high adverbs, and actual warming/drying/tasting/experiencing/starring verbs. Surprised/shocked emotion complements use the project participial-adjective analysis here; this is not a claim that passive analyses never exist. Headword POS remains unchanged. Narrow this existing nonempty mixed hint to the actual sentence sense; most are precision improvements rather than false headword senses. Empty hints are not treated as missing.",
+      "evidence": "https://www.merriam-webster.com/dictionary/star ; actual complete sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EXeefb8730",
+      "before": {
+        "exampleId": "EXeefb8730",
+        "word": "star",
+        "sensePos": "n./v.",
+        "meaningHint": "星；恆星；星形物；運氣",
+        "exampleType": "textbook",
+        "sentenceEn": "The Sun is the closest star to Earth.",
+        "sentenceZh": "太陽是距離地球最近的恆星。",
+        "blankSentence": "The Sun is the closest _____ to Earth.",
+        "answer": "star",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EXeefb8730",
+        "word": "star",
+        "sensePos": "n.",
+        "meaningHint": "恆星",
+        "exampleType": "textbook",
+        "sentenceEn": "The Sun is the closest star to Earth.",
+        "sentenceZh": "太陽是距離地球最近的恆星。",
+        "blankSentence": "The Sun is the closest _____ to Earth.",
+        "answer": "star",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "reason": "Read the entire unchanged English/Chinese and actual cloze target. Distinguish the notice/quiet/new-low/high nouns, bent-low/flying-high adverbs, and actual warming/drying/tasting/experiencing/starring verbs. Surprised/shocked emotion complements use the project participial-adjective analysis here; this is not a claim that passive analyses never exist. Headword POS remains unchanged. Narrow this existing nonempty mixed hint to the actual sentence sense; most are precision improvements rather than false headword senses. Empty hints are not treated as missing.",
+      "evidence": "https://www.merriam-webster.com/dictionary/star ; actual complete sentence, blank and answer."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX457aa9dd",
+      "before": {
+        "exampleId": "EX457aa9dd",
+        "word": "young",
+        "sensePos": "adj./n.",
+        "meaningHint": "年輕的；無經驗的；朝氣蓬勃的；青年們",
+        "exampleType": "textbook",
+        "sentenceEn": "Dancing is not only for the young; older people can do it, too.",
+        "sentenceZh": "跳舞不只是年輕人做的活動，年長者也跳舞。",
+        "blankSentence": "Dancing is not only for the _____; older people can do it, too.",
+        "answer": "young",
+        "difficulty": "LV2",
+        "status": "approved"
+      },
+      "after": {
+        "exampleId": "EX457aa9dd",
+        "word": "young",
+        "sensePos": "adj./n.",
+        "meaningHint": "年輕人（the young）",
+        "exampleType": "textbook",
+        "sentenceEn": "Dancing is not only for the young; older people can do it, too.",
+        "sentenceZh": "跳舞不只是年輕人做的活動，年長者也跳舞。",
+        "blankSentence": "Dancing is not only for the _____; older people can do it, too.",
+        "answer": "young",
+        "difficulty": "LV2",
+        "status": "approved"
+      },
+      "reason": "Narrow this existing nonempty mixed hint to the actual sentence sense; most are precision improvements rather than false headword senses. Empty hints are not treated as missing.",
+      "evidence": "https://www.merriam-webster.com/dictionary/young ; unchanged sentence and cloze target."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX578ef25e",
+      "before": {
+        "exampleId": "EX578ef25e",
+        "word": "quiet",
+        "sensePos": "adj.",
+        "meaningHint": "安靜的",
+        "exampleType": "exam",
+        "sentenceEn": "The library was quiet in the early morning.",
+        "sentenceZh": "清晨的圖書館很安靜。",
+        "blankSentence": "The library was _____ in the early morning.",
+        "answer": "quiet",
+        "difficulty": "LV1",
+        "status": "draft"
+      },
+      "after": {
+        "exampleId": "EX578ef25e",
+        "word": "quiet",
+        "sensePos": "adj.",
+        "meaningHint": "安靜的",
+        "exampleType": "exam",
+        "sentenceEn": "The library was quiet in the early morning.",
+        "sentenceZh": "清晨的圖書館很安靜。",
+        "blankSentence": "The library was _____ in the early morning.",
+        "answer": "quiet",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Read and check this authored practice sentence, Chinese, cloze reconstruction and answer. Practice verification does not imply that this sentence is a verbatim official exam quotation.",
+      "evidence": "https://www.merriam-webster.com/dictionary/quiet ; direct sentence comparison."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX5cd8cd7a",
+      "before": {
+        "exampleId": "EX5cd8cd7a",
+        "word": "silent",
+        "sensePos": "adj.",
+        "meaningHint": "沉寂的、不出聲的（考點：fall silent 安靜下來）",
+        "exampleType": "exam",
+        "sentenceEn": "The whole room fell silent when the results were announced.",
+        "sentenceZh": "結果公布時，整個房間安靜了下來。",
+        "blankSentence": "The whole room fell _____ when the results were announced.",
+        "answer": "silent",
+        "difficulty": "LV2",
+        "status": "draft"
+      },
+      "after": {
+        "exampleId": "EX5cd8cd7a",
+        "word": "silent",
+        "sensePos": "adj.",
+        "meaningHint": "沉寂的、不出聲的（考點：fall silent 安靜下來）",
+        "exampleType": "exam",
+        "sentenceEn": "The whole room fell silent when the results were announced.",
+        "sentenceZh": "結果公布時，整個房間安靜了下來。",
+        "blankSentence": "The whole room fell _____ when the results were announced.",
+        "answer": "silent",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "reason": "Read and check this authored practice sentence, Chinese, cloze reconstruction and answer. Practice verification does not imply that this sentence is a verbatim official exam quotation.",
+      "evidence": "https://www.merriam-webster.com/dictionary/silent ; direct sentence comparison."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX1da962d1",
+      "before": {
+        "exampleId": "EX1da962d1",
+        "word": "beautiful",
+        "sensePos": "adj.",
+        "meaningHint": "美麗的",
+        "exampleType": "basic",
+        "sentenceEn": "What a beautiful sunset!",
+        "sentenceZh": "多麼美的夕陽啊！",
+        "blankSentence": "What a _____ sunset!",
+        "answer": "beautiful",
+        "difficulty": "LV1",
+        "status": "draft"
+      },
+      "after": {
+        "exampleId": "EX1da962d1",
+        "word": "beautiful",
+        "sensePos": "adj.",
+        "meaningHint": "美麗的",
+        "exampleType": "basic",
+        "sentenceEn": "What a beautiful sunset!",
+        "sentenceZh": "多麼美的夕陽啊！",
+        "blankSentence": "What a _____ sunset!",
+        "answer": "beautiful",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Read and check this authored practice sentence, Chinese, cloze reconstruction and answer. Practice verification does not imply that this sentence is a verbatim official exam quotation.",
+      "evidence": "https://www.merriam-webster.com/dictionary/beautiful ; direct sentence comparison."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX163bdaf1",
+      "before": {
+        "exampleId": "EX163bdaf1",
+        "word": "taste",
+        "sensePos": "n.",
+        "meaningHint": "口味、喜好（考點：suit/appeal to one's tastes）",
+        "exampleType": "exam",
+        "sentenceEn": "The restaurant changed its menu to suit local tastes.",
+        "sentenceZh": "這家餐廳調整菜單以迎合當地人的口味。",
+        "blankSentence": "The restaurant changed its menu to suit local _____.",
+        "answer": "tastes",
+        "difficulty": "LV1",
+        "status": "draft"
+      },
+      "after": {
+        "exampleId": "EX163bdaf1",
+        "word": "taste",
+        "sensePos": "n.",
+        "meaningHint": "口味、喜好（考點：suit/appeal to one's tastes）",
+        "exampleType": "exam",
+        "sentenceEn": "The restaurant changed its menu to suit local tastes.",
+        "sentenceZh": "這家餐廳調整菜單以迎合當地人的口味。",
+        "blankSentence": "The restaurant changed its menu to suit local _____.",
+        "answer": "tastes",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Read and check this authored practice sentence, Chinese, cloze reconstruction and answer. Practice verification does not imply that this sentence is a verbatim official exam quotation.",
+      "evidence": "https://www.merriam-webster.com/dictionary/taste ; direct sentence comparison."
+    },
+    {
+      "dataset": "examples",
+      "id": "EX5921e182",
+      "before": {
+        "exampleId": "EX5921e182",
+        "word": "little",
+        "sensePos": "adv.",
+        "meaningHint": "幾乎不（考點：care little about 不太在意）",
+        "exampleType": "exam",
+        "sentenceEn": "He cared little about fashion and wore the same jacket for years.",
+        "sentenceZh": "他不太在意流行，同一件外套穿了好幾年。",
+        "blankSentence": "He cared _____ about fashion and wore the same jacket for years.",
+        "answer": "little",
+        "difficulty": "LV1",
+        "status": "draft"
+      },
+      "after": {
+        "exampleId": "EX5921e182",
+        "word": "little",
+        "sensePos": "adv.",
+        "meaningHint": "幾乎不（考點：care little about 不太在意）",
+        "exampleType": "exam",
+        "sentenceEn": "He cared little about fashion and wore the same jacket for years.",
+        "sentenceZh": "他不太在意流行，同一件外套穿了好幾年。",
+        "blankSentence": "He cared _____ about fashion and wore the same jacket for years.",
+        "answer": "little",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Read and check this authored practice sentence, Chinese, cloze reconstruction and answer. Practice verification does not imply that this sentence is a verbatim official exam quotation.",
+      "evidence": "https://www.merriam-webster.com/dictionary/little ; direct sentence comparison."
+    },
+    {
+      "dataset": "senses",
+      "id": "W000509-3",
+      "before": {
+        "senseId": "W000509-3",
+        "wordId": "W000509",
+        "word": "low",
+        "senseOrder": 3,
+        "sensePos": "n.",
+        "meaningZh": "低點",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "罕用，建議刪列｜待拆分；主表字義：低點；低價；低；牛叫聲",
+        "status": "reviewed"
+      },
+      "after": {
+        "senseId": "W000509-3",
+        "wordId": "W000509",
+        "word": "low",
+        "senseOrder": 3,
+        "sensePos": "n.",
+        "meaningZh": "低點",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "2026-11-05：本義與詞典及既有完整例句分別核對。new low 是低點名詞；small 的名詞（包括複數 smalls 衣物）和副詞有實據，不因少見建議刪除。保留正式詞頭、其他義項及整詞狀態；本記錄不認證所有罕見中文對應。",
+        "status": "reviewed"
+      },
+      "reason": "Remove unsupported delete-for-rarity advice while preserving the already reviewed sense status and all genuine meanings.",
+      "evidence": "https://www.merriam-webster.com/dictionary/low"
+    },
+    {
+      "dataset": "senses",
+      "id": "W000791-2",
+      "before": {
+        "senseId": "W000791-2",
+        "wordId": "W000791",
+        "word": "small",
+        "senseOrder": 2,
+        "sensePos": "n.",
+        "meaningZh": "細小或較窄的部分；（複數 smalls）小號尺寸物品或衣物",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "罕用，建議刪列｜待拆分；主表字義：小的；少的；小型的；低微的",
+        "status": "reviewed"
+      },
+      "after": {
+        "senseId": "W000791-2",
+        "wordId": "W000791",
+        "word": "small",
+        "senseOrder": 2,
+        "sensePos": "n.",
+        "meaningZh": "細小或較窄的部分；（複數 smalls）小號尺寸物品或衣物",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "2026-11-05：本義與詞典及既有完整例句分別核對。new low 是低點名詞；small 的名詞（包括複數 smalls 衣物）和副詞有實據，不因少見建議刪除。保留正式詞頭、其他義項及整詞狀態；本記錄不認證所有罕見中文對應。",
+        "status": "reviewed"
+      },
+      "reason": "Remove unsupported delete-for-rarity advice while preserving the already reviewed sense status and all genuine meanings.",
+      "evidence": "https://www.merriam-webster.com/dictionary/small"
+    },
+    {
+      "dataset": "senses",
+      "id": "W000791-3",
+      "before": {
+        "senseId": "W000791-3",
+        "wordId": "W000791",
+        "word": "small",
+        "senseOrder": 3,
+        "sensePos": "adv.",
+        "meaningZh": "小小地",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "罕用，建議刪列｜待拆分；主表字義：小的；少的；小型的；低微的",
+        "status": "reviewed"
+      },
+      "after": {
+        "senseId": "W000791-3",
+        "wordId": "W000791",
+        "word": "small",
+        "senseOrder": 3,
+        "sensePos": "adv.",
+        "meaningZh": "小小地",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "2026-11-05：本義與詞典及既有完整例句分別核對。new low 是低點名詞；small 的名詞（包括複數 smalls 衣物）和副詞有實據，不因少見建議刪除。保留正式詞頭、其他義項及整詞狀態；本記錄不認證所有罕見中文對應。",
+        "status": "reviewed"
+      },
+      "reason": "Remove unsupported delete-for-rarity advice while preserving the already reviewed sense status and all genuine meanings.",
+      "evidence": "https://www.merriam-webster.com/dictionary/small"
+    },
+    {
+      "dataset": "senses",
+      "id": "W001797-1",
+      "before": {
+        "senseId": "W001797-1",
+        "wordId": "W001797",
+        "word": "silent",
+        "senseOrder": 1,
+        "sensePos": "adj.",
+        "meaningZh": "沉寂的、不出聲的",
+        "isExamSense": true,
+        "examEvidence": "學測114 文意選填Q29",
+        "answerForms": [
+          "silent"
+        ],
+        "note": "考點：fall silent 安靜下來",
+        "status": "draft"
+      },
+      "after": {
+        "senseId": "W001797-1",
+        "wordId": "W001797",
+        "word": "silent",
+        "senseOrder": 1,
+        "sensePos": "adj.",
+        "meaningZh": "沉寂的、不出聲的",
+        "isExamSense": true,
+        "examEvidence": [
+          {
+            "year": 114,
+            "question": 29,
+            "answer": "J",
+            "form": "silent",
+            "partOfSpeech": "adj.",
+            "meaningZh": "沉寂的；不出聲的",
+            "questionUrl": "https://www.ceec.edu.tw/files/file_pool/1/0p056425554473267580/02-114%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E9%A1%8C.pdf",
+            "answerUrl": "https://www.ceec.edu.tw/files/file_pool/1/0p051545433631383724/02-114%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf",
+            "verification": "direct_official_question_and_answer_text_read",
+            "printedPage": 3
+          }
+        ],
+        "answerForms": [
+          "silent"
+        ],
+        "note": "已實讀官方試卷印刷第3頁完整上下文、選項及官方答案。聖母院火災後鐘聲停止，fell silent 描寫鐘不再鳴響；既有結果公布練習句另寫，非原題。",
+        "status": "reviewed"
+      },
+      "reason": "Verify only the exact exam sense against official full context, option and answer, retaining the authored practice sentence and whole-word status.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0p056425554473267580/02-114%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E9%A1%8C.pdf ; https://www.ceec.edu.tw/files/file_pool/1/0p051545433631383724/02-114%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf"
+    },
+    {
+      "dataset": "senses",
+      "id": "W000855-1",
+      "before": {
+        "senseId": "W000855-1",
+        "wordId": "W000855",
+        "word": "taste",
+        "senseOrder": 1,
+        "sensePos": "n.",
+        "meaningZh": "口味、喜好",
+        "isExamSense": true,
+        "examEvidence": "學測107 文意選填Q39",
+        "answerForms": [
+          "tastes"
+        ],
+        "note": "考點：suit/appeal to one's tastes",
+        "status": "draft"
+      },
+      "after": {
+        "senseId": "W000855-1",
+        "wordId": "W000855",
+        "word": "taste",
+        "senseOrder": 1,
+        "sensePos": "n.",
+        "meaningZh": "口味、喜好",
+        "isExamSense": true,
+        "examEvidence": [
+          {
+            "year": 107,
+            "question": 39,
+            "answer": "H",
+            "form": "tastes",
+            "partOfSpeech": "n.",
+            "meaningZh": "口味；喜好",
+            "questionUrl": "https://www.ceec.edu.tw/files/file_pool/1/0j076574893317534748/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf",
+            "answerUrl": "https://www.ceec.edu.tw/files/file_pool/1/0j076574893773665710/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf",
+            "verification": "direct_official_question_and_answer_text_read",
+            "printedPage": 3
+          }
+        ],
+        "answerForms": [
+          "tastes"
+        ],
+        "note": "已實讀官方試卷印刷第3頁完整上下文、選項及官方答案。幸運餅配方加甜以迎合美國人口味，appeal to American tastes；既有餐廳改菜單練習句另寫，非原題。",
+        "status": "reviewed"
+      },
+      "reason": "Verify only the exact exam sense against official full context, option and answer, retaining the authored practice sentence and whole-word status.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0j076574893317534748/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf ; https://www.ceec.edu.tw/files/file_pool/1/0j076574893773665710/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf"
+    },
+    {
+      "dataset": "senses",
+      "id": "W000499-1",
+      "before": {
+        "senseId": "W000499-1",
+        "wordId": "W000499",
+        "word": "little",
+        "senseOrder": 1,
+        "sensePos": "adv.",
+        "meaningZh": "幾乎不",
+        "isExamSense": true,
+        "examEvidence": "學測108 文意選填Q40",
+        "answerForms": [
+          "little"
+        ],
+        "note": "考點：care little about 不太在意",
+        "status": "draft"
+      },
+      "after": {
+        "senseId": "W000499-1",
+        "wordId": "W000499",
+        "word": "little",
+        "senseOrder": 1,
+        "sensePos": "adv.",
+        "meaningZh": "幾乎不",
+        "isExamSense": true,
+        "examEvidence": [
+          {
+            "year": 108,
+            "question": 40,
+            "answer": "A",
+            "form": "little",
+            "partOfSpeech": "adv.",
+            "meaningZh": "幾乎不；不太",
+            "questionUrl": "https://www.ceec.edu.tw/files/file_pool/1/0j196548669826315609/01-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf",
+            "answerUrl": "https://www.ceec.edu.tw/files/file_pool/1/0j196548660460294627/02-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88.pdf",
+            "verification": "direct_official_question_and_answer_text_read",
+            "printedPage": 3
+          }
+        ],
+        "answerForms": [
+          "little"
+        ],
+        "note": "已實讀官方試卷印刷第3頁完整上下文、選項及官方答案。父親不太在意誰對誰做了什麼，cared little；既有不在意流行練習句另寫，非原題。",
+        "status": "reviewed"
+      },
+      "reason": "Verify only the exact exam sense against official full context, option and answer, retaining the authored practice sentence and whole-word status.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0j196548669826315609/01-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf ; https://www.ceec.edu.tw/files/file_pool/1/0j196548660460294627/02-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88.pdf"
+    },
+    {
+      "dataset": "words",
+      "id": "W000935",
+      "before": {
+        "wordId": "W000935",
+        "word": "usually",
+        "wordVariants": [
+          "usually"
+        ],
+        "level": "LV1",
+        "pos": "adv.",
+        "posAll": [
+          "adv."
+        ],
+        "meaningZh": "通常；大抵",
+        "meaningEn": "in the way that is most common or normal; on most occasions",
+        "usagePattern": "S + usually + V; not usually",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "usually",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "主詞 + 通常 + 原形動詞；通常不"
+      },
+      "after": {
+        "wordId": "W000935",
+        "word": "usually",
+        "wordVariants": [
+          "usually"
+        ],
+        "level": "LV1",
+        "pos": "adv.",
+        "posAll": [
+          "adv."
+        ],
+        "meaningZh": "通常；大抵",
+        "meaningEn": "in the way that is most common or normal; on most occasions",
+        "usagePattern": "S + usually + V; not usually",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "usually",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "通常做……；通常是……"
+      },
+      "reason": "Translate frequency patterns without teaching every finite verb as a base form.",
+      "evidence": "https://www.merriam-webster.com/dictionary/usually"
+    },
+    {
+      "dataset": "words",
+      "id": "W000804",
+      "before": {
+        "wordId": "W000804",
+        "word": "sometimes",
+        "wordVariants": [
+          "sometimes"
+        ],
+        "level": "LV1",
+        "pos": "adv.",
+        "posAll": [
+          "adv."
+        ],
+        "meaningZh": "有時；時常；往往；以前的；某一時間的",
+        "meaningEn": "used to say that something happens occasionally, or on some occasions but not always",
+        "usagePattern": "Sometimes, S + V...; S + sometimes + V",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "sometimes",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "有時，主詞 + 原形動詞……；主詞 + 有時 + 原形動詞"
+      },
+      "after": {
+        "wordId": "W000804",
+        "word": "sometimes",
+        "wordVariants": [
+          "sometimes"
+        ],
+        "level": "LV1",
+        "pos": "adv.",
+        "posAll": [
+          "adv."
+        ],
+        "meaningZh": "（副詞）有時；偶爾；（另列形容詞用法）以前的；偶爾的；（原摘要其他對應待核）某一時間的",
+        "meaningEn": "used to say that something happens occasionally, or on some occasions but not always",
+        "usagePattern": "Sometimes, S + V...; S + sometimes + V",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "sometimes",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "有時，主詞 + 原形動詞……；主詞 + 有時 + 原形動詞"
+      },
+      "reason": "MW explicitly records sometimes as an adjective equal to sometime, whose adjective means former or occasional. Preserve that genuine extra usage separately from formal adv.; do not delete it as contamination.",
+      "evidence": "https://www.merriam-webster.com/dictionary/sometimes ; https://www.merriam-webster.com/dictionary/sometime (both directly opened)"
+    },
+    {
+      "dataset": "words",
+      "id": "W000593",
+      "before": {
+        "wordId": "W000593",
+        "word": "notice",
+        "wordVariants": [
+          "notice"
+        ],
+        "level": "LV1",
+        "pos": "v./n.",
+        "posAll": [
+          "v.",
+          "n."
+        ],
+        "meaningZh": "注意；佈告；通知；預告",
+        "meaningEn": "(v.) to become aware of something by seeing, hearing, or otherwise sensing it; (n.) a written or printed announcement that gives information or a warning",
+        "usagePattern": "notice + O + V-ing; put up a notice; without notice",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "notice",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "注意 + 受詞 + 動名詞；張貼通知；無預告地"
+      },
+      "after": {
+        "wordId": "W000593",
+        "word": "notice",
+        "wordVariants": [
+          "notice"
+        ],
+        "level": "LV1",
+        "pos": "v./n.",
+        "posAll": [
+          "v.",
+          "n."
+        ],
+        "meaningZh": "（動詞）注意到；察覺；（名詞）通知；公告；告示",
+        "meaningEn": "(v.) to become aware of something by seeing, hearing, or otherwise sensing it; (n.) a written or printed announcement that gives information or a warning",
+        "usagePattern": "notice + O + V-ing; put up a notice; without notice",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "notice",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "注意到某事；注意到某人正在做……（受詞＋V-ing 分詞）"
+      },
+      "reason": "The notice-board example uses a noun. Perception notice + object + -ing describes an ongoing action, not a noun gerund. Cambridge official indexed grammar excerpt was read; direct grammar URL returned 403.",
+      "evidence": "https://dictionary.cambridge.org/us/grammar/british-grammar/hear-see-etc-object-infinitive-or-ing ; https://dictionaryblog.cambridge.org/2024/03/06/avoiding-common-mistakes-with-verb-patterns-2/"
+    },
+    {
+      "dataset": "words",
+      "id": "W000714",
+      "before": {
+        "wordId": "W000714",
+        "word": "rich",
+        "wordVariants": [
+          "rich"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "富裕的；富饒的；濃厚的；貴重的",
+        "meaningEn": "having a lot of money or property; containing a large amount of something valuable or desirable; (of food) containing a lot of butter, cream, or eggs",
+        "usagePattern": "rich in N; a rich flavor",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "rich",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "富含名詞；濃郁的味道"
+      },
+      "after": {
+        "wordId": "W000714",
+        "word": "rich",
+        "wordVariants": [
+          "rich"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "富裕的；富饒的；濃厚的；貴重的",
+        "meaningEn": "having a lot of money or property; containing a large amount of something valuable or desirable; (of food) containing a lot of butter, cream, or eggs",
+        "usagePattern": "rich in N; a rich flavor",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "rich",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "富含……；富有的朋友／豐盛的餐點；濃郁的風味"
+      },
+      "reason": "Make the actual culinary and rich-in patterns meaningful in Chinese.",
+      "evidence": "https://www.merriam-webster.com/dictionary/rich"
+    },
+    {
+      "dataset": "words",
+      "id": "W000069",
+      "before": {
+        "wordId": "W000069",
+        "word": "beach",
+        "wordVariants": [
+          "beach"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "海灘",
+        "meaningEn": "(n.) an area of sand or small stones beside the sea or a lake; (v.) to bring a boat onto the shore, or to become stuck on the shore",
+        "usagePattern": "on/at the beach; go to the beach; a beach towel/ball",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "beach",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "在/於海灘；去海灘；一條海灘毛巾/球"
+      },
+      "after": {
+        "wordId": "W000069",
+        "word": "beach",
+        "wordVariants": [
+          "beach"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（名詞）海灘；沙灘；（動詞）使船靠岸；使擱淺",
+        "meaningEn": "(n.) an area of sand or small stones beside the sea or a lake; (v.) to bring a boat onto the shore, or to become stuck on the shore",
+        "usagePattern": "on/at the beach; go to the beach; a beach towel/ball",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "beach",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "在海灘上；海灘毛巾／海灘球"
+      },
+      "reason": "Restore the already formal strand-a-boat verb from the correct English definition, without treating a beach ball as a towel.",
+      "evidence": "https://www.merriam-webster.com/dictionary/beach"
+    },
+    {
+      "dataset": "words",
+      "id": "W000451",
+      "before": {
+        "wordId": "W000451",
+        "word": "key",
+        "wordVariants": [
+          "key"
+        ],
+        "level": "LV1",
+        "pos": "adj./n./v.",
+        "posAll": [
+          "adj.",
+          "n.",
+          "v."
+        ],
+        "meaningZh": "鑰匙；鍵；解答；關鍵",
+        "meaningEn": "(n.) a small piece of shaped metal used to open or lock a door; (adj.) very important and necessary for something to happen or succeed",
+        "usagePattern": "the key to N; key + N (key role/factor)",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "key",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "通往某物的關鍵；關鍵 + 名詞（關鍵角色/因素）"
+      },
+      "after": {
+        "wordId": "W000451",
+        "word": "key",
+        "wordVariants": [
+          "key"
+        ],
+        "level": "LV1",
+        "pos": "adj./n./v.",
+        "posAll": [
+          "adj.",
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（名詞）鑰匙；關鍵；答案；（形容詞）關鍵的",
+        "meaningEn": "(n.) a small piece of shaped metal used to open or lock a door; (adj.) very important and necessary for something to happen or succeed",
+        "usagePattern": "the key to N; key + N (key role/factor)",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "key",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "……的關鍵；關鍵因素；鑰匙圈"
+      },
+      "reason": "Restore the already formal adjective visible in the complete examples; original verb sense coverage remains limited, without inventing a new example.",
+      "evidence": "https://www.merriam-webster.com/dictionary/key"
+    },
+    {
+      "dataset": "words",
+      "id": "W001852",
+      "before": {
+        "wordId": "W001852",
+        "word": "stranger",
+        "wordVariants": [
+          "stranger"
+        ],
+        "level": "LV2",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "陌生人；門外漢；局外人；非當事人",
+        "meaningEn": "anyone who does not belong in the environment in which they are found; an individual that one is not acquainted with",
+        "usagePattern": "a/the stranger; stranger of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "stranger",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "陌生人；對……陌生的人"
+      },
+      "after": {
+        "wordId": "W001852",
+        "word": "stranger",
+        "wordVariants": [
+          "stranger"
+        ],
+        "level": "LV2",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "陌生人；門外漢；局外人；非當事人",
+        "meaningEn": "anyone who does not belong in the environment in which they are found; an individual that one is not acquainted with",
+        "usagePattern": "a stranger; talk to a stranger; be no stranger to N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "stranger",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "陌生人；與陌生人交談；對……並不陌生"
+      },
+      "reason": "Replace unhelpful stranger-of-N template with ordinary constructions.",
+      "evidence": "https://www.merriam-webster.com/dictionary/stranger"
+    },
+    {
+      "dataset": "words",
+      "id": "W004579",
+      "before": {
+        "wordId": "W004579",
+        "word": "notify",
+        "wordVariants": [
+          "notify"
+        ],
+        "level": "LV5",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "通知；通告；報告",
+        "meaningEn": "inform (somebody) of something",
+        "usagePattern": "notify + N; notify to V",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "notify",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "通知某人；通知以進行……"
+      },
+      "after": {
+        "wordId": "W004579",
+        "word": "notify",
+        "wordVariants": [
+          "notify"
+        ],
+        "level": "LV5",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "通知；通告；報告",
+        "meaningEn": "inform (somebody) of something",
+        "usagePattern": "notify sb of/about N; notify sb that + clause",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "notify",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "通知某人某事；通知某人……"
+      },
+      "reason": "Collins directly lists V n of/about and V n that. A recipient-free notify to V template is misleading.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/notify (direct definition and pattern read)"
+    },
+    {
+      "dataset": "words",
+      "id": "W000509",
+      "before": {
+        "wordId": "W000509",
+        "word": "low",
+        "wordVariants": [
+          "low"
+        ],
+        "level": "LV1",
+        "pos": "adj./adv./n.",
+        "posAll": [
+          "adj.",
+          "adv.",
+          "n."
+        ],
+        "meaningZh": "低點；低價；低；牛叫聲",
+        "meaningEn": "(adj.) not high or tall; below average in amount, degree, or intensity; (n.) a low point or level",
+        "usagePattern": "low price/level/temperature; be low on N; a new low",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "low",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "低價格/水準/溫度；名詞不足；一個新的低點"
+      },
+      "after": {
+        "wordId": "W000509",
+        "word": "low",
+        "wordVariants": [
+          "low"
+        ],
+        "level": "LV1",
+        "pos": "adj./adv./n.",
+        "posAll": [
+          "adj.",
+          "adv.",
+          "n."
+        ],
+        "meaningZh": "（形容詞）低的；小聲的；低落的；（副詞）低低地；（名詞）低點；低價；（另一同形詞）牛叫聲；牛哞叫",
+        "meaningEn": "(adj.) not high in position, level, amount or pitch; quiet or depressed. (adv.) at or to a low position or level. (n.) a low point or level. (Separate homograph, n./v.) the deep call of cattle; to make that call.",
+        "usagePattern": "low price/level/temperature; be low on N; a new low",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "low",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "低價格/水準/溫度；名詞不足；一個新的低點"
+      },
+      "reason": "Restore actual bent-low adverb and separate the genuine cattle-call homograph from low-level senses; keep every existing POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/low"
+    },
+    {
+      "dataset": "words",
+      "id": "W000538",
+      "before": {
+        "wordId": "W000538",
+        "word": "middle",
+        "wordVariants": [
+          "middle"
+        ],
+        "level": "LV1",
+        "pos": "adj./n.",
+        "posAll": [
+          "adj.",
+          "n."
+        ],
+        "meaningZh": "中央；中間；腰部；中央的",
+        "meaningEn": "the part of something that is furthest from its edges, ends, or outer surface; being in this central position",
+        "usagePattern": "in the middle of sth.; a middle school/name",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "middle",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "在某事物的中間；中學/名字"
+      },
+      "after": {
+        "wordId": "W000538",
+        "word": "middle",
+        "wordVariants": [
+          "middle"
+        ],
+        "level": "LV1",
+        "pos": "adj./n.",
+        "posAll": [
+          "adj.",
+          "n."
+        ],
+        "meaningZh": "中央；中間；腰部；中央的",
+        "meaningEn": "the part of something that is furthest from its edges, ends, or outer surface; being in this central position",
+        "usagePattern": "in the middle of sth.; a middle school/name",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "middle",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "在……中間；中學／中間名"
+      },
+      "reason": "Middle name is not just any name; distinguish the two constructions.",
+      "evidence": "https://www.merriam-webster.com/dictionary/middle"
+    },
+    {
+      "dataset": "words",
+      "id": "W000623",
+      "before": {
+        "wordId": "W000623",
+        "word": "pair",
+        "wordVariants": [
+          "pair"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "一雙；一對；一副；(使)成對",
+        "meaningEn": "two things of the same kind that are used together or considered as a unit; two people who work, play, or are seen together",
+        "usagePattern": "a pair of N (shoes/gloves/scissors); in pairs",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "pair",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "一雙名詞（鞋/手套/剪刀）；成對地"
+      },
+      "after": {
+        "wordId": "W000623",
+        "word": "pair",
+        "wordVariants": [
+          "pair"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "（名詞）一對；一雙；一副；成對物品；（另列動詞用法）配對；使成對",
+        "meaningEn": "two things of the same kind that are used together or considered as a unit; two people who work, play, or are seen together",
+        "usagePattern": "a pair of N (shoes/gloves/scissors); in pairs",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "pair",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "一雙鞋／一副手套／一把剪刀；成對地；配對"
+      },
+      "reason": "Keep genuine pair verb separately from formal n.; use the Chinese measure appropriate to each actual object.",
+      "evidence": "https://www.merriam-webster.com/dictionary/pair"
+    },
+    {
+      "dataset": "words",
+      "id": "W000847",
+      "before": {
+        "wordId": "W000847",
+        "word": "surprised",
+        "wordVariants": [
+          "surprised"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "感到驚訝的",
+        "meaningEn": "feeling or showing surprise because something unexpected has happened",
+        "usagePattern": "be surprised at/by N; surprised to V; surprised that S+V",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "surprised",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "對……感到驚訝；驚訝於做……；驚訝某人做……"
+      },
+      "after": {
+        "wordId": "W000847",
+        "word": "surprised",
+        "wordVariants": [
+          "surprised"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "感到驚訝的",
+        "meaningEn": "feeling or showing surprise because something unexpected has happened",
+        "usagePattern": "be surprised at/by N; surprised to V; surprised that S+V",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "surprised",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "對……感到驚訝；驚訝於竟然做……；對……感到驚訝（that 子句）"
+      },
+      "reason": "Explain the constructions rather than literal clause tokens.",
+      "evidence": "https://www.merriam-webster.com/dictionary/surprised"
+    },
+    {
+      "dataset": "words",
+      "id": "W004253",
+      "before": {
+        "wordId": "W004253",
+        "word": "crucial",
+        "wordVariants": [
+          "crucial"
+        ],
+        "level": "LV5",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "決定性的；重要的；嚴厲的；十字形的",
+        "meaningEn": "extremely important, especially because it affects the result of something; having a powerful effect on future events",
+        "usagePattern": "crucial to/for N; play a crucial role; a crucial moment",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "crucial",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "對……至關重要的；扮演關鍵角色；關鍵時刻"
+      },
+      "after": {
+        "wordId": "W004253",
+        "word": "crucial",
+        "wordVariants": [
+          "crucial"
+        ],
+        "level": "LV5",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "極重要的；關鍵的；（另有義項）嚴峻的、艱難的；（醫學等）十字形的",
+        "meaningEn": "extremely important, especially because it affects the result of something; having a powerful effect on future events",
+        "usagePattern": "crucial to/for N; play a crucial role; a crucial moment",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "crucial",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "對……至關重要的；扮演關鍵角色；關鍵時刻"
+      },
+      "reason": "Direct Collins American definitions preserve severe/trying and cross-shaped. Clarify rather than delete these genuine less-common senses.",
+      "evidence": "https://www.collinsdictionary.com/us/dictionary/english/crucial (direct definition lines 270–313 read)"
+    },
+    {
+      "dataset": "words",
+      "id": "W001788",
+      "before": {
+        "wordId": "W001788",
+        "word": "shock",
+        "wordVariants": [
+          "shock"
+        ],
+        "level": "LV2",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "震動；衝突；震驚；衝擊",
+        "meaningEn": "(n.) a sudden strong feeling of surprise or distress caused by something unexpected; (v.) to cause someone to feel this way",
+        "usagePattern": "come as a shock; in shock; be shocked at/by + N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "shock",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "令人震驚；處於震驚狀態；對某物感到震驚"
+      },
+      "after": {
+        "wordId": "W001788",
+        "word": "shock",
+        "wordVariants": [
+          "shock"
+        ],
+        "level": "LV2",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（名詞）震驚；震動；衝擊；（動詞）使震驚；使震動",
+        "meaningEn": "(n.) a sudden strong feeling of surprise or distress caused by something unexpected; (v.) to cause someone to feel this way",
+        "usagePattern": "come as a shock; in shock; be shocked at/by + N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "shock",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "令人震驚；處於震驚狀態；對某物感到震驚"
+      },
+      "reason": "Restore the existing emotional verb, separate from the come-as-a-shock noun.",
+      "evidence": "https://www.merriam-webster.com/dictionary/shock"
+    },
+    {
+      "dataset": "words",
+      "id": "W000690",
+      "before": {
+        "wordId": "W000690",
+        "word": "quiet",
+        "wordVariants": [
+          "quiet"
+        ],
+        "level": "LV1",
+        "pos": "adj./n./v.",
+        "posAll": [
+          "adj.",
+          "n.",
+          "v."
+        ],
+        "meaningZh": "安靜；閒適；平靜；安靜的",
+        "meaningEn": "making very little noise; free from disturbance, noise, or turmoil; the state of being calm and silent",
+        "usagePattern": "be quiet; keep quiet; the quiet of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "quiet",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "保持安靜；保持沉默；某名詞的寧靜"
+      },
+      "after": {
+        "wordId": "W000690",
+        "word": "quiet",
+        "wordVariants": [
+          "quiet"
+        ],
+        "level": "LV1",
+        "pos": "adj./n./v.",
+        "posAll": [
+          "adj.",
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（形容詞）安靜的；平靜的；（名詞）安靜；寧靜；（動詞）使安靜；平息",
+        "meaningEn": "(adj.) making little noise; calm or peaceful. (n.) an absence of noise or disturbance; peace. (v.) to make or become calm or quiet.",
+        "usagePattern": "be quiet; keep quiet; the quiet of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "quiet",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "保持安靜；保持沉默；某名詞的寧靜"
+      },
+      "reason": "The enjoy-the-quiet example uses the existing noun; restore the already formal verb category, keeping adjective and noun.",
+      "evidence": "https://www.merriam-webster.com/dictionary/quiet"
+    },
+    {
+      "dataset": "words",
+      "id": "W000197",
+      "before": {
+        "wordId": "W000197",
+        "word": "count",
+        "wordVariants": [
+          "count"
+        ],
+        "level": "LV1",
+        "pos": "v./n.",
+        "posAll": [
+          "v.",
+          "n."
+        ],
+        "meaningZh": "計算；視爲；計數；合計",
+        "meaningEn": "to determine the total number of something by adding items one by one; to have significance or value; the total number obtained by counting",
+        "usagePattern": "count on N; count to N; lose count",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "count",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "依賴名詞；數到名詞；數不清"
+      },
+      "after": {
+        "wordId": "W000197",
+        "word": "count",
+        "wordVariants": [
+          "count"
+        ],
+        "level": "LV1",
+        "pos": "v./n.",
+        "posAll": [
+          "v.",
+          "n."
+        ],
+        "meaningZh": "計算；視爲；計數；合計",
+        "meaningEn": "to determine the total number of something by adding items one by one; to have significance or value; the total number obtained by counting",
+        "usagePattern": "count to a number; count on sb/sth; lose count",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "count",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "數到某個數字；依靠／指望某人或某事；忘記數到哪裡／數不清"
+      },
+      "reason": "Count to names a target number, and count on means rely on, not a generic noun placeholder.",
+      "evidence": "https://www.merriam-webster.com/dictionary/count"
+    },
+    {
+      "dataset": "words",
+      "id": "W000238",
+      "before": {
+        "wordId": "W000238",
+        "word": "dozen",
+        "wordVariants": [
+          "dozen"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "打；十二個；一打的",
+        "meaningEn": "a group of twelve of the same thing; (informal, plural) a large number of something",
+        "usagePattern": "a dozen + N; dozens of + N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "dozen",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "一打 + 名詞；好幾打 + 名詞"
+      },
+      "after": {
+        "wordId": "W000238",
+        "word": "dozen",
+        "wordVariants": [
+          "dozen"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "打；十二個；一打的",
+        "meaningEn": "a group of twelve of the same thing; (informal, plural) a large number of something",
+        "usagePattern": "a dozen + N; dozens of + N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "dozen",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "一打（十二個）……；數十個／許多……（dozens of）"
+      },
+      "reason": "Dozens of can express many tens, not necessarily a literal handful of dozens.",
+      "evidence": "https://www.merriam-webster.com/dictionary/dozen"
+    },
+    {
+      "dataset": "words",
+      "id": "W000177",
+      "before": {
+        "wordId": "W000177",
+        "word": "cloud",
+        "wordVariants": [
+          "cloud"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "雲；陰暗；煙霧；疑團",
+        "meaningEn": "a visible mass of tiny water droplets or ice crystals floating in the sky; a mass of smoke, dust, or gas that looks like a cloud",
+        "usagePattern": "a cloud of + N (dust/smoke); dark/white clouds",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "cloud",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "一團 + 名詞（灰塵/煙霧）；黑雲/白雲"
+      },
+      "after": {
+        "wordId": "W000177",
+        "word": "cloud",
+        "wordVariants": [
+          "cloud"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "雲；陰暗；煙霧；疑團",
+        "meaningEn": "a visible mass of tiny water droplets or ice crystals floating in the sky; a mass of smoke, dust, or gas that looks like a cloud",
+        "usagePattern": "a cloud of + N (dust/smoke); dark/white clouds",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "cloud",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "一片雲；一片塵霧"
+      },
+      "reason": "Translate countable clouds and dust cloud without arbitrary noun tokens.",
+      "evidence": "https://www.merriam-webster.com/dictionary/cloud"
+    },
+    {
+      "dataset": "words",
+      "id": "W002197",
+      "before": {
+        "wordId": "W002197",
+        "word": "countable",
+        "wordVariants": [
+          "countable"
+        ],
+        "level": "LV3",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "能算的；可計算的；可數的東西；可數名詞",
+        "meaningEn": "able to be counted; (grammar) able to be used in both singular and plural forms",
+        "usagePattern": "a countable noun; countable and uncountable nouns",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "countable",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "可數名詞；可數與不可數名詞"
+      },
+      "after": {
+        "wordId": "W002197",
+        "word": "countable",
+        "wordVariants": [
+          "countable"
+        ],
+        "level": "LV3",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "（形容詞）可數的；能計數的；（原摘要另列名詞用法，來源待核）可數的東西；可數名詞",
+        "meaningEn": "able to be counted; (grammar) able to be used in both singular and plural forms",
+        "usagePattern": "a countable noun; countable and uncountable nouns",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "countable",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "可數名詞；可數與不可數名詞"
+      },
+      "reason": "Direct MW supports adjective countability, not the old noun-summary certification. Preserve the unverified fragments clearly separate rather than delete or expand headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/countable (direct adjective definition read)"
+    },
+    {
+      "dataset": "words",
+      "id": "W000361",
+      "before": {
+        "wordId": "W000361",
+        "word": "gray",
+        "wordVariants": [
+          "gray"
+        ],
+        "level": "LV1",
+        "pos": "adj./n./v.",
+        "posAll": [
+          "adj.",
+          "n.",
+          "v."
+        ],
+        "meaningZh": "灰色；暗淡；灰色的；灰白的",
+        "meaningEn": "a neutral achromatic color midway between white and black; the SI unit of energy absorbed from ionizing radiation; equal to the absorption of one joule of radiation energy by one kilogram of matte...",
+        "usagePattern": "gray hair; turn gray; a gray sky",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "gray",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "灰白頭髮；變灰／變白；灰濛濛的天空"
+      },
+      "after": {
+        "wordId": "W000361",
+        "word": "gray",
+        "wordVariants": [
+          "gray"
+        ],
+        "level": "LV1",
+        "pos": "adj./n./v.",
+        "posAll": [
+          "adj.",
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（形容詞）灰色的；灰暗的；（名詞）灰色；（動詞）使變灰；變灰；（單位名詞 gray，Gy）戈雷：每公斤物質吸收一焦耳輻射能量的吸收劑量",
+        "meaningEn": "(adj.) having a color between black and white; dull or gloomy. (n.) that color; also the absorbed-dose unit gray (Gy), equal to one joule per kilogram of irradiated material. (v.) to become or make gray.",
+        "usagePattern": "gray hair; a gray sky; turn gray",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "gray",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "灰白的頭髮；灰暗的天空；變灰"
+      },
+      "reason": "The old English is truncated at matte... and omits adjective/verb. Direct MW explicitly records all three categories and genuine absorbed-dose unit; restore full material wording, do not remove the unit as pollution.",
+      "evidence": "https://www.merriam-webster.com/dictionary/gray (direct four sections including noun 2 and verb read)"
+    },
+    {
+      "dataset": "words",
+      "id": "W005517",
+      "before": {
+        "wordId": "W005517",
+        "word": "lighten",
+        "wordVariants": [
+          "lighten"
+        ],
+        "level": "LV6",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "照亮；點亮；減輕；使輕鬆",
+        "meaningEn": "make more cheerful; reduce the weight on; make lighter",
+        "usagePattern": "lighten + N; lighten to V",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "lighten",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "照亮……；照亮以去做……"
+      },
+      "after": {
+        "wordId": "W005517",
+        "word": "lighten",
+        "wordVariants": [
+          "lighten"
+        ],
+        "level": "LV6",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "照亮；點亮；減輕；使輕鬆",
+        "meaningEn": "make more cheerful; reduce the weight on; make lighter",
+        "usagePattern": "lighten a room; lighten the load; lighten the mood",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "lighten",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "使房間變亮；減輕負擔；使氣氛輕鬆"
+      },
+      "reason": "Use three existing light/weight/mood senses rather than a bare lighten-to-V valency template.",
+      "evidence": "https://www.merriam-webster.com/dictionary/lighten"
+    },
+    {
+      "dataset": "words",
+      "id": "W000969",
+      "before": {
+        "wordId": "W000969",
+        "word": "white",
+        "wordVariants": [
+          "white"
+        ],
+        "level": "LV2",
+        "pos": "adj./n.",
+        "posAll": [
+          "adj.",
+          "n."
+        ],
+        "meaningZh": "白色；潔白；眼白；白種人",
+        "meaningEn": "having the color of fresh snow or milk; very pale, especially from shock, fear, or illness",
+        "usagePattern": "turn/go white; a white + N (shirt/wall); dressed in white",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "white",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "變白／臉色發白；一件白襯衫／一面白牆；身穿白衣"
+      },
+      "after": {
+        "wordId": "W000969",
+        "word": "white",
+        "wordVariants": [
+          "white"
+        ],
+        "level": "LV2",
+        "pos": "adj./n.",
+        "posAll": [
+          "adj.",
+          "n."
+        ],
+        "meaningZh": "（形容詞）白色的；蒼白的；（名詞）白色；潔白；眼白；（指人）白人",
+        "meaningEn": "having the color of fresh snow or milk; very pale, especially from shock, fear, or illness",
+        "usagePattern": "turn/go white; a white + N (shirt/wall); dressed in white",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "white",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "變白／臉色發白；一件白襯衫／一面白牆；身穿白衣"
+      },
+      "reason": "Restore the actual white-shirt and turned-white adjectives while retaining genuine noun senses with categories.",
+      "evidence": "https://www.merriam-webster.com/dictionary/white"
+    },
+    {
+      "dataset": "words",
+      "id": "W001610",
+      "before": {
+        "wordId": "W001610",
+        "word": "pale",
+        "wordVariants": [
+          "pale"
+        ],
+        "level": "LV2",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "柵欄；界線；範圍；蒼白的",
+        "meaningEn": "(of a face) having little color, often from illness or fear; (of a color) light",
+        "usagePattern": "turn/go pale; look pale; a pale blue/pink; pale with fear",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "pale",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "變蒼白；看起來蒼白；淡藍色／淡粉紅色；因害怕而面色蒼白"
+      },
+      "after": {
+        "wordId": "W001610",
+        "word": "pale",
+        "wordVariants": [
+          "pale"
+        ],
+        "level": "LV2",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "（形容詞）蒼白的；淡色的；（另列同形名詞）柵欄；界線；範圍",
+        "meaningEn": "(of a face) having little color, often from illness or fear; (of a color) light",
+        "usagePattern": "turn/go pale; look pale; a pale blue/pink; pale with fear",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "pale",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "變蒼白；看起來蒼白；淡藍色／淡粉紅色；因害怕而面色蒼白"
+      },
+      "reason": "Keep the genuine fence/boundary homograph separate from the formal facial-color adjective, rather than deleting it.",
+      "evidence": "https://www.merriam-webster.com/dictionary/pale"
+    },
+    {
+      "dataset": "words",
+      "id": "W000461",
+      "before": {
+        "wordId": "W000461",
+        "word": "knife",
+        "wordVariants": [
+          "knife"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "小刀；匕首；切割；傷害",
+        "meaningEn": "edge tool used as a cutting instrument; has a pointed blade with a sharp edge and a handle; a weapon with a handle and blade with a sharp point",
+        "usagePattern": "cut N with a knife; a knife and fork",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "knife",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "用刀切……；刀叉"
+      },
+      "after": {
+        "wordId": "W000461",
+        "word": "knife",
+        "wordVariants": [
+          "knife"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "小刀；匕首；切割；傷害",
+        "meaningEn": "(n.) a cutting tool or weapon with a blade and handle. (v.) to cut or stab with a knife; figuratively, to harm or betray.",
+        "usagePattern": "cut N with a knife; a knife and fork",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "knife",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "用刀切……；刀叉"
+      },
+      "reason": "Restore the already formal verb alongside the cutting-instrument noun.",
+      "evidence": "https://www.merriam-webster.com/dictionary/knife"
+    },
+    {
+      "dataset": "words",
+      "id": "W000771",
+      "before": {
+        "wordId": "W000771",
+        "word": "shout",
+        "wordVariants": [
+          "shout"
+        ],
+        "level": "LV1",
+        "pos": "v./n.",
+        "posAll": [
+          "v.",
+          "n."
+        ],
+        "meaningZh": "呼喊；喊聲；喊叫；嚷",
+        "meaningEn": "to say something in a loud voice, especially because you are excited, angry, or trying to be heard from far away",
+        "usagePattern": "shout at N; shout for help",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "shout",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "對某名詞喊；呼救"
+      },
+      "after": {
+        "wordId": "W000771",
+        "word": "shout",
+        "wordVariants": [
+          "shout"
+        ],
+        "level": "LV1",
+        "pos": "v./n.",
+        "posAll": [
+          "v.",
+          "n."
+        ],
+        "meaningZh": "呼喊；喊聲；喊叫；嚷",
+        "meaningEn": "to say something in a loud voice, especially because you are excited, angry, or trying to be heard from far away",
+        "usagePattern": "shout at N; shout for help",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "shout",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "對某人大喊；呼救"
+      },
+      "reason": "Shout at identifies an addressee, not a Chinese grammatical token.",
+      "evidence": "https://www.merriam-webster.com/dictionary/shout"
+    },
+    {
+      "dataset": "words",
+      "id": "W001082",
+      "before": {
+        "wordId": "W001082",
+        "word": "beauty",
+        "wordVariants": [
+          "beauty"
+        ],
+        "level": "LV2",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "美；美人",
+        "meaningEn": "the quality of being very pleasant to look at; a person or thing that is very beautiful",
+        "usagePattern": "the beauty of N (nature/life); a natural beauty",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "beauty",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "……（大自然／生活）之美；自然美景"
+      },
+      "after": {
+        "wordId": "W001082",
+        "word": "beauty",
+        "wordVariants": [
+          "beauty"
+        ],
+        "level": "LV2",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "美；美人",
+        "meaningEn": "the quality of being very pleasant to look at; a person or thing that is very beautiful",
+        "usagePattern": "the beauty of N (nature/life); a natural beauty",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "beauty",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "……（大自然／生活）之美；天生麗質的人／天然美景"
+      },
+      "reason": "A natural beauty can describe a person as well as natural beauty; retain both rather than assert one exclusive referent.",
+      "evidence": "https://www.merriam-webster.com/dictionary/beauty"
+    },
+    {
+      "dataset": "words",
+      "id": "W005090",
+      "before": {
+        "wordId": "W005090",
+        "word": "beautify",
+        "wordVariants": [
+          "beautify"
+        ],
+        "level": "LV6",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "美化；變美；修飾",
+        "meaningEn": "make more beautiful; be beautiful to look at",
+        "usagePattern": "beautify + N; beautify to V",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "beautify",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "美化某物；美化去做某事"
+      },
+      "after": {
+        "wordId": "W005090",
+        "word": "beautify",
+        "wordVariants": [
+          "beautify"
+        ],
+        "level": "LV6",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "美化；變美；修飾",
+        "meaningEn": "make more beautiful; be beautiful to look at",
+        "usagePattern": "beautify a garden; beautify the school entrance",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "beautify",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "美化花園；美化學校入口"
+      },
+      "reason": "Use actual object-taking constructions rather than teach beautify-to-V as a standard complement.",
+      "evidence": "https://www.merriam-webster.com/dictionary/beautify"
+    },
+    {
+      "dataset": "words",
+      "id": "W000691",
+      "before": {
+        "wordId": "W000691",
+        "word": "quite",
+        "wordVariants": [
+          "quite"
+        ],
+        "level": "LV1",
+        "pos": "adv.",
+        "posAll": [
+          "adv."
+        ],
+        "meaningZh": "相當；完全；十分",
+        "meaningEn": "to a fairly large degree, used before an adjective or adverb to make it stronger",
+        "usagePattern": "quite + adjective/adverb; quite a/an + singular noun",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "quite",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "相當／很 + 形容詞或副詞；quite a/an + 單數名詞（強調程度或不尋常）"
+      },
+      "after": {
+        "wordId": "W000691",
+        "word": "quite",
+        "wordVariants": [
+          "quite"
+        ],
+        "level": "LV1",
+        "pos": "adv.",
+        "posAll": [
+          "adv."
+        ],
+        "meaningZh": "相當；完全；十分",
+        "meaningEn": "to a fairly large degree; also, completely or entirely, depending on the adjective and context.",
+        "usagePattern": "quite + adjective/adverb; quite a/an + singular noun",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "quite",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "相當／很 + 形容詞或副詞；quite a/an + 單數名詞（強調程度或不尋常）"
+      },
+      "reason": "Preserve the complete-degree sense already present in Chinese instead of defining every quite as just moderately.",
+      "evidence": "https://www.merriam-webster.com/dictionary/quite"
+    },
+    {
+      "dataset": "words",
+      "id": "W000948",
+      "before": {
+        "wordId": "W000948",
+        "word": "warm",
+        "wordVariants": [
+          "warm"
+        ],
+        "level": "LV2",
+        "pos": "adj./v.",
+        "posAll": [
+          "adj.",
+          "v."
+        ],
+        "meaningZh": "暖和的；暖的；溫暖的；熱烈的",
+        "meaningEn": "(adj.) having a pleasant temperature that is not too hot and not too cold; (v.) to make something warm or become warm",
+        "usagePattern": "warm + N; warm up; feel warm",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "warm",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "溫暖的……；暖和起來／暖身；感到溫暖"
+      },
+      "after": {
+        "wordId": "W000948",
+        "word": "warm",
+        "wordVariants": [
+          "warm"
+        ],
+        "level": "LV2",
+        "pos": "adj./v.",
+        "posAll": [
+          "adj.",
+          "v."
+        ],
+        "meaningZh": "（形容詞）暖和的；溫暖的；熱烈的；（動詞）使變暖；加熱",
+        "meaningEn": "(adj.) having a pleasant temperature that is not too hot and not too cold; (v.) to make something warm or become warm",
+        "usagePattern": "warm + N; warm up; feel warm",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "warm",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "溫暖的……；使暖和／暖身／加熱（warm up）；感到溫暖"
+      },
+      "reason": "Restore the actual warm-up-leftovers imperative verb and distinguish it from the warm-soup adjective.",
+      "evidence": "https://www.merriam-webster.com/dictionary/warm"
+    },
+    {
+      "dataset": "words",
+      "id": "W000191",
+      "before": {
+        "wordId": "W000191",
+        "word": "cool",
+        "wordVariants": [
+          "cool"
+        ],
+        "level": "LV1",
+        "pos": "adj./v./n.",
+        "posAll": [
+          "adj.",
+          "v.",
+          "n."
+        ],
+        "meaningZh": "涼爽；涼爽的空氣；涼爽的；冷淡的",
+        "meaningEn": "slightly cold, in a pleasant way; (informal) fashionable or impressive",
+        "usagePattern": "cool + N (weather/idea); cool down; sound/look cool",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "cool",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "酷 + 名詞（天氣/想法）；冷卻；聽起來/看起來很酷"
+      },
+      "after": {
+        "wordId": "W000191",
+        "word": "cool",
+        "wordVariants": [
+          "cool"
+        ],
+        "level": "LV1",
+        "pos": "adj./v./n.",
+        "posAll": [
+          "adj.",
+          "v.",
+          "n."
+        ],
+        "meaningZh": "（形容詞）涼爽的；冷淡的；冷靜的；（口語）酷的；（動詞）使冷卻；冷靜下來；（名詞）涼爽；涼爽的空氣；冷靜",
+        "meaningEn": "(adj.) pleasantly rather cold; calm or unfriendly; informally, fashionable or impressive. (v.) to make or become less hot; to calm down. (n.) coolness or calm self-control.",
+        "usagePattern": "cool + N (weather/idea); cool down; sound/look cool",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "cool",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "涼爽的天氣／很棒的想法；冷卻／冷靜下來；聽起來／看起來很酷"
+      },
+      "reason": "Restore all already formal categories; cool weather is not generically translated as 酷天氣.",
+      "evidence": "https://www.merriam-webster.com/dictionary/cool"
+    },
+    {
+      "dataset": "words",
+      "id": "W000247",
+      "before": {
+        "wordId": "W000247",
+        "word": "dry",
+        "wordVariants": [
+          "dry"
+        ],
+        "level": "LV1",
+        "pos": "adj./v.",
+        "posAll": [
+          "adj.",
+          "v."
+        ],
+        "meaningZh": "乾的；無酒的；枯燥無味的；乾燥的",
+        "meaningEn": "(adj.) having little or no water or moisture; not interesting or entertaining; (v.) to become dry, or to make something dry by removing water from it",
+        "usagePattern": "dry weather; dry skin; dry the dishes/clothes",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "dry",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "乾燥的天氣；乾燥的皮膚；擦乾餐具/衣物"
+      },
+      "after": {
+        "wordId": "W000247",
+        "word": "dry",
+        "wordVariants": [
+          "dry"
+        ],
+        "level": "LV1",
+        "pos": "adj./v.",
+        "posAll": [
+          "adj.",
+          "v."
+        ],
+        "meaningZh": "（形容詞）乾的；乾燥的；無酒的；枯燥無味的；（動詞）使乾燥；晾乾；擦乾",
+        "meaningEn": "(adj.) having little or no water or moisture; not interesting or entertaining; (v.) to become dry, or to make something dry by removing water from it",
+        "usagePattern": "dry weather; dry skin; dry the dishes/clothes",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "dry",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "乾燥的天氣；乾燥的皮膚；擦乾餐具/衣物"
+      },
+      "reason": "The towels-to-dry clause is a verb and is already explained correctly in English but missing from Chinese.",
+      "evidence": "https://www.merriam-webster.com/dictionary/dry"
+    },
+    {
+      "dataset": "words",
+      "id": "W000855",
+      "before": {
+        "wordId": "W000855",
+        "word": "taste",
+        "wordVariants": [
+          "taste"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "味道；品味；味覺；感受",
+        "meaningEn": "(n.) the flavor of something perceived in the mouth; (n.) the ability to judge what is good or beautiful; (v.) to have a particular flavor",
+        "usagePattern": "taste + adj.; have good/bad taste in N; taste of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "taste",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "味道 + 形容詞；在名詞方面有好/壞品味；名詞的味道"
+      },
+      "after": {
+        "wordId": "W000855",
+        "word": "taste",
+        "wordVariants": [
+          "taste"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（名詞）味道；品味；味覺；感受；口味；喜好；（動詞）嚐；嚐起來",
+        "meaningEn": "(n.) the flavor of something perceived in the mouth; (n.) the ability to judge what is good or beautiful; (v.) to have a particular flavor",
+        "usagePattern": "taste + adj.; have good/bad taste in N; taste of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "taste",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "嚐起來……（接形容詞）；對……有好／壞品味；有……的味道"
+      },
+      "reason": "Distinguish the tastes-better linking verb from music judgment and preference nouns.",
+      "evidence": "https://www.merriam-webster.com/dictionary/taste"
+    },
+    {
+      "dataset": "words",
+      "id": "W001125",
+      "before": {
+        "wordId": "W001125",
+        "word": "calm",
+        "wordVariants": [
+          "calm"
+        ],
+        "level": "LV2",
+        "pos": "v./adj./n",
+        "posAll": [
+          "v.",
+          "adj.",
+          "n"
+        ],
+        "meaningZh": "平穩；風平浪靜；平靜的；冷靜的",
+        "meaningEn": "make calm or still; become quiet or calm, especially after a state of agitation",
+        "usagePattern": "calm + N; calm to V; a/the calm",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "calm",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "使……平靜；平靜地做……；一片平靜"
+      },
+      "after": {
+        "wordId": "W001125",
+        "word": "calm",
+        "wordVariants": [
+          "calm"
+        ],
+        "level": "LV2",
+        "pos": "v./adj./n",
+        "posAll": [
+          "v.",
+          "adj.",
+          "n"
+        ],
+        "meaningZh": "（形容詞）平靜的；冷靜的；（名詞）平靜；風平浪靜；（動詞）使平靜；鎮定下來",
+        "meaningEn": "(adj.) peaceful and not anxious or excited. (n.) a peaceful state or absence of wind. (v.) to make or become peaceful and less upset.",
+        "usagePattern": "remain calm; calm sb down; a period of calm",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "calm",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "保持冷靜；使某人冷靜下來；一段平靜的時期"
+      },
+      "reason": "Restore the actual remain-calm adjective and noun beside old verbs; remove false calm-to-V = calmly-do pattern.",
+      "evidence": "https://www.merriam-webster.com/dictionary/calm"
+    },
+    {
+      "dataset": "words",
+      "id": "W001283",
+      "before": {
+        "wordId": "W001283",
+        "word": "dryer",
+        "wordVariants": [
+          "dryer"
+        ],
+        "level": "LV2",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "乾衣機；乾燥劑；催幹劑；乾燥器",
+        "meaningEn": "an appliance that removes moisture",
+        "usagePattern": "a/the dryer; dryer of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "dryer",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "一台烘乾機；……的烘乾機"
+      },
+      "after": {
+        "wordId": "W001283",
+        "word": "dryer",
+        "wordVariants": [
+          "dryer"
+        ],
+        "level": "LV2",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "乾衣機；乾燥劑；催幹劑；乾燥器",
+        "meaningEn": "an appliance that removes moisture",
+        "usagePattern": "a clothes dryer; put clothes in the dryer; a hair dryer",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "dryer",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "烘衣機；把衣物放進烘衣機；吹風機"
+      },
+      "reason": "Use concrete ordinary noun constructions, preserving the old chemical drying-agent meanings pending precise mapping.",
+      "evidence": "https://www.merriam-webster.com/dictionary/dryer"
+    },
+    {
+      "dataset": "words",
+      "id": "W000962",
+      "before": {
+        "wordId": "W000962",
+        "word": "wet",
+        "wordVariants": [
+          "wet"
+        ],
+        "level": "LV2",
+        "pos": "adj./v.",
+        "posAll": [
+          "adj.",
+          "v."
+        ],
+        "meaningZh": "溼氣；潮溼；水分；雨天",
+        "meaningEn": "(adj.) covered with or full of water or liquid (v.) to make something wet",
+        "usagePattern": "get wet; wet weather/clothes; soaking wet",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "wet",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "弄濕；潮濕的天氣／濕衣服；濕透了"
+      },
+      "after": {
+        "wordId": "W000962",
+        "word": "wet",
+        "wordVariants": [
+          "wet"
+        ],
+        "level": "LV2",
+        "pos": "adj./v.",
+        "posAll": [
+          "adj.",
+          "v."
+        ],
+        "meaningZh": "（形容詞）濕的；潮濕的；（動詞）使濕；弄濕；（另列名詞用法）濕氣；潮濕；水分；雨天",
+        "meaningEn": "(adj.) covered with or full of water or liquid (v.) to make something wet",
+        "usagePattern": "get wet; wet weather/clothes; soaking wet",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "wet",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "弄濕；潮濕的天氣／濕衣服；濕透了"
+      },
+      "reason": "Old Chinese contained only noun glosses despite formal adj./v. and correct English; restore actual wet-clothes and streets adjectives without deleting genuine noun usage.",
+      "evidence": "https://www.merriam-webster.com/dictionary/wet"
+    },
+    {
+      "dataset": "words",
+      "id": "W000350",
+      "before": {
+        "wordId": "W000350",
+        "word": "glass",
+        "wordVariants": [
+          "glass"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "玻璃；玻璃杯；透鏡；裝玻璃於",
+        "meaningEn": "a hard transparent material used to make things such as windows and bottles; a container made of this material, used for drinking",
+        "usagePattern": "a glass of + N; wear glasses",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "glass",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "一杯 + 名詞；戴眼鏡"
+      },
+      "after": {
+        "wordId": "W000350",
+        "word": "glass",
+        "wordVariants": [
+          "glass"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "（名詞）玻璃；玻璃杯；透鏡；（另列動詞用法）裝玻璃於",
+        "meaningEn": "a hard transparent material used to make things such as windows and bottles; a container made of this material, used for drinking",
+        "usagePattern": "a glass of + N; wear glasses",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "glass",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "一杯……；戴眼鏡"
+      },
+      "reason": "Separate the genuine glazing verb from the formal noun without expanding headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/glass"
+    },
+    {
+      "dataset": "words",
+      "id": "W000499",
+      "before": {
+        "wordId": "W000499",
+        "word": "little",
+        "wordVariants": [
+          "little"
+        ],
+        "level": "LV1",
+        "pos": "adj./adv./n.",
+        "posAll": [
+          "adj.",
+          "adv.",
+          "n."
+        ],
+        "meaningZh": "一點點；少許；一會兒；短時間",
+        "meaningEn": "a little = a small amount of something, enough to be useful; little = not much, almost none",
+        "usagePattern": "a little + N(不可數); little + N(不可數，表幾乎沒有); a little while",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "little",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "一點 + 名詞(不可數)；少量 + 名詞(不可數，表示幾乎沒有)；稍微一會兒"
+      },
+      "after": {
+        "wordId": "W000499",
+        "word": "little",
+        "wordVariants": [
+          "little"
+        ],
+        "level": "LV1",
+        "pos": "adj./adv./n.",
+        "posAll": [
+          "adj.",
+          "adv.",
+          "n."
+        ],
+        "meaningZh": "（形容詞）小的；年幼的；少量的；（副詞）稍微；幾乎不；（名詞）一點點；少許；一會兒；短時間",
+        "meaningEn": "(adj.) small in size or young; little with an uncountable noun means not much, whereas a little means a small amount. (adv.) to a small extent; hardly. (n.) a small amount or a short time.",
+        "usagePattern": "a little + N(不可數); little + N(不可數，表幾乎沒有); a little while",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "little",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "一點……（不可數）；幾乎沒有……（不可數）；一小會兒"
+      },
+      "reason": "Restore the existing small/young adjective and care-little adverb, retaining the quantity contrast and exact exam boundary.",
+      "evidence": "https://www.merriam-webster.com/dictionary/little"
+    },
+    {
+      "dataset": "words",
+      "id": "W000791",
+      "before": {
+        "wordId": "W000791",
+        "word": "small",
+        "wordVariants": [
+          "small"
+        ],
+        "level": "LV1",
+        "pos": "adj./n./adv.",
+        "posAll": [
+          "adj.",
+          "n.",
+          "adv."
+        ],
+        "meaningZh": "小的；少的；小型的；低微的",
+        "meaningEn": "little in size, amount, or degree; not great in number or importance",
+        "usagePattern": "a small N; a small number/amount of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "small",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "一個小的名詞；少量的名詞/數量"
+      },
+      "after": {
+        "wordId": "W000791",
+        "word": "small",
+        "wordVariants": [
+          "small"
+        ],
+        "level": "LV1",
+        "pos": "adj./n./adv.",
+        "posAll": [
+          "adj.",
+          "n.",
+          "adv."
+        ],
+        "meaningZh": "（形容詞）小的；少的；年幼的；低微的；（名詞）較小或較窄的部分；小號物品或衣物（smalls）；（副詞）小小地",
+        "meaningEn": "(adj.) little in size, amount or degree; young; not important. (n.) a small or narrow part, or plural smalls for small-sized articles or clothes. (adv.) in a small manner or size, as in write small.",
+        "usagePattern": "a small N; a small number/amount of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "small",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "小的……；少量／少數……"
+      },
+      "reason": "Preserve genuine smalls and write-small uses and add actual childhood sense; this may overlap earlier queued candidates, so latest exact before is recorded.",
+      "evidence": "https://www.merriam-webster.com/dictionary/small"
+    },
+    {
+      "dataset": "words",
+      "id": "W000853",
+      "before": {
+        "wordId": "W000853",
+        "word": "tall",
+        "wordVariants": [
+          "tall"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "高的；長的；誇大的；誇大地",
+        "meaningEn": "having a greater than average height; measuring a specified distance from top to bottom",
+        "usagePattern": "tall and thin; grow tall; a tall building",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "tall",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "高而瘦；長高；高樓"
+      },
+      "after": {
+        "wordId": "W000853",
+        "word": "tall",
+        "wordVariants": [
+          "tall"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "（形容詞）高的；長的；誇大的；（另列副詞用法）誇大地",
+        "meaningEn": "having a greater than average height; measuring a specified distance from top to bottom",
+        "usagePattern": "tall and thin; grow tall; a tall building",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "tall",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "高而瘦；長高；高樓"
+      },
+      "reason": "Direct MW retains tall as an adverb, and adjective exaggerated tall-story. Do not delete the rare inherited adverb for rarity.",
+      "evidence": "https://www.merriam-webster.com/dictionary/tall (direct definition and adverb label read)"
+    },
+    {
+      "dataset": "words",
+      "id": "W000781",
+      "before": {
+        "wordId": "W000781",
+        "word": "singer",
+        "wordVariants": [
+          "singer"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "歌手",
+        "meaningEn": "a person who sings; United States inventor of an improved chain-stitch sewing machine (1811-1875)",
+        "usagePattern": "a lead/pop singer; sing as a professional singer",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "singer",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "主唱／流行歌手；以職業歌手身分演唱"
+      },
+      "after": {
+        "wordId": "W000781",
+        "word": "singer",
+        "wordVariants": [
+          "singer"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "歌手",
+        "meaningEn": "a person who sings. (Separate capitalized name, Singer) Isaac Merritt Singer (1811–1875), an American sewing-machine inventor and manufacturer.",
+        "usagePattern": "a lead/pop singer; sing as a professional singer",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "singer",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "主唱／流行歌手；以職業歌手身分演唱"
+      },
+      "reason": "The old inventor fragment is a proper-name boundary rather than a second ordinary person-who-sings sense. Retain its identity separately; precise chain-stitch description remains unverified and is not reused as a claim.",
+      "evidence": "https://www.merriam-webster.com/dictionary/singer"
+    },
+    {
+      "dataset": "words",
+      "id": "W000807",
+      "before": {
+        "wordId": "W000807",
+        "word": "song",
+        "wordVariants": [
+          "song"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "歌；曲；鳴聲；歌唱",
+        "meaningEn": "a short piece of music with words that is sung; the musical sound that a bird makes",
+        "usagePattern": "sing a song; write a song; a bird's song",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "song",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "唱歌；寫歌；鳥的歌"
+      },
+      "after": {
+        "wordId": "W000807",
+        "word": "song",
+        "wordVariants": [
+          "song"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "歌；曲；鳴聲；歌唱",
+        "meaningEn": "a short piece of music with words that is sung; the musical sound that a bird makes",
+        "usagePattern": "sing a song; write a song; a bird's song",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "song",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "唱歌；寫歌；鳥鳴"
+      },
+      "reason": "Translate the bird-song construction as bird calls, not a literal human song requirement.",
+      "evidence": "https://www.merriam-webster.com/dictionary/song"
+    },
+    {
+      "dataset": "words",
+      "id": "W000398",
+      "before": {
+        "wordId": "W000398",
+        "word": "high",
+        "wordVariants": [
+          "high"
+        ],
+        "level": "LV1",
+        "pos": "adj./adv./n.",
+        "posAll": [
+          "adj.",
+          "adv.",
+          "n."
+        ],
+        "meaningZh": "高度；高處；高的；高級的",
+        "meaningEn": "high (adj.) = having a large distance from the bottom to the top, or far above the ground or sea level; high (n.) = the highest level or amount that something has ever reached; high (adv.) = at or to a high position",
+        "usagePattern": "be high in N（成分含量高）; reach a new high（創新高）; high above N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "high",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "含有高量的名詞；達到新的高點（創新高）；遠高於名詞"
+      },
+      "after": {
+        "wordId": "W000398",
+        "word": "high",
+        "wordVariants": [
+          "high"
+        ],
+        "level": "LV1",
+        "pos": "adj./adv./n.",
+        "posAll": [
+          "adj.",
+          "adv.",
+          "n."
+        ],
+        "meaningZh": "（形容詞）高的；高級的；（副詞）在高處；高高地；（名詞）高度；高處；高點",
+        "meaningEn": "high (adj.) = having a large distance from the bottom to the top, or far above the ground or sea level; high (n.) = the highest level or amount that something has ever reached; high (adv.) = at or to a high position",
+        "usagePattern": "be high in N（成分含量高）; reach a new high（創新高）; high above N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "high",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "……含量高；創新高；在……高處"
+      },
+      "reason": "All formal categories already present; clarify the actual vitamin content, new high and plane-high cases without modifying the earlier correctly refined examples.",
+      "evidence": "https://www.merriam-webster.com/dictionary/high"
+    },
+    {
+      "dataset": "words",
+      "id": "W000823",
+      "before": {
+        "wordId": "W000823",
+        "word": "star",
+        "wordVariants": [
+          "star"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "星；恆星；星形物；運氣",
+        "meaningEn": "n. a large ball of burning gas in space seen as a small point of light in the night sky; a famous performer or athlete; v. to have one of the main parts in a film or play",
+        "usagePattern": "a movie star; star in a film",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "star",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "電影明星；在電影中演出",
+        "verbForms": {
+          "base": "star",
+          "past": "starred",
+          "pastParticiple": "starred",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/star",
+          "status": "approved"
+        }
+      },
+      "after": {
+        "wordId": "W000823",
+        "word": "star",
+        "wordVariants": [
+          "star"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（名詞）星；恆星；星形物；明星；運氣；（動詞）主演；由……擔任主角",
+        "meaningEn": "n. a large ball of burning gas in space seen as a small point of light in the night sky; a famous performer or athlete; v. to have one of the main parts in a film or play",
+        "usagePattern": "a movie star; star in a film",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "star",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "電影明星；主演電影",
+        "verbForms": {
+          "base": "star",
+          "past": "starred",
+          "pastParticiple": "starred",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/star",
+          "status": "approved"
+        }
+      },
+      "reason": "Restore the actual film-star noun and starring verbs absent from the old star/luck-only Chinese, preserving newly integrated forms.",
+      "evidence": "https://www.merriam-webster.com/dictionary/star"
+    },
+    {
+      "dataset": "words",
+      "id": "W003876",
+      "before": {
+        "wordId": "W003876",
+        "word": "satellite",
+        "wordVariants": [
+          "satellite"
+        ],
+        "level": "LV4",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "人造衛星；伴行靜脈；陪靜脈；陪病部",
+        "meaningEn": "man-made equipment that orbits around the earth or the moon; a person who follows or serves another",
+        "usagePattern": "a/the satellite; satellite of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "satellite",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "人造衛星；……的衛星"
+      },
+      "after": {
+        "wordId": "W003876",
+        "word": "satellite",
+        "wordVariants": [
+          "satellite"
+        ],
+        "level": "LV4",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "衛星（天然或人造）；（原摘要另列醫學對應，待核）伴行靜脈；陪靜脈；陪病部",
+        "meaningEn": "a natural or artificial body that orbits a planet or other larger body; also, a person or organization dependent on or following another.",
+        "usagePattern": "a satellite orbiting Earth; a satellite of a planet; satellite images",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "satellite",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "環繞地球的衛星；行星的衛星；衛星影像"
+      },
+      "reason": "The existing English recognizes artificial equipment but omits natural satellites. Retain uncertain inherited medical fragments explicitly rather than call them all verified.",
+      "evidence": "https://www.merriam-webster.com/dictionary/satellite"
+    }
+  ],
+  "masterTouched": false,
+  "sentencesChanged": false,
+  "englishSentencesChanged": false,
+  "imagesChanged": false,
+  "sourceHashesBefore": {
+    "words.json": "c3df8db2f7bdba7ecd879d25b0c3c34b7cd096d22d912eaaf6709d2811af9514",
+    "senses.json": "56b4c14a7e9c815430eef59764f4c2568990db46d3b3efef56bdea0ab3205668",
+    "examples.json": "440df974398b1b2e42e9b3e51b795b09cb31a498c38e3ca65232672df9786514",
+    "meta.json": "4337ec31fd527a95a2fd17d921bbcd8d4ef0aebbcc08243a160602ff9969d3ef",
+    "sa-pack.json": "b189fbfde160356c0d4366c6772e4925ee17a29d105f32e5671660cdafdfa04e"
+  },
+  "sourceHashesAfter": {
+    "words.json": "e715cde98dce5371b8990c9655ac1ed399c206b1f041be1ffb5c273d04a582da",
+    "senses.json": "30427cc665e3f199a5fcfdc040bbcf5b6caa45da49e44e059556aba67a680b76",
+    "examples.json": "2317de0f23be1c0027db79f988df6e6f075f4acf9e8b7779dba1fd1bcb9957d4",
+    "meta.json": "40294ce25e44949d31722a9a3af624d881f759bf02b1251d963ef33601febde3",
+    "sa-pack.json": "bc0b01d281f22fe726a5c6fd031ae27a2da9684e4d5694366d6651a7a9203724"
+  },
+  "state": "applied_not_ui_verified"
+}

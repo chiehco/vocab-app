@@ -1,0 +1,824 @@
+{
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "priorCheckpoint": "c38b0b1ee4aa5f8cf6f91c2122471343b7f25266",
+  "unit": "LV1-U25",
+  "scope": "52 source/published pairs and formal words,80 examples,69 notes. Exact fields only; English/Chinese example text, cloze, answers, all hints, whole-word POS/status and phrase-sense sources are preserved. Coverage and usage precision changes are not all errors.",
+  "patches": [
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000087",
+      "before": {
+        "usagePattern": "a/the bench; bench of N",
+        "usagePatternZh": "一張／那張長椅；……的長椅"
+      },
+      "after": {
+        "usagePattern": "sit on a bench; a park bench",
+        "usagePatternZh": "坐在長椅上；公園長椅"
+      },
+      "reason": "Use concrete sitting and park combinations; preserve the genuine judicial bench definition.",
+      "evidence": "https://www.merriam-webster.com/dictionary/bench"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000879",
+      "before": {
+        "usagePattern": "a thin layer of N; grow thin; thin hair",
+        "usagePatternZh": "一層薄薄的名詞；變薄；稀疏的頭髮"
+      },
+      "after": {
+        "usagePattern": "a thin layer of ice; grow thin; thin hair",
+        "usagePatternZh": "一層薄冰；變瘦／變薄；稀疏的頭髮"
+      },
+      "reason": "Match a concrete layer complement and retain both person and material meanings of grow thin.",
+      "evidence": "https://www.merriam-webster.com/dictionary/thin"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000437",
+      "before": {
+        "usagePatternZh": "邀請某人參加名詞；邀請某人去做原形動詞"
+      },
+      "after": {
+        "usagePatternZh": "邀請某人參加……；邀請某人做……"
+      },
+      "reason": "Translate the two complements naturally without literal grammatical placeholders.",
+      "evidence": "https://www.merriam-webster.com/dictionary/invite"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000760",
+      "before": {
+        "meaningZh": "部分；參與；一份；參股"
+      },
+      "after": {
+        "meaningZh": "（動詞）分享；共同使用；參與；（名詞）部分；一份；股份；參股"
+      },
+      "reason": "Supply the already defined sharing verb and distinguish the existing stock and portion nouns.",
+      "evidence": "https://www.merriam-webster.com/dictionary/share"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000629",
+      "before": {
+        "meaningZh": "宴會；黨；政黨；團體"
+      },
+      "after": {
+        "meaningZh": "（名詞）宴會；派對；黨；政黨；團體；（動詞）開派對；狂歡"
+      },
+      "reason": "Supply the already listed verb used by partied without changing headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/party"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000281",
+      "before": {
+        "meaningEn": "(n.) physical activity done to stay healthy and become stronger; a set of movements or questions used for practice; (v.) to do physical activities regularly in order to stay fit and healthy"
+      },
+      "after": {
+        "meaningEn": "(n.) physical activity done to stay healthy and become stronger; a set of movements or questions used for practice; (v.) to do physical activity, or to put a right, power, or ability into use."
+      },
+      "reason": "Keep the genuine exercise-a-right verb in addition to physical exercise and practice.",
+      "evidence": "https://www.merriam-webster.com/dictionary/exercise"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000546",
+      "before": {
+        "meaningZh": "現代人；有思想的人；現代的；時髦的"
+      },
+      "after": {
+        "meaningZh": "（形容詞）現代的；時髦的；（另有名詞用法）現代人；具有現代思想的人"
+      },
+      "reason": "Qualify the genuine modern-person or modern-views noun; 有思想的人 is broader than modern views. The independent composite sense remains needs_check.",
+      "evidence": "https://www.merriam-webster.com/dictionary/modern"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000797",
+      "before": {
+        "usagePatternZh": "下雪；覆蓋著/在雪中；雪落下"
+      },
+      "after": {
+        "usagePatternZh": "下雪；被雪覆蓋；雪落下"
+      },
+      "reason": "Both covered with snow and covered in snow describe snow coverage; preserve the complement.",
+      "evidence": "https://www.merriam-webster.com/dictionary/snow"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000132",
+      "before": {
+        "meaningEn": "a round fastener sewn to shirts and coats etc to fit through buttonholes; any of various plant parts that resemble buttons",
+        "usagePattern": "button + N; button to V; a/the button",
+        "usagePatternZh": "扣上……；扣上以做……；一顆／那顆鈕釦"
+      },
+      "after": {
+        "meaningEn": "(n.) a small fastener that fits through a buttonhole, a push-button used to operate something, or a plant part resembling a button; (v.) to fasten with buttons or attach buttons to something.",
+        "usagePattern": "button up a coat; push a button; a shirt button",
+        "usagePatternZh": "扣好外套鈕扣；按下按鈕；襯衫鈕扣"
+      },
+      "reason": "Restore the existing fasten verb and operating-button noun, retain plant-part noun, and replace a bare purpose template with concrete combinations.",
+      "evidence": "https://www.merriam-webster.com/dictionary/button"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000192",
+      "before": {
+        "usagePattern": "make a copy of N; a copy of a book; copy N from N",
+        "usagePatternZh": "影印名詞；一本書的副本；從名詞複製名詞"
+      },
+      "after": {
+        "usagePattern": "make a copy of a document; a copy of a book; copy a file from a disk",
+        "usagePatternZh": "複製一份文件；一本書；從磁碟複製檔案"
+      },
+      "reason": "A copy of a book is one exemplar, not necessarily a duplicate. Match each stated object; source photocopy caption remains unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/copy"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000369",
+      "before": {
+        "meaningEn": "an informal term for a youth or man; an effigy of Guy Fawkes that is burned on a bonfire on Guy Fawkes Day",
+        "meaningZh": "傢伙；支索；用支索撐住；取笑",
+        "usagePattern": "a/the guy; guy of N",
+        "usagePatternZh": "一個／那個傢伙；……的傢伙"
+      },
+      "after": {
+        "meaningEn": "(n.) informally, a man or person; an effigy of Guy Fawkes; a rope or cable that steadies something; (v.) to support with a guy rope, or to ridicule.",
+        "meaningZh": "（名詞）傢伙；男人；蓋伊福克斯人偶；支索；（另有動詞用法）用支索撐住；取笑",
+        "usagePattern": "a nice guy; a guy rope",
+        "usagePatternZh": "一個好人；一條支索"
+      },
+      "reason": "Keep the Fawkes effigy, supporting rope, and genuine separate verbs; do not expand formal headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/guy"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000172",
+      "before": {
+        "meaningEn": "an employee who performs clerical work (e.g., keeps records or accounts); work as a clerk, as in the legal business",
+        "meaningZh": "辦事員；職員；文書；當店員",
+        "usagePattern": "a/the clerk; clerk of N",
+        "usagePatternZh": "一位／那位店員；……的店員"
+      },
+      "after": {
+        "meaningEn": "(n.) an employee who keeps records or accounts, or serves customers in a shop or at a counter; (v.) to work as a clerk.",
+        "meaningZh": "（名詞）辦事員；職員；文書；店員；（另有動詞用法）當辦事員／店員",
+        "usagePattern": "a store clerk; a bank clerk",
+        "usagePatternZh": "商店店員；銀行行員"
+      },
+      "reason": "Supply the retail-service noun and keep the separate genuine work-as-clerk verb.",
+      "evidence": "https://www.merriam-webster.com/dictionary/clerk"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000285",
+      "before": {
+        "usagePatternZh": "向某人解釋 + 名詞；解釋那個/如何/為什麼……"
+      },
+      "after": {
+        "usagePatternZh": "向某人解釋……；解釋……／如何……／為什麼……"
+      },
+      "reason": "That introduces a clause here, not the demonstrative 那個.",
+      "evidence": "https://www.merriam-webster.com/dictionary/explain"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000681",
+      "before": {
+        "usagePattern": "be proud of N; proud + N",
+        "usagePatternZh": "為名詞感到驕傲；驕傲 + 名詞"
+      },
+      "after": {
+        "usagePattern": "be proud of a child; a proud parent",
+        "usagePatternZh": "以孩子為榮；一位自豪的家長"
+      },
+      "reason": "Use concrete of-complement and attributive combinations without changing the existing meanings.",
+      "evidence": "https://www.merriam-webster.com/dictionary/proud"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000608",
+      "before": {
+        "meaningZh": "聯機"
+      },
+      "after": {
+        "meaningZh": "（形容詞）線上的；聯機的；（另有副詞用法）在線上"
+      },
+      "reason": "Make the genuine adverb visible separately while retaining formal adjective POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/online"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000182",
+      "before": {
+        "usagePatternZh": "收集名詞；收集資料/資訊；收集郵票/卡片"
+      },
+      "after": {
+        "usagePatternZh": "收集……；收集資料／資訊；收集郵票／卡片"
+      },
+      "reason": "Replace a literal 名詞 placeholder; card subtype is a separate visual limitation.",
+      "evidence": "https://www.merriam-webster.com/dictionary/collect"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000375",
+      "before": {
+        "meaningZh": "懸掛；訣竅；意義；附着",
+        "usagePatternZh": "掛某名詞（起來）；跟某名詞一起出去玩；等一下"
+      },
+      "after": {
+        "meaningZh": "（動詞）懸掛；附著；（另有名詞用法）訣竅；意義",
+        "usagePatternZh": "掛起……；與某人一起消磨時間／出去玩；等一下"
+      },
+      "reason": "Distinguish genuine noun uses and match hang out with a person. Hung/hanged forms remain separately pending.",
+      "evidence": "https://www.merriam-webster.com/dictionary/hang"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000861",
+      "before": {
+        "meaningEn": "a juvenile between the onset of puberty and maturity",
+        "usagePattern": "a/the teenager; teenager of N",
+        "usagePatternZh": "一位／那位青少年；……的青少年"
+      },
+      "after": {
+        "meaningEn": "A person who is thirteen through nineteen years old.",
+        "usagePattern": "a teenager; teenagers aged thirteen to nineteen",
+        "usagePatternZh": "一位青少年；十三至十九歲的青少年"
+      },
+      "reason": "Teenager is defined by ages thirteen through nineteen, not the broader puberty-to-maturity period.",
+      "evidence": "https://www.merriam-webster.com/dictionary/teenager"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000962",
+      "before": {
+        "usagePatternZh": "弄濕；潮濕的天氣／濕衣服；濕透了"
+      },
+      "after": {
+        "usagePatternZh": "變濕；潮濕的天氣／濕衣服；濕透了"
+      },
+      "reason": "Get wet is inchoative become wet, not transitive make something wet. Existing sourced verb forms are unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/wet"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000912",
+      "before": {
+        "usagePattern": "towel + N; towel to V; a/the towel",
+        "usagePatternZh": "用毛巾擦……；用毛巾擦以做……；一條／那條毛巾"
+      },
+      "after": {
+        "usagePattern": "towel off after a swim; towel yourself dry; a bath towel",
+        "usagePatternZh": "游泳後用毛巾擦乾；用毛巾擦乾身體；一條浴巾"
+      },
+      "reason": "Teach actual towel-off and reflexive constructions instead of a bare purpose template.",
+      "evidence": "https://www.merriam-webster.com/dictionary/towel"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000521",
+      "before": {
+        "meaningZh": "標誌；分數；馬克；痕跡"
+      },
+      "after": {
+        "meaningZh": "（名詞）標誌；分數；馬克；痕跡；（動詞）標記"
+      },
+      "reason": "Supply the marking verb already defined in English; preserve the genuine currency noun.",
+      "evidence": "https://www.merriam-webster.com/dictionary/mark"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000223",
+      "before": {
+        "usagePattern": "a/the dictionary; dictionary of N",
+        "usagePatternZh": "一本／那本字典；……的字典"
+      },
+      "after": {
+        "usagePattern": "look up a word in a dictionary; a bilingual dictionary",
+        "usagePatternZh": "在字典裡查單字；一本雙語字典"
+      },
+      "reason": "Use concrete lookup and dictionary-type combinations.",
+      "evidence": "https://www.merriam-webster.com/dictionary/dictionary"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000290",
+      "before": {
+        "meaningEn": "to be unsuccessful in doing or achieving something; to not do something that you are expected or required to do",
+        "usagePatternZh": "未能 + 原形動詞；考試/測驗不及格；一定、無一例外"
+      },
+      "after": {
+        "meaningEn": "(v.) to be unsuccessful, neglect to do something required, become weaker or stop working, or lack something; (n.) failure, especially in without fail.",
+        "usagePatternZh": "未能做……；考試／測驗不及格；一定、無一例外"
+      },
+      "reason": "Supply the already listed noun failure and retain the genuine weakening/lack meanings.",
+      "evidence": "https://www.merriam-webster.com/dictionary/fail"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000178",
+      "before": {
+        "meaningEn": "a formal association of people with similar interests; stout stick that is larger at one end",
+        "usagePattern": "club + N; club to V; a/the club",
+        "usagePatternZh": "用棍棒打……；用棍棒打以做……；一個／那個俱樂部"
+      },
+      "after": {
+        "meaningEn": "(n.) an association of people with similar interests, or a stout stick larger at one end; (v.) to hit with a club.",
+        "usagePattern": "join a club; a golf club; club someone with a stick",
+        "usagePatternZh": "加入俱樂部；一支高爾夫球桿；用棍棒毆打某人"
+      },
+      "reason": "Restore the existing striking verb and use concrete association, stick and transitive combinations.",
+      "evidence": "https://www.merriam-webster.com/dictionary/club"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000221",
+      "before": {
+        "usagePatternZh": "定義 + 名詞；將某事物定義為名詞"
+      },
+      "after": {
+        "usagePatternZh": "定義……；將某事物界定為……"
+      },
+      "reason": "Translate the object and as-complement without literal grammatical placeholders.",
+      "evidence": "https://www.merriam-webster.com/dictionary/define"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000854",
+      "before": {
+        "meaningZh": "帶子；錄音帶；磁帶；窄帶",
+        "usagePattern": "a/the tape; tape of N",
+        "usagePatternZh": "一捲／那捲膠帶；……的膠帶"
+      },
+      "after": {
+        "meaningZh": "帶子；膠帶；錄音帶；磁帶；窄帶",
+        "usagePattern": "a roll of tape; adhesive tape; a recording on tape",
+        "usagePatternZh": "一捲膠帶；黏性膠帶；磁帶上的錄音"
+      },
+      "reason": "Supply the adhesive-tape noun already used by the picture and retain strip/recording meanings.",
+      "evidence": "https://www.merriam-webster.com/dictionary/tape"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000282",
+      "before": {
+        "usagePatternZh": "期待 + 名詞；期待 + 原形動詞；期待某人 + 原形動詞"
+      },
+      "after": {
+        "usagePatternZh": "預期／期待……；預期自己會做……；預期／期待某人做……"
+      },
+      "reason": "Distinguish prediction and expectation with natural complements rather than literal 原形動詞.",
+      "evidence": "https://www.merriam-webster.com/dictionary/expect"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000267",
+      "before": {
+        "usagePattern": "an/the envelope; envelope of N",
+        "usagePatternZh": "一個／那個信封；……的信封"
+      },
+      "after": {
+        "usagePattern": "put a letter in an envelope; a blue envelope",
+        "usagePatternZh": "把信放進信封；一個藍色信封"
+      },
+      "reason": "Use concrete container and attributive combinations.",
+      "evidence": "https://www.merriam-webster.com/dictionary/envelope"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000800",
+      "before": {
+        "meaningEn": "a member of an army, especially one who fights on the ground",
+        "meaningZh": "軍人；士兵；兵蟻；從軍"
+      },
+      "after": {
+        "meaningEn": "(n.) a member of an army, especially one who fights on the ground; a specialized defensive ant or termite; (v.) to serve or act as a soldier.",
+        "meaningZh": "（名詞）軍人；士兵；兵蟻；（另有動詞用法）從軍"
+      },
+      "reason": "Preserve the genuine ant/termite noun and separate serve-as-soldier verb without changing formal noun POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/soldier"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000276",
+      "before": {
+        "meaningEn": "something, such as a fact, event, or thing, that is used to help explain or support a general idea",
+        "meaningZh": "例子；樣本；實例",
+        "usagePatternZh": "例如；名詞的一個例子；樹立一個榜樣"
+      },
+      "after": {
+        "meaningEn": "A fact, event, or thing used to explain or support an idea; a person or thing regarded as a model to follow.",
+        "meaningZh": "例子；樣本；實例；榜樣",
+        "usagePatternZh": "例如；……的一個例子；樹立榜樣"
+      },
+      "reason": "Add the role-model noun actually targeted in set a good example; retain the separately approved phrase sense and source boundary.",
+      "evidence": "https://www.merriam-webster.com/dictionary/example"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000930",
+      "before": {
+        "meaningZh": "制服；統一的；一律的；始終如一的"
+      },
+      "after": {
+        "meaningZh": "（名詞）制服；（另有形容詞用法）統一的；一律的；始終如一的"
+      },
+      "reason": "Separate the genuine adjective meanings from the formal noun without expanding headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/uniform"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000647",
+      "before": {
+        "meaningEn": "a piece of jewelry that is pinned onto the wearer's garment; informal terms for the leg",
+        "meaningZh": "大頭針；針；別針；栓",
+        "usagePattern": "pin + N; pin to V; a/the pin",
+        "usagePatternZh": "用別針別住……；用別針別住以做……；一支／那支別針"
+      },
+      "after": {
+        "meaningEn": "(n.) a small pointed fastener, a piece of jewelry attached to clothing, or informally a leg, usually in the plural pins; (v.) to fasten or secure with a pin.",
+        "meaningZh": "（名詞）大頭針；針；別針；栓；（另有名詞用法，非正式，通常複數）腿；（動詞）用別針別住",
+        "usagePattern": "pin a note to a board; a safety pin",
+        "usagePatternZh": "用別針把便條別在板上；一支安全別針"
+      },
+      "reason": "Restore fastener and fastening coverage while preserving the genuine jewelry and informal plural-legs senses.",
+      "evidence": "https://www.merriam-webster.com/dictionary/pin"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000708",
+      "before": {
+        "usagePatternZh": "重複一個單詞；跟某人重複；自言自語"
+      },
+      "after": {
+        "usagePatternZh": "重複一個單字；跟著某人說；重複自己說過的話"
+      },
+      "reason": "Repeat oneself means say the same thing again, not talk to oneself.",
+      "evidence": "https://www.merriam-webster.com/dictionary/repeat"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000051",
+      "before": {
+        "meaningZh": "攻擊；抨擊；動手幹"
+      },
+      "after": {
+        "meaningZh": "（名詞）攻擊；抨擊；（疾病）發作；（動詞）攻擊；抨擊；動手幹"
+      },
+      "reason": "Supply the sudden illness noun already defined in English; retain the genuine set-to-work verb. No disease is diagnosed from pixels.",
+      "evidence": "https://www.merriam-webster.com/dictionary/attack"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000777",
+      "before": {
+        "meaningZh": "符號；招牌；徵兆；正負號"
+      },
+      "after": {
+        "meaningZh": "（名詞）符號；招牌；徵兆；正負號；（動詞）簽名；簽署"
+      },
+      "reason": "Supply the signing verb used by the unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/sign"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000865",
+      "before": {
+        "meaningZh": "聖堂；廟宇；教堂；禮拜堂"
+      },
+      "after": {
+        "meaningZh": "聖堂；廟宇；教堂；禮拜堂；太陽穴"
+      },
+      "reason": "Supply the anatomical noun already defined and exemplified in the unchanged data.",
+      "evidence": "https://www.merriam-webster.com/dictionary/temple"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000269",
+      "before": {
+        "meaningEn": "a misconception resulting from incorrect information; (baseball) a failure of a defensive player to make an out when normal play would have sufficed",
+        "usagePattern": "an/the error; error of N",
+        "usagePatternZh": "一個／那個錯誤；……的錯誤"
+      },
+      "after": {
+        "meaningEn": "A mistake or incorrect action; a misconception resulting from incorrect information; in baseball, a defensive failure to make an out that ordinary play should have made.",
+        "usagePattern": "make an error; a spelling error",
+        "usagePatternZh": "犯錯；拼字錯誤"
+      },
+      "reason": "Add the common mistake noun while retaining the genuine misconception and baseball senses.",
+      "evidence": "https://www.merriam-webster.com/dictionary/error"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000096",
+      "before": {
+        "meaningEn": "(adj.) unable to see, or refusing to notice or admit something; (n.) a window covering that can be raised or lowered to control light",
+        "meaningZh": "矇蔽物；窗簾；盲目的；瞎的",
+        "usagePatternZh": "對名詞視而不見；變盲；拉上百葉窗"
+      },
+      "after": {
+        "meaningEn": "(adj.) unable to see, or refusing to notice or admit something; (v.) to make someone unable to see; (n.) a window covering that can be raised or lowered.",
+        "meaningZh": "（形容詞）盲目的；瞎的；（動詞）使失明；（另有名詞用法）遮蔽物；窗簾",
+        "usagePatternZh": "對……視而不見；失明；拉上百葉窗"
+      },
+      "reason": "Restore the existing verb and distinguish the actual plural blinds noun from formal adjective/verb POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/blind"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000263",
+      "before": {
+        "meaningEn": "a person whose job is to design, build, or repair machines, structures, or systems",
+        "meaningZh": "工程師；工兵；設計；監造"
+      },
+      "after": {
+        "meaningEn": "(n.) a person who designs, builds, or repairs machines, structures, or systems; a member of an army trained in engineering; (v.) to design, build, plan, or supervise.",
+        "meaningZh": "（名詞）工程師；工兵；（另有動詞用法）設計；監造"
+      },
+      "reason": "Preserve the genuine military noun and separately marked design/supervise verbs without expanding formal noun POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/engineer"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000925",
+      "before": {
+        "usagePatternZh": "一天／一週兩次；比 + 形容詞 + 加倍"
+      },
+      "after": {
+        "usagePatternZh": "一天／一週兩次；是……的兩倍（比較形容詞所指的量）"
+      },
+      "reason": "Twice as ... as expresses two times the comparison quantity; 加倍 after 比 can be misread as an additional double. Coin values remain visually unverifiable.",
+      "evidence": "https://www.merriam-webster.com/dictionary/twice"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000834",
+      "before": {
+        "usagePattern": "a piece of string; a string of N",
+        "usagePatternZh": "一段繩子；一串 + 名詞"
+      },
+      "after": {
+        "usagePattern": "a piece of string; a string of pearls; a string of characters",
+        "usagePatternZh": "一段繩子；一串珍珠；一串字元（字串）"
+      },
+      "reason": "Use concrete physical and computing sequences; 字符串 is a genuine computing meaning.",
+      "evidence": "https://www.merriam-webster.com/dictionary/string"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000649",
+      "before": {
+        "meaningEn": "a tube with a small bowl at one end; used for smoking tobacco; a long tube made of metal or plastic that is used to carry water or oil or gas etc.",
+        "meaningZh": "管；導管；輸送管；管狀器官",
+        "usagePattern": "pipe + N; pipe to V; a/the pipe",
+        "usagePatternZh": "用管道輸送……；用管道輸送以做……；一根／那根管子"
+      },
+      "after": {
+        "meaningEn": "(n.) a tube and bowl for smoking tobacco, or a tube that carries water, oil, gas, or other substances; (v.) to convey through a pipe.",
+        "meaningZh": "（名詞）管；導管；輸送管；管狀器官；（動詞）用管道輸送",
+        "usagePattern": "a water pipe; pipe water into a tank",
+        "usagePatternZh": "一根水管；用管道把水輸送進水箱"
+      },
+      "reason": "Restore the already listed conveying verb and replace a bare purpose template with a concrete object/destination.",
+      "evidence": "https://www.merriam-webster.com/dictionary/pipe"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXe668faa0",
+      "before": {
+        "sensePos": "v.",
+        "sentenceEn": "He bought some shares in a technology company last year.",
+        "blankSentence": "He bought some _____ in a technology company last year.",
+        "answer": "shares"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Classify the actual cloze target in the complete unchanged sentence. Whole-phrase sense and source status are separate.",
+      "evidence": "https://www.merriam-webster.com/dictionary/share"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXb7feab82",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "The graduates partied all night to celebrate finishing their final exams.",
+        "blankSentence": "The graduates _____ all night to celebrate finishing their final exams.",
+        "answer": "partied"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Classify the actual cloze target in the complete unchanged sentence. Whole-phrase sense and source status are separate.",
+      "evidence": "https://www.merriam-webster.com/dictionary/party"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX8b4a56cf",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "Doctors recommend that people exercise regularly to maintain a healthy heart.",
+        "blankSentence": "Doctors recommend that people _____ regularly to maintain a healthy heart.",
+        "answer": "exercise"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Classify the actual cloze target in the complete unchanged sentence. Whole-phrase sense and source status are separate.",
+      "evidence": "https://www.merriam-webster.com/dictionary/exercise"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX674fb2d4",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "It snowed heavily last night, so the roads were covered in white this morning.",
+        "blankSentence": "It _____ heavily last night, so the roads were covered in white this morning.",
+        "answer": "snowed"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Classify the actual cloze target in the complete unchanged sentence. Whole-phrase sense and source status are separate.",
+      "evidence": "https://www.merriam-webster.com/dictionary/snow"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX9be6abb8",
+      "before": {
+        "sensePos": "v.",
+        "sentenceEn": "Can you make a copy of this document for me?",
+        "blankSentence": "Can you make a _____ of this document for me?",
+        "answer": "copy"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Classify the actual cloze target in the complete unchanged sentence. Whole-phrase sense and source status are separate.",
+      "evidence": "https://www.merriam-webster.com/dictionary/copy"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXdf5a5aac",
+      "before": {
+        "sensePos": "adj.",
+        "sentenceEn": "I usually do my grocery shopping online to save time.",
+        "blankSentence": "I usually do my grocery shopping _____ to save time.",
+        "answer": "online"
+      },
+      "after": {
+        "sensePos": "adv."
+      },
+      "reason": "Classify the actual cloze target in the complete unchanged sentence. Whole-phrase sense and source status are separate.",
+      "evidence": "https://www.merriam-webster.com/dictionary/online"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EREVIEW20260904_W000276_3",
+      "before": {
+        "sensePos": "phr.",
+        "sentenceEn": "You should set a good example for your younger brother.",
+        "blankSentence": "You should set a good _____ for your younger brother.",
+        "answer": "example"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Classify the actual cloze target in the complete unchanged sentence. Whole-phrase sense and source status are separate.",
+      "evidence": "https://www.merriam-webster.com/dictionary/example"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX02ccce45",
+      "before": {
+        "sensePos": "v.",
+        "sentenceEn": "Only a few drops of rain fell before the sky cleared up.",
+        "blankSentence": "Only a few _____ of rain fell before the sky cleared up.",
+        "answer": "drops"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Classify the actual cloze target in the complete unchanged sentence. Whole-phrase sense and source status are separate.",
+      "evidence": "https://www.merriam-webster.com/dictionary/drop"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX35141a76",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "Please sign your name at the bottom of the form.",
+        "blankSentence": "Please _____ your name at the bottom of the form.",
+        "answer": "sign"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Classify the actual cloze target in the complete unchanged sentence. Whole-phrase sense and source status are separate.",
+      "evidence": "https://www.merriam-webster.com/dictionary/sign"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX9dd558b1",
+      "before": {
+        "sensePos": "adj.",
+        "sentenceEn": "She pulled down the blinds to block out the bright sun.",
+        "blankSentence": "She pulled down the _____ to block out the bright sun.",
+        "answer": "blinds"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Classify the actual cloze target in the complete unchanged sentence. Whole-phrase sense and source status are separate.",
+      "evidence": "https://www.merriam-webster.com/dictionary/blind"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXf2ab1605",
+      "before": {
+        "status": "draft",
+        "sentenceEn": "The museum is famous for its modern design.",
+        "sentenceZh": "這座博物館以現代設計聞名。",
+        "blankSentence": "The museum is famous for its _____ design.",
+        "answer": "modern"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Verify only this exact practice sentence, translation and cloze. No official-exam or whole-word approval is implied.",
+      "evidence": "https://www.merriam-webster.com/dictionary/modern"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXcb9db7db",
+      "before": {
+        "status": "draft",
+        "sentenceEn": "He failed the driving test twice.",
+        "sentenceZh": "他考駕照失敗了兩次。",
+        "blankSentence": "He _____ the driving test twice.",
+        "answer": "failed"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Verify only this exact practice sentence, translation and cloze. No official-exam or whole-word approval is implied.",
+      "evidence": "https://www.merriam-webster.com/dictionary/fail"
+    }
+  ]
+}

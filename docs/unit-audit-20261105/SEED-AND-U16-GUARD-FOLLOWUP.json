@@ -1,0 +1,68 @@
+{
+  "checkedAt": "2026-11-05T14:15:35.770Z",
+  "priorCheckpoint": "589d87be16a4107e2920fb2594ec87386b999480",
+  "scope": [
+    "seed last-write-wins input edge",
+    "U16 exact historical fingerprint restoration"
+  ],
+  "seed": {
+    "beforeEvidence": "validation/seed-duplicate-before-summary.json",
+    "fix": "Resolve the final incoming value for each key before comparing it to raw stored rows.",
+    "preserved": [
+      "last-write-wins rather than rejecting duplicates",
+      "whole-row replacement and removed optional keys",
+      "removed rows",
+      "single atomic transaction and rollback",
+      "unchanged rows not written",
+      "all progress tables and custom group order",
+      "original local 5000ms test timeout"
+    ],
+    "structureEvidence": "validation/seed-primary-key-structure.json",
+    "currentDatasetDuplicates": 0
+  },
+  "historicalGuard": {
+    "failureEvidence": "validation/U16-ci-589d87be.json",
+    "restoration": "The same 21 individually recorded after fields are checked, then reversed before hashing historical U16 learningItems. Other units, questions, row order and fixed baseline hashes remain checked.",
+    "sharedHelper": "src/features/direct/lv1Unit16Audit.testSupport.ts",
+    "negativeCoverage": [
+      "wrong permitted after",
+      "unrecorded field",
+      "missing or duplicate row",
+      "changed learningItemId",
+      "changed officialWordId",
+      "changed order",
+      "changed questions",
+      "changed delivery mode"
+    ],
+    "baselineFixtureUnmodified": true
+  },
+  "validation": {
+    "interimOriginalTimeout": {
+      "files": 4,
+      "tests": 31,
+      "exitCode": 0
+    },
+    "typecheck": 0,
+    "lint": 0,
+    "build": 0,
+    "finalOriginalTimeout": {
+      "files": 4,
+      "tests": 31,
+      "exitCode": 0,
+      "command": "npm run test -- --maxWorkers=1 src/db/seed.test.ts src/features/direct/lv1Unit16Text.test.ts src/features/direct/lv1Unit16Audit.test.ts src/features/direct/recoveredUnitIntegration.test.ts",
+      "log": "validation/seed-and-u16-historical-final.txt"
+    },
+    "finalTypecheck": 0,
+    "completedAt": "2026-11-05T14:16:12.170Z"
+  },
+  "productContentChanges": 0,
+  "pendingFullCi": "Resolved: ecbd15b full CI42043632852 succeeded, 210 files / 1677 tests, lint/typecheck/Python/build.",
+  "continuation": {
+    "unit": 17,
+    "allSourceItemsBeforeReopened": 142,
+    "sourcePagePhotosActuallyViewed": 9,
+    "nextDictionaryRead": "LI-LV1U17-V033",
+    "generalBeforeBatch": "Prior partial capture stopped at repeated thin; no complete aggregate claimed. Explicit tab reset retry remains queued."
+  },
+  "exactCiEvidence": "validation/seed-u16-ci-ecbd15b.json"
+}

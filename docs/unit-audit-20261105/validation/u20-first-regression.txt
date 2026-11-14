@@ -1,0 +1,26 @@
+
+ RUN  v4.1.9 <repo>
+
+ ❯ src/features/vocabulary/lv1ReviewedImages.test.ts (11 tests | 1 failed) 10715ms
+     × contains exactly the reviewed scope and preserves every final image and caption hash 10624ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/features/vocabulary/lv1ReviewedImages.test.ts > reviewed LV1 image-only release > contains exactly the reviewed scope and preserves every final image and caption hash
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/features/vocabulary/lv1ReviewedImages.test.ts:17:3
+     15|
+     16| describe('reviewed LV1 image-only release', () => {
+     17|   it('contains exactly the reviewed scope and preserves every final im…
+       |   ^
+     18|     expect(cards).toHaveLength(726);
+     19|     expect(new Set(cards.map(c => c.id)).size).toBe(726);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 8 passed (9)
+      Tests  1 failed | 61 passed (62)
+   Start at  00:39:21
+   Duration  78.23s (transform 12.21s, setup 0ms, import 46.56s, tests 28.01s, environment 1ms)

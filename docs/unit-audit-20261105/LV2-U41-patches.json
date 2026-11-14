@@ -1,0 +1,809 @@
+{
+  "unit": "LV2-U41",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "baseCheckpoint": "8febac6a2ee1138e6f9cea1ef064b78abac67a57",
+  "scope": "Exact fields only. All headword POS/status and practice EN/ZH/cloze/answers remain unchanged. One official exam sense is verified without approving its separate draft exercise. Most summary/hint changes are contextual refinements rather than claims that every old sense was wrong.",
+  "patches": [
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001799",
+      "before": {
+        "meaningEn": "a soft white precious univalent metallic element having the highest electrical and thermal conductivity of any metal; occurs in argentite...; coins made of silver",
+        "meaningZh": "銀；銀幣；銀器；銀的",
+        "word": "silver",
+        "pos": "n./adj.",
+        "posAll": [
+          "n.",
+          "adj."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningEn": "(n.) a valuable pale grey metal used for coins, jewelry and household articles; coins or tableware made of silver. (adj.) made of silver, or shiny pale grey in color.",
+        "meaningZh": "（名詞）銀；銀幣；銀器；（形容詞）銀的；銀製的；銀色的"
+      },
+      "reason": "Replace the literal unfinished ellipsis with complete metal/coins/tableware definitions and visibly separate adjective meanings.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/silver"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001796",
+      "before": {
+        "meaningZh": "沉默；無聲；靜寂；湮沒",
+        "word": "silence",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（名詞）沉默；無聲；靜寂；湮沒；（動詞）使安靜；使沉默"
+      },
+      "reason": "Keep the attested oblivion noun and add the existing formal verb visibly.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/silence"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001059",
+      "before": {
+        "meaningZh": "平均；平均數；一般水平；海損",
+        "meaningEn": "(adj.) calculated by adding several amounts together and dividing the total by the number of amounts; usual, ordinary, or typical; (n.) the number calculated in this way",
+        "word": "average",
+        "pos": "adj./n./v.",
+        "posAll": [
+          "adj.",
+          "n.",
+          "v."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（名詞）平均；平均數；一般水平；（海事）海損；（形容詞）平均的；普通的；（動詞）平均為；計算平均值",
+        "meaningEn": "(adj.) calculated by adding several amounts together and dividing the total by the number of amounts; usual, ordinary, or typical; (n.) the number calculated in this way; (v.) to amount to a particular average or calculate an average; (maritime n.) damage or loss to a ship or cargo."
+      },
+      "reason": "Add the already printed ordinary adjective and existing verb while retaining genuine maritime loss.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/average"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001396",
+      "before": {
+        "meaningZh": "一般；將軍；大體；全面的",
+        "word": "general",
+        "pos": "adj./n.",
+        "posAll": [
+          "adj.",
+          "n."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（形容詞）一般的；全面的；大致的；（名詞）將軍；（in general）一般而言、大體上"
+      },
+      "reason": "Make adjective/noun/idiom boundaries visible without changing the headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/general"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001369",
+      "before": {
+        "usagePattern": "a/the folk; folk of N",
+        "usagePatternZh": "人們；……的人們",
+        "word": "folk",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "usagePattern": "folk/folks; my folks; the folk of N",
+        "usagePatternZh": "人們（複數）；我的家人／父母；……的人們"
+      },
+      "reason": "Replace a generic singular article before people-plural folk; preserve the original plural note and inherited people/family/nation meanings.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/folk"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001438",
+      "before": {
+        "meaningZh": "主人；旅館老闆；節目主持人；當主人招待；女主人",
+        "meaningEn": "a person who has guests, especially at a party or in his or her own home; a person who introduces and talks to guests on a TV or radio program",
+        "word": "host/hostess",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（名詞 host）主人；旅館老闆；節目主持人；（名詞 hostess）女主人；（另有動詞 host）當主人招待、主辦",
+        "meaningEn": "a person who has guests, especially at a party or in his or her own home; a person who introduces and talks to guests on a TV or radio program; hostess means a woman who welcomes guests. Separate verb host: to receive guests or organize an event."
+      },
+      "reason": "Keep the combined official host/hostess identity and both unchanged exercises; label the existing verb separately from the formal noun.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/host; https://www.collinsdictionary.com/dictionary/english/hostess"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001634",
+      "before": {
+        "meaningZh": "枕頭；靠墊；枕狀巖；作...的枕頭",
+        "meaningEn": "a cushion to support the head of a sleeping person; rest on or as if on a pillow",
+        "word": "pillow",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningZh": "（名詞）枕頭；靠墊；枕狀巖；（另有動詞用法）作……的枕頭",
+        "meaningEn": "(n.) a cushion supporting a person’s head, especially in bed. Separate verb use: to rest on, or support as if with, a pillow."
+      },
+      "reason": "Separate inherited verb wording from the noun-only formal headword. Exact bare-pillow geological gloss remains pending, not deleted.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/pillow"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001609",
+      "before": {
+        "usagePattern": "a/the pajamas; pajamas of N",
+        "usagePatternZh": "該睡衣；……的睡衣",
+        "word": "pajamas",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "usagePattern": "a pair of pajamas; wear pajamas",
+        "usagePatternZh": "一套睡衣；穿睡衣"
+      },
+      "reason": "Use plural-compatible constructions. Preserve the attested Asian loose trousers; the exact 喇叭褲 gloss remains pending.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/pajamas"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001668",
+      "before": {
+        "meaningZh": "最主要者；原色；主要的；初期的",
+        "word": "primary",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（形容詞）主要的；首要的；初期的；初等教育的；（另有名詞用法）最主要者；原色"
+      },
+      "reason": "Preserve inherited noun glosses while making the formal adjective primary; do not expand formal POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/primary"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001552",
+      "before": {
+        "meaningZh": "未成年人；副修科目；較小的；二流的",
+        "meaningEn": "of lesser importance or stature or rank; lesser in scope or effect",
+        "usagePattern": "a/the minor; minor of N; be minor",
+        "usagePatternZh": "未成年人／副修科目；……的未成年人／副修；次要的",
+        "word": "minor",
+        "pos": "adj./n.",
+        "posAll": [
+          "adj.",
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningZh": "（名詞）未成年人；輔修科目；（形容詞）較小的；次要的；輕微的；二流的",
+        "meaningEn": "of lesser importance or stature or rank; lesser in scope or effect; (n.) a person not yet legally an adult, or a student’s secondary field of study.",
+        "usagePattern": "a minor injury; a minor in N; a minor",
+        "usagePatternZh": "輕傷；……領域的輔修科目；未成年人"
+      },
+      "reason": "Restore the existing noun and clear less-important adjective; the separately printed minor-in verb does not authorize a new formal verb or forms field.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/minor"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001553",
+      "before": {
+        "meaningZh": "少數；未成年；少數民族；少數的",
+        "word": "minority",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningZh": "（名詞）少數；未成年；少數民族；（另有修飾用法）少數的"
+      },
+      "reason": "Retain the actual legal-age and group meanings while separating the modifier from the formal noun.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/minority"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001700",
+      "before": {
+        "meaningZh": "鐵路；鐵路公司；鋪設鐵路；用鐵路運輸；軌道",
+        "word": "railroad/railway",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（名詞）鐵路；鐵路公司；軌道；（另有動詞用法）鋪設鐵路；用鐵路運輸"
+      },
+      "reason": "Retain inherited verbs with visible scope under the combined noun-only official railroad/railway identity.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/railroad"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001637",
+      "before": {
+        "meaningEn": "a raised horizontal surface; a document stating the aims and principles of a political party",
+        "usagePattern": "a/the platform; platform of N",
+        "usagePatternZh": "該月台（或平台）；……的月台",
+        "word": "platform",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningEn": "a raised horizontal surface; a document stating the aims and principles of a political party; a raised area beside railway tracks for passengers to board or leave trains.",
+        "usagePattern": "on the platform; a railway platform; a platform for N",
+        "usagePatternZh": "在講臺／月臺上；鐵路月臺；供……使用的平台"
+      },
+      "reason": "Include the actually printed railway use, retaining the political-party document meaning.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/platform"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001781",
+      "before": {
+        "meaningZh": "性別；性慾；區別...的性別；引起...的性慾",
+        "word": "sex",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（名詞）性別；性慾；（另有動詞用法）區別……的性別；（俚語，常與 up 連用）引起……的性慾"
+      },
+      "reason": "Separate inherited verbs visibly from the formal noun. No change to existing examples or headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/sex; https://ahdictionary.com/word/search.html?id=S5322200"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001808",
+      "before": {
+        "meaningZh": "滑；滑行；事故；溜",
+        "word": "slip",
+        "pos": "v./n.",
+        "posAll": [
+          "v.",
+          "n."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（動詞）滑；滑行；溜走；（名詞）事故；過失；小紙條"
+      },
+      "reason": "Include the specific paper-slip noun used in the unchanged exercise and retain the inherited accident wording.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/slip"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001809",
+      "before": {
+        "meaningZh": "拖鞋；制輪器；用拖鞋打；拖鞋（slipper的複數形式）",
+        "meaningEn": "low footwear that can be slipped on and off easily; usually worn indoors; low footwear that can be slipped on and off easily; usually worn indoors; a person who slips or slides because of loss of traction",
+        "word": "slipper(s)",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningZh": "（名詞）拖鞋；制輪器；（另有動詞用法）用拖鞋打；（slippers）拖鞋的複數",
+        "meaningEn": "low footwear that can be slipped on and off easily, usually worn indoors; a person who slips or slides because of loss of traction"
+      },
+      "reason": "Remove only the exact repeated English segment and visibly label the attested beating verb. Brake-device and slipping-person details retained pending.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/slipper"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001810",
+      "before": {
+        "meaningZh": "平滑的；平穩的；流暢的；和藹的",
+        "word": "smooth",
+        "pos": "adj./v.",
+        "posAll": [
+          "adj.",
+          "v."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningZh": "（形容詞）平滑的；平穩的；流暢的；和藹的；（動詞）弄平；撫平"
+      },
+      "reason": "Include the existing formal smoothing verb used in the unchanged daily exercise.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/smooth"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001089",
+      "before": {
+        "meaningEn": "a circular segment of a curve; curved segment (of a road or river or railroad track etc.)",
+        "meaningZh": "變彎曲；屈服；使彎曲；使屈服",
+        "word": "bend",
+        "pos": "v./n.",
+        "posAll": [
+          "v.",
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningEn": "(v.) to curve, make something curved, lean the upper body down, or yield; (n.) a curved part of a road, river or other line.",
+        "meaningZh": "（動詞）變彎曲；屈服；使彎曲；使屈服；（名詞）轉彎處"
+      },
+      "reason": "Add the existing formal verb to an English field containing only curve nouns; retain yielding/submission.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/bend"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001704",
+      "before": {
+        "meaningEn": "not occurring or found often; unusually valuable because it is uncommon",
+        "word": "rare",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "status": "reviewed"
+      },
+      "after": {
+        "meaningEn": "not occurring or found often; unusually valuable because it is uncommon; also, of meat, cooked only a little; the inherited thin-air sense refers to low density."
+      },
+      "reason": "Retain both rarity and thinness and add the printed lightly-cooked sense; doneness-number conventions remain qualified.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/rare"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005153",
+      "before": {
+        "meaningEn": "a scientist who specializes in chemistry",
+        "meaningZh": "化學家；藥劑師；化學師；化學工作者",
+        "word": "chemist",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningEn": "a scientist who specializes in chemistry; in British English, also a pharmacist.",
+        "meaningZh": "化學家；（英式）藥劑師；化學師；化學工作者"
+      },
+      "reason": "Retain all existing glosses and give the regional scope of pharmacist.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/chemist"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003252",
+      "before": {
+        "meaningEn": "a state in which you want to learn more about something",
+        "word": "curiosity",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningEn": "a state in which you want to learn more about something; also an unusual or interesting object, or rarity."
+      },
+      "reason": "Include the existing interesting-object noun alongside curiosity as desire to learn.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/curiosity"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004532",
+      "before": {
+        "meaningEn": "a gender that refers chiefly (but not exclusively) to males or to objects classified as male; of grammatical gender",
+        "word": "masculine",
+        "pos": "adj./n.",
+        "posAll": [
+          "adj.",
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningEn": "(adj.) associated with men or boys, or having characteristics traditionally attributed to them; also of the masculine grammatical gender. (n.) the masculine gender or a word belonging to it."
+      },
+      "reason": "Retain grammatical gender and add the printed men-related adjective rather than reduce the word entirely to grammar.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/masculine"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005661",
+      "before": {
+        "meaningZh": "孔雀；好炫耀的人；炫耀；神氣活現地行走",
+        "meaningEn": "European butterfly having reddish-brown wings each marked with a purple eyespot; male peafowl; having a crested head and very large fanlike tail marked with iridescent eyes or spots",
+        "word": "peacock",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningZh": "（名詞）孔雀；好炫耀的人；（另有動詞用法）炫耀；神氣活現地行走",
+        "meaningEn": "(n.) a male peafowl with a large ornamental tail, or more broadly a peafowl; a person who makes a vain display. A separate butterfly sense names the peacock butterfly (Aglais io). Separate verb use: to show off or strut."
+      },
+      "reason": "Keep the real butterfly reference but distinguish it from the bird, person and separate verb.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/peacock; https://www.merriam-webster.com/dictionary/peacock; https://www.wildlifetrusts.org/wildlife-explorer/invertebrates/butterflies/peacock"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005618",
+      "before": {
+        "meaningEn": "the immediate descendants of a person; something that comes into existence as a result",
+        "usagePattern": "an/the offspring; offspring of N",
+        "usagePatternZh": "該後代；……的後代",
+        "word": "offspring",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningEn": "(n.; singular and plural offspring) a person’s children or an animal’s young; also something produced as a result of something else.",
+        "usagePattern": "one offspring; offspring of N; her offspring",
+        "usagePatternZh": "一個後代／一隻幼獸；……的後代／產物；她的子女／牠的幼獸"
+      },
+      "reason": "Add the animal-young scope explicitly; raw textbook’s printed adjective label is preserved separately and qualified as a noun.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/offspring"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002764",
+      "before": {
+        "usagePattern": "be scarce; scarce + N",
+        "usagePatternZh": "是稀有的；稀有的……",
+        "word": "scarce",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "usagePattern": "be scarce; scarce resources; make oneself scarce",
+        "usagePatternZh": "供應不足／稀少；稀缺資源；（非正式）躲開／溜走"
+      },
+      "reason": "Distinguish insufficient supply from merely unusual rarity; original ordinary adjective remains.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/scarce; https://www.collinsdictionary.com/dictionary/english/make-yourself-scarce"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005570",
+      "before": {
+        "meaningEn": "deliberately causing harm or damage",
+        "word": "mischievous",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "status": "draft"
+      },
+      "after": {
+        "meaningEn": "(adj.) playful or enjoying harmless tricks; also intended or likely to cause trouble, harm or damage."
+      },
+      "reason": "Add the printed playful meaning without deleting the genuine harmful sense.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/mischievous"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX6850bbc2",
+      "before": {
+        "sensePos": "adj.",
+        "word": "average",
+        "sentenceEn": "On average, she spends about two hours a day practicing the piano.",
+        "sentenceZh": "平均而言，她每天花大約兩小時練習鋼琴。",
+        "blankSentence": "On _____, she spends about two hours a day practicing the piano.",
+        "answer": "average"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Actual cloze use in the complete unchanged sentence; preserve the empty hint and all practice wording.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/average"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX3bd5581c",
+      "before": {
+        "sensePos": "adj.",
+        "word": "chemical",
+        "sentenceEn": "She has always been afraid of chemicals used in cleaning products.",
+        "sentenceZh": "她一直很害怕清潔用品裡使用的化學藥品。",
+        "blankSentence": "She has always been afraid of _____ used in cleaning products.",
+        "answer": "chemicals"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Actual cloze use in the complete unchanged sentence; preserve the empty hint and all practice wording.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/chemical"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX86bc17ce",
+      "before": {
+        "sensePos": "v.",
+        "word": "divide",
+        "sentenceEn": "There is a growing divide between rich and poor in many big cities.",
+        "sentenceZh": "許多大城市中，貧富之間的差距日益擴大。",
+        "blankSentence": "There is a growing _____ between rich and poor in many big cities.",
+        "answer": "divide"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Actual cloze use in the complete unchanged sentence; preserve the empty hint and all practice wording.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/divide"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXc590208f",
+      "before": {
+        "sensePos": "v.",
+        "word": "display",
+        "sentenceEn": "The new smartphone has a large, bright display.",
+        "sentenceZh": "這款新智慧型手機擁有大又明亮的顯示螢幕。",
+        "blankSentence": "The new smartphone has a large, bright _____.",
+        "answer": "display"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Actual cloze use in the complete unchanged sentence; preserve the empty hint and all practice wording.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/display"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX9b7198a6",
+      "before": {
+        "sensePos": "v.",
+        "word": "slip",
+        "sentenceEn": "She wrote her phone number on a small slip of paper.",
+        "sentenceZh": "她把電話號碼寫在一張小紙條上。",
+        "blankSentence": "She wrote her phone number on a small _____ of paper.",
+        "answer": "slip"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Actual cloze use in the complete unchanged sentence; preserve the empty hint and all practice wording.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/slip"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX2e5c1b32",
+      "before": {
+        "sensePos": "adj.",
+        "word": "smooth",
+        "sentenceEn": "She smoothed the wrinkles out of the tablecloth before the guests arrived.",
+        "sentenceZh": "客人到達前，她把桌巾上的皺褶撫平了。",
+        "blankSentence": "She _____ the wrinkles out of the tablecloth before the guests arrived.",
+        "answer": "smoothed"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Actual cloze use in the complete unchanged sentence; preserve the empty hint and all practice wording.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/smooth"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX4b2df332",
+      "before": {
+        "sensePos": "n.",
+        "word": "exhibit",
+        "sentenceEn": "The patient began to exhibit symptoms of the illness a week after returning from her trip.",
+        "sentenceZh": "病患從旅行返回一週後，開始出現該疾病的症狀。",
+        "blankSentence": "The patient began to _____ symptoms of the illness a week after returning from her trip.",
+        "answer": "exhibit"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Actual cloze use in the complete unchanged sentence; preserve the empty hint and all practice wording.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/exhibit"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX15e884ca",
+      "before": {
+        "meaningHint": "顯示；表現；展覽；賣弄",
+        "word": "show",
+        "sentenceEn": "The talk show I saw on TV last night was fantastic.",
+        "sentenceZh": "我昨晚在電視看到的脫口秀很精彩。",
+        "blankSentence": "The talk _____ I saw on TV last night was fantastic.",
+        "answer": "show"
+      },
+      "after": {
+        "meaningHint": "節目（talk show：脫口秀）"
+      },
+      "reason": "Narrow an existing broad hint to this context; do not fill an empty hint or rewrite the practice sentence.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/show"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX2f32f2bd",
+      "before": {
+        "meaningHint": "顯示；表現；展覽；賣弄",
+        "word": "show",
+        "sentenceEn": "A study shows that staying up all night to study isn't a great idea.",
+        "sentenceZh": "一項研究顯示，通宵念書並不是個好主意。",
+        "blankSentence": "A study _____ that staying up all night to study isn't a great idea.",
+        "answer": "shows"
+      },
+      "after": {
+        "meaningHint": "顯示；表明"
+      },
+      "reason": "Narrow an existing broad hint to this context; do not fill an empty hint or rewrite the practice sentence.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/show"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX4302ebae",
+      "before": {
+        "meaningHint": "顯示；表現；展覽；賣弄",
+        "word": "show",
+        "sentenceEn": "All the theaters are showing the new James Bond movie.",
+        "sentenceZh": "所有電影院都在放映《007》系列的新電影。",
+        "blankSentence": "All the theaters are _____ the new James Bond movie.",
+        "answer": "showing"
+      },
+      "after": {
+        "meaningHint": "放映（電影）"
+      },
+      "reason": "Narrow an existing broad hint to this context; do not fill an empty hint or rewrite the practice sentence.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/show"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX745da23f",
+      "before": {
+        "meaningHint": "顯示；表現；展覽；賣弄",
+        "word": "show",
+        "sentenceEn": "Jack didn't show up on time.",
+        "sentenceZh": "傑克沒有準時出現。",
+        "blankSentence": "Jack didn't _____ up on time.",
+        "answer": "show"
+      },
+      "after": {
+        "meaningHint": "出現；到場（show up）"
+      },
+      "reason": "Narrow an existing broad hint to this context; do not fill an empty hint or rewrite the practice sentence.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/show"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX7f87b10f",
+      "before": {
+        "meaningHint": "顯示；表現；展覽；賣弄",
+        "word": "show",
+        "sentenceEn": "Can you show me your favorite photo?",
+        "sentenceZh": "可以給我看你最喜歡的照片嗎？",
+        "blankSentence": "Can you _____ me your favorite photo?",
+        "answer": "show"
+      },
+      "after": {
+        "meaningHint": "給……看"
+      },
+      "reason": "Narrow an existing broad hint to this context; do not fill an empty hint or rewrite the practice sentence.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/show"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXf15ad0f7",
+      "before": {
+        "meaningHint": "顯示；表現；展覽；賣弄",
+        "word": "show",
+        "sentenceEn": "The gallery shows the work of local artists.",
+        "sentenceZh": "這間藝廊展出當地藝術家的成果作品。",
+        "blankSentence": "The gallery _____ the work of local artists.",
+        "answer": "shows"
+      },
+      "after": {
+        "meaningHint": "展出；陳列"
+      },
+      "reason": "Narrow an existing broad hint to this context; do not fill an empty hint or rewrite the practice sentence.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/show"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W003377-1",
+      "before": {
+        "senseId": "W003377-1",
+        "wordId": "W003377",
+        "word": "exhibit",
+        "senseOrder": 1,
+        "sensePos": "v.",
+        "meaningZh": "顯現、表現出",
+        "isExamSense": true,
+        "examEvidence": "學測109 文意選填Q35",
+        "answerForms": [
+          "exhibit"
+        ],
+        "note": "考點：展現特徵，非只有「展覽」",
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed",
+        "examEvidence": "學測109 文意選填Q35；大考中心原題與官方參考答案已核，答案 B：exhibit",
+        "note": "考點：展現特徵，非只有「展覽」。已核原題與官方答案；現有貓咪例句為另寫練習句，非原題逐字引文，該練習句狀態維持 draft。"
+      },
+      "reason": "Verify only this exact existing exam sense against the complete official passage, option B and official answer. Preserve the separate generated exercise and its draft status.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0k050359836694452838/02-109%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7-%E5%AE%9A%E7%A8%BF.pdf; https://www.ceec.edu.tw/files/file_pool/1/0K018689241635770142/02-109%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E5%8F%83%E8%80%83%E7%AD%94%E6%A1%88.pdf"
+    }
+  ]
+}

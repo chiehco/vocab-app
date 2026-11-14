@@ -1,0 +1,47 @@
+{
+  "unit": "LV2-U35",
+  "firstFrontend": {
+    "files": 19,
+    "tests": 251,
+    "passed": 249,
+    "failed": 2,
+    "exitCode": 1
+  },
+  "repairs": [
+    {
+      "test": "reverses only36 integrated U07 fields and protects every other exact word field",
+      "cause": "The sourced act meaningEn update changed the current non-form row while the older integration test read it directly.",
+      "resolution": "Validate and reverse only W000008 U35 meaningEn before the original form hash. Added negative checks for a wrong allowed after and unrelated usagePattern drift; no old fixture hash changed."
+    },
+    {
+      "test": "retains exact combined identities and qualifies classroom constructions",
+      "cause": "The new test incorrectly required literal chalks although the saved Chinese accurately explains countable uses without that spelling.",
+      "resolution": "Assert the actual countable-use qualification; exact full after and historical hash remain checked."
+    }
+  ],
+  "repairFrontend": {
+    "files": 2,
+    "tests": 70,
+    "failed": 0,
+    "exitCode": 0,
+    "includesOneNewActNegativeTest": true
+  },
+  "python": {
+    "tests": 60,
+    "failures": 0,
+    "exitCode": 0
+  },
+  "browserReopen": {
+    "exitCode": 1,
+    "onlyOneOpenAttempt": true,
+    "verifiedByReadOnlyProbe": true
+  },
+  "originalLocalTestTimeout": 5000,
+  "timeoutRaised": false,
+  "originalHashFixturesChanged": false,
+  "installerMeasurement": {
+    "initialVerifierFailed": "The copied persistence verifier required a content hash transition, but before and after were already the exact new U35 hash.",
+    "resolution": "Keep both values. Assert exact expected hash and full progress preservation; label the measured invocation idempotent. Earlier transition and its pre-update snapshot are not claimed.",
+    "contentHashTransitionObserved": false
+  }
+}

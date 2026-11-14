@@ -1,0 +1,149 @@
+{
+  "batch": "LV1-U05-U06-verified-form-integration",
+  "checkpointAt": "2026-11-05T17:51:50.825Z",
+  "priorCheckpoint": "7a43faf003dcd5365cd06d595b4218b90577c351",
+  "priorCheckpointFullCi": {
+    "commit": "7a43faf003dcd5365cd06d595b4218b90577c351",
+    "run": 42075860226,
+    "job": 127415740847,
+    "status": "completed",
+    "conclusion": "success",
+    "completedAt": "2026-11-05T17:49:58Z",
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42075860226/job/127415740847",
+    "lines": [
+      "2026-11-05T17:34:03.6004923Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +7a43faf003dcd5365cd06d595b4218b90577c351:refs/remotes/origin/content/unit-audit-20261105",
+      "2026-11-05T17:34:15.5761487Z  * [new ref]         7a43faf003dcd5365cd06d595b4218b90577c351 -> origin/content/unit-audit-20261105",
+      "2026-11-05T17:34:16.4490699Z 7a43faf003dcd5365cd06d595b4218b90577c351",
+      "2026-11-05T17:35:02.2410560Z Ran 14 tests in 24.883s",
+      "2026-11-05T17:35:20.1494238Z Ran 7 tests in 17.693s",
+      "2026-11-05T17:35:21.6135529Z Ran 21 tests in 1.334s",
+      "2026-11-05T17:35:21.7890056Z Ran 10 tests in 0.094s",
+      "2026-11-05T17:49:12.8650410Z  Test Files  216 passed (216)",
+      "2026-11-05T17:49:12.8659525Z       Tests  1703 passed (1703)",
+      "2026-11-05T17:49:51.8861593Z ✓ built in 2.94s"
+    ]
+  },
+  "sourceEvidenceCommit": "8c98fcd7057b2e8f01e3e6ac7db395d905feeec2",
+  "state": "exact_45_fields_integrated_actual_ui_verified_local_checks_passed",
+  "counts": {
+    "originalBatchFacts": 46,
+    "addedTrueAbsentKeys": 45,
+    "alreadyIdenticalSkipped": 1,
+    "conflictsOverwritten": 0,
+    "actualBeforeCards": 45,
+    "actualAfterCards": 45,
+    "bothPanelPixelReviews": 45,
+    "existingImagesUnchanged": 45,
+    "exampleComparisonsUnchanged": 274,
+    "usagePagesUnchanged": 45,
+    "progressTables": 14,
+    "savedRows": 2014
+  },
+  "source": "VERIFIED-INTEGRATED-U05-U06-VERB-FORMS-SOURCES.json",
+  "manifest": "LV1-U05-U06-integrated-forms-patches.json",
+  "guards": "Each ID, formal headword/verb POS/status and complete non-form row hash is pinned. Null/custom/existing values cannot be overwritten; false after values, missing before, altered sourceRef, unlisted identity and non-form drift have negative tests. Both semicolon-separated show/case source URLs remain exact.",
+  "inverse": {
+    "baseCheckpoint": "7a43faf003dcd5365cd06d595b4218b90577c351",
+    "addedKeys": 45,
+    "wholeRowReplacements": 0,
+    "allOtherWordFieldsUnchanged": true,
+    "wordDataHashBefore": "2c9b578bc53e684b2689f922ebd4c7bd58f4ec014078fecba1840f060cde42f8",
+    "wordDataHashAfterDeletingOnlyAddedKeys": "2c9b578bc53e684b2689f922ebd4c7bd58f4ec014078fecba1840f060cde42f8",
+    "exactInverse": true
+  },
+  "progress": {
+    "action": "existing App full-dictionary installer in isolated localhost audit browser",
+    "words": 6090,
+    "examples": 7871,
+    "progressTables": 14,
+    "progressUnchanged": true
+  },
+  "regression": {
+    "originalLocalTimeoutMs": 5000,
+    "files": 11,
+    "tests": 88,
+    "pythonBoundaryTests": 22,
+    "exits": {
+      "tests": 0,
+      "python": 0,
+      "lint": 0,
+      "typecheck": 0,
+      "build": 0,
+      "completedAt": "2026-11-05T17:50:29.4247359Z"
+    },
+    "oldWholePackAndHistoricalHashesUnchanged": true
+  },
+  "ui": {
+    "before": "validation/U05-U06-integrated-ui-before.json",
+    "after": "validation/U05-U06-integrated-ui-final.json",
+    "pixelEvidence": "15 contact sheets pair actual card and meaning screenshots, all45 principal-parts displays actually viewed. Source notes/sourceRef are saved-DB/source checks, not claimed visible on the UI.",
+    "contactSheets": [
+      "output/unit-audit-20261105/sheets/integrated-u05-u06/01-03.png",
+      "output/unit-audit-20261105/sheets/integrated-u05-u06/04-06.png",
+      "output/unit-audit-20261105/sheets/integrated-u05-u06/07-09.png",
+      "output/unit-audit-20261105/sheets/integrated-u05-u06/10-12.png",
+      "output/unit-audit-20261105/sheets/integrated-u05-u06/13-15.png",
+      "output/unit-audit-20261105/sheets/integrated-u05-u06/16-18.png",
+      "output/unit-audit-20261105/sheets/integrated-u05-u06/19-21.png",
+      "output/unit-audit-20261105/sheets/integrated-u05-u06/22-24.png",
+      "output/unit-audit-20261105/sheets/integrated-u05-u06/25-27.png",
+      "output/unit-audit-20261105/sheets/integrated-u05-u06/28-30.png",
+      "output/unit-audit-20261105/sheets/integrated-u05-u06/31-33.png",
+      "output/unit-audit-20261105/sheets/integrated-u05-u06/34-36.png",
+      "output/unit-audit-20261105/sheets/integrated-u05-u06/37-39.png",
+      "output/unit-audit-20261105/sheets/integrated-u05-u06/40-42.png",
+      "output/unit-audit-20261105/sheets/integrated-u05-u06/43-45.png"
+    ],
+    "evidenceBoundary": "Some initial meaning crops cut off deep forms; refreshed after crops expose the form values and all15 refreshed sheets were actually viewed. No before screenshot path was overwritten by after captures."
+  },
+  "preserved": {
+    "wholeWordApproval": false,
+    "headwordPosChanges": 0,
+    "definitionChanges": 0,
+    "exampleChanges": 0,
+    "usageChanges": 0,
+    "imageChanges": 0,
+    "original31AndHouseFormsPreserved": true,
+    "earlier16AndUnit16Through21SourcesPreserved": true
+  },
+  "newCheckpointFullCi": {
+    "commit": "062276ee1c3fcc91ed5eb115b8f7d4f39a8afb74",
+    "run": 42079016053,
+    "job": 127426804944,
+    "status": "completed",
+    "conclusion": "success",
+    "completedAt": "2026-11-05T18:09:50Z",
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42079016053/job/127426804944",
+    "files": 216,
+    "tests": 1704,
+    "pythonBatches": [
+      14,
+      7,
+      22,
+      10
+    ],
+    "allStepsSuccessful": true,
+    "lines": [
+      "2026-11-05T17:53:41.3312326Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +062276ee1c3fcc91ed5eb115b8f7d4f39a8afb74:refs/remotes/origin/content/unit-audit-20261105",
+      "2026-11-05T17:53:51.6597535Z  * [new ref]         062276ee1c3fcc91ed5eb115b8f7d4f39a8afb74 -> origin/content/unit-audit-20261105",
+      "2026-11-05T17:53:52.5211096Z 062276ee1c3fcc91ed5eb115b8f7d4f39a8afb74",
+      "2026-11-05T17:54:38.2959214Z Ran 14 tests in 24.538s",
+      "2026-11-05T17:54:56.4097021Z Ran 7 tests in 17.893s",
+      "2026-11-05T17:55:00.5485354Z Ran 22 tests in 4.004s",
+      "2026-11-05T17:55:00.7220800Z Ran 10 tests in 0.091s",
+      "2026-11-05T18:09:02.6648222Z  Test Files  216 passed (216)",
+      "2026-11-05T18:09:02.6668915Z       Tests  1704 passed (1704)",
+      "2026-11-05T18:09:44.7404034Z ✓ built in 2.98s"
+    ]
+  },
+  "remaining": {
+    "formCandidatesFromPreparedSnapshot": 223,
+    "scope": "U07 throughU15 require latest exact reconciliation and their own actual integration verification; not counted as applied.",
+    "nextFormBatch": "U07,36 prepared fields",
+    "nextComprehensiveUnit": {
+      "unit": "LV1-U22",
+      "id": "LV1-U22-01",
+      "word": "arrive"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "manifest": "docs\\unit-audit-20261105\\LV1-U07-demand-visible-form-followup.json",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "checkedAt": "2026-11-05T07:43:39.573557+00:00",
+  "changeCount": 1,
+  "changes": [
+    {
+      "dataset": "senses",
+      "id": "W003270-1",
+      "before": {
+        "senseId": "W003270-1",
+        "wordId": "W003270",
+        "word": "demand",
+        "senseOrder": 1,
+        "sensePos": "adj.",
+        "meaningZh": "（人）要求嚴格的；（活動）費力的、吃力的",
+        "isExamSense": true,
+        "examEvidence": "107學年度學測英文 Q7；選項D demanding。試卷：https://www.ceec.edu.tw/files/file_pool/1/0j076574893317534748/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf；答案：https://www.ceec.edu.tw/files/file_pool/1/0j076574893773665710/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf；110學年度學測英文 Q36；選項E demanding。試卷：https://www.ceec.edu.tw/files/file_pool/1/0l069608312283063557/110%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%20.pdf；答案：https://www.ceec.edu.tw/files/file_pool/1/0l069608703462801602/110%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf",
+        "answerForms": [
+          "demanding"
+        ],
+        "note": "兩題答案均為 demand 詞族的衍生形容詞 demanding，不是 demand 本身的形容詞用法，也不是普通時態變化；保留 demand 詞頭原詞性。EX3226d24a 是另寫練習句。",
+        "status": "reviewed"
+      },
+      "after": {
+        "senseId": "W003270-1",
+        "wordId": "W003270",
+        "word": "demand",
+        "senseOrder": 1,
+        "sensePos": "adj.",
+        "meaningZh": "（demanding，衍生形容詞）（人）要求嚴格的；（活動）費力的、吃力的",
+        "isExamSense": true,
+        "examEvidence": "107學年度學測英文 Q7；選項D demanding。試卷：https://www.ceec.edu.tw/files/file_pool/1/0j076574893317534748/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf；答案：https://www.ceec.edu.tw/files/file_pool/1/0j076574893773665710/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf；110學年度學測英文 Q36；選項E demanding。試卷：https://www.ceec.edu.tw/files/file_pool/1/0l069608312283063557/110%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%20.pdf；答案：https://www.ceec.edu.tw/files/file_pool/1/0l069608703462801602/110%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf",
+        "answerForms": [
+          "demanding"
+        ],
+        "note": "兩題答案均為 demand 詞族的衍生形容詞 demanding，不是 demand 本身的形容詞用法，也不是普通時態變化；保留 demand 詞頭原詞性。EX3226d24a 是另寫練習句。",
+        "status": "reviewed"
+      },
+      "reason": "The existing UI displays meaningZh but not the long explanatory note. Make the derived adjective visibly explicit without changing the demand headword POS, answer form, identity or practice sentence.",
+      "evidence": "Verified CEEC107 Q7 D demanding and CEEC110 Q36 E demanding; see LV1-U07-verified-exam-source-followup.json. Actual hero previously showed demand / adj. without the hidden note explaining the form."
+    }
+  ],
+  "masterTouched": false,
+  "sentencesChanged": false,
+  "imagesChanged": false,
+  "sourceHashesBefore": {
+    "words.json": "b2d24c9650206e5cdf36c8d021b7a9caebf4347149ef21a76edec3b17ee4c420",
+    "senses.json": "80816ad7d4a15e1b4724c62322fa9adfcaddbcfd3a7f961da19a9363155807df",
+    "examples.json": "dc58e94191edd50c5f0ab07f8080f3c6a170e4f0713267c6e57890683f56b0b9",
+    "meta.json": "869e99ab80ead4f6fbad18e6e2ae2a51ae3be87687705517dd712de41002d7ff",
+    "sa-pack.json": "98399c4a6dc71f5caa721c7f1f73d8f2c5240108a91ccbaa06aa29bfa07062d6"
+  },
+  "sourceHashesAfter": {
+    "words.json": "b2d24c9650206e5cdf36c8d021b7a9caebf4347149ef21a76edec3b17ee4c420",
+    "senses.json": "9333ac80e921cbb6bb4d0cc2eb5ebb1dfbddf354c019466fa4776b158bd648f2",
+    "examples.json": "dc58e94191edd50c5f0ab07f8080f3c6a170e4f0713267c6e57890683f56b0b9",
+    "meta.json": "e1dbed8e0c25c2a7f1b43c85d9666756047c5128b4e5d93e0433055cf131f2af",
+    "sa-pack.json": "1dd9d921df2d4ee4934ed5316c09a5eda477f77783ee0e6a1b6054b9d4e635d1"
+  },
+  "state": "applied_not_ui_verified"
+}

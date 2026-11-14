@@ -1,0 +1,42 @@
+{
+  "state": "passed",
+  "recordedAt": "2026-11-05T21:50:52.469Z",
+  "regression": {
+    "files": 11,
+    "tests": 138,
+    "exitCode": 0,
+    "timeoutMs": 5000,
+    "maxWorkers": 1,
+    "log": "output/unit-audit-20261105/U23-final-regression.txt"
+  },
+  "python": {
+    "tests": 34,
+    "exitCode": 0,
+    "log": "output/unit-audit-20261105/U23-python-first.txt",
+    "scope": "Exact U23 additions, immutable source, true absence, existing values and earlier full-row guards; product words/examples unchanged since this success."
+  },
+  "lint": {
+    "exitCode": 0,
+    "log": "output/unit-audit-20261105/U23-lint-final.txt",
+    "remainingWarning": "Pre-existing unused curriculum variable in save_u16_audit_checkpoint.mjs; no new U23 warnings."
+  },
+  "typecheck": {
+    "exitCode": 0
+  },
+  "build": {
+    "exitCode": 0,
+    "log": "output/unit-audit-20261105/U23-build.txt",
+    "viteSeconds": 17.79
+  },
+  "publicationScan": {
+    "exitCode": 0,
+    "evidence": "validation/U23-publication-check.json",
+    "findings": 0
+  },
+  "history": {
+    "imageTimeouts": "validation/U23-reopen-summary.json",
+    "newWriterWarning": "Duplicate unit property in summary writer corrected to unitId; final lint rerun required.",
+    "writerDimensionAssertion": "Only inherited general popularity is768×768 before and after. Exact same source and dimensions asserted; all U23 unit images and the replacement remain1254×1254."
+  },
+  "checksAreFor": "Current uncommitted U23 payload; a new pushed head requires its own full CI."
+}

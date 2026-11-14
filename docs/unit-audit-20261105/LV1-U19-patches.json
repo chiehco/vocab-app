@@ -1,0 +1,402 @@
+{
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "unit": "LV1-U19",
+  "scope": "All89 vocabulary occurrences,52 grammar items,62 formal words and65 unique formal examples read. All seven original content photos actually viewed. Only exact supported fields change; whole-word POS/status and every English/cloze/answer remain unchanged.",
+  "patches": [
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXa5a412fa",
+      "before": {
+        "sensePos": "v."
+      },
+      "after": {
+        "sensePos": "adj."
+      },
+      "reason": "The actual cloze is adjective welcome after be, or noun spell after a. Preserve the full headword POS and unchanged sentence. ",
+      "evidence": "Complete sentence/cloze read; printed U19 welcome adjective and spell noun on pp166/171. ; "
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX13693ab1",
+      "before": {
+        "sensePos": "v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "The actual cloze is adjective welcome after be, or noun spell after a. Preserve the full headword POS and unchanged sentence. ",
+      "evidence": "Complete sentence/cloze read; printed U19 welcome adjective and spell noun on pp166/171. ; "
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000890",
+      "before": {
+        "meaningEn": "a commercial document showing that the holder is entitled to something (as to ride on public transportation or to enter a public entertai...",
+        "meaningZh": "票；券；車票；標籤"
+      },
+      "after": {
+        "meaningEn": "a commercial document showing that the holder is entitled to something (as to ride on public transportation or to enter a public entertainment)",
+        "meaningZh": "票；券；車票；標籤；罰單"
+      },
+      "reason": "Restore the exact matched truncated tail, retaining the original complete sense boundaries. Restore the ordinary traffic-ticket noun explicitly printed on p166 and in the opened publisher entry. ",
+      "evidence": "https://www.vocabulary.com/dictionary/ticket ; directly opened publisher definition ; https://www.vocabulary.com/dictionary/ticket ; "
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000596",
+      "before": {
+        "meaningEn": "one skilled in caring for young children or the sick (usually under the supervision of a physician); try to cure by special care of treatment, of an illness or injury",
+        "meaningZh": "護士；保姆；奶媽；看護"
+      },
+      "after": {
+        "meaningEn": "one skilled in caring for young children or the sick (usually under the supervision of a physician); try to cure by special care or treatment, of an illness or injury; (v.) to feed a baby at the breast.",
+        "meaningZh": "（名詞）護士；保姆；奶媽；（動詞）看護；照顧；餵母乳"
+      },
+      "reason": "Restore the existing breast-feeding verb printed on p166. Correct the inherited care-of-treatment connector without changing its illness-care sense. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/nurse ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000457",
+      "before": {
+        "meaningEn": "the act of caressing with the lips (or an instance thereof); a cookie made of egg whites and sugar"
+      },
+      "after": {
+        "meaningEn": "the act of caressing with the lips (or an instance thereof); a cookie made of egg whites and sugar; (v.) to touch someone with the lips as a sign of affection or greeting."
+      },
+      "reason": "Restore the already formal verb from the printed kiss examples; keep the verified meringue-cookie noun. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/kiss ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000065",
+      "before": {
+        "meaningEn": "nocturnal mouselike mammal with forelimbs modified to form membranous wings and anatomical adaptations for echolocation by which they nav...; (baseball) a turn trying to get a hit",
+        "meaningZh": "蝙蝠；球棒；用球棒打；眨眼"
+      },
+      "after": {
+        "meaningEn": "nocturnal mouselike mammal with forelimbs modified to form membranous wings and anatomical adaptations for echolocation by which they navigate; (baseball) a turn trying to get a hit; (n.) a stick used to hit a ball; (v.) to hit with a bat; to wink or flutter the eyelids.",
+        "meaningZh": "（名詞）蝙蝠；球棒；（動詞）用球棒打；眨眼"
+      },
+      "reason": "Keep the animal and baseball-turn nouns, restore the missing ordinary bat implement and existing verbs, and preserve the positively verified separate eyelid verb. ",
+      "evidence": "https://www.vocabulary.com/dictionary/bat ; https://www.merriam-webster.com/dictionary/bat ; "
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000817",
+      "before": {
+        "meaningZh": "符咒；魅力；輪值；輪班"
+      },
+      "after": {
+        "meaningZh": "（動詞）拼字；（另列名詞用法）符咒；魅力；輪值；輪班"
+      },
+      "reason": "The existing headword is v. but its inherited Chinese lists only noun meanings. Restore printed 拼字 and label, rather than remove, the separate nouns. No formal headword POS expansion. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/spell ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000557",
+      "before": {
+        "meaningEn": "any of numerous small rodents typically resembling diminutive rats having pointed snouts and small ears on elongated bodies with slender...; person who is quiet or timid",
+        "meaningZh": "老鼠；膽小羞怯的人；滑鼠；捕鼠"
+      },
+      "after": {
+        "meaningEn": "any of numerous small rodents typically resembling diminutive rats having pointed snouts and small ears on elongated bodies with slender usually hairless tails; person who is quiet or timid; (n.) a hand-operated device used to move a computer cursor.",
+        "meaningZh": "（名詞）老鼠；膽小羞怯的人；滑鼠；（另列動詞用法）捕鼠"
+      },
+      "reason": "Keep the matched animal definition and timid-person noun; restore the already listed computer noun. Retain the inherited mouse-catching verb separately from the formal noun. ",
+      "evidence": "https://www.vocabulary.com/dictionary/mouse ; original printed p170 computer-mouse example ; "
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000856",
+      "before": {
+        "meaningEn": "a car driven by a person whose job is to take passengers where they want to go in exchange for money; travel slowly; ride in a taxicab; a compartment at the front of a motor vehicle or locomotive where driver sits; small two-wheeled hors...",
+        "meaningZh": "出租車；乘出租車；用出租車送；出租汽車；出租馬車",
+        "usagePattern": "a/the taxicab; taxicab of N",
+        "usagePatternZh": "一輛／那輛計程車；……的計程車"
+      },
+      "after": {
+        "meaningEn": "(n., taxicab/taxi/cab) a car driven by a person whose job is to take passengers where they want to go in exchange for money; (related v., taxi) to move an aircraft slowly on the ground or water; (related v., taxi/cab) ride in a taxicab; (n., cab) a compartment at the front of a motor vehicle or locomotive where driver sits; (n., cab/cabriolet) small two-wheeled horse-drawn carriage; with two seats and a folding hood",
+        "meaningZh": "（名詞 taxicab/taxi/cab）出租車；出租汽車；（cab）出租馬車；駕駛室；（另列 taxi/cab 動詞用法）乘出租車；（taxi）用出租車送；（taxi，飛機）滑行",
+        "usagePattern": "hail a taxicab/taxi/cab; take a taxi; the cab of a truck",
+        "usagePatternZh": "攔計程車；搭計程車；卡車的駕駛室"
+      },
+      "reason": "The existing formal head combines three variants. Finish the truncated cab carriage definition and distinguish cab-only nouns and related taxi verbs. The old travel-slowly fragment means aircraft taxiing. Preserve the formal n. and no fabricated combined verb-form base. ",
+      "evidence": "https://www.vocabulary.com/dictionary/cab ; https://www.merriam-webster.com/dictionary/taxi ; "
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001490",
+      "before": {
+        "meaningEn": "young sheep; English essayist (1775-1834)",
+        "meaningZh": "小羊；羔羊；產羊羔",
+        "usagePattern": "lamb + N; lamb to V; a/the lamb",
+        "usagePatternZh": "產下小羊；生小羊；一隻小羊／該隻小羊"
+      },
+      "after": {
+        "meaningEn": "(n.) young sheep; the meat of a young sheep; (separate proper name, Lamb) English essayist (1775-1834); (v.) to give birth to a lamb.",
+        "meaningZh": "（名詞）小羊；羔羊；羊肉；（動詞）產羊羔",
+        "usagePattern": "a lamb; roast lamb; a ewe lambs",
+        "usagePatternZh": "一隻小羊；烤羊肉；母羊產仔"
+      },
+      "reason": "The p167 noun includes meat. Keep the inherited separate author name; restore the existing birth verb and replace unsupported lamb-to-V with an explicit intransitive example. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/lamb ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005089",
+      "before": {
+        "meaningEn": "(baseball) a ballplayer who is batting; a liquid or semiliquid mixture, as of flour, eggs, and milk, used in cooking",
+        "meaningZh": "連續猛打（尤其指婦女）；猛擊；麪糊（食物）；擊球員",
+        "usagePattern": "batter + N; batter to V; a/the batter",
+        "usagePatternZh": "猛擊某人；猛擊去做某事；一位擊球員"
+      },
+      "after": {
+        "meaningEn": "(baseball) a ballplayer who is batting; a liquid or semiliquid mixture, as of flour, eggs, and milk, used in cooking; (v.) to strike someone or something repeatedly and forcefully.",
+        "meaningZh": "（動詞）連續猛打；猛擊；（名詞）麵糊（食物）；擊球員",
+        "usagePattern": "batter N; a baseball batter; pancake batter",
+        "usagePatternZh": "猛擊……；棒球擊球員；鬆餅麵糊"
+      },
+      "reason": "Repeated blows are not restricted to women. Preserve the batter/player and cooking nouns; remove only the false especially-women restriction and unsupported batter-to-V pattern. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/batter ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003399",
+      "before": {
+        "meaningEn": "something experienced with great delight; partake in a feast or banquet",
+        "meaningZh": "宴會；酒席；享受；節日",
+        "usagePattern": "feast + N; feast to V; a/the feast",
+        "usagePatternZh": "宴請……；宴請以……；一場宴會／該宴會"
+      },
+      "after": {
+        "meaningEn": "something experienced with great delight; partake in a feast or banquet; (n.) a large, elaborate meal; a religious festival; (v.) to eat a feast or provide one for someone.",
+        "meaningZh": "（名詞）宴會；酒席；享受；節日；（動詞）盡情享用；宴請",
+        "usagePattern": "a feast; feast on N; feast one's eyes on N",
+        "usagePatternZh": "一場盛宴；盡情享用……；欣賞……而大飽眼福"
+      },
+      "reason": "Keep the genuine festival and enjoyment meanings and restore the ordinary meal. Replace the unsupported feast-to-V template with directly sourced on/eyes-on constructions. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/feast ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002162",
+      "before": {
+        "meaningEn": "cover as if with clothing",
+        "usagePattern": "clothe + N; clothe to V",
+        "usagePatternZh": "給……穿衣／覆蓋……；穿衣以……"
+      },
+      "after": {
+        "meaningEn": "cover as if with clothing; to dress someone or provide them with clothes; to endow with a quality or power.",
+        "usagePattern": "clothe sb in N; be clothed in N",
+        "usagePatternZh": "給某人穿上……；穿著……"
+      },
+      "reason": "Restore the literal already selected clothing verb while keeping the covering/endowment senses. Use the sourced in construction instead of an unrestricted clothe-to-V template. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/clothe ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000317",
+      "before": {
+        "meaningZh": "花；開花植物；精華；盛時"
+      },
+      "after": {
+        "meaningZh": "（名詞）花；開花植物；精華；盛時；（動詞）開花"
+      },
+      "reason": "Restore printed 開花 for the already formal verb. This does not alter the exact approved flower example or approve all source senses. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/flower ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005416",
+      "before": {
+        "meaningEn": "(of a ghost) to appear in a place regularly; to keep coming back into someone's mind and worrying them",
+        "usagePatternZh": "被……所困擾；縈繞在某人的記憶或夢中；一個常去的地方"
+      },
+      "after": {
+        "meaningEn": "(of a ghost) to appear in a place regularly; to keep coming back into someone's mind and worrying them; (n.) a place someone visits frequently.",
+        "usagePatternZh": "鬧鬼／受……縈繞或困擾（依語境）；縈繞在某人的記憶或夢中；一個常去的地方"
+      },
+      "reason": "Restore the existing formal frequent-place noun. Qualify the passive ghost/mental-distress construction instead of translating every haunted-by use as 困擾. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/haunt ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000792",
+      "before": {
+        "meaningEn": "a kind of pain such as that caused by a wound or a burn or a sore; showing mental alertness and calculation and resourcefulness"
+      },
+      "after": {
+        "meaningEn": "(related n.) a kind of pain such as that caused by a wound or a burn or a sore; (adj.) showing mental alertness and calculation and resourcefulness; stylish or neat; causing sharp stinging or marked by vigorous force."
+      },
+      "reason": "The pain noun is genuine and distinct from the selected adjective. Preserve it with a label and support the inherited stylish/stinging/vigorous adjective meanings rather than delete them. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/smart ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000838",
+      "before": {
+        "meaningEn": "a person who is not very bright; lacking or marked by lack of intellectual acuity"
+      },
+      "after": {
+        "meaningEn": "(related n.) a person who is not very bright; (adj.) lacking or marked by lack of intellectual acuity; dulled in feeling or sensation."
+      },
+      "reason": "The inherited noun and numb/torpid adjective are both real. Label them without expanding the formal adjective head. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/stupid ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000420",
+      "before": {
+        "meaningEn": "feeling hunger; feeling a need or desire to eat food"
+      },
+      "after": {
+        "meaningEn": "feeling hunger; feeling a need or desire to eat food; eager or strongly desirous; (of soil) not fertile."
+      },
+      "reason": "The printed eager-for sense and rare barren-soil adjective are genuine. Add their missing English explanations, retaining 荒年的 without falsely certifying its exact Chinese scope. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/hungry ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000506",
+      "before": {
+        "meaningEn": "characterized by or producing sound of great volume or intensity"
+      },
+      "after": {
+        "meaningEn": "characterized by or producing sound of great volume or intensity; (adv.) with a loud voice or sound."
+      },
+      "reason": "Restore the already formal adverb and printed speak-louder use. Preserve the U17 qualification for persistent and emphatic opinions. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/loud ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000083",
+      "before": {
+        "meaningZh": "鈴；鍾；響鈴命令",
+        "usagePatternZh": "聽起來熟悉；校鈴；鈴響了"
+      },
+      "after": {
+        "meaningZh": "鈴；鐘；響鈴命令",
+        "usagePatternZh": "搖鈴／聽起來熟悉（依語境）；校鈴；鈴響了"
+      },
+      "reason": "Match the actually printed 鐘 and allow literal ring-a-bell as well as the memory idiom. Keep the inherited computer-command gloss; no deletion for rarity. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/bell ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000115",
+      "before": {
+        "usagePatternZh": "一個勇敢的人；勇敢到去原形動詞；一個勇敢的決定；勇敢"
+      },
+      "after": {
+        "usagePatternZh": "一個勇敢的人；勇敢得足以做……；一個勇敢的決定；勇敢"
+      },
+      "reason": "Replace the literal 原形動詞 placeholder in the Chinese construction with the actual enough-to meaning. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/brave ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000510",
+      "before": {
+        "usagePatternZh": "幸運地做某事；幸運數字／日子；幸運地足以做某事"
+      },
+      "after": {
+        "usagePatternZh": "幸運地做某事；幸運數字／日子；夠幸運，能夠做某事"
+      },
+      "reason": "Clarify the existing enough-to construction; this is translation precision, not an incorrect lucky adjective. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/lucky ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003234",
+      "before": {
+        "usagePatternZh": "勇敢的；勇敢的某人"
+      },
+      "after": {
+        "usagePatternZh": "勇敢的；勇敢的……"
+      },
+      "reason": "The N placeholder need not be a person; remove the unnecessary restriction 某人 from the Chinese pattern. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/courageous ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000690",
+      "before": {
+        "usagePatternZh": "保持安靜；保持沉默；某名詞的寧靜"
+      },
+      "after": {
+        "usagePatternZh": "保持安靜；保持沉默；……的寧靜"
+      },
+      "reason": "Remove the literal 名詞 placeholder while preserving the already verified noun phrase. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/quiet ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXc2ce2b9a",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Read the existing authored practice, Chinese and cloze; no claim that the practice is an official question quotation. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/brave ; "
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX57375ffd",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Read the existing authored practice, Chinese and cloze; no claim that the practice is an official question quotation. ",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0o051427482769341323/02-113%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%A7%91%E5%AE%9A%E7%A8%BF.pdf ; "
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W002821-1",
+      "before": {
+        "examEvidence": "學測113 文意選填Q24",
+        "note": "考點：深沉的哀痛",
+        "status": "draft"
+      },
+      "after": {
+        "examEvidence": "學測113（2024）英文文意選填Q24；選項C sorrow，官方答案Q24=C；試題印刷第3頁。試題：https://www.ceec.edu.tw/files/file_pool/1/0o051427482769341323/02-113%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%A7%91%E5%AE%9A%E7%A8%BF.pdf；答案：https://www.ceec.edu.tw/files/file_pool/1/0o051427843482078305/02-113%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf",
+        "note": "2026-11-05：直接讀取大考中心113學測英文試題及官方答案，Q24選C sorrow。原題為失去親人後的悲痛，支持名詞「悲傷、哀痛」；不是說 sorrow 所有語境都必然指喪親。EX57375ffd 是另寫練習句，並非正式試題逐字原句。僅此義項與來源核實，不擴為整詞批准。",
+        "status": "reviewed"
+      },
+      "reason": "Official source and answer matched with the actual loss context, not the answer letter alone. ",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0o051427482769341323/02-113%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%A7%91%E5%AE%9A%E7%A8%BF.pdf ; https://www.ceec.edu.tw/files/file_pool/1/0o051427843482078305/02-113%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf ; "
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "priorCheckpoint": "cb72da3d31e85b5aa11e9b08f6e34ff8d188ec24",
+  "facts": [
+    {
+      "exampleId": "EX42f1a935",
+      "before": {
+        "exampleId": "EX42f1a935",
+        "word": "cancel",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "The heavy snowstorm forced the airline to cancel all flights leaving the airport.",
+        "sentenceZh": "這場暴風雪迫使航空公司取消機場所有的班機。",
+        "blankSentence": "The heavy snowstorm forced the airline to _____ all flights leaving the airport.",
+        "answer": "cancel",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "after": {
+        "sentenceZh": "這場暴風雪迫使航空公司取消所有從該機場起飛的班機。"
+      },
+      "reason": "Retain leaving the airport: departures only, not all arriving and departing flights. No English/cloze/answer change.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/leave",
+      "retrieval": "Complete unchanged English/Chinese comparison and directly read leave a place definition. The participial restriction leaving the airport limits cancelled flights to departures.",
+      "pairedCaptionSearch": {
+        "exactEnglishTrackedMatches": [],
+        "exactEnglishNoteMatches": [],
+        "captionInvented": false
+      }
+    }
+  ]
+}

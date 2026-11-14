@@ -1,0 +1,17 @@
+import {readFileSync,writeFileSync} from 'node:fs';
+const read=p=>JSON.parse(readFileSync(p,'utf8'));
+const examples=read('public/data/v1/examples.json'),words=read('public/data/v1/words.json'),senses=read('public/data/v1/senses.json');
+const patches=[];
+const add=(dataset,key,id,after,reason,word)=>{const r={examples,words,senses}[dataset].find(r=>r[key]===id);patches.push({dataset,key,id,before:Object.fromEntries(Object.keys(after).map(k=>[k,r[k]])),after,reason,evidence:`https://www.merriam-webster.com/dictionary/${word}`});};
+add('examples','exampleId','EX943781df',{sensePos:'v.',meaningHint:'喜愛；喜歡'},'love to spend是動詞用法，原n.標記錯置；原句不變。','love');
+add('examples','exampleId','EX1bf694d4',{sensePos:'v.',meaningHint:'寫；撰寫'},'penned a letter是寫信的動詞；將整詞混合詞性提示細化為該句實際用法，原句不變。','pen');
+add('examples','exampleId','EXd4d75e97',{status:'reviewed'},'已核對Only three的限制副詞、英中句意及填空還原；原句不變。','only');
+for(const word of ['say','new','family'])for(const r of senses.filter(s=>s.word===word&&s.status==='needs_check'))add('senses','senseId',r.senseId,{status:'reviewed'},'逐義檢查詞性、中文及全部既有例句，與詞典相符後僅更新此義項。',word);
+const pen=words.find(w=>w.word==='pen'),only=words.find(w=>w.word==='only'),cute=words.find(w=>w.word==='cute');
+add('words','wordId',pen.wordId,{meaningEn:pen.meaningEn+'; (v.) to write or compose words'},'補回既有penned a letter例句所用撰寫動詞的英英解釋；保留原名詞解釋。','pen');
+add('words','wordId',only.wordId,{meaningEn:'(adv.) no more than; (adj.) the single one; (conj.) but; '+only.meaningEn},'既有解釋只含最後結果的副詞義，漏掉已收錄的基本副詞、形容詞及連接詞；補齊且保留原義。','only');
+add('words','wordId',cute.wordId,{meaningZh:'可愛的；聰明的；伶俐的',meaningEn:'attractive in a pleasing or childlike way; clever or shrewd; '+cute.meaningEn},'品他病為無法解釋的破損文字；核對詞典後保留可證的三種中文表達，補回英英解釋漏掉的常用可愛與機敏義。draft仍保留。','cute');
+const banana=words.find(w=>w.word==='banana');
+add('words','wordId',banana.wordId,{meaningEn:'a tropical plant of the genus Musa that produces bunches of long fruit; an elongated, usually yellow fruit with soft, sweet flesh'},'原植物義在beari...遭截斷；依詞典將植物及果實兩義用完整自述句修復，不新增原句。','banana');
+writeFileSync('docs/unit-audit-20261105/LV1-U03-remaining-patches.json',JSON.stringify({task:'逐單元全面檢查與修正',unit:'LV1-U03 retained unpublished drafts and actual general cards',baseCommit:'29cfc684d7a11b07f09988c478d30358830f1951',patches},null,2)+'\n');
+console.log(JSON.stringify({patches:patches.length}));

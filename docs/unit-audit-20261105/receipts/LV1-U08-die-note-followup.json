@@ -1,0 +1,49 @@
+{
+  "manifest": "docs\\unit-audit-20261105\\LV1-U08-die-note-followup.json",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "checkedAt": "2026-11-05T13:30:39.791512+00:00",
+  "changeCount": 1,
+  "changes": [
+    {
+      "dataset": "notes",
+      "id": "NXc62b0f26",
+      "before": {
+        "noteId": "NXc62b0f26",
+        "word": "die",
+        "noteType": "phrase",
+        "title": "die of / from...",
+        "content": "死於（事故或疾病等）。例：The girl died from head injuries.（這女孩死於腦部創傷。）",
+        "status": "approved"
+      },
+      "after": {
+        "noteId": "NXc62b0f26",
+        "word": "die",
+        "noteType": "phrase",
+        "title": "die of / from...",
+        "content": "死於（事故或疾病等）。例：The girl died from head injuries.（這女孩死於頭部傷勢。）",
+        "status": "approved"
+      },
+      "reason": "Synchronize this one duplicate Chinese translation with the already verified head-injuries sentence. Head injuries do not necessarily mean brain injuries. Preserve the exact English, title, phrase type and existing approved status.",
+      "evidence": "https://www.merriam-webster.com/dictionary/head ; https://www.merriam-webster.com/dictionary/injury"
+    }
+  ],
+  "masterTouched": false,
+  "sentencesChanged": false,
+  "englishSentencesChanged": false,
+  "imagesChanged": false,
+  "sourceHashesBefore": {
+    "words.json": "70eb0bab4e75117e2cc605b6b241185f8355da2a4232c1f055cf1642e5ddb24c",
+    "senses.json": "0a1f3bf143215c7239d3d8c8f0afaccc16b022611394f1cb8bc8ae4841325caa",
+    "examples.json": "bfc003347b92fab8c2178f5e1b4b0cc84d7878b0c2c58109d5f1e7e4a130c9ba",
+    "meta.json": "af7c1227baea9e935bb497a8561c021aa9a32c369f00d26ebe43837c5a1c7748",
+    "sa-pack.json": "a67c6fa4a20748949d13223e79a26454f107a390df69c2eb56aa18621a841542"
+  },
+  "sourceHashesAfter": {
+    "words.json": "70eb0bab4e75117e2cc605b6b241185f8355da2a4232c1f055cf1642e5ddb24c",
+    "senses.json": "0a1f3bf143215c7239d3d8c8f0afaccc16b022611394f1cb8bc8ae4841325caa",
+    "examples.json": "bfc003347b92fab8c2178f5e1b4b0cc84d7878b0c2c58109d5f1e7e4a130c9ba",
+    "meta.json": "788cc123bfc3483cbc650796d94dc7d8ba1380b9cca6ec61190656fba3fd17eb",
+    "sa-pack.json": "8e823cc37f13b5d3f6874bd9f740d1dfd3095be2fa7827f324c91b0c5f67d10c"
+  },
+  "state": "applied_not_ui_verified"
+}

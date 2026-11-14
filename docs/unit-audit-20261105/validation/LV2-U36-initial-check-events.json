@@ -1,0 +1,33 @@
+{
+  "unit": "LV2-U36",
+  "firstFrontend": {
+    "files": 21,
+    "tests": 269,
+    "passed": 269,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "python": {
+    "tests": 62,
+    "failures": 0,
+    "exitCode": 0
+  },
+  "exactOlderFormGuards": {
+    "pot": "Reverse only the exact U36 word patch, then the already recorded earlier word patch if present, before the existing U11 integrated form guard.",
+    "beat": "Reverse only the exact U36 word patch before the original U22 form hash.",
+    "negativeCoverage": "Wrong allowed after and unrelated status drift rejected; original whole-pack hash unchanged."
+  },
+  "installerMeasurement": {
+    "beforeApplyNativeSnapshot": true,
+    "oldToNewContentHashTransitionActuallyObserved": true,
+    "all14TablesExact": true
+  },
+  "browserReopen": {
+    "exitCode": 1,
+    "onlyOneOpenAttempt": true,
+    "verifiedByReadOnlyProbe": true
+  },
+  "originalLocalTestTimeout": 5000,
+  "timeoutRaised": false,
+  "originalHashFixturesChanged": false
+}

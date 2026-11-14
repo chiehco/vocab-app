@@ -1,0 +1,22 @@
+{
+  "head": "abda0618cf74c84c0876482a2b327bafc02b53d7",
+  "run": 42049068339,
+  "job": 127319920228,
+  "status": "completed",
+  "conclusion": "success",
+  "completedAt": "2026-11-05T15:07:20Z",
+  "source": "https://github.com/chiehco/vocab-app/actions/runs/42049068339/job/127319920228",
+  "evidence": [
+    "2026-11-05T14:51:29.1137930Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +abda0618cf74c84c0876482a2b327bafc02b53d7:refs/remotes/origin/content/unit-audit-20261105",
+    "2026-11-05T14:51:37.4051068Z  * [new ref]         abda0618cf74c84c0876482a2b327bafc02b53d7 -> origin/content/unit-audit-20261105",
+    "2026-11-05T14:51:38.2518772Z abda0618cf74c84c0876482a2b327bafc02b53d7",
+    "2026-11-05T14:52:21.9441602Z Ran 14 tests in 24.484s",
+    "2026-11-05T14:52:39.6681001Z Ran 7 tests in 17.514s",
+    "2026-11-05T14:52:40.2147557Z Ran 16 tests in 0.420s",
+    "2026-11-05T14:52:40.3940204Z Ran 10 tests in 0.096s",
+    "2026-11-05T15:06:35.8790943Z  Test Files  211 passed (211)",
+    "2026-11-05T15:06:35.8801092Z       Tests  1681 passed (1681)",
+    "2026-11-05T15:07:15.5592010Z ✓ built in 2.93s"
+  ],
+  "validation": "Official job log directly read; checkout SHA, Python summaries, Vitest totals and build completion matched. Terminal status independently verified through official API. This result applies only to U17 checkpoint abda0618, not the current U18 working tree."
+}

@@ -1,0 +1,19 @@
+{
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "scope": "Remove editorial implementation wording from the learner-facing English definition; retain separate source-use labels and all statuses.",
+  "patches": [
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000148",
+      "before": {
+        "meaningEn": "(n.) a domestic cat or another animal of the cat family; (dated, derogatory noun) a malicious gossip. Other source uses are separate: cat as a British slang verb means to vomit; the uppercase abbreviation CAT can mean computer-aided teaching. These do not expand this learner headword’s existing noun POS."
+      },
+      "after": {
+        "meaningEn": "(n.) a domestic cat or another animal of the cat family; (dated, derogatory noun) a malicious gossip. Other source uses are separate: cat as a British slang verb means to vomit; the uppercase abbreviation CAT can mean computer-aided teaching."
+      },
+      "reason": "Keep the learner-facing definition focused on meanings. The unchanged headword POS boundary remains recorded in the preceding source audit.",
+      "evidence": "Same Collins cat/CAT source checked in the preceding lexical-source patch: https://www.collinsdictionary.com/dictionary/english/cat"
+    }
+  ]
+}

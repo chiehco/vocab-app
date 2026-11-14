@@ -12,6 +12,7 @@ import {progressDb} from '../../db/progressDb';
 import {ensureContentAvailable,refreshInstalledContent} from '../../db/seed';
 import {siegeUnitWords} from '../siege/model';
 import {gradeFlashcard} from '../../checkin/recordActivity';
+import corrections from '../../../docs/unit-audit-20261105/LV1-U21-curriculum-patches.json';
 const unit=findUnit(21,'LV1')!;const vocabulary=unit.items.filter(i=>i.kind==='vocabulary');
 beforeEach(async()=>{await Promise.all([...contentDb.tables,...progressDb.tables].map(t=>t.clear()));});
 afterEach(()=>vi.unstubAllGlobals());
@@ -31,14 +32,14 @@ it('preserves printed supplements, articles, capitalization and use pages',()=>{
  expect(unit.items.filter(i=>i.kind==='grammar').map(i=>[i.pattern,i.sourcePage])).toEqual(source.usage.map(r=>[r.label,r.sourcePage]));
  for(const word of ["extinction", "a migrant worker", "probability", "hobbies", "inexpensive", "cheaply", "topical", "understandable", "kitchenware", "yd", "yd.", "politely", "politeness", "impolite", "countries"]) expect(vocabulary.find(i=>i.displayWord===word)?.officialWordId).toBeNull();
 });
-it('uses existing official identities and keeps 15 unmapped supplements pending',()=>{
+it('uses existing official identities and keeps 15 printed-gloss supplements unmapped',()=>{
  for(const [index,row] of [...source.headwords,...source.related].entries()) {
   expect(vocabulary[index].officialWordId).toBe(row.officialWordId);if(!row.officialWordId)continue;
   const word=pack.words.find(w=>w.wordId===row.officialWordId)!;expect(word.word).toBe(row.officialWord);
   expect(word.word===row.word||word.wordVariants.includes(row.word)).toBe(true);
  }
  expect(vocabulary.filter(i=>!i.officialWordId)).toHaveLength(15);expect(vocabulary.filter(i=>i.meaningSource==='unmapped_supplement')).toHaveLength(15);
- expect(vocabulary.filter(i=>i.meaningSource==='unmapped_supplement').every(i=>i.targetMeaningZh==='教材補充詞；義項待核對。')).toBe(true);
+ for(const item of vocabulary.filter(i=>i.meaningSource==='unmapped_supplement')){const p=corrections.patches.find(p=>p.id===item.learningItemId)!;expect(item.targetMeaningZh).toBe(p.after.targetMeaningZh);expect(item.chapterMeaningsZh).toBe(p.after.chapterMeaningsZh);expect(item.officialWordId).toBeNull();expect(item.practiceMode).toBe('read_only');}
 });
 it('adopts no pictures, running examples, sense IDs or textbook questions',()=>{
  expect(unit.deliveryMode).toBe('text_only');expect(unit.questions).toEqual([]);expect(practiceIds(unit.items)).toEqual([]);

@@ -1,0 +1,101 @@
+{
+  "unit": "LV2-U46",
+  "state": "local_required_checks_passed_own_new_head_ci_pending",
+  "frontend": {
+    "files": 8,
+    "tests": 206,
+    "passed": true,
+    "originalLocalTimeoutMs": 5000,
+    "maxWorkers": 1,
+    "groups": [
+      {
+        "files": 6,
+        "tests": 172,
+        "includes": [
+          "original U46 text",
+          "new U46 audit",
+          "recovered historical integration",
+          "unitAudit source and inverse guards",
+          "seed",
+          "reviewed images"
+        ]
+      },
+      {
+        "files": 2,
+        "tests": 34,
+        "includes": [
+          "auditedWordIllustrations",
+          "lv2BuildingImageRepair"
+        ]
+      }
+    ],
+    "selectionHistory": "The initial invocation named two nonexistent wordbeast test paths. Vitest ran six existing selected files; the two correctly located vocabulary test files were then run separately. Counts are disjoint; no omitted test is claimed."
+  },
+  "python": {
+    "tests": 90,
+    "passed": true,
+    "initial": {
+      "passed": 89,
+      "failed": 1,
+      "reason": "The new U46 form boundary method incorrectly expected 11 sourced forms; the exact source manifest and production allowlist contain 21."
+    },
+    "repair": "Correct the new count assertion to 21. Keep full identity equality, exact forms/source/status, lexical-better comparative rejection, non-form guards, null/custom rejection, true absent deletion and outside-scope negative cases.",
+    "workspaceOnlyTemporaryDirectory": true,
+    "assertionsOrAllowlistBroadened": false
+  },
+  "lint": {
+    "exitCode": 0
+  },
+  "typecheck": {
+    "exitCode": 0
+  },
+  "build": {
+    "exitCode": 0
+  },
+  "sourceDraftCheck": {
+    "exitCode": 0
+  },
+  "sourceIntegrationCheck": {
+    "exitCode": 0
+  },
+  "originalFixtureHashesReset": false,
+  "logs": [
+    {
+      "file": "LV2-U46-regression-first.txt",
+      "sha256": "9b8354cc1323efa76569f131928054c1273f8c948ad27f21e3b645636090594c"
+    },
+    {
+      "file": "LV2-U46-image-regression.txt",
+      "sha256": "282dfee81456b35bb3155e125ada99f06ced61fb17dc89d6d99e4ebff4ad8719"
+    },
+    {
+      "file": "LV2-U46-python-boundaries.txt",
+      "sha256": "3cdeb7099abf7fd27f6d19a76f2804f65d63ca0eee1dac7ceff26aea407863cc"
+    },
+    {
+      "file": "LV2-U46-python-boundaries-final.txt",
+      "sha256": "5ac6b91663555d09854d20d18c36d8a5a03fcc295e99e693ee45275075af708c"
+    },
+    {
+      "file": "LV2-U46-lint-final.txt",
+      "sha256": "9f018744f6351d0f7de76160f4cc2f49cd0f3cc45a78a817b2c46fcdb8856e97"
+    },
+    {
+      "file": "LV2-U46-typecheck-final.txt",
+      "sha256": "0d93be78e4da5c0077681c4d834163661d59ddd24a0477595fb70ec25d5a5ea8"
+    },
+    {
+      "file": "LV2-U46-build-final.txt",
+      "sha256": "9cb8743cfb12b968fd6bcdcb626ab435110c0a35c6032dad4106704520efae56"
+    },
+    {
+      "file": "LV2-U46-prepare_recovered_unit_drafts-check.txt",
+      "sha256": "de98448ebf9803278533e50a4959ae987fb489682759393fb4a40f162f8d62d3"
+    },
+    {
+      "file": "LV2-U46-integrate_recovered_units-check.txt",
+      "sha256": "16a949cba64b31891edbac15dab0007dfc5e48721605cd1960b7fa9df69a3c61"
+    }
+  ],
+  "newHeadOwnCi": "pending_this_new_commit"
+}

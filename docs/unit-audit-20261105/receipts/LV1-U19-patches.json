@@ -1,0 +1,1363 @@
+{
+  "manifest": "docs\\unit-audit-20261105\\LV1-U19-patches.json",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "checkedAt": "2026-11-05T15:57:42.063949+00:00",
+  "changeCount": 27,
+  "changes": [
+    {
+      "dataset": "examples",
+      "id": "EXa5a412fa",
+      "before": {
+        "exampleId": "EXa5a412fa",
+        "word": "welcome",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "You're welcome to join us for dinner if you don't have other plans.",
+        "sentenceZh": "如果你沒有其他計畫，歡迎一起來吃晚餐。",
+        "blankSentence": "You're _____ to join us for dinner if you don't have other plans.",
+        "answer": "welcome",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EXa5a412fa",
+        "word": "welcome",
+        "sensePos": "adj.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "You're welcome to join us for dinner if you don't have other plans.",
+        "sentenceZh": "如果你沒有其他計畫，歡迎一起來吃晚餐。",
+        "blankSentence": "You're _____ to join us for dinner if you don't have other plans.",
+        "answer": "welcome",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "reason": "The actual cloze is adjective welcome after be, or noun spell after a. Preserve the full headword POS and unchanged sentence. ",
+      "evidence": "Complete sentence/cloze read; printed U19 welcome adjective and spell noun on pp166/171. ; "
+    },
+    {
+      "dataset": "examples",
+      "id": "EX13693ab1",
+      "before": {
+        "exampleId": "EX13693ab1",
+        "word": "spell",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "According to the old story, a witch put a spell on the sleeping princess.",
+        "sentenceZh": "根據那個古老的故事，女巫對沉睡的公主下了咒語。",
+        "blankSentence": "According to the old story, a witch put a _____ on the sleeping princess.",
+        "answer": "spell",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EX13693ab1",
+        "word": "spell",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "According to the old story, a witch put a spell on the sleeping princess.",
+        "sentenceZh": "根據那個古老的故事，女巫對沉睡的公主下了咒語。",
+        "blankSentence": "According to the old story, a witch put a _____ on the sleeping princess.",
+        "answer": "spell",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "The actual cloze is adjective welcome after be, or noun spell after a. Preserve the full headword POS and unchanged sentence. ",
+      "evidence": "Complete sentence/cloze read; printed U19 welcome adjective and spell noun on pp166/171. ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W000890",
+      "before": {
+        "wordId": "W000890",
+        "word": "ticket",
+        "wordVariants": [
+          "ticket"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "票；券；車票；標籤",
+        "meaningEn": "a commercial document showing that the holder is entitled to something (as to ride on public transportation or to enter a public entertai...",
+        "usagePattern": "buy/book a ticket; a ticket to/for N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "ticket",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "買／訂票；前往……的票／……的入場券"
+      },
+      "after": {
+        "wordId": "W000890",
+        "word": "ticket",
+        "wordVariants": [
+          "ticket"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "票；券；車票；標籤；罰單",
+        "meaningEn": "a commercial document showing that the holder is entitled to something (as to ride on public transportation or to enter a public entertainment)",
+        "usagePattern": "buy/book a ticket; a ticket to/for N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "ticket",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "買／訂票；前往……的票／……的入場券"
+      },
+      "reason": "Restore the exact matched truncated tail, retaining the original complete sense boundaries. Restore the ordinary traffic-ticket noun explicitly printed on p166 and in the opened publisher entry. ",
+      "evidence": "https://www.vocabulary.com/dictionary/ticket ; directly opened publisher definition ; https://www.vocabulary.com/dictionary/ticket ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W000596",
+      "before": {
+        "wordId": "W000596",
+        "word": "nurse",
+        "wordVariants": [
+          "nurse"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "護士；保姆；奶媽；看護",
+        "meaningEn": "one skilled in caring for young children or the sick (usually under the supervision of a physician); try to cure by special care of treatment, of an illness or injury",
+        "usagePattern": "work as a nurse; a registered nurse; nurse a patient",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "nurse",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "當護士；註冊護士；照料病人"
+      },
+      "after": {
+        "wordId": "W000596",
+        "word": "nurse",
+        "wordVariants": [
+          "nurse"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（名詞）護士；保姆；奶媽；（動詞）看護；照顧；餵母乳",
+        "meaningEn": "one skilled in caring for young children or the sick (usually under the supervision of a physician); try to cure by special care or treatment, of an illness or injury; (v.) to feed a baby at the breast.",
+        "usagePattern": "work as a nurse; a registered nurse; nurse a patient",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "nurse",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "當護士；註冊護士；照料病人"
+      },
+      "reason": "Restore the existing breast-feeding verb printed on p166. Correct the inherited care-of-treatment connector without changing its illness-care sense. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/nurse ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W000457",
+      "before": {
+        "wordId": "W000457",
+        "word": "kiss",
+        "wordVariants": [
+          "kiss"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "吻；接吻",
+        "meaningEn": "the act of caressing with the lips (or an instance thereof); a cookie made of egg whites and sugar",
+        "usagePattern": "kiss sb; give sb a kiss",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "kiss",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "親吻某人；給某人一個吻"
+      },
+      "after": {
+        "wordId": "W000457",
+        "word": "kiss",
+        "wordVariants": [
+          "kiss"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "吻；接吻",
+        "meaningEn": "the act of caressing with the lips (or an instance thereof); a cookie made of egg whites and sugar; (v.) to touch someone with the lips as a sign of affection or greeting.",
+        "usagePattern": "kiss sb; give sb a kiss",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "kiss",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "親吻某人；給某人一個吻"
+      },
+      "reason": "Restore the already formal verb from the printed kiss examples; keep the verified meringue-cookie noun. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/kiss ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W000065",
+      "before": {
+        "wordId": "W000065",
+        "word": "bat",
+        "wordVariants": [
+          "bat"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "蝙蝠；球棒；用球棒打；眨眼",
+        "meaningEn": "nocturnal mouselike mammal with forelimbs modified to form membranous wings and anatomical adaptations for echolocation by which they nav...; (baseball) a turn trying to get a hit",
+        "usagePattern": "a baseball bat; swing a bat; a bat flies",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "bat",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "棒球棒；揮棒；蝙蝠飛翔"
+      },
+      "after": {
+        "wordId": "W000065",
+        "word": "bat",
+        "wordVariants": [
+          "bat"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（名詞）蝙蝠；球棒；（動詞）用球棒打；眨眼",
+        "meaningEn": "nocturnal mouselike mammal with forelimbs modified to form membranous wings and anatomical adaptations for echolocation by which they navigate; (baseball) a turn trying to get a hit; (n.) a stick used to hit a ball; (v.) to hit with a bat; to wink or flutter the eyelids.",
+        "usagePattern": "a baseball bat; swing a bat; a bat flies",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "bat",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "棒球棒；揮棒；蝙蝠飛翔"
+      },
+      "reason": "Keep the animal and baseball-turn nouns, restore the missing ordinary bat implement and existing verbs, and preserve the positively verified separate eyelid verb. ",
+      "evidence": "https://www.vocabulary.com/dictionary/bat ; https://www.merriam-webster.com/dictionary/bat ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W000817",
+      "before": {
+        "wordId": "W000817",
+        "word": "spell",
+        "wordVariants": [
+          "spell"
+        ],
+        "level": "LV1",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "符咒；魅力；輪值；輪班",
+        "meaningEn": "to name or write the letters that form a word in the correct order; a word or set of words believed to have magic power",
+        "usagePattern": "spell a word; cast a spell; under a spell",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "spell",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "拼一個單字；施展魔法；在魔咒下"
+      },
+      "after": {
+        "wordId": "W000817",
+        "word": "spell",
+        "wordVariants": [
+          "spell"
+        ],
+        "level": "LV1",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "（動詞）拼字；（另列名詞用法）符咒；魅力；輪值；輪班",
+        "meaningEn": "to name or write the letters that form a word in the correct order; a word or set of words believed to have magic power",
+        "usagePattern": "spell a word; cast a spell; under a spell",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "spell",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "拼一個單字；施展魔法；在魔咒下"
+      },
+      "reason": "The existing headword is v. but its inherited Chinese lists only noun meanings. Restore printed 拼字 and label, rather than remove, the separate nouns. No formal headword POS expansion. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/spell ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W000557",
+      "before": {
+        "wordId": "W000557",
+        "word": "mouse",
+        "wordVariants": [
+          "mouse"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "老鼠；膽小羞怯的人；滑鼠；捕鼠",
+        "meaningEn": "any of numerous small rodents typically resembling diminutive rats having pointed snouts and small ears on elongated bodies with slender...; person who is quiet or timid",
+        "usagePattern": "a computer mouse; a mouse trap; a field mouse",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "mouse",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "電腦滑鼠；捕鼠器；田鼠"
+      },
+      "after": {
+        "wordId": "W000557",
+        "word": "mouse",
+        "wordVariants": [
+          "mouse"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "（名詞）老鼠；膽小羞怯的人；滑鼠；（另列動詞用法）捕鼠",
+        "meaningEn": "any of numerous small rodents typically resembling diminutive rats having pointed snouts and small ears on elongated bodies with slender usually hairless tails; person who is quiet or timid; (n.) a hand-operated device used to move a computer cursor.",
+        "usagePattern": "a computer mouse; a mouse trap; a field mouse",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "mouse",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "電腦滑鼠；捕鼠器；田鼠"
+      },
+      "reason": "Keep the matched animal definition and timid-person noun; restore the already listed computer noun. Retain the inherited mouse-catching verb separately from the formal noun. ",
+      "evidence": "https://www.vocabulary.com/dictionary/mouse ; original printed p170 computer-mouse example ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W000856",
+      "before": {
+        "wordId": "W000856",
+        "word": "taxicab/taxi/cab",
+        "wordVariants": [
+          "taxicab",
+          "taxi",
+          "cab"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "出租車；乘出租車；用出租車送；出租汽車；出租馬車",
+        "meaningEn": "a car driven by a person whose job is to take passengers where they want to go in exchange for money; travel slowly; ride in a taxicab; a compartment at the front of a motor vehicle or locomotive where driver sits; small two-wheeled hors...",
+        "usagePattern": "a/the taxicab; taxicab of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "taxicab",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "一輛／那輛計程車；……的計程車"
+      },
+      "after": {
+        "wordId": "W000856",
+        "word": "taxicab/taxi/cab",
+        "wordVariants": [
+          "taxicab",
+          "taxi",
+          "cab"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "（名詞 taxicab/taxi/cab）出租車；出租汽車；（cab）出租馬車；駕駛室；（另列 taxi/cab 動詞用法）乘出租車；（taxi）用出租車送；（taxi，飛機）滑行",
+        "meaningEn": "(n., taxicab/taxi/cab) a car driven by a person whose job is to take passengers where they want to go in exchange for money; (related v., taxi) to move an aircraft slowly on the ground or water; (related v., taxi/cab) ride in a taxicab; (n., cab) a compartment at the front of a motor vehicle or locomotive where driver sits; (n., cab/cabriolet) small two-wheeled horse-drawn carriage; with two seats and a folding hood",
+        "usagePattern": "hail a taxicab/taxi/cab; take a taxi; the cab of a truck",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "taxicab",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "攔計程車；搭計程車；卡車的駕駛室"
+      },
+      "reason": "The existing formal head combines three variants. Finish the truncated cab carriage definition and distinguish cab-only nouns and related taxi verbs. The old travel-slowly fragment means aircraft taxiing. Preserve the formal n. and no fabricated combined verb-form base. ",
+      "evidence": "https://www.vocabulary.com/dictionary/cab ; https://www.merriam-webster.com/dictionary/taxi ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W001490",
+      "before": {
+        "wordId": "W001490",
+        "word": "lamb",
+        "wordVariants": [
+          "lamb"
+        ],
+        "level": "LV2",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "小羊；羔羊；產羊羔",
+        "meaningEn": "young sheep; English essayist (1775-1834)",
+        "usagePattern": "lamb + N; lamb to V; a/the lamb",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "lamb",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "產下小羊；生小羊；一隻小羊／該隻小羊"
+      },
+      "after": {
+        "wordId": "W001490",
+        "word": "lamb",
+        "wordVariants": [
+          "lamb"
+        ],
+        "level": "LV2",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（名詞）小羊；羔羊；羊肉；（動詞）產羊羔",
+        "meaningEn": "(n.) young sheep; the meat of a young sheep; (separate proper name, Lamb) English essayist (1775-1834); (v.) to give birth to a lamb.",
+        "usagePattern": "a lamb; roast lamb; a ewe lambs",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "lamb",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "一隻小羊；烤羊肉；母羊產仔"
+      },
+      "reason": "The p167 noun includes meat. Keep the inherited separate author name; restore the existing birth verb and replace unsupported lamb-to-V with an explicit intransitive example. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/lamb ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W005089",
+      "before": {
+        "wordId": "W005089",
+        "word": "batter",
+        "wordVariants": [
+          "batter"
+        ],
+        "level": "LV6",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "連續猛打（尤其指婦女）；猛擊；麪糊（食物）；擊球員",
+        "meaningEn": "(baseball) a ballplayer who is batting; a liquid or semiliquid mixture, as of flour, eggs, and milk, used in cooking",
+        "usagePattern": "batter + N; batter to V; a/the batter",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "batter",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "猛擊某人；猛擊去做某事；一位擊球員"
+      },
+      "after": {
+        "wordId": "W005089",
+        "word": "batter",
+        "wordVariants": [
+          "batter"
+        ],
+        "level": "LV6",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（動詞）連續猛打；猛擊；（名詞）麵糊（食物）；擊球員",
+        "meaningEn": "(baseball) a ballplayer who is batting; a liquid or semiliquid mixture, as of flour, eggs, and milk, used in cooking; (v.) to strike someone or something repeatedly and forcefully.",
+        "usagePattern": "batter N; a baseball batter; pancake batter",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "batter",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "猛擊……；棒球擊球員；鬆餅麵糊"
+      },
+      "reason": "Repeated blows are not restricted to women. Preserve the batter/player and cooking nouns; remove only the false especially-women restriction and unsupported batter-to-V pattern. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/batter ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W003399",
+      "before": {
+        "wordId": "W003399",
+        "word": "feast",
+        "wordVariants": [
+          "feast"
+        ],
+        "level": "LV4",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "宴會；酒席；享受；節日",
+        "meaningEn": "something experienced with great delight; partake in a feast or banquet",
+        "usagePattern": "feast + N; feast to V; a/the feast",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "feast",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "宴請……；宴請以……；一場宴會／該宴會"
+      },
+      "after": {
+        "wordId": "W003399",
+        "word": "feast",
+        "wordVariants": [
+          "feast"
+        ],
+        "level": "LV4",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（名詞）宴會；酒席；享受；節日；（動詞）盡情享用；宴請",
+        "meaningEn": "something experienced with great delight; partake in a feast or banquet; (n.) a large, elaborate meal; a religious festival; (v.) to eat a feast or provide one for someone.",
+        "usagePattern": "a feast; feast on N; feast one's eyes on N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "feast",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "一場盛宴；盡情享用……；欣賞……而大飽眼福"
+      },
+      "reason": "Keep the genuine festival and enjoyment meanings and restore the ordinary meal. Replace the unsupported feast-to-V template with directly sourced on/eyes-on constructions. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/feast ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W002162",
+      "before": {
+        "wordId": "W002162",
+        "word": "clothe",
+        "wordVariants": [
+          "clothe"
+        ],
+        "level": "LV3",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "給...穿衣；蓋上；賦予",
+        "meaningEn": "cover as if with clothing",
+        "usagePattern": "clothe + N; clothe to V",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "clothe",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "給……穿衣／覆蓋……；穿衣以……"
+      },
+      "after": {
+        "wordId": "W002162",
+        "word": "clothe",
+        "wordVariants": [
+          "clothe"
+        ],
+        "level": "LV3",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "給...穿衣；蓋上；賦予",
+        "meaningEn": "cover as if with clothing; to dress someone or provide them with clothes; to endow with a quality or power.",
+        "usagePattern": "clothe sb in N; be clothed in N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "clothe",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "給某人穿上……；穿著……"
+      },
+      "reason": "Restore the literal already selected clothing verb while keeping the covering/endowment senses. Use the sourced in construction instead of an unrestricted clothe-to-V template. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/clothe ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W000317",
+      "before": {
+        "wordId": "W000317",
+        "word": "flower",
+        "wordVariants": [
+          "flower"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "花；開花植物；精華；盛時",
+        "meaningEn": "a plant grown for its colorful, sweet-smelling blooms, or the bloom itself; (of a plant) to produce flowers",
+        "usagePattern": "a bunch of flowers; flowers bloom (in spring)",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "flower",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "一束花；花開（春天）"
+      },
+      "after": {
+        "wordId": "W000317",
+        "word": "flower",
+        "wordVariants": [
+          "flower"
+        ],
+        "level": "LV1",
+        "pos": "n./v.",
+        "posAll": [
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（名詞）花；開花植物；精華；盛時；（動詞）開花",
+        "meaningEn": "a plant grown for its colorful, sweet-smelling blooms, or the bloom itself; (of a plant) to produce flowers",
+        "usagePattern": "a bunch of flowers; flowers bloom (in spring)",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "flower",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "一束花；花開（春天）"
+      },
+      "reason": "Restore printed 開花 for the already formal verb. This does not alter the exact approved flower example or approve all source senses. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/flower ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W005416",
+      "before": {
+        "wordId": "W005416",
+        "word": "haunt",
+        "wordVariants": [
+          "haunt"
+        ],
+        "level": "LV6",
+        "pos": "v./n.",
+        "posAll": [
+          "v.",
+          "n."
+        ],
+        "meaningZh": "常到的地方；生息地；常到；出沒於",
+        "meaningEn": "(of a ghost) to appear in a place regularly; to keep coming back into someone's mind and worrying them",
+        "usagePattern": "be haunted by N; haunt sb's memory/dreams; a favorite haunt",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "haunt",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "被……所困擾；縈繞在某人的記憶或夢中；一個常去的地方"
+      },
+      "after": {
+        "wordId": "W005416",
+        "word": "haunt",
+        "wordVariants": [
+          "haunt"
+        ],
+        "level": "LV6",
+        "pos": "v./n.",
+        "posAll": [
+          "v.",
+          "n."
+        ],
+        "meaningZh": "常到的地方；生息地；常到；出沒於",
+        "meaningEn": "(of a ghost) to appear in a place regularly; to keep coming back into someone's mind and worrying them; (n.) a place someone visits frequently.",
+        "usagePattern": "be haunted by N; haunt sb's memory/dreams; a favorite haunt",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "haunt",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "鬧鬼／受……縈繞或困擾（依語境）；縈繞在某人的記憶或夢中；一個常去的地方"
+      },
+      "reason": "Restore the existing formal frequent-place noun. Qualify the passive ghost/mental-distress construction instead of translating every haunted-by use as 困擾. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/haunt ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W000792",
+      "before": {
+        "wordId": "W000792",
+        "word": "smart",
+        "wordVariants": [
+          "smart"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "聰明的；漂亮的；刺痛的；劇烈的",
+        "meaningEn": "a kind of pain such as that caused by a wound or a burn or a sore; showing mental alertness and calculation and resourcefulness",
+        "usagePattern": "a smart student; look smart; a smart choice",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "smart",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "聰明的學生；看起來俐落；明智的選擇"
+      },
+      "after": {
+        "wordId": "W000792",
+        "word": "smart",
+        "wordVariants": [
+          "smart"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "聰明的；漂亮的；刺痛的；劇烈的",
+        "meaningEn": "(related n.) a kind of pain such as that caused by a wound or a burn or a sore; (adj.) showing mental alertness and calculation and resourcefulness; stylish or neat; causing sharp stinging or marked by vigorous force.",
+        "usagePattern": "a smart student; look smart; a smart choice",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "smart",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "聰明的學生；看起來俐落；明智的選擇"
+      },
+      "reason": "The pain noun is genuine and distinct from the selected adjective. Preserve it with a label and support the inherited stylish/stinging/vigorous adjective meanings rather than delete them. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/smart ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W000838",
+      "before": {
+        "wordId": "W000838",
+        "word": "stupid",
+        "wordVariants": [
+          "stupid"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "愚蠢的；麻木的",
+        "meaningEn": "a person who is not very bright; lacking or marked by lack of intellectual acuity",
+        "usagePattern": "feel/be stupid; a stupid mistake",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "stupid",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "覺得／顯得愚蠢；愚蠢的錯誤"
+      },
+      "after": {
+        "wordId": "W000838",
+        "word": "stupid",
+        "wordVariants": [
+          "stupid"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "愚蠢的；麻木的",
+        "meaningEn": "(related n.) a person who is not very bright; (adj.) lacking or marked by lack of intellectual acuity; dulled in feeling or sensation.",
+        "usagePattern": "feel/be stupid; a stupid mistake",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "stupid",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "覺得／顯得愚蠢；愚蠢的錯誤"
+      },
+      "reason": "The inherited noun and numb/torpid adjective are both real. Label them without expanding the formal adjective head. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/stupid ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W000420",
+      "before": {
+        "wordId": "W000420",
+        "word": "hungry",
+        "wordVariants": [
+          "hungry"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "飢餓的；荒年的；渴望的；不毛的",
+        "meaningEn": "feeling hunger; feeling a need or desire to eat food",
+        "usagePattern": "be/feel hungry; be hungry for N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "hungry",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "肚子餓／感到飢餓；渴望……"
+      },
+      "after": {
+        "wordId": "W000420",
+        "word": "hungry",
+        "wordVariants": [
+          "hungry"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "飢餓的；荒年的；渴望的；不毛的",
+        "meaningEn": "feeling hunger; feeling a need or desire to eat food; eager or strongly desirous; (of soil) not fertile.",
+        "usagePattern": "be/feel hungry; be hungry for N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "hungry",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "肚子餓／感到飢餓；渴望……"
+      },
+      "reason": "The printed eager-for sense and rare barren-soil adjective are genuine. Add their missing English explanations, retaining 荒年的 without falsely certifying its exact Chinese scope. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/hungry ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W000506",
+      "before": {
+        "wordId": "W000506",
+        "word": "loud",
+        "wordVariants": [
+          "loud"
+        ],
+        "level": "LV1",
+        "pos": "adv./adj.",
+        "posAll": [
+          "adv.",
+          "adj."
+        ],
+        "meaningZh": "大聲的；（表達意見等）反覆而強烈的；喧吵的；高聲地",
+        "meaningEn": "characterized by or producing sound of great volume or intensity",
+        "usagePattern": "a loud noise/voice; be loud; speak/laugh loud",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "loud",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "巨大的聲響／響亮的聲音；很大聲；大聲說話／笑"
+      },
+      "after": {
+        "wordId": "W000506",
+        "word": "loud",
+        "wordVariants": [
+          "loud"
+        ],
+        "level": "LV1",
+        "pos": "adv./adj.",
+        "posAll": [
+          "adv.",
+          "adj."
+        ],
+        "meaningZh": "大聲的；（表達意見等）反覆而強烈的；喧吵的；高聲地",
+        "meaningEn": "characterized by or producing sound of great volume or intensity; (adv.) with a loud voice or sound.",
+        "usagePattern": "a loud noise/voice; be loud; speak/laugh loud",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "loud",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "巨大的聲響／響亮的聲音；很大聲；大聲說話／笑"
+      },
+      "reason": "Restore the already formal adverb and printed speak-louder use. Preserve the U17 qualification for persistent and emphatic opinions. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/loud ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W000083",
+      "before": {
+        "wordId": "W000083",
+        "word": "bell",
+        "wordVariants": [
+          "bell"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "鈴；鍾；響鈴命令",
+        "meaningEn": "a hollow metal object that makes a ringing sound when struck, or the sound that it makes",
+        "usagePattern": "ring a bell; the school bell; a bell rings",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "bell",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "聽起來熟悉；校鈴；鈴響了"
+      },
+      "after": {
+        "wordId": "W000083",
+        "word": "bell",
+        "wordVariants": [
+          "bell"
+        ],
+        "level": "LV1",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "鈴；鐘；響鈴命令",
+        "meaningEn": "a hollow metal object that makes a ringing sound when struck, or the sound that it makes",
+        "usagePattern": "ring a bell; the school bell; a bell rings",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "bell",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "搖鈴／聽起來熟悉（依語境）；校鈴；鈴響了"
+      },
+      "reason": "Match the actually printed 鐘 and allow literal ring-a-bell as well as the memory idiom. Keep the inherited computer-command gloss; no deletion for rarity. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/bell ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W000115",
+      "before": {
+        "wordId": "W000115",
+        "word": "brave",
+        "wordVariants": [
+          "brave"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "勇敢的；美好的；華麗的；勇敢者",
+        "meaningEn": "showing no fear when facing danger, pain, or difficulty",
+        "usagePattern": "a brave man; be brave enough to V; a brave decision; be brave",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "brave",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "一個勇敢的人；勇敢到去原形動詞；一個勇敢的決定；勇敢"
+      },
+      "after": {
+        "wordId": "W000115",
+        "word": "brave",
+        "wordVariants": [
+          "brave"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "勇敢的；美好的；華麗的；勇敢者",
+        "meaningEn": "showing no fear when facing danger, pain, or difficulty",
+        "usagePattern": "a brave man; be brave enough to V; a brave decision; be brave",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "brave",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "一個勇敢的人；勇敢得足以做……；一個勇敢的決定；勇敢"
+      },
+      "reason": "Replace the literal 原形動詞 placeholder in the Chinese construction with the actual enough-to meaning. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/brave ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W000510",
+      "before": {
+        "wordId": "W000510",
+        "word": "lucky",
+        "wordVariants": [
+          "lucky"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "幸運的；吉祥的；好運的；僥倖的",
+        "meaningEn": "having or bringing good luck",
+        "usagePattern": "be lucky to do sth; a lucky number/day; lucky enough to do sth",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "lucky",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "幸運地做某事；幸運數字／日子；幸運地足以做某事"
+      },
+      "after": {
+        "wordId": "W000510",
+        "word": "lucky",
+        "wordVariants": [
+          "lucky"
+        ],
+        "level": "LV1",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "幸運的；吉祥的；好運的；僥倖的",
+        "meaningEn": "having or bringing good luck",
+        "usagePattern": "be lucky to do sth; a lucky number/day; lucky enough to do sth",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "lucky",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "幸運地做某事；幸運數字／日子；夠幸運，能夠做某事"
+      },
+      "reason": "Clarify the existing enough-to construction; this is translation precision, not an incorrect lucky adjective. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/lucky ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W003234",
+      "before": {
+        "wordId": "W003234",
+        "word": "courageous",
+        "wordVariants": [
+          "courageous"
+        ],
+        "level": "LV4",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "勇敢的；大膽的；有膽量的",
+        "meaningEn": "possessing or displaying courage; able to face and deal with danger or fear without flinching",
+        "usagePattern": "be courageous; courageous + N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "courageous",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "勇敢的；勇敢的某人"
+      },
+      "after": {
+        "wordId": "W003234",
+        "word": "courageous",
+        "wordVariants": [
+          "courageous"
+        ],
+        "level": "LV4",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "勇敢的；大膽的；有膽量的",
+        "meaningEn": "possessing or displaying courage; able to face and deal with danger or fear without flinching",
+        "usagePattern": "be courageous; courageous + N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "courageous",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "勇敢的；勇敢的……"
+      },
+      "reason": "The N placeholder need not be a person; remove the unnecessary restriction 某人 from the Chinese pattern. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/courageous ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "words",
+      "id": "W000690",
+      "before": {
+        "wordId": "W000690",
+        "word": "quiet",
+        "wordVariants": [
+          "quiet"
+        ],
+        "level": "LV1",
+        "pos": "adj./n./v.",
+        "posAll": [
+          "adj.",
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（形容詞）安靜的；平靜的；（名詞）安靜；寧靜；（動詞）使安靜；平息",
+        "meaningEn": "(adj.) making little noise; calm or peaceful. (n.) an absence of noise or disturbance; peace. (v.) to make or become calm or quiet.",
+        "usagePattern": "be quiet; keep quiet; the quiet of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "quiet",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "保持安靜；保持沉默；某名詞的寧靜"
+      },
+      "after": {
+        "wordId": "W000690",
+        "word": "quiet",
+        "wordVariants": [
+          "quiet"
+        ],
+        "level": "LV1",
+        "pos": "adj./n./v.",
+        "posAll": [
+          "adj.",
+          "n.",
+          "v."
+        ],
+        "meaningZh": "（形容詞）安靜的；平靜的；（名詞）安靜；寧靜；（動詞）使安靜；平息",
+        "meaningEn": "(adj.) making little noise; calm or peaceful. (n.) an absence of noise or disturbance; peace. (v.) to make or become calm or quiet.",
+        "usagePattern": "be quiet; keep quiet; the quiet of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "quiet",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "保持安靜；保持沉默；……的寧靜"
+      },
+      "reason": "Remove the literal 名詞 placeholder while preserving the already verified noun phrase. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/quiet ; matching original U19 textbook page actually viewed ; "
+    },
+    {
+      "dataset": "examples",
+      "id": "EXc2ce2b9a",
+      "before": {
+        "exampleId": "EXc2ce2b9a",
+        "word": "brave",
+        "sensePos": "adj.",
+        "meaningHint": "勇敢的",
+        "exampleType": "basic",
+        "sentenceEn": "The brave firefighter saved the child from the fire.",
+        "sentenceZh": "勇敢的消防員從火場救出了孩子。",
+        "blankSentence": "The _____ firefighter saved the child from the fire.",
+        "answer": "brave",
+        "difficulty": "LV1",
+        "status": "draft"
+      },
+      "after": {
+        "exampleId": "EXc2ce2b9a",
+        "word": "brave",
+        "sensePos": "adj.",
+        "meaningHint": "勇敢的",
+        "exampleType": "basic",
+        "sentenceEn": "The brave firefighter saved the child from the fire.",
+        "sentenceZh": "勇敢的消防員從火場救出了孩子。",
+        "blankSentence": "The _____ firefighter saved the child from the fire.",
+        "answer": "brave",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "Read the existing authored practice, Chinese and cloze; no claim that the practice is an official question quotation. ",
+      "evidence": "https://www.merriam-webster.com/dictionary/brave ; "
+    },
+    {
+      "dataset": "examples",
+      "id": "EX57375ffd",
+      "before": {
+        "exampleId": "EX57375ffd",
+        "word": "sorrow",
+        "sensePos": "n.",
+        "meaningHint": "悲傷（考點：深沉的哀痛）",
+        "exampleType": "exam",
+        "sentenceEn": "Time did not erase her sorrow, but it made it easier to carry.",
+        "sentenceZh": "時間沒有抹去她的悲傷，只是讓它比較好承受。",
+        "blankSentence": "Time did not erase her _____, but it made it easier to carry.",
+        "answer": "sorrow",
+        "difficulty": "LV3",
+        "status": "draft"
+      },
+      "after": {
+        "exampleId": "EX57375ffd",
+        "word": "sorrow",
+        "sensePos": "n.",
+        "meaningHint": "悲傷（考點：深沉的哀痛）",
+        "exampleType": "exam",
+        "sentenceEn": "Time did not erase her sorrow, but it made it easier to carry.",
+        "sentenceZh": "時間沒有抹去她的悲傷，只是讓它比較好承受。",
+        "blankSentence": "Time did not erase her _____, but it made it easier to carry.",
+        "answer": "sorrow",
+        "difficulty": "LV3",
+        "status": "reviewed"
+      },
+      "reason": "Read the existing authored practice, Chinese and cloze; no claim that the practice is an official question quotation. ",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0o051427482769341323/02-113%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%A7%91%E5%AE%9A%E7%A8%BF.pdf ; "
+    },
+    {
+      "dataset": "senses",
+      "id": "W002821-1",
+      "before": {
+        "senseId": "W002821-1",
+        "wordId": "W002821",
+        "word": "sorrow",
+        "senseOrder": 1,
+        "sensePos": "n.",
+        "meaningZh": "悲傷",
+        "isExamSense": true,
+        "examEvidence": "學測113 文意選填Q24",
+        "answerForms": [
+          "sorrow"
+        ],
+        "note": "考點：深沉的哀痛",
+        "status": "draft"
+      },
+      "after": {
+        "senseId": "W002821-1",
+        "wordId": "W002821",
+        "word": "sorrow",
+        "senseOrder": 1,
+        "sensePos": "n.",
+        "meaningZh": "悲傷",
+        "isExamSense": true,
+        "examEvidence": "學測113（2024）英文文意選填Q24；選項C sorrow，官方答案Q24=C；試題印刷第3頁。試題：https://www.ceec.edu.tw/files/file_pool/1/0o051427482769341323/02-113%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%A7%91%E5%AE%9A%E7%A8%BF.pdf；答案：https://www.ceec.edu.tw/files/file_pool/1/0o051427843482078305/02-113%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf",
+        "answerForms": [
+          "sorrow"
+        ],
+        "note": "2026-11-05：直接讀取大考中心113學測英文試題及官方答案，Q24選C sorrow。原題為失去親人後的悲痛，支持名詞「悲傷、哀痛」；不是說 sorrow 所有語境都必然指喪親。EX57375ffd 是另寫練習句，並非正式試題逐字原句。僅此義項與來源核實，不擴為整詞批准。",
+        "status": "reviewed"
+      },
+      "reason": "Official source and answer matched with the actual loss context, not the answer letter alone. ",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0o051427482769341323/02-113%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%A7%91%E5%AE%9A%E7%A8%BF.pdf ; https://www.ceec.edu.tw/files/file_pool/1/0o051427843482078305/02-113%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf ; "
+    }
+  ],
+  "masterTouched": false,
+  "sentencesChanged": false,
+  "englishSentencesChanged": false,
+  "imagesChanged": false,
+  "sourceHashesBefore": {
+    "words.json": "7c8697feabd1460d7b72e72de010140dd50021a4e8a59272b683f260d01b40ee",
+    "senses.json": "4f0c00fb8680bdeba5b74136c7c174c569b3463ac31dc142bbeb0b459c25ae60",
+    "examples.json": "ebae600572492651cf88eb8999261a39c178ea8f8d16043c213f4f11c8fc03dc",
+    "meta.json": "70629a34363f7438bf55212e4d2134521f52dff89bced4c8d5cfc1c6134c1c83",
+    "sa-pack.json": "84d5023d83101ca0680ef0326d7bb57f7c30695b83df1c93288da5eca610c7c4"
+  },
+  "sourceHashesAfter": {
+    "words.json": "00166049eb58c258b6c24a05c4b6f6a77775531098b5886852f866535e877302",
+    "senses.json": "55630d285fd5ccd1907c25d71447d7b5b3f686799d67e363d8e6ed39bcd1ee49",
+    "examples.json": "f85b4967d0b2e62cd4bf316c405f2f6ff3ff36afe4ab0a7e91b0ad9bced2f86e",
+    "meta.json": "b1ff66246ace2b93a8e34f7b96199ea05520566aa98b52bae6c9505df06d021a",
+    "sa-pack.json": "67e2dab9e058bc05d695eb12247833409e4739ed62ef67375676d1f3b28849bd"
+  },
+  "state": "saved_and_actual_ui_reopened_with_explicit_field_visibility_boundary",
+  "validationAt": "2026-11-05T16:13:26.012Z",
+  "validationEvidence": "validation/U19-saved-final.json"
+}

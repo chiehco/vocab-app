@@ -1,0 +1,25 @@
+{
+  "facts": [
+    {
+      "exampleId": "EX93dc7fe9",
+      "before": {
+        "word": "choose",
+        "sentenceEn": "He chose the blue shirt instead of the red one.",
+        "blankSentence": "He _____ the blue shirt instead of the red one.",
+        "answer": "chose",
+        "sentenceZh": "他選了藍色襯衫，而不是紅色的。"
+      },
+      "after": {
+        "sentenceZh": "他選了藍色上衣，而不是紅色的。"
+      },
+      "evidence": [
+        {
+          "url": "https://www.merriam-webster.com/dictionary/shirt",
+          "retrieval": "direct_dictionary_page",
+          "support": "Shirt is broader than a collared shirt; the exact 1254-pixel illustration shows crew-neck short-sleeved shirts. 上衣 preserves the original English without adding a collar."
+        }
+      ],
+      "scope": "Only this Chinese string; exact unchanged headword, English, blank and answer guards."
+    }
+  ]
+}

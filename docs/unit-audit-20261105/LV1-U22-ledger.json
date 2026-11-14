@@ -1,0 +1,183 @@
+{
+  "unit": "LV1-U22",
+  "checkpointAt": "2026-11-05T20:40:52.241Z",
+  "priorCheckpoint": "1d73cab2e6ec3c5e95423ad868b153d6a3c13aac",
+  "priorCheckpointFullCi": {
+    "commit": "1d73cab2e6ec3c5e95423ad868b153d6a3c13aac",
+    "run": 42096081143,
+    "job": 127486349198,
+    "status": "completed",
+    "conclusion": "success",
+    "completedAt": "2026-11-05T19:57:22Z",
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42096081143/job/127486349198",
+    "files": 216,
+    "tests": 1712,
+    "pythonBatches": [
+      14,
+      7,
+      30,
+      10
+    ],
+    "allStepsSuccessful": true,
+    "lines": [
+      "2026-11-05T19:40:15.5485606Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +1d73cab2e6ec3c5e95423ad868b153d6a3c13aac:refs/remotes/origin/content/unit-audit-20261105",
+      "2026-11-05T19:40:24.2289325Z  * [new ref]         1d73cab2e6ec3c5e95423ad868b153d6a3c13aac -> origin/content/unit-audit-20261105",
+      "2026-11-05T19:40:25.0999156Z 1d73cab2e6ec3c5e95423ad868b153d6a3c13aac",
+      "2026-11-05T19:41:26.1197199Z Ran 14 tests in 24.943s",
+      "2026-11-05T19:41:44.5153535Z Ran 7 tests in 18.158s",
+      "2026-11-05T19:42:09.9951162Z Ran 30 tests in 25.323s",
+      "2026-11-05T19:42:10.1788029Z Ran 10 tests in 0.093s",
+      "2026-11-05T19:56:35.7803078Z  Test Files  216 passed (216)",
+      "2026-11-05T19:56:35.7811332Z       Tests  1712 passed (1712)",
+      "2026-11-05T19:57:17.0797588Z ✓ built in 2.94s"
+    ]
+  },
+  "newCheckpointFullCi": {
+    "commit": "cf8fc0f86ab01365bc71f65c0ba0a25b834c0f9e",
+    "run": 42105997179,
+    "job": 127520852273,
+    "status": "completed",
+    "conclusion": "success",
+    "completedAt": "2026-11-05T20:53:55Z",
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42105997179/job/127520852273",
+    "files": 216,
+    "tests": 1715,
+    "pythonBatches": [
+      14,
+      7,
+      32,
+      10
+    ],
+    "allStepsSuccessful": true,
+    "lines": [
+      "2026-11-05T20:43:23.5172725Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +cf8fc0f86ab01365bc71f65c0ba0a25b834c0f9e:refs/remotes/origin/content/unit-audit-20261105",
+      "2026-11-05T20:43:33.6002339Z  * [new ref]         cf8fc0f86ab01365bc71f65c0ba0a25b834c0f9e -> origin/content/unit-audit-20261105",
+      "2026-11-05T20:43:34.3024490Z cf8fc0f86ab01365bc71f65c0ba0a25b834c0f9e",
+      "2026-11-05T20:44:09.4779875Z Ran 14 tests in 19.828s",
+      "2026-11-05T20:44:22.0871237Z Ran 7 tests in 12.458s",
+      "2026-11-05T20:44:37.4349160Z Ran 32 tests in 15.242s",
+      "2026-11-05T20:44:37.5499481Z Ran 10 tests in 0.051s",
+      "2026-11-05T20:53:18.4346591Z  Test Files  216 passed (216)",
+      "2026-11-05T20:53:18.4354329Z       Tests  1715 passed (1715)",
+      "2026-11-05T20:53:50.4094782Z ✓ built in 3.35s"
+    ]
+  },
+  "state": "precise_corrections_saved_actual_app_reopens_and_local_checks_passed",
+  "scope": {
+    "sourcePairs": 79,
+    "publishedPairs": 79,
+    "formalWords": 66,
+    "uniqueExamples": 86,
+    "unmapped": 13,
+    "allClozeReconstructions": true
+  },
+  "counts": {
+    "mainPatchRows": 54,
+    "mainFields": 93,
+    "wordRows": 32,
+    "examplePosRows": 9,
+    "practiceStatusesReviewed": 7,
+    "sensesReviewed": 6,
+    "officialExamSourcesVerified": 3,
+    "translationRows": 1,
+    "newVerbFormKeys": 17,
+    "pairRepairs": 2,
+    "otherPairRowsUnchanged": 724
+  },
+  "manifests": [
+    "LV1-U22-patches.json",
+    "LV1-U22-translation-precision.json",
+    "LV1-U22-verified-forms-patches.json"
+  ],
+  "evidence": {
+    "sourcePixels": "LV1-U22-original-image-review.json",
+    "pairRepairs": "LV1-U22-exact-pair-review.json",
+    "actualApp": "validation/U22-reopen-summary.json",
+    "inverse": "validation/U22-exact-inverse.json",
+    "sources": "LV1-U22-source-research.json"
+  },
+  "localValidation": {
+    "state": "passed",
+    "completedAt": "2026-11-05T20:37:30.2813876Z",
+    "regression": {
+      "files": 11,
+      "tests": 99,
+      "exitCode": 0,
+      "originalTimeoutMs": 5000,
+      "timeoutOverride": false,
+      "log": "output/unit-audit-20261105/U22-final-regression.txt",
+      "sha256": "07f63ffe1f6b1f1965ff820463fb8cea08433522457fb6c9bbf04d84be62e529"
+    },
+    "python": {
+      "tests": 32,
+      "exitCode": 0,
+      "log": "output/unit-audit-20261105/U22-python-first.txt",
+      "sha256": "6049b5c6bdedd2f780d8441221474be2cc77314648590d054d25aa15763e297d"
+    },
+    "commands": [
+      {
+        "name": "lint",
+        "completedAt": "2026-11-05T20:35:43.3724633Z",
+        "log": "output/unit-audit-20261105/U22-lint.txt",
+        "exitCode": 0,
+        "sha256": "ccabb7869f4cb42e101c297b8547ee1f73b0920624a413ad76fd804b17f8dd29"
+      },
+      {
+        "name": "typecheck",
+        "completedAt": "2026-11-05T20:36:27.1069075Z",
+        "log": "output/unit-audit-20261105/U22-typecheck.txt",
+        "exitCode": 0,
+        "sha256": "0d93be78e4da5c0077681c4d834163661d59ddd24a0477595fb70ec25d5a5ea8"
+      },
+      {
+        "name": "build",
+        "completedAt": "2026-11-05T20:37:30.2813876Z",
+        "log": "output/unit-audit-20261105/U22-build.txt",
+        "exitCode": 0,
+        "sha256": "9e55b790b6603c5a8dd38809ece515490009a0c31b7ba20a73596bf87c267785"
+      }
+    ],
+    "contentHash": "059e0836cb06ab7733bfa55c650c9a7fa6fe82e532b5aaeae9eaf92e5b82693c",
+    "limits": "Local checkpoint checks; the new commit still requires its own full remote CI."
+  },
+  "preserved": {
+    "headwordIdsPosAndWholeWordStatuses": true,
+    "englishClozeAndAnswers": true,
+    "originalImageAndApprovalHashes": true,
+    "approvedBestSenses": true,
+    "allEightNonemptyHints": true,
+    "emptyHints": 78,
+    "generalArriveCircularCirculationOvalPairs": true,
+    "oldPayloadHashFixtures": true,
+    "userProgressTables": 14
+  },
+  "pending": [
+    {
+      "id": "LV1-U22-15",
+      "field": "Chinese material specificity",
+      "reason": "Hoop image cannot establish metal. 滾鐵環 may be the intended conventional activity; preserve original wording and separate LV4 general pair rather than mechanically remove a material."
+    },
+    {
+      "id": "W006031",
+      "field": "Chinese treatment gloss partition",
+      "reason": "English is now noun-only. Original Chinese hospitality/視為 wording remains; precise nominal phrasing across inherited combined treat/treatment meanings is not fully verified."
+    },
+    {
+      "id": "W001053",
+      "field": "separate adverb Chinese precision",
+      "reason": "Asleep has a genuine adverb entry; retained 熟睡地 is not newly approved as an exact degree/translation or as an adjective."
+    },
+    {
+      "id": "13 standalone source words",
+      "field": "formal mapping",
+      "reason": "No exact or normalized formal word IDs exist. Published unit routes verified; no new dictionary identity created."
+    }
+  ],
+  "checkpointWriterRecovery": "The before UI contains the exact message 動詞三態尚未收錄。; a first substring-only assertion confused this placeholder with an existing panel. The writer now requires the exact missing-field message; original snapshots and all real panel checks are retained.",
+  "next": {
+    "unit": "LV1-U23",
+    "firstCard": "LV1-U23-01",
+    "state": "not_started"
+  },
+  "deployment": "No merge, deployment, PR or publication-mode changes."
+}

@@ -1,0 +1,346 @@
+{
+  "unit": "LV2-U40",
+  "state": "checkpoint_committed_pushed_own_full_ci_success",
+  "baseCheckpoint": "ca15841e96b26d1c5000d0beadad926e1423f345",
+  "updatedAt": "2026-11-06T16:04:05.153Z",
+  "scope": {
+    "learningItems": 148,
+    "vocabulary": 98,
+    "grammar": 50,
+    "formalWords": 72,
+    "examples": 80,
+    "notes": 71,
+    "unmapped": 25,
+    "originalPages": 9,
+    "readableHalves": 18,
+    "generalImages": 16,
+    "deliveryMode": "text_only",
+    "practiceMode": "read_only"
+  },
+  "corrections": {
+    "mainRows": 49,
+    "mainFields": 102,
+    "wordRows": 40,
+    "exampleRows": 9,
+    "forms": 11,
+    "notes": 8,
+    "visibleSummaryFollowupRows": 2,
+    "visibleSummaryFollowupFields": 2,
+    "formalOperations": 70,
+    "formalFieldOperations": 123,
+    "uniqueFormalRows": 60,
+    "curriculumRows": 108,
+    "curriculumFields": 227,
+    "actualClozePosCorrections": 3,
+    "hintRefinements": 6,
+    "practiceTranslations": 0,
+    "interpretation": "Many fields refine broad summaries, constructions or scope of true rare senses; not123 original errors. Two visible summary boundaries were found on actual first-after screens and closed by a separate followup."
+  },
+  "boundaries": {
+    "all6090HeadwordPosStatusesPreserved": true,
+    "all7871EnglishChineseClozeAnswersPreserved": true,
+    "rawSourceHash": "45344d927c24b74dc36ad6f85fa771cb633af92f63c5172af69ed42e016ffdd3",
+    "sourceEnglishOrderQuestionsPrintedLabelsPreserved": true,
+    "unmappedIdsRemainNull": 25,
+    "sourceImagesAndOriginalExamplesAdopted": 0,
+    "all16ImageBytesBindingsAndCaptionsPreserved": true,
+    "oldHashFixturesChanged": false,
+    "roughHasNoNewVerbForms": true,
+    "official107AppearSourceAndIndependentExerciseBoundaryPreserved": true,
+    "hottestActressesHintUnchanged": true
+  },
+  "verification": {
+    "reopens": {
+      "state": "actual_app_after_reopens_verified",
+      "twoVisibleSummaryFollowupsReopened": true,
+      "initialCompleteCaptureFilesRetained": true,
+      "sourceItems": 148,
+      "sourceVocabulary": 98,
+      "sourceGrammar": 50,
+      "generalCards": 72,
+      "examples": 80,
+      "nonEmptyHintsVisible": 8,
+      "emptyHintsPreserved": 72,
+      "newForms": 11,
+      "bothFormPanelsChecked": 22,
+      "usagePages": 30,
+      "changedNotesVisible": 8,
+      "sourceImagesAdopted": 0,
+      "generalImagesChecked": 16,
+      "unchangedImageAssets": 16,
+      "unchangedImageBindings": 16,
+      "allFormalIdentitiesRetained": true,
+      "uiMismatches": 0,
+      "rawPosVisibility": {
+        "threeCorrectedPosSaved": true,
+        "emptyHintTagsMayNotRender": true,
+        "completeSentencesReopened": true,
+        "nativeSavedPosReadbackRequired": true
+      }
+    },
+    "exactInverse": "validation/LV2-U40-exact-inverse.json",
+    "persistence": "validation/LV2-U40-persistence-summary.json",
+    "localChecks": {
+      "unit": "LV2-U40",
+      "python": {
+        "first": {
+          "tests": 71,
+          "exitCode": 0
+        },
+        "final": {
+          "tests": 72,
+          "exitCode": 0
+        }
+      },
+      "frontend": {
+        "initial": {
+          "files": 29,
+          "tests": 344,
+          "passed": 342,
+          "failed": 2,
+          "exitCode": 1,
+          "failure": "Standalone historical U07/U24 form fixtures still saw later U40 fields. Whole-pack original fixture was not reset."
+        },
+        "exactPriorFormRetry": {
+          "files": 1,
+          "tests": 81,
+          "passed": 81,
+          "failed": 0
+        },
+        "final": {
+          "files": 3,
+          "tests": 99,
+          "failed": 0,
+          "exitCode": 0
+        },
+        "initialOther28FilesRetainedPassed": true,
+        "originalU40TextAndNewAuditIncluded": true,
+        "originalLocalTimeout": 5000,
+        "maxWorkers": 1
+      },
+      "lint": {
+        "exitCode": 0
+      },
+      "typecheck": {
+        "exitCode": 0
+      },
+      "build": {
+        "exitCode": 0
+      },
+      "sourceDraftCheck": {
+        "exitCode": 0
+      },
+      "sourceIntegrationCheck": {
+        "exitCode": 0
+      },
+      "logs": [
+        {
+          "file": "LV2-U40-python-first.txt",
+          "sha256": "c4e61b3c4d3a23e4289e66d2c7146a057dc7e7e137ebcb5d7acd995100c5527c"
+        },
+        {
+          "file": "LV2-U40-regression-first.txt",
+          "sha256": "db76f79a7ef4be26dcfc87ad72ac8620eee28fc9f85b653a84c1f12f91084dab"
+        },
+        {
+          "file": "LV2-U40-prior-form-retry.txt",
+          "sha256": "9bca0816317cea66360cb8fa8005c93d7990af6f28a14bfb97aacf2c78f6de88"
+        },
+        {
+          "file": "LV2-U40-python-final.txt",
+          "sha256": "eef7577861801e9e36388af58becda2acb38ed1b91d82c591c66831fad30a3a8"
+        },
+        {
+          "file": "LV2-U40-regression-final.txt",
+          "sha256": "6eca7c39dc4013110681339d7dffd1c3ace9f445d7624e49843171d7cb0247f6"
+        },
+        {
+          "file": "LV2-U40-lint-final.txt",
+          "sha256": "99011246ae2020ed006c3d080185d3edfbe7954699befa13f2ede57cfad6c4da"
+        },
+        {
+          "file": "LV2-U40-typecheck-final.txt",
+          "sha256": "da91f4c430838409de74534c4d8bed41445d7c7283163b2a63c446dde034587b"
+        },
+        {
+          "file": "LV2-U40-build-final.txt",
+          "sha256": "1cb97c42f5ae0d947534a5a3e31aa3f926e682ec8c5c4433408f3d15728b8256"
+        },
+        {
+          "file": "LV2-U40-lint-after-followup.txt",
+          "sha256": "3e3d63692e51723b5ece21b34eae973f696b5efafbbc9f5840a936119380bd4a"
+        },
+        {
+          "file": "LV2-U40-typecheck-after-followup.txt",
+          "sha256": "da91f4c430838409de74534c4d8bed41445d7c7283163b2a63c446dde034587b"
+        },
+        {
+          "file": "LV2-U40-build-after-followup.txt",
+          "sha256": "1881f566f8e5f2bee6603472f6f640d09a7d2873769f815519515ce0bf7d5c78"
+        }
+      ],
+      "ownNewHeadCi": "pending"
+    },
+    "afterPixels": "validation/LV2-U40-after-pixel-review.json",
+    "limits": "Complete-field App capture for all items and cards, with representative screenshot pixels checked. Not every generated screenshot was manually reread; retained pending lexical/pixel details are not whole-card approvals."
+  },
+  "retainedPending": [
+    {
+      "id": "W001562",
+      "word": "mug",
+      "reason": "Exact 苦讀者 noun has not been established; mug up study verb does not by itself prove that noun.",
+      "action": "preserve_exact_existing_value_or_recorded_source_boundary; not_whole_word_approved"
+    },
+    {
+      "id": "W001555",
+      "word": "mix",
+      "reason": "Inherited 混亂／糊塗 exact noun scope remains pending; preserved.",
+      "action": "preserve_exact_existing_value_or_recorded_source_boundary; not_whole_word_approved"
+    },
+    {
+      "id": "W001556",
+      "word": "mixture",
+      "reason": "Inherited 混淆 exact translation remains pending; preserved.",
+      "action": "preserve_exact_existing_value_or_recorded_source_boundary; not_whole_word_approved"
+    },
+    {
+      "id": "W001276",
+      "word": "download",
+      "reason": "Inherited 卸載 may be legacy terminology; modern 下載 confirmed and 下栽 corrected, no proof of historical absence claimed.",
+      "action": "preserve_exact_existing_value_or_recorded_source_boundary; not_whole_word_approved"
+    },
+    {
+      "id": "W001945",
+      "word": "upload",
+      "reason": "Older 上裝／加載／儲入 terminology remains pending exact history; preserved.",
+      "action": "preserve_exact_existing_value_or_recorded_source_boundary; not_whole_word_approved"
+    },
+    {
+      "id": "W001429",
+      "word": "hero/heroine",
+      "reason": "Exact inherited 烈婦 Chinese scope remains pending; combined headword and all glosses retained.",
+      "action": "preserve_exact_existing_value_or_recorded_source_boundary; not_whole_word_approved"
+    },
+    {
+      "id": "W003511",
+      "word": "idol",
+      "reason": "Exact 幻象 scope remains pending; no deletion.",
+      "action": "preserve_exact_existing_value_or_recorded_source_boundary; not_whole_word_approved"
+    },
+    {
+      "id": "W001173",
+      "word": "cocoa",
+      "reason": "Inherited colour gloss retained; the retrieved quiz colour distractors are not proof of this exact dictionary noun.",
+      "action": "preserve_exact_existing_value_or_recorded_source_boundary; not_whole_word_approved"
+    },
+    {
+      "id": "W005580",
+      "word": "moody",
+      "reason": "Capitalized Moody biographies retained; only the selected adjective was newly verified.",
+      "action": "preserve_exact_existing_value_or_recorded_source_boundary; not_whole_word_approved"
+    },
+    {
+      "id": "EXb10276d7",
+      "word": "hot",
+      "reason": "Hottest actresses could concern popularity or attractiveness; keep existing hint/Chinese and precise uncertainty.",
+      "action": "preserve_exact_existing_value_or_recorded_source_boundary; not_whole_word_approved"
+    },
+    {
+      "id": "W000734",
+      "word": "safe",
+      "reason": "Existing 冷藏室 pending-source boundary from U16 remains; current source display selects only adjective safe.",
+      "action": "preserve_exact_existing_value_or_recorded_source_boundary; not_whole_word_approved"
+    },
+    {
+      "id": "W004833",
+      "word": "spicy image",
+      "reason": "Pepper/puckered lips and raised hand are visible; opening mouth and instantaneous fanning are not fully certifiable from one frame. No image/pair change or completed repair claim.",
+      "action": "preserve_exact_existing_value_or_recorded_source_boundary; not_whole_word_approved"
+    }
+  ],
+  "priorCheckpointFullCi": {
+    "commit": "ca15841e96b26d1c5000d0beadad926e1423f345",
+    "run": 42232615701,
+    "job": 127942024815,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42232615701/job/127942024815",
+    "status": "completed",
+    "conclusion": "success",
+    "checkoutShaReadFromFullLog": true,
+    "testFiles": 229,
+    "tests": 1865,
+    "pythonBatches": [
+      14,
+      7,
+      69,
+      10
+    ],
+    "lint": "success",
+    "typecheck": "success",
+    "build": "success",
+    "buildLogCompletedAtUtc": "2026-11-06T14:31:26.4746829Z",
+    "jobCompletedAtUtc": "2026-11-06T14:31:30Z",
+    "logParsingNote": "Initial local reader did not strip literal caret escape sequences and stopped before writing a terminal result. Same saved complete log decoded without changing CI or tests."
+  },
+  "newCheckpointFullCi": {
+    "commit": "8febac6a2ee1138e6f9cea1ef064b78abac67a57",
+    "run": 42249242236,
+    "job": 127999561855,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42249242236/job/127999561855",
+    "status": "completed",
+    "conclusion": "success",
+    "checkoutShaReadFromFullLog": true,
+    "testFiles": 230,
+    "tests": 1876,
+    "pythonBatches": [
+      14,
+      7,
+      72,
+      10
+    ],
+    "lint": "success",
+    "typecheck": "success",
+    "build": "success",
+    "buildLogCompletedAtUtc": "2026-11-06T16:20:39.0119792Z",
+    "jobCompletedAtUtc": "2026-11-06T16:20:43Z"
+  },
+  "releaseReconciliation": {
+    "mainCommit": "0f4eb27961571ce393a1f1a2bc63f1d558bef1fb",
+    "mergeBase": "2c2035c07a4e5d1980097dcf4e8ab03f8a5873bb",
+    "formalFieldsCompared": 123,
+    "mainChangesNotAlreadySame": 0,
+    "eitherManifestExecutionOnce": true,
+    "retainMainGuards": [
+      "audit JSON LF rules",
+      "Deploy-default original5s job",
+      "vite single worker",
+      "build-only exclusion of unpublished LV1-U12-31-275c827e2d7a.webp"
+    ],
+    "mainMerged": false,
+    "deployed": false
+  },
+  "inheritedU38Images": {
+    "state": "awaiting_verified_git_asset_delivery_after_windows_xattr_technical_failure",
+    "oldAssetsRetained": true,
+    "candidatePngsReportedReady": true,
+    "localInstalled": false,
+    "noDuplicateGeneration": true,
+    "appVerificationPending": true,
+    "evidence": "validation/LV2-U38-candidate-retrieval-blocker.json"
+  },
+  "next": {
+    "level": "LV2",
+    "unit": 41,
+    "first": "silver",
+    "wordId": "W001799",
+    "sourcePage": 363
+  },
+  "publication": {
+    "branch": "content/unit-audit-20261105",
+    "mainMerged": false,
+    "deployed": false,
+    "wholeLevelReleaseSeparate": true,
+    "frozenHistoricalCandidate": "3106a39dea97360a62a2db4d8e98300724d94fdb"
+  },
+  "ownCheckpoint": "8febac6a2ee1138e6f9cea1ef064b78abac67a57",
+  "ciResultRecordedInSubsequentCheckpoint": true
+}

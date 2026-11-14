@@ -1,0 +1,72 @@
+{
+  "unit": "LV1-U15",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "scope": "Exactly five Chinese usage grouping corrections after the main U15 manifest; chronological reverse restoration remains exact.",
+  "patches": [
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000593",
+      "before": {
+        "usagePatternZh": "注意到某事；注意到某人正在做……（受詞＋V-ing 分詞）"
+      },
+      "after": {
+        "usagePatternZh": "注意到某人正在做……（受詞＋V-ing 分詞）；張貼公告；未事先通知"
+      },
+      "reason": "Actual notice usage UI failed strict bilingual visibility after reclick. Audit of all thirty changed usage rows found five English/Chinese part-count mismatches. Correct each Chinese group to its exact existing English construction, preserving English and all other fields.",
+      "evidence": "Actual unchanged usagePattern and full source card; strict App usage tab output. notice: perception + object + -ing, put up a notice, without notice. rich: rich in / rich flavor. beach: location / visit / towel or ball. key: key to / key role or factor. pair: a pair of / in pairs."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000714",
+      "before": {
+        "usagePatternZh": "富含……；富有的朋友／豐盛的餐點；濃郁的風味"
+      },
+      "after": {
+        "usagePatternZh": "富含……；濃郁的風味"
+      },
+      "reason": "Actual notice usage UI failed strict bilingual visibility after reclick. Audit of all thirty changed usage rows found five English/Chinese part-count mismatches. Correct each Chinese group to its exact existing English construction, preserving English and all other fields.",
+      "evidence": "Actual unchanged usagePattern and full source card; strict App usage tab output. notice: perception + object + -ing, put up a notice, without notice. rich: rich in / rich flavor. beach: location / visit / towel or ball. key: key to / key role or factor. pair: a pair of / in pairs."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000069",
+      "before": {
+        "usagePatternZh": "在海灘上；海灘毛巾／海灘球"
+      },
+      "after": {
+        "usagePatternZh": "在海灘上；去海灘；海灘毛巾／海灘球"
+      },
+      "reason": "Actual notice usage UI failed strict bilingual visibility after reclick. Audit of all thirty changed usage rows found five English/Chinese part-count mismatches. Correct each Chinese group to its exact existing English construction, preserving English and all other fields.",
+      "evidence": "Actual unchanged usagePattern and full source card; strict App usage tab output. notice: perception + object + -ing, put up a notice, without notice. rich: rich in / rich flavor. beach: location / visit / towel or ball. key: key to / key role or factor. pair: a pair of / in pairs."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000451",
+      "before": {
+        "usagePatternZh": "……的關鍵；關鍵因素；鑰匙圈"
+      },
+      "after": {
+        "usagePatternZh": "……的關鍵；關鍵的……（關鍵角色／因素）"
+      },
+      "reason": "Actual notice usage UI failed strict bilingual visibility after reclick. Audit of all thirty changed usage rows found five English/Chinese part-count mismatches. Correct each Chinese group to its exact existing English construction, preserving English and all other fields.",
+      "evidence": "Actual unchanged usagePattern and full source card; strict App usage tab output. notice: perception + object + -ing, put up a notice, without notice. rich: rich in / rich flavor. beach: location / visit / towel or ball. key: key to / key role or factor. pair: a pair of / in pairs."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000623",
+      "before": {
+        "usagePatternZh": "一雙鞋／一副手套／一把剪刀；成對地；配對"
+      },
+      "after": {
+        "usagePatternZh": "一雙鞋／一副手套／一把剪刀；成對地"
+      },
+      "reason": "Actual notice usage UI failed strict bilingual visibility after reclick. Audit of all thirty changed usage rows found five English/Chinese part-count mismatches. Correct each Chinese group to its exact existing English construction, preserving English and all other fields.",
+      "evidence": "Actual unchanged usagePattern and full source card; strict App usage tab output. notice: perception + object + -ing, put up a notice, without notice. rich: rich in / rich flavor. beach: location / visit / towel or ball. key: key to / key role or factor. pair: a pair of / in pairs."
+    }
+  ]
+}

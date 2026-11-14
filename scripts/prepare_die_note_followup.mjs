@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import {readFileSync,writeFileSync} from 'node:fs';
+const read=p=>JSON.parse(readFileSync(p,'utf8')),out='docs/unit-audit-20261105/';
+const row=read('public/data/v1/notes.json').find(n=>n.noteId==='NXc62b0f26');
+const before={word:'die',noteType:'phrase',title:'die of / from...',status:'approved',content:'死於（事故或疾病等）。例：The girl died from head injuries.（這女孩死於腦部創傷。）'};
+for(const[k,v]of Object.entries(before))assert.equal(row[k],v);
+const example=read('public/data/v1/examples.json').find(e=>e.exampleId==='EX50693488');
+assert.equal(example.sentenceEn,'The girl died from head injuries.');assert.equal(example.sentenceZh,'這女孩死於頭部傷勢。');
+const after={content:before.content.replace('腦部創傷','頭部傷勢')};
+const fact={noteId:row.noteId,exampleId:example.exampleId,before,after,reason:'Synchronize this one duplicate Chinese translation with the already verified head-injuries sentence. Head injuries do not necessarily mean brain injuries. Preserve the exact English, title, phrase type and existing approved status.',evidence:'https://www.merriam-webster.com/dictionary/head ; https://www.merriam-webster.com/dictionary/injury'};
+writeFileSync(out+'VERIFIED-NOTE-SOURCES.json',JSON.stringify({scope:'Exactly one existing note content field; no other note, title, English, type or status edits.',facts:[fact]},null,2)+'\n');
+writeFileSync(out+'LV1-U08-die-note-followup.json',JSON.stringify({baseCommit:'29cfc684d7a11b07f09988c478d30358830f1951',patches:[{dataset:'notes',key:'noteId',id:fact.noteId,before,after,reason:fact.reason,evidence:fact.evidence}]},null,2)+'\n');
+console.log(JSON.stringify({noteId:fact.noteId,exampleId:fact.exampleId,englishPreserved:true}));

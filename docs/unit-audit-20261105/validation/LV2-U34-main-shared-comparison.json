@@ -1,0 +1,1419 @@
+{
+  "checkedAtUtc": "2026-11-06T08:08:01.447Z",
+  "scope": "Read-only field comparison of four formal datasets against fetched main and the actual merge-base. Audit worktree includes applied, uncommitted U34 patches. No merge, checkout, data replacement or release action.",
+  "mainCommit": "0f4eb27961571ce393a1f1a2bc63f1d558bef1fb",
+  "auditBaseCheckpoint": "3c696fed0a9a84cf39a543297ecad076d192a085",
+  "mergeBase": "2c2035c07a4e5d1980097dcf4e8ab03f8a5873bb",
+  "mainChangedFields": 1,
+  "mainChangeClassifications": {
+    "already_same_in_audit": 1
+  },
+  "mainChanges": [
+    {
+      "dataset": "notes",
+      "id": "NX0fad7e32",
+      "word": "either",
+      "field": "content",
+      "commonBase": "either + 單數動詞；either of + 複數名詞 + 複數動詞。",
+      "main": "either 單獨作主詞時接單數動詞；either of + 複數名詞／代名詞作主詞時，正式寫作採單數動詞，較口語的用法也可採複數動詞。",
+      "audit": "either 單獨作主詞時接單數動詞；either of + 複數名詞／代名詞作主詞時，正式寫作採單數動詞，較口語的用法也可採複數動詞。",
+      "classification": "already_same_in_audit"
+    }
+  ],
+  "mainChangesNotAlreadySameInAudit": [],
+  "eitherExactNote": {
+    "dataset": "notes",
+    "id": "NX0fad7e32",
+    "word": "either",
+    "field": "content",
+    "commonBase": "either + 單數動詞；either of + 複數名詞 + 複數動詞。",
+    "main": "either 單獨作主詞時接單數動詞；either of + 複數名詞／代名詞作主詞時，正式寫作採單數動詞，較口語的用法也可採複數動詞。",
+    "audit": "either 單獨作主詞時接單數動詞；either of + 複數名詞／代名詞作主詞時，正式寫作採單數動詞，較口語的用法也可採複數動詞。",
+    "classification": "already_same_in_audit"
+  },
+  "precaution": "Future release extraction must reconcile fields by exact ID and before/after; never replace whole old product files. No claim that code or every curriculum field has been merged.",
+  "mainMerged": false,
+  "deployed": false,
+  "branchDivergence": {
+    "auditAhead": 8,
+    "auditBehind": 2
+  },
+  "eitherManifestDeduplication": {
+    "id": "NX0fad7e32",
+    "mainManifest": "LV1-U10-either-note-followup.json",
+    "auditManifest": "LV2-U32-notes-patches.json",
+    "exactBeforeAndAfterEqual": true,
+    "requiredExecutionCount": 1,
+    "retainBothHistoricalEvidence": true,
+    "preserveNegativeGuards": true,
+    "risk": "Importing both into apply or beforeUnitAudit would replay or reverse the same field twice. Future integration must choose one execution while retaining both evidence records; no integration performed here."
+  },
+  "releaseConfigurationHandoff": {
+    "commit": "c02b5784a8d06b96ab3ecc8fd1e8c6d4d6899e16",
+    "inspectedPatchSha256": "40427bafcfef4d3aeb79b85a13d2f0a5d0f29b9fd8774ceeb11ef94a06b5ad6c",
+    "files": [
+      ".gitattributes",
+      ".github/workflows/ci.yml",
+      "vite.config.ts"
+    ],
+    "preserve": [
+      "Audit JSON raw-byte LF rule",
+      "Deploy-default tests (5s) job with normal npm run test and build",
+      "Single worker test configuration",
+      "Build-only exclusion of the retained unpublished U12 elevator asset with registry and output-path guards"
+    ],
+    "retainedUnpublishedAsset": "wordbeast/lv1-reviewed/LV1-U12-31-275c827e2d7a.webp",
+    "sourceAssetMustRemain": true,
+    "registrationMustRemainUnpublished": true,
+    "mainFilesNotOverwritten": true,
+    "action": "Carry these protections into a future complete-level release integration; do not copy older audit configuration over main."
+  },
+  "sharedFormalLV1Fields": [
+    {
+      "dataset": "words",
+      "id": "W000532",
+      "word": "medicine",
+      "field": "meaningZh",
+      "before": "藥；醫學；內科；給...用藥",
+      "after": "（名詞）藥；醫學；內科；（另有動詞用法）給……用藥",
+      "main": "藥；醫學；內科；給...用藥",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W000532",
+      "word": "medicine",
+      "field": "meaningEn",
+      "before": "a drug or other substance used to treat or prevent disease; the science of diagnosing, treating, and preventing illness",
+      "after": "a drug or other substance used to treat or prevent disease; the science of diagnosing, treating, and preventing illness; separate verb use: to give medicine to someone.",
+      "main": "a drug or other substance used to treat or prevent disease; the science of diagnosing, treating, and preventing illness",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W000383",
+      "word": "head",
+      "field": "meaningEn",
+      "before": "(n.) the part of the body containing the brain and face; the person in charge of a group; (v.) to move in a particular direction",
+      "after": "(n.) the part of the body containing the brain and face; the person in charge of a group; (v.) to move in a particular direction; also (v.), to be in charge of an organization or department.",
+      "main": "(n.) the part of the body containing the brain and face; the person in charge of a group; (v.) to move in a particular direction",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX12efbd6e",
+      "word": "head",
+      "field": "sensePos",
+      "before": "n./v.",
+      "after": "n.",
+      "main": "n./v.",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX12efbd6e",
+      "word": "head",
+      "field": "meaningHint",
+      "before": "頭；頭腦；領袖；腦袋",
+      "after": "腦中（in one's head）",
+      "main": "頭；頭腦；領袖；腦袋",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX4b266bd8",
+      "word": "head",
+      "field": "sensePos",
+      "before": "n./v.",
+      "after": "n.",
+      "main": "n./v.",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX4b266bd8",
+      "word": "head",
+      "field": "meaningHint",
+      "before": "頭；頭腦；領袖；腦袋",
+      "after": "主管；領導人",
+      "main": "頭；頭腦；領袖；腦袋",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX544057bc",
+      "word": "head",
+      "field": "sensePos",
+      "before": "n./v.",
+      "after": "v.",
+      "main": "n./v.",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX544057bc",
+      "word": "head",
+      "field": "meaningHint",
+      "before": "頭；頭腦；領袖；腦袋",
+      "after": "管理；領導",
+      "main": "頭；頭腦；領袖；腦袋",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX5a761d0c",
+      "word": "head",
+      "field": "sensePos",
+      "before": "n./v.",
+      "after": "n.",
+      "main": "n./v.",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX5a761d0c",
+      "word": "head",
+      "field": "meaningHint",
+      "before": "頭；頭腦；領袖；腦袋",
+      "after": "頭",
+      "main": "頭；頭腦；領袖；腦袋",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX8912d962",
+      "word": "head",
+      "field": "sensePos",
+      "before": "n./v.",
+      "after": "n.",
+      "main": "n./v.",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX8912d962",
+      "word": "head",
+      "field": "meaningHint",
+      "before": "頭；頭腦；領袖；腦袋",
+      "after": "冷靜；理智（keep/lose one's head）",
+      "main": "頭；頭腦；領袖；腦袋",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EXf4c21606",
+      "word": "head",
+      "field": "sensePos",
+      "before": "n./v.",
+      "after": "v.",
+      "main": "n./v.",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EXf4c21606",
+      "word": "head",
+      "field": "meaningHint",
+      "before": "頭；頭腦；領袖；腦袋",
+      "after": "前往（head for）",
+      "main": "頭；頭腦；領袖；腦袋",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "senses",
+      "id": "W000383-1",
+      "word": "head",
+      "field": "note",
+      "before": "待拆分；主表字義：頭；頭腦；領袖；腦袋",
+      "after": "已核此既有 n. 義項及完整英中例句；保留其他義項、詞頭詞性與整詞狀態，本義核對不等於整卡全欄通過。來源：https://www.collinsdictionary.com/dictionary/english/head",
+      "main": "待拆分；主表字義：頭；頭腦；領袖；腦袋",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "senses",
+      "id": "W000383-2",
+      "word": "head",
+      "field": "note",
+      "before": "待拆分；主表字義：頭；頭腦；領袖；腦袋",
+      "after": "已核此既有 v. 義項及完整英中例句；保留其他義項、詞頭詞性與整詞狀態，本義核對不等於整卡全欄通過。來源：https://www.collinsdictionary.com/dictionary/english/head",
+      "main": "待拆分；主表字義：頭；頭腦；領袖；腦袋",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "senses",
+      "id": "W000868-1",
+      "word": "test",
+      "field": "note",
+      "before": "2026-11-05：核對此既有名詞／動詞義、完整英中例句及實際挖空詞。author 的撰寫動詞有正式詞典正文支持，不因舊註「罕用」刪除。僅核本義，未擴為整詞、其他罕義或官方考題來源認證。",
+      "after": "已核此既有 n. 義項及完整英中例句；保留其他義項、詞頭詞性與整詞狀態，本義核對不等於整卡全欄通過。來源：https://www.collinsdictionary.com/dictionary/english/test",
+      "main": "2026-11-05：核對此既有名詞／動詞義、完整英中例句及實際挖空詞。author 的撰寫動詞有正式詞典正文支持，不因舊註「罕用」刪除。僅核本義，未擴為整詞、其他罕義或官方考題來源認證。",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "senses",
+      "id": "W000868-2",
+      "word": "test",
+      "field": "note",
+      "before": "2026-11-05：核對此既有名詞／動詞義、完整英中例句及實際挖空詞。author 的撰寫動詞有正式詞典正文支持，不因舊註「罕用」刪除。僅核本義，未擴為整詞、其他罕義或官方考題來源認證。",
+      "after": "已核此既有 v. 義項及完整英中例句；保留其他義項、詞頭詞性與整詞狀態，本義核對不等於整卡全欄通過。來源：https://www.collinsdictionary.com/dictionary/english/test",
+      "main": "2026-11-05：核對此既有名詞／動詞義、完整英中例句及實際挖空詞。author 的撰寫動詞有正式詞典正文支持，不因舊註「罕用」刪除。僅核本義，未擴為整詞、其他罕義或官方考題來源認證。",
+      "classification": "main_matches_exact_before"
+    }
+  ],
+  "u34Fields": 102,
+  "u34MainClassifications": {
+    "main_matches_exact_before": 102
+  },
+  "u34Comparisons": [
+    {
+      "dataset": "words",
+      "id": "W001069",
+      "word": "balloon",
+      "field": "meaningZh",
+      "before": "氣球；使成氣球狀；膨脹如氣球；激增",
+      "after": "（名詞）氣球；（另有動詞用法）使成氣球狀；膨脹如氣球；激增",
+      "main": "氣球；使成氣球狀；膨脹如氣球；激增",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001069",
+      "word": "balloon",
+      "field": "meaningEn",
+      "before": "large tough nonrigid bag filled with gas or heated air; small thin inflatable rubber bag with narrow neck",
+      "after": "large tough nonrigid bag filled with gas or heated air; small thin inflatable rubber bag with narrow neck; separate verb uses: to swell into a rounded shape or increase rapidly.",
+      "main": "large tough nonrigid bag filled with gas or heated air; small thin inflatable rubber bag with narrow neck",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001664",
+      "word": "press",
+      "field": "meaningEn",
+      "before": "to push something firmly with your finger, foot, or hand; newspapers, magazines, and the journalists who write for them; a machine used for printing",
+      "after": "to push something firmly with your finger, foot, or hand; newspapers, magazines, and the journalists who write for them; a machine used for printing; also (v.), to iron clothes or urge someone insistently to do something.",
+      "main": "to push something firmly with your finger, foot, or hand; newspapers, magazines, and the journalists who write for them; a machine used for printing",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001664",
+      "word": "press",
+      "field": "meaningZh",
+      "before": "壓；撳；按；人羣",
+      "after": "壓；撳；按；人羣；（動詞）熨平；竭力勸說；（名詞）新聞界；記者",
+      "main": "壓；撳；按；人羣",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001665",
+      "word": "pressure",
+      "field": "meaningZh",
+      "before": "壓；榨；按；強制",
+      "after": "壓；榨；按；強制；（名詞）壓力；壓迫",
+      "main": "壓；榨；按；強制",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001842",
+      "word": "stamp",
+      "field": "meaningEn",
+      "before": "a type or class; a symbol that is the result of printing or engraving",
+      "after": "a type or class; a symbol that is the result of printing or engraving; also (n.), a paid postal label or a device/mark for stamping; (v.), to apply a stamp or bring a foot down heavily.",
+      "main": "a type or class; a symbol that is the result of printing or engraving",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001842",
+      "word": "stamp",
+      "field": "meaningZh",
+      "before": "印；郵票；列印器；戳子",
+      "after": "印；郵票；列印器；戳子；（動詞）蓋章；貼郵票；跺腳",
+      "main": "印；郵票；列印器；戳子",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001842",
+      "word": "stamp",
+      "field": "usagePattern",
+      "before": "stamp + N; stamp to V; a/the stamp",
+      "after": "collect stamps; stamp a document; stamp one's foot",
+      "main": "stamp + N; stamp to V; a/the stamp",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001842",
+      "word": "stamp",
+      "field": "usagePatternZh",
+      "before": "蓋章於某物；蓋章以做某事；郵票／印章",
+      "after": "集郵；在文件上蓋章；跺腳",
+      "main": "蓋章於某物；蓋章以做某事；郵票／印章",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001309",
+      "word": "ending",
+      "field": "meaningZh",
+      "before": "終止；終了；收場；末梢",
+      "after": "終止；終了；收場；末梢；結局",
+      "main": "終止；終了；收場；末梢",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001356",
+      "word": "final",
+      "field": "meaningEn",
+      "before": "(adj.) happening at the end of a process or series of events, coming last; (n.) the last match in a competition, which decides the overall winner",
+      "after": "(adj.) happening at the end of a process or series of events, coming last; (n.) the last match in a competition, which decides the overall winner; also (adj., of a decision), settled and not to be changed; (n.), a final examination.",
+      "main": "(adj.) happening at the end of a process or series of events, coming last; (n.) the last match in a competition, which decides the overall winner",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001356",
+      "word": "final",
+      "field": "meaningZh",
+      "before": "期末考試；結局；決賽；最後的",
+      "after": "期末考試；結局；決賽；最後的；（形容詞，指決定）不可更改的",
+      "main": "期末考試；結局；決賽；最後的",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001079",
+      "word": "battle",
+      "field": "meaningZh",
+      "before": "戰役；戰鬥",
+      "after": "戰役；戰鬥；（動詞）搏鬥；奮戰",
+      "main": "戰役；戰鬥",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001190",
+      "word": "conflict",
+      "field": "meaningZh",
+      "before": "戰鬥；衝突；矛盾；爭執",
+      "after": "戰鬥；衝突；矛盾；爭執；（動詞）相衝突；相抵觸",
+      "main": "戰鬥；衝突；矛盾；爭執",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001621",
+      "word": "patient",
+      "field": "meaningZh",
+      "before": "病人；承受者；忍耐的；容忍的",
+      "after": "病人；承受者；忍耐的；容忍的；有耐心的",
+      "main": "病人；承受者；忍耐的；容忍的",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001540",
+      "word": "medical",
+      "field": "meaningZh",
+      "before": "醫生；體格檢查；醫學的；內科的",
+      "after": "（形容詞）醫學的；內科的；（另有名詞用法）體格檢查；醫生",
+      "main": "醫生；體格檢查；醫學的；內科的",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001540",
+      "word": "medical",
+      "field": "meaningEn",
+      "before": "relating to medicine, illnesses, or their treatment",
+      "after": "relating to medicine, illnesses, or their treatment; separate noun uses: a medical examination, or a practitioner of medicine (recorded in The Century Dictionary).",
+      "main": "relating to medicine, illnesses, or their treatment",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001072",
+      "word": "barber",
+      "field": "meaningEn",
+      "before": "United States composer (1910-1981); a hairdresser who cuts hair and shaves beards as a trade",
+      "after": "a hairdresser who cuts hair and shaves beards as a trade; Barber, as a separate capitalized proper name, can refer to the United States composer Samuel Barber (1910–1981).",
+      "main": "United States composer (1910-1981); a hairdresser who cuts hair and shaves beards as a trade",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001072",
+      "word": "barber",
+      "field": "usagePattern",
+      "before": "a/the barber; barber of N",
+      "after": "go to the barber's; ask a barber to cut one's hair",
+      "main": "a/the barber; barber of N",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001072",
+      "word": "barber",
+      "field": "usagePatternZh",
+      "before": "一位理髮師；……的理髮師",
+      "after": "去理髮店；請理髮師剪頭髮",
+      "main": "一位理髮師；……的理髮師",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001321",
+      "word": "eve",
+      "field": "meaningEn",
+      "before": "(Old Testament) Adam's wife in Judeo-Christian mythology: the first woman and mother of the human race; God created Eve from Adam's rib a...; the day before",
+      "after": "the evening, day, or period immediately before an event; separately, Eve (capitalized) is the first woman and Adam's wife in the Bible.",
+      "main": "(Old Testament) Adam's wife in Judeo-Christian mythology: the first woman and mother of the human race; God created Eve from Adam's rib a...; the day before",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001321",
+      "word": "eve",
+      "field": "usagePattern",
+      "before": "an/the eve; eve of N",
+      "after": "on the eve of N; on New Year's Eve; on Christmas Eve",
+      "main": "an/the eve; eve of N",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001321",
+      "word": "eve",
+      "field": "usagePatternZh",
+      "before": "前夕；……的前夕",
+      "after": "在……的前夕；在新年前夕；在平安夜",
+      "main": "前夕；……的前夕",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001549",
+      "word": "midnight",
+      "field": "meaningZh",
+      "before": "午夜；子夜；半夜；午夜的",
+      "after": "（名詞）午夜；子夜；半夜；（另有形容詞用法）午夜的",
+      "main": "午夜；子夜；半夜；午夜的",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001549",
+      "word": "midnight",
+      "field": "meaningEn",
+      "before": "12 o'clock at night; the middle of the night",
+      "after": "12 o'clock at night; the middle of the night; separate adjective use: occurring at midnight.",
+      "main": "12 o'clock at night; the middle of the night",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001549",
+      "word": "midnight",
+      "field": "usagePattern",
+      "before": "a/the midnight; midnight of N",
+      "after": "at midnight; after midnight; a midnight deadline",
+      "main": "a/the midnight; midnight of N",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001549",
+      "word": "midnight",
+      "field": "usagePatternZh",
+      "before": "午夜；……的午夜",
+      "after": "在午夜；午夜過後；午夜的截止時間",
+      "main": "午夜；……的午夜",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001020",
+      "word": "ahead",
+      "field": "meaningZh",
+      "before": "領先的；預先的；向前的；領先",
+      "after": "在前面；向前；領先；預先",
+      "main": "領先的；預先的；向前的；領先",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001020",
+      "word": "ahead",
+      "field": "meaningEn",
+      "before": "having the leading position or higher score in a contest; at or in the front",
+      "after": "(adv.) in front or farther forward; in a leading position; in advance of a later event.",
+      "main": "having the leading position or higher score in a contest; at or in the front",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001020",
+      "word": "ahead",
+      "field": "usagePattern",
+      "before": "V + ahead",
+      "after": "look/go ahead; ahead of N; plan ahead",
+      "main": "V + ahead",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001020",
+      "word": "ahead",
+      "field": "usagePatternZh",
+      "before": "向前……／領先……",
+      "after": "向前看／先走或開始；在……前面；提前規劃",
+      "main": "向前……／領先……",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W003800",
+      "word": "quarrel",
+      "field": "meaningEn",
+      "before": "an angry dispute; an arrow that is shot from a crossbow; has a head with four edges",
+      "after": "an angry dispute; an arrow that is shot from a crossbow; has a head with four edges; also (v.), to argue angrily or disagree; a separate historical noun can denote a four-sided chisel with a diamond-shaped end.",
+      "main": "an angry dispute; an arrow that is shot from a crossbow; has a head with four edges",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W003800",
+      "word": "quarrel",
+      "field": "usagePattern",
+      "before": "quarrel + N; quarrel to V; a/the quarrel",
+      "after": "quarrel with sb about/over sth; have a quarrel with sb",
+      "main": "quarrel + N; quarrel to V; a/the quarrel",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W003800",
+      "word": "quarrel",
+      "field": "usagePatternZh",
+      "before": "與某人吵架；吵著要做某事；一場爭吵",
+      "after": "與某人因某事爭吵；與某人發生爭執",
+      "main": "與某人吵架；吵著要做某事；一場爭吵",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W005775",
+      "word": "retrieve",
+      "field": "meaningEn",
+      "before": "go for and bring back; run after, pick up, and bring to the master",
+      "after": "go for and bring back; run after, pick up, and bring to the master; also, to recover stored information or restore a situation to a better state.",
+      "main": "go for and bring back; run after, pick up, and bring to the master",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W005775",
+      "word": "retrieve",
+      "field": "usagePattern",
+      "before": "retrieve + N; retrieve to V",
+      "after": "retrieve N from N; retrieve information; retrieve a situation",
+      "main": "retrieve + N; retrieve to V",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W005775",
+      "word": "retrieve",
+      "field": "usagePatternZh",
+      "before": "取回……；retrieve 後接 to 不定詞",
+      "after": "從……取回……；擷取資訊；挽回局面",
+      "main": "取回……；retrieve 後接 to 不定詞",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001085",
+      "word": "beginner",
+      "field": "usagePattern",
+      "before": "a/the beginner; beginner of N",
+      "after": "a complete beginner; a beginner at N; suitable for beginners",
+      "main": "a/the beginner; beginner of N",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001085",
+      "word": "beginner",
+      "field": "usagePatternZh",
+      "before": "初學者；……的初學者",
+      "after": "完全的初學者；某方面的初學者；適合初學者",
+      "main": "初學者；……的初學者",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001656",
+      "word": "postcard",
+      "field": "usagePattern",
+      "before": "a/the postcard; postcard of N",
+      "after": "send sb a postcard; send a postcard to sb; a postcard from N",
+      "main": "a/the postcard; postcard of N",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001656",
+      "word": "postcard",
+      "field": "usagePatternZh",
+      "before": "一張／這張明信片；……的明信片",
+      "after": "寄明信片給某人；寄明信片給某人；來自……的明信片",
+      "main": "一張／這張明信片；……的明信片",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001366",
+      "word": "flu",
+      "field": "usagePattern",
+      "before": "a/the flu; flu of N",
+      "after": "have/get/catch (the) flu; flu symptoms",
+      "main": "a/the flu; flu of N",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001366",
+      "word": "flu",
+      "field": "usagePatternZh",
+      "before": "流行性感冒；……的流感",
+      "after": "罹患／感染流感；流感症狀",
+      "main": "流行性感冒；……的流感",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001849",
+      "word": "stomachache",
+      "field": "usagePattern",
+      "before": "a/the stomachache; stomachache of N",
+      "after": "have/get a stomachache; a bad stomachache",
+      "main": "a/the stomachache; stomachache of N",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001849",
+      "word": "stomachache",
+      "field": "usagePatternZh",
+      "before": "胃痛；……的胃痛",
+      "after": "胃痛／肚子痛；嚴重的胃痛",
+      "main": "胃痛；……的胃痛",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W002623",
+      "word": "patience",
+      "field": "usagePattern",
+      "before": "a/the patience; patience of N",
+      "after": "have patience with sb; lose one's patience; with patience",
+      "main": "a/the patience; patience of N",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W002623",
+      "word": "patience",
+      "field": "usagePatternZh",
+      "before": "耐性；……的耐性",
+      "after": "對某人有耐心；失去耐心；耐心地",
+      "main": "耐性；……的耐性",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001655",
+      "word": "post",
+      "field": "meaningEn",
+      "before": "mail delivered or collected; to put up a notice or share information in public, such as online",
+      "after": "mail delivered or collected; to put up a notice or share information in public, such as online; also (n.), a job or official position; in older adverb use, with speed.",
+      "main": "mail delivered or collected; to put up a notice or share information in public, such as online",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001655",
+      "word": "post",
+      "field": "meaningZh",
+      "before": "（名詞）柱；杆；準星；郵件；（動詞）郵寄；張貼；發布",
+      "after": "（名詞）柱；杆；準星；郵件；（動詞）郵寄；張貼；發布；（名詞）郵政；職位；（較舊副詞用法）快速地",
+      "main": "（名詞）柱；杆；準星；郵件；（動詞）郵寄；張貼；發布",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W003758",
+      "word": "postage",
+      "field": "meaningEn",
+      "before": "the charge for mailing something; a small adhesive token stuck on a letter or package to indicate that that postal fees have been paid",
+      "after": "the charge for mailing something; a small adhesive token stuck on a letter or package to indicate that postal fees have been paid",
+      "main": "the charge for mailing something; a small adhesive token stuck on a letter or package to indicate that that postal fees have been paid",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W003758",
+      "word": "postage",
+      "field": "usagePattern",
+      "before": "a/the postage; postage of N",
+      "after": "pay the postage; postage and packing; enough postage",
+      "main": "a/the postage; postage of N",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W003758",
+      "word": "postage",
+      "field": "usagePatternZh",
+      "before": "郵資；……的郵資",
+      "after": "支付郵資；郵資與包裝費；足夠的郵資",
+      "main": "郵資；……的郵資",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W000532",
+      "word": "medicine",
+      "field": "meaningZh",
+      "before": "藥；醫學；內科；給...用藥",
+      "after": "（名詞）藥；醫學；內科；（另有動詞用法）給……用藥",
+      "main": "藥；醫學；內科；給...用藥",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W000532",
+      "word": "medicine",
+      "field": "meaningEn",
+      "before": "a drug or other substance used to treat or prevent disease; the science of diagnosing, treating, and preventing illness",
+      "after": "a drug or other substance used to treat or prevent disease; the science of diagnosing, treating, and preventing illness; separate verb use: to give medicine to someone.",
+      "main": "a drug or other substance used to treat or prevent disease; the science of diagnosing, treating, and preventing illness",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W000383",
+      "word": "head",
+      "field": "meaningEn",
+      "before": "(n.) the part of the body containing the brain and face; the person in charge of a group; (v.) to move in a particular direction",
+      "after": "(n.) the part of the body containing the brain and face; the person in charge of a group; (v.) to move in a particular direction; also (v.), to be in charge of an organization or department.",
+      "main": "(n.) the part of the body containing the brain and face; the person in charge of a group; (v.) to move in a particular direction",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EXc482bb84",
+      "word": "press",
+      "field": "sensePos",
+      "before": "v.",
+      "after": "n.",
+      "main": "v.",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX9e9345d7",
+      "word": "pressure",
+      "field": "sensePos",
+      "before": "n.",
+      "after": "v.",
+      "main": "n.",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX932b6c6f",
+      "word": "pain",
+      "field": "sensePos",
+      "before": "n.",
+      "after": "v.",
+      "main": "n.",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX7be81d21",
+      "word": "battle",
+      "field": "sensePos",
+      "before": "n.",
+      "after": "v.",
+      "main": "n.",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX3cb8c15f",
+      "word": "conflict",
+      "field": "sensePos",
+      "before": "n.",
+      "after": "v.",
+      "main": "n.",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EXbb57a0ec",
+      "word": "fear",
+      "field": "sensePos",
+      "before": "n.",
+      "after": "v.",
+      "main": "n.",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EXc80a6439",
+      "word": "patient",
+      "field": "sensePos",
+      "before": "n.",
+      "after": "adj.",
+      "main": "n.",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX60dcd308",
+      "word": "cure",
+      "field": "sensePos",
+      "before": "n.",
+      "after": "v.",
+      "main": "n.",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX12efbd6e",
+      "word": "head",
+      "field": "sensePos",
+      "before": "n./v.",
+      "after": "n.",
+      "main": "n./v.",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX12efbd6e",
+      "word": "head",
+      "field": "meaningHint",
+      "before": "頭；頭腦；領袖；腦袋",
+      "after": "腦中（in one's head）",
+      "main": "頭；頭腦；領袖；腦袋",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX4b266bd8",
+      "word": "head",
+      "field": "sensePos",
+      "before": "n./v.",
+      "after": "n.",
+      "main": "n./v.",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX4b266bd8",
+      "word": "head",
+      "field": "meaningHint",
+      "before": "頭；頭腦；領袖；腦袋",
+      "after": "主管；領導人",
+      "main": "頭；頭腦；領袖；腦袋",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX544057bc",
+      "word": "head",
+      "field": "sensePos",
+      "before": "n./v.",
+      "after": "v.",
+      "main": "n./v.",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX544057bc",
+      "word": "head",
+      "field": "meaningHint",
+      "before": "頭；頭腦；領袖；腦袋",
+      "after": "管理；領導",
+      "main": "頭；頭腦；領袖；腦袋",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX5a761d0c",
+      "word": "head",
+      "field": "sensePos",
+      "before": "n./v.",
+      "after": "n.",
+      "main": "n./v.",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX5a761d0c",
+      "word": "head",
+      "field": "meaningHint",
+      "before": "頭；頭腦；領袖；腦袋",
+      "after": "頭",
+      "main": "頭；頭腦；領袖；腦袋",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX8912d962",
+      "word": "head",
+      "field": "sensePos",
+      "before": "n./v.",
+      "after": "n.",
+      "main": "n./v.",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX8912d962",
+      "word": "head",
+      "field": "meaningHint",
+      "before": "頭；頭腦；領袖；腦袋",
+      "after": "冷靜；理智（keep/lose one's head）",
+      "main": "頭；頭腦；領袖；腦袋",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EXf4c21606",
+      "word": "head",
+      "field": "sensePos",
+      "before": "n./v.",
+      "after": "v.",
+      "main": "n./v.",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EXf4c21606",
+      "word": "head",
+      "field": "meaningHint",
+      "before": "頭；頭腦；領袖；腦袋",
+      "after": "前往（head for）",
+      "main": "頭；頭腦；領袖；腦袋",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX34dbed14",
+      "word": "heal",
+      "field": "status",
+      "before": "draft",
+      "after": "reviewed",
+      "main": "draft",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "senses",
+      "id": "W000383-1",
+      "word": "head",
+      "field": "note",
+      "before": "待拆分；主表字義：頭；頭腦；領袖；腦袋",
+      "after": "已核此既有 n. 義項及完整英中例句；保留其他義項、詞頭詞性與整詞狀態，本義核對不等於整卡全欄通過。來源：https://www.collinsdictionary.com/dictionary/english/head",
+      "main": "待拆分；主表字義：頭；頭腦；領袖；腦袋",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "senses",
+      "id": "W000383-2",
+      "word": "head",
+      "field": "note",
+      "before": "待拆分；主表字義：頭；頭腦；領袖；腦袋",
+      "after": "已核此既有 v. 義項及完整英中例句；保留其他義項、詞頭詞性與整詞狀態，本義核對不等於整卡全欄通過。來源：https://www.collinsdictionary.com/dictionary/english/head",
+      "main": "待拆分；主表字義：頭；頭腦；領袖；腦袋",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "senses",
+      "id": "W000868-1",
+      "word": "test",
+      "field": "note",
+      "before": "2026-11-05：核對此既有名詞／動詞義、完整英中例句及實際挖空詞。author 的撰寫動詞有正式詞典正文支持，不因舊註「罕用」刪除。僅核本義，未擴為整詞、其他罕義或官方考題來源認證。",
+      "after": "已核此既有 n. 義項及完整英中例句；保留其他義項、詞頭詞性與整詞狀態，本義核對不等於整卡全欄通過。來源：https://www.collinsdictionary.com/dictionary/english/test",
+      "main": "2026-11-05：核對此既有名詞／動詞義、完整英中例句及實際挖空詞。author 的撰寫動詞有正式詞典正文支持，不因舊註「罕用」刪除。僅核本義，未擴為整詞、其他罕義或官方考題來源認證。",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "senses",
+      "id": "W000868-2",
+      "word": "test",
+      "field": "note",
+      "before": "2026-11-05：核對此既有名詞／動詞義、完整英中例句及實際挖空詞。author 的撰寫動詞有正式詞典正文支持，不因舊註「罕用」刪除。僅核本義，未擴為整詞、其他罕義或官方考題來源認證。",
+      "after": "已核此既有 v. 義項及完整英中例句；保留其他義項、詞頭詞性與整詞狀態，本義核對不等於整卡全欄通過。來源：https://www.collinsdictionary.com/dictionary/english/test",
+      "main": "2026-11-05：核對此既有名詞／動詞義、完整英中例句及實際挖空詞。author 的撰寫動詞有正式詞典正文支持，不因舊註「罕用」刪除。僅核本義，未擴為整詞、其他罕義或官方考題來源認證。",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "senses",
+      "id": "W002396-1",
+      "word": "heal",
+      "field": "examEvidence",
+      "before": "學測106 文意選填Q35",
+      "after": "學測106 文意選填Q35，印刷第3頁，J＝healing；官方試題：https://www.ceec.edu.tw/files/file_pool/1/0j076574214786979208/02-106%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf；官方答案：https://www.ceec.edu.tw/files/file_pool/1/0j076574215321858235/02-106%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88.pdf",
+      "main": "學測106 文意選填Q35",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "senses",
+      "id": "W002396-1",
+      "word": "heal",
+      "field": "note",
+      "before": "考點：傷口或身體恢復",
+      "after": "已實讀官方PDF文字層的洋蔥與古埃及題組、選項和答案。healing power 指療癒／治療的力量，healing 在題中修飾 power；保留 heal 的動詞詞頭與本義，不新增 heal 本身的形容詞詞性，也不把古人信念當作療效證明。EX34dbed14 是另寫的膝蓋傷口練習，不是原題引用。",
+      "main": "考點：傷口或身體恢復",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "senses",
+      "id": "W002396-1",
+      "word": "heal",
+      "field": "status",
+      "before": "draft",
+      "after": "reviewed",
+      "main": "draft",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "notes",
+      "id": "NX1891237a",
+      "word": "pain",
+      "field": "content",
+      "before": "要某人做……是很痛苦的。",
+      "after": "做、想到或看到某事使某人感到痛苦；本頁 It pained Hank to think... 的不定詞說明痛苦的原因，不表示有人要求他去做。",
+      "main": "要某人做……是很痛苦的。",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "notes",
+      "id": "NX61227341",
+      "word": "pain",
+      "field": "content",
+      "before": "感到某部位一陣劇痛。",
+      "after": "感到某部位疼痛／一陣痛；pain 本身不限定為劇痛。",
+      "main": "感到某部位一陣劇痛。",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "notes",
+      "id": "NX021525c6",
+      "word": "pain",
+      "field": "content",
+      "before": "讓（某人）內心很痛苦。",
+      "after": "使（某人）感到疼痛或痛苦；本頁例句指心理上的痛苦。",
+      "main": "讓（某人）內心很痛苦。",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "notes",
+      "id": "NX88bb93ad",
+      "word": "conflict",
+      "field": "content",
+      "before": "A 和 B 衝突／相抵觸。",
+      "after": "A 和 B 衝突／相抵觸；這是構式標籤，實際造句須配合主詞，單數 A 在現在式通常用 conflicts with B。",
+      "main": "A 和 B 衝突／相抵觸。",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "notes",
+      "id": "NX2ed0850d",
+      "word": "eve",
+      "field": "content",
+      "before": "在新年前夕（除夕）／在平安夜那天。",
+      "after": "在新年前夕（一般指公曆12月31日）／在平安夜那天；農曆除夕需依語境另作說明。",
+      "main": "在新年前夕（除夕）／在平安夜那天。",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "notes",
+      "id": "NX93aa8a68",
+      "word": "press",
+      "field": "content",
+      "before": "新聞界，記者；= the press + 單／複數動詞（英）。",
+      "after": "教材列美式常用單數動詞、英式可用單數或複數；新聞界／記者是集合名詞，實際一致關係須依語境與地區慣例，不是一律只能用單數。",
+      "main": "新聞界，記者；= the press + 單／複數動詞（英）。",
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001664",
+      "word": "press",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "after": {
+        "base": "press",
+        "past": "pressed",
+        "pastParticiple": "pressed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/press",
+        "status": "approved"
+      },
+      "main": {
+        "$absent": true
+      },
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001665",
+      "word": "pressure",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "after": {
+        "base": "pressure",
+        "past": "pressured",
+        "pastParticiple": "pressured",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/pressure",
+        "status": "approved"
+      },
+      "main": {
+        "$absent": true
+      },
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001842",
+      "word": "stamp",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "after": {
+        "base": "stamp",
+        "past": "stamped",
+        "pastParticiple": "stamped",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/stamp",
+        "status": "approved"
+      },
+      "main": {
+        "$absent": true
+      },
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001606",
+      "word": "pain",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "after": {
+        "base": "pain",
+        "past": "pained",
+        "pastParticiple": "pained",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/pain",
+        "status": "approved"
+      },
+      "main": {
+        "$absent": true
+      },
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001079",
+      "word": "battle",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "after": {
+        "base": "battle",
+        "past": "battled",
+        "pastParticiple": "battled",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/battle",
+        "status": "approved"
+      },
+      "main": {
+        "$absent": true
+      },
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001190",
+      "word": "conflict",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "after": {
+        "base": "conflict",
+        "past": "conflicted",
+        "pastParticiple": "conflicted",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/conflict",
+        "status": "approved"
+      },
+      "main": {
+        "$absent": true
+      },
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001347",
+      "word": "fear",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "after": {
+        "base": "fear",
+        "past": "feared",
+        "pastParticiple": "feared",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/fear",
+        "status": "approved"
+      },
+      "main": {
+        "$absent": true
+      },
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001662",
+      "word": "prefer",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "after": {
+        "base": "prefer",
+        "past": "preferred",
+        "pastParticiple": "preferred",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/prefer",
+        "status": "approved"
+      },
+      "main": {
+        "$absent": true
+      },
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001216",
+      "word": "cure",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "after": {
+        "base": "cure",
+        "past": "cured",
+        "pastParticiple": "cured",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/cure",
+        "status": "approved"
+      },
+      "main": {
+        "$absent": true
+      },
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W001712",
+      "word": "recover",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "after": {
+        "base": "recover",
+        "past": "recovered",
+        "pastParticiple": "recovered",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/recover",
+        "status": "approved"
+      },
+      "main": {
+        "$absent": true
+      },
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W003800",
+      "word": "quarrel",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "after": {
+        "base": "quarrel",
+        "past": "quarrelled / quarreled（美式）",
+        "pastParticiple": "quarrelled / quarreled（美式）",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/quarrel",
+        "status": "approved"
+      },
+      "main": {
+        "$absent": true
+      },
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W002396",
+      "word": "heal",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "after": {
+        "base": "heal",
+        "past": "healed",
+        "pastParticiple": "healed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/heal",
+        "status": "approved"
+      },
+      "main": {
+        "$absent": true
+      },
+      "classification": "main_matches_exact_before"
+    },
+    {
+      "dataset": "words",
+      "id": "W005775",
+      "word": "retrieve",
+      "field": "verbForms",
+      "before": {
+        "$absent": true
+      },
+      "after": {
+        "base": "retrieve",
+        "past": "retrieved",
+        "pastParticiple": "retrieved",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/retrieve",
+        "status": "approved"
+      },
+      "main": {
+        "$absent": true
+      },
+      "classification": "main_matches_exact_before"
+    }
+  ]
+}

@@ -1,0 +1,1172 @@
+{
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "priorCheckpoint": "6ac5925877d4f5bfc1efb4d3c10822b1ba914077",
+  "unit": "LV2-U29",
+  "scope": "79 formal words,134 examples,63 notes,93 vocabulary and49 grammar items; exact corrections and coverage refinements. All English examples, cloze/answers, headword POS/status and image pairs stay unchanged.",
+  "patches": [
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001875",
+      "before": {
+        "meaningZh": "面；表面；水面；外表"
+      },
+      "after": {
+        "meaningZh": "面；表面；水面；外表；（動詞）浮出水面；顯露；浮現"
+      },
+      "reason": "Supply the existing surfacing verb without dropping the inherited nouns.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/surface"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001603",
+      "before": {
+        "meaningZh": "組織；結構；團體；體制"
+      },
+      "after": {
+        "meaningZh": "組織；結構；團體；體制；（組織活動的名詞）籌辦；安排"
+      },
+      "reason": "Supply the organizing-process noun already defined and printed.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/organization"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001462",
+      "before": {
+        "meaningEn": "the companies and activities that produce a particular kind of goods or provide a particular kind of service; the production of goods in factories"
+      },
+      "after": {
+        "meaningEn": "the companies and activities that produce a particular kind of goods or provide a particular kind of service; the production of goods in factories; also, diligent and sustained work (formal)."
+      },
+      "reason": "Retain the genuine diligence noun separately from manufacturing.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/industry"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001256",
+      "before": {
+        "meaningEn": "(adj.) going straight to a place or point without stopping or turning; (v.) to control or guide the actions of someone or something",
+        "meaningZh": "直接的；坦白的；指示；指揮"
+      },
+      "after": {
+        "meaningEn": "(adj.) going straight to a place or point without stopping or turning; (v.) to control or guide the actions of someone or something; (adv.) straight to a destination or without an intermediary.",
+        "meaningZh": "直接的；坦白的；指示；指揮；（副詞）直接地；逕直地"
+      },
+      "reason": "Supply the explicitly printed adverb; keep the existing adjective and verb. The existing formal POS includes the directly attested adverb.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/direct; https://www.collinsdictionary.com/dictionary/english/direct"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001257",
+      "before": {
+        "meaningEn": "the general course or path along which someone or something moves, faces, or points; (often plural) instructions on how to do something or how to get somewhere",
+        "meaningZh": "方向；指導；趨勢；流向"
+      },
+      "after": {
+        "meaningEn": "the general course or path along which someone or something moves, faces, or points; (often plural) instructions on how to do something or how to get somewhere; also, management or guidance; (plural directions) instructions, including how to reach a place.",
+        "meaningZh": "方向；指導；趨勢；流向；（常用複數 directions）路線指示；用法說明；指導；管理"
+      },
+      "reason": "Supply route instructions and management while preserving direction and development. Supply the printed noun uses without dropping the inherited ones.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/direction; https://www.collinsdictionary.com/dictionary/english/direction"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001707",
+      "before": {
+        "meaningZh": "實在；事實；實體；逼真"
+      },
+      "after": {
+        "meaningZh": "實在；事實；實體；逼真；現實"
+      },
+      "reason": "Make the already defined and exemplified reality meaning explicit.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/reality"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001074",
+      "before": {
+        "meaningZh": "底部；壘；基礎；基地"
+      },
+      "after": {
+        "meaningZh": "底部；壘；基礎；基地；（動詞）以……為基礎"
+      },
+      "reason": "Retain every noun and explicitly distinguish the existing base-on verb.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/base"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001075",
+      "before": {
+        "meaningZh": "基本原理；要素；基本規律；基本的"
+      },
+      "after": {
+        "meaningZh": "（形容詞）基本的；（相關名詞，通常用複數 basics）基本原理；要素；基本規律"
+      },
+      "reason": "Separate the formal adjective from the genuinely related plural noun; retain all inherited meanings and do not expand headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/basic"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001076",
+      "before": {
+        "meaningEn": "a statement of fundamental facts or principles; a popular programming language that is relatively easy to learn; an acronym for beginner's all-purpose symbolic instruction code; no long...; (usually plural) a necessary commodity for whic...",
+        "meaningZh": "最簡單但最重要的部分；基本；基礎訓練；基本原理；要素",
+        "usagePattern": "a/the basics; basics of N",
+        "usagePatternZh": "基礎知識；……的基本原理"
+      },
+      "after": {
+        "meaningEn": "(plural n.) the essential knowledge, principles, or elements of a subject; the necessary goods or equipment for living or an activity. Separate capitalized acronym BASIC: a beginner-oriented programming language, named Beginner's All-purpose Symbolic Instruction Code.",
+        "meaningZh": "最簡單但最重要的部分；基本；基礎訓練；基本原理；要素；（獨立大寫縮寫 BASIC）BASIC 程式語言",
+        "usagePattern": "the basics of N; get back to basics",
+        "usagePatternZh": "……的基礎知識／基本原理；回歸根本"
+      },
+      "reason": "Replace visibly truncated source fragments with independently verified complete definitions; distinguish plural basics from BASIC. Preserve the entire truncated before value; do not assert its unfinished no-longer claim.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/basics; https://www.collinsdictionary.com/dictionary/english/basic"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001802",
+      "before": {
+        "meaningEn": "not married; only one, not more than one; (of a ticket) for a journey to a place but not back again",
+        "meaningZh": "單身的；單程的；單一的；個別的"
+      },
+      "after": {
+        "meaningEn": "not married; only one, not more than one; (of a ticket) for a journey to a place but not back again; (n.) an unmarried person, often plural singles; (v., single out) to choose one person or thing from a group.",
+        "meaningZh": "單身的；單程的；單一的；個別的；（名詞）單身者（常用複數 singles）；（動詞 single out）挑選出"
+      },
+      "reason": "Restore the noun and verb printed alongside the existing adjective. Preserve all inherited adjectives and distinguish the other existing POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/single; https://www.collinsdictionary.com/dictionary/english/single"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001273",
+      "before": {
+        "meaningEn": "(adj.) twice as much or as many; (v.) to become or make something twice as much or as many",
+        "meaningZh": "兩倍；兩倍的；雙重的；使加倍"
+      },
+      "after": {
+        "meaningEn": "(adj.) twice as much or as many; (v.) to become or make something twice as much or as many; (n.) someone who closely resembles another person; (adv.) to twice the extent or with two together.",
+        "meaningZh": "兩倍；兩倍的；雙重的；使加倍；（名詞）酷似另一人的人；（副詞）加倍地；兩個一起地"
+      },
+      "reason": "Restore the printed lookalike noun and adverb; no formal POS change. Preserve the existing amount, adjective, and verb meanings.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/double; https://www.collinsdictionary.com/dictionary/english/double"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001568",
+      "before": {
+        "meaningEn": "existing in nature and not made or caused by people; existing in someone from birth rather than learned",
+        "meaningZh": "自然的；自然界的；天生的；本能的"
+      },
+      "after": {
+        "meaningEn": "existing in nature and not made or caused by people; existing in someone from birth rather than learned; also, normal or reasonable in the circumstances; relaxed and unaffected in manner.",
+        "meaningZh": "自然的；自然界的；天生的；本能的；正常的；不做作的"
+      },
+      "reason": "Supply the unchanged natural-to-feel-nervous example and printed act-natural use. Keep whole-word needs_check and the earlier verified official sense unchanged.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/natural; https://www.collinsdictionary.com/dictionary/english/natural"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001529",
+      "before": {
+        "meaningZh": "面具；假面具；掩飾；石膏面模"
+      },
+      "after": {
+        "meaningZh": "面具；假面具；掩飾；石膏面模；口罩"
+      },
+      "reason": "The protective covering is explicitly printed and directly defined; preserve the genuine plaster likeness.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/mask"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001507",
+      "before": {
+        "meaningEn": "probably going to happen or be true; having a good chance of happening"
+      },
+      "after": {
+        "meaningEn": "probably going to happen or be true; having a good chance of happening; (adv.) probably."
+      },
+      "reason": "The existing separated adverb sense is directly supported.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/likely"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001010",
+      "before": {
+        "meaningEn": "existing in fact; real rather than imagined or expected"
+      },
+      "after": {
+        "meaningEn": "existing in fact; real rather than imagined or expected; also, existing at the present time or at the time concerned."
+      },
+      "reason": "Retain and support the existing present/current meaning rather than deleting it as unfamiliar.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/actual"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001934",
+      "before": {
+        "usagePattern": "a/the truth; truth of N",
+        "usagePatternZh": "真相；……的真相"
+      },
+      "after": {
+        "usagePattern": "tell the truth; in truth; the truth about N",
+        "usagePatternZh": "說實話；事實上；關於……的真相"
+      },
+      "reason": "Use precise attested phrases rather than an article template.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/truth"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001307",
+      "before": {
+        "meaningEn": "(adj.) containing nothing or having no occupants; lacking substance or meaning; (v.) to remove the contents of something.",
+        "meaningZh": "空的；空虛的；空腹的；空洞的",
+        "usagePattern": "an empty box; be empty; empty N; empty N into N",
+        "usagePatternZh": "空盒子；是空的；清空……；把……倒進……"
+      },
+      "after": {
+        "meaningEn": "(adj.) containing nothing or having no occupants; lacking substance or meaning; (v.) to remove the contents of something; (v., of a river) to flow into a lake, river, or sea.",
+        "meaningZh": "空的；空虛的；空腹的；空洞的；（動詞）清空；倒空；倒出；（河流等）流入",
+        "usagePattern": "an empty box; be empty; empty N; empty N into N; a river empties into N",
+        "usagePatternZh": "空盒子；是空的；清空……；把……倒進……；河流流入……"
+      },
+      "reason": "Restore the printed river-empty-into verb; retain the earlier approved forms. Supply the existing verbs without dropping any adjective. Distinguish the intransitive river construction from emptying a container.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/empty; https://www.collinsdictionary.com/dictionary/english/empty; https://www.collinsdictionary.com/dictionary/english/empty"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001506",
+      "before": {
+        "meaningZh": "舉起；幫助；昂揚；電梯"
+      },
+      "after": {
+        "meaningZh": "舉起；幫助；昂揚；電梯；（動詞）解除（禁令等）；（名詞）搭便車"
+      },
+      "reason": "Restore the printed ban removal and the unchanged give-me-a-lift noun.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/lift"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001342",
+      "before": {
+        "meaningEn": "(n.) a popular style of clothing, hair, or behavior at a particular time; (v.) to make or shape something using skill",
+        "meaningZh": "流行；風尚；時樣；形成"
+      },
+      "after": {
+        "meaningEn": "(n.) a popular style of clothing, hair, or behavior at a particular time; (v.) to make or shape something using skill; (n.) a manner of doing something; (v., formal) to make or shape something.",
+        "meaningZh": "流行；風尚；時樣；形成；（名詞）方式；（動詞）製作；塑造"
+      },
+      "reason": "Preserve the genuine fashion verb, not the old recommendation to delete it. Keep every inherited noun and distinguish the existing verb.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/fashion; https://www.collinsdictionary.com/dictionary/english/fashion"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001860",
+      "before": {
+        "meaningZh": "風格；時尚；文體；風度"
+      },
+      "after": {
+        "meaningZh": "風格；時尚；文體；風度；（動詞）設計造型；把……做成某種式樣"
+      },
+      "reason": "The existing styling verb is used by the unchanged hairdresser example.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/style"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001247",
+      "before": {
+        "meaningZh": "細節；詳情；詳述；選派",
+        "meaningEn": "a small individual fact or feature; to describe something fully, including all the small facts"
+      },
+      "after": {
+        "meaningZh": "細節；詳情；詳述；選派；（動詞，軍事等）選派人員執行任務",
+        "meaningEn": "a small individual fact or feature; to describe something fully, including all the small facts; also (v., often military), to assign personnel to a particular duty."
+      },
+      "reason": "Retain and clarify the genuine assigning-to-duty meaning. Support the inherited assigning-to-duty meaning rather than deleting it.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/detail; https://www.collinsdictionary.com/dictionary/english/detail"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001317",
+      "before": {
+        "meaningZh": "對手；匹敵；同輩；相等的"
+      },
+      "after": {
+        "meaningZh": "對手；匹敵；同輩；相等的；（動詞）等於；比得上"
+      },
+      "reason": "The existing formal verb is printed and independently defined.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/equal"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001523",
+      "before": {
+        "meaningZh": "處理；管理；控制；維持；經營"
+      },
+      "after": {
+        "meaningZh": "處理；管理；控制；維持；經營；設法成功做到……"
+      },
+      "reason": "Manage to V implies succeeding despite difficulty; retain the earlier forms and all inherited meanings.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/manage"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W006040",
+      "before": {
+        "meaningEn": "manage (v.): to succeed in doing something difficult, or to control and run a business or activity; management (n.): the people who control and run a business or organization",
+        "meaningZh": "處理；管理；控制；維持；經營",
+        "usagePattern": "manage to V; manage a company/team; the management of N",
+        "usagePatternZh": "設法去做……；管理公司／團隊；……的管理"
+      },
+      "after": {
+        "meaningEn": "(n.) the process of controlling, organizing, or running an organization or activity; the people responsible for doing so. Related verb manage: to run or control something, or to succeed in doing something difficult.",
+        "meaningZh": "處理；管理；控制；維持；經營；管理階層；資方",
+        "usagePattern": "the management of N; senior management; time management",
+        "usagePatternZh": "……的管理；高階管理層；時間管理"
+      },
+      "reason": "Put the actual management noun first and replace copied manage-verb patterns; retain the related verb only with its explicit different headword.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/management"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001677",
+      "before": {
+        "meaningZh": "獎賞；獎金；獎品；戰利品"
+      },
+      "after": {
+        "meaningZh": "獎賞；獎金；獎品；戰利品；（動詞）珍視；重視"
+      },
+      "reason": "Supply the existing valuing verb and preserve all noun meanings.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/prize"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002595",
+      "before": {
+        "meaningZh": "組織；有機化；給予生機；組織起來"
+      },
+      "after": {
+        "meaningZh": "組織；有機化；給予生機；組織起來；籌辦；安排；整理"
+      },
+      "reason": "Supply the current common event/order uses; retain organic-structure and inherited life wording, whose exact Chinese provenance remains pending.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/organize"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005624",
+      "before": {
+        "usagePattern": "an/the organizer; organizer of N",
+        "usagePatternZh": "該組織者；……的組織者"
+      },
+      "after": {
+        "usagePattern": "the organizer of an event; an event organizer",
+        "usagePatternZh": "活動的籌辦者；活動籌辦者"
+      },
+      "reason": "Use concrete attested event-organizer noun constructions; do not erase the unresolved technical Chinese.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/organizer"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005456",
+      "before": {
+        "usagePattern": "industrialize + N; industrialize to V",
+        "usagePatternZh": "使……工業化；工業化以做某事"
+      },
+      "after": {
+        "usagePattern": "industrialize a country/economy; a country industrializes",
+        "usagePatternZh": "使國家／經濟工業化；國家實現工業化"
+      },
+      "reason": "Concrete transitive/intransitive patterns improve the generic purpose-infinitive template; not a claim that every to V after this verb is ungrammatical.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/industrialize"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003017",
+      "before": {
+        "meaningEn": "(v.) to succeed in doing or finishing something; (n.) something that has been achieved successfully through effort or skill",
+        "usagePattern": "accomplish a goal/task; a sense of accomplishment; a great accomplishment",
+        "usagePatternZh": "完成目標或任務；成就感；一項偉大的成就"
+      },
+      "after": {
+        "meaningEn": "(v.) to achieve or successfully finish something. Related noun accomplishment: something successfully achieved, or the act of achieving it.",
+        "usagePattern": "accomplish a goal/task; accomplishment (n.): a sense of accomplishment / a great accomplishment",
+        "usagePatternZh": "完成目標／任務；相關名詞 accomplishment：成就感／一項偉大的成就"
+      },
+      "reason": "Name the related noun explicitly instead of labelling accomplish itself a noun; preserve headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/accomplish; https://www.collinsdictionary.com/dictionary/english/accomplishment"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000702",
+      "before": {
+        "usagePatternZh": "在現實生活中；真正的名詞；感覺真實"
+      },
+      "after": {
+        "usagePatternZh": "在現實生活中；真正的……；感覺真實"
+      },
+      "reason": "Remove only the literal N placeholder in the paired Chinese; preserve all previously reviewed examples.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/real"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005738",
+      "before": {
+        "usagePattern": "a/the realization; realization of N",
+        "usagePatternZh": "一種領悟／該領悟；……的領悟"
+      },
+      "after": {
+        "usagePattern": "the realization that + clause; the realization of a dream",
+        "usagePatternZh": "意識到……；夢想的實現"
+      },
+      "reason": "Distinguish awareness and achievement using the existing English definition; retain inherited rare meanings and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/realization"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003435",
+      "before": {
+        "meaningEn": "(adj.) forming a basic and necessary part of something; being the most important part; (n.) a basic principle, rule, or fact"
+      },
+      "after": {
+        "meaningEn": "(adj.) forming a basic and necessary part of something; being the most important part; (n.) a basic principle, rule, or fact; (physics n.) the lowest-frequency component of a complex vibration, or its frequency."
+      },
+      "reason": "Retain the genuine fundamental/first-harmonic noun; no headword POS expansion.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/fundamental"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002596",
+      "before": {
+        "meaningEn": "existing from the beginning, before any changes or copies; the first form of something, from which copies are made"
+      },
+      "after": {
+        "meaningEn": "existing from the beginning, before any changes or copies; the first form of something, from which copies are made; also, creative or independently devised rather than copied from existing ideas."
+      },
+      "reason": "Restore the adjective targeted by the unchanged original-design idea sentence.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/original"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004598",
+      "before": {
+        "usagePattern": "an/the originality; originality of N",
+        "usagePatternZh": "創意；……的創意"
+      },
+      "after": {
+        "usagePattern": "show originality; the originality of an idea",
+        "usagePatternZh": "展現原創性；想法的獨創性"
+      },
+      "reason": "Use attested quality/creativity collocations; do not claim count uses never exist.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/originality"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005627",
+      "before": {
+        "meaningEn": "to begin to exist, or to come from a particular place, situation, or thing",
+        "usagePatternZh": "源自……；以……為起源"
+      },
+      "after": {
+        "meaningEn": "to begin to exist, or to come from a particular place, situation, or thing; also transitive, to initiate or cause something to begin.",
+        "usagePatternZh": "源自……；起初是……／最初以……的形式出現"
+      },
+      "reason": "Retain both the existing originating-in/from meaning and the printed initiating meaning. Originate as describes the initial form, distinct from originate from the source.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/originate; https://www.collinsdictionary.com/dictionary/english/originate"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003899",
+      "before": {
+        "meaningZh": "單數；異常的；單一的"
+      },
+      "after": {
+        "meaningZh": "單數；異常的；單一的；非凡的"
+      },
+      "reason": "Make the already defined remarkable adjective explicit while preserving the grammatical noun and unusual adjective.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/singular"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000120",
+      "before": {
+        "meaningEn": "giving out or full of light; clever or intelligent; (of color) strong and vivid",
+        "meaningZh": "明亮的；聰明的；鮮明的；歡快的"
+      },
+      "after": {
+        "meaningEn": "giving out or full of light; clever or intelligent; (of color) strong and vivid; also cheerful or hopeful; (adv.) brightly, as in burning bright.",
+        "meaningZh": "明亮的；聰明的；鮮明的；歡快的；（副詞）明亮地"
+      },
+      "reason": "Supply the already formal adverb without confusing it with the distinct word brightly. Preserve all inherited adjectives and the existing headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/bright; https://www.collinsdictionary.com/dictionary/english/bright"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002939",
+      "before": {
+        "usagePattern": "be truthful; truthful + N",
+        "usagePatternZh": "誠實的；誠實的某人"
+      },
+      "after": {
+        "usagePattern": "a truthful person/answer; be truthful about N",
+        "usagePatternZh": "誠實的人／如實的回答；對……坦誠"
+      },
+      "reason": "Truthful applies to statements and answers as well as people.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/truthful"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003477",
+      "before": {
+        "meaningEn": "a large area of sea partly surrounded by land; a wide difference between two groups or ideas"
+      },
+      "after": {
+        "meaningEn": "a large area of sea partly surrounded by land; a wide difference between two groups or ideas; also, a deep chasm or abyss; an engulfing whirlpool."
+      },
+      "reason": "Preserve and support the inherited less-common nouns.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/gulf"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003362",
+      "before": {
+        "meaningEn": "the quality of being the same in quantity or measure or value or status; a state of being essentially equal or equivalent; equally balanced",
+        "usagePattern": "an/the equality; equality of N",
+        "usagePatternZh": "一種平等／該平等；某方面的平等"
+      },
+      "after": {
+        "meaningEn": "The state or quality of being equal in quantity, measure, value, status, or rights; a condition of balance or equivalence.",
+        "usagePattern": "equality of opportunity; equality between N and N",
+        "usagePatternZh": "機會平等；兩者之間的平等"
+      },
+      "reason": "Use a complete noun definition and concrete noun constructions; preserve quantity/balance meanings.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/equality"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005319",
+      "before": {
+        "meaningEn": "compensate; make the score equal",
+        "usagePattern": "equalize + N; equalize to V",
+        "usagePatternZh": "使……相等；使相等以進行……"
+      },
+      "after": {
+        "meaningEn": "compensate; make the score equal; more generally, to make amounts, conditions, or opportunities equal.",
+        "usagePattern": "equalize wage rates; equalize opportunities; equalize the score",
+        "usagePatternZh": "使工資標準一致；使機會均等；扳平比分"
+      },
+      "reason": "Supply the broader make-equal meaning while preserving compensation and equal-score senses. Concrete attested objects replace the generic purpose-infinitive template; no blanket syntax ban.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/equalize; https://www.collinsdictionary.com/dictionary/english/equalize"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004348",
+      "before": {
+        "meaningEn": "a person or thing equal to another in value or measure or force or effect or significance etc",
+        "usagePattern": "an/the equivalent; equivalent of N; be equivalent",
+        "usagePatternZh": "該等價物／等價物；……的等價物；相等的"
+      },
+      "after": {
+        "meaningEn": "a person or thing equal to another in value or measure or force or effect or significance etc; (adj.) equal in amount, value, effect, or function.",
+        "usagePattern": "the equivalent of N; be equivalent to N",
+        "usagePatternZh": "……的等價物／對應物；相當於……"
+      },
+      "reason": "Distinguish the existing adjective from the current noun definition. Supply the attested adjective complement to, keeping the noun of construction.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/equivalent; https://www.collinsdictionary.com/dictionary/english/equivalent"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000677",
+      "before": {
+        "usagePatternZh": "名詞的價格；以高/低價格"
+      },
+      "after": {
+        "usagePatternZh": "……的價格；以高/低價格"
+      },
+      "reason": "Replace only the literal N placeholder; preserve all earlier forms and their original guard.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/price"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001956",
+      "before": {
+        "meaningZh": "價值；價格；購買力；評價"
+      },
+      "after": {
+        "meaningZh": "價值；價格；購買力；評價；（動詞）重視；珍視"
+      },
+      "reason": "Restore the unchanged value-friendship target sense, retaining monetary nouns and appraisal.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/value"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003141",
+      "before": {
+        "usagePattern": "cherish + N; cherish to V",
+        "usagePatternZh": "珍愛某物；懷有（希望或回憶）",
+        "meaningEn": "be fond of; be attached to"
+      },
+      "after": {
+        "usagePattern": "cherish a memory; cherish a hope/belief",
+        "usagePatternZh": "珍藏回憶；懷抱希望／信念",
+        "meaningEn": "be fond of; be attached to; also, to hold a hope, belief, or memory in mind over time."
+      },
+      "reason": "Use directly attested objects rather than a mismatched cherish-to-V pattern. Supply the hope/memory use already present in the paired Chinese.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/cherish; https://www.collinsdictionary.com/dictionary/english/cherish"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXe1763556",
+      "before": {
+        "sensePos": "adj."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "will direct the new employees is the target finite verb",
+      "evidence": "Exact unchanged sentence and cloze target; https://www.collinsdictionary.com/dictionary/english/direct"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXa6ec848a",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "based her theory on is the target past verb",
+      "evidence": "Exact unchanged sentence and cloze target; https://www.collinsdictionary.com/dictionary/english/base"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX79a44a4a",
+      "before": {
+        "sensePos": "adj."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "price doubled is the finite past verb",
+      "evidence": "Exact unchanged sentence and cloze target; https://www.collinsdictionary.com/dictionary/english/double"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1c3935da",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "to mask disappointment is the infinitive verb",
+      "evidence": "Exact unchanged sentence and cloze target; https://www.collinsdictionary.com/dictionary/english/mask"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXc9fda520",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "students lack confidence finite verb",
+      "evidence": "Exact unchanged sentence and cloze target; https://www.collinsdictionary.com/dictionary/english/lack"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX22fc99da",
+      "before": {
+        "sensePos": "v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "give me a lift noun ride",
+      "evidence": "Exact unchanged sentence and cloze target; https://www.collinsdictionary.com/dictionary/english/lift"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX728bb6d5",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "hairdresser styled hair finite past verb",
+      "evidence": "Exact unchanged sentence and cloze target; https://www.collinsdictionary.com/dictionary/english/style"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1269c22d",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "report detailed the steps finite past verb",
+      "evidence": "Exact unchanged sentence and cloze target; https://www.collinsdictionary.com/dictionary/english/detail"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXa8d021e8",
+      "before": {
+        "sensePos": "v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "the new management noun managers",
+      "evidence": "Exact unchanged sentence and cloze target; https://www.collinsdictionary.com/dictionary/english/management"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX0c2b3331",
+      "before": {
+        "sensePos": "adj."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "master the fundamentals of breathing, plural noun principles",
+      "evidence": "Exact unchanged sentence and cloze target; https://www.collinsdictionary.com/dictionary/english/fundamental"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXbde684c9",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "to value friendship infinitive verb",
+      "evidence": "Exact unchanged sentence and cloze target; https://www.collinsdictionary.com/dictionary/english/value"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX24ca973a",
+      "before": {
+        "meaningHint": "包含",
+        "status": "draft",
+        "sentenceEn": "This bottle contains two liters of water.",
+        "sentenceZh": "這個瓶子裝了兩公升的水。",
+        "blankSentence": "This bottle _____ two liters of water.",
+        "answer": "contains",
+        "sensePos": "v."
+      },
+      "after": {
+        "meaningHint": "裝有",
+        "status": "reviewed"
+      },
+      "reason": "bottle contains two liters; precision of existing hint包含, not an English error The complete unchanged sentence, cloze and answer were read; this is a practice sentence, not an official-question quotation. EX70528bd1 has a separate exact Chinese precision patch in the same checkpoint.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/contain; Actual App before and source comparison"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXb1a305db",
+      "before": {
+        "status": "draft",
+        "sentenceEn": "Pour the leftover soup into a container and put it in the fridge.",
+        "sentenceZh": "把剩下的湯倒進容器裡放冰箱。",
+        "blankSentence": "Pour the leftover soup into a _____ and put it in the fridge.",
+        "answer": "container",
+        "sensePos": "n."
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "The complete unchanged sentence, cloze and answer were read; this is a practice sentence, not an official-question quotation. EX70528bd1 has a separate exact Chinese precision patch in the same checkpoint.",
+      "evidence": "Actual App before and source comparison"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX70528bd1",
+      "before": {
+        "status": "draft",
+        "sentenceEn": "She saved for years to fulfill her dream of opening a bookshop.",
+        "sentenceZh": "她存了好幾年的錢，實現開書店的夢想。",
+        "blankSentence": "She saved for years to _____ her dream of opening a bookshop.",
+        "answer": "fulfill",
+        "sensePos": "v."
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "The complete unchanged sentence, cloze and answer were read; this is a practice sentence, not an official-question quotation. EX70528bd1 has a separate exact Chinese precision patch in the same checkpoint.",
+      "evidence": "Actual App before and source comparison"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001074-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：底部；壘；基礎；基地",
+        "wordId": "W001074",
+        "sensePos": "n.",
+        "meaningZh": "基礎；基地；壘",
+        "isExamSense": false,
+        "examEvidence": null
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "已核 n.「基礎；基地；壘」；只核此既有義項，保留詞頭其他義與狀態。來源：https://www.collinsdictionary.com/dictionary/english/base"
+      },
+      "reason": "Verify only this already separated, directly supported sense; do not approve the whole headword.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/base"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001074-2",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：底部；壘；基礎；基地",
+        "wordId": "W001074",
+        "sensePos": "v.",
+        "meaningZh": "以…為基礎（be based on）",
+        "isExamSense": false,
+        "examEvidence": null
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "已核 v.「以…為基礎（be based on）」；只核此既有義項，保留詞頭其他義與狀態。來源：https://www.collinsdictionary.com/dictionary/english/base"
+      },
+      "reason": "Verify only this already separated, directly supported sense; do not approve the whole headword.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/base"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001507-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：有可能的；合適的；前途有望的；或許",
+        "wordId": "W001507",
+        "sensePos": "adj.",
+        "meaningZh": "可能的",
+        "isExamSense": false,
+        "examEvidence": null
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "已核 adj.「可能的」；只核此既有義項，保留詞頭其他義與狀態。來源：https://www.collinsdictionary.com/dictionary/english/likely"
+      },
+      "reason": "Verify only this already separated, directly supported sense; do not approve the whole headword.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/likely"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001507-2",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：有可能的；合適的；前途有望的；或許",
+        "wordId": "W001507",
+        "sensePos": "adv.",
+        "meaningZh": "很可能",
+        "isExamSense": false,
+        "examEvidence": null
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "已核 adv.「很可能」；只核此既有義項，保留詞頭其他義與狀態。來源：https://www.collinsdictionary.com/dictionary/english/likely"
+      },
+      "reason": "Verify only this already separated, directly supported sense; do not approve the whole headword.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/likely"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001342-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：流行；風尚；時樣；形成",
+        "wordId": "W001342",
+        "sensePos": "n.",
+        "meaningZh": "時尚；流行",
+        "isExamSense": false,
+        "examEvidence": null
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "已核 n.「時尚；流行」；只核此既有義項，保留詞頭其他義與狀態。來源：https://www.collinsdictionary.com/dictionary/english/fashion"
+      },
+      "reason": "Verify only this already separated, directly supported sense; do not approve the whole headword.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/fashion"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001342-2",
+      "before": {
+        "status": "needs_check",
+        "note": "罕用，建議刪列｜待拆分；主表字義：流行；風尚；時樣；形成",
+        "wordId": "W001342",
+        "sensePos": "v.",
+        "meaningZh": "塑造",
+        "isExamSense": false,
+        "examEvidence": null
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "已核 v.「塑造」；只核此既有義項，保留詞頭其他義與狀態。來源：https://www.collinsdictionary.com/dictionary/english/fashion"
+      },
+      "reason": "Verify only this already separated, directly supported sense; do not approve the whole headword.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/fashion"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001860-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：風格；時尚；文體；風度",
+        "wordId": "W001860",
+        "sensePos": "n.",
+        "meaningZh": "風格；款式",
+        "isExamSense": false,
+        "examEvidence": null
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "已核 n.「風格；款式」；只核此既有義項，保留詞頭其他義與狀態。來源：https://www.collinsdictionary.com/dictionary/english/style"
+      },
+      "reason": "Verify only this already separated, directly supported sense; do not approve the whole headword.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/style"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001860-2",
+      "before": {
+        "status": "needs_check",
+        "note": "罕用，建議刪列｜待拆分；主表字義：風格；時尚；文體；風度",
+        "wordId": "W001860",
+        "sensePos": "v.",
+        "meaningZh": "設計造型",
+        "isExamSense": false,
+        "examEvidence": null
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "已核 v.「設計造型」；只核此既有義項，保留詞頭其他義與狀態。來源：https://www.collinsdictionary.com/dictionary/english/style"
+      },
+      "reason": "Verify only this already separated, directly supported sense; do not approve the whole headword.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/style"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W003435-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：基本原理；原則；基波；基本的",
+        "wordId": "W003435",
+        "sensePos": "adj.",
+        "meaningZh": "基本的；根本的",
+        "isExamSense": false,
+        "examEvidence": null
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "已核 adj.「基本的；根本的」；只核此既有義項，保留詞頭其他義與狀態。來源：https://www.collinsdictionary.com/dictionary/english/fundamental"
+      },
+      "reason": "Verify only this already separated, directly supported sense; do not approve the whole headword.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/fundamental"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W003435-2",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：基本原理；原則；基波；基本的",
+        "wordId": "W003435",
+        "sensePos": "n.",
+        "meaningZh": "基本原理",
+        "isExamSense": false,
+        "examEvidence": null
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "已核 n.「基本原理」；只核此既有義項，保留詞頭其他義與狀態。來源：https://www.collinsdictionary.com/dictionary/english/fundamental"
+      },
+      "reason": "Verify only this already separated, directly supported sense; do not approve the whole headword.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/fundamental"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W002596-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：最初的；原始的；有創意的；原物",
+        "wordId": "W002596",
+        "sensePos": "adj.",
+        "meaningZh": "原本的；有原創性的",
+        "isExamSense": false,
+        "examEvidence": null
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "已核 adj.「原本的；有原創性的」；只核此既有義項，保留詞頭其他義與狀態。來源：https://www.collinsdictionary.com/dictionary/english/original"
+      },
+      "reason": "Verify only this already separated, directly supported sense; do not approve the whole headword.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/original"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W002596-2",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：最初的；原始的；有創意的；原物",
+        "wordId": "W002596",
+        "sensePos": "n.",
+        "meaningZh": "原作",
+        "isExamSense": false,
+        "examEvidence": null
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "已核 n.「原作」；只核此既有義項，保留詞頭其他義與狀態。來源：https://www.collinsdictionary.com/dictionary/english/original"
+      },
+      "reason": "Verify only this already separated, directly supported sense; do not approve the whole headword.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/original"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001196-1",
+      "before": {
+        "examEvidence": "學測107 文意選填Q37",
+        "note": "考點：容器裡面有什麼",
+        "status": "draft",
+        "wordId": "W001196",
+        "sensePos": "v.",
+        "meaningZh": "內含、裝有",
+        "isExamSense": true,
+        "answerForms": [
+          "contained"
+        ]
+      },
+      "after": {
+        "examEvidence": "學測107 Q37，印刷第3頁，D＝contained；官方試題：https://www.ceec.edu.tw/files/file_pool/1/0j076574893317534748/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf；官方答案：https://www.ceec.edu.tw/files/file_pool/1/0j076574893773665710/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf",
+        "note": "已實讀官方題幹、選項與答案。語境：幸運餅內裝有一張寫有聖經勉勵語句的紙條。EX24ca973a 的兩公升水瓶句是另寫練習，不是原題。只核此義項來源，不代表全詞或其他練習均為真題。",
+        "status": "reviewed"
+      },
+      "reason": "Verify the exact official question, form, answer and source boundary.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0j076574893317534748/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf; https://www.ceec.edu.tw/files/file_pool/1/0j076574893773665710/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W003206-1",
+      "before": {
+        "examEvidence": "學測114 詞彙題Q1",
+        "note": "考點：用來裝東西的器皿",
+        "status": "draft",
+        "wordId": "W003206",
+        "sensePos": "n.",
+        "meaningZh": "容器",
+        "isExamSense": true,
+        "answerForms": [
+          "container"
+        ]
+      },
+      "after": {
+        "examEvidence": "學測114 Q1，印刷第1頁，C＝container；官方試題：https://www.ceec.edu.tw/files/file_pool/1/0p056425554473267580/02-114%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E9%A1%8C.pdf；官方答案：https://www.ceec.edu.tw/files/file_pool/1/0p051545433631383724/02-114%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf",
+        "note": "已實讀官方題幹、選項與答案。語境：在漏水龍頭下放容器，觀察24小時累積的水量。EXcb859c35 與填入答案的原題在空白與標點正規化後相同；EXb1a305db 的剩湯句是另寫練習。只核此義項來源，不代表全詞或其他練習均為真題。",
+        "status": "reviewed"
+      },
+      "reason": "Verify the exact official question, form, answer and source boundary.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0p056425554473267580/02-114%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E9%A1%8C.pdf; https://www.ceec.edu.tw/files/file_pool/1/0p051545433631383724/02-114%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W003433-1",
+      "before": {
+        "examEvidence": "學測107 詞彙題Q3",
+        "note": "考點：fulfill one's dream 完成願望",
+        "status": "draft",
+        "wordId": "W003433",
+        "sensePos": "v.",
+        "meaningZh": "實現",
+        "isExamSense": true,
+        "answerForms": [
+          "fulfill"
+        ]
+      },
+      "after": {
+        "examEvidence": "學測107 Q3，印刷第1頁，B＝fulfill；官方試題：https://www.ceec.edu.tw/files/file_pool/1/0j076574893317534748/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf；官方答案：https://www.ceec.edu.tw/files/file_pool/1/0j076574893773665710/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf",
+        "note": "已實讀官方題幹、選項與答案。語境：年輕時努力實現夢想，以免年老時感到錯過機會。EX70528bd1 書店句與 EX1c12a871 獎學金句均是另寫練習，不是原題。只核此義項來源，不代表全詞或其他練習均為真題。",
+        "status": "reviewed"
+      },
+      "reason": "Verify the exact official question, form, answer and source boundary.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0j076574893317534748/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf; https://www.ceec.edu.tw/files/file_pool/1/0j076574893773665710/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf"
+    }
+  ]
+}

@@ -1,0 +1,1091 @@
+{
+  "schemaVersion": 2,
+  "unit": "U10",
+  "provenance": {
+    "inputFile": "u10-current-examples-fe2ec66.json",
+    "inputSha256": "c87024b03d048e001c8bda56e589f9a923619d411c7fb4c395e0f60660382b3f",
+    "reviewedCommit": "fe2ec66bb06ca15351946895cd94022084d9fa68",
+    "reviewedBlobSha": "1bc82475bb3a536d131ca1c09719204c3e2d2d87",
+    "reviewDateUTC": "2026-11-05",
+    "inputOrigin": "This review used the current examples snapshot from the stated GitHub blob rather than independently refetching it.",
+    "originalTextbookVerification": "Not performed: original textbook pages were not supplied. Dictionary evidence verifies lexical meanings or constructions, not verbatim textbook provenance."
+  },
+  "summary": {
+    "formalWordCount": 77,
+    "wordsWithExamples": 61,
+    "formalWordsWithoutExamplesCount": 16,
+    "exampleCount": 264,
+    "manuallyReviewedRows": 264,
+    "clozeAnswerExactReconstructionPassed": 264,
+    "newDefiniteClozeAnswerMismatchCount": 0,
+    "newDefiniteTextErrorCandidates": 0,
+    "optionalPrecisionCandidateCount": 9,
+    "hintPrecisionCandidates": 3,
+    "separateChineseTranslationCandidates": 6,
+    "pendingExampleItems": 5,
+    "pendingPOSConventionItems": 4,
+    "pendingOriginalTextbookItems": 1,
+    "newMandatoryPOSChanges": 0,
+    "retainedWithoutNewCandidateOrPendingItem": 250,
+    "emptyDailyExamHintsPreserved": 102,
+    "nonemptyHintsReadInContext": 162,
+    "existingStatusCountsPreserved": {
+      "reviewed": 120,
+      "approved": 144
+    },
+    "exampleTypeCounts": {
+      "daily": 56,
+      "textbook": 144,
+      "exam": 62,
+      "collocation": 1,
+      "basic": 1
+    },
+    "protectedPOSConventionsPreserved": [
+      "EX3334b66a",
+      "EX94bd20e9",
+      "EX97dcd830",
+      "EX55e01872"
+    ],
+    "originalTextbookHoldPreserved": "EXd21ffcc0",
+    "repoFilesModified": false,
+    "statusesModified": false,
+    "gitOperationsPerformed": false,
+    "findingsSummaryZh": "264 列已逐句覆核，所有 cloze 均精確重建。沒有新增明確必改文字或詞性候選；9 項均為可選精度改善（3 提示、6 中文），不是 9 個證實錯誤。250 列無新增提案或待確認項。既有 4 個詞性慣例及 1 個 either-of 原教材疑義保留；102 個空提示不補造。",
+    "countingCaution": "250 代表本輪逐句檢視後可保留且無新增提案／待確認，不是 250 句已比對原始教材或所有意義皆經外部來源認證。9 可選項原值亦可保留。16 無例句詞另列，不計入 264 列待確認數。"
+  },
+  "groups": {
+    "明確候選": [],
+    "可選精度改善": [
+      "U10-H01",
+      "U10-H02",
+      "U10-H03",
+      "U10-T01",
+      "U10-T02",
+      "U10-T03",
+      "U10-T04",
+      "U10-T05",
+      "U10-T06"
+    ],
+    "待來源": [
+      "U10-P01",
+      "U10-P02",
+      "U10-P03",
+      "U10-P04",
+      "U10-P05"
+    ]
+  },
+  "definiteCandidates": [],
+  "hintProposals": [
+    {
+      "proposalId": "U10-H01",
+      "reviewIndex": 56,
+      "exampleId": "EX3c429231",
+      "wordId": "W000313",
+      "word": "fire",
+      "exampleType": "textbook",
+      "sentenceEn": "Paper catches fire easily.",
+      "sentenceZh": "紙張很容易著火。",
+      "blankSentence": "Paper catches _____ easily.",
+      "answer": "fire",
+      "sensePos": "n.",
+      "meaningHint": "火；火災",
+      "status": "approved",
+      "field": "meaningHint",
+      "before": "火；火災",
+      "after": "火（catch fire：著火）",
+      "classification": "optional_precision_improvement",
+      "classificationZh": "可選精度改善",
+      "subtype": "sentence_specific_hint_refinement",
+      "priority": "optional_refinement_not_proven_error",
+      "reason": "本句只說紙容易著火。原提示的火已正確，火災並非本句明確發生的事件；縮到當句搭配可減少多義干擾，屬可選精度而非證實原提示錯誤。",
+      "confidence": "high_for_English_sense; Chinese_refinement_is_optional; application_review_required",
+      "sources": [
+        {
+          "sourceId": "cambridge_fire",
+          "title": "Cambridge Dictionary: fire",
+          "url": "https://dictionary.cambridge.org/dictionary/english/fire?q=fire_1",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "not attempted; only actual search result excerpt read",
+          "observedEvidence": "實際搜尋節錄列出 catch fire 為開始燃燒，並列搭帳篷後生小火的 make a fire 用法，支持著火與生火兩個搭配。",
+          "supportsRows": [
+            56,
+            108
+          ],
+          "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified.",
+          "relatedDirectOpen": "The base URL https://dictionary.cambridge.org/dictionary/english/fire was attempted and returned 403. The query URL excerpt is not claimed as a full-page read."
+        },
+        {
+          "sourceId": "collins_fire",
+          "title": "Collins COBUILD: fire",
+          "url": "https://www.collinsdictionary.com/dictionary/english/fire",
+          "accessType": "direct_page_open_success",
+          "directOpen": "success; inspected lines 224–244",
+          "observedEvidence": "原頁區分燃燒的火焰、失控燃燒造成的火災，以及為保暖或烹飪而生的火；森林火災列在災害義下。",
+          "supportsRows": [
+            56,
+            108,
+            204
+          ],
+          "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+        }
+      ],
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "fe2ec66bb06ca15351946895cd94022084d9fa68",
+        "reviewedBlobSha": "1bc82475bb3a536d131ca1c09719204c3e2d2d87",
+        "exampleIdMustMatch": "EX3c429231",
+        "exactFieldBefore": {
+          "meaningHint": "火；火災"
+        },
+        "contextMustMatch": {
+          "sentenceEn": "Paper catches fire easily.",
+          "sentenceZh": "紙張很容易著火。",
+          "blankSentence": "Paper catches _____ easily.",
+          "answer": "fire",
+          "sensePos": "n.",
+          "meaningHint": "火；火災",
+          "status": "approved"
+        },
+        "ifAnyValueChanged": "停止套用並重讀該列，不用舊快照覆蓋最新值。",
+        "fieldsOutsideProposal": "不得改英文、原來源、答案、POS、status、整詞摘要或音標。"
+      },
+      "applied": false
+    },
+    {
+      "proposalId": "U10-H02",
+      "reviewIndex": 108,
+      "exampleId": "EX7481b733",
+      "wordId": "W000313",
+      "word": "fire",
+      "exampleType": "textbook",
+      "sentenceEn": "Let's make a fire to keep us warm.",
+      "sentenceZh": "我們生火來保暖吧！",
+      "blankSentence": "Let's make a _____ to keep us warm.",
+      "answer": "fire",
+      "sensePos": "n.",
+      "meaningHint": "火；火災",
+      "status": "approved",
+      "field": "meaningHint",
+      "before": "火；火災",
+      "after": "火（make a fire：生火）",
+      "classification": "optional_precision_improvement",
+      "classificationZh": "可選精度改善",
+      "subtype": "sentence_specific_hint_refinement",
+      "priority": "optional_refinement_not_proven_error",
+      "reason": "為保暖而生火是有意用火，不是森林或建物火災。原提示包含正確的火義，因此只是可選移除不適合此句的災害聯想。",
+      "confidence": "high_for_English_sense; Chinese_refinement_is_optional; application_review_required",
+      "sources": [
+        {
+          "sourceId": "cambridge_fire",
+          "title": "Cambridge Dictionary: fire",
+          "url": "https://dictionary.cambridge.org/dictionary/english/fire?q=fire_1",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "not attempted; only actual search result excerpt read",
+          "observedEvidence": "實際搜尋節錄列出 catch fire 為開始燃燒，並列搭帳篷後生小火的 make a fire 用法，支持著火與生火兩個搭配。",
+          "supportsRows": [
+            56,
+            108
+          ],
+          "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified.",
+          "relatedDirectOpen": "The base URL https://dictionary.cambridge.org/dictionary/english/fire was attempted and returned 403. The query URL excerpt is not claimed as a full-page read."
+        },
+        {
+          "sourceId": "collins_fire",
+          "title": "Collins COBUILD: fire",
+          "url": "https://www.collinsdictionary.com/dictionary/english/fire",
+          "accessType": "direct_page_open_success",
+          "directOpen": "success; inspected lines 224–244",
+          "observedEvidence": "原頁區分燃燒的火焰、失控燃燒造成的火災，以及為保暖或烹飪而生的火；森林火災列在災害義下。",
+          "supportsRows": [
+            56,
+            108,
+            204
+          ],
+          "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+        }
+      ],
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "fe2ec66bb06ca15351946895cd94022084d9fa68",
+        "reviewedBlobSha": "1bc82475bb3a536d131ca1c09719204c3e2d2d87",
+        "exampleIdMustMatch": "EX7481b733",
+        "exactFieldBefore": {
+          "meaningHint": "火；火災"
+        },
+        "contextMustMatch": {
+          "sentenceEn": "Let's make a fire to keep us warm.",
+          "sentenceZh": "我們生火來保暖吧！",
+          "blankSentence": "Let's make a _____ to keep us warm.",
+          "answer": "fire",
+          "sensePos": "n.",
+          "meaningHint": "火；火災",
+          "status": "approved"
+        },
+        "ifAnyValueChanged": "停止套用並重讀該列，不用舊快照覆蓋最新值。",
+        "fieldsOutsideProposal": "不得改英文、原來源、答案、POS、status、整詞摘要或音標。"
+      },
+      "applied": false
+    },
+    {
+      "proposalId": "U10-H03",
+      "reviewIndex": 204,
+      "exampleId": "EXc77dd478",
+      "wordId": "W000313",
+      "word": "fire",
+      "exampleType": "textbook",
+      "sentenceEn": "A forest fire broke out last night.",
+      "sentenceZh": "昨晚發生了一場森林火災。",
+      "blankSentence": "A forest _____ broke out last night.",
+      "answer": "fire",
+      "sensePos": "n.",
+      "meaningHint": "火；火災",
+      "status": "approved",
+      "field": "meaningHint",
+      "before": "火；火災",
+      "after": "火災（forest fire：森林火災）",
+      "classification": "optional_precision_improvement",
+      "classificationZh": "可選精度改善",
+      "subtype": "sentence_specific_hint_refinement",
+      "priority": "optional_refinement_not_proven_error",
+      "reason": "forest fire broke out 明指森林火災；原提示火災已正確，可選只留下該句災害義，不能把原來的火概括視作必改錯誤。",
+      "confidence": "high_for_English_sense; Chinese_refinement_is_optional; application_review_required",
+      "sources": [
+        {
+          "sourceId": "collins_fire",
+          "title": "Collins COBUILD: fire",
+          "url": "https://www.collinsdictionary.com/dictionary/english/fire",
+          "accessType": "direct_page_open_success",
+          "directOpen": "success; inspected lines 224–244",
+          "observedEvidence": "原頁區分燃燒的火焰、失控燃燒造成的火災，以及為保暖或烹飪而生的火；森林火災列在災害義下。",
+          "supportsRows": [
+            56,
+            108,
+            204
+          ],
+          "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+        }
+      ],
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "fe2ec66bb06ca15351946895cd94022084d9fa68",
+        "reviewedBlobSha": "1bc82475bb3a536d131ca1c09719204c3e2d2d87",
+        "exampleIdMustMatch": "EXc77dd478",
+        "exactFieldBefore": {
+          "meaningHint": "火；火災"
+        },
+        "contextMustMatch": {
+          "sentenceEn": "A forest fire broke out last night.",
+          "sentenceZh": "昨晚發生了一場森林火災。",
+          "blankSentence": "A forest _____ broke out last night.",
+          "answer": "fire",
+          "sensePos": "n.",
+          "meaningHint": "火；火災",
+          "status": "approved"
+        },
+        "ifAnyValueChanged": "停止套用並重讀該列，不用舊快照覆蓋最新值。",
+        "fieldsOutsideProposal": "不得改英文、原來源、答案、POS、status、整詞摘要或音標。"
+      },
+      "applied": false
+    }
+  ],
+  "translationCandidates": [
+    {
+      "proposalId": "U10-T01",
+      "reviewIndex": 8,
+      "exampleId": "EX0d851c1f",
+      "wordId": "W002671",
+      "word": "preparation",
+      "exampleType": "exam",
+      "sentenceEn": "Careful preparation is the key to performing well in the final examination.",
+      "sentenceZh": "充分的準備是在期末考中表現良好的關鍵。",
+      "blankSentence": "Careful _____ is the key to performing well in the final examination.",
+      "answer": "preparation",
+      "sensePos": "n.",
+      "meaningHint": null,
+      "status": "reviewed",
+      "field": "sentenceZh",
+      "before": "充分的準備是在期末考中表現良好的關鍵。",
+      "after": "細心的準備是在期末考中表現良好的關鍵。",
+      "classification": "optional_precision_improvement",
+      "classificationZh": "可選精度改善",
+      "subtype": "modifier_precision",
+      "priority": "optional_refinement_not_proven_error",
+      "reason": "careful 強調仔細、用心，充分強調足量。現譯大意可成立，但若要更直接教此形容詞，可選細心；不是聲稱充分準備整句必錯，空 meaningHint 不變。",
+      "confidence": "high_for_English_sense; Chinese_refinement_is_optional; application_review_required",
+      "sources": [
+        {
+          "sourceId": "cambridge_careful",
+          "title": "Cambridge Dictionary: careful",
+          "url": "https://dictionary.cambridge.org/dictionary/english/careful",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "attempted; 403 Forbidden; full page not read",
+          "observedEvidence": "實際搜尋節錄將 careful 解作對正在做的事給予細心注意，以避免意外、錯誤或問題；這是細心程度，而不是僅指準備量是否足夠。",
+          "supportsRows": [
+            8
+          ],
+          "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+        }
+      ],
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "fe2ec66bb06ca15351946895cd94022084d9fa68",
+        "reviewedBlobSha": "1bc82475bb3a536d131ca1c09719204c3e2d2d87",
+        "exampleIdMustMatch": "EX0d851c1f",
+        "exactFieldBefore": {
+          "sentenceZh": "充分的準備是在期末考中表現良好的關鍵。"
+        },
+        "contextMustMatch": {
+          "sentenceEn": "Careful preparation is the key to performing well in the final examination.",
+          "sentenceZh": "充分的準備是在期末考中表現良好的關鍵。",
+          "blankSentence": "Careful _____ is the key to performing well in the final examination.",
+          "answer": "preparation",
+          "sensePos": "n.",
+          "meaningHint": null,
+          "status": "reviewed"
+        },
+        "ifAnyValueChanged": "停止套用並重讀該列，不用舊快照覆蓋最新值。",
+        "fieldsOutsideProposal": "不得改英文、原來源、答案、POS、status、整詞摘要或音標。"
+      },
+      "applied": false
+    },
+    {
+      "proposalId": "U10-T02",
+      "reviewIndex": 53,
+      "exampleId": "EX393f16e6",
+      "wordId": "W000258",
+      "word": "either",
+      "exampleType": "textbook",
+      "sentenceEn": "Passengers crowded on either side of the platform.",
+      "sentenceZh": "兩側月臺上擠滿了乘客。",
+      "blankSentence": "Passengers crowded on _____ side of the platform.",
+      "answer": "either",
+      "sensePos": "adj.",
+      "meaningHint": "兩邊各一的（either side：兩側）",
+      "status": "approved",
+      "field": "sentenceZh",
+      "before": "兩側月臺上擠滿了乘客。",
+      "after": "月臺的兩側擠滿了乘客。",
+      "classification": "optional_precision_improvement",
+      "classificationZh": "可選精度改善",
+      "subtype": "spatial_relation_disambiguation",
+      "priority": "optional_refinement_not_proven_error",
+      "reason": "either side of the platform 的所屬關係是該月臺的兩側；兩側月臺上容易被讀成兩個月臺。改為月臺的兩側可消除歧義，不假定原教材畫面，也不把既有中文一概定錯。",
+      "confidence": "high_for_English_sense; Chinese_refinement_is_optional; application_review_required",
+      "sources": [
+        {
+          "sourceId": "cambridge_either_sides",
+          "title": "Cambridge Learner’s Dictionary: either",
+          "url": "https://dictionary.cambridge.org/dictionary/learner-english/either?amp=true&q=either_1",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "attempted; 403 Forbidden; full page not read",
+          "observedEvidence": "實際搜尋節錄以兩邊皆有人吸菸的情境解釋 either side，明示為兩側。此證據支持兩側義；platform 的單數及所屬關係由本句直接觀察。",
+          "supportsRows": [
+            53
+          ],
+          "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+        }
+      ],
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "fe2ec66bb06ca15351946895cd94022084d9fa68",
+        "reviewedBlobSha": "1bc82475bb3a536d131ca1c09719204c3e2d2d87",
+        "exampleIdMustMatch": "EX393f16e6",
+        "exactFieldBefore": {
+          "sentenceZh": "兩側月臺上擠滿了乘客。"
+        },
+        "contextMustMatch": {
+          "sentenceEn": "Passengers crowded on either side of the platform.",
+          "sentenceZh": "兩側月臺上擠滿了乘客。",
+          "blankSentence": "Passengers crowded on _____ side of the platform.",
+          "answer": "either",
+          "sensePos": "adj.",
+          "meaningHint": "兩邊各一的（either side：兩側）",
+          "status": "approved"
+        },
+        "ifAnyValueChanged": "停止套用並重讀該列，不用舊快照覆蓋最新值。",
+        "fieldsOutsideProposal": "不得改英文、原來源、答案、POS、status、整詞摘要或音標。"
+      },
+      "applied": false
+    },
+    {
+      "proposalId": "U10-T03",
+      "reviewIndex": 145,
+      "exampleId": "EX96d04670",
+      "wordId": "W000748",
+      "word": "see",
+      "exampleType": "textbook",
+      "sentenceEn": "It was so foggy that Greg could barely see.",
+      "sentenceZh": "天氣太霧了，所以葛瑞格看不太清楚。",
+      "blankSentence": "It was so foggy that Greg could barely _____.",
+      "answer": "see",
+      "sensePos": "v.",
+      "meaningHint": "看見",
+      "status": "approved",
+      "field": "sentenceZh",
+      "before": "天氣太霧了，所以葛瑞格看不太清楚。",
+      "after": "霧太濃了，所以葛瑞格幾乎看不見。",
+      "classification": "optional_precision_improvement",
+      "classificationZh": "可選精度改善",
+      "subtype": "degree_precision",
+      "priority": "optional_refinement_not_proven_error",
+      "reason": "barely see 是勉強能看見，幾乎看不見更直接呈現該程度。看不太清楚可作自然描述，故僅列可選精度改善，不指稱已證實的誤譯。",
+      "confidence": "high_for_English_sense; Chinese_refinement_is_optional; application_review_required",
+      "sources": [
+        {
+          "sourceId": "oxford_barely",
+          "title": "Oxford Advanced Learner’s Dictionary: barely",
+          "url": "https://www.oxfordlearnersdictionaries.com/definition/english/barely",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "attempted; 403 Forbidden; full page not read",
+          "observedEvidence": "實際搜尋節錄說明 barely 可表示某事僅勉強成立或做到；與 see 連用描述幾乎無法看見的程度。",
+          "supportsRows": [
+            145
+          ],
+          "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+        }
+      ],
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "fe2ec66bb06ca15351946895cd94022084d9fa68",
+        "reviewedBlobSha": "1bc82475bb3a536d131ca1c09719204c3e2d2d87",
+        "exampleIdMustMatch": "EX96d04670",
+        "exactFieldBefore": {
+          "sentenceZh": "天氣太霧了，所以葛瑞格看不太清楚。"
+        },
+        "contextMustMatch": {
+          "sentenceEn": "It was so foggy that Greg could barely see.",
+          "sentenceZh": "天氣太霧了，所以葛瑞格看不太清楚。",
+          "blankSentence": "It was so foggy that Greg could barely _____.",
+          "answer": "see",
+          "sensePos": "v.",
+          "meaningHint": "看見",
+          "status": "approved"
+        },
+        "ifAnyValueChanged": "停止套用並重讀該列，不用舊快照覆蓋最新值。",
+        "fieldsOutsideProposal": "不得改英文、原來源、答案、POS、status、整詞摘要或音標。"
+      },
+      "applied": false
+    },
+    {
+      "proposalId": "U10-T04",
+      "reviewIndex": 194,
+      "exampleId": "EXbf4b15ea",
+      "wordId": "W000472",
+      "word": "later",
+      "exampleType": "textbook",
+      "sentenceEn": "The article must be submitted no later than May 31st.",
+      "sentenceZh": "這篇文章得在 5 月 31 日前遞交。",
+      "blankSentence": "The article must be submitted no _____ than May 31st.",
+      "answer": "later",
+      "sensePos": "adv.",
+      "meaningHint": "晚於（no later than：最遲不超過）",
+      "status": "approved",
+      "field": "sentenceZh",
+      "before": "這篇文章得在 5 月 31 日前遞交。",
+      "after": "這篇文章最遲須於 5 月 31 日遞交。",
+      "classification": "optional_precision_improvement",
+      "classificationZh": "可選精度改善",
+      "subtype": "inclusive_deadline_clarification",
+      "priority": "optional_refinement_not_proven_error",
+      "reason": "no later than 明示不晚於截止日；最遲於能清楚包含當日。中文日前的慣用包含性可能依上下文而異，故這是消除截止界線歧義，不是已證明原譯排除了當日；不加具體時分。",
+      "confidence": "high_for_English_sense; Chinese_refinement_is_optional; application_review_required",
+      "sources": [
+        {
+          "sourceId": "cambridge_by",
+          "title": "Cambridge Dictionary: by (time)",
+          "url": "https://dictionary.cambridge.org/dictionary/english/by?topic=describing-when-something-happened-or-will-happen",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "not attempted; only actual search result excerpt read",
+          "observedEvidence": "實際搜尋節錄明示時間義涵蓋該時點或更早，不晚於指定時點。它支持英語截止界線；不據此斷言中文日前／週一前在所有語境均排除當日。",
+          "supportsRows": [
+            194,
+            264
+          ],
+          "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+        },
+        {
+          "sourceId": "cambridge_by_before",
+          "title": "Cambridge English Grammar Today: before, by, till, until",
+          "url": "https://dictionary.cambridge.org/grammar/british-grammar/by-until",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "attempted; 403 Forbidden; full page not read",
+          "observedEvidence": "實際搜尋節錄區分 before 的早於與 by 的最後可完成時點，並比較 no later than 的截止用法；只用來支持最遲於的英文意思。",
+          "supportsRows": [
+            194,
+            264
+          ],
+          "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+        }
+      ],
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "fe2ec66bb06ca15351946895cd94022084d9fa68",
+        "reviewedBlobSha": "1bc82475bb3a536d131ca1c09719204c3e2d2d87",
+        "exampleIdMustMatch": "EXbf4b15ea",
+        "exactFieldBefore": {
+          "sentenceZh": "這篇文章得在 5 月 31 日前遞交。"
+        },
+        "contextMustMatch": {
+          "sentenceEn": "The article must be submitted no later than May 31st.",
+          "sentenceZh": "這篇文章得在 5 月 31 日前遞交。",
+          "blankSentence": "The article must be submitted no _____ than May 31st.",
+          "answer": "later",
+          "sensePos": "adv.",
+          "meaningHint": "晚於（no later than：最遲不超過）",
+          "status": "approved"
+        },
+        "ifAnyValueChanged": "停止套用並重讀該列，不用舊快照覆蓋最新值。",
+        "fieldsOutsideProposal": "不得改英文、原來源、答案、POS、status、整詞摘要或音標。"
+      },
+      "applied": false
+    },
+    {
+      "proposalId": "U10-T05",
+      "reviewIndex": 243,
+      "exampleId": "EXeaeaf192",
+      "wordId": "W002858",
+      "word": "strength",
+      "exampleType": "exam",
+      "sentenceEn": "After months of hard training, the athlete finally gained enough strength to lift the heavy weights.",
+      "sentenceZh": "經過數個月的刻苦訓練，這位運動員終於獲得足夠的力量舉起沉重的重量。",
+      "blankSentence": "After months of hard training, the athlete finally gained enough _____ to lift the heavy weights.",
+      "answer": "strength",
+      "sensePos": "n.",
+      "meaningHint": null,
+      "status": "reviewed",
+      "field": "sentenceZh",
+      "before": "經過數個月的刻苦訓練，這位運動員終於獲得足夠的力量舉起沉重的重量。",
+      "after": "經過數個月的刻苦訓練，這位運動員終於獲得足夠的力量舉起重物。",
+      "classification": "optional_precision_improvement",
+      "classificationZh": "可選精度改善",
+      "subtype": "object_sense_precision",
+      "priority": "optional_refinement_not_proven_error",
+      "reason": "weights 在 lift 的運動情境指可舉的重物，而不是抽象重量數值；改重物可明示物件義。中文舉起重量亦可理解為借代，故保守列可選精度，且不猜測是槓鈴或啞鈴。",
+      "confidence": "high_for_English_sense; Chinese_refinement_is_optional; application_review_required",
+      "sources": [
+        {
+          "sourceId": "collins_weight",
+          "title": "Collins COBUILD: weight",
+          "url": "https://www.collinsdictionary.com/dictionary/english/weight",
+          "accessType": "direct_page_open_success",
+          "directOpen": "success; inspected lines 224–265",
+          "observedEvidence": "原頁將複數 weights 列作可數的運動用重物，另列一般需舉起的重物義，與以公斤等計量的重量分義區別。",
+          "supportsRows": [
+            243
+          ],
+          "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+        },
+        {
+          "sourceId": "ahd_weight",
+          "title": "American Heritage Dictionary: weight",
+          "url": "https://www.ahdictionary.com/word/search.html?q=weight",
+          "accessType": "direct_page_open_success",
+          "directOpen": "success; inspected lines 40–41",
+          "observedEvidence": "原頁 4d 將運動義列為訓練或比賽時舉起的重物，與重量數值義分開；不把原句中的 weights 擅定為某一款器材。",
+          "supportsRows": [
+            243
+          ],
+          "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+        }
+      ],
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "fe2ec66bb06ca15351946895cd94022084d9fa68",
+        "reviewedBlobSha": "1bc82475bb3a536d131ca1c09719204c3e2d2d87",
+        "exampleIdMustMatch": "EXeaeaf192",
+        "exactFieldBefore": {
+          "sentenceZh": "經過數個月的刻苦訓練，這位運動員終於獲得足夠的力量舉起沉重的重量。"
+        },
+        "contextMustMatch": {
+          "sentenceEn": "After months of hard training, the athlete finally gained enough strength to lift the heavy weights.",
+          "sentenceZh": "經過數個月的刻苦訓練，這位運動員終於獲得足夠的力量舉起沉重的重量。",
+          "blankSentence": "After months of hard training, the athlete finally gained enough _____ to lift the heavy weights.",
+          "answer": "strength",
+          "sensePos": "n.",
+          "meaningHint": null,
+          "status": "reviewed"
+        },
+        "ifAnyValueChanged": "停止套用並重讀該列，不用舊快照覆蓋最新值。",
+        "fieldsOutsideProposal": "不得改英文、原來源、答案、POS、status、整詞摘要或音標。"
+      },
+      "applied": false
+    },
+    {
+      "proposalId": "U10-T06",
+      "reviewIndex": 264,
+      "exampleId": "EXfcf09188",
+      "wordId": "W000709",
+      "word": "report",
+      "exampleType": "exam",
+      "sentenceEn": "Students must submit a written report on their research project by next Monday.",
+      "sentenceZh": "學生們必須在下週一前，針對他們的研究計畫繳交一份書面報告。",
+      "blankSentence": "Students must submit a written _____ on their research project by next Monday.",
+      "answer": "report",
+      "sensePos": "n.",
+      "meaningHint": null,
+      "status": "reviewed",
+      "field": "sentenceZh",
+      "before": "學生們必須在下週一前，針對他們的研究計畫繳交一份書面報告。",
+      "after": "學生們必須最遲於下週一繳交一份關於他們研究計畫的書面報告。",
+      "classification": "optional_precision_improvement",
+      "classificationZh": "可選精度改善",
+      "subtype": "inclusive_deadline_clarification",
+      "priority": "optional_refinement_not_proven_error",
+      "reason": "by next Monday 包含下週一這個最後期限；最遲於可避免週一前的界線歧義。不是斷言原中文在慣用上必排除週一，也不補出當天幾點截止。",
+      "confidence": "high_for_English_sense; Chinese_refinement_is_optional; application_review_required",
+      "sources": [
+        {
+          "sourceId": "cambridge_by",
+          "title": "Cambridge Dictionary: by (time)",
+          "url": "https://dictionary.cambridge.org/dictionary/english/by?topic=describing-when-something-happened-or-will-happen",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "not attempted; only actual search result excerpt read",
+          "observedEvidence": "實際搜尋節錄明示時間義涵蓋該時點或更早，不晚於指定時點。它支持英語截止界線；不據此斷言中文日前／週一前在所有語境均排除當日。",
+          "supportsRows": [
+            194,
+            264
+          ],
+          "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+        },
+        {
+          "sourceId": "cambridge_by_before",
+          "title": "Cambridge English Grammar Today: before, by, till, until",
+          "url": "https://dictionary.cambridge.org/grammar/british-grammar/by-until",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "attempted; 403 Forbidden; full page not read",
+          "observedEvidence": "實際搜尋節錄區分 before 的早於與 by 的最後可完成時點，並比較 no later than 的截止用法；只用來支持最遲於的英文意思。",
+          "supportsRows": [
+            194,
+            264
+          ],
+          "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+        }
+      ],
+      "applyGuard": {
+        "readLatestRepositoryVersionBeforeApply": true,
+        "reviewedCommit": "fe2ec66bb06ca15351946895cd94022084d9fa68",
+        "reviewedBlobSha": "1bc82475bb3a536d131ca1c09719204c3e2d2d87",
+        "exampleIdMustMatch": "EXfcf09188",
+        "exactFieldBefore": {
+          "sentenceZh": "學生們必須在下週一前，針對他們的研究計畫繳交一份書面報告。"
+        },
+        "contextMustMatch": {
+          "sentenceEn": "Students must submit a written report on their research project by next Monday.",
+          "sentenceZh": "學生們必須在下週一前，針對他們的研究計畫繳交一份書面報告。",
+          "blankSentence": "Students must submit a written _____ on their research project by next Monday.",
+          "answer": "report",
+          "sensePos": "n.",
+          "meaningHint": null,
+          "status": "reviewed"
+        },
+        "ifAnyValueChanged": "停止套用並重讀該列，不用舊快照覆蓋最新值。",
+        "fieldsOutsideProposal": "不得改英文、原來源、答案、POS、status、整詞摘要或音標。"
+      },
+      "applied": false
+    }
+  ],
+  "pendingConfirmation": [
+    {
+      "pendingItemId": "U10-P01",
+      "reviewIndex": 43,
+      "exampleId": "EX3334b66a",
+      "wordId": "W000154",
+      "word": "certain",
+      "classification": "pending_source_or_schema_confirmation",
+      "classificationZh": "待來源",
+      "fields": [
+        "sensePos"
+      ],
+      "before": {
+        "sensePos": "adj./pron."
+      },
+      "after": null,
+      "reason": "for certain 整體有副詞功能，但該列只挖 certain；adj./pron. 是否為教材詞頭或資料庫粒度慣例未確認。",
+      "neededEvidence": "需原教材標注與專案 sensePos 的單詞／片語規則；既有保留事項延續，不是新增確錯。",
+      "sentenceEn": "Nobody knows for certain when Michael is coming back.",
+      "sentenceZh": "沒有人確知邁可什麼時候會回來。",
+      "blankSentence": "Nobody knows for _____ when Michael is coming back.",
+      "answer": "certain",
+      "meaningHint": "確定地（for certain）",
+      "sensePos": "adj./pron.",
+      "sources": [
+        {
+          "sourceId": "cambridge_certain_phrase",
+          "title": "Cambridge Dictionary: know/say for certain",
+          "url": "https://dictionary.cambridge.org/dictionary/english/know-say-for-certain",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "not attempted; only actual search result excerpt read",
+          "observedEvidence": "實際搜尋節錄把 know/say for certain 列作片語；這不能單獨決定資料庫中只挖 certain 的詞性粒度。",
+          "supportsRows": [
+            43
+          ],
+          "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+        }
+      ],
+      "action": "保留所有現值；本次不提出自動替換。",
+      "applied": false
+    },
+    {
+      "pendingItemId": "U10-P02",
+      "reviewIndex": 143,
+      "exampleId": "EX94bd20e9",
+      "wordId": "W000186",
+      "word": "common",
+      "classification": "pending_source_or_schema_confirmation",
+      "classificationZh": "待來源",
+      "fields": [
+        "sensePos"
+      ],
+      "before": {
+        "sensePos": "adj."
+      },
+      "after": null,
+      "reason": "in common 整體慣用語與 common 單詞詞性不能混為一談，句義及中文已相合，空提示刻意保留。",
+      "neededEvidence": "需專案對 in common 挖單字時的詞性慣例；不因空提示新增錯誤。",
+      "sentenceEn": "My sister and I have a lot in common, such as music taste.",
+      "sentenceZh": "我和妹妹有很多共同點，例如音樂品味。",
+      "blankSentence": "My sister and I have a lot in _____, such as music taste.",
+      "answer": "common",
+      "meaningHint": null,
+      "sensePos": "adj.",
+      "sources": [
+        {
+          "sourceId": "cambridge_common_idiom",
+          "title": "Cambridge Dictionary: have something in common",
+          "url": "https://dictionary.cambridge.org/dictionary/english/have-in-common",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "not attempted; only actual search result excerpt read",
+          "observedEvidence": "實際搜尋節錄把 have something in common 列作慣用語；不能僅據整體功能反推 common 單詞必須改成另一詞性。",
+          "supportsRows": [
+            143,
+            147
+          ],
+          "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+        }
+      ],
+      "action": "保留所有現值；本次不提出自動替換。",
+      "applied": false
+    },
+    {
+      "pendingItemId": "U10-P03",
+      "reviewIndex": 147,
+      "exampleId": "EX97dcd830",
+      "wordId": "W000186",
+      "word": "common",
+      "classification": "pending_source_or_schema_confirmation",
+      "classificationZh": "待來源",
+      "fields": [
+        "sensePos"
+      ],
+      "before": {
+        "sensePos": "adj./n."
+      },
+      "after": null,
+      "reason": "adj./n. 複合詞性是否依詞頭而非例句單一分析，需專案慣例；共同點很少的語意正確。",
+      "neededEvidence": "需原教材及專案的詞性粒度規則。",
+      "sentenceEn": "Even though we are twins, we have very little in common with each other.",
+      "sentenceZh": "雖然我們是雙胞胎，彼此的共同點卻很少。",
+      "blankSentence": "Even though we are twins, we have very little in _____ with each other.",
+      "answer": "common",
+      "meaningHint": "共有；共同（in common）",
+      "sensePos": "adj./n.",
+      "sources": [
+        {
+          "sourceId": "cambridge_common_idiom",
+          "title": "Cambridge Dictionary: have something in common",
+          "url": "https://dictionary.cambridge.org/dictionary/english/have-in-common",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "not attempted; only actual search result excerpt read",
+          "observedEvidence": "實際搜尋節錄把 have something in common 列作慣用語；不能僅據整體功能反推 common 單詞必須改成另一詞性。",
+          "supportsRows": [
+            143,
+            147
+          ],
+          "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+        }
+      ],
+      "action": "保留所有現值；本次不提出自動替換。",
+      "applied": false
+    },
+    {
+      "pendingItemId": "U10-P04",
+      "reviewIndex": 82,
+      "exampleId": "EX55e01872",
+      "wordId": "W000171",
+      "word": "clear",
+      "classification": "pending_source_or_schema_confirmation",
+      "classificationZh": "待來源",
+      "fields": [
+        "sensePos"
+      ],
+      "before": {
+        "sensePos": "adj./v./adv."
+      },
+      "after": null,
+      "reason": "loud and clear 是整體慣用表達，clear 單詞在本案是否保留詞頭多 POS 未確認，不用整體副詞功能硬改。",
+      "neededEvidence": "需原教材與專案的詞性粒度規則；英文及清楚的中文保留。",
+      "sentenceEn": "I can hear your voice loud and clear.",
+      "sentenceZh": "我可以清楚地聽到你的聲音。",
+      "blankSentence": "I can hear your voice loud and _____.",
+      "answer": "clear",
+      "meaningHint": "清楚地（loud and clear）",
+      "sensePos": "adj./v./adv.",
+      "sources": [
+        {
+          "sourceId": "cambridge_loud_idiom",
+          "title": "Cambridge Dictionary: loud (idiom listing)",
+          "url": "https://dictionary.cambridge.org/us/dictionary/english/loud",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "not attempted; only actual search result excerpt read",
+          "observedEvidence": "實際搜尋節錄在 loud 項下列出 loud and clear 慣用語；本次只據此確認多字表達，不假裝節錄已給出 clear 單詞的唯一詞性分析。",
+          "supportsRows": [
+            82
+          ],
+          "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+        }
+      ],
+      "action": "保留所有現值；本次不提出自動替換。",
+      "applied": false
+    },
+    {
+      "pendingItemId": "U10-P05",
+      "reviewIndex": 213,
+      "exampleId": "EXd21ffcc0",
+      "wordId": "W000258",
+      "word": "either",
+      "classification": "pending_source_or_schema_confirmation",
+      "classificationZh": "待來源",
+      "fields": [
+        "sentenceEn",
+        "sentenceZh"
+      ],
+      "before": {
+        "sentenceEn": "Ruby thinks either of the wedding dresses look perfect.",
+        "sentenceZh": "露比認為兩件婚紗看起來都很完美。"
+      },
+      "after": null,
+      "reason": "either of 的任一讀法、look 的數一致及中文兩件都完美需要原教材語境。可靠語法摘要允許部分 either of 複數動詞用法，所以 look 並非足以獨立確證的錯字；不能猜 looks 或 both。",
+      "neededEvidence": "需原始教材頁面與上下文，核對 intended meaning 及原句。保留現值繼續其他項。",
+      "sentenceEn": "Ruby thinks either of the wedding dresses look perfect.",
+      "sentenceZh": "露比認為兩件婚紗看起來都很完美。",
+      "blankSentence": "Ruby thinks _____ of the wedding dresses look perfect.",
+      "answer": "either",
+      "meaningHint": "兩者中的任一個（either of）",
+      "sensePos": "pron.",
+      "sources": [
+        {
+          "sourceId": "cambridge_either_grammar",
+          "title": "Cambridge English Grammar Today: either",
+          "url": "https://dictionary.cambridge.org/grammar/british-grammar/either",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "attempted; 403 Forbidden; full page not read",
+          "observedEvidence": "實際搜尋節錄指出 either 可置於 of 加限定詞複數名詞前，也可於單數名詞前有兩者皆然義；未證明這一教材例的中文 intended reading。",
+          "supportsRows": [
+            213
+          ],
+          "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+        },
+        {
+          "sourceId": "oxford_either_agreement",
+          "title": "Oxford Advanced Learner’s Dictionary: either, grammar note",
+          "url": "https://www.oxfordlearnersdictionaries.co.uk/definition/english/either_1",
+          "accessType": "actual_search_result_excerpt",
+          "directOpen": "not attempted; only actual search result excerpt read",
+          "observedEvidence": "實際搜尋節錄指出 either of 與 neither of 後接複數名詞或代詞時，動詞可有單複數用法。因此不能把 look 直接當作必須改成 looks 的確錯。",
+          "supportsRows": [
+            213
+          ],
+          "evidenceLimit": "Supports only the lexical or grammatical point described. Chinese alternatives are reviewer translations; original textbook wording was not verified."
+        }
+      ],
+      "action": "保留所有現值；本次不提出自動替換。",
+      "applied": false
+    }
+  ],
+  "formalWordsWithoutExamples": [
+    {
+      "wordId": "W000710",
+      "word": "reporter",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "記者；報告者；指示器",
+      "meaningEn": "a person who investigates and reports or edits news stories"
+    },
+    {
+      "wordId": "W001307",
+      "word": "empty",
+      "pos": "adj./v.",
+      "posAll": [
+        "adj.",
+        "v."
+      ],
+      "meaningZh": "空的；空虛的；空腹的；空洞的",
+      "meaningEn": "(adj.) containing nothing or having no occupants; lacking substance or meaning; (v.) to remove the contents of something."
+    },
+    {
+      "wordId": "W001385",
+      "word": "friendship",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "友誼；友愛；友善",
+      "meaningEn": "the state of being friends (or friendly)"
+    },
+    {
+      "wordId": "W002078",
+      "word": "beneath",
+      "pos": "prep.",
+      "posAll": [
+        "prep."
+      ],
+      "meaningZh": "在...下方",
+      "meaningEn": "in or to a place that is lower"
+    },
+    {
+      "wordId": "W002983",
+      "word": "weaken",
+      "pos": "v.",
+      "posAll": [
+        "v."
+      ],
+      "meaningZh": "削弱；減弱；使虛弱；變弱",
+      "meaningEn": "lessen the strength of; become weaker"
+    },
+    {
+      "wordId": "W003038",
+      "word": "allowance",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "津貼；零用錢；限額；折扣",
+      "meaningEn": "an amount allowed or granted (as during a given period); a sum granted as reimbursement for expenses"
+    },
+    {
+      "wordId": "W003408",
+      "word": "fireplace",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "壁爐",
+      "meaningEn": "an open recess in a wall at the base of a chimney where a fire can be built"
+    },
+    {
+      "wordId": "W003416",
+      "word": "forbid",
+      "pos": "v.",
+      "posAll": [
+        "v."
+      ],
+      "meaningZh": "禁止；不準；妨礙；不許",
+      "meaningEn": "command against"
+    },
+    {
+      "wordId": "W003595",
+      "word": "liar",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "說謊者",
+      "meaningEn": "a person who has lied or who lies repeatedly"
+    },
+    {
+      "wordId": "W003672",
+      "word": "neglect",
+      "pos": "n./v.",
+      "posAll": [
+        "n.",
+        "v."
+      ],
+      "meaningZh": "疏忽；忽略；漏做；忽視",
+      "meaningEn": "the state of something that has been unused and neglected; leave undone or leave out"
+    },
+    {
+      "wordId": "W004047",
+      "word": "alongside",
+      "pos": "prep./adv.",
+      "posAll": [
+        "prep.",
+        "adv."
+      ],
+      "meaningZh": "在旁邊；靠攏着；在...旁邊；與...在一起",
+      "meaningEn": "side by side"
+    },
+    {
+      "wordId": "W004248",
+      "word": "coverage",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "覆蓋的範圍；保險總額；新聞報導；可達範圍",
+      "meaningEn": "the total amount and type of insurance carried; the extent to which something is covered"
+    },
+    {
+      "wordId": "W004325",
+      "word": "driveway",
+      "pos": "n.",
+      "posAll": [
+        "n."
+      ],
+      "meaningZh": "車道",
+      "meaningEn": "a road leading up to a private house"
+    },
+    {
+      "wordId": "W004362",
+      "word": "exceptional",
+      "pos": "adj.",
+      "posAll": [
+        "adj."
+      ],
+      "meaningZh": "傑出的；出色的；例外的；異常的；特別的",
+      "meaningEn": "unusually good or outstanding; uncommon; in a specialized educational use, differing substantially from average physical or mental abilities."
+    },
+    {
+      "wordId": "W004445",
+      "word": "hostile",
+      "pos": "adj.",
+      "posAll": [
+        "adj."
+      ],
+      "meaningZh": "（形容詞）敵人的；懷敵意的；敵對的；（另有名詞義）敵對分子",
+      "meaningEn": "(adj.) showing unfriendly feelings or opposition; relating to an enemy; (noun use) an enemy or opposing combatant."
+    },
+    {
+      "wordId": "W004821",
+      "word": "spacious",
+      "pos": "adj.",
+      "posAll": [
+        "adj."
+      ],
+      "meaningZh": "廣大的；寬廣的",
+      "meaningEn": "very large in expanse or scope; (of buildings and rooms) having ample space"
+    }
+  ],
+  "applyInstructions": [
+    "唯一基底為 fe2ec66 的已修文字快照；不拿舊版回填。",
+    "264 列逐一實讀英文、中文、提示、POS、cloze 及答案，人工寫各列語義紀錄。腳本只編排紀錄、重建字串與計數，不以批次規則取代語義審核。",
+    "102 個 daily/exam 空提示是可保留資料，不為填滿新增提示。",
+    "保留英文、原教材／另寫練習句標示、答案、整詞摘要、音標及 status，不升整詞 reviewed。",
+    "自然翻譯、中文借代、親屬長幼及文類語境不機械逐字改寫；僅有證據的可選精度另列。",
+    "兩個截止日項目僅消除中文包含當日的歧義，不說已證明原中文錯；不得擅加時分。",
+    "可靠詞典可證明詞義／用法，不能代替原教材頁面；403 頁只列實際搜尋節錄，不宣稱讀過全文。",
+    "include/friendly/read 整詞稀有摘要不在本輪擴改；圖片、整詞音標與無例句教材不在此文字子任務範圍。",
+    "套用前須讀最新 repository 值逐欄比對；任何差異先重新審核。此為未套用提案，零 Git 操作。"
+  ],
+  "deduplication": {
+    "key": [
+      "exampleId",
+      "field"
+    ],
+    "candidateFieldsCount": 9,
+    "uniqueCandidateTargets": 9,
+    "duplicateCandidateTargets": 0,
+    "groupIdsAreReferencesOnly": true
+  }
+}

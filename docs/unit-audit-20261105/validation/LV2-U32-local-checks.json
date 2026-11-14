@@ -1,0 +1,53 @@
+{
+  "unit": "LV2-U32",
+  "frontend": {
+    "files": 20,
+    "tests": 216,
+    "exitCode": 0,
+    "maxWorkers": 1,
+    "testTimeout": 5000
+  },
+  "python": {
+    "tests": 52,
+    "exitCode": 0
+  },
+  "lint": {
+    "exitCode": 0,
+    "existingWarningsRetained": true
+  },
+  "typecheck": {
+    "exitCode": 0
+  },
+  "build": {
+    "exitCode": 0
+  },
+  "recoveredDraftCheck": {
+    "exitCode": 0
+  },
+  "recoveredIntegrationCheck": {
+    "exitCode": 0
+  },
+  "logs": {
+    "regression": {
+      "file": "LV2-U32-regression-first.txt",
+      "sha256": "53b30a43db82022abc25797b4131b90e52adba77a324bc5b9c351f30c7957331"
+    },
+    "python": {
+      "file": "LV2-U32-python-first.txt",
+      "sha256": "21161d9163cbc843d706d85f9d6723823904634b1a213c6a8e2496ddc7864671"
+    },
+    "lint": {
+      "file": "LV2-U32-lint-final.txt",
+      "sha256": "6790f837c8bde0321a07e6eb4a9449f220bc38f06c1fa51fb67b01dd5b68d545"
+    },
+    "typecheck": {
+      "file": "LV2-U32-typecheck-final.txt",
+      "sha256": "0d93be78e4da5c0077681c4d834163661d59ddd24a0477595fb70ec25d5a5ea8"
+    },
+    "build": {
+      "file": "LV2-U32-build-final.txt",
+      "sha256": "a4419841d8ee5fefccc923f7193182b8acf2f895537afa559d34c17ab69ba641"
+    }
+  },
+  "scope": "Actual local process exits; not remote CI success."
+}

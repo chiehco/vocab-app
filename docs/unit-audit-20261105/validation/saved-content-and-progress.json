@@ -1,0 +1,76 @@
+{
+  "savedContent": {
+    "rowsChecked": 91,
+    "failures": [],
+    "actualContentHash": "8d5eda4c31ec6e73a54acacc35ba01f966997920ae0d2217f944c562105e272e",
+    "expectedContentHash": true,
+    "progressDatabaseWritten": false
+  },
+  "isolatedFullLoad": {
+    "action": "existing App full-dictionary installer in isolated localhost audit browser",
+    "words": 6090,
+    "examples": 7871,
+    "progressTables": 14,
+    "progressUnchanged": true
+  },
+  "rawEvidenceHashes": [
+    {
+      "rawPath": "output/unit-audit-20261105/tests.log",
+      "rawSha256": "1917c98afd62a5a3a99158b2c7bc4a7bfe440a5f1a13f2033ff21e9d8ea7f357",
+      "archivedPath": "docs/unit-audit-20261105/validation/initial-full-5s-timeouts.txt"
+    },
+    {
+      "rawPath": "output/unit-audit-20261105/tests-30s.log",
+      "rawSha256": "f8abbdf41f70cc596ad0ff4d034d6155627cfa6d30aeac628e62ba11b434e573",
+      "archivedPath": "docs/unit-audit-20261105/validation/interrupted-full-30s.txt"
+    },
+    {
+      "rawPath": "output/unit-audit-20261105/timeout-diagnostic.log",
+      "rawSha256": "5bde421fbe8b0c16b906e95a61cfbee999a85380feb9d48b026bb4eff6be29b2",
+      "archivedPath": "docs/unit-audit-20261105/validation/single-timeout-diagnostic.txt"
+    },
+    {
+      "rawPath": "output/unit-audit-20261105/audit-regression.log",
+      "rawSha256": "71c2041f5fa2fa87fdfe056d27b28c850b652607dd403735d35300471972f9c5",
+      "archivedPath": "docs/unit-audit-20261105/validation/first-audit-regression.txt"
+    },
+    {
+      "rawPath": "output/unit-audit-20261105/u03-regression.log",
+      "rawSha256": "eaa4933389c353e1e888e76d103f96ae7a9f1c221c8bed87800d3604fc8ceff3",
+      "archivedPath": "docs/unit-audit-20261105/validation/u03-regression.txt"
+    },
+    {
+      "rawPath": "output/unit-audit-20261105/u03-art-final-test.log",
+      "rawSha256": "7d3d7c590e24932fe012a5060f439bfbc7eaca64563433c292365b681fd93970",
+      "archivedPath": "docs/unit-audit-20261105/validation/u03-art-final-test.txt"
+    },
+    {
+      "rawPath": "output/unit-audit-20261105/u03-final-lint.log",
+      "rawSha256": "b45857a7f1e44cfc278e2dc8e70d00d9b3a2375e4032776e8311e81e20cbc31e",
+      "archivedPath": "docs/unit-audit-20261105/validation/u03-lint.txt"
+    },
+    {
+      "rawPath": "output/unit-audit-20261105/u03-final-build.log",
+      "rawSha256": "fcc74ff92ee4d244d8f6a23e1517aa97207331789a44151b08449a965b9ba72c",
+      "archivedPath": "docs/unit-audit-20261105/validation/u03-build.txt"
+    }
+  ],
+  "archivedLogFormatting": "line endings and trailing whitespace normalized; original raw log bytes retained at rawPath with recorded SHA256",
+  "fullSuite": "not_completed; initial default timeouts and later interrupted run retained",
+  "validation": {
+    "relatedRegression": "4 files / 17 tests passed",
+    "final18ImageRegistry": "2 tests passed (repeat of registry coverage)",
+    "lint": "passed",
+    "build": "passed; existing chunk-size warning"
+  },
+  "commands": {
+    "lint": "npm run lint",
+    "build": "npm run build",
+    "regression": "npm test -- src/features/vocabulary/auditedWordIllustrations.test.ts src/features/vocabulary/lv1ReviewedImages.test.ts src/features/vocabulary/liveabcIntegration.test.ts src/db/recoveredUnitUpdate.test.ts --maxWorkers=1 --testTimeout=30000"
+  },
+  "publication": {
+    "push": false,
+    "deploy": false
+  },
+  "screenshots": "output/playwright/unit-audit; exact per-card links in ledgers"
+}

@@ -1,0 +1,342 @@
+{
+  "unit": "LV2-U50",
+  "state": "all_registered_unit_work_complete_app_saved_full_local_checks_passed_own_new_head_ci_pending",
+  "baseBeforeCaptureCheckpoint": "0c90eed71b3ce0297949c9c52d90b15beb888572",
+  "integrationBaseCheckpoint": "0c90eed71b3ce0297949c9c52d90b15beb888572",
+  "updatedAt": "2026-11-07T05:55:49.435Z",
+  "scope": {
+    "learningItems": 160,
+    "vocabulary": 100,
+    "grammar": 60,
+    "formalOccurrences": 89,
+    "formalWords": 89,
+    "examples": 110,
+    "notes": 87,
+    "unmappedOccurrences": 11,
+    "contentPages": 10,
+    "sourceInspectionHalves": 20,
+    "generalImages": 21,
+    "deliveryMode": "text_only",
+    "practiceMode": "read_only"
+  },
+  "corrections": {
+    "mainRows": 45,
+    "forms": 13,
+    "notes": 6,
+    "formalOperations": 64,
+    "formalFields": 97,
+    "uniqueFormalRows": 54,
+    "uniqueFormalFields": 97,
+    "curriculumRows": 120,
+    "curriculumFields": 260,
+    "actualClozePosCorrections": 5,
+    "hintChanges": 0,
+    "practiceChineseMeaningChanges": 0,
+    "individuallyReviewedAuthoredPractices": 5,
+    "limitedSenseRows": 5,
+    "separateCaptionFollowup": {
+      "id": "LV1-U08-33",
+      "fields": 1,
+      "galleryOccurrences": 2,
+      "evidence": "validation/LV1-U08-additional-caption-integration.json"
+    },
+    "interpretation": "Sourced missing fields, contextual refinements and specific corrections; not64 originally wrong cards."
+  },
+  "boundaries": {
+    "all6090HeadwordIdsPosAndStatusesPreserved": true,
+    "all7871PracticeEnglishChineseClozeAnswersPreserved": true,
+    "rawSourceHash": "e4e2e08918ca98e60a1ed58f18cc15c417d4124c999936c7b332c935afa47a1f",
+    "sourceEnglishOrderLabelsQuestionsAndReadOnlyModePreserved": true,
+    "unmappedOfficialIdsRemainNull": 11,
+    "unmappedOriginalTextLexemeRefsPreserved": true,
+    "sourceImagesAndRunningExamplesAdopted": 0,
+    "all21ExistingImageBytesAndBindingsPreserved": true,
+    "independentAdditionalCaptionChangedOnlyAfterU50TextAcceptance": true,
+    "originalHashFixturesChanged": false,
+    "formsRequireExistingLexicalV": true,
+    "bearNoUnqualifiedBornBornePanel": true,
+    "formalCongratulationAliasUnchanged": true,
+    "official113ForthAnd110ModestContextsSeparateFromAuthoredPractices": true,
+    "supportedRareSensesRetained": true
+  },
+  "verification": {
+    "reopens": {
+      "state": "actual_app_after_reopens_verified_source_and_image_limits_retained",
+      "sourceItems": 160,
+      "sourceVocabulary": 100,
+      "sourceGrammar": 60,
+      "formalOccurrences": 89,
+      "generalCards": 89,
+      "examples": 110,
+      "nonEmptyHintsVisible": 15,
+      "emptyHintsPreserved": 95,
+      "newForms": 13,
+      "bothFormPanelsChecked": 26,
+      "usagePages": 17,
+      "changedNotesVisible": 6,
+      "sourceImagesAdopted": 0,
+      "generalImagesChecked": 21,
+      "unchangedImageAssets": 21,
+      "confirmedNewImageRepairPending": [],
+      "captionFollowupPending": [],
+      "newImageRepairs": 0,
+      "uiMismatches": 0,
+      "rawPosVisibility": {
+        "fiveCorrectedPosSaved": true,
+        "emptyHintTagsMayNotRender": true,
+        "completeSentencesReopened": true,
+        "nativeSavedPosReadbackRequired": true
+      },
+      "historicalTextBatchCaptionPending": [
+        "LV1-U08-33"
+      ],
+      "captionResolvedAfterTextBatch": {
+        "id": "LV1-U08-33",
+        "evidence": "validation/LV1-U08-additional-caption-integration.json",
+        "allThreeConsumersActuallyReopened": true,
+        "originalTextBatchSnapshot": "validation/LV2-U50-reopen-before-caption-followup.json",
+        "textBatchRawCapturesNotRewritten": true
+      }
+    },
+    "exactInverse": "validation/LV2-U50-exact-inverse.json",
+    "firstPersistence": "validation/LV2-U50-persistence-summary.json",
+    "finalDefinitionRefinement": "validation/LV2-U50-definition-refinement.json",
+    "finalSavedRows": 3806,
+    "finalSavedFailures": 0,
+    "normalInstallerTransitions": 2,
+    "bothObservedTransitionsAll14ProgressTablesExact": true,
+    "afterPixels": "validation/LV2-U50-after-pixel-review.json",
+    "localChecks": {
+      "unit": "LV2-U50",
+      "state": "full_original_five_second_frontend_and_required_checks_passed_own_new_head_ci_pending",
+      "frontend": {
+        "files": 244,
+        "tests": 2004,
+        "passed": true,
+        "originalLocalTimeoutMs": 5000,
+        "maxWorkers": 1,
+        "timeoutOverride": false,
+        "scope": "Entire frontend suite, including original U50 text, new audit, all historical guards, all image repairs and additional caption.",
+        "earlierSelectedRegression": {
+          "files": 10,
+          "tests": 230,
+          "passed": true,
+          "version": "Before the final cell/spare separators and caption; not substituted for full final suite."
+        },
+        "finalTestOnlyPortabilityRetest": {
+          "files": 5,
+          "tests": 53,
+          "timeoutMs": 5000,
+          "passed": true,
+          "productContentChangedAfterFullSuite": false,
+          "explanation": "Full original5s suite covered every final product change. A subsequent checksum-only test/proof correction normalizes CRLF to LF for unchanged repository text; raw audit byte hashes retained. The five affected image test files, lint and typecheck were rerun successfully. No product or original hash baseline changed."
+        }
+      },
+      "python": {
+        "tests": 101,
+        "passed": true,
+        "fullStdoutCaptured": true,
+        "workspaceOnlyTemporaryDirectory": true
+      },
+      "additionalCaptionSelectedRegression": {
+        "files": 5,
+        "tests": 53,
+        "passed": true,
+        "timeoutMs": 5000
+      },
+      "lint": {
+        "exitCode": 0,
+        "finalPortableTestSourceAlsoPassed": true
+      },
+      "typecheck": {
+        "exitCode": 0,
+        "finalPortableTestSourceAlsoPassed": true
+      },
+      "build": {
+        "exitCode": 0,
+        "largeChunkWarningNonblocking": true,
+        "appProductUnchangedByLaterTestOnlyPortabilityCorrection": true
+      },
+      "sourceDraftCheck": {
+        "exitCode": 0
+      },
+      "sourceIntegrationCheck": {
+        "exitCode": 0
+      },
+      "historicalFixtureHashesReset": false,
+      "timeoutIncreased": false,
+      "retainedFailures": [
+        {
+          "operation": "First typecheck",
+          "reason": "Unused U50 import TS6133; removed until its exact later use was needed. Final version compiles.",
+          "productChangedByFailure": false
+        },
+        {
+          "operation": "Stream supplemental execution",
+          "reason": "Existing first receipt prevented an aggregate rerun before write. Existing receipt and exact product hashes inspected, then a distinct one-field execution manifest applied once.",
+          "originalReceiptPreserved": true
+        },
+        {
+          "operation": "First regression after stream refinement",
+          "reason": "Old U11 integrated forms check included stream current meaningZh. Added exact U50 inverse before its original unchanged whole-row hash and negative assertions.",
+          "originalBaselineChanged": false
+        },
+        {
+          "operation": "Definition separator execution preparation",
+          "reason": "Required evidence metadata omitted from the separate execution manifest. Validation failed before receipt/product write; original primary-source evidence restored and two rows applied once."
+        },
+        {
+          "operation": "Refined two-card capture entry",
+          "reason": "Normal installer left neutral favicon page; capture required an App route and returned zero card results. Preserved failure, navigated once normally, resumed card/mobile/readback without a second installer."
+        },
+        {
+          "operation": "Same-profile browser reopen snapshot",
+          "reason": "One open created the browser but default snapshot timed out. Read-only probe confirmed complete favicon page and both databases, then continued without reopening again."
+        }
+      ],
+      "logs": [
+        {
+          "file": "LV2-U50-whole-level-default5s.txt",
+          "sha256": "57f683a7190135e64129c59ea1d25842787dc08eeb79939a264fcee91a16c61d"
+        },
+        {
+          "file": "LV2-U50-python-boundaries.txt",
+          "sha256": "d1a5c3d84f2c43755f9c5cffa3c0fa1c0796ebc9aa99f5cd0dff2c37510c83e8"
+        },
+        {
+          "file": "LV2-U50-lint-final.txt",
+          "sha256": "4c5b2f93be0352bc44dd19161595fe0795f1a46067cd94157515e51b83372169"
+        },
+        {
+          "file": "LV2-U50-typecheck-final.txt",
+          "sha256": "0d93be78e4da5c0077681c4d834163661d59ddd24a0477595fb70ec25d5a5ea8"
+        },
+        {
+          "file": "LV2-U50-build-final.txt",
+          "sha256": "f92bcad7043b73e0d58cb28f110a4b3701f9a6ce26de3e70e60065fe8661b281"
+        },
+        {
+          "file": "LV2-U50-prepare_recovered_unit_drafts-check.txt",
+          "sha256": "de98448ebf9803278533e50a4959ae987fb489682759393fb4a40f162f8d62d3"
+        },
+        {
+          "file": "LV2-U50-integrate_recovered_units-check.txt",
+          "sha256": "16a949cba64b31891edbac15dab0007dfc5e48721605cd1960b7fa9df69a3c61"
+        },
+        {
+          "file": "additional-caption-portable-regression.txt",
+          "sha256": "133061899360010770e4c76b8d15d97c8216b14b1a0a1a72d8749ed9d1a7e3f5"
+        },
+        {
+          "file": "LV2-U50-portable-lint.txt",
+          "sha256": "1176dc8ce5b91103b7bdb644dfcaddbb87f6fb9e90008487a9d5d7ae162344bf"
+        },
+        {
+          "file": "LV2-U50-portable-typecheck.txt",
+          "sha256": "0d93be78e4da5c0077681c4d834163661d59ddd24a0477595fb70ec25d5a5ea8"
+        }
+      ],
+      "portableEvidence": {
+        "method": {
+          "method": "SHA256 of UTF8 repository text with CRLF converted to LF only; no other normalization.",
+          "allOriginalRawSha256ValuesRetained": true,
+          "existingApprovedExamplePairsHaveWindowsCrlfButGitLf": true,
+          "productContentChanged": false,
+          "reason": "Read-only verification found35 CRLF line endings in the unchanged example-pair registry; raw Windows byte hash is preserved as evidence, while Linux CI checks its exact LF-normalized repository text."
+        },
+        "rawExampleRegistrySha256": "cb10a47f664cba5d897488972f6144b84f9285903170aa07bab8663f224dd753",
+        "normalizedExampleRegistrySha256": "030d8c1de76182f6a5cdf5340e84ddc8112cd0f54c998b9ffbef189259e2c12a",
+        "normalizedBytesEqualGitBlobContent": true,
+        "allProductFilesUnchanged": true,
+        "fullSuiteAlreadyCompletedBeforeTestOnlyChange": true
+      }
+    },
+    "limits": "All160 source items,89 general cards and110 examples reopened and compared. All21 before image previews, two native rechecks and representative after/mobile screens actually viewed; not every screenshot manually reread. Empty-hint POS visibility is verified via saved data."
+  },
+  "retainedPending": [
+    {
+      "word": "bear",
+      "reason": "borne/born 依生育主被動與其他義有區別，現行整卡三態面板不能分義。保留真缺鍵，不以單一形式冒充通用。"
+    },
+    {
+      "word": "sudden",
+      "exampleId": "EXd61e53d7",
+      "reason": "all of a sudden 整體是副詞片語；sudden 古名詞有MW證據。單字挖空分類需固定規約，不因整體副詞功能機械改 adv.，先保留 adj. 及完整原句。"
+    },
+    {
+      "word": "housekeeper",
+      "reason": "主婦／女管家屬舊式性別限制解釋，primary支持a person管理家務。教材限印字管家；保留正式原值，未逕刪罕義。"
+    },
+    {
+      "word": "cell",
+      "reason": "教材皮膚細胞2–3週為泛化生物學敘述，未作普遍壽命認證；不採入正式例句，不新增醫療內容。"
+    },
+    {
+      "word": "organ",
+      "reason": "原書把Parliament泛稱government organ；不同government廣義與executive區分未在此作制度認證，不改原稿或採入正式例句。"
+    }
+  ],
+  "imageFollowups": {
+    "confirmedNewRepairPending": [],
+    "newAssetGeneration": false,
+    "additionalExactCaptionAccepted": true
+  },
+  "priorCheckpointFullCi": {
+    "commit": "0c90eed71b3ce0297949c9c52d90b15beb888572",
+    "run": 42338497091,
+    "job": 128300726151,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42338497091/job/128300726151",
+    "status": "completed",
+    "conclusion": "success",
+    "checkoutShaReadFromFullLog": true,
+    "remoteFrontendTimeoutMs": 15000,
+    "localOriginalTimeoutMs": 5000,
+    "remoteDoesNotReplaceDefaultFiveSecondReleaseJob": true,
+    "testFiles": 242,
+    "tests": 1989,
+    "pythonBatches": [
+      14,
+      7,
+      99,
+      5,
+      10
+    ],
+    "lint": "success",
+    "typecheck": "success",
+    "build": "success",
+    "buildLogCompletedAtUtc": "2026-11-07T04:43:56.1879200Z",
+    "jobCompletedAtUtc": "2026-11-07T04:44:01Z",
+    "source": "Complete exact-head CI checkout, all steps and full test/build log actually read. Not a preceding-head substitute."
+  },
+  "newCheckpointFullCi": {
+    "state": "pending_this_new_commit"
+  },
+  "releaseReconciliation": {
+    "mainCommit": "0f4eb27961571ce393a1f1a2bc63f1d558bef1fb",
+    "mergeBase": "2c2035c07a4e5d1980097dcf4e8ab03f8a5873bb",
+    "formalFieldsCompared": 97,
+    "mainChangesNotAlreadySame": 0,
+    "eitherManifestExecutionOnce": true,
+    "retainMainGuards": [
+      "audit JSON LF",
+      "Deploy-default original5s CI job",
+      "vite single worker",
+      "build-only unpublished LV1-U12 elevator asset exclusion"
+    ],
+    "mainMerged": false,
+    "deployed": false
+  },
+  "next": {
+    "state": "last_current_registered_lv2_unit_finished",
+    "doNotInferNextUnitOrEditionEnd": true,
+    "action": "Hand off the complete24 registered-unit audit and retained limitations to the separate whole-LV release work."
+  },
+  "publication": {
+    "branch": "content/unit-audit-20261105",
+    "mainMerged": false,
+    "deployed": false,
+    "wholeLevelReleaseSeparate": true,
+    "wholeUnitImageApproval": false,
+    "frozenHistoricalCandidate": "3106a39dea97360a62a2db4d8e98300724d94fdb"
+  }
+}

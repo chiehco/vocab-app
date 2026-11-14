@@ -1,0 +1,42 @@
+{
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "unit": "LV2-U29",
+  "patches": [
+    {
+      "dataset": "notes",
+      "key": "noteId",
+      "id": "NX0d98cee1",
+      "before": {
+        "noteId": "NX0d98cee1",
+        "word": "base",
+        "noteType": "phrase",
+        "title": "base A on / upon B",
+        "content": "A 根據 B 為基礎",
+        "status": "approved"
+      },
+      "after": {
+        "content": "把 A 建立在 B 的基礎上。"
+      },
+      "reason": "Clarify the actual base-A-on-B relation without altering the title, type or status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/base"
+    },
+    {
+      "dataset": "notes",
+      "key": "noteId",
+      "id": "NX25c9d6d8",
+      "before": {
+        "noteId": "NX25c9d6d8",
+        "word": "likely",
+        "noteType": "phrase",
+        "title": "(That's) a likely story!",
+        "content": "說得倒像是真的一樣／聽起來像真的一樣",
+        "status": "approved"
+      },
+      "after": {
+        "content": "（反諷，表示不相信）說得倒像真的一樣！"
+      },
+      "reason": "Make the disbelief explicit for this idiom, preserving its existing Chinese intent.",
+      "evidence": "https://dictionary.cambridge.org/us/dictionary/english/that-s-a-likely-story ; official search excerpt actually read; direct page returned403; printed p258 example also read"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "state": "exact_pairs_app_saved_and_own_head_ci_success",
+  "baseCheckpoint": "fe95d729aee53a84ac697839d785d21aa7374fa9",
+  "assetCommit": "248c092f13c969123b0cd98102dd4d459112479f",
+  "generalDefaultRowsAdded": 2,
+  "publishedUnitPathsChanged": 1,
+  "galleryImageSourcesChanged": 1,
+  "formalDataRowsChanged": 0,
+  "originalAssetsRetained": 3,
+  "newImmutableAssets": 3,
+  "captionFieldsChanged": 0,
+  "independentExamplePairsChanged": 0,
+  "normalAppInstaller": true,
+  "savedReadbackRows": 3329,
+  "progressTablesExact": 14,
+  "actualScreensViewed": 5,
+  "postCloseCardsVerified": 3,
+  "recovery": {
+    "tool": "scripts/integrate_lv2_u38_u41_images.mjs",
+    "check": "--check",
+    "apply": "--apply",
+    "reverse": "--revert",
+    "scope": "Only exact two general rows, one playground unit path and one gallery src. Original and new assets retained; no formal data written.",
+    "inMemoryExactInverseVerified": true,
+    "filesystemRevertExecuted": false
+  },
+  "publication": {
+    "branch": "content/unit-audit-20261105",
+    "mainMerged": false,
+    "deployed": false,
+    "wholeLevelReleaseSeparate": true
+  },
+  "validation": [
+    "validation/LV2-U38-U41-image-reopens.json",
+    "validation/LV2-U38-U41-image-persistence.json",
+    "validation/LV2-U38-U41-image-pixel-review.json",
+    "validation/LV2-U38-U41-image-local-checks.json"
+  ],
+  "consumerIntegrationCi": {
+    "commit": "7ff55408250827184e243d2a83f31ca77088c3ee",
+    "run": 42283703235,
+    "job": 128118970362,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42283703235/job/128118970362",
+    "status": "completed",
+    "conclusion": "success",
+    "checkoutShaReadFromFullLog": true,
+    "testFiles": 233,
+    "tests": 1903,
+    "pythonBatches": [
+      14,
+      7,
+      78,
+      3,
+      10
+    ],
+    "lint": "success",
+    "typecheck": "success",
+    "build": "success",
+    "buildLogCompletedAtUtc": "2026-11-06T20:11:49.1798035Z",
+    "jobCompletedAtUtc": "2026-11-06T20:11:53Z"
+  }
+}

@@ -1,0 +1,20 @@
+import assert from 'node:assert/strict';
+import {execFileSync} from 'node:child_process';
+import {readFileSync,writeFileSync} from 'node:fs';
+const read=p=>JSON.parse(readFileSync(p,'utf8')),out='docs/unit-audit-20261105/';
+const incoming=JSON.parse(execFileSync('git',['show','6d420a8803ccb60115bb1c15f2952e97708590a6:'+out+'VERIFIED-FOLLOWUP-TRANSLATION-SOURCES.json'],{encoding:'utf8'})).facts;
+const low=read('output/unit-audit-20261105/U15-followup-source.json').definiteCandidates.find(p=>p.exampleId==='EX2ff9ba41');
+assert.ok(low&&low.field==='sentenceZh');
+const facts=[...incoming.map(f=>({exampleId:f.exampleId,wordId:f.wordId,word:f.word,sentenceEn:f.sentenceEn,before:f.before,after:f.after,reason:f.reason,evidence:f.evidence,sources:f.sources})),{exampleId:low.exampleId,wordId:low.wordId,word:low.word,sentenceEn:low.englishGuard,before:low.before,after:low.after,reason:low.reason,evidence:low.sources.map(s=>s.url).join(' ; '),sources:low.sources}];
+const examples=read('public/data/v1/examples.json');
+for(const fact of facts){const row=examples.find(e=>e.exampleId===fact.exampleId);assert.ok(row);assert.equal(row.sentenceEn,fact.sentenceEn);assert.equal(row.sentenceZh,fact.before);}
+assert.equal(examples.find(e=>e.exampleId==='EX299bccf8').sensePos,'v.');
+const original=read(out+'VERIFIED-TRANSLATION-SOURCES.json');assert.equal(original.facts.length,6);
+assert.ok(facts.every(f=>!original.facts.some(o=>o.exampleId===f.exampleId)));
+writeFileSync(out+'VERIFIED-TRANSLATION-SOURCES.json',JSON.stringify({...original,facts:[...original.facts,...facts]},null,2)+'\n');
+const patches=facts.map(f=>({dataset:'examples',key:'exampleId',id:f.exampleId,before:{sentenceEn:f.sentenceEn,sentenceZh:f.before},after:{sentenceZh:f.after},reason:f.reason,evidence:f.evidence}));
+const dryer=read('public/data/v1/words.json').find(w=>w.wordId==='W001283');
+assert.equal(dryer.meaningZh,'乾衣機；乾燥劑；催幹劑；乾燥器');
+patches.push({dataset:'words',key:'wordId',id:dryer.wordId,before:{meaningZh:dryer.meaningZh},after:{meaningZh:'乾衣機；乾燥劑；催乾劑；乾燥器'},reason:'Only correct the drying-agent character 幹→乾. Retain all four source-supported meanings, existing noun POS and draft status; no optional domain rewrite is adopted.',evidence:'https://www.merriam-webster.com/dictionary/drier ; https://www.collinsdictionary.com/dictionary/english/dryer ; https://ed.arte.gov.tw/uploadfile/Book/3214_%E5%85%A7%E6%96%87.pdf (printed p30 text layer; page pixels not inspected).'});
+writeFileSync(out+'LV1-U11-U12-U15-wording-followup.json',JSON.stringify({baseCommit:'29cfc684d7a11b07f09988c478d30358830f1951',scope:'Exactly three Chinese sentence fields and one dictionary character. Preserve the mainline purchase v. and every English, cloze, answer, hint, status and other field.',patches},null,2)+'\n');
+console.log(JSON.stringify({translations:facts.length,dictionaryCharacterCorrections:1,originalSixFactsRetained:true,purchaseVerbPreserved:true}));

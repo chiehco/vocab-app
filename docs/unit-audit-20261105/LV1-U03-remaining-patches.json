@@ -1,0 +1,143 @@
+{
+  "task": "逐單元全面檢查與修正",
+  "unit": "LV1-U03 retained unpublished drafts and actual general cards",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "patches": [
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX943781df",
+      "before": {
+        "sensePos": "n.",
+        "meaningHint": null
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "喜愛；喜歡"
+      },
+      "reason": "love to spend是動詞用法，原n.標記錯置；原句不變。",
+      "evidence": "https://www.merriam-webster.com/dictionary/love"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1bf694d4",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "鋼筆；筆；筆調；筆桿子"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "寫；撰寫"
+      },
+      "reason": "penned a letter是寫信的動詞；將整詞混合詞性提示細化為該句實際用法，原句不變。",
+      "evidence": "https://www.merriam-webster.com/dictionary/pen"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXd4d75e97",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "已核對Only three的限制副詞、英中句意及填空還原；原句不變。",
+      "evidence": "https://www.merriam-webster.com/dictionary/only"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000740-1",
+      "before": {
+        "status": "needs_check"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "逐義檢查詞性、中文及全部既有例句，與詞典相符後僅更新此義項。",
+      "evidence": "https://www.merriam-webster.com/dictionary/say"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000577-1",
+      "before": {
+        "status": "needs_check"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "逐義檢查詞性、中文及全部既有例句，與詞典相符後僅更新此義項。",
+      "evidence": "https://www.merriam-webster.com/dictionary/new"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000292-1",
+      "before": {
+        "status": "needs_check"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "逐義檢查詞性、中文及全部既有例句，與詞典相符後僅更新此義項。",
+      "evidence": "https://www.merriam-webster.com/dictionary/family"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000633",
+      "before": {
+        "meaningEn": "a writing implement with a point from which ink flows; an enclosure for confining livestock"
+      },
+      "after": {
+        "meaningEn": "a writing implement with a point from which ink flows; an enclosure for confining livestock; (v.) to write or compose words"
+      },
+      "reason": "補回既有penned a letter例句所用撰寫動詞的英英解釋；保留原名詞解釋。",
+      "evidence": "https://www.merriam-webster.com/dictionary/pen"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000609",
+      "before": {
+        "meaningEn": "with nevertheless the final result; in the final outcome"
+      },
+      "after": {
+        "meaningEn": "(adv.) no more than; (adj.) the single one; (conj.) but; with nevertheless the final result; in the final outcome"
+      },
+      "reason": "既有解釋只含最後結果的副詞義，漏掉已收錄的基本副詞、形容詞及連接詞；補齊且保留原義。",
+      "evidence": "https://www.merriam-webster.com/dictionary/only"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000208",
+      "before": {
+        "meaningZh": "可愛的；聰明的；伶俐的；品他病",
+        "meaningEn": "obviously contrived to charm"
+      },
+      "after": {
+        "meaningZh": "可愛的；聰明的；伶俐的",
+        "meaningEn": "attractive in a pleasing or childlike way; clever or shrewd; obviously contrived to charm"
+      },
+      "reason": "品他病為無法解釋的破損文字；核對詞典後保留可證的三種中文表達，補回英英解釋漏掉的常用可愛與機敏義。draft仍保留。",
+      "evidence": "https://www.merriam-webster.com/dictionary/cute"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000059",
+      "before": {
+        "meaningEn": "any of several tropical and subtropical treelike herbs of the genus Musa having a terminal crown of large entire leaves and usually beari...; elongated crescent-shaped yellow fruit with soft sweet flesh"
+      },
+      "after": {
+        "meaningEn": "a tropical plant of the genus Musa that produces bunches of long fruit; an elongated, usually yellow fruit with soft, sweet flesh"
+      },
+      "reason": "原植物義在beari...遭截斷；依詞典將植物及果實兩義用完整自述句修復，不新增原句。",
+      "evidence": "https://www.merriam-webster.com/dictionary/banana"
+    }
+  ]
+}

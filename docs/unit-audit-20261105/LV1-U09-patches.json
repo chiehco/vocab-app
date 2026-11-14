@@ -1,0 +1,3371 @@
+{
+  "unit": "LV1-U09",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "scope": "96 original pairs; 81 formal words; 301 formal examples. Original English/Chinese sentences, cloze, answers, official IDs and headword POS lists unchanged. One newly discovered source conflict explicitly downgraded to needs_check.",
+  "retainedIssues": [
+    {
+      "type": "unresolved_original_sentence_translation",
+      "exampleId": "EX621ea341",
+      "state": "needs_check",
+      "english": "Paul drew a stool in the fireplace.",
+      "chinese": "保羅拉了一張凳子到壁爐邊。",
+      "reason": "In the fireplace and to/beside the fireplace do not match. Preserve both originals pending canonical textbook verification; do not guess draw meaning or repair the English to fit the translation."
+    },
+    {
+      "type": "pos_classification_convention",
+      "ids": [
+        "EX4ed56643",
+        "EX5dde25ce",
+        "EX9c0dd66c",
+        "EX3334b66a",
+        "EX0925c3b9"
+      ],
+      "reason": "Phrase-level POS versus individual-word analysis is not securely resolved; retain the combined POS while the actual meaning hint is narrowed."
+    },
+    {
+      "type": "rare_summary_translation_precision",
+      "words": [
+        "special",
+        "shatter",
+        "fairly",
+        "husband"
+      ],
+      "reason": "Current learner uses are checked and missing meanings added. Inherited rarer translation precision is not automatically certified or deleted for rarity."
+    },
+    {
+      "type": "no_formal_examples",
+      "ids": [
+        "LV1-U09-29",
+        "LV1-U09-38",
+        "LV1-U09-50",
+        "LV1-U09-63",
+        "LV1-U09-68",
+        "LV1-U09-73",
+        "LV1-U09-74",
+        "LV1-U09-91",
+        "LV1-U09-96"
+      ],
+      "reason": "Existing formal dictionary identities have zero formal example rows. Their authored image captions are checked separately; no example identities are invented or whole-word completeness asserted."
+    }
+  ],
+  "patches": [
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXa39f4fa5",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "落下；瀑布；採伐量；下降"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "秋天"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/fall"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXae728991",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "落下；瀑布；採伐量；下降"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "落下；下降"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/fall"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXbe3b434a",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "落下；瀑布；採伐量；下降"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "落下；下降"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/fall"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXe4190922",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "落下；瀑布；採伐量；下降"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "下降"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/fall"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1a2951be",
+      "before": {
+        "sensePos": "n./adv./adj.",
+        "meaningHint": "一半；半場；不完全；一半的"
+      },
+      "after": {
+        "sensePos": "adv.",
+        "meaningHint": "一半地；部分地（血統）"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/half"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX33f46434",
+      "before": {
+        "sensePos": "n./adv./adj.",
+        "meaningHint": "一半；半場；不完全；一半的"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "一半"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/half"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX47de01b7",
+      "before": {
+        "sensePos": "n./adv./adj.",
+        "meaningHint": "一半；半場；不完全；一半的"
+      },
+      "after": {
+        "sensePos": "adj.",
+        "meaningHint": "半個的"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/half"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXecb5a69b",
+      "before": {
+        "sensePos": "n./adv./adj.",
+        "meaningHint": "一半；半場；不完全；一半的"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "一半"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/half"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX76e42be9",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "上升；增加；上漲；高地"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "成名；聲名鵲起（rise to fame）"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/rise"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXc16619f0",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "上升；增加；上漲；高地"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "上升"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/rise"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXf0bb87ee",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "上升；增加；上漲；高地"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "引起；導致（give rise to）"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/rise"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX21e2a54d",
+      "before": {
+        "sensePos": "adj./v./adv.",
+        "meaningHint": "自由的；享受政治權力的；允許的；免費的"
+      },
+      "after": {
+        "sensePos": "adj.",
+        "meaningHint": "免費的"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/free"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX4f77019d",
+      "before": {
+        "sensePos": "adj./v./adv.",
+        "meaningHint": "自由的；享受政治權力的；允許的；免費的"
+      },
+      "after": {
+        "sensePos": "adj.",
+        "meaningHint": "自由的；可自由行動的"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/free"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX92c39e8a",
+      "before": {
+        "sensePos": "adj./v./adv.",
+        "meaningHint": "自由的；享受政治權力的；允許的；免費的"
+      },
+      "after": {
+        "sensePos": "adv.",
+        "meaningHint": "自由地；不受拘束地"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/free"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX96075fb3",
+      "before": {
+        "sensePos": "adj./v./adv.",
+        "meaningHint": "自由的；享受政治權力的；允許的；免費的"
+      },
+      "after": {
+        "sensePos": "adv.",
+        "meaningHint": "免費地（for free）"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/free"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXace1c550",
+      "before": {
+        "sensePos": "adj./v./adv.",
+        "meaningHint": "自由的；享受政治權力的；允許的；免費的"
+      },
+      "after": {
+        "sensePos": "adj.",
+        "meaningHint": "有空的"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/free"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXcbca1652",
+      "before": {
+        "sensePos": "adj./v./adv.",
+        "meaningHint": "自由的；享受政治權力的；允許的；免費的"
+      },
+      "after": {
+        "sensePos": "adj.",
+        "meaningHint": "空閒的"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/free"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXeab7b900",
+      "before": {
+        "sensePos": "adj./v./adv.",
+        "meaningHint": "自由的；享受政治權力的；允許的；免費的"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "釋放"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/free"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX88fc87ac",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "代價；價值；費用；花費"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "花費（金錢）"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/cost"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXa268da5f",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "代價；價值；費用；花費"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "使失去（工作）"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/cost"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXbedf2002",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "代價；價值；費用；花費"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "以……為代價（at the cost of）"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/cost"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXd66d8dbb",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "代價；價值；費用；花費"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "成本；費用"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/cost"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXf00b3d0f",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "代價；價值；費用；花費"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "花費（金錢）"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/cost"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX7f165df6",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "小山羊；小山羊肉；小孩；欺騙"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "子女；孩子"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/kid"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXc817bbde",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "小山羊；小山羊肉；小孩；欺騙"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "開玩笑"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/kid"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXe5ab4f7d",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "小山羊；小山羊肉；小孩；欺騙"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "開玩笑"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/kid"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1c4a58b4",
+      "before": {
+        "sensePos": "n./adj.",
+        "meaningHint": "水平；水準；平地；同高的"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "剷平；使平坦"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/level"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX9b1a4c5a",
+      "before": {
+        "sensePos": "n./adj.",
+        "meaningHint": "水平；水準；平地；同高的"
+      },
+      "after": {
+        "sensePos": "adj.",
+        "meaningHint": "水平的；平的"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/level"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXff7dcf38",
+      "before": {
+        "sensePos": "n./adj.",
+        "meaningHint": "水平；水準；平地；同高的"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "水準；程度"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/level"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX48ada5d6",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "土地；戰場；場地；地面"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "罰……禁足"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/ground"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX729ee74c",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "土地；戰場；場地；地面"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "場地；地區（hunting ground：狩獵場）"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/ground"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX72c7bde6",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "土地；戰場；場地；地面"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "地面"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/ground"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXb45d71bd",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "土地；戰場；場地；地面"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "使停飛"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/ground"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXbcb579d3",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "土地；戰場；場地；地面"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "以……為根據（be grounded in）"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/ground"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXc8098a08",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "土地；戰場；場地；地面"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "使擱淺"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/ground"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX4c566312",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "地板；樓層；底部；底價"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "地板；樓層"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/floor"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX725dec32",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "地板；樓層；底部；底價"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "鋪設地板"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/floor"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX7942ef56",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "地板；樓層；底部；底價"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "地板；樓層"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/floor"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX06b4f2fe",
+      "before": {
+        "sensePos": "v./n.",
+        "meaningHint": "切口；割傷；降低；切"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "切"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/cut"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX13805f6e",
+      "before": {
+        "sensePos": "v./n.",
+        "meaningHint": "切口；割傷；降低；切"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "削減（成本）"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/cut"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX737b39c7",
+      "before": {
+        "sensePos": "v./n.",
+        "meaningHint": "切口；割傷；降低；切"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "減少（cut down on）"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/cut"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXa7a2c017",
+      "before": {
+        "sensePos": "v./n.",
+        "meaningHint": "切口；割傷；降低；切"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "傷口；割傷"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/cut"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX0072091a",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "休息；中斷；破裂處；絕交"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "休息"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/break"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX0cc97b93",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "休息；中斷；破裂處；絕交"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "打破；弄壞"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/break"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX6a8cf455",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "休息；中斷；破裂處；絕交"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "破曉"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/break"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX77f175ae",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "休息；中斷；破裂處；絕交"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "違反（規則）"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/break"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX782ad7fc",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "休息；中斷；破裂處；絕交"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "打破（紀錄）"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/break"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX7e4598af",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "休息；中斷；破裂處；絕交"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "闖入（break into）"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/break"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX9070846f",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "休息；中斷；破裂處；絕交"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "心碎"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/break"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXbf03a043",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "休息；中斷；破裂處；絕交"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "裂口；破裂處"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/break"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXff89eb44",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "休息；中斷；破裂處；絕交"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "故障（break down）"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/break"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX68c4d832",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "陸地；地面；地界；地產"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "祖國；故鄉（native land）"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/land"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXae188031",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "陸地；地面；地界；地產"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "陸地；土地"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/land"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXca3cccad",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "陸地；地面；地界；地產"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "陸地；土地"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/land"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXed633e94",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "陸地；地面；地界；地產"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "降落"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/land"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1217a975",
+      "before": {
+        "sensePos": "pron./adv./adj./prep.",
+        "meaningHint": "較少；較小；少的；小的"
+      },
+      "after": {
+        "sensePos": "prep.",
+        "meaningHint": "扣除；減去"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/less"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXd7f2f9a0",
+      "before": {
+        "sensePos": "pron./adv./adj./prep.",
+        "meaningHint": "較少；較小；少的；小的"
+      },
+      "after": {
+        "sensePos": "adv.",
+        "meaningHint": "較不；程度較低"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/less"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXe3b2992e",
+      "before": {
+        "sensePos": "pron./adv./adj./prep.",
+        "meaningHint": "較少；較小；少的；小的"
+      },
+      "after": {
+        "sensePos": "adv.",
+        "meaningHint": "較不；程度較低"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/less"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXe8ec6500",
+      "before": {
+        "sensePos": "pron./adv./adj./prep.",
+        "meaningHint": "較少；較小；少的；小的"
+      },
+      "after": {
+        "sensePos": "adj.",
+        "meaningHint": "較少的（金錢）"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/less"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX010ccb59",
+      "before": {
+        "sensePos": "v./n.",
+        "meaningHint": "拉；拖；拔劍；拖拉"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "畫"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/draw"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX5476c6a6",
+      "before": {
+        "sensePos": "v./n.",
+        "meaningHint": "拉；拖；拔劍；拖拉"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "引起（注意）"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/draw"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX5ae0d7e1",
+      "before": {
+        "sensePos": "v./n.",
+        "meaningHint": "拉；拖；拔劍；拖拉"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "吸引人的事物；看頭"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/draw"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX621ea341",
+      "before": {
+        "sensePos": "v./n.",
+        "meaningHint": "拉；拖；拔劍；拖拉",
+        "status": "approved"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "動詞原意待核：原英文位置與中文譯文不一致",
+        "status": "needs_check"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS. The English says in the fireplace but the Chinese says to/beside the fireplace. Intended wording and draw sense cannot be established safely; preserve both original sentences and flag the source conflict rather than certify or invent a correction.",
+      "evidence": "https://www.merriam-webster.com/dictionary/draw"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX7adec90c",
+      "before": {
+        "sensePos": "v./n.",
+        "meaningHint": "拉；拖；拔劍；拖拉"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "平手"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/draw"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX4e50302a",
+      "before": {
+        "sensePos": "v./n.",
+        "meaningHint": "走；散步；步行；行走的路程"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "步行；走路"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/walk"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX97cb73b6",
+      "before": {
+        "sensePos": "v./n.",
+        "meaningHint": "走；散步；步行；行走的路程"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "散步（take a walk）"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/walk"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXac5907db",
+      "before": {
+        "sensePos": "v./n.",
+        "meaningHint": "走；散步；步行；行走的路程"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "退出；脫身（walk away from）"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/walk"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXd18b0225",
+      "before": {
+        "sensePos": "v./n.",
+        "meaningHint": "走；散步；步行；行走的路程"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "步行陪送"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/walk"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXb6b548ad",
+      "before": {
+        "sensePos": "adj./pron.",
+        "meaningHint": "確定的；某一個的；必然的；確鑿的"
+      },
+      "after": {
+        "sensePos": "pron.",
+        "meaningHint": "某些人（certain of）"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/certain"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXdc83d120",
+      "before": {
+        "sensePos": "adj./pron.",
+        "meaningHint": "確定的；某一個的；必然的；確鑿的"
+      },
+      "after": {
+        "sensePos": "adj.",
+        "meaningHint": "某些的"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/certain"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXdffc804a",
+      "before": {
+        "sensePos": "adj./pron.",
+        "meaningHint": "確定的；某一個的；必然的；確鑿的"
+      },
+      "after": {
+        "sensePos": "adj.",
+        "meaningHint": "某一個的"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/certain"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXea167a5b",
+      "before": {
+        "sensePos": "adj./pron.",
+        "meaningHint": "確定的；某一個的；必然的；確鑿的"
+      },
+      "after": {
+        "sensePos": "adj.",
+        "meaningHint": "確定的；有把握的"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/certain"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1093b6e6",
+      "before": {
+        "sensePos": "adj./adv.",
+        "meaningHint": "確信；必然的；必定的；當然"
+      },
+      "after": {
+        "sensePos": "adj.",
+        "meaningHint": "確定的；有把握的"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/sure"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX74aaf631",
+      "before": {
+        "sensePos": "adj./adv.",
+        "meaningHint": "確信；必然的；必定的；當然"
+      },
+      "after": {
+        "sensePos": "adj.",
+        "meaningHint": "確保；確認（make sure）"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/sure"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXf76b62cc",
+      "before": {
+        "sensePos": "adj./adv.",
+        "meaningHint": "確信；必然的；必定的；當然"
+      },
+      "after": {
+        "sensePos": "adv.",
+        "meaningHint": "確實地；的確"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/sure"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXfc0b6f79",
+      "before": {
+        "sensePos": "adj./adv.",
+        "meaningHint": "確信；必然的；必定的；當然"
+      },
+      "after": {
+        "sensePos": "adj.",
+        "meaningHint": "務必要；確定要（be sure to）"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/sure"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX2a722026",
+      "before": {
+        "sensePos": "adv./adj./n.",
+        "meaningHint": "權利；右邊；正義；右派"
+      },
+      "after": {
+        "sensePos": "adv.",
+        "meaningHint": "正確地"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/right"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX5973e8a7",
+      "before": {
+        "sensePos": "adv./adj./n.",
+        "meaningHint": "權利；右邊；正義；右派"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "權利"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/right"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX5a40827a",
+      "before": {
+        "sensePos": "adv./adj./n.",
+        "meaningHint": "權利；右邊；正義；右派"
+      },
+      "after": {
+        "sensePos": "adv.",
+        "meaningHint": "向右"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/right"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX70bc531c",
+      "before": {
+        "sensePos": "adv./adj./n.",
+        "meaningHint": "權利；右邊；正義；右派"
+      },
+      "after": {
+        "sensePos": "adj.",
+        "meaningHint": "右邊的"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/right"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX82385cda",
+      "before": {
+        "sensePos": "adv./adj./n.",
+        "meaningHint": "權利；右邊；正義；右派"
+      },
+      "after": {
+        "sensePos": "adj.",
+        "meaningHint": "正確的"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/right"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX992cf3ba",
+      "before": {
+        "sensePos": "adv./adj./n.",
+        "meaningHint": "權利；右邊；正義；右派"
+      },
+      "after": {
+        "sensePos": "adv.",
+        "meaningHint": "就在；正好"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/right"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX2267c8c9",
+      "before": {
+        "sensePos": "prep./adv.",
+        "meaningHint": "在後地；在...背後"
+      },
+      "after": {
+        "sensePos": "adv.",
+        "meaningHint": "在後面；留下"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/behind"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX49887382",
+      "before": {
+        "sensePos": "prep./adv.",
+        "meaningHint": "在後地；在...背後"
+      },
+      "after": {
+        "sensePos": "adv.",
+        "meaningHint": "落後（fall behind）"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/behind"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXc3b742cc",
+      "before": {
+        "sensePos": "prep./adv.",
+        "meaningHint": "在後地；在...背後"
+      },
+      "after": {
+        "sensePos": "prep.",
+        "meaningHint": "在……後面"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/behind"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXecc1cdb0",
+      "before": {
+        "sensePos": "prep./adv.",
+        "meaningHint": "在後地；在...背後"
+      },
+      "after": {
+        "sensePos": "adv.",
+        "meaningHint": "在後面；留下"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/behind"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1f881716",
+      "before": {
+        "sensePos": "adj./adv./n./v.",
+        "meaningHint": "錯誤的；不正當的；失常的；錯誤地"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "不正當的行為；惡行"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/wrong"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX20ecf1d0",
+      "before": {
+        "sensePos": "adj./adv./n./v.",
+        "meaningHint": "錯誤的；不正當的；失常的；錯誤地"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "錯事；不正當的事"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/wrong"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX74002ee6",
+      "before": {
+        "sensePos": "adj./adv./n./v.",
+        "meaningHint": "錯誤的；不正當的；失常的；錯誤地"
+      },
+      "after": {
+        "sensePos": "adj.",
+        "meaningHint": "不正當的；不道德的"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/wrong"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX75b720be",
+      "before": {
+        "sensePos": "adj./adv./n./v.",
+        "meaningHint": "錯誤的；不正當的；失常的；錯誤地"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "不公平地對待"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/wrong"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX96488501",
+      "before": {
+        "sensePos": "adj./adv./n./v.",
+        "meaningHint": "錯誤的；不正當的；失常的；錯誤地"
+      },
+      "after": {
+        "sensePos": "adj.",
+        "meaningHint": "錯誤的；不對勁的"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/wrong"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXec450963",
+      "before": {
+        "sensePos": "adj./adv./n./v.",
+        "meaningHint": "錯誤的；不正當的；失常的；錯誤地"
+      },
+      "after": {
+        "sensePos": "adj.",
+        "meaningHint": "錯誤的；不對勁的"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/wrong"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX890e020b",
+      "before": {
+        "sensePos": "adj./n./adv.",
+        "meaningHint": "左邊的；左傾的；左側的；左派的"
+      },
+      "after": {
+        "sensePos": "adv.",
+        "meaningHint": "向左"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/left"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXcc84c0c0",
+      "before": {
+        "sensePos": "adj./n./adv.",
+        "meaningHint": "左邊的；左傾的；左側的；左派的"
+      },
+      "after": {
+        "sensePos": "adj.",
+        "meaningHint": "左邊的"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/left"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX08d70dc8",
+      "before": {
+        "sensePos": "conj./adv./prep.",
+        "meaningHint": "同樣地；例如；做為；當作"
+      },
+      "after": {
+        "sensePos": "prep.",
+        "meaningHint": "作為；擔任"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/as"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX13f33dca",
+      "before": {
+        "sensePos": "conj./adv./prep.",
+        "meaningHint": "同樣地；例如；做為；當作"
+      },
+      "after": {
+        "sensePos": "adv.",
+        "meaningHint": "同樣地（第一個as修飾smart）"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/as"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX709c424a",
+      "before": {
+        "sensePos": "conj./adv./prep.",
+        "meaningHint": "同樣地；例如；做為；當作"
+      },
+      "after": {
+        "sensePos": "conj.",
+        "meaningHint": "當……時"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/as"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX7e77c603",
+      "before": {
+        "sensePos": "conj./adv./prep.",
+        "meaningHint": "同樣地；例如；做為；當作"
+      },
+      "after": {
+        "sensePos": "conj.",
+        "meaningHint": "因為；由於"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/as"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXb2de94dc",
+      "before": {
+        "sensePos": "conj./adv./prep.",
+        "meaningHint": "同樣地；例如；做為；當作"
+      },
+      "after": {
+        "sensePos": "conj.",
+        "meaningHint": "好像；彷彿（as if）"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/as"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXeb1dddf5",
+      "before": {
+        "sensePos": "conj./adv./prep.",
+        "meaningHint": "同樣地；例如；做為；當作"
+      },
+      "after": {
+        "sensePos": "conj.",
+        "meaningHint": "如同；就像"
+      },
+      "reason": "Read the exact cloze target, its full English/Chinese sentence and actual UI. Select this use rather than retaining the mixed headword meanings; preserve other headword senses and POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/as"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX8d9cdb65",
+      "before": {
+        "sensePos": "v.",
+        "meaningHint": null
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "秋天"
+      },
+      "reason": "The inspected cloze clearly uses this POS and meaning; retain original sentences, answer and official headword scope.",
+      "evidence": "https://www.merriam-webster.com/dictionary/fall"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXbb3869ef",
+      "before": {
+        "sensePos": "v.",
+        "meaningHint": null
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "減少；下降"
+      },
+      "reason": "The inspected cloze clearly uses this POS and meaning; retain original sentences, answer and official headword scope.",
+      "evidence": "https://www.merriam-webster.com/dictionary/decrease"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXaa5f40b0",
+      "before": {
+        "sensePos": "v.",
+        "meaningHint": null
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "增加；上漲"
+      },
+      "reason": "The inspected cloze clearly uses this POS and meaning; retain original sentences, answer and official headword scope.",
+      "evidence": "https://www.merriam-webster.com/dictionary/increase"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXc53124b1",
+      "before": {
+        "sensePos": "n.",
+        "meaningHint": null
+      },
+      "after": {
+        "sensePos": "adj.",
+        "meaningHint": "水平的"
+      },
+      "reason": "The inspected cloze clearly uses this POS and meaning; retain original sentences, answer and official headword scope.",
+      "evidence": "https://www.merriam-webster.com/dictionary/level"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX73fadf12",
+      "before": {
+        "sensePos": "n.",
+        "meaningHint": null
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "罰……禁足"
+      },
+      "reason": "The inspected cloze clearly uses this POS and meaning; retain original sentences, answer and official headword scope.",
+      "evidence": "https://www.merriam-webster.com/dictionary/ground"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXceff7085",
+      "before": {
+        "sensePos": "v.",
+        "meaningHint": null
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "傷口；割傷"
+      },
+      "reason": "The inspected cloze clearly uses this POS and meaning; retain original sentences, answer and official headword scope.",
+      "evidence": "https://www.merriam-webster.com/dictionary/cut"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX34ea9e12",
+      "before": {
+        "sensePos": "adj.",
+        "meaningHint": null
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "完成"
+      },
+      "reason": "The inspected cloze clearly uses this POS and meaning; retain original sentences, answer and official headword scope.",
+      "evidence": "https://www.merriam-webster.com/dictionary/complete"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX4ac86571",
+      "before": {
+        "sensePos": "n.",
+        "meaningHint": null
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "打破"
+      },
+      "reason": "The inspected cloze clearly uses this POS and meaning; retain original sentences, answer and official headword scope.",
+      "evidence": "https://www.merriam-webster.com/dictionary/break"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXfa924451",
+      "before": {
+        "sensePos": "n.",
+        "meaningHint": null
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "使……降落"
+      },
+      "reason": "The inspected cloze clearly uses this POS and meaning; retain original sentences, answer and official headword scope.",
+      "evidence": "https://www.merriam-webster.com/dictionary/land"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX613022b5",
+      "before": {
+        "sensePos": "n.",
+        "meaningHint": null
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "油漆；塗漆"
+      },
+      "reason": "The inspected cloze clearly uses this POS and meaning; retain original sentences, answer and official headword scope.",
+      "evidence": "https://www.merriam-webster.com/dictionary/paint"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX6f7ec6c7",
+      "before": {
+        "sensePos": "v.",
+        "meaningHint": null
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "散步（take a walk）"
+      },
+      "reason": "The inspected cloze clearly uses this POS and meaning; retain original sentences, answer and official headword scope.",
+      "evidence": "https://www.merriam-webster.com/dictionary/walk"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX0f128cf8",
+      "before": {
+        "sensePos": "n.",
+        "meaningHint": null
+      },
+      "after": {
+        "sensePos": "adv.",
+        "meaningHint": "向右"
+      },
+      "reason": "The inspected cloze clearly uses this POS and meaning; retain original sentences, answer and official headword scope.",
+      "evidence": "https://www.merriam-webster.com/dictionary/right"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX2306c649",
+      "before": {
+        "sensePos": "n.",
+        "meaningHint": "聲音；嗓音；嗓子；願望"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "表達；說出"
+      },
+      "reason": "The inspected cloze clearly uses this POS and meaning; retain original sentences, answer and official headword scope.",
+      "evidence": "https://www.merriam-webster.com/dictionary/voice"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX6e2eea89",
+      "before": {
+        "sensePos": "n.",
+        "meaningHint": "聲音；語音；吵鬧；聲調"
+      },
+      "after": {
+        "sensePos": "adj.",
+        "meaningHint": "健全的；健康的"
+      },
+      "reason": "The inspected cloze clearly uses this POS and meaning; retain original sentences, answer and official headword scope.",
+      "evidence": "https://www.merriam-webster.com/dictionary/sound"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXc216a746",
+      "before": {
+        "sensePos": "n.",
+        "meaningHint": "聲音；語音；吵鬧；聲調"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "聽起來"
+      },
+      "reason": "The inspected cloze clearly uses this POS and meaning; retain original sentences, answer and official headword scope.",
+      "evidence": "https://www.merriam-webster.com/dictionary/sound"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXe9e75b3a",
+      "before": {
+        "sensePos": "n.",
+        "meaningHint": "聲音；語音；吵鬧；聲調"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "聽起來"
+      },
+      "reason": "The inspected cloze clearly uses this POS and meaning; retain original sentences, answer and official headword scope.",
+      "evidence": "https://www.merriam-webster.com/dictionary/sound"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXee24386b",
+      "before": {
+        "sensePos": "n.",
+        "meaningHint": "聲音；語音；吵鬧；聲調"
+      },
+      "after": {
+        "sensePos": "adj.",
+        "meaningHint": "合理的；可靠的"
+      },
+      "reason": "The inspected cloze clearly uses this POS and meaning; retain original sentences, answer and official headword scope.",
+      "evidence": "https://www.merriam-webster.com/dictionary/sound"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX74e97ba0",
+      "before": {
+        "sensePos": "adj.",
+        "meaningHint": null
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "訂正；改正"
+      },
+      "reason": "The inspected cloze clearly uses this POS and meaning; retain original sentences, answer and official headword scope.",
+      "evidence": "https://www.merriam-webster.com/dictionary/correct"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX3f1538ed",
+      "before": {
+        "sensePos": "adj.",
+        "meaningHint": null
+      },
+      "after": {
+        "sensePos": "adv.",
+        "meaningHint": "向左"
+      },
+      "reason": "The inspected cloze clearly uses this POS and meaning; retain original sentences, answer and official headword scope.",
+      "evidence": "https://www.merriam-webster.com/dictionary/left"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX213db696",
+      "before": {
+        "sensePos": "n.",
+        "meaningHint": null
+      },
+      "after": {
+        "sensePos": "adj.",
+        "meaningHint": "素食的"
+      },
+      "reason": "The inspected cloze clearly uses this POS and meaning; retain original sentences, answer and official headword scope.",
+      "evidence": "https://www.merriam-webster.com/dictionary/vegetarian"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX5ddd230d",
+      "before": {
+        "meaningHint": "建立；建築；構造；體格"
+      },
+      "after": {
+        "meaningHint": "建立；逐步發展（built up）"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/build"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXcaab722f",
+      "before": {
+        "meaningHint": "建立；建築；構造；體格"
+      },
+      "after": {
+        "meaningHint": "建造"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/build"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX6dc362c7",
+      "before": {
+        "meaningHint": "專輯；專車；號外；特別的東西"
+      },
+      "after": {
+        "meaningHint": "特別的"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/special"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXd46916e7",
+      "before": {
+        "meaningHint": "專輯；專車；號外；特別的東西"
+      },
+      "after": {
+        "meaningHint": "特別的"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/special"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXca104642",
+      "before": {
+        "meaningHint": "丈夫；管理人；節儉的人；節儉"
+      },
+      "after": {
+        "meaningHint": "丈夫"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/husband"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1dcf0b58",
+      "before": {
+        "meaningHint": "妻子；太太；夫人；已婚婦女"
+      },
+      "after": {
+        "meaningHint": "妻子"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/wife"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX021fa271",
+      "before": {
+        "meaningHint": "孩子；產物；追隨者；兒童"
+      },
+      "after": {
+        "meaningHint": "小孩；子女"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/child"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX06844c92",
+      "before": {
+        "meaningHint": "孩子；產物；追隨者；兒童"
+      },
+      "after": {
+        "meaningHint": "獨生子女（only child）"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/child"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX09eb4985",
+      "before": {
+        "meaningHint": "記得；回憶起；記住；銘記"
+      },
+      "after": {
+        "meaningHint": "想起；記得"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/remember"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX3a26aa0e",
+      "before": {
+        "meaningHint": "記得；回憶起；記住；銘記"
+      },
+      "after": {
+        "meaningHint": "記得做過（remember V-ing）"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/remember"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX991ec427",
+      "before": {
+        "meaningHint": "記得；回憶起；記住；銘記"
+      },
+      "after": {
+        "meaningHint": "記得要做（remember to V）"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/remember"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX933eb3e0",
+      "before": {
+        "meaningHint": "忘記；忽略；忘"
+      },
+      "after": {
+        "meaningHint": "忘記要做（forget to V）"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/forget"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX9a127bd2",
+      "before": {
+        "meaningHint": "忘記；忽略；忘"
+      },
+      "after": {
+        "meaningHint": "忘記；忘卻"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/forget"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXed89a371",
+      "before": {
+        "meaningHint": "忘記；忽略；忘"
+      },
+      "after": {
+        "meaningHint": "忘記曾做過（forget V-ing）"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/forget"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX6560a4e7",
+      "before": {
+        "meaningHint": "全部；完整；充滿的；完全的"
+      },
+      "after": {
+        "meaningHint": "完整的（full name：全名）"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/full"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXa99506f2",
+      "before": {
+        "meaningHint": "全部；完整；充滿的；完全的"
+      },
+      "after": {
+        "meaningHint": "吃飽的"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/full"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXf8fdca1e",
+      "before": {
+        "meaningHint": "全部；完整；充滿的；完全的"
+      },
+      "after": {
+        "meaningHint": "充滿的"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/full"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX9a896b8d",
+      "before": {
+        "meaningHint": "能幹的；能夠的"
+      },
+      "after": {
+        "meaningHint": "能夠的（be able to）"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/able"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXc47f68c6",
+      "before": {
+        "meaningHint": "藝術；人文科學；技術；巧妙"
+      },
+      "after": {
+        "meaningHint": "藝術"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/art"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXd591cf0c",
+      "before": {
+        "meaningHint": "藝術；人文科學；技術；巧妙"
+      },
+      "after": {
+        "meaningHint": "藝術作品"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/art"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXdc97c42c",
+      "before": {
+        "meaningHint": "藝術；人文科學；技術；巧妙"
+      },
+      "after": {
+        "meaningHint": "藝術（the arts）"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/art"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX3603198a",
+      "before": {
+        "meaningHint": "相當；完全；十分"
+      },
+      "after": {
+        "meaningHint": "相當地"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/quite"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX2d7fc6ea",
+      "before": {
+        "meaningHint": "進入；參加；開始；輸入"
+      },
+      "after": {
+        "meaningHint": "進入"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/enter"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXde52431a",
+      "before": {
+        "meaningHint": "進入；參加；開始；輸入"
+      },
+      "after": {
+        "meaningHint": "參加（比賽）"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/enter"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXfd45be9e",
+      "before": {
+        "meaningHint": "進入；參加；開始；輸入"
+      },
+      "after": {
+        "meaningHint": "輸入（密碼）"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/enter"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX0282b9db",
+      "before": {
+        "meaningHint": "實際上；真實地；實在"
+      },
+      "after": {
+        "meaningHint": "非常地（強調程度）"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/really"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXa6e2171a",
+      "before": {
+        "meaningHint": "實際上；真實地；實在"
+      },
+      "after": {
+        "meaningHint": "實際上；真正地"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/really"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXd96728e7",
+      "before": {
+        "meaningHint": "實際上；真實地；實在"
+      },
+      "after": {
+        "meaningHint": "的確；確實"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/really"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX25b29fab",
+      "before": {
+        "meaningHint": "聲音；嗓音；嗓子；願望"
+      },
+      "after": {
+        "meaningHint": "說話聲；嗓音"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/voice"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX51e01c28",
+      "before": {
+        "meaningHint": "聲音；嗓音；嗓子；願望"
+      },
+      "after": {
+        "meaningHint": "說話聲；嗓音"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/voice"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXeb98848d",
+      "before": {
+        "meaningHint": "聲音；語音；吵鬧；聲調"
+      },
+      "after": {
+        "meaningHint": "聲音"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/sound"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX056c9e1a",
+      "before": {
+        "meaningHint": "決定；判決"
+      },
+      "after": {
+        "meaningHint": "決定"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/decide"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX41f30224",
+      "before": {
+        "meaningHint": "決定；判決"
+      },
+      "after": {
+        "meaningHint": "選定（decide on）"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/decide"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX4ed56643",
+      "before": {
+        "meaningHint": "較少；較小；少的；小的"
+      },
+      "after": {
+        "meaningHint": "更不用說（much less）"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/less"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX5dde25ce",
+      "before": {
+        "meaningHint": "較少；較小；少的；小的"
+      },
+      "after": {
+        "meaningHint": "少吃；吃得較少"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/less"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX9c0dd66c",
+      "before": {
+        "meaningHint": "較少；較小；少的；小的"
+      },
+      "after": {
+        "meaningHint": "至少；多達（no less than）"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/less"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX3334b66a",
+      "before": {
+        "meaningHint": "確定的；某一個的；必然的；確鑿的"
+      },
+      "after": {
+        "meaningHint": "確定地（for certain）"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/certain"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX0925c3b9",
+      "before": {
+        "meaningHint": "錯誤的；不正當的；失常的；錯誤地"
+      },
+      "after": {
+        "meaningHint": "出差錯；出問題（go wrong）"
+      },
+      "reason": "The original hint mixed unrelated headword meanings or did not identify the meaning actually used in this unchanged sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/wrong"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXbc6028cd",
+      "before": {
+        "status": "draft",
+        "meaningHint": "減少"
+      },
+      "after": {
+        "status": "reviewed",
+        "meaningHint": "減少（本句為另寫練習句）"
+      },
+      "reason": "Read the complete practice sentence, translation, cloze and answer in source and actual meaning-tab UI; approval applies to the practice sentence, not an unverified claim of quotation. Distinguish the unchanged authored practice sentence from the verified exam quotation.",
+      "evidence": "Actual U09 general-card UI and unchanged source; https://www.merriam-webster.com/dictionary/decrease"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX7ba79a05",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Read the complete practice sentence, translation, cloze and answer in source and actual meaning-tab UI; approval applies to the practice sentence, not an unverified claim of quotation.",
+      "evidence": "Actual U09 general-card UI and unchanged source; https://www.merriam-webster.com/dictionary/rise"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX84b0877f",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Read the complete practice sentence, translation, cloze and answer in source and actual meaning-tab UI; approval applies to the practice sentence, not an unverified claim of quotation.",
+      "evidence": "Actual U09 general-card UI and unchanged source; https://www.merriam-webster.com/dictionary/rise"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX717a0221",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Read the complete practice sentence, translation, cloze and answer in source and actual meaning-tab UI; approval applies to the practice sentence, not an unverified claim of quotation.",
+      "evidence": "Actual U09 general-card UI and unchanged source; https://www.merriam-webster.com/dictionary/increase"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXdeeb11e8",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Read the complete practice sentence, translation, cloze and answer in source and actual meaning-tab UI; approval applies to the practice sentence, not an unverified claim of quotation.",
+      "evidence": "Actual U09 general-card UI and unchanged source; https://www.merriam-webster.com/dictionary/increase"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX13a3a281",
+      "before": {
+        "status": "draft",
+        "meaningHint": "使付出（代價）（考點：cost sb sth 讓某人失去某物）"
+      },
+      "after": {
+        "status": "reviewed",
+        "meaningHint": "使失去（冠軍；本句為另寫練習句）"
+      },
+      "reason": "Read the complete practice sentence, translation, cloze and answer in source and actual meaning-tab UI; approval applies to the practice sentence, not an unverified claim of quotation. Distinguish the unchanged authored practice sentence from the verified exam quotation.",
+      "evidence": "Actual U09 general-card UI and unchanged source; https://www.merriam-webster.com/dictionary/cost"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX53a10461",
+      "before": {
+        "status": "needs_check"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Read the complete practice sentence, translation, cloze and answer in source and actual meaning-tab UI; approval applies to the practice sentence, not an unverified claim of quotation.",
+      "evidence": "Actual U09 general-card UI and unchanged source; https://www.merriam-webster.com/dictionary/cost"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX3fc06dff",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Read the complete practice sentence, translation, cloze and answer in source and actual meaning-tab UI; approval applies to the practice sentence, not an unverified claim of quotation.",
+      "evidence": "Actual U09 general-card UI and unchanged source; https://www.merriam-webster.com/dictionary/special"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXf449f024",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Read the complete practice sentence, translation, cloze and answer in source and actual meaning-tab UI; approval applies to the practice sentence, not an unverified claim of quotation.",
+      "evidence": "Actual U09 general-card UI and unchanged source; https://www.merriam-webster.com/dictionary/remember"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX285135bf",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Read the complete practice sentence, translation, cloze and answer in source and actual meaning-tab UI; approval applies to the practice sentence, not an unverified claim of quotation.",
+      "evidence": "Actual U09 general-card UI and unchanged source; https://www.merriam-webster.com/dictionary/forget"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX64b91c9a",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Read the complete practice sentence, translation, cloze and answer in source and actual meaning-tab UI; approval applies to the practice sentence, not an unverified claim of quotation.",
+      "evidence": "Actual U09 general-card UI and unchanged source; https://www.merriam-webster.com/dictionary/reduce"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX96fd4171",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Read the complete practice sentence, translation, cloze and answer in source and actual meaning-tab UI; approval applies to the practice sentence, not an unverified claim of quotation.",
+      "evidence": "Actual U09 general-card UI and unchanged source; https://www.merriam-webster.com/dictionary/reduce"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX8dd0a3c1",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Read the complete practice sentence, translation, cloze and answer in source and actual meaning-tab UI; approval applies to the practice sentence, not an unverified claim of quotation.",
+      "evidence": "Actual U09 general-card UI and unchanged source; https://www.merriam-webster.com/dictionary/ability"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX9c6c7f32",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Read the complete practice sentence, translation, cloze and answer in source and actual meaning-tab UI; approval applies to the practice sentence, not an unverified claim of quotation.",
+      "evidence": "Actual U09 general-card UI and unchanged source; https://www.merriam-webster.com/dictionary/quite"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX21fa8264",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Read the complete practice sentence, translation, cloze and answer in source and actual meaning-tab UI; approval applies to the practice sentence, not an unverified claim of quotation.",
+      "evidence": "Actual U09 general-card UI and unchanged source; https://www.merriam-webster.com/dictionary/certain"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1082ae80",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Read the complete practice sentence, translation, cloze and answer in source and actual meaning-tab UI; approval applies to the practice sentence, not an unverified claim of quotation.",
+      "evidence": "Actual U09 general-card UI and unchanged source; https://www.merriam-webster.com/dictionary/as"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX580b1220",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Read the complete practice sentence, translation, cloze and answer in source and actual meaning-tab UI; approval applies to the practice sentence, not an unverified claim of quotation.",
+      "evidence": "Actual U09 general-card UI and unchanged source; https://www.merriam-webster.com/dictionary/decision"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX61de9316",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Read the complete practice sentence, translation, cloze and answer in source and actual meaning-tab UI; approval applies to the practice sentence, not an unverified claim of quotation.",
+      "evidence": "Actual U09 general-card UI and unchanged source; https://www.merriam-webster.com/dictionary/when"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000125-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：建立；建築；構造；體格"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：已核對本義、完整既有例句與詞典，依實際填空用法分辨詞性；保留詞頭其他義項與來源範圍。本義核對不等於整詞所有欄位通過。"
+      },
+      "reason": "The specific sense is supported by the inspected examples and dictionary; record the completed check instead of merely deleting a pending marker.",
+      "evidence": "https://www.merriam-webster.com/dictionary/build"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000291-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：落下；瀑布；採伐量；下降"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：已核對本義、完整既有例句與詞典，依實際填空用法分辨詞性；保留詞頭其他義項與來源範圍。本義核對不等於整詞所有欄位通過。"
+      },
+      "reason": "The specific sense is supported by the inspected examples and dictionary; record the completed check instead of merely deleting a pending marker.",
+      "evidence": "https://www.merriam-webster.com/dictionary/fall"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000291-2",
+      "before": {
+        "status": "needs_check",
+        "note": "另有：變成（fall asleep），需要可加列｜待拆分；主表字義：落下；瀑布；採伐量；下降"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：已核對本義、完整既有例句與詞典，依實際填空用法分辨詞性；保留詞頭其他義項與來源範圍。本義核對不等於整詞所有欄位通過。"
+      },
+      "reason": "The specific sense is supported by the inspected examples and dictionary; record the completed check instead of merely deleting a pending marker.",
+      "evidence": "https://www.merriam-webster.com/dictionary/fall"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001456-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：增加；增進；利益；加大"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：已核對本義、完整既有例句與詞典，依實際填空用法分辨詞性；保留詞頭其他義項與來源範圍。本義核對不等於整詞所有欄位通過。"
+      },
+      "reason": "The specific sense is supported by the inspected examples and dictionary; record the completed check instead of merely deleting a pending marker.",
+      "evidence": "https://www.merriam-webster.com/dictionary/increase"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001456-2",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：增加；增進；利益；加大"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：已核對本義、完整既有例句與詞典，依實際填空用法分辨詞性；保留詞頭其他義項與來源範圍。本義核對不等於整詞所有欄位通過。"
+      },
+      "reason": "The specific sense is supported by the inspected examples and dictionary; record the completed check instead of merely deleting a pending marker.",
+      "evidence": "https://www.merriam-webster.com/dictionary/increase"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000816-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：專輯；專車；號外；特別的東西"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：已核對本義、完整既有例句與詞典，依實際填空用法分辨詞性；保留詞頭其他義項與來源範圍。本義核對不等於整詞所有欄位通過。"
+      },
+      "reason": "The specific sense is supported by the inspected examples and dictionary; record the completed check instead of merely deleting a pending marker.",
+      "evidence": "https://www.merriam-webster.com/dictionary/special"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000162-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：孩子；產物；追隨者；兒童"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：已核對本義、完整既有例句與詞典，依實際填空用法分辨詞性；保留詞頭其他義項與來源範圍。本義核對不等於整詞所有欄位通過。"
+      },
+      "reason": "The specific sense is supported by the inspected examples and dictionary; record the completed check instead of merely deleting a pending marker.",
+      "evidence": "https://www.merriam-webster.com/dictionary/child"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001184-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：完全的；十足的；完成的；完成"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：已核對本義、完整既有例句與詞典，依實際填空用法分辨詞性；保留詞頭其他義項與來源範圍。本義核對不等於整詞所有欄位通過。"
+      },
+      "reason": "The specific sense is supported by the inspected examples and dictionary; record the completed check instead of merely deleting a pending marker.",
+      "evidence": "https://www.merriam-webster.com/dictionary/complete"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001184-2",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：完全的；十足的；完成的；完成"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：已核對本義、完整既有例句與詞典，依實際填空用法分辨詞性；保留詞頭其他義項與來源範圍。本義核對不等於整詞所有欄位通過。"
+      },
+      "reason": "The specific sense is supported by the inspected examples and dictionary; record the completed check instead of merely deleting a pending marker.",
+      "evidence": "https://www.merriam-webster.com/dictionary/complete"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000117-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：休息；中斷；破裂處；絕交"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：已核對本義、完整既有例句與詞典，依實際填空用法分辨詞性；保留詞頭其他義項與來源範圍。本義核對不等於整詞所有欄位通過。"
+      },
+      "reason": "The specific sense is supported by the inspected examples and dictionary; record the completed check instead of merely deleting a pending marker.",
+      "evidence": "https://www.merriam-webster.com/dictionary/break"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000117-2",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：休息；中斷；破裂處；絕交"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：已核對本義、完整既有例句與詞典，依實際填空用法分辨詞性；保留詞頭其他義項與來源範圍。本義核對不等於整詞所有欄位通過。"
+      },
+      "reason": "The specific sense is supported by the inspected examples and dictionary; record the completed check instead of merely deleting a pending marker.",
+      "evidence": "https://www.merriam-webster.com/dictionary/break"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000716-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：權利；右邊；正義；右派",
+        "meaningZh": "正確地；就（right now）"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：已核對本義、完整既有例句與詞典，依實際填空用法分辨詞性；保留詞頭其他義項與來源範圍。本義核對不等於整詞所有欄位通過。",
+        "meaningZh": "向右；正確地；就（right here/now）"
+      },
+      "reason": "The specific sense is supported by the inspected examples and dictionary; record the completed check instead of merely deleting a pending marker.",
+      "evidence": "https://www.merriam-webster.com/dictionary/right"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000716-2",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：權利；右邊；正義；右派"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：已核對本義、完整既有例句與詞典，依實際填空用法分辨詞性；保留詞頭其他義項與來源範圍。本義核對不等於整詞所有欄位通過。"
+      },
+      "reason": "The specific sense is supported by the inspected examples and dictionary; record the completed check instead of merely deleting a pending marker.",
+      "evidence": "https://www.merriam-webster.com/dictionary/right"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000716-3",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：權利；右邊；正義；右派"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：已核對本義、完整既有例句與詞典，依實際填空用法分辨詞性；保留詞頭其他義項與來源範圍。本義核對不等於整詞所有欄位通過。"
+      },
+      "reason": "The specific sense is supported by the inspected examples and dictionary; record the completed check instead of merely deleting a pending marker.",
+      "evidence": "https://www.merriam-webster.com/dictionary/right"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000481-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：左邊的；左傾的；左側的；左派的"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：已核對本義、完整既有例句與詞典，依實際填空用法分辨詞性；保留詞頭其他義項與來源範圍。本義核對不等於整詞所有欄位通過。"
+      },
+      "reason": "The specific sense is supported by the inspected examples and dictionary; record the completed check instead of merely deleting a pending marker.",
+      "evidence": "https://www.merriam-webster.com/dictionary/left"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000481-2",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：左邊的；左傾的；左側的；左派的"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：已核對本義、完整既有例句與詞典，依實際填空用法分辨詞性；保留詞頭其他義項與來源範圍。本義核對不等於整詞所有欄位通過。"
+      },
+      "reason": "The specific sense is supported by the inspected examples and dictionary; record the completed check instead of merely deleting a pending marker.",
+      "evidence": "https://www.merriam-webster.com/dictionary/left"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000481-3",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：左邊的；左傾的；左側的；左派的"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：已核對本義、完整既有例句與詞典，依實際填空用法分辨詞性；保留詞頭其他義項與來源範圍。本義核對不等於整詞所有欄位通過。"
+      },
+      "reason": "The specific sense is supported by the inspected examples and dictionary; record the completed check instead of merely deleting a pending marker.",
+      "evidence": "https://www.merriam-webster.com/dictionary/left"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000291",
+      "before": {
+        "meaningZh": "落下；瀑布；採伐量；下降"
+      },
+      "after": {
+        "meaningZh": "落下；瀑布；採伐量；下降；秋天"
+      },
+      "reason": "Include the autumn noun explicitly used by the card, retaining inherited rarer meanings.",
+      "evidence": "https://www.merriam-webster.com/dictionary/fall"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000718",
+      "before": {
+        "meaningEn": "an upward movement or change of position; an increase in the amount, level, or strength of something",
+        "usagePattern": "a rise in N (prices/temperature); on the rise",
+        "usagePatternZh": "……的上升（價格/溫度）；正在上升中"
+      },
+      "after": {
+        "meaningEn": "(n.) an upward movement, an increase or a raised area; (v.) to move upward, get up, increase or become more prominent, as in rise to fame.",
+        "usagePattern": "rise into the sky; rise to fame; a rise in N; give rise to N",
+        "usagePatternZh": "升空；成名；……的上升；引起／導致……"
+      },
+      "reason": "The noun-only summary and templates omitted the inspected verb and give-rise-to uses.",
+      "evidence": "https://www.merriam-webster.com/dictionary/rise"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000328",
+      "before": {
+        "meaningZh": "自由的；享受政治權力的；允許的；免費的"
+      },
+      "after": {
+        "meaningZh": "自由的；享受政治權力的；允許的；免費的；有空的；（動詞）釋放；（副詞）自由地／免費地"
+      },
+      "reason": "Differentiate the actual free/freed and adverb uses while retaining the official headword POS list.",
+      "evidence": "https://www.merriam-webster.com/dictionary/free"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000195",
+      "before": {
+        "meaningEn": "(n.) the amount of money needed to buy or do something; something you must give up or sacrifice to get something else; (v.) to have a price of a particular amount",
+        "usagePattern": "cost + 金額（It costs $50）; cost sb + 金額 + to V; at the cost of N",
+        "usagePatternZh": "花費……；使某人花費……去做……；以……為代價"
+      },
+      "after": {
+        "meaningEn": "(n.) the money, effort or sacrifice required for something; (v.) to have a price or require spending; to cause someone to lose something valuable.",
+        "usagePattern": "cost + amount; cost sb + amount + to V; cost sb sth; at the cost of N",
+        "usagePatternZh": "花費金額；使某人花費金額做……；使某人失去某物；以……為代價"
+      },
+      "reason": "Include the verified nonfinancial loss construction as well as money.",
+      "evidence": "https://www.merriam-webster.com/dictionary/cost"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000816",
+      "before": {
+        "meaningZh": "專輯；專車；號外；特別的東西"
+      },
+      "after": {
+        "meaningZh": "特別的；特殊的；（另有名詞用法）專輯；專車；號外；特別的東西"
+      },
+      "reason": "Supply the adjective used in all current examples. Inherited rare noun translations remain separate and are not certified as precise by this adjective repair.",
+      "evidence": "https://www.merriam-webster.com/dictionary/special"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000488",
+      "before": {
+        "meaningEn": "(n.) the amount, standard, or ability that something has, or its position on a scale from low to high; (adj.) having a flat, even surface, or being at the same height as something else",
+        "meaningZh": "水平；水準；平地；同高的",
+        "usagePatternZh": "在高／低水平；海平面；平坦"
+      },
+      "after": {
+        "meaningEn": "(n.) a standard, amount or position on a scale; a height or a tool for checking horizontal alignment; (adj.) flat, horizontal or at the same height; (v., outside the original learner noun/adjective scope) to make flat or even.",
+        "meaningZh": "水平；水準；平地；同高的；水平的；（動詞）剷平；（工具）水平儀",
+        "usagePatternZh": "在高／低水準；海平面；平坦的／水平的"
+      },
+      "reason": "Shelf is level is an adjective, and to level a garden is a genuine verb. Keep the original official POS scope, but make the existing example senses clear.",
+      "evidence": "https://www.merriam-webster.com/dictionary/level"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000364",
+      "before": {
+        "meaningEn": "(n.) the surface of the earth, or an area of land used for a particular purpose; (v.) to prevent an aircraft from flying, or to stop a child from going out as a punishment",
+        "meaningZh": "土地；戰場；場地；地面",
+        "usagePatternZh": "在地面上；為……提供理由；被禁足/接地"
+      },
+      "after": {
+        "meaningEn": "(n.) the surface of the earth; land used for a purpose; reasons or a basis; (v.) to prohibit flying or going out, make a vessel touch bottom, connect electrically to earth, or base something on evidence.",
+        "meaningZh": "土地；戰場；場地；地面；根據；（動詞）使停飛／禁足／擱淺／接地",
+        "usagePatternZh": "在地面上；……的理由／根據；被禁足／停飛／接地"
+      },
+      "reason": "Include the inspected grounded-in and ship/plane/child verb uses; grounds for is a noun phrase, not a verb meaning provide reasons.",
+      "evidence": "https://www.merriam-webster.com/dictionary/ground"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000316",
+      "before": {
+        "meaningEn": "the flat surface of a room that you walk on; a level of a building",
+        "meaningZh": "地板；樓層；底部；底價"
+      },
+      "after": {
+        "meaningEn": "(n.) the surface walked on in a room; a level of a building; a lower limit; (v.) to cover with flooring or knock someone down.",
+        "meaningZh": "地板；樓層；底部；底價；（動詞）鋪地板；擊倒"
+      },
+      "reason": "The inspected floored-with-tiles verb was absent from the noun-only English summary.",
+      "evidence": "https://www.merriam-webster.com/dictionary/floor"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000336",
+      "before": {
+        "meaningZh": "全部；完整；充滿的；完全的"
+      },
+      "after": {
+        "meaningZh": "全部；完整；充滿的；完全的；吃飽的"
+      },
+      "reason": "Add the actual diner meaning absent from the inherited Chinese summary.",
+      "evidence": "https://www.merriam-webster.com/dictionary/full"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002711",
+      "before": {
+        "usagePatternZh": "減少……（成本／風險／數量）；將……減少到／減少了……"
+      },
+      "after": {
+        "usagePatternZh": "減少……（成本／風險／數量）；將……減少了……（by）／減少到……（to）"
+      },
+      "reason": "The original Chinese ordered by/to meanings backwards; preserve the English construction.",
+      "evidence": "https://www.merriam-webster.com/dictionary/reduce"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001307",
+      "before": {
+        "meaningEn": "a container that has been emptied; make void or empty of contents",
+        "usagePattern": "empty + N; empty to V; be empty",
+        "usagePatternZh": "清空……；清空以做……；是空的"
+      },
+      "after": {
+        "meaningEn": "(adj.) containing nothing or having no occupants; lacking substance or meaning; (v.) to remove the contents of something.",
+        "usagePattern": "an empty box; be empty; empty N; empty N into N",
+        "usagePatternZh": "空盒子；是空的；清空……；把……倒進……"
+      },
+      "reason": "Correct the noun-like definition for an adjective/verb and replace the unsupported empty to V template.",
+      "evidence": "https://www.merriam-webster.com/dictionary/empty"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000117",
+      "before": {
+        "meaningZh": "休息；中斷；破裂處；絕交",
+        "meaningEn": "(n.) a short period of rest during work or study; (v.) to separate into pieces, especially by force"
+      },
+      "after": {
+        "meaningZh": "休息；中斷；破裂處；絕交；打破；弄壞；違反；破曉",
+        "meaningEn": "(n.) a rest, interruption or crack; (v.) to separate into pieces, stop functioning, violate a rule, surpass a record, or begin as daylight."
+      },
+      "reason": "Add the actual inspected verb senses missing from the summaries.",
+      "evidence": "https://www.merriam-webster.com/dictionary/break"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000467",
+      "before": {
+        "meaningZh": "陸地；地面；地界；地產"
+      },
+      "after": {
+        "meaningZh": "陸地；地面；地界；地產；祖國；降落"
+      },
+      "reason": "Include native-land and landing uses while retaining other meanings.",
+      "evidence": "https://www.merriam-webster.com/dictionary/land"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004786",
+      "before": {
+        "meaningZh": "碎片；粉碎；落葉；噴灑"
+      },
+      "after": {
+        "meaningZh": "碎片；粉碎；落葉；噴灑；（本單元動詞）使粉碎／震碎；粉碎希望"
+      },
+      "reason": "Add the clear glass/hope verb senses; inherited rare translations are retained with an explicit audit limitation rather than deleted for rarity.",
+      "evidence": "https://www.merriam-webster.com/dictionary/shatter"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004804",
+      "before": {
+        "meaningEn": "a serious collision (especially of motor vehicles); hit hard",
+        "usagePattern": "smash + N; smash to V; a/the smash",
+        "usagePatternZh": "打碎……；打碎去做……；一次猛擊"
+      },
+      "after": {
+        "meaningEn": "(v.) to break violently into pieces or hit with great force; (n.) a violent collision, a powerful hit or a great success.",
+        "usagePattern": "smash N into pieces; smash N; a smash hit",
+        "usagePatternZh": "把……砸成碎片；猛擊／打碎……；轟動的成功"
+      },
+      "reason": "Include the actual broken-pot sense and replace unsupported smash to V.",
+      "evidence": "https://www.merriam-webster.com/dictionary/smash"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000691",
+      "before": {
+        "usagePattern": "quite + adj./adv.; quite a N",
+        "usagePatternZh": "相當 + 形容詞/副詞；相當一個名詞"
+      },
+      "after": {
+        "usagePattern": "quite + adjective/adverb; quite a/an + singular noun",
+        "usagePatternZh": "相當／很 + 形容詞或副詞；quite a/an + 單數名詞（強調程度或不尋常）"
+      },
+      "reason": "Replace the misleading literal translation 相當一個名詞.",
+      "evidence": "https://www.merriam-webster.com/dictionary/quite"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000239",
+      "before": {
+        "meaningEn": "to produce a picture or diagram by making lines on a surface; to attract someone's attention or interest; a result of a game or contest in which both sides have the same score",
+        "meaningZh": "拉；拖；拔劍；拖拉"
+      },
+      "after": {
+        "meaningEn": "(v.) to make a picture with lines, pull something, or attract attention; (n.) an attraction or a tied game.",
+        "meaningZh": "拉；拖；拔劍；拖拉；畫；吸引；（名詞）平手／吸引人的事物"
+      },
+      "reason": "Include the inspected picture, attention and noun meanings; the stool/fireplace source conflict remains pending separately.",
+      "evidence": "https://www.merriam-webster.com/dictionary/draw"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000676",
+      "before": {
+        "meaningZh": "漂亮的；優美的；機靈的；狡猾的",
+        "usagePatternZh": "相當好/多/確定；一個相當 + 名詞"
+      },
+      "after": {
+        "meaningZh": "漂亮的；優美的；機靈的；狡猾的；（副詞）相當地",
+        "usagePatternZh": "相當好／幾乎或差不多（pretty much）／相當確定；一個漂亮的……"
+      },
+      "reason": "The adjective a pretty N was mistranslated as an adverb modifying a noun. Keep the existing rarer adjective meanings.",
+      "evidence": "https://www.merriam-webster.com/dictionary/pretty"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000892",
+      "before": {
+        "meaningEn": "equality of score in a contest; a horizontal beam used to prevent two other structural members from spreading apart or separating",
+        "meaningZh": "帶子；線；鞋帶；領帶",
+        "usagePattern": "wear/tie a tie; tie A to B; end in a tie",
+        "usagePatternZh": "戴／打領帶；把 A 綁在 B 上；以平手結束"
+      },
+      "after": {
+        "meaningEn": "(v.) to fasten with a string or ribbon; (n.) a necktie, a fastening or connection, a tied score, or a structural cross-beam.",
+        "meaningZh": "帶子；線；鞋帶；領帶；綁；束；（比分）平手",
+        "usagePattern": "wear/tie a tie; tie A to B; tie A and B together; end in a tie",
+        "usagePatternZh": "戴／打領帶；把 A 綁在 B 上；把 A 和 B 綁在一起；以平手結束"
+      },
+      "reason": "Supply the ordinary ribbon-tying verb and necktie without deleting the genuine beam/score nouns.",
+      "evidence": "https://www.merriam-webster.com/dictionary/tie"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002296",
+      "before": {
+        "meaningEn": "an item inserted in a written record; a written record of a commercial transaction",
+        "usagePattern": "an/the entry; entry of N",
+        "usagePatternZh": "一個／該條目；……的進入"
+      },
+      "after": {
+        "meaningEn": "(n.) the act or permission of entering a place, event or competition; an entrance; an item recorded in a list or account.",
+        "usagePattern": "gain entry to N; an entry in N; a dictionary entry",
+        "usagePatternZh": "獲准進入……；……中的條目；詞典條目"
+      },
+      "reason": "The record-only definition omitted the actual gaining-entry caption.",
+      "evidence": "https://www.merriam-webster.com/dictionary/entry"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001331",
+      "before": {
+        "meaningEn": "an opening that permits escape or release; the act of going out",
+        "usagePattern": "exit + N; exit to V; an/the exit",
+        "usagePatternZh": "離開……；離去以做……；出口"
+      },
+      "after": {
+        "meaningEn": "(n.) a way out or the act of leaving; (v.) to go out of or leave a place, situation or program.",
+        "usagePattern": "the exit; exit N; exit through N; an emergency exit",
+        "usagePatternZh": "出口；離開……；從……離開；緊急出口"
+      },
+      "reason": "Include the verb and replace an unsupported generic exit to V complement template.",
+      "evidence": "https://www.merriam-webster.com/dictionary/exit"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000716",
+      "before": {
+        "meaningZh": "權利；右邊；正義；右派"
+      },
+      "after": {
+        "meaningZh": "權利；右邊；正義；右派；（形容詞）正確的／右邊的；（副詞）向右／正確地／就在"
+      },
+      "reason": "Add the actual directional and correctness roles, preserving the existing official POS list.",
+      "evidence": "https://www.merriam-webster.com/dictionary/right"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000942",
+      "before": {
+        "meaningEn": "the sound you make when you speak or sing; a person's opinion or the right to express it",
+        "meaningZh": "聲音；嗓音；嗓子；願望"
+      },
+      "after": {
+        "meaningEn": "(n.) a speaking or singing sound, an opinion or the right to express it; (v., outside the original learner noun scope) to express an opinion or feeling.",
+        "meaningZh": "聲音；嗓音；嗓子；願望；發言權；（動詞）表達"
+      },
+      "reason": "Voiced their complaints is a genuine existing verb example; make its meaning clear without assuming an expanded official headword scope.",
+      "evidence": "https://www.merriam-webster.com/dictionary/voice"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000811",
+      "before": {
+        "meaningEn": "something that you can hear, or the physical vibrations that travel through air and can be heard",
+        "meaningZh": "聲音；語音；吵鬧；聲調"
+      },
+      "after": {
+        "meaningEn": "(n.) something heard or vibrations that can be heard; (v., outside the original learner noun scope) to seem or make a noise; (adj., outside that scope) healthy, reliable or based on good judgment.",
+        "meaningZh": "聲音；語音；吵鬧；聲調；（動詞）聽起來；（形容詞）健全的／可靠的／合理的"
+      },
+      "reason": "The inspected sounds-like, sound-mind and sound-idea examples were incorrectly explained with sound-noise noun meanings.",
+      "evidence": "https://www.merriam-webster.com/dictionary/sound"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000194",
+      "before": {
+        "usagePattern": "correct + N (answer/mistake); be correct about + N",
+        "usagePatternZh": "正確的 + 名詞（答案/錯誤）；對名詞是正確的"
+      },
+      "after": {
+        "usagePattern": "the correct answer; correct a mistake; be correct about N",
+        "usagePatternZh": "正確的答案；改正錯誤；關於……是正確的"
+      },
+      "reason": "Distinguish adjective correct answer from verb correct a mistake.",
+      "evidence": "https://www.merriam-webster.com/dictionary/correct"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000081",
+      "before": {
+        "meaningEn": "having the lower score or lagging position in a contest; in or to or toward the rear"
+      },
+      "after": {
+        "meaningEn": "(prep.) at the back of or later than someone or something; (adv.) at the rear, remaining after others leave, or falling short in progress."
+      },
+      "reason": "The inherited first definition described an adjective, while the inspected headword and examples use preposition/adverb.",
+      "evidence": "https://www.merriam-webster.com/dictionary/behind"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000992",
+      "before": {
+        "meaningEn": "(adj.) not correct, not true, or not what is required; not working properly; (n.) an action that is unfair, dishonest, or against moral or legal rules",
+        "meaningZh": "錯誤的；不正當的；失常的；錯誤地"
+      },
+      "after": {
+        "meaningEn": "(adj.) incorrect, unsuitable or morally bad; (adv.) incorrectly; (n.) an unjust act; (v.) to treat someone unjustly.",
+        "meaningZh": "錯誤的；不正當的；失常的；錯誤地；（名詞）錯事／不義；（動詞）不公平地對待"
+      },
+      "reason": "Include the actual wrongs noun and wronged verb.",
+      "evidence": "https://www.merriam-webster.com/dictionary/wrong"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000481",
+      "before": {
+        "meaningZh": "左邊的；左傾的；左側的；左派的"
+      },
+      "after": {
+        "meaningZh": "左邊的；左傾的；左側的；左派的；（名詞）左邊；（副詞）向左"
+      },
+      "reason": "Include the existing noun and directional adverb.",
+      "evidence": "https://www.merriam-webster.com/dictionary/left"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000219",
+      "before": {
+        "usagePatternZh": "決定做……；決定支持／反對……；決定……（疑問詞子句）"
+      },
+      "after": {
+        "usagePatternZh": "決定做……；選定……／決定不採用……；決定……（疑問詞子句）"
+      },
+      "reason": "Decide on the color means select a color, not support it politically.",
+      "evidence": "https://www.merriam-webster.com/dictionary/decide"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000048",
+      "before": {
+        "meaningEn": "a very poisonous metallic element that has three allotropic forms; arsenic and arsenic compounds are used as herbicides and insecticides...; a United States territory on the eastern part of the island of Samoa"
+      },
+      "after": {
+        "meaningEn": "(prep.) in the role or position of; (conj.) when, because, or in the way that; (adv.) to the same degree, especially in as ... as."
+      },
+      "reason": "The inherited arsenic and American Samoa text belongs to separate As/AS symbol or abbreviation entries, not the lowercase function word in the actual examples.",
+      "evidence": "https://www.merriam-webster.com/dictionary/as explicitly separates lowercase function-word POS from As chemical symbol and uppercase AS abbreviation."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005232",
+      "before": {
+        "meaningEn": "determining or having the power to determine an outcome; unmistakable",
+        "usagePatternZh": "決定性的；決定性的……"
+      },
+      "after": {
+        "meaningEn": "(adj.) settling an outcome clearly; able to make decisions quickly and confidently.",
+        "usagePatternZh": "果斷的／決定性的；果斷的行動／決定性的因素"
+      },
+      "reason": "Include the actual confident decision-making meaning used by the safe-bridge card.",
+      "evidence": "https://www.merriam-webster.com/dictionary/decisive"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000964",
+      "before": {
+        "usagePattern": "a/the when; when of N; V + when",
+        "usagePatternZh": "發生的時間；when 後接 of 名詞；在……時做某事"
+      },
+      "after": {
+        "usagePattern": "When ...?; know/ask when + S + V; when + time clause",
+        "usagePatternZh": "何時……？；知道／詢問何時……（間接問句用直述語序）；當……時（時間子句）"
+      },
+      "reason": "Replace unsupported a/the when and when of N as the learner template; do not remove genuine rare noun senses merely for rarity.",
+      "evidence": "https://www.merriam-webster.com/dictionary/when"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004499",
+      "before": {
+        "meaningEn": "a writer for newspapers and magazines",
+        "usagePattern": "a/the journalist; journalist of N",
+        "usagePatternZh": "一位／該記者；……的報導者"
+      },
+      "after": {
+        "meaningEn": "a person who gathers and reports news for newspapers, magazines, broadcasting or digital media",
+        "usagePattern": "a journalist for/at a news organization; a political/sports journalist",
+        "usagePatternZh": "新聞機構的記者；政治／體育記者"
+      },
+      "reason": "Cover the actual interviewing/reporter role and replace journalist of N as a generic relation template.",
+      "evidence": "https://www.merriam-webster.com/dictionary/journalist"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W002227-1",
+      "before": {
+        "examEvidence": "學測109 詞彙題Q4",
+        "note": "考點：decrease by 減少了多少",
+        "status": "draft"
+      },
+      "after": {
+        "examEvidence": "109學年度學測英文詞彙Q4，印刷第1頁；D decreased。試卷：https://www.ceec.edu.tw/files/file_pool/1/0k050359836694452838/02-109%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7-%E5%AE%9A%E7%A8%BF.pdf；答案：https://www.ceec.edu.tw/files/file_pool/1/0K018689241635770142/02-109%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E5%8F%83%E8%80%83%E7%AD%94%E6%A1%88.pdf",
+        "note": "原題說金融危機造成出口較上月減少40%；decreased 是 decrease 過去式，by 表示減少的幅度。EXbc6028cd 是另寫的銷售／天氣練習句，不是原題引文。",
+        "status": "reviewed"
+      },
+      "reason": "Read the official question and key: Q4 option D is decreased, used as an intransitive past-tense verb with by 40 percent.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0k050359836694452838/02-109%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7-%E5%AE%9A%E7%A8%BF.pdf Q4 D; https://www.ceec.edu.tw/files/file_pool/1/0K018689241635770142/02-109%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E5%8F%83%E8%80%83%E7%AD%94%E6%A1%88.pdf Q4=D."
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000195-1",
+      "before": {
+        "examEvidence": "學測111 文意選填Q25",
+        "note": "考點：cost sb sth 讓某人失去某物",
+        "status": "draft"
+      },
+      "after": {
+        "examEvidence": "111學年度學測英文文意選填Q25，印刷第3頁；D cost。試卷：https://www.ceec.edu.tw/files/file_pool/1/0m053357638065462325/02-111%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7.pdf；答案：https://www.ceec.edu.tw/files/file_pool/1/0m052625594764853905/02-111%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88..pdf",
+        "note": "原題描述未受訓特技人員的錯誤使一些人付出生命，cost some their lives。cost sb sth 表示使某人失去重要事物；EX13a3a281 的隊伍失冠練習句是另寫例句，不是原題引文。",
+        "status": "reviewed"
+      },
+      "reason": "Read the official question and key: Q25 option D is cost, describing loss of lives rather than a monetary price.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0m053357638065462325/02-111%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7.pdf printed p3 Q25 D; https://www.ceec.edu.tw/files/file_pool/1/0m052625594764853905/02-111%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88..pdf Q25=D."
+    }
+  ]
+}

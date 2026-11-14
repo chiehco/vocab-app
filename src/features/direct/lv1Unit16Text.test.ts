@@ -12,6 +12,7 @@ import {progressDb} from '../../db/progressDb';
 import {ensureContentAvailable,refreshInstalledContent} from '../../db/seed';
 import {siegeUnitWords} from '../siege/model';
 import {gradeFlashcard} from '../../checkin/recordActivity';
+import corrections from '../../../docs/unit-audit-20261105/LV1-U16-curriculum-patches.json';
 const unit=findUnit(16,'LV1')!;const vocabulary=unit.items.filter(i=>i.kind==='vocabulary');
 beforeEach(async()=>{await Promise.all([...contentDb.tables,...progressDb.tables].map(t=>t.clear()));});
 afterEach(()=>vi.unstubAllGlobals());
@@ -28,17 +29,22 @@ it('keeps checked original heads, printed numbers, content pages and checked sou
 });
 it('preserves printed supplements, articles, capitalization and use pages',()=>{
  expect(vocabulary.slice(38).map(i=>[i.displayWord,i.sourcePage,i.printedLabel])).toEqual(source.related.map(r=>[r.word,r.sourcePage,r.printedLabel]));
- expect(unit.items.filter(i=>i.kind==='grammar').map(i=>[i.pattern,i.sourcePage])).toEqual(source.usage.map(r=>[r.label,r.sourcePage]));
+ expect(unit.items.filter(i=>i.kind==='grammar').map(i=>[i.pattern,i.sourcePage])).toEqual(source.usage.map((r,index)=>{
+  const patch=corrections.patches.find(p=>p.id===`LI-LV1U16-G${String(index+1).padStart(3,'0')}`);
+  return [patch?.after.pattern??r.label,r.sourcePage];
+ }));
  for(const word of ["Mr.", "Mrs.", "Ms.", "lakeside", "lakelet", "cleanly", "untidy", "lazybones", "safely", "unsafe", "sweeten", "sweet-and-sour pork", "cod", "typing"]) expect(vocabulary.find(i=>i.displayWord===word)?.officialWordId).toBeNull();
 });
-it('uses existing official identities and keeps 11 unmapped supplements pending',()=>{
+it('uses existing official identities and keeps 11 source-gloss-verified supplements unmapped',()=>{
  for(const [index,row] of [...source.headwords,...source.related].entries()) {
   expect(vocabulary[index].officialWordId).toBe(row.officialWordId);if(!row.officialWordId)continue;
   const word=pack.words.find(w=>w.wordId===row.officialWordId)!;expect(word.word).toBe(row.officialWord);
   expect(word.word===row.word||word.wordVariants.includes(row.word)).toBe(true);
  }
  expect(vocabulary.filter(i=>!i.officialWordId)).toHaveLength(14);expect(vocabulary.filter(i=>i.meaningSource==='unmapped_supplement')).toHaveLength(11);
- expect(vocabulary.filter(i=>i.meaningSource==='unmapped_supplement').every(i=>i.targetMeaningZh==='教材補充詞；義項待核對。')).toBe(true);
+ const supplements=vocabulary.filter(i=>i.meaningSource==='unmapped_supplement');
+ expect(supplements.every(i=>i.officialWordId===null&&i.practiceMode==='read_only')).toBe(true);
+ for(const item of supplements){const patch=corrections.patches.find(p=>p.id===item.learningItemId)!;expect(item.targetMeaningZh).toBe(patch.after.targetMeaningZh);expect(item.chapterMeaningsZh).toBe(patch.after.chapterMeaningsZh);}
 });
 it('adopts no pictures, running examples, sense IDs or textbook questions',()=>{
  expect(unit.deliveryMode).toBe('text_only');expect(unit.questions).toEqual([]);expect(practiceIds(unit.items)).toEqual([]);
@@ -77,7 +83,7 @@ it('keeps independent original printed labels and phrases',()=>{
  expect(vocabulary.find(i=>i.displayWord==="preserve"&&i.sourcePage===147)).toMatchObject({printedLabel:"",sourcePage:147});
  expect(vocabulary.find(i=>i.displayWord==="address"&&i.sourcePage===148&&!!i.printedLabel)).toMatchObject({printedLabel:"*",sourcePage:148});
  expect(vocabulary.find(i=>i.displayWord==="typical"&&i.sourcePage===149&&!!i.printedLabel)).toMatchObject({printedLabel:"衍",sourcePage:149});
- expect(unit.items.some(i=>i.kind==='grammar'&&i.pattern==="do thing cleanly")).toBe(true);
+ expect(unit.items.some(i=>i.kind==='grammar'&&i.pattern==="do things cleanly")).toBe(true);
  expect(unit.items.some(i=>i.kind==='grammar'&&i.pattern==="lazybones 單複數同形")).toBe(true);
  expect(unit.items.some(i=>i.kind==='grammar'&&i.pattern==="tie the knot")).toBe(true);
  expect(unit.items.some(i=>i.kind==='grammar'&&i.pattern==="in a row")).toBe(true);
@@ -85,7 +91,7 @@ it('keeps independent original printed labels and phrases',()=>{
  expect(unit.items.some(i=>i.kind==='grammar'&&i.pattern==="learn one's lesson")).toBe(true);
  expect(unit.items.some(i=>i.kind==='grammar'&&i.pattern==="mistake A for B")).toBe(true);
  expect(unit.items.some(i=>i.kind==='grammar'&&i.pattern==="seed A with B")).toBe(true);
- expect(unit.items.some(i=>i.kind==='grammar'&&i.pattern==="As sb know,...")).toBe(true);
+ expect(unit.items.some(i=>i.kind==='grammar'&&i.pattern==="As sb knows, ...")).toBe(true);
  expect(unit.items.some(i=>i.kind==='grammar'&&i.pattern==="Mr. 常在後加人名使用。")).toBe(true);
  expect(unit.items.some(i=>i.kind==='grammar'&&i.pattern==="a visitor to + 地方")).toBe(true);
  expect(unit.items.some(i=>i.kind==='grammar'&&i.pattern==="be (not) sb's type")).toBe(true);

@@ -1,0 +1,84 @@
+// Requires the preserved pre-audit U22 snapshot and exact matching current rows. Abort rather than overwrite later work.
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+const root='docs/unit-audit-20261105/';
+const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
+const write=(p,v)=>fs.writeFileSync(p,JSON.stringify(v,null,2)+'\n');
+const sha=v=>createHash('sha256').update(JSON.stringify(v)).digest('hex');
+const frozen=read('output/unit-audit-20261105/LV1-U22-source-before.json');
+const data=Object.fromEntries(['words','examples','senses'].map(k=>[k,read('public/data/v1/'+k+'.json')]));
+const patches=[];
+const mw=w=>'https://www.merriam-webster.com/dictionary/'+w;
+function add(dataset,id,after,reason,evidence,guards=[]){
+ const key={words:'wordId',examples:'exampleId',senses:'senseId'}[dataset];
+ const row=data[dataset].find(x=>x[key]===id);assert(row);
+ const frozenRow=dataset==='words'?frozen.find(x=>x.officialWordId===id)?.wordData:frozen.flatMap(x=>x[dataset]||[]).find(x=>x[key]===id);
+ assert.deepEqual(row,frozenRow);
+ const changed=Object.fromEntries(Object.entries(after).filter(([k,v])=>JSON.stringify(v)!==JSON.stringify(row[k])));
+ if(!Object.keys(changed).length)return;
+ const before=Object.fromEntries([...new Set([...Object.keys(changed),...guards])].map(k=>{assert(Object.hasOwn(row,k));return[k,row[k]]}));
+ patches.push({dataset,key,id,before,after:changed,reason,evidence});
+}
+function word(w,a,reason,evidence=mw(w)){add('words',frozen.find(x=>x.word===w).officialWordId,a,reason,evidence);}
+const coverage='Restore the individually sourced meanings of the existing formal parts of speech; preserve the prior meanings and whole-word status. This is field coverage, not a claim that every prior gloss was wrong.';
+word('catch',{meaningZh:'（動詞）捕捉；抓；趕上（車）；（名詞）陷阱；捕捉之物'},coverage);
+word('though',{meaningEn:'(conj.) in spite of the fact that; even if; (adv., often postpositive) however.'},coverage);
+word('through',{meaningEn:'(prep.) from one side or end to the other; by means of; because of; (adv.) from beginning to end; (separate adjective use of a route or journey) continuing without requiring stops or changes.'},coverage);
+word('throughout',{meaningEn:'(prep.) in every part of a place; during the whole of a period; (adv.) everywhere or from beginning to end.',usagePattern:'throughout the evening; throughout the country; remain lit throughout',usagePatternZh:'整個晚上；遍及全國；自始至終保持亮著'},'Supply both spatial and duration senses and replace an unqualified N/V-ing template with three exact paired uses.');
+word('traffic',{meaningEn:'(n.) the vehicles or people moving along a road or through an area at a particular time; movement or trade; (v.) to trade or deal in something, often illegally (traffic in).',meaningZh:'（名詞）交通；通行；運輸；交通量；（動詞）交易、販運（常指非法交易，traffic in）',usagePatternZh:'交通繁忙／順暢；交通堵塞；在車流中'},coverage);
+word('circle',{meaningZh:'（名詞）圓周；社交圈；循環；範圍；（動詞）圈出；環行；繞行'},coverage);
+word('square',{meaningEn:'(n.) a shape with four equal straight sides and four right angles; a town open area, block, or mathematical square; (adj.) having the form of a square; relating to the square of a number or a unit of area.',meaningZh:'（名詞）正方形；街區；廣場；平方；（形容詞）正方形的；平方的'},coverage);
+word('diamond',{meaningEn:'(n.) very hard crystalline carbon valued as a gem, or a cut and polished piece of it; a four-sided figure shaped like a rhombus or a square standing on a corner.',usagePattern:'a diamond ring; a diamond shape',usagePatternZh:'鑽戒；菱形'},'Retain the gem and restore the already listed shape sense used by this kite caption.');
+word('oval',{meaningEn:'(adj.) egg-shaped or broadly elliptical; (n.) an oval figure or object, including an ellipse.',usagePattern:'an oval; an oval mirror; be oval',usagePatternZh:'一個橢圓形；一面橢圓形鏡子；呈橢圓形'},'Keep the ellipse meaning while avoiding the claim that every oval must be a technical conic section; pair concrete uses.');
+word('straight',{usagePatternZh:'一條直線；直接回家；坐直'},'Go straight home means directly home in this unchanged sentence.');
+word('straighten',{meaningEn:'to make or become straight; to make neat or tidy; to put a problem or situation in order.',usagePattern:'straighten a picture frame; straighten up; straighten out a problem',usagePatternZh:'把相框扶正；整理／站直；解決問題'},'Replace repeated English and the unsupported standalone straighten-to-V template with sourced straight/up/out uses.');
+word('couch',{meaningEn:'(n.) a long upholstered seat; a narrow bed used in psychiatric or psychoanalytic treatment; (fine arts) a flat priming coat of paint or varnish; (v.) to lie or recline; to express in particular words.',meaningZh:'（名詞）長沙發；睡椅；臥榻；（美術）底漆層；（動詞）橫躺；用特定措辭表達'},'Restore the everyday sofa and existing verb coverage while retaining the genuine fine-arts primer and psychiatric-bed senses.',mw('couch')+' ; https://www.collinsdictionary.com/dictionary/english/couch');
+word('sleep',{meaningZh:'（名詞）睡眠；靜止；昏迷；麻木；（動詞）睡覺',usagePatternZh:'去睡覺；睡得好；一夜好眠'},'Keep all sourced noun meanings, add the existing verb sense, and correct the literalized good-night sleep gloss.');
+word('asleep',{meaningEn:'in a state of sleep; (of a part of the body) numb or having lost feeling.'},'The dictionary supports numbness, not an obligatory specific physiological cause. Preserve the separate genuine adverb and other existing Chinese meanings.');
+word('sick',{meaningZh:'（形容詞）有病的；不舒服的；噁心的；厭倦的（sick of）；（the sick，形容詞名詞化）病人',usagePatternZh:'生病；感到噁心；厭倦……'},'Restore sick-of coverage and distinguish the sick as a nominalized adjective without expanding the formal headword POS.');
+word('ill',{meaningEn:'(adj.) not in good health; bad or harmful; (adv.) badly or unfavorably; (n.) illness, trouble, evil, or misfortune.',meaningZh:'（形容詞）生病的；壞的；（副詞）不利地；壞地；（名詞）疾病；壞事；罪惡；災難',usagePattern:'be/feel ill; speak ill of somebody; social ills',usagePatternZh:'生病／感到不適；說某人的壞話；社會弊病'},'Restore all three existing formal POS and replace unmatched generic ill-of-N with real paired adjective, adverb and noun uses.');
+word('sore',{meaningEn:'(adj.) painful or tender; grieved or distressed; causing distress; (n.) a painful or infected spot or wound.'},'Restore the adjective actually used for sore shoulders while retaining genuine emotional and noun senses.', 'https://www.collinsdictionary.com/dictionary/english/sore');
+word('noon',{usagePatternZh:'在中午；不晚於中午；中午前後'},'Clarify the inclusive by-noon deadline; this is precision rather than a new noon meaning.',mw('by')+' ; '+mw('noon'));
+word('pick',{meaningEn:'(v.) to choose; to pluck or gather; to dig or work with a pointed tool; (n.) a choice or the best part.',meaningZh:'（動詞）選擇；採摘；掘；（名詞）精選；選擇；精華',usagePatternZh:'撿起；挑選；任選／挑自己想要的'},'Restore plucking as used by the apple example; keep dig and choice/best-part meanings and clarify take one’s pick.');
+word('select',{usagePattern:'select N; select N from N; a select group',usagePatternZh:'挑選某人／某物；從……中挑選；一群精選的人'},'Replace unqualified select-to-V with dictionary-supported noun/from complements and an attributive adjective use.','https://www.collinsdictionary.com/dictionary/english/select');
+word('main',{meaningEn:'(adj.) most important, largest, or most significant; (n.) the chief part; a principal utility pipe, duct, or circuit; physical strength, as in with might and main.',meaningZh:'（形容詞）主要的；（名詞）主要部分；幹線；體力；力量'},'Restore the adjective and distinguish real noun senses; the strength phrase is not labelled obsolete by the cited dictionary.');
+word('major',{meaningZh:'（形容詞）主要的；（名詞）主修課；成年人（法律）；陸軍少校；（動詞）主修'},'Add the actual major-in verb sense while retaining the genuine legal-adult and military nouns.');
+word('principal',{meaningEn:'(adj.) chief or most important; (n.) a school head or other chief; the original capital of a debt or investment; the chief participant in an offense.',meaningZh:'（形容詞）主要的；（名詞）校長；首長；本金；主犯',usagePattern:'the school principal; the principal reason; principal and interest',usagePatternZh:'學校校長；主要原因；本金與利息'},'Restore the existing adjective and preserve all prior noun senses, with three exact paired uses.');
+word('picture',{meaningZh:'（名詞）圖畫；照片；景色；美麗如畫的人（或物）；（動詞）想像'},'The existing English and previously reviewed sense already support the verb imagine; add its missing Chinese coverage without changing existing approved senses.');
+word('horrible',{meaningEn:'causing horror; extremely bad or unpleasant.',meaningZh:'可怕的；糟透的；極討厭的'},'Correct 遭透→糟透 and add the dictionary’s very-bad/unpleasant sense used for the lunch-box smell.');
+word('awful',{meaningZh:'可怕的；糟糕的；令人不適的；令人敬畏的／莊嚴的；（古語）虔敬的'},'Retain the real awe-inspiring meaning; qualify only the reverential sense as archaic, while restoring ordinary very-bad/unpleasant coverage.');
+word('best',{meaningEn:'(adj.) of the highest quality or most suitable; (adv.) in the most effective way; (n.) the finest person or thing, or one’s maximum effort; (v.) to defeat or outdo.',meaningZh:'（形容詞）最好的；（副詞）最好地；（名詞）最好的人事物；最大努力（do one’s best）；（動詞）勝過；打敗'},'Cover the existing four POS. Bested belongs to the separate defeat verb, never the good/well superlative or auxiliary. Preserve approved senses.');
+word('beat',{meaningZh:'（動詞）擊敗；打；（心臟）跳動；（名詞）心跳聲；敲打聲；拍子'},'Add the actual defeat meaning and separate existing verb and noun glosses; keep every original meaning.');
+word('defeat',{meaningEn:'(v.) to win against an opponent; to frustrate or prevent success; (n.) an unsuccessful ending to a struggle or contest.',usagePattern:'defeat an opponent; accept defeat; a defeat',usagePatternZh:'擊敗對手；接受失敗；一場敗仗'},'Restore the existing verb and replace unsupported defeat-to-V with an actual verb object and noun uses.');
+word('secret',{meaningZh:'（形容詞）祕密的；（名詞）祕密；機密；祕訣；祕方'},coverage);
+word('treatment',{meaningEn:'(n.) medical care; the way a person or thing is dealt with; the handling of a subject; services or arrangements for someone’s comfort, pleasure, or hospitality.'},'Remove the demonstrably miscopied treat-verb definitions from this noun-only entry. Preserve the complete original in this patch; retain Chinese hospitality meanings pending further scope review.');
+word('member',{meaningZh:'成員；會員；肢；肢體',meaningEn:'a person who belongs to a group, club, or organization; a body part or organ, especially a limb.',usagePatternZh:'……的一員；成為成員；家庭成員'},'Remove only the stray separator, retain the genuine limb sense, and replace literal 名詞的一員 with a meaningful paired gloss.');
+const posRows=[['EX69bc14f5','n.','catch'],['EX3a967bd6','v.','circle'],['EX73bfdbd4','adv.','straight'],['EXfa49a096','v.','sleep'],['EXe327449f','v.','major'],['EX3b1ac2d4','n.','best'],['EX6ef9d9f4','n.','secret'],['EXd3a8dd85','n.','secret'],['EX7a99f6ef','v.','team']];
+for(const [id,pos,w] of posRows)add('examples',id,{sensePos:pos},'Narrow the actual cloze target POS in this unchanged full sentence; do not change headword POS or approved phrase senses.',mw(w),['sentenceEn','blankSentence','answer']);
+for(const id of ['EX9ca9ff7c','EX29b9c9e0','EXad7b1cc9','EX40136c6f','EX69d2d8c2','EXcbb98e6f','EX77ed7433'])add('examples',id,{status:'reviewed'},'English, Chinese, cloze reconstruction and this specific practice use checked. This does not identify the practice as verbatim official exam text.','Exact existing sentence/cloze comparison; corresponding dictionary sense',['sentenceEn','sentenceZh','blankSentence','answer']);
+for(const [id,note] of [['W000516-1','2026-11-05：主要的，核對 main reason 練習及詞典形容詞義；僅本義，不代表整詞全部欄位通過。'],['W000516-2','2026-11-05：詞典明列公共設施主幹管線名詞義，保留水、電、瓦斯範圍；不因低頻而刪義，不代表整詞通過。'],['W000536-1','2026-11-05：核對團體成員名詞與既有練習；另有肢體義，保留於詞頭，不混為本句義。']])add('senses',id,{status:'reviewed',note},'Individually verify this sense and remove an unsupported deletion recommendation; preserve headword status.',mw(id.startsWith('W000516')?'main':'member'));
+const q='https://www.ceec.edu.tw/files/file_pool/1/0j076574893317534748/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf';
+const a='https://www.ceec.edu.tw/files/file_pool/1/0j076574893773665710/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf';
+for(const [id,number,option,form,context] of [['W001765-1',33,'F','secret','secret plans 修飾革命計畫，祕密的'],['W000840-1',34,'G','successful','革命結果成功，形容詞'],['W000917-1',35,'J','treats','幸運餅等令人愉快的食物，名詞複數']]){
+ add('senses',id,{status:'reviewed',examEvidence:'107學年度學測英文 文意選填 Q'+number+'；官方答案 '+option+'＝'+form+'；試題 '+q+'；答案 '+a,note:'2026-11-05：已實讀官方試題及答案文字層，印刷第3頁，'+context+'。既有練習另寫，不是本題原文；僅核此考點來源，不擴為整詞認證。'},'Read the official question context, option and answer, not merely the answer letter. Existing practice wording is preserved.',q+' ; '+a);
+}
+write(root+'LV1-U22-patches.json',{baseCommit:'29cfc684d7a11b07f09988c478d30358830f1951',priorCheckpoint:'1d73cab2e6ec3c5e95423ad868b153d6a3c13aac',unit:'LV1-U22',scope:'79 source pairs, 66 formal words and 86 unique examples read; exact individual corrections only, no headword POS/status, English, cloze or answer changes.',patches});
+const example=data.examples.find(x=>x.exampleId==='EX93dc7fe9');assert.equal(example.sentenceEn,'He chose the blue shirt instead of the red one.');assert.equal(example.sentenceZh,'他選了藍色襯衫，而不是紅色的。');
+const translationBefore=Object.fromEntries(['word','sentenceEn','blankSentence','answer','sentenceZh'].map(k=>[k,example[k]]));
+const translationAfter={sentenceZh:'他選了藍色上衣，而不是紅色的。'};
+write(root+'VERIFIED-U22-TRANSLATION-SOURCES.json',{facts:[{exampleId:example.exampleId,before:translationBefore,after:translationAfter,evidence:[{url:mw('shirt'),retrieval:'direct_dictionary_page',support:'Shirt is broader than a collared shirt; the exact 1254-pixel illustration shows crew-neck short-sleeved shirts. 上衣 preserves the original English without adding a collar.'}],scope:'Only this Chinese string; exact unchanged headword, English, blank and answer guards.'}]});
+write(root+'LV1-U22-translation-precision.json',{baseCommit:'29cfc684d7a11b07f09988c478d30358830f1951',unit:'LV1-U22',patches:[{dataset:'examples',key:'exampleId',id:example.exampleId,before:translationBefore,after:translationAfter,reason:'The original English shirt covers the visible T-shirts; remove the unsupported collared-shirt specificity from Chinese only.',evidence:mw('shirt')+' ; LV1-U22-46 original 1254 × 1254 image'}]});
+const researchFile=root+'source-followup-candidates/U22-U25-PUBLISHED-VERB-FORMS-VERIFICATION.json';
+const research=read(researchFile);
+const ids='W000149 W000915 W000167 W004858 W000196 W000788 W000165 W000641 W001771 W001521 W001450 W000818 W000089 W001081 W003261 W000917 W000860'.split(' ');
+const facts=ids.map(id=>{
+ const row=structuredClone(data.words.find(w=>w.wordId===id));assert(!Object.hasOwn(row,'verbForms'));assert(row.pos.includes('v.'));
+ const e=research.entries.find(e=>e.wordId===id);assert.equal(e.researchStatus,'verified_candidate');
+ for(const p of patches.filter(p=>p.dataset==='words'&&p.id===id))Object.assign(row,p.after);
+ const forms={...e.proposedVerbForms,status:'approved'};assert.equal(forms.base,row.word);
+ return {wordId:id,word:row.word,verbForms:forms,nonFormRowSha256:sha(row),nonFormRow:row,evidence:e.evidence,restriction:e.homographAndVariantRestrictions,applicableSense:e.applicableSense,researchFile};
+});
+write(root+'VERIFIED-U22-VERB-FORMS-SOURCES.json',{priorCheckpoint:'1d73cab2e6ec3c5e95423ad868b153d6a3c13aac',scope:'Exactly 17 genuinely absent fields, after the precise U22 word patches. No whole-word approval. Bested only belongs to the defeat verb; beat uses the standard participle beaten.',facts});
+write(root+'LV1-U22-verified-forms-patches.json',{baseCommit:'29cfc684d7a11b07f09988c478d30358830f1951',unit:'LV1-U22',patches:facts.map(f=>({dataset:'words',key:'wordId',id:f.wordId,before:{verbForms:{$absent:true}},after:{verbForms:f.verbForms},reason:'Add only this explicitly sourced missing verbForms key. Exact entire non-form row guard; reverse by deletion, not null.',evidence:f.verbForms.sourceRef}))});
+console.log(JSON.stringify({mainRows:patches.length,mainFields:patches.reduce((n,p)=>n+Object.keys(p.after).length,0),words:patches.filter(p=>p.dataset==='words').length,pos:posRows.length,practiceStatuses:7,senses:6,translation:1,forms:facts.length}));

@@ -1,0 +1,766 @@
+{
+  "unit": "LV2-U33",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "baseCheckpoint": "085af670d4206cb1109d2ded1f2a1c05b52e9c22",
+  "scope": "Exact recorded fields compared with the unchanged before snapshot; no product application in this generator.",
+  "patches": [
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001788",
+      "before": {
+        "meaningEn": "(n.) a sudden strong feeling of surprise or distress caused by something unexpected; (v.) to cause someone to feel this way",
+        "meaningZh": "（名詞）震驚；震動；衝擊；（動詞）使震驚；使震動"
+      },
+      "after": {
+        "meaningEn": "(n.) a sudden strong feeling of surprise or distress caused by something unexpected; (v.) to cause someone to feel this way; also (n.), the physical effect of an electric current passing through the body.",
+        "meaningZh": "（名詞）震驚；震動；衝擊；（動詞）使震驚；使震動；（名詞）電擊；觸電"
+      },
+      "reason": "Cover the actually printed electric-shock noun while retaining emotional and physical shock. Restore the electric-shock sense without changing the headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/shock; https://www.collinsdictionary.com/dictionary/english/shock"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001565",
+      "before": {
+        "meaningEn": "horny plate covering and protecting part of the dorsal surface of the digits; a thin pointed piece of metal that is hammered into materials as a fastener",
+        "meaningZh": "釘子；指甲；用釘釘牢；使固定",
+        "usagePattern": "a/the nail; nail of N",
+        "usagePatternZh": "指甲／釘子；……的指甲／釘子"
+      },
+      "after": {
+        "meaningEn": "horny plate covering and protecting part of the dorsal surface of the digits; a thin pointed piece of metal that is hammered into materials as a fastener; separate verb use: to fasten something with nails.",
+        "meaningZh": "（名詞）釘子；指甲；（另有動詞用法）用釘釘牢；使固定",
+        "usagePattern": "drive/hammer a nail into N; nail A to B; the final nail in the coffin",
+        "usagePatternZh": "把釘子釘進……；把 A 釘在 B 上；最後的致命一擊"
+      },
+      "reason": "Restore the printed verb separately from the n.-only headword; do not add verbForms or expand the headword POS. Make the separately verified verb visible as a verb in the Chinese field, while retaining the n.-only formal headword. Use the actually printed constructions instead of generic noun templates.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/nail; https://www.collinsdictionary.com/dictionary/english/nail; https://www.collinsdictionary.com/dictionary/english/nail"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001858",
+      "before": {
+        "meaningEn": "(n.) a period when workers stop working to protest about pay or conditions; (v.) to hit someone or something hard",
+        "meaningZh": "罷工；打擊；毆打；打"
+      },
+      "after": {
+        "meaningEn": "(n.) a period when workers stop working to protest about pay or conditions; (v.) to hit someone or something hard; also (v.), to stop work as a protest or to occur suddenly to someone as an idea; (n.), a blow or a lightning impact.",
+        "meaningZh": "罷工；打擊；毆打；打；（動詞）突然想起"
+      },
+      "reason": "Cover the printed stop-work, sudden-thought and blow meanings without deleting the existing noun or verb. Restore the printed sudden-thought sense.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/strike; https://www.collinsdictionary.com/dictionary/english/strike"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001212",
+      "before": {
+        "meaningEn": "a large black bird with a harsh call; the loud cry made by a rooster"
+      },
+      "after": {
+        "meaningEn": "a large black bird with a harsh call; the loud cry made by a rooster; also (n., rare), a crowbar; separate verb use: to make a rooster's characteristic cry."
+      },
+      "reason": "Retain the genuine crowbar noun and distinguish the printed crowing verb without changing the n.-only headword.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/crow"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001275",
+      "before": {
+        "meaningEn": "a bird of the pigeon family, often used as a symbol of peace",
+        "meaningZh": "鴿子；dive的過去式"
+      },
+      "after": {
+        "meaningEn": "a bird of the pigeon family, often used as a symbol of peace; also (n., politics), a person favoring peaceful policies; dove, with a different pronunciation, is also a past form of dive.",
+        "meaningZh": "鴿子；（政治）溫和派人士／鴿派；（另讀 /doʊv/）dive 的過去式"
+      },
+      "reason": "Cover the printed political noun and retain the genuine separate dive form. Separate the political noun from the differently pronounced dive form.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/dove; https://www.collinsdictionary.com/dictionary/english/dove"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001287",
+      "before": {
+        "meaningEn": "a large, powerful bird with a hooked beak and keen eyesight that hunts small animals"
+      },
+      "after": {
+        "meaningEn": "a large, powerful bird with a hooked beak and keen eyesight that hunts small animals; also, a representation of an eagle used as a symbol or emblem."
+      },
+      "reason": "Retain and support the existing emblem noun rather than deleting it.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/eagle"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001183",
+      "before": {
+        "meaningEn": "to examine two or more things to see how they are similar or different; to describe something as being similar to something else"
+      },
+      "after": {
+        "meaningEn": "to examine two or more things to see how they are similar or different; to describe something as being similar to something else; also, to be as good as or measure up to another person or thing."
+      },
+      "reason": "Cover the already printed intransitive A does not compare with B construction.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/compare"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001459",
+      "before": {
+        "meaningEn": "not depending on or controlled by other people or things",
+        "meaningZh": "獨立自主者；無黨派者；獨立的；有主見的"
+      },
+      "after": {
+        "meaningEn": "not depending on or controlled by other people or things; separate noun use: an independent person, especially a person not affiliated with a political party.",
+        "meaningZh": "（形容詞）獨立的；有主見的；（另有名詞用法）獨立自主者；無黨派者"
+      },
+      "reason": "Keep the genuine noun already in the Chinese summary without expanding the adj.-only headword. Keep the noun meanings visibly separate from the actual adjective headword.",
+      "evidence": "https://www.merriam-webster.com/dictionary/independent; https://www.merriam-webster.com/dictionary/independent"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001789",
+      "before": {
+        "meaningEn": "to fire a bullet or other object from a gun or other weapon",
+        "meaningZh": "射擊；狩獵；芽；射傷"
+      },
+      "after": {
+        "meaningEn": "to fire a bullet or other object from a gun or other weapon; also (v.), to photograph or film something; (n.), new growth such as a young plant stem or bud.",
+        "meaningZh": "射擊；狩獵；芽；射傷；（動詞）拍攝；（名詞）嫩芽；幼苗"
+      },
+      "reason": "Cover the printed filming verb and shoot noun while retaining firing a weapon. Restore the printed filming and young-growth meanings.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/shoot; https://www.collinsdictionary.com/dictionary/english/shoot"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001792",
+      "before": {
+        "meaningZh": "發射；炮彈；射擊；射手",
+        "usagePatternZh": "試一試；流感疫苗注射；嘗試某事"
+      },
+      "after": {
+        "meaningZh": "發射；炮彈；射擊；射手；注射；嘗試",
+        "usagePatternZh": "試一試；流感疫苗注射；向……射擊／嘗試……"
+      },
+      "reason": "Restore the injection and attempt nouns already supported by the English definition and actual examples. Keep both the shooting and attempt readings of take a shot at, rather than implying only one.",
+      "evidence": "https://www.merriam-webster.com/dictionary/shot; https://www.merriam-webster.com/dictionary/shot"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002003",
+      "before": {
+        "meaningEn": "the period of someone's life when they are young, especially before becoming an adult",
+        "meaningZh": "年輕；青年時代；青年們；青春"
+      },
+      "after": {
+        "meaningEn": "the period of someone's life when they are young, especially before becoming an adult; also, a young person, especially a young man; collectively, young people.",
+        "meaningZh": "年輕；青年時代；青年們；青春；（可數）年輕人；年輕男子"
+      },
+      "reason": "Cover the countable young-person and collective meanings already printed and used in the examples. Distinguish a youth from uncountable youth and collective the youth.",
+      "evidence": "https://www.merriam-webster.com/dictionary/youth; https://www.merriam-webster.com/dictionary/youth"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001894",
+      "before": {
+        "meaningEn": "the time of life between the ages of 12 and 20; all the numbers that end in -teen; a juvenile between the onset of puberty and maturity; being of the age 13 through 19",
+        "meaningZh": "十三歲到十九歲；憤怒；悲哀",
+        "usagePattern": "a/the teens; teens of N",
+        "usagePatternZh": "青少年時期；……的青少年"
+      },
+      "after": {
+        "meaningEn": "(plural noun) the years from thirteen through nineteen, or the numbers thirteen through nineteen; teen also means a teenager or relates to teenagers; separate archaic or dialectal teen noun: distress, anger, or grief.",
+        "meaningZh": "十三歲到十九歲（teens，複數）；（另有古語／方言 teen 名詞）憤怒；悲哀",
+        "usagePattern": "in one's teens; early/late teens; teens and adults",
+        "usagePatternZh": "在十三至十九歲時；青少年早期／晚期；青少年與成年人"
+      },
+      "reason": "State the age interval explicitly and retain the sourced archaic/dialectal anger/grief homograph; this is not evidence that those old meanings never existed.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/teen; https://www.merriam-webster.com/dictionary/teen"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001014",
+      "before": {
+        "usagePatternZh": "青少年與年輕人；全票／成人票；像對待大人一樣對待某人"
+      },
+      "after": {
+        "usagePatternZh": "年輕成年人（出版分類也可指青少年）；成人票／全票；像對待大人一樣對待某人"
+      },
+      "reason": "Clarify ordinary adult usage while preserving the independently attested publishing-category sense of young adult; a precision refinement, not a claim that the old phrase was impossible.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/adult; https://www.collinsdictionary.com/dictionary/english/young-adult"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001299",
+      "before": {
+        "meaningEn": "a person who is older than you are; any of numerous shrubs or small trees of temperate and subtropical northern hemisphere having white flowers and berrylike fruit",
+        "usagePattern": "an/the elder; elder of N; be elder",
+        "usagePatternZh": "一位長者；……的長輩；是較年長的"
+      },
+      "after": {
+        "meaningEn": "a person who is older than you are; any of numerous shrubs or small trees of temperate and subtropical northern hemisphere having white flowers and berrylike fruit; also (adj.), older or born earlier; the elder tree is a separate noun homograph.",
+        "usagePattern": "one's elder brother/sister; respect one's elders; a village elder",
+        "usagePatternZh": "某人的哥哥／姊姊；尊敬長輩；村中長者"
+      },
+      "reason": "Restore the actual adjective while preserving the genuine botanical homograph. Replace the unqualified be elder template with supported family/adjective and elder/noun constructions.",
+      "evidence": "https://www.merriam-webster.com/dictionary/elder; https://www.merriam-webster.com/dictionary/elder"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001380",
+      "before": {
+        "meaningZh": "向前的；早的；迅速的；在前的"
+      },
+      "after": {
+        "meaningZh": "向前的；早的；迅速的；在前的；（名詞）前鋒；（動詞）轉寄"
+      },
+      "reason": "Restore the printed noun and verb already present in the English definition.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/forward"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001062",
+      "before": {
+        "meaningEn": "directed or facing toward the back or rear; (used of temperament or behavior) marked by a retiring nature",
+        "meaningZh": "向後地；相反地；向後的；相反的"
+      },
+      "after": {
+        "meaningEn": "directed or facing toward the back or rear; (used of temperament or behavior) marked by a retiring nature; also, less advanced in development; separate adverb use: toward the back or in reverse.",
+        "meaningZh": "（形容詞）向後的；相反的；落後的；（另有副詞用法）向後地；相反地"
+      },
+      "reason": "Restore the printed less-advanced adjective and label the genuine adverb separately; retain the shy/retiring adjective. Separate adjective and adverb readings without expanding the formal POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/backward; https://www.collinsdictionary.com/dictionary/english/backward"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001286",
+      "before": {
+        "meaningEn": "the social force that binds you to the courses of action demanded by that force; every opportunity, an obligation; every possession, a du...; work that you are obliged to perform for moral or legal reasons",
+        "usagePattern": "a/the duty; duty of N",
+        "usagePatternZh": "一項職責；……的職責"
+      },
+      "after": {
+        "meaningEn": "the social force that binds you to the courses of action demanded by that force; every opportunity, an obligation; every possession, a duty; work that you are obliged to perform for moral or legal reasons; also, a tax charged on goods, or respectful conduct owed to parents or superiors.",
+        "usagePattern": "It is sb's duty to V; on duty; customs duty",
+        "usagePatternZh": "做……是某人的責任；值班中；關稅"
+      },
+      "reason": "Restore only the verifiable truncated word from the Rockefeller credo, keep the original definitions, and support the existing tax/respect meanings; do not invent a missing sentence.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/duty; https://www.merriam-webster.com/dictionary/duty; https://library.brown.edu/create/rock50/the-credo-of-john-d-rockefeller-jr/"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001188",
+      "before": {
+        "meaningZh": "情況；條件；使健康；以...爲條件"
+      },
+      "after": {
+        "meaningZh": "情況；條件；使健康；以...爲條件；（動詞）使習慣於；使形成某種反應"
+      },
+      "reason": "Restore the existing conditioning verb without removing physical condition or terms.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/condition"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001992",
+      "before": {
+        "meaningEn": "to want to know something or ask yourself questions about it; a feeling of surprise and admiration caused by something strange or beautiful"
+      },
+      "after": {
+        "meaningEn": "to want to know something or ask yourself questions about it; a feeling of surprise and admiration caused by something strange or beautiful; also (n.), a person, thing, or event that causes surprise or admiration, such as a marvel or miracle."
+      },
+      "reason": "Cover the printed countable wonder while retaining the feeling and wonder verb.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/wonder"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001629",
+      "before": {
+        "meaningEn": "of the highest possible standard, with no mistakes or faults; exactly right for a particular purpose or situation; (verb) to make something completely correct or as good as it can be",
+        "meaningZh": "完成時；完美的；完好的；理想的"
+      },
+      "after": {
+        "meaningEn": "of the highest possible standard, with no mistakes or faults; exactly right for a particular purpose or situation; (verb) to make something completely correct or as good as it can be; also (n., grammar), a perfect tense or form.",
+        "meaningZh": "完成時；完美的；完好的；理想的；（動詞）使完善；改善"
+      },
+      "reason": "Cover the printed grammatical noun as well as the existing adjective and verb. Restore the printed perfecting verb while retaining the perfect-tense noun.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/perfect; https://www.collinsdictionary.com/dictionary/english/perfect"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001445",
+      "before": {
+        "meaningZh": "理想；典範；觀念；思想"
+      },
+      "after": {
+        "meaningZh": "理想；典範；觀念；思想；（形容詞）理想的"
+      },
+      "reason": "Restore the adjective already present in the English definition and the actual ideal-place example.",
+      "evidence": "https://www.merriam-webster.com/dictionary/ideal"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001775",
+      "before": {
+        "meaningEn": "(n.) a feeling or awareness that something is true; the meaning of a word or expression; (v.) to become aware of something without being told directly",
+        "meaningZh": "感應；感覺；感官；意識"
+      },
+      "after": {
+        "meaningEn": "(n.) a feeling or awareness that something is true; the meaning of a word or expression; (v.) to become aware of something without being told directly; also (n.), one of the physical abilities such as hearing, smell, or taste.",
+        "meaningZh": "感應；感覺；感官；意識；（名詞）含意；意義；（動詞）察覺；意識到"
+      },
+      "reason": "Restore explicit sensory faculties without replacing meaning, awareness or the actual verb. Cover the actual make-sense noun and perceive verb.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/sense; https://www.collinsdictionary.com/dictionary/english/sense"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001440",
+      "before": {
+        "meaningEn": "(adj.) relating to or characteristic of people rather than animals or machines (n.) a person",
+        "meaningZh": "人；人類；人類的；似人類的"
+      },
+      "after": {
+        "meaningEn": "(adj.) relating to or characteristic of people rather than animals or machines (n.) a person; also (adj.), showing ordinary human qualities, weaknesses, or emotions.",
+        "meaningZh": "人；人類；人類的；似人類的；人性的"
+      },
+      "reason": "Cover the actual It is only human construction without erasing the human-form adjective. Restore the printed ordinary-human-quality adjective.",
+      "evidence": "https://www.merriam-webster.com/dictionary/human; https://www.merriam-webster.com/dictionary/human"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003488",
+      "before": {
+        "meaningEn": "diurnal bird of prey typically having short rounded wings and a long tail; an advocate of an aggressive policy on foreign relations",
+        "meaningZh": "鷹；掠奪者；鷹派成員；放鷹行獵"
+      },
+      "after": {
+        "meaningEn": "diurnal bird of prey typically having short rounded wings and a long tail; an advocate of an aggressive policy on foreign relations; also (n.), a predatory person; separate verb use: to hunt with hawks.",
+        "meaningZh": "（名詞）鷹；掠奪者；鷹派成員；（另有動詞用法）放鷹行獵"
+      },
+      "reason": "Retain the genuine predatory-person noun and the hawking verb separately from the formal n.-only headword. Do not misrepresent the existing hunting verb as another noun.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/hawk; https://www.collinsdictionary.com/dictionary/english/hawk"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001569",
+      "before": {
+        "meaningEn": "(of a child) badly behaved; disobedient"
+      },
+      "after": {
+        "meaningEn": "(of a child) badly behaved; disobedient; also, mildly indecent or related to sex."
+      },
+      "reason": "Retain the genuine existing improper/indecent adjective instead of deleting a less common sense.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/naughty"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004671",
+      "before": {
+        "usagePattern": "proclaim + N; proclaim to V",
+        "usagePatternZh": "宣佈……；宣佈去……"
+      },
+      "after": {
+        "usagePattern": "proclaim N; proclaim that S + V; proclaim sb king",
+        "usagePatternZh": "公開宣告……；宣告……（子句）；宣布某人為國王"
+      },
+      "reason": "Replace the unsupported generic proclaim-to-infinitive template with directly attested complements.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/proclaim"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005019",
+      "before": {
+        "usagePattern": "acclaim + N; acclaim to V; an/the acclaim",
+        "usagePatternZh": "稱讚……；稱讚去做……；一項喝采"
+      },
+      "after": {
+        "usagePattern": "be acclaimed for N/V-ing; be acclaimed as N; receive acclaim",
+        "usagePatternZh": "因……而受到讚揚；被譽為……；獲得讚譽"
+      },
+      "reason": "Replace acclaim-to-infinitive and an-acclaim templates; public praise is uncountable in the verified noun sense.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/acclaim"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002781",
+      "before": {
+        "meaningEn": "able to feel or perceive; readily perceived by the senses",
+        "meaningZh": "有感覺的；敏感的；明智的；可感覺的"
+      },
+      "after": {
+        "meaningEn": "able to feel or perceive; readily perceived by the senses; also, showing good judgment or suited to practical purposes such as comfort.",
+        "meaningZh": "有感覺的；敏感的；明智的；可感覺的；實用的"
+      },
+      "reason": "Restore the common reasonable/practical adjective while retaining perceptible and sensitive senses. Cover practical sensible shoes without claiming all such shoes are necessarily durable.",
+      "evidence": "https://www.merriam-webster.com/dictionary/sensible; https://www.merriam-webster.com/dictionary/sensible"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001057",
+      "before": {
+        "meaningEn": "(n.) a person who writes a book or other piece of writing; (v.) to write a book or other work"
+      },
+      "after": {
+        "meaningEn": "(n.) a person who writes a book or other piece of writing; (v.) to write a book or other work; also (n.), an originator or creator, or the writings of an author."
+      },
+      "reason": "Retain and support the genuine author-as-writings metonymy and creator noun.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/author"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003501",
+      "before": {
+        "meaningEn": "the quality of being humane",
+        "usagePattern": "a/the humanity; humanity of N",
+        "usagePatternZh": "人類／該人類；……的人性"
+      },
+      "after": {
+        "meaningEn": "the quality of being humane; also, the human race or the qualities of being human.",
+        "usagePattern": "all humanity; our common humanity; a man/woman of humanity",
+        "usagePatternZh": "全人類；我們共同的人性；富有人道精神的人"
+      },
+      "reason": "Cover the printed human-race and human-nature meanings alongside kindness. Use normal mass-noun constructions instead of an unqualified a humanity template.",
+      "evidence": "https://www.merriam-webster.com/dictionary/humanity; https://www.merriam-webster.com/dictionary/humanity"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002521",
+      "before": {
+        "meaningEn": "all of the living human inhabitants of the earth",
+        "meaningZh": "人類；男性",
+        "usagePattern": "a/the mankind; mankind of N",
+        "usagePatternZh": "人類；……的人類"
+      },
+      "after": {
+        "meaningEn": "mankind/humankind (n.): the human race; a separate sense of mankind refers to men as distinguished from women.",
+        "meaningZh": "人類；（mankind 另可指）男性",
+        "usagePattern": "all mankind/humankind; the future of humankind",
+        "usagePatternZh": "全人類；人類的未來"
+      },
+      "reason": "Keep the existing combined official identity, preserve the genuine male sense of mankind, and do not apply that sense to humankind.",
+      "evidence": "https://www.merriam-webster.com/dictionary/mankind; https://www.merriam-webster.com/dictionary/humankind"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003317",
+      "before": {
+        "meaningEn": "perceive intuitively or through some inexplicable perceptive powers; search by divining, as if with a rod",
+        "meaningZh": "神的；神聖的；非凡的；神學家"
+      },
+      "after": {
+        "meaningEn": "(adj.) relating to a god or to sacred things, or exceptionally good; (separate noun use) a theologian; (separate verb uses) perceive intuitively or through some inexplicable perceptive powers; search by divining, as if with a rod",
+        "meaningZh": "（形容詞）神的；神聖的；非凡的；（另有名詞用法）神學家"
+      },
+      "reason": "Supply the selected adjective and retain the genuine theologian noun and divining verbs as separate uses; do not expand headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/divine"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004972",
+      "before": {
+        "meaningEn": "Against; as, John Doe versus Richard Roe; -- chiefly; used in legal language, and abbreviated to v. or vs."
+      },
+      "after": {
+        "meaningEn": "Against, especially in a competition or lawsuit; in contrast with or compared with something."
+      },
+      "reason": "Restore the printed contrast/comparison use while preserving the legal and competitive uses.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/versus"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXf6d35b3b",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "Lightning struck the old tree in our backyard during last night's storm.",
+        "blankSentence": "Lightning _____ the old tree in our backyard during last night's storm.",
+        "answer": "struck"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Correct the actual cloze target in the complete unchanged sentence; preserve the formal headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/strike"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX211f3a6c",
+      "before": {
+        "sensePos": "adj.",
+        "sentenceEn": "Please forward this message to the rest of the team.",
+        "blankSentence": "Please _____ this message to the rest of the team.",
+        "answer": "forward"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Correct the actual cloze target in the complete unchanged sentence; preserve the formal headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/forward"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX3129ec35",
+      "before": {
+        "sensePos": "adj.",
+        "sentenceEn": "He is the fastest forward on our school soccer team.",
+        "blankSentence": "He is the fastest _____ on our school soccer team.",
+        "answer": "forward"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Correct the actual cloze target in the complete unchanged sentence; preserve the formal headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/forward"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXb100d3c9",
+      "before": {
+        "sensePos": "adj.",
+        "sentenceEn": "She has always tried to live up to her own ideals.",
+        "blankSentence": "She has always tried to live up to her own _____.",
+        "answer": "ideals"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Correct the actual cloze target in the complete unchanged sentence; preserve the formal headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/ideal"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXc6c386b3",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "I could sense that something was wrong the moment I walked in.",
+        "blankSentence": "I could _____ that something was wrong the moment I walked in.",
+        "answer": "sense"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Correct the actual cloze target in the complete unchanged sentence; preserve the formal headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/sense"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX16d002ab",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "Each individual student received personal feedback from the teacher.",
+        "blankSentence": "Each _____ student received personal feedback from the teacher.",
+        "answer": "individual"
+      },
+      "after": {
+        "sensePos": "adj."
+      },
+      "reason": "Correct the actual cloze target in the complete unchanged sentence; preserve the formal headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/individual"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXf68d39f8",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "Teachers should pay attention to the individual needs of each student.",
+        "blankSentence": "Teachers should pay attention to the _____ needs of each student.",
+        "answer": "individual"
+      },
+      "after": {
+        "sensePos": "adj."
+      },
+      "reason": "Correct the actual cloze target in the complete unchanged sentence; preserve the formal headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/individual"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX30aa2d93",
+      "before": {
+        "meaningHint": "區域；面積；範圍；空地",
+        "sentenceEn": "Frank is an expert in the area of marketing.",
+        "blankSentence": "Frank is an expert in the _____ of marketing.",
+        "answer": "area"
+      },
+      "after": {
+        "meaningHint": "領域（area of marketing：行銷領域）"
+      },
+      "reason": "Refine only the existing broad nonempty hint to the actual sentence; other legitimate meanings are retained.",
+      "evidence": "https://www.merriam-webster.com/dictionary/area"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX767c9c4c",
+      "before": {
+        "meaningHint": "區域；面積；範圍；空地",
+        "sentenceEn": "The hurricane caused a lot of damage in many areas of this country.",
+        "blankSentence": "The hurricane caused a lot of damage in many _____ of this country.",
+        "answer": "areas"
+      },
+      "after": {
+        "meaningHint": "地區"
+      },
+      "reason": "Refine only the existing broad nonempty hint to the actual sentence; other legitimate meanings are retained.",
+      "evidence": "https://www.merriam-webster.com/dictionary/area"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX083418d7",
+      "before": {
+        "status": "draft",
+        "sentenceEn": "Riding a bicycle downhill gives me a sensation of flying.",
+        "blankSentence": "Riding a bicycle downhill gives me a _____ of flying.",
+        "answer": "sensation"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Check the independent cycling practice without calling it the official111 exam sentence.",
+      "evidence": "https://www.merriam-webster.com/dictionary/sensation"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001858-1",
+      "before": {
+        "note": "待拆分；主表字義：罷工；打擊；毆打；打",
+        "status": "needs_check"
+      },
+      "after": {
+        "note": "已核此既有 n. 義項及完整英中例句；保留詞頭其他義項與整詞狀態，本義核對不等於整卡全部欄位通過。來源：https://www.collinsdictionary.com/dictionary/english/strike",
+        "status": "reviewed"
+      },
+      "reason": "Replace stale split-pending wording only for the existing verified senses.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/strike"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001858-2",
+      "before": {
+        "note": "另有：（想法）浮現，需要可加列｜待拆分；主表字義：罷工；打擊；毆打；打",
+        "status": "needs_check"
+      },
+      "after": {
+        "note": "已核此既有 v. 義項及完整英中例句；保留詞頭其他義項與整詞狀態，本義核對不等於整卡全部欄位通過。來源：https://www.collinsdictionary.com/dictionary/english/strike",
+        "status": "reviewed"
+      },
+      "reason": "Replace stale split-pending wording only for the existing verified senses.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/strike"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001775-1",
+      "before": {
+        "note": "待拆分；主表字義：感應；感覺；感官；意識",
+        "status": "needs_check"
+      },
+      "after": {
+        "note": "已核此既有 n. 義項及完整英中例句；保留詞頭其他義項與整詞狀態，本義核對不等於整卡全部欄位通過。來源：https://www.collinsdictionary.com/dictionary/english/sense",
+        "status": "reviewed"
+      },
+      "reason": "Replace stale split-pending wording only for the existing verified senses.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/sense"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001775-2",
+      "before": {
+        "note": "待拆分；主表字義：感應；感覺；感官；意識",
+        "status": "needs_check"
+      },
+      "after": {
+        "note": "已核此既有 v. 義項及完整英中例句；保留詞頭其他義項與整詞狀態，本義核對不等於整卡全部欄位通過。來源：https://www.collinsdictionary.com/dictionary/english/sense",
+        "status": "reviewed"
+      },
+      "reason": "Replace stale split-pending wording only for the existing verified senses.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/sense"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001440-1",
+      "before": {
+        "note": "待拆分；主表字義：人；人類；人類的；似人類的",
+        "status": "needs_check"
+      },
+      "after": {
+        "note": "已核此既有 adj. 義項及完整英中例句；保留詞頭其他義項與整詞狀態，本義核對不等於整卡全部欄位通過。來源：https://www.collinsdictionary.com/dictionary/english/human",
+        "status": "reviewed"
+      },
+      "reason": "Replace stale split-pending wording only for the existing verified senses.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/human"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001440-2",
+      "before": {
+        "note": "待拆分；主表字義：人；人類；人類的；似人類的",
+        "status": "needs_check"
+      },
+      "after": {
+        "note": "已核此既有 n. 義項及完整英中例句；保留詞頭其他義項與整詞狀態，本義核對不等於整卡全部欄位通過。來源：https://www.collinsdictionary.com/dictionary/english/human",
+        "status": "reviewed"
+      },
+      "reason": "Replace stale split-pending wording only for the existing verified senses.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/human"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W004775-1",
+      "before": {
+        "examEvidence": "學測111 文意選填Q30",
+        "note": "考點：身體或心理的感覺",
+        "status": "draft"
+      },
+      "after": {
+        "examEvidence": "學測111 文意選填Q30，印刷第3頁，B＝sensation；官方試題：https://www.ceec.edu.tw/files/file_pool/1/0m053357638065462325/02-111%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7.pdf；官方答案：https://www.ceec.edu.tw/files/file_pool/1/0m052625594764853905/02-111%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88..pdf",
+        "note": "已實讀官方 PDF 文字層題組、選項與答案：真人特技帶來真實感與刺激感受，即使 CGI 普及仍有需求。只核此名詞義來源；EX083418d7 是另寫的自行車下坡情境，不是原題引文。",
+        "status": "reviewed"
+      },
+      "reason": "Verify the exact official source and distinguish the unchanged independent practice.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0m053357638065462325/02-111%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7.pdf; https://www.ceec.edu.tw/files/file_pool/1/0m052625594764853905/02-111%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88..pdf"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "unit": "LV2-U47",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "baseCheckpoint": "d73d26d76e6337ff6dc7e539ded3157ae5f8a347",
+  "beforeCaptureCheckpoint": "952ffe7df0a2ede8e84933690785ed455a7cdab6",
+  "patches": [
+    {
+      "dataset": "notes",
+      "key": "noteId",
+      "id": "NX6eecafb1",
+      "before": {
+        "noteId": "NX6eecafb1",
+        "word": "somewhat",
+        "noteType": "grammar",
+        "title": "somewhat 的位置",
+        "content": "使用 somewhat 時，該字常置於形容詞與副詞之間，修飾該形容詞或副詞。",
+        "status": "approved"
+      },
+      "after": {
+        "content": "somewhat 常置於所修飾的形容詞或副詞之前，表示「有點、稍微」，如 somewhat different／somewhat more difficult。"
+      },
+      "evidence": "https://www.merriam-webster.com/dictionary/somewhat",
+      "reason": "Correct before adjective/adverb, not between adjective and adverb; preserve title/type/status."
+    },
+    {
+      "dataset": "notes",
+      "key": "noteId",
+      "id": "NX13355b91",
+      "before": {
+        "noteId": "NX13355b91",
+        "word": "respond",
+        "noteType": "grammar",
+        "title": "respond that...",
+        "content": "回答／應為……。",
+        "status": "approved"
+      },
+      "after": {
+        "content": "respond that...：回答／回應說……。"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/respond",
+      "reason": "Correct the exact clause construction Chinese, preserve title/type/status and English."
+    },
+    {
+      "dataset": "notes",
+      "key": "noteId",
+      "id": "NXfbff21c4",
+      "before": {
+        "noteId": "NXfbff21c4",
+        "word": "apparent",
+        "noteType": "usage",
+        "title": "apparent",
+        "content": "It is apparent that ...。",
+        "status": "approved"
+      },
+      "after": {
+        "content": "It is apparent that ...：很明顯……。"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/apparent",
+      "reason": "Supply Chinese explanation of the existing construction, no new example."
+    },
+    {
+      "dataset": "notes",
+      "key": "noteId",
+      "id": "NX2d0d9d33",
+      "before": {
+        "noteId": "NX2d0d9d33",
+        "word": "characteristic",
+        "noteType": "usage",
+        "title": "characteristic of",
+        "content": "be characteristic of …：是…的特徵。",
+        "status": "approved"
+      },
+      "after": {
+        "content": "be characteristic of …：是……所特有的；是……的典型特徵。"
+      },
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/characteristic",
+      "reason": "Clarify the adjective characteristic of construction while retaining English and the former typical-feature sense."
+    }
+  ]
+}

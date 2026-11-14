@@ -1,4 +1,5 @@
 import { contentDb } from "./contentDb";
+import type { Table } from 'dexie';
 import type {
   ExampleRecord,
   ExamPriorityRecord,
@@ -81,6 +82,30 @@ function validateBundle(meta: DataMeta, bundle: ContentBundle): void {
   }
 }
 
+function sameContentValue(left:unknown,right:unknown):boolean {
+  if(Object.is(left,right))return true;
+  if(!left||!right||typeof left!=='object'||typeof right!=='object')return false;
+  if(Array.isArray(left)||Array.isArray(right))return Array.isArray(left)&&Array.isArray(right)&&left.length===right.length&&left.every((value,index)=>sameContentValue(value,right[index]));
+  if(Object.getPrototypeOf(left)!==Object.getPrototypeOf(right))return false;
+  const keys=Object.keys(left);
+  return keys.length===Object.keys(right).length&&keys.every(key=>Object.hasOwn(right,key)&&sameContentValue((left as Record<string,unknown>)[key],(right as Record<string,unknown>)[key]));
+}
+
+async function replaceChangedRows<T>(table: Table<T, string>, incoming: T[], key: (row:T)=>string): Promise<void> {
+  // Compare stored rows rather than read-time editorial projections. Keep full
+  // replacement semantics, including deleted rows and removed optional fields.
+  const existing = await table.toCollection().raw().toArray();
+  const previous = new Map(existing.map(row => [key(row), row]));
+  // bulkPut used the last incoming value for a repeated key. Resolve that value
+  // before comparing with storage, even when the last value equals the old row.
+  const finalIncoming = new Map(incoming.map(row => [key(row), row]));
+  const incomingIds = new Set(finalIncoming.keys());
+  const removed = existing.map(key).filter(id => !incomingIds.has(id));
+  const changed = [...finalIncoming.values()].filter(row => !sameContentValue(previous.get(key(row)),row));
+  if (removed.length) await table.bulkDelete(removed);
+  if (changed.length) await table.bulkPut(changed);
+}
+
 async function installBundle(meta: DataMeta, bundle: ContentBundle): Promise<void> {
   validateBundle(meta, bundle);
   await contentDb.transaction(
@@ -98,24 +123,14 @@ async function installBundle(meta: DataMeta, bundle: ContentBundle): Promise<voi
     ],
     async () => {
       await Promise.all([
-        contentDb.words.clear(),
-        contentDb.senses.clear(),
-        contentDb.examples.clear(),
-        contentDb.relations.clear(),
-        contentDb.morphemes.clear(),
-        contentDb.notes.clear(),
-        contentDb.examPriorities.clear(),
-        contentDb.media.clear(),
-      ]);
-      await Promise.all([
-        contentDb.words.bulkPut(bundle.words),
-        contentDb.senses.bulkPut(bundle.senses),
-        contentDb.examples.bulkPut(bundle.examples),
-        contentDb.relations.bulkPut(bundle.relations),
-        contentDb.morphemes.bulkPut(bundle.morphemes),
-        contentDb.notes.bulkPut(bundle.notes),
-        contentDb.examPriorities.bulkPut(bundle.examPriorities),
-        contentDb.media.bulkPut(bundle.media),
+        replaceChangedRows(contentDb.words,bundle.words,row=>row.wordId),
+        replaceChangedRows(contentDb.senses,bundle.senses,row=>row.senseId),
+        replaceChangedRows(contentDb.examples,bundle.examples,row=>row.exampleId),
+        replaceChangedRows(contentDb.relations,bundle.relations,row=>row.relationId),
+        replaceChangedRows(contentDb.morphemes,bundle.morphemes,row=>row.rowId),
+        replaceChangedRows(contentDb.notes,bundle.notes,row=>row.noteId),
+        replaceChangedRows(contentDb.examPriorities,bundle.examPriorities,row=>row.wordId),
+        replaceChangedRows(contentDb.media,bundle.media,row=>row.assetId),
       ]);
       await contentDb.meta.put({
         key: "current",

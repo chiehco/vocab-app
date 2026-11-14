@@ -16,6 +16,7 @@ import { saveWordList, readWordList } from '../modes/wordLists';
 import type { WordRecord } from '../../db/types';
 import pack from '../../../public/data/v1/sa-pack.json';
 import recoveredBaseline from '../../../scripts/fixtures/recovered-unit-integration-baseline.json';
+import {beforeUnitAudit} from '../../db/unitAudit.testSupport';
 
 const live = curriculumUnits.filter(u => u.publisher === 'liveabc');
 const rows = live.flatMap(u => u.items);
@@ -40,7 +41,7 @@ it('preserves the former Ivy identities, adds three accepted units and retains a
     if (!file.endsWith('.json') || file === 'sa-pack.json') continue;
     const checked = recoveredBaseline.fullPublicFiles.find(row => row.name === file);
     expect(checked, file).toBeDefined();
-    expect(createHash('sha256').update(JSON.stringify(stable(JSON.parse(readFileSync(`public/data/v1/${file}`, 'utf8'))))).digest('hex'), file).toBe(checked!.payloadHash);
+    expect(createHash('sha256').update(JSON.stringify(stable(beforeUnitAudit(file,JSON.parse(readFileSync(`public/data/v1/${file}`, 'utf8')))))).digest('hex'), file).toBe(checked!.payloadHash);
   }
   // The starter's exact retained payloads and 51 allowed additions are checked in
   // recoveredUnitUpdate.test.ts; compare fixed evidence, never the moving HEAD.

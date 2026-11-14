@@ -1,0 +1,335 @@
+{
+  "unit": "LV1-U24",
+  "checkpointAt": "2026-11-05T22:28:00.313Z",
+  "priorCheckpoint": "3e1863874f3cdd5ef78965baaa5e158d22fd0e8c",
+  "priorCheckpointFullCi": {
+    "commit": "3e1863874f3cdd5ef78965baaa5e158d22fd0e8c",
+    "run": 42116648279,
+    "job": 127557946978,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42116648279/job/127557946978",
+    "status": "completed",
+    "conclusion": "success",
+    "checkoutShaMatched": true,
+    "evidence": "GitHub job metadata and decoded full job logs actually read; test and build summaries extracted.",
+    "vitest": {
+      "files": 216,
+      "passed": 1754,
+      "total": 1754,
+      "summaryAt": "2026-11-05T22:09:00Z"
+    },
+    "pythonBatches": [
+      14,
+      7,
+      34,
+      10
+    ],
+    "lint": "success",
+    "typecheck": "success",
+    "pageviews": "success",
+    "build": "success",
+    "lastBuildSummaryAt": "2026-11-05T22:09:40Z"
+  },
+  "newCheckpointFullCi": {
+    "commit": "c38b0b1ee4aa5f8cf6f91c2122471343b7f25266",
+    "run": 42122011505,
+    "job": 127576528663,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42122011505/job/127576528663",
+    "status": "completed",
+    "conclusion": "success",
+    "checkoutShaMatched": true,
+    "testFiles": 216,
+    "tests": 1756,
+    "python": [
+      14,
+      7,
+      36,
+      10
+    ],
+    "steps": [
+      {
+        "name": "Set up job",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/checkout@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/setup-node@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm ci",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm ci --prefix services/pageviews-cloudflare",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm test --prefix services/pageviews-cloudflare",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/setup-python@v5",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m pip install openpyxl==3.1.5 Pillow==12.0.0",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m unittest discover -s scripts -p 'test_apply_lv3_*.py'",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m unittest discover -s scripts -p 'test_apply_lv4_*.py'",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m unittest discover -s scripts -p 'test_apply_unit_audit.py'",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m unittest discover -s scripts -p 'test_build_sa_pack_lv5_legacy.py'",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python scripts/prepare_recovered_unit_drafts.py --check",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python scripts/integrate_recovered_units.py --check",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm run lint",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm run typecheck",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm run test -- --maxWorkers=1 --testTimeout=15000",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm run build",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/setup-python@v5",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/setup-node@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/checkout@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Complete job",
+        "conclusion": "success"
+      }
+    ],
+    "logEvidence": [
+      "2026-11-05T22:30:12.7929829Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +c38b0b1ee4aa5f8cf6f91c2122471343b7f25266:refs/remotes/origin/content/unit-audit-20261105",
+      "2026-11-05T22:30:22.5678448Z  * [new ref]         c38b0b1ee4aa5f8cf6f91c2122471343b7f25266 -> origin/content/unit-audit-20261105",
+      "2026-11-05T22:30:23.4495966Z c38b0b1ee4aa5f8cf6f91c2122471343b7f25266",
+      "2026-11-05T22:31:04.4234650Z Ran 14 tests in 23.412s",
+      "2026-11-05T22:31:19.7674112Z Ran 7 tests in 15.181s",
+      "2026-11-05T22:31:42.9920695Z Ran 36 tests in 23.109s",
+      "2026-11-05T22:31:43.1756448Z Ran 10 tests in 0.113s",
+      "2026-11-05T22:42:43.1609297Z  Test Files  216 passed (216)",
+      "2026-11-05T22:42:43.1616305Z       Tests  1756 passed (1756)",
+      "2026-11-05T22:43:17.4278701Z ✓ built in 3.66s"
+    ]
+  },
+  "state": "precise_corrections_saved_actual_app_and_local_checks_passed",
+  "scope": {
+    "retainedPairs": 52,
+    "publishedPairs": 52,
+    "formalWords": 49,
+    "uniqueExamples": 69,
+    "noFormalId": 3,
+    "sourceClozeReconstructions": 69,
+    "notesRead": 53
+  },
+  "counts": {
+    "mainRows": 29,
+    "mainFields": 52,
+    "wordRows": 20,
+    "clozePos": 7,
+    "practiceSentencesReviewed": 2,
+    "newVerbFormKeys": 7,
+    "usageNoteFollowups": 2,
+    "carrotDefinitionFields": 1,
+    "totalPatchRows": 39,
+    "totalFields": 62,
+    "changedUsagePages": 17,
+    "imageReplacements": 0
+  },
+  "manifests": [
+    "LV1-U24-patches.json",
+    "LV1-U24-verified-forms-patches.json",
+    "LV1-U24-usage-note-followup.json",
+    "LV1-U24-carrot-definition.json"
+  ],
+  "evidence": {
+    "sources": "LV1-U24-source-research.json",
+    "pixels": "LV1-U24-original-image-review.json",
+    "actualApp": "validation/U24-reopen-summary.json",
+    "exactInverse": "validation/U24-exact-inverse.json"
+  },
+  "localValidation": {
+    "unit": "LV1-U24",
+    "state": "passed",
+    "recordedAt": "2026-11-05T22:27:59.587Z",
+    "checks": [
+      {
+        "exitCode": 0,
+        "check": "regression"
+      },
+      {
+        "exitCode": 0,
+        "check": "python"
+      },
+      {
+        "exitCode": 0,
+        "check": "lint"
+      },
+      {
+        "exitCode": 0,
+        "check": "typecheck"
+      },
+      {
+        "exitCode": 0,
+        "check": "build"
+      }
+    ],
+    "originalLocalTestTimeoutPreserved": true,
+    "maxWorkers": 1,
+    "regression": {
+      "files": 11,
+      "passed": 140,
+      "total": 140
+    },
+    "pythonBoundaryTests": 36,
+    "writerFinalLintExitCode": 0,
+    "lintWarning": "Only the pre-existing unused curriculum variable in save_u16_audit_checkpoint.mjs; unchanged.",
+    "build": {
+      "seconds": 16.7,
+      "pwaPrecacheEntries": 268
+    },
+    "logs": [
+      {
+        "path": "output/unit-audit-20261105/U24-complete-regression.txt",
+        "sha256": "2385ad318bf037f253013c1083a5671fec2c3e239e14ae6b45f4c5b44e51060d"
+      },
+      {
+        "path": "output/unit-audit-20261105/U24-complete-python-retry.txt",
+        "sha256": "c18ae250393496cc8c6148a4a7bec203e2c5ee1aa3cebe1a71af98a8aa15c572"
+      },
+      {
+        "path": "output/unit-audit-20261105/U24-lint.txt",
+        "sha256": "888a42f6c7f512ba1e82976cdd04c02535dff24230cd962d095590259218b3ed"
+      },
+      {
+        "path": "output/unit-audit-20261105/U24-final-writer-lint.txt",
+        "sha256": "ccabb7869f4cb42e101c297b8547ee1f73b0920624a413ad76fd804b17f8dd29"
+      },
+      {
+        "path": "output/unit-audit-20261105/U24-typecheck.txt",
+        "sha256": "da91f4c430838409de74534c4d8bed41445d7c7283163b2a63c446dde034587b"
+      },
+      {
+        "path": "output/unit-audit-20261105/U24-build.txt",
+        "sha256": "5993b15a174aa16cba0a3ad9a5b15f568ad3d445393fa5482caa0d403581ac60"
+      }
+    ],
+    "operationRecovery": {
+      "initialRunnerExitCode": 1,
+      "reason": "PowerShell treated native unittest progress on stderr as an invocation error before a terminal result could be captured. No matching Python process remained; rerun obtained the complete36-test OK and native exit0. No test assertion or timeout was weakened."
+    },
+    "scope": "Final saved content after the two usage/note fields and single carrot definition correction; earlier139-test success retained as earlier worktree evidence."
+  },
+  "preserved": {
+    "headwordIdsPosWholeWordStatuses": true,
+    "allExampleEnglishClozeAnswersAndChinese": true,
+    "originalImageAndApprovalHashes": true,
+    "allExistingHints": true,
+    "emptyHints": 66,
+    "nonemptyHints": 3,
+    "all726PublishedPairs": true,
+    "normalInstallProgressTables": 14
+  },
+  "pending": [
+    {
+      "word": "yearly",
+      "field": "meaningEn",
+      "reason": "The inherited annual-reference-book noun definition is not verified by the consulted MW and Collins adjective/adverb entries. Preserved; the new adjective/adverb usage phrases do not certify this noun."
+    },
+    {
+      "word": "doctor/doc",
+      "field": "meaningZh",
+      "reason": "The inherited 通信部 abbreviation gloss needs precise independent identification; no change or whole-word approval."
+    },
+    {
+      "word": "medical",
+      "field": "meaningZh",
+      "reason": "Medical-examination noun is supported; the separate inherited 醫生 gloss still needs exact source. The formal adjective is unchanged."
+    },
+    {
+      "word": "medicine",
+      "field": "meaningZh",
+      "reason": "Existing nominal medicine/internal-medicine and related verbal wording retained. No expanded whole-word approval."
+    },
+    {
+      "word": "abroad",
+      "field": "meaningZh",
+      "reason": "MW supports adverb/adjective, wide circulation and older outside-home uses. Preserve the related adjective separately; no formal POS expansion."
+    },
+    {
+      "word": "pleasant",
+      "field": "meaningZh",
+      "reason": "Inherited 可愛的／活潑的 wording not removed based on rarity; exact broader Chinese scope remains unverified."
+    },
+    {
+      "word": "monthly",
+      "field": "image",
+      "reason": "Blank calendar and payment bag support the core concept; month-end date is not legible."
+    },
+    {
+      "word": "town/month/wise",
+      "field": "image_and_translation",
+      "reason": "Kinship branch, sibling age and duration cannot be established from the illustration alone; source wording retained."
+    },
+    {
+      "word": "board/convenience",
+      "field": "image",
+      "reason": "Blank notice/bill details are not legible; do not claim the schedule or online invoice contents were read."
+    },
+    {
+      "word": "day",
+      "field": "sense",
+      "reason": "The existing needs_check composite day sense remains unchanged; reviewing two practice sentences does not certify all senses."
+    }
+  ],
+  "rawIdResolution": {
+    "id": "LV1-U24-04",
+    "sourceOfficialWordId": "NOID",
+    "existingPublishedId": "W000232",
+    "formalHeadword": "doctor/doc",
+    "variant": "doctor",
+    "newIdCreated": false
+  },
+  "boundaries": "No new original textbook-page image inspection, official-exam-source claim, physical-phone test, deployment or publication-mode change.",
+  "next": {
+    "unit": "LV1-U25",
+    "state": "not_started"
+  },
+  "deployment": "No merge, deployment, PR or publication-mode change."
+}

@@ -1,0 +1,399 @@
+{
+  "unit": "LV2-U29",
+  "checkpointAt": "2026-11-06T03:29:11.703Z",
+  "priorCheckpoint": "6ac5925877d4f5bfc1efb4d3c10822b1ba914077",
+  "priorCheckpointFullCi": {
+    "commit": "6ac5925877d4f5bfc1efb4d3c10822b1ba914077",
+    "run": 42145601150,
+    "job": 127656192696,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42145601150/job/127656192696",
+    "status": "completed",
+    "conclusion": "success",
+    "checkoutShaMatched": true,
+    "testFiles": 218,
+    "tests": 1771,
+    "python": [
+      14,
+      7,
+      41,
+      10
+    ],
+    "steps": [
+      {
+        "completed_at": "2026-11-06T01:42:24Z",
+        "conclusion": "success",
+        "name": "Set up job",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-11-06T01:42:35Z",
+        "conclusion": "success",
+        "name": "Run actions/checkout@v4",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-11-06T01:42:37Z",
+        "conclusion": "success",
+        "name": "Run actions/setup-node@v4",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-11-06T01:42:41Z",
+        "conclusion": "success",
+        "name": "Run npm ci",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-11-06T01:42:48Z",
+        "conclusion": "success",
+        "name": "Run npm ci --prefix services/pageviews-cloudflare",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-11-06T01:42:49Z",
+        "conclusion": "success",
+        "name": "Run npm test --prefix services/pageviews-cloudflare",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-11-06T01:42:49Z",
+        "conclusion": "success",
+        "name": "Run actions/setup-python@v5",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-11-06T01:42:50Z",
+        "conclusion": "success",
+        "name": "Run python -m pip install openpyxl==3.1.5 Pillow==12.0.0",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-11-06T01:43:11Z",
+        "conclusion": "success",
+        "name": "Run python -m unittest discover -s scripts -p 'test_apply_lv3_*.py'",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-11-06T01:43:24Z",
+        "conclusion": "success",
+        "name": "Run python -m unittest discover -s scripts -p 'test_apply_lv4_*.py'",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-11-06T01:43:45Z",
+        "conclusion": "success",
+        "name": "Run python -m unittest discover -s scripts -p 'test_apply_unit_audit.py'",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-11-06T01:43:45Z",
+        "conclusion": "success",
+        "name": "Run python -m unittest discover -s scripts -p 'test_build_sa_pack_lv5_legacy.py'",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-11-06T01:43:46Z",
+        "conclusion": "success",
+        "name": "Run python scripts/prepare_recovered_unit_drafts.py --check",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-11-06T01:43:46Z",
+        "conclusion": "success",
+        "name": "Run python scripts/integrate_recovered_units.py --check",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-11-06T01:43:46Z",
+        "conclusion": "success",
+        "name": "Run npm run lint",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-11-06T01:44:14Z",
+        "conclusion": "success",
+        "name": "Run npm run typecheck",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-11-06T01:52:33Z",
+        "conclusion": "success",
+        "name": "Run npm run test -- --maxWorkers=1 --testTimeout=15000",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-11-06T01:53:03Z",
+        "conclusion": "success",
+        "name": "Run npm run build",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-11-06T01:53:03Z",
+        "conclusion": "success",
+        "name": "Post Run actions/setup-python@v5",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-11-06T01:53:03Z",
+        "conclusion": "success",
+        "name": "Post Run actions/setup-node@v4",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-11-06T01:53:03Z",
+        "conclusion": "success",
+        "name": "Post Run actions/checkout@v4",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-11-06T01:53:03Z",
+        "conclusion": "success",
+        "name": "Complete job",
+        "status": "completed"
+      }
+    ],
+    "buildSummaryAt": "2026-11-06T01:53:01.6859763Z",
+    "completedAt": "2026-11-06T01:53:05Z",
+    "fullLogReadAndKeySectionsVerified": true,
+    "logSha256": "7069b22d0a1a32a108b15708a298e4fb1d4d0dd307d52001d738a88fc0e3db9b",
+    "recordedAt": "2026-11-06T02:08:25.478Z",
+    "historicalFailurePreserved": "validation/LV2-U28-ci-6da5d01-failure.json",
+    "productDataUnchangedByFix": true
+  },
+  "newCheckpointFullCi": {
+    "commit": "a0ce2de14c050686aedefe58a05255163e55ad34",
+    "run": 42157023759,
+    "job": 127693498542,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42157023759/job/127693498542",
+    "status": "completed",
+    "conclusion": "success",
+    "checkoutShaMatched": true,
+    "testFiles": 219,
+    "tests": 1779,
+    "python": [
+      14,
+      7,
+      44,
+      10
+    ],
+    "steps": [
+      {
+        "name": "Set up job",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/checkout@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/setup-node@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm ci",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm ci --prefix services/pageviews-cloudflare",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm test --prefix services/pageviews-cloudflare",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/setup-python@v5",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m pip install openpyxl==3.1.5 Pillow==12.0.0",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m unittest discover -s scripts -p 'test_apply_lv3_*.py'",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m unittest discover -s scripts -p 'test_apply_lv4_*.py'",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m unittest discover -s scripts -p 'test_apply_unit_audit.py'",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m unittest discover -s scripts -p 'test_build_sa_pack_lv5_legacy.py'",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python scripts/prepare_recovered_unit_drafts.py --check",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python scripts/integrate_recovered_units.py --check",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm run lint",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm run typecheck",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm run test -- --maxWorkers=1 --testTimeout=15000",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm run build",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/setup-python@v5",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/setup-node@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/checkout@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Complete job",
+        "conclusion": "success"
+      }
+    ],
+    "buildSummaryAt": "2026-11-06T03:44:55.6855693Z",
+    "completedAt": "2026-11-06T03:45:01Z",
+    "fullDecodedLogActuallyRead": true,
+    "logSha256": "24765125c9b99115b9c45e92c45e98890904bf3bd54ce4c1c60867d5b5fbe8be",
+    "recordedAt": "2026-11-06T03:59:48.338Z"
+  },
+  "state": "exact_corrections_saved_actual_app_and_local_checks_passed_with_documented_limits",
+  "scope": {
+    "learningItems": 142,
+    "vocabulary": 93,
+    "grammar": 49,
+    "formalWords": 79,
+    "examples": 134,
+    "notesRead": 63,
+    "originalContentPages": 9,
+    "originalReadableHalves": 18,
+    "generalImages": 32,
+    "unpicturedGeneralCards": 47,
+    "unmappedSupplements": 14,
+    "printedPos": 11,
+    "sourceReopens": 142,
+    "generalReopens": 79,
+    "usageReopens": 19,
+    "newForms": 22,
+    "newFormPanels": 44,
+    "visibleHintLabels": 19,
+    "emptyHintsPreserved": 115,
+    "clozeReconstructed": 134,
+    "savedRows": 2551,
+    "progressTables": 14
+  },
+  "counts": {
+    "mainRows": 74,
+    "mainFields": 127,
+    "wordRows": 45,
+    "clozePos": 11,
+    "hintsRefined": 1,
+    "practiceStatuses": 3,
+    "senseRows": 15,
+    "officialExamSources": 3,
+    "notes": 2,
+    "newFormKeys": 22,
+    "translationRows": 1,
+    "formalPatchOperations": 99,
+    "formalUniqueRows": 79,
+    "formalFields": 152,
+    "curriculumRows": 70,
+    "curriculumFields": 103,
+    "printedSupplementGlosses": 14,
+    "printedSupplementPos": 11,
+    "grammarChinese": 49,
+    "exactPrintedPatternCorrections": 1,
+    "dictionaryQualifications": 2,
+    "dictionarySnapshots": 5
+  },
+  "manifests": [
+    "LV2-U29-patches.json",
+    "LV2-U29-notes-patches.json",
+    "LV2-U29-translations-patches.json",
+    "LV2-U29-verified-forms-patches.json",
+    "LV2-U29-curriculum-patches.json"
+  ],
+  "evidence": [
+    "LV2-U29-source-research.json",
+    "LV2-U29-original-review.json",
+    "validation/LV2-U29-reopen-summary.json",
+    "validation/LV2-U29-exact-inverse.json",
+    "validation/LV2-U29-local-checks.json",
+    "validation/LV2-U29-initial-regression-failure.json"
+  ],
+  "preserved": {
+    "all134EnglishExamplesAndClozeAnswers": true,
+    "allHeadwordPosAndStatuses": true,
+    "rawSource": true,
+    "all32ImageAndCaptionPairs": true,
+    "allHistoricalHashes": true,
+    "trueAbsentKeyDeletion": true,
+    "oldManageEmptyPriceFormRowHashes": true,
+    "textOnlyAndReadOnly": true,
+    "nullSupplementIdentities": 14,
+    "publicationOperations": false
+  },
+  "pending": [
+    {
+      "word": "director",
+      "meaning": "尋向偶極子",
+      "scope": "Collins related Yagi entry confirms director elements, but not the exact inherited Chinese term; do not infer a complete translation verification."
+    },
+    {
+      "word": "organizer",
+      "meaning": "組織導體",
+      "scope": "Embryology meaning directly supported; exact Chinese term provenance remains pending."
+    },
+    {
+      "word": "organize",
+      "meaning": "給予生機",
+      "scope": "Organic-structure meaning directly supported; do not equate that automatically with every inherited Chinese wording."
+    },
+    {
+      "word": "baseball",
+      "meaning": "棒球系統",
+      "scope": "ACM official search excerpt confirms a 1961 paper Baseball: an automatic question-answerer, DOI10.1145/1460690.1460714; the inherited Chinese source and exact intended scope remain unverified."
+    },
+    {
+      "word": "artificial",
+      "meaning": "非原地產的",
+      "scope": "Not established in the read Collins definition; absence from one source is not proof it does not exist. Retain."
+    },
+    {
+      "word": "realization",
+      "meaning": "實得",
+      "scope": "Exact monetary/translation scope not independently established; retain."
+    },
+    {
+      "exampleId": "EX056c9e1a",
+      "reason": "Existing have decided / would change equals-to variants have a prior recorded context/backshift concern. Preserve the approved original and current precise hint; no speculative would→will rewrite."
+    },
+    {
+      "exampleId": "EXbc3815cf",
+      "reason": "sailed across...to reach can naturally convey purpose/result of movement. Do not mechanically rewrite a natural translation to force a universal infinitive rule; no clear new correction proposed."
+    }
+  ],
+  "next": {
+    "unit": "LV2-U30",
+    "word": "artist",
+    "learningItemId": "LI-LV2U30-V001",
+    "officialWordId": "W001052",
+    "state": "not_started"
+  },
+  "deployment": "No main merge, deployment, release-candidate change or history rewrite."
+}

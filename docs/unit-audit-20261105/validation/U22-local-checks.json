@@ -1,0 +1,44 @@
+{
+  "state": "passed",
+  "completedAt": "2026-11-05T20:37:30.2813876Z",
+  "regression": {
+    "files": 11,
+    "tests": 99,
+    "exitCode": 0,
+    "originalTimeoutMs": 5000,
+    "timeoutOverride": false,
+    "log": "output/unit-audit-20261105/U22-final-regression.txt",
+    "sha256": "07f63ffe1f6b1f1965ff820463fb8cea08433522457fb6c9bbf04d84be62e529"
+  },
+  "python": {
+    "tests": 32,
+    "exitCode": 0,
+    "log": "output/unit-audit-20261105/U22-python-first.txt",
+    "sha256": "6049b5c6bdedd2f780d8441221474be2cc77314648590d054d25aa15763e297d"
+  },
+  "commands": [
+    {
+      "name": "lint",
+      "completedAt": "2026-11-05T20:35:43.3724633Z",
+      "log": "output/unit-audit-20261105/U22-lint.txt",
+      "exitCode": 0,
+      "sha256": "ccabb7869f4cb42e101c297b8547ee1f73b0920624a413ad76fd804b17f8dd29"
+    },
+    {
+      "name": "typecheck",
+      "completedAt": "2026-11-05T20:36:27.1069075Z",
+      "log": "output/unit-audit-20261105/U22-typecheck.txt",
+      "exitCode": 0,
+      "sha256": "0d93be78e4da5c0077681c4d834163661d59ddd24a0477595fb70ec25d5a5ea8"
+    },
+    {
+      "name": "build",
+      "completedAt": "2026-11-05T20:37:30.2813876Z",
+      "log": "output/unit-audit-20261105/U22-build.txt",
+      "exitCode": 0,
+      "sha256": "9e55b790b6603c5a8dd38809ece515490009a0c31b7ba20a73596bf87c267785"
+    }
+  ],
+  "contentHash": "059e0836cb06ab7733bfa55c650c9a7fa6fe82e532b5aaeae9eaf92e5b82693c",
+  "limits": "Local checkpoint checks; the new commit still requires its own full remote CI."
+}

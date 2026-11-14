@@ -1,0 +1,27 @@
+{
+  "priorCheckpoint": "7b258e1b0d9c5d3f76049b0761b75f0a4ad43519",
+  "facts": [
+    {
+      "exampleId": "EX8468c530",
+      "before": {
+        "word": "even",
+        "sentenceEn": "Gordy thought he had an even chance of winning.",
+        "blankSentence": "Gordy thought he had an _____ chance of winning.",
+        "answer": "even",
+        "sentenceZh": "高迪認為自己也有同等獲勝的機會。",
+        "status": "approved"
+      },
+      "after": {
+        "sentenceZh": "高迪認為自己獲勝與否的機會各半。"
+      },
+      "reason": "Direct primary even chance definition says occurrence is no more likely than non-occurrence. Remove the added comparison with other people. Preserve original English, answer, cloze, POS and status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/even",
+      "retrieval": "Complete unchanged English/Chinese and direct primary even-chance definition read. Chinese 成敗各半 removes unsupported comparison; no English/POS/answer/status change.",
+      "pairedCaptionSearch": {
+        "exactEnglishTrackedMatches": [],
+        "exactEnglishNoteMatches": [],
+        "captionInvented": false
+      }
+    }
+  ]
+}

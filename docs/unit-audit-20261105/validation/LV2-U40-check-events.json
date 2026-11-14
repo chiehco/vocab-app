@@ -1,0 +1,49 @@
+{
+  "initialFrontend": {
+    "files": 29,
+    "tests": 344,
+    "passed": 342,
+    "failed": 2,
+    "exitCode": 1,
+    "failure": "Standalone historical U07/U24 form fixtures still saw later U40 fields. Whole-pack original fixture was not reset."
+  },
+  "exactFix": {
+    "ids": [
+      "W001768",
+      "W000041",
+      "W001581"
+    ],
+    "fields": [
+      "usagePatternZh",
+      "usagePatternZh",
+      "meaningEn"
+    ],
+    "action": "Reverse only the recorded exact U40 field before validating the unchanged old form fact; add negative after/status/identity checks.",
+    "originalFactHashesChanged": false
+  },
+  "visibleSummaryFollowup": {
+    "ids": [
+      "W001178",
+      "W001562"
+    ],
+    "fields": 2,
+    "trigger": "Actual initial-after hero pixels still showed mixed noun/verb Chinese under one formal POS.",
+    "history": "Separate full-before followup, original49-row main receipt and11 form source hashes retained. Reverse followup before form facts; two specific source/general cards reopened using distinct screenshot names."
+  },
+  "normalUpdates": 2,
+  "all14ProgressTablesExactForEach": true,
+  "noLocalTimeoutIncrease": true,
+  "noProfileDeletion": true,
+  "sourceAndGeneralInitialCapturesRetained": true,
+  "browserReopen": {
+    "closeAttempts": 1,
+    "openAttempts": 1,
+    "openExit": 1,
+    "observation": "Normal browser process opened, then the initial snapshot timed out at 30000ms. A subsequent read-only readiness probe completed at the neutral page, and saved-content plus all14 progress-table readbacks succeeded.",
+    "logSha256": "57881f38e9bf0017c1fbcf5b9387ca63955eb8a2144f0dda74721242c7cdf745",
+    "browserReopenedAgain": false,
+    "profileDeleted": false,
+    "timeoutIncreased": false,
+    "readbackEvidence": "LV2-U40-persistence-summary.json"
+  }
+}

@@ -1,0 +1,2376 @@
+{
+  "baseCheckpoint": "d20191cc5c9bcc157a4da9edbab208ce850de763",
+  "originalEvidenceCommit": "08765ad51d3eaff1e09ddfbd19be4efec188a748",
+  "scope": "Only exact reconciled absent verbForms; preserve every other row field and every earlier source table.",
+  "selectedSourceHashes": {
+    "PATCHES.json": "811a040eb3a69752bf6e491cdef8c0826785905f2243f9a74130d82207332aca",
+    "SOURCES-TO-APPEND.json": "a4bf9adb638003957306a70d55a6ead6a363dc6b7ac7652816d6894530b61f9e",
+    "GUARDS.json": "efd10273254cb12a9b26be3c2de4be3ca4ce26c42ad82076e15b61cbfb8429fd"
+  },
+  "facts": [
+    {
+      "wordId": "W000035",
+      "word": "answer",
+      "batch": "U12",
+      "units": [
+        "LV1-U12"
+      ],
+      "verbForms": {
+        "base": "answer",
+        "past": "answered",
+        "pastParticiple": "answered",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/answer",
+        "status": "approved"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/answer",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle answered",
+          "location": "COBUILD Word forms",
+          "scope": "詞典直接明列詞形，非拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文，讀取所列相關段落；不是搜尋摘要，亦不聲稱逐字讀完整頁。"
+        }
+      ],
+      "restriction": "只描述動詞詞形；名詞、形容詞或副詞不屈折成這組三態。",
+      "applicableSense": "回答、答覆。",
+      "researchFile": "U10-U15-PUBLISHED-VERB-FORMS-VERIFICATION.json",
+      "originalPos": "n./v.",
+      "sourceSnapshot": {
+        "researchCommit": "e2d3f0fed929a17670af00ed1989fc9469426d8c",
+        "sourceBlob": "5215e48aadd050f5118e85727bc391ad7150738b"
+      },
+      "cardIds": [
+        "LV1-U12-03"
+      ],
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-03",
+          "captionEn": "He knows the answer and raises his hand.",
+          "captionZh": "他知道答案，把手舉了起來。"
+        }
+      ],
+      "sourceSupportedForms": {
+        "base": "answer",
+        "past": [
+          "answered"
+        ],
+        "pastParticiple": [
+          "answered"
+        ]
+      },
+      "variantAssessment": "所讀 Word forms／三態欄未另列其他形式；不以此聲稱窮盡歷史、方言或專業變體。",
+      "currentSourceCheck": {
+        "method": "Direct official dictionary forms and applicable verb construction; conjugation and regional notes checked where needed",
+        "checkedAt": "2026-11-05T14:35:27.815Z",
+        "success": true
+      },
+      "verification": "Exact latest identity, existing verb/applicable sense, true absence and full non-form row hash reconciled. Prior source/UI evidence is provenance, not current integration UI verification.",
+      "beforeRowSha256": "29d607a1343e6887f01af197c9edf674d6deec2dfebb57ffb7810c5d05bb8cdb",
+      "nonFormRowSha256": "29d607a1343e6887f01af197c9edf674d6deec2dfebb57ffb7810c5d05bb8cdb",
+      "guard": {
+        "headword": "answer",
+        "pos": "n./v.",
+        "wholeWordStatus": "reviewed"
+      },
+      "originalEvidenceCommit": "08765ad51d3eaff1e09ddfbd19be4efec188a748",
+      "sourceContexts": [
+        {
+          "unit": 12,
+          "cardId": "LV1-U12-03",
+          "sourceOrder": 2,
+          "displayWord": "answer"
+        }
+      ]
+    },
+    {
+      "wordId": "W001726",
+      "word": "reply",
+      "batch": "U12",
+      "units": [
+        "LV1-U12"
+      ],
+      "verbForms": {
+        "base": "reply",
+        "past": "replied",
+        "pastParticiple": "replied",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/reply",
+        "status": "approved"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/reply",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle replied",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "restriction": "replied 的完整拼字由來源直接明示，不依 y 改 i 的規則推導。a reply 是名詞，不直接作為動詞證據。",
+      "applicableSense": "動詞以言語、文字或行動回應；字卡的 wrote a friendly reply 使用名詞。",
+      "researchFile": "U12-ADDITIONAL-VERB-FORMS-VERIFICATION.json",
+      "originalPos": "n./v.",
+      "sourceSnapshot": {
+        "researchCommit": "e2d3f0fed929a17670af00ed1989fc9469426d8c",
+        "sourceBlob": "ef314c1bae64cee1410bd02fd30356cd8ff53a87"
+      },
+      "cardIds": [
+        "LV1-U12-09"
+      ],
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-09",
+          "captionEn": "Doumo read the message and wrote a friendly reply.",
+          "captionZh": "豆魔讀完訊息後，寫了一封友善的回覆。"
+        }
+      ],
+      "sourceSupportedForms": {
+        "base": "reply",
+        "past": [
+          "replied"
+        ],
+        "pastParticiple": [
+          "replied"
+        ]
+      },
+      "variantAssessment": "所讀主三態欄未另列變體；這是最小一般教學候選，不聲稱窮盡歷史、方言或專業變體。",
+      "regionalAndConstructionRestrictions": "所讀回答義三態無地區限制；正文支持 reply to N、reply that 子句、reply with N。候選 base 保持 reply。",
+      "currentSourceCheck": {
+        "method": "Direct official dictionary forms and applicable verb construction; conjugation and regional notes checked where needed",
+        "checkedAt": "2026-11-05T14:35:27.817Z",
+        "success": true
+      },
+      "verification": "Exact latest identity, existing verb/applicable sense, true absence and full non-form row hash reconciled. Prior source/UI evidence is provenance, not current integration UI verification.",
+      "beforeRowSha256": "b15086a5b2c28639d0087737d2676b9f684577a4d68d9eaf3ed1c7e2b184d2b1",
+      "nonFormRowSha256": "b15086a5b2c28639d0087737d2676b9f684577a4d68d9eaf3ed1c7e2b184d2b1",
+      "guard": {
+        "headword": "reply",
+        "pos": "n./v.",
+        "wholeWordStatus": "draft"
+      },
+      "originalEvidenceCommit": "08765ad51d3eaff1e09ddfbd19be4efec188a748",
+      "sourceContexts": [
+        {
+          "unit": 12,
+          "cardId": "LV1-U12-09",
+          "sourceOrder": 8,
+          "displayWord": "reply"
+        }
+      ]
+    },
+    {
+      "wordId": "W001729",
+      "word": "respond",
+      "batch": "U12",
+      "units": [
+        "LV1-U12"
+      ],
+      "verbForms": {
+        "base": "respond",
+        "past": "responded",
+        "pastParticiple": "responded",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/respond",
+        "status": "approved"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/respond",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle responded",
+          "location": "COBUILD Word forms",
+          "scope": "詞典直接明列詞形，非拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文，讀取所列相關段落；不是搜尋摘要，亦不聲稱逐字讀完整頁。"
+        }
+      ],
+      "restriction": "只描述動詞詞形；名詞、形容詞或副詞不屈折成這組三態。",
+      "applicableSense": "回應、作出反應。",
+      "researchFile": "U10-U15-PUBLISHED-VERB-FORMS-VERIFICATION.json",
+      "originalPos": "v.",
+      "sourceSnapshot": {
+        "researchCommit": "e2d3f0fed929a17670af00ed1989fc9469426d8c",
+        "sourceBlob": "5215e48aadd050f5118e85727bc391ad7150738b"
+      },
+      "cardIds": [
+        "LV1-U12-10"
+      ],
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-10",
+          "captionEn": "She responded quickly when the phone rang.",
+          "captionZh": "電話一響，她就很快地回應了。"
+        }
+      ],
+      "sourceSupportedForms": {
+        "base": "respond",
+        "past": [
+          "responded"
+        ],
+        "pastParticiple": [
+          "responded"
+        ]
+      },
+      "variantAssessment": "所讀 Word forms／三態欄未另列其他形式；不以此聲稱窮盡歷史、方言或專業變體。",
+      "currentSourceCheck": {
+        "method": "Direct official dictionary forms and applicable verb construction; conjugation and regional notes checked where needed",
+        "checkedAt": "2026-11-05T14:35:27.817Z",
+        "success": true
+      },
+      "verification": "Exact latest identity, existing verb/applicable sense, true absence and full non-form row hash reconciled. Prior source/UI evidence is provenance, not current integration UI verification.",
+      "beforeRowSha256": "652bfa771db42b92418b3026027c4726f089dac1c3f99746a53c8536a4ccecc7",
+      "nonFormRowSha256": "652bfa771db42b92418b3026027c4726f089dac1c3f99746a53c8536a4ccecc7",
+      "guard": {
+        "headword": "respond",
+        "pos": "v.",
+        "wholeWordStatus": "reviewed"
+      },
+      "originalEvidenceCommit": "08765ad51d3eaff1e09ddfbd19be4efec188a748",
+      "sourceContexts": [
+        {
+          "unit": 12,
+          "cardId": "LV1-U12-10",
+          "sourceOrder": 9,
+          "displayWord": "respond"
+        }
+      ]
+    },
+    {
+      "wordId": "W000389",
+      "word": "heat",
+      "batch": "U12",
+      "units": [
+        "LV1-U12"
+      ],
+      "verbForms": {
+        "base": "heat",
+        "past": "heated",
+        "pastParticiple": "heated",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/heat",
+        "status": "approved"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/heat",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle heated",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "restriction": "heated 由動詞欄明示，不以形容詞 heated 的存在倒推三態；名詞熱量不另產生三態。",
+      "applicableSense": "動詞使某物升溫、加熱；與現有加熱湯的例句相符。",
+      "researchFile": "U12-ADDITIONAL-VERB-FORMS-VERIFICATION.json",
+      "originalPos": "n./v.",
+      "sourceSnapshot": {
+        "researchCommit": "e2d3f0fed929a17670af00ed1989fc9469426d8c",
+        "sourceBlob": "ef314c1bae64cee1410bd02fd30356cd8ff53a87"
+      },
+      "cardIds": [
+        "LV1-U12-16"
+      ],
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-16",
+          "captionEn": "Please heat the soup before you serve it.",
+          "captionZh": "上桌前請把湯加熱。"
+        }
+      ],
+      "sourceSupportedForms": {
+        "base": "heat",
+        "past": [
+          "heated"
+        ],
+        "pastParticiple": [
+          "heated"
+        ]
+      },
+      "variantAssessment": "所讀主三態欄未另列變體；這是最小一般教學候選，不聲稱窮盡歷史、方言或專業變體。",
+      "regionalAndConstructionRestrictions": "所讀加熱義三態無地區限制；候選 base 保持 heat，不改成 heat up。",
+      "currentSourceCheck": {
+        "method": "Direct official dictionary forms and applicable verb construction; conjugation and regional notes checked where needed",
+        "checkedAt": "2026-11-05T14:35:27.817Z",
+        "success": true
+      },
+      "verification": "Exact latest identity, existing verb/applicable sense, true absence and full non-form row hash reconciled. Prior source/UI evidence is provenance, not current integration UI verification.",
+      "beforeRowSha256": "8f38e54200f8a7dc30f7b0ed6598619a450dc88fafcac87564ebf8f2c865f68f",
+      "nonFormRowSha256": "8f38e54200f8a7dc30f7b0ed6598619a450dc88fafcac87564ebf8f2c865f68f",
+      "guard": {
+        "headword": "heat",
+        "pos": "n./v.",
+        "wholeWordStatus": "reviewed"
+      },
+      "originalEvidenceCommit": "08765ad51d3eaff1e09ddfbd19be4efec188a748",
+      "sourceContexts": [
+        {
+          "unit": 12,
+          "cardId": "LV1-U12-16",
+          "sourceOrder": 15,
+          "displayWord": "heat"
+        }
+      ]
+    },
+    {
+      "wordId": "W000916",
+      "word": "train",
+      "batch": "U12",
+      "units": [
+        "LV1-U12"
+      ],
+      "verbForms": {
+        "base": "train",
+        "past": "trained",
+        "pastParticiple": "trained",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/train",
+        "status": "approved"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/train",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle trained",
+          "location": "COBUILD train verb uses, Word forms",
+          "scope": "詞典直接明列詞形，非拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文，讀取所列相關段落；不是搜尋摘要，亦不聲稱逐字讀完整頁。"
+        }
+      ],
+      "restriction": "只描述動詞詞形；名詞、形容詞或副詞不屈折成這組三態。",
+      "applicableSense": "訓練、教導技能。",
+      "researchFile": "U10-U15-PUBLISHED-VERB-FORMS-VERIFICATION.json",
+      "originalPos": "n./v.",
+      "sourceSnapshot": {
+        "researchCommit": "e2d3f0fed929a17670af00ed1989fc9469426d8c",
+        "sourceBlob": "5215e48aadd050f5118e85727bc391ad7150738b"
+      },
+      "cardIds": [
+        "LV1-U12-19"
+      ],
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-19",
+          "captionEn": "The coach trains me hard before the big game.",
+          "captionZh": "教練在大賽前嚴格訓練我。"
+        }
+      ],
+      "sourceSupportedForms": {
+        "base": "train",
+        "past": [
+          "trained"
+        ],
+        "pastParticiple": [
+          "trained"
+        ]
+      },
+      "variantAssessment": "所讀 Word forms／三態欄未另列其他形式；不以此聲稱窮盡歷史、方言或專業變體。",
+      "currentSourceCheck": {
+        "method": "Direct official dictionary forms and applicable verb construction; conjugation and regional notes checked where needed",
+        "checkedAt": "2026-11-05T14:35:27.817Z",
+        "success": true
+      },
+      "verification": "Exact latest identity, existing verb/applicable sense, true absence and full non-form row hash reconciled. Prior source/UI evidence is provenance, not current integration UI verification.",
+      "beforeRowSha256": "bf7a16b2544fc08ff342d3ae3568a990a36f704e2e2ae5ed9fdf57f8ae5a4b49",
+      "nonFormRowSha256": "bf7a16b2544fc08ff342d3ae3568a990a36f704e2e2ae5ed9fdf57f8ae5a4b49",
+      "guard": {
+        "headword": "train",
+        "pos": "n./v.",
+        "wholeWordStatus": "reviewed"
+      },
+      "originalEvidenceCommit": "08765ad51d3eaff1e09ddfbd19be4efec188a748",
+      "sourceContexts": [
+        {
+          "unit": 12,
+          "cardId": "LV1-U12-19",
+          "sourceOrder": 18,
+          "displayWord": "train"
+        }
+      ]
+    },
+    {
+      "wordId": "W000683",
+      "word": "pull",
+      "batch": "U12",
+      "units": [
+        "LV1-U12"
+      ],
+      "verbForms": {
+        "base": "pull",
+        "past": "pulled",
+        "pastParticiple": "pulled",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/pull",
+        "status": "approved"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/pull",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle pulled",
+          "location": "COBUILD Word forms",
+          "scope": "詞典直接明列詞形，非拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文，讀取所列相關段落；不是搜尋摘要，亦不聲稱逐字讀完整頁。"
+        }
+      ],
+      "restriction": "只描述動詞詞形；名詞、形容詞或副詞不屈折成這組三態。",
+      "applicableSense": "拉、拖。",
+      "researchFile": "U10-U15-PUBLISHED-VERB-FORMS-VERIFICATION.json",
+      "originalPos": "v./n.",
+      "sourceSnapshot": {
+        "researchCommit": "e2d3f0fed929a17670af00ed1989fc9469426d8c",
+        "sourceBlob": "5215e48aadd050f5118e85727bc391ad7150738b"
+      },
+      "cardIds": [
+        "LV1-U12-26"
+      ],
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-26",
+          "captionEn": "He gave the heavy door a strong pull to open it.",
+          "captionZh": "他用力一拉，把那扇厚重的門拉開。"
+        }
+      ],
+      "sourceSupportedForms": {
+        "base": "pull",
+        "past": [
+          "pulled"
+        ],
+        "pastParticiple": [
+          "pulled"
+        ]
+      },
+      "variantAssessment": "所讀 Word forms／三態欄未另列其他形式；不以此聲稱窮盡歷史、方言或專業變體。",
+      "currentSourceCheck": {
+        "method": "Direct official dictionary forms and applicable verb construction; conjugation and regional notes checked where needed",
+        "checkedAt": "2026-11-05T14:35:27.817Z",
+        "success": true
+      },
+      "verification": "Exact latest identity, existing verb/applicable sense, true absence and full non-form row hash reconciled. Prior source/UI evidence is provenance, not current integration UI verification.",
+      "beforeRowSha256": "cd930ba37cf0e7156c4b9c778b4a87debf3af5ab19df94e1a720d3d7efc6ee20",
+      "nonFormRowSha256": "cd930ba37cf0e7156c4b9c778b4a87debf3af5ab19df94e1a720d3d7efc6ee20",
+      "guard": {
+        "headword": "pull",
+        "pos": "v./n.",
+        "wholeWordStatus": "reviewed"
+      },
+      "originalEvidenceCommit": "08765ad51d3eaff1e09ddfbd19be4efec188a748",
+      "sourceContexts": [
+        {
+          "unit": 12,
+          "cardId": "LV1-U12-26",
+          "sourceOrder": 25,
+          "displayWord": "pull"
+        }
+      ]
+    },
+    {
+      "wordId": "W000296",
+      "word": "farm",
+      "batch": "U12",
+      "units": [
+        "LV1-U12"
+      ],
+      "verbForms": {
+        "base": "farm",
+        "past": "farmed",
+        "pastParticiple": "farmed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/farm",
+        "status": "approved"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/farm",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle farmed",
+          "location": "COBUILD Word forms",
+          "scope": "詞典直接明列詞形，非拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文，讀取所列相關段落；不是搜尋摘要，亦不聲稱逐字讀完整頁。"
+        }
+      ],
+      "restriction": "只描述動詞詞形；名詞、形容詞或副詞不屈折成這組三態。",
+      "applicableSense": "耕種、務農、飼養。",
+      "researchFile": "U10-U15-PUBLISHED-VERB-FORMS-VERIFICATION.json",
+      "originalPos": "n./v.",
+      "sourceSnapshot": {
+        "researchCommit": "e2d3f0fed929a17670af00ed1989fc9469426d8c",
+        "sourceBlob": "5215e48aadd050f5118e85727bc391ad7150738b"
+      },
+      "cardIds": [
+        "LV1-U12-28"
+      ],
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-28",
+          "captionEn": "He farms rice and vegetables on his land near the river.",
+          "captionZh": "他在河邊的土地上種植稻米和蔬菜。"
+        }
+      ],
+      "sourceSupportedForms": {
+        "base": "farm",
+        "past": [
+          "farmed"
+        ],
+        "pastParticiple": [
+          "farmed"
+        ]
+      },
+      "variantAssessment": "所讀 Word forms／三態欄未另列其他形式；不以此聲稱窮盡歷史、方言或專業變體。",
+      "currentSourceCheck": {
+        "method": "Direct official dictionary forms and applicable verb construction; conjugation and regional notes checked where needed",
+        "checkedAt": "2026-11-05T14:35:27.817Z",
+        "success": true
+      },
+      "verification": "Exact latest identity, existing verb/applicable sense, true absence and full non-form row hash reconciled. Prior source/UI evidence is provenance, not current integration UI verification.",
+      "beforeRowSha256": "30185f443377591d04800b35f99b39a53222a2943678ba54d31ea193be7f8f8b",
+      "nonFormRowSha256": "30185f443377591d04800b35f99b39a53222a2943678ba54d31ea193be7f8f8b",
+      "guard": {
+        "headword": "farm",
+        "pos": "n./v.",
+        "wholeWordStatus": "reviewed"
+      },
+      "originalEvidenceCommit": "08765ad51d3eaff1e09ddfbd19be4efec188a748",
+      "sourceContexts": [
+        {
+          "unit": 12,
+          "cardId": "LV1-U12-28",
+          "sourceOrder": 27,
+          "displayWord": "farm"
+        }
+      ]
+    },
+    {
+      "wordId": "W000684",
+      "word": "push",
+      "batch": "U12",
+      "units": [
+        "LV1-U12"
+      ],
+      "verbForms": {
+        "base": "push",
+        "past": "pushed",
+        "pastParticiple": "pushed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/push",
+        "status": "approved"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/push",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle pushed",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "restriction": "名詞推動的一次動作不另產生三態；本候選 pushed 適用現有施力推門的動詞義。",
+      "applicableSense": "動詞施力推動某物；與現有推門的例句相符。",
+      "researchFile": "U12-ADDITIONAL-VERB-FORMS-VERIFICATION.json",
+      "originalPos": "v./n.",
+      "sourceSnapshot": {
+        "researchCommit": "e2d3f0fed929a17670af00ed1989fc9469426d8c",
+        "sourceBlob": "ef314c1bae64cee1410bd02fd30356cd8ff53a87"
+      },
+      "cardIds": [
+        "LV1-U12-31"
+      ],
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-31",
+          "captionEn": "The little boy had to push the heavy door with all his strength to open it.",
+          "captionZh": "這個小男孩必須用盡全力推開那扇沉重的門。"
+        }
+      ],
+      "sourceSupportedForms": {
+        "base": "push",
+        "past": [
+          "pushed"
+        ],
+        "pastParticiple": [
+          "pushed"
+        ]
+      },
+      "variantAssessment": "所讀主三態欄未另列變體；這是最小一般教學候選，不聲稱窮盡歷史、方言或專業變體。",
+      "regionalAndConstructionRestrictions": "所讀施力推動義三態無地區限制；push the door 的受詞結構與正文一致。未把片語粒子加入 base。",
+      "currentSourceCheck": {
+        "method": "Direct official dictionary forms and applicable verb construction; conjugation and regional notes checked where needed",
+        "checkedAt": "2026-11-05T14:35:27.817Z",
+        "success": true
+      },
+      "verification": "Exact latest identity, existing verb/applicable sense, true absence and full non-form row hash reconciled. Prior source/UI evidence is provenance, not current integration UI verification.",
+      "beforeRowSha256": "7e7cbd8045693ebc675f0e9be4871e5cb860cfa81a8a682ed7a3a1e48331a97b",
+      "nonFormRowSha256": "7e7cbd8045693ebc675f0e9be4871e5cb860cfa81a8a682ed7a3a1e48331a97b",
+      "guard": {
+        "headword": "push",
+        "pos": "v./n.",
+        "wholeWordStatus": "reviewed"
+      },
+      "originalEvidenceCommit": "08765ad51d3eaff1e09ddfbd19be4efec188a748",
+      "sourceContexts": [
+        {
+          "unit": 12,
+          "cardId": "LV1-U12-31",
+          "sourceOrder": 30,
+          "displayWord": "push"
+        }
+      ]
+    },
+    {
+      "wordId": "W001528",
+      "word": "marry",
+      "batch": "U12",
+      "units": [
+        "LV1-U12"
+      ],
+      "verbForms": {
+        "base": "marry",
+        "past": "married",
+        "pastParticiple": "married",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/marry",
+        "status": "approved"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/marry",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle married",
+          "location": "COBUILD Word forms",
+          "scope": "詞典直接明列詞形，非拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文，讀取所列相關段落；不是搜尋摘要，亦不聲稱逐字讀完整頁。"
+        }
+      ],
+      "restriction": "只描述動詞詞形；名詞、形容詞或副詞不屈折成這組三態。",
+      "applicableSense": "結婚、娶嫁；主持婚禮。",
+      "researchFile": "U10-U15-PUBLISHED-VERB-FORMS-VERIFICATION.json",
+      "originalPos": "v.",
+      "sourceSnapshot": {
+        "researchCommit": "e2d3f0fed929a17670af00ed1989fc9469426d8c",
+        "sourceBlob": "5215e48aadd050f5118e85727bc391ad7150738b"
+      },
+      "cardIds": [
+        "LV1-U12-32"
+      ],
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-32",
+          "captionEn": "The two Doumos plan to marry in a small garden ceremony.",
+          "captionZh": "兩位豆魔計畫在小花園舉行婚禮。"
+        }
+      ],
+      "sourceSupportedForms": {
+        "base": "marry",
+        "past": [
+          "married"
+        ],
+        "pastParticiple": [
+          "married"
+        ]
+      },
+      "variantAssessment": "所讀 Word forms／三態欄未另列其他形式；不以此聲稱窮盡歷史、方言或專業變體。",
+      "currentSourceCheck": {
+        "method": "Direct official dictionary forms and applicable verb construction; conjugation and regional notes checked where needed",
+        "checkedAt": "2026-11-05T14:35:27.817Z",
+        "success": true
+      },
+      "verification": "Exact latest identity, existing verb/applicable sense, true absence and full non-form row hash reconciled. Prior source/UI evidence is provenance, not current integration UI verification.",
+      "beforeRowSha256": "0a3b13723312233111f86c99f5658d04319804e5cd6610facd239155462844d9",
+      "nonFormRowSha256": "0a3b13723312233111f86c99f5658d04319804e5cd6610facd239155462844d9",
+      "guard": {
+        "headword": "marry",
+        "pos": "v.",
+        "wholeWordStatus": "draft"
+      },
+      "originalEvidenceCommit": "08765ad51d3eaff1e09ddfbd19be4efec188a748",
+      "sourceContexts": [
+        {
+          "unit": 12,
+          "cardId": "LV1-U12-32",
+          "sourceOrder": 31,
+          "displayWord": "marry"
+        }
+      ]
+    },
+    {
+      "wordId": "W000312",
+      "word": "finish",
+      "batch": "U12",
+      "units": [
+        "LV1-U12"
+      ],
+      "verbForms": {
+        "base": "finish",
+        "past": "finished",
+        "pastParticiple": "finished",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/finish",
+        "status": "approved"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/finish",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle finished",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "restriction": "finished 是明示的動詞過去式及過去分詞；名詞 finish 不另產生三態。",
+      "applicableSense": "動詞完成工作或製作某物；與現有完成木製模型的例句相符。",
+      "researchFile": "U12-ADDITIONAL-VERB-FORMS-VERIFICATION.json",
+      "originalPos": "v./n.",
+      "sourceSnapshot": {
+        "researchCommit": "e2d3f0fed929a17670af00ed1989fc9469426d8c",
+        "sourceBlob": "ef314c1bae64cee1410bd02fd30356cd8ff53a87"
+      },
+      "cardIds": [
+        "LV1-U12-38"
+      ],
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-38",
+          "captionEn": "Doumo worked carefully to finish the wooden model before dinner.",
+          "captionZh": "豆魔仔細工作，趕在晚餐前完成木製模型。"
+        }
+      ],
+      "sourceSupportedForms": {
+        "base": "finish",
+        "past": [
+          "finished"
+        ],
+        "pastParticiple": [
+          "finished"
+        ]
+      },
+      "variantAssessment": "所讀主三態欄未另列變體；這是最小一般教學候選，不聲稱窮盡歷史、方言或專業變體。",
+      "regionalAndConstructionRestrictions": "所讀主三態欄無地區限制；正文支持 finish N、finish V-ing。finish up 作完成義另有美式標記，未加入 base。",
+      "currentSourceCheck": {
+        "method": "Direct official dictionary forms and applicable verb construction; conjugation and regional notes checked where needed",
+        "checkedAt": "2026-11-05T14:35:27.818Z",
+        "success": true
+      },
+      "verification": "Exact latest identity, existing verb/applicable sense, true absence and full non-form row hash reconciled. Prior source/UI evidence is provenance, not current integration UI verification.",
+      "beforeRowSha256": "1aa4221a149805187fd27ffc6b677a5b06710cacde315bd3b270c66c03a1e0de",
+      "nonFormRowSha256": "1aa4221a149805187fd27ffc6b677a5b06710cacde315bd3b270c66c03a1e0de",
+      "guard": {
+        "headword": "finish",
+        "pos": "v./n.",
+        "wholeWordStatus": "draft"
+      },
+      "originalEvidenceCommit": "08765ad51d3eaff1e09ddfbd19be4efec188a748",
+      "sourceContexts": [
+        {
+          "unit": 12,
+          "cardId": "LV1-U12-38",
+          "sourceOrder": 37,
+          "displayWord": "finish"
+        }
+      ]
+    },
+    {
+      "wordId": "W002996",
+      "word": "widen",
+      "batch": "U12",
+      "units": [
+        "LV1-U12"
+      ],
+      "verbForms": {
+        "base": "widen",
+        "past": "widened",
+        "pastParticiple": "widened",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/widen",
+        "status": "approved"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/widen",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle widened",
+          "location": "COBUILD Word forms",
+          "scope": "詞典直接明列詞形，非拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文，讀取所列相關段落；不是搜尋摘要，亦不聲稱逐字讀完整頁。"
+        }
+      ],
+      "restriction": "只描述動詞詞形；名詞、形容詞或副詞不屈折成這組三態。",
+      "applicableSense": "拓寬、變寬。",
+      "researchFile": "U10-U15-PUBLISHED-VERB-FORMS-VERIFICATION.json",
+      "originalPos": "v.",
+      "sourceSnapshot": {
+        "researchCommit": "e2d3f0fed929a17670af00ed1989fc9469426d8c",
+        "sourceBlob": "5215e48aadd050f5118e85727bc391ad7150738b"
+      },
+      "cardIds": [
+        "LV1-U12-41"
+      ],
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-41",
+          "captionEn": "He is widening the narrow path so two carts can pass.",
+          "captionZh": "他正在拓寬狹窄的小路，讓兩輛推車能通過。"
+        }
+      ],
+      "sourceSupportedForms": {
+        "base": "widen",
+        "past": [
+          "widened"
+        ],
+        "pastParticiple": [
+          "widened"
+        ]
+      },
+      "variantAssessment": "所讀 Word forms／三態欄未另列其他形式；不以此聲稱窮盡歷史、方言或專業變體。",
+      "currentSourceCheck": {
+        "method": "Direct official dictionary forms and applicable verb construction; conjugation and regional notes checked where needed",
+        "checkedAt": "2026-11-05T14:35:27.818Z",
+        "success": true
+      },
+      "verification": "Exact latest identity, existing verb/applicable sense, true absence and full non-form row hash reconciled. Prior source/UI evidence is provenance, not current integration UI verification.",
+      "beforeRowSha256": "870051cb747f57294a6fdcbd8d140be55c65adace9fbf691ac62f1497465cf2f",
+      "nonFormRowSha256": "870051cb747f57294a6fdcbd8d140be55c65adace9fbf691ac62f1497465cf2f",
+      "guard": {
+        "headword": "widen",
+        "pos": "v.",
+        "wholeWordStatus": "draft"
+      },
+      "originalEvidenceCommit": "08765ad51d3eaff1e09ddfbd19be4efec188a748",
+      "sourceContexts": [
+        {
+          "unit": 12,
+          "cardId": "LV1-U12-41",
+          "sourceOrder": 40,
+          "displayWord": "widen"
+        }
+      ]
+    },
+    {
+      "wordId": "W001566",
+      "word": "narrow",
+      "batch": "U12",
+      "units": [
+        "LV1-U12"
+      ],
+      "verbForms": {
+        "base": "narrow",
+        "past": "narrowed",
+        "pastParticiple": "narrowed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/narrow",
+        "status": "approved"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/narrow",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle narrowed",
+          "location": "COBUILD Word forms",
+          "scope": "詞典直接明列詞形，非拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文，讀取所列相關段落；不是搜尋摘要，亦不聲稱逐字讀完整頁。"
+        }
+      ],
+      "restriction": "只描述動詞詞形；名詞、形容詞或副詞不屈折成這組三態。",
+      "applicableSense": "縮小、變窄。",
+      "researchFile": "U10-U15-PUBLISHED-VERB-FORMS-VERIFICATION.json",
+      "originalPos": "adj./v.",
+      "sourceSnapshot": {
+        "researchCommit": "e2d3f0fed929a17670af00ed1989fc9469426d8c",
+        "sourceBlob": "5215e48aadd050f5118e85727bc391ad7150738b"
+      },
+      "cardIds": [
+        "LV1-U12-43"
+      ],
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-43",
+          "captionEn": "The mountain road is very narrow, so he drives slowly.",
+          "captionZh": "這條山路很窄，所以他開得很慢。"
+        }
+      ],
+      "sourceSupportedForms": {
+        "base": "narrow",
+        "past": [
+          "narrowed"
+        ],
+        "pastParticiple": [
+          "narrowed"
+        ]
+      },
+      "variantAssessment": "所讀 Word forms／三態欄未另列其他形式；不以此聲稱窮盡歷史、方言或專業變體。",
+      "currentSourceCheck": {
+        "method": "Direct official dictionary forms and applicable verb construction; conjugation and regional notes checked where needed",
+        "checkedAt": "2026-11-05T14:35:27.818Z",
+        "success": true
+      },
+      "verification": "Exact latest identity, existing verb/applicable sense, true absence and full non-form row hash reconciled. Prior source/UI evidence is provenance, not current integration UI verification.",
+      "beforeRowSha256": "5762af249587013e1e3b6916c1c42313f675fd7e9ae4e64a30607a836ef75f71",
+      "nonFormRowSha256": "5762af249587013e1e3b6916c1c42313f675fd7e9ae4e64a30607a836ef75f71",
+      "guard": {
+        "headword": "narrow",
+        "pos": "adj./v.",
+        "wholeWordStatus": "reviewed"
+      },
+      "originalEvidenceCommit": "08765ad51d3eaff1e09ddfbd19be4efec188a748",
+      "sourceContexts": [
+        {
+          "unit": 12,
+          "cardId": "LV1-U12-43",
+          "sourceOrder": 42,
+          "displayWord": "narrow"
+        }
+      ]
+    },
+    {
+      "wordId": "W004689",
+      "word": "purchase",
+      "batch": "U12",
+      "units": [
+        "LV1-U12"
+      ],
+      "verbForms": {
+        "base": "purchase",
+        "past": "purchased",
+        "pastParticiple": "purchased",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/purchase",
+        "status": "approved"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/purchase",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle purchased",
+          "location": "COBUILD Word forms",
+          "scope": "詞典直接明列詞形，非拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文，讀取所列相關段落；不是搜尋摘要，亦不聲稱逐字讀完整頁。"
+        }
+      ],
+      "restriction": "只描述動詞詞形；名詞、形容詞或副詞不屈折成這組三態。",
+      "applicableSense": "購買。",
+      "researchFile": "U10-U15-PUBLISHED-VERB-FORMS-VERIFICATION.json",
+      "originalPos": "n./v.",
+      "sourceSnapshot": {
+        "researchCommit": "e2d3f0fed929a17670af00ed1989fc9469426d8c",
+        "sourceBlob": "5215e48aadd050f5118e85727bc391ad7150738b"
+      },
+      "cardIds": [
+        "LV1-U12-45"
+      ],
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-45",
+          "captionEn": "She is making an online purchase of a new phone case.",
+          "captionZh": "她正在網路上購買一個新手機殼。"
+        }
+      ],
+      "sourceSupportedForms": {
+        "base": "purchase",
+        "past": [
+          "purchased"
+        ],
+        "pastParticiple": [
+          "purchased"
+        ]
+      },
+      "variantAssessment": "所讀 Word forms／三態欄未另列其他形式；不以此聲稱窮盡歷史、方言或專業變體。",
+      "currentSourceCheck": {
+        "method": "Direct official dictionary forms and applicable verb construction; conjugation and regional notes checked where needed",
+        "checkedAt": "2026-11-05T14:35:27.818Z",
+        "success": true
+      },
+      "verification": "Exact latest identity, existing verb/applicable sense, true absence and full non-form row hash reconciled. Prior source/UI evidence is provenance, not current integration UI verification.",
+      "beforeRowSha256": "fd21eb939e391de8e298aea0b45eb201d144158347465563c2e50c07a1c47ad9",
+      "nonFormRowSha256": "fd21eb939e391de8e298aea0b45eb201d144158347465563c2e50c07a1c47ad9",
+      "guard": {
+        "headword": "purchase",
+        "pos": "n./v.",
+        "wholeWordStatus": "reviewed"
+      },
+      "originalEvidenceCommit": "08765ad51d3eaff1e09ddfbd19be4efec188a748",
+      "sourceContexts": [
+        {
+          "unit": 12,
+          "cardId": "LV1-U12-45",
+          "sourceOrder": 44,
+          "displayWord": "purchase"
+        }
+      ]
+    },
+    {
+      "wordId": "W001291",
+      "word": "ease",
+      "batch": "U12",
+      "units": [
+        "LV1-U12"
+      ],
+      "verbForms": {
+        "base": "ease",
+        "past": "eased",
+        "pastParticiple": "eased",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/ease",
+        "status": "approved"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/ease",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle eased",
+          "location": "COBUILD Word forms",
+          "scope": "詞典直接明列詞形，非拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文，讀取所列相關段落；不是搜尋摘要，亦不聲稱逐字讀完整頁。"
+        }
+      ],
+      "restriction": "只描述動詞詞形；名詞、形容詞或副詞不屈折成這組三態。",
+      "applicableSense": "緩解、減輕。",
+      "researchFile": "U10-U15-PUBLISHED-VERB-FORMS-VERIFICATION.json",
+      "originalPos": "n./v.",
+      "sourceSnapshot": {
+        "researchCommit": "e2d3f0fed929a17670af00ed1989fc9469426d8c",
+        "sourceBlob": "5215e48aadd050f5118e85727bc391ad7150738b"
+      },
+      "cardIds": [
+        "LV1-U12-46"
+      ],
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-46",
+          "captionEn": "He can now play the piano piece with ease.",
+          "captionZh": "他現在能輕鬆地彈奏這首鋼琴曲了。"
+        }
+      ],
+      "sourceSupportedForms": {
+        "base": "ease",
+        "past": [
+          "eased"
+        ],
+        "pastParticiple": [
+          "eased"
+        ]
+      },
+      "variantAssessment": "所讀 Word forms／三態欄未另列其他形式；不以此聲稱窮盡歷史、方言或專業變體。",
+      "currentSourceCheck": {
+        "method": "Direct official dictionary forms and applicable verb construction; conjugation and regional notes checked where needed",
+        "checkedAt": "2026-11-05T14:35:27.818Z",
+        "success": true
+      },
+      "verification": "Exact latest identity, existing verb/applicable sense, true absence and full non-form row hash reconciled. Prior source/UI evidence is provenance, not current integration UI verification.",
+      "beforeRowSha256": "bbe2294286b6b537252ceeff257bc9614f5c00e4e4a8037ce93ec764674a2fbe",
+      "nonFormRowSha256": "bbe2294286b6b537252ceeff257bc9614f5c00e4e4a8037ce93ec764674a2fbe",
+      "guard": {
+        "headword": "ease",
+        "pos": "n./v.",
+        "wholeWordStatus": "reviewed"
+      },
+      "originalEvidenceCommit": "08765ad51d3eaff1e09ddfbd19be4efec188a748",
+      "sourceContexts": [
+        {
+          "unit": 12,
+          "cardId": "LV1-U12-46",
+          "sourceOrder": 45,
+          "displayWord": "ease"
+        }
+      ]
+    },
+    {
+      "wordId": "W000216",
+      "word": "deal",
+      "batch": "U12",
+      "units": [
+        "LV1-U12"
+      ],
+      "verbForms": {
+        "base": "deal",
+        "past": "dealt",
+        "pastParticiple": "dealt",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/deal",
+        "status": "approved"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/deal",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle dealt",
+          "location": "COBUILD deal verb and noun uses, Word forms",
+          "scope": "詞典直接明列詞形，非拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文，讀取所列相關段落；不是搜尋摘要，亦不聲稱逐字讀完整頁。"
+        }
+      ],
+      "restriction": "只描述動詞詞形；名詞、形容詞或副詞不屈折成這組三態。",
+      "applicableSense": "處理問題或事務（deal with）；與交易等動詞用法相容。",
+      "researchFile": "U10-U15-PUBLISHED-VERB-FORMS-VERIFICATION.json",
+      "originalPos": "n./v.",
+      "sourceSnapshot": {
+        "researchCommit": "e2d3f0fed929a17670af00ed1989fc9469426d8c",
+        "sourceBlob": "5215e48aadd050f5118e85727bc391ad7150738b"
+      },
+      "cardIds": [
+        "LV1-U12-51"
+      ],
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-51",
+          "captionEn": "They shook hands and made a deal.",
+          "captionZh": "他們握了手，達成一筆交易。"
+        }
+      ],
+      "sourceSupportedForms": {
+        "base": "deal",
+        "past": [
+          "dealt"
+        ],
+        "pastParticiple": [
+          "dealt"
+        ]
+      },
+      "variantAssessment": "所讀 Word forms／三態欄未另列其他形式；不以此聲稱窮盡歷史、方言或專業變體。",
+      "currentSourceCheck": {
+        "method": "Direct official dictionary forms and applicable verb construction; conjugation and regional notes checked where needed",
+        "checkedAt": "2026-11-05T14:35:27.818Z",
+        "success": true
+      },
+      "verification": "Exact latest identity, existing verb/applicable sense, true absence and full non-form row hash reconciled. Prior source/UI evidence is provenance, not current integration UI verification.",
+      "beforeRowSha256": "f6542f2f1bee6fc1228fdcb986b21cf2dc54bd82a47e2bec61642466dab6c2e3",
+      "nonFormRowSha256": "f6542f2f1bee6fc1228fdcb986b21cf2dc54bd82a47e2bec61642466dab6c2e3",
+      "guard": {
+        "headword": "deal",
+        "pos": "n./v.",
+        "wholeWordStatus": "reviewed"
+      },
+      "originalEvidenceCommit": "08765ad51d3eaff1e09ddfbd19be4efec188a748",
+      "sourceContexts": [
+        {
+          "unit": 12,
+          "cardId": "LV1-U12-51",
+          "sourceOrder": 50,
+          "displayWord": "deal"
+        }
+      ]
+    },
+    {
+      "wordId": "W000673",
+      "word": "practice",
+      "batch": "U12",
+      "units": [
+        "LV1-U12"
+      ],
+      "verbForms": {
+        "base": "practice",
+        "past": "practiced",
+        "pastParticiple": "practiced",
+        "sourceRef": "https://www.collinsdictionary.com/conjugation/english/practice",
+        "status": "approved"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins English Verbs conjugation table",
+          "url": "https://www.collinsdictionary.com/conjugation/english/practice",
+          "retrieval": "direct_official_conjugation_page",
+          "shortQuote": "Infinitive\n\nto practice",
+          "location": "Infinitive 節",
+          "scope": "直接明示原形為 practice。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins English Verbs conjugation table",
+          "url": "https://www.collinsdictionary.com/conjugation/english/practice",
+          "retrieval": "direct_official_conjugation_page",
+          "shortQuote": "Past Participle\n\npracticed",
+          "location": "Past Participle 節",
+          "scope": "直接明示過去分詞為 practiced。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins English Verbs conjugation table",
+          "url": "https://www.collinsdictionary.com/conjugation/english/practice",
+          "retrieval": "direct_official_conjugation_page",
+          "shortQuote": "I practiced",
+          "location": "Past 節",
+          "scope": "過去式表直接明示 practiced；不是由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins English Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/practice",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "the US spelling of practise",
+          "location": "Collins English Dictionary, British English, verb sense 7",
+          "scope": "直接確認 practice 作動詞的美式拼字；American English 動詞欄另列 practiced, practicing。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/practise",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle practised regional note: in AM, use practice",
+          "location": "COBUILD Word forms 與 regional note",
+          "scope": "英式動詞 practise 的 practised 另有直接三態證據；同頁將美式對應標為 practice。只記限制，不把英式形式混入美式候選。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "restriction": "保留正式詞目 practice 及美式 practiced；英式動詞另拼 practise、過去式及過去分詞 practised。不能把兩套拼字不加限定地混排，也不能把正式詞目擅改為 practise。",
+      "applicableSense": "美式動詞反覆練習以熟練某項技能；與現有 practices the piano 的拼字及語義相符。",
+      "researchFile": "U12-ADDITIONAL-VERB-FORMS-VERIFICATION.json",
+      "originalPos": "n./v.",
+      "sourceSnapshot": {
+        "researchCommit": "e2d3f0fed929a17670af00ed1989fc9469426d8c",
+        "sourceBlob": "ef314c1bae64cee1410bd02fd30356cd8ff53a87"
+      },
+      "cardIds": [
+        "LV1-U12-53"
+      ],
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-53",
+          "captionEn": "He practices the piano for an hour every day after dinner.",
+          "captionZh": "他每天晚餐後練習彈鋼琴一小時。"
+        }
+      ],
+      "sourceSupportedForms": {
+        "base": "practice",
+        "past": [
+          "practiced"
+        ],
+        "pastParticiple": [
+          "practiced"
+        ]
+      },
+      "variantAssessment": "英式 practise/practised/practised 有直接來源，屬另一套地區拼字。現有正式詞目和例句均採 practice，因此最小候選只填美式 practiced；不擅增 wordVariants 或改詞目。",
+      "regionalAndConstructionRestrictions": "practice 作動詞是美式拼字；英式動詞一般為 practise。名詞 practice 不因地區註記改成 practise。字卡 practices the piano 與美式候選一致。",
+      "currentSourceCheck": {
+        "method": "Direct official dictionary forms and applicable verb construction; conjugation and regional notes checked where needed",
+        "checkedAt": "2026-11-05T14:35:27.818Z",
+        "success": true
+      },
+      "verification": "Exact latest identity, existing verb/applicable sense, true absence and full non-form row hash reconciled. Prior source/UI evidence is provenance, not current integration UI verification.",
+      "beforeRowSha256": "79a21753fbf0fcf75562d7cb7384c8123b170b1a5e74a77b60f42278169c61af",
+      "nonFormRowSha256": "79a21753fbf0fcf75562d7cb7384c8123b170b1a5e74a77b60f42278169c61af",
+      "guard": {
+        "headword": "practice",
+        "pos": "n./v.",
+        "wholeWordStatus": "reviewed"
+      },
+      "originalEvidenceCommit": "08765ad51d3eaff1e09ddfbd19be4efec188a748",
+      "sourceContexts": [
+        {
+          "unit": 12,
+          "cardId": "LV1-U12-53",
+          "sourceOrder": 52,
+          "displayWord": "practice"
+        }
+      ]
+    },
+    {
+      "wordId": "W000919",
+      "word": "trip",
+      "batch": "U12",
+      "units": [
+        "LV1-U12"
+      ],
+      "verbForms": {
+        "base": "trip",
+        "past": "tripped",
+        "pastParticiple": "tripped",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/trip",
+        "status": "approved"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/trip",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle tripped",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "restriction": "tripped 的雙寫 p 由來源直接明示；旅行名詞不另產生三態。其他口語或文學動詞義不因此被加入原摘要。",
+      "applicableSense": "動詞腳碰到障礙而絆倒或險些絆倒；與現有 tripped over a rock 的例句相符。",
+      "researchFile": "U12-ADDITIONAL-VERB-FORMS-VERIFICATION.json",
+      "originalPos": "n./v.",
+      "sourceSnapshot": {
+        "researchCommit": "e2d3f0fed929a17670af00ed1989fc9469426d8c",
+        "sourceBlob": "ef314c1bae64cee1410bd02fd30356cd8ff53a87"
+      },
+      "cardIds": [
+        "LV1-U12-61"
+      ],
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-61",
+          "captionEn": "She tripped over a rock and fell while walking in the park.",
+          "captionZh": "她在公園散步時被一顆石頭絆倒摔了一跤。"
+        }
+      ],
+      "sourceSupportedForms": {
+        "base": "trip",
+        "past": [
+          "tripped"
+        ],
+        "pastParticiple": [
+          "tripped"
+        ]
+      },
+      "variantAssessment": "所讀主三態欄未另列變體；這是最小一般教學候選，不聲稱窮盡歷史、方言或專業變體。",
+      "regionalAndConstructionRestrictions": "所讀絆倒義三態無地區限制；正文支持 trip on/over N。字卡的 tripped over 與候選一致，base 不納入 over。",
+      "currentSourceCheck": {
+        "method": "Direct official dictionary forms and applicable verb construction; conjugation and regional notes checked where needed",
+        "checkedAt": "2026-11-05T14:35:27.818Z",
+        "success": true
+      },
+      "verification": "Exact latest identity, existing verb/applicable sense, true absence and full non-form row hash reconciled. Prior source/UI evidence is provenance, not current integration UI verification.",
+      "beforeRowSha256": "2b76366e843cc7128efb2076a3e579a3b5b2f53781518e2687a548d9be16da91",
+      "nonFormRowSha256": "2b76366e843cc7128efb2076a3e579a3b5b2f53781518e2687a548d9be16da91",
+      "guard": {
+        "headword": "trip",
+        "pos": "n./v.",
+        "wholeWordStatus": "reviewed"
+      },
+      "originalEvidenceCommit": "08765ad51d3eaff1e09ddfbd19be4efec188a748",
+      "sourceContexts": [
+        {
+          "unit": 12,
+          "cardId": "LV1-U12-61",
+          "sourceOrder": 60,
+          "displayWord": "trip"
+        }
+      ]
+    },
+    {
+      "wordId": "W000212",
+      "word": "date",
+      "batch": "U12",
+      "units": [
+        "LV1-U12"
+      ],
+      "verbForms": {
+        "base": "date",
+        "past": "dated",
+        "pastParticiple": "dated",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/date",
+        "status": "approved"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/date",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle dated",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "restriction": "日期、約會、棗類的名詞 date 不另有動詞三態；本候選對應動詞 date，不把名詞複數 dates 當成過去式。",
+      "applicableSense": "動詞標示或判定日期、與人約會；字卡例句的 first date 本身是名詞。",
+      "researchFile": "U12-ADDITIONAL-VERB-FORMS-VERIFICATION.json",
+      "originalPos": "n./v.",
+      "sourceSnapshot": {
+        "researchCommit": "e2d3f0fed929a17670af00ed1989fc9469426d8c",
+        "sourceBlob": "ef314c1bae64cee1410bd02fd30356cd8ff53a87"
+      },
+      "cardIds": [
+        "LV1-U12-62"
+      ],
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-62",
+          "captionEn": "They went on their first date at a small café near the park.",
+          "captionZh": "他們的第一次約會是在公園附近的一家小咖啡廳。"
+        }
+      ],
+      "sourceSupportedForms": {
+        "base": "date",
+        "past": [
+          "dated"
+        ],
+        "pastParticiple": [
+          "dated"
+        ]
+      },
+      "variantAssessment": "所讀主三態欄未另列變體；這是最小一般教學候選，不聲稱窮盡歷史、方言或專業變體。",
+      "regionalAndConstructionRestrictions": "所讀動詞三態主欄無地區限制；date sb 與標日期的 date sth 共用 dated。",
+      "currentSourceCheck": {
+        "method": "Direct official dictionary forms and applicable verb construction; conjugation and regional notes checked where needed",
+        "checkedAt": "2026-11-05T14:35:27.818Z",
+        "success": true
+      },
+      "verification": "Exact latest identity, existing verb/applicable sense, true absence and full non-form row hash reconciled. Prior source/UI evidence is provenance, not current integration UI verification.",
+      "beforeRowSha256": "2c6693ef68188db24b1acbc047a9da969f9064cfaf8d7f63c1acb683e0331c40",
+      "nonFormRowSha256": "2c6693ef68188db24b1acbc047a9da969f9064cfaf8d7f63c1acb683e0331c40",
+      "guard": {
+        "headword": "date",
+        "pos": "n./v.",
+        "wholeWordStatus": "reviewed"
+      },
+      "originalEvidenceCommit": "08765ad51d3eaff1e09ddfbd19be4efec188a748",
+      "sourceContexts": [
+        {
+          "unit": 12,
+          "cardId": "LV1-U12-62",
+          "sourceOrder": 61,
+          "displayWord": "date"
+        }
+      ]
+    },
+    {
+      "wordId": "W000662",
+      "word": "police",
+      "batch": "U12",
+      "units": [
+        "LV1-U12"
+      ],
+      "verbForms": {
+        "base": "police",
+        "past": "policed",
+        "pastParticiple": "policed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/police",
+        "status": "approved"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/police",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle policed",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "restriction": "policed 對應動詞維持治安，不是名詞警察的複數或謂語變化；不把 police 名詞與動詞混淆。",
+      "applicableSense": "動詞在某地或活動中維持法律與秩序；字卡的 police officer 為名詞修飾語用法。",
+      "researchFile": "U12-ADDITIONAL-VERB-FORMS-VERIFICATION.json",
+      "originalPos": "n./v.",
+      "sourceSnapshot": {
+        "researchCommit": "e2d3f0fed929a17670af00ed1989fc9469426d8c",
+        "sourceBlob": "ef314c1bae64cee1410bd02fd30356cd8ff53a87"
+      },
+      "cardIds": [
+        "LV1-U12-63"
+      ],
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-63",
+          "captionEn": "A friendly police officer helped the lost child find his parents.",
+          "captionZh": "一位親切的警察幫助迷路的孩子找到他的父母。"
+        }
+      ],
+      "sourceSupportedForms": {
+        "base": "police",
+        "past": [
+          "policed"
+        ],
+        "pastParticiple": [
+          "policed"
+        ]
+      },
+      "variantAssessment": "所讀主三態欄未另列變體；這是最小一般教學候選，不聲稱窮盡歷史、方言或專業變體。",
+      "regionalAndConstructionRestrictions": "所讀維持治安義三態無地區限制；動詞 police an area/event 有賓語，現有 call the police 的 police 是名詞。",
+      "currentSourceCheck": {
+        "method": "Direct official dictionary forms and applicable verb construction; conjugation and regional notes checked where needed",
+        "checkedAt": "2026-11-05T14:35:27.818Z",
+        "success": true
+      },
+      "verification": "Exact latest identity, existing verb/applicable sense, true absence and full non-form row hash reconciled. Prior source/UI evidence is provenance, not current integration UI verification.",
+      "beforeRowSha256": "9059b227f7890d9670a12ddde65b56cc633dfb521378a3f4ae6566d7fd2c45dc",
+      "nonFormRowSha256": "9059b227f7890d9670a12ddde65b56cc633dfb521378a3f4ae6566d7fd2c45dc",
+      "guard": {
+        "headword": "police",
+        "pos": "n./v.",
+        "wholeWordStatus": "reviewed"
+      },
+      "originalEvidenceCommit": "08765ad51d3eaff1e09ddfbd19be4efec188a748",
+      "sourceContexts": [
+        {
+          "unit": 12,
+          "cardId": "LV1-U12-63",
+          "sourceOrder": 62,
+          "displayWord": "police"
+        }
+      ]
+    },
+    {
+      "wordId": "W000405",
+      "word": "home",
+      "batch": "U12",
+      "units": [
+        "LV1-U12"
+      ],
+      "verbForms": {
+        "base": "home",
+        "past": "homed",
+        "pastParticiple": "homed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/home",
+        "status": "approved"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/home",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle homed",
+          "location": "COBUILD home phrasal verb uses, Word forms",
+          "scope": "詞典直接明列詞形，非拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文，讀取所列相關段落；不是搜尋摘要，亦不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Webster’s New World College Dictionary, 5th Digital Edition",
+          "url": "https://www.collinsdictionary.com/dictionary/english/home",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "to go or return to one's home",
+          "location": "Webster’s New World verb sense 15",
+          "scope": "另讀到提供住處及 home in 的義項；單純 go home 的 home 是副詞，不是 home 動詞。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文，讀取所列相關段落；不是搜尋摘要，亦不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/home-in",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "The critics immediately homed in on the group's newly-elected members.",
+          "location": "COBUILD home in sense 1",
+          "scope": "只補確認 home in 構式；三態的明示標籤取自 home 主詞條。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文，讀取所列相關段落；不是搜尋摘要，亦不聲稱逐字讀完整頁。"
+        }
+      ],
+      "restriction": "只描述動詞詞形；名詞、形容詞或副詞不屈折成這組三態。",
+      "applicableSense": "動詞 home：返回家園、提供住處；home in (on) 指朝向或集中注意。",
+      "researchFile": "U10-U15-PUBLISHED-VERB-FORMS-VERIFICATION.json",
+      "originalPos": "n./adv./v./adj.",
+      "sourceSnapshot": {
+        "researchCommit": "e2d3f0fed929a17670af00ed1989fc9469426d8c",
+        "sourceBlob": "5215e48aadd050f5118e85727bc391ad7150738b"
+      },
+      "cardIds": [
+        "LV1-U12-64"
+      ],
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-64",
+          "captionEn": "Our home has a big garden where we grow vegetables.",
+          "captionZh": "我們家有一個大花園，我們在那裡種蔬菜。"
+        }
+      ],
+      "sourceSupportedForms": {
+        "base": "home",
+        "past": [
+          "homed"
+        ],
+        "pastParticiple": [
+          "homed"
+        ]
+      },
+      "variantAssessment": "所讀 Word forms／三態欄未另列其他形式；不以此聲稱窮盡歷史、方言或專業變體。",
+      "currentSourceCheck": {
+        "method": "Direct official dictionary forms and applicable verb construction; conjugation and regional notes checked where needed",
+        "checkedAt": "2026-11-05T14:35:27.818Z",
+        "success": true
+      },
+      "verification": "Exact latest identity, existing verb/applicable sense, true absence and full non-form row hash reconciled. Prior source/UI evidence is provenance, not current integration UI verification.",
+      "beforeRowSha256": "fd081afe0793b517156c43d5a531fad965ccfe02ae408e6861b408643325955d",
+      "nonFormRowSha256": "fd081afe0793b517156c43d5a531fad965ccfe02ae408e6861b408643325955d",
+      "guard": {
+        "headword": "home",
+        "pos": "n./adv./v./adj.",
+        "wholeWordStatus": "reviewed"
+      },
+      "originalEvidenceCommit": "08765ad51d3eaff1e09ddfbd19be4efec188a748",
+      "sourceContexts": [
+        {
+          "unit": 12,
+          "cardId": "LV1-U12-64",
+          "sourceOrder": 63,
+          "displayWord": "home"
+        }
+      ]
+    },
+    {
+      "wordId": "W001919",
+      "word": "tour",
+      "batch": "U12",
+      "units": [
+        "LV1-U12"
+      ],
+      "verbForms": {
+        "base": "tour",
+        "past": "toured",
+        "pastParticiple": "toured",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/tour",
+        "status": "approved"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/tour",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle toured",
+          "location": "COBUILD Word forms",
+          "scope": "詞典直接明列詞形，非拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文，讀取所列相關段落；不是搜尋摘要，亦不聲稱逐字讀完整頁。"
+        }
+      ],
+      "restriction": "只描述動詞詞形；名詞、形容詞或副詞不屈折成這組三態。",
+      "applicableSense": "巡遊、遊覽。",
+      "researchFile": "U10-U15-PUBLISHED-VERB-FORMS-VERIFICATION.json",
+      "originalPos": "n./v.",
+      "sourceSnapshot": {
+        "researchCommit": "e2d3f0fed929a17670af00ed1989fc9469426d8c",
+        "sourceBlob": "5215e48aadd050f5118e85727bc391ad7150738b"
+      },
+      "cardIds": [
+        "LV1-U12-65"
+      ],
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-65",
+          "captionEn": "The guide gave the children a tour of the art museum.",
+          "captionZh": "導覽員帶孩子們參觀美術館。"
+        }
+      ],
+      "sourceSupportedForms": {
+        "base": "tour",
+        "past": [
+          "toured"
+        ],
+        "pastParticiple": [
+          "toured"
+        ]
+      },
+      "variantAssessment": "所讀 Word forms／三態欄未另列其他形式；不以此聲稱窮盡歷史、方言或專業變體。",
+      "currentSourceCheck": {
+        "method": "Direct official dictionary forms and applicable verb construction; conjugation and regional notes checked where needed",
+        "checkedAt": "2026-11-05T14:35:27.818Z",
+        "success": true
+      },
+      "verification": "Exact latest identity, existing verb/applicable sense, true absence and full non-form row hash reconciled. Prior source/UI evidence is provenance, not current integration UI verification.",
+      "beforeRowSha256": "90603610df5f0bc670a0fca07cda1e3a8a0f81ab4ff7fdc31f8f60c5ca35659b",
+      "nonFormRowSha256": "90603610df5f0bc670a0fca07cda1e3a8a0f81ab4ff7fdc31f8f60c5ca35659b",
+      "guard": {
+        "headword": "tour",
+        "pos": "n./v.",
+        "wholeWordStatus": "reviewed"
+      },
+      "originalEvidenceCommit": "08765ad51d3eaff1e09ddfbd19be4efec188a748",
+      "sourceContexts": [
+        {
+          "unit": 12,
+          "cardId": "LV1-U12-65",
+          "sourceOrder": 64,
+          "displayWord": "tour"
+        }
+      ]
+    },
+    {
+      "wordId": "W001927",
+      "word": "travel",
+      "batch": "U12",
+      "units": [
+        "LV1-U12"
+      ],
+      "verbForms": {
+        "base": "travel",
+        "past": "traveled",
+        "pastParticiple": "traveled",
+        "sourceRef": "https://www.collinsdictionary.com/us/dictionary/english/travel",
+        "status": "approved"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/us/dictionary/english/travel",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle traveled or travelled",
+          "location": "American COBUILD Word forms",
+          "scope": "詞典直接明列詞形，非拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文，讀取所列相關段落；不是搜尋摘要，亦不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "Merriam-Webster",
+          "url": "https://www.merriam-webster.com/dictionary/travel",
+          "retrieval": "direct_dictionary_page",
+          "shortQuotes": [
+            "traveled or travelled",
+            "The forms traveled and traveling are typical in the US, while travelled and travelling are dominant everywhere else."
+          ],
+          "location": "verb inflections line 38; USAGE line 122",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文，讀取所列相關段落；不是搜尋摘要，亦不聲稱逐字讀完整頁。"
+        }
+      ],
+      "restriction": [
+        "traveled 為美式典型拼字；travelled 在美國之外較主流，包含英式。",
+        "兩者是同義拼字變體，不是不同動詞義。此候選不宣稱 travelled 錯誤。",
+        "若產品實際採英式方針，應整組改為 travel–travelled–travelled；目前不混放兩種拼字。"
+      ],
+      "applicableSense": "旅行、移動、行進。",
+      "researchFile": "U10-U15-PUBLISHED-VERB-FORMS-VERIFICATION.json",
+      "originalPos": "n./v.",
+      "sourceSnapshot": {
+        "researchCommit": "e2d3f0fed929a17670af00ed1989fc9469426d8c",
+        "sourceBlob": "5215e48aadd050f5118e85727bc391ad7150738b"
+      },
+      "cardIds": [
+        "LV1-U12-66"
+      ],
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-66",
+          "captionEn": "She loves to travel to new places by plane.",
+          "captionZh": "她喜歡搭飛機到新的地方旅行。"
+        }
+      ],
+      "sourceSupportedForms": {
+        "base": "travel",
+        "past": [
+          "traveled",
+          "travelled"
+        ],
+        "pastParticiple": [
+          "traveled",
+          "travelled"
+        ],
+        "qualification": "這是研究記錄，不是要在介面無限定並列。限定見 senseAndVariantRecords。"
+      },
+      "variantAssessment": "旅行／移動動詞義與字卡相符；採單一美式拼字作最小候選。",
+      "senseAndVariantRecords": [
+        {
+          "sense": "旅行、移動",
+          "past": [
+            "traveled"
+          ],
+          "pastParticiple": [
+            "traveled"
+          ],
+          "label": "美式常見",
+          "includeInMinimalCandidate": true
+        },
+        {
+          "sense": "旅行、移動",
+          "past": [
+            "travelled"
+          ],
+          "pastParticiple": [
+            "travelled"
+          ],
+          "label": "美國之外較主流，包含英式",
+          "includeInMinimalCandidate": false
+        }
+      ],
+      "currentSourceCheck": {
+        "method": "Direct official dictionary forms and applicable verb construction; conjugation and regional notes checked where needed",
+        "checkedAt": "2026-11-05T14:35:27.819Z",
+        "success": true
+      },
+      "verification": "Exact latest identity, existing verb/applicable sense, true absence and full non-form row hash reconciled. Prior source/UI evidence is provenance, not current integration UI verification.",
+      "beforeRowSha256": "831b7473fbbecf884e0af992dd0b8a5453f75da94f091a0407003c56605f1733",
+      "nonFormRowSha256": "831b7473fbbecf884e0af992dd0b8a5453f75da94f091a0407003c56605f1733",
+      "guard": {
+        "headword": "travel",
+        "pos": "n./v.",
+        "wholeWordStatus": "reviewed"
+      },
+      "originalEvidenceCommit": "08765ad51d3eaff1e09ddfbd19be4efec188a748",
+      "sourceContexts": [
+        {
+          "unit": 12,
+          "cardId": "LV1-U12-66",
+          "sourceOrder": 65,
+          "displayWord": "travel"
+        }
+      ]
+    },
+    {
+      "wordId": "W002461",
+      "word": "journey",
+      "batch": "U12",
+      "units": [
+        "LV1-U12"
+      ],
+      "verbForms": {
+        "base": "journey",
+        "past": "journeyed",
+        "pastParticiple": "journeyed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/journey",
+        "status": "approved"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/journey",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle journeyed",
+          "location": "COBUILD Word forms",
+          "scope": "詞典直接明列詞形，非拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文，讀取所列相關段落；不是搜尋摘要，亦不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/journey",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "If you journey somewhere, you travel there.",
+          "location": "COBUILD sense 3, formal",
+          "scope": "正式用語的旅行動詞。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文，讀取所列相關段落；不是搜尋摘要，亦不聲稱逐字讀完整頁。"
+        }
+      ],
+      "restriction": "動詞 journey 帶 formal 標記；字卡的 journey 是名詞，三態來源是詞典，不是字卡名詞。",
+      "applicableSense": "旅行、行進，詞典標為 formal。",
+      "researchFile": "U10-U15-PUBLISHED-VERB-FORMS-VERIFICATION.json",
+      "originalPos": "n./v.",
+      "sourceSnapshot": {
+        "researchCommit": "e2d3f0fed929a17670af00ed1989fc9469426d8c",
+        "sourceBlob": "5215e48aadd050f5118e85727bc391ad7150738b"
+      },
+      "cardIds": [
+        "LV1-U12-67"
+      ],
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-67",
+          "captionEn": "He enjoyed a long journey through the mountain villages.",
+          "captionZh": "他享受了一段穿越山村的漫長旅程。"
+        }
+      ],
+      "sourceSupportedForms": {
+        "base": "journey",
+        "past": [
+          "journeyed"
+        ],
+        "pastParticiple": [
+          "journeyed"
+        ]
+      },
+      "variantAssessment": "所讀 Word forms／三態欄未另列其他形式；不以此聲稱窮盡歷史、方言或專業變體。",
+      "currentSourceCheck": {
+        "method": "Direct official dictionary forms and applicable verb construction; conjugation and regional notes checked where needed",
+        "checkedAt": "2026-11-05T14:35:27.819Z",
+        "success": true
+      },
+      "verification": "Exact latest identity, existing verb/applicable sense, true absence and full non-form row hash reconciled. Prior source/UI evidence is provenance, not current integration UI verification.",
+      "beforeRowSha256": "f80baa5356512bd3721d66486c4e806fb2782a2a37829ec15a91198d8fe89d77",
+      "nonFormRowSha256": "f80baa5356512bd3721d66486c4e806fb2782a2a37829ec15a91198d8fe89d77",
+      "guard": {
+        "headword": "journey",
+        "pos": "n./v.",
+        "wholeWordStatus": "reviewed"
+      },
+      "originalEvidenceCommit": "08765ad51d3eaff1e09ddfbd19be4efec188a748",
+      "sourceContexts": [
+        {
+          "unit": 12,
+          "cardId": "LV1-U12-67",
+          "sourceOrder": 66,
+          "displayWord": "journey"
+        }
+      ]
+    },
+    {
+      "wordId": "W004866",
+      "word": "stumble",
+      "batch": "U12",
+      "units": [
+        "LV1-U12"
+      ],
+      "verbForms": {
+        "base": "stumble",
+        "past": "stumbled",
+        "pastParticiple": "stumbled",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/stumble",
+        "status": "approved"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/stumble",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle stumbled",
+          "location": "COBUILD Word forms",
+          "scope": "詞典直接明列詞形，非拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文，讀取所列相關段落；不是搜尋摘要，亦不聲稱逐字讀完整頁。"
+        }
+      ],
+      "restriction": "只描述動詞詞形；名詞、形容詞或副詞不屈折成這組三態。",
+      "applicableSense": "絆倒、踉蹌；說話停頓或出錯。",
+      "researchFile": "U10-U15-PUBLISHED-VERB-FORMS-VERIFICATION.json",
+      "originalPos": "v./n.",
+      "sourceSnapshot": {
+        "researchCommit": "e2d3f0fed929a17670af00ed1989fc9469426d8c",
+        "sourceBlob": "5215e48aadd050f5118e85727bc391ad7150738b"
+      },
+      "cardIds": [
+        "LV1-U12-68"
+      ],
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-68",
+          "captionEn": "He stumbled over a brick and nearly spilled his coffee.",
+          "captionZh": "他被一塊磚頭絆到，咖啡差點灑出來。"
+        }
+      ],
+      "sourceSupportedForms": {
+        "base": "stumble",
+        "past": [
+          "stumbled"
+        ],
+        "pastParticiple": [
+          "stumbled"
+        ]
+      },
+      "variantAssessment": "所讀 Word forms／三態欄未另列其他形式；不以此聲稱窮盡歷史、方言或專業變體。",
+      "currentSourceCheck": {
+        "method": "Direct official dictionary forms and applicable verb construction; conjugation and regional notes checked where needed",
+        "checkedAt": "2026-11-05T14:35:27.819Z",
+        "success": true
+      },
+      "verification": "Exact latest identity, existing verb/applicable sense, true absence and full non-form row hash reconciled. Prior source/UI evidence is provenance, not current integration UI verification.",
+      "beforeRowSha256": "095327fcd2d4ceb6515e987ffc2be07cbdaff65cfd3c52dc63fff23db7f1cedf",
+      "nonFormRowSha256": "095327fcd2d4ceb6515e987ffc2be07cbdaff65cfd3c52dc63fff23db7f1cedf",
+      "guard": {
+        "headword": "stumble",
+        "pos": "v./n.",
+        "wholeWordStatus": "reviewed"
+      },
+      "originalEvidenceCommit": "08765ad51d3eaff1e09ddfbd19be4efec188a748",
+      "sourceContexts": [
+        {
+          "unit": 12,
+          "cardId": "LV1-U12-68",
+          "sourceOrder": 67,
+          "displayWord": "stumble"
+        }
+      ]
+    },
+    {
+      "wordId": "W000852",
+      "word": "talk",
+      "batch": "U12",
+      "units": [
+        "LV1-U12"
+      ],
+      "verbForms": {
+        "base": "talk",
+        "past": "talked",
+        "pastParticiple": "talked",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/talk",
+        "status": "approved"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/talk",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle talked",
+          "location": "COBUILD Word forms",
+          "scope": "詞典直接明列詞形，非拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文，讀取所列相關段落；不是搜尋摘要，亦不聲稱逐字讀完整頁。"
+        }
+      ],
+      "restriction": "只描述動詞詞形；名詞、形容詞或副詞不屈折成這組三態。",
+      "applicableSense": "說話、交談。",
+      "researchFile": "U10-U15-PUBLISHED-VERB-FORMS-VERIFICATION.json",
+      "originalPos": "v./n.",
+      "sourceSnapshot": {
+        "researchCommit": "e2d3f0fed929a17670af00ed1989fc9469426d8c",
+        "sourceBlob": "5215e48aadd050f5118e85727bc391ad7150738b"
+      },
+      "cardIds": [
+        "LV1-U12-70"
+      ],
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-70",
+          "captionEn": "We had a long talk about our future plans last night.",
+          "captionZh": "我們昨晚就未來的計畫進行了一次長談。"
+        }
+      ],
+      "sourceSupportedForms": {
+        "base": "talk",
+        "past": [
+          "talked"
+        ],
+        "pastParticiple": [
+          "talked"
+        ]
+      },
+      "variantAssessment": "所讀 Word forms／三態欄未另列其他形式；不以此聲稱窮盡歷史、方言或專業變體。",
+      "currentSourceCheck": {
+        "method": "Direct official dictionary forms and applicable verb construction; conjugation and regional notes checked where needed",
+        "checkedAt": "2026-11-05T14:35:27.819Z",
+        "success": true
+      },
+      "verification": "Exact latest identity, existing verb/applicable sense, true absence and full non-form row hash reconciled. Prior source/UI evidence is provenance, not current integration UI verification.",
+      "beforeRowSha256": "ecfa1ec8bf67cfd9e66c793eb299722735b36ac65376349df4888ddfde6c3df1",
+      "nonFormRowSha256": "ecfa1ec8bf67cfd9e66c793eb299722735b36ac65376349df4888ddfde6c3df1",
+      "guard": {
+        "headword": "talk",
+        "pos": "v./n.",
+        "wholeWordStatus": "reviewed"
+      },
+      "originalEvidenceCommit": "08765ad51d3eaff1e09ddfbd19be4efec188a748",
+      "sourceContexts": [
+        {
+          "unit": 12,
+          "cardId": "LV1-U12-70",
+          "sourceOrder": 69,
+          "displayWord": "talk"
+        }
+      ]
+    },
+    {
+      "wordId": "W000651",
+      "word": "plan",
+      "batch": "U12",
+      "units": [
+        "LV1-U12"
+      ],
+      "verbForms": {
+        "base": "plan",
+        "past": "planned",
+        "pastParticiple": "planned",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/plan",
+        "status": "approved"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/plan",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle planned",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "restriction": "planned 的雙寫 n 由來源直接明示，不從拼字規則推導。名詞 plan 不另產生三態。",
+      "applicableSense": "動詞事先安排、計畫做某事；字卡的 have a plan 使用名詞。",
+      "researchFile": "U12-ADDITIONAL-VERB-FORMS-VERIFICATION.json",
+      "originalPos": "n./v.",
+      "sourceSnapshot": {
+        "researchCommit": "e2d3f0fed929a17670af00ed1989fc9469426d8c",
+        "sourceBlob": "ef314c1bae64cee1410bd02fd30356cd8ff53a87"
+      },
+      "cardIds": [
+        "LV1-U12-80"
+      ],
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-80",
+          "captionEn": "I have a plan to clean my whole room this weekend.",
+          "captionZh": "我這個週末計畫把整個房間打掃乾淨。"
+        }
+      ],
+      "sourceSupportedForms": {
+        "base": "plan",
+        "past": [
+          "planned"
+        ],
+        "pastParticiple": [
+          "planned"
+        ]
+      },
+      "variantAssessment": "所讀主三態欄未另列變體；這是最小一般教學候選，不聲稱窮盡歷史、方言或專業變體。",
+      "regionalAndConstructionRestrictions": "所讀三態主欄無地區限制；正文支持 plan to V、plan for N、plan N。",
+      "currentSourceCheck": {
+        "method": "Direct official dictionary forms and applicable verb construction; conjugation and regional notes checked where needed",
+        "checkedAt": "2026-11-05T14:35:27.819Z",
+        "success": true
+      },
+      "verification": "Exact latest identity, existing verb/applicable sense, true absence and full non-form row hash reconciled. Prior source/UI evidence is provenance, not current integration UI verification.",
+      "beforeRowSha256": "236d8b3ac347973190b4c0a8ab6fa083253729d65186d32542702c65cc1327bd",
+      "nonFormRowSha256": "236d8b3ac347973190b4c0a8ab6fa083253729d65186d32542702c65cc1327bd",
+      "guard": {
+        "headword": "plan",
+        "pos": "n./v.",
+        "wholeWordStatus": "reviewed"
+      },
+      "originalEvidenceCommit": "08765ad51d3eaff1e09ddfbd19be4efec188a748",
+      "sourceContexts": [
+        {
+          "unit": 12,
+          "cardId": "LV1-U12-80",
+          "sourceOrder": 79,
+          "displayWord": "plan"
+        }
+      ]
+    },
+    {
+      "wordId": "W000694",
+      "word": "radio",
+      "batch": "U12",
+      "units": [
+        "LV1-U12"
+      ],
+      "verbForms": {
+        "base": "radio",
+        "past": "radioed",
+        "pastParticiple": "radioed",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/radio",
+        "status": "approved"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/radio",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle radioed",
+          "location": "COBUILD Word forms",
+          "scope": "直接明示 past tense 與 past participle；base 由同頁詞目確認，不由拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "本次獨立打開官方來源正文並實讀所列相關段落；不是搜尋摘要，不聲稱逐字讀完整頁。"
+        }
+      ],
+      "restriction": "radioed 是官方 Word forms 直接列出的完整拼字；不由字尾 o 的規則推導，也不將 radios 誤作過去式。收音機名詞不另產生三態。",
+      "applicableSense": "動詞用無線電向某人傳訊；字卡的 turn on the radio 使用名詞。",
+      "researchFile": "U12-ADDITIONAL-VERB-FORMS-VERIFICATION.json",
+      "originalPos": "n./v.",
+      "sourceSnapshot": {
+        "researchCommit": "e2d3f0fed929a17670af00ed1989fc9469426d8c",
+        "sourceBlob": "ef314c1bae64cee1410bd02fd30356cd8ff53a87"
+      },
+      "cardIds": [
+        "LV1-U12-82"
+      ],
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-82",
+          "captionEn": "Can you turn on the radio? I want to listen to some music.",
+          "captionZh": "你可以打開收音機嗎？我想聽點音樂。"
+        }
+      ],
+      "sourceSupportedForms": {
+        "base": "radio",
+        "past": [
+          "radioed"
+        ],
+        "pastParticiple": [
+          "radioed"
+        ]
+      },
+      "variantAssessment": "所讀主三態欄未另列變體；這是最小一般教學候選，不聲稱窮盡歷史、方言或專業變體。",
+      "regionalAndConstructionRestrictions": "所讀傳訊義三態無地區限制；正文有 radio someone、radio for advice 及 radio that 子句。保留 base radio，不擴成 radio for。",
+      "currentSourceCheck": {
+        "method": "Direct official dictionary forms and applicable verb construction; conjugation and regional notes checked where needed",
+        "checkedAt": "2026-11-05T14:35:27.819Z",
+        "success": true
+      },
+      "verification": "Exact latest identity, existing verb/applicable sense, true absence and full non-form row hash reconciled. Prior source/UI evidence is provenance, not current integration UI verification.",
+      "beforeRowSha256": "42014c3422253afd8fd8d56bbc1da9fad9a2a593fe7b694984459662d82d6cec",
+      "nonFormRowSha256": "42014c3422253afd8fd8d56bbc1da9fad9a2a593fe7b694984459662d82d6cec",
+      "guard": {
+        "headword": "radio",
+        "pos": "n./v.",
+        "wholeWordStatus": "reviewed"
+      },
+      "originalEvidenceCommit": "08765ad51d3eaff1e09ddfbd19be4efec188a748",
+      "sourceContexts": [
+        {
+          "unit": 12,
+          "cardId": "LV1-U12-82",
+          "sourceOrder": 81,
+          "displayWord": "radio"
+        }
+      ]
+    },
+    {
+      "wordId": "W000665",
+      "word": "pool",
+      "batch": "U12",
+      "units": [
+        "LV1-U12"
+      ],
+      "verbForms": {
+        "base": "pool",
+        "past": "pooled",
+        "pastParticiple": "pooled",
+        "sourceRef": "https://www.collinsdictionary.com/dictionary/english/pool",
+        "status": "approved"
+      },
+      "evidence": [
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/pool",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "past tense, past participle pooled",
+          "location": "COBUILD Word forms",
+          "scope": "詞典直接明列詞形，非拼字規則推導。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文，讀取所列相關段落；不是搜尋摘要，亦不聲稱逐字讀完整頁。"
+        },
+        {
+          "publisher": "HarperCollins",
+          "work": "Collins COBUILD Advanced Learner’s Dictionary",
+          "url": "https://www.collinsdictionary.com/dictionary/english/pool",
+          "retrieval": "direct_dictionary_page",
+          "shortQuote": "If liquid pools, it forms a pool.",
+          "location": "COBUILD senses 5 and 8",
+          "scope": "另讀到匯集資源義；兩義詞形均 pooled。",
+          "accessedDate": "2026-11-05",
+          "searchSnippetOnly": false,
+          "retrievalDetail": "實際打開詞典正文，讀取所列相關段落；不是搜尋摘要，亦不聲稱逐字讀完整頁。"
+        }
+      ],
+      "restriction": "只描述動詞詞形；名詞、形容詞或副詞不屈折成這組三態。",
+      "applicableSense": "匯集、共用資源；液體聚集成池。",
+      "researchFile": "U10-U15-PUBLISHED-VERB-FORMS-VERIFICATION.json",
+      "originalPos": "n./v.",
+      "sourceSnapshot": {
+        "researchCommit": "e2d3f0fed929a17670af00ed1989fc9469426d8c",
+        "sourceBlob": "5215e48aadd050f5118e85727bc391ad7150738b"
+      },
+      "cardIds": [
+        "LV1-U12-84"
+      ],
+      "cardContexts": [
+        {
+          "cardId": "LV1-U12-84",
+          "captionEn": "He swims in the pool every afternoon.",
+          "captionZh": "他每天下午都在泳池裡游泳。"
+        }
+      ],
+      "sourceSupportedForms": {
+        "base": "pool",
+        "past": [
+          "pooled"
+        ],
+        "pastParticiple": [
+          "pooled"
+        ]
+      },
+      "variantAssessment": "所讀 Word forms／三態欄未另列其他形式；不以此聲稱窮盡歷史、方言或專業變體。",
+      "currentSourceCheck": {
+        "method": "Direct official dictionary forms and applicable verb construction; conjugation and regional notes checked where needed",
+        "checkedAt": "2026-11-05T14:35:27.819Z",
+        "success": true
+      },
+      "verification": "Exact latest identity, existing verb/applicable sense, true absence and full non-form row hash reconciled. Prior source/UI evidence is provenance, not current integration UI verification.",
+      "beforeRowSha256": "62da619a64121e09fa9a4870a806340ea6847bab3eb38f458e2cae6dbb40a4ed",
+      "nonFormRowSha256": "62da619a64121e09fa9a4870a806340ea6847bab3eb38f458e2cae6dbb40a4ed",
+      "guard": {
+        "headword": "pool",
+        "pos": "n./v.",
+        "wholeWordStatus": "reviewed"
+      },
+      "originalEvidenceCommit": "08765ad51d3eaff1e09ddfbd19be4efec188a748",
+      "sourceContexts": [
+        {
+          "unit": 12,
+          "cardId": "LV1-U12-84",
+          "sourceOrder": 83,
+          "displayWord": "pool"
+        }
+      ]
+    }
+  ],
+  "skipped": [],
+  "conflicts": []
+}

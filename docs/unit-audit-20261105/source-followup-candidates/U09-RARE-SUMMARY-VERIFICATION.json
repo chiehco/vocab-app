@@ -1,0 +1,806 @@
+{
+  "schemaVersion": 1,
+  "task": "U09 rare inherited Chinese summary verification",
+  "checkedAt": "2026-11-05T09:00:00Z",
+  "mode": "read-only linguistic verification; no repository or product-status edits",
+  "scope": "W000422 husband; W000816 special; W002311 fairly; W004786 shatter. Verify inherited Chinese summary senses, not the whole cards or verbForms.",
+  "decisionRules": [
+    "A missing modern learner-dictionary entry does not prove an old or specialized sense wrong.",
+    "Lexical existence, Chinese translation fidelity, source provenance, and unit-example applicability are different claims.",
+    "Direct publisher entries are stronger than search-index snippets. Unattributed Chinese aggregators are provenance leads only.",
+    "Keep unsupported original pairings pending; do not invent mappings or silently delete them.",
+    "Dictionary register labels may differ; report the difference rather than invent a consensus."
+  ],
+  "summary": {
+    "certainCorrections": [
+      "husband final 節儉 should be explicitly separated as a transitive resource-conservation verb, while the noun headword remains n.",
+      "shatter 碎片 is a noun, usually plural shatters, and should be labeled separately from the v. headword."
+    ],
+    "confirmedRetentions": [
+      "All four fairly glosses, including 美觀地 and 清楚地.",
+      "husband property manager and frugal person, with British/archaic qualifications as described.",
+      "special noun train, newspaper extra, and special thing.",
+      "shatter ordinary breaking and figurative hope-destruction; plant shedding is a real verb family."
+    ],
+    "pendingExactOriginalMappings": [
+      "special 專輯",
+      "shatter 落葉 if inherited as a noun",
+      "shatter 噴灑"
+    ],
+    "importantNegativeConclusion": "Do not report that special 專輯 or shatter 噴灑 do not exist merely because familiar learner senses differ. Real adjacent/historical senses make those conclusions unjustified.",
+    "productVerificationStatusChanged": false
+  },
+  "items": [
+    {
+      "wordId": "W000422",
+      "word": "husband",
+      "headwordPos": "n.",
+      "before": "丈夫；管理人；節儉的人；節儉",
+      "afterCandidate": "丈夫；管理人（英式／舊用法）；節儉的人（舊用法）；（另有動詞用法）節約使用",
+      "candidateType": "minimal supported disambiguation; all four inherited semantic families retained",
+      "lexicalReviewConclusion": "All four semantic families are supported. The final gloss is a separate transitive verb sense, not a noun meaning the abstract quality of thrift.",
+      "senses": [
+        {
+          "inheritedGloss": "丈夫",
+          "lexicalFinding": "confirmed",
+          "partOfSpeech": "noun",
+          "evidence": [
+            "MW_HUSBAND#spouse"
+          ],
+          "finding": "婚姻中的男性配偶。",
+          "qualificationsOrUncertainty": "",
+          "recommendedAction": "retain"
+        },
+        {
+          "inheritedGloss": "管理人",
+          "lexicalFinding": "confirmed_with_qualification",
+          "partOfSpeech": "noun",
+          "evidence": [
+            "MW_HUSBAND#manager",
+            "COLLINS_HUSBAND#manager"
+          ],
+          "finding": "確有管理他人財產／莊園的管理人義。",
+          "qualificationsOrUncertainty": "MW 標 British；Collins British English 標 archaic。不是從 husbandman（耕作者）推導的管理人；不要泛化成任何職業經理。",
+          "recommendedAction": "retain with usage qualifier; 財產管理人 is a more precise optional wording"
+        },
+        {
+          "inheritedGloss": "節儉的人",
+          "lexicalFinding": "confirmed_with_qualification",
+          "partOfSpeech": "noun",
+          "evidence": [
+            "MW_HUSBAND#frugal",
+            "COLLINS_HUSBAND#frugal"
+          ],
+          "finding": "Collins 直接收 frugal person；MW 較具體為節儉的管理者。",
+          "qualificationsOrUncertainty": "Collins 標 archaic，MW 未加此標。可標舊用法，但說明各詞典標籤有差異。",
+          "recommendedAction": "retain with usage qualifier"
+        },
+        {
+          "inheritedGloss": "節儉",
+          "lexicalFinding": "confirmed_but_pos_mixed",
+          "partOfSpeech": "transitive verb",
+          "evidence": [
+            "MW_HUSBAND#verb",
+            "WORDNIK_HUSBAND#economize",
+            "COLLINS_HUSBAND#verb_register"
+          ],
+          "finding": "可節約使用資源、金錢或力氣；不宜列成 husband 的抽象名詞義。",
+          "qualificationsOrUncertainty": "COBUILD 將此動詞標 literary。本卡詞頭 n. 不改，摘要明示另有動詞用法。",
+          "recommendedAction": "label separate verb use and clarify as 節約使用"
+        }
+      ],
+      "pending": [],
+      "doNotChange": [
+        "headword POS",
+        "product verification status",
+        "verbForms",
+        "unit example meaning"
+      ]
+    },
+    {
+      "wordId": "W000816",
+      "word": "special",
+      "headwordPos": "adj.",
+      "before": "特別的；特殊的；（另有名詞用法）專輯；專車；號外；特別的東西",
+      "afterCandidate": "特別的；特殊的；（另有名詞用法）專輯；專車；號外；特別的東西",
+      "candidateType": "conservative no-change candidate; unresolved 專輯 remains preserved",
+      "optionalClarifiedCandidate": "特別的；特殊的；（另有名詞用法）專輯（所指待確認）；專車（如專用列車）；號外；特別的東西",
+      "sourceBackedReplacementIfOriginalBroadcastIntentIsEstablished": "特別的；特殊的；（另有名詞用法）（電視／廣播）特別節目；專車（如專用列車）；號外；特別的東西",
+      "replacementGate": "Do not silently treat the broadcast candidate as the proven original meaning of 專輯. Retain the unresolved original/source history until its intended sense is established or an explicit editorial choice is made.",
+      "lexicalReviewConclusion": "The noun senses are real and already separated from the adjective. 專輯 is potentially a broad Chinese broadcast/collection rendering, not automatically a wrong album gloss, but its exact intended pairing is unresolved.",
+      "senses": [
+        {
+          "inheritedGloss": "特別的",
+          "lexicalFinding": "confirmed",
+          "partOfSpeech": "adjective",
+          "evidence": [
+            "COLLINS_SPECIAL_ZH#adj"
+          ],
+          "finding": "英中詞典直接支持特別的。",
+          "qualificationsOrUncertainty": "",
+          "recommendedAction": "retain"
+        },
+        {
+          "inheritedGloss": "特殊的",
+          "lexicalFinding": "confirmed",
+          "partOfSpeech": "adjective",
+          "evidence": [
+            "COLLINS_SPECIAL#adjective"
+          ],
+          "finding": "非尋常、不同於一般的形容詞義支持特殊的。",
+          "qualificationsOrUncertainty": "",
+          "recommendedAction": "retain"
+        },
+        {
+          "inheritedGloss": "專輯",
+          "lexicalFinding": "partially_supported_exact_pairing_pending",
+          "partOfSpeech": "noun candidate; source intent unconfirmed",
+          "evidence": [
+            "MW_SPECIAL#broadcast",
+            "COLLINS_SPECIAL_ZH#broadcast",
+            "MOE_ALBUM#definition",
+            "CAMBRIDGE_SPECIAL_ZH#broadcast"
+          ],
+          "finding": "special 確有非定期系列的特別節目義；中文專輯不只指唱片，教育部亦有電視音樂專輯例。",
+          "qualificationsOrUncertainty": "兩邊語義可能相接，但目前沒有可靠原始英漢條目證明此欄的專輯究竟指節目特輯、特刊或音樂唱片。不能以未找到為由刪除，也不能直接認證為 album。",
+          "recommendedAction": "preserve pending; offer 特別節目 only as an explicit source-backed clarification after identifying intended scope"
+        },
+        {
+          "inheritedGloss": "專車",
+          "lexicalFinding": "confirmed_with_scope",
+          "partOfSpeech": "noun",
+          "evidence": [
+            "COLLINS_SPECIAL#train",
+            "COLLINS_SPECIAL_ZH#train"
+          ],
+          "finding": "可指為特定目的開行的列車；Collins 英中譯專列。",
+          "qualificationsOrUncertainty": "能確證專用列車，不代表 special 可以無限制代替所有包車／私家車。",
+          "recommendedAction": "retain; optionally clarify 如專用列車"
+        },
+        {
+          "inheritedGloss": "號外",
+          "lexicalFinding": "confirmed",
+          "partOfSpeech": "noun",
+          "evidence": [
+            "COLLINS_SPECIAL#paper"
+          ],
+          "finding": "報紙額外發行的特別版支持號外。",
+          "qualificationsOrUncertainty": "",
+          "recommendedAction": "retain"
+        },
+        {
+          "inheritedGloss": "特別的東西",
+          "lexicalFinding": "confirmed",
+          "partOfSpeech": "noun",
+          "evidence": [
+            "COLLINS_SPECIAL#thing"
+          ],
+          "finding": "確有特別的人或事物的名詞總括義。",
+          "qualificationsOrUncertainty": "",
+          "recommendedAction": "retain"
+        }
+      ],
+      "pending": [
+        {
+          "gloss": "專輯",
+          "reason": "缺可靠原始英漢來源與 intended sub-sense；現有證據只能確認英文特別節目義及中文專輯的較廣用法。",
+          "nextEvidenceNeeded": "原始來源的 special 名詞條目／例句，或明確編輯決策改以可證的特別節目義呈現。"
+        }
+      ],
+      "doNotChange": [
+        "headword POS",
+        "product verification status",
+        "verbForms",
+        "unit example meaning"
+      ]
+    },
+    {
+      "wordId": "W002311",
+      "word": "fairly",
+      "headwordPos": "adv.",
+      "before": "美觀地；公平地；相當地；清楚地",
+      "afterCandidate": "美觀地；公平地；相當地；清楚地",
+      "candidateType": "retain unchanged; all four lexical senses supported",
+      "lexicalReviewConclusion": "The uncommon-looking first and fourth glosses are directly attested in current MW, not hallucinated meanings. No lexical deletion is warranted.",
+      "senses": [
+        {
+          "inheritedGloss": "美觀地",
+          "lexicalFinding": "confirmed",
+          "partOfSpeech": "adverb",
+          "evidence": [
+            "MW_FAIRLY#handsome"
+          ],
+          "finding": "直接對應以漂亮／美觀方式的副詞義。",
+          "qualificationsOrUncertainty": "MW 本義未標 archaic 或 obsolete。可說此義非本句常見程度副詞義，不可未據此自行標廢語。",
+          "recommendedAction": "retain"
+        },
+        {
+          "inheritedGloss": "公平地",
+          "lexicalFinding": "confirmed",
+          "partOfSpeech": "adverb",
+          "evidence": [
+            "MW_FAIRLY#fair",
+            "WORDNIK_FAIRLY#fair"
+          ],
+          "finding": "無偏頗、公正的方式。",
+          "qualificationsOrUncertainty": "",
+          "recommendedAction": "retain"
+        },
+        {
+          "inheritedGloss": "相當地",
+          "lexicalFinding": "confirmed_with_degree_nuance",
+          "partOfSpeech": "adverb",
+          "evidence": [
+            "MW_FAIRLY#degree",
+            "WORDNIK_FAIRLY#degree"
+          ],
+          "finding": "程度副詞 rather/moderately，可譯相當地。",
+          "qualificationsOrUncertainty": "通常是中等或一定程度，不保證達到非常的強度；本次不重解已另行查核的例句。",
+          "recommendedAction": "retain"
+        },
+        {
+          "inheritedGloss": "清楚地",
+          "lexicalFinding": "confirmed",
+          "partOfSpeech": "adverb",
+          "evidence": [
+            "MW_FAIRLY#clear",
+            "WORDNIK_FAIRLY#clear"
+          ],
+          "finding": "MW 明列 plainly/distinctly；AHD 亦列 clearly/distinctly。",
+          "qualificationsOrUncertainty": "MW 本義沒有古語標籤；不要因常用義只有公平／相當就刪掉本義。",
+          "recommendedAction": "retain"
+        }
+      ],
+      "pending": [],
+      "doNotChange": [
+        "headword POS",
+        "product verification status",
+        "verbForms",
+        "unit example meaning"
+      ]
+    },
+    {
+      "wordId": "W004786",
+      "word": "shatter",
+      "headwordPos": "v.",
+      "before": "碎片；粉碎；落葉；噴灑；（本單元動詞）使粉碎／震碎；粉碎希望",
+      "afterCandidate": "碎片（名詞，通常用複數）；粉碎；落葉；噴灑；（本單元動詞）使粉碎／震碎；粉碎希望",
+      "candidateType": "minimal certain POS clarification only; ambiguous inherited 落葉 and 噴灑 retained without guessing their original intended POS",
+      "optionalClarifiedCandidate": "（本單元動詞）使粉碎／震碎；粉碎希望；（亦有動詞義）粉碎；（葉、花瓣或果實）脫落；（另有名詞用法，通常用複數）碎片；（原譯所指待確認）落葉；噴灑",
+      "optionalClarifiedCandidateCaution": "This educational presentation is intentionally explicit but duplicates the unresolved 落葉 string. Do not deploy it as a clean replacement without editorial review. The primary afterCandidate is the safe minimum.",
+      "lexicalReviewConclusion": "Fragments, breaking, plant shedding, and historical scatter/sprinkle senses exist. The inherited four-gloss sequence is found elsewhere as a noun list, so do not automatically reinterpret its 落葉 or 噴灑 as verbs. Preserve those exact Chinese mappings pending original-source evidence.",
+      "senses": [
+        {
+          "inheritedGloss": "碎片",
+          "lexicalFinding": "confirmed_but_pos_mixed",
+          "partOfSpeech": "noun, usually plural shatters",
+          "evidence": [
+            "MW_SHATTER#fragment",
+            "AHD_SHATTER#fragment",
+            "COLLINS_SHATTER#fragment_register"
+          ],
+          "finding": "明確是名詞碎片／碎屑，多用複數。",
+          "qualificationsOrUncertainty": "Collins British English 標 obsolete or dialect；MW/AHD 只明示常用複數，未統一標古語。這個名詞義不能藉詞頭 v. 自動抹掉。",
+          "recommendedAction": "retain and label noun, usually plural"
+        },
+        {
+          "inheritedGloss": "粉碎",
+          "lexicalFinding": "confirmed_but_pos_ambiguous",
+          "partOfSpeech": "verb; also noun act/state",
+          "evidence": [
+            "COLLINS_SHATTER#break",
+            "MW_SHATTER#state"
+          ],
+          "finding": "動詞可指粉碎／變碎，名詞也可指粉碎的動作或已破碎的狀態。",
+          "qualificationsOrUncertainty": "原清單可能從名詞摘要而來，不宜沒有來源就把第一個粉碎強制指派給單一詞性。",
+          "recommendedAction": "retain; distinguish noun act/state if the source schema is later recovered"
+        },
+        {
+          "inheritedGloss": "落葉",
+          "lexicalFinding": "lexical_family_confirmed_exact_inherited_noun_pending",
+          "partOfSpeech": "intransitive shedding confirmed; original nominal interpretation unconfirmed",
+          "evidence": [
+            "MW_SHATTER#fall",
+            "MW_SHATTER#disperse",
+            "CENTURY_SHATTER#grain"
+          ],
+          "finding": "植物落葉／掉花瓣／落果的動詞義確有；農業穀粒因過熟散落也有歷史詞典支持。",
+          "qualificationsOrUncertainty": "若原落葉指落葉動作，語義可成立；若指地上的一片落葉，現有可靠來源未核實這個名詞義。搜尋同序摘要竟標 n.，故保留詞性／來源疑點，不能宣稱整個原義已核真。",
+          "recommendedAction": "preserve pending original POS; may separately add the supported 動詞：（葉等）脫落 sense if desired"
+        },
+        {
+          "inheritedGloss": "噴灑",
+          "lexicalFinding": "related_senses_confirmed_exact_translation_pending",
+          "partOfSpeech": "noun fragments spray; historical dialect verb scatter/sprinkle and noun sprinkling",
+          "evidence": [
+            "AHD_SHATTER#spray",
+            "KENT_SHATTER#verb",
+            "KENT_SHATTER#noun",
+            "KENT_SHATTER#rain",
+            "WILTS_SHATTER#verb",
+            "WILTS_SHATTER#pepper"
+          ],
+          "finding": "AHD 有名詞飛散的一堆碎片；肯特歷史方言有灑散、零星降雨的動名詞，Wiltshire 有撒胡椒的動詞例。",
+          "qualificationsOrUncertainty": "spray of fragments 不是泛指噴液動作；sprinkle 也不必有噴射。上述義不能自動證明原中文噴灑的詞性或範圍。未核到可靠英漢原條目，不能直接刪除或認證為現代普通噴灑。",
+          "recommendedAction": "preserve pending; evidence-backed alternatives are 飛散的一堆碎片（名詞） or 灑／撒（歷史方言動詞）, chosen only after intended sense is established"
+        },
+        {
+          "inheritedGloss": "（本單元動詞）使粉碎／震碎",
+          "lexicalFinding": "confirmed",
+          "partOfSpeech": "transitive verb",
+          "evidence": [
+            "COLLINS_SHATTER#break"
+          ],
+          "finding": "使物體碎成很多小片的動詞義；震碎是導致破碎的具體方式。",
+          "qualificationsOrUncertainty": "本次僅核詞義，不重新認證例句／圖片。",
+          "recommendedAction": "retain"
+        },
+        {
+          "inheritedGloss": "粉碎希望",
+          "lexicalFinding": "confirmed",
+          "partOfSpeech": "transitive verb, figurative",
+          "evidence": [
+            "COLLINS_SHATTER#hopes"
+          ],
+          "finding": "希望、夢想、信念被徹底破壞的比喻動詞用法。",
+          "qualificationsOrUncertainty": "",
+          "recommendedAction": "retain"
+        }
+      ],
+      "pending": [
+        {
+          "gloss": "落葉",
+          "reason": "已證植物脫落的動詞，但原四義摘要有名詞清單的來源線索；尚不能核實落下的葉片／落葉名詞義。",
+          "nextEvidenceNeeded": "原始英漢條目，特別是 n. 與 vi. 的分界，或可證明 noun shatter 指 fallen leaves 的權威詞典義項。"
+        },
+        {
+          "gloss": "噴灑",
+          "reason": "相關名詞碎片飛散及歷史方言灑散義已證；原譯究竟是哪一義、是否錯置詞性仍未明。",
+          "nextEvidenceNeeded": "原始英漢條目的噴灑對應英義、詞性和地域／時代標記。"
+        }
+      ],
+      "doNotChange": [
+        "headword POS",
+        "product verification status",
+        "verbForms",
+        "unit example meaning"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "MW_HUSBAND",
+      "title": "Merriam-Webster: husband",
+      "url": "https://www.merriam-webster.com/dictionary/husband",
+      "access": "direct_page_opened",
+      "sourceStrength": "A: publisher dictionary entry",
+      "shortExactExcerpts": [
+        {
+          "id": "spouse",
+          "text": "a male partner in a marriage",
+          "location": "noun 1"
+        },
+        {
+          "id": "manager",
+          "text": "the manager of another's property",
+          "location": "noun 2, labeled British"
+        },
+        {
+          "id": "frugal",
+          "text": "a frugal manager",
+          "location": "noun 3"
+        },
+        {
+          "id": "verb",
+          "text": "to use sparingly",
+          "location": "transitive verb 1b"
+        }
+      ],
+      "notes": "Manager is a noun, not an inference from husbandman. MW does not mark noun 3 archaic; other dictionaries do."
+    },
+    {
+      "id": "COLLINS_HUSBAND",
+      "title": "Collins English Dictionary / COBUILD: husband",
+      "url": "https://www.collinsdictionary.com/dictionary/english/husband",
+      "access": "direct_page_opened_and_find",
+      "sourceStrength": "A: publisher dictionary entry",
+      "shortExactExcerpts": [
+        {
+          "id": "manager",
+          "text": "a manager of an estate",
+          "location": "British English noun 2a, under archaic"
+        },
+        {
+          "id": "frugal",
+          "text": "a frugal person",
+          "location": "British English noun 2b, under archaic"
+        },
+        {
+          "id": "verb_register",
+          "text": "literary",
+          "location": "COBUILD verb 2"
+        }
+      ],
+      "notes": "COBUILD labels the resource-conservation verb literary. Collins British English marks the two older nouns archaic; MW uses British for the property-manager noun and no temporal label for frugal manager."
+    },
+    {
+      "id": "WORDNIK_HUSBAND",
+      "title": "Wordnik quoting AHD 5 and Century: husband",
+      "url": "https://www.wordnik.com/words/husband",
+      "access": "direct_page_opened",
+      "sourceStrength": "B+: named dictionary reproduced by aggregator",
+      "shortExactExcerpts": [
+        {
+          "id": "husbandman",
+          "text": "A tiller of the ground; a husbandman.",
+          "location": "The Century Dictionary, noun"
+        },
+        {
+          "id": "economize",
+          "text": "To use sparingly or economically; conserve.",
+          "location": "American Heritage Dictionary 5th edition, transitive verb"
+        }
+      ],
+      "notes": "The historical farmer sense is separately listed; it must not be substituted for the estate manager. No new farmer gloss is needed in this task."
+    },
+    {
+      "id": "MW_FAIRLY",
+      "title": "Merriam-Webster: fairly",
+      "url": "https://www.merriam-webster.com/dictionary/fairly",
+      "access": "direct_page_opened",
+      "sourceStrength": "A: publisher dictionary entry",
+      "shortExactExcerpts": [
+        {
+          "id": "handsome",
+          "text": "in a handsome manner",
+          "location": "adverb 1"
+        },
+        {
+          "id": "fair",
+          "text": "without bias or distortion",
+          "location": "adverb 4b"
+        },
+        {
+          "id": "clear",
+          "text": "plainly, distinctly",
+          "location": "adverb 5"
+        },
+        {
+          "id": "degree",
+          "text": "moderately",
+          "location": "adverb 6"
+        }
+      ],
+      "notes": "All four inherited glosses have an adverb counterpart. In this entry obsolete applies to sense 2 (gentle/courteous), not sense 1 or 5. Do not move the obsolete label to 美觀地 or 清楚地."
+    },
+    {
+      "id": "WORDNIK_FAIRLY",
+      "title": "Wordnik quoting AHD 5 and Century: fairly",
+      "url": "https://www.wordnik.com/words/fairly",
+      "access": "direct_page_opened",
+      "sourceStrength": "B+: named dictionary reproduced by aggregator",
+      "shortExactExcerpts": [
+        {
+          "id": "clear",
+          "text": "Clearly; distinctly.",
+          "location": "AHD 5, adverb"
+        },
+        {
+          "id": "degree",
+          "text": "Moderately; rather.",
+          "location": "AHD 5, adverb"
+        },
+        {
+          "id": "fair",
+          "text": "In a fair or just manner; equitably.",
+          "location": "AHD 5, adverb"
+        }
+      ],
+      "notes": "The AHD and Century material independently corroborate 清楚地. This is lexical evidence, not evidence that every occurrence of fairly means clearly."
+    },
+    {
+      "id": "COLLINS_SPECIAL",
+      "title": "Collins English Dictionary: special",
+      "url": "https://www.collinsdictionary.com/dictionary/english/special",
+      "access": "direct_page_opened_and_find",
+      "sourceStrength": "A: publisher dictionary entry",
+      "shortExactExcerpts": [
+        {
+          "id": "thing",
+          "text": "a special person or thing",
+          "location": "British English noun 6"
+        },
+        {
+          "id": "paper",
+          "text": "an extra edition of a newspaper",
+          "location": "British English noun 6"
+        },
+        {
+          "id": "train",
+          "text": "a train reserved for a particular purpose",
+          "location": "British English noun 6"
+        },
+        {
+          "id": "adjective",
+          "text": "not usual or commonplace",
+          "location": "British English adjective 3"
+        }
+      ],
+      "notes": "Noun 6 explicitly supports the things, newspaper extra, and train senses. It does not identify an ordinary musical album as special."
+    },
+    {
+      "id": "COLLINS_SPECIAL_ZH",
+      "title": "Collins English-Chinese: special",
+      "url": "https://www.collinsdictionary.com/dictionary/english-chinese/special",
+      "access": "direct_page_opened_and_find",
+      "sourceStrength": "A: publisher bilingual dictionary entry",
+      "shortExactExcerpts": [
+        {
+          "id": "adj",
+          "text": "特别的",
+          "location": "adjective 1"
+        },
+        {
+          "id": "broadcast",
+          "text": "(Television, Radio) 特别节目",
+          "location": "noun [count] 2"
+        },
+        {
+          "id": "train",
+          "text": "(train) 专列",
+          "location": "noun [count] 3"
+        }
+      ],
+      "notes": "Direct bilingual support for 特別節目 and 專列. Traditional-character conversions in proposals are editorial conversions, not extra senses."
+    },
+    {
+      "id": "MW_SPECIAL",
+      "title": "Merriam-Webster: special",
+      "url": "https://www.merriam-webster.com/dictionary/special",
+      "access": "direct_page_opened_and_find",
+      "sourceStrength": "A: publisher dictionary entry",
+      "shortExactExcerpts": [
+        {
+          "id": "broadcast",
+          "text": "something (such as a television program) that is not part of a regular series",
+          "location": "noun 2"
+        }
+      ],
+      "notes": "Supports a standalone special program, not an unrestricted equation with album."
+    },
+    {
+      "id": "MOE_ALBUM",
+      "title": "教育部《國語辭典簡編本》2021：專輯",
+      "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=30914&la=0&powerMode=0",
+      "access": "direct_page_opened",
+      "sourceStrength": "A: official Chinese dictionary entry",
+      "shortExactExcerpts": [
+        {
+          "id": "definition",
+          "text": "以特定的人事物為內容而發行的作品。",
+          "location": "釋義"
+        }
+      ],
+      "notes": "The same entry illustrates a television music program/collection. Thus 專輯 is not restricted to a music recording album. This Chinese definition prevents a false rejection; it does not prove that the inherited English-Chinese pairing intended exactly this sense."
+    },
+    {
+      "id": "CAMBRIDGE_SPECIAL_ZH",
+      "title": "Cambridge English-Chinese Traditional: special",
+      "url": "https://dictionary.cambridge.org/dictionary/english-chinese-traditional/special",
+      "access": "search_index_only; direct page returned 403",
+      "sourceStrength": "B: publisher search excerpt, not directly inspected page",
+      "shortExactExcerpts": [
+        {
+          "id": "broadcast",
+          "text": "a three-hour election night special 三個小時的選舉之夜特別節目",
+          "location": "search index excerpt"
+        }
+      ],
+      "notes": "Corroboration only. The directly opened Collins bilingual entry is the stronger evidence."
+    },
+    {
+      "id": "MW_SHATTER",
+      "title": "Merriam-Webster: shatter",
+      "url": "https://www.merriam-webster.com/dictionary/shatter",
+      "access": "direct_page_opened",
+      "sourceStrength": "A: publisher dictionary entry",
+      "shortExactExcerpts": [
+        {
+          "id": "fall",
+          "text": "to drop off parts (such as leaves, petals, or fruit)",
+          "location": "intransitive verb 2"
+        },
+        {
+          "id": "fragment",
+          "text": "fragment, shred",
+          "location": "noun 1; usually plural"
+        },
+        {
+          "id": "state",
+          "text": "the state of being shattered",
+          "location": "noun 2"
+        },
+        {
+          "id": "disperse",
+          "text": "to cause to drop or be dispersed",
+          "location": "transitive verb 1"
+        }
+      ],
+      "notes": "The leaf sense is verbal shedding, not automatically a fallen-leaf object noun. MW also records a nominal act/state of shattering. These excerpts together contain 24 English words."
+    },
+    {
+      "id": "COLLINS_SHATTER",
+      "title": "Collins English Dictionary / COBUILD: shatter",
+      "url": "https://www.collinsdictionary.com/dictionary/english/shatter",
+      "access": "direct_page_opened_and_find",
+      "sourceStrength": "A: publisher dictionary entry",
+      "shortExactExcerpts": [
+        {
+          "id": "break",
+          "text": "to break or be broken into many small pieces",
+          "location": "British English verb 1"
+        },
+        {
+          "id": "fragment_register",
+          "text": "obsolete or dialect",
+          "location": "British English noun 6, usually plural"
+        },
+        {
+          "id": "scatter_register",
+          "text": "an obsolete word for scatter",
+          "location": "British English verb 5"
+        },
+        {
+          "id": "hopes",
+          "text": "shatter the hopes",
+          "location": "COBUILD verb 2 example"
+        }
+      ],
+      "notes": "COBUILD explicitly discusses destroying dreams, hopes and beliefs. Collins qualifies the fragment noun more strongly than MW/AHD, which mainly note plural usage. Do not assert unanimous modern frequency or a uniform archaic label."
+    },
+    {
+      "id": "AHD_SHATTER",
+      "title": "American Heritage Dictionary 5th edition: shatter",
+      "url": "https://ahdictionary.com/word/search.html?q=shatter",
+      "access": "direct_page_opened_and_find",
+      "sourceStrength": "A: publisher dictionary entry",
+      "shortExactExcerpts": [
+        {
+          "id": "fragment",
+          "text": "A fragment or splinter",
+          "location": "noun 1, often shatters"
+        },
+        {
+          "id": "spray",
+          "text": "A scattering collection or spray of fragments",
+          "location": "noun 2"
+        }
+      ],
+      "notes": "The displayed spray is a noun and explicitly consists of fragments. It does not establish a generic verb meaning to spray liquid. Use the publisher page for POS: Wordnik incorrectly displayed several clearly transitive AHD definitions under intransitive verb."
+    },
+    {
+      "id": "CENTURY_SHATTER",
+      "title": "Wordnik quoting The Century Dictionary: shatter",
+      "url": "https://www.wordnik.com/words/shatter",
+      "access": "direct_page_opened",
+      "sourceStrength": "B+: named historical dictionary reproduced by aggregator",
+      "shortExactExcerpts": [
+        {
+          "id": "grain",
+          "text": "Of cereals, to scatter the grain on account of overripeness.",
+          "location": "The Century Dictionary section"
+        },
+        {
+          "id": "scatter",
+          "text": "To scatter; disperse.",
+          "location": "The Century Dictionary section"
+        }
+      ],
+      "notes": "Provides agricultural grain-shedding context. Wordnik omits POS metadata in the Century entries, so do not rely on it alone for transitivity. MW supplies unambiguous vi/vt labels for the shedding family."
+    },
+    {
+      "id": "KENT_SHATTER",
+      "title": "Kent Archaeological Society: transcription of A Dictionary of the Kentish Dialect and Provincialisms (1888)",
+      "url": "https://www.kentarchaeology.org.uk/notes/dialect",
+      "access": "direct_page_opened_and_find",
+      "sourceStrength": "B+: named historical dialect dictionary transcribed by regional scholarly society",
+      "shortExactExcerpts": [
+        {
+          "id": "verb",
+          "text": "To scatter; blow about; sprinkle.",
+          "location": "SHATTER (1), vb.; attributed to 1888 dictionary"
+        },
+        {
+          "id": "noun",
+          "text": "A sprinkling, generally of rain.",
+          "location": "SHATTER (2), n.; attributed to 1888 dictionary"
+        },
+        {
+          "id": "rain",
+          "text": "To rain slightly.",
+          "location": "SHATTER (3), vb.; attributed to 1888 dictionary"
+        }
+      ],
+      "notes": "Historical Kent dialect, not an unrestricted contemporary standard-English spray sense. The site labels its transcript Page 14; an independent Salamanca index labels the original entry page 143. Page numbering was not independently reconciled, so use the visible headword/section rather than asserting original page 14."
+    },
+    {
+      "id": "WILTS_SHATTER",
+      "title": "Dartnell and Goddard, A Glossary of Words Used in the County of Wiltshire (1893), Addenda p. 201",
+      "url": "https://classic-literature.net/george-edward-dartnell-1852-1908/a-glossary-of-words-used-in-the-country-of-wiltshire/",
+      "access": "direct_page_opened_and_find",
+      "sourceStrength": "B: named historical dictionary in a third-party full-text reproduction",
+      "shortExactExcerpts": [
+        {
+          "id": "verb",
+          "text": "To scatter, to sprinkle.",
+          "location": "Shatter, Addenda p. 201, N.W."
+        },
+        {
+          "id": "pepper",
+          "text": "Shatter th' pepper well auver'n, do 'ee!",
+          "location": "Shatter example, N.W."
+        }
+      ],
+      "notes": "Original title page identifies English Dialect Society and publication through Henry Frowde, Oxford University Press Warehouse, 1893. N.W. means North Wiltshire here, not northwest England. This supports dialect 灑／撒, not a claim of pressurized spraying."
+    },
+    {
+      "id": "PROVENANCE_SPECIAL",
+      "title": "cdict aggregation: special",
+      "url": "https://cdict.net/q/special",
+      "access": "search_index_only",
+      "sourceStrength": "C: provenance lead only; not used to certify meanings",
+      "shortExactExcerpts": [
+        {
+          "id": "list",
+          "text": "專輯, 專車, 號外, 特別的東西",
+          "location": "search index summary"
+        }
+      ],
+      "notes": "The sequence matches the inherited summary, but no proven connection to the repository or identified underlying Chinese dictionary was established."
+    },
+    {
+      "id": "PROVENANCE_SHATTER",
+      "title": "IsDict aggregation: shatter",
+      "url": "https://www.isdict.com/word/shatter-xz3u3zntc",
+      "access": "search_index_only",
+      "sourceStrength": "C: provenance lead only; not used to certify meanings",
+      "shortExactExcerpts": [
+        {
+          "id": "list",
+          "text": "n. 碎片, 粉碎, 落叶, 喷洒",
+          "location": "search title/index summary"
+        }
+      ],
+      "notes": "An identical inherited four-gloss sequence is labeled n. here. This is a warning against assuming 落葉 or 噴灑 were originally verbs. The page is not an adequate authority to certify those Chinese senses."
+    }
+  ],
+  "accessLimits": [
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english-chinese-traditional/special",
+      "result": "direct open 403; only search excerpt used as corroboration; independent Collins bilingual source directly inspected"
+    },
+    {
+      "url": "https://www.ahdictionary.com/word/search.html?q=shatter",
+      "result": "www address inaccessible via web tool; canonical non-www publisher entry subsequently directly inspected"
+    },
+    {
+      "url": "https://gredos.usal.es/xmlui/bitstream/handle/10366/150423/SC_W.%20D.%20Parish__W_F_Shaw_Dictionary_of_the_Kentish_Dialect_1887.pdf?isAllowed=y&sequence=2",
+      "result": "403; not bypassed. Independent Kent Archaeological Society transcription and separately hosted Wiltshire glossary inspected instead."
+    },
+    {
+      "url": "https://gredos.usal.es/bitstream/handle/10366/145997/SC_Dartnell_and_Goddard_Glossary_of_Words_used_in_Wiltshire_1893.pdf?isAllowed=y&sequence=2",
+      "result": "403; not bypassed. Independent third-party full-text reproduction read, source title and imprint inspected."
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/A_dictionary_of_archaic_and_provincial_words_-_obsolete_phrases%2C_proverbs%2C_and_ancient_customs%2C_from_the_fourteenth_century_%28IA_dictionaryofarch02hall%29.pdf",
+      "result": "web tool could not fetch due to 32.3 MB content size; no claim of direct inspection, not used to certify a gloss."
+    }
+  ],
+  "notPerformed": [
+    "The supplied before values refer to the c43255f source snapshot. This review made no repository changes.",
+    "No product verification state changed.",
+    "No headword POS or verbForms changed.",
+    "No original-source attribution claimed for identical aggregator sequences."
+  ],
+  "sourceCommit": "c43255f"
+}

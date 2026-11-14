@@ -1,0 +1,111 @@
+{
+  "unit": "LV2-U38",
+  "baseCheckpoint": "ccec8402668d2c6ee27226a2b30d94d9ecaea21e",
+  "state": "literal_image_followups_app_saved_and_own_consumer_ci_success",
+  "scope": "Historical observations retained; exact general consumers repaired, with playground also verified on its existing published LV1-U09-27 card and gallery. LV2 source remains text_only/read_only.",
+  "followups": [
+    {
+      "id": "LI-LV2U38-V007",
+      "word": "playground",
+      "path": "wordbeast/lv1-reviewed/LV1-U09-27-39abaecad0fa.webp",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "2a11198019d75bd6c145a98ac9a5e0a661e5bf6070867b17d093b4ae1aa2b407",
+      "actualHeroExcerpt": "The kids are swinging happily on the playground.\n\n孩子們在遊樂場開心地盪鞦韆。",
+      "pixelsActuallyViewed": true,
+      "review": "One child swings on one swing; another stands cheering. Playground and happy activity align, but plural swinging actors are not all shown. Retain the known U09 literal quantity gap.",
+      "disposition": "exact_consumer_app_saved_and_own_ci_success",
+      "oldAssetRetained": true,
+      "newAssetAvailable": true,
+      "productPairChanged": true,
+      "captionMustRemainUnchanged": true,
+      "originalObservation": {
+        "disposition": "known_literal_quantity_gap_pending",
+        "newAssetAvailable": false,
+        "productPairChanged": false
+      },
+      "resolution": {
+        "state": "accepted_own_consumer_ci_success",
+        "assetCommit": "248c092f13c969123b0cd98102dd4d459112479f",
+        "oldPath": "wordbeast/lv1-reviewed/LV1-U09-27-39abaecad0fa.webp",
+        "oldSha256": "2a11198019d75bd6c145a98ac9a5e0a661e5bf6070867b17d093b4ae1aa2b407",
+        "path": "wordbeast/lv2-reviewed/LV2-U38-playground-a6b345e0f778.webp",
+        "sha256": "a6b345e0f778db7542e02e6381d03444fcac0517551f2c2494b296e64ee8fd7f",
+        "oldAssetRetained": true,
+        "captionsUnchanged": true,
+        "normalAppReopened": true,
+        "savedVerified": true,
+        "progressTablesPreserved": 14,
+        "evidence": "LV2-U38-U41-image-repairs.json",
+        "consumerIntegrationCommit": "7ff55408250827184e243d2a83f31ca77088c3ee"
+      }
+    },
+    {
+      "id": "LI-LV2U38-V069",
+      "word": "generosity",
+      "path": "wordbeast/a/W003446.webp",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "3077fa8f9c844484d2f119f995ae1cc91cab7f01bd3857aeddbb380fe3d041da",
+      "actualHeroExcerpt": "Doudou shows generosity by giving both apples to a friend.\n\n豆豆把兩顆蘋果都送給朋友，展現慷慨。",
+      "pixelsActuallyViewed": true,
+      "review": "Full 1024px original: giver offers one apple to each of two different friends. Actual English says both apples to a friend. Core generosity aligns; recipient count is a confirmed literal caption mismatch. Chinese 朋友 has no independent singular/plural marking.",
+      "disposition": "exact_consumer_app_saved_and_own_ci_success",
+      "oldAssetRetained": true,
+      "newAssetAvailable": true,
+      "productPairChanged": true,
+      "captionMustRemainUnchanged": true,
+      "originalObservation": {
+        "disposition": "confirmed_literal_mismatch_repair_pending",
+        "newAssetAvailable": false,
+        "productPairChanged": false
+      },
+      "resolution": {
+        "state": "accepted_own_consumer_ci_success",
+        "assetCommit": "248c092f13c969123b0cd98102dd4d459112479f",
+        "oldPath": "wordbeast/a/W003446.webp",
+        "oldSha256": "3077fa8f9c844484d2f119f995ae1cc91cab7f01bd3857aeddbb380fe3d041da",
+        "path": "wordbeast/lv2-reviewed/LV2-U38-generosity-fdecea42d13a.webp",
+        "sha256": "fdecea42d13a9b79b6012df71a7e80a6efbb2be56d095be6303f5fb5d769dd79",
+        "oldAssetRetained": true,
+        "captionsUnchanged": true,
+        "normalAppReopened": true,
+        "savedVerified": true,
+        "progressTablesPreserved": 14,
+        "evidence": "LV2-U38-U41-image-repairs.json",
+        "consumerIntegrationCommit": "7ff55408250827184e243d2a83f31ca77088c3ee"
+      }
+    }
+  ],
+  "originalObservation": {
+    "state": "pixel_review_complete_repairs_not_yet_integrated",
+    "scope": "Actual existing general-card captions, separate from independent practice sentences. No new asset, pair, caption or release status has been changed."
+  },
+  "consumerIntegrationCi": {
+    "commit": "7ff55408250827184e243d2a83f31ca77088c3ee",
+    "run": 42283703235,
+    "job": 128118970362,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42283703235/job/128118970362",
+    "status": "completed",
+    "conclusion": "success",
+    "checkoutShaReadFromFullLog": true,
+    "testFiles": 233,
+    "tests": 1903,
+    "pythonBatches": [
+      14,
+      7,
+      78,
+      3,
+      10
+    ],
+    "lint": "success",
+    "typecheck": "success",
+    "build": "success",
+    "buildLogCompletedAtUtc": "2026-11-06T20:11:49.1798035Z",
+    "jobCompletedAtUtc": "2026-11-06T20:11:53Z"
+  }
+}

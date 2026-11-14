@@ -1,0 +1,1036 @@
+{
+  "updatedAt": "2026-11-07T02:46:52.873Z",
+  "items": [
+    {
+      "id": "LV1-U01-30",
+      "state": "translation_corrected_and_both_routes_reopened",
+      "word": "enough",
+      "englishUnchanged": "This shirt isn't big enough for him anymore.",
+      "beforeChinese": "這件襯衫對他來說已經不夠大了。",
+      "proposedChinese": "這件上衣對他來說已經不夠大了。",
+      "evidence": "LV1-verified-caption-translations.json",
+      "next": null
+    },
+    {
+      "id": "LV1-U08-90",
+      "state": "locally_integrated_and_reopened",
+      "word": "intersection",
+      "englishUnchanged": "Turn left at the next intersection to get to the bakery.",
+      "observation": "Existing original-image review found a red arrow pointing screen-left while the bakery is on the right-hand road. Recheck full-size image and actual route before deciding the minimal repair.",
+      "evidence": "docs/unit-audit-20261105/LV1-U08-intersection-review.json",
+      "next": null
+    },
+    {
+      "id": "LV1-U10-76",
+      "state": "integrated_and_both_distinct_routes_reopened",
+      "word": "mind",
+      "englishUnchanged": "Would you mind opening the door? My hands are full.",
+      "observation": "U10 opening-door replacement integrated and actual unit reopened; general mind independently reopened with the preserved U07 closing-window pair.",
+      "unit": "LV1-U10",
+      "issue": "Exact unit opening-door pair mismatched existing closing-window art; preserve general U07 closing-window pair.",
+      "assetCommit": "c4ec9c9e4b5d366d56e79f1e3063c1753c266a3a",
+      "assetPath": "public/wordbeast/lv1-reviewed/LV1-U10-76-0eae26fedc0f.webp",
+      "sha256": "0fd830ed1759186fe4b0253cf46e19fbb8142147d821f99a7fb76fac44eb931a",
+      "previousObservation": "Original path shows a shivering character beside a window, not a person with full hands opening a door. General mind card now uses the separately checked U07 closing-window pair. The U10 unit sentence and asset remain recoverable and unchanged, pending its own image repair.",
+      "evidence": "LV1-U10-mind-door-review.json"
+    },
+    {
+      "id": "W001008-1",
+      "state": "specific_official_source_applied_and_reopened_2026-11-05",
+      "word": "active",
+      "evidence": "LV1-U07-verified-exam-source-followup.json; SOURCE-FOLLOWUPS.json",
+      "next": null
+    },
+    {
+      "id": "U03-U05-context-followup",
+      "state": "source_verified_proposals_queued_for_current_row_reconciliation",
+      "reviewedCommit": "b5144bc12ebd35a9083ee80de055a748cf973981",
+      "scope": {
+        "U03": {
+          "formalExamplesRead": 185,
+          "hints": 103,
+          "clozePos": 32,
+          "translationCandidates": 3
+        },
+        "U05": {
+          "formalExamplesRead": 171,
+          "hints": 39,
+          "reciprocalPronounPos": 1,
+          "translationCandidates": 1
+        }
+      },
+      "next": "After the current verified followup checkpoint, re-read every latest exampleId and immutable English guard; reconcile shared words instead of overwriting newer precise values. Keep source full-page versus search-excerpt evidence distinct and uncertain family/context translations pending."
+    },
+    {
+      "id": "LV1-U22-04",
+      "issue": "Resolved: corrected image has four neutral gray surrounding umbrellas; actual unit card reopened.",
+      "state": "resolved_exact_asset_integrated_actual_unit_reopen_verified",
+      "status": "exact_asset_integrated_actual_unit_reopen_verified",
+      "currentEvidence": "LV1-U22-exact-pair-review.json",
+      "resolvedOn": "2026-11-05",
+      "issueHistory": "Other umbrellas are not all grey although caption says so."
+    },
+    {
+      "id": "LV1-U22-46",
+      "issue": "Resolved: exact Chinese 襯衫→上衣 saved; unit and general cards reopened with unchanged English and image.",
+      "state": "resolved_exact_chinese_precision_unit_general_reopens_verified",
+      "status": "exact_chinese_precision_integrated_unit_general_reopens_verified",
+      "currentEvidence": "LV1-U22-exact-pair-review.json",
+      "resolvedOn": "2026-11-05",
+      "issueHistory": "Shirt translated specifically as collared shirt although T-shirt pictured; check exact original."
+    },
+    {
+      "id": "LV1-U23-50",
+      "issue": "Resolved: exact unit image lifts trophy overhead; existing correct general basketball-final pair retained.",
+      "state": "resolved_exact_unit_asset_saved_and_reopened_general_pair_retained",
+      "issueHistory": "Caption trophy held aloft; picture trophy on ground and ball raised.",
+      "status": "resolved_exact_unit_asset_saved_and_reopened_general_pair_retained",
+      "resolvedOn": "2026-11-05",
+      "currentEvidence": "LV1-U23-exact-pair-review.json"
+    },
+    {
+      "id": "LV1-U23-06-84-89",
+      "issue": "Meat doneness, table corner/leg tripping, mineral crystals versus dietary minerals require source review.",
+      "state": "pixel_precheck_pending_actual_unit_audit"
+    },
+    {
+      "id": "U01-U07-deep-text-candidates",
+      "state": "candidate_documents_received_not_applied",
+      "sourceCommit": "3319581a801d9332f7e4924d82b3d5c78b93330b",
+      "catalog": "text-review-candidates/source-catalog.json",
+      "reviewedBase": "b5144bc12ebd35a9083ee80de055a748cf973981",
+      "unitAttributedExamplesRead": 1470,
+      "fieldCandidatesAfterDeduplication": 950,
+      "notAllErrors": true,
+      "next": "Read each unit document and reconcile exact latest exampleId/field values, skipping already precise after values. Preserve original English/cloze/answer/status and uncertain translations. Do not infer application or whole-card approval from these candidate files."
+    },
+    {
+      "id": "U03-U04-verb-forms-followup",
+      "state": "sixteen_verified_candidates_queued_one_modal_homograph_deferred",
+      "evidence": "text-review-candidates/U03-U04-verb-form-candidates.json",
+      "applied": false,
+      "next": "Re-read latest missing keys; extend exact source allowlists and negative reversal tests only for these sixteen; preserve can key absence and region/sense qualifiers."
+    },
+    {
+      "id": "U09-precision-followup",
+      "state": "candidate_file_saved_pending_latest_reconciliation",
+      "examples": [
+        "EXae728991",
+        "EXbe3b434a",
+        "EX4c566312",
+        "EX7942ef56",
+        "EXae188031",
+        "EXca3cccad",
+        "EX2267c8c9",
+        "EXecc1cdb0",
+        "EX96488501",
+        "EXec450963",
+        "EX5b300da2",
+        "EX4ed56643"
+      ],
+      "next": "Skip the two exact current fall hints; reconcile remaining candidates, preserve null hints and draw/decide/because-of limits.",
+      "evidence": "source-followup-candidates/U09-TEXT-REVIEW-CANDIDATES.json",
+      "counts": {
+        "hints": 10,
+        "chineseTranslations": 2
+      },
+      "alreadyAppliedSharedHints": {
+        "EXae728991": "跌倒",
+        "EXbe3b434a": "下降（氣溫）"
+      },
+      "appliedBy": "LV1-U10-patches.json"
+    },
+    {
+      "id": "U03-U09-source-followup-candidates",
+      "state": "source_evidence_saved_not_product_applied",
+      "sourceCommit": "0438eb9f98ece26d69cc517cd91f2e5746aed42c",
+      "directory": "source-followup-candidates/",
+      "coverage": {
+        "wordsWithExplicitVerbFormEvidence": 157,
+        "formCandidates": 153,
+        "presentationPending": 4
+      },
+      "restrictions": "Includes the previously received U03–U04 sixteen candidates, not a second set. Reconcile current absent keys and shared words; preserve original 31 forms and house. Extend only exact source allowlists/negative tests and true absent-key reversal. Can, bear, need and cost require sense/display qualification; no indiscriminate modal or homograph forms. Forget uses forgotten as the main field, with other verified variants qualified separately. Candidate evidence is not application, UI validation or whole-card approval.",
+      "next": "After current U10 checkpoint, read source files by unit before applying exact verified optional fields."
+    },
+    {
+      "id": "U09-rare-summary-followup",
+      "state": "source_review_saved_not_applied",
+      "evidence": "source-followup-candidates/U09-RARE-SUMMARY-VERIFICATION.json",
+      "next": "Separate the confirmed husband verb and shatter plural noun from other meanings; retain fairly senses. Preserve unresolved original mappings for special album and shatter leaf/spray rather than deleting them."
+    },
+    {
+      "id": "U15-U25-image-repair-assets",
+      "state": "available_assets_not_fetched_or_integrated",
+      "assetBranch": "assets/lv1-u15-u25-image-fixes-20261105",
+      "assetCommit": "ab76da257068cac1085f04ba8ba57be8f6dc47a1",
+      "assets": [
+        {
+          "id": "LV1-U15-62",
+          "word": "fairly",
+          "path": "public/wordbeast/lv1-reviewed/LV1-U15-62-90932acf02e3.webp",
+          "sha256": "ca8b4a50b626289b295db4beb1dbe7cece3934f94438920e23d68f8a0087e865",
+          "sizeBytes": 162826,
+          "dimensions": [
+            1254,
+            1254
+          ],
+          "observation": "Closed thick jacket with hand on zipper."
+        },
+        {
+          "id": "LV1-U22-04",
+          "word": "eye-catching",
+          "path": "public/wordbeast/lv1-reviewed/LV1-U22-04-da76e7c6def2.webp",
+          "sha256": "ed9f96ee831e60d943961326c6eff970280a31e048a8b9d991941f6ad0792700",
+          "sizeBytes": 80550,
+          "dimensions": [
+            1254,
+            1254
+          ],
+          "observation": "Red central umbrella and four neutral gray umbrellas.",
+          "status": "exact_asset_integrated_actual_unit_reopen_verified",
+          "currentEvidence": "LV1-U22-exact-pair-review.json",
+          "state": "resolved_exact_asset_integrated_actual_unit_reopen_verified",
+          "resolvedOn": "2026-11-05"
+        },
+        {
+          "id": "LV1-U23-50",
+          "word": "final",
+          "path": "public/wordbeast/lv1-reviewed/LV1-U23-50-c4476d14caae.webp",
+          "sha256": "a205d42a31e67d46ea93ad89149b84fc35562c3e0f1f2dd9f546df2a628cd94c",
+          "sizeBytes": 140328,
+          "dimensions": [
+            1254,
+            1254
+          ],
+          "observation": "Unique trophy held overhead; basketball remains on the ground.",
+          "state": "resolved_exact_unit_asset_saved_and_reopened_general_pair_retained",
+          "status": "resolved_exact_unit_asset_saved_and_reopened_general_pair_retained",
+          "resolvedOn": "2026-11-05",
+          "currentEvidence": "LV1-U23-exact-pair-review.json"
+        },
+        {
+          "id": "LV1-U25-31",
+          "word": "wake",
+          "path": "public/wordbeast/lv1-reviewed/LV1-U25-31-ddde6ece5044.webp",
+          "sha256": "2f5d8f250cb26ded297d2e1e02060fff1202aada9ac78bb299b5cc0f7e53c1e7",
+          "sizeBytes": 77872,
+          "dimensions": [
+            1254,
+            1254
+          ],
+          "observation": "Clock clearly displays 06:30; morning stretching and watercolor clock casing retained."
+        }
+      ],
+      "next": "Use only in actual unit order after exact source/caption review, hash/dimension/pixel verification, precise pairing and real card reopen. Retain old assets and captions. These are not product fixes yet."
+    },
+    {
+      "id": "U10-mind-door",
+      "state": "integrated_and_both_distinct_routes_reopened",
+      "evidence": "LV1-U10-mind-door-review.json",
+      "next": "Historical issue resolved; retain separate exact pairs and the old asset."
+    },
+    {
+      "id": "U10-U25-additional-source-followups",
+      "state": "source_evidence_saved_not_product_applied",
+      "sourceCommit": "08aaf5f92c375e29635ea623aa5b5339a1280418",
+      "directory": "source-followup-candidates/",
+      "files": [
+        "U10-TEXT-REVIEW-CANDIDATES.json",
+        "U10-RARE-SUMMARY-VERIFICATION.json",
+        "U10-ADDITIONAL-VERB-FORMS-VERIFICATION.json",
+        "U10-U15-PUBLISHED-VERB-FORMS-VERIFICATION.json",
+        "U22-U25-PUBLISHED-VERB-FORMS-VERIFICATION.json"
+      ],
+      "coverage": {
+        "uniqueAdditionalFormWords": 154,
+        "formCandidates": 149,
+        "presentationPending": 5,
+        "optionalU10TextPrecisionCandidates": 9,
+        "newDefiniteU10SentenceErrors": 0
+      },
+      "restrictions": "Published subsets are not complete original units. Lie, wind, hide, hang and wake need homograph/sense qualification; preserve those absent keys. Friendly adverb, qualified read adjective, archaic include enclosing and CONFIG.SYS INCLUDE are real uses; do not delete them. Microsoft-authored command evidence is a third-party mirror, with that limitation retained. Optional text refinements are not nine proven errors."
+    },
+    {
+      "id": "U16-U21-text-only-form-source-followup",
+      "state": "source_evidence_saved_not_product_applied",
+      "sourceCommit": "08aaf5f92c375e29635ea623aa5b5339a1280418",
+      "evidence": "source-followup-candidates/U16-U21-TEXT-VERB-FORMS-VERIFICATION.json",
+      "coverage": {
+        "uniqueAdditionalWords": 90,
+        "formCandidates": 87,
+        "presentationPending": 3
+      },
+      "restrictions": "These curriculum units intentionally use text_only; absence of images is not broken-image evidence. Ring homographs and photograph/photo, telephone/phone multi-headwords need display qualification. Scottish obsolete luppen remains source evidence, not an unqualified standard leap form."
+    },
+    {
+      "id": "LV1-U12-31",
+      "state": "replacement_asset_prepared_and_pixels_viewed_not_integrated_into_reopenable_source_card",
+      "word": "push",
+      "englishUnchanged": "Just push the button and the elevator door will open.",
+      "observation": "Replacement elevator-button asset fetched, exact hash/dimensions checked and actual WebP pixels viewed. No editable/reopenable unpublished-source-card layer exists. General wooden-door pair separately reopened and preserved.",
+      "evidence": "docs/unit-audit-20261105/LV1-U12-push-elevator-prepared.json",
+      "next": "Keep the exact prepared source pair for later authorized source publication; this checkpoint does not publish it."
+    },
+    {
+      "id": "LV1-U12-68",
+      "state": "literal_image_precision_pending",
+      "word": "stumble",
+      "englishUnchanged": "He stumbled over a brick and nearly spilled his coffee.",
+      "observation": "Full-size original and actual unit screenshot show drops outside a still-held cup. Nearly spilled is preserved; amount/extent of spill remains unresolved.",
+      "evidence": "docs/unit-audit-20261105/LV1-U12-ledger.json",
+      "next": "Resolve literal spill detail without changing the original example to fit the image."
+    },
+    {
+      "id": "LV1-U13-65",
+      "state": "integrated_and_both_actual_cards_reopened",
+      "word": "depth",
+      "englishUnchanged": "The teacher showed the depth of the valley on the chart.",
+      "observation": "Teacher points toward a dry valley bottom between two slopes. A dashed upper reference line and vertical double-headed arrow clearly represent valley depth. No water-filled chart remains. Original classroom characters and watercolor style are retained.",
+      "evidence": "docs/unit-audit-20261105/LV1-U13-depth-valley-review.json",
+      "next": "Resolved exact valley image/caption only. Preserve both different formal examples and old image; continue U15.",
+      "assetCommit": "aebca7265b70e3f51f91a029b8a009998b84f858",
+      "assetPath": "public/wordbeast/lv1-reviewed/LV1-U13-65-3dc230fb571f.webp",
+      "assetSha256": "924029ff52b7e8848d30e86f21f8616f32303e0b6ae7aedd33df1a951af2527e",
+      "resolvedAt": "2026-11-05T12:01:36.787Z"
+    },
+    {
+      "id": "LV1-U13-53",
+      "state": "exact_example_artwork_integrated_and_actual_general_card_reopened",
+      "word": "feed",
+      "commit": "36a0e1074c1d8771ccd3ed1d171dd0064894ce84",
+      "observation": "Resolved by taking only the existing three assets, exact example registry/test and a minimal resolver fallback; all prior dictionary changes and defaults retained. Original unpublished U13 source card remains unpublished.",
+      "evidence": "docs/unit-audit-20261105/LV1-verified-example-art-integration.json",
+      "previousState": "separate_verified_artwork_available_not_integrated",
+      "resolvedAt": "2026-11-05T16:13:26.012Z"
+    },
+    {
+      "id": "LV1-U14-26",
+      "word": "rocky",
+      "state": "physical_core_present_main_narrative_intent_qualified",
+      "observation": "Stony path is visible, but the main narrative moves from angry separated characters to friendly reconciliation. Full 1254 original and actual unit screenshot were additionally viewed. Physical rocky-path core is present; exact difficulty walking is not directly depicted.",
+      "evidence": "docs/unit-audit-20261105/LV1-U14-ledger.json"
+    },
+    {
+      "id": "EX4c5b9769",
+      "word": "tough",
+      "field": "sentenceZh",
+      "sourceCommit": "6d420a8803ccb60115bb1c15f2952e97708590a6",
+      "summary": "senior high students means 高中學生, not 高三學生",
+      "state": "integrated_and_actual_general_card_reopened",
+      "resolvedAt": "2026-11-05T13:49:49.127Z",
+      "evidence": "docs/unit-audit-20261105/validation/U16-wording-followups.json"
+    },
+    {
+      "id": "EX299bccf8",
+      "word": "purchase",
+      "field": "sentenceZh",
+      "sourceCommit": "6d420a8803ccb60115bb1c15f2952e97708590a6",
+      "summary": "more than three excludes exactly three; retain already corrected mainline verb POS",
+      "state": "integrated_and_actual_general_card_reopened",
+      "resolvedAt": "2026-11-05T13:49:49.127Z",
+      "evidence": "docs/unit-audit-20261105/validation/U16-wording-followups.json"
+    },
+    {
+      "id": "LV1-U15-62",
+      "word": "fairly",
+      "state": "integrated_and_both_actual_cards_reopened",
+      "resolvedAt": "2026-11-05T12:35:44.359Z",
+      "evidence": "docs/unit-audit-20261105/LV1-U15-fairly-zipper-review.json",
+      "observation": "Original front was open with hands gripping both sides. Replacement jacket front is fully closed and one hand holds the zipper pull at the neck; cold outdoor scene, character and watercolor style remain. English and Chinese caption are unchanged.",
+      "next": "Resolved exact zipper picture only; preserve both different formal sentences and rare dictionary senses."
+    },
+    {
+      "id": "LV1-U15-37",
+      "word": "countdown",
+      "state": "unpublished_no_identity_timing_qualified",
+      "observation": "Crowd counts or cheers near lit fireworks. Exact pre-ignition timing is ambiguous because three fireworks already emit light; retain this unpublished no-ID source with a timing limitation."
+    },
+    {
+      "id": "LV1-U15-71",
+      "word": "dryer",
+      "state": "appliance_visual_identity_qualified",
+      "observation": "Character puts wet towels into a front-loading appliance. Its controls do not independently distinguish a dryer from a washing machine; drying purpose is supplied by the caption."
+    },
+    {
+      "id": "LV1-U02-15",
+      "word": "low",
+      "state": "caption_synchronized_and_both_actual_cards_reopened",
+      "evidence": "docs/unit-audit-20261105/LV1-U02-low-caption-review.json",
+      "resolvedAt": "2026-11-05T13:49:49.127Z"
+    },
+    {
+      "id": "EX2ff9ba41",
+      "word": "low",
+      "state": "verified_character_saved_reopened_and_exact_caption_synchronized",
+      "evidence": "docs/unit-audit-20261105/validation/U16-wording-followups.json",
+      "resolvedAt": "2026-11-05T13:49:49.127Z"
+    },
+    {
+      "id": "W001283-orthography",
+      "word": "dryer",
+      "state": "one_character_saved_and_actual_card_reopened_whole_word_draft_retained",
+      "evidence": "docs/unit-audit-20261105/validation/U16-wording-followups.json",
+      "resolvedAt": "2026-11-05T13:49:49.127Z"
+    },
+    {
+      "id": "NXc62b0f26",
+      "word": "die",
+      "state": "exact_duplicate_translation_saved_note_and_example_reopened",
+      "evidence": "docs/unit-audit-20261105/validation/U16-wording-followups.json",
+      "resolvedAt": "2026-11-05T13:49:49.127Z"
+    },
+    {
+      "id": "LV1-U16-forms",
+      "wordIds": [
+        "W000745",
+        "W000653",
+        "W004820",
+        "W000892",
+        "W000170",
+        "W000522",
+        "W000367",
+        "W000891",
+        "W000448",
+        "W000140",
+        "W000380",
+        "W000729",
+        "W000098",
+        "W000660",
+        "W000737",
+        "W000545",
+        "W000463",
+        "W000940",
+        "W000926",
+        "W001437",
+        "W002486",
+        "W000739",
+        "W003767",
+        "W001012",
+        "W001825"
+      ],
+      "state": "25_exact_optional_fields_saved_and_both_panels_reopened",
+      "evidence": "docs/unit-audit-20261105/validation/U16-forms-final.json",
+      "resolvedAt": "2026-11-05T13:49:49.127Z"
+    },
+    {
+      "id": "W002081-English-truncation",
+      "word": "besides",
+      "state": "confirmed_truncated_legacy_source_mapping_pending",
+      "observation": "Inherited besides ends at in a. Historical spatial adverb is supported; the longer deviation fragment matches Beside, so no guessed whole-field replacement or deletion was applied.",
+      "resolvedAt": "2026-11-05T13:49:49.127Z"
+    },
+    {
+      "id": "LV1-U17-verified-reopens",
+      "state": "142_text_items_66_general_reopens_18_forms_and_exact_cat_caption_verified",
+      "evidence": "docs/unit-audit-20261105/LV1-U17-ledger.json",
+      "resolvedAt": "2026-11-05T14:48:55.368Z"
+    },
+    {
+      "id": "W000717",
+      "field": "verbForms",
+      "reason": "ring has rang/rung and ringed/ringed by sense. The global panel cannot qualify senses, so the key stays absent; source G020 explicitly teaches only bell/telephone forms.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U17-ledger.json"
+    },
+    {
+      "id": "W000639",
+      "field": "verbForms",
+      "reason": "The official combined photograph/photo head has photographed and photoed; a single base must not be fabricated. Global forms remain absent.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U17-ledger.json"
+    },
+    {
+      "id": "LI-LV1U17-V004",
+      "field": "formalPosMapping",
+      "reason": "The printed root entry includes n./vi.; the formal head currently lists n. only. The original mapping is retained; no unsupported whole-head expansion or forms addition.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U17-ledger.json"
+    },
+    {
+      "id": "LI-LV1U17-V031",
+      "field": "nounClassification",
+      "reason": "Printed bread uses 集合名詞，不可數. The uncountable bread meaning is preserved; terminology convention remains qualified rather than silently rewritten.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U17-ledger.json"
+    },
+    {
+      "id": "EX3c5a506b",
+      "field": "sensePos",
+      "reason": "second before a superlative needs the project ordinal/adverb convention; the existing composite classification is not certified uniquely correct.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U17-ledger.json"
+    },
+    {
+      "id": "EX0925c3b9",
+      "field": "sensePos",
+      "reason": "go wrong has competing word-class analyses. The phrase meaning is correct; retain the existing composite category pending a project convention.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U17-ledger.json"
+    },
+    {
+      "id": "EX5a40827a",
+      "field": "exercisePresentation",
+      "reason": "The original equivalence sentence reveals right in its second half. Keep the exact source and cloze; a future presentation change must not fabricate a new source sentence.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U17-ledger.json"
+    },
+    {
+      "id": "U17-optional-pronunciation-fields",
+      "field": "phoneticUs/syllables/stressPattern",
+      "reason": "All 62 formal rows currently have null optional fields. No sourced phonetic transcription was added and no pronunciation-completeness claim is made.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U17-ledger.json"
+    },
+    {
+      "id": "LV1-U18-verified-reopens",
+      "state": "134_text_items_58_general_reopens_20_forms_and_exact_crown_caption_verified",
+      "evidence": "docs/unit-audit-20261105/LV1-U18-ledger.json",
+      "resolvedAt": "2026-11-05T15:31:58.130Z"
+    },
+    {
+      "id": "EX0f888c6a",
+      "field": "sensePos",
+      "reason": "go fishing has a noun/gerund and verb-category convention boundary. Retain the current n. pending an explicit project convention; the Chinese precision change does not settle POS.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U18-ledger.json"
+    },
+    {
+      "id": "LI-LV1U18-V034",
+      "field": "rareMeaning",
+      "reason": "The inherited 1974 LAMP acronym has separate prior source evidence. Ordinary lamp does not by itself verify every inherited system gloss; this U18 review does not newly approve it.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U18-ledger.json"
+    },
+    {
+      "id": "W000217",
+      "field": "inheritedMeaningEn",
+      "reason": "Ordinary loved/valuable/costly, noun and adverb senses are sourced. The inherited earnest phrase is retained without falsely certifying that exact wording from the newly opened dictionary.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U18-ledger.json"
+    },
+    {
+      "id": "U18-formal-POS-boundaries",
+      "field": "formalPosMapping",
+      "reason": "Printed related verbs such as plate/tail and retained muddy/soil uses do not authorize changing the formal headword POS. Explicit related-verb labels preserve that boundary.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U18-ledger.json"
+    },
+    {
+      "id": "U18-unmapped-identities",
+      "field": "officialWordId",
+      "reason": "13 source identities stay null. Twelve printed supplement glosses were recovered, but no formal identity, adopted source example, question or practice eligibility was invented.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U18-ledger.json"
+    },
+    {
+      "id": "U18-optional-pronunciation-fields",
+      "field": "phoneticUs/syllables/stressPattern",
+      "reason": "No new sourced phonetic transcription was added. The unit review does not claim optional pronunciation fields are complete.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U18-ledger.json"
+    },
+    {
+      "id": "LV1-U19-verified-reopens",
+      "state": "141_text_items_64_general_reopens_13_forms_11_usage_and_three_exact_example_images_verified",
+      "evidence": "docs/unit-audit-20261105/LV1-U19-ledger.json",
+      "resolvedAt": "2026-11-05T16:13:26.012Z"
+    },
+    {
+      "id": "W000644",
+      "field": "meaningZh",
+      "reason": "The economic-share pie noun is supported; exact inherited 貪污受賄 was not established by the opened primary entry. Keep it pending rather than delete it or falsely certify it.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U19-ledger.json"
+    },
+    {
+      "id": "W000812",
+      "field": "meaningZh",
+      "reason": "Related soup up increase-power verb is directly supported. That alone does not establish the inherited bare noun 馬力; preserve the source boundary.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U19-ledger.json"
+    },
+    {
+      "id": "W000420",
+      "field": "meaningZh",
+      "reason": "Eager and barren-soil hungry senses are positively supported. The exact inherited 荒年的 wording retains an explicit source limitation.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U19-ledger.json"
+    },
+    {
+      "id": "W000856",
+      "field": "formalPosAndForms",
+      "reason": "Existing combined taxicab/taxi/cab n. head is retained. Cab-only nouns and related taxi verbs are visibly qualified; no fabricated combined base or whole-head verb POS is added.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U19-ledger.json"
+    },
+    {
+      "id": "W000936",
+      "field": "figurativeRegister",
+      "reason": "A dull or merely physical-existence person meaning is real. The inherited 無精打采之人 is not newly certified as an exact equivalent or conflated with the separately sometimes-offensive severe-impairment meaning.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U19-ledger.json"
+    },
+    {
+      "id": "U19-unmapped-identities",
+      "field": "officialWordId",
+      "reason": "25 source identities remain null.22 supplement display rows have printed glosses or an explicitly marked mouses dictionary qualification, without invented identity or practice eligibility.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U19-ledger.json"
+    },
+    {
+      "id": "U19-optional-pronunciation-fields",
+      "field": "phoneticUs/syllables/stressPattern",
+      "reason": "No new accent-specific transcription is inferred from unqualified book IPA; optional fields are not claimed complete.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U19-ledger.json"
+    },
+    {
+      "id": "LV1-U20-verified-reopens",
+      "state": "143_text_items_61_general_reopens_15_forms_13_usage_and_two_exact_legacy_captions_verified",
+      "evidence": "docs/unit-audit-20261105/LV1-U20-ledger.json",
+      "resolvedAt": "2026-11-05T16:54:35.375Z"
+    },
+    {
+      "id": "W000862",
+      "field": "verbForms",
+      "reason": "Existing combined telephone/phone head has no single qualified base presentation. Leave key absent; do not fabricate a slash-inflected paradigm.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U20-ledger.json"
+    },
+    {
+      "id": "U20-30-unmapped-identities",
+      "field": "officialWordId",
+      "reason": "Thirty identities stay null;27 previously placeholder supplement displays now use the actually printed gloss. No IDs, practice examples or images invented.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U20-ledger.json"
+    },
+    {
+      "id": "U20-original-world-example",
+      "field": "unadopted printed translation",
+      "reason": "See original page174 observation. Original pixels preserved, no adopted editable App example exists.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U20-ledger.json"
+    },
+    {
+      "id": "U20-optional-pronunciation-fields",
+      "field": "phoneticUs/syllables/stressPattern",
+      "reason": "No US-specific pronunciation is inferred from unqualified printed IPA.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U20-ledger.json"
+    },
+    {
+      "id": "LV1-U21-verified-reopens",
+      "state": "138_text_items_78_general_reopens_9_forms_and10_usage_verified",
+      "evidence": "docs/unit-audit-20261105/LV1-U21-ledger.json",
+      "resolvedAt": "2026-11-05T17:32:17.433Z"
+    },
+    {
+      "id": "LV1-U21-unmapped",
+      "scope": "15 printed supplements now have verified visible printed glosses but no invented official ID, practice or textbook question.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U21-ledger.json"
+    },
+    {
+      "id": "LV1-U21-boring",
+      "wordId": "W000104",
+      "field": "meaningZh",
+      "reason": "Drilling noun is genuine; exact 成孔期 translation not established. Original string retained, not certified.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U21-ledger.json"
+    },
+    {
+      "id": "LV1-U21-restroom-boredom",
+      "wordIds": [
+        "W001731",
+        "W004107"
+      ],
+      "reason": "Broader inherited rest/changing-room and boredom-as-boring-thing Chinese need precise original-source evidence; not deleted or approved solely from ordinary definitions.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U21-ledger.json"
+    },
+    {
+      "id": "LV1-U21-nowadays",
+      "wordId": "W003678",
+      "reason": "OED index supports adjective category but full definition unavailable; inherited 現在的 and formal adv. retained without whole-word approval.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U21-ledger.json"
+    },
+    {
+      "id": "LV1-U21-grammatical-conventions",
+      "reason": "Project numeral n. and giant-panda adjective conventions retained; no unsupported global POS changes.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U21-ledger.json"
+    },
+    {
+      "id": "LV1-U21-source-examples",
+      "reason": "Original page running examples, including by-tomorrow deadline Chinese, remain on source pixels and are not adopted into editable curriculum examples. Raw source transcription is unchanged.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U21-ledger.json"
+    },
+    {
+      "id": "LV1-U21-pronunciation",
+      "reason": "Optional formal pronunciation fields remain absent where source/import does not provide a verified field; page pronunciation is not silently imported.",
+      "state": "explicit_limit_retained_not_whole_card_approval",
+      "evidence": "docs/unit-audit-20261105/LV1-U21-ledger.json"
+    },
+    {
+      "id": "LV1-U03-U15-exact-forms-integration",
+      "state": "268_fields_integrated_actual_ui_verified_prepared_integration_complete",
+      "scope": "268 genuinely absent verbForms at prior00d3229 snapshot; recheck latest exact values before each small batch. First batchU05–U06 starts give/W000348. Same values skip; null/custom/conflict never overwrite.",
+      "remaining": "Read prepared payload and guards after this U21 checkpoint; complete small batches with actual App/persistence/14-progress verification and their own CI. Do not count preparation as integration.",
+      "evidence": "docs/unit-audit-20261105/LV1-U15-integrated-forms-ledger.json",
+      "updatedAt": "2026-11-05T19:38:45.747Z",
+      "next": {
+        "unit": "LV1-U22",
+        "cardId": "LV1-U22-01",
+        "wordId": "W000046",
+        "word": "arrive"
+      }
+    },
+    {
+      "id": "GENERAL-W003446-image-pair",
+      "word": "generosity",
+      "wordId": "W003446",
+      "observedInUnit": "LV2-U38",
+      "state": "exact_pair_app_reopened_saved_and_own_ci_success",
+      "classification": "confirmed_literal_recipient_count_mismatch",
+      "reason": "Original1024px image gives one apple to each of two friends; English says both apples to a friend. Preserve the exact English/Chinese caption and old asset; a future minimal image correction must show both apples given to one friend.",
+      "repoPath": "public/wordbeast/a/W003446.webp",
+      "oldSha256": "3077fa8f9c844484d2f119f995ae1cc91cab7f01bd3857aeddbb380fe3d041da",
+      "originalDimensions": [
+        1024,
+        1024
+      ],
+      "caption": "Doudou shows generosity by giving both apples to a friend.\n\n豆豆把兩顆蘋果都送給朋友，展現慷慨。",
+      "generationState": "verified_git_asset_integrated_without_regeneration",
+      "pendingGenerationCalls": 0,
+      "newAssetAvailable": true,
+      "productPairChanged": true,
+      "oldAssetRetained": true,
+      "evidence": "docs/unit-audit-20261105/validation/LV2-U38-image-followups.json",
+      "updatedAt": "2026-11-06T20:30:00.875Z",
+      "acceptedGenerationCalls": 0,
+      "uncertainOutcome": false,
+      "toolBlockerEvidence": "docs/unit-audit-20261105/validation/LV2-U38-image-tool-blocker.json",
+      "localGenerationCallsAccepted": 0,
+      "localPendingGenerationCalls": 0,
+      "pendingGenerationCallScope": "No current local or producer generation is pending for these accepted assets.",
+      "handoffAccepted": true,
+      "candidateEvidence": "docs/unit-audit-20261105/validation/LV2-U38-candidate-retrieval-blocker.json",
+      "newAssetAvailableScope": "Verified publication WebP installed through exact Git-delivered asset, actual consumer reopened and saved; new integration-head CI pending.",
+      "historicalObservation": {
+        "id": "GENERAL-W003446-image-pair",
+        "word": "generosity",
+        "wordId": "W003446",
+        "observedInUnit": "LV2-U38",
+        "state": "candidate_png_reported_ready_local_transfer_metadata_blocked_not_integrated",
+        "classification": "confirmed_literal_recipient_count_mismatch",
+        "reason": "Original1024px image gives one apple to each of two friends; English says both apples to a friend. Preserve the exact English/Chinese caption and old asset; a future minimal image correction must show both apples given to one friend.",
+        "repoPath": "public/wordbeast/a/W003446.webp",
+        "oldSha256": "3077fa8f9c844484d2f119f995ae1cc91cab7f01bd3857aeddbb380fe3d041da",
+        "originalDimensions": [
+          1024,
+          1024
+        ],
+        "caption": "Doudou shows generosity by giving both apples to a friend.\n\n豆豆把兩顆蘋果都送給朋友，展現慷慨。",
+        "generationState": "candidate_png_available_no_duplicate_local_generation",
+        "pendingGenerationCalls": 0,
+        "newAssetAvailable": true,
+        "productPairChanged": false,
+        "oldAssetRetained": true,
+        "evidence": "docs/unit-audit-20261105/validation/LV2-U38-image-followups.json",
+        "updatedAt": "2026-11-06T14:04:49.293Z",
+        "acceptedGenerationCalls": 0,
+        "uncertainOutcome": false,
+        "toolBlockerEvidence": "docs/unit-audit-20261105/validation/LV2-U38-image-tool-blocker.json",
+        "localGenerationCallsAccepted": 0,
+        "localPendingGenerationCalls": 0,
+        "pendingGenerationCallScope": "Current Windows environment only; candidate preparation does not imply a completed generation.",
+        "handoffAccepted": true,
+        "candidateEvidence": "docs/unit-audit-20261105/validation/LV2-U38-candidate-retrieval-blocker.json",
+        "newAssetAvailableScope": "Reported candidate PNG only; no verified publication WebP locally installed or integrated."
+      },
+      "currentResolution": {
+        "state": "accepted_own_consumer_ci_success",
+        "assetCommit": "248c092f13c969123b0cd98102dd4d459112479f",
+        "oldPath": "wordbeast/a/W003446.webp",
+        "oldSha256": "3077fa8f9c844484d2f119f995ae1cc91cab7f01bd3857aeddbb380fe3d041da",
+        "path": "wordbeast/lv2-reviewed/LV2-U38-generosity-fdecea42d13a.webp",
+        "sha256": "fdecea42d13a9b79b6012df71a7e80a6efbb2be56d095be6303f5fb5d769dd79",
+        "oldAssetRetained": true,
+        "captionsUnchanged": true,
+        "normalAppReopened": true,
+        "savedVerified": true,
+        "progressTablesPreserved": 14,
+        "evidence": "LV2-U38-U41-image-repairs.json",
+        "consumerIntegrationCommit": "7ff55408250827184e243d2a83f31ca77088c3ee"
+      },
+      "nextAction": null
+    },
+    {
+      "id": "LV1-U09-27-image-quantity",
+      "word": "playground",
+      "wordId": "W001638",
+      "observedInUnit": "LV2-U38",
+      "state": "exact_pair_app_reopened_saved_and_own_ci_success",
+      "classification": "core_alignment_with_literal_quantity_gap",
+      "reason": "One child is swinging while the second stands cheering; actual caption uses plural kids are swinging. Preserve the core playground/happy action, exact caption and original1254px asset. No whole-theme mismatch is asserted.",
+      "repoPath": "public/wordbeast/lv1-reviewed/LV1-U09-27-39abaecad0fa.webp",
+      "oldSha256": "2a11198019d75bd6c145a98ac9a5e0a661e5bf6070867b17d093b4ae1aa2b407",
+      "originalDimensions": [
+        1254,
+        1254
+      ],
+      "caption": "The kids are swinging happily on the playground.\n\n孩子們在遊樂場開心地盪鞦韆。",
+      "generationState": "verified_git_asset_integrated_without_regeneration",
+      "pendingGenerationCalls": 0,
+      "newAssetAvailable": true,
+      "productPairChanged": true,
+      "oldAssetRetained": true,
+      "evidence": "docs/unit-audit-20261105/validation/LV2-U38-image-followups.json",
+      "updatedAt": "2026-11-06T20:30:00.875Z",
+      "acceptedGenerationCalls": 0,
+      "uncertainOutcome": false,
+      "toolBlockerEvidence": "docs/unit-audit-20261105/validation/LV2-U38-image-tool-blocker.json",
+      "localGenerationCallsAccepted": 0,
+      "localPendingGenerationCalls": 0,
+      "pendingGenerationCallScope": "No current local or producer generation is pending for these accepted assets.",
+      "handoffAccepted": true,
+      "candidateEvidence": "docs/unit-audit-20261105/validation/LV2-U38-candidate-retrieval-blocker.json",
+      "newAssetAvailableScope": "Verified publication WebP installed through exact Git-delivered asset, actual consumer reopened and saved; new integration-head CI pending.",
+      "historicalObservation": {
+        "id": "LV1-U09-27-image-quantity",
+        "word": "playground",
+        "wordId": "W001638",
+        "observedInUnit": "LV2-U38",
+        "state": "candidate_png_reported_ready_local_transfer_metadata_blocked_not_integrated",
+        "classification": "core_alignment_with_literal_quantity_gap",
+        "reason": "One child is swinging while the second stands cheering; actual caption uses plural kids are swinging. Preserve the core playground/happy action, exact caption and original1254px asset. No whole-theme mismatch is asserted.",
+        "repoPath": "public/wordbeast/lv1-reviewed/LV1-U09-27-39abaecad0fa.webp",
+        "oldSha256": "2a11198019d75bd6c145a98ac9a5e0a661e5bf6070867b17d093b4ae1aa2b407",
+        "originalDimensions": [
+          1254,
+          1254
+        ],
+        "caption": "The kids are swinging happily on the playground.\n\n孩子們在遊樂場開心地盪鞦韆。",
+        "generationState": "candidate_png_available_no_duplicate_local_generation",
+        "pendingGenerationCalls": 0,
+        "newAssetAvailable": true,
+        "productPairChanged": false,
+        "oldAssetRetained": true,
+        "evidence": "docs/unit-audit-20261105/validation/LV2-U38-image-followups.json",
+        "updatedAt": "2026-11-06T14:04:49.293Z",
+        "acceptedGenerationCalls": 0,
+        "uncertainOutcome": false,
+        "toolBlockerEvidence": "docs/unit-audit-20261105/validation/LV2-U38-image-tool-blocker.json",
+        "localGenerationCallsAccepted": 0,
+        "localPendingGenerationCalls": 0,
+        "pendingGenerationCallScope": "Current Windows environment only; candidate preparation does not imply a completed generation.",
+        "handoffAccepted": true,
+        "candidateEvidence": "docs/unit-audit-20261105/validation/LV2-U38-candidate-retrieval-blocker.json",
+        "newAssetAvailableScope": "Reported candidate PNG only; no verified publication WebP locally installed or integrated."
+      },
+      "currentResolution": {
+        "state": "accepted_own_consumer_ci_success",
+        "assetCommit": "248c092f13c969123b0cd98102dd4d459112479f",
+        "oldPath": "wordbeast/lv1-reviewed/LV1-U09-27-39abaecad0fa.webp",
+        "oldSha256": "2a11198019d75bd6c145a98ac9a5e0a661e5bf6070867b17d093b4ae1aa2b407",
+        "path": "wordbeast/lv2-reviewed/LV2-U38-playground-a6b345e0f778.webp",
+        "sha256": "a6b345e0f778db7542e02e6381d03444fcac0517551f2c2494b296e64ee8fd7f",
+        "oldAssetRetained": true,
+        "captionsUnchanged": true,
+        "normalAppReopened": true,
+        "savedVerified": true,
+        "progressTablesPreserved": 14,
+        "evidence": "LV2-U38-U41-image-repairs.json",
+        "consumerIntegrationCommit": "7ff55408250827184e243d2a83f31ca77088c3ee"
+      },
+      "nextAction": null
+    },
+    {
+      "id": "LV1-U09-04",
+      "word": "building",
+      "additionalUnit": "LV2-U44",
+      "wordId": "W001115",
+      "learningItemId": "LI-LV2U44-V013",
+      "state": "integrated_reopened_saved_exact_repaired_head_ci_success",
+      "observation": "Exact delivered telescope image integrated; all3 consumers reopened and saved. Own new-head CI pending.",
+      "evidence": "validation/LV2-U44-building-image-followup.json",
+      "generationStarted": false,
+      "candidateExists": true,
+      "technicalError": "AbsolutePathBuf deserialized without a base path at line 1 column 151",
+      "denied": false,
+      "next": "Read exact image integration head full CI; continue U45.",
+      "historicalTextCheckpoint": {
+        "state": "confirmed_image_repair_pending_supported_input",
+        "observation": "Native1254 roof has closed dome without a visible telescope; original English/Chinese retained.",
+        "generationStarted": false,
+        "candidateExists": false,
+        "technicalError": "AbsolutePathBuf deserialized without a base path at line 1 column 151"
+      },
+      "localGenerationStarted": false,
+      "currentResolution": {
+        "assetCommit": "d866085e76aeec6b05c1d87346221d5fe22ffbd4",
+        "newPath": "wordbeast/lv2-reviewed/LV2-U44-building-60c34c741c62.webp",
+        "newSha256": "60c34c741c62e77dccf4fa37f9fcbbfc2b40b705787f18da76c1563954e53e4e",
+        "originalRetained": true,
+        "captionsUnchanged": true,
+        "actualConsumersReopened": 3,
+        "contentRowsReadBack": 3446,
+        "progressEvidence": [
+          {
+            "phase": "after",
+            "tables": 14,
+            "learningAndCustomDataUnchanged": true,
+            "nativeSnapshotHash": "2a2a7cb52ba9170ff3e8e2e2191325cee239f473657b9fc6cdd16354370213fe",
+            "beforeNativeSnapshotHash": "086d16fabe5047205c30f4ab483532095c4433e0113caf73c0dd26360618429a",
+            "exactUnchangedTables": 13,
+            "ordinaryUiDifference": "Only learning:last-location.updatedAt changed after actual navigation; all other settings fields/rows exact.",
+            "normalizedExactMatch": true
+          },
+          {
+            "phase": "afterReopen",
+            "tables": 14,
+            "learningAndCustomDataUnchanged": true,
+            "nativeSnapshotHash": "16ed498e40ddf3041f15c6610b39f9fa99d8278c5805165c491b45618cf79188",
+            "beforeNativeSnapshotHash": "086d16fabe5047205c30f4ab483532095c4433e0113caf73c0dd26360618429a",
+            "exactUnchangedTables": 13,
+            "ordinaryUiDifference": "Only learning:last-location.updatedAt changed after actual navigation; all other settings fields/rows exact.",
+            "normalizedExactMatch": true
+          }
+        ],
+        "generatedInThisExecutor": false,
+        "validation": "validation/LV2-U44-building-image-integration.json",
+        "ownIntegrationCi": "pending_exact_new_commit"
+      },
+      "finalIntegrationCi": {
+        "commit": "45edea0bb42fb0cac16f10fc6468574e1225e109",
+        "run": 42312987204,
+        "job": 128218688089,
+        "url": "https://github.com/chiehco/vocab-app/actions/runs/42312987204/job/128218688089",
+        "status": "completed",
+        "conclusion": "success",
+        "checkoutShaReadFromFullLog": true,
+        "pythonBatches": [
+          14,
+          7,
+          84,
+          5,
+          10
+        ],
+        "jobCompletedAtUtc": "2026-11-06T23:53:37Z",
+        "testFiles": 236,
+        "tests": 1930,
+        "lint": "success",
+        "typecheck": "success",
+        "build": "success",
+        "buildLogCompletedAtUtc": "2026-11-06T23:53:32.4850601Z"
+      },
+      "firstIntegrationCi": {
+        "commit": "942a1b58308d04f1646dace66341dc2fd85a007e",
+        "run": 42312151812,
+        "job": 128215970661,
+        "url": "https://github.com/chiehco/vocab-app/actions/runs/42312151812/job/128215970661",
+        "status": "completed",
+        "conclusion": "failure",
+        "checkoutShaReadFromFullLog": true,
+        "pythonBatches": [
+          14,
+          7,
+          84,
+          5,
+          10
+        ],
+        "jobCompletedAtUtc": "2026-11-06T23:44:55Z",
+        "testFilesPassed": 235,
+        "testFilesFailed": 1,
+        "testsPassed": 1929,
+        "testsFailed": 1,
+        "build": "skipped",
+        "failure": "U44 old text-checkpoint test still asserted current candidateExists=false after the candidate had been integrated.",
+        "repairCommit": "45edea0bb42fb0cac16f10fc6468574e1225e109",
+        "historicalAssertionPreserved": true
+      }
+    },
+    {
+      "id": "LV2-U46-praise-image-plural",
+      "word": "praise",
+      "wordId": "W001659",
+      "learningItemId": "LI-LV2U46-V008",
+      "state": "app_saved_and_exact_own_image_head_ci_success",
+      "repoPath": "public/wordbeast/a/W001659.webp",
+      "oldSha256": "1292ab2ed0e282791f766f4ff13bb36a8200598bf93596b74658a732389238d1",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "captionEn": "Doudou offers flowers in praise of a friend, who bows happily.",
+      "captionZh": "豆豆送花稱讚朋友，朋友開心地鞠躬。",
+      "observation": "Native1024 image actually viewed: one blue flower head on one stem offered by left character; right character bows. English flowers is plural.",
+      "target": "Minimal edit: preserve original canvas, paper, watercolour, both characters and bow; add one matching blue flower with separate visible stem so the same offering hand clearly holds two flowers. Keep both captions and every other binding unchanged.",
+      "generationStarted": false,
+      "candidateExists": true,
+      "appRepairAccepted": true,
+      "denied": false,
+      "technicalError": "AbsolutePathBuf deserialized without a base path at line1 column1066",
+      "sameFailedParametersNotRetried": true,
+      "duplicateGenerationNotStarted": true,
+      "evidence": "validation/LV2-U46-praise-image-integration.json",
+      "next": "Image repair accepted with exact own CI. Whole LV2 release remains separate; preserve original snapshots and source-only boundaries.",
+      "originalStateAtTextCheckpoint": {
+        "state": "confirmed_literal_quantity_gap_original_retained_candidate_awaited",
+        "generationStarted": false,
+        "candidateExists": false,
+        "appRepairAccepted": false,
+        "technicalError": "AbsolutePathBuf deserialized without a base path at line1 column1066"
+      },
+      "publicationReady": false,
+      "newRepoPath": "public/wordbeast/lv2-reviewed/LV2-U46-praise-3627b1c737c1.webp",
+      "newSha256": "3627b1c737c1faa273653217b6636643d2af5b1f6ba6ebaed93f51e653d1d78f",
+      "assetCommit": "7d65154fc716ce4900bdce4d7756e76563e8cb8a",
+      "ownCi": {
+        "commit": "d73d26d76e6337ff6dc7e539ded3157ae5f8a347",
+        "run": 42327840585,
+        "job": 128267185911,
+        "url": "https://github.com/chiehco/vocab-app/actions/runs/42327840585/job/128267185911",
+        "status": "completed",
+        "conclusion": "success",
+        "checkoutShaReadFromFullLog": true,
+        "testFiles": 239,
+        "tests": 1960,
+        "pythonBatches": [
+          14,
+          7,
+          90,
+          5,
+          10
+        ],
+        "lint": "success",
+        "typecheck": "success",
+        "build": "success",
+        "buildLogCompletedAtUtc": "2026-11-07T02:20:41.0791166Z",
+        "jobCompletedAtUtc": "2026-11-07T02:20:45Z",
+        "source": "Complete exact-head CI checkout, all steps and full test/build log actually read. Not a preceding-head substitute."
+      }
+    }
+  ],
+  "sourceFormResearchCoverage": {
+    "uniqueWords": 401,
+    "candidatesNotYetApplied": 389,
+    "presentationPending": 12,
+    "original31AppliedFormsSeparateAndPreserved": true,
+    "researchFilesDoNotApproveProductState": true
+  },
+  "earlySourceFollowups": {
+    "state": "separate_isolated_followup_branch_work_in_progress_not_integrated_here",
+    "scope": "Earlier verified candidate batches are being processed separately. This checkpoint applies only the explicitly listed U12 rows, including four shared ask hints. Reconcile exact latest before values before any later integration."
+  },
+  "verifiedFollowupBatchQueued": {
+    "commit": "86b353fadad09b4cd1ff65fff6e2636cb68df096",
+    "scope": "16 U03/U04 verbForms fields",
+    "state": "integrated_exact_fields_and_reopened_in_audit_branch",
+    "evidence": "docs/unit-audit-20261105/LV1-U03-U04-integrated-forms-ledger.json",
+    "sourceCiDoesNotSubstituteOwnVerification": true
+  }
+}

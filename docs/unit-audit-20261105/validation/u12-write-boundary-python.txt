@@ -1,0 +1,17 @@
+E
+======================================================================
+ERROR: test_apply_unit_audit (unittest.loader._FailedTest.test_apply_unit_audit)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_apply_unit_audit
+Traceback (most recent call last):
+  File "<python-install>\Lib\unittest\loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+  File "<repo>\scripts\test_apply_unit_audit.py", line 12, in <module>
+    import apply_unit_audit as audit
+ModuleNotFoundError: No module named 'apply_unit_audit'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (errors=1)

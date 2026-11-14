@@ -1,0 +1,70 @@
+{
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "scope": "Minimal source-based clarification of butter/cat and two example hints; all existing whole-word statuses retained.",
+  "retainedIssue": {
+    "word": "grandfather",
+    "state": "computing_sense_confirmed_translation_still_pending",
+    "details": "Pearson’s official ICT marking scheme identifies the oldest master file as Grandfather on printed pages 9 and 13. Therefore the computing sense is real and must not be deleted as contamination. The inherited Chinese 原始資料組 remains pending a precise source translation; this change only narrows the daughter/son example hint.",
+    "source": "https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/Information%20and%20Communication%20Technology/2003/Exam%20materials/325951_4385_IGCSE_ICT_msc_20070104.pdf"
+  },
+  "patches": [
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000130",
+      "before": {
+        "meaningEn": "an edible emulsion of fat globules made by churning milk or cream; for cooking and table use; a fighter who strikes the opponent with his head; (v.) to spread butter on food"
+      },
+      "after": {
+        "meaningEn": "(n., food) a fatty spread made by churning milk or cream; (v.) to spread butter on food; (separate homograph noun) a person or animal that strikes with its head."
+      },
+      "reason": "Separate the food and spreading senses from the valid but unrelated head-butting homograph. Retain original draft status.",
+      "evidence": "Wordnik reproduces Princeton WordNet 3.0 and Century definitions: https://www.wordnik.com/words/butter . The Princeton endpoint was not read directly; this is an attributed reproduction, not a claim of direct Princeton access."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000148",
+      "before": {
+        "meaningZh": "貓；惡婦；嘔吐；電腦輔助教育",
+        "meaningEn": "feline mammal usually having thick soft fur and no ability to roar: domestic cats; wildcats; a spiteful woman gossip",
+        "usagePattern": "a/the cat; cat of N",
+        "usagePatternZh": "貓；某事物的貓"
+      },
+      "after": {
+        "meaningZh": "貓；（舊式貶義名詞）惡意說閒話的人",
+        "meaningEn": "(n.) a domestic cat or another animal of the cat family; (dated, derogatory noun) a malicious gossip. Other source uses are separate: cat as a British slang verb means to vomit; the uppercase abbreviation CAT can mean computer-aided teaching. These do not expand this learner headword’s existing noun POS.",
+        "usagePattern": "a/the cat",
+        "usagePatternZh": "一隻／那隻貓"
+      },
+      "reason": "Distinguish noun meanings from the slang verb and the separate uppercase abbreviation; replace the unsupported cat of N template. Keep the existing noun headword identity and draft status.",
+      "evidence": "Collins cat/CAT entries: https://www.collinsdictionary.com/dictionary/english/cat . Old raw values are retained in this exact before/after record; no headword POS expansion."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXf48af4b5",
+      "before": {
+        "meaningHint": "貓；惡婦；嘔吐；電腦輔助教育"
+      },
+      "after": {
+        "meaningHint": "貓"
+      },
+      "reason": "The unchanged pet sentence uses cats as the animal noun, with no vomiting or acronym meaning.",
+      "evidence": "Existing sentence and cloze; Collins noun cat: https://www.collinsdictionary.com/dictionary/english/cat"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXd479da4b",
+      "before": {
+        "meaningHint": "祖父；始祖；原始資料組"
+      },
+      "after": {
+        "meaningHint": "外祖父（外公）"
+      },
+      "reason": "His daughter has a son, so the specific family relationship is maternal grandfather. Keep the correct original Chinese sentence.",
+      "evidence": "Existing sentence and cloze; Collins family noun: https://www.collinsdictionary.com/dictionary/english/grandfather"
+    }
+  ]
+}

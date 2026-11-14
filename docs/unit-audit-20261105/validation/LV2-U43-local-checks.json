@@ -1,0 +1,98 @@
+{
+  "unit": "LV2-U43",
+  "state": "final_local_checks_passed_own_new_head_ci_pending",
+  "python": {
+    "firstAttempt": {
+      "exitCode": 1,
+      "contentAssertionsReached": false,
+      "reason": "Default sandbox package Temp caused setup/cleanup PermissionErrors. Original log retained; no assertion relaxation."
+    },
+    "workspaceTempFull": {
+      "tests": 81,
+      "exitCode": 0
+    },
+    "afterVisibleChineseFollowup": {
+      "targetedTests": 3,
+      "exitCode": 0
+    },
+    "temporaryDirectory": "Dedicated workspace temporary directory only for the test process; production semantics unchanged."
+  },
+  "frontend": {
+    "firstComplete": {
+      "files": 14,
+      "tests": 241,
+      "passed": 241,
+      "failed": 0
+    },
+    "afterVisibleChineseFollowup": {
+      "files": 4,
+      "tests": 112,
+      "passed": 112,
+      "failed": 0,
+      "addedMeasurementVisibleQualificationTest": true
+    },
+    "interpretation": "Overlapping sequential runs; counts are not added together as independent tests. The final focused run covers the changed visible field, current unit text/audit, shared patch guards and historical integration.",
+    "originalUnitTextAndNewAuditIncluded": true,
+    "sharedHistoricalImageProgressSeedProtectionIncluded": true,
+    "originalLocalTimeout": 5000,
+    "maxWorkers": 1
+  },
+  "lint": {
+    "exitCode": 0
+  },
+  "typecheck": {
+    "exitCode": 0
+  },
+  "build": {
+    "exitCode": 0
+  },
+  "sourceDraftCheck": {
+    "exitCode": 0
+  },
+  "sourceIntegrationCheck": {
+    "exitCode": 0
+  },
+  "logs": [
+    {
+      "file": "LV2-U43-python-first.txt",
+      "sha256": "421cadda0977ff5d5bf524e379eedcacb2687ec71f25cd186f078e5cdacd0d75"
+    },
+    {
+      "file": "LV2-U43-python-workspace-temp.txt",
+      "sha256": "bf6e27cafe8cb06c3848c7e5182356862035041f52c6a5e68add3126180ba92f"
+    },
+    {
+      "file": "LV2-U43-regression-first-complete.txt",
+      "sha256": "ad2e3dbf17de6abdd5f5a98679867271e43cafc96e32fedcf4934f6cafef6028"
+    },
+    {
+      "file": "LV2-U43-python-visible-final.txt",
+      "sha256": "5f73a83c6f3177ee4d7d90353e1b8f02276160c5f338be817783fefaf9662fa4"
+    },
+    {
+      "file": "LV2-U43-regression-visible-final.txt",
+      "sha256": "2d1220fec694d8cf585ae969b19fba8ee9eca7e67804d723df583e754f38c80e"
+    },
+    {
+      "file": "LV2-U43-lint-final.txt",
+      "sha256": "7490685941c45bcc4394a8f5b5f324c51ef31b1ebbe0acc0154f7462a183235f"
+    },
+    {
+      "file": "LV2-U43-typecheck-final.txt",
+      "sha256": "0d93be78e4da5c0077681c4d834163661d59ddd24a0477595fb70ec25d5a5ea8"
+    },
+    {
+      "file": "LV2-U43-build-final.txt",
+      "sha256": "0abbf2cda7e66755b8590c80c806d05a1b5cddd6937c60a3e91cbeb20f5a4fec"
+    },
+    {
+      "file": "LV2-U43-prepare_recovered_unit_drafts-check.txt",
+      "sha256": "de98448ebf9803278533e50a4959ae987fb489682759393fb4a40f162f8d62d3"
+    },
+    {
+      "file": "LV2-U43-integrate_recovered_units-check.txt",
+      "sha256": "16a949cba64b31891edbac15dab0007dfc5e48721605cd1960b7fa9df69a3c61"
+    }
+  ],
+  "newHeadOwnCi": "pending_this_new_commit"
+}

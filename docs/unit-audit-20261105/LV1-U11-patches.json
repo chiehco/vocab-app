@@ -1,0 +1,2000 @@
+{
+  "unit": "LV1-U11",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "scope": "All 79 retained image pairs, 71 existing formal words and 192 complete formal examples actually reviewed. Original English/Chinese sentences, cloze, answers, identities, formal headword POS and whole-word status unchanged. Blank hints remain blank.",
+  "retainedIssues": [
+    {
+      "type": "official_exam_source_not_yet_confirmed",
+      "senseId": "W003035-1",
+      "reason": "111 GSAT Q6 answer C was readable, but official question-detail extraction repeatedly timed out. Word/option mapping not independently confirmed; preserve sense draft and original claim. Practice example lexical review is separate."
+    },
+    {
+      "type": "pos_analysis_convention",
+      "ids": [
+        "EX1c43652d",
+        "EX600a76ea",
+        "EXcb617f7e"
+      ],
+      "reason": "Take it easy, worn-out predicate adjective/passive analysis, and located west of admit phrase/token classification questions. Preserve their existing labels; no unique classification pass."
+    },
+    {
+      "type": "rare_summary_precision_pending",
+      "words": [
+        "plain",
+        "notebook",
+        "dollar",
+        "southern",
+        "eastern"
+      ],
+      "reason": "Inherited technical plain no-format, notebook promissory-note book, dollar purely-economic, southern 男風 and some eastern person/religious scopes are not fully certified. Preserve uncertain text/source rather than deleting rare meanings to manufacture completion."
+    },
+    {
+      "type": "structured_verb_forms_missing",
+      "reason": "Existing absent principal-part fields remain outside the currently verified 31-word write allowlist. Later source-qualified form batches are queued; no missing field is counted filled by lexical/POS review."
+    }
+  ],
+  "patches": [
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX0cfd9de4",
+      "before": {
+        "sensePos": "v./n.",
+        "meaningHint": "希望；信心；期待；期望"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "希望"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/hope"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX754346b1",
+      "before": {
+        "sensePos": "v./n.",
+        "meaningHint": "希望；信心；期待；期望"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "希望"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/hope"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX8deba4ff",
+      "before": {
+        "sensePos": "v./n.",
+        "meaningHint": "希望；信心；期待；期望"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "希望"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/hope"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXf9ecdea0",
+      "before": {
+        "meaningHint": "希望（考點：名詞義，抽象的盼望）",
+        "status": "draft"
+      },
+      "after": {
+        "meaningHint": "希望",
+        "status": "reviewed"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged. English, Chinese, lexical use and cloze reconstruction actually checked. This reviews the authored practice example independently, not a claim it quotes an official exam.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/hope"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX289e8fc2",
+      "before": {
+        "sensePos": "v./n.",
+        "meaningHint": "希望；願望；祝願；命令"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "希望；但願"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/wish"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX52f2d92c",
+      "before": {
+        "sensePos": "v./n.",
+        "meaningHint": "希望；願望；祝願；命令"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "希望；但願"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/wish"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX94426711",
+      "before": {
+        "sensePos": "v./n.",
+        "meaningHint": "希望；願望；祝願；命令"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "祝願"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/wish"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXa62d5b4d",
+      "before": {
+        "sensePos": "v./n.",
+        "meaningHint": "希望；願望；祝願；命令"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "希望；但願"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/wish"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXca7f17ad",
+      "before": {
+        "sensePos": "v./n.",
+        "meaningHint": "希望；願望；祝願；命令"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "願望（make a wish：許願）"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/wish"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXce7dcec4",
+      "before": {
+        "sensePos": "v./n.",
+        "meaningHint": "希望；願望；祝願；命令"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "祝福（best wishes：最誠摯的祝福）"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/wish"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1727ecb5",
+      "before": {
+        "sensePos": "adj./adv.",
+        "meaningHint": "堅硬的；硬的；難的；艱苦的"
+      },
+      "after": {
+        "sensePos": "adv.",
+        "meaningHint": "努力地"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/hard"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXa6219ae2",
+      "before": {
+        "sensePos": "adj./adv.",
+        "meaningHint": "堅硬的；硬的；難的；艱苦的"
+      },
+      "after": {
+        "sensePos": "adj.",
+        "meaningHint": "困難的"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/hard"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXc5652ef4",
+      "before": {
+        "sensePos": "adj./adv.",
+        "meaningHint": "堅硬的；硬的；難的；艱苦的"
+      },
+      "after": {
+        "sensePos": "adj.",
+        "meaningHint": "堅硬的"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/hard"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXfb98b34a",
+      "before": {
+        "sensePos": "adj./adv.",
+        "meaningHint": "堅硬的；硬的；難的；艱苦的"
+      },
+      "after": {
+        "sensePos": "adv.",
+        "meaningHint": "猛烈地（雨下得大）"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/hard"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1dc09958",
+      "before": {
+        "meaningHint": "簡單的；普通的；樸素的；單純的"
+      },
+      "after": {
+        "meaningHint": "簡單的"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/simple"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXfe2e7662",
+      "before": {
+        "meaningHint": "簡單的；普通的；樸素的；單純的"
+      },
+      "after": {
+        "meaningHint": "樸素的"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/simple"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX2f9e583e",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "筆記；記錄；註解；票據"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "筆記"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/note"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX475c3e0c",
+      "before": {
+        "meaningHint": "以……著稱（be noted for；noted 在此作形容詞，不能把此義直接配給 note 原形）",
+        "status": "needs_check"
+      },
+      "after": {
+        "meaningHint": "著名的；以……聞名（be noted for；noted 在此為形容詞）",
+        "status": "reviewed"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged. English, Chinese, lexical use and cloze reconstruction actually checked. This reviews the authored practice example independently, not a claim it quotes an official exam.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/note"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX554b400e",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "筆記；記錄；註解；票據"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "注意到"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/note"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXcc6dc48a",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "筆記；記錄；註解；票據"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "注意（take note of：留意……）"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/note"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXdaa84a08",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "筆記；記錄；註解；票據"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "便條"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/note"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX01139763",
+      "before": {
+        "meaningHint": "地球；泥土；世界；塵世"
+      },
+      "after": {
+        "meaningHint": "泥土"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/earth"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX30291af8",
+      "before": {
+        "meaningHint": "地球；泥土；世界；塵世"
+      },
+      "after": {
+        "meaningHint": "究竟；到底（on earth 加強疑問語氣）"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/earth"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX36d6ad37",
+      "before": {
+        "meaningHint": "地球；泥土；世界；塵世"
+      },
+      "after": {
+        "meaningHint": "地球"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/earth"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX73ebae58",
+      "before": {
+        "meaningHint": "地球；泥土；世界；塵世"
+      },
+      "after": {
+        "meaningHint": "世界上（on earth）"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/earth"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX4c566312",
+      "before": {
+        "meaningHint": "地板；樓層"
+      },
+      "after": {
+        "meaningHint": "地板"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/floor"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX7942ef56",
+      "before": {
+        "meaningHint": "地板；樓層"
+      },
+      "after": {
+        "meaningHint": "樓層"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/floor"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXaa23a0ea",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "市場；交易；集市；推銷地區"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "行銷；推銷"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/market"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXb866e8ca",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "市場；交易；集市；推銷地區"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "市場"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/market"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXc3995e6e",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "市場；交易；集市；推銷地區"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "市場（on the market：上市）"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/market"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX39942f46",
+      "before": {
+        "meaningHint": "故事；小說；傳奇；描述"
+      },
+      "after": {
+        "meaningHint": "新聞報導"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/story"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX49d3f4ef",
+      "before": {
+        "meaningHint": "故事；小說；傳奇；描述"
+      },
+      "after": {
+        "meaningHint": "故事"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/story"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX66fa6006",
+      "before": {
+        "meaningHint": "故事；小說；傳奇；描述"
+      },
+      "after": {
+        "meaningHint": "樓層"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/story"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX85f8f035",
+      "before": {
+        "meaningHint": "故事；小說；傳奇；描述"
+      },
+      "after": {
+        "meaningHint": "樓層（ten-story：十層樓的）"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/story"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX923acabd",
+      "before": {
+        "meaningHint": "故事；小說；傳奇；描述"
+      },
+      "after": {
+        "meaningHint": "故事（make a long story short：長話短說）"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/story"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXa7236dae",
+      "before": {
+        "meaningHint": "故事；小說；傳奇；描述"
+      },
+      "after": {
+        "meaningHint": "故事"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/story"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1a78a0b4",
+      "before": {
+        "meaningHint": "運氣；籤；抽籤；份額"
+      },
+      "after": {
+        "meaningHint": "用地（parking lot：停車場）"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/lot"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX6d48201f",
+      "before": {
+        "meaningHint": "運氣；籤；抽籤；份額"
+      },
+      "after": {
+        "meaningHint": "一批"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/lot"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXceb186f0",
+      "before": {
+        "meaningHint": "運氣；籤；抽籤；份額"
+      },
+      "after": {
+        "meaningHint": "大量（a lot of：很多）"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/lot"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXf0467281",
+      "before": {
+        "meaningHint": "運氣；籤；抽籤；份額"
+      },
+      "after": {
+        "meaningHint": "大量（a lot of：很多）"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/lot"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX5c354475",
+      "before": {
+        "meaningHint": "車站；站；局；駐地"
+      },
+      "after": {
+        "meaningHint": "車站"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/station"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX74925cc2",
+      "before": {
+        "meaningHint": "車站；站；局；駐地",
+        "sensePos": "n."
+      },
+      "after": {
+        "meaningHint": "部署；派駐",
+        "sensePos": "v."
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged. The unchanged actual answer is unambiguously this part of speech; correct the inherited single label, preserving headword POS.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/station"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXb1fa7f39",
+      "before": {
+        "meaningHint": "車站；站；局；駐地"
+      },
+      "after": {
+        "meaningHint": "站（fire station：消防站）"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/station"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX7a3b018e",
+      "before": {
+        "meaningHint": "隨和的、令人愉快的（考點：形容人好相處）",
+        "status": "draft"
+      },
+      "after": {
+        "meaningHint": "隨和的；令人愉快的",
+        "status": "reviewed"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged. English, Chinese, lexical use and cloze reconstruction actually checked. This reviews the authored practice example independently, not a claim it quotes an official exam.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/agreeable"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX069fb7ff",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "機會；意外；可能性；偶然發生"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "可能性"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/chance"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1a0782a7",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "機會；意外；可能性；偶然發生"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "碰巧（chance to V）"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/chance"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX214e5292",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "機會；意外；可能性；偶然發生"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "偶然（by chance：碰巧）"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/chance"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX9bb683a4",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "機會；意外；可能性；偶然發生"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "風險（take chances：冒險）"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/chance"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXae5cb1ab",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "機會；意外；可能性；偶然發生"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "機會"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/chance"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXe3d0007e",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "機會；意外；可能性；偶然發生"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "冒險"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/chance"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX032b8fbf",
+      "before": {
+        "sensePos": "v./n.",
+        "meaningHint": "投；擲；拋；發射"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "投擲"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/throw"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1f2920ac",
+      "before": {
+        "sensePos": "v./n.",
+        "meaningHint": "投；擲；拋；發射"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "舉辦（throw a party：辦派對）"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/throw"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX82764de6",
+      "before": {
+        "sensePos": "v./n.",
+        "meaningHint": "投；擲；拋；發射"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "投；擲"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/throw"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXa3469c88",
+      "before": {
+        "sensePos": "v./n.",
+        "meaningHint": "投；擲；拋；發射"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "丟棄（throw away）"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/throw"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXbf94bce1",
+      "before": {
+        "sensePos": "v./n.",
+        "meaningHint": "投；擲；拋；發射"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "投；擲"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/throw"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX4b6865a2",
+      "before": {
+        "sensePos": "v./n.",
+        "meaningHint": "打架；爭吵；鬥志；對抗"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "對抗"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/fight"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX57fa98d3",
+      "before": {
+        "sensePos": "v./n.",
+        "meaningHint": "打架；爭吵；鬥志；對抗"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "爭吵；打架"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/fight"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX8b746ab6",
+      "before": {
+        "sensePos": "v./n.",
+        "meaningHint": "打架；爭吵；鬥志；對抗"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "奮鬥（fight for：為……而戰）"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/fight"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXce134f59",
+      "before": {
+        "sensePos": "v./n.",
+        "meaningHint": "打架；爭吵；鬥志；對抗"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "戰役；戰鬥"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/fight"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXffa75a6e",
+      "before": {
+        "sensePos": "v./n.",
+        "meaningHint": "打架；爭吵；鬥志；對抗"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "爭吵（挖空 fought；後方同義句另用名詞 a fight）"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/fight"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX822b48a7",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "休息；睡眠；安息；稍息"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "剩餘部分"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/rest"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXa5cdf460",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "休息；睡眠；安息；稍息"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "休息"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/rest"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXf0d3b5b3",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "休息；睡眠；安息；稍息"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "休息"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/rest"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXf6f3dd90",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "休息；睡眠；安息；稍息"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "剩餘部分（the rest of one’s life：餘生）"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/rest"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXfd6a91b6",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "休息；睡眠；安息；稍息"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "安息"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/rest"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX0aa0186b",
+      "before": {
+        "meaningHint": "穿著；戴；使用；耗損"
+      },
+      "after": {
+        "meaningHint": "穿著；戴著"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/wear"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX4beda863",
+      "before": {
+        "meaningHint": "穿著；戴；使用；耗損"
+      },
+      "after": {
+        "meaningHint": "留（髮型）"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/wear"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX4c9ba21f",
+      "before": {
+        "meaningHint": "穿著；戴；使用；耗損"
+      },
+      "after": {
+        "meaningHint": "蓄（鬍鬚）"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/wear"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX600a76ea",
+      "before": {
+        "meaningHint": "穿著；戴；使用；耗損"
+      },
+      "after": {
+        "meaningHint": "筋疲力竭（be worn out）"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/wear"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX0dcc17c3",
+      "before": {
+        "meaningHint": "領導者；社論；指揮；領袖"
+      },
+      "after": {
+        "meaningHint": "領導者"
+      },
+      "reason": "Precisely read the unchanged cloze target and narrow its nonempty inherited hint/composite POS to this use. Empty daily/exam hints are preserved; headword senses and sentences are unchanged.",
+      "evidence": "Actual complete English/Chinese/cloze/answer reviewed; https://www.merriam-webster.com/dictionary/leader"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXeb8511c2",
+      "before": {
+        "sensePos": "v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "The unchanged actual answer is unambiguously this part of speech; correct the inherited single label, preserving headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/hope ; actual answer token and full sentence."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXf818cdca",
+      "before": {
+        "sensePos": "adj."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "The unchanged actual answer is unambiguously this part of speech; correct the inherited single label, preserving headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/plain ; actual answer token and full sentence."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXcb7d6e17",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "The unchanged actual answer is unambiguously this part of speech; correct the inherited single label, preserving headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/market ; actual answer token and full sentence."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX28c8d0c3",
+      "before": {
+        "sensePos": "v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "The unchanged actual answer is unambiguously this part of speech; correct the inherited single label, preserving headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/agreement ; actual answer token and full sentence."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXb6bd603e",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "The unchanged actual answer is unambiguously this part of speech; correct the inherited single label, preserving headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/list ; actual answer token and full sentence."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX8723cfdb",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "adv."
+      },
+      "reason": "The unchanged actual answer is unambiguously this part of speech; correct the inherited single label, preserving headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/north ; actual answer token and full sentence."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX667dcd99",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "adv."
+      },
+      "reason": "The unchanged actual answer is unambiguously this part of speech; correct the inherited single label, preserving headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/south ; actual answer token and full sentence."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXafd15580",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "adv."
+      },
+      "reason": "The unchanged actual answer is unambiguously this part of speech; correct the inherited single label, preserving headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/east ; actual answer token and full sentence."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX343e892c",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "The unchanged actual answer is unambiguously this part of speech; correct the inherited single label, preserving headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/rule ; actual answer token and full sentence."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX782449fe",
+      "before": {
+        "sensePos": "adj."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "The unchanged actual answer is unambiguously this part of speech; correct the inherited single label, preserving headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/fine ; actual answer token and full sentence."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX34d60f70",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "adj."
+      },
+      "reason": "The unchanged actual answer is unambiguously this part of speech; correct the inherited single label, preserving headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/top ; actual answer token and full sentence."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX7ca79ac5",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "The unchanged actual answer is unambiguously this part of speech; correct the inherited single label, preserving headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/spring ; actual answer token and full sentence."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXa35cb48a",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "English, Chinese, lexical use and cloze reconstruction actually checked. This reviews the authored practice example independently, not a claim it quotes an official exam.",
+      "evidence": "https://www.merriam-webster.com/dictionary/difficult ; full unchanged sentence and translation."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX40b7eb0f",
+      "before": {
+        "status": "needs_check"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "English, Chinese, lexical use and cloze reconstruction actually checked. This reviews the authored practice example independently, not a claim it quotes an official exam.",
+      "evidence": "https://www.merriam-webster.com/dictionary/note ; full unchanged sentence and translation."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX3490b432",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "English, Chinese, lexical use and cloze reconstruction actually checked. This reviews the authored practice example independently, not a claim it quotes an official exam.",
+      "evidence": "https://www.merriam-webster.com/dictionary/market ; full unchanged sentence and translation."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EREVIEW20260830_W001479",
+      "before": {
+        "status": "needs_check"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "English, Chinese, lexical use and cloze reconstruction actually checked. This reviews the authored practice example independently, not a claim it quotes an official exam.",
+      "evidence": "https://www.merriam-webster.com/dictionary/joint ; full unchanged sentence and translation."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX168e8989",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "English, Chinese, lexical use and cloze reconstruction actually checked. This reviews the authored practice example independently, not a claim it quotes an official exam.",
+      "evidence": "https://www.merriam-webster.com/dictionary/joint ; full unchanged sentence and translation."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX5e489f79",
+      "before": {
+        "status": "needs_check"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "English, Chinese, lexical use and cloze reconstruction actually checked. This reviews the authored practice example independently, not a claim it quotes an official exam.",
+      "evidence": "https://www.merriam-webster.com/dictionary/joint ; full unchanged sentence and translation."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX6771fd03",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "English, Chinese, lexical use and cloze reconstruction actually checked. This reviews the authored practice example independently, not a claim it quotes an official exam.",
+      "evidence": "https://www.merriam-webster.com/dictionary/ready ; full unchanged sentence and translation."
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000255-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：容易的；緩緩的；舒適的；從容的"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：本義、完整原例句與實際填空詞性已核；不是整詞通過。圖句、原創練習及考題來源分別記錄，不自動互認。"
+      },
+      "reason": "Verify only this actual lexical sense against complete examples and the existing definition, replacing the pending note with the verification scope.",
+      "evidence": "https://www.merriam-webster.com/dictionary/easy ; full unchanged formal examples."
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000522-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：市場；交易；集市；推銷地區"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：本義、完整原例句與實際填空詞性已核；不是整詞通過。圖句、原創練習及考題來源分別記錄，不自動互認。"
+      },
+      "reason": "Verify only this actual lexical sense against complete examples and the existing definition, replacing the pending note with the verification scope.",
+      "evidence": "https://www.merriam-webster.com/dictionary/market ; full unchanged formal examples."
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000522-2",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：市場；交易；集市；推銷地區"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：本義、完整原例句與實際填空詞性已核；不是整詞通過。圖句、原創練習及考題來源分別記錄，不自動互認。"
+      },
+      "reason": "Verify only this actual lexical sense against complete examples and the existing definition, replacing the pending note with the verification scope.",
+      "evidence": "https://www.merriam-webster.com/dictionary/market ; full unchanged formal examples."
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000505-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：運氣；籤；抽籤；份額"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：本義、完整原例句與實際填空詞性已核；不是整詞通過。圖句、原創練習及考題來源分別記錄，不自動互認。"
+      },
+      "reason": "Verify only this actual lexical sense against complete examples and the existing definition, replacing the pending note with the verification scope.",
+      "evidence": "https://www.merriam-webster.com/dictionary/lot ; full unchanged formal examples."
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001479-2",
+      "before": {
+        "status": "needs_check",
+        "note": "2026-08-30 圖說對應的基本形義項；與既有考題的衍生詞形分開，非新增考題證據。"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：本義、完整原例句與實際填空詞性已核；不是整詞通過。圖句、原創練習及考題來源分別記錄，不自動互認。"
+      },
+      "reason": "Verify only this actual lexical sense against complete examples and the existing definition, replacing the pending note with the verification scope.",
+      "evidence": "https://www.merriam-webster.com/dictionary/joint ; full unchanged formal examples."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000409",
+      "before": {
+        "usagePatternZh": "希望做某事；希望(某人) + 做某事；對名詞有希望"
+      },
+      "after": {
+        "usagePatternZh": "希望做……；希望……（完整子句）；對……抱有希望"
+      },
+      "reason": "That S+V introduces a whole proposition, not an obligatory person/object plus infinitive.",
+      "evidence": "https://www.merriam-webster.com/dictionary/hope"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000980",
+      "before": {
+        "meaningEn": "to want something to happen or be true (often something unlikely); a desire or hope",
+        "usagePattern": "wish (that) + S + 過去式; wish to V; make a wish; best wishes",
+        "usagePatternZh": "但願……；希望做……；許願；致上最誠摯的祝福"
+      },
+      "after": {
+        "meaningEn": "(v.) to want something to happen or be true, often contrary to present reality; to express a hope or good wishes for someone; (n.) a desire or an expression of good wishes.",
+        "usagePattern": "wish (that) S+V; wish to V; wish sb N; make a wish; best wishes",
+        "usagePatternZh": "但願……（與事實相反時依語境用過去式或過去完成式）；希望做……；祝某人……；許願；最誠摯的祝福"
+      },
+      "reason": "The actual birthday/Christmas sentences express good wishes to someone, not merely an unlikely personal desire.",
+      "evidence": "https://www.merriam-webster.com/dictionary/wish"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000226",
+      "before": {
+        "usagePatternZh": "對某人來說很難去原形動詞；艱難的決定/情況"
+      },
+      "after": {
+        "usagePatternZh": "對某人而言做……很困難；困難的決定／情況"
+      },
+      "reason": "Use meaningful Chinese rather than the literal grammar placeholder original verb.",
+      "evidence": "https://www.merriam-webster.com/dictionary/difficult"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002414",
+      "before": {
+        "meaningZh": "有希望之人；有前途之人；有希望的；懷抱希望的"
+      },
+      "after": {
+        "meaningZh": "（形容詞）有希望的；懷抱希望的；（另有名詞義）有望成功的人；有前途之人"
+      },
+      "reason": "Keep the genuine aspirant noun separately labeled while leading with the inspected adjective; no headword POS expansion.",
+      "evidence": "https://www.merriam-webster.com/dictionary/hopeful"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000378",
+      "before": {
+        "meaningZh": "堅硬的；硬的；難的；艱苦的"
+      },
+      "after": {
+        "meaningZh": "（形容詞）堅硬的；困難的；艱苦的；（副詞）努力地；猛烈地"
+      },
+      "reason": "Include the actual study-hard and rain-hard adverbs as well as adjective uses.",
+      "evidence": "https://www.merriam-webster.com/dictionary/hard"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002921",
+      "before": {
+        "meaningZh": "惡棍；強硬的；艱苦的；堅固的"
+      },
+      "after": {
+        "meaningZh": "（形容詞）強硬的；嚴格的；艱難的；堅固的；（另有名詞義）惡棍"
+      },
+      "reason": "The coach example is strict; preserve the genuine violent-person noun with an explicit boundary.",
+      "evidence": "https://www.merriam-webster.com/dictionary/tough"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000255",
+      "before": {
+        "usagePatternZh": "容易去⋯；放輕鬆"
+      },
+      "after": {
+        "usagePatternZh": "容易做……；放輕鬆（take it easy）"
+      },
+      "reason": "Replace incomplete literal Chinese for easy to V while retaining the fixed idiom.",
+      "evidence": "https://www.merriam-webster.com/dictionary/easy"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001636",
+      "before": {
+        "meaningZh": "平原；草原；樸實無華的東西；無格式"
+      },
+      "after": {
+        "meaningZh": "樸素的；簡單的；明白的；平原；草原；樸實無華的東西；無格式"
+      },
+      "reason": "Restore the actual plain-dress adjective and retain the inherited no-format wording without certifying its still-unverified technical scope.",
+      "evidence": "https://www.merriam-webster.com/dictionary/plain"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000591",
+      "before": {
+        "usagePatternZh": "做筆記；留便條給某人；注意到某人 + 原形動詞"
+      },
+      "after": {
+        "usagePatternZh": "做筆記；留便條給某人；注意到……（完整子句）"
+      },
+      "reason": "Note that introduces a full clause, not someone plus a required base verb.",
+      "evidence": "https://www.merriam-webster.com/dictionary/note"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000253",
+      "before": {
+        "usagePatternZh": "到底；地球的表面"
+      },
+      "after": {
+        "usagePatternZh": "在世上；（on earth 加強疑問）究竟／到底；地球表面"
+      },
+      "reason": "On earth means in the world in one actual sentence and intensifies a question in another.",
+      "evidence": "https://www.merriam-webster.com/dictionary/earth"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000522",
+      "before": {
+        "meaningZh": "市場；交易；集市；推銷地區",
+        "usagePattern": "market for N; on the market",
+        "usagePatternZh": "名詞市場；在市場上"
+      },
+      "after": {
+        "meaningZh": "（名詞）市場；交易；集市；銷售地區；（動詞）行銷；推銷",
+        "usagePattern": "a market for N; on the market; market N to sb",
+        "usagePatternZh": "……的市場；上市／在市場上出售；向某人行銷……"
+      },
+      "reason": "Include the actual phone/product marketing verb and replace the meaningless noun-market placeholder.",
+      "evidence": "https://www.merriam-webster.com/dictionary/market"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001290",
+      "before": {
+        "meaningEn": "shaking and vibration at the surface of the earth resulting from underground movement along a fault plane of from volcanic activity; a disturbance that is extremely disruptive"
+      },
+      "after": {
+        "meaningEn": "shaking and vibration at the surface of the earth resulting from underground movement along a fault plane or from volcanic activity; a disturbance that is extremely disruptive"
+      },
+      "reason": "Correct the clear inherited connector typo of from to or from; preserve both original ordinary and figurative meanings.",
+      "evidence": "https://www.merriam-webster.com/dictionary/earthquake"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001821",
+      "before": {
+        "usagePattern": "a/the soil; soil of N",
+        "usagePatternZh": "土壤；……的土壤"
+      },
+      "after": {
+        "usagePattern": "rich/fertile soil; in the soil; plant N in soil",
+        "usagePatternZh": "肥沃的土壤；在土壤中；把……種在土裡"
+      },
+      "reason": "Use the actual garden-soil construction rather than a generic article template for a mass noun.",
+      "evidence": "https://www.merriam-webster.com/dictionary/soil"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000830",
+      "before": {
+        "meaningEn": "an account of imaginary or real events that entertains or informs people; a report of an event in a newspaper or on the news",
+        "meaningZh": "故事；小說；傳奇；描述"
+      },
+      "after": {
+        "meaningEn": "an account of imaginary or real events; a news report; (separate noun, also storey) one level of a building.",
+        "meaningZh": "故事；小說；傳奇；描述；新聞報導；（亦作 storey）樓層"
+      },
+      "reason": "Both building-story examples and the news-story example are inspected; include these distinct noun uses.",
+      "evidence": "https://www.merriam-webster.com/dictionary/story"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000505",
+      "before": {
+        "meaningZh": "運氣；籤；抽籤；份額",
+        "usagePatternZh": "許多名詞；抽籤"
+      },
+      "after": {
+        "meaningZh": "大量（a lot of：很多）；一批；一塊土地；（parking lot）停車場；運氣；籤；抽籤；份額",
+        "usagePatternZh": "許多……；抽籤"
+      },
+      "reason": "The previous Chinese summary omitted the actual many, batch and land meanings; retain genuine fortune/drawing-lots meanings.",
+      "evidence": "https://www.merriam-webster.com/dictionary/lot"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000825",
+      "before": {
+        "meaningZh": "車站；站；局；駐地",
+        "meaningEn": "a building or place where a particular service, activity, or vehicle stop is based"
+      },
+      "after": {
+        "meaningZh": "（名詞）車站；站；局；駐地；（另有動詞義）部署；派駐",
+        "meaningEn": "(n.) a building or place where a particular service, activity, or vehicle stop is based; (v.) to assign someone to a particular position."
+      },
+      "reason": "Include the actually inspected stationed-guards verb separately without changing the formal headword POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/station"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001854",
+      "before": {
+        "meaningEn": "a natural body of running water flowing on or under the earth; dominant course (suggestive of running water) of successive events or ideas",
+        "usagePattern": "stream + N; stream to V; a/the stream",
+        "usagePatternZh": "使……如流水般湧出；源源不絕地去某處；溪流"
+      },
+      "after": {
+        "meaningEn": "(n.) a natural flow of water; a continuous succession, supply or current of events or ideas; (v.) to flow or move continuously, to emit in a stream, or to transmit/receive continuous digital media.",
+        "usagePattern": "a stream of N; stream into/out of N; stream tears; stream a video",
+        "usagePatternZh": "源源不絕的……；湧入／流出……；流淚；串流播放影片"
+      },
+      "reason": "Restore the genuine verb uses and replace the unsupported stream to V generic template; preserve the actual creek noun.",
+      "evidence": "https://www.merriam-webster.com/dictionary/stream"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000018",
+      "before": {
+        "meaningEn": "(v.) to have the same opinion as someone, or to say yes to a plan or request; (n.) an arrangement or decision that two or more people have made together",
+        "meaningZh": "同意；贊成；應允；適合；合約",
+        "usagePattern": "agree with sb; agree to V; reach an agreement",
+        "usagePatternZh": "同意某人；同意去做某事；達成協議"
+      },
+      "after": {
+        "meaningEn": "to have the same opinion or consent to a plan or action; to be consistent, correspond, or suit someone.",
+        "meaningZh": "同意；贊成；應允；相符；適合",
+        "usagePattern": "agree with sb; agree to a plan; agree to V; agree on N",
+        "usagePatternZh": "同意某人的看法；同意某個計畫；同意做……；就……達成共識"
+      },
+      "reason": "Remove the agreement noun definition mistakenly attached to agree; its full prior value remains in the receipt.",
+      "evidence": "https://www.merriam-webster.com/dictionary/agree"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003035",
+      "before": {
+        "meaningZh": "令人愉快的；同意的；佳適的",
+        "usagePatternZh": "同意做某事；令人愉快的某人或經驗"
+      },
+      "after": {
+        "meaningZh": "隨和的；令人愉快的；同意的；合適的",
+        "usagePatternZh": "同意／接受……；隨和的人／令人愉快的經驗"
+      },
+      "reason": "Include the actual friendly/easygoing sense; this lexical check does not verify the currently inaccessible official Q6 claim.",
+      "evidence": "https://www.merriam-webster.com/dictionary/agreeable"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001259",
+      "before": {
+        "meaningEn": "(v.) to have a different opinion from someone else; (n.) a situation in which people have different opinions about something"
+      },
+      "after": {
+        "meaningEn": "to have a different opinion; to be inconsistent; (disagree with someone) to cause discomfort or be unsuitable."
+      },
+      "reason": "Remove the disagreement noun definition mistakenly copied into the verb entry; preserve the genuine disagreement and discomfort meanings.",
+      "evidence": "https://www.merriam-webster.com/dictionary/disagree"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W006027",
+      "before": {
+        "meaningEn": "(v.) to have the same opinion as someone, or to say yes to a plan or request; (n.) an arrangement or decision that two or more people have made together",
+        "meaningZh": "同意；贊成；應允；適合；合約"
+      },
+      "after": {
+        "meaningEn": "an arrangement or decision accepted by two or more people; shared opinion or harmony; a contract.",
+        "meaningZh": "協議；合約；同意；意見一致"
+      },
+      "reason": "Agreement is the actual noun, not the agree verb copied into this formal word.",
+      "evidence": "https://www.merriam-webster.com/dictionary/agreement"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000156",
+      "before": {
+        "meaningEn": "(n.) an opportunity to do something; the possibility that something will happen; (v.) to happen by accident"
+      },
+      "after": {
+        "meaningEn": "(n.) an opportunity, possibility, accident or risk; (v.) to happen by accident or to take a risk."
+      },
+      "reason": "Include the actual chance-going-out risk verb as well as chanced-to happen accidentally.",
+      "evidence": "https://www.merriam-webster.com/dictionary/chance"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000920",
+      "before": {
+        "usagePatternZh": "遇到困難動名詞；處於困境"
+      },
+      "after": {
+        "usagePatternZh": "做……有困難；陷入麻煩／困境"
+      },
+      "reason": "Translate the actual V-ing pattern meaningfully instead of displaying a gerund placeholder.",
+      "evidence": "https://www.merriam-webster.com/dictionary/trouble"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000889",
+      "before": {
+        "meaningEn": "(v.) to send something through the air by moving your hand and arm quickly (n.) an act of throwing something",
+        "meaningZh": "投；擲；拋；發射"
+      },
+      "after": {
+        "meaningEn": "(v.) to send something through the air by hand; (throw a party) to organize a party; (n.) an act of throwing.",
+        "meaningZh": "投；擲；拋；發射；（throw a party）舉辦派對"
+      },
+      "reason": "Include the actual organizing-a-party usage, which is the source image caption.",
+      "evidence": "https://www.merriam-webster.com/dictionary/throw"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005939",
+      "before": {
+        "meaningEn": "a cold pudding made of layers of sponge cake spread with fruit or jelly; may be decorated with nuts, cream, or chocolate",
+        "usagePattern": "trifle + N; trifle to V; a/the trifle",
+        "usagePatternZh": "浪費某物；浪費去做某事；瑣事"
+      },
+      "after": {
+        "meaningEn": "(n.) something of little importance or value, a small amount, or a layered sponge-cake dessert; (v.) to treat lightly, act without serious purpose, or waste time/resources.",
+        "usagePattern": "a trifle; trifle with N",
+        "usagePatternZh": "一件小事／少量；輕率對待……"
+      },
+      "reason": "Restore the actual minor-matter noun while preserving the genuine dessert; replace unsupported trifle to V with a directly verified pattern.",
+      "evidence": "https://www.merriam-webster.com/dictionary/trifle"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000305",
+      "before": {
+        "usagePatternZh": "為名詞斗爭；捲入打鬥；與某人爭鬥"
+      },
+      "after": {
+        "usagePatternZh": "對抗……／為……奮戰；捲入打鬥；與某人爭鬥"
+      },
+      "reason": "Differentiate against from for instead of translating both as for.",
+      "evidence": "https://www.merriam-webster.com/dictionary/fight"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000711",
+      "before": {
+        "meaningEn": "an act or period of relaxing, sleeping, or stopping work; the remaining part of something, or the other people or things in a group",
+        "meaningZh": "休息；睡眠；安息；稍息"
+      },
+      "after": {
+        "meaningEn": "(n.) relaxation, sleep or a pause from work; the remaining part or other members of a group; (v.) to relax or stop activity.",
+        "meaningZh": "（名詞／動詞）休息；睡眠；安息；稍息；（the rest）其餘部分"
+      },
+      "reason": "The report/money/life examples explicitly use the remaining-part noun; include it instead of leaving only relaxation.",
+      "evidence": "https://www.merriam-webster.com/dictionary/rest"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003188",
+      "before": {
+        "usagePattern": "congratulate + N; congratulate to V",
+        "usagePatternZh": "祝賀某人；恭喜去做某事"
+      },
+      "after": {
+        "usagePattern": "congratulate sb; congratulate sb on N/V-ing",
+        "usagePatternZh": "祝賀某人；因某事／某項成就祝賀某人"
+      },
+      "reason": "Replace the unsupported congratulate to V template with the actual congratulate someone on an achievement.",
+      "evidence": "https://www.merriam-webster.com/dictionary/congratulate"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002324",
+      "before": {
+        "meaningEn": "a high-speed military or naval airplane designed to destroy enemy aircraft in the air"
+      },
+      "after": {
+        "meaningEn": "a person who fights, such as a soldier or boxer; a fast armed military aircraft designed to destroy enemy aircraft."
+      },
+      "reason": "The source depicts a person training, not an aircraft; restore the genuine person meaning while retaining the plane.",
+      "evidence": "https://www.merriam-webster.com/dictionary/fighter"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000497",
+      "before": {
+        "meaningZh": "目錄；名單；明細表；布條",
+        "usagePatternZh": "做/寫一個清單；一個名詞的清單；列出 + 名詞"
+      },
+      "after": {
+        "meaningZh": "（名詞）目錄；名單；明細表；（另有名詞義）布條；（動詞）列出；列舉",
+        "usagePatternZh": "製作／寫清單；……的清單；列出……"
+      },
+      "reason": "Include the actual listed-songs verb and make the list pattern Chinese intelligible; rare strip noun is retained, not declared false.",
+      "evidence": "https://www.merriam-webster.com/dictionary/list"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000588",
+      "before": {
+        "usagePatternZh": "在北方（的名詞）；名詞以北；向北走/開"
+      },
+      "after": {
+        "usagePatternZh": "在……北部；在……以北；向北走／開車"
+      },
+      "reason": "Replace literal noun placeholders with the actual direction meanings.",
+      "evidence": "https://www.merriam-webster.com/dictionary/north"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001587",
+      "before": {
+        "meaningZh": "北方人；北方的；向北的；自北方來的"
+      },
+      "after": {
+        "meaningZh": "（形容詞）北方的；向北的；自北方來的；（另有名詞義）北方人"
+      },
+      "reason": "Separate the actual geographic adjective from the inherited person noun without expanding headword POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/northern ; directly read Random House noun sense 6 and geographic adjective entries."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000701",
+      "before": {
+        "usagePatternZh": "為名詞做好準備；準備好去做原形動詞；準備好"
+      },
+      "after": {
+        "usagePatternZh": "為……準備好；準備好做……；做好準備"
+      },
+      "reason": "Make the actual adjective patterns readable rather than showing literal grammar placeholders.",
+      "evidence": "https://www.merriam-webster.com/dictionary/ready"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000310",
+      "before": {
+        "meaningZh": "罰款；罰金；晴天；精細",
+        "usagePatternZh": "很好；好天氣；罰款；因……而罰某人"
+      },
+      "after": {
+        "meaningZh": "（形容詞）很好的；健康的；晴朗的；精細的；（副詞）很好地；細細地；（名詞）罰款；罰金；（動詞）處以罰款",
+        "usagePatternZh": "很好／沒事；晴朗的天氣；繳罰款；因……對某人處以罰款"
+      },
+      "reason": "Keep sunny as an adjective rather than a sunny-day noun; include the actual fined-drivers verb and directly read adverb uses.",
+      "evidence": "https://www.merriam-webster.com/dictionary/fine"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000454",
+      "before": {
+        "meaningZh": "殺；殺戮；小河；破壞"
+      },
+      "after": {
+        "meaningZh": "（動詞）殺死；破壞；（kill time）消磨時間；（名詞）殺戮；（另一同形名詞，多用於美國地名）小河；水道"
+      },
+      "reason": "Label the genuine creek homograph and its geographic scope separately from the actual kill-time and destroy-a-plan verbs.",
+      "evidence": "https://www.merriam-webster.com/dictionary/kill"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000731",
+      "before": {
+        "usagePatternZh": "名詞的統治者；用尺子畫/量"
+      },
+      "after": {
+        "usagePatternZh": "……的統治者；用尺畫／量"
+      },
+      "reason": "Replace the literal noun placeholder while preserving both actual ruler senses.",
+      "evidence": "https://www.merriam-webster.com/dictionary/ruler"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000908",
+      "before": {
+        "meaningZh": "頂部；頂端；極點；上面"
+      },
+      "after": {
+        "meaningZh": "（名詞）頂部；頂端；極點；上面；（形容詞）頂尖的；最好的；（動詞）超過；居首"
+      },
+      "reason": "The actual top-brands example uses an adjective missing from the noun-only Chinese summary.",
+      "evidence": "https://www.merriam-webster.com/dictionary/top"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000819",
+      "before": {
+        "meaningZh": "春天；彈簧；跳躍；彈性"
+      },
+      "after": {
+        "meaningZh": "（名詞）春天；彈簧；跳躍；彈性；（動詞）跳起；突然移動"
+      },
+      "reason": "Include the actual sprang-up verb instead of only noun glosses.",
+      "evidence": "https://www.merriam-webster.com/dictionary/spring"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000110",
+      "before": {
+        "meaningZh": "底部；底部的；給...裝底；查明真相"
+      },
+      "after": {
+        "meaningZh": "（名詞）底部；（形容詞）底部的；（動詞）給……裝底；查明根源／真相；（get to the bottom of）探究真相"
+      },
+      "reason": "Label noun/adjective and preserve both genuine furnishing and finding-source verb senses; also make the common phrase explicit.",
+      "evidence": "https://www.merriam-webster.com/dictionary/bottom"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002486",
+      "before": {
+        "meaningEn": "a light, self-propelled movement upwards or forwards; an abrupt transition",
+        "usagePattern": "leap + N; leap to V; a/the leap",
+        "usagePatternZh": "跳躍……；跳躍以……；跳躍"
+      },
+      "after": {
+        "meaningEn": "(n.) a jump, abrupt transition, or place/distance jumped over; (v.) to jump, move suddenly, or pass over by jumping.",
+        "usagePattern": "make a leap; leap over/across N; leap at a chance",
+        "usagePatternZh": "跳躍；跳過／越過……；立刻把握機會"
+      },
+      "reason": "Retain the genuine noun place-leaped-over and add the actual verb with meaningful constructions.",
+      "evidence": "https://www.merriam-webster.com/dictionary/leap"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000409-1",
+      "before": {
+        "status": "draft",
+        "examEvidence": "學測113 文意選填Q30",
+        "note": "考點：名詞義，抽象的盼望"
+      },
+      "after": {
+        "status": "reviewed",
+        "examEvidence": "113學測文意選填Q30，D hope；印刷第3頁。風中電話讓失親者仍相信訊息能傳達，名詞希望。 官方試卷 https://www.ceec.edu.tw/files/file_pool/1/0o051427482769341323/02-113%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%A7%91%E5%AE%9A%E7%A8%BF.pdf；官方答案 https://www.ceec.edu.tw/files/file_pool/1/0o051427843482078305/02-113%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf",
+        "note": "2026-11-05：直接讀取官方題目相關段落及答案；EXf9ecdea0搜救隊句是另寫練習，不是真題原文。 本義來源核實不等於整詞通過。"
+      },
+      "reason": "Verify only the specific official source and visible derived-form boundary; preserve original practice sentences, answer forms and headword POS.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0o051427482769341323/02-113%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%A7%91%E5%AE%9A%E7%A8%BF.pdf ; https://www.ceec.edu.tw/files/file_pool/1/0o051427843482078305/02-113%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000591-1",
+      "before": {
+        "meaningZh": "以……著稱（be noted for）",
+        "status": "needs_check",
+        "examEvidence": "學測114 文意選填Q21",
+        "note": "考點：be noted for 因某特點聞名"
+      },
+      "after": {
+        "meaningZh": "（noted，形容詞）著名的；以……聞名（be noted for）",
+        "status": "reviewed",
+        "examEvidence": "114學測文意選填Q21，I noted；印刷第3頁。巴黎聖母院以建築、彩窗與鐘聞名。 官方試卷 https://www.ceec.edu.tw/files/file_pool/1/0p056425554473267580/02-114%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E9%A1%8C.pdf；官方答案 https://www.ceec.edu.tw/files/file_pool/1/0p051545433631383724/02-114%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf",
+        "note": "2026-11-05：直接讀取官方題目及答案；noted為此衍生形容詞，不把note原形擴成形容詞。EX475c3e0c小鎮陶器句為另寫練習。 本義來源核實不等於整詞通過。"
+      },
+      "reason": "Verify only the specific official source and visible derived-form boundary; preserve original practice sentences, answer forms and headword POS.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0p056425554473267580/02-114%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E9%A1%8C.pdf ; https://www.ceec.edu.tw/files/file_pool/1/0p051545433631383724/02-114%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001479-1",
+      "before": {
+        "meaningZh": "共同地",
+        "status": "draft",
+        "examEvidence": "學測110 詞彙題Q10",
+        "note": "考點：jointly 副詞，兩方一起"
+      },
+      "after": {
+        "meaningZh": "（jointly，副詞）共同地",
+        "status": "reviewed",
+        "examEvidence": "110學測詞彙題Q10，C jointly；印刷第1頁。2011諾貝爾和平獎共同頒給三位女性。 官方試卷 https://www.ceec.edu.tw/files/file_pool/1/0l069608312283063557/110%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%20.pdf；官方答案 https://www.ceec.edu.tw/files/file_pool/1/0l069608703462801602/110%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf",
+        "note": "2026-11-05：直接讀取官方題目及答案；jointly為衍生副詞，不是joint詞頭本身的副詞詞性。EX168e8989兩研究者句為另寫練習。 本義來源核實不等於整詞通過。"
+      },
+      "reason": "Verify only the specific official source and visible derived-form boundary; preserve original practice sentences, answer forms and headword POS.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0l069608312283063557/110%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%20.pdf ; https://www.ceec.edu.tw/files/file_pool/1/0l069608703462801602/110%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000701-1",
+      "before": {
+        "status": "draft",
+        "examEvidence": "學測108 文意選填Q33",
+        "note": "考點：have sth ready 把東西準備妥當"
+      },
+      "after": {
+        "status": "reviewed",
+        "examEvidence": "108學測文意選填Q33，F ready；印刷第3頁。父親出門採買時已備妥購物清單。 官方試卷 https://www.ceec.edu.tw/files/file_pool/1/0j196548669826315609/01-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf；官方答案 https://www.ceec.edu.tw/files/file_pool/1/0j196548660460294627/02-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88.pdf",
+        "note": "2026-11-05：官方答案直接讀取；題目相關段落由官方試卷實際搜尋索引全文節錄核對。另有大考中心官方試題特色說明交叉支持have…ready。EX6771fd03護照句為另寫練習。 本義來源核實不等於整詞通過。"
+      },
+      "reason": "Verify only the specific official source and visible derived-form boundary; preserve original practice sentences, answer forms and headword POS.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0j196548669826315609/01-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf ; https://www.ceec.edu.tw/files/file_pool/1/0j196548660460294627/02-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88.pdf"
+    }
+  ]
+}

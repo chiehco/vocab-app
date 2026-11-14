@@ -1,0 +1,49 @@
+{
+  "manifest": "docs\\unit-audit-20261105\\LV2-U32-notes-patches.json",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "checkedAt": "2026-11-06T06:19:48.525735+00:00",
+  "changeCount": 1,
+  "changes": [
+    {
+      "dataset": "notes",
+      "id": "NX0fad7e32",
+      "before": {
+        "noteId": "NX0fad7e32",
+        "word": "either",
+        "noteType": "grammar",
+        "title": "either 作代名詞的動詞一致",
+        "content": "either + 單數動詞；either of + 複數名詞 + 複數動詞。",
+        "status": "approved"
+      },
+      "after": {
+        "noteId": "NX0fad7e32",
+        "word": "either",
+        "noteType": "grammar",
+        "title": "either 作代名詞的動詞一致",
+        "content": "either 單獨作主詞時接單數動詞；either of + 複數名詞／代名詞作主詞時，正式寫作採單數動詞，較口語的用法也可採複數動詞。",
+        "status": "approved"
+      },
+      "reason": "Qualify the false always-plural rule after either of while preserving the informal plural example and all note identity/type/status fields.",
+      "evidence": "https://www.oxfordlearnersdictionaries.com/definition/american_english/either_1"
+    }
+  ],
+  "masterTouched": false,
+  "sentencesChanged": false,
+  "englishSentencesChanged": false,
+  "imagesChanged": false,
+  "sourceHashesBefore": {
+    "words.json": "6a728f1a276200f633162167d296fc99f9fbfe04aa7f1e635c732932e77ddc07",
+    "senses.json": "947e76f9b05cd5c59488ce48c2a20ecfe99ae4a00ffbacf74cfd6f445ad03489",
+    "examples.json": "67a69a09f6064eb324a12f46e79b7193049b6c59940f04aa6a55ca674697eb11",
+    "meta.json": "07b0b9c7449f39d067fc21d84b052f8e5c0edd2bb7a63a67893331e724dd9755",
+    "sa-pack.json": "21c57d147ea24408569bd608b330dcb334c3014fe1383ceab2c456d026c91501"
+  },
+  "sourceHashesAfter": {
+    "words.json": "6a728f1a276200f633162167d296fc99f9fbfe04aa7f1e635c732932e77ddc07",
+    "senses.json": "947e76f9b05cd5c59488ce48c2a20ecfe99ae4a00ffbacf74cfd6f445ad03489",
+    "examples.json": "67a69a09f6064eb324a12f46e79b7193049b6c59940f04aa6a55ca674697eb11",
+    "meta.json": "1e76bacc0b16136b4f0af92f346b487cd9c39a76f595cfade6ab192af81786a4",
+    "sa-pack.json": "1f45a21a0afa8242723fb733966540930fb0078f2a661cbbb8d1fc3de0f8d19b"
+  },
+  "state": "applied_not_ui_verified"
+}

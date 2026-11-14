@@ -1,0 +1,1083 @@
+{
+  "unit": "LV2-U44",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "baseCheckpoint": "b74edddcfa69c1e1ed12ef6178487509fdc46431",
+  "scope": "Exact source-backed fields only. Fourteen actual-cloze POS corrections, ten existing-hint refinements, three Chinese precision fixes and three individually reviewed senses. No English/blank/answer/headword identity/POS/status changes; no empty-hint filling. Preserve true rare senses and origin limits.",
+  "patches": [
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001843",
+      "before": {
+        "meaningZh": "標準；規格；旗；軍旗"
+      },
+      "after": {
+        "meaningZh": "（形容詞）標準的；通用的；（名詞）標準；規格；旗；軍旗"
+      },
+      "reason": "Clarify supported part-of-speech scope, complete the headword definition or pair the actual construction with its Chinese. Preserve original alternate senses, formal identity/POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/standard"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001236",
+      "before": {
+        "meaningZh": "遞送；陳述；釋放；發表",
+        "meaningEn": "to bring something to the place where it should go; to give a speech to an audience"
+      },
+      "after": {
+        "meaningZh": "遞送；陳述；發表；接生；分娩；（較舊用法）拯救；釋放",
+        "meaningEn": "To take something to its destination; give a speech or report; help with a birth or give birth; in an older use, rescue or release someone from danger or captivity."
+      },
+      "reason": "Clarify supported part-of-speech scope, complete the headword definition or pair the actual construction with its Chinese. Preserve original alternate senses, formal identity/POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/deliver"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001111",
+      "before": {
+        "meaningEn": "a document stating the facts and points of law of a client's case; a condensed written summary or abstract",
+        "usagePattern": "brief + N; brief to V; a/the brief",
+        "usagePatternZh": "簡短的……；簡短地做……；一份簡報"
+      },
+      "after": {
+        "meaningEn": "Adjective: lasting a short time or using few words. Verb: give someone the information needed for a task. Noun: a concise summary, a legal case document, or instructions defining a task or responsibility.",
+        "usagePattern": "a brief + N; brief sb on N; a news brief",
+        "usagePatternZh": "簡短的……；向某人簡要說明……；一則新聞摘要"
+      },
+      "reason": "Clarify supported part-of-speech scope, complete the headword definition or pair the actual construction with its Chinese. Preserve original alternate senses, formal identity/POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/brief"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001131",
+      "before": {
+        "meaningEn": "a humorous or satirical drawing published in a newspaper or magazine; a film made by photographing a series of cartoon drawings to give the illusion of movement when projected in rapid sequence",
+        "usagePattern": "cartoon + N; cartoon to V; a/the cartoon",
+        "usagePatternZh": "卡通……；畫卡通以做……；一部卡通"
+      },
+      "after": {
+        "meaningEn": "Noun: a humorous or satirical drawing, a sequence of such drawings, or an animated film; also a preparatory design for a larger artwork. Verb: draw a cartoon, or portray someone in a cartoon.",
+        "usagePattern": "a political cartoon; watch cartoons; cartoon sb",
+        "usagePatternZh": "政治漫畫；看卡通片；為某人畫漫畫"
+      },
+      "reason": "Clarify supported part-of-speech scope, complete the headword definition or pair the actual construction with its Chinese. Preserve original alternate senses, formal identity/POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/cartoon"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001115",
+      "before": {
+        "usagePatternZh": "一棟建築物；……的建築物；建築材料"
+      },
+      "after": {
+        "usagePatternZh": "一棟建築物；……的建造；建築材料"
+      },
+      "reason": "Clarify supported part-of-speech scope, complete the headword definition or pair the actual construction with its Chinese. Preserve original alternate senses, formal identity/POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/building"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001948",
+      "before": {
+        "meaningZh": "弄翻的；混亂的；心煩的；弄翻",
+        "meaningEn": "the act of disturbing the mind or body; a tool used to thicken or spread metal (the end of a bar or a rivet etc.) by forging or hammering or swaging",
+        "usagePattern": "upset + N; upset to V; an/the upset",
+        "usagePatternZh": "使……心煩；心煩到……；混亂"
+      },
+      "after": {
+        "meaningZh": "（形容詞）心煩的；難過的；混亂的；弄翻的；（動詞）使心煩；擾亂；弄翻；（名詞）難過；混亂；爆冷門；（金屬加工）鍛粗工具",
+        "meaningEn": "Adjective: unhappy, worried, physically unwell, disordered or overturned. Verb: distress someone, disrupt something, overturn it or defeat an expected winner. Noun: emotional or physical disturbance, an unexpected defeat, or a tool used to thicken or spread metal by forging or hammering.",
+        "usagePattern": "upset sb; be upset about N; an unexpected upset",
+        "usagePatternZh": "使某人心煩；因……而難過；一次出乎意料的敗仗／爆冷門"
+      },
+      "reason": "Clarify supported part-of-speech scope, complete the headword definition or pair the actual construction with its Chinese. Preserve original alternate senses, formal identity/POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/upset"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001220",
+      "before": {
+        "meaningZh": "習慣；風俗；海關；自定義"
+      },
+      "after": {
+        "meaningZh": "（名詞）習慣；風俗；（複數 customs）海關；（另有形容詞用法）自訂的；訂製的"
+      },
+      "reason": "Clarify supported part-of-speech scope, complete the headword definition or pair the actual construction with its Chinese. Preserve original alternate senses, formal identity/POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/custom"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001628",
+      "before": {
+        "meaningEn": "Through; by means of; through the agency of; by; for; for; each; as, per annum; per capita, by heads, or according to individuals;",
+        "usagePattern": "per + N/V-ing",
+        "usagePatternZh": "每一……／每做某事"
+      },
+      "after": {
+        "meaningEn": "For each unit when expressing a rate or ratio; by or through, especially in Latin phrases; in as per, according to.",
+        "usagePattern": "per person; per year; as per N",
+        "usagePatternZh": "每人；每年；按照……"
+      },
+      "reason": "Clarify supported part-of-speech scope, complete the headword definition or pair the actual construction with its Chinese. Preserve original alternate senses, formal identity/POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/per"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001227",
+      "before": {
+        "meaningZh": "pl. 資料；資料；DOS內部命令:用於顯示或設定系統的日期"
+      },
+      "after": {
+        "meaningZh": "資料（datum 的複數，亦可作集合／不可數用法）；（另詞 date 的命令用法）顯示或設定系統日期"
+      },
+      "reason": "Clarify supported part-of-speech scope, complete the headword definition or pair the actual construction with its Chinese. Preserve original alternate senses, formal identity/POS and whole-word status.",
+      "evidence": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/date"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001481",
+      "before": {
+        "meaningZh": "法官；裁判員；審判官；鑑定人",
+        "meaningEn": "a person who decides who wins a competition, or an official who decides cases in a law court"
+      },
+      "after": {
+        "meaningZh": "（名詞）法官；裁判員；審判官；鑑定人；（動詞）判斷；評判；審判",
+        "meaningEn": "Noun: an official who decides cases in court, or a person who selects the winner of a competition. Verb: decide a case or competition, or form an opinion after considering evidence."
+      },
+      "reason": "Clarify supported part-of-speech scope, complete the headword definition or pair the actual construction with its Chinese. Preserve original alternate senses, formal identity/POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/judge"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001482",
+      "before": {
+        "meaningEn": "an opinion formed by judging something; the act of judging or assessing a person or situation or event; the legal document stating the reasons for a judicial decision; an opinion formed by judging something"
+      },
+      "after": {
+        "meaningEn": "An opinion or assessment; the ability to make sensible decisions; a decision made by a judge or court, or the legal document recording that decision."
+      },
+      "reason": "Clarify supported part-of-speech scope, complete the headword definition or pair the actual construction with its Chinese. Preserve original alternate senses, formal identity/POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/judgment"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001483",
+      "before": {
+        "meaningZh": "正義；公平；公正；正確",
+        "meaningEn": "the quality of being just or fair; judgment involved in the determination of rights and the assignment of rewards and punishments",
+        "usagePattern": "a/the justice; justice of N",
+        "usagePatternZh": "一位法官／該位法官；……的正義"
+      },
+      "after": {
+        "meaningZh": "正義；公平；公正；正確；司法審判；（可數，常見於美式）法官",
+        "meaningEn": "Fairness or rightness; the administration of law and deserved judgment; as a countable noun, a judge, especially a member of a high court.",
+        "usagePattern": "a sense of justice; bring sb to justice; a Supreme Court justice",
+        "usagePatternZh": "正義感；將某人繩之以法；一位最高法院法官"
+      },
+      "reason": "Clarify supported part-of-speech scope, complete the headword definition or pair the actual construction with its Chinese. Preserve original alternate senses, formal identity/POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/justice"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001340",
+      "before": {
+        "meaningZh": "展覽會；市集；美好的事物；公平的",
+        "meaningEn": "gathering of producers to promote business; a competitive exhibition of farm products",
+        "usagePattern": "a/the fair; fair of N; be fair",
+        "usagePatternZh": "展覽會／市集；……的展覽會；是公平的"
+      },
+      "after": {
+        "meaningZh": "（名詞）展覽會；市集；（古語名詞）美好的事物；（形容詞）公平的；相當多的；（副詞）公平地、依規則地",
+        "meaningEn": "Adjective: impartial, reasonable or moderately large in amount. Adverb: honestly or according to the rules, as in play fair. Noun: an exhibition, market or entertainment event; an older noun can mean something good or beautiful.",
+        "usagePattern": "be fair to sb; play fair; a book fair",
+        "usagePatternZh": "公平對待某人；按規則比賽；書展"
+      },
+      "reason": "Clarify supported part-of-speech scope, complete the headword definition or pair the actual construction with its Chinese. Preserve original alternate senses, formal identity/POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/fair"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000975",
+      "before": {
+        "meaningZh": "將；意願",
+        "usagePattern": "will + N; will to V; a/the will",
+        "usagePatternZh": "will 後接名詞；做……的意志；一份遺囑／那股意志"
+      },
+      "after": {
+        "meaningZh": "（助動詞）將會；願意；（名詞）意願；意志；決心；遺囑",
+        "usagePattern": "will + base verb; the will to V; make a will",
+        "usagePatternZh": "將會／願意做……（接原形動詞）；做……的意志；立遺囑"
+      },
+      "reason": "Clarify supported part-of-speech scope, complete the headword definition or pair the actual construction with its Chinese. Preserve original alternate senses, formal identity/POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/will"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000768",
+      "before": {
+        "usagePatternZh": "缺少某名詞；短缺的某名詞；簡言之"
+      },
+      "after": {
+        "usagePatternZh": "缺少……；短的／矮的……；簡言之"
+      },
+      "reason": "Clarify supported part-of-speech scope, complete the headword definition or pair the actual construction with its Chinese. Preserve original alternate senses, formal identity/POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/short"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005008",
+      "before": {
+        "meaningZh": "傑出人物；有價值的；可敬的；值得的"
+      },
+      "after": {
+        "meaningZh": "（形容詞）有價值的；可敬的；值得的；（另有名詞用法，常帶詼諧）傑出人物"
+      },
+      "reason": "Clarify supported part-of-speech scope, complete the headword definition or pair the actual construction with its Chinese. Preserve original alternate senses, formal identity/POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/worthy"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000125",
+      "before": {
+        "meaningZh": "建立；建築；構造；體格"
+      },
+      "after": {
+        "meaningZh": "（動詞）建立；建築；建造；（另有名詞用法）構造；體格"
+      },
+      "reason": "Clarify supported part-of-speech scope, complete the headword definition or pair the actual construction with its Chinese. Preserve original alternate senses, formal identity/POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/build"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004318",
+      "before": {
+        "meaningEn": "a concave shape whose distinguishing characteristic is that the concavity faces downward; a stadium that has a roof",
+        "usagePattern": "dome + N; dome to V; a/the dome",
+        "usagePatternZh": "加圓頂於……；加圓頂以做……；該圓頂／圓頂"
+      },
+      "after": {
+        "meaningEn": "A rounded roof or dome-shaped structure; also a roofed stadium. Verb: cover with a dome or form into a dome shape.",
+        "usagePattern": "a domed roof; dome a building; the dome of N",
+        "usagePatternZh": "圓頂形屋頂；為建築物加圓頂；……的圓頂"
+      },
+      "reason": "Clarify supported part-of-speech scope, complete the headword definition or pair the actual construction with its Chinese. Preserve original alternate senses, formal identity/POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/dome"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002670",
+      "before": {
+        "meaningEn": "of high worth or cost; extremely"
+      },
+      "after": {
+        "meaningEn": "Adjective: very valuable, cherished or excessively refined. A separate informal adverb means very or extremely, especially before little or few."
+      },
+      "reason": "Clarify supported part-of-speech scope, complete the headword definition or pair the actual construction with its Chinese. Preserve original alternate senses, formal identity/POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/precious"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004261",
+      "before": {
+        "meaningEn": "money collected under a tariff; accepted or habitual practice; a specific practice of long standing",
+        "usagePattern": "a/the customs; customs of N",
+        "usagePatternZh": "海關；……的風俗"
+      },
+      "after": {
+        "meaningEn": "The government authority checking goods crossing a border and collecting duties; those duties; also the plural of custom, meaning traditional or habitual practices.",
+        "usagePattern": "go through customs; pay customs duty; local customs",
+        "usagePatternZh": "通過海關檢查；繳納關稅；當地風俗"
+      },
+      "reason": "Clarify supported part-of-speech scope, complete the headword definition or pair the actual construction with its Chinese. Preserve original alternate senses, formal identity/POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/customs"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005228",
+      "before": {
+        "usagePatternZh": "習慣於……；習慣的慣例／問候"
+      },
+      "after": {
+        "usagePatternZh": "做……是慣例；慣常的做法／問候"
+      },
+      "reason": "Clarify supported part-of-speech scope, complete the headword definition or pair the actual construction with its Chinese. Preserve original alternate senses, formal identity/POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/customary"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003857",
+      "before": {
+        "meaningEn": "go into retirement; stop performing one's work or withdraw from one's position; withdraw from active participation; the state of being retired from one's business or occupation; withdrawal from your position or occupation",
+        "usagePattern": "retire + N; retire to V; a/the retire",
+        "usagePatternZh": "退休；退休去……；退休"
+      },
+      "after": {
+        "meaningEn": "Verb: stop working, withdraw from an activity or competition, go to a private place, or formally go to bed. The related noun retirement refers to leaving work or the resulting state.",
+        "usagePattern": "retire from N; retire at + age; retire to N",
+        "usagePatternZh": "從……退休／退出……；在某年齡退休；退往某處"
+      },
+      "reason": "Clarify supported part-of-speech scope, complete the headword definition or pair the actual construction with its Chinese. Preserve original alternate senses, formal identity/POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/retire"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003465",
+      "before": {
+        "meaningZh": "曲線圖；圖表；圖形",
+        "usagePattern": "graph + N; graph to V; a/the graph",
+        "usagePatternZh": "圖表……；繪製圖表以……；該圖表"
+      },
+      "after": {
+        "meaningZh": "（名詞）曲線圖；圖表；圖形；（動詞）以圖表表示",
+        "usagePattern": "a bar graph; graph the results; a graph of N",
+        "usagePatternZh": "長條圖；以圖表呈現結果；……的圖表"
+      },
+      "reason": "Clarify supported part-of-speech scope, complete the headword definition or pair the actual construction with its Chinese. Preserve original alternate senses, formal identity/POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/graph"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004500",
+      "before": {
+        "usagePattern": "be judicial; judicial + N",
+        "usagePatternZh": "是／顯得司法的；司法的……"
+      },
+      "after": {
+        "usagePattern": "the judicial system; a judicial decision",
+        "usagePatternZh": "司法體系；法院的判決"
+      },
+      "reason": "Clarify supported part-of-speech scope, complete the headword definition or pair the actual construction with its Chinese. Preserve original alternate senses, formal identity/POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/judicial"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004503",
+      "before": {
+        "meaningZh": "替...辯護；證明；證明合法；段落重排",
+        "meaningEn": "to give an acceptable explanation for something; to show or prove that something is right or reasonable"
+      },
+      "after": {
+        "meaningZh": "替……辯護；證明……合理或合法；（排版）調整字距使文字邊緣對齊",
+        "meaningEn": "To give reasons showing that an action, belief or decision is reasonable or right; in typography, adjust spacing so lines of text align to a required margin or width."
+      },
+      "reason": "Clarify supported part-of-speech scope, complete the headword definition or pair the actual construction with its Chinese. Preserve original alternate senses, formal identity/POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/justify"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002032",
+      "before": {
+        "meaningEn": "used to indicate that a statement explains or supports a previous statement; anyhow, they're quiet\"; anyway, it's gone\"; in any case, the...; in any way whatsoever"
+      },
+      "after": {
+        "meaningEn": "In any case, regardless of other circumstances; in whatever way is possible; or in a careless or untidy manner."
+      },
+      "reason": "Clarify supported part-of-speech scope, complete the headword definition or pair the actual construction with its Chinese. Preserve original alternate senses, formal identity/POS and whole-word status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/anyhow"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX3a0324b5",
+      "before": {
+        "exampleId": "EX3a0324b5",
+        "word": "standard",
+        "sensePos": "adj.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "This restaurant maintains a high standard of cleanliness in its kitchen.",
+        "sentenceZh": "這間餐廳的廚房維持著很高的清潔標準。",
+        "blankSentence": "This restaurant maintains a high _____ of cleanliness in its kitchen.",
+        "answer": "standard",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Narrow the actual cloze target in its complete sentence. In at will, will is the noun complement of at; the whole phrase has adverbial function. For I'll the tag refers to the contracted auxiliary will; the answer and contraction remain unchanged.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/standard"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX0e74ff11",
+      "before": {
+        "exampleId": "EX0e74ff11",
+        "word": "advance",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "Modern medicine has advanced rapidly over the past decade.",
+        "sentenceZh": "現代醫學在過去十年間快速進步。",
+        "blankSentence": "Modern medicine has _____ rapidly over the past decade.",
+        "answer": "advanced",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Narrow the actual cloze target in its complete sentence. In at will, will is the noun complement of at; the whole phrase has adverbial function. For I'll the tag refers to the contracted auxiliary will; the answer and contraction remain unchanged.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/advance"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX18fefe24",
+      "before": {
+        "exampleId": "EX18fefe24",
+        "word": "comic(s)",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "The way he described the accident was so comic that we all burst out laughing.",
+        "sentenceZh": "他描述那場意外的方式非常滑稽，逗得我們全都笑了出來。",
+        "blankSentence": "The way he described the accident was so _____ that we all burst out laughing.",
+        "answer": "comic",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "after": {
+        "sensePos": "adj."
+      },
+      "reason": "Narrow the actual cloze target in its complete sentence. In at will, will is the noun complement of at; the whole phrase has adverbial function. For I'll the tag refers to the contracted auxiliary will; the answer and contraction remain unchanged.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/comic"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXc17bb94d",
+      "before": {
+        "exampleId": "EXc17bb94d",
+        "word": "aim",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "He aimed the ball carefully before throwing it into the basket.",
+        "sentenceZh": "他仔細瞄準後，才把球投進籃框。",
+        "blankSentence": "He _____ the ball carefully before throwing it into the basket.",
+        "answer": "aimed",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Narrow the actual cloze target in its complete sentence. In at will, will is the noun complement of at; the whole phrase has adverbial function. For I'll the tag refers to the contracted auxiliary will; the answer and contraction remain unchanged.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/aim"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX900fd098",
+      "before": {
+        "exampleId": "EX900fd098",
+        "word": "target",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "The company plans to target young consumers who shop mainly through mobile apps.",
+        "sentenceZh": "這家公司計劃鎖定主要透過手機應用程式購物的年輕消費者。",
+        "blankSentence": "The company plans to _____ young consumers who shop mainly through mobile apps.",
+        "answer": "target",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Narrow the actual cloze target in its complete sentence. In at will, will is the noun complement of at; the whole phrase has adverbial function. For I'll the tag refers to the contracted auxiliary will; the answer and contraction remain unchanged.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/target"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1e16620b",
+      "before": {
+        "exampleId": "EX1e16620b",
+        "word": "focus",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "During exam week, I try to focus on one subject at a time.",
+        "sentenceZh": "考試週的時候，我試著一次專注在一個科目上。",
+        "blankSentence": "During exam week, I try to _____ on one subject at a time.",
+        "answer": "focus",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Narrow the actual cloze target in its complete sentence. In at will, will is the noun complement of at; the whole phrase has adverbial function. For I'll the tag refers to the contracted auxiliary will; the answer and contraction remain unchanged.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/focus"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1804bdf9",
+      "before": {
+        "exampleId": "EX1804bdf9",
+        "word": "judge",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "It is unfair to judge a person only by his appearance.",
+        "sentenceZh": "只憑外表來評斷一個人是不公平的。",
+        "blankSentence": "It is unfair to _____ a person only by his appearance.",
+        "answer": "judge",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Narrow the actual cloze target in its complete sentence. In at will, will is the noun complement of at; the whole phrase has adverbial function. For I'll the tag refers to the contracted auxiliary will; the answer and contraction remain unchanged.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/judge"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1431a457",
+      "before": {
+        "exampleId": "EX1431a457",
+        "word": "benefit",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "Students can benefit greatly from reading a variety of books every week.",
+        "sentenceZh": "學生每週閱讀各種書籍能從中獲益良多。",
+        "blankSentence": "Students can _____ greatly from reading a variety of books every week.",
+        "answer": "benefit",
+        "difficulty": "LV3",
+        "status": "reviewed"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Narrow the actual cloze target in its complete sentence. In at will, will is the noun complement of at; the whole phrase has adverbial function. For I'll the tag refers to the contracted auxiliary will; the answer and contraction remain unchanged.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/benefit"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX86879202",
+      "before": {
+        "exampleId": "EX86879202",
+        "word": "object",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "Many parents object to their children spending too much time on phones.",
+        "sentenceZh": "許多家長反對孩子花太多時間滑手機。",
+        "blankSentence": "Many parents _____ to their children spending too much time on phones.",
+        "answer": "object",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Narrow the actual cloze target in its complete sentence. In at will, will is the noun complement of at; the whole phrase has adverbial function. For I'll the tag refers to the contracted auxiliary will; the answer and contraction remain unchanged.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/object"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX2f8b9882",
+      "before": {
+        "exampleId": "EX2f8b9882",
+        "word": "will",
+        "sensePos": "aux./n.",
+        "meaningHint": "將；意願",
+        "exampleType": "textbook",
+        "sentenceEn": "Nobody can question Stanley's will to win.",
+        "sentenceZh": "沒有人可以質疑史坦利的求勝意志。",
+        "blankSentence": "Nobody can question Stanley's _____ to win.",
+        "answer": "will",
+        "difficulty": "LV2",
+        "status": "approved"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "意志；決心（the will to V）"
+      },
+      "reason": "Narrow the actual cloze target in its complete sentence. In at will, will is the noun complement of at; the whole phrase has adverbial function. For I'll the tag refers to the contracted auxiliary will; the answer and contraction remain unchanged.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/will"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX74470cee",
+      "before": {
+        "exampleId": "EX74470cee",
+        "word": "will",
+        "sensePos": "aux./n.",
+        "meaningHint": "將；意願",
+        "exampleType": "textbook",
+        "sentenceEn": "You can't just ignore the rules at will.",
+        "sentenceZh": "你不能隨意忽略這些規定。",
+        "blankSentence": "You can't just ignore the rules at _____.",
+        "answer": "will",
+        "difficulty": "LV2",
+        "status": "approved"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "隨意；任意（at will）"
+      },
+      "reason": "Narrow the actual cloze target in its complete sentence. In at will, will is the noun complement of at; the whole phrase has adverbial function. For I'll the tag refers to the contracted auxiliary will; the answer and contraction remain unchanged.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/will"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXd84d8b74",
+      "before": {
+        "exampleId": "EXd84d8b74",
+        "word": "will",
+        "sensePos": "aux./n.",
+        "meaningHint": "將；意願",
+        "exampleType": "textbook",
+        "sentenceEn": "I'll arrive in New York tomorrow morning.",
+        "sentenceZh": "明早我將會抵達紐約。",
+        "blankSentence": "_____ arrive in New York tomorrow morning.",
+        "answer": "I'll",
+        "difficulty": "LV2",
+        "status": "approved"
+      },
+      "after": {
+        "sensePos": "aux.",
+        "meaningHint": "我將會（I'll = I will）"
+      },
+      "reason": "Narrow the actual cloze target in its complete sentence. In at will, will is the noun complement of at; the whole phrase has adverbial function. For I'll the tag refers to the contracted auxiliary will; the answer and contraction remain unchanged.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/will"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXeccdbf2e",
+      "before": {
+        "exampleId": "EXeccdbf2e",
+        "word": "will",
+        "sensePos": "aux./n.",
+        "meaningHint": "將；意願",
+        "exampleType": "textbook",
+        "sentenceEn": "The man made his final will a month before he died.",
+        "sentenceZh": "這名男子在去世前一個月立下最後的遺囑。",
+        "blankSentence": "The man made his final _____ a month before he died.",
+        "answer": "will",
+        "difficulty": "LV2",
+        "status": "approved"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "遺囑"
+      },
+      "reason": "Narrow the actual cloze target in its complete sentence. In at will, will is the noun complement of at; the whole phrase has adverbial function. For I'll the tag refers to the contracted auxiliary will; the answer and contraction remain unchanged.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/will"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXee12e497",
+      "before": {
+        "exampleId": "EXee12e497",
+        "word": "will",
+        "sensePos": "aux./n.",
+        "meaningHint": "將；意願",
+        "exampleType": "textbook",
+        "sentenceEn": "I will arrive in New York tomorrow morning.",
+        "sentenceZh": "明早我將會抵達紐約。",
+        "blankSentence": "I _____ arrive in New York tomorrow morning.",
+        "answer": "will",
+        "difficulty": "LV2",
+        "status": "approved"
+      },
+      "after": {
+        "sensePos": "aux.",
+        "meaningHint": "將會"
+      },
+      "reason": "Narrow the actual cloze target in its complete sentence. In at will, will is the noun complement of at; the whole phrase has adverbial function. For I'll the tag refers to the contracted auxiliary will; the answer and contraction remain unchanged.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/will"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX882b3fa1",
+      "before": {
+        "exampleId": "EX882b3fa1",
+        "word": "short",
+        "sensePos": "adj.",
+        "meaningHint": "短的；近的；矮的；短期的",
+        "exampleType": "textbook",
+        "sentenceEn": "I'm too short to reach the top of the shelf.",
+        "sentenceZh": "我太矮了，碰不到架子最上層。",
+        "blankSentence": "I'm too _____ to reach the top of the shelf.",
+        "answer": "short",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "meaningHint": "矮的"
+      },
+      "reason": "Refine an existing nonempty hint to this exact sentence. Preserve English, blank, answer and unresolved constituent-POS conventions.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/short"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX95037b3b",
+      "before": {
+        "exampleId": "EX95037b3b",
+        "word": "short",
+        "sensePos": "adj.",
+        "meaningHint": "短的；近的；矮的；短期的",
+        "exampleType": "textbook",
+        "sentenceEn": "Winter is coming, and the days are getting shorter.",
+        "sentenceZh": "冬天來了，白晝越來越短。",
+        "blankSentence": "Winter is coming, and the days are getting _____.",
+        "answer": "shorter",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "meaningHint": "較短的（白晝時間）"
+      },
+      "reason": "Refine an existing nonempty hint to this exact sentence. Preserve English, blank, answer and unresolved constituent-POS conventions.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/short"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXb621c99b",
+      "before": {
+        "exampleId": "EXb621c99b",
+        "word": "short",
+        "sensePos": "adj.",
+        "meaningHint": "短的；近的；矮的；短期的",
+        "exampleType": "textbook",
+        "sentenceEn": "Since Ben was a bit short on time, he had to hurry.",
+        "sentenceZh": "由於班的時間不多，他動作得快一點。",
+        "blankSentence": "Since Ben was a bit _____ on time, he had to hurry.",
+        "answer": "short",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "meaningHint": "不足；短缺（be short on）"
+      },
+      "reason": "Refine an existing nonempty hint to this exact sentence. Preserve English, blank, answer and unresolved constituent-POS conventions.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/short"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXc6b9ac54",
+      "before": {
+        "exampleId": "EXc6b9ac54",
+        "word": "short",
+        "sensePos": "adj.",
+        "meaningHint": "短的；近的；矮的；短期的",
+        "exampleType": "textbook",
+        "sentenceEn": "“Info” is short for “information.”",
+        "sentenceZh": "「info」是「information」的縮寫。",
+        "blankSentence": "“Info” is _____ for “information.”",
+        "answer": "short",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "meaningHint": "縮寫；簡稱（be short for）"
+      },
+      "reason": "Refine an existing nonempty hint to this exact sentence. Preserve English, blank, answer and unresolved constituent-POS conventions.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/short"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXe5f73d0e",
+      "before": {
+        "exampleId": "EXe5f73d0e",
+        "word": "short",
+        "sensePos": "adj.",
+        "meaningHint": "短的；近的；矮的；短期的",
+        "exampleType": "textbook",
+        "sentenceEn": "In short, smoking does harm to your health.",
+        "sentenceZh": "簡言之，抽菸有害健康。",
+        "blankSentence": "In _____, smoking does harm to your health.",
+        "answer": "short",
+        "difficulty": "LV1",
+        "status": "approved"
+      },
+      "after": {
+        "meaningHint": "簡言之（in short）"
+      },
+      "reason": "Refine an existing nonempty hint to this exact sentence. Preserve English, blank, answer and unresolved constituent-POS conventions.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/short"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXfe7adb4e",
+      "before": {
+        "exampleId": "EXfe7adb4e",
+        "word": "deliver",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "The mailman will deliver the package to your door by five o'clock.",
+        "sentenceZh": "郵差會在五點前把包裹送到你家門口。",
+        "blankSentence": "The mailman will ______ the package to your door by five o'clock.",
+        "answer": "deliver",
+        "difficulty": "LV2",
+        "status": "reviewed"
+      },
+      "after": {
+        "sentenceZh": "郵差最遲會在五點把包裹送到你家門口。"
+      },
+      "reason": "Clarify by as no later than, without inventing an hour or changing the English. This is deadline precision, not a claim of a major mistranslation.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/by"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXddf05900",
+      "before": {
+        "exampleId": "EXddf05900",
+        "word": "every",
+        "sensePos": "adj.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "Every student in the class must hand in the report by Friday afternoon.",
+        "sentenceZh": "班上每一位學生都必須在星期五下午前繳交報告。",
+        "blankSentence": "_____ student in the class must hand in the report by Friday afternoon.",
+        "answer": "Every",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "sentenceZh": "班上每一位學生都必須最遲在星期五下午繳交報告。"
+      },
+      "reason": "Clarify by as no later than, without inventing an hour or changing the English. This is deadline precision, not a claim of a major mistranslation.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/by"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXe95ee4e3",
+      "before": {
+        "exampleId": "EXe95ee4e3",
+        "word": "valuable",
+        "sensePos": "adj.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "This summer internship taught me a valuable lesson about teamwork and communication.",
+        "sentenceZh": "這次暑期實習教會我一堂關於團隊合作與溝通的寶貴一課。",
+        "blankSentence": "This summer internship taught me a _____ lesson about teamwork and communication.",
+        "answer": "valuable",
+        "difficulty": "LV3",
+        "status": "reviewed"
+      },
+      "after": {
+        "sentenceZh": "這次暑期實習教會我關於團隊合作與溝通的寶貴一課。"
+      },
+      "reason": "Remove the duplicated Chinese measure 一堂…一課; retain the same English and lesson content.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/lesson"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001236-1",
+      "before": {
+        "senseId": "W001236-1",
+        "wordId": "W001236",
+        "word": "deliver",
+        "senseOrder": 1,
+        "sensePos": "v.",
+        "meaningZh": "遞送",
+        "isExamSense": true,
+        "examEvidence": "學測111 詞彙題Q1",
+        "answerForms": [
+          "delivered"
+        ],
+        "note": "考點：have sth delivered 請人送到",
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed",
+        "examEvidence": "學測111 詞彙題Q1；大考中心完整題幹、四選項及正式答案已核：B delivered",
+        "note": "2026-11-06：官方原題為 Jeffery 網購披薩並請人送到家，have sth delivered 的遞送義已核。EX4035dd7f 的星期六沙發句為另寫練習，非原題逐字引文；不據此認證其他義項或整詞。"
+      },
+      "reason": "Verify this exact existing exam sense from the complete official item, all options and final answer. Preserve original practice wording and provenance boundary.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0m053357638065462325/02-111%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7.pdf; https://www.ceec.edu.tw/files/file_pool/1/0m052625594764853905/02-111%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88..pdf; https://www.collinsdictionary.com/dictionary/english/deliver"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001888-1",
+      "before": {
+        "senseId": "W001888-1",
+        "wordId": "W001888",
+        "word": "target",
+        "senseOrder": 1,
+        "sensePos": "n.",
+        "meaningZh": "目標；靶",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：目標；靶子；指標；對準",
+        "status": "needs_check"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-06：本義已依完整既有例句及 Collins 分列的名詞／動詞條目核對。保留 ID、詞性、answerForms、其他義項、整詞狀態及原考題來源界線。"
+      },
+      "reason": "Verify this individual existing target sense; remove the stale pending-split explanation only for this exact sense.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/target"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001888-2",
+      "before": {
+        "senseId": "W001888-2",
+        "wordId": "W001888",
+        "word": "target",
+        "senseOrder": 2,
+        "sensePos": "v.",
+        "meaningZh": "以…為目標",
+        "isExamSense": false,
+        "examEvidence": null,
+        "answerForms": [],
+        "note": "待拆分；主表字義：目標；靶子；指標；對準",
+        "status": "needs_check"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-06：本義已依完整既有例句及 Collins 分列的名詞／動詞條目核對。保留 ID、詞性、answerForms、其他義項、整詞狀態及原考題來源界線。"
+      },
+      "reason": "Verify this individual existing target sense; remove the stale pending-split explanation only for this exact sense.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/target"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001592",
+      "before": {
+        "meaningZh": "物體；目標；目的；對象"
+      },
+      "after": {
+        "meaningZh": "（名詞）物體；目標；目的；對象；（動詞）反對"
+      },
+      "reason": "Make the already supported current sense or part-of-speech distinction visible, preserving legitimate alternate senses and formal headword POS/status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/object"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001148",
+      "before": {
+        "meaningZh": "圖表；海圖；製成圖表"
+      },
+      "after": {
+        "meaningZh": "（名詞）圖表；海圖；（另有動詞用法）製成圖表"
+      },
+      "reason": "Make the already supported current sense or part-of-speech distinction visible, preserving legitimate alternate senses and formal headword POS/status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/chart"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003716",
+      "before": {
+        "meaningZh": "段落；短評；將...分段；分段落"
+      },
+      "after": {
+        "meaningZh": "（名詞）段落；短評；（另有動詞用法）將……分段；分段落"
+      },
+      "reason": "Make the already supported current sense or part-of-speech distinction visible, preserving legitimate alternate senses and formal headword POS/status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/paragraph"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002000",
+      "before": {
+        "meaningEn": "(adj.) good or important enough to justify time, money, or effort; (n.) value",
+        "usagePatternZh": "值得做某事；值得的；值得做；某人的身價"
+      },
+      "after": {
+        "meaningEn": "Adjective: having a specified monetary value, or deserving the effort or attention involved. Noun: value or wealth, or an amount equivalent to a stated sum or period.",
+        "usagePatternZh": "值……／值得做……；值得；值得做；某人的身價"
+      },
+      "reason": "Make the already supported current sense or part-of-speech distinction visible, preserving legitimate alternate senses and formal headword POS/status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/worth"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001015",
+      "before": {
+        "meaningZh": "前進；進展；行過的路程；提高"
+      },
+      "after": {
+        "meaningZh": "（名詞）前進；進展；行過的路程；預付款；（動詞）前進；提高；促進"
+      },
+      "reason": "Make the already supported current sense or part-of-speech distinction visible, preserving legitimate alternate senses and formal headword POS/status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/advance"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002079",
+      "before": {
+        "meaningEn": "an advantage or good effect that something has; to receive an advantage from something"
+      },
+      "after": {
+        "meaningEn": "Noun: an advantage or helpful effect. Verb: receive an advantage from something, or help someone and improve their situation."
+      },
+      "reason": "Make the already supported current sense or part-of-speech distinction visible, preserving legitimate alternate senses and formal headword POS/status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/benefit"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005208",
+      "before": {
+        "meaningZh": "息票；贈券；利息單；聯票"
+      },
+      "after": {
+        "meaningZh": "折價券；禮券；息票；贈券；利息單；聯票"
+      },
+      "reason": "Make the already supported current sense or part-of-speech distinction visible, preserving legitimate alternate senses and formal headword POS/status.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/coupon"
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "scope": "Nine specific exam senses, ten official questions, two authored-practice hints; no whole-word promotion, headword POS expansion or original-sentence rewriting.",
+  "patches": [
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000041-1",
+      "before": {
+        "meaningZh": "問世、首次出現",
+        "note": "考點：某事物首度出現於某時",
+        "examEvidence": "學測107 文意選填Q38",
+        "status": "draft"
+      },
+      "after": {
+        "meaningZh": "出現；問世",
+        "note": "first appeared 整體表示首次出現；首次由 first 修飾，不是 appear 所有用法都含首次。EX7dfa0583 是另寫練習句，並非原題引文。",
+        "examEvidence": "107學年度學測英文 Q38；選項B appeared。試卷：https://www.ceec.edu.tw/files/file_pool/1/0j076574893317534748/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf；答案：https://www.ceec.edu.tw/files/file_pool/1/0j076574893773665710/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf",
+        "status": "reviewed"
+      },
+      "reason": "Verified this specific sense against the official question context and answer key. Preserve whole-word status, headword POS, answer forms and authored practice sentences.",
+      "evidence": "[{\"year\":107,\"question\":38,\"option\":\"B\",\"answerForm\":\"appeared\",\"context\":\"幸運餅起源；較普遍接受的說法指日裔移民於1907或1914年在舊金山創製。\",\"questionUrl\":\"https://www.ceec.edu.tw/files/file_pool/1/0j076574893317534748/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf\",\"answerUrl\":\"https://www.ceec.edu.tw/files/file_pool/1/0j076574893773665710/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf\"}]"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000071-1",
+      "before": {
+        "meaningZh": "帶有、具有",
+        "note": "考點：bear a name 帶有名字，非「熊」或「忍受」",
+        "examEvidence": "學測114 文意選填Q23",
+        "status": "draft"
+      },
+      "after": {
+        "meaningZh": "具有；帶有（名稱）",
+        "note": "each bearing a name 中 bearing 是 bear 的現在分詞，表示各自具有名稱；不是熊、生育或承受重量。EX49144abd 是另寫練習句。",
+        "examEvidence": "114學年度學測英文 Q23；選項B bearing。試卷：https://www.ceec.edu.tw/files/file_pool/1/0p056425554473267580/02-114%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E9%A1%8C.pdf；答案：https://www.ceec.edu.tw/files/file_pool/1/0p051545433631383724/02-114%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf",
+        "status": "reviewed"
+      },
+      "reason": "Verified this specific sense against the official question context and answer key. Preserve whole-word status, headword POS, answer forms and authored practice sentences.",
+      "evidence": "[{\"year\":114,\"question\":23,\"option\":\"B\",\"answerForm\":\"bearing\",\"context\":\"巴黎聖母院十口鐘各有名稱，最大的鐘名為 Emmanuel。\",\"questionUrl\":\"https://www.ceec.edu.tw/files/file_pool/1/0p056425554473267580/02-114%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E9%A1%8C.pdf\",\"answerUrl\":\"https://www.ceec.edu.tw/files/file_pool/1/0p051545433631383724/02-114%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf\"}]"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000529-1",
+      "before": {
+        "meaningZh": "刻薄的、惡劣的",
+        "note": "考點：形容詞義，非動詞「意指」",
+        "examEvidence": "學測108 詞彙題Q2",
+        "status": "draft"
+      },
+      "after": {
+        "meaningZh": "刻薄的；不友善的",
+        "note": "形容詞 mean 與 bossy 並列。EX8d003ef3 將原題 totally different from 改成 unlike，屬改寫練習句，不是逐字原題；EX723c2aa9 也是另寫練習句。",
+        "examEvidence": "108學年度學測英文 Q2；選項C mean。試卷：https://www.ceec.edu.tw/files/file_pool/1/0j196548669826315609/01-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf；答案：https://www.ceec.edu.tw/files/file_pool/1/0j196548660460294627/02-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88.pdf",
+        "status": "reviewed"
+      },
+      "reason": "Verified this specific sense against the official question context and answer key. Preserve whole-word status, headword POS, answer forms and authored practice sentences.",
+      "evidence": "[{\"year\":108,\"question\":2,\"option\":\"C\",\"answerForm\":\"mean\",\"context\":\"和善謙遜的新主管，對比刻薄且愛使喚人的前主管。\",\"questionUrl\":\"https://www.ceec.edu.tw/files/file_pool/1/0j196548669826315609/01-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf\",\"answerUrl\":\"https://www.ceec.edu.tw/files/file_pool/1/0j196548660460294627/02-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88.pdf\"}]"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000669-1",
+      "before": {
+        "meaningZh": "有可能做到的",
+        "note": "考點：it is possible to V",
+        "examEvidence": "學測111 文意選填Q29",
+        "status": "draft"
+      },
+      "after": {
+        "meaningZh": "可能做到的；可實現的",
+        "note": "it is possible to V 表示技術讓事情做得到；不僅指發生機率。EX8d61e24d 是另寫練習句。",
+        "examEvidence": "111學年度學測英文 Q29；選項A possible。試卷：https://www.ceec.edu.tw/files/file_pool/1/0m053357638065462325/02-111%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7.pdf；答案：https://www.ceec.edu.tw/files/file_pool/1/0m052625594764853905/02-111%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88..pdf",
+        "status": "reviewed"
+      },
+      "reason": "Verified this specific sense against the official question context and answer key. Preserve whole-word status, headword POS, answer forms and authored practice sentences.",
+      "evidence": "[{\"year\":111,\"question\":29,\"option\":\"A\",\"answerForm\":\"possible\",\"context\":\"電腦生成影像讓電影在不使用真正特技演員時仍能製作逼真場景。\",\"questionUrl\":\"https://www.ceec.edu.tw/files/file_pool/1/0m053357638065462325/02-111%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7.pdf\",\"answerUrl\":\"https://www.ceec.edu.tw/files/file_pool/1/0m052625594764853905/02-111%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88..pdf\"}]"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000822-1",
+      "before": {
+        "meaningZh": "經得起、承受",
+        "note": "考點：stand the test of time 禁得起考驗",
+        "examEvidence": "學測113 詞彙題Q5",
+        "status": "draft"
+      },
+      "after": {
+        "meaningZh": "經得起；承受（考驗）",
+        "note": "stand the test of time：經得起時間考驗、歷久不衰。EX7afed7c5 是另寫練習句；未逐字核實的練習句不標為原題引文。",
+        "examEvidence": "113學年度學測英文 Q5；選項D stand。試卷：https://www.ceec.edu.tw/files/file_pool/1/0o051427482769341323/02-113%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%A7%91%E5%AE%9A%E7%A8%BF.pdf；答案：https://www.ceec.edu.tw/files/file_pool/1/0o051427843482078305/02-113%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf",
+        "status": "reviewed"
+      },
+      "reason": "Verified this specific sense against the official question context and answer key. Preserve whole-word status, headword POS, answer forms and authored practice sentences.",
+      "evidence": "[{\"year\":113,\"question\":5,\"option\":\"D\",\"answerForm\":\"stand\",\"context\":\"畢卡索、莫內等偉大藝術家的作品經得起時間考驗。\",\"questionUrl\":\"https://www.ceec.edu.tw/files/file_pool/1/0o051427482769341323/02-113%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%A7%91%E5%AE%9A%E7%A8%BF.pdf\",\"answerUrl\":\"https://www.ceec.edu.tw/files/file_pool/1/0o051427843482078305/02-113%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf\"}]"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001088-1",
+      "before": {
+        "meaningZh": "看法、信念",
+        "note": "考點：對某事的想法",
+        "examEvidence": "學測107 詞彙題Q6",
+        "status": "draft"
+      },
+      "after": {
+        "meaningZh": "看法；所相信的觀點",
+        "note": "beliefs 是 belief 複數；本題談對婚姻意義的看法，不專指宗教信仰。EX44201c9e 是另寫練習句。",
+        "examEvidence": "107學年度學測英文 Q6；選項B beliefs。試卷：https://www.ceec.edu.tw/files/file_pool/1/0j076574893317534748/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf；答案：https://www.ceec.edu.tw/files/file_pool/1/0j076574893773665710/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf",
+        "status": "reviewed"
+      },
+      "reason": "Verified this specific sense against the official question context and answer key. Preserve whole-word status, headword POS, answer forms and authored practice sentences.",
+      "evidence": "[{\"year\":107,\"question\":6,\"option\":\"B\",\"answerForm\":\"beliefs\",\"context\":\"男女通常思考不同，以雙方對婚姻在人生中意義的看法差異為例。\",\"questionUrl\":\"https://www.ceec.edu.tw/files/file_pool/1/0j076574893317534748/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf\",\"answerUrl\":\"https://www.ceec.edu.tw/files/file_pool/1/0j076574893773665710/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf\"}]"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001538-1",
+      "before": {
+        "meaningZh": "方法、手段",
+        "note": "考點：a means to 達成目的的方法，單複數同形",
+        "examEvidence": "學測110 文意選填Q39",
+        "status": "draft"
+      },
+      "after": {
+        "meaningZh": "方法；手段",
+        "note": "a powerful means 中 means 是單數名詞，單複數同形；不是 mean 的第三人稱動詞。EX63b77d47 是另寫練習句。",
+        "examEvidence": "110學年度學測英文 Q39；選項A means。試卷：https://www.ceec.edu.tw/files/file_pool/1/0l069608312283063557/110%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%20.pdf；答案：https://www.ceec.edu.tw/files/file_pool/1/0l069608703462801602/110%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf",
+        "status": "reviewed"
+      },
+      "reason": "Verified this specific sense against the official question context and answer key. Preserve whole-word status, headword POS, answer forms and authored practice sentences.",
+      "evidence": "[{\"year\":110,\"question\":39,\"option\":\"A\",\"answerForm\":\"means\",\"context\":\"即使短時間低衝擊運動，也能成為改善健康的有效方法。\",\"questionUrl\":\"https://www.ceec.edu.tw/files/file_pool/1/0l069608312283063557/110%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%20.pdf\",\"answerUrl\":\"https://www.ceec.edu.tw/files/file_pool/1/0l069608703462801602/110%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf\"}]"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W003270-1",
+      "before": {
+        "meaningZh": "要求嚴格的、吃力的",
+        "note": "考點：demanding 形容詞用法",
+        "examEvidence": "學測107 詞彙題Q7；學測110 文意選填Q36",
+        "status": "draft"
+      },
+      "after": {
+        "meaningZh": "（人）要求嚴格的；（活動）費力的、吃力的",
+        "note": "兩題答案均為 demand 詞族的衍生形容詞 demanding，不是 demand 本身的形容詞用法，也不是普通時態變化；保留 demand 詞頭原詞性。EX3226d24a 是另寫練習句。",
+        "examEvidence": "107學年度學測英文 Q7；選項D demanding。試卷：https://www.ceec.edu.tw/files/file_pool/1/0j076574893317534748/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf；答案：https://www.ceec.edu.tw/files/file_pool/1/0j076574893773665710/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf；110學年度學測英文 Q36；選項E demanding。試卷：https://www.ceec.edu.tw/files/file_pool/1/0l069608312283063557/110%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%20.pdf；答案：https://www.ceec.edu.tw/files/file_pool/1/0l069608703462801602/110%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf",
+        "status": "reviewed"
+      },
+      "reason": "Verified this specific sense against the official question context and answer key. Preserve whole-word status, headword POS, answer forms and authored practice sentences.",
+      "evidence": "[{\"year\":107,\"question\":7,\"option\":\"D\",\"answerForm\":\"demanding\",\"context\":\"主管要求相同工作卻縮短期限，表示要求嚴格。\",\"questionUrl\":\"https://www.ceec.edu.tw/files/file_pool/1/0j076574893317534748/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf\",\"answerUrl\":\"https://www.ceec.edu.tw/files/file_pool/1/0j076574893773665710/02-107%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf\"},{\"year\":110,\"question\":36,\"option\":\"E\",\"answerForm\":\"demanding\",\"context\":\"physically demanding exercises 指費力、耗體力的運動；與真正疼痛作區分。\",\"questionUrl\":\"https://www.ceec.edu.tw/files/file_pool/1/0l069608312283063557/110%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%20.pdf\",\"answerUrl\":\"https://www.ceec.edu.tw/files/file_pool/1/0l069608703462801602/110%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E7%AD%94%E6%A1%88.pdf\"}]"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001008-1",
+      "before": {
+        "meaningZh": "好動的、活躍的",
+        "note": "考點：形容人常活動、不久坐",
+        "examEvidence": "學測112 文意選填Q22",
+        "status": "draft"
+      },
+      "after": {
+        "meaningZh": "身體活動量大的；經常活動的",
+        "note": "physically active 指身體活動量大；本題不支持性格好動、社交活躍或 ADHD。EX935f8ca2 是另寫的祖母每日游泳練習句。",
+        "examEvidence": "112學年度學測英文 Q22；選項B active。試卷：https://www.ceec.edu.tw/files/file_pool/1/0n045359274947649605/02-112%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7.pdf；答案：https://www.ceec.edu.tw/files/file_pool/1/0N015546416633213720/02-112%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E5%8F%83%E8%80%83%E7%AD%94%E6%A1%88.pdf",
+        "status": "reviewed"
+      },
+      "reason": "Verified this specific sense against the official question context and answer key. Preserve whole-word status, headword POS, answer forms and authored practice sentences.",
+      "evidence": "[{\"year\":112,\"question\":22,\"option\":\"B\",\"answerForm\":\"active\",\"context\":\"戶外工作且身體活動量大的人，比久坐冷氣房工作的人需要更多水分。\",\"questionUrl\":\"https://www.ceec.edu.tw/files/file_pool/1/0n045359274947649605/02-112%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7.pdf\",\"answerUrl\":\"https://www.ceec.edu.tw/files/file_pool/1/0N015546416633213720/02-112%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E5%8F%83%E8%80%83%E7%AD%94%E6%A1%88.pdf\"}]"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX7dfa0583",
+      "before": {
+        "meaningHint": "問世、首次出現（考點：某事物首度出現於某時）"
+      },
+      "after": {
+        "meaningHint": "出現；問世（本句為另寫練習句）"
+      },
+      "reason": "Narrow the practice hint to the verified context without altering the sentence or presenting it as an exam quotation.",
+      "evidence": "Specific official context and the unchanged practice sentence; see corresponding sense patch."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX935f8ca2",
+      "before": {
+        "meaningHint": "好動的、活躍的（考點：形容人常活動、不久坐）"
+      },
+      "after": {
+        "meaningHint": "身體活動量大的；經常活動的（本句為另寫練習句）"
+      },
+      "reason": "Narrow the practice hint to the verified context without altering the sentence or presenting it as an exam quotation.",
+      "evidence": "Specific official context and the unchanged practice sentence; see corresponding sense patch."
+    }
+  ]
+}

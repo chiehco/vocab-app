@@ -1,0 +1,82 @@
+{
+  "events": [
+    {
+      "name": "first-regression",
+      "files": 12,
+      "tests": 213,
+      "passed": 209,
+      "failed": 4,
+      "originalTimeout": 5000,
+      "workers": 1,
+      "failures": [
+        "U30 altered historical pair boundary",
+        "U39 altered historical pair boundary",
+        "U23 unrelated historical pair boundary",
+        "U25 unchanged historical rows hash"
+      ],
+      "cause": "Newest full-registry inverse was incorrectly invoked again after older negative tests deliberately altered their historical fixtures.",
+      "fix": "Validate/reverse the newest exact layer once before constructing each historical test view; keep the original older inverse helpers, assertions and hashes unchanged. Latest strict negative tests remain independent.",
+      "productOrCaptionChangedForTestFix": false,
+      "originalFailureLogPreserved": true
+    },
+    {
+      "name": "historical-fix",
+      "files": 12,
+      "tests": 212,
+      "passed": 211,
+      "failed": 1,
+      "remainingFailure": "U22 unchanged-card historical hash still used the current published array",
+      "fix": "Construct the same verified pre-new-pair historical view inside U22 before its unchanged original assertions, alongside U23/U25.",
+      "allOriginalHashesAndAssertionsPreserved": true,
+      "productOrCaptionChangedForTestFix": false
+    },
+    {
+      "name": "gallery-preparation",
+      "failure": "CRLF prevented the exact verifier-function anchor from matching",
+      "writesCompletedBeforeFailure": [
+        "image-repairs proof gallery metadata",
+        "new pure Python boundary module"
+      ],
+      "consumerGalleryAndVerifierNotWrittenAtFailure": true,
+      "recovery": "Checked exact partial state and resumed only remaining steps with line endings normalized before the exact anchor check.",
+      "formalDataUnchanged": true
+    },
+    {
+      "name": "typecheck",
+      "initialExitCode": 2,
+      "failure": "TS2352 on assigning an exact known historical card literal to generic T",
+      "fix": "After the existing full-row runtime guard, restore by Object.assign into the same validated generic row. No cast suppression, dropped assertion or product change.",
+      "runtimeBoundaryAssertionsRetained": true,
+      "productChangedForTypeFix": false
+    },
+    {
+      "name": "gallery-navigation",
+      "initialAction": "Navigate from LV2-U41 discover source route to exact public gallery anchor",
+      "observedError": "page.goto net::ERR_ABORTED",
+      "subsequentReadOnlyProbe": {
+        "sourceRouteRetained": true,
+        "readyState": "complete",
+        "bothDatabasesPresent": true
+      },
+      "httpHead": {
+        "status": 200,
+        "contentType": "text/html; charset=utf-8"
+      },
+      "causeNotEstablished": true,
+      "recovery": "Only the failed unaccepted gallery step is resumed from a neutral same-origin page.",
+      "acceptedAppAndSourceReopensNotRepeated": true,
+      "normalInstallerNotRepeated": true,
+      "originalFailureLogPreserved": true,
+      "timeoutUnchanged": 30000
+    },
+    {
+      "name": "single-browser-reopen",
+      "observed": "Browser opened with pid 10012; initial CLI snapshot timed out at unchanged 30000ms.",
+      "openExitCode": 1,
+      "actualPageCompleteAndBothDatabasesPresent": true,
+      "fullSavedReadbackAndThreeNewImagesAccepted": true,
+      "repeatedOpen": false
+    }
+  ],
+  "originalLogsRetainedPrivately": true
+}

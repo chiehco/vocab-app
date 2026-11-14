@@ -1,0 +1,1207 @@
+{
+  "unit": "LV1-U12",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "scope": "Full 84 source pairs, 74 formal words and 128 formal examples; original English/Chinese sentences, cloze, answer, identities, formal headword POS and whole-word statuses unchanged. Blank hints remain blank.",
+  "retainedIssues": [
+    {
+      "type": "unpublished_source_image_caption_mismatch",
+      "id": "LV1-U12-31",
+      "reason": "Original wooden-door image has no elevator/button, while unchanged original caption requires them. Keep source caption and publication state; general card may use the different unchanged formal heavy-door example, which does fit this image. The elevator image remains pending."
+    },
+    {
+      "type": "visual_literal_precision_pending",
+      "id": "LV1-U12-68",
+      "reason": "Actual full-size image shows coffee drops outside the cup, while the unit caption says nearly spilled. Most coffee and cup remain upright; the extent of spill is not fully resolved. Do not change original caption to dropped coffee just because a different formal example says so."
+    },
+    {
+      "type": "pos_analysis_convention",
+      "ids": [
+        "EX1c43652d"
+      ],
+      "reason": "Take it easy retains prior documented phrase/token classification limitation; no claim of a unique POS analysis."
+    },
+    {
+      "type": "rare_summary_precision_pending",
+      "words": [
+        "plant",
+        "foreign",
+        "foreigner",
+        "heater",
+        "policeman/cop"
+      ],
+      "reason": "Inherited branch, out-of-province, imported-goods, filament/heating-worker and exact 澱帚/抓住 gloss boundaries need specific source confirmation. Medical policeman is a genuine rubber-tipped laboratory instrument (MW Medical); do not delete it as contamination. Formal headword statuses are unchanged."
+    },
+    {
+      "type": "structured_verb_forms_missing",
+      "reason": "Additional source-qualified principal-part candidates remain queued outside the currently installed exact 31-word source allowlist; no forms are counted filled by this lexical review."
+    }
+  ],
+  "patches": [
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX0697deec",
+      "before": {
+        "sensePos": "adj."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Read the unchanged cloze target in the full sentence: after dark / a native / a pull / with ease / a talk are nouns; look alike is a resemblance adjective; the other listed targets are finite/infinitive verbs. Formal headword POS is unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/dark ; actual complete sentence and answer token."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXef5d2f85",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Read the unchanged cloze target in the full sentence: after dark / a native / a pull / with ease / a talk are nouns; look alike is a resemblance adjective; the other listed targets are finite/infinitive verbs. Formal headword POS is unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/answer ; actual complete sentence and answer token."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX675673e1",
+      "before": {
+        "sensePos": "adj."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Read the unchanged cloze target in the full sentence: after dark / a native / a pull / with ease / a talk are nouns; look alike is a resemblance adjective; the other listed targets are finite/infinitive verbs. Formal headword POS is unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/native ; actual complete sentence and answer token."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX8c24fb66",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Read the unchanged cloze target in the full sentence: after dark / a native / a pull / with ease / a talk are nouns; look alike is a resemblance adjective; the other listed targets are finite/infinitive verbs. Formal headword POS is unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/heat ; actual complete sentence and answer token."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX51669a97",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Read the unchanged cloze target in the full sentence: after dark / a native / a pull / with ease / a talk are nouns; look alike is a resemblance adjective; the other listed targets are finite/infinitive verbs. Formal headword POS is unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/train ; actual complete sentence and answer token."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX806aaecd",
+      "before": {
+        "sensePos": "v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Read the unchanged cloze target in the full sentence: after dark / a native / a pull / with ease / a talk are nouns; look alike is a resemblance adjective; the other listed targets are finite/infinitive verbs. Formal headword POS is unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/pull ; actual complete sentence and answer token."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1259ef82",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Read the unchanged cloze target in the full sentence: after dark / a native / a pull / with ease / a talk are nouns; look alike is a resemblance adjective; the other listed targets are finite/infinitive verbs. Formal headword POS is unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/farm ; actual complete sentence and answer token."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX7327e0bb",
+      "before": {
+        "sensePos": "adj."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Read the unchanged cloze target in the full sentence: after dark / a native / a pull / with ease / a talk are nouns; look alike is a resemblance adjective; the other listed targets are finite/infinitive verbs. Formal headword POS is unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/narrow ; actual complete sentence and answer token."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX299bccf8",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Read the unchanged cloze target in the full sentence: after dark / a native / a pull / with ease / a talk are nouns; look alike is a resemblance adjective; the other listed targets are finite/infinitive verbs. Formal headword POS is unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/purchase ; actual complete sentence and answer token."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1689a209",
+      "before": {
+        "sensePos": "v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Read the unchanged cloze target in the full sentence: after dark / a native / a pull / with ease / a talk are nouns; look alike is a resemblance adjective; the other listed targets are finite/infinitive verbs. Formal headword POS is unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/ease ; actual complete sentence and answer token."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXfc6e2fb1",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Read the unchanged cloze target in the full sentence: after dark / a native / a pull / with ease / a talk are nouns; look alike is a resemblance adjective; the other listed targets are finite/infinitive verbs. Formal headword POS is unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/deal ; actual complete sentence and answer token."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXcc9935cf",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Read the unchanged cloze target in the full sentence: after dark / a native / a pull / with ease / a talk are nouns; look alike is a resemblance adjective; the other listed targets are finite/infinitive verbs. Formal headword POS is unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/practice ; actual complete sentence and answer token."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXb7e8fb6b",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Read the unchanged cloze target in the full sentence: after dark / a native / a pull / with ease / a talk are nouns; look alike is a resemblance adjective; the other listed targets are finite/infinitive verbs. Formal headword POS is unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/trip ; actual complete sentence and answer token."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX8d985123",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Read the unchanged cloze target in the full sentence: after dark / a native / a pull / with ease / a talk are nouns; look alike is a resemblance adjective; the other listed targets are finite/infinitive verbs. Formal headword POS is unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/tour ; actual complete sentence and answer token."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX2dbaf73d",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Read the unchanged cloze target in the full sentence: after dark / a native / a pull / with ease / a talk are nouns; look alike is a resemblance adjective; the other listed targets are finite/infinitive verbs. Formal headword POS is unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/travel ; actual complete sentence and answer token."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXd06e917d",
+      "before": {
+        "sensePos": "v."
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Read the unchanged cloze target in the full sentence: after dark / a native / a pull / with ease / a talk are nouns; look alike is a resemblance adjective; the other listed targets are finite/infinitive verbs. Formal headword POS is unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/talk ; actual complete sentence and answer token."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX1753cfc8",
+      "before": {
+        "sensePos": "adv."
+      },
+      "after": {
+        "sensePos": "adj."
+      },
+      "reason": "Read the unchanged cloze target in the full sentence: after dark / a native / a pull / with ease / a talk are nouns; look alike is a resemblance adjective; the other listed targets are finite/infinitive verbs. Formal headword POS is unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/alike ; actual complete sentence and answer token."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXf9ce4da0",
+      "before": {
+        "sensePos": "n."
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Read the unchanged cloze target in the full sentence: after dark / a native / a pull / with ease / a talk are nouns; look alike is a resemblance adjective; the other listed targets are finite/infinitive verbs. Formal headword POS is unchanged.",
+      "evidence": "https://www.merriam-webster.com/dictionary/plan ; actual complete sentence and answer token."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX6b5356e3",
+      "before": {
+        "meaningHint": "問；要求；邀請；需要"
+      },
+      "after": {
+        "meaningHint": "邀請（ask out）"
+      },
+      "reason": "Narrow the existing mixed hint to the actual contextual meaning; this is precision, not a claim all original glosses were false. Preserve blank daily/exam hints.",
+      "evidence": "https://www.merriam-webster.com/dictionary/ask ; unchanged full sentence."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX926b61ea",
+      "before": {
+        "meaningHint": "問；要求；邀請；需要"
+      },
+      "after": {
+        "meaningHint": "請求"
+      },
+      "reason": "Narrow the existing mixed hint to the actual contextual meaning; this is precision, not a claim all original glosses were false. Preserve blank daily/exam hints.",
+      "evidence": "https://www.merriam-webster.com/dictionary/ask ; unchanged full sentence."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX9cc12495",
+      "before": {
+        "meaningHint": "問；要求；邀請；需要"
+      },
+      "after": {
+        "meaningHint": "請求；尋求（ask for）"
+      },
+      "reason": "Narrow the existing mixed hint to the actual contextual meaning; this is precision, not a claim all original glosses were false. Preserve blank daily/exam hints.",
+      "evidence": "https://www.merriam-webster.com/dictionary/ask ; unchanged full sentence."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXd296fda7",
+      "before": {
+        "meaningHint": "問；要求；邀請；需要"
+      },
+      "after": {
+        "meaningHint": "詢問"
+      },
+      "reason": "Narrow the existing mixed hint to the actual contextual meaning; this is precision, not a claim all original glosses were false. Preserve blank daily/exam hints.",
+      "evidence": "https://www.merriam-webster.com/dictionary/ask ; unchanged full sentence."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX028e0a65",
+      "before": {
+        "meaningHint": "結束；終點；目標；末端"
+      },
+      "after": {
+        "meaningHint": "結束"
+      },
+      "reason": "Narrow the existing mixed hint to the actual contextual meaning; this is precision, not a claim all original glosses were false. Preserve blank daily/exam hints.",
+      "evidence": "https://www.merriam-webster.com/dictionary/end ; unchanged full sentence."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX18c56a7b",
+      "before": {
+        "meaningHint": "結束；終點；目標；末端"
+      },
+      "after": {
+        "meaningHint": "最終（end up V-ing：最後做了……）"
+      },
+      "reason": "Narrow the existing mixed hint to the actual contextual meaning; this is precision, not a claim all original glosses were false. Preserve blank daily/exam hints.",
+      "evidence": "https://www.merriam-webster.com/dictionary/end ; unchanged full sentence."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXc0f7a7b7",
+      "before": {
+        "meaningHint": "結束；終點；目標；末端"
+      },
+      "after": {
+        "meaningHint": "結局"
+      },
+      "reason": "Narrow the existing mixed hint to the actual contextual meaning; this is precision, not a claim all original glosses were false. Preserve blank daily/exam hints.",
+      "evidence": "https://www.merriam-webster.com/dictionary/end ; unchanged full sentence."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXd2cfe13d",
+      "before": {
+        "meaningHint": "結束；終點；目標；末端"
+      },
+      "after": {
+        "meaningHint": "結束"
+      },
+      "reason": "Narrow the existing mixed hint to the actual contextual meaning; this is precision, not a claim all original glosses were false. Preserve blank daily/exam hints.",
+      "evidence": "https://www.merriam-webster.com/dictionary/end ; unchanged full sentence."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXf6aa0917",
+      "before": {
+        "meaningHint": "結束；終點；目標；末端"
+      },
+      "after": {
+        "meaningHint": "結尾；結束時（at the end of）"
+      },
+      "reason": "Narrow the existing mixed hint to the actual contextual meaning; this is precision, not a claim all original glosses were false. Preserve blank daily/exam hints.",
+      "evidence": "https://www.merriam-webster.com/dictionary/end ; unchanged full sentence."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX7e0c8368",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Actually read complete English/Chinese, lexical use, answer and reconstructed cloze. Practice-example review is independent of the official-source claim and image approval.",
+      "evidence": "https://www.merriam-webster.com/dictionary/purchase ; full unchanged sentence, Chinese and cloze."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXe4f88b84",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Actually read complete English/Chinese, lexical use, answer and reconstructed cloze. Practice-example review is independent of the official-source claim and image approval.",
+      "evidence": "https://www.merriam-webster.com/dictionary/purchase ; full unchanged sentence, Chinese and cloze."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX7e40dd93",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Actually read complete English/Chinese, lexical use, answer and reconstructed cloze. Practice-example review is independent of the official-source claim and image approval.",
+      "evidence": "https://www.merriam-webster.com/dictionary/home ; full unchanged sentence, Chinese and cloze."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX5f604043",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Actually read complete English/Chinese, lexical use, answer and reconstructed cloze. Practice-example review is independent of the official-source claim and image approval.",
+      "evidence": "https://www.merriam-webster.com/dictionary/travel ; full unchanged sentence, Chinese and cloze."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX10d710a3",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Actually read complete English/Chinese, lexical use, answer and reconstructed cloze. Practice-example review is independent of the official-source claim and image approval.",
+      "evidence": "https://www.merriam-webster.com/dictionary/journey ; full unchanged sentence, Chinese and cloze."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX5bf68a7e",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Actually read complete English/Chinese, lexical use, answer and reconstructed cloze. Practice-example review is independent of the official-source claim and image approval.",
+      "evidence": "https://www.merriam-webster.com/dictionary/stumble ; full unchanged sentence, Chinese and cloze."
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX12231cfa",
+      "before": {
+        "status": "draft"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Actually read complete English/Chinese, lexical use, answer and reconstructed cloze. Practice-example review is independent of the official-source claim and image approval.",
+      "evidence": "https://www.merriam-webster.com/dictionary/same ; full unchanged sentence, Chinese and cloze."
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W002570-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：本地人；土產；當地人；本國的"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：本義經可靠詞典與現有例句分別核對；保留真實名詞、動詞、形容詞及副詞義，不因罕見刪除。例句、圖句及考題來源各自核實，不代表整詞通過。"
+      },
+      "reason": "Verify only the existing lexical sense against the dictionary. In particular home as a verb (return or move toward a target) is genuine and is retained, not deleted for rarity.",
+      "evidence": "https://www.merriam-webster.com/dictionary/native"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W002570-2",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：本地人；土產；當地人；本國的"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：本義經可靠詞典與現有例句分別核對；保留真實名詞、動詞、形容詞及副詞義，不因罕見刪除。例句、圖句及考題來源各自核實，不代表整詞通過。"
+      },
+      "reason": "Verify only the existing lexical sense against the dictionary. In particular home as a verb (return or move toward a target) is genuine and is retained, not deleted for rarity.",
+      "evidence": "https://www.merriam-webster.com/dictionary/native"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000973-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：寬的；廣闊的；普遍的；寬闊的"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：本義經可靠詞典與現有例句分別核對；保留真實名詞、動詞、形容詞及副詞義，不因罕見刪除。例句、圖句及考題來源各自核實，不代表整詞通過。"
+      },
+      "reason": "Verify only the existing lexical sense against the dictionary. In particular home as a verb (return or move toward a target) is genuine and is retained, not deleted for rarity.",
+      "evidence": "https://www.merriam-webster.com/dictionary/wide"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000973-2",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：寬的；廣闊的；普遍的；寬闊的"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：本義經可靠詞典與現有例句分別核對；保留真實名詞、動詞、形容詞及副詞義，不因罕見刪除。例句、圖句及考題來源各自核實，不代表整詞通過。"
+      },
+      "reason": "Verify only the existing lexical sense against the dictionary. In particular home as a verb (return or move toward a target) is genuine and is retained, not deleted for rarity.",
+      "evidence": "https://www.merriam-webster.com/dictionary/wide"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W004689-2",
+      "before": {
+        "status": "draft",
+        "note": "既有通用例句使用之義項"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：本義經可靠詞典與現有例句分別核對；保留真實名詞、動詞、形容詞及副詞義，不因罕見刪除。例句、圖句及考題來源各自核實，不代表整詞通過。"
+      },
+      "reason": "Verify only the existing lexical sense against the dictionary. In particular home as a verb (return or move toward a target) is genuine and is retained, not deleted for rarity.",
+      "evidence": "https://www.merriam-webster.com/dictionary/purchase"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000405-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：家；避難所；故鄉；家庭的"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：本義經可靠詞典與現有例句分別核對；保留真實名詞、動詞、形容詞及副詞義，不因罕見刪除。例句、圖句及考題來源各自核實，不代表整詞通過。"
+      },
+      "reason": "Verify only the existing lexical sense against the dictionary. In particular home as a verb (return or move toward a target) is genuine and is retained, not deleted for rarity.",
+      "evidence": "https://www.merriam-webster.com/dictionary/home"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000405-2",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：家；避難所；故鄉；家庭的"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：本義經可靠詞典與現有例句分別核對；保留真實名詞、動詞、形容詞及副詞義，不因罕見刪除。例句、圖句及考題來源各自核實，不代表整詞通過。"
+      },
+      "reason": "Verify only the existing lexical sense against the dictionary. In particular home as a verb (return or move toward a target) is genuine and is retained, not deleted for rarity.",
+      "evidence": "https://www.merriam-webster.com/dictionary/home"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000405-3",
+      "before": {
+        "status": "needs_check",
+        "note": "罕用，建議刪列｜待拆分；主表字義：家；避難所；故鄉；家庭的"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：本義經可靠詞典與現有例句分別核對；保留真實名詞、動詞、形容詞及副詞義，不因罕見刪除。例句、圖句及考題來源各自核實，不代表整詞通過。"
+      },
+      "reason": "Verify only the existing lexical sense against the dictionary. In particular home as a verb (return or move toward a target) is genuine and is retained, not deleted for rarity.",
+      "evidence": "https://www.merriam-webster.com/dictionary/home"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000405-4",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：家；避難所；故鄉；家庭的"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：本義經可靠詞典與現有例句分別核對；保留真實名詞、動詞、形容詞及副詞義，不因罕見刪除。例句、圖句及考題來源各自核實，不代表整詞通過。"
+      },
+      "reason": "Verify only the existing lexical sense against the dictionary. In particular home as a verb (return or move toward a target) is genuine and is retained, not deleted for rarity.",
+      "evidence": "https://www.merriam-webster.com/dictionary/home"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001927-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：旅行；遊歷；行進；移動"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：本義經可靠詞典與現有例句分別核對；保留真實名詞、動詞、形容詞及副詞義，不因罕見刪除。例句、圖句及考題來源各自核實，不代表整詞通過。"
+      },
+      "reason": "Verify only the existing lexical sense against the dictionary. In particular home as a verb (return or move toward a target) is genuine and is retained, not deleted for rarity.",
+      "evidence": "https://www.merriam-webster.com/dictionary/travel"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W001927-2",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：旅行；遊歷；行進；移動"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：本義經可靠詞典與現有例句分別核對；保留真實名詞、動詞、形容詞及副詞義，不因罕見刪除。例句、圖句及考題來源各自核實，不代表整詞通過。"
+      },
+      "reason": "Verify only the existing lexical sense against the dictionary. In particular home as a verb (return or move toward a target) is genuine and is retained, not deleted for rarity.",
+      "evidence": "https://www.merriam-webster.com/dictionary/travel"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000425-1",
+      "before": {
+        "status": "needs_check",
+        "note": "待拆分；主表字義：主意；辦法；理想；思想"
+      },
+      "after": {
+        "status": "reviewed",
+        "note": "2026-11-05：本義經可靠詞典與現有例句分別核對；保留真實名詞、動詞、形容詞及副詞義，不因罕見刪除。例句、圖句及考題來源各自核實，不代表整詞通過。"
+      },
+      "reason": "Verify only the existing lexical sense against the dictionary. In particular home as a verb (return or move toward a target) is genuine and is retained, not deleted for rarity.",
+      "evidence": "https://www.merriam-webster.com/dictionary/idea"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000653",
+      "before": {
+        "meaningZh": "植物；作物；工廠；樹枝"
+      },
+      "after": {
+        "meaningZh": "植物；作物；工廠；樹枝；（動詞）種植"
+      },
+      "reason": "Include the directly read planted-trees verb; inherited tree-branch wording is preserved pending its exact source.",
+      "evidence": "https://www.merriam-webster.com/dictionary/plant"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000211",
+      "before": {
+        "meaningZh": "黑暗；夜；黃昏；模糊"
+      },
+      "after": {
+        "meaningZh": "（形容詞）黑暗的；深色的；模糊的；（名詞）黑暗；夜；黃昏"
+      },
+      "reason": "Separate the dark-clothes adjective and after-dark noun instead of leaving all glosses without adjective marking.",
+      "evidence": "https://www.merriam-webster.com/dictionary/dark"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000035",
+      "before": {
+        "usagePatternZh": "回答問題；名詞的答案；為名詞負責"
+      },
+      "after": {
+        "usagePatternZh": "……的答案；對……負責"
+      },
+      "reason": "Make answer to N and answer for N meaningful Chinese; no sentence or English pattern change.",
+      "evidence": "https://www.merriam-webster.com/dictionary/answer"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001726",
+      "before": {
+        "meaningEn": "the speech act of continuing a conversational exchange",
+        "usagePattern": "reply + N; reply to V; a/the reply",
+        "usagePatternZh": "回覆……；做出回覆以做……；一份／這份回覆"
+      },
+      "after": {
+        "meaningEn": "(n.) something said, written or done as an answer; (v.) to answer in words or writing, or respond by an action.",
+        "usagePattern": "reply to N; reply that S+V; a reply to/from sb",
+        "usagePatternZh": "回覆……；回答說……（完整子句）；給某人／來自某人的回覆"
+      },
+      "reason": "Restore the actual written reply noun and reply-to-object / reply-that-clause constructions; replace generic reply to V.",
+      "evidence": "https://www.merriam-webster.com/dictionary/reply"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001271",
+      "before": {
+        "meaningEn": "a servant who is paid to perform menial tasks around the household; of concern to or concerning the internal affairs of a nation",
+        "meaningZh": "家庭的；國內的；馴養的；家用的"
+      },
+      "after": {
+        "meaningEn": "(adj.) relating to home or family; occurring within one country; tame or kept by people. (Separate noun) a household servant.",
+        "meaningZh": "（形容詞）家庭的；家用的；國內的；馴養的；（另有名詞義）家僕"
+      },
+      "reason": "The domestic-flight source uses an adjective; lead with verified adjective senses while retaining the genuine separate servant noun without expanding formal POS.",
+      "evidence": "https://www.merriam-webster.com/dictionary/domestic"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002570",
+      "before": {
+        "meaningZh": "本地人；土產；當地人；本國的"
+      },
+      "after": {
+        "meaningZh": "（形容詞）本地的；本國的；天生的；母語的；（名詞）本地人；當地人；土產"
+      },
+      "reason": "Include both actual native-of-Taiwan noun and native-English adjective; preserve genuine local product meaning.",
+      "evidence": "https://www.merriam-webster.com/dictionary/native"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000739",
+      "before": {
+        "usagePatternZh": "節省錢；節省時間；拯救某人的生命"
+      },
+      "after": {
+        "usagePatternZh": "拯救／節省……；存錢／省錢"
+      },
+      "reason": "Save money covers accumulating money for a laptop as well as spending less; preserve both rather than teaching only cost reduction.",
+      "evidence": "https://www.merriam-webster.com/dictionary/save"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000389",
+      "before": {
+        "meaningZh": "熱；熱度；體溫；高潮"
+      },
+      "after": {
+        "meaningZh": "（名詞）熱；熱度；體溫；高潮；（動詞）加熱"
+      },
+      "reason": "Include the explicit heat-the-soup verb separately from heat nouns.",
+      "evidence": "https://www.merriam-webster.com/dictionary/heat"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000916",
+      "before": {
+        "meaningZh": "火車；列車；行列；長隊",
+        "usagePatternZh": "搭火車；為名詞訓練；訓練某人 + 動詞原形"
+      },
+      "after": {
+        "meaningZh": "（名詞）火車；列車；行列；長隊；（動詞）訓練",
+        "usagePatternZh": "搭火車；為……訓練；訓練某人做……"
+      },
+      "reason": "Coach will train us is a verb, omitted from the inherited Chinese noun-only summary.",
+      "evidence": "https://www.merriam-webster.com/dictionary/train"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002762",
+      "before": {
+        "meaningZh": "存款；挽救；節約；搭救的；儲蓄"
+      },
+      "after": {
+        "meaningZh": "（名詞）存款；儲蓄；挽救；節約；（另有形容詞 saving）搭救的"
+      },
+      "reason": "Distinguish actual savings plural money and saving cost-reduction nouns from the directly verified rescuing adjective, preserving all inherited meanings without expanding formal POS.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/saving ; directly read separate British/American adjective and noun entries."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000296",
+      "before": {
+        "usagePatternZh": "農場；在農場工作；農場 + 名詞（作物/動物）"
+      },
+      "after": {
+        "usagePatternZh": "農場；在農場工作；種植作物／飼養動物"
+      },
+      "reason": "Farm plus crop/animal is a verb construction, not the noun farm plus noun translated literally.",
+      "evidence": "https://www.merriam-webster.com/dictionary/farm"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001528",
+      "before": {
+        "usagePattern": "marry + N; marry to V",
+        "usagePatternZh": "與某人結婚；與某人結為連理"
+      },
+      "after": {
+        "usagePattern": "marry sb; get married to sb; marry for love",
+        "usagePatternZh": "與某人結婚；與某人結婚；為愛而結婚"
+      },
+      "reason": "Replace the misleading marry to V template with the directly supported spouse object and married-to construction.",
+      "evidence": "https://www.merriam-webster.com/dictionary/marry"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000297",
+      "before": {
+        "usagePatternZh": "農夫種植/飼養某事物；當地農民；農夫市場"
+      },
+      "after": {
+        "usagePatternZh": "農夫種植作物／飼養動物；當地農民；農夫市集"
+      },
+      "reason": "Use the actual farming meanings rather than a literal some-thing placeholder; market here is a farmers market.",
+      "evidence": "https://www.merriam-webster.com/dictionary/farmer"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000736",
+      "before": {
+        "usagePatternZh": "出售；減價；名詞的銷售"
+      },
+      "after": {
+        "usagePatternZh": "待售；特價出售／販售中；……的銷售"
+      },
+      "reason": "For sale is available to buy; on sale may mean discounted or available for sale depending on variety/context. Avoid asserting every sale is an auction.",
+      "evidence": "https://www.merriam-webster.com/dictionary/sale"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000312",
+      "before": {
+        "meaningEn": "the place designated as the end (as of a race or journey); designated event that concludes a contest (especially a race)"
+      },
+      "after": {
+        "meaningEn": "(v.) to complete an activity or bring it to an end; to give a surface its final treatment. (n.) an ending, a final stage, or a surface coating or texture."
+      },
+      "reason": "The wooden-model source uses the missing completion verb; retain genuine noun finish and coating senses.",
+      "evidence": "https://www.merriam-webster.com/dictionary/finish"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002996",
+      "before": {
+        "usagePattern": "widen + N; widen to V",
+        "usagePatternZh": "拓寬某物；拓寬以做某事"
+      },
+      "after": {
+        "usagePattern": "widen N; widen a road; widen the gap",
+        "usagePatternZh": "拓寬／擴大……；拓寬道路；擴大差距"
+      },
+      "reason": "Replace the generic widen to V with concrete object constructions; the source path is physically widened.",
+      "evidence": "https://www.merriam-webster.com/dictionary/widen"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001113",
+      "before": {
+        "meaningEn": "slang term for a woman; not detailed or specific"
+      },
+      "after": {
+        "meaningEn": "(adj.) wide from side to side, covering a large area or range, or dealing with main points rather than details. (Separate noun, slang and often offensive) a woman."
+      },
+      "reason": "The existing noun slang definition is genuine but cannot replace the missing broad-field adjective; label the noun register and retain it.",
+      "evidence": "https://www.merriam-webster.com/dictionary/broad"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001566",
+      "before": {
+        "meaningZh": "狹窄部分；隘路；狹窄的；仔細的"
+      },
+      "after": {
+        "meaningZh": "（形容詞）狹窄的；仔細的；（動詞）縮小；（另有名詞義）狹窄部分；隘路"
+      },
+      "reason": "Include actual narrow-down verb and preserve the directly verified meticulous adjective and strait noun rather than deleting rare meanings.",
+      "evidence": "https://www.merriam-webster.com/dictionary/narrow"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001291",
+      "before": {
+        "meaningZh": "安樂；安逸；悠閒；使安樂"
+      },
+      "after": {
+        "meaningZh": "（名詞）安樂；安逸；悠閒；輕鬆；（動詞）減輕；使安樂"
+      },
+      "reason": "With ease is a noun phrase and medicine eases pain; include the actual relieving-pain verb.",
+      "evidence": "https://www.merriam-webster.com/dictionary/ease"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001422",
+      "before": {
+        "usagePattern": "a/the haircut; haircut of N",
+        "usagePatternZh": "一次理髮／該次理髮；……的理髮"
+      },
+      "after": {
+        "usagePattern": "get/have a haircut; a short haircut",
+        "usagePatternZh": "理髮；短髮造型"
+      },
+      "reason": "Use natural attested haircut constructions instead of a generic haircut of N.",
+      "evidence": "https://www.merriam-webster.com/dictionary/haircut ; actual source sentence and lexical noun construction."
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002379",
+      "before": {
+        "usagePattern": "a/the hairdresser; hairdresser of N",
+        "usagePatternZh": "一位／那位美髮師；……的美髮師"
+      },
+      "after": {
+        "usagePattern": "go to the hairdresser; work as a hairdresser",
+        "usagePatternZh": "去美髮店／找美髮師；擔任美髮師"
+      },
+      "reason": "Replace the generic hairdresser of N placeholder with actual person-profession constructions.",
+      "evidence": "https://www.merriam-webster.com/dictionary/hairdresser"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000216",
+      "before": {
+        "meaningZh": "交易；協定；數量；買賣"
+      },
+      "after": {
+        "meaningZh": "（名詞）交易；協定；數量；買賣；（deal with，動詞）處理；應付"
+      },
+      "reason": "The homework example uses the handle-a-situation verb, not a business-transaction noun.",
+      "evidence": "https://www.merriam-webster.com/dictionary/deal"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000666",
+      "before": {
+        "meaningZh": "貧窮的；貧乏的；不幸的；可憐的",
+        "usagePatternZh": "窮人；貧窮的 + 名詞 (家庭/健康/等級)；在……方面很差"
+      },
+      "after": {
+        "meaningZh": "貧窮的；貧乏的；不幸的；可憐的；差的",
+        "usagePatternZh": "窮人；貧窮的家庭／不佳的健康狀況或成績；在……方面很差"
+      },
+      "reason": "Poor eyesight/health/grade is low quality, not literally a poverty-stricken grade.",
+      "evidence": "https://www.merriam-webster.com/dictionary/poor"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002223",
+      "before": {
+        "meaningEn": "a firm engaged in trading; a seller of illicit goods",
+        "usagePattern": "a/the dealer; dealer of N",
+        "usagePatternZh": "該經銷商；……的經銷商"
+      },
+      "after": {
+        "meaningEn": "a person or business that buys and sells goods; also a seller of illegal goods or a person who distributes playing cards.",
+        "usagePattern": "a dealer in N; a car/bicycle dealer",
+        "usagePatternZh": "販售……的經銷商；汽車／自行車經銷商"
+      },
+      "reason": "Restore an ordinary individual goods seller, not only a firm or illicit seller; the source is a bicycle shop.",
+      "evidence": "https://www.merriam-webster.com/dictionary/dealer"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000919",
+      "before": {
+        "usagePatternZh": "去旅行；去名詞的旅行；絆到名詞"
+      },
+      "after": {
+        "usagePatternZh": "去旅行；前往……的旅程；被……絆到"
+      },
+      "reason": "Make both journey and tripping constructions clear in Chinese.",
+      "evidence": "https://www.merriam-webster.com/dictionary/trip"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000405",
+      "before": {
+        "meaningEn": "(n.) the place where you live, especially with your family (adv.) to or at the place where you live",
+        "meaningZh": "家；避難所；故鄉；家庭的"
+      },
+      "after": {
+        "meaningEn": "(n.) the place where one lives or originates. (adv.) to or at home. (adj.) related to home or a team's own base. (v.) to return home or move toward a target, often home in on.",
+        "meaningZh": "（名詞）家；避難所；故鄉；（形容詞）家庭的；主場的；（副詞）回家；在家；（動詞）歸巢；導向"
+      },
+      "reason": "All four recorded senses are directly supported, including the real verb once marked for deletion due to rarity; retain it with a clear label.",
+      "evidence": "https://www.merriam-webster.com/dictionary/home"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002461",
+      "before": {
+        "meaningEn": "a trip from one place to another, especially a long one"
+      },
+      "after": {
+        "meaningEn": "(n.) a trip from one place to another, especially a long one. (v.) to travel from one place to another."
+      },
+      "reason": "Keep both existing formal noun and verb meanings without changing the noun examples.",
+      "evidence": "https://www.merriam-webster.com/dictionary/journey"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004866",
+      "before": {
+        "usagePattern": "stumble on/over N; stumble into N; stumble through a speech",
+        "usagePatternZh": "絆倒在……上；偶然發現……；結結巴巴地說完演講"
+      },
+      "after": {
+        "usagePattern": "stumble on/over N; stumble upon/across N; stumble into N; stumble through a speech",
+        "usagePatternZh": "被……絆到；偶然發現……；跌跌撞撞地走入……；結結巴巴地說完演講"
+      },
+      "reason": "Separate literal stumble-into movement from stumble-upon/across accidental discovery, rather than translating stumble into solely as discovery.",
+      "evidence": "https://www.merriam-webster.com/dictionary/stumble"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000921",
+      "before": {
+        "meaningEn": "an automotive vehicle suitable for hauling; convey (goods etc.) by truck",
+        "meaningZh": "卡車；貨車；對...進行交易；來往"
+      },
+      "after": {
+        "meaningEn": "(n.) a motor vehicle used for carrying goods. (Separate verb) to carry goods by truck or to trade.",
+        "meaningZh": "（名詞）卡車；貨車；（另有動詞義）用卡車運送；進行交易；來往"
+      },
+      "reason": "Lead the noun-only formal headword with its vehicle sense; preserve separate genuine verb definitions rather than presenting them as noun glosses.",
+      "evidence": "https://www.merriam-webster.com/dictionary/truck"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002410",
+      "before": {
+        "usagePattern": "be homesick; homesick + N",
+        "usagePatternZh": "思鄉的；思鄉的某事物"
+      },
+      "after": {
+        "usagePattern": "feel/be homesick; homesick for home/family",
+        "usagePatternZh": "感到想家／思鄉；思念家鄉／家人"
+      },
+      "reason": "Use meaningful adjective constructions and remove the generic homesick plus some-thing label.",
+      "evidence": "https://www.merriam-webster.com/dictionary/homesick"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001095",
+      "before": {
+        "meaningEn": "small round bread leavened with baking-powder or soda",
+        "usagePattern": "a/the biscuit; biscuit of N",
+        "usagePatternZh": "一塊餅乾；……的餅乾"
+      },
+      "after": {
+        "meaningEn": "(British English) a small crisp baked food, a cookie; (US English) a small soft quick bread; (ceramics) fired but unglazed earthenware or porcelain.",
+        "usagePattern": "a crisp biscuit; dip a biscuit in tea",
+        "usagePatternZh": "酥脆餅乾；把餅乾浸入茶中"
+      },
+      "reason": "The source cookie-and-tea picture uses the missing British sense; retain genuine US bread and unglazed ceramic senses with explicit boundaries.",
+      "evidence": "https://www.merriam-webster.com/dictionary/biscuit"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000651",
+      "before": {
+        "usagePatternZh": "計劃去原形動詞；制定計劃"
+      },
+      "after": {
+        "usagePatternZh": "計畫做……；制定計畫"
+      },
+      "reason": "Replace the literal original-verb placeholder with the actual infinitive meaning.",
+      "evidence": "https://www.merriam-webster.com/dictionary/plan"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000425",
+      "before": {
+        "usagePatternZh": "有一個想法；一個好主意；關於名詞的想法"
+      },
+      "after": {
+        "usagePatternZh": "有一個想法；好主意；關於……的想法"
+      },
+      "reason": "Remove the literal noun placeholder without changing either example or headword meanings.",
+      "evidence": "https://www.merriam-webster.com/dictionary/idea"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000694",
+      "before": {
+        "meaningZh": "無線電；收音機；無線電報；無線電廣播",
+        "usagePatternZh": "在收音機上；聽收音機；呼叫收音機求助"
+      },
+      "after": {
+        "meaningZh": "（名詞）無線電；收音機；無線電報；無線電廣播；（動詞）用無線電傳訊",
+        "usagePatternZh": "在廣播中／由收音機播出；聽收音機；用無線電呼叫求助"
+      },
+      "reason": "Radio for help means send a message by radio, not call a radio receiver for help.",
+      "evidence": "https://www.merriam-webster.com/dictionary/radio"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002159",
+      "before": {
+        "usagePattern": "a/the clinic; clinic of N",
+        "usagePatternZh": "該間診所；……的診所"
+      },
+      "after": {
+        "usagePattern": "visit a clinic; a medical/dental clinic",
+        "usagePatternZh": "去診所就診；醫療／牙科診所"
+      },
+      "reason": "Use meaningful actual clinic constructions instead of clinic of a generic noun; preserve genuine instructional meanings.",
+      "evidence": "https://www.merriam-webster.com/dictionary/clinic"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000665",
+      "before": {
+        "meaningEn": "a small area of water, especially one built for people to swim in; a supply of money, people, or other resources that is shared by a group",
+        "meaningZh": "池；水塘；石油層；聯營",
+        "usagePatternZh": "一個游泳池；共乘汽車；一個……的水池"
+      },
+      "after": {
+        "meaningEn": "(n.) a small body of water or a swimming place; a shared supply of resources. (v.) to form or collect in a pool, or combine resources for common use.",
+        "meaningZh": "（名詞）池；水塘；游泳池；石油層；聯營；共同資源；（動詞）匯集；共用",
+        "usagePatternZh": "游泳池；共乘汽車；共同的……資源"
+      },
+      "reason": "The pool-of-resources construction is not necessarily a water pool; retain the directly verified petroleum sense and include existing verb uses.",
+      "evidence": "https://www.merriam-webster.com/dictionary/pool"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W004689-1",
+      "before": {
+        "status": "draft",
+        "examEvidence": "學測108 文意選填Q34",
+        "note": "考點：名詞義，買下的東西"
+      },
+      "after": {
+        "status": "reviewed",
+        "examEvidence": "108學測文意選填Q34，B purchases；印刷第3頁。父親採購的物品與母親要求不一致，複數名詞指購買物。 官方試卷 https://www.ceec.edu.tw/files/file_pool/1/0j196548669826315609/01-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf；官方答案 https://www.ceec.edu.tw/files/file_pool/1/0j196548660460294627/02-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88.pdf",
+        "note": "2026-11-05：官方試卷相關段落及答案均直接讀取。EX7e0c8368核對收據句為另寫練習，不是真題原文。 只核實本義來源，不代表整詞通過。"
+      },
+      "reason": "Read actual official question context, option and matching answer, separately compare the authored practice example.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0j196548669826315609/01-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf ; https://www.ceec.edu.tw/files/file_pool/1/0j196548660460294627/02-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88.pdf"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W004866-1",
+      "before": {
+        "status": "draft",
+        "examEvidence": "學測108 詞彙題Q9",
+        "note": "考點：stumble on/over 被東西絆到"
+      },
+      "after": {
+        "status": "reviewed",
+        "examEvidence": "108學測詞彙題Q9，A stumble；印刷第1頁。未收拾玩具可能使人絆倒受傷。 官方試卷 https://www.ceec.edu.tw/files/file_pool/1/0j196548669826315609/01-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf；官方答案 https://www.ceec.edu.tw/files/file_pool/1/0j196548660460294627/02-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88.pdf",
+        "note": "2026-11-05：官方試題及答案均直接讀取。EXd0435eb5與填入正答後的原題一致；EX5bf68a7e鬆磚咖啡句為另寫練習，不能兩者混稱真題。 只核實本義來源，不代表整詞通過。"
+      },
+      "reason": "Read actual official question context, option and matching answer, separately compare the authored practice example.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0j196548669826315609/01-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf ; https://www.ceec.edu.tw/files/file_pool/1/0j196548660460294627/02-108%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88.pdf"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "unit": "LV2-U33",
+  "frontend": {
+    "initialRun": {
+      "files": 18,
+      "tests": 182,
+      "passed": 179,
+      "failures": 3,
+      "failedFiles": 2,
+      "exitCode": 1,
+      "causes": [
+        "U13 condition historical form fingerprint now needs exact inverse of the new U33 meaningZh.",
+        "U15 shock historical form fingerprint now needs exact inverse of new U33 meaningEn and meaningZh.",
+        "New source negative test selected the main crow instead of its related-word occurrence."
+      ],
+      "resolution": "Reverse only the recorded U33 exact-after fields before old form restoration; preserve both original fingerprints. Add negative checks for wrong allowed-after and unrelated field drift. Select the source row by related role and exact ID."
+    },
+    "repairRun": {
+      "files": 2,
+      "tests": 64,
+      "failures": 0,
+      "exitCode": 0,
+      "originalAssertionsRetained": true,
+      "newBoundaryNegativeTest": true
+    },
+    "finalCoveredUnion": {
+      "files": 18,
+      "tests": 183,
+      "failures": 0,
+      "composition": "16 unchanged passing files from first run plus both repaired files; not represented as a single all-pass invocation."
+    },
+    "maxWorkers": 1,
+    "testTimeout": 5000,
+    "scope": "src/db; original U33 text; new U33 audit; U32/U31 audits; recovered integration; both image regressions"
+  },
+  "python": {
+    "tests": 55,
+    "exitCode": 0
+  },
+  "lint": {
+    "exitCode": 0,
+    "existingWarningsRetained": true
+  },
+  "typecheck": {
+    "exitCode": 0
+  },
+  "build": {
+    "exitCode": 0
+  },
+  "recoveredDraftCheck": {
+    "exitCode": 0
+  },
+  "recoveredIntegrationCheck": {
+    "exitCode": 0
+  },
+  "logs": {
+    "regressionFirst": {
+      "file": "LV2-U33-regression-first.txt",
+      "sha256": "005071d3f00e7b6329cb46a9f56844f02774ab491934d150242db1c06dc22dd6"
+    },
+    "regressionRepair": {
+      "file": "LV2-U33-regression-repair.txt",
+      "sha256": "dc5dcf6ca2706f6eb0142f0dd621edbac731a5b0a184601a097d2c80520bce7a"
+    },
+    "python": {
+      "file": "LV2-U33-python-first.txt",
+      "sha256": "e7f4211f9844ed10660290a3969c63e439f1181fba6561a812a8b797181bbb01"
+    },
+    "lint": {
+      "file": "LV2-U33-lint-final.txt",
+      "sha256": "6696ec7825cbf15e847f7e2c88be6b86480a8508862998e5fa573c0c44d93f01"
+    },
+    "typecheck": {
+      "file": "LV2-U33-typecheck-final.txt",
+      "sha256": "da91f4c430838409de74534c4d8bed41445d7c7283163b2a63c446dde034587b"
+    },
+    "build": {
+      "file": "LV2-U33-build-final.txt",
+      "sha256": "8465a7a7a33af56736006d5d345e7a17bcc241d1cb07f14c81ce1e3bd6774911"
+    }
+  },
+  "scope": "Actual local process exits and exact failure/repair history; own remote CI still required."
+}

@@ -1,0 +1,714 @@
+{
+  "unit": "LV2-U34",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "baseCheckpoint": "3c696fed0a9a84cf39a543297ecad076d192a085",
+  "scope": "Exact before/after fields only; English/cloze/answers/translations and every formal headword POS/status remain unchanged. Generation alone does not apply or verify the App.",
+  "patches": [
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001069",
+      "before": {
+        "meaningZh": "氣球；使成氣球狀；膨脹如氣球；激增",
+        "meaningEn": "large tough nonrigid bag filled with gas or heated air; small thin inflatable rubber bag with narrow neck"
+      },
+      "after": {
+        "meaningZh": "（名詞）氣球；（另有動詞用法）使成氣球狀；膨脹如氣球；激增",
+        "meaningEn": "large tough nonrigid bag filled with gas or heated air; small thin inflatable rubber bag with narrow neck; separate verb uses: to swell into a rounded shape or increase rapidly."
+      },
+      "reason": "Separate the genuine verb uses from the n.-only headword without deleting them or expanding headword POS. Retain and label the verb meanings already present in Chinese.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/balloon; https://www.collinsdictionary.com/dictionary/english/balloon"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001664",
+      "before": {
+        "meaningEn": "to push something firmly with your finger, foot, or hand; newspapers, magazines, and the journalists who write for them; a machine used for printing",
+        "meaningZh": "壓；撳；按；人羣"
+      },
+      "after": {
+        "meaningEn": "to push something firmly with your finger, foot, or hand; newspapers, magazines, and the journalists who write for them; a machine used for printing; also (v.), to iron clothes or urge someone insistently to do something.",
+        "meaningZh": "壓；撳；按；人羣；（動詞）熨平；竭力勸說；（名詞）新聞界；記者"
+      },
+      "reason": "Cover the actually printed ironing and urging senses, retaining the existing noun and verb. Cover the printed noun and verb senses; retain the real crowd noun.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/press; https://www.collinsdictionary.com/dictionary/english/press"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001665",
+      "before": {
+        "meaningZh": "壓；榨；按；強制"
+      },
+      "after": {
+        "meaningZh": "壓；榨；按；強制；（名詞）壓力；壓迫"
+      },
+      "reason": "Supply the noun senses used by the current examples and original source.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/pressure"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001842",
+      "before": {
+        "meaningEn": "a type or class; a symbol that is the result of printing or engraving",
+        "meaningZh": "印；郵票；列印器；戳子",
+        "usagePattern": "stamp + N; stamp to V; a/the stamp",
+        "usagePatternZh": "蓋章於某物；蓋章以做某事；郵票／印章"
+      },
+      "after": {
+        "meaningEn": "a type or class; a symbol that is the result of printing or engraving; also (n.), a paid postal label or a device/mark for stamping; (v.), to apply a stamp or bring a foot down heavily.",
+        "meaningZh": "印；郵票；列印器；戳子；（動詞）蓋章；貼郵票；跺腳",
+        "usagePattern": "collect stamps; stamp a document; stamp one's foot",
+        "usagePatternZh": "集郵；在文件上蓋章；跺腳"
+      },
+      "reason": "Supply the selected postal and stamping meanings, preserving type/class and impression nouns. Make the printed verbs visible without changing the formal n./v. headword. Replace an unqualified infinitive template with the actually printed constructions.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/stamp; https://www.collinsdictionary.com/dictionary/english/stamp; Original content p302 actually viewed; https://www.collinsdictionary.com/dictionary/english/stamp"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001309",
+      "before": {
+        "meaningZh": "終止；終了；收場；末梢"
+      },
+      "after": {
+        "meaningZh": "終止；終了；收場；末梢；結局"
+      },
+      "reason": "Supply the printed story-ending sense; retain the other inherited noun senses.",
+      "evidence": "Original content p303 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001356",
+      "before": {
+        "meaningEn": "(adj.) happening at the end of a process or series of events, coming last; (n.) the last match in a competition, which decides the overall winner",
+        "meaningZh": "期末考試；結局；決賽；最後的"
+      },
+      "after": {
+        "meaningEn": "(adj.) happening at the end of a process or series of events, coming last; (n.) the last match in a competition, which decides the overall winner; also (adj., of a decision), settled and not to be changed; (n.), a final examination.",
+        "meaningZh": "期末考試；結局；決賽；最後的；（形容詞，指決定）不可更改的"
+      },
+      "reason": "Supply the printed decision and examination senses alongside the competition final. Retain the actually printed decision sense.",
+      "evidence": "Original content p303 actually viewed; Original content p303 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001079",
+      "before": {
+        "meaningZh": "戰役；戰鬥"
+      },
+      "after": {
+        "meaningZh": "戰役；戰鬥；（動詞）搏鬥；奮戰"
+      },
+      "reason": "Keep the verb visibly separate from the battle noun.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/battle"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001190",
+      "before": {
+        "meaningZh": "戰鬥；衝突；矛盾；爭執"
+      },
+      "after": {
+        "meaningZh": "戰鬥；衝突；矛盾；爭執；（動詞）相衝突；相抵觸"
+      },
+      "reason": "Cover the actual verbal schedule-conflict example.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/conflict"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001621",
+      "before": {
+        "meaningZh": "病人；承受者；忍耐的；容忍的"
+      },
+      "after": {
+        "meaningZh": "病人；承受者；忍耐的；容忍的；有耐心的"
+      },
+      "reason": "Supply the adjective used in the unchanged be-patient example; retain the rare recipient noun.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/patient"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001540",
+      "before": {
+        "meaningZh": "醫生；體格檢查；醫學的；內科的",
+        "meaningEn": "relating to medicine, illnesses, or their treatment"
+      },
+      "after": {
+        "meaningZh": "（形容詞）醫學的；內科的；（另有名詞用法）體格檢查；醫生",
+        "meaningEn": "relating to medicine, illnesses, or their treatment; separate noun uses: a medical examination, or a practitioner of medicine (recorded in The Century Dictionary)."
+      },
+      "reason": "Keep the selected adjective visible and preserve the genuine separate noun meanings. The practitioner sense was read in an attributed Century transcription, not a scanned original.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/medical; https://www.wordnik.com/words/medical"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001072",
+      "before": {
+        "meaningEn": "United States composer (1910-1981); a hairdresser who cuts hair and shaves beards as a trade",
+        "usagePattern": "a/the barber; barber of N",
+        "usagePatternZh": "一位理髮師；……的理髮師"
+      },
+      "after": {
+        "meaningEn": "a hairdresser who cuts hair and shaves beards as a trade; Barber, as a separate capitalized proper name, can refer to the United States composer Samuel Barber (1910–1981).",
+        "usagePattern": "go to the barber's; ask a barber to cut one's hair",
+        "usagePatternZh": "去理髮店；請理髮師剪頭髮"
+      },
+      "reason": "Lead with the ordinary occupation and retain the genuine separate composer name rather than deleting it.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/barber"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001321",
+      "before": {
+        "meaningEn": "(Old Testament) Adam's wife in Judeo-Christian mythology: the first woman and mother of the human race; God created Eve from Adam's rib a...; the day before",
+        "usagePattern": "an/the eve; eve of N",
+        "usagePatternZh": "前夕；……的前夕"
+      },
+      "after": {
+        "meaningEn": "the evening, day, or period immediately before an event; separately, Eve (capitalized) is the first woman and Adam's wife in the Bible.",
+        "usagePattern": "on the eve of N; on New Year's Eve; on Christmas Eve",
+        "usagePatternZh": "在……的前夕；在新年前夕；在平安夜"
+      },
+      "reason": "Replace a visibly truncated entry with sourced concise coverage of both the selected common noun and the separate capitalized Biblical name; do not invent the missing original tail.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/eve"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001549",
+      "before": {
+        "meaningZh": "午夜；子夜；半夜；午夜的",
+        "meaningEn": "12 o'clock at night; the middle of the night",
+        "usagePattern": "a/the midnight; midnight of N",
+        "usagePatternZh": "午夜；……的午夜"
+      },
+      "after": {
+        "meaningZh": "（名詞）午夜；子夜；半夜；（另有形容詞用法）午夜的",
+        "meaningEn": "12 o'clock at night; the middle of the night; separate adjective use: occurring at midnight.",
+        "usagePattern": "at midnight; after midnight; a midnight deadline",
+        "usagePatternZh": "在午夜；午夜過後；午夜的截止時間"
+      },
+      "reason": "Distinguish the genuine adjective from the n.-only headword and replace generic noun templates.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/midnight"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001020",
+      "before": {
+        "meaningZh": "領先的；預先的；向前的；領先",
+        "meaningEn": "having the leading position or higher score in a contest; at or in the front",
+        "usagePattern": "V + ahead",
+        "usagePatternZh": "向前……／領先……"
+      },
+      "after": {
+        "meaningZh": "在前面；向前；領先；預先",
+        "meaningEn": "(adv.) in front or farther forward; in a leading position; in advance of a later event.",
+        "usagePattern": "look/go ahead; ahead of N; plan ahead",
+        "usagePatternZh": "向前看／先走或開始；在……前面；提前規劃"
+      },
+      "reason": "Use adverb wording for the existing adv. headword while preserving all inherited meanings.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/ahead"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003800",
+      "before": {
+        "meaningEn": "an angry dispute; an arrow that is shot from a crossbow; has a head with four edges",
+        "usagePattern": "quarrel + N; quarrel to V; a/the quarrel",
+        "usagePatternZh": "與某人吵架；吵著要做某事；一場爭吵"
+      },
+      "after": {
+        "meaningEn": "an angry dispute; an arrow that is shot from a crossbow; has a head with four edges; also (v.), to argue angrily or disagree; a separate historical noun can denote a four-sided chisel with a diamond-shaped end.",
+        "usagePattern": "quarrel with sb about/over sth; have a quarrel with sb",
+        "usagePatternZh": "與某人因某事爭吵；與某人發生爭執"
+      },
+      "reason": "Keep the genuine chisel noun and distinguish current intransitive argument patterns from historical transitive uses. Replace unsupported generic core-use templates with the viewed printed pattern; do not claim historical transitive uses never existed.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/quarrel; https://www.wordnik.com/words/quarrel; Original content p304 actually viewed; https://www.collinsdictionary.com/dictionary/english/quarrel"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W005775",
+      "before": {
+        "meaningEn": "go for and bring back; run after, pick up, and bring to the master",
+        "usagePattern": "retrieve + N; retrieve to V",
+        "usagePatternZh": "取回……；retrieve 後接 to 不定詞"
+      },
+      "after": {
+        "meaningEn": "go for and bring back; run after, pick up, and bring to the master; also, to recover stored information or restore a situation to a better state.",
+        "usagePattern": "retrieve N from N; retrieve information; retrieve a situation",
+        "usagePatternZh": "從……取回……；擷取資訊；挽回局面"
+      },
+      "reason": "Cover retrieval and repair senses while retaining the genuine hunting-dog use. Use normal object constructions rather than an unqualified retrieve-to-infinitive rule.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/retrieve; https://www.collinsdictionary.com/dictionary/english/retrieve"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001085",
+      "before": {
+        "usagePattern": "a/the beginner; beginner of N",
+        "usagePatternZh": "初學者；……的初學者"
+      },
+      "after": {
+        "usagePattern": "a complete beginner; a beginner at N; suitable for beginners",
+        "usagePatternZh": "完全的初學者；某方面的初學者；適合初學者"
+      },
+      "reason": "Use normal novice constructions while retaining the genuine one-who-begins/originator meaning.",
+      "evidence": "https://www.merriam-webster.com/dictionary/beginner"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001656",
+      "before": {
+        "usagePattern": "a/the postcard; postcard of N",
+        "usagePatternZh": "一張／這張明信片；……的明信片"
+      },
+      "after": {
+        "usagePattern": "send sb a postcard; send a postcard to sb; a postcard from N",
+        "usagePatternZh": "寄明信片給某人；寄明信片給某人；來自……的明信片"
+      },
+      "reason": "Replace generic noun templates with standard postcard constructions.",
+      "evidence": "Original content p302 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001366",
+      "before": {
+        "usagePattern": "a/the flu; flu of N",
+        "usagePatternZh": "流行性感冒；……的流感"
+      },
+      "after": {
+        "usagePattern": "have/get/catch (the) flu; flu symptoms",
+        "usagePatternZh": "罹患／感染流感；流感症狀"
+      },
+      "reason": "Use the actually printed disease construction rather than a generic article/of template.",
+      "evidence": "Original content p305 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001849",
+      "before": {
+        "usagePattern": "a/the stomachache; stomachache of N",
+        "usagePatternZh": "胃痛；……的胃痛"
+      },
+      "after": {
+        "usagePattern": "have/get a stomachache; a bad stomachache",
+        "usagePatternZh": "胃痛／肚子痛；嚴重的胃痛"
+      },
+      "reason": "Use the actual ordinary ache constructions instead of an unspecified stomachache-of-N template.",
+      "evidence": "Original content p305 actually viewed"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002623",
+      "before": {
+        "usagePattern": "a/the patience; patience of N",
+        "usagePatternZh": "耐性；……的耐性"
+      },
+      "after": {
+        "usagePattern": "have patience with sb; lose one's patience; with patience",
+        "usagePatternZh": "對某人有耐心；失去耐心；耐心地"
+      },
+      "reason": "Use the mass-noun patience constructions rather than an unqualified article template.",
+      "evidence": "Original content p305 actually viewed; existing patient/patience contrast"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001655",
+      "before": {
+        "meaningEn": "mail delivered or collected; to put up a notice or share information in public, such as online",
+        "meaningZh": "（名詞）柱；杆；準星；郵件；（動詞）郵寄；張貼；發布"
+      },
+      "after": {
+        "meaningEn": "mail delivered or collected; to put up a notice or share information in public, such as online; also (n.), a job or official position; in older adverb use, with speed.",
+        "meaningZh": "（名詞）柱；杆；準星；郵件；（動詞）郵寄；張貼；發布；（名詞）郵政；職位；（較舊副詞用法）快速地"
+      },
+      "reason": "Restore printed job and rapid-adverb coverage without deleting the pole/sight nouns or changing headword POS. Retain the printed adverb, qualifying its older register as in the source.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/post; https://www.collinsdictionary.com/dictionary/english/post"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003758",
+      "before": {
+        "meaningEn": "the charge for mailing something; a small adhesive token stuck on a letter or package to indicate that that postal fees have been paid",
+        "usagePattern": "a/the postage; postage of N",
+        "usagePatternZh": "郵資；……的郵資"
+      },
+      "after": {
+        "meaningEn": "the charge for mailing something; a small adhesive token stuck on a letter or package to indicate that postal fees have been paid",
+        "usagePattern": "pay the postage; postage and packing; enough postage",
+        "usagePatternZh": "支付郵資；郵資與包裝費；足夠的郵資"
+      },
+      "reason": "Remove one duplicated that and replace the generic count-noun template. Preserve the genuine stamps/indicia meaning.",
+      "evidence": "https://www.merriam-webster.com/dictionary/postage"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000532",
+      "before": {
+        "meaningZh": "藥；醫學；內科；給...用藥",
+        "meaningEn": "a drug or other substance used to treat or prevent disease; the science of diagnosing, treating, and preventing illness"
+      },
+      "after": {
+        "meaningZh": "（名詞）藥；醫學；內科；（另有動詞用法）給……用藥",
+        "meaningEn": "a drug or other substance used to treat or prevent disease; the science of diagnosing, treating, and preventing illness; separate verb use: to give medicine to someone."
+      },
+      "reason": "Preserve the genuine separate verb instead of presenting it as part of the n.-only headword. No verbForms or headword-POS expansion.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/medicine"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000383",
+      "before": {
+        "meaningEn": "(n.) the part of the body containing the brain and face; the person in charge of a group; (v.) to move in a particular direction"
+      },
+      "after": {
+        "meaningEn": "(n.) the part of the body containing the brain and face; the person in charge of a group; (v.) to move in a particular direction; also (v.), to be in charge of an organization or department."
+      },
+      "reason": "Cover the already existing heads-a-department example in the definition.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/head"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXc482bb84",
+      "before": {
+        "sensePos": "v.",
+        "sentenceEn": "The press reported that the two countries had signed an important agreement.",
+        "blankSentence": "The _____ reported that the two countries had signed an important agreement.",
+        "answer": "press"
+      },
+      "after": {
+        "sensePos": "n."
+      },
+      "reason": "Correct the actual cloze word in the complete unchanged sentence; preserve headword POS and empty hints.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/press"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX9e9345d7",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "His parents pressured him to become a doctor.",
+        "blankSentence": "His parents _____ him to become a doctor.",
+        "answer": "pressured"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Correct the actual cloze word in the complete unchanged sentence; preserve headword POS and empty hints.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/pressure"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX932b6c6f",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "It pained him to see his dog suffer from the long illness.",
+        "blankSentence": "It _____ him to see his dog suffer from the long illness.",
+        "answer": "pained"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Correct the actual cloze word in the complete unchanged sentence; preserve headword POS and empty hints.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/pain"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX7be81d21",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "She has been battling a serious illness for two years.",
+        "blankSentence": "She has been _____ a serious illness for two years.",
+        "answer": "battling"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Correct the actual cloze word in the complete unchanged sentence; preserve headword POS and empty hints.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/battle"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX3cb8c15f",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "My weekend plans conflict with my part-time job schedule this Saturday.",
+        "blankSentence": "My weekend plans _____ with my part-time job schedule this Saturday.",
+        "answer": "conflict"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Correct the actual cloze word in the complete unchanged sentence; preserve headword POS and empty hints.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/conflict"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXbb57a0ec",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "Parents often fear that their children will get hurt while playing outside.",
+        "blankSentence": "Parents often _____ that their children will get hurt while playing outside.",
+        "answer": "fear"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Correct the actual cloze word in the complete unchanged sentence; preserve headword POS and empty hints.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/fear"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXc80a6439",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "Please be patient with your little brother while he learns to ride a bike.",
+        "blankSentence": "Please be _____ with your little brother while he learns to ride a bike.",
+        "answer": "patient"
+      },
+      "after": {
+        "sensePos": "adj."
+      },
+      "reason": "Correct the actual cloze word in the complete unchanged sentence; preserve headword POS and empty hints.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/patient"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX60dcd308",
+      "before": {
+        "sensePos": "n.",
+        "sentenceEn": "Rest and warm soup finally cured my terrible cold last week.",
+        "blankSentence": "Rest and warm soup finally _____ my terrible cold last week.",
+        "answer": "cured"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "Correct the actual cloze word in the complete unchanged sentence; preserve headword POS and empty hints.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/cure"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX12efbd6e",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "頭；頭腦；領袖；腦袋",
+        "sentenceEn": "Robert has many thoughts in his head.",
+        "blankSentence": "Robert has many thoughts in his _____.",
+        "answer": "head"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "腦中（in one's head）"
+      },
+      "reason": "Narrow the mixed headword POS and existing broad hint to the actual target, retaining all other head meanings.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/head"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX4b266bd8",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "頭；頭腦；領袖；腦袋",
+        "sentenceEn": "Who is the head of this department?",
+        "blankSentence": "Who is the _____ of this department?",
+        "answer": "head"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "主管；領導人"
+      },
+      "reason": "Narrow the mixed headword POS and existing broad hint to the actual target, retaining all other head meanings.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/head"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX544057bc",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "頭；頭腦；領袖；腦袋",
+        "sentenceEn": "Mr. Thomas heads a department of 55 people.",
+        "blankSentence": "Mr. Thomas _____ a department of 55 people.",
+        "answer": "heads"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "管理；領導"
+      },
+      "reason": "Narrow the mixed headword POS and existing broad hint to the actual target, retaining all other head meanings.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/head"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX5a761d0c",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "頭；頭腦；領袖；腦袋",
+        "sentenceEn": "Trevor nodded his head while Bart talked to him.",
+        "blankSentence": "Trevor nodded his _____ while Bart talked to him.",
+        "answer": "head"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "頭"
+      },
+      "reason": "Narrow the mixed headword POS and existing broad hint to the actual target, retaining all other head meanings.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/head"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX8912d962",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "頭；頭腦；領袖；腦袋",
+        "sentenceEn": "Whatever happens, keep your head. Don't lose your head.",
+        "blankSentence": "Whatever happens, keep your _____. Don't lose your head.",
+        "answer": "head"
+      },
+      "after": {
+        "sensePos": "n.",
+        "meaningHint": "冷靜；理智（keep/lose one's head）"
+      },
+      "reason": "Narrow the mixed headword POS and existing broad hint to the actual target, retaining all other head meanings.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/head"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EXf4c21606",
+      "before": {
+        "sensePos": "n./v.",
+        "meaningHint": "頭；頭腦；領袖；腦袋",
+        "sentenceEn": "Let's head for the beach this weekend.",
+        "blankSentence": "Let's _____ for the beach this weekend.",
+        "answer": "head"
+      },
+      "after": {
+        "sensePos": "v.",
+        "meaningHint": "前往（head for）"
+      },
+      "reason": "Narrow the mixed headword POS and existing broad hint to the actual target, retaining all other head meanings.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/head"
+    },
+    {
+      "dataset": "examples",
+      "key": "exampleId",
+      "id": "EX34dbed14",
+      "before": {
+        "status": "draft",
+        "sentenceEn": "The cut on his knee healed within a week.",
+        "blankSentence": "The cut on his knee _____ within a week.",
+        "answer": "healed"
+      },
+      "after": {
+        "status": "reviewed"
+      },
+      "reason": "Check the independent knee-wound practice without calling it the original106 exam sentence.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/heal"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000383-1",
+      "before": {
+        "note": "待拆分；主表字義：頭；頭腦；領袖；腦袋"
+      },
+      "after": {
+        "note": "已核此既有 n. 義項及完整英中例句；保留其他義項、詞頭詞性與整詞狀態，本義核對不等於整卡全欄通過。來源：https://www.collinsdictionary.com/dictionary/english/head"
+      },
+      "reason": "Replace stale split-pending or unrelated-author wording only for the actual existing sense.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/head"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000383-2",
+      "before": {
+        "note": "待拆分；主表字義：頭；頭腦；領袖；腦袋"
+      },
+      "after": {
+        "note": "已核此既有 v. 義項及完整英中例句；保留其他義項、詞頭詞性與整詞狀態，本義核對不等於整卡全欄通過。來源：https://www.collinsdictionary.com/dictionary/english/head"
+      },
+      "reason": "Replace stale split-pending or unrelated-author wording only for the actual existing sense.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/head"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000868-1",
+      "before": {
+        "note": "2026-11-05：核對此既有名詞／動詞義、完整英中例句及實際挖空詞。author 的撰寫動詞有正式詞典正文支持，不因舊註「罕用」刪除。僅核本義，未擴為整詞、其他罕義或官方考題來源認證。"
+      },
+      "after": {
+        "note": "已核此既有 n. 義項及完整英中例句；保留其他義項、詞頭詞性與整詞狀態，本義核對不等於整卡全欄通過。來源：https://www.collinsdictionary.com/dictionary/english/test"
+      },
+      "reason": "Replace stale split-pending or unrelated-author wording only for the actual existing sense.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/test"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W000868-2",
+      "before": {
+        "note": "2026-11-05：核對此既有名詞／動詞義、完整英中例句及實際挖空詞。author 的撰寫動詞有正式詞典正文支持，不因舊註「罕用」刪除。僅核本義，未擴為整詞、其他罕義或官方考題來源認證。"
+      },
+      "after": {
+        "note": "已核此既有 v. 義項及完整英中例句；保留其他義項、詞頭詞性與整詞狀態，本義核對不等於整卡全欄通過。來源：https://www.collinsdictionary.com/dictionary/english/test"
+      },
+      "reason": "Replace stale split-pending or unrelated-author wording only for the actual existing sense.",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/test"
+    },
+    {
+      "dataset": "senses",
+      "key": "senseId",
+      "id": "W002396-1",
+      "before": {
+        "examEvidence": "學測106 文意選填Q35",
+        "note": "考點：傷口或身體恢復",
+        "status": "draft"
+      },
+      "after": {
+        "examEvidence": "學測106 文意選填Q35，印刷第3頁，J＝healing；官方試題：https://www.ceec.edu.tw/files/file_pool/1/0j076574214786979208/02-106%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf；官方答案：https://www.ceec.edu.tw/files/file_pool/1/0j076574215321858235/02-106%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88.pdf",
+        "note": "已實讀官方PDF文字層的洋蔥與古埃及題組、選項和答案。healing power 指療癒／治療的力量，healing 在題中修飾 power；保留 heal 的動詞詞頭與本義，不新增 heal 本身的形容詞詞性，也不把古人信念當作療效證明。EX34dbed14 是另寫的膝蓋傷口練習，不是原題引用。",
+        "status": "reviewed"
+      },
+      "reason": "Verify the exact official source with the form/function and historical-belief boundaries explicit.",
+      "evidence": "https://www.ceec.edu.tw/files/file_pool/1/0j076574214786979208/02-106%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf; https://www.ceec.edu.tw/files/file_pool/1/0j076574215321858235/02-106%E5%AD%B8%E6%B8%AC%E8%8B%B1%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88.pdf"
+    }
+  ]
+}

@@ -1,0 +1,763 @@
+{
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "integrationBaseCheckpoint": "062276ee1c3fcc91ed5eb115b8f7d4f39a8afb74",
+  "unit": "LV1-U07-form-followup",
+  "patches": [
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000008",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "act",
+          "past": "acted",
+          "pastParticiple": "acted",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/act",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/act"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000041",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "appear",
+          "past": "appeared",
+          "pastParticiple": "appeared",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/appear",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/appear"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000046",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "arrive",
+          "past": "arrived",
+          "pastParticiple": "arrived",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/arrive",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/arrive"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000082",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "believe",
+          "past": "believed",
+          "pastParticiple": "believed",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/believe",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/believe"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000146",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "carry",
+          "past": "carried",
+          "pastParticiple": "carried",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/carry",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/carry"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000387",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "hear",
+          "past": "heard",
+          "pastParticiple": "heard",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/hear",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/hear"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000432",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "interest",
+          "past": "interested",
+          "pastParticiple": "interested",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/interest",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/interest"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000476",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "lead",
+          "past": "led",
+          "pastParticiple": "led",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/lead",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 僅限目前英釋及 usagePattern 明示的帶領、領導、導致動詞，原形讀 /liːd/。中文中的鉛／鉛條屬另一同形名詞，不把 led 套作其派生金屬動詞的詞形，也不在本次新增金屬動詞義。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/lead ; https://www.collinsdictionary.com/dictionary/english/lead"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000498",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "listen",
+          "past": "listened",
+          "pastParticiple": "listened",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/listen",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/listen"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000525",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "matter",
+          "past": "mattered",
+          "pastParticiple": "mattered",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/matter",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/matter"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000529",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "mean",
+          "past": "meant",
+          "pastParticiple": "meant",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/mean",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/mean"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000534",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "meet",
+          "past": "met",
+          "pastParticiple": "met",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/meet",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/meet"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000541",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "mind",
+          "past": "minded",
+          "pastParticiple": "minded",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/mind",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/mind"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000569",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "name",
+          "past": "named",
+          "pastParticiple": "named",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/name",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/name"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000613",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "order",
+          "past": "ordered",
+          "pastParticiple": "ordered",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/order",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/order"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000632",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "pay",
+          "past": "paid",
+          "pastParticiple": "paid",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/pay",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 付款／支付／補償義用 paid／paid。payed 在來源中受航海義或過時用法限制，不列成現代付款義的並列可換形式；不更動 pay/payment 拆義。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/pay ; https://www.collinsdictionary.com/dictionary/english/pay"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000672",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "power",
+          "past": "powered",
+          "pastParticiple": "powered",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/power",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/power"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000699",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "reach",
+          "past": "reached",
+          "pastParticiple": "reached",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/reach",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/reach"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000724",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "room",
+          "past": "roomed",
+          "pastParticiple": "roomed",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/room",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/room"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000732",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "run",
+          "past": "ran",
+          "pastParticiple": "run",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/run",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/run ; https://www.collinsdictionary.com/dictionary/english/run"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000755",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "set",
+          "past": "set",
+          "pastParticiple": "set",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/set",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. set／set／set，不與 sit／sat／sat 混合；本次不為名詞 set 或名詞 cloze 更換語法。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/set"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000784",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "sit",
+          "past": "sat",
+          "pastParticiple": "sat",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/sit",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/sit"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000822",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "stand",
+          "past": "stood",
+          "pastParticiple": "stood",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/stand",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/stand"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W000920",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "trouble",
+          "past": "troubled",
+          "pastParticiple": "troubled",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/trouble",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/trouble"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001086",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "behave",
+          "past": "behaved",
+          "pastParticiple": "behaved",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/behave",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/behave"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001523",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "manage",
+          "past": "managed",
+          "pastParticiple": "managed",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/manage",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/manage"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001598",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "operate",
+          "past": "operated",
+          "pastParticiple": "operated",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/operate",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/operate"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001768",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "seem",
+          "past": "seemed",
+          "pastParticiple": "seemed",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/seem",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/seem"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W001779",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "serve",
+          "past": "served",
+          "pastParticiple": "served",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/serve",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/serve"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W002047",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "attract",
+          "past": "attracted",
+          "pastParticiple": "attracted",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/attract",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/attract"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003270",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "demand",
+          "past": "demanded",
+          "pastParticiple": "demanded",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/demand",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/demand"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003306",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "disorder",
+          "past": "disordered",
+          "pastParticiple": "disordered",
+          "sourceRef": "https://www.collinsdictionary.com/conjugation/english/disorder",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "evidence": "https://www.collinsdictionary.com/conjugation/english/disorder ; https://www.collinsdictionary.com/conjugation/english/disorder ; https://www.collinsdictionary.com/dictionary/english/disorder"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003352",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "encounter",
+          "past": "encountered",
+          "pastParticiple": "encountered",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/encounter",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/encounter"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003553",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "intend",
+          "past": "intended",
+          "pastParticiple": "intended",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/intend",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/intend"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W003959",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "tolerate",
+          "past": "tolerated",
+          "pastParticiple": "tolerated",
+          "sourceRef": "https://www.collinsdictionary.com/dictionary/english/tolerate",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/tolerate"
+    },
+    {
+      "dataset": "words",
+      "key": "wordId",
+      "id": "W004780",
+      "before": {
+        "verbForms": {
+          "$absent": true
+        }
+      },
+      "after": {
+        "verbForms": {
+          "base": "sequence",
+          "past": "sequenced",
+          "pastParticiple": "sequenced",
+          "sourceRef": "https://www.collinsdictionary.com/conjugation/english/sequence",
+          "status": "approved"
+        }
+      },
+      "reason": "Add exact sourced principal parts to the currently absent key; preserve all other fields. 只適用於本列動詞用法；不把名詞複數或形容詞當作動詞三態。",
+      "evidence": "https://www.oxfordlearnersdictionaries.com/definition/english/sequence_2 ; https://www.collinsdictionary.com/conjugation/english/sequence ; https://www.collinsdictionary.com/conjugation/english/sequence ; https://www.collinsdictionary.com/dictionary/english/sequence"
+    }
+  ]
+}

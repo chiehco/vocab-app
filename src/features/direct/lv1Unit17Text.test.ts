@@ -12,6 +12,7 @@ import {progressDb} from '../../db/progressDb';
 import {ensureContentAvailable,refreshInstalledContent} from '../../db/seed';
 import {siegeUnitWords} from '../siege/model';
 import {gradeFlashcard} from '../../checkin/recordActivity';
+import corrections from '../../../docs/unit-audit-20261105/LV1-U17-curriculum-patches.json';
 const unit=findUnit(17,'LV1')!;const vocabulary=unit.items.filter(i=>i.kind==='vocabulary');
 beforeEach(async()=>{await Promise.all([...contentDb.tables,...progressDb.tables].map(t=>t.clear()));});
 afterEach(()=>vi.unstubAllGlobals());
@@ -28,17 +29,17 @@ it('keeps checked original heads, printed numbers, content pages and checked sou
 });
 it('preserves printed supplements, articles, capitalization and use pages',()=>{
  expect(vocabulary.slice(39).map(i=>[i.displayWord,i.sourcePage,i.printedLabel])).toEqual(source.related.map(r=>[r.word,r.sourcePage,r.printedLabel]));
- expect(unit.items.filter(i=>i.kind==='grammar').map(i=>[i.pattern,i.sourcePage])).toEqual(source.usage.map(r=>[r.label,r.sourcePage]));
+ expect(unit.items.filter(i=>i.kind==='grammar').map(i=>[i.pattern,i.sourcePage])).toEqual(source.usage.map((r,index)=>[corrections.patches.find(p=>p.id===`LI-LV1U17-G${String(index+1).padStart(3,'0')}`)?.after.pattern??r.label,r.sourcePage]));
  for(const word of ["incorrect", "tiring", "firstly", "second-hand", "secondly", "thirdly", "steadily", "euro", "correctly", "correction", "mailman", "postman", "angrily", "python", "fatty", "low-fat", "A.M.", "AM", "P.M.", "PM", "tyre", "bottleneck", "bottled water"]) expect(vocabulary.find(i=>i.displayWord===word)?.officialWordId).toBeNull();
 });
-it('uses existing official identities and keeps 21 unmapped supplements pending',()=>{
+it('uses existing identities and keeps 21 source-gloss-verified supplements unmapped',()=>{
  for(const [index,row] of [...source.headwords,...source.related].entries()) {
   expect(vocabulary[index].officialWordId).toBe(row.officialWordId);if(!row.officialWordId)continue;
   const word=pack.words.find(w=>w.wordId===row.officialWordId)!;expect(word.word).toBe(row.officialWord);
   expect(word.word===row.word||word.wordVariants.includes(row.word)).toBe(true);
  }
  expect(vocabulary.filter(i=>!i.officialWordId)).toHaveLength(23);expect(vocabulary.filter(i=>i.meaningSource==='unmapped_supplement')).toHaveLength(21);
- expect(vocabulary.filter(i=>i.meaningSource==='unmapped_supplement').every(i=>i.targetMeaningZh==='教材補充詞；義項待核對。')).toBe(true);
+ for(const item of vocabulary.filter(i=>i.meaningSource==='unmapped_supplement')){const p=corrections.patches.find(p=>p.id===item.learningItemId)!;expect(item.targetMeaningZh).toBe(p.after.targetMeaningZh);expect(item.chapterMeaningsZh).toBe(p.after.chapterMeaningsZh);expect(item.officialWordId).toBeNull();expect(item.practiceMode).toBe('read_only');}
 });
 it('adopts no pictures, running examples, sense IDs or textbook questions',()=>{
  expect(unit.deliveryMode).toBe('text_only');expect(unit.questions).toEqual([]);expect(practiceIds(unit.items)).toEqual([]);

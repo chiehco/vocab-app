@@ -1,0 +1,351 @@
+{
+  "unit": "LV2-U30",
+  "checkpointAt": "2026-11-06T04:41:24.239Z",
+  "priorCheckpoint": "a0ce2de14c050686aedefe58a05255163e55ad34",
+  "priorCheckpointFullCi": {
+    "commit": "a0ce2de14c050686aedefe58a05255163e55ad34",
+    "run": 42157023759,
+    "job": 127693498542,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42157023759/job/127693498542",
+    "status": "completed",
+    "conclusion": "success",
+    "checkoutShaMatched": true,
+    "testFiles": 219,
+    "tests": 1779,
+    "python": [
+      14,
+      7,
+      44,
+      10
+    ],
+    "steps": [
+      {
+        "name": "Set up job",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/checkout@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/setup-node@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm ci",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm ci --prefix services/pageviews-cloudflare",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm test --prefix services/pageviews-cloudflare",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/setup-python@v5",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m pip install openpyxl==3.1.5 Pillow==12.0.0",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m unittest discover -s scripts -p 'test_apply_lv3_*.py'",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m unittest discover -s scripts -p 'test_apply_lv4_*.py'",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m unittest discover -s scripts -p 'test_apply_unit_audit.py'",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m unittest discover -s scripts -p 'test_build_sa_pack_lv5_legacy.py'",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python scripts/prepare_recovered_unit_drafts.py --check",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python scripts/integrate_recovered_units.py --check",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm run lint",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm run typecheck",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm run test -- --maxWorkers=1 --testTimeout=15000",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm run build",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/setup-python@v5",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/setup-node@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/checkout@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Complete job",
+        "conclusion": "success"
+      }
+    ],
+    "buildSummaryAt": "2026-11-06T03:44:55.6855693Z",
+    "completedAt": "2026-11-06T03:45:01Z",
+    "fullDecodedLogActuallyRead": true,
+    "logSha256": "24765125c9b99115b9c45e92c45e98890904bf3bd54ce4c1c60867d5b5fbe8be",
+    "recordedAt": "2026-11-06T03:59:48.338Z"
+  },
+  "newCheckpointFullCi": {
+    "commit": "0fdb2155318c0fcd8899772a6b04fd32ae5dae49",
+    "run": 42164314846,
+    "job": 127717088395,
+    "url": "https://github.com/chiehco/vocab-app/actions/runs/42164314846/job/127717088395",
+    "status": "completed",
+    "conclusion": "success",
+    "checkoutShaMatched": true,
+    "testFiles": 220,
+    "tests": 1788,
+    "python": [
+      14,
+      7,
+      47,
+      10
+    ],
+    "steps": [
+      {
+        "name": "Set up job",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/checkout@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/setup-node@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm ci",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm ci --prefix services/pageviews-cloudflare",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm test --prefix services/pageviews-cloudflare",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/setup-python@v5",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m pip install openpyxl==3.1.5 Pillow==12.0.0",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m unittest discover -s scripts -p 'test_apply_lv3_*.py'",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m unittest discover -s scripts -p 'test_apply_lv4_*.py'",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m unittest discover -s scripts -p 'test_apply_unit_audit.py'",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python -m unittest discover -s scripts -p 'test_build_sa_pack_lv5_legacy.py'",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python scripts/prepare_recovered_unit_drafts.py --check",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run python scripts/integrate_recovered_units.py --check",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm run lint",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm run typecheck",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm run test -- --maxWorkers=1 --testTimeout=15000",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm run build",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/setup-python@v5",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/setup-node@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/checkout@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Complete job",
+        "conclusion": "success"
+      }
+    ],
+    "buildSummaryAt": "2026-11-06T05:01:12.8885459Z",
+    "completedAt": "2026-11-06T05:01:18Z",
+    "fullDecodedLogParsed": true,
+    "logSha256": "3494f4f1a87bee0f4088176861277b2bf0f5e8ed945ae0a96fb16a38622729d9",
+    "recordedAt": "2026-11-06T05:03:28.149Z"
+  },
+  "state": "precise_field_corrections_saved_all_source_and_general_cards_reopened_local_checks_passed",
+  "scope": {
+    "sourceItems": 157,
+    "vocabulary": 102,
+    "grammar": 55,
+    "formalWords": 85,
+    "examples": 159,
+    "notesRead": 105,
+    "sourcePages": 9,
+    "sourceReadableHalves": 18,
+    "generalImagesActuallyViewed": 40,
+    "wholeWordApproval": false,
+    "deliveryMode": "text_only",
+    "practiceMode": "read_only"
+  },
+  "counts": {
+    "mainRows": 48,
+    "mainFields": 90,
+    "wordRows": 29,
+    "clozePos": 9,
+    "hintsRefined": 3,
+    "practiceStatuses": 2,
+    "senseRows": 6,
+    "officialExamSources": 2,
+    "notes": 4,
+    "noteFields": 5,
+    "newFormKeys": 17,
+    "translationRows": 1,
+    "formalPatchOperations": 70,
+    "formalUniqueRows": 62,
+    "formalFields": 113,
+    "curriculumRows": 78,
+    "curriculumFields": 115,
+    "printedSupplementGlosses": 17,
+    "printedSupplementPos": 14,
+    "grammarChinese": 55,
+    "exactPrintedPatternCorrections": 0,
+    "dictionarySnapshots": 6,
+    "generalImagePairsReplaced": 1
+  },
+  "manifests": [
+    "LV2-U30-patches.json",
+    "LV2-U30-notes-patches.json",
+    "LV2-U30-translations-patches.json",
+    "LV2-U30-verified-forms-patches.json",
+    "LV2-U30-curriculum-patches.json"
+  ],
+  "evidence": [
+    "LV2-U30-source-research.json",
+    "LV2-U30-original-review.json",
+    "LV2-U30-original-image-review.json",
+    "validation/LV2-U30-reopen-summary.json",
+    "validation/LV2-U30-exact-inverse.json",
+    "validation/LV2-U30-persistence-summary.json",
+    "validation/LV2-U30-local-checks.json",
+    "validation/LV2-U30-initial-check-failures.json"
+  ],
+  "preserved": {
+    "all7871EnglishExamplesAndClozeAnswers": true,
+    "all6090HeadwordPosAndStatuses": true,
+    "rawSource": true,
+    "oldParticularImage": true,
+    "allHistoricalHashes": true,
+    "trueAbsentKeyDeletion": true,
+    "textOnlyAndReadOnly": true,
+    "nullSupplementIdentities": 17,
+    "publicationOperations": false,
+    "all39OtherImageBindingsAndCaptionBoundaries": true,
+    "captionlessCourageImageAndHeroUnchanged": true
+  },
+  "decisions": {
+    "quietMuseumTranslation": "Retain the natural people-few rendering: the directly read dictionary also supports quiet as not busy/inactive. The initial literal-only proposal was withdrawn before application.",
+    "particularly": "The existing exam answer is a derived adverb, visibly qualified in this exact sense; the particular headword remains adj. and all practice English is retained.",
+    "patternAndStress": "Verified existing noun/verb senses remain separated; real verb senses are not removed as supposedly rare contamination.",
+    "model": "Only science-fair wording in the exact practice translation is widened to science project; no image is loaded or rebound for this row."
+  },
+  "pending": [
+    {
+      "word": "growth",
+      "field": "meaningZh",
+      "value": "等比級數",
+      "reason": "No exact growth=geometric progression sense was established. Related mathematical growth alone does not prove this inherited gloss; preserve pending, do not delete."
+    },
+    {
+      "word": "eastern",
+      "field": "meaningZh",
+      "value": "東正教徒",
+      "reason": "Inherited separate noun scope needs exact source; do not delete or add formal headword POS."
+    },
+    {
+      "word": "special",
+      "field": "meaningZh",
+      "value": "專輯",
+      "reason": "Prior source research remains pending; do not falsely clear this in U30."
+    },
+    {
+      "word": "marginal",
+      "field": "meaningZh",
+      "value": "緣的",
+      "reason": "Inherited awkward Chinese retained while verified margin/economic senses can be separately covered."
+    }
+  ],
+  "sourceRunningExampleQuestions": [
+    {
+      "page": 262,
+      "observation": "Printed English birthday tomorrow but Chinese says today; source running example unadopted, no product sentence substituted."
+    },
+    {
+      "page": 268,
+      "observation": "Printed English bone in my foot but Chinese says leg; running example remains unadopted."
+    }
+  ],
+  "next": {
+    "unit": "LV2-U31",
+    "word": "triangle",
+    "state": "not_counted_as_reviewed"
+  },
+  "deployment": {
+    "merged": false,
+    "deployed": false,
+    "frozen3106CheckpointUnchanged": true
+  }
+}

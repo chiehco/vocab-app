@@ -1,0 +1,175 @@
+{
+  "manifest": "docs\\unit-audit-20261105\\LV1-U11-U12-U15-wording-followup.json",
+  "baseCommit": "29cfc684d7a11b07f09988c478d30358830f1951",
+  "checkedAt": "2026-11-05T13:14:57.210908+00:00",
+  "changeCount": 4,
+  "changes": [
+    {
+      "dataset": "examples",
+      "id": "EX4c5b9769",
+      "before": {
+        "exampleId": "EX4c5b9769",
+        "word": "tough",
+        "sensePos": "adj.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "Choosing which university to attend was a tough decision for most senior high students.",
+        "sentenceZh": "對大多數高三學生來說，選擇要就讀哪所大學是一個艱難的決定。",
+        "blankSentence": "Choosing which university to attend was a _____ decision for most senior high students.",
+        "answer": "tough",
+        "difficulty": "LV3",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EX4c5b9769",
+        "word": "tough",
+        "sensePos": "adj.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "Choosing which university to attend was a tough decision for most senior high students.",
+        "sentenceZh": "對大多數高中學生來說，選擇要就讀哪所大學是一個艱難的決定。",
+        "blankSentence": "Choosing which university to attend was a _____ decision for most senior high students.",
+        "answer": "tough",
+        "difficulty": "LV3",
+        "status": "reviewed"
+      },
+      "reason": "senior high 是高中階段，不是 high school senior（高中畢業班學生）。現譯把全體高中生限縮成高三；只把「高三」改為「高中」，保留其餘語義與空提示。",
+      "evidence": "https://www.collinsdictionary.com/us/dictionary/english/senior-high-school ; https://ahdictionary.com/word/search.html?q=senior+high+school"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX299bccf8",
+      "before": {
+        "exampleId": "EX299bccf8",
+        "word": "purchase",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "Customers who purchase more than three items will receive a ten percent discount at checkout.",
+        "sentenceZh": "購買三件以上商品的顧客，結帳時可享九折優惠。",
+        "blankSentence": "Customers who _____ more than three items will receive a ten percent discount at checkout.",
+        "answer": "purchase",
+        "difficulty": "LV5",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EX299bccf8",
+        "word": "purchase",
+        "sensePos": "v.",
+        "meaningHint": null,
+        "exampleType": "exam",
+        "sentenceEn": "Customers who purchase more than three items will receive a ten percent discount at checkout.",
+        "sentenceZh": "購買超過三件商品的顧客，結帳時可享九折優惠。",
+        "blankSentence": "Customers who _____ more than three items will receive a ten percent discount at checkout.",
+        "answer": "purchase",
+        "difficulty": "LV5",
+        "status": "reviewed"
+      },
+      "reason": "more than three items 的數量嚴格大於三；「三件以上」在教學及購物門檻通常包含三件，會把折扣起算量提前一件。最小修正為「超過三件」，保留英文、purchase 答案與九折。",
+      "evidence": "https://www.collinsdictionary.com/dictionary/english/more ; https://www.ehanlin.com.tw/app/keyword/%E5%9C%8B%E4%B8%AD/%E6%95%B8%E5%AD%B8/%E5%A4%A7%E6%96%BC%E6%88%96%E7%AD%89%E6%96%BC.html"
+    },
+    {
+      "dataset": "examples",
+      "id": "EX2ff9ba41",
+      "before": {
+        "exampleId": "EX2ff9ba41",
+        "word": "low",
+        "sensePos": "adj.",
+        "meaningHint": "低的",
+        "exampleType": "daily",
+        "sentenceEn": "The shelf is low enough for a child to reach.",
+        "sentenceZh": "這個架子夠低，小孩構得到。",
+        "blankSentence": "The shelf is _____ enough for a child to reach.",
+        "answer": "low",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "after": {
+        "exampleId": "EX2ff9ba41",
+        "word": "low",
+        "sensePos": "adj.",
+        "meaningHint": "低的",
+        "exampleType": "daily",
+        "sentenceEn": "The shelf is low enough for a child to reach.",
+        "sentenceZh": "這個架子夠低，小孩搆得到。",
+        "blankSentence": "The shelf is _____ enough for a child to reach.",
+        "answer": "low",
+        "difficulty": "LV1",
+        "status": "reviewed"
+      },
+      "reason": "reach 指伸手觸及，現譯構為木部構造之構；教育部原站以手部搆列觸及義。本提案只更換這一字，保留夠低及其餘內容。",
+      "evidence": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=4048&la=0&powerMode=0 ; https://dict.revised.moe.edu.tw/dictView.jsp?ID=4051&la=0&powerMode=0"
+    },
+    {
+      "dataset": "words",
+      "id": "W001283",
+      "before": {
+        "wordId": "W001283",
+        "word": "dryer",
+        "wordVariants": [
+          "dryer"
+        ],
+        "level": "LV2",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "乾衣機；乾燥劑；催幹劑；乾燥器",
+        "meaningEn": "an appliance that removes moisture",
+        "usagePattern": "a clothes dryer; put clothes in the dryer; a hair dryer",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "dryer",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "烘衣機；把衣物放進烘衣機；吹風機"
+      },
+      "after": {
+        "wordId": "W001283",
+        "word": "dryer",
+        "wordVariants": [
+          "dryer"
+        ],
+        "level": "LV2",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "乾衣機；乾燥劑；催乾劑；乾燥器",
+        "meaningEn": "an appliance that removes moisture",
+        "usagePattern": "a clothes dryer; put clothes in the dryer; a hair dryer",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "dryer",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "烘衣機；把衣物放進烘衣機；吹風機"
+      },
+      "reason": "Only correct the drying-agent character 幹→乾. Retain all four source-supported meanings, existing noun POS and draft status; no optional domain rewrite is adopted.",
+      "evidence": "https://www.merriam-webster.com/dictionary/drier ; https://www.collinsdictionary.com/dictionary/english/dryer ; https://ed.arte.gov.tw/uploadfile/Book/3214_%E5%85%A7%E6%96%87.pdf (printed p30 text layer; page pixels not inspected)."
+    }
+  ],
+  "masterTouched": false,
+  "sentencesChanged": true,
+  "englishSentencesChanged": false,
+  "imagesChanged": false,
+  "sourceHashesBefore": {
+    "words.json": "d36e9686e7ee29be6b423ff8117ffc236415b626a73c45399f6fdae83f0724ec",
+    "senses.json": "0a1f3bf143215c7239d3d8c8f0afaccc16b022611394f1cb8bc8ae4841325caa",
+    "examples.json": "9cd031869ed3e0c6420c25f7bf9bdffc57b7acfae880fe18633b7a2f84abc991",
+    "meta.json": "75493362d4cc8d6b16e6ab3cb47f434f3f1e17dc6214be38251931d030f8951c",
+    "sa-pack.json": "6d3554d793da3f9d4aaaae9dfe306fa1659812b713cc7d6c7ad095b3b332e048"
+  },
+  "sourceHashesAfter": {
+    "words.json": "70eb0bab4e75117e2cc605b6b241185f8355da2a4232c1f055cf1642e5ddb24c",
+    "senses.json": "0a1f3bf143215c7239d3d8c8f0afaccc16b022611394f1cb8bc8ae4841325caa",
+    "examples.json": "bfc003347b92fab8c2178f5e1b4b0cc84d7878b0c2c58109d5f1e7e4a130c9ba",
+    "meta.json": "af7c1227baea9e935bb497a8561c021aa9a32c369f00d26ebe43837c5a1c7748",
+    "sa-pack.json": "a67c6fa4a20748949d13223e79a26454f107a390df69c2eb56aa18621a841542"
+  },
+  "state": "applied_not_ui_verified"
+}

@@ -1,0 +1,13 @@
+{
+  "command": "npm run test -- --maxWorkers=1 src/db/seed.test.ts -t \"retains last-write-wins\"",
+  "exitCode": 1,
+  "tests": {
+    "failed": 1,
+    "passed": 1,
+    "skipped": 12
+  },
+  "failedCase": "changed then original",
+  "observation": "Stored changed value although the final incoming value was identical to the original row.",
+  "rawLocalLog": "output/playwright/unit-audit/seed-duplicate-before.txt",
+  "boundary": "Constructed duplicate-key input; the current real full and starter datasets have unique valid string primary keys."
+}

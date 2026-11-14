@@ -1,0 +1,42 @@
+
+> vocab-app@0.0.0 build
+> tsc -b && vite build
+
+vite v8.1.3 building client environment for production...
+[2K
+transforming...✓ 712 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/manifest.webmanifest                     0.51 kB
+dist/index.html                               0.67 kB │ gzip:     0.40 kB
+dist/assets/gsat115-q38-D-BrmzYWPc.png       60.99 kB
+dist/assets/gsat115-q38-C-DlCws2tG.png       65.75 kB
+dist/assets/gsat115-q38-B-DzZNsV7_.png       67.86 kB
+dist/assets/gsat115-q38-A-BknDzjqy.png       70.42 kB
+dist/assets/gsat115-mixed-Bvwz7pUt.png       93.85 kB
+dist/assets/gsat115-essay-Cst1ZnDg.png      266.11 kB
+dist/assets/gsat115-rubric-oJt7dzdd.pdf     271.60 kB
+dist/assets/index-ClCPLIuZ.css              214.97 kB │ gzip:    39.01 kB
+dist/assets/browser-CTI95XnQ.js              52.58 kB │ gzip:    16.04 kB
+dist/assets/createTownScene-BWzzKnZP.js     602.76 kB │ gzip:   153.18 kB
+dist/assets/index-BcYirkWn.js            10,071.90 kB │ gzip: 1,510.53 kB
+
+[PLUGIN_TIMINGS] Your build spent significant time in plugins. Here is a breakdown:
+  - vite:css (67%)
+  - vite:asset (19%)
+  - vite:prepare-out-dir (7%)
+  - @tailwindcss/vite:generate:build (4%)
+See https://rolldown.rs/reference/InputOptions.checks#plugintimings for more details.
+
+[plugin builtin:vite-reporter]
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 9.99s
+PWA v1.3.0
+mode      generateSW
+precache  268 entries (53925.04 KiB)
+files generated
+  dist/sw.js
+  dist/workbox-99b28e77.js
