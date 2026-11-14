@@ -1,3 +1,4 @@
+import {recoveredUnit18OriginalItems} from './recoveredUnit18History.testSupport';
 import {recoveredUnit12OriginalItems} from './recoveredUnit12History.testSupport';
 import {auditContract, auditHash, isAuditUnitStep, loadLV3Chain, lv3AfterUnit1PublishedText} from './lv3Audit.testSupport';
 import lv3Checkpoint from '../../../docs/lv3-audit-20261107/U01-checkpoint.json';
@@ -89,9 +90,9 @@ function stable(value: unknown): unknown {
 }
 const hash = (value: unknown) => createHash('sha256').update(JSON.stringify(stable(value))).digest('hex');
 
-// All 131 direct JSON files belong to the authenticated checkpoint. Fourteen
+// All 131 direct JSON files belong to the authenticated checkpoint. Seventeen
 // have later audited changes; rereading the complete migration proof for each
-// of the other 117 files adds no coverage. Their actual bytes remain guarded.
+// of the other 114 files adds no coverage. Their actual bytes remain guarded.
 function historicalDirectProjection() {
   const chain = loadLV3Chain();
   expect(auditHash(lv3Checkpoint)).toBe('6008609dda537f69ef0880d6482c713b1e6e75ec0fa8c3a4af71cdee9b08e4f0');
@@ -107,13 +108,16 @@ function historicalDirectProjection() {
     'src/features/direct/curriculumLV3Unit14.json',
     'src/features/direct/curriculumLV3Unit15.json',
     'src/features/direct/curriculumLV3Unit16.json',
+    'src/features/direct/curriculumLV3Unit17.json',
+    'src/features/direct/curriculumLV3Unit18.json',
+    'src/features/direct/curriculumLV3Unit19.json',
     'src/features/direct/curriculumLV3Unit4.json', 'src/features/direct/curriculumLV3Unit5.json',
     'src/features/direct/curriculumLV3Unit6.json', 'src/features/direct/curriculumLV3Unit7.json',
     'src/features/direct/curriculumLV3Unit8.json', 'src/features/direct/curriculumLV3Unit9.json',
     'src/features/direct/curriculumUnit2.json',
   ]);
   expect(paths).toHaveLength(131);
-  expect(paths.filter(path => !changed.has(path))).toHaveLength(117);
+  expect(paths.filter(path => !changed.has(path))).toHaveLength(114);
   const project = (path: string, actualText: string) => {
     if (!paths.includes(path)) throw new Error('Unregistered out-of-domain direct JSON path');
     const text = actualText.replace(/\r\n/g, '\n');
@@ -121,10 +125,53 @@ function historicalDirectProjection() {
     expect(createHash('sha256').update(text).digest('hex'), `Unchanged checkpoint bytes: ${path}`).toBe(guards[path]);
     return JSON.parse(text);
   };
-  return {paths, project};
+  return {paths, changed, project};
 }
 
-it('retains historical curriculum and question identities with the audited cubes gloss addition', () => {
+const historicalFileBatches = [
+  {label: 'changed files 1-8', changed: true, start: 0, end: 8},
+  {label: 'changed files 9-17', changed: true, start: 8, end: 17},
+  {label: 'unchanged files 1-57', changed: false, start: 0, end: 57},
+  {label: 'unchanged files 58-114', changed: false, start: 57, end: 114},
+] as const;
+
+function historicalBatchPaths(paths: string[], changed: Set<string>, batch: typeof historicalFileBatches[number]) {
+  return paths.filter(path => changed.has(path) === batch.changed).slice(batch.start, batch.end);
+}
+
+it('partitions all historical direct files and baseline units exactly once', () => {
+  const {paths, changed} = historicalDirectProjection();
+  const batches = historicalFileBatches.map(batch => historicalBatchPaths(paths, changed, batch));
+  const coveredPaths = batches.flat();
+  expect(batches.map(batch => batch.length)).toEqual([8, 9, 57, 57]);
+  expect(coveredPaths).toHaveLength(131);
+  expect(new Set(coveredPaths).size).toBe(131);
+  expect([...coveredPaths].sort()).toEqual(paths);
+  const owners = new Map<string, string>();
+  const recordOwner = (value: unknown, path: string) => {
+    if (Array.isArray(value)) { value.forEach(row => recordOwner(row, path)); return; }
+    if (!value || typeof value !== 'object') return;
+    const row = value as Record<string, unknown>;
+    const template = row.template as {templateId: string} | undefined;
+    const templateId = template && Array.isArray(row.learningItems) ? template.templateId
+      : typeof row.templateId === 'string' && Array.isArray(row.items) ? row.templateId : undefined;
+    if (templateId) {
+      expect(owners.has(templateId), `Duplicate installed template: ${templateId}`).toBe(false);
+      owners.set(templateId, path);
+    }
+  };
+  for (const path of paths) recordOwner(JSON.parse(readFileSync(path, 'utf8')), path);
+  expect(owners.size).toBe(127);
+  expect(baseline.previousUnits).toHaveLength(124);
+  expect(new Set(baseline.previousUnits.map(old => old.templateId)).size).toBe(124);
+  for (const old of baseline.previousUnits) {
+    const path = owners.get(old.templateId);
+    expect(path, `Installed historical template: ${old.templateId}`).toBeDefined();
+    expect(batches.filter(batch => batch.includes(path!)), `Exactly one batch: ${old.templateId}`).toHaveLength(1);
+  }
+});
+
+it.each(historicalFileBatches)('retains historical curriculum and question identities with the audited cubes gloss addition: $label', batch => {
   const existing = new Map<string, {items: unknown[]; questions: unknown[]}>();
   const installed = new Map<string, {items: unknown[]; questions: unknown[]}>();
   const record = (value: unknown, target = existing) => {
@@ -138,17 +185,17 @@ it('retains historical curriculum and question identities with the audited cubes
       {items: row.items, questions: (row.questions ?? []) as unknown[]});
   };
   const dir = new URL('./', import.meta.url);
-  const {paths, project} = historicalDirectProjection();
+  const {paths, changed, project} = historicalDirectProjection();
   const files = readdirSync(dir).filter(name => name.endsWith('.json'));
   expect(files.map(file => 'src/features/direct/' + file).sort(), 'No missing or out-of-domain JSON files').toEqual(paths);
-  for (const file of files) {
-    const text = readFileSync(new URL(file, dir), 'utf8');
+  for (const path of historicalBatchPaths(paths, changed, batch)) {
+    const text = readFileSync(path, 'utf8');
     const current = JSON.parse(text);
     record(current, installed);
-    record(project('src/features/direct/' + file, text));
+    record(project(path, text));
   }
   expect(baseline.previousUnits).toHaveLength(124);
-  for (const old of baseline.previousUnits) {
+  for (const old of baseline.previousUnits.filter(old => installed.has(old.templateId))) {
     const retained = existing.get(old.templateId)!;
     expect(retained, old.templateId).toBeDefined();
     expect(retained.items).toHaveLength(old.count);
@@ -323,6 +370,6 @@ it.each([
   expect(unit.questions).toEqual([]);
   expect(pack.releaseReview).toMatchObject({requiresSeparateDataRelease: true, senseApprovalChange: false, artworkAdopted: false});
   const historical = JSON.parse(readFileSync(new URL(`../../../scripts/drafts/recovered-units/${unit.level}Unit${unit.unit}.curriculum.json`, import.meta.url), 'utf8'));
-  const originalItems=unit.level==='LV3'&&unit.unit===12?recoveredUnit12OriginalItems(unit.items):unit.items;
+  const originalItems=unit.level==='LV3'&&unit.unit===12?recoveredUnit12OriginalItems(unit.items):unit.level==='LV3'&&unit.unit===18?recoveredUnit18OriginalItems(unit.items):unit.items;
   expect(originalItems).toEqual(historical.learningItems);
 });

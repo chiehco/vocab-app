@@ -197,15 +197,27 @@ it('allows omitted full-dictionary rows in starter subsets without claiming comp
  expect(hash([])).not.toBe(historical);
 });
 
-it('reverses only recorded starter corrections while retaining the old whole-pack fixture',()=>{
+it('retains the complete historical starter payload fixture',()=>{
  const pack=JSON.parse(readFileSync('public/data/v1/sa-pack.json','utf8'));
  const restored=beforeUnitAudit('sa-pack.json',pack);
  const actual=createHash('sha256').update(JSON.stringify(stable(restored))).digest('hex');
  expect(actual).toBe(starterBaseline.publicFiles.find(f=>f.name==='sa-pack.json')!.payloadHash);
+});
+
+it('rejects unrecorded starter sentence drift',()=>{
+ const pack=JSON.parse(readFileSync('public/data/v1/sa-pack.json','utf8'));
  const column=structuredClone(pack);column.examples[0].sentenceEn='Unrecorded starter sentence';
  expect(()=>beforeUnitAudit('sa-pack',column)).toThrow('contentHash');
+});
+
+it('rejects an unrecorded starter row',()=>{
+ const pack=JSON.parse(readFileSync('public/data/v1/sa-pack.json','utf8'));
  const row=structuredClone(pack);row.examples.push({exampleId:'EXunrecorded'});
  expect(()=>beforeUnitAudit('sa-pack',row)).toThrow('contentHash');
+});
+
+it('rejects starter wordsHash metadata drift',()=>{
+ const pack=JSON.parse(readFileSync('public/data/v1/sa-pack.json','utf8'));
  const metadata=structuredClone(pack);metadata.meta.wordsHash='sa:wrong';
  expect(()=>beforeUnitAudit('sa-pack',metadata)).toThrow('wordsHash');
 });
@@ -1166,7 +1178,8 @@ it('keeps seven U41 usage refinements fully guarded and reverses them before old
 
 it('reverses only19 exact LV2 U42 sourced form keys and rejects all other row drift',()=>{
  expect(lv2u42FormSources.facts).toHaveLength(19);
- const words:Row[]=JSON.parse(readFileSync('public/data/v1/words.json','utf8'));
+ // Authenticate and invert later LV3 corrections before testing the unchanged LV2 full-row contract.
+ const words:Row[]=lv3BeforeAudit('words',JSON.parse(readFileSync('public/data/v1/words.json','utf8')));
  for(const p of lv2u42Forms.patches){
   const row=structuredClone(words.find(w=>w.wordId===p.id)!);
   const fact=lv2u42FormSources.facts.find(f=>f.wordId===p.id)!;

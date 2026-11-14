@@ -77,6 +77,10 @@ def validate_curriculum_identity(unit, path, document):
     require(isinstance(items, list) and items, 'Missing unit curriculum items')
     # U12 predates the numeric V/G namespace. Preserve its complete ordered
     # identity/kind/page matrix, never authorize a new ID or broaden other units.
+    if number == 18:
+        identity = [[row.get('learningItemId'), row.get('kind'), row.get('sourcePage')] for row in items]
+        require(len(identity) == 146 and sha(identity) == 'bb5e2f8487c2f4010de31ec935d8903ebdb962b0a81259e402e2fb918836575f', 'U18 original curriculum identity mismatch')
+        return
     if number == 12:
         identity = [[row.get('learningItemId'), row.get('kind'), row.get('sourcePage')] for row in items]
         require(sha(identity) == '9db01d5dc830b3fa779690e87dd99f8520994691283f941aea60f28ab43271da',
@@ -2078,6 +2082,239 @@ def verified_u14_pattern_patch(manifest, patch):
 from lv3_u16_review_guard import verified as verified_u16_review_patch, RESERVED as _U16_RESERVED
 
 
+# Only the independently reviewed U18 boast source row and its two fields.
+# Source evidence is frozen into this contract; no mutable output is read at runtime.
+_U18_SOURCE_PATH = 'scripts/sources/LV3Unit18.json'
+_U18_SOURCE_COLLECTION = {'path': 'scripts/sources/LV3Unit18.json', 'key': 'learningItemId', 'rowsField': 'related'}
+_U18_SOURCE_GUARD = {'beforeHash': 'ba31d795dbee8537c70199932abd633dcecf495a150018991b8cea066dc84df0', 'afterHash': 'bf6014177cbeafe1be520548be680f52cff7a799951ea24ab34a021b0a2dfc39', 'beforeByteHash': 'fcb3d91ca41efdada6906a4df0438c8b60af97fc848b1ec5ba3e674e79a552c6', 'afterByteHash': 'e859817eb1d6d0b55c0d3154b714d48f115f2733cb4988de2592e4518d3632d2'}
+_U18_SOURCE_PATCH = json.loads(r'''{
+  "dataset": "source",
+  "path": "scripts/sources/LV3Unit18.json",
+  "key": "learningItemId",
+  "id": "LI-LV3U18-P189-boast",
+  "before": {
+    "word": "boast",
+    "sourcePage": 189,
+    "printedNumber": null,
+    "role": "example_gloss",
+    "sourcePos": "vi./vt.",
+    "chapterMeaningsZh": "以擁有……而自豪；（某城市／地區）以擁有……而自豪",
+    "officialWordId": "W003107",
+    "officialWord": "boast",
+    "mappingEvidence": "exact_headword",
+    "learningItemId": "LI-LV3U18-P189-boast"
+  },
+  "after": {
+    "sourcePos": "vt.",
+    "chapterMeaningsZh": "（某城市／地區）以擁有……而自豪"
+  },
+  "reason": "右下例句註明 boast vt.（某城市/地區）以擁有而自豪，無vi.；兩份教材文件同步為vt.並去掉重複義。僅此教材義，絕非刪一般boast的不及物用法。 右下例句註明 boast vt.（某城市/地區）以擁有而自豪，無vi.；兩份教材文件同步為vt.並去掉重複義。僅此教材義，絕非刪一般boast的不及物用法。",
+  "evidence": [],
+  "fieldEvidence": {
+    "sourcePos": [
+      {
+        "proposal": "U18F080,U18I-source-LI-LV3U18-P189-boast-sourcePos",
+        "originFindingIds": [
+          "U18F080",
+          "U18I-source-LI-LV3U18-P189-boast-sourcePos"
+        ],
+        "reason": "右下例句註明 boast vt.（某城市/地區）以擁有而自豪，無vi.；兩份教材文件同步為vt.並去掉重複義。僅此教材義，絕非刪一般boast的不及物用法。",
+        "sources": [
+          {
+            "type": "independent_field_review",
+            "report": "output/lv3-audit-20261107/u18-independent-review-v1/per-field-independent-review.json",
+            "reportSha256": "5789ac660c4ebcc8aa481a1dc8ca10028573bd62c393135883830f26a9e3bce7",
+            "reviewId": "U18I-source-LI-LV3U18-P189-boast-sourcePos",
+            "decision": "accepted_exact",
+            "retainedCaveat": null
+          },
+          {
+            "type": "textbook_photo_review",
+            "file": "20260815_105844.jpg",
+            "page": 189,
+            "sha256": "5ffbb0505a77eed2307052f3b30db3e088d357c1968003fb62aa495cadd689fe",
+            "reviewReport": "output/lv3-audit-20261107/u18-independent-review-v1/photo-review-index.json",
+            "reviewReportSha256": "eb039c971f1a48daa514acc070ad9d573a52c5ccc8b83b2369c830bd1071de3b"
+          }
+        ],
+        "beforePresent": true
+      }
+    ],
+    "chapterMeaningsZh": [
+      {
+        "proposal": "U18F081,U18I-source-LI-LV3U18-P189-boast-chapterMeaningsZh",
+        "originFindingIds": [
+          "U18F081",
+          "U18I-source-LI-LV3U18-P189-boast-chapterMeaningsZh"
+        ],
+        "reason": "右下例句註明 boast vt.（某城市/地區）以擁有而自豪，無vi.；兩份教材文件同步為vt.並去掉重複義。僅此教材義，絕非刪一般boast的不及物用法。",
+        "sources": [
+          {
+            "type": "independent_field_review",
+            "report": "output/lv3-audit-20261107/u18-independent-review-v1/per-field-independent-review.json",
+            "reportSha256": "5789ac660c4ebcc8aa481a1dc8ca10028573bd62c393135883830f26a9e3bce7",
+            "reviewId": "U18I-source-LI-LV3U18-P189-boast-chapterMeaningsZh",
+            "decision": "accepted_exact",
+            "retainedCaveat": null
+          },
+          {
+            "type": "textbook_photo_review",
+            "file": "20260815_105844.jpg",
+            "page": 189,
+            "sha256": "5ffbb0505a77eed2307052f3b30db3e088d357c1968003fb62aa495cadd689fe",
+            "reviewReport": "output/lv3-audit-20261107/u18-independent-review-v1/photo-review-index.json",
+            "reviewReportSha256": "eb039c971f1a48daa514acc070ad9d573a52c5ccc8b83b2369c830bd1071de3b"
+          }
+        ],
+        "beforePresent": true
+      }
+    ]
+  }
+}''')
+
+# Exact independently reviewed U19 source. No mutable output reads at runtime.
+_U19_SOURCE_PATH = 'scripts/sources/LV3Unit19.json'
+_U19_SOURCE_COLLECTION = {"path":"scripts/sources/LV3Unit19.json","key":"word","rowsField":"headwords"}
+_U19_SOURCE_GUARD = {"beforeHash":"ae16f51ead78443ba3366750484866a459d7765acd54c47d9fdb8fcd8f5c0d87","afterHash":"56195fbb111ca0985fb5e62279134620176f0e40f6af1451c10bf36c35266bbe","beforeByteHash":"b436f3e9a351d94d200e7c4fb6d39d7f7e1253a4c0eda9f659a0aa1d5ad5c9d9","afterByteHash":"91582d537cf39eb5038c41ef61ca782b2cc26a9223d78c70d6ea3a12765ea399"}
+_U19_SOURCE_PATCH = json.loads(r'''{
+  "dataset": "source",
+  "path": "scripts/sources/LV3Unit19.json",
+  "key": "word",
+  "id": "rumor",
+  "before": {
+    "word": "rumor",
+    "sourcePage": 197,
+    "printedNumber": 2,
+    "role": "main",
+    "sourcePos": "n./vi.",
+    "chapterMeaningsZh": "謠言；傳言；散播謠言",
+    "officialWordId": "W002752",
+    "officialWord": "rumor",
+    "mappingEvidence": "exact_headword"
+  },
+  "after": {
+    "sourcePos": "n./vt."
+  },
+  "reason": "p197 原書清楚印 n. 謠言，傳言 & vt. 散播謠言；目前 n./vi. 為明確轉錄錯誤。僅修正 source.headwords 唯一 word=rumor 的 sourcePos，保留原中文、拼字、頁碼、映射與其他來源列。",
+  "evidence": [],
+  "fieldEvidence": {
+    "sourcePos": [
+      {
+        "proposal": "U19V002",
+        "originFindingIds": [
+          "U19V002"
+        ],
+        "reason": "p197 原書清楚印 n. 謠言，傳言 & vt. 散播謠言；目前 n./vi. 為明確轉錄錯誤。僅修正 source.headwords 唯一 word=rumor 的 sourcePos，保留原中文、拼字、頁碼、映射與其他來源列。",
+        "sources": [
+          {
+            "type": "textbook_photo_review",
+            "file": "20260815_105955.jpg",
+            "page": 197,
+            "sha256": "f1756a5067053b4ff78b2728f54653e04ca0bd63886db518339fb036b1381a96",
+            "reviewReport": "output/lv3-audit-20261107/u19-independent-source-review-v1/REVIEW.md",
+            "reviewReportSha256": "592db201ebb2cfda96945bb0d50083a10e7dabd10f9403a3d5f266e024729acd",
+            "pixelReviewMethod": "saved_full_page_preview_original_photo_hash_verified"
+          },
+          {
+            "type": "independent_source_field_review",
+            "report": "output/lv3-audit-20261107/u19-independent-source-review-v1/REVIEW.md",
+            "reportSha256": "592db201ebb2cfda96945bb0d50083a10e7dabd10f9403a3d5f266e024729acd",
+            "reviewId": "U19V002",
+            "recordedDisposition": "rekey_required_then_supported",
+            "binding": "existing_unique_word_in_headwords"
+          },
+          {
+            "type": "frozen_source_proposal",
+            "report": "output/lv3-audit-20261107/u19-source-review-v1/recommended-review-bundle.json",
+            "reportSha256": "4a2cc2ca753da11b01ba3828af1a02240726575b1c4ae91cdcfd8bf15222438a",
+            "locatedReport": "output/lv3-audit-20261107/u19-source-review-v1/source-field-proposals-located.json",
+            "locatedReportSha256": "0bb440691c679bca2ceaf51e98cd9116d667fb1896b562b438c5250859e3b55e",
+            "reviewId": "U19V002",
+            "beforeRowSha256": "2583cb7989d4cd47ca2403f776a649c96dc12687a6abe5f9c55cf83dddee7d30"
+          }
+        ],
+        "beforePresent": true
+      }
+    ]
+  }
+}''')
+_U19_PARENT_MANIFEST_HASH = 'cb6dd8d826d9ed47c7627eff8c15527773f6101440afeca4a6654b931e922dc6'
+
+def _u19_json_equal(left, right):
+    """Match JSON values without Python's bool/int equality coercion."""
+    if isinstance(left, bool) or isinstance(right, bool):
+        return type(left) is type(right) and left == right
+    if isinstance(left, dict) and isinstance(right, dict):
+        return left.keys() == right.keys() and all(_u19_json_equal(left[k], right[k]) for k in left)
+    if isinstance(left, list) and isinstance(right, list):
+        return len(left) == len(right) and all(_u19_json_equal(a, b) for a, b in zip(left, right))
+    if isinstance(left, (int, float)) and isinstance(right, (int, float)):
+        return left == right
+    return type(left) is type(right) and left == right
+
+
+def verified_u19_source_patch(manifest, patch):
+    return manifest.get('unit') == 'LV3-U19' and _u19_json_equal(patch, _U19_SOURCE_PATCH)
+
+def validate_u19_source_contract(manifest):
+    require(manifest.get('unit') == 'LV3-U19', 'Invalid U19 supplemental source owner')
+    require(manifest.get('collections', {}).get('source') == _U19_SOURCE_COLLECTION
+            and manifest.get('files', {}).get(_U19_SOURCE_PATH) == _U19_SOURCE_GUARD,
+            'Invalid U19 supplemental source file contract')
+    patches = [p for p in manifest.get('patches', []) if p.get('dataset') == 'source']
+    require(len(patches) == 1 and verified_u19_source_patch(manifest, patches[0]),
+            'Invalid U19 supplemental source patch contract')
+
+def admit_u19_source_before(previous_inputs, anchor_inputs, predecessor, previous_hash, manifest):
+    """Admit only source146 after the authenticated committed U18 boundary."""
+    validate_u19_source_contract(manifest)
+    require(isinstance(predecessor, dict) and predecessor.get('unit') == 'LV3-U18'
+            and predecessor.get('status') == 'committed'
+            and previous_hash == _U19_PARENT_MANIFEST_HASH
+            and manifest.get('parentManifestHash') == previous_hash,
+            'Invalid U19 supplemental source predecessor')
+    require(len(anchor_inputs) == 144 and _U18_SOURCE_PATH not in anchor_inputs
+            and _U19_SOURCE_PATH not in anchor_inputs
+            and set(previous_inputs) == set(anchor_inputs) | {_U18_SOURCE_PATH}
+            and len(previous_inputs) == 145
+            and previous_inputs.get(_U18_SOURCE_PATH) == _U18_SOURCE_GUARD['afterByteHash']
+            and _U19_SOURCE_PATH not in previous_inputs,
+            'Invalid U19 supplemental source input domain')
+    return {**previous_inputs, _U19_SOURCE_PATH: _U19_SOURCE_GUARD['beforeByteHash']}
+
+
+def unit_input_paths(root, unit):
+    """Preserve historical144/145 domains; carry both admitted sources from U19."""
+    number = new_unit_number(unit)
+    paths = v1.input_paths(root)
+    if number is not None and number >= 18:
+        paths = paths | {_U18_SOURCE_PATH}
+    if number is not None and number >= 19:
+        paths = paths | {_U19_SOURCE_PATH}
+    return paths
+
+def verified_u18_source_patch(manifest, patch):
+    return manifest.get('unit') == 'LV3-U18' and patch == _U18_SOURCE_PATCH
+
+
+def admit_u18_source_before(previous_inputs, anchor_inputs, predecessor, previous_hash, manifest):
+    """Admit the one fixed source at its independently captured boundary only."""
+    require(manifest.get('unit') == 'LV3-U18', 'Invalid U18 supplemental source owner')
+    require(isinstance(predecessor, dict) and predecessor.get('unit') == 'LV3-U17'
+            and predecessor.get('status') == 'committed'
+            and previous_hash == '7a8f12a1ba51548338cfc95e18ac8832b88187ff8eab0d87e24ca85763570508'
+            and manifest.get('parentManifestHash') == previous_hash, 'Invalid U18 supplemental source predecessor')
+    require(len(anchor_inputs) == 144 and set(previous_inputs) == set(anchor_inputs)
+            and _U18_SOURCE_PATH not in previous_inputs, 'Invalid U18 supplemental source input domain')
+    require(manifest.get('collections', {}).get('source') == _U18_SOURCE_COLLECTION
+            and manifest.get('files', {}).get(_U18_SOURCE_PATH) == _U18_SOURCE_GUARD,
+            'Invalid U18 supplemental source file contract')
+    source_patches = [p for p in manifest.get('patches', []) if p.get('dataset') == 'source']
+    require(len(source_patches) == 1 and verified_u18_source_patch(manifest, source_patches[0]),
+            'Invalid U18 supplemental source patch contract')
+    return {**previous_inputs, _U18_SOURCE_PATH: _U18_SOURCE_GUARD['beforeByteHash']}
+
+
 def validate_manifest(manifest, scope=None):
     if manifest.get('schemaVersion') == 1:
         v1.validate_manifest(manifest)
@@ -2100,11 +2337,20 @@ def validate_manifest(manifest, scope=None):
                      'notes': ('public/data/v1/notes.json', 'noteId')}
     if manifest['unit'] == 'LV3-U16':
         allowed_roots['senses'] = ('public/data/v1/senses.json', 'senseId')
+    if manifest['unit'] == 'LV3-U19':
+        validate_u19_source_contract(manifest)
+    if manifest['unit'] == 'LV3-U18':
+        require(collections.get('source') == _U18_SOURCE_COLLECTION, 'Missing exact U18 source collection')
+        require(manifest['files'].get(_U18_SOURCE_PATH) == _U18_SOURCE_GUARD, 'U18 source whole-file contract mismatch')
     for name, col in collections.items():
         require(set(col) == {'path', 'key', 'rowsField'}, 'Unknown collection keys')
         if name in allowed_roots:
             require((col['path'], col['key']) == allowed_roots[name]
                     and col['rowsField'] is None, 'Global collection contract mismatch')
+        elif name == 'source':
+            require((manifest['unit'] == 'LV3-U18' and col == _U18_SOURCE_COLLECTION)
+                    or (manifest['unit'] == 'LV3-U19' and col == _U19_SOURCE_COLLECTION),
+                    'Unsupported source collection')
         else:
             require(name in {'curriculum', 'grammarQuestions'}, 'Unsupported collection')
             require(col['path'].startswith('src/features/direct/curriculum')
@@ -2137,6 +2383,7 @@ def validate_manifest(manifest, scope=None):
         'examples': {'sensePos', 'meaningHint'},
         'notes': {'title', 'content'},
         'senses': set(),
+        'source': set(),
         'curriculum': {'explanationZh'},
         'grammarQuestions': {'targetMeaningZh', 'options'},
     }
@@ -2164,6 +2411,13 @@ def validate_manifest(manifest, scope=None):
         if manifest['unit'] == 'LV3-U16' and ((p['dataset'], p['id']) in _U16_RESERVED or p['dataset'] == 'senses' or 'status' in p['after'] or 'status' in p['fieldEvidence'] or 'pattern' in p['after'] or 'pattern' in p['fieldEvidence']):
             require(u16_exact, 'Incomplete U16 exact review contract')
         allowed_fields = field_allow[p['dataset']]
+        if p['dataset'] == 'source':
+            if manifest['unit'] == 'LV3-U19':
+                require(verified_u19_source_patch(manifest, p), 'Incomplete exact U19 source contract')
+                allowed_fields = {'sourcePos'}
+            else:
+                require(verified_u18_source_patch(manifest, p), 'Incomplete exact U18 source contract')
+                allowed_fields = {'sourcePos', 'chapterMeaningsZh'}
         if u16_exact and p['dataset'] in {'examples', 'senses'}:
             allowed_fields = set(p['after'])
         republic_fact = verified_u09_republic_fact(manifest, p)
@@ -2346,6 +2600,12 @@ def load_chain(root):
                     require(manifest['collections'][name]['path'] == catalog[entry['unit']],
                             'Unit curriculum path mismatch')
             require(previous_inputs is not None, 'Predecessor checkpoint not finalized')
+            if manifest['unit'] == 'LV3-U18':
+                # Admit one independently captured source only at the exact U17 boundary.
+                # Never extend the immutable U01 anchor or any earlier manifest domain.
+                previous_inputs = admit_u18_source_before(previous_inputs, anchor['inputs'], loaded[-1][0] if loaded else None, previous, manifest)
+            if manifest['unit'] == 'LV3-U19':
+                previous_inputs = admit_u19_source_before(previous_inputs, anchor['inputs'], loaded[-1][0] if loaded else None, previous, manifest)
             changed = set(manifest['files'])
             require(set(manifest['unchangedInputs']) == set(previous_inputs) - changed - DERIVED,
                     'Chain input set mismatch')
@@ -2390,7 +2650,7 @@ def known_state(root, manifest):
 def verify_inputs(root, manifest, side):
     if media_migration.is_migration(manifest):
         return media_migration.verify_inputs(root, manifest, side)
-    expected = v1.input_paths(root)
+    expected = unit_input_paths(root, manifest['unit'])
     changed = set(contract(manifest)['files'])
     require(set(manifest['unchangedInputs']) == expected - changed - DERIVED,
             'Input set changed or missing guards')
@@ -2430,8 +2690,28 @@ def project_checkpoint(root, destination, target='LV3-U01'):
     require(len(targets) == 1, 'Unknown checkpoint target')
     tail = committed[targets[0] + 1:]
     verify_checkpoint(root, committed[-1][1], anchor)
+    projection_paths = set(v1.input_paths(root))
+    source_target_digests = {}
+    # Frozen explicit owners only; never discover sources by glob.
+    for owner, source_path, expected_guard in (
+            ('LV3-U18', _U18_SOURCE_PATH, _U18_SOURCE_GUARD),
+            ('LV3-U19', _U19_SOURCE_PATH, _U19_SOURCE_GUARD)):
+        supplementary = [x for x in loaded if x[0].get('unit') == owner]
+        label = owner.removeprefix('LV3-')
+        require(len(supplementary) <= 1, f'Duplicate {label} source guard owner')
+        if not supplementary:
+            continue
+        source_entry, source_manifest, _ = supplementary[0]
+        guard = source_manifest['files'][source_path]
+        require(guard == expected_guard, f'{label} source whole-file contract mismatch')
+        current_side = 'after' if source_entry['status'] == 'committed' else 'before'
+        require(v1.file_hash(safe_path(root, source_path)) == guard[current_side + 'ByteHash'],
+                f'{label} source current checkpoint drift')
+        target_includes_owner = any(x[0].get('unit') == owner for x in committed[:targets[0] + 1])
+        source_target_digests[source_path] = guard[('after' if target_includes_owner else 'before') + 'ByteHash']
+        projection_paths.add(source_path)
     destination.mkdir(parents=True)
-    for path in v1.input_paths(root):
+    for path in projection_paths:
         target_path = safe_path(destination, path)
         target_path.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(safe_path(root, path), target_path)
@@ -2463,6 +2743,9 @@ def project_checkpoint(root, destination, target='LV3-U01'):
         require(read_json(destination / v1.DERIVED[1])['meta'] == manifest['beforePackMeta'], 'Before pack metadata mismatch')
         verify_inputs(destination, manifest, 'before')
     verify_checkpoint(destination, committed[targets[0]][1], anchor)
+    for source_path, target_digest in source_target_digests.items():
+        require(v1.file_hash(safe_path(destination, source_path)) == target_digest,
+                'Supplementary source target drift: ' + source_path)
     assert_recovery_clear(root)
     return destination
 
@@ -2514,7 +2797,7 @@ def run_v2(root, manifest_path, apply=False):
     if state == 'after':
         # Check every exact after row even on reapplication.
         inverse_step(manifest, current, scope)
-    paths = v1.input_paths(root)
+    paths = unit_input_paths(root, manifest['unit'])
     initial = {p: safe_path(root, p).read_bytes() for p in paths}
     with tempfile.TemporaryDirectory(prefix='lv3-audit-v2-') as temporary:
         stage = Path(temporary)
@@ -2550,7 +2833,7 @@ def run_v2(root, manifest_path, apply=False):
         if not apply or state == 'after':
             return result
         # Caller owns exclusive lock. All inputs revalidated under that lock.
-        require(v1.input_paths(root) == paths, 'Concurrent input-set change')
+        require(unit_input_paths(root, manifest['unit']) == paths, 'Concurrent input-set change')
         for p, content in initial.items():
             require(safe_path(root, p).read_bytes() == content, f'Concurrent input change: {p}')
         token = v1.datetime.now(v1.timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
@@ -2580,7 +2863,7 @@ def run_v2(root, manifest_path, apply=False):
                 completed.append(p)
             for p in writes:
                 require(safe_path(root, p).read_bytes() == safe_path(stage, p).read_bytes(), 'Post-write mismatch')
-            require(v1.input_paths(root) == paths, 'Concurrent input-set change after writes')
+            require(unit_input_paths(root, manifest['unit']) == paths, 'Concurrent input-set change after writes')
             for p in paths - set(writes):
                 require(safe_path(root, p).read_bytes() == initial[p], f'Concurrent untouched input change: {p}')
             receipt['state'] = 'committed'
@@ -2612,7 +2895,7 @@ def seal_step(root, manifest_path, before_capture):
     require(len(matches) == 1, 'Unregistered seal target')
     _, manifest, scope = matches[0]
     require(manifest['schemaVersion'] == 2, 'Only v2 steps can be sealed')
-    paths = v1.input_paths(root)
+    paths = unit_input_paths(root, manifest['unit'])
     require(isinstance(before_capture, dict) and set(before_capture) == paths,
             'Independent before capture must cover the exact complete input set')
     for path, digest in before_capture.items():
@@ -2656,7 +2939,7 @@ def seal_step(root, manifest_path, before_capture):
         candidate['derivedAfter'] = {p: v1.file_hash(stage / p) for p in DERIVED}
         candidate['readiness'] = 'ready'
         verify_inputs(stage, candidate, 'after')
-    require(v1.input_paths(root) == paths, 'Concurrent input-set change during seal')
+    require(unit_input_paths(root, manifest['unit']) == paths, 'Concurrent input-set change during seal')
     for path, digest in before_capture.items():
         require(v1.file_hash(safe_path(root, path)) == digest, f'Concurrent capture input change: {path}')
     assert_recovery_clear(root)

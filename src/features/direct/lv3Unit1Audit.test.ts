@@ -16,13 +16,14 @@ const read=(name:string)=>lv3AfterUnit1File(paths[name],JSON.parse(readFileSync(
 const rowsOf=(name:string,value:unknown)=>(name==='curriculum'?(value as Row).learningItems:value) as Row[];
 const wrap=(name:string,rows:Row[])=>name==='curriculum'?{learningItems:rows}:rows;
 
-it('reverses the exact U01 delta to independently captured checkpoints without replacing historical fixtures',()=>{
+it.each(Object.keys(paths))('reverses the exact U01 delta to independently captured checkpoints without replacing historical fixtures: %s',(name)=>{
  const proofs=manifest.datasets as Record<string,{beforeHash:string;afterHash:string}>;
- for(const name of Object.keys(paths)){
   const current=read(name),original=structuredClone(current),old=lv3Unit1BeforeAudit(name,current);
   expect(hash(old),name).toBe(checkpoint[name]);expect(current).toEqual(original);
   if(proofs[name]){expect(proofs[name].beforeHash).toBe(checkpoint[name]);expect(hash(current)).toBe(proofs[name].afterHash);}
- }
+});
+
+it('keeps audited U01 patch identities globally unique',()=>{
  expect(new Set(lv3Unit1Patches.map(p=>p.dataset+':'+p.id)).size).toBe(lv3Unit1Patches.length);
 });
 
@@ -41,8 +42,7 @@ it('rejects after-field drift and all unlisted drift on an audited row, rather t
  }
 });
 
-it('requires exact identities, rejects duplicates, and permits omission only for explicit starter subsets',()=>{
- for(const name of new Set(lv3Unit1Patches.map(p=>p.dataset))){
+it.each([...new Set(lv3Unit1Patches.map(p=>p.dataset))])('requires exact identities, rejects duplicates, and permits omission only for explicit starter subsets: %s',(name)=>{
   const current=read(name),p=lv3Unit1Patches.find(p=>p.dataset===name)!;
   const missing=structuredClone(current),rows=rowsOf(name,missing),i=rows.findIndex(r=>r[p.key]===p.id);
   rows.splice(i,1);expect(()=>lv3Unit1BeforeAudit(name,missing)).toThrow('recorded identity');
@@ -52,11 +52,9 @@ it('requires exact identities, rejects duplicates, and permits omission only for
   expect(()=>lv3Unit1BeforeAudit(name,duplicate,{allowMissing:true})).toThrow('duplicate');
   expect(lv3Unit1BeforeAudit(name,wrap(name,[]),{allowMissing:true})).toEqual(wrap(name,[]));
   expect(hash(lv3Unit1BeforeAudit(name,missing,{allowMissing:true}))).not.toBe(checkpoint[name]);
- }
 });
 
-it('exposes untouched rows, additions, order changes and curriculum template mutations to the checkpoint',()=>{
- for(const name of new Set(lv3Unit1Patches.map(p=>p.dataset))){
+it.each([...new Set(lv3Unit1Patches.map(p=>p.dataset))])('exposes untouched rows, additions and order changes to the checkpoint: %s',(name)=>{
   const current=read(name),auditIds=new Set(lv3Unit1Patches.filter(p=>p.dataset===name).map(p=>p.id));
   const key=lv3Unit1Patches.find(p=>p.dataset===name)!.key;
   for(const mode of ['unlisted','extra','order','removed']){
@@ -68,7 +66,9 @@ it('exposes untouched rows, additions, order changes and curriculum template mut
    if(mode==='removed')rows.splice(i,1);
    expect(hash(lv3Unit1BeforeAudit(name,bad))).not.toBe(checkpoint[name]);
   }
- }
+});
+
+it('exposes curriculum template mutations to the checkpoint',()=>{
  const changed=read('curriculum');changed.template.unrecordedField=true;
  expect(hash(lv3Unit1BeforeAudit('curriculum',changed))).not.toBe(checkpoint.curriculum);
 });

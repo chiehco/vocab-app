@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {isDeepStrictEqual} from 'node:util';
+import {isDeepStrictEqual,types as utilTypes} from 'node:util';
 import {createHash} from 'node:crypto';
 import {readFileSync} from 'node:fs';
 import {lv3Unit1BeforeAudit} from './lv3Unit1Audit.testSupport';
@@ -48,6 +48,10 @@ export function validateCurriculumIdentity(unit:string,path:string,value:unknown
  assert.equal(template.level,'LV3');assert.equal(template.unit,number);
  const items=document.learningItems as Row[];assert.ok(Array.isArray(items)&&items.length);
  // U12 uses original page/slug IDs. Bind the entire ordered identity matrix.
+ if(number===18){
+  const identity=items.map(row=>[row.learningItemId,row.kind,row.sourcePage]);
+  assert.equal(identity.length,146);assert.equal(auditHash(identity),'bb5e2f8487c2f4010de31ec935d8903ebdb962b0a81259e402e2fb918836575f','U18 original curriculum identity mismatch');return;
+ }
  if(number===12){
   const identity=items.map(row=>[row.learningItemId,row.kind,row.sourcePage]);
   assert.equal(auditHash(identity),'9db01d5dc830b3fa779690e87dd99f8520994691283f941aea60f28ab43271da','U12 original curriculum identity mismatch');
@@ -2505,6 +2509,202 @@ export function verifiedU16ReviewPatch(m:AuditManifest,p:AuditPatch){
  return m.unit==='LV3-U16'&&U16_REVIEW_PATCHES.some(expected=>isDeepStrictEqual(p,expected));
 }
 
+// Exact U18 boast source contract. Frozen evidence only; no output is loaded at runtime.
+const U18_SOURCE_COLLECTION:Collection={"path": "scripts/sources/LV3Unit18.json", "key": "learningItemId", "rowsField": "related"};
+const U18_SOURCE_GUARD:FileGuard={"beforeHash": "ba31d795dbee8537c70199932abd633dcecf495a150018991b8cea066dc84df0", "afterHash": "bf6014177cbeafe1be520548be680f52cff7a799951ea24ab34a021b0a2dfc39", "beforeByteHash": "fcb3d91ca41efdada6906a4df0438c8b60af97fc848b1ec5ba3e674e79a552c6", "afterByteHash": "e859817eb1d6d0b55c0d3154b714d48f115f2733cb4988de2592e4518d3632d2"};
+const U18_SOURCE_PATCH:AuditPatch={
+  "dataset": "source",
+  "path": "scripts/sources/LV3Unit18.json",
+  "key": "learningItemId",
+  "id": "LI-LV3U18-P189-boast",
+  "before": {
+    "word": "boast",
+    "sourcePage": 189,
+    "printedNumber": null,
+    "role": "example_gloss",
+    "sourcePos": "vi./vt.",
+    "chapterMeaningsZh": "以擁有……而自豪；（某城市／地區）以擁有……而自豪",
+    "officialWordId": "W003107",
+    "officialWord": "boast",
+    "mappingEvidence": "exact_headword",
+    "learningItemId": "LI-LV3U18-P189-boast"
+  },
+  "after": {
+    "sourcePos": "vt.",
+    "chapterMeaningsZh": "（某城市／地區）以擁有……而自豪"
+  },
+  "reason": "右下例句註明 boast vt.（某城市/地區）以擁有而自豪，無vi.；兩份教材文件同步為vt.並去掉重複義。僅此教材義，絕非刪一般boast的不及物用法。 右下例句註明 boast vt.（某城市/地區）以擁有而自豪，無vi.；兩份教材文件同步為vt.並去掉重複義。僅此教材義，絕非刪一般boast的不及物用法。",
+  "evidence": [],
+  "fieldEvidence": {
+    "sourcePos": [
+      {
+        "proposal": "U18F080,U18I-source-LI-LV3U18-P189-boast-sourcePos",
+        "originFindingIds": [
+          "U18F080",
+          "U18I-source-LI-LV3U18-P189-boast-sourcePos"
+        ],
+        "reason": "右下例句註明 boast vt.（某城市/地區）以擁有而自豪，無vi.；兩份教材文件同步為vt.並去掉重複義。僅此教材義，絕非刪一般boast的不及物用法。",
+        "sources": [
+          {
+            "type": "independent_field_review",
+            "report": "output/lv3-audit-20261107/u18-independent-review-v1/per-field-independent-review.json",
+            "reportSha256": "5789ac660c4ebcc8aa481a1dc8ca10028573bd62c393135883830f26a9e3bce7",
+            "reviewId": "U18I-source-LI-LV3U18-P189-boast-sourcePos",
+            "decision": "accepted_exact",
+            "retainedCaveat": null
+          },
+          {
+            "type": "textbook_photo_review",
+            "file": "20260815_105844.jpg",
+            "page": 189,
+            "sha256": "5ffbb0505a77eed2307052f3b30db3e088d357c1968003fb62aa495cadd689fe",
+            "reviewReport": "output/lv3-audit-20261107/u18-independent-review-v1/photo-review-index.json",
+            "reviewReportSha256": "eb039c971f1a48daa514acc070ad9d573a52c5ccc8b83b2369c830bd1071de3b"
+          }
+        ],
+        "beforePresent": true
+      }
+    ],
+    "chapterMeaningsZh": [
+      {
+        "proposal": "U18F081,U18I-source-LI-LV3U18-P189-boast-chapterMeaningsZh",
+        "originFindingIds": [
+          "U18F081",
+          "U18I-source-LI-LV3U18-P189-boast-chapterMeaningsZh"
+        ],
+        "reason": "右下例句註明 boast vt.（某城市/地區）以擁有而自豪，無vi.；兩份教材文件同步為vt.並去掉重複義。僅此教材義，絕非刪一般boast的不及物用法。",
+        "sources": [
+          {
+            "type": "independent_field_review",
+            "report": "output/lv3-audit-20261107/u18-independent-review-v1/per-field-independent-review.json",
+            "reportSha256": "5789ac660c4ebcc8aa481a1dc8ca10028573bd62c393135883830f26a9e3bce7",
+            "reviewId": "U18I-source-LI-LV3U18-P189-boast-chapterMeaningsZh",
+            "decision": "accepted_exact",
+            "retainedCaveat": null
+          },
+          {
+            "type": "textbook_photo_review",
+            "file": "20260815_105844.jpg",
+            "page": 189,
+            "sha256": "5ffbb0505a77eed2307052f3b30db3e088d357c1968003fb62aa495cadd689fe",
+            "reviewReport": "output/lv3-audit-20261107/u18-independent-review-v1/photo-review-index.json",
+            "reviewReportSha256": "eb039c971f1a48daa514acc070ad9d573a52c5ccc8b83b2369c830bd1071de3b"
+          }
+        ],
+        "beforePresent": true
+      }
+    ]
+  }
+};
+function verifiedU18SourcePatch(m:AuditManifest,p:AuditPatch){return m.unit==='LV3-U18'&&isDeepStrictEqual(p,U18_SOURCE_PATCH);}
+
+export function admitU18SupplementalSource(previousInputs:Record<string,string>,anchorInputs:Record<string,string>,predecessor:Pick<Entry,'unit'|'status'>|undefined,previousHash:string|undefined,m:AuditManifest):Record<string,string>{
+ assert.equal(m.unit,'LV3-U18','invalid U18 source owner');
+ assert.equal(predecessor?.unit,'LV3-U17');assert.equal(predecessor?.status,'committed');
+ assert.equal(previousHash,'7a8f12a1ba51548338cfc95e18ac8832b88187ff8eab0d87e24ca85763570508','invalid U18 source predecessor');
+ assert.equal(m.parentManifestHash,previousHash,'invalid U18 source parent hash');
+ assert.equal(Object.keys(anchorInputs).length,144);
+ assert.deepEqual(Object.keys(previousInputs).sort(),Object.keys(anchorInputs).sort());
+ assert.ok(!Object.hasOwn(previousInputs,U18_SOURCE_COLLECTION.path));
+ assert.deepEqual(m.collections?.source,U18_SOURCE_COLLECTION);
+ assert.deepEqual(m.files?.[U18_SOURCE_COLLECTION.path],U18_SOURCE_GUARD);
+ const patches=m.patches.filter(p=>p.dataset==='source');assert.equal(patches.length,1);
+ assert.ok(verifiedU18SourcePatch(m,patches[0]),'invalid U18 source patch contract');
+ return {...previousInputs,[U18_SOURCE_COLLECTION.path]:U18_SOURCE_GUARD.beforeByteHash!};
+}
+
+// Exact U19 rumor correction. Frozen evidence; never runtime output reads.
+const U19_SOURCE_COLLECTION:Collection={"path":"scripts/sources/LV3Unit19.json","key":"word","rowsField":"headwords"};
+const U19_SOURCE_GUARD:FileGuard={"beforeHash":"ae16f51ead78443ba3366750484866a459d7765acd54c47d9fdb8fcd8f5c0d87","afterHash":"56195fbb111ca0985fb5e62279134620176f0e40f6af1451c10bf36c35266bbe","beforeByteHash":"b436f3e9a351d94d200e7c4fb6d39d7f7e1253a4c0eda9f659a0aa1d5ad5c9d9","afterByteHash":"91582d537cf39eb5038c41ef61ca782b2cc26a9223d78c70d6ea3a12765ea399"};
+const U19_SOURCE_PATCH:AuditPatch={
+  "dataset": "source",
+  "path": "scripts/sources/LV3Unit19.json",
+  "key": "word",
+  "id": "rumor",
+  "before": {
+    "word": "rumor",
+    "sourcePage": 197,
+    "printedNumber": 2,
+    "role": "main",
+    "sourcePos": "n./vi.",
+    "chapterMeaningsZh": "謠言；傳言；散播謠言",
+    "officialWordId": "W002752",
+    "officialWord": "rumor",
+    "mappingEvidence": "exact_headword"
+  },
+  "after": {
+    "sourcePos": "n./vt."
+  },
+  "reason": "p197 原書清楚印 n. 謠言，傳言 & vt. 散播謠言；目前 n./vi. 為明確轉錄錯誤。僅修正 source.headwords 唯一 word=rumor 的 sourcePos，保留原中文、拼字、頁碼、映射與其他來源列。",
+  "evidence": [],
+  "fieldEvidence": {
+    "sourcePos": [
+      {
+        "proposal": "U19V002",
+        "originFindingIds": [
+          "U19V002"
+        ],
+        "reason": "p197 原書清楚印 n. 謠言，傳言 & vt. 散播謠言；目前 n./vi. 為明確轉錄錯誤。僅修正 source.headwords 唯一 word=rumor 的 sourcePos，保留原中文、拼字、頁碼、映射與其他來源列。",
+        "sources": [
+          {
+            "type": "textbook_photo_review",
+            "file": "20260815_105955.jpg",
+            "page": 197,
+            "sha256": "f1756a5067053b4ff78b2728f54653e04ca0bd63886db518339fb036b1381a96",
+            "reviewReport": "output/lv3-audit-20261107/u19-independent-source-review-v1/REVIEW.md",
+            "reviewReportSha256": "592db201ebb2cfda96945bb0d50083a10e7dabd10f9403a3d5f266e024729acd",
+            "pixelReviewMethod": "saved_full_page_preview_original_photo_hash_verified"
+          },
+          {
+            "type": "independent_source_field_review",
+            "report": "output/lv3-audit-20261107/u19-independent-source-review-v1/REVIEW.md",
+            "reportSha256": "592db201ebb2cfda96945bb0d50083a10e7dabd10f9403a3d5f266e024729acd",
+            "reviewId": "U19V002",
+            "recordedDisposition": "rekey_required_then_supported",
+            "binding": "existing_unique_word_in_headwords"
+          },
+          {
+            "type": "frozen_source_proposal",
+            "report": "output/lv3-audit-20261107/u19-source-review-v1/recommended-review-bundle.json",
+            "reportSha256": "4a2cc2ca753da11b01ba3828af1a02240726575b1c4ae91cdcfd8bf15222438a",
+            "locatedReport": "output/lv3-audit-20261107/u19-source-review-v1/source-field-proposals-located.json",
+            "locatedReportSha256": "0bb440691c679bca2ceaf51e98cd9116d667fb1896b562b438c5250859e3b55e",
+            "reviewId": "U19V002",
+            "beforeRowSha256": "2583cb7989d4cd47ca2403f776a649c96dc12687a6abe5f9c55cf83dddee7d30"
+          }
+        ],
+        "beforePresent": true
+      }
+    ]
+  }
+};
+const U19_PARENT_MANIFEST_HASH='cb6dd8d826d9ed47c7627eff8c15527773f6101440afeca4a6654b931e922dc6';
+function verifiedU19SourcePatch(m:AuditManifest,p:AuditPatch){return m.unit==='LV3-U19'&&isDeepStrictEqual(p,U19_SOURCE_PATCH);}
+function validateU19SourceContract(m:AuditManifest){
+ assert.equal(m.unit,'LV3-U19','invalid U19 source owner');
+ assert.deepEqual(m.collections?.source,U19_SOURCE_COLLECTION,'invalid U19 source collection');
+ assert.deepEqual(m.files?.[U19_SOURCE_COLLECTION.path],U19_SOURCE_GUARD,'U19 source whole-file contract mismatch');
+ const patches=m.patches.filter(p=>p.dataset==='source');assert.equal(patches.length,1,'invalid U19 source patch count');
+ assert.ok(verifiedU19SourcePatch(m,patches[0]),'invalid U19 source patch contract');
+}
+export function admitU19SupplementalSource(previousInputs:Record<string,string>,anchorInputs:Record<string,string>,predecessor:Pick<Entry,'unit'|'status'>|undefined,previousHash:string|undefined,m:AuditManifest):Record<string,string>{
+ validateU19SourceContract(m);
+ assert.equal(predecessor?.unit,'LV3-U18');assert.equal(predecessor?.status,'committed');
+ assert.equal(previousHash,U19_PARENT_MANIFEST_HASH,'invalid U19 source predecessor');
+ assert.equal(m.parentManifestHash,previousHash,'invalid U19 source parent hash');
+ assert.equal(Object.keys(anchorInputs).length,144);
+ assert.ok(!Object.hasOwn(anchorInputs,U18_SOURCE_COLLECTION.path)&&!Object.hasOwn(anchorInputs,U19_SOURCE_COLLECTION.path));
+ assert.deepEqual(Object.keys(previousInputs).sort(),[...Object.keys(anchorInputs),U18_SOURCE_COLLECTION.path].sort());
+ assert.equal(Object.keys(previousInputs).length,145);
+ assert.equal(previousInputs[U18_SOURCE_COLLECTION.path],U18_SOURCE_GUARD.afterByteHash,'invalid prior U18 source guard');
+ assert.ok(!Object.hasOwn(previousInputs,U19_SOURCE_COLLECTION.path));
+ return {...previousInputs,[U19_SOURCE_COLLECTION.path]:U19_SOURCE_GUARD.beforeByteHash!};
+}
+const supplementalSourceContracts=[
+ {unit:'LV3-U18',collection:U18_SOURCE_COLLECTION,guard:U18_SOURCE_GUARD},
+ {unit:'LV3-U19',collection:U19_SOURCE_COLLECTION,guard:U19_SOURCE_GUARD},
+];
+
 export function validateAuditScope(m:AuditManifest,scope:AuditScope):void {
  const keys=(value:object)=>Object.keys(value).sort();
  const sameKeys=(value:object,expected:string[])=>assert.deepEqual(keys(value),[...expected].sort(),'unknown or missing contract fields');
@@ -2519,10 +2719,15 @@ export function validateAuditScope(m:AuditManifest,scope:AuditScope):void {
  const globalCollections:Record<string,{path:string;key:string}>={words:{path:'public/data/v1/words.json',key:'wordId'},examples:{path:'public/data/v1/examples.json',key:'exampleId'},notes:{path:'public/data/v1/notes.json',key:'noteId'}};
  if(m.unit==='LV3-U16')globalCollections.senses={path:'public/data/v1/senses.json',key:'senseId'};
  const safeRelative=(path:string)=>assert.ok(path&&!path.includes('\\')&&!path.includes(':')&&!path.startsWith('/')&&!path.split('/').includes('..'),'unsafe path');
+ if(m.unit==='LV3-U19')validateU19SourceContract(m);
+ if(m.unit==='LV3-U18'){assert.deepEqual(contracts.collections.source,U18_SOURCE_COLLECTION,'missing exact U18 source collection');assert.deepEqual(contracts.files[U18_SOURCE_COLLECTION.path],U18_SOURCE_GUARD,'U18 source whole-file contract mismatch');}
  for(const [name,col]of Object.entries(contracts.collections)){
   sameKeys(col,['path','key','rowsField']);safeRelative(col.path);
   if(globalCollections[name]){
    assert.equal(col.path,globalCollections[name].path);assert.equal(col.key,globalCollections[name].key);assert.equal(col.rowsField,null,'global rows must be root array');
+  }else if(name==='source'){
+   assert.ok(m.unit==='LV3-U18'||m.unit==='LV3-U19','unsupported source collection');
+   assert.deepEqual(col,m.unit==='LV3-U18'?U18_SOURCE_COLLECTION:U19_SOURCE_COLLECTION);
   }else{
    assert.ok(name==='curriculum'||name==='grammarQuestions','unsupported collection');
    assert.ok(col.path.startsWith('src/features/direct/curriculum')&&col.path.endsWith('.json'),'invalid curriculum path');
@@ -2542,7 +2747,7 @@ export function validateAuditScope(m:AuditManifest,scope:AuditScope):void {
  const protectedKeys=new Set(['status','wordId','exampleId','noteId','learningItemId','questionId','word','wordVariants','sentenceEn','originalExample','originalExamples','kind','review','practiceMode','stem','answer']);
  const allowedFields:Record<string,string[]>={
   words:['meaningZh','meaningEn','usagePattern','usagePatternZh','verbForms','pos','posAll'],
-  senses:[],examples:['sensePos','meaningHint'],notes:['title','content'],curriculum:['explanationZh'],grammarQuestions:['targetMeaningZh','options']
+  source:[],senses:[],examples:['sensePos','meaningHint'],notes:['title','content'],curriculum:['explanationZh'],grammarQuestions:['targetMeaningZh','options']
  };
  for(const p of m.patches){
   sameKeys(p,['dataset','path','key','id','before','after','reason','evidence','fieldEvidence']);
@@ -2558,6 +2763,10 @@ export function validateAuditScope(m:AuditManifest,scope:AuditScope):void {
   const u16Exact=verifiedU16ReviewPatch(m,p);
   if(m.unit==='LV3-U16'&&(U16_RESERVED.has(p.dataset+':'+p.id)||p.dataset==='senses'||Object.hasOwn(p.after,'status')||Object.hasOwn(p.fieldEvidence!,'status')||Object.hasOwn(p.after,'pattern')||Object.hasOwn(p.fieldEvidence!,'pattern')))assert.ok(u16Exact,'incomplete U16 exact review contract');
   let fields=allowedFields[p.dataset];
+  if(p.dataset==='source'){
+   if(m.unit==='LV3-U19'){assert.ok(verifiedU19SourcePatch(m,p),'incomplete exact U19 source contract');fields=['sourcePos'];}
+   else{assert.ok(verifiedU18SourcePatch(m,p),'incomplete exact U18 source contract');fields=['sourcePos','chapterMeaningsZh'];}
+  }
   if(u16Exact&&['examples','senses'].includes(p.dataset))fields=Object.keys(p.after);
   const republicFact=verifiedU09RepublicFact(m,p);
   if(republicFact)fields=['sentenceEn','sentenceZh','blankSentence'];
@@ -2626,7 +2835,26 @@ export function validateAuditScope(m:AuditManifest,scope:AuditScope):void {
 }
 
 
-export function loadLV3Chain(){
+type ChainStep={entry:Entry;manifest:Manifest;scope:AuditScope|undefined};
+type AuditOperation={chain?:ChainStep[];loadMigration:MigrationLoader;validateScope:(m:AuditManifest,s:AuditScope)=>void;proof:(m:StarterMediaMigration,previous?:Record<string,string>)=>ReturnType<typeof validateStarterMediaMigration>};
+// Private synchronous operation only. Nothing is retained or returned to callers.
+function auditOperation():AuditOperation {
+ const texts=new Map<string,string|Buffer>();
+ const scopes=new WeakMap<AuditManifest,AuditScope>();
+ const proofs=new WeakMap<StarterMediaMigration,ReturnType<typeof validateStarterMediaMigration>>();
+ const loadMigration:MigrationLoader=path=>{if(!texts.has(path))texts.set(path,migrationLoad(path));return texts.get(path)!;};
+ return {loadMigration,
+  validateScope(m,scope){if(scopes.get(m)!==scope){validateAuditScope(m,scope);scopes.set(m,scope);}},
+  proof(m,previous){
+   if(previous)assert.deepEqual(m.beforeInputs,previous,'migration checkpoint adjacency');
+   let proof=proofs.get(m);
+   if(!proof){proof=validateStarterMediaMigration(m,loadMigration,previous);proofs.set(m,proof);}
+   return proof;
+  },
+ };
+}
+export function loadLV3Chain(){return loadChain(auditOperation());}
+function loadChain(operation:AuditOperation):ChainStep[]{
  const chain=read('chain.json') as {schemaVersion:number;baseline:string;anchor:string;anchorHash:string;entries:Entry[]};
  assert.ok([1,2].includes(chain.schemaVersion));assert.equal(chain.baseline,BASELINE);
  assert.equal(chain.entries[0]?.unit,'LV3-U01');
@@ -2646,7 +2874,7 @@ export function loadLV3Chain(){
    assert.equal(chain.schemaVersion,2);assert.deepEqual(Object.keys(e).sort(),['kind','migrationId','path','manifestHash','status'].sort());
    assert.equal(e.migrationId,MIGRATION_ID);assert.equal(chain.entries[index-1]?.unit,'LV3-U05','migration position');assert.equal(chain.entries[index-1]?.status,'committed','migration predecessor must be committed');
    assert.ok(isMigration(candidate));assert.equal(auditHash(candidate),e.manifestHash);assert.equal(candidate.parentManifestHash,previous);assert.ok(previousInputs);
-   validateStarterMediaMigration(candidate,migrationLoad,previousInputs);previousInputs={...candidate.afterInputs};previous=e.manifestHash;
+   operation.proof(candidate,previousInputs);previousInputs={...candidate.afterInputs};previous=e.manifestHash;
    return {entry:e,manifest:candidate,scope:undefined};
   }
   assert.equal(e.kind,undefined,'unknown chain kind');assert.deepEqual(Object.keys(e).sort(),['unit','path','manifestHash','status'].sort(),'unknown chain entry fields');assert.ok(e.unit);assert.ok(!isMigration(candidate),'untyped migration');
@@ -2655,10 +2883,15 @@ export function loadLV3Chain(){
   let scope:AuditScope|undefined;
   if(manifest.schemaVersion===2){
    assert.equal(manifest.parentManifestHash,previous,'broken parent chain');
-   assert.ok(manifest.scope);scope=read(manifest.scope) as AuditScope;validateAuditScope(manifest,scope);
+   assert.ok(manifest.scope);scope=read(manifest.scope) as AuditScope;operation.validateScope(manifest,scope);
    assert.ok(previousInputs,'predecessor checkpoint not finalized');
    const files=manifest.files!,collections=manifest.collections!;
    for(const name of ['curriculum','grammarQuestions'])if(collections[name])assert.equal(collections[name].path,catalog.get(e.unit),'unit curriculum path');
+   if(manifest.unit==='LV3-U18'){
+    // Exact supplementary source admission; all original anchor keys stay unchanged.
+    previousInputs=admitU18SupplementalSource(previousInputs,anchor.inputs,chain.entries[index-1],previous,manifest);
+   }
+   if(manifest.unit==='LV3-U19')previousInputs=admitU19SupplementalSource(previousInputs,anchor.inputs,chain.entries[index-1],previous,manifest);
    assert.deepEqual(Object.keys(manifest.unchangedInputs??{}).sort(),Object.keys(previousInputs).filter(p=>!files[p]&&!derived.includes(p)).sort());
    for(const [p,h]of Object.entries(manifest.unchangedInputs??{}))assert.equal(previousInputs[p],h,'chain unchanged guard');
    for(const [p,g]of Object.entries(files))assert.equal(previousInputs[p],g.beforeByteHash,'broken before-byte chain');
@@ -2674,26 +2907,45 @@ export function loadLV3Chain(){
  });
 }
 
-let validatedChain:ReturnType<typeof loadLV3Chain>|undefined;
-const stableChain=()=>validatedChain??=loadLV3Chain();
+// Every public projection gets a new operation and reauthenticates the chain.
 
 function rows(value:unknown,col:Collection):Row[]{
  const result=col.rowsField?(value as Row)[col.rowsField]:value;
  assert.ok(Array.isArray(result),'collection must contain rows');return result as Row[];
 }
 
+// Per-operation row indexes preserve every duplicate and strict row check.
+function rowLookup(){
+ const cache=new WeakMap<Row[],Map<string,Map<unknown,number[]>>>();
+ return {
+  find(rr:Row[],key:string,id:unknown):number[]{
+   if(typeof id==='number'&&Number.isNaN(id))return [];
+   let keys=cache.get(rr);if(!keys){keys=new Map();cache.set(rr,keys);}
+   let index=keys.get(key);if(!index){index=new Map();rr.forEach((row,i)=>{const value=row[key],matches=index!.get(value);if(matches)matches.push(i);else index!.set(value,[i]);});keys.set(key,index);}
+   return index.get(id)??[];
+  },
+  replace(rr:Row[],at:number,next:Row):void{
+   for(const [key,index]of cache.get(rr)??[]){
+    const oldId=rr[at][key],nextId=next[key];if(oldId===nextId)continue;
+    const old=index.get(oldId);if(old){const filtered=old.filter(i=>i!==at);if(filtered.length)index.set(oldId,filtered);else index.delete(oldId);}
+    const matches=index.get(nextId);if(matches){matches.push(at);matches.sort((a,b)=>a-b);}else index.set(nextId,[at]);
+   }
+   rr[at]=next;
+  },
+ };
+}
 /** Strict physical-file projection; checks complete documents, never subsets. */
 export function projectAuditStep(m:AuditManifest,documents:Record<string,unknown>,inverse=true,scope?:AuditScope){
  if(m.schemaVersion===2){assert.ok(scope);validateAuditScope(m,scope);}
- const c=auditContract(m),out=structuredClone(documents);
+ const c=auditContract(m),out=structuredClone(documents),lookup=rowLookup();
  assert.deepEqual(Object.keys(documents).sort(),Object.keys(c.files).sort(),'incomplete document set');
  for(const [name,col]of Object.entries(c.collections))if(['curriculum','grammarQuestions'].includes(name))validateCurriculumIdentity(m.unit,col.path,documents[col.path]);
  for(const [path,g]of Object.entries(c.files))assert.equal(auditHash(documents[path]),g[inverse?'afterHash':'beforeHash'],'unknown whole-file drift');
  for(const p of inverse?[...m.patches].reverse():m.patches){
-  const col=c.collections[p.dataset],rr=rows(out[col.path],col),indices=rr.flatMap((r,i)=>r[p.key]===p.id?[i]:[]);
+  const col=c.collections[p.dataset],rr=rows(out[col.path],col),indices=lookup.find(rr,p.key,p.id);
   assert.equal(indices.length,1,'nonunique row');
   assert.deepEqual(rr[indices[0]],inverse?{...p.before,...p.after}:p.before,'complete row drift');
-  rr[indices[0]]=structuredClone(inverse?p.before:{...p.before,...p.after});
+  lookup.replace(rr,indices[0],structuredClone(inverse?p.before:{...p.before,...p.after}));
  }
  for(const col of Object.values(c.collections)){
   const old=rows(documents[col.path],col).map(r=>r[col.key]),next=rows(out[col.path],col).map(r=>r[col.key]);
@@ -2704,32 +2956,32 @@ export function projectAuditStep(m:AuditManifest,documents:Record<string,unknown
 }
 
 /** Row-level compatibility for historical fixtures; untouched drift stays visible. */
-function reverseRows<T>(m:AuditManifest,dataset:string,value:T,allowMissing:boolean):T {
+function reverseRows<T>(m:AuditManifest,dataset:string,value:T,allowMissing:boolean,canonical=false):T {
  // Private only: outer caller cloned this buffer or created it with JSON.parse.
  // Preserve row checks and cloned restoration rows; never accept borrowed input.
  const c=auditContract(m),col=c.collections[dataset],out=value;
  if(!col)return out;
  assert.equal(col.rowsField,null,'use physical-file projection for curriculum documents');
- const rr=rows(out,col);
+ const rr=rows(out,col),lookup=rowLookup();
  for(const p of [...m.patches].reverse().filter(p=>p.dataset===dataset)){
-  const indexes=rr.flatMap((r,i)=>r[p.key]===p.id?[i]:[]);
+  const indexes=lookup.find(rr,p.key,p.id);
   assert.ok(indexes.length<=1,'audit cannot conceal duplicate identities');
   if(!indexes.length&&allowMissing)continue;
   assert.equal(indexes.length,1,'complete audit dataset must contain recorded identity');
   assert.deepEqual(rr[indexes[0]],{...p.before,...p.after},'exact audited row required');
-  rr[indexes[0]]=structuredClone(p.before);
+  lookup.replace(rr,indexes[0],canonical?JSON.parse(JSON.stringify(structuredClone(p.before))):structuredClone(p.before));
  }
  return out;
 }
 
-function checkpoint(afterUnit:string){
- const chain=stableChain(),committed=chain.filter(x=>x.entry.status==='committed');
+function checkpoint(afterUnit:string,operation:AuditOperation){
+ const chain=operation.chain??=loadChain(operation),committed=chain.filter(x=>x.entry.status==='committed');
  const positions=committed.flatMap((x,i)=>(x.entry.unit??x.entry.migrationId)===afterUnit?[i]:[]);
  assert.equal(positions.length,1,'unknown or uncommitted checkpoint');
  const index=positions[0],anchor=read('U01-checkpoint.json') as {inputs:Record<string,string>};
  const bytes={...anchor.inputs},semantic:Record<string,string>={};
  for(const step of committed.slice(0,index+1)){
-  if(isMigration(step.manifest)){Object.assign(bytes,step.manifest.afterInputs);const proof=validateStarterMediaMigration(step.manifest,migrationLoad);semantic[BUILDER]=auditHash(proof.texts.afterBuilder.replace(/\r\n/g,'\n'));continue;}
+  if(isMigration(step.manifest)){Object.assign(bytes,step.manifest.afterInputs);const proof=operation.proof(step.manifest);semantic[BUILDER]=auditHash(proof.texts.afterBuilder.replace(/\r\n/g,'\n'));continue;}
   for(const [path,g]of Object.entries(auditContract(step.manifest).files)){
    semantic[path]=g.afterHash;if(g.afterByteHash)bytes[path]=g.afterByteHash;
   }
@@ -2737,12 +2989,31 @@ function checkpoint(afterUnit:string){
   if(step.manifest.derivedAfter?.[PACK])delete semantic[PACK];
  }
  const later=committed.slice(index+1);
- for(const step of later){if(isMigration(step.manifest)){const proof=validateStarterMediaMigration(step.manifest,migrationLoad);if(!semantic[BUILDER])semantic[BUILDER]=auditHash(proof.texts.beforeBuilder.replace(/\r\n/g,'\n'));continue;}for(const [path,g]of Object.entries(auditContract(step.manifest).files))if(!semantic[path])semantic[path]=g.beforeHash;}
- return {later,bytes,semantic};
+ for(const step of later){if(isMigration(step.manifest)){const proof=operation.proof(step.manifest);if(!semantic[BUILDER])semantic[BUILDER]=auditHash(proof.texts.beforeBuilder.replace(/\r\n/g,'\n'));continue;}for(const [path,g]of Object.entries(auditContract(step.manifest).files))if(!semantic[path])semantic[path]=g.beforeHash;}
+ // Prepared owners are not selectable; their before sources remain guarded.
+ // Authenticate BOTH sources afresh on every public operation.
+ for(const registered of supplementalSourceContracts){
+  const sourceOwners=chain.filter(isAuditUnitStep).filter(step=>step.manifest.unit===registered.unit);
+  const label=registered.unit.replace('LV3-','');
+  assert.ok(sourceOwners.length<=1,`duplicate ${label} supplementary source owner`);
+  if(!sourceOwners.length)continue;
+  const owner=sourceOwners[0],path=registered.collection.path,guard=owner.manifest.files![path];
+  assert.deepEqual(guard,registered.guard,`${label} source whole-file contract mismatch`);
+  const currentSide=owner.entry.status==='committed'?'after':'before';
+  const raw=readFileSync(new URL('../../../'+path,import.meta.url),'utf8').replace(/\r\n/g,'\n');
+  assert.equal(createHash('sha256').update(raw).digest('hex'),guard[currentSide==='after'?'afterByteHash':'beforeByteHash'],`${label} source current checkpoint drift`);
+  const targetIncludesOwner=committed.slice(0,index+1).some(step=>step.entry.unit===registered.unit);
+  bytes[path]=(targetIncludesOwner?guard.afterByteHash:guard.beforeByteHash)!;
+  semantic[path]=targetIncludesOwner?guard.afterHash:guard.beforeHash;
+ }
+ return {later,bytes,semantic,operation};
 }
 
 export function lv3AfterUnitRows<T>(afterUnit:string,dataset:string,value:T,options:{allowMissing?:boolean}={}):T {
- const name=dataset.replace(/\.json$/,''),{later}=checkpoint(afterUnit);
+ return rowsAtCheckpoint(checkpoint(afterUnit,auditOperation()),dataset,value,options);
+}
+function rowsAtCheckpoint<T>({later}:ReturnType<typeof checkpoint>,dataset:string,value:T,options:{allowMissing?:boolean}={}):T {
+ const name=dataset.replace(/\.json$/,'');
  let copy=structuredClone(value);
  for(const x of [...later].reverse())if(!isMigration(x.manifest))copy=reverseRows(x.manifest,name,copy,options.allowMissing??false);
  return copy;
@@ -2753,33 +3024,67 @@ export function lv3AfterUnit1Rows<T>(dataset:string,value:T,options:{allowMissin
 export function lv3BeforeAudit<T>(dataset:string,value:T,options:{allowMissing?:boolean}={}):T {
  return lv3Unit1BeforeAudit(dataset,lv3AfterUnit1Rows(dataset,value,options),options);
 }
+// Reject executable caller structures before authenticating any snapshot. Do not
+// clone inputs first: cloning could erase array properties that strict guards see.
+function assertPassiveBatch(value:unknown,active=new Set<object>()):void {
+ if(value===null||typeof value==='string'||typeof value==='boolean')return;
+ if(typeof value==='number'){assert.ok(Number.isFinite(value),'batch non-JSON number');return;}
+ assert.ok(typeof value==='object'&&value!==null,'batch non-JSON value');
+ assert.ok(!utilTypes.isProxy(value),'batch proxy is not allowed');
+ const object=value as object,array=Array.isArray(object);
+ assert.equal(Object.getPrototypeOf(object),array?Array.prototype:Object.prototype,'batch non-JSON prototype');
+ assert.ok(!active.has(object),'batch cycle is not allowed');active.add(object);
+ for(const key of Reflect.ownKeys(object)){
+  assert.equal(typeof key,'string','batch symbol key is not allowed');
+  const descriptor=Object.getOwnPropertyDescriptor(object,key)!;
+  assert.ok('value' in descriptor,'batch accessor is not allowed');
+  if(array&&key==='length')continue;
+  assert.equal(descriptor.enumerable,true,'batch hidden field is not allowed');
+  assertPassiveBatch(descriptor.value,active);
+ }
+ active.delete(object);
+}
+/** One call, fresh authenticated checkpoint, complete row checks for every dataset. */
+export function lv3BeforeAuditDatasets(datasets:Record<string,unknown>,options:{allowMissing?:boolean}={}):Record<string,unknown> {
+ assertPassiveBatch(datasets);assertPassiveBatch(options);
+ const entries=Object.entries(datasets),checkedOptions={allowMissing:options.allowMissing??false};
+ const state=checkpoint('LV3-U01',auditOperation());
+ return Object.fromEntries(entries.map(([name,value])=>[name,
+  lv3Unit1BeforeAudit(name,rowsAtCheckpoint(state,name,value,checkedOptions),checkedOptions)]));
+}
 
 export function reverseFileAuditSteps<T>(steps:{manifest:Manifest;scope?:AuditScope}[],path:string,value:T,loadMigration:MigrationLoader=migrationLoad):T {
- let out=structuredClone(value);
+ return reverseFiles(steps,path,value,loadMigration,validateAuditScope,(m)=>validateStarterMediaMigration(m,loadMigration));
+}
+function reverseFiles<T>(steps:{manifest:Manifest;scope?:AuditScope}[],path:string,value:T,loadMigration:MigrationLoader,validateScope:AuditOperation['validateScope'],proofFor:AuditOperation['proof']):T {
+ let out=structuredClone(value);let lookup=rowLookup();const publishedProof:PublishedProof={};let semanticProof:string|undefined;
  for(const {manifest,scope} of [...steps].reverse()){
   if(isMigration(manifest)){
-   if(path===PACK){const proof=validateStarterMediaMigration(manifest,loadMigration);assert.deepEqual(out,proof.after,'migration whole pack drift');const pack=out as Row;for(const d of [...manifest.delta].reverse()){assert.deepEqual((pack.media as Row[])[d.afterIndex],d.row);(pack.media as Row[]).splice(d.afterIndex,1);}pack.meta=structuredClone(manifest.beforePackMeta);assert.deepEqual(pack,proof.before,'migration semantic inverse');}
+   lookup=rowLookup();for(const key of Object.keys(publishedProof))delete publishedProof[key as keyof PublishedProof];semanticProof=undefined;
+   if(path===PACK){const proof=proofFor(manifest);assert.deepEqual(out,proof.after,'migration whole pack drift');const pack=out as Row;for(const d of [...manifest.delta].reverse()){assert.deepEqual((pack.media as Row[])[d.afterIndex],d.row);(pack.media as Row[]).splice(d.afterIndex,1);}pack.meta=structuredClone(manifest.beforePackMeta);assert.deepEqual(pack,proof.before,'migration semantic inverse');}
    else if(path===BUILDER){assert.equal(typeof out,'string');out=inverseStarterMediaMigrationNormalized(manifest,path,out as string,loadMigration) as T;}
    continue;
   }
-  if(manifest.schemaVersion===2){assert.ok(scope);validateAuditScope(manifest,scope);}
+  if(manifest.schemaVersion===2){assert.ok(scope);validateScope(manifest,scope);}
   if(manifest.schemaVersion===2&&(path===PACK||path==='public/data/v1/meta.json')){
-   assert.ok(scope);const text=JSON.stringify(out,null,path===PACK?undefined:2)+'\n';out=JSON.parse(inversePublishedAuditStep(manifest,scope,path,text)) as T;continue;
+   assert.ok(scope);const text=publishedProof.text??(JSON.stringify(out,null,path===PACK?undefined:2)+'\n');inversePublishedStep(manifest,scope,path,text,validateScope,publishedProof);out=publishedProof.value as T;semanticProof=undefined;continue;
   }
   const c=auditContract(manifest),guard=c.files[path];if(!guard)continue;
   for(const [name,col]of Object.entries(auditContract(manifest).collections))if(col.path===path&&['curriculum','grammarQuestions'].includes(name))validateCurriculumIdentity(manifest.unit,path,out);
-  assert.equal(auditHash(out),guard.afterHash,'unknown whole-file drift');
+  assert.equal(semanticProof??auditHash(out),guard.afterHash,'unknown whole-file drift');
   for(const p of [...manifest.patches].reverse().filter(p=>p.path===path)){
-   const rr=rows(out,c.collections[p.dataset]),indices=rr.flatMap((r,i)=>r[p.key]===p.id?[i]:[]);
+   const rr=rows(out,c.collections[p.dataset]),indices=lookup.find(rr,p.key,p.id);
    assert.equal(indices.length,1,'nonunique row');assert.deepEqual(rr[indices[0]],{...p.before,...p.after});
-   rr[indices[0]]=structuredClone(p.before);
+   lookup.replace(rr,indices[0],structuredClone(p.before));
   }
-  assert.equal(auditHash(out),guard.beforeHash,'wrong inverse hash');
+  semanticProof=auditHash(out);assert.equal(semanticProof,guard.beforeHash,'wrong inverse hash');for(const key of Object.keys(publishedProof))delete publishedProof[key as keyof PublishedProof];
  }
  return out;
 }
 export function lv3AfterUnitFile<T>(afterUnit:string,path:string,value:T):T {
- const state=checkpoint(afterUnit);
+ return fileAtCheckpoint(checkpoint(afterUnit,auditOperation()),path,value);
+}
+function fileAtCheckpoint<T>(state:ReturnType<typeof checkpoint>,path:string,value:T):T {
  assert.ok(Object.hasOwn(state.bytes,path)||Object.hasOwn(state.semantic,path),'unknown checkpoint path');
  assert.ok(path&&!path.startsWith('/')&&!path.includes('\\')&&!path.includes(':')&&!path.split('/').includes('..'),'unsafe checkpoint path');
  let input=value,authenticatedTarget:T|undefined;
@@ -2798,7 +3103,7 @@ export function lv3AfterUnitFile<T>(afterUnit:string,path:string,value:T):T {
    authenticatedTarget=JSON.parse(projected) as T;
   }
  }
- const out=reverseFileAuditSteps(state.later,path,input);
+ const out=reverseFiles(state.later,path,input,state.operation.loadMigration,state.operation.validateScope,state.operation.proof);
  if(authenticatedTarget!==undefined)assert.ok(isDeepStrictEqual(out,authenticatedTarget),'authenticated whole-file inverse drift');
  if(state.semantic[path])assert.equal(auditHash(out),state.semantic[path],'target checkpoint semantic drift');
  else if(state.bytes[path]){
@@ -2816,6 +3121,12 @@ export function lv3AfterUnitFile<T>(afterUnit:string,path:string,value:T):T {
  }
  return out;
 }
+/** No context is exposed; each batch starts with fresh authentication. */
+export function lv3AfterUnitFiles(afterUnit:string,documents:Record<string,unknown>):Record<string,unknown> {
+ assertPassiveBatch(documents);const entries=Object.entries(documents);
+ const state=checkpoint(afterUnit,auditOperation());
+ return Object.fromEntries(entries.map(([path,value])=>[path,fileAtCheckpoint(state,path,value)]));
+}
 export function lv3AfterUnit1File<T>(path:string,value:T):T {
  return lv3AfterUnitFile('LV3-U01',path,value);
 }
@@ -2823,56 +3134,69 @@ export function lv3AfterUnit1File<T>(path:string,value:T):T {
 
 /** Strict one-step raw projection, also used for cross-language fixture parity. */
 export function inversePublishedAuditStep(m:AuditManifest,scope:AuditScope,path:string,text:string):string {
- validateAuditScope(m,scope);
+ return inversePublishedStep(m,scope,path,text,validateAuditScope);
+}
+type PublishedProof={text?:string;rawHash?:string;semanticHash?:string;value?:unknown;canonical?:boolean};
+function inversePublishedStep(m:AuditManifest,scope:AuditScope,path:string,text:string,validateScope:AuditOperation['validateScope'],proof?:PublishedProof):string {
+ validateScope(m,scope);
  assert.equal(text,text.replace(/\r\n/g,'\n'),'caller must normalize CRLF first');
- const digest=(s:string)=>createHash('sha256').update(s).digest('hex');
- let out=text;
+ const digest=(s:string)=>proof?.text===s&&proof.rawHash?proof.rawHash:createHash('sha256').update(s).digest('hex');
+ let out=text;const lookup=rowLookup();let nextSemanticHash:string|undefined;let parsed:unknown=proof?.text===text?proof.value:undefined;let canonical=proof?.text===text&&proof.canonical===true;
   const c=auditContract(m),guard=c.files[path];
   if(guard){
    assert.equal(digest(out),guard.afterByteHash,'unknown raw after drift');
-   const value=JSON.parse(out);assert.equal(auditHash(value),guard.afterHash);
+   let value=parsed===undefined?JSON.parse(out):parsed;assert.equal(proof?.text===out&&proof.semanticHash?proof.semanticHash:auditHash(value),guard.afterHash);
    for(const [name,col]of Object.entries(c.collections))if(col.path===path&&['curriculum','grammarQuestions'].includes(name))validateCurriculumIdentity(m.unit,path,value);
    for(const p of [...m.patches].reverse().filter(p=>p.path===path)){
-    const rr=rows(value,c.collections[p.dataset]),indexes=rr.flatMap((r,i)=>r[p.key]===p.id?[i]:[]);
-    assert.equal(indexes.length,1);assert.deepEqual(rr[indexes[0]],{...p.before,...p.after});rr[indexes[0]]=structuredClone(p.before);
+    const rr=rows(value,c.collections[p.dataset]),indexes=lookup.find(rr,p.key,p.id);
+    assert.equal(indexes.length,1);assert.deepEqual(rr[indexes[0]],{...p.before,...p.after});lookup.replace(rr,indexes[0],proof&&canonical?JSON.parse(JSON.stringify(structuredClone(p.before))):structuredClone(p.before));
    }
-   assert.equal(auditHash(value),guard.beforeHash);out=JSON.stringify(value,null,2)+'\n';
+   if(proof&&!canonical)value=JSON.parse(JSON.stringify(value));
+   nextSemanticHash=auditHash(value);assert.equal(nextSemanticHash,guard.beforeHash);out=JSON.stringify(value,null,2)+'\n';parsed=value;canonical=true;
    if(digest(out)!==guard.beforeByteHash){
     const fixture=guard.beforeFixture;assert.ok(fixture,'missing guarded byte fixture');
     assert.ok(fixture.startsWith('docs/lv3-audit-20261107/'),'invalid byte fixture path');
     const relative=fixture.slice('docs/lv3-audit-20261107/'.length);
     assert.ok(!relative.includes('..')&&!relative.includes(':')&&!relative.includes('\\'),'unsafe fixture path');
-    out=readFileSync(new URL(relative,docs),'utf8').replace(/\r\n/g,'\n');assert.equal(auditHash(JSON.parse(out)),guard.beforeHash);
+    out=readFileSync(new URL(relative,docs),'utf8').replace(/\r\n/g,'\n');parsed=JSON.parse(out);canonical=false;assert.equal(auditHash(parsed),guard.beforeHash);
    }
    assert.equal(digest(out),guard.beforeByteHash,'wrong raw before hash');
   }else if(path==='public/data/v1/meta.json'||path==='public/data/v1/sa-pack.json'){
    assert.ok(m.derivedAfter&&m.derivedBefore);assert.equal(digest(out),m.derivedAfter[path],'unknown derived after drift');
-   if(path.endsWith('/meta.json')){assert.ok(m.beforeMeta);out=JSON.stringify(m.beforeMeta,null,2)+'\n';}
+   if(path.endsWith('/meta.json')){assert.ok(m.beforeMeta);out=JSON.stringify(m.beforeMeta,null,2)+'\n';parsed=JSON.parse(out);canonical=true;}
    else{
-    const pack=JSON.parse(out) as Row;
-    for(const name of ['words','examples','notes'])if(c.collections[name])pack[name]=reverseRows(m,name,pack[name],true);
-    if(m.unit==='LV3-U16'&&c.collections.senses)pack.senses=reverseRows(m,'senses',pack.senses,true);
-    assert.ok(m.beforePackMeta);pack.meta=structuredClone(m.beforePackMeta);out=JSON.stringify(pack)+'\n';
+    let pack=(parsed===undefined?JSON.parse(out):parsed) as Row;
+    for(const name of ['words','examples','notes'])if(c.collections[name])pack[name]=reverseRows(m,name,pack[name],true,Boolean(proof&&canonical));
+    if(m.unit==='LV3-U16'&&c.collections.senses)pack.senses=reverseRows(m,'senses',pack.senses,true,Boolean(proof&&canonical));
+    assert.ok(m.beforePackMeta);pack.meta=proof&&canonical?JSON.parse(JSON.stringify(structuredClone(m.beforePackMeta))):structuredClone(m.beforePackMeta);if(proof&&!canonical)pack=JSON.parse(JSON.stringify(pack)) as Row;out=JSON.stringify(pack)+'\n';parsed=pack;canonical=true;
    }
    assert.equal(digest(out),m.derivedBefore[path],'wrong derived before hash');
   }
 
+ if(proof){const rawHash=digest(out);proof.text=out;proof.rawHash=rawHash;proof.semanticHash=nextSemanticHash;proof.value=parsed;proof.canonical=canonical;}
  return out;
 }
 
 /** Raw projection checks the selected target even when the successor list is empty. */
 export function lv3AfterUnitPublishedText(afterUnit:string,path:string,text:string):string {
  assert.equal(text,text.replace(/\r\n/g,'\n'),'caller must normalize CRLF first');
- return publishedTextAtCheckpoint(checkpoint(afterUnit),path,text);
+ return publishedTextAtCheckpoint(checkpoint(afterUnit,auditOperation()),path,text);
+}
+export function lv3AfterUnitPublishedTexts(afterUnit:string,texts:Record<string,string>):Record<string,string> {
+ assertPassiveBatch(texts);const entries=Object.entries(texts);
+ const state=checkpoint(afterUnit,auditOperation());
+ return Object.fromEntries(entries.map(([path,text])=>[path,publishedTextAtCheckpoint(state,path,text)]));
 }
 // Private, synchronous operation-local reuse only. Public entrypoints always
 // create a fresh checkpoint; no state or proof survives a public operation.
 function publishedTextAtCheckpoint(state:ReturnType<typeof checkpoint>,path:string,text:string):string {
  assert.equal(text,text.replace(/\r\n/g,'\n'),'caller must normalize CRLF first');
- let out=text;
+ const source=supplementalSourceContracts.find(registered=>registered.collection.path===path);
+ if(source)assert.ok(Object.hasOwn(state.bytes,path),`unknown ${source.unit.replace('LV3-','')} supplementary checkpoint path`);
+ let out=text;const proof:PublishedProof={};
  for(const {manifest,scope} of [...state.later].reverse()){
-  if(isMigration(manifest)){out=inverseStarterMediaMigrationNormalized(manifest,path,out,migrationLoad);continue;}
-  assert.ok(scope);out=inversePublishedAuditStep(manifest,scope,path,out);
+  if(isMigration(manifest)){out=inverseStarterMediaMigrationNormalized(manifest,path,out,state.operation.loadMigration);continue;}
+  assert.ok(scope);out=inversePublishedStep(manifest,scope,path,out,state.operation.validateScope,proof);
  }
  if(state.bytes[path])assert.equal(createHash('sha256').update(out).digest('hex'),state.bytes[path],'target checkpoint raw drift');
  return out;
@@ -2880,3 +3204,6 @@ function publishedTextAtCheckpoint(state:ReturnType<typeof checkpoint>,path:stri
 export function lv3AfterUnit1PublishedText(path:string,text:string):string {
  return lv3AfterUnitPublishedText('LV3-U01',path,text);
 }
+
+/** Strict synchronous multi-step projection. Every call owns a fresh proof; each supplied scope is validated. This low-level API validates caller-supplied steps, not the current chain or source files. */
+export function inversePublishedAuditSteps(steps:{manifest:AuditManifest;scope:AuditScope}[],path:string,text:string){const proof:PublishedProof={};let out=text;for(const {manifest,scope}of [...steps].reverse())out=inversePublishedStep(manifest,scope,path,out,validateAuditScope,proof);return out;}

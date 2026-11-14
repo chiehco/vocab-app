@@ -24424,8 +24424,17 @@ it('binds all 497 source fields, all 213 full rows, all evidence arrays, four ch
   expect(manifest.patches).toHaveLength(213);
   expect(manifest.patches.reduce((n,p) => n + Object.keys(p.after).length, 0)).toBe(497);
   expect(manifest.patches.map(p => p.dataset + ':' + p.id).sort()).toEqual(u11Fixture.rows.map(r => r.dataset + ':' + r.id).sort());
+  expect(u11Fixture.documents).toHaveLength(6);
+  expect(new Set(u11Fixture.documents.map(d=>d.dataset)).size).toBe(u11Fixture.documents.length);
+  expect(new Set(u11Fixture.documents.map(d=>d.path)).size).toBe(u11Fixture.documents.length);
+  const assigned=u11Fixture.documents.flatMap(d=>u11Fixture.rows.filter(row=>row.dataset===d.dataset));
+  expect(assigned.map(row=>row.dataset+':'+row.id).sort()).toEqual(u11Fixture.rows.map(row=>row.dataset+':'+row.id).sort());
+  for(const patch of manifest.patches) expect(patch.path).toBe(u11Fixture.documents.find(d=>d.dataset===patch.dataset)!.path);
+});
+
+it.each(u11Fixture.documents)('binds complete U11 document: $dataset',(d)=>{
+  const {manifest} = u11Step();
   const documents: Record<string, unknown> = {};
-  for (const d of u11Fixture.documents) {
     const current = u11CurrentDocuments[d.dataset];
     const snapshot = structuredClone(current);
     const atU11 = lv3AfterUnitFile('LV3-U11', d.path, current);
@@ -24435,8 +24444,7 @@ it('binds all 497 source fields, all 213 full rows, all evidence arrays, four ch
     expect(current).toEqual(snapshot);
     if (d.dataset === 'curriculum') expect(auditHash(current)).toBe(d.afterHash);
     if (d.dataset === 'senses' || d.dataset === 'media') expect(d.afterHash).toBe(d.beforeHash);
-  }
-  for (const row of u11Fixture.rows) {
+  for (const row of u11Fixture.rows.filter(row=>row.dataset===d.dataset)) {
     const p = manifest.patches.find(p => p.dataset === row.dataset && p.id === row.id)!;
     expect(p.before).toEqual(row.beforeRow);
     expect(p.after).toEqual(row.fields);

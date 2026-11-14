@@ -1,4 +1,4 @@
-import {lv3BeforeAudit,lv3AfterUnitFile} from '../features/direct/lv3Audit.testSupport';
+import {lv3BeforeAudit,lv3BeforeAuditDatasets,lv3AfterUnitFile} from '../features/direct/lv3Audit.testSupport';
 import lv2u45Wicked from '../../docs/unit-audit-20261105/LV2-U45-wicked-usage-followup.json';
 import lv2u41Usage from '../../docs/unit-audit-20261105/LV2-U41-usage-followup.json';
 import lv2u40Visible from '../../docs/unit-audit-20261105/LV2-U40-visible-pos-followup.json';
@@ -331,7 +331,8 @@ export function beforeUnitAudit<T>(dataset:string, value:T):T {
     // Authenticate the complete current pack and reverse the registered migration
     // through the existing strict chain. U05 is the sealed pre-migration checkpoint.
     const beforeMediaMigration=lv3AfterUnitFile('LV3-U05','public/data/v1/sa-pack.json',pack) as Row;
-    for(const [key,rows]of Object.entries(datasets))pack[key]=beforeUnitAudit(key,rows);
+    const restored=lv3BeforeAuditDatasets(datasets,{allowMissing:true});
+    for(const [key,rows]of Object.entries(restored))pack[key]=restoreEarlierAuditRows(key,rows);
     // Only media and its count belong to that migration. Keep the row-audit inverse
     // and the independently pinned historical whole-pack expectation unchanged.
     pack.media=structuredClone(beforeMediaMigration.media);
@@ -351,6 +352,9 @@ export function beforeUnitAudit<T>(dataset:string, value:T):T {
     Object.assign(row,{generatedAt:'2026-10-26T06:21:08Z',wordsHash:'0b4f19bc11039dd0c70b630461418e124225f870ac576748993df1481bb3ecad',contentHash:'26fdedbbc0e5e8e8f61976120ec57093ef3399856cdeba79542358d083c64008'});
     return copy;
   }
+  return restoreEarlierAuditRows(name,copy);
+}
+function restoreEarlierAuditRows<T>(name:string,copy:T):T {
   if(!Array.isArray(copy))return copy;
   const indexes=new Map<string,Map<unknown,Row[]>>();
   for(const patch of patches.filter(p=>p.dataset===name).reverse()){

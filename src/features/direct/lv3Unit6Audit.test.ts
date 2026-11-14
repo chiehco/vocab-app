@@ -6,7 +6,7 @@ import type {SenseRecord, WordRecord} from '../../db/types';
 import {hasVerbMeaning, recordedSummary, trustedVerbForms} from '../browser/meaningRecords';
 import {getWordDisplaySense} from '../browser/wordDisplay';
 import {findUnit} from './model';
-import {auditHash, isAuditUnitStep, loadLV3Chain, lv3AfterUnitFile, lv3AfterUnitPublishedText, projectAuditStep} from './lv3Audit.testSupport';
+import {auditHash, isAuditUnitStep, loadLV3Chain, lv3AfterUnitFile, lv3AfterUnitFiles, lv3AfterUnitPublishedTexts, projectAuditStep} from './lv3Audit.testSupport';
 
 type Row = Record<string, unknown>;
 type Curriculum = {learningItems: Row[]; questions: unknown[]; relatedNotes: unknown[]; template: Row};
@@ -58,6 +58,8 @@ it('authenticates all 144 accepted U06 fields and 56 complete actual-after rows'
     after: Object.fromEntries(Object.entries(patch.after).sort(([a], [b]) => a.localeCompare(b))),
   })).sort((a, b) => (a.dataset + ':' + a.id).localeCompare(b.dataset + ':' + b.id));
   assert.equal(auditHash(accepted), acceptedRowsHash, 'exact accepted fields and original full rows');
+  const batch=lv3AfterUnitFiles(unit,Object.fromEntries(Object.keys(manifest.files!).map(path=>[path,read(path)])));
+  for(const [path,value]of Object.entries(batch))documents.set(path,value);
   for (const [dataset, rowCount, fieldCount] of [['curriculum', 25, 89], ['words', 19, 43], ['examples', 10, 10], ['notes', 2, 2]] as const) {
     const patches = manifest.patches.filter(patch => patch.dataset === dataset);
     assert.equal(patches.length, rowCount, dataset);
@@ -74,8 +76,9 @@ it('authenticates all six actual published files and all 31 affected starter row
   assert.equal(Object.keys(expected).length, 6);
   // Reuse only this test's fully authenticated raw projection; no shared mutable cache.
   let publishedPack: string | undefined;
+  const published=lv3AfterUnitPublishedTexts(unit,Object.fromEntries(Object.keys(expected).map(path=>[path,readFileSync(path,'utf8').replace(/\r\n/g,'\n')])));
   for (const [path, digest] of Object.entries(expected)) {
-    const text = lv3AfterUnitPublishedText(unit, path, readFileSync(path, 'utf8').replace(/\r\n/g, '\n'));
+    const text = published[path];
     assert.equal(createHash('sha256').update(text).digest('hex'), digest, path);
     if (path === 'public/data/v1/sa-pack.json') publishedPack = text;
   }

@@ -643,6 +643,7 @@ function u10CheckpointPack() {
   return JSON.parse(lv3AfterUnitPublishedText('LV3-U10', path, currentText)) as typeof pack;
 }
 
+const u10SplitPaths: Record<string,string> = {curriculum:'src/features/direct/curriculumLV3Unit10.json',words:'public/data/v1/words.json',examples:'public/data/v1/examples.json'};
 it('authenticates all U10 source documents, all 166 reviewed rows and all 407 fields against independent expectations', () => {
   const delivered = { ...curriculum10, learningItems: findUnit(10, 'LV3')!.items };
   const currentDocuments: Record<string, unknown> = {
@@ -650,18 +651,8 @@ it('authenticates all U10 source documents, all 166 reviewed rows and all 407 fi
     'public/data/v1/words.json': words10,
     'public/data/v1/examples.json': examples10,
   };
-  const currentSnapshot = structuredClone(currentDocuments);
-  const documents = Object.fromEntries(Object.entries(currentDocuments).map(([path, value]) =>
-    [path, lv3AfterUnitFile('LV3-U10', path, value)]));
   const {manifest} = u10Step();
   expect(Object.keys(manifest.files!).sort()).toEqual(Object.keys(u10ExpectedDocuments).sort());
-  for (const [path, digest] of Object.entries(u10ExpectedDocuments)) {
-    expect(auditHash(documents[path]), path).toBe(digest);
-    expect(manifest.files![path].afterHash, path).toBe(digest);
-    expect(currentDocuments[path], path + ' projection does not mutate current data').toEqual(currentSnapshot[path]);
-    expect(auditHash(lv3AfterUnitFile('LV3-U09', path, currentDocuments[path])), path + ' independent complete before')
-      .toBe(u10BeforeDocuments[path]);
-  }
   expect(delivered.learningItems).toHaveLength(185);
   expect(delivered.learningItems.filter(item => item.kind === 'vocabulary')).toHaveLength(132);
   expect(delivered.learningItems.filter(item => item.kind === 'grammar')).toHaveLength(53);
@@ -671,12 +662,33 @@ it('authenticates all U10 source documents, all 166 reviewed rows and all 407 fi
     .toEqual(u10ExpectedRows.map(row => row.dataset + ':' + row.id).sort());
   expect(manifest.patches).toHaveLength(166);
   expect(manifest.patches.reduce((total, patch) => total + Object.keys(patch.after).length, 0)).toBe(407);
-  const datasetRows: Record<string, U10Row[]> = {
-    curriculum: (documents['src/features/direct/curriculumLV3Unit10.json'] as typeof delivered).learningItems as unknown as U10Row[],
-    words: documents['public/data/v1/words.json'] as U10Row[],
-    examples: documents['public/data/v1/examples.json'] as U10Row[],
+  expect(Object.values(u10SplitPaths).sort()).toEqual(Object.keys(u10ExpectedDocuments).sort());
+  expect(Object.keys(currentDocuments).sort()).toEqual(Object.keys(u10ExpectedDocuments).sort());
+  const assigned=Object.keys(u10SplitPaths).flatMap(dataset=>u10ExpectedRows.filter(row=>row.dataset===dataset));
+  expect(assigned.map(row=>row.dataset+':'+row.id).sort()).toEqual(u10ExpectedRows.map(row=>row.dataset+':'+row.id).sort());
+  for(const patch of manifest.patches) expect(patch.path).toBe(u10SplitPaths[patch.dataset]);
+});
+
+it.each(Object.entries(u10SplitPaths))('authenticates complete U10 document: %s',(dataset,path)=>{
+  const delivered = { ...curriculum10, learningItems: findUnit(10, 'LV3')!.items };
+  const currentDocuments: Record<string, unknown> = {
+    'src/features/direct/curriculumLV3Unit10.json': delivered,
+    'public/data/v1/words.json': words10,
+    'public/data/v1/examples.json': examples10,
   };
-  for (const row of u10ExpectedRows) {
+  const currentSnapshot = structuredClone(currentDocuments);
+  const documents: Record<string,unknown> = {[path]:lv3AfterUnitFile('LV3-U10',path,currentDocuments[path])};
+  const {manifest} = u10Step();
+  const digest=u10ExpectedDocuments[path];
+    expect(auditHash(documents[path]), path).toBe(digest);
+    expect(manifest.files![path].afterHash, path).toBe(digest);
+    expect(currentDocuments[path], path + ' projection does not mutate current data').toEqual(currentSnapshot[path]);
+    expect(auditHash(lv3AfterUnitFile('LV3-U09', path, currentDocuments[path])), path + ' independent complete before')
+      .toBe(u10BeforeDocuments[path]);
+  expect(currentDocuments).toEqual(currentSnapshot);
+  const value=documents[path];
+  const datasetRows: Record<string,U10Row[]> = {[dataset]:(Array.isArray(value)?value:(value as {learningItems:U10Row[]}).learningItems) as U10Row[]};
+  for (const row of u10ExpectedRows.filter(row=>row.dataset===dataset)) {
     const patch = manifest.patches.find(patch => patch.dataset === row.dataset && patch.id === row.id)!;
     expect(auditHash(patch.before), row.id + ' complete before').toBe(row.beforeHash);
     expect(patch.after, row.id + ' exact fields').toEqual(row.fields);

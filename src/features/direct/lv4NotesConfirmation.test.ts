@@ -43,9 +43,10 @@ it('records physical-book confirmation of blank p22 without claiming a new photo
   expect(textbookUnits).toHaveLength(146);
 });
 
-it('keeps every public content dataset, including the5779-word starter, exactly unchanged', () => {
-  for (const file of baseline.publicFiles) {
+it.each(baseline.publicFiles)('keeps complete public content dataset unchanged: $name', (file) => {
     expect(hash(beforeUnitAudit(file.name,JSON.parse(readFileSync(`public/data/v1/${file.name}`, 'utf8')))),file.name).toBe(file.payloadHash);
-  }
+});
+
+it('retains the5779-word starter size', () => {
   expect(starter.words).toHaveLength(5779);
 });

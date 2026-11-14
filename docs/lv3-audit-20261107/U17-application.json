@@ -1,0 +1,55 @@
+{
+  "unit": "LV3-U17",
+  "status": "text_applied_locally_final_image_and_full_integration_pending",
+  "headAtApplication": "0b75127f6a4d49085f577ec0075c1341fd7c7012",
+  "readyManifestHash": "7a8f12a1ba51548338cfc95e18ac8832b88187ff8eab0d87e24ca85763570508",
+  "fields": 362,
+  "rows": 155,
+  "sourceFiles": 3,
+  "derivedFiles": 2,
+  "generalOfficialWordDomain": 76,
+  "carryForwardWords": [
+    "youngster",
+    "championship",
+    "significant",
+    "interrupt"
+  ],
+  "unknownStatusesAndOriginalExamplesPreserved": true,
+  "actualApplyResult": {
+    "state": "applied",
+    "patchCount": 155,
+    "files": [
+      "public/data/v1/examples.json",
+      "public/data/v1/meta.json",
+      "public/data/v1/sa-pack.json",
+      "public/data/v1/words.json",
+      "src/features/direct/curriculumLV3Unit17.json"
+    ],
+    "productWrites": 5,
+    "receipt": "output/lv3-audit-20261107/transactions/20261110T113844190200Z/transaction.json"
+  },
+  "actualRepeatResult": {
+    "state": "already_applied",
+    "patchCount": 155,
+    "files": [
+      "public/data/v1/examples.json",
+      "public/data/v1/meta.json",
+      "public/data/v1/sa-pack.json",
+      "public/data/v1/words.json",
+      "src/features/direct/curriculumLV3Unit17.json"
+    ],
+    "productWrites": 0
+  },
+  "verification": {
+    "TEMP": "output/lv3-audit-20261107/u17-transaction-preparation-v1/temp-after-tests-v2/summary.json",
+    "content": "output/lv3-audit-20261107/u17-transaction-preparation-v1/main-content-verification-v1.json",
+    "receipt": "output/lv3-audit-20261107/u17-transaction-preparation-v1/main-receipt-verification-v1.json",
+    "repeat": "output/lv3-audit-20261107/u17-transaction-preparation-v1/main-repeat-verification-v1.json"
+  },
+  "limits": [
+    "U17 image overlay not applied by this transaction.",
+    "U16 original full gate still failed with 10 original5000msTimeouts; original failure reports preserved.",
+    "Final combined integration suite, browser AFTER, publication and physical phone verification not performed."
+  ],
+  "published": false
+}

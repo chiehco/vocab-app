@@ -45,7 +45,15 @@ it('pins proof, source and candidate assets, original captions/media and histori
  expect(proof.unchangedFiles.filter(f=>domain.has(f.path)).map(f=>f.path).sort()).toEqual([...projected].sort());
  expect(proof.unchangedFiles.filter(f=>!domain.has(f.path)).map(f=>f.path).sort()).toEqual([...independent].sort());
  expect(proof.unchangedFiles).toHaveLength(13);
- for(const file of proof.unchangedFiles){
+
+
+ expect(puppetBytesHash(JSON.stringify(JSON.parse(readFileSync(proof.candidateManifestPath,'utf8'))))).toBe(proof.candidateManifestHash);
+ expect(captions.filter(c=>c.word==='puppet'&&c.captionZh===proof.row.illustration.captionZh)).toEqual([proof.captionSource]);
+ expect(media).toContainEqual(proof.media);expect(proof.review.manualUserApproved).toBe(false);expect(proof.review.publicationReady).toBe(false);
+});
+
+it.each(proof.unchangedFiles)('pins complete unchanged puppet file: $path',(file)=>{
+ const projected=['public/data/v1/words.json','public/data/v1/examples.json','public/data/v1/senses.json','public/data/v1/media.json','public/data/v1/sa-pack.json','src/features/direct/curriculumLV3Unit6.json'];
   const currentText=readFileSync(file.path,'utf8').replace(/\r\n/g,'\n');
   const text=projected.includes(file.path)
    ?lv3AfterUnitPublishedText('starter-media-actual-names-v1',file.path,currentText)
@@ -55,11 +63,6 @@ it('pins proof, source and candidate assets, original captions/media and histori
    expect(()=>lv3AfterUnitPublishedText('starter-media-actual-names-v1',file.path,currentText+' ')).toThrow(/drift/);
   else if(file.path==='src/features/wordbeast/illustrationCaptions.json')expect(()=>beforeU07CaptionText(currentText+' ')).toThrow(/drift/);
   else expect(puppetBytesHash(currentText+' ')).not.toBe(file.lfSha256);
- }
-
- expect(puppetBytesHash(JSON.stringify(JSON.parse(readFileSync(proof.candidateManifestPath,'utf8'))))).toBe(proof.candidateManifestHash);
- expect(captions.filter(c=>c.word==='puppet'&&c.captionZh===proof.row.illustration.captionZh)).toEqual([proof.captionSource]);
- expect(media).toContainEqual(proof.media);expect(proof.review.manualUserApproved).toBe(false);expect(proof.review.publicationReady).toBe(false);
 });
 it('resolves exact general card, gallery and clue while leaving the read-only textbook reference unbound',()=>{
  const row=proof.row,pair=row.illustration;

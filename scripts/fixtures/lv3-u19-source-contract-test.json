@@ -1,0 +1,83 @@
+{
+  "unit": "LV3-U19",
+  "collection": {
+    "path": "scripts/sources/LV3Unit19.json",
+    "key": "word",
+    "rowsField": "headwords"
+  },
+  "guard": {
+    "beforeHash": "ae16f51ead78443ba3366750484866a459d7765acd54c47d9fdb8fcd8f5c0d87",
+    "afterHash": "56195fbb111ca0985fb5e62279134620176f0e40f6af1451c10bf36c35266bbe",
+    "beforeByteHash": "b436f3e9a351d94d200e7c4fb6d39d7f7e1253a4c0eda9f659a0aa1d5ad5c9d9",
+    "afterByteHash": "91582d537cf39eb5038c41ef61ca782b2cc26a9223d78c70d6ea3a12765ea399"
+  },
+  "patch": {
+    "dataset": "source",
+    "path": "scripts/sources/LV3Unit19.json",
+    "key": "word",
+    "id": "rumor",
+    "before": {
+      "word": "rumor",
+      "sourcePage": 197,
+      "printedNumber": 2,
+      "role": "main",
+      "sourcePos": "n./vi.",
+      "chapterMeaningsZh": "謠言；傳言；散播謠言",
+      "officialWordId": "W002752",
+      "officialWord": "rumor",
+      "mappingEvidence": "exact_headword"
+    },
+    "after": {
+      "sourcePos": "n./vt."
+    },
+    "reason": "p197 原書清楚印 n. 謠言，傳言 & vt. 散播謠言；目前 n./vi. 為明確轉錄錯誤。僅修正 source.headwords 唯一 word=rumor 的 sourcePos，保留原中文、拼字、頁碼、映射與其他來源列。",
+    "evidence": [],
+    "fieldEvidence": {
+      "sourcePos": [
+        {
+          "proposal": "U19V002",
+          "originFindingIds": [
+            "U19V002"
+          ],
+          "reason": "p197 原書清楚印 n. 謠言，傳言 & vt. 散播謠言；目前 n./vi. 為明確轉錄錯誤。僅修正 source.headwords 唯一 word=rumor 的 sourcePos，保留原中文、拼字、頁碼、映射與其他來源列。",
+          "sources": [
+            {
+              "type": "textbook_photo_review",
+              "file": "20260815_105955.jpg",
+              "page": 197,
+              "sha256": "f1756a5067053b4ff78b2728f54653e04ca0bd63886db518339fb036b1381a96",
+              "reviewReport": "output/lv3-audit-20261107/u19-independent-source-review-v1/REVIEW.md",
+              "reviewReportSha256": "592db201ebb2cfda96945bb0d50083a10e7dabd10f9403a3d5f266e024729acd",
+              "pixelReviewMethod": "saved_full_page_preview_original_photo_hash_verified"
+            },
+            {
+              "type": "independent_source_field_review",
+              "report": "output/lv3-audit-20261107/u19-independent-source-review-v1/REVIEW.md",
+              "reportSha256": "592db201ebb2cfda96945bb0d50083a10e7dabd10f9403a3d5f266e024729acd",
+              "reviewId": "U19V002",
+              "recordedDisposition": "rekey_required_then_supported",
+              "binding": "existing_unique_word_in_headwords"
+            },
+            {
+              "type": "frozen_source_proposal",
+              "report": "output/lv3-audit-20261107/u19-source-review-v1/recommended-review-bundle.json",
+              "reportSha256": "4a2cc2ca753da11b01ba3828af1a02240726575b1c4ae91cdcfd8bf15222438a",
+              "locatedReport": "output/lv3-audit-20261107/u19-source-review-v1/source-field-proposals-located.json",
+              "locatedReportSha256": "0bb440691c679bca2ceaf51e98cd9116d667fb1896b562b438c5250859e3b55e",
+              "reviewId": "U19V002",
+              "beforeRowSha256": "2583cb7989d4cd47ca2403f776a649c96dc12687a6abe5f9c55cf83dddee7d30"
+            }
+          ],
+          "beforePresent": true
+        }
+      ]
+    }
+  },
+  "parentManifestHash": "cb6dd8d826d9ed47c7627eff8c15527773f6101440afeca4a6654b931e922dc6",
+  "sourceRawBeforeSha256": "1d806e02707440ac5b641bcbeef3db0ebc879378013afd7d6f5a8913e3da29b4",
+  "provenance": {
+    "output/lv3-audit-20261107/u19-source-review-v1/recommended-review-bundle.json": "4a2cc2ca753da11b01ba3828af1a02240726575b1c4ae91cdcfd8bf15222438a",
+    "output/lv3-audit-20261107/u19-source-review-v1/source-field-proposals-located.json": "0bb440691c679bca2ceaf51e98cd9116d667fb1896b562b438c5250859e3b55e",
+    "output/lv3-audit-20261107/u19-independent-source-review-v1/REVIEW.md": "592db201ebb2cfda96945bb0d50083a10e7dabd10f9403a3d5f266e024729acd"
+  }
+}

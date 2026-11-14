@@ -710,5 +710,161 @@ class U16FixtureWritePathTests(unittest.TestCase):
                 self.assertNotEqual(fixture.fixture_summary_path(root, 'U16', value), before)
 
 
+class U17FixtureWritePathTests(unittest.TestCase):
+    # Literal reviewed write contract, never inferred from actual writes.
+    SOURCES = {'public/data/v1/words.json', 'public/data/v1/examples.json',
+               'src/features/direct/curriculumLV3Unit17.json'}
+    DERIVED = {'public/data/v1/meta.json', 'public/data/v1/sa-pack.json'}
+
+    def make_manifest(self):
+        return {'unit': 'LV3-U17', 'files': dict.fromkeys(self.SOURCES),
+                'derivedAfter': dict.fromkeys(self.DERIVED)}
+
+    def test_exact_five_paths_and_input_immutability(self):
+        manifest = self.make_manifest()
+        before = copy.deepcopy(manifest)
+        self.assertEqual(fixture.fixture_expected_write_paths(manifest),
+                         self.SOURCES | self.DERIVED)
+        self.assertEqual(len(fixture.fixture_expected_write_paths(manifest)), 5)
+        self.assertEqual(manifest, before)
+
+    def test_each_missing_source_is_rejected(self):
+        for path in self.SOURCES:
+            with self.subTest(path=path):
+                manifest = self.make_manifest()
+                del manifest['files'][path]
+                with self.assertRaisesRegex(ValueError, 'Unexpected real-fixture source paths'):
+                    fixture.fixture_expected_write_paths(manifest)
+
+    def test_extra_notes_senses_or_other_unit_source_is_rejected(self):
+        for path in ['public/data/v1/notes.json', 'public/data/v1/senses.json',
+                     'src/features/direct/curriculumLV3Unit7.json']:
+            with self.subTest(path=path):
+                manifest = self.make_manifest()
+                manifest['files'][path] = None
+                with self.assertRaisesRegex(ValueError, 'Unexpected real-fixture source paths'):
+                    fixture.fixture_expected_write_paths(manifest)
+
+    def test_same_count_wrong_source_is_rejected(self):
+        for original in self.SOURCES:
+            with self.subTest(original=original):
+                manifest = self.make_manifest()
+                del manifest['files'][original]
+                manifest['files']['public/data/v1/notes.json'] = None
+                with self.assertRaisesRegex(ValueError, 'Unexpected real-fixture source paths'):
+                    fixture.fixture_expected_write_paths(manifest)
+
+    def test_missing_extra_and_same_count_wrong_derived_paths_are_rejected(self):
+        cases = [self.DERIVED - {path} for path in self.DERIVED]
+        cases += [self.DERIVED | {'public/data/v1/notes.json'}]
+        cases += [(self.DERIVED - {path}) | {'public/data/v1/media.json'}
+                  for path in self.DERIVED]
+        for paths in cases:
+            with self.subTest(paths=paths):
+                manifest = self.make_manifest()
+                manifest['derivedAfter'] = dict.fromkeys(paths)
+                with self.assertRaisesRegex(ValueError, 'Unexpected real-fixture derived paths'):
+                    fixture.fixture_expected_write_paths(manifest)
+
+    def test_unknown_or_wrong_unit_cannot_reuse_u17_shape(self):
+        for unit in ['LV3-U99', 'U17', None]:
+            with self.subTest(unit=unit):
+                manifest = {**self.make_manifest(), 'unit': unit}
+                with self.assertRaisesRegex(ValueError, 'Unregistered real-fixture write shape'):
+                    fixture.fixture_expected_write_paths(manifest)
+        for unit in ['LV3-U02', 'LV3-U04', 'LV3-U05', 'LV3-U06', 'LV3-U07', 'LV3-U08', 'LV3-U09', 'LV3-U10', 'LV3-U11', 'LV3-U12', 'LV3-U13', 'LV3-U14', 'LV3-U15', 'LV3-U16']:
+            with self.subTest(unit=unit):
+                manifest = {**self.make_manifest(), 'unit': unit}
+                with self.assertRaisesRegex(ValueError, 'Unexpected real-fixture source paths'):
+                    fixture.fixture_expected_write_paths(manifest)
+
+
+    def test_u17_parent_is_exact_committed_u16(self):
+        parent_hash = 'a' * 64
+        manifest = {'schemaVersion': 2, 'unit': 'LV3-U17', 'parentManifestHash': parent_hash}
+        parent = {'unit': 'LV3-U16', 'path': 'U16-patches.json', 'manifestHash': parent_hash, 'status': 'committed'}
+        target = {'unit': 'LV3-U17', 'path': 'U17-patches.json', 'manifestHash': fixture.audit.node_hash(manifest), 'status': 'prepared'}
+        entries = [parent, target]
+        original = copy.deepcopy((entries, manifest))
+        self.assertEqual(fixture.fixture_parent_checkpoint(entries, manifest), 'LV3-U16')
+        self.assertEqual((entries, manifest), original)
+        with self.assertRaisesRegex(ValueError, 'not committed'):
+            fixture.fixture_parent_checkpoint([{**parent, 'status': 'prepared'}, target], manifest)
+        with self.assertRaisesRegex(ValueError, 'manifest mismatch'):
+            fixture.fixture_parent_checkpoint([{**parent, 'manifestHash': 'b' * 64}, target], manifest)
+
+    def test_u17_sealed_summary_is_separate_from_original_before_capture(self):
+        root = Path.cwd().resolve()
+        sealed = Path(fixture.pipeline.DOCS) / 'U17-sealed-capture.json'
+        before = root / fixture.pipeline.DOCS / 'U17-before-capture.json'
+        self.assertEqual(fixture.fixture_summary_path(root, 'U17'), before)
+        for value in [sealed, root / sealed]:
+            with self.subTest(value=value):
+                self.assertEqual(fixture.fixture_summary_path(root, 'U17', value), root / sealed)
+                self.assertNotEqual(fixture.fixture_summary_path(root, 'U17', value), before)
+
+
+class U19FixtureWritePathTests(unittest.TestCase):
+    # Literal independent scope, not inferred from generated manifests or replace calls.
+    SOURCES = {'public/data/v1/words.json', 'public/data/v1/examples.json',
+               'public/data/v1/notes.json', 'src/features/direct/curriculumLV3Unit19.json',
+               'scripts/sources/LV3Unit19.json'}
+    DERIVED = {'public/data/v1/meta.json', 'public/data/v1/sa-pack.json'}
+
+    def manifest(self):
+        return {'unit': 'LV3-U19', 'files': dict.fromkeys(self.SOURCES),
+                'derivedAfter': dict.fromkeys(self.DERIVED)}
+
+    def test_exact_seven_paths_and_input_immutability(self):
+        m = self.manifest(); before = copy.deepcopy(m)
+        self.assertEqual(fixture.fixture_expected_write_paths(m), self.SOURCES | self.DERIVED)
+        self.assertEqual(len(fixture.fixture_expected_write_paths(m)), 7)
+        self.assertEqual(m, before)
+
+    def test_each_missing_source_is_rejected(self):
+        for path in self.SOURCES:
+            with self.subTest(path=path):
+                m = self.manifest(); del m['files'][path]
+                with self.assertRaisesRegex(ValueError, 'Unexpected real-fixture source paths'):
+                    fixture.fixture_expected_write_paths(m)
+
+    def test_extra_or_same_count_wrong_source_is_rejected(self):
+        for wrong in ['scripts/sources/LV3Unit18.json', 'public/data/v1/senses.json', 'public/data/v1/media.json', 'src/features/direct/curriculumLV3Unit20.json']:
+            for removed in [None, *self.SOURCES]:
+                with self.subTest(wrong=wrong, removed=removed):
+                    m = self.manifest()
+                    if removed: del m['files'][removed]
+                    m['files'][wrong] = None
+                    with self.assertRaisesRegex(ValueError, 'Unexpected real-fixture source paths'):
+                        fixture.fixture_expected_write_paths(m)
+
+    def test_missing_extra_or_wrong_derived_paths_are_rejected(self):
+        cases = [self.DERIVED-{p} for p in self.DERIVED] + [self.DERIVED|{'public/data/v1/media.json'}]
+        cases += [(self.DERIVED-{p})|{'public/data/v1/media.json'} for p in self.DERIVED]
+        for paths in cases:
+            with self.subTest(paths=paths):
+                m = self.manifest(); m['derivedAfter'] = dict.fromkeys(paths)
+                with self.assertRaisesRegex(ValueError, 'Unexpected real-fixture derived paths'):
+                    fixture.fixture_expected_write_paths(m)
+
+    def test_other_unit_cannot_reuse_u19_shape(self):
+        for unit in ['LV3-U18', 'LV3-U17', 'LV3-U16']:
+            with self.subTest(unit=unit):
+                m = self.manifest(); m['unit'] = unit
+                with self.assertRaisesRegex(ValueError, 'Unexpected real-fixture source paths'):
+                    fixture.fixture_expected_write_paths(m)
+
+    def test_parent_must_be_committed_u18_with_exact_manifest_hash(self):
+        parent_hash = 'cb6dd8d826d9ed47c7627eff8c15527773f6101440afeca4a6654b931e922dc6'
+        m = {'schemaVersion': 2, 'unit': 'LV3-U19', 'parentManifestHash': parent_hash}
+        parent = {'unit': 'LV3-U18', 'path': 'U18-patches.json', 'manifestHash': parent_hash, 'status': 'committed'}
+        target = {'unit': 'LV3-U19', 'path': 'U19-patches.json', 'manifestHash': fixture.audit.node_hash(m), 'status': 'prepared'}
+        self.assertEqual(fixture.fixture_parent_checkpoint([parent, target], m), 'LV3-U18')
+        with self.assertRaisesRegex(ValueError, 'not committed'):
+            fixture.fixture_parent_checkpoint([{**parent, 'status': 'prepared'}, target], m)
+        with self.assertRaisesRegex(ValueError, 'manifest mismatch'):
+            fixture.fixture_parent_checkpoint([{**parent, 'manifestHash': '0'*64}, target], m)
+
+
 if __name__ == '__main__':
     unittest.main()

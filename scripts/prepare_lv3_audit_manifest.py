@@ -29,7 +29,7 @@ def public_sources(value):
 def compile_candidate(root, unit, accepted, capture):
     root = Path(root).resolve()
     p.assert_recovery_clear(root)
-    paths = p.v1.input_paths(root)
+    paths = p.unit_input_paths(root, unit)
     p.require(isinstance(capture, dict) and set(capture) == paths,
               'Independent capture must match exact pipeline input domain, not a broader map')
     initial = {path: p.safe_path(root, path).read_bytes() for path in paths}
@@ -56,6 +56,10 @@ def compile_candidate(root, unit, accepted, capture):
     }
     if unit == 'LV3-U16':
         contracts['senses'] = {'path':'public/data/v1/senses.json','key':'senseId','rowsField':None}
+    if unit == 'LV3-U18':
+        contracts['source'] = copy.deepcopy(p._U18_SOURCE_COLLECTION)
+    if unit == 'LV3-U19':
+        contracts['source'] = copy.deepcopy(p._U19_SOURCE_COLLECTION)
     documents, collections, patches, seen = {}, {}, {}, set()
     before_rows = accepted.get('beforeRows', {})
     for item in proposals:
@@ -155,7 +159,7 @@ def compile_candidate(root, unit, accepted, capture):
     p.prepare_step(manifest,documents,scope)
     _, _, current_chain = p.load_chain(root)
     p.require([e for e, _, _ in current_chain] == [e for e, _, _ in chain], 'Concurrent parent chain change')
-    p.require(p.v1.input_paths(root)==paths,'Concurrent input domain change')
+    p.require(p.unit_input_paths(root, unit)==paths,'Concurrent input domain change')
     for path, content in initial.items():
         p.require(p.safe_path(root,path).read_bytes()==content,'Concurrent input change: '+path)
     p.assert_recovery_clear(root)

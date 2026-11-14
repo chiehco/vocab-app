@@ -15,14 +15,24 @@ it('authenticates all 56 actual U05 after rows and all six published files',()=>
  assert.equal(auditHash(step.scope),'a7311a6598b6531f4aaa500bd97ffd7efdfed134445ec6f2da5b7919d4b97d08');
  assert.equal(manifest.patches.length,56);
  assert.equal(manifest.patches.reduce((n,p)=>n+Object.keys(p.after).length,0),146);
- // Raw projection authenticates complete current bytes and all inverse rows;
- // parse those same authenticated target bytes for the independent row assertions.
+
  const paths=[...Object.keys(manifest.files!),...Object.keys(manifest.derivedAfter!)];
- const published=new Map(paths.map(path=>[path,lv3AfterUnitPublishedText(unit,path,readFileSync(path,'utf8').replace(/\r\n/g,'\n'))]));
- const documents=new Map(Object.keys(manifest.files!).map(path=>[path,JSON.parse(published.get(path)!)]));
- for(const [path,guard] of Object.entries(manifest.files!))
+ const expected={...Object.fromEntries(Object.entries(manifest.files!).map(([path,g])=>[path,g.afterByteHash])),...manifest.derivedAfter};
+ assert.equal(Object.keys(expected).length,6);
+ assert.equal(new Set(paths).size,paths.length);
+ const assigned=paths.flatMap(path=>manifest.patches.filter(p=>p.path===path));
+ assert.deepEqual(assigned.map(p=>p.dataset+':'+p.id).sort(),manifest.patches.map(p=>p.dataset+':'+p.id).sort());
+ for(const patch of manifest.patches){assert.ok(Object.hasOwn(manifest.files!,patch.path));assert.ok(Object.hasOwn(manifest.collections!,patch.dataset));}
+});
+
+it.each([...Object.keys(manifest.files!),...Object.keys(manifest.derivedAfter!)])('authenticates complete U05 published file: %s',(path)=>{
+ const published=new Map([[path,lv3AfterUnitPublishedText(unit,path,readFileSync(path,'utf8').replace(/\r\n/g,'\n'))]]);
+ const documents=new Map(Object.hasOwn(manifest.files!,path)?[[path,JSON.parse(published.get(path)!)]]:[]);
+ if(Object.hasOwn(manifest.files!,path)){
+  const guard=manifest.files![path];
   assert.equal(auditHash(documents.get(path)),guard.afterHash,path);
- for(const patch of manifest.patches){
+ }
+ for(const patch of manifest.patches.filter(p=>p.path===path)){
   const collection=manifest.collections![patch.dataset],document=documents.get(patch.path);
   const rows=(collection.rowsField?document[collection.rowsField]:document) as Record<string,unknown>[];
   const matches=rows.filter(row=>row[patch.key]===patch.id);
@@ -30,11 +40,9 @@ it('authenticates all 56 actual U05 after rows and all six published files',()=>
   assert.deepEqual(matches[0],{...patch.before,...patch.after},patch.id);
  }
  const expected={...Object.fromEntries(Object.entries(manifest.files!).map(([path,g])=>[path,g.afterByteHash])),...manifest.derivedAfter};
- assert.equal(Object.keys(expected).length,6);
- for(const [path,digest] of Object.entries(expected)){
+ const digest=expected[path];
   const text=published.get(path)!;
   assert.equal(createHash('sha256').update(text).digest('hex'),digest,path);
- }
 });
 
 it('checks all 20 reviewed unmapped supplements in actual U05 runtime instead of an empty old-source filter',()=>{
