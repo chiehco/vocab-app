@@ -2,7 +2,7 @@ import { useLiveQuery } from "dexie-react-hooks";
 import { getLogicalCardStates } from "../../db/progressIdentity";
 import { progressDb } from "../../db/progressDb";
 import { useStreak } from "../../hooks/useStreak";
-import CheckInHeatmap from "./CheckInHeatmap";
+import CheckInCalendar from "./CheckInCalendar";
 import "../realm-pages.css";
 
 export default function ProgressScreen() {
@@ -43,9 +43,8 @@ export default function ProgressScreen() {
       </section>
 
       <section className="year-trace" aria-labelledby="year-title">
-        <div className="realm-section-head"><h2 id="year-title">年度學習圖</h2><span>點選日期查看紀錄</span></div>
-        <div className="year-heatmap"><CheckInHeatmap weeks={53} /></div>
-        <div className="trace-legend"><span>沉寂</span><i /><i /><i /><i /><span>深刻</span></div>
+        <div className="realm-section-head"><h2 id="year-title">學習月曆</h2><span>有學的日子會蓋章</span></div>
+        <CheckInCalendar />
       </section>
     </div>
   );

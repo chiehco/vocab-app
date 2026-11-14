@@ -1,0 +1,18 @@
+/* 打卡月曆（2026-10-09）：有學的日子是實心綠章，今天加外框，沒學的日子只是普通數字。 */
+.checkin-calendar { padding: var(--ui-sp-4); border: 1px solid var(--ui-border); border-radius: var(--ui-radius-card); background: var(--ui-surface); box-shadow: var(--ui-shadow-card); }
+.checkin-calendar-head { display: grid; grid-template-columns: var(--ui-tap) 1fr var(--ui-tap); align-items: center; gap: var(--ui-sp-2); margin-bottom: var(--ui-sp-3); text-align: center; }
+.checkin-calendar-head strong { display: block; font-size: var(--ui-fs-subtitle); font-weight: 700; }
+.checkin-calendar-head small { display: block; color: var(--ui-muted); font-size: var(--ui-fs-secondary); }
+.checkin-calendar-head button { width: var(--ui-tap); height: var(--ui-tap); border: 1px solid var(--ui-border-strong); border-radius: 50%; background: var(--ui-surface); color: var(--ui-text); font-size: 1.5rem; line-height: 1; cursor: pointer; }
+.checkin-calendar-head button:disabled { opacity: .3; cursor: default; }
+.checkin-calendar-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: var(--ui-sp-1); }
+.checkin-weekday { padding-bottom: var(--ui-sp-1); color: var(--ui-muted); font-size: var(--ui-fs-label); font-weight: 600; text-align: center; }
+.checkin-day { display: grid; place-items: center; width: 100%; max-width: 44px; aspect-ratio: 1; margin: 0 auto; padding: 0; border: 2px solid transparent; border-radius: 50%; background: transparent; color: var(--ui-text); font: inherit; font-size: var(--ui-fs-secondary); cursor: pointer; transition: background var(--ui-motion); }
+/* 淡色 hover 只給沒蓋章的日子；已蓋章的維持深綠底白字，數字才看得清楚 */
+.checkin-day:not(.stamped):hover:not(:disabled) { background: var(--ui-accent-soft); }
+.checkin-day:disabled { color: var(--ui-border-strong); cursor: default; }
+.checkin-day.stamped { background: var(--ui-accent); color: var(--ui-on-accent); font-weight: 700; }
+.checkin-day.today { border-color: var(--ui-warm); }
+/* 選取用 box-shadow，不佔用 outline，鍵盤焦點框才不會被蓋掉 */
+.checkin-day[aria-pressed="true"] { box-shadow: 0 0 0 3px var(--ui-accent-soft); }
+.checkin-calendar-detail { margin: var(--ui-sp-3) 0 0; color: var(--ui-muted); font-size: var(--ui-fs-secondary); text-align: center; }
