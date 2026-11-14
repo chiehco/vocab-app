@@ -9,10 +9,47 @@ from contextlib import redirect_stdout
 from pathlib import Path
 from unittest.mock import patch
 
+import apply_lv3_unit_audit as lv3_audit
 import apply_unit_audit as audit
 
 
 class AuditWriteBoundaryTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        # LV1/LV2 receipts predate the LV3 changes to the shared dictionary.
+        # Reconstruct that exact checkpoint in memory before the existing inverses.
+        words_path = 'public/data/v1/words.json'
+        words = audit.read(audit.ROOT / words_path)
+        rows = {row['wordId']: index for index, row in enumerate(words)}
+        if len(rows) != len(words):
+            raise AssertionError('Duplicate word IDs in the LV3 dictionary')
+        history = audit.ROOT / 'docs/lv3-audit-20261107'
+        chain = audit.read(history / 'chain.json')
+        for entry in reversed(chain['entries']):
+            if entry['status'] != 'committed' or entry.get('kind') == 'migration':
+                continue
+            manifest = audit.read(history / entry['path'])
+            if lv3_audit.node_hash(manifest) != entry['manifestHash']:
+                raise AssertionError(f'LV3 manifest drift: {entry["path"]}')
+            if manifest['schemaVersion'] == 1:
+                guard = manifest['datasets'].get('words')
+            else:
+                guard = manifest['files'].get(words_path)
+            if guard is None:
+                continue
+            if lv3_audit.node_hash(words) != guard['afterHash']:
+                raise AssertionError(f'LV3 dictionary after-state drift: {entry["path"]}')
+            for recorded in reversed(manifest['patches']):
+                if recorded['dataset'] != 'words':
+                    continue
+                index = rows[recorded['id']]
+                if words[index] != {**recorded['before'], **recorded['after']}:
+                    raise AssertionError(f'LV3 dictionary row drift: {recorded["id"]}')
+                words[index] = recorded['before']
+            if lv3_audit.node_hash(words) != guard['beforeHash']:
+                raise AssertionError(f'LV3 dictionary before-state drift: {entry["path"]}')
+        cls.words_before_lv3 = words
+
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
@@ -63,7 +100,7 @@ class AuditWriteBoundaryTests(unittest.TestCase):
             audit.write_json(evidence_dir / name, audit.read(audit.ROOT / 'docs/unit-audit-20261105' / name))
         for name in ['VERIFIED-LV2-U50-VERB-FORMS-SOURCES.json','VERIFIED-LV2-U50-NOTE-SOURCES.json','VERIFIED-LV2-U50-TRANSLATION-SOURCES.json']:
             audit.write_json(evidence_dir / name, audit.read(audit.ROOT / 'docs/unit-audit-20261105' / name))
-        self.integrated_words = audit.read(audit.ROOT / 'public/data/v1/words.json')
+        self.integrated_words = copy.deepcopy(self.words_before_lv3)
         u50 = audit.read(audit.ROOT / 'docs/unit-audit-20261105/LV2-U50-patches.json')['patches']
         for recorded in [p for p in u50 if p['dataset'] == 'words']:
             row = next(w for w in self.integrated_words if w['wordId'] == recorded['id'])
