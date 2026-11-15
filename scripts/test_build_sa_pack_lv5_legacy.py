@@ -91,7 +91,12 @@ class KeeperBehaviorTest(unittest.TestCase):
         write(data / 'relations.json', [dict(word='prohibition', relatedWord='base')])
         write(data / 'morphemes.json', [dict(word='prohibition', morpheme='-tion')])
         write(data / 'notes.json', [dict(word='prohibition', note='unchanged legacy noun note')])
-        write(data / 'media.json', [dict(targetWord='base', path='base.webp'), dict(targetWord='prohibition', path='unapproved.webp')])
+        # The real dictionary has no prohibition media. Exercise the interaction
+        # with a draft media row separately from the historical byte comparisons.
+        write(data / 'media.json', [
+            dict(targetWord='base', path='base.webp'),
+            dict(targetWord='outside-starter', path='unrelated.webp'),
+        ])
         for filename in ['curriculum.json', 'curriculumUnit2.json']:
             write(direct / filename, dict(learningItems=[]))
         write(direct / 'curriculumLV3Unit7.json', dict(template=dict(deliveryMode='text_only'),
@@ -195,6 +200,41 @@ class KeeperBehaviorTest(unittest.TestCase):
         before, _ = self.pack(ORIGINAL, data, direct)
         after, _ = self.pack(CANDIDATE, data, direct)
         self.assertEqual(after, before)
+
+    def test_media_migration_keeps_draft_status_across_pending_mapping(self):
+        pending = pending_item()
+        mapped = dict(pending, officialWordId='W005711', lexemeRef='W005711')
+        data, direct, _ = self.fixture(item=mapped)
+        media_path = data / 'media.json'
+        source_media = read(media_path)
+        source_media.insert(1, dict(targetWord='prohibition', path='draft.webp', status='draft'))
+        write(media_path, source_media)
+
+        historical, _ = self.pack(ORIGINAL, data, direct)
+        self.assertEqual(historical['media'], source_media[:1])
+        expected = copy.deepcopy(historical)
+        expected['media'] = source_media[:2]
+        expected['meta']['counts']['media'] = 2
+        datasets = {key: value for key, value in expected.items() if key != 'meta'}
+        source_hash = read(data / 'meta.json')['contentHash']
+        expected['meta']['contentHash'] = 'sa:' + ORIGINAL.rows_hash({
+            'sourceHash': source_hash,
+            'datasets': datasets,
+        })
+
+        mapped_pack, _ = self.pack(CANDIDATE, data, direct)
+        self.assertEqual(mapped_pack, expected)
+        mapped_bytes = (data / 'sa-pack.json').read_bytes()
+        unit_path = direct / 'curriculumLV5Unit16.json'
+        unit = read(unit_path)
+        unit['learningItems'] = [pending]
+        write(unit_path, unit)
+        pending_pack, _ = self.pack(CANDIDATE, data, direct)
+
+        self.assertEqual(pending_pack, expected)
+        self.assertEqual((data / 'sa-pack.json').read_bytes(), mapped_bytes)
+        self.assertEqual(read(media_path), source_media)
+        self.assertEqual(read(unit_path)['learningItems'], [pending])
 
     def test_exact_pending_with_absent_dictionary_fails_before_overwriting_pack(self):
         data, direct, _ = self.fixture(legacy=False, item=pending_item())
