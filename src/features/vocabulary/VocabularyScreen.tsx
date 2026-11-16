@@ -4,7 +4,7 @@ import SpeakerButton from '../../components/SpeakerButton';
 import DictionaryMeanings, { DictionarySenseLabel } from '../browser/DictionaryMeanings';
 import StudyActions from '../../components/StudyActions';
 import { useCardSwipe } from '../../hooks/useCardSwipe';
-import { curriculumUnits, findUnit, learningItemTitle, unitsForLevel } from '../direct/model';
+import { curriculumUnits, findUnit, learningItemExplanation, learningItemTitle, unitsForLevel } from '../direct/model';
 import { getOrCreateTemplateGroup, startScopeSession } from '../direct/store';
 import { reviewedExample, practiceIds } from './model';
 import '../direct/direct.css';
@@ -29,7 +29,7 @@ export default function VocabularyScreen(){
   const kind=params.get('kind')==='grammar'?'grammar':'vocabulary';
   const [query,setQuery]=useState(''),[busy,setBusy]=useState(false),[error,setError]=useState('');
   const items=curriculumItems.filter(i=>i.kind===kind);
-  const matches=items.filter(i=>`${learningItemTitle(i)} ${i.chapterMeaningsZh??i.explanationZh}`.toLowerCase().includes(query.toLowerCase()));
+  const matches=items.filter(i=>`${learningItemTitle(i)} ${i.chapterMeaningsZh??learningItemExplanation(i)}`.toLowerCase().includes(query.toLowerCase()));
   const index=Math.max(0,matches.findIndex(i=>i.learningItemId===params.get('item'))),item=matches[index];
   const example=item?reviewedExample(item):undefined;
   const related=item?.displayWord&&current?current.relatedNotes.filter(n=>n.parentWord===item.displayWord):[];
@@ -80,7 +80,7 @@ export default function VocabularyScreen(){
             </figure>}
             {example?<><h3>情境例句 · {item.targetMeaningZh}</h3><p className="direct-stem">{example.sentenceEn}</p><p>{example.sentenceZh}</p><SpeakerButton text={example.sentenceEn}/></>:<p>例句待核對。</p>}
             {related.length>0&&<div className="vocab-related"><h3>相關詞</h3><ul>{related.map(n=><li key={`${n.word}:${n.meaningZh}`}><b>{n.word}</b><span>{n.meaningZh}</span></li>)}</ul></div>}
-          </>:<><p className="vocab-meaning">{item.explanationZh}</p>
+          </>:<><p className="vocab-meaning">{learningItemExplanation(item)}</p>
             {example&&<><h3>情境例句</h3><p className="direct-stem">{example.sentenceEn}</p><p>{example.sentenceZh}</p><SpeakerButton text={example.sentenceEn}/></>}
           </>}
         </article>

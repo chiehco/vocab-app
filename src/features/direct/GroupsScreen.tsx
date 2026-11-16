@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { progressDb } from '../../db/progressDb';
-import { curriculumUnits, findUnit, learningItems, learningItemTitle, templateGroup } from './model';
+import { curriculumUnits, findUnit, learningItems, learningItemExplanation, learningItemTitle, templateGroup } from './model';
 import { isUnitPublished, unitReleaseHold } from '../vocabulary/unitReleasePolicy';
 import type { CustomGroup } from './model';
 import { deleteGroup, getOrCreateTemplateGroup, restoreGroup, saveGroup, startGroupSession } from './store';
@@ -91,7 +91,7 @@ export default function GroupsScreen() {
   }
   function move(index:number,delta:number) { if (!g) return; const ids=[...g.itemIds]; [ids[index],ids[index+delta]]=[ids[index+delta],ids[index]]; void save({...g,itemIds:ids}); }
   function moveWord(index:number,delta:number) { if (!g?.wordIds) return; const ids=[...g.wordIds]; [ids[index],ids[index+delta]]=[ids[index+delta],ids[index]]; void save({...g,wordIds:ids}); }
-  const available = learningItems.filter(i => !heldItemIds.has(i.learningItemId) && !g?.itemIds.includes(i.learningItemId) && `${learningItemTitle(i)} ${i.targetMeaningZh ?? i.explanationZh}`.toLowerCase().includes(query.toLowerCase()));
+  const available = learningItems.filter(i => !heldItemIds.has(i.learningItemId) && !g?.itemIds.includes(i.learningItemId) && `${learningItemTitle(i)} ${i.targetMeaningZh ?? learningItemExplanation(i)}`.toLowerCase().includes(query.toLowerCase()));
   const status = <>{error && <p role="alert">{error}</p>}{notice && <p role="status">{notice}</p>}
     {deleted && <button disabled={busy} onClick={()=>void undoDelete()}>復原刪除「{deleted.name}」</button>}</>;
 
