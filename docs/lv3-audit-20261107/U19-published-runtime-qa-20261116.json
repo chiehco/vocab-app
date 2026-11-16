@@ -1,0 +1,4768 @@
+{
+  "schemaVersion": 1,
+  "unit": "LV3-U19",
+  "capturedAt": "2026-11-16T01:06:42.211Z",
+  "state": "published_runtime_verified_with_retained_source_and_image_review_limits",
+  "baselineMain": "649786fad1a8b4b577925813efa47f5f54739837",
+  "url": "https://chiehco.github.io/vocab-app/",
+  "branch": "content/lv3-followup-20261116",
+  "manifest": {
+    "path": "docs/lv3-audit-20261107/U19-patches.json",
+    "chainManifestHash": "7c11faa99fdd572f42d8fac153ec3b743b87509d1d56315b9e7d67c950a2d60c",
+    "rawWorkingTreeSha256": "7c85f568a96375563390ad0c5b5bae47d5b563a60902bb5db57e9b23b5c292c4",
+    "normalizedLfByteSha256": "9f25b12474c61c13942ae0177092cf59130097f6bea9a4ff55b81738bc2feb2d",
+    "semanticSha256": "7c11faa99fdd572f42d8fac153ec3b743b87509d1d56315b9e7d67c950a2d60c"
+  },
+  "publishedChecks": [
+    {
+      "conclusion": "success",
+      "html_url": "https://github.com/chiehco/vocab-app/actions/runs/43659779884/job/132650975513",
+      "name": "deploy",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "html_url": "https://github.com/chiehco/vocab-app/actions/runs/43659779884/job/132646260935",
+      "name": "build",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "html_url": "https://github.com/chiehco/vocab-app/actions/runs/43659779914/job/132646260743",
+      "name": "check",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "html_url": "https://github.com/chiehco/vocab-app/actions/runs/43659779914/job/132646260729",
+      "name": "Deploy-default tests (5s)",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "html_url": "https://github.com/chiehco/vocab-app/actions/runs/43657610341/job/132639545294",
+      "name": "Deploy-default tests (5s)",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "html_url": "https://github.com/chiehco/vocab-app/actions/runs/43657610341/job/132639544970",
+      "name": "check",
+      "status": "completed"
+    }
+  ],
+  "browser": {
+    "newIsolatedPersistentProfile": true,
+    "mainBundle": [
+      {
+        "url": "https://chiehco.github.io/vocab-app/assets/index-q6UeOFvj.js",
+        "containsDeployedSha": true
+      }
+    ],
+    "normalCloseAndReopen": {
+      "sameProfileReopened": true,
+      "url": "https://chiehco.github.io/vocab-app/#/word/W005944",
+      "noteVisible": true,
+      "screenshot": "output/playwright/lv3-u19-published/tuck-after-profile-reopen.png"
+    },
+    "mobileDevice": false
+  },
+  "counts": {
+    "curriculum": 150,
+    "vocabulary": 109,
+    "grammar": 41,
+    "generalCards": 78,
+    "exampleOccurrences": 80,
+    "renderedGeneralImages": 23,
+    "usageAndNotePages": 9,
+    "formalPatchRowsReadFromDb": 21
+  },
+  "checks": {
+    "curriculum": [
+      {
+        "id": "LI-LV3U19-V001",
+        "title": "ash",
+        "kind": "vocabulary",
+        "sourcePage": 197,
+        "officialWordId": "W002040",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "9006e4b4ebd01a73c87a91ed62d13a771bfe51dc8e50f476a4792733d0be1a01",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V001.png",
+          "sha256": "6538845baab9b9448281fde0517841f6820a305a88729f6733aadd4722250b65"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V002",
+        "title": "rumor",
+        "kind": "vocabulary",
+        "sourcePage": 197,
+        "officialWordId": "W002752",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "0a3f6694c90ca1cf7dafa85ac8643de10cf3cd7ab6354619034aa4ac32f832a7",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V002.png",
+          "sha256": "77faec1516034999f784ab05b847d3d1c3ac26d011a60c3bb2c84a4e1329f3e3"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V003",
+        "title": "echo",
+        "kind": "vocabulary",
+        "sourcePage": 197,
+        "officialWordId": "W002275",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "b963d4674d5786b9df8ccf8df58e729051f3fdfb9ba9bc4e4f90a08461d8a3f5",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V003.png",
+          "sha256": "545697b3e74550281769c5b0c5db5c7d99e5f9567bb240a85ee967659a482a6c"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V004",
+        "title": "sweat",
+        "kind": "vocabulary",
+        "sourcePage": 197,
+        "officialWordId": "W002882",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "ac89d6f6a08bdeb62a008288a49110ac06098257532ee33b8769db9be0242aab",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V004.png",
+          "sha256": "5b5212cb6160c12bae14ce62d29501b4d6c56b9a5707ff462401599a9c4891ba"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V005",
+        "title": "tub",
+        "kind": "vocabulary",
+        "sourcePage": 198,
+        "officialWordId": "W002940",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "db083509e7b58e0025da122abacbf6e29ac4f9ec7d6121cccd071ec902c97f62",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V005.png",
+          "sha256": "1f4e351c24f09f36df450a48ff30cee92251b527f32751663584b7b101440e9a"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V006",
+        "title": "peel",
+        "kind": "vocabulary",
+        "sourcePage": 198,
+        "officialWordId": "W002629",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "fe2a5eb3f5b634c61ec450a8187e1f0b13e00f8f1a8e8de690e1236b09194a77",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V006.png",
+          "sha256": "4d82ff2f6641da502573021cf3cf288e3994249fc4d44d2abb9f272874d28f00"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V007",
+        "title": "handy",
+        "kind": "vocabulary",
+        "sourcePage": 198,
+        "officialWordId": "W002384",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "9e9257b3847d6e2af72edd454cdcc2d579fdcdb52b31adaec8179d18bfc2ef9c",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V007.png",
+          "sha256": "bc784c1bec5ad15be33d455b46723155000a27a8336ebc671222c4cb4c9b3239"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V008",
+        "title": "handful",
+        "kind": "vocabulary",
+        "sourcePage": 198,
+        "officialWordId": "W002382",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "43e1e5245cdb036c882bd5c7135073a93cbf593f73911af45d3805cce251dd54",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V008.png",
+          "sha256": "30064bede4b4a8bb62723343061c62d659e2dcb72bdd1111bcb121f9b9fc4234"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V009",
+        "title": "outline",
+        "kind": "vocabulary",
+        "sourcePage": 198,
+        "officialWordId": "W002600",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "4dd26e350fc9728e1eeae05ad9851990bf142ff2f65e517456b62d10bf20b2ad",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V009.png",
+          "sha256": "16fdc14502d69f42a3e2df6c7b2e72b9eb347af9a34371af0386fa062eed0685"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V010",
+        "title": "tray",
+        "kind": "vocabulary",
+        "sourcePage": 199,
+        "officialWordId": "W002931",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "2d25c2bae6cd578f7f1dedf1d577901cbebed65f3a5335dc90e464776a3b2ec7",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V010.png",
+          "sha256": "cd2c319bf1f8b94a585692afed82f353f497addd6e5b705babf8e21d7c9e305f"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V011",
+        "title": "hasty",
+        "kind": "vocabulary",
+        "sourcePage": 199,
+        "officialWordId": "W002390",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "b2bcd5f4e17f0505a4899ffe40660f0e631dcb1a14f2d932b166795bb5989233",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V011.png",
+          "sha256": "f06105ce9357d2bd9670a9a594d6679e6615c8daa48a58c259d431ae2c12f66e"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V012",
+        "title": "hastily",
+        "kind": "vocabulary",
+        "sourcePage": 199,
+        "officialWordId": null,
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "97e2ac9802d3ec9706c2b1aaba8a66f84d59ab4fd564193ba0d1f3a496cc95a3",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V012.png",
+          "sha256": "c593060a835ed765bb4351beb3f4013d61fbbc55c95faa5d440adec7ea839be6"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V013",
+        "title": "saving(s)",
+        "kind": "vocabulary",
+        "sourcePage": 199,
+        "officialWordId": "W002762",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "114e98eff9011d6f701a250be529da2bfc5b8aaa866436d694124dbf157d854d",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V013.png",
+          "sha256": "c68451a9195d13918d60531ef969540c6e4f1299bc115a7a148eb953643dafdd"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V014",
+        "title": "earnings",
+        "kind": "vocabulary",
+        "sourcePage": 199,
+        "officialWordId": null,
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "b9dce6d13b8e00a7163d5be74401c8bc19354da5e06b4c4e3606b71fd3502f1b",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V014.png",
+          "sha256": "bfb2f4520a9dc38fc00b4cc346dcd142807b5e4c9536c7d3811aaa9131cf31f7"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V015",
+        "title": "deposit",
+        "kind": "vocabulary",
+        "sourcePage": 200,
+        "officialWordId": "W002233",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "e0604921e031e2a457109f2aa80daac0a4e78d5e98ae17b60ca872c239ea20bb",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V015.png",
+          "sha256": "7efb0753c7cd12cd3a601c4d1d17571b3c2925bbb6569cab828f225e30d08ef8"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V016",
+        "title": "sincere",
+        "kind": "vocabulary",
+        "sourcePage": 200,
+        "officialWordId": "W002801",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "da712915522b4af99b3590ee9ab957e6826ab44208c9359b88fa901298e892c8",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V016.png",
+          "sha256": "cf777b20b9817c38267e038e9c9fab300db1aee2f74a76b0dfa2a3795a57bf7f"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V017",
+        "title": "inspect",
+        "kind": "vocabulary",
+        "sourcePage": 200,
+        "officialWordId": "W002442",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "0e3b67e4e82391b20375c8516f32155ae6c7d1b258441739a21de4d904dc55a1",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V017.png",
+          "sha256": "42d32eb27652b48bd6b134ec975c0c40ec8faafea13253d088842205a2d22ec1"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V018",
+        "title": "inspector",
+        "kind": "vocabulary",
+        "sourcePage": 200,
+        "officialWordId": "W002443",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "c91a70fcbbf3414510267610c76127fac27f6db9ae029a679dc65450a8bdd81d",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V018.png",
+          "sha256": "c3b6cfb6962aa73f03d730d06db230ebeab1f5364ab7146318cf8015d41e2bfc"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V019",
+        "title": "spray",
+        "kind": "vocabulary",
+        "sourcePage": 201,
+        "officialWordId": "W002832",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "48bd98cfbf37b4fdf791fb3eed1e9437e746e98a7c376b77097ce60c974295ca",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V019.png",
+          "sha256": "f8b180f3a25c4a4b5b71d534c1de9a1dd2c116069d1a1a277f94cc74d7edb3b7"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V020",
+        "title": "lobby",
+        "kind": "vocabulary",
+        "sourcePage": 201,
+        "officialWordId": "W002503",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "cef2b41a10d7cb286530108774286b75eeaa0bfd50fdc810338078794234ee35",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V020.png",
+          "sha256": "2db900faba51ace52cdc84be410e2164d5df5e62109c8d66fc59dce319c8cd1a"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V021",
+        "title": "hallway",
+        "kind": "vocabulary",
+        "sourcePage": 201,
+        "officialWordId": "W002380",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "18544af23a15cb26a1b88afc35dd681763d3f822f0ea4edf601e7098323ccbb6",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V021.png",
+          "sha256": "e3aa1c49a2c99005b60ea52bae2420e035a2cbe64dad162a353ab098b80bd6a9"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V022",
+        "title": "halfway",
+        "kind": "vocabulary",
+        "sourcePage": 201,
+        "officialWordId": null,
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "ee8c251b9406abe0fb4e78f37550d1adc100427bc9620a159641a8934b3b38c1",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V022.png",
+          "sha256": "a01a24e638f981514087121a05a23608620a0f74f6ca9eaa43e8a716eea52530"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V023",
+        "title": "fond",
+        "kind": "vocabulary",
+        "sourcePage": 201,
+        "officialWordId": "W002340",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "652f2050c04597b8ea5764760243b07e42ce69788a96b1f921db18db02a32fbc",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V023.png",
+          "sha256": "56cd5ed39479deb7b3a9a4d589857af622fe2b5fe8d402d4645869b5a4225ff7"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V024",
+        "title": "harvest",
+        "kind": "vocabulary",
+        "sourcePage": 202,
+        "officialWordId": "W002389",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "6840544ed786113ab71fb9d88d6237e2abd7a26f77b576098f4b7ad9d7532161",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V024.png",
+          "sha256": "6f1718a7df3de23b583a01587119b759e2170dd02aface70840453bdc8a47600"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V025",
+        "title": "gamble",
+        "kind": "vocabulary",
+        "sourcePage": 202,
+        "officialWordId": "W002354",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "dfb7e30a7fc38f1fd36eb29a61502e6c55b39865e7418b8cde088c75e924664d",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V025.png",
+          "sha256": "9cad991d0af64938cc8f9dae2bf5ac29e8de77e6ab8419347ab8d65eb21066ed"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V026",
+        "title": "sleeve",
+        "kind": "vocabulary",
+        "sourcePage": 202,
+        "officialWordId": "W002811",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "1807268e3413bd6167b831a7ccff22844a8ccbf35767bb6cfd54f62c3ca68175",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V026.png",
+          "sha256": "dd50ed80a02128b7696d36e650191a4117f1658a36dc8e13ad18550ada19b9de"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V027",
+        "title": "collar",
+        "kind": "vocabulary",
+        "sourcePage": 202,
+        "officialWordId": "W002169",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "e3273d8df407186cd727fecffb9d1cbaeb52c4bd74a0c6708d6e6fe23ec0d8ed",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V027.png",
+          "sha256": "22d4ad0ed8d8f7476a761de00239269754921ecc1bbd029ecd18ad982b2361ac"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V028",
+        "title": "truthful",
+        "kind": "vocabulary",
+        "sourcePage": 203,
+        "officialWordId": "W002939",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "322f646e5560f6b6a410b4151d2023fa0ba29f64f4ca1c37ad2c4d0e8dee3cee",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V028.png",
+          "sha256": "f89d3944a50275ccb8817ccf58b5eb1de8c85a37ee10539496acf9c2d48fe892"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V029",
+        "title": "kilometer",
+        "kind": "vocabulary",
+        "sourcePage": 203,
+        "officialWordId": "W002470",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "46883bcd777a5201eb4279e073b1c9bd814be8d93b205dd7a5b2e90cc609903d",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V029.png",
+          "sha256": "0484dad6f351e5e72921ab755322dbeeba4bd9ff379be2242125a7d4d95d56d9"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V030",
+        "title": "awful",
+        "kind": "vocabulary",
+        "sourcePage": 203,
+        "officialWordId": "W002057",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "e8b0c6c7aaff961ad831869bf914ccd75db11cc0880dc2dc0049b6ca4be0f2ca",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V030.png",
+          "sha256": "15700a9d18816b0b51c34a2063e62412ffe1fcb28d1ec4d40c76adf1b03826fb"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V031",
+        "title": "discount",
+        "kind": "vocabulary",
+        "sourcePage": 203,
+        "officialWordId": "W002248",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "d154a576e50158696e85ae8c8ee212b4af4c5692396406619e988cdcdb22cdf8",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V031.png",
+          "sha256": "4b8c2c040820b9bcb3ce0aa53d78a4de1984944fa1cac756c983843a1c4087e8"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V032",
+        "title": "drain",
+        "kind": "vocabulary",
+        "sourcePage": 204,
+        "officialWordId": "W002264",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "12fd4365508b859fb297b532b175f70aa37e87b0ce01583243ad1644d352226d",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V032.png",
+          "sha256": "38532d900d8e5cb107ccd482450b69da4a774616af0643acd63b2005dee9e16b"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V033",
+        "title": "pit",
+        "kind": "vocabulary",
+        "sourcePage": 204,
+        "officialWordId": "W002646",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "f686bb28e8491b27a961b8e39dbeb7253af980251bcb00816e05ab5ff7f8ef44",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V033.png",
+          "sha256": "55b072fc9deff507ce14fe54ddb0094e57a156cc533ffeb86e0bc1eddde7d32d"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V034",
+        "title": "chip",
+        "kind": "vocabulary",
+        "sourcePage": 204,
+        "officialWordId": "W002149",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "d7463e3a4751d3227bb160218280894f31172ba1aa3aa518c8e18139a089b71a",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V034.png",
+          "sha256": "ca342adb8210688e9c0bc554d91c7c251762914cf54760494504189996be04c9"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V035",
+        "title": "tug",
+        "kind": "vocabulary",
+        "sourcePage": 204,
+        "officialWordId": "W002941",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "45ca222b56eede2c0a6662fb809112f5fbc3cdc7065f196581365e76c309d2b1",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V035.png",
+          "sha256": "f8cfa6b4633e69b4c1f29d7dfaa86603c32e8ccaac639fa4f14d30beca3dad02"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V036",
+        "title": "tug-of-war",
+        "kind": "vocabulary",
+        "sourcePage": 204,
+        "officialWordId": null,
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "342f613caf5050030762c4b5dd84e3a5f51e008970a9423c20b8088bf3db2f78",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V036.png",
+          "sha256": "5431117de2970241c4953168245cdf6b831a1ed57143819b13f845d8d5f79b58"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V037",
+        "title": "beetle",
+        "kind": "vocabulary",
+        "sourcePage": 205,
+        "officialWordId": "W002077",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "0eeb700068d452645d4a3e3a91c15afc910599076d4d62ea70b532becfda59e9",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V037.png",
+          "sha256": "a88a1be0577f326a8f12c18e957cb7410997277a1822d40bebfd2a8cb1eb5ae8"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V038",
+        "title": "dragonfly",
+        "kind": "vocabulary",
+        "sourcePage": 205,
+        "officialWordId": "W002263",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "be23e37f99311965eae0526ae5112eea73ab935772c3f261369c90cd18ed9351",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V038.png",
+          "sha256": "008aa51ead1066ef548ed878382d6ba005835c6c186129fdbb734b6b2d3ae5d4"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V039",
+        "title": "moth",
+        "kind": "vocabulary",
+        "sourcePage": 205,
+        "officialWordId": "W002560",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "a64492cfe7224875feb5a281bb4f54c15c89a137bbc2c1e81a0d05af773fd9a6",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V039.png",
+          "sha256": "d70b0dc3fa3aee8424ea94d6b496979b18b0eac6e25839553fce337a1c446830"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V040",
+        "title": "apron",
+        "kind": "vocabulary",
+        "sourcePage": 205,
+        "officialWordId": "W002037",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "ce6a572be746b929b7b87657faddb499ff906d1f442ae34263adc0ebdb161a4d",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V040.png",
+          "sha256": "103d4f231bf68b62133d479b2cb5d8258b749eb57c326e4863889ea1b30594cd"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V041",
+        "title": "cock",
+        "kind": "vocabulary",
+        "sourcePage": 205,
+        "officialWordId": "W002166",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "ab816002958129d1a7f30e6791837e9a2606df9bcdd930b989d3836545e5a168",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V041.png",
+          "sha256": "db726d8d77d5e4fbfa33ef524ff321b568e0c923d365496d162a7bc10561cf9a"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V042",
+        "title": "fighter",
+        "kind": "vocabulary",
+        "sourcePage": 205,
+        "officialWordId": "W002324",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "2b3e66271259419a4cf2e0cf74d75f0ebe567690bec3a86118ae08f827bb7328",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V042.png",
+          "sha256": "d0e1ef3790d2d0e17f24711fea41a81fb8b6f5036de074b1e05e72d0f90ff1cb"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V043",
+        "title": "brick",
+        "kind": "vocabulary",
+        "sourcePage": 205,
+        "officialWordId": "W002102",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "66085ecaf5792c11e962db66b93201cee2aac29cfc373fcae8e18cf0b1a3ad99",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V043.png",
+          "sha256": "d20e441b818dc6b7864e0fef48edfacb501062c8aeb7481fadcb202261836f8b"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V044",
+        "title": "spaghetti",
+        "kind": "vocabulary",
+        "sourcePage": 205,
+        "officialWordId": "W002822",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "6cbb1fc53dad2acc3edccfc4ce6c0068c370764740e1af3b483f5ded89378e93",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V044.png",
+          "sha256": "acb32bee3c9b037baebc6b86c4ef9459346b468ce53b20edba1811619164d023"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V045",
+        "title": "steam",
+        "kind": "vocabulary",
+        "sourcePage": 206,
+        "officialWordId": "W002845",
+        "meaningSource": "textbook_transcription",
+        "renderedTextSha256": "0be940493fc9ce549e82b8174fcc8a5aafc91242286c9ffdfefd79020de5279d",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V045.png",
+          "sha256": "9abbf4a5978cf197ad42f74005f358e0d62a7277bdff2c56fcaddfd3bf5db2a2"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V046",
+        "title": "ashtray",
+        "kind": "vocabulary",
+        "sourcePage": 197,
+        "officialWordId": null,
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "cbd54dc7d8c5cfb41ea9b66b7a28672bb2c69cdbfa7c3c447df8cbe24cb90f55",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V046.png",
+          "sha256": "e6ef0869d97d8f442584babd9a1cd521f70a1538f8797d0e382b682bff3ef1d2"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V047",
+        "title": "repeat",
+        "kind": "vocabulary",
+        "sourcePage": 197,
+        "officialWordId": "W000708",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "9233ca5af2805d606189c2a0e75d0ac7f81874c30e9be9359d01ef873d43b417",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V047.png",
+          "sha256": "9e49a7d96813a9c7abd35edbb4266f06f4252cbb41b730b9680835e9692b2480"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V048",
+        "title": "reiterate",
+        "kind": "vocabulary",
+        "sourcePage": 197,
+        "officialWordId": null,
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "b4d142f723e5f016f0aac10f56060a27c40956792462dfaa5601beb472b26a2c",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V048.png",
+          "sha256": "c1abbccc95f240635199605bfeb072c54ff8c5af9c721a6fe0c00bd2311350ec"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V049",
+        "title": "vague",
+        "kind": "vocabulary",
+        "sourcePage": 197,
+        "officialWordId": "W004961",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "d8483824b168bad008a39fc0a2058833f6a754b872581cad174bd7ee00892e60",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V049.png",
+          "sha256": "e0941add9239c2cd0366a76f72783011ea6df890be390a986e0add8257e45fe9"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V050",
+        "title": "perspire",
+        "kind": "vocabulary",
+        "sourcePage": 198,
+        "officialWordId": null,
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "2487cdf4e6dff85b06569f0cdd1804781f55c6e54f95e213bfd5f9986c8ed64d",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V050.png",
+          "sha256": "6d8984b847c50b68b5584947a3cf1dff1e542666f4b33b4829f1b2ead2ab9723"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V051",
+        "title": "bathtub",
+        "kind": "vocabulary",
+        "sourcePage": 198,
+        "officialWordId": null,
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "e1139c67c0af25257b1920fe7b04c3a9a0cb921c7b381a36cd4ea106cb5e70d8",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V051.png",
+          "sha256": "9b39f3801b4f2498c6dc88b76a294895da15aba84a4dd0e34a6a4ba9051efcbf"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V052",
+        "title": "bath",
+        "kind": "vocabulary",
+        "sourcePage": 198,
+        "officialWordId": "W000066",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "37e2a49c47068455277aa2e10cc803b968816734397da43c35c33b74949d12ab",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V052.png",
+          "sha256": "1ad21d85d20b5cf00b4692cc9f47ea0ce22179a4d79a3912774eb8846749a1a4"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V053",
+        "title": "peeler",
+        "kind": "vocabulary",
+        "sourcePage": 198,
+        "officialWordId": null,
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "6a07924d60e4dc3f4678a1b3047f090d961abf0c2a64cef6774393cb3583b7cf",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V053.png",
+          "sha256": "68b3a0d1e466ef7b7dfbf3af139a1500ee9ffe21518b26da35a66df920a39bf0"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V054",
+        "title": "gadget",
+        "kind": "vocabulary",
+        "sourcePage": 198,
+        "officialWordId": null,
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "c8f5e83a570416032a9b5c683aa6e2ff23af57acd13e4cec9c3b132c0c23da9c",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V054.png",
+          "sha256": "1afbc921a233b28ddb18f422ffad37b7daab8d743f8f973de50788e40a71120b"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V055",
+        "title": "tuck",
+        "kind": "vocabulary",
+        "sourcePage": 198,
+        "officialWordId": "W005944",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "c4558edd88f6f63defcb981419ee6cbaf4ee352733dbad05de30b5e0316f32fb",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V055.png",
+          "sha256": "6d3cb96ed714986bfc7a73444969eb5147179274df1d68f0eedf4bd20ec4431b"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V056",
+        "title": "sketch",
+        "kind": "vocabulary",
+        "sourcePage": 198,
+        "officialWordId": "W003901",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "45a6bd52f4e65e6e58f9638a9330255f491e5fdb46ae119c32caedd7731eae44",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V056.png",
+          "sha256": "aac640daa6350a1d0e2d236347b70300c69a9bef8efb36e7a357a41eaaa6948d"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V057",
+        "title": "summarize",
+        "kind": "vocabulary",
+        "sourcePage": 198,
+        "officialWordId": "W003931",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "99ffd570a5eb5335f90980f24db7cfe7b425f76b946f53f864b9447f41b84638",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V057.png",
+          "sha256": "a887aefd03911e2362179b764bdc0be946dd440caf18b7dfbc93250999723317"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V058",
+        "title": "hasten",
+        "kind": "vocabulary",
+        "sourcePage": 199,
+        "officialWordId": "W003486",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "7aafcd41d3ee9f3cd6d42d6951da3893be9e5e5643ca3cd8b4d7802f37f65062",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V058.png",
+          "sha256": "498dfb7295e601e30465e80c3209776a39a8a7e1360d43a4b5161190d38dd554"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V059",
+        "title": "haste",
+        "kind": "vocabulary",
+        "sourcePage": 199,
+        "officialWordId": "W003485",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "28fff7596fd2191bf9b2548958ed41236d765cdaf38bbb6f7c6a6bda4d14a87c",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V059.png",
+          "sha256": "1e275ea245721f9601e61e70930e88108c585b2b7343b80c5c130df4cf4c2c07"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V060",
+        "title": "hurried",
+        "kind": "vocabulary",
+        "sourcePage": 199,
+        "officialWordId": null,
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "a90e5accfe1a6efd161cfdba7684740be698c4f68addc48c29510ac6b48611b1",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V060.png",
+          "sha256": "addd3cdc8670957e8857408ea5d3f30865f5a2fe63a4721fcfa9636a66cfd92c"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V061",
+        "title": "in haste",
+        "kind": "vocabulary",
+        "sourcePage": 199,
+        "officialWordId": null,
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "efda1eaad71b418a5bafcc9e219ab0b27b3e3a6fc46c9a14477bbc8b497cdfa4",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V061.png",
+          "sha256": "bf640418ce279cedc752fe7606f653004a5d9a3f4421b43cf7fac09bebb35231"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V062",
+        "title": "hurriedly",
+        "kind": "vocabulary",
+        "sourcePage": 199,
+        "officialWordId": null,
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "e29e0ed99228eecb66650f31fa09e947ddb25bdb28852b03919bcc5e903cf414",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V062.png",
+          "sha256": "c6090152e0c322ce304fa6eb9446a1cd5109b57fb4b801568acfbee6b37147c5"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V063",
+        "title": "income",
+        "kind": "vocabulary",
+        "sourcePage": 199,
+        "officialWordId": "W001455",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "e5e584ff42203bf664b05ba07d207657955dcdfb1a2611eb1137750e3f666fd3",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V063.png",
+          "sha256": "ea3fac8780196b41d1a82852658a33de4215afdb51e97a542dd1ab1da5de62cb"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V064",
+        "title": "revenue",
+        "kind": "vocabulary",
+        "sourcePage": 199,
+        "officialWordId": "W004740",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "ff1d9c814a30b2e25ec56931de8e4ef4f656f1504a746bcb688bcc81d927a68a",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V064.png",
+          "sha256": "2756f40f5ffa0742bc23592b67030e940024dfb335295663395c734e832c01b4"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V065",
+        "title": "strategy",
+        "kind": "vocabulary",
+        "sourcePage": 199,
+        "officialWordId": "W002856",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "3fe32cf10c056e79dc30cb802c7f62d17a6f6a370ccba16ab4bfe3593318f15c",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V065.png",
+          "sha256": "0c61ec4572b04f9d4892cfcefabc51e1007510ef0988a16d9aafc272299b9eaa"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V066",
+        "title": "withdraw",
+        "kind": "vocabulary",
+        "sourcePage": 200,
+        "officialWordId": "W004002",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "92cd201a5e4aea5804440d1c0e521d34f916ad577ea08c86b32e9cd24ac2acff",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V066.png",
+          "sha256": "e5ed106d4c7eb8b53257c1bad91d7e7e91d0fa1429fdd37b869ad4a7956d3328"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V067",
+        "title": "sincerity",
+        "kind": "vocabulary",
+        "sourcePage": 200,
+        "officialWordId": "W003898",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "a88f7412d9baa7da697b9b08bd3a1bf8673b702ae4f6d90c8a78e8c0893405c0",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V067.png",
+          "sha256": "78b5a273f64246e8045d8ea44d593f964e7aebf56605c7fb229281117d431c64"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V068",
+        "title": "honest",
+        "kind": "vocabulary",
+        "sourcePage": 200,
+        "officialWordId": "W000407",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "ec0d20ad2c5df2021a73139327363894ed246f09e7b098502d886f2fafb5d1d8",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V068.png",
+          "sha256": "e982f7e4c24bdd68c10f6f01d18c54a978a72b87995f7a10dbdef8900468d5be"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V069",
+        "title": "insincere",
+        "kind": "vocabulary",
+        "sourcePage": 200,
+        "officialWordId": null,
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "b582eb4e7429bea6038f903f353ad5472f31fa929cf0b81538d784adfbe3ef9c",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V069.png",
+          "sha256": "3644a0bb631ab31675813fc298bccf92e2f78e5439e751a6a8f019b47f68ed97"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V070",
+        "title": "inspection",
+        "kind": "vocabulary",
+        "sourcePage": 200,
+        "officialWordId": "W003542",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "85611b0b431f3916fb10757c3c8fdac5eb1f711dd2c53712aeb1d708003f808f",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V070.png",
+          "sha256": "6f15611e0bf2f03fa887250e743d683b82f2b30296babbcfec2e1d316fe4f829"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V071",
+        "title": "examine",
+        "kind": "vocabulary",
+        "sourcePage": 200,
+        "officialWordId": "W001326",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "26ec355f45d71a9fd986b1a6dd09ae097e02960c4273ef7ed61bee0366a06029",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V071.png",
+          "sha256": "1c57db501b4893a66f1d145f0ba2489a9fe5f55f41830a066f84a54a8e63a930"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V072",
+        "title": "investigate",
+        "kind": "vocabulary",
+        "sourcePage": 200,
+        "officialWordId": "W002448",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "56a83d8da80c229de335a0bbc80436e21428bcf3a0c503967f32ce36d7807f29",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V072.png",
+          "sha256": "666a709c09bf37c71fe7ef996cef56fad82a163a3aa9af78aae29b78caf3a91f"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V073",
+        "title": "bloodstain",
+        "kind": "vocabulary",
+        "sourcePage": 200,
+        "officialWordId": null,
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "4a99c61c30a0ac97d60d6c5fafb22024dd2338cbf82f80eaaa943066beb58088",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V073.png",
+          "sha256": "4388530b08c27f66cc492f3e4765c88598160943cb5b5cba186d7b59396ad613"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V074",
+        "title": "examiner",
+        "kind": "vocabulary",
+        "sourcePage": 200,
+        "officialWordId": "W005328",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "fcdc5b9bfa8d0a4446f391a43716789cee5578092db3af037852690a92549328",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V074.png",
+          "sha256": "ae6bdf23e597188bd5ba9aab3e487bcaa81841f056d3365ae38dbcfa42785b34"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V075",
+        "title": "defect",
+        "kind": "vocabulary",
+        "sourcePage": 200,
+        "officialWordId": "W005237",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "c28aa945c544f11716aa3c5b4b78e4f055f135c8e0cfa2350af84affb43a86af",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V075.png",
+          "sha256": "b3198a98c9360b0d2e9edbfc2104d8a3ff9afb668c34e47811937f030f6218f7"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V076",
+        "title": "sprinkle",
+        "kind": "vocabulary",
+        "sourcePage": 201,
+        "officialWordId": "W003916",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "914da378ab4b3bf0834fc0e3710ad0aa01b5839a65da6b8b94a45ba12621fd0a",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V076.png",
+          "sha256": "5883bc63a1fa49dac7619fc1d311e79e49c3555fbd253eb0c8c4e85075551e8f"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V077",
+        "title": "lobbyist",
+        "kind": "vocabulary",
+        "sourcePage": 201,
+        "officialWordId": null,
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "11ac5cf42c777f8ae6852bdc5e43e667f86e67e84b27324e69cfdbb8bf8e3e70",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V077.png",
+          "sha256": "85e923fa0bae1d2904d0b1afe2dc6e1fa9835016324c60275465251e325b0026"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V078",
+        "title": "persuade",
+        "kind": "vocabulary",
+        "sourcePage": 201,
+        "officialWordId": "W002637",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "d83d11f5335df5ef10a64f624265c0c096b442392538b768d20b802eaa849d6b",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V078.png",
+          "sha256": "6b28b0a65969388d4f74845e20162f23f777bd71132de1b4b41de0ddfedc2539"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V079",
+        "title": "proposal",
+        "kind": "vocabulary",
+        "sourcePage": 201,
+        "officialWordId": "W003785",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "59e2bd1e785b0dab501e2fcb6438ee04e18da3e5197037a72667310ceeefc87d",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V079.png",
+          "sha256": "c768205a0427e19e7435050594131547d5a2927b41b42d39376900955319714d"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V080",
+        "title": "passage",
+        "kind": "vocabulary",
+        "sourcePage": 201,
+        "officialWordId": "W002618",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "3969a07d03b07fb6aef7360ed829ed6d937cdc80beeb1313efa41c511109ea0d",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V080.png",
+          "sha256": "45cb36993e68b294d435e0f4604dac15912ad6e2170cf63cf1730adf26b2c414"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V081",
+        "title": "corridor",
+        "kind": "vocabulary",
+        "sourcePage": 201,
+        "officialWordId": "W004242",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "d1bfd434326c7e1b87ff8d1641a1ea64bccfdaea54b211b9113eefa5f109d856",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V081.png",
+          "sha256": "a490ff6d33c04ba9628d0615b61482eb31c8537c6ef11c78b24b0b9e77af7f0b"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V082",
+        "title": "reap",
+        "kind": "vocabulary",
+        "sourcePage": 202,
+        "officialWordId": "W005739",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "aab2c835b7ce4e8b46012a83ca35b1f65357564a467df83d301bf5a7b82d2719",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V082.png",
+          "sha256": "ab37a42cb19e713ab9be6524c191fa5f8fd829b45d05feaa7a73afe906b113cd"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V083",
+        "title": "farmhand",
+        "kind": "vocabulary",
+        "sourcePage": 202,
+        "officialWordId": null,
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "f33dee24c41f21f94e610347dc2604c9cd90e78d0b12d34fb6e40fb17532d009",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V083.png",
+          "sha256": "3d4500fa7abd4db5582890dd7eeadaa047d32302313b86734b3f80b5b63efb73"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V084",
+        "title": "bet",
+        "kind": "vocabulary",
+        "sourcePage": 202,
+        "officialWordId": "W002082",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "b75009a8418cb599295ac924eafe89524b23af1a3cbe05ba66c11a92182f5d71",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V084.png",
+          "sha256": "ac4f58feeb7e0ba705af45bdf3aaf171b18545a4a1fe1a6df98438736e77fc79"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V085",
+        "title": "white-collar",
+        "kind": "vocabulary",
+        "sourcePage": 202,
+        "officialWordId": null,
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "5aaacd070a00313c616ffea1377293ec9c15d4e687ae50b8336367c790c0c4b0",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V085.png",
+          "sha256": "4fa49a72c67029ac50eee9ab025cab49ff6eb43c1d5bd54fa50d384f41abb177"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V086",
+        "title": "blue-collar",
+        "kind": "vocabulary",
+        "sourcePage": 202,
+        "officialWordId": null,
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "97493fc162ed9626b913aa0dc6cffbbee638fb63675e8ca11025bb192e63576a",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V086.png",
+          "sha256": "6d8d9fffc401dfdb41a7d6fcf2e82e56ebe062d6e4abe39f1f914df0d9b732b4"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V087",
+        "title": "color",
+        "kind": "vocabulary",
+        "sourcePage": 202,
+        "officialWordId": "W000183",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "84bd62d69ffe934a6ed94a263c5fde26c2b36f0aefea72ebfe072ae10e2d48df",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V087.png",
+          "sha256": "a5a5b1d1553b2254fd0c139929e88d19643b194a4b5d9eb4110466a229092b20"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V088",
+        "title": "honest",
+        "kind": "vocabulary",
+        "sourcePage": 203,
+        "officialWordId": "W000407",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "e668fc1fc6e0fd11b0833531c3748ae62c4635799da573da0da1a63ade904b2d",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V088.png",
+          "sha256": "862eb775228c504c2eee7503fdff256ec6eed594b040762928284fec60e6de20"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V089",
+        "title": "true",
+        "kind": "vocabulary",
+        "sourcePage": 203,
+        "officialWordId": "W001932",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "2115938a19e3512e44f71b8555d2c41a544402d5a0b212e1a96de62773a240ae",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V089.png",
+          "sha256": "4703d3b1bd96e42112b10e56fd4db91a0d5569bd40b5a2a3635012cdcdad1518"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V090",
+        "title": "truth",
+        "kind": "vocabulary",
+        "sourcePage": 203,
+        "officialWordId": "W001934",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "cc2000e3771faf0ce5b1218624b9b9156a34a8a19f2ddf5362e0a8ee8f25a62e",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V090.png",
+          "sha256": "593ab5e41b23939c5756d466bc74a8018b873bcaaa7bacffdfcf586736a43c2e"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V091",
+        "title": "km",
+        "kind": "vocabulary",
+        "sourcePage": 203,
+        "officialWordId": null,
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "24937a081d3ca2edaeed184adb667f70e4f1e99e8008b3ec6b2c5d6876c21e35",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V091.png",
+          "sha256": "5eefaf6d37baedb4e5b12b9944f7295af589f591e9c03554e3931af82dd85ae7"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V092",
+        "title": "meter",
+        "kind": "vocabulary",
+        "sourcePage": 203,
+        "officialWordId": "W001547",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "45705b68eb7c32e11912f2a32b8d2038280e7040d4f713d4c1a99a24562cf476",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V092.png",
+          "sha256": "1224f693fbdd33919c4a2fb5cb45bcf4a7e303b66261414ca12966869630d44c"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V093",
+        "title": "m",
+        "kind": "vocabulary",
+        "sourcePage": 203,
+        "officialWordId": null,
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "9c1562bc2c40703f3f881e0f73777d919dfd51349df8938ca7d0f16ce96a23d4",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V093.png",
+          "sha256": "ff287c033587f35ad013bcecf60c98eb81d963c485b91f164349d35446298298"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V094",
+        "title": "centimeter",
+        "kind": "vocabulary",
+        "sourcePage": 203,
+        "officialWordId": "W001137",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "a4c934c95219f312107b19ea45995a822f16c7a3e085c6d7798613bb115632ee",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V094.png",
+          "sha256": "d8619cf94ba9080f12f2cdd2154ea7272f970f8c1b539f0d02e88668d80ce7e8"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V095",
+        "title": "cm",
+        "kind": "vocabulary",
+        "sourcePage": 203,
+        "officialWordId": null,
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "2aa8e906e7003d16e7f4d0fea25e1ec8778728279ecda1a3a5e38ae3bcd1f05d",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V095.png",
+          "sha256": "cfcbf609a32467246e2dcb30ea6bb0039b97df094d513172b893be0d364f31c6"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V096",
+        "title": "horrible",
+        "kind": "vocabulary",
+        "sourcePage": 203,
+        "officialWordId": "W002416",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "277d8fd0abf0ed429fc5c61a8f311971cb1bc36e2fd6282fea30610d848ce3e5",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V096.png",
+          "sha256": "ee4c18768ea8d71dcb7b1da1159f81b1469e8df17e25b4a187e286b571b76ed4"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V097",
+        "title": "terrible",
+        "kind": "vocabulary",
+        "sourcePage": 203,
+        "officialWordId": "W000867",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "e49a4b773597ef5de1826841b8cfb16ca489dc637de6a98a45c158c827807a1f",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V097.png",
+          "sha256": "f0ce17561f88c9adb4f23efc61435484795470e6c83d35860d6139d481dc859f"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V098",
+        "title": "reduction",
+        "kind": "vocabulary",
+        "sourcePage": 203,
+        "officialWordId": "W003816",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "1f5e52a30aa66e737854b246aacb72bd1f5d4c28cbe199da5ab31d4fbca00429",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V098.png",
+          "sha256": "367dbfb71f39a655698089cd94189bc1e9dd4ea73ee80e6e4f6474809af884a9"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V099",
+        "title": "boutique",
+        "kind": "vocabulary",
+        "sourcePage": 203,
+        "officialWordId": null,
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "9b15ddce8c9f9e2766abc1ca1131ca7d4cba78496585229ca07ef710c069cf52",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V099.png",
+          "sha256": "761c364d7d58bee53bf0b67c8263abc708f280755826b7e88efb472087383e5b"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V100",
+        "title": "hole",
+        "kind": "vocabulary",
+        "sourcePage": 204,
+        "officialWordId": "W001436",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "b5ef2e56ae90144977ee8e46c0ade461ed60233b19d52388c1d058e0370cc39b",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V100.png",
+          "sha256": "25a2454f5a753580121a1e9ec49113e0a21469238c6afc3e0fc9bbfcbb93a99a"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V101",
+        "title": "a tug boat",
+        "kind": "vocabulary",
+        "sourcePage": 204,
+        "officialWordId": null,
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "01745e9caf2ba33f8ef6858d30b3cdc72973e7bdef681cd51e379ee9106fa86d",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V101.png",
+          "sha256": "aae3a0105f05e9d30ca0f65595947391f23af354b5cc202a87622c5b4a28ebf5"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V102",
+        "title": "butterfly",
+        "kind": "vocabulary",
+        "sourcePage": 205,
+        "officialWordId": "W000131",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "0caf209567b3c15976d8d0d930398bf22a1f2161c44c423a25779db529187a5d",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V102.png",
+          "sha256": "2542467147c7ff65f43fdbcb715ee63b3fa398057e750fd69a743f590936b47d"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V103",
+        "title": "pupa",
+        "kind": "vocabulary",
+        "sourcePage": 205,
+        "officialWordId": null,
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "8bc627bff6fcf44ef95447bd9610a1db64c167e00ed6fe361cbb993496778725",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V103.png",
+          "sha256": "affc8436640acfd95a1874d49dcae7fb77b05185571257545d68719e7259ea13"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V104",
+        "title": "cocoon",
+        "kind": "vocabulary",
+        "sourcePage": 205,
+        "officialWordId": null,
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "ea106e488056452ca1852567c5b5b837b06633e6fc1285aacf4123398f3f5690",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V104.png",
+          "sha256": "16427d42ef586476a839f6de40206b14da4b276cfa059c15d5d6eb3ff2b068c4"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V105",
+        "title": "bib",
+        "kind": "vocabulary",
+        "sourcePage": 205,
+        "officialWordId": null,
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "427f4503da58151266d69adf3a887819bc8e71554da5a4d4000aec37eada79b4",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V105.png",
+          "sha256": "2de74aa4a858b280bcc336d098bf6c381851f74f5f2e9638fb6c45ce062b0787"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V106",
+        "title": "rooster",
+        "kind": "vocabulary",
+        "sourcePage": 205,
+        "officialWordId": "W001739",
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "f39c19cf87bca86fa178ec443f37ed907c6c4aa654e4ead881e6f8d32e5ee3ba",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V106.png",
+          "sha256": "0dc595bef87dc3bfca6d23ecbbd3699a2e99e0b4a97973a1186580d0d7c22a61"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V107",
+        "title": "a bricklayer",
+        "kind": "vocabulary",
+        "sourcePage": 205,
+        "officialWordId": null,
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "6258e6583675b5930e6e862e96b68b2db83c52f861bc9ef8d72cd0848f46657a",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V107.png",
+          "sha256": "0db9c2cf1972713b25b796ff0318b05e998bde90cf6145184f339c716144e4c6"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V108",
+        "title": "macaroni",
+        "kind": "vocabulary",
+        "sourcePage": 205,
+        "officialWordId": null,
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "177f51858237b51d1a2c19b28d871cee40f457e2fd37a471242b855a256a2da3",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V108.png",
+          "sha256": "60ee59ac726e46a7fa0e19f6e9332f566105de2ee916569f7d6e80fd2e478f78"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-V109",
+        "title": "steamer",
+        "kind": "vocabulary",
+        "sourcePage": 206,
+        "officialWordId": null,
+        "meaningSource": "textbook_source_review",
+        "renderedTextSha256": "e1229470c8970c4ae31a1d93e51231c57324da4f1b60036df59e14823bb23308",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-V109.png",
+          "sha256": "5168ca9ddd6f2e545caf4c9b84680e0336c87283290fdbbe5ef4bec3f1a8c434"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G001",
+        "title": "turn to ashes",
+        "kind": "grammar",
+        "sourcePage": 197,
+        "officialWordId": null,
+        "renderedTextSha256": "0507639bec873a840402c77d45afd490d6b5b896aaf93b09be1a5a15988d2d96",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G001.png",
+          "sha256": "250a4645418ecdeb8a172ba6817ea3eed03f626724ec55ae36ddbf174494699f"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G002",
+        "title": "Rumor has it that... = It is rumored that... = It is said that...（本句構中 Rumor 恆為不可數）",
+        "kind": "grammar",
+        "sourcePage": 197,
+        "officialWordId": null,
+        "renderedTextSha256": "cfae9dc6abdb7d6f7c1ab014f1a8949e42dc86b35c0508de3a5eb17b536c4aee",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G002.png",
+          "sha256": "e9dac659248182ce1481b1e3c687f31f33c671f5eda6d6684374ca85337430ba"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G003",
+        "title": "Rumors spread that...（本句構中 Rumors 應採複數）",
+        "kind": "grammar",
+        "sourcePage": 197,
+        "officialWordId": null,
+        "renderedTextSha256": "0694ef6a634555b07079eb124dfad882880ec919e00dbe403d5549fc0238a99c",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G003.png",
+          "sha256": "3cc66db38000802f3d1684c52bce65e7592acf1cf9edfd99412693614c376581"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G004",
+        "title": "sweat a lot = sweat heavily = sweat like a pig",
+        "kind": "grammar",
+        "sourcePage": 197,
+        "officialWordId": null,
+        "renderedTextSha256": "51655b7c87c9af4e87fc15033cc698181d9618ba341c72e5c2db544cb73398a5",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G004.png",
+          "sha256": "17aa800e95e129d69f87e2544bcf8d8a323615c07a150fa88bca81d5c41327d8"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G005",
+        "title": "No sweat. = No problem.",
+        "kind": "grammar",
+        "sourcePage": 197,
+        "officialWordId": null,
+        "renderedTextSha256": "d334ecd0b0ed028c0ac7986f1b29975b7d63b4cec711a270ae2c0d836b8a173b",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G005.png",
+          "sha256": "012590afe71a0a944e18b98e2835457595586825b5fdfac44e28a42bb614522a"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G006",
+        "title": "break a sweat",
+        "kind": "grammar",
+        "sourcePage": 197,
+        "officialWordId": null,
+        "renderedTextSha256": "fb868525813ed00036b1de6fe9e6f82bdcdd762f3b23e8e719e707bba193dbe4",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G006.png",
+          "sha256": "d9d40979b86dc6563187ad70c88ef37834ea36eac4b6f53ad5484234f80a5c55"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G007",
+        "title": "come in handy",
+        "kind": "grammar",
+        "sourcePage": 198,
+        "officialWordId": null,
+        "renderedTextSha256": "70b311cc6c2365c586e9a1c7bcdede17de441e998fb3e73b65763188378af52d",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G007.png",
+          "sha256": "a9c3e4a613215747d06f58fca045f31ad69f46bd28b515bcc09903251572849f"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G008",
+        "title": "a handful of...",
+        "kind": "grammar",
+        "sourcePage": 198,
+        "officialWordId": null,
+        "renderedTextSha256": "f3b209824dcd13793a5e88d5691fe762cd066f84bddaad7149aadb6092d2b528",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G008.png",
+          "sha256": "ca2db09f6eec86959695e3ffd52a7106396df04b62411ce19a8ffb73dd0f10af"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G009",
+        "title": "in haste = in a hurry = in a rush",
+        "kind": "grammar",
+        "sourcePage": 199,
+        "officialWordId": null,
+        "renderedTextSha256": "7d913a2bf82e52244128e0100c743a612539358cc76e41be1484a32fdd989a5b",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G009.png",
+          "sha256": "a63fb3455b8733656ea73787168b82f2d4b04aecb3d6af104b80a6fc5922a352"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G010",
+        "title": "open a savings account",
+        "kind": "grammar",
+        "sourcePage": 199,
+        "officialWordId": null,
+        "renderedTextSha256": "6fb5630b7364e8810e2142971c96cfdb77381d35004eec515f08a399a7a0cb25",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G010.png",
+          "sha256": "bc5dc08247f98d950175b675798a558d1c467c0217fb01ec11fd0a989910b001"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G011",
+        "title": "open a checking account",
+        "kind": "grammar",
+        "sourcePage": 199,
+        "officialWordId": null,
+        "renderedTextSha256": "e09ef1767eb9781156225af917e91451d76cd64095d313d39af88aba3f819b28",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G011.png",
+          "sha256": "bf3734d985217542652a577b790d60a87f94b8b3b065794b410e263c04284639"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G012",
+        "title": "revenue 亦可作 revenues，均不可數",
+        "kind": "grammar",
+        "sourcePage": 199,
+        "officialWordId": null,
+        "renderedTextSha256": "ff54ad96fc27b3bcd9b3f4cb3bc13b23e7462c81a4dbba2f5609d5d9ded2d12c",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G012.png",
+          "sha256": "c2939eb4a273a1b0b78b30807f267b120709be1eb71979c79e4b4f286f8d1c00"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G013",
+        "title": "deposit 作及物動詞表「存放」時與 in 或 into 並用；withdraw 表「提領」時與 from 並用",
+        "kind": "grammar",
+        "sourcePage": 200,
+        "officialWordId": null,
+        "renderedTextSha256": "6e0ca0f1e5381658a0752220325f981c53550033a49e4d81e5e4a758eb75c4ed",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G013.png",
+          "sha256": "6b9bf0988ef11a396c6867091c664265b518316a60fcaa9c849c23a63ec21bc3"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G014",
+        "title": "deposit money in / into a bank (account)",
+        "kind": "grammar",
+        "sourcePage": 200,
+        "officialWordId": null,
+        "renderedTextSha256": "5ff3da52644501f78a4787491226b4a2494d95f8bd9bd4b605bef0c751270b41",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G014.png",
+          "sha256": "d1aa4ca3489c99424054661c50877c2505b8b87256b3e42045d9448d7f6d6042"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G015",
+        "title": "withdraw money from a bank (account)",
+        "kind": "grammar",
+        "sourcePage": 200,
+        "officialWordId": null,
+        "renderedTextSha256": "7bbbdaaae399d12d3edfe003e462bebce9812b0710082fc27578fb04d7d4f249",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G015.png",
+          "sha256": "b042d0f49951643c077b800a0c1acd8c5d06345162a91cb4333d0c72870f3cd4"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G016",
+        "title": "express one's sincere thanks / apologies to sb",
+        "kind": "grammar",
+        "sourcePage": 200,
+        "officialWordId": null,
+        "renderedTextSha256": "246abc36c83ad9b5a93c3a7cf7c56daf8ede5d9e989079fe752724a1a489c904",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G016.png",
+          "sha256": "7e249bb8269ad4474b8c3a26b5810d2879d9ff3a160a78df489e1995fc48d380"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G017",
+        "title": "a halfway house",
+        "kind": "grammar",
+        "sourcePage": 201,
+        "officialWordId": null,
+        "renderedTextSha256": "df4d9746282545528fe63860eb96272410a1566426132224ebf332feeec60c46",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G017.png",
+          "sha256": "322dc2833600b77687bd64bad73f9abc712577a5a60e7319f34b233c246238b9"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G018",
+        "title": "meet sb halfway",
+        "kind": "grammar",
+        "sourcePage": 201,
+        "officialWordId": null,
+        "renderedTextSha256": "e2077898f7ee2ff653a5617a0f1d6f60bb28ab9c39414feaa9566e388794e09c",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G018.png",
+          "sha256": "67124c6bdf19b3f72fd4fccf0d071544f7b426e77aa840bf80dfdf4f8517d123"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G019",
+        "title": "turn over a new leaf",
+        "kind": "grammar",
+        "sourcePage": 201,
+        "officialWordId": null,
+        "renderedTextSha256": "a97034301bc5d2c81d0aef9a01e6c8261737a4364c4b05d4c9961ccf8a4615ab",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G019.png",
+          "sha256": "c5d9d49849590fa0b1cd140786e6f2ae6a9bbc804b6bca0d93ea575dc2efea9d"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G020",
+        "title": "be fond of...",
+        "kind": "grammar",
+        "sourcePage": 201,
+        "officialWordId": null,
+        "renderedTextSha256": "081820a7eec5eeb11298926f8865ea4babeb980785563746e39c25364e68203e",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G020.png",
+          "sha256": "1950e2c4d13c0136e6dde9d48b6ad794c3fadbe818794a6bfd3d9c3aac769e8d"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G021",
+        "title": "gamble A on B",
+        "kind": "grammar",
+        "sourcePage": 202,
+        "officialWordId": null,
+        "renderedTextSha256": "3764e8e1b667309e6028e6679a2efc86ba3297984c930b273e4b7ae3ea2f2fdc",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G021.png",
+          "sha256": "7e031a6f9fd599403958e54dea78437cb8d7fb61a25a3a533c4dbf09b3eb2dbe"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G022",
+        "title": "take a gamble",
+        "kind": "grammar",
+        "sourcePage": 202,
+        "officialWordId": null,
+        "renderedTextSha256": "41fdf3b4cc718553fff1457cc5231cd07493bc0f5cae9174372088a15a723bd6",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G022.png",
+          "sha256": "57ae2636682aa49b880d83fc6b401fe7d5e6f003e7a2b53f5b59881a5d808377"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G023",
+        "title": "bet（三態同形）",
+        "kind": "grammar",
+        "sourcePage": 202,
+        "officialWordId": null,
+        "renderedTextSha256": "fe6a3576eeb3c64228bfde871b007bd67d78a84da313eafec6af5f8fcf323711",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G023.png",
+          "sha256": "8e8234da35d680927af43c3d06e99f78988df825a0cdcc290cdb7ab53d263604"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G024",
+        "title": "have sth up one's sleeve",
+        "kind": "grammar",
+        "sourcePage": 202,
+        "officialWordId": null,
+        "renderedTextSha256": "edfb5d9f8f6575144180135ead41f663aab5e462ecb30a5564b9abc1ae9baf3f",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G024.png",
+          "sha256": "27ad7b039fcc533d300c6a5bc9f6b14ca391fa3c6e7c3213e2413eb49dabf5c6"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G025",
+        "title": "roll up one's sleeves",
+        "kind": "grammar",
+        "sourcePage": 202,
+        "officialWordId": null,
+        "renderedTextSha256": "0f51a32954e377be3deadcd7e5ab17e746316931acfd74c6e15e7d53d8d3afde",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G025.png",
+          "sha256": "3944a6ac4a9a06e2aa9208f59bfe70f87385372811dbf321d34c7b8a43db84fa"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G026",
+        "title": "10 kilometers = 10 km",
+        "kind": "grammar",
+        "sourcePage": 203,
+        "officialWordId": null,
+        "renderedTextSha256": "b6f371db2107e44f9f63426131f772cde56ec02784911e61720835abd539b3be",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G026.png",
+          "sha256": "e44868d59821d40b942c7e003e23c2ddbccebd8ffe0b19941b0d6a5e0e81e8c1"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G027",
+        "title": "1,000 公尺 = 1 公里",
+        "kind": "grammar",
+        "sourcePage": 203,
+        "officialWordId": null,
+        "renderedTextSha256": "cf1e9503cd53119186676a999f4fb84df20d99456ffbfbfb1fbffa3656609212",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G027.png",
+          "sha256": "ff3051d1ea630f15b1120e0b5e0af346919ba2d8e406562825f023a46d087faa"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G028",
+        "title": "100 公分 = 1 公尺",
+        "kind": "grammar",
+        "sourcePage": 203,
+        "officialWordId": null,
+        "renderedTextSha256": "fd6e57e50673f9609692a280f2fdbbb314d0dac2ecb7844a7a316987bf69abb6",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G028.png",
+          "sha256": "f82d60aba9aa7ed4fd6b0857be2a75250936c2ef3905c4a6c6fd6036bf2af297"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G029",
+        "title": "give sb a 20% / 40% discount on sth",
+        "kind": "grammar",
+        "sourcePage": 203,
+        "officialWordId": null,
+        "renderedTextSha256": "459380a3aeef801cac74f34c0bf4c26e314fe868abed461f8aeee2126f024ca3",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G029.png",
+          "sha256": "74fff57bf4b6819150ed2a8358e4c6c6e05a01417392bd3ab1e7d5d68337f1d7"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G030",
+        "title": "brain drain",
+        "kind": "grammar",
+        "sourcePage": 204,
+        "officialWordId": null,
+        "renderedTextSha256": "133de977322dc22326e2aa4b1c93035cce1cbb58ea2aefd4f101e33b5d988ec0",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G030.png",
+          "sha256": "ef9c3b01985ed797f83d4b98dbf4e05102f979dd847c22e91e8fe36e09589fa5"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G031",
+        "title": "chip, chipped, chipped",
+        "kind": "grammar",
+        "sourcePage": 204,
+        "officialWordId": null,
+        "renderedTextSha256": "feb0089dcaeb9e4b2b1bcf75b65ef7f944fca5e16711345790464197c3eee1fa",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G031.png",
+          "sha256": "a33bd054ffa70d8141ce18bfdb760b9209944b3d55ca72e0b82d18e3a4f74cd2"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G032",
+        "title": "be a chip off the old block",
+        "kind": "grammar",
+        "sourcePage": 204,
+        "officialWordId": null,
+        "renderedTextSha256": "addc2bbd4272008f84edb79dcb6a3ffe03432d095eeef14a7209f89555de3d9d",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G032.png",
+          "sha256": "87762023a7f6e138442aee44d0eec65704996c77badb14cf23890085faa05969"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G033",
+        "title": "tug, tugged, tugged",
+        "kind": "grammar",
+        "sourcePage": 204,
+        "officialWordId": null,
+        "renderedTextSha256": "6efdddd3a27ec2b8e40d092a879d3c5e8f9624a0465de7cfd416513f03f5e3bb",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G033.png",
+          "sha256": "fcadc0d156b995f52dadd9426be3062c55d7a1add7b05ab8b5f3a0a35fe1e64a"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G034",
+        "title": "tug sb's arm",
+        "kind": "grammar",
+        "sourcePage": 204,
+        "officialWordId": null,
+        "renderedTextSha256": "3be8731ffc054814cd9c836fdbbc8b485f961df011991a3e40e4ffdee32d84d5",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G034.png",
+          "sha256": "48729753300c40e4fe3ce7675b3a6fe40019b56974ed639f2bec96f5648c27bf"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G035",
+        "title": "tug on / at sb's sleeve",
+        "kind": "grammar",
+        "sourcePage": 204,
+        "officialWordId": null,
+        "renderedTextSha256": "017d87be307b36c1440ddf059326261c8928ceacbb03920ba6a57e904b1c3adf",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G035.png",
+          "sha256": "ffcc5163ecfd4f8c90cd977568b7b69e0b7058e2a9ea3d35e7fc816dfcc7880f"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G036",
+        "title": "dragonfly 複數：dragonflies",
+        "kind": "grammar",
+        "sourcePage": 205,
+        "officialWordId": null,
+        "renderedTextSha256": "2843bc828c19f776d437145f14d4b8bad602b26bf05250a8d6f3f5493b6c6091",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G036.png",
+          "sha256": "f5f1c2df29891272e80353655d93b7ae5018109878f9528a1b4733a51a5ed494"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G037",
+        "title": "cock 在俚語中是髒話，表「男性生殖器」，故宜用 rooster 表「公雞」（原書用法說明）",
+        "kind": "grammar",
+        "sourcePage": 205,
+        "officialWordId": null,
+        "renderedTextSha256": "ea3d384e30b0aa8ff99ca5903eee87913af0c6ffd0cc7a031760c07d000d3c49",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G037.png",
+          "sha256": "6d499f92bd0759ee75ce612ab01b6d25ad71eb5d1f31da0791e26cc33e326b1b"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G038",
+        "title": "a jet fighter",
+        "kind": "grammar",
+        "sourcePage": 205,
+        "officialWordId": null,
+        "renderedTextSha256": "091c728414c474bd98a84e549a8daafa4ee4ea8d98cac34173156e28c1e61fb9",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G038.png",
+          "sha256": "d552e3a45eb37b224675bfc590fe1a49beec073b042af4b0030fcd67062c1fda"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G039",
+        "title": "run out of steam",
+        "kind": "grammar",
+        "sourcePage": 206,
+        "officialWordId": null,
+        "renderedTextSha256": "fa6c9ae68cec225e8a847158aae1edec62a3afca39ca4bd565f1a6cacba83583",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G039.png",
+          "sha256": "cf9e93952eb32f90710683cf7065af4b1e977179bf640572b3a38b96a9758c3e"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G040",
+        "title": "let / blow off steam",
+        "kind": "grammar",
+        "sourcePage": 206,
+        "officialWordId": null,
+        "renderedTextSha256": "19fd8194233369ddd208037f3f19e7901ddedaf445338e84d432dae95e2ea114",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G040.png",
+          "sha256": "3a8dac5986723a075bf95b96cbad93db48981d0f90e342f1184e152092752b47"
+        },
+        "failures": []
+      },
+      {
+        "id": "LI-LV3U19-G041",
+        "title": "steam up sth",
+        "kind": "grammar",
+        "sourcePage": 206,
+        "officialWordId": null,
+        "renderedTextSha256": "668820016c2f66928c144fdc2f03f9a1a0119e7054ba5a7daefa7b31810ea84e",
+        "imageCount": 0,
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/LI-LV3U19-G041.png",
+          "sha256": "c33f761bbd43e16bcdd2cf39768fb707404505129901e53f52c21475a5b5ad80"
+        },
+        "failures": []
+      }
+    ],
+    "general": [
+      {
+        "id": "LV3-U19-W002040",
+        "word": "ash",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002040-general-final-hero.png",
+          "sha256": "10814d7fdcf481e4dbe675cd1a1d0cd375bcdfca485561f3ff19ad0fe3a365ef"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002040-general-final-meaning.png",
+          "sha256": "facb761d99566cd8354181e777cd2abaae9c20a648166b3fcf6c7a7220ab7973"
+        }
+      },
+      {
+        "id": "LV3-U19-W002752",
+        "word": "rumor",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002752-general-final-hero.png",
+          "sha256": "ab3f0f092bf58a4ea15ff0993bf9a3fade39e84affbd417f1ac58130b76cf95f"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002752-general-final-meaning.png",
+          "sha256": "30266d3f67b498b85821cc59fcb4ea8b240efb2a6b4be453323d091645f8f1cb"
+        }
+      },
+      {
+        "id": "LV3-U19-W002275",
+        "word": "echo",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002275-general-final-hero.png",
+          "sha256": "d1b1ce2bf44aebd201b737e51b7d25309eaa4842bb762293223b27b56ed42e77"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002275-general-final-meaning.png",
+          "sha256": "e38e3d6f7ecd7b614701380ac7d1f266a79dc1cecdab6770cd20da0b9cad711c"
+        }
+      },
+      {
+        "id": "LV3-U19-W002882",
+        "word": "sweat",
+        "exampleCount": 2,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002882-general-final-hero.png",
+          "sha256": "cf131f633c3532cddeb4df9fa094af59ce9c90b31e279842fb8b674b58ea24f1"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002882-general-final-meaning.png",
+          "sha256": "33476c692d1277428dc67275403417298e8e7989e4ded98ce67eed4ecb549907"
+        }
+      },
+      {
+        "id": "LV3-U19-W002940",
+        "word": "tub",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002940-general-final-hero.png",
+          "sha256": "e8217f377a4f600e99c1613677a55e34de420a8f9081910eda5ea488d5590f4f"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002940-general-final-meaning.png",
+          "sha256": "fd763d8a08eabc227616dd4d6133188b0f0c37ce9e0005930e780648f6b70f00"
+        }
+      },
+      {
+        "id": "LV3-U19-W002629",
+        "word": "peel",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002629-general-final-hero.png",
+          "sha256": "a53795af4f0947c4f6a8ebd0571549c24bc87258cf4a0dd163c03afd50a8d935"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002629-general-final-meaning.png",
+          "sha256": "5c8f69367058efc28b0985639c999c28896f1203c75b233236ff4ef856f21b6e"
+        }
+      },
+      {
+        "id": "LV3-U19-W002384",
+        "word": "handy",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [
+          {
+            "src": "https://chiehco.github.io/vocab-app/wordbeast/audited-20261105/LV1-U13-15-19189ff049f3.webp?v=649786fad1a8b4b577925813efa47f5f54739837",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002384-general-final-hero.png",
+          "sha256": "546c54da30558881a9f3046b155cabb1f3d2f86c77ff79bc3512b703122dd940"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002384-general-final-meaning.png",
+          "sha256": "140a9a9512cde5e909b611f141c7141e5b1b88a6b52d6b4ee0448877cf27e703"
+        }
+      },
+      {
+        "id": "LV3-U19-W002382",
+        "word": "handful",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002382-general-final-hero.png",
+          "sha256": "e9e1e0efbadda5bfe9214f6575fee5b5bd71c7fc59835370111dc213a6d21da1"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002382-general-final-meaning.png",
+          "sha256": "ce840c3e4957fb2b6a05f60d73ec2397337cf5a3cd22a62b1c35a1ce0ee07e82"
+        }
+      },
+      {
+        "id": "LV3-U19-W002600",
+        "word": "outline",
+        "exampleCount": 2,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002600-general-final-hero.png",
+          "sha256": "280ea88525a4a3b81552c89c09e3820a009e1bfcfc33b074e3317773c20a0254"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002600-general-final-meaning.png",
+          "sha256": "da2d4d2a211c311d3fd09e7c214daea901ef7ff293fd938737ef0d6ac72f7526"
+        }
+      },
+      {
+        "id": "LV3-U19-W002931",
+        "word": "tray",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002931-general-final-hero.png",
+          "sha256": "5ac9932631194ede89beeefdec825750aa0563de716345d4261bc8f1e19227b0"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002931-general-final-meaning.png",
+          "sha256": "4e02c0ffbfe989a572fc3fa2ff5c4e92a51c4476a50f2bbdd45f5ccb922bcbac"
+        }
+      },
+      {
+        "id": "LV3-U19-W002390",
+        "word": "hasty",
+        "exampleCount": 2,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [
+          {
+            "src": "https://chiehco.github.io/vocab-app/wordbeast/a/W002390.webp?v=649786fad1a8b4b577925813efa47f5f54739837",
+            "complete": true,
+            "width": 1024,
+            "height": 1024
+          }
+        ],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002390-general-final-hero.png",
+          "sha256": "1c9a6e9dedd21786f2a9510f8c77351082e5add21a2750e7a88ab3b3cdf1992b"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002390-general-final-meaning.png",
+          "sha256": "e2c71f946ea28bad0419bf6819864d81c16d2d3c338b6fa36e2ca70500f2c5ba"
+        }
+      },
+      {
+        "id": "LV3-U19-W002762",
+        "word": "saving(s)",
+        "exampleCount": 2,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [
+          {
+            "src": "https://chiehco.github.io/vocab-app/wordbeast/lv1-reviewed/LV1-U12-21-acafd80c8541.webp?v=649786fad1a8b4b577925813efa47f5f54739837",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002762-general-final-hero.png",
+          "sha256": "ffd51a0a03e04ba2a4a16b9b9430b651cf8eeaacf37fd6271a45b80617006bae"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002762-general-final-meaning.png",
+          "sha256": "4fe675efc6413b1d6e3e239076a0b78659ed69f2f380ebb7f0b84c04cb03ba5f"
+        }
+      },
+      {
+        "id": "LV3-U19-W002233",
+        "word": "deposit",
+        "exampleCount": 2,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [
+          {
+            "src": "https://chiehco.github.io/vocab-app/wordbeast/a/W002233.webp?v=649786fad1a8b4b577925813efa47f5f54739837",
+            "complete": true,
+            "width": 1024,
+            "height": 1024
+          }
+        ],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002233-general-final-hero.png",
+          "sha256": "23ee3d517fbaf5363a5af9811a00db5835c89a667cd555a78efd90c79d05e37e"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002233-general-final-meaning.png",
+          "sha256": "dda737208386b86ba704e9d7d9b31e10ada23d9126a8632678f3515186c2daca"
+        }
+      },
+      {
+        "id": "LV3-U19-W002801",
+        "word": "sincere",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002801-general-final-hero.png",
+          "sha256": "28e3b47589683c6d2a76f70fdcf3bfe499a2f69c25031e489d1e00cb4454f983"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002801-general-final-meaning.png",
+          "sha256": "1adc2e5d5ff5345966a4ca065b3ad8106898017e3d1da7a5bfdacb74649a549a"
+        }
+      },
+      {
+        "id": "LV3-U19-W002442",
+        "word": "inspect",
+        "exampleCount": 3,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002442-general-final-hero.png",
+          "sha256": "af770b477b8ca1657f6ed21ab12c16db312848a343fccfd8b0b0334d1d284a6e"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002442-general-final-meaning.png",
+          "sha256": "1ee34cd9466ec00f7d3d8a82ca9fed2305c3da22783ec7874f01383d3bcc542a"
+        }
+      },
+      {
+        "id": "LV3-U19-W002443",
+        "word": "inspector",
+        "exampleCount": 2,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002443-general-final-hero.png",
+          "sha256": "95483c8d494fb352c4e5b59e52d7750507ce4612dfdb6ac912589bf719f81453"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002443-general-final-meaning.png",
+          "sha256": "63beb71141ab04c74efa6c582e66c38fa30c1f97a64dd8a45f85ee7e1b281ee0"
+        }
+      },
+      {
+        "id": "LV3-U19-W002832",
+        "word": "spray",
+        "exampleCount": 2,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002832-general-final-hero.png",
+          "sha256": "4884dff67761fa1a598ee030047a89bd79026b1451ab5ceae3e19ccf0596d7f5"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002832-general-final-meaning.png",
+          "sha256": "0fe4fae87b0550767f8bd60ceff3ad5f809c780233cce0e72a817b44a1cc7a28"
+        }
+      },
+      {
+        "id": "LV3-U19-W002503",
+        "word": "lobby",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002503-general-final-hero.png",
+          "sha256": "1cf4eaef67f6816051fc945f1260690b26d5f6bc9d1a67b4f2df0d2fdcef288d"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002503-general-final-meaning.png",
+          "sha256": "4e52b2378b35809141cd246ee085b85847f53ece152f00d688d75f18c219736d"
+        }
+      },
+      {
+        "id": "LV3-U19-W002380",
+        "word": "hallway",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002380-general-final-hero.png",
+          "sha256": "0d76d0885ab7fba3dad3ce790b923ae42d01fa93f33e76d30eea43661b116ed7"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002380-general-final-meaning.png",
+          "sha256": "387bc6e17421a3bc22db4ffa0af43c2900fbc140ccfb0c281ef230cfea9b4700"
+        }
+      },
+      {
+        "id": "LV3-U19-W002340",
+        "word": "fond",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002340-general-final-hero.png",
+          "sha256": "e8fae1ddb445521ae199e927e5587c4a22f9bda1d8ff971db0c9d9a155e2ecff"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002340-general-final-meaning.png",
+          "sha256": "67def945d8116484e37a7df548eb36f66c337f6698291c874e1c79ed28e8031f"
+        }
+      },
+      {
+        "id": "LV3-U19-W002389",
+        "word": "harvest",
+        "exampleCount": 2,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [
+          {
+            "src": "https://chiehco.github.io/vocab-app/wordbeast/priest-harvest.png?v=649786fad1a8b4b577925813efa47f5f54739837",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002389-general-final-hero.png",
+          "sha256": "c147eacd9ac486beb1f0ba6820ddf4526fa0f6311641378cda4b9f37b74bec4e"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002389-general-final-meaning.png",
+          "sha256": "f02295754d1dceaee559d256b523ce01208970016de1ff479d98cdae90c36385"
+        }
+      },
+      {
+        "id": "LV3-U19-W002354",
+        "word": "gamble",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002354-general-final-hero.png",
+          "sha256": "d1102f0246d1a47ed93b294eacbd04db505318ff6c3b747108fca2435bf13195"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002354-general-final-meaning.png",
+          "sha256": "523a49fd2b05d0e4c256edfdbf9275accbbd65ce25ad0160cb4d6b108f83fe73"
+        }
+      },
+      {
+        "id": "LV3-U19-W002811",
+        "word": "sleeve",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002811-general-final-hero.png",
+          "sha256": "b69f9dc735ed6eb607230853ed8b3ad811e9f3c2afbfc1bb24ae083ba6abc23f"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002811-general-final-meaning.png",
+          "sha256": "9c0e6d10f175321ec35f7aff6edf8a20252ef2555c48cd822adbc2590cfdcaf0"
+        }
+      },
+      {
+        "id": "LV3-U19-W002169",
+        "word": "collar",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002169-general-final-hero.png",
+          "sha256": "f09f68e6017d70796b6d72d9e89258a8d8d95fd953c2c131e364f94dbf583000"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002169-general-final-meaning.png",
+          "sha256": "9c029f3965f58b43360d794e8af4b52d22d885ac0290541f95c4d81e3123e6b6"
+        }
+      },
+      {
+        "id": "LV3-U19-W002939",
+        "word": "truthful",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002939-general-final-hero.png",
+          "sha256": "fa0957b2f19b213a36e0cc4e013503cf4006c8c3ea93f6d1a01667edd2b28df4"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002939-general-final-meaning.png",
+          "sha256": "cf86475e9f5ed3d81e51e42f439dd644a4c59908bcf7bf84b2c1331cd9d40148"
+        }
+      },
+      {
+        "id": "LV3-U19-W002470",
+        "word": "kilometer",
+        "exampleCount": 2,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002470-general-final-hero.png",
+          "sha256": "bbab75e096596039c0333482e52affafc5aefcb28d20ab192f234df20d1986b4"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002470-general-final-meaning.png",
+          "sha256": "ecc735287e1b0dc84bb021b7d961a228f9e6e987f38fd04662432e10b607de10"
+        }
+      },
+      {
+        "id": "LV3-U19-W002057",
+        "word": "awful",
+        "exampleCount": 2,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [
+          {
+            "src": "https://chiehco.github.io/vocab-app/wordbeast/lv1-reviewed/LV1-U22-62-9d5f1a2e4a4f.webp?v=649786fad1a8b4b577925813efa47f5f54739837",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002057-general-final-hero.png",
+          "sha256": "305a2531c849c579ebb1e6063d186d82e32fb4e0099b0b66d079c4b006974c53"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002057-general-final-meaning.png",
+          "sha256": "f66d8bfe7a911ac6d18ff81fb1365075c8247c073c553f4b6dd175bfa22c6a54"
+        }
+      },
+      {
+        "id": "LV3-U19-W002248",
+        "word": "discount",
+        "exampleCount": 2,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002248-general-final-hero.png",
+          "sha256": "c4795c75aed2e10c300efdfe1811c98b55eca48e4bf901b3d368e50e95f0c0fa"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002248-general-final-meaning.png",
+          "sha256": "ce2979b10150f5099e929b281a30f8732ea6ce01a520603187d4537015ea3ab4"
+        }
+      },
+      {
+        "id": "LV3-U19-W002264",
+        "word": "drain",
+        "exampleCount": 2,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [
+          {
+            "src": "https://chiehco.github.io/vocab-app/wordbeast/a/W002264.webp?v=649786fad1a8b4b577925813efa47f5f54739837",
+            "complete": true,
+            "width": 1024,
+            "height": 1024
+          }
+        ],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002264-general-final-hero.png",
+          "sha256": "f342cee9602d7b78302dcec3ca2ce66dbeee5c1531a39a04659c039e69affaf9"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002264-general-final-meaning.png",
+          "sha256": "c547c4f40627193a79ff049d5b243c0b8284d22c312934ccf20a7d0eb1341754"
+        }
+      },
+      {
+        "id": "LV3-U19-W002646",
+        "word": "pit",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002646-general-final-hero.png",
+          "sha256": "b13906f52a1f9934a87658eb0999926e325501a60d597f60191c97366ef06ec8"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002646-general-final-meaning.png",
+          "sha256": "a88cc59ed39878353a837d7f025d4ffcf4734984f61d0d3f9c2ba3317f46938c"
+        }
+      },
+      {
+        "id": "LV3-U19-W002149",
+        "word": "chip",
+        "exampleCount": 2,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002149-general-final-hero.png",
+          "sha256": "e014d58d06c0921157c6d2e66a7276a054bd24e984bcff80061d384cc3bcb69f"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002149-general-final-meaning.png",
+          "sha256": "dc820013596d0045cbeeb6ff8f27dc2e5bd9bf8dac536b9dceeca8687599a33f"
+        }
+      },
+      {
+        "id": "LV3-U19-W002941",
+        "word": "tug",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002941-general-final-hero.png",
+          "sha256": "bd9a3f1a91ea8e537ed2a8454c7a9a9cd3aab1721706184f0fd7c290e005c19e"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002941-general-final-meaning.png",
+          "sha256": "eb281df26023ef11352a03f2c0486bec61755f14df0c55e18ad4db636c051928"
+        }
+      },
+      {
+        "id": "LV3-U19-W002077",
+        "word": "beetle",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002077-general-final-hero.png",
+          "sha256": "26593a662235fe7ff85381bd747d97e251d9465d614cfcbac403028d93418a55"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002077-general-final-meaning.png",
+          "sha256": "d2f13dd8f9c36750c2a0936c7c02f0ec293308c77227d26a24d6f51bc07b99fd"
+        }
+      },
+      {
+        "id": "LV3-U19-W002263",
+        "word": "dragonfly",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002263-general-final-hero.png",
+          "sha256": "70dc737ed87587b400cd990ddc07c149b59403608aa4343036faf7c042592696"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002263-general-final-meaning.png",
+          "sha256": "efa35ae4dc6b335acf387b6f60ecf338a0b9dc3a1261e823451d54238fc4d761"
+        }
+      },
+      {
+        "id": "LV3-U19-W002560",
+        "word": "moth",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002560-general-final-hero.png",
+          "sha256": "9fccacf971ebab108b7cba42753b0f6f152fea86376b6f2d326460dfb40f57d5"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002560-general-final-meaning.png",
+          "sha256": "e1b0bb438bb84c65141576a1e13457a640134321a60c2501b6d6df5777d4abf6"
+        }
+      },
+      {
+        "id": "LV3-U19-W002037",
+        "word": "apron",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002037-general-final-hero.png",
+          "sha256": "7b29eb03b80f845ba5a19fc821d65db6de13dbda5a0a59b28e84dd13ecf0b11f"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002037-general-final-meaning.png",
+          "sha256": "bed4195351efd7202c2bb8ea888461b4211f0de62dd6e8120dc0b19b75e22c8c"
+        }
+      },
+      {
+        "id": "LV3-U19-W002166",
+        "word": "cock",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002166-general-final-hero.png",
+          "sha256": "7bf03976b20d35ec2d5d17dbcff855567b13cbdc905da5641825341395450af6"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002166-general-final-meaning.png",
+          "sha256": "3503471b1e0cf0899f063eb1073087e3c4fd0604d1e16525fdad9fa6f50e8ed0"
+        }
+      },
+      {
+        "id": "LV3-U19-W002324",
+        "word": "fighter",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [
+          {
+            "src": "https://chiehco.github.io/vocab-app/wordbeast/audited-20261105/LV1-U11-43-71f615382827.webp?v=649786fad1a8b4b577925813efa47f5f54739837",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002324-general-final-hero.png",
+          "sha256": "c6d69669afacc5006cee8357c8ce8318f6a582df9953c462695c5752bf582f7f"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002324-general-final-meaning.png",
+          "sha256": "7888ad5f6396a2f12e2d64726f19b2bdcb9a37fe105aa99b44a0cdce0384eac3"
+        }
+      },
+      {
+        "id": "LV3-U19-W002102",
+        "word": "brick",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002102-general-final-hero.png",
+          "sha256": "2d4516a3deb9f5eef30133a45ea3e62346491171edeb466cf56ea7cd4b474339"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002102-general-final-meaning.png",
+          "sha256": "06b881f4afa325a35c22ddd7db1d51dd599ad15af7564da16cd496bd5ad9fdcf"
+        }
+      },
+      {
+        "id": "LV3-U19-W002822",
+        "word": "spaghetti",
+        "exampleCount": 2,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002822-general-final-hero.png",
+          "sha256": "c64b7cf7dc2fd65b6513368c4a93fc13812c30902498bf2770d4fee44884de28"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002822-general-final-meaning.png",
+          "sha256": "d0a0080fca41276b41c36c81f1c09d21c0d2ae16948a649a63c89c054b117eca"
+        }
+      },
+      {
+        "id": "LV3-U19-W002845",
+        "word": "steam",
+        "exampleCount": 2,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002845-general-final-hero.png",
+          "sha256": "ce8b73971d32f17a178b3ef68ec6101ae587125b72e4e1fbc9dbdee691e1a254"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002845-general-final-meaning.png",
+          "sha256": "d8bbefbb619bac1e8cb7636f5b4917666dde7bb799b29b31aabf3e5dd97bfa11"
+        }
+      },
+      {
+        "id": "LV3-U19-W000708",
+        "word": "repeat",
+        "exampleCount": 2,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [
+          {
+            "src": "https://chiehco.github.io/vocab-app/wordbeast/lv1-reviewed/LV1-U25-41-d97de3d42fd5.webp?v=649786fad1a8b4b577925813efa47f5f54739837",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W000708-general-final-hero.png",
+          "sha256": "a0184aa24a4e5c83616c9cbd7f915d977c3e6f971549b0263f61ddf3fd61e394"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W000708-general-final-meaning.png",
+          "sha256": "ff63340bf0a91ace43a69629e689dc2b6a9185efece5ce8f92c6a9c2a4ce5247"
+        }
+      },
+      {
+        "id": "LV3-U19-W004961",
+        "word": "vague",
+        "exampleCount": 2,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [
+          {
+            "src": "https://chiehco.github.io/vocab-app/wordbeast/lv1-reviewed/LV1-U10-33-589d9e12c1ca.webp?v=649786fad1a8b4b577925813efa47f5f54739837",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W004961-general-final-hero.png",
+          "sha256": "316dbbd1c5d1db64d8df34d2541f22b30671a54b20559caa6ed5352667fc5a61"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W004961-general-final-meaning.png",
+          "sha256": "aac5404613144fa9345147be5bee0a0d3e5e412470c03df8aa051864fb7aaf80"
+        }
+      },
+      {
+        "id": "LV3-U19-W000066",
+        "word": "bath",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W000066-general-final-hero.png",
+          "sha256": "fdfbac411bef7f7c564f5ea5fb21c75151df64019e69fe6716f92ee5b0d1016f"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W000066-general-final-meaning.png",
+          "sha256": "a10811d7b708c7ed3d9e0ed7dfd12ce8567febeff4c4e51dcd2ecc30db3e8e26"
+        }
+      },
+      {
+        "id": "LV3-U19-W005944",
+        "word": "tuck",
+        "exampleCount": 2,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W005944-general-final-hero.png",
+          "sha256": "835fd56df318d74e3711fcb0f36dacc82632bee43900ec392d7e1af7ca5864a2"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W005944-general-final-meaning.png",
+          "sha256": "7d1123343539cb329de30e340f64a0fa32bca54f8d626e14c0bde36e6c78061a"
+        }
+      },
+      {
+        "id": "LV3-U19-W003901",
+        "word": "sketch",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W003901-general-final-hero.png",
+          "sha256": "769cba35e79603f5072d1eee3b4fbc3bb3d1a3cf3b52decd4f274a17c5813c0c"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W003901-general-final-meaning.png",
+          "sha256": "123f684f539ce34d2dca73d0db16bfc15cde6a1d35cea6b885c0004e037a64c3"
+        }
+      },
+      {
+        "id": "LV3-U19-W003931",
+        "word": "summarize",
+        "exampleCount": 2,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W003931-general-final-hero.png",
+          "sha256": "fff2178d395b499ef13670a6b64ce2a417a092ba8cc84ce67194ccc532af8f08"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W003931-general-final-meaning.png",
+          "sha256": "10190def5c410c0d8d232745d8291547e33cb5e174f5ed43d25ccf8b963d91d5"
+        }
+      },
+      {
+        "id": "LV3-U19-W003486",
+        "word": "hasten",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [
+          {
+            "src": "https://chiehco.github.io/vocab-app/curriculum/lv4-u18/18-08-haste-v1.webp?v=649786fad1a8b4b577925813efa47f5f54739837",
+            "complete": true,
+            "width": 900,
+            "height": 900
+          }
+        ],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W003486-general-final-hero.png",
+          "sha256": "73a7fb5c6e0c686683b6ed617c679c044d5539fa283679939690efcb6891b462"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W003486-general-final-meaning.png",
+          "sha256": "6bcbb921f3d64e26291a79f77b2db965615d1e8c016b2ede7b3334764492acd6"
+        }
+      },
+      {
+        "id": "LV3-U19-W003485",
+        "word": "haste",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [
+          {
+            "src": "https://chiehco.github.io/vocab-app/curriculum/lv4-u18/18-08-haste-v1.webp?v=649786fad1a8b4b577925813efa47f5f54739837",
+            "complete": true,
+            "width": 900,
+            "height": 900
+          }
+        ],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W003485-general-final-hero.png",
+          "sha256": "89b10ae8a502b82ee7d76bea14110b3b6d9b5d2c46bc0688808ac11089a469ed"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W003485-general-final-meaning.png",
+          "sha256": "6613a513166cf6722c89b00fd994ba8e866d65e2d0934e032bb44b259da6c9e3"
+        }
+      },
+      {
+        "id": "LV3-U19-W001455",
+        "word": "income",
+        "exampleCount": 2,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W001455-general-final-hero.png",
+          "sha256": "9bbad74aaeea7a175a5a95aa8b0137740c83b4fea7c43d427f93ffe84fa6f7e2"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W001455-general-final-meaning.png",
+          "sha256": "912ad618e7e5a4dc55a55a1b4f47d0aaf016c2fde5e4ac97cb843ca3dd989534"
+        }
+      },
+      {
+        "id": "LV3-U19-W004740",
+        "word": "revenue",
+        "exampleCount": 2,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W004740-general-final-hero.png",
+          "sha256": "0766f961d7e71495ee9436b506f45b75fb491a5ba9d63d4820489712cff9d4f0"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W004740-general-final-meaning.png",
+          "sha256": "9cf0a1f24a7a05487fde09257dd0ca83a22189a381bb154ffb09fde6fa0ab18f"
+        }
+      },
+      {
+        "id": "LV3-U19-W002856",
+        "word": "strategy",
+        "exampleCount": 2,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002856-general-final-hero.png",
+          "sha256": "7ef2b0d11c182cce816ae13e21497896564c4954775447fb1778fffa14c8c621"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002856-general-final-meaning.png",
+          "sha256": "028a6087e90e09d25208b131921583593cbdd712eb3459a9b78737056adab710"
+        }
+      },
+      {
+        "id": "LV3-U19-W004002",
+        "word": "withdraw",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W004002-general-final-hero.png",
+          "sha256": "444b0164a8ebd55385d4de1bb8c491df74e25f3fe824573c2aa9f8bf0d110721"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W004002-general-final-meaning.png",
+          "sha256": "51b51c830383a26c7ced2e5925c0c9ef384eed23098d85c1f504358b1032e800"
+        }
+      },
+      {
+        "id": "LV3-U19-W003898",
+        "word": "sincerity",
+        "exampleCount": 3,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [
+          {
+            "src": "https://chiehco.github.io/vocab-app/wordbeast/s/W003898.webp?v=649786fad1a8b4b577925813efa47f5f54739837",
+            "complete": true,
+            "width": 1024,
+            "height": 1024
+          }
+        ],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W003898-general-final-hero.png",
+          "sha256": "44ed9cd69f9d01f2659e60e6e32246afeb01858ea57f5ce21a8f8c5f48ac5792"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W003898-general-final-meaning.png",
+          "sha256": "79b3688369b94d8debdae3578d0c8cd899d340b8d0cb43196c79ea443a46dd59"
+        }
+      },
+      {
+        "id": "LV3-U19-W000407",
+        "word": "honest",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [
+          {
+            "src": "https://chiehco.github.io/vocab-app/wordbeast/lv1-reviewed/LV1-U25-25-d38c457c0676.webp?v=649786fad1a8b4b577925813efa47f5f54739837",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W000407-general-final-hero.png",
+          "sha256": "ca0f8d12cb61deb95e0438121abdb85d2a953de3dded76886b17f2baa122fb53"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W000407-general-final-meaning.png",
+          "sha256": "fee93b5ca54eddfe855714b61bc9e32c9f421c7845bf23041ad520937b7a45a3"
+        }
+      },
+      {
+        "id": "LV3-U19-W003542",
+        "word": "inspection",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W003542-general-final-hero.png",
+          "sha256": "6a412d604a5a9eeb4531ae70bd0869f5ba39330e230b1b0d61d729bb5016cb61"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W003542-general-final-meaning.png",
+          "sha256": "a483174341531cda66c5e861665f79125a5460cccf4e0a5cb53020601e890be5"
+        }
+      },
+      {
+        "id": "LV3-U19-W001326",
+        "word": "examine",
+        "exampleCount": 2,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [
+          {
+            "src": "https://chiehco.github.io/vocab-app/wordbeast/lv1-reviewed/LV1-U14-56-f6b85dfd002d.webp?v=649786fad1a8b4b577925813efa47f5f54739837",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W001326-general-final-hero.png",
+          "sha256": "a5c47c596383050df6cfc86d62cd34442005214d156fcdaac46114917f110590"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W001326-general-final-meaning.png",
+          "sha256": "563d2cc6bbabb55f39dd85771eaca9be2f53feba1d678814dafec86f946c96c7"
+        }
+      },
+      {
+        "id": "LV3-U19-W002448",
+        "word": "investigate",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002448-general-final-hero.png",
+          "sha256": "b357bcfc328551d58917ca11d7cf9ac3a0fab26e47237acd3d0dcb722d74752e"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002448-general-final-meaning.png",
+          "sha256": "789b44901d035b8011a0d402f23411587aba798796519b774f2d48cd41963a8c"
+        }
+      },
+      {
+        "id": "LV3-U19-W005328",
+        "word": "examiner",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W005328-general-final-hero.png",
+          "sha256": "dcfb87eaa255d690e8c0c3e753c695a507314ba345e47c87ab6e539d477c2925"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W005328-general-final-meaning.png",
+          "sha256": "a365043a32863928f4c6faed15e7ee62f32e32a8259dbffc3eb61c98109aad47"
+        }
+      },
+      {
+        "id": "LV3-U19-W005237",
+        "word": "defect",
+        "exampleCount": 2,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W005237-general-final-hero.png",
+          "sha256": "a2527f0bbbb8301475c1781a2624651af11d4a82391ffa8a28b009bc822d5caa"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W005237-general-final-meaning.png",
+          "sha256": "6c0bc08996ce64cc8f0b68de7650465f0140a954e52a0a8db4d13a5e57ca191e"
+        }
+      },
+      {
+        "id": "LV3-U19-W003916",
+        "word": "sprinkle",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [
+          {
+            "src": "https://chiehco.github.io/vocab-app/curriculum/lv4-u18/18-34-sprinkle-v1.webp?v=649786fad1a8b4b577925813efa47f5f54739837",
+            "complete": true,
+            "width": 900,
+            "height": 900
+          }
+        ],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W003916-general-final-hero.png",
+          "sha256": "88778d4cd6bef4f5d4291d3515e52c6ef42b1ad4d9b4c011887f3f6ad5e7a7d3"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W003916-general-final-meaning.png",
+          "sha256": "bddc215fd23f62afd05e30246b52e1c6ff4d9140f4d118bea9d2ef0ad9d7ce97"
+        }
+      },
+      {
+        "id": "LV3-U19-W002637",
+        "word": "persuade",
+        "exampleCount": 2,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002637-general-final-hero.png",
+          "sha256": "76dead4625c88721cd3f3b9316836162b59849efd0e9287fee115f15dcf22a1f"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002637-general-final-meaning.png",
+          "sha256": "8576fb9cf8617cf599179373aa7123b73c902796d2e9785dc2249dce0a34c4c8"
+        }
+      },
+      {
+        "id": "LV3-U19-W003785",
+        "word": "proposal",
+        "exampleCount": 2,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W003785-general-final-hero.png",
+          "sha256": "56af17a8b2f23b8b14a9dc450e4779583dd53502f2bf6aed1718c2d4d7a774f4"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W003785-general-final-meaning.png",
+          "sha256": "f2fe481695c13ecc34e8f606f2787c353f140cac6b59509fde76d1048f42389c"
+        }
+      },
+      {
+        "id": "LV3-U19-W002618",
+        "word": "passage",
+        "exampleCount": 3,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [
+          {
+            "src": "https://chiehco.github.io/vocab-app/wordbeast/a/W002618.webp?v=649786fad1a8b4b577925813efa47f5f54739837",
+            "complete": true,
+            "width": 1024,
+            "height": 1024
+          }
+        ],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002618-general-final-hero.png",
+          "sha256": "c09abe25ddb0cd23f82dde1650840bbf558ee2dab0e5b37cd2dbb0615e1bd5de"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002618-general-final-meaning.png",
+          "sha256": "964cd1ece2d224d6f060e74293611b60b9ffe21403a9886c126982277b7f67ba"
+        }
+      },
+      {
+        "id": "LV3-U19-W004242",
+        "word": "corridor",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W004242-general-final-hero.png",
+          "sha256": "451c93892bd15e7fc85c0aac21084b14ce4a62a63fbab924fb31d7005849d6c3"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W004242-general-final-meaning.png",
+          "sha256": "99589aa9b050dfca4f2409d0ac4346b5b541d18a4434c86ad7d8769a27b83580"
+        }
+      },
+      {
+        "id": "LV3-U19-W005739",
+        "word": "reap",
+        "exampleCount": 2,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W005739-general-final-hero.png",
+          "sha256": "5a71ef156633bec96b8f6f23df33eac71f55a9efde2c8959f07116e3ce0e1d6e"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W005739-general-final-meaning.png",
+          "sha256": "7d89e8d56fd4a2681809a94f0dff2b535770e9cb92375c22ff99709120c1f537"
+        }
+      },
+      {
+        "id": "LV3-U19-W002082",
+        "word": "bet",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002082-general-final-hero.png",
+          "sha256": "6db2899f87c218fd7bb860608e2c556d33d45506412683b66ac4ec85abfc2028"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002082-general-final-meaning.png",
+          "sha256": "c4585e9f05be4d432c2441a16708513f049c6c6906e6addbdcf5b7bae17275ba"
+        }
+      },
+      {
+        "id": "LV3-U19-W000183",
+        "word": "color",
+        "exampleCount": 7,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [
+          {
+            "src": "https://chiehco.github.io/vocab-app/wordbeast/lv1-reviewed/LV1-U14-33-54c0fa71fc81.webp?v=649786fad1a8b4b577925813efa47f5f54739837",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W000183-general-final-hero.png",
+          "sha256": "0162289a6a155f41e631dcf8cc77b43e3caa32bc774b74a799c4fd65be1d2268"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W000183-general-final-meaning.png",
+          "sha256": "566358d6930d324b9dccd7d4a3dd8190f8906f1c62ce9ef1dcbd40e51d457c81"
+        }
+      },
+      {
+        "id": "LV3-U19-W001932",
+        "word": "true",
+        "exampleCount": 3,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [
+          {
+            "src": "https://chiehco.github.io/vocab-app/wordbeast/a/W001932.webp?v=649786fad1a8b4b577925813efa47f5f54739837",
+            "complete": true,
+            "width": 1024,
+            "height": 1024
+          }
+        ],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W001932-general-final-hero.png",
+          "sha256": "7e2028df40aab0531e8873a1bd2201ab07c12925d6c2d9ce3b04a647b816a5ae"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W001932-general-final-meaning.png",
+          "sha256": "d419a6c3459bec03b55b72d95fdeee72c3a894b07312538351bf483794d0b216"
+        }
+      },
+      {
+        "id": "LV3-U19-W001934",
+        "word": "truth",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W001934-general-final-hero.png",
+          "sha256": "dd63a4efc40ab590538ba550460e9fd2a5939435a95edc4c32da19dd0347bb48"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W001934-general-final-meaning.png",
+          "sha256": "2cb02f04a395bbc4f79579706a462b2c4c3d34ad15aa52b62511fa4b17cd59a0"
+        }
+      },
+      {
+        "id": "LV3-U19-W001547",
+        "word": "meter",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W001547-general-final-hero.png",
+          "sha256": "368d4400a5198aa316f93ee40c44afdd3996e7cdf4cad3d00fb925ba3a940c18"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W001547-general-final-meaning.png",
+          "sha256": "330dccfcba638ccbfd0b7571d6eaabd8fbeda1dace3fb29fc70085dcb2715cdf"
+        }
+      },
+      {
+        "id": "LV3-U19-W001137",
+        "word": "centimeter",
+        "exampleCount": 3,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W001137-general-final-hero.png",
+          "sha256": "eb92c13392c16581f4a274f79e94d014d3f7d0a0d410b9fc0e01a637f967b9c7"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W001137-general-final-meaning.png",
+          "sha256": "364dcaa6dad220da382e7d1fcce05f92e5fa954e0a211c5782d1ee8580748ba2"
+        }
+      },
+      {
+        "id": "LV3-U19-W002416",
+        "word": "horrible",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [
+          {
+            "src": "https://chiehco.github.io/vocab-app/wordbeast/lv1-reviewed/LV1-U22-61-a24642a0e42d.webp?v=649786fad1a8b4b577925813efa47f5f54739837",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002416-general-final-hero.png",
+          "sha256": "c938252cda56d94d139c5dd0f55d5973919fe114f66375f9d9c1b7772fc21000"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W002416-general-final-meaning.png",
+          "sha256": "4f9c4dc28432451d4d730cc8d52a8d1a9da0e9cf318d67553fa20713475ff529"
+        }
+      },
+      {
+        "id": "LV3-U19-W000867",
+        "word": "terrible",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [
+          {
+            "src": "https://chiehco.github.io/vocab-app/wordbeast/lv1-reviewed/LV1-U22-60-a5afc8afb367.webp?v=649786fad1a8b4b577925813efa47f5f54739837",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W000867-general-final-hero.png",
+          "sha256": "d94de6f180c8279421f4e6fb2bd41e487378e610cebd168c9126c2fd18f2529c"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W000867-general-final-meaning.png",
+          "sha256": "a636094977c264ef42869cec7a81cbea8a2e35f5de8fb1c6ed973417e2189e49"
+        }
+      },
+      {
+        "id": "LV3-U19-W003816",
+        "word": "reduction",
+        "exampleCount": 2,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [
+          {
+            "src": "https://chiehco.github.io/vocab-app/curriculum/lv4-u20/20-38.webp?v=649786fad1a8b4b577925813efa47f5f54739837",
+            "complete": true,
+            "width": 900,
+            "height": 900
+          }
+        ],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W003816-general-final-hero.png",
+          "sha256": "2bdb7e12b5eacb29ddb0df3c47acc349f67c8d18d1299453e47dd6f2c79920a3"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W003816-general-final-meaning.png",
+          "sha256": "4fa0e4712fac2bb585894a6828694cf93022a9681a3dcb37c97004b748d1b4d7"
+        }
+      },
+      {
+        "id": "LV3-U19-W001436",
+        "word": "hole",
+        "exampleCount": 2,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W001436-general-final-hero.png",
+          "sha256": "f26b96cfc2bec5fbbc599db080a5c89b428d65abec3c22543c80f210cf90d162"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W001436-general-final-meaning.png",
+          "sha256": "659e71204428275b2d5e368eb9ef2a5f18ca460a6e9b30a17cfbcf960d0fd45e"
+        }
+      },
+      {
+        "id": "LV3-U19-W000131",
+        "word": "butterfly",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [
+          {
+            "src": "https://chiehco.github.io/vocab-app/wordbeast/lv1-reviewed/LV1-U23-80-65968a45ce8b.webp?v=649786fad1a8b4b577925813efa47f5f54739837",
+            "complete": true,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W000131-general-final-hero.png",
+          "sha256": "9100c55b094ceaa0eb519589cc92a69937bc63563c3faacafb4fe350455ada0b"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W000131-general-final-meaning.png",
+          "sha256": "235c878cfb79ffa8ed5cf1473aa1a45a31f0f36dee2a824958c93a6ec0e95f78"
+        }
+      },
+      {
+        "id": "LV3-U19-W001739",
+        "word": "rooster",
+        "exampleCount": 0,
+        "formsMatch": true,
+        "definitionMatches": true,
+        "mismatches": [],
+        "imageInfo": [],
+        "hero": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W001739-general-final-hero.png",
+          "sha256": "eea05929fafebb3a5110c2192606d4e9ec3ab31847ff7e3e31c2c3633c4f0dd2"
+        },
+        "meaning": {
+          "path": "output/playwright/lv3-u19-published/LV3-U19-W001739-general-final-meaning.png",
+          "sha256": "8d07c3afb7c6c71654541aaf01d26e214be139057f319431e8403d4d2361fb7b"
+        }
+      }
+    ],
+    "usage": [
+      {
+        "id": "W002340",
+        "word": "fond",
+        "expected": [
+          {
+            "english": "be fond of N/V-ing",
+            "chinese": "喜愛某人／某事／做某事"
+          },
+          {
+            "english": "fond + N",
+            "chinese": "深情的……"
+          }
+        ],
+        "actual": [
+          {
+            "english": "be fond of N/V-ing",
+            "chinese": "喜愛某人／某事／做某事"
+          },
+          {
+            "english": "fond + N",
+            "chinese": "深情的……"
+          }
+        ],
+        "failures": [],
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/W002340-usage.png",
+          "sha256": "283c42b390fef6d5c300741d2305de9819217379fc49bec8afce003f9a95cf9f"
+        }
+      },
+      {
+        "id": "W002040",
+        "word": "ash",
+        "expected": [
+          {
+            "english": "some/the ash",
+            "chinese": "一些／那堆灰燼"
+          },
+          {
+            "english": "ash of N",
+            "chinese": "……的灰燼"
+          }
+        ],
+        "actual": [
+          {
+            "english": "some/the ash",
+            "chinese": "一些／那堆灰燼"
+          },
+          {
+            "english": "ash of N",
+            "chinese": "……的灰燼"
+          }
+        ],
+        "failures": [],
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/W002040-usage.png",
+          "sha256": "dad7472bf86e3615e5697b41ebd218b58b072f7cc18123ba871a3e3314e9e622"
+        }
+      },
+      {
+        "id": "W002275",
+        "word": "echo",
+        "expected": [
+          {
+            "english": "echo + N",
+            "chinese": "重複／附和……"
+          },
+          {
+            "english": "echo through N",
+            "chinese": "迴盪於……"
+          },
+          {
+            "english": "an/the echo",
+            "chinese": "該回聲"
+          }
+        ],
+        "actual": [
+          {
+            "english": "echo + N",
+            "chinese": "重複／附和……"
+          },
+          {
+            "english": "echo through N",
+            "chinese": "迴盪於……"
+          },
+          {
+            "english": "an/the echo",
+            "chinese": "該回聲"
+          }
+        ],
+        "failures": [],
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/W002275-usage.png",
+          "sha256": "76d5036dfab13328ad20aef5c156271ec38071c443f016fb2359fe5288dfda92"
+        }
+      },
+      {
+        "id": "W002354",
+        "word": "gamble",
+        "expected": [
+          {
+            "english": "gamble N on N",
+            "chinese": "以……押注於……"
+          },
+          {
+            "english": "gamble on N",
+            "chinese": "對……冒險下注"
+          },
+          {
+            "english": "a/the gamble",
+            "chinese": "一次冒險"
+          }
+        ],
+        "actual": [
+          {
+            "english": "gamble N on N",
+            "chinese": "以……押注於……"
+          },
+          {
+            "english": "gamble on N",
+            "chinese": "對……冒險下注"
+          },
+          {
+            "english": "a/the gamble",
+            "chinese": "一次冒險"
+          }
+        ],
+        "failures": [],
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/W002354-usage.png",
+          "sha256": "5a83946b02698e77b849d2997710c02efefc262ff3e84c17459f2c8c25ad1f9e"
+        }
+      },
+      {
+        "id": "W002752",
+        "word": "rumor",
+        "expected": [
+          {
+            "english": "it is rumored that S+V",
+            "chinese": "據傳……"
+          },
+          {
+            "english": "a rumor about/of N",
+            "chinese": "關於……的傳聞"
+          }
+        ],
+        "actual": [
+          {
+            "english": "it is rumored that S+V",
+            "chinese": "據傳……"
+          },
+          {
+            "english": "a rumor about/of N",
+            "chinese": "關於……的傳聞"
+          }
+        ],
+        "failures": [],
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/W002752-usage.png",
+          "sha256": "462007e854cacbb64b712919b96821aeabdc50778a8296fd64e7b89806e72322"
+        }
+      },
+      {
+        "id": "W003916",
+        "word": "sprinkle",
+        "expected": [
+          {
+            "english": "sprinkle N on N",
+            "chinese": "把……灑在……上"
+          },
+          {
+            "english": "sprinkle N with N",
+            "chinese": "在……上灑……"
+          },
+          {
+            "english": "a sprinkle of N",
+            "chinese": "少量的……"
+          }
+        ],
+        "actual": [
+          {
+            "english": "sprinkle N on N",
+            "chinese": "把……灑在……上"
+          },
+          {
+            "english": "sprinkle N with N",
+            "chinese": "在……上灑……"
+          },
+          {
+            "english": "a sprinkle of N",
+            "chinese": "少量的……"
+          }
+        ],
+        "failures": [],
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/W003916-usage.png",
+          "sha256": "da38e97db6e5bd01f2c6ce4df398dd4c68ef3d4c8022e54ad135d14de4081078"
+        }
+      },
+      {
+        "id": "W002832",
+        "word": "spray",
+        "expected": [
+          {
+            "english": "spray A on B",
+            "chinese": "把 A 噴在 B 上"
+          },
+          {
+            "english": "spray B with A",
+            "chinese": "在 B 上噴 A"
+          },
+          {
+            "english": "a can of spray",
+            "chinese": "一罐噴霧"
+          }
+        ],
+        "actual": [
+          {
+            "english": "spray A on B",
+            "chinese": "把 A 噴在 B 上"
+          },
+          {
+            "english": "spray B with A",
+            "chinese": "在 B 上噴 A"
+          },
+          {
+            "english": "a can of spray",
+            "chinese": "一罐噴霧"
+          }
+        ],
+        "failures": [],
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/W002832-usage.png",
+          "sha256": "f6056ca660a85ca046f202441cb6b7488af2b4f1dd4f3128b0acd69f3ba7caca"
+        }
+      },
+      {
+        "id": "W003901",
+        "word": "sketch",
+        "expected": [
+          {
+            "english": "sketch + N",
+            "chinese": "素描／草擬……"
+          },
+          {
+            "english": "a/the sketch",
+            "chinese": "一幅素描"
+          }
+        ],
+        "actual": [
+          {
+            "english": "sketch + N",
+            "chinese": "素描／草擬……"
+          },
+          {
+            "english": "a/the sketch",
+            "chinese": "一幅素描"
+          }
+        ],
+        "failures": [],
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/W003901-usage.png",
+          "sha256": "1f89fe9423aae9748f8f444ca5e7c62b4977ff55fea48d0e71c4aaafe87527b3"
+        }
+      },
+      {
+        "id": "W005944",
+        "word": "tuck",
+        "actual": [
+          {
+            "english": "tuck sth into sth",
+            "chinese": "把某物塞進某處"
+          },
+          {
+            "english": "tuck sth in",
+            "chinese": "把某物塞入"
+          },
+          {
+            "english": "tuck sb in",
+            "chinese": "幫某人蓋好被子"
+          },
+          {
+            "english": "tuck away",
+            "chinese": "收好某物"
+          }
+        ],
+        "failures": [],
+        "screenshot": {
+          "path": "output/playwright/lv3-u19-published/W005944-usage.png",
+          "sha256": "b6cac5a49b0210cca96ea791490d3c21a345077165d35dba75d5ee2f4c01e592"
+        }
+      }
+    ],
+    "dbFields": [
+      {
+        "id": "EXdf4e9258",
+        "store": "examples",
+        "expected": {
+          "sensePos": "v."
+        },
+        "actual": {
+          "sensePos": "v."
+        },
+        "failures": []
+      },
+      {
+        "id": "EX5997cb70",
+        "store": "examples",
+        "expected": {
+          "sensePos": "v."
+        },
+        "actual": {
+          "sensePos": "v."
+        },
+        "failures": []
+      },
+      {
+        "id": "W002390",
+        "store": "words",
+        "expected": {
+          "meaningZh": "匆匆的；輕率的；性急的"
+        },
+        "actual": {
+          "meaningZh": "匆匆的；輕率的；性急的"
+        },
+        "failures": []
+      },
+      {
+        "id": "W002077",
+        "store": "words",
+        "expected": {
+          "pos": "n./v.",
+          "posAll": [
+            "n.",
+            "v."
+          ]
+        },
+        "actual": {
+          "pos": "n./v.",
+          "posAll": [
+            "n.",
+            "v."
+          ]
+        },
+        "failures": []
+      },
+      {
+        "id": "W002169",
+        "store": "words",
+        "expected": {
+          "pos": "n./v.",
+          "posAll": [
+            "n.",
+            "v."
+          ]
+        },
+        "actual": {
+          "pos": "n./v.",
+          "posAll": [
+            "n.",
+            "v."
+          ]
+        },
+        "failures": []
+      },
+      {
+        "id": "W002503",
+        "store": "words",
+        "expected": {
+          "pos": "n./v.",
+          "posAll": [
+            "n.",
+            "v."
+          ],
+          "meaningEn": "an entrance hall or waiting area in a building; the people who support some common cause or business or principle or sectional interest; a group of people who try actively to influence legislation; (v.) to try to influence public officials for or against a cause"
+        },
+        "actual": {
+          "pos": "n./v.",
+          "posAll": [
+            "n.",
+            "v."
+          ],
+          "meaningEn": "an entrance hall or waiting area in a building; the people who support some common cause or business or principle or sectional interest; a group of people who try actively to influence legislation; (v.) to try to influence public officials for or against a cause"
+        },
+        "failures": []
+      },
+      {
+        "id": "W002811",
+        "store": "words",
+        "expected": {
+          "pos": "n./v.",
+          "posAll": [
+            "n.",
+            "v."
+          ]
+        },
+        "actual": {
+          "pos": "n./v.",
+          "posAll": [
+            "n.",
+            "v."
+          ]
+        },
+        "failures": []
+      },
+      {
+        "id": "W002940",
+        "store": "words",
+        "expected": {
+          "pos": "n./v.",
+          "posAll": [
+            "n.",
+            "v."
+          ]
+        },
+        "actual": {
+          "pos": "n./v.",
+          "posAll": [
+            "n.",
+            "v."
+          ]
+        },
+        "failures": []
+      },
+      {
+        "id": "W002102",
+        "store": "words",
+        "expected": {
+          "pos": "n./adj./v.",
+          "posAll": [
+            "n.",
+            "adj.",
+            "v."
+          ]
+        },
+        "actual": {
+          "pos": "n./adj./v.",
+          "posAll": [
+            "n.",
+            "adj.",
+            "v."
+          ]
+        },
+        "failures": []
+      },
+      {
+        "id": "W002340",
+        "store": "words",
+        "expected": {
+          "usagePattern": "be fond of N/V-ing; fond + N",
+          "usagePatternZh": "喜愛某人／某事／做某事；深情的……",
+          "meaningEn": "(followed by 'of') having a strong preference or liking for; absurd or silly because unlikely"
+        },
+        "actual": {
+          "usagePattern": "be fond of N/V-ing; fond + N",
+          "usagePatternZh": "喜愛某人／某事／做某事；深情的……",
+          "meaningEn": "(followed by 'of') having a strong preference or liking for; absurd or silly because unlikely"
+        },
+        "failures": []
+      },
+      {
+        "id": "W002040",
+        "store": "words",
+        "expected": {
+          "usagePattern": "some/the ash; ash of N"
+        },
+        "actual": {
+          "usagePattern": "some/the ash; ash of N"
+        },
+        "failures": []
+      },
+      {
+        "id": "W002629",
+        "store": "words",
+        "expected": {
+          "meaningEn": "(v.) to remove an outer skin or covering; (n.) the rind of a fruit or vegetable; (separate proper name, Peel) British politician (1788-1850)"
+        },
+        "actual": {
+          "meaningEn": "(v.) to remove an outer skin or covering; (n.) the rind of a fruit or vegetable; (separate proper name, Peel) British politician (1788-1850)"
+        },
+        "failures": []
+      },
+      {
+        "id": "W002275",
+        "store": "words",
+        "expected": {
+          "meaningEn": "the repetition of a sound resulting from reflection of the sound waves; (v.) to repeat a sound, word, or opinion; (separate proper name, Echo, Greek mythology) a nymph who was spurned by Narcissus and pined away until only her voice remained",
+          "usagePattern": "echo + N; echo through N; an/the echo",
+          "usagePatternZh": "重複／附和……；迴盪於……；該回聲"
+        },
+        "actual": {
+          "meaningEn": "the repetition of a sound resulting from reflection of the sound waves; (v.) to repeat a sound, word, or opinion; (separate proper name, Echo, Greek mythology) a nymph who was spurned by Narcissus and pined away until only her voice remained",
+          "usagePattern": "echo + N; echo through N; an/the echo",
+          "usagePatternZh": "重複／附和……；迴盪於……；該回聲"
+        },
+        "failures": []
+      },
+      {
+        "id": "W002354",
+        "store": "words",
+        "expected": {
+          "usagePattern": "gamble N on N; gamble on N; a/the gamble",
+          "usagePatternZh": "以……押注於……；對……冒險下注；一次冒險"
+        },
+        "actual": {
+          "usagePattern": "gamble N on N; gamble on N; a/the gamble",
+          "usagePatternZh": "以……押注於……；對……冒險下注；一次冒險"
+        },
+        "failures": []
+      },
+      {
+        "id": "W002752",
+        "store": "words",
+        "expected": {
+          "usagePattern": "it is rumored that S+V; a rumor about/of N",
+          "usagePatternZh": "據傳……；關於……的傳聞"
+        },
+        "actual": {
+          "usagePattern": "it is rumored that S+V; a rumor about/of N",
+          "usagePatternZh": "據傳……；關於……的傳聞"
+        },
+        "failures": []
+      },
+      {
+        "id": "W003916",
+        "store": "words",
+        "expected": {
+          "meaningEn": "the act of sprinkling or splashing water; (v.) to scatter small drops of liquid or small particles over something",
+          "usagePattern": "sprinkle N on N; sprinkle N with N; a sprinkle of N",
+          "usagePatternZh": "把……灑在……上；在……上灑……；少量的……"
+        },
+        "actual": {
+          "meaningEn": "the act of sprinkling or splashing water; (v.) to scatter small drops of liquid or small particles over something",
+          "usagePattern": "sprinkle N on N; sprinkle N with N; a sprinkle of N",
+          "usagePatternZh": "把……灑在……上；在……上灑……；少量的……"
+        },
+        "failures": []
+      },
+      {
+        "id": "W002832",
+        "store": "words",
+        "expected": {
+          "usagePattern": "spray A on B; spray B with A; a can of spray",
+          "usagePatternZh": "把 A 噴在 B 上；在 B 上噴 A；一罐噴霧"
+        },
+        "actual": {
+          "usagePattern": "spray A on B; spray B with A; a can of spray",
+          "usagePatternZh": "把 A 噴在 B 上；在 B 上噴 A；一罐噴霧"
+        },
+        "failures": []
+      },
+      {
+        "id": "W005944",
+        "store": "words",
+        "expected": {
+          "meaningZh": "塞入；掖好；縫褶；活力；鼓聲；船尾突出部"
+        },
+        "actual": {
+          "meaningZh": "塞入；掖好；縫褶；活力；鼓聲；船尾突出部"
+        },
+        "failures": []
+      },
+      {
+        "id": "NX3c81e96f",
+        "store": "notes",
+        "expected": {
+          "content": "把 A 塞進 B。"
+        },
+        "actual": {
+          "content": "把 A 塞進 B。"
+        },
+        "failures": []
+      },
+      {
+        "id": "EX2535aa27",
+        "store": "examples",
+        "expected": {
+          "meaningHint": "誠意（此句：hear the sincerity in his voice，聽出他語氣中的誠意）"
+        },
+        "actual": {
+          "meaningHint": "誠意（此句：hear the sincerity in his voice，聽出他語氣中的誠意）"
+        },
+        "failures": []
+      },
+      {
+        "id": "W003901",
+        "store": "words",
+        "expected": {
+          "usagePattern": "sketch + N; a/the sketch",
+          "usagePatternZh": "素描／草擬……；一幅素描"
+        },
+        "actual": {
+          "usagePattern": "sketch + N; a/the sketch",
+          "usagePatternZh": "素描／草擬……；一幅素描"
+        },
+        "failures": []
+      }
+    ],
+    "postReopenDbFields": [
+      {
+        "id": "EXdf4e9258",
+        "store": "examples",
+        "expected": {
+          "sensePos": "v."
+        },
+        "actual": {
+          "sensePos": "v."
+        },
+        "failures": []
+      },
+      {
+        "id": "EX5997cb70",
+        "store": "examples",
+        "expected": {
+          "sensePos": "v."
+        },
+        "actual": {
+          "sensePos": "v."
+        },
+        "failures": []
+      },
+      {
+        "id": "W002390",
+        "store": "words",
+        "expected": {
+          "meaningZh": "匆匆的；輕率的；性急的"
+        },
+        "actual": {
+          "meaningZh": "匆匆的；輕率的；性急的"
+        },
+        "failures": []
+      },
+      {
+        "id": "W002077",
+        "store": "words",
+        "expected": {
+          "pos": "n./v.",
+          "posAll": [
+            "n.",
+            "v."
+          ]
+        },
+        "actual": {
+          "pos": "n./v.",
+          "posAll": [
+            "n.",
+            "v."
+          ]
+        },
+        "failures": []
+      },
+      {
+        "id": "W002169",
+        "store": "words",
+        "expected": {
+          "pos": "n./v.",
+          "posAll": [
+            "n.",
+            "v."
+          ]
+        },
+        "actual": {
+          "pos": "n./v.",
+          "posAll": [
+            "n.",
+            "v."
+          ]
+        },
+        "failures": []
+      },
+      {
+        "id": "W002503",
+        "store": "words",
+        "expected": {
+          "pos": "n./v.",
+          "posAll": [
+            "n.",
+            "v."
+          ],
+          "meaningEn": "an entrance hall or waiting area in a building; the people who support some common cause or business or principle or sectional interest; a group of people who try actively to influence legislation; (v.) to try to influence public officials for or against a cause"
+        },
+        "actual": {
+          "pos": "n./v.",
+          "posAll": [
+            "n.",
+            "v."
+          ],
+          "meaningEn": "an entrance hall or waiting area in a building; the people who support some common cause or business or principle or sectional interest; a group of people who try actively to influence legislation; (v.) to try to influence public officials for or against a cause"
+        },
+        "failures": []
+      },
+      {
+        "id": "W002811",
+        "store": "words",
+        "expected": {
+          "pos": "n./v.",
+          "posAll": [
+            "n.",
+            "v."
+          ]
+        },
+        "actual": {
+          "pos": "n./v.",
+          "posAll": [
+            "n.",
+            "v."
+          ]
+        },
+        "failures": []
+      },
+      {
+        "id": "W002940",
+        "store": "words",
+        "expected": {
+          "pos": "n./v.",
+          "posAll": [
+            "n.",
+            "v."
+          ]
+        },
+        "actual": {
+          "pos": "n./v.",
+          "posAll": [
+            "n.",
+            "v."
+          ]
+        },
+        "failures": []
+      },
+      {
+        "id": "W002102",
+        "store": "words",
+        "expected": {
+          "pos": "n./adj./v.",
+          "posAll": [
+            "n.",
+            "adj.",
+            "v."
+          ]
+        },
+        "actual": {
+          "pos": "n./adj./v.",
+          "posAll": [
+            "n.",
+            "adj.",
+            "v."
+          ]
+        },
+        "failures": []
+      },
+      {
+        "id": "W002340",
+        "store": "words",
+        "expected": {
+          "usagePattern": "be fond of N/V-ing; fond + N",
+          "usagePatternZh": "喜愛某人／某事／做某事；深情的……",
+          "meaningEn": "(followed by 'of') having a strong preference or liking for; absurd or silly because unlikely"
+        },
+        "actual": {
+          "usagePattern": "be fond of N/V-ing; fond + N",
+          "usagePatternZh": "喜愛某人／某事／做某事；深情的……",
+          "meaningEn": "(followed by 'of') having a strong preference or liking for; absurd or silly because unlikely"
+        },
+        "failures": []
+      },
+      {
+        "id": "W002040",
+        "store": "words",
+        "expected": {
+          "usagePattern": "some/the ash; ash of N"
+        },
+        "actual": {
+          "usagePattern": "some/the ash; ash of N"
+        },
+        "failures": []
+      },
+      {
+        "id": "W002629",
+        "store": "words",
+        "expected": {
+          "meaningEn": "(v.) to remove an outer skin or covering; (n.) the rind of a fruit or vegetable; (separate proper name, Peel) British politician (1788-1850)"
+        },
+        "actual": {
+          "meaningEn": "(v.) to remove an outer skin or covering; (n.) the rind of a fruit or vegetable; (separate proper name, Peel) British politician (1788-1850)"
+        },
+        "failures": []
+      },
+      {
+        "id": "W002275",
+        "store": "words",
+        "expected": {
+          "meaningEn": "the repetition of a sound resulting from reflection of the sound waves; (v.) to repeat a sound, word, or opinion; (separate proper name, Echo, Greek mythology) a nymph who was spurned by Narcissus and pined away until only her voice remained",
+          "usagePattern": "echo + N; echo through N; an/the echo",
+          "usagePatternZh": "重複／附和……；迴盪於……；該回聲"
+        },
+        "actual": {
+          "meaningEn": "the repetition of a sound resulting from reflection of the sound waves; (v.) to repeat a sound, word, or opinion; (separate proper name, Echo, Greek mythology) a nymph who was spurned by Narcissus and pined away until only her voice remained",
+          "usagePattern": "echo + N; echo through N; an/the echo",
+          "usagePatternZh": "重複／附和……；迴盪於……；該回聲"
+        },
+        "failures": []
+      },
+      {
+        "id": "W002354",
+        "store": "words",
+        "expected": {
+          "usagePattern": "gamble N on N; gamble on N; a/the gamble",
+          "usagePatternZh": "以……押注於……；對……冒險下注；一次冒險"
+        },
+        "actual": {
+          "usagePattern": "gamble N on N; gamble on N; a/the gamble",
+          "usagePatternZh": "以……押注於……；對……冒險下注；一次冒險"
+        },
+        "failures": []
+      },
+      {
+        "id": "W002752",
+        "store": "words",
+        "expected": {
+          "usagePattern": "it is rumored that S+V; a rumor about/of N",
+          "usagePatternZh": "據傳……；關於……的傳聞"
+        },
+        "actual": {
+          "usagePattern": "it is rumored that S+V; a rumor about/of N",
+          "usagePatternZh": "據傳……；關於……的傳聞"
+        },
+        "failures": []
+      },
+      {
+        "id": "W003916",
+        "store": "words",
+        "expected": {
+          "meaningEn": "the act of sprinkling or splashing water; (v.) to scatter small drops of liquid or small particles over something",
+          "usagePattern": "sprinkle N on N; sprinkle N with N; a sprinkle of N",
+          "usagePatternZh": "把……灑在……上；在……上灑……；少量的……"
+        },
+        "actual": {
+          "meaningEn": "the act of sprinkling or splashing water; (v.) to scatter small drops of liquid or small particles over something",
+          "usagePattern": "sprinkle N on N; sprinkle N with N; a sprinkle of N",
+          "usagePatternZh": "把……灑在……上；在……上灑……；少量的……"
+        },
+        "failures": []
+      },
+      {
+        "id": "W002832",
+        "store": "words",
+        "expected": {
+          "usagePattern": "spray A on B; spray B with A; a can of spray",
+          "usagePatternZh": "把 A 噴在 B 上；在 B 上噴 A；一罐噴霧"
+        },
+        "actual": {
+          "usagePattern": "spray A on B; spray B with A; a can of spray",
+          "usagePatternZh": "把 A 噴在 B 上；在 B 上噴 A；一罐噴霧"
+        },
+        "failures": []
+      },
+      {
+        "id": "W005944",
+        "store": "words",
+        "expected": {
+          "meaningZh": "塞入；掖好；縫褶；活力；鼓聲；船尾突出部"
+        },
+        "actual": {
+          "meaningZh": "塞入；掖好；縫褶；活力；鼓聲；船尾突出部"
+        },
+        "failures": []
+      },
+      {
+        "id": "NX3c81e96f",
+        "store": "notes",
+        "expected": {
+          "content": "把 A 塞進 B。"
+        },
+        "actual": {
+          "content": "把 A 塞進 B。"
+        },
+        "failures": []
+      },
+      {
+        "id": "EX2535aa27",
+        "store": "examples",
+        "expected": {
+          "meaningHint": "誠意（此句：hear the sincerity in his voice，聽出他語氣中的誠意）"
+        },
+        "actual": {
+          "meaningHint": "誠意（此句：hear the sincerity in his voice，聽出他語氣中的誠意）"
+        },
+        "failures": []
+      },
+      {
+        "id": "W003901",
+        "store": "words",
+        "expected": {
+          "usagePattern": "sketch + N; a/the sketch",
+          "usagePatternZh": "素描／草擬……；一幅素描"
+        },
+        "actual": {
+          "usagePattern": "sketch + N; a/the sketch",
+          "usagePatternZh": "素描／草擬……；一幅素描"
+        },
+        "failures": []
+      }
+    ]
+  },
+  "progress": {
+    "stores": [
+      "cardStates",
+      "checkIns",
+      "customGroups",
+      "directAttempts",
+      "directSessions",
+      "quizStats",
+      "reviewLogs",
+      "rewardLedger",
+      "rewardRounds",
+      "rewardWallet",
+      "settings",
+      "townDecorations",
+      "writtenSessions",
+      "writtenSubmissions"
+    ],
+    "stableProgressBeforeSha256": "6481ee25e4b4a7e8ea0b7c0f3b23d9ce712b7d5c93b158f587495b75be937081",
+    "stableProgressAfterSha256": "6481ee25e4b4a7e8ea0b7c0f3b23d9ce712b7d5c93b158f587495b75be937081",
+    "unchangedExcludingAutomaticBookmark": true,
+    "automaticBookmarkKey": "learning:last-location",
+    "beforeBookmark": {
+      "href": "/vocabulary?level=LV3&unit=1&kind=vocabulary&item=LI-LV3U01-unite",
+      "title": "LV3 Unit 1",
+      "position": 1,
+      "total": 123,
+      "updatedAt": 1794790483828
+    },
+    "afterBookmark": {
+      "href": "/word/W005944",
+      "title": "tuck",
+      "position": 1,
+      "total": 1,
+      "updatedAt": 1794791120477
+    },
+    "limitation": "This new isolated profile had empty learning records. This verifies this profile remained unchanged; it is not a migration test of another profile with existing nonempty progress."
+  },
+  "retainedFailures": [
+    {
+      "kind": "browser_start",
+      "state": "recovered",
+      "evidence": "Crashpad pipe closed; failed process terminated. Same isolated profile launched successfully through the approved unsandboxed browser process."
+    },
+    {
+      "kind": "cli_url_quoting",
+      "state": "recovered",
+      "evidence": "Windows cmd interpreted ampersands in the URL as separators. File-based Playwright navigation subsequently opened and verified exact item URLs."
+    },
+    {
+      "kind": "console_encoding",
+      "state": "recovered",
+      "evidence": "output/playwright/lv3-u19-published/source-1-console-encoding-failure.log",
+      "limitation": "First export was unreadable. Valid UTF-8/ASCII-escaped export and its screenshots were regenerated; no frozen before-pixel claim is made for the reused after screenshot paths."
+    },
+    {
+      "kind": "snippet_escape",
+      "state": "recovered_before_browser_execution",
+      "evidence": "output/playwright/lv3-u19-published/general-1-script-escape-failure.log"
+    },
+    {
+      "kind": "passage_expected_read_hook",
+      "state": "resolved_in_validation_only",
+      "ids": [
+        "EX2a49d40d",
+        "EXeca05c9e"
+      ],
+      "firstEvidence": "output/playwright/lv3-u19-published/general-61.json",
+      "correctedEvidence": "output/playwright/lv3-u19-published/general-passage-read-hook.json",
+      "guard": "Expected display uses the unchanged correctExample function from src/db/exampleCorrections.ts; raw imported examples were preserved."
+    },
+    {
+      "kind": "evidence_hash_validation",
+      "state": "resolved_in_report_only",
+      "reason": "An initial check incorrectly compared a normalized byte hash with the chain semantic hash. The unchanged pipeline uses SHA256(JSON.stringify(parsed JSON)); raw bytes, normalized LF bytes and semantic hashes are now separately labeled and the semantic chain hash matches."
+    }
+  ],
+  "limits": [
+    "No product data, source, image, publication policy, tests or runtime code was changed by this follow-up.",
+    "This is actual published display and persistence verification, not a fresh textbook transcription review or an all-image semantic approval.",
+    "All original source questions and prior qualified unit reports remain in force.",
+    "U16-U18 integration is reconciled from committed manifests and main; no new complete runtime acceptance for those units is claimed here.",
+    "No merge or deployment was performed on this branch."
+  ]
+}
