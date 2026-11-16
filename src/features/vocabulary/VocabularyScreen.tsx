@@ -4,7 +4,7 @@ import SpeakerButton from '../../components/SpeakerButton';
 import DictionaryMeanings, { DictionarySenseLabel } from '../browser/DictionaryMeanings';
 import StudyActions from '../../components/StudyActions';
 import { useCardSwipe } from '../../hooks/useCardSwipe';
-import { curriculumUnits, findUnit, unitsForLevel } from '../direct/model';
+import { curriculumUnits, findUnit, learningItemTitle, unitsForLevel } from '../direct/model';
 import { getOrCreateTemplateGroup, startScopeSession } from '../direct/store';
 import { reviewedExample, practiceIds } from './model';
 import '../direct/direct.css';
@@ -29,7 +29,7 @@ export default function VocabularyScreen(){
   const kind=params.get('kind')==='grammar'?'grammar':'vocabulary';
   const [query,setQuery]=useState(''),[busy,setBusy]=useState(false),[error,setError]=useState('');
   const items=curriculumItems.filter(i=>i.kind===kind);
-  const matches=items.filter(i=>`${i.displayWord??i.pattern} ${i.chapterMeaningsZh??i.explanationZh}`.toLowerCase().includes(query.toLowerCase()));
+  const matches=items.filter(i=>`${learningItemTitle(i)} ${i.chapterMeaningsZh??i.explanationZh}`.toLowerCase().includes(query.toLowerCase()));
   const index=Math.max(0,matches.findIndex(i=>i.learningItemId===params.get('item'))),item=matches[index];
   const example=item?reviewedExample(item):undefined;
   const related=item?.displayWord&&current?current.relatedNotes.filter(n=>n.parentWord===item.displayWord):[];
@@ -62,12 +62,12 @@ export default function VocabularyScreen(){
       <div className="vocab-levels"><button aria-pressed={kind==='vocabulary'} onClick={()=>{setQuery('');choose({level,kind:'vocabulary'});}}>詞彙字卡（{vocabCount}）</button><button aria-pressed={kind==='grammar'} onClick={()=>{setQuery('');choose({level,kind:'grammar'});}}>{usageLabel}（{grammarCount}）</button></div>
       <details className="vocab-find"><summary>搜尋或跳到指定項目</summary>
         <label>搜尋本類項目<input value={query} onChange={e=>setQuery(e.target.value)} placeholder="輸入英文或中文" /></label>
-        {item&&<label>跳到項目<select aria-label="跳到項目" value={item.learningItemId} onChange={e=>show(e.target.value)}>{matches.map((i,n)=><option key={i.learningItemId} value={i.learningItemId}>{n+1}. {i.displayWord??i.pattern}</option>)}</select></label>}
+        {item&&<label>跳到項目<select aria-label="跳到項目" value={item.learningItemId} onChange={e=>show(e.target.value)}>{matches.map((i,n)=><option key={i.learningItemId} value={i.learningItemId}>{n+1}. {learningItemTitle(i)}</option>)}</select></label>}
       </details>
       {item?<>
         <article className="vocab-card study-swipe-surface" aria-label="學習字卡" {...swipe}>
           <p className="direct-kicker">{index+1} / {matches.length} · 教材第 {item.sourcePage} 頁</p>
-          <h2>{item.displayWord??item.pattern}</h2>
+          <h2>{learningItemTitle(item)}</h2>
           {item.displayWord&&<SpeakerButton text={item.displayWord}/>}
           {kind==='vocabulary'?<><p className="vocab-meaning">{item.sensePos} {item.chapterMeaningsZh}</p>
             <DictionaryMeanings wordId={item.officialWordId} />

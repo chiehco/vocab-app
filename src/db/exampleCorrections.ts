@@ -17,7 +17,14 @@ const corrections: Record<string, Pick<ExampleRecord,'sentenceEn'|'sentenceZh'|'
 
 /** Read-time correction: original imports and the separate progress database stay intact. */
 export function correctExample(row: ExampleRecord | undefined): ExampleRecord | undefined {
-  if (!row || row.word !== 'passage' || !corrections[row.exampleId]) return row;
+  if (!row) return row;
+  if (row.sensePos === 'v.' && (
+    (row.exampleId === 'EX0f27b577' && row.word === 'chat') ||
+    (row.exampleId === 'EX573dddb5' && row.word === 'ruin')
+  )) {
+    return { ...row, sensePos: 'n.' };
+  }
+  if (row.word !== 'passage' || !corrections[row.exampleId]) return row;
   const correction = corrections[row.exampleId];
   return {...row, ...correction, sensePos:'n.', status:'reviewed',
     blankSentence:correction.sentenceEn.replace(/\bpassage\b/,'_____'),answer:'passage'};

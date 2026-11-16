@@ -139,7 +139,22 @@ export type LearningItem = Omit<(typeof curriculum.learningItems)[number], 'offi
   officialWordId?: string | null; officialSenseId?: string | null;
   illustration?: CurriculumIllustration; parentWord?: string; level?: string; unit?: number;
   sourceRole?: string; printedLabel?: string; meaningSource?: string;
+  displayPattern?: string;
 };
+
+export function learningItemTitle(item?: LearningItem) {
+  return item?.displayWord ?? item?.displayPattern ?? item?.pattern;
+}
+
+// Keep the original pattern for source comparison and supply the corrected learner-facing text.
+const lv3Unit21Items = (lv3Unit21.learningItems as LearningItem[]).map(item =>
+  item.learningItemId === 'LI-LV3U21-G012' ? {
+    ...item,
+    displayPattern: 'keep a diary（持續記日記）',
+    explanationZh: 'write a diary 也見於英語。若指寫一則日記，可用 write a diary entry。',
+  } : item
+);
+
 // Textbook units available in the app. LV3 units keep their numeric `unit` shortcut for existing callers.
 export const curriculumUnits: CurriculumUnit[] = [
   { templateId: curriculum.template.templateId, revision: curriculum.template.revision, level: 'LV3', unit: 1, name: 'LV3 Unit 1', items: curriculum.learningItems as LearningItem[], questions: grammarQuestions, relatedNotes: [] },
@@ -231,7 +246,7 @@ export const curriculumUnits: CurriculumUnit[] = [
   { templateId: lv3Unit17.template.templateId, revision: lv3Unit17.template.revision, level: 'LV3', unit: 17, name: lv3Unit17.template.title, items: lv3Unit17.learningItems as LearningItem[], questions: lv3Unit17.questions, relatedNotes: [], deliveryMode: 'text_only' },
   { templateId: lv3Unit19.template.templateId, revision: lv3Unit19.template.revision, level: 'LV3', unit: 19, name: lv3Unit19.template.title, items: lv3Unit19.learningItems as LearningItem[], questions: lv3Unit19.questions, relatedNotes: [], deliveryMode: 'text_only' },
   { templateId: lv3Unit20.template.templateId, revision: lv3Unit20.template.revision, level: 'LV3', unit: 20, name: lv3Unit20.template.title, items: lv3Unit20.learningItems as LearningItem[], questions: lv3Unit20.questions, relatedNotes: [], deliveryMode: 'text_only' },
-  { templateId: lv3Unit21.template.templateId, revision: lv3Unit21.template.revision, level: 'LV3', unit: 21, name: lv3Unit21.template.title, items: lv3Unit21.learningItems as LearningItem[], questions: lv3Unit21.questions, relatedNotes: [], deliveryMode: 'text_only' },
+  { templateId: lv3Unit21.template.templateId, revision: lv3Unit21.template.revision, level: 'LV3', unit: 21, name: lv3Unit21.template.title, items: lv3Unit21Items, questions: lv3Unit21.questions, relatedNotes: [], deliveryMode: 'text_only' },
   { templateId: lv3Unit22.template.templateId, revision: lv3Unit22.template.revision, level: 'LV3', unit: 22, name: lv3Unit22.template.title, items: lv3Unit22.learningItems as LearningItem[], questions: lv3Unit22.questions, relatedNotes: [], deliveryMode: 'text_only' },
   { templateId: lv3Unit23.template.templateId, revision: lv3Unit23.template.revision, level: 'LV3', unit: 23, name: lv3Unit23.template.title, items: lv3Unit23.learningItems as LearningItem[], questions: lv3Unit23.questions, relatedNotes: [], deliveryMode: 'text_only' },
   { templateId: lv3Unit24.template.templateId, revision: lv3Unit24.template.revision, level: 'LV3', unit: 24, name: lv3Unit24.template.title, items: lv3Unit24.learningItems as LearningItem[], questions: lv3Unit24.questions, relatedNotes: [], deliveryMode: 'text_only' },

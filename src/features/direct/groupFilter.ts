@@ -1,4 +1,4 @@
-import { findUnit, learningItems } from './model';
+import { findUnit, learningItems, learningItemTitle } from './model';
 import type { CustomGroup } from './model';
 import type { WordRecord } from '../../db/types';
 
@@ -6,11 +6,11 @@ export type GroupKind='all'|'cards'|'curriculum'|'empty';
 export type GroupOrder='recent'|'name';
 export const groupSize=(g:CustomGroup)=>g.itemIds.length+(g.wordIds?.length??0);
 function groupTerms(g:CustomGroup,words:Map<string,WordRecord>) {
-  return [...(g.wordIds??[]).map(id=>words.get(id)).filter(w=>!!w).map(w=>`${w.word} ${w.meaningZh??''} ${w.level}`),...g.itemIds.map(id=>learningItems.find(i=>i.learningItemId===id)).filter(i=>!!i).map(i=>`${i.displayWord??i.pattern} ${i.targetMeaningZh??i.explanationZh} LV3`)];
+  return [...(g.wordIds??[]).map(id=>words.get(id)).filter(w=>!!w).map(w=>`${w.word} ${w.meaningZh??''} ${w.level}`),...g.itemIds.map(id=>learningItems.find(i=>i.learningItemId===id)).filter(i=>!!i).map(i=>`${learningItemTitle(i)} ${i.targetMeaningZh??i.explanationZh} LV3`)];
 }
 export function groupPreview(g:CustomGroup,words:WordRecord[]) {
   const byId=new Map(words.map(w=>[w.wordId,w]));
-  return [...(g.wordIds??[]).slice(0,3).map(id=>byId.get(id)?.word??'字卡待下載'),...g.itemIds.slice(0,3).map(id=>{const i=learningItems.find(i=>i.learningItemId===id);return i?.displayWord??i?.pattern??'教材項目';})].slice(0,3).join('、');
+  return [...(g.wordIds??[]).slice(0,3).map(id=>byId.get(id)?.word??'字卡待下載'),...g.itemIds.slice(0,3).map(id=>{const i=learningItems.find(i=>i.learningItemId===id);return learningItemTitle(i)??'教材項目';})].slice(0,3).join('、');
 }
 export function groupHasLevel(g:CustomGroup,words:Map<string,WordRecord>,level:string) {
   if(level==='all')return true;

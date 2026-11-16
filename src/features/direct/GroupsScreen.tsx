@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { progressDb } from '../../db/progressDb';
-import { curriculumUnits, findUnit, learningItems, templateGroup } from './model';
+import { curriculumUnits, findUnit, learningItems, learningItemTitle, templateGroup } from './model';
 import { isUnitPublished, unitReleaseHold } from '../vocabulary/unitReleasePolicy';
 import type { CustomGroup } from './model';
 import { deleteGroup, getOrCreateTemplateGroup, restoreGroup, saveGroup, startGroupSession } from './store';
@@ -91,7 +91,7 @@ export default function GroupsScreen() {
   }
   function move(index:number,delta:number) { if (!g) return; const ids=[...g.itemIds]; [ids[index],ids[index+delta]]=[ids[index+delta],ids[index]]; void save({...g,itemIds:ids}); }
   function moveWord(index:number,delta:number) { if (!g?.wordIds) return; const ids=[...g.wordIds]; [ids[index],ids[index+delta]]=[ids[index+delta],ids[index]]; void save({...g,wordIds:ids}); }
-  const available = learningItems.filter(i => !heldItemIds.has(i.learningItemId) && !g?.itemIds.includes(i.learningItemId) && `${i.displayWord ?? i.pattern} ${i.targetMeaningZh ?? i.explanationZh}`.toLowerCase().includes(query.toLowerCase()));
+  const available = learningItems.filter(i => !heldItemIds.has(i.learningItemId) && !g?.itemIds.includes(i.learningItemId) && `${learningItemTitle(i)} ${i.targetMeaningZh ?? i.explanationZh}`.toLowerCase().includes(query.toLowerCase()));
   const status = <>{error && <p role="alert">{error}</p>}{notice && <p role="status">{notice}</p>}
     {deleted && <button disabled={busy} onClick={()=>void undoDelete()}>復原刪除「{deleted.name}」</button>}</>;
 
@@ -132,7 +132,7 @@ export default function GroupsScreen() {
     {!!g.itemIds.length && <>
       <h2>教材項目</h2>
       <ol className="direct-items">{g.itemIds.map((id,index) => {const item=learningItems.find(i=>i.learningItemId===id);return <li key={id}>
-        <details><summary>{item?.displayWord ?? item?.pattern ?? '項目待更新'} <span>{item?.targetMeaningZh}</span></summary>
+        <details><summary>{learningItemTitle(item) ?? '項目待更新'} <span>{item?.targetMeaningZh}</span></summary>
           {item?.kind === 'grammar' ? <p>{item.explanationZh}</p> : <><p>{item?.meaningSource==='existing_dictionary'?'既有一般字義':'教材收錄義'}：{item?.chapterMeaningsZh}</p>{item?.originalExample&&<><p>本題練習義：{item.targetMeaningZh}</p><p>{item.originalExample.sentenceEn}</p><p>{item.originalExample.sentenceZh}</p></>}</>}
         </details>
         {editing && <div className="direct-item-actions"><button disabled={busy || index===0} aria-label={`上移第${index+1}項`} onClick={()=>move(index,-1)}>↑</button><button disabled={busy || index===g.itemIds.length-1} aria-label={`下移第${index+1}項`} onClick={()=>move(index,1)}>↓</button><button disabled={busy} aria-label={`移除第${index+1}項`} onClick={()=>void save({...g,itemIds:g.itemIds.filter(x=>x!==id)})}>移除</button></div>}
@@ -143,7 +143,7 @@ export default function GroupsScreen() {
       <h2>加入學習項目</h2><label>搜尋單字或文法<input value={query} onChange={e=>setQuery(e.target.value)} /></label>
       {!!query.trim() && <>{(words ?? []).filter(w=>!g.wordIds?.includes(w.wordId) && `${w.word} ${w.meaningZh}`.toLowerCase().includes(query.trim().toLowerCase())).slice(0,30).map(w=><div className="direct-option-row" key={w.wordId}><span>{w.word} {w.meaningZh}</span><button disabled={busy} onClick={()=>void save({...g,wordIds:[...(g.wordIds ?? []),w.wordId]})}>加入字卡</button></div>)}</>}
       <p className="direct-muted">另可加入已審核的教材單字與文法練習。</p>
-      {available.slice(0,30).map(i=><div className="direct-option-row" key={i.learningItemId} data-learning-item-id={i.learningItemId}><span>{i.displayWord ?? i.pattern} {i.targetMeaningZh}</span><button disabled={busy} onClick={()=>void save({...g,itemIds:[...g.itemIds,i.learningItemId]})}>加入</button></div>)}
+      {available.slice(0,30).map(i=><div className="direct-option-row" key={i.learningItemId} data-learning-item-id={i.learningItemId}><span>{learningItemTitle(i)} {i.targetMeaningZh}</span><button disabled={busy} onClick={()=>void save({...g,itemIds:[...g.itemIds,i.learningItemId]})}>加入</button></div>)}
       {available.length>30 && <p>另有 {available.length-30} 項，請輸入關鍵字縮小範圍。</p>}
       <button className="group-delete" disabled={busy} onClick={()=>void remove()}>刪除此群組</button>
     </section>}
