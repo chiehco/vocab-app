@@ -7,6 +7,46 @@ class U18SourceContractTests(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
   cls.manifest=p.read_json(ROOT/p.DOCS/'U18-patches.json');cls.scope=p.read_json(ROOT/p.DOCS/'U18-scope.json')
+ def documents_before_u18(self,overrides=None):
+  # Authenticate complete current documents, then reverse only committed successors.
+  # U19/U20 may share global files; undoing U18 alone cannot recreate its checkpoint.
+  chain=p.read_json(ROOT/p.CHAIN)
+  entries=[entry for entry in chain['entries'] if entry['status']=='committed']
+  indices=[i for i,entry in enumerate(entries) if entry.get('unit')=='LV3-U18']
+  self.assertEqual(len(indices),1)
+  previous=p.sha(self.manifest)
+  self.assertEqual(previous,p._U19_PARENT_MANIFEST_HASH,'Frozen U18 manifest anchor drift')
+  self.assertEqual(entries[indices[0]]['path'],'U18-patches.json')
+  self.assertEqual(entries[indices[0]]['manifestHash'],previous)
+  successors=[]
+  for entry in entries[indices[0]+1:]:
+   manifest=p.read_json(p.safe_path(ROOT,p.DOCS+'/'+entry['path']))
+   self.assertEqual(manifest['unit'],entry['unit'])
+   self.assertEqual(manifest['parentManifestHash'],previous)
+   digest=p.sha(manifest);self.assertEqual(digest,entry['manifestHash'])
+   scope=p.read_json(p.safe_path(ROOT,p.DOCS+'/'+manifest['scope']))
+   self.assertEqual(p.sha(scope),manifest['scopeHash'])
+   successors.append((entry,manifest,scope));previous=digest
+  paths=set(self.manifest['files'])
+  for _,manifest,_ in successors:
+   p.require(not p.media_migration.is_migration(manifest),'Unsupported migration successor in U18 source fixture')
+   paths.update(manifest['files'])
+  documents={path:p.read_json(ROOT/path) for path in paths}
+  if overrides:
+   p.require(set(overrides)<=paths,'Unknown U18 fixture override path')
+   documents.update(copy.deepcopy(overrides))
+  for _,manifest,scope in reversed(successors):
+   current={path:documents[path] for path in manifest['files']}
+   documents.update(p.inverse_step(manifest,current,scope))
+  return p.inverse_step(self.manifest,{path:documents[path] for path in self.manifest['files']},self.scope)
+ def test_historical_fixture_rejects_unrecorded_later_values_and_order(self):
+  path='public/data/v1/words.json';original=p.read_json(ROOT/path)
+  changed=copy.deepcopy(original);changed[-1]['meaningZh']='unrecorded later value'
+  for value in [changed,list(reversed(copy.deepcopy(original)))]:
+   with self.subTest(kind='value' if value is changed else 'order'):
+    with self.assertRaisesRegex(ValueError,'Unknown whole-file drift'):
+     self.documents_before_u18({path:value})
+  self.assertEqual(p.read_json(ROOT/path),original)
  def altered(self,change):
   m=copy.deepcopy(self.manifest);s=copy.deepcopy(self.scope);change(m,s);m['scopeHash']=p.sha(s);return m,s
  def reject(self,change):
@@ -84,10 +124,7 @@ class U18SourceContractTests(unittest.TestCase):
     args=self.admission();change(args[4])
     with self.assertRaises(ValueError):p.admit_u18_source_before(*args)
  def test_source_whole_file_rejects_raw_root_photos_and_other_row_in_both_states(self):
-  before={path:p.read_json(ROOT/path) for path in self.manifest['files']}
-  for patch in self.manifest['patches']:
-   col=self.manifest['collections'][patch['dataset']];rows=p.v1.rows(before[col['path']],col['rowsField'])
-   index=next(i for i,r in enumerate(rows) if r.get(patch['key'])==patch['id']);rows[index]=copy.deepcopy(patch['before'])
+  before=self.documents_before_u18()
   after=copy.deepcopy(before)
   for patch in self.manifest['patches']:
    col=self.manifest['collections'][patch['dataset']];rows=p.v1.rows(after[col['path']],col['rowsField'])

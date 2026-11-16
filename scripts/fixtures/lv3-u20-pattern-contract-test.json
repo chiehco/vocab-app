@@ -1,0 +1,147 @@
+{
+  "acceptedFileSha256": "7197ad93c3843e83a0b7bfc001a27001c1b2ac3389ce2cc75c5ef313ba3d91b6",
+  "patches": [
+    {
+      "dataset": "curriculum",
+      "path": "src/features/direct/curriculumLV3Unit20.json",
+      "key": "learningItemId",
+      "id": "LI-LV3U20-G023",
+      "before": {
+        "learningItemId": "LI-LV3U20-G023",
+        "kind": "grammar",
+        "sourcePage": 210,
+        "pattern": "get rid of sb / sth（get 是連綴動詞，相當於 be；rid 是過去分詞，表「被擺脫」）",
+        "explanationZh": "教材用法標記；例句與教材題目尚未提供。",
+        "review": "source_checked_text_only",
+        "practiceMode": "read_only"
+      },
+      "after": {
+        "pattern": "get rid of sb / sth（get 是連綴動詞，相當於 be；rid 是過去分詞，表「擺脫了……的」）"
+      },
+      "reason": "A：原書註解把 get rid of 的主詞語意方向顛倒；只將「被擺脫」改為「擺脫了……的」。原始來源印刷記錄保留，不採用新增例句。",
+      "evidence": [
+        "https://dictionary.cambridge.org/dictionary/english/rid"
+      ],
+      "fieldEvidence": {
+        "pattern": [
+          {
+            "proposal": "LV3U20-P210-LI-LV3U20-G023-pattern",
+            "originFindingIds": [
+              "LV3U20-P210-LI-LV3U20-G023-pattern"
+            ],
+            "reason": "A：原書註解把 get rid of 的主詞語意方向顛倒；只將「被擺脫」改為「擺脫了……的」。原始來源印刷記錄保留，不採用新增例句。",
+            "sources": [
+              {
+                "type": "source_photo",
+                "filename": "20260815_110613.jpg",
+                "page": 210,
+                "sha256": "38ac18d3e9ff4603f265ae09da3f65e6aedaa7ddff7d4464727266f15aed3994",
+                "verification": "visually_read_page_preview"
+              },
+              {
+                "type": "dictionary",
+                "url": "https://dictionary.cambridge.org/dictionary/english/rid",
+                "verification": "web_search_result"
+              }
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "curriculum",
+      "path": "src/features/direct/curriculumLV3Unit20.json",
+      "key": "learningItemId",
+      "id": "LI-LV3U20-G051",
+      "before": {
+        "learningItemId": "LI-LV3U20-G051",
+        "kind": "grammar",
+        "sourcePage": 214,
+        "pattern": "sometime 與明確的時間並用",
+        "explanationZh": "教材用法標記；例句與教材題目尚未提供。",
+        "review": "source_checked_text_only",
+        "practiceMode": "read_only"
+      },
+      "after": {
+        "pattern": "sometime 不限於與明確的時間並用"
+      },
+      "reason": "A：修正原書把 sometime 必須搭配明確時間當作限制的錯誤。只改本條 pattern，原書印刷記錄仍保留。",
+      "evidence": [
+        "https://dictionary.cambridge.org/dictionary/english/sometime"
+      ],
+      "fieldEvidence": {
+        "pattern": [
+          {
+            "proposal": "U20-P214-LI-LV3U20-G051",
+            "originFindingIds": [
+              "U20-P214-LI-LV3U20-G051"
+            ],
+            "reason": "A：修正原書把 sometime 必須搭配明確時間當作限制的錯誤。只改本條 pattern，原書印刷記錄仍保留。",
+            "sources": [
+              {
+                "type": "source_photo",
+                "filename": "20260815_110954.jpg",
+                "page": 214,
+                "sha256": "ebeee70a1befb925073a2b8258369998a6a174ac36009d7adede43bc35b4296b"
+              },
+              {
+                "type": "dictionary",
+                "url": "https://dictionary.cambridge.org/dictionary/english/sometime",
+                "verification": "search-index excerpt; direct Cambridge fetch returned 403"
+              }
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "curriculum",
+      "path": "src/features/direct/curriculumLV3Unit20.json",
+      "key": "learningItemId",
+      "id": "LI-LV3U20-G055",
+      "before": {
+        "learningItemId": "LI-LV3U20-G055",
+        "kind": "grammar",
+        "sourcePage": 215,
+        "pattern": "forest（可數）；woods（恆用複數，不可數）",
+        "explanationZh": "教材用法標記；例句與教材題目尚未提供。",
+        "review": "source_checked_text_only",
+        "practiceMode": "read_only"
+      },
+      "after": {
+        "pattern": "forest（可數）；woods（複數名詞，指樹林）"
+      },
+      "reason": "A：woods 的樹林義為複數名詞，不應標成不可數的木材 wood；只更正該詞性標記，原書印刷記錄保留。",
+      "evidence": [
+        "https://dictionary.cambridge.org/dictionary/english/wood"
+      ],
+      "fieldEvidence": {
+        "pattern": [
+          {
+            "proposal": "U20-P215-LI-LV3U20-G055",
+            "originFindingIds": [
+              "U20-P215-LI-LV3U20-G055"
+            ],
+            "reason": "A：woods 的樹林義為複數名詞，不應標成不可數的木材 wood；只更正該詞性標記，原書印刷記錄保留。",
+            "sources": [
+              {
+                "type": "source_photo",
+                "filename": "20260815_111004.jpg",
+                "page": 215,
+                "sha256": "a2247f122d9256ad99b25c2c69cfd78823c725095f936c4a6223d3d1755b718c"
+              },
+              {
+                "type": "dictionary",
+                "url": "https://dictionary.cambridge.org/dictionary/english/wood",
+                "verification": "search-index excerpt; direct Cambridge fetch returned 403"
+              }
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    }
+  ]
+}

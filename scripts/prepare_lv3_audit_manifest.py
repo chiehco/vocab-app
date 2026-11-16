@@ -60,6 +60,8 @@ def compile_candidate(root, unit, accepted, capture):
         contracts['source'] = copy.deepcopy(p._U18_SOURCE_COLLECTION)
     if unit == 'LV3-U19':
         contracts['source'] = copy.deepcopy(p._U19_SOURCE_COLLECTION)
+    if unit == 'LV3-U20':
+        contracts['source'] = copy.deepcopy(p._U20_SOURCE_COLLECTION)
     documents, collections, patches, seen = {}, {}, {}, set()
     before_rows = accepted.get('beforeRows', {})
     for item in proposals:

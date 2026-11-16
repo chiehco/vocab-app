@@ -29,6 +29,12 @@ jobs:
           python -m unittest discover -s scripts -p 'test_lv3_audit_pipeline.py'
           python -m unittest discover -s scripts -p 'test_prepare_lv3_audit_manifest.py'
           python -m unittest discover -s scripts -p 'test_lv3_wage_forms.py'
+      - name: LV3 exact U18-U20 source and U20 pattern guards
+        run: |
+          python -m unittest discover -s scripts -p 'test_lv3_u18_source_contract.py'
+          python -m unittest discover -s scripts -p 'test_lv3_u19_source_contract.py'
+          python -m unittest discover -s scripts -p 'test_lv3_u20_source_contract.py'
+          python -m unittest discover -s scripts -p 'test_lv3_u20_pattern_contract.py'
       - name: Starter media migration synthetic guards (TEMP only)
         run: python -m unittest discover -s scripts -p 'test_lv3_starter_media_migration.py'
       - run: python -m unittest discover -s scripts -p 'test_apply_lv4_*.py'

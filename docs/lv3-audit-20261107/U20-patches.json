@@ -1,0 +1,1160 @@
+{
+  "schemaVersion": 2,
+  "unit": "LV3-U20",
+  "baseline": "99883751926bd6cb4feff70daff56c07afc130cb",
+  "parentManifestHash": "7c11faa99fdd572f42d8fac153ec3b743b87509d1d56315b9e7d67c950a2d60c",
+  "readiness": "ready",
+  "scope": "U20-scope.json",
+  "scopeHash": "df11f60e6d57a59e451d3cbf4a522035e3091933d4ca3d5b1d7ac9a21a812e71",
+  "collections": {
+    "examples": {
+      "path": "public/data/v1/examples.json",
+      "key": "exampleId",
+      "rowsField": null
+    },
+    "curriculum": {
+      "path": "src/features/direct/curriculumLV3Unit20.json",
+      "key": "learningItemId",
+      "rowsField": "learningItems"
+    },
+    "words": {
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "rowsField": null
+    },
+    "source": {
+      "path": "scripts/sources/LV3Unit20.json",
+      "key": "word",
+      "rowsField": "headwords"
+    }
+  },
+  "files": {
+    "public/data/v1/examples.json": {
+      "beforeHash": "7b76a66efa3d6d3ead19aa9ba65ed0187b89c3d84461d923956b906e81d58b8d",
+      "afterHash": "ca18c8e60a7df14f8afa82daafd51f31899d07eda20a1928fe0ca027e0375647",
+      "beforeByteHash": "f243907ccce53ef4ea848d1ce737d415444d743251657e0730bbe8a20d6f3be2",
+      "afterByteHash": "f824e57c156a1401cb43ae77debff1cc322b8f373ac3730bfe096e4befb31af4"
+    },
+    "src/features/direct/curriculumLV3Unit20.json": {
+      "beforeHash": "9c642c628ba0aee4a1afd3fd789cc29152712c404ab39e5b21ad98fcd959060b",
+      "afterHash": "f892a3bb57bed2d6675e276a267775b4308bb9756388f067b2b9e04160eadb3c",
+      "beforeByteHash": "c6197f6ab0a797cdb4647b245b19444f402d12cb8fc2ff3c979ade0b466f152d",
+      "afterByteHash": "15959ba88854037fd71122e6321905ae499dffc9d97ae51b590d746b300ff93f"
+    },
+    "public/data/v1/words.json": {
+      "beforeHash": "29bfef351d5254f66c48610b30f048ec141cea93f11a1a93aebc703a7a3a28cd",
+      "afterHash": "3f57ba74eade8106238d71dedf86e2036bb50d4f32c4476d84c9e1b3c967563c",
+      "beforeByteHash": "90e9505b1838accf5e163afea5ab84349ab5c46e1e0c7a328d0564b3d54ca9fd",
+      "afterByteHash": "2d111c4a54890adb2b84d07666be96a02a4db3402844d465f34b8867580b4bec"
+    },
+    "scripts/sources/LV3Unit20.json": {
+      "beforeHash": "6ee2803d21f1a05a0f6e91cca2075cb32cc12838dd4696bb1b645d31549e0dee",
+      "afterHash": "372c1551bf06c8a84260f219e6de0c286e61ffe0f23df4941cd06bb4871b3176",
+      "beforeByteHash": "c9763873e9fcfb073d0786730187f3cfbb64bc5e5523ae74acca28be6e3121c8",
+      "afterByteHash": "46287b15281657a93cc8526a65b72b4bec449e229fe6f0f60dd51aa6f3bd1886"
+    }
+  },
+  "patches": [
+    {
+      "dataset": "examples",
+      "path": "public/data/v1/examples.json",
+      "key": "exampleId",
+      "id": "EX38218c8f",
+      "before": {
+        "exampleId": "EX38218c8f",
+        "word": "export",
+        "sensePos": "n.",
+        "meaningHint": null,
+        "exampleType": "daily",
+        "sentenceEn": "The farm began to export fruit to nearby countries.",
+        "sentenceZh": "這座農場開始把水果外銷到鄰近國家。",
+        "blankSentence": "The farm began to _____ fruit to nearby countries.",
+        "answer": "export",
+        "difficulty": "LV3",
+        "status": "reviewed"
+      },
+      "after": {
+        "sensePos": "v."
+      },
+      "reason": "began to export 中的 export 帶受詞 fruit，屬於動詞；英文原句、翻譯與答案可沿用。",
+      "evidence": [],
+      "fieldEvidence": {
+        "sensePos": [
+          {
+            "proposal": "U20-p207-export-example",
+            "originFindingIds": [
+              "U20-p207-export-example"
+            ],
+            "reason": "began to export 中的 export 帶受詞 fruit，屬於動詞；英文原句、翻譯與答案可沿用。",
+            "sources": [
+              {
+                "kind": "textbook",
+                "level": "LV3",
+                "unit": 20,
+                "page": 207,
+                "sha256": "1073edb7bfc865dc88fd583a772638e690eedd653774572926794380e1d759d2"
+              },
+              {
+                "kind": "example",
+                "exampleId": "EX38218c8f"
+              }
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "curriculum",
+      "path": "src/features/direct/curriculumLV3Unit20.json",
+      "key": "learningItemId",
+      "id": "LI-LV3U20-V023",
+      "before": {
+        "learningItemId": "LI-LV3U20-V023",
+        "kind": "vocabulary",
+        "displayWord": "dash",
+        "lexemeRef": "W002220",
+        "officialWordId": "W002220",
+        "officialSenseId": null,
+        "sensePos": "vt./n.",
+        "targetMeaningZh": "衝撞；急奔；短跑比賽",
+        "chapterMeaningsZh": "衝撞；急奔；短跑比賽",
+        "sourcePage": 212,
+        "printedNumber": 15,
+        "sourceRole": "main",
+        "printedLabel": "",
+        "meaningSource": "textbook_transcription",
+        "review": "source_checked_text_only",
+        "practiceMode": "read_only"
+      },
+      "after": {
+        "sensePos": "vt./vi./n.",
+        "meaningSource": "textbook_and_dictionary_review"
+      },
+      "reason": "原頁 dash to 與急奔例句為不及物用法，需補 vi.；教材印 vt. 為勘誤候選。 課內採已核證的 A 類勘誤，更新來源標記以免誤稱逐字照錄；其餘 ID、映射及練習狀態不變。",
+      "evidence": [
+        "https://dictionary.cambridge.org/dictionary/english/dash"
+      ],
+      "fieldEvidence": {
+        "sensePos": [
+          {
+            "proposal": "LV3U20-P212-LI-LV3U20-V023-sensePos",
+            "originFindingIds": [
+              "LV3U20-P212-LI-LV3U20-V023-sensePos"
+            ],
+            "reason": "原頁 dash to 與急奔例句為不及物用法，需補 vi.；教材印 vt. 為勘誤候選。",
+            "sources": [
+              {
+                "type": "source_photo",
+                "filename": "20260815_110636.jpg",
+                "page": 212,
+                "sha256": "dcd8ae87c91899fc70efc5c84ff35dbfc80a32a5512f3807cf417e99756a9427",
+                "verification": "visually_read_page_preview"
+              },
+              {
+                "type": "dictionary",
+                "url": "https://dictionary.cambridge.org/dictionary/english/dash",
+                "verification": "web_search_result"
+              }
+            ],
+            "beforePresent": true
+          }
+        ],
+        "meaningSource": [
+          {
+            "proposal": "U20-LI-LV3U20-V023-A-provenance",
+            "originFindingIds": [
+              "U20-LI-LV3U20-V023-A-provenance"
+            ],
+            "reason": "課內採已核證的 A 類勘誤，更新來源標記以免誤稱逐字照錄；其餘 ID、映射及練習狀態不變。",
+            "sources": [
+              {
+                "type": "source_photo",
+                "filename": "20260815_110636.jpg",
+                "page": 212,
+                "sha256": "dcd8ae87c91899fc70efc5c84ff35dbfc80a32a5512f3807cf417e99756a9427",
+                "verification": "visually_read_page_preview"
+              },
+              {
+                "type": "dictionary",
+                "url": "https://dictionary.cambridge.org/dictionary/english/dash",
+                "verification": "web_search_result"
+              }
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W002146",
+      "before": {
+        "wordId": "W002146",
+        "word": "chilly",
+        "wordVariants": [
+          "chilly"
+        ],
+        "level": "LV3",
+        "pos": "adj.",
+        "posAll": [
+          "adj."
+        ],
+        "meaningZh": "寒冷的；冷淡的；不友好的；番椒",
+        "meaningEn": "unpleasantly cold; unfriendly or without enthusiasm",
+        "usagePattern": "chilly weather; a chilly wind; a chilly reception",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "chilly",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "reviewed",
+        "usagePatternZh": "寒冷的天氣；陣陣寒風；冷淡的接待"
+      },
+      "after": {
+        "meaningZh": "寒冷的；冷淡的；不友好的"
+      },
+      "reason": "A：此 chilly 列僅列形容詞，移除混入的名詞「番椒」，保留寒冷、冷淡及不友好三義。",
+      "evidence": [
+        "https://dictionary.cambridge.org/dictionary/english/chilly"
+      ],
+      "fieldEvidence": {
+        "meaningZh": [
+          {
+            "proposal": "LV3U20-P211-W002146-meaningZh",
+            "originFindingIds": [
+              "LV3U20-P211-W002146-meaningZh"
+            ],
+            "reason": "A：此 chilly 列僅列形容詞，移除混入的名詞「番椒」，保留寒冷、冷淡及不友好三義。",
+            "sources": [
+              {
+                "type": "source_photo",
+                "filename": "20260815_110620.jpg",
+                "page": 211,
+                "sha256": "8244ad941f396885ac1313705a9d825657a0e2c34c1ae2d0029c17dd671a9d01",
+                "verification": "visually_read_page_preview"
+              },
+              {
+                "type": "dictionary",
+                "url": "https://dictionary.cambridge.org/dictionary/english/chilly",
+                "verification": "web_search_result"
+              }
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W002483",
+      "before": {
+        "wordId": "W002483",
+        "word": "laundry",
+        "wordVariants": [
+          "laundry"
+        ],
+        "level": "LV3",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "洗衣店；洗好的衣服；洗滌；洗衣作",
+        "meaningEn": "garments or white goods that can be cleaned by laundering; workplace where clothes are washed and ironed",
+        "usagePattern": "a/the laundry; laundry of N",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "laundry",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）",
+        "status": "draft",
+        "usagePatternZh": "洗衣店；……的洗衣店"
+      },
+      "after": {
+        "meaningZh": "洗衣店；洗好的衣服；洗滌；洗衣工作"
+      },
+      "reason": "A：只修正「洗衣作」不成詞的筆誤為「洗衣工作」，其他既有義項與排序不變。",
+      "evidence": [
+        "https://dictionary.cambridge.org/dictionary/english/laundry"
+      ],
+      "fieldEvidence": {
+        "meaningZh": [
+          {
+            "proposal": "LV3U20-P210-W002483-meaningZh",
+            "originFindingIds": [
+              "LV3U20-P210-W002483-meaningZh"
+            ],
+            "reason": "A：只修正「洗衣作」不成詞的筆誤為「洗衣工作」，其他既有義項與排序不變。",
+            "sources": [
+              {
+                "type": "source_photo",
+                "filename": "20260815_110613.jpg",
+                "page": 210,
+                "sha256": "38ac18d3e9ff4603f265ae09da3f65e6aedaa7ddff7d4464727266f15aed3994",
+                "verification": "visually_read_page_preview"
+              },
+              {
+                "type": "dictionary",
+                "url": "https://dictionary.cambridge.org/dictionary/english/laundry",
+                "verification": "web_search_result"
+              }
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "curriculum",
+      "path": "src/features/direct/curriculumLV3Unit20.json",
+      "key": "learningItemId",
+      "id": "LI-LV3U20-G023",
+      "before": {
+        "learningItemId": "LI-LV3U20-G023",
+        "kind": "grammar",
+        "sourcePage": 210,
+        "pattern": "get rid of sb / sth（get 是連綴動詞，相當於 be；rid 是過去分詞，表「被擺脫」）",
+        "explanationZh": "教材用法標記；例句與教材題目尚未提供。",
+        "review": "source_checked_text_only",
+        "practiceMode": "read_only"
+      },
+      "after": {
+        "pattern": "get rid of sb / sth（get 是連綴動詞，相當於 be；rid 是過去分詞，表「擺脫了……的」）"
+      },
+      "reason": "A：原書註解把 get rid of 的主詞語意方向顛倒；只將「被擺脫」改為「擺脫了……的」。原始來源印刷記錄保留，不採用新增例句。",
+      "evidence": [
+        "https://dictionary.cambridge.org/dictionary/english/rid"
+      ],
+      "fieldEvidence": {
+        "pattern": [
+          {
+            "proposal": "LV3U20-P210-LI-LV3U20-G023-pattern",
+            "originFindingIds": [
+              "LV3U20-P210-LI-LV3U20-G023-pattern"
+            ],
+            "reason": "A：原書註解把 get rid of 的主詞語意方向顛倒；只將「被擺脫」改為「擺脫了……的」。原始來源印刷記錄保留，不採用新增例句。",
+            "sources": [
+              {
+                "type": "source_photo",
+                "filename": "20260815_110613.jpg",
+                "page": 210,
+                "sha256": "38ac18d3e9ff4603f265ae09da3f65e6aedaa7ddff7d4464727266f15aed3994",
+                "verification": "visually_read_page_preview"
+              },
+              {
+                "type": "dictionary",
+                "url": "https://dictionary.cambridge.org/dictionary/english/rid",
+                "verification": "web_search_result"
+              }
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "curriculum",
+      "path": "src/features/direct/curriculumLV3Unit20.json",
+      "key": "learningItemId",
+      "id": "LI-LV3U20-V042",
+      "before": {
+        "learningItemId": "LI-LV3U20-V042",
+        "kind": "vocabulary",
+        "displayWord": "violet",
+        "lexemeRef": "W002967",
+        "officialWordId": "W002967",
+        "officialSenseId": null,
+        "sensePos": "n./adj.",
+        "targetMeaningZh": "紫羅蘭；紫羅藍色的",
+        "chapterMeaningsZh": "紫羅蘭；紫羅藍色的",
+        "sourcePage": 217,
+        "printedNumber": 31,
+        "sourceRole": "main",
+        "printedLabel": "",
+        "meaningSource": "textbook_transcription",
+        "review": "source_checked_text_only",
+        "practiceMode": "read_only"
+      },
+      "after": {
+        "targetMeaningZh": "紫羅蘭；紫羅蘭色的",
+        "chapterMeaningsZh": "紫羅蘭；紫羅蘭色的"
+      },
+      "reason": "p217 印字為「紫羅蘭色的」，「藍」是轉錄錯字；不改義項。 p217 印字為「紫羅蘭色的」，「藍」是轉錄錯字；不改義項。",
+      "evidence": [
+        "https://dictionary.cambridge.org/dictionary/english/violet"
+      ],
+      "fieldEvidence": {
+        "targetMeaningZh": [
+          {
+            "proposal": "U20-P217-LI-LV3U20-V042",
+            "originFindingIds": [
+              "U20-P217-LI-LV3U20-V042"
+            ],
+            "reason": "p217 印字為「紫羅蘭色的」，「藍」是轉錄錯字；不改義項。",
+            "sources": [
+              {
+                "type": "source_photo",
+                "filename": "20260815_111022.jpg",
+                "page": 217,
+                "sha256": "7b0a023dee484f7f6b3ba2482805c09d0ed7bd8e2d9e72c371828c75abba14a6"
+              },
+              {
+                "type": "dictionary",
+                "url": "https://dictionary.cambridge.org/dictionary/english/violet",
+                "verification": "search-index excerpt; direct Cambridge fetch returned 403"
+              }
+            ],
+            "beforePresent": true
+          }
+        ],
+        "chapterMeaningsZh": [
+          {
+            "proposal": "U20-P217-LI-LV3U20-V042",
+            "originFindingIds": [
+              "U20-P217-LI-LV3U20-V042"
+            ],
+            "reason": "p217 印字為「紫羅蘭色的」，「藍」是轉錄錯字；不改義項。",
+            "sources": [
+              {
+                "type": "source_photo",
+                "filename": "20260815_111022.jpg",
+                "page": 217,
+                "sha256": "7b0a023dee484f7f6b3ba2482805c09d0ed7bd8e2d9e72c371828c75abba14a6"
+              },
+              {
+                "type": "dictionary",
+                "url": "https://dictionary.cambridge.org/dictionary/english/violet",
+                "verification": "search-index excerpt; direct Cambridge fetch returned 403"
+              }
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "curriculum",
+      "path": "src/features/direct/curriculumLV3Unit20.json",
+      "key": "learningItemId",
+      "id": "LI-LV3U20-V031",
+      "before": {
+        "learningItemId": "LI-LV3U20-V031",
+        "kind": "vocabulary",
+        "displayWord": "sometime",
+        "lexemeRef": "W002820",
+        "officialWordId": "W002820",
+        "officialSenseId": null,
+        "sensePos": "adv.",
+        "targetMeaningZh": "某個時候（與明確的時間並用）",
+        "chapterMeaningsZh": "某個時候（與明確的時間並用）",
+        "sourcePage": 214,
+        "printedNumber": 22,
+        "sourceRole": "main",
+        "printedLabel": "",
+        "meaningSource": "textbook_transcription",
+        "review": "source_checked_text_only",
+        "practiceMode": "read_only"
+      },
+      "after": {
+        "targetMeaningZh": "某個時候",
+        "chapterMeaningsZh": "某個時候",
+        "meaningSource": "textbook_and_dictionary_review"
+      },
+      "reason": "僅刪除「與明確的時間並用」這項錯誤必要條件；保留既有中文詞義。 僅刪除「與明確的時間並用」這項錯誤必要條件；保留既有中文詞義。 課內採已核證的 A 類勘誤，更新來源標記以免誤稱逐字照錄；其餘 ID、映射及練習狀態不變。",
+      "evidence": [
+        "https://dictionary.cambridge.org/dictionary/english/sometime"
+      ],
+      "fieldEvidence": {
+        "targetMeaningZh": [
+          {
+            "proposal": "U20-P214-LI-LV3U20-V031",
+            "originFindingIds": [
+              "U20-P214-LI-LV3U20-V031"
+            ],
+            "reason": "僅刪除「與明確的時間並用」這項錯誤必要條件；保留既有中文詞義。",
+            "sources": [
+              {
+                "type": "source_photo",
+                "filename": "20260815_110954.jpg",
+                "page": 214,
+                "sha256": "ebeee70a1befb925073a2b8258369998a6a174ac36009d7adede43bc35b4296b"
+              },
+              {
+                "type": "dictionary",
+                "url": "https://dictionary.cambridge.org/dictionary/english/sometime",
+                "verification": "search-index excerpt; direct Cambridge fetch returned 403"
+              }
+            ],
+            "beforePresent": true
+          }
+        ],
+        "chapterMeaningsZh": [
+          {
+            "proposal": "U20-P214-LI-LV3U20-V031",
+            "originFindingIds": [
+              "U20-P214-LI-LV3U20-V031"
+            ],
+            "reason": "僅刪除「與明確的時間並用」這項錯誤必要條件；保留既有中文詞義。",
+            "sources": [
+              {
+                "type": "source_photo",
+                "filename": "20260815_110954.jpg",
+                "page": 214,
+                "sha256": "ebeee70a1befb925073a2b8258369998a6a174ac36009d7adede43bc35b4296b"
+              },
+              {
+                "type": "dictionary",
+                "url": "https://dictionary.cambridge.org/dictionary/english/sometime",
+                "verification": "search-index excerpt; direct Cambridge fetch returned 403"
+              }
+            ],
+            "beforePresent": true
+          }
+        ],
+        "meaningSource": [
+          {
+            "proposal": "U20-LI-LV3U20-V031-A-provenance",
+            "originFindingIds": [
+              "U20-LI-LV3U20-V031-A-provenance"
+            ],
+            "reason": "課內採已核證的 A 類勘誤，更新來源標記以免誤稱逐字照錄；其餘 ID、映射及練習狀態不變。",
+            "sources": [
+              {
+                "type": "source_photo",
+                "filename": "20260815_110954.jpg",
+                "page": 214,
+                "sha256": "ebeee70a1befb925073a2b8258369998a6a174ac36009d7adede43bc35b4296b"
+              },
+              {
+                "type": "dictionary",
+                "url": "https://dictionary.cambridge.org/dictionary/english/sometime",
+                "verification": "search-index excerpt; direct Cambridge fetch returned 403"
+              }
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "curriculum",
+      "path": "src/features/direct/curriculumLV3Unit20.json",
+      "key": "learningItemId",
+      "id": "LI-LV3U20-G051",
+      "before": {
+        "learningItemId": "LI-LV3U20-G051",
+        "kind": "grammar",
+        "sourcePage": 214,
+        "pattern": "sometime 與明確的時間並用",
+        "explanationZh": "教材用法標記；例句與教材題目尚未提供。",
+        "review": "source_checked_text_only",
+        "practiceMode": "read_only"
+      },
+      "after": {
+        "pattern": "sometime 不限於與明確的時間並用"
+      },
+      "reason": "A：修正原書把 sometime 必須搭配明確時間當作限制的錯誤。只改本條 pattern，原書印刷記錄仍保留。",
+      "evidence": [
+        "https://dictionary.cambridge.org/dictionary/english/sometime"
+      ],
+      "fieldEvidence": {
+        "pattern": [
+          {
+            "proposal": "U20-P214-LI-LV3U20-G051",
+            "originFindingIds": [
+              "U20-P214-LI-LV3U20-G051"
+            ],
+            "reason": "A：修正原書把 sometime 必須搭配明確時間當作限制的錯誤。只改本條 pattern，原書印刷記錄仍保留。",
+            "sources": [
+              {
+                "type": "source_photo",
+                "filename": "20260815_110954.jpg",
+                "page": 214,
+                "sha256": "ebeee70a1befb925073a2b8258369998a6a174ac36009d7adede43bc35b4296b"
+              },
+              {
+                "type": "dictionary",
+                "url": "https://dictionary.cambridge.org/dictionary/english/sometime",
+                "verification": "search-index excerpt; direct Cambridge fetch returned 403"
+              }
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "curriculum",
+      "path": "src/features/direct/curriculumLV3Unit20.json",
+      "key": "learningItemId",
+      "id": "LI-LV3U20-G055",
+      "before": {
+        "learningItemId": "LI-LV3U20-G055",
+        "kind": "grammar",
+        "sourcePage": 215,
+        "pattern": "forest（可數）；woods（恆用複數，不可數）",
+        "explanationZh": "教材用法標記；例句與教材題目尚未提供。",
+        "review": "source_checked_text_only",
+        "practiceMode": "read_only"
+      },
+      "after": {
+        "pattern": "forest（可數）；woods（複數名詞，指樹林）"
+      },
+      "reason": "A：woods 的樹林義為複數名詞，不應標成不可數的木材 wood；只更正該詞性標記，原書印刷記錄保留。",
+      "evidence": [
+        "https://dictionary.cambridge.org/dictionary/english/wood"
+      ],
+      "fieldEvidence": {
+        "pattern": [
+          {
+            "proposal": "U20-P215-LI-LV3U20-G055",
+            "originFindingIds": [
+              "U20-P215-LI-LV3U20-G055"
+            ],
+            "reason": "A：woods 的樹林義為複數名詞，不應標成不可數的木材 wood；只更正該詞性標記，原書印刷記錄保留。",
+            "sources": [
+              {
+                "type": "source_photo",
+                "filename": "20260815_111004.jpg",
+                "page": 215,
+                "sha256": "a2247f122d9256ad99b25c2c69cfd78823c725095f936c4a6223d3d1755b718c"
+              },
+              {
+                "type": "dictionary",
+                "url": "https://dictionary.cambridge.org/dictionary/english/wood",
+                "verification": "search-index excerpt; direct Cambridge fetch returned 403"
+              }
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W002625",
+      "before": {
+        "wordId": "W002625",
+        "word": "pave",
+        "wordVariants": [
+          "pave"
+        ],
+        "level": "LV3",
+        "pos": "v.",
+        "posAll": [
+          "v."
+        ],
+        "meaningZh": "鋪設；安排；鋪滿；爲...鋪路；路面",
+        "meaningEn": "a setting with precious stones so closely set that no metal shows; cover with a material such as stone or concrete to make suitable for vehicle traffic; the paved surface of a thoroughfare",
+        "usagePattern": "pave + N; pave to V; a/the pave",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "pave",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）；括號詞拆分：原詞頭 pave(ment)",
+        "status": "draft",
+        "usagePatternZh": "鋪設……；鋪路以……；路面"
+      },
+      "after": {
+        "meaningZh": "鋪設；安排；鋪滿；爲...鋪路",
+        "meaningEn": "cover with a material such as stone or concrete to make suitable for vehicle traffic",
+        "usagePattern": "pave + N; pave to V",
+        "usagePatternZh": "鋪設……；鋪路以……"
+      },
+      "reason": "pave 動詞列僅刪除拆詞污染的寶石鑲嵌／路面名詞內容及錯誤名詞框架；保留原有合法動詞義，不新增搭配。 pave 動詞列僅刪除拆詞污染的寶石鑲嵌／路面名詞內容及錯誤名詞框架；保留原有合法動詞義，不新增搭配。 A: Remove only the misplaced noun pattern a/the pave. Retain pave to V as an undecided purpose-infinitive construction; no deletion without clearer evidence. A: Remove only the misplaced noun gloss 路面. Retain 鋪路以…… pending an owner decision on the purpose-infinitive construction.",
+      "evidence": [
+        "https://dictionary.cambridge.org/dictionary/english/pave"
+      ],
+      "fieldEvidence": {
+        "meaningZh": [
+          {
+            "proposal": "U20-P215-W002625",
+            "originFindingIds": [
+              "U20-P215-W002625"
+            ],
+            "reason": "pave 動詞列僅刪除拆詞污染的寶石鑲嵌／路面名詞內容及錯誤名詞框架；保留原有合法動詞義，不新增搭配。",
+            "sources": [
+              {
+                "type": "source_photo",
+                "filename": "20260815_111004.jpg",
+                "page": 215,
+                "sha256": "a2247f122d9256ad99b25c2c69cfd78823c725095f936c4a6223d3d1755b718c"
+              },
+              {
+                "type": "dictionary",
+                "url": "https://dictionary.cambridge.org/dictionary/english/pave",
+                "verification": "search-index excerpt; direct Cambridge fetch returned 403"
+              }
+            ],
+            "beforePresent": true
+          }
+        ],
+        "meaningEn": [
+          {
+            "proposal": "U20-P215-W002625",
+            "originFindingIds": [
+              "U20-P215-W002625"
+            ],
+            "reason": "pave 動詞列僅刪除拆詞污染的寶石鑲嵌／路面名詞內容及錯誤名詞框架；保留原有合法動詞義，不新增搭配。",
+            "sources": [
+              {
+                "type": "source_photo",
+                "filename": "20260815_111004.jpg",
+                "page": 215,
+                "sha256": "a2247f122d9256ad99b25c2c69cfd78823c725095f936c4a6223d3d1755b718c"
+              },
+              {
+                "type": "dictionary",
+                "url": "https://dictionary.cambridge.org/dictionary/english/pave",
+                "verification": "search-index excerpt; direct Cambridge fetch returned 403"
+              }
+            ],
+            "beforePresent": true
+          }
+        ],
+        "usagePattern": [
+          {
+            "proposal": "U20-P215-W002625",
+            "originFindingIds": [
+              "U20-P215-W002625"
+            ],
+            "reason": "A: Remove only the misplaced noun pattern a/the pave. Retain pave to V as an undecided purpose-infinitive construction; no deletion without clearer evidence.",
+            "sources": [
+              {
+                "type": "source_photo",
+                "filename": "20260815_111004.jpg",
+                "page": 215,
+                "sha256": "a2247f122d9256ad99b25c2c69cfd78823c725095f936c4a6223d3d1755b718c"
+              },
+              {
+                "type": "dictionary",
+                "url": "https://dictionary.cambridge.org/dictionary/english/pave",
+                "verification": "search-index excerpt; direct Cambridge fetch returned 403"
+              }
+            ],
+            "beforePresent": true
+          }
+        ],
+        "usagePatternZh": [
+          {
+            "proposal": "U20-P215-W002625",
+            "originFindingIds": [
+              "U20-P215-W002625"
+            ],
+            "reason": "A: Remove only the misplaced noun gloss 路面. Retain 鋪路以…… pending an owner decision on the purpose-infinitive construction.",
+            "sources": [
+              {
+                "type": "source_photo",
+                "filename": "20260815_111004.jpg",
+                "page": 215,
+                "sha256": "a2247f122d9256ad99b25c2c69cfd78823c725095f936c4a6223d3d1755b718c"
+              },
+              {
+                "type": "dictionary",
+                "url": "https://dictionary.cambridge.org/dictionary/english/pave",
+                "verification": "search-index excerpt; direct Cambridge fetch returned 403"
+              }
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "words",
+      "path": "public/data/v1/words.json",
+      "key": "wordId",
+      "id": "W006051",
+      "before": {
+        "wordId": "W006051",
+        "word": "pavement",
+        "wordVariants": [
+          "pavement"
+        ],
+        "level": "LV3",
+        "pos": "n.",
+        "posAll": [
+          "n."
+        ],
+        "meaningZh": "鋪設；安排；鋪滿；爲...鋪路；路面",
+        "meaningEn": "a setting with precious stones so closely set that no metal shows; cover with a material such as stone or concrete to make suitable for vehicle traffic; the paved surface of a thoroughfare",
+        "usagePattern": "pave + N; pave to V; a/the pave",
+        "syllables": null,
+        "stressPattern": null,
+        "phoneticUs": null,
+        "familyKey": "pave",
+        "isCore": true,
+        "sourceNote": "高中英文參考詞彙表（111學年度起適用，大考中心）；由 pave(ment) 拆分，沿用原列合併釋義，待人工拆義。",
+        "status": "draft",
+        "usagePatternZh": "鋪設……；pave 後接 to 不定詞；該路面"
+      },
+      "after": {
+        "meaningZh": "路面",
+        "meaningEn": "the paved surface of a thoroughfare",
+        "usagePattern": "a/the pavement",
+        "usagePatternZh": "該路面"
+      },
+      "reason": "pavement 名詞列僅保留原有路面名詞內容，刪除抄自 pave 的動詞內容與句型；a/the pave 修正詞頭為 pavement，不新增義項。 pavement 名詞列僅保留原有路面名詞內容，刪除抄自 pave 的動詞內容與句型；a/the pave 修正詞頭為 pavement，不新增義項。 pavement 名詞列僅保留原有路面名詞內容，刪除抄自 pave 的動詞內容與句型；a/the pave 修正詞頭為 pavement，不新增義項。 pavement 名詞列僅保留原有路面名詞內容，刪除抄自 pave 的動詞內容與句型；a/the pave 修正詞頭為 pavement，不新增義項。",
+      "evidence": [
+        "https://dictionary.cambridge.org/dictionary/english/pavement"
+      ],
+      "fieldEvidence": {
+        "meaningZh": [
+          {
+            "proposal": "U20-P215-W006051",
+            "originFindingIds": [
+              "U20-P215-W006051"
+            ],
+            "reason": "pavement 名詞列僅保留原有路面名詞內容，刪除抄自 pave 的動詞內容與句型；a/the pave 修正詞頭為 pavement，不新增義項。",
+            "sources": [
+              {
+                "type": "source_photo",
+                "filename": "20260815_111004.jpg",
+                "page": 215,
+                "sha256": "a2247f122d9256ad99b25c2c69cfd78823c725095f936c4a6223d3d1755b718c"
+              },
+              {
+                "type": "dictionary",
+                "url": "https://dictionary.cambridge.org/dictionary/english/pavement",
+                "verification": "search-index excerpt; direct Cambridge fetch returned 403"
+              }
+            ],
+            "beforePresent": true
+          }
+        ],
+        "meaningEn": [
+          {
+            "proposal": "U20-P215-W006051",
+            "originFindingIds": [
+              "U20-P215-W006051"
+            ],
+            "reason": "pavement 名詞列僅保留原有路面名詞內容，刪除抄自 pave 的動詞內容與句型；a/the pave 修正詞頭為 pavement，不新增義項。",
+            "sources": [
+              {
+                "type": "source_photo",
+                "filename": "20260815_111004.jpg",
+                "page": 215,
+                "sha256": "a2247f122d9256ad99b25c2c69cfd78823c725095f936c4a6223d3d1755b718c"
+              },
+              {
+                "type": "dictionary",
+                "url": "https://dictionary.cambridge.org/dictionary/english/pavement",
+                "verification": "search-index excerpt; direct Cambridge fetch returned 403"
+              }
+            ],
+            "beforePresent": true
+          }
+        ],
+        "usagePattern": [
+          {
+            "proposal": "U20-P215-W006051",
+            "originFindingIds": [
+              "U20-P215-W006051"
+            ],
+            "reason": "pavement 名詞列僅保留原有路面名詞內容，刪除抄自 pave 的動詞內容與句型；a/the pave 修正詞頭為 pavement，不新增義項。",
+            "sources": [
+              {
+                "type": "source_photo",
+                "filename": "20260815_111004.jpg",
+                "page": 215,
+                "sha256": "a2247f122d9256ad99b25c2c69cfd78823c725095f936c4a6223d3d1755b718c"
+              },
+              {
+                "type": "dictionary",
+                "url": "https://dictionary.cambridge.org/dictionary/english/pavement",
+                "verification": "search-index excerpt; direct Cambridge fetch returned 403"
+              }
+            ],
+            "beforePresent": true
+          }
+        ],
+        "usagePatternZh": [
+          {
+            "proposal": "U20-P215-W006051",
+            "originFindingIds": [
+              "U20-P215-W006051"
+            ],
+            "reason": "pavement 名詞列僅保留原有路面名詞內容，刪除抄自 pave 的動詞內容與句型；a/the pave 修正詞頭為 pavement，不新增義項。",
+            "sources": [
+              {
+                "type": "source_photo",
+                "filename": "20260815_111004.jpg",
+                "page": 215,
+                "sha256": "a2247f122d9256ad99b25c2c69cfd78823c725095f936c4a6223d3d1755b718c"
+              },
+              {
+                "type": "dictionary",
+                "url": "https://dictionary.cambridge.org/dictionary/english/pavement",
+                "verification": "search-index excerpt; direct Cambridge fetch returned 403"
+              }
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "source",
+      "path": "scripts/sources/LV3Unit20.json",
+      "key": "word",
+      "id": "violet",
+      "before": {
+        "word": "violet",
+        "sourcePage": 217,
+        "printedNumber": 31,
+        "role": "main",
+        "sourcePos": "n./adj.",
+        "chapterMeaningsZh": "紫羅蘭；紫羅藍色的",
+        "officialWordId": "W002967",
+        "officialWord": "violet",
+        "mappingEvidence": "exact_headword"
+      },
+      "after": {
+        "chapterMeaningsZh": "紫羅蘭；紫羅蘭色的"
+      },
+      "reason": "p217 實際印為紫羅蘭色的。先擴充 U20 source guard 才能套用，不繞過。",
+      "evidence": [
+        "https://dictionary.cambridge.org/dictionary/english/violet"
+      ],
+      "fieldEvidence": {
+        "chapterMeaningsZh": [
+          {
+            "proposal": "U20-P217-violet",
+            "originFindingIds": [
+              "U20-P217-violet"
+            ],
+            "reason": "p217 實際印為紫羅蘭色的。先擴充 U20 source guard 才能套用，不繞過。",
+            "sources": [
+              {
+                "type": "source_photo",
+                "filename": "20260815_111022.jpg",
+                "page": 217,
+                "sha256": "7b0a023dee484f7f6b3ba2482805c09d0ed7bd8e2d9e72c371828c75abba14a6"
+              },
+              {
+                "type": "dictionary",
+                "url": "https://dictionary.cambridge.org/dictionary/english/violet",
+                "verification": "search-index excerpt; direct Cambridge fetch returned 403"
+              }
+            ],
+            "beforePresent": true
+          }
+        ]
+      }
+    }
+  ],
+  "unchangedInputs": {
+    "public/data/v1/exam_priority.json": "afeddc9f393f59665fd8a72a11e71c771c139c66214a6962cb442e75709f54f5",
+    "public/data/v1/hooks.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "public/data/v1/media.json": "ee130840a1a7467271243b550dfa89ed4f266f9518b4c270aa33cfd1de8112a5",
+    "public/data/v1/morphemes.json": "e60331dfd54d3aa90c253eae86cebb8057af0786e125207db9c695b842e90433",
+    "public/data/v1/notes.json": "613754c62426633e35482d6e98ce2463a157c74b013dc2980ea1e0873a9c62da",
+    "public/data/v1/relations.json": "b2562fe33f212b32d426daa948d77789df6b27c941a000d32c7863f0b9c92828",
+    "public/data/v1/senses.json": "24ebfb89371d499c15196dbcdc65023315764168c481b420e8c483495a6f520c",
+    "scripts/build_sa_pack.py": "5412a3da52e222fc7a67908276dc3834153d85412a0fe1a3c70adcce5da43edc",
+    "scripts/sources/LV3Unit18.json": "e859817eb1d6d0b55c0d3154b714d48f115f2733cb4988de2592e4518d3632d2",
+    "scripts/sources/LV3Unit19.json": "91582d537cf39eb5038c41ef61ca782b2cc26a9223d78c70d6ea3a12765ea399",
+    "src/features/direct/choiceOptions.json": "131580eebadea156da84eb93082d0288549688a7937a13b00a6ac2f95bb48786",
+    "src/features/direct/curriculum.json": "aa33e61779d74aed3e4af7cc8f684f4391e275ea915b1a0c8758ce6ff8f198a2",
+    "src/features/direct/curriculumLV1Unit16.json": "45d36a932f463b8d13d9f4f9c1951f6530672b88b782e863b1e7ae35c10da4fe",
+    "src/features/direct/curriculumLV1Unit17.json": "cc9d6e310032ec6c858d985459b1dcae3e3c2495889acd6eb2eb6a18c71ad18e",
+    "src/features/direct/curriculumLV1Unit18.json": "2b240c49b82610427f071bf31ba381055d7f5987da4fb577f15aef297f8822d1",
+    "src/features/direct/curriculumLV1Unit19.json": "e1081192bac4726c34e197814afcd734edf70cbc2e4f6558d83136529d4b24a3",
+    "src/features/direct/curriculumLV1Unit20.json": "c91f10085b3348f6ca3b1b3b8ce3152a6892eb344036789916c736c0df0dc9da",
+    "src/features/direct/curriculumLV1Unit21.json": "81fd3cf3e5ba39a4576821150a1d95211e002f147f37d7648ba44ee688ed5322",
+    "src/features/direct/curriculumLV2Unit27.json": "4cbc56e6d99057c4eb722d419d35176d7033cf7e379f97a3d659b386869c834e",
+    "src/features/direct/curriculumLV2Unit28.json": "e5b4bfbdbff15308c2f3641610ce6fecc9f3d4b41dd50d710413e57150882ffa",
+    "src/features/direct/curriculumLV2Unit29.json": "ba10bd3b014e1c823ee0f497e588f9fe6a71477615b0f736dfa228ff4d4096e2",
+    "src/features/direct/curriculumLV2Unit30.json": "7dd24fc23035d572d3664c1212654e157a3574c031c5ed99886d0b1c7c976f64",
+    "src/features/direct/curriculumLV2Unit31.json": "5e1d5ab229d14e285fe2647ad6f240f3a727ab0ba3b34dcb5742296919fec5ff",
+    "src/features/direct/curriculumLV2Unit32.json": "03134ebd4e8df98aa9c2d759a6c887f97556922a3d42b75afa35c196e1e4b2bf",
+    "src/features/direct/curriculumLV2Unit33.json": "69cf3c8f42da88f7c8e4f7bc033d7ad3e49a095a28d9c81af2a9e2e1b8818c81",
+    "src/features/direct/curriculumLV2Unit34.json": "8051bba4ed96ac77bc706280d971515f848e3062b5a868b00d35b2ab07e6563a",
+    "src/features/direct/curriculumLV2Unit35.json": "8777bc098ee7f5f6c0c82df5114b5271238d21b0366dfa0b8af687f1b27a77ec",
+    "src/features/direct/curriculumLV2Unit36.json": "d431677ba4ed26f95b0a3c4c9c71e480c7fee26bfd5f1265c6dabfd22bd9ab7b",
+    "src/features/direct/curriculumLV2Unit37.json": "ee3ab7de32cb2046dbd41d8dad98830bd52e2b1f4242f7d614abf624f5b1edb9",
+    "src/features/direct/curriculumLV2Unit38.json": "78e24e94aa2825366c694477bbce156df52ccb935fa70d4e3b67fa425dfb5201",
+    "src/features/direct/curriculumLV2Unit39.json": "7abf3d04d1d048c585184fdab32edcbff4927b7ee7ef863c9d141e1dfaea5650",
+    "src/features/direct/curriculumLV2Unit40.json": "105144085bad902fa3380aa04e39a5fb33f8c8cbbbc91ac4ad2d201723ef6dc3",
+    "src/features/direct/curriculumLV2Unit41.json": "3d6e16a279dfb3eb0862c5cb8883577ffd652ba29c141dc581fc33a47ca85eeb",
+    "src/features/direct/curriculumLV2Unit42.json": "05d8069dd0a76f554b86e96bf1db34771e5c662b78d954aa41c1713e163ba1e1",
+    "src/features/direct/curriculumLV2Unit43.json": "2ec5443ace981a5f70c4bf39f6b8f11eb18a5e54879befc0561befd0bfda6949",
+    "src/features/direct/curriculumLV2Unit44.json": "9e543f3fb8a93370bf812e5973cd89fb1767a1dfae344e69583d1ceae896534f",
+    "src/features/direct/curriculumLV2Unit45.json": "bf9a497dab35d44e8f19b42c39d06dd7a4073f732d2ebfef30fac3a061516b59",
+    "src/features/direct/curriculumLV2Unit46.json": "ec470129e210b3236f026ee439ad25261b036a3b002ccf02ebbf34b6ad768566",
+    "src/features/direct/curriculumLV2Unit47.json": "d9306c7a8d479ac94d7b8aaba3feef1a018fff0543d535ea2fe7918871ba2175",
+    "src/features/direct/curriculumLV2Unit48.json": "643aef515175539ea12a4ad5e59c981863fc31126c1e74b280d2afc7c0a778c7",
+    "src/features/direct/curriculumLV2Unit49.json": "efa430fbc840f4391c38aaaa23814628a64f2ca2c39c2f340f6aaebcd8faadde",
+    "src/features/direct/curriculumLV2Unit50.json": "0000bb2a184cd3a28d7abbca27d676a69ffed4039bc0bb099d2a591c85de622c",
+    "src/features/direct/curriculumLV3Unit10.json": "d82871e4f9729409082e06506d0bf39ff3f7fdd325a72d1cf59bf88921b0ffa3",
+    "src/features/direct/curriculumLV3Unit11.json": "551dc51599aaaa94b90f0d99548cabe05973a90344810475b9431df4f0b0f1c1",
+    "src/features/direct/curriculumLV3Unit12.json": "5eb3776edfff6751c427930d4109df5e2161459b66574d673b76e2dc9d13445e",
+    "src/features/direct/curriculumLV3Unit13.json": "715362aff45a58394b049a1a3b5b7c7d721950a2c0cb50a53da44042a7d375ae",
+    "src/features/direct/curriculumLV3Unit14.json": "e8bc5fe24d2c6e28cc61e1648e197e260558b1acc9299bfb4e8138747e9a2f6d",
+    "src/features/direct/curriculumLV3Unit15.json": "d891d89e5602cb88861c554604033ac4646e208631003953d53a3bd73933da2b",
+    "src/features/direct/curriculumLV3Unit16.json": "c1b15bc3318bf783bf7e09b9aae6caf8f706db1e92fb13f944c0ec9cea2d7f86",
+    "src/features/direct/curriculumLV3Unit17.json": "c4e2dc8dbdc75411d61a1ef4ce2d62c28d6e4045f78a2c2e4d6a91b504ed323f",
+    "src/features/direct/curriculumLV3Unit18.json": "0fcc29427b629634641ab52ac52c023542d0f7949a88c1a033864680b5a66a4d",
+    "src/features/direct/curriculumLV3Unit19.json": "2675da911271be3019972e12e544e6e8201cb46d355e09bc1b22b2af266da7f9",
+    "src/features/direct/curriculumLV3Unit21.json": "e81d81a4866af752e48e9fa5f64bd135c7bdd46f9b45ccafb6000673cee2e41e",
+    "src/features/direct/curriculumLV3Unit22.json": "e9796be7c4db1ae18b59c3ba7a2c1d3e19a31b6edf34253dec906294d51c88fd",
+    "src/features/direct/curriculumLV3Unit23.json": "f8349a1de985166528d80a403ac686be3c9ce052706d7d6625bb0687d74a3d3c",
+    "src/features/direct/curriculumLV3Unit24.json": "db8f46b1abb4a26d06cf830a4fdba582c3450ad915ee4a0f4a06648c6095ab59",
+    "src/features/direct/curriculumLV3Unit4.json": "f1c62911e7505192d90a5431211b0ec1c3bf19d8c817ea379d0c5c3c2ea1b708",
+    "src/features/direct/curriculumLV3Unit5.json": "710f142b1ecd1fe7ac6c3d9e0ce41aef02d8174a15d347952d4e0db05b97ef0e",
+    "src/features/direct/curriculumLV3Unit6.json": "eda2bebd963d6e6b3606984071c644de378d163d9b2a7a92d195d499c81d9e40",
+    "src/features/direct/curriculumLV3Unit7.json": "5f69e130e4c37dfa45ba7aa926081fd396e35a8ee1ed97d2e0522ad25841ce8c",
+    "src/features/direct/curriculumLV3Unit8.json": "2cebe0d0cff3f4746f4683c6e5389dce37de146fa4466581451544736cfa3e2e",
+    "src/features/direct/curriculumLV3Unit9.json": "f753d88cdf09515c31ce2ac670819e61a1250d09c65faaf9b5efe3fcbf08816e",
+    "src/features/direct/curriculumLV4Unit1.json": "a8dd86c0205d251aa0ee813a91a873f31fec97d562621c5aa48268fdcf794990",
+    "src/features/direct/curriculumLV4Unit10.json": "bb3fd43bac55f368ed1a04c5dab71560bcae90df9b9746822f7b9914b8dbc5c2",
+    "src/features/direct/curriculumLV4Unit11.json": "01d502d8b01b74a0669bf785861c2c048e8be480672444889a9e71933cd8c799",
+    "src/features/direct/curriculumLV4Unit12.json": "fbb1160d30151aa28ade0d75cc3ecd8e7d0d2c0f4b1734cee5e2f9b64c8ae3d6",
+    "src/features/direct/curriculumLV4Unit13.json": "3de424f45535a517dde40472929570ba4d6e8855ec8593fcc236d47a02b63f3f",
+    "src/features/direct/curriculumLV4Unit14.json": "66e8cde10fb314a1e8db49d0a5f4b9dddb1e359e027165b4e2fcbf4f62e3806f",
+    "src/features/direct/curriculumLV4Unit15.json": "98131ed6513ca94e9296561d19ca9a039b602d5cd9d0f1f207e718a2d9ef8bee",
+    "src/features/direct/curriculumLV4Unit16.json": "d9afe6ef09a56af1c0cc0e46e71e14d8a64b7af7af62be07678e22d15ef28d14",
+    "src/features/direct/curriculumLV4Unit17.json": "e87ee842d6a1490941ee2a2087eaceec57bd14007e9644c3e96c2a874973beb8",
+    "src/features/direct/curriculumLV4Unit18.json": "65d6ed5e05d0da710ef4b6aa564427b8f6ec7cb500bad0bbf4d92268bc47bfbe",
+    "src/features/direct/curriculumLV4Unit19.json": "115d49543bb7395fb0e796310a1caa927aad35e9bc41e6a7e30eea50141c9e62",
+    "src/features/direct/curriculumLV4Unit2.json": "fb82b241e8876abdfaa8b9e59943f16ce29c116e6ed56a653590d39fb6e97bfc",
+    "src/features/direct/curriculumLV4Unit20.json": "d33023fd91d8fbdfc66d341ebba79d46900c482e98ca2f2b754a579b4fe026cd",
+    "src/features/direct/curriculumLV4Unit21.json": "32f886115c9c5c8cd87fa09ce1fecce9527c0f37739cd818b7577584a2e635e5",
+    "src/features/direct/curriculumLV4Unit22.json": "26f839e3c4d9a8bd9e9a9ee6caf2a4d6756c7f0b4050a200eac88f773a826022",
+    "src/features/direct/curriculumLV4Unit23.json": "46d07e157175676a48fd6705b82553c7b1f705ee81356fe9405fb35cbf7581ca",
+    "src/features/direct/curriculumLV4Unit24.json": "052ef4539a37b5e735e54005c14a2e250dfb87e9c546c5f868aef3dc9ee9ac64",
+    "src/features/direct/curriculumLV4Unit3.json": "07076a44eeeba329ca8f30eacae7bf5d82d64dcd248c731555f3a906b477f700",
+    "src/features/direct/curriculumLV4Unit4.json": "dec54dad531c93df7b3fcc58c1ccdf19a29c3c4b0c1e669970fc68b414db0a68",
+    "src/features/direct/curriculumLV4Unit5.json": "a3da6d39cad69b07058b08a347b92e6e86e15a2b8fe855b81f06cec7549ebda8",
+    "src/features/direct/curriculumLV4Unit6.json": "783596335a7eaa8aa81767ec885d6b0a0dd8c77fdafe99a6b30b952d484df157",
+    "src/features/direct/curriculumLV4Unit7.json": "770f932e789398c434f50e7229fcad773a142ed83a8910a48f2ccd5a38149e43",
+    "src/features/direct/curriculumLV4Unit8.json": "3e0fcafbd42afdf75c9945913d3cbadeb181cd7ea1d3f4ebc9edb0e8e85a0c93",
+    "src/features/direct/curriculumLV4Unit9.json": "c52eab402247089a06ff793564fa6b641c21388762e570b36b3e812f2d4324f0",
+    "src/features/direct/curriculumLV5Unit1.json": "374d80055beb10add3bbc2785cbbb11b3ed4aa04970c63a4a8b827f2dc70ff01",
+    "src/features/direct/curriculumLV5Unit10.json": "be2fd6191d23af6c4ac487323c93812ebf0e2ed9e078c892c22f3ea8f336a350",
+    "src/features/direct/curriculumLV5Unit11.json": "28651800330fb7ea62979bbca747e46e02cf83724b9ca91af8f9d5b0d854bd0e",
+    "src/features/direct/curriculumLV5Unit12.json": "0602bdeb8ea042ee966d5f0f357247fb0435a52976fa80e58ed506a49afa83e0",
+    "src/features/direct/curriculumLV5Unit13.json": "4e388c2de221ecb271b065347910843879a04c85587713db1fc3cf253be095db",
+    "src/features/direct/curriculumLV5Unit14.json": "25f20fb3317ea3158e1f502e39f2f5bb0df39543d59d7967b21883496cb054dd",
+    "src/features/direct/curriculumLV5Unit15.json": "42ccfcbc36c078a1d538aca7b7b5b2157a29e29269173f2ad8dbd449fed61022",
+    "src/features/direct/curriculumLV5Unit16.json": "72764740a62f5ec995f1e28ba1790d54584bee7a5da3db51453b296cae094eaf",
+    "src/features/direct/curriculumLV5Unit18.json": "1a2fd36ce374f5122f29b94439aa08a92106d6bbee6498959cba233c258680b6",
+    "src/features/direct/curriculumLV5Unit22.json": "396072287b98f6a206c35eef081a2490e2484c5c6fd64ecde9990121ac6212f3",
+    "src/features/direct/curriculumLV5Unit25.json": "c6f4fee16b88efc6a497aa60ca150062b85c1372fbf3c2da0f200cc1e469bb2f",
+    "src/features/direct/curriculumLV5Unit3.json": "04707b78ad185cefe54455fe493ee975d4e4ce5871a10a191a0a26f09c124023",
+    "src/features/direct/curriculumLV5Unit4.json": "1bb6b3198f9f2b00548cd816c592854c728e4a5710e58b033fda9ea2a1e4c626",
+    "src/features/direct/curriculumLV5Unit5.json": "f6b590298f207774f0d23927ecab6922270182b8590d3eb8809aacbde2e7e74c",
+    "src/features/direct/curriculumLV5Unit6.json": "20507e98bb65b885815a5a4084031260d6d383488ed80f0ffb62e7d9a32abaf4",
+    "src/features/direct/curriculumLV5Unit7.json": "382600743d21159d89287cde405521d65ac34ddd6a9c07d854bcb396896cbd8f",
+    "src/features/direct/curriculumLV5Unit8.json": "aa57dadb052006b666cd6d974fd889b3f68b0fae026d39fddcb2895faeae2584",
+    "src/features/direct/curriculumLV5Unit9.json": "2ad95e828eaa5c227ecda4d82e9dbabf5e4373f2546fa7d50c81d3f5c9bf058f",
+    "src/features/direct/curriculumLV6Unit1.json": "f3f34181d5b40cc22871bd8502fc645a0e4b9cf96180d63bd88fcf56b02e562f",
+    "src/features/direct/curriculumLV6Unit10.json": "ba888a15c2d7c85df8c345dc9528efbb2e17c761c991ee1b738fd3974b073e53",
+    "src/features/direct/curriculumLV6Unit11.json": "0fcc8e662a0cd3bb842078267f13c420806d39a6e6968b6816abb88f93b299cb",
+    "src/features/direct/curriculumLV6Unit12.json": "295e8a7b49da0c6182aa161046d5a96d710133b06526465de36da0eb83e25cd7",
+    "src/features/direct/curriculumLV6Unit13.json": "141cd4c8c51e0f5b5c88c91cf33dfc0db9e43c0456238dbe3a5a8cd102d57c5f",
+    "src/features/direct/curriculumLV6Unit14.json": "e7c0add8b613ccd41128ad09a3a541a334f54aabdf608e397676746469d5ee35",
+    "src/features/direct/curriculumLV6Unit15.json": "478489d8fdebcf8a2502720e71eeb5594395aaa4db8dd09579bed367640a08eb",
+    "src/features/direct/curriculumLV6Unit16.json": "f4725223bfc405c826c2dffcc3f0522b94b1b8fda4f8c226bd8b02dba4fd077e",
+    "src/features/direct/curriculumLV6Unit17.json": "ba249cc52b2eb461a4b2b1a81e26e53c4ea6b35ebf33b8c047220f3d1df983c1",
+    "src/features/direct/curriculumLV6Unit18.json": "39cb0f006fc455629c516dc3aa287625bd6fb8f04997d0ccd09af2867bc3bbab",
+    "src/features/direct/curriculumLV6Unit19.json": "28cc4a3500a238b2e8437082fdcbbbb7ecfc8ea3ef0eb00c1be61886a829f6ca",
+    "src/features/direct/curriculumLV6Unit2.json": "3283befae35b6e12f46db13003a9dee1d4a4532c71a97ce80d14cb1ac87084fa",
+    "src/features/direct/curriculumLV6Unit20.json": "1ab7e0c9bc9156f546d702647cf1a91a7e57d45af45960a2e15d064668a976c8",
+    "src/features/direct/curriculumLV6Unit21.json": "68bd149729a9eb2e9d68420adfa6a78b197ffe9e5038cb279fa06013d6abd821",
+    "src/features/direct/curriculumLV6Unit22.json": "78091d698cc22c4056c687402651e93e2e1099cffdc0ede7f3a99356bd0ebc73",
+    "src/features/direct/curriculumLV6Unit23.json": "a80848cb2b2e2a0d07ea061d3cb95f8b1fa545173482c9680edcc6c67a5c2259",
+    "src/features/direct/curriculumLV6Unit24.json": "8a808eaedcaa484240389783843eee1bf141a63b6280a3baee0ea7649ed64970",
+    "src/features/direct/curriculumLV6Unit25.json": "5a6b3247a5f63d68334acdfd61842b1e0363967d4fd0d2c5e3b7a2b92ce4c4bc",
+    "src/features/direct/curriculumLV6Unit3.json": "9aa119fa69c5bf8c6fd4d7cf09782957f68e8aa9c15a4dbfa38becce121134d4",
+    "src/features/direct/curriculumLV6Unit4.json": "47d256c9fb0bbcacb6ef4f34ee29e88b52a6b553d093582bd114903e30d39846",
+    "src/features/direct/curriculumLV6Unit5.json": "8b6abfca9e5b6df716d706e2bebf22a5de2be802ec6af174caf927f5c4e1b3e4",
+    "src/features/direct/curriculumLV6Unit6.json": "1c7cb8eee10f747e4e55ea64b7d2456b53326e8dca063a9bd0c963588e602c86",
+    "src/features/direct/curriculumLV6Unit7.json": "5c9231c9b569fa2393e876b72cb19a5af6bf5719205af1b61ddfd52ab8d2621e",
+    "src/features/direct/curriculumLV6Unit8.json": "8210173529f3f8021c7d3d0cf9a743b50430d2fa6ef7eb07abe1b0f697fa7a29",
+    "src/features/direct/curriculumLV6Unit9.json": "4a2d6977c87b3fcf2b4e9e2bfddbbe2cd3d43482e38e8fd35deee97db5321e57",
+    "src/features/direct/curriculumUnit2.json": "34d7df39da9e96cb95af4372d44a8c73a0e6b862597636343eed6e2c54c6dd35",
+    "src/features/direct/glossary.json": "dbe5ccb293274d7fcbbba3cf16145e408db96799d79c19f927b3f779d5a6d3e9",
+    "src/features/direct/grammarQuestions.json": "b50b30086e650207460daeca4b81461f4b7494b3f34c2cbf2b669158ab30fbf0",
+    "src/features/direct/liveabcBasic.json": "e94e01f8394f51aca82894f4f20af4b8b582663438165d86537963c0e22d5b09",
+    "src/features/direct/optionContextRationalesLV4Unit20.json": "51f95520046518ba6a65cb0ae8f43e255c2d293620d8e0ba6731c89d0d11a501",
+    "src/features/direct/optionContextRationalesLV4Unit20Batch2.json": "28f0bbf39147df3e591617c1130a37cada4c6c26f551da92e41ed6b4cd77f997",
+    "src/features/direct/optionContextRationalesLV4Unit20Batch3.json": "3154b275d194ceb993b1d21424edf93011afcf499feea0a3ecc5528c14d444a8",
+    "src/features/direct/practiceTextRevisionsLV4Unit20.json": "978ce6e84ec098a2ccd98c4fa750847a7922a8d79c9ee937f8270a69ed616206",
+    "src/features/direct/practiceVariantsLV4Unit17.json": "3360cc54bec10479da09a0d69a5b6e1285ec3302f62f5360c6a97fabc89b0b4a",
+    "src/features/direct/questions.json": "fbe87ceeb27375bcd4b2291cb0cbc192292995bef36b5977d2a4965f8bda0ce8",
+    "src/features/direct/wordCatalog.json": "eb0eba4ad2ae66769b9f9b8c0b02473da76fae00ea6d287e96d58552a681d268",
+    "src/features/vocabulary/lv1ReviewedImages.json": "c05fd8e028538f870108e2ee11e43e3e076e385ba55337fbbe42a5e06ccd833d"
+  },
+  "derivedBefore": {
+    "public/data/v1/meta.json": "b6eb5af6876da1ea88f186865fc956daff2ec54bf0f286c88784e6f51425874d",
+    "public/data/v1/sa-pack.json": "f4277dda70551119eca471d8277e5a6bdc4ddb3d6e75ee5a497bcd303dcb4006"
+  },
+  "beforeMeta": {
+    "schemaVersion": 2,
+    "generatedAt": "2026-11-11T05:03:28Z",
+    "sourceFile": "萬詞譜母表_SA義項清理整合_20260904.xlsx",
+    "counts": {
+      "words": 6090,
+      "senses": 772,
+      "examples": 7871,
+      "relations": 40,
+      "morphemes": 3798,
+      "media": 1177,
+      "notes": 4290,
+      "examPriority": 3792,
+      "hooks": 0
+    },
+    "wordsHash": "90e9505b1838accf5e163afea5ab84349ab5c46e1e0c7a328d0564b3d54ca9fd",
+    "contentHash": "5c94138561973b9755304965f56ce496394a71b04f3a6412f4d875071905ff37",
+    "houseSourceSha256": "98fa208835caf7184acc95f26dcff56ace23ba281ff8d4b9b8c37e18e407be14"
+  },
+  "beforePackMeta": {
+    "schemaVersion": 2,
+    "generatedAt": "2026-11-11T05:03:28Z",
+    "counts": {
+      "words": 5779,
+      "senses": 771,
+      "examples": 7436,
+      "relations": 31,
+      "morphemes": 3696,
+      "notes": 4111,
+      "media": 1128,
+      "examPriority": 3613
+    },
+    "wordsHash": "sa:7e9401dfb41743c1707ce9c899d3837eeab4e9b9786c6b372aef285b5c78c864",
+    "contentHash": "sa:964faece99ac975235241460a930ce493d99b4f7c20b13286107362a02ccf0b8"
+  },
+  "derivedAfter": {
+    "public/data/v1/sa-pack.json": "f1f40c5953ebeef1c7654f05048a73ce889da8c081071a606f2d9d435e50a3f8",
+    "public/data/v1/meta.json": "598950129b7193afa0ebbf74f4ec8a9b8d31561abc228310e9352910eac30e10"
+  },
+  "afterMeta": {
+    "schemaVersion": 2,
+    "generatedAt": "2026-11-15T20:51:16Z",
+    "sourceFile": "萬詞譜母表_SA義項清理整合_20260904.xlsx",
+    "counts": {
+      "words": 6090,
+      "senses": 772,
+      "examples": 7871,
+      "relations": 40,
+      "morphemes": 3798,
+      "media": 1177,
+      "notes": 4290,
+      "examPriority": 3792,
+      "hooks": 0
+    },
+    "wordsHash": "2d111c4a54890adb2b84d07666be96a02a4db3402844d465f34b8867580b4bec",
+    "contentHash": "00de912af21c6f4d12874005bc2e25cbc31c7e4f4214109af54cfa6759ccad31",
+    "houseSourceSha256": "98fa208835caf7184acc95f26dcff56ace23ba281ff8d4b9b8c37e18e407be14"
+  }
+}

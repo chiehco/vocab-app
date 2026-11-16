@@ -2700,9 +2700,232 @@ export function admitU19SupplementalSource(previousInputs:Record<string,string>,
  assert.ok(!Object.hasOwn(previousInputs,U19_SOURCE_COLLECTION.path));
  return {...previousInputs,[U19_SOURCE_COLLECTION.path]:U19_SOURCE_GUARD.beforeByteHash!};
 }
+
+// Exact U20 violet transcription typo only; immutable contract, no runtime output reads.
+const U20_SOURCE_COLLECTION:Collection= {"path": "scripts/sources/LV3Unit20.json", "key": "word", "rowsField": "headwords"};
+const U20_SOURCE_GUARD:FileGuard= {"beforeHash": "6ee2803d21f1a05a0f6e91cca2075cb32cc12838dd4696bb1b645d31549e0dee", "afterHash": "372c1551bf06c8a84260f219e6de0c286e61ffe0f23df4941cd06bb4871b3176", "beforeByteHash": "c9763873e9fcfb073d0786730187f3cfbb64bc5e5523ae74acca28be6e3121c8", "afterByteHash": "46287b15281657a93cc8526a65b72b4bec449e229fe6f0f60dd51aa6f3bd1886"};
+const U20_SOURCE_PATCH:AuditPatch= {
+  "dataset": "source",
+  "path": "scripts/sources/LV3Unit20.json",
+  "key": "word",
+  "id": "violet",
+  "before": {
+    "word": "violet",
+    "sourcePage": 217,
+    "printedNumber": 31,
+    "role": "main",
+    "sourcePos": "n./adj.",
+    "chapterMeaningsZh": "紫羅蘭；紫羅藍色的",
+    "officialWordId": "W002967",
+    "officialWord": "violet",
+    "mappingEvidence": "exact_headword"
+  },
+  "after": {
+    "chapterMeaningsZh": "紫羅蘭；紫羅蘭色的"
+  },
+  "reason": "p217 實際印為紫羅蘭色的。先擴充 U20 source guard 才能套用，不繞過。",
+  "evidence": [
+    "https://dictionary.cambridge.org/dictionary/english/violet"
+  ],
+  "fieldEvidence": {
+    "chapterMeaningsZh": [
+      {
+        "proposal": "U20-P217-violet",
+        "originFindingIds": [
+          "U20-P217-violet"
+        ],
+        "reason": "p217 實際印為紫羅蘭色的。先擴充 U20 source guard 才能套用，不繞過。",
+        "sources": [
+          {
+            "type": "source_photo",
+            "filename": "20260815_111022.jpg",
+            "page": 217,
+            "sha256": "7b0a023dee484f7f6b3ba2482805c09d0ed7bd8e2d9e72c371828c75abba14a6"
+          },
+          {
+            "type": "dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/violet",
+            "verification": "search-index excerpt; direct Cambridge fetch returned 403"
+          }
+        ],
+        "beforePresent": true
+      }
+    ]
+  }
+};
+const U20_PARENT_MANIFEST_HASH='7c11faa99fdd572f42d8fac153ec3b743b87509d1d56315b9e7d67c950a2d60c';
+const U20_PATTERN_PATCHES:AuditPatch[]=[
+  {
+    "dataset": "curriculum",
+    "path": "src/features/direct/curriculumLV3Unit20.json",
+    "key": "learningItemId",
+    "id": "LI-LV3U20-G023",
+    "before": {
+      "learningItemId": "LI-LV3U20-G023",
+      "kind": "grammar",
+      "sourcePage": 210,
+      "pattern": "get rid of sb / sth（get 是連綴動詞，相當於 be；rid 是過去分詞，表「被擺脫」）",
+      "explanationZh": "教材用法標記；例句與教材題目尚未提供。",
+      "review": "source_checked_text_only",
+      "practiceMode": "read_only"
+    },
+    "after": {
+      "pattern": "get rid of sb / sth（get 是連綴動詞，相當於 be；rid 是過去分詞，表「擺脫了……的」）"
+    },
+    "reason": "A：原書註解把 get rid of 的主詞語意方向顛倒；只將「被擺脫」改為「擺脫了……的」。原始來源印刷記錄保留，不採用新增例句。",
+    "evidence": [
+      "https://dictionary.cambridge.org/dictionary/english/rid"
+    ],
+    "fieldEvidence": {
+      "pattern": [
+        {
+          "proposal": "LV3U20-P210-LI-LV3U20-G023-pattern",
+          "originFindingIds": [
+            "LV3U20-P210-LI-LV3U20-G023-pattern"
+          ],
+          "reason": "A：原書註解把 get rid of 的主詞語意方向顛倒；只將「被擺脫」改為「擺脫了……的」。原始來源印刷記錄保留，不採用新增例句。",
+          "sources": [
+            {
+              "type": "source_photo",
+              "filename": "20260815_110613.jpg",
+              "page": 210,
+              "sha256": "38ac18d3e9ff4603f265ae09da3f65e6aedaa7ddff7d4464727266f15aed3994",
+              "verification": "visually_read_page_preview"
+            },
+            {
+              "type": "dictionary",
+              "url": "https://dictionary.cambridge.org/dictionary/english/rid",
+              "verification": "web_search_result"
+            }
+          ],
+          "beforePresent": true
+        }
+      ]
+    }
+  },
+  {
+    "dataset": "curriculum",
+    "path": "src/features/direct/curriculumLV3Unit20.json",
+    "key": "learningItemId",
+    "id": "LI-LV3U20-G051",
+    "before": {
+      "learningItemId": "LI-LV3U20-G051",
+      "kind": "grammar",
+      "sourcePage": 214,
+      "pattern": "sometime 與明確的時間並用",
+      "explanationZh": "教材用法標記；例句與教材題目尚未提供。",
+      "review": "source_checked_text_only",
+      "practiceMode": "read_only"
+    },
+    "after": {
+      "pattern": "sometime 不限於與明確的時間並用"
+    },
+    "reason": "A：修正原書把 sometime 必須搭配明確時間當作限制的錯誤。只改本條 pattern，原書印刷記錄仍保留。",
+    "evidence": [
+      "https://dictionary.cambridge.org/dictionary/english/sometime"
+    ],
+    "fieldEvidence": {
+      "pattern": [
+        {
+          "proposal": "U20-P214-LI-LV3U20-G051",
+          "originFindingIds": [
+            "U20-P214-LI-LV3U20-G051"
+          ],
+          "reason": "A：修正原書把 sometime 必須搭配明確時間當作限制的錯誤。只改本條 pattern，原書印刷記錄仍保留。",
+          "sources": [
+            {
+              "type": "source_photo",
+              "filename": "20260815_110954.jpg",
+              "page": 214,
+              "sha256": "ebeee70a1befb925073a2b8258369998a6a174ac36009d7adede43bc35b4296b"
+            },
+            {
+              "type": "dictionary",
+              "url": "https://dictionary.cambridge.org/dictionary/english/sometime",
+              "verification": "search-index excerpt; direct Cambridge fetch returned 403"
+            }
+          ],
+          "beforePresent": true
+        }
+      ]
+    }
+  },
+  {
+    "dataset": "curriculum",
+    "path": "src/features/direct/curriculumLV3Unit20.json",
+    "key": "learningItemId",
+    "id": "LI-LV3U20-G055",
+    "before": {
+      "learningItemId": "LI-LV3U20-G055",
+      "kind": "grammar",
+      "sourcePage": 215,
+      "pattern": "forest（可數）；woods（恆用複數，不可數）",
+      "explanationZh": "教材用法標記；例句與教材題目尚未提供。",
+      "review": "source_checked_text_only",
+      "practiceMode": "read_only"
+    },
+    "after": {
+      "pattern": "forest（可數）；woods（複數名詞，指樹林）"
+    },
+    "reason": "A：woods 的樹林義為複數名詞，不應標成不可數的木材 wood；只更正該詞性標記，原書印刷記錄保留。",
+    "evidence": [
+      "https://dictionary.cambridge.org/dictionary/english/wood"
+    ],
+    "fieldEvidence": {
+      "pattern": [
+        {
+          "proposal": "U20-P215-LI-LV3U20-G055",
+          "originFindingIds": [
+            "U20-P215-LI-LV3U20-G055"
+          ],
+          "reason": "A：woods 的樹林義為複數名詞，不應標成不可數的木材 wood；只更正該詞性標記，原書印刷記錄保留。",
+          "sources": [
+            {
+              "type": "source_photo",
+              "filename": "20260815_111004.jpg",
+              "page": 215,
+              "sha256": "a2247f122d9256ad99b25c2c69cfd78823c725095f936c4a6223d3d1755b718c"
+            },
+            {
+              "type": "dictionary",
+              "url": "https://dictionary.cambridge.org/dictionary/english/wood",
+              "verification": "search-index excerpt; direct Cambridge fetch returned 403"
+            }
+          ],
+          "beforePresent": true
+        }
+      ]
+    }
+  }
+];
+const U20_PATTERN_IDS=new Set(U20_PATTERN_PATCHES.map(p=>p.id));
+export function verifiedU20PatternPatch(m:AuditManifest,p:AuditPatch){return m.unit==='LV3-U20'&&p.dataset==='curriculum'&&U20_PATTERN_PATCHES.some(expected=>isDeepStrictEqual(p,expected));}
+function verifiedU20SourcePatch(m:AuditManifest,p:AuditPatch){return m.unit==='LV3-U20'&&isDeepStrictEqual(p,U20_SOURCE_PATCH);}
+function validateU20SourceContract(m:AuditManifest){
+ assert.equal(m.unit,'LV3-U20','invalid U20 source owner');
+ assert.deepEqual(m.collections?.source,U20_SOURCE_COLLECTION,'invalid U20 source collection');
+ assert.deepEqual(m.files?.[U20_SOURCE_COLLECTION.path],U20_SOURCE_GUARD,'U20 source whole-file contract mismatch');
+ const patches=m.patches.filter(p=>p.dataset==='source');assert.equal(patches.length,1,'invalid U20 source patch count');
+ assert.ok(verifiedU20SourcePatch(m,patches[0]),'invalid U20 source patch contract');
+}
+export function admitU20SupplementalSource(previousInputs:Record<string,string>,anchorInputs:Record<string,string>,predecessor:Pick<Entry,'unit'|'status'>|undefined,previousHash:string|undefined,m:AuditManifest):Record<string,string>{
+ validateU20SourceContract(m);
+ assert.equal(predecessor?.unit,'LV3-U19');assert.equal(predecessor?.status,'committed');
+ assert.equal(previousHash,U20_PARENT_MANIFEST_HASH,'invalid U20 source predecessor');
+ assert.equal(m.parentManifestHash,previousHash,'invalid U20 source parent hash');
+ assert.equal(Object.keys(anchorInputs).length,144);
+ for(const path of [U18_SOURCE_COLLECTION.path,U19_SOURCE_COLLECTION.path,U20_SOURCE_COLLECTION.path])assert.ok(!Object.hasOwn(anchorInputs,path));
+ assert.deepEqual(Object.keys(previousInputs).sort(),[...Object.keys(anchorInputs),U18_SOURCE_COLLECTION.path,U19_SOURCE_COLLECTION.path].sort());
+ assert.equal(Object.keys(previousInputs).length,146);
+ assert.equal(previousInputs[U18_SOURCE_COLLECTION.path],U18_SOURCE_GUARD.afterByteHash,'invalid prior U18 source guard');
+ assert.equal(previousInputs[U19_SOURCE_COLLECTION.path],U19_SOURCE_GUARD.afterByteHash,'invalid prior U19 source guard');
+ assert.ok(!Object.hasOwn(previousInputs,U20_SOURCE_COLLECTION.path));
+ return {...previousInputs,[U20_SOURCE_COLLECTION.path]:U20_SOURCE_GUARD.beforeByteHash!};
+}
 const supplementalSourceContracts=[
  {unit:'LV3-U18',collection:U18_SOURCE_COLLECTION,guard:U18_SOURCE_GUARD},
  {unit:'LV3-U19',collection:U19_SOURCE_COLLECTION,guard:U19_SOURCE_GUARD},
+ {unit:'LV3-U20',collection:U20_SOURCE_COLLECTION,guard:U20_SOURCE_GUARD},
 ];
 
 export function validateAuditScope(m:AuditManifest,scope:AuditScope):void {
@@ -2719,6 +2942,7 @@ export function validateAuditScope(m:AuditManifest,scope:AuditScope):void {
  const globalCollections:Record<string,{path:string;key:string}>={words:{path:'public/data/v1/words.json',key:'wordId'},examples:{path:'public/data/v1/examples.json',key:'exampleId'},notes:{path:'public/data/v1/notes.json',key:'noteId'}};
  if(m.unit==='LV3-U16')globalCollections.senses={path:'public/data/v1/senses.json',key:'senseId'};
  const safeRelative=(path:string)=>assert.ok(path&&!path.includes('\\')&&!path.includes(':')&&!path.startsWith('/')&&!path.split('/').includes('..'),'unsafe path');
+ if(m.unit==='LV3-U20')validateU20SourceContract(m);
  if(m.unit==='LV3-U19')validateU19SourceContract(m);
  if(m.unit==='LV3-U18'){assert.deepEqual(contracts.collections.source,U18_SOURCE_COLLECTION,'missing exact U18 source collection');assert.deepEqual(contracts.files[U18_SOURCE_COLLECTION.path],U18_SOURCE_GUARD,'U18 source whole-file contract mismatch');}
  for(const [name,col]of Object.entries(contracts.collections)){
@@ -2726,8 +2950,8 @@ export function validateAuditScope(m:AuditManifest,scope:AuditScope):void {
   if(globalCollections[name]){
    assert.equal(col.path,globalCollections[name].path);assert.equal(col.key,globalCollections[name].key);assert.equal(col.rowsField,null,'global rows must be root array');
   }else if(name==='source'){
-   assert.ok(m.unit==='LV3-U18'||m.unit==='LV3-U19','unsupported source collection');
-   assert.deepEqual(col,m.unit==='LV3-U18'?U18_SOURCE_COLLECTION:U19_SOURCE_COLLECTION);
+   assert.ok(m.unit==='LV3-U18'||m.unit==='LV3-U19'||m.unit==='LV3-U20','unsupported source collection');
+   assert.deepEqual(col,m.unit==='LV3-U18'?U18_SOURCE_COLLECTION:m.unit==='LV3-U19'?U19_SOURCE_COLLECTION:U20_SOURCE_COLLECTION);
   }else{
    assert.ok(name==='curriculum'||name==='grammarQuestions','unsupported collection');
    assert.ok(col.path.startsWith('src/features/direct/curriculum')&&col.path.endsWith('.json'),'invalid curriculum path');
@@ -2764,7 +2988,8 @@ export function validateAuditScope(m:AuditManifest,scope:AuditScope):void {
   if(m.unit==='LV3-U16'&&(U16_RESERVED.has(p.dataset+':'+p.id)||p.dataset==='senses'||Object.hasOwn(p.after,'status')||Object.hasOwn(p.fieldEvidence!,'status')||Object.hasOwn(p.after,'pattern')||Object.hasOwn(p.fieldEvidence!,'pattern')))assert.ok(u16Exact,'incomplete U16 exact review contract');
   let fields=allowedFields[p.dataset];
   if(p.dataset==='source'){
-   if(m.unit==='LV3-U19'){assert.ok(verifiedU19SourcePatch(m,p),'incomplete exact U19 source contract');fields=['sourcePos'];}
+   if(m.unit==='LV3-U20'){assert.ok(verifiedU20SourcePatch(m,p),'incomplete exact U20 source contract');fields=['chapterMeaningsZh'];}
+   else if(m.unit==='LV3-U19'){assert.ok(verifiedU19SourcePatch(m,p),'incomplete exact U19 source contract');fields=['sourcePos'];}
    else{assert.ok(verifiedU18SourcePatch(m,p),'incomplete exact U18 source contract');fields=['sourcePos','chapterMeaningsZh'];}
   }
   if(u16Exact&&['examples','senses'].includes(p.dataset))fields=Object.keys(p.after);
@@ -2772,6 +2997,10 @@ export function validateAuditScope(m:AuditManifest,scope:AuditScope):void {
   if(republicFact)fields=['sentenceEn','sentenceZh','blankSentence'];
   if(verifiedU11ReviewPatch(m,p,'examples'))fields=['sentenceZh'];
   if(p.dataset==='curriculum'){
+   if(m.unit==='LV3-U20'){
+    assert.ok(p.fieldEvidence!==null&&typeof p.fieldEvidence==='object'&&!Array.isArray(p.fieldEvidence),'invalid U20 field evidence object');
+    if(U20_PATTERN_IDS.has(p.id)||U20_PATTERN_IDS.has(String(p.before.learningItemId))||Object.hasOwn(p.fieldEvidence,'pattern')||Object.hasOwn(p.after,'pattern'))assert.ok(verifiedU20PatternPatch(m,p),'incomplete U20 pattern contract');
+   }
    if(m.unit==='LV3-U14'){
     assert.ok(p.fieldEvidence!==null&&typeof p.fieldEvidence==='object'&&!Array.isArray(p.fieldEvidence),'invalid U14 field evidence object');
     if(U14_PATTERN_IDS.has(p.id)||U14_PATTERN_IDS.has(String(p.before.learningItemId))||Object.hasOwn(p.fieldEvidence,'pattern')||Object.hasOwn(p.after,'pattern'))assert.ok(verifiedU14PatternPatch(m,p),'incomplete U14 pattern contract');
@@ -2795,6 +3024,7 @@ export function validateAuditScope(m:AuditManifest,scope:AuditScope):void {
    if(p.before.kind==='grammar'&&verifiedU12PatternPatch(m,p))fields=['pattern','explanationZh'];
    if(p.before.kind==='grammar'&&verifiedU13PatternPatch(m,p))fields=['pattern','explanationZh'];
    if(p.before.kind==='grammar'&&verifiedU14PatternPatch(m,p))fields=['pattern','explanationZh'];
+   if(p.before.kind==='grammar'&&verifiedU20PatternPatch(m,p))fields=Object.keys(p.after);
    if(p.before.kind==='grammar'&&u16Exact)fields=['pattern','explanationZh'];
    if(Object.hasOwn(p.after,'meaningSource'))assert.ok(['textbook_source_review','textbook_and_dictionary_review'].includes(p.after.meaningSource as string),'invalid reviewed meaning source');
    for(const [field,value]of Object.entries(p.after).filter(([field])=>fields.includes(field))){
@@ -2873,6 +3103,7 @@ export function loadLV3Chain(){
     previousInputs=admitU18SupplementalSource(previousInputs,anchor.inputs,chain.entries[index-1],previous,manifest);
    }
    if(manifest.unit==='LV3-U19')previousInputs=admitU19SupplementalSource(previousInputs,anchor.inputs,chain.entries[index-1],previous,manifest);
+    if(manifest.unit==='LV3-U20')previousInputs=admitU20SupplementalSource(previousInputs,anchor.inputs,chain.entries[index-1],previous,manifest);
    assert.deepEqual(Object.keys(manifest.unchangedInputs??{}).sort(),Object.keys(previousInputs).filter(p=>!files[p]&&!derived.includes(p)).sort());
    for(const [p,h]of Object.entries(manifest.unchangedInputs??{}))assert.equal(previousInputs[p],h,'chain unchanged guard');
    for(const [p,g]of Object.entries(files))assert.equal(previousInputs[p],g.beforeByteHash,'broken before-byte chain');

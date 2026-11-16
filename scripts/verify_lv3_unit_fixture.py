@@ -53,6 +53,12 @@ def fixture_parent_checkpoint(entries, manifest):
 
 def fixture_expected_write_paths(manifest):
     """Exact registered shapes for the real fixture, independent of observed writes."""
+    if manifest.get('unit') == 'LV3-U20':
+        source = {'public/data/v1/words.json', 'public/data/v1/examples.json',
+                  'src/features/direct/curriculumLV3Unit20.json', 'scripts/sources/LV3Unit20.json'}
+        audit.require(set(manifest['files']) == source, 'Unexpected U20 real-fixture source paths')
+        audit.require(set(manifest['derivedAfter']) == pipeline.DERIVED, 'Unexpected U20 real-fixture derived paths')
+        return source | pipeline.DERIVED
     curricula = {
         'LV3-U02': 'src/features/direct/curriculumUnit2.json',
         'LV3-U04': 'src/features/direct/curriculumLV3Unit4.json',
@@ -202,6 +208,36 @@ class RealUnitFixtureTests(base.U02RealFixtureTests):
             'bothSourceRawAndSemanticDriftRejected': True, 'productReplaceCalls': 0,
             'destinationCreated': False, 'receiptsAndChainUnchanged': True})
 
+    def assert_u20_sources_checkpoint_drift_rejected(self, side):
+        if self.manifest.get('unit') != 'LV3-U20':
+            return
+        target = self.parent_checkpoint if side == 'before' else 'LV3-U20'
+        tx = self.fixture / 'output/lv3-audit-20261107/transactions'
+        receipts = {p.relative_to(tx).as_posix(): p.read_bytes() for p in tx.rglob('*') if p.is_file()} if tx.exists() else {}
+        chain_before = (self.fixture / pipeline.CHAIN).read_bytes()
+        for path in [pipeline._U18_SOURCE_PATH, pipeline._U19_SOURCE_PATH, pipeline._U20_SOURCE_PATH]:
+            original = (self.fixture / path).read_bytes()
+            changed = json.loads(original); changed['unrecordedSourceRoot'] = True
+            for kind, content in [('raw', original+b' '), ('semantic', pipeline.serialize(changed))]:
+                destination = Path(self.temporary.name) / ('u20-'+Path(path).stem+'-'+side+'-'+kind+'-rejected')
+                try:
+                    (self.fixture / path).write_bytes(content)
+                    snapshot = self.snapshot()
+                    with patch.object(pipeline.os, 'replace', wraps=pipeline.os.replace) as replacements:
+                        with self.assertRaises(ValueError):
+                            pipeline.project_checkpoint(self.fixture, destination, target=target)
+                        replacements.assert_not_called()
+                    self.assert_snapshot(snapshot); self.assertFalse(destination.exists())
+                    self.assertEqual((self.fixture / pipeline.CHAIN).read_bytes(), chain_before)
+                    now = {p.relative_to(tx).as_posix(): p.read_bytes() for p in tx.rglob('*') if p.is_file()} if tx.exists() else {}
+                    self.assertEqual(now, receipts)
+                finally:
+                    (self.fixture / path).write_bytes(original)
+        audit.dump(base.OUTPUT / ('u20-'+side+'-three-source-checkpoint-negatives.json'), {
+            'status': 'passed', 'state': 'prepared' if side == 'before' else 'committed',
+            'allThreeSourcesRawAndSemanticDriftRejected': True, 'productReplaceCalls': 0,
+            'destinationCreated': False, 'receiptsAndChainUnchanged': True})
+
     def test_01_real_seal_and_dry_run_do_not_change_inputs(self):
         expected_paths = fixture_expected_write_paths(self.manifest)
         snapshot = self.snapshot()
@@ -219,6 +255,7 @@ class RealUnitFixtureTests(base.U02RealFixtureTests):
         self.assert_snapshot(snapshot)
         self.assert_u18_source_checkpoint_drift_rejected('before')
         self.assert_u19_sources_checkpoint_drift_rejected('before')
+        self.assert_u20_sources_checkpoint_drift_rejected('before')
 
     def test_02_real_apply_idempotence_and_single_shared_file_write(self):
         original = self.snapshot()
@@ -345,6 +382,40 @@ class RealUnitFixtureTests(base.U02RealFixtureTests):
                 'u19SourceWasReplacedAndRestored': True, 'u18SourceNeverWritten': True,
                 'calls': calls, 'rawBeforeSha256': hashlib.sha256(before[pipeline._U19_SOURCE_PATH]).hexdigest()})
 
+        if self.manifest.get('unit') == 'LV3-U20':
+            # Fail only after the new source has actually been replaced.
+            before = self.snapshot()
+            tx = self.fixture / 'output/lv3-audit-20261107/transactions'
+            receipts_before = set(tx.glob('*/transaction.json'))
+            expected = sorted(fixture_expected_write_paths(self.manifest))
+            self.assertEqual(len(expected), 6)
+            self.assertLess(expected.index(pipeline._U20_SOURCE_PATH), len(expected)-1)
+            real_replace = pipeline.os.replace
+            calls = []
+            def fail_after_u20_source(source, target):
+                calls.append(Path(target).relative_to(self.fixture).as_posix())
+                if len(calls) == len(expected):
+                    raise OSError('injected U20 final replace failure after source')
+                return real_replace(source, target)
+            with patch.object(pipeline.os, 'replace', side_effect=fail_after_u20_source):
+                with self.assertRaisesRegex(OSError, 'injected U20 final'):
+                    self.apply_fixture()
+            self.assertEqual(calls[:len(expected)], expected)
+            self.assertIn(pipeline._U20_SOURCE_PATH, calls[len(expected):])
+            self.assertNotIn(pipeline._U18_SOURCE_PATH, calls)
+            self.assertNotIn(pipeline._U19_SOURCE_PATH, calls)
+            self.assert_snapshot(before); self.assertEqual(len(before), 147)
+            receipts_after = set(tx.glob('*/transaction.json')) - receipts_before
+            self.assertEqual(len(receipts_after), 1)
+            receipt_path = receipts_after.pop()
+            self.assertEqual(audit.read_json(receipt_path)['state'], 'rolled_back')
+            for path in expected:
+                self.assertEqual((receipt_path.parent / 'before' / path).read_bytes(), before[path])
+            audit.dump(base.OUTPUT / 'u20-source-late-rollback.json', {
+                'status': 'passed', 'all147RawInputsRestored': True,
+                'u20SourceWasReplacedAndRestored': True, 'u18SourceNeverWritten': True,
+                'calls': calls, 'rawBeforeSha256': hashlib.sha256(before[pipeline._U20_SOURCE_PATH]).hexdigest()})
+
     def test_07_real_chain_inverse_restores_u01_and_137_original_guards(self):
         self.apply_fixture()
         self.commit_fixture_entry()
@@ -379,6 +450,17 @@ class RealUnitFixtureTests(base.U02RealFixtureTests):
             audit.dump(base.OUTPUT / 'u19-two-source-u01-projection.json', {
                 'status': 'passed', 'originalAnchorInputs': 144, 'originalU01UnchangedGuards': 137,
                 'bothSupplementalBeforeSourcesRestored': True})
+        if self.manifest.get('unit') == 'LV3-U20':
+            self.assertEqual(len(anchor['inputs']), 144)
+            for source, guard in [(pipeline._U18_SOURCE_PATH, pipeline._U18_SOURCE_GUARD),
+                                  (pipeline._U19_SOURCE_PATH, pipeline._U19_SOURCE_GUARD),
+                                  (pipeline._U20_SOURCE_PATH, self.manifest['files'][pipeline._U20_SOURCE_PATH])]:
+                self.assertNotIn(source, anchor['inputs'])
+                self.assertEqual(audit.file_hash(projected / source), guard['beforeByteHash'])
+                self.assertEqual(audit.node_hash(audit.read_json(projected / source)), guard['beforeHash'])
+            audit.dump(base.OUTPUT / 'u20-three-source-u01-projection.json', {
+                'status': 'passed', 'originalAnchorInputs': 144, 'originalU01UnchangedGuards': 137,
+                'allThreeSupplementalBeforeSourcesRestored': True})
         audit.dump(base.OUTPUT / 'checkpoint-projection.json', {
             'restoredInputCount': len(anchor['inputs']), 'originalU01UnchangedGuards': 137,
             'u01DatasetAfterHashesPreserved': True, 'status': 'passed'})
@@ -388,6 +470,7 @@ class RealUnitFixtureTests(base.U02RealFixtureTests):
         self.commit_fixture_entry()
         self.assert_u18_source_checkpoint_drift_rejected('after')
         self.assert_u19_sources_checkpoint_drift_rejected('after')
+        self.assert_u20_sources_checkpoint_drift_rejected('after')
         if self.manifest.get('unit') == 'LV3-U16':
             # Relations is unchanged and is not an earlier migration source. Test both.
             tx = self.fixture / 'output/lv3-audit-20261107/transactions'
@@ -433,6 +516,8 @@ class RealUnitFixtureTests(base.U02RealFixtureTests):
             paths.append(pipeline._U18_SOURCE_PATH)
         if self.manifest.get('unit') == 'LV3-U19':
             paths.append(pipeline._U19_SOURCE_PATH)
+        if self.manifest.get('unit') == 'LV3-U20':
+            paths.append(pipeline._U20_SOURCE_PATH)
         for path in paths:
             with self.subTest(path=path):
                 (self.fixture / path).write_bytes(self.original[path] + b' ')

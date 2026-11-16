@@ -1,3 +1,4 @@
+import {originalUnit20Items} from './lv3Unit20History.testSupport';
 import 'fake-indexeddb/auto';
 import {afterEach,beforeEach,expect,it,vi} from 'vitest';
 import source from '../../../scripts/sources/LV3Unit20.json';
@@ -28,7 +29,7 @@ it('keeps original head order, printed numbers, checked pages and the next bound
 });
 it('preserves printed supplements, articles, capitalization and use pages',()=>{
  expect(vocabulary.slice(43).map(i=>[i.displayWord,i.sourcePage,i.printedLabel])).toEqual(source.related.map(r=>[r.word,r.sourcePage,r.printedLabel]));
- expect(unit.items.filter(i=>i.kind==='grammar').map(i=>[i.pattern,i.sourcePage])).toEqual(source.usage.map(r=>[r.label,r.sourcePage]));
+ expect(originalUnit20Items(unit.items).filter(i=>i.kind==='grammar').map(i=>[i.pattern,i.sourcePage])).toEqual(source.usage.map(r=>[r.label,r.sourcePage]));
  for(const word of ["heading", "sprain", "tulip", "a screwdriver", "a wrench", "a hammer", "the Taroko Gorge", "some time"]) expect(vocabulary.find(i=>i.displayWord===word)?.officialWordId).toBeNull();
 });
 it('uses existing official identities and keeps 28 unmapped supplements pending',()=>{

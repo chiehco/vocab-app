@@ -2283,6 +2283,241 @@ def admit_u19_source_before(previous_inputs, anchor_inputs, predecessor, previou
     return {**previous_inputs, _U19_SOURCE_PATH: _U19_SOURCE_GUARD['beforeByteHash']}
 
 
+
+# Exact U20 violet transcription typo only. Frozen reviewed evidence, no runtime output reads.
+_U20_SOURCE_PATH = 'scripts/sources/LV3Unit20.json'
+_U20_SOURCE_COLLECTION = {'path': 'scripts/sources/LV3Unit20.json', 'key': 'word', 'rowsField': 'headwords'}
+_U20_SOURCE_GUARD = {'beforeHash': '6ee2803d21f1a05a0f6e91cca2075cb32cc12838dd4696bb1b645d31549e0dee', 'afterHash': '372c1551bf06c8a84260f219e6de0c286e61ffe0f23df4941cd06bb4871b3176', 'beforeByteHash': 'c9763873e9fcfb073d0786730187f3cfbb64bc5e5523ae74acca28be6e3121c8', 'afterByteHash': '46287b15281657a93cc8526a65b72b4bec449e229fe6f0f60dd51aa6f3bd1886'}
+_U20_SOURCE_PATCH = json.loads(r'''{
+  "dataset": "source",
+  "path": "scripts/sources/LV3Unit20.json",
+  "key": "word",
+  "id": "violet",
+  "before": {
+    "word": "violet",
+    "sourcePage": 217,
+    "printedNumber": 31,
+    "role": "main",
+    "sourcePos": "n./adj.",
+    "chapterMeaningsZh": "紫羅蘭；紫羅藍色的",
+    "officialWordId": "W002967",
+    "officialWord": "violet",
+    "mappingEvidence": "exact_headword"
+  },
+  "after": {
+    "chapterMeaningsZh": "紫羅蘭；紫羅蘭色的"
+  },
+  "reason": "p217 實際印為紫羅蘭色的。先擴充 U20 source guard 才能套用，不繞過。",
+  "evidence": [
+    "https://dictionary.cambridge.org/dictionary/english/violet"
+  ],
+  "fieldEvidence": {
+    "chapterMeaningsZh": [
+      {
+        "proposal": "U20-P217-violet",
+        "originFindingIds": [
+          "U20-P217-violet"
+        ],
+        "reason": "p217 實際印為紫羅蘭色的。先擴充 U20 source guard 才能套用，不繞過。",
+        "sources": [
+          {
+            "type": "source_photo",
+            "filename": "20260815_111022.jpg",
+            "page": 217,
+            "sha256": "7b0a023dee484f7f6b3ba2482805c09d0ed7bd8e2d9e72c371828c75abba14a6"
+          },
+          {
+            "type": "dictionary",
+            "url": "https://dictionary.cambridge.org/dictionary/english/violet",
+            "verification": "search-index excerpt; direct Cambridge fetch returned 403"
+          }
+        ],
+        "beforePresent": true
+      }
+    ]
+  }
+}''')
+_U20_PARENT_MANIFEST_HASH = '7c11faa99fdd572f42d8fac153ec3b743b87509d1d56315b9e7d67c950a2d60c'
+
+_U20_PATTERN_PATCHES = json.loads(r'''[
+  {
+    "dataset": "curriculum",
+    "path": "src/features/direct/curriculumLV3Unit20.json",
+    "key": "learningItemId",
+    "id": "LI-LV3U20-G023",
+    "before": {
+      "learningItemId": "LI-LV3U20-G023",
+      "kind": "grammar",
+      "sourcePage": 210,
+      "pattern": "get rid of sb / sth（get 是連綴動詞，相當於 be；rid 是過去分詞，表「被擺脫」）",
+      "explanationZh": "教材用法標記；例句與教材題目尚未提供。",
+      "review": "source_checked_text_only",
+      "practiceMode": "read_only"
+    },
+    "after": {
+      "pattern": "get rid of sb / sth（get 是連綴動詞，相當於 be；rid 是過去分詞，表「擺脫了……的」）"
+    },
+    "reason": "A：原書註解把 get rid of 的主詞語意方向顛倒；只將「被擺脫」改為「擺脫了……的」。原始來源印刷記錄保留，不採用新增例句。",
+    "evidence": [
+      "https://dictionary.cambridge.org/dictionary/english/rid"
+    ],
+    "fieldEvidence": {
+      "pattern": [
+        {
+          "proposal": "LV3U20-P210-LI-LV3U20-G023-pattern",
+          "originFindingIds": [
+            "LV3U20-P210-LI-LV3U20-G023-pattern"
+          ],
+          "reason": "A：原書註解把 get rid of 的主詞語意方向顛倒；只將「被擺脫」改為「擺脫了……的」。原始來源印刷記錄保留，不採用新增例句。",
+          "sources": [
+            {
+              "type": "source_photo",
+              "filename": "20260815_110613.jpg",
+              "page": 210,
+              "sha256": "38ac18d3e9ff4603f265ae09da3f65e6aedaa7ddff7d4464727266f15aed3994",
+              "verification": "visually_read_page_preview"
+            },
+            {
+              "type": "dictionary",
+              "url": "https://dictionary.cambridge.org/dictionary/english/rid",
+              "verification": "web_search_result"
+            }
+          ],
+          "beforePresent": true
+        }
+      ]
+    }
+  },
+  {
+    "dataset": "curriculum",
+    "path": "src/features/direct/curriculumLV3Unit20.json",
+    "key": "learningItemId",
+    "id": "LI-LV3U20-G051",
+    "before": {
+      "learningItemId": "LI-LV3U20-G051",
+      "kind": "grammar",
+      "sourcePage": 214,
+      "pattern": "sometime 與明確的時間並用",
+      "explanationZh": "教材用法標記；例句與教材題目尚未提供。",
+      "review": "source_checked_text_only",
+      "practiceMode": "read_only"
+    },
+    "after": {
+      "pattern": "sometime 不限於與明確的時間並用"
+    },
+    "reason": "A：修正原書把 sometime 必須搭配明確時間當作限制的錯誤。只改本條 pattern，原書印刷記錄仍保留。",
+    "evidence": [
+      "https://dictionary.cambridge.org/dictionary/english/sometime"
+    ],
+    "fieldEvidence": {
+      "pattern": [
+        {
+          "proposal": "U20-P214-LI-LV3U20-G051",
+          "originFindingIds": [
+            "U20-P214-LI-LV3U20-G051"
+          ],
+          "reason": "A：修正原書把 sometime 必須搭配明確時間當作限制的錯誤。只改本條 pattern，原書印刷記錄仍保留。",
+          "sources": [
+            {
+              "type": "source_photo",
+              "filename": "20260815_110954.jpg",
+              "page": 214,
+              "sha256": "ebeee70a1befb925073a2b8258369998a6a174ac36009d7adede43bc35b4296b"
+            },
+            {
+              "type": "dictionary",
+              "url": "https://dictionary.cambridge.org/dictionary/english/sometime",
+              "verification": "search-index excerpt; direct Cambridge fetch returned 403"
+            }
+          ],
+          "beforePresent": true
+        }
+      ]
+    }
+  },
+  {
+    "dataset": "curriculum",
+    "path": "src/features/direct/curriculumLV3Unit20.json",
+    "key": "learningItemId",
+    "id": "LI-LV3U20-G055",
+    "before": {
+      "learningItemId": "LI-LV3U20-G055",
+      "kind": "grammar",
+      "sourcePage": 215,
+      "pattern": "forest（可數）；woods（恆用複數，不可數）",
+      "explanationZh": "教材用法標記；例句與教材題目尚未提供。",
+      "review": "source_checked_text_only",
+      "practiceMode": "read_only"
+    },
+    "after": {
+      "pattern": "forest（可數）；woods（複數名詞，指樹林）"
+    },
+    "reason": "A：woods 的樹林義為複數名詞，不應標成不可數的木材 wood；只更正該詞性標記，原書印刷記錄保留。",
+    "evidence": [
+      "https://dictionary.cambridge.org/dictionary/english/wood"
+    ],
+    "fieldEvidence": {
+      "pattern": [
+        {
+          "proposal": "U20-P215-LI-LV3U20-G055",
+          "originFindingIds": [
+            "U20-P215-LI-LV3U20-G055"
+          ],
+          "reason": "A：woods 的樹林義為複數名詞，不應標成不可數的木材 wood；只更正該詞性標記，原書印刷記錄保留。",
+          "sources": [
+            {
+              "type": "source_photo",
+              "filename": "20260815_111004.jpg",
+              "page": 215,
+              "sha256": "a2247f122d9256ad99b25c2c69cfd78823c725095f936c4a6223d3d1755b718c"
+            },
+            {
+              "type": "dictionary",
+              "url": "https://dictionary.cambridge.org/dictionary/english/wood",
+              "verification": "search-index excerpt; direct Cambridge fetch returned 403"
+            }
+          ],
+          "beforePresent": true
+        }
+      ]
+    }
+  }
+]''')
+_U20_PATTERN_IDS = {p['id'] for p in _U20_PATTERN_PATCHES}
+
+def verified_u20_pattern_patch(manifest, patch):
+    return (manifest.get('unit') == 'LV3-U20' and patch.get('dataset') == 'curriculum'
+            and any(_u19_json_equal(patch, expected) for expected in _U20_PATTERN_PATCHES))
+
+def verified_u20_source_patch(manifest, patch):
+    return manifest.get('unit') == 'LV3-U20' and _u19_json_equal(patch, _U20_SOURCE_PATCH)
+
+def validate_u20_source_contract(manifest):
+    require(manifest.get('unit') == 'LV3-U20', 'Invalid U20 supplemental source owner')
+    require(manifest.get('collections', {}).get('source') == _U20_SOURCE_COLLECTION
+            and manifest.get('files', {}).get(_U20_SOURCE_PATH) == _U20_SOURCE_GUARD,
+            'Invalid U20 supplemental source file contract')
+    patches = [p for p in manifest.get('patches', []) if p.get('dataset') == 'source']
+    require(len(patches) == 1 and verified_u20_source_patch(manifest, patches[0]),
+            'Invalid U20 supplemental source patch contract')
+
+def admit_u20_source_before(previous_inputs, anchor_inputs, predecessor, previous_hash, manifest):
+    validate_u20_source_contract(manifest)
+    require(isinstance(predecessor, dict) and predecessor.get('unit') == 'LV3-U19'
+            and predecessor.get('status') == 'committed'
+            and previous_hash == _U20_PARENT_MANIFEST_HASH
+            and manifest.get('parentManifestHash') == previous_hash,
+            'Invalid U20 supplemental source predecessor')
+    require(len(anchor_inputs) == 144
+            and not {_U18_SOURCE_PATH, _U19_SOURCE_PATH, _U20_SOURCE_PATH} & set(anchor_inputs)
+            and set(previous_inputs) == set(anchor_inputs) | {_U18_SOURCE_PATH, _U19_SOURCE_PATH}
+            and len(previous_inputs) == 146
+            and previous_inputs.get(_U18_SOURCE_PATH) == _U18_SOURCE_GUARD['afterByteHash']
+            and previous_inputs.get(_U19_SOURCE_PATH) == _U19_SOURCE_GUARD['afterByteHash']
+            and _U20_SOURCE_PATH not in previous_inputs,
+            'Invalid U20 supplemental source input domain')
+    return {**previous_inputs, _U20_SOURCE_PATH: _U20_SOURCE_GUARD['beforeByteHash']}
+
 def unit_input_paths(root, unit):
     """Preserve historical144/145 domains; carry both admitted sources from U19."""
     number = new_unit_number(unit)
@@ -2291,6 +2526,8 @@ def unit_input_paths(root, unit):
         paths = paths | {_U18_SOURCE_PATH}
     if number is not None and number >= 19:
         paths = paths | {_U19_SOURCE_PATH}
+    if number is not None and number >= 20:
+        paths = paths | {_U20_SOURCE_PATH}
     return paths
 
 def verified_u18_source_patch(manifest, patch):
@@ -2337,6 +2574,8 @@ def validate_manifest(manifest, scope=None):
                      'notes': ('public/data/v1/notes.json', 'noteId')}
     if manifest['unit'] == 'LV3-U16':
         allowed_roots['senses'] = ('public/data/v1/senses.json', 'senseId')
+    if manifest['unit'] == 'LV3-U20':
+        validate_u20_source_contract(manifest)
     if manifest['unit'] == 'LV3-U19':
         validate_u19_source_contract(manifest)
     if manifest['unit'] == 'LV3-U18':
@@ -2349,7 +2588,8 @@ def validate_manifest(manifest, scope=None):
                     and col['rowsField'] is None, 'Global collection contract mismatch')
         elif name == 'source':
             require((manifest['unit'] == 'LV3-U18' and col == _U18_SOURCE_COLLECTION)
-                    or (manifest['unit'] == 'LV3-U19' and col == _U19_SOURCE_COLLECTION),
+                    or (manifest['unit'] == 'LV3-U19' and col == _U19_SOURCE_COLLECTION)
+                    or (manifest['unit'] == 'LV3-U20' and col == _U20_SOURCE_COLLECTION),
                     'Unsupported source collection')
         else:
             require(name in {'curriculum', 'grammarQuestions'}, 'Unsupported collection')
@@ -2412,7 +2652,10 @@ def validate_manifest(manifest, scope=None):
             require(u16_exact, 'Incomplete U16 exact review contract')
         allowed_fields = field_allow[p['dataset']]
         if p['dataset'] == 'source':
-            if manifest['unit'] == 'LV3-U19':
+            if manifest['unit'] == 'LV3-U20':
+                require(verified_u20_source_patch(manifest, p), 'Incomplete exact U20 source contract')
+                allowed_fields = {'chapterMeaningsZh'}
+            elif manifest['unit'] == 'LV3-U19':
                 require(verified_u19_source_patch(manifest, p), 'Incomplete exact U19 source contract')
                 allowed_fields = {'sourcePos'}
             else:
@@ -2426,6 +2669,11 @@ def validate_manifest(manifest, scope=None):
         if verified_u11_review_patch(manifest, p, 'examples'):
             allowed_fields = {'sentenceZh'}
         if p['dataset'] == 'curriculum':
+            if manifest['unit'] == 'LV3-U20':
+                require(isinstance(p.get('fieldEvidence'), dict), 'Invalid U20 field evidence object')
+                if (p['id'] in _U20_PATTERN_IDS or p['before'].get('learningItemId') in _U20_PATTERN_IDS
+                        or 'pattern' in p['fieldEvidence'] or 'pattern' in p['after']):
+                    require(verified_u20_pattern_patch(manifest, p), 'Incomplete U20 pattern contract')
             if manifest['unit'] == 'LV3-U14':
                 require(isinstance(p.get('fieldEvidence'), dict), 'Invalid U14 field evidence object')
                 if (p['id'] in _U14_PATTERN_IDS or p['before'].get('learningItemId') in _U14_PATTERN_IDS
@@ -2462,6 +2710,8 @@ def validate_manifest(manifest, scope=None):
                 allowed_fields = {'pattern', 'explanationZh'}
             if kind == 'grammar' and verified_u14_pattern_patch(manifest, p):
                 allowed_fields = {'pattern', 'explanationZh'}
+            if kind == 'grammar' and verified_u20_pattern_patch(manifest, p):
+                allowed_fields = set(p['after'])
             if kind == 'grammar' and u16_exact:
                 allowed_fields = {'pattern', 'explanationZh'}
             if 'meaningSource' in p['after']:
@@ -2606,6 +2856,8 @@ def load_chain(root):
                 previous_inputs = admit_u18_source_before(previous_inputs, anchor['inputs'], loaded[-1][0] if loaded else None, previous, manifest)
             if manifest['unit'] == 'LV3-U19':
                 previous_inputs = admit_u19_source_before(previous_inputs, anchor['inputs'], loaded[-1][0] if loaded else None, previous, manifest)
+            if manifest['unit'] == 'LV3-U20':
+                previous_inputs = admit_u20_source_before(previous_inputs, anchor['inputs'], loaded[-1][0] if loaded else None, previous, manifest)
             changed = set(manifest['files'])
             require(set(manifest['unchangedInputs']) == set(previous_inputs) - changed - DERIVED,
                     'Chain input set mismatch')
@@ -2695,7 +2947,8 @@ def project_checkpoint(root, destination, target='LV3-U01'):
     # Frozen explicit owners only; never discover sources by glob.
     for owner, source_path, expected_guard in (
             ('LV3-U18', _U18_SOURCE_PATH, _U18_SOURCE_GUARD),
-            ('LV3-U19', _U19_SOURCE_PATH, _U19_SOURCE_GUARD)):
+            ('LV3-U19', _U19_SOURCE_PATH, _U19_SOURCE_GUARD),
+            ('LV3-U20', _U20_SOURCE_PATH, _U20_SOURCE_GUARD)):
         supplementary = [x for x in loaded if x[0].get('unit') == owner]
         label = owner.removeprefix('LV3-')
         require(len(supplementary) <= 1, f'Duplicate {label} source guard owner')

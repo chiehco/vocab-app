@@ -1,0 +1,11 @@
+import {expect,it} from 'vitest';
+import {validateAuditScope,verifiedU20PatternPatch,type AuditPatch} from './lv3Audit.testSupport';
+import {sourceManifest,sourceScope} from './lv3Unit20SourceContract.testSupport';
+import frozen from '../../../scripts/fixtures/lv3-u20-pattern-contract-test.json';
+const patches=frozen.patches as unknown as AuditPatch[];
+function manifest(){const {m}=sourceManifest();const path='src/features/direct/curriculumLV3Unit20.json';m.collections!.curriculum={path,key:'learningItemId',rowsField:'learningItems'};m.files![path]={beforeHash:'1'.repeat(64),afterHash:'2'.repeat(64),beforeByteHash:'3'.repeat(64),afterByteHash:'4'.repeat(64)};m.patches.push(...structuredClone(patches));return {m,s:sourceScope(m)};}
+it('accepts only the three exact reviewed U20 grammar errata',()=>{const {m,s}=manifest();validateAuditScope(m,s);expect(patches.map(p=>p.id).sort()).toEqual(['LI-LV3U20-G023','LI-LV3U20-G051','LI-LV3U20-G055']);for(const p of patches){expect(Object.keys(p.after)).toEqual(['pattern']);expect(verifiedU20PatternPatch(m,p)).toBe(true);}});
+it.each(patches.flatMap((_,index)=>['id','reason','evidence','before','after','fieldEvidence'].map(field=>({index,field}))))('rejects complete-patch drift $index $field after rescope',({index,field})=>{const {m}=manifest();const p=m.patches[index+1] as unknown as Record<string,unknown>;p[field]=field==='id'?'LI-LV3U20-G001':field==='reason'?'changed':field==='evidence'?['https://example.invalid/unreviewed']:{};expect(()=>validateAuditScope(m,sourceScope(m))).toThrow();});
+it.each(patches)('does not grant other units or extra explanation fields for $id',p=>{const {m}=manifest();expect(verifiedU20PatternPatch({...m,unit:'LV3-U21'},p)).toBe(false);const q=structuredClone(p);q.after.explanationZh='unreviewed';expect(verifiedU20PatternPatch(m,q)).toBe(false);});
+it('rejects reserved row disguised as explanation only',()=>{const {m}=manifest();m.patches[1].after={explanationZh:'unreviewed'};m.patches[1].fieldEvidence={explanationZh:[{sources:['test']}]};expect(()=>validateAuditScope(m,sourceScope(m))).toThrow();});
+it('rejects numeric one replacing boolean evidence',()=>{const {m}=manifest(),q=structuredClone(patches[0]);(q.fieldEvidence!.pattern[0] as Record<string,unknown>).beforePresent=1;expect(verifiedU20PatternPatch(m,q)).toBe(false);});

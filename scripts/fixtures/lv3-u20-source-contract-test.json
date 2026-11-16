@@ -1,0 +1,63 @@
+{
+  "collection": {
+    "path": "scripts/sources/LV3Unit20.json",
+    "key": "word",
+    "rowsField": "headwords"
+  },
+  "guard": {
+    "beforeHash": "6ee2803d21f1a05a0f6e91cca2075cb32cc12838dd4696bb1b645d31549e0dee",
+    "afterHash": "372c1551bf06c8a84260f219e6de0c286e61ffe0f23df4941cd06bb4871b3176",
+    "beforeByteHash": "c9763873e9fcfb073d0786730187f3cfbb64bc5e5523ae74acca28be6e3121c8",
+    "afterByteHash": "46287b15281657a93cc8526a65b72b4bec449e229fe6f0f60dd51aa6f3bd1886"
+  },
+  "patch": {
+    "dataset": "source",
+    "path": "scripts/sources/LV3Unit20.json",
+    "key": "word",
+    "id": "violet",
+    "before": {
+      "word": "violet",
+      "sourcePage": 217,
+      "printedNumber": 31,
+      "role": "main",
+      "sourcePos": "n./adj.",
+      "chapterMeaningsZh": "紫羅蘭；紫羅藍色的",
+      "officialWordId": "W002967",
+      "officialWord": "violet",
+      "mappingEvidence": "exact_headword"
+    },
+    "after": {
+      "chapterMeaningsZh": "紫羅蘭；紫羅蘭色的"
+    },
+    "reason": "p217 實際印為紫羅蘭色的。先擴充 U20 source guard 才能套用，不繞過。",
+    "evidence": [
+      "https://dictionary.cambridge.org/dictionary/english/violet"
+    ],
+    "fieldEvidence": {
+      "chapterMeaningsZh": [
+        {
+          "proposal": "U20-P217-violet",
+          "originFindingIds": [
+            "U20-P217-violet"
+          ],
+          "reason": "p217 實際印為紫羅蘭色的。先擴充 U20 source guard 才能套用，不繞過。",
+          "sources": [
+            {
+              "type": "source_photo",
+              "filename": "20260815_111022.jpg",
+              "page": 217,
+              "sha256": "7b0a023dee484f7f6b3ba2482805c09d0ed7bd8e2d9e72c371828c75abba14a6"
+            },
+            {
+              "type": "dictionary",
+              "url": "https://dictionary.cambridge.org/dictionary/english/violet",
+              "verification": "search-index excerpt; direct Cambridge fetch returned 403"
+            }
+          ],
+          "beforePresent": true
+        }
+      ]
+    }
+  },
+  "parentManifestHash": "7c11faa99fdd572f42d8fac153ec3b743b87509d1d56315b9e7d67c950a2d60c"
+}

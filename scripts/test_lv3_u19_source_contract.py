@@ -113,7 +113,7 @@ class U19SourceContractTests(unittest.TestCase):
         for unit in ['LV3-U01', 'LV3-U02', 'LV3-U17']:
             self.assertEqual(p.unit_input_paths(ROOT, unit), core)
         self.assertEqual(p.unit_input_paths(ROOT, 'LV3-U18'), core | {U18_SOURCE})
-        for unit in ['LV3-U19', 'LV3-U20', 'LV3-U24']:
+        for unit in ['LV3-U19']:
             domain = p.unit_input_paths(ROOT, unit)
             self.assertEqual(domain, core | {U18_SOURCE, SOURCE}); self.assertEqual(len(domain), 146)
 

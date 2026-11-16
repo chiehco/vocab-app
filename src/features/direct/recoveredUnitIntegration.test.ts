@@ -90,9 +90,9 @@ function stable(value: unknown): unknown {
 }
 const hash = (value: unknown) => createHash('sha256').update(JSON.stringify(stable(value))).digest('hex');
 
-// All 131 direct JSON files belong to the authenticated checkpoint. Seventeen
+// All 131 direct JSON files belong to the authenticated checkpoint. Eighteen
 // have later audited changes; rereading the complete migration proof for each
-// of the other 114 files adds no coverage. Their actual bytes remain guarded.
+// of the other 113 files adds no coverage. Their actual bytes remain guarded.
 function historicalDirectProjection() {
   const chain = loadLV3Chain();
   expect(auditHash(lv3Checkpoint)).toBe('6008609dda537f69ef0880d6482c713b1e6e75ec0fa8c3a4af71cdee9b08e4f0');
@@ -111,13 +111,14 @@ function historicalDirectProjection() {
     'src/features/direct/curriculumLV3Unit17.json',
     'src/features/direct/curriculumLV3Unit18.json',
     'src/features/direct/curriculumLV3Unit19.json',
+    'src/features/direct/curriculumLV3Unit20.json',
     'src/features/direct/curriculumLV3Unit4.json', 'src/features/direct/curriculumLV3Unit5.json',
     'src/features/direct/curriculumLV3Unit6.json', 'src/features/direct/curriculumLV3Unit7.json',
     'src/features/direct/curriculumLV3Unit8.json', 'src/features/direct/curriculumLV3Unit9.json',
     'src/features/direct/curriculumUnit2.json',
   ]);
   expect(paths).toHaveLength(131);
-  expect(paths.filter(path => !changed.has(path))).toHaveLength(114);
+  expect(paths.filter(path => !changed.has(path))).toHaveLength(113);
   const project = (path: string, actualText: string) => {
     if (!paths.includes(path)) throw new Error('Unregistered out-of-domain direct JSON path');
     const text = actualText.replace(/\r\n/g, '\n');
@@ -130,9 +131,9 @@ function historicalDirectProjection() {
 
 const historicalFileBatches = [
   {label: 'changed files 1-8', changed: true, start: 0, end: 8},
-  {label: 'changed files 9-17', changed: true, start: 8, end: 17},
+  {label: 'changed files 9-18', changed: true, start: 8, end: 18},
   {label: 'unchanged files 1-57', changed: false, start: 0, end: 57},
-  {label: 'unchanged files 58-114', changed: false, start: 57, end: 114},
+  {label: 'unchanged files 58-113', changed: false, start: 57, end: 113},
 ] as const;
 
 function historicalBatchPaths(paths: string[], changed: Set<string>, batch: typeof historicalFileBatches[number]) {
@@ -143,7 +144,7 @@ it('partitions all historical direct files and baseline units exactly once', () 
   const {paths, changed} = historicalDirectProjection();
   const batches = historicalFileBatches.map(batch => historicalBatchPaths(paths, changed, batch));
   const coveredPaths = batches.flat();
-  expect(batches.map(batch => batch.length)).toEqual([8, 9, 57, 57]);
+  expect(batches.map(batch => batch.length)).toEqual([8, 10, 57, 56]);
   expect(coveredPaths).toHaveLength(131);
   expect(new Set(coveredPaths).size).toBe(131);
   expect([...coveredPaths].sort()).toEqual(paths);
