@@ -6,6 +6,7 @@ import lv1Images from './lv1ReviewedImages.json';
 import lv3Unit2 from '../direct/curriculumUnit2.json';
 import lv3Review from './lv3ApprovedReview.json';
 import exampleImages from './approvedExampleImages.json';
+import lv1U16ExampleImages from './lv1U16ExampleImages.json';
 import lv2U27ExampleImages from './lv2U27ExampleImages.json';
 import u15ExampleImages from './lv3U15ExampleImages.json';
 import u16ExampleImages from './lv3U16ExampleImages.json';
@@ -66,6 +67,8 @@ export function approvedWordIllustration(word: string, wordId: string) {
     ?? u15ExampleImages.find(card => card.officialWordId === wordId
       && card.word === word.trim().toLowerCase())?.illustration
     ?? u16ExampleImages.find(card => card.officialWordId === wordId
+      && card.word === word.trim().toLowerCase())?.illustration
+    ?? lv1U16ExampleImages.find(card => card.officialWordId === wordId
       && card.word === word.trim().toLowerCase())?.illustration;
 }
 
@@ -98,6 +101,8 @@ export function approvedCurriculumIllustration(word: string, src: string) {
     ?? u15ExampleImages.find(card => card.word === word.trim().toLowerCase()
       && path.endsWith('/' + card.illustration.path))?.illustration
     ?? u16ExampleImages.find(card => card.word === word.trim().toLowerCase()
+      && path.endsWith('/' + card.illustration.path))?.illustration
+    ?? lv1U16ExampleImages.find(card => card.word === word.trim().toLowerCase()
       && path.endsWith('/' + card.illustration.path))?.illustration;
 }
 
