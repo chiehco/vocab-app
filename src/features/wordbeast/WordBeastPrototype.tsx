@@ -1,7 +1,8 @@
 import { useUpcomingIllustrations } from "./useUpcomingIllustrations";
 import { approvedWordIllustration } from '../vocabulary/approvedCurriculum';
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
+import ExamTaskNextLink from "../exam/ExamTaskNextLink";
 import { useLiveQuery } from "dexie-react-hooks";
 import { getKnownWords, getCardState } from "../../db/progressIdentity";
 import { contentDb } from "../../db/contentDb";
@@ -84,6 +85,8 @@ type Phase = "encounter" | "binding" | "archive";
 
 export default function WordBeastPrototype() {
   const today = useToday();
+  const [params] = useSearchParams();
+  const examTask = params.get("task") === "new";
   const source = useLiveQuery(async (): Promise<CaptureData> => {
     const [words, priorities, examples, relations, media, knownKeys, plan] = await Promise.all([
       contentDb.words.toArray(),
@@ -130,6 +133,11 @@ export default function WordBeastPrototype() {
   async function answer(choice: string) {
     if (!current || answeringRef.current || phase !== "encounter") return;
     const correct = choice === current.record.word;
+    // A task word is still unfinished if the learner leaves after an incorrect guess.
+    if (examTask && !correct) {
+      setWrongChoice(choice);
+      return;
+    }
     // 行動瀏覽器常會阻擋 await 之後才觸發的語音；在直接點擊事件內先播放。
     if (correct && autoPronounce) speak(current.record.word);
     answeringRef.current = true;
@@ -167,7 +175,7 @@ export default function WordBeastPrototype() {
   function restart() { setSelectedBeast(null); setWrongChoice(null); setEncounterIndex(0); setPhase("encounter"); }
 
   if (!beasts) return <div className="wordbeast-page capture-state"><i /><h1>正在尋找字獸</h1><p>祭司正在展開今日遭遇名冊。</p></div>;
-  if (beasts.length === 0) return <div className="wordbeast-page capture-state"><span>封</span><h1>目前沒有新單字</h1><p>{source?.remaining === 0 ? "今天先不增加新字；可能已達今日份量，或需要先完成到期複習。" : "目前沒有尚未學過的 S+A 圖卡；你仍可前往複習或練習。"}</p><Link to="/review">前往複習</Link></div>;
+  if (beasts.length === 0) return <div className="wordbeast-page capture-state"><span>封</span><h1>目前沒有新單字</h1><p>{source?.remaining === 0 ? "今天先不增加新字；可能已達今日份量，或需要先完成到期複習。" : "目前沒有尚未學過的 S+A 圖卡；你仍可前往複習或練習。"}</p>{examTask ? <ExamTaskNextLink className="seal-state-action" /> : <Link to="/review">前往複習</Link>}</div>;
 
   if (phase === "archive") {
     return (
@@ -175,12 +183,14 @@ export default function WordBeastPrototype() {
         <header className="archive-header"><Link to="/" className="wordbeast-back">←</Link><div><p className="wordbeast-eyebrow">萬詞譜・今日新錄</p><h1>今日新字</h1></div><button className="archive-replay" onClick={restart}>重看</button></header>
         <main className="archive-main">
           <p className="archive-note">今日 {beasts.length} 隻字獸已留下真名。考頻星星代表歷屆重要度，LV 代表學習難度。</p>
-          <p className="archive-note"><Link to="/review">前往複習</Link>，確認記憶後安排下次複習。</p>
+          {examTask ? <div className="archive-note"><ExamTaskNextLink className="seal-state-action" /></div>
+            : <p className="archive-note"><Link to="/review">前往複習</Link>，確認記憶後安排下次複習。</p>}
           <div className="archive-grid">
             {beasts.map((beast, index) => <button className="word-entry captured" style={{ animationDelay: `${index * 55}ms` }} key={beast.record.word} onClick={() => openBeast(beast)}>
               <span className="entry-index">{String(index + 1).padStart(2, "0")}</span><ExamTierBadge tier={beast.tier} compact /><ResilientBeastImage src={beast.image} word={beast.record.word} alt={`${beast.record.word} 字獸`} /><span className="entry-name">{beast.record.word.toUpperCase()}</span><span className="entry-meaning">{encounterMeaning(beast)}・{encounterPos(beast)}</span><span className="entry-seal">錄</span>
             </button>)}
           </div>
+          <p className="archive-note"><Link to="/wordbeast/lv1">LV1 圖卡盲測</Link></p>
         </main>
         {selectedBeast && <div className="detail-veil" role="dialog" aria-modal="true"><section className="beast-dossier"><button className="detail-close" onClick={() => setSelectedBeast(null)}>×</button><div className="dossier-portrait"><ExamTierBadge tier={selectedBeast.tier} /><ResilientBeastImage src={selectedBeast.image} word={selectedBeast.record.word} alt={`${selectedBeast.record.word} 字獸`} /><span>記得很牢</span></div><div className="dossier-copy"><p className="wordbeast-eyebrow">單字說明・{encounterPos(selectedBeast)}</p><h2>{selectedBeast.record.word}</h2><button className="pronounce" onClick={() => speak(selectedBeast.record.word)}>♪　再聽一次發音</button><p className="dossier-meaning"><small>本題的意思</small>{encounterMeaning(selectedBeast)}</p><p className="dossier-all-meanings"><b>完整意思</b>{selectedBeast.record.meaningZh || "中文意思待補"}</p><div className="dossier-rule" /><dl>{selectedBeast.example && <div><dt>例句</dt><dd>{selectedBeast.example.sentenceEn}</dd><dd className="translation">{selectedBeast.example.sentenceZh}</dd></div>}{selectedBeast.related.length > 0 && <div><dt>同字根的字</dt><dd className="related-traces">{selectedBeast.related.map((item) => <span className="related-trace" key={item.word}><span><strong>{item.word}</strong><small>{item.relation}</small></span><b>{item.meaning}</b></span>)}</dd></div>}</dl></div></section></div>}
       </div>
@@ -188,8 +198,8 @@ export default function WordBeastPrototype() {
   }
 
   return current && (
-    <div className={`wordbeast-page encounter-page ${phase}`}>
-      <Link to="/" className="wordbeast-back light">×</Link><Link to="/wordbeast/lv1" className="lv1-pilot-entry">LV1 圖卡盲測 <span>30</span></Link><div className="mist mist-one" /><div className="mist mist-two" />
+    <div className={`wordbeast-page encounter-page ${phase}`} data-defer-app-update>
+      <Link to="/" className="wordbeast-back light">×</Link><div className="mist mist-one" /><div className="mist mist-two" />
       <header className="encounter-header"><p className="wordbeast-eyebrow">S+A・今日新字　{encounterIndex + 1}/{beasts.length}</p><h1>{phase === "binding" ? "答案揭曉" : "字獸來襲"}</h1><div className="encounter-rule" /></header>
       {saveError && <p className="encounter-feedback visible" role="alert">{saveError}</p>}
       <main className="encounter-main"><div className="beast-stage"><ExamTierBadge tier={current.tier} /><div className="ink-halo" /><div key={current.record.word} className="beast-visual"><ResilientBeastImage src={current.image} word={current.record.word} alt={`${current.record.word} 字獸`} /></div>{phase === "binding" && <><div className="binding-ring" /><div className="true-name">{current.record.word.toUpperCase()}</div><div className="capture-seal">錄</div></>}</div>

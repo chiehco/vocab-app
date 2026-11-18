@@ -1,47 +1,22 @@
-import { differenceInCalendarDays, format, parseISO } from "date-fns";
 import { useLiveQuery } from "dexie-react-hooks";
 import { Link } from "react-router-dom";
-import { contentDb } from "../../db/contentDb";
-import { getLogicalCardStates } from "../../db/progressIdentity";
-import { DEFAULT_SETTINGS, getSetting, progressDb } from "../../db/progressDb";
 import { useToday } from "../../hooks/useToday";
-import { selectDailyWords } from "../wordbeast/dailyCapture";
-import { buildExamHubProgress } from "./examHub";
+import { getExamDetails, getExamOverview } from "./examOverview";
 import "./exam-hub.css";
-import { estimateCoverage } from "./studyPlan";
-import { getDailyLearningPlan } from "../../srs/dailyPlan";
 
 export default function ExamHubScreen() {
   const today = useToday();
-  const overview = useLiveQuery(async () => {
-    const [priorities, cards, words, dailyCap, checkIn, examDate, dailyPlan] = await Promise.all([
-      contentDb.examPriorities.toArray(),
-      getLogicalCardStates(),
-      contentDb.words.toArray(),
-      getSetting<number>("dailyNewWordCap"),
-      progressDb.checkIns.get(today),
-      getSetting<string>("examDate"),
-      getDailyLearningPlan(today),
-    ]);
-    const installed = new Set(words.map(w=>w.word));
-    const progress = buildExamHubProgress(priorities.filter(p=>installed.has(p.word)), cards, today);
-    const remaining = dailyPlan.remainingNew;
-    const newWords = selectDailyWords({
-      words, priorities, examples: [], relations: [],
-      known: new Set(cards.map((card) => card.word)), remaining,
-    }).length;
-    return { ...progress, newWords, examDate, dailyCap, dailyPlan, practiced: checkIn?.reviewCount ?? 0 };
-  }, [today]);
+  const overview = useLiveQuery(() => getExamOverview(today), [today]);
+  const exam = useLiveQuery(() => getExamDetails(today), [today]);
 
   const total = overview?.total ?? 0;
   const learned = overview?.learned ?? 0;
   const progressPct = total ? Math.round((learned / total) * 100) : 0;
-  const examDate = overview?.examDate ?? DEFAULT_SETTINGS.examDate;
-  const daysLeft = Math.max(0, differenceInCalendarDays(parseISO(examDate), parseISO(today)));
-  const dailyCap = overview?.dailyPlan.dailyTarget ?? 8;
-  const plan = estimateCoverage(total-learned, dailyCap, daysLeft);
-  const primaryRoute = (overview?.due ?? 0) > 0 ? "/review" : (overview?.newWords ?? 0) > 0 ? "/wordbeast" : "/quiz";
-  const primaryLabel = (overview?.due ?? 0) > 0 ? `複習到期單字（${overview?.due} 個）` : (overview?.newWords ?? 0) > 0 ? `學今天的新單字（${overview?.newWords} 個）` : "開始高頻練習";
+  const plan = overview?.coverage;
+  const primaryRoute = (overview?.due ?? 0) > 0 ? "/review" : (overview?.task.new ?? 0) > 0 ? "/wordbeast" : "/quiz";
+  const primaryLabel = (overview?.due ?? 0) > 0
+    ? `開始高頻複習（${overview?.due} 個）`
+    : (overview?.task.new ?? 0) > 0 ? `學今天的新單字（${overview?.task.new} 個）` : "開始高頻練習";
 
   return (
     <div className="exam-hub-page">
@@ -50,7 +25,7 @@ export default function ExamHubScreen() {
         <p className="exam-hub-kicker">學測單字複習</p>
         <h1>千單斬</h1>
         <p className="exam-hub-lead">原 S+A 字庫，依 110–115 年考頻排序。</p>
-        <p className="exam-hub-countdown">距離學測 <strong>{daysLeft}</strong> 天<span>{format(parseISO(examDate), "yyyy.MM.dd")}</span></p>
+        {exam?.countdown && <p className="exam-hub-countdown">距離{exam.name} <strong>{exam.countdown.daysLeft}</strong> 天<span>{exam.countdown.date}</span></p>}
       </header>
 
       <main className="exam-hub-main">
@@ -60,8 +35,9 @@ export default function ExamHubScreen() {
             <span>{overview ? `已完成 ${overview.practiced} 題` : "整理中"}</span>
           </div>
           <dl>
-            <div><dt>到期複習</dt><dd>{overview?.due ?? "—"}<small>個</small></dd></div>
-            <div><dt>今日新字</dt><dd>{overview?.newWords ?? "—"}<small>個</small></dd></div>
+            <div><dt>到期複習</dt><dd>{overview?.task.due ?? "—"}<small>個</small></dd></div>
+            <div><dt>今日新字</dt><dd>{overview?.task.new ?? "—"}<small>個</small></dd></div>
+            <div><dt>當日再確認</dt><dd>{overview?.task.confirm ?? "—"}<small>個</small></dd></div>
           </dl>
           <Link className="exam-primary-action" to={primaryRoute}>{primaryLabel}<span aria-hidden="true">→</span></Link>
         </section>
@@ -82,7 +58,7 @@ export default function ExamHubScreen() {
         <section className="exam-plan" aria-labelledby="exam-plan-title">
           <div className="exam-section-head"><h2 id="exam-plan-title">每天 15–20 分鐘</h2></div>
           <p>先做到期複習，再學新字。以 15 分鐘估算，另留約 5 分鐘給較難的字。</p>
-          {!overview ? <p role="status">正在計算學習安排…</p> : <>
+          {!overview || !plan ? <p role="status">正在計算學習安排…</p> : <>
             <p>尚未開始 {plan.remaining} 字；一般每日目標 {plan.daily} 字，依複習量下調。</p>
             <p>今天還可加入 {overview.dailyPlan.remainingNew} 個新字；剩餘複習與新字約需 {overview.dailyPlan.estimatedRemainingMinutes} 分鐘。</p>
             {overview.dailyPlan.overBudget && <p className="exam-plan-note">今天的複習量較多，暫停加入新字。可分次完成，到期的字都會保留。</p>}
@@ -103,7 +79,7 @@ export default function ExamHubScreen() {
           <Link to="/review"><div><b>高頻複習</b><small>依記憶曲線複習今天到期的字</small></div><i aria-hidden="true">→</i></Link>
           <Link to="/quiz"><div><b>高頻題型練習</b><small>看字、看義、看圖與例句填空</small></div><i aria-hidden="true">→</i></Link>
           <Link to="/browse"><div><b>高頻單字總表</b><small>依考頻排名查找 S+A 單字</small></div><i aria-hidden="true">→</i></Link>
-          <Link to="/settings"><div><b>學測日期與字級</b><small>調整倒數日期和手機閱讀大小</small></div><i aria-hidden="true">→</i></Link>
+          <Link to="/settings"><div><b>考試日期與字級</b><small>調整倒數日期和手機閱讀大小</small></div><i aria-hidden="true">→</i></Link>
         </section>
       </main>
     </div>

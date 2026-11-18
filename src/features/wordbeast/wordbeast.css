@@ -50,37 +50,6 @@
   color: #f6e6c1;
 }
 
-.lv1-pilot-entry {
-  position: fixed;
-  z-index: 100;
-  top: max(1rem, env(safe-area-inset-top));
-  right: 1rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  min-height: 2.3rem;
-  padding: 0.4rem 0.5rem 0.4rem 0.8rem;
-  color: #f6e6c1;
-  border: 1px solid rgba(235, 211, 164, 0.27);
-  border-radius: 999px;
-  background: rgba(23, 16, 11, 0.58);
-  backdrop-filter: blur(8px);
-  text-decoration: none;
-  font: 700 0.64rem "Noto Serif TC", serif;
-  letter-spacing: 0.06em;
-}
-
-.lv1-pilot-entry span {
-  display: grid;
-  width: 1.45rem;
-  height: 1.45rem;
-  place-items: center;
-  border-radius: 50%;
-  color: #f4e6c5;
-  background: #9f473d;
-  font: 800 0.58rem "DM Sans", sans-serif;
-}
-
 /* Encounter */
 .encounter-page {
   background:
@@ -581,7 +550,6 @@ button.word-entry { cursor: pointer; }
 
 /* Mobile reading floor for the encounter flow. Moved from src/mobile-readability.css (UI 收斂 batch D); values unchanged. */
 @media (max-width: 640px) {
-  .lv1-pilot-entry,
   .naming-instruction,
   .name-choices button small,
   .encounter-feedback {

@@ -31,6 +31,8 @@ import { getDueReviewQueue } from '../../srs/dueReview';
 import UsagePatternList from '../vocabulary/UsagePatternList';
 import StudyActions from '../../components/StudyActions';
 import { useCardSwipe } from '../../hooks/useCardSwipe';
+import { getExamTaskReviewQueue } from '../exam/examOverview';
+import ExamTaskNextLink from '../exam/ExamTaskNextLink';
 
 const LEVEL_CHOICES = [TOP_EXAM_FILTER, "全部", "LV1", "LV2", "LV3", "LV4", "LV5", "LV6"];
 
@@ -81,6 +83,8 @@ function ScreenState({ type, level }: { type: "loading" | "empty"; level: string
 export default function ReviewScreen() {
   const [params] = useSearchParams();
   const dueOnly = params.get('due') === '1';
+  const taskParam = params.get('task');
+  const task = taskParam === 'due' || taskParam === 'confirm' ? taskParam : null;
   const today = useToday();
   const [queue, setQueue] = useState<QueueItem[] | null>(null);
   const [index, setIndex] = useState(0);
@@ -119,6 +123,11 @@ export default function ReviewScreen() {
     sessionId.current = crypto.randomUUID();
     sessionStarted.current = false;
     const loadQueue = async () => {
+      if (task) {
+        const items = await getExamTaskReviewQueue(today, task);
+        if (!cancelled) setQueue(items);
+        return;
+      }
       if (dueOnly) {
         const due = await getDueReviewQueue(today);
         const priorities = levelSel === TOP_EXAM_FILTER ? new Set(standaloneStudyPriorities(await contentDb.examPriorities.toArray()).map(p => p.word)) : undefined;
@@ -137,18 +146,19 @@ export default function ReviewScreen() {
     };
     loadQueue();
     return () => { cancelled = true; };
-  }, [levelSel, today, dueOnly]);
+  }, [levelSel, today, dueOnly, task]);
 
   if (queue === null) return <ScreenState type="loading" level={levelSel} />;
   if (queue.length === 0) {
     return (
       <div className="seal-review seal-state-page">
         <header className="seal-review-header"><Link to="/">← 首頁</Link><span>複習</span><b /></header>
-        <LevelFilter selected={levelSel} onChange={setLevelSel} />
+        {!task && <LevelFilter selected={levelSel} onChange={setLevelSel} />}
         <div className="seal-state-mark empty" aria-hidden="true">✓</div>
         <h1>今天的複習已完成</h1>
         <p>{levelSel === "全部" ? "今天沒有要複習的單字。" : levelSel === TOP_EXAM_FILTER ? "今天沒有待複習的 S+A 高頻單字。" : `${levelSel} 今天沒有要複習的單字。`}</p>
-        <Link to="/" className="seal-state-action">返回首頁</Link>
+        {task ? <ExamTaskNextLink className="seal-state-action" />
+          : <Link to="/" className="seal-state-action">返回首頁</Link>}
       </div>
     );
   }
@@ -159,9 +169,10 @@ export default function ReviewScreen() {
       <div className="seal-review seal-state-page complete">
         <header className="seal-review-header"><Link to="/">← 首頁</Link><span>複習</span><b /></header>
         <div className="seal-complete-ring" aria-hidden="true">✓</div>
-        <h1>複習完成</h1>
+        <h1>{task === 'confirm' ? '當日再確認完成' : '複習完成'}</h1>
         <p>{wasRecap ? `剛學過的 ${doneCount} 個單字已再複習一次，明天仍會照原定時間出現。` : `已完成 ${doneCount} 個單字的複習，今天的學習紀錄已保存。`}</p>
-        <Link to="/" className="seal-state-action">返回首頁</Link>
+        {task ? <ExamTaskNextLink className="seal-state-action" />
+          : <Link to="/" className="seal-state-action">返回首頁</Link>}
       </div>
     );
   }
@@ -216,14 +227,14 @@ export default function ReviewScreen() {
   }
 
   return (
-    <div className={`seal-review ${flipped ? "is-flipped" : ""}`}>
+    <div className={`seal-review ${flipped ? "is-flipped" : ""}`} data-defer-app-update>
       <header className="seal-review-header">
         <Link to="/">← 首頁</Link>
-        <span>{levelSel === TOP_EXAM_FILTER ? "高頻複習" : item.isRecap ? "今天學過的字" : "複習"}</span>
+        <span>{task === 'confirm' ? "當日再確認" : levelSel === TOP_EXAM_FILTER ? "高頻複習" : item.isRecap ? "今天學過的字" : "複習"}</span>
         <b>{String(index + 1).padStart(2, "0")} / {String(queue.length).padStart(2, "0")}</b>
       </header>
 
-      {index === 0 && !flipped && <LevelFilter selected={levelSel} onChange={setLevelSel} />}
+      {!task && index === 0 && !flipped && <LevelFilter selected={levelSel} onChange={setLevelSel} />}
 
       <div className="seal-progress"><i style={{ width: `${(index / queue.length) * 100}%` }} /><span>{item.isPractice ? "練習後再複習一次，確認記得了才排下次" : item.isRecap ? "今天再看一次，不改變下次複習時間" : `${doneCount} 個已完成複習`}</span></div>
       {saveError && <p role="alert">{saveError}</p>}

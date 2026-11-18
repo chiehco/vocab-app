@@ -53,3 +53,62 @@
 .learning-tiles a:hover { border-color: var(--ui-accent); }
 .learning-tiles strong { color: var(--ui-text); font-size: var(--ui-fs-body); }
 .learning-tiles small { color: var(--ui-muted); font-size: var(--ui-fs-secondary); line-height: 1.4; }
+
+.learning-start-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) fit-content(52%);
+  align-items: center;
+  gap: var(--ui-sp-2);
+}
+.learning-start-heading h1 {
+  margin: 0;
+  font-size: var(--ui-fs-title);
+  overflow-wrap: anywhere;
+}
+.learning-countdown-toggle {
+  min-height: var(--ui-tap);
+  min-width: 0;
+  max-width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-size: var(--ui-fs-secondary);
+  font-weight: 700;
+  color: var(--ui-accent);
+  overflow-wrap: anywhere;
+  text-align: end;
+  cursor: pointer;
+}
+.learning-task-steps {
+  list-style: none;
+  margin: var(--ui-sp-4) 0 0;
+  padding: 0;
+}
+.learning-task-steps li {
+  display: grid;
+  grid-template-columns: 1em minmax(0, 1fr) max-content max-content;
+  gap: var(--ui-sp-2) var(--ui-sp-3);
+  align-items: center;
+  padding: var(--ui-sp-3) 0;
+  border-top: 1px solid var(--ui-border);
+}
+.learning-task-steps li[aria-current] strong, .learning-task-status {
+  color: var(--ui-accent);
+}
+.learning-task-status { text-align: center; font-size: .8em; }
+.learning-task-steps li:not([aria-current]) small,
+.learning-task-time { color: var(--ui-muted); }
+.learning-task-count { font-variant-numeric: tabular-nums; }
+.learning-task-time { text-align: center; }
+.learning-task-complete { padding-top: var(--ui-sp-3); color: var(--ui-accent); font-weight: 700; }
+.learning-countdown-panel {
+  margin-top: var(--ui-sp-4);
+  padding-top: var(--ui-sp-3);
+  border-top: 1px solid var(--ui-border);
+  font-size: var(--ui-fs-secondary);
+}
+.learning-countdown-panel dl { display: grid; gap: var(--ui-sp-2); margin: 0; }
+.learning-countdown-panel dl div { display: flex; justify-content: space-between; gap: var(--ui-sp-3); }
+.learning-countdown-panel dt { overflow-wrap: anywhere; }
+.learning-countdown-panel dd { margin: 0; white-space: nowrap; font-weight: 700; }
