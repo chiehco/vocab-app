@@ -4,11 +4,11 @@ import { sortExamWordsByPriority } from '../../quiz/examScope';
 import { findUnit, learningItems } from '../direct/model';
 import type { CustomGroup } from '../direct/model';
 
-export function workspaceWords(words:WordRecord[],group:CustomGroup|undefined,level:string,query:string) {
+export function workspaceWords(words:WordRecord[],group:CustomGroup|undefined,level:string,query:string,meanings?:ReadonlyMap<string,string>) {
   const ids=group ? new Set([...(group.wordIds??[]),...group.itemIds.flatMap(id=>{const item=learningItems.find(i=>i.learningItemId===id);return item?.officialWordId?[item.officialWordId]:[];})]) : undefined;
   const terms=query.trim().normalize('NFKC').toLowerCase().split(/\s+/).filter(Boolean);
   const ordered=ids ? [...ids].flatMap(id=>{const word=words.find(w=>w.wordId===id);return word?[word]:[];}) : words;
-  return ordered.filter(w=>(level==='all'||w.level===level)&&terms.every(t=>`${w.word} ${w.meaningZh??''}`.normalize('NFKC').toLowerCase().includes(t)));
+  return ordered.filter(w=>(level==='all'||w.level===level)&&terms.every(t=>`${w.word} ${w.meaningZh??''} ${meanings?.get(w.wordId)??''}`.normalize('NFKC').toLowerCase().includes(t)));
 }
 export interface WordList extends CustomGroup {returnTo:string}
 function validReturnTo(path:string) {

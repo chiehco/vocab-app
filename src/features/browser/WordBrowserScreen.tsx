@@ -1,8 +1,9 @@
-import { useMemo, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { useMemo } from "react";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
 import { contentDb } from "../../db/contentDb";
-import type { SenseRecord } from "../../db/types";
+import { listLimit, useWordListPosition } from './useWordListPosition';
+import { normalizeWordQuery, useWordSearchMeanings } from './useWordSearchMeanings';
 import {
   buildTopExamWordSet,
   sortExamWordsByPriority,
@@ -18,44 +19,39 @@ const LEVELS = [TOP_EXAM_FILTER, "全部", "LV1", "LV2", "LV3", "LV4", "LV5", "L
 const PAGE_SIZE = 100;
 
 export default function WordBrowserScreen() {
-  const [search, setSearch] = useState("");
+  const location = useLocation();
   const [params, setParams] = useSearchParams();
   const requestedLevel = params.get("level") ?? TOP_EXAM_FILTER;
   const level = LEVELS.includes(requestedLevel) ? requestedLevel : TOP_EXAM_FILTER;
-  function setLevel(value: string) {
+  const search = params.get('q') ?? '';
+  function update(key: string, value: string) {
     const next = new URLSearchParams(params);
-    next.set("level", value);
-    setParams(next);
+    if (key !== 'count') next.delete('count');
+    if (value) next.set(key, value);
+    else next.delete(key);
+    setParams(next, { replace: key !== 'level' });
   }
-  const [limit, setLimit] = useState(PAGE_SIZE);
+  const limit = listLimit(params, PAGE_SIZE);
   const words = useLiveQuery(() => contentDb.words.orderBy("wordId").toArray(), []);
   const priorities = useLiveQuery(() => contentDb.examPriorities.toArray(), []);
-  const senses = useLiveQuery(() => contentDb.senses.toArray(), []);
+  const { byWord, meanings, ready } = useWordSearchMeanings(words, !!search.trim());
+  const remember = useWordListPosition(ready && !!priorities);
   const priorityByWord = useMemo(() => new Map((priorities ?? []).map((row) => [row.word, row.priorityTier])), [priorities]);
   const topExamWordSet = useMemo(() => buildTopExamWordSet(priorities ?? []), [priorities]);
-  const sensesByWord = useMemo(() => {
-    const grouped = new Map<string, SenseRecord[]>();
-    for (const sense of senses ?? []) {
-      const rows = grouped.get(sense.word) ?? [];
-      rows.push(sense);
-      grouped.set(sense.word, rows);
-    }
-    return grouped;
-  }, [senses]);
 
   const filtered = useMemo(() => {
     if (!words) return [];
-    const query = search.trim().toLowerCase();
+    const query = normalizeWordQuery(search.trim());
     const matches = words.filter((word) => {
       if (level === TOP_EXAM_FILTER && !topExamWordSet.has(word.word)) return false;
       if (level !== TOP_EXAM_FILTER && level !== "全部" && word.level !== level) return false;
       if (!query) return true;
-      return word.word.toLowerCase().includes(query) || (word.meaningZh ?? "").includes(query);
+      return normalizeWordQuery([word.word, word.meaningZh, meanings.get(word.wordId)].join(' ')).includes(query);
     });
     return level === TOP_EXAM_FILTER
       ? sortExamWordsByPriority(matches, priorities ?? [])
       : matches;
-  }, [words, priorities, search, level, topExamWordSet]);
+  }, [words, priorities, search, level, topExamWordSet, meanings]);
 
   const shown = filtered.slice(0, limit);
 
@@ -70,11 +66,11 @@ export default function WordBrowserScreen() {
       <section className="archive-tools" aria-label="搜尋與篩選">
         <label className="archive-search">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m15.5 15.5 5 5" /></svg>
-          <input type="search" value={search} onChange={(event) => { setSearch(event.target.value); setLimit(PAGE_SIZE); }} placeholder="搜尋英文單字或中文意思" />
-          {search && <button onClick={() => setSearch("")} aria-label="清除搜尋">×</button>}
+          <input type="search" value={search} onChange={(event) => update("q", event.target.value)} placeholder="搜尋英文單字或中文意思" />
+          {search && <button onClick={() => update("q", "")} aria-label="清除搜尋">×</button>}
         </label>
         <div className="level-tabs" aria-label="篩選等級">
-          {LEVELS.map((item) => <button key={item} aria-pressed={level === item} onClick={() => { setLevel(item); setLimit(PAGE_SIZE); }}>{item}</button>)}
+          {LEVELS.map((item) => <button key={item} aria-pressed={level === item} onClick={() => update("level", item)}>{item}</button>)}
         </div>
       </section>
 
@@ -91,11 +87,12 @@ export default function WordBrowserScreen() {
         <>
           <ol className="archive-atlas">
             {shown.map((word) => {
-              const display = getWordDisplaySense(word, sensesByWord.get(word.word) ?? []);
+              const display = getWordDisplaySense(word, byWord.get(word.wordId) ?? []);
               const asset = getWordBeastAsset(word.wordId, word.word, word.imageWordId);
               return (
                 <li key={word.wordId}>
-                  <Link to={`/word/${word.wordId}`} aria-label={`${word.word}，${display.pos}，${display.meaning}`}>
+                  <Link id={'word-row-' + word.wordId} to={`/word/${word.wordId}`} state={{ wordListOrigin: location.pathname + location.search }}
+                    onClick={() => remember(word.wordId)} aria-label={`${word.word}，${display.pos}，${display.meaning}`}>
                     <span className="atlas-portrait">
                       {asset
                         ? <ResilientBeastImage src={asset} word={word.word} alt="" />
@@ -113,8 +110,8 @@ export default function WordBrowserScreen() {
               );
             })}
           </ol>
-          {filtered.length > limit && <button className="archive-more" onClick={() => setLimit(limit + PAGE_SIZE)}>再展開 {Math.min(PAGE_SIZE, filtered.length - limit)} 枚 <span>↓</span></button>}
-          {filtered.length === 0 && <div className="archive-empty"><span>無</span><h2>查無這個單字</h2><p>換個拼法或等級再找找看。</p></div>}
+          {filtered.length > limit && <button className="archive-more" onClick={() => update("count", String(limit + PAGE_SIZE))}>再展開 {Math.min(PAGE_SIZE, filtered.length - limit)} 枚 <span>↓</span></button>}
+          {filtered.length === 0 && <div className="archive-empty"><span>無</span><h2>查無這個單字</h2><p>換個拼法或等級再找找看。</p>{search.trim() && level !== '全部' && <button className="archive-more" onClick={() => update('level', '全部')}>搜尋全部等級</button>}</div>}
         </>
       )}
     </div>

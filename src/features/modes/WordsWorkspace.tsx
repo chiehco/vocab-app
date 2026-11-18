@@ -1,3 +1,5 @@
+import { listLimit, useWordListPosition } from '../browser/useWordListPosition';
+import { useWordSearchMeanings } from '../browser/useWordSearchMeanings';
 import { useRef,useState } from 'react';
 import { Link,useNavigate,useSearchParams } from 'react-router-dom';
 import { useLiveQuery } from 'dexie-react-hooks';
@@ -25,7 +27,10 @@ export default function WordsWorkspace(){
   const requested=params.get('src');
   const source:Source=requested==='group'||(!requested&&params.get('group'))?'group':tracks.some(t=>t.id===requested)?requested as TextbookTrack:'all';
   const query=params.get('q')??'',sort=params.get('sort')==='alpha'?'alpha':'exam';
-  const [limit,setLimit]=useState(30),[busy,setBusy]=useState(false),[error,setError]=useState('');
+  const limit = listLimit(params, 30);
+  const {meanings,ready} = useWordSearchMeanings(words, !!query.trim());
+  const remember = useWordListPosition(ready && !!groups && !!priorities);
+  const [busy,setBusy]=useState(false),[error,setError]=useState('');
   const lock=useRef(false);
 
   // 全部單字：官方 LV；7000 單／課本：出版社→等級→單元；群組：群組 id
@@ -37,20 +42,23 @@ export default function WordsWorkspace(){
   const group=groups?.find(g=>g.id===groupId);
 
   const pool=scope?{id:'',name:'',itemIds:[],wordIds:[...new Set((unit?[unit]:trackUnits).flatMap(u=>u.wordIds))],templateId:null,templateRevision:null,updatedAt:0}:group;
-  const available=source==='group'&&!group?[]:workspaceWords(words??[],pool,level,query);
+  const available=source==='group'&&!group?[]:workspaceWords(words??[],pool,level,query,meanings);
   const matches=sort==='exam'?sortWorkspaceWords(available,priorities??[]):[...available].sort((a,b)=>a.word.localeCompare(b.word,'en'));
   const title=scope?`${publisherName(scope.publisher)} ${scope.volume}${unit?` ${unitTitle(unit)}`:''}`:source==='group'?group?.name??(groupId?'群組已不存在':'選一個群組'):`全部單字${level==='all'?'':` · ${level}`}`;
 
   function update(changes:Record<string,string>){
     const next=new URLSearchParams(params);
+    if (!('count' in changes)) next.delete('count');
     for(const [key,value] of Object.entries(changes)){if(value)next.set(key,value);else next.delete(key);}
-    setParams(next,{replace:true});setLimit(30);setError('');
+    setParams(next,{replace:true});setError('');
   }
   function chooseSource(next:Source){update({src:next==='all'?'':next,level:'',pub:'',unit:'',group:next==='group'?groups?.[0]?.id??'':''});}
   function chooseScope(next:TextbookScope){update({level:next.volume,pub:next.publisher==='ivy'?'':next.publisher,unit:''});}
   async function openList(practice:boolean,startId?:string){if(lock.current||!matches.length)return;lock.current=true;setBusy(true);setError('');try{
-    const list=await saveWordList(matches,title,`/modes/words?${params.toString()}`);
-    navigate(practice?`/quiz?list=${list.id}`:`/word/${startId??matches[0].wordId}?list=${list.id}`);
+    const returnTo = '/modes/words' + (params.size ? '?' + params.toString() : '');
+    if (startId) remember(startId);
+    const list=await saveWordList(matches,title,returnTo);
+    navigate(practice?`/quiz?list=${list.id}`:`/word/${startId??matches[0].wordId}?list=${list.id}`, {state: {wordListOrigin: returnTo}});
   }catch{setError('無法開始，請重試。');}finally{lock.current=false;setBusy(false);}}
 
   const sources:{id:Source;label:string}[]=[{id:'all',label:'全部單字'},...tracks.map(t=>({id:t.id,label:t.label})),{id:'group',label:'我的群組'}];
@@ -83,11 +91,11 @@ export default function WordsWorkspace(){
     {error&&<p role="alert">{error}</p>}
     <label className="words-search"><input aria-label="搜尋目前單字" type="search" value={query} placeholder="搜尋英文或中文意思" onChange={e=>update({q:e.target.value})}/></label>
 
-    {!words||!groups?<p className="words-muted">載入字卡中…</p>:source==='group'&&groups.length===0?null:matches.length===0?<div className="words-empty"><h3>目前沒有單字</h3><p>{groupId&&!group?'這個群組可能已刪除，請重新選擇。':'換個範圍或搜尋詞試試。'}</p></div>
-      :<ul className="words-list">{matches.slice(0,limit).map(w=>{const src=getWordBeastAsset(w.wordId,w.word,w.imageWordId);return <li key={w.wordId}><button disabled={busy} onClick={()=>void openList(false,w.wordId)}>
+    {!words||!groups?<p className="words-muted">載入字卡中…</p>:source==='group'&&groups.length===0?null:matches.length===0?<div className="words-empty"><h3>目前沒有單字</h3><p>{groupId&&!group?'這個群組可能已刪除，請重新選擇。':'換個範圍或搜尋詞試試。'}</p>{source==='all' && level!=='all' && query.trim() && <button className="words-more" onClick={()=>update({level:''})}>搜尋全部等級</button>}</div>
+      :<ul className="words-list">{matches.slice(0,limit).map(w=>{const src=getWordBeastAsset(w.wordId,w.word,w.imageWordId);return <li key={w.wordId}><button id={'word-row-'+w.wordId} disabled={busy} onClick={()=>void openList(false,w.wordId)}>
         <span className="words-thumb">{src?<ResilientBeastImage src={src} word={w.word} alt="" loading="lazy"/>:<b aria-hidden="true">{w.word[0].toUpperCase()}</b>}</span>
         <span className="words-copy"><strong>{w.word}</strong><span>{w.meaningZh}</span><small>{w.level}</small></span></button></li>;})}</ul>}
-    {matches.length>limit&&<button className="words-more" onClick={()=>setLimit(limit+30)}>再顯示 {Math.min(30,matches.length-limit)} 個</button>}
+    {matches.length>limit&&<button className="words-more" onClick={()=>update({count:String(limit+30)})}>再顯示 {Math.min(30,matches.length-limit)} 個</button>}
     <footer className="words-tools"><Link to="/textbook">選單元</Link><Link to={`/units?level=${level==='all'?'LV1':level}&order=${sort==='alpha'?'alphabet':'exam'}`}>官方詞表每 30 字分組</Link><Link to="/placement">程度測驗</Link></footer>
   </div>;
 }

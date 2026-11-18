@@ -3,7 +3,7 @@ import { resolveGroupWords } from '../direct/groupScope';
 import { readWordList } from '../modes/wordLists';
 import type { WordList } from '../modes/wordLists';
 import { Fragment, useEffect, useRef, useState } from "react";
-import { Link, useParams, useSearchParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
 import { contentDb } from "../../db/contentDb";
 import { getCardState } from "../../db/progressIdentity";
@@ -66,6 +66,15 @@ export default function WordDetailScreen({ embeddedWordId }: { embeddedWordId?: 
   const wordId = embeddedWordId ?? routeWordId;
   const embedded = embeddedWordId !== undefined;
   const [params] = useSearchParams();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const origin = location.state?.wordListOrigin;
+  const listOrigin = typeof origin === 'string' && /^\/(browse|modes\/words)(?:\?|$)/.test(origin) ? origin : undefined;
+  function backToResults(event: React.MouseEvent<HTMLAnchorElement>) {
+    if (!listOrigin || event.button !== 0 || event.ctrlKey || event.metaKey || event.altKey || event.shiftKey) return;
+    event.preventDefault();
+    navigate(-1);
+  }
   const listId = embedded ? null : params.get('list');
   const groupId = embedded ? null : listId || params.get('group');
   const group = useLiveQuery<CustomGroup | WordList | undefined>(() => listId ? readWordList(listId) : groupId ? progressDb.customGroups.get(groupId) : undefined, [groupId,listId]);
@@ -221,11 +230,11 @@ export default function WordDetailScreen({ embeddedWordId }: { embeddedWordId?: 
     <div className="word-dossier-page">
       {bookmarkFailed && <p role="alert">學習位置尚未保存，請確認儲存空間後重新整理。</p>}
       {!embedded && <header className="word-dossier-nav">
-        <Link to="/browse">← 單字總表</Link><span>{word.wordId}</span><b>{word.level}</b>
+        <Link to={listOrigin ?? '/browse'} onClick={backToResults}>{listOrigin ? '← 返回搜尋結果' : '← 單字總表'}</Link><span>{word.wordId}</span><b>{word.level}</b>
       </header>}
 
       {group && groupIndex >= 0 && <nav className="dossier-group-nav" aria-label="群組字卡導覽">
-        <Link to={groupReturn}>← {group.name}</Link>
+        <Link to={groupReturn} onClick={listOrigin === groupReturn ? backToResults : undefined}>← {group.name}</Link>
         <span>{groupIndex+1} / {groupIds.length}</span>
         <div>{groupIndex > 0 && <Link to={`/word/${groupIds[groupIndex-1]}?${groupQuery}`}>上一字</Link>}
         {groupIndex < groupIds.length-1 && <Link to={`/word/${groupIds[groupIndex+1]}?${groupQuery}`}>下一字 →</Link>}</div>
