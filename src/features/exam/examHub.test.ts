@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import type { CardState, ExamPriorityRecord } from "../../db/types";
+import type { CardState, ExamPriorityRecord, WordRecord } from "../../db/types";
+import { buildExamTaskReviewQueues } from "./examOverview";
 import { buildExamHubProgress } from "./examHub";
 
 function priority(word: string, tier: ExamPriorityRecord["priorityTier"]): ExamPriorityRecord {
@@ -35,4 +36,17 @@ describe("exam hub progress", () => {
       a: { total: 1, learned: 1 },
     });
   });
+});
+
+it("keeps today's new words in confirmation, even when older S+A work is due", () => {
+  const words = ["alpha", "bravo", "charlie", "delta"].map(word => ({ word, wordId: `W-${word}` } as WordRecord));
+  const priorities = words.map(word => priority(word.word, word.word === "charlie" ? "B" : "A"));
+  const today = "2026-09-04";
+  const older = card("alpha", today);
+  const fresh = { ...card("bravo", today, true), state: "new" as const, createdAt: new Date(2026, 8, 4, 12).toISOString() };
+  const confirmed = { ...fresh, word: "delta", dueDate: "2026-09-05", practicePending: false };
+  const queues = buildExamTaskReviewQueues(words, priorities, [older, fresh, card("charlie", today), confirmed], today);
+  expect(queues.due.map(item => item.wordRecord.word)).toEqual(["alpha"]);
+  expect(queues.confirm.map(item => item.wordRecord.word)).toEqual(["bravo"]);
+  expect(queues.confirm[0]).toMatchObject({ isNew: false, isPractice: true });
 });

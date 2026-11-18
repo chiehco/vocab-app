@@ -12,6 +12,7 @@
     if (!notice) {
       notice = document.createElement('aside');
       notice.setAttribute('role', 'status');
+      notice.setAttribute('data-app-update-notice', '');
       notice.style.cssText = 'position:fixed;bottom:90px;left:16px;right:16px;max-width:520px;margin:auto;padding:16px;background:white;color:#222;border:1px solid #777;border-radius:12px;z-index:9999;box-shadow:0 4px 20px #0003;font:16px/1.5 sans-serif';
       document.body.append(notice);
     }

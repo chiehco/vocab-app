@@ -119,3 +119,8 @@ body {
 }
 .speech-notice p { margin: 0; flex: 1; }
 .speech-notice button { min-width: 32px; min-height: 32px; font-size: 1.5rem; }
+
+/* Keep the update available for the next free moment in the study flow. */
+body:has([data-defer-app-update]) [data-app-update-notice] {
+  display: none;
+}

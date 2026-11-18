@@ -58,6 +58,11 @@ export default function SettingsScreen() {
     return (row?.value as string) ?? DEFAULT_SETTINGS.examDate;
   }, []);
 
+  const examName = useLiveQuery(async () => {
+    const row = await progressDb.settings.get("examName");
+    return (row?.value as string) ?? DEFAULT_SETTINGS.examName;
+  }, []);
+
   async function toggleLevel(lv: string) {
     if (!levels) return;
     const next = levels.includes(lv)
@@ -164,13 +169,22 @@ export default function SettingsScreen() {
       </div>
 
       <div className="mt-4 rounded-lg border border-(--ui-border) bg-white p-4">
-        <label htmlFor="exam-date" className="block text-sm font-bold text-(--ui-text)">學測日期</label>
+        <label htmlFor="exam-date" className="block text-sm font-bold text-(--ui-text)">考試日期</label>
         <p className="mt-1 text-sm text-(--ui-muted)">用於倒數與第一輪學習時間估算；熟字的複習間隔不因考試接近而強制縮短。</p>
         <input
           id="exam-date"
           type="date"
           value={examDate ?? ""}
           onChange={(event) => setSetting("examDate", event.target.value)}
+          className="mt-2 w-full rounded-lg border border-(--ui-border-strong) bg-white px-3 py-2 text-sm font-bold text-(--ui-text)"
+        />
+        <label htmlFor="exam-name" className="mt-4 block text-sm font-bold text-(--ui-text)">考試名稱</label>
+        <input
+          id="exam-name"
+          type="text"
+          value={examName ?? ""}
+          placeholder="留空使用學測"
+          onChange={(event) => setSetting("examName", event.target.value)}
           className="mt-2 w-full rounded-lg border border-(--ui-border-strong) bg-white px-3 py-2 text-sm font-bold text-(--ui-text)"
         />
       </div>

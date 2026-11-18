@@ -63,6 +63,7 @@ export const DEFAULT_SETTINGS = {
   fontScale: 1,
   autoPronounce: true,
   examDate: "2027-01-16",
+  examName: "",
 } as const;
 
 export async function getSetting<T>(key: keyof typeof DEFAULT_SETTINGS): Promise<T> {

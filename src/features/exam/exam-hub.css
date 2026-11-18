@@ -28,7 +28,7 @@
 .exam-section-head > span { color: var(--ui-muted); font-size: var(--ui-fs-secondary); }
 
 /* Today */
-.exam-today dl { display: grid; grid-template-columns: 1fr 1fr; gap: var(--ui-sp-4); margin: 0; }
+.exam-today dl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--ui-sp-3); margin: 0; }
 .exam-today dl > div { display: flex; flex-direction: column; gap: var(--ui-sp-1); }
 .exam-today dt { color: var(--ui-muted); font-size: var(--ui-fs-secondary); }
 .exam-today dd { margin: 0; font-size: var(--ui-fs-display); font-weight: 700; line-height: 1; }
