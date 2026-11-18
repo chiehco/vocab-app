@@ -11,6 +11,7 @@ import lv2U27ExampleImages from './lv2U27ExampleImages.json';
 import u15ExampleImages from './lv3U15ExampleImages.json';
 import u16ExampleImages from './lv3U16ExampleImages.json';
 import auditedWordImages from './auditedWordIllustrations.json';
+import lv3U20ApprovedCards from './lv3U20ApprovedCards.json';
 
 export interface ApprovedCurriculumCard {
   learningItemId: string;
@@ -32,7 +33,7 @@ const cards: ApprovedCurriculumCard[] = [...[unit17, unit18, unit19, unit20].fla
       && lv3Review.cards.some(approval => approval.reviewId === item.learningItemId)
     ? [{ learningItemId: item.learningItemId, displayWord: item.displayWord!, officialWordId: item.officialWordId,
       sensePos: item.sensePos!, targetMeaningZh: item.targetMeaningZh!, unitName: lv3Unit2.template.name, illustration: item.illustration }]
-    : [])];
+    : []), ...lv3U20ApprovedCards];
 
 export function approvedCurriculumCards(word: string, wordId?: string): ApprovedCurriculumCard[] {
   const normalized = word.trim().toLowerCase();
