@@ -7,6 +7,7 @@ import { useCardSwipe } from '../../hooks/useCardSwipe';
 import { curriculumUnits, findUnit, learningItemExplanation, learningItemTitle, unitsForLevel } from '../direct/model';
 import { getOrCreateTemplateGroup, startScopeSession } from '../direct/store';
 import { reviewedExample, practiceIds } from './model';
+import { approvedCurriculumCards } from './approvedCurriculum';
 import '../direct/direct.css';
 import './vocabulary.css';
 import { useStudyBookmark } from '../modes/useStudyBookmark';
@@ -32,6 +33,11 @@ export default function VocabularyScreen(){
   const matches=items.filter(i=>`${learningItemTitle(i)} ${i.chapterMeaningsZh??learningItemExplanation(i)}`.toLowerCase().includes(query.toLowerCase()));
   const index=Math.max(0,matches.findIndex(i=>i.learningItemId===params.get('item'))),item=matches[index];
   const example=item?reviewedExample(item):undefined;
+  const approvedPair = item?.displayWord && item.officialWordId && !item.illustration
+    ? approvedCurriculumCards(item.displayWord, item.officialWordId)
+      .find(card => card.learningItemId === item.learningItemId)
+    : undefined;
+  const illustration = item?.illustration ?? approvedPair?.illustration;
   const related=item?.displayWord&&current?current.relatedNotes.filter(n=>n.parentWord===item.displayWord):[];
   const saveFailed = useStudyBookmark(item && current ? {
     href: `/vocabulary?${new URLSearchParams({level,unit:String(unit),kind,item:item.learningItemId})}`,
@@ -73,12 +79,12 @@ export default function VocabularyScreen(){
             <DictionaryMeanings wordId={item.officialWordId} />
             {(item.meaningSource==='existing_dictionary'||item.meaningSource==='textbook_transcription'&&item.sourceRole==='printed_related_word')&&<p className="direct-muted">教材相關補充詞 · {item.meaningSource==='existing_dictionary'?'這裡顯示既有一般字義':'教材收錄義'}{item.printedLabel&&` · 書上標記：${item.printedLabel}`}</p>}
             {!item.officialWordId&&textOnly&&<p className="direct-muted">教材補充詞，尚未連到一般字卡。</p>}
-            {item.illustration&&<figure className="vocab-illustration">
+            {illustration&&<figure className="vocab-illustration">
               <DictionarySenseLabel wordId={item.officialWordId} senseId={item.officialSenseId} />
-              <img src={`${ASSET_BASE}${item.illustration.path}`} alt={item.illustration.captionZh} width="768" height="768" loading="eager" decoding="async"/>
-              <figcaption><p lang="en">{item.illustration.captionEn}</p><p lang="zh-Hant">{item.illustration.captionZh}</p></figcaption>
+              <img src={`${ASSET_BASE}${illustration.path}`} alt={illustration.captionZh} width="768" height="768" loading="eager" decoding="async"/>
+              <figcaption>{approvedPair && <small>{approvedPair.sensePos} {approvedPair.targetMeaningZh}</small>}<p lang="en">{illustration.captionEn}</p><p lang="zh-Hant">{illustration.captionZh}</p></figcaption>
             </figure>}
-            {example?<><h3>情境例句 · {item.targetMeaningZh}</h3><p className="direct-stem">{example.sentenceEn}</p><p>{example.sentenceZh}</p><SpeakerButton text={example.sentenceEn}/></>:<p>例句待核對。</p>}
+            {example?<><h3>情境例句 · {item.targetMeaningZh}</h3><p className="direct-stem">{example.sentenceEn}</p><p>{example.sentenceZh}</p><SpeakerButton text={example.sentenceEn}/></>:!approvedPair&&<p>例句待核對。</p>}
             {related.length>0&&<div className="vocab-related"><h3>相關詞</h3><ul>{related.map(n=><li key={`${n.word}:${n.meaningZh}`}><b>{n.word}</b><span>{n.meaningZh}</span></li>)}</ul></div>}
           </>:<><p className="vocab-meaning">{learningItemExplanation(item)}</p>
             {example&&<><h3>情境例句</h3><p className="direct-stem">{example.sentenceEn}</p><p>{example.sentenceZh}</p><SpeakerButton text={example.sentenceEn}/></>}

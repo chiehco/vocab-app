@@ -8,6 +8,11 @@ import {groupWordIds,resolveGroupWords} from './groupScope';
 import {getOrCreateTemplateGroup,saveGroup} from './store';
 import {textbookUnits} from '../vocabulary/textbookCatalog';
 import {practiceIds} from '../vocabulary/model';
+import {createHash} from 'node:crypto';
+import {readFileSync} from 'node:fs';
+import {approvedCurriculumCards, approvedCurriculumIllustration} from '../vocabulary/approvedCurriculum';
+import approvedCards from '../vocabulary/lv3U20ApprovedCards.json';
+import {getWordBeastAsset} from '../wordbeast/wordBeastAssets';
 import {contentDb} from '../../db/contentDb';
 import {progressDb} from '../../db/progressDb';
 import {ensureContentAvailable,refreshInstalledContent} from '../../db/seed';
@@ -45,6 +50,27 @@ it('adopts no pictures, running examples, sense IDs or textbook questions',()=>{
  expect(unit.deliveryMode).toBe('text_only');expect(unit.questions).toEqual([]);expect(practiceIds(unit.items)).toEqual([]);
  expect(unit.items.every(i=>!i.illustration&&!i.originalExample&&!i.officialSenseId&&i.practiceMode==='read_only')).toBe(true);
  expect(allQuestions.some(q=>unit.items.some(i=>i.learningItemId===q.learningItemId))).toBe(false);
+});
+it('binds the approved import picture to the exact textbook card and dictionary caption',()=>{
+ const [approved]=approvedCards;
+ expect(approvedCards).toHaveLength(1);
+ expect(approved).toMatchObject({
+  learningItemId:vocabulary[0].learningItemId, officialWordId:vocabulary[0].officialWordId,
+  displayWord:'import', sensePos:'v.', targetMeaningZh:'進口', approval:{decisionId:'D-106'},
+ });
+ const example=pack.examples.find(row=>row.exampleId===approved.approval.exampleId);
+ const {path,captionEn,captionZh}=approved.illustration;
+ expect(example).toMatchObject({word:'import',sensePos:'v.',sentenceEn:captionEn,sentenceZh:captionZh});
+ expect(createHash('sha256').update(JSON.stringify({english:captionEn,chinese:captionZh})).digest('hex'))
+  .toBe(approved.approval.captionSha256);
+ const image=readFileSync('public/'+path);
+ expect(image.subarray(8,12).toString()).toBe('WEBP');
+ expect(createHash('sha256').update(image).digest('hex')).toBe(approved.approval.imageSha256);
+ const asset=getWordBeastAsset(approved.officialWordId,'import');
+ expect(asset).toContain(path);
+ expect(approvedCurriculumIllustration('import',asset!)).toEqual(approved.illustration);
+ expect(approvedCurriculumCards('import','W999999')).toEqual([]);
+ expect(approvedCurriculumCards('export','W002306')).toEqual([]);
 });
 it('fresh starter resolves all 70 mapped identities in a complete 163-item group',async()=>{
  vi.stubGlobal('fetch',vi.fn(async()=>new Response(JSON.stringify(pack))));await ensureContentAvailable();
