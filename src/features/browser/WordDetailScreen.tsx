@@ -195,7 +195,7 @@ export default function WordDetailScreen({ embeddedWordId }: { embeddedWordId?: 
   const luggageNote = reviewedLuggageNote(word.wordId, word.word);
   const curriculumCards = approvedCurriculumCards(word.word, word.wordId);
   const additionalPictures = curriculumCards.filter(card =>
-    card.learningItemId.startsWith('LI-LV3U21-') &&
+    (card.learningItemId.startsWith('LI-LV3U21-') || card.secondaryOnGeneralCard) &&
     !asset?.split(/[?#]/)[0].endsWith('/' + card.illustration.path));
   const captionPair = asset
     ? approvedCurriculumIllustration(word.word, asset) ?? getIllustrationCaption(illustration?.captionZh)

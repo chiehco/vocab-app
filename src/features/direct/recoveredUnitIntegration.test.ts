@@ -334,7 +334,14 @@ it.each(historicalFileBatches)('retains historical curriculum and question ident
       delete option!.meaningZh;
     }
     expect(hash(originalQuestions), old.templateId).toBe(old.questionsHash);
-    expect(findUnit(old.templateId)?.items).toEqual(installed.get(old.templateId)!.items);
+    const runtimeItems = findUnit(old.templateId)?.items;
+    if (old.templateId === 'TEXTBOOK-LV3-U22') {
+      // The printed pack is frozen. The reader overlays exactly the approved U22 edits.
+      expect(hash(installed.get(old.templateId)!.items)).toBe(old.itemsHash);
+      expect(hash(runtimeItems)).toBe('9265abcbc667d0d4d24a331ea3fc8999b28383d72d04bbc15b689dd0bd79e649');
+    } else {
+      expect(runtimeItems).toEqual(installed.get(old.templateId)!.items);
+    }
   }
 });
 

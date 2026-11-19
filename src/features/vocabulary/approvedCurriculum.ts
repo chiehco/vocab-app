@@ -10,6 +10,7 @@ import u15ExampleImages from './lv3U15ExampleImages.json';
 import u16ExampleImages from './lv3U16ExampleImages.json';
 import auditedWordImages from './auditedWordIllustrations.json';
 import lv3U21ApprovedCards from './lv3U21ApprovedCards.json';
+import lv3U22ApprovedCards from './lv3U22ApprovedCards.json';
 import lv3U20ApprovedCards from './lv3U20ApprovedCards.json';
 
 export interface ApprovedCurriculumCard {
@@ -20,6 +21,7 @@ export interface ApprovedCurriculumCard {
   targetMeaningZh: string;
   unitName: string;
   imageQuizAllowed?: boolean;
+  secondaryOnGeneralCard?: boolean;
   illustration: { path: string; captionEn: string; captionZh: string };
 }
 
@@ -34,7 +36,7 @@ const cards: ApprovedCurriculumCard[] = [...[unit17, unit18, unit19, unit20].fla
     ? [{ learningItemId: item.learningItemId, displayWord: item.displayWord!, officialWordId: item.officialWordId,
       sensePos: item.sensePos!, targetMeaningZh: item.targetMeaningZh!, unitName: lv3Unit2.template.name, illustration: item.illustration }]
     : []), ...lv3U20ApprovedCards];
-const allCards: ApprovedCurriculumCard[] = [...cards, ...lv3U21ApprovedCards];
+const allCards: ApprovedCurriculumCard[] = [...cards, ...lv3U21ApprovedCards, ...lv3U22ApprovedCards];
 
 export function approvedCurriculumCards(word: string, wordId?: string): ApprovedCurriculumCard[] {
   const normalized = word.trim().toLowerCase();
@@ -72,7 +74,7 @@ export function approvedWordIllustration(word: string, wordId: string) {
       && card.word === word.trim().toLowerCase())?.illustration
     ?? u16ExampleImages.find(card => card.officialWordId === wordId
       && card.word === word.trim().toLowerCase())?.illustration
-    ?? matching[0]?.illustration;
+    ?? matching.find(card => !card.secondaryOnGeneralCard)?.illustration;
 }
 
 // Unit19 p.207 explicitly teaches these uncountable nouns with "a piece of".

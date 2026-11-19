@@ -22,8 +22,8 @@ export function siegeUnitWords(level: string, unit: number, dictionary: WordReco
     const ids = new Set(group?.wordIds ?? []);
     return eligibleWords(dictionary.filter(w => ids.has(w.wordId)).map(w => [w.word, w.meaningZh ?? '']));
   }
-  // Pending supplements remain readable, but their placeholder is not an answer clue.
-  return eligibleWords((source?.items ?? []).filter(i => i.kind === 'vocabulary' && i.meaningSource !== 'unmapped_supplement')
+  // A reviewed reading for an unmapped supplement does not enroll it in spelling practice.
+  return eligibleWords((source?.items ?? []).filter(i => i.kind === 'vocabulary' && i.meaningSource !== 'unmapped_supplement' && i.meaningSource !== 'reviewed_supplement')
     .map(i => [i.displayWord ?? '', i.targetMeaningZh ?? '']));
 }
 

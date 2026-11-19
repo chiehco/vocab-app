@@ -1,5 +1,6 @@
 import 'fake-indexeddb/auto';
 import {afterEach,beforeEach,expect,it,vi} from 'vitest';
+import transcription from './curriculumLV3Unit22.json';
 import source from '../../../scripts/sources/LV3Unit22.json';
 import pack from '../../../public/data/v1/sa-pack.json';
 import {allQuestions,findUnit,templateGroup,validGroup} from './model';
@@ -13,12 +14,15 @@ import {ensureContentAvailable,refreshInstalledContent} from '../../db/seed';
 import {siegeUnitWords} from '../siege/model';
 import {gradeFlashcard} from '../../checkin/recordActivity';
 const unit=findUnit(22,'LV3')!;const vocabulary=unit.items.filter(i=>i.kind==='vocabulary');
-it('keeps the photographed p233 kilogram wording under the original stable usage IDs',()=>{
+it('preserves the photographed p233 transcription and teaches US liquid measures under the stable IDs',()=>{
  const printed=['一品脫約半公斤重。','一夸脫約兩品脫重（約一公斤）。'];
  expect(source.usage.slice(21,23).map(r=>[r.sourcePage,r.label])).toEqual(printed.map(text=>[233,text]));
- for(const [index,pattern] of printed.entries()) expect(unit.items.find(i=>i.learningItemId===`LI-LV3U22-G0${22+index}`)).toMatchObject({
+ for(const [index,pattern] of printed.entries()) expect(transcription.learningItems.find(i=>i.learningItemId===`LI-LV3U22-G0${22+index}`)).toMatchObject({
   sourcePage:233,kind:'grammar',pattern,review:'source_checked_text_only',practiceMode:'read_only',
  });
+ const measures = unit.items.filter(i => /^LI-LV3U22-G02[234]$/.test(i.learningItemId));
+ expect(measures.map(i => i.explanationZh)).toEqual(['1 品脫約 473 毫升。','1 夸脫等於 2 品脫，約 946 毫升。','1 加侖等於 4 夸脫，約 3.785 公升。']);
+ expect(measures.every(i => i.pattern?.startsWith('美制液量'))).toBe(true);
  expect(source.sourceLimitations.some(note=>note.includes('LI-LV3U22-G022/G023')&&note.includes('待編輯裁示'))).toBe(true);
  expect(source.sourceLimitations[0]).toContain('ballot gloss is partly cropped');
 });
@@ -37,7 +41,7 @@ it('keeps original head order, printed numbers, checked pages and the next bound
 });
 it('preserves printed supplements, articles, capitalization and use pages',()=>{
  expect(vocabulary.slice(41).map(i=>[i.displayWord,i.sourcePage,i.printedLabel])).toEqual(source.related.map(r=>[r.word,r.sourcePage,r.printedLabel]));
- expect(unit.items.filter(i=>i.kind==='grammar').map(i=>[i.pattern,i.sourcePage])).toEqual(source.usage.map(r=>[r.label,r.sourcePage]));
+ expect(transcription.learningItems.filter(i=>i.kind==='grammar').map(i=>[i.pattern,i.sourcePage])).toEqual(source.usage.map(r=>[r.label,r.sourcePage]));
  for(const word of ["quart", "cowardice", "archaeological", "conservationist", "deeply", "in-depth", "top-of-the-line", "immerse", "soapy", "erasable", "delete", "a gas station", "a petrol station", "a grocery store", "dishonesty", "gem", "junkyard", "a litterbug", "a shopping mall", "marvellous", "trumpeter", "cantaloupe", "snappy"]) expect(vocabulary.find(i=>i.displayWord===word)?.officialWordId).toBeNull();
 });
 it('preserves original derivative marks, articles and explicit printed gloss variants',()=>{
@@ -60,16 +64,16 @@ it('preserves original derivative marks, articles and explicit printed gloss var
  expect(unit.items.some(i=>i.pattern?.includes('Birds of a feather flock together'))).toBe(false);
  expect(unit.items.some(i=>i.pattern?.includes('Honesty is the best policy'))).toBe(false);
 });
-it('uses existing official identities and keeps 22 unmapped supplements pending',()=>{
+it('uses existing official identities and displays 22 reviewed supplements without assigning dictionary identities',()=>{
  for(const [index,row] of [...source.headwords,...source.related].entries()) {
   expect(vocabulary[index].officialWordId).toBe(row.officialWordId);if(!row.officialWordId)continue;
   const word=pack.words.find(w=>w.wordId===row.officialWordId)!;expect(word.word).toBe(row.officialWord);
   expect(word.word===row.word||word.wordVariants.includes(row.word)).toBe(true);
  }
- expect(vocabulary.filter(i=>!i.officialWordId)).toHaveLength(23);expect(vocabulary.filter(i=>i.meaningSource==='unmapped_supplement')).toHaveLength(22);
- expect(vocabulary.filter(i=>i.meaningSource==='unmapped_supplement').every(i=>i.targetMeaningZh==='教材補充詞；義項待核對。')).toBe(true);
+ expect(vocabulary.filter(i=>!i.officialWordId)).toHaveLength(23);expect(vocabulary.filter(i=>i.meaningSource==='reviewed_supplement')).toHaveLength(22);
+ expect(vocabulary.filter(i=>i.meaningSource==='reviewed_supplement').every(i=>!i.officialWordId && i.sensePos && i.targetMeaningZh && !i.targetMeaningZh.includes('待核對'))).toBe(true);
 });
-it('adopts no pictures, running examples, sense IDs or textbook questions',()=>{
+it('keeps the text pack independent from the approved image registry and textbook questions',()=>{
  expect(unit.deliveryMode).toBe('text_only');expect(unit.questions).toEqual([]);expect(practiceIds(unit.items)).toEqual([]);
  expect(unit.items.every(i=>!i.illustration&&!i.originalExample&&!i.officialSenseId&&i.practiceMode==='read_only')).toBe(true);
  expect(allQuestions.some(q=>unit.items.some(i=>i.learningItemId===q.learningItemId))).toBe(false);
@@ -81,9 +85,9 @@ it('fresh starter resolves all 88 mapped identities in a complete 160-item group
  expect(resolveGroupWords(group,await contentDb.words.toArray())).toHaveLength(88);expect(fetch).toHaveBeenCalledTimes(1);
  expect(String(vi.mocked(fetch).mock.calls[0][0])).toContain('sa-pack.json');
 });
-it('siege excludes all pending supplements while respecting printed head spellings',()=>{
+it('siege excludes all unmapped reviewed supplements while respecting printed head spellings',()=>{
  const words=siegeUnitWords('LV3',22,[]);expect(words.some(([,m])=>m.includes('義項待核對'))).toBe(false);
- for(const item of vocabulary.filter(i=>i.meaningSource==='unmapped_supplement')) expect(words.some(([w])=>w===item.displayWord!.toUpperCase())).toBe(false);
+ for(const item of vocabulary.filter(i=>i.meaningSource==='reviewed_supplement')) expect(words.some(([w])=>w===item.displayWord!.toUpperCase())).toBe(false);
  for(const item of vocabulary.slice(0,41).filter(i=>!i.officialWordId)) {
   if(/^[A-Za-z]{2,16}$/.test(item.displayWord!)) expect(words).toContainEqual([item.displayWord!.toUpperCase(),item.chapterMeaningsZh]);
   else expect(words.some(([w])=>w===item.displayWord!.toUpperCase())).toBe(false);
