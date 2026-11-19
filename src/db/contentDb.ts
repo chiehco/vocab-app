@@ -1,4 +1,5 @@
 import Dexie, { type Table } from "dexie";
+import dictionary from './lv3U21Dictionary.json';
 import { correctExample } from './exampleCorrections';
 import type {
   ContentMetaRecord,
@@ -50,6 +51,9 @@ export class VocabContentDB extends Dexie {
     this.version(6).stores({
       media: "assetId, targetWord, targetType, status, imageType",
     });
+    this.words.hook('reading', (row: WordRecord | undefined) =>
+      row?.wordId === dictionary.buffet.wordId && row.word === dictionary.buffet.word
+        ? { ...row, ...dictionary.buffet } : row);
     this.examples.hook('reading', correctExample);
   }
 }

@@ -1,3 +1,4 @@
+import { reviewedChapterMeaning } from './lv3U21Meanings';
 import { findUnit, learningItems, learningItemExplanation, learningItemTitle } from './model';
 import type { CustomGroup } from './model';
 import type { WordRecord } from '../../db/types';
@@ -6,7 +7,7 @@ export type GroupKind='all'|'cards'|'curriculum'|'empty';
 export type GroupOrder='recent'|'name';
 export const groupSize=(g:CustomGroup)=>g.itemIds.length+(g.wordIds?.length??0);
 function groupTerms(g:CustomGroup,words:Map<string,WordRecord>) {
-  return [...(g.wordIds??[]).map(id=>words.get(id)).filter(w=>!!w).map(w=>`${w.word} ${w.meaningZh??''} ${w.level}`),...g.itemIds.map(id=>learningItems.find(i=>i.learningItemId===id)).filter(i=>!!i).map(i=>`${learningItemTitle(i)} ${i.targetMeaningZh??learningItemExplanation(i)} LV3`)];
+  return [...(g.wordIds??[]).map(id=>words.get(id)).filter(w=>!!w).map(w=>`${w.word} ${w.meaningZh??''} ${w.level}`),...g.itemIds.map(id=>learningItems.find(i=>i.learningItemId===id)).filter(i=>!!i).map(i=>`${learningItemTitle(i)} ${reviewedChapterMeaning(i.learningItemId)??i.targetMeaningZh??learningItemExplanation(i)} LV3`)];
 }
 export function groupPreview(g:CustomGroup,words:WordRecord[]) {
   const byId=new Map(words.map(w=>[w.wordId,w]));

@@ -1,3 +1,4 @@
+import dictionary from '../../db/lv3U21Dictionary.json';
 import type { SenseRecord, WordRecord } from '../../db/types';
 import { approvedCurriculumCards } from '../vocabulary/approvedCurriculum';
 import { normalizeDisplayChinese } from './wordDisplay';
@@ -18,6 +19,15 @@ export function recordedMeanings(word: WordRecord, senses: SenseRecord[]) {
     })
     .map(s => ({ key: s.senseId, pos: s.sensePos, meaning: normalizeDisplayChinese(s.meaningZh),
       pending: s.status !== 'approved' && s.status !== 'reviewed', source: 'sense' }));
+  if (word.wordId === dictionary.buffet.wordId && word.word === dictionary.buffet.word) {
+    for (const [index, row] of dictionary.buffetMeanings.entries()) {
+      if (!rows.some(existing => existing.pos === row.pos && existing.meaning === row.meaning)) {
+        rows.push({ key: `U21-buffet-${index}`, pos: row.pos, meaning: row.meaning,
+          pending: row.role === 'retained' && word.status !== 'approved' && word.status !== 'reviewed',
+          source: row.role === 'chapter' ? 'curriculum' : 'dictionary' });
+      }
+    }
+  }
   for (const card of approvedCurriculumCards(word.word, word.wordId)) {
     if (!rows.some(row => row.pos === card.sensePos && row.meaning === card.targetMeaningZh))
       rows.push({ key: card.learningItemId, pos: card.sensePos, meaning: card.targetMeaningZh, pending: false, source: 'curriculum' });
@@ -27,6 +37,8 @@ export function recordedMeanings(word: WordRecord, senses: SenseRecord[]) {
 
 export function recordedSummary(word: WordRecord, senses: SenseRecord[]) {
   if (!isPublicContent(word)) return '';
+  if (word.wordId === dictionary.buffet.wordId && word.word === dictionary.buffet.word
+      && word.meaningZh === dictionary.buffet.meaningZh) return '';
   const summary = normalizeDisplayChinese(word.meaningZh ?? '');
   return senses.some(s => s.wordId === word.wordId && !isPublicSense(s) && summary.includes(normalizeDisplayChinese(s.meaningZh))) ? '' : summary;
 }

@@ -16,7 +16,8 @@ import { buildTodayQueue } from "../../srs/queue";
 import { selectScheduledPracticeItems } from "../../quiz/practiceSelection";
 import SpeakerButton from "../../components/SpeakerButton";
 import { speak } from "../../lib/speech";
-import { getWordBeastAsset, hasWordBeastAsset } from "../wordbeast/wordBeastAssets";
+import { getWordBeastAsset } from "../wordbeast/wordBeastAssets";
+import { canUsePicturePrompt } from "../wordbeast/picturePrompt";
 import ExamTierBadge from "../wordbeast/ExamTierBadge";
 import WordTraitBadges from "../wordbeast/WordTraitBadges";
 import ResilientBeastImage from "../wordbeast/ResilientBeastImage";
@@ -185,7 +186,7 @@ export default function QuizScreen() {
     return collectedWords.filter((word) => word.level === levelSel);
   }, [groupId, customGroup, allWords, collectedWords, examPriorities, hasUnitScope, levelSel, requestedUnit, functionWordSet]);
   const imagePool = useMemo(
-    () => scopedCollectedWords?.filter((word) => hasWordBeastAsset(word.wordId, word.word, word.imageWordId)),
+    () => scopedCollectedWords?.filter((word) => canUsePicturePrompt(word.wordId, word.word, word.imageWordId)),
     [scopedCollectedWords],
   );
   const fillPool = useMemo(() => {

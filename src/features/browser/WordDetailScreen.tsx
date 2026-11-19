@@ -18,6 +18,7 @@ import StudyIllustration from "../wordbeast/StudyIllustration";
 import { useIllustrationMedia } from "../wordbeast/useIllustrationMedia";
 import { buildSenseCountByWord } from "../wordbeast/wordTraits";
 import { MORPHEME_TYPE_LABEL, NOTE_TYPE_LABEL, RELATION_TYPE_LABEL, REVERSE_RELATION_LABEL, STATE_LABEL } from "./wordLabels";
+import { reviewedLuggageNote } from '../direct/lv3U21Meanings';
 import RecordedMeanings from './RecordedMeanings';
 import { isPublicContent, isPublicSense, linkedSenseLabel } from './meaningRecords';
 import { approvedCurriculumCards, approvedCurriculumIllustration, approvedCurriculumUsage, approvedCurriculumUsageZh, approvedLV1Images } from '../vocabulary/approvedCurriculum';
@@ -191,7 +192,11 @@ export default function WordDetailScreen({ embeddedWordId }: { embeddedWordId?: 
   const usagePattern = approvedCurriculumUsage(word.word, word.wordId) ?? word.usagePattern;
   const usagePatternZh = approvedCurriculumUsageZh(word.word, word.wordId) ?? word.usagePatternZh;
   const lv1Images = approvedLV1Images(word.word, word.wordId);
+  const luggageNote = reviewedLuggageNote(word.wordId, word.word);
   const curriculumCards = approvedCurriculumCards(word.word, word.wordId);
+  const additionalPictures = curriculumCards.filter(card =>
+    card.learningItemId.startsWith('LI-LV3U21-') &&
+    !asset?.split(/[?#]/)[0].endsWith('/' + card.illustration.path));
   const captionPair = asset
     ? approvedCurriculumIllustration(word.word, asset) ?? getIllustrationCaption(illustration?.captionZh)
     : undefined;
@@ -254,6 +259,7 @@ export default function WordDetailScreen({ embeddedWordId }: { embeddedWordId?: 
             <div className="dossier-title-row"><h1 className={dossierTitleSize(word.word)}>{dossierTitleContent(word.word)}</h1><SpeakerButton text={word.word} className="dossier-speaker" /></div>
             {word.phoneticUs && <span className="dossier-phonetic"><b>KK</b> /{word.phoneticUs}/</span>}
             <RecordedMeanings word={word} senses={senses ?? []} />
+          {luggageNote && <p>{luggageNote}</p>}
             <WordTraitBadges senseCount={senseCount} hasConfusables={falseForms.length > 0} hasMorphemes={!!sortedMorphemes?.length} />
             {lv1Images.length > 0 && <p><a href={`${import.meta.env.BASE_URL}wordbeast/lv1-reviewed/index.html#${lv1Images[0].id}`}>查看 LV1 已審閱圖句（{lv1Images.length} 組）</a></p>}
           </div>
@@ -275,6 +281,13 @@ export default function WordDetailScreen({ embeddedWordId }: { embeddedWordId?: 
         </section>
       </>}
 
+      {activePage === "card" && additionalPictures.length > 0 && <details className="dossier-section">
+        <summary>其他教材圖句</summary>
+        {additionalPictures.map(card => <div key={card.learningItemId}>
+          <p>{card.unitName} · {card.sensePos} {card.targetMeaningZh}</p>
+          <StudyIllustration src={import.meta.env.BASE_URL + card.illustration.path} word={word.word} />
+        </div>)}
+      </details>}
       {activePage === "meaning" && <div className="dossier-page">
         {pageTitle}
         {word.meaningEn && <section className="dossier-section dossier-english">
@@ -285,6 +298,7 @@ export default function WordDetailScreen({ embeddedWordId }: { embeddedWordId?: 
         <section className="dossier-section meaning-focus-section">
           <div className="dossier-section-head"><h2>字義</h2><span>{publicSenses.length} 筆已收錄義項</span></div>
           <RecordedMeanings word={word} senses={senses ?? []} />
+          {luggageNote && <p>{luggageNote}</p>}
           {curriculumCards.length > 1 && <ul className="curriculum-meanings">
             {curriculumCards.map(card => <li key={card.learningItemId}>
               <b>{card.displayWord} · {card.sensePos}</b><span>{card.targetMeaningZh}</span>

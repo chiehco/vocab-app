@@ -4,6 +4,7 @@ import SpeakerButton from '../../components/SpeakerButton';
 import DictionaryMeanings, { DictionarySenseLabel } from '../browser/DictionaryMeanings';
 import StudyActions from '../../components/StudyActions';
 import { useCardSwipe } from '../../hooks/useCardSwipe';
+import { reviewedChapterMeaning } from '../direct/lv3U21Meanings';
 import { curriculumUnits, findUnit, learningItemExplanation, learningItemTitle, unitsForLevel } from '../direct/model';
 import { getOrCreateTemplateGroup, startScopeSession } from '../direct/store';
 import { reviewedExample, practiceIds } from './model';
@@ -30,7 +31,7 @@ export default function VocabularyScreen(){
   const kind=params.get('kind')==='grammar'?'grammar':'vocabulary';
   const [query,setQuery]=useState(''),[busy,setBusy]=useState(false),[error,setError]=useState('');
   const items=curriculumItems.filter(i=>i.kind===kind);
-  const matches=items.filter(i=>`${learningItemTitle(i)} ${i.chapterMeaningsZh??learningItemExplanation(i)}`.toLowerCase().includes(query.toLowerCase()));
+  const matches=items.filter(i=>`${learningItemTitle(i)} ${reviewedChapterMeaning(i.learningItemId)??i.chapterMeaningsZh??learningItemExplanation(i)}`.toLowerCase().includes(query.toLowerCase()));
   const index=Math.max(0,matches.findIndex(i=>i.learningItemId===params.get('item'))),item=matches[index];
   const example=item?reviewedExample(item):undefined;
   const approvedPair = item?.displayWord && item.officialWordId && !item.illustration
@@ -75,7 +76,7 @@ export default function VocabularyScreen(){
           <p className="direct-kicker">{index+1} / {matches.length} · 教材第 {item.sourcePage} 頁</p>
           <h2>{learningItemTitle(item)}</h2>
           {item.displayWord&&<SpeakerButton text={item.displayWord}/>}
-          {kind==='vocabulary'?<><p className="vocab-meaning">{item.sensePos} {item.chapterMeaningsZh}</p>
+          {kind==='vocabulary'?<><p className="vocab-meaning">{reviewedChapterMeaning(item.learningItemId) ?? [item.sensePos, item.chapterMeaningsZh].filter(Boolean).join(' ')}</p>
             <DictionaryMeanings wordId={item.officialWordId} />
             {(item.meaningSource==='existing_dictionary'||item.meaningSource==='textbook_transcription'&&item.sourceRole==='printed_related_word')&&<p className="direct-muted">教材相關補充詞 · {item.meaningSource==='existing_dictionary'?'這裡顯示既有一般字義':'教材收錄義'}{item.printedLabel&&` · 書上標記：${item.printedLabel}`}</p>}
             {!item.officialWordId&&textOnly&&<p className="direct-muted">教材補充詞，尚未連到一般字卡。</p>}

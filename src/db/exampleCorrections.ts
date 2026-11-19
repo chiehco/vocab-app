@@ -1,3 +1,4 @@
+import dictionary from './lv3U21Dictionary.json';
 import type { ExampleRecord } from './types';
 
 // User-requested editorial corrections, independently authored 2026-09-12.
@@ -18,6 +19,10 @@ const corrections: Record<string, Pick<ExampleRecord,'sentenceEn'|'sentenceZh'|'
 /** Read-time correction: original imports and the separate progress database stay intact. */
 export function correctExample(row: ExampleRecord | undefined): ExampleRecord | undefined {
   if (!row) return row;
+  const replacement = dictionary.breakExample;
+  if (row.exampleId === replacement.exampleId && row.word === replacement.word) {
+    return { ...row, ...replacement };
+  }
   if (row.sensePos === 'v.' && (
     (row.exampleId === 'EX0f27b577' && row.word === 'chat') ||
     (row.exampleId === 'EX573dddb5' && row.word === 'ruin')

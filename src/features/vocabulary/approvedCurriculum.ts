@@ -9,6 +9,7 @@ import exampleImages from './approvedExampleImages.json';
 import u15ExampleImages from './lv3U15ExampleImages.json';
 import u16ExampleImages from './lv3U16ExampleImages.json';
 import auditedWordImages from './auditedWordIllustrations.json';
+import lv3U21ApprovedCards from './lv3U21ApprovedCards.json';
 import lv3U20ApprovedCards from './lv3U20ApprovedCards.json';
 
 export interface ApprovedCurriculumCard {
@@ -18,6 +19,7 @@ export interface ApprovedCurriculumCard {
   sensePos: string;
   targetMeaningZh: string;
   unitName: string;
+  imageQuizAllowed?: boolean;
   illustration: { path: string; captionEn: string; captionZh: string };
 }
 
@@ -32,16 +34,20 @@ const cards: ApprovedCurriculumCard[] = [...[unit17, unit18, unit19, unit20].fla
     ? [{ learningItemId: item.learningItemId, displayWord: item.displayWord!, officialWordId: item.officialWordId,
       sensePos: item.sensePos!, targetMeaningZh: item.targetMeaningZh!, unitName: lv3Unit2.template.name, illustration: item.illustration }]
     : []), ...lv3U20ApprovedCards];
+const allCards: ApprovedCurriculumCard[] = [...cards, ...lv3U21ApprovedCards];
 
 export function approvedCurriculumCards(word: string, wordId?: string): ApprovedCurriculumCard[] {
   const normalized = word.trim().toLowerCase();
   const headwords = normalized === 'catalogue' ? ['catalog']
     : normalized === 'statistic(s)' ? ['statistic', 'statistics'] : [normalized];
-  return cards.filter(card => headwords.includes(card.displayWord) && (!wordId || card.officialWordId === wordId));
+  return allCards.filter(card => headwords.includes(card.displayWord) && (!wordId || card.officialWordId === wordId));
 }
 
 export function approvedCurriculumCard(word: string, wordId?: string) {
-  return approvedCurriculumCards(word, wordId)[0];
+  const first = approvedCurriculumCards(word, wordId)[0];
+  if (!first || cards.includes(first)) return first;
+  const primary = approvedWordIllustration(word, first.officialWordId);
+  return first.illustration.path === primary?.path ? first : undefined;
 }
 
 // These LV1 approvals cover the exact image/caption pair, not every dictionary sense.
@@ -54,7 +60,8 @@ export function approvedLV1Images(word: string, wordId: string) {
 export function approvedWordIllustration(word: string, wordId: string) {
   // Exact audited general-card repairs supersede inherited LV1 defaults.
   // Unit routes still retrieve their original exact image/caption by path.
-  return approvedCurriculumCard(word, wordId)?.illustration
+  const matching = approvedCurriculumCards(word, wordId);
+  return matching.find(card => cards.includes(card))?.illustration
     ?? auditedWordImages.find(card => card.officialWordId === wordId
       && card.aliases.includes(word.trim().toLowerCase()))?.illustration
     ?? approvedLV1Images(word, wordId)[0]?.illustration
@@ -64,7 +71,8 @@ export function approvedWordIllustration(word: string, wordId: string) {
     ?? u15ExampleImages.find(card => card.officialWordId === wordId
       && card.word === word.trim().toLowerCase())?.illustration
     ?? u16ExampleImages.find(card => card.officialWordId === wordId
-      && card.word === word.trim().toLowerCase())?.illustration;
+      && card.word === word.trim().toLowerCase())?.illustration
+    ?? matching[0]?.illustration;
 }
 
 // Unit19 p.207 explicitly teaches these uncountable nouns with "a piece of".

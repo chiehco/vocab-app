@@ -1,3 +1,4 @@
+import { publishReviewedDictionary } from './scripts/publishReviewedDictionary.ts';
 import { defineConfig } from "vitest/config";
 import type { Plugin } from "vite";
 import { readFile, rm } from "node:fs/promises";
@@ -106,5 +107,6 @@ export default defineConfig({
       },
     }),
     withholdRetainedSourcePair(),
+    publishReviewedDictionary(),
   ],
 });

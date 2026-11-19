@@ -3,7 +3,7 @@ import type { ExamPriorityRecord, WordRecord } from "../../db/types";
 import { selectDailyWords, type CaptureData } from "./dailyCapture";
 
 vi.mock("../../lib/dates", () => ({ todayStr: () => "2026-08-30" }));
-vi.mock("./wordBeastAssets", () => ({ hasWordBeastAsset: (id: string) => id !== "W999999" }));
+vi.mock("./picturePrompt", () => ({ canUsePicturePrompt: (id: string) => id !== "W999999" }));
 function fixture(): CaptureData {
   const words: WordRecord[] = Array.from({ length: 35 }, (_, i) => ({
     wordId: `W${String(i).padStart(6, "0")}`, word: `word-${i}`, level: "LV1", pos: "n.", posAll: ["n."],
