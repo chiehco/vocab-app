@@ -1,6 +1,7 @@
 import type { LearningItem } from './model';
+import { applyReviewedReading, type ReadingTable } from './reviewedReading';
 
-const vocabulary: Readonly<Record<string, readonly [string, string]>> = {
+const vocabulary: ReadingTable = {
   "LI-LV3U22-V002": ["n./vt.", "搖籃、發源地（名詞）；輕抱（及物動詞）"],
   "LI-LV3U22-V042": ["adj.", "勇敢的"],
   "LI-LV3U22-V043": ["n.", "勇氣"],
@@ -33,22 +34,12 @@ const vocabulary: Readonly<Record<string, readonly [string, string]>> = {
   "LI-LV3U22-V112": ["adj.", "快速的"],
 };
 
-const measurements: Readonly<Record<string, readonly [string, string]>> = {
+const measurements: ReadingTable = {
   "LI-LV3U22-G022": ["美制液量：品脫（pint）", "1 品脫約 473 毫升。"],
   "LI-LV3U22-G023": ["美制液量：夸脫（quart）", "1 夸脫等於 2 品脫，約 946 毫升。"],
   "LI-LV3U22-G024": ["美制液量：加侖（gallon）", "1 加侖等於 4 夸脫，約 3.785 公升。"],
 };
 
-// Apply the editorial reading to the existing item, preserving its identity and source transcription on disk.
 export function applyU22Reading(item: LearningItem): LearningItem {
-  const entry = vocabulary[item.learningItemId];
-  if (entry) {
-    const [sensePos, meaning] = entry;
-    const meaningSource = item.officialWordId ? 'chapter_review' : 'reviewed_supplement';
-    return { ...item, sensePos, targetMeaningZh: meaning, chapterMeaningsZh: meaning, meaningSource };
-  }
-  const measurement = measurements[item.learningItemId];
-  if (!measurement) return item;
-  const [pattern, explanationZh] = measurement;
-  return { ...item, pattern, explanationZh };
+  return applyReviewedReading(item, vocabulary, measurements);
 }

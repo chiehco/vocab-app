@@ -11,6 +11,7 @@ import u16ExampleImages from './lv3U16ExampleImages.json';
 import auditedWordImages from './auditedWordIllustrations.json';
 import lv3U21ApprovedCards from './lv3U21ApprovedCards.json';
 import lv3U22ApprovedCards from './lv3U22ApprovedCards.json';
+import lv3U23ApprovedCards from './lv3U23ApprovedCards.json';
 import lv3U20ApprovedCards from './lv3U20ApprovedCards.json';
 
 export interface ApprovedCurriculumCard {
@@ -36,11 +37,12 @@ const cards: ApprovedCurriculumCard[] = [...[unit17, unit18, unit19, unit20].fla
     ? [{ learningItemId: item.learningItemId, displayWord: item.displayWord!, officialWordId: item.officialWordId,
       sensePos: item.sensePos!, targetMeaningZh: item.targetMeaningZh!, unitName: lv3Unit2.template.name, illustration: item.illustration }]
     : []), ...lv3U20ApprovedCards];
-const allCards: ApprovedCurriculumCard[] = [...cards, ...lv3U21ApprovedCards, ...lv3U22ApprovedCards];
+const allCards: ApprovedCurriculumCard[] = [...cards, ...lv3U21ApprovedCards, ...lv3U22ApprovedCards, ...lv3U23ApprovedCards];
 
 export function approvedCurriculumCards(word: string, wordId?: string): ApprovedCurriculumCard[] {
   const normalized = word.trim().toLowerCase();
   const headwords = normalized === 'catalogue' ? ['catalog']
+    : normalized === 'microphone/mike' ? ['microphone']
     : normalized === 'statistic(s)' ? ['statistic', 'statistics'] : [normalized];
   return allCards.filter(card => headwords.includes(card.displayWord) && (!wordId || card.officialWordId === wordId));
 }

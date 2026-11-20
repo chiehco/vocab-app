@@ -339,6 +339,9 @@ it.each(historicalFileBatches)('retains historical curriculum and question ident
       // The printed pack is frozen. The reader overlays exactly the approved U22 edits.
       expect(hash(installed.get(old.templateId)!.items)).toBe(old.itemsHash);
       expect(hash(runtimeItems)).toBe('9265abcbc667d0d4d24a331ea3fc8999b28383d72d04bbc15b689dd0bd79e649');
+    } else if (old.templateId === 'TEXTBOOK-LV3-U23') {
+      expect(hash(installed.get(old.templateId)!.items)).toBe(old.itemsHash);
+      expect(hash(runtimeItems)).toBe('58d64917a7cfb34a0d75fd63803505839567f6e2fb7707afec9fc9a3a1c24973');
     } else {
       expect(runtimeItems).toEqual(installed.get(old.templateId)!.items);
     }

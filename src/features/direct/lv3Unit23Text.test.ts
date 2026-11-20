@@ -1,5 +1,6 @@
 import 'fake-indexeddb/auto';
 import {afterEach,beforeEach,expect,it,vi} from 'vitest';
+import transcription from './curriculumLV3Unit23.json';
 import source from '../../../scripts/sources/LV3Unit23.json';
 import pack from '../../../public/data/v1/sa-pack.json';
 import {allQuestions,findUnit,templateGroup,validGroup} from './model';
@@ -28,7 +29,7 @@ it('keeps original head order, printed numbers, checked pages and the next bound
 });
 it('preserves printed supplements, articles, capitalization and use pages',()=>{
  expect(vocabulary.slice(43).map(i=>[i.displayWord,i.sourcePage,i.printedLabel])).toEqual(source.related.map(r=>[r.word,r.sourcePage,r.printedLabel]));
- expect(unit.items.filter(i=>i.kind==='grammar').map(i=>[i.pattern,i.sourcePage])).toEqual(source.usage.map(r=>[r.label,r.sourcePage]));
+ expect(transcription.learningItems.filter(i=>i.kind==='grammar').map(i=>[i.pattern,i.sourcePage])).toEqual(source.usage.map(r=>[r.label,r.sourcePage]));
  for(const word of ["a wireless microphone", "wireless", "reheat", "siesta", "stunning", "buddy", "a pen pal", "pitiful", "pitiless", "pollutant", "corrode", "corrosion", "erode", "erosion", "conditioner", "dandruff", "a shepherd dog", "bough", "trunks", "a first-aid kit", "styling wax", "earwax", "the World Wide Web", "the internet", "light bulb", "a lamp", "creepy", "misty", "the United Kingdom", "industrious", "industrialist", "the Industrial Revolution", "rectangular", "scarcity", "silky", "lumber"]) expect(vocabulary.find(i=>i.displayWord===word)?.officialWordId).toBeNull();
 });
 it('keeps original marks, capitalization, articles and existing microphone variants',()=>{
@@ -49,16 +50,16 @@ it('keeps original marks, capitalization, articles and existing microphone varia
  expect(siegeUnitWords('LV3',23,[]).some(([w])=>w==='WOOD(S)')).toBe(false);
  expect(unit.items.some(i=>i.pattern?.includes('One rotten apple spoils the barrel'))).toBe(false);
 });
-it('uses existing official identities and keeps 36 unmapped supplements pending',()=>{
+it('uses existing official identities and shows the 36 reviewed supplements under their original item IDs',()=>{
  for(const [index,row] of [...source.headwords,...source.related].entries()) {
   expect(vocabulary[index].officialWordId).toBe(row.officialWordId);if(!row.officialWordId)continue;
   const word=pack.words.find(w=>w.wordId===row.officialWordId)!;expect(word.word).toBe(row.officialWord);
   expect(word.word===row.word||word.wordVariants.includes(row.word)).toBe(true);
  }
- expect(vocabulary.filter(i=>!i.officialWordId)).toHaveLength(36);expect(vocabulary.filter(i=>i.meaningSource==='unmapped_supplement')).toHaveLength(36);
- expect(vocabulary.filter(i=>i.meaningSource==='unmapped_supplement').every(i=>i.targetMeaningZh==='教材補充詞；義項待核對。')).toBe(true);
+ expect(vocabulary.filter(i=>!i.officialWordId)).toHaveLength(36);expect(vocabulary.filter(i=>i.meaningSource==='reviewed_supplement')).toHaveLength(36);
+ expect(vocabulary.filter(i=>i.meaningSource==='reviewed_supplement').every(i=>i.sensePos && i.targetMeaningZh && !i.targetMeaningZh.includes('待核對'))).toBe(true);
 });
-it('adopts no pictures, running examples, sense IDs or textbook questions',()=>{
+it('keeps the text pack independent of illustrated cards and preserves practice eligibility',()=>{
  expect(unit.deliveryMode).toBe('text_only');expect(unit.questions).toEqual([]);expect(practiceIds(unit.items)).toEqual([]);
  expect(unit.items.every(i=>!i.illustration&&!i.originalExample&&!i.officialSenseId&&i.practiceMode==='read_only')).toBe(true);
  expect(allQuestions.some(q=>unit.items.some(i=>i.learningItemId===q.learningItemId))).toBe(false);
@@ -70,9 +71,9 @@ it('fresh starter resolves all 104 mapped identities in a complete 180-item grou
  expect(resolveGroupWords(group,await contentDb.words.toArray())).toHaveLength(104);expect(fetch).toHaveBeenCalledTimes(1);
  expect(String(vi.mocked(fetch).mock.calls[0][0])).toContain('sa-pack.json');
 });
-it('siege excludes all pending supplements while respecting printed head spellings',()=>{
+it('siege excludes all unmapped reviewed supplements while respecting printed head spellings',()=>{
  const words=siegeUnitWords('LV3',23,[]);expect(words.some(([,m])=>m.includes('義項待核對'))).toBe(false);
- for(const item of vocabulary.filter(i=>i.meaningSource==='unmapped_supplement')) expect(words.some(([w])=>w===item.displayWord!.toUpperCase())).toBe(false);
+ for(const item of vocabulary.filter(i=>i.meaningSource==='reviewed_supplement')) expect(words.some(([w])=>w===item.displayWord!.toUpperCase())).toBe(false);
  for(const item of vocabulary.slice(0,43).filter(i=>!i.officialWordId)) {
   if(/^[A-Za-z]{2,16}$/.test(item.displayWord!)) expect(words).toContainEqual([item.displayWord!.toUpperCase(),item.chapterMeaningsZh]);
   else expect(words.some(([w])=>w===item.displayWord!.toUpperCase())).toBe(false);
