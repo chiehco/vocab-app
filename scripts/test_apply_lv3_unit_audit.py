@@ -68,7 +68,7 @@ class U01AuditApplierTests(unittest.TestCase):
         cls.temporary = tempfile.TemporaryDirectory(prefix='lv3-u01-unittest-')
         cls.addClassCleanup(cls.temporary.cleanup)
         cls.fixture = Path(cls.temporary.name).resolve()
-        for relative in audit.input_paths(ROOT) | {MANIFEST}:
+        for relative in audit.input_paths(checkpoint) | {MANIFEST}:
             target = cls.fixture / relative
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile((ROOT if relative == MANIFEST else checkpoint) / relative, target)

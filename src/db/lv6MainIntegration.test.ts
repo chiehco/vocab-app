@@ -34,7 +34,7 @@ it('keeps every former starter payload and adds the three recovered text units',
   }
   const catalogKeys = new Set(textbookUnits.map(unit => `${unit.level}:${unit.unit}`));
   expect(baseline.mainPublicUnitKeys.every(key => catalogKeys.has(key))).toBe(true);
-  expect(textbookUnits.filter(unit=>unit.publisher==='ivy')).toHaveLength(baseline.mainPublicUnitKeys.length + baseline.lv6Units.length + 4);
+  expect(textbookUnits.filter(unit=>unit.publisher==='ivy')).toHaveLength(baseline.mainPublicUnitKeys.length + baseline.lv6Units.length + 5);
   expect(textbookUnits.filter(unit => unit.level === 'LV6').map(unit => unit.unit)).toEqual(Array.from({length:25}, (_, i) => i + 1));
   expect(curriculumUnits.filter(unit => unit.level === 'LV6')).toHaveLength(25);
   expect(findUnit(21, 'LV6')?.deliveryMode).toBe('text_only');

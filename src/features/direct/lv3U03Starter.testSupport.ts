@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
+import {readFileSync} from 'node:fs';
 import extension from '../../../docs/lv3-u03-recovery-20261122/starter-extension.json';
 
 const digest=(text:string)=>createHash('sha256').update(text).digest('hex');
@@ -27,4 +28,13 @@ export function beforeU03StarterText(text:string):string {
 
 export function beforeU03Starter<T>(pack:T):T {
   return JSON.parse(beforeU03StarterText(JSON.stringify(pack)+'\n')) as T;
+}
+
+export function beforeU03DirectNames(names:string[]):string[] {
+  assert.equal(names.filter(name=>name==='curriculumLV3Unit3.json').length,1,'U03 direct file identity drift');
+  for(const [path,expected] of Object.entries({
+    'src/features/direct/curriculumLV3Unit3.json':'c7bbf7549fe0ee8377a87a6a6def39c8b0c6f64f96c46110de8865d8f906b3dc',
+    'scripts/sources/LV3Unit3.json':'0aa5aa15a0a9984dcb538a4436afb2e999c175fea41aefe5eb919e7beb172e3e',
+  }))assert.equal(digest(readFileSync(path,'utf8').replace(/\r\n/g,'\n')),expected,'U03 source drift');
+  return names.filter(name=>name!=='curriculumLV3Unit3.json');
 }

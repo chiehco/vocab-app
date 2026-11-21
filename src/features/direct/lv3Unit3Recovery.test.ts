@@ -1,4 +1,4 @@
-import {readFileSync} from 'node:fs';
+import {readFileSync,readdirSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {expect,it} from 'vitest';
 import pack from './curriculumLV3Unit3.json';
@@ -6,7 +6,7 @@ import source from '../../../scripts/sources/LV3Unit3.json';
 import starter from '../../../public/data/v1/sa-pack.json';
 import words from '../../../public/data/v1/words.json';
 import extension from '../../../docs/lv3-u03-recovery-20261122/starter-extension.json';
-import {beforeU03Starter,beforeU03StarterText} from './lv3U03Starter.testSupport';
+import {beforeU03Starter,beforeU03StarterText,beforeU03DirectNames} from './lv3U03Starter.testSupport';
 import {findUnit,templateGroup} from './model';
 import {groupWordIds} from './groupScope';
 import {textbookUnits} from '../vocabulary/textbookCatalog';
@@ -52,4 +52,13 @@ it('rejects changes to added or original rows, order, metadata and raw formattin
     expect(()=>beforeU03Starter(altered)).toThrow(/drift/);
   }
   expect(()=>beforeU03StarterText(JSON.stringify(starter)+'\n ')).toThrow(/drift/);
+});
+
+it('keeps all 131 historical direct files and leaves unknown additions visible',()=>{
+  const names=readdirSync('src/features/direct').filter(name=>name.endsWith('.json'));
+  const before=beforeU03DirectNames(names);
+  expect(before).toHaveLength(131);
+  expect(before).toEqual(names.filter(name=>name!=='curriculumLV3Unit3.json'));
+  expect(beforeU03DirectNames([...names,'unregistered.json'])).toContain('unregistered.json');
+  expect(()=>beforeU03DirectNames(before)).toThrow(/identity drift/);
 });

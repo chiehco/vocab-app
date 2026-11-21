@@ -54,7 +54,7 @@ class U18SourceContractTests(unittest.TestCase):
   with self.assertRaises((ValueError,KeyError,TypeError)):p.validate_manifest(m,s)
  def test_exact_source_contract(self):p.validate_manifest(self.manifest,self.scope)
  def test_domain_is_144_before_u18_145_at_u18_and146_from_u19(self):
-  core=p.v1.input_paths(ROOT);self.assertEqual(len(core),144);self.assertEqual(p.unit_input_paths(ROOT,'LV3-U17'),core)
+  core=p.u03_extension.historical_domain(ROOT, p.v1.input_paths(ROOT));self.assertEqual(len(core),144);self.assertEqual(p.unit_input_paths(ROOT,'LV3-U17'),core)
   self.assertEqual(p.unit_input_paths(ROOT,'LV3-U18'),core|{p._U18_SOURCE_PATH});self.assertEqual(p.unit_input_paths(ROOT,'LV3-U19'),core|{p._U18_SOURCE_PATH,p._U19_SOURCE_PATH})
  def test_source_collection_cannot_move_file(self):
   self.reject(lambda m,s:(m['collections']['source'].update(path='scripts/sources/LV3Unit19.json'),s['collections']['source'].update(path='scripts/sources/LV3Unit19.json')))

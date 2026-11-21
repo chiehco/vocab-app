@@ -12,6 +12,7 @@ from pathlib import Path
 import tempfile
 
 import apply_lv3_unit_audit as v1
+import lv3_u03_extension as u03_extension
 
 KIND = 'starter-media-actual-names'
 IDENTITY = 'starter-media-actual-names-v1'
@@ -173,7 +174,7 @@ def verify_semantics(root, manifest, fixtures):
 
 
 def verified_fixtures(root, manifest):
-    validate(manifest, v1.input_paths(root))
+    validate(manifest, u03_extension.historical_domain(root, v1.input_paths(root)))
     return verify_semantics(root, manifest, load_fixtures(root, manifest))
 
 

@@ -17,6 +17,7 @@ import shutil
 
 import apply_lv3_unit_audit as v1
 import lv3_starter_media_migration as media_migration
+import lv3_u03_extension as u03_extension
 
 DOCS = 'docs/lv3-audit-20261107'
 CHAIN = DOCS + '/chain.json'
@@ -2521,7 +2522,7 @@ def admit_u20_source_before(previous_inputs, anchor_inputs, predecessor, previou
 def unit_input_paths(root, unit):
     """Preserve historical144/145 domains; carry both admitted sources from U19."""
     number = new_unit_number(unit)
-    paths = v1.input_paths(root)
+    paths = u03_extension.historical_domain(root, v1.input_paths(root))
     if number is not None and number >= 18:
         paths = paths | {_U18_SOURCE_PATH}
     if number is not None and number >= 19:
@@ -2936,6 +2937,11 @@ def project_checkpoint(root, destination, target='LV3-U01'):
     assert_recovery_clear(root)
     require(destination.resolve() != root.resolve() and not destination.exists(),
             'Projection destination must be new and distinct')
+    if u03_extension.present(root):
+        with u03_extension.historical_view(root, v1.input_paths(root)) as view:
+            projected = project_checkpoint(view, destination, target)
+        assert_recovery_clear(root)
+        return projected
     _, anchor, loaded = load_chain(root)
     committed = [x for x in loaded if x[0]['status'] == 'committed']
     targets = [i for i, x in enumerate(committed) if media_migration.identity(x[0]) == target]

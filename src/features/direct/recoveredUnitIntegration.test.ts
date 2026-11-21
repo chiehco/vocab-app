@@ -1,4 +1,5 @@
 import {recoveredUnit18OriginalItems} from './recoveredUnit18History.testSupport';
+import {beforeU03DirectNames} from './lv3U03Starter.testSupport';
 import {recoveredUnit12OriginalItems} from './recoveredUnit12History.testSupport';
 import {auditContract, auditHash, isAuditUnitStep, loadLV3Chain, lv3AfterUnit1PublishedText} from './lv3Audit.testSupport';
 import lv3Checkpoint from '../../../docs/lv3-audit-20261107/U01-checkpoint.json';
@@ -187,7 +188,7 @@ it.each(historicalFileBatches)('retains historical curriculum and question ident
   };
   const dir = new URL('./', import.meta.url);
   const {paths, changed, project} = historicalDirectProjection();
-  const files = readdirSync(dir).filter(name => name.endsWith('.json'));
+  const files = beforeU03DirectNames(readdirSync(dir).filter(name => name.endsWith('.json')));
   expect(files.map(file => 'src/features/direct/' + file).sort(), 'No missing or out-of-domain JSON files').toEqual(paths);
   for (const path of historicalBatchPaths(paths, changed, batch)) {
     const text = readFileSync(path, 'utf8');

@@ -108,7 +108,7 @@ class U20SourceContractTests(unittest.TestCase):
         self.reject_change(lambda m: m['patches'][0]['fieldEvidence']['chapterMeaningsZh'][0]['sources'][0].update(sha256='0'*64))
 
     def test_exact_historical_and_future_domains(self):
-        core = p.v1.input_paths(ROOT)
+        core = p.u03_extension.historical_domain(ROOT, p.v1.input_paths(ROOT))
         self.assertEqual(len(core), 144)
         self.assertEqual(p.unit_input_paths(ROOT, 'LV3-U17'), core)
         self.assertEqual(p.unit_input_paths(ROOT, 'LV3-U18'), core | {p._U18_SOURCE_PATH})

@@ -319,7 +319,7 @@ export function restoreRecordedAuditPatch(name:string,row:Row,patch:Patch):void{
 // field before reversing only that field for the old-release comparison.
 export function beforeUnitAudit<T>(dataset:string, value:T):T {
   const name=dataset.replace(/\.json$/,'');
-  const copy=name==='sa-pack'?beforeU03Starter(value):Array.isArray(value)?lv3BeforeAudit(name,value,{allowMissing:true}):structuredClone(value);
+  const copy=Array.isArray(value)?lv3BeforeAudit(name,value,{allowMissing:true}):structuredClone(value);
   if(name==='sa-pack'){
     const pack=copy as Row;
     const meta=pack.meta as Row;
@@ -329,11 +329,14 @@ export function beforeUnitAudit<T>(dataset:string, value:T):T {
     const sha=(v:unknown)=>createHash('sha256').update(JSON.stringify(v)).digest('hex');
     assert.equal(meta.wordsHash,'sa:'+sha(pack.words),'starter wordsHash must describe its saved rows');
     assert.equal(meta.contentHash,'sa:'+sha({sourceHash:fullMeta.contentHash,datasets}),'starter contentHash must describe its saved rows and full source');
+    const previous=beforeU03Starter(pack);
+    const historicalDatasets=Object.fromEntries(Object.keys(datasets).map(key=>[key,previous[key]]));
     // Authenticate the complete current pack and reverse the registered migration
     // through the existing strict chain. U05 is the sealed pre-migration checkpoint.
-    const beforeMediaMigration=lv3AfterUnitFile('LV3-U05','public/data/v1/sa-pack.json',value) as Row;
-    const restored=lv3BeforeAuditDatasets(datasets,{allowMissing:true});
+    const beforeMediaMigration=lv3AfterUnitFile('LV3-U05','public/data/v1/sa-pack.json',pack) as Row;
+    const restored=lv3BeforeAuditDatasets(historicalDatasets,{allowMissing:true});
     for(const [key,rows]of Object.entries(restored))pack[key]=restoreEarlierAuditRows(key,rows);
+    Object.assign(meta,previous.meta);
     // Only media and its count belong to that migration. Keep the row-audit inverse
     // and the independently pinned historical whole-pack expectation unchanged.
     pack.media=structuredClone(beforeMediaMigration.media);

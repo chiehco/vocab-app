@@ -35,7 +35,7 @@ class U02RealFixtureTests(unittest.TestCase):
         summary = audit.read_json(ROOT / pipeline.DOCS / 'U02-before-capture.json')
         audit.require(hashlib.sha256(CAPTURE.read_bytes()).hexdigest() == summary['captureFileSha256'],
                       'Independent capture artifact changed')
-        audit.require(set(cls.capture) == audit.input_paths(ROOT), 'Capture domain changed')
+        audit.require(set(cls.capture) == pipeline.u03_extension.historical_domain(ROOT, audit.input_paths(ROOT)), 'Capture domain changed')
         cls.temporary = tempfile.TemporaryDirectory(prefix='lv3-u02-real-fixture-')
         cls.addClassCleanup(cls.temporary.cleanup)
         cls.fixture = Path(cls.temporary.name) / 'worktree'
