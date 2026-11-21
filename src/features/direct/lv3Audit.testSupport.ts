@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import {isDeepStrictEqual,types as utilTypes} from 'node:util';
 import {createHash} from 'node:crypto';
 import {readFileSync} from 'node:fs';
+import {beforeU03Starter,beforeU03StarterText} from './lv3U03Starter.testSupport';
 import {lv3Unit1BeforeAudit} from './lv3Unit1Audit.testSupport';
 import {BUILDER,PACK,MIGRATION_ID,validateStarterMediaMigration,inverseStarterMediaMigrationNormalized,type StarterMediaMigration,type MigrationLoader} from './starterMediaMigration.testSupport';
 
@@ -3327,7 +3328,7 @@ function fileAtCheckpoint<T>(state:ReturnType<typeof checkpoint>,path:string,val
   const raw=readFileSync(new URL('../../../'+path,import.meta.url),'utf8').replace(/\r\n/g,'\n');
   const current=JSON.parse(raw) as T;
   assert.ok(isDeepStrictEqual(value,current),'unknown whole-file strict semantic drift');
-  input=current;
+  input=path===PACK?beforeU03Starter(current):current;
   if(state.later.some(step=>!isMigration(step.manifest)&&Object.hasOwn(auditContract(step.manifest).files,path))
     &&path!==PACK&&path!=='public/data/v1/meta.json'){
    const projected=publishedTextAtCheckpoint(state,path,raw);
@@ -3424,7 +3425,7 @@ function publishedTextAtCheckpoint(state:ReturnType<typeof checkpoint>,path:stri
  assert.equal(text,text.replace(/\r\n/g,'\n'),'caller must normalize CRLF first');
  const source=supplementalSourceContracts.find(registered=>registered.collection.path===path);
  if(source)assert.ok(Object.hasOwn(state.bytes,path),`unknown ${source.unit.replace('LV3-','')} supplementary checkpoint path`);
- let out=text;const proof:PublishedProof={};
+ let out=path===PACK?beforeU03StarterText(text):text;const proof:PublishedProof={};
  for(const {manifest,scope} of [...state.later].reverse()){
   if(isMigration(manifest)){out=inverseStarterMediaMigrationNormalized(manifest,path,out,state.operation.loadMigration);continue;}
   assert.ok(scope);out=inversePublishedStep(manifest,scope,path,out,state.operation.validateScope,proof);

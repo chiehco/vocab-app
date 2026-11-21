@@ -1,0 +1,30 @@
+import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+import extension from '../../../docs/lv3-u03-recovery-20261122/starter-extension.json';
+
+const digest=(text:string)=>createHash('sha256').update(text).digest('hex');
+type Pack={meta:unknown;[dataset:string]:unknown};
+
+/** Restore the exact published 5779-word fixture for historical tests only. */
+export function beforeU03StarterText(text:string):string {
+  assert.equal(digest(JSON.stringify(extension)),'9356a7533c440303716999e0e45fa3be5fa0e93c7d1ecbb2b4d9c7a909a76db0','U03 extension manifest drift');
+  assert.equal(digest(text),extension.afterByteHash,'U03 current starter byte drift');
+  const pack=JSON.parse(text) as Pack;
+  assert.deepEqual(pack.meta,extension.afterMeta,'U03 current starter metadata drift');
+  for(const [dataset,added] of Object.entries(extension.addedRows)) {
+    const rows=pack[dataset] as unknown[];
+    assert.ok(Array.isArray(rows));
+    for(const entry of [...added].reverse()) {
+      assert.deepEqual(rows[entry.index],entry.row,'U03 added starter row drift');
+      rows.splice(entry.index,1);
+    }
+  }
+  pack.meta=structuredClone(extension.beforeMeta);
+  const result=JSON.stringify(pack)+'\n';
+  assert.equal(digest(result),extension.beforeByteHash,'U03 complete historical starter drift');
+  return result;
+}
+
+export function beforeU03Starter<T>(pack:T):T {
+  return JSON.parse(beforeU03StarterText(JSON.stringify(pack)+'\n')) as T;
+}

@@ -24,6 +24,7 @@ import lv6Unit22 from './curriculumLV6Unit22.json';
 import lv6Unit23 from './curriculumLV6Unit23.json';
 import lv6Unit24 from './curriculumLV6Unit24.json';
 import lv6Unit25 from './curriculumLV6Unit25.json';
+import lv3Unit3 from './curriculumLV3Unit3.json';
 import lv3Unit4 from './curriculumLV3Unit4.json';
 import lv3Unit5 from './curriculumLV3Unit5.json';
 import lv3Unit6 from './curriculumLV3Unit6.json';
@@ -162,6 +163,7 @@ export function learningItemExplanation(item: LearningItem) {
 export const curriculumUnits: CurriculumUnit[] = [
   { templateId: curriculum.template.templateId, revision: curriculum.template.revision, level: 'LV3', unit: 1, name: 'LV3 Unit 1', items: curriculum.learningItems as LearningItem[], questions: grammarQuestions, relatedNotes: [] },
   { templateId: unit2.template.templateId, revision: unit2.template.revision, level: 'LV3', unit: 2, name: 'LV3 Unit 2', items: unit2.learningItems as LearningItem[], questions: unit2.grammarQuestions, relatedNotes: [] },
+  { templateId: lv3Unit3.template.templateId, revision: lv3Unit3.template.revision, level: 'LV3', unit: 3, name: lv3Unit3.template.title, items: lv3Unit3.learningItems as LearningItem[], questions: lv3Unit3.questions, relatedNotes: [], deliveryMode: 'text_only' },
   { templateId: lv3Unit4.template.templateId, revision: lv3Unit4.template.revision, level: 'LV3', unit: 4, name: lv3Unit4.template.title, items: lv3Unit4.learningItems as LearningItem[], questions: lv3Unit4.questions, relatedNotes: [], deliveryMode: 'text_only' },
   { templateId: lv3Unit5.template.templateId, revision: lv3Unit5.template.revision, level: 'LV3', unit: 5, name: lv3Unit5.template.title, items: lv3Unit5.learningItems as LearningItem[], questions: lv3Unit5.questions, relatedNotes: [], deliveryMode: 'text_only' },
   { templateId: lv3Unit6.template.templateId, revision: lv3Unit6.template.revision, level: 'LV3', unit: 6, name: lv3Unit6.template.title, items: lv3Unit6.learningItems as LearningItem[], questions: lv3Unit6.questions, relatedNotes: [], deliveryMode: 'text_only' },

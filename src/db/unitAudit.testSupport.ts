@@ -1,4 +1,5 @@
 import {lv3BeforeAudit,lv3BeforeAuditDatasets,lv3AfterUnitFile} from '../features/direct/lv3Audit.testSupport';
+import {beforeU03Starter} from '../features/direct/lv3U03Starter.testSupport';
 import lv2u45Wicked from '../../docs/unit-audit-20261105/LV2-U45-wicked-usage-followup.json';
 import lv2u41Usage from '../../docs/unit-audit-20261105/LV2-U41-usage-followup.json';
 import lv2u40Visible from '../../docs/unit-audit-20261105/LV2-U40-visible-pos-followup.json';
@@ -318,7 +319,7 @@ export function restoreRecordedAuditPatch(name:string,row:Row,patch:Patch):void{
 // field before reversing only that field for the old-release comparison.
 export function beforeUnitAudit<T>(dataset:string, value:T):T {
   const name=dataset.replace(/\.json$/,'');
-  const copy=Array.isArray(value)?lv3BeforeAudit(name,value,{allowMissing:true}):structuredClone(value);
+  const copy=name==='sa-pack'?beforeU03Starter(value):Array.isArray(value)?lv3BeforeAudit(name,value,{allowMissing:true}):structuredClone(value);
   if(name==='sa-pack'){
     const pack=copy as Row;
     const meta=pack.meta as Row;
@@ -330,7 +331,7 @@ export function beforeUnitAudit<T>(dataset:string, value:T):T {
     assert.equal(meta.contentHash,'sa:'+sha({sourceHash:fullMeta.contentHash,datasets}),'starter contentHash must describe its saved rows and full source');
     // Authenticate the complete current pack and reverse the registered migration
     // through the existing strict chain. U05 is the sealed pre-migration checkpoint.
-    const beforeMediaMigration=lv3AfterUnitFile('LV3-U05','public/data/v1/sa-pack.json',pack) as Row;
+    const beforeMediaMigration=lv3AfterUnitFile('LV3-U05','public/data/v1/sa-pack.json',value) as Row;
     const restored=lv3BeforeAuditDatasets(datasets,{allowMissing:true});
     for(const [key,rows]of Object.entries(restored))pack[key]=restoreEarlierAuditRows(key,rows);
     // Only media and its count belong to that migration. Keep the row-audit inverse

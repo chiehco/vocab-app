@@ -9,6 +9,7 @@ import { findUnit, templateGroup } from './model';
 import { groupWordIds } from './groupScope';
 import { textbookUnits } from '../vocabulary/textbookCatalog';
 import {beforeUnitAudit} from '../../db/unitAudit.testSupport';
+import {beforeU03Starter} from './lv3U03Starter.testSupport';
 
 function stable(value: unknown): unknown {
   if (Array.isArray(value)) return value.map(stable);
@@ -40,7 +41,7 @@ it('records physical-book confirmation of blank p22 without claiming a new photo
   expect(baseline.wordIds).toHaveLength(102);
   expect(baseline.wordIds.every(id => starter.words.some(word => word.wordId === id))).toBe(true);
   expect(textbookUnits.filter(unit => unit.level === 'LV4')).toHaveLength(24);
-  expect(textbookUnits).toHaveLength(146);
+  expect(textbookUnits).toHaveLength(147);
 });
 
 it.each(baseline.publicFiles)('keeps complete public content dataset unchanged: $name', (file) => {
@@ -48,5 +49,5 @@ it.each(baseline.publicFiles)('keeps complete public content dataset unchanged: 
 });
 
 it('retains the5779-word starter size', () => {
-  expect(starter.words).toHaveLength(5779);
+  expect(beforeU03Starter(starter).words).toHaveLength(5779);
 });

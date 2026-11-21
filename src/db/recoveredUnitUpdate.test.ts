@@ -3,7 +3,8 @@ import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 import baseline from '../../scripts/fixtures/recovered-unit-integration-baseline.json';
-import pack from '../../public/data/v1/sa-pack.json';
+import publishedCurrentPack from '../../public/data/v1/sa-pack.json';
+import {beforeU03Starter} from '../features/direct/lv3U03Starter.testSupport';
 import { contentDb } from './contentDb';
 import { progressDb } from './progressDb';
 import { ensureContentAvailable, refreshInstalledContent, updateDictionaryContent } from './seed';
@@ -18,11 +19,12 @@ import {beforeUnitAudit} from './unitAudit.testSupport';
 import assert from 'node:assert/strict';
 import {lv3AfterUnitPublishedText} from '../features/direct/lv3Audit.testSupport';
 
+const pack=beforeU03Starter(publishedCurrentPack);
 // Restore only historical media from the authenticated complete pre-migration pack.
 // All existing old words/collections and original timed update bodies remain unchanged.
 const historicMediaPackPath='public/data/v1/sa-pack.json';
 const historicMediaCurrentRaw=readFileSync(historicMediaPackPath,'utf8').replace(/\r\n/g,'\n');
-assert.deepEqual(JSON.parse(historicMediaCurrentRaw),pack,'imported current pack must equal current raw bytes');
+assert.deepEqual(JSON.parse(historicMediaCurrentRaw),publishedCurrentPack,'imported current pack must equal current raw bytes');
 const historicMediaPack=JSON.parse(lv3AfterUnitPublishedText('LV3-U05',historicMediaPackPath,historicMediaCurrentRaw)) as typeof pack;
 
 const additional = new Set(baseline.additionalWordIds);
@@ -129,5 +131,21 @@ it('authenticates the whole current pack before restoring all historical media a
   expect(oldPack.media).toHaveLength(baseline.datasets.find(d=>d.name==='media')!.count);
   expect(pack.media).toHaveLength(1128);
   expect(()=>lv3AfterUnitPublishedText('LV3-U05',historicMediaPackPath,historicMediaCurrentRaw+' ')).toThrow(/drift/);
-  expect(JSON.parse(historicMediaCurrentRaw)).toEqual(pack);
+  expect(JSON.parse(historicMediaCurrentRaw)).toEqual(publishedCurrentPack);
 });
+
+it('updates the published 5779-word starter to U03 coverage while retaining all 14 nonempty progress tables',async()=>{
+  serve('starter',pack);
+  await ensureContentAvailable();
+  expect(await contentDb.words.count()).toBe(5779);
+  await populateProgress();
+  const before=await snapshot();
+  expect(before).toHaveLength(14);expect(before.every(rows=>rows.length>0)).toBe(true);
+  serve('starter',publishedCurrentPack);
+  await expect(updateDictionaryContent()).resolves.toMatchObject({scope:'starter',status:'updated'});
+  expect(await contentDb.words.count()).toBe(5798);
+  const ids=findUnit(3,'LV3')!.items.flatMap(i=>i.kind==='vocabulary'&&i.officialWordId?[i.officialWordId]:[]);
+  expect(ids).toHaveLength(96);
+  expect(await contentDb.words.bulkGet(ids)).not.toContain(undefined);
+  expect(await snapshot()).toEqual(before);
+},30000);
