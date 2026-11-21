@@ -22,3 +22,12 @@ it.each([
   expect(article).toContain('書上標記：');
   expect(article).not.toContain('這裡顯示既有一般字義');
 });
+
+it('shows an approved picture and both captions for an unmapped textbook word', () => {
+  const html = renderToStaticMarkup(<MemoryRouter initialEntries={['/vocabulary?level=LV3&unit=24&item=LI-LV3U24-V003']}><VocabularyScreen /></MemoryRouter>);
+  const article = html.match(/<article[\s\S]*?<\/article>/)?.[0];
+  expect(article).toContain('The teacher used a tack to pin the picture to the board.');
+  expect(article).toContain('老師用圖釘把圖片固定在布告板上。');
+  expect(article).toContain('curriculum/lv3-u24/tack-');
+  expect(article).toContain('教材補充詞，尚未連到一般字卡。');
+});

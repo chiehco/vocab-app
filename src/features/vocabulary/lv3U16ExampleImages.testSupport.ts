@@ -8,6 +8,7 @@ const U20_REGISTRY_SHA256='ee4fb308f355c6ae094a6c4901b896a47a4a167616ca4ac8a0386
 const U21_REGISTRY_SHA256='a4bfe2253e9de1365f8c80e041b9c51eb2fd904531f73cf17934b709c625b2d0';
 const U22_REGISTRY_SHA256='ddfde30a7f491776bd88a49b0b3a6f7796afa2f8efa1d6037555ad496e694a69';
 const U23_REGISTRY_SHA256='69d46b5feedaf6eb6460a0f765d3733aced81d26cfef270217fb93733fc5c519';
+const U24_REGISTRY_SHA256='14e07bfa69ab869576dcf8e3aa6d4080db06b8f999158afada2b2d343bf6435b';
 export function beforeU16ExampleImageSource(path:string,value:string){
  validateU16ImageSourceProof();
  const text=value.replace(/\r\n/g,'\n');
@@ -18,7 +19,7 @@ export function beforeU16ExampleImageSource(path:string,value:string){
  }
  const entry=proof.files.find(file=>file.path===path);
  if(!entry)return text;
- const previous=path==='src/features/vocabulary/approvedCurriculum.ts'&&[U20_REGISTRY_SHA256,U21_REGISTRY_SHA256,U22_REGISTRY_SHA256,U23_REGISTRY_SHA256].includes(hash(text))
+ const previous=path==='src/features/vocabulary/approvedCurriculum.ts'&&[U20_REGISTRY_SHA256,U21_REGISTRY_SHA256,U22_REGISTRY_SHA256,U23_REGISTRY_SHA256,U24_REGISTRY_SHA256].includes(hash(text))
   ? entry.afterText : text;
  assert.equal(hash(previous),entry.afterLfSha256,'Unrecorded U16 source drift');
  assert.equal(previous,entry.afterText,'Unrecorded U16 source bytes');

@@ -8,7 +8,7 @@ import { reviewedChapterMeaning } from '../direct/lv3U21Meanings';
 import { curriculumUnits, findUnit, learningItemExplanation, learningItemTitle, unitsForLevel } from '../direct/model';
 import { getOrCreateTemplateGroup, startScopeSession } from '../direct/store';
 import { reviewedExample, practiceIds } from './model';
-import { approvedCurriculumCards } from './approvedCurriculum';
+import { approvedCurriculumItem } from './approvedCurriculum';
 import '../direct/direct.css';
 import './vocabulary.css';
 import { useStudyBookmark } from '../modes/useStudyBookmark';
@@ -34,9 +34,8 @@ export default function VocabularyScreen(){
   const matches=items.filter(i=>`${learningItemTitle(i)} ${reviewedChapterMeaning(i.learningItemId)??i.chapterMeaningsZh??learningItemExplanation(i)}`.toLowerCase().includes(query.toLowerCase()));
   const index=Math.max(0,matches.findIndex(i=>i.learningItemId===params.get('item'))),item=matches[index];
   const example=item?reviewedExample(item):undefined;
-  const approvedPair = item?.displayWord && item.officialWordId && !item.illustration
-    ? approvedCurriculumCards(item.displayWord, item.officialWordId)
-      .find(card => card.learningItemId === item.learningItemId)
+  const approvedPair = item?.displayWord && !item.illustration
+    ? approvedCurriculumItem(item.learningItemId)
     : undefined;
   const illustration = item?.illustration ?? approvedPair?.illustration;
   const related=item?.displayWord&&current?current.relatedNotes.filter(n=>n.parentWord===item.displayWord):[];
