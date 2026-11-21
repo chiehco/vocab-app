@@ -10,12 +10,12 @@ const unit = findUnit(24, 'LV3')!;
 const hash = (value: string | Buffer) => createHash('sha256').update(value).digest('hex');
 
 it('registers only the approved U24 pairs and preserves supplemental identities', () => {
-  expect(cards).toHaveLength(38);
+  expect(cards).toHaveLength(41);
   expect(cards.slice(0,6).map(card => card.displayWord)).toEqual(['chimney', 'clip', 'tack', 'countable', 'dearly', 'energetic']);
-  expect(cards.filter(card => !card.officialWordId).map(card => card.displayWord)).toEqual(['tack', 'dearly', 'fireworks']);
+  expect(cards.filter(card => !card.officialWordId).map(card => card.displayWord)).toEqual(['tack', 'dearly', 'fireworks', 'barbershop']);
   expect(cards.find(card => card.displayWord === 'dearly')?.illustration.captionZh)
     .toBe('爺爺非常喜歡和孫子女共度時光。');
-  for(const word of ['barbershop','sausage','bacteria']) {
+  for(const word of ['scarf','pearl']) {
     const item=unit.items.find(item=>item.displayWord===word)!;
     expect(approvedCurriculumItem(item.learningItemId)).toBeUndefined();
   }
