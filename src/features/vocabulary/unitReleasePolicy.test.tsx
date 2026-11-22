@@ -92,6 +92,6 @@ it('still removes an active battle when navigation requests an unavailable book'
   await view.waitFor(() => expect(button('進入守城')?.disabled).toBe(false)); await view.click(button('進入守城'));
   expect(view.container.querySelector('iframe')).not.toBeNull();
   await view.click([...view.container.querySelectorAll('a')].find(a => a.textContent === 'unavailable book'));
-  await view.waitFor(() => expect(rootText()).toContain('目前 LiveABC Basic 僅提供照片核對完成的 Unit 01–08'));
+  await view.waitFor(() => expect(rootText()).toContain('目前 LiveABC Basic 僅提供照片核對完成的 Unit 01–08、10（Unit 09 待補照片）'));
   expect(view.container.querySelector('iframe')).toBeNull(); expect(button('進入守城')).toBeUndefined();
 });

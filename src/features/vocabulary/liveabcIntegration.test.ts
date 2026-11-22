@@ -53,13 +53,13 @@ it('preserves the former Ivy identities, adds three accepted units and retains a
   }
 });
 
-it('includes exactly eight photo units, 121 stable items, 111 existing mappings and eight notes', () => {
-  expect(live.map(u => u.unit)).toEqual([1,2,3,4,5,6,7,8]);
-  expect(live.map(u => u.items.length)).toEqual([14,13,18,13,15,20,13,15]);
-  expect(rows).toHaveLength(121);
-  expect(new Set(rows.map(i=>i.learningItemId)).size).toBe(121);
-  expect(rows.filter(i=>i.officialWordId)).toHaveLength(111);
-  expect(rows.filter(i=>!i.officialWordId).map(i=>i.displayWord)).toEqual(['carry out','frozen','die out','previously','rapidly','rather than','cheerfully','good-natured','efficiently','extended']);
+it('includes exactly nine photo units, 139 stable items, 128 existing mappings and eight notes', () => {
+  expect(live.map(u => u.unit)).toEqual([1,2,3,4,5,6,7,8,10]);
+  expect(live.map(u => u.items.length)).toEqual([14,13,18,13,15,20,13,15,18]);
+  expect(rows).toHaveLength(139);
+  expect(new Set(rows.map(i=>i.learningItemId)).size).toBe(139);
+  expect(rows.filter(i=>i.officialWordId)).toHaveLength(128);
+  expect(rows.filter(i=>!i.officialWordId).map(i=>i.displayWord)).toEqual(['carry out','frozen','die out','previously','rapidly','rather than','cheerfully','good-natured','efficiently','extended','unrealistic']);
   for (const u of live) {
     // Hashes pin the reviewed projection without requiring private photos/drafts in CI.
     const checked = photoAcceptance.units.find(row=>row.unit===u.unit)!;
@@ -88,7 +88,7 @@ it('keeps odd adjective meanings separate from the approved odds identity', () =
   expect(odds).toMatchObject({learningItemId:'LI-LIVEABC_BASICU02-S001',officialWordId:'W004587',sensePos:'n.',targetMeaningZh:'可能性'});
 });
 
-it('resolves bare deep links and namespaces without changing legacy defaults or permitting U9+', () => {
+it('resolves bare deep links and namespaces without changing legacy defaults or permitting U9 or U11+', () => {
   expect(resolveTextbookScope({volume:'LIVEABC_BASIC'})).toEqual({track:'7000',publisher:'liveabc',volume:'LIVEABC_BASIC'});
   expect(resolveTextbookScope({volume:'LV3'})).toEqual({track:'7000',publisher:'ivy',volume:'LV3'});
   expect(resolveTextbookScope({})?.publisher).toBe('ivy');
@@ -97,7 +97,7 @@ it('resolves bare deep links and namespaces without changing legacy defaults or 
     expect(textbookPath(u.level,u.unit)).toBe(`/textbook/LIVEABC_BASIC/${u.unit}`);
     expect(isUnitPublished(u.level,u.unit)).toBe(true);
   }
-  for (const level of ['LIVEABC_BASIC','LIVEABC_ADVANCED','unknown']) for (const n of [0,9,18,NaN]) {
+  for (const level of ['LIVEABC_BASIC','LIVEABC_ADVANCED','unknown']) for (const n of [0,9,11,18,NaN]) {
     expect(isUnitPublished(level,n)).toBe(false); expect(unitItems(n,level)).toEqual([]);
     expect(()=>templateGroup(n,level)).toThrow();
   }

@@ -1,4 +1,5 @@
 import {recoveredUnit18OriginalItems} from './recoveredUnit18History.testSupport';
+import {beforeLiveabcU08Text} from './liveabcU08.testSupport';
 import {beforeU03DirectNames} from './lv3U03Starter.testSupport';
 import {beforeLV4PublishedText} from './lv4Published.testSupport';
 import {recoveredUnit12OriginalItems} from './recoveredUnit12History.testSupport';
@@ -123,7 +124,7 @@ function historicalDirectProjection() {
   expect(paths.filter(path => !changed.has(path))).toHaveLength(113);
   const project = (path: string, actualText: string) => {
     if (!paths.includes(path)) throw new Error('Unregistered out-of-domain direct JSON path');
-    const text = beforeLV4PublishedText(path,actualText.replace(/\r\n/g, '\n'));
+    const text = beforeLV4PublishedText(path,beforeLiveabcU08Text(path,actualText.replace(/\r\n/g, '\n')));
     if (changed.has(path)) return JSON.parse(lv3AfterUnit1PublishedText(path, text));
     expect(createHash('sha256').update(text).digest('hex'), `Unchanged checkpoint bytes: ${path}`).toBe(guards[path]);
     return JSON.parse(text);
@@ -164,7 +165,7 @@ it('partitions all historical direct files and baseline units exactly once', () 
     }
   };
   for (const path of paths) recordOwner(JSON.parse(readFileSync(path, 'utf8')), path);
-  expect(owners.size).toBe(127);
+  expect(owners.size).toBe(129); // +LiveABC Basic U08, U10
   expect(baseline.previousUnits).toHaveLength(124);
   expect(new Set(baseline.previousUnits.map(old => old.templateId)).size).toBe(124);
   for (const old of baseline.previousUnits) {

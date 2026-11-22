@@ -34,15 +34,15 @@ afterEach(async()=>{await view?.unmount(); await progressDb.delete(); await cont
 const button=(text:string)=>[...view.container.querySelectorAll('button')].find(e=>e.textContent?.includes(text));
 const link=(text:string)=>[...view.container.querySelectorAll('a')].find(e=>e.textContent?.includes(text));
 
-it('selects the LiveABC publisher, shows only eight units, and returns to the same book',async()=>{
+it('selects the LiveABC publisher, shows only nine units, and returns to the same book',async()=>{
   await render('/textbook?level=LV3');
   expect(button('常春藤')?.getAttribute('aria-pressed')).toBe('true');
   await view.click(button('LiveABC'));
   expect(view.container.textContent).toContain('核心字彙完全攻略 · Basic');
-  const tiles=[...view.container.querySelectorAll('.unit-tile')]; expect(tiles).toHaveLength(8);
+  const tiles=[...view.container.querySelectorAll('.unit-tile')]; expect(tiles).toHaveLength(9);
   await view.click(tiles[0]); expect(view.container.textContent).toContain('14 個詞彙');
   expect(link('看字卡')?.getAttribute('href')).toBe('/vocabulary?level=LIVEABC_BASIC&unit=1');
-  await view.click(link('選單元')); expect(view.container.querySelectorAll('.unit-tile')).toHaveLength(8);
+  await view.click(link('選單元')); expect(view.container.querySelectorAll('.unit-tile')).toHaveLength(9);
 });
 
 it('reads an unlinked supplement without borrowed art or examples and resumes the exact item',async()=>{
