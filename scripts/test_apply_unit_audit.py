@@ -11,6 +11,7 @@ from unittest.mock import patch
 
 import apply_lv3_unit_audit as lv3_audit
 import apply_unit_audit as audit
+from lv4_published_fixture import project as before_lv4
 
 
 class AuditWriteBoundaryTests(unittest.TestCase):
@@ -19,7 +20,7 @@ class AuditWriteBoundaryTests(unittest.TestCase):
         # LV1/LV2 receipts predate the LV3 changes to the shared dictionary.
         # Reconstruct that exact checkpoint in memory before the existing inverses.
         words_path = 'public/data/v1/words.json'
-        words = audit.read(audit.ROOT / words_path)
+        words = json.loads(before_lv4(audit.ROOT, words_path, (audit.ROOT / words_path).read_bytes()))
         rows = {row['wordId']: index for index, row in enumerate(words)}
         if len(rows) != len(words):
             raise AssertionError('Duplicate word IDs in the LV3 dictionary')
