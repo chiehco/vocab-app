@@ -1,0 +1,251 @@
+{
+  "scope": "LV4 U03 existing H08/H05 ready candidates only: four example POS, nevertheless punctuation, generation translation, declare factual caption. No artwork, dictionary senses, curriculum or practice changes.",
+  "sourceOverlaySha256": "bf650458a391a3b2073a2d19a67205f344774538d559479a81286ec5dbdd2e80",
+  "findingIds": [
+    "LV4U03-F01",
+    "LV4U03-F02",
+    "LV4U03-F03",
+    "LV4U03-F04",
+    "LV4U03-F05",
+    "LV4U03-EDIT-S01",
+    "LV4U03-ART01"
+  ],
+  "files": {
+    "public/data/v1/examples.json": {
+      "beforeHash": "33ef08728a10cc73cc28b20b1a13449f1a90c11cc3b1e1303d9fd4439382d3f0",
+      "afterHash": "71d13ed1f97294642aac5e1f6383ff3f7ff1eff5ea2d715fcb3f39d43dc6e9ac",
+      "operations": [
+        {
+          "selector": {
+            "exampleId": "EX7ae87282"
+          },
+          "field": "sensePos",
+          "before": "v.",
+          "after": "n."
+        },
+        {
+          "selector": {
+            "exampleId": "EX822ffc31"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "selector": {
+            "exampleId": "EX9af8de99"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "selector": {
+            "exampleId": "EXa5adfe98"
+          },
+          "field": "sensePos",
+          "before": "v.",
+          "after": "n."
+        }
+      ],
+      "indent": 2
+    },
+    "public/data/v1/words.json": {
+      "beforeHash": "28e3078f7dc83aef326bdb20d4f870ac7aa2b17a6072808ba3de1705164827cc",
+      "afterHash": "16dd713523cb290e4509c57c2074b15765be571b85340e8b67bb8b9a2bb4e29a",
+      "operations": [
+        {
+          "selector": {
+            "wordId": "W003674"
+          },
+          "field": "usagePattern",
+          "before": "..., nevertheless, ...; Nevertheless, S + V",
+          "after": "...; nevertheless, ...; Nevertheless, S + V"
+        },
+        {
+          "selector": {
+            "wordId": "W003674"
+          },
+          "field": "usagePatternZh",
+          "before": "……，然而，……；然而，S+V",
+          "after": "……；然而，……；然而，S+V"
+        },
+        {
+          "selector": {
+            "wordId": "W003445"
+          },
+          "field": "usagePatternZh",
+          "before": "年輕或年長的一代；代代相傳；三代同堂",
+          "after": "年輕或年長的一代；代代相傳；三代"
+        }
+      ],
+      "indent": 2
+    },
+    "public/data/v1/media.json": {
+      "beforeHash": "3ca030c81f8eb173334cca4283ec7e67049f8d951e11e46e908dbc4796bae409",
+      "afterHash": "c23a6cd2e5f9a4b23ec2f60d7fc50aa6c6b36bf31c02f1f2745b3d990ac08346",
+      "operations": [
+        {
+          "selector": {
+            "assetId": "AX3adc2135"
+          },
+          "field": "captionZh",
+          "before": "豆豆在大家面前公開宣布手中的花。",
+          "after": "豆豆在講台上向聚集的群眾發表公開聲明。"
+        }
+      ],
+      "indent": 2
+    },
+    "src/features/wordbeast/illustrationCaptions.json": {
+      "beforeHash": "406ac1429dd7256d2aa04652da801d5a0d518d68c91d788ac7b17863f703f022",
+      "afterHash": "fb4f00549db57fa420985fac966002deed9dcfc37a5194b169a663539365abae",
+      "operations": [
+        {
+          "selector": {
+            "word": "declare"
+          },
+          "field": "captionZh",
+          "before": "豆豆在大家面前公開宣布手中的花。",
+          "after": "豆豆在講台上向聚集的群眾發表公開聲明。"
+        },
+        {
+          "selector": {
+            "word": "declare"
+          },
+          "field": "en",
+          "before": "Doudou holds up a flower and makes a declaration about it to everyone.",
+          "after": "Doudou makes a public declaration from a podium before a gathered crowd."
+        },
+        {
+          "selector": {
+            "word": "declare"
+          },
+          "field": "zh",
+          "before": "豆豆在大家面前公開宣布手中的花。",
+          "after": "豆豆在講台上向聚集的群眾發表公開聲明。"
+        }
+      ],
+      "indent": 2
+    },
+    "public/data/v1/meta.json": {
+      "beforeHash": "cafcc2513e58ced2bd74cef8b8634dd8cacb86559c851412a22e5dba05595da6",
+      "afterHash": "20fd111bc247d97c6a929cc7cefdac7dfbd12d3e583da577ff48c3b817566e8f",
+      "operations": [],
+      "indent": 2,
+      "beforeMeta": {
+        "schemaVersion": 2,
+        "generatedAt": "2026-11-22T07:03:23Z",
+        "sourceFile": "萬詞譜母表_SA義項清理整合_20260904.xlsx",
+        "counts": {
+          "words": 6090,
+          "senses": 772,
+          "examples": 7871,
+          "relations": 40,
+          "morphemes": 3798,
+          "media": 1177,
+          "notes": 4290,
+          "examPriority": 3792,
+          "hooks": 0
+        },
+        "wordsHash": "28e3078f7dc83aef326bdb20d4f870ac7aa2b17a6072808ba3de1705164827cc",
+        "contentHash": "22abc3bf49df48030389c4e199b4222ceb7847e8d3efbcafe7b6ee9269ae6860",
+        "houseSourceSha256": "98fa208835caf7184acc95f26dcff56ace23ba281ff8d4b9b8c37e18e407be14"
+      }
+    },
+    "public/data/v1/sa-pack.json": {
+      "beforeHash": "6a740f67551e155ca4c90700c0e0ce461e228900fd2d0acd509fc3095996562f",
+      "afterHash": "a6ca2e4ebbaae278a8a379eca5d22e8e20edcff2f6e66e74c31c53cf2a139a80",
+      "operations": [
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EX7ae87282"
+          },
+          "field": "sensePos",
+          "before": "v.",
+          "after": "n."
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EX822ffc31"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EX9af8de99"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EXa5adfe98"
+          },
+          "field": "sensePos",
+          "before": "v.",
+          "after": "n."
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003674"
+          },
+          "field": "usagePattern",
+          "before": "..., nevertheless, ...; Nevertheless, S + V",
+          "after": "...; nevertheless, ...; Nevertheless, S + V"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003674"
+          },
+          "field": "usagePatternZh",
+          "before": "……，然而，……；然而，S+V",
+          "after": "……；然而，……；然而，S+V"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003445"
+          },
+          "field": "usagePatternZh",
+          "before": "年輕或年長的一代；代代相傳；三代同堂",
+          "after": "年輕或年長的一代；代代相傳；三代"
+        },
+        {
+          "dataset": "media",
+          "selector": {
+            "assetId": "AX3adc2135"
+          },
+          "field": "captionZh",
+          "before": "豆豆在大家面前公開宣布手中的花。",
+          "after": "豆豆在講台上向聚集的群眾發表公開聲明。"
+        }
+      ],
+      "indent": null,
+      "beforeMeta": {
+        "schemaVersion": 2,
+        "generatedAt": "2026-11-22T07:03:23Z",
+        "counts": {
+          "words": 5798,
+          "senses": 771,
+          "examples": 7453,
+          "relations": 31,
+          "morphemes": 3708,
+          "notes": 4122,
+          "media": 1128,
+          "examPriority": 3623
+        },
+        "wordsHash": "sa:c4b9972167bca82304cd927e3ef355898492a547ce6f23779d0f6b6c09bb5126",
+        "contentHash": "sa:567701ffa4c15077295eefbacb6511827f953637dca36de4ba53b613dd61c829"
+      }
+    }
+  }
+}

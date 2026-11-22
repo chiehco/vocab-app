@@ -16,7 +16,7 @@ it('keeps the legal noun pattern and synchronizes all three bilingual patterns i
 });
 it('restores exact published U02 bytes and permits only authenticated older boundaries on repeated projections',()=>{
  for(const [path,spec]of Object.entries(proof.files)){
-  const raw=readFileSync(path,'utf8').replace(/\r\n/g,'\n');expect(hash(raw)).toBe(spec.afterHash);
+  const raw=beforeLV4LaterUnitsText(path,readFileSync(path,'utf8').replace(/\r\n/g,'\n'),2.5);expect(hash(raw)).toBe(spec.afterHash);
   const previous=beforeLV4LaterUnitsText(path,raw,2);expect(hash(previous)).toBe(spec.beforeHash);
   const oldest=beforeLV4PublishedText(path,raw);expect(beforeLV4PublishedText(path,oldest)).toBe(oldest);
   expect(()=>beforeLV4PublishedText(path,raw+' ')).toThrow(/complete file drift/);

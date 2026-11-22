@@ -2,12 +2,14 @@ import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import manifest from '../../../docs/lv4-releases-20261122/U01.json';
 import unit02 from '../../../docs/lv4-releases-20261122/U02.json';
+import unit03 from '../../../docs/lv4-releases-20261122/U03.json';
+import {BoundedTextCache} from './boundedTextCache.testSupport';
 import assure from '../../../docs/lv4-releases-20261122/U02-assure.json';
 import resolver from '../../../docs/lv4-releases-20261122/resolver-U01.json';
 type Row=Record<string,unknown>;
 type Operation={dataset?:string;selector:Row;field:string;before?:unknown;beforePresent?:boolean;after:unknown};
 type File={beforeHash:string;afterHash:string;operations:Operation[];beforeMeta?:unknown;indent:number|null};
-const layers=[{unit:2.5,manifest:assure,pin:'9454367917fc875b4ed6d32113d052c92c38a7763831c1ac1d080a7752990df5'},
+const layers=[{unit:3,manifest:unit03,pin:'3b8067666a74a1fb0338b9a04bc6c125e563eddc5d5906914b4e216ccd2c70bc'},{unit:2.5,manifest:assure,pin:'9454367917fc875b4ed6d32113d052c92c38a7763831c1ac1d080a7752990df5'},
  {unit:2,manifest:unit02,pin:'e3715fdbdf76b2d165327797bc2549ae00d8cfc9c902eaa3bda351ec3aaee292'},
  {unit:1,manifest,pin:'b3e64bec21ee412d7ccaa468b5036a548bfc8ac9b562781b4a59335a6bc79818'}];
 export const hasLV4PublishedFile=(path:string)=>layers.some(layer=>Object.hasOwn(layer.manifest.files,path));
@@ -34,8 +36,16 @@ export function beforeLV4PublishedText(path:string,text:string):string{
  return beforeLV4LaterUnitsText(path,text,0);
 }
 /** Reverse only authenticated successor units; released manifests stay immutable. */
+const projections=new BoundedTextCache();
 export function beforeLV4LaterUnitsText(path:string,text:string,unit:number):string{
+ // Authenticate proofs and hash the entire current input on EVERY call, including hits.
  authenticate();
+ if(!Number.isFinite(unit))return projectUncached(path,text,unit);
+ const key=JSON.stringify([path,unit,layers.map(layer=>layer.pin),hash(text)]);
+ const cached=projections.get(key);if(cached!==undefined)return cached;
+ const result=projectUncached(path,text,unit);projections.set(key,result);return result;
+}
+function projectUncached(path:string,text:string,unit:number):string{
  for(const [index,layer]of layers.entries()){if(layer.unit<=unit)continue;
  const spec=(layer.manifest.files as Record<string,File>)[path];if(!spec)continue;
  // An already authenticated earlier layer may be supplied by an outer projection.
