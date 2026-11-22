@@ -59,7 +59,8 @@ for (const [source, count, usageCount, mappedCount] of [[source1, 102, 33, 83], 
   });
 
   it(`LV4 U${source.unit} excludes pending art and examples while checked text remains playable`, () => {
-    expect(unit.items.every(i => !i.illustration && !i.originalExample && !i.officialSenseId)).toBe(true);
+    expect(unit.items.every(i => !i.originalExample && !i.officialSenseId)).toBe(true);
+    expect(unit.items.filter(i=>i.illustration)).toHaveLength(source.unit===1?17:0);
     expect(unit.questions).toEqual([]);
     expect(practiceIds(unit.items)).toEqual([]);
     expect(unit.items.every(i => !reviewedExample(i))).toBe(true);

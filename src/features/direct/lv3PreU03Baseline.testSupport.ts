@@ -4,11 +4,15 @@ import {readFileSync} from 'node:fs';
 import {isDeepStrictEqual} from 'node:util';
 import * as frozen from './lv3Audit.preBatch.testSupport';
 import {beforeU03StarterText} from './lv3U03Starter.testSupport';
+import {beforeLV4Published,beforeLV4PublishedText} from './lv4Published.testSupport';
 export * from './lv3Audit.preBatch.testSupport';
 
 const packPath='public/data/v1/sa-pack.json';
 export function lv3AfterUnitFile<T>(afterUnit:string,path:string,value:T):T {
-  if(path!==packPath)return frozen.lv3AfterUnitFile(afterUnit,path,value);
+  if(path!==packPath){
+    if(path.endsWith('.json'))assert.ok(isDeepStrictEqual(value,JSON.parse(readFileSync(path,'utf8'))),'unknown whole-file strict semantic drift');
+    return frozen.lv3AfterUnitFile(afterUnit,path,beforeLV4Published(path,value));
+  }
   const raw=readFileSync(path,'utf8').replace(/\r\n/g,'\n');
   const current=JSON.parse(raw);
   assert.ok(isDeepStrictEqual(value,current),'unknown whole-file strict semantic drift');
@@ -18,5 +22,5 @@ export function lv3AfterUnitFile<T>(afterUnit:string,path:string,value:T):T {
 }
 
 export function lv3AfterUnitPublishedText(afterUnit:string,path:string,text:string):string {
-  return frozen.lv3AfterUnitPublishedText(afterUnit,path,path===packPath?beforeU03StarterText(text):text);
+  return frozen.lv3AfterUnitPublishedText(afterUnit,path,path===packPath?beforeU03StarterText(text):beforeLV4PublishedText(path,text));
 }

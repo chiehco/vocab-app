@@ -2,12 +2,14 @@ import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {readFileSync} from 'node:fs';
 import extension from '../../../docs/lv3-u03-recovery-20261122/starter-extension.json';
+import {beforeLV4PublishedText} from './lv4Published.testSupport';
 
 const digest=(text:string)=>createHash('sha256').update(text).digest('hex');
 type Pack={meta:unknown;[dataset:string]:unknown};
 
 /** Restore the exact published 5779-word fixture for historical tests only. */
 export function beforeU03StarterText(text:string):string {
+  text=beforeLV4PublishedText('public/data/v1/sa-pack.json',text);
   assert.equal(digest(JSON.stringify(extension)),'9356a7533c440303716999e0e45fa3be5fa0e93c7d1ecbb2b4d9c7a909a76db0','U03 extension manifest drift');
   assert.equal(digest(text),extension.afterByteHash,'U03 current starter byte drift');
   const pack=JSON.parse(text) as Pack;

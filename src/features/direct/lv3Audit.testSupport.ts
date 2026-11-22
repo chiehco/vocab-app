@@ -3,6 +3,7 @@ import {isDeepStrictEqual,types as utilTypes} from 'node:util';
 import {createHash} from 'node:crypto';
 import {readFileSync} from 'node:fs';
 import {beforeU03Starter,beforeU03StarterText} from './lv3U03Starter.testSupport';
+import {beforeLV4Published,beforeLV4PublishedText,beforeLV4Rows} from './lv4Published.testSupport';
 import {lv3Unit1BeforeAudit} from './lv3Unit1Audit.testSupport';
 import {BUILDER,PACK,MIGRATION_ID,validateStarterMediaMigration,inverseStarterMediaMigrationNormalized,type StarterMediaMigration,type MigrationLoader} from './starterMediaMigration.testSupport';
 
@@ -3254,7 +3255,7 @@ export function lv3AfterUnit1Rows<T>(dataset:string,value:T,options:{allowMissin
  return lv3AfterUnitRows('LV3-U01',dataset,value,options);
 }
 export function lv3BeforeAudit<T>(dataset:string,value:T,options:{allowMissing?:boolean}={}):T {
- return lv3Unit1BeforeAudit(dataset,lv3AfterUnit1Rows(dataset,value,options),options);
+ return lv3Unit1BeforeAudit(dataset,lv3AfterUnit1Rows(dataset,beforeLV4Rows(dataset,value),options),options);
 }
 // Reject executable caller structures before authenticating any snapshot. Do not
 // clone inputs first: cloning could erase array properties that strict guards see.
@@ -3282,7 +3283,7 @@ export function lv3BeforeAuditDatasets(datasets:Record<string,unknown>,options:{
  const entries=Object.entries(datasets),checkedOptions={allowMissing:options.allowMissing??false};
  const state=checkpoint('LV3-U01',auditOperation());
  return Object.fromEntries(entries.map(([name,value])=>[name,
-  lv3Unit1BeforeAudit(name,rowsAtCheckpoint(state,name,value,checkedOptions),checkedOptions)]));
+  lv3Unit1BeforeAudit(name,rowsAtCheckpoint(state,name,beforeLV4Rows(name,value),checkedOptions),checkedOptions)]));
 }
 
 export function reverseFileAuditSteps<T>(steps:{manifest:Manifest;scope?:AuditScope}[],path:string,value:T,loadMigration:MigrationLoader=migrationLoad):T {
@@ -3328,7 +3329,7 @@ function fileAtCheckpoint<T>(state:ReturnType<typeof checkpoint>,path:string,val
   const raw=readFileSync(new URL('../../../'+path,import.meta.url),'utf8').replace(/\r\n/g,'\n');
   const current=JSON.parse(raw) as T;
   assert.ok(isDeepStrictEqual(value,current),'unknown whole-file strict semantic drift');
-  input=path===PACK?beforeU03Starter(current):current;
+  input=path===PACK?beforeU03Starter(current):beforeLV4Published(path,current);
   if(state.later.some(step=>!isMigration(step.manifest)&&Object.hasOwn(auditContract(step.manifest).files,path))
     &&path!==PACK&&path!=='public/data/v1/meta.json'){
    const projected=publishedTextAtCheckpoint(state,path,raw);
@@ -3343,7 +3344,7 @@ function fileAtCheckpoint<T>(state:ReturnType<typeof checkpoint>,path:string,val
    const raw=JSON.stringify(out,null,path===PACK?undefined:2)+'\n';assert.equal(createHash('sha256').update(raw).digest('hex'),state.bytes[path],'target checkpoint derived drift');return out;
   }
   // Authenticate exact original formatting before comparing parsed untouched data.
-  const raw=readFileSync(new URL('../../../'+path,import.meta.url),'utf8').replace(/\r\n/g,'\n');
+  const raw=beforeLV4PublishedText(path,readFileSync(new URL('../../../'+path,import.meta.url),'utf8').replace(/\r\n/g,'\n'));
   const digest=createHash('sha256').update(raw).digest('hex');
   assert.equal(digest,state.bytes[path],'target checkpoint byte drift');
   const target=path===BUILDER?raw:JSON.parse(raw);
@@ -3425,7 +3426,7 @@ function publishedTextAtCheckpoint(state:ReturnType<typeof checkpoint>,path:stri
  assert.equal(text,text.replace(/\r\n/g,'\n'),'caller must normalize CRLF first');
  const source=supplementalSourceContracts.find(registered=>registered.collection.path===path);
  if(source)assert.ok(Object.hasOwn(state.bytes,path),`unknown ${source.unit.replace('LV3-','')} supplementary checkpoint path`);
- let out=path===PACK?beforeU03StarterText(text):text;const proof:PublishedProof={};
+ let out=path===PACK?beforeU03StarterText(text):beforeLV4PublishedText(path,text);const proof:PublishedProof={};
  for(const {manifest,scope} of [...state.later].reverse()){
   if(isMigration(manifest)){out=inverseStarterMediaMigrationNormalized(manifest,path,out,state.operation.loadMigration);continue;}
   assert.ok(scope);out=inversePublishedStep(manifest,scope,path,out,state.operation.validateScope,proof);

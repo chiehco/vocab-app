@@ -7,6 +7,7 @@ from pathlib import Path
 import shutil
 import tempfile
 import apply_lv3_unit_audit as v1
+from lv4_published_fixture import project as before_lv4
 
 UNIT = 'src/features/direct/curriculumLV3Unit3.json'
 SOURCE = 'scripts/sources/LV3Unit3.json'
@@ -57,6 +58,11 @@ def before_pack(raw, manifest):
         raise ValueError('U03 extension manifest drift')
     raw = raw.replace(b'\r\n', b'\n')
     if digest(raw) != manifest['afterByteHash']:
+        try:
+            raw = before_lv4(Path(__file__).resolve().parent.parent,PACK,raw)
+        except ValueError as error:
+            raise ValueError('U03 current starter byte drift') from error
+    if digest(raw) != manifest['afterByteHash']:
         raise ValueError('U03 current starter byte drift')
     pack = json.loads(raw)
     if pack['meta'] != manifest['afterMeta']:
@@ -85,7 +91,8 @@ def historical_view(root, paths):
         for path in domain:
             target = view / path
             target.parent.mkdir(parents=True, exist_ok=True)
-            target.write_bytes(before_pack(original[path], manifest) if path == PACK else original[path])
+            raw = before_lv4(root,path,original[path])
+            target.write_bytes(before_pack(raw, manifest) if path == PACK else raw)
         shutil.copytree(v1.safe_path(root, 'docs/lv3-audit-20261107'), view / 'docs/lv3-audit-20261107', symlinks=True)
         for unit in (18, 19, 20):
             path = f'scripts/sources/LV3Unit{unit}.json'
