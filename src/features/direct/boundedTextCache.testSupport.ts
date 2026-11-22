@@ -2,7 +2,9 @@
 export class BoundedTextCache {
  private entries=new Map<string,string>();
  private bytes=0;
- constructor(private budget=64*1024*1024,private limit=12){}
+ private budget:number;
+ private limit:number;
+ constructor(budget=64*1024*1024,limit=12){this.budget=budget;this.limit=limit;}
  private cost(key:string,value:string){return 2*(key.length+value.length);}
  get(key:string){
   const value=this.entries.get(key);
