@@ -1,0 +1,201 @@
+{
+  "scope": "Only seven existing H08 U06 ready fields: shift POS, furnish/retirement bilingual patterns, colleague factual translation, lie in original authored example while preserving legitimate Norway lie on contrast. U04 comment duplicate already closed, no reapplication. No art, curriculum identity, learning data or approval/status grants changed.",
+  "sourceOverlaySha256": "bf650458a391a3b2073a2d19a67205f344774538d559479a81286ec5dbdd2e80",
+  "findingIds": [
+    "LV4U06-F01",
+    "LV4U06-F03",
+    "LV4U06-F04",
+    "LV4U06-EDIT01",
+    "LV4U06-EDIT02"
+  ],
+  "files": {
+    "public/data/v1/examples.json": {
+      "beforeHash": "2d8a1b9dabb98aec7de1587b96195a5b48c0ab22e35494cc67260f185caa71af",
+      "afterHash": "ef67163204b07ff90b4ce4bf5d82b4eab99817115b15ad387b2d12d21aa3ed5e",
+      "operations": [
+        {
+          "selector": {
+            "exampleId": "EX0d4760ff"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "selector": {
+            "exampleId": "EXd8a495d7"
+          },
+          "field": "sentenceZh",
+          "before": "我通常和幾位同事一起在辦公室吃午餐。",
+          "after": "我通常和辦公室的幾位同事一起吃午餐。"
+        }
+      ],
+      "indent": 2
+    },
+    "public/data/v1/words.json": {
+      "beforeHash": "5629b0c1ef06b9feaee050fe4b18df5d3bba09cc428579ba2a5167d41246c3b1",
+      "afterHash": "7a857f0f8e5934a679bc564b23c9efb100f1ab726ad8db7301ec7894b9c8c1a2",
+      "operations": [
+        {
+          "selector": {
+            "wordId": "W003438"
+          },
+          "field": "usagePattern",
+          "before": "furnish + N; furnish to V",
+          "after": "furnish a room/house; furnish sb with sth"
+        },
+        {
+          "selector": {
+            "wordId": "W003438"
+          },
+          "field": "usagePatternZh",
+          "before": "裝潢……；提供……以致……",
+          "after": "為房間／房屋配備家具；提供某人某物"
+        },
+        {
+          "selector": {
+            "wordId": "W006069"
+          },
+          "field": "usagePattern",
+          "before": "retire + N; retire to V; a/the retire",
+          "after": "retirement from N; after retirement"
+        },
+        {
+          "selector": {
+            "wordId": "W006069"
+          },
+          "field": "usagePatternZh",
+          "before": "退休……；retire 後接 to 不定詞；該退休",
+          "after": "從……退休；退休後"
+        }
+      ],
+      "indent": 2
+    },
+    "public/data/v1/notes.json": {
+      "beforeHash": "e076594cc83d13ac213da9297d08cb1440d5d5ed20d21e4889be409b2dd2be4d",
+      "afterHash": "84719e28fbe635f545ebe3a0e53da19cc454ff37c436b4e9f0fa0737db85ed4a",
+      "operations": [
+        {
+          "selector": {
+            "noteId": "NXdb65bfdf"
+          },
+          "field": "content",
+          "before": "在於……。例：My hometown lies on the west coast of Norway.（我的家鄉位於挪威的西海岸。）",
+          "after": "在於……。原創例句：The problem lies in our lack of time.（問題在於我們時間不足。）\n比較 lie on（位於……）：原有例句 My hometown lies on the west coast of Norway.（我的家鄉位於挪威的西海岸。）"
+        }
+      ],
+      "indent": 2
+    },
+    "public/data/v1/meta.json": {
+      "beforeHash": "4b30410f9d6049c7ab79fdb3a6448477fc7bee2723d005ffb3bce90f720967d3",
+      "afterHash": "23c64542a93d80eea9c6e29cb6a4bc0ecceda227de0d0c23db3b4f4a7315f006",
+      "operations": [],
+      "indent": 2,
+      "beforeMeta": {
+        "schemaVersion": 2,
+        "generatedAt": "2026-11-22T11:02:54Z",
+        "sourceFile": "萬詞譜母表_SA義項清理整合_20260904.xlsx",
+        "counts": {
+          "words": 6090,
+          "senses": 772,
+          "examples": 7871,
+          "relations": 40,
+          "morphemes": 3798,
+          "media": 1177,
+          "notes": 4290,
+          "examPriority": 3792,
+          "hooks": 0
+        },
+        "wordsHash": "5629b0c1ef06b9feaee050fe4b18df5d3bba09cc428579ba2a5167d41246c3b1",
+        "contentHash": "c5a2958e257da0ea08987c6c12fc7a2d1ebb211ad1cfaf82326c7ed620978c9e",
+        "houseSourceSha256": "98fa208835caf7184acc95f26dcff56ace23ba281ff8d4b9b8c37e18e407be14"
+      }
+    },
+    "public/data/v1/sa-pack.json": {
+      "beforeHash": "a5bc299f528ed0e8e48d21aef4b103af086b7356014716cc858b1d618c4baad7",
+      "afterHash": "13729ed078c1ed5a350c3e11254268f0c73957d3fa6e011b962e6daef4cde3e0",
+      "operations": [
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EX0d4760ff"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003438"
+          },
+          "field": "usagePattern",
+          "before": "furnish + N; furnish to V",
+          "after": "furnish a room/house; furnish sb with sth"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003438"
+          },
+          "field": "usagePatternZh",
+          "before": "裝潢……；提供……以致……",
+          "after": "為房間／房屋配備家具；提供某人某物"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W006069"
+          },
+          "field": "usagePattern",
+          "before": "retire + N; retire to V; a/the retire",
+          "after": "retirement from N; after retirement"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W006069"
+          },
+          "field": "usagePatternZh",
+          "before": "退休……；retire 後接 to 不定詞；該退休",
+          "after": "從……退休；退休後"
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EXd8a495d7"
+          },
+          "field": "sentenceZh",
+          "before": "我通常和幾位同事一起在辦公室吃午餐。",
+          "after": "我通常和辦公室的幾位同事一起吃午餐。"
+        },
+        {
+          "dataset": "notes",
+          "selector": {
+            "noteId": "NXdb65bfdf"
+          },
+          "field": "content",
+          "before": "在於……。例：My hometown lies on the west coast of Norway.（我的家鄉位於挪威的西海岸。）",
+          "after": "在於……。原創例句：The problem lies in our lack of time.（問題在於我們時間不足。）\n比較 lie on（位於……）：原有例句 My hometown lies on the west coast of Norway.（我的家鄉位於挪威的西海岸。）"
+        }
+      ],
+      "indent": null,
+      "beforeMeta": {
+        "schemaVersion": 2,
+        "generatedAt": "2026-11-22T11:02:54Z",
+        "counts": {
+          "words": 5798,
+          "senses": 771,
+          "examples": 7453,
+          "relations": 31,
+          "morphemes": 3708,
+          "notes": 4122,
+          "media": 1128,
+          "examPriority": 3623
+        },
+        "wordsHash": "sa:4c943d6a4bdfbdd81b9ba0a55027dd51d0907c2799dfe0e6509d367de7286192",
+        "contentHash": "sa:6c1b0927b1ea65f94531bf45afbb4f7fa56b3d106e2c180cd4707141e6b11828"
+      }
+    }
+  }
+}
