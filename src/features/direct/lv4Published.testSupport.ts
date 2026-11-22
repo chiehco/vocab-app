@@ -33,8 +33,39 @@ function find(value:unknown,selector:Row):Row[]{
   const row=value as Row;return [...(Object.entries(selector).every(([k,v])=>row[k]===v)?[row]:[]),...Object.values(row).flatMap(v=>find(v,selector))];
  }return [];
 }
-function reverse(value:unknown,operation:Operation,partial=false){
- const rows=find(value,operation.selector);if(partial&&!rows.length)return;
+function matchingFor(operations:Operation[]){
+ // Index only keys that stay immutable throughout this inverse step. Rebuild
+ // after each step/append removal, and retain recursive selection for structural
+ // replacements. Indexes are local to this call, never a global data cache.
+ const mutated=new Set(operations.flatMap(op=>op.field.split('.')));
+ const containsRecord=(value:unknown):boolean=>Array.isArray(value)?value.some(containsRecord):value!==null&&typeof value==='object';
+ const structural=operations.some(op=>containsRecord(op.before)||containsRecord(op.after));
+ const roots=new WeakMap<object,{rows:Row[];keys:Map<string,Map<unknown,Row[]>>}>();
+ return (value:unknown,selector:Row):Row[]=>{
+  const entries=Object.entries(selector),primary=entries.find(([key])=>!mutated.has(key));
+  if(structural||!primary||!value||typeof value!=='object')return find(value,selector);
+  let root=roots.get(value);
+  if(!root){
+   const rows:Row[]=[];
+   const visit=(item:unknown):void=>{
+    if(Array.isArray(item)){for(const child of item)visit(child);}
+    else if(item&&typeof item==='object'){rows.push(item as Row);for(const child of Object.values(item))visit(child);}
+   };
+   visit(value);root={rows,keys:new Map()};roots.set(value,root);
+  }
+  const [key,wanted]=primary;let index=root.keys.get(key);
+  if(!index){
+   index=new Map();
+   for(const row of root.rows){const id=row[key],matches=index.get(id);if(matches)matches.push(row);else index.set(id,[row]);}
+   root.keys.set(key,index);
+  }
+  // Recheck every selector field against the live row. Preserve duplicate
+  // occurrences and strict equality, including NaN/undefined edge cases.
+  return (index.get(wanted)??[]).filter(row=>entries.every(([k,v])=>row[k]===v));
+ };
+}
+function reverse(value:unknown,operation:Operation,partial=false,matching=find){
+ const rows=matching(value,operation.selector);if(partial&&!rows.length)return;
  assert.equal(rows.length,1,'LV4 U01 selector identity drift');const row=rows[0];
  if(partial&&operation.beforePresent!==false&&JSON.stringify(row[operation.field])===JSON.stringify(operation.before))return;
  assert.deepEqual(row[operation.field],operation.after,'LV4 U01 field drift');
@@ -81,7 +112,8 @@ function projectUncached(path:string,text:string,unit:number,inputHash?:string):
  let value=JSON.parse(text) as Row;
  for(const {spec}of chain.slice(start,stop)){
   for(const addition of [...(spec.appendedRows??[])].reverse())reverseAppended(addition.dataset?value[addition.dataset]:value,addition);
-  for(const op of [...spec.operations].reverse())reverse(op.dataset?value[op.dataset]:value,op);
+  const matching=matchingFor(spec.operations);
+  for(const op of [...spec.operations].reverse())reverse(op.dataset?value[op.dataset]:value,op,false,matching);
   if(spec.beforeMeta){if(path.endsWith('sa-pack.json'))value.meta=structuredClone(spec.beforeMeta);else value=structuredClone(spec.beforeMeta) as Row;}
  }
  const last=chain[stop-1].spec;const restored=JSON.stringify(value,null,last.indent??undefined)+'\n';
@@ -96,7 +128,8 @@ export function beforeLV4Rows<T>(dataset:string,value:T):T{
  for(const layer of layers){const spec=(layer.manifest.files as Record<string,File>)[path];
   if(spec){
    for(const addition of [...(spec.appendedRows??[])].reverse())reverseAppended(copy,addition,true);
-   for(const op of [...spec.operations].reverse())reverse(copy,op,true);
+   const matching=matchingFor(spec.operations);
+   for(const op of [...spec.operations].reverse())reverse(copy,op,true,matching);
   }
  }return copy;
 }
