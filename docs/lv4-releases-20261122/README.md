@@ -9,3 +9,9 @@ U01.json records every changed field and complete before/after hashes for all si
 The unique mother workbook has seventeen new source-backed words/senses (W006120–W006136), with a byte-preserving backup and append-only worksheet updates. App ID mapping remains a separate pending operation. See master-U01.json. G05 missing artwork and other text-only gaps remain nonblocking records.
 
 Release and browser evidence are maintained under output/playwright/lv4-u01-20261122 and the fixed entry at C:/onedrive/萬詞譜. Evidence is written only after the corresponding check actually passes.
+
+U02 reuses seven fields from H08: otherwise's textbook punctuation in the sentence, blank and pattern, and publisher's four synchronized bilingual caption fields. The publisher image is unchanged. Its stable word selector replaces the old mutable caption-key selector. The assure proposal is held because it would remove a legitimate assure + noun construction; both original fields remain unchanged pending the user's choice. Missing pictures, examples and App ID mappings remain nonblocking.
+
+U02.json authenticates six changed JSON files and reverses them to the exact U01 publication. Test-only successor layers retain the immutable U01 manifest and original historical tests, including both five-second stage bodies. The historical media loader projects the authenticated publisher caption before checking the unchanged migration proof. Original-caption coverage uses authenticated historical caption rows; the U02 regression checks the current bilingual lookup and rejects the obsolete key. No production migration is replayed.
+
+master-U02.json records 24 new source-backed words/senses (W006137–W006160), appended after backup; all64 sheets and previous content/formula caches are retained. App ID mapping remains separately pending. Evidence is under output/playwright/lv4-u02-20261122.

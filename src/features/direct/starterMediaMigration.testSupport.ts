@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
+import {beforeLV4PublishedText,isLV4PublishedAfterText} from './lv4Published.testSupport';
 
 type Row=Record<string,unknown>;
 export const MIGRATION_ID='starter-media-actual-names-v1';
@@ -85,7 +86,7 @@ export function validateStarterMediaMigration(m:StarterMediaMigration,load:Migra
   assert.equal(rawHash,(side==='before'?m.beforeRawInputs:m.afterRawInputs)[path],'migration raw guard');assert.equal(normalizedDigest(raw,rawHash),(side==='before'?m.beforeInputs:m.afterInputs)[path],'migration normalized guard');
  }
  assert.equal(texts.beforeBuilder.split(OLD).length,2,'migration builder unique replacement');assert.ok(!texts.beforeBuilder.includes(NEXT));assert.equal(texts.afterBuilder,texts.beforeBuilder.replace(OLD,NEXT),'migration builder exact edit');
- const source=(p:string)=>{const raw=load(p),rawHash=migrationByteHash(raw);assert.equal(normalizedDigest(raw,rawHash),m.beforeInputs[p],'migration source guard');rawDigests[p]=rawHash;return raw;};
+ const source=(p:string)=>{let raw=load(p);if(p===MEDIA){const text=norm(decode(raw));if(isLV4PublishedAfterText(p,text))raw=beforeLV4PublishedText(p,text);}const rawHash=migrationByteHash(raw);assert.equal(normalizedDigest(raw,rawHash),m.beforeInputs[p],'migration source guard');rawDigests[p]=rawHash;return raw;};
  const mediaText=source(MEDIA),priorityText=source(PRIORITY);
  // Include the entire ordered manifest, not just its ID or selected guard fields.
  // All six actual texts above are reread and authenticated on every invocation.

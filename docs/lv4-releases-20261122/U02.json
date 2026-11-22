@@ -1,0 +1,174 @@
+{
+  "scope": "LV4 U02 existing otherwise punctuation and publisher factual caption; assure held for legitimate-content decision",
+  "oldCoreSha256": "bf650458a391a3b2073a2d19a67205f344774538d559479a81286ec5dbdd2e80",
+  "files": {
+    "public/data/v1/examples.json": {
+      "beforeHash": "fe6cd45fa386316000d299c770b4ebe9bf202f1b8751cbabfde05081d8403450",
+      "operations": [
+        {
+          "selector": {
+            "exampleId": "EXef58ef09"
+          },
+          "field": "sentenceEn",
+          "before": "Take an umbrella, otherwise you'll get soaked.",
+          "after": "Take an umbrella; otherwise, you'll get soaked."
+        },
+        {
+          "selector": {
+            "exampleId": "EXef58ef09"
+          },
+          "field": "blankSentence",
+          "before": "Take an umbrella, _____ you'll get soaked.",
+          "after": "Take an umbrella; _____, you'll get soaked."
+        }
+      ],
+      "afterHash": "33ef08728a10cc73cc28b20b1a13449f1a90c11cc3b1e1303d9fd4439382d3f0",
+      "indent": 2
+    },
+    "public/data/v1/words.json": {
+      "beforeHash": "2d111c4a54890adb2b84d07666be96a02a4db3402844d465f34b8867580b4bec",
+      "operations": [
+        {
+          "selector": {
+            "wordId": "W003703"
+          },
+          "field": "usagePattern",
+          "before": "..., otherwise ...; unless otherwise stated; think/believe otherwise",
+          "after": "...; otherwise, ...; unless otherwise stated; think/believe otherwise"
+        }
+      ],
+      "afterHash": "7187318f37c1d757e1d1d82ecc11856979d83402c45ea77bdabc0d4aec88c0c2",
+      "indent": 2
+    },
+    "public/data/v1/media.json": {
+      "beforeHash": "ee130840a1a7467271243b550dfa89ed4f266f9518b4c270aa33cfd1de8112a5",
+      "operations": [
+        {
+          "selector": {
+            "assetId": "AX6a88080e"
+          },
+          "field": "captionZh",
+          "before": "出版者把空白頁製作並整理成三本淡藍色書籍。",
+          "after": "出版者把空白頁製作並整理成淡藍色書籍。"
+        }
+      ],
+      "afterHash": "3ca030c81f8eb173334cca4283ec7e67049f8d951e11e46e908dbc4796bae409",
+      "indent": 2
+    },
+    "src/features/wordbeast/illustrationCaptions.json": {
+      "beforeHash": "ff5fcd22ddb6e90d1dd9fbdbc05915922d9e04e4dd058c2f9309733cf30783e6",
+      "operations": [
+        {
+          "selector": {
+            "word": "publisher"
+          },
+          "field": "captionZh",
+          "before": "出版者把空白頁製作並整理成三本淡藍色書籍。",
+          "after": "出版者把空白頁製作並整理成淡藍色書籍。"
+        },
+        {
+          "selector": {
+            "word": "publisher"
+          },
+          "field": "en",
+          "before": "The publisher turns blank pages into three neatly assembled pale-blue books.",
+          "after": "The publisher turns blank pages into neatly assembled pale-blue books."
+        },
+        {
+          "selector": {
+            "word": "publisher"
+          },
+          "field": "zh",
+          "before": "出版者把空白頁製作並整理成三本淡藍色書籍。",
+          "after": "出版者把空白頁製作並整理成淡藍色書籍。"
+        }
+      ],
+      "afterHash": "406ac1429dd7256d2aa04652da801d5a0d518d68c91d788ac7b17863f703f022",
+      "indent": 2
+    },
+    "public/data/v1/sa-pack.json": {
+      "beforeHash": "79e5158ffaa44a190dc6ef308eafdd0fd45a3b59bfbd38866602f768bc7dcf48",
+      "operations": [
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003703"
+          },
+          "field": "usagePattern",
+          "before": "..., otherwise ...; unless otherwise stated; think/believe otherwise",
+          "after": "...; otherwise, ...; unless otherwise stated; think/believe otherwise"
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EXef58ef09"
+          },
+          "field": "sentenceEn",
+          "before": "Take an umbrella, otherwise you'll get soaked.",
+          "after": "Take an umbrella; otherwise, you'll get soaked."
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EXef58ef09"
+          },
+          "field": "blankSentence",
+          "before": "Take an umbrella, _____ you'll get soaked.",
+          "after": "Take an umbrella; _____, you'll get soaked."
+        },
+        {
+          "dataset": "media",
+          "selector": {
+            "assetId": "AX6a88080e"
+          },
+          "field": "captionZh",
+          "before": "出版者把空白頁製作並整理成三本淡藍色書籍。",
+          "after": "出版者把空白頁製作並整理成淡藍色書籍。"
+        }
+      ],
+      "afterHash": "3b5380bfcf7b93b937c79653676ee0bec54feecd0f98466a4918b5d8a19229cf",
+      "indent": null,
+      "beforeMeta": {
+        "schemaVersion": 2,
+        "generatedAt": "2026-11-22T02:44:56Z",
+        "counts": {
+          "words": 5798,
+          "senses": 771,
+          "examples": 7453,
+          "relations": 31,
+          "morphemes": 3708,
+          "notes": 4122,
+          "media": 1128,
+          "examPriority": 3623
+        },
+        "wordsHash": "sa:83c032cb10af536c81fbd79c58b5fadf3102d6ff1aa03f66a874bafc4d31d936",
+        "contentHash": "sa:fbb33e42bd4af40b6ecf6e2d24ed4336371221d7064bf6e6c7f09b8acd1b896d"
+      }
+    },
+    "public/data/v1/meta.json": {
+      "beforeHash": "919fe529c9f324cc7438e5cc4f4b688071821605aa3fdf63e0e24dbc45ef1f92",
+      "operations": [],
+      "beforeMeta": {
+        "schemaVersion": 2,
+        "generatedAt": "2026-11-22T02:44:56Z",
+        "sourceFile": "萬詞譜母表_SA義項清理整合_20260904.xlsx",
+        "counts": {
+          "words": 6090,
+          "senses": 772,
+          "examples": 7871,
+          "relations": 40,
+          "morphemes": 3798,
+          "media": 1177,
+          "notes": 4290,
+          "examPriority": 3792,
+          "hooks": 0
+        },
+        "wordsHash": "2d111c4a54890adb2b84d07666be96a02a4db3402844d465f34b8867580b4bec",
+        "contentHash": "a54dda02c983af758196e0f99e566f0c70d065b53d1dae04f9168c89cae63278",
+        "houseSourceSha256": "98fa208835caf7184acc95f26dcff56ace23ba281ff8d4b9b8c37e18e407be14"
+      },
+      "afterHash": "30f6bc644513b62db7ec170c49f4808ca4386d0a1cfbfc220c55ec58335c471c",
+      "indent": 2
+    }
+  }
+}

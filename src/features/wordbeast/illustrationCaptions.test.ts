@@ -3,6 +3,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { createElement } from 'react';
 import pack from '../../../public/data/v1/sa-pack.json';
 import { lv3AfterUnitFile } from '../direct/lv3Audit.testSupport';
+import {beforeLV4Published} from '../direct/lv4Published.testSupport';
 import rows from './illustrationCaptions.json';
 import { getIllustrationCaption } from './illustrationCaptions';
 import StudyIllustration from './StudyIllustration';
@@ -16,8 +17,9 @@ describe('image caption pairs', () => {
     expect(sources).toHaveLength(742);
     expect(rows).toHaveLength(sources.length);
     expect(new Set(rows.map(r => r.captionZh)).size).toBe(rows.length);
+    const historicalRows=beforeLV4Published('src/features/wordbeast/illustrationCaptions.json',rows);
     for (const source of sources) {
-      const pair = getIllustrationCaption(source.captionZh)!;
+      const pair = historicalRows.find(row=>row.captionZh===source.captionZh)!;
       expect(pair.en.length).toBeGreaterThan(10);
       expect(pair.en).not.toMatch(/[\u4e00-\u9fff]/);
       expect(pair.zh).toMatch(/[\u4e00-\u9fff]/);

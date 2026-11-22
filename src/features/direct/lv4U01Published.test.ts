@@ -5,7 +5,7 @@ import evidence from '../../../docs/lv4-releases-20261122/U01.json';
 import cards from '../vocabulary/lv4U01ApprovedCards.json';
 import {approvedCurriculumCards,approvedCurriculumItem} from '../vocabulary/approvedCurriculum';
 import {findUnit} from './model';
-import {beforeLV4PublishedText,beforeLV4ResolverSource} from './lv4Published.testSupport';
+import {beforeLV4PublishedText,beforeLV4ResolverSource,beforeLV4LaterUnitsText} from './lv4Published.testSupport';
 import {lv3AfterUnitRows} from './lv3Audit.testSupport';
 const hash=(b:string|Buffer)=>createHash('sha256').update(b).digest('hex');
 it('corrects equipment and labor example POS and all three evidence titles together',()=>{
@@ -14,7 +14,7 @@ it('corrects equipment and labor example POS and all three evidence titles toget
  expect(examples.find(x=>x.exampleId==='EX86903e4e')?.sensePos).toBe('v.');
  expect(findUnit(1,'LV4')!.items.find(i=>i.learningItemId==='LI-LV4U01-G006')?.pattern).toBe('evidence 的不可數用法');
  for(const [path,spec]of Object.entries(evidence.files)){
-  const raw=readFileSync(path,'utf8').replace(/\r\n/g,'\n');expect(hash(raw)).toBe(spec.afterHash);
+  const raw=beforeLV4LaterUnitsText(path,readFileSync(path,'utf8').replace(/\r\n/g,'\n'),1);expect(hash(raw)).toBe(spec.afterHash);
   expect(hash(beforeLV4PublishedText(path,raw))).toBe(spec.beforeHash);
  }
 });
