@@ -1,0 +1,405 @@
+{
+  "scope": "Nineteen scoped fields from seventeen H08 ready fields plus two preservation fields: keep all noun/adjective patterns and move legitimate content oneself with + N to content, while removing its wrong attachment to noun-only contentment. Content verb POS already supported by H08. Five example POS fixes, cooperate with and constitute noun constructions, two factual existing-image caption corrections. No images, curriculum mappings, meanings or learner records deleted or approval status changed.",
+  "sourceOverlaySha256": "bf650458a391a3b2073a2d19a67205f344774538d559479a81286ec5dbdd2e80",
+  "findingIds": [
+    "LV4U07-F01",
+    "LV4U07-F02",
+    "LV4U07-F03",
+    "LV4U07-F04",
+    "LV4U07-F05",
+    "LV4U07-F06",
+    "LV4U07-F07",
+    "LV4U07-F08",
+    "LV4U07-EDIT01",
+    "LV4U07-ART01",
+    "LV4U07-ART02"
+  ],
+  "files": {
+    "public/data/v1/examples.json": {
+      "beforeHash": "ef67163204b07ff90b4ce4bf5d82b4eab99817115b15ad387b2d12d21aa3ed5e",
+      "afterHash": "70a65e3844a9d4bae4f5c147131163e84dd0e28efad2fc12a85ba758cce31632",
+      "operations": [
+        {
+          "selector": {
+            "exampleId": "EXd43428dd"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "selector": {
+            "exampleId": "EX97a17afc"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "adj."
+        },
+        {
+          "selector": {
+            "exampleId": "EXae4c40da"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "selector": {
+            "exampleId": "EXafa2650e"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "selector": {
+            "exampleId": "EX5856d00d"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        }
+      ],
+      "indent": 2
+    },
+    "public/data/v1/words.json": {
+      "beforeHash": "7a857f0f8e5934a679bc564b23c9efb100f1ab726ad8db7301ec7894b9c8c1a2",
+      "afterHash": "8d7c6a9cfa89ae1c00e2c10173e0ffad5fe675e92cf352f3ba1e7909f39ac2ae",
+      "operations": [
+        {
+          "selector": {
+            "wordId": "W003207"
+          },
+          "field": "pos",
+          "before": "n./adj.",
+          "after": "n./adj./v."
+        },
+        {
+          "selector": {
+            "wordId": "W003207"
+          },
+          "field": "posAll",
+          "before": [
+            "n.",
+            "adj."
+          ],
+          "after": [
+            "n.",
+            "adj.",
+            "v."
+          ]
+        },
+        {
+          "selector": {
+            "wordId": "W003223"
+          },
+          "field": "usagePattern",
+          "before": "cooperate + N; cooperate to V",
+          "after": "cooperate with sb; cooperate to V"
+        },
+        {
+          "selector": {
+            "wordId": "W003208"
+          },
+          "field": "usagePattern",
+          "before": "content oneself with + N; a sense of contentment",
+          "after": "a sense of contentment"
+        },
+        {
+          "selector": {
+            "wordId": "W003208"
+          },
+          "field": "usagePatternZh",
+          "before": "以某物自滿；一種滿足感",
+          "after": "一種滿足感"
+        },
+        {
+          "selector": {
+            "wordId": "W003197"
+          },
+          "field": "usagePattern",
+          "before": "constitute + N; constitute to V",
+          "after": "constitute N (a part/a majority/a threat); constitute a committee"
+        },
+        {
+          "selector": {
+            "wordId": "W003197"
+          },
+          "field": "usagePatternZh",
+          "before": "構成某物；組成去做某事",
+          "after": "構成某一部分／多數／威脅；組成委員會"
+        },
+        {
+          "selector": {
+            "wordId": "W003207"
+          },
+          "field": "usagePattern",
+          "before": "the content(s) of N; table of contents; be content with N",
+          "after": "the content(s) of N; table of contents; be content with N; content oneself with + N"
+        },
+        {
+          "selector": {
+            "wordId": "W003207"
+          },
+          "field": "usagePatternZh",
+          "before": "……的內容；目錄；對某事感到滿足",
+          "after": "……的內容；目錄；對某事感到滿足；使自己滿足於……"
+        }
+      ],
+      "indent": 2
+    },
+    "src/features/wordbeast/illustrationCaptions.json": {
+      "beforeHash": "d13f965e9fabd09a26da2d90318910deef9536ec1272cc0e3090578626ac4a00",
+      "afterHash": "a0d19f6dff122cc45dada1c5ce077cb4bd7a55e2cece29477b73fd1d1b44d649",
+      "operations": [
+        {
+          "selector": {
+            "word": "found"
+          },
+          "field": "en",
+          "before": "Doudou lifts the lid and finds the hidden berries.",
+          "after": "Doudou lifted the overturned box and found a hidden berry."
+        },
+        {
+          "selector": {
+            "word": "pursue"
+          },
+          "field": "captionZh",
+          "before": "豆豆沿著小路追隨前方的蝴蝶。",
+          "after": "豆豆出發追求海洋生物學的職涯。"
+        },
+        {
+          "selector": {
+            "word": "pursue"
+          },
+          "field": "en",
+          "before": "Doudou pursues the butterfly along the path.",
+          "after": "Doudou sets off to pursue a career in marine biology."
+        },
+        {
+          "selector": {
+            "word": "pursue"
+          },
+          "field": "zh",
+          "before": "豆豆沿著小路追隨前方的蝴蝶。",
+          "after": "豆豆出發追求海洋生物學的職涯。"
+        }
+      ],
+      "indent": 2
+    },
+    "public/data/v1/media.json": {
+      "beforeHash": "3cb0dab867ee60a39b354b46c387daf04d532ca6e6c2ff49b2b4b4ef9daa4478",
+      "afterHash": "639d4272550e8ad0e6fce1a0e43468380bd78c1f28cb9d0c1cf4899b0f7a5f29",
+      "operations": [
+        {
+          "selector": {
+            "assetId": "AX8c7a1322"
+          },
+          "field": "captionZh",
+          "before": "豆豆沿著小路追隨前方的蝴蝶。",
+          "after": "豆豆出發追求海洋生物學的職涯。"
+        }
+      ],
+      "indent": 2
+    },
+    "public/data/v1/meta.json": {
+      "beforeHash": "23c64542a93d80eea9c6e29cb6a4bc0ecceda227de0d0c23db3b4f4a7315f006",
+      "afterHash": "735190849c889b34e8409f3199cd4ca41a5bbf08ac89a9da5523c73a11090651",
+      "operations": [],
+      "indent": 2,
+      "beforeMeta": {
+        "schemaVersion": 2,
+        "generatedAt": "2026-11-22T12:14:02Z",
+        "sourceFile": "萬詞譜母表_SA義項清理整合_20260904.xlsx",
+        "counts": {
+          "words": 6090,
+          "senses": 772,
+          "examples": 7871,
+          "relations": 40,
+          "morphemes": 3798,
+          "media": 1177,
+          "notes": 4290,
+          "examPriority": 3792,
+          "hooks": 0
+        },
+        "wordsHash": "7a857f0f8e5934a679bc564b23c9efb100f1ab726ad8db7301ec7894b9c8c1a2",
+        "contentHash": "a6d8efacfec3c2534a1689b61384529ec1b4336e9851c5046e45c44fd2596713",
+        "houseSourceSha256": "98fa208835caf7184acc95f26dcff56ace23ba281ff8d4b9b8c37e18e407be14"
+      }
+    },
+    "public/data/v1/sa-pack.json": {
+      "beforeHash": "13729ed078c1ed5a350c3e11254268f0c73957d3fa6e011b962e6daef4cde3e0",
+      "afterHash": "4e8be5d9544d6ba5f0321d235fe34d33c0e89ad7ba6bc15bdc37c2b58670a74d",
+      "operations": [
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EXd43428dd"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EX97a17afc"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "adj."
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EXae4c40da"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EXafa2650e"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003207"
+          },
+          "field": "pos",
+          "before": "n./adj.",
+          "after": "n./adj./v."
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003207"
+          },
+          "field": "posAll",
+          "before": [
+            "n.",
+            "adj."
+          ],
+          "after": [
+            "n.",
+            "adj.",
+            "v."
+          ]
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003223"
+          },
+          "field": "usagePattern",
+          "before": "cooperate + N; cooperate to V",
+          "after": "cooperate with sb; cooperate to V"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003208"
+          },
+          "field": "usagePattern",
+          "before": "content oneself with + N; a sense of contentment",
+          "after": "a sense of contentment"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003208"
+          },
+          "field": "usagePatternZh",
+          "before": "以某物自滿；一種滿足感",
+          "after": "一種滿足感"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003197"
+          },
+          "field": "usagePattern",
+          "before": "constitute + N; constitute to V",
+          "after": "constitute N (a part/a majority/a threat); constitute a committee"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003197"
+          },
+          "field": "usagePatternZh",
+          "before": "構成某物；組成去做某事",
+          "after": "構成某一部分／多數／威脅；組成委員會"
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EX5856d00d"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "dataset": "media",
+          "selector": {
+            "assetId": "AX8c7a1322"
+          },
+          "field": "captionZh",
+          "before": "豆豆沿著小路追隨前方的蝴蝶。",
+          "after": "豆豆出發追求海洋生物學的職涯。"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003207"
+          },
+          "field": "usagePattern",
+          "before": "the content(s) of N; table of contents; be content with N",
+          "after": "the content(s) of N; table of contents; be content with N; content oneself with + N"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003207"
+          },
+          "field": "usagePatternZh",
+          "before": "……的內容；目錄；對某事感到滿足",
+          "after": "……的內容；目錄；對某事感到滿足；使自己滿足於……"
+        }
+      ],
+      "indent": null,
+      "beforeMeta": {
+        "schemaVersion": 2,
+        "generatedAt": "2026-11-22T12:14:02Z",
+        "counts": {
+          "words": 5798,
+          "senses": 771,
+          "examples": 7453,
+          "relations": 31,
+          "morphemes": 3708,
+          "notes": 4122,
+          "media": 1128,
+          "examPriority": 3623
+        },
+        "wordsHash": "sa:e08de872becad02cd2f91525fde74877196d90887cc07400e2c92bf706584942",
+        "contentHash": "sa:e6d07d760d182faf383c6ff0603b4d1833016dd6ed4c3c035b777c58f23ae85f"
+      }
+    }
+  },
+  "adaptations": [
+    {
+      "findingId": "LV4U07-F07",
+      "sourceCandidate": "Original H08 removes content oneself with + N from noun-only contentment but does not retain it in content usage patterns.",
+      "adaptation": "Retain the existing legitimate English construction in content, whose verb POS is already an H08 correction; preserve all base noun/adjective patterns. Chinese uses textbook vt. 使滿足 + reflexive 自己. No meaning or image is removed.",
+      "sourceFields": 2,
+      "additionalPreservationFields": 2
+    }
+  ]
+}

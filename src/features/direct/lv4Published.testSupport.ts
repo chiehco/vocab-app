@@ -1,3 +1,4 @@
+import unit07 from '../../../docs/lv4-releases-20261122/U07.json';
 import unit06 from '../../../docs/lv4-releases-20261122/U06.json';
 import unit05 from '../../../docs/lv4-releases-20261122/U05.json';
 import assert from 'node:assert/strict';
@@ -12,7 +13,7 @@ import resolver from '../../../docs/lv4-releases-20261122/resolver-U01.json';
 type Row=Record<string,unknown>;
 type Operation={dataset?:string;selector:Row;field:string;before?:unknown;beforePresent?:boolean;after:unknown};
 type File={beforeHash:string;afterHash:string;operations:Operation[];beforeMeta?:unknown;indent:number|null};
-const layers=[{unit:6,manifest:unit06,pin:'822e943e2d5b0fe0e40894da457f7b75f1942f75e01a8ca528a3779d6b4c305a'},{unit:5,manifest:unit05,pin:'6712a246587467b27b9c6c5be12d968693f92a67e6444d4254de090519746427'},{unit:4,manifest:unit04,pin:'5de47824a3c85ed89ae7ffe4d67ba875f0678c54c79f2e12c2fd430a57e5bff4'},{unit:3,manifest:unit03,pin:'3b8067666a74a1fb0338b9a04bc6c125e563eddc5d5906914b4e216ccd2c70bc'},{unit:2.5,manifest:assure,pin:'9454367917fc875b4ed6d32113d052c92c38a7763831c1ac1d080a7752990df5'},
+const layers=[{unit:7,manifest:unit07,pin:'88d95b15bc194ad6bd13a9f26c34ae6ff803359bb68949aedf953725fb5fb316'},{unit:6,manifest:unit06,pin:'822e943e2d5b0fe0e40894da457f7b75f1942f75e01a8ca528a3779d6b4c305a'},{unit:5,manifest:unit05,pin:'6712a246587467b27b9c6c5be12d968693f92a67e6444d4254de090519746427'},{unit:4,manifest:unit04,pin:'5de47824a3c85ed89ae7ffe4d67ba875f0678c54c79f2e12c2fd430a57e5bff4'},{unit:3,manifest:unit03,pin:'3b8067666a74a1fb0338b9a04bc6c125e563eddc5d5906914b4e216ccd2c70bc'},{unit:2.5,manifest:assure,pin:'9454367917fc875b4ed6d32113d052c92c38a7763831c1ac1d080a7752990df5'},
  {unit:2,manifest:unit02,pin:'e3715fdbdf76b2d165327797bc2549ae00d8cfc9c902eaa3bda351ec3aaee292'},
  {unit:1,manifest,pin:'b3e64bec21ee412d7ccaa468b5036a548bfc8ac9b562781b4a59335a6bc79818'}];
 export const hasLV4PublishedFile=(path:string)=>layers.some(layer=>Object.hasOwn(layer.manifest.files,path));
