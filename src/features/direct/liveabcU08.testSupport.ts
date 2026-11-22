@@ -9,11 +9,22 @@ const APPENDS = [
 ];
 
 /** Reverse only the exact authenticated appends, newest first; any other drift throws. */
+const U09_BLOCK_SHA256 = '057e2c947b26745289195d7c2e6a7753d45a2474df813218545b80157523735f';
+const marker = (unit: string) => `,\n  {\n    "templateId": "TEXTBOOK-LIVEABC_BASIC-${unit}"`;
+
 export function beforeLiveabcU08Text(path: string, text: string): string {
   if (path !== PATH) return text;
   let out = text;
+  // U09 was inserted last, between U08 and U10.
+  const u09 = out.indexOf(marker('U09'));
+  if (u09 >= 0) {
+    const end = out.indexOf(marker('U10'), u09);
+    assert.ok(end > u09, 'LiveABC U09 block boundary drift');
+    assert.equal(createHash('sha256').update(out.slice(u09, end)).digest('hex'), U09_BLOCK_SHA256, 'LiveABC U09 block drift');
+    out = out.slice(0, u09) + out.slice(end);
+  }
   for (const { unit, sha256 } of [...APPENDS].reverse()) {
-    const at = out.indexOf(`,\n  {\n    "templateId": "TEXTBOOK-LIVEABC_BASIC-${unit}"`);
+    const at = out.indexOf(marker(unit));
     if (at < 0) continue;
     const suffix = out.slice(at);
     assert.equal(createHash('sha256').update(suffix).digest('hex'), sha256, `LiveABC ${unit} append drift`);

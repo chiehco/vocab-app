@@ -41,7 +41,7 @@ it('records physical-book confirmation of blank p22 without claiming a new photo
   expect(baseline.wordIds).toHaveLength(102);
   expect(baseline.wordIds.every(id => starter.words.some(word => word.wordId === id))).toBe(true);
   expect(textbookUnits.filter(unit => unit.level === 'LV4')).toHaveLength(24);
-  expect(textbookUnits).toHaveLength(149); // +LiveABC Basic U08, U10
+  expect(textbookUnits).toHaveLength(150); // +LiveABC Basic U08–U10
 });
 
 it.each(baseline.publicFiles)('keeps complete public content dataset unchanged: $name', (file) => {

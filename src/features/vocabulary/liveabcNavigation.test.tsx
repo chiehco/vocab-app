@@ -34,15 +34,15 @@ afterEach(async()=>{await view?.unmount(); await progressDb.delete(); await cont
 const button=(text:string)=>[...view.container.querySelectorAll('button')].find(e=>e.textContent?.includes(text));
 const link=(text:string)=>[...view.container.querySelectorAll('a')].find(e=>e.textContent?.includes(text));
 
-it('selects the LiveABC publisher, shows only nine units, and returns to the same book',async()=>{
+it('selects the LiveABC publisher, shows only ten units, and returns to the same book',async()=>{
   await render('/textbook?level=LV3');
   expect(button('常春藤')?.getAttribute('aria-pressed')).toBe('true');
   await view.click(button('LiveABC'));
   expect(view.container.textContent).toContain('核心字彙完全攻略 · Basic');
-  const tiles=[...view.container.querySelectorAll('.unit-tile')]; expect(tiles).toHaveLength(9);
+  const tiles=[...view.container.querySelectorAll('.unit-tile')]; expect(tiles).toHaveLength(10);
   await view.click(tiles[0]); expect(view.container.textContent).toContain('14 個詞彙');
   expect(link('看字卡')?.getAttribute('href')).toBe('/vocabulary?level=LIVEABC_BASIC&unit=1');
-  await view.click(link('選單元')); expect(view.container.querySelectorAll('.unit-tile')).toHaveLength(9);
+  await view.click(link('選單元')); expect(view.container.querySelectorAll('.unit-tile')).toHaveLength(10);
 });
 
 it('reads an unlinked supplement without borrowed art or examples and resumes the exact item',async()=>{
@@ -75,7 +75,7 @@ it('opens general practice with only existing mapped words and creates a templat
   expect(await progressDb.reviewLogs.count()).toBe(0); expect(await progressDb.rewardWallet.count()).toBe(0);
 });
 
-it.each(['/textbook/LIVEABC_BASIC/9','/vocabulary?level=LIVEABC_BASIC&unit=9','/textbook/UNKNOWN/1'])('blocks excluded/unknown direct link %s',async(path)=>{
+it.each(['/textbook/LIVEABC_BASIC/11','/vocabulary?level=LIVEABC_BASIC&unit=11','/textbook/UNKNOWN/1'])('blocks excluded/unknown direct link %s',async(path)=>{
   await render(path); expect(view.container.textContent).toContain('尚未開放');
   expect(view.container.querySelector('article')).toBeNull(); expect(link('看字卡')).toBeUndefined();
   expect(await progressDb.customGroups.count()).toBe(0); expect(await progressDb.settings.count()).toBe(0);

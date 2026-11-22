@@ -165,7 +165,7 @@ it('partitions all historical direct files and baseline units exactly once', () 
     }
   };
   for (const path of paths) recordOwner(JSON.parse(readFileSync(path, 'utf8')), path);
-  expect(owners.size).toBe(129); // +LiveABC Basic U08, U10
+  expect(owners.size).toBe(130); // +LiveABC Basic U08–U10
   expect(baseline.previousUnits).toHaveLength(124);
   expect(new Set(baseline.previousUnits.map(old => old.templateId)).size).toBe(124);
   for (const old of baseline.previousUnits) {

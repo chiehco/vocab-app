@@ -13,7 +13,7 @@ export function workspaceWords(words:WordRecord[],group:CustomGroup|undefined,le
 export interface WordList extends CustomGroup {returnTo:string}
 function validReturnTo(path:string) {
   if (/^\/(?:modes\/words(?:\?|$)|textbook\/LV[1-6]\/\d+$)/.test(path)) return true;
-  const liveabc = path.match(/^\/textbook\/(LIVEABC_BASIC)\/([1-8]|10)$/);
+  const liveabc = path.match(/^\/textbook\/(LIVEABC_BASIC)\/([1-9]|10)$/);
   return !!liveabc && !!findUnit(Number(liveabc[2]),liveabc[1]);
 }
 // "Exam first" is an ordering choice in the workspace, not an S+A-only scope.
