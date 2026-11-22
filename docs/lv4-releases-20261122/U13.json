@@ -1,0 +1,784 @@
+{
+  "scope": "Existing H08 U13 fields plus the missing hamper noun-POS consistency companion, including approved abstract companion POS/meaning/pattern support. Preserve every legitimate noun/verb/general meaning while adding the reviewed missing ones. Sketch invalid-to-V removal already exists from integrated LV3 418e9cc; adapt the exact before values and apply only its remaining reviewed construction. Content cross-unit duplicate remains closed without replay. No artwork, identity, approval grants or learner records changed. Hamper already has basket noun definitions in both languages and approved noun patterns; add only its missing n. POS label alongside retained v. as a D-104 consistency companion. No new sense or approval.",
+  "sourceOverlaySha256": "bf650458a391a3b2073a2d19a67205f344774538d559479a81286ec5dbdd2e80",
+  "findingIds": [
+    "LV4U13-F01",
+    "LV4U13-F02",
+    "LV4U13-F03",
+    "LV4U13-F04",
+    "LV4U13-F05",
+    "LV4U13-F06",
+    "LV4U13-F07",
+    "LV4U13-F08",
+    "LV4U13-F09",
+    "LV4U13-F10",
+    "LV4U13-F11",
+    "LV4U13-F12",
+    "LV4U13-F13",
+    "LV4U13-F14",
+    "LV4U13-F15",
+    "LV4U13-F16",
+    "LV4U13-F17",
+    "LV4U13-F18",
+    "LV4U13-F19",
+    "LV4U13-F20",
+    "LV4U13-I01",
+    "LV4U13-COMPANION-W003010",
+    "LV4U13-COMPANION-W005409"
+  ],
+  "adaptations": [
+    {
+      "findingId": "LV4U13-F12",
+      "field": "usagePattern",
+      "reviewedBefore": "sketch + N; sketch to V; a/the sketch",
+      "before": "sketch + N; a/the sketch",
+      "after": "sketch + N; do/draw a sketch of N",
+      "preservationReason": "Preserve already-integrated LV3 sketch correction (418e9cc): invalid to-V template is already gone and bilingual grouping already repaired. Apply only the still-missing reviewed do/draw-a-sketch construction; never restore the stale template."
+    },
+    {
+      "findingId": "LV4U13-F12",
+      "field": "usagePatternZh",
+      "reviewedBefore": "素描……；草擬……；一幅素描",
+      "before": "素描／草擬……；一幅素描",
+      "after": "為……畫草圖／概述……；畫……的素描",
+      "preservationReason": "Preserve already-integrated LV3 sketch correction (418e9cc): invalid to-V template is already gone and bilingual grouping already repaired. Apply only the still-missing reviewed do/draw-a-sketch construction; never restore the stale template."
+    },
+    {
+      "findingId": "LV4U13-COMPANION-W005409",
+      "preservationReason": "Add n. label for existing basket meanings and approved noun patterns; preserve existing v., every old definition and draft status.",
+      "evidence": "output\\playwright\\lv4-u13-20261122\\hamper-pos-preservation.json"
+    }
+  ],
+  "files": {
+    "public/data/v1/examples.json": {
+      "beforeHash": "85385ae676e51759924322279fa6d338578d49b8d03837b076d97ff78f9001d3",
+      "afterHash": "6226cbc33b72a62a05c7acd03f68fe80c3d6d019293bd657ec7c3e893766ecf1",
+      "operations": [
+        {
+          "selector": {
+            "exampleId": "EX0b1e42ca"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "selector": {
+            "exampleId": "EX1fae5dca"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "adj."
+        },
+        {
+          "selector": {
+            "exampleId": "EX3ea369d3"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "selector": {
+            "exampleId": "EX6b2919f5"
+          },
+          "field": "sensePos",
+          "before": "v.",
+          "after": "n."
+        },
+        {
+          "selector": {
+            "exampleId": "EX713adc4f"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "selector": {
+            "exampleId": "EX76be847b"
+          },
+          "field": "sensePos",
+          "before": "adj.",
+          "after": "n."
+        },
+        {
+          "selector": {
+            "exampleId": "EXac15b0da"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "selector": {
+            "exampleId": "EX1d534e12"
+          },
+          "field": "sensePos",
+          "before": "adj.",
+          "after": "n."
+        }
+      ],
+      "indent": 2
+    },
+    "public/data/v1/words.json": {
+      "beforeHash": "a040864308b9d6c39c42e0309a219dc5a665066d8e6bba10497f566c0e05bbdf",
+      "afterHash": "88dc98e2d49928b5f3e0c8d54675c44a9fea589d6489fecb5ff9d1abfd799fe3",
+      "operations": [
+        {
+          "selector": {
+            "wordId": "W003560"
+          },
+          "field": "usagePattern",
+          "before": "interfere + N; interfere to V",
+          "after": "interfere in N; interfere with N"
+        },
+        {
+          "selector": {
+            "wordId": "W003560"
+          },
+          "field": "usagePatternZh",
+          "before": "干涉某事；干涉去做……",
+          "after": "干涉某事；妨礙／干擾某事物"
+        },
+        {
+          "selector": {
+            "wordId": "W003611"
+          },
+          "field": "usagePattern",
+          "before": "be loyal; loyal + N",
+          "after": "be loyal to sb"
+        },
+        {
+          "selector": {
+            "wordId": "W003611"
+          },
+          "field": "usagePatternZh",
+          "before": "忠誠的；忠誠的……",
+          "after": "對某人忠誠"
+        },
+        {
+          "selector": {
+            "wordId": "W003333"
+          },
+          "field": "usagePattern",
+          "before": "an/the earphone; earphone of N",
+          "after": "an earphone; a pair of earphones"
+        },
+        {
+          "selector": {
+            "wordId": "W003333"
+          },
+          "field": "usagePatternZh",
+          "before": "一組耳機／該耳機；某物的耳機",
+          "after": "一個耳機；一副耳機"
+        },
+        {
+          "selector": {
+            "wordId": "W003491"
+          },
+          "field": "usagePattern",
+          "before": "a/the hesitation; hesitation of N",
+          "after": "without hesitation"
+        },
+        {
+          "selector": {
+            "wordId": "W003491"
+          },
+          "field": "usagePatternZh",
+          "before": "該猶豫；……的猶豫",
+          "after": "毫不猶豫"
+        },
+        {
+          "selector": {
+            "wordId": "W003901"
+          },
+          "field": "usagePattern",
+          "before": "sketch + N; a/the sketch",
+          "after": "sketch + N; do/draw a sketch of N"
+        },
+        {
+          "selector": {
+            "wordId": "W003901"
+          },
+          "field": "usagePatternZh",
+          "before": "素描／草擬……；一幅素描",
+          "after": "為……畫草圖／概述……；畫……的素描"
+        },
+        {
+          "selector": {
+            "wordId": "W004069"
+          },
+          "field": "usagePattern",
+          "before": "assess + N; assess to V; an/the assess",
+          "after": "assess N; assess the situation; assess the effectiveness/impact/effect/extent of N; assess N at an amount; assess whether S + V"
+        },
+        {
+          "selector": {
+            "wordId": "W004069"
+          },
+          "field": "usagePatternZh",
+          "before": "評估某事物；評估去做某事；評估",
+          "after": "評估……；評估情況；評估……的效用／衝擊／影響／程度；將……估價為某金額；評估是否……"
+        },
+        {
+          "selector": {
+            "wordId": "W006071"
+          },
+          "field": "usagePattern",
+          "before": "assess + N; assess to V; an/the assess",
+          "after": "an assessment; make an assessment of N; a comprehensive assessment; a tax assessment"
+        },
+        {
+          "selector": {
+            "wordId": "W006071"
+          },
+          "field": "usagePatternZh",
+          "before": "評估……；assess 後接 to 不定詞；該評估",
+          "after": "一項評估；對……做出評估；全面評估；稅額核定或核定的稅額"
+        },
+        {
+          "selector": {
+            "wordId": "W005409"
+          },
+          "field": "usagePattern",
+          "before": "hamper + N; hamper to V",
+          "after": "hamper N (sb's progress/work); be hampered by an injury; a picnic hamper; a laundry hamper"
+        },
+        {
+          "selector": {
+            "wordId": "W005409"
+          },
+          "field": "usagePatternZh",
+          "before": "阻礙……；阻礙以……",
+          "after": "妨礙……（某人的進展／工作）；受到傷勢妨礙；野餐食籃；洗衣籃"
+        },
+        {
+          "selector": {
+            "wordId": "W003010"
+          },
+          "field": "meaningEn",
+          "before": "consider a concept without thinking of a specific example; consider abstractly or theoretically; consider apart from a particular case or instance",
+          "after": "relating to general ideas rather than concrete instances, or difficult to understand; a summary or an abstract idea; to think in general terms, extract, or summarize"
+        },
+        {
+          "selector": {
+            "wordId": "W003182"
+          },
+          "field": "meaningZh",
+          "before": "凝結物；混凝土；具體的；實在的",
+          "after": "凝結物；混凝土；具體的；實在的；用混凝土覆蓋"
+        },
+        {
+          "selector": {
+            "wordId": "W003182"
+          },
+          "field": "meaningEn",
+          "before": "(adj.) based on facts and not vague or general; (n.) a hard building material made from cement, sand, small stones, and water",
+          "after": "(adj.) based on facts and not vague or general; (n.) a hard building material made from cement, sand, small stones, and water; (v.) to cover something with concrete"
+        },
+        {
+          "selector": {
+            "wordId": "W003920"
+          },
+          "field": "meaningZh",
+          "before": "莖；幹；柄；船首",
+          "after": "莖；幹；柄；船首；阻止；起因於"
+        },
+        {
+          "selector": {
+            "wordId": "W003920"
+          },
+          "field": "meaningEn",
+          "before": "(n.) the long thin part of a plant that grows up from the ground and supports the leaves, flowers, or fruit; (v.) to come from or be caused by something",
+          "after": "(n.) the long thin part of a plant that grows up from the ground and supports the leaves, flowers, or fruit; (v.) to come from or be caused by something; (v.) to stop or slow the progress of something"
+        },
+        {
+          "selector": {
+            "wordId": "W003986"
+          },
+          "field": "meaningEn",
+          "before": "a ship or large boat; also a tube that carries blood around the body",
+          "after": "a ship or large boat; also a tube that carries blood around the body; a container used to hold something"
+        },
+        {
+          "selector": {
+            "wordId": "W004491"
+          },
+          "field": "meaningEn",
+          "before": "(American football) blocking a player's path with your body",
+          "after": "unwanted involvement or obstruction; disruption of a process or signal; in physics, the combined effect of overlapping waves; in sports, obstructing an opponent, including legal blocking to clear a path for the ballcarrier in American football."
+        },
+        {
+          "selector": {
+            "wordId": "W003010"
+          },
+          "field": "pos",
+          "before": "adj.",
+          "after": "adj./n./v."
+        },
+        {
+          "selector": {
+            "wordId": "W003010"
+          },
+          "field": "posAll",
+          "before": [
+            "adj."
+          ],
+          "after": [
+            "adj.",
+            "n.",
+            "v."
+          ]
+        },
+        {
+          "selector": {
+            "wordId": "W003010"
+          },
+          "field": "meaningZh",
+          "before": "抽象的；深奧的；摘要；抽象概念",
+          "after": "（形容詞）抽象的；深奧的；（名詞）摘要；抽象概念；（動詞）抽象思考；提取；摘錄／概述"
+        },
+        {
+          "selector": {
+            "wordId": "W003010"
+          },
+          "field": "usagePattern",
+          "before": "be abstract; abstract + N",
+          "after": "an abstract concept; abstract art; an abstract of a paper; abstract information from N"
+        },
+        {
+          "selector": {
+            "wordId": "W003010"
+          },
+          "field": "usagePatternZh",
+          "before": "抽象的；抽象概念",
+          "after": "抽象概念；抽象藝術；論文摘要；從……提取資訊"
+        },
+        {
+          "selector": {
+            "wordId": "W005409"
+          },
+          "field": "pos",
+          "before": "v.",
+          "after": "v./n."
+        },
+        {
+          "selector": {
+            "wordId": "W005409"
+          },
+          "field": "posAll",
+          "before": [
+            "v."
+          ],
+          "after": [
+            "v.",
+            "n."
+          ]
+        }
+      ],
+      "indent": 2
+    },
+    "public/data/v1/meta.json": {
+      "beforeHash": "aed4df62420fc310b13affac4019562c13bc4af719e72f6076f3eca859d5652f",
+      "afterHash": "5ef991cf8ee872d754e6a71d92bc4eeea79b4404eb9f32f7c41fac72f8002ad4",
+      "operations": [],
+      "indent": 2,
+      "beforeMeta": {
+        "schemaVersion": 2,
+        "generatedAt": "2026-11-22T21:17:58Z",
+        "sourceFile": "萬詞譜母表_SA義項清理整合_20260904.xlsx",
+        "counts": {
+          "words": 6090,
+          "senses": 772,
+          "examples": 7871,
+          "relations": 40,
+          "morphemes": 3798,
+          "media": 1177,
+          "notes": 4291,
+          "examPriority": 3792,
+          "hooks": 0
+        },
+        "wordsHash": "a040864308b9d6c39c42e0309a219dc5a665066d8e6bba10497f566c0e05bbdf",
+        "contentHash": "57817762a9394a3485accb05e37a8eada783002efa106f6ee1cec63ab54e3ff9",
+        "houseSourceSha256": "98fa208835caf7184acc95f26dcff56ace23ba281ff8d4b9b8c37e18e407be14"
+      }
+    },
+    "public/data/v1/sa-pack.json": {
+      "beforeHash": "5a31e152739b0889a6ce3ca5e3f53c0ee25748e6df81c50bfa7c65100e7e052a",
+      "afterHash": "2624fbc1fc37ffa5c9a31786294988c4e115f79b08ecd47f4e0c919edcc376a2",
+      "operations": [
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EX0b1e42ca"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EX1fae5dca"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "adj."
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EX3ea369d3"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EX6b2919f5"
+          },
+          "field": "sensePos",
+          "before": "v.",
+          "after": "n."
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EX713adc4f"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EX76be847b"
+          },
+          "field": "sensePos",
+          "before": "adj.",
+          "after": "n."
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EXac15b0da"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003560"
+          },
+          "field": "usagePattern",
+          "before": "interfere + N; interfere to V",
+          "after": "interfere in N; interfere with N"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003560"
+          },
+          "field": "usagePatternZh",
+          "before": "干涉某事；干涉去做……",
+          "after": "干涉某事；妨礙／干擾某事物"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003611"
+          },
+          "field": "usagePattern",
+          "before": "be loyal; loyal + N",
+          "after": "be loyal to sb"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003611"
+          },
+          "field": "usagePatternZh",
+          "before": "忠誠的；忠誠的……",
+          "after": "對某人忠誠"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003333"
+          },
+          "field": "usagePattern",
+          "before": "an/the earphone; earphone of N",
+          "after": "an earphone; a pair of earphones"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003333"
+          },
+          "field": "usagePatternZh",
+          "before": "一組耳機／該耳機；某物的耳機",
+          "after": "一個耳機；一副耳機"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003491"
+          },
+          "field": "usagePattern",
+          "before": "a/the hesitation; hesitation of N",
+          "after": "without hesitation"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003491"
+          },
+          "field": "usagePatternZh",
+          "before": "該猶豫；……的猶豫",
+          "after": "毫不猶豫"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003901"
+          },
+          "field": "usagePattern",
+          "before": "sketch + N; a/the sketch",
+          "after": "sketch + N; do/draw a sketch of N"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003901"
+          },
+          "field": "usagePatternZh",
+          "before": "素描／草擬……；一幅素描",
+          "after": "為……畫草圖／概述……；畫……的素描"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W004069"
+          },
+          "field": "usagePattern",
+          "before": "assess + N; assess to V; an/the assess",
+          "after": "assess N; assess the situation; assess the effectiveness/impact/effect/extent of N; assess N at an amount; assess whether S + V"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W004069"
+          },
+          "field": "usagePatternZh",
+          "before": "評估某事物；評估去做某事；評估",
+          "after": "評估……；評估情況；評估……的效用／衝擊／影響／程度；將……估價為某金額；評估是否……"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W006071"
+          },
+          "field": "usagePattern",
+          "before": "assess + N; assess to V; an/the assess",
+          "after": "an assessment; make an assessment of N; a comprehensive assessment; a tax assessment"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W006071"
+          },
+          "field": "usagePatternZh",
+          "before": "評估……；assess 後接 to 不定詞；該評估",
+          "after": "一項評估；對……做出評估；全面評估；稅額核定或核定的稅額"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W005409"
+          },
+          "field": "usagePattern",
+          "before": "hamper + N; hamper to V",
+          "after": "hamper N (sb's progress/work); be hampered by an injury; a picnic hamper; a laundry hamper"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W005409"
+          },
+          "field": "usagePatternZh",
+          "before": "阻礙……；阻礙以……",
+          "after": "妨礙……（某人的進展／工作）；受到傷勢妨礙；野餐食籃；洗衣籃"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003010"
+          },
+          "field": "meaningEn",
+          "before": "consider a concept without thinking of a specific example; consider abstractly or theoretically; consider apart from a particular case or instance",
+          "after": "relating to general ideas rather than concrete instances, or difficult to understand; a summary or an abstract idea; to think in general terms, extract, or summarize"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003182"
+          },
+          "field": "meaningZh",
+          "before": "凝結物；混凝土；具體的；實在的",
+          "after": "凝結物；混凝土；具體的；實在的；用混凝土覆蓋"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003182"
+          },
+          "field": "meaningEn",
+          "before": "(adj.) based on facts and not vague or general; (n.) a hard building material made from cement, sand, small stones, and water",
+          "after": "(adj.) based on facts and not vague or general; (n.) a hard building material made from cement, sand, small stones, and water; (v.) to cover something with concrete"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003920"
+          },
+          "field": "meaningZh",
+          "before": "莖；幹；柄；船首",
+          "after": "莖；幹；柄；船首；阻止；起因於"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003920"
+          },
+          "field": "meaningEn",
+          "before": "(n.) the long thin part of a plant that grows up from the ground and supports the leaves, flowers, or fruit; (v.) to come from or be caused by something",
+          "after": "(n.) the long thin part of a plant that grows up from the ground and supports the leaves, flowers, or fruit; (v.) to come from or be caused by something; (v.) to stop or slow the progress of something"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003986"
+          },
+          "field": "meaningEn",
+          "before": "a ship or large boat; also a tube that carries blood around the body",
+          "after": "a ship or large boat; also a tube that carries blood around the body; a container used to hold something"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W004491"
+          },
+          "field": "meaningEn",
+          "before": "(American football) blocking a player's path with your body",
+          "after": "unwanted involvement or obstruction; disruption of a process or signal; in physics, the combined effect of overlapping waves; in sports, obstructing an opponent, including legal blocking to clear a path for the ballcarrier in American football."
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EX1d534e12"
+          },
+          "field": "sensePos",
+          "before": "adj.",
+          "after": "n."
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003010"
+          },
+          "field": "pos",
+          "before": "adj.",
+          "after": "adj./n./v."
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003010"
+          },
+          "field": "posAll",
+          "before": [
+            "adj."
+          ],
+          "after": [
+            "adj.",
+            "n.",
+            "v."
+          ]
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003010"
+          },
+          "field": "meaningZh",
+          "before": "抽象的；深奧的；摘要；抽象概念",
+          "after": "（形容詞）抽象的；深奧的；（名詞）摘要；抽象概念；（動詞）抽象思考；提取；摘錄／概述"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003010"
+          },
+          "field": "usagePattern",
+          "before": "be abstract; abstract + N",
+          "after": "an abstract concept; abstract art; an abstract of a paper; abstract information from N"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003010"
+          },
+          "field": "usagePatternZh",
+          "before": "抽象的；抽象概念",
+          "after": "抽象概念；抽象藝術；論文摘要；從……提取資訊"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W005409"
+          },
+          "field": "pos",
+          "before": "v.",
+          "after": "v./n."
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W005409"
+          },
+          "field": "posAll",
+          "before": [
+            "v."
+          ],
+          "after": [
+            "v.",
+            "n."
+          ]
+        }
+      ],
+      "indent": null,
+      "beforeMeta": {
+        "schemaVersion": 2,
+        "generatedAt": "2026-11-22T21:17:58Z",
+        "counts": {
+          "words": 5798,
+          "senses": 771,
+          "examples": 7453,
+          "relations": 31,
+          "morphemes": 3708,
+          "notes": 4123,
+          "media": 1128,
+          "examPriority": 3623
+        },
+        "wordsHash": "sa:3457b961cacb7f717b813ce8c4fe3917b25fc0e28abf78ca14c6512aede7994e",
+        "contentHash": "sa:04324d7f11602692aae0dc50b577a3ace2c617f0b0e95b52a3dc6996717a4c4d"
+      }
+    }
+  }
+}
