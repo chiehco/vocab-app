@@ -2,6 +2,7 @@ from pathlib import Path
 import copy,json,unittest,tempfile
 import lv3_audit_pipeline as p
 import verify_lv3_unit_fixture as fixture
+from lv4_published_fixture import project as before_lv4
 ROOT=Path(__file__).resolve().parents[1]
 class U18SourceContractTests(unittest.TestCase):
  @classmethod
@@ -31,7 +32,7 @@ class U18SourceContractTests(unittest.TestCase):
   for _,manifest,_ in successors:
    p.require(not p.media_migration.is_migration(manifest),'Unsupported migration successor in U18 source fixture')
    paths.update(manifest['files'])
-  documents={path:p.read_json(ROOT/path) for path in paths}
+  documents={path:json.loads(before_lv4(ROOT,path,(ROOT/path).read_bytes())) for path in paths}
   if overrides:
    p.require(set(overrides)<=paths,'Unknown U18 fixture override path')
    documents.update(copy.deepcopy(overrides))
