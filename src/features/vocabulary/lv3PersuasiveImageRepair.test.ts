@@ -1,4 +1,5 @@
 import { beforeU15ExampleImageSource } from './lv3U15ExampleImages.testSupport';
+import {beforeLV4PublishedText} from '../direct/lv4Published.testSupport';
 import { expect, it } from 'vitest';
 import { readFileSync, readdirSync } from 'node:fs';
 import { createElement } from 'react';
@@ -23,7 +24,7 @@ import StudyIllustration from '../wordbeast/StudyIllustration';
 import { resolveWordImageClue } from '../../quiz/imageClue';
 import { curriculumUnits } from '../direct/model';
 
-const lf = (path: string) => readFileSync(path, 'utf8').replace(/\r\n/g, '\n');
+const lf = (path: string) => {const text=readFileSync(path, 'utf8').replace(/\r\n/g, '\n');return path==='src/features/wordbeast/illustrationCaptions.json'?beforeLV4PublishedText(path,text):text;};
 const serialize = (value: unknown) => JSON.stringify(value, null, 2) + '\n';
 const pair = proof.registry.added.illustration;
 

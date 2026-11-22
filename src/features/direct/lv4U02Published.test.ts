@@ -15,6 +15,8 @@ it('aligns the otherwise sentence, blank and pattern while preserving the answer
  expect(pack.examples.find(r=>r.exampleId==='EXcaaa58d7')?.sensePos).toBe('n.');
  const old=beforeLV4Rows('examples',[row]);expect(old[0].sentenceEn).toBe("Take an umbrella, otherwise you'll get soaked.");
  expect(row.sentenceEn).toContain('; otherwise,');
+ const meta=JSON.parse(readFileSync('public/data/v1/meta.json','utf8'));
+ expect(meta.wordsHash).toBe(hash(readFileSync('public/data/v1/words.json','utf8').replace(/\r\n/g,'\n')));
 });
 it('updates the factual publisher caption and exact bilingual lookup atomically without changing the image',()=>{
  const media=pack.media.find(r=>r.assetId==='AX6a88080e')!;

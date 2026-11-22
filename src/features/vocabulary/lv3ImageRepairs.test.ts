@@ -1,4 +1,5 @@
 import {beforeU07CaptionText} from './lv3U07ImageCaptionRepair.testSupport';
+import {beforeLV4PublishedText} from '../direct/lv4Published.testSupport';
 import {expect,it} from 'vitest';
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
@@ -20,7 +21,7 @@ it('retains exact source and candidate bytes and unchanged media captions and pu
  for(const item of proof.assets)for(const asset of [item.source,item.candidate])expect(sha(asset.path)).toBe(asset.sha256);
  for(const item of proof.assets){const bytes=readFileSync(item.candidate.path);expect(bytes.length).toBe(item.candidate.bytes);expect(bytes.subarray(0,4).toString()).toBe('RIFF');expect(bytes.subarray(8,12).toString()).toBe('WEBP');}
  for(const file of proof.unchangedFiles){
-  const text=readFileSync(file.path,'utf8');
+  const text=beforeLV4PublishedText(file.path,readFileSync(file.path,'utf8').replace(/\r\n/g,'\n'));
   expect(lv3ImageHash(JSON.parse(file.path==='src/features/wordbeast/illustrationCaptions.json'?beforeU07CaptionText(text):text))).toBe(file.normalizedJsonSha256);
  }
  expect(lv3ImageHash(JSON.parse(readFileSync(proof.candidateManifest.path,'utf8')))).toBe(proof.candidateManifest.normalizedJsonSha256);

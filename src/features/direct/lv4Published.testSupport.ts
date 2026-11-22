@@ -6,7 +6,7 @@ import resolver from '../../../docs/lv4-releases-20261122/resolver-U01.json';
 type Row=Record<string,unknown>;
 type Operation={dataset?:string;selector:Row;field:string;before?:unknown;beforePresent?:boolean;after:unknown};
 type File={beforeHash:string;afterHash:string;operations:Operation[];beforeMeta?:unknown;indent:number|null};
-const layers=[{unit:2,manifest:unit02,pin:'f61b6420b809ba3077eb9bdf547012a6d3a8a7281036fb0a3d44eeb66b63dd68'},
+const layers=[{unit:2,manifest:unit02,pin:'e3715fdbdf76b2d165327797bc2549ae00d8cfc9c902eaa3bda351ec3aaee292'},
  {unit:1,manifest,pin:'b3e64bec21ee412d7ccaa468b5036a548bfc8ac9b562781b4a59335a6bc79818'}];
 export const hasLV4PublishedFile=(path:string)=>layers.some(layer=>Object.hasOwn(layer.manifest.files,path));
 const hash=(s:string)=>createHash('sha256').update(s).digest('hex');

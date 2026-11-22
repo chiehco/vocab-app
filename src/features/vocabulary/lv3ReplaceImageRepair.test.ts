@@ -1,4 +1,5 @@
 import {beforeU07CaptionText} from './lv3U07ImageCaptionRepair.testSupport';
+import {beforeLV4PublishedText} from '../direct/lv4Published.testSupport';
 import {beforePuppetText} from './lv3PuppetImageRepair.testSupport';
 import {beforeLV3ConfirmText} from '../../../scripts/lv3_confirm_image_guard.mjs';
 import confirmProof from '../../../docs/unit-audit-20261105/LV3-confirm-image-repair.json';
@@ -35,7 +36,7 @@ it('pins immutable proof, original/new assets and independent caption media and 
  for(const key of Object.keys(proof)){const bad=structuredClone(proof) as Record<string,unknown>;bad[key]='unverified';expect(()=>validateLV3ReplaceProof(bad)).toThrow();}
  for(const asset of proof.assets){const bytes=readFileSync(asset.path);validateLV3ReplaceAsset(bytes,asset);const bad=Buffer.from(bytes);bad[bad.length-1]^=1;expect(()=>validateLV3ReplaceAsset(bad,asset)).toThrow(/asset drift/);expect(bytes.subarray(0,4).toString()).toBe('RIFF');expect(bytes.subarray(8,12).toString()).toBe('WEBP');}
  for(const file of proof.unchangedFiles){
-  const text=readFileSync(file.path,'utf8').replace(/\r\n/g,'\n');
+  const text=beforeLV4PublishedText(file.path,readFileSync(file.path,'utf8').replace(/\r\n/g,'\n'));
   expect(replaceBytesHash(file.path==='src/features/wordbeast/illustrationCaptions.json'?beforeU07CaptionText(text):text),file.path).toBe(file.lfSha256);
  }
  expect(captions.find(c=>c.word==='replace')).toEqual(proof.captionSource);
