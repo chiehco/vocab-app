@@ -6,6 +6,7 @@ import cards from '../vocabulary/lv4U01ApprovedCards.json';
 import {approvedCurriculumCards,approvedCurriculumItem} from '../vocabulary/approvedCurriculum';
 import {findUnit} from './model';
 import {beforeLV4PublishedText} from './lv4Published.testSupport';
+import {lv3AfterUnitRows} from './lv3Audit.testSupport';
 const hash=(b:string|Buffer)=>createHash('sha256').update(b).digest('hex');
 it('corrects equipment and labor example POS and all three evidence titles together',()=>{
  const examples=JSON.parse(readFileSync('public/data/v1/examples.json','utf8')) as {exampleId:string;sensePos:string}[];
@@ -22,6 +23,12 @@ it('rejects unknown complete-file drift instead of accepting a changed old fixtu
  expect(()=>beforeLV4PublishedText(path,raw+' ')).toThrow('LV4 U01 complete file drift');
  const data=JSON.parse(raw);data.find((r:{exampleId:string})=>r.exampleId==='EXcaaa58d7').sensePos='adj.';
  expect(()=>beforeLV4PublishedText(path,JSON.stringify(data,null,2)+'\n')).toThrow('LV4 U01 complete file drift');
+});
+it('projects the successor consistently for the individual historical row API',()=>{
+ const examples=JSON.parse(readFileSync('public/data/v1/examples.json','utf8')) as {exampleId:string;sensePos:string}[];
+ const row=examples.find(x=>x.exampleId==='EXcaaa58d7')!;
+ expect(lv3AfterUnitRows('LV3-U06','examples',[row],{allowMissing:true})[0].sensePos).toBe('v.');
+ expect(row.sensePos).toBe('n.');
 });
 it('reuses the exact17 existing pairs,13 image bytes,stable IDs and read-only scope',()=>{
  const unit=findUnit(1,'LV4')!;expect(cards).toHaveLength(17);expect(evidence.assets).toHaveLength(13);

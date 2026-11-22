@@ -3247,7 +3247,7 @@ export function lv3AfterUnitRows<T>(afterUnit:string,dataset:string,value:T,opti
 }
 function rowsAtCheckpoint<T>({later}:ReturnType<typeof checkpoint>,dataset:string,value:T,options:{allowMissing?:boolean}={}):T {
  const name=dataset.replace(/\.json$/,'');
- let copy=structuredClone(value);
+ let copy=structuredClone(beforeLV4Rows(name,value));
  for(const x of [...later].reverse())if(!isMigration(x.manifest))copy=reverseRows(x.manifest,name,copy,options.allowMissing??false);
  return copy;
 }
@@ -3255,7 +3255,7 @@ export function lv3AfterUnit1Rows<T>(dataset:string,value:T,options:{allowMissin
  return lv3AfterUnitRows('LV3-U01',dataset,value,options);
 }
 export function lv3BeforeAudit<T>(dataset:string,value:T,options:{allowMissing?:boolean}={}):T {
- return lv3Unit1BeforeAudit(dataset,lv3AfterUnit1Rows(dataset,beforeLV4Rows(dataset,value),options),options);
+ return lv3Unit1BeforeAudit(dataset,lv3AfterUnit1Rows(dataset,value,options),options);
 }
 // Reject executable caller structures before authenticating any snapshot. Do not
 // clone inputs first: cloning could erase array properties that strict guards see.
@@ -3283,7 +3283,7 @@ export function lv3BeforeAuditDatasets(datasets:Record<string,unknown>,options:{
  const entries=Object.entries(datasets),checkedOptions={allowMissing:options.allowMissing??false};
  const state=checkpoint('LV3-U01',auditOperation());
  return Object.fromEntries(entries.map(([name,value])=>[name,
-  lv3Unit1BeforeAudit(name,rowsAtCheckpoint(state,name,beforeLV4Rows(name,value),checkedOptions),checkedOptions)]));
+  lv3Unit1BeforeAudit(name,rowsAtCheckpoint(state,name,value,checkedOptions),checkedOptions)]));
 }
 
 export function reverseFileAuditSteps<T>(steps:{manifest:Manifest;scope?:AuditScope}[],path:string,value:T,loadMigration:MigrationLoader=migrationLoad):T {

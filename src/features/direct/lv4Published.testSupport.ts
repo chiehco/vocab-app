@@ -5,6 +5,7 @@ type Row=Record<string,unknown>;
 type Operation={dataset?:string;selector:Row;field:string;before?:unknown;beforePresent?:boolean;after:unknown};
 type File={beforeHash:string;afterHash:string;operations:Operation[];beforeMeta?:unknown;indent:number|null};
 const files=manifest.files as Record<string,File>;
+export const hasLV4PublishedFile=(path:string)=>Object.hasOwn(files,path);
 const hash=(s:string)=>createHash('sha256').update(s).digest('hex');
 function authenticate(){assert.equal(hash(JSON.stringify(manifest)),'b3e64bec21ee412d7ccaa468b5036a548bfc8ac9b562781b4a59335a6bc79818','LV4 U01 manifest drift');}
 function find(value:unknown,selector:Row):Row[]{
