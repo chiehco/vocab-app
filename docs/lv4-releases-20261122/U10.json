@@ -1,0 +1,484 @@
+{
+  "scope": "Existing H08 U10 fields only: contextual example POS, source-supported constructions, impose-on bilingual alignment and left-open translation. Enforcement Chinese synonyms grouped in one bilingual entry without deleting meanings. No artwork, identities, approval grants or learner records changed.",
+  "sourceOverlaySha256": "bf650458a391a3b2073a2d19a67205f344774538d559479a81286ec5dbdd2e80",
+  "findingIds": [
+    "LV4U10-F01",
+    "LV4U10-F02",
+    "LV4U10-F03",
+    "LV4U10-F04",
+    "LV4U10-F05",
+    "LV4U10-F06",
+    "LV4U10-F07",
+    "LV4U10-F08",
+    "LV4U10-F09",
+    "LV4U10-F10",
+    "LV4U10-F11",
+    "LV4U10-F12",
+    "LV4U10-I01",
+    "LV4U10-I02"
+  ],
+  "adaptations": [
+    {
+      "findingId": "LV4U10-F05",
+      "field": "usagePatternZh",
+      "reviewedAfter": "法律的執行；執法",
+      "after": "法律的執行／執法",
+      "preservationReason": "Keep both reviewed Chinese synonyms in the same single usage entry so the bilingual law-enforcement hint renders."
+    }
+  ],
+  "files": {
+    "public/data/v1/examples.json": {
+      "beforeHash": "6fb1fb7967b65604027edc401322711e34cfb16919af128178793101e6432c5d",
+      "afterHash": "5cd0c90d37a1130695f8181e44892af737b2d5505c0773da5f79409ec976905e",
+      "operations": [
+        {
+          "selector": {
+            "exampleId": "EX5b6e793a"
+          },
+          "field": "sensePos",
+          "before": "v.",
+          "after": "n."
+        },
+        {
+          "selector": {
+            "exampleId": "EX7ff76331"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "selector": {
+            "exampleId": "EX9e6aedf9"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "selector": {
+            "exampleId": "EX01e3326d"
+          },
+          "field": "sentenceZh",
+          "before": "門被打開一定有個合理的解釋。",
+          "after": "門為什麼被留著沒關，一定有個合理的解釋。"
+        }
+      ],
+      "indent": 2
+    },
+    "public/data/v1/words.json": {
+      "beforeHash": "30af702dccfeabb32b5a2b4f2f579922e3f21e50a78f74e33b882772c756066b",
+      "afterHash": "6573285a469a4797bdb4dcfdf3d2211e2acdf2700c66a0edb5466d223f7fc16f",
+      "operations": [
+        {
+          "selector": {
+            "wordId": "W003355"
+          },
+          "field": "usagePattern",
+          "before": "enforce + N; enforce to V; an/the enforce",
+          "after": "enforce + N; enforce regulations"
+        },
+        {
+          "selector": {
+            "wordId": "W003355"
+          },
+          "field": "usagePatternZh",
+          "before": "執行……；強制執行……；一項強制／該強制",
+          "after": "執行／實施……；執行法規"
+        },
+        {
+          "selector": {
+            "wordId": "W006063"
+          },
+          "field": "usagePattern",
+          "before": "enforce + N; enforce to V; an/the enforce",
+          "after": "law enforcement"
+        },
+        {
+          "selector": {
+            "wordId": "W006063"
+          },
+          "field": "usagePatternZh",
+          "before": "執行……；enforce 後接 to 不定詞；該執行",
+          "after": "法律的執行／執法"
+        },
+        {
+          "selector": {
+            "wordId": "W003590"
+          },
+          "field": "usagePattern",
+          "before": "lecture + N; lecture to V; a/the lecture",
+          "after": "give a lecture on N; lecture sb about/on N; lecture on N"
+        },
+        {
+          "selector": {
+            "wordId": "W003590"
+          },
+          "field": "usagePatternZh",
+          "before": "對某人演講；演講以做某事；某場演講",
+          "after": "就……發表演講；因……訓誡某人；講授……"
+        },
+        {
+          "selector": {
+            "wordId": "W003475"
+          },
+          "field": "usagePattern",
+          "before": "a/the guilt; guilt of N",
+          "after": "a sense of guilt"
+        },
+        {
+          "selector": {
+            "wordId": "W003475"
+          },
+          "field": "usagePatternZh",
+          "before": "該罪惡感；……的罪惡感",
+          "after": "罪惡感"
+        },
+        {
+          "selector": {
+            "wordId": "W003500"
+          },
+          "field": "usagePattern",
+          "before": "a/the housework; housework of N",
+          "after": "do housework"
+        },
+        {
+          "selector": {
+            "wordId": "W003500"
+          },
+          "field": "usagePatternZh",
+          "before": "家務／該家務；……的家務",
+          "after": "做家事"
+        },
+        {
+          "selector": {
+            "wordId": "W003191"
+          },
+          "field": "usagePattern",
+          "before": "a/the conscience; conscience of N",
+          "after": "a clear/guilty conscience; with a clear conscience; follow one's conscience; have N on one's conscience"
+        },
+        {
+          "selector": {
+            "wordId": "W003191"
+          },
+          "field": "usagePatternZh",
+          "before": "某個良心／該良心；……的良知",
+          "after": "問心無愧／良心不安；問心無愧地；憑良心行事；因……感到內疚"
+        },
+        {
+          "selector": {
+            "wordId": "W003762"
+          },
+          "field": "usagePattern",
+          "before": "make a prediction; a prediction about/that N",
+          "after": "make a prediction about N; make a prediction that + clause"
+        },
+        {
+          "selector": {
+            "wordId": "W003762"
+          },
+          "field": "usagePatternZh",
+          "before": "做出預測；關於某事的預測",
+          "after": "對某事做出預測；預測某件事將發生"
+        },
+        {
+          "selector": {
+            "wordId": "W003801"
+          },
+          "field": "usagePattern",
+          "before": "quilt + N; quilt to V; a/the quilt",
+          "after": "quilt + N; a quilt"
+        },
+        {
+          "selector": {
+            "wordId": "W003801"
+          },
+          "field": "usagePatternZh",
+          "before": "縫製某物；縫製以做某事；一條棉被",
+          "after": "把布料與填充層縫合；一條棉被"
+        },
+        {
+          "selector": {
+            "wordId": "W005778"
+          },
+          "field": "usagePattern",
+          "before": "revive + N; revive to V",
+          "after": "revive the economy; revive an old custom; revive after a rest"
+        },
+        {
+          "selector": {
+            "wordId": "W005778"
+          },
+          "field": "usagePatternZh",
+          "before": "使……甦醒；使……去恢復",
+          "after": "振興經濟；恢復舊習俗；休息後恢復精神"
+        },
+        {
+          "selector": {
+            "wordId": "W003525"
+          },
+          "field": "usagePatternZh",
+          "before": "將某事強加於某人；對某人施加壓力",
+          "after": "把……強加於某人；對……課稅；麻煩某人／利用某人的好意"
+        }
+      ],
+      "indent": 2
+    },
+    "public/data/v1/meta.json": {
+      "beforeHash": "f1d2925d0033a150a671621fc647f014294248c9e11ff8a02695e429cbf785c1",
+      "afterHash": "a6bcee5e07c8dc426b04e0029f9619815805d9fef2f886e01a3ee031975a5ad3",
+      "operations": [],
+      "indent": 2,
+      "beforeMeta": {
+        "schemaVersion": 2,
+        "generatedAt": "2026-11-22T16:32:48Z",
+        "sourceFile": "萬詞譜母表_SA義項清理整合_20260904.xlsx",
+        "counts": {
+          "words": 6090,
+          "senses": 772,
+          "examples": 7871,
+          "relations": 40,
+          "morphemes": 3798,
+          "media": 1177,
+          "notes": 4291,
+          "examPriority": 3792,
+          "hooks": 0
+        },
+        "wordsHash": "30af702dccfeabb32b5a2b4f2f579922e3f21e50a78f74e33b882772c756066b",
+        "contentHash": "bb17aa3a3dbe34d037dac39dc58e1b86be34bd5071df42133d9a6ee1ff840ef6",
+        "houseSourceSha256": "98fa208835caf7184acc95f26dcff56ace23ba281ff8d4b9b8c37e18e407be14"
+      }
+    },
+    "public/data/v1/sa-pack.json": {
+      "beforeHash": "10de8b19ece2ac6af9630fbc8b5a3345be09e365ba183cb876dfaa89f2f1df63",
+      "afterHash": "9411be6ab03ea4a4d7d4bb37c450bd4b8cc03c56bb04caaad75286ce3893e550",
+      "operations": [
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EX5b6e793a"
+          },
+          "field": "sensePos",
+          "before": "v.",
+          "after": "n."
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EX7ff76331"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EX9e6aedf9"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003355"
+          },
+          "field": "usagePattern",
+          "before": "enforce + N; enforce to V; an/the enforce",
+          "after": "enforce + N; enforce regulations"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003355"
+          },
+          "field": "usagePatternZh",
+          "before": "執行……；強制執行……；一項強制／該強制",
+          "after": "執行／實施……；執行法規"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W006063"
+          },
+          "field": "usagePattern",
+          "before": "enforce + N; enforce to V; an/the enforce",
+          "after": "law enforcement"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W006063"
+          },
+          "field": "usagePatternZh",
+          "before": "執行……；enforce 後接 to 不定詞；該執行",
+          "after": "法律的執行／執法"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003590"
+          },
+          "field": "usagePattern",
+          "before": "lecture + N; lecture to V; a/the lecture",
+          "after": "give a lecture on N; lecture sb about/on N; lecture on N"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003590"
+          },
+          "field": "usagePatternZh",
+          "before": "對某人演講；演講以做某事；某場演講",
+          "after": "就……發表演講；因……訓誡某人；講授……"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003475"
+          },
+          "field": "usagePattern",
+          "before": "a/the guilt; guilt of N",
+          "after": "a sense of guilt"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003475"
+          },
+          "field": "usagePatternZh",
+          "before": "該罪惡感；……的罪惡感",
+          "after": "罪惡感"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003500"
+          },
+          "field": "usagePattern",
+          "before": "a/the housework; housework of N",
+          "after": "do housework"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003500"
+          },
+          "field": "usagePatternZh",
+          "before": "家務／該家務；……的家務",
+          "after": "做家事"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003191"
+          },
+          "field": "usagePattern",
+          "before": "a/the conscience; conscience of N",
+          "after": "a clear/guilty conscience; with a clear conscience; follow one's conscience; have N on one's conscience"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003191"
+          },
+          "field": "usagePatternZh",
+          "before": "某個良心／該良心；……的良知",
+          "after": "問心無愧／良心不安；問心無愧地；憑良心行事；因……感到內疚"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003762"
+          },
+          "field": "usagePattern",
+          "before": "make a prediction; a prediction about/that N",
+          "after": "make a prediction about N; make a prediction that + clause"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003762"
+          },
+          "field": "usagePatternZh",
+          "before": "做出預測；關於某事的預測",
+          "after": "對某事做出預測；預測某件事將發生"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003801"
+          },
+          "field": "usagePattern",
+          "before": "quilt + N; quilt to V; a/the quilt",
+          "after": "quilt + N; a quilt"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003801"
+          },
+          "field": "usagePatternZh",
+          "before": "縫製某物；縫製以做某事；一條棉被",
+          "after": "把布料與填充層縫合；一條棉被"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W005778"
+          },
+          "field": "usagePattern",
+          "before": "revive + N; revive to V",
+          "after": "revive the economy; revive an old custom; revive after a rest"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W005778"
+          },
+          "field": "usagePatternZh",
+          "before": "使……甦醒；使……去恢復",
+          "after": "振興經濟；恢復舊習俗；休息後恢復精神"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003525"
+          },
+          "field": "usagePatternZh",
+          "before": "將某事強加於某人；對某人施加壓力",
+          "after": "把……強加於某人；對……課稅；麻煩某人／利用某人的好意"
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EX01e3326d"
+          },
+          "field": "sentenceZh",
+          "before": "門被打開一定有個合理的解釋。",
+          "after": "門為什麼被留著沒關，一定有個合理的解釋。"
+        }
+      ],
+      "indent": null,
+      "beforeMeta": {
+        "schemaVersion": 2,
+        "generatedAt": "2026-11-22T16:32:48Z",
+        "counts": {
+          "words": 5798,
+          "senses": 771,
+          "examples": 7453,
+          "relations": 31,
+          "morphemes": 3708,
+          "notes": 4123,
+          "media": 1128,
+          "examPriority": 3623
+        },
+        "wordsHash": "sa:beeb693857776bd6a6ff8e7d6cda5eef6e03031bf6b9ca1229d403c9f107bbba",
+        "contentHash": "sa:2074c3d0d67416452b8a51c46c6c19f9eee6da59fe7fa402bcc06404492b2746"
+      }
+    }
+  }
+}
