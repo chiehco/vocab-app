@@ -1,5 +1,6 @@
 import {recoveredUnit18OriginalItems} from './recoveredUnit18History.testSupport';
 import {beforeU03DirectNames} from './lv3U03Starter.testSupport';
+import {beforeLV4PublishedText} from './lv4Published.testSupport';
 import {recoveredUnit12OriginalItems} from './recoveredUnit12History.testSupport';
 import {auditContract, auditHash, isAuditUnitStep, loadLV3Chain, lv3AfterUnit1PublishedText} from './lv3Audit.testSupport';
 import lv3Checkpoint from '../../../docs/lv3-audit-20261107/U01-checkpoint.json';
@@ -122,7 +123,7 @@ function historicalDirectProjection() {
   expect(paths.filter(path => !changed.has(path))).toHaveLength(113);
   const project = (path: string, actualText: string) => {
     if (!paths.includes(path)) throw new Error('Unregistered out-of-domain direct JSON path');
-    const text = actualText.replace(/\r\n/g, '\n');
+    const text = beforeLV4PublishedText(path,actualText.replace(/\r\n/g, '\n'));
     if (changed.has(path)) return JSON.parse(lv3AfterUnit1PublishedText(path, text));
     expect(createHash('sha256').update(text).digest('hex'), `Unchanged checkpoint bytes: ${path}`).toBe(guards[path]);
     return JSON.parse(text);

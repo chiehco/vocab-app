@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {it} from 'vitest';
 import {readFileSync} from 'node:fs';
+import {beforeLV4Published,beforeLV4PublishedText} from './lv4Published.testSupport';
 import {isAuditUnitStep,auditHash,lv3AfterUnitFile,lv3AfterUnitPublishedText,reverseFileAuditSteps,projectAuditStep,validateAuditScope,loadLV3Chain,type AuditManifest,type AuditScope,type AuditPatch} from './lv3Audit.testSupport';
 
 function fixture(){
@@ -74,7 +75,7 @@ it('guards the latest committed checkpoint and exact historical U02 while reject
  const latest=committed[committed.length-1],u2=committed.find(x=>x.entry.unit==='LV3-U02');
  assert.ok(latest);assert.ok(u2);
  const path='public/data/v1/notes.json',value=JSON.parse(readFileSync(path,'utf8'));
- assert.deepEqual(lv3AfterUnitFile(latest.entry.unit,path,value),value);
+ assert.deepEqual(lv3AfterUnitFile(latest.entry.unit,path,value),beforeLV4Published(path,value));
  assert.equal(auditHash(lv3AfterUnitFile('LV3-U02',path,value)),u2.manifest.files![path].afterHash);
  const bad=structuredClone(value);bad[0].unlisted=true;
  assert.throws(()=>lv3AfterUnitFile(latest.entry.unit,path,bad),/drift/);
@@ -83,11 +84,11 @@ it('guards the latest committed checkpoint and exact historical U02 while reject
  for(const step of chain.filter(x=>x.entry.status==='prepared'))
   assert.throws(()=>lv3AfterUnitFile(step.entry.unit,path,value),/uncommitted checkpoint/);
  const meta='public/data/v1/meta.json',text=readFileSync(meta,'utf8').replace(/\r\n/g,'\n');
- assert.equal(lv3AfterUnitPublishedText(latest.entry.unit,meta,text),text);
+ assert.equal(lv3AfterUnitPublishedText(latest.entry.unit,meta,text),beforeLV4PublishedText(meta,text));
  const historical=lv3AfterUnitPublishedText('LV3-U02',meta,text);
  assert.equal(createHash('sha256').update(historical).digest('hex'),u2.manifest.derivedAfter![meta]);
- assert.throws(()=>lv3AfterUnitPublishedText(latest.entry.unit,meta,text+' '),/raw drift|migration unchanged input drift/);
- assert.throws(()=>lv3AfterUnitPublishedText('LV3-U02',meta,text+' '),/(raw|derived).*drift|migration unchanged input drift/);
+ assert.throws(()=>lv3AfterUnitPublishedText(latest.entry.unit,meta,text+' '),/raw drift|migration unchanged input drift|LV4 U01 complete file drift/);
+ assert.throws(()=>lv3AfterUnitPublishedText('LV3-U02',meta,text+' '),/(raw|derived).*drift|migration unchanged input drift|LV4 U01 complete file drift/);
 });
 it('reverses successive same-file changes only in the recorded order',()=>{
  const path='public/data/v1/notes.json';

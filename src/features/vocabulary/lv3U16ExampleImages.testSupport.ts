@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import proof from '../../../docs/lv3-audit-20261107/U16-example-images-resolver-integration.json';
+import {beforeLV4ResolverSource} from '../direct/lv4Published.testSupport';
 const hash=(s:string)=>createHash('sha256').update(s).digest('hex');
 export function validateU16ImageSourceProof(value:unknown=proof){assert.equal(hash(JSON.stringify(value)), 'cd0ea9919b48190bd2fdf098324e6597c4734f64ccf598dd4a61e259b04ba0a1', 'Immutable U16 source proof drift');}
 // The next verified registry revision adds the one U20 approval after U16.
@@ -11,7 +12,7 @@ const U23_REGISTRY_SHA256='69d46b5feedaf6eb6460a0f765d3733aced81d26cfef270217fb9
 const U24_REGISTRY_SHA256='14e07bfa69ab869576dcf8e3aa6d4080db06b8f999158afada2b2d343bf6435b';
 export function beforeU16ExampleImageSource(path:string,value:string){
  validateU16ImageSourceProof();
- const text=value.replace(/\r\n/g,'\n');
+ const text=beforeLV4ResolverSource(path,value.replace(/\r\n/g,'\n'));
  // Strip only the authenticated U21 publication plugin when tracing the older Vite checkpoint.
  if(path==='vite.config.ts' && hash(text)==='0514687015efa279bacfeec303e7d1dd639e0daea70f1a7b55f4ec2bba3665ea'){
   return text.replace("import { publishReviewedDictionary } from './scripts/publishReviewedDictionary.ts';\n",'')

@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {it,vi} from 'vitest';
+import {beforeLV4Published,beforeLV4PublishedText} from './lv4Published.testSupport';
 
 type Entry=({kind:'migration';migrationId:string;unit?:never}|{kind?:never;unit:string;migrationId?:never})&{status:'committed'|'prepared'};
 type Chain={entries:Entry[]};
@@ -27,8 +28,8 @@ it.skipIf(selection==='migration'&&!registered.entries.some(e=>e.kind==='migrati
  const projectedNotes=current.lv3AfterUnitFile(target,'public/data/v1/notes.json',notes);
  const projectedMeta=current.lv3AfterUnitPublishedText(target,'public/data/v1/meta.json',meta);
  if(selection==='tail'){
-  assert.deepEqual(projectedNotes,notes);
-  assert.equal(projectedMeta,meta);
+  assert.deepEqual(projectedNotes,beforeLV4Published('public/data/v1/notes.json',notes));
+  assert.equal(projectedMeta,beforeLV4PublishedText('public/data/v1/meta.json',meta));
  }
  vi.resetModules();
  vi.doMock('node:fs',async()=>{

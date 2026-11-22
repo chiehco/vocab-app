@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import manifest from '../../../docs/lv4-releases-20261122/U01.json';
+import resolver from '../../../docs/lv4-releases-20261122/resolver-U01.json';
 type Row=Record<string,unknown>;
 type Operation={dataset?:string;selector:Row;field:string;before?:unknown;beforePresent?:boolean;after:unknown};
 type File={beforeHash:string;afterHash:string;operations:Operation[];beforeMeta?:unknown;indent:number|null};
@@ -40,4 +41,14 @@ export function beforeLV4Rows<T>(dataset:string,value:T):T{
  const path='public/data/v1/'+dataset+'.json';const spec=files[path];if(!spec)return value;
  authenticate();const copy=structuredClone(value);
  for(const op of [...spec.operations].reverse())reverse(copy,op,true);return copy;
+}
+
+export function beforeLV4ResolverSource(path:string,text:string):string{
+ if(path!==resolver.path)return text;
+ assert.equal(hash(JSON.stringify(resolver)),'19932e4b4c2ae4da239d710001bb15b8fb06652ff33fa91b61b5f7b0490af3b9','LV4 U01 resolver proof drift');
+ if(hash(text)===resolver.beforeLfSha256)return text;
+ assert.equal(hash(text),resolver.afterLfSha256,'LV4 U01 resolver source drift');
+ assert.equal(text,resolver.afterText,'LV4 U01 resolver bytes drift');
+ assert.equal(hash(resolver.beforeText),resolver.beforeLfSha256,'LV4 U01 resolver historical bytes drift');
+ return resolver.beforeText;
 }
