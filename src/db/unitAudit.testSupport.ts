@@ -1,4 +1,5 @@
 import {lv3BeforeAudit,lv3BeforeAuditDatasets,lv3AfterUnitFile} from '../features/direct/lv3Audit.testSupport';
+import {beforeLV4Published} from '../features/direct/lv4Published.testSupport';
 import {beforeU03Starter} from '../features/direct/lv3U03Starter.testSupport';
 import lv2u45Wicked from '../../docs/unit-audit-20261105/LV2-U45-wicked-usage-followup.json';
 import lv2u41Usage from '../../docs/unit-audit-20261105/LV2-U41-usage-followup.json';
@@ -353,8 +354,11 @@ export function beforeUnitAudit<T>(dataset:string, value:T):T {
     for(const file of ['words','senses','examples','relations','morphemes','notes','exam_priority','hooks','media'])digest.update(data(file+'.json'));
     assert.equal(row.contentHash,digest.digest('hex'),'audit contentHash must describe the saved full payload');
     assert.equal(row.wordsHash,createHash('sha256').update(data('words.json')).digest('hex'),'audit wordsHash must describe saved words');
-    Object.assign(row,{generatedAt:'2026-10-26T06:21:08Z',wordsHash:'0b4f19bc11039dd0c70b630461418e124225f870ac576748993df1481bb3ecad',contentHash:'26fdedbbc0e5e8e8f61976120ec57093ef3399856cdeba79542358d083c64008'});
-    return copy;
+    // Restore metadata only through authenticated successor proofs, including
+    // added-row counts, after validating the complete live content hashes above.
+    const historical=beforeLV4Published('public/data/v1/meta.json',copy);
+    Object.assign(historical as Row,{generatedAt:'2026-10-26T06:21:08Z',wordsHash:'0b4f19bc11039dd0c70b630461418e124225f870ac576748993df1481bb3ecad',contentHash:'26fdedbbc0e5e8e8f61976120ec57093ef3399856cdeba79542358d083c64008'});
+    return historical;
   }
   return restoreEarlierAuditRows(name,copy);
 }
