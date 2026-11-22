@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import {beforeLiveabcU08Text} from './liveabcU08.testSupport';
 import {isDeepStrictEqual,types as utilTypes} from 'node:util';
 import {createHash} from 'node:crypto';
 import {readFileSync} from 'node:fs';
@@ -3426,7 +3427,7 @@ function publishedTextAtCheckpoint(state:ReturnType<typeof checkpoint>,path:stri
  assert.equal(text,text.replace(/\r\n/g,'\n'),'caller must normalize CRLF first');
  const source=supplementalSourceContracts.find(registered=>registered.collection.path===path);
  if(source)assert.ok(Object.hasOwn(state.bytes,path),`unknown ${source.unit.replace('LV3-','')} supplementary checkpoint path`);
- let out=path===PACK?beforeU03StarterText(text):beforeLV4PublishedText(path,text);const proof:PublishedProof={};
+ let out=path===PACK?beforeU03StarterText(text):beforeLV4PublishedText(path,beforeLiveabcU08Text(path,text));const proof:PublishedProof={};
  for(const {manifest,scope} of [...state.later].reverse()){
   if(isMigration(manifest)){out=inverseStarterMediaMigrationNormalized(manifest,path,out,state.operation.loadMigration);continue;}
   assert.ok(scope);out=inversePublishedStep(manifest,scope,path,out,state.operation.validateScope,proof);

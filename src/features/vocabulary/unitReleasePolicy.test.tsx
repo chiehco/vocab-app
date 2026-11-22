@@ -40,7 +40,7 @@ it('opens all24 LV4 units while retaining all164 existing U2 identities and othe
   expect(isUnitPublished('LV3', 2)).toBe(true);
   expect(isUnitPublished('LV1', 2)).toBe(true);
   expect(unitReleaseHold('LIVEABC_ADVANCED', 1)?.status).toBe('not_available');
-  expect(unitReleaseHold('LIVEABC_BASIC', 8)?.status).toBe('not_available');
+  expect(unitReleaseHold('LIVEABC_BASIC', 9)?.status).toBe('not_available');
   expect(textbookUnits.filter(u => u.level === 'LV4').every(u => !u.partial)).toBe(true);
 });
 
@@ -92,6 +92,6 @@ it('still removes an active battle when navigation requests an unavailable book'
   await view.waitFor(() => expect(button('進入守城')?.disabled).toBe(false)); await view.click(button('進入守城'));
   expect(view.container.querySelector('iframe')).not.toBeNull();
   await view.click([...view.container.querySelectorAll('a')].find(a => a.textContent === 'unavailable book'));
-  await view.waitFor(() => expect(rootText()).toContain('目前 LiveABC Basic 僅提供照片核對完成的 Unit 01–07'));
+  await view.waitFor(() => expect(rootText()).toContain('目前 LiveABC Basic 僅提供照片核對完成的 Unit 01–08'));
   expect(view.container.querySelector('iframe')).toBeNull(); expect(button('進入守城')).toBeUndefined();
 });
