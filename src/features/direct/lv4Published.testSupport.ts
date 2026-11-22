@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import manifest from '../../../docs/lv4-releases-20261122/U01.json';
 import unit02 from '../../../docs/lv4-releases-20261122/U02.json';
+import unit04 from '../../../docs/lv4-releases-20261122/U04.json';
 import unit03 from '../../../docs/lv4-releases-20261122/U03.json';
 import {BoundedTextCache} from './boundedTextCache.testSupport';
 import assure from '../../../docs/lv4-releases-20261122/U02-assure.json';
@@ -9,7 +10,7 @@ import resolver from '../../../docs/lv4-releases-20261122/resolver-U01.json';
 type Row=Record<string,unknown>;
 type Operation={dataset?:string;selector:Row;field:string;before?:unknown;beforePresent?:boolean;after:unknown};
 type File={beforeHash:string;afterHash:string;operations:Operation[];beforeMeta?:unknown;indent:number|null};
-const layers=[{unit:3,manifest:unit03,pin:'3b8067666a74a1fb0338b9a04bc6c125e563eddc5d5906914b4e216ccd2c70bc'},{unit:2.5,manifest:assure,pin:'9454367917fc875b4ed6d32113d052c92c38a7763831c1ac1d080a7752990df5'},
+const layers=[{unit:4,manifest:unit04,pin:'5de47824a3c85ed89ae7ffe4d67ba875f0678c54c79f2e12c2fd430a57e5bff4'},{unit:3,manifest:unit03,pin:'3b8067666a74a1fb0338b9a04bc6c125e563eddc5d5906914b4e216ccd2c70bc'},{unit:2.5,manifest:assure,pin:'9454367917fc875b4ed6d32113d052c92c38a7763831c1ac1d080a7752990df5'},
  {unit:2,manifest:unit02,pin:'e3715fdbdf76b2d165327797bc2549ae00d8cfc9c902eaa3bda351ec3aaee292'},
  {unit:1,manifest,pin:'b3e64bec21ee412d7ccaa468b5036a548bfc8ac9b562781b4a59335a6bc79818'}];
 export const hasLV4PublishedFile=(path:string)=>layers.some(layer=>Object.hasOwn(layer.manifest.files,path));
@@ -41,26 +42,33 @@ export function beforeLV4LaterUnitsText(path:string,text:string,unit:number):str
  // Authenticate proofs and hash the entire current input on EVERY call, including hits.
  authenticate();
  if(!Number.isFinite(unit))return projectUncached(path,text,unit);
- const key=JSON.stringify([path,unit,layers.map(layer=>layer.pin),hash(text)]);
+ const inputHash=hash(text);const key=JSON.stringify([path,unit,layers.map(layer=>layer.pin),inputHash]);
  const cached=projections.get(key);if(cached!==undefined)return cached;
- const result=projectUncached(path,text,unit);projections.set(key,result);return result;
+ const result=projectUncached(path,text,unit,inputHash);projections.set(key,result);return result;
 }
-function projectUncached(path:string,text:string,unit:number):string{
- for(const [index,layer]of layers.entries()){if(layer.unit<=unit)continue;
- const spec=(layer.manifest.files as Record<string,File>)[path];if(!spec)continue;
- // An already authenticated earlier layer may be supplied by an outer projection.
- const fingerprint=hash(text);
- if(fingerprint===spec.beforeHash||layers.slice(index+1).some(older=>{
-  const previous=(older.manifest.files as Record<string,File>)[path];
-  return previous&&(fingerprint===previous.beforeHash||fingerprint===previous.afterHash);
- }))continue;
- assert.equal(hash(text),spec.afterHash,'LV4 U01 complete file drift');
+function projectUncached(path:string,text:string,unit:number,inputHash?:string):string{
+ const chain=layers.flatMap(layer=>{
+  const spec=(layer.manifest.files as Record<string,File>)[path];
+  return spec?[{unit:layer.unit,spec}]:[];
+ });
+ const boundary=chain.findIndex(layer=>layer.unit<=unit);
+ const stop=boundary<0?chain.length:boundary;if(stop===0)return text;
+ // Authenticated before/after links prove every intermediate serialization.
+ // The complete input and final restored file are still hashed, and each field is checked.
+ for(let i=0;i<chain.length-1;i++)assert.equal(chain[i].spec.beforeHash,chain[i+1].spec.afterHash,'LV4 proof chain drift');
+ const fingerprint=inputHash??hash(text);let start=chain.findIndex(layer=>layer.spec.afterHash===fingerprint);
+ if(start<0){
+  assert.ok(chain.length&&chain[chain.length-1].spec.beforeHash===fingerprint,'LV4 U01 complete file drift');
+  start=chain.length;
+ }
+ if(start>=stop)return text;
  let value=JSON.parse(text) as Row;
- for(const op of [...spec.operations].reverse())reverse(op.dataset?value[op.dataset]:value,op);
- if(spec.beforeMeta){if(path.endsWith('sa-pack.json'))value.meta=spec.beforeMeta;else value=spec.beforeMeta as Row;}
- const restored=JSON.stringify(value,null,spec.indent??undefined)+'\n';
- assert.equal(hash(restored),spec.beforeHash,'LV4 U01 historical file drift');text=restored;
- }return text;
+ for(const {spec}of chain.slice(start,stop)){
+  for(const op of [...spec.operations].reverse())reverse(op.dataset?value[op.dataset]:value,op);
+  if(spec.beforeMeta){if(path.endsWith('sa-pack.json'))value.meta=structuredClone(spec.beforeMeta);else value=structuredClone(spec.beforeMeta) as Row;}
+ }
+ const last=chain[stop-1].spec;const restored=JSON.stringify(value,null,last.indent??undefined)+'\n';
+ assert.equal(hash(restored),last.beforeHash,'LV4 U01 historical file drift');return restored;
 }
 export function beforeLV4Published<T>(path:string,value:T):T{
  const spec=layers.map(layer=>(layer.manifest.files as Record<string,File>)[path]).find(Boolean);return spec?JSON.parse(beforeLV4PublishedText(path,JSON.stringify(value,null,spec.indent??undefined)+'\n')) as T:value;

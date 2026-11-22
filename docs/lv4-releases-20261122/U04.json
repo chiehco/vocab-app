@@ -1,0 +1,354 @@
+{
+  "scope": "LV4 U04 existing H08/H05 ready candidates: seven example POS, two intend note owners, distinguish constructions retaining the legal noun construction, enormous factual caption and distinctive singular stripe. No artwork, dictionary senses, curriculum or practice changes.",
+  "sourceOverlaySha256": "bf650458a391a3b2073a2d19a67205f344774538d559479a81286ec5dbdd2e80",
+  "findingIds": [
+    "LV4U04-F01",
+    "LV4U04-F02",
+    "LV4U04-F03",
+    "LV4U04-F04",
+    "LV4U04-F05",
+    "LV4U04-F06",
+    "LV4U04-F07",
+    "LV4U04-F08",
+    "LV4U04-F09",
+    "LV4U04-ART01",
+    "LV4U04-ART02"
+  ],
+  "adaptations": [
+    {
+      "findingId": "LV4U04-F09",
+      "field": "usagePattern",
+      "sourceAfter": "distinguish A from B; distinguish between A and B; distinguish oneself",
+      "after": "distinguish + N; distinguish A from B; distinguish between A and B; distinguish oneself",
+      "adaptation": "Retain existing legitimate noun construction; supplement the three existing textbook candidates. No deletion of a legitimate usage."
+    },
+    {
+      "findingId": "LV4U04-F09",
+      "field": "usagePatternZh",
+      "sourceAfter": "區別 A 與 B；區分 A 和 B；使自己出眾／揚名",
+      "after": "區別某事物；區別 A 與 B；區分 A 和 B；使自己出眾／揚名",
+      "adaptation": "Retain existing legitimate noun construction; supplement the three existing textbook candidates. No deletion of a legitimate usage."
+    }
+  ],
+  "files": {
+    "public/data/v1/examples.json": {
+      "beforeHash": "71d13ed1f97294642aac5e1f6383ff3f7ff1eff5ea2d715fcb3f39d43dc6e9ac",
+      "afterHash": "3a74774aca5188ff8121f6cb7cfb49765affa671b48db0ebde2cf5fc7a1a23c9",
+      "operations": [
+        {
+          "selector": {
+            "exampleId": "EX034d80e8"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "selector": {
+            "exampleId": "EX2746080a"
+          },
+          "field": "sensePos",
+          "before": "adj.",
+          "after": "n."
+        },
+        {
+          "selector": {
+            "exampleId": "EX2d2c692c"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "selector": {
+            "exampleId": "EX3c76c391"
+          },
+          "field": "sensePos",
+          "before": "adj.",
+          "after": "n."
+        },
+        {
+          "selector": {
+            "exampleId": "EX614767af"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "selector": {
+            "exampleId": "EX8e5a9b0a"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "selector": {
+            "exampleId": "EXc16afcc8"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        }
+      ],
+      "indent": 2
+    },
+    "public/data/v1/notes.json": {
+      "beforeHash": "5cae47457593135b48d2026e8a2f10639dc1b386717861c3aa3de563c2f74b9d",
+      "afterHash": "e076594cc83d13ac213da9297d08cb1440d5d5ed20d21e4889be409b2dd2be4d",
+      "operations": [
+        {
+          "selector": {
+            "noteId": "NX66f052c4"
+          },
+          "field": "word",
+          "before": "intent",
+          "after": "intend"
+        },
+        {
+          "selector": {
+            "noteId": "NXdb8a8b42"
+          },
+          "field": "word",
+          "before": "intent",
+          "after": "intend"
+        }
+      ],
+      "indent": 2
+    },
+    "public/data/v1/words.json": {
+      "beforeHash": "16dd713523cb290e4509c57c2074b15765be571b85340e8b67bb8b9a2bb4e29a",
+      "afterHash": "e2061aea537703b001364e31adcd77d5ac3002896dbc58255162f1161d1a6fb5",
+      "operations": [
+        {
+          "selector": {
+            "wordId": "W003309"
+          },
+          "field": "usagePattern",
+          "before": "distinguish + N; distinguish to V",
+          "after": "distinguish + N; distinguish A from B; distinguish between A and B; distinguish oneself"
+        },
+        {
+          "selector": {
+            "wordId": "W003309"
+          },
+          "field": "usagePatternZh",
+          "before": "區別某事物；區別去做……",
+          "after": "區別某事物；區別 A 與 B；區分 A 和 B；使自己出眾／揚名"
+        }
+      ],
+      "indent": 2
+    },
+    "public/data/v1/media.json": {
+      "beforeHash": "c23a6cd2e5f9a4b23ec2f60d7fc50aa6c6b36bf31c02f1f2745b3d990ac08346",
+      "afterHash": "dc1774f71adade8bc11a6f119b5709ad47e660053961a27da646e178d10c2a8b",
+      "operations": [
+        {
+          "selector": {
+            "assetId": "AX5a9354ff"
+          },
+          "field": "captionZh",
+          "before": "巨大的橡實比豆豆高出許多。",
+          "after": "兩隻豆豆身後堆著大量紙張、杯子與電子裝置，形成一座巨大的雜物堆。"
+        }
+      ],
+      "indent": 2
+    },
+    "src/features/wordbeast/illustrationCaptions.json": {
+      "beforeHash": "fb4f00549db57fa420985fac966002deed9dcfc37a5194b169a663539365abae",
+      "afterHash": "0366dd9acf68b606e916ce4394d1e5ac2e9447e32fb2f0524a4a9d239b56ea55",
+      "operations": [
+        {
+          "selector": {
+            "word": "enormous"
+          },
+          "field": "captionZh",
+          "before": "巨大的橡實比豆豆高出許多。",
+          "after": "兩隻豆豆身後堆著大量紙張、杯子與電子裝置，形成一座巨大的雜物堆。"
+        },
+        {
+          "selector": {
+            "word": "enormous"
+          },
+          "field": "en",
+          "before": "The enormous acorn towers over Doudou.",
+          "after": "An enormous pile of papers, cups, and electronic devices towers behind two Doudous."
+        },
+        {
+          "selector": {
+            "word": "enormous"
+          },
+          "field": "zh",
+          "before": "巨大的橡實比豆豆高出許多。",
+          "after": "兩隻豆豆身後堆著大量紙張、杯子與電子裝置，形成一座巨大的雜物堆。"
+        },
+        {
+          "selector": {
+            "word": "distinctive"
+          },
+          "field": "en",
+          "before": "The stone's white stripes give it a distinctive appearance.",
+          "after": "The stone's white stripe gives it a distinctive appearance."
+        }
+      ],
+      "indent": 2
+    },
+    "public/data/v1/meta.json": {
+      "beforeHash": "20fd111bc247d97c6a929cc7cefdac7dfbd12d3e583da577ff48c3b817566e8f",
+      "afterHash": "853594113439588410c999f336d5416c8188c56d22c27f5d914d6d60a65e5cb5",
+      "operations": [],
+      "indent": 2,
+      "beforeMeta": {
+        "schemaVersion": 2,
+        "generatedAt": "2026-11-22T08:26:33Z",
+        "sourceFile": "萬詞譜母表_SA義項清理整合_20260904.xlsx",
+        "counts": {
+          "words": 6090,
+          "senses": 772,
+          "examples": 7871,
+          "relations": 40,
+          "morphemes": 3798,
+          "media": 1177,
+          "notes": 4290,
+          "examPriority": 3792,
+          "hooks": 0
+        },
+        "wordsHash": "16dd713523cb290e4509c57c2074b15765be571b85340e8b67bb8b9a2bb4e29a",
+        "contentHash": "72a822634658ba0b3758265065b16b190533963c0e6bc9aad812f82021507d22",
+        "houseSourceSha256": "98fa208835caf7184acc95f26dcff56ace23ba281ff8d4b9b8c37e18e407be14"
+      }
+    },
+    "public/data/v1/sa-pack.json": {
+      "beforeHash": "a6ca2e4ebbaae278a8a379eca5d22e8e20edcff2f6e66e74c31c53cf2a139a80",
+      "afterHash": "8e67c0d54ff9d843119ec6886eeb096b1a5a8ec8bcd58716d0df55b1d744dc50",
+      "operations": [
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EX034d80e8"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EX2746080a"
+          },
+          "field": "sensePos",
+          "before": "adj.",
+          "after": "n."
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EX2d2c692c"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EX3c76c391"
+          },
+          "field": "sensePos",
+          "before": "adj.",
+          "after": "n."
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EX614767af"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EX8e5a9b0a"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EXc16afcc8"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "dataset": "notes",
+          "selector": {
+            "noteId": "NX66f052c4"
+          },
+          "field": "word",
+          "before": "intent",
+          "after": "intend"
+        },
+        {
+          "dataset": "notes",
+          "selector": {
+            "noteId": "NXdb8a8b42"
+          },
+          "field": "word",
+          "before": "intent",
+          "after": "intend"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003309"
+          },
+          "field": "usagePattern",
+          "before": "distinguish + N; distinguish to V",
+          "after": "distinguish + N; distinguish A from B; distinguish between A and B; distinguish oneself"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003309"
+          },
+          "field": "usagePatternZh",
+          "before": "區別某事物；區別去做……",
+          "after": "區別某事物；區別 A 與 B；區分 A 和 B；使自己出眾／揚名"
+        },
+        {
+          "dataset": "media",
+          "selector": {
+            "assetId": "AX5a9354ff"
+          },
+          "field": "captionZh",
+          "before": "巨大的橡實比豆豆高出許多。",
+          "after": "兩隻豆豆身後堆著大量紙張、杯子與電子裝置，形成一座巨大的雜物堆。"
+        }
+      ],
+      "indent": null,
+      "beforeMeta": {
+        "schemaVersion": 2,
+        "generatedAt": "2026-11-22T08:26:33Z",
+        "counts": {
+          "words": 5798,
+          "senses": 771,
+          "examples": 7453,
+          "relations": 31,
+          "morphemes": 3708,
+          "notes": 4122,
+          "media": 1128,
+          "examPriority": 3623
+        },
+        "wordsHash": "sa:f67bbd0f038bd796ede8cc27385dd49e6f0e7100917ac08d3441e382e9ea2208",
+        "contentHash": "sa:edf119e6742a0d1d27ba3c8beaaab8904e3301353b91df8c1ee02f857cc5ad4d"
+      }
+    }
+  }
+}
