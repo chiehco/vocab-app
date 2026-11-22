@@ -1,0 +1,96 @@
+{
+  "scope": "D-115: approved assure patterns; retain legitimate assure + N, remove erroneous assure to V, add textbook that/of patterns. No new words or prior corrections replayed.",
+  "decision": "D-115",
+  "findingId": "LV4U02-F02",
+  "files": {
+    "public/data/v1/words.json": {
+      "beforeHash": "7187318f37c1d757e1d1d82ecc11856979d83402c45ea77bdabc0d4aec88c0c2",
+      "afterHash": "28e3078f7dc83aef326bdb20d4f870ac7aa2b17a6072808ba3de1705164827cc",
+      "operations": [
+        {
+          "selector": {
+            "wordId": "W003075"
+          },
+          "field": "usagePattern",
+          "before": "assure + N; assure to V",
+          "after": "assure + N; assure sb that + clause; assure sb of sth"
+        },
+        {
+          "selector": {
+            "wordId": "W003075"
+          },
+          "field": "usagePatternZh",
+          "before": "保證……；保證去做……",
+          "after": "保證……；向某人保證……；向某人保證某事"
+        }
+      ],
+      "indent": 2
+    },
+    "public/data/v1/sa-pack.json": {
+      "beforeHash": "3b5380bfcf7b93b937c79653676ee0bec54feecd0f98466a4918b5d8a19229cf",
+      "afterHash": "6a740f67551e155ca4c90700c0e0ce461e228900fd2d0acd509fc3095996562f",
+      "operations": [
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003075"
+          },
+          "field": "usagePattern",
+          "before": "assure + N; assure to V",
+          "after": "assure + N; assure sb that + clause; assure sb of sth"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003075"
+          },
+          "field": "usagePatternZh",
+          "before": "保證……；保證去做……",
+          "after": "保證……；向某人保證……；向某人保證某事"
+        }
+      ],
+      "indent": null,
+      "beforeMeta": {
+        "schemaVersion": 2,
+        "generatedAt": "2026-11-22T04:50:25Z",
+        "counts": {
+          "words": 5798,
+          "senses": 771,
+          "examples": 7453,
+          "relations": 31,
+          "morphemes": 3708,
+          "notes": 4122,
+          "media": 1128,
+          "examPriority": 3623
+        },
+        "wordsHash": "sa:76ba3d5a2a976f68c6bd689ec72e434644b3aecf57b7e93cc1ad4edd79a3aeae",
+        "contentHash": "sa:5450c9cd95684f1dd5103cac5c7997a91d94784c90460794f379b6e95ae897c5"
+      }
+    },
+    "public/data/v1/meta.json": {
+      "beforeHash": "8797e467bb0a145398d6e6fd13f5adf82fc5f615e1f2fe1572f9c48ffa24f5c1",
+      "afterHash": "cafcc2513e58ced2bd74cef8b8634dd8cacb86559c851412a22e5dba05595da6",
+      "operations": [],
+      "indent": 2,
+      "beforeMeta": {
+        "schemaVersion": 2,
+        "generatedAt": "2026-11-22T04:50:25Z",
+        "sourceFile": "萬詞譜母表_SA義項清理整合_20260904.xlsx",
+        "counts": {
+          "words": 6090,
+          "senses": 772,
+          "examples": 7871,
+          "relations": 40,
+          "morphemes": 3798,
+          "media": 1177,
+          "notes": 4290,
+          "examPriority": 3792,
+          "hooks": 0
+        },
+        "wordsHash": "7187318f37c1d757e1d1d82ecc11856979d83402c45ea77bdabc0d4aec88c0c2",
+        "contentHash": "ece51128df54ea0fa11e504437cadca245f0046faebeff135902348955d0d81e",
+        "houseSourceSha256": "98fa208835caf7184acc95f26dcff56ace23ba281ff8d4b9b8c37e18e407be14"
+      }
+    }
+  }
+}

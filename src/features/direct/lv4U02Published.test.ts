@@ -27,7 +27,7 @@ it('updates the factual publisher caption and exact bilingual lookup atomically 
 });
 it('authenticates every complete successor file and restores exact published U01 bytes, rejecting unrelated edits',()=>{
  for(const [path,spec]of Object.entries(proof.files)){
-  const raw=readFileSync(path,'utf8').replace(/\r\n/g,'\n');expect(hash(raw)).toBe(spec.afterHash);
+  const raw=beforeLV4LaterUnitsText(path,readFileSync(path,'utf8').replace(/\r\n/g,'\n'),2);expect(hash(raw)).toBe(spec.afterHash);
   expect(hash(beforeLV4LaterUnitsText(path,raw,1))).toBe(spec.beforeHash);
   expect(()=>beforeLV4LaterUnitsText(path,raw+' ',1)).toThrow(/complete file drift/);
  }
