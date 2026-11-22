@@ -1,0 +1,528 @@
+{
+  "scope": "Twenty-two existing H08 fields, all apply-ready. Preserve every route sense and needs_check; retain attach A to B under existing base attach (already present) while removing the wrong noun-card attachment. Split the original mixed sympathize/enroll note and retain exact original enrollment segment as the existing H02 new draft note NXe9002745, linked to existing enroll W005318, without any new word record or inherited approval. One preserved note addition plus derived pack/count metadata. No artwork or learner records changed.",
+  "sourceOverlaySha256": "bf650458a391a3b2073a2d19a67205f344774538d559479a81286ec5dbdd2e80",
+  "findingIds": [
+    "LV4U08-F01",
+    "LV4U08-F02",
+    "LV4U08-F03",
+    "LV4U08-F04",
+    "LV4U08-F05",
+    "LV4U08-F06",
+    "LV4U08-F07",
+    "LV4-H01-LV5-W003940",
+    "LV4-H01-LV5-W003203",
+    "LV4U08-F10",
+    "LV4U08-F11",
+    "LV4U08-F12",
+    "LV4U08-EDIT01",
+    "LV4U08-EDIT02"
+  ],
+  "preservedNoteSplit": {
+    "batch": "H02",
+    "file": "public/data/v1/notes.json",
+    "key": "noteId",
+    "row": {
+      "noteId": "NXe9002745",
+      "word": "enroll",
+      "noteType": "phrase",
+      "title": "enroll / enrollment",
+      "content": "enroll / enrollment 註冊：enroll in ...。",
+      "status": "draft"
+    },
+    "reviewDecision": "approve-preserved-note-split",
+    "reason": "Preserve unrelated but legitimate original enrollment material in its own draft note linked to existing enroll word W005318. No new word record, no inherited approval.",
+    "sourceNoteId": "NXa122016c",
+    "sourceContentExact": "同情：sympathize with；sympathy、sympathetic；pity。enroll / enrollment 註冊：enroll in ...。"
+  },
+  "files": {
+    "public/data/v1/examples.json": {
+      "beforeHash": "70a65e3844a9d4bae4f5c147131163e84dd0e28efad2fc12a85ba758cce31632",
+      "afterHash": "651e33c1f09f6596a6096e2df56f73c5baf90c73bd94249956760ea94b64e4c3",
+      "operations": [
+        {
+          "selector": {
+            "exampleId": "EX0a839429"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "selector": {
+            "exampleId": "EXace3d22d"
+          },
+          "field": "sensePos",
+          "before": "v.",
+          "after": "n."
+        },
+        {
+          "selector": {
+            "exampleId": "EX8e7246ea"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "selector": {
+            "exampleId": "EXfac27d36"
+          },
+          "field": "sensePos",
+          "before": "v.",
+          "after": "adj."
+        },
+        {
+          "selector": {
+            "exampleId": "EXf2e434b9"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        }
+      ],
+      "indent": 2
+    },
+    "public/data/v1/senses.json": {
+      "beforeHash": "1baf5345c565c4fd9c88e0099dc5ad786265d3b58de6dc7b5de178ae3f42733f",
+      "afterHash": "3db289b7bae84b2e89ad4675e0475d7f842746d48fe2234291d7745279c8975e",
+      "operations": [
+        {
+          "selector": {
+            "senseId": "W003871-2"
+          },
+          "field": "note",
+          "before": "罕用，建議刪列｜待拆分；主表字義：路徑；途徑；路線；確定路線",
+          "after": "待拆分；主表字義：路徑；途徑；路線；確定路線"
+        }
+      ],
+      "indent": 2
+    },
+    "public/data/v1/words.json": {
+      "beforeHash": "8d7c6a9cfa89ae1c00e2c10173e0ffad5fe675e92cf352f3ba1e7909f39ac2ae",
+      "afterHash": "ed67c23b25d0e4dd7fa2c5cf8d95a4fd7d3930f1034740aecf4b3cc0ab583176",
+      "operations": [
+        {
+          "selector": {
+            "wordId": "W003178"
+          },
+          "field": "pos",
+          "before": "v.",
+          "after": "v./n."
+        },
+        {
+          "selector": {
+            "wordId": "W003178"
+          },
+          "field": "posAll",
+          "before": [
+            "v."
+          ],
+          "after": [
+            "v.",
+            "n."
+          ]
+        },
+        {
+          "selector": {
+            "wordId": "W005911"
+          },
+          "field": "usagePattern",
+          "before": "sympathize + N; sympathize to V",
+          "after": "sympathize with sb; sympathize with a view"
+        },
+        {
+          "selector": {
+            "wordId": "W005911"
+          },
+          "field": "usagePatternZh",
+          "before": "同情某人；同情去做某事",
+          "after": "同情某人／對某人有同感；贊同某種觀點"
+        },
+        {
+          "selector": {
+            "wordId": "W003940"
+          },
+          "field": "usagePattern",
+          "before": "a/the sympathy; sympathy of N",
+          "after": "have/feel/show sympathy for N; express one's sympathy; in sympathy with N; a letter of sympathy"
+        },
+        {
+          "selector": {
+            "wordId": "W003940"
+          },
+          "field": "usagePatternZh",
+          "before": "一份同情；對……的同情",
+          "after": "對……有／感到／表示同情；表達同情／慰問；贊同／支持……；慰問信"
+        },
+        {
+          "selector": {
+            "wordId": "W003203"
+          },
+          "field": "usagePattern",
+          "before": "a/the consultant; consultant of N",
+          "after": "a consultant on N; a consultant to an organization; work as a consultant; a financial consultant"
+        },
+        {
+          "selector": {
+            "wordId": "W003203"
+          },
+          "field": "usagePatternZh",
+          "before": "某位顧問／該顧問；……的顧問",
+          "after": "……方面的顧問；某機構的顧問；擔任顧問；財務顧問"
+        },
+        {
+          "selector": {
+            "wordId": "W006078"
+          },
+          "field": "usagePattern",
+          "before": "enroll + N; enroll to V; an/the enroll",
+          "after": "enrollment in a school/course; school enrollment"
+        },
+        {
+          "selector": {
+            "wordId": "W006078"
+          },
+          "field": "usagePatternZh",
+          "before": "註冊某事物；註冊做某事；一項註冊",
+          "after": "學校／課程註冊；學校註冊人數"
+        },
+        {
+          "selector": {
+            "wordId": "W006059"
+          },
+          "field": "usagePattern",
+          "before": "attach A to B; an email attachment; form an attachment to N",
+          "after": "an email attachment; form an attachment to N"
+        },
+        {
+          "selector": {
+            "wordId": "W006059"
+          },
+          "field": "usagePatternZh",
+          "before": "將A附於B；電子郵件附件；對某人產生依戀",
+          "after": "電子郵件附件；對某人產生依戀"
+        },
+        {
+          "selector": {
+            "wordId": "W005698"
+          },
+          "field": "usagePattern",
+          "before": "a/the precision; precision of N",
+          "after": "with precision (= precisely); the precision of a measurement"
+        },
+        {
+          "selector": {
+            "wordId": "W005698"
+          },
+          "field": "usagePatternZh",
+          "before": "一種精確度；……的精確度",
+          "after": "精準地；測量的精確度"
+        }
+      ],
+      "indent": 2
+    },
+    "public/data/v1/notes.json": {
+      "beforeHash": "84719e28fbe635f545ebe3a0e53da19cc454ff37c436b4e9f0fa0737db85ed4a",
+      "afterHash": "e587bb66d0be0187234acd0227e2842bcd8338595b0ae98b4ea38233ce10e7b9",
+      "operations": [
+        {
+          "selector": {
+            "noteId": "NXa122016c"
+          },
+          "field": "title",
+          "before": "enroll / enrollment",
+          "after": "sympathize with"
+        },
+        {
+          "selector": {
+            "noteId": "NXa122016c"
+          },
+          "field": "content",
+          "before": "同情：sympathize with；sympathy、sympathetic；pity。enroll / enrollment 註冊：enroll in ...。",
+          "after": "同情；有同感：sympathize with。相關詞：sympathy、sympathetic；pity。"
+        }
+      ],
+      "indent": 2,
+      "appendedRows": [
+        {
+          "index": 4290,
+          "key": "noteId",
+          "row": {
+            "noteId": "NXe9002745",
+            "word": "enroll",
+            "noteType": "phrase",
+            "title": "enroll / enrollment",
+            "content": "enroll / enrollment 註冊：enroll in ...。",
+            "status": "draft"
+          }
+        }
+      ]
+    },
+    "public/data/v1/meta.json": {
+      "beforeHash": "735190849c889b34e8409f3199cd4ca41a5bbf08ac89a9da5523c73a11090651",
+      "afterHash": "4d211a91c37926a859d0d4982b5bd4837d0b48f1d80d16ba24b508ead6cac22d",
+      "operations": [],
+      "indent": 2,
+      "beforeMeta": {
+        "schemaVersion": 2,
+        "generatedAt": "2026-11-22T13:30:01Z",
+        "sourceFile": "萬詞譜母表_SA義項清理整合_20260904.xlsx",
+        "counts": {
+          "words": 6090,
+          "senses": 772,
+          "examples": 7871,
+          "relations": 40,
+          "morphemes": 3798,
+          "media": 1177,
+          "notes": 4290,
+          "examPriority": 3792,
+          "hooks": 0
+        },
+        "wordsHash": "8d7c6a9cfa89ae1c00e2c10173e0ffad5fe675e92cf352f3ba1e7909f39ac2ae",
+        "contentHash": "ac820eb77505add8fdad1f1838824a5297d0e4a7045ea4bb8e9c25aac4f4f64a",
+        "houseSourceSha256": "98fa208835caf7184acc95f26dcff56ace23ba281ff8d4b9b8c37e18e407be14"
+      }
+    },
+    "public/data/v1/sa-pack.json": {
+      "beforeHash": "4e8be5d9544d6ba5f0321d235fe34d33c0e89ad7ba6bc15bdc37c2b58670a74d",
+      "afterHash": "2a058a6207ecdfeea3839844682f7366b07ebeee72a3f56696ff0036e20491b6",
+      "operations": [
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EX0a839429"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EXace3d22d"
+          },
+          "field": "sensePos",
+          "before": "v.",
+          "after": "n."
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EX8e7246ea"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EXfac27d36"
+          },
+          "field": "sensePos",
+          "before": "v.",
+          "after": "adj."
+        },
+        {
+          "dataset": "senses",
+          "selector": {
+            "senseId": "W003871-2"
+          },
+          "field": "note",
+          "before": "罕用，建議刪列｜待拆分；主表字義：路徑；途徑；路線；確定路線",
+          "after": "待拆分；主表字義：路徑；途徑；路線；確定路線"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003178"
+          },
+          "field": "pos",
+          "before": "v.",
+          "after": "v./n."
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003178"
+          },
+          "field": "posAll",
+          "before": [
+            "v."
+          ],
+          "after": [
+            "v.",
+            "n."
+          ]
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W005911"
+          },
+          "field": "usagePattern",
+          "before": "sympathize + N; sympathize to V",
+          "after": "sympathize with sb; sympathize with a view"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W005911"
+          },
+          "field": "usagePatternZh",
+          "before": "同情某人；同情去做某事",
+          "after": "同情某人／對某人有同感；贊同某種觀點"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003940"
+          },
+          "field": "usagePattern",
+          "before": "a/the sympathy; sympathy of N",
+          "after": "have/feel/show sympathy for N; express one's sympathy; in sympathy with N; a letter of sympathy"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003940"
+          },
+          "field": "usagePatternZh",
+          "before": "一份同情；對……的同情",
+          "after": "對……有／感到／表示同情；表達同情／慰問；贊同／支持……；慰問信"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003203"
+          },
+          "field": "usagePattern",
+          "before": "a/the consultant; consultant of N",
+          "after": "a consultant on N; a consultant to an organization; work as a consultant; a financial consultant"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003203"
+          },
+          "field": "usagePatternZh",
+          "before": "某位顧問／該顧問；……的顧問",
+          "after": "……方面的顧問；某機構的顧問；擔任顧問；財務顧問"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W006078"
+          },
+          "field": "usagePattern",
+          "before": "enroll + N; enroll to V; an/the enroll",
+          "after": "enrollment in a school/course; school enrollment"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W006078"
+          },
+          "field": "usagePatternZh",
+          "before": "註冊某事物；註冊做某事；一項註冊",
+          "after": "學校／課程註冊；學校註冊人數"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W006059"
+          },
+          "field": "usagePattern",
+          "before": "attach A to B; an email attachment; form an attachment to N",
+          "after": "an email attachment; form an attachment to N"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W006059"
+          },
+          "field": "usagePatternZh",
+          "before": "將A附於B；電子郵件附件；對某人產生依戀",
+          "after": "電子郵件附件；對某人產生依戀"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W005698"
+          },
+          "field": "usagePattern",
+          "before": "a/the precision; precision of N",
+          "after": "with precision (= precisely); the precision of a measurement"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W005698"
+          },
+          "field": "usagePatternZh",
+          "before": "一種精確度；……的精確度",
+          "after": "精準地；測量的精確度"
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EXf2e434b9"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "dataset": "notes",
+          "selector": {
+            "noteId": "NXa122016c"
+          },
+          "field": "title",
+          "before": "enroll / enrollment",
+          "after": "sympathize with"
+        },
+        {
+          "dataset": "notes",
+          "selector": {
+            "noteId": "NXa122016c"
+          },
+          "field": "content",
+          "before": "同情：sympathize with；sympathy、sympathetic；pity。enroll / enrollment 註冊：enroll in ...。",
+          "after": "同情；有同感：sympathize with。相關詞：sympathy、sympathetic；pity。"
+        }
+      ],
+      "indent": null,
+      "beforeMeta": {
+        "schemaVersion": 2,
+        "generatedAt": "2026-11-22T13:30:01Z",
+        "counts": {
+          "words": 5798,
+          "senses": 771,
+          "examples": 7453,
+          "relations": 31,
+          "morphemes": 3708,
+          "notes": 4122,
+          "media": 1128,
+          "examPriority": 3623
+        },
+        "wordsHash": "sa:1886e3e6065882bfb72f67049a5adaa7c102dc8b3abb8e9075a9fb6e88d985cf",
+        "contentHash": "sa:efe4bee44339fef793f5b77456e6bbb04fa3e77b7d33da1d2e5d0f95dbe6b603"
+      },
+      "appendedRows": [
+        {
+          "dataset": "notes",
+          "index": 4122,
+          "key": "noteId",
+          "row": {
+            "noteId": "NXe9002745",
+            "word": "enroll",
+            "noteType": "phrase",
+            "title": "enroll / enrollment",
+            "content": "enroll / enrollment 註冊：enroll in ...。",
+            "status": "draft"
+          }
+        }
+      ]
+    }
+  }
+}
