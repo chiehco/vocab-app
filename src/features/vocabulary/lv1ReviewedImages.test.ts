@@ -1,3 +1,4 @@
+import {beforeLV4PublishedText} from '../direct/lv4Published.testSupport';
 import {beforeU38PlaygroundPair} from './lv2ImageRepairs.testSupport';
 import imageRepairs from '../../../docs/unit-audit-20261105/LV2-U38-U41-image-repairs.json';
 import buildingRepair from '../../../docs/unit-audit-20261105/LV2-U44-building-image-repair.json';
@@ -17,7 +18,10 @@ import { getWordBeastAsset } from '../wordbeast/wordBeastAssets';
 import { resolveWordImageClue } from '../../quiz/imageClue';
 
 const hash = (bytes: string | Buffer) => createHash('sha256').update(bytes).digest('hex');
-const latestPublishedCards=cards;
+// Approval hashes and old repair proofs describe the authenticated pre-LV4 registry.
+// Rendering and card-selection assertions below continue to use the current cards.
+const registryPath='src/features/vocabulary/lv1ReviewedImages.json';
+const latestPublishedCards=JSON.parse(beforeLV4PublishedText(registryPath,readFileSync(registryPath,'utf8').replace(/\r\n/g,'\n'))) as typeof cards;
 
 describe('reviewed LV1 image-only release', () => {
   it('contains exactly the reviewed scope and preserves every final image and caption hash', () => {
@@ -38,7 +42,8 @@ describe('reviewed LV1 image-only release', () => {
       expect(record).toBeDefined();
       if(card.id==='LV1-U09-04'){expect(card).toEqual(buildingRepair.after);expect(record).toEqual(buildingRepair.originalApproval);expect(hash(readFileSync('public/'+card.illustration.path))).toBe(buildingRepair.replacementImageSha256);expect(hash(readFileSync('public/'+buildingRepair.before.illustration.path))).toBe(record.publishedImageSha256);}
       else if(card.id==='LV1-U09-27'){expect(card).toEqual(imageRepairs.playground.after);expect(record).toEqual(imageRepairs.playground.originalApproval);expect(hash(readFileSync('public/'+card.illustration.path))).toBe(imageRepairs.playground.replacementImageSha256);expect(hash(readFileSync('public/'+imageRepairs.playground.before.illustration.path))).toBe(record.publishedImageSha256);}else expect(hash(readFileSync('public/' + card.illustration.path))).toBe(record.publishedImageSha256);
-      expect(hash(card.illustration.captionEn + '\n' + card.illustration.captionZh)).toBe(record.textSha256);
+      const historicalCard=latestPublishedCards.find(c=>c.id===card.id)!;
+      expect(hash(historicalCard.illustration.captionEn + '\n' + historicalCard.illustration.captionZh)).toBe(record.textSha256);
       const src = '/' + card.illustration.path + '?v=test';
       expect(approvedCurriculumIllustration(card.displayWord, src)).toEqual(card.illustration);
       expect(resolveWordImageClue(card.displayWord, src, 'unrelated old caption')?.text).toBe(card.illustration.captionZh);
