@@ -1,0 +1,934 @@
+{
+  "scope": "Existing final H08 U17 ready fields only. Normalize three originalExample leaves to their existing unique workExampleId; same leaf values, no identities or sibling changes. Blaze unrelated bare retrieve/portrait already remain as full existing word entries. Preserve legitimate senses, all art/approvals and learner records; no whole-unit re-audit.",
+  "sourceOverlaySha256": "bf650458a391a3b2073a2d19a67205f344774538d559479a81286ec5dbdd2e80",
+  "findingIds": [
+    "LV4U17-F01",
+    "LV4U17-F02",
+    "LV4U17-F03",
+    "LV4U17-F04",
+    "LV4U17-F05",
+    "LV4U17-F06",
+    "LV4U17-F07",
+    "LV4U17-F08",
+    "LV4U17-F09",
+    "LV4U17-F10",
+    "LV4U17-F11",
+    "LV4U17-F12",
+    "LV4U17-F13",
+    "LV4U17-F14",
+    "LV4U17-F15",
+    "LV4U17-F16",
+    "LV4U17-EDIT01",
+    "LV4U17-EDIT02",
+    "LV4U17-EDIT03"
+  ],
+  "adaptations": [
+    {
+      "findingId": "LV4U17-EDIT02",
+      "reason": "Use existing unique embedded workExampleId ORIG-LV4U17-USAGE-026 for the same three approved originalExample leaves; parent learningItemId also appears in questions. No field or identity broadened."
+    },
+    {
+      "findingId": "LV4U17-EDIT01",
+      "reason": "Unrelated bare retrieve/portrait already preserved as full word entries W005775/W002662; original note bytes remain authenticated by inverse proof.",
+      "evidence": "mixed-note-preservation.json"
+    },
+    {
+      "kind": "preserve_original_serialization",
+      "file": "src/features/direct/curriculumLV4Unit17.json",
+      "indent": 1,
+      "sourceFieldsAppliedOnce": true,
+      "transactionReplayed": false,
+      "reason": "The existing curriculum uses one-space indentation. Restore that format and finish the previously interrupted inverse proof from the exact published baseline; no source field or mother operation is replayed."
+    }
+  ],
+  "files": {
+    "public/data/v1/examples.json": {
+      "beforeHash": "6078062fa92fabf12d5113663fa62da8935256ba5fbb5ee384893461f1cc44f5",
+      "afterHash": "574bbcd40033641ae0ff3d04bb59d818d507fdc0055e1f4bc2f666e9cc9ee670",
+      "operations": [
+        {
+          "selector": {
+            "exampleId": "EX1fb0722c"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        }
+      ],
+      "indent": 2
+    },
+    "public/data/v1/words.json": {
+      "beforeHash": "47baacfad40a56fd8023f4f95fa0fc8ad60dcdb8e1f55587ba8c1ee89b5ccb62",
+      "afterHash": "7a9a297f3dbfe05457b046552fe69ec67473a8dbeb05f66788c32013d9497b3a",
+      "operations": [
+        {
+          "selector": {
+            "wordId": "W003132"
+          },
+          "field": "usagePattern",
+          "before": "catalogue + N; catalogue to V; a/the catalogue",
+          "after": "a product catalogue; catalogue + N"
+        },
+        {
+          "selector": {
+            "wordId": "W003132"
+          },
+          "field": "usagePatternZh",
+          "before": "將……編入目錄；將……編入目錄；該目錄",
+          "after": "一本商品型錄；為……編目"
+        },
+        {
+          "selector": {
+            "wordId": "W003132"
+          },
+          "field": "meaningEn",
+          "before": "make an itemized list or catalog of; classify; make a catalogue, compile a catalogue",
+          "after": "(n.) a list of items, such as products or books; (v.) make an itemized list or catalog of; classify; make a catalogue, compile a catalogue"
+        },
+        {
+          "selector": {
+            "wordId": "W003145"
+          },
+          "field": "pos",
+          "before": "adj.",
+          "after": "adj./n."
+        },
+        {
+          "selector": {
+            "wordId": "W003145"
+          },
+          "field": "posAll",
+          "before": [
+            "adj."
+          ],
+          "after": [
+            "adj.",
+            "n."
+          ]
+        },
+        {
+          "selector": {
+            "wordId": "W003145"
+          },
+          "field": "meaningZh",
+          "before": "圓形的；循環的；間接的；環狀的",
+          "after": "圓形的；循環的；間接的；環狀的；傳單；通知"
+        },
+        {
+          "selector": {
+            "wordId": "W003145"
+          },
+          "field": "meaningEn",
+          "before": "having the shape of a circle or ring; moving in a repeating circle or pattern, or going back to where it started",
+          "after": "having the shape of a circle or ring; moving in a repeating circle or pattern, or going back to where it started; (n.) a printed notice or advertisement distributed to many people"
+        },
+        {
+          "selector": {
+            "wordId": "W003430"
+          },
+          "field": "usagePattern",
+          "before": "frown + N; frown to V; a/the frown",
+          "after": "frown at sb; frown on/upon N; with a frown"
+        },
+        {
+          "selector": {
+            "wordId": "W003430"
+          },
+          "field": "usagePatternZh",
+          "before": "皺眉表示……；皺眉以致……；該皺眉",
+          "after": "對某人皺眉；不贊同……；皺著眉頭"
+        },
+        {
+          "selector": {
+            "wordId": "W003431"
+          },
+          "field": "usagePattern",
+          "before": "frustrate + N; frustrate to V",
+          "after": "frustrate sb; frustrate a plan"
+        },
+        {
+          "selector": {
+            "wordId": "W003431"
+          },
+          "field": "usagePatternZh",
+          "before": "挫敗……；因挫敗而……",
+          "after": "使某人灰心／氣餒；挫敗計畫"
+        },
+        {
+          "selector": {
+            "wordId": "W003431"
+          },
+          "field": "meaningZh",
+          "before": "挫敗；擊敗；破壞；無益的",
+          "after": "挫敗；擊敗；破壞；無益的；使灰心；使氣餒"
+        },
+        {
+          "selector": {
+            "wordId": "W003431"
+          },
+          "field": "meaningEn",
+          "before": "hinder or prevent (the efforts, plans, or desires) of; treat cruelly",
+          "after": "hinder or prevent (the efforts, plans, or desires) of; treat cruelly; to make someone feel annoyed or discouraged because they cannot achieve what they want"
+        },
+        {
+          "selector": {
+            "wordId": "W003561"
+          },
+          "field": "usagePattern",
+          "before": "intermediate + N; intermediate to V; an/the intermediate",
+          "after": "an intermediate level; intermediate between A and B"
+        },
+        {
+          "selector": {
+            "wordId": "W003561"
+          },
+          "field": "usagePatternZh",
+          "before": "中級的……；中級去做……；中間物／該中間物",
+          "after": "中級程度；在甲乙之間居中協調"
+        },
+        {
+          "selector": {
+            "wordId": "W003561"
+          },
+          "field": "meaningEn",
+          "before": "a substance formed during a chemical process before the desired product is obtained; lying between two extremes in time or space or state",
+          "after": "a substance formed during a chemical process before the desired product is obtained; lying between two extremes in time or space or state; (adj.) at a level between beginner and advanced; (n.) a learner at that level; (v.) to act between two parties to help them reach agreement"
+        },
+        {
+          "selector": {
+            "wordId": "W003882"
+          },
+          "field": "usagePattern",
+          "before": "scratch + N; scratch to V; a/the scratch",
+          "after": "scratch + N; a scratch; from scratch"
+        },
+        {
+          "selector": {
+            "wordId": "W003882"
+          },
+          "field": "usagePatternZh",
+          "before": "抓……；抓以……；抓痕",
+          "after": "抓／刮……；一道抓痕；從零開始"
+        },
+        {
+          "selector": {
+            "wordId": "W003882"
+          },
+          "field": "meaningEn",
+          "before": "a competitor who has withdrawn from competition; (golf) a handicap of zero strokes",
+          "after": "(v.) to rub or mark a surface with nails or something sharp; (n.) a thin mark made in this way; a competitor who has withdrawn from competition; (golf) a handicap of zero strokes"
+        },
+        {
+          "selector": {
+            "wordId": "W003934"
+          },
+          "field": "usagePattern",
+          "before": "surrender + N; surrender to V; a/the surrender",
+          "after": "surrender + N; surrender to N; surrender oneself to N; a surrender"
+        },
+        {
+          "selector": {
+            "wordId": "W003934"
+          },
+          "field": "usagePatternZh",
+          "before": "投降……；投降去……；一次投降",
+          "after": "交出……；向……投降／屈服；向……自首；一次投降"
+        },
+        {
+          "selector": {
+            "wordId": "W003934"
+          },
+          "field": "meaningZh",
+          "before": "交出；放棄；使投降；讓與",
+          "after": "交出；放棄；使投降；讓與；投降；自首"
+        },
+        {
+          "selector": {
+            "wordId": "W003934"
+          },
+          "field": "meaningEn",
+          "before": "the delivery of a principal into lawful custody; give up or agree to forgo to the power or possession of another",
+          "after": "the delivery of a principal into lawful custody; give up or agree to forgo to the power or possession of another; (v.) to stop resisting an opponent or authority; (n.) the act of doing so"
+        },
+        {
+          "selector": {
+            "wordId": "W003786"
+          },
+          "field": "usagePattern",
+          "before": "prosper + N; prosper to V",
+          "after": "a business prospers; prosper in N; prosper under N; hope to prosper; prosper sb/sth"
+        },
+        {
+          "selector": {
+            "wordId": "W003786"
+          },
+          "field": "usagePatternZh",
+          "before": "使……繁榮；成功去做某事",
+          "after": "企業興旺；在某領域或環境中成功；在某條件下繁榮；希望興旺發達；使某人或某事物成功／興旺"
+        },
+        {
+          "selector": {
+            "wordId": "W005459"
+          },
+          "field": "usagePattern",
+          "before": "inflict + N; inflict to V",
+          "after": "inflict harm/damage on/upon sb/sth; inflict pain/punishment on/upon sb"
+        },
+        {
+          "selector": {
+            "wordId": "W005459"
+          },
+          "field": "usagePatternZh",
+          "before": "施加……；施加以做某事",
+          "after": "對某人／某物造成傷害／損害；對某人施加痛苦／懲罰"
+        },
+        {
+          "selector": {
+            "wordId": "W005010"
+          },
+          "field": "usagePattern",
+          "before": "yield + N; yield to V; a/the yield",
+          "after": "yield + N; yield to N; a yield"
+        },
+        {
+          "selector": {
+            "wordId": "W005010"
+          },
+          "field": "usagePatternZh",
+          "before": "產生……；屈服以進行……；該產量",
+          "after": "產生……；向……屈服／讓步；產量／收益"
+        },
+        {
+          "selector": {
+            "wordId": "W005010"
+          },
+          "field": "meaningZh",
+          "before": "生產量；投資收益；出產；給予",
+          "after": "生產量；投資收益；出產；給予；屈服；讓步"
+        },
+        {
+          "selector": {
+            "wordId": "W005010"
+          },
+          "field": "meaningEn",
+          "before": "an amount of a product; be the cause or source of",
+          "after": "an amount of a product; be the cause or source of; to stop resisting and give way to someone or something"
+        },
+        {
+          "selector": {
+            "wordId": "W004200"
+          },
+          "field": "usagePattern",
+          "before": "concede + N; concede to V",
+          "after": "concede that S+V; concede a point; concede defeat; concede A to B; concede to N"
+        },
+        {
+          "selector": {
+            "wordId": "W004200"
+          },
+          "field": "usagePatternZh",
+          "before": "承認……；承認去做……",
+          "after": "承認……；在某一點讓步／承認某論點；認輸；把 A 讓給 B；向……讓步"
+        },
+        {
+          "selector": {
+            "wordId": "W003623"
+          },
+          "field": "meaningZh",
+          "before": "頁邊的空白；邊緣；界限；餘裕",
+          "after": "頁邊的空白；邊緣；界限；餘裕；利潤；差數"
+        },
+        {
+          "selector": {
+            "wordId": "W003040"
+          },
+          "field": "meaningZh",
+          "before": "業餘愛好者；外行；愛好者；業餘家",
+          "after": "業餘愛好者；外行；愛好者；業餘家；業餘的"
+        },
+        {
+          "selector": {
+            "wordId": "W003779"
+          },
+          "field": "meaningEn",
+          "before": "yielding material gain or profit",
+          "after": "yielding material gain or profit; useful or beneficial"
+        },
+        {
+          "selector": {
+            "wordId": "W003454"
+          },
+          "field": "meaningEn",
+          "before": "a brief or partial view or look at someone or something",
+          "after": "a brief or partial view or look at someone or something; (v.) to see someone or something briefly or partly"
+        }
+      ],
+      "indent": 2
+    },
+    "public/data/v1/notes.json": {
+      "beforeHash": "fed11d73fb4594f502ee271f54ab207e91e217a84a885e66d109440f8c7cd376",
+      "afterHash": "0310f6e92d5310ec7197a76a24869c327daae009da129bb2a12b5704f5c980f9",
+      "operations": [
+        {
+          "selector": {
+            "noteId": "NXc8549974"
+          },
+          "field": "content",
+          "before": "：熊熊燃燒；大火；flame；bring a blaze under control；retrieve；portrait。",
+          "after": "bring a blaze under control：控制住大火。blaze 可指熊熊燃燒／大火；相關詞：flame。"
+        }
+      ],
+      "indent": 2
+    },
+    "src/features/direct/curriculumLV4Unit17.json": {
+      "beforeHash": "e87ee842d6a1490941ee2a2087eaceec57bd14007e9644c3e96c2a874973beb8",
+      "afterHash": "523c45ad3be9de09205293877571c55a7e353f0f3e3a862487f859f82ed87bf6",
+      "operations": [
+        {
+          "selector": {
+            "questionId": "USAGE-LV4U17-026"
+          },
+          "field": "stem",
+          "before": "The suspect surrendered _____ to the police.",
+          "after": "He surrendered _____ to the police."
+        },
+        {
+          "selector": {
+            "questionId": "USAGE-LV4U17-026"
+          },
+          "field": "sentenceEn",
+          "before": "The suspect surrendered himself to the police.",
+          "after": "He surrendered himself to the police."
+        },
+        {
+          "selector": {
+            "questionId": "USAGE-LV4U17-026"
+          },
+          "field": "sentenceZh",
+          "before": "這名男性嫌疑人向警方自首。",
+          "after": "他向警方自首。"
+        },
+        {
+          "selector": {
+            "questionId": "USAGE-LV4U17-026"
+          },
+          "field": "options",
+          "before": [
+            {
+              "id": "A",
+              "text": "herself",
+              "rationaleZh": "不符合本題句型或指定用法；表示向某一方投降或自首；反身代名詞需配合主詞。 這名男性嫌疑人向警方自首。"
+            },
+            {
+              "id": "B",
+              "text": "himself",
+              "rationaleZh": "表示向某一方投降或自首；反身代名詞需配合主詞。 這名男性嫌疑人向警方自首。"
+            },
+            {
+              "id": "C",
+              "text": "themselves",
+              "rationaleZh": "不符合本題句型或指定用法；表示向某一方投降或自首；反身代名詞需配合主詞。 這名男性嫌疑人向警方自首。"
+            },
+            {
+              "id": "D",
+              "text": "itself",
+              "rationaleZh": "不符合本題句型或指定用法；表示向某一方投降或自首；反身代名詞需配合主詞。 這名男性嫌疑人向警方自首。"
+            }
+          ],
+          "after": [
+            {
+              "id": "A",
+              "text": "herself",
+              "rationaleZh": "本題主詞是 He，需配合使用反身代名詞 himself。 他向警方自首。"
+            },
+            {
+              "id": "B",
+              "text": "himself",
+              "rationaleZh": "主詞是 He，反身代名詞用 himself。 他向警方自首。"
+            },
+            {
+              "id": "C",
+              "text": "themselves",
+              "rationaleZh": "本題主詞是 He，需配合使用反身代名詞 himself。 他向警方自首。"
+            },
+            {
+              "id": "D",
+              "text": "itself",
+              "rationaleZh": "本題主詞是 He，需配合使用反身代名詞 himself。 他向警方自首。"
+            }
+          ]
+        },
+        {
+          "selector": {
+            "workExampleId": "ORIG-LV4U17-USAGE-026"
+          },
+          "field": "sentenceEn",
+          "before": "The suspect surrendered himself to the police.",
+          "after": "He surrendered himself to the police."
+        },
+        {
+          "selector": {
+            "workExampleId": "ORIG-LV4U17-USAGE-026"
+          },
+          "field": "sentenceZh",
+          "before": "這名男性嫌疑人向警方自首。",
+          "after": "他向警方自首。"
+        },
+        {
+          "selector": {
+            "workExampleId": "ORIG-LV4U17-USAGE-026"
+          },
+          "field": "blankSentence",
+          "before": "The suspect surrendered _____ to the police.",
+          "after": "He surrendered _____ to the police."
+        }
+      ],
+      "indent": 1
+    },
+    "src/features/direct/practiceVariantsLV4Unit17.json": {
+      "beforeHash": "3360cc54bec10479da09a0d69a5b6e1285ec3302f62f5360c6a97fabc89b0b4a",
+      "afterHash": "028a3a91704517cffbdf4e826e36d15d1245a620569fd01dac18f4d53ed0c8ea",
+      "operations": [
+        {
+          "selector": {
+            "questionId": "CLOZE-ORIG-LV4U17-profitable~P1"
+          },
+          "field": "sentenceEn",
+          "before": "Selling handmade bags became profitable once the sales income was higher than the cost of materials.",
+          "after": "Selling handmade bags became profitable once the sales income was higher than the total cost of making and selling them."
+        },
+        {
+          "selector": {
+            "questionId": "CLOZE-ORIG-LV4U17-profitable~P1"
+          },
+          "field": "sentenceZh",
+          "before": "手工包的銷售收入高於材料成本後，販售手工包就開始有利可圖。",
+          "after": "手工包的銷售收入高於製作與銷售的總成本後，販售手工包就開始有利可圖。"
+        },
+        {
+          "selector": {
+            "questionId": "CLOZE-ORIG-LV4U17-profitable~P1"
+          },
+          "field": "stem",
+          "before": "Selling handmade bags became _____ once the sales income was higher than the cost of materials.",
+          "after": "Selling handmade bags became _____ once the sales income was higher than the total cost of making and selling them."
+        }
+      ],
+      "indent": 2
+    },
+    "public/data/v1/meta.json": {
+      "beforeHash": "1ea0dbdff29473ae0862f166754a91ab3dc75376e719123368e385d9d35f3c4a",
+      "afterHash": "387238ac2e9eca4229336ab5a92f7c5559fbbebc9864d934eb174eda05f766d9",
+      "operations": [],
+      "indent": 2,
+      "beforeMeta": {
+        "schemaVersion": 2,
+        "generatedAt": "2026-11-23T02:15:38Z",
+        "sourceFile": "萬詞譜母表_SA義項清理整合_20260904.xlsx",
+        "counts": {
+          "words": 6090,
+          "senses": 772,
+          "examples": 7871,
+          "relations": 40,
+          "morphemes": 3798,
+          "media": 1177,
+          "notes": 4291,
+          "examPriority": 3792,
+          "hooks": 0
+        },
+        "wordsHash": "47baacfad40a56fd8023f4f95fa0fc8ad60dcdb8e1f55587ba8c1ee89b5ccb62",
+        "contentHash": "6e6647f0ad03d69f71707845b08566e237e9883215431eb0fe92ba9f51630857",
+        "houseSourceSha256": "98fa208835caf7184acc95f26dcff56ace23ba281ff8d4b9b8c37e18e407be14"
+      }
+    },
+    "public/data/v1/sa-pack.json": {
+      "beforeHash": "7c5a9e64ea4acead18620473bbae91eb413f395a87593b57ba3eabf59396f185",
+      "afterHash": "a1bec509c75bd6d420e69e710f5f0e4c590763aa00fd3d0351bcb669777ef0b5",
+      "operations": [
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EX1fb0722c"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003132"
+          },
+          "field": "usagePattern",
+          "before": "catalogue + N; catalogue to V; a/the catalogue",
+          "after": "a product catalogue; catalogue + N"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003132"
+          },
+          "field": "usagePatternZh",
+          "before": "將……編入目錄；將……編入目錄；該目錄",
+          "after": "一本商品型錄；為……編目"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003132"
+          },
+          "field": "meaningEn",
+          "before": "make an itemized list or catalog of; classify; make a catalogue, compile a catalogue",
+          "after": "(n.) a list of items, such as products or books; (v.) make an itemized list or catalog of; classify; make a catalogue, compile a catalogue"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003145"
+          },
+          "field": "pos",
+          "before": "adj.",
+          "after": "adj./n."
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003145"
+          },
+          "field": "posAll",
+          "before": [
+            "adj."
+          ],
+          "after": [
+            "adj.",
+            "n."
+          ]
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003145"
+          },
+          "field": "meaningZh",
+          "before": "圓形的；循環的；間接的；環狀的",
+          "after": "圓形的；循環的；間接的；環狀的；傳單；通知"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003145"
+          },
+          "field": "meaningEn",
+          "before": "having the shape of a circle or ring; moving in a repeating circle or pattern, or going back to where it started",
+          "after": "having the shape of a circle or ring; moving in a repeating circle or pattern, or going back to where it started; (n.) a printed notice or advertisement distributed to many people"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003430"
+          },
+          "field": "usagePattern",
+          "before": "frown + N; frown to V; a/the frown",
+          "after": "frown at sb; frown on/upon N; with a frown"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003430"
+          },
+          "field": "usagePatternZh",
+          "before": "皺眉表示……；皺眉以致……；該皺眉",
+          "after": "對某人皺眉；不贊同……；皺著眉頭"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003431"
+          },
+          "field": "usagePattern",
+          "before": "frustrate + N; frustrate to V",
+          "after": "frustrate sb; frustrate a plan"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003431"
+          },
+          "field": "usagePatternZh",
+          "before": "挫敗……；因挫敗而……",
+          "after": "使某人灰心／氣餒；挫敗計畫"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003431"
+          },
+          "field": "meaningZh",
+          "before": "挫敗；擊敗；破壞；無益的",
+          "after": "挫敗；擊敗；破壞；無益的；使灰心；使氣餒"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003431"
+          },
+          "field": "meaningEn",
+          "before": "hinder or prevent (the efforts, plans, or desires) of; treat cruelly",
+          "after": "hinder or prevent (the efforts, plans, or desires) of; treat cruelly; to make someone feel annoyed or discouraged because they cannot achieve what they want"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003561"
+          },
+          "field": "usagePattern",
+          "before": "intermediate + N; intermediate to V; an/the intermediate",
+          "after": "an intermediate level; intermediate between A and B"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003561"
+          },
+          "field": "usagePatternZh",
+          "before": "中級的……；中級去做……；中間物／該中間物",
+          "after": "中級程度；在甲乙之間居中協調"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003561"
+          },
+          "field": "meaningEn",
+          "before": "a substance formed during a chemical process before the desired product is obtained; lying between two extremes in time or space or state",
+          "after": "a substance formed during a chemical process before the desired product is obtained; lying between two extremes in time or space or state; (adj.) at a level between beginner and advanced; (n.) a learner at that level; (v.) to act between two parties to help them reach agreement"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003882"
+          },
+          "field": "usagePattern",
+          "before": "scratch + N; scratch to V; a/the scratch",
+          "after": "scratch + N; a scratch; from scratch"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003882"
+          },
+          "field": "usagePatternZh",
+          "before": "抓……；抓以……；抓痕",
+          "after": "抓／刮……；一道抓痕；從零開始"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003882"
+          },
+          "field": "meaningEn",
+          "before": "a competitor who has withdrawn from competition; (golf) a handicap of zero strokes",
+          "after": "(v.) to rub or mark a surface with nails or something sharp; (n.) a thin mark made in this way; a competitor who has withdrawn from competition; (golf) a handicap of zero strokes"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003934"
+          },
+          "field": "usagePattern",
+          "before": "surrender + N; surrender to V; a/the surrender",
+          "after": "surrender + N; surrender to N; surrender oneself to N; a surrender"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003934"
+          },
+          "field": "usagePatternZh",
+          "before": "投降……；投降去……；一次投降",
+          "after": "交出……；向……投降／屈服；向……自首；一次投降"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003934"
+          },
+          "field": "meaningZh",
+          "before": "交出；放棄；使投降；讓與",
+          "after": "交出；放棄；使投降；讓與；投降；自首"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003934"
+          },
+          "field": "meaningEn",
+          "before": "the delivery of a principal into lawful custody; give up or agree to forgo to the power or possession of another",
+          "after": "the delivery of a principal into lawful custody; give up or agree to forgo to the power or possession of another; (v.) to stop resisting an opponent or authority; (n.) the act of doing so"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003786"
+          },
+          "field": "usagePattern",
+          "before": "prosper + N; prosper to V",
+          "after": "a business prospers; prosper in N; prosper under N; hope to prosper; prosper sb/sth"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003786"
+          },
+          "field": "usagePatternZh",
+          "before": "使……繁榮；成功去做某事",
+          "after": "企業興旺；在某領域或環境中成功；在某條件下繁榮；希望興旺發達；使某人或某事物成功／興旺"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W005459"
+          },
+          "field": "usagePattern",
+          "before": "inflict + N; inflict to V",
+          "after": "inflict harm/damage on/upon sb/sth; inflict pain/punishment on/upon sb"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W005459"
+          },
+          "field": "usagePatternZh",
+          "before": "施加……；施加以做某事",
+          "after": "對某人／某物造成傷害／損害；對某人施加痛苦／懲罰"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W004200"
+          },
+          "field": "usagePattern",
+          "before": "concede + N; concede to V",
+          "after": "concede that S+V; concede a point; concede defeat; concede A to B; concede to N"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W004200"
+          },
+          "field": "usagePatternZh",
+          "before": "承認……；承認去做……",
+          "after": "承認……；在某一點讓步／承認某論點；認輸；把 A 讓給 B；向……讓步"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003623"
+          },
+          "field": "meaningZh",
+          "before": "頁邊的空白；邊緣；界限；餘裕",
+          "after": "頁邊的空白；邊緣；界限；餘裕；利潤；差數"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003040"
+          },
+          "field": "meaningZh",
+          "before": "業餘愛好者；外行；愛好者；業餘家",
+          "after": "業餘愛好者；外行；愛好者；業餘家；業餘的"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003779"
+          },
+          "field": "meaningEn",
+          "before": "yielding material gain or profit",
+          "after": "yielding material gain or profit; useful or beneficial"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003454"
+          },
+          "field": "meaningEn",
+          "before": "a brief or partial view or look at someone or something",
+          "after": "a brief or partial view or look at someone or something; (v.) to see someone or something briefly or partly"
+        },
+        {
+          "dataset": "notes",
+          "selector": {
+            "noteId": "NXc8549974"
+          },
+          "field": "content",
+          "before": "：熊熊燃燒；大火；flame；bring a blaze under control；retrieve；portrait。",
+          "after": "bring a blaze under control：控制住大火。blaze 可指熊熊燃燒／大火；相關詞：flame。"
+        }
+      ],
+      "indent": null,
+      "excludedSourceOperations": [
+        {
+          "sourceFile": "public/data/v1/words.json",
+          "selector": {
+            "wordId": "W005010"
+          },
+          "field": "usagePattern",
+          "before": "yield + N; yield to V; a/the yield",
+          "after": "yield + N; yield to N; a yield",
+          "absentInBaselineAndCandidate": true,
+          "reason": "Existing full-dictionary record is outside the unchanged S+A starter subset; full source operation is authenticated separately."
+        },
+        {
+          "sourceFile": "public/data/v1/words.json",
+          "selector": {
+            "wordId": "W005010"
+          },
+          "field": "usagePatternZh",
+          "before": "產生……；屈服以進行……；該產量",
+          "after": "產生……；向……屈服／讓步；產量／收益",
+          "absentInBaselineAndCandidate": true,
+          "reason": "Existing full-dictionary record is outside the unchanged S+A starter subset; full source operation is authenticated separately."
+        },
+        {
+          "sourceFile": "public/data/v1/words.json",
+          "selector": {
+            "wordId": "W005010"
+          },
+          "field": "meaningZh",
+          "before": "生產量；投資收益；出產；給予",
+          "after": "生產量；投資收益；出產；給予；屈服；讓步",
+          "absentInBaselineAndCandidate": true,
+          "reason": "Existing full-dictionary record is outside the unchanged S+A starter subset; full source operation is authenticated separately."
+        },
+        {
+          "sourceFile": "public/data/v1/words.json",
+          "selector": {
+            "wordId": "W005010"
+          },
+          "field": "meaningEn",
+          "before": "an amount of a product; be the cause or source of",
+          "after": "an amount of a product; be the cause or source of; to stop resisting and give way to someone or something",
+          "absentInBaselineAndCandidate": true,
+          "reason": "Existing full-dictionary record is outside the unchanged S+A starter subset; full source operation is authenticated separately."
+        }
+      ],
+      "beforeMeta": {
+        "schemaVersion": 2,
+        "generatedAt": "2026-11-23T02:15:38Z",
+        "counts": {
+          "words": 5798,
+          "senses": 771,
+          "examples": 7453,
+          "relations": 31,
+          "morphemes": 3708,
+          "notes": 4123,
+          "media": 1128,
+          "examPriority": 3623
+        },
+        "wordsHash": "sa:d882a6be3ed59cba1f8576c1474d9f9cafb54ecf2066bbe9948a94cca65993b8",
+        "contentHash": "sa:9225474efc08504d72221e77d0b6027b426c46d5e05b9a0cb6181400548dbf83"
+      }
+    }
+  }
+}
