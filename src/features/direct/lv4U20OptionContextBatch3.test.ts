@@ -1,7 +1,8 @@
 import { createHash } from 'node:crypto';
 import { expect, it } from 'vitest';
 import type { SenseRecord, WordRecord } from '../../db/types';
-import pack from './curriculumLV4Unit20.json';
+import currentPack from './curriculumLV4Unit20.json';
+import { beforeLV4Published } from './lv4Published.testSupport';
 import revision from './practiceTextRevisionsLV4Unit20.json';
 import authored from './optionContextRationalesLV4Unit20Batch3.json';
 import { optionContextRationales } from './optionContextRationales';
@@ -11,6 +12,9 @@ import dictionary from '../../../public/data/v1/sa-pack.json';
 import { releasedUnit20BeforePracticeRevision } from './lv4U20PracticeRevision.testSupport';
 
 const words = dictionary.words as WordRecord[], senses = dictionary.senses as SenseRecord[];
+// Historical Batch3 preservation uses its authenticated published input;
+// practiceQuestions below still exercises the current live curriculum.
+const pack = beforeLV4Published('src/features/direct/curriculumLV4Unit20.json', currentPack);
 const before = releasedUnit20BeforePracticeRevision();
 const question = (id: string) => practiceQuestions.find(q => q.questionId === id)!;
 const normalize = (s: string) => s.trim().normalize('NFKC').toLowerCase();
