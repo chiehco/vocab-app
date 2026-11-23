@@ -1,5 +1,7 @@
 import 'fake-indexeddb/auto';
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
+import { readFileSync } from 'node:fs';
+import { beforeLV4PublishedText } from './lv4Published.testSupport';
 import source21 from '../../../scripts/sources/LV4Unit21.json';
 import source22 from '../../../scripts/sources/LV4Unit22.json';
 import pack from '../../../public/data/v1/sa-pack.json';
@@ -19,12 +21,16 @@ afterEach(() => vi.unstubAllGlobals());
 for (const [source, count, usage, mapped] of [[source21,106,47,76],[source22,119,52,87]] as const) {
   const unit=findUnit(source.unit,'LV4')!;
   const rows=[...source.headwords,...source.related];
+  // Literal transcription guards use the authenticated pre-correction source.
+  // Delivery, identities, question availability and live card loading stay current.
+  const path=`src/features/direct/curriculumLV4Unit${source.unit}.json`;
+  const sourceItems=(JSON.parse(beforeLV4PublishedText(path,readFileSync(path,'utf8').replace(/\r\n/g,'\n'))) as {learningItems:typeof unit.items}).learningItems;
   it(`LV4 U${source.unit} keeps source scope and disables pending textbook practice`, () => {
     expect(unit.deliveryMode).toBe('text_only');
     expect(textbookUnits.find(u=>u.level==='LV4'&&u.unit===source.unit)).toMatchObject({count,usageCount:usage});
-    expect(unit.items.filter(i=>i.kind==='vocabulary').map(i=>[i.displayWord,i.sourcePage,i.sourceRole,i.sensePos,i.chapterMeaningsZh,i.officialWordId]))
+    expect(sourceItems.filter(i=>i.kind==='vocabulary').map(i=>[i.displayWord,i.sourcePage,i.sourceRole,i.sensePos,i.chapterMeaningsZh,i.officialWordId]))
       .toEqual(rows.map(r=>[r.word,r.sourcePage,r.role,r.sourcePos,r.chapterMeaningsZh,r.officialWordId]));
-    expect(unit.items.filter(i=>i.kind==='grammar').map(i=>[i.pattern,i.sourcePage,i.explanationZh]))
+    expect(sourceItems.filter(i=>i.kind==='grammar').map(i=>[i.pattern,i.sourcePage,i.explanationZh]))
       .toEqual(source.usage.map(r=>[r.label,r.sourcePage,r.explanationZh]));
     expect(new Set(unit.items.map(i=>i.learningItemId)).size).toBe(count+usage);
     expect(unit.questions).toEqual([]);
