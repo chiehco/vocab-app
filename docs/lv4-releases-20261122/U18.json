@@ -1,0 +1,900 @@
+{
+  "scope": "Existing final H08 ready fields only, with existing approved noun/verb/adjective companion support. Preserve all legitimate historical/general meanings, identities, artwork, approvals and learner records. Zero new mother words: no workbook transaction, row append or rewrite. No whole-unit audit or transaction replay. Four earlier published field repairs are explicitly verified against the ancestor commit and current production, recorded as already fixed, and excluded from reapplication.",
+  "sourceOverlaySha256": "bf650458a391a3b2073a2d19a67205f344774538d559479a81286ec5dbdd2e80",
+  "findingIds": [
+    "LV4U18-F01",
+    "LV4U18-F02",
+    "LV4U18-F03",
+    "LV4U18-F04",
+    "LV4U18-F05",
+    "LV4U18-F06",
+    "LV4U18-F07",
+    "LV4U18-F08",
+    "LV4U18-F09",
+    "LV4U18-F10",
+    "LV4U18-F11",
+    "LV4U18-F12",
+    "LV4U18-F13",
+    "LV4U18-F14",
+    "LV4U18-F16",
+    "LV4U18-F17",
+    "LV4U18-F18",
+    "LV4U18-F19",
+    "LV4U18-F20",
+    "LV4U18-F21",
+    "LV4U18-F22",
+    "LV4U18-F23",
+    "LV4U18-F24",
+    "LV4U18-EDIT01",
+    "LV4U18-EDIT02",
+    "LV4U18-EDIT03",
+    "LV4U18-MOTIVE-COMPANION"
+  ],
+  "adaptations": [],
+  "files": {
+    "public/data/v1/examples.json": {
+      "beforeHash": "574bbcd40033641ae0ff3d04bb59d818d507fdc0055e1f4bc2f666e9cc9ee670",
+      "afterHash": "58b2b433d3c7d9be3d804cdd0b53faf9193a0590063915585b81e430cd8de0c0",
+      "operations": [
+        {
+          "selector": {
+            "exampleId": "EX22fa3ced"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "selector": {
+            "exampleId": "EX653f48d4"
+          },
+          "field": "sensePos",
+          "before": "v.",
+          "after": "n."
+        },
+        {
+          "selector": {
+            "exampleId": "EX7d97ba31"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "adj."
+        },
+        {
+          "selector": {
+            "exampleId": "EXfb74f7bf"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        }
+      ],
+      "indent": 2
+    },
+    "src/features/direct/curriculumLV4Unit18.json": {
+      "beforeHash": "65d6ed5e05d0da710ef4b6aa564427b8f6ec7cb500bad0bbf4d92268bc47bfbe",
+      "afterHash": "70ede42871c95261716e3d1cd1430a85c47b1ca3492c39e7a0c894f0f3f8c8f2",
+      "operations": [
+        {
+          "selector": {
+            "parentWord": "haste",
+            "word": "hasty"
+          },
+          "field": "meaningZh",
+          "before": "匆匆的；輕率的；性怠的",
+          "after": "匆匆的；輕率的；性急的"
+        },
+        {
+          "selector": {
+            "parentWord": "motivate",
+            "word": "drive"
+          },
+          "field": "meaningZh",
+          "before": "駕車；快車道；推進力；驅動",
+          "after": "駕車；快車道；推進力；驅動；幹勁；動力"
+        },
+        {
+          "selector": {
+            "parentWord": "capitalism",
+            "word": "capital"
+          },
+          "field": "meaningZh",
+          "before": "首都；大寫字母；資本；首都的",
+          "after": "首都；大寫字母；資本；首都的；大寫的"
+        },
+        {
+          "selector": {
+            "parentWord": "imitate",
+            "word": "mimic"
+          },
+          "field": "meaningZh",
+          "before": "模仿的；摹擬的；效顰者；模仿者",
+          "after": "模仿的；摹擬的；效顰者；模仿者；模仿"
+        },
+        {
+          "selector": {
+            "parentWord": "tolerate",
+            "word": "endurance"
+          },
+          "field": "meaningZh",
+          "before": "忍耐；忍耐力；耐性；持九性",
+          "after": "忍耐；忍耐力；耐性；持久性"
+        },
+        {
+          "selector": {
+            "parentWord": "tolerate",
+            "word": "stand"
+          },
+          "field": "meaningZh",
+          "before": "站立；站住；停頓；講臺",
+          "after": "站立；站住；停頓；講臺；忍受"
+        },
+        {
+          "selector": {
+            "learningItemId": "LI-LV4U18-USAGE-038",
+            "kind": "grammar"
+          },
+          "field": "explanationZh",
+          "before": "柱狀图／折線圖",
+          "after": "柱狀圖／折線圖"
+        },
+        {
+          "selector": {
+            "learningItemId": "LI-LV4U18-USAGE-038",
+            "kind": "grammar"
+          },
+          "field": "targetMeaningZh",
+          "before": "柱狀图／折線圖",
+          "after": "柱狀圖／折線圖"
+        },
+        {
+          "selector": {
+            "questionId": "USAGE-LV4U18-038"
+          },
+          "field": "targetMeaningZh",
+          "before": "柱狀图／折線圖",
+          "after": "柱狀圖／折線圖"
+        },
+        {
+          "selector": {
+            "questionId": "USAGE-LV4U18-038"
+          },
+          "field": "stem",
+          "before": "The _____ graph uses bars to compare the numbers.\n（柱狀图／折線圖）",
+          "after": "The _____ graph uses bars to compare the numbers.\n（柱狀圖／折線圖）"
+        }
+      ],
+      "indent": 1
+    },
+    "public/data/v1/words.json": {
+      "beforeHash": "7a9a297f3dbfe05457b046552fe69ec67473a8dbeb05f66788c32013d9497b3a",
+      "afterHash": "d3d76ef400c070ce0bec185ee8bf8a4f56f6e55ce6c66be77a00ba3e7ec48d52",
+      "operations": [
+        {
+          "selector": {
+            "wordId": "W003253"
+          },
+          "field": "meaningZh",
+          "before": "拳曲；鬈髮；弄卷；彎曲",
+          "after": "捲曲；鬈髮；弄卷；彎曲"
+        },
+        {
+          "selector": {
+            "wordId": "W003253"
+          },
+          "field": "meaningEn",
+          "before": "American chemist who with Richard Smalley and Harold Kroto discovered fullerenes and opened a new branch of chemistry (born in 1933); form a curl, curve, or kink",
+          "after": "(n.) a lock of hair that curves or forms a coil; (v.) form a curl, curve, or kink"
+        },
+        {
+          "selector": {
+            "wordId": "W003253"
+          },
+          "field": "usagePattern",
+          "before": "curl + N; curl to V; a/the curl",
+          "after": "have curls; wear one's hair in curls; curl + N"
+        },
+        {
+          "selector": {
+            "wordId": "W003253"
+          },
+          "field": "usagePatternZh",
+          "before": "捲曲某物；捲曲去做……；一抹捲曲",
+          "after": "有一頭捲髮；留捲髮；使……捲曲"
+        },
+        {
+          "selector": {
+            "wordId": "W003187"
+          },
+          "field": "meaningZh",
+          "before": "混亂；混淆；無秩序；含混",
+          "after": "混亂；混淆；無秩序；含混；困惑"
+        },
+        {
+          "selector": {
+            "wordId": "W003187"
+          },
+          "field": "usagePattern",
+          "before": "a/the confusion; confusion of N",
+          "after": "be in confusion; confusion of A for B"
+        },
+        {
+          "selector": {
+            "wordId": "W003187"
+          },
+          "field": "usagePatternZh",
+          "before": "某種混亂／該混亂；……的混淆",
+          "after": "陷入混亂／感到困惑；把甲誤認為乙"
+        },
+        {
+          "selector": {
+            "wordId": "W003281"
+          },
+          "field": "usagePattern",
+          "before": "a/the destruction; destruction of N",
+          "after": "the destruction of N; destruction caused by N"
+        },
+        {
+          "selector": {
+            "wordId": "W003281"
+          },
+          "field": "usagePatternZh",
+          "before": "一場破壞；……的毀滅",
+          "after": "……的毀壞；由……造成的破壞"
+        },
+        {
+          "selector": {
+            "wordId": "W003288"
+          },
+          "field": "usagePattern",
+          "before": "diagram + N; diagram to V; a/the diagram",
+          "after": "a diagram of N; diagram + N"
+        },
+        {
+          "selector": {
+            "wordId": "W003288"
+          },
+          "field": "usagePatternZh",
+          "before": "繪製圖表；圖解去做……；一張圖表",
+          "after": "……的示意圖；以圖表表示……"
+        },
+        {
+          "selector": {
+            "wordId": "W003394"
+          },
+          "field": "usagePattern",
+          "before": "a/the farewell; farewell of N",
+          "after": "say farewell to sb; a farewell party"
+        },
+        {
+          "selector": {
+            "wordId": "W003394"
+          },
+          "field": "usagePatternZh",
+          "before": "一次告別／該告別；……的告別",
+          "after": "向某人告別；歡送會"
+        },
+        {
+          "selector": {
+            "wordId": "W003429"
+          },
+          "field": "usagePattern",
+          "before": "frost + N; frost to V; a/the frost",
+          "after": "frost on N; be frosted over; frost + N"
+        },
+        {
+          "selector": {
+            "wordId": "W003429"
+          },
+          "field": "usagePatternZh",
+          "before": "覆蓋著霜的……；結霜以致……；該霜",
+          "after": "……上的霜；結霜；使……覆霜"
+        },
+        {
+          "selector": {
+            "wordId": "W003429"
+          },
+          "field": "meaningEn",
+          "before": "ice crystals forming a white deposit (especially on objects outside); the formation of frost or ice on a surface",
+          "after": "ice crystals forming a white deposit (especially on objects outside); the formation of frost or ice on a surface; (v.) to cover or become covered with frost"
+        },
+        {
+          "selector": {
+            "wordId": "W003519"
+          },
+          "field": "meaningEn",
+          "before": "the doctrine that representations of nature or human behavior should be accurate imitations; something copied or derived from an original",
+          "after": "the doctrine that representations of nature or human behavior should be accurate imitations; something copied or derived from an original; the act of copying someone's behavior, appearance, or actions"
+        },
+        {
+          "selector": {
+            "wordId": "W003660"
+          },
+          "field": "meaningEn",
+          "before": "the psychological feature that arouses an organism to action toward a desired goal; the reason for the action; that which gives purpose a...; the condition of being motivated",
+          "after": "a reason, desire, or influence that makes someone act or work toward a goal; the eagerness to act or work; the act or process of motivating someone, or the state of being motivated"
+        },
+        {
+          "selector": {
+            "wordId": "W003660"
+          },
+          "field": "usagePattern",
+          "before": "a/the motivation; motivation of N",
+          "after": "motivation to V; motivation for N/V-ing; motivation toward N"
+        },
+        {
+          "selector": {
+            "wordId": "W003660"
+          },
+          "field": "usagePatternZh",
+          "before": "一動機／該動機；……的推動力",
+          "after": "做……的動力；做某事／某事物的動機；朝向某目標的動力"
+        },
+        {
+          "selector": {
+            "wordId": "W003677"
+          },
+          "field": "usagePattern",
+          "before": "a/the nonsense; nonsense of N",
+          "after": "talk nonsense; a load of nonsense"
+        },
+        {
+          "selector": {
+            "wordId": "W003677"
+          },
+          "field": "usagePatternZh",
+          "before": "一堆胡言亂語／該胡言亂語；……的荒謬",
+          "after": "胡說；一派胡言"
+        },
+        {
+          "selector": {
+            "wordId": "W003918"
+          },
+          "field": "meaningEn",
+          "before": "a datum that can be represented numerically; a branch of applied mathematics concerned with the collection and interpretation of quantitative data and the use of probability theory t...",
+          "after": "a datum that can be represented numerically; (statistics) the study of collecting, analyzing, and interpreting numerical data"
+        },
+        {
+          "selector": {
+            "wordId": "W003918"
+          },
+          "field": "usagePattern",
+          "before": "a/the statistic; statistic of N",
+          "after": "one statistic; two/many statistics; statistics is ..."
+        },
+        {
+          "selector": {
+            "wordId": "W003918"
+          },
+          "field": "usagePatternZh",
+          "before": "一項統計數據；……的統計數據",
+          "after": "一項統計數據；兩項／多項統計數據；統計學是……"
+        },
+        {
+          "selector": {
+            "wordId": "W003962"
+          },
+          "field": "meaningEn",
+          "before": "unbearable physical pain; the deliberate, systematic, or wanton infliction of physical or mental suffering by one or more persons in an attempt to force another pe...",
+          "after": "(n.) unbearable physical pain; severe physical or mental suffering, or the act of deliberately causing it; (v.) to cause someone severe physical or mental suffering"
+        },
+        {
+          "selector": {
+            "wordId": "W003962"
+          },
+          "field": "usagePattern",
+          "before": "torture + N; torture to V; a/the torture",
+          "after": "torture sb; be subjected to torture; under torture; be torture for sb"
+        },
+        {
+          "selector": {
+            "wordId": "W003962"
+          },
+          "field": "usagePatternZh",
+          "before": "折磨……；折磨去……；一場折磨",
+          "after": "折磨／拷問某人；遭受酷刑；在刑求下；對某人而言是一種折磨"
+        },
+        {
+          "selector": {
+            "wordId": "W004561"
+          },
+          "field": "meaningEn",
+          "before": "causing or able to cause motion",
+          "after": "(n.) a reason or purpose for doing something; a recurring theme or musical phrase; (adj.) causing or able to cause motion"
+        },
+        {
+          "selector": {
+            "wordId": "W003021"
+          },
+          "field": "meaningZh",
+          "before": "酸；酸類物質；尖刻；迷幻藥",
+          "after": "酸；酸類物質；尖刻；迷幻藥；酸的；尖酸刻薄的"
+        },
+        {
+          "selector": {
+            "wordId": "W003490"
+          },
+          "field": "meaningZh",
+          "before": "獸羣；人羣；牧人；羣集",
+          "after": "獸羣；人羣；牧人；羣集；放牧；趕牲畜"
+        },
+        {
+          "selector": {
+            "wordId": "W004015"
+          },
+          "field": "meaningEn",
+          "before": "to use something in a wrong or harmful way, or to treat a person or animal cruelly or violently",
+          "after": "(n.) harmful or improper use, cruel treatment, insulting language, or a corrupt practice or custom; (v.) to misuse something, treat someone cruelly, or insult them."
+        },
+        {
+          "selector": {
+            "wordId": "W004561"
+          },
+          "field": "pos",
+          "before": "n.",
+          "after": "n./adj."
+        },
+        {
+          "selector": {
+            "wordId": "W004561"
+          },
+          "field": "posAll",
+          "before": [
+            "n."
+          ],
+          "after": [
+            "n.",
+            "adj."
+          ]
+        },
+        {
+          "selector": {
+            "wordId": "W004561"
+          },
+          "field": "meaningZh",
+          "before": "動機；目的；主題；基調",
+          "after": "（名詞）動機；目的；主題；基調；（形容詞）引起運動的；發動的"
+        },
+        {
+          "selector": {
+            "wordId": "W004561"
+          },
+          "field": "usagePattern",
+          "before": "a/the motive; motive of N",
+          "after": "a motive for N/V-ing; someone's motive; motive power"
+        },
+        {
+          "selector": {
+            "wordId": "W004561"
+          },
+          "field": "usagePatternZh",
+          "before": "一個動機；……的動機",
+          "after": "做……的動機／目的；某人的動機；動力"
+        }
+      ],
+      "indent": 2
+    },
+    "public/data/v1/meta.json": {
+      "beforeHash": "387238ac2e9eca4229336ab5a92f7c5559fbbebc9864d934eb174eda05f766d9",
+      "afterHash": "fa7ba72ebdba0738a3ab152b6b72a4f2960eb5d027d08cf56c8ae332fc5c3ada",
+      "operations": [],
+      "indent": 2,
+      "beforeMeta": {
+        "schemaVersion": 2,
+        "generatedAt": "2026-11-23T03:22:27Z",
+        "sourceFile": "萬詞譜母表_SA義項清理整合_20260904.xlsx",
+        "counts": {
+          "words": 6090,
+          "senses": 772,
+          "examples": 7871,
+          "relations": 40,
+          "morphemes": 3798,
+          "media": 1177,
+          "notes": 4291,
+          "examPriority": 3792,
+          "hooks": 0
+        },
+        "wordsHash": "7a9a297f3dbfe05457b046552fe69ec67473a8dbeb05f66788c32013d9497b3a",
+        "contentHash": "19c8331b76353fdb0089ef5e11e1ed082b516b5e8ab4216b38b9b5dbfc2626e4",
+        "houseSourceSha256": "98fa208835caf7184acc95f26dcff56ace23ba281ff8d4b9b8c37e18e407be14"
+      }
+    },
+    "public/data/v1/sa-pack.json": {
+      "beforeHash": "a1bec509c75bd6d420e69e710f5f0e4c590763aa00fd3d0351bcb669777ef0b5",
+      "afterHash": "1cce59b3569e8ac53ae9f2f685060820e01d9545a234c5c9f221e5e4f9e34371",
+      "operations": [
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EX22fa3ced"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EX653f48d4"
+          },
+          "field": "sensePos",
+          "before": "v.",
+          "after": "n."
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EX7d97ba31"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "adj."
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EXfb74f7bf"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003253"
+          },
+          "field": "meaningZh",
+          "before": "拳曲；鬈髮；弄卷；彎曲",
+          "after": "捲曲；鬈髮；弄卷；彎曲"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003253"
+          },
+          "field": "meaningEn",
+          "before": "American chemist who with Richard Smalley and Harold Kroto discovered fullerenes and opened a new branch of chemistry (born in 1933); form a curl, curve, or kink",
+          "after": "(n.) a lock of hair that curves or forms a coil; (v.) form a curl, curve, or kink"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003253"
+          },
+          "field": "usagePattern",
+          "before": "curl + N; curl to V; a/the curl",
+          "after": "have curls; wear one's hair in curls; curl + N"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003253"
+          },
+          "field": "usagePatternZh",
+          "before": "捲曲某物；捲曲去做……；一抹捲曲",
+          "after": "有一頭捲髮；留捲髮；使……捲曲"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003187"
+          },
+          "field": "meaningZh",
+          "before": "混亂；混淆；無秩序；含混",
+          "after": "混亂；混淆；無秩序；含混；困惑"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003187"
+          },
+          "field": "usagePattern",
+          "before": "a/the confusion; confusion of N",
+          "after": "be in confusion; confusion of A for B"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003187"
+          },
+          "field": "usagePatternZh",
+          "before": "某種混亂／該混亂；……的混淆",
+          "after": "陷入混亂／感到困惑；把甲誤認為乙"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003281"
+          },
+          "field": "usagePattern",
+          "before": "a/the destruction; destruction of N",
+          "after": "the destruction of N; destruction caused by N"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003281"
+          },
+          "field": "usagePatternZh",
+          "before": "一場破壞；……的毀滅",
+          "after": "……的毀壞；由……造成的破壞"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003288"
+          },
+          "field": "usagePattern",
+          "before": "diagram + N; diagram to V; a/the diagram",
+          "after": "a diagram of N; diagram + N"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003288"
+          },
+          "field": "usagePatternZh",
+          "before": "繪製圖表；圖解去做……；一張圖表",
+          "after": "……的示意圖；以圖表表示……"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003394"
+          },
+          "field": "usagePattern",
+          "before": "a/the farewell; farewell of N",
+          "after": "say farewell to sb; a farewell party"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003394"
+          },
+          "field": "usagePatternZh",
+          "before": "一次告別／該告別；……的告別",
+          "after": "向某人告別；歡送會"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003429"
+          },
+          "field": "usagePattern",
+          "before": "frost + N; frost to V; a/the frost",
+          "after": "frost on N; be frosted over; frost + N"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003429"
+          },
+          "field": "usagePatternZh",
+          "before": "覆蓋著霜的……；結霜以致……；該霜",
+          "after": "……上的霜；結霜；使……覆霜"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003429"
+          },
+          "field": "meaningEn",
+          "before": "ice crystals forming a white deposit (especially on objects outside); the formation of frost or ice on a surface",
+          "after": "ice crystals forming a white deposit (especially on objects outside); the formation of frost or ice on a surface; (v.) to cover or become covered with frost"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003519"
+          },
+          "field": "meaningEn",
+          "before": "the doctrine that representations of nature or human behavior should be accurate imitations; something copied or derived from an original",
+          "after": "the doctrine that representations of nature or human behavior should be accurate imitations; something copied or derived from an original; the act of copying someone's behavior, appearance, or actions"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003660"
+          },
+          "field": "meaningEn",
+          "before": "the psychological feature that arouses an organism to action toward a desired goal; the reason for the action; that which gives purpose a...; the condition of being motivated",
+          "after": "a reason, desire, or influence that makes someone act or work toward a goal; the eagerness to act or work; the act or process of motivating someone, or the state of being motivated"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003660"
+          },
+          "field": "usagePattern",
+          "before": "a/the motivation; motivation of N",
+          "after": "motivation to V; motivation for N/V-ing; motivation toward N"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003660"
+          },
+          "field": "usagePatternZh",
+          "before": "一動機／該動機；……的推動力",
+          "after": "做……的動力；做某事／某事物的動機；朝向某目標的動力"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003677"
+          },
+          "field": "usagePattern",
+          "before": "a/the nonsense; nonsense of N",
+          "after": "talk nonsense; a load of nonsense"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003677"
+          },
+          "field": "usagePatternZh",
+          "before": "一堆胡言亂語／該胡言亂語；……的荒謬",
+          "after": "胡說；一派胡言"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003918"
+          },
+          "field": "meaningEn",
+          "before": "a datum that can be represented numerically; a branch of applied mathematics concerned with the collection and interpretation of quantitative data and the use of probability theory t...",
+          "after": "a datum that can be represented numerically; (statistics) the study of collecting, analyzing, and interpreting numerical data"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003918"
+          },
+          "field": "usagePattern",
+          "before": "a/the statistic; statistic of N",
+          "after": "one statistic; two/many statistics; statistics is ..."
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003918"
+          },
+          "field": "usagePatternZh",
+          "before": "一項統計數據；……的統計數據",
+          "after": "一項統計數據；兩項／多項統計數據；統計學是……"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003962"
+          },
+          "field": "meaningEn",
+          "before": "unbearable physical pain; the deliberate, systematic, or wanton infliction of physical or mental suffering by one or more persons in an attempt to force another pe...",
+          "after": "(n.) unbearable physical pain; severe physical or mental suffering, or the act of deliberately causing it; (v.) to cause someone severe physical or mental suffering"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003962"
+          },
+          "field": "usagePattern",
+          "before": "torture + N; torture to V; a/the torture",
+          "after": "torture sb; be subjected to torture; under torture; be torture for sb"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003962"
+          },
+          "field": "usagePatternZh",
+          "before": "折磨……；折磨去……；一場折磨",
+          "after": "折磨／拷問某人；遭受酷刑；在刑求下；對某人而言是一種折磨"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W004561"
+          },
+          "field": "meaningEn",
+          "before": "causing or able to cause motion",
+          "after": "(n.) a reason or purpose for doing something; a recurring theme or musical phrase; (adj.) causing or able to cause motion"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003021"
+          },
+          "field": "meaningZh",
+          "before": "酸；酸類物質；尖刻；迷幻藥",
+          "after": "酸；酸類物質；尖刻；迷幻藥；酸的；尖酸刻薄的"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003490"
+          },
+          "field": "meaningZh",
+          "before": "獸羣；人羣；牧人；羣集",
+          "after": "獸羣；人羣；牧人；羣集；放牧；趕牲畜"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W004015"
+          },
+          "field": "meaningEn",
+          "before": "to use something in a wrong or harmful way, or to treat a person or animal cruelly or violently",
+          "after": "(n.) harmful or improper use, cruel treatment, insulting language, or a corrupt practice or custom; (v.) to misuse something, treat someone cruelly, or insult them."
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W004561"
+          },
+          "field": "pos",
+          "before": "n.",
+          "after": "n./adj."
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W004561"
+          },
+          "field": "posAll",
+          "before": [
+            "n."
+          ],
+          "after": [
+            "n.",
+            "adj."
+          ]
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W004561"
+          },
+          "field": "meaningZh",
+          "before": "動機；目的；主題；基調",
+          "after": "（名詞）動機；目的；主題；基調；（形容詞）引起運動的；發動的"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W004561"
+          },
+          "field": "usagePattern",
+          "before": "a/the motive; motive of N",
+          "after": "a motive for N/V-ing; someone's motive; motive power"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W004561"
+          },
+          "field": "usagePatternZh",
+          "before": "一個動機；……的動機",
+          "after": "做……的動機／目的；某人的動機；動力"
+        }
+      ],
+      "indent": null,
+      "beforeMeta": {
+        "schemaVersion": 2,
+        "generatedAt": "2026-11-23T03:22:27Z",
+        "counts": {
+          "words": 5798,
+          "senses": 771,
+          "examples": 7453,
+          "relations": 31,
+          "morphemes": 3708,
+          "notes": 4123,
+          "media": 1128,
+          "examPriority": 3623
+        },
+        "wordsHash": "sa:ffbb062a19cc6a6cc895b8f0ecaba6c9c0519eece2a37bf2a4e396883ead3a2f",
+        "contentHash": "sa:f305c4c141d67ab59595b667814b87e06af874bcf6d5de5d0b8fbe24cb9d72c7"
+      }
+    }
+  }
+}
