@@ -1,0 +1,566 @@
+{
+  "scope": "Existing final H08 U15 reviewed candidate fields only, with approved cross-lane/companion coordination. Preserve every legitimate historical and general meaning, existing identities, art assets and learner records. Exact before values required; no transaction replay, whole-unit re-audit or new art grants. One D-104 consistency companion adds missing chorus v. POS and matching literary verb English for existing Chinese 齊聲說道, preserving every noun/song meaning. It is a narrow delta before first commit/CI, not a replay of the 25 H08 fields or any mother write. Only this untracked unpublished U15 proof is finalized; all published U01-U14 proofs/pins remain unchanged.",
+  "sourceOverlaySha256": "bf650458a391a3b2073a2d19a67205f344774538d559479a81286ec5dbdd2e80",
+  "findingIds": [
+    "LV4U15-F01",
+    "LV4U15-F02",
+    "LV4U15-F03",
+    "LV4U15-F04",
+    "LV4U15-F05",
+    "LV4U15-F06",
+    "LV4U15-F07",
+    "LV4U15-F08",
+    "LV4U15-F09",
+    "LV4U15-F10",
+    "LV4U15-F11",
+    "LV4U15-F12",
+    "LV4U15-F13",
+    "LV4U15-F14",
+    "LV4U15-F15",
+    "LV4U15-F16",
+    "LV4U15-F17",
+    "LV4U15-F18",
+    "LV4U15-COMPANION-W003144"
+  ],
+  "adaptations": [
+    {
+      "findingId": "LV4U15-COMPANION-W003144",
+      "reason": "Existing Chinese verb 齊聲說道 lacked v. label and English counterpart. Cambridge confirms literary chorus verb. Add only the missing labels and a short paraphrased gloss; all noun/song meanings, IDs, status and mother cells retained.",
+      "primarySource": "https://dictionary.cambridge.org/dictionary/english/chorus",
+      "provisionalUnpublishedProofArchived": "proof-before-chorus-companion.json"
+    }
+  ],
+  "files": {
+    "public/data/v1/examples.json": {
+      "beforeHash": "74a7700a119ed87171a56329a24ffb700a6603c1c1dd22c30d7ce17d7a2c3ab5",
+      "afterHash": "457cf396d0f1e10949c9f7eecbafc0a53dc97baa86fba3ab3ef2bc01c2708308",
+      "operations": [
+        {
+          "selector": {
+            "exampleId": "EX17c934a9"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "selector": {
+            "exampleId": "EX7da2c34a"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "selector": {
+            "exampleId": "EXa3f8931d"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "selector": {
+            "exampleId": "EXc9a2d2f8"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "adj."
+        }
+      ],
+      "indent": 2
+    },
+    "public/data/v1/words.json": {
+      "beforeHash": "942707bab2765c2cf22f7edead769d44453f31c0477c6e27708d69f88ee41e69",
+      "afterHash": "e5c4c5f5bf229fec38555d80f55503cb6c4d4bd8eb83c4855aedcc97dafd7582",
+      "operations": [
+        {
+          "selector": {
+            "wordId": "W003318"
+          },
+          "field": "usagePattern",
+          "before": "divorce + N; divorce to V; a/the divorce",
+          "after": "divorce sb; get a divorce; end in divorce"
+        },
+        {
+          "selector": {
+            "wordId": "W003318"
+          },
+          "field": "usagePatternZh",
+          "before": "與某人離婚；與某人離婚去做……；一場離婚",
+          "after": "與某人離婚；離婚；以離婚收場"
+        },
+        {
+          "selector": {
+            "wordId": "W003441"
+          },
+          "field": "usagePattern",
+          "before": "gaze + N; gaze to V; a/the gaze",
+          "after": "gaze at N; gaze out of the window; meet sb's gaze"
+        },
+        {
+          "selector": {
+            "wordId": "W003441"
+          },
+          "field": "usagePatternZh",
+          "before": "凝視……；凝視以致……；該凝視",
+          "after": "凝視……；盯著窗外看；與某人對視"
+        },
+        {
+          "selector": {
+            "wordId": "W004000"
+          },
+          "field": "usagePattern",
+          "before": "a/the wit; wit of N",
+          "after": "be at one's wit's end"
+        },
+        {
+          "selector": {
+            "wordId": "W004000"
+          },
+          "field": "usagePatternZh",
+          "before": "機智；……的機智",
+          "after": "不知如何是好；束手無策"
+        },
+        {
+          "selector": {
+            "wordId": "W003181"
+          },
+          "field": "meaningEn",
+          "before": "be relevant to; be on the mind of",
+          "after": "about; relating to a particular subject"
+        },
+        {
+          "selector": {
+            "wordId": "W003144"
+          },
+          "field": "meaningZh",
+          "before": "合唱隊；齊聲；齊聲說道；合唱",
+          "after": "合唱隊；齊聲；齊聲說道；合唱；（歌曲的）副歌"
+        },
+        {
+          "selector": {
+            "wordId": "W003144"
+          },
+          "field": "meaningEn",
+          "before": "any utterance produced simultaneously by a group; a group of people assembled to sing together",
+          "after": "any utterance produced simultaneously by a group; a group of people assembled to sing together; the part of a song that is repeated after each verse; (v., literary) to say the same words together as a group"
+        },
+        {
+          "selector": {
+            "wordId": "W003233"
+          },
+          "field": "meaningZh",
+          "before": "計算器；計算者；櫃檯；籌碼",
+          "after": "計算器；計算者；櫃檯；籌碼；反駁；反擊；相反的；相反地"
+        },
+        {
+          "selector": {
+            "wordId": "W003034"
+          },
+          "field": "meaningZh",
+          "before": "侵略的；挑畔的；進取的；愛挑釁的",
+          "after": "侵略的；挑釁的；進取的；愛挑釁的"
+        },
+        {
+          "selector": {
+            "wordId": "W004000"
+          },
+          "field": "meaningEn",
+          "before": "a message whose ingenuity or verbal skill or incongruity has the power to evoke laughter",
+          "after": "the ability to think quickly and express ideas in a clever or amusing way; a message whose ingenuity or verbal skill or incongruity has the power to evoke laughter"
+        },
+        {
+          "selector": {
+            "wordId": "W003130"
+          },
+          "field": "meaningEn",
+          "before": "someone whose employment involves carrying something; a self-propelled wheeled vehicle designed specifically to carry something",
+          "after": "someone whose employment involves carrying something; a self-propelled wheeled vehicle designed specifically to carry something; a company that transports people or goods; a person or animal that carries an infectious agent and can pass it to others"
+        },
+        {
+          "selector": {
+            "wordId": "W005204"
+          },
+          "field": "meaningEn",
+          "before": "communication by the exchange of letters",
+          "after": "communication by the exchange of letters; agreement or similarity between things"
+        },
+        {
+          "selector": {
+            "wordId": "W004050"
+          },
+          "field": "usagePattern",
+          "before": "amend + N; amend to V",
+          "after": "amend N (a plan/a law/a document)"
+        },
+        {
+          "selector": {
+            "wordId": "W004050"
+          },
+          "field": "usagePatternZh",
+          "before": "修改……；修改以致於……",
+          "after": "修訂計畫／法律／文件"
+        },
+        {
+          "selector": {
+            "wordId": "W004555"
+          },
+          "field": "usagePattern",
+          "before": "modify + N; modify to V",
+          "after": "modify N (a plan/a design/behavior); be modified to V"
+        },
+        {
+          "selector": {
+            "wordId": "W004555"
+          },
+          "field": "usagePatternZh",
+          "before": "修正某事物；修正以達成……",
+          "after": "修改計畫／設計／行為；經修改以便……"
+        },
+        {
+          "selector": {
+            "wordId": "W005068"
+          },
+          "field": "usagePattern",
+          "before": "aspire + N; aspire to V",
+          "after": "aspire to V; aspire to N; aspire after N"
+        },
+        {
+          "selector": {
+            "wordId": "W005068"
+          },
+          "field": "usagePatternZh",
+          "before": "渴望某事物；立志去做某事",
+          "after": "立志做……；渴望得到……；追求……"
+        },
+        {
+          "selector": {
+            "wordId": "W003185"
+          },
+          "field": "meaningEn",
+          "before": "confess to a punishable or reprehensible deed, usually under pressure; confess to God in the presence of a priest, as in the Catholic faith",
+          "after": "to admit wrongdoing or disclose something private; in religion, to acknowledge one's sins to God or a priest"
+        },
+        {
+          "selector": {
+            "wordId": "W003144"
+          },
+          "field": "pos",
+          "before": "n.",
+          "after": "n./v."
+        },
+        {
+          "selector": {
+            "wordId": "W003144"
+          },
+          "field": "posAll",
+          "before": [
+            "n."
+          ],
+          "after": [
+            "n.",
+            "v."
+          ]
+        }
+      ],
+      "indent": 2
+    },
+    "public/data/v1/meta.json": {
+      "beforeHash": "7acd0ef3cf2d840670bca7b7f37088014846f012febae2a7bfb77a6aff176f7f",
+      "afterHash": "8742d8f212f2f268f9d15bb3fd399fb144ec107768e996a924d72b939ce96233",
+      "operations": [],
+      "indent": 2,
+      "beforeMeta": {
+        "schemaVersion": 2,
+        "generatedAt": "2026-11-22T23:51:48Z",
+        "sourceFile": "萬詞譜母表_SA義項清理整合_20260904.xlsx",
+        "counts": {
+          "words": 6090,
+          "senses": 772,
+          "examples": 7871,
+          "relations": 40,
+          "morphemes": 3798,
+          "media": 1177,
+          "notes": 4291,
+          "examPriority": 3792,
+          "hooks": 0
+        },
+        "wordsHash": "942707bab2765c2cf22f7edead769d44453f31c0477c6e27708d69f88ee41e69",
+        "contentHash": "175b5403e7ebb6ad8a75455debf060ac4c83ca06b1cfcfc2d140cc727ed73e0c",
+        "houseSourceSha256": "98fa208835caf7184acc95f26dcff56ace23ba281ff8d4b9b8c37e18e407be14"
+      }
+    },
+    "public/data/v1/sa-pack.json": {
+      "beforeHash": "6bd8f1fd81c9cd3ed353e40f5d6e5c00344eb8872a6e33d941a36287ac128d13",
+      "afterHash": "45c4ccf58564e01298ae322365f9dfb8c6e9e4098b81b2914e6d5931ed7fadb1",
+      "operations": [
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EX17c934a9"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EX7da2c34a"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EXa3f8931d"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "v."
+        },
+        {
+          "dataset": "examples",
+          "selector": {
+            "exampleId": "EXc9a2d2f8"
+          },
+          "field": "sensePos",
+          "before": "n.",
+          "after": "adj."
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003318"
+          },
+          "field": "usagePattern",
+          "before": "divorce + N; divorce to V; a/the divorce",
+          "after": "divorce sb; get a divorce; end in divorce"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003318"
+          },
+          "field": "usagePatternZh",
+          "before": "與某人離婚；與某人離婚去做……；一場離婚",
+          "after": "與某人離婚；離婚；以離婚收場"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003441"
+          },
+          "field": "usagePattern",
+          "before": "gaze + N; gaze to V; a/the gaze",
+          "after": "gaze at N; gaze out of the window; meet sb's gaze"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003441"
+          },
+          "field": "usagePatternZh",
+          "before": "凝視……；凝視以致……；該凝視",
+          "after": "凝視……；盯著窗外看；與某人對視"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W004000"
+          },
+          "field": "usagePattern",
+          "before": "a/the wit; wit of N",
+          "after": "be at one's wit's end"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W004000"
+          },
+          "field": "usagePatternZh",
+          "before": "機智；……的機智",
+          "after": "不知如何是好；束手無策"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003181"
+          },
+          "field": "meaningEn",
+          "before": "be relevant to; be on the mind of",
+          "after": "about; relating to a particular subject"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003144"
+          },
+          "field": "meaningZh",
+          "before": "合唱隊；齊聲；齊聲說道；合唱",
+          "after": "合唱隊；齊聲；齊聲說道；合唱；（歌曲的）副歌"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003144"
+          },
+          "field": "meaningEn",
+          "before": "any utterance produced simultaneously by a group; a group of people assembled to sing together",
+          "after": "any utterance produced simultaneously by a group; a group of people assembled to sing together; the part of a song that is repeated after each verse; (v., literary) to say the same words together as a group"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003233"
+          },
+          "field": "meaningZh",
+          "before": "計算器；計算者；櫃檯；籌碼",
+          "after": "計算器；計算者；櫃檯；籌碼；反駁；反擊；相反的；相反地"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003034"
+          },
+          "field": "meaningZh",
+          "before": "侵略的；挑畔的；進取的；愛挑釁的",
+          "after": "侵略的；挑釁的；進取的；愛挑釁的"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W004000"
+          },
+          "field": "meaningEn",
+          "before": "a message whose ingenuity or verbal skill or incongruity has the power to evoke laughter",
+          "after": "the ability to think quickly and express ideas in a clever or amusing way; a message whose ingenuity or verbal skill or incongruity has the power to evoke laughter"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003130"
+          },
+          "field": "meaningEn",
+          "before": "someone whose employment involves carrying something; a self-propelled wheeled vehicle designed specifically to carry something",
+          "after": "someone whose employment involves carrying something; a self-propelled wheeled vehicle designed specifically to carry something; a company that transports people or goods; a person or animal that carries an infectious agent and can pass it to others"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W005204"
+          },
+          "field": "meaningEn",
+          "before": "communication by the exchange of letters",
+          "after": "communication by the exchange of letters; agreement or similarity between things"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W004050"
+          },
+          "field": "usagePattern",
+          "before": "amend + N; amend to V",
+          "after": "amend N (a plan/a law/a document)"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W004050"
+          },
+          "field": "usagePatternZh",
+          "before": "修改……；修改以致於……",
+          "after": "修訂計畫／法律／文件"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W004555"
+          },
+          "field": "usagePattern",
+          "before": "modify + N; modify to V",
+          "after": "modify N (a plan/a design/behavior); be modified to V"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W004555"
+          },
+          "field": "usagePatternZh",
+          "before": "修正某事物；修正以達成……",
+          "after": "修改計畫／設計／行為；經修改以便……"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W005068"
+          },
+          "field": "usagePattern",
+          "before": "aspire + N; aspire to V",
+          "after": "aspire to V; aspire to N; aspire after N"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W005068"
+          },
+          "field": "usagePatternZh",
+          "before": "渴望某事物；立志去做某事",
+          "after": "立志做……；渴望得到……；追求……"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003185"
+          },
+          "field": "meaningEn",
+          "before": "confess to a punishable or reprehensible deed, usually under pressure; confess to God in the presence of a priest, as in the Catholic faith",
+          "after": "to admit wrongdoing or disclose something private; in religion, to acknowledge one's sins to God or a priest"
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003144"
+          },
+          "field": "pos",
+          "before": "n.",
+          "after": "n./v."
+        },
+        {
+          "dataset": "words",
+          "selector": {
+            "wordId": "W003144"
+          },
+          "field": "posAll",
+          "before": [
+            "n."
+          ],
+          "after": [
+            "n.",
+            "v."
+          ]
+        }
+      ],
+      "indent": null,
+      "beforeMeta": {
+        "schemaVersion": 2,
+        "generatedAt": "2026-11-22T23:51:48Z",
+        "counts": {
+          "words": 5798,
+          "senses": 771,
+          "examples": 7453,
+          "relations": 31,
+          "morphemes": 3708,
+          "notes": 4123,
+          "media": 1128,
+          "examPriority": 3623
+        },
+        "wordsHash": "sa:416fbb4aabc1985a2e8010d260b2c950b0703e9daacf404cdf26e0abc45b39bf",
+        "contentHash": "sa:577096aaba340693b305391d9ad21ad5df504eab5caf77212a556203629c7d48"
+      }
+    }
+  }
+}
