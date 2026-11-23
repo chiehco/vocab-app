@@ -1,3 +1,4 @@
+import {beforeLV4PublishedText} from '../direct/lv4Published.testSupport';
 import {beforePuppetText} from './lv3PuppetImageRepair.testSupport';
 import {beforeLV3ConfirmText} from '../../../scripts/lv3_confirm_image_guard.mjs';
 import confirmProof from '../../../docs/unit-audit-20261105/LV3-confirm-image-repair.json';
@@ -32,7 +33,9 @@ it('rejects image-registry raw formatting and duplicate-key drift before histori
 });
 const c=proof.core,bytesHash=(p:string)=>createHash('sha256').update(readFileSync(p)).digest('hex');
 // The LV1 caption candidate is retained as evidence, not published in the LV2 batch.
-const cards=structuredClone(publishedCards);
+// Historical repair-chain hashes use authenticated pre-LV4 registry bytes.
+const registryPath='src/features/vocabulary/lv1ReviewedImages.json';
+const cards=structuredClone(JSON.parse(beforeLV4PublishedText(registryPath,readFileSync(registryPath,'utf8').replace(/\r\n/g,'\n'))) as typeof publishedCards);
 const candidateIndex=cards.findIndex(r=>r.id===c.id);
 expect(cards[candidateIndex]).toEqual(c.before);
 cards[candidateIndex]=structuredClone(c.after);

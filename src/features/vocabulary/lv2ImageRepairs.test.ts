@@ -1,3 +1,4 @@
+import {beforeLV4PublishedText} from '../direct/lv4Published.testSupport';
 import {beforeLV3GeneralImages} from '../../../scripts/lv3_image_repair_guard.mjs';
 import lv3ImageProof from '../../../docs/unit-audit-20261105/LV3-bank-permissible-image-repairs.json';
 import examplePairs from './approvedExampleImages.json';
@@ -12,7 +13,9 @@ const currentGeneral=beforeReplaceImages(currentGeneralWithReplace);
 import {beforePraiseGeneral} from '../../../scripts/praise_image_repair_guard.mjs';
 import praiseProof from '../../../docs/unit-audit-20261105/LV2-U46-praise-image-repair.json';
 import currentPublished from './lv1ReviewedImages.json';
-const published=currentPublished;
+// Historical repair-chain hashes use authenticated pre-LV4 registry bytes.
+const registryPath='src/features/vocabulary/lv1ReviewedImages.json';
+const published=JSON.parse(beforeLV4PublishedText(registryPath,readFileSync(registryPath,'utf8').replace(/\r\n/g,'\n'))) as typeof currentPublished;
 import approvals from '../../../scripts/approvals/lv1-images-20260922.json';
 import proof from '../../../docs/unit-audit-20261105/LV2-U38-U41-image-repairs.json';
 import unit38 from '../direct/curriculumLV2Unit38.json';

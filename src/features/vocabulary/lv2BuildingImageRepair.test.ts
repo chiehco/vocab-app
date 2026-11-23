@@ -1,3 +1,4 @@
+import {beforeLV4PublishedText} from '../direct/lv4Published.testSupport';
 import {beforeLV3GeneralImages} from '../../../scripts/lv3_image_repair_guard.mjs';
 import lv3ImageProof from '../../../docs/unit-audit-20261105/LV3-bank-permissible-image-repairs.json';
 import {expect,it} from 'vitest';
@@ -6,7 +7,9 @@ import {createHash} from 'node:crypto';
 import {beforeBuildingRegistry,beforeBuildingGallery,validateBuildingProof,buildingHash} from '../../../scripts/building_image_repair_guard.mjs';
 import proof from '../../../docs/unit-audit-20261105/LV2-U44-building-image-repair.json';
 import currentPublished from './lv1ReviewedImages.json';
-const published=currentPublished;
+// Historical repair-chain hashes use authenticated pre-LV4 registry bytes.
+const registryPath='src/features/vocabulary/lv1ReviewedImages.json';
+const published=JSON.parse(beforeLV4PublishedText(registryPath,readFileSync(registryPath,'utf8').replace(/\r\n/g,'\n'))) as typeof currentPublished;
 import currentGeneralWithReplace from './auditedWordIllustrations.json';
 import {beforeReplaceImages} from './lv3ReplaceImageRepair.testSupport';
 const currentGeneral=beforeReplaceImages(currentGeneralWithReplace);
