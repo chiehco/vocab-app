@@ -30,7 +30,7 @@ import { getIllustrationCaption } from '../wordbeast/illustrationCaptions';
 import StudyIllustration from '../wordbeast/StudyIllustration';
 import { resolveWordImageClue } from '../../quiz/imageClue';
 
-const lf = (path: string) => {const text=readFileSync(path, 'utf8').replace(/\r\n/g, '\n');return path==='src/features/wordbeast/illustrationCaptions.json'?beforeLV4PublishedText(path,text):text;};
+const lf = (path: string) => {const text=readFileSync(path, 'utf8').replace(/\r\n/g, '\n');return ['src/features/wordbeast/illustrationCaptions.json','src/features/vocabulary/lv1ReviewedImages.json'].includes(path)?beforeLV4PublishedText(path,text):text;};
 const serialize = (value: unknown) => JSON.stringify(value, null, 2) + '\n';
 const projected = ['public/data/v1/words.json', 'public/data/v1/examples.json', 'public/data/v1/senses.json', 'public/data/v1/media.json', 'public/data/v1/sa-pack.json', 'src/features/direct/curriculumLV3Unit7.json'];
 const independent = ['docs/unit-audit-20261105/LV3-bank-permissible-image-repairs.json', 'docs/unit-audit-20261105/LV3-replace-image-repair.json', 'docs/unit-audit-20261105/LV3-confirm-image-repair.json', 'docs/unit-audit-20261105/LV3-puppet-image-repair.json', 'src/features/wordbeast/illustrationCaptions.ts', 'src/features/wordbeast/StudyIllustration.tsx', 'src/features/vocabulary/approvedCurriculum.ts'];
