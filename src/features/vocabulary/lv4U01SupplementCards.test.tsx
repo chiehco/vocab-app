@@ -1,0 +1,36 @@
+import {expect,it,vi} from 'vitest';
+import {createHash} from 'node:crypto';
+import {readFileSync} from 'node:fs';
+import {renderToStaticMarkup} from 'react-dom/server';
+import {MemoryRouter} from 'react-router-dom';
+import cards from './lv4U01SupplementCards.json';
+import original from './lv4U01ApprovedCards.json';
+import proof from '../../../docs/lv4-releases-20261124/U01-pairs.json';
+import {approvedCurriculumCards,approvedCurriculumItem,approvedWordIllustration} from './approvedCurriculum';
+import {findUnit} from '../direct/model';
+import VocabularyScreen from './VocabularyScreen';
+import {getWordBeastAsset} from '../wordbeast/wordBeastAssets';
+vi.mock('../modes/useStudyBookmark',()=>({useStudyBookmark:vi.fn()}));
+vi.mock('../../hooks/useCardPronunciation',()=>({useCardPronunciation:vi.fn()}));
+vi.mock('../wordbeast/useIllustrationMedia',()=>({useIllustrationMedia:vi.fn()}));
+const hash=(b:string|Buffer)=>createHash('sha256').update(b).digest('hex');
+const escape=(s:string)=>s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#x27;');
+it('adds only four user-approved pairs and three unchanged reuses to the existing17',()=>{
+ expect(cards).toEqual(proof.cards);expect(cards.map(c=>c.displayWord)).toEqual(['equip','equipment','physical','physician','include','persuasive','information']);
+ expect(original).toHaveLength(17);expect(new Set([...original,...cards].map(c=>c.learningItemId)).size).toBe(24);
+ expect(proof.assets).toHaveLength(4);
+ for(const saved of proof.preservedDefaults)expect(approvedWordIllustration(saved.word,saved.wordId)??null).toEqual(saved.illustration??cards.find(c=>c.officialWordId===saved.wordId)!.illustration);
+ const unit=findUnit(1,'LV4')!;expect(unit.deliveryMode).toBe('text_only');expect(unit.questions).toEqual([]);expect(unit.items.every(i=>i.practiceMode==='read_only')).toBe(true);
+});
+it.each(cards)('renders the exact $displayWord pair in its existing textbook entry and general-card registry',card=>{
+ const item=findUnit(1,'LV4')!.items.find(i=>i.learningItemId===card.learningItemId)!;
+ expect(item).toMatchObject({displayWord:card.displayWord,officialWordId:card.officialWordId,sensePos:card.sensePos,targetMeaningZh:card.targetMeaningZh});
+ expect(item.illustration).toBeUndefined();expect(card.imageQuizAllowed).toBe(false);
+ expect(card.secondaryOnGeneralCard).toBe(['include','persuasive','information'].includes(card.displayWord));
+ expect(getWordBeastAsset(card.officialWordId,card.displayWord)).toContain(card.illustration.path);
+ expect(approvedCurriculumItem(card.learningItemId)).toEqual(card);expect(approvedCurriculumCards(card.displayWord,card.officialWordId)).toContainEqual(card);
+ expect(approvedCurriculumCards(card.displayWord,'W999999')).toEqual([]);
+ const bytes=readFileSync('public/'+card.illustration.path);expect(bytes.subarray(0,4).toString()).toBe('RIFF');expect(bytes.subarray(8,12).toString()).toBe('WEBP');expect(hash(bytes)).toBe(card.approval.publishedSha256??card.approval.imageSha256);
+ const html=renderToStaticMarkup(<MemoryRouter initialEntries={['/vocabulary?level=LV4&unit=1&kind=vocabulary&item='+card.learningItemId]}><VocabularyScreen/></MemoryRouter>);
+ expect(html).toContain(card.illustration.path);expect(html).toContain(escape(card.illustration.captionEn));expect(html).toContain(escape(card.illustration.captionZh));
+});
