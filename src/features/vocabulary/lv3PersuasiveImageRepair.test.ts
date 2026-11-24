@@ -17,7 +17,7 @@ import words from '../../../public/data/v1/words.json';
 import media from '../../../public/data/v1/media.json';
 import pack from '../../../public/data/v1/sa-pack.json';
 import examples from '../../../public/data/v1/examples.json';
-import { approvedWordIllustration, approvedCurriculumIllustration, approvedCurriculumCard, approvedLV1Images } from './approvedCurriculum';
+import { approvedWordIllustration, approvedCurriculumIllustration, approvedCurriculumCard, approvedCurriculumCards, approvedCurriculumItem, approvedLV1Images } from './approvedCurriculum';
 import { getWordBeastAsset } from '../wordbeast/wordBeastAssets';
 import { getIllustrationCaption } from '../wordbeast/illustrationCaptions';
 import StudyIllustration from '../wordbeast/StudyIllustration';
@@ -117,7 +117,7 @@ it('retains the original and exact 1024-square candidate bytes', () => {
   expect(proof.review.publicationReady).toBe(false);
 });
 
-it('finds exactly one active word consumer and no remaining active source-image consumer', () => {
+it('keeps one repaired word-image default and only its approved U01 reuse', () => {
   const consumers = (path: string) => words.filter(row => {
     const imageWordId = 'imageWordId' in row ? String(row.imageWordId ?? '') || undefined : undefined;
     return getWordBeastAsset(row.wordId, row.word, imageWordId)?.split(/[?#]/)[0].endsWith('/' + path);
@@ -126,7 +126,15 @@ it('finds exactly one active word consumer and no remaining active source-image 
   expect(consumers('wordbeast/a/W003733.webp')).toEqual([]);
   expect(approvedWordIllustration('persuasive', 'W003733')).toEqual(pair);
   expect(getWordBeastAsset('W003733', 'persuasive')).toContain(pair.path + '?v=');
-  expect(approvedCurriculumCard('persuasive', 'W003733')).toBeUndefined();
+  // The later U01 reuse adds a textbook binding without replacing this default.
+  const textbook = approvedCurriculumCard('persuasive', 'W003733');
+  expect(textbook).toMatchObject({
+    learningItemId: 'LI-LV4U01-V042', officialWordId: 'W003733', displayWord: 'persuasive',
+    sensePos: 'adj.', targetMeaningZh: '有說服力的', unitName: 'LV4 Unit 1',
+    illustration: pair, imageQuizAllowed: false, secondaryOnGeneralCard: true,
+  });
+  expect(approvedCurriculumCards('persuasive', 'W003733')).toEqual([textbook]);
+  expect(approvedCurriculumItem('LI-LV3U09-V089')).toBeUndefined();
   expect(approvedLV1Images('persuasive', 'W003733')).toEqual([]);
   expect(approvedWordIllustration('persuasive', 'W999999')).toBeUndefined();
   expect(approvedWordIllustration('wrong-word', 'W003733')).toBeUndefined();
