@@ -1,3 +1,4 @@
+import nextPairs from '../../../docs/lv4-releases-20261125/U01-next-pairs.json';
 import supplement from '../../../docs/lv4-releases-20261124/U01-pairs.json';
 import unit24 from '../../../docs/lv4-releases-20261122/U24.json';
 import unit23 from '../../../docs/lv4-releases-20261122/U23.json';
@@ -150,6 +151,14 @@ export function beforeLV4Rows<T>(dataset:string,value:T):T{
 
 export function beforeLV4ResolverSource(path:string,text:string):string{
  if(path!==resolver.path)return text;
+ assert.equal(hash(JSON.stringify(nextPairs)),'ce99171cd9aac1af92b894d3f852e501e9957f1240e60206adcb2302656b33d7','LV4 U01 next-pair proof drift');
+ if(hash(text)===nextPairs.afterLfSha256){
+  assert.equal(text.split(nextPairs.importLine).length,2,'LV4 next-pair import drift');
+  assert.equal(text.split(nextPairs.afterSpread).length,2,'LV4 next-pair spread drift');
+  text=text.replace(nextPairs.importLine,'').replace(nextPairs.afterSpread,nextPairs.beforeSpread);
+  assert.equal(hash(text),nextPairs.beforeLfSha256,'LV4 next-pair exact35 resolver drift');
+  assert.equal(text,nextPairs.beforeText,'LV4 next-pair exact35 bytes drift');
+ }
  assert.equal(hash(JSON.stringify(supplement)),'30a9efdb7911f8392b8345a10aa8de6b3aff915a1012a20899ba75e09fdeb683','LV4 U01 supplement proof drift');
  if(hash(text)===supplement.afterLfSha256){
   assert.equal(text.split(supplement.importLine).length,2,'LV4 supplement import drift');

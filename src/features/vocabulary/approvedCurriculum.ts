@@ -1,3 +1,4 @@
+import lv4U01NextApprovedCards from './lv4U01NextApprovedCards.json';
 import lv4U01SupplementCards from './lv4U01SupplementCards.json';
 import unit17 from '../direct/curriculumLV4Unit17.json';
 import unit18 from '../direct/curriculumLV4Unit18.json';
@@ -40,7 +41,7 @@ const cards: ApprovedCurriculumCard[] = [...[unit17, unit18, unit19, unit20].fla
     ? [{ learningItemId: item.learningItemId, displayWord: item.displayWord!, officialWordId: item.officialWordId,
       sensePos: item.sensePos!, targetMeaningZh: item.targetMeaningZh!, unitName: lv3Unit2.template.name, illustration: item.illustration }]
     : []), ...lv3U20ApprovedCards];
-const allCards: ApprovedCurriculumCard[] = [...cards, ...lv3U21ApprovedCards, ...lv3U22ApprovedCards, ...lv3U23ApprovedCards, ...lv4U01ApprovedCards, ...lv4U01SupplementCards,
+const allCards: ApprovedCurriculumCard[] = [...cards, ...lv3U21ApprovedCards, ...lv3U22ApprovedCards, ...lv3U23ApprovedCards, ...lv4U01ApprovedCards, ...lv4U01SupplementCards, ...lv4U01NextApprovedCards,
   ...lv3U24ApprovedCards.flatMap(card => card.officialWordId
     ? [{ ...card, officialWordId: card.officialWordId }] : [])];
 
