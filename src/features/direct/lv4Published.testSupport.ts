@@ -1,3 +1,4 @@
+import morning from '../../../docs/lv4-releases-20261125/U01-U10-morning-approved.json';
 import nextPairs from '../../../docs/lv4-releases-20261125/U01-next-pairs.json';
 import supplement from '../../../docs/lv4-releases-20261124/U01-pairs.json';
 import unit24 from '../../../docs/lv4-releases-20261122/U24.json';
@@ -149,8 +150,22 @@ export function beforeLV4Rows<T>(dataset:string,value:T):T{
  }return copy;
 }
 
+export function beforeMorningResolverSource(path:string,text:string):string{
+ if(path!==morning.path)return text;
+ assert.equal(hash(JSON.stringify(morning)),'f90e9b9b3f8120a8d9a6e5cdb57363250ac538485c0543ee3be02b17c6df48ee','LV4 morning proof drift');
+ if(hash(text)!==morning.afterLfSha256)return text;
+ assert.equal(text,morning.afterText,'LV4 morning resolver bytes drift');
+ assert.equal(text.split(morning.importLine).length,2,'LV4 morning import drift');
+ assert.equal(text.split(morning.afterSpread).length,2,'LV4 morning spread drift');
+ const previous=text.replace(morning.importLine,'').replace(morning.afterSpread,morning.beforeSpread);
+ assert.equal(hash(previous),morning.beforeLfSha256,'LV4 morning exact d8 resolver drift');
+ assert.equal(previous,morning.beforeText,'LV4 morning exact d8 bytes drift');
+ return previous;
+}
+
 export function beforeLV4ResolverSource(path:string,text:string):string{
  if(path!==resolver.path)return text;
+ text=beforeMorningResolverSource(path,text);
  assert.equal(hash(JSON.stringify(nextPairs)),'ce99171cd9aac1af92b894d3f852e501e9957f1240e60206adcb2302656b33d7','LV4 U01 next-pair proof drift');
  if(hash(text)===nextPairs.afterLfSha256){
   assert.equal(text.split(nextPairs.importLine).length,2,'LV4 next-pair import drift');

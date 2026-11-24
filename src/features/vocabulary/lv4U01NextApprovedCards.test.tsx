@@ -9,7 +9,7 @@ import seven from './lv4U01SupplementCards.json';
 import proof from '../../../docs/lv4-releases-20261125/U01-next-pairs.json';
 import originalResolver from '../../../docs/lv4-releases-20261122/resolver-U01.json';
 import {approvedCurriculumCards,approvedCurriculumItem,approvedWordIllustration} from './approvedCurriculum';
-import {beforeLV4ResolverSource} from '../direct/lv4Published.testSupport';
+import {beforeLV4ResolverSource,beforeMorningResolverSource} from '../direct/lv4Published.testSupport';
 import {findUnit} from '../direct/model';
 import VocabularyScreen from './VocabularyScreen';
 import {getWordBeastAsset} from '../wordbeast/wordBeastAssets';
@@ -60,7 +60,7 @@ it('keeps the four original textbook rows, all six existing examples and all fou
 });
 
 it('authenticates and reverses only the two new resolver edits before the existing seven-pair and original U01 inverses',()=>{
- const current=readFileSync(proof.path,'utf8').replaceAll('\r\n','\n');
+ const current=beforeMorningResolverSource(proof.path,readFileSync(proof.path,'utf8').replaceAll('\r\n','\n'));
  expect(hash(current)).toBe(proof.afterLfSha256);expect(current).toBe(proof.afterText);
  expect(current.split(proof.importLine)).toHaveLength(2);expect(current.split(proof.afterSpread)).toHaveLength(2);
  const exact35=current.replace(proof.importLine,'').replace(proof.afterSpread,proof.beforeSpread);
