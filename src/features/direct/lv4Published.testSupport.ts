@@ -1,3 +1,4 @@
+import second from '../../../docs/lv4-releases-20261125/U10-U16-second-approved.json';
 import morning from '../../../docs/lv4-releases-20261125/U01-U10-morning-approved.json';
 import nextPairs from '../../../docs/lv4-releases-20261125/U01-next-pairs.json';
 import supplement from '../../../docs/lv4-releases-20261124/U01-pairs.json';
@@ -150,7 +151,21 @@ export function beforeLV4Rows<T>(dataset:string,value:T):T{
  }return copy;
 }
 
+export function beforeSecondResolverSource(path:string,text:string):string{
+ if(path!==second.path)return text;
+ assert.equal(hash(JSON.stringify(second)),'93962da8f458260e47290dae5de136c0156c6ac6c808d69829e80fd9272e2eb7','LV4 second proof drift');
+ if(hash(text)!==second.afterLfSha256)return text;
+ assert.equal(text,second.afterText,'LV4 second resolver bytes drift');
+ assert.equal(text.split(second.importLine).length,2,'LV4 second import drift');
+ assert.equal(text.split(second.afterSpread).length,2,'LV4 second spread drift');
+ const previous=text.replace(second.importLine,'').replace(second.afterSpread,second.beforeSpread);
+ assert.equal(hash(previous),second.beforeLfSha256,'LV4 second exact prior resolver drift');
+ assert.equal(previous,second.beforeText,'LV4 second prior bytes drift');
+ return previous;
+}
+
 export function beforeMorningResolverSource(path:string,text:string):string{
+ text=beforeSecondResolverSource(path,text);
  if(path!==morning.path)return text;
  assert.equal(hash(JSON.stringify(morning)),'f90e9b9b3f8120a8d9a6e5cdb57363250ac538485c0543ee3be02b17c6df48ee','LV4 morning proof drift');
  if(hash(text)!==morning.afterLfSha256)return text;

@@ -6,7 +6,7 @@ import {MemoryRouter} from 'react-router-dom';
 import cards from './lv4MorningApprovedCards.json';
 import proof from '../../../docs/lv4-releases-20261125/U01-U10-morning-approved.json';
 import {approvedCurriculumCards,approvedCurriculumItem,approvedWordIllustration} from './approvedCurriculum';
-import {beforeLV4ResolverSource,beforeMorningResolverSource} from '../direct/lv4Published.testSupport';
+import {beforeLV4ResolverSource,beforeMorningResolverSource,beforeSecondResolverSource} from '../direct/lv4Published.testSupport';
 import {findUnit} from '../direct/model';
 import VocabularyScreen from './VocabularyScreen';
 import {getWordBeastAsset} from '../wordbeast/wordBeastAssets';
@@ -49,7 +49,7 @@ it('preserves original textbook rows, formal words/examples, study inputs and al
 });
 
 it('reverses exactly the authenticated additive registry edit and still rejects source drift',()=>{
- const current=readFileSync(proof.path,'utf8').replaceAll('\r\n','\n');
+ const current=beforeSecondResolverSource(proof.path,readFileSync(proof.path,'utf8').replaceAll('\r\n','\n'));
  expect(current).toBe(proof.afterText);expect(hash(current)).toBe(proof.afterLfSha256);
  expect(beforeMorningResolverSource(proof.path,current)).toBe(proof.beforeText);
  expect(beforeLV4ResolverSource(proof.path,current)).toBe(beforeLV4ResolverSource(proof.path,proof.beforeText));
