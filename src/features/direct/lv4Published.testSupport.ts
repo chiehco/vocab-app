@@ -1,3 +1,4 @@
+import nextSecond from '../../../docs/lv4-releases-20261125/U11-U16-next-second-approved.json';
 import nextMorning from '../../../docs/lv4-releases-20261125/U01-U10-next-morning-approved.json';
 import tail from '../../../docs/lv4-releases-20261125/U21-U24-tail-approved.json';
 import revisions from '../../../docs/lv4-releases-20261125/U13-U16-approved-revisions.json';
@@ -154,7 +155,21 @@ export function beforeLV4Rows<T>(dataset:string,value:T):T{
  }return copy;
 }
 
+export function beforeNextSecondResolverSource(path:string,text:string):string{
+ if(path!==nextSecond.path)return text;
+ assert.equal(hash(JSON.stringify(nextSecond)),'47c3abe97acb87d0c1c4caf21675ad555c8273b6d0376802b2611346acdb788e','LV4 next morning proof drift');
+ if(hash(text)!==nextSecond.afterLfSha256)return text;
+ assert.equal(text,nextSecond.afterText,'LV4 next morning resolver bytes drift');
+ assert.equal(text.split(nextSecond.importLine).length,2,'LV4 next morning import drift');
+ assert.equal(text.split(nextSecond.afterSpread).length,2,'LV4 next morning spread drift');
+ const previous=text.replace(nextSecond.importLine,'').replace(nextSecond.afterSpread,nextSecond.beforeSpread);
+ assert.equal(hash(previous),nextSecond.beforeLfSha256,'LV4 next morning exact prior resolver drift');
+ assert.equal(previous,nextSecond.beforeText,'LV4 next morning prior bytes drift');
+ return previous;
+}
+
 export function beforeNextMorningResolverSource(path:string,text:string):string{
+ text=beforeNextSecondResolverSource(path,text);
  if(path!==nextMorning.path)return text;
  assert.equal(hash(JSON.stringify(nextMorning)),'081017d7d072ef22550b96e37268d144e50e9ddb1e40f4f0d5208cde5937701b','LV4 next morning proof drift');
  if(hash(text)!==nextMorning.afterLfSha256)return text;
