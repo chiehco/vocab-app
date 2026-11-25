@@ -6,7 +6,7 @@ import {MemoryRouter} from 'react-router-dom';
 import cards from './lv4SecondRevisedCards.json';
 import proof from '../../../docs/lv4-releases-20261125/U13-U16-approved-revisions.json';
 import {approvedCurriculumCards,approvedCurriculumItem,approvedWordIllustration} from './approvedCurriculum';
-import {beforeLV4ResolverSource,beforeSecondRevisedResolverSource} from '../direct/lv4Published.testSupport';
+import {beforeLV4ResolverSource,beforeSecondRevisedResolverSource,beforeTailResolverSource} from '../direct/lv4Published.testSupport';
 import {unitsFor} from './textbookCatalog';
 import VocabularyScreen from './VocabularyScreen';
 import {getWordBeastAsset} from '../wordbeast/wordBeastAssets';
@@ -32,7 +32,7 @@ it('preserves prior textbook data, words, formal examples, all old registries an
  for(const old of proof.runtimeBefore){expect(old.primary).toBeNull();expect(old.existingApprovedItem).toBeNull();}
 });
 it('reverses only the authenticated four-revision registry addition and rejects unrelated resolver changes',()=>{
- const current=readFileSync(proof.path,'utf8').replaceAll('\r\n','\n');
+ const current=beforeTailResolverSource(proof.path,readFileSync(proof.path,'utf8').replaceAll('\r\n','\n'));
  expect(current).toBe(proof.afterText);expect(hash(current)).toBe(proof.afterLfSha256);
  expect(beforeSecondRevisedResolverSource(proof.path,current)).toBe(proof.beforeText);
  expect(beforeLV4ResolverSource(proof.path,current)).toBe(beforeLV4ResolverSource(proof.path,proof.beforeText));
