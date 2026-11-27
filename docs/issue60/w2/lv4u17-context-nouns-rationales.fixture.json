@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "reviewStatus": "draft_pending_review",
+  "scope": "W2/W3 LV4 U17 popularity/pronunciation four existing practice_context_choice variants; explanations only; no runtime changes or approvals",
+  "source": {
+    "mainSha": "21611f6572f4314012c4d0983cdeb1dee81f75f1",
+    "variantsBlob": "1126a4fdd21027a62c48b7269a6f9fc7f65ad31e",
+    "curriculumBlob": "0bebdee3766bf0d17c518ef6eeae3512afe771d6",
+    "modelBlob": "81eedb1f6cd2cf8141f3e1884cf7a4aedb0088ba",
+    "previousReview": "https://github.com/chiehco/vocab-app/issues/60#issuecomment-7216468320",
+    "precedingFixture": "https://github.com/chiehco/vocab-app/pull/67"
+  },
+  "integration": {
+    "key": [
+      "questionId",
+      "option.text"
+    ],
+    "guard": "Require exact stem, answer text, answerForms, English/Chinese sentence, option text set and each old rationale; if any mismatch skip whole question. Preserve options, IDs, answer, all other fields and original Chinese translation. Do not alter source JSON or apply to base/spelling or other variants.",
+    "reviewBoundary": "Manual contextual review supports best answer among the supplied options, not general open cloze uniqueness; do not add synonyms or change grading."
+  },
+  "questions": [
+    {
+      "questionId": "CHOICE-CLOZE-ORIG-LV4U17-popularity~P1",
+      "baseQuestionId": "CHOICE-CLOZE-ORIG-LV4U17-popularity",
+      "learningItemId": "LI-LV4U17-popularity",
+      "expected": {
+        "stem": "The young singer's _____ grew quickly after her new song became a hit online.",
+        "answerText": "popularity",
+        "answerForms": [
+          "popularity"
+        ],
+        "sentenceEn": "The young singer's popularity grew quickly after her new song became a hit online.",
+        "sentenceZh": "這位年輕歌手的新歌爆紅後，她的人氣迅速上升。",
+        "optionTexts": [
+          "cruelty",
+          "frustration",
+          "popularity",
+          "pronunciation"
+        ]
+      },
+      "abilityTags": [
+        "meaning",
+        "context",
+        "collocation"
+      ],
+      "options": [
+        {
+          "text": "popularity",
+          "correct": true,
+          "expectedOldRationaleZh": "popularity：受歡迎。這位年輕歌手的新歌爆紅後，她的人氣迅速上升。",
+          "rationaleZh": "popularity：受歡迎。這位年輕歌手的新歌爆紅後，她的人氣迅速上升。 所有格 singer's 後需要名詞；新歌成為網路熱門歌曲，grew quickly 說明她的受歡迎程度迅速上升。"
+        },
+        {
+          "text": "cruelty",
+          "correct": false,
+          "expectedOldRationaleZh": "cruelty：殘酷；不符合本句情境。",
+          "rationaleZh": "cruelty：殘酷。表示殘酷或殘忍行為；歌曲走紅只顯示受到關注，並未描述傷害或不仁慈的行為。"
+        },
+        {
+          "text": "frustration",
+          "correct": false,
+          "expectedOldRationaleZh": "frustration：挫折；不符合本句情境。",
+          "rationaleZh": "frustration：挫折。表示挫折、沮喪；became a hit 是成功走紅的線索，題幹沒有遭遇阻礙或失望的描述。"
+        },
+        {
+          "text": "pronunciation",
+          "correct": false,
+          "expectedOldRationaleZh": "pronunciation：發音；不符合本句情境。",
+          "rationaleZh": "pronunciation：發音。表示發音；歌手可能需要練習發音，但 grew quickly 搭配歌曲爆紅描述的是人氣上升，而非發音方式。"
+        }
+      ]
+    },
+    {
+      "questionId": "CHOICE-CLOZE-ORIG-LV4U17-popularity~P2",
+      "baseQuestionId": "CHOICE-CLOZE-ORIG-LV4U17-popularity",
+      "learningItemId": "LI-LV4U17-popularity",
+      "expected": {
+        "stem": "The game's _____ is clear from the millions of players who enjoy it every day.",
+        "answerText": "popularity",
+        "answerForms": [
+          "popularity"
+        ],
+        "sentenceEn": "The game's popularity is clear from the millions of players who enjoy it every day.",
+        "sentenceZh": "每天都有數百萬名玩家樂在其中，可見這款遊戲很受歡迎。",
+        "optionTexts": [
+          "cruelty",
+          "frustration",
+          "popularity",
+          "pronunciation"
+        ]
+      },
+      "abilityTags": [
+        "meaning",
+        "context",
+        "collocation"
+      ],
+      "options": [
+        {
+          "text": "popularity",
+          "correct": true,
+          "expectedOldRationaleZh": "popularity：受歡迎。每天都有數百萬名玩家樂在其中，可見這款遊戲很受歡迎。",
+          "rationaleZh": "popularity：受歡迎。每天都有數百萬名玩家樂在其中，可見這款遊戲很受歡迎。 所有格 game's 後接名詞；數百萬玩家每天樂在其中，是遊戲受歡迎程度的直接證據。"
+        },
+        {
+          "text": "cruelty",
+          "correct": false,
+          "expectedOldRationaleZh": "cruelty：殘酷；不符合本句情境。",
+          "rationaleZh": "cruelty：殘酷。表示殘酷；玩家人數多且樂在其中，不能據此證明遊戲具有殘酷性。"
+        },
+        {
+          "text": "frustration",
+          "correct": false,
+          "expectedOldRationaleZh": "frustration：挫折；不符合本句情境。",
+          "rationaleZh": "frustration：挫折。表示挫折感；enjoy it 說明玩家的正面體驗，並非遊戲令人受挫的證據。"
+        },
+        {
+          "text": "pronunciation",
+          "correct": false,
+          "expectedOldRationaleZh": "pronunciation：發音；不符合本句情境。",
+          "rationaleZh": "pronunciation：發音。表示發音；題幹討論遊戲的玩家人數與喜愛程度，沒有讀音或口語表現的線索。"
+        }
+      ]
+    },
+    {
+      "questionId": "CHOICE-CLOZE-ORIG-LV4U17-pronunciation~P1",
+      "baseQuestionId": "CHOICE-CLOZE-ORIG-LV4U17-pronunciation",
+      "learningItemId": "LI-LV4U17-pronunciation",
+      "expected": {
+        "stem": "My English teacher praised my _____ after I read the passage aloud.",
+        "answerText": "pronunciation",
+        "answerForms": [
+          "pronunciation"
+        ],
+        "sentenceEn": "My English teacher praised my pronunciation after I read the passage aloud.",
+        "sentenceZh": "我朗讀完那段文章後，英文老師稱讚了我的發音。",
+        "optionTexts": [
+          "circulation",
+          "cruelty",
+          "pronunciation",
+          "prosperity"
+        ]
+      },
+      "abilityTags": [
+        "meaning",
+        "context",
+        "collocation"
+      ],
+      "options": [
+        {
+          "text": "circulation",
+          "correct": false,
+          "expectedOldRationaleZh": "circulation：流通；不符合本句情境。",
+          "rationaleZh": "circulation：流通。表示流通、循環或發行量；朗讀課文並未顯示血液、物品或出版品的流通情形。"
+        },
+        {
+          "text": "prosperity",
+          "correct": false,
+          "expectedOldRationaleZh": "prosperity：繁榮；不符合本句情境。",
+          "rationaleZh": "prosperity：繁榮。表示繁榮或興旺；老師稱讚朗讀表現，沒有生活富裕或經濟發展的線索。"
+        },
+        {
+          "text": "pronunciation",
+          "correct": true,
+          "expectedOldRationaleZh": "pronunciation：發音。我朗讀完那段文章後，英文老師稱讚了我的發音。",
+          "rationaleZh": "pronunciation：發音。我朗讀完那段文章後，英文老師稱讚了我的發音。 my 後需要名詞；read the passage aloud 明示朗讀，因此老師可稱讚的是單字及句子的發音。"
+        },
+        {
+          "text": "cruelty",
+          "correct": false,
+          "expectedOldRationaleZh": "cruelty：殘酷；不符合本句情境。",
+          "rationaleZh": "cruelty：殘酷。表示殘酷；朗讀課文並不是殘忍行為，題幹也沒有相關情境。"
+        }
+      ]
+    },
+    {
+      "questionId": "CHOICE-CLOZE-ORIG-LV4U17-pronunciation~P2",
+      "baseQuestionId": "CHOICE-CLOZE-ORIG-LV4U17-pronunciation",
+      "learningItemId": "LI-LV4U17-pronunciation",
+      "expected": {
+        "stem": "Check the _____ of this word by listening to the dictionary's audio recording.",
+        "answerText": "pronunciation",
+        "answerForms": [
+          "pronunciation"
+        ],
+        "sentenceEn": "Check the pronunciation of this word by listening to the dictionary's audio recording.",
+        "sentenceZh": "聽字典的錄音，確認這個單字的發音。",
+        "optionTexts": [
+          "circulation",
+          "cruelty",
+          "pronunciation",
+          "prosperity"
+        ]
+      },
+      "abilityTags": [
+        "meaning",
+        "context",
+        "collocation"
+      ],
+      "options": [
+        {
+          "text": "circulation",
+          "correct": false,
+          "expectedOldRationaleZh": "circulation：流通；不符合本句情境。",
+          "rationaleZh": "circulation：流通。表示流通或循環；查字典錄音可以確認怎麼念，不能直接證明一個詞的流通範圍或使用頻率。"
+        },
+        {
+          "text": "prosperity",
+          "correct": false,
+          "expectedOldRationaleZh": "prosperity：繁榮；不符合本句情境。",
+          "rationaleZh": "prosperity：繁榮。表示繁榮或興旺；錄音提供聲音，並不說明財富或成功，也不是此處要查核的單字特性。"
+        },
+        {
+          "text": "pronunciation",
+          "correct": true,
+          "expectedOldRationaleZh": "pronunciation：發音。聽字典的錄音，確認這個單字的發音。",
+          "rationaleZh": "pronunciation：發音。聽字典的錄音，確認這個單字的發音。 the + 名詞 + of this word 指這個詞的某種特性；字典的錄音提供讀音，check the pronunciation 表示確認發音。"
+        },
+        {
+          "text": "cruelty",
+          "correct": false,
+          "expectedOldRationaleZh": "cruelty：殘酷；不符合本句情境。",
+          "rationaleZh": "cruelty：殘酷。表示殘酷；錄音只能直接提供讀音等聲音資訊，題幹不是在查核殘忍行為或判斷詞語的倫理含義。"
+        }
+      ]
+    }
+  ]
+}
