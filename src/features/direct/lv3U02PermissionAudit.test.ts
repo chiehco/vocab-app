@@ -1,7 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import audit from '../../../docs/issue60/w2/lv3u02-permission-audit.fixture.json';
 import unit from './curriculumUnit2.json';
-import { BASIC_PREFIX, choiceQuestions, isCorrectAnswer, practiceQuestions } from './model';
+import { BASIC_PREFIX, choiceQuestions, findUnit, isCorrectAnswer, practiceQuestions, type LearningItem } from './model';
+import { applyU02PracticeRevision } from './lv3U02PracticeRevision';
 
 // Characterizes the current scoring gap. It does not prove the language judgments
 // in the fixture or require future fixes to preserve rejection of synonyms.
@@ -15,6 +16,7 @@ const prohibitRevision = {
 // Keep the original fixture as historical audit evidence; only the live 006
 // expectations change. The open target-recall ambiguity remains unresolved.
 const currentCases = audit.cases.map(c => c.answer === 'prohibit' ? { ...c, ...prohibitRevision } : c);
+const liveItems = findUnit(2, 'LV3')!.items;
 
 describe('Issue 60 LV3 U02 bounded permission-family audit', () => {
   it('keeps the five-case sample distinct from the full unit and earlier witch/wizard audit', () => {
@@ -25,7 +27,7 @@ describe('Issue 60 LV3 U02 bounded permission-family audit', () => {
   });
 
   it.each(currentCases)('$answer accepts the target and rejects the documented alternative', c => {
-    const item = unit.learningItems.find(i => i.learningItemId === c.learningItemId)!;
+    const item = liveItems.find(i => i.learningItemId === c.learningItemId)!;
     const q = practiceQuestions.find(q => q.questionId === c.questionId)!;
     expect(item.originalExample).toBeDefined();
     expect(item.originalExample!.workExampleId).toBe(c.workExampleId);
@@ -48,6 +50,29 @@ describe('Issue 60 LV3 U02 bounded permission-family audit', () => {
     expect(basic.options.find(o => o.id === basic.answer)?.text).toBe(c.answer);
   });
 
+
+  it('preserves the sealed source and projects exactly one original example without changing IDs', () => {
+    const c = audit.cases.find(c => c.answer === 'prohibit')!;
+    const raw = unit.learningItems.find(i => i.learningItemId === c.learningItemId)! as LearningItem;
+    const live = liveItems.find(i => i.learningItemId === c.learningItemId)!;
+    expect(raw.originalExample!.sentenceEn).toBe(c.sentenceEn);
+    expect(raw.originalExample!.blankSentence).toBe(c.stem);
+    expect(live).toEqual({
+      ...raw,
+      originalExample: {
+        ...raw.originalExample!,
+        sentenceEn: prohibitRevision.sentenceEn,
+        sentenceZh: prohibitRevision.sentenceZh,
+        blankSentence: prohibitRevision.stem,
+      },
+    });
+    expect(liveItems.filter((item, index) => item !== unit.learningItems[index]).map(i => i.learningItemId)).toEqual([c.learningItemId]);
+    expect(applyU02PracticeRevision(live)).toBe(live);
+    const drifted = { ...raw, originalExample: { ...raw.originalExample!, sentenceEn: 'A later revision.' } };
+    expect(applyU02PracticeRevision(drifted)).toBe(drifted);
+    expect(raw.originalExample!.sentenceEn).toBe(c.sentenceEn);
+  });
+
   it('keeps historical 006 evidence and verifies the revised live four-choice context', () => {
     const c = audit.cases.find(c => c.answer === 'prohibit')!;
     const basic = choiceQuestions.find(q => q.questionId === BASIC_PREFIX + c.questionId)!;
@@ -55,7 +80,7 @@ describe('Issue 60 LV3 U02 bounded permission-family audit', () => {
     expect(alternative).toBeDefined();
     expect(basic.stem).toBe(prohibitRevision.stem);
     expect(basic.options.map(o => o.text)).toEqual(['drill', 'remain', 'prohibit', 'allow']);
-    const item = unit.learningItems.find(i => i.learningItemId === c.learningItemId)!;
+    const item = liveItems.find(i => i.learningItemId === c.learningItemId)!;
     expect(item.originalExample!.sentenceZh).toBe(prohibitRevision.sentenceZh);
     expect(isCorrectAnswer(basic, basic.answer)).toBe(true);
     expect(isCorrectAnswer(basic, alternative.id)).toBe(false);
