@@ -1,0 +1,74 @@
+async (page) => {
+ const base='http://127.0.0.1:4187', results=[], errors=[], contexts=[];
+ const check=(ok,message)=>{if(!ok)throw Error(message);};
+ const snap=p=>p.evaluate(async()=>{const{progressDb:db}=await import('/src/db/progressDb.ts');return Promise.all(db.tables.map(async table=>({name:table.name,rows:await table.toArray()})));});
+ try {
+  for(const {width,height,scale} of [{width:320,height:568,scale:1},{width:375,height:812,scale:1},{width:390,height:844,scale:1},{width:320,height:568,scale:1.3}]) {
+   const context=await page.context().browser().newContext({viewport:{width,height},isMobile:true,hasTouch:true,timezoneId:'Asia/Taipei',serviceWorkers:'block'});contexts.push(context);
+   await context.route('**/*',route=>new URL(route.request().url()).origin===base?route.continue():route.abort());
+   const p=await context.newPage(); p.on('pageerror',e=>errors.push(e.message));
+   await p.clock.setFixedTime(new Date('2026-01-02T04:00:00Z'));
+   await p.goto(base+'/#/progress');
+   await p.locator('.checkin-calendar-head small').filter({hasText:'這個月還沒開始'}).waitFor();
+   const empty=await snap(p);
+   check(empty.every(t=>t.rows.length===0),'only an empty synthetic DB may be seeded');
+   check(await p.locator('.checkin-day.stamped').count()===0,'empty calendar has stamps');
+   check(await p.getByRole('button',{name:'上個月',exact:true}).isDisabled(),'empty previous month enabled');
+   check(await p.getByRole('button',{name:'下個月',exact:true}).isDisabled(),'empty next month enabled');
+   await p.getByRole('button',{name:'2026 年 1 月 1 日',exact:true}).tap();
+   check((await p.locator('.checkin-calendar-detail').innerText()).includes('這天沒有紀錄'),'blank day detail wrong');
+   check(JSON.stringify(await snap(p))===JSON.stringify(empty),'empty browsing wrote progress');
+   await p.evaluate(async scale=>{
+    const{progressDb:db}=await import('/src/db/progressDb.ts');
+    await db.checkIns.bulkAdd([{date:'2025-12-31',reviewCount:17,newWordsCount:3,sessionsCount:2},{date:'2026-01-01',reviewCount:9,newWordsCount:1,sessionsCount:1}]);
+    await db.rewardWallet.add({id:'local',balance:321,updatedAt:1});
+    await db.rewardLedger.add({id:'legacy-award',kind:'daily-check-in',amount:30,createdAt:1,taiwanDate:'2025-12-31'});
+    await db.settings.add({key:'fontScale',value:scale});
+   },scale);
+   await p.reload();
+   const jan=p.getByRole('button',{name:'2026 年 1 月 1 日，有學習',exact:true});await jan.waitFor();
+   const before=await snap(p);
+   // 真實 useToday 在背景返回後跨年；選取明細不能留在前一個月。
+   await p.clock.setFixedTime(new Date('2025-12-31T04:00:00Z'));
+   await p.evaluate(()=>window.dispatchEvent(new Event('focus')));
+   await p.getByRole('button',{name:'2025 年 12 月 31 日，有學習，今天',exact:true}).tap();
+   check((await p.locator('.checkin-calendar-detail').innerText()).includes('12 月 31 日：練習 17 次'),'pre-rollover selection wrong');
+   await p.clock.setFixedTime(new Date('2026-01-02T04:00:00Z'));
+   await p.evaluate(()=>window.dispatchEvent(new Event('focus')));
+   await jan.waitFor();
+   check((await p.locator('.checkin-calendar-detail').innerText())==='點日期看當天學了什麼。','previous-month detail remains after automatic year rollover');
+   await jan.tap();check((await p.locator('.checkin-calendar-detail').innerText()).includes('練習 9 次，新學 1 個字'),'legacy January detail wrong');
+   check(await p.getByRole('button',{name:'2026 年 1 月 3 日',exact:true}).isDisabled(),'future day enabled');
+   await p.getByRole('button',{name:'上個月',exact:true}).tap();
+   check((await p.locator('.checkin-calendar-head strong').innerText())==='2025 年 12 月','year boundary wrong');
+   check(await p.getByRole('button',{name:'上個月',exact:true}).isDisabled(),'earliest bound wrong');
+   const dec=p.getByRole('button',{name:'2025 年 12 月 31 日，有學習',exact:true});await dec.tap();
+   check((await p.locator('.checkin-calendar-detail').innerText()).includes('練習 17 次，新學 3 個字'),'legacy December detail wrong');
+   await p.evaluate(()=>scrollTo(0,document.documentElement.scrollHeight));
+   await p.evaluate(()=>new Promise(requestAnimationFrame));
+   const geometry=await p.evaluate(()=>{
+    const calendar=document.querySelector('.checkin-calendar'),nav=document.querySelector('.app-bottom-nav').getBoundingClientRect();
+    const rect=calendar.getBoundingClientRect();
+    const days=[...calendar.querySelectorAll('.checkin-day')].map(el=>{const r=el.getBoundingClientRect();return{date:el.getAttribute('aria-label'),left:r.left,right:r.right,top:r.top,bottom:r.bottom,hit:r.top>=0&&r.bottom<=innerHeight?el.contains(document.elementFromPoint(r.x+r.width/2,r.y+r.height/2)):null};});
+    const header=calendar.querySelector('.checkin-calendar-head');const [prev,caption,next]=[...header.children].map(el=>el.getBoundingClientRect());
+    return{viewport:innerWidth,scrollWidth:document.documentElement.scrollWidth,calendar:{left:rect.left,right:rect.right,bottom:rect.bottom},navTop:nav.top,days,headerOverlaps:prev.right>caption.left||caption.right>next.left,detailBottom:calendar.querySelector('.checkin-calendar-detail').getBoundingClientRect().bottom};
+   });
+   check(geometry.scrollWidth<=width,'horizontal overflow: '+JSON.stringify(geometry));
+   check(geometry.calendar.left>=0&&geometry.calendar.right<=width,'calendar outside viewport');
+   check(!geometry.headerOverlaps,'month caption overlaps arrows');
+   check(geometry.days.every(d=>d.left>=0&&d.right<=width&&d.bottom<=geometry.navTop),'day outside viewport or behind nav');
+   check(geometry.days.filter(d=>d.hit!==null).every(d=>d.hit),'visible day tap blocked');
+   check(geometry.detailBottom<=geometry.navTop,'detail behind navigation');
+   await p.screenshot({path:`output/playwright/checkin-calendar/calendar-${width}-${scale}.png`,fullPage:true});
+   await p.getByRole('button',{name:'下個月',exact:true}).tap();
+   check((await p.locator('.checkin-calendar-head strong').innerText())==='2026 年 1 月','forward across year wrong');
+   check(await p.getByRole('button',{name:'下個月',exact:true}).isDisabled(),'current bound wrong');
+   check(await p.locator('.checkin-day[aria-pressed=true]').count()===0,'stale selection remains after month switch');
+   check(JSON.stringify(await snap(p))===JSON.stringify(before),'calendar changed progress or rewards');
+   results.push({width,height,fontScale:scale,emptyState:true,legacyCheckIns:true,crossYear:true,automaticYearRollover:true,monthBounds:true,progressAndRewardsUnchanged:true,geometry});
+   await context.close();
+  }
+  check(errors.length===0,'browser errors: '+errors.join('; '));
+  return{results,pageErrors:errors,realUserDataTouched:false,externalRequestsBlocked:true};
+ } finally { for(const context of contexts) await context.close(); }
+}
