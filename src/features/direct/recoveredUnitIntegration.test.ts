@@ -337,7 +337,35 @@ it.each(historicalFileBatches)('retains historical curriculum and question ident
     }
     expect(hash(originalQuestions), old.templateId).toBe(old.questionsHash);
     const runtimeItems = findUnit(old.templateId)?.items;
-    if (old.templateId === 'TEXTBOOK-LV3-U22') {
+    if (old.templateId === 'IVY-LV3-U02') {
+      // The sealed source is still checked by the checkpoint and historical hashes above.
+      // Assert the entire runtime array against one independently specified original-example
+      // revision; do not call the production overlay to construct the expectation.
+      const sourceItems = installed.get(old.templateId)!.items as LearningItem[];
+      const targets = sourceItems.filter(item => item.learningItemId === 'LI-LV3U02-prohibit');
+      expect(targets).toHaveLength(1);
+      const target = targets[0]!;
+      expect(target).toMatchObject({
+        officialWordId: 'W004676',
+        originalExample: {
+          workExampleId: 'ORIG-20260912-LV3U02-006',
+          answer: 'prohibit',
+          sentenceEn: "The contest rules prohibit copying another team's design.",
+          sentenceZh: '比賽規則禁止抄襲其他隊伍的設計。',
+          blankSentence: "The contest rules _____ copying another team's design.",
+        },
+      });
+      const expectedItems = sourceItems.map(item => item !== target ? item : {
+        ...item,
+        originalExample: {
+          ...item.originalExample!,
+          sentenceEn: "The contest rules prohibit copying another team's design; any team that copies is disqualified.",
+          sentenceZh: '比賽規則禁止抄襲其他隊伍的設計；任何抄襲的隊伍都會被取消資格。',
+          blankSentence: "The contest rules _____ copying another team's design; any team that copies is disqualified.",
+        },
+      });
+      expect(runtimeItems).toEqual(expectedItems);
+    } else if (old.templateId === 'TEXTBOOK-LV3-U22') {
       // The printed pack is frozen. The reader overlays exactly the approved U22 edits.
       expect(hash(installed.get(old.templateId)!.items)).toBe(old.itemsHash);
       expect(hash(runtimeItems)).toBe('9265abcbc667d0d4d24a331ea3fc8999b28383d72d04bbc15b689dd0bd79e649');
