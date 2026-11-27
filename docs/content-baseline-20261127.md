@@ -6,7 +6,7 @@
 
 - `scripts/content_inventory.mjs`：只讀取 LV1–LV6 的 curriculum JSON、其明載的 sourceManifest、LV3 U01 的外置 grammarQuestions，以及 LV1 圖對登錄 JSON；不啟動 app、不寫教材或資料庫，不需私人路徑或 npm 套件。
 - `content-baseline-20261127.json`：121 個編譯單元與 19 個 LV1 圖對群組的快照，238 個輸入檔附 SHA-256。此處的母表版本與來源照片均未重新認定。
-- `scripts/contentInventory.test.ts`：9 項回歸測試，由既有 Vitest CI 自動收集，不改既有 workflow。
+- `scripts/contentInventory.test.ts`：10 項回歸測試，由既有 Vitest CI 自動收集，不改既有 workflow。
 
 ```sh
 # 在 repository 根目錄核對現存快照；僅讀取，不重寫。
@@ -18,7 +18,7 @@ node scripts/content_inventory.mjs --write docs/content-baseline-NEW.json --base
 npm test -- scripts/contentInventory.test.ts --maxWorkers=1
 ```
 
-`baseCommit` 是執行者記錄的基線，不會自動認定來源為最新版；實際讀入內容由 `inputs` 雜湊綁定。`--check` 比對內容與不存在的來源指標，資料漂移時報錯；快照不作為全 repo 的自動發布門檻。往後教材更新時，舊快照保留為歷史證據，另產新檔即可。
+`baseCommit` 是執行者記錄的基線，不會自動認定來源為最新版；實際讀入內容由 `inputs` 雜湊綁定。雜湊先移除 UTF-8 BOM、將 CRLF/CR 統一為 LF，再計算 SHA-256；`inputHashFormat` 明載規則，Windows 與 Linux 同內容可重跑，不是原始檔案位元組雜湊。快照比對也容許作業系統換行差異。`--check` 比對內容與不存在的來源指標，資料漂移時報錯；快照不作為全 repo 的自動發布門檻。往後教材更新時，舊快照保留為歷史證據，另產新檔即可。
 
 ## 實際觀測
 
@@ -48,7 +48,7 @@ LV3 U12/U18、LV6 U21 在目前 main 已有編譯檔；其原始 `releaseReview`
 
 本輪先讀 Issue #60 與留言、#12–15 及 #12 補充說明、開放 PR #59/#55/#52 的檔案與討論，以及 main 的 LV4 發布與 LV5/LV6 整合紀錄。三個 PR 分別為 LiveABC U08、月曆、interact 來源修正，均未併入或修改；不依過期 PR 本文推斷目前 head 已驗收。正式站連線版、母表與照片不在本工具驗收範圍。
 
-本批本機 9 項測試、快照重跑比對、Node 語法檢查及 lint 已通過；lint 有 8 則既存警告，新增檔沒有警告。測試涵蓋詞彙／文法分母、重複圖對、未知與零的區別、待審狀態保留、解析缺欄、來源雜湊、路徑越界、識別衝突、拒絕覆寫、資料漂移及現行全量資料的確定性。完整 typecheck、build／CI 最新結果另記於本輪 PR 與 Issue #60，不能以本文件代替其實際結果。未做手機、PWA 更新或實機驗收。
+本批本機 10 項測試、快照重跑比對、Node 語法檢查及 lint 已通過；lint 有 8 則既存警告，新增檔沒有警告。測試涵蓋詞彙／文法分母、重複圖對、未知與零的區別、待審狀態保留、解析缺欄、來源雜湊、路徑越界、識別衝突、拒絕覆寫、資料漂移、Windows CRLF/BOM 可攜性及現行全量資料的確定性。完整 typecheck、build／CI 最新結果另記於本輪 PR 與 Issue #60，不能以本文件代替其實際結果。未做手機、PWA 更新或實機驗收。
 
 ## 下一個最小批次
 

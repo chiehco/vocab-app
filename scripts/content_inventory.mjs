@@ -11,6 +11,8 @@ const IMAGE_PAIRS = 'src/features/vocabulary/lv1ReviewedImages.json';
 const UNKNOWN = 'unknown';
 const CORE_MODES = ['english_to_chinese', 'spelling', 'sentence_word_choice', 'passage_cloze', 'passage_matching'];
 const sha256 = bytes => createHash('sha256').update(bytes).digest('hex');
+// Git checkouts may use CRLF on Windows. Hash the same logical UTF-8 text everywhere.
+const normalizedText = text => text.replace(/^\uFEFF/, '').replace(/\r\n?/g, '\n');
 const nonempty = value => typeof value === 'string' && value.trim().length > 0;
 const tally = values => Object.fromEntries([...new Set(values)].sort().map(value => [value, values.filter(v => v === value).length]));
 
@@ -25,9 +27,9 @@ export function buildContentInventory(root, baseCommit = null) {
     return full;
   }
   function read(path) {
-    const bytes = readFileSync(localPath(path));
-    inputs.set(path, { path, sha256: sha256(bytes) });
-    return JSON.parse(bytes.toString('utf8').replace(/^\uFEFF/, ''));
+    const text = normalizedText(readFileSync(localPath(path), 'utf8'));
+    inputs.set(path, { path, sha256: sha256(text) });
+    return JSON.parse(text);
   }
   function manifest(path) {
     if (!nonempty(path)) return { path: null, state: 'not_recorded', sha256: null };
@@ -107,6 +109,7 @@ export function buildContentInventory(root, baseCommit = null) {
       lv1ImagePairCount: groups.reduce((n, g) => n + g.pairCount, 0) };
   });
   return { schemaVersion: 1, baseCommit, scope: 'checked_in_compiled_content_only',
+    inputHashFormat: 'SHA-256 of UTF-8 text with BOM removed and CRLF/CR normalized to LF',
     limitations: [
       'Counts describe records, not semantic correctness, approval, publication or whole-book completeness.',
       'A source manifest is a checked-in transcription, not verification of the latest mother table or original photographs.',
@@ -125,11 +128,12 @@ export function runCli(args, root = resolve(dirname(fileURLToPath(import.meta.ur
     throw new Error('Usage: node scripts/content_inventory.mjs (--write|--check) report.json [--base-commit <40-character SHA>]');
   }
   const output = resolve(args[1]);
-  const saved = args[0] === '--check' ? JSON.parse(readFileSync(output, 'utf8')) : null;
+  const savedText = args[0] === '--check' ? normalizedText(readFileSync(output, 'utf8')) : null;
+  const saved = savedText === null ? null : JSON.parse(savedText);
   const report = buildContentInventory(root, args[3] ?? saved?.baseCommit ?? null);
   const text = JSON.stringify(report, null, 2) + '\n';
   if (args[0] === '--check') {
-    if (text !== readFileSync(output, 'utf8')) throw new Error('Content inventory has drifted; generate a new snapshot and review the diff');
+    if (text !== savedText) throw new Error('Content inventory has drifted; generate a new snapshot and review the diff');
   } else {
     // Refuse to overwrite source files or existing evidence; snapshots are append-only.
     writeFileSync(output, text, { flag: 'wx', encoding: 'utf8' });

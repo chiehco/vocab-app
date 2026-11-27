@@ -92,6 +92,17 @@ describe('checked-in content inventory boundaries', () => {
     expect(() => runCli(['--check', output], root)).toThrow('drifted');
     expect(readFileSync(output, 'utf8')).toBe(before);
   });
+  it('keeps hashes and snapshot checks stable across Windows CRLF and UTF-8 BOM checkouts', () => {
+    const { root, path, data } = fixture(), output = join(root, 'report.json');
+    writeFileSync(join(root, path), JSON.stringify(data, null, 2) + '\n');
+    const before = buildContentInventory(root);
+    runCli(['--write', output], root);
+    const snapshot = readFileSync(output, 'utf8');
+    writeFileSync(join(root, path), '\uFEFF' + (JSON.stringify(data, null, 2) + '\n').replace(/\n/g, '\r\n'));
+    writeFileSync(output, '\uFEFF' + snapshot.replace(/\n/g, '\r\n'));
+    expect(buildContentInventory(root)).toEqual(before);
+    runCli(['--check', output], root);
+  });
   it('can inventory the current repo deterministically and preserves recovered LV6 U21', () => {
     const a = buildContentInventory(process.cwd()), b = buildContentInventory(process.cwd());
     expect(a).toEqual(b);
