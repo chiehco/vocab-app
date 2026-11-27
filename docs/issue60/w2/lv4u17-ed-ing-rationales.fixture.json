@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 1,
+  "reviewStatus": "draft_pending_review",
+  "scope": "W2/W3 LV4 U17 four existing practice_context_choice variants; explanations only; no runtime changes or approvals",
+  "source": {
+    "mainSha": "21611f6572f4314012c4d0983cdeb1dee81f75f1",
+    "variantsBlob": "1126a4fdd21027a62c48b7269a6f9fc7f65ad31e",
+    "curriculumBlob": "0bebdee3766bf0d17c518ef6eeae3512afe771d6",
+    "modelBlob": "81eedb1f6cd2cf8141f3e1884cf7a4aedb0088ba",
+    "previousReview": "https://github.com/chiehco/vocab-app/issues/60#issuecomment-7216468320"
+  },
+  "integration": {
+    "key": [
+      "questionId",
+      "option.text"
+    ],
+    "guard": "Require exact stem, answer text, answerForms, English/Chinese sentence, option text set and each old rationale; if any mismatch skip whole question. Preserve options, IDs, answer, all other fields and original Chinese translation. Do not alter source JSON or apply to base/spelling or other variants.",
+    "reviewBoundary": "Manual contextual review supports best answer among the supplied options, not general open cloze uniqueness; do not add synonyms or change grading."
+  },
+  "questions": [
+    {
+      "questionId": "CHOICE-CLOZE-ORIG-LV4U17-frustrated~P1",
+      "baseQuestionId": "CHOICE-CLOZE-ORIG-LV4U17-frustrated",
+      "learningItemId": "LI-LV4U17-frustrated",
+      "expected": {
+        "stem": "She felt _____ after practicing the song for hours without getting any better.",
+        "answerText": "frustrated",
+        "answerForms": [
+          "frustrated"
+        ],
+        "sentenceEn": "She felt frustrated after practicing the song for hours without getting any better.",
+        "sentenceZh": "她練習那首歌數小時卻沒有進步，因此感到沮喪。",
+        "optionTexts": [
+          "circular",
+          "frustrated",
+          "frustrating",
+          "profitable"
+        ]
+      },
+      "abilityTags": [
+        "word_form",
+        "context",
+        "sentence_pattern"
+      ],
+      "options": [
+        {
+          "text": "frustrated",
+          "correct": true,
+          "expectedOldRationaleZh": "frustrated：感到沮喪的。她練習那首歌數小時卻沒有進步，因此感到沮喪。",
+          "rationaleZh": "frustrated：感到沮喪的。她練習那首歌數小時卻沒有進步，因此感到沮喪。 felt 在這裡是連綴動詞，空格描述主詞自己的感受；反覆練習卻沒有進步，正是她感到挫折的原因。"
+        },
+        {
+          "text": "circular",
+          "correct": false,
+          "expectedOldRationaleZh": "circular：圓形的；不符合本句情境。",
+          "rationaleZh": "circular：圓形的。描述圓形或循環的特性，不能解釋練習多次卻未進步後的情緒。"
+        },
+        {
+          "text": "profitable",
+          "correct": false,
+          "expectedOldRationaleZh": "profitable：有利潤的；不符合本句情境。",
+          "rationaleZh": "profitable：有利潤的。表示有利潤、有益的；題幹重點是練習沒有進步所造成的情緒，不是收益或好處。"
+        },
+        {
+          "text": "frustrating",
+          "correct": false,
+          "expectedOldRationaleZh": "frustrating：令人沮喪的；不符合本句情境。",
+          "rationaleZh": "frustrating：令人沮喪的。-ing 形容令人受挫的人、事或經驗；這裡描述的是她本人感受到的情緒，不是她令別人受挫。"
+        }
+      ]
+    },
+    {
+      "questionId": "CHOICE-CLOZE-ORIG-LV4U17-frustrated~P2",
+      "baseQuestionId": "CHOICE-CLOZE-ORIG-LV4U17-frustrated",
+      "learningItemId": "LI-LV4U17-frustrated",
+      "expected": {
+        "stem": "Unable to find his way out of the maze, the _____ boy sat down and sighed.",
+        "answerText": "frustrated",
+        "answerForms": [
+          "frustrated"
+        ],
+        "sentenceEn": "Unable to find his way out of the maze, the frustrated boy sat down and sighed.",
+        "sentenceZh": "那個男孩找不到走出迷宮的路，沮喪地坐下來嘆氣。",
+        "optionTexts": [
+          "circular",
+          "frustrated",
+          "frustrating",
+          "profitable"
+        ]
+      },
+      "abilityTags": [
+        "word_form",
+        "context",
+        "sentence_pattern"
+      ],
+      "options": [
+        {
+          "text": "circular",
+          "correct": false,
+          "expectedOldRationaleZh": "circular：圓形的；不符合本句情境。",
+          "rationaleZh": "circular：圓形的。表示圓形或循環的；空格修飾 boy，而非 maze，且句中沒有任何形狀線索。"
+        },
+        {
+          "text": "profitable",
+          "correct": false,
+          "expectedOldRationaleZh": "profitable：有利潤的；不符合本句情境。",
+          "rationaleZh": "profitable：有利潤的。表示有利潤或有益的；空格形容迷路的男孩，句中沒有收益或效益的情境。"
+        },
+        {
+          "text": "frustrating",
+          "correct": false,
+          "expectedOldRationaleZh": "frustrating：令人沮喪的；不符合本句情境。",
+          "rationaleZh": "frustrating：令人沮喪的。也可能形容令人挫折的人，但此句沒有男孩令他人受挫的線索；迷路與嘆氣是男孩自己遇到困難的反應。"
+        },
+        {
+          "text": "frustrated",
+          "correct": true,
+          "expectedOldRationaleZh": "frustrated：感到沮喪的。那個男孩找不到走出迷宮的路，沮喪地坐下來嘆氣。",
+          "rationaleZh": "frustrated：感到沮喪的。那個男孩找不到走出迷宮的路，沮喪地坐下來嘆氣。 unable to find his way out 交代男孩遇到困難，sat down and sighed 反映他自己的感受；-ed 形容感到挫折的男孩。"
+        }
+      ]
+    },
+    {
+      "questionId": "CHOICE-CLOZE-ORIG-LV4U17-frustrating~P1",
+      "baseQuestionId": "CHOICE-CLOZE-ORIG-LV4U17-frustrating",
+      "learningItemId": "LI-LV4U17-frustrating",
+      "expected": {
+        "stem": "It is _____ to wait in line for an hour and then learn that all the tickets are sold out.",
+        "answerText": "frustrating",
+        "answerForms": [
+          "frustrating"
+        ],
+        "sentenceEn": "It is frustrating to wait in line for an hour and then learn that all the tickets are sold out.",
+        "sentenceZh": "排隊等了一小時才知道票已售完，真令人沮喪。",
+        "optionTexts": [
+          "frustrated",
+          "frustrating",
+          "oval",
+          "profitable"
+        ]
+      },
+      "abilityTags": [
+        "word_form",
+        "context",
+        "sentence_pattern"
+      ],
+      "options": [
+        {
+          "text": "oval",
+          "correct": false,
+          "expectedOldRationaleZh": "oval：橢圓形的；不符合本句情境。",
+          "rationaleZh": "oval：橢圓形的。表示橢圓形；等候與票售完是經歷的事件，並非可描述幾何形狀的物件。"
+        },
+        {
+          "text": "frustrating",
+          "correct": true,
+          "expectedOldRationaleZh": "frustrating：令人沮喪的。排隊等了一小時才知道票已售完，真令人沮喪。",
+          "rationaleZh": "frustrating：令人沮喪的。排隊等了一小時才知道票已售完，真令人沮喪。 It is ... to V 以 it 作形式主詞，真正被評述的是排隊一小時卻得知票已售完的經驗；-ing 說明這件事令人受挫。"
+        },
+        {
+          "text": "profitable",
+          "correct": false,
+          "expectedOldRationaleZh": "profitable：有利潤的；不符合本句情境。",
+          "rationaleZh": "profitable：有利潤的。表示能獲利或帶來益處；久候卻得知售完的語境未提供利潤或益處線索。"
+        },
+        {
+          "text": "frustrated",
+          "correct": false,
+          "expectedOldRationaleZh": "frustrated：感到沮喪的；不符合本句情境。",
+          "rationaleZh": "frustrated：感到沮喪的。-ed 通常描述有挫折感的感受者；這裡 it 是形式主詞，引出排隊與買不到票的經驗，而不是一位感受者。"
+        }
+      ]
+    },
+    {
+      "questionId": "CHOICE-CLOZE-ORIG-LV4U17-frustrating~P2",
+      "baseQuestionId": "CHOICE-CLOZE-ORIG-LV4U17-frustrating",
+      "learningItemId": "LI-LV4U17-frustrating",
+      "expected": {
+        "stem": "Trying to read a map with half the street names missing was a _____ experience.",
+        "answerText": "frustrating",
+        "answerForms": [
+          "frustrating"
+        ],
+        "sentenceEn": "Trying to read a map with half the street names missing was a frustrating experience.",
+        "sentenceZh": "試著閱讀一張缺少一半街道名稱的地圖，是令人沮喪的經驗。",
+        "optionTexts": [
+          "frustrated",
+          "frustrating",
+          "oval",
+          "profitable"
+        ]
+      },
+      "abilityTags": [
+        "word_form",
+        "context",
+        "sentence_pattern"
+      ],
+      "options": [
+        {
+          "text": "frustrating",
+          "correct": true,
+          "expectedOldRationaleZh": "frustrating：令人沮喪的。試著閱讀一張缺少一半街道名稱的地圖，是令人沮喪的經驗。",
+          "rationaleZh": "frustrating：令人沮喪的。試著閱讀一張缺少一半街道名稱的地圖，是令人沮喪的經驗。 空格修飾 experience。缺少許多街名使閱讀地圖困難；-ing 表示這段經驗使人感到挫折。"
+        },
+        {
+          "text": "profitable",
+          "correct": false,
+          "expectedOldRationaleZh": "profitable：有利潤的；不符合本句情境。",
+          "rationaleZh": "profitable：有利潤的。表示有利潤或有益的；句中只說地圖缺少街名造成閱讀困難，沒有獲利或受益的線索。"
+        },
+        {
+          "text": "frustrated",
+          "correct": false,
+          "expectedOldRationaleZh": "frustrated：感到沮喪的；不符合本句情境。",
+          "rationaleZh": "frustrated：感到沮喪的。-ed 描述感到挫折的主體；此處 experience 指造成挫折的經歷，而非具有情緒的感受者。"
+        },
+        {
+          "text": "oval",
+          "correct": false,
+          "expectedOldRationaleZh": "oval：橢圓形的；不符合本句情境。",
+          "rationaleZh": "oval：橢圓形的。表示橢圓形；空格修飾抽象的 experience，而非 map 或其他具有形狀的物件。"
+        }
+      ]
+    }
+  ]
+}
