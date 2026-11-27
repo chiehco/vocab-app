@@ -76,3 +76,9 @@
 4. W004001 映射仍需可核最新版母表、source hash、頁18原照片及雙詞形字卡／拼寫／SRS 設計，本批沒有解除此阻塞。
 
 沒有變更 canonical、教材、review 狀態、runtime、主表、學生資料、main 或部署。不以這個小樣報整體完成百分比。
+
+## 2026-11-27 後續獨立修正（待審）
+
+本報告前文及 fixture 保留原始稽核證據，不追溯改寫；後續分支從 PR #63 的固定 head `36179dc92418ce78d2835f2ff07dfd204c5d6068` 建立，僅改 006 原創例句的三個文字欄及同批測試對 live stem 的期望。新語境明確抄襲者取消資格，因此四選一的 allow 不再符合文意；ban 仍是開放填空合理替換，不改評分或答案政策。保留原 Word ID、review、題號、四選項及正式母表資料。四項候選情境解析仍在 [第二輪複核](https://github.com/chiehco/vocab-app/pull/63#issuecomment-7210868239)，未接入 runtime，不算解析功能完成。
+
+本輪使用固定來源做 JavaScript 結構斷言，未在 repo 執行 Vitest、lint、typecheck、build 或實機。新測試等待本提交 CI。此分支依賴 #63，避免在兩個獨立 PR 中分別合併舊測試及新題幹造成失敗；不直接改 #63 分支。若 #63 先合併，由負責人重新定基底並查核 CI。
