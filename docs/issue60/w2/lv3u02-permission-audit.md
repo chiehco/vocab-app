@@ -82,3 +82,7 @@
 本報告前文及 fixture 保留原始稽核證據，不追溯改寫；後續分支從 PR #63 的固定 head `36179dc92418ce78d2835f2ff07dfd204c5d6068` 建立，僅改 006 原創例句的三個文字欄及同批測試對 live stem 的期望。新語境明確抄襲者取消資格，因此四選一的 allow 不再符合文意；ban 仍是開放填空合理替換，不改評分或答案政策。保留原 Word ID、review、題號、四選項及正式母表資料。四項候選情境解析仍在 [第二輪複核](https://github.com/chiehco/vocab-app/pull/63#issuecomment-7210868239)，未接入 runtime，不算解析功能完成。
 
 本輪使用固定來源做 JavaScript 結構斷言，未在 repo 執行 Vitest、lint、typecheck、build 或實機。新測試等待本提交 CI。此分支依賴 #63，避免在兩個獨立 PR 中分別合併舊測試及新題幹造成失敗；不直接改 #63 分支。若 #63 先合併，由負責人重新定基底並查核 CI。
+
+## 後續：保留封存來源的 runtime 原創例句投影（待審）
+
+#64 的 CI 證明直接修改 U02 JSON 破壞既有歷史 raw hash。此批改採與 U22/U23 runtime reading 類似的單項投影：將 U02 JSON 直接恢復為 #63 原 Git blob，所有歷史 manifest / hash / guard 不動；model 建構 U02 時只對 006 原創例句做三個文字欄的不可變替換，若來源 ID、答案或既有三欄不符就不覆蓋。正式母表、題目 ID、答案、選項、學習紀錄均不改。回歸測試改讀 runtime item，另驗原始 JSON、單項變更與未知修訂不被覆蓋。開放填空 ban 仍是合理替代，未改評分政策。此為 #64 的後續獨立分支，不能把 #64 紅燈當作已解除；需等待整合 CI，不能單獨合併 #64 後即發布。

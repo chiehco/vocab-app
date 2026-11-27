@@ -1,5 +1,6 @@
 import choiceOptions from './choiceOptions.json';
 import unit2 from './curriculumUnit2.json';
+import { applyU02PracticeRevision } from './lv3U02PracticeRevision';
 import lv6Unit1 from './curriculumLV6Unit1.json';
 import lv6Unit2 from './curriculumLV6Unit2.json';
 import lv6Unit3 from './curriculumLV6Unit3.json';
@@ -162,7 +163,7 @@ export function learningItemExplanation(item: LearningItem) {
 // Textbook units available in the app. LV3 units keep their numeric `unit` shortcut for existing callers.
 export const curriculumUnits: CurriculumUnit[] = [
   { templateId: curriculum.template.templateId, revision: curriculum.template.revision, level: 'LV3', unit: 1, name: 'LV3 Unit 1', items: curriculum.learningItems as LearningItem[], questions: grammarQuestions, relatedNotes: [] },
-  { templateId: unit2.template.templateId, revision: unit2.template.revision, level: 'LV3', unit: 2, name: 'LV3 Unit 2', items: unit2.learningItems as LearningItem[], questions: unit2.grammarQuestions, relatedNotes: [] },
+  { templateId: unit2.template.templateId, revision: unit2.template.revision, level: 'LV3', unit: 2, name: 'LV3 Unit 2', items: (unit2.learningItems as LearningItem[]).map(applyU02PracticeRevision), questions: unit2.grammarQuestions, relatedNotes: [] },
   { templateId: lv3Unit3.template.templateId, revision: lv3Unit3.template.revision, level: 'LV3', unit: 3, name: lv3Unit3.template.title, items: lv3Unit3.learningItems as LearningItem[], questions: lv3Unit3.questions, relatedNotes: [], deliveryMode: 'text_only' },
   { templateId: lv3Unit4.template.templateId, revision: lv3Unit4.template.revision, level: 'LV3', unit: 4, name: lv3Unit4.template.title, items: lv3Unit4.learningItems as LearningItem[], questions: lv3Unit4.questions, relatedNotes: [], deliveryMode: 'text_only' },
   { templateId: lv3Unit5.template.templateId, revision: lv3Unit5.template.revision, level: 'LV3', unit: 5, name: lv3Unit5.template.title, items: lv3Unit5.learningItems as LearningItem[], questions: lv3Unit5.questions, relatedNotes: [], deliveryMode: 'text_only' },
