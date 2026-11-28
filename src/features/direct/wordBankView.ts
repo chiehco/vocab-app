@@ -10,7 +10,36 @@ export type WordBankContent = Readonly<{
     optionReviews: Readonly<Record<string, Review>> }>[];
   stages: readonly Stage[];
 }>;
-export type WordBankAttempt = Readonly<{ content: WordBankContent; stage: Stage; state: WordBankState }>;
+export type WordBankPassageSegment = Readonly<{ kind: 'text'; text: string } | { kind: 'blank'; index: number }>;
+export type WordBankAttempt = Readonly<{ content: WordBankContent; stage: Stage; state: WordBankState;
+  segments: readonly WordBankPassageSegment[] }>;
+
+// Only numbered blanks in the authored word bank format are accepted.
+export function splitWordBankPassage(passage: string, indices: readonly number[]): WordBankPassageSegment[] {
+  if (!passage.trim() || indices.length === 0 || new Set(indices).size !== indices.length ||
+      indices.some(i => !Number.isSafeInteger(i) || i < 1)) {
+    throw new Error('Invalid word bank passage');
+  }
+  const segments: WordBankPassageSegment[] = [];
+  const seen: number[] = [];
+  let offset = 0;
+  for (const match of passage.matchAll(/\(([1-9]\d*)\)\s*___(?!_)/g)) {
+    const text = passage.slice(offset, match.index);
+    if (text.includes('___')) throw new Error('Unnumbered word bank blank');
+    if (text) segments.push({ kind: 'text', text });
+    const index = Number(match[1]);
+    segments.push({ kind: 'blank', index });
+    seen.push(index);
+    offset = match.index + match[0].length;
+  }
+  const tail = passage.slice(offset);
+  if (tail.includes('___')) throw new Error('Unnumbered word bank blank');
+  if (tail) segments.push({ kind: 'text', text: tail });
+  if (seen.length !== indices.length || seen.some((i, n) => i !== indices[n])) {
+    throw new Error('Word bank passage indices mismatch');
+  }
+  return segments;
+}
 
 // This adapter is intentionally local to a passage attempt. No DB, SRS or rewards writes.
 export function startWordBankAttempt(content: WordBankContent, stageId: string): WordBankAttempt {
@@ -19,7 +48,9 @@ export function startWordBankAttempt(content: WordBankContent, stageId: string):
       !['after_blank', 'after_passage_submit'].includes(stage.feedback)) {
     throw new Error('Invalid word bank stage');
   }
-  const state = createWordBankState(stage, content.blanks.map(b => b.index));
+  const indices = content.blanks.map(b => b.index);
+  const segments = splitWordBankPassage(content.passage, indices);
+  const state = createWordBankState(stage, indices);
   const ids = content.options.map(o => o.id);
   if (new Set(ids).size !== ids.length || stage.optionIds.some(id => !ids.includes(id))) {
     throw new Error('Invalid word bank content options');
@@ -30,7 +61,7 @@ export function startWordBankAttempt(content: WordBankContent, stageId: string):
           b.optionReviews[id].correct !== (id === b.answer)))) {
     throw new Error('Invalid word bank answer or review');
   }
-  return { content, stage, state };
+  return { content, stage, state, segments };
 }
 
 export function setWordBankChoice(attempt: WordBankAttempt, index: number, optionId: string | null): WordBankAttempt {
@@ -63,6 +94,7 @@ export function wordBankView(attempt: WordBankAttempt) {
   });
   return {
     passage: content.passage,
+    segments: attempt.segments,
     options: stage.optionIds.map(id => ({
       id, available: available.has(id),
       ...(stage.showPos ? { pos: content.options.find(o => o.id === id)?.pos } : {}),
