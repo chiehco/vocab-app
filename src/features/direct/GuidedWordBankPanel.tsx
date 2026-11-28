@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { finishWordBankAttempt, setWordBankChoice, startWordBankAttempt, wordBankView,
-  type WordBankContent } from './wordBankView';
+  type WordBankContent, type WordBankAttempt } from './wordBankView';
 
 type Props = Readonly<{ content: WordBankContent; attemptKey: string }>;
 
@@ -10,15 +10,40 @@ export default function GuidedWordBankPanel({ content, attemptKey }: Props) {
   return <GuidedAttempt key={attemptKey} content={content} />;
 }
 
+function prepareGuidedAttempt(content: WordBankContent): WordBankAttempt | null {
+  try {
+    const attempt = startWordBankAttempt(content, 'guided');
+    const { stage } = attempt;
+    if (content.blanks.length !== 5 || stage.optionIds.length !== 5 ||
+        stage.showPos !== true || stage.showBlankHints !== true ||
+        stage.feedback !== 'after_blank' ||
+        content.blanks.some(b => typeof b.guideHint !== 'string' || !b.guideHint.trim()) ||
+        stage.optionIds.some(id => {
+          const pos = content.options.find(o => o.id === id)?.pos;
+          return typeof pos !== 'string' || !pos.trim();
+        })) return null;
+    return attempt;
+  } catch {
+    return null;
+  }
+}
+
 function GuidedAttempt({ content }: { content: WordBankContent }) {
-  const [attempt, setAttempt] = useState(() => startWordBankAttempt(content, 'guided'));
+  const [initial] = useState(() => prepareGuidedAttempt(content));
+  if (!initial) return <section aria-label="引導式文意選填">
+    <p role="alert">這篇練習的資料不完整，暫時無法作答。</p>
+  </section>;
+  return <GuidedSession initial={initial} />;
+}
+
+function GuidedSession({ initial }: { initial: WordBankAttempt }) {
+  const [attempt, setAttempt] = useState(initial);
   const [selected, setSelected] = useState(() => attempt.state.slots[0].index);
   const view = wordBankView(attempt);
   const active = view.blanks.find(blank => blank.index === selected);
   function restart() {
-    const next = startWordBankAttempt(content, 'guided');
-    setAttempt(next);
-    setSelected(next.state.slots[0].index);
+    setAttempt(initial);
+    setSelected(initial.state.slots[0].index);
   }
   return <section aria-label="引導式文意選填">
     <h2>引導式文意選填</h2>
