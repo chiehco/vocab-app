@@ -67,3 +67,42 @@ it('submits only a full passage, locks edits, shows score, and resets on restart
   expect(button('[data-option="plan"]').disabled).toBe(false);
   expect(harness.container.querySelector('[data-feedback]')).toBeNull();
 });
+
+it('rejects malformed guided content without mounting an attempt and recovers on a new key', async () => {
+  const stage = content.stages[0];
+  const withStage = (patch: Partial<typeof stage>): WordBankContent => ({
+    ...content, stages: [{ ...stage, ...patch }],
+  });
+  const variants: WordBankContent[] = [
+    { ...content, options: [...content.options, { id: 'extra', pos: 'n.' }],
+      blanks: content.blanks.map(b => ({ ...b, optionReviews: {
+        ...b.optionReviews, extra: { correct: false, reasonZh: 'not the answer' },
+      } })), stages: [{ ...stage, optionIds: [...ids, 'extra'] }] },
+    { ...content, passage: content.passage.replace(' It is (5) ___.', ''),
+      blanks: content.blanks.slice(0, 4), stages: [{ ...stage, optionIds: ids.slice(0, 4) }] },
+    withStage({ showPos: false }),
+    withStage({ showBlankHints: false }),
+    withStage({ feedback: 'after_passage_submit' }),
+    { ...content, options: content.options.map((o, i) => i === 0 ? { ...o, pos: ' ' } : o) },
+    { ...content, blanks: content.blanks.map((b, i) => i === 0 ? { ...b, guideHint: ' ' } : b) },
+    { ...content, options: content.options.map((o, i) => i === 0 ? { id: o.id } : o) } as unknown as WordBankContent,
+    { ...content, blanks: content.blanks.map((b, i) => i === 0 ? {
+      index: b.index, answer: b.answer, optionReviews: b.optionReviews,
+    } : b) } as unknown as WordBankContent,
+    { ...content, passage: content.passage.replace('(1) ___', '___') },
+  ];
+  for (const [i, invalid] of variants.entries()) {
+    await harness.render(<GuidedWordBankPanel content={invalid} attemptKey={`invalid-${i}`} />);
+    expect(harness.container.querySelector('[role="alert"]')?.textContent).toContain('暫時無法作答');
+    expect(harness.container.querySelectorAll('[data-blank], [data-option], [data-action], [data-feedback], [data-score]')).toHaveLength(0);
+  }
+  await harness.render(<GuidedWordBankPanel content={content} attemptKey="recovered" />);
+  expect(harness.container.querySelector('[role="alert"]')).toBeNull();
+  expect(harness.container.querySelectorAll('[data-blank]')).toHaveLength(5);
+  expect(action('submit').disabled).toBe(true);
+  await choose('plan');
+  expect(button('[data-blank="1"]').textContent).toContain('plan');
+  await harness.click(action('restart'));
+  expect(button('[data-option="plan"]').disabled).toBe(false);
+  expect(harness.container.querySelector('[data-feedback]')).toBeNull();
+});
