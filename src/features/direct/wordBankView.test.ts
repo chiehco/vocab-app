@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { startWordBankAttempt, setWordBankChoice, finishWordBankAttempt, wordBankView, type WordBankContent } from './wordBankView';
+import { startWordBankAttempt, setWordBankChoice, finishWordBankAttempt, wordBankView, splitWordBankPassage, type WordBankContent } from './wordBankView';
 
 const options = [{ id: 'plan', pos: 'n.' }, { id: 'carefully', pos: 'adv.' }, { id: 'careful', pos: 'adj.' }];
 const blank = (index: number, answer: string) => ({ index, answer, guideHint: '詞性提示',
@@ -47,5 +47,39 @@ describe('word bank view and score', () => {
     expect(() => startWordBankAttempt({ ...content, blanks: [blank(1, 'careful'), content.blanks[1]] }, 'guided')).toThrow();
     expect(() => startWordBankAttempt({ ...content, blanks: [{ ...content.blanks[0], optionReviews: {} }, content.blanks[1]] }, 'guided')).toThrow();
     expect(() => startWordBankAttempt({ ...content, options: [...options, options[0]] }, 'guided')).toThrow();
+  });
+});
+
+describe('word bank passage contract', () => {
+  it('projects ordered text and blank indices without answers and preserves surrounding text', () => {
+    const a = startWordBankAttempt(content, 'exam');
+    const segments = [
+      { kind: 'text', text: 'They wrote a ' }, { kind: 'blank', index: 1 },
+      { kind: 'text', text: ' and read it ' }, { kind: 'blank', index: 2 },
+      { kind: 'text', text: '.' },
+    ];
+    expect(wordBankView(a).segments).toEqual(segments);
+    expect(wordBankView(setWordBankChoice(a, 1, 'plan')).segments).toEqual(segments);
+    expect(splitWordBankPassage('(1)   ___ and (2)___', [1, 2])).toEqual([
+      { kind: 'blank', index: 1 }, { kind: 'text', text: ' and ' }, { kind: 'blank', index: 2 },
+    ]);
+  });
+  it('rejects malformed passages before starting an attempt in either stage', () => {
+    const invalid = [
+      'They wrote a (1) ___.', '(1) ___ and (1) ___', '(1) ___ and (3) ___',
+      '(2) ___ and (1) ___', '___ and (2) ___', '(01) ___ and (2) ___',
+      '(1) ___ and (2) ___ and (3) ___', '(1) ____ and (2) ___', '   ',
+      '(1) ___ and (2) ___ and ___',
+    ];
+    for (const stage of content.stages) {
+      for (const passage of invalid) {
+        expect(() => startWordBankAttempt({ ...content, passage }, stage.id)).toThrow();
+      }
+    }
+  });
+  it('rejects invalid index contracts', () => {
+    for (const indices of [[], [1, 1], [0, 2], [1, 2.5], [1, Number.MAX_SAFE_INTEGER + 1]]) {
+      expect(() => splitWordBankPassage(content.passage, indices)).toThrow();
+    }
   });
 });
