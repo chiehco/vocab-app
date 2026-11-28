@@ -1,3 +1,4 @@
+import fourthMiddle from '../../../docs/lv4-releases-20261128/U11-U16-fourth-middle-approved.json';
 import fourthMorning from '../../../docs/lv4-releases-20261128/U01-U10-fourth-morning-approved.json';
 import thirdTail from '../../../docs/lv4-releases-20261127/U21-U24-third-tail-approved.json';
 import thirdMiddle from '../../../docs/lv4-releases-20261126/U11-U16-third-middle-approved.json';
@@ -160,7 +161,21 @@ export function beforeLV4Rows<T>(dataset:string,value:T):T{
  }return copy;
 }
 
+export function beforeFourthMiddleResolverSource(path:string,text:string):string{
+ if(path!==fourthMiddle.path)return text;
+ assert.equal(hash(JSON.stringify(fourthMiddle)),'c6f32323e895eb6c2c22f82535611064375264a70d72844ddbd2fdbe1e124fef','LV4 fourth middle proof drift');
+ if(hash(text)!==fourthMiddle.afterLfSha256)return text;
+ assert.equal(text,fourthMiddle.afterText,'LV4 fourth middle resolver bytes drift');
+ assert.equal(text.split(fourthMiddle.importLine).length,2,'LV4 fourth middle import drift');
+ assert.equal(text.split(fourthMiddle.afterSpread).length,2,'LV4 fourth middle spread drift');
+ const previous=text.replace(fourthMiddle.importLine,'').replace(fourthMiddle.afterSpread,fourthMiddle.beforeSpread);
+ assert.equal(hash(previous),fourthMiddle.beforeLfSha256,'LV4 fourth middle exact prior resolver drift');
+ assert.equal(previous,fourthMiddle.beforeText,'LV4 fourth middle prior bytes drift');
+ return previous;
+}
+
 export function beforeFourthMorningResolverSource(path:string,text:string):string{
+ text=beforeFourthMiddleResolverSource(path,text);
  if(path!==fourthMorning.path)return text;
  assert.equal(hash(JSON.stringify(fourthMorning)),'8d69de08054243d2f2e2a7aa7768488798b5e09a0132e9b9a84a18c13e8474fd','LV4 third middle proof drift');
  if(hash(text)!==fourthMorning.afterLfSha256)return text;
