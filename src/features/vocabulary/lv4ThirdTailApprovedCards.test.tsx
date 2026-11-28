@@ -6,7 +6,7 @@ import {MemoryRouter} from 'react-router-dom';
 import cards from './lv4ThirdTailApprovedCards.json';
 import proof from '../../../docs/lv4-releases-20261127/U21-U24-third-tail-approved.json';
 import {approvedCurriculumCards,approvedCurriculumItem,approvedWordIllustration} from './approvedCurriculum';
-import {beforeLV4ResolverSource,beforeThirdTailResolverSource} from '../direct/lv4Published.testSupport';
+import {beforeLV4ResolverSource,beforeThirdTailResolverSource,beforeFourthMorningResolverSource} from '../direct/lv4Published.testSupport';
 import {unitsFor} from './textbookCatalog';
 import VocabularyScreen from './VocabularyScreen';
 import {getWordBeastAsset} from '../wordbeast/wordBeastAssets';
@@ -45,7 +45,7 @@ it('preserves every protected source, all prior defaults, picture-prompt eligibi
 });
 
 it('reverses only the authenticated additive import/spread and rejects unrelated resolver edits',()=>{
- const current=readFileSync(proof.path,'utf8').replaceAll('\r\n','\n');
+ const current=beforeFourthMorningResolverSource(proof.path,readFileSync(proof.path,'utf8').replaceAll('\r\n','\n'));
  expect(current).toBe(proof.afterText);expect(hash(current)).toBe(proof.afterLfSha256);
  expect(beforeThirdTailResolverSource(proof.path,current)).toBe(proof.beforeText);
  expect(beforeLV4ResolverSource(proof.path,current)).toBe(beforeLV4ResolverSource(proof.path,proof.beforeText));
